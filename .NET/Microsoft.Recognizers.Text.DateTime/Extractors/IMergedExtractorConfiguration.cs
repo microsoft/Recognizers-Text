@@ -41,6 +41,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex AroundRegex { get; }
 
+        Regex EqualRegex { get; }
+
         Regex FromToRegex { get; }
 
         Regex SingleAmbiguousMonthRegex { get; }
@@ -49,9 +51,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex NumberEndingPattern { get; }
 
-        Regex DateAfterRegex { get; }
+        Regex SuffixAfterRegex { get; }
 
         Regex UnspecificDatePeriodRegex { get; }
+
+        // Regex to act as umbrella for key terms so that sentences that clearly don't have entities can be rejected quickly
+        Regex FailFastRegex { get; }
 
         StringMatcher SuperfluousWordMatcher { get; }
 

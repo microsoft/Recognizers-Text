@@ -1,11 +1,18 @@
 ---
 #Korean
-LangMarker: '' 
+LangMarker: Kor
+#Does this language use non-whitespace-separated numbers?
+CompoundNumberLanguage: !bool true
+#Does this culture uses period and comma intercheangeably as decimal separator?
+MultiDecimalSeparatorCulture: !bool false
 DecimalSeparatorChar: !char '.'
 FractionMarkerToken: ''
 NonDecimalSeparatorChar: !char ' '
 HalfADozenText: ''
 WordSeparatorToken: ''
+# TODO: modify below char according to the counterpart in Chinese
+ZeroChar: !char '?'
+PairChar: !char '?'
 RoundNumberMap: !dictionary
   types: [string, long]
   entries:
@@ -100,6 +107,11 @@ RoundDirectList: !list
   entries:
     - 빵
     - 열
+# TODO: modify below list according to the counterpart in Chinese
+TenChars: !list
+  types: [char]
+  entries:
+    - '?'
 DigitalNumberRegex: !nestedRegex
   def: ((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [ BaseNumbers.MultiplierLookupRegex ]
@@ -279,7 +291,12 @@ LessOrEqual: !nestedRegex
 LessOrEqualSuffix: !simpleRegex
   def: \s*(이상)
 
-RelativeReferenceMap: !dictionary
+RelativeReferenceOffsetMap: !dictionary
+  types: [ string, string ]
+# TODO: modify below regex according to the counterpart in English
+  entries:
+    '': ''
+RelativeReferenceRelativeToMap: !dictionary
   types: [ string, string ]
 # TODO: modify below regex according to the counterpart in English
   entries:

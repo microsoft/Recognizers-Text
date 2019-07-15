@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             { "妇女节", FemaleDay },
             { "植树节", TreePlantDay },
             { "情人节", LoverDay },
+            { "平安夜", ChristmasEve },
             { "圣诞节", ChristmasDay },
             { "新年", NewYear },
             { "愚人节", FoolDay },
@@ -128,7 +129,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 if (match.Success)
                 {
-                    // LUIS value string will be set in Match2Date method
+                    // Value string will be set in Match2Date method
                     var ret = Match2Date(match, referenceDate);
                     return ret;
                 }
@@ -140,7 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var holidayStr = match.Groups["holiday"].Value.ToLower();
+            var holidayStr = match.Groups["holiday"].Value;
 
             var year = referenceDate.Year;
             var hasYear = false;
@@ -278,6 +279,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static DateObject TreePlantDay(int year) => new DateObject(year, 3, 12);
 
         private static DateObject LoverDay(int year) => new DateObject(year, 2, 14);
+
+        private static DateObject ChristmasEve(int year) => new DateObject(year, 12, 24);
 
         private static DateObject ChristmasDay(int year) => new DateObject(year, 12, 25);
 

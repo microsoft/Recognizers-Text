@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 package com.microsoft.recognizers.text.number.resources;
@@ -16,7 +19,11 @@ import com.google.common.collect.ImmutableMap;
 
 public class ChineseNumeric {
 
-    public static final String LangMarker = "";
+    public static final String LangMarker = "Chs";
+
+    public static final Boolean CompoundNumberLanguage = true;
+
+    public static final Boolean MultiDecimalSeparatorCulture = false;
 
     public static final Character DecimalSeparatorChar = '.';
 
@@ -27,6 +34,10 @@ public class ChineseNumeric {
     public static final String HalfADozenText = "";
 
     public static final String WordSeparatorToken = "";
+
+    public static final Character ZeroChar = '零';
+
+    public static final Character PairChar = '对';
 
     public static final ImmutableMap<String, Long> RoundNumberMap = ImmutableMap.<String, Long>builder()
         .put("k", 1000L)
@@ -145,6 +156,8 @@ public class ChineseNumeric {
         .build();
 
     public static final List<Character> RoundDirectList = Arrays.asList('万', '萬', '亿', '兆', '億');
+
+    public static final List<Character> TenChars = Arrays.asList('十', '拾');
 
     public static final String DigitalNumberRegex = "((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
             .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
@@ -449,7 +462,11 @@ public class ChineseNumeric {
 
     public static final String AmbiguousFractionConnectorsRegex = "^[.]";
 
-    public static final ImmutableMap<String, String> RelativeReferenceMap = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> RelativeReferenceOffsetMap = ImmutableMap.<String, String>builder()
+        .put("", "")
+        .build();
+
+    public static final ImmutableMap<String, String> RelativeReferenceRelativeToMap = ImmutableMap.<String, String>builder()
         .put("", "")
         .build();
 }

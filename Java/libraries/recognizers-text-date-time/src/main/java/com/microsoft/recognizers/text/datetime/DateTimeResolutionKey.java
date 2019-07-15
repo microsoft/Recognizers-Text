@@ -7,4 +7,5 @@ public class DateTimeResolutionKey {
     public static final String START = "start";
     public static final String END = "end";
     public static final String List = "list";
+    public static final String SourceEntity = "sourceEntity";
 }

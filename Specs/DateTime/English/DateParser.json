@@ -138,13 +138,13 @@
     ]
   },
   {
-    "Input": "I'll go back Monday January 12th, 2016",
+    "Input": "i'll go back monday january 12th, 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "Monday January 12th, 2016",
+        "Text": "monday january 12th, 2016",
         "Type": "date",
         "Value": {
           "Timex": "2016-01-12",
@@ -2229,14 +2229,14 @@
     ]
   },
   {
-    "Input": "Monday, Jan twenty two, 2018",
+    "Input": "monday, jan twenty two, 2018",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Monday, Jan twenty two, 2018",
+        "Text": "monday, jan twenty two, 2018",
         "Type": "date",
         "Value": {
           "Timex": "2018-01-22",
@@ -2253,14 +2253,14 @@
     ]
   },
   {
-    "Input": "on Sunday Jan twenty one two thousand and eighteen",
+    "Input": "on sunday jan twenty one two thousand and eighteen",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Sunday Jan twenty one two thousand and eighteen",
+        "Text": "sunday jan twenty one two thousand and eighteen",
         "Type": "date",
         "Value": {
           "Timex": "2018-01-21",
@@ -2840,6 +2840,30 @@
         },
         "Start": 45,
         "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back twenty second of June 2017",
+    "Context": {
+      "ReferenceDateTime": "2018-08-21T08:00:00"
+    },
+    "NotSupported": "python,javascript",
+    "Results": [
+      {
+        "Text": "twenty second of june 2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-06-22",
+          "FutureResolution": {
+            "date": "2017-06-22"
+          },
+          "PastResolution": {
+            "date": "2017-06-22"
+          }
+        },
+        "Start": 13,
+        "Length": 26
       }
     ]
   }

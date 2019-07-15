@@ -55,10 +55,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var regex in this.config.TimeRegexList)
             {
                 var matches = regex.Matches(text);
+
                 foreach (Match match in matches)
                 {
                     result.Add(new Token(match.Index, match.Index + match.Length));
                 }
+
             }
 
             return result;

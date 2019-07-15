@@ -4542,19 +4542,6 @@
     ]
   },
   {
-    "Input": "Ya no estaré en el tercer cuarto de 2016",
-    "NotSupported": "java",
-    "NotSupportedByDesign": "javascript, python",
-    "Results": [
-      {
-        "Text": "el tercer cuarto de 2016",
-        "Type": "daterange",
-        "Start": 16,
-        "Length": 24
-      }
-    ]
-  },
-  {
     "Input": "Ya no estaré en 3º cuarto",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",

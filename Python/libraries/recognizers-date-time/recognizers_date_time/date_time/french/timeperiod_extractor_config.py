@@ -10,6 +10,7 @@ from ..base_time import BaseTimeExtractor
 from .time_extractor_config import FrenchTimeExtractorConfiguration
 from .base_configs import FrenchDateTimeUtilityConfiguration
 
+
 class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
     @property
     def simple_cases_regex(self) -> List[Pattern]:
@@ -36,7 +37,8 @@ class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         return self._integer_extractor
 
     def __init__(self):
-        self._single_time_extractor = BaseTimeExtractor(FrenchTimeExtractorConfiguration())
+        self._single_time_extractor = BaseTimeExtractor(
+            FrenchTimeExtractorConfiguration())
         self._integer_extractor = FrenchIntegerExtractor()
         self.utility_configuration = FrenchDateTimeUtilityConfiguration()
 
@@ -47,13 +49,19 @@ class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.AmRegex)
         ]
 
-        self._till_regex: Pattern = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TillRegex)
-        self._time_of_day_regex: Pattern = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TimeOfDayRegex)
-        self._general_ending_regex: Pattern = RegExpUtility.get_safe_reg_exp(FrenchDateTime.GeneralEndingRegex)
+        self._till_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.TillRegex)
+        self._time_of_day_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.TimeOfDayRegex)
+        self._general_ending_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.GeneralEndingRegex)
 
-        self.from_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.FromRegex2)
-        self.connector_and_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.ConnectorAndRegex)
-        self.before_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.BeforeRegex2)
+        self.from_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.FromRegex2)
+        self.connector_and_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.ConnectorAndRegex)
+        self.before_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.BeforeRegex2)
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)

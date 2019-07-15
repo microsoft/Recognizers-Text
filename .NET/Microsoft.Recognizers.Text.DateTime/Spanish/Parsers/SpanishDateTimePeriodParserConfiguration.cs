@@ -22,6 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DateTimeParser = config.DateTimeParser;
             TimePeriodParser = config.TimePeriodParser;
             DurationParser = config.DurationParser;
+            TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
@@ -71,6 +72,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeParser DurationParser { get; }
 
+        public IDateTimeParser TimeZoneParser { get; }
+
         public Regex PureNumberFromToRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
@@ -113,7 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             beginHour = 0;
             endHour = 0;
             endMin = 0;
@@ -161,7 +164,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public int GetSwiftPrefix(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
 
             // TODO: Replace with a regex

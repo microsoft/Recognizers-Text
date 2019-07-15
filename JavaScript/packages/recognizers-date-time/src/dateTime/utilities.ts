@@ -487,6 +487,7 @@ export class DateUtils {
     
         // Store the millisecond value of the target date
         let firstThursday = target.valueOf();
+        let thursday = new Date(firstThursday);
     
         // Set the target to the first thursday of the year
         // First set the target to january first
@@ -499,7 +500,7 @@ export class DateUtils {
         // The weeknumber is the number of weeks between the 
         // first thursday of the year and the thursday in the target week
         let weekNo = 1 + Math.ceil((firstThursday - target.valueOf()) / 604800000); // 604800000 = 7 * 24 * 3600 * 1000
-        return { weekNo: weekNo, year: referenceDate.getUTCFullYear() }
+        return { weekNo: weekNo, year: thursday.getFullYear() }
     }
 
     static minValue(): Date {
@@ -573,6 +574,11 @@ export class TimexUtil {
                 result.timeX = Constants.Morning;
                 result.beginHour = 8;
                 result.endHour = 12;
+                break;
+            case Constants.MidDay:
+                result.timeX = Constants.MidDay;
+                result.beginHour = 11;
+                result.endHour = 13;
                 break;
             case Constants.Afternoon:
                 result.timeX = Constants.Afternoon;

@@ -1,11 +1,17 @@
 ---
 #ChineseNumberParserConfiguration
-LangMarker: ''
+LangMarker: Chs
+#Does this language use non-whitespace-separated numbers?
+CompoundNumberLanguage: !bool true
+#Does this culture uses period and comma intercheangeably as decimal separator?
+MultiDecimalSeparatorCulture: !bool false
 DecimalSeparatorChar: !char '.'
 FractionMarkerToken: ''
 NonDecimalSeparatorChar: !char ' '
 HalfADozenText: ''
 WordSeparatorToken: ''
+ZeroChar: !char '零'
+PairChar: !char '对'
 RoundNumberMap: !dictionary
   types: [string, long]
   entries:
@@ -130,6 +136,11 @@ RoundDirectList: !list
     - 亿
     - 兆
     - 億
+TenChars: !list
+  types: [char]
+  entries:
+    - 十
+    - 拾
 DigitalNumberRegex: !nestedRegex
   def: ((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [BaseNumbers.MultiplierLookupRegex]
@@ -374,7 +385,12 @@ TwoNumberRangeRegex4: !nestedRegex
 AmbiguousFractionConnectorsRegex: !simpleRegex
 # TODO: modify below regex according to the counterpart in English
   def: ^[.]
-RelativeReferenceMap: !dictionary
+RelativeReferenceOffsetMap: !dictionary
+  types: [ string, string ]
+# TODO: modify below regex according to the counterpart in English
+  entries:
+    '': ''
+RelativeReferenceRelativeToMap: !dictionary
   types: [ string, string ]
 # TODO: modify below regex according to the counterpart in English
   entries:

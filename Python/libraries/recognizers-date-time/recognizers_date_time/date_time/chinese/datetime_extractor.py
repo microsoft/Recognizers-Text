@@ -9,6 +9,7 @@ from ..utilities import Token, merge_all_tokens
 from ..base_datetime import BaseDateTimeExtractor
 from .datetime_extractor_config import ChineseDateTimeExtractorConfiguration
 
+
 class ChineseDateTimeExtractor(BaseDateTimeExtractor):
     def __init__(self):
         super().__init__(ChineseDateTimeExtractorConfiguration())
@@ -28,7 +29,8 @@ class ChineseDateTimeExtractor(BaseDateTimeExtractor):
 
     def merge_date_and_time(self, source: str, reference: datetime) -> List[Token]:
         tokens: List[Token] = list()
-        ers: List[ExtractResult] = self.config.date_point_extractor.extract(source, reference)
+        ers: List[ExtractResult] = self.config.date_point_extractor.extract(
+            source, reference)
 
         if len(ers) < 1:
             return tokens
@@ -83,7 +85,8 @@ class ChineseDateTimeExtractor(BaseDateTimeExtractor):
             if not before:
                 continue
 
-            match = regex.search(self.config.time_of_today_before_regex, before)
+            match = regex.search(
+                self.config.time_of_today_before_regex, before)
             if match is not None and not before[match.end():].strip():
                 begin = match.start()
                 end = er.start + er.length

@@ -43,6 +43,26 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         }
 
         [TestMethod]
+        public void DataTypes_Resolver_Date_Sunday()
+        {
+            var today = new System.DateTime(2019, 4, 23, 15, 30, 0);
+            var resolution = TimexResolver.Resolve(new[] { "XXXX-WXX-7" }, today);
+            Assert.AreEqual(2, resolution.Values.Count);
+
+            Assert.AreEqual("XXXX-WXX-7", resolution.Values[0].Timex);
+            Assert.AreEqual("date", resolution.Values[0].Type);
+            Assert.AreEqual("2019-04-21", resolution.Values[0].Value);
+            Assert.IsNull(resolution.Values[0].Start);
+            Assert.IsNull(resolution.Values[0].End);
+
+            Assert.AreEqual("XXXX-WXX-7", resolution.Values[1].Timex);
+            Assert.AreEqual("date", resolution.Values[1].Type);
+            Assert.AreEqual("2019-04-28", resolution.Values[1].Value);
+            Assert.IsNull(resolution.Values[1].Start);
+            Assert.IsNull(resolution.Values[1].End);
+        }
+
+        [TestMethod]
         public void DataTypes_Resolver_DateTime_Wednesday_4()
         {
             var today = new System.DateTime(2017, 9, 28, 15, 30, 0);
@@ -230,6 +250,58 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.AreEqual("not resolved", resolution.Values[0].Value);
             Assert.IsNull(resolution.Values[0].Start);
             Assert.IsNull(resolution.Values[0].End);
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_DateRange_Last_Week()
+        {
+            var today = new System.DateTime(2019, 4, 30);
+            var resolution = TimexResolver.Resolve(new[] { "2019-W17" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("2019-W17", resolution.Values[0].Timex);
+            Assert.AreEqual("daterange", resolution.Values[0].Type);
+            Assert.AreEqual("2019-04-22", resolution.Values[0].Start);
+            Assert.AreEqual("2019-04-29", resolution.Values[0].End);
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_DateRange_Last_Month()
+        {
+            var today = new System.DateTime(2019, 4, 30);
+            var resolution = TimexResolver.Resolve(new[] { "2019-03" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("2019-03", resolution.Values[0].Timex);
+            Assert.AreEqual("daterange", resolution.Values[0].Type);
+            Assert.AreEqual("2019-03-01", resolution.Values[0].Start);
+            Assert.AreEqual("2019-04-01", resolution.Values[0].End);
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_DateRange_Last_Year()
+        {
+            var today = new System.DateTime(2019, 4, 30);
+            var resolution = TimexResolver.Resolve(new[] { "2018" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("2018", resolution.Values[0].Timex);
+            Assert.AreEqual("daterange", resolution.Values[0].Type);
+            Assert.AreEqual("2018-01-01", resolution.Values[0].Start);
+            Assert.AreEqual("2019-01-01", resolution.Values[0].End);
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_DateRange_Last_Three_Weeks()
+        {
+            var today = new System.DateTime(2019, 4, 30);
+            var resolution = TimexResolver.Resolve(new[] { "(2019-04-10,2019-05-01,P3W)" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("(2019-04-10,2019-05-01,P3W)", resolution.Values[0].Timex);
+            Assert.AreEqual("daterange", resolution.Values[0].Type);
+            Assert.AreEqual("2019-04-10", resolution.Values[0].Start);
+            Assert.AreEqual("2019-05-01", resolution.Values[0].End);
         }
 
         [TestMethod]

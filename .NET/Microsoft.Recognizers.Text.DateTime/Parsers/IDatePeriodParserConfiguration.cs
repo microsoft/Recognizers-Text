@@ -107,6 +107,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex UnspecificEndOfRangeRegex { get; }
 
+        Regex NowRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> CardinalMap { get; }
@@ -116,6 +118,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableDictionary<string, int> MonthOfYear { get; }
 
         IImmutableDictionary<string, string> SeasonMap { get; }
+
+        IImmutableDictionary<string, string> SpecialYearPrefixesMap { get; }
 
         IImmutableDictionary<string, int> WrittenDecades { get; }
 

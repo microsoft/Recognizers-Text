@@ -4,10 +4,15 @@
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------
 
 from .base_date_time import BaseDateTime
 # pylint: disable=line-too-long
+
+
 class SpanishDateTime:
     TillRegex = f'(?<till>hasta|al|a|--|-|—|——)(\\s+(el|la(s)?))?'
     AndRegex = f'(?<and>y|y\\s*el|--|-|—|——)'
@@ -22,6 +27,7 @@ class SpanishDateTime:
     RangePrefixRegex = f'((desde|de|entre)\\s+(la(s)?\\s+)?)'
     TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b'
     RelativeRegex = f'(?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fin(ales)?\\s+de(\\s+la)?)?)|(fin(ales)?\\s+de(\\s+la)?))\\b'
+    StrictRelativeRegex = f'(?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fin(ales)?\\s+de(\\s+la)?)?)|(fin(ales)?\\s+de(\\s+la)?))\\b'
     WrittenOneToNineRegex = f'(uno|un|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)'
     WrittenOneHundredToNineHundredRegex = f'(cien|ciento|doscient[oa]s|trescient[oa]s|cuatrocient[ao]s|quinient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s)'
     WrittenOneToNinetyNineRegex = f'(uno|un|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieciséis|dieciseis|diecisiete|dieciocho|diecinueve|veinte|veintiuno|veintiún|veintiun|veintiuna|veintidós|veintidos|veintitrés|veintitres|veinticuatro|veinticinco|veintiséis|veintisiete|veintiocho|veintinueve|((treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa)(\\s+y\\s+{WrittenOneToNineRegex})?))'
@@ -60,6 +66,7 @@ class SpanishDateTime:
     MonthOfRegex = f'(mes)(\\s+)({OfPrepositionRegex})'
     RangeUnitRegex = f'\\b(?<unit>años|año|meses|mes|semanas|semana)\\b'
     InConnectorRegex = f'\\b(in)\\b'
+    SinceYearSuffixRegex = f'^[.]'
     WithinNextPrefixRegex = f'\\b(dentro\\s+de)\\b'
     FromRegex = f'((desde|de)(\\s*la(s)?)?)$'
     ConnectorAndRegex = f'(y\\s*(la(s)?)?)$'
@@ -240,6 +247,7 @@ class SpanishDateTime:
                          ("segundo", 1),
                          ("segs", 1),
                          ("seg", 1)])
+    SpecialYearPrefixesMap = dict([("", "")])
     SeasonMap = dict([("primavera", "SP"),
                       ("verano", "SU"),
                       ("otoño", "FA"),
@@ -426,7 +434,7 @@ class SpanishDateTime:
     CommonDatePrefixRegex = f'^[\\.]'
     DurationUnitRegex = f'^[\\.]'
     DurationConnectorRegex = f'^[.]'
-    DateAfterRegex = f'^[.]'
+    SuffixAfterRegex = f'^[.]'
     YearPeriodRegex = f'^[.]'
     FutureSuffixRegex = f'\\b(despu[ée]s)\\b'
     WrittenDecades = dict([("", 0)])

@@ -32,17 +32,17 @@ build:
 build_script:
 - cmd: >-
     CALL wmic os get caption, version, osarchitecture
-
+    
     CALL node -v
-
+    
     CALL npm -v
-
+    
     CALL node -e "console.log(process.versions.v8);"
-
+    
     cd .NET\
     
     build.ci.cmd
-
+    
     cd ..\JavaScript\
     
     build.ci.cmd
@@ -50,7 +50,7 @@ build_script:
     cd ..\Python\
     
     build.ci.cmd
-
+    
     cd ..\java\
     
     build.ci.cmd
@@ -75,3 +75,5 @@ artifacts:
       name: NuGets
     - path: 'Java\libraries\**\recognizers-text*.jar'
       name: JARs
+    - path: 'Python\libraries\dist\*'
+      name: Wheels

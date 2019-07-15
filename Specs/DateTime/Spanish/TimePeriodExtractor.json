@@ -288,19 +288,6 @@
     ]
   },
   {
-    "Input": "Nos vemos por la tarde",
-    "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript, python",
-    "Results": [
-      {
-        "Text": "por la tarde",
-        "Type": "timerange",
-        "Start": 17,
-        "Length": 5
-      }
-    ]
-  },
-  {
     "Input": "Te veo a la noche",
     "Results": [
       {
@@ -347,19 +334,6 @@
         "Type": "timerange",
         "Start": 14,
         "Length": 14
-      }
-    ]
-  },
-  {
-    "Input": "Estaré afuera de 5 a 6 de la tarde",
-    "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript, python",
-    "Results": [
-      {
-        "Text": "de 5 a 6 de la tarde",
-        "Type": "timerange",
-        "Start": 14,
-        "Length": 20
       }
     ]
   },

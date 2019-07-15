@@ -7,7 +7,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {
     public class AreaExtractorConfiguration : EnglishNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> AreaSuffixList = NumbersWithUnitDefinitions.AreaSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> AreaSuffixList =
+            NumbersWithUnitDefinitions.AreaSuffixList.ToImmutableDictionary();
 
         public AreaExtractorConfiguration()
                : this(new CultureInfo(Culture.English))

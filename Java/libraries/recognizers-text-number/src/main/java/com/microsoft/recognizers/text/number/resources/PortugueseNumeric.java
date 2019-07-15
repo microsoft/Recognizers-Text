@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 package com.microsoft.recognizers.text.number.resources;
@@ -17,6 +20,10 @@ import com.google.common.collect.ImmutableMap;
 public class PortugueseNumeric {
 
     public static final String LangMarker = "Por";
+
+    public static final Boolean CompoundNumberLanguage = false;
+
+    public static final Boolean MultiDecimalSeparatorCulture = false;
 
     public static final String HundredsNumberIntegerRegex = "(quatrocent[ao]s|trezent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|duzent[ao]s|quinhent[ao]s|cem|(?<!por\\s+)(cento))";
 
@@ -77,7 +84,7 @@ public class PortugueseNumeric {
 
     public static String NumbersWithPlaceHolder(String placeholder) {
         return "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?={placeholder})"
-			.replace("{placeholder}", placeholder);
+            .replace("{placeholder}", placeholder);
     }
 
     public static final String NumbersWithSuffix = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)"
@@ -166,12 +173,12 @@ public class PortugueseNumeric {
 
     public static String DoubleDecimalPointRegex(String placeholder) {
         return "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))\\d+,\\d+(?!(,\\d+))(?={placeholder})"
-			.replace("{placeholder}", placeholder);
+            .replace("{placeholder}", placeholder);
     }
 
     public static String DoubleWithoutIntegralRegex(String placeholder) {
         return "(?<=\\s|^)(?<!(\\d+)),\\d+(?!(,\\d+))(?={placeholder})"
-			.replace("{placeholder}", placeholder);
+            .replace("{placeholder}", placeholder);
     }
 
     public static final String DoubleWithRoundNumber = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)"
@@ -512,7 +519,11 @@ public class PortugueseNumeric {
         .put("t", 1000000000000L)
         .build();
 
-    public static final ImmutableMap<String, String> RelativeReferenceMap = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> RelativeReferenceOffsetMap = ImmutableMap.<String, String>builder()
+        .put("", "")
+        .build();
+
+    public static final ImmutableMap<String, String> RelativeReferenceRelativeToMap = ImmutableMap.<String, String>builder()
         .put("", "")
         .build();
 }

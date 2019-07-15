@@ -242,8 +242,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static string ToIsoWeekTimex(DateObject date)
         {
             var cal = DateTimeFormatInfo.InvariantInfo.Calendar;
+            var thursday = cal.AddDays(date, DayOfWeek.Thursday - cal.GetDayOfWeek(date));
 
-            return $"{date.Year:D4}-W{cal.GetWeekOfYear(date, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday):D2}";
+            return $"{thursday.Year:D4}-W{cal.GetWeekOfYear(thursday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday):D2}";
         }
     }
 }

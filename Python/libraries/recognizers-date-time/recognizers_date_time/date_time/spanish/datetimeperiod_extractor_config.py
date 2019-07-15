@@ -16,6 +16,7 @@ from .duration_extractor_config import SpanishDurationExtractorConfiguration
 from .timeperiod_extractor_config import SpanishTimePeriodExtractorConfiguration
 from .datetime_extractor_config import SpanishDateTimeExtractorConfiguration
 
+
 class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
     @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
@@ -111,33 +112,56 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.PureNumBetweenAnd)
         ]
 
-        self._preposition_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PrepositionRegex)
-        self._till_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.TillRegex)
-        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.SpecificTimeOfDayRegex)
-        self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeOfDayRegex)
-        self._followed_unit = RegExpUtility.get_safe_reg_exp(SpanishDateTime.FollowedUnit)
-        self._time_unit_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.UnitRegex)
-        self._past_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PastRegex)
-        self._next_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.FutureRegex)
-        self._number_combined_with_unit = RegExpUtility.get_safe_reg_exp(SpanishDateTime.DateTimePeriodNumberCombinedWithUnit)
-        self._week_day_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.WeekDayRegex)
-        self._period_time_of_day_with_date_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PeriodTimeOfDayWithDateRegex)
-        self._relative_time_unit_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.RelativeTimeUnitRegex)
-        self._rest_of_date_time_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.RestOfDateTimeRegex)
-        self._general_ending_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.GeneralEndingRegex)
-        self._middle_pause_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.MiddlePauseRegex)
+        self._preposition_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.PrepositionRegex)
+        self._till_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.TillRegex)
+        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.SpecificTimeOfDayRegex)
+        self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.TimeOfDayRegex)
+        self._followed_unit = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.FollowedUnit)
+        self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.UnitRegex)
+        self._past_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.PastRegex)
+        self._next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.FutureRegex)
+        self._number_combined_with_unit = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.DateTimePeriodNumberCombinedWithUnit)
+        self._week_day_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.WeekDayRegex)
+        self._period_time_of_day_with_date_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.PeriodTimeOfDayWithDateRegex)
+        self._relative_time_unit_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.RelativeTimeUnitRegex)
+        self._rest_of_date_time_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.RestOfDateTimeRegex)
+        self._general_ending_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.GeneralEndingRegex)
+        self._middle_pause_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.MiddlePauseRegex)
 
-        self.from_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.FromRegex)
-        self.connector_and_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.ConnectorAndRegex)
-        self.between_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.BetweenRegex)
+        self.from_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.FromRegex)
+        self.connector_and_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.ConnectorAndRegex)
+        self.between_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.BetweenRegex)
 
         self._cardinal_extractor = SpanishCardinalExtractor()
 
-        self._single_date_extractor = BaseDateExtractor(SpanishDateExtractorConfiguration())
-        self._single_time_extractor = BaseTimeExtractor(SpanishTimeExtractorConfiguration())
-        self._single_date_time_extractor = BaseDateTimeExtractor(SpanishDateTimeExtractorConfiguration())
-        self._duration_extractor = BaseDurationExtractor(SpanishDurationExtractorConfiguration())
-        self._time_period_extractor = BaseTimePeriodExtractor(SpanishTimePeriodExtractorConfiguration())
+        self._single_date_extractor = BaseDateExtractor(
+            SpanishDateExtractorConfiguration())
+        self._single_time_extractor = BaseTimeExtractor(
+            SpanishTimeExtractorConfiguration())
+        self._single_date_time_extractor = BaseDateTimeExtractor(
+            SpanishDateTimeExtractorConfiguration())
+        self._duration_extractor = BaseDurationExtractor(
+            SpanishDurationExtractorConfiguration())
+        self._time_period_extractor = BaseTimePeriodExtractor(
+            SpanishTimePeriodExtractorConfiguration())
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)

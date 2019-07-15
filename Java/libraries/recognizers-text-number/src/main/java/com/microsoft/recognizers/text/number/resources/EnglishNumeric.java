@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 package com.microsoft.recognizers.text.number.resources;
@@ -18,29 +21,35 @@ public class EnglishNumeric {
 
     public static final String LangMarker = "Eng";
 
-    public static final String RoundNumberIntegerRegex = "(hundred|thousand|million|billion|trillion)";
+    public static final Boolean CompoundNumberLanguage = false;
 
-    public static final String ZeroToNineIntegerRegex = "(three|seven|eight|four|five|zero|nine|one|two|six)";
+    public static final Boolean MultiDecimalSeparatorCulture = true;
 
-    public static final String NegativeNumberTermsRegex = "((minus|negative)\\s+)";
+    public static final String RoundNumberIntegerRegex = "(?:hundred|thousand|million|billion|trillion)";
+
+    public static final String ZeroToNineIntegerRegex = "(?:three|seven|eight|four|five|zero|nine|one|two|six)";
+
+    public static final String TwoToNineIntegerRegex = "(?:three|seven|eight|four|five|nine|two|six)";
+
+    public static final String NegativeNumberTermsRegex = "(?<negTerm>(minus|negative)\\s+)";
 
     public static final String NegativeNumberSignRegex = "^{NegativeNumberTermsRegex}.*"
             .replace("{NegativeNumberTermsRegex}", NegativeNumberTermsRegex);
 
-    public static final String AnIntRegex = "(an|a)(?=\\s)";
+    public static final String AnIntRegex = "(an?)(?=\\s)";
 
-    public static final String TenToNineteenIntegerRegex = "(seventeen|thirteen|fourteen|eighteen|nineteen|fifteen|sixteen|eleven|twelve|ten)";
+    public static final String TenToNineteenIntegerRegex = "(?:seventeen|thirteen|fourteen|eighteen|nineteen|fifteen|sixteen|eleven|twelve|ten)";
 
-    public static final String TensNumberIntegerRegex = "(seventy|twenty|thirty|eighty|ninety|forty|fifty|sixty)";
+    public static final String TensNumberIntegerRegex = "(?:seventy|twenty|thirty|eighty|ninety|forty|fifty|sixty)";
 
-    public static final String SeparaIntRegex = "((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\\s+{RoundNumberIntegerRegex})+))"
+    public static final String SeparaIntRegex = "(?:(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\\s+{RoundNumberIntegerRegex})+))"
             .replace("{TenToNineteenIntegerRegex}", TenToNineteenIntegerRegex)
             .replace("{TensNumberIntegerRegex}", TensNumberIntegerRegex)
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex)
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex)
             .replace("{AnIntRegex}", AnIntRegex);
 
-    public static final String AllIntRegex = "(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\\s+{RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*{SeparaIntRegex})"
+    public static final String AllIntRegex = "(?:((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\\s+{RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*{SeparaIntRegex})"
             .replace("{TenToNineteenIntegerRegex}", TenToNineteenIntegerRegex)
             .replace("{TensNumberIntegerRegex}", TensNumberIntegerRegex)
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex)
@@ -54,7 +63,7 @@ public class EnglishNumeric {
 
     public static String NumbersWithPlaceHolder(String placeholder) {
         return "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!([\\.,]\\d+[a-zA-Z]))(?={placeholder})"
-			.replace("{placeholder}", placeholder);
+            .replace("{placeholder}", placeholder);
     }
 
     public static final String NumbersWithSuffix = "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)"
@@ -71,36 +80,36 @@ public class EnglishNumeric {
     public static final String AllIntRegexWithDozenSuffixLocks = "(?<=\\b)(((half\\s+)?a\\s+dozen)|({AllIntRegex}\\s+dozen(s)?))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex);
 
-    public static final String RoundNumberOrdinalRegex = "(hundredth|thousandth|millionth|billionth|trillionth)";
+    public static final String RoundNumberOrdinalRegex = "(?:hundredth|thousandth|millionth|billionth|trillionth)";
 
-    public static final String NumberOrdinalRegex = "(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
+    public static final String NumberOrdinalRegex = "(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
 
-    public static final String RelativeOrdinalRegex = "((next|previous) one|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next)";
+    public static final String RelativeOrdinalRegex = "(?<relativeOrdinal>(next|previous|current)\\s+one|(the\\s+second|next)\\s+to\\s+last|the\\s+one\\s+before\\s+the\\s+last(\\s+one)?|the\\s+last\\s+but\\s+one|(ante)?penultimate|last|next|previous|current)";
 
     public static final String BasicOrdinalRegex = "({NumberOrdinalRegex}|{RelativeOrdinalRegex})"
             .replace("{NumberOrdinalRegex}", NumberOrdinalRegex)
             .replace("{RelativeOrdinalRegex}", RelativeOrdinalRegex);
 
-    public static final String SuffixBasicOrdinalRegex = "((((({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\\s+{RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*({TensNumberIntegerRegex}(\\s+|\\s*-\\s*))?{BasicOrdinalRegex})"
+    public static final String SuffixBasicOrdinalRegex = "(?:(((({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\\s+{RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*({TensNumberIntegerRegex}(\\s+|\\s*-\\s*))?{BasicOrdinalRegex})"
             .replace("{TensNumberIntegerRegex}", TensNumberIntegerRegex)
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex)
             .replace("{AnIntRegex}", AnIntRegex)
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex)
             .replace("{BasicOrdinalRegex}", BasicOrdinalRegex);
 
-    public static final String SuffixRoundNumberOrdinalRegex = "(({AllIntRegex}\\s+){RoundNumberOrdinalRegex})"
+    public static final String SuffixRoundNumberOrdinalRegex = "(?:({AllIntRegex}\\s+){RoundNumberOrdinalRegex})"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
 
-    public static final String AllOrdinalRegex = "({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})"
+    public static final String AllOrdinalRegex = "(?:{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})"
             .replace("{SuffixBasicOrdinalRegex}", SuffixBasicOrdinalRegex)
             .replace("{SuffixRoundNumberOrdinalRegex}", SuffixRoundNumberOrdinalRegex);
 
-    public static final String OrdinalSuffixRegex = "(?<=\\b)((\\d*(1st|2nd|3rd|4th|5th|6th|7th|8th|9th|0th))|(11th|12th))(?=\\b)";
+    public static final String OrdinalSuffixRegex = "(?<=\\b)(?:(\\d*(1st|2nd|3rd|[4-90]th))|(1[1-2]th))(?=\\b)";
 
-    public static final String OrdinalNumericRegex = "(?<=\\b)(\\d{1,3}(\\s*,\\s*\\d{3})*\\s*th)(?=\\b)";
+    public static final String OrdinalNumericRegex = "(?<=\\b)(?:\\d{1,3}(\\s*,\\s*\\d{3})*\\s*th)(?=\\b)";
 
-    public static final String OrdinalRoundNumberRegex = "(?<!(a|an)\\s+){RoundNumberOrdinalRegex}"
+    public static final String OrdinalRoundNumberRegex = "(?<!an?\\s+){RoundNumberOrdinalRegex}"
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
 
     public static final String OrdinalEnglishRegex = "(?<=\\b){AllOrdinalRegex}(?=\\b)"
@@ -115,7 +124,7 @@ public class EnglishNumeric {
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
 
-    public static final String FractionNounWithArticleRegex = "(?<=\\b)({AllIntRegex}\\s+(and\\s+)?)?(a|an|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter)(?=\\b)"
+    public static final String FractionNounWithArticleRegex = "(?<=\\b)((({AllIntRegex}\\s+(and\\s+)?)?(an?|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter))|(half))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
@@ -143,12 +152,12 @@ public class EnglishNumeric {
 
     public static String DoubleDecimalPointRegex(String placeholder) {
         return "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})"
-			.replace("{placeholder}", placeholder);
+            .replace("{placeholder}", placeholder);
     }
 
     public static String DoubleWithoutIntegralRegex(String placeholder) {
         return "(?<=\\s|^)(?<!(\\d+))[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})"
-			.replace("{placeholder}", placeholder);
+            .replace("{placeholder}", placeholder);
     }
 
     public static final String DoubleWithRoundNumber = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)"
@@ -159,13 +168,13 @@ public class EnglishNumeric {
 
     public static final String ConnectorRegex = "(?<spacer>and)";
 
-    public static final String NumberWithSuffixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(per cents|per cent|cents|cent|percentage|percents|percent)\\b)"
+    public static final String NumberWithSuffixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(per\\s*cents?|percentage|cents?)\\b)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
     public static final String FractionNumberWithSuffixPercentage = "(({BaseNumbers.FractionNumberReplaceToken})\\s+of)"
             .replace("{BaseNumbers.FractionNumberReplaceToken}", BaseNumbers.FractionNumberReplaceToken);
 
-    public static final String NumberWithPrefixPercentage = "(per cent of|percent of|percents of)(\\s*)({BaseNumbers.NumberReplaceToken})"
+    public static final String NumberWithPrefixPercentage = "(per\\s*cents?\\s+of)(\\s*)({BaseNumbers.NumberReplaceToken})"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
     public static final String NumberWithPrepositionPercentage = "({BaseNumbers.NumberReplaceToken})\\s*(in|out\\s+of)\\s*({BaseNumbers.NumberReplaceToken})"
@@ -173,24 +182,24 @@ public class EnglishNumeric {
 
     public static final String TillRegex = "(to|through|--|-|—|——|~|–)";
 
-    public static final String MoreRegex = "((bigger|greater|more|higher|larger)(\\s+than)?|above|over|(?<!<|=)>)";
+    public static final String MoreRegex = "(?:(bigger|greater|more|higher|larger)(\\s+than)?|above|over|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)";
 
-    public static final String LessRegex = "((less|lower|smaller|fewer)(\\s+than)?|below|under|(?<!>|=)<)";
+    public static final String LessRegex = "(?:(less|lower|smaller|fewer)(\\s+than)?|below|under|(?<!>|=)<)";
 
     public static final String EqualRegex = "(equal(s|ing)?(\\s+(to|than))?|(?<!<|>)=)";
 
     public static final String MoreOrEqualPrefix = "((no\\s+{LessRegex})|(at\\s+least))"
             .replace("{LessRegex}", LessRegex);
 
-    public static final String MoreOrEqual = "(({MoreRegex}\\s+(or)?\\s+{EqualRegex})|({EqualRegex}\\s+(or)?\\s+{MoreRegex})|{MoreOrEqualPrefix}(\\s+(or)?\\s+{EqualRegex})?|({EqualRegex}\\s+(or)?\\s+)?{MoreOrEqualPrefix}|>\\s*=)"
+    public static final String MoreOrEqual = "(?:({MoreRegex}\\s+(or)?\\s+{EqualRegex})|({EqualRegex}\\s+(or)?\\s+{MoreRegex})|{MoreOrEqualPrefix}(\\s+(or)?\\s+{EqualRegex})?|({EqualRegex}\\s+(or)?\\s+)?{MoreOrEqualPrefix}|>\\s*=)"
             .replace("{MoreRegex}", MoreRegex)
             .replace("{EqualRegex}", EqualRegex)
             .replace("{LessRegex}", LessRegex)
             .replace("{MoreOrEqualPrefix}", MoreOrEqualPrefix);
 
-    public static final String MoreOrEqualSuffix = "((and|or)\\s+(more|greater|higher|larger|bigger)((?!\\s+than)|(\\s+than(?!(\\s*\\d+)))))";
+    public static final String MoreOrEqualSuffix = "((and|or)\\s+(((more|greater|higher|larger|bigger)((?!\\s+than)|(\\s+than(?!(\\s*\\d+)))))|((over|above)(?!\\s+than))))";
 
-    public static final String LessOrEqualPrefix = "((no\\s+{MoreRegex})|(at\\s+most))"
+    public static final String LessOrEqualPrefix = "((no\\s+{MoreRegex})|(at\\s+most)|(up\\s+to))"
             .replace("{MoreRegex}", MoreRegex);
 
     public static final String LessOrEqual = "(({LessRegex}\\s+(or)?\\s+{EqualRegex})|({EqualRegex}\\s+(or)?\\s+{LessRegex})|{LessOrEqualPrefix}(\\s+(or)?\\s+{EqualRegex})?|({EqualRegex}\\s+(or)?\\s+)?{LessOrEqualPrefix}|<\\s*=)"
@@ -286,7 +295,7 @@ public class EnglishNumeric {
 
     public static final String HalfADozenRegex = "half\\s+a\\s+dozen";
 
-    public static final String DigitalNumberRegex = "((?<=\\b)(hundred|thousand|million|billion|trillion|dozen(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
+    public static final String DigitalNumberRegex = "((?<=\\b)(hundred|thousand|[mb]illion|trillion|dozen(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
             .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
 
     public static final ImmutableMap<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
@@ -429,16 +438,37 @@ public class EnglishNumeric {
         .put("\\bone\\b", "\\b(the|this|that|which)\\s+(one)\\b")
         .build();
 
-    public static final ImmutableMap<String, String> RelativeReferenceMap = ImmutableMap.<String, String>builder()
-        .put("last", "N")
-        .put("next one", "CURR+1")
-        .put("previous one", "CURR-1")
-        .put("the second to last", "N-1")
-        .put("the one before the last one", "N-1")
-        .put("next to last", "N-1")
-        .put("penultimate", "N-1")
-        .put("the last but one", "N-1")
-        .put("antepenultimate", "N-2")
-        .put("next", "CURR+1")
+    public static final ImmutableMap<String, String> RelativeReferenceOffsetMap = ImmutableMap.<String, String>builder()
+        .put("last", "0")
+        .put("next one", "1")
+        .put("current", "0")
+        .put("current one", "0")
+        .put("previous one", "-1")
+        .put("the second to last", "-1")
+        .put("the one before the last one", "-1")
+        .put("the one before the last", "-1")
+        .put("next to last", "-1")
+        .put("penultimate", "-1")
+        .put("the last but one", "-1")
+        .put("antepenultimate", "-2")
+        .put("next", "1")
+        .put("previous", "-1")
+        .build();
+
+    public static final ImmutableMap<String, String> RelativeReferenceRelativeToMap = ImmutableMap.<String, String>builder()
+        .put("last", "end")
+        .put("next one", "current")
+        .put("previous one", "current")
+        .put("current", "current")
+        .put("current one", "current")
+        .put("the second to last", "end")
+        .put("the one before the last one", "end")
+        .put("the one before the last", "end")
+        .put("next to last", "end")
+        .put("penultimate", "end")
+        .put("the last but one", "end")
+        .put("antepenultimate", "end")
+        .put("next", "current")
+        .put("previous", "current")
         .build();
 }

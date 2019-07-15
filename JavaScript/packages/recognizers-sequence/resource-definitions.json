@@ -57,6 +57,24 @@
                 "export namespace BaseGUID {"
             ],
             "footer": [ "}" ]
+        },
+        {
+            "input": [ "Chinese", "Chinese-URL" ],
+            "output": "chineseURL",
+            "header": [
+                "import { BaseIp } from \"./baseIp\";",
+                "import { BaseURL } from \"./baseURL\";",
+                "export namespace ChineseURL {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": [ "Chinese", "Chinese-PhoneNumbers" ],
+            "output": "chinesePhoneNumbers",
+            "header": [
+                "export namespace ChinesePhoneNumbers {"
+            ],
+            "footer": [ "}" ]
         }
     ]
 }

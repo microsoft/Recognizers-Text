@@ -13,15 +13,20 @@ from ..parsers import DateTimeParseResult
 from ..base_date import BaseDateParser
 from .date_parser_config import ChineseDateParserConfiguration
 
+
 class ChineseDateParser(BaseDateParser):
     def __init__(self):
         super().__init__(ChineseDateParserConfiguration())
-        self.lunar_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.LunarRegex)
-        self.special_date_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SpecialDate)
-        self.token_next_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateNextRe)
-        self.token_last_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateLastRe)
-        self.month_max_days: List[int] = [ 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
-
+        self.lunar_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.LunarRegex)
+        self.special_date_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.SpecialDate)
+        self.token_next_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DateNextRe)
+        self.token_last_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DateLastRe)
+        self.month_max_days: List[int] = [
+            31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
         if reference is None:
@@ -37,17 +42,22 @@ class ChineseDateParser(BaseDateParser):
                 inner_result = self.parse_implicit_date(source_text, reference)
 
             if not inner_result.success:
-                inner_result = self.parse_weekday_of_month(source_text, reference)
+                inner_result = self.parse_weekday_of_month(
+                    source_text, reference)
 
             if not inner_result.success:
-                inner_result = self.parser_duration_with_ago_and_later(source_text, reference)
+                inner_result = self.parser_duration_with_ago_and_later(
+                    source_text, reference)
 
             if inner_result.success:
                 inner_result.future_resolution: Dict[str, str] = dict()
-                inner_result.future_resolution[TimeTypeConstants.DATE] = DateTimeFormatUtil.format_date(inner_result.future_value)
+                inner_result.future_resolution[TimeTypeConstants.DATE] = DateTimeFormatUtil.format_date(
+                    inner_result.future_value)
                 inner_result.past_resolution: Dict[str, str] = dict()
-                inner_result.past_resolution[TimeTypeConstants.DATE] = DateTimeFormatUtil.format_date(inner_result.past_value)
-                inner_result.is_lunar = self.__parse_lunar_calendar(source_text)
+                inner_result.past_resolution[TimeTypeConstants.DATE] = DateTimeFormatUtil.format_date(
+                    inner_result.past_value)
+                inner_result.is_lunar = self.__parse_lunar_calendar(
+                    source_text)
                 result_value = inner_result
 
         result = DateTimeParseResult(source)
@@ -108,7 +118,8 @@ class ChineseDateParser(BaseDateParser):
                     elif regex.search(self.token_last_regex, year_str):
                         year -= 1
 
-            result.timex = DateTimeFormatUtil.luis_date(year if has_year else -1, month if has_month else -1, day)
+            result.timex = DateTimeFormatUtil.luis_date(
+                year if has_year else -1, month if has_month else -1, day)
 
             future_date: datetime
             past_date: datetime
@@ -127,21 +138,29 @@ class ChineseDateParser(BaseDateParser):
                     pastMonth = Constants.MaxMonth
                     pastYear = year - 1
 
-                isFutureValid = DateUtils.is_valid_date(futureYear, futureMonth, day)
+                isFutureValid = DateUtils.is_valid_date(
+                    futureYear, futureMonth, day)
                 isPastValid = DateUtils.is_valid_date(pastYear, pastMonth, day)
 
                 if isFutureValid and isPastValid:
-                    future_date = DateUtils.safe_create_from_min_value(futureYear, futureMonth, day)
-                    past_date = DateUtils.safe_create_from_min_value(pastYear, pastMonth, day)
+                    future_date = DateUtils.safe_create_from_min_value(
+                        futureYear, futureMonth, day)
+                    past_date = DateUtils.safe_create_from_min_value(
+                        pastYear, pastMonth, day)
                 elif isFutureValid and not isPastValid:
-                    future_date = past_date = DateUtils.safe_create_from_min_value(futureYear, futureMonth, day)
+                    future_date = past_date = DateUtils.safe_create_from_min_value(
+                        futureYear, futureMonth, day)
                 elif not isFutureValid and not isPastValid:
-                    future_date = past_date = DateUtils.safe_create_from_min_value(pastYear,pastMonth, day)
+                    future_date = past_date = DateUtils.safe_create_from_min_value(
+                        pastYear, pastMonth, day)
                 else:
-                    future_date = past_date = DateUtils.safe_create_from_min_value(year, month, day)
+                    future_date = past_date = DateUtils.safe_create_from_min_value(
+                        year, month, day)
             else:
-                future_date = DateUtils.safe_create_from_min_value(year, month, day)
-                past_date = DateUtils.safe_create_from_min_value(year, month, day)
+                future_date = DateUtils.safe_create_from_min_value(
+                    year, month, day)
+                past_date = DateUtils.safe_create_from_min_value(
+                    year, month, day)
 
                 if not has_month:
                     if future_date < reference:
@@ -181,7 +200,8 @@ class ChineseDateParser(BaseDateParser):
         match = regex.match(self.config.this_regex, trimmed_source)
         if match and match.start() == 0 and len(match.group()) == len(trimmed_source):
             weekday_str = RegExpUtility.get_group(match, 'weekday')
-            value = DateUtils.this(reference, self.config.day_of_week.get(weekday_str))
+            value = DateUtils.this(
+                reference, self.config.day_of_week.get(weekday_str))
 
             result.timex = DateTimeFormatUtil.luis_date_from_datetime(value)
             result.future_value = value
@@ -193,7 +213,8 @@ class ChineseDateParser(BaseDateParser):
         match = regex.match(self.config.next_regex, trimmed_source)
         if match and match.start() == 0 and len(match.group()) == len(trimmed_source):
             weekday_str = RegExpUtility.get_group(match, 'weekday')
-            value = DateUtils.next(reference, self.config.day_of_week.get(weekday_str))
+            value = DateUtils.next(
+                reference, self.config.day_of_week.get(weekday_str))
 
             result.timex = DateTimeFormatUtil.luis_date_from_datetime(value)
             result.future_value = value
@@ -205,7 +226,8 @@ class ChineseDateParser(BaseDateParser):
         match = regex.match(self.config.last_regex, trimmed_source)
         if match and match.start() == 0 and len(match.group()) == len(trimmed_source):
             weekday_str = RegExpUtility.get_group(match, 'weekday')
-            value = DateUtils.last(reference, self.config.day_of_week.get(weekday_str))
+            value = DateUtils.last(
+                reference, self.config.day_of_week.get(weekday_str))
 
             result.timex = DateTimeFormatUtil.luis_date_from_datetime(value)
             result.future_value = value
@@ -243,7 +265,7 @@ class ChineseDateParser(BaseDateParser):
 
         return result
 
-    def match_to_date(self, match, reference: datetime)-> DateTimeResolutionResult:
+    def match_to_date(self, match, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
         year_str = RegExpUtility.get_group(match, 'year')
         year_chs = RegExpUtility.get_group(match, 'yearchs')
@@ -279,10 +301,12 @@ class ChineseDateParser(BaseDateParser):
         past_date = DateUtils.safe_create_from_min_value(year, month, day)
 
         if no_year and future_date < reference:
-            future_date = DateUtils.safe_create_from_min_value(year + 1, month, day)
+            future_date = DateUtils.safe_create_from_min_value(
+                year + 1, month, day)
 
         if no_year and past_date >= reference:
-            past_date = DateUtils.safe_create_from_min_value(year - 1, month, day)
+            past_date = DateUtils.safe_create_from_min_value(
+                year - 1, month, day)
 
         result.future_value = future_date
         result.past_value = past_date
@@ -291,7 +315,8 @@ class ChineseDateParser(BaseDateParser):
 
     def convert_chinese_year_to_number(self, source: str) -> int:
         year = 0
-        er: ExtractResult = next(iter(self.config.integer_extractor.extract(source)), None)
+        er: ExtractResult = next(
+            iter(self.config.integer_extractor.extract(source)), None)
         if er and er.type == NumberConstants.SYS_NUM_INTEGER:
             year = int(self.config.number_parser.parse(er).value)
 
@@ -299,9 +324,11 @@ class ChineseDateParser(BaseDateParser):
             year = 0
             for char in source:
                 year = year * 10
-                er = next(iter(self.config.integer_extractor.extract(char)), None)
+                er = next(
+                    iter(self.config.integer_extractor.extract(char)), None)
                 if er and er.type == NumberConstants.SYS_NUM_INTEGER:
-                    year = year + int(self.config.number_parser.parse(er).value)
+                    year = year + \
+                        int(self.config.number_parser.parse(er).value)
 
         return -1 if year < 10 else year
 

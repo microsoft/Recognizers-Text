@@ -4,17 +4,26 @@
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------
 
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
+
+
 class ChineseNumeric:
-    LangMarker = ''
+    LangMarker = 'Chs'
+    CompoundNumberLanguage = True
+    MultiDecimalSeparatorCulture = True
     DecimalSeparatorChar = '.'
     FractionMarkerToken = ''
     NonDecimalSeparatorChar = ' '
     HalfADozenText = ''
     WordSeparatorToken = ''
+    ZeroChar = '零'
+    PairChar = '对'
     RoundNumberMap = dict([("k", 1000),
                            ("m", 1000000),
                            ("g", 1000000000),
@@ -114,6 +123,7 @@ class ChineseNumeric:
                     ("余", ""),
                     ("几", "")])
     RoundDirectList = [r'万', r'萬', r'亿', r'兆', r'億']
+    TenChars = [r'十', r'拾']
     DigitalNumberRegex = f'((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     ZeroToNineFullHalfRegex = f'[\\d１２３４５６７８９０]'
     DigitNumRegex = f'{ZeroToNineFullHalfRegex}+'
@@ -202,5 +212,6 @@ class ChineseNumeric:
     TwoNumberRangeRegex3 = f'({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})\\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|[,，])?\\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})'
     TwoNumberRangeRegex4 = f'(?<number1>((?!(([,，](?!\\d+))|。)).)+)\\s*{TillRegex}\\s*(?<number2>((?!(([,，](?!\\d+))|。)).)+)'
     AmbiguousFractionConnectorsRegex = f'^[.]'
-    RelativeReferenceMap = dict([("", "")])
+    RelativeReferenceOffsetMap = dict([("", "")])
+    RelativeReferenceRelativeToMap = dict([("", "")])
 # pylint: enable=line-too-long

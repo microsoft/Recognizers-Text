@@ -15,6 +15,7 @@ from recognizers_number.culture import CultureInfo
 
 getcontext().prec = 15
 
+
 class ChineseNumberParserConfiguration(NumberParserConfiguration):
     @property
     def cardinal_number_map(self) -> Dict[str, int]:
@@ -65,6 +66,14 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
         return self._decimal_separator_char
 
     @property
+    def zero_char(self) -> str:
+        return self._zero_char
+
+    @property
+    def pair_char(self) -> str:
+        return self._pair_char
+
+    @property
     def word_separator_token(self) -> str:
         return self._word_separator_token
 
@@ -107,6 +116,10 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
     @property
     def round_direct_list(self) -> List[str]:
         return self._round_direct_list
+
+    @property
+    def ten_chars(self) -> List[str]:
+        return self._ten_chars
 
     @property
     def digit_num_regex(self) -> Pattern:
@@ -155,9 +168,12 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
         self._non_decimal_separator_char = ChineseNumeric.NonDecimalSeparatorChar
         self._half_a_dozen_text = ChineseNumeric.HalfADozenText
         self._word_separator_token = ChineseNumeric.WordSeparatorToken
+        self._zero_char = ChineseNumeric.ZeroChar
+        self._pair_char = ChineseNumeric.PairChar
 
         self._round_number_map = ChineseNumeric.RoundNumberMap
-        self._digital_number_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.DigitalNumberRegex)
+        self._digital_number_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseNumeric.DigitalNumberRegex)
 
         self._zero_to_nine_map = ChineseNumeric.ZeroToNineMap
         self._round_number_map_char = ChineseNumeric.RoundNumberMapChar
@@ -165,16 +181,22 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
         self._trato_sim_map = ChineseNumeric.TratoSimMap
         self._unit_map = ChineseNumeric.UnitMap
         self._round_direct_list = ChineseNumeric.RoundDirectList
+        self._ten_chars = ChineseNumeric.TenChars
 
         self._digit_num_regex = ChineseNumeric.DigitNumRegex
         self._dozen_regex = ChineseNumeric.DozenRegex
         self._percentage_regex = ChineseNumeric.PercentageRegex
-        self._double_and_round_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.DoubleAndRoundRegex)
-        self._frac_split_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.FracSplitRegex)
-        self._negative_number_sign_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.NegativeNumberSignRegex)
+        self._double_and_round_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseNumeric.DoubleAndRoundRegex)
+        self._frac_split_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseNumeric.FracSplitRegex)
+        self._negative_number_sign_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseNumeric.NegativeNumberSignRegex)
         self._point_regex = ChineseNumeric.PointRegex
-        self._spe_get_number_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.SpeGetNumberRegex)
-        self._pair_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.PairRegex)
+        self._spe_get_number_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseNumeric.SpeGetNumberRegex)
+        self._pair_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseNumeric.PairRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
         return tokens

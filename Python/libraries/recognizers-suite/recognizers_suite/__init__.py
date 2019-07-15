@@ -4,3 +4,4 @@ from recognizers_number.number.number_recognizer import recognize_number, recogn
 from recognizers_number_with_unit.number_with_unit.number_with_unit_recognizer import recognize_age, recognize_currency, recognize_dimension, recognize_temperature, NumberWithUnitOptions
 from recognizers_date_time.date_time.date_time_recognizer import recognize_datetime, DateTimeOptions
 from recognizers_sequence.sequence.sequence_recognizer import recognize_phone_number, recognize_email, SequenceOptions
+from recognizers_choice.choice.recognizers_choice import *

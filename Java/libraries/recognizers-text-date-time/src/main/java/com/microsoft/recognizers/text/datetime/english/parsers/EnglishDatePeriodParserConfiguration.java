@@ -77,12 +77,14 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         centurySuffixRegex = EnglishDatePeriodExtractorConfiguration.CenturySuffixRegex;
         relativeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeRegex);
         unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificEndOfRangeRegex);
+        nowRegex = EnglishDatePeriodExtractorConfiguration.NowRegex;
 
         unitMap = config.getUnitMap();
         cardinalMap = config.getCardinalMap();
         dayOfMonth = config.getDayOfMonth();
         monthOfYear = config.getMonthOfYear();
         seasonMap = config.getSeasonMap();
+        specialYearPrefixesMap = config.getSpecialYearPrefixesMap();
         writtenDecades = config.getWrittenDecades();
         numbers = config.getNumbers();
         specialDecadeCases = config.getSpecialDecadeCases();
@@ -151,6 +153,7 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     private final Pattern previousPrefixRegex;
     private final Pattern thisPrefixRegex;
     private final Pattern afterNextSuffixRegex;
+    private final Pattern nowRegex;
 
     // Dictionaries
     private final ImmutableMap<String, String> unitMap;
@@ -158,6 +161,7 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     private final ImmutableMap<String, Integer> dayOfMonth;
     private final ImmutableMap<String, Integer> monthOfYear;
     private final ImmutableMap<String, String> seasonMap;
+    private final ImmutableMap<String, String> specialYearPrefixesMap;
     private final ImmutableMap<String, Integer> writtenDecades;
     private final ImmutableMap<String, Integer> numbers;
     private final ImmutableMap<String, Integer> specialDecadeCases;
@@ -418,6 +422,11 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     }
 
     @Override
+    public Pattern getNowRegex() {
+        return nowRegex;
+    }
+
+    @Override
     public ImmutableMap<String, String> getUnitMap() {
         return unitMap;
     }
@@ -440,6 +449,11 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     @Override
     public ImmutableMap<String, String> getSeasonMap() {
         return seasonMap;
+    }
+
+    @Override
+    public ImmutableMap<String, String> getSpecialYearPrefixesMap() {
+        return specialYearPrefixesMap;
     }
 
     @Override

@@ -210,7 +210,12 @@ export class BaseNumberParser implements IParser {
             let splitIndex = fracWords.length - 1;
             let currentValue = this.config.resolveCompositeNumber(fracWords[splitIndex]);
             let roundValue = 1;
-
+            
+            if (fracWords.length == 1){
+                result.value = 1 / this.getIntValue(fracWords);
+                return result
+            }
+            
             for (splitIndex = fracWords.length - 2; splitIndex >= 0; splitIndex--) {
 
                 if (this.config.writtenFractionSeparatorTexts.indexOf(fracWords[splitIndex]) > -1 ||

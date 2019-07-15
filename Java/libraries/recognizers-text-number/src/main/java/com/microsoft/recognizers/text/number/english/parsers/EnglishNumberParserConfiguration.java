@@ -25,6 +25,8 @@ public class EnglishNumberParserConfiguration extends BaseNumberParserConfigurat
         super(
                 EnglishNumeric.LangMarker,
                 cultureInfo,
+                EnglishNumeric.CompoundNumberLanguage,
+                EnglishNumeric.MultiDecimalSeparatorCulture,
                 options,
                 EnglishNumeric.NonDecimalSeparatorChar,
                 EnglishNumeric.DecimalSeparatorChar,

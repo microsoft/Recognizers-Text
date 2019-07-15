@@ -1,10 +1,14 @@
 ---
 LangMarker: Spa
+#Does this language use non-whitespace-separated numbers?
+CompoundNumberLanguage: !bool false
+#Does this culture uses period and comma intercheangeably as decimal separator?
+MultiDecimalSeparatorCulture: !bool true
 #Integer Regex
 HundredsNumberIntegerRegex: !simpleRegex
   def: (cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\s+)(cien(to)?))
 RoundNumberIntegerRegex: !simpleRegex
-  def: (mil millones|mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|cuatrillones|cuatrill[oó]n|quintillones|quintill[oó]n|sextillones|sextill[oó]n|septillones|septill[oó]n)
+  def: (mil millones|millones|mill[oó]n|mil|billones|bill[oó]n|trillones|trill[oó]n|cuatrillones|cuatrill[oó]n|quintillones|quintill[oó]n|sextillones|sextill[oó]n|septillones|septill[oó]n)
 ZeroToNineIntegerRegex: !simpleRegex
   def: (cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|un[ao]?)
 TenToNineteenIntegerRegex: !simpleRegex
@@ -14,8 +18,7 @@ TwentiesIntegerRegex: !simpleRegex
 TensNumberIntegerRegex: !simpleRegex
   def: (cincuenta|cuarenta|treinta|sesenta|setenta|ochenta|noventa)
 NegativeNumberTermsRegex: !simpleRegex
-   # TODO: modify below regex according to the counterpart in English
-  def: ((?<!(al|lo)\s+)menos\s+)
+  def: (?<negTerm>(?<!(al|lo)\s+)menos\s+)
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*
   references: [ NegativeNumberTermsRegex ]
@@ -61,7 +64,7 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
 SimpleRoundOrdinalRegex: !simpleRegex
   def: (mil[eé]simo|millon[eé]sim[oa]|billon[eé]sim[oa]|trillon[eé]sim[oa]|cuatrillon[eé]sim[oa]|quintillon[eé]sim[oa]|sextillon[eé]sim[oa]|septillon[eé]sim[oa])
 OneToNineOrdinalRegex: !simpleRegex
-  def: (primer[oa]|segund[oa]|tercer[oa]|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa])
+  def: (primer[oa]?|segund[oa]|tercer[oa]?|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa])
 TensOrdinalRegex: !simpleRegex
   def: (nonag[eé]sim[oa]|octog[eé]sim[oa]|septuag[eé]sim[oa]|sexag[eé]sim[oa]|quincuag[eé]sim[oa]|cuadrag[eé]sim[oa]|trig[eé]sim[oa]|vig[eé]sim[oa]|d[eé]cim[oa])
 HundredOrdinalRegex: !simpleRegex
@@ -69,7 +72,7 @@ HundredOrdinalRegex: !simpleRegex
 SpecialUnderHundredOrdinalRegex: !simpleRegex
   def: (und[eé]cim[oa]|duod[eé]cimo|decimoctav[oa])
 UnderHundredOrdinalRegex: !nestedRegex
-  def: ((({TensOrdinalRegex}(\s)?)?{OneToNineOrdinalRegex})|{TensOrdinalRegex}|{SpecialUnderHundredOrdinalRegex})
+  def: ({SpecialUnderHundredOrdinalRegex}|(({TensOrdinalRegex}(\s)?)?{OneToNineOrdinalRegex})|{TensOrdinalRegex})
   references: [ TensOrdinalRegex, OneToNineOrdinalRegex, SpecialUnderHundredOrdinalRegex ]
 UnderThousandOrdinalRegex: !nestedRegex
   def: ((({HundredOrdinalRegex}(\s)?)?{UnderHundredOrdinalRegex})|{HundredOrdinalRegex})
@@ -332,7 +335,9 @@ OrdinalNumberMap: !dictionary
     noveno: 9
     novena: 9
     decimo: 10
+    décimo: 10
     decima: 10
+    décima: 10
     undecimo: 11
     undecima: 11
     duodecimo: 12
@@ -471,9 +476,14 @@ RoundNumberMap: !dictionary
     g: 1000000000
     b: 1000000000
     t: 1000000000000
-# TODO: modify below regex according to the counterpart in English
-RelativeReferenceMap: !dictionary
+RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
+# TODO: modify below regex according to the counterpart in English
+  entries:
+    '': ''
+RelativeReferenceRelativeToMap: !dictionary
+  types: [ string, string ]
+# TODO: modify below regex according to the counterpart in English
   entries:
     '': ''
 ...

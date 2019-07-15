@@ -27,6 +27,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex RelativeMonthRegex { get; }
 
+        Regex StrictRelativeRegex { get; }
+
         Regex WeekDayRegex { get; }
 
         Regex PrefixArticleRegex { get; }
@@ -38,6 +40,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex LessThanRegex { get; }
 
         Regex InConnectorRegex { get; }
+
+        Regex SinceYearSuffixRegex { get; }
 
         Regex RangeUnitRegex { get; }
 

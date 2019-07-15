@@ -16,6 +16,10 @@ namespace Microsoft.Recognizers.Text.Number
 
         ImmutableDictionary<string, string> RelativeReferenceMap { get; }
 
+        ImmutableDictionary<string, string> RelativeReferenceOffsetMap { get; }
+
+        ImmutableDictionary<string, string> RelativeReferenceRelativeToMap { get; }
+
         NumberOptions Options { get; }
 
         CultureInfo CultureInfo { get; }
@@ -48,6 +52,10 @@ namespace Microsoft.Recognizers.Text.Number
 
         Regex NegativeNumberSignRegex { get; }
 
+        bool IsCompoundNumberLanguage { get; }
+
+        bool IsMultiDecimalSeparatorCulture { get; }
+
         /// <summary>
         /// Used when requiring to normalize a token to a valid expression supported by the ImmutableDictionaries (language dictionaries).
         /// </summary>
@@ -73,6 +81,10 @@ namespace Microsoft.Recognizers.Text.Number
         public ImmutableDictionary<string, long> RoundNumberMap { get; set; }
 
         public ImmutableDictionary<string, string> RelativeReferenceMap { get; set; }
+
+        public ImmutableDictionary<string, string> RelativeReferenceOffsetMap { get; set; }
+
+        public ImmutableDictionary<string, string> RelativeReferenceRelativeToMap { get; set; }
 
         public NumberOptions Options { get; set; }
 
@@ -105,6 +117,10 @@ namespace Microsoft.Recognizers.Text.Number
         public IEnumerable<string> WrittenFractionSeparatorTexts { get; set; }
 
         public Regex NegativeNumberSignRegex { get; set; }
+
+        public bool IsCompoundNumberLanguage { get; set; }
+
+        public bool IsMultiDecimalSeparatorCulture { get; set; }
 
         public virtual long ResolveCompositeNumber(string numberStr)
         {

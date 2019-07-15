@@ -16,7 +16,6 @@ using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.Sequence;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -94,6 +93,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             { Models.NumberPercentMode, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false) },
             { Models.NumberExperimentalMode, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, NumberOptions.ExperimentalMode, fallbackToDefaultCulture: false) },
             { Models.Ordinal, (test, culture) => NumberRecognizer.RecognizeOrdinal(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.OrdinalSuppressExtendedTypes, (test, culture) => NumberRecognizer.RecognizeOrdinal(test.Input, culture, NumberOptions.SuppressExtendedTypes, fallbackToDefaultCulture: false) },
             { Models.Percent, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.PercentPercentMode, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false) },
             { Models.NumberRange, (test, culture) => NumberRecognizer.RecognizeNumberRange(test.Input, culture, fallbackToDefaultCulture: false) },

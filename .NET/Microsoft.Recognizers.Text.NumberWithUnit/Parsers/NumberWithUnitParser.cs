@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -40,7 +41,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             {
                 numberResult = unitResult;
             }
-            else if (extResult.Type.Equals(Constants.SYS_NUM))
+            else if (extResult.Type.Equals(Constants.SYS_NUM, StringComparison.Ordinal))
             {
                 ret.Value = Config.InternalNumberParser.Parse(extResult).Value;
                 return ret;

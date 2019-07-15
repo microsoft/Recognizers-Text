@@ -7,9 +7,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 {
     public class VolumeExtractorConfiguration : FrenchNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> VolumeSuffixList = NumbersWithUnitDefinitions.VolumeSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> VolumeSuffixList =
+            NumbersWithUnitDefinitions.VolumeSuffixList.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousVolumeUnitList.ToImmutableList();
+        private static readonly ImmutableList<string> AmbiguousValues =
+            NumbersWithUnitDefinitions.AmbiguousVolumeUnitList.ToImmutableList();
 
         public VolumeExtractorConfiguration()
             : this(new CultureInfo(Culture.French))

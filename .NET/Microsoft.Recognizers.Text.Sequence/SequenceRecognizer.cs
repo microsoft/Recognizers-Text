@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Microsoft.Recognizers.Text.Sequence;
+using Microsoft.Recognizers.Text.Sequence.Chinese;
 using Microsoft.Recognizers.Text.Sequence.English;
 
 namespace Microsoft.Recognizers.Text.Sequence
@@ -64,6 +65,13 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public IModel GetPhoneNumberModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
+            if (culture != null && (
+                culture.ToLowerInvariant().StartsWith("zh-", StringComparison.InvariantCulture) ||
+                culture.ToLowerInvariant().StartsWith("ja-", StringComparison.InvariantCulture)))
+            {
+                return GetModel<PhoneNumberModel>(Culture.Chinese, fallbackToDefaultCulture);
+            }
+
             return GetModel<PhoneNumberModel>(Culture.English, fallbackToDefaultCulture);
         }
 
@@ -89,6 +97,12 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public IModel GetURLModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
+            if (culture.ToLowerInvariant().StartsWith("zh-", StringComparison.Ordinal) ||
+                culture.ToLowerInvariant().StartsWith("ja-", StringComparison.Ordinal))
+            {
+                return GetModel<URLModel>(Culture.Chinese, fallbackToDefaultCulture);
+            }
+
             return GetModel<URLModel>(Culture.English, fallbackToDefaultCulture);
         }
 
@@ -101,7 +115,15 @@ namespace Microsoft.Recognizers.Text.Sequence
         {
             RegisterModel<PhoneNumberModel>(
                 Culture.English,
-                (options) => new PhoneNumberModel(new PhoneNumberParser(), new PhoneNumberExtractor()));
+                (options) => new PhoneNumberModel(
+                    new PhoneNumberParser(),
+                    new BasePhoneNumberExtractor(new EnglishPhoneNumberExtractorConfiguration(options))));
+
+            RegisterModel<PhoneNumberModel>(
+                Culture.Chinese,
+                (options) => new PhoneNumberModel(
+                    new PhoneNumberParser(),
+                    new BasePhoneNumberExtractor(new ChinesePhoneNumberExtractorConfiguration(options))));
 
             RegisterModel<IpAddressModel>(
                 Culture.English,
@@ -121,7 +143,15 @@ namespace Microsoft.Recognizers.Text.Sequence
 
             RegisterModel<URLModel>(
                 Culture.English,
-                (options) => new URLModel(new URLParser(), new URLExtractor()));
+                (options) => new URLModel(
+                    new URLParser(),
+                    new BaseURLExtractor(new EnglishURLExtractorConfiguration(options))));
+
+            RegisterModel<URLModel>(
+                Culture.Chinese,
+                options => new URLModel(
+                    new URLParser(),
+                    new BaseURLExtractor(new ChineseURLExtractorConfiguration(options))));
 
             RegisterModel<GUIDModel>(
                 Culture.English,

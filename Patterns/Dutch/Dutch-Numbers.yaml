@@ -1,12 +1,16 @@
 ---
 LangMarker: Nl
+#Does this language use non-whitespace-separated numbers?
+CompoundNumberLanguage: !bool true
+#Does this culture uses period and comma intercheangeably as decimal separator?
+MultiDecimalSeparatorCulture: !bool false
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
   def: (honderd|duizend|miljoen|miljard|biljoen)
 ZeroToNineIntegerRegex: !simpleRegex
   def: (drie|zeven|acht|vier|vijf|nul|negen|een|één|twee|zes)
 NegativeNumberTermsRegex: !simpleRegex
-  def: ((min|negatief)\s+)
+  def: (?<negTerm>(min|negatief)\s+)
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*
   references: [ NegativeNumberTermsRegex ]
@@ -323,7 +327,12 @@ RoundNumberMap: !dictionary
     g: 1000000000
     b: 1000000000
     t: 1000000000000
-RelativeReferenceMap: !dictionary
+RelativeReferenceOffsetMap: !dictionary
+  types: [ string, string ]
+# TODO: modify below regex according to the counterpart in English
+  entries:
+    '': ''
+RelativeReferenceRelativeToMap: !dictionary
   types: [ string, string ]
 # TODO: modify below regex according to the counterpart in English
   entries:

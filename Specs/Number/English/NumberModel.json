@@ -1743,7 +1743,7 @@
     ]
   },
   {
-    "Input": "ninety - five hundred fifths",
+    "Input": "how much is ninety - five hundred fifths?",
     "Results": [
       {
         "Text": "ninety - five hundred fifths",
@@ -1752,8 +1752,8 @@
           "subtype": "fraction",
           "value": "1900"
         },
-        "Start": 0,
-        "End": 27
+        "Start": 12,
+        "End": 39
       }
     ]
   },
@@ -2480,6 +2480,21 @@
         "Resolution": {
           "subtype": "integer",
           "value": "26"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "more than half people came here.",
+    "Results": [
+      {
+        "Text": "half",
+        "Start": 10,
+        "End": 13,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.5"
         }
       }
     ]

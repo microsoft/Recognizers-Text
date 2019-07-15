@@ -8,22 +8,19 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class BaseNumberParser : IParser
     {
-
         private static readonly Regex LongFormRegex =
             new Regex(@"\d+", RegexOptions.Singleline);
 
-        private static readonly Regex MultiDecimalSeparatorCultureRegex =
-            new Regex(@"^(en|es|fr)(-)?\b", RegexOptions.Singleline | RegexOptions.Compiled);
-
-        private static readonly List<string> CompoundNumberLanguages = new List<string> { "de-DE", "nl-NL", "sv-SE" };
-
         private readonly bool isMultiDecimalSeparatorCulture = false;
+
+        private readonly bool isCompoundNumberLanguage = false;
 
         public BaseNumberParser(INumberParserConfiguration config)
         {
             this.Config = config;
 
-            this.isMultiDecimalSeparatorCulture = MultiDecimalSeparatorCultureRegex.IsMatch(config.CultureInfo.Name);
+            this.isMultiDecimalSeparatorCulture = config.IsMultiDecimalSeparatorCulture;
+            this.isCompoundNumberLanguage = config.IsCompoundNumberLanguage;
 
             var singleIntFrac = $"{this.Config.WordSeparatorToken}| -|" +
                                 GetKeyRegex(this.Config.CardinalNumberMap.Keys) + "|" +
@@ -32,7 +29,7 @@ namespace Microsoft.Recognizers.Text.Number
             string textNumberPattern;
 
             // Checks for languages that use "compound numbers". I.e. written number parts are not separated by whitespaces or special characters (e.g., dreihundert in German).
-            if (CompoundNumberLanguages.Contains(config.CultureInfo.Name))
+            if (isCompoundNumberLanguage)
             {
                 textNumberPattern = @"(" + singleIntFrac + @")";
             }
@@ -64,7 +61,7 @@ namespace Microsoft.Recognizers.Text.Number
         public virtual ParseResult Parse(ExtractResult extResult)
         {
             // Check if the parser is configured to support specific types
-            if (SupportedTypes != null && !SupportedTypes.Any(t => extResult.Type.Equals(t)))
+            if (SupportedTypes != null && !SupportedTypes.Any(t => extResult.Type.Equals(t, StringComparison.Ordinal)))
             {
                 return null;
             }
@@ -83,7 +80,7 @@ namespace Microsoft.Recognizers.Text.Number
             if (matchNegative.Success)
             {
                 isNegative = true;
-                extResult.Text = extResult.Text.Substring(matchNegative.Groups[1].Length);
+                extResult.Text = extResult.Text.Substring(matchNegative.Groups["negTerm"].Length);
             }
 
             // Assign resolution value
@@ -154,11 +151,36 @@ namespace Microsoft.Recognizers.Text.Number
                 if (isNegative)
                 {
                     // Recover the original extracted Text
-                    ret.Text = matchNegative.Groups[1].Value + extResult.Text;
+                    ret.Text = matchNegative.Groups["negTerm"].Value + extResult.Text;
                     ret.Value = -(double)ret.Value;
                 }
 
                 ret.ResolutionStr = GetResolutionStr(ret.Value);
+            }
+
+            // Add "offset" and "relativeTo" for ordinal
+            if (!string.IsNullOrEmpty(ret.Type) && ret.Type.Contains(Constants.MODEL_ORDINAL))
+            {
+                if ((this.Config.Options & NumberOptions.SuppressExtendedTypes) == 0 && ret.Metadata.IsOrdinalRelative)
+                {
+                    var offset = Config.RelativeReferenceOffsetMap[extResult.Text];
+                    var relativeTo = Config.RelativeReferenceRelativeToMap[extResult.Text];
+
+                    ret.Metadata.Offset = offset;
+                    ret.Metadata.RelativeTo = relativeTo;
+
+                    // Add value for ordinal.relative
+                    string sign = offset[0].Equals('-') ? string.Empty : "+";
+                    ret.Value = string.Concat(relativeTo, sign, offset);
+                    ret.ResolutionStr = GetResolutionStr(ret.Value);
+                }
+                else
+                {
+                    ret.Metadata.Offset = ret.ResolutionStr;
+
+                    // Every ordinal number is relative to the start
+                    ret.Metadata.RelativeTo = Constants.RELATIVE_START;
+                }
             }
 
             if (ret != null)
@@ -279,56 +301,58 @@ namespace Microsoft.Recognizers.Text.Number
                 Length = extResult.Length,
                 Text = extResult.Text,
                 Type = extResult.Type,
+                Metadata = extResult.Metadata,
             };
 
-            var handle = extResult.Text.ToLower();
+            var handle = extResult.Text;
 
             handle = Config.HalfADozenRegex.Replace(handle, Config.HalfADozenText);
 
             // Handling cases like "last", "next one", "previous one"
-            if (Config.RelativeReferenceMap.ContainsKey(extResult.Text))
+            if ((this.Config.Options & NumberOptions.SuppressExtendedTypes) == 0)
             {
-                result.Value = Config.RelativeReferenceMap[extResult.Text];
+                if (extResult.Metadata != null && extResult.Metadata.IsOrdinalRelative)
+                {
+                    return result;
+                }
             }
-            else
+
+            var numGroup = handle.Split(Config.WrittenDecimalSeparatorTexts.ToArray(), StringSplitOptions.RemoveEmptyEntries);
+
+            var intPart = numGroup[0];
+            var stringMatch = TextNumberRegex.Match(intPart);
+
+            // Store all match str.
+            var matchStrs = new List<string>();
+
+            while (stringMatch.Success)
             {
-                var numGroup = handle.Split(Config.WrittenDecimalSeparatorTexts.ToArray(), StringSplitOptions.RemoveEmptyEntries);
+                var matchStr = stringMatch.Groups[0].Value;
+                matchStrs.Add(matchStr);
+                stringMatch = stringMatch.NextMatch();
+            }
 
-                var intPart = numGroup[0];
-                var stringMatch = TextNumberRegex.Match(intPart);
+            // Get the value recursively
+            var intPartRet = GetIntValue(matchStrs);
 
-                // Store all match str.
-                var matchStrs = new List<string>();
+            double pointPartRet = 0;
+            if (numGroup.Length == 2)
+            {
+                var pointPart = numGroup[1];
+                stringMatch = TextNumberRegex.Match(pointPart);
+                matchStrs.Clear();
 
                 while (stringMatch.Success)
                 {
-                    var matchStr = stringMatch.Groups[0].Value.ToLower();
+                    var matchStr = stringMatch.Groups[0].Value;
                     matchStrs.Add(matchStr);
                     stringMatch = stringMatch.NextMatch();
                 }
 
-                // Get the value recursively
-                var intPartRet = GetIntValue(matchStrs);
-
-                double pointPartRet = 0;
-                if (numGroup.Length == 2)
-                {
-                    var pointPart = numGroup[1];
-                    stringMatch = TextNumberRegex.Match(pointPart);
-                    matchStrs.Clear();
-
-                    while (stringMatch.Success)
-                    {
-                        var matchStr = stringMatch.Groups[0].Value.ToLower();
-                        matchStrs.Add(matchStr);
-                        stringMatch = stringMatch.NextMatch();
-                    }
-
-                    pointPartRet += GetPointValue(matchStrs);
-                }
-
-                result.Value = intPartRet + pointPartRet;
+                pointPartRet += GetPointValue(matchStrs);
             }
+
+            result.Value = intPartRet + pointPartRet;
 
             return result;
         }
@@ -343,7 +367,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Type = extResult.Type,
             };
 
-            var resultText = extResult.Text.ToLower();
+            var resultText = extResult.Text;
             if (Config.FractionPrepositionRegex.IsMatch(resultText))
             {
                 var match = Config.FractionPrepositionRegex.Match(resultText);
@@ -368,6 +392,13 @@ namespace Microsoft.Recognizers.Text.Number
                 var splitIndex = fracWords.Count - 1;
                 var currentValue = Config.ResolveCompositeNumber(fracWords[splitIndex]);
                 long roundValue = 1;
+
+                // For case like "half"
+                if (fracWords.Count == 1)
+                {
+                   result.Value = 1 / GetIntValue(fracWords);
+                   return result;
+                }
 
                 for (splitIndex = fracWords.Count - 2; splitIndex >= 0; splitIndex--)
                 {
@@ -497,6 +528,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Length = extResult.Length,
                 Text = extResult.Text,
                 Type = extResult.Type,
+                Metadata = extResult.Metadata,
             };
 
             // [1] 24
@@ -507,7 +539,7 @@ namespace Microsoft.Recognizers.Text.Number
             // [6] 2 hundred
             // dot occured.
             double power = 1;
-            var extText = extResult.Text.ToLower();
+            var extText = extResult.Text.ToLowerInvariant();
             int startIndex = 0;
 
             var match = Config.DigitalNumberRegex.Match(extText);
@@ -590,9 +622,9 @@ namespace Microsoft.Recognizers.Text.Number
             double calResult = 0;
             if (isFrac)
             {
-                var deno = calStack.Pop();
+                var denominator = calStack.Pop();
                 var mole = calStack.Pop();
-                calResult += mole / deno;
+                calResult += mole / denominator;
             }
 
             while (calStack.Any())
@@ -612,12 +644,17 @@ namespace Microsoft.Recognizers.Text.Number
 
         private static string DetermineType(ExtractResult er)
         {
+            if (!string.IsNullOrEmpty(er.Type) && er.Type.Contains(Constants.MODEL_ORDINAL))
+            {
+                return er.Metadata.IsOrdinalRelative ? Constants.MODEL_ORDINAL_RELATIVE : Constants.MODEL_ORDINAL;
+            }
+
             var data = er.Data as string;
             var subType = string.Empty;
 
             if (!string.IsNullOrEmpty(data))
             {
-                if (data.StartsWith(Constants.FRACTION_PREFIX))
+                if (data.StartsWith(Constants.FRACTION_PREFIX, StringComparison.Ordinal))
                 {
                     subType = Constants.FRACTION;
                 }
@@ -625,11 +662,11 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     subType = Constants.POWER;
                 }
-                else if (data.StartsWith(Constants.INTEGER_PREFIX))
+                else if (data.StartsWith(Constants.INTEGER_PREFIX, StringComparison.Ordinal))
                 {
                     subType = Constants.INTEGER;
                 }
-                else if (data.StartsWith(Constants.DOUBLE_PREFIX))
+                else if (data.StartsWith(Constants.DOUBLE_PREFIX, StringComparison.Ordinal))
                 {
                     subType = Constants.DECIMAL;
                 }
@@ -671,7 +708,7 @@ namespace Microsoft.Recognizers.Text.Number
         // "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
         private bool SkipNonDecimalSeparator(char ch, int distance)
         {
-            var decimalLength = 3;
+            const int decimalLength = 3;
 
             return ch == Config.NonDecimalSeparatorChar && !(distance <= decimalLength && isMultiDecimalSeparatorCulture);
         }
@@ -684,7 +721,7 @@ namespace Microsoft.Recognizers.Text.Number
             // Store all match str.
             while (successMatch.Success)
             {
-                var matchStr = successMatch.Groups[0].Value.ToLower();
+                var matchStr = successMatch.Groups[0].Value;
                 matchStrs.Add(matchStr);
                 successMatch = successMatch.NextMatch();
             }
@@ -775,12 +812,12 @@ namespace Microsoft.Recognizers.Text.Number
                         }
                         else if (Config.CardinalNumberMap.ContainsKey(matchStr))
                         {
-                            if (oldSym.Equals("-"))
+                            if (oldSym.Equals("-", StringComparison.Ordinal))
                             {
                                 var sum = tempStack.Pop() + matchValue;
                                 tempStack.Push(sum);
                             }
-                            else if (oldSym.Equals(Config.WrittenIntegerSeparatorTexts.First()) || tempStack.Count() < 2)
+                            else if (oldSym.Equals(Config.WrittenIntegerSeparatorTexts.First(), StringComparison.Ordinal) || tempStack.Count() < 2)
                             {
                                 tempStack.Push(matchValue);
                             }

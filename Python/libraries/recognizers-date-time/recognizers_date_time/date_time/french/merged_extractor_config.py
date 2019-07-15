@@ -25,6 +25,7 @@ from .datetimeperiod_extractor_config import FrenchDateTimePeriodExtractorConfig
 from .set_extractor_config import FrenchSetExtractorConfiguration
 from .holiday_extractor_config import FrenchHolidayExtractorConfiguration
 
+
 class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
     @property
     def date_extractor(self) -> DateTimeExtractor:
@@ -99,22 +100,38 @@ class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
         return self._filter_word_regex_list
 
     def __init__(self):
-        self._before_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.BeforeRegex)
-        self._after_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.AfterRegex)
-        self._since_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SinceRegex)
-        self._from_to_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.FromToRegex)
-        self._single_ambiguous_month_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SingleAmbiguousMonthRegex)
-        self._preposition_suffix_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.PrepositionSuffixRegex)
-        self._number_ending_pattern = RegExpUtility.get_safe_reg_exp(FrenchDateTime.NumberEndingPattern)
+        self._before_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.BeforeRegex)
+        self._after_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.AfterRegex)
+        self._since_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SinceRegex)
+        self._from_to_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.FromToRegex)
+        self._single_ambiguous_month_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SingleAmbiguousMonthRegex)
+        self._preposition_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.PrepositionSuffixRegex)
+        self._number_ending_pattern = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.NumberEndingPattern)
 
-        self._date_extractor = BaseDateExtractor(FrenchDateExtractorConfiguration())
-        self._time_extractor = BaseTimeExtractor(FrenchTimeExtractorConfiguration())
-        self._date_time_extractor = BaseDateTimeExtractor(FrenchDateTimeExtractorConfiguration())
-        self._date_period_extractor = BaseDatePeriodExtractor(FrenchDatePeriodExtractorConfiguration())
-        self._time_period_extractor = BaseTimePeriodExtractor(FrenchTimePeriodExtractorConfiguration())
-        self._date_time_period_extractor = BaseDateTimePeriodExtractor(FrenchDateTimePeriodExtractorConfiguration())
-        self._duration_extractor = BaseDurationExtractor(FrenchDurationExtractorConfiguration())
-        self._set_extractor = BaseSetExtractor(FrenchSetExtractorConfiguration())
-        self._holiday_extractor = BaseHolidayExtractor(FrenchHolidayExtractorConfiguration())
+        self._date_extractor = BaseDateExtractor(
+            FrenchDateExtractorConfiguration())
+        self._time_extractor = BaseTimeExtractor(
+            FrenchTimeExtractorConfiguration())
+        self._date_time_extractor = BaseDateTimeExtractor(
+            FrenchDateTimeExtractorConfiguration())
+        self._date_period_extractor = BaseDatePeriodExtractor(
+            FrenchDatePeriodExtractorConfiguration())
+        self._time_period_extractor = BaseTimePeriodExtractor(
+            FrenchTimePeriodExtractorConfiguration())
+        self._date_time_period_extractor = BaseDateTimePeriodExtractor(
+            FrenchDateTimePeriodExtractorConfiguration())
+        self._duration_extractor = BaseDurationExtractor(
+            FrenchDurationExtractorConfiguration())
+        self._set_extractor = BaseSetExtractor(
+            FrenchSetExtractorConfiguration())
+        self._holiday_extractor = BaseHolidayExtractor(
+            FrenchHolidayExtractorConfiguration())
         self._integer_extractor = FrenchIntegerExtractor()
         self._filter_word_regex_list = []

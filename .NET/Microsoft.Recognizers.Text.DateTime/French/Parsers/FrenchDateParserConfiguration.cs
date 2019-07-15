@@ -36,6 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             WeekDayAndDayOfMothRegex = FrenchDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             WeekDayAndDayRegex = FrenchDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = FrenchDateExtractorConfiguration.RelativeMonthRegex;
+            StrictRelativeRegex = FrenchDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = FrenchDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = FrenchDateExtractorConfiguration.RelativeWeekDayRegex;
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
@@ -106,6 +107,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex RelativeMonthRegex { get; }
 
+        public Regex StrictRelativeRegex { get; }
+
         public Regex YearSuffix { get; }
 
         public Regex RelativeWeekDayRegex { get; }
@@ -142,7 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public static int GetSwiftDay(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             var swift = 0;
 
@@ -178,9 +181,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             return swift;
         }
 
-        public int GetSwiftMonth(string text)
+        public int GetSwiftMonthOrYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
             if (trimmedText.EndsWith("prochaine") || trimmedText.EndsWith("prochain"))
             {
@@ -197,7 +200,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool IsCardinalLast(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             return trimmedText.Equals("dernière") || trimmedText.Equals("dernières") ||
                     trimmedText.Equals("derniere") || trimmedText.Equals("dernieres");
         }

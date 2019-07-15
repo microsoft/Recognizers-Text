@@ -11,6 +11,7 @@ from ..base_timeperiod import TimePeriodParserConfiguration, MatchedTimeRegex
 from ..constants import Constants
 from ..utilities import TimexUtil
 
+
 class FrenchTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     @property
     def time_extractor(self) -> DateTimeExtractor:
@@ -54,10 +55,14 @@ class FrenchTimePeriodParserConfiguration(TimePeriodParserConfiguration):
         self._integer_extractor = config.integer_extractor
         self._numbers = config.numbers
         self._utility_configuration = config.utility_configuration
-        self._pure_number_from_to_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.PureNumFromTo)
-        self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.PureNumBetweenAnd)
-        self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TimeOfDayRegex)
-        self._till_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TillRegex)
+        self._pure_number_from_to_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.PureNumFromTo)
+        self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.PureNumBetweenAnd)
+        self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.TimeOfDayRegex)
+        self._till_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.TillRegex)
 
     def get_matched_timex_range(self, source: str) -> MatchedTimeRegex:
         trimmed_text = source.strip().lower()

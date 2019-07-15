@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 package com.microsoft.recognizers.text.choice.resources;
@@ -14,7 +17,7 @@ public class EnglishChoice {
 
     public static final String TokenizerRegex = "[^\\w\\d]";
 
-    public static final String TrueRegex = "\\b(true|yes|yep|y|sure|ok|agree)\\b|(\\uD83D\\uDC4D|\\uD83D\\uDC4C)";
+    public static final String TrueRegex = "\\b(true|yes|yep|y|sure|ok|agree)\\b|(\\uD83D\\uDC4D|\\uD83D\\uDC4C|\\u0001f44c)";
 
-    public static final String FalseRegex = "\\b(false|nope|nop|no|not\\s+ok|disagree)\\b|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90)";
+    public static final String FalseRegex = "\\b(false|nope|nop|no|not\\s+ok|disagree)\\b|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90|\\u0001F44E|\\u0001F590)";
 }

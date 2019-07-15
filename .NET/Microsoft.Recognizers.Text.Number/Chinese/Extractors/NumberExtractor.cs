@@ -5,7 +5,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     /// <summary>
     /// These modes only apply to ChineseNumberExtractor.
-    /// The default more urilizes an allow list to avoid extracting numbers in ambiguous/undesired combinations of Chinese ideograms.
+    /// The default more utilizes an allow list to avoid extracting numbers in ambiguous/undesired combinations of Chinese ideograms.
     /// ExtractAll mode is to be used in cases where extraction should be more aggressive (e.g. in Units extraction).
     /// </summary>
     public enum ChineseNumberExtractorMode

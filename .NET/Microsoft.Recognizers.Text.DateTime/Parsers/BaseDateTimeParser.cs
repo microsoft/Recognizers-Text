@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -109,7 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseBasicRegex(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.Trim().ToLower();
+            var trimmedText = text.Trim();
 
             // Handle "now"
             if (config.NowRegex.IsExactMatch(trimmedText, trim: true))
@@ -177,7 +178,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 continue;
                             }
 
-                            var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
+                            var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
                             var match = this.config.DateNumberConnectorRegex.Match(middleStr);
                             if (string.IsNullOrEmpty(middleStr) || match.Success)
                             {
@@ -234,7 +235,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             var timeStr = pr2.TimexStr;
-            if (timeStr.EndsWith(Constants.Comment_AmPm))
+            if (timeStr.EndsWith(Constants.Comment_AmPm, StringComparison.Ordinal))
             {
                 timeStr = timeStr.Substring(0, timeStr.Length - 4);
             }
@@ -251,13 +252,32 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
             ret.PastValue = DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, hour, min, sec);
+
+            // Handle case like "Wed Oct 26 15:50:06 2016" which year and month separated by time.
+            var timeSuffix = text.Substring(er2[0].Start + er2[0].Length ?? 0);
+            var matchYear = this.config.YearRegex.Match(timeSuffix);
+            if (matchYear.Success && ((DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue).Year != ((DateObject)((DateTimeResolutionResult)pr1.Value).PastValue).Year)
+            {
+                var year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matchYear);
+                var dateSuffix = text.Substring(er1[0].Start + er1[0].Length ?? 0);
+                var checkYear = this.config.DateExtractor.GetYearFromText(this.config.YearRegex.Match(dateSuffix));
+
+                if (year >= Constants.MinYearNum && year <= Constants.MaxYearNum && year == checkYear)
+                {
+                    ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(year, futureDate.Month, futureDate.Day, hour, min, sec);
+                    ret.PastValue = DateObject.MinValue.SafeCreateFromValue(year, pastDate.Month, pastDate.Day, hour, min, sec);
+                    ret.Timex = year + pr1.TimexStr.Substring(4) + timeStr;
+                }
+            }
+
             ret.Success = true;
 
             // Change the value of time object
             pr2.TimexStr = timeStr;
             if (!string.IsNullOrEmpty(ret.Comment))
             {
-                ((DateTimeResolutionResult)pr2.Value).Comment = ret.Comment.Equals(Constants.Comment_AmPm) ? Constants.Comment_AmPm : string.Empty;
+                ((DateTimeResolutionResult)pr2.Value).Comment = ret.Comment.Equals(Constants.Comment_AmPm, StringComparison.Ordinal) ?
+                                                                Constants.Comment_AmPm : string.Empty;
             }
 
             // Add the date and time object in case we want to split them
@@ -272,7 +292,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseTimeOfToday(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.ToLowerInvariant().Trim();
+            var trimmedText = text.Trim();
 
             int hour = 0, min = 0, sec = 0;
             string timeStr;
@@ -289,7 +309,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var hourStr = wholeMatch.Groups[Constants.HourGroupName].Value;
                 if (string.IsNullOrEmpty(hourStr))
                 {
-                    hourStr = wholeMatch.Groups["hournum"].Value.ToLower();
+                    hourStr = wholeMatch.Groups["hournum"].Value;
                     hour = this.config.Numbers[hourStr];
                 }
                 else
@@ -333,7 +353,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success)
             {
-                var matchStr = match.Value.ToLowerInvariant();
+                var matchStr = match.Value;
 
                 // Handle "last", "next"
                 var swift = this.config.GetSwiftDay(matchStr);
@@ -344,7 +364,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 hour = this.config.GetHour(matchStr, hour);
 
                 // In this situation, timeStr cannot end up with "ampm", because we always have a "morning" or "night"
-                if (timeStr.EndsWith(Constants.Comment_AmPm))
+                if (timeStr.EndsWith(Constants.Comment_AmPm, StringComparison.Ordinal))
                 {
                     timeStr = timeStr.Substring(0, timeStr.Length - 4);
                 }
@@ -410,6 +430,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 referenceTime,
                 config.DurationExtractor,
                 config.DurationParser,
+                config.NumberParser,
                 config.UnitMap,
                 config.UnitRegex,
                 config.UtilityConfiguration,

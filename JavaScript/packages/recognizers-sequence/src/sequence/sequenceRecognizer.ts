@@ -1,7 +1,9 @@
 import { Recognizer, IModel, Culture, ModelResult } from "@microsoft/recognizers-text";
 import { PhoneNumberModel, IpAddressModel, MentionModel, HashtagModel, EmailModel, URLModel, GUIDModel } from "./models";
 import { PhoneNumberParser, IpParser, MentionParser, HashtagParser, EmailParser, URLParser, GUIDParser } from "./english/parsers";
-import { PhoneNumberExtractor, IpExtractor, MentionExtractor, HashtagExtractor, EmailExtractor, URLExtractor, GUIDExtractor } from "./english/extractors";
+import { IpExtractor, MentionExtractor, HashtagExtractor, EmailExtractor, EnglishURLExtractorConfiguration, GUIDExtractor, EnglishPhoneNumberExtractorConfiguration } from "./english/extractors";
+import { ChineseURLExtractorConfiguration, ChinesePhoneNumberExtractorConfiguration } from "./chinese/extractors";
+import { BaseURLExtractor, BasePhoneNumberExtractor } from "./extractors";
 
 
 export enum SequenceOptions {
@@ -9,6 +11,9 @@ export enum SequenceOptions {
 }
 
 export function recognizePhoneNumber(query: string, culture: string, options: SequenceOptions  = SequenceOptions .None): Array<ModelResult> {
+    if (culture.toLowerCase().startsWith("zh-") || culture.toLowerCase().startsWith("ja-")){
+        return recognizeByModel(recognizer => recognizer.getPhoneNumberModel(), query, Culture.Chinese, options);
+    }
     return recognizeByModel(recognizer => recognizer.getPhoneNumberModel(), query, culture, options);
 }
 
@@ -29,6 +34,9 @@ export function recognizeEmail(query: string, culture: string, options: Sequence
 }
 
 export function recognizeURL(query: string, culture: string, options: SequenceOptions  = SequenceOptions .None): Array<ModelResult> {
+    if (culture.toLowerCase().startsWith("zh-") || culture.toLowerCase().startsWith("ja-")){
+        return recognizeByModel(recognizer => recognizer.getURLModel(), query, Culture.Chinese, options);
+    }
     return recognizeByModel(recognizer => recognizer.getURLModel(), query, culture, options);
 }
 
@@ -53,12 +61,22 @@ export default class SequenceRecognizer extends Recognizer<SequenceOptions> {
     }
     
     protected InitializeConfiguration() {
-        this.registerModel("PhoneNumberModel", Culture.English, (options) => new PhoneNumberModel(new PhoneNumberParser(), new PhoneNumberExtractor()));
+        this.registerModel("PhoneNumberModel", Culture.English, (options) => new PhoneNumberModel(
+            new PhoneNumberParser(),
+            new BasePhoneNumberExtractor(new EnglishPhoneNumberExtractorConfiguration())));
+        this.registerModel("PhoneNumberModel", Culture.Chinese, (options) => new PhoneNumberModel(
+            new PhoneNumberParser(),
+            new BasePhoneNumberExtractor(new ChinesePhoneNumberExtractorConfiguration())));
         this.registerModel("IpAddressModel", Culture.English, (options) => new IpAddressModel(new IpParser(), new IpExtractor()));
         this.registerModel("MentionModel", Culture.English, (options) => new MentionModel(new MentionParser(), new MentionExtractor()));
         this.registerModel("HashtagModel", Culture.English, (options) => new HashtagModel(new HashtagParser(), new HashtagExtractor()));
         this.registerModel("EmailModel", Culture.English, (options) => new EmailModel(new EmailParser(), new EmailExtractor()));
-        this.registerModel("URLModel", Culture.English, (options) => new URLModel(new URLParser(), new URLExtractor()));
+        this.registerModel("URLModel", Culture.English, (options) => new URLModel(
+            new URLParser(),
+            new BaseURLExtractor(new EnglishURLExtractorConfiguration())));
+        this.registerModel("URLModel", Culture.Chinese, (options) => new URLModel(
+            new URLParser(),
+            new BaseURLExtractor(new ChineseURLExtractorConfiguration())))
         this.registerModel("GUIDModel", Culture.English, (options) => new GUIDModel(new GUIDParser(), new GUIDExtractor()));
     }
 

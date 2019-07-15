@@ -95,6 +95,16 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
     private List<Token> mergeTwoTimePoints(String input, LocalDateTime reference) {
         List<ExtractResult> ers = config.getDatePointExtractor().extract(input, reference);
 
+        // Handle "now"
+        Match[] matches = RegExpUtility.getMatches(this.config.getNowRegex(), input);
+        if (matches.length != 0) {
+            for (Match match : matches) {
+                ers.add(new ExtractResult(match.index, match.length, match.value, Constants.SYS_DATETIME_DATE));
+            }
+
+            ers.sort(Comparator.comparingInt(arg -> arg.getStart()));
+        }
+        
         return mergeMultipleExtractions(input, ers);
     }
 
@@ -391,6 +401,21 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
                 }
                 // Possibly include period end only apply for cases like "2014-2018", which are not single year cases
                 metadata.setPossiblyIncludePeriodEnd(false);
+            } else {
+                Match[] yearMatches = RegExpUtility.getMatches(config.getYearRegex(), match.value);
+                boolean isValidYear = true;
+                for (Match yearMatch : yearMatches) {
+                    int year = ((BaseDateExtractor)config.getDatePointExtractor()).getYearFromText(yearMatch);
+                    if (!(year >= Constants.MinYearNum && year <= Constants.MaxYearNum)) {
+                        isValidYear = false;
+                        break;
+                    }
+                }
+
+                if (!isValidYear) {
+                    continue;
+                }
+
             }
 
             results.add(new Token(match.index, match.index + match.length, metadata));

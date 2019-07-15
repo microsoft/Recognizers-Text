@@ -4,17 +4,26 @@
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------
 
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
+
+
 class JapaneseNumeric:
-    LangMarker = ''
+    LangMarker = 'Jpn'
+    CompoundNumberLanguage = True
+    MultiDecimalSeparatorCulture = True
     DecimalSeparatorChar = '.'
     FractionMarkerToken = ''
     NonDecimalSeparatorChar = ' '
     HalfADozenText = ''
     WordSeparatorToken = ''
+    ZeroChar = '零'
+    PairChar = '対'
     RoundNumberMap = dict([("k", 1000),
                            ("m", 1000000),
                            ("g", 1000000000),
@@ -72,6 +81,7 @@ class JapaneseNumeric:
                     ("万億", "兆"),
                     (" ", "")])
     RoundDirectList = [r'万', r'億', r'兆']
+    TenChars = [r'十']
     DigitalNumberRegex = f'((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     ZeroToNineFullHalfRegex = f'[\\d１２３４５６７８９０]'
     DigitNumRegex = f'{ZeroToNineFullHalfRegex}+'
@@ -161,5 +171,6 @@ class JapaneseNumeric:
     TwoNumberRangeRegex3 = f'({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3}|{OneNumberRangeLessRegex4})\\s*(と|は|((と)?同時に)|((と)?そして)|が|，|、|,)?\\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3}|{OneNumberRangeMoreRegex4})'
     TwoNumberRangeRegex4 = f'(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*{TillRegex}\\s*(?<number2>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)'
     AmbiguousFractionConnectorsRegex = f'^[.]'
-    RelativeReferenceMap = dict([("", "")])
+    RelativeReferenceOffsetMap = dict([("", "")])
+    RelativeReferenceRelativeToMap = dict([("", "")])
 # pylint: enable=line-too-long

@@ -31,6 +31,8 @@ TwoDigitYearRegex: !nestedRegex
   references: [ AmDescRegex, PmDescRegex]
 RelativeRegex: !simpleRegex
   def: (?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fin(ales)?\s+de(\s+la)?)?)|(fin(ales)?\s+de(\s+la)?))\b
+StrictRelativeRegex: !simpleRegex
+  def: (?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fin(ales)?\s+de(\s+la)?)?)|(fin(ales)?\s+de(\s+la)?))\b
 WrittenOneToNineRegex: !simpleRegex
   def: (uno|un|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)
 WrittenOneHundredToNineHundredRegex: !simpleRegex
@@ -134,6 +136,9 @@ RangeUnitRegex: !simpleRegex
   def: \b(?<unit>años|año|meses|mes|semanas|semana)\b
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
+SinceYearSuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 WithinNextPrefixRegex: !simpleRegex
   def: \b(dentro\s+de)\b
 FromRegex: !simpleRegex
@@ -580,6 +585,11 @@ UnitValueMap: !dictionary
     segundo: 1
     segs: 1
     seg: 1
+# TODO: modify below regex according to the counterpart in English
+SpecialYearPrefixesMap: !dictionary
+  types: [ string, string ]
+  entries:
+    '': ''
 SeasonMap: !dictionary
   types: [ string, string ]
   entries:
@@ -828,7 +838,7 @@ DurationUnitRegex: !simpleRegex
 DurationConnectorRegex: !simpleRegex
   # TODO: add this according to the related part in English
   def: ^[.]
-DateAfterRegex: !simpleRegex
+SuffixAfterRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 YearPeriodRegex: !simpleRegex

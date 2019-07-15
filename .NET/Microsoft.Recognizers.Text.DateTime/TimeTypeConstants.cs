@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using DateObject = System.DateTime;
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {

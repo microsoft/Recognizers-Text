@@ -10,6 +10,9 @@ namespace Microsoft.Recognizers.Text.Number.French
 {
     public class FrenchNumberParserConfiguration : BaseNumberParserConfiguration
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public FrenchNumberParserConfiguration()
             : this(new CultureInfo(Culture.French))
         {
@@ -19,6 +22,8 @@ namespace Microsoft.Recognizers.Text.Number.French
         {
             this.LangMarker = NumbersDefinitions.LangMarker;
             this.CultureInfo = ci;
+            this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
+            this.IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
 
             this.DecimalSeparatorChar = NumbersDefinitions.DecimalSeparatorChar;
             this.FractionMarkerToken = NumbersDefinitions.FractionMarkerToken;
@@ -32,15 +37,16 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.WrittenFractionSeparatorTexts = NumbersDefinitions.WrittenFractionSeparatorTexts;
 
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
-            this.RelativeReferenceMap = NumbersDefinitions.RelativeReferenceMap.ToImmutableDictionary();
+            this.RelativeReferenceOffsetMap = NumbersDefinitions.RelativeReferenceOffsetMap.ToImmutableDictionary();
+            this.RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
             this.OrdinalNumberMap = NumberMapGenerator.InitOrdinalNumberMap(NumbersDefinitions.OrdinalNumberMap, NumbersDefinitions.PrefixCardinalMap, NumbersDefinitions.SuffixOrdinalMap);
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
 
             // @TODO Change init to follow design in other languages
-            this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.Singleline);
-            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.Singleline);
-            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
-            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
+            this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexFlags);
+            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
+            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
+            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
         }
 
         public string NonDecimalSeparatorText { get; private set; }

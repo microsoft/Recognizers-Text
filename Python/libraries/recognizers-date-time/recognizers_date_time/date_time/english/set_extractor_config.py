@@ -19,6 +19,7 @@ from .timeperiod_extractor_config import EnglishTimePeriodExtractorConfiguration
 from .datetime_extractor_config import EnglishDateTimeExtractorConfiguration
 from .datetimeperiod_extractor_config import EnglishDateTimePeriodExtractorConfiguration
 
+
 class EnglishSetExtractorConfiguration(SetExtractorConfiguration):
     @property
     def last_regex(self) -> Pattern:
@@ -81,18 +82,32 @@ class EnglishSetExtractorConfiguration(SetExtractorConfiguration):
         return self._date_time_period_extractor
 
     def __init__(self):
-        self._duration_extractor = BaseDurationExtractor(EnglishDurationExtractorConfiguration())
-        self._time_extractor = BaseTimeExtractor(EnglishTimeExtractorConfiguration())
-        self._date_extractor = BaseDateExtractor(EnglishDateExtractorConfiguration())
-        self._date_time_extractor = BaseDateTimeExtractor(EnglishDateTimeExtractorConfiguration())
-        self._date_period_extractor = BaseDatePeriodExtractor(EnglishDatePeriodExtractorConfiguration())
-        self._time_period_extractor = BaseTimePeriodExtractor(EnglishTimePeriodExtractorConfiguration())
-        self._date_time_period_extractor = BaseDateTimePeriodExtractor(EnglishDateTimePeriodExtractorConfiguration())
-        self._last_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.SetLastRegex)
-        self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.EachPrefixRegex)
-        self._periodic_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PeriodicRegex)
-        self._each_unit_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.EachUnitRegex)
-        self._each_day_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.EachDayRegex)
-        self._set_week_day_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.SetWeekDayRegex)
-        self._set_each_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.SetEachRegex)
+        self._duration_extractor = BaseDurationExtractor(
+            EnglishDurationExtractorConfiguration())
+        self._time_extractor = BaseTimeExtractor(
+            EnglishTimeExtractorConfiguration())
+        self._date_extractor = BaseDateExtractor(
+            EnglishDateExtractorConfiguration())
+        self._date_time_extractor = BaseDateTimeExtractor(
+            EnglishDateTimeExtractorConfiguration())
+        self._date_period_extractor = BaseDatePeriodExtractor(
+            EnglishDatePeriodExtractorConfiguration())
+        self._time_period_extractor = BaseTimePeriodExtractor(
+            EnglishTimePeriodExtractorConfiguration())
+        self._date_time_period_extractor = BaseDateTimePeriodExtractor(
+            EnglishDateTimePeriodExtractorConfiguration())
+        self._last_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SetLastRegex)
+        self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.EachPrefixRegex)
+        self._periodic_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PeriodicRegex)
+        self._each_unit_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.EachUnitRegex)
+        self._each_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.EachDayRegex)
+        self._set_week_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SetWeekDayRegex)
+        self._set_each_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SetEachRegex)
         self._before_each_day_regex = None

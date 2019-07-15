@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.Matcher;
 
@@ -7,37 +8,45 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishMergedExtractorConfiguration : BaseOptionsConfiguration, IMergedExtractorConfiguration
     {
-        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.Singleline);
+        public static readonly Regex BeforeRegex =
+            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
 
-        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.Singleline);
+        public static readonly Regex AfterRegex =
+            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
 
-        public static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.SinceRegex, RegexOptions.Singleline);
+        public static readonly Regex SinceRegex =
+            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
 
-        public static readonly Regex AroundRegex = new Regex(DateTimeDefinitions.SinceRegex, RegexOptions.Singleline);
+        public static readonly Regex AroundRegex =
+            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+
+        public static readonly Regex EqualRegex =
+            new Regex(BaseDateTime.EqualRegex, RegexFlags);
 
         // TODO: change the following three regexes to Spanish if there is same requirement of split from A to B as two time points
         public static readonly Regex FromToRegex =
-            new Regex(DateTimeDefinitions.FromToRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.FromToRegex, RegexFlags);
 
         public static readonly Regex SingleAmbiguousMonthRegex =
-            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
 
         public static readonly Regex PrepositionSuffixRegex =
-            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexFlags);
 
-        public static readonly Regex NumberEndingPattern = new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.Singleline);
+        public static readonly Regex NumberEndingPattern =
+            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexFlags);
 
-        public static readonly Regex DateAfterRegex =
-            new Regex(DateTimeDefinitions.DateAfterRegex, RegexOptions.Singleline);
+        public static readonly Regex SuffixAfterRegex =
+            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexFlags);
 
         public static readonly Regex UnspecificDatePeriodRegex =
-            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
 
-        public static readonly Regex[] TermFilterRegexes =
-        {
-        };
+        public static readonly Regex[] TermFilterRegexes = { };
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public SpanishMergedExtractorConfiguration(DateTimeOptions options)
             : base(options)
@@ -90,6 +99,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex IMergedExtractorConfiguration.AroundRegex => AroundRegex;
 
+        Regex IMergedExtractorConfiguration.EqualRegex => EqualRegex;
+
         Regex IMergedExtractorConfiguration.FromToRegex => FromToRegex;
 
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
@@ -98,9 +109,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
 
-        Regex IMergedExtractorConfiguration.DateAfterRegex => DateAfterRegex;
+        Regex IMergedExtractorConfiguration.SuffixAfterRegex => SuffixAfterRegex;
 
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
+
+        public Regex FailFastRegex { get; } = null;
 
         IEnumerable<Regex> IMergedExtractorConfiguration.TermFilterRegexes => TermFilterRegexes;
 

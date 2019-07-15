@@ -11,6 +11,9 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 {
     public class PortugueseNumberParserConfiguration : BaseNumberParserConfiguration
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public PortugueseNumberParserConfiguration()
                : this(new CultureInfo(Culture.Portuguese))
         {
@@ -20,6 +23,8 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
         {
             this.LangMarker = NumbersDefinitions.LangMarker;
             this.CultureInfo = ci;
+            this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
+            this.IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
 
             this.DecimalSeparatorChar = NumbersDefinitions.DecimalSeparatorChar;
             this.FractionMarkerToken = NumbersDefinitions.FractionMarkerToken;
@@ -33,14 +38,18 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             this.WrittenFractionSeparatorTexts = NumbersDefinitions.WrittenFractionSeparatorTexts;
 
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
-            this.OrdinalNumberMap = NumberMapGenerator.InitOrdinalNumberMap(NumbersDefinitions.OrdinalNumberMap, NumbersDefinitions.PrefixCardinalMap, NumbersDefinitions.SuffixOrdinalMap);
-            this.RelativeReferenceMap = NumbersDefinitions.RelativeReferenceMap.ToImmutableDictionary();
+            this.OrdinalNumberMap = NumberMapGenerator.InitOrdinalNumberMap(
+                NumbersDefinitions.OrdinalNumberMap,
+                NumbersDefinitions.PrefixCardinalMap,
+                NumbersDefinitions.SuffixOrdinalMap);
+            this.RelativeReferenceOffsetMap = NumbersDefinitions.RelativeReferenceOffsetMap.ToImmutableDictionary();
+            this.RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
 
-            this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.Singleline);
-            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.Singleline);
-            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
-            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
+            this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexFlags);
+            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
+            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
+            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
         }
 
         public string NonDecimalSeparatorText { get; private set; }

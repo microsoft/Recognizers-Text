@@ -17,6 +17,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string SYS_DATETIME_DATETIMEALT = "datetimealt";
         public const string SYS_DATETIME_TIMEZONE = "timezone";
 
+        // SourceEntity Types
+        public const string SYS_DATETIME_DATETIMEPOINT = "datetimepoint";
+
         // Model Name
         public const string MODEL_DATETIME = "datetime";
 
@@ -88,6 +91,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int NegativeSign = -1;
 
         public const int TrimesterMonthCount = 3;
+        public const int QuarterCount = 4;
         public const int SemesterMonthCount = 6;
         public const int WeekDayCount = 7;
         public const int CenturyYearsCount = 100;
@@ -119,6 +123,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string SecondGroupName = "sec";
         public const string MinuteGroupName = "min";
         public const string HourGroupName = "hour";
+        public const string YearGroupName = "year";
         public const string TimeOfDayGroupName = "timeOfDay";
         public const string BusinessDayGroupName = "business";
         public const string LeftAmPmGroupName = "leftDesc";
@@ -151,6 +156,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Timex of TimeOfDay
         public const string EarlyMorning = "TDA";
         public const string Morning = "TMO";
+        public const string MidDay = "TMI";
         public const string Afternoon = "TAF";
         public const string Evening = "TEV";
         public const string Daytime = "TDT";
@@ -171,6 +177,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static readonly int MaxTwoDigitYearFutureNum = int.Parse(BaseDateTime.MaxTwoDigitYearFutureNum);
         public static readonly int MinTwoDigitYearPastNum = int.Parse(BaseDateTime.MinTwoDigitYearPastNum);
+        public static readonly System.DateTime InvalidDate = default(System.DateTime);
 
         // Timex non-constant
         public static readonly string[] DatePeriodTimexSplitter = { ",", "(", ")" };

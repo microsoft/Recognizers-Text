@@ -1,0 +1,593 @@
+[
+  {
+    "Input": "나는 7시에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7",
+        "Type": "time",
+        "Start": 3,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "나는 오후 7시에 돌아올 거야.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 7시",
+        "Type": "time",
+        "Start": 3,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "나는 오후 7시 56분에 돌아올 거야.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 7시 56분",
+        "Type": "time",
+        "Start": 3,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "나는 오후 7시 56분 35초에 돌아올 거야.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 7시 56분 35초",
+        "Type": "time",
+        "Start": 3,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "나는 12시 34분에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12시 34분",
+        "Type": "time",
+        "Start": 3,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "나는 12시 34분 20초에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12시 34분 20초",
+        "Type": "time",
+        "Start": 3,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "나는 자정에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "자정",
+        "Type": "time",
+        "Start": 3,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "나는 0시 30초에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "0시 30초",
+        "Type": "time",
+        "Start": 3,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "7시 정각입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7시 정각",
+        "Type": "time",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "아침 8시입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "아침 8시",
+        "Type": "time",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "저녁 8시입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "저녁 8시",
+        "Type": "time",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "8시 30분입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8시 30분",
+        "Type": "time",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "저녁 8시 30분입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "저녁 8시 30분",
+        "Type": "time",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "8시 15분입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8시 15분",
+        "Type": "time",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "저녁 9시 45분입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "저녁 9시 45분",
+        "Type": "time",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "8시 3분 전입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8시 3분 전",
+        "Type": "time",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "7시 30분 정각입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7시 30분 정각",
+        "Type": "time",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "오후 7시 30분입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 7시 30분",
+        "Type": "time",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "아침 7시 30분입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "아침 7시 30분",
+        "Type": "time",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "아침 8시 15분 전입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "아침 8시 15분 전",
+        "Type": "time",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "저녁 8시 20분입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "저녁 8시 20분",
+        "Type": "time",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "나는 오후 7시에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 7시",
+        "Type": "time",
+        "Start": 3,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "나는 오후 7시 14초에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 7시 14초",
+        "Type": "time",
+        "Start": 3,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "나는 저녁 7시 30분에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "저녁 7시 30분",
+        "Type": "time",
+        "Start": 3,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "나는 저녁 7시 35분에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "저녁 7시 35분",
+        "Type": "time",
+        "Start": 3,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "나는 11시 5분에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11시 5분",
+        "Type": "time",
+        "Start": 3,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "나는 5시 27분에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5시 27분",
+        "Type": "time",
+        "Start": 3,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "나는 밤 5시 30분에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "밤 5시 30분",
+        "Type": "time",
+        "Start": 3,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "나는 정오쯤에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "정오쯤",
+        "Type": "time",
+        "Start": 3,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "나는 정오에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "정오",
+        "Type": "time",
+        "Start": 3,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "나는 12시 정오에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12시 정오",
+        "Type": "time",
+        "Start": 3,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "나는 11시쯤에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11시쯤",
+        "Type": "time",
+        "Start": 3,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "나는 오후 3시 40분에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 3시 40분",
+        "Type": "time",
+        "Start": 3,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "나는 오전 11시 40분에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오전 11시 40분",
+        "Type": "time",
+        "Start": 3,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "자정",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "자정",
+        "Type": "time",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "오전 중간",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오전 중간",
+        "Type": "time",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "오후 중간",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 중간",
+        "Type": "time",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "한낮",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "한낮",
+        "Type": "time",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "정오",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "정오",
+        "Type": "time",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "나는 저녁 7시에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "저녁 7시",
+        "Type": "time",
+        "Start": 3,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "나는 아침 7시 56분에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "아침 7시 56분",
+        "Type": "time",
+        "Start": 3,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "나는 아침 7시 56분 35초에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "아침 7시 56분 35초",
+        "Type": "time",
+        "Start": 3,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "어떤 이메일이 p를 주제로 했습니까? ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "어떤 이메일이 답변을 받았습니까?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "나는 점심 12시 정각에 돌아올 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "점심 12시 정각",
+        "Type": "time",
+        "Start": 3,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "오후 9시는 저에게는 좋습니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 9시",
+        "Type": "time",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "이 품목의 가격은 1.6714입니다.",
+    "Comment": "1 shouldn't recognized as time here",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  }
+]

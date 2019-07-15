@@ -26,6 +26,13 @@ if EXIST "%VSInstallDir%\MSBuild\!MsBuildVersion!\Bin\MSBuild.exe" (
 	EXIT /B
 )
 
+ECHO.
+ECHO # Check for empty and duplicate inputs in Specs
+Powershell -ExecutionPolicy Bypass "& {buildtools\checkSpec.ps1; exit $LastExitCode }"
+IF %ERRORLEVEL% NEQ 0 (
+	ECHO # Failed, including empty or duplicate inputs in Specs
+	EXIT /b %ERRORLEVEL%
+)
 
 ECHO.
 ECHO # Restoring NuGet dependencies
@@ -34,7 +41,7 @@ CALL "buildtools\nuget" restore
 set configuration=Release
 ECHO.
 ECHO # Generate resources
-CALL "!MsBuildDir!\msbuild" Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj /t:Clean,Build /p:Configuration=%configuration%
+CALL !MSBuild! Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj /t:Clean,Build /p:Configuration=%configuration%
 
 ECHO # Building .NET solution (%configuration%)
 CALL !MSBuild! Microsoft.Recognizers.Text.sln /t:Clean,Build /p:Configuration=%configuration%

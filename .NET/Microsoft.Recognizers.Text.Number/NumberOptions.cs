@@ -6,23 +6,28 @@ namespace Microsoft.Recognizers.Text.Number
     public enum NumberOptions
     {
         /// <summary>
-        /// Represents None
+        /// None
         /// </summary>
         None = 0,
 
         /// <summary>
-        /// Represents PercentageMode
+        /// PercentageMode
         /// </summary>
         PercentageMode = 1,
 
         /// <summary>
-        /// Represents ExperimentalMode
+        /// SuppressExtendedTypes, mode that skips extraction of extra types not in v1. May be removed later.
         /// </summary>
-        ExperimentalMode = 2,
+        SuppressExtendedTypes = 2097152, // 2 ^21
 
         /// <summary>
-        /// Represents Ordinal EnablePreview
+        /// ExperimentalMode
         /// </summary>
-        EnablePreview = 4,
+        ExperimentalMode = 4194304, // 2 ^22
+
+        /// <summary>
+        /// EnablePreview
+        /// </summary>
+        EnablePreview = 8388608, // 2 ^23
     }
 }

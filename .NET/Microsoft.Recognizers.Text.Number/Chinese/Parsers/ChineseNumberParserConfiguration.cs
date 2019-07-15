@@ -8,8 +8,12 @@ using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.Number.Chinese
 {
+
     public class ChineseNumberParserConfiguration : ICJKNumberParserConfiguration
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public ChineseNumberParserConfiguration()
                : this(new CultureInfo(Culture.Chinese))
         {
@@ -19,12 +23,16 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         {
             LangMarker = NumbersDefinitions.LangMarker;
             CultureInfo = ci;
+            IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
+            IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
 
             DecimalSeparatorChar = NumbersDefinitions.DecimalSeparatorChar;
             FractionMarkerToken = NumbersDefinitions.FractionMarkerToken;
             NonDecimalSeparatorChar = NumbersDefinitions.NonDecimalSeparatorChar;
             HalfADozenText = NumbersDefinitions.HalfADozenText;
             WordSeparatorToken = NumbersDefinitions.WordSeparatorToken;
+            ZeroChar = NumbersDefinitions.ZeroChar;
+            PairChar = NumbersDefinitions.PairChar;
 
             WrittenDecimalSeparatorTexts = Enumerable.Empty<string>();
             WrittenGroupSeparatorTexts = Enumerable.Empty<string>();
@@ -33,7 +41,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
             CardinalNumberMap = new Dictionary<string, long>().ToImmutableDictionary();
             OrdinalNumberMap = new Dictionary<string, long>().ToImmutableDictionary();
-            RelativeReferenceMap = NumbersDefinitions.RelativeReferenceMap.ToImmutableDictionary();
+            RelativeReferenceOffsetMap = NumbersDefinitions.RelativeReferenceOffsetMap.ToImmutableDictionary();
+            RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
             RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
             ZeroToNineMap = NumbersDefinitions.ZeroToNineMap.ToImmutableDictionary();
             RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();
@@ -41,21 +50,22 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             TratoSimMap = NumbersDefinitions.TratoSimMap.ToImmutableDictionary();
             UnitMap = NumbersDefinitions.UnitMap.ToImmutableDictionary();
             RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
+            TenChars = NumbersDefinitions.TenChars.ToImmutableList();
 
             HalfADozenRegex = null;
 
             // @TODO Change init to follow design in other languages
-            DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.Singleline);
-            DigitNumRegex = new Regex(NumbersDefinitions.DigitNumRegex, RegexOptions.Singleline);
-            DozenRegex = new Regex(NumbersDefinitions.DozenRegex, RegexOptions.Singleline);
-            PercentageRegex = new Regex(NumbersDefinitions.PercentageRegex, RegexOptions.Singleline);
-            DoubleAndRoundRegex = new Regex(NumbersDefinitions.DoubleAndRoundRegex, RegexOptions.Singleline);
-            FracSplitRegex = new Regex(NumbersDefinitions.FracSplitRegex, RegexOptions.Singleline);
-            NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
-            PointRegex = new Regex(NumbersDefinitions.PointRegex, RegexOptions.Singleline);
-            SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexOptions.Singleline);
-            PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexOptions.Singleline);
-            RoundNumberIntegerRegex = new Regex(NumbersDefinitions.RoundNumberIntegerRegex, RegexOptions.Singleline);
+            DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
+            DigitNumRegex = new Regex(NumbersDefinitions.DigitNumRegex, RegexFlags);
+            DozenRegex = new Regex(NumbersDefinitions.DozenRegex, RegexFlags);
+            PercentageRegex = new Regex(NumbersDefinitions.PercentageRegex, RegexFlags);
+            DoubleAndRoundRegex = new Regex(NumbersDefinitions.DoubleAndRoundRegex, RegexFlags);
+            FracSplitRegex = new Regex(NumbersDefinitions.FracSplitRegex, RegexFlags);
+            NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
+            PointRegex = new Regex(NumbersDefinitions.PointRegex, RegexFlags);
+            SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexFlags);
+            PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexFlags);
+            RoundNumberIntegerRegex = new Regex(NumbersDefinitions.RoundNumberIntegerRegex, RegexFlags);
             FractionPrepositionRegex = null;
         }
 
@@ -81,6 +91,10 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         public string NonDecimalSeparatorText { get; private set; }
 
+        public char ZeroChar { get; private set; }
+
+        public char PairChar { get; private set; }
+
         public Regex DigitNumRegex { get; private set; }
 
         public Regex DozenRegex { get; private set; }
@@ -93,6 +107,10 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         public Regex NegativeNumberSignRegex { get; private set; }
 
+        public bool IsCompoundNumberLanguage { get; private set; }
+
+        public bool IsMultiDecimalSeparatorCulture { get; private set; }
+
         public Regex PointRegex { get; private set; }
 
         public Regex SpeGetNumberRegex { get; private set; }
@@ -104,6 +122,10 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         public ImmutableDictionary<string, long> OrdinalNumberMap { get; private set; }
 
         public ImmutableDictionary<string, string> RelativeReferenceMap { get; private set; }
+
+        public ImmutableDictionary<string, string> RelativeReferenceOffsetMap { get; private set; }
+
+        public ImmutableDictionary<string, string> RelativeReferenceRelativeToMap { get; private set; }
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
 
@@ -120,6 +142,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         public ImmutableDictionary<char, char> TratoSimMap { get; private set; }
 
         public ImmutableList<char> RoundDirectList { get; private set; }
+
+        public ImmutableList<char> TenChars { get; private set; }
 
         public string WordSeparatorToken { get; private set; }
 

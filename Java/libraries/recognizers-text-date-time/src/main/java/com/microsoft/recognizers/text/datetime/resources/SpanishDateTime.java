@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 package com.microsoft.recognizers.text.datetime.resources;
@@ -48,6 +51,8 @@ public class SpanishDateTime {
             .replace("{PmDescRegex}", PmDescRegex);
 
     public static final String RelativeRegex = "(?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fin(ales)?\\s+de(\\s+la)?)?)|(fin(ales)?\\s+de(\\s+la)?))\\b";
+
+    public static final String StrictRelativeRegex = "(?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fin(ales)?\\s+de(\\s+la)?)?)|(fin(ales)?\\s+de(\\s+la)?))\\b";
 
     public static final String WrittenOneToNineRegex = "(uno|un|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)";
 
@@ -176,6 +181,8 @@ public class SpanishDateTime {
     public static final String RangeUnitRegex = "\\b(?<unit>años|año|meses|mes|semanas|semana)\\b";
 
     public static final String InConnectorRegex = "\\b(in)\\b";
+
+    public static final String SinceYearSuffixRegex = "^[.]";
 
     public static final String WithinNextPrefixRegex = "\\b(dentro\\s+de)\\b";
 
@@ -672,6 +679,10 @@ public class SpanishDateTime {
         .put("seg", 1L)
         .build();
 
+    public static final ImmutableMap<String, String> SpecialYearPrefixesMap = ImmutableMap.<String, String>builder()
+        .put("", "")
+        .build();
+
     public static final ImmutableMap<String, String> SeasonMap = ImmutableMap.<String, String>builder()
         .put("primavera", "SP")
         .put("verano", "SU")
@@ -913,7 +924,7 @@ public class SpanishDateTime {
 
     public static final String DurationConnectorRegex = "^[.]";
 
-    public static final String DateAfterRegex = "^[.]";
+    public static final String SuffixAfterRegex = "^[.]";
 
     public static final String YearPeriodRegex = "^[.]";
 

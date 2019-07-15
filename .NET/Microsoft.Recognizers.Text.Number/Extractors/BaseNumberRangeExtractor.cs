@@ -13,7 +13,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         private readonly BaseNumberParser numberParser;
 
-        public BaseNumberRangeExtractor(BaseNumberExtractor numberExtractor, BaseNumberExtractor ordinalExtractor, BaseNumberParser numberParser, NumberOptions options = NumberOptions.None)
+        public BaseNumberRangeExtractor(BaseNumberExtractor numberExtractor, BaseNumberExtractor ordinalExtractor, BaseNumberParser numberParser,
+                                        NumberOptions options = NumberOptions.None)
         {
             this.numberExtractor = numberExtractor;
             this.ordinalExtractor = ordinalExtractor;
@@ -82,6 +83,7 @@ namespace Microsoft.Recognizers.Text.Number
                                 Type = ExtractType,
                                 Data = matchSource.ContainsKey(srcMatch) ? matchSource[srcMatch] : null,
                             };
+
                             results.Add(er);
                         }
                     }
@@ -97,8 +99,8 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 foreach (var result in results)
                 {
-                    if (result.Data.ToString() == NumberRangeConstants.TWONUMBETWEEN
-                        || result.Data.ToString() == NumberRangeConstants.TWONUMTILL)
+                    if (result.Data.ToString() == NumberRangeConstants.TWONUMBETWEEN ||
+                        result.Data.ToString() == NumberRangeConstants.TWONUMTILL)
                     {
                         result.Data = NumberRangeConstants.TWONUMCLOSED;
                     }
@@ -108,7 +110,8 @@ namespace Microsoft.Recognizers.Text.Number
             return results;
         }
 
-        private static bool ValidateMatchAndGetStartAndLength(List<ExtractResult> extractNumList, string numberStr, Match match, string source, ref int start, ref int length)
+        private static bool ValidateMatchAndGetStartAndLength(List<ExtractResult> extractNumList, string numberStr, Match match,
+                                                              string source, ref int start, ref int length)
         {
             bool validNum = false;
 
@@ -269,13 +272,14 @@ namespace Microsoft.Recognizers.Text.Number
             return AmbiguousFractionConnectorsRegex.Match(numberStr).Success;
         }
 
-        // For cases like "more than 30000 in 2010", we will not treate "30000 in 2010" as a fraction number
+        // For cases like "more than 30000 in 2010", we will not treat "30000 in 2010" as a fraction number
         // In this method, "30000 in 2010" will be changed to "30000"
         private List<ExtractResult> RemoveAmbiguousFractions(List<ExtractResult> ers)
         {
             foreach (var er in ers)
             {
-                if (er.Data != null && er.Data.ToString() == RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH).Name)
+                if (er.Data != null && er.Data.ToString() ==
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH).Name)
                 {
                     var match = AmbiguousFractionConnectorsRegex.Match(er.Text);
 

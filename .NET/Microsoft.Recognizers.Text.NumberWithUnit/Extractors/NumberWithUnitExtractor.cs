@@ -112,7 +112,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 break;
                             }
 
-                            if (m.Length > 0 && source.Substring(m.Start, lastIndex - m.Start).ToLower().Trim() == m.Text)
+                            if (m.Length > 0 && source.Substring(m.Start, lastIndex - m.Start).Trim() == m.Text)
                             {
                                 bestMatch = m;
                                 break;
@@ -175,7 +175,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                             // Special treatment, handle cases like '2:00 pm', '00 pm' is not dimension
                             var isNotUnit = false;
-                            if (er.Type.Equals(Constants.SYS_UNIT_DIMENSION))
+                            if (er.Type.Equals(Constants.SYS_UNIT_DIMENSION, StringComparison.Ordinal))
                             {
                                 if (nonUnitMatches == null)
                                 {
@@ -275,7 +275,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                             // Special treatment, handle cases like '2:00 pm', both '00 pm' and 'pm' are not dimension
                             var isNotUnit = false;
-                            if (match.Value.Equals(Constants.AMBIGUOUS_TIME_TERM))
+                            if (match.Value.Equals(Constants.AMBIGUOUS_TIME_TERM, StringComparison.Ordinal))
                             {
                                 foreach (Match nonUnitMatch in nonUnitMatches)
                                 {
@@ -329,7 +329,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 }
 
                 var pattern = $@"{this.config.BuildPrefix}({string.Join("|", regexTokens)}){this.config.BuildSuffix}";
-                var options = RegexOptions.Singleline | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
+                var options = RegexOptions.Singleline | RegexOptions.ExplicitCapture | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
 
                 var regex = new Regex(pattern, options);
                 regexes.Add(regex);
@@ -390,7 +390,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             regexTokens.Sort(new StringComparer());
             var pattern = $@"{this.config.BuildPrefix}({string.Join("|", regexTokens)}){this.config.BuildSuffix}";
-            var options = RegexOptions.Singleline | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
+            var options = RegexOptions.Singleline | RegexOptions.ExplicitCapture | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
 
             var regex = new Regex(pattern, options);
             return regex;

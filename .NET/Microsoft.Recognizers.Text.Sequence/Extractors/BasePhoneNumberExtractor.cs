@@ -8,48 +8,56 @@ namespace Microsoft.Recognizers.Text.Sequence
 {
     public class BasePhoneNumberExtractor : BaseSequenceExtractor
     {
-        public BasePhoneNumberExtractor()
+        private static readonly Regex InternationDialingPrefixRegex = new Regex(BasePhoneNumbers.InternationDialingPrefixRegex);
+
+        private PhoneNumberConfiguration config;
+
+        public BasePhoneNumberExtractor(PhoneNumberConfiguration config)
         {
+            var wordBoundariesRegex = config.WordBoundariesRegex;
+            var nonWordBoundariesRegex = config.NonWordBoundariesRegex;
+            var endWordBoundariesRegex = config.EndWordBoundariesRegex;
+
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BasePhoneNumbers.BRPhoneNumberRegex),
-                    Constants.PHONE_NUMBER_REGEX_BR
-                },
-                {
-                    new Regex(BasePhoneNumbers.GeneralPhoneNumberRegex),
+                    new Regex(BasePhoneNumbers.GeneralPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_GENERAL
                 },
                 {
-                    new Regex(BasePhoneNumbers.UKPhoneNumberRegex),
+                    new Regex(BasePhoneNumbers.BRPhoneNumberRegex(wordBoundariesRegex, nonWordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
+                    Constants.PHONE_NUMBER_REGEX_BR
+                },
+                {
+                    new Regex(BasePhoneNumbers.UKPhoneNumberRegex(wordBoundariesRegex, nonWordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_UK
                 },
                 {
-                    new Regex(BasePhoneNumbers.DEPhoneNumberRegex),
+                    new Regex(BasePhoneNumbers.DEPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_DE
                 },
                 {
-                    new Regex(BasePhoneNumbers.USPhoneNumberRegex),
+                    new Regex(BasePhoneNumbers.USPhoneNumberRegex(wordBoundariesRegex, nonWordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_US
                 },
                 {
-                    new Regex(BasePhoneNumbers.CNPhoneNumberRegex),
+                    new Regex(BasePhoneNumbers.CNPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_CN
                 },
                 {
-                    new Regex(BasePhoneNumbers.DKPhoneNumberRegex),
+                    new Regex(BasePhoneNumbers.DKPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_DK
                 },
                 {
-                    new Regex(BasePhoneNumbers.ITPhoneNumberRegex),
+                    new Regex(BasePhoneNumbers.ITPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_IT
                 },
                 {
-                    new Regex(BasePhoneNumbers.NLPhoneNumberRegex),
+                    new Regex(BasePhoneNumbers.NLPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_NL
                 },
                 {
-                    new Regex(BasePhoneNumbers.SpecialPhoneNumberRegex),
+                    new Regex(BasePhoneNumbers.SpecialPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_SPECIAL
                 },
             };
@@ -85,9 +93,36 @@ namespace Microsoft.Recognizers.Text.Sequence
                             {
                                 continue;
                             }
+
+                            // check the international dialing prefix
+                            var front = text.Substring(0, (int)(er.Start - 1));
+                            if (InternationDialingPrefixRegex.IsMatch(front))
+                            {
+                                var moveOffset = InternationDialingPrefixRegex.Match(front).Length + 1;
+                                er.Start = er.Start - moveOffset;
+                                er.Length = er.Length + moveOffset;
+                                er.Text = text.Substring((int)er.Start, (int)er.Length);
+                                continue;
+                            }
                         }
 
                         ers.Remove(er);
+                    }
+                }
+            }
+
+            // filter hexadecimal address like 00 10 00 31 46 D9 E9 11
+            var maskMatchCollection = Regex.Matches(text, BasePhoneNumbers.PhoneNumberMaskRegex);
+
+            for (var index = ers.Count - 1; index >= 0; --index)
+            {
+                foreach (Match m in maskMatchCollection)
+                {
+                    if (ers[index].Start >= m.Index &&
+                        ers[index].Start + ers[index].Length <= m.Index + m.Length)
+                    {
+                        ers.RemoveAt(index);
+                        break;
                     }
                 }
             }

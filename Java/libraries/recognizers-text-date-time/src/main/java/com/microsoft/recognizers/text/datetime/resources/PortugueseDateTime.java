@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 package com.microsoft.recognizers.text.datetime.resources;
@@ -131,11 +134,15 @@ public class PortugueseDateTime {
 
     public static final String InConnectorRegex = "\\b(em)\\b";
 
+    public static final String SinceYearSuffixRegex = "^[.]";
+
     public static final String WithinNextPrefixRegex = "^[.]";
 
     public static final String CenturySuffixRegex = "^[.]";
 
     public static final String RelativeRegex = "^[.]";
+
+    public static final String StrictRelativeRegex = "^[.]";
 
     public static final String FromRegex = "((desde|de)(\\s*a(s)?)?)$";
 
@@ -587,6 +594,10 @@ public class PortugueseDateTime {
         .put("seg", 1L)
         .build();
 
+    public static final ImmutableMap<String, String> SpecialYearPrefixesMap = ImmutableMap.<String, String>builder()
+        .put("", "")
+        .build();
+
     public static final ImmutableMap<String, String> SeasonMap = ImmutableMap.<String, String>builder()
         .put("primavera", "SP")
         .put("verao", "SU")
@@ -858,7 +869,7 @@ public class PortugueseDateTime {
             .replace("{YearRegex}", YearRegex)
             .replace("{FullTextYearRegex}", FullTextYearRegex);
 
-    public static final String DateAfterRegex = "^[.]";
+    public static final String SuffixAfterRegex = "^[.]";
 
     public static final String YearPeriodRegex = "^[.]";
 

@@ -7,9 +7,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {
     public class LengthExtractorConfiguration : EnglishNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> LengthSuffixList = NumbersWithUnitDefinitions.LengthSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> LengthSuffixList =
+            NumbersWithUnitDefinitions.LengthSuffixList.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousLengthUnitList.ToImmutableList();
+        private static readonly ImmutableList<string> AmbiguousValues =
+            NumbersWithUnitDefinitions.AmbiguousLengthUnitList.ToImmutableList();
 
         public LengthExtractorConfiguration()
                : base(new CultureInfo(Culture.English))

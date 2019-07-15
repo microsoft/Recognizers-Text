@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             if (trimmedText.Equals("quotidien") || trimmedText.Equals("quotidienne") ||
                 trimmedText.Equals("jours") || trimmedText.Equals("journellement"))
             {
@@ -115,7 +115,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             if (trimmedText.Equals("jour") || trimmedText.Equals("journee"))
             {
                 timex = "P1D";

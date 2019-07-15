@@ -29,20 +29,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly string ShortLeftDigitTimeRegex = DateTimeDefinitions.TimePeriodShortLeftDigitTimeRegex;
 
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public ChineseTimePeriodExtractorChsConfiguration()
         {
             var regexes = new Dictionary<Regex, PeriodType>
             {
                 {
-                    new Regex(DateTimeDefinitions.TimePeriodRegexes1, RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimePeriodRegexes1, RegexFlags),
                     PeriodType.FullTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimePeriodRegexes2, RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimePeriodRegexes2, RegexFlags),
                     PeriodType.ShortTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags),
                     PeriodType.ShortTime
                 },
             };

@@ -144,18 +144,36 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var regex in this.config.DateRegexes)
             {
                 var offset = 0;
+                string relativeStr = null;
                 var match = regex.Match(trimmedText);
                 if (!match.Success)
                 {
                     match = regex.Match(this.config.DateTokenPrefix + trimmedText);
-                    offset = this.config.DateTokenPrefix.Length;
+
+                    // Handing cases like "(this)? 5.12" which only be recognized in "on (this)? 5.12"
+                    if (match.Success)
+                    {
+                        offset = this.config.DateTokenPrefix.Length;
+                        relativeStr = match.Groups["order"].Value;
+                    }
                 }
 
-                if (match.Success && match.Index == offset && match.Length == trimmedText.Length)
+                if (match.Success)
                 {
-                    // LUIS value string will be set in Match2Date method
-                    var ret = Match2Date(match, referenceDate);
-                    return ret;
+                    var relativeRegex = this.config.StrictRelativeRegex.MatchEnd(text.Substring(0, match.Index), trim: true);
+
+                    if ((match.Index == offset && match.Length == trimmedText.Length) || (relativeRegex.Success && match.Index + match.Length == trimmedText.Length))
+                    {
+                        // Handing cases which contain relative term like "this 5/12"
+                        if (match.Index != offset)
+                        {
+                            relativeStr = relativeRegex.Value;
+                        }
+
+                        // Value string will be set in Match2Date method
+                        var ret = Match2Date(match, referenceDate, relativeStr);
+                        return ret;
+                    }
                 }
             }
 
@@ -175,7 +193,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success && match.Index == 3 && match.Length == trimmedText.Length)
             {
                 int month = referenceDate.Month, year = referenceDate.Year;
-                var dayStr = match.Groups["day"].Value.ToLower();
+                var dayStr = match.Groups["day"].Value;
                 var day = this.config.DayOfMonth[dayStr];
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(-1, -1, day);
@@ -217,7 +235,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var swift = GetSwiftDay(exactMatch.Value);
 
-                var value = referenceDate.AddDays(swift);
+                var value = referenceDate.Date.AddDays(swift);
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
@@ -251,7 +269,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var numErs = this.config.IntegerExtractor.Extract(trimmedText);
                 var num = Convert.ToInt32((double)(this.config.NumberParser.Parse(numErs[0]).Value ?? 0));
-                var weekdayStr = exactMatch.Groups["weekday"].Value.ToLower();
+                var weekdayStr = exactMatch.Groups["weekday"].Value;
                 var value = referenceDate;
 
                 // Check whether the determined day of this week has passed.
@@ -278,7 +296,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             exactMatch = this.config.NextRegex.MatchExact(trimmedText, trim: true);
             if (exactMatch.Success)
             {
-                var weekdayStr = exactMatch.Groups["weekday"].Value.ToLower();
+                var weekdayStr = exactMatch.Groups["weekday"].Value;
                 var value = referenceDate.Next((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
                 if (this.config.UpcomingPrefixRegex.MatchBegin(trimmedText, trim: true).Success)
@@ -298,7 +316,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (exactMatch.Success)
             {
-                var weekdayStr = exactMatch.Groups["weekday"].Value.ToLower();
+                var weekdayStr = exactMatch.Groups["weekday"].Value;
                 var value = referenceDate.This((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
@@ -315,7 +333,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (exactMatch.Success)
             {
-                var weekdayStr = exactMatch.Groups["weekday"].Value.ToLower();
+                var weekdayStr = exactMatch.Groups["weekday"].Value;
                 var value = referenceDate.Last((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
                 if (this.config.PastPrefixRegex.MatchBegin(trimmedText, trim: true).Success)
@@ -335,7 +353,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (exactMatch.Success)
             {
-                var weekdayStr = exactMatch.Groups["weekday"].Value.ToLower();
+                var weekdayStr = exactMatch.Groups["weekday"].Value;
                 var weekDay = this.config.DayOfWeek[weekdayStr];
                 var value = referenceDate.This((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
@@ -375,7 +393,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success)
             {
                 int day = 0, month = referenceDate.Month, year = referenceDate.Year;
-                var dayStr = match.Groups["DayOfMonth"].Value.ToLower();
+                var dayStr = match.Groups["DayOfMonth"].Value;
 
                 // Create a extract result which content ordinal string of text
                 ExtractResult er = new ExtractResult
@@ -471,7 +489,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var numWeekDayInt = (int)pivotDate.DayOfWeek;
-                var extractedWeekDayStr = match.Groups["weekday"].Value.ToLower();
+                var extractedWeekDayStr = match.Groups["weekday"].Value;
                 var weekDay = this.config.DayOfWeek[extractedWeekDayStr];
                 if (!pivotDate.Equals(DateObject.MinValue))
                 {
@@ -496,8 +514,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             if (tmp >= day)
                             {
                                 // For months like January 31, after add 1 month, February 31 won't be returned, so the day should be revised ASAP.
-                                futureDate =
-                                    DateObjectExtension.SafeCreateFromValue(futureDate, futureDate.Year, futureDate.Month, day);
+                                futureDate = futureDate.SafeCreateFromValue(futureDate.Year, futureDate.Month, day);
                             }
                         }
 
@@ -512,8 +529,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             if (tmp >= day)
                             {
                                 // For months like March 31, after minus 1 month, February 31 won't be returned, so the day should be revised ASAP.
-                                pastDate =
-                                    DateObjectExtension.SafeCreateFromValue(pastDate, pastDate.Year, pastDate.Month, day);
+                                pastDate = pastDate.SafeCreateFromValue(pastDate.Year, pastDate.Month, day);
                             }
                         }
 
@@ -542,7 +558,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
 
-            var trimmedText = text.Trim().ToLower();
+            var trimmedText = text.Trim();
             int month = 0, day = 0, year = referenceDate.Year;
             bool ambiguous = true;
 
@@ -584,7 +600,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Success)
                 {
                     var monthStr = match.Groups["order"].Value;
-                    var swift = this.config.GetSwiftMonth(monthStr);
+                    var swift = this.config.GetSwiftMonthOrYear(monthStr);
                     month = referenceDate.AddMonths(swift).Month;
                     year = referenceDate.AddMonths(swift).Year;
                     day = num;
@@ -650,7 +666,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
 
-            var trimmedText = text.Trim().ToLower();
+            var trimmedText = text.Trim();
             int month = referenceDate.Month, day = 0, year = referenceDate.Year;
 
             var er = this.config.OrdinalExtractor.Extract(trimmedText);
@@ -696,6 +712,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 referenceDate,
                 config.DurationExtractor,
                 config.DurationParser,
+                config.NumberParser,
                 config.UnitMap,
                 config.UnitRegex,
                 config.UtilityConfiguration,
@@ -703,13 +720,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // Parse a regex match which includes 'day', 'month' and 'year' (optional) group
-        private DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate)
+        private DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate, string relativeStr)
         {
             var ret = new DateTimeResolutionResult();
 
-            var monthStr = match.Groups["month"].Value.ToLower();
-            var dayStr = match.Groups["day"].Value.ToLower();
-            var yearStr = match.Groups["year"].Value.ToLower();
+            var monthStr = match.Groups["month"].Value;
+            var dayStr = match.Groups["day"].Value;
+            var yearStr = match.Groups["year"].Value;
+            var weekdayStr = match.Groups["weekday"].Value;
             int month = 0, day = 0, year = 0;
 
             if (this.config.MonthOfYear.ContainsKey(monthStr) && this.config.DayOfMonth.ContainsKey(dayStr))
@@ -734,8 +752,24 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (year == 0)
             {
                 year = referenceDate.Year;
+                if (!string.IsNullOrEmpty(relativeStr))
+                {
+                    var swift = this.config.GetSwiftMonthOrYear(relativeStr);
+
+                    // @TODO Improve handling of next/last in particular cases "next friday 5/12" when the next friday is not 5/12.
+                    if (!string.IsNullOrEmpty(weekdayStr))
+                    {
+                        swift = 0;
+                    }
+
+                    year += swift;
+                }
+                else
+                {
+                    noYear = true;
+                }
+
                 ret.Timex = DateTimeFormatUtil.LuisDate(-1, month, day);
-                noYear = true;
             }
             else
             {
@@ -766,7 +800,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
 
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var match = this.config.WeekDayOfMonthRegex.Match(trimmedText);
             if (!match.Success)
             {
@@ -785,7 +819,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             int month;
             if (string.IsNullOrEmpty(monthStr))
             {
-                var swift = this.config.GetSwiftMonth(trimmedText);
+                var swift = this.config.GetSwiftMonthOrYear(trimmedText);
 
                 month = referenceDate.AddMonths(swift).Month;
                 year = referenceDate.AddMonths(swift).Year;
@@ -835,7 +869,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private int GetSwiftDay(string text)
         {
-            var trimmedText = this.config.Normalize(text.Trim().ToLowerInvariant());
+            var trimmedText = this.config.Normalize(text.Trim());
             var swift = 0;
 
             var match = this.config.RelativeDayRegex.Match(text);
@@ -872,7 +906,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private int GetSwift(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             var swift = 0;
             if (this.config.NextPrefixRegex.IsMatch(trimmedText))

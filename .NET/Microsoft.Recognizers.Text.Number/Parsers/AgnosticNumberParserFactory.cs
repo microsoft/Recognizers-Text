@@ -44,9 +44,10 @@ namespace Microsoft.Recognizers.Text.Number
     {
         public static BaseNumberParser GetParser(AgnosticNumberParserType type, INumberParserConfiguration languageConfiguration)
         {
-            var isChinese = languageConfiguration.CultureInfo.Name.ToLowerInvariant() == Culture.Chinese;
-            var isJapanese = languageConfiguration.CultureInfo.Name.ToLowerInvariant() == Culture.Japanese;
-            var isKorean = languageConfiguration.CultureInfo.Name.ToLowerInvariant() == Culture.Korean;
+            var culture = languageConfiguration.CultureInfo.Name.ToLowerInvariant();
+            var isChinese = culture == Culture.Chinese;
+            var isJapanese = culture == Culture.Japanese;
+            var isKorean = culture == Culture.Korean;
 
             BaseNumberParser parser;
 

@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 DateTimeResolutionResult innerResult;
 
-                // Resolve timezome
+                // Resolve timezone
                 if (TimeZoneUtility.ShouldResolveTimeZone(er, config.Options))
                 {
                     var metadata = er.Data as Dictionary<string, object>;
@@ -92,7 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         // parse basic patterns in TimeRegexList
         private DateTimeResolutionResult ParseBasicRegexMatch(string text, DateObject referenceTime)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var offset = 0;
 
             var match = this.config.AtRegex.Match(trimmedText);
@@ -166,7 +166,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!string.IsNullOrEmpty(writtenTimeStr))
             {
                 // get hour
-                var hourStr = match.Groups["hournum"].Value.ToLower();
+                var hourStr = match.Groups["hournum"].Value;
                 hour = this.config.Numbers[hourStr];
 
                 // get minute
@@ -218,7 +218,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var hourStr = match.Groups[Constants.HourGroupName].Value;
                 if (string.IsNullOrEmpty(hourStr))
                 {
-                    hourStr = match.Groups["hournum"].Value.ToLower();
+                    hourStr = match.Groups["hournum"].Value;
                     if (!this.config.Numbers.TryGetValue(hourStr, out hour))
                     {
                         return ret;
@@ -228,7 +228,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     if (!int.TryParse(hourStr, out hour))
                     {
-                        if (!this.config.Numbers.TryGetValue(hourStr.ToLower(), out hour))
+                        if (!this.config.Numbers.TryGetValue(hourStr, out hour))
                         {
                             return ret;
                         }
@@ -236,7 +236,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // get minute
-                var minStr = match.Groups[Constants.MinuteGroupName].Value.ToLower();
+                var minStr = match.Groups[Constants.MinuteGroupName].Value;
                 if (string.IsNullOrEmpty(minStr))
                 {
                     minStr = match.Groups["minnum"].Value;
@@ -260,7 +260,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // get second
-                var secStr = match.Groups[Constants.SecondGroupName].Value.ToLower();
+                var secStr = match.Groups[Constants.SecondGroupName].Value;
                 if (!string.IsNullOrEmpty(secStr))
                 {
                     second = int.Parse(secStr);
@@ -269,12 +269,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Adjust by desc string
-            var descStr = match.Groups[Constants.DescGroupName].Value.ToLower();
+            var descStr = match.Groups[Constants.DescGroupName].Value;
 
             // ampm is a special case in which at 6ampm = at 6
-            if (config.UtilityConfiguration.AmDescRegex.Match(descStr).Success
-                || config.UtilityConfiguration.AmPmDescRegex.Match(descStr).Success
-                || match.Groups[Constants.ImplicitAmGroupName].Success)
+            if (config.UtilityConfiguration.AmDescRegex.Match(descStr).Success ||
+                config.UtilityConfiguration.AmPmDescRegex.Match(descStr).Success ||
+                match.Groups[Constants.ImplicitAmGroupName].Success)
             {
                 if (hour >= Constants.HalfDayHourCount)
                 {
@@ -286,8 +286,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     hasAm = true;
                 }
             }
-            else if (config.UtilityConfiguration.PmDescRegex.Match(descStr).Success
-                || match.Groups[Constants.ImplicitPmGroupName].Success)
+            else if (config.UtilityConfiguration.PmDescRegex.Match(descStr).Success ||
+                     match.Groups[Constants.ImplicitPmGroupName].Success)
             {
                 if (hour < Constants.HalfDayHourCount)
                 {
@@ -298,14 +298,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // adjust min by prefix
-            var timePrefix = match.Groups[Constants.PrefixGroupName].Value.ToLower();
+            var timePrefix = match.Groups[Constants.PrefixGroupName].Value;
             if (!string.IsNullOrEmpty(timePrefix))
             {
                 this.config.AdjustByPrefix(timePrefix, ref hour, ref min, ref hasMin);
             }
 
             // adjust hour by suffix
-            var timeSuffix = match.Groups[Constants.SuffixGroupName].Value.ToLower();
+            var timeSuffix = match.Groups[Constants.SuffixGroupName].Value;
             if (!string.IsNullOrEmpty(timeSuffix))
             {
                 this.config.AdjustBySuffix(timeSuffix, ref hour, ref min, ref hasMin, ref hasAm, ref hasPm);

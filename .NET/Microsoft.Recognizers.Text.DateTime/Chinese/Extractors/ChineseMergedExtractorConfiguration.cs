@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Chinese;
 using DateObject = System.DateTime;
 
@@ -8,11 +9,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class ChineseMergedExtractorConfiguration : IDateTimeExtractor
     {
-        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.ParserConfigurationBefore, RegexOptions.Singleline);
-        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfter, RegexOptions.Singleline);
-        public static readonly Regex UntilRegex = new Regex(DateTimeDefinitions.ParserConfigurationUntil, RegexOptions.Singleline);
-        public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexOptions.Singleline);
-        public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexOptions.Singleline);
+        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.ParserConfigurationBefore, RegexFlags);
+        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfter, RegexFlags);
+        public static readonly Regex UntilRegex = new Regex(DateTimeDefinitions.ParserConfigurationUntil, RegexFlags);
+        public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexFlags);
+        public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexFlags);
+        public static readonly Regex EqualRegex = new Regex(BaseDateTime.EqualRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly ChineseDateExtractorConfiguration DateExtractor = new ChineseDateExtractorConfiguration();
         private static readonly ChineseTimeExtractorConfiguration TimeExtractor = new ChineseTimeExtractorConfiguration();
@@ -113,8 +117,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var lastEnd = 0;
             foreach (var er in ers)
             {
-                var beforeStr = text.Substring(lastEnd, er.Start ?? 0).ToLowerInvariant();
-                var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
+                var beforeStr = text.Substring(lastEnd, er.Start ?? 0);
+                var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0));
 
                 var match = BeforeRegex.MatchBegin(afterStr, trim: true);
 
@@ -159,6 +163,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     var modLength = match.Index + match.Length;
                     er.Length += modLength;
+                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                }
+
+                match = EqualRegex.MatchBegin(beforeStr, trim: true);
+                if (match.Success)
+                {
+                    var modLength = beforeStr.Length - match.Index;
+                    er.Length += modLength;
+                    er.Start -= modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
             }

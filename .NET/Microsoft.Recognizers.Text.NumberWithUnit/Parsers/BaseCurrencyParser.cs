@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using Microsoft.Recognizers.Text.NumberWithUnit.Utilities;
 
@@ -30,7 +31,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 var value = pr.Value as UnitValue;
 
                 Config.CurrencyNameToIsoCodeMap.TryGetValue(value?.Unit, out var mainUnitIsoCode);
-                if (string.IsNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX))
+                if (string.IsNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX, StringComparison.Ordinal))
                 {
                     pr.Value = new UnitValue
                     {
@@ -99,7 +100,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 // Process a new group
                 if (count == 0)
                 {
-                    if (!extractResult.Type.Equals(Constants.SYS_UNIT_CURRENCY))
+                    if (!extractResult.Type.Equals(Constants.SYS_UNIT_CURRENCY, StringComparison.Ordinal))
                     {
                         continue;
                     }
@@ -137,7 +138,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 else
                 {
                     // Match pure number as fraction unit.
-                    if (extractResult.Type.Equals(Constants.SYS_NUM))
+                    if (extractResult.Type.Equals(Constants.SYS_NUM, StringComparison.Ordinal))
                     {
                         numberValue += (double)parseResult.Value * (1.0 / 100);
                         result.ResolutionStr += ' ' + parseResult.ResolutionStr;
@@ -163,7 +164,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         if (result != null)
                         {
                             if (string.IsNullOrEmpty(mainUnitIsoCode) ||
-                                mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX))
+                                mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX, StringComparison.Ordinal))
                             {
                                 result.Value = new UnitValue
                                 {
@@ -197,7 +198,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             if (result != null)
             {
                 if (string.IsNullOrEmpty(mainUnitIsoCode) ||
-                    mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX))
+                    mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX, StringComparison.Ordinal))
                 {
                     result.Value = new UnitValue
                     {

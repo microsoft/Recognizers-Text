@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -10,9 +11,9 @@ namespace Microsoft.Recognizers.Text.Number
     public abstract class BaseNumberExtractor : IExtractor
     {
         public static readonly Regex CurrencyRegex =
-            new Regex(BaseNumbers.CurrencyRegex, RegexOptions.Singleline);
+            new Regex(BaseNumbers.CurrencyRegex, RegexOptions.Singleline | RegexOptions.ExplicitCapture);
 
-        public BaseNumberExtractor(NumberOptions options = NumberOptions.None)
+        protected BaseNumberExtractor(NumberOptions options = NumberOptions.None)
         {
             Options = options;
         }
@@ -53,8 +54,8 @@ namespace Microsoft.Recognizers.Text.Number
                         continue;
                     }
 
-                    // In EnablePreview, cases like "last", "next" should not be skipped
-                    if ((Options & NumberOptions.EnablePreview) == 0 && IsRelativeOrdinal(m.Value))
+                    // If SuppressExtendedTypes is on, cases like "last", "next" should be skipped
+                    if ((Options & NumberOptions.SuppressExtendedTypes) != 0 && m.Groups[Constants.RelativeOrdinalGroupName].Success)
                     {
                         continue;
                     }
@@ -82,8 +83,8 @@ namespace Microsoft.Recognizers.Text.Number
 
                         if (matchSource.Keys.Any(o => o.Index == start && o.Length == length))
                         {
-                            var type = matchSource.Where(p => p.Key.Index == start && p.Key.Length == length)
-                                .Select(p => (p.Value.Priority, p.Value.Name)).Min().Item2;
+                            var (_, type, originalMatch) = matchSource.Where(p => p.Key.Index == start && p.Key.Length == length)
+                                .Select(p => (p.Value.Priority, p.Value.Name, p.Key)).Min();
 
                             // Extract negative numbers
                             if (NegativeNumberTermsRegex != null)
@@ -106,6 +107,17 @@ namespace Microsoft.Recognizers.Text.Number
                                 Data = type,
                             };
 
+                            // Add Metadata information for Ordinal
+                            if (ExtractType.Contains(Constants.MODEL_ORDINAL))
+                            {
+                                er.Metadata = new Metadata();
+                                if ((Options & NumberOptions.SuppressExtendedTypes) == 0 &&
+                                    originalMatch.Groups[Constants.RelativeOrdinalGroupName].Success)
+                                {
+                                    er.Metadata.IsOrdinalRelative = true;
+                                }
+                            }
+
                             result.Add(er);
                         }
                     }
@@ -121,26 +133,17 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        protected static Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = BaseNumbers.PlaceHolderDefault)
+        protected static Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = BaseNumbers.PlaceHolderDefault,
+                                                               RegexOptions flags = RegexOptions.Singleline)
         {
-            var thousandsMark = Regex.Escape(type.ThousandsMark.ToString());
-            var decimalsMark = Regex.Escape(type.DecimalsMark.ToString());
+            var thousandsMark = Regex.Escape(type.ThousandsMark.ToString(CultureInfo.InvariantCulture));
+            var decimalsMark = Regex.Escape(type.DecimalsMark.ToString(CultureInfo.InvariantCulture));
 
             var regexDefinition = type.DecimalsMark.Equals('\0') ?
                 BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark) :
                 BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 
-            return new Regex(regexDefinition, RegexOptions.Singleline);
-        }
-
-        private bool IsRelativeOrdinal(string matchValue)
-        {
-            if (RelativeReferenceRegex == null)
-            {
-                return false;
-            }
-
-            return RelativeReferenceRegex.Match(matchValue).Success;
+            return new Regex(regexDefinition, flags);
         }
 
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)

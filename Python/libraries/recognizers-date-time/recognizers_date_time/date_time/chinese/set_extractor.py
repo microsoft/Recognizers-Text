@@ -9,6 +9,7 @@ from ..utilities import Token, merge_all_tokens
 from ..base_set import BaseSetExtractor
 from .set_extractor_config import ChineseSetExtractorConfiguration
 
+
 class ChineseSetExtractor(BaseSetExtractor):
     def __init__(self):
         super().__init__(ChineseSetExtractorConfiguration())
@@ -20,9 +21,12 @@ class ChineseSetExtractor(BaseSetExtractor):
         tokens: List[Token] = list()
         tokens.extend(self.match_each_unit(source))
         tokens.extend(self.match_each_duration(source, reference))
-        tokens.extend(self.match_each_specific(self.config.time_extractor, self.config.each_day_regex, source, reference))
-        tokens.extend(self.match_each_specific(self.config.date_extractor, self.config.each_prefix_regex, source, reference))
-        tokens.extend(self.match_each_specific(self.config.date_time_extractor, self.config.each_prefix_regex, source, reference))
+        tokens.extend(self.match_each_specific(
+            self.config.time_extractor, self.config.each_day_regex, source, reference))
+        tokens.extend(self.match_each_specific(
+            self.config.date_extractor, self.config.each_prefix_regex, source, reference))
+        tokens.extend(self.match_each_specific(
+            self.config.date_time_extractor, self.config.each_prefix_regex, source, reference))
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
         return result
 

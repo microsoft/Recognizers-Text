@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
@@ -39,7 +40,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<Token> BasicRegexMatch(string text)
         {
             var ret = new List<Token>();
-            text = text.ToLower();
 
             // Handle "now"
             var matches = this.config.NowRegex.Matches(text);
@@ -108,9 +108,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     break;
                 }
 
-                if ((ers[i].Type.Equals(Constants.SYS_DATETIME_DATE) && ers[j].Type.Equals(Constants.SYS_DATETIME_TIME)) ||
-                    (ers[i].Type.Equals(Constants.SYS_DATETIME_TIME) && ers[j].Type.Equals(Constants.SYS_DATETIME_DATE)) ||
-                    (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE) && ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER)))
+                if ((ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
+                     ers[j].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal)) ||
+                    (ers[i].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal) &&
+                     ers[j].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal)) ||
+                    (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
+                     ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal)))
                 {
                     var middleBegin = ers[i].Start + ers[i].Length ?? 0;
                     var middleEnd = ers[j].Start ?? 0;
@@ -120,11 +123,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         continue;
                     }
 
-                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
+                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
                     var valid = false;
 
                     // for cases like "tomorrow 3",  "tomorrow at 3"
-                    if (ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                    if (ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
                     {
                         var match = this.config.DateNumberConnectorRegex.Match(middleStr);
                         if (string.IsNullOrEmpty(middleStr) || match.Success)
@@ -134,9 +137,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     else
                     {
-                        if (this.config.IsConnector(middleStr))
+                        // For case like "3 pm or later on monday"
+                        var match = this.config.SuffixAfterRegex.Match(middleStr);
+                        if (match.Success)
                         {
-                            valid = true;
+                            middleStr = middleStr.Substring(match.Index + match.Length, middleStr.Length - match.Length).Trim();
+                        }
+
+                        if (!(match.Success && middleStr.Length == 0))
+                        {
+                            if (this.config.IsConnector(middleStr))
+                            {
+                                valid = true;
+                            }
                         }
                     }
 
@@ -144,6 +157,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         var begin = ers[i].Start ?? 0;
                         var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);
+
+                        ExtendWithDateTimeAndYear(ref begin, ref end, text, reference);
+
                         ret.Add(new Token(begin, end));
                         i = j + 1;
                         continue;
@@ -325,6 +341,24 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
+        }
+
+        // Handle case like "Wed Oct 26 15:50:06 2016" which year and month separated by time.
+        private void ExtendWithDateTimeAndYear(ref int startIndex, ref int endIndex, string text, DateObject reference)
+        {
+
+            // Check whether there's a year behind.
+            var suffix = text.Substring(endIndex);
+            var matchYear = this.config.YearSuffix.Match(suffix);
+            if (matchYear.Success && matchYear.Index == 0)
+            {
+                var checkYear = config.DatePointExtractor.GetYearFromText(this.config.YearRegex.Match(text));
+                var year = config.DatePointExtractor.GetYearFromText(matchYear);
+                if (year >= Constants.MinYearNum && year <= Constants.MaxYearNum && checkYear == year)
+                {
+                    endIndex += matchYear.Length;
+                }
+            }
         }
     }
 }

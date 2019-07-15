@@ -4,6 +4,7 @@ from recognizers_text.utilities import RegExpUtility
 from ...resources.spanish_date_time import SpanishDateTime
 from ..base_time import TimeExtractorConfiguration
 
+
 class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
     @property
     def time_regex_list(self) -> List[Pattern]:
@@ -18,8 +19,10 @@ class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
         return self._ish_regex
 
     def __init__(self):
-        self._time_regex_list: List[Pattern] = SpanishTimeExtractorConfiguration.get_time_regex_list()
-        self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(SpanishDateTime.AtRegex)
+        self._time_regex_list: List[Pattern] = SpanishTimeExtractorConfiguration.get_time_regex_list(
+        )
+        self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.AtRegex)
         self._ish_regex: Pattern = None
 
     @staticmethod

@@ -1,0 +1,769 @@
+[
+  {
+    "Input": "지금 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "지금",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "지금 당장 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "지금 당장",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "15일 오전 8시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15일 오전 8시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "15일 오전 8시 30분에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15일 오전 8시 30분",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "15일 저녁 8시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15일 저녁 8시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "2016년 4월 21일 저녁 8시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 4월 21일 저녁 8시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "2016년 4월 21일 저녁 8시 13초에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 4월 21일 저녁 8시 13초",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "10월 23일 7시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10월 23일 7시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "10월 14일 오전 8시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10월 14일 오전 8시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "10월 14일 오전 8시 1초에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10월 14일 오전 8시 1초",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "내일 오전 8시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일 오전 8시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "내일 오전 8시경에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일 오전 8시경",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "내일 오전 8시 5초에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일 오전 8시 5초",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "다음 주 금요일 3시 반에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 주 금요일 3시 반",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "2016년 5월 5일 저녁 8시 20분에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 5월 5일 저녁 8시 20분",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "15일 7시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15일 7시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "다음 주 일요일 저녁 8시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 주 일요일 저녁 8시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "오늘 저녁 8시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘 저녁 8시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "내일 6시 45분에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일 6시 45분",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "2016년 12월 22일 저녁 7시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 12월 22일 저녁 7시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "내일 7시 정각에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일 7시 정각",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "내일 아침 7시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일 아침 7시에 ",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "일요일 저녁 7시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "일요일 저녁 7시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "내일 아침 5시 20분에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일 아침 5시 20분",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "10월 14일 8시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10월 14일 8시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "오늘 아침 7시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘 아침 7시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "월요일 저녁 8시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "월요일 저녁 8시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "1월 1일 저녁 8시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1월 1일 저녁 8시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "오늘 밤 10시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘 밤 10시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "오늘 아침 8시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘 아침 8시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "오늘 밤 7시경에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘 밤 7시경",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "오늘 밤 7시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘 밤 7시에",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "오늘 밤 9시 30분에 두 명을 위해",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘 밤 9시 30분에",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "오늘 밤 9시 30분 31초에 두 명을 위해",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘 밤 9시 30분 31초에",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "오늘까지 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘까지",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "내일까지 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일까지",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "일요일까지 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "일요일까지",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "5일 오전 4시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5일 오전 4시에",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "2016년 12월 16일 12시 23분 59초에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016-12-16T12:23:59",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "5시간 내에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5시간 내에",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "일요일 오후 3시에 내가 시간이 되는지 알아 봐. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "일요일 오후 3시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "내일 오전 9시 정각에 약속을 정해 봐. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일 오전 9시 정각에",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "내일 오전 9시 정각에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일 오전 9시 정각에",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "내일 9시 정각에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일 9시 정각에 ",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "이번 주 금요일 오후 1시 정각에",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 주 금요일 오후 1시 정각에",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "금요일 오후 12시 30분에 점심 추가",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "금요일 오후 12시 30분",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "오늘 밤 자정에 649 추가 ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘 밤 자정",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "8월 1일 오전 11시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8월 1일 오전 11시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "2월 25일 오전 11시에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2월 25일 오전 11시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "2017년 1월 6일 오후 6시 37분에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2017년 1월 6일 오후 6시 37분",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "2016년 11월 16일 10시 38분에 돌아갈 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 11월 16일 10시 38분",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "하루하고 두 시간 후에 떠날 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "하루하고 두 시간 후",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "한 시간 동안 바쁠 것 같아요. 조금 있다가 전화해 주세요. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "한 시간 동안 ",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "두 달하고 하루 두 시간 전에 그를 만났다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "두 달하고 하루 두 시간 전",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "하루하고 30분 후에 떠날 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "하루하고 30분 후",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "2분 후에 떠날 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2분 후",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "오늘 오전 9시에 스카이프 통화 예약해 줘. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘 오전 9시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "오늘 저녁 9시에 스카이프 통화 예약해 줘. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘 저녁 9시",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "두 시간 후에 떠날 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "두 시간 후",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  }
+]

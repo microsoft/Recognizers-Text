@@ -1,0 +1,9 @@
+---
+NumberReplaceToken: '@builtin.phonenumber'
+WordBoundariesRegex: !simpleRegex
+  def: (\b|(?<=[\u0800-\u9FFF]))
+NonWordBoundariesRegex: !simpleRegex
+  def: (\B|(?<=[\u0800-\u9FFF]))
+EndWordBoundariesRegex: !simpleRegex
+  def: (\b|(?=[\u0800-\u9FFF]))
+...

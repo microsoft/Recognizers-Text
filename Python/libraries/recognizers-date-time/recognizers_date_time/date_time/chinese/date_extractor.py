@@ -7,6 +7,7 @@ from ..base_date import BaseDateExtractor
 from .date_extractor_config import ChineseDateExtractorConfiguration
 from .duration_extractor import ChineseDurationExtractor
 
+
 class ChineseDateExtractor(BaseDateExtractor):
     def __init__(self):
         super().__init__(ChineseDateExtractorConfiguration())

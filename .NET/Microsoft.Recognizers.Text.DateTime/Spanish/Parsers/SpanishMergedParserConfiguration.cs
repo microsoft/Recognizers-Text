@@ -13,7 +13,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             AfterRegex = SpanishMergedExtractorConfiguration.AfterRegex;
             SinceRegex = SpanishMergedExtractorConfiguration.SinceRegex;
             AroundRegex = SpanishMergedExtractorConfiguration.AroundRegex;
-            DateAfter = SpanishMergedExtractorConfiguration.DateAfterRegex;
+            EqualRegex = SpanishMergedExtractorConfiguration.EqualRegex;
+            SuffixAfter = SpanishMergedExtractorConfiguration.SuffixAfterRegex;
             YearRegex = SpanishDatePeriodExtractorConfiguration.YearRegex;
             SuperfluousWordMatcher = SpanishMergedExtractorConfiguration.SuperfluousWordMatcher;
 
@@ -33,7 +34,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex AroundRegex { get; }
 
-        public Regex DateAfter { get; }
+        public Regex EqualRegex { get; }
+
+        public Regex SuffixAfter { get; }
 
         public Regex YearRegex { get; }
 

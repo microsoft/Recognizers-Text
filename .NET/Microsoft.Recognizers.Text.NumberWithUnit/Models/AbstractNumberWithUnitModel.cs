@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             // Preprocess the query
             query = QueryProcessor.Preprocess(query, caseSensitive: true);
 
-            List<ModelResult> extractionResults = new List<ModelResult>();
+            var extractionResults = new List<ModelResult>();
 
             try
             {

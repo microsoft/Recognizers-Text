@@ -5,6 +5,8 @@ RangeConnectorRegex : !simpleRegex
   def: (?<and>e|al|a|--|-|—|——)
 RelativeRegex: !simpleRegex
   def: (?<order>prossim[oa]|quest[oa]|ultim[oa]|passat[oa]|precedente|corrente|il|mio)
+StrictRelativeRegex: !simpleRegex
+  def: (?<order>prossim[oa]|quest[oa]|ultim[oa]|passat[oa]|precedente|corrente|il|mio)
 NextSuffixRegex: !simpleRegex
   def: (?<order>prossim[oa]|seguente)\b
 PastSuffixRegex: !simpleRegex
@@ -445,6 +447,9 @@ AgoRegex: !simpleRegex
   def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(di)\b
+SinceYearSuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 WithinNextPrefixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -496,8 +501,8 @@ WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(del\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
 WeekDayAndDayRegex: !nestedRegex
-  def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex}))))\b
-  references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex]
+  def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex|{OclockRegex}}))))\b
+  references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex, OclockRegex]
 RestOfDateRegex: !simpleRegex
   def: Fine\s+(di\s+)?((del|questo|questa|corrente)\s+)?(?<duration>settimana|mese|anno)\b
 RestOfDateTimeRegex: !simpleRegex
@@ -546,7 +551,7 @@ FullTextYearRegex: !simpleRegex
 YearSuffix: !nestedRegex
   def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
   references: [ DateYearRegex, FullTextYearRegex ]
-DateAfterRegex: !simpleRegex
+SuffixAfterRegex: !simpleRegex
   def: \b(o\s+(dopo|passato))\b
 YearPeriodRegex: !nestedRegex
   def: (((dal|durante|nel|tra)\s+)?{YearRegex}\s*{TillRegex}\s*{YearRegex})
@@ -605,6 +610,11 @@ UnitValueMap: !dictionary
     secondo: 1
     secs: 1
     sec: 1
+# TODO: modify below regex according to the counterpart in English
+SpecialYearPrefixesMap: !dictionary
+  types: [ string, string ]
+  entries:
+    '': ''
 SeasonMap: !dictionary
   types: [ string, string ]
   entries:

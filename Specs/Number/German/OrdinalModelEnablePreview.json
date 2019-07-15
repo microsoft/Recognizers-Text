@@ -1,0 +1,34 @@
+[
+  {
+    "Input": "lösche den letzten Eintrag.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "letzten",
+        "Start": 11,
+        "End": 16,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "zeig mir das vorletzte Element.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vorletzte",
+        "Start": 13,
+        "End": 21,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end"
+        }
+      }
+    ]
+  }
+]

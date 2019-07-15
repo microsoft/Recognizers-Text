@@ -9,8 +9,10 @@ namespace Microsoft.Recognizers.Text.Number
     public abstract class BasePercentageExtractor : IExtractor
     {
         protected static readonly string NumExtType = Constants.SYS_NUM; // @sys.num
-
         protected static readonly string FracNumExtType = Constants.SYS_NUM_FRACTION;
+
+        protected static readonly string NumberPlaceHolder = "@" + NumExtType;
+        protected static readonly string FractionPlaceHolder = "@" + FracNumExtType;
 
         private readonly BaseNumberExtractor numberExtractor;
 
@@ -110,7 +112,7 @@ namespace Microsoft.Recognizers.Text.Number
             foreach (var regexStr in regexStrs)
             {
                 // var sl = "(?=\\b)(" + regexStr + ")(?=(s?\\b))";
-                var options = RegexOptions.Singleline;
+                var options = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
                 if (ignoreCase)
                 {
                     options = options | RegexOptions.IgnoreCase;
@@ -137,8 +139,6 @@ namespace Microsoft.Recognizers.Text.Number
             Dictionary<int, int> positionMap,
             IList<ExtractResult> numExtResults)
         {
-            string replaceNumText = "@" + NumExtType;
-            string replaceFracNumText = "@" + FracNumExtType;
 
             for (int i = 0; i < results.Count; i++)
             {
@@ -148,22 +148,22 @@ namespace Microsoft.Recognizers.Text.Number
                 var data = new List<(string, ExtractResult)>();
 
                 string replaceText;
-                if ((Options & NumberOptions.PercentageMode) != 0 && str.Contains(replaceFracNumText))
+                if ((Options & NumberOptions.PercentageMode) != 0 && str.Contains(FractionPlaceHolder))
                 {
-                    replaceText = replaceFracNumText;
+                    replaceText = FractionPlaceHolder;
                 }
                 else
                 {
-                    replaceText = replaceNumText;
+                    replaceText = NumberPlaceHolder;
                 }
 
                 if (positionMap.ContainsKey(start) && positionMap.ContainsKey(end))
                 {
                     int originStart = positionMap[start];
-                    int originLenth = positionMap[end] - originStart;
+                    int originLength = positionMap[end] - originStart;
                     results[i].Start = originStart;
-                    results[i].Length = originLenth;
-                    results[i].Text = originSource.Substring(originStart, originLenth);
+                    results[i].Length = originLength;
+                    results[i].Text = originSource.Substring(originStart, originLength);
 
                     int numStart = str.IndexOf(replaceText, StringComparison.Ordinal);
                     if (numStart != -1)
@@ -187,7 +187,7 @@ namespace Microsoft.Recognizers.Text.Number
                 if ((Options & NumberOptions.PercentageMode) != 0)
                 {
                     // deal with special cases like "<fraction number> of" and "one in two" in percentageMode
-                    if (str.Contains(replaceFracNumText) || data.Count > 1)
+                    if (str.Contains(FractionPlaceHolder) || data.Count > 1)
                     {
                         results[i].Data = data;
                     }
@@ -218,8 +218,6 @@ namespace Microsoft.Recognizers.Text.Number
             positionMap = new Dictionary<int, int>();
 
             numExtResults = numberExtractor.Extract(str);
-            string replaceNumText = "@" + NumExtType;
-            string replaceFracText = "@" + FracNumExtType;
             bool percentModeEnabled = (Options & NumberOptions.PercentageMode) != 0;
 
             // @TODO potential cause of GC
@@ -240,7 +238,7 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     if (match[j] == 0)
                     {
-                        if (percentModeEnabled && extraction.Data.ToString().StartsWith("Frac"))
+                        if (percentModeEnabled && extraction.Data.ToString().StartsWith("Frac", StringComparison.Ordinal))
                         {
                             match[j] = -(i + 1);
                         }
@@ -284,7 +282,7 @@ namespace Microsoft.Recognizers.Text.Number
                 else
                 {
                     // subsequence which will be extracted as number, type is negative for fraction number extraction
-                    var replaceText = type > 0 ? replaceNumText : replaceFracText;
+                    var replaceText = type > 0 ? NumberPlaceHolder : FractionPlaceHolder;
                     ret += replaceText;
                     for (int i = 0; i < replaceText.Length; i++)
                     {

@@ -7,6 +7,7 @@ from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser
 from .utilities import DateTimeUtilityConfiguration
 
+
 class BaseDateParserConfiguration(ABC):
     @property
     @abstractmethod

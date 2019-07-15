@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 package com.microsoft.recognizers.text.numberwithunit.resources;
@@ -704,4 +707,8 @@ public class EnglishNumericWithUnit {
         .build();
 
     public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz", "stone", "dram", "lbs");
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))")
+        .build();
 }

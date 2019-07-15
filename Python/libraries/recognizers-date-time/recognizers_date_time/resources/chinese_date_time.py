@@ -4,10 +4,15 @@
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------
 
 from .base_date_time import BaseDateTime
 # pylint: disable=line-too-long
+
+
 class ChineseDateTime:
     MonthRegex = f'(?<month>正月|一月|二月|三月|四月|五月|六月|七月|八月|九月|十月|十一月|十二月|01月|02月|03月|04月|05月|06月|07月|08月|09月|10月|11月|12月|1月|2月|3月|4月|5月|6月|7月|8月|9月|大年)'
     DayRegex = f'(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|1|2|3|4|5|6|7|8|9)'
@@ -49,13 +54,13 @@ class ChineseDateTime:
     DatePeriodLastRegex = f'上个|上一个|上|上一'
     DatePeriodNextRegex = f'下个|下一个|下|下一'
     RelativeMonthRegex = f'(?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\\s*月)'
-    DatePeriodYearRegex = f'(({YearNumRegex})(\\s*年)?|({YearRegex})\\s*年)(?=[\\u4E00-\\u9FFF]|\\s|$|\\W)'
-    StrictYearRegex = f'{DatePeriodYearRegex}'
+    DatePeriodYearRegex = f'(({YearNumRegex})(\\s*年)?|({YearRegex})\\s*年)'
+    StrictYearRegex = f'({DatePeriodYearRegex}(?=[\\u4E00-\\u9FFF]|\\s|$|\\W))'
     YearRegexInNumber = f'(?<year>(\\d{{3,4}}))'
     DatePeriodYearInChineseRegex = f'(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年'
     MonthSuffixRegex = f'(?<msuf>({RelativeMonthRegex}|{MonthRegex}))'
     SimpleCasesRegex = f'((从)\\s*)?(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex})\\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInChinese}|{DayRegex})\\s*{DatePeriodTillRegex}\\s*({DatePeriodDayRegexInChinese}|{DayRegex})((\\s+|\\s*,\\s*){DatePeriodYearRegex})?'
-    YearAndMonth = f'({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex}){MonthRegex}'
+    YearAndMonth = f'({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\\s*{MonthRegex}'
     PureNumYearAndMonth = f'({YearRegexInNumber}\\s*[-\\.\\/]\\s*{MonthNumRegex})|({MonthNumRegex}\\s*\\/\\s*{YearRegexInNumber})'
     OneWordPeriodRegex = f'(((明年|今年|去年)\\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\\s*(周末|周|月|年)|周末|今年|明年|去年|前年|后年)'
     WeekOfMonthRegex = f'(?<wom>{MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\\s*周\\s*)'
@@ -78,7 +83,7 @@ class ChineseDateTime:
     DecadeRegexInChinese = f'(?<decade>十|一十|二十|三十|四十|五十|六十|七十|八十|九十)'
     DecadeRegex = f'(?<centurysuf>({CenturyRegex}|{CenturyRegexInChinese}|{RelativeCenturyRegex}))?(?<decade>(\\d0|{DecadeRegexInChinese}))年代'
     PrepositionRegex = f'(?<prep>^的|在$)'
-    NowRegex = f'(?<now>现在|马上|立刻|刚刚才|刚刚|刚才)'
+    NowRegex = f'(?<now>现在|马上|立刻|刚刚才|刚刚|刚才|这会儿|当下|此刻)'
     NightRegex = f'(?<night>早|晚)'
     TimeOfTodayRegex = f'(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?'
     DateTimePeriodTillRegex = f'(?<till>到|直到|--|-|—|——)'
@@ -106,7 +111,7 @@ class ChineseDateTime:
                                ("Y", "年")])
     DurationAmbiguousUnits = [r'分钟', r'秒钟', r'秒', r'个小时', r'小时', r'天', r'星期', r'个星期', r'周', r'个月', r'年']
     LunarHolidayRegex = f'(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)'
-    HolidayRegexList1 = f'(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)'
+    HolidayRegexList1 = f'(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|平安夜|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)'
     HolidayRegexList2 = f'(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母亲节|父亲节|感恩节|万圣节)'
     SetUnitRegex = f'(?<unit>年|月|周|星期|日|天|小时|时|分钟|分|秒钟|秒)'
     SetEachUnitRegex = f'(?<each>(每个|每一|每)\\s*{SetUnitRegex})'
@@ -511,7 +516,8 @@ class ChineseDateTime:
     DateTimeSimpleAmRegex = f'(?<am>早|晨)'
     DateTimeSimplePmRegex = f'(?<pm>晚)'
     DateTimePeriodMORegex = f'(凌晨|清晨|早上|早|上午)'
-    DateTimePeriodAFRegex = f'(中午|下午|午后|傍晚)'
+    DateTimePeriodMIRegex = f'(中午)'
+    DateTimePeriodAFRegex = f'(下午|午后|傍晚)'
     DateTimePeriodEVRegex = f'(晚上|夜里|夜晚|晚)'
     DateTimePeriodNIRegex = f'(半夜|夜间|深夜)'
     DurationUnitValueMap = dict([("Y", 31536000),
@@ -551,9 +557,10 @@ class ChineseDateTime:
                              ("晚", 18),
                              ("pm", 12)])
     DefaultLanguageFallback = 'DMY'
-    MorningTermList = [r'上午']
-    AfternoonTermList = [r'下午']
-    EveningTermList = [r'晚上']
-    DaytimeTermList = [r'白天']
+    MorningTermList = [r'上午', r'早上', r'清晨']
+    MidDayTermList = [r'中午', r'正午']
+    AfternoonTermList = [r'下午', r'午后']
+    EveningTermList = [r'晚上', r'夜里', r'傍晚', r'夜晚']
+    DaytimeTermList = [r'白天', r'日间']
     NightTermList = [r'深夜']
 # pylint: enable=line-too-long

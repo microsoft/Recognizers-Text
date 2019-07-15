@@ -15,6 +15,7 @@ from .time_parser import ChineseTimeParser
 from .timeperiod_parser import ChineseTimePeriodParser
 from .datetime_parser import ChineseDateTimeParser
 
+
 class ChineseDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration):
     @property
     def pure_number_from_to_regex(self) -> any:
@@ -97,10 +98,14 @@ class ChineseDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         return None
 
     def __init__(self):
-        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SpecificTimeOfDayRegex)
-        self._past_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.PastRegex)
-        self._future_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.FutureRegex)
-        self._relative_time_unit_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.TimeOfDayRegex)
+        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.SpecificTimeOfDayRegex)
+        self._past_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.PastRegex)
+        self._future_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.FutureRegex)
+        self._relative_time_unit_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.TimeOfDayRegex)
         self._unit_map = ChineseDateTime.ParserConfigurationUnitMap
         self._date_extractor = ChineseDateExtractor()
         self._time_extractor = ChineseTimeExtractor()
@@ -120,7 +125,7 @@ class ChineseDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         elif source in ['明晚']:
             return MatchedTimeRange('TEV', 16, 20, 0, True, 1)
         elif source in ['明早', '明晨']:
-            return MatchedTimeRange('TMO', 8, 12, 0,True, 1)
+            return MatchedTimeRange('TMO', 8, 12, 0, True, 1)
         elif source in ['昨晚']:
             return MatchedTimeRange('TEV', 16, 20, 0, True, -1)
         return MatchedTimeRange('', 0, 0, 0, False, 0)

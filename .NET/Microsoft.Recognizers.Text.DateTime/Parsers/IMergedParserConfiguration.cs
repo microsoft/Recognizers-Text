@@ -14,7 +14,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex AroundRegex { get; }
 
-        Regex DateAfter { get; }
+        Regex EqualRegex { get; }
+
+        Regex SuffixAfter { get; }
 
         Regex YearRegex { get; }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Text.Matcher;
 using DateObject = System.DateTime;
 
@@ -36,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text)
         {
-            var beforeStr = text.Substring(0, er.Start ?? 0).ToLowerInvariant();
+            var beforeStr = text.Substring(0, er.Start ?? 0);
 
             if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex))
             {
@@ -60,6 +61,15 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<ExtractResult> Extract(string text, DateObject reference)
         {
             var ret = new List<ExtractResult>();
+
+            if (((this.config.Options & DateTimeOptions.FailFast) != 0) && IsFailFastCase(text))
+            {
+                // @TODO needs better handling of holidays and timezones.
+                // AddTo(ret, this.config.HolidayExtractor.Extract(text, reference), text);
+                // ret = AddMod(ret, text);
+
+                return ret;
+            }
 
             var originText = text;
             List<MatchResult<string>> superfluousWordMatches = null;
@@ -114,10 +124,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
-                ret = MatchingUtil.PosProcessExtractionRecoverSuperfluousWords(ret, superfluousWordMatches, originText);
+                ret = MatchingUtil.PostProcessRecoverSuperfluousWords(ret, superfluousWordMatches, originText);
             }
 
             return ret;
+        }
+
+        private bool IsFailFastCase(string input)
+        {
+            return (config.FailFastRegex != null) && (!config.FailFastRegex.IsMatch(input));
         }
 
         private List<ExtractResult> CheckCalendarModeFilters(List<ExtractResult> ers, string text)
@@ -223,7 +238,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private bool FilterAmbiguousSingleWord(ExtractResult er, string text)
         {
-            if (config.SingleAmbiguousMonthRegex.IsMatch(er.Text.ToLowerInvariant()))
+            if (config.SingleAmbiguousMonthRegex.IsMatch(er.Text))
             {
                 var stringBefore = text.Substring(0, (int)er.Start).TrimEnd();
                 if (!config.PrepositionSuffixRegex.IsMatch(stringBefore))
@@ -242,8 +257,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var extractResult in extractResults)
             {
-                if (extractResult.Type.Equals(Constants.SYS_DATETIME_TIME) ||
-                    extractResult.Type.Equals(Constants.SYS_DATETIME_DATETIME))
+                if (extractResult.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal) ||
+                    extractResult.Type.Equals(Constants.SYS_DATETIME_DATETIME, StringComparison.Ordinal))
                 {
                     var stringAfter = text.Substring((int)extractResult.Start + (int)extractResult.Length);
                     var match = this.config.NumberEndingPattern.Match(stringAfter);
@@ -286,12 +301,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                     TryMergeModifierToken(er, config.AroundRegex, text);
                 }
 
-                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) || er.Type.Equals(Constants.SYS_DATETIME_DATE))
+                if (!success)
                 {
-                    // 2012 or after/above
-                    var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
+                    TryMergeModifierToken(er, config.EqualRegex, text);
+                }
 
-                    var match = config.DateAfterRegex.MatchBegin(afterStr.TrimStart(), trim: true);
+                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal) ||
+                    er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) ||
+                    er.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
+                {
+                    // 2012 or after/above, 3 pm or later
+                    var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0));
+
+                    var match = config.SuffixAfterRegex.MatchBegin(afterStr.TrimStart(), trim: true);
 
                     if (match.Success)
                     {

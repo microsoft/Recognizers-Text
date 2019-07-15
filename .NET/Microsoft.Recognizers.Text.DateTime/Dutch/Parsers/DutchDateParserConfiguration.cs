@@ -34,6 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             WeekDayAndDayOfMothRegex = DutchDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             WeekDayAndDayRegex = DutchDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = DutchDateExtractorConfiguration.RelativeMonthRegex;
+            StrictRelativeRegex = DutchDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = DutchDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = DutchDateExtractorConfiguration.RelativeWeekDayRegex;
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
@@ -102,6 +103,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Regex RelativeMonthRegex { get; }
 
+        public Regex StrictRelativeRegex { get; }
+
         public Regex YearSuffix { get; }
 
         public Regex RelativeWeekDayRegex { get; }
@@ -136,9 +139,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public int GetSwiftMonth(string text)
+        public int GetSwiftMonthOrYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
 
             if (NextPrefixRegex.IsMatch(trimmedText))
@@ -156,7 +159,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public bool IsCardinalLast(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             return trimmedText.Equals("last");
         }
 

@@ -23,6 +23,8 @@ public interface ICJKNumberParserConfiguration extends INumberParserConfiguratio
 
     List<Character> getRoundDirectList();
 
+    List<Character> getTenChars();
+
     //endregion
 
     //region language settings
@@ -44,6 +46,10 @@ public interface ICJKNumberParserConfiguration extends INumberParserConfiguratio
     Pattern getDozenRegex();
 
     Pattern getRoundNumberIntegerRegex();
+
+    char getZeroChar();
+
+    char getPairChar();
 
     //endregion
 }

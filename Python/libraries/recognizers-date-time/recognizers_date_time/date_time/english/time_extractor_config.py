@@ -4,6 +4,7 @@ from recognizers_text.utilities import RegExpUtility
 from ...resources.english_date_time import EnglishDateTime
 from ..base_time import TimeExtractorConfiguration
 
+
 class EnglishTimeExtractorConfiguration(TimeExtractorConfiguration):
     @property
     def time_regex_list(self) -> List[Pattern]:
@@ -30,5 +31,7 @@ class EnglishTimeExtractorConfiguration(TimeExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex9),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.ConnectNumRegex)
         ]
-        self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.AtRegex)
-        self._ish_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.IshRegex)
+        self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.AtRegex)
+        self._ish_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.IshRegex)

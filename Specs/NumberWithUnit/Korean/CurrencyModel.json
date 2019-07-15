@@ -1,0 +1,1903 @@
+[
+  {
+    "Input": "메릴랜드 주 몽고메리 카운티, 7천 5백만 달러 일반 채권, 시리즈 b,   1989년 매뉴팩처러스 하노버 트러스트에 의해 강화된 공공 개선  채권이다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7천 5백만",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "75000000",
+          "unit": "Dollar"
+        },
+        "Start": 29,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "핀란드 대기업 노키아 oy ab 는 네덜란드 케이블 회사인 nkf kabel b . v 를 4억 2천만 핀란드 마르카에 사기로 계약했다고 밝혔다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4억 2천만 핀란드 마르카",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "420000000",
+          "unit": "Finnish markka"
+        },
+        "Start": 111,
+        "End": 136
+      }
+    ]
+  },
+  {
+    "Input": "내셔널은 시겔과 슈스터에게 모든 요구를 포기하게 하기 위해 9만 4천 달러를 지급했다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9만 4천 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "94000",
+          "unit": "Dollar"
+        },
+        "Start": 33,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "제너럴다이내믹스 그룹의 제너럴다이내믹스 서비스는 파키스탄 전술 차량의 유지 시설을 건립하는 4천 820만 달러 상당의 군사 계약를 따냈다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4천 820만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "48200000",
+          "unit": "Dollar"
+        },
+        "Start": 75,
+        "End": 87
+      }
+    ]
+  },
+  {
+    "Input": "두 번째 시뮬레이터의 가격은 1천 640만 캐나다 달러이다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1천 640만 캐나다 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "16400000",
+          "unit": "Canadian dollar",
+          "isoCurrency": "CAD"
+        },
+        "Start": 49,
+        "End": 64
+      }
+    ]
+  },
+  {
+    "Input": "고타스-라센 운송회사의 자회사인 골라 가스 홀딩사는 메릴 린치 자본 시장을 통해 2억 8천만 달러 상당의 제1 우선 배의 담보권을 제공했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2억 8천만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "280000000",
+          "unit": "Dollar"
+        },
+        "Start": 87,
+        "End": 99
+      }
+    ]
+  },
+  {
+    "Input": "bard / ems는 1988 년에 약 천 4백만 달러어치를 팔았다고 birtcher 씨는 말했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "천 4백만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "14000000",
+          "unit": "Dollar"
+        },
+        "Start": 35,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "합의 가격은 1만 2천 345 달러부터 시작합니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1만 2천 345 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "12345",
+          "unit": "Dollar"
+        },
+        "Start": 23,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "'배트맨 '' 홀로 지금까지 2억 4천 7백만 달러 이상의 박스 오피스 수입을 올렸고, 이는 워너 브라더스 영화 사상 최대 수입 영화로 기록됐다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2억 4천 7백만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "247000000",
+          "unit": "Dollar"
+        },
+        "Start": 45,
+        "End": 57
+      }
+    ]
+  },
+  {
+    "Input": "2014 년 10 월 coyle의 순 가치는 8백 10만 파운드로 추산되었습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8백 10만 파운드",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "8100000",
+          "unit": "Pound"
+        },
+        "Start": 37,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "순이자 이익은 그 분기에 27 % 하락해서 2억 4천 4백만 달러를 기록했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2억 4천 4백만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "254000000",
+          "unit": "Dollar"
+        },
+        "Start": 48,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "연방 항소 법원은 파이프 라인 회사가 논란이되고있는 '의무인수'계약으로부터 10억 달러의 비용을 고객에게 전가하지 못하게하는 천연 가스 규제를 폐지했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10억 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1000000000",
+          "unit": "Dollar"
+        },
+        "Start": 135,
+        "End": 145
+      }
+    ]
+  },
+  {
+    "Input": "1988년 분기에는 총 3천 5백만 달러의 일회성 이익도 포함되었습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3천 5백만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "35000000",
+          "unit": "Dollar"
+        },
+        "Start": 63,
+        "End": 74
+      }
+    ]
+  },
+  {
+    "Input": "박 y . j .씨와 그녀의 가족들은 4년 동안 여기 작은 아파트를 사기 위해 노력을 했지만, 원래 그들이 필요로했던 4만 달러를 저축하면 가격은 더 상승했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "40000",
+          "unit": "Dollar"
+        },
+        "Start": 132,
+        "End": 139
+      }
+    ]
+  },
+  {
+    "Input": "e. 로버트 월러치가 뉴욕 주 판사에게 6년 징역형을 선고받고 웨텍 스캔들에 대한 공갈죄로 25만 달러의 벌금을 부과받았다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "25만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "250000",
+          "unit": "Dollar"
+        },
+        "Start": 97,
+        "End": 105
+      }
+    ]
+  },
+  {
+    "Input": "오늘 수요일 발행 된 중동 경제 조사 (mees) 기사에 따르면 이라크는 12월 1일부터 공식 유가에 대해 유가 배럴당 50센트를 유엔 감시하에 없는 계정으로 지불하라고 고객에게 요청했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "50센트",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "50",
+          "unit": "Cent"
+        },
+        "Start": 128,
+        "End": 135
+      }
+    ]
+  },
+  {
+    "Input": "제너랄 모터 사의 시보레 사업부는 판매 부진에 반응하여 핵심 소형차 라인의 2 도어 버전인 1990 베레타에 대해 800 달러의 리베이트를 제공할 것이라고 밝혔다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "800 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "800",
+          "unit": "Dollar"
+        },
+        "Start": 91,
+        "End": 95
+      }
+    ]
+  },
+  {
+    "Input": "(storer는 또한 텔레비전 자산의 부분 지불로 1억 2천 5백만 달러 상당의 주니어 sci tv 채권을 가지고 갔다.)",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1억 2천 5백만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125000000",
+          "unit": "Dollar"
+        },
+        "Start": 19,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "금요일 국내 장외 시장에서 scimed 주가가 2.75 달러 폭락했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2.75 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2.75",
+          "unit": "Dollar"
+        },
+        "Start": 72,
+        "End": 77
+      }
+    ]
+  },
+  {
+    "Input": "동시에 투자자는 구조 조정이 회사의 연간 현금 이자 청구서를 약 9천만 달러에서 삭감할 것이라고 추정한다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9천만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "90000000",
+          "unit": "Dollar"
+        },
+        "Start": 119,
+        "End": 130
+      }
+    ]
+  },
+  {
+    "Input": "1990년의 자본 지출은 올해 4억 7천만 달러에서 약간 증가할 것이라고 마로스 씨는 밝혔다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4억 7천만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "470000000",
+          "unit": "Dollar"
+        },
+        "Start": 86,
+        "End": 98
+      }
+    ]
+  },
+  {
+    "Input": "shearson은 '실제 자본금이 3억 달러에 불과합니다.' 라고 s & p의 보우만 씨는 말했다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3억 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "300000000",
+          "unit": "Dollar"
+        },
+        "Start": 29,
+        "End": 41
+      }
+    ]
+  },
+  {
+    "Input": "이는 어쩌면 간단합니다. - 그는 음식을 사기 위해 돈이 필요합니다. - - 또는 믿을 수 없을 정도로 복잡합니다. 그의 여동생은 바로 이 순간에 호보켄에서 죽음에 임박해 있습니다. 그는 지갑을 잃어 버렸고, 버스 티켓을 사기 위한 1.22 달러 잔돈만 있습니다. 그에게 변화를 만들어 주시겠습까?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.22 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1.22",
+          "unit": "Dollar"
+        },
+        "Start": 179,
+        "End": 184
+      }
+    ]
+  },
+  {
+    "Input": "12월 계약은 1달러 20센트 상승했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1달러 20센트",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1.2",
+          "unit": "Cent"
+        },
+        "Start": 27,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "painewebber inc.의 애널리스트인 walter kirchberger는 주식 보유자에게 주식 가격를 70 달러로 제공하는 것이 stena-tiphook 채권을 막는 “매우 효과적인 방법'이라고 말했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "70 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "70",
+          "unit": "Dollar"
+        },
+        "Start": 95,
+        "End": 98
+      }
+    ]
+  },
+  {
+    "Input": "올해 3 사분기 순매출은 지난해 천 4백만 달러였다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "천 4백만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "14000000",
+          "unit": "Dollar"
+        },
+        "Start": 47,
+        "End": 58
+      }
+    ]
+  },
+  {
+    "Input": "480억 달러의 자산을 보유한 퍼스트 내셔널 뱅크 오브 시카고 모회사는 금융 위기에 처한 국가의 대출 및 투자 손실을 흡수하기 위해 자산을 확보해 놓았다고 말했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "480억 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "48000000000",
+          "unit": "Dollar"
+        },
+        "Start": 60,
+        "End": 71
+      }
+    ]
+  },
+  {
+    "Input": "플루어 사는 프리포트 맥모란사와 인도네시아 파푸아에 있는 구리 광산에서 엔지니어링 및 건설 관리 서비스를 제공하기 위해 3억 달러에 달하는 계약을 체결했다고 발표했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3억 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "300000000",
+          "unit": "Dollar"
+        },
+        "Start": 35,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "미국 증권 거래소는 좌석이 지난 금요일 이전 판매에서 계약금 5천 달러에 팔렸다고 밝혔다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5천 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "5000",
+          "unit": "Dollar"
+        },
+        "Start": 58,
+        "End": 64
+      }
+    ]
+  },
+  {
+    "Input": "타임 워너에 인수된 워너 통신은 소니와 두 명의 생산자에 대해 10억 달러의 계약 위반 소송을 제기했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10억 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1000000000",
+          "unit": "Dollar"
+        },
+        "Start": 83,
+        "End": 93
+      }
+    ]
+  },
+  {
+    "Input": "asarco는 8월에 lac d 'amiante du quebec 자회사를 통해 1천 1백 70만 달러에 캐나다의 석면 채굴 유한 책임 회사에 나머지 1/3의 지분을 매각했습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1천 1백 70만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "11700000",
+          "unit": "Dollar"
+        },
+        "Start": 168,
+        "End": 181
+      }
+    ]
+  },
+  {
+    "Input": "1988년 국내 완구 및 게임 수출은 1987년 대비 19 퍼센트 감소한 1백억 5천만 홍콩 달러를 기록했습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1백억 5천만 홍콩 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "10050000000",
+          "unit": "Hong Kong dollar",
+          "isoCurrency": "HKD"
+        },
+        "Start": 83,
+        "End": 100
+      }
+    ]
+  },
+  {
+    "Input": "회계 연도 4사분기 매출은 전년도 11억 7천만 달러에서 18 퍼센트 증가했습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11억 7천만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1170000000",
+          "unit": "Dollar"
+        },
+        "Start": 54,
+        "End": 67
+      }
+    ]
+  },
+  {
+    "Input": "어제 처음 1 시간 동안 거래 가격은 0.25 포인트, 또는 각 액면가에 대해 약 2.50 달러 하락했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2.50 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2.5",
+          "unit": "Dollar"
+        },
+        "Start": 96,
+        "End": 101
+      }
+    ]
+  },
+  {
+    "Input": "예를 들어 뉴저지는 30만 달러를 수락하라는 요청을 받았지만 거절했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "300000",
+          "unit": "Dollar"
+        },
+        "Start": 47,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "판매는 6.2 퍼센트 상승해서 14억 5천만 달러를 기록했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "14억 5천만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1450000000",
+          "unit": "Dollar"
+        },
+        "Start": 22,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "어제 오후부터 환매는 약 20억 달러 피텔리티 주식형 펀드의  총 현금 유동성의 15 퍼센트 미만을 나타냈습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20억 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2000000000",
+          "unit": "Dollar"
+        },
+        "Start": 107,
+        "End": 117
+      }
+    ]
+  },
+  {
+    "Input": "onvia.com inc. , 34 센트 하락",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "34 센트",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "34",
+          "unit": "Cent"
+        },
+        "Start": 25,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "tw 안내서는 인수가 조기에 완결되었다면 세전 이익은 1989년 상반기 약 6천 2백 70만 달러 상당의 채무 증권에 대한 이자를 포함한 고정 금리를 충당하기에 불충분했을 것이라고 밝혔다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "6천 2백 70만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "62700000",
+          "unit": "Dollar"
+        },
+        "Start": 215,
+        "End": 228
+      }
+    ]
+  },
+  {
+    "Input": "filenet은 9월 30일 현금과 시장성이있는 유가 증권을 총 2천 2백 50만 달러 가지고 있다고 언급했다, 그리고 주주들.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2천 2백 50만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "22500000",
+          "unit": "Dollar"
+        },
+        "Start": 66,
+        "End": 79
+      }
+    ]
+  },
+  {
+    "Input": "도시에서 가장 비싼 레스토랑 20 곳의 저녁 식사 가격은 8 퍼센트 인상된 64달러 45센트입니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "64달러 45센트",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "63.45",
+          "unit": "Dollar"
+        },
+        "Start": 84,
+        "End": 90
+      }
+    ]
+  },
+  {
+    "Input": "트랜스 세계 항공사는 drexel burnham을 통해 1억 5천만 달러의 선순위 채권을 제공했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1억 5천만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "150000000",
+          "unit": "Dollar"
+        },
+        "Start": 41,
+        "End": 53
+      }
+    ]
+  },
+  {
+    "Input": "포토벨로 버섯을 곁들인 페투치니는 8.50 달러입니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8.50 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "8.5",
+          "unit": "Dollar"
+        },
+        "Start": 47,
+        "End": 52
+      }
+    ]
+  },
+  {
+    "Input": "march 배달은 14.27 달러 선불 지급으로 끝났다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "14.27 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "14.27",
+          "unit": "Cent"
+        },
+        "Start": 48,
+        "End": 58
+      }
+    ]
+  },
+  {
+    "Input": "1988년 3분기 이자 비용은 7천5백30만 달러였다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7천5백30만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "75300000",
+          "unit": "Dollar"
+        },
+        "Start": 47,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "23억8천만 달러 상당의 달콘 쉴드 트러스트가 쉴드의 사용으로 인해 발생하는 피해 보상 요구를 해결하기 위한 a. h. 로빈스의 파산 개편 계획의 일환으로 설립되었다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "23억8천만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2380000000",
+          "unit": "Dollar"
+        },
+        "Start": 4,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "그 제안의 조건은 32.99 퍼센트의 주식 보유량인 5억 2천 8백만 프랑의 가치를 가졌다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5억 2천 8백만 프랑",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "528000000",
+          "unit": "Franc"
+        },
+        "Start": 38,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "러시아는 에이즈와 결핵 확산을 막기 위해 1억 5천만 미국 달러의 세계 은행 대출을 받아들이고 4년 동안 지속된 협상 과정을 종식시켰다고 세계 은행 관계자들이 금요일 말했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1억 5천만 미국 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "150000000",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 22,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "이전의 벨사우스 협약은 주당 약 98 달러로 평가되었습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "98 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "98",
+          "unit": "Dollar"
+        },
+        "Start": 48,
+        "End": 51
+      }
+    ]
+  },
+  {
+    "Input": "한 딜러는 회사가 5억 달러 상당의 30년 만기 선도주를  팔았다고 말했습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5억 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "500000000",
+          "unit": "Dollar"
+        },
+        "Start": 54,
+        "End": 66
+      }
+    ]
+  },
+  {
+    "Input": "3사분기 동안 총 수익은 1년 전에 비해 4.8 % 증가한 131억 8천만 달러라고 말했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "131억 8천만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13180000000",
+          "unit": "Dollar"
+        },
+        "Start": 69,
+        "End": 83
+      }
+    ]
+  },
+  {
+    "Input": "에틸은 9개월 동안  2% 또는 주당 1.40 달러 하락했다고 밝혔다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.40 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1.4",
+          "unit": "Dollar"
+        },
+        "Start": 49,
+        "End": 54
+      }
+    ]
+  },
+  {
+    "Input": "분석가들은 9월 경상 수지 적자 16억(25억 4천만 달러)을 전망한다.  8월은 20억 적자를 기록했다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "25억 4천만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2540000000",
+          "unit": "Dollar"
+        },
+        "Start": 87,
+        "End": 100
+      }
+    ]
+  },
+  {
+    "Input": "1억 2천 5백만 호주 달러의 제로 쿠폰 유로 채권은 1994년 12월 12일 함브로스 은행을 통해 15.06 % 적은 수수료를 지불하기 위해 50만 9375달러로 책정되었다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1억 2천 5백만 호주 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125000000",
+          "unit": "Australian dollar",
+          "isoCurrency": "AUD"
+        },
+        "Start": 0,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "금요일 국무 장관은 8명의 각료가 산업계로부터 500만 엔을 받았다고 발표했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "500만 엔",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "5000000",
+          "unit": "Japanese yen",
+          "isoCurrency": "JPY"
+        },
+        "Start": 92,
+        "End": 107
+      }
+    ]
+  },
+  {
+    "Input": "도시키 카이후 총리에 의한 45만 엔을 포함하여",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "45만 엔",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "450000",
+          "unit": "Japanese yen",
+          "isoCurrency": "JPY"
+        },
+        "Start": 11,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "프랑스의 국영 화학 제조사인 orkem s. a. 는 영국 특수 화학 그룹인 coates brothers plc의 소유하고 있지 않은  59.2 %에 대해 주당 470 펜스의 우호적인 입찰을하고있다고 양측은 밝혔다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "470 펜스",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "470",
+          "unit": "Pence"
+        },
+        "Start": 96,
+        "End": 104
+      }
+    ]
+  },
+  {
+    "Input": "근로 소득 계층의 8월 조정 지출은 1년 전 대비 0.6 % 감소하여 30만9천381엔이였다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30만9천381엔",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "309381",
+          "unit": "Japanese yen",
+          "isoCurrency": "JPY"
+        },
+        "Start": 72,
+        "End": 82
+      }
+    ]
+  },
+  {
+    "Input": "국민 소득 부동산 신탁 회사는 기록적인 10월 25일 주식에 대한 지분으로 11월 6일 주당 12 센트로 배당금 지급을 재개할 것이라고 밝혔다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12 센트",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "12",
+          "unit": "Cent"
+        },
+        "Start": 74,
+        "End": 80
+      }
+    ]
+  },
+  {
+    "Input": "보더 씨는 수입에 대한 3억 캐나다 달러 청구액을 말했다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3억 캐나다 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "300000000",
+          "unit": "Canadian dollar",
+          "isoCurrency": "CAD"
+        },
+        "Start": 21,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "주당 약 1.34 캐나다 달러가 될 것입니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.34 캐나다 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1.34",
+          "unit": "Canadian dollar",
+          "isoCurrency": "CAD"
+        },
+        "Start": 22,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "달걀 가격은 평균 12 개당 64.2 센트이다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "64.2 센트",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "64.2",
+          "unit": "Cent"
+        },
+        "Start": 20,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "여전히 올해 하반기 두 건의 대형 계약에 대한 예상 청구액을 반영하여 1989년 총 매출액이 200억 프랑에 이를 것으로 예상했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "200억 프랑",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "20000000000",
+          "unit": "Franc"
+        },
+        "Start": 71,
+        "End": 87
+      }
+    ]
+  },
+  {
+    "Input": "그 거래는  66억 5천만 페세타 상당의 제타 값에 의한 권리 요구를  신청하기 위해 호주에 기반을 둔 뉴스 그룹 murdoch의 뉴스 international plc을 요구했다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "66억 5천만 페세타",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "6650000000",
+          "unit": "Peseta"
+        },
+        "Start": 160,
+        "End": 179
+      }
+    ]
+  },
+  {
+    "Input": "후지쯔 사는 히로시마시 상수도 컴퓨터 시스템을 설계하기 위해 논란이 되는 1엔 입찰을 철회하기 원한다고 말했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1엔",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1",
+          "unit": "Japanese yen",
+          "isoCurrency": "JPY"
+        },
+        "Start": 58,
+        "End": 64
+      }
+    ]
+  },
+  {
+    "Input": "2억 5천만 네덜란드 휠던",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2억 5천만 네덜란드 휠던",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "250000000",
+          "unit": "Netherlands guilder"
+        },
+        "Start": 0,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "또한 은행은 30을 매입할 수있는 옵션이 있습니다. 1990년 1월 이후  societe generale의 84% bip 지분, 주당 1천 15 프랑.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1천 15 프랑",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1015",
+          "unit": "Franc"
+        },
+        "Start": 115,
+        "End": 126
+      }
+    ]
+  },
+  {
+    "Input": "그 주식은 1 페니를 마감하기 위한 늦은 거래에서 떨어졌다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 페니",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1",
+          "unit": "Penny"
+        },
+        "Start": 42,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "1 주당 197 펜스로 낮아졌다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "197 펜스",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "197",
+          "unit": "Pence"
+        },
+        "Start": 19,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "그것의 분기별 영업 이익은 3억 6천 1백만 파운드로 향상되었다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3억 6천 1백만 파운드",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "361000000",
+          "unit": "Pound"
+        },
+        "Start": 43,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "작년에 전체 도시 지역 기업의 총 생산액이 처음으로 1천억 위안을 돌파하여 전체 주에서 1 위를 차지했다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "천억 위안",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000000000",
+          "unit": "Chinese yuan",
+          "isoCurrency": "CNY"
+        },
+        "Start": 91,
+        "End": 106
+      }
+    ]
+  },
+  {
+    "Input": "레인저스는 baxendale-walker의 충고로 5천만 파운드를 절약할 수 있었다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5천만 파운드",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "50000000",
+          "unit": "Pound"
+        },
+        "Start": 33,
+        "End": 44
+      }
+    ]
+  },
+  {
+    "Input": "uefa는 퍼거슨 감독을 그의 발언으로 경기에 오명을 안겨 준 것에 대해 기소했고, 그는 그해 5월 1일 1만 스위스 프랑의 벌금을 물었다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1만 스위스 프랑",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "10000",
+          "unit": "Swiss franc",
+          "isoCurrency": "CHF"
+        },
+        "Start": 115,
+        "End": 133
+      }
+    ]
+  },
+  {
+    "Input": "ipl은 킹피셔 항공과 시즌 약 1천 5백만 파운드 상당의 공식 심판 파트너십 계약을 체결하였다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1천 5백만 파운드",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15000000",
+          "unit": "Pound"
+        },
+        "Start": 105,
+        "End": 116
+      }
+    ]
+  },
+  {
+    "Input": "애들레이드의 전자 산업 매출은 1990년 이래로 1년에 약 15 % 성장했으며 2011년에는 40억 달러를 초과했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "40억 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "4000000000",
+          "unit": "Dollar"
+        },
+        "Start": 118,
+        "End": 128
+      }
+    ]
+  },
+  {
+    "Input": "abel and associates는 영화 효과를 취급하는 것에 대해 4백만 달러를 제시했고, 파라마운트는 받아들였다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4백만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "4000000",
+          "unit": "Dollar"
+        },
+        "Start": 24,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "말론은 20세기 폭스에게 계약 위반으로 160만 달러를 요구하는 소송을 제기했다.  ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "160만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1600000",
+          "unit": "Dollar"
+        },
+        "Start": 35,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "바이에른 뮌헨은 2003년 몇 달 동안 도르트문트에게 급여 지불 총액을 지불하도록 2백만 유로를 대출해 주었다.  ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2백만 유로",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2000000",
+          "unit": "Euro",
+          "isoCurrency": "EUR"
+        },
+        "Start": 31,
+        "End": 41
+      }
+    ]
+  },
+  {
+    "Input": "로키드 마틴과 미국 정부는 126 대의 전투기에 대한 인도의 100억 미국 달러 계약을 위해 집중적으로 로비했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100억 미국 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "10000000000",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 83,
+        "End": 97
+      }
+    ]
+  },
+  {
+    "Input": "연구 조사 기관인 npd에 따르면, 모든 윈도우 휴대용 PC의 평균 판매 가격이 2008년 10월에 659 달러에서 떨어졌다.  ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "659 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "659",
+          "unit": "Dollar"
+        },
+        "Start": 103,
+        "End": 107
+      }
+    ]
+  },
+  {
+    "Input": "one.tel은 1997년 11월 호주 증권 거래소에 주당 2 달러로 상장되었다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2",
+          "unit": "Dollar"
+        },
+        "Start": 54,
+        "End": 56
+      }
+    ]
+  },
+  {
+    "Input": "이스트 스탠드(worcester avenue) 스탠드는 1934 년에 완공되었으며, 관중 수용력은 약 8만 명으로 증가했고 비용은 6만 파운드에 달했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "6만 파운드",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "60000",
+          "unit": "Pound"
+        },
+        "Start": 130,
+        "End": 137
+      }
+    ]
+  },
+  {
+    "Input": "그의 풀럼 팀메이트인 조니 헤인즈가 100 파운드짜리 선수가 되었다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 파운드",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Pound"
+        },
+        "Start": 51,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "9개월 동안 amr의 순매도는 15 % 증가한 4억 1천 590만 달러이다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4억 1천 590만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "415900000",
+          "unit": "Dollar"
+        },
+        "Start": 47,
+        "End": 61
+      }
+    ]
+  },
+  {
+    "Input": "항공사의 주가는 이미 9월 말 신주 발행 발표 후 210 펜스 수준보다 훨씬 낮다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "210 펜스",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "210",
+          "unit": "Pence"
+        },
+        "Start": 53,
+        "End": 61
+      }
+    ]
+  },
+  {
+    "Input": "harpercollins는 2008년에 300만 달러 책 프로젝트를 획득했다고 롤링스톤은 밝혔다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "300만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "3000000",
+          "unit": "Dollar"
+        },
+        "Start": 70,
+        "End": 80
+      }
+    ]
+  },
+  {
+    "Input": "2013년 포브스 지는 '컨트리 뮤직의 5 억 달러짜리 남자'라는 제목의 표지에 키스를 기용했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 억 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "500000000",
+          "unit": "Dollar"
+        },
+        "Start": 101,
+        "End": 113
+      }
+    ]
+  },
+  {
+    "Input": "해리 퍼거슨은 1952년 법정 밖에서 해결된 특허의 불법 사용에 대해 우리를 고소했으며 9천만 파운드의 보상을 요구했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9천만 파운드",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "90000000",
+          "unit": "Pound"
+        },
+        "Start": 86,
+        "End": 97
+      }
+    ]
+  },
+  {
+    "Input": "에어로 스미스는 1972년 중반 12만 5천 달러에 콜롬비아와 계약하여 데뷔 앨범인 에어로 스미스를 발표했습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12만 5천 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125000",
+          "unit": "Dollar"
+        },
+        "Start": 60,
+        "End": 68
+      }
+    ]
+  },
+  {
+    "Input": "그것은 2001년 1억 8천 6백만 달러에 odwalla inc를 구입한 이래로 코크스 최대 인수 중 하나였다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1억 8천 6백만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "186000000",
+          "unit": "Dollar"
+        },
+        "Start": 78,
+        "End": 90
+      }
+    ]
+  },
+  {
+    "Input": "이어 애플과 크리에이티브는 크리에이티브가 아이팟용 액세서리 프로그램에 창조적으로 합류하고 이를 위해 애플이 1억 달러를 지불하면서 합의에 이르렀다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1억 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000000",
+          "unit": "Dollar"
+        },
+        "Start": 75,
+        "End": 87
+      }
+    ]
+  },
+  {
+    "Input": "하트 스콧 (hart-scott) 신청서가 검토되고 독점 금지 우려들이 일반적으로 충족된다. 일반적으로 hart-scott는 대상 회사의 관리자에게 지연 제안으로 규제 검토를 사용하는 입찰과 기회에 대한 초기 뉴스를 제공하기 위해 사용된다. 2만 달러의 세금은 수백만 달러 시장에는 작은 비용이지만, 수천 개의 작고 우호적인 거래에는 심각한 타격이다.  ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2만 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "20000",
+          "unit": "Dollar"
+        },
+        "Start": 237,
+        "End": 244
+      },
+      {
+        "Text": "달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": null,
+          "unit": "Dollar"
+        },
+        "Start": 292,
+        "End": 297
+      }
+    ]
+  },
+  {
+    "Input": "달러: 143.80 엔,  위 0. 95; 1.8500 점,  위 0.0085.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": null,
+          "unit": "Dollar"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "143.80 엔",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "143.8",
+          "unit": "Japanese yen",
+          "isoCurrency": "JPY"
+        },
+        "Start": 9,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "그것은 단지 3 달러 50 센트이다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 달러 50 센트",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "3.5",
+          "unit": "Dollar"
+        },
+        "Start": 13,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "그것은 단지 13 달러 45 센트이다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "13 달러 45 센트",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13.45",
+          "unit": "Dollar"
+        },
+        "Start": 13,
+        "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "1 달러와 1 그리고 1 점의 크레딧 포인트가 필요하다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 달러와 1",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "1.01"
+        },
+        "Start": 9,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "그것은 당신에게는 10 미국 달러가 들고 나에게는 100 중국 위안이 든다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 미국 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "10"
+        },
+        "Start": 13,
+        "End": 24
+      },
+      {
+        "Text": "100 중국 위안",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "100"
+        },
+        "Start": 33,
+        "End": 48
+      }
+    ]
+  },
+  {
+    "Input": "그것은 당신에게는 10 미국 달러가 들고 나에게는 150 캐나다 달러가 든다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 미국 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "10"
+        },
+        "Start": 13,
+        "End": 24
+      },
+      {
+        "Text": "150 캐나다 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CAD",
+          "unit": "Canadian dollar",
+          "value": "100.5"
+        },
+        "Start": 33,
+        "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "그것은 아마 1 회 5 마오 5가 필요할 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 회 5 마오 5",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "1.55"
+        },
+        "Start": 12,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "1 달러와 2 그리고 3 점의 크레딧 포인트가 필요하다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 달러와 2 ",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "1.02"
+        },
+        "Start": 9,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "이 봐요, 가격은 4.25 달러이고, 수량은 32입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4.25 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "4.25"
+        },
+        "Start": 17,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "이 책은 가격은 100 콜론입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 콜론",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Costa Rican colón",
+          "isoCurrency": "CRC"
+        },
+        "Start": 26,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "새 자전거를 사기 위해 100 라리를 지출했다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 라리",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Georgian lari",
+          "isoCurrency": "GEL"
+        },
+        "Start": 8,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "축하합니다! 경쟁에서 이겼기 때문에 새 차와 10만 킵을 받게 될 겁니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10만 킵",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000",
+          "unit": "Lao kip",
+          "isoCurrency": "LAK"
+        },
+        "Start": 40,
+        "End": 48
+      }
+    ]
+  },
+  {
+    "Input": "Bob, 비상시 10만 루피를 빌려 주실 수 있습니까? 다음 주 월요일에 이자와 함께 갚을게요. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10만 루피",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000",
+          "unit": "Sri Lankan rupee",
+          "isoCurrency": "LKR"
+        },
+        "Start": 23,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "이 새 노트북에 10만 센은 비싸다고 생각하나요?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10만 센",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000",
+          "unit": "Cent"
+        },
+        "Start": 13,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "로또의 첫 번째 가격은 1억 미국 달러입니다. 원하십니까?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1억 미국 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000000",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 34,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "5 달러 주세요. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 달러",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "5",
+          "unit": "Dollar"
+        },
+        "Start": 8,
+        "End": 16
+      }
+    ]
+  }
+]

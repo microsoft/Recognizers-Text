@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 package com.microsoft.recognizers.text.datetime.resources;
@@ -150,11 +153,11 @@ public class ChineseDateTime {
             .replace("{DatePeriodLastRegex}", DatePeriodLastRegex)
             .replace("{DatePeriodNextRegex}", DatePeriodNextRegex);
 
-    public static final String DatePeriodYearRegex = "(({YearNumRegex})(\\s*年)?|({YearRegex})\\s*年)(?=[\\u4E00-\\u9FFF]|\\s|$|\\W)"
+    public static final String DatePeriodYearRegex = "(({YearNumRegex})(\\s*年)?|({YearRegex})\\s*年)"
             .replace("{YearNumRegex}", YearNumRegex)
             .replace("{YearRegex}", YearRegex);
 
-    public static final String StrictYearRegex = "{DatePeriodYearRegex}"
+    public static final String StrictYearRegex = "({DatePeriodYearRegex}(?=[\\u4E00-\\u9FFF]|\\s|$|\\W))"
             .replace("{DatePeriodYearRegex}", DatePeriodYearRegex);
 
     public static final String YearRegexInNumber = "(?<year>(\\d{3,4}))";
@@ -174,7 +177,7 @@ public class ChineseDateTime {
             .replace("{DayRegex}", DayRegex)
             .replace("{DatePeriodTillRegex}", DatePeriodTillRegex);
 
-    public static final String YearAndMonth = "({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex}){MonthRegex}"
+    public static final String YearAndMonth = "({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\\s*{MonthRegex}"
             .replace("{DatePeriodYearInChineseRegex}", DatePeriodYearInChineseRegex)
             .replace("{DatePeriodYearRegex}", DatePeriodYearRegex)
             .replace("{MonthRegex}", MonthRegex);
@@ -258,7 +261,7 @@ public class ChineseDateTime {
 
     public static final String PrepositionRegex = "(?<prep>^的|在$)";
 
-    public static final String NowRegex = "(?<now>现在|马上|立刻|刚刚才|刚刚|刚才)";
+    public static final String NowRegex = "(?<now>现在|马上|立刻|刚刚才|刚刚|刚才|这会儿|当下|此刻)";
 
     public static final String NightRegex = "(?<night>早|晚)";
 
@@ -319,7 +322,7 @@ public class ChineseDateTime {
             .replace("{DatePeriodYearRegex}", DatePeriodYearRegex)
             .replace("{DatePeriodYearInChineseRegex}", DatePeriodYearInChineseRegex);
 
-    public static final String HolidayRegexList1 = "(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)"
+    public static final String HolidayRegexList1 = "(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|平安夜|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)"
             .replace("{DatePeriodYearRegex}", DatePeriodYearRegex)
             .replace("{DatePeriodYearInChineseRegex}", DatePeriodYearInChineseRegex);
 
@@ -856,7 +859,9 @@ public class ChineseDateTime {
 
     public static final String DateTimePeriodMORegex = "(凌晨|清晨|早上|早|上午)";
 
-    public static final String DateTimePeriodAFRegex = "(中午|下午|午后|傍晚)";
+    public static final String DateTimePeriodMIRegex = "(中午)";
+
+    public static final String DateTimePeriodAFRegex = "(下午|午后|傍晚)";
 
     public static final String DateTimePeriodEVRegex = "(晚上|夜里|夜晚|晚)";
 
@@ -914,13 +919,15 @@ public class ChineseDateTime {
 
     public static final String DefaultLanguageFallback = "DMY";
 
-    public static final List<String> MorningTermList = Arrays.asList("上午");
+    public static final List<String> MorningTermList = Arrays.asList("上午", "早上", "清晨");
 
-    public static final List<String> AfternoonTermList = Arrays.asList("下午");
+    public static final List<String> MidDayTermList = Arrays.asList("中午", "正午");
 
-    public static final List<String> EveningTermList = Arrays.asList("晚上");
+    public static final List<String> AfternoonTermList = Arrays.asList("下午", "午后");
 
-    public static final List<String> DaytimeTermList = Arrays.asList("白天");
+    public static final List<String> EveningTermList = Arrays.asList("晚上", "夜里", "傍晚", "夜晚");
+
+    public static final List<String> DaytimeTermList = Arrays.asList("白天", "日间");
 
     public static final List<String> NightTermList = Arrays.asList("深夜");
 }

@@ -11,6 +11,7 @@ from .datetimeperiod_extractor import ChineseDateTimePeriodExtractor
 from .set_extractor import ChineseSetExtractor
 from .holiday_extractor_config import ChineseHolidayExtractorConfiguration
 
+
 class ChineseMergedExtractorConfiguration(MergedExtractorConfiguration):
     @property
     def date_extractor(self) -> DateTimeExtractor:
@@ -91,6 +92,7 @@ class ChineseMergedExtractorConfiguration(MergedExtractorConfiguration):
         self._date_period_extractor = ChineseDatePeriodExtractor()
         self._time_period_extractor = ChineseTimePeriodExtractor()
         self._date_time_period_extractor = ChineseDateTimePeriodExtractor()
-        self._holiday_extractor = BaseHolidayExtractor(ChineseHolidayExtractorConfiguration())
+        self._holiday_extractor = BaseHolidayExtractor(
+            ChineseHolidayExtractorConfiguration())
         self._duration_extractor = ChineseDurationExtractor()
         self._set_extractor = ChineseSetExtractor()

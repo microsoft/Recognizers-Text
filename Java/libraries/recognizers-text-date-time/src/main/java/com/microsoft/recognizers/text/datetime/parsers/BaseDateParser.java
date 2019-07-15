@@ -112,17 +112,31 @@ public class BaseDateParser implements IDateTimeParser {
 
         for (Pattern regex : this.config.getDateRegexes()) {
             int offset = 0;
+            String relativeStr = null;
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(regex, trimmedText)).findFirst();
 
             if (!match.isPresent()) {
                 match = Arrays.stream(RegExpUtility.getMatches(regex, this.config.getDateTokenPrefix() + trimmedText)).findFirst();
-                offset = this.config.getDateTokenPrefix().length();
+                // Handing cases like "(this)? 5.12" which only be recognized in "on (this)? 5.12"
+                if (match.isPresent()) {
+                    offset = this.config.getDateTokenPrefix().length();
+                    relativeStr = match.get().getGroup("order").value.toLowerCase();
+                }
             }
 
-            if (match.isPresent() && match.get().index == offset && match.get().length == trimmedText.length()) {
-                // LUIS value string will be set in Match2Date method
-                DateTimeResolutionResult ret = this.match2Date(match, referenceDate);
-                return ret;
+            if (match.isPresent()) {
+                ConditionalMatch relativeRegex = RegexExtension.matchEnd(config.getStrictRelativeRegex(), text.substring(0, match.get().index), true);
+                boolean isContainRelative = relativeRegex.getSuccess() && match.get().index + match.get().length == trimmedText.length();
+                if ((match.get().index == offset && match.get().length == trimmedText.length()) || isContainRelative) {
+                    // Handing cases which contain relative term like "this 5/12"
+                    if (match.get().index != offset) {
+                        relativeStr = relativeRegex.getMatch().get().value;
+                    }
+
+                    // LUIS value string will be set in Match2Date method
+                    DateTimeResolutionResult ret = this.match2Date(match, referenceDate, relativeStr);
+                    return ret;
+                }
             }
         }
 
@@ -178,7 +192,7 @@ public class BaseDateParser implements IDateTimeParser {
         if (exactMatch.getSuccess()) {
             int swift = getSwiftDay(exactMatch.getMatch().get().value);
 
-            LocalDateTime value = referenceDate.plusDays(swift);
+            LocalDateTime value = referenceDate.toLocalDate().atStartOfDay().plusDays(swift);
 
             ret.setTimex(DateTimeFormatUtil.luisDate(value));
             ret.setFutureValue(value);
@@ -398,7 +412,7 @@ public class BaseDateParser implements IDateTimeParser {
         int weekday = this.config.getDayOfWeek().get(weekdayStr);
         int month;
         if (StringUtility.isNullOrEmpty(monthStr)) {
-            int swift = this.config.getSwiftMonth(trimmedText);
+            int swift = this.config.getSwiftMonthOrYear(trimmedText);
 
             month = referenceDate.plusMonths(swift).getMonthValue();
             year = referenceDate.plusMonths(swift).getYear();
@@ -491,7 +505,7 @@ public class BaseDateParser implements IDateTimeParser {
             match = Arrays.stream(RegExpUtility.getMatches(this.config.getRelativeMonthRegex(), trimmedText)).findFirst();
             if (match.isPresent()) {
                 String monthStr = match.get().getGroup("order").value;
-                int swift = this.config.getSwiftMonth(monthStr);
+                int swift = this.config.getSwiftMonthOrYear(monthStr);
                 month = referenceDate.plusMonths(swift).getMonthValue();
                 year = referenceDate.plusMonths(swift).getYear();
                 day = num;
@@ -606,12 +620,13 @@ public class BaseDateParser implements IDateTimeParser {
     }
 
     // parse a regex match which includes 'day', 'month' and 'year' (optional) group
-    private DateTimeResolutionResult match2Date(Optional<Match> match, LocalDateTime referenceDate) {
+    private DateTimeResolutionResult match2Date(Optional<Match> match, LocalDateTime referenceDate, String relativeStr) {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
 
         String monthStr = match.get().getGroup("month").value.toLowerCase();
         String dayStr = match.get().getGroup("day").value.toLowerCase();
         String yearStr = match.get().getGroup("year").value.toLowerCase();
+        String weekdayStr = match.get().getGroup("weekday").value.toLowerCase();
         int month = 0;
         int day = 0;
         int year = 0;
@@ -632,8 +647,19 @@ public class BaseDateParser implements IDateTimeParser {
         Boolean noYear = false;
         if (year == 0) {
             year = referenceDate.getYear();
+            if (!StringUtility.isNullOrEmpty(relativeStr)) {
+                int swift = config.getSwiftMonthOrYear(relativeStr);
+
+                // @TODO Improve handling of next/last in particular cases "next friday 5/12" when the next friday is not 5/12.
+                if (!StringUtility.isNullOrEmpty(weekdayStr)) {
+                    swift = 0;
+                }
+                year += swift;
+            } else {
+                noYear = true;
+            }
+
             ret.setTimex(DateTimeFormatUtil.luisDate(-1, month, day));
-            noYear = true;
         } else {
             ret.setTimex(DateTimeFormatUtil.luisDate(year, month, day));
         }

@@ -10,16 +10,21 @@ namespace Microsoft.Recognizers.Text.Sequence
 {
     public class BaseURLExtractor : BaseSequenceExtractor
     {
-        public BaseURLExtractor()
+
+        private URLConfiguration config;
+
+        public BaseURLExtractor(URLConfiguration config)
         {
+            this.config = config;
+
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BaseURL.IpUrlRegex, RegexOptions.Compiled),
+                    config.UrlRegex,
                     Constants.URL_REGEX
                 },
                 {
-                    new Regex(BaseURL.UrlRegex, RegexOptions.Compiled),
+                    config.IpUrlRegex,
                     Constants.URL_REGEX
                 },
                 {
@@ -29,6 +34,7 @@ namespace Microsoft.Recognizers.Text.Sequence
             };
 
             Regexes = regexes.ToImmutableDictionary();
+            AmbiguousTimeTerm = new Regex(BaseURL.AmbiguousTimeTerm, RegexOptions.Compiled);
 
             TldMatcher = new StringMatcher();
             TldMatcher.Init(BaseURL.TldList);
@@ -39,6 +45,8 @@ namespace Microsoft.Recognizers.Text.Sequence
         protected sealed override string ExtractType { get; } = Constants.SYS_URL;
 
         private StringMatcher TldMatcher { get; }
+
+        private Regex AmbiguousTimeTerm { get; }
 
         public override bool IsValidMatch(Match match)
         {
@@ -54,6 +62,12 @@ namespace Microsoft.Recognizers.Text.Sequence
                 {
                     isValidTld = true;
                 }
+            }
+
+            // For cases like "7.am" or "8.pm" which are more likely time terms.
+            if (AmbiguousTimeTerm.IsMatch(match.Value))
+            {
+                return false;
             }
 
             return isValidTld || isIPUrl;

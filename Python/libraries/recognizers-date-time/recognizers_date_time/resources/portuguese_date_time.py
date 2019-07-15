@@ -4,10 +4,15 @@
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------
 
 from .base_date_time import BaseDateTime
 # pylint: disable=line-too-long
+
+
 class PortugueseDateTime:
     TillRegex = f'(?<till>ate|as|às|até|ateh|a|ao|--|-|—|——)(\\s+(o|[aà](s)?))?'
     AndRegex = f'(?<and>e|e\\s*o|--|-|—|——)'
@@ -48,9 +53,11 @@ class PortugueseDateTime:
     MonthOfRegex = f'(mes)(\\s*)((do|da|de))'
     RangeUnitRegex = f'\\b(?<unit>anos|ano|meses|m[êe]s|semanas|semana)\\b'
     InConnectorRegex = f'\\b(em)\\b'
+    SinceYearSuffixRegex = f'^[.]'
     WithinNextPrefixRegex = f'^[.]'
     CenturySuffixRegex = f'^[.]'
     RelativeRegex = f'^[.]'
+    StrictRelativeRegex = f'^[.]'
     FromRegex = f'((desde|de)(\\s*a(s)?)?)$'
     ConnectorAndRegex = f'(e\\s*([àa](s)?)?)$'
     BetweenRegex = f'(entre\\s*([oa](s)?)?)'
@@ -221,6 +228,7 @@ class PortugueseDateTime:
                          ("segundo", 1),
                          ("segs", 1),
                          ("seg", 1)])
+    SpecialYearPrefixesMap = dict([("", "")])
     SeasonMap = dict([("primavera", "SP"),
                       ("verao", "SU"),
                       ("verão", "SU"),
@@ -433,7 +441,7 @@ class PortugueseDateTime:
     DecadeWithCenturyRegex = f'^[.]'
     RelativeDecadeRegex = f'^[.]'
     YearSuffix = f'(,?\\s*({YearRegex}|{FullTextYearRegex}))'
-    DateAfterRegex = f'^[.]'
+    SuffixAfterRegex = f'^[.]'
     YearPeriodRegex = f'^[.]'
     FutureSuffixRegex = f'^[.]'
     WrittenDecades = dict([("", 0)])

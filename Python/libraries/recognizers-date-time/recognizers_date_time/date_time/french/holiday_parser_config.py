@@ -6,6 +6,7 @@ from ..utilities import DateUtils
 from ..base_holiday import BaseHolidayParserConfiguration
 from ...resources.french_date_time import FrenchDateTime
 
+
 class FrenchHolidayParserConfiguration(BaseHolidayParserConfiguration):
     @property
     def holiday_names(self) -> Dict[str, List[str]]:
@@ -75,7 +76,6 @@ class FrenchHolidayParserConfiguration(BaseHolidayParserConfiguration):
         ])
 
         return {**super()._init_holiday_funcs(), **local}
-
 
     @staticmethod
     def new_year(year: int) -> datetime:
@@ -213,13 +213,13 @@ class FrenchHolidayParserConfiguration(BaseHolidayParserConfiguration):
         trimmed_text = text.strip().lower()
         swift = -10
 
-        if trimmed_text.endswith('prochain'): # next - 'l'annee prochain'
+        if trimmed_text.endswith('prochain'):  # next - 'l'annee prochain'
             swift = 1
 
-        if trimmed_text.endswith('dernier'): # last - 'l'annee dernier'
+        if trimmed_text.endswith('dernier'):  # last - 'l'annee dernier'
             swift = -1
 
-        if trimmed_text.startswith('cette'): # this - 'cette annees'
+        if trimmed_text.startswith('cette'):  # this - 'cette annees'
             swift = 0
 
         return swift

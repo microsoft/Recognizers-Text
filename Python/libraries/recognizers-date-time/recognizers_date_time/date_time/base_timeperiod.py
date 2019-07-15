@@ -15,6 +15,7 @@ from .utilities import Token, merge_all_tokens, get_tokens_from_regex, DateTimeR
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
+
 class TimePeriodExtractorConfiguration(ABC):
     @property
     @abstractmethod
@@ -57,6 +58,7 @@ class TimePeriodExtractorConfiguration(ABC):
     @abstractmethod
     def has_connector_token(self, source: str) -> bool:
         raise NotImplementedError
+
 
 class BaseTimePeriodExtractor(DateTimeExtractor):
     @property
@@ -155,12 +157,14 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
 
                 # handle "from"
                 before = source[0:period_begin].strip().lower()
-                from_index: MatchedIndex = self.config.get_from_token_index(before)
+                from_index: MatchedIndex = self.config.get_from_token_index(
+                    before)
                 if from_index.matched:
                     period_begin = from_index.index
 
                 # handle "between"
-                between_index: MatchedIndex = self.config.get_between_token_index(before)
+                between_index: MatchedIndex = self.config.get_between_token_index(
+                    before)
                 if between_index.matched:
                     period_begin = between_index.index
 
@@ -175,7 +179,8 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
 
                 # handle "between"
                 before = source[0:period_begin].strip().lower()
-                between_index: MatchedIndex = self.config.get_between_token_index(before)
+                between_index: MatchedIndex = self.config.get_between_token_index(
+                    before)
                 if between_index.matched:
                     period_begin = between_index.index
                     result.append(Token(period_begin, period_end))
@@ -189,7 +194,10 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
     def match_night(self, source: str) -> List[Token]:
         return get_tokens_from_regex(self.config.time_of_day_regex, source)
 
-MatchedTimeRegex = namedtuple('MatchedTimeRegex', ['matched', 'timex', 'begin_hour', 'end_hour', 'end_min'])
+
+MatchedTimeRegex = namedtuple(
+    'MatchedTimeRegex', ['matched', 'timex', 'begin_hour', 'end_hour', 'end_min'])
+
 
 class TimePeriodParserConfiguration:
     @property
@@ -241,6 +249,7 @@ class TimePeriodParserConfiguration:
     def get_matched_timex_range(self, source: str) -> MatchedTimeRegex:
         raise NotImplementedError
 
+
 class BaseTimePeriodParser(DateTimeParser):
     @property
     def parser_type_name(self) -> str:
@@ -260,18 +269,23 @@ class BaseTimePeriodParser(DateTimeParser):
             inner_result = self.parse_simple_cases(source_text, reference)
 
             if not inner_result.success:
-                inner_result = self.merge_two_time_points(source_text, reference)
+                inner_result = self.merge_two_time_points(
+                    source_text, reference)
 
             if not inner_result.success:
                 inner_result = self.parse_time_of_day(source_text, reference)
 
             if inner_result.success:
-                inner_result.future_resolution[TimeTypeConstants.START_TIME] = DateTimeFormatUtil.format_time(inner_result.future_value.start)
-                inner_result.future_resolution[TimeTypeConstants.END_TIME] = DateTimeFormatUtil.format_time(inner_result.future_value.end)
-                inner_result.past_resolution[TimeTypeConstants.START_TIME] = DateTimeFormatUtil.format_time(inner_result.past_value.start)
-                inner_result.past_resolution[TimeTypeConstants.END_TIME] = DateTimeFormatUtil.format_time(inner_result.past_value.end)
+                inner_result.future_resolution[TimeTypeConstants.START_TIME] = DateTimeFormatUtil.format_time(
+                    inner_result.future_value.start)
+                inner_result.future_resolution[TimeTypeConstants.END_TIME] = DateTimeFormatUtil.format_time(
+                    inner_result.future_value.end)
+                inner_result.past_resolution[TimeTypeConstants.START_TIME] = DateTimeFormatUtil.format_time(
+                    inner_result.past_value.start)
+                inner_result.past_resolution[TimeTypeConstants.END_TIME] = DateTimeFormatUtil.format_time(
+                    inner_result.past_value.end)
                 value = inner_result
-        
+
         result = DateTimeParseResult(source)
         result.value = value
         result.timex_str = value.timex if value is not None else ''
@@ -289,7 +303,8 @@ class BaseTimePeriodParser(DateTimeParser):
 
         match = regex.search(self.config.pure_number_from_to_regex, source)
         if not match:
-            match = regex.search(self.config.pure_number_between_and_regex, source)
+            match = regex.search(
+                self.config.pure_number_between_and_regex, source)
 
         if not match or match.start() != 0:
             return result
@@ -319,8 +334,10 @@ class BaseTimePeriodParser(DateTimeParser):
         # The "ampm" only occurs in time, don't have to consider it here
 
         if not left_desc:
-            rigth_am_valid: bool = right_desc and regex.search(self.config.utility_configuration.am_desc_regex, right_desc.lower())
-            rigth_pm_valid: bool = right_desc and regex.search(self.config.utility_configuration.pm_desc__regex, right_desc.lower())
+            rigth_am_valid: bool = right_desc and regex.search(
+                self.config.utility_configuration.am_desc_regex, right_desc.lower())
+            rigth_pm_valid: bool = right_desc and regex.search(
+                self.config.utility_configuration.pm_desc__regex, right_desc.lower())
 
             if am_str or rigth_am_valid:
                 if end_hour >= 12:
@@ -356,8 +373,10 @@ class BaseTimePeriodParser(DateTimeParser):
         result.timex = f'({begin},{end},PT{difference}H)'
         result.future_value = ResolutionStartEnd()
         result.past_value = ResolutionStartEnd()
-        result.future_value.start = datetime(year, month, day) + timedelta(hours=begin_hour)
-        result.future_value.end = datetime(year, month, day) + timedelta(hours=end_hour)
+        result.future_value.start = datetime(
+            year, month, day) + timedelta(hours=begin_hour)
+        result.future_value.end = datetime(
+            year, month, day) + timedelta(hours=end_hour)
         result.past_value.start = result.future_value.start
         result.past_value.end = result.future_value.end
         result.success = True
@@ -430,8 +449,10 @@ class BaseTimePeriodParser(DateTimeParser):
         if end_time < begin_time:
             end_time = end_time + timedelta(days=1)
 
-        hours = QueryProcessor.float_or_int((end_time - begin_time).total_seconds() // 3600)
-        minutes = QueryProcessor.float_or_int((end_time - begin_time).total_seconds() / 60 % 60)
+        hours = QueryProcessor.float_or_int(
+            (end_time - begin_time).total_seconds() // 3600)
+        minutes = QueryProcessor.float_or_int(
+            (end_time - begin_time).total_seconds() / 60 % 60)
 
         hours_str = f'{hours}H' if hours > 0 else ''
         minutes_str = f'{minutes}M' if minutes > 0 and minutes < 60 else ''
@@ -493,8 +514,10 @@ class BaseTimePeriodParser(DateTimeParser):
         result.timex = timex_range.timex
         result.future_value = ResolutionStartEnd()
         result.past_value = ResolutionStartEnd()
-        result.future_value.start = datetime(year, month, day, timex_range.begin_hour, 0, 0)
-        result.future_value.end = datetime(year, month, day, timex_range.end_hour, timex_range.end_min, timex_range.end_min)
+        result.future_value.start = datetime(
+            year, month, day, timex_range.begin_hour, 0, 0)
+        result.future_value.end = datetime(
+            year, month, day, timex_range.end_hour, timex_range.end_min, timex_range.end_min)
         result.past_value.start = result.future_value.start
         result.past_value.end = result.future_value.end
 

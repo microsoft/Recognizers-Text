@@ -34,6 +34,7 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
     readonly beforeRegex: RegExp;
 
     readonly weekDayOfMonthRegex: RegExp;
+    readonly nowRegex: RegExp
 
     constructor() {
         this.simpleCasesRegexes = [
@@ -51,9 +52,6 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
             RegExpUtility.getSafeRegExp(FrenchDateTime.QuarterRegexYearFront),
             RegExpUtility.getSafeRegExp(FrenchDateTime.AllHalfYearRegex),
             RegExpUtility.getSafeRegExp(FrenchDateTime.SeasonRegex),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.ThisPrefixRegex),
             RegExpUtility.getSafeRegExp(FrenchDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.getSafeRegExp(FrenchDateTime.WeekWithWeekDayRangeRegex)
         ];
@@ -74,6 +72,7 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
         this.fromRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.FromRegex);
         this.connectorAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorAndRegex);
         this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex2);
+        this.nowRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NowRegex);
 
         this.datePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
         this.integerExtractor = new FrenchIntegerExtractor();
@@ -137,6 +136,7 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
 
     readonly cardinalExtractor: IExtractor;
     readonly numberParser: IParser;
+    readonly nowRegex: RegExp
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.tokenBeforeDate = FrenchDateTime.TokenBeforeDate;
@@ -169,6 +169,7 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
         this.monthOfRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MonthOfRegex);
         this.restOfDateRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RestOfDateRegex);
         this.unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.UnspecificEndOfRangeRegex);
+        this.nowRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NowRegex);
 
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp("(prochain|prochaine)\b");
         this.previousPrefixRegex = RegExpUtility.getSafeRegExp("(dernier)\b");

@@ -1,5 +1,6 @@
 from ..resources import BaseDateTime
 
+
 class Constants:
     SYS_DATETIME_DATE: str = 'date'
     SYS_DATETIME_TIME: str = 'time'
@@ -9,12 +10,17 @@ class Constants:
     SYS_DATETIME_DATETIMEPERIOD: str = 'datetimerange'
     SYS_DATETIME_DURATION: str = 'duration'
     SYS_DATETIME_SET: str = 'set'
+
     SYS_DATETIME_MERGED: str = 'datetimeV2'
 
-    #keys
+    # SourceEntity Types
+    SYS_DATETIME_DATETIMEPOINT: str = 'datetimepoint'
+
+    # keys
     TimexKey: str = 'timex'
     CommentKey: str = 'Comment'
     ModKey: str = 'Mod'
+    SourceType: str = 'sourceEntity'
     TypeKey: str = 'type'
     IsLunarKey: str = 'isLunar'
     ResolveKey: str = 'resolve'
@@ -23,6 +29,7 @@ class Constants:
 
     SemesterMonthCount: int = 6
     TrimesterMonthCount: int = 3
+    QuarterCount: int = 4
     FourDigitsYearLength: int = 4
     MinMonth: int = 1
     MaxMonth: int = 12
@@ -32,12 +39,13 @@ class Constants:
 
     DEFAULT_LANGUAGE_FALLBACK_MDY: str = 'MDY'
     DEFAULT_LANGUAGE_FALLBACK_DMY: str = 'DMY'
-    
+
     MaxTwoDigitYearFutureNum: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
     MinTwoDigitYearPastNum: int = int(BaseDateTime.MinTwoDigitYearPastNum)
 
     EarlyMorning: str = "TDA"
     Morning: str = "TMO"
+    MidDay: str = "TMI"
     Afternoon: str = "TAF"
     Evening: str = "TEV"
     Daytime: str = "TDT"

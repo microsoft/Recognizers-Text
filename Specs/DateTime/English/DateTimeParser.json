@@ -1337,5 +1337,53 @@
         "Length": 7
       }
     ]
+  },
+  {
+    "Input": "I will go back on wed Oct 26 15:50:06 2016.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupported": "java,python,javascript",
+    "Results": [
+      {
+        "Text": "wed Oct 26 15:50:06 2016",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-10-26T15:50:06",
+          "FutureResolution": {
+            "dateTime": "2016-10-26 15:50:06"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-26 15:50:06"
+          }
+        },
+        "Start": 18,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Wed Oct 26 15:50:06 2016 is not a day in 2019.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupported": "java,python,javascript",
+    "Results": [
+      {
+        "Text": "wed Oct 26 15:50:06 2016",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-10-26T15:50:06",
+          "FutureResolution": {
+            "dateTime": "2016-10-26 15:50:06"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-26 15:50:06"
+          }
+        },
+        "Start": 0,
+        "Length": 24
+      }
+    ]
   }
 ]

@@ -24,6 +24,10 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         public ImmutableDictionary<string, string> RelativeReferenceMap { get; private set; }
 
+        public ImmutableDictionary<string, string> RelativeReferenceOffsetMap { get; private set; }
+
+        public ImmutableDictionary<string, string> RelativeReferenceRelativeToMap { get; private set; }
+
         public ImmutableDictionary<string, long> OrdinalNumberMap { get; }
 
         public ImmutableDictionary<string, long> RoundNumberMap { get; }
@@ -60,6 +64,10 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         // Test-specific initialization: the Regex matches nothing.
         public Regex NegativeNumberSignRegex { get; } = new Regex(@"[^\s\S]");
+
+        public bool IsCompoundNumberLanguage { get; }
+
+        public bool IsMultiDecimalSeparatorCulture { get; }
 
         public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {

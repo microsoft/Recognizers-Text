@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -25,7 +26,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public delegate int SwiftDayDelegate(string text);
 
-        public static List<Token> ExtractorDurationWithBeforeAndAfter(string text, ExtractResult er, List<Token> ret, IDateTimeUtilityConfiguration utilityConfiguration)
+        public static List<Token> ExtractorDurationWithBeforeAndAfter(string text, ExtractResult er, List<Token> ret,
+                                                                      IDateTimeUtilityConfiguration utilityConfiguration)
         {
             var pos = (int)er.Start + (int)er.Length;
 
@@ -33,10 +35,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var afterString = text.Substring(pos);
                 var beforeString = text.Substring(0, (int)er.Start);
-                var index = -1;
                 var isTimeDuration = utilityConfiguration.TimeUnitRegex.Match(er.Text).Success;
 
-                if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.AgoRegex, out index))
+                if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.AgoRegex, out var index))
                 {
                     // We don't support cases like "5 minutes from today" for now
                     // Cases like "5 minutes ago" or "5 minutes from now" are supported
@@ -89,6 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateObject referenceTime,
             IDateTimeExtractor durationExtractor,
             IDateTimeParser durationParser,
+            IParser numberParser,
             IImmutableDictionary<string, string> unitMap,
             Regex unitRegex,
             IDateTimeUtilityConfiguration utilityConfiguration,
@@ -96,19 +98,16 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             var durationRes = durationExtractor.Extract(text, referenceTime);
+
             if (durationRes.Count > 0)
             {
                 var pr = durationParser.Parse(durationRes[0], referenceTime);
                 var matches = unitRegex.Matches(text);
                 if (matches.Count > 0)
                 {
-                    var afterStr =
-                            text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length)
-                                .Trim().ToLowerInvariant();
+                    var afterStr = text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length).Trim();
 
-                    var beforeStr =
-                        text.Substring(0, (int)durationRes[0].Start)
-                            .Trim().ToLowerInvariant();
+                    var beforeStr = text.Substring(0, (int)durationRes[0].Start).Trim();
 
                     var mode = AgoLaterMode.Date;
                     if (pr.TimexStr.Contains("T"))
@@ -118,7 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (pr.Value != null)
                     {
-                        return GetAgoLaterResult(pr, afterStr, beforeStr, referenceTime, utilityConfiguration, mode, swiftDay);
+                        return GetAgoLaterResult(pr, afterStr, beforeStr, referenceTime, numberParser, utilityConfiguration, mode, swiftDay);
                     }
                 }
             }
@@ -131,6 +130,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             string afterStr,
             string beforeStr,
             DateObject referenceTime,
+            IParser numberParser,
             IDateTimeUtilityConfiguration utilityConfiguration,
             AgoLaterMode mode,
             SwiftDayDelegate swiftDay)
@@ -173,6 +173,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Success && !string.IsNullOrEmpty(match.Groups["day"].Value))
                 {
                     swift = swiftDay(match.Groups["day"].Value);
+                }
+
+                var yearMatch = utilityConfiguration.SinceYearSuffixRegex.Match(afterStr);
+                if (yearMatch.Success)
+                {
+                    var yearString = yearMatch.Groups[Constants.YearGroupName].Value;
+                    var yearEr = new ExtractResult { Text = yearString };
+                    var year = Convert.ToInt32((double)(numberParser.Parse(yearEr).Value ?? 0));
+                    referenceTime = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
                 }
 
                 resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime.AddDays(swift), true);

@@ -9,6 +9,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public ItalianDateParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config.Options)
         {
@@ -36,19 +38,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             WeekDayAndDayOfMothRegex = ItalianDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             WeekDayAndDayRegex = ItalianDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = ItalianDateExtractorConfiguration.RelativeMonthRegex;
+            StrictRelativeRegex = ItalianDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = ItalianDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = ItalianDateExtractorConfiguration.RelativeWeekDayRegex;
-            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
-            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexOptions.Singleline);
-            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+
+            // @TODO move to config
+            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexFlags);
+            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexFlags);
+
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
             CardinalMap = config.CardinalMap;
             UnitMap = config.UnitMap;
             UtilityConfiguration = config.UtilityConfiguration;
+
             SameDayTerms = DateTimeDefinitions.SameDayTerms.ToImmutableList();
             PlusOneDayTerms = DateTimeDefinitions.PlusOneDayTerms.ToImmutableList();
             PlusTwoDayTerms = DateTimeDefinitions.PlusTwoDayTerms.ToImmutableList();
@@ -106,6 +113,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex RelativeMonthRegex { get; }
 
+        public Regex StrictRelativeRegex { get; }
+
         public Regex YearSuffix { get; }
 
         public Regex RelativeWeekDayRegex { get; }
@@ -140,7 +149,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public int GetSwiftMonth(string text)
+        public int GetSwiftMonthOrYear(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;

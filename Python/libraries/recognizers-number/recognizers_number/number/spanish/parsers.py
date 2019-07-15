@@ -8,6 +8,7 @@ from recognizers_number.culture import CultureInfo
 from recognizers_number.number.parsers import NumberParserConfiguration
 from recognizers_number.resources.spanish_numeric import SpanishNumeric
 
+
 class SpanishNumberParserConfiguration(NumberParserConfiguration):
     @property
     def cardinal_number_map(self) -> Dict[str, int]:
@@ -94,19 +95,24 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
         self._written_integer_separator_texts = SpanishNumeric.WrittenIntegerSeparatorTexts
         self._written_fraction_separator_texts = SpanishNumeric.WrittenFractionSeparatorTexts
 
-        ordinal_number_map: Dict[str, int] = dict(SpanishNumeric.OrdinalNumberMap)
+        ordinal_number_map: Dict[str, int] = dict(
+            SpanishNumeric.OrdinalNumberMap)
         for prefix_key in SpanishNumeric.PrefixCardinalMap:
             for suffix_key in SpanishNumeric.SuffixOrdinalMap:
                 if not prefix_key+suffix_key in ordinal_number_map:
                     prefix_value = SpanishNumeric.PrefixCardinalMap[prefix_key]
                     suffix_value = SpanishNumeric.SuffixOrdinalMap[suffix_key]
-                    ordinal_number_map[prefix_key+suffix_key] = prefix_value*suffix_value
+                    ordinal_number_map[prefix_key +
+                                       suffix_key] = prefix_value*suffix_value
         self._cardinal_number_map = SpanishNumeric.CardinalNumberMap
         self._ordinal_number_map = ordinal_number_map
         self._round_number_map = SpanishNumeric.RoundNumberMap
-        self._negative_number_sign_regex = RegExpUtility.get_safe_reg_exp(SpanishNumeric.NegativeNumberSignRegex)
-        self._half_a_dozen_regex = RegExpUtility.get_safe_reg_exp(SpanishNumeric.HalfADozenRegex)
-        self._digital_number_regex = RegExpUtility.get_safe_reg_exp(SpanishNumeric.DigitalNumberRegex)
+        self._negative_number_sign_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishNumeric.NegativeNumberSignRegex)
+        self._half_a_dozen_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishNumeric.HalfADozenRegex)
+        self._digital_number_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishNumeric.DigitalNumberRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
         result: List[str] = list()

@@ -6,6 +6,8 @@
             "output": "base_units",
             "header": [
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class BaseUnits:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -15,6 +17,8 @@
             "output": "base_numbers",
             "header": [
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class BaseNumbers:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -24,6 +28,8 @@
             "output": "base_currency",
             "header": [
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class BaseCurrency:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -34,6 +40,8 @@
             "header": [
                 "from .base_numbers import BaseNumbers",
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class EnglishNumericWithUnit:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -44,6 +52,8 @@
             "header": [
                 "from .base_numbers import BaseNumbers",
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class SpanishNumericWithUnit:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -54,6 +64,8 @@
             "header": [
                 "from .base_numbers import BaseNumbers",
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class PortugueseNumericWithUnit:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -64,6 +76,8 @@
             "header": [
                 "from .base_numbers import BaseNumbers",
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class ChineseNumericWithUnit:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -74,6 +88,8 @@
             "header": [
                 "from .base_numbers import BaseNumbers",
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class FrenchNumericWithUnit:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]

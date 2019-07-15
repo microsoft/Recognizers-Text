@@ -22,6 +22,13 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         [NetCoreTestDataSource]
         [TestMethod]
+        public void OrdinalModelEnablePreview()
+        {
+            TestNumber();
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
         public void PercentModel(TestModel testSpec)
         {
             TestNumber(testSpec);

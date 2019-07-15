@@ -20,6 +20,7 @@ from ..base_set import BaseSetParser
 from ..base_merged import MergedParserConfiguration
 from ...resources.spanish_date_time import SpanishDateTime
 
+
 class SpanishMergedParserConfiguration(SpanishCommonDateTimeParserConfiguration, MergedParserConfiguration):
     @property
     def before_regex(self) -> Pattern:
@@ -72,12 +73,19 @@ class SpanishMergedParserConfiguration(SpanishCommonDateTimeParserConfiguration,
     def __init__(self, config):
         SpanishCommonDateTimeParserConfiguration.__init__(self)
 
-        self._before_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.BeforeRegex)
-        self._after_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.AfterRegex)
-        self._since_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.SinceRegex)
+        self._before_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.BeforeRegex)
+        self._after_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.AfterRegex)
+        self._since_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.SinceRegex)
 
-        self._date_period_parser = BaseDatePeriodParser(SpanishDatePeriodParserConfiguration(self))
-        self._time_period_parser = BaseTimePeriodParser(SpanishTimePeriodParserConfiguration(self))
-        self._date_time_period_parser = SpanishDateTimePeriodParser(SpanishDateTimePeriodParserConfiguration(self))
+        self._date_period_parser = BaseDatePeriodParser(
+            SpanishDatePeriodParserConfiguration(self))
+        self._time_period_parser = BaseTimePeriodParser(
+            SpanishTimePeriodParserConfiguration(self))
+        self._date_time_period_parser = SpanishDateTimePeriodParser(
+            SpanishDateTimePeriodParserConfiguration(self))
         self._set_parser = BaseSetParser(SpanishSetParserConfiguration(config))
-        self._holiday_parser = BaseHolidayParser(SpanishHolidayParserConfiguration(config))
+        self._holiday_parser = BaseHolidayParser(
+            SpanishHolidayParserConfiguration(config))

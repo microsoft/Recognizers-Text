@@ -1658,6 +1658,7 @@
               "timex": "2018",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2018-01-01"
             }
           ]
@@ -1683,6 +1684,7 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2019-01-01"
             }
           ]
@@ -1708,6 +1710,7 @@
               "timex": "2018",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2018-01-01"
             }
           ]
@@ -1733,6 +1736,7 @@
               "timex": "2018",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2018-01-01"
             }
           ]
@@ -1758,6 +1762,7 @@
               "timex": "2018",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2018-01-01"
             }
           ]
@@ -1783,6 +1788,7 @@
               "timex": "2018",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2018-01-01"
             }
           ]
@@ -1808,6 +1814,7 @@
               "timex": "2007",
               "Mod": "after",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2008-01-01"
             }
           ]
@@ -1833,6 +1840,7 @@
               "timex": "2007",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2007-01-01"
             }
           ]
@@ -2190,6 +2198,7 @@
               "timex": "2015",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2015-01-01"
             }
           ]
@@ -2930,6 +2939,302 @@
               "timex": "PT0.5H",
               "type": "duration",
               "value": "1800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2018年10月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2018年10月",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-10",
+              "type": "daterange",
+              "start": "2018-10-01",
+              "end": "2018-11-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "2018年十二月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2018年十二月",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-12",
+              "type": "daterange",
+              "start": "2018-12-01",
+              "end": "2019-01-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "2018年12月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2018年12月",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-12",
+              "type": "daterange",
+              "start": "2018-12-01",
+              "end": "2019-01-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "2018年12月的月份不是0",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2018年12月",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-12",
+              "type": "daterange",
+              "start": "2018-12-01",
+              "end": "2019-01-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "2018年 12月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2018年 12月",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-12",
+              "type": "daterange",
+              "start": "2018-12-01",
+              "end": "2019-01-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "在12：00之后",
+    "Context": {
+      "ReferenceDateTime": "2019-07-01T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "12:00之后",
+        "Start": 1,
+        "End": 7,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12:00",
+              "Mod": "after",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "start": "12:00:00"
+            },
+            {
+              "timex": "T00:00",
+              "Mod": "after",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "start": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "在十二点之后",
+    "Context": {
+      "ReferenceDateTime": "2019-07-01T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "十二点之后",
+        "Start": 1,
+        "End": 5,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12",
+              "Mod": "after",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "start": "12:00:00"
+            },
+            {
+              "timex": "T00",
+              "Mod": "after",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "start": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "今天晚上八点之前",
+    "Context": {
+      "ReferenceDateTime": "2019-07-01T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "今天晚上八点之前",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-07-01T20",
+              "Mod": "before",
+              "type": "datetimerange",
+              "sourceEntity": "datetimepoint",
+              "end": "2019-07-01 20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "下午三点之前",
+    "Context": {
+      "ReferenceDateTime": "2019-07-01T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "下午三点之前",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T15",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "在 12：00 之前",
+    "Context": {
+      "ReferenceDateTime": "2019-07-01T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "12:00 之前",
+        "Start": 2,
+        "End": 9,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12:00",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "12:00:00"
+            },
+            {
+              "timex": "T00:00",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "= 2019",
+    "Context": {
+      "ReferenceDateTime": "2019-07-01T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "= 2019",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-01-01"
             }
           ]
         }

@@ -6,11 +6,13 @@ import regex
 from recognizers_text import ExtractResult
 from ..extractors import DateTimeExtractor
 
+
 class DateTimeExtra:
     def __init__(self):
         self.data_type: any = None
         self.named_entity: Dict[str, List[str]] = dict()
         self.match: Match = None
+
 
 class TimeResult:
     def __init__(self, hour: int, minute: int, second: int, low_bound: int = -1):
@@ -18,6 +20,7 @@ class TimeResult:
         self.minute = minute
         self.second = second
         self.low_bound = low_bound
+
 
 class TimeResolutionUtils:
     @staticmethod
@@ -50,6 +53,7 @@ class TimeResolutionUtils:
 
         return value
 
+
 class ChineseBaseDateTimeExtractor(DateTimeExtractor):
     def __init__(self, regex_dict: Dict[Pattern, any]):
         self._regex_dict = regex_dict
@@ -66,7 +70,8 @@ class ChineseBaseDateTimeExtractor(DateTimeExtractor):
         match_source: Dict[Match, any] = dict()
         matched: List[bool] = [False] * len(source)
 
-        collections = list(map(lambda x: (list(regex.finditer(x[0], source)), x[1]), self._regex_dict.items()))
+        collections = list(map(lambda x: (
+            list(regex.finditer(x[0], source)), x[1]), self._regex_dict.items()))
         collections = list(filter(lambda x: len(x[0]) > 0, collections))
 
         for collection in collections:
@@ -82,7 +87,8 @@ class ChineseBaseDateTimeExtractor(DateTimeExtractor):
                     start = last + 1
                     length = i - last
                     text = source[start:start+length].strip()
-                    src_match = next((x for x in iter(match_source) if (x.start() == start and (x.end() - x.start()) == length)), None)
+                    src_match = next((x for x in iter(match_source) if (
+                        x.start() == start and (x.end() - x.start()) == length)), None)
                     if src_match:
                         value = ExtractResult()
                         value.start = start

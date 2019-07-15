@@ -6,6 +6,36 @@ namespace Microsoft.Recognizers.Text.Number.Tests
     [TestClass]
     public class TestNumber_English : TestBase
     {
+        public static TestResources TestResources { get; protected set; }
+
+        [ClassInitialize]
+        public static void ClassInitialize(TestContext context)
+        {
+            TestResources = new TestResources();
+            TestResources.InitFromTestContext(context);
+        }
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            TestSpecInitialize(TestResources);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void NumberModel()
+        {
+            TestNumber();
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void OrdinalModelSuppressExtendedTypes()
+        {
+            TestNumber();
+        }
+
+
         [NetCoreTestDataSource]
         [TestMethod]
         public void NumberModel(TestModel testSpec)

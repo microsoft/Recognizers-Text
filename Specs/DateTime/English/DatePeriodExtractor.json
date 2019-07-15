@@ -3717,5 +3717,93 @@
         "Length": 17
       }
     ]
+  },
+  {
+    "Input": "I will do my work between now and November 15th",
+    "Results": [
+      {
+        "Text": "between now and November 15th",
+        "Type": "daterange",
+        "Start": 18,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "I have finished my work between Jan 22 and now",
+    "Results": [
+      {
+        "Text": "between Jan 22 and now",
+        "Type": "daterange",
+        "Start": 24,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "3pm : I'll be out on this week",
+    "Results": [
+      {
+        "Text": "this week",
+        "Type": "daterange",
+        "Start": 21,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "this week 8am should be a daterange and a time.",
+    "Results": [
+      {
+        "Text": "this week",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "this week 8p.m. should be a daterange and a time.",
+    "Results": [
+      {
+        "Text": "this week",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "week 10 8 p.m. should be a daterange and a time.",
+    "Results": [
+      {
+        "Text": "week 10",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "week 10 8p.m. should be a daterange and a time.",
+    "Results": [
+      {
+        "Text": "week 10",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "week 10 10:20 should be a daterange and a time.",
+    "Results": [
+      {
+        "Text": "week 10",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
   }
 ]

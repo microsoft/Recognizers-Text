@@ -121,9 +121,16 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
-        public static string GenerateYearTimex(DateObject date = default(DateObject))
+        public static string GenerateYearTimex(DateObject date = default(DateObject), string specialYearPrefixes = null)
         {
-            return date.IsDefaultValue() ? Constants.TimexFuzzyYear : $"{date.Year:D4}";
+            var yearTimex = date.IsDefaultValue() ? Constants.TimexFuzzyYear : $"{date.Year:D4}";
+            return specialYearPrefixes == null ? yearTimex : specialYearPrefixes + yearTimex;
+        }
+
+        public static string GenerateYearTimex(int year, string specialYearPrefixes = null)
+        {
+            var yearTimex = DateTimeFormatUtil.LuisDate(year);
+            return specialYearPrefixes == null ? yearTimex : specialYearPrefixes + yearTimex;
         }
 
         public static string GenerateDurationTimex(double number, string unitStr, bool isLessThanDay)
@@ -216,6 +223,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     result.Timex = Constants.Morning;
                     result.BeginHour = 8;
                     result.EndHour = 12;
+                    break;
+                case Constants.MidDay:
+                    result.Timex = Constants.MidDay;
+                    result.BeginHour = 11;
+                    result.EndHour = 13;
                     break;
                 case Constants.Afternoon:
                     result.Timex = Constants.Afternoon;

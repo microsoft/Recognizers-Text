@@ -8,10 +8,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     public class EnglishDateTimeParserConfiguration : BaseOptionsConfiguration, IDateTimeParserConfiguration
     {
         public static readonly Regex AmTimeRegex =
-             new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
+             new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags);
 
         public static readonly Regex PmTimeRegex =
-            new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public EnglishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
          : base(config)
@@ -33,6 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             UnspecificEndOfRegex = EnglishDateTimeExtractorConfiguration.UnspecificEndOfRegex;
             UnitRegex = EnglishTimeExtractorConfiguration.TimeUnitRegex;
             DateNumberConnectorRegex = EnglishDateTimeExtractorConfiguration.DateNumberConnectorRegex;
+            YearRegex = EnglishDateTimeExtractorConfiguration.YearRegex;
 
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
@@ -92,6 +95,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex ConnectorRegex { get; }
 
+        public Regex YearRegex { get; }
+
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
@@ -100,7 +105,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             int result = hour;
 
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             if (trimmedText.EndsWith("morning") && hour >= Constants.HalfDayHourCount)
             {
@@ -116,7 +121,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             if (trimmedText.EndsWith("now"))
             {
@@ -141,7 +146,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public int GetSwiftDay(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             var swift = 0;
             if (trimmedText.StartsWith("next"))

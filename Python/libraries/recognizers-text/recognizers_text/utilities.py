@@ -1,5 +1,26 @@
-from typing import Pattern, Match, Union, List
+import re
+from typing import Pattern, Union, List, Match
 import regex
+from emoji import UNICODE_EMOJI
+
+
+class StringUtility:
+    @staticmethod
+    def is_emoji(letter):
+        return letter in UNICODE_EMOJI
+
+    @staticmethod
+    def remove_unicode_matches(string: Pattern):
+        py_regex = re.sub('\\\\u.{4}[\\|\\\\]', '', string.pattern)
+        return re.sub('\\\\u', '\\\\U', py_regex)
+
+    @staticmethod
+    def index_of(string, token, position):
+        try:
+            ret = string.index(token, position)
+        except:
+            ret = 1
+        return ret
 
 
 class RegExpUtility:
@@ -14,6 +35,12 @@ class RegExpUtility:
     @staticmethod
     def get_group_list(match: Match, group: str) -> List[str]:
         return match.captures(group)
+
+    @staticmethod
+    def get_matches(regexp: Pattern, source: str) -> []:
+        py_regex = StringUtility.remove_unicode_matches(regexp)
+        matches = list(regex.finditer(py_regex, source))
+        return list(filter(None, map(lambda m: m.group().lower(), matches)))
 
 
 class QueryProcessor:
@@ -66,7 +93,8 @@ class QueryProcessor:
 
         matches = QueryProcessor.special_tokens_regex.finditer(input_str)
         for match in matches:
-            QueryProcessor.apply_reverse(match.start(), str_chars, match.group())
+            QueryProcessor.apply_reverse(
+                match.start(), str_chars, match.group())
 
         return ''.join(str_chars)
 

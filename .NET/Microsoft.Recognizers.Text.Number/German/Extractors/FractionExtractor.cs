@@ -9,6 +9,9 @@ namespace Microsoft.Recognizers.Text.Number.German
 {
     public class FractionExtractor : BaseNumberExtractor
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly ConcurrentDictionary<string, FractionExtractor> Instances =
          new ConcurrentDictionary<string, FractionExtractor>();
 
@@ -17,23 +20,23 @@ namespace Microsoft.Recognizers.Text.Number.German
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNounRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNounRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.GERMAN)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.GERMAN)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.GERMAN)
                 },
             };

@@ -12,40 +12,46 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
-        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DateTimePeriodTillRegex, RegexOptions.Singleline);
+        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DateTimePeriodTillRegex, RegexFlags);
 
-        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.DateTimePeriodPrepositionRegex, RegexOptions.Singleline);
+        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.DateTimePeriodPrepositionRegex, RegexFlags);
 
-        public static readonly Regex HourRegex = new Regex(DateTimeDefinitions.HourRegex, RegexOptions.Singleline);
+        public static readonly Regex HourRegex = new Regex(DateTimeDefinitions.HourRegex, RegexFlags);
 
-        public static readonly Regex HourNumRegex = new Regex(DateTimeDefinitions.HourNumRegex, RegexOptions.Singleline);
+        public static readonly Regex HourNumRegex = new Regex(DateTimeDefinitions.HourNumRegex, RegexFlags);
 
-        public static readonly Regex ZhijianRegex = new Regex(DateTimeDefinitions.ZhijianRegex, RegexOptions.Singleline);
+        public static readonly Regex ZhijianRegex = new Regex(DateTimeDefinitions.ZhijianRegex, RegexFlags);
 
-        public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DateTimePeriodThisRegex, RegexOptions.Singleline);
+        public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DateTimePeriodThisRegex, RegexFlags);
 
-        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DateTimePeriodLastRegex, RegexOptions.Singleline);
+        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DateTimePeriodLastRegex, RegexFlags);
 
-        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DateTimePeriodNextRegex, RegexOptions.Singleline);
+        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DateTimePeriodNextRegex, RegexFlags);
 
-        public static readonly Regex TimeOfDayRegex = new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.Singleline);
+        public static readonly Regex TimeOfDayRegex = new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags);
 
-        public static readonly Regex SpecificTimeOfDayRegex = new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexOptions.Singleline);
+        public static readonly Regex SpecificTimeOfDayRegex = new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexFlags);
 
-        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexOptions.Singleline);
+        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexFlags);
 
-        public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.DateTimePeriodFollowedUnit, RegexOptions.Singleline);
+        public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.DateTimePeriodFollowedUnit, RegexFlags);
 
-        public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit, RegexOptions.Singleline);
+        public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit, RegexFlags);
 
-        public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexOptions.Singleline);
+        public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexFlags);
 
-        public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexOptions.Singleline);
+        public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly ChineseTimeExtractorConfiguration SingleTimeExtractor = new ChineseTimeExtractorConfiguration();
+
         private static readonly ChineseDateTimeExtractorConfiguration TimeWithDateExtractor = new ChineseDateTimeExtractorConfiguration();
+
         private static readonly ChineseDateExtractorConfiguration SingleDateExtractor = new ChineseDateExtractorConfiguration();
+
         private static readonly CardinalExtractor CardinalExtractor = new CardinalExtractor();
+
         private static readonly ChineseTimePeriodExtractorChsConfiguration TimePeriodExtractor = new ChineseTimePeriodExtractorChsConfiguration();
 
         public List<ExtractResult> Extract(string text)
@@ -100,8 +106,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var idx = 0;
             while (idx < timePoints.Count - 1)
             {
-                if (timePoints[idx].Type.Equals(Constants.SYS_DATETIME_DATE) &&
-                    timePoints[idx + 1].Type.Equals(Constants.SYS_DATETIME_TIMEPERIOD))
+                if (timePoints[idx].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
+                    timePoints[idx + 1].Type.Equals(Constants.SYS_DATETIME_TIMEPERIOD, StringComparison.Ordinal))
                 {
                     var middleBegin = timePoints[idx].Start + timePoints[idx].Length ?? 0;
                     var middleEnd = timePoints[idx + 1].Start ?? 0;
@@ -161,8 +167,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             while (idx < timePoints.Count - 1)
             {
                 // if both ends are Time. then this is a TimePeriod, not a DateTimePeriod
-                if (timePoints[idx].Type.Equals(Constants.SYS_DATETIME_TIME) &&
-                    timePoints[idx + 1].Type.Equals(Constants.SYS_DATETIME_TIME))
+                if (timePoints[idx].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal) &&
+                    timePoints[idx + 1].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
                 {
                     idx++;
                     continue;
@@ -180,7 +186,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);
 
                     // handle "from"
-                    var beforeStr = text.Substring(0, periodBegin).ToLowerInvariant();
+                    var beforeStr = text.Substring(0, periodBegin);
                     if (beforeStr.Trim().EndsWith("从"))
                     {
                         periodBegin = beforeStr.LastIndexOf("从", StringComparison.Ordinal);
@@ -198,7 +204,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);
 
                     // handle "between"
-                    var afterStr = text.Substring(periodEnd).ToLowerInvariant();
+                    var afterStr = text.Substring(periodEnd);
                     var match = ZhijianRegex.Match(afterStr);
                     if (match.Success)
                     {
@@ -273,7 +279,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             foreach (var duration in durations)
             {
-                var beforeStr = text.Substring(0, duration.Start).ToLowerInvariant();
+                var beforeStr = text.Substring(0, duration.Start);
                 if (string.IsNullOrWhiteSpace(beforeStr))
                 {
                     continue;

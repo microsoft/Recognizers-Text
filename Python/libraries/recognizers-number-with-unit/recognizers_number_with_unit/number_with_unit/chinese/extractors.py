@@ -45,11 +45,14 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         if culture_info is None:
             culture_info = CultureInfo(Culture.Chinese)
         super().__init__(culture_info)
-        self._unit_num_extractor = ChineseNumberExtractor(ChineseNumberExtractorMode.EXTRACT_ALL)
+        self._unit_num_extractor = ChineseNumberExtractor(
+            ChineseNumberExtractorMode.EXTRACT_ALL)
         self._build_prefix = ChineseNumericWithUnit.BuildPrefix
         self._build_suffix = ChineseNumericWithUnit.BuildSuffix
-        self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(ChineseNumericWithUnit.CompoundUnitConnectorRegex)
-        self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.PmNonUnitRegex)
+        self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseNumericWithUnit.CompoundUnitConnectorRegex)
+        self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(
+            BaseUnits.PmNonUnitRegex)
 
 
 # pylint: enable=abstract-method
@@ -152,4 +155,5 @@ class ChineseTemperatureExtractorConfiguration(ChineseNumberWithUnitExtractorCon
         self._suffix_list = ChineseNumericWithUnit.TemperatureSuffixList
         self._prefix_list = ChineseNumericWithUnit.TemperaturePrefixList
         self._ambiguous_unit_list = ChineseNumericWithUnit.TemperatureAmbiguousValues
-        self._ambiguous_unit_number_multiplier_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.AmbiguousUnitNumberMultiplierRegex)
+        self._ambiguous_unit_number_multiplier_regex = RegExpUtility.get_safe_reg_exp(
+            BaseUnits.AmbiguousUnitNumberMultiplierRegex)

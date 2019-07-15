@@ -4,10 +4,15 @@
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------
 
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
+
+
 class EnglishNumericWithUnit:
     AgeSuffixList = dict([("Year", "years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age"),
                           ("Month", "months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age"),
@@ -653,4 +658,5 @@ class EnglishNumericWithUnit:
                              ("Ounce", "-ounce|ounce|oz|ounces"),
                              ("Weight unit", "pennyweight|grain|british long ton|us short hundredweight|stone|dram")])
     AmbiguousWeightUnitList = [r'g', r'oz', r'stone', r'dram', r'lbs']
+    AmbiguityFiltersDict = dict([("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))")])
 # pylint: enable=line-too-long

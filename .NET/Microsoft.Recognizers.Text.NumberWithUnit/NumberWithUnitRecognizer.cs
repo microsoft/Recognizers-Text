@@ -323,9 +323,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     },
                 }));
 
-            /*
-            #region Italian
-
             RegisterModel<CurrencyModel>(
                 Culture.Italian,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -354,7 +351,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitExtractor(new Italian.DimensionExtractorConfiguration()),
                         new NumberWithUnitParser(new Italian.DimensionParserConfiguration())
                     },
-                }));
+               }));
 
             RegisterModel<AgeModel>(
                 Culture.Italian,
@@ -365,9 +362,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Italian.AgeParserConfiguration())
                     },
                 }));
-
-            #endregion
-            */
 
             RegisterModel<CurrencyModel>(
                 Culture.Japanese,
@@ -436,6 +430,38 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Dutch.AgeParserConfiguration())
                     },
                 }));
+
+            RegisterModel<AgeModel>(
+                Culture.Turkish,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Turkish.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Turkish.AgeParserConfiguration())
+                    },
+                }));
+
+            /* TODO uncomment with the Turkish temprature changes
+            RegisterModel<TemperatureModel>(
+                Culture.Turkish,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Turkish.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Turkish.TemperatureParserConfiguration())
+                    },
+                }));*/
+
+            RegisterModel<DimensionModel>(
+                Culture.Turkish,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Turkish.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Turkish.DimensionParserConfiguration())
+                    },
+                }));
+
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)

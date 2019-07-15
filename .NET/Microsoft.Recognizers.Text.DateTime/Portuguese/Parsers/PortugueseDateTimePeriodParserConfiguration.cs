@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             DateTimeParser = config.DateTimeParser;
             TimePeriodParser = config.TimePeriodParser;
             DurationParser = config.DurationParser;
+            TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = PortugueseTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = PortugueseTimePeriodExtractorConfiguration.PureNumBetweenAnd;
@@ -74,6 +75,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeParser DurationParser { get; }
 
+        public IDateTimeParser TimeZoneParser { get; }
+
         public Regex PureNumberFromToRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
@@ -116,12 +119,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
+            var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
             beginHour = 0;
             endHour = 0;
             endMin = 0;
 
-            // TODO: modify it according to the coresponding function in English part
+            // TODO: modify it according to the corresponding function in English part
             if (trimmedText.EndsWith("madrugada"))
             {
                 timeStr = "TDA";
@@ -164,7 +167,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public int GetSwiftPrefix(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
 
             // TODO: Replace with a regex
