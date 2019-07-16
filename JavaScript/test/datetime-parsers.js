@@ -9,7 +9,8 @@ var SpanishCommonDateTimeParserConfiguration = Recognizers.SpanishCommonDateTime
 var FrenchCommonDateTimeParserConfiguration = Recognizers.FrenchCommonDateTimeParserConfiguration;
 
 var LanguagesConfig = {
-    'English': new EnglishCommonDateTimeParserConfiguration(),
+    'English': new EnglishCommonDateTimeParserConfiguration(), 
+    'EnglishOthers': new EnglishCommonDateTimeParserConfiguration(true),
     'Spanish': new SpanishCommonDateTimeParserConfiguration(),
     'French': new FrenchCommonDateTimeParserConfiguration(),
     'Chinese': null

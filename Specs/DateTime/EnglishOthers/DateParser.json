@@ -68,5 +68,30 @@
         "Length": 6
       }
     ]
+  },
+  {
+    "Input": "book room from 10/06/2019 to 12/06/2019",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "from 10/06/2019 to 12/06/2019",
+        "Start": 10,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-06-10,2019-06-12,P2D)",
+              "type": "daterange",
+              "start": "2019-06-10",
+              "end": "2019-06-12"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
