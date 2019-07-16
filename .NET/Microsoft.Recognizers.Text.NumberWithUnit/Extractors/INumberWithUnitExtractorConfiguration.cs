@@ -7,9 +7,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public interface INumberWithUnitExtractorConfiguration
     {
-        ImmutableDictionary<string, string> SuffixList { get; }
+        ImmutableSortedDictionary<string, string> SuffixList { get; }
 
-        ImmutableDictionary<string, string> PrefixList { get; }
+        ImmutableSortedDictionary<string, string> PrefixList { get; }
 
         ImmutableList<string> AmbiguousUnitList { get; }
 

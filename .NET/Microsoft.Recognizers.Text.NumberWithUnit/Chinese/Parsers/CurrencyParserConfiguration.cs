@@ -16,8 +16,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         {
             this.BindDictionary(NumbersWithUnitDefinitions.CurrencyPrefixList);
             this.BindDictionary(NumbersWithUnitDefinitions.CurrencySuffixList);
-            this.CurrencyNameToIsoCodeMap = NumbersWithUnitDefinitions.CurrencyNameToIsoCodeMap.ToImmutableDictionary();
-            this.CurrencyFractionCodeList = NumbersWithUnitDefinitions.FractionalUnitNameToCodeMap.ToImmutableDictionary();
+            this.CurrencyNameToIsoCodeMap = NumbersWithUnitDefinitions.CurrencyNameToIsoCodeMap.ToImmutableSortedDictionary();
+            this.CurrencyFractionCodeList = NumbersWithUnitDefinitions.FractionalUnitNameToCodeMap.ToImmutableSortedDictionary();
         }
     }
 }

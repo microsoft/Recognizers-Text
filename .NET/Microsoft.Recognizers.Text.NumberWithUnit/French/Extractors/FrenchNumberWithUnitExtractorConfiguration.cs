@@ -51,9 +51,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
-        public abstract ImmutableDictionary<string, string> SuffixList { get; }
+        public abstract ImmutableSortedDictionary<string, string> SuffixList { get; }
 
-        public abstract ImmutableDictionary<string, string> PrefixList { get; }
+        public abstract ImmutableSortedDictionary<string, string> PrefixList { get; }
 
         public abstract ImmutableList<string> AmbiguousUnitList { get; }
     }

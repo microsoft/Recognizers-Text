@@ -7,8 +7,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 {
     public class VolumeExtractorConfiguration : FrenchNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> VolumeSuffixList =
-            NumbersWithUnitDefinitions.VolumeSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> VolumeSuffixList =
+            NumbersWithUnitDefinitions.VolumeSuffixList.ToImmutableSortedDictionary();
 
         private static readonly ImmutableList<string> AmbiguousValues =
             NumbersWithUnitDefinitions.AmbiguousVolumeUnitList.ToImmutableList();
@@ -23,9 +23,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => VolumeSuffixList;
+        public override ImmutableSortedDictionary<string, string> SuffixList => VolumeSuffixList;
 
-        public override ImmutableDictionary<string, string> PrefixList => null;
+        public override ImmutableSortedDictionary<string, string> PrefixList => null;
 
         public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 

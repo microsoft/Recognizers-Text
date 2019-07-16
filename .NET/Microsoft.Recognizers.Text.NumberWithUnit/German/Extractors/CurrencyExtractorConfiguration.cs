@@ -7,9 +7,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
 {
     public class CurrencyExtractorConfiguration : GermanNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> CurrencyPrefixList = NumbersWithUnitDefinitions.CurrencyPrefixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> CurrencyPrefixList = NumbersWithUnitDefinitions.CurrencyPrefixList.ToImmutableSortedDictionary();
 
-        public static readonly ImmutableDictionary<string, string> CurrencySuffixList = NumbersWithUnitDefinitions.CurrencySuffixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> CurrencySuffixList = NumbersWithUnitDefinitions.CurrencySuffixList.ToImmutableSortedDictionary();
 
         private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousCurrencyUnitList.ToImmutableList();
 
@@ -23,9 +23,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => CurrencySuffixList;
+        public override ImmutableSortedDictionary<string, string> SuffixList => CurrencySuffixList;
 
-        public override ImmutableDictionary<string, string> PrefixList => CurrencyPrefixList;
+        public override ImmutableSortedDictionary<string, string> PrefixList => CurrencyPrefixList;
 
         public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 

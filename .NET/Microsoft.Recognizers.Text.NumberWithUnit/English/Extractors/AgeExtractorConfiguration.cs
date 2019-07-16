@@ -7,8 +7,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {
     public class AgeExtractorConfiguration : EnglishNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> AgeSuffixList =
-            NumbersWithUnitDefinitions.AgeSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> AgeSuffixList =
+            NumbersWithUnitDefinitions.AgeSuffixList.ToImmutableSortedDictionary();
 
         public AgeExtractorConfiguration()
                : this(new CultureInfo(Culture.English))
@@ -20,9 +20,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => AgeSuffixList;
+        public override ImmutableSortedDictionary<string, string> SuffixList => AgeSuffixList;
 
-        public override ImmutableDictionary<string, string> PrefixList => null;
+        public override ImmutableSortedDictionary<string, string> PrefixList => null;
 
         public override ImmutableList<string> AmbiguousUnitList => null;
 

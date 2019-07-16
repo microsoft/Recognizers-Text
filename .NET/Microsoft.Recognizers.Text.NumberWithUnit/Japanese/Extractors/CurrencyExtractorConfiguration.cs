@@ -16,9 +16,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => NumbersWithUnitDefinitions.CurrencySuffixList.ToImmutableDictionary();
+        public override ImmutableSortedDictionary<string, string> SuffixList => NumbersWithUnitDefinitions.CurrencySuffixList.ToImmutableSortedDictionary();
 
-        public override ImmutableDictionary<string, string> PrefixList => NumbersWithUnitDefinitions.CurrencyPrefixList.ToImmutableDictionary();
+        public override ImmutableSortedDictionary<string, string> PrefixList => NumbersWithUnitDefinitions.CurrencyPrefixList.ToImmutableSortedDictionary();
 
         public override ImmutableList<string> AmbiguousUnitList => NumbersWithUnitDefinitions.CurrencyAmbiguousValues.ToImmutableList();
 

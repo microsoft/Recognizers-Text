@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
 {
     public class LengthExtractorConfiguration : GermanNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> LengthSuffixList = NumbersWithUnitDefinitions.LengthSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> LengthSuffixList = NumbersWithUnitDefinitions.LengthSuffixList.ToImmutableSortedDictionary();
 
         private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousLengthUnitList.ToImmutableList();
 
@@ -21,9 +21,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => LengthSuffixList;
+        public override ImmutableSortedDictionary<string, string> SuffixList => LengthSuffixList;
 
-        public override ImmutableDictionary<string, string> PrefixList => null;
+        public override ImmutableSortedDictionary<string, string> PrefixList => null;
 
         public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 

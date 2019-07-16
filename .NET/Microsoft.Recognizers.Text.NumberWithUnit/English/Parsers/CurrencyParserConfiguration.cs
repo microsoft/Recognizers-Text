@@ -16,8 +16,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         {
             this.BindDictionary(CurrencyExtractorConfiguration.CurrencySuffixList);
             this.BindDictionary(CurrencyExtractorConfiguration.CurrencyPrefixList);
-            this.CurrencyNameToIsoCodeMap = NumbersWithUnitDefinitions.CurrencyNameToIsoCodeMap.ToImmutableDictionary();
-            this.CurrencyFractionCodeList = NumbersWithUnitDefinitions.FractionalUnitNameToCodeMap.ToImmutableDictionary();
+            this.CurrencyNameToIsoCodeMap = NumbersWithUnitDefinitions.CurrencyNameToIsoCodeMap.ToImmutableSortedDictionary();
+            this.CurrencyFractionCodeList = NumbersWithUnitDefinitions.FractionalUnitNameToCodeMap.ToImmutableSortedDictionary();
         }
     }
 }

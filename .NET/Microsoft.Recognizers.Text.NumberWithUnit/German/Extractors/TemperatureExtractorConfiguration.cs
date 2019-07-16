@@ -9,8 +9,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
 {
     public class TemperatureExtractorConfiguration : GermanNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> TemperatureSuffixList =
-               NumbersWithUnitDefinitions.TemperatureSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> TemperatureSuffixList =
+               NumbersWithUnitDefinitions.TemperatureSuffixList.ToImmutableSortedDictionary();
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -30,9 +30,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => TemperatureSuffixList;
+        public override ImmutableSortedDictionary<string, string> SuffixList => TemperatureSuffixList;
 
-        public override ImmutableDictionary<string, string> PrefixList => null;
+        public override ImmutableSortedDictionary<string, string> PrefixList => null;
 
         public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 

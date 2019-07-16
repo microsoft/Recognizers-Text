@@ -25,11 +25,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList =>
-            NumbersWithUnitDefinitions.TemperatureSuffixList.ToImmutableDictionary();
+        public override ImmutableSortedDictionary<string, string> SuffixList =>
+            NumbersWithUnitDefinitions.TemperatureSuffixList.ToImmutableSortedDictionary();
 
-        public override ImmutableDictionary<string, string> PrefixList =>
-            NumbersWithUnitDefinitions.TemperaturePrefixList.ToImmutableDictionary();
+        public override ImmutableSortedDictionary<string, string> PrefixList =>
+            NumbersWithUnitDefinitions.TemperaturePrefixList.ToImmutableSortedDictionary();
 
         public override ImmutableList<string> AmbiguousUnitList =>
             NumbersWithUnitDefinitions.TemperatureAmbiguousValues.ToImmutableList();

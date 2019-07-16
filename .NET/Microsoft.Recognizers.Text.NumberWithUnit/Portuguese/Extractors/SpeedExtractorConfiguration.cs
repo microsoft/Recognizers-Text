@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 {
     public class SpeedExtractorConfiguration : PortugueseNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> SpeedSuffixList = NumbersWithUnitDefinitions.SpeedSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> SpeedSuffixList = NumbersWithUnitDefinitions.SpeedSuffixList.ToImmutableSortedDictionary();
 
         private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousSpeedUnitList.ToImmutableList();
 
@@ -21,9 +21,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => SpeedSuffixList;
+        public override ImmutableSortedDictionary<string, string> SuffixList => SpeedSuffixList;
 
-        public override ImmutableDictionary<string, string> PrefixList => null;
+        public override ImmutableSortedDictionary<string, string> PrefixList => null;
 
         public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 

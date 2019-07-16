@@ -7,14 +7,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {
     public class CurrencyExtractorConfiguration : EnglishNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> CurrencySuffixList =
-            NumbersWithUnitDefinitions.CurrencySuffixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> CurrencySuffixList =
+            NumbersWithUnitDefinitions.CurrencySuffixList.ToImmutableSortedDictionary();
 
-        public static readonly ImmutableDictionary<string, string> CurrencyPrefixList =
-            NumbersWithUnitDefinitions.CurrencyPrefixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> CurrencyPrefixList =
+            NumbersWithUnitDefinitions.CurrencyPrefixList.ToImmutableSortedDictionary();
 
-        public static readonly ImmutableDictionary<string, string> FractionalUnitNameToCodeMap =
-            NumbersWithUnitDefinitions.FractionalUnitNameToCodeMap.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> FractionalUnitNameToCodeMap =
+            NumbersWithUnitDefinitions.FractionalUnitNameToCodeMap.ToImmutableSortedDictionary();
 
         private static readonly ImmutableList<string> AmbiguousValues =
             NumbersWithUnitDefinitions.AmbiguousCurrencyUnitList.ToImmutableList();
@@ -29,9 +29,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => CurrencySuffixList;
+        public override ImmutableSortedDictionary<string, string> SuffixList => CurrencySuffixList;
 
-        public override ImmutableDictionary<string, string> PrefixList => CurrencyPrefixList;
+        public override ImmutableSortedDictionary<string, string> PrefixList => CurrencyPrefixList;
 
         public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 

@@ -67,17 +67,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         internal class DurationExtractorConfiguration : JapaneseNumberWithUnitExtractorConfiguration
         {
-            public static readonly ImmutableDictionary<string, string> DurationSuffixList =
-                DateTimeDefinitions.DurationSuffixList.ToImmutableDictionary();
+            public static readonly ImmutableSortedDictionary<string, string> DurationSuffixList =
+                DateTimeDefinitions.DurationSuffixList.ToImmutableSortedDictionary();
 
             public DurationExtractorConfiguration()
                 : base(new CultureInfo(Culture.Japanese))
             {
             }
 
-            public override ImmutableDictionary<string, string> SuffixList => DurationSuffixList;
+            public override ImmutableSortedDictionary<string, string> SuffixList => DurationSuffixList;
 
-            public override ImmutableDictionary<string, string> PrefixList => null;
+            public override ImmutableSortedDictionary<string, string> PrefixList => null;
 
             public override string ExtractType => Constants.SYS_DATETIME_DURATION;
 

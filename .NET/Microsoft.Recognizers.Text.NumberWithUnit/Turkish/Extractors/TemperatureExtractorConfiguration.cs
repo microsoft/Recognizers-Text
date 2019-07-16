@@ -9,8 +9,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Turkish
 {
     public class TemperatureExtractorConfiguration : TurkishNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> TemperatureSuffixList =
-            NumbersWithUnitDefinitions.TemperatureSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> TemperatureSuffixList =
+            NumbersWithUnitDefinitions.TemperatureSuffixList.ToImmutableSortedDictionary();
 
         private static readonly ImmutableList<string> AmbiguousValues =
             NumbersWithUnitDefinitions.AmbiguousTemperatureUnitList.ToImmutableList();
@@ -28,9 +28,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Turkish
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => TemperatureSuffixList;
+        public override ImmutableSortedDictionary<string, string> SuffixList => TemperatureSuffixList;
 
-        public override ImmutableDictionary<string, string> PrefixList => null;
+        public override ImmutableSortedDictionary<string, string> PrefixList => null;
 
         public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 

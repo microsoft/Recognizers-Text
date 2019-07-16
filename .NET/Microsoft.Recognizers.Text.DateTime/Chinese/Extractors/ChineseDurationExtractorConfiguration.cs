@@ -68,16 +68,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         internal class DurationExtractorConfiguration : ChineseNumberWithUnitExtractorConfiguration
         {
-            public static readonly ImmutableDictionary<string, string> DurationSuffixList = DateTimeDefinitions.DurationSuffixList.ToImmutableDictionary();
+            public static readonly ImmutableSortedDictionary<string, string> DurationSuffixList = DateTimeDefinitions.DurationSuffixList.ToImmutableSortedDictionary();
 
             public DurationExtractorConfiguration()
                 : base(new CultureInfo("zh-CN"))
             {
             }
 
-            public override ImmutableDictionary<string, string> SuffixList => DurationSuffixList;
+            public override ImmutableSortedDictionary<string, string> SuffixList => DurationSuffixList;
 
-            public override ImmutableDictionary<string, string> PrefixList => null;
+            public override ImmutableSortedDictionary<string, string> PrefixList => null;
 
             public override string ExtractType => Constants.SYS_DATETIME_DURATION;
 

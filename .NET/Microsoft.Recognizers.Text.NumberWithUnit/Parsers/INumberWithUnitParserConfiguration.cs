@@ -30,8 +30,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         {
             this.CultureInfo = ci;
             this.UnitMap = new Dictionary<string, string>();
-            this.CurrencyFractionNumMap = BaseCurrency.CurrencyFractionalRatios.ToImmutableDictionary();
-            this.CurrencyFractionMapping = BaseCurrency.CurrencyFractionMapping.ToImmutableDictionary();
+            this.CurrencyFractionNumMap = BaseCurrency.CurrencyFractionalRatios.ToImmutableSortedDictionary();
+            this.CurrencyFractionMapping = BaseCurrency.CurrencyFractionMapping.ToImmutableSortedDictionary();
             this.CurrencyNameToIsoCodeMap = new Dictionary<string, string>();
             this.CurrencyFractionCodeList = new Dictionary<string, string>();
         }

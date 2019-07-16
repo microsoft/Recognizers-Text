@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Dutch
 {
     public class AreaExtractorConfiguration : DutchNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> AreaSuffixList = NumbersWithUnitDefinitions.AreaSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> AreaSuffixList = NumbersWithUnitDefinitions.AreaSuffixList.ToImmutableSortedDictionary();
 
         public AreaExtractorConfiguration()
             : this(new CultureInfo(Culture.Dutch))
@@ -19,9 +19,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Dutch
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => AreaSuffixList;
+        public override ImmutableSortedDictionary<string, string> SuffixList => AreaSuffixList;
 
-        public override ImmutableDictionary<string, string> PrefixList => null;
+        public override ImmutableSortedDictionary<string, string> PrefixList => null;
 
         public override ImmutableList<string> AmbiguousUnitList => null;
 

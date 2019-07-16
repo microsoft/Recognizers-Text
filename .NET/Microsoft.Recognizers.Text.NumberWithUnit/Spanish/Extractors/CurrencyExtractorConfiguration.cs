@@ -7,9 +7,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 {
     public class CurrencyExtractorConfiguration : SpanishNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> CurrencySuffixList = NumbersWithUnitDefinitions.CurrencySuffixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> CurrencySuffixList = NumbersWithUnitDefinitions.CurrencySuffixList.ToImmutableSortedDictionary();
 
-        public static readonly ImmutableDictionary<string, string> CurrencyPrefixList = NumbersWithUnitDefinitions.CurrencyPrefixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> CurrencyPrefixList = NumbersWithUnitDefinitions.CurrencyPrefixList.ToImmutableSortedDictionary();
 
         private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousCurrencyUnitList.ToImmutableList();
 
@@ -23,9 +23,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => CurrencySuffixList;
+        public override ImmutableSortedDictionary<string, string> SuffixList => CurrencySuffixList;
 
-        public override ImmutableDictionary<string, string> PrefixList => CurrencyPrefixList;
+        public override ImmutableSortedDictionary<string, string> PrefixList => CurrencyPrefixList;
 
         public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 

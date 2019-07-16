@@ -78,7 +78,7 @@ CurrencySuffixList: !dictionary
     Cêntimo argelino: centimo argelino|centimos argelinos|cêntimo argelino|cêntimos argelinos|centavo argelino|centavos argelinos
 #Argentina
     Peso argentino: peso argentino|pesos argentinos|peso|pesos|ar$|ars
-    Centavo argentino: centavo argentino|centavos argentinos|centavo|ctvo.|ctvos.
+    Centavo argentino: centavo argentino|centavos argentinos|ctvo.|ctvos.
 #Armênia
     Dram armênio: dram armênio|dram armênios|dram arménio|dram arménios|dram armenio|dram armenios|dram|drame|drames|դր.
     Luma armênio: luma armênio|lumas armênios|luma arménio|lumas arménios|luma armenio|lumas armenios|luma|lumas

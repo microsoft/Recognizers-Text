@@ -4,6 +4,7 @@ echo // Installing Resource Generator Dependencies
 pip install -r ./requirements.txt
 
 echo // Building Resources
+python index.py ../recognizers-choice/resource-definitions.json
 python index.py ../recognizers-number/resource-definitions.json
 python index.py ../recognizers-number-with-unit/resource-definitions.json
 python index.py ../recognizers-date-time/resource-definitions.json
@@ -12,6 +13,9 @@ python index.py ../recognizers-sequence/resource-definitions.json
 cd ../..
 echo // Installing recognizers-text
 pip install -e ./libraries/recognizers-text/
+
+echo // Installing recognizers-choice
+pip install -e ./libraries/recognizers-choice/
 
 echo // Installing recognizers-number
 pip install -e ./libraries/recognizers-number/
@@ -28,8 +32,13 @@ pip install -e ./libraries/recognizers-sequence/
 echo // Installing recognizers-suite
 pip install -e ./libraries/recognizers-suite/
 
+echo // Validating PEP8 style
+flake8 . --config=./.flake8
+
 echo // Installing Test Dependencies
 pip install -r ./tests/requirements.txt
 
 echo // Running tests
 pytest --tb=line
+
+echo ============================== PYTHON BUILD/TEST END ==============================

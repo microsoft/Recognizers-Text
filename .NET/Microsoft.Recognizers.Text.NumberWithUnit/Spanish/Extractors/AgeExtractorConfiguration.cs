@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 {
     public class AgeExtractorConfiguration : SpanishNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> AgeSuffixList = NumbersWithUnitDefinitions.AgeSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> AgeSuffixList = NumbersWithUnitDefinitions.AgeSuffixList.ToImmutableSortedDictionary();
 
         public AgeExtractorConfiguration()
                : this(new CultureInfo(Culture.Spanish))
@@ -19,9 +19,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => AgeSuffixList;
+        public override ImmutableSortedDictionary<string, string> SuffixList => AgeSuffixList;
 
-        public override ImmutableDictionary<string, string> PrefixList => null;
+        public override ImmutableSortedDictionary<string, string> PrefixList => null;
 
         public override ImmutableList<string> AmbiguousUnitList => null;
 

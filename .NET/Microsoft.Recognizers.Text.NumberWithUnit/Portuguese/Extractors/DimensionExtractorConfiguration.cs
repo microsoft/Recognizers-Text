@@ -8,13 +8,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 {
     public class DimensionExtractorConfiguration : PortugueseNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> DimensionSuffixList = NumbersWithUnitDefinitions.InformationSuffixList
+        public static readonly ImmutableSortedDictionary<string, string> DimensionSuffixList = NumbersWithUnitDefinitions.InformationSuffixList
             .Concat(AreaExtractorConfiguration.AreaSuffixList)
             .Concat(LengthExtractorConfiguration.LengthSuffixList)
             .Concat(SpeedExtractorConfiguration.SpeedSuffixList)
             .Concat(VolumeExtractorConfiguration.VolumeSuffixList)
             .Concat(WeightExtractorConfiguration.WeightSuffixList)
-            .ToImmutableDictionary(x => x.Key, x => x.Value);
+            .ToImmutableSortedDictionary(x => x.Key, x => x.Value);
 
         private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousDimensionUnitList.ToImmutableList();
 
@@ -28,9 +28,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => DimensionSuffixList;
+        public override ImmutableSortedDictionary<string, string> SuffixList => DimensionSuffixList;
 
-        public override ImmutableDictionary<string, string> PrefixList => null;
+        public override ImmutableSortedDictionary<string, string> PrefixList => null;
 
         public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 

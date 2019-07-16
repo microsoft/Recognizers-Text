@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 {
     public class VolumeExtractorConfiguration : PortugueseNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> VolumeSuffixList = NumbersWithUnitDefinitions.VolumeSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> VolumeSuffixList = NumbersWithUnitDefinitions.VolumeSuffixList.ToImmutableSortedDictionary();
 
         public VolumeExtractorConfiguration()
                : this(new CultureInfo(Culture.Portuguese))
@@ -19,9 +19,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => VolumeSuffixList;
+        public override ImmutableSortedDictionary<string, string> SuffixList => VolumeSuffixList;
 
-        public override ImmutableDictionary<string, string> PrefixList => null;
+        public override ImmutableSortedDictionary<string, string> PrefixList => null;
 
         public override ImmutableList<string> AmbiguousUnitList => null;
 

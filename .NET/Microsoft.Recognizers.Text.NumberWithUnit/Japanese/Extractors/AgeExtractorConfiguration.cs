@@ -16,9 +16,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => NumbersWithUnitDefinitions.AgeSuffixList.ToImmutableDictionary();
+        public override ImmutableSortedDictionary<string, string> SuffixList => NumbersWithUnitDefinitions.AgeSuffixList.ToImmutableSortedDictionary();
 
-        public override ImmutableDictionary<string, string> PrefixList => null;
+        public override ImmutableSortedDictionary<string, string> PrefixList => null;
 
         public override ImmutableList<string> AmbiguousUnitList => NumbersWithUnitDefinitions.AgeAmbiguousValues.ToImmutableList();
 

@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 {
     public class WeightExtractorConfiguration : SpanishNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> WeightSuffixList = NumbersWithUnitDefinitions.WeightSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> WeightSuffixList = NumbersWithUnitDefinitions.WeightSuffixList.ToImmutableSortedDictionary();
 
         public WeightExtractorConfiguration()
                : this(new CultureInfo(Culture.Spanish))
@@ -19,9 +19,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => WeightSuffixList;
+        public override ImmutableSortedDictionary<string, string> SuffixList => WeightSuffixList;
 
-        public override ImmutableDictionary<string, string> PrefixList => null;
+        public override ImmutableSortedDictionary<string, string> PrefixList => null;
 
         public override ImmutableList<string> AmbiguousUnitList => null;
 

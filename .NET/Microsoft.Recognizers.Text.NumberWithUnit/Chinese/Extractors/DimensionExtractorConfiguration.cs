@@ -17,9 +17,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => NumbersWithUnitDefinitions.DimensionSuffixList.ToImmutableDictionary();
+        public override ImmutableSortedDictionary<string, string> SuffixList => NumbersWithUnitDefinitions.DimensionSuffixList.ToImmutableSortedDictionary();
 
-        public override ImmutableDictionary<string, string> PrefixList => null;
+        public override ImmutableSortedDictionary<string, string> PrefixList => null;
 
         public override ImmutableList<string> AmbiguousUnitList => NumbersWithUnitDefinitions.DimensionAmbiguousValues.ToImmutableList();
 

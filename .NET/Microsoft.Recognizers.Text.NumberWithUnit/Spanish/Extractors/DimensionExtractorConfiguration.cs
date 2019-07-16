@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 {
     public class DimensionExtractorConfiguration : SpanishNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> DimensionSuffixList = NumbersWithUnitDefinitions.DimensionSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableSortedDictionary<string, string> DimensionSuffixList = NumbersWithUnitDefinitions.DimensionSuffixList.ToImmutableSortedDictionary();
 
         private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousDimensionUnitList.ToImmutableList();
 
@@ -21,9 +21,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         {
         }
 
-        public override ImmutableDictionary<string, string> SuffixList => DimensionSuffixList;
+        public override ImmutableSortedDictionary<string, string> SuffixList => DimensionSuffixList;
 
-        public override ImmutableDictionary<string, string> PrefixList => null;
+        public override ImmutableSortedDictionary<string, string> PrefixList => null;
 
         public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
