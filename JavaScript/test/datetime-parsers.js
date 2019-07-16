@@ -68,6 +68,9 @@ function createParser(lang, parser, commonConfig) {
         }
 
         // resolve config
+        if (lang === "EnglishOthers") {
+            lang = "English";
+        }
         var configModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + toCamelCase(parser) + Constants.Configuration;
         var configTypeName = lang + parser + Constants.ParserConfiguration;
         var ConfigType = Recognizers[configTypeName];
