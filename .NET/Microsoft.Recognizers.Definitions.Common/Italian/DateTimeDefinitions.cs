@@ -203,9 +203,9 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string AllRegex = @"\b(?<all>(tutt[oa](\s+(il|l[a']))?|inter[oa])(\s+|-)(?<unit>anno|mese|settimana|giorno))\b";
       public const string HalfRegex = @"\b(?<half>(metà|mezz[oa])\s+(?<unit>anno|mese|settimana|giorno|ora))\b";
       public const string ConjunctionRegex = @"\b((e(\s+per)?)|con)\b";
-      public static readonly string HolidayRegex1 = $@"\b(?<holiday>capodanno|(lunedì del)?le ceneri|mercoledì delle ceneri|martedì grasso|capodanno cinese|primo dell'anno|festa del papà|pesce d'aprile|la vigilia|la vigilia di natale|natale|giorno di natale|halloween|pasqua|lunedì dell'angelo)(\s+((del|di)\s+)?({YearRegex}|{{RelativeRegex}}\s+anno))?\b";
-      public static readonly string HolidayRegex2 = $@"\b(?<holiday>i morti|tutti i santi|giorno dell'independenza|la liberazione|festa del lavoro|festa dei lavoratori)(\s+((del|di)\s+)?({YearRegex}|{{RelativeRegex}}\s+anno))?\b";
-      public static readonly string HolidayRegex3 = $@"(?<holiday>(giorno\s+(di\s+)?)?(pasqua|natale|della memoria|festa della mamma|festa delle donne|festa della donna|san valentino|ferragosto|la madonna|la notte della madonna))(\s+((del|di)\s+)?({YearRegex}|{{RelativeRegex}}\s+anno))?";
+      public static readonly string HolidayRegex1 = $@"\b(?<holiday>capodanno cinese|cenone di capodanno|veglione di capodanno|(la )?vigilia di capodanno|capodanno|mercoledì delle ceneri|le ceneri|martedì grasso|primo dell'anno|festa del papà|pesce d'aprile|vigilia di natale|la vigilia|giorno di natale|natale|halloween|pasqua|lunedì dell'angelo)(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s*anno))?\b";
+      public static readonly string HolidayRegex2 = $@"\b(?<holiday>giorno dei morti|i morti|tutti i santi|i santi|giorno dell'independenza|((giorno|festa) del)?la liberazione|festa della repubblica|festa del lavoro|festa dei lavoratori)(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s*anno))?\b";
+      public static readonly string HolidayRegex3 = $@"(?<holiday>(giorno\s+((di|del(la)?)\s+)?)?(pasqua|quaresima|memoria|ringraziamento|san patrizio|festa della mamma|festa delle donne|festa della donna|san valentino|ferragosto))(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s*anno))?";
       public const string DateTokenPrefix = @"di ";
       public const string TimeTokenPrefix = @"(all[e'])";
       public const string TokenBeforeDate = @"di ";
@@ -581,29 +581,30 @@ namespace Microsoft.Recognizers.Definitions.Italian
         };
       public static readonly Dictionary<string, IEnumerable<string>> HolidayNames = new Dictionary<string, IEnumerable<string>>
         {
-            { @"pasqua", new string[] { @"pasqua" } },
-            { @"lunedidellangelo", new string[] { @"lunedidellangelo" } },
-            { @"festadelpapa", new string[] { @"festadelpapa" } },
-            { @"festadellamamma", new string[] { @"festadellamamma" } },
-            { @"giornodellamemoria", new string[] { @"giornodellamemoria" } },
-            { @"martedigrasso", new string[] { @"martedigrasso" } },
-            { @"leceneri", new string[] { @"leceneri", @"mercoledidelleceneri" } },
-            { @"tuttiisanti", new string[] { @"tuttiisanti" } },
-            { @"imorti", new string[] { @"imorti" } },
-            { @"festadelladonna", new string[] { @"festadelladonna" } },
-            { @"lamadonna", new string[] { @"lamadonna" } },
+            { @"easterday", new string[] { @"pasqua" } },
+            { @"eastermonday", new string[] { @"lunedidell'angelo" } },
+            { @"fathersday", new string[] { @"festadelpapà" } },
+            { @"mothersday", new string[] { @"festadellamamma" } },
+            { @"memorialday", new string[] { @"giornodellamemoria" } },
+            { @"mardigras", new string[] { @"martedigrasso" } },
+            { @"ashwednesday", new string[] { @"mercoledidelleceneri", @"leceneri" } },
+            { @"allsaintsday", new string[] { @"tuttiisanti", @"isanti" } },
+            { @"allsoulsday", new string[] { @"giornodeimorti", @"imorti" } },
+            { @"femaleday", new string[] { @"festadelladonna", @"festadelledonne" } },
             { @"ferragosto", new string[] { @"ferragosto" } },
-            { @"natale", new string[] { @"natale" } },
-            { @"vigiliadinatale", new string[] { @"vigiliadinatale" } },
-            { @"capodanno", new string[] { @"capodanno" } },
-            { @"sanvalentino", new string[] { @"sanvalentino" } },
-            { @"giornodisanpatrizio", new string[] { @"giornodisanpatrizio" } },
-            { @"pescedaprile", new string[] { @"pescedaprile" } },
-            { @"festadeilavoratori", new string[] { @"festadeilavoratori" } },
-            { @"liberazione", new string[] { @"liberazione" } },
-            { @"festadellarepubblica", new string[] { @"festadellarepubblica" } },
-            { @"halloween", new string[] { @"halloween" } },
-            { @"cenonedicapodoanno", new string[] { @"cenonedicapodoanno" } }
+            { @"christmas", new string[] { @"giornodinatale", @"natale" } },
+            { @"christmaseve", new string[] { @"vigiliadinatale", @"lavigilia" } },
+            { @"newyear", new string[] { @"capodannocinese", @"capodanno" } },
+            { @"valentinesday", new string[] { @"sanvalentino" } },
+            { @"stpatrickday", new string[] { @"giornodisanpatrizio" } },
+            { @"aprilfools", new string[] { @"pescedaprile" } },
+            { @"labourday", new string[] { @"festadeilavoratori", @"festadellavoro" } },
+            { @"independenceday", new string[] { @"giornodell'indipendenza" } },
+            { @"liberationday", new string[] { @"giornodellaliberazione", @"festadellaliberazione", @"laliberazione" } },
+            { @"republicday", new string[] { @"festadellarepubblica" } },
+            { @"halloweenday", new string[] { @"halloween" } },
+            { @"newyeareve", new string[] { @"cenonedicapodoanno", @"veglionedicapodanno", @"lavigiliadicapodanno", @"vigiliadicapodanno" } },
+            { @"thanksgiving", new string[] { @"giornodelringraziamento", @"ringraziamento" } }
         };
       public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
         {

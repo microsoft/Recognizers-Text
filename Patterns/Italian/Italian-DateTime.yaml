@@ -471,14 +471,14 @@ HalfRegex: !simpleRegex
 ConjunctionRegex: !simpleRegex
   def: \b((e(\s+per)?)|con)\b
 HolidayRegex1: !nestedRegex
-  def: \b(?<holiday>capodanno|(lunedì del)?le ceneri|mercoledì delle ceneri|martedì grasso|capodanno cinese|primo dell'anno|festa del papà|pesce d'aprile|la vigilia|la vigilia di natale|natale|giorno di natale|halloween|pasqua|lunedì dell'angelo)(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s+anno))?\b
-  references: [ YearRegex, ThisPrefixRegex, PastSuffixRegex, NextSuffixRegex ]
+  def: \b(?<holiday>capodanno cinese|cenone di capodanno|veglione di capodanno|(la )?vigilia di capodanno|capodanno|mercoledì delle ceneri|le ceneri|martedì grasso|primo dell'anno|festa del papà|pesce d'aprile|vigilia di natale|la vigilia|giorno di natale|natale|halloween|pasqua|lunedì dell'angelo)(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s*anno))?\b
+  references: [ YearRegex, RelativeRegex ]
 HolidayRegex2: !nestedRegex
-  def: \b(?<holiday>i morti|tutti i santi|giorno dell'independenza|la liberazione|festa del lavoro|festa dei lavoratori)(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s+anno))?\b
-  references: [ YearRegex, ThisPrefixRegex, PastSuffixRegex, NextSuffixRegex ]
+  def: \b(?<holiday>giorno dei morti|i morti|tutti i santi|i santi|giorno dell'independenza|((giorno|festa) del)?la liberazione|festa della repubblica|festa del lavoro|festa dei lavoratori)(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s*anno))?\b
+  references: [ YearRegex, RelativeRegex ]
 HolidayRegex3: !nestedRegex
-  def: (?<holiday>(giorno\s+(di\s+)?)?(pasqua|natale|della memoria|festa della mamma|festa delle donne|festa della donna|san valentino|ferragosto|la madonna|la notte della madonna))(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s+anno))?
-  references: [ YearRegex, ThisPrefixRegex, PastSuffixRegex, NextSuffixRegex ]
+  def: (?<holiday>(giorno\s+((di|del(la)?)\s+)?)?(pasqua|quaresima|memoria|ringraziamento|san patrizio|festa della mamma|festa delle donne|festa della donna|san valentino|ferragosto))(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s*anno))?
+  references: [ YearRegex, RelativeRegex ]
 DateTokenPrefix: 'di '
 TimeTokenPrefix: (all[e'])
 TokenBeforeDate: 'di '
@@ -926,29 +926,30 @@ DoubleNumbers: !dictionary
 HolidayNames: !dictionary
   types: [ string, 'string[]' ]
   entries: 
-    pasqua: [ pasqua ]
-    lunedidellangelo: [ lunedidellangelo ]
-    festadelpapa: [ festadelpapa ]
-    festadellamamma: [ festadellamamma ]
-    giornodellamemoria: [ giornodellamemoria ]
-    martedigrasso: [ martedigrasso ]
-    leceneri: [ leceneri, mercoledidelleceneri ]
-    tuttiisanti: [ tuttiisanti ]
-    imorti: [ imorti ]
-    festadelladonna: [ festadelladonna ]
-    lamadonna: [ lamadonna ]
+    easterday: [ pasqua ]
+    eastermonday: [ lunedidell'angelo ]
+    fathersday: [ festadelpapà ]
+    mothersday: [ festadellamamma ]
+    memorialday: [ giornodellamemoria ]
+    mardigras: [ martedigrasso ]
+    ashwednesday: [ mercoledidelleceneri, leceneri ]
+    allsaintsday: [ tuttiisanti, isanti ]
+    allsoulsday: [ giornodeimorti, imorti ]
+    femaleday: [ festadelladonna, festadelledonne ]
     ferragosto: [ ferragosto ]
-    natale: [ natale ]
-    vigiliadinatale: [ vigiliadinatale ]
-    capodanno: [ capodanno ]
-    sanvalentino: [ sanvalentino ]
-    giornodisanpatrizio: [ giornodisanpatrizio ]
-    pescedaprile: [ pescedaprile ]
-    festadeilavoratori: [ festadeilavoratori ]
-    liberazione: [ liberazione ]
-    festadellarepubblica: [ festadellarepubblica ]
-    halloween: [ halloween ]
-    cenonedicapodoanno: [ cenonedicapodoanno ]
+    christmas: [ giornodinatale, natale ]
+    christmaseve: [ vigiliadinatale, lavigilia ]
+    newyear: [ capodannocinese, capodanno ]
+    valentinesday: [ sanvalentino ]
+    stpatrickday: [ giornodisanpatrizio ]
+    aprilfools: [ pescedaprile ]
+    labourday: [ festadeilavoratori, festadellavoro ]
+    independenceday: [ giornodell'indipendenza ]
+    liberationday: [ giornodellaliberazione, festadellaliberazione, laliberazione ]
+    republicday: [ festadellarepubblica ]
+    halloweenday: [ halloween ]
+    newyeareve: [ cenonedicapodoanno, veglionedicapodanno, lavigiliadicapodanno, vigiliadicapodanno ]
+    thanksgiving: [ giornodelringraziamento, ringraziamento ]
 WrittenDecades: !dictionary
   types: [ string, int ]
   entries:

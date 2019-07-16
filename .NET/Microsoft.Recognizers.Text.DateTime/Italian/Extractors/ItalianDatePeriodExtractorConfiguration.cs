@@ -68,7 +68,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex FutureSuffixRegex =
             new Regex(DateTimeDefinitions.FutureSuffixRegex, RegexFlags);
 
-        public static readonly Regex ThisPrefexRegex =
+        public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
         // composite regexes
@@ -216,6 +216,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             SeasonRegex,
             WhichWeekRegex,
             RestOfDateRegex,
+            PastPrefixRegex,
+            NextPrefixRegex,
+            ThisPrefixRegex,
             LaterEarlyPeriodRegex,
             WeekWithWeekDayRangeRegex,
             YearPlusNumberRegex,
