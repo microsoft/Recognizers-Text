@@ -49,8 +49,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             new Regex(DateTimeDefinitions.MonthSuffixRegex, RegexFlags);
 
         // year, month, week, day
-        public static readonly Regex DateUnitRegex = new Regex(
-            DateTimeDefinitions.DateUnitRegex, RegexFlags);
+        public static readonly Regex DateUnitRegex =
+            new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
 
         // **In Italian, Past/Next is suffix, but interface enforces this
         // past, last, previous
@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex FutureSuffixRegex =
             new Regex(DateTimeDefinitions.FutureSuffixRegex, RegexFlags);
 
-        public static readonly Regex ThisPrefexRegex =
+        public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
         // composite regexes
@@ -212,7 +212,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             SeasonRegex,
             PastPrefixRegex,
             NextPrefixRegex,
-            ThisPrefexRegex,
+            ThisPrefixRegex,
             LaterEarlyPeriodRegex,
             WeekWithWeekDayRangeRegex,
             YearPlusNumberRegex,
