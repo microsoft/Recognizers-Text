@@ -11143,5 +11143,155 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I will handle all the stuff within next week.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-16T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within next week",
+        "Start": 28,
+        "End": 43,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-07-22,2019-07-29,P1W)",
+              "type": "daterange",
+              "start": "2019-07-22",
+              "end": "2019-07-29"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will handle all the stuff within one week.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-16T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within one week",
+        "Start": 28,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-07-16,2019-07-23,P1W)",
+              "type": "daterange",
+              "start": "2019-07-16",
+              "end": "2019-07-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will handle all the stuff in next two weeks.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-16T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next two weeks",
+        "Start": 31,
+        "End": 44,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-07-17,2019-07-31,P2W)",
+              "type": "daterange",
+              "start": "2019-07-17",
+              "end": "2019-07-31"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will handle all the stuff within next two weeks.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-16T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within next two weeks",
+        "Start": 28,
+        "End": 48,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-07-16,2019-07-30,P2W)",
+              "type": "daterange",
+              "start": "2019-07-16",
+              "end": "2019-07-30"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will handle all the stuff within next month.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-16T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within next month",
+        "Start": 28,
+        "End": 44,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-08-01,2019-09-01,P1M)",
+              "type": "daterange",
+              "start": "2019-08-01",
+              "end": "2019-09-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will handle all the stuff within next year.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-16T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within next year",
+        "Start": 28,
+        "End": 43,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-01-01,2021-01-01,P1Y)",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2021-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

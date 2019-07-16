@@ -1111,6 +1111,23 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 // Handle the "within two weeks" case which means from today to the end of next two weeks
                 // Cases like "within 3 days before/after today" is not handled here (4th condition)
                 if (RegexExtension.isExactMatch(config.getWithinNextPrefixRegex(), beforeStr, true)) {
+                    Optional<Match> matchNext = Arrays.stream(RegExpUtility.getMatches(this.config.getWithinNextPrefixRegex(), beforeStr)).findFirst();
+                    String nextStr = matchNext.get().getGroup(Constants.NextGroupName).value;
+                    if (!StringUtility.isNullOrEmpty(nextStr)) {
+                        if (this.config.isWeekOnly(text)) {
+                            beginDate = DateUtil.thisDate(referenceDate, DayOfWeek.MONDAY.getValue()).plusDays(Constants.WeekDayCount);
+                        } else if (this.config.isMonthOnly(text)) {
+                            LocalDateTime date = referenceDate.plusMonths(1);
+                            int month = date.getMonthValue();
+                            int year = date.getYear();
+                            beginDate =  DateUtil.safeCreateFromMinValue(year, month, 1);
+                        } else if (this.config.isYearOnly(text)) {
+                            LocalDateTime date = referenceDate.plusYears(1);
+                            int year = date.getYear();
+                            beginDate =  DateUtil.safeCreateFromMinValue(year, 1, 1);
+                        }
+                    }
+
                     getModAndDateResult = getModAndDate(beginDate, endDate, referenceDate, durationResult.getTimex(), true);
                     beginDate = getModAndDateResult.beginDate;
                     endDate = getModAndDateResult.endDate;
@@ -1237,7 +1254,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 endDateResult = nthBusinessDayResult.result.plusDays(1);
                 return new GetModAndDateResult(beginDateResult, endDateResult, mod, nthBusinessDayResult.dateList);
             } else {
-                beginDateResult = referenceDate.plusDays(1);
+                beginDateResult = beginDateResult.plusDays(1);
                 endDateResult = DurationParsingUtil.shiftDateTime(timex, beginDateResult, true);
                 return new GetModAndDateResult(beginDateResult, endDateResult, mod, null);
             }

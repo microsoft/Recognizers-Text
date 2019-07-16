@@ -162,7 +162,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    beginDateResult = referenceDate.AddDays(1);
+                    beginDateResult = beginDateResult.AddDays(1);
                     endDateResult = DurationParsingUtil.ShiftDateTime(timex, beginDateResult, true);
                     return new ModAndDateResult(beginDateResult, endDateResult, mod, null);
                 }
@@ -1445,6 +1445,30 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (config.WithinNextPrefixRegex.IsExactMatch(beforeStr, trim: true) &&
                         DurationParsingUtil.IsDateDuration(durationResult.Timex) && string.IsNullOrEmpty(afterStr))
                     {
+                        var matchNext = config.WithinNextPrefixRegex.Match(beforeStr);
+                        var nextstr = matchNext.Groups[Constants.NextGroupName].Value;
+                        if (!string.IsNullOrEmpty(nextstr))
+                        {
+                            if (this.config.IsWeekOnly(text))
+                            {
+                                beginDate = endDate = referenceDate.This(DayOfWeek.Monday).AddDays(Constants.WeekDayCount);
+                            }
+                            else if (this.config.IsMonthOnly(text))
+                            {
+                                var date = referenceDate.AddMonths(1);
+                                var month = date.Month;
+                                var year = date.Year;
+                                beginDate = endDate = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
+                            }
+                            else if (this.config.IsYearOnly(text))
+                            {
+                                var date = referenceDate.AddYears(1);
+                                var year = date.Year;
+                                beginDate = endDate = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
+                            }
+
+                        }
+
                         modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
 
                         // In GetModAndDate, this "future" resolution will add one day to beginDate/endDate,
