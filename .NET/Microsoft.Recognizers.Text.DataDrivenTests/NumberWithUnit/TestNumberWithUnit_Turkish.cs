@@ -26,6 +26,21 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         public void AgeModel()
         {
             TestNumberWithUnit();
+        } 
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DimensionModel-Turkish.csv", "DimensionModel-Turkish#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void DimensionModel()
+        {
+            TestNumberWithUnit();
         }
+
+        /* TODO uncomment with the Turkish temprature changes
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TemperatureModel-English.csv", "TemperatureModel-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void TemperatureModel()
+        {
+            TestNumberWithUnit();
+        }*/
     }
 }

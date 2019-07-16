@@ -23,32 +23,28 @@ namespace Microsoft.Recognizers.Definitions.Turkish
     {
       public static readonly Dictionary<string, string> AgeSuffixList = new Dictionary<string, string>
         {
-            { @"Year", @"yaş|yaşında|yaşındayım|yaşındasın|yaşındayken|yaşından|yıllık" },
-            { @"Month", @"aylık|aylıkken|aydan" },
+            { @"Year", @"yaş|yaşında|yaşındayım|yaşındayken|yaşından|yıllık" },
+            { @"Month", @"aylık|aydan|aylıkken|ay" },
             { @"Week", @"haftalık|haftalıkken" },
             { @"Day", @"günlük" }
         };
       public static readonly Dictionary<string, string> AreaSuffixList = new Dictionary<string, string>
         {
-            { @"Kilometrekare", @"kilometre kare|kilometrekare|km2|km^2|km²" },
-            { @"Hektometrekare", @"hektometre kare|hektometrekare|hm2|hm^2|hm²" },
-            { @"Dekametrekare", @"dekametre kare|dekametrekare|dam2|dam^2|dam²" },
-            { @"Metrekare", @"metre kare|metrekare|m2|m^2|m²" },
-            { @"Desimetrekare", @"desimetre kare|desimetrekare|dm2|dm^2|dm²" },
-            { @"Santimetrekare", @"santimetre kare|santimetrekare|cm2|cm^2|cm²" },
-            { @"Milimetrekare", @"milimetre kare|milimetrekare|mm2|mm^2|mm²" },
-            { @"Mikrometrekare", @"mikrometre kare|mikrometrekare|µm2|µm^2|µm²" },
-            { @"Nanometrekare", @"nanometre kare|nanometrekare|nm2|nm^2|nm²" },
-            { @"İnçkare", @"inç kare|inçkare|in2|in^2|in²" },
-            { @"Fitkare", @"fit kare|fitkare|ft2|ft^2|ft²" },
-            { @"Milkare", @"mil kare|milkare|mi2|mi^2|mi²" },
-            { @"Yardakare", @"yarda kare|yardakare|yd2|yd^2|yd²" },
-            { @"Ayakkare", @"ayakkare" },
-            { @"Akre", @"akre|ac" },
+            { @"Square kilometer", @"kilometrekare|km2|km^2|km²" },
+            { @"Square hectometer", @"hektometrekare|hm2|hm^2|hm²" },
+            { @"Square decameter", @"dekametrekare|dam2|dam^2|dam²" },
+            { @"Square meter", @"metrekaredir|metrekare|m2|m^2|m²" },
+            { @"Square decimeter", @"desimetrekare|dm2|dm^2|dm²" },
+            { @"Square centimeter", @"santimetrekare|cm2|cm^2|cm²" },
+            { @"Square millimeter", @"milimetrekare|mm2|mm^2|mm²" },
+            { @"Square inch", @"inç kare|inçkare|in2|in^2|in²" },
+            { @"Square foot", @"fit kare|fitkare|ft2|ft^2|ft²|ayakkare" },
+            { @"Square mile", @"mil kare|milkare|mi2|mi^2|mi²" },
+            { @"Square yard", @"yarda kare|yardakare|yd2|yd^2|yd²" },
+            { @"Acre", @"akre|ac|dönümlük|dönüm" },
             { @"Ar", @"ar|a" },
             { @"Dekar", @"dekar|daa" },
-            { @"Hektar", @"hektar|ha" },
-            { @"Dönüm", @"dönüm" }
+            { @"Hektar", @"hektar|ha" }
         };
       public static readonly IList<string> AmbiguousAreaUnitList = new List<string>
         {
@@ -56,7 +52,8 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             @"ar",
             @"dönüm",
             @"ha",
-            @"a"
+            @"a",
+            @"daa"
         };
       public static readonly Dictionary<string, string> CurrencySuffixList = new Dictionary<string, string>
         {
@@ -109,7 +106,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"Israeli new shekel", @"yeni israil şekeli|₪|ils" },
             { @"Agora", @"agora" },
             { @"Lithuanian litas", @"ltl|litvanya litası" },
-            { @"Japanese yen", @"japon yeni|jpy|yen|¥" },
+            { @"Japanese yen", @"japon yeni|jpy|yen|¥|yenlik" },
             { @"Kazakhstani tenge", @"kazakistan tengesi|kzt" },
             { @"Kenyan shilling", @"kenya şilini|sh|kes" },
             { @"North Korean won", @"kuzey kore wonu|kpw" },
@@ -256,20 +253,20 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"British pound", @"ingiliz sterlini|£|gbp|ingiliz poundu" },
             { @"Guernsey pound", @"guernsey sterlini|£|ggp|guernsey poundu" },
             { @"Saint Helena pound", @"saint helena sterlini|£|shp|saint helena poundu" },
+            { @"Egyptian pound", @"mısır lirası|egp|ج.م" },
             { @"Falkland Islands pound", @"falkland adaları sterlini|£|fkp|falkland adaları poundu" },
             { @"Gibraltar pound", @"gibraltar sterlini|£|gip|gibraltar poundu" },
             { @"Manx pound", @"manx sterlini|£|imp|manx poundu" },
             { @"Jersey pound", @"jersey sterlini|£|jep|jersey poundu" },
-            { @"Pound", @"pound|sterlin|£" },
+            { @"Lebanese pound", @"lübnan lirası|lbp|ل.ل" },
+            { @"South Sudanese pound", @"güney sudan lirası|ssp" },
+            { @"Sudanese pound", @"sudan lirası|ج.س.|sdg" },
+            { @"Syrian pound", @"suriye lirası|ل.س|syp" },
+            { @"Pound", @"pound|sterlin|£|sterlini|sterline" },
             { @"Pence", @"pence" },
             { @"Shilling", @"shillings|shilling|shilingi" },
             { @"Penny", @"peni" },
-            { @"Mısır lirası", @"mısır lirası|egp|ج.م" },
-            { @"Lübnan lirası", @"lübnan lirası|lbp|ل.ل" },
-            { @"Güney Sudan lirası", @"güney sudan lirası|ssp" },
-            { @"Sudan lirası", @"sudan lirası|ج.س.|sdg" },
-            { @"Suriye lirası", @"suriye lirası|ل.س|syp" },
-            { @"United States dollar", @"abd doları|a.b.d. doları|amerika birleşik devletleri doları|amerikan doları|usd" },
+            { @"United States dollar", @"abd doları|a.b.d. doları|amerika birleşik devletleri doları|amerikan doları|usd|abd $|a.b.d. $" },
             { @"East Caribbean dollar", @"doğu karayip doları|xcd" },
             { @"Australian dollar", @"avustralya doları|aud" },
             { @"Bahamian dollar", @"bahama doları|bsd" },
@@ -295,7 +292,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"Trinidad and Tobago dollar", @"trinidad ve tobago doları|ttd" },
             { @"Tuvaluan dollar", @"tuvalu doları" },
             { @"Dollar", @"dolar|$" },
-            { @"Chinese yuan", @"yuan|kuai|çin yuanı|renminbi|cny|rmb|￥|元" },
+            { @"Chinese yuan", @"yuan|kuai|çin yuanı|renminbi|cny|rmb|￥|元|yuanı" },
             { @"Fen", @"fen" },
             { @"Jiao", @"jiao|mao" },
             { @"Finnish markka", @"fin markkası|mk|fim|markka|fin markı" },
@@ -535,7 +532,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"Hào", @"HAO" },
             { @"Ngwee", @"NGWEE" }
         };
-      public const string CompoundUnitConnectorRegex = @"(?<spacer>ve)";
+      public const string CompoundUnitConnectorRegex = @"(?<spacer>\s)";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
             { @"Türk lirası", @"₺" }
@@ -559,32 +556,23 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             @"sos",
             @"std",
             @"yer",
+            @"yen",
             @"yeni"
         };
       public static readonly Dictionary<string, string> InformationSuffixList = new Dictionary<string, string>
         {
-            { @"bit", @"bit" },
-            { @"kilobit", @"kilobit|kb|Kb|kbit" },
-            { @"megabit", @"megabit|mb|Mb|mbit" },
-            { @"gigabit", @"gigabit|gb|Gb|gbit" },
-            { @"terabit", @"terabit|tb|Tb|tbit" },
-            { @"petabit", @"petabit|pb|Pb|pbit" },
-            { @"kibibit", @"kibibit|kib|kibit" },
-            { @"mebibit", @"mebibit|Mib|Mibit" },
-            { @"gibibit", @"gibibit|Gib|Gibit" },
-            { @"tebibit", @"tebibit|Tib|Tibit" },
-            { @"pebibit", @"pebibit|Pib|Pibit" },
-            { @"byte", @"byte|bayt" },
-            { @"kilobyte", @"kilobayt|kilobyte|kB|KB|kilo byte|kbyte" },
-            { @"megabyte", @"megabayt|megabyte|mB|MB|mega byte|mbyte" },
-            { @"gigabyte", @"gigabayt|gigabyte|gB|GB|giga byte|gbyte" },
-            { @"terabyte", @"terabayt|terabyte|tB|TB|tera byte|tbyte" },
-            { @"petabyte", @"petabayt|petabyte|pB|PB|peta byte|pbyte" },
-            { @"kibibyte", @"kibibayt|kibibyte|kiB|kiByte" },
-            { @"mebibyte", @"mebibayt|mebibyte|MiB|MiByte" },
-            { @"gibibyte", @"gibibayt|gibibyte|GiB|GiByte" },
-            { @"tebibyte", @"tebibayt|tebibyte|TiB|TiByte" },
-            { @"pebibyte", @"pebibayt|pebibyte|PiB|PiByte" }
+            { @"Bit", @"bit|-bit" },
+            { @"Kilobit", @"kilobit|kb|Kb|kbit" },
+            { @"Megabit", @"megabit|mb|Mb|mbit" },
+            { @"Gigabit", @"gigabit|gb|Gb|gbit" },
+            { @"Terabit", @"terabit|tb|Tb|tbit" },
+            { @"Petabit", @"petabit|pb|Pb|pbit" },
+            { @"Byte", @"byte|bayt" },
+            { @"Kilobyte", @"kilobayt|kilobyte|kB|KB|kilo byte|kbyte" },
+            { @"Megabyte", @"megabayt|megabyte|mB|MB|mega byte|mbyte" },
+            { @"Gigabyte", @"gigabayt|gigabyte|gB|GB|giga byte|gbyte" },
+            { @"Terabyte", @"terabayt|terabyte|tB|TB|tera byte|tbyte" },
+            { @"Petabyte", @"petabayt|petabyte|pB|PB|peta byte|pbyte" }
         };
       public static readonly IList<string> AmbiguousDimensionUnitList = new List<string>
         {
@@ -594,47 +582,26 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             @"in",
             @""""
         };
-      public const string BuildPrefix = @"(?<=(^))";
-      public const string BuildSuffix = @"(?=(\s))";
+      public const string BuildPrefix = @"(?<=(\s|^))";
+      public const string BuildSuffix = @"(?=(\s|\W|$))";
       public static readonly Dictionary<string, string> LengthSuffixList = new Dictionary<string, string>
         {
-            { @"Yottametre", @"Ym|yottametre" },
-            { @"Zettametre", @"Zm|zettametre" },
-            { @"Egzametre", @"Em|egzametre" },
-            { @"Petametre", @"Pm|petametre" },
-            { @"Terametre", @"Tm|terametre" },
-            { @"Gigametre", @"Gm|gigametre" },
-            { @"Megametre", @"Mm|megametre" },
-            { @"Kilometre", @"km|kilometre|kilo metre" },
-            { @"Hektometre", @"hm|hektometre|hekto metre" },
-            { @"Dekametre", @"dam|dekametre|deka metre" },
-            { @"Metre", @"m|metre" },
-            { @"Desimetre", @"dm|desimetre|desi metre" },
-            { @"Santimetre", @"cm|santimetre|santi metre" },
-            { @"Milimetre", @"mm|milimetre|mili metre" },
-            { @"Mikrometre", @"μm|mikrometre|mikro metre" },
-            { @"Nanometre", @"nm|nanometre|nano metre" },
-            { @"Pikometre", @"pm|pikometre|piko metre" },
-            { @"Femtometre", @"fm|femtometre" },
-            { @"Attometre", @"am|attometre" },
-            { @"Zeptometre", @"zm|zeptometre" },
-            { @"Yoktometre", @"ym|yoktometre" },
+            { @"Kilometer", @"km|kilometre" },
+            { @"Hectometer", @"hm|hektometre" },
+            { @"Decameter", @"dam|dekametre" },
+            { @"Meter", @"m|metre" },
+            { @"Decimeter", @"dm|desimetre" },
+            { @"Centimeter", @"cm|santimetre" },
+            { @"Millimeter", @"mm|milimetre" },
+            { @"Micrometer", @"μm|mikrometre" },
+            { @"Nanometer", @"nm|nanometre" },
+            { @"Picometer", @"pm|pikometre" },
+            { @"Mile", @"mil|mi|milden" },
+            { @"Yard", @"yarda|yd" },
             { @"Inch", @"inç|in|'""'" },
-            { @"Yarda", @"yarda|yd" },
-            { @"Mile", @"mil|mi" },
-            { @"Deniz mili", @"deniz mili|M|NM|nm|nmi" },
-            { @"Kara mili", @"kara mili|mi" },
-            { @"Foot", @"fit|ft" },
-            { @"Adım", @"adım" },
-            { @"Mikron", @"mikron|μ" },
-            { @"Angström", @"angström|Å" },
-            { @"Fermi", @"fermi|fm" },
-            { @"Işık yılı", @"ışık yılı|Iy" },
-            { @"Astronomik birim", @"astronomik birim|AU" },
-            { @"Parsek", @"parsek|pc" },
-            { @"Hubble uzunluğu", @"hubble uzunluğu" },
-            { @"Punto", @"punto|pt" },
-            { @"Pika", @"pika|pc" }
+            { @"Foot", @"fit|ft|ayak|adım|ayakla" },
+            { @"Light year", @"ışık yılı|Iy" },
+            { @"Pt", @"pt|pts" }
         };
       public static readonly IList<string> AmbiguousLengthUnitList = new List<string>
         {
@@ -644,25 +611,31 @@ namespace Microsoft.Recognizers.Definitions.Turkish
         };
       public static readonly Dictionary<string, string> SpeedSuffixList = new Dictionary<string, string>
         {
-            { @"Metre bölü saniye", @"metre bölü saniye|metre/saniye|m/s|m/sn" },
-            { @"Kilometre bölü saat", @"kilometre bölü saat|kilometre/saat|km/sa" },
-            { @"Kilometre bölü dakika", @"kilometre bölü dakika|kilometre/dakika|km/dk" },
-            { @"Kilometre bölü saniye", @"kilometre bölü saniye|kilometre/saniye|km/s|km/sn" },
-            { @"Mil bölü saat", @"mph|mil bölü saat|mil/saat|mil/sa" },
+            { @"Meter per second", @"metre bölü saniye|metre/saniye|m/s|m/sn" },
+            { @"Kilometer per hour", @"kilometre bölü saat|kilometre/saat|km/sa" },
+            { @"Kilometer per minute", @"kilometre bölü dakika|kilometre/dakika|km/dk" },
+            { @"Kilometer per second", @"kilometre bölü saniye|kilometre/saniye|km/s|km/sn" },
+            { @"Mile per hour", @"mph|mil bölü saat|mil/saat|mil/sa" },
             { @"Knot", @"knot|kn" },
-            { @"Yarda bölü dakika", @"yarda bölü dakika|yarda/dakika|yd/dk" },
-            { @"Yarda bölü saniye", @"yarda bölü saniye|yarda/saniye|yd/s|yd/sn" },
-            { @"Fit bölü saniye", @"fit bölü saniye|fit/saniye|ft/sn|ft/s" },
-            { @"Işık hızı", @"ışık hızı|c" }
+            { @"Foot per second", @"fit bölü saniye|fit/saniye|ft/sn|ft/s" },
+            { @"Foot per minute", @"ft/dk|fit bölü dakika|fit/dakika" },
+            { @"Yard per minute", @"yarda bölü dakika|yarda/dakika|yd/dk" },
+            { @"Yard per second", @"yarda bölü saniye|yarda/saniye|yd/s|yd/sn" }
+        };
+      public static readonly Dictionary<string, string> SpeedPrefixList = new Dictionary<string, string>
+        {
+            { @"PerHour", @"saatte" },
+            { @"PerMinute", @"dakikada" },
+            { @"PerSecond", @"saniyede" }
         };
       public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
         {
-            { @"F", @"fahrenheit|fahrenhayt|°f|f|fahrenheit derece|fahrenhayt derece|derece f|derece fahrenhayt|derece fahrenheit|fahrenhayta|fahrenhayttan|fahrenhaytı|fahrenhayt dereceyi|derece fahrenhayttır|derece fahrenhaytı" },
+            { @"F", @"derece fahrenhayt|derece fahrenheit|derece f|fahrenheit derece|fahrenhayt derece|fahrenheit|°f|f|fahrenhayta|fahrenhaytı|fahrenhayttan|fahrenhayt|derece fahrenhaytı|derece fahrenhayttır" },
             { @"K", @"k|K|kelvin" },
             { @"R", @"rankine|°r" },
             { @"D", @"delisle|°de" },
-            { @"C", @"celsius|santigrat|°c|c|santigrat derece|derece c|santigratta|santigratı|santigrata|santigrat dereceyi|santigrat dereceye" },
-            { @"Degree", @"derece|°|dereceye|derecede" }
+            { @"C", @"santigrat derece|derece c|celsius|°c|c|santigratı|santigrata|santigrat dereceyi|santigratta|santigrat" },
+            { @"Degree", @"derece|°|derecede|dereceyi|dereceye" }
         };
       public static readonly IList<string> AmbiguousTemperatureUnitList = new List<string>
         {
@@ -673,27 +646,24 @@ namespace Microsoft.Recognizers.Definitions.Turkish
         };
       public static readonly Dictionary<string, string> VolumeSuffixList = new Dictionary<string, string>
         {
-            { @"Kilometreküp", @"kilometreküp|km3|km^3|km³" },
-            { @"Hektometreküp", @"hektometreküp|hm3|hm^3|hm³" },
-            { @"Dekametreküp", @"dekametreküp|dam3|dam^3|dam³" },
             { @"Cubic meter", @"metreküp|m3|m^3|m³" },
-            { @"Desimetreküp", @"desimetreküp|dm3|dm^3|dm³" },
             { @"Cubic centimeter", @"santimetreküp|cm3|cm^3|cm³" },
             { @"Cubic millimiter", @"milimetreküp|mm3|mm^3|mm³" },
             { @"Hectoliter", @"hektolitre|hl" },
-            { @"Dekaliter", @"dekalitre|dal" },
+            { @"Decaliter", @"dekalitre|dal" },
             { @"Liter", @"litre|l" },
             { @"Deciliter", @"desilitre|dl" },
             { @"Centiliter", @"santilitre|cl" },
             { @"Milliliter", @"mililitre|ml" },
             { @"Cubic yard", @"kübik yard|kübik yds|cu yds|cu yd|yard/-3|yds/-3|yd/-3|yards^3|yard^3|yds^3|yd^3|yard³|yds³|yd³|yarda küp" },
             { @"Cubic inch", @"inç küp" },
+            { @"Cubic foot", @"fit küp" },
             { @"Cubic mile", @"mil küp" },
             { @"Fluid ounce", @"sıvı ons|oz" },
+            { @"Teaspoon", @"tatlı kaşığı" },
+            { @"Tablespoon", @"yemek kaşığı" },
             { @"Pint", @"pint" },
-            { @"Buşel", @"buşel|bsh.|bu." },
-            { @"Quart", @"quart" },
-            { @"Barrel", @"varil" }
+            { @"Volume unit", @"sıvı dram|çeyrek pint|kuart|minim|kord|peck|buşel|fıçı" }
         };
       public static readonly IList<string> AmbiguousVolumeUnitList = new List<string>
         {
@@ -703,19 +673,15 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly Dictionary<string, string> WeightSuffixList = new Dictionary<string, string>
         {
             { @"Kilogram", @"kg|kilogram|kilo" },
-            { @"Hektogram", @"hg|hektogram" },
-            { @"Dekagram", @"dag|dekagram" },
             { @"Gram", @"g|gram" },
-            { @"Desigram", @"dg|desigram" },
-            { @"Santigram", @"cg|santigram" },
-            { @"Miligram", @"mg|miligram" },
-            { @"Gallon", @"galon" },
-            { @"Metric ton", @"metrik ton" },
-            { @"Ton", @"t|ton" },
-            { @"Karat", @"karat" },
-            { @"Pound", @"lb|libre" },
+            { @"Milligram", @"mg|miligram" },
+            { @"Barrel", @"varil" },
+            { @"Gallon", @"galon|galonluk" },
+            { @"Metric ton", @"metrik tonu|metrik tona|metrik tondan|metrik ton" },
+            { @"Ton", @"t|ton|tona" },
+            { @"Pound", @"lb|libre|libreden|libreye" },
             { @"Ounce", @"oz|ons" },
-            { @"Troy ounce", @"oz t|troy ons" }
+            { @"Weight unit", @"karat|zerre|dram" }
         };
       public static readonly IList<string> AmbiguousWeightUnitList = new List<string>
         {
