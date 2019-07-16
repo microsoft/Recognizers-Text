@@ -30,13 +30,13 @@ namespace Microsoft.Recognizers.Definitions.Turkish
         };
       public static readonly Dictionary<string, string> AreaSuffixList = new Dictionary<string, string>
         {
-            { @"Square kilometer", @"kilometrekare|km2|km^2|km²" },
-            { @"Square hectometer", @"hektometrekare|hm2|hm^2|hm²" },
-            { @"Square decameter", @"dekametrekare|dam2|dam^2|dam²" },
-            { @"Square meter", @"metrekaredir|metrekare|m2|m^2|m²" },
-            { @"Square decimeter", @"desimetrekare|dm2|dm^2|dm²" },
-            { @"Square centimeter", @"santimetrekare|cm2|cm^2|cm²" },
-            { @"Square millimeter", @"milimetrekare|mm2|mm^2|mm²" },
+            { @"Square kilometer", @"kilometrekare|kilometre kare|km2|km^2|km²" },
+            { @"Square hectometer", @"hektometrekare|hektometre kare|hm2|hm^2|hm²" },
+            { @"Square decameter", @"dekametrekare|dekametre kare|dam2|dam^2|dam²" },
+            { @"Square meter", @"metrekaredir|metrekare|metre kare|m2|m^2|m²" },
+            { @"Square decimeter", @"desimetrekare|desimetre kare|dm2|dm^2|dm²" },
+            { @"Square centimeter", @"santimetrekare|santimetre kare|cm2|cm^2|cm²" },
+            { @"Square millimeter", @"milimetrekare|milimetre kare|mm2|mm^2|mm²" },
             { @"Square inch", @"inç kare|inçkare|in2|in^2|in²" },
             { @"Square foot", @"fit kare|fitkare|ft2|ft^2|ft²|ayakkare" },
             { @"Square mile", @"mil kare|milkare|mi2|mi^2|mi²" },
