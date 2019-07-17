@@ -35,12 +35,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             TestNumberWithUnit();
         }
 
-        /* TODO uncomment with the Turkish temprature changes
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TemperatureModel-English.csv", "TemperatureModel-English#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TemperatureModel-Turkish.csv", "TemperatureModel-Turkish#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void TemperatureModel()
         {
             TestNumberWithUnit();
-        }*/
+        }
     }
 }

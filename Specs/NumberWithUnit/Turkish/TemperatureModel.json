@@ -1,7 +1,6 @@
 [
   {
     "Input": "dışarıda hava 40 santigrat",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -12,13 +11,12 @@
           "unit": "C"
         },
         "Start": 14,
-        "End": 26
+        "End": 25
       }
     ]
   },
   {
     "Input": "Texas'ta hava 90 fahrenhayt",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -29,30 +27,28 @@
           "unit": "F"
         },
         "Start": 14,
-        "End": 27
+        "End": 26
       }
     ]
   },
   {
-    "Input": "    -5 derece fahrenheit",
-    "NotSupported": "dotnet",
+    "Input": "-5 derece fahrenheit",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "    -5 derece fahrenheit",
+        "Text": "-5 derece fahrenheit",
         "TypeName": "temperature",
         "Resolution": {
           "value": "-5",
           "unit": "F"
         },
         "Start": 0,
-        "End": 24
+        "End": 19
       }
     ]
   },
   {
     "Input": "6 derece",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -60,67 +56,63 @@
         "TypeName": "temperature",
         "Resolution": {
           "value": "6",
-          "unit": "C"
+          "unit": "Degree"
         },
         "Start": 0,
-        "End": 8
+        "End": 7
       }
     ]
   },
   {
-    "Input": "98.6 derece f normal bir ısıdır",
-    "NotSupported": "dotnet",
+    "Input": "98,6 derece f normal bir ısıdır",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "98.6 derece f",
+        "Text": "98,6 derece f",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "98.6",
+          "value": "98,6",
           "unit": "F"
         },
         "Start": 0,
-        "End": 13
+        "End": 12
       }
     ]
   },
   {
     "Input": "ısıyı 30 santigrat derece ayarla",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "30 santigrat",
+        "Text": "30 santigrat derece",
         "TypeName": "temperature",
         "Resolution": {
           "value": "30",
           "unit": "C"
         },
         "Start": 6,
-        "End": 18
+        "End": 24
       }
     ]
   },
   {
-    "Input": "normal ısı 98.6 derece fahrenhayttır",
-    "NotSupported": "dotnet",
+    "Input": "normal ısı 98,6 derece fahrenhayttır",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "98.6 derece fahrenhayt",
+        "Text": "98,6 derece fahrenhayttır",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "98.6",
+          "value": "98,6",
           "unit": "F"
         },
         "Start": 11,
-        "End": 33
+        "End": 35
       }
     ]
   },
   {
     "Input": "100 derece f",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -131,115 +123,108 @@
           "unit": "F"
         },
         "Start": 0,
-        "End": 12
+        "End": 11
       }
     ]
   },
   {
     "Input": "200 derece c",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "200 derece c",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "20",
+          "value": "200",
           "unit": "C"
         },
         "Start": 0,
-        "End": 12
-      }
-    ]
-  },
-  {
-    "Input": "100.2 derece fahrenhayt düşüktür",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "100.2 derece fahrenhayt",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": "100.2",
-          "unit": "F"
-        },
-        "Start": 0,
-        "End": 23
-      }
-    ]
-  },
-  {
-    "Input": "10.5 santigrat",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "10.5 santigrat",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": "10.5",
-          "unit": "C"
-        },
-        "Start": 0,
-        "End": 14
-      }
-    ]
-  },
-  {
-    "Input": "20 derece santigrat",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "20 santigrat",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": "20",
-          "unit": "C"
-        },
-        "Start": -1,
         "End": 11
       }
     ]
   },
   {
-    "Input": "20.3 santigrat",
-    "NotSupported": "dotnet",
+    "Input": "100,2 fahrenhayt derece düşüktür",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "20.3 santigrat",
+        "Text": "100,2 fahrenhayt derece",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "20.3",
-          "unit": "C"
+          "value": "100,2",
+          "unit": "F"
         },
         "Start": 0,
-        "End": 14
+        "End": 22
       }
     ]
   },
   {
-    "Input": "34.5 santigrat",
-    "NotSupported": "dotnet",
+    "Input": "10,5 santigrat",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "34.5 santigrat",
+        "Text": "10,5 santigrat",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "34.5",
+          "value": "10,5",
           "unit": "C"
         },
         "Start": 0,
-        "End": 14
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "20 santigrat derece",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20 santigrat derece",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "20,3 santigrat",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20,3 santigrat",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20,3",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "34,5 santigrat",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "34,5 santigrat",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "34,5",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
   {
     "Input": "dışarıda hava 98 derece",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -250,13 +235,12 @@
           "unit": "Degree"
         },
         "Start": 14,
-        "End": 23
+        "End": 22
       }
     ]
   },
   {
     "Input": "termostatı 85°ye ayarla",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -267,13 +251,12 @@
           "unit": "Degree"
         },
         "Start": 11,
-        "End": 14
+        "End": 13
       }
     ]
   },
   {
     "Input": "ısıyı 5 derece arttır",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -284,13 +267,12 @@
           "unit": "Degree"
         },
         "Start": 6,
-        "End": 14
+        "End": 13
       }
     ]
   },
   {
-    "Input": "ısıyı 70 dereceye f'ye ayarla",
-    "NotSupported": "dotnet",
+    "Input": "ısıyı 70 derece f'ye ayarla",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -300,38 +282,20 @@
           "value": "70",
           "unit": "F"
         },
-        "Start": -1,
-        "End": 10
+        "Start": 6,
+        "End": 16
       }
     ]
   },
   {
     "Input": "ısıyı 20 dereceye kur",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "20 derece",
+        "Text": "20 dereceye",
         "TypeName": "temperature",
         "Resolution": {
           "value": "20",
-          "unit": "Degree"
-        },
-        "Start": 6,
-        "End": 15
-      }
-    ]
-  },
-  {
-    "Input": "ısıyı 100 dereceye kur",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "100 derece",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": "100",
           "unit": "Degree"
         },
         "Start": 6,
@@ -340,8 +304,23 @@
     ]
   },
   {
+    "Input": "ısıyı 100 dereceye kur",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 dereceye",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100",
+          "unit": "Degree"
+        },
+        "Start": 6,
+        "End": 17
+      }
+    ]
+  },
+  {
     "Input": "ısıyı 75 derece f'de sabitle",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -352,51 +331,48 @@
           "unit": "F"
         },
         "Start": 6,
-        "End": 17
+        "End": 16
       }
     ]
   },
   {
     "Input": "ısı 40 santigratta kalsın",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "40 santigrat",
+        "Text": "40 santigratta",
         "TypeName": "temperature",
         "Resolution": {
           "value": "40",
           "unit": "C"
         },
         "Start": 4,
-        "End": 16
+        "End": 17
       }
     ]
   },
   {
     "Input": "ısı 50 derecede kalsın",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "50 derece",
+        "Text": "50 derecede",
         "TypeName": "temperature",
         "Resolution": {
           "value": "50",
           "unit": "Degree"
         },
         "Start": 4,
-        "End": 13
+        "End": 14
       }
     ]
   },
   {
     "Input": "10 santigratı fahrenhayta çevir",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10 santigrat",
+        "Text": "10 santigratı",
         "TypeName": "temperature",
         "Resolution": {
           "value": "10",
@@ -406,51 +382,49 @@
         "End": 12
       },
       {
-        "Text": "fahrenheit",
+        "Text": "fahrenhayta",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
           "unit": "F"
         },
-        "Start": 22,
-        "End": 31
+        "Start": 14,
+        "End": 24
       }
     ]
   },
   {
-    "Input": "34.9 santigratı fayrenhayta",
-    "NotSupported": "dotnet",
+    "Input": "34,9 santigratı fahrenhayta",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "34.9 santigrat",
+        "Text": "34,9 santigratı",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "34.9",
+          "value": "34,9",
           "unit": "C"
         },
         "Start": 0,
         "End": 14
       },
       {
-        "Text": "farenheit",
+        "Text": "fahrenhayta",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
           "unit": "F"
         },
-        "Start": 19,
-        "End": 27
+        "Start": 16,
+        "End": 26
       }
     ]
   },
   {
     "Input": "200 santigratı fahrenhayta çevir",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "200 santigrat",
+        "Text": "200 santigratı",
         "TypeName": "temperature",
         "Resolution": {
           "value": "200",
@@ -460,32 +434,42 @@
         "End": 13
       },
       {
-        "Text": "celsius",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": null,
-          "unit": "C"
-        },
-        "Start": 20,
-        "End": 26
-      },
-      {
-        "Text": "fahrenheit",
+        "Text": "fahrenhayta",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
           "unit": "F"
         },
-        "Start": 33,
-        "End": 42
+        "Start": 15,
+        "End": 25
       }
     ]
   },
   {
     "Input": "fahrenhayttan santigrata, 101 fahrenhayt kaç santigrat eder",
-    "NotSupported": "dotnet",
+	"NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
+      {
+        "Text": "fahrenhayttan",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 12
+      },
+      {
+        "Text": "santigrata",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 14,
+        "End": 23
+      },
       {
         "Text": "101 fahrenhayt",
         "TypeName": "temperature",
@@ -493,85 +477,53 @@
           "value": "101",
           "unit": "F"
         },
-        "Start": 26,
+        "Start": 27,
         "End": 40
       },
       {
-        "Text": "fahrenheit",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": null,
-          "unit": "F"
-        },
-        "Start": 0,
-        "End": 9
-      },
-      {
-        "Text": "celsius",
+        "Text": "santigrat",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
           "unit": "C"
         },
-        "Start": 14,
-        "End": 20
-      },
-      {
-        "Text": "celsius",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": null,
-          "unit": "C"
-        },
-        "Start": 49,
-        "End": 55
+        "Start": 46,
+        "End": 54
       }
     ]
   },
   {
-    "Input": "50 derece santigratı fayrenhayta",
-    "NotSupported": "dotnet",
+    "Input": "50 santigrat dereceyi fahrenhayta",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "50 derece santigrat",
+        "Text": "50 santigrat dereceyi",
         "TypeName": "temperature",
         "Resolution": {
           "value": "50",
           "unit": "C"
         },
         "Start": 0,
-        "End": 19
+        "End": 20
       },
       {
-        "Text": "celsius",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": null,
-          "unit": "C"
-        },
-        "Start": 19,
-        "End": 25
-      },
-      {
-        "Text": "fahrenheit",
+        "Text": "fahrenhayta",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
           "unit": "F"
         },
-        "Start": 30,
-        "End": 39
+        "Start": 22,
+        "End": 32
       }
     ]
   },
   {
     "Input": "51 fahrenhaytı santigrata çevirebilir misin",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "51 fahrenhayt",
+        "Text": "51 fahrenhaytı",
         "TypeName": "temperature",
         "Resolution": {
           "value": "51",
@@ -581,24 +533,23 @@
         "End": 13
       },
       {
-        "Text": "degrees celsius",
+        "Text": "santigrata",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
           "unit": "C"
         },
-        "Start": 35,
-        "End": 49
+        "Start": 15,
+        "End": 24
       }
     ]
   },
   {
     "Input": "106 derece fahrenhaytı santigrata çevir",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "106 derece fahrenhayt",
+        "Text": "106 derece fahrenhaytı",
         "TypeName": "temperature",
         "Resolution": {
           "value": "106",
@@ -608,24 +559,23 @@
         "End": 21
       },
       {
-        "Text": "degrees celsius",
+        "Text": "santigrata",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
           "unit": "C"
         },
-        "Start": 33,
-        "End": 47
+        "Start": 23,
+        "End": 32
       }
     ]
   },
   {
     "Input": "45 derece fahrenhaytı santigrata çevir",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "45 derece fahrenhayt",
+        "Text": "45 derece fahrenhaytı",
         "TypeName": "temperature",
         "Resolution": {
           "value": "45",
@@ -635,41 +585,40 @@
         "End": 20
       },
       {
-        "Text": "celsius",
+        "Text": "santigrata",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
           "unit": "C"
         },
-        "Start": 33,
-        "End": 39
+        "Start": 22,
+        "End": 31
       }
     ]
   },
   {
-    "Input": "- 20 derece fahrenhayt santigrata nasıl çevrilir",
-    "NotSupported": "dotnet",
+    "Input": "-20 derece fahrenhayt santigrata nasıl çevrilir",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "- 20 derece fahrenhayt",
+        "Text": "-20 derece fahrenhayt",
         "TypeName": "temperature",
         "Resolution": {
           "value": "-20",
           "unit": "F"
         },
         "Start": 0,
-        "End": 22
+        "End": 20
       },
       {
-        "Text": "celsius",
+        "Text": "santigrata",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
           "unit": "C"
         },
-        "Start": 42,
-        "End": 48
+        "Start": 22,
+        "End": 31
       }
     ]
   }
