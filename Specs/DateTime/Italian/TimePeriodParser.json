@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -20,7 +19,9 @@
             "startTime": "17:00:00",
             "endTime": "18:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 16
       }
     ]
   },
@@ -29,7 +30,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -45,7 +45,9 @@
             "startTime": "17:00:00",
             "endTime": "18:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 18
       }
     ]
   },
@@ -54,7 +56,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -70,7 +71,9 @@
             "startTime": "05:00:00",
             "endTime": "07:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 29
       }
     ]
   },
@@ -79,7 +82,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -95,7 +97,9 @@
             "startTime": "17:00:00",
             "endTime": "18:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 17
       }
     ]
   },
@@ -104,11 +108,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "tra le 5 e le 6pm",
+        "Text": "5 e le 6pm",
         "Type": "timerange",
         "Value": {
           "Timex": "(T17,T18,PT1H)",
@@ -120,7 +123,9 @@
             "startTime": "17:00:00",
             "endTime": "18:00:00"
           }
-        }
+        },
+        "Start": 18,
+        "Length": 10
       }
     ]
   },
@@ -129,11 +134,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "tra le 5pm e le 6pm",
+        "Text": "5pm e le 6pm",
         "Type": "timerange",
         "Value": {
           "Timex": "(T17,T18,PT1H)",
@@ -145,7 +149,9 @@
             "startTime": "17:00:00",
             "endTime": "18:00:00"
           }
-        }
+        },
+        "Start": 18,
+        "Length": 12
       }
     ]
   },
@@ -154,11 +160,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "tra le 5 e le 6 del pomeriggio",
+        "Text": "5 e le 6 del pomeriggio",
         "Type": "timerange",
         "Value": {
           "Timex": "(T17,T18,PT1H)",
@@ -170,7 +175,9 @@
             "startTime": "17:00:00",
             "endTime": "18:00:00"
           }
-        }
+        },
+        "Start": 18,
+        "Length": 23
       }
     ]
   },
@@ -179,7 +186,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -195,7 +201,9 @@
             "startTime": "01:00:00",
             "endTime": "17:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 18
       }
     ]
   },
@@ -204,7 +212,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -220,7 +227,9 @@
             "startTime": "16:00:00",
             "endTime": "17:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 23
       }
     ]
   },
@@ -229,7 +238,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -245,7 +253,9 @@
             "startTime": "16:00:00",
             "endTime": "17:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 21
       }
     ]
   },
@@ -254,7 +264,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -270,7 +279,9 @@
             "startTime": "04:00:00",
             "endTime": "07:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 17
       }
     ]
   },
@@ -279,7 +290,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -295,7 +305,9 @@
             "startTime": "16:00:00",
             "endTime": "17:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 7
       }
     ]
   },
@@ -304,7 +316,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -320,7 +331,9 @@
             "startTime": "16:00:00",
             "endTime": "17:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
@@ -329,7 +342,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -345,7 +357,9 @@
             "startTime": "03:00:00",
             "endTime": "17:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 32
       }
     ]
   },
@@ -354,11 +368,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "tra le 3 di mattina e le 5pm",
+        "Text": "3 di mattina e le 5pm",
         "Type": "timerange",
         "Value": {
           "Timex": "(T03,T17,PT14H)",
@@ -370,7 +383,9 @@
             "startTime": "03:00:00",
             "endTime": "17:00:00"
           }
-        }
+        },
+        "Start": 18,
+        "Length": 21
       }
     ]
   },
@@ -379,11 +394,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "tra le 4pm e le 5pm oggi",
+        "Text": "4pm e le 5pm",
         "Type": "timerange",
         "Value": {
           "Timex": "(T16,T17,PT1H)",
@@ -395,7 +409,9 @@
             "startTime": "16:00:00",
             "endTime": "17:00:00"
           }
-        }
+        },
+        "Start": 18,
+        "Length": 12
       }
     ]
   },
@@ -404,7 +420,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -420,7 +435,9 @@
             "startTime": "08:00:00",
             "endTime": "12:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 10
       }
     ]
   },
@@ -429,7 +446,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -445,7 +461,9 @@
             "startTime": "12:00:00",
             "endTime": "16:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 13
       }
     ]
   },
@@ -454,7 +472,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -470,7 +487,9 @@
             "startTime": "20:00:00",
             "endTime": "23:59:59"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 8
       }
     ]
   },
@@ -479,7 +498,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -495,7 +513,9 @@
             "startTime": "16:00:00",
             "endTime": "20:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 7
       }
     ]
   },
@@ -504,7 +524,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -520,7 +539,9 @@
             "startTime": "16:00:00",
             "endTime": "20:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 9
       }
     ]
   },
@@ -529,7 +550,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -545,7 +565,9 @@
             "startTime": "08:00:00",
             "endTime": "10:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 17
       }
     ]
   },
@@ -554,7 +576,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -570,7 +591,9 @@
             "startTime": "10:00:00",
             "endTime": "12:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 18
       }
     ]
   },
@@ -579,7 +602,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -595,7 +617,9 @@
             "startTime": "08:00:00",
             "endTime": "10:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 16
       }
     ]
   },
@@ -604,7 +628,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -620,7 +643,9 @@
             "startTime": "10:00:00",
             "endTime": "12:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 16
       }
     ]
   },
@@ -629,7 +654,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -645,7 +669,9 @@
             "startTime": "12:00:00",
             "endTime": "14:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 20
       }
     ]
   },
@@ -654,7 +680,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -670,7 +695,9 @@
             "startTime": "14:00:00",
             "endTime": "16:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 20
       }
     ]
   },
@@ -679,7 +706,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -695,7 +721,9 @@
             "startTime": "16:00:00",
             "endTime": "18:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 14
       }
     ]
   },
@@ -704,7 +732,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -720,7 +747,9 @@
             "startTime": "18:00:00",
             "endTime": "20:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 15
       }
     ]
   },
@@ -729,7 +758,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -745,7 +773,9 @@
             "startTime": "20:00:00",
             "endTime": "22:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 15
       }
     ]
   },
@@ -754,7 +784,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -770,7 +799,9 @@
             "startTime": "22:00:00",
             "endTime": "23:59:59"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 13
       }
     ]
   },
@@ -779,7 +810,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -795,7 +825,9 @@
             "startTime": "22:00:00",
             "endTime": "23:59:59"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 13
       }
     ]
   },
@@ -804,7 +836,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -820,7 +851,9 @@
             "startTime": "13:00:00",
             "endTime": "16:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 18
       }
     ]
   },
@@ -829,7 +862,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -845,7 +877,9 @@
             "startTime": "13:30:00",
             "endTime": "16:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 21
       }
     ]
   },
@@ -854,7 +888,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -870,7 +903,9 @@
             "startTime": "08:00:00",
             "endTime": "12:00:00"
           }
-        }
+        },
+        "Start": 18,
+        "Length": 12
       }
     ]
   },
@@ -879,7 +914,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -895,7 +929,9 @@
             "startTime": "13:30:00",
             "endTime": "15:30:00"
           }
-        }
+        },
+        "Start": 23,
+        "Length": 23
       }
     ]
   },
@@ -904,7 +940,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -920,7 +955,9 @@
             "startTime": "13:30:00",
             "endTime": "15:30:00"
           }
-        }
+        },
+        "Start": 23,
+        "Length": 26
       }
     ]
   },
@@ -929,7 +966,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -945,7 +981,9 @@
             "startTime": "15:00:00",
             "endTime": "15:30:00"
           }
-        }
+        },
+        "Start": 23,
+        "Length": 23
       }
     ]
   },
@@ -954,7 +992,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -970,7 +1007,9 @@
             "startTime": "03:00:00",
             "endTime": "03:30:00"
           }
-        }
+        },
+        "Start": 23,
+        "Length": 17
       }
     ]
   },
@@ -979,7 +1018,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -995,7 +1033,9 @@
             "startTime": "01:30:00",
             "endTime": "03:00:00"
           }
-        }
+        },
+        "Start": 23,
+        "Length": 17
       }
     ]
   }

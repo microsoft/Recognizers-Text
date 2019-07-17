@@ -79,7 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             SingleTimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
             UtilityConfiguration = new ItalianDatetimeUtilityConfiguration();
-            IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
+            IntegerExtractor = Number.Italian.IntegerExtractor.GetInstance();
             TimeZoneExtractor = new BaseTimeZoneExtractor(new ItalianTimeZoneExtractorConfiguration(this));
         }
 
@@ -93,13 +93,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
-        public IEnumerable<Regex> SimpleCasesRegex => new[] { PureNumFromTo, PureNumBetweenAnd, PmRegex, AmRegex };
+        public IEnumerable<Regex> SimpleCasesRegex => new[]
+        {
+            PureNumFromTo, PureNumBetweenAnd, AmRegex, PmRegex, SpecificTimeFromTo, SpecificTimeBetweenAnd,
+        };
 
         public IEnumerable<Regex> PureNumberRegex => new[] { PureNumFromTo, PureNumBetweenAnd };
 
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 
-        Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => ItalianDateTimeExtractorConfiguration.TimeOfDayRegex;
+        Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;
 
         Regex ITimePeriodExtractorConfiguration.GeneralEndingRegex => GeneralEndingRegex;
 
