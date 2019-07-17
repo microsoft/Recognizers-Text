@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 }
                 else
                 {
-                    minStr = match.Groups["deltaminnum"].Value.ToLower();
+                    minStr = match.Groups["deltaminnum"].Value;
                     Numbers.TryGetValue(minStr, out deltaMin);
                 }
             }

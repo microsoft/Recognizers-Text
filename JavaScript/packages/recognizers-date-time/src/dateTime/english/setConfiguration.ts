@@ -34,14 +34,14 @@ export class EnglishSetExtractorConfiguration implements ISetExtractorConfigurat
     readonly timePeriodExtractor: IDateTimeExtractor;
     readonly dateTimePeriodExtractor: IDateTimeExtractor;
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         this.timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-        this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-        this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
-        this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+        this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(dmyDateFormat));
+        this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(dmyDateFormat));
+        this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(dmyDateFormat));
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
-        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
+        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(dmyDateFormat));
         this.lastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetLastRegex)
         this.eachPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachPrefixRegex)
         this.periodicRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodicRegex)

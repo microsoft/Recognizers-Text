@@ -1,2652 +1,2872 @@
 [
   {
     "Input": "Sarò fuori a Gen",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Gen",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Gen",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Gen",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Gen",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Gen",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Mi mancava Gen 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Gen 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Mi mancava Gen, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Gen, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Sarò fuori a Feb",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Feb",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Feb",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Feb",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Feb",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Feb",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Mi mancava Feb 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Feb 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Mi mancava Feb, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Feb, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Sarò fuori a Mar",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Mar",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Mar",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Mar",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Mar",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Mar",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Mi mancava Mar 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Mar 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Mi mancava Mar, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Mar, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Sarò fuori ad Apr",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Apr",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Apr",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Apr",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Apr",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Apr",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Mi mancava Apr 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Apr 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Mi mancava Apr, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Apr, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Sarò fuori a Mag",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Mag",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Mag",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Mag",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Mag",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Mag",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Mi mancava Mag 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Mag 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Mi mancava Mag, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Mag, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Sarò fuori a Giu",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Giu",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Giu",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Giu",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
   {
-    "Input": "Sarò fuori il mesi di Giu",
-    "NotSupported": "dotnet",
+    "Input": "Sarò fuori il mese di Giu",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Giu",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Mi mancava Giu 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Giu 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Mi mancava Giu, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Giu, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Sarò fuori a Lug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Lug",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Lug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Lug",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Lug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Lug",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Mi mancava Lug 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Lug 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Mi mancava Lug, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Lug, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Sarò fuori ad Ago",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Ago",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Ago",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Ago",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Ago",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Ago",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Mi mancava Ago 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Ago 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Mi mancava Ago, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Ago, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Sarò fuori a Set",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Set",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Set",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Set",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Set",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Set",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Mi mancava Set 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Set 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Mi mancava Set, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Set, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Sarò fuori a Sett",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Sett",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 4
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Sett",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Sett",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Sett",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Sett",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Mi mancava Sett 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Sett 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Mi mancava Sett, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Sett, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Sarò fuori ad Ott",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Ott",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Ott",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Ott",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Ott",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Ott",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Mi mancava Ott 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Ott 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Mi mancava Ott, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Ott, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Sarò fuori a Nov",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Nov",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Nov",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Nov",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Nov",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Nov",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Mi mancava Nov 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Nov 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Mi mancava Nov, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Nov, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Sarò fuori a Dic",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Dic",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Dic",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Dic",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Dic",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Dic",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Mi mancava Dic 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Dic 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Mi mancava Dic, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Dic, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Sarò fuori a Gennaio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Gennaio",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Gennaio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Gennaio",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Gennaio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Gennaio",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Mi mancava Gennaio 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Gennaio 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Mi mancava Gennaio, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Gennaio, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Sarò fuori a Febbraio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Febbraio",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Febbraio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Febbraio",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Febbraio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Febbraio",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 19
       }
     ]
   },
   {
     "Input": "Mi mancava Febbraio 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Febbraio 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Mi mancava Febbraio, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Febbraio, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Sarò fuori a Marzo",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Marzo",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Marzo",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Marzo",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Marzo",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Marzo",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Mi mancava Marzo 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Marzo 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Mi mancava Marzo, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Marzo, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Sarò fuori ad Aprile",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Aprile",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Aprile",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Aprile",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Aprile",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Aprile",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Mi mancava Aprile 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Aprile 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Mi mancava Aprile, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Aprile, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Sarò fuori a Giugno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Giugno",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Giugno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Giugno",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Giugno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Giugno",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Mi mancava Giugno 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Giugno 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Mi mancava Giugno, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Giugno, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Sarò fuori a Luglio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Luglio",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Luglio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Luglio",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Luglio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Luglio",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Mi mancava Luglio 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Luglio 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Mi mancava Luglio, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Luglio, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Sarò fuori ad Agosto",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Agosto",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Agosto",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Agosto",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Agosto",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Agosto",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Mi mancava Agosto 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Agosto 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Mi mancava Agosto, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Agosto, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Sarò fuori a Settembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Settembre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Settembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Settembre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Settembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Settembre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 20
       }
     ]
   },
   {
     "Input": "Mi mancava Settembre 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Settembre 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Mi mancava Settembre, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Settembre, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Sarò fuori a Ottobre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Ottobre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Ottobre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Ottobre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Ottobre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Ottobre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Mi mancava Ottobre 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Ottobre 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Mi mancava Ottobre, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Ottobre, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Sarò fuori a Novembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Novembre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Novembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Novembre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Novembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Novembre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 19
       }
     ]
   },
   {
     "Input": "Mi mancava Novembre 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Novembre 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Mi mancava Novembre, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Novembre, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Sarò fuori a Dicembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Dicembre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Sarò fuori questo Dicembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Dicembre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Sarò fuori il mese di Dicembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Dicembre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 19
       }
     ]
   },
   {
     "Input": "Mi mancava Dicembre 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Dicembre 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Mi mancava Dicembre, 2001",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Dicembre, 2001",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Calendario per il mese di Settembre.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese di Settembre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 20
       }
     ]
   },
   {
     "Input": "Sarò fuori dal 4 al 22 questo mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "dal 4 al 22 questo mese",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Sarò fuori dal 4-23 il prossimo mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "dal 4-23 il prossimo mese",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 25
       }
     ]
   },
   {
     "Input": "Sarò fuori dal 3 fino al 12 di Sett hahaha",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "dal 3 fino al 12 di Sett",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 24
       }
     ]
   },
   {
     "Input": "Sarò fuori dal 4 al 23 il mese prossimo",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "dal 4 al 23 il mese prossimo",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 28
       }
     ]
   },
   {
-    "Input": "Sarò fuori dal 4 fino 23 di questo mese",
-    "NotSupported": "dotnet",
+    "Input": "Sarò fuori dal 4 fino al 23 di questo mese",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "dal 4 fino 23 di questo mese",
-        "Type": "daterange"
+        "Text": "dal 4 fino al 23 di questo mese",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 31
       }
     ]
   },
   {
     "Input": "Sarò fuori tra il 4 e il 22 questo mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "tra il 4 e il 22 questo mese",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 28
       }
     ]
   },
   {
     "Input": "Sarò fuori tra il 3 e il 12 di Sett hahaha",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "tra il 3 e il 12 di Sett",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 24
       }
     ]
   },
   {
     "Input": "Sarò fuori tra il 4 Settembre e l'8 Settembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "tra il 4 Settembre e l'8 Settembre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 34
       }
     ]
   },
   {
     "Input": "Sarò fuori tra il 15 e il 19 Novembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "tra il 15 e il 19 Novembre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 26
       }
     ]
   },
   {
     "Input": "Sarò fuori dal 4 al 22 Gennaio 2017",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "dal 4 al 22 Gennaio 2017",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 24
       }
     ]
   },
   {
     "Input": "Sarò fuori tra il 4-22 Gennaio 2017",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "tra il 4-22 Gennaio 2017",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 24
       }
     ]
   },
   {
     "Input": "Sarò fuori questa settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questa settimana",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Sarò fuori la prossima settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "prossima settimana",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Sono stato fuori lo scorso Set",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "lo scorso Set",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Sarò fuori il prossimo Giugno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il prossimo Giugno",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Sarò fuori a Giugno 2016",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Giugno 2016",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Sarò fuori a Giugno del prossimo anno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "a Giugno del prossimo anno",
-        "Type": "daterange"
+        "Text": "Giugno del prossimo anno",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 24
       }
     ]
   },
   {
     "Input": "Sarò fuori questo weekend",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo weekend",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Sarò fuori la terza settimana di questo mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la terza settimana di questo mese",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 33
       }
     ]
   },
   {
     "Input": "Sarò fuori l'ultima settimana di Luglio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "l'ultima settimana di Luglio",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 28
       }
     ]
   },
   {
     "Input": "programma il campeggio da venerdì a domenica",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "da venerdì a domenica",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 23,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Sarò fuori i prossimi 3 giorni",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "i prossimi 3 giorni",
-        "Type": "daterange"
+        "Text": "prossimi 3 giorni",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Sarò fuori i prossimi 3 mesi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "i prossimi 3 mesi",
-        "Type": "daterange"
+        "Text": "prossimi 3 mesi",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Sarò fuori tra 3 anni",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "tra 3 anni",
-        "Type": "daterange"
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Sarò fuori tra 3 settimane",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "tra tre settimane",
-        "Type": "daterange"
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Sarò fuori tra 3 mesi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "tra tre mesi",
-        "Type": "daterange"
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Sarò fuori le ultime tre settimane",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "le ultime tre settimane",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Sarò fuori per gli ultimi 3 anni ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "gli ultimi 3 anni",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Sarò fuori per l'ultimo anno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "l'ultimo anno",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Sarò fuori per l'ultimo mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "l'ultimo mese",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Sono stato fuori le 3 settimane precedenti",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "le 3 settimane precedenti",
-        "Type": "daterange"
+        "Text": "3 settimane precedenti",
+        "Type": "daterange",
+        "Start": 20,
+        "Length": 22
       }
     ]
   },
   {
     "Input": "ultime settimane",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "ultime settimane",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "diversi giorni passati",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "diversi giorni passati",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 22
       }
     ]
   },
   {
     "Input": "Sarò fuori dal 2 Ott. a Ottobre 22",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "dal 2 Ott. a Ottobre 22",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Sarò fuori dal 12 Gennaio 2016 - 02/22/2016",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "dal 12 Gennaio 2016 - 02/22/2016",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 32
       }
     ]
   },
   {
     "Input": "Sarò fuori dal 1 Gen fino a Mer, 22 di Gen",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "dal 1 Gen fino a Mer, 22 di Gen",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 31
       }
     ]
   },
   {
     "Input": "Sarò fuori da oggi fino a domani",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "da oggi fino a domani",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Sarò fuori da oggi al 22 Ottobre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "da oggi al 22 Ottobre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Sarò fuori dal 2 Ott. fino a dopodomani",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "dal 2 Ott. fino a dopodomani",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 28
       }
     ]
   },
   {
     "Input": "Sarò fuori da oggi fino alla prossima domenica",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "da oggi fino alla prossima domenica",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 35
       }
     ]
   },
   {
     "Input": "Sarò fuori da questo venerdì fino alla prossima domenica",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "da questo venerdì fino alla prossima domenica",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 45
       }
     ]
   },
   {
-    "Input": "Sarò fuori da 2015/08/12 fino Ottobre 22",
-    "NotSupported": "dotnet",
+    "Input": "Sarò fuori da 2015/08/12 fino a Ottobre 22",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "da 2015/08/12 fino Ottobre 22",
-        "Type": "daterange"
+        "Text": "da 2015/08/12 fino a Ottobre 22",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 31
       }
     ]
   },
   {
     "Input": "Sarò fuori da venerdì 2 fino a giovedì 6",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "da venerdì 2 fino a giovedì 6",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 29
       }
     ]
   },
   {
     "Input": "Sarò fuori tra il 2 Ott e Ottobre 22",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "tra il 2 Ott e Ottobre 22",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 25
       }
     ]
   },
   {
     "Input": "Sarò fuori a Novembre dal 19-20",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "a Novembre dal 19-20",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 20
       }
     ]
   },
   {
     "Input": "Sarò fuori a Novembre dal 19 al 20",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "a Novembre dal 19 al 20",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Sarò fuori a Novembre tra il 19 e 20",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "a Novembre tra il 19 e 20",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 25
       }
     ]
   },
   {
     "Input": "Sarò fuori il terzo trimestre del 2016",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il terzo trimestre del 2016",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 27
       }
     ]
   },
   {
     "Input": "Sarò fuori il terzo trimestre di quest'anno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il terzo trimestre di quest'anno",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 32
       }
     ]
   },
   {
     "Input": "Sarò fuori 2015.3",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "2015.3",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Sarò fuori 2015-3",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "2015-3",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Sarò fuori 2015/3",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "2015/3",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Sarò fuori 3/2015",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "3/2015",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Sarò fuori la terza settimana del 2027",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la terza settimana del 2027",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 27
       }
     ]
   },
   {
     "Input": "Sarò fuori la terza settimana del prossimo anno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la terza settimana del prossimo anno",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 36
       }
     ]
   },
   {
     "Input": "Partirò questa estate",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questa estate",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Pertirò la prossima primavera",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "la prossima primavera",
-        "Type": "daterange"
+        "Text": "prossima primavera",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Partirò d'estate",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "d'estate",
-        "Type": "daterange"
+        "Text": "estate",
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Partirò in estate",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "in estate",
-        "Type": "daterange"
+        "Text": "estate",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Partirò l'estate 2016",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "l'estate 2016",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Partirò l'estate del 2016",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "l'estate del 2016",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "vacanze del mese in arrivo",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "mese in arrivo",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "vacanze del prossimo mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "prossimo mese",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Cosa devo fare la settimana del 30 Novembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la settimana del 30 Novembre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 28
       }
     ]
   },
   {
     "Input": "la settimana del 15 Settembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la settimana del 15 Settembre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 29
       }
     ]
   },
   {
     "Input": "settimana del 15 Settembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "settimana del 15 Settembre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 26
       }
     ]
   },
   {
     "Input": "il mese del 15 Settembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il mese del 15 Settembre",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 24
       }
     ]
   },
   {
     "Input": "Partirò dopo il weekend",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il weekend",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Partirò per il resto della mia settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il resto della mia settimana",
-        "Type": "daterange"
+        "Text": "resto della mia settimana",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 25
       }
     ]
   },
   {
     "Input": "partirò per il resto della settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il resto della settimana",
-        "Type": "daterange"
+        "Text": "resto della settimana",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Partirò per il resto di questa settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il resto di questa settimana",
-        "Type": "daterange"
+        "Text": "resto di questa settimana",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 25
       }
     ]
   },
   {
     "Input": "Partirò per il resto della settimana corrente",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il resto della settimana corrente",
-        "Type": "daterange"
+        "Text": "resto della settimana corrente",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 30
       }
     ]
   },
   {
     "Input": "Partirò per il resto del mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il resto del mese",
-        "Type": "daterange"
+        "Text": "resto del mese",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Partirò per il resto dell'anno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il resto dell'anno",
-        "Type": "daterange"
+        "Text": "resto dell'anno",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Vi preghiamo di trovare un momento per incontrarci a fine mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "a fine mese",
-        "Type": "daterange"
+        "Text": "fine mese",
+        "Type": "daterange",
+        "Start": 53,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Vi preghiamo di trovare un momento per incontrarci a fine settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "a fine settimana",
-        "Type": "daterange"
+        "Text": "fine settimana",
+        "Type": "daterange",
+        "Start": 53,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Vi preghiamo di trovare un momento per incontrarci a fine settimana prossima",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "a fine settimana prossima",
-        "Type": "daterange"
+        "Text": "fine settimana prossima",
+        "Type": "daterange",
+        "Start": 53,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Vi preghiamo di trovare un momento per incontrarci a fine anno prossimo",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "a fine anno prossimo",
-        "Type": "daterange"
+        "Text": "fine anno prossimo",
+        "Type": "daterange",
+        "Start": 53,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Ci siamo incontrati la scorsa settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la scorsa settimana",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 20,
+        "Length": 19
       }
     ]
   },
   {
     "Input": "Vi preghiamo di trovare un momento per incontrarci all'inizio di questo mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "all'inizio di questo mese",
-        "Type": "daterange"
+        "Text": "inizio di questo mese",
+        "Type": "daterange",
+        "Start": 55,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Vi preghiamo di trovare un momento per incontrarci all'inizio di questa settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "all'inizio di questa settimana",
-        "Type": "daterange"
+        "Text": "inizio di questa settimana",
+        "Type": "daterange",
+        "Start": 55,
+        "Length": 26
       }
     ]
   },
   {
     "Input": "Vi preghiamo di trovare un momento per incontrarci all'inizio della prossima settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "all'inizio della prossima settimana",
-        "Type": "daterange"
+        "Text": "inizio della prossima settimana",
+        "Type": "daterange",
+        "Start": 55,
+        "Length": 31
       }
     ]
   },
   {
     "Input": "Vi preghiamo di trovare un momento per incontrarci all'inizio del prossimo anno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "all'inizio del prossimo anno",
-        "Type": "daterange"
+        "Text": "inizio del prossimo anno",
+        "Type": "daterange",
+        "Start": 55,
+        "Length": 24
       }
     ]
   },
   {
     "Input": "Cortana, per favore coordina un appuntamento di 25 minuti con antonio la prossima settimana tra mercoledì e venerdì.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la prossima settimana tra mercoledì e venerdì",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 70,
+        "Length": 45
       }
     ]
   },
   {
     "Input": "Cortana, per favore coordina un appuntamento di 25 minuti con antonio la prossima settimana da mercoledì a venerdì.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la prossima settimana da mercoledì a venerdì",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 70,
+        "Length": 44
       }
     ]
   },
   {
     "Input": "Cortana, per favore coordina un appuntamento di 25 minuti con antonio l'ultima settimana da mercoledì a venerdì.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "l'ultima settimana da mercoledì a venerdì",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 70,
+        "Length": 41
       }
     ]
   },
   {
     "Input": "Cortana, per favore coordina un appuntamento di 25 minuti con antonio questa settimana tra mercoledì e venerdì.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questa settimana tra mercoledì e venerdì",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 70,
+        "Length": 40
       }
     ]
   },
   {
     "Input": "Sarò fuori l'anno 247",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "anno 247",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Negli anni 70",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "anni 70",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 6,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Negli anni 2000, è nato.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "anni 2000",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 6,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Negli anni '70",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "anni '70",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 6,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Negli anni 1970",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "anni 1970",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 6,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Negli anni settanta",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "anni settanta",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 6,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Negli anni millenovecentosettanta",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "anni millenovecentosettanta",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 6,
+        "Length": 27
       }
     ]
   },
   {
     "Input": "Negli anni duemiladieci",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "anni duemiladieci",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 6,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Negli anni duemila",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "anni duemila",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 6,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Negli anni trenta",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "anni trenta",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 6,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Sarò fuori dal 2 al 7 Feb duemiladiciotto",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "dal 2 al 7 Feb duemiladiciotto",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 30
       }
     ]
   },
   {
-    "Input": "Sarò fuori tra il 2 e il 7 Feb duemiladiciotto",
-    "NotSupported": "dotnet",
+    "Input": "Sarò fuori tra il 2 e il 7 Feb, duemiladiciotto",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "tra il 2 e il 7 Feb, duemiladiciotto",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 36
       }
     ]
   },
   {
     "Input": "Sarò fuori a Feb tra il 2-7 duemiladiciotto",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "a Feb tra il 2-7 duemiladiciotto",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 32
       }
     ]
   },
   {
     "Input": "è successo a Giugno del millenovecentonovantanove",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Giugno del millenovecentonovantanove",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 36
       }
     ]
   },
   {
     "Input": "Nel millenovecentoventotto",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "millenovecentoventotto",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 22
       }
     ]
   },
   {
     "Input": "Sarò fuori la prima settimana del duemilaventisette",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la prima settimana del duemilaventisette",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 40
       }
     ]
   },
   {
     "Input": "Sarò fuori il primo trimestre del duemilaventi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il primo trimestre del duemilaventi",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 35
       }
     ]
   },
   {
     "Input": "Nella primavera del millenovecentosettantotto",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "primavera del millenovecentosettantotto",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 6,
+        "Length": 39
       }
     ]
   },
   {
     "Input": "Anno duecentosessantasette",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "anno duecentosessantasette",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 26
       }
     ]
   },
   {
     "Input": "Sarò fuori la settimana dopo la prossima",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la settimana dopo la prossima",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 29
       }
     ]
   },
   {
     "Input": "è successo nei 2 decenni passati",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "2 decenni passati",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "è successo negli ultimi due decenni",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "ultimi due decenni",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "è successo nel prossimo decennio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "prossimo decennio",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Succederà 4 settimane in futuro",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "4 settimane in futuro",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Succederà a due giorni da questo momento",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "a due giorni da questo momento",
-        "Type": "daterange"
+        "Text": "due giorni da questo momento",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 28
       }
     ]
   },
   {
     "Input": "Cortana puoi trovarci un momento a partire dalla settimana prossima",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "a partire dalla settimana prossima",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 33,
+        "Length": 34
       }
     ]
   },
   {
     "Input": "Certo, facciamo uno Skype alla fine della prossima settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "fine della prossima settimana",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 31,
+        "Length": 29
       }
     ]
   },
   {
     "Input": "Certo, facciamo uno Skype all'inizio della prossima settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "inizio della prossima settimana",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 30,
+        "Length": 31
       }
     ]
   },
   {
     "Input": "Cortana, trovaci un momento alla fine di Marzo",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "fine di Marzo",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 33,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Cortana, per favore trovaci un momento a metà della prossima settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "metà della prossima settimana",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 41,
+        "Length": 29
       }
     ]
   },
   {
     "Input": "Cortana, puoi organizzare un appuntamento a metà Marzo",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "metà Marzo",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 44,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Che ne dici di metà estate?",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "metà estate",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Posso trovarci un momento a partire dalla prossima settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "a partire dalla prossima settimana",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 26,
+        "Length": 34
       }
     ]
   }

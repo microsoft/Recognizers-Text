@@ -43,7 +43,7 @@ export class SpanishMergedExtractorConfiguration implements IMergedExtractorConf
     readonly numberEndingPattern: RegExp;
     readonly filterWordRegexList: RegExp[];
 
-    constructor() {
+    constructor(dmyDateFormat: boolean = false) {
         this.beforeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BeforeRegex);
         this.afterRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AfterRegex);
         this.sinceRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SinceRegex);
@@ -52,14 +52,14 @@ export class SpanishMergedExtractorConfiguration implements IMergedExtractorConf
         this.prepositionSuffixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PrepositionSuffixRegex);
         this.numberEndingPattern = RegExpUtility.getSafeRegExp(SpanishDateTime.NumberEndingPattern);
 
-        this.dateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
+        this.dateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(dmyDateFormat));
         this.timeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
-        this.dateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
-        this.datePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
+        this.dateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(dmyDateFormat));
+        this.datePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration(dmyDateFormat));
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
-        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
+        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration(dmyDateFormat));
         this.durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
-        this.setExtractor = new BaseSetExtractor(new SpanishSetExtractorConfiguration());
+        this.setExtractor = new BaseSetExtractor(new SpanishSetExtractorConfiguration(dmyDateFormat));
         this.holidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration());
         this.integerExtractor = new SpanishIntegerExtractor();
         this.filterWordRegexList = [];
@@ -80,8 +80,8 @@ export class SpanishMergedParserConfiguration extends SpanishCommonDateTimeParse
     readonly durationParser: BaseDurationParser;
     readonly setParser: BaseSetParser;
 
-    constructor() {
-        super();
+    constructor(dmyDateFormat: boolean = false) {
+        super(dmyDateFormat);
 
         this.beforeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BeforeRegex);
         this.afterRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AfterRegex);
