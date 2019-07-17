@@ -57,6 +57,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex PastPrefixRegex =
             new Regex(DateTimeDefinitions.PastSuffixRegex, RegexFlags);
 
+        public static readonly Regex PreviousPrefixRegex =
+            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+
         // **In Italian, Past/Next is suffix, but interface enforces this
         // next, in
         public static readonly Regex NextPrefixRegex =
@@ -95,7 +98,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         // le/la - masc/fem 'the'
         public static readonly Regex WeekOfMonthRegex =
-            new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.WeekOfMonthRegex, RegexFlags);
 
         public static readonly Regex WeekOfYearRegex =
             new Regex(DateTimeDefinitions.WeekOfYearRegex, RegexFlags);
@@ -209,7 +212,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             MonthFrontSimpleCasesRegex,
             QuarterRegex,
             QuarterRegexYearFront,
+            AllHalfYearRegex,
             SeasonRegex,
+            WhichWeekRegex,
+            RestOfDateRegex,
             PastPrefixRegex,
             NextPrefixRegex,
             ThisPrefixRegex,
@@ -218,6 +224,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             YearPlusNumberRegex,
             DecadeWithCenturyRegex,
             RelativeDecadeRegex,
+            ReferenceDatePeriodRegex,
         };
 
         public ItalianDatePeriodExtractorConfiguration(IOptionsConfiguration config)
@@ -225,6 +232,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         {
             DatePointExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
             CardinalExtractor = Number.Italian.CardinalExtractor.GetInstance();
+            OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
             NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration());
         }
@@ -255,7 +263,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         Regex IDatePeriodExtractorConfiguration.NumberCombinedWithDateUnit => NumberCombinedWithDateUnit;
 
-        Regex IDatePeriodExtractorConfiguration.PreviousPrefixRegex => PastPrefixRegex;
+        Regex IDatePeriodExtractorConfiguration.PreviousPrefixRegex => PreviousPrefixRegex;
 
         Regex IDatePeriodExtractorConfiguration.FutureRegex => NextPrefixRegex;
 
