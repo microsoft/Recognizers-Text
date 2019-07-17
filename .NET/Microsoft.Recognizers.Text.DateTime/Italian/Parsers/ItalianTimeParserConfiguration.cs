@@ -8,6 +8,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
     {
+        private static readonly Regex LunchRegex =
+            new Regex(DateTimeDefinitions.LunchRegex, RegexOptions.Singleline);
+
+        private static readonly Regex NightRegex =
+            new Regex(DateTimeDefinitions.NightRegex, RegexOptions.Singleline);
+
         public ItalianTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config.Options)
         {
@@ -36,16 +42,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             var deltaMin = 0;
             var trimmedPrefix = prefix.Trim();
 
-            // c'este 8 heures et demie, - "it's half past 8"
-            if (trimmedPrefix.EndsWith("demie"))
+            // "it's half past 8"
+            if (trimmedPrefix.EndsWith("mezza") || trimmedPrefix.EndsWith("mezzo"))
             {
                 deltaMin = 30;
             }
-            else if (trimmedPrefix.EndsWith("un quart") || trimmedPrefix.EndsWith("quart"))
+            else if (trimmedPrefix.EndsWith("un quarto") || trimmedPrefix.EndsWith("quarto"))
             {
                 deltaMin = 15;
             }
-            else if (trimmedPrefix.EndsWith("trois quarts"))
+            else if (trimmedPrefix.EndsWith("tre quarti"))
             {
                 deltaMin = 45;
             }
@@ -64,8 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 }
             }
 
-            // 'to' i.e 'one to five' = 'un à cinq'
-            if (trimmedPrefix.EndsWith("à"))
+            // 'to' i.e 'one to five'
+            if (trimmedPrefix.StartsWith("meno"))
             {
                 deltaMin = -deltaMin;
             }
@@ -88,7 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
             if (match.Success)
             {
-                var oclockStr = match.Groups["heures"].Value;
+                var oclockStr = match.Groups["oclock"].Value;
                 if (string.IsNullOrEmpty(oclockStr))
                 {
                     var matchAmStr = match.Groups["am"].Value;
@@ -110,7 +116,46 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                             deltaHour = 12;
                         }
 
-                        hasPm = true;
+                        if (LunchRegex.IsMatch(matchPmStr))
+                        {
+                            if (hour >= 10 && hour <= Constants.HalfDayHourCount)
+                            {
+                                deltaHour = 0;
+                                if (hour == Constants.HalfDayHourCount)
+                                {
+                                    hasPm = true;
+                                }
+                                else
+                                {
+                                    hasAm = true;
+                                }
+                            }
+                            else
+                            {
+                                hasPm = true;
+                            }
+                        }
+                        else if (NightRegex.IsMatch(matchPmStr))
+                        {
+                            if (hour <= 3 || hour == Constants.HalfDayHourCount)
+                            {
+                                if (hour == Constants.HalfDayHourCount)
+                                {
+                                    hour = 0;
+                                }
+
+                                deltaHour = 0;
+                                hasAm = true;
+                            }
+                            else
+                            {
+                                hasPm = true;
+                            }
+                        }
+                        else
+                        {
+                            hasPm = true;
+                        }
                     }
                 }
             }

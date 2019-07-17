@@ -264,25 +264,29 @@ WeekDayEnd: !nestedRegex
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>l'anno|ann[oi]?|mes[ei]|settiman[ae])\b
 HourNumRegex: !simpleRegex
-  def: \b(?<hournum>zero|una|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|undici|dodici)\b
+  def: \b(?<hournum>zero|(?<=l')una|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|undici|dodici)\b
 MinuteNumRegex: !simpleRegex
   def: (?<minnum>uno|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|undici|dodici|tredici|quattordici|quindici|sedici|diciassette|diciotto|diciannove|venti|trenta|quaranta|cinquanta)
 DeltaMinuteNumRegex: !simpleRegex
   def: (?<deltaminnum>uno|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|undici|dodici|treidic|quattordici|quindici|sedici|diciassette|diciotto|diciannove|venti|trenta|quaranta|cinquanta)
 OclockRegex: !simpleRegex
-  def: (?<oclock>ora|ore|h)
+  def: (?<oclock>ora|ore|h|in punto)
 PmRegex: !simpleRegex
-  def: (?<pm>(((di|del|al?|nel|il|per|verso)\s+(il\s+)?)?(pomeriggio|pranzo))|((di|della|nella|a|alla|verso|la|per)\s+(la\s+)?(notte|sera|mezzanotte)))
+  def: (?<pm>(((di|del|a(l(l')?)?|nel|il|per|verso)\s+(il\s+)?)?(pomeriggio|pranzo|ora di pranzo))|(((di|della|nella|a|alla|verso|la|per)\s+)?(la\s+)?(notte|sera|mezzanotte)))
 AmRegex: !simpleRegex
   def: (?<am>((((la|alla|verso|per|della)\s+(la\s+)?)?(mattina))|(((il|al|verso|per|del)\s+(il\s+)?)?(mattino))))
+LunchRegex: !simpleRegex
+  def: \b(ora di pranzo|pranzo)\b
+NightRegex: !simpleRegex
+  def: \b(mezzanotte|notte)\b
 LessThanOneHour: !nestedRegex
-  def: (?<lth>(un\s+quarto|tre quarti?|mezza|mezz'ora|{BaseDateTime.DeltaMinuteRegex}(\s+(minut[oi]|min))|{DeltaMinuteNumRegex}(\s+(minut[oi]|min))))
+  def: (?<lth>(un\s+quarto|tre quarti?|mezz[oa]|mezz'ora|{BaseDateTime.DeltaMinuteRegex}(\s+(minut[oi]|min))|{DeltaMinuteNumRegex}(\s+(minut[oi]|min))))
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]
 EngTimeRegex: !nestedRegex
   def: (?<engtime>{HourNumRegex}\s+e\s+({MinuteNumRegex}|(?<tens>venti?|trenta?|quaranta?|cinquanta?){MinuteNumRegex}))
   references: [ HourNumRegex, MinuteNumRegex ]
 TimePrefix: !nestedRegex
-  def: (?<prefix>(ore\s*e\s+{LessThanOneHour}|e {LessThanOneHour}|{LessThanOneHour} all[e']))
+  def: (?<prefix>(ore\s*e\s+{LessThanOneHour}|e {LessThanOneHour}|{LessThanOneHour} all[e'])|meno {LessThanOneHour})
   references: [ LessThanOneHour ]
 TimeSuffix: !nestedRegex
   def: (?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})
@@ -295,7 +299,7 @@ MidnightRegex: !simpleRegex
 CommonDatePrefixRegex: !simpleRegex
   def: ^[\.]
 MorningRegex: !simpleRegex
-  def: (?<morning>mattin[oa])
+  def: (?<morning>mattin[oa]|mattinata)
 AfternoonRegex: !simpleRegex
   def: (?<afternoon>pomeriggio)
 MidmorningRegex: !nestedRegex
@@ -313,7 +317,7 @@ AtRegex: !nestedRegex
   def: \b(((?<=\b(a|alle)\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b
   references: [ EngTimeRegex, HourNumRegex, BaseDateTime.HourRegex, MidTimeRegex ]
 IshRegex: !nestedRegex
-  def: \b(((poco\s+(prima|dopo)(\s+(di|dell[e']))?)|circa)\s*({BaseDateTime.HourRegex}|{EngTimeRegex}|mezzogiorno))\b
+  def: \b(((poco\s+(prima|dopo)(\s+(di|dell[e']))?)|circa(\s+a(ll['e])?)?|più o meno(\s+a(ll['e])?)?)\s*({BaseDateTime.HourRegex}|{EngTimeRegex}|mezzogiorno))\b
   references: [ BaseDateTime.HourRegex, EngTimeRegex ]
 TimeUnitRegex: !simpleRegex
   def: (?<unit>or[ae]|hrs|hr|h|minut[oi]|mins|min|second[oi]|secs|sec)\b
@@ -336,17 +340,17 @@ TimeRegex3: !nestedRegex
   def: \b{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})(\s+{TimePrefix})?
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, DescRegex ]
 TimeRegex4: !nestedRegex
-  def: \b{BasicTime}(\s*{DescRegex})?(\s+{TimePrefix})?\s+{TimeSuffix}\b
+  def: \b{BasicTime}(\s*{DescRegex})?(\s+{TimePrefix})?(\s*{DescRegex})?\s+{TimeSuffix}\b
   references: [ TimePrefix, BasicTime, DescRegex, TimeSuffix ]
 TimeRegex5: !nestedRegex
-  def: \b{BasicTime}((\s*{DescRegex})|\b)(\s+{TimePrefix})?
+  def: \b(({BasicTime}\s*{DescRegex}(\s+{TimePrefix})?)|({BasicTime}(\s+{TimePrefix})?((\s*{DescRegex})|\b)))
   references: [ TimePrefix, BasicTime, DescRegex ]
 TimeRegex6: !nestedRegex
   def: '{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b'
   references: [ BasicTime, DescRegex, TimeSuffix ]
 TimeRegex7: !nestedRegex
-  def: \b{TimeSuffix}\s+all[e']\s*{BasicTime}((\s*{DescRegex})|\b)
-  references: [ TimeSuffix, BasicTime, DescRegex ]
+  def: \b{TimeSuffix}\s+all[e']\s*{BasicTime}(\s+{TimePrefix})?((\s*{DescRegex})|\b)
+  references: [ TimeSuffix, BasicTime, TimePrefix, DescRegex ]
 TimeRegex8: !nestedRegex
   def: \b{TimeSuffix}\s+{BasicTime}((\s*{DescRegex})|\b)
   references: [ TimeSuffix, BasicTime, DescRegex ]
@@ -366,7 +370,7 @@ HourRegex: !nestedRegex
   def: \b{BaseDateTime.HourRegex}
   references: [ BaseDateTime.HourRegex ]
 PeriodDescRegex: !simpleRegex
-  def: (?<desc>pm|am|p\.m\.|a\.m\.|p)
+  def: (?<desc>pm|am|p\.m\.|a\.m\.)
 PeriodPmRegex: !simpleRegex
   def: (?<pm>(nel|questo)\s+pomeriggio|(questa|di)\s+sera|durante\s+la\s+serata|nella\s+notte)
 PeriodAmRegex: !simpleRegex
@@ -544,6 +548,8 @@ FromToRegex: !simpleRegex
   def: \b(da(l(l[oae'])?|i|gli)?).+(a(l(l[oae'])?|i|gli)?)\b.+
 SingleAmbiguousMonthRegex: !simpleRegex
   def: (march)
+SingleAmbiguousTermsRegex: !simpleRegex
+  def: (?<!l')una\b
 UnspecificDatePeriodRegex: !simpleRegex
   def: ^(settimana|finesettimana|weekend|mese|anno)$
 PrepositionSuffixRegex: !simpleRegex
