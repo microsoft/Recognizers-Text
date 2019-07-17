@@ -38,6 +38,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SinceSuffixRegex { get; }
 
+        Regex EqualRegex { get; }
+
         ImmutableDictionary<string, string> UnitMap { get; }
 
         ImmutableDictionary<string, long> UnitValueMap { get; }

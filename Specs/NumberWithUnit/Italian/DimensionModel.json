@@ -141,7 +141,6 @@
   },
   {
     "Input": "` ` l'amministrazione non vuole sorprese, ' ' osserva jack zaves , che , come direttore dei servizi di carburante delle compagnie aeree americane, compra circa 2,4 miliardi di galloni di carburante per aerei all'anno.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -520,7 +519,6 @@
   },
   {
     "Input": "lo svincolo con l'autostrada 35 e l'autostrada 115 per Lindsay e Peterborough (uscita 436) si trova a 500 metri ad est di Bennett Road.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -621,6 +619,48 @@
         "Resolution": {
           "value": "2204,62",
           "unit": "Libbra"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "l'amministrazione",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "l ' autostrada",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Ci sono 20 l d'acqua qui.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 l",
+        "Start": 8,
+        "End": 11,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Litro",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ci sono 10l d'acqua qui.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10l",
+        "Start": 8,
+        "End": 10,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Litro",
+          "value": "10"
         }
       }
     ]

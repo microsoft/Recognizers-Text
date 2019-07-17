@@ -1394,14 +1394,15 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         }
 
         String cardinalStr = match.getMatch().get().getGroup("cardinal").value.toLowerCase();
-        String orderStr = match.getMatch().get().getGroup("order").value.toLowerCase();
+        String orderQuarterStr = match.getMatch().get().getGroup("orderQuarter").value.toLowerCase();
+        String orderStr = StringUtility.isNullOrEmpty(orderQuarterStr) ? match.getMatch().get().getGroup("order").value.toLowerCase() : null;
         String numberStr = match.getMatch().get().getGroup("number").value;
 
         boolean noSpecificYear = false;
         int year = this.config.getDateExtractor().getYearFromText(match.getMatch().get());
 
         if (year == Constants.InvalidYear) {
-            int swift = this.config.getSwiftYear(orderStr);
+            int swift = StringUtility.isNullOrEmpty(orderQuarterStr) ? this.config.getSwiftYear(orderStr) : 0;
             if (swift < -1) {
                 swift = 0;
                 noSpecificYear = true;
@@ -1412,6 +1413,18 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         int quarterNum;
         if (!StringUtility.isNullOrEmpty(numberStr)) {
             quarterNum = Integer.parseInt(numberStr);
+        } else if (!StringUtility.isNullOrEmpty(orderQuarterStr)) {
+            int month = referenceDate.getMonthValue();
+            quarterNum = (int)Math.ceil((double)month / Constants.TrimesterMonthCount);
+            int swift = this.config.getSwiftYear(orderQuarterStr);
+            quarterNum += swift;
+            if (quarterNum <= 0) {
+                quarterNum += Constants.QuarterCount;
+                year -= 1;
+            } else if (quarterNum > Constants.QuarterCount) {
+                quarterNum -= Constants.QuarterCount;
+                year += 1;
+            }
         } else {
             quarterNum = this.config.getCardinalMap().get(cardinalStr);
         }

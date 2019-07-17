@@ -563,6 +563,7 @@
               "timex": "2016-11-08",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2016-11-08"
             }
           ]
@@ -589,12 +590,14 @@
               "timex": "XXXX-08",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2016-08-01"
             },
             {
               "timex": "XXXX-08",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2017-08-01"
             }
           ]
@@ -621,6 +624,7 @@
               "timex": "2016-08",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2016-08-01"
             }
           ]
@@ -4023,6 +4027,7 @@
               "timex": "2010",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2010-01-01"
             }
           ]
@@ -4081,6 +4086,7 @@
               "timex": "2018",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2018-01-01"
             }
           ]
@@ -4097,6 +4103,7 @@
               "timex": "2000",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2000-01-01"
             }
           ]
@@ -4276,6 +4283,7 @@
               "timex": "2018-05-29",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2018-05-29"
             }
           ]
@@ -4302,6 +4310,7 @@
               "timex": "2018-05-26",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2018-05-26"
             }
           ]
@@ -4627,6 +4636,7 @@
               "timex": "2018-06-26T16",
               "Mod": "before",
               "type": "datetimerange",
+              "sourceEntity": "datetimerange",
               "end": "2018-06-26 16:00:00"
             }
           ]
@@ -4679,6 +4689,7 @@
               "timex": "2018-06-19T14",
               "Mod": "before",
               "type": "datetimerange",
+              "sourceEntity": "datetimerange",
               "end": "2018-06-19 14:00:00"
             }
           ]
@@ -4705,24 +4716,28 @@
               "timex": "XXXX-02-01T06:00",
               "Mod": "before",
               "type": "datetimerange",
+              "sourceEntity": "datetimerange",
               "end": "2018-02-01 06:00:00"
             },
             {
               "timex": "XXXX-02-01T06:00",
               "Mod": "before",
               "type": "datetimerange",
+              "sourceEntity": "datetimerange",
               "end": "2019-02-01 06:00:00"
             },
             {
               "timex": "XXXX-02-01T18:00",
               "Mod": "before",
               "type": "datetimerange",
+              "sourceEntity": "datetimerange",
               "end": "2018-02-01 18:00:00"
             },
             {
               "timex": "XXXX-02-01T18:00",
               "Mod": "before",
               "type": "datetimerange",
+              "sourceEntity": "datetimerange",
               "end": "2019-02-01 18:00:00"
             }
           ]
@@ -5594,12 +5609,14 @@
               "timex": "XXXX-07-04",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2018-07-04"
             },
             {
               "timex": "XXXX-07-04",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2019-07-04"
             }
           ]
@@ -6125,6 +6142,7 @@
               "timex": "T07:00",
               "Mod": "since",
               "type": "timerange",
+              "sourceEntity": "datetimerange",
               "start": "07:00:00"
             }
           ]
@@ -6599,6 +6617,7 @@
               "timex": "(2019-01-01,2019-04-01,P3M)",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2019-01-01"
             }
           ]
@@ -6651,6 +6670,7 @@
               "timex": "2012",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2012-01-01"
             }
           ]
@@ -6677,6 +6697,7 @@
               "timex": "2016",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2016-01-01"
             }
           ]
@@ -6703,6 +6724,7 @@
               "timex": "2016-01-01",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2016-01-01"
             }
           ]
@@ -6822,6 +6844,7 @@
               "timex": "2018",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2018-01-01"
             }
           ]
@@ -6906,6 +6929,7 @@
               "timex": "T07:00",
               "Mod": "since",
               "type": "timerange",
+              "sourceEntity": "datetimerange",
               "start": "07:00:00"
             }
           ]
@@ -6998,6 +7022,7 @@
               "timex": "T14:30",
               "Mod": "before",
               "type": "timerange",
+              "sourceEntity": "datetimerange",
               "end": "14:30:00"
             }
           ]

@@ -46,8 +46,14 @@ class AbstractNumberModel(Model):
 
     def parse(self, query: str) -> List[ModelResult]:
         query = QueryProcessor.preprocess(query, True)
-        extract_results = self.extractor.extract(query)
-        results = list(map(self.__single_parse, extract_results))
+        results = []
+
+        try:
+            extract_results = self.extractor.extract(query)
+            results = list(map(self.__single_parse, extract_results))
+        except Exception:
+            pass
+
         return results
 
     def __single_parse(self, source: ExtractResult) -> Optional[ModelResult]:

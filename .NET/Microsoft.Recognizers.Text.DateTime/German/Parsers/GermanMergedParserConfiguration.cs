@@ -13,6 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             AfterRegex = GermanMergedExtractorConfiguration.AfterRegex;
             SinceRegex = GermanMergedExtractorConfiguration.SinceRegex;
             AroundRegex = GermanMergedExtractorConfiguration.AroundRegex;
+            EqualRegex = GermanMergedExtractorConfiguration.EqualRegex;
             SuffixAfter = GermanMergedExtractorConfiguration.SuffixAfterRegex;
             YearRegex = GermanDatePeriodExtractorConfiguration.YearRegex;
 
@@ -33,6 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex SinceRegex { get; }
 
         public Regex AroundRegex { get; }
+
+        public Regex EqualRegex { get; }
 
         public Regex SuffixAfter { get; }
 

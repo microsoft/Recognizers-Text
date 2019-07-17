@@ -71,6 +71,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\Swedish\Swedish-Choice.yaml = ..\Patterns\Swedish\Swedish-Choice.yaml
 		..\Patterns\Swedish\Swedish-Numbers.yaml = ..\Patterns\Swedish\Swedish-Numbers.yaml
 		..\Patterns\Turkish\Turkish-DateTime.yaml = ..\Patterns\Turkish\Turkish-DateTime.yaml
+		..\Patterns\Turkish\Turkish-Numbers.yaml = ..\Patterns\Turkish\Turkish-Numbers.yaml
+		..\Patterns\Turkish\Turkish-NumbersWithUnit.yaml = ..\Patterns\Turkish\Turkish-NumbersWithUnit.yaml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text.DataDrivenTests", "Microsoft.Recognizers.Text.DataDrivenTests\Microsoft.Recognizers.Text.DataDrivenTests.csproj", "{2783050D-97E2-4F10-99F0-E2D970FD996A}"

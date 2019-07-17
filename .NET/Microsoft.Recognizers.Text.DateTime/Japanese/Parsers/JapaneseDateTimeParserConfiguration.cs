@@ -43,6 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             UntilRegex = JapaneseMergedExtractorConfiguration.UntilRegex;
             SincePrefixRegex = JapaneseMergedExtractorConfiguration.SincePrefixRegex;
             SinceSuffixRegex = JapaneseMergedExtractorConfiguration.SinceSuffixRegex;
+            EqualRegex = JapaneseMergedExtractorConfiguration.EqualRegex;
         }
 
         public int TwoNumYear => int.Parse(DateTimeDefinitions.TwoNumYear);
@@ -112,6 +113,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public Regex SincePrefixRegex { get; }
 
         public Regex SinceSuffixRegex { get; }
+
+        public Regex EqualRegex { get; }
 
         public static int GetSwiftDay(string text)
         {

@@ -93,9 +93,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
-        public static string DetermineDateTimeType(string type, bool hasBefore, bool hasAfter, bool hasSince)
+        public static string DetermineDateTimeType(string type, bool hasRangeChangingMod)
         {
-            if (hasBefore || hasAfter || hasSince)
+            if (hasRangeChangingMod)
             {
                 if (type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal))
                 {
@@ -126,13 +126,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateTimeParseResult pr = null;
 
             // push, save teh MOD string
-            bool hasBefore = false, hasAfter = false, hasUntil = false, hasSince = false;
+            bool hasBefore = false, hasAfter = false, hasUntil = false, hasSince = false, hasEqual = false;
             string modStr = string.Empty, modStrPrefix = string.Empty, modStrSuffix = string.Empty;
             var beforeMatch = config.BeforeRegex.MatchEnd(er.Text, trim: true);
             var afterMatch = config.AfterRegex.MatchEnd(er.Text, trim: true);
             var untilMatch = config.UntilRegex.MatchBegin(er.Text, trim: true);
             var sinceMatchPrefix = config.SincePrefixRegex.MatchBegin(er.Text, trim: true);
             var sinceMatchSuffix = config.SinceSuffixRegex.MatchEnd(er.Text, trim: true);
+            var equalMatch = config.EqualRegex.MatchBegin(er.Text, trim: true);
 
             if (beforeMatch.Success && !IsDurationWithBeforeAndAfter(er))
             {
@@ -155,6 +156,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Length -= untilMatch.Length;
                 er.Text = er.Text.Substring(untilMatch.Length);
                 modStr = untilMatch.Value;
+            }
+            else if (equalMatch.Success)
+            {
+                hasEqual = true;
+                er.Start += equalMatch.Length;
+                er.Length -= equalMatch.Length;
+                er.Text = er.Text.Substring(equalMatch.Length);
+                modStr = equalMatch.Value;
             }
             else
             {
@@ -257,28 +266,42 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Value = val;
             }
 
-            pr.Value = DateTimeResolution(pr, hasBefore, hasAfter, hasSince);
+            if (hasEqual)
+            {
+                pr.Length += modStr.Length;
+                pr.Start -= modStr.Length;
+                pr.Text = modStr + pr.Text;
+            }
+
+            var hasRangeChangingMod = hasBefore || hasAfter || hasSince;
+            if (pr.Value != null)
+            {
+                ((DateTimeResolutionResult)pr.Value).HasRangeChangingMod = hasRangeChangingMod;
+            }
+
+            pr.Value = DateTimeResolution(pr, hasRangeChangingMod);
 
             // change the type at last for the after or before mode
-            pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasBefore, hasAfter, hasSince)}";
+            pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasRangeChangingMod)}";
 
             return pr;
         }
 
-        public SortedDictionary<string, object> DateTimeResolution(DateTimeParseResult slot, bool hasBefore, bool hasAfter, bool hasSince)
+        public SortedDictionary<string, object> DateTimeResolution(DateTimeParseResult slot, bool hasRangeChangingMod)
         {
             var resolutions = new List<Dictionary<string, string>>();
             var res = new Dictionary<string, object>();
-
-            var type = slot.Type;
-            var typeOutput = DetermineDateTimeType(slot.Type, hasBefore, hasAfter, hasSince);
-            var timex = slot.TimexStr;
 
             var val = (DateTimeResolutionResult)slot.Value;
             if (val == null)
             {
                 return null;
             }
+
+            var type = slot.Type;
+            var typeOutput = DetermineDateTimeType(slot.Type, hasRangeChangingMod);
+            var sourceEntity = DetermineSourceEntityType(slot.Type, typeOutput, val.HasRangeChangingMod);
+            var timex = slot.TimexStr;
 
             var isLunar = val.IsLunar;
             var mod = val.Mod;
@@ -371,6 +394,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         value.Add(ResolutionKey.Type, typeOutput);
                     }
 
+                    if (!string.IsNullOrEmpty(sourceEntity))
+                    {
+                        value.Add(DateTimeResolutionKey.SourceEntity, sourceEntity);
+                    }
+
                     foreach (var q in dictionary)
                     {
                         if (value.ContainsKey(q.Key))
@@ -411,6 +439,26 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
+        }
+
+        public string DetermineSourceEntityType(string sourceType, string newType, bool hasMod)
+        {
+            if (!hasMod)
+            {
+                return null;
+            }
+
+            if (!newType.Equals(sourceType, StringComparison.Ordinal))
+            {
+                return Constants.SYS_DATETIME_DATETIMEPOINT;
+            }
+
+            if (newType.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal))
+            {
+                return Constants.SYS_DATETIME_DATETIMEPERIOD;
+            }
+
+            return null;
         }
 
         internal static void ResolveAmpm(Dictionary<string, object> resolutionDic, string keyName)

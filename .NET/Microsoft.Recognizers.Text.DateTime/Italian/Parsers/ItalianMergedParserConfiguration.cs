@@ -12,6 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             AfterRegex = ItalianMergedExtractorConfiguration.AfterRegex;
             SinceRegex = ItalianMergedExtractorConfiguration.SinceRegex;
             AroundRegex = ItalianMergedExtractorConfiguration.AroundRegex;
+            EqualRegex = ItalianMergedExtractorConfiguration.EqualRegex;
             SuffixAfter = ItalianMergedExtractorConfiguration.SuffixAfterRegex;
             YearRegex = ItalianDatePeriodExtractorConfiguration.YearRegex;
 
@@ -32,6 +33,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public Regex SinceRegex { get; }
 
         public Regex AroundRegex { get; }
+
+        public Regex EqualRegex { get; }
 
         public Regex SuffixAfter { get; }
 
