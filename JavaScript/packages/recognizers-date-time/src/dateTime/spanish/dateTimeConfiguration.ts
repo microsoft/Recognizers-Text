@@ -33,7 +33,7 @@ export class SpanishDateTimeExtractorConfiguration implements IDateTimeExtractor
     readonly connectorRegex: RegExp;
 
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         this.prepositionRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PrepositionRegex, "gis");
         this.nowRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NowRegex, "gis");
         this.suffixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SuffixRegex, "gis");
@@ -50,7 +50,7 @@ export class SpanishDateTimeExtractorConfiguration implements IDateTimeExtractor
         this.connectorRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorRegex, "gis");
         this.nightRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NightRegex, "gis");
 
-        this.datePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
+        this.datePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(dmyDateFormat));
         this.timePointExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
         this.utilityConfiguration = new SpanishDateTimeUtilityConfiguration();

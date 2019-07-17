@@ -34,7 +34,7 @@ export class SpanishSetExtractorConfiguration implements ISetExtractorConfigurat
     readonly timePeriodExtractor: IDateTimeExtractor;
     readonly dateTimePeriodExtractor: IDateTimeExtractor;
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         this.lastRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.LastDateRegex, "gis");
         this.periodicRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PeriodicRegex, "gis");
         this.eachUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.EachUnitRegex, "gis");
@@ -46,11 +46,11 @@ export class SpanishSetExtractorConfiguration implements ISetExtractorConfigurat
 
         this.durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
         this.timeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
-        this.dateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
-        this.dateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
-        this.datePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
+        this.dateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(dmyDateFormat));
+        this.dateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(dmyDateFormat));
+        this.datePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration(dmyDateFormat));
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
-        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
+        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration(dmyDateFormat));
     }
 }
 

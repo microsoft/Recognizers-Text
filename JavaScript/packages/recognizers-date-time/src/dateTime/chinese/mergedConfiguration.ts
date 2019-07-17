@@ -46,14 +46,14 @@ class ChineseMergedExtractorConfiguration implements IMergedExtractorConfigurati
     readonly numberEndingPattern: RegExp
     readonly filterWordRegexList: RegExp[]
 
-    constructor() {
-        this.dateExtractor = new ChineseDateExtractor();
+    constructor(dmyDateFormat: boolean) {
+        this.dateExtractor = new ChineseDateExtractor(dmyDateFormat);
         this.timeExtractor = new ChineseTimeExtractor();
-        this.dateTimeExtractor = new ChineseDateTimeExtractor();
-        this.datePeriodExtractor = new ChineseDatePeriodExtractor();
+        this.dateTimeExtractor = new ChineseDateTimeExtractor(dmyDateFormat);
+        this.datePeriodExtractor = new ChineseDatePeriodExtractor(dmyDateFormat);
         this.timePeriodExtractor = new ChineseTimePeriodExtractor();
-        this.dateTimePeriodExtractor = new ChineseDateTimePeriodExtractor();
-        this.setExtractor = new ChineseSetExtractor();
+        this.dateTimePeriodExtractor = new ChineseDateTimePeriodExtractor(dmyDateFormat);
+        this.setExtractor = new ChineseSetExtractor(dmyDateFormat);
         this.holidayExtractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration());
         this.durationExtractor = new ChineseDurationExtractor();
     }
@@ -62,8 +62,8 @@ class ChineseMergedExtractorConfiguration implements IMergedExtractorConfigurati
 export class ChineseMergedExtractor extends BaseMergedExtractor {
     private readonly dayOfMonthRegex: RegExp;
 
-    constructor(options: DateTimeOptions) {
-        let config = new ChineseMergedExtractorConfiguration();
+    constructor(options: DateTimeOptions, dmyDateFormat: boolean = false) {
+        let config = new ChineseMergedExtractorConfiguration(dmyDateFormat);
         super(config, options);
         this.dayOfMonthRegex = RegExpUtility.getSafeRegExp(`^\\d{1,2}号`, 'gi');
     }
@@ -163,26 +163,26 @@ class ChineseMergedParserConfiguration implements IMergedParserConfiguration {
     readonly durationParser: BaseDurationParser;
     readonly setParser: BaseSetParser;
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         this.beforeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedBeforeRegex);
         this.afterRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedAfterRegex);
         this.sinceRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedAfterRegex);
 
-        this.dateParser = new ChineseDateParser();
+        this.dateParser = new ChineseDateParser(dmyDateFormat);
         this.holidayParser = new ChineseHolidayParser();
         this.timeParser = new ChineseTimeParser();
-        this.dateTimeParser = new ChineseDateTimeParser();
-        this.datePeriodParser = new ChineseDatePeriodParser();
+        this.dateTimeParser = new ChineseDateTimeParser(dmyDateFormat);
+        this.datePeriodParser = new ChineseDatePeriodParser(dmyDateFormat);
         this.timePeriodParser = new ChineseTimePeriodParser();
-        this.dateTimePeriodParser = new ChineseDateTimePeriodParser();
+        this.dateTimePeriodParser = new ChineseDateTimePeriodParser(dmyDateFormat);
         this.durationParser = new ChineseDurationParser();
-        this.setParser = new ChineseSetParser();
+        this.setParser = new ChineseSetParser(dmyDateFormat);
     }
 }
 
 export class ChineseMergedParser extends BaseMergedParser {
-    constructor() {
-        let config = new ChineseMergedParserConfiguration();
+    constructor(dmyDateFormat: boolean) {
+        let config = new ChineseMergedParserConfiguration(dmyDateFormat);
         super(config, 0);
     }
 
@@ -255,8 +255,8 @@ export class ChineseMergedParser extends BaseMergedParser {
 }
 
 export class ChineseFullMergedParser extends BaseMergedParser {
-    constructor() {
-        let config = new ChineseMergedParserConfiguration();
+    constructor(dmyDateFormat: boolean = false) {
+        let config = new ChineseMergedParserConfiguration(dmyDateFormat);
         super(config, 0);
     }
 

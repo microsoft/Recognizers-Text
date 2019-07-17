@@ -42,16 +42,16 @@ export class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
     readonly numberEndingPattern: RegExp
     readonly filterWordRegexList: RegExp[]
 
-    constructor() {
-        this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+    constructor(dmyDateFormat: boolean = false) {
+        this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(dmyDateFormat));
         this.timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-        this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
-        this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+        this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(dmyDateFormat));
+        this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(dmyDateFormat));
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
-        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
+        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(dmyDateFormat));
         this.holidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-        this.setExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration());
+        this.setExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration(dmyDateFormat));
         this.integerExtractor = new EnglishIntegerExtractor();
         this.afterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex);
         this.sinceRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SinceRegex);

@@ -28,17 +28,20 @@ export class FrenchDateExtractorConfiguration implements IDateExtractorConfigura
     readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
+
+        let enableDmy = dmyDateFormat || FrenchDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
+
         this.dateRegexList = [
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor1, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor2, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor3, "gis"),
             
-            FrenchDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor5, "gis"):
                 RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor4, "gis"),
 
-            FrenchDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor4, "gis"):
                 RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor5, "gis"),
 
@@ -110,7 +113,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
     readonly dateTokenPrefix: string;
 
-    constructor(config: FrenchCommonDateTimeParserConfiguration) {
+    constructor(config: FrenchCommonDateTimeParserConfiguration, dmyDateFormat: boolean) {
         this.ordinalExtractor = config.ordinalExtractor;
         this.integerExtractor = config.integerExtractor;
         this.cardinalExtractor = config.cardinalExtractor;
@@ -122,7 +125,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
         this.dayOfWeek = config.dayOfWeek;
         this.unitMap = config.unitMap;
         this.cardinalMap = config.cardinalMap;
-        this.dateRegex = new FrenchDateExtractorConfiguration().dateRegexList;
+        this.dateRegex = new FrenchDateExtractorConfiguration(dmyDateFormat).dateRegexList;
         this.onRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.OnRegex, "gis");
         this.specialDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecialDayRegex, "gis");
         this.specialDayWithNumRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecialDayWithNumRegex, "gis");

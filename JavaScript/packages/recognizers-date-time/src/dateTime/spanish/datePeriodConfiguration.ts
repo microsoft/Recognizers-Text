@@ -34,7 +34,7 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     readonly betweenRegex: RegExp;
     readonly nowRegex: RegExp
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         this.simpleCasesRegexes = [
             RegExpUtility.getSafeRegExp(SpanishDateTime.SimpleCasesRegex),
             RegExpUtility.getSafeRegExp(SpanishDateTime.DayBetweenRegex),
@@ -74,7 +74,7 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
         this.betweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex);
         this.nowRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NowRegex);
 
-        this.datePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
+        this.datePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(dmyDateFormat));
         this.integerExtractor = new SpanishIntegerExtractor();
         this.numberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());

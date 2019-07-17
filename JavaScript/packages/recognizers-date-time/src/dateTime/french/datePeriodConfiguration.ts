@@ -36,7 +36,7 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
     readonly weekDayOfMonthRegex: RegExp;
     readonly nowRegex: RegExp
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         this.simpleCasesRegexes = [
             RegExpUtility.getSafeRegExp(FrenchDateTime.SimpleCasesRegex),
             RegExpUtility.getSafeRegExp(FrenchDateTime.BetweenRegex),
@@ -74,7 +74,7 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
         this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex2);
         this.nowRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NowRegex);
 
-        this.datePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
+        this.datePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(dmyDateFormat));
         this.integerExtractor = new FrenchIntegerExtractor();
         this.numberParser = new BaseNumberParser(new FrenchNumberParserConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());

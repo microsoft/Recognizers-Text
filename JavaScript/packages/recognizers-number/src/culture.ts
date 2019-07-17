@@ -7,6 +7,7 @@ export class Culture extends BaseCulture {
 
   static readonly supportedCultures: Array<Culture> = [
     new Culture("English", Culture.English, new LongFormatType(',', '.')),
+    new Culture("EnglishOthers", Culture.EnglishOthers, new LongFormatType(',', '.')),
     new Culture("Chinese", Culture.Chinese, null),
     new Culture("Spanish", Culture.Spanish, new LongFormatType('.', ',')),
     new Culture("Portuguese", Culture.Portuguese, new LongFormatType('.', ',')),
