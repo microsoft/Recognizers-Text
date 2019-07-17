@@ -7,3 +7,6 @@ coverage
 dist
 compiled
 .awcache
+!.vscode/
+.vscode/*
+!.vscode/extensions.json
