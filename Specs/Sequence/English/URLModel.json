@@ -443,5 +443,101 @@
         }
       }
     ]
+  },
+  {
+    "Input": "[image: image2.png]http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.",
+    "NotSupportedByDesign": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "[image: image2.png]http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.com",
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.com",
+        "Start": 19,
+        "End": 79,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.com",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.com",
+        "Start": 19,
+        "End": 79,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "abc.d-ef.123ghi.com.sa/",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "abc.d-ef.123ghi.com.sa/",
+        "Start": 0,
+        "End": 22,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "abc.d-ef.123ghi.com.sa/"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "...",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "http://a.b-.co",
+    "NotSupportedBy": "dotnet,python,java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://a.b-.co",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://a.b-.co"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://362",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "abc.def.ghi.com.sa",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "abc.def.ghi.com.sa",
+        "Start": 0,
+        "End": 17,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "abc.def.ghi.com.sa"
+        }
+      }
+    ]
   }
 ]
