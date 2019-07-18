@@ -159,7 +159,7 @@ CurrencySuffixList: !dictionary
 #Sierra Leonean leone
     Sierra Leonean leone: レオン|シエラレオネ・レオン|シエラレオネレオン
 #Spain
-    Peseta: ユーロ
+    Peseta: ペセタ
 #Swazi lilangeni
     Swazi lilangeni: リランゲニ|スワジランド・リランゲニ|スワジランドリランゲニ
 #Tajikistani somoni
@@ -176,8 +176,8 @@ CurrencySuffixList: !dictionary
 #Vietnamese dong
     Vietnamese dong: ドン|ベトナム・ドン|ベトナムドン
     Indonesian rupiah: ルピア|インドネシア・ルピア|インドネシアルピア
-    Netherlands guilder: ユーロ|オランダ・ユーロ
-    Surinam florin: スリナム・ドル
+    Netherlands guilder: オランダ・ユーロ
+    Surinam florin: スリナムフロリン
 #Zambian kwacha
     Zambian kwacha: ザンビア・クワチャ
 #Dirham
@@ -217,8 +217,8 @@ CurrencySuffixList: !dictionary
     Krone: クローナ
     Øre: オーレ
 #Franc
-    West African CFA franc: CFAフラン
-    Central African CFA franc: CFAフラン
+    West African CFA franc: 西アフリカCFAフラン
+    Central African CFA franc: 中央アフリカCFAフラン
     Comorian franc: コモロ・フラン
     Congolese franc: コンゴ・フラン
     Burundian franc: ブルンジ・フラン
@@ -251,7 +251,7 @@ CurrencySuffixList: !dictionary
     Para: パラ
     Millime: ミリム
 #Peso
-    Argentine peso: ペソ|アルゼンチン・ペソ
+    Argentine peso: アルゼンチン・ペソ
     Chilean peso: チリ・ペソ
     Colombian peso: コロンビア・ペソ
     Cuban peso: 兌換ペソ
@@ -262,7 +262,7 @@ CurrencySuffixList: !dictionary
     Peso: ペソ
     Centavo: センターボ
 #Pound
-    Alderney pound: ガーンジー・ポンド
+    Alderney pound: オルダニーポンド
     British pound: UKポンド
     Guernsey pound: ガーンジー・ポンド
     Saint Helena pound: セントヘレナ・ポンド
@@ -276,12 +276,12 @@ CurrencySuffixList: !dictionary
     Sudanese pound: スーダン・ポンド
     Syrian pound: シリア・ポンド
     Pound: ポンド
-    Pence: ペニー
+    Pence: ペンス
     Shilling: シリング
 #Dollar
     United States dollar: ドル|USドル
     East Caribbean dollar: 東カリブ・ドル
-    Australian dollar: オーストラリア・ドル
+    Australian dollar: オーストラリア・ドル|オーストラリアドル
     Bahamian dollar: バハマ・ドル
     Barbadian dollar: バルバドス・ドル
     Belize dollar: ベリーズ・ドル
@@ -291,14 +291,14 @@ CurrencySuffixList: !dictionary
     Canadian dollar: カナダ・ドル
     Cayman Islands dollar: ケイマン諸島・ドル
     New Zealand dollar: ニュージーランド・ドル
-    Cook Islands dollar: ニュージーランド・ドル|ニュージーランド・ドル
+    Cook Islands dollar: クックアイランド・ドル
     Fijian dollar: フィジー・ドル|フィジー・ドル
     Guyanese dollar: ガイアナ・ドル|ガイアナ・ドル
     Hong Kong dollar: 香港ドル
     Macau Pataca: マカオ・パタカ|マカオ・パタカ
     New Taiwan dollar: ニュー台湾ドル|ニュー台湾ドル
     Jamaican dollar: ジャマイカ・ドル|ジャマイカドル
-    Kiribati dollar: オーストラリア・ドル|オーストラリアドル
+    Kiribati dollar: キリバス・ドル
     Liberian dollar: リベリア・ドル|リベリアドル
     Namibian dollar: ナミビア・ドル|ナミビアドル
     Surinamese dollar: スリナム・ドル|スリナムドル

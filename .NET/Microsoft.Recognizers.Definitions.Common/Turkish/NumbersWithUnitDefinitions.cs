@@ -659,7 +659,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"Cubic inch", @"inç küp" },
             { @"Cubic foot", @"fit küp" },
             { @"Cubic mile", @"mil küp" },
-            { @"Fluid ounce", @"sıvı ons|oz" },
+            { @"Fluid ounce", @"sıvı ons" },
             { @"Teaspoon", @"tatlı kaşığı" },
             { @"Tablespoon", @"yemek kaşığı" },
             { @"Pint", @"pint" },
