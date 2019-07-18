@@ -475,8 +475,8 @@
     "Results": [
       {
         "Text": "http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.com",
-        "Start": 19,
-        "End": 79,
+        "Start": 0,
+        "End": 60,
         "TypeName": "url",
         "Resolution": {
           "value": "http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.com"
@@ -536,6 +536,21 @@
         "TypeName": "url",
         "Resolution": {
           "value": "abc.def.ghi.com.sa"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "https://web.archive.org/web/20160308231823/http://63-characters-is-the-longest-possible-domain-name-for-a-website.com/",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "https://web.archive.org/web/20160308231823/http://63-characters-is-the-longest-possible-domain-name-for-a-website.com/",
+        "Start": 0,
+        "End": 117,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://web.archive.org/web/20160308231823/http://63-characters-is-the-longest-possible-domain-name-for-a-website.com/"
         }
       }
     ]
