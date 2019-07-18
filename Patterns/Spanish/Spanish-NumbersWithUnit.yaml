@@ -87,7 +87,7 @@ CurrencySuffixList: !dictionary
     Céntimo argelino: centimo argelino|centimos argelinos
     #Argentina
     Peso argentino: peso argentino|pesos argentinos|peso|pesos|ar$|ars
-    Centavo argentino: centavo argentino|centavos argentinos|centavo|ctvo.|ctvos.
+    Centavo argentino: centavo argentino|centavos argentinos|ctvo.|ctvos.
     #Armenia
     Dram armenio: dram armenio|dram armenios|dram|դր.
     Luma armenio: luma armenio|luma armenios
@@ -393,7 +393,7 @@ CurrencySuffixList: !dictionary
     Rupia nepalí: rupia nepalí|rupias nepalies|npr
     Paisa nepalí: paisa nepalí|paisas nepalies
     #Nicaragua
-    Córdoba nicaragüense: córdoba nicaragüense|córdobas nicaragüenses|c$|nio
+    Córdoba nicaragüense: córdoba nicaragüense|córdobas nicaragüenses|nio
     Centavo nicaragüense: centavo nicaragüense|centavos nicaragüenses
     #Níger -> Franco CFA de África Occidental
     #Nigeria
@@ -613,7 +613,7 @@ CurrencyPrefixList: !dictionary
     Yen: ¥|jpy
     Euro: €|eur
     Florín: ƒ
-    Libra: £|gbp
+    Libra: £
     Colón costarricense: ₡
     Lira turca: ₺
 AmbiguousCurrencyUnitList: !list

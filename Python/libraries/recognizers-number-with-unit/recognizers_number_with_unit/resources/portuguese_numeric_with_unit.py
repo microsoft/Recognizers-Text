@@ -67,7 +67,7 @@ class PortugueseNumericWithUnit:
                                ("Dinar argelino", "dinar argelino|dinares argelinos|dzd"),
                                ("Cêntimo argelino", "centimo argelino|centimos argelinos|cêntimo argelino|cêntimos argelinos|centavo argelino|centavos argelinos"),
                                ("Peso argentino", "peso argentino|pesos argentinos|peso|pesos|ar$|ars"),
-                               ("Centavo argentino", "centavo argentino|centavos argentinos|centavo|ctvo.|ctvos."),
+                               ("Centavo argentino", "centavo argentino|centavos argentinos|ctvo.|ctvos."),
                                ("Dram armênio", "dram armênio|dram armênios|dram arménio|dram arménios|dram armenio|dram armenios|dram|drame|drames|դր."),
                                ("Luma armênio", "luma armênio|lumas armênios|luma arménio|lumas arménios|luma armenio|lumas armenios|luma|lumas"),
                                ("Florim arubano", "florín arubeño|florines arubeños|ƒ arubeños|aƒ|awg"),
@@ -364,7 +364,7 @@ class PortugueseNumericWithUnit:
                                ("Yen", "¥|jpy"),
                                ("Euro", "€|eur"),
                                ("Florim", "ƒ"),
-                               ("Libra", "£|gbp"),
+                               ("Libra", "£"),
                                ("Colón costarriquenho", "₡"),
                                ("Lira turca", "₺")])
     AmbiguousCurrencyUnitList = [r'le']

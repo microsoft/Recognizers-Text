@@ -79,7 +79,7 @@ public class PortugueseNumericWithUnit {
         .put("Dinar argelino", "dinar argelino|dinares argelinos|dzd")
         .put("Cêntimo argelino", "centimo argelino|centimos argelinos|cêntimo argelino|cêntimos argelinos|centavo argelino|centavos argelinos")
         .put("Peso argentino", "peso argentino|pesos argentinos|peso|pesos|ar$|ars")
-        .put("Centavo argentino", "centavo argentino|centavos argentinos|centavo|ctvo.|ctvos.")
+        .put("Centavo argentino", "centavo argentino|centavos argentinos|ctvo.|ctvos.")
         .put("Dram armênio", "dram armênio|dram armênios|dram arménio|dram arménios|dram armenio|dram armenios|dram|drame|drames|դր.")
         .put("Luma armênio", "luma armênio|lumas armênios|luma arménio|lumas arménios|luma armenio|lumas armenios|luma|lumas")
         .put("Florim arubano", "florín arubeño|florines arubeños|ƒ arubeños|aƒ|awg")
@@ -380,7 +380,7 @@ public class PortugueseNumericWithUnit {
         .put("Yen", "¥|jpy")
         .put("Euro", "€|eur")
         .put("Florim", "ƒ")
-        .put("Libra", "£|gbp")
+        .put("Libra", "£")
         .put("Colón costarriquenho", "₡")
         .put("Lira turca", "₺")
         .build();
