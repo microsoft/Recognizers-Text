@@ -801,6 +801,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     text = text.Replace(early, string.Empty);
                     hasEarly = true;
                     ret.Comment = Constants.Comment_Early;
+                    ret.Mod = Constants.EARLY_MOD;
                 }
 
                 if (!hasEarly && !string.IsNullOrEmpty(match.Groups["late"].Value))
@@ -809,6 +810,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     text = text.Replace(late, string.Empty);
                     hasLate = true;
                     ret.Comment = Constants.Comment_Late;
+                    ret.Mod = Constants.LATE_MOD;
                 }
             }
 
