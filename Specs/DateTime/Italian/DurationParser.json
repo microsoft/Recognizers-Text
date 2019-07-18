@@ -480,6 +480,32 @@
     ]
   },
   {
+    "Input": "Andrò via per l'intero weekend",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Comment": "whole weekend/ entire weekend is not supported in English either",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "l'intero weekend",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2D",
+          "FutureResolution": {
+            "duration": "172800"
+          },
+          "PastResolution": {
+            "duration": "172800"
+          }
+        },
+        "Start": 14,
+        "Length": 16
+      }
+    ]
+  },
+  {
     "Input": "Andrò via per l'intero mese",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
