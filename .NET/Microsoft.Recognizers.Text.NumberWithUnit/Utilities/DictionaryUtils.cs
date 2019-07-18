@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Utilities
 {
@@ -31,12 +32,21 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Utilities
 
             foreach (var token in values)
             {
-                if (string.IsNullOrWhiteSpace(token) || sourceDictionary.ContainsKey(token))
+                if (string.IsNullOrWhiteSpace(token) || (sourceDictionary.ContainsKey(token) && sourceDictionary[token].Equals(key)))
                 {
                     continue;
                 }
 
-                sourceDictionary.Add(token, key);
+                // This segment of code is used to prevent duplicated key-values in resource files.
+                try
+                {
+                    sourceDictionary.Add(token, key);
+                }
+                catch (ArgumentException exception)
+                {
+                    // Temporarily catch exception to show where errors occur, should be removed afterward.
+                    Console.WriteLine(exception);
+                }
             }
         }
     }
