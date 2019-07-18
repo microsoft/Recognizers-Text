@@ -429,7 +429,7 @@ UnspecificEndOfRegex: !simpleRegex
 UnspecificEndOfRangeRegex: !simpleRegex
   def: \b(fine\s*(dell')?anno)\b
 PeriodTimeOfDayRegex: !simpleRegex
-  def: \b(((il|la|in|a(l(la)?)?|nel(la)?|di)\s+)?(((mattin[ao]|mattinata|pomeriggio|sera|serata|notte)(?<early>\s+presto)|(?<early>prim[ao]\s+)(mattin[ao]|mattinata|pomeriggio|sera|serata|notte))|((mattin[ao]|mattinata|pomeriggio|sera|serata|notte)(?<late>\s+(tardi|inoltrat[oa]|fonda))|(?<late>tard[oa]\s+)(mattin[ao]|mattinata|pomeriggio|sera|serata|notte))))\b
+  def: \b(((il|la|in|a(l(la)?)?|nel(la)?|di)\s+)?(((?<timeOfDay>mattin[ao]|mattinata|pomeriggio|sera|serata|notte)(?<early>\s+presto)?|(?<early>prim[ao]\s+)(?<timeOfDay>mattin[ao]|mattinata|pomeriggio|sera|serata|notte))|((?<timeOfDay>mattin[ao]|mattinata|pomeriggio|sera|serata|notte)(?<late>\s+(tardi|inoltrat[oa]|fonda))|(?<late>tard[oa]\s+)(?<timeOfDay>mattin[ao]|mattinata|pomeriggio|sera|serata|notte))))\b
 PeriodSpecificTimeOfDayRegex: !nestedRegex
   def: \b(({RelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\b((que)?sta\s*)(sera|notte))\b
   references: [ PeriodTimeOfDayRegex, RelativeRegex ]

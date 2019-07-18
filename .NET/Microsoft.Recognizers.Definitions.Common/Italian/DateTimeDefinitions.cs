@@ -186,7 +186,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string SpecificEndOfRegex = @"(alla\s+)?fine\s+(di|del(l['a])?)\s*$";
       public const string UnspecificEndOfRegex = @"(\b(a|((al)?la)\s+))?((fine\s+(della\s+)?giornata))\b";
       public const string UnspecificEndOfRangeRegex = @"\b(fine\s*(dell')?anno)\b";
-      public const string PeriodTimeOfDayRegex = @"\b(((il|la|in|a(l(la)?)?|nel(la)?|di)\s+)?(((mattin[ao]|mattinata|pomeriggio|sera|serata|notte)(?<early>\s+presto)|(?<early>prim[ao]\s+)(mattin[ao]|mattinata|pomeriggio|sera|serata|notte))|((mattin[ao]|mattinata|pomeriggio|sera|serata|notte)(?<late>\s+(tardi|inoltrat[oa]|fonda))|(?<late>tard[oa]\s+)(mattin[ao]|mattinata|pomeriggio|sera|serata|notte))))\b";
+      public const string PeriodTimeOfDayRegex = @"\b(((il|la|in|a(l(la)?)?|nel(la)?|di)\s+)?(((?<timeOfDay>mattin[ao]|mattinata|pomeriggio|sera|serata|notte)(?<early>\s+presto)?|(?<early>prim[ao]\s+)(?<timeOfDay>mattin[ao]|mattinata|pomeriggio|sera|serata|notte))|((?<timeOfDay>mattin[ao]|mattinata|pomeriggio|sera|serata|notte)(?<late>\s+(tardi|inoltrat[oa]|fonda))|(?<late>tard[oa]\s+)(?<timeOfDay>mattin[ao]|mattinata|pomeriggio|sera|serata|notte))))\b";
       public static readonly string PeriodSpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\b((que)?sta\s*)(sera|notte))\b";
       public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b({TimeOfDayRegex}(\s+(il|l'|del(l')?))?)\b";
       public const string LessThanRegex = @"\b(meno\s+di)\b";
