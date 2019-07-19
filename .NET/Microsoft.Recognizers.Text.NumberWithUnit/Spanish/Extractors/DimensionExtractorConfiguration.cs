@@ -1,13 +1,20 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
-
+using System.Linq;
 using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 {
     public class DimensionExtractorConfiguration : SpanishNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> DimensionSuffixList = NumbersWithUnitDefinitions.DimensionSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> DimensionSuffixList =
+            NumbersWithUnitDefinitions.InformationSuffixList
+                .Concat(AreaExtractorConfiguration.AreaSuffixList)
+                .Concat(LengthExtractorConfiguration.LengthSuffixList)
+                .Concat(SpeedExtractorConfiguration.SpeedSuffixList)
+                .Concat(VolumeExtractorConfiguration.VolumeSuffixList)
+                .Concat(WeightExtractorConfiguration.WeightSuffixList)
+                .ToImmutableDictionary(x => x.Key, x => x.Value);
 
         private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousDimensionUnitList.ToImmutableList();
 
