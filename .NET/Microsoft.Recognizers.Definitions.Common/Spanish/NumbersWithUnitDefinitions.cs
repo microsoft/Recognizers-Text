@@ -84,7 +84,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Halalá saudí", @"halalá saudí|hallalah" },
             { @"Dinar argelino", @"dinar argelino|dinares argelinos|dzd" },
             { @"Céntimo argelino", @"centimo argelino|centimos argelinos" },
-            { @"Peso argentino", @"peso argentino|pesos argentinos|peso|pesos|ar$|ars" },
+            { @"Peso argentino", @"peso argentino|pesos argentinos|ar$|ars" },
             { @"Centavo argentino", @"centavo argentino|centavos argentinos|ctvo.|ctvos." },
             { @"Dram armenio", @"dram armenio|dram armenios|dram|դր." },
             { @"Luma armenio", @"luma armenio|luma armenios" },
@@ -106,7 +106,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Centavo beliceño", @"centavo beliceño|centavos beliceños" },
             { @"Dólar bermudeño", @"dólar bermudeño|dólares bermudeños|bd$|bmd" },
             { @"Centavo bermudeño", @"centavo bermudeño|centavos bermudeños" },
-            { @"Rublo bielorruso", @"rublo bielorruso|rublos bielorrusos|br|byr" },
+            { @"Rublo bielorruso", @"rublo bielorruso|rublos bielorrusos|byr" },
             { @"Kópek bielorruso", @"kópek bielorruso|kópeks bielorrusos|kap" },
             { @"Kyat birmano", @"kyat birmano|kyats birmanos|mmk" },
             { @"Pya birmano", @"pya birmano|pyas birmanos" },
@@ -131,7 +131,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Dólar canadiense", @"dólar canadiense|dólares canadienses|c$|cad" },
             { @"Centavo canadiense", @"centavo canadiense|centavos canadienses" },
             { @"Peso chileno", @"peso chileno|pesos chilenos|cpl" },
-            { @"Yuan chino", @"yuan chino|yuanes chinos|yuan|yuanes|renminbi|rmb|cny|¥" },
+            { @"Yuan chino", @"yuan chino|yuanes chinos|yuan|yuanes|renminbi|rmb|cny|￥" },
             { @"Peso colombiano", @"peso colombiano|pesos colombianos|cop|col$" },
             { @"Centavo colombiano", @"centavo colombiano|centavos colombianos" },
             { @"Franco comorano", @"franco comorano|francos comoranos|kmf|₣" },
@@ -147,7 +147,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Peso cubano", @"peso cubano|pesos cubanos|cup" },
             { @"Peso cubano convertible", @"peso cubano convertible|pesos cubanos convertible|cuc" },
             { @"Corona danesa", @"corona danesa|coronas danesas|dkk" },
-            { @"Libra egipcia", @"libra egipcia|libras egipcias|egp|le" },
+            { @"Libra egipcia", @"libra egipcia|libras egipcias|egp|l.e." },
             { @"Piastra egipcia", @"piastra egipcia|piastras egipcias" },
             { @"Colón salvadoreño", @"colón salvadoreño|colones salvadoreños|svc" },
             { @"Dirham de los Emiratos Árabes Unidos", @"dirham|dirhams|dirham de los emiratos Árabes unidos|aed|dhs" },
@@ -465,7 +465,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Libra", @"lb|libra|libras" },
             { @"Onza", @"oz|onza|onzas" },
             { @"Grano", @"grano|granos" },
-            { @"Quilate", @"ct|kt|quilate|quilates" },
+            { @"Quilate", @"ct|quilate|quilates" },
             { @"bit", @"bit|bits" },
             { @"kilobit", @"kilobit|kilobits|kb|kbit" },
             { @"megabit", @"megabit|megabits|Mb|Mbit" },
@@ -590,7 +590,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Libra", @"lb|libra|libras" },
             { @"Onza", @"oz|onza|onzas" },
             { @"Grano", @"grano|granos|gr" },
-            { @"Quilate", @"ct|kt|quilate|quilates" }
+            { @"Quilate", @"ct|quilate|quilates" }
         };
     }
 }
