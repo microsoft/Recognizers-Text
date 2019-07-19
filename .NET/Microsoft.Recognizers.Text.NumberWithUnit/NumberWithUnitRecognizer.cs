@@ -460,8 +460,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Turkish.DimensionParserConfiguration())
                     },
                 }));
-           
-             RegisterModel<CurrencyModel>(
+
+            RegisterModel<CurrencyModel>(
                 Culture.Turkish,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
                 {
@@ -470,8 +470,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new BaseMergedUnitParser(new Turkish.CurrencyParserConfiguration())
                     },
                 }));
-                
-
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)
