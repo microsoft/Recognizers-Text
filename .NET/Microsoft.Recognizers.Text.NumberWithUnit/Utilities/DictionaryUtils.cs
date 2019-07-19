@@ -37,16 +37,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Utilities
                     continue;
                 }
 
-                // This segment of code is used to prevent duplicated key-values in resource files.
-                try
-                {
-                    sourceDictionary.Add(token, key);
-                }
-                catch (ArgumentException exception)
-                {
-                    // Temporarily catch exception to show where errors occur, should be removed afterward.
-                    Console.WriteLine(exception);
-                }
+                // This segment of code is going to break if there're duplicated key-values in the resource files.
+                // Those duplicates should be fixed before committing.
+                sourceDictionary.Add(token, key);
             }
         }
     }
