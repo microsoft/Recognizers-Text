@@ -47,8 +47,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public ItalianMergedExtractorConfiguration(IOptionsConfiguration config)
-            : base(config)
+        public ItalianMergedExtractorConfiguration(DateTimeOptions options)
+            : base(options)
         {
             DateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
