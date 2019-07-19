@@ -299,7 +299,6 @@ public class FrenchNumericWithUnit {
         .put("Yuan Chinois", "cny|rmb|￥|元")
         .put("Yen Japonais", "¥|jpy")
         .put("Euro", "€|eur")
-        .put("Pound", "£")
         .put("Livre", "£")
         .build();
 

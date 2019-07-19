@@ -213,7 +213,6 @@ public class ChineseNumericWithUnit {
         .put("South Sudanese pound", "南苏丹镑")
         .put("Sudanese pound", "苏丹镑")
         .put("Syrian pound", "叙利亚镑")
-        .put("Pound", "英镑")
         .put("Pence", "便士")
         .put("Shilling", "先令")
         .put("United States dollar", "美元|美金|美圆")

@@ -1,5 +1,6 @@
 package com.microsoft.recognizers.text.numberwithunit.spanish.extractors;
 
+import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.numberwithunit.Constants;
@@ -39,5 +40,12 @@ public class DimensionExtractorConfiguration extends SpanishNumberWithUnitExtrac
         return SpanishNumericWithUnit.AmbiguousDimensionUnitList;
     }
 
-    public static Map<String, String> DimensionSuffixList = SpanishNumericWithUnit.DimensionSuffixList;
+    public static Map<String, String> DimensionSuffixList = new ImmutableMap.Builder<String, String>()
+            .putAll(SpanishNumericWithUnit.InformationSuffixList)
+            .putAll(AreaExtractorConfiguration.AreaSuffixList)
+            .putAll(LengthExtractorConfiguration.LengthSuffixList)
+            .putAll(SpeedExtractorConfiguration.SpeedSuffixList)
+            .putAll(VolumeExtractorConfiguration.VolumeSuffixList)
+            .putAll(WeightExtractorConfiguration.WeightSuffixList)
+            .build();
 }
