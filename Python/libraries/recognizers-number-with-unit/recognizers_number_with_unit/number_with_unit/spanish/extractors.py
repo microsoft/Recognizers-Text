@@ -123,7 +123,16 @@ class SpanishDimensionExtractorConfiguration(SpanishNumberWithUnitExtractorConfi
 
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
-        self._suffix_list = SpanishNumericWithUnit.DimensionSuffixList
+
+        self._suffix_list = {
+            **SpanishNumericWithUnit.InformationSuffixList,
+            **SpanishNumericWithUnit.AreaSuffixList,
+            **SpanishNumericWithUnit.LengthSuffixList,
+            **SpanishNumericWithUnit.SpeedSuffixList,
+            **SpanishNumericWithUnit.VolumeSuffixList,
+            **SpanishNumericWithUnit.WeightSuffixList
+        }
+
         self._prefix_list = dict()
         self._ambiguous_unit_list = SpanishNumericWithUnit.AmbiguousDimensionUnitList
 
