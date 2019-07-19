@@ -32,6 +32,13 @@ export default class DateTimeRecognizer extends Recognizer<DateTimeOptions> {
         ));
         //#endregion
 
+        //#region EnglishOhters
+        this.registerModel("DateTimeModel", Culture.EnglishOthers, (options) => new DateTimeModel(
+            new BaseMergedParser(new EnglishMergedParserConfiguration(new EnglishCommonDateTimeParserConfiguration(true)), this.Options),
+            new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(true), this.Options)
+        ));
+        //#endregion
+
         //#region Spanish
         this.registerModel("DateTimeModel", Culture.Spanish, (options) => new DateTimeModel(
             new BaseMergedParser(new SpanishMergedParserConfiguration(), this.Options),

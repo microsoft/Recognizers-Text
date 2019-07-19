@@ -11145,38 +11145,23 @@
     ]
   },
   {
-    "Input": "next week later in the afternoon.",
+    "Input": "What happened in late afternoon.",
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
     "Results": [
       {
-        "Text": "next week",
-        "Start": 0,
-        "End": 8,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2019-W30",
-              "type": "daterange",
-              "start": "2019-07-22",
-              "end": "2019-07-29"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "in the afternoon",
-        "Start": 16,
-        "End": 31,
+        "Text": "late afternoon",
+        "Start": 17,
+        "End": 30,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
             {
               "timex": "TAF",
+              "Mod": "end",
               "type": "timerange",
-              "start": "12:00:00",
+              "start": "14:00:00",
               "end": "16:00:00"
             }
           ]
@@ -11185,39 +11170,24 @@
     ]
   },
   {
-    "Input": "next week later in the morning.",
+    "Input": "What happened later in the afternoon.",
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
     "Results": [
       {
-        "Text": "next week",
-        "Start": 0,
-        "End": 8,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2019-W30",
-              "type": "daterange",
-              "start": "2019-07-22",
-              "end": "2019-07-29"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "in the morning",
-        "Start": 16,
-        "End": 29,
+        "Text": "later in the afternoon",
+        "Start": 14,
+        "End": 35,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
             {
-              "timex": "TMO",
+              "timex": "TAF",
+              "Mod": "end",
               "type": "timerange",
-              "start": "08:00:00",
-              "end": "12:00:00"
+              "start": "14:00:00",
+              "end": "16:00:00"
             }
           ]
         }
@@ -11225,39 +11195,49 @@
     ]
   },
   {
-    "Input": "next week later in the evening.",
+    "Input": "What happened in early morning.",
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
     "Results": [
       {
-        "Text": "next week",
-        "Start": 0,
-        "End": 8,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2019-W30",
-              "type": "daterange",
-              "start": "2019-07-22",
-              "end": "2019-07-29"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "in the evening",
-        "Start": 16,
+        "Text": "early morning",
+        "Start": 17,
         "End": 29,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
             {
-              "timex": "TEV",
+              "timex": "TMO",
+              "Mod": "start",
               "type": "timerange",
-              "start": "16:00:00",
-              "end": "20:00:00"
+              "start": "08:00:00",
+              "end": "10:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What happened early in the morning.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-17T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "early in the morning",
+        "Start": 14,
+        "End": 33,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "Mod": "start",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "10:00:00"
             }
           ]
         }

@@ -733,12 +733,14 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                 text = text.replace(early, "");
                 hasEarly = true;
                 ret.comment = "early";
+                ret.mod = Constants.EARLY_MOD
             }
             if (!hasEarly && !StringUtility.isNullOrEmpty(matches[0].groups("late").value)) {
                 let late = matches[0].groups("late").value;
                 text = text.replace(late, "");
                 hasLate = true;
                 ret.comment = "late";
+                ret.mod = Constants.LATE_MOD
             }
         }
 

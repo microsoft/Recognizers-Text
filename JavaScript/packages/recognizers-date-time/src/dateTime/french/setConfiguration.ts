@@ -34,7 +34,7 @@ export class FrenchSetExtractorConfiguration implements ISetExtractorConfigurati
     readonly timePeriodExtractor: IDateTimeExtractor;
     readonly dateTimePeriodExtractor: IDateTimeExtractor;
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         this.lastRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SetLastRegex, "gis");
         this.periodicRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PeriodicRegex, "gis");
         this.eachUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.EachUnitRegex, "gis");
@@ -46,11 +46,11 @@ export class FrenchSetExtractorConfiguration implements ISetExtractorConfigurati
 
         this.durationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
         this.timeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
-        this.dateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
-        this.dateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration());
-        this.datePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration());
+        this.dateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(dmyDateFormat));
+        this.dateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration(dmyDateFormat));
+        this.datePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration(dmyDateFormat));
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration());
-        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new FrenchDateTimePeriodExtractorConfiguration());
+        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new FrenchDateTimePeriodExtractorConfiguration(dmyDateFormat));
     }
 }
 

@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.Choice
         public List<ExtractResult> Extract(string text)
         {
             var results = new List<ExtractResult>();
-            var trimmedText = text.ToLower();
+            var trimmedText = text.ToLowerInvariant().Trim();
 
             if (string.IsNullOrEmpty(text))
             {

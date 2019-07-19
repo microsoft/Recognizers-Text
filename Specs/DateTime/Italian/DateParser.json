@@ -31,7 +31,7 @@
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il 2 Ott",
+        "Text": "il 2 Ott.",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-10-02",
@@ -43,7 +43,7 @@
           }
         },
         "Start": 8,
-        "Length": 8
+        "Length": 9
       }
     ]
   },

@@ -49,13 +49,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             new Regex(DateTimeDefinitions.MonthSuffixRegex, RegexFlags);
 
         // year, month, week, day
-        public static readonly Regex DateUnitRegex = new Regex(
-            DateTimeDefinitions.DateUnitRegex, RegexFlags);
+        public static readonly Regex DateUnitRegex =
+            new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
 
         // **In Italian, Past/Next is suffix, but interface enforces this
         // past, last, previous
         public static readonly Regex PastPrefixRegex =
             new Regex(DateTimeDefinitions.PastSuffixRegex, RegexFlags);
+
+        public static readonly Regex PreviousPrefixRegex =
+            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
         // **In Italian, Past/Next is suffix, but interface enforces this
         // next, in
@@ -65,7 +68,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex FutureSuffixRegex =
             new Regex(DateTimeDefinitions.FutureSuffixRegex, RegexFlags);
 
-        public static readonly Regex ThisPrefexRegex =
+        public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
         // composite regexes
@@ -95,7 +98,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         // le/la - masc/fem 'the'
         public static readonly Regex WeekOfMonthRegex =
-            new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.WeekOfMonthRegex, RegexFlags);
 
         public static readonly Regex WeekOfYearRegex =
             new Regex(DateTimeDefinitions.WeekOfYearRegex, RegexFlags);
@@ -209,15 +212,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             MonthFrontSimpleCasesRegex,
             QuarterRegex,
             QuarterRegexYearFront,
+            AllHalfYearRegex,
             SeasonRegex,
+            WhichWeekRegex,
+            RestOfDateRegex,
             PastPrefixRegex,
             NextPrefixRegex,
-            ThisPrefexRegex,
+            ThisPrefixRegex,
             LaterEarlyPeriodRegex,
             WeekWithWeekDayRangeRegex,
             YearPlusNumberRegex,
             DecadeWithCenturyRegex,
             RelativeDecadeRegex,
+            ReferenceDatePeriodRegex,
         };
 
         public ItalianDatePeriodExtractorConfiguration(IOptionsConfiguration config)
@@ -225,6 +232,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         {
             DatePointExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
             CardinalExtractor = Number.Italian.CardinalExtractor.GetInstance();
+            OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
             NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration());
         }
@@ -255,7 +263,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         Regex IDatePeriodExtractorConfiguration.NumberCombinedWithDateUnit => NumberCombinedWithDateUnit;
 
-        Regex IDatePeriodExtractorConfiguration.PreviousPrefixRegex => PastPrefixRegex;
+        Regex IDatePeriodExtractorConfiguration.PreviousPrefixRegex => PreviousPrefixRegex;
 
         Regex IDatePeriodExtractorConfiguration.FutureRegex => NextPrefixRegex;
 

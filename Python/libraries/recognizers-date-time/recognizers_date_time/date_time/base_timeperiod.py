@@ -483,11 +483,13 @@ class BaseTimePeriodParser(DateTimeParser):
                 has_early = True
                 source = source.replace(early, '')
                 result.comment = 'early'
+                result.mod = TimeTypeConstants.EARLY_MOD
             late = RegExpUtility.get_group(match, 'late')
             if late:
                 has_late = True
                 source = source.replace(late, '')
                 result.comment = 'late'
+                result.mod = TimeTypeConstants.LATE_MOD
 
         timex_range = self.config.get_matched_timex_range(source)
         if not timex_range.matched:

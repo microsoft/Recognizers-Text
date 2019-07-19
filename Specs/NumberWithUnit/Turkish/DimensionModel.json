@@ -784,5 +784,124 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Bu alan 20 kilometre kare büyüklüğündedir",
+    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20 kilometre kare",
+        "Start": 8,
+        "End": 24,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Square kilometer",
+          "value": "20"
+        }
+      }
+    ]
+  },
+   {
+    "Input": "Bu bölge iki hektometre kare büyüklüğe sahip",
+    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iki hektometre kare",
+        "Start": 9,
+        "End": 27,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Square hectometer",
+          "value": "2"
+        }
+      }
+    ]
+  },
+   {
+    "Input": "Bu bölge bir dekametre kare",
+    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir dekametre kare",
+        "Start": 9,
+        "End": 26,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Square decameter",
+          "value": "1"
+        }
+      }
+    ]
+  },
+   {
+    "Input": "o bir metre kare",
+    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir metre kare",
+        "Start": 2,
+        "End": 15,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Square meter",
+          "value": "1"
+        }
+      }
+    ]
+  },
+   {
+    "Input": "Alanın büyüklüğü 100 desimetre kare",
+    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 desimetre kare",
+        "Start": 17,
+        "End": 34,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Square decimeter",
+          "value": "100"
+        }
+      }
+    ]
+  },
+   {
+    "Input": "Burası sekiz santimetre kare",
+    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "sekiz santimetre kare",
+        "Start": 7,
+        "End": 27,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Square centimeter",
+          "value": "8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Burası beş milimetre kare",
+    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "beş milimetre kare",
+        "Start": 7,
+        "End": 24,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Square millimeter",
+          "value": "5"
+        }
+      }
+    ]
   }
 ]
