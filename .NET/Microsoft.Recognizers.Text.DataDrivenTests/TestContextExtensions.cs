@@ -714,9 +714,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new ItalianSetExtractorConfiguration(config));
                 case DateTimeExtractors.Merged:
-                    return new BaseMergedDateTimeExtractor(new ItalianMergedExtractorConfiguration(DateTimeOptions.None));
+                    return new BaseMergedDateTimeExtractor(new ItalianMergedExtractorConfiguration(config));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new BaseMergedDateTimeExtractor(new ItalianMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
+                    return new BaseMergedDateTimeExtractor(new ItalianMergedExtractorConfiguration(config));
                 case DateTimeExtractors.TimeZone:
                     return new BaseTimeZoneExtractor(new ItalianTimeZoneExtractorConfiguration(config));
             }
