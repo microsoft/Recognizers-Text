@@ -43,6 +43,6 @@ export class SpanishDimensionParserConfiguration extends SpanishNumberWithUnitPa
 
         super(ci);
 
-        this.BindDictionary(SpanishNumericWithUnit.DimensionSuffixList);
+        this.BindDictionary(dimensionSuffixList);
     }
 }
