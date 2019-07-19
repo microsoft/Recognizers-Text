@@ -504,7 +504,7 @@ public class SpanishNumericWithUnit {
         .put("Picogramo", "pg|picogramo|picogramos")
         .put("Libra", "lb|libra|libras")
         .put("Onza", "oz|onza|onzas")
-        .put("Grano", "grano|granos|gr")
+        .put("Grano", "grano|granos")
         .put("Quilate", "ct|quilate|quilates")
         .build();
 }

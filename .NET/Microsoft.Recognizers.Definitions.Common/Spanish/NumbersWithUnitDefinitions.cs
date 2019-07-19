@@ -522,7 +522,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Picogramo", @"pg|picogramo|picogramos" },
             { @"Libra", @"lb|libra|libras" },
             { @"Onza", @"oz|onza|onzas" },
-            { @"Grano", @"grano|granos|gr" },
+            { @"Grano", @"grano|granos" },
             { @"Quilate", @"ct|quilate|quilates" }
         };
     }

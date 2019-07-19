@@ -462,6 +462,6 @@ class SpanishNumericWithUnit:
                              ("Picogramo", "pg|picogramo|picogramos"),
                              ("Libra", "lb|libra|libras"),
                              ("Onza", "oz|onza|onzas"),
-                             ("Grano", "grano|granos|gr"),
+                             ("Grano", "grano|granos"),
                              ("Quilate", "ct|quilate|quilates")])
 # pylint: enable=line-too-long
