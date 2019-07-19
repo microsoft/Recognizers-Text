@@ -449,7 +449,7 @@
     "Input": "fahrenhayttan santigrata, 101 fahrenhayt kaç santigrat eder",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
-	  {
+      {
         "Text": "101 fahrenhayt",
         "TypeName": "temperature",
         "Resolution": {
