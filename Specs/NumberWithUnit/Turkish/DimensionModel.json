@@ -97,7 +97,6 @@
   },
   {
     "Input": "Endüstri çapında bu ülkede petrol üretimi, bu yılın ilk sekiz ayında varil başına günde 500.000 varil düştü.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -402,6 +401,7 @@
   },
   {
     "Input": "Bir şirket sözcüsü, 'jiotto caspita' nın saatte 188 milden fazla koşabileceğini söyledi.",
+    "Comment": "Prefixed AND suffixed speed unit in Tukish",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [

@@ -578,6 +578,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
         {
             @"pound",
             @"dram",
+            @"varil",
             @"cup",
             @"in",
             @""""
@@ -667,8 +668,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
         };
       public static readonly IList<string> AmbiguousVolumeUnitList = new List<string>
         {
-            @"dal",
-            @"varil"
+            @"dal"
         };
       public static readonly Dictionary<string, string> WeightSuffixList = new Dictionary<string, string>
         {

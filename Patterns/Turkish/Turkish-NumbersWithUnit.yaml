@@ -676,6 +676,7 @@ AmbiguousDimensionUnitList: !list
   entries:
     - pound
     - dram
+    - varil
     - cup
     - in
     - '"'
@@ -773,7 +774,6 @@ AmbiguousVolumeUnitList: !list
   types: [ string ]
   entries:
     - dal
-    - varil
 #WeightExtractorConfiguration
 WeightSuffixList: !dictionary
   types: [ string, string ]
