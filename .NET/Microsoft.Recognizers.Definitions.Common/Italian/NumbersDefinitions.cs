@@ -51,14 +51,14 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({AnIntRegex})|{RoundNumberIntegerRegex})(\s*{RoundNumberIntegerRegex})*)\s*(e\s+)?)*({TensNumberIntegerRegex}?{ZeroToNineIntegerRegex}esim[oaie]|{BasicOrdinalRegex}))";
       public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s*)?{RoundNumberOrdinalRegex})";
       public static readonly string AllOrdinalRegex = $@"({SuffixRoundNumberOrdinalRegex}|{SuffixBasicOrdinalRegex})";
-      public const string OrdinalSuffixRegex = @"(?<=\b)(\d*(°|(esi)?m[oaie]))";
+      public const string OrdinalSuffixRegex = @"(?<=\b)(\d+(°|(esi)?m[oaie]))";
       public const string OrdinalNumericRegex = @"(?<=\b)(\d{1,3}(\s*,\s*\d{3})*(°|(esi)?m[oaie]))";
       public static readonly string OrdinalRoundNumberRegex = $@"(?<!(un)\s+){RoundNumberOrdinalRegex}";
       public static readonly string OrdinalItalianRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+(e\s+)?\d+[/]\d+(?=(\b[^/]|$))";
       public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(e\s+)?)?({AllIntRegex})(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzi|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(e\s+)?)?(un)(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzo|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}\s+e\s+mezzo)|(({AllIntRegex}\s+(e\s+)?)?(un)(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzo|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))))(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+su\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
       public static readonly string AllFloatRegex = $@"({AllIntRegex}(\s+(virgola|punto)){AllPointRegex})";
@@ -122,6 +122,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
             { @"sei", 6 },
             { @"sette", 7 },
             { @"otto", 8 },
+            { @"tto", 8 },
             { @"nove", 9 },
             { @"dieci", 10 },
             { @"undici", 11 },
@@ -149,6 +150,8 @@ namespace Microsoft.Recognizers.Definitions.Italian
             { @"settant", 70 },
             { @"ottanta", 80 },
             { @"ottant", 80 },
+            { @"ttanta", 80 },
+            { @"ttant", 80 },
             { @"novanta", 90 },
             { @"novant", 90 },
             { @"cento", 100 },
@@ -184,6 +187,8 @@ namespace Microsoft.Recognizers.Definitions.Italian
             { @"settima", 7 },
             { @"ottavo", 8 },
             { @"ottava", 8 },
+            { @"ttavo", 8 },
+            { @"ttava", 8 },
             { @"nono", 9 },
             { @"nona", 9 },
             { @"decimo", 10 },
@@ -222,6 +227,8 @@ namespace Microsoft.Recognizers.Definitions.Italian
             { @"settantesima", 70 },
             { @"ottantesimo", 80 },
             { @"ottantesima", 80 },
+            { @"ttantesimo", 80 },
+            { @"ttantesima", 80 },
             { @"novantesimo", 90 },
             { @"novantesima", 90 },
             { @"centesimo", 100 },
@@ -326,6 +333,8 @@ namespace Microsoft.Recognizers.Definitions.Italian
             { @"settantesime", 70 },
             { @"ottantesimi", 80 },
             { @"ottantesime", 80 },
+            { @"ttantesimi", 80 },
+            { @"ttantesime", 80 },
             { @"novantesimi", 90 },
             { @"novantesime", 90 },
             { @"centesimi", 100 },

@@ -48,7 +48,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         public static bool ValidateUnit(string source)
         {
-            return !source.StartsWith("-");
+            return !source.StartsWith("-", StringComparison.Ordinal);
         }
 
         public List<ExtractResult> Extract(string source)

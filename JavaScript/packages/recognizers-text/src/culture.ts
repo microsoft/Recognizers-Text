@@ -1,6 +1,7 @@
 export class Culture {
 
   static readonly English: string = "en-us"
+  static readonly EnglishOthers: string = "en-*"
   static readonly Chinese: string = "zh-cn"
   static readonly Spanish: string = "es-es"
   static readonly Portuguese: string = "pt-br"
@@ -12,6 +13,7 @@ export class Culture {
 
   static readonly supportedCultures: Array<Culture> = [
     new Culture("English", Culture.English),
+    new Culture("EnglishOthers", Culture.EnglishOthers),
     new Culture("Chinese", Culture.Chinese),
     new Culture("Spanish", Culture.Spanish),
     new Culture("Portuguese", Culture.Portuguese),
@@ -37,10 +39,10 @@ export class Culture {
   static mapToNearestLanguage(cultureCode: string): string {
     if (cultureCode !== undefined) {    
       cultureCode = cultureCode.toLowerCase();
-      var supportedCultureCodes = Culture.getSupportedCultureCodes();
+      let supportedCultureCodes = Culture.getSupportedCultureCodes();
       
       if (supportedCultureCodes.indexOf(cultureCode) < 0) {
-        var culturePrefix = cultureCode.split('-')[0].trim();
+        let culturePrefix = cultureCode.split('-')[0].trim();
 
         supportedCultureCodes.forEach(function(supportedCultureCode) {
           if (supportedCultureCode.startsWith(culturePrefix)) {

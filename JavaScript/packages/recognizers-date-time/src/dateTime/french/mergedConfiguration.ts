@@ -42,7 +42,7 @@ export class FrenchMergedExtractorConfiguration implements IMergedExtractorConfi
     readonly numberEndingPattern: RegExp
     readonly filterWordRegexList:RegExp[];
 
-    constructor() {
+    constructor(dmyDateFormat: boolean = false) {
         this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex);
         this.afterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AfterRegex);
         this.sinceRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SinceRegex);
@@ -51,14 +51,14 @@ export class FrenchMergedExtractorConfiguration implements IMergedExtractorConfi
         this.prepositionSuffixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PrepositionSuffixRegex);
         this.numberEndingPattern = RegExpUtility.getSafeRegExp(FrenchDateTime.NumberEndingPattern);
 
-        this.dateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
+        this.dateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(dmyDateFormat));
         this.timeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
-        this.dateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration());
-        this.datePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration());
+        this.dateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration(dmyDateFormat));
+        this.datePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration(dmyDateFormat));
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration());
-        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new FrenchDateTimePeriodExtractorConfiguration());
+        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new FrenchDateTimePeriodExtractorConfiguration(dmyDateFormat));
         this.durationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
-        this.setExtractor = new BaseSetExtractor(new FrenchSetExtractorConfiguration());
+        this.setExtractor = new BaseSetExtractor(new FrenchSetExtractorConfiguration(dmyDateFormat));
         this.holidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration());
         this.integerExtractor = new FrenchIntegerExtractor();
         this.filterWordRegexList = [];
@@ -79,8 +79,8 @@ export class FrenchMergedParserConfiguration extends FrenchCommonDateTimeParserC
     readonly durationParser: BaseDurationParser;
     readonly setParser: BaseSetParser;
 
-    constructor() {
-        super();
+    constructor(dmyDateFormat: boolean = false) {
+        super(dmyDateFormat);
 
         this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex);
         this.afterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AfterRegex);

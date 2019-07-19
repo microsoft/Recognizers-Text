@@ -1,7 +1,6 @@
 [
   {
     "Input": "imposta una sveglia per le otto e quaranta",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -15,13 +14,14 @@
           "PastResolution": {
             "time": "08:40:00"
           }
-        }
+        },
+        "Start": 27,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "imposta una sveglia per le otto e quaranta am",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -35,13 +35,14 @@
           "PastResolution": {
             "time": "08:40:00"
           }
-        }
+        },
+        "Start": 27,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "imposta una sveglia per le otto e quaranta pm",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -55,13 +56,14 @@
           "PastResolution": {
             "time": "20:40:00"
           }
-        }
+        },
+        "Start": 27,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "imposta una sveglia per le dieci e quarantacinque",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -75,13 +77,14 @@
           "PastResolution": {
             "time": "10:45:00"
           }
-        }
+        },
+        "Start": 27,
+        "Length": 22
       }
     ]
   },
   {
     "Input": "imposta una sveglia per le quindici e quindici p m",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -95,13 +98,14 @@
           "PastResolution": {
             "time": "15:15:00"
           }
-        }
+        },
+        "Start": 27,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "imposta una sveglia per le quindici e trenta p m",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -115,13 +119,14 @@
           "PastResolution": {
             "time": "15:30:00"
           }
-        }
+        },
+        "Start": 27,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "imposta una sveglia per le dieci e dieci",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -135,13 +140,14 @@
           "PastResolution": {
             "time": "10:10:00"
           }
-        }
+        },
+        "Start": 27,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "imposta una sveglia per le dieci e cinquantacinque p. m.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -155,13 +161,14 @@
           "PastResolution": {
             "time": "22:55:00"
           }
-        }
+        },
+        "Start": 27,
+        "Length": 29
       }
     ]
   },
   {
     "Input": "Tornerò alle 7ampm",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -175,13 +182,14 @@
           "PastResolution": {
             "time": "07:00:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Tornerò alle 7",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -195,13 +203,14 @@
           "PastResolution": {
             "time": "07:00:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 1
       }
     ]
   },
   {
     "Input": "Tornerò alle sette",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -215,13 +224,14 @@
           "PastResolution": {
             "time": "07:00:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Tornerò alle 7pm",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -235,13 +245,14 @@
           "PastResolution": {
             "time": "19:00:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Tornerò alle 7:56pm",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -255,13 +266,14 @@
           "PastResolution": {
             "time": "19:56:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Tornerò alle 7:56:30pm",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -275,13 +287,14 @@
           "PastResolution": {
             "time": "19:56:30"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Tornerò alle 7:56:30 pm",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -295,13 +308,14 @@
           "PastResolution": {
             "time": "19:56:30"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Tornerò alle 12:34",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -315,13 +329,14 @@
           "PastResolution": {
             "time": "12:34:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Tornerò alle 12:34:25 ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -335,13 +350,14 @@
           "PastResolution": {
             "time": "12:34:25"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Sono le 7",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -355,13 +371,14 @@
           "PastResolution": {
             "time": "07:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 1
       }
     ]
   },
   {
     "Input": "Sono le sette",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -375,13 +392,14 @@
           "PastResolution": {
             "time": "07:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Sono le 8 del mattino",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -395,13 +413,14 @@
           "PastResolution": {
             "time": "08:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Sono le 8 di notte",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -415,13 +434,14 @@
           "PastResolution": {
             "time": "20:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Sono le otto e mezza",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -435,13 +455,14 @@
           "PastResolution": {
             "time": "08:30:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Sono le 8 e mezza pm",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -455,13 +476,14 @@
           "PastResolution": {
             "time": "20:30:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Sono le otto e 30 min",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -475,13 +497,14 @@
           "PastResolution": {
             "time": "08:30:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Sono le otto e un quarto",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -495,13 +518,14 @@
           "PastResolution": {
             "time": "08:15:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Sono le 9pm e tre quarti",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -515,13 +539,14 @@
           "PastResolution": {
             "time": "21:45:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Sono le otto meno tre minuti",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -535,13 +560,14 @@
           "PastResolution": {
             "time": "07:57:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 20
       }
     ]
   },
   {
     "Input": "Sono le sette e mezza",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -555,13 +581,14 @@
           "PastResolution": {
             "time": "07:30:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Sono le sette e mezza di pomeriggio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -575,13 +602,14 @@
           "PastResolution": {
             "time": "19:30:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 27
       }
     ]
   },
   {
     "Input": "Sono le sette e mezza del mattino",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -595,13 +623,14 @@
           "PastResolution": {
             "time": "07:30:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 25
       }
     ]
   },
   {
     "Input": "Sono le 8 meno un quarto del mattino",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -615,13 +644,14 @@
           "PastResolution": {
             "time": "07:45:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 28
       }
     ]
   },
   {
     "Input": "Sono le otto e 20 min di sera",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -635,13 +665,14 @@
           "PastResolution": {
             "time": "20:20:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Tornerò nel pomeriggio alle 7",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -655,13 +686,14 @@
           "PastResolution": {
             "time": "19:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Tornerò all  7 di pomeriggio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -675,13 +707,14 @@
           "PastResolution": {
             "time": "19:00:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Tornerò alle 7:00 di pomeriggio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -695,13 +728,14 @@
           "PastResolution": {
             "time": "19:00:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Tornerò alle 7:00:05 di pomeriggio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -715,13 +749,14 @@
           "PastResolution": {
             "time": "19:00:05"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Tornerò alle sette pm di pomeriggio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -735,13 +770,14 @@
           "PastResolution": {
             "time": "19:00:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 22
       }
     ]
   },
   {
     "Input": "Tornerò alle sette e trenta pm",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -755,13 +791,14 @@
           "PastResolution": {
             "time": "19:30:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Tornerò alle sette e trentacinque pm",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -775,13 +812,14 @@
           "PastResolution": {
             "time": "19:35:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Tornerò alle undici e venti pm",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -795,13 +833,14 @@
           "PastResolution": {
             "time": "23:20:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Tornerò più o meno a mezzogiorno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -815,13 +854,14 @@
           "PastResolution": {
             "time": "12:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 24
       }
     ]
   },
   {
     "Input": "Tornerò a mezzogiorno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -835,13 +875,14 @@
           "PastResolution": {
             "time": "12:00:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Tornerò più o meno alle 11",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -855,13 +896,14 @@
           "PastResolution": {
             "time": "11:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Tornerò alle 340pm",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -875,13 +917,14 @@
           "PastResolution": {
             "time": "15:40:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Tornerò alle 1140 a.m.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -895,13 +938,14 @@
           "PastResolution": {
             "time": "11:40:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "mezzanotte",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -915,13 +959,14 @@
           "PastResolution": {
             "time": "00:00:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "metà mattina",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -935,13 +980,14 @@
           "PastResolution": {
             "time": "10:00:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "metà mattinata",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -955,13 +1001,14 @@
           "PastResolution": {
             "time": "10:00:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "metà pomeriggio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -975,13 +1022,14 @@
           "PastResolution": {
             "time": "14:00:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "metà giornata",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -995,13 +1043,14 @@
           "PastResolution": {
             "time": "12:00:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "mezzogiorno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1015,17 +1064,18 @@
           "PastResolution": {
             "time": "12:00:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Tornerò alle 12 ora di pranzo",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "alle 12 ora di pranzo",
+        "Text": "12 ora di pranzo",
         "Type": "time",
         "Value": {
           "Timex": "T12",
@@ -1035,13 +1085,14 @@
           "PastResolution": {
             "time": "12:00:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Tornerò alle 12 mezzanotte",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1055,13 +1106,14 @@
           "PastResolution": {
             "time": "00:00:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Tornerò alle 12 di notte",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1075,13 +1127,14 @@
           "PastResolution": {
             "time": "00:00:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Tornerò all'1 di notte",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1095,13 +1148,14 @@
           "PastResolution": {
             "time": "01:00:00"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Tornerò alle 11 ora di pranzo",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1115,13 +1169,14 @@
           "PastResolution": {
             "time": "11:00:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Tornerò all'1 ora di pranzo",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1135,17 +1190,18 @@
           "PastResolution": {
             "time": "13:00:00"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 15
       }
     ]
   },
   {
-    "Input": "Tornerò a ora di pranzo alle 11",
-    "NotSupported": "dotnet",
+    "Input": "Tornerò all'ora di pranzo alle 11",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "a ora di pranzo alle 11",
+        "Text": "ora di pranzo alle 11",
         "Type": "time",
         "Value": {
           "Timex": "T11",
@@ -1155,13 +1211,14 @@
           "PastResolution": {
             "time": "11:00:00"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Tornerò alle 7:56:13 pm",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1175,13 +1232,14 @@
           "PastResolution": {
             "time": "19:56:13"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Tornerò alle 12:34:45 ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1195,13 +1253,14 @@
           "PastResolution": {
             "time": "12:34:45"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Tornerò alle 7:00:25 di pomeriggio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1215,13 +1274,14 @@
           "PastResolution": {
             "time": "19:00:25"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Tornerò alle sette e trenta am",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1235,13 +1295,14 @@
           "PastResolution": {
             "time": "07:30:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Tornerò alle undici e cinque",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1255,13 +1316,15 @@
           "PastResolution": {
             "time": "11:05:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Tornerò alle cinque e mezza meno tre minuti ",
-    "NotSupported": "dotnet",
+	"NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1275,13 +1338,14 @@
           "PastResolution": {
             "time": "05:27:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 22
       }
     ]
   },
   {
     "Input": "Tornerò alle cinque e mezza di notte",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1295,13 +1359,14 @@
           "PastResolution": {
             "time": "17:30:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Tornerò di notte alle cinque e mezza",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1315,13 +1380,14 @@
           "PastResolution": {
             "time": "17:30:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 28
       }
     ]
   },
   {
-    "Input": "Tornerò a ora di pranzo alle 12",
-    "NotSupported": "dotnet",
+    "Input": "Tornerò all'ora di pranzo alle 12",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1335,7 +1401,9 @@
           "PastResolution": {
             "time": "12:00:00"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 21
       }
     ]
   }

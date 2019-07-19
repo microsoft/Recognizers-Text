@@ -51,7 +51,7 @@ public class EnglishDateTime {
 
     public static final String FutureSuffixRegex = "\\b(in\\s+the\\s+)?(future|hence)\\b";
 
-    public static final String DayRegex = "(the\\s*)?(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?)(?=\\b|t)";
+    public static final String DayRegex = "(the\\s*)?(?<!(\\d+:|\\$)\\s*)(?<=\\b)(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?)(?=\\b|t)";
 
     public static final String ImplicitDayRegex = "(the\\s*)?(?<day>(?:3[0-1]|[0-2]?\\d)(?:th|nd|rd|st))\\b";
 
@@ -171,11 +171,13 @@ public class EnglishDateTime {
 
     public static final String SpecialYearPrefixes = "(calendar|(?<special>fiscal|school))";
 
-    public static final String OneWordPeriodRegex = "\\b((((the\\s+)?month of\\s+)?({StrictRelativeRegex}\\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))|(month|year) to date|({RelativeRegex}\\s+)?(my\\s+)?(week(end)?|month|(({SpecialYearPrefixes}\\s+)?year))(?!((\\s+of)?\\s+\\d+|\\s+to\\s+date))(\\s+{AfterNextSuffixRegex})?)\\b"
+    public static final String OneWordPeriodRegex = "\\b((((the\\s+)?month of\\s+)?({StrictRelativeRegex}\\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))|(month|year) to date|({RelativeRegex}\\s+)?(my\\s+)?(week(end)?|month|(({SpecialYearPrefixes}\\s+)?year))(?!((\\s+of)?\\s+\\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\\s+to\\s+date))(\\s+{AfterNextSuffixRegex})?)\\b"
             .replace("{StrictRelativeRegex}", StrictRelativeRegex)
             .replace("{RelativeRegex}", RelativeRegex)
             .replace("{AfterNextSuffixRegex}", AfterNextSuffixRegex)
-            .replace("{SpecialYearPrefixes}", SpecialYearPrefixes);
+            .replace("{SpecialYearPrefixes}", SpecialYearPrefixes)
+            .replace("{BaseDateTime.BaseAmDescRegex}", BaseDateTime.BaseAmDescRegex)
+            .replace("{BaseDateTime.BasePmDescRegex}", BaseDateTime.BasePmDescRegex);
 
     public static final String MonthNumWithYear = "\\b(({BaseDateTime.FourDigitYearRegex}(\\s*)[/\\-\\.](\\s*){MonthNumRegex})|({MonthNumRegex}(\\s*)[/\\-](\\s*){BaseDateTime.FourDigitYearRegex}))\\b"
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex)
@@ -593,7 +595,7 @@ public class EnglishDateTime {
 
     public static final String PrepositionRegex = "(?<prep>^(at|on|of)(\\s+the)?$)";
 
-    public static final String TimeOfDayRegex = "\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b";
+    public static final String TimeOfDayRegex = "\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(r?\\s+|-)))?(in\\s+(the)?\\s+)?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b";
 
     public static final String SpecificTimeOfDayRegex = "\\b(({StrictRelativeRegex}\\s+{TimeOfDayRegex})\\b|\\btonight)s?\\b"
             .replace("{TimeOfDayRegex}", TimeOfDayRegex)

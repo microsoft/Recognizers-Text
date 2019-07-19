@@ -1,795 +1,866 @@
 [
   {
     "Input": "Tornerò il 15",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "15",
-        "Type": "date"
+        "Text": "il 15",
+        "Type": "date",
+        "Start": 8,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Tornerò il 22 Aprile",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "22 Aprile",
-        "Type": "date"
+        "Text": "il 22 Aprile",
+        "Type": "date",
+        "Start": 8,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Tornerò il 1 Gen",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "1 Gen",
-        "Type": "date"
+        "Text": "il 1 Gen",
+        "Type": "date",
+        "Start": 8,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Tornerò il 2 Ottobre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "2 Ottobre",
-        "Type": "date"
+        "Text": "il 2 Ottobre",
+        "Type": "date",
+        "Start": 8,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Tornerò il 12 Gennaio 2016",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "12 Gennaio 2016",
-        "Type": "date"
+        "Text": "il 12 Gennaio 2016",
+        "Type": "date",
+        "Start": 8,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Tornerò il 12 Gennaio del 2016",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "12 Gennaio del 2016",
-        "Type": "date"
+        "Text": "il 12 Gennaio del 2016",
+        "Type": "date",
+        "Start": 8,
+        "Length": 22
       }
     ]
   },
   {
     "Input": "Tornerò Lunedì 12 Gennaio 2016",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Lunedì 12 Gennaio 2016",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 22
       }
     ]
   },
   {
     "Input": "Tornerò il 02/22/2016",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "02/22/2016",
-        "Type": "date"
+        "Text": "il 02/22/2016",
+        "Type": "date",
+        "Start": 8,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Tornerò il 21/04/2016",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "21/04/2016",
-        "Type": "date"
+        "Text": "il 21/04/2016",
+        "Type": "date",
+        "Start": 8,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Tornerò il 21/04/16",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "21/04/16",
-        "Type": "date"
+        "Text": "il 21/04/16",
+        "Type": "date",
+        "Start": 8,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Tornerò il 9-18-15",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "9-18-15",
-        "Type": "date"
+        "Text": "il 9-18-15",
+        "Type": "date",
+        "Start": 8,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Tornerò il 4.22",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "4.22",
-        "Type": "date"
+        "Text": "il 4.22",
+        "Type": "date",
+        "Start": 8,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Tornerò il 4-22",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "4-22",
-        "Type": "date"
+        "Text": "il 4-22",
+        "Type": "date",
+        "Start": 8,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Tornerò il    4/22",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "4/22",
-        "Type": "date"
+        "Text": "il    4/22",
+        "Type": "date",
+        "Start": 8,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Tornerò il 22/04",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "22/04",
-        "Type": "date"
+        "Text": "il 22/04",
+        "Type": "date",
+        "Start": 8,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Tornerò il 2015/08/12",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "2015/08/12",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Tornerò il 11/12,2016",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "11/12,2016",
-        "Type": "date"
+        "Text": "il 11/12,2016",
+        "Type": "date",
+        "Start": 8,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Tornerò il 11/12,16",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "11/12,16",
-        "Type": "date"
+        "Text": "il 11/12,16",
+        "Type": "date",
+        "Start": 8,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Tornerò il 1-Gen",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "1-Gen",
-        "Type": "date"
+        "Text": "il 1-Gen",
+        "Type": "date",
+        "Start": 8,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Tornerò il 28-Nov",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "28-Nov",
-        "Type": "date"
+        "Text": "il 28-Nov",
+        "Type": "date",
+        "Start": 8,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Tornerò Mer, 22 Gen",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Mer, 22 Gen",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Tornerò il primo venerdì di luglio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il primo venerdì di luglio",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 26
       }
     ]
   },
   {
     "Input": "Tornerò il primo venerdì di questo mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il primo venerdì di questo mese",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 31
       }
     ]
   },
   {
     "Input": "Tornerò tra due settimane da adesso",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "tra due settimane da adesso",
-        "Type": "date"
+        "Text": "due settimane da adesso",
+        "Type": "date",
+        "Start": 12,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Tornerò la prossima settimana il venerdì",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "prossima settimana il venerdì",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 29
       }
     ]
   },
   {
     "Input": "Tornerò il venerdì della prossima settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il venerdì della prossima settimana",
-        "Type": "date"
+        "Text": "venerdì della prossima settimana",
+        "Type": "date",
+        "Start": 11,
+        "Length": 32
       }
     ]
   },
   {
     "Input": "lo scorso Lunedì",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "lo scorso Lunedì",
-        "Type": "date"
+        "Text": "scorso Lunedì",
+        "Type": "date",
+        "Start": 3,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Tornerò Mar.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Mar",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Tornerò Mar. buone notizie.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Mar",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Tornerò Mar",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Mar",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Tornerò Venerdì",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "Venerdì",
-        "Type": "date"
+        "Text": "venerdì",
+        "Type": "date",
+        "Start": 8,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Tornerò oggi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "oggi",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 4
       }
     ]
   },
   {
     "Input": "Tornerò domani",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "domani",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Sono tornato ieri",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "ieri",
-        "Type": "date"
+        "Type": "date",
+        "Start": 13,
+        "Length": 4
       }
     ]
   },
   {
     "Input": "Sono tornato l'altroieri",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "l'altroieri",
-        "Type": "date"
+        "Type": "date",
+        "Start": 13,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Tornerò dopodomani",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "dopodomani",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Tornerò il giorno dopo",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il giorno dopo",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Tornerò questo Venerdì",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questo Venerdì",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Tornerò Domenica prossima",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Domenica prossima",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Sono tornato Domenica scorsa",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Domenica scorsa",
-        "Type": "date"
+        "Type": "date",
+        "Start": 13,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Tornerò l'ultimo giorno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "ultimo giorno",
-        "Type": "date"
+        "Text": "l'ultimo giorno",
+        "Type": "date",
+        "Start": 8,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Tornerò in giornata",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "in giornata",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Tornerò questa settimana, di Venerdì",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "questa settimana, di Venerdì",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 28
       }
     ]
   },
   {
     "Input": "Tornerò la prossima settimana, di Domenica",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "la prossima settimana, di Domenica",
-        "Type": "date"
+        "Text": "prossima settimana, di Domenica",
+        "Type": "date",
+        "Start": 11,
+        "Length": 31
       }
     ]
   },
   {
     "Input": "Sono tornato la scorsa settimana, di Domenica",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "la scorsa settimana, di Domenica",
-        "Type": "date"
+        "Text": "scorsa settimana, di Domenica",
+        "Type": "date",
+        "Start": 16,
+        "Length": 29
       }
     ]
   },
   {
     "Input": "Tornerò il 15 Giugno 2016",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "15 Giugno 2016",
-        "Type": "date"
+        "Text": "il 15 Giugno 2016",
+        "Type": "date",
+        "Start": 8,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "baseball l'undici maggio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "l'undici maggio",
-        "Type": "date"
+        "Text": "undici maggio",
+        "Type": "date",
+        "Start": 11,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Tornerò il quattro maggio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il quattro maggio",
-        "Type": "date"
+        "Text": "quattro maggio",
+        "Type": "date",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Tornerò il 4 marzo",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "4 marzo",
-        "Type": "date"
+        "Text": "il 4 marzo",
+        "Type": "date",
+        "Start": 8,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Tornerò il primo Gen",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "primo Gen",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Tornerò il ventuno Maggio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "ventuno Maggio",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
-    "Input": "Tornnerò il due Ago",
-    "NotSupported": "dotnet",
+    "Input": "Tornerò il due Ago",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "due Ago",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Tornerò il ventidue Giugno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "ventidue Giugno",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Sono tornato due mesi fa",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "due mesi fa",
-        "Type": "date"
+        "Type": "date",
+        "Start": 13,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Tornerò due giorni dopo",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "due giorni dopo",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "a chi ho mandato una email un mese fa",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "un mese fa",
-        "Type": "date"
+        "Type": "date",
+        "Start": 27,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Sono tornato per il 27",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "per il 27",
-        "Type": "date"
+        "Text": "il 27",
+        "Type": "date",
+        "Start": 17,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Sono tornato per il 27.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "per il 27",
-        "Type": "date"
+        "Text": "il 27",
+        "Type": "date",
+        "Start": 17,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Sono tornato per il 27!",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "per il 27",
-        "Type": "date"
+        "Text": "il 27",
+        "Type": "date",
+        "Start": 17,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Sono tornato per il 27 .",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "per il 27",
-        "Type": "date"
+        "Text": "il 27",
+        "Type": "date",
+        "Start": 17,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Sono tornato per il 21",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "per il 21",
-        "Type": "date"
+        "Text": "il 21",
+        "Type": "date",
+        "Start": 17,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Sono tornato per il 22",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "per il 22",
-        "Type": "date"
+        "Text": "il 22",
+        "Type": "date",
+        "Start": 17,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Sono tornato per il due",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "per il due",
-        "Type": "date"
+        "Text": "due",
+        "Type": "date",
+        "Start": 20,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Sono tornato per il ventidue",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "per il ventidue",
-        "Type": "date"
+        "Text": "ventidue",
+        "Type": "date",
+        "Start": 20,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Sono tornato per il trentuno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "per il trentuno",
-        "Type": "date"
+        "Text": "trentuno",
+        "Type": "date",
+        "Start": 20,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Sono tornato il 27",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il 27",
-        "Type": "date"
+        "Type": "date",
+        "Start": 13,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Sono tornato il 21",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il 21",
-        "Type": "date"
+        "Type": "date",
+        "Start": 13,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Sono tornato il 22",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il 22",
-        "Type": "date"
+        "Type": "date",
+        "Start": 13,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Sono tornato il due!",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il due",
-        "Type": "date"
+        "Text": "due",
+        "Type": "date",
+        "Start": 16,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Sono tornato il ventidue?",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il ventidue",
-        "Type": "date"
+        "Text": "ventidue",
+        "Type": "date",
+        "Start": 16,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "il primo premio",
-    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "il secondo premio",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": []
   },
   {
     "Input": "Andrò al 27° piano",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": []
   },
   {
     "Input": "L'evento commemorativo per il 25° anniversario delle relazioni diplomatiche tra Singapore e China",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": []
   },
   {
     "Input": "Prendi i biglietti per il 17° Door Haunted Experience",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": []
   },
@@ -798,12 +869,13 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "sabato due",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 10
       }
     ]
   },
@@ -812,12 +884,13 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Mercoledì 27",
-        "Type": "date"
+        "Type": "date",
+        "Start": 20,
+        "Length": 12
       }
     ]
   },
@@ -826,12 +899,13 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Giovedì 21",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 10
       }
     ]
   },
@@ -840,12 +914,13 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Venerdì 22",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 10
       }
     ]
   },
@@ -854,12 +929,13 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Sabato 23",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 9
       }
     ]
   },
@@ -868,12 +944,13 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Venerdì 15",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 10
       }
     ]
   },
@@ -882,12 +959,13 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Giovedì ventuno",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 15
       }
     ]
   },
@@ -896,12 +974,13 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Venerdì ventidue",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 16
       }
     ]
   },
@@ -910,12 +989,13 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Venerdì quindici",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 16
       }
     ]
   },
@@ -924,240 +1004,265 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Giovedì sette",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Tornerò la seconda Domenica",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "la seconda Domenica",
-        "Type": "date"
+        "Text": "seconda Domenica",
+        "Type": "date",
+        "Start": 11,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Tornerò la prima Domenica",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "la prima Domenica",
-        "Type": "date"
+        "Text": "prima Domenica",
+        "Type": "date",
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Tornerò il terzo Martedì",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il terzo Martedì",
-        "Type": "date"
+        "Text": "terzo Martedì",
+        "Type": "date",
+        "Start": 11,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Tornerò la quinta Domenica",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "quinta Domenica",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Tornerò la sesta Domenica",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "sesta Domenica",
-        "Type": "date"
+        "Text": "Domenica",
+        "Type": "date",
+        "Start": 17,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Tornerò il decimo Lunedì",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Lunedì",
-        "Type": "date"
+        "Type": "date",
+        "Start": 18,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Tornerò il 20 del prossimo mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il 20 del prossimo mese",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Tornerò il 31 di questo mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il 31 di questo mese",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 20
       }
     ]
   },
   {
     "Input": "Cortana potresti provare ad organizzare una chiamata Skype o Venerdì di questa settimana o Martedì della prossima settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Venerdì di questa settimana",
-        "Type": "date"
+        "Type": "date",
+        "Start": 61,
+        "Length": 27
       },
       {
         "Text": "Martedì della prossima settimana",
-        "Type": "date"
+        "Type": "date",
+        "Start": 91,
+        "Length": 32
       }
     ]
   },
   {
     "Input": "Cortana potresti provare ad organizzare una chiamata Skype o Venerdì di questa settimana o questa settimana di Domenica",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Venerdì di questa settimana",
-        "Type": "date"
+        "Type": "date",
+        "Start": 61,
+        "Length": 27
       },
       {
         "Text": "questa settimana di Domenica",
-        "Type": "date"
+        "Type": "date",
+        "Start": 91,
+        "Length": 28
       }
     ]
   },
   {
     "Input": "16. Nov. 2016",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "16. Nov. 2016",
-        "Type": "date"
+        "Type": "date",
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Abbiamo avuto un appuntamento 1 mese e 21 giorni fa",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "1 mese e 21 giorni fa",
-        "Type": "date"
+        "Type": "date",
+        "Start": 30,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Sono partito 2 anni 1 mese e 21 giorni fa",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "2 anni 1 mese e 21 giorni fa",
-        "Type": "date"
+        "Type": "date",
+        "Start": 13,
+        "Length": 28
       }
     ]
   },
   {
     "Input": "Partirò 2 anni e 21 giorni dopo",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "2 anni e 21 giorni dopo",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Sono partito 1 mese 2 anni e 21 giorni fa",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "1 mese 2 anni e 21 giorni fa",
-        "Type": "date"
+        "Type": "date",
+        "Start": 13,
+        "Length": 28
       }
     ]
   },
   {
     "Input": "Sono partito il 20 del prossimo mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il 20 del prossimo mese",
-        "Type": "date"
+        "Type": "date",
+        "Start": 13,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Sono partito il 5 Dicembre 1391",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "5 Dicembre 1391",
-        "Type": "date"
+        "Text": "il 5 Dicembre 1391",
+        "Type": "date",
+        "Start": 13,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Lunedì, Gen ventidue, 2018",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Lunedì, Gen ventidue, 2018",
-        "Type": "date"
+        "Type": "date",
+        "Start": 0,
+        "Length": 26
       }
     ]
   },
   {
     "Input": "Domenica ventuno Gen duemiladiciotto",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Domenica ventuno Gen duemiladiciotto",
-        "Type": "date"
+        "Type": "date",
+        "Start": 0,
+        "Length": 36
       }
     ]
   },
   {
     "Input": "a Settembre, il ventuno, millenovecentosettantatre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "Settembre, il ventuno, millenovecentosettantatre",
-        "Type": "date"
+        "Type": "date",
+        "Start": 2,
+        "Length": 48
       }
     ]
   },
@@ -1167,19 +1272,22 @@
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "10 Settembre, millenovecentouno",
-        "Type": "date"
+        "Text": "il 10 Settembre, millenovecentouno",
+        "Type": "date",
+        "Start": 0,
+        "Length": 34
       }
     ]
   },
   {
     "Input": "il dieci di Settembre, duemila",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "dieci di Settembre, duemila",
-        "Type": "date"
+        "Type": "date",
+        "Start": 3,
+        "Length": 27
       }
     ]
   }

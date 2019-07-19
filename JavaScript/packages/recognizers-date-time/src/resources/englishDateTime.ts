@@ -25,7 +25,7 @@ export namespace EnglishDateTime {
     export const CenturySuffixRegex = `(^century)\\b`;
     export const ReferencePrefixRegex = `(that|same)\\b`;
     export const FutureSuffixRegex = `\\b(in\\s+the\\s+)?(future|hence)\\b`;
-    export const DayRegex = `(the\\s*)?(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?)(?=\\b|t)`;
+    export const DayRegex = `(the\\s*)?(?<!(\\d+:|\\$)\\s*)(?<=\\b)(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?)(?=\\b|t)`;
     export const ImplicitDayRegex = `(the\\s*)?(?<day>(?:3[0-1]|[0-2]?\\d)(?:th|nd|rd|st))\\b`;
     export const MonthNumRegex = `(?<month>1[0-2]|(0)?[1-9])\\b`;
     export const WrittenOneToNineRegex = `(?:one|two|three|four|five|six|seven|eight|nine)`;
@@ -61,7 +61,7 @@ export namespace EnglishDateTime {
     export const BetweenRegex = `\\b(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
     export const MonthWithYear = `\\b((${WrittenMonthRegex}[\\.]?(\\s*)[/\\\\\\-\\.,]?(\\s+(of|in))?(\\s*)(${YearRegex}|(?<order>following|next|last|this)\\s+year))|((${YearRegex}|(?<order>following|next|last|this)\\s+year)(\\s*),?(\\s*)${WrittenMonthRegex}))\\b`;
     export const SpecialYearPrefixes = `(calendar|(?<special>fiscal|school))`;
-    export const OneWordPeriodRegex = `\\b((((the\\s+)?month of\\s+)?(${StrictRelativeRegex}\\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))|(month|year) to date|(${RelativeRegex}\\s+)?(my\\s+)?(week(end)?|month|((${SpecialYearPrefixes}\\s+)?year))(?!((\\s+of)?\\s+\\d+|\\s+to\\s+date))(\\s+${AfterNextSuffixRegex})?)\\b`;
+    export const OneWordPeriodRegex = `\\b((((the\\s+)?month of\\s+)?(${StrictRelativeRegex}\\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))|(month|year) to date|(${RelativeRegex}\\s+)?(my\\s+)?(week(end)?|month|((${SpecialYearPrefixes}\\s+)?year))(?!((\\s+of)?\\s+\\d+(?!(${BaseDateTime.BaseAmDescRegex}|${BaseDateTime.BasePmDescRegex}))|\\s+to\\s+date))(\\s+${AfterNextSuffixRegex})?)\\b`;
     export const MonthNumWithYear = `\\b((${BaseDateTime.FourDigitYearRegex}(\\s*)[/\\-\\.](\\s*)${MonthNumRegex})|(${MonthNumRegex}(\\s*)[/\\-](\\s*)${BaseDateTime.FourDigitYearRegex}))\\b`;
     export const WeekOfMonthRegex = `\\b(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week\\s+${MonthSuffixRegex}(\\s+${BaseDateTime.FourDigitYearRegex}|${RelativeRegex}\\s+year)?)\\b`;
     export const WeekOfYearRegex = `\\b(?<woy>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week(\\s+of)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))\\b`;
@@ -167,7 +167,7 @@ export namespace EnglishDateTime {
     export const SpecificTimeBetweenAnd = `(between\\s+)(?<time1>((${TimeRegex2}|${FirstTimeRegexInTimeRange})|(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?))\\s*${RangeConnectorRegex}\\s*(?<time2>((${TimeRegex2}|${TimeRegexWithDotConnector}(?<rightDesc>\\s*${DescRegex}))|(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<rightDesc>${DescRegex}))?))`;
     export const SuffixAfterRegex = `\\b(((at)\\s)?(or|and)\\s+(above|after|later|greater)(?!\\s+than))\\b`;
     export const PrepositionRegex = `(?<prep>^(at|on|of)(\\s+the)?$)`;
-    export const TimeOfDayRegex = `\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b`;
+    export const TimeOfDayRegex = `\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(r?\\s+|-)))?(in\\s+(the)?\\s+)?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b`;
     export const SpecificTimeOfDayRegex = `\\b((${StrictRelativeRegex}\\s+${TimeOfDayRegex})\\b|\\btonight)s?\\b`;
     export const TimeFollowedUnit = `^\\s*${TimeUnitRegex}`;
     export const TimeNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)${TimeUnitRegex}`;

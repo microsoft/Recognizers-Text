@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -20,7 +19,9 @@
             "startDate": "2016-11-04",
             "endDate": "2016-11-22"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 23
       }
     ]
   },
@@ -29,7 +30,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -45,7 +45,9 @@
             "startDate": "2016-12-04",
             "endDate": "2016-12-23"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 26
       }
     ]
   },
@@ -54,7 +56,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -70,7 +71,9 @@
             "startDate": "2016-09-03",
             "endDate": "2016-09-12"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 20
       }
     ]
   },
@@ -79,7 +82,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -95,7 +97,9 @@
             "startDate": "2016-11-11",
             "endDate": "2016-11-15"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 31
       }
     ]
   },
@@ -104,7 +108,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -120,7 +123,9 @@
             "startDate": "2016-12-04",
             "endDate": "2016-12-23"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 28
       }
     ]
   },
@@ -129,7 +134,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -145,7 +149,9 @@
             "startDate": "2016-11-04",
             "endDate": "2016-11-23"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 31
       }
     ]
   },
@@ -154,7 +160,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -170,7 +175,9 @@
             "startDate": "2016-11-04",
             "endDate": "2016-11-22"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 28
       }
     ]
   },
@@ -179,7 +186,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -195,7 +201,9 @@
             "startDate": "2016-09-03",
             "endDate": "2016-09-12"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 23
       }
     ]
   },
@@ -204,7 +212,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -220,7 +227,9 @@
             "startDate": "1995-01-04",
             "endDate": "1995-01-22"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 24
       }
     ]
   },
@@ -229,7 +238,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -245,7 +253,9 @@
             "startDate": "1995-01-04",
             "endDate": "1995-01-22"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 24
       }
     ]
   },
@@ -254,7 +264,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -270,7 +279,9 @@
             "startDate": "2016-09-04",
             "endDate": "2016-09-08"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 34
       }
     ]
   },
@@ -279,7 +290,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -295,7 +305,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 16
       }
     ]
   },
@@ -304,7 +316,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -320,7 +331,9 @@
             "startDate": "2016-11-14",
             "endDate": "2016-11-21"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 18
       }
     ]
   },
@@ -329,11 +342,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "settimana corrente",
+        "Text": "la settimana corrente",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-W45",
@@ -345,7 +357,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 21
       }
     ]
   },
@@ -354,7 +368,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -370,7 +383,9 @@
             "startDate": "2016-02-01",
             "endDate": "2016-03-01"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 8
       }
     ]
   },
@@ -379,7 +394,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -395,7 +409,9 @@
             "startDate": "2016-09-01",
             "endDate": "2016-10-01"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 16
       }
     ]
   },
@@ -404,11 +420,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "scorso Set",
+        "Text": "lo scorso Set",
         "Type": "daterange",
         "Value": {
           "Timex": "2015-09",
@@ -420,7 +435,9 @@
             "startDate": "2015-09-01",
             "endDate": "2015-10-01"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 13
       }
     ]
   },
@@ -429,11 +446,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "prossimo Giugno",
+        "Text": "il prossimo Giugno",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-06",
@@ -445,7 +461,9 @@
             "startDate": "2017-06-01",
             "endDate": "2017-07-01"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 18
       }
     ]
   },
@@ -454,7 +472,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -463,14 +480,16 @@
         "Value": {
           "Timex": "2016-11-W03",
           "FutureResolution": {
-            "startDate": "2016-11-21",
-            "endDate": "2016-11-28"
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
           },
           "PastResolution": {
-            "startDate": "2016-11-21",
-            "endDate": "2016-11-28"
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 33
       }
     ]
   },
@@ -479,14 +498,13 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "l'ultima settimana di luglio",
         "Type": "daterange",
         "Value": {
-          "Timex": "XXXX-07-W04",
+          "Timex": "XXXX-07-W05",
           "FutureResolution": {
             "startDate": "2017-07-24",
             "endDate": "2017-07-31"
@@ -495,7 +513,9 @@
             "startDate": "2016-07-25",
             "endDate": "2016-08-01"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 28
       }
     ]
   },
@@ -504,7 +524,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -520,7 +539,9 @@
             "startDate": "2016-09-12",
             "endDate": "2016-09-19"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 26
       }
     ]
   },
@@ -529,7 +550,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -545,7 +565,9 @@
             "startDate": "2016-09-01",
             "endDate": "2016-10-01"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 21
       }
     ]
   },
@@ -554,7 +576,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -570,7 +591,9 @@
             "startDate": "2015-03-01",
             "endDate": "2015-04-01"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 6
       }
     ]
   },
@@ -579,7 +602,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -595,7 +617,9 @@
             "startDate": "2015-03-01",
             "endDate": "2015-04-01"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 6
       }
     ]
   },
@@ -604,7 +628,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -620,7 +643,9 @@
             "startDate": "2015-03-01",
             "endDate": "2015-04-01"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 6
       }
     ]
   },
@@ -629,7 +654,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -645,7 +669,9 @@
             "startDate": "2015-03-01",
             "endDate": "2015-04-01"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 6
       }
     ]
   },
@@ -654,32 +680,14 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "in due settimane",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(2016-11-15,2016-11-22,P1W)",
-          "FutureResolution": {
-            "startDate": "2016-11-15",
-            "endDate": "2016-11-22"
-          },
-          "PastResolution": {
-            "startDate": "2016-11-15",
-            "endDate": "2016-11-22"
-          }
-        }
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "i prossimi 2 giorni",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -695,7 +703,9 @@
             "startDate": "2016-11-08",
             "endDate": "2016-11-10"
           }
-        }
+        },
+        "Start": 2,
+        "Length": 17
       }
     ]
   },
@@ -704,7 +714,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -720,7 +729,9 @@
             "startDate": "2016-11-04",
             "endDate": "2016-11-07"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 22
       }
     ]
   },
@@ -729,7 +740,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -745,7 +755,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -754,7 +766,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -770,7 +781,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -779,7 +792,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -795,7 +807,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -804,7 +818,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -820,7 +833,9 @@
             "startDate": "2016-11-12",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -829,7 +844,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -845,7 +859,9 @@
             "startDate": "2016-11-12",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
@@ -854,7 +870,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -870,7 +885,9 @@
             "startDate": "2016-11-12",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
@@ -879,7 +896,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -895,7 +911,9 @@
             "startDate": "2016-10-02",
             "endDate": "2016-10-22"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 23
       }
     ]
   },
@@ -904,11 +922,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "12 Gennaio 2016 - 01/22/2016",
+        "Text": "dal 12 Gennaio 2016 - 01/22/2016",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-01-12,2016-01-22,P10D)",
@@ -920,7 +937,9 @@
             "startDate": "2016-01-12",
             "endDate": "2016-01-22"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 32
       }
     ]
   },
@@ -929,7 +948,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -945,7 +963,9 @@
             "startDate": "2016-01-01",
             "endDate": "2016-01-22"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 31
       }
     ]
   },
@@ -954,7 +974,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -970,7 +989,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-08"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 21
       }
     ]
   },
@@ -979,7 +1000,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -995,7 +1015,9 @@
             "startDate": "2016-10-02",
             "endDate": "2016-10-22"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 28
       }
     ]
   },
@@ -1004,7 +1026,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1020,7 +1041,9 @@
             "startDate": "2015-11-19",
             "endDate": "2015-11-20"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
@@ -1029,7 +1052,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1045,7 +1067,9 @@
             "startDate": "2015-11-19",
             "endDate": "2015-11-20"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 21
       }
     ]
   },
@@ -1054,7 +1078,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1070,7 +1093,9 @@
             "startDate": "2015-11-19",
             "endDate": "2015-11-20"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 26
       }
     ]
   },
@@ -1079,11 +1104,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il resto della settimana",
+        "Text": "resto della settimana",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-07,2016-11-13,P6D)",
@@ -1095,7 +1119,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-13"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 21
       }
     ]
   },
@@ -1104,11 +1130,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il resto di questa settimana",
+        "Text": "resto di questa settimana",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-07,2016-11-13,P6D)",
@@ -1120,7 +1145,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-13"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 25
       }
     ]
   },
@@ -1129,11 +1156,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il resto della mia settimana",
+        "Text": "resto della mia settimana",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-07,2016-11-13,P6D)",
@@ -1145,7 +1171,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-13"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 25
       }
     ]
   },
@@ -1154,11 +1182,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il resto della settimana corrente",
+        "Text": "resto della settimana corrente",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-07,2016-11-13,P6D)",
@@ -1170,7 +1197,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-13"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 30
       }
     ]
   },
@@ -1179,11 +1208,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il resto del mese",
+        "Text": "resto del mese",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-07,2016-11-30,P24D)",
@@ -1195,7 +1223,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-30"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 14
       }
     ]
   },
@@ -1204,11 +1234,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il resto dell'anno",
+        "Text": "resto dell'anno",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-07,2016-12-31,P55D)",
@@ -1220,7 +1249,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-12-31"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 15
       }
     ]
   },
@@ -1229,11 +1260,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-13T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il resto della mia settimana",
+        "Text": "resto della mia settimana",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-13,2016-11-13,P0D)",
@@ -1245,7 +1275,9 @@
             "startDate": "2016-11-13",
             "endDate": "2016-11-13"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 25
       }
     ]
   },
@@ -1254,7 +1286,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1270,7 +1301,9 @@
             "startDate": "2016-11-12",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 7
       }
     ]
   },
@@ -1279,7 +1312,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1295,7 +1327,9 @@
             "startDate": "2016-11-12",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 14
       }
     ]
   },
@@ -1304,7 +1338,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1320,7 +1353,9 @@
             "startDate": "2016-06-01",
             "endDate": "2016-07-01"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 11
       }
     ]
   },
@@ -1329,7 +1364,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1345,7 +1379,9 @@
             "startDate": "2017-06-01",
             "endDate": "2017-07-01"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 24
       }
     ]
   },
@@ -1354,7 +1390,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1370,7 +1405,9 @@
             "startDate": "2017-01-01",
             "endDate": "2018-01-01"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 13
       }
     ]
   },
@@ -1379,7 +1416,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1395,7 +1431,9 @@
             "startDate": "2016-11-08",
             "endDate": "2016-11-11"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 17
       }
     ]
   },
@@ -1404,7 +1442,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1420,7 +1457,9 @@
             "startDate": "2016-11-08",
             "endDate": "2017-02-08"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 15
       }
     ]
   },
@@ -1429,32 +1468,14 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "tra 3 anni",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(2018-11-08,2019-11-08,P1Y)",
-          "FutureResolution": {
-            "startDate": "2018-11-08",
-            "endDate": "2019-11-08"
-          },
-          "PastResolution": {
-            "startDate": "2018-11-08",
-            "endDate": "2019-11-08"
-          }
-        }
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Sarò fuori le ultime 3 settimane",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1470,7 +1491,9 @@
             "startDate": "2016-10-17",
             "endDate": "2016-11-07"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 21
       }
     ]
   },
@@ -1479,7 +1502,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1495,7 +1517,9 @@
             "startDate": "2013-11-07",
             "endDate": "2016-11-07"
           }
-        }
+        },
+        "Start": 19,
+        "Length": 17
       }
     ]
   },
@@ -1504,11 +1528,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "le 3 settimane precedenti",
+        "Text": "3 settimane precedenti",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-10-17,2016-11-07,P3W)",
@@ -1520,7 +1543,9 @@
             "startDate": "2016-10-17",
             "endDate": "2016-11-07"
           }
-        }
+        },
+        "Start": 20,
+        "Length": 22
       }
     ]
   },
@@ -1529,11 +1554,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "la prima settimana di Ott ",
+        "Text": "la prima settimana di Ott",
         "Type": "daterange",
         "Value": {
           "Timex": "XXXX-10-W01",
@@ -1545,7 +1569,9 @@
             "startDate": "2016-10-03",
             "endDate": "2016-10-10"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 25
       }
     ]
   },
@@ -1554,14 +1580,13 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la terza settimana del 2027",
         "Type": "daterange",
         "Value": {
-          "Timex": "2027-01-W03",
+          "Timex": "2027-W03",
           "FutureResolution": {
             "startDate": "2027-01-18",
             "endDate": "2027-01-25"
@@ -1570,7 +1595,9 @@
             "startDate": "2027-01-18",
             "endDate": "2027-01-25"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 27
       }
     ]
   },
@@ -1579,14 +1606,13 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la terza settimana del prossimo anno",
         "Type": "daterange",
         "Value": {
-          "Timex": "2017-01-W03",
+          "Timex": "2017-W03",
           "FutureResolution": {
             "startDate": "2017-01-16",
             "endDate": "2017-01-23"
@@ -1595,7 +1621,9 @@
             "startDate": "2017-01-16",
             "endDate": "2017-01-23"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 36
       }
     ]
   },
@@ -1604,7 +1632,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1620,7 +1647,9 @@
             "startDate": "2016-07-01",
             "endDate": "2016-10-01"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 27
       }
     ]
   },
@@ -1629,7 +1658,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1645,7 +1673,9 @@
             "startDate": "2016-07-01",
             "endDate": "2016-10-01"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 32
       }
     ]
   },
@@ -1654,11 +1684,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "nel 2016 per il terzo trimestre",
+        "Text": "2016 per il terzo trimestre",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-07-01,2016-10-01,P3M)",
@@ -1670,7 +1699,9 @@
             "startDate": "2016-07-01",
             "endDate": "2016-10-01"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 27
       }
     ]
   },
@@ -1679,7 +1710,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1689,7 +1719,9 @@
           "Timex": "2016-SU",
           "FutureResolution": {},
           "PastResolution": {}
-        }
+        },
+        "Start": 8,
+        "Length": 13
       }
     ]
   },
@@ -1698,17 +1730,18 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "la prossima primavera",
+        "Text": "prossima primavera",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-SP",
           "FutureResolution": {},
           "PastResolution": {}
-        }
+        },
+        "Start": 11,
+        "Length": 18
       }
     ]
   },
@@ -1717,17 +1750,18 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "in estate",
+        "Text": "estate",
         "Type": "daterange",
         "Value": {
           "Timex": "SU",
           "FutureResolution": {},
           "PastResolution": {}
-        }
+        },
+        "Start": 11,
+        "Length": 6
       }
     ]
   },
@@ -1736,17 +1770,18 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "d'estate",
+        "Text": "estate",
         "Type": "daterange",
         "Value": {
           "Timex": "SU",
           "FutureResolution": {},
           "PastResolution": {}
-        }
+        },
+        "Start": 10,
+        "Length": 6
       }
     ]
   },
@@ -1755,7 +1790,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1765,7 +1799,9 @@
           "Timex": "2016-SU",
           "FutureResolution": {},
           "PastResolution": {}
-        }
+        },
+        "Start": 8,
+        "Length": 13
       }
     ]
   },
@@ -1774,7 +1810,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1784,7 +1819,9 @@
           "Timex": "2016-SU",
           "FutureResolution": {},
           "PastResolution": {}
-        }
+        },
+        "Start": 8,
+        "Length": 17
       }
     ]
   },
@@ -1793,7 +1830,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1809,7 +1845,9 @@
             "startDate": "2016-12-01",
             "endDate": "2017-01-01"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 14
       }
     ]
   },
@@ -1818,7 +1856,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1834,7 +1871,9 @@
             "startDate": "2016-12-01",
             "endDate": "2017-01-01"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 13
       }
     ]
   },
@@ -1843,14 +1882,14 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "a fine mese",
+        "Text": "fine mese",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-11",
+          "Mod": "end",
           "FutureResolution": {
             "startDate": "2017-11-16",
             "endDate": "2017-12-01"
@@ -1859,7 +1898,9 @@
             "startDate": "2017-11-16",
             "endDate": "2017-12-01"
           }
-        }
+        },
+        "Start": 53,
+        "Length": 9
       }
     ]
   },
@@ -1868,14 +1909,14 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "a fine settimana",
+        "Text": "fine settimana",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W45",
+          "Mod": "end",
           "FutureResolution": {
             "startDate": "2017-11-09",
             "endDate": "2017-11-13"
@@ -1884,7 +1925,9 @@
             "startDate": "2017-11-09",
             "endDate": "2017-11-13"
           }
-        }
+        },
+        "Start": 53,
+        "Length": 14
       }
     ]
   },
@@ -1893,14 +1936,14 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "alla fine di quest'anno",
+        "Text": "fine di quest'anno",
         "Type": "daterange",
         "Value": {
           "Timex": "2017",
+          "Mod": "end",
           "FutureResolution": {
             "startDate": "2017-07-01",
             "endDate": "2018-01-01"
@@ -1909,7 +1952,9 @@
             "startDate": "2017-07-01",
             "endDate": "2018-01-01"
           }
-        }
+        },
+        "Start": 56,
+        "Length": 18
       }
     ]
   },
@@ -1918,14 +1963,14 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "all'inizio del prossimo anno",
+        "Text": "inizio del prossimo anno",
         "Type": "daterange",
         "Value": {
           "Timex": "2018",
+          "Mod": "start",
           "FutureResolution": {
             "startDate": "2018-01-01",
             "endDate": "2018-07-01"
@@ -1934,7 +1979,9 @@
             "startDate": "2018-01-01",
             "endDate": "2018-07-01"
           }
-        }
+        },
+        "Start": 55,
+        "Length": 24
       }
     ]
   },
@@ -1943,14 +1990,14 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "all'inizio della prossima settimana",
+        "Text": "inizio della prossima settimana",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W46",
+          "Mod": "start",
           "FutureResolution": {
             "startDate": "2017-11-13",
             "endDate": "2017-11-16"
@@ -1959,7 +2006,9 @@
             "startDate": "2017-11-13",
             "endDate": "2017-11-16"
           }
-        }
+        },
+        "Start": 55,
+        "Length": 31
       }
     ]
   },
@@ -1968,14 +2017,14 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "all'inizio del prossimo mese",
+        "Text": "inizio del prossimo mese",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-12",
+          "Mod": "start",
           "FutureResolution": {
             "startDate": "2017-12-01",
             "endDate": "2017-12-16"
@@ -1984,7 +2033,9 @@
             "startDate": "2017-12-01",
             "endDate": "2017-12-16"
           }
-        }
+        },
+        "Start": 55,
+        "Length": 24
       }
     ]
   },
@@ -1993,14 +2044,14 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "alla fine dell'anno scorso",
+        "Text": "fine dell'anno scorso",
         "Type": "daterange",
         "Value": {
           "Timex": "2016",
+          "Mod": "end",
           "FutureResolution": {
             "startDate": "2016-07-01",
             "endDate": "2017-01-01"
@@ -2009,7 +2060,9 @@
             "startDate": "2016-07-01",
             "endDate": "2017-01-01"
           }
-        }
+        },
+        "Start": 35,
+        "Length": 21
       }
     ]
   },
@@ -2018,14 +2071,14 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "alla fine della scorsa settimana",
+        "Text": "fine della scorsa settimana",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W44",
+          "Mod": "end",
           "FutureResolution": {
             "startDate": "2017-11-02",
             "endDate": "2017-11-06"
@@ -2034,7 +2087,9 @@
             "startDate": "2017-11-02",
             "endDate": "2017-11-06"
           }
-        }
+        },
+        "Start": 35,
+        "Length": 27
       }
     ]
   },
@@ -2043,14 +2098,14 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "alla fine dello scorso mese",
+        "Text": "fine dello scorso mese",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-10",
+          "Mod": "end",
           "FutureResolution": {
             "startDate": "2017-10-16",
             "endDate": "2017-11-01"
@@ -2059,7 +2114,9 @@
             "startDate": "2017-10-16",
             "endDate": "2017-11-01"
           }
-        }
+        },
+        "Start": 35,
+        "Length": 22
       }
     ]
   },
@@ -2084,7 +2141,9 @@
             "startDate": "2017-11-22",
             "endDate": "2017-11-24"
           }
-        }
+        },
+        "Start": 70,
+        "Length": 45
       }
     ]
   },
@@ -2109,7 +2168,9 @@
             "startDate": "2017-11-10",
             "endDate": "2017-11-12"
           }
-        }
+        },
+        "Start": 70,
+        "Length": 43
       }
     ]
   },
@@ -2118,7 +2179,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-14T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2134,7 +2194,9 @@
             "startDate": "2017-11-14",
             "endDate": "2017-11-16"
           }
-        }
+        },
+        "Start": 71,
+        "Length": 29
       }
     ]
   },
@@ -2143,11 +2205,10 @@
     "Context": {
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "questa setttimana",
+        "Text": "questa settimana",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W46",
@@ -2159,7 +2220,9 @@
             "startDate": "2017-11-13",
             "endDate": "2017-11-20"
           }
-        }
+        },
+        "Start": 30,
+        "Length": 16
       }
     ]
   },
@@ -2168,14 +2231,13 @@
     "Context": {
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la prima settimana di quest'anno",
         "Type": "daterange",
         "Value": {
-          "Timex": "2017-01-W01",
+          "Timex": "2017-W01",
           "FutureResolution": {
             "startDate": "2017-01-02",
             "endDate": "2017-01-09"
@@ -2184,7 +2246,9 @@
             "startDate": "2017-01-02",
             "endDate": "2017-01-09"
           }
-        }
+        },
+        "Start": 30,
+        "Length": 32
       }
     ]
   },
@@ -2193,14 +2257,13 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "prima settimana del 2015",
         "Type": "daterange",
         "Value": {
-          "Timex": "2015-01-W01",
+          "Timex": "2015-W01",
           "FutureResolution": {
             "startDate": "2014-12-29",
             "endDate": "2015-01-05"
@@ -2209,7 +2272,9 @@
             "startDate": "2014-12-29",
             "endDate": "2015-01-05"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 24
       }
     ]
   },
@@ -2218,14 +2283,13 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "seconda settimana del 2015",
         "Type": "daterange",
         "Value": {
-          "Timex": "2015-01-W02",
+          "Timex": "2015-W02",
           "FutureResolution": {
             "startDate": "2015-01-05",
             "endDate": "2015-01-12"
@@ -2234,7 +2298,9 @@
             "startDate": "2015-01-05",
             "endDate": "2015-01-12"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 26
       }
     ]
   },
@@ -2243,7 +2309,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2259,7 +2324,9 @@
             "startDate": "2017-11-25",
             "endDate": "2017-11-27"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
@@ -2284,7 +2351,9 @@
             "startDate": "2015-12-28",
             "endDate": "2016-01-04"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 25
       }
     ]
   },
@@ -2293,11 +2362,10 @@
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "l'anno 247",
+        "Text": "anno 247",
         "Type": "daterange",
         "Value": {
           "Timex": "0247",
@@ -2309,7 +2377,9 @@
             "startDate": "0247-01-01",
             "endDate": "0248-01-01"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 8
       }
     ]
   },
@@ -2318,7 +2388,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2334,7 +2403,9 @@
             "startDate": "1970-01-01",
             "endDate": "1980-01-01"
           }
-        }
+        },
+        "Start": 6,
+        "Length": 9
       }
     ]
   },
@@ -2343,7 +2414,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2359,7 +2429,9 @@
             "startDate": "2000-01-01",
             "endDate": "2010-01-01"
           }
-        }
+        },
+        "Start": 6,
+        "Length": 9
       }
     ]
   },
@@ -2368,7 +2440,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2384,7 +2455,9 @@
             "startDate": "1970-01-01",
             "endDate": "1980-01-01"
           }
-        }
+        },
+        "Start": 6,
+        "Length": 7
       }
     ]
   },
@@ -2393,7 +2466,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2409,7 +2481,9 @@
             "startDate": "1970-01-01",
             "endDate": "1980-01-01"
           }
-        }
+        },
+        "Start": 6,
+        "Length": 8
       }
     ]
   },
@@ -2418,7 +2492,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2434,7 +2507,9 @@
             "startDate": "1970-01-01",
             "endDate": "1980-01-01"
           }
-        }
+        },
+        "Start": 6,
+        "Length": 13
       }
     ]
   },
@@ -2443,7 +2518,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2459,7 +2533,9 @@
             "startDate": "1970-01-01",
             "endDate": "1980-01-01"
           }
-        }
+        },
+        "Start": 6,
+        "Length": 27
       }
     ]
   },
@@ -2468,7 +2544,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2484,7 +2559,9 @@
             "startDate": "2010-01-01",
             "endDate": "2020-01-01"
           }
-        }
+        },
+        "Start": 6,
+        "Length": 17
       }
     ]
   },
@@ -2493,7 +2570,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2509,7 +2585,9 @@
             "startDate": "2000-01-01",
             "endDate": "2010-01-01"
           }
-        }
+        },
+        "Start": 6,
+        "Length": 12
       }
     ]
   },
@@ -2518,23 +2596,24 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "anni trenta",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2000-01-01,2010-01-01,P10Y)",
+          "Timex": "(XX30-01-01,XX40-01-01,P10Y)",
           "FutureResolution": {
-            "startDate": "2000-01-01",
-            "endDate": "2010-01-01"
+            "startDate": "2030-01-01",
+            "endDate": "2040-01-01"
           },
           "PastResolution": {
-            "startDate": "2000-01-01",
-            "endDate": "2010-01-01"
+            "startDate": "1930-01-01",
+            "endDate": "1940-01-01"
           }
-        }
+        },
+        "Start": 6,
+        "Length": 11
       }
     ]
   },
@@ -2543,11 +2622,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": " dal 2 al 7 Feb duemiladiciotto",
+        "Text": "dal 2 al 7 Feb duemiladiciotto",
         "Type": "daterange",
         "Value": {
           "Timex": "(2018-02-02,2018-02-07,P5D)",
@@ -2559,7 +2637,9 @@
             "startDate": "2018-02-02",
             "endDate": "2018-02-07"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 30
       }
     ]
   },
@@ -2568,7 +2648,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2584,7 +2663,9 @@
             "startDate": "2018-02-02",
             "endDate": "2018-02-07"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 35
       }
     ]
   },
@@ -2593,7 +2674,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2609,7 +2689,9 @@
             "startDate": "2018-02-02",
             "endDate": "2018-02-07"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 32
       }
     ]
   },
@@ -2618,11 +2700,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "a Giugno del millenovecentonovantanove",
+        "Text": "Giugno del millenovecentonovantanove",
         "Type": "daterange",
         "Value": {
           "Timex": "1999-06",
@@ -2634,7 +2715,9 @@
             "startDate": "1999-06-01",
             "endDate": "1999-07-01"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 36
       }
     ]
   },
@@ -2643,7 +2726,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2659,7 +2741,9 @@
             "startDate": "1928-01-01",
             "endDate": "1929-01-01"
           }
-        }
+        },
+        "Start": 4,
+        "Length": 22
       }
     ]
   },
@@ -2668,7 +2752,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2684,7 +2767,9 @@
             "startDate": "1789-01-01",
             "endDate": "1790-01-01"
           }
-        }
+        },
+        "Start": 4,
+        "Length": 25
       }
     ]
   },
@@ -2693,14 +2778,13 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la terza settimana del duemilaventisette",
         "Type": "daterange",
         "Value": {
-          "Timex": "2027-01-W03",
+          "Timex": "2027-W03",
           "FutureResolution": {
             "startDate": "2027-01-18",
             "endDate": "2027-01-25"
@@ -2709,7 +2793,9 @@
             "startDate": "2027-01-18",
             "endDate": "2027-01-25"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 40
       }
     ]
   },
@@ -2718,23 +2804,24 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il primo trimestre del duemilaventi",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2020-07-01,2020-10-01,P3M)",
+          "Timex": "(2020-01-01,2020-04-01,P3M)",
           "FutureResolution": {
-            "startDate": "2020-07-01",
-            "endDate": "2020-10-01"
+            "startDate": "2020-01-01",
+            "endDate": "2020-04-01"
           },
           "PastResolution": {
-            "startDate": "2020-07-01",
-            "endDate": "2020-10-01"
+            "startDate": "2020-01-01",
+            "endDate": "2020-04-01"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 35
       }
     ]
   },
@@ -2743,7 +2830,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2753,7 +2839,9 @@
           "Timex": "1978-SP",
           "FutureResolution": {},
           "PastResolution": {}
-        }
+        },
+        "Start": 6,
+        "Length": 39
       }
     ]
   },
@@ -2762,7 +2850,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2778,7 +2865,9 @@
             "startDate": "0267-01-01",
             "endDate": "0268-01-01"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 26
       }
     ]
   },
@@ -2787,7 +2876,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2803,7 +2891,9 @@
             "startDate": "2016-11-21",
             "endDate": "2016-11-28"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 29
       }
     ]
   },
@@ -2812,7 +2902,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2828,7 +2917,9 @@
             "startDate": "2017-01-01",
             "endDate": "2017-02-01"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 24
       }
     ]
   },
@@ -2837,7 +2928,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2853,7 +2943,9 @@
             "startDate": "2018-01-01",
             "endDate": "2019-01-01"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 23
       }
     ]
   },
@@ -2862,7 +2954,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2878,7 +2969,9 @@
             "startDate": "2016-11-26",
             "endDate": "2016-11-28"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 27
       }
     ]
   },
@@ -2887,7 +2980,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2903,7 +2995,9 @@
             "startDate": "2014-01-01",
             "endDate": "2018-01-01"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 9
       }
     ]
   },
@@ -2912,7 +3006,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2928,7 +3021,9 @@
             "startDate": "2014-01-01",
             "endDate": "2018-01-01"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 13
       }
     ]
   },
@@ -2937,7 +3032,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2953,7 +3047,9 @@
             "startDate": "2014-01-01",
             "endDate": "2018-01-01"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 16
       }
     ]
   },
@@ -2962,7 +3058,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -2978,7 +3073,9 @@
             "startDate": "2014-01-01",
             "endDate": "2018-01-01"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 21
       }
     ]
   },
@@ -2987,7 +3084,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -3003,7 +3099,9 @@
             "startDate": "2000-01-01",
             "endDate": "2014-01-01"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 38
       }
     ]
   },
@@ -3012,7 +3110,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -3028,7 +3125,9 @@
             "startDate": "1990-01-01",
             "endDate": "2010-01-01"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 17
       }
     ]
   },
@@ -3037,7 +3136,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -3053,7 +3151,9 @@
             "startDate": "1990-01-01",
             "endDate": "2010-01-01"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 18
       }
     ]
   },
@@ -3062,7 +3162,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -3078,7 +3177,9 @@
             "startDate": "2020-01-01",
             "endDate": "2030-01-01"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 17
       }
     ]
   },
@@ -3087,7 +3188,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -3103,7 +3203,9 @@
             "startDate": "2020-01-01",
             "endDate": "2050-01-01"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 18
       }
     ]
   },
@@ -3112,7 +3214,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -3128,7 +3229,9 @@
             "startDate": "2016-11-08",
             "endDate": "2016-12-06"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 21
       }
     ]
   },
@@ -3137,7 +3240,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -3153,7 +3255,9 @@
             "startDate": "2016-11-08",
             "endDate": "2016-11-10"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 28
       }
     ]
   },
@@ -3162,7 +3266,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -3179,7 +3282,9 @@
             "startDate": "2017-11-13",
             "endDate": "2017-11-16"
           }
-        }
+        },
+        "Start": 33,
+        "Length": 34
       }
     ]
   },
@@ -3188,11 +3293,10 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "alla fine della prossima settimana",
+        "Text": "fine della prossima settimana",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W46",
@@ -3205,20 +3309,21 @@
             "startDate": "2017-11-16",
             "endDate": "2017-11-20"
           }
-        }
+        },
+        "Start": 31,
+        "Length": 29
       }
     ]
   },
   {
-    "Input": "Certo, facciamo uno Skype all'inizio dalla prossima settimana",
+    "Input": "Certo, facciamo uno Skype all'inizio della prossima settimana",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "all'inizio dalla prossima settimana",
+        "Text": "inizio della prossima settimana",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W46",
@@ -3231,7 +3336,9 @@
             "startDate": "2017-11-13",
             "endDate": "2017-11-16"
           }
-        }
+        },
+        "Start": 30,
+        "Length": 31
       }
     ]
   },
@@ -3240,11 +3347,10 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "alla fine di Marzo",
+        "Text": "fine di Marzo",
         "Type": "daterange",
         "Value": {
           "Timex": "XXXX-03",
@@ -3257,7 +3363,9 @@
             "startDate": "2017-03-16",
             "endDate": "2017-04-01"
           }
-        }
+        },
+        "Start": 33,
+        "Length": 13
       }
     ]
   },
@@ -3266,11 +3374,10 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "a metà della prossima settimana",
+        "Text": "metà della prossima settimana",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W46",
@@ -3283,7 +3390,9 @@
             "startDate": "2017-11-14",
             "endDate": "2017-11-18"
           }
-        }
+        },
+        "Start": 41,
+        "Length": 29
       }
     ]
   },
@@ -3292,7 +3401,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -3309,7 +3417,9 @@
             "startDate": "2017-11-13",
             "endDate": "2017-11-16"
           }
-        }
+        },
+        "Start": 26,
+        "Length": 34
       }
     ]
   },
@@ -3318,7 +3428,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -3329,7 +3438,9 @@
           "Mod": "mid",
           "FutureResolution": {},
           "PastResolution": {}
-        }
+        },
+        "Start": 15,
+        "Length": 11
       }
     ]
   }

@@ -34,7 +34,7 @@ class ChineseSetExtractorConfiguration implements ISetExtractorConfiguration {
     readonly timePeriodExtractor: BaseTimePeriodExtractor;
     readonly dateTimePeriodExtractor: BaseDateTimePeriodExtractor;
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         this.eachUnitRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SetEachUnitRegex);
         this.durationExtractor = new ChineseDurationExtractor();
         this.lastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SetLastRegex);
@@ -42,15 +42,15 @@ class ChineseSetExtractorConfiguration implements ISetExtractorConfiguration {
         this.timeExtractor = new ChineseTimeExtractor();
         this.beforeEachDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SetEachDayRegex);
         this.eachDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SetEachDayRegex);
-        this.dateExtractor = new ChineseDateExtractor();
-        this.dateTimeExtractor = new ChineseDateTimeExtractor();
+        this.dateExtractor = new ChineseDateExtractor(dmyDateFormat);
+        this.dateTimeExtractor = new ChineseDateTimeExtractor(dmyDateFormat);
     }
 }
 
 export class ChineseSetExtractor extends BaseSetExtractor {
 
-    constructor() {
-        super(new ChineseSetExtractorConfiguration());
+    constructor(dmyDateFormat: boolean) {
+        super(new ChineseSetExtractorConfiguration(dmyDateFormat));
     }
 
     extract(source: string, refDate: Date): Array<ExtractResult> {
@@ -103,15 +103,15 @@ class ChineseSetParserConfiguration implements ISetParserConfiguration {
     readonly setWeekDayRegex: RegExp;
     readonly setEachRegex: RegExp;
 
-    constructor() {
-        this.dateExtractor = new ChineseDateExtractor();
+    constructor(dmyDateFormat: boolean) {
+        this.dateExtractor = new ChineseDateExtractor(dmyDateFormat);
         this.timeExtractor = new ChineseTimeExtractor();
         this.durationExtractor = new ChineseDurationExtractor();
-        this.dateTimeExtractor = new ChineseDateTimeExtractor();
-        this.dateParser = new ChineseDateParser();
+        this.dateTimeExtractor = new ChineseDateTimeExtractor(dmyDateFormat);
+        this.dateParser = new ChineseDateParser(dmyDateFormat);
         this.timeParser = new ChineseTimeParser();
         this.durationParser = new ChineseDurationParser();
-        this.dateTimeParser = new ChineseDateTimeParser();
+        this.dateTimeParser = new ChineseDateTimeParser(dmyDateFormat);
         this.unitMap = ChineseDateTime.ParserConfigurationUnitMap;
         this.eachUnitRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SetEachUnitRegex);
         this.eachDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SetEachDayRegex);
@@ -134,8 +134,8 @@ class ChineseSetParserConfiguration implements ISetParserConfiguration {
 
 export class ChineseSetParser extends BaseSetParser {
 
-    constructor() {
-        let config = new ChineseSetParserConfiguration();
+    constructor(dmyDateFormat: boolean) {
+        let config = new ChineseSetParserConfiguration(dmyDateFormat);
         super(config);
     }
 
