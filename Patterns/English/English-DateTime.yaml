@@ -530,8 +530,8 @@ AroundRegex: !simpleRegex
 AgoRegex: !simpleRegex
   def: \b(ago|before\s+(?<day>yesterday|today))\b
 LaterRegex: !nestedRegex
-  def: \b(?:later(?!(\s+in)?\s*{OneWordPeriodRegex})|from now|(from|after) (?<day>tomorrow|tmr|today))\b
-  references: [ OneWordPeriodRegex ]
+  def: \b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex}))|from now|(from|after) (?<day>tomorrow|tmr|today))\b
+  references: [ OneWordPeriodRegex, TimeOfDayRegex ]
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
 SinceYearSuffixRegex: !nestedRegex
