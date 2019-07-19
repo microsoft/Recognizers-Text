@@ -17,7 +17,7 @@ UrlRegex: !nestedRegex
   def: '{UrlPrefixRegex}(?<Tld>[a-zA-Z]{2,18}){UrlSuffixRegex}'
   references: [ UrlPrefixRegex, ProtocolRegex, UrlSuffixRegex ]
 UrlRegex2: !simpleRegex
-  def: '((ht|f)tp(s?)\:\/\/|www\.)[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(\.(?<Tld>[0-9a-zA-Z]+))+(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\''\/\\\+&amp;%\$#_=@]*)?'
+  def: '((ht|f)tp(s?)\:\/\/|www\.)[-a-zA-Z0-9@:%._\+~#=]{1,256}\.(?<Tld>[a-zA-Z0-9()]{1,6})\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)'
 IpUrlRegex: !nestedRegex
   def: '(?<IPurl>({ExtractionRestrictionRegex}{ProtocolRegex}({BaseIp.Ipv4Regex}|localhost){UrlSuffixRegex}))'
   references: [ ExtractionRestrictionRegex, ProtocolRegex, BaseIp.Ipv4Regex, UrlSuffixRegex ]
