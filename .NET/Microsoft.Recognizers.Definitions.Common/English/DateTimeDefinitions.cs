@@ -224,7 +224,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string SinceRegex = @"(?:(?:\b(?:since|after\s+or\s+equal\s+to|starting\s+(?:from|on|with)|as\s+early\s+as|any\s+time\s+from)\b\s*)|(?<!\w|<)(>=))";
       public const string AroundRegex = @"(?:\b(?:around|circa)\s*\b)";
       public const string AgoRegex = @"\b(ago|before\s+(?<day>yesterday|today))\b";
-      public static readonly string LaterRegex = $@"\b(?:later(?!(\s+in)?\s*{OneWordPeriodRegex})|from now|(from|after) (?<day>tomorrow|tmr|today))\b";
+      public static readonly string LaterRegex = $@"\b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex}))|from now|(from|after) (?<day>tomorrow|tmr|today))\b";
       public const string InConnectorRegex = @"\b(in)\b";
       public static readonly string SinceYearSuffixRegex = $@"(^\s*{SinceRegex}(\s*(the\s+)?year\s*)?{YearSuffix})";
       public static readonly string WithinNextPrefixRegex = $@"\b(within(\s+the)?(\s+(?<next>{NextPrefixRegex}))?)\b";

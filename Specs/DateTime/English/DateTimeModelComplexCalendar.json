@@ -11245,6 +11245,129 @@
     ]
   },
   {
+    "Input": "Let's go for coffee next week later in the afternoon",
+    "Context": {
+      "ReferenceDateTime": "2019-07-17T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "next week",
+        "Start": 20,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W30",
+              "type": "daterange",
+              "start": "2019-07-22",
+              "end": "2019-07-29"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "later in the afternoon",
+        "Start": 30,
+        "End": 51,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TAF",
+              "Mod": "end",
+              "type": "timerange",
+              "start": "14:00:00",
+              "end": "16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's go for coffee next week later in the morning.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-17T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "next week",
+        "Start": 20,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W30",
+              "type": "daterange",
+              "start": "2019-07-22",
+              "end": "2019-07-29"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "later in the morning",
+        "Start": 30,
+        "End": 49,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "Mod": "end",
+              "type": "timerange",
+              "start": "10:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's go for coffee next week later in the evening.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-17T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "next week",
+        "Start": 20,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W30",
+              "type": "daterange",
+              "start": "2019-07-22",
+              "end": "2019-07-29"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "later in the evening",
+        "Start": 30,
+        "End": 49,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TEV",
+              "Mod": "end",
+              "type": "timerange",
+              "start": "18:00:00",
+              "end": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "I'm in the pacific timezone",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
