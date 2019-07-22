@@ -283,7 +283,6 @@ class FrenchNumericWithUnit:
                                ("Yuan Chinois", "cny|rmb|￥|元"),
                                ("Yen Japonais", "¥|jpy"),
                                ("Euro", "€|eur"),
-                               ("Pound", "£"),
                                ("Livre", "£")])
     AmbiguousCurrencyUnitList = [r'din.', r'kina', r'lari', r'taka', r'tala', r'vatu', r'yuan', r'bob', r'btn', r'cop', r'cup', r'dop', r'gip', r'jod', r'kgs', r'lak', r'mga', r'mop', r'nad', r'omr', r'sar', r'sbd', r'scr', r'sdg', r'sek', r'sos', r'std', r'try', r'yer']
     InformationSuffixList = dict([("Bit", "-bit|bit|bits"),
