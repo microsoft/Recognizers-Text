@@ -3,6 +3,16 @@ import { Constants } from "../constants";
 import { SpanishNumberWithUnitExtractorConfiguration, SpanishNumberWithUnitParserConfiguration } from "./base";
 import { SpanishNumericWithUnit } from "../../resources/spanishNumericWithUnit";
 
+const dimensionSuffixList = new Map<string, string>([
+    ...SpanishNumericWithUnit.InformationSuffixList,
+    ...SpanishNumericWithUnit.AreaSuffixList,
+    ...SpanishNumericWithUnit.LengthSuffixList,
+    ...SpanishNumericWithUnit.SpeedSuffixList,
+    ...SpanishNumericWithUnit.VolumeSuffixList,
+    ...SpanishNumericWithUnit.WeightSuffixList
+]);
+
+
 export class SpanishDimensionExtractorConfiguration extends SpanishNumberWithUnitExtractorConfiguration {
 
     readonly suffixList: ReadonlyMap<string, string>;
@@ -19,7 +29,7 @@ export class SpanishDimensionExtractorConfiguration extends SpanishNumberWithUni
 
         this.extractType = Constants.SYS_UNIT_DIMENSION;
 
-        this.suffixList = SpanishNumericWithUnit.DimensionSuffixList;
+        this.suffixList = dimensionSuffixList;
         this.prefixList = new Map<string, string>();
         this.ambiguousUnitList = SpanishNumericWithUnit.AmbiguousDimensionUnitList
     }
@@ -33,6 +43,6 @@ export class SpanishDimensionParserConfiguration extends SpanishNumberWithUnitPa
 
         super(ci);
 
-        this.BindDictionary(SpanishNumericWithUnit.DimensionSuffixList);
+        this.BindDictionary(dimensionSuffixList);
     }
 }

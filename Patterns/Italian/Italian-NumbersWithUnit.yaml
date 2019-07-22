@@ -35,7 +35,7 @@ CurrencySuffixList: !dictionary
     Pul: pul
 #Euro
     Euro: euros|euro|€|eur
-    Cent: cents|cent|centesimo|-cent|sen|centesimi|centesimo
+    Cent: cents|cent|centesimo|-cent|centesimi
 #Albanian lek
 #No use of "ALL" "L"
     Albanian lek: lek albanese|lek
@@ -117,7 +117,7 @@ CurrencySuffixList: !dictionary
 #Kazakhstani tenge
     Kazakhstani tenge: tenge del kazakistan|kzt|tenge
 #Kenyan shilling
-    Kenyan shilling: scellino keniota|sh|kes|scellini kenioti
+    Kenyan shilling: scellino keniota|kes|scellini kenioti
 #North Korean won
     North Korean won: won nordcoreano|won nordcoreani|won nord coreano|won nord coreani|kpw
     South Korean won: won sudcoreano|won sudcoreani|won sud coreano|won sud coreani|krw
@@ -170,7 +170,6 @@ CurrencySuffixList: !dictionary
     Omani rial: rial dell'oman|omr|ر.ع.
 #Panamanian balboa
     Panamanian balboa: balboa panamense|balboa panamensi|balboa del panama|b/.|pab
-    Centesimo: centesimo|céntimo
 #Papua New Guinean kina
     Papua New Guinean kina: kina del papua nuova guinea|kina|pgk
     Toea: toea
@@ -197,7 +196,7 @@ CurrencySuffixList: !dictionary
 #Spain
     Peseta: pesetas|peseta
 #Netherlands guilder
-    Netherlands guilder: fiorino|fiorini|fiorino olandese|fiorini olandesi|fiorino delle antille olandesi|fiorini delle antille olandesi|ang|ƒ
+    Netherlands guilder: fiorino|fiorini|fiorino olandese|fiorini olandesi|fiorino delle antille olandesi|fiorini delle antille olandesi|ang
 #Swazi lilangeni
     Swazi lilangeni: lilangeni del swaziland|lilangeni|szl|emalangeni
 #Tajikistani somoni
@@ -228,10 +227,10 @@ CurrencySuffixList: !dictionary
     Manat: manats|manat
     Qəpik: qəpik
 #Shilling
-    Somali shilling: scellino somalo|scellini somali|scellino della somalia|scellini della somalia|scellino|shilin|sh.so.|sos
+    Somali shilling: scellino somalo|scellini somali|scellino della somalia|scellini della somalia|sh.so.|sos
     Somaliland shilling: somaliland shillings|somaliland shilling|soomaaliland shilin
     Tanzanian shilling: scellino tanzaniano|scellini tanzaniani|scellino della tanzania|scellini della tanzania|tsh|tzs
-    Ugandan shilling: scellino ugandese|scellini ugandesi|scellino dell'uganda|scellini dell'uganda|sh|ugx
+    Ugandan shilling: scellino ugandese|scellini ugandesi|scellino dell'uganda|scellini dell'uganda|ugx
 #Leu
     Romanian leu: leu rumeno|leu rumeni|nuovo leu rumeno|leu della romania|nuovo leu della romania|lei|ron
     Moldovan leu: leu moldavo|leu moldavi|leu della moldavia|mdl
@@ -243,7 +242,7 @@ CurrencySuffixList: !dictionary
     Indian rupee: rupia indiana|rupia indiane|inr|₹
     Seychellois rupee: rupie delle seychelles|scr|sr|sre
     Mauritian rupee: rupia mauriziana|rupie mauriziane|rupia delle mauritius|mur
-    Maldivian rufiyaa: rufiyaa|rufiyaa delle maldive|rf|mvr|.ރ|
+    Maldivian rufiyaa: rufiyaa|rufiyaa delle maldive|mvr|.ރ|
     Sri Lankan rupee: rupia singalese|rupie singalesi|rupia dello sri lanka|rupie dello sri lanka|lkr|රු|ரூ
     Indonesian rupiah: rupia indonesiana|rupie indonesiane|rupia dell'indonesia|rupiah|perak|rp|idr
     Rupee: rupia|rupie|rupee|rs
@@ -273,9 +272,8 @@ CurrencySuffixList: !dictionary
 #Ruble
     Russian ruble: rublo russo|rubli russi|₽|rub
     New Belarusian ruble: nuovo rublo bielorusso|nuovi rubli bielorussi|byn
-    Old Belarusian ruble: rublo bielorusso|rubli bielorussi|byr
     Transnistrian ruble: transnistrian ruble|prb|р.
-    Belarusian ruble: rublo bielorusso|rubli bielorussi
+    Belarusian ruble: rublo bielorusso|rubli bielorussi|byr
     Kopek: kopek|kopeks
     Kapyeyka: kapyeyka
     Ruble: rubles|ruble|br|rublo|rubli
@@ -325,7 +323,7 @@ CurrencySuffixList: !dictionary
     Tristan da Cunha pound: tristan da cunha pounds|tristan da cunha pound|tristan da cunha £
     Pound: pounds|pound|-pounds|-pound|£|sterlina|sterline
     Pence: pence
-    Shilling: shillings|shilling|shilingi|scellino|scellini
+    Shilling: shillings|shilling|shilingi|shilin|sh|scellino|scellini
     Penny: pennies|penny
 #Dollar
     United States dollar: dollaro americano|dollari americani|dollaro statunitense|dollari statunitensi|dollaro degli stati uniti|dollari delgi stati uniti|u.s. dollars|u.s. dollar|u s dollar|u s dollars|usd|us$|us dollar|us dollars|u.s dollar|u.s dollars
@@ -374,8 +372,8 @@ CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
 #Dollar Prefix
-    Dollaro: $
-    United states dollar: $ stati uniti|us$|us $|u.s. $|u.s $
+    Dollar: $
+    United States dollar: $ stati uniti|us$|us $|u.s. $|u.s $
     East Caribbean dollar: east caribbean $
     Australian dollar: $ australiano|$ australia
     Bahamian dollar: bahamas $|$ bahamas
@@ -578,7 +576,7 @@ VolumeSuffixList: !dictionary
     Litro: l|litro|litri
     Decilitro: dl|decilitro|decilitri
     Centilitro: cl|centilitro|centilitri
-    Millilitro: ml|millimetro|millimetri
+    Millilitro: ml|millilitro|millilitri
     Iarda cubica: iarda cubica|iarde cubiche
     Pollice cubo: pollice cubo|pollice cubico|pollici cubici|pollici cubi
     Piede cubo: piede cubo|piedi cubi|piede cubico|piedi cubici
