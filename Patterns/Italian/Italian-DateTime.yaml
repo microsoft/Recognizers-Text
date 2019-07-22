@@ -148,7 +148,7 @@ FollowedDateUnit: !nestedRegex
   def: ^\s*{DateUnitRegex}
   references: [ DateUnitRegex ]
 NumberCombinedWithDateUnit: !nestedRegex
-  def: \b(?<num>\d+(\.\d*)?){DateUnitRegex}
+  def: \b(?<num>\d+(\.\d*)?)\s*{DateUnitRegex}
   references: [ DateUnitRegex ]
 QuarterRegex: !nestedRegex
   def: ((il|l')\s*)?(?<cardinal>primo|secondo|terzo|quarto|ultimo)\s+trimestre((\s+(di|del(l[o'])?)|\s*,\s*)?\s*({YearRegex}|({RelativeRegex}\s*anno)|(anno\s+(({NextSuffixRegex})|({PastSuffixRegex})))))?
@@ -157,7 +157,7 @@ QuarterRegexYearFront: !nestedRegex
   def: ({YearRegex}|l'anno\s+({PastSuffixRegex}|{NextSuffixRegex})|{RelativeRegex}\s+anno)\s+((per\s+)?il\s+)?(?<cardinal>primo|secondo|terzo|quarto)\s+trimestre
   references: [ YearRegex, RelativeRegex, PastSuffixRegex, NextSuffixRegex ]
 AllHalfYearRegex: !nestedRegex
-  def: (la\s+)?((prima|seconda)\s+metà)(\s+(di|del(l[o'])?)|\s*,\s*)\s*({RelativeRegex}?\s*anno)
+  def: ((la\s+)?((prima|seconda)\s+metà)(\s+(di|del(l[o'])?)|\s*,\s*)\s*({RelativeRegex}?\s*anno)|(il\s+)?((primo|secondo)\s+semestre)((\s+(di|del(l[o'])?)|\s*,\s*)\s*({RelativeRegex}?\s*anno))?)
   references: [ RelativeRegex ]
 EarlyPrefixRegex: !simpleRegex
   def: \b(?<EarlyPrefix>prima|a\s+partire\s+da(l(l[aoe'])?)?|inizio(\s+(di|del(l[ao'])?))?)\b
@@ -462,7 +462,7 @@ DurationFollowedUnit: !nestedRegex
   def: (^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})
   references: [ SuffixAndRegex, DurationUnitRegex ]
 NumberCombinedWithDurationUnit: !nestedRegex
-  def: \b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
+  def: \b(?<num>\d+(\.\d*)?)(-)?\s*{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 AnUnitRegex: !nestedRegex
   def: (((?<half>mezz[oa]?|metà)[-']?|un[oa']?|un altro|un'altra)\s*{DurationUnitRegex})
@@ -472,7 +472,7 @@ DuringRegex: !simpleRegex
 AllRegex: !simpleRegex
   def: \b(?<all>(tutt[oa](\s+(il|l[a']))?|inter[oa])(\s*|-)(?<unit>anno|mese|settimana|giorno)|(?<unit>anno|mese|settimana|giorno)\s+inter[oa])\b
 HalfRegex: !simpleRegex
-  def: \b(?<half>(metà|mezz[oa])\s+(?<unit>anno|mese|settimana|giorno|ora))\b
+  def: \b((?<half>(metà|mezz[oa])\s+(?<unit>anno|mese|settimana|giorno|ora))|(?<half>(?<unit>semestr[ei])))\b
 ConjunctionRegex: !simpleRegex
   def: \b((e(\s+per)?)|con)\b
 HolidayRegex1: !nestedRegex
@@ -617,6 +617,8 @@ UnitMap: !dictionary
     decennio: 10Y
     anni: Y
     anno: Y
+    semestre: Y
+    semestri: Y
     mesi: MON
     mese: MON
     settimane: W
@@ -643,6 +645,8 @@ UnitValueMap: !dictionary
     decennio: 315360000
     anni: 31536000
     anno: 31536000
+    semestre: 31536000
+    semestre: 31536000
     mesi: 2592000
     mese: 2592000
     settimane: 604800

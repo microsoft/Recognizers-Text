@@ -78,10 +78,10 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string WeekOfMonthRegex = $@"\b(?<wom>(l[a']\s*)?(?<cardinal>prima|seconda|terza|quarta|quinta|ultima)\s+settimana\s+{MonthSuffixRegex}(\s+{BaseDateTime.FourDigitYearRegex}|{RelativeRegex}\s+year)?)\b";
       public static readonly string WeekOfYearRegex = $@"(?<woy>(l[a']\s*)?(?<cardinal>prima|seconda|terza|quarta|quinta|ultima)\s+settimana(\s+(di|del(l[o'])?))?\s*({YearRegex}|({RelativeRegex}\s*anno)|(anno\s+(({NextSuffixRegex})|({PastSuffixRegex})))))";
       public static readonly string FollowedDateUnit = $@"^\s*{DateUnitRegex}";
-      public static readonly string NumberCombinedWithDateUnit = $@"\b(?<num>\d+(\.\d*)?){DateUnitRegex}";
+      public static readonly string NumberCombinedWithDateUnit = $@"\b(?<num>\d+(\.\d*)?)\s*{DateUnitRegex}";
       public static readonly string QuarterRegex = $@"((il|l')\s*)?(?<cardinal>primo|secondo|terzo|quarto|ultimo)\s+trimestre((\s+(di|del(l[o'])?)|\s*,\s*)?\s*({YearRegex}|({RelativeRegex}\s*anno)|(anno\s+(({NextSuffixRegex})|({PastSuffixRegex})))))?";
       public static readonly string QuarterRegexYearFront = $@"({YearRegex}|l'anno\s+({PastSuffixRegex}|{NextSuffixRegex})|{RelativeRegex}\s+anno)\s+((per\s+)?il\s+)?(?<cardinal>primo|secondo|terzo|quarto)\s+trimestre";
-      public static readonly string AllHalfYearRegex = $@"(la\s+)?((prima|seconda)\s+metà)(\s+(di|del(l[o'])?)|\s*,\s*)\s*({RelativeRegex}?\s*anno)";
+      public static readonly string AllHalfYearRegex = $@"((la\s+)?((prima|seconda)\s+metà)(\s+(di|del(l[o'])?)|\s*,\s*)\s*({RelativeRegex}?\s*anno)|(il\s+)?((primo|secondo)\s+semestre)((\s+(di|del(l[o'])?)|\s*,\s*)\s*({RelativeRegex}?\s*anno))?)";
       public const string EarlyPrefixRegex = @"\b(?<EarlyPrefix>prima|a\s+partire\s+da(l(l[aoe'])?)?|inizio(\s+(di|del(l[ao'])?))?)\b";
       public const string MidPrefixRegex = @"\b(?<MidPrefix>metà(\s+(di|del(l[ao'])?))?)\b";
       public const string LaterPrefixRegex = @"\b(?<LatePrefix>fine(\s+(di|del(l[ao'])?))?|(?<RelLate>più\s+tardi(\s+(in|a))?))\b";
@@ -200,11 +200,11 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string SetLastRegex = @"(?<last>prossim[oaei]|seguent[ei]|in\s+arrivo|quest[oaei]|ultim[oaei]|passat[oaei]|scors[oaei]|precedent[ei]|corrent[ei])";
       public const string EachDayRegex = @"^\s*(ogni|tutti\s+i)\s+giorn[oi]\b";
       public static readonly string DurationFollowedUnit = $@"(^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})";
-      public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
+      public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?\s*{DurationUnitRegex}";
       public static readonly string AnUnitRegex = $@"(((?<half>mezz[oa]?|metà)[-']?|un[oa']?|un altro|un'altra)\s*{DurationUnitRegex})";
       public const string DuringRegex = @"\b(per|durante)\s+(il|l[a'])\s+(?<unit>anno|mese|settimana|giorno)\b";
       public const string AllRegex = @"\b(?<all>(tutt[oa](\s+(il|l[a']))?|inter[oa])(\s*|-)(?<unit>anno|mese|settimana|giorno)|(?<unit>anno|mese|settimana|giorno)\s+inter[oa])\b";
-      public const string HalfRegex = @"\b(?<half>(metà|mezz[oa])\s+(?<unit>anno|mese|settimana|giorno|ora))\b";
+      public const string HalfRegex = @"\b((?<half>(metà|mezz[oa])\s+(?<unit>anno|mese|settimana|giorno|ora))|(?<half>(?<unit>semestr[ei])))\b";
       public const string ConjunctionRegex = @"\b((e(\s+per)?)|con)\b";
       public static readonly string HolidayRegex1 = $@"\b(?<holiday>capodanno cinese|cenone di capodanno|veglione di capodanno|(la )?vigilia di capodanno|capodanno|mercoledì delle ceneri|le ceneri|martedì grasso|primo dell'anno|festa del papà|pesce d'aprile|vigilia di natale|la vigilia|giorno di natale|natale|halloween|pasqua|lunedì dell'angelo)(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s*anno))?\b";
       public static readonly string HolidayRegex2 = $@"\b(?<holiday>giorno dei morti|i morti|tutti i santi|i santi|giorno dell'independenza|((giorno|festa) del)?la liberazione|festa della repubblica|festa del lavoro|festa dei lavoratori)(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s*anno))?\b";
@@ -272,6 +272,8 @@ namespace Microsoft.Recognizers.Definitions.Italian
             { @"decennio", @"10Y" },
             { @"anni", @"Y" },
             { @"anno", @"Y" },
+            { @"semestre", @"Y" },
+            { @"semestri", @"Y" },
             { @"mesi", @"MON" },
             { @"mese", @"MON" },
             { @"settimane", @"W" },
@@ -298,6 +300,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
             { @"decennio", 315360000 },
             { @"anni", 31536000 },
             { @"anno", 31536000 },
+            { @"semestre", 31536000 },
             { @"mesi", 2592000 },
             { @"mese", 2592000 },
             { @"settimane", 604800 },
