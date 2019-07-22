@@ -200,7 +200,6 @@ class ChineseNumericWithUnit:
                                ("South Sudanese pound", "南苏丹镑"),
                                ("Sudanese pound", "苏丹镑"),
                                ("Syrian pound", "叙利亚镑"),
-                               ("Pound", "英镑"),
                                ("Pence", "便士"),
                                ("Shilling", "先令"),
                                ("United States dollar", "美元|美金|美圆"),
