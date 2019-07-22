@@ -8,14 +8,16 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
 {
     public class NumberExtractor : BaseNumberExtractor
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
         private NumberExtractor(NumberMode mode, NumberOptions options)
         {
-            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexOptions.Singleline);
+            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexFlags);
 
-            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexOptions.Singleline);
+            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
 
             Options = options;
 
@@ -59,7 +61,7 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
             {
                 foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
                 {
-                    ambiguityBuilder.Add(new Regex(item.Key, RegexOptions.Singleline), new Regex(item.Value, RegexOptions.Singleline));
+                    ambiguityBuilder.Add(new Regex(item.Key, RegexFlags), new Regex(item.Value, RegexFlags));
                 }
             }
 

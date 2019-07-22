@@ -90,50 +90,47 @@
     ]
   },
   {
-    "Input": "yirminin yüzdesi",
-    "NotSupported": "dotnet",
+    "Input": "yüzde yirmi",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yirminin yüzdesi",
+        "Text": "yüzde yirmi",
         "TypeName": "percentage",
         "Resolution": {
           "value": "20%"
         },
         "Start": 0,
-        "End": 15
+        "End": 10
       }
     ]
   },
   {
-    "Input": "10'un yüzdesi",
-    "NotSupported": "dotnet",
+    "Input": "yüzde 10",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10'un yüzdesi",
+        "Text": "yüzde 10",
         "TypeName": "percentage",
         "Resolution": {
           "value": "10%"
         },
         "Start": 0,
-        "End": 12
+        "End": 7
       }
     ]
   },
   {
-    "Input": "yirmi ikinin yüzdesi",
-    "NotSupported": "dotnet",
+    "Input": "yüzde yirmi iki",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yirmi ikinin yüzdesi",
+        "Text": "yüzde yirmi iki",
         "TypeName": "percentage",
         "Resolution": {
           "value": "22%"
         },
         "Start": 0,
-        "End": 19
+        "End": 14
       }
     ]
   },
@@ -150,6 +147,21 @@
         },
         "Start": 0,
         "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "yüzde 210",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüzde 210",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "210%"
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },

@@ -8,6 +8,8 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
 {
     public class NumberRangeExtractor : BaseNumberRangeExtractor
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public NumberRangeExtractor(NumberOptions options = NumberOptions.None)
             : base(
                   NumberExtractor.GetInstance(),
@@ -19,57 +21,57 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
             {
                 {
                     // between...and...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex1, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex1, RegexFlags),
                     NumberRangeConstants.TWONUMBETWEEN
                 },
                 {
                     // more than ... less than ...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex2, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex2, RegexFlags),
                     NumberRangeConstants.TWONUM
                 },
                 {
                     // less than ... more than ...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex3, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex3, RegexFlags),
                     NumberRangeConstants.TWONUM
                 },
                 {
                     // from ... to/~/- ...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex4, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex4, RegexFlags),
                     NumberRangeConstants.TWONUMTILL
                 },
                 {
                     // more/greater/higher than ...
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1, RegexFlags),
                     NumberRangeConstants.MORE
                 },
                 {
                     // 30 and/or greater/higher
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex2, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex2, RegexFlags),
                     NumberRangeConstants.MORE
                 },
                 {
                     // less/smaller/lower than ...
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex1, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex1, RegexFlags),
                     NumberRangeConstants.LESS
                 },
                 {
                     // 30 and/or less/smaller/lower
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex2, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex2, RegexFlags),
                     NumberRangeConstants.LESS
                 },
                 {
                     // equal to ...
-                    new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexFlags),
                     NumberRangeConstants.EQUAL
                 },
                 {
                     // equal to 30 or more than, larger than 30 or equal to ...
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexFlags),
                     NumberRangeConstants.MORE
                 },
                 {
                     // equal to 30 or less, smaller than 30 or equal ...
-                    new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexFlags),
                     NumberRangeConstants.LESS
                 },
             };

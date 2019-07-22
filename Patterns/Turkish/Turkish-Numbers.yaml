@@ -183,13 +183,17 @@ DoubleAllFloatRegex: !nestedRegex
   references: [ AllFloatRegex ]
 ConnectorRegex: !simpleRegex
     def: (?<spacer>ve)
-# Percentage Regex
-NumberWithPrefixPercentage: !nestedRegex
-  def: (%|(eksi\s)?yüzde\s)({BaseNumbers.NumberReplaceToken}|{AllIntRegex})
-  references: [ BaseNumbers.NumberReplaceToken, AllIntRegex ]
-NumberWithSuffixPercentage: !nestedRegex
+#Percentage Regex
+NumberWithSuffixPercentage: !simpleRegex
   def: (((({TensNumberIntegerRegex}\s)?(birin|ikinin|üçün|dördün|beşin|altının|yedinin|sekizin|dokuzun)|onun|yirminin|otuzun|kırkın|ellinin|altmışın|yetmişin|seksenin|doksanın)\s(yüzdesi))|(\d*(1'in|2'nin|3'ün|4'ün|5'in|6'nın|7'nin|8'in|9'un|10'un|20'nin|30'un|40'ın|50'nin|60'ın|70'in|80'in|90'ın)\s(yüzdesi)))
-  references: [ TensNumberIntegerRegex ]
+FractionNumberWithSuffixPercentage: !simpleRegex
+  def: (\d+,\d+((1|5|8|70|80)'i|(2|7|20|50)'si|(3|4|100)'ü|6'sı|(9|10|30)'u|(40|60|90)'ı))
+NumberWithPrefixPercentage: !nestedRegex
+  def: (%|eksi\syüzde\s|yüzde\s)({BaseNumbers.NumberReplaceToken}|{AllIntRegex})
+  references: [ BaseNumbers.NumberReplaceToken, AllIntRegex ]
+NumberWithPrepositionPercentage: !nestedRegex
+  def: ({BaseNumbers.NumberReplaceToken})\s*(üzerinden)\s*({BaseNumbers.NumberReplaceToken})
+  references: [ BaseNumbers.NumberReplaceToken ]
 # NumberRange Regex
 TillRegex: !simpleRegex
   def: (-|—|——|–|~)

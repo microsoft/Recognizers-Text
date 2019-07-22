@@ -6,6 +6,8 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
 {
     public class TurkishNumberRangeParserConfiguration : INumberRangeParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public TurkishNumberRangeParserConfiguration()
             : this(new CultureInfo(Culture.Turkish))
         {
@@ -18,8 +20,8 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
             NumberExtractor = Turkish.NumberExtractor.GetInstance();
             OrdinalExtractor = Turkish.OrdinalExtractor.GetInstance();
             NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration());
-            MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexOptions.Singleline);
-            LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexOptions.Singleline);
+            MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);
+            LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags);
         }
 
         public CultureInfo CultureInfo { get; private set; }

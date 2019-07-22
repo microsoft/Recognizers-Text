@@ -9,6 +9,8 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
 {
     public class FractionExtractor : BaseNumberExtractor
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly ConcurrentDictionary<(NumberOptions, string), FractionExtractor> Instances =
             new ConcurrentDictionary<(NumberOptions, string), FractionExtractor>();
 
@@ -19,19 +21,19 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.TURKISH)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.TURKISH)
                 },
             };

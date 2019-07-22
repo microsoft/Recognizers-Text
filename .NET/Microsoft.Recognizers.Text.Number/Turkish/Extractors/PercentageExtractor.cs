@@ -19,11 +19,17 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
 
         protected override ImmutableHashSet<Regex> InitRegexes()
         {
-            var regexStrs = new HashSet<string>
+            HashSet<string> regexStrs = new HashSet<string>
             {
-                NumbersDefinitions.NumberWithPrefixPercentage,
                 NumbersDefinitions.NumberWithSuffixPercentage,
+                NumbersDefinitions.NumberWithPrefixPercentage,
             };
+
+            if ((Options & NumberOptions.PercentageMode) != 0)
+            {
+                regexStrs.Add(NumbersDefinitions.FractionNumberWithSuffixPercentage);
+                regexStrs.Add(NumbersDefinitions.NumberWithPrepositionPercentage);
+            }
 
             return BuildRegexes(regexStrs);
         }
