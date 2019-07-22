@@ -513,7 +513,8 @@ FullToMinMapping: !dictionary
    seattle time: -480
    bellevue time: -480
    pacific daylight time: -420
-   pacific time: -480 
+   pacific time: -480
+   pacific timezone: -480
    afghanistan standard time: 270
    alaskan standard time: -540
    arab standard time: 180
@@ -557,7 +558,10 @@ FullToMinMapping: !dictionary
    european central time: 60
    central: -300
    central time: -300
+   central timezone: -300
    eastern: -240
+   eastern time: -240
+   eastern timezone: -240
    eastern standard time: -300
    eastern standard time (mexico): -300
    egypt standard time: 120
@@ -586,6 +590,8 @@ FullToMinMapping: !dictionary
    montevideo standard time: -180
    morocco standard time: 0
    mountain: -360
+   mountain time: -360
+   mountain timezone: -360
    mountain standard time: -420
    mountain standard time (mexico): -420
    myanmar standard time: 390
@@ -599,6 +605,8 @@ FullToMinMapping: !dictionary
    north korea standard time: 510
    pacific: -420
    west coast: -420
+   west coast time: -420
+   west coast timezone: -420
    pacific sa standard time: -240
    pacific standard time: -480
    pacific standard time (mexico): -480
@@ -1421,3 +1429,9 @@ MajorLocations: !list
     - Amsterdam
     - Brussels
     - Barcelona
+    # special locations
+    - West Coast
+    - Central
+    - Pacific
+    - Eastern
+    - Mountain

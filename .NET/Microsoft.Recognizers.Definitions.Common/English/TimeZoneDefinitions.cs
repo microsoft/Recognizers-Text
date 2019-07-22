@@ -488,6 +488,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"bellevue time", -480 },
             { @"pacific daylight time", -420 },
             { @"pacific time", -480 },
+            { @"pacific timezone", -480 },
             { @"afghanistan standard time", 270 },
             { @"alaskan standard time", -540 },
             { @"arab standard time", 180 },
@@ -531,7 +532,10 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"european central time", 60 },
             { @"central", -300 },
             { @"central time", -300 },
+            { @"central timezone", -300 },
             { @"eastern", -240 },
+            { @"eastern time", -240 },
+            { @"eastern timezone", -240 },
             { @"eastern standard time", -300 },
             { @"eastern standard time (mexico)", -300 },
             { @"egypt standard time", 120 },
@@ -560,6 +564,8 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"montevideo standard time", -180 },
             { @"morocco standard time", 0 },
             { @"mountain", -360 },
+            { @"mountain time", -360 },
+            { @"mountain timezone", -360 },
             { @"mountain standard time", -420 },
             { @"mountain standard time (mexico)", -420 },
             { @"myanmar standard time", 390 },
@@ -573,6 +579,8 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"north korea standard time", 510 },
             { @"pacific", -420 },
             { @"west coast", -420 },
+            { @"west coast time", -420 },
+            { @"west coast timezone", -420 },
             { @"pacific sa standard time", -240 },
             { @"pacific standard time", -480 },
             { @"pacific standard time (mexico)", -480 },
@@ -1390,7 +1398,12 @@ namespace Microsoft.Recognizers.Definitions.English
             @"Jakarta",
             @"Amsterdam",
             @"Brussels",
-            @"Barcelona"
+            @"Barcelona",
+            @"West Coast",
+            @"Central",
+            @"Pacific",
+            @"Eastern",
+            @"Mountain"
         };
     }
 }

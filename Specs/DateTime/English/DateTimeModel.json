@@ -13438,5 +13438,58 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'm in the pacific timezone",
+    "Context": {
+      "ReferenceDateTime": "2018-11-28T12:00:00"
+    },
+    "Comment": "Not supported as the TimeZone is not enabled for now",
+    "NotSupported": "javascript, python, dotnet, java",
+    "Results": [
+      {
+        "Text": "pacific timezone",
+        "Start": 11,
+        "End": 26,
+        "TypeName": "datetimeV2.timezone",
+        "Resolution": {
+          "values": [
+            {
+              "type": "timezone",
+              "value": "UTC-08:00",
+              "utcOffsetMins": "-480"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet at 1pm mountain timezone",
+    "Context": {
+      "ReferenceDateTime": "2018-11-28T12:00:00"
+    },
+    "Comment": "Not supported as the TimeZone is not enabled for now",
+    "NotSupported": "javascript, python, dotnet, java",
+    "Results": [
+      {
+        "Text": "1pm mountain timezone",
+        "Start": 14,
+        "End": 34,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T13",
+              "type": "time",
+              "timezone": "UTC-06:00",
+              "timezoneText": "mountain timezone",
+              "utcOffsetMins": "-360",
+              "value": "13:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -233,5 +233,29 @@
         "Length": 9
       }
     ]
+  },
+  {
+    "Input": "I'm in the pacific timezone",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "pacific timezone",
+        "Type": "timezone",
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet at 1pm mountain timezone",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "mountain timezone",
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 17
+      }
+    ]
   }
 ]
