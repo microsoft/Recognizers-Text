@@ -90,21 +90,6 @@
     ]
   },
   {
-    "Input": "yüzde yirmi",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "yüzde yirmi",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "20%"
-        },
-        "Start": 0,
-        "End": 10
-      }
-    ]
-  },
-  {
     "Input": "yüzde 10",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -162,21 +147,6 @@
         },
         "Start": 0,
         "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "yüzde 10",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "yüzde 10",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "10%"
-        },
-        "Start": 0,
-        "End": 7
       }
     ]
   },
