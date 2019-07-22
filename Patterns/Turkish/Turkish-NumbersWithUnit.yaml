@@ -185,7 +185,7 @@ CurrencySuffixList: !dictionary
     Omani rial: umman riyali|omr|ر.ع.
 #Panamanian balboa
     Panamanian balboa: panama balboası|b/.|pab
-    Centesimo: centesimo|céntimo
+    Centesimo: centesimo
 #Papua New Guinean kina
     Papua New Guinean kina: papua yeni gine kinası|kina|pgk
     Toea: toea
@@ -343,7 +343,7 @@ CurrencySuffixList: !dictionary
     #Tristan da Cunha -> Sterlin (GBP)
     Pound: pound|sterlin|£|sterlini|sterline
     Pence: pence
-    Shilling: shillings|shilling|shilingi
+    Shilling: shillings|shilling|shilingi|sh
     Penny: peni
 #Dollar
     United States dollar: abd doları|a.b.d. doları|amerika birleşik devletleri doları|amerikan doları|usd|abd $|a.b.d. $
@@ -676,6 +676,7 @@ AmbiguousDimensionUnitList: !list
   entries:
     - pound
     - dram
+    - varil
     - cup
     - in
     - '"'
@@ -764,7 +765,7 @@ VolumeSuffixList: !dictionary
     Cubic inch: inç küp
     Cubic foot: fit küp
     Cubic mile: mil küp
-    Fluid ounce: sıvı ons|oz
+    Fluid ounce: sıvı ons
     Teaspoon: tatlı kaşığı
     Tablespoon: yemek kaşığı
     Pint: pint
@@ -773,7 +774,6 @@ AmbiguousVolumeUnitList: !list
   types: [ string ]
   entries:
     - dal
-    - varil
 #WeightExtractorConfiguration
 WeightSuffixList: !dictionary
   types: [ string, string ]

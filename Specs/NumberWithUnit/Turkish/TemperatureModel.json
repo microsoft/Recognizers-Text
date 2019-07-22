@@ -447,9 +447,18 @@
   },
   {
     "Input": "fahrenhayttan santigrata, 101 fahrenhayt kaç santigrat eder",
-	"NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
+      {
+        "Text": "101 fahrenhayt",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "101",
+          "unit": "F"
+        },
+        "Start": 26,
+        "End": 39
+      },
       {
         "Text": "fahrenhayttan",
         "TypeName": "temperature",
@@ -471,24 +480,14 @@
         "End": 23
       },
       {
-        "Text": "101 fahrenhayt",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": "101",
-          "unit": "F"
-        },
-        "Start": 27,
-        "End": 40
-      },
-      {
         "Text": "santigrat",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
           "unit": "C"
         },
-        "Start": 46,
-        "End": 54
+        "Start": 45,
+        "End": 53
       }
     ]
   },

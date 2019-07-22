@@ -141,7 +141,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"Kuruş", @"kuruş" },
             { @"Omani rial", @"umman riyali|omr|ر.ع." },
             { @"Panamanian balboa", @"panama balboası|b/.|pab" },
-            { @"Centesimo", @"centesimo|céntimo" },
+            { @"Centesimo", @"centesimo" },
             { @"Papua New Guinean kina", @"papua yeni gine kinası|kina|pgk" },
             { @"Toea", @"toea" },
             { @"Paraguayan guaraní", @"paraguay guaranisi|₲|pyg" },
@@ -264,7 +264,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"Syrian pound", @"suriye lirası|ل.س|syp" },
             { @"Pound", @"pound|sterlin|£|sterlini|sterline" },
             { @"Pence", @"pence" },
-            { @"Shilling", @"shillings|shilling|shilingi" },
+            { @"Shilling", @"shillings|shilling|shilingi|sh" },
             { @"Penny", @"peni" },
             { @"United States dollar", @"abd doları|a.b.d. doları|amerika birleşik devletleri doları|amerikan doları|usd|abd $|a.b.d. $" },
             { @"East Caribbean dollar", @"doğu karayip doları|xcd" },
@@ -578,6 +578,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
         {
             @"pound",
             @"dram",
+            @"varil",
             @"cup",
             @"in",
             @""""
@@ -659,7 +660,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"Cubic inch", @"inç küp" },
             { @"Cubic foot", @"fit küp" },
             { @"Cubic mile", @"mil küp" },
-            { @"Fluid ounce", @"sıvı ons|oz" },
+            { @"Fluid ounce", @"sıvı ons" },
             { @"Teaspoon", @"tatlı kaşığı" },
             { @"Tablespoon", @"yemek kaşığı" },
             { @"Pint", @"pint" },
@@ -667,8 +668,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
         };
       public static readonly IList<string> AmbiguousVolumeUnitList = new List<string>
         {
-            @"dal",
-            @"varil"
+            @"dal"
         };
       public static readonly Dictionary<string, string> WeightSuffixList = new Dictionary<string, string>
         {

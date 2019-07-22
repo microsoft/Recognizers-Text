@@ -35,7 +35,7 @@ CurrencySuffixList: !dictionary
     Pul: pul
 #Euro
     Euro: euros|euro|€|eur
-    Cent: cents|cent|-cents|-cent|sen
+    Cent: cents|cent|-cents|-cent
 #Albanian lek
 #No use of "ALL" "L"
     Albanian lek: albanian lek|leks|lek
@@ -117,7 +117,7 @@ CurrencySuffixList: !dictionary
 #Kazakhstani tenge
     Kazakhstani tenge: kazakhstani tenge|kazakh tenge|kazak tenge|kzt
 #Kenyan shilling
-    Kenyan shilling: kenyan shilling|sh|kes
+    Kenyan shilling: kenyan shilling|kes
 #North Korean won
     North Korean won: north korean won|kpw|north korean wons
     South Korean won: south korean won|krw|south korean wons
@@ -170,7 +170,7 @@ CurrencySuffixList: !dictionary
     Omani rial: omani rial|omr|ر.ع.
 #Panamanian balboa
     Panamanian balboa: panamanian balboa|b/.|pab
-    Centesimo: centesimo|céntimo
+    Centesimo: centesimo
 #Papua New Guinean kina
     Papua New Guinean kina: papua new guinean kina|kina|pgk
     Toea: toea
@@ -197,7 +197,7 @@ CurrencySuffixList: !dictionary
 #Spain
     Peseta: pesetas|peseta
 #Netherlands guilder
-    Netherlands guilder: florin|netherlands antillean guilder|ang|ƒ|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl
+    Netherlands guilder: florin|netherlands antillean guilder|ang|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl
 #Swazi lilangeni
     Swazi lilangeni: swazi lilangeni|lilangeni|szl|emalangeni
 #Tajikistani somoni
@@ -231,7 +231,7 @@ CurrencySuffixList: !dictionary
     Somali shilling: somali shillings|somali shilling|shilin soomaali|-shilin soomaali|scellino|shilin|sh.so.|sos
     Somaliland shilling: somaliland shillings|somaliland shilling|soomaaliland shilin
     Tanzanian shilling: tanzanian shilling|tanzanian shillings|tsh|tzs|tanzania shilling|tanzania shillings
-    Ugandan shilling: ugandan shilling|ugandan shillings|sh|ugx|uganda shilling|uganda shillings
+    Ugandan shilling: ugandan shilling|ugandan shillings|ugx|uganda shilling|uganda shillings
 #Leu
     Romanian leu: romanian leu|lei|ron|romania leu
     Moldovan leu: moldovan leu|mdl|moldova leu
@@ -243,7 +243,7 @@ CurrencySuffixList: !dictionary
     Indian rupee: indian rupees|indian rupee|inr|₹|india rupees|india rupee
     Seychellois rupee: seychellois rupees|seychellois rupee|scr|sr|sre
     Mauritian rupee: mauritian rupees|mauritian rupee|mur
-    Maldivian rufiyaa: maldivian rufiyaas|maldivian rufiyaa|rf|mvr|.ރ|maldive rufiyaas|maldive rufiyaa
+    Maldivian rufiyaa: maldivian rufiyaas|maldivian rufiyaa|mvr|.ރ|maldive rufiyaas|maldive rufiyaa
     Sri Lankan rupee: sri lankan rupees|sri lankan rupee|lkr|රු|ரூ
     Indonesian rupiah: indonesian rupiah|rupiah|perak|rp|idr
     Rupee: rupee|rupees|rs
@@ -325,7 +325,7 @@ CurrencySuffixList: !dictionary
     Tristan da Cunha pound: tristan da cunha pounds|tristan da cunha pound|tristan da cunha £
     Pound: pounds|pound|-pounds|-pound|£
     Pence: pence
-    Shilling: shillings|shilling|shilingi
+    Shilling: shillings|shilling|shilingi|sh
     Penny: pennies|penny
 #Dollar
     United States dollar: united states dollars|united states dollar|united states $|u.s. dollars|u.s. dollar|u s dollar|u s dollars|usd|american dollars|american dollar|us$|us dollar|us dollars|u.s dollar|u.s dollars
@@ -554,10 +554,10 @@ CurrencyNameToIsoCodeMap: !dictionary
     Kiribati dollar: _KID
     Guernsey pound: _GGP
     Faroese króna: _FOK
-    Cook Islands dollar: _CKD 
-    British Virgin Islands dollar: _BD 
-    Ascension pound: _AP 
-    Alderney pound: _ALP 
+    Cook Islands dollar: _CKD
+    British Virgin Islands dollar: _BD
+    Ascension pound: _AP
+    Alderney pound: _ALP
     Abkhazian apsar: _AA
 FractionalUnitNameToCodeMap: !dictionary
   types: [ string, string ]
@@ -856,7 +856,7 @@ VolumeSuffixList: !dictionary
     Teaspoon: teaspoon|teaspoons
     Tablespoon: tablespoon|tablespoons
     Pint: pint|pints
-    Volume unit: fluid dram|gill|quart|minim|barrel|cord|peck|bushel|hogshead
+    Volume unit: fluid dram|gill|quart|minim|cord|peck|bushel|hogshead|barrels|barrel|bbl
 AmbiguousVolumeUnitList: !list
   types: [ string ]
   entries:
@@ -874,7 +874,6 @@ WeightSuffixList: !dictionary
     Kilogram: kg|kilogram|kilograms|kilo|kilos
     Gram: g|gram|grams
     Milligram: mg|milligram|milligrams
-    Barrel: barrels|barrel
     Gallon: -gallon|gallons|gallon
     Metric ton: metric tons|metric ton
     Ton: -ton|ton|tons|tonne|tonnes

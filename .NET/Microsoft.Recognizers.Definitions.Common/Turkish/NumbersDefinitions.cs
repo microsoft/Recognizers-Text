@@ -126,7 +126,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string[] WrittenDecimalSeparatorTexts = { @"nokta" };
       public static readonly string[] WrittenGroupSeparatorTexts = { @"nokta" };
       public static readonly string[] WrittenIntegerSeparatorTexts = { @"\s" };
-      public static readonly string[] WrittenFractionSeparatorTexts = { @"nokta" };
+      public static readonly string[] WrittenFractionSeparatorTexts = { @"\s" };
       public const string HalfADozenRegex = @"yarım\s+düzine";
       public static readonly string DigitalNumberRegex = $@"((?<=\b)(yüz|bin|milyon|milyar|trilyon|düzine)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
       public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>

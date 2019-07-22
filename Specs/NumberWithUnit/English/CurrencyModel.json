@@ -1734,7 +1734,7 @@
         "TypeName": "currency",
         "Resolution": {
           "value": "100000",
-          "unit": "Cent"
+          "unit": "Sen"
         },
         "Start": 13,
         "End": 23
