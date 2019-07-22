@@ -22,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             NowRegex = ItalianDateTimeExtractorConfiguration.NowRegex;
             AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags);
             PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
             SimpleTimeOfTodayAfterRegex = ItalianDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = ItalianDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
@@ -72,6 +74,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex PMTimeRegex { get; }
 
+        public Regex NextPrefixRegex { get; }
+
+        public Regex PreviousPrefixRegex { get; }
+
         public Regex SimpleTimeOfTodayAfterRegex { get; }
 
         public Regex SimpleTimeOfTodayBeforeRegex { get; }
@@ -88,6 +94,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex PrepositionRegex { get; }
 
+        public Regex ConnectorRegex { get; }
+
         public Regex YearRegex { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
@@ -99,11 +107,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         {
             var trimmedText = text.Trim();
             int result = hour;
-            if (trimmedText.EndsWith("matin") && hour >= 12)
+            if ((trimmedText.EndsWith("mattino") || trimmedText.EndsWith("mattina")) && hour >= 12)
             {
                 result -= 12;
             }
-            else if (!trimmedText.EndsWith("matin") && hour < 12)
+            else if (!(trimmedText.EndsWith("mattino") || trimmedText.EndsWith("mattina")) && hour < 12)
             {
                 result += 12;
             }
@@ -114,15 +122,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public bool GetMatchedNowTimex(string text, out string timex)
         {
             var trimmedText = text.Trim();
-            if (trimmedText.EndsWith("maintenant"))
+            if (trimmedText.EndsWith("ora") || trimmedText.EndsWith("adesso") || trimmedText.EndsWith("in questo momento"))
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("récemment") || trimmedText.Equals("précédemment") || trimmedText.Equals("auparavant"))
+            else if (trimmedText.Equals("recentemente") || trimmedText.Equals("precedentemente"))
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("dès que possible") || trimmedText.Equals("dqp"))
+            else if (trimmedText.Equals("il prima possibile") || trimmedText.Equals("asap"))
             {
                 timex = "FUTURE_REF";
             }
@@ -139,13 +147,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         {
             var trimmedText = text.Trim();
             var swift = 0;
-            if (trimmedText.StartsWith("prochain") || trimmedText.EndsWith("prochain") ||
-                trimmedText.StartsWith("prochaine") || trimmedText.EndsWith("prochaine"))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("dernier") || trimmedText.StartsWith("dernière") ||
-                     trimmedText.EndsWith("dernier") || trimmedText.EndsWith("dernière"))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }

@@ -47,6 +47,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex UnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexFlags);
 
+        public static readonly Regex ConnectorRegex =
+            new Regex(DateTimeDefinitions.ConnectorRegex, RegexFlags);
+
         public static readonly Regex NumberAsTimeRegex =
             new Regex(DateTimeDefinitions.NumberAsTimeRegex, RegexFlags);
 
@@ -116,9 +119,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool IsConnector(string text)
         {
-            return string.IsNullOrEmpty(text) || text.Equals(",") ||
-                        PrepositionRegex.IsMatch(text) || text.Equals("t") || text.Equals("pour") ||
-                        text.Equals("vers");
+            text = text.Trim();
+            return string.IsNullOrEmpty(text) || PrepositionRegex.IsMatch(text) || ConnectorRegex.IsMatch(text);
         }
     }
 }
