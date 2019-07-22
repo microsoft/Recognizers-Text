@@ -3,7 +3,7 @@
 ![Build Status](https://msrasia.visualstudio.com/_apis/public/build/definitions/310c848f-b260-4305-9255-b97bfb69974b/116/badge)
 ![Build Status](https://ci.appveyor.com/api/projects/status/github/Microsoft/Recognizers-Text?branch=master&svg=true&passingText=all%20plats%20-%20OK)
 
-Microsoft.Recognizers.Text provides robust recognition and resolution of entities like numbers, units, and date/time; expressed in multiple languages. Full support for Chinese, English, French, Spanish, Portuguese, and German. Partial support for Dutch, Japanese, and Korean. More on the way.
+Microsoft.Recognizers.Text provides robust recognition and resolution of entities like numbers, units, and date/time; expressed in multiple languages. Full support for Chinese, English, French, Spanish, Portuguese, and German. Partial support for Dutch, Japanese, Korean, Italian, and Turkish. More on the way.
 
 # Utilizing the Project
 
@@ -43,13 +43,13 @@ The table below summarizes the currently supported entities. Support for English
 
 | Entity Type       | EN      | ZH-CN   | NL    | FR     | DE    | IT      | JA     | KO     | PT     | ES      |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
-| Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | **PA**  | ✓      | ✓      | ✓     | ✓       |
+| Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | ✓      | ✓     | ✓       |
 | Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       |
 | Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       |
 | Number Range         | ✓    | ✓       | **PA**| :x:   | :x:   | **PA**  | :x:     | :x:    | :x:   | **PA**  |
 | Unit - Age           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       |
 | Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SP** | ✓     | ✓       |
-| Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | :x:     | **SP** | ✓     | ✓       | 
+| Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | :x:    | **SP** | ✓     | ✓       | 
 | Unit - Temperature   | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | :x:    | **SP** | ✓      | ✓      | 
 | Choice - Boolean     | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       | 
 | Seq. - E-mail        | G    | G*       | G    | G      | G     | G       | G*     | G*     | G      | G       |
@@ -58,18 +58,18 @@ The table below summarizes the currently supported entities. Support for English
 | Seq. - IP Address    | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - Phone Number  | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - URL           | G    | G*       | G    | G      | G     | G       | G*     | G*     | G      | G       |
-| DateTime (+subtypes) | ✓    | ✓       | **SP** | ✓    | ✓     | **SO**  | **SP** | **SP** | ✓     | ✓       | 
+| DateTime (+subtypes) | ✓    | ✓       | **SP** | ✓    | ✓     | **PA**  | **SP** | **SP** | ✓     | ✓       | 
 
 | Entity Type       | SV      | BG      | TR    |        |       |         |        |        |        |         |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
-| Number (cardinal)    | :x:  | :x:     | **SP**|        |       |         |        |        |        |         |
-| Ordinal              | :x:  | :x:     | **SP**|        |       |         |        |        |        |         |
-| Percentage           | :x:  | :x:     | **SP**|        |       |         |        |        |        |         |
-| Number Range         | :x:  | :x:     | **SP**|        |       |         |        |        |        |         |
-| Unit - Age           | :x:  | :x:     | **SO**|        |       |         |        |        |        |         |
-| Unit - Currency      | :x:  | :x:     | **SO**|        |       |         |        |        |        |         |
-| Unit - Dimensions    | :x:  | :x:     | **SO**|        |       |         |        |        |        |         | 
-| Unit - Temperature   | :x:  | :x:     | **SO**|        |       |         |        |        |        |         | 
+| Number (cardinal)    | :x:  | :x:     | ✓     |        |       |         |        |        |        |         |
+| Ordinal              | :x:  | :x:     | ✓     |        |       |         |        |        |        |         |
+| Percentage           | :x:  | :x:     | **PA**|        |       |         |        |        |        |         |
+| Number Range         | :x:  | :x:     | **S)**|        |       |         |        |        |        |         |
+| Unit - Age           | :x:  | :x:     | ✓     |        |       |         |        |        |        |         |
+| Unit - Currency      | :x:  | :x:     | ✓     |        |       |         |        |        |        |         |
+| Unit - Dimensions    | :x:  | :x:     | **PA**|        |       |         |        |        |        |         | 
+| Unit - Temperature   | :x:  | :x:     | ✓     |        |       |         |        |        |        |         | 
 | Choice - Boolean     | ✓    | ✓      | **SO**|        |       |         |        |        |        |         |
 | Seq. - E-mail        | G    | G       | G     |        |       |         |        |        |        |         |
 | Seq. - GUID          | G    | G       | G     |        |       |         |        |        |        |         |
@@ -77,7 +77,7 @@ The table below summarizes the currently supported entities. Support for English
 | Seq. - IP Address    | G    | G       | G     |        |       |         |        |        |        |         |
 | Seq. - Phone Number  | :x:  | :x:     | :x:   |        |       |         |        |        |        |         |
 | Seq. - URL           | G    | G       | G     |        |       |         |        |        |        |         |
-| DateTime (+subtypes) | :x:  | :x:     | **SP**|        |       |         |        |        |        |         |
+| DateTime (+subtypes) | :x:  | :x:     | **SO**|        |       |         |        |        |        |         |
 
 * G: Generic entity, not language-specific (* unicode TLDs not-supported);
 * PA: Partial support;
