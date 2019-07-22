@@ -342,7 +342,7 @@ CurrencySuffixList: !dictionary
     Syrian pound: suriye lirası|ل.س|syp
     #Tristan da Cunha -> Sterlin (GBP)
     Pound: pound|sterlin|£|sterlini|sterline
-    Pence: pence
+    Pence: peni
     Shilling: shillings|shilling|shilingi|sh
     Penny: peni
 #Dollar
@@ -357,13 +357,13 @@ CurrencySuffixList: !dictionary
     Brunei dollar: brunei doları|bnd
     Sen: sen
     Singapore dollar: singapur doları|sgd
-    Canadian dollar: kanada doları|cad|$ c
+    Canadian dollar: kanada doları|cad|$ c|c$
     Cayman Islands dollar: cayman adaları doları|kyd
     New Zealand dollar: yeni zelanda doları|nzd|kiwi
     #Cook Islands dollar -> Yeni Zelanda Doları
     Fijian dollar: fiji doları|fjd
     Guyanese dollar: guyana doları|gyd
-    Hong Kong dollar: hong kong doları|hkd
+    Hong Kong dollar: hong kong doları|hkd|hk$|hk $
     Jamaican dollar: jamaika doları|jmd
     #Kiribati dollar -> Avustralya Doları
     Liberian dollar: liberya dolları|lrd
@@ -634,12 +634,14 @@ CurrencyPrefixList: !dictionary
 AmbiguousCurrencyUnitList: !list
   types: [ string ]
   entries:
+    - s
     - din
     - kina
     - para
     - sfr.
     - taka
     - tala
+    - bob
     - cop
     - cup
     - lak

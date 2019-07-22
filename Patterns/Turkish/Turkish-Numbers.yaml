@@ -182,7 +182,7 @@ DoubleAllFloatRegex: !nestedRegex
   def: ((?<=\b){AllFloatRegex}(?=\b))
   references: [ AllFloatRegex ]
 ConnectorRegex: !simpleRegex
-    def: (?<spacer>ve)
+    def: (?<spacer>\s)
 #Percentage Regex
 NumberWithSuffixPercentage: !simpleRegex
   def: (((({TensNumberIntegerRegex}\s)?(birin|ikinin|üçün|dördün|beşin|altının|yedinin|sekizin|dokuzun)|onun|yirminin|otuzun|kırkın|ellinin|altmışın|yetmişin|seksenin|doksanın)\s(yüzdesi))|(\d*(1'in|2'nin|3'ün|4'ün|5'in|6'nın|7'nin|8'in|9'un|10'un|20'nin|30'un|40'ın|50'nin|60'ın|70'in|80'in|90'ın)\s(yüzdesi)))
