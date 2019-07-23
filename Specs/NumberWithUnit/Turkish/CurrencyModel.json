@@ -773,6 +773,8 @@
   },
   {
     "Input": "12 Aralık 1994 itibariyle 125 milyon avustralya doları sıfır - kupon eurobond, 50.9375'te fiyatlandı ve hambros bankası şirketi aracılığıyla % 15.06 daha az ücret verdi.",
+    "Comment": "Trukish does not have equivalent for -of-, sıfır is included in the number and very hard to extract",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1334,23 +1336,25 @@
           "unit": "Dollar"
         },
         "Start": 9,
-        "End": 24
+        "End": 23
       }
     ]
   },
   {
     "Input": "sadece on üç dolar kırk beş sente mal oldu",
+    "Comment": "Sente is a suffixed version of sent which is ambiguous with the actual currency unit sente",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "on üç dolar kırk beş sent",
+        "Text": "on üç dolar kırk beş sente",
         "TypeName": "currency",
         "Resolution": {
           "value": "13,45",
           "unit": "Dollar"
         },
         "Start": 7,
-        "End": 32
+        "End": 33
       }
     ]
   },
@@ -1427,19 +1431,19 @@
     ]
   },
   {
-    "Input": "bir kuai ve elli beş mao gerekebilir.",
+    "Input": "bir kuai beş mao beş fen gerekebilir.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "bir kuai ve elli beş mao",
+        "Text": "bir kuai beş mao beş fen",
         "TypeName": "currency",
         "Resolution": {
-          "isoCurrency": "cny",
+          "isoCurrency": "CNY",
           "unit": "Chinese yuan",
           "value": "1,55"
         },
         "Start": 0,
-        "End": 20
+        "End": 23
       }
     ]
   },

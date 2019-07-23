@@ -46,7 +46,7 @@ CurrencySuffixList: !dictionary
     Pul: pul
 #Euro
     Euro: euro|€|eur|avro
-    Cent: sent|s
+    Cent: sent|s|sente
 #Albanian lek
 #No use of "ALL" "L"
     Albanian lek: arnavut leki|lek|L|
@@ -544,7 +544,41 @@ CurrencyNameToIsoCodeMap: !dictionary
     Chinese yuan: CNY
     Pitcairn Islands dollar: PND
     Guernsey pound: GGP
-    # Currencies we extract, but that don't have an official ISO code: Somaliland şilini
+    # Fake ISO code
+    # Special main unit
+    Rial: __RI
+    Shiling: __S
+    Som: __SO
+    Dirham: __DR
+    Dinar: _DN
+    Dollar: __D
+    Manat: __MA
+    Rupee: __R
+    Krone: __K
+    Krona: __K
+    Crown: __K
+    Frank: __F
+    Mark: __M
+    Ruble: __RB
+    Peso: __PE
+    Pound: __P
+    # Currencies we extract, but that don't have an official ISO code
+    Tristan da Cunha pound: _TP
+    South Georgia and the South Sandwich Islands pound: _SP
+    Somaliland shilling: _SS
+    Pitcairn Islands dollar: _PND
+    Palauan dollar: _PD
+    Niue dollar: _NID
+    Nauruan dollar: _ND
+    Micronesian dollar: _MD
+    Kiribati dollar: _KID
+    Guernsey pound: _GGP
+    Faroese króna: _FOK
+    Cook Islands dollar: _CKD 
+    British Virgin Islands dollar: _BD 
+    Ascension pound: _AP 
+    Alderney pound: _ALP 
+    Abkhazian apsar: _AA
 FractionalUnitNameToCodeMap: !dictionary
   types: [ string, string ]
   entries:
