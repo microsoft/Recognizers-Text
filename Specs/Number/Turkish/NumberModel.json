@@ -824,15 +824,13 @@
   },
   {
     "Input": "yarım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "yarım",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "0.5"
+          "value": "0,5"
         },
         "Start": 0,
         "End": 4
@@ -841,15 +839,13 @@
   },
   {
     "Input": "üç çeyrek",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "üç çeyrek",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "0.75"
+          "value": "0,75"
         },
         "Start": 0,
         "End": 8
@@ -925,8 +921,7 @@
         "Text": "bir buçuk",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "1.5"
+          "value": "1,5"
         },
         "Start": 0,
         "End": 8

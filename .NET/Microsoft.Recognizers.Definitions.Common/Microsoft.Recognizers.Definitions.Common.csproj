@@ -302,6 +302,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Turkish\DateTimeDefinitions.cs">
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Turkish\NumbersDefinitions.cs">
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -422,6 +427,8 @@
     <None Update="Spanish\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Swedish\ChoiceDefinitions.tt">
+    </None>
+    <None Update="Turkish\DateTimeDefinitions.tt">
     </None>
     <None Update="Turkish\NumbersDefinitions.tt">
     </None>

@@ -666,7 +666,7 @@
         "TypeName": "currency",
         "Resolution": {
           "value": "150000000",
-          "unit": "United states dollar"
+          "unit": "United States dollar"
         }
       }
     ]
@@ -1116,7 +1116,7 @@
         "TypeName": "currency",
         "Resolution": {
           "value": "10000000000",
-          "unit": "United states dollar"
+          "unit": "United States dollar"
         }
       }
     ]

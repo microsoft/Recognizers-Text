@@ -73,7 +73,7 @@ AllOrdinalRegex: !nestedRegex
   def: ({SuffixRoundNumberOrdinalRegex}|{SuffixBasicOrdinalRegex})
   references: [ SuffixRoundNumberOrdinalRegex, SuffixBasicOrdinalRegex ]
 OrdinalSuffixRegex: !simpleRegex
-  def: (?<=\b)(\d*(°|(esi)?m[oaie]))
+  def: (?<=\b)(\d+(°|(esi)?m[oaie]))
 OrdinalNumericRegex: !simpleRegex
   def: (?<=\b)(\d{1,3}(\s*,\s*\d{3})*(°|(esi)?m[oaie]))
 OrdinalRoundNumberRegex: !nestedRegex
@@ -91,7 +91,7 @@ FractionNounRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?({AllIntRegex})(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzi|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?(un)(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzo|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))(?=\b)
+  def: (?<=\b)(({AllIntRegex}\s+e\s+mezzo)|(({AllIntRegex}\s+(e\s+)?)?(un)(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzo|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))))(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionPrepositionRegex: !nestedRegex
   def: (?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+su\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)
@@ -228,6 +228,7 @@ CardinalNumberMap: !dictionary
     sei: 6
     sette: 7
     otto: 8
+    tto: 8
     nove: 9
     dieci: 10
     undici: 11
@@ -255,6 +256,8 @@ CardinalNumberMap: !dictionary
     settant: 70
     ottanta: 80
     ottant: 80
+    ttanta: 80
+    ttant: 80
     novanta: 90
     novant: 90
     cento: 100
@@ -290,6 +293,8 @@ OrdinalNumberMap: !dictionary
     settima: 7
     ottavo: 8
     ottava: 8
+    ttavo: 8
+    ttava: 8
     nono: 9
     nona: 9
     decimo: 10
@@ -328,6 +333,8 @@ OrdinalNumberMap: !dictionary
     settantesima: 70
     ottantesimo: 80
     ottantesima: 80
+    ttantesimo: 80
+    ttantesima: 80
     novantesimo: 90
     novantesima: 90
     centesimo: 100
@@ -432,6 +439,8 @@ OrdinalNumberMap: !dictionary
     settantesime: 70
     ottantesimi: 80
     ottantesime: 80
+    ttantesimi: 80
+    ttantesime: 80
     novantesimi: 90
     novantesime: 90
     centesimi: 100

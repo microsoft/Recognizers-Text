@@ -441,7 +441,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     },
                 }));
 
-            /* TODO uncomment with the Turkish temprature changes
             RegisterModel<TemperatureModel>(
                 Culture.Turkish,
                 (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
@@ -450,7 +449,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitExtractor(new Turkish.TemperatureExtractorConfiguration()),
                         new NumberWithUnitParser(new Turkish.TemperatureParserConfiguration())
                     },
-                }));*/
+                }));
 
             RegisterModel<DimensionModel>(
                 Culture.Turkish,

@@ -97,7 +97,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "500000",
-          "unit": "Barrel"
+          "unit": "Volume unit"
         },
         "Start": 54,
         "End": 68

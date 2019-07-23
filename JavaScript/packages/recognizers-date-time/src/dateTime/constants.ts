@@ -66,6 +66,7 @@ export class Constants {
 
     static readonly REF_UNDEF_MOD: string = 'ref_undef';
 
+    // Timex of TimeOfDay
     static readonly EarlyMorning: string = "TDA";
     static readonly Morning: string = "TMO";
     static readonly MidDay: string = "TMI";
@@ -74,6 +75,14 @@ export class Constants {
     static readonly Daytime: string = "TDT";
     static readonly Night: string = "TNI";
     static readonly BusinessHour: string = "TBH";
+
+    // Invalid year
+    public readonly InvalidYear: number = Number.MIN_VALUE;
+    public readonly InvalidMonth: number = Number.MIN_VALUE;
+    public readonly InvalidDay: number = Number.MIN_VALUE;
+    public readonly InvalidHour: number = Number.MIN_VALUE;
+    public readonly InvalidMinute: number = Number.MIN_VALUE;
+    public readonly InvalidSecond: number = Number.MIN_VALUE;
 }
 
 export class TimeTypeConstants {

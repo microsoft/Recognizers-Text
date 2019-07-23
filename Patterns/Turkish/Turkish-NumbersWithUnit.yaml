@@ -11,13 +11,13 @@ AgeSuffixList: !dictionary
 AreaSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Square kilometer: kilometrekare|km2|km^2|km²
-    Square hectometer: hektometrekare|hm2|hm^2|hm²
-    Square decameter: dekametrekare|dam2|dam^2|dam²
-    Square meter: metrekaredir|metrekare|m2|m^2|m²
-    Square decimeter: desimetrekare|dm2|dm^2|dm²
-    Square centimeter: santimetrekare|cm2|cm^2|cm²
-    Square millimeter: milimetrekare|mm2|mm^2|mm²
+    Square kilometer: kilometrekare|kilometre kare|km2|km^2|km²
+    Square hectometer: hektometrekare|hektometre kare|hm2|hm^2|hm²
+    Square decameter: dekametrekare|dekametre kare|dam2|dam^2|dam²
+    Square meter: metrekaredir|metrekare|metre kare|m2|m^2|m²
+    Square decimeter: desimetrekare|desimetre kare|dm2|dm^2|dm²
+    Square centimeter: santimetrekare|santimetre kare|cm2|cm^2|cm²
+    Square millimeter: milimetrekare|milimetre kare|mm2|mm^2|mm²
     Square inch: inç kare|inçkare|in2|in^2|in²
     Square foot: fit kare|fitkare|ft2|ft^2|ft²|ayakkare
     Square mile: mil kare|milkare|mi2|mi^2|mi²
@@ -185,7 +185,7 @@ CurrencySuffixList: !dictionary
     Omani rial: umman riyali|omr|ر.ع.
 #Panamanian balboa
     Panamanian balboa: panama balboası|b/.|pab
-    Centesimo: centesimo|céntimo
+    Centesimo: centesimo
 #Papua New Guinean kina
     Papua New Guinean kina: papua yeni gine kinası|kina|pgk
     Toea: toea
@@ -343,7 +343,7 @@ CurrencySuffixList: !dictionary
     #Tristan da Cunha -> Sterlin (GBP)
     Pound: pound|sterlin|£|sterlini|sterline
     Pence: pence
-    Shilling: shillings|shilling|shilingi
+    Shilling: shillings|shilling|shilingi|sh
     Penny: peni
 #Dollar
     United States dollar: abd doları|a.b.d. doları|amerika birleşik devletleri doları|amerikan doları|usd|abd $|a.b.d. $
@@ -676,6 +676,7 @@ AmbiguousDimensionUnitList: !list
   entries:
     - pound
     - dram
+    - varil
     - cup
     - in
     - '"'
@@ -764,7 +765,7 @@ VolumeSuffixList: !dictionary
     Cubic inch: inç küp
     Cubic foot: fit küp
     Cubic mile: mil küp
-    Fluid ounce: sıvı ons|oz
+    Fluid ounce: sıvı ons
     Teaspoon: tatlı kaşığı
     Tablespoon: yemek kaşığı
     Pint: pint
@@ -773,7 +774,6 @@ AmbiguousVolumeUnitList: !list
   types: [ string ]
   entries:
     - dal
-    - varil
 #WeightExtractorConfiguration
 WeightSuffixList: !dictionary
   types: [ string, string ]

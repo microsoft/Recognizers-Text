@@ -48,7 +48,12 @@ class SpanishCurrencyParserConfiguration(SpanishNumberWithUnitParserConfiguratio
 class SpanishDimensionParserConfiguration(SpanishNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
-        self.add_dict_to_unit_map(SpanishNumericWithUnit.DimensionSuffixList)
+        self.add_dict_to_unit_map(SpanishNumericWithUnit.InformationSuffixList)
+        self.add_dict_to_unit_map(SpanishNumericWithUnit.AreaSuffixList)
+        self.add_dict_to_unit_map(SpanishNumericWithUnit.LengthSuffixList)
+        self.add_dict_to_unit_map(SpanishNumericWithUnit.SpeedSuffixList)
+        self.add_dict_to_unit_map(SpanishNumericWithUnit.VolumeSuffixList)
+        self.add_dict_to_unit_map(SpanishNumericWithUnit.WeightSuffixList)
 
 
 class SpanishTemperatureParserConfiguration(SpanishNumberWithUnitParserConfiguration):

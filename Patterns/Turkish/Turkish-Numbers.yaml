@@ -263,7 +263,7 @@ WordSeparatorToken: ve
 WrittenDecimalSeparatorTexts: [nokta]
 WrittenGroupSeparatorTexts: [nokta]
 WrittenIntegerSeparatorTexts: [\s]
-WrittenFractionSeparatorTexts: [nokta]
+WrittenFractionSeparatorTexts: [\s]
 HalfADozenRegex: !simpleRegex
   def: yarım\s+düzine
 DigitalNumberRegex: !nestedRegex

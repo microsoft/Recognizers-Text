@@ -787,7 +787,7 @@
         "TypeName": "currency",
         "Resolution": {
           "value": "150000000",
-          "unit": "Dollar Américain"
+          "unit": "Dollar États-Unis"
         },
         "Start": 58,
         "End": 78
@@ -1267,7 +1267,7 @@
         "TypeName": "currency",
         "Resolution": {
           "value": "10000000000",
-          "unit": "Dollar Américain"
+          "unit": "Dollar États-Unis"
         },
         "Start": 108,
         "End": 128

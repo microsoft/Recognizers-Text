@@ -649,6 +649,7 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                 text = text.replace(early, "");
                 hasEarly = true;
                 ret.setComment(Constants.Comment_Early);
+                ret.setMod(Constants.EARLY_MOD);
             }
 
             if (!hasEarly && !StringUtility.isNullOrEmpty(match.get().getGroup("late").value)) {
@@ -656,6 +657,7 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                 text = text.replace(late, "");
                 hasLate = true;
                 ret.setComment(Constants.Comment_Late);
+                ret.setMod(Constants.LATE_MOD);
             }
         }
         MatchedTimeRangeResult timexResult = this.config.getMatchedTimexRange(text, "", 0, 0, 0);

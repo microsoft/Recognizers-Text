@@ -27,7 +27,10 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly durationExtractor: BaseDurationExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
+
+        let enableDmy = dmyDateFormat || ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
+
         this.dateRegexList = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList1),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList2),
@@ -35,11 +38,11 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5),
 
-            ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY? 
+            enableDmy? 
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7):
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6),
 
-            ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY? 
+            enableDmy? 
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6):
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7),
 
@@ -61,8 +64,8 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
 export class ChineseDateExtractor extends BaseDateExtractor {
     private readonly durationExtractor: ChineseDurationExtractor;
 
-    constructor() {
-        super(new ChineseDateExtractorConfiguration());
+    constructor(dmyDateFormat: boolean) {
+        super(new ChineseDateExtractorConfiguration(dmyDateFormat));
         this.durationExtractor = new ChineseDurationExtractor();
     }
 
@@ -165,8 +168,8 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
         return source === ChineseDateTime.ParserConfigurationLastWeekDayToken;
     }
 
-    constructor() {
-        this.dateRegex = new ChineseDateExtractorConfiguration().dateRegexList;
+    constructor(dmyDateFormat: boolean) {
+        this.dateRegex = new ChineseDateExtractorConfiguration(dmyDateFormat).dateRegexList;
         this.monthOfYear = ChineseDateTime.ParserConfigurationMonthOfYear;
         this.dayOfMonth = ChineseDateTime.ParserConfigurationDayOfMonth;
         this.dayOfWeek = ChineseDateTime.ParserConfigurationDayOfWeek;
@@ -189,8 +192,8 @@ export class ChineseDateParser extends BaseDateParser {
     private readonly tokenLastRegex: RegExp
     private readonly monthMaxDays: Array<number>;
 
-    constructor() {
-        let config = new ChineseDateParserConfiguration();
+    constructor(dmyDateFormat: boolean) {
+        let config = new ChineseDateParserConfiguration(dmyDateFormat);
         super(config);
         this.lunarRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.LunarRegex);
         this.specialDateRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SpecialDate);

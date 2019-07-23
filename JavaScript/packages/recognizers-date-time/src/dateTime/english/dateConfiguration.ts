@@ -28,38 +28,41 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
+
+        let enableDmy = dmyDateFormat || EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
+
         this.dateRegexList = [
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor1),
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor3),
 
-            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4):
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5),
-
-            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5):
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4),
 
+            enableDmy?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4):
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5),
+
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor6),
 
-            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7L):
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9L),
-
-            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7S):
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9S),
-
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor8),
-
-            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9L):
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7L),
 
-            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9S):
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7S),
+
+            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor8),
+
+            enableDmy?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7L):
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9L),
+
+            enableDmy?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7S):
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9S),
 
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractorA),
         ];
@@ -131,7 +134,7 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
     static readonly nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
     static readonly previousPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PreviousPrefixRegex);
 
-    constructor(config: EnglishCommonDateTimeParserConfiguration) {
+    constructor(config: EnglishCommonDateTimeParserConfiguration, dmyDateFormat: boolean) {
         this.ordinalExtractor = config.ordinalExtractor;
         this.integerExtractor = config.integerExtractor;
         this.cardinalExtractor = config.cardinalExtractor;
@@ -143,7 +146,7 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
         this.dayOfWeek = config.dayOfWeek;
         this.unitMap = config.unitMap;
         this.cardinalMap = config.cardinalMap;
-        this.dateRegex = new EnglishDateExtractorConfiguration().dateRegexList;
+        this.dateRegex = new EnglishDateExtractorConfiguration(dmyDateFormat).dateRegexList;
         this.onRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OnRegex);
         this.specialDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecialDayRegex);
         this.specialDayWithNumRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecialDayWithNumRegex);

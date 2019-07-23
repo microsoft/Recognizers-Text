@@ -460,6 +460,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "08:00:00",
             "endTime": "10:00:00"
@@ -485,6 +486,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "10:00:00",
             "endTime": "12:00:00"
@@ -535,6 +537,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TAF",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "14:00:00",
             "endTime": "16:00:00"
@@ -560,6 +563,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TEV",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "16:00:00",
             "endTime": "18:00:00"
@@ -585,6 +589,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TEV",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "18:00:00",
             "endTime": "20:00:00"
@@ -610,6 +615,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "20:00:00",
             "endTime": "22:00:00"
@@ -635,6 +641,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "22:00:00",
             "endTime": "23:59:59"
@@ -660,6 +667,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "20:00:00",
             "endTime": "22:00:00"
@@ -685,6 +693,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "22:00:00",
             "endTime": "23:59:59"
@@ -860,6 +869,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "10:00:00",
             "endTime": "12:00:00"
@@ -885,6 +895,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "10:00:00",
             "endTime": "12:00:00"
@@ -910,6 +921,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "08:00:00",
             "endTime": "10:00:00"
@@ -935,6 +947,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "10:00:00",
             "endTime": "12:00:00"
@@ -960,6 +973,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TAF",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "12:00:00",
             "endTime": "14:00:00"
@@ -985,6 +999,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TAF",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "12:00:00",
             "endTime": "14:00:00"
@@ -1010,6 +1025,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TAF",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "14:00:00",
             "endTime": "16:00:00"
@@ -1035,6 +1051,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TEV",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "18:00:00",
             "endTime": "20:00:00"
@@ -1060,6 +1077,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "22:00:00",
             "endTime": "23:59:59"
