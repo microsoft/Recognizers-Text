@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 { "girlsday", GirlsDay },
                 { "whiteloverday", WhiteLoverDay },
                 { "loverday", ValentinesDay },
-                { "christmas", ChristmasDay },
+                { "firstchristmasday", ChristmasDay },
                 { "xmas", ChristmasDay },
                 { "newyear", NewYear },
                 { "newyearday", NewYear },

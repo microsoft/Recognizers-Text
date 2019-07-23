@@ -966,7 +966,6 @@ HolidayNames: !dictionary
     girlsday: [ girlsday ]
     whiteloverday: [ whiteloverday ]
     loverday: [ loverday ]
-    christmas: [ weihnachten, weihnachtstag ]
     xmas: [ xmas ]
     newyear: [ neujahr ]
     newyearday: [ neujahrstag, neujahr ]

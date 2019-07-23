@@ -649,7 +649,6 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"girlsday", new string[] { @"girlsday" } },
             { @"whiteloverday", new string[] { @"whiteloverday" } },
             { @"loverday", new string[] { @"loverday" } },
-            { @"christmas", new string[] { @"weihnachten", @"weihnachtstag" } },
             { @"xmas", new string[] { @"xmas" } },
             { @"newyear", new string[] { @"neujahr" } },
             { @"newyearday", new string[] { @"neujahrstag", @"neujahr" } },
