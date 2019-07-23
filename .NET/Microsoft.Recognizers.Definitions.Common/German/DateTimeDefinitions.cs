@@ -163,7 +163,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string LessThanRegex = @"\b(weniger\s+als)\b";
       public const string MoreThanRegex = @"\b(mehr\s+als)\b";
       public const string DurationUnitRegex = @"(?<unit>jahr(en|es|e)?|monat(en|e|s)?|wochen?|tag(en|es|e)?|stunden?|std?|h|minuten?|min|sekunden?|sek)\b";
-      public const string SuffixAndRegex = @"(?<suffix>\s*(und)\s+((eine)\s+)?(?<suffix_num>halbe|viertel))";
+      public const string SuffixAndRegex = @"(?<suffix>\s*und\s+(eine\s+)?(?<suffix_num>halbe|viertel))";
       public const string PeriodicRegex = @"(?<periodic>(all)?täglich(er|en|es|e)?|(all)?monatlich(er|en|es|e)?|(all)?wöchentlich(er|en|es|e)?|(all)?jährlich(er|en|es|e)?)\b";
       public static readonly string EachUnitRegex = $@"(?<each>(jede(s|r|n|m)?|alle)(?<other>\s+andere(n)?)?\s*{DurationUnitRegex})";
       public const string EachPrefixRegex = @"\b(?<each>(jede(r|n|s)?|alle)\s*$)";
@@ -171,7 +171,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string SetLastRegex = @"(?<last>nächste(r|n|s)?|kommende(r|n|s)?|diese(r|n|m|s)?|letzte(r|n|s)?|vorige(r|n|s)?|vorherige(r|n|s)?|jetzige(r|n|s)?|derzeitige(r|n|s)?)\b";
       public const string EachDayRegex = @"\s*(jeden)\s*tag\s*\b";
       public const string BeforeEachDayRegex = @"(jeden)\s*tag\s*";
-      public static readonly string DurationFollowedUnit = $@"\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}";
+      public static readonly string DurationFollowedUnit = $@"(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})";
       public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
       public static readonly string AnUnitRegex = $@"\b(((ein(er|es|en|em|e)?)(?<half>\s+halb(es|er|en|e))?))\s+{DurationUnitRegex}";
       public const string DuringRegex = @"\b(während|im\slaufe)\s+(de[sr])\s+(?<unit>jahres|monats|woche|tages)\b";
@@ -649,7 +649,6 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"girlsday", new string[] { @"girlsday" } },
             { @"whiteloverday", new string[] { @"whiteloverday" } },
             { @"loverday", new string[] { @"loverday" } },
-            { @"christmas", new string[] { @"weihnachten", @"weihnachtstag" } },
             { @"xmas", new string[] { @"xmas" } },
             { @"newyear", new string[] { @"neujahr" } },
             { @"newyearday", new string[] { @"neujahrstag", @"neujahr" } },

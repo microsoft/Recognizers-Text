@@ -7,8 +7,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
     [TestClass]
     public class TestDateTime_English : TestBase
     {
-        public static TestResources TestResources { get; private set; }
-
         public static IDictionary<string, IDateTimeExtractor> Extractors { get; private set; }
 
         public static IDictionary<string, IDateTimeParser> Parsers { get; private set; }
@@ -16,253 +14,245 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
-            TestResources = new TestResources();
-            TestResources.InitFromTestContext(context);
             Extractors = new Dictionary<string, IDateTimeExtractor>();
             Parsers = new Dictionary<string, IDateTimeParser>();
         }
 
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            TestSpecInitialize(TestResources);
-        }
-
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateExtractor-English.csv", "DateExtractor-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DateExtractor()
+        public void DateExtractor(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
-            TestDateTimeExtractor();
+            TestDateTimeExtractor(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimeExtractor-English.csv", "TimeExtractor-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void TimeExtractor()
+        public void TimeExtractor(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
-            TestDateTimeExtractor();
+            TestDateTimeExtractor(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DatePeriodExtractor-English.csv", "DatePeriodExtractor-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DatePeriodExtractor()
+        public void DatePeriodExtractor(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
-            TestDateTimeExtractor();
+            TestDateTimeExtractor(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimePeriodExtractor-English.csv", "TimePeriodExtractor-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void TimePeriodExtractor()
+        public void TimePeriodExtractor(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
-            TestDateTimeExtractor();
+            TestDateTimeExtractor(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeExtractor-English.csv", "DateTimeExtractor-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DateTimeExtractor()
+        public void DateTimeExtractor(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
-            TestDateTimeExtractor();
+            TestDateTimeExtractor(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimePeriodExtractor-English.csv", "DateTimePeriodExtractor-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DateTimePeriodExtractor()
+        public void DateTimePeriodExtractor(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
-            TestDateTimeExtractor();
+            TestDateTimeExtractor(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "HolidayExtractor-English.csv", "HolidayExtractor-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void HolidayExtractor()
+        public void HolidayExtractor(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
-            TestDateTimeExtractor();
+            TestDateTimeExtractor(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimeZoneExtractor-English.csv", "TimeZoneExtractor-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void TimeZoneExtractor()
+        public void TimeZoneExtractor(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
-            TestDateTimeExtractor();
+            TestDateTimeExtractor(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DurationExtractor-English.csv", "DurationExtractor-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DurationExtractor()
+        public void DurationExtractor(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
-            TestDateTimeExtractor();
+            TestDateTimeExtractor(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "SetExtractor-English.csv", "SetExtractor-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void SetExtractor()
+        public void SetExtractor(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
-            TestDateTimeExtractor();
+            TestDateTimeExtractor(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "MergedExtractor-English.csv", "MergedExtractor-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void MergedExtractor()
+        public void MergedExtractor(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
-            TestDateTimeExtractor();
+            TestDateTimeExtractor(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "MergedExtractorSkipFromTo-English.csv", "MergedExtractorSkipFromTo-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void MergedExtractorSkipFromTo()
+        public void MergedExtractorSkipFromTo(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
-            TestDateTimeExtractor();
+            TestDateTimeExtractor(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateParser-English.csv", "DateParser-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DateParser()
+        public void DateParser(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
             ParserInitialize(Parsers);
-            TestDateTimeParser();
+            TestDateTimeParser(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimeParser-English.csv", "TimeParser-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void TimeParser()
+        public void TimeParser(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
             ParserInitialize(Parsers);
-            TestDateTimeParser();
+            TestDateTimeParser(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DatePeriodParser-English.csv", "DatePeriodParser-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DatePeriodParser()
+        public void DatePeriodParser(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
             ParserInitialize(Parsers);
-            TestDateTimeParser();
+            TestDateTimeParser(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimePeriodParser-English.csv", "TimePeriodParser-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void TimePeriodParser()
+        public void TimePeriodParser(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
             ParserInitialize(Parsers);
-            TestDateTimeParser();
+            TestDateTimeParser(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeParser-English.csv", "DateTimeParser-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public new void DateTimeParser()
+        public new void DateTimeParser(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
             ParserInitialize(Parsers);
-            TestDateTimeParser();
+            TestDateTimeParser(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimePeriodParser-English.csv", "DateTimePeriodParser-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DateTimePeriodParser()
+        public void DateTimePeriodParser(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
             ParserInitialize(Parsers);
-            TestDateTimeParser();
+            TestDateTimeParser(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "HolidayParser-English.csv", "HolidayParser-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void HolidayParser()
+        public void HolidayParser(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
             ParserInitialize(Parsers);
-            TestDateTimeParser();
+            TestDateTimeParser(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimeZoneParser-English.csv", "TimeZoneParser-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void TimeZoneParser()
+        public void TimeZoneParser(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
             ParserInitialize(Parsers);
-            TestDateTimeParser();
+            TestDateTimeParser(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DurationParser-English.csv", "DurationParser-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DurationParser()
+        public void DurationParser(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
             ParserInitialize(Parsers);
-            TestDateTimeParser();
+            TestDateTimeParser(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "SetParser-English.csv", "SetParser-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void SetParser()
+        public void SetParser(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
             ParserInitialize(Parsers);
-            TestDateTimeParser();
+            TestDateTimeParser(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "MergedParser-English.csv", "MergedParser-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void MergedParser()
+        public void MergedParser(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
             ParserInitialize(Parsers);
-            TestDateTimeMergedParser();
+            TestDateTimeMergedParser(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModel-English.csv", "DateTimeModel-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DateTimeModel()
+        public void DateTimeModel(TestModel testSpec)
         {
-            TestDateTime();
+            TestDateTime(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModelSplitDateAndTime-English.csv", "DateTimeModelSplitDateAndTime-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DateTimeModelSplitDateAndTime()
+        public void DateTimeModelSplitDateAndTime(TestModel testSpec)
         {
-            TestDateTime();
+            TestDateTime(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModelCalendarMode-English.csv", "DateTimeModelCalendarMode-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DateTimeModelCalendarMode()
+        public void DateTimeModelCalendarMode(TestModel testSpec)
         {
-            TestDateTimeAlt();
+            TestDateTimeAlt(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModelExtendedTypes-English.csv", "DateTimeModelExtendedTypes-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DateTimeModelExtendedTypes()
+        public void DateTimeModelExtendedTypes(TestModel testSpec)
         {
-            TestDateTimeAlt();
+            TestDateTimeAlt(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModelComplexCalendar-English.csv", "DateTimeModelComplexCalendar-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DateTimeModelComplexCalendar()
+        public void DateTimeModelComplexCalendar(TestModel testSpec)
         {
-            TestDateTimeAlt();
+            TestDateTimeAlt(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModelExperimentalMode-English.csv", "DateTimeModelExperimentalMode-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DateTimeModelExperimentalMode()
+        public void DateTimeModelExperimentalMode(TestModel testSpec)
         {
-            TestDateTimeAlt();
+            TestDateTimeAlt(testSpec);
         }
     }
 }

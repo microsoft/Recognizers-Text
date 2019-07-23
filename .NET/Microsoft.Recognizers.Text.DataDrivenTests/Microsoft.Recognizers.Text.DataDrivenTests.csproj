@@ -1,26 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\MSTest.TestAdapter.1.2.0\build\net45\MSTest.TestAdapter.props" Condition="Exists('..\packages\MSTest.TestAdapter.1.2.0\build\net45\MSTest.TestAdapter.props')" />
-  <Import Project="..\packages\vswhere.2.2.11\build\vswhere.props" Condition="Exists('..\packages\vswhere.2.2.11\build\vswhere.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2783050D-97E2-4F10-99F0-E2D970FD996A}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Recognizers.Text.DataDrivenTests</RootNamespace>
-    <AssemblyName>Microsoft.Recognizers.Text.DataDrivenTests</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
-    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
-    <IsCodedUITest>False</IsCodedUITest>
-    <TestProjectType>UnitTest</TestProjectType>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,145 +25,33 @@
     <CodeAnalysisRuleSet>../Recognizers-Text.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
-    <!--
+	  <!--
 		Make sure any documentation comments which are included in code get checked for syntax during the build, but do
 		not report warnings for missing comments.
 
 		CS1573: Parameter 'parameter' has no matching param tag in the XML comment for 'parameter' (but other parameters do)
 		CS1591: Missing XML comment for publicly visible type or member 'Type_or_Member'
 	  -->
-    <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
-    <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
-  </PropertyGroup>
+	  <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
+	  <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
+	</PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MSTest.TestFramework.1.2.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MSTest.TestFramework.1.2.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.3.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.3.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta008">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Choice\TestChoiceRecognizerCache.cs" />
-    <Compile Include="Choice\TestChoiceRecognizerInitialization.cs" />
-    <Compile Include="Choice\TestChoice_Chinese.cs" />
-    <Compile Include="Choice\TestChoice_Dutch.cs" />
-    <Compile Include="Choice\TestChoice_Bulgarian.cs" />
-    <Compile Include="Choice\TestChoice_Italian.cs" />
-    <Compile Include="Choice\TestChoice_Swedish.cs" />
-    <Compile Include="Choice\TestChoice_English.cs" />
-    <Compile Include="Choice\TestChoice_French.cs" />
-    <Compile Include="Choice\TestChoice_German.cs" />
-    <Compile Include="Choice\TestChoice_Japanese.cs" />
-    <Compile Include="Choice\TestChoice_Spanish.cs" />
-    <Compile Include="Choice\TestChoice_Portuguese.cs" />
-    <Compile Include="DateTime\TestDateTimeRecognizerCache.cs" />
-    <Compile Include="DateTime\TestDateTime_Japanese.cs" />
-    <Compile Include="DateTime\TestDateTime_Chinese.cs" />
-    <Compile Include="DateTime\TestDateTime_Dutch.cs" />
-    <Compile Include="DateTime\TestDateTime_Italian.cs" />
-    <Compile Include="DateTime\TestDateTime_EnglishOthers.cs" />
-    <Compile Include="DateTime\TestDateTime_French.cs" />
-    <Compile Include="DateTime\TestDateTime_Portuguese.cs" />
-    <Compile Include="DateTime\TestDateTime_German.cs" />
-    <Compile Include="DateTime\TestDateTime_Spanish.cs" />
-    <Compile Include="DateTime\TestDateTime_English.cs" />
-    <Compile Include="DateTime\TestDateTimeRecognizerInitialization.cs" />
-    <Compile Include="Matcher\StringMatcherTest.cs" />
-    <Compile Include="Matcher\SimpleTokenizerTest.cs" />
-    <Compile Include="NumberWithUnit\TestNumberWithUnitRecognizerCache.cs" />
-    <Compile Include="NumberWithUnit\TestNumberWithUnit_Dutch.cs" />
-    <Compile Include="NumberWithUnit\TestNumberWithUnit_Turkish.cs" />
-    <Compile Include="NumberWithUnit\TestNumberWithUnit_Italian.cs" />
-    <Compile Include="NumberWithUnit\TestNumberWithUnit_French.cs" />
-    <Compile Include="NumberWithUnit\TestNumberWithUnit_German.cs" />
-    <Compile Include="NumberWithUnit\TestNumberWithUnit_Japanese.cs" />
-    <Compile Include="NumberWithUnit\TestNumberWithUnit_Spanish.cs" />
-    <Compile Include="NumberWithUnit\TestNumberWithUnit_Portuguese.cs" />
-    <Compile Include="NumberWithUnit\TestNumberWithUnit_Chinese.cs" />
-    <Compile Include="NumberWithUnit\TestNumberWithUnit_English.cs" />
-    <Compile Include="NumberWithUnit\TestNumberWithUnitRecognizerInitialization.cs" />
-    <Compile Include="Number\LongFormTestConfiguration.cs" />
-    <Compile Include="Number\TestDecimalAndThousandsSeparators.cs" />
-    <Compile Include="Number\TestNumber_Italian.cs" />
-    <Compile Include="Number\TestNumberRecognizerCache.cs" />
-    <Compile Include="Number\TestNumberRecognizerInitialization.cs" />
-    <Compile Include="Number\TestNumber_Dutch.cs" />
-    <Compile Include="Number\TestNumber_English.cs" />
-    <Compile Include="Number\TestNumber_French.cs" />
-    <Compile Include="Number\TestNumber_German.cs" />
-    <Compile Include="Number\TestNumber_Japanese.cs" />
-    <Compile Include="Number\TestNumber_Korean.cs" />
-    <Compile Include="Number\TestNumber_Portuguese.cs" />
-    <Compile Include="Number\TestNumber_Chinese.cs" />
-    <Compile Include="Number\TestNumber_Spanish.cs" />
-    <Compile Include="Number\TestNumber_Turkish.cs" />
-    <Compile Include="Number\TestParserFactory.cs" />
-    <Compile Include="RecognizerExtensions.cs" />
-    <Compile Include="Sequence\TestSequenceRecognizerCache.cs" />
-    <Compile Include="Sequence\TestSequenceRecognizerInitialization.cs" />
-    <Compile Include="Sequence\TestSequence_Portuguese.cs" />
-    <Compile Include="Sequence\TestSequence_English.cs" />
-    <Compile Include="Sequence\TestSequence_Chinese.cs" />
-    <Compile Include="Sequence\TestSequence_Japanese.cs" />
-    <Compile Include="TestBase.cs" />
-    <Compile Include="TestContextExtensions.cs" />
-    <Compile Include="TestModelExtensions.cs" />
-    <Compile Include="TestResources.cs" />
-    <Compile Include="TestModel.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestResourcesExtensions.cs" />
-    <Compile Include="TestUtils.cs" />
+    <ProjectReference Include="..\Microsoft.Recognizers.Text.Choice\Microsoft.Recognizers.Text.Choice.csproj" />
+    <ProjectReference Include="..\Microsoft.Recognizers.Text.DateTime\Microsoft.Recognizers.Text.DateTime.csproj" />
+    <ProjectReference Include="..\Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj" />
+    <ProjectReference Include="..\Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj" />
+    <ProjectReference Include="..\Microsoft.Recognizers.Text.Sequence\Microsoft.Recognizers.Text.Sequence.csproj" />
+    <ProjectReference Include="..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Recognizers.Text.Choice\Microsoft.Recognizers.Text.Choice.csproj">
-      <Project>{9318ea22-c36a-48c8-9882-8a0d2d74c356}</Project>
-      <Name>Microsoft.Recognizers.Text.Choice</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Microsoft.Recognizers.Text.DateTime\Microsoft.Recognizers.Text.DateTime.csproj">
-      <Project>{19522b81-c63f-4dd5-ab4c-674cd44d67d6}</Project>
-      <Name>Microsoft.Recognizers.Text.DateTime</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj">
-      <Project>{e9be4f64-9cc5-433c-90cc-a379a732e5e8}</Project>
-      <Name>Microsoft.Recognizers.Text.NumberWithUnit</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj">
-      <Project>{f1005971-0341-4635-ac1b-b272681d0834}</Project>
-      <Name>Microsoft.Recognizers.Text.Number</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Microsoft.Recognizers.Text.Sequence\Microsoft.Recognizers.Text.Sequence.csproj">
-      <Project>{a5f60d50-81f7-44f8-a2b4-a63606376ee7}</Project>
-      <Name>Microsoft.Recognizers.Text.Sequence</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj">
-      <Project>{59755149-e656-4ef7-87a5-76eee3fd5146}</Project>
-      <Name>Microsoft.Recognizers.Text</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\vswhere.2.2.11\build\vswhere.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\vswhere.2.2.11\build\vswhere.props'))" />
-    <Error Condition="!Exists('..\packages\MSTest.TestAdapter.1.2.0\build\net45\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.1.2.0\build\net45\MSTest.TestAdapter.props'))" />
-    <Error Condition="!Exists('..\packages\MSTest.TestAdapter.1.2.0\build\net45\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.1.2.0\build\net45\MSTest.TestAdapter.targets'))" />
-  </Target>
-  <Import Project="..\packages\MSTest.TestAdapter.1.2.0\build\net45\MSTest.TestAdapter.targets" Condition="Exists('..\packages\MSTest.TestAdapter.1.2.0\build\net45\MSTest.TestAdapter.targets')" />
 </Project>

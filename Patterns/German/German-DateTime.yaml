@@ -377,7 +377,7 @@ MoreThanRegex: !simpleRegex
 DurationUnitRegex: !simpleRegex
   def: (?<unit>jahr(en|es|e)?|monat(en|e|s)?|wochen?|tag(en|es|e)?|stunden?|std?|h|minuten?|min|sekunden?|sek)\b
 SuffixAndRegex: !simpleRegex
-  def: (?<suffix>\s*(und)\s+((eine)\s+)?(?<suffix_num>halbe|viertel))
+  def: (?<suffix>\s*und\s+(eine\s+)?(?<suffix_num>halbe|viertel))
 PeriodicRegex: !simpleRegex
   def: (?<periodic>(all)?täglich(er|en|es|e)?|(all)?monatlich(er|en|es|e)?|(all)?wöchentlich(er|en|es|e)?|(all)?jährlich(er|en|es|e)?)\b
 EachUnitRegex: !nestedRegex
@@ -394,7 +394,7 @@ EachDayRegex: !simpleRegex
 BeforeEachDayRegex: !simpleRegex
   def: (jeden)\s*tag\s*
 DurationFollowedUnit: !nestedRegex
-  def: \s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}
+  def: (^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})
   references: [ SuffixAndRegex, DurationUnitRegex ]
 NumberCombinedWithDurationUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
@@ -966,7 +966,6 @@ HolidayNames: !dictionary
     girlsday: [ girlsday ]
     whiteloverday: [ whiteloverday ]
     loverday: [ loverday ]
-    christmas: [ weihnachten, weihnachtstag ]
     xmas: [ xmas ]
     newyear: [ neujahr ]
     newyearday: [ neujahrstag, neujahr ]
