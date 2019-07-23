@@ -48,9 +48,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         public static List<ModelResult> RecognizePercentage(string query, string culture, NumberOptions options = NumberOptions.None, bool fallbackToDefaultCulture = true)
         {
-            var recognizer = new NumberRecognizer(options);
-            var model = recognizer.GetPercentageModel(culture, fallbackToDefaultCulture);
-            return model.Parse(query);
+            return RecognizeByModel(recognizer => recognizer.GetPercentageModel(culture, fallbackToDefaultCulture), query, options);
         }
 
         public static List<ModelResult> RecognizeNumberRange(string query, string culture, NumberOptions options = NumberOptions.None, bool fallbackToDefaultCulture = true)
