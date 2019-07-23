@@ -8,3 +8,4 @@ Python/.cache/v/cache/lastfailed
 /.vs
 /.vscode
 /JavaScript/*.lerna_backup
+.DS_Store

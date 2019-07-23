@@ -167,6 +167,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             ParserInitialize(Parsers);
             TestDateTimeParser(testSpec);
         }
+        */
 
         [NetCoreTestDataSource]
         [TestMethod]
@@ -176,7 +177,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             ParserInitialize(Parsers);
             TestDateTimeParser(testSpec);
         }
-        */
 
         [NetCoreTestDataSource]
         [TestMethod]
