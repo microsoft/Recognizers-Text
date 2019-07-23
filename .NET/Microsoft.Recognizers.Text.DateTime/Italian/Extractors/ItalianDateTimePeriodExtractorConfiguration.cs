@@ -70,7 +70,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         private static readonly Regex PeriodSpecificTimeOfDayRegex =
             new Regex(DateTimeDefinitions.PeriodSpecificTimeOfDayRegex, RegexFlags);
 
-        private static readonly Regex TimeTimeUnitRegex =
+        private static readonly Regex TimeUnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexFlags);
 
         private static readonly Regex TimeFollowedUnit =
@@ -104,13 +104,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => TimeNumberCombinedWithUnit;
 
-        Regex IDateTimePeriodExtractorConfiguration.TimeUnitRegex => TimeTimeUnitRegex;
+        Regex IDateTimePeriodExtractorConfiguration.TimeUnitRegex => TimeUnitRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex => RelativeTimeUnitRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex => RestOfDateTimeRegex;
 
-        public Regex PreviousPrefixRegex => ItalianDatePeriodExtractorConfiguration.PastPrefixRegex; // Note: FR 'past' i.e 'dernier' is a suffix following after, however interface enforces 'prefix' nomenclature
+        public Regex PreviousPrefixRegex => ItalianDatePeriodExtractorConfiguration.PreviousPrefixRegex; // Note: FR 'past' i.e 'dernier' is a suffix following after, however interface enforces 'prefix' nomenclature
 
         public Regex NextPrefixRegex => ItalianDatePeriodExtractorConfiguration.NextPrefixRegex; // Note: FR 'next' i.e 'prochain' is a suffix following after, i.e 'lundi prochain', however 'prefix' is enforced by interface
 

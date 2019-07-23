@@ -19,6 +19,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex NightStartEndRegex =
             new Regex(DateTimeDefinitions.NightStartEndRegex, RegexFlags);
 
+        public static readonly Regex PastSuffixRegex =
+            new Regex(DateTimeDefinitions.PastSuffixRegex, RegexFlags);
+
+        public static readonly Regex NextSuffixRegex =
+            new Regex(DateTimeDefinitions.NextSuffixRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public ItalianDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
@@ -43,7 +49,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             PureNumberBetweenAndRegex = ItalianTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = ItalianDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = ItalianDateTimeExtractorConfiguration.TimeOfDayRegex;
-            PreviousPrefixRegex = ItalianDatePeriodExtractorConfiguration.PastPrefixRegex;
+            PreviousPrefixRegex = ItalianDatePeriodExtractorConfiguration.PreviousPrefixRegex;
             FutureRegex = ItalianDatePeriodExtractorConfiguration.NextPrefixRegex;
             FutureSuffixRegex = ItalianDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnitRegex = ItalianDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
@@ -175,13 +181,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         {
             var trimmedText = text.Trim();
             var swift = 0;
-            if (trimmedText.StartsWith("prochain") || trimmedText.EndsWith("prochain") ||
-                trimmedText.StartsWith("prochaine") || trimmedText.EndsWith("prochaine"))
+            if (NextSuffixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("derniere") || trimmedText.StartsWith("dernier") ||
-                     trimmedText.EndsWith("derniere") || trimmedText.EndsWith("dernier"))
+            else if (PastSuffixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }

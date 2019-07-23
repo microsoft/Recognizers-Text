@@ -52,10 +52,10 @@
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "5 e le 6pm",
+        "Text": "tra le 5 e le 6pm",
         "Type": "timerange",
-        "Start": 18,
-        "Length": 10
+        "Start": 11,
+        "Length": 17
       }
     ]
   },
@@ -64,10 +64,10 @@
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "5pm e le 6pm",
+        "Text": "tra le 5pm e le 6pm",
         "Type": "timerange",
-        "Start": 18,
-        "Length": 12
+        "Start": 11,
+        "Length": 19
       }
     ]
   },
@@ -76,10 +76,10 @@
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "5 e le 6 del pomeriggio",
+        "Text": "tra le 5 e le 6 del pomeriggio",
         "Type": "timerange",
-        "Start": 18,
-        "Length": 23
+        "Start": 11,
+        "Length": 30
       }
     ]
   },
@@ -232,10 +232,10 @@
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "4pm e le cinque e mezza",
+        "Text": "tra le 4pm e le cinque e mezza",
         "Type": "timerange",
-        "Start": 18,
-        "Length": 23
+        "Start": 11,
+        "Length": 30
       }
     ]
   },
@@ -244,10 +244,10 @@
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "3 di mattina e le 5pm",
+        "Text": "tra le 3 di mattina e le 5pm",
         "Type": "timerange",
-        "Start": 18,
-        "Length": 21
+        "Start": 11,
+        "Length": 28
       }
     ]
   },
