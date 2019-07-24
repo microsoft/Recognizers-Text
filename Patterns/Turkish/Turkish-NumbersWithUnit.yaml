@@ -46,7 +46,7 @@ CurrencySuffixList: !dictionary
     Pul: pul
 #Euro
     Euro: euro|€|eur|avro
-    Cent: sent|s|sente
+    Cent: sent|s
 #Albanian lek
 #No use of "ALL" "L"
     Albanian lek: arnavut leki|lek|L|
@@ -57,7 +57,7 @@ CurrencySuffixList: !dictionary
 #No use of "AMD"
     Armenian dram: ermeni dramı|amd
 #Aruban florin
-    Aruban florin: aruba florini|ƒ|awg|florin
+    Aruban florin: aruba florini|aruba ƒ|awg|florin
 #Bangladeshi taka
     Bangladeshi taka: bangladeş takası|৳|bdt|taka
     Paisa: poisha|paisa
@@ -132,7 +132,7 @@ CurrencySuffixList: !dictionary
 #Kazakhstani tenge
     Kazakhstani tenge: kazakistan tengesi|kzt
 #Kenyan shilling
-    Kenyan shilling: kenya şilini|sh|kes
+    Kenyan shilling: kenya şilini|kenya sh|kes
 #North Korean won
     North Korean won: kuzey kore wonu|kpw
     South Korean won: güney kore wonu|krw
@@ -200,7 +200,7 @@ CurrencySuffixList: !dictionary
     Qatari riyal: katar riyali|qar
     Saudi riyal: suudi arabistan riyali|sar
     Riyal: riyal|﷼
-    Dirham: dirhem
+    Qatari dirham: qatari dirhem
     Halala: halala
 #Samoan tālā
     Samoan tālā: Samoa talası|tala|wst
@@ -212,7 +212,7 @@ CurrencySuffixList: !dictionary
 #Spain
     Peseta: ispanyol pesetası|peseta|esp
 #Netherlands guilder
-    Netherlands guilder: hollanda antilleri|hollanda guldeni|ang|gulden|ƒ|fl|nlg|hollanda florini|florin
+    Netherlands guilder: hollanda antilleri|hollanda guldeni|ang|gulden|hollanda ƒ|fl|nlg|hollanda florini
 #Swazi lilangeni
     Swazi lilangeni: svaziland lilangenisi|lilangeni|szl
 #Tajikistani somoni
@@ -247,7 +247,7 @@ CurrencySuffixList: !dictionary
     Somali shilling: somali şilini|sos
     Somaliland shilling: somaliland şilini
     Tanzanian shilling: tanzanya şilini|tsh|tzs
-    Ugandan shilling: uganda şilini|sh|ugx
+    Ugandan shilling: uganda şilini|uganda sh|ugx
 #Leu
     Romanian leu: romen leyi|rumen leyi|ron
     Moldovan leu: moldova leyi|mdl
@@ -259,7 +259,7 @@ CurrencySuffixList: !dictionary
     Indian rupee: hindistan rupisi|inr|₹
     Seychellois rupee: seyşeller rupisi|scr|sr|sre
     Mauritian rupee: mauritius rupisi|mur
-    Maldivian rufiyaa: maldiv rufiyaası|rf|mvr|.ރ
+    Maldivian rufiyaa: maldiv rufiyaası|mvr|.ރ
     Sri Lankan rupee: sri lanka rupisi|lkr|රු|ரூ
     Indonesian rupiah: Endonezya rupiahı|rupiah|perak|rp|idr
     Rupee: rupi
@@ -285,7 +285,7 @@ CurrencySuffixList: !dictionary
     Belgian franc: belçika frangı|bi.|b.fr.|bef
     Rappen: rappen
     Franc: frank|fr.|fs
-    Centime: santim
+    Centime: centime
 #Ruble
     Russian ruble: rus rublesi|₽|rub
     New Belarusian ruble: yeni beyaz rusya rublesi|yeni belarus rublesi|byn
@@ -298,7 +298,7 @@ CurrencySuffixList: !dictionary
 #Dinar
     Algerian dinar: cezayir dinarı|د.ج|dzd
     Bahraini dinar: bahreyn dinarı|bhd|.د.ب
-    Santeem: santim
+    Santeem: santeem
     Iraqi dinar: ırak dinarı|iqd|ع.د
     Jordanian dinar: ürdün dinarı|د.ا|jod
     Kuwaiti dinar: kuveyt dinarı|kwd|د.ك
@@ -326,15 +326,15 @@ CurrencySuffixList: !dictionary
     Centavo: centavo
 #Pound
     #Alderney pound -> Sterlin (GBP)
-    British pound: ingiliz sterlini|£|gbp|ingiliz poundu
-    Guernsey pound: guernsey sterlini|£|ggp|guernsey poundu
+    British pound: ingiliz sterlini|ingiliz £|gbp|ingiliz poundu
+    Guernsey pound: guernsey sterlini|ggp|guernsey poundu|guernsey £
     #Ascension pound -> Saint Helena sterlini
-    Saint Helena pound: saint helena sterlini|£|shp|saint helena poundu
+    Saint Helena pound: saint helena sterlini|saint helena £|shp|saint helena poundu
     Egyptian pound: mısır lirası|egp|ج.م
-    Falkland Islands pound: falkland adaları sterlini|£|fkp|falkland adaları poundu
-    Gibraltar pound: gibraltar sterlini|£|gip|gibraltar poundu
-    Manx pound: manx sterlini|£|imp|manx poundu
-    Jersey pound: jersey sterlini|£|jep|jersey poundu
+    Falkland Islands pound: falkland adaları sterlini|falkland adaları £|fkp|falkland adaları poundu
+    Gibraltar pound: gibraltar sterlini|gibraltar £|gip|gibraltar poundu
+    Manx pound: manx sterlini|manx £|imp|manx poundu
+    Jersey pound: jersey sterlini|jersey £|jep|jersey poundu
     Lebanese pound: lübnan lirası|lbp|ل.ل
     #South Georgia and the South Sandwich Islands pound -> Falkland Adaları sterlini
     South Sudanese pound: güney sudan lirası|ssp
@@ -342,7 +342,6 @@ CurrencySuffixList: !dictionary
     Syrian pound: suriye lirası|ل.س|syp
     #Tristan da Cunha -> Sterlin (GBP)
     Pound: pound|sterlin|£|sterlini|sterline
-    Pence: peni
     Shilling: shillings|shilling|shilingi|sh
     Penny: peni
 #Dollar
@@ -384,7 +383,7 @@ CurrencySuffixList: !dictionary
     Fen: fen
     Jiao: jiao|mao
 #Additional
-    Finnish markka: fin markkası|mk|fim|markka|fin markı
+    Finnish markka: fin markkası|fim|markka|fin markı
     Penni: penni
 CurrencyNameToIsoCodeMap: !dictionary
   types: [ string, string ]

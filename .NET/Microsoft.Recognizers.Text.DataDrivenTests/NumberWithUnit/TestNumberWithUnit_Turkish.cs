@@ -26,11 +26,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         {
             TestNumberWithUnit(testSpec);
         }
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "CurrencyModel-Turkish.csv", "CurrencyModel-Turkish#csv", DataAccessMethod.Sequential)]
+
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void CurrencyModel()
+        public void CurrencyModel(TestModel testSpec)
         {
-            TestCurrency();
+            TestNumberWithUnit(testSpec);
         }
     }
 }

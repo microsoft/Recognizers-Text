@@ -137,8 +137,7 @@
         "TypeName": "currency",
         "Resolution": {
           "value": "8100000",
-          "unit": "British pound",
-          "isoCurrency": "GBP"
+          "unit": "Pound"
         },
         "Start": 50,
         "End": 62
@@ -1143,8 +1142,7 @@
         "TypeName": "currency",
         "Resolution": {
           "value": "60000",
-          "unit": "British pound",
-          "isoCurrency": "GBP"
+          "unit": "Pound"
         },
         "Start": 116,
         "End": 123
@@ -1160,8 +1158,7 @@
         "TypeName": "currency",
         "Resolution": {
           "value": "100",
-          "unit": "British pound",
-          "isoCurrency": "GBP"
+          "unit": "Pound"
         },
         "Start": 40,
         "End": 44
@@ -1225,8 +1222,7 @@
         "TypeName": "currency",
         "Resolution": {
           "value": "90000000",
-          "unit": "British pound",
-          "isoCurrency": "GBP"
+          "unit": "Pound"
         },
         "Start": 63,
         "End": 73
