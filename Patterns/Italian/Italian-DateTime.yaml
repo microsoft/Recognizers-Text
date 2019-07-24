@@ -208,7 +208,7 @@ RelativeDayRegex: !nestedRegex
   def: \b(((il|l')\s*)?{RelativeRegex}\s+giorno)\b
   references: [ RelativeRegex ]
 SetWeekDayRegex: !simpleRegex
-  def: \b(?<prefix>di\s+)?(?<weekday>mattina|pomeriggio|sera|notte|domenica|lunedì|martedì|mercoledì|giovedì|venerdì|sabato)\b
+  def: \b(?<prefix>(di|la|il)\s+)?(?<weekday>mattina|pomeriggio|sera|notte|domenica|lunedì|martedì|mercoledì|giovedì|venerdì|sabato)s\b
 WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>((la|il)\s+)?(?<cardinal>prim[ao]|second[ao]|terz[ao]|quart[ao]|quint[ao]|ultim[ao])\s+{WeekDayRegex}\s+{MonthSuffixRegex})
   references: [ WeekDayRegex, MonthSuffixRegex ]
@@ -451,7 +451,7 @@ DurationUnitRegex: !nestedRegex
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*e\s+(un\s+)?(?<suffix_num>mezzo|mezza|quarto))
 PeriodicRegex: !simpleRegex
-  def: \b(?<periodic>giornalier[oaei]|mensil[ei]|settimanal[ei]|bisettimanal[ei]|annual[ei])\b
+  def: \b(?<periodic>giornalier[oaei]|giornalmente|quotidian[oaei]|quotidianamente|mensil[ei]|mensilmente|settimanal[ei]|settimanalmente|bisettimanal[ei]|annual[ei]|annualmente)\b
 EachUnitRegex: !nestedRegex
   def: (?<each>(ogni|tutte\s+le|tutti\s+(gl)?i)(?<other>\s+altro)?\s*{DurationUnitRegex})
   references: [ DurationUnitRegex ]

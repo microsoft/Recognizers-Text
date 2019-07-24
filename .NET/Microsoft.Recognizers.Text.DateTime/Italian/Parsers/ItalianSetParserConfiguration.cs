@@ -78,28 +78,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
             var trimmedText = text.Trim();
-            if (trimmedText.Equals("quotidien") || trimmedText.Equals("quotidienne") ||
-                trimmedText.Equals("jours") || trimmedText.Equals("journellement"))
+            if (trimmedText.Equals("quotidianamente") || trimmedText.Equals("quotidiano") || trimmedText.Equals("quotidiana") ||
+                trimmedText.Equals("giornalmente") || trimmedText.Equals("giornaliero") || trimmedText.Equals("giornaliera"))
             {
                 // daily
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("hebdomadaire"))
+            else if (trimmedText.Equals("settimanale") || trimmedText.Equals("settimanalmente"))
             {
                 // weekly
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("bihebdomadaire"))
+            else if (trimmedText.Equals("bisettimanale"))
             {
                 // bi weekly
                 timex = "P2W";
             }
-            else if (trimmedText.Equals("mensuel") || trimmedText.Equals("mensuelle"))
+            else if (trimmedText.Equals("mensile") || trimmedText.Equals("mensilmente"))
             {
                 // monthly
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("annuel") || trimmedText.Equals("annuellement"))
+            else if (trimmedText.Equals("annuale") || trimmedText.Equals("annualmente"))
             {
                 // yearly/annually
                 timex = "P1Y";
@@ -116,19 +116,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
             var trimmedText = text.Trim();
-            if (trimmedText.Equals("jour") || trimmedText.Equals("journee"))
+            if (trimmedText.Equals("giorno") || trimmedText.Equals("giornata"))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("semaine"))
+            else if (trimmedText.Equals("settimana"))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("mois"))
+            else if (trimmedText.Equals("mese"))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("an") || trimmedText.Equals("annee"))
+            else if (trimmedText.Equals("anno") || trimmedText.Equals("annata"))
             {
                 // year
                 timex = "P1Y";

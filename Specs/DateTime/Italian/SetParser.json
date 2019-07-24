@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2744475+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -18,7 +17,9 @@
           "PastResolution": {
             "set": "Set: P1W"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 15
       }
     ]
   },
@@ -27,7 +28,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2754476+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -41,7 +41,9 @@
           "PastResolution": {
             "set": "Set: P2W"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 18
       }
     ]
   },
@@ -50,7 +52,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2779449+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -64,7 +65,9 @@
           "PastResolution": {
             "set": "Set: P1D"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 15
       }
     ]
   },
@@ -73,7 +76,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2794445+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -87,7 +89,9 @@
           "PastResolution": {
             "set": "Set: P1D"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 11
       }
     ]
   },
@@ -96,7 +100,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2829445+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -110,7 +113,9 @@
           "PastResolution": {
             "set": "Set: P1M"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 9
       }
     ]
   },
@@ -119,11 +124,11 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2844439+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "annualmente",
+        "Type": "set",
         "Value": {
           "Timex": "P1Y",
           "FutureResolution": {
@@ -132,7 +137,9 @@
           "PastResolution": {
             "set": "Set: P1Y"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 11
       }
     ]
   },
@@ -155,7 +162,9 @@
           "PastResolution": {
             "set": "Set: P1Y"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 18
       }
     ]
   },
@@ -164,7 +173,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2909444+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -178,7 +186,9 @@
           "PastResolution": {
             "set": "Set: P2D"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 15
       }
     ]
   },
@@ -187,7 +197,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2959472+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -201,7 +210,9 @@
           "PastResolution": {
             "set": "Set: P3W"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 18
       }
     ]
   },
@@ -210,11 +221,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2989494+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "alle 3pm ogni giorno",
+        "Text": "3pm ogni giorno",
         "Type": "set",
         "Value": {
           "Timex": "T15",
@@ -224,7 +234,9 @@
           "PastResolution": {
             "set": "Set: T15"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 15
       }
     ]
   },
@@ -233,7 +245,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.3109498+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -247,7 +258,9 @@
           "PastResolution": {
             "set": "Set: XXXX-04-15"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 9
       }
     ]
   },
@@ -256,7 +269,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.3259514+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -270,7 +282,9 @@
           "PastResolution": {
             "set": "Set: XXXX-WXX-1"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 11
       }
     ]
   },
@@ -279,7 +293,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.3379507+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -293,7 +306,9 @@
           "PastResolution": {
             "set": "Set: XXXX-WXX-1T16"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 20
       }
     ]
   },
@@ -302,7 +317,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.3429518+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -316,7 +330,9 @@
           "PastResolution": {
             "set": "Set: TMO"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 12
       }
     ]
   },
@@ -325,7 +341,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.3609535+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -339,7 +354,9 @@
           "PastResolution": {
             "set": "Set: T09"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 21
       }
     ]
   },
@@ -348,7 +365,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.3730732+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -362,7 +378,9 @@
           "PastResolution": {
             "set": "Set: T16"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 24
       }
     ]
   },
@@ -371,7 +389,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.3840706+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -385,7 +402,9 @@
           "PastResolution": {
             "set": "Set: T21"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 19
       }
     ]
   },
@@ -394,7 +413,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.3930718+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -408,7 +426,9 @@
           "PastResolution": {
             "set": "Set: T21"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 17
       }
     ]
   },
@@ -431,7 +451,9 @@
           "PastResolution": {
             "set": "Set: T09"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 19
       }
     ]
   },
@@ -454,7 +476,9 @@
           "PastResolution": {
             "set": "Set: T09"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 17
       }
     ]
   },
@@ -463,11 +487,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.4295727+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "alle 9am ogni domenica",
+        "Text": "9am ogni domenica",
         "Type": "set",
         "Value": {
           "Timex": "XXXX-WXX-7T09",
@@ -477,7 +500,9 @@
           "PastResolution": {
             "set": "Set: XXXX-WXX-7T09"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 17
       }
     ]
   },
@@ -500,7 +525,9 @@
           "PastResolution": {
             "set": "Set: XXXX-WXX-7T09"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 20
       }
     ]
   },
@@ -523,7 +550,9 @@
           "PastResolution": {
             "set": "Set: XXXX-WXX-1"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 9
       }
     ]
   },
@@ -546,7 +575,9 @@
           "PastResolution": {
             "set": "Set: XXXX-WXX-7"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 11
       }
     ]
   }
