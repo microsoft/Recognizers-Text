@@ -102,7 +102,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+giorni\s+da\s+(?<day>ieri|domani|oggi))\b";
       public const string StrictWeekDay = @"\b(?<weekday>domenica|lunedì|martedì|mercoledì|giovedì|venerdì|sabato|lun|mar|mer|gio|ven|sab|dom)\b";
       public static readonly string RelativeDayRegex = $@"\b(((il|l')\s*)?{RelativeRegex}\s+giorno)\b";
-      public const string SetWeekDayRegex = @"\b(?<prefix>di\s+)?(?<weekday>mattina|pomeriggio|sera|notte|domenica|lunedì|martedì|mercoledì|giovedì|venerdì|sabato)\b";
+      public const string SetWeekDayRegex = @"\b(?<prefix>(di|la|il)\s+)?(?<weekday>mattina|pomeriggio|sera|notte|domenica|lunedì|martedì|mercoledì|giovedì|venerdì|sabato)s\b";
       public static readonly string WeekDayOfMonthRegex = $@"(?<wom>((la|il)\s+)?(?<cardinal>prim[ao]|second[ao]|terz[ao]|quart[ao]|quint[ao]|ultim[ao])\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
       public static readonly string RelativeWeekDayRegex = $@"\b({WrittenNumRegex}\s+{WeekDayRegex}\s+(da\s+ora|dopo))\b";
       public static readonly string SpecialDate = $@"(?<=\b(il|l'|al(l')?)\s*){DayRegex}\b";
@@ -194,7 +194,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string MoreThanRegex = @"\b(più\s+di)\b";
       public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|or[ae]|hrs?|h|minut[oi]|mins?|second[oi]|secs?)\b";
       public const string SuffixAndRegex = @"(?<suffix>\s*e\s+(un\s+)?(?<suffix_num>mezzo|mezza|quarto))";
-      public const string PeriodicRegex = @"\b(?<periodic>giornalier[oaei]|mensil[ei]|settimanal[ei]|bisettimanal[ei]|annual[ei])\b";
+      public const string PeriodicRegex = @"\b(?<periodic>giornalier[oaei]|giornalmente|quotidian[oaei]|quotidianamente|mensil[ei]|mensilmente|settimanal[ei]|settimanalmente|bisettimanal[ei]|annual[ei]|annualmente)\b";
       public static readonly string EachUnitRegex = $@"(?<each>(ogni|tutte\s+le|tutti\s+(gl)?i)(?<other>\s+altro)?\s*{DurationUnitRegex})";
       public const string EachPrefixRegex = @"\b(?<each>(ogni|tutte\s+le|tutti\s+(gl)?i)\s*$)";
       public const string SetEachRegex = @"\b(?<each>(ogni|tutte\s+le|tutti\s+(gl)?i)\s*)";
