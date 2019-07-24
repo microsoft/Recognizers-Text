@@ -9,6 +9,8 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
 {
     public class DoubleExtractor : BaseNumberExtractor
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly ConcurrentDictionary<string, DoubleExtractor> Instances =
             new ConcurrentDictionary<string, DoubleExtractor>();
 
@@ -17,31 +19,31 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.DoubleDecimalPointRegex(placeholder), RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleDecimalPointRegex(placeholder), RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleWithoutIntegralRegex(placeholder), RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleWithoutIntegralRegex(placeholder), RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleWithRoundNumber, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleWithRoundNumber, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.TURKISH)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleCaretExponentialNotationRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleCaretExponentialNotationRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {

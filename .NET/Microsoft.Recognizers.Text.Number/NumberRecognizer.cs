@@ -307,13 +307,11 @@ namespace Microsoft.Recognizers.Text.Number
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new TurkishNumberParserConfiguration()),
                     Turkish.OrdinalExtractor.GetInstance()));
 
-            /*TO DO Uncomment once the PercentModel test passes */
-
-            /*RegisterModel<PercentModel>(
+            RegisterModel<PercentModel>(
                 Culture.Turkish,
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new TurkishNumberParserConfiguration()),
-                    new Turkish.PercentageExtractor(options)));*/
+                    new Turkish.PercentageExtractor(options)));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)
