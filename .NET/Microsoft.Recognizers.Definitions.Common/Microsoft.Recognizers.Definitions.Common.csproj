@@ -444,8 +444,4 @@
     <Exec Command="BuildResources.cmd $(TargetPath)" />
   </Target>
 
-  <Target Name="PostBuildUnix" AfterTargets="PostBuildEvent" Condition="'$(OS)' != 'Windows_NT'">
-    <Exec Command="cp -r $(TargetDir)/../* $(TargetDir)../../../../build/package\" />
-  </Target>
-
 </Project>
