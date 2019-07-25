@@ -47,6 +47,9 @@ DateLastRe: !simpleRegex
   def: 上个|上一个|上|上一|去
 DateNextRe: !simpleRegex
   def: 下个|下一个|下|下一|明
+RelativeRegex: !nestedRegex
+  def: (?<order>({DateThisRe}|{DateLastRe}|{DateNextRe}))
+  references: [DateThisRe, DateLastRe, DateNextRe]
 SpecialDate: !nestedRegex
   def: (?<thisyear>({DateThisRe}|{DateLastRe}|{DateNextRe})年)?(?<thismonth>({DateThisRe}|{DateLastRe}|{DateNextRe})月)?{DateDayRegexInChinese}
   references: [DateThisRe, DateLastRe, DateNextRe, DateDayRegexInChinese]

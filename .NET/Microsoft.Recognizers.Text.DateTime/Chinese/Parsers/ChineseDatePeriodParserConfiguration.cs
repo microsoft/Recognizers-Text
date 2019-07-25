@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using DateObject = System.DateTime;
@@ -869,9 +870,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             var pr1 = this.config.DateParser.Parse(er[0], referenceDate);
             var pr2 = this.config.DateParser.Parse(er[1], referenceDate);
-            if (pr1.Value == null || pr2.Value == null)
+
+            if (er.Count >= 2)
             {
-                return ret;
+                var dateContext = GetYearContext(er[0].Text, er[1].Text, text);
+
+                if (pr1.Value == null || pr2.Value == null)
+                {
+                    return ret;
+                }
+
+                pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
+                pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
             }
 
             DateObject futureBegin = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue,
@@ -1408,6 +1418,51 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private int ToMonthNumber(string monthStr)
         {
             return this.config.MonthOfYear[monthStr] > 12 ? this.config.MonthOfYear[monthStr] % 12 : this.config.MonthOfYear[monthStr];
+        }
+
+        private DateContext GetYearContext(string startDateStr, string endDateStr, string text)
+        {
+            int contextYear = Constants.InvalidYear;
+
+            var yearMatchForEndDate = this.config.DatePeriodYearRegex.Match(endDateStr);
+
+            var isEndDatePureYear = false;
+            var isDateRelative = false;
+            if (yearMatchForEndDate.Success && yearMatchForEndDate.Length == endDateStr.Length)
+            {
+                isEndDatePureYear = true;
+            }
+
+            var relativeMatchForStartDate = this.config.RelativeRegex.Match(startDateStr);
+            var relativeMatchForEndDate = this.config.RelativeRegex.Match(endDateStr);
+            isDateRelative = relativeMatchForStartDate.Success || relativeMatchForEndDate.Success;
+
+            if (!isEndDatePureYear && !isDateRelative)
+            {
+                foreach (Match match in config.DatePeriodYearRegex.Matches(text))
+                {
+                    var year = new ChineseDateExtractorConfiguration().GetYearFromText(match);
+
+                    if (year != Constants.InvalidYear)
+                    {
+                        if (contextYear == Constants.InvalidYear)
+                        {
+                            contextYear = year;
+                        }
+                        else
+                        {
+                            // This indicates that the text has two different year value, no common context year
+                            if (contextYear != year)
+                            {
+                                contextYear = Constants.InvalidYear;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return new DateContext() { Year = contextYear };
         }
     }
 }
