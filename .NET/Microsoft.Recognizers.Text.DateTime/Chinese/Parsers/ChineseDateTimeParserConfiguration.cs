@@ -36,6 +36,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             NextRegex = ChineseDateExtractorConfiguration.NextRegex;
             ThisRegex = ChineseDateExtractorConfiguration.ThisRegex;
             LastRegex = ChineseDateExtractorConfiguration.LastRegex;
+            DatePeriodYearRegex = ChineseDateExtractorConfiguration.DatePeriodYearRegex;
+            RelativeRegex = ChineseDateExtractorConfiguration.RelativeRegex;
             StrictWeekDayRegex = ChineseDateExtractorConfiguration.WeekDayRegex;
             WeekDayOfMonthRegex = ChineseDateExtractorConfiguration.WeekDayOfMonthRegex;
             BeforeRegex = ChineseMergedExtractorConfiguration.BeforeRegex;
@@ -99,6 +101,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public Regex ThisRegex { get; }
 
         public Regex LastRegex { get; }
+
+        public Regex DatePeriodYearRegex { get; }
+
+        public Regex RelativeRegex { get; }
 
         public Regex StrictWeekDayRegex { get; }
 

@@ -3240,5 +3240,77 @@
         }
       }
     ]
+  },
+  {
+    "Input": "18年10月1日到19年2月3日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "18年10月1日到19年2月3日",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-10-01,2019-02-03,P125D)",
+              "type": "daterange",
+              "start": "2018-10-01",
+              "end": "2019-02-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "计费周期 2019年6月1日-6月30日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2019年6月1日-6月30日",
+        "Start": 5,
+        "End": 19,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-06-01,2019-06-30,P29D)",
+              "type": "daterange",
+              "start": "2019-06-01",
+              "end": "2019-06-30"
+            }
+          ]
+        }
+      }
+    ]
+  },  
+  {
+    "Input": "时间从2016年6月1日-6月30日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "从2016年6月1日-6月30日",
+        "Start": 2,
+        "End": 17,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-06-01,2016-06-30,P29D)",
+              "type": "daterange",
+              "start": "2016-06-01",
+              "end": "2016-06-30"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

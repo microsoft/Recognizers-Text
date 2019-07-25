@@ -40,6 +40,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex EqualRegex { get; }
 
+        Regex DatePeriodYearRegex { get; }
+
+        Regex RelativeRegex { get; }
+
         ImmutableDictionary<string, string> UnitMap { get; }
 
         ImmutableDictionary<string, long> UnitValueMap { get; }
