@@ -9,7 +9,7 @@ Recognizer's are organized into groups and designed to be used in C#, Node.js, P
 
 ## Setup
 
-You can choose between build the solution manually or through an automatized build.cmd file.
+You can choose between build the solution manually or through an automatized build.cmd file (or build.sh file on MacOS and Linux).
 
 ### Manual Build
 * Open `Microsoft.Recognizers.Text.sln` and build solution.

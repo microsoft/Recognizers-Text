@@ -440,8 +440,12 @@
     <DotNetCliToolReference Include="T5.TextTransform.Tool" Version="1.1.0-*" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT' ">
     <Exec Command="BuildResources.cmd $(TargetPath)" />
+  </Target>
+
+  <Target Name="PostBuildUnix" AfterTargets="PostBuildEvent" Condition="'$(OS)' != 'Windows_NT'">
+    <Exec Command="cp -r $(TargetDir)/../* $(TargetDir)../../../../build/package\" />
   </Target>
 
 </Project>
