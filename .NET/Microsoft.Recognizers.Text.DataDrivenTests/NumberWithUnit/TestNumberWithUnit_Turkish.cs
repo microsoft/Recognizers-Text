@@ -26,5 +26,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         {
             TestNumberWithUnit(testSpec);
         }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void CurrencyModel(TestModel testSpec)
+        {
+            TestCurrency(testSpec);
+        }
     }
 }

@@ -1,7 +1,6 @@
 [
   {
     "Input": "montgomery ilçesi, md. -- genel yükümlülüğün 75 milyon $'ını b serisi, 1989'un yerel iyileştirme bonolarını bir üretici firması bünyesinde birleştirdi.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -12,51 +11,48 @@
           "unit": "Dollar"
         },
         "Start": 45,
-        "End": 56
+        "End": 55
       }
     ]
   },
   {
-    "Input": "Finlandiya firması Nokia oy ab, Hollanda kablo firması nkf kabel b.v.'yi 420 milyon Fin Markı'na satın almak için anlaştığını duyurdu.",
-    "NotSupported": "dotnet",
+    "Input": "Finlandiya firması Nokia oy ab, Hollanda kablo firması nkf kabel b.v.'yi 420 milyon fin markı'na satın almak için anlaştığını duyurdu.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "420 milyon Fin Markı",
+        "Text": "420 milyon fin markı",
         "TypeName": "currency",
         "Resolution": {
           "value": "420000000",
           "unit": "Finnish markka"
         },
         "Start": 73,
-        "End": 93
+        "End": 92
       }
     ]
   },
   {
-    "Input": "General Dynamics Corp.'un bir üyesi olan General Dynamics servis şirketi Pakistanda izlenen araçların sürdürülmesi tesisi kurmak için 48.2 milyon $'luk bir askeri kontrat kazandı",
-    "NotSupported": "dotnet",
+    "Input": "General Dynamics Corp.'un bir üyesi olan General Dynamics servis şirketi Pakistanda izlenen araçların sürdürülmesi tesisi kurmak için 48,2 milyon $'luk bir askeri kontrat kazandı",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "48.2 milyon $",
+        "Text": "48,2 milyon $",
         "TypeName": "currency",
         "Resolution": {
           "value": "48200000",
           "unit": "Dollar"
         },
         "Start": 134,
-        "End": 147
+        "End": 146
       }
     ]
   },
   {
-    "Input": "ikinci simülatörün fiyatı 16.4 milyon $ arasında değişiyor",
-    "NotSupported": "dotnet",
+    "Input": "ikinci simülatörün fiyatı 16,4 milyon $ c arasında değişiyor",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "16.4 milyon $",
+        "Text": "16,4 milyon $ c",
         "TypeName": "currency",
         "Resolution": {
           "value": "16400000",
@@ -64,13 +60,12 @@
           "isoCurrency": "CAD"
         },
         "Start": 26,
-        "End": 39
+        "End": 40
       }
     ]
   },
   {
     "Input": "Golar gaz firması, Gotaas-Larsen gemicilik yan firması,ilk tercih edilen  Merril Lynch Capital marketleri yoluyla 280 milyon $ öneriyor",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -81,13 +76,12 @@
           "unit": "Dollar"
         },
         "Start": 114,
-        "End": 126
+        "End": 125
       }
     ]
   },
   {
     "Input": "Birtcher'in söylediğine göre, bard/ems 1988 satışları 14 milyon $ civarında",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -98,30 +92,28 @@
           "unit": "Dollar"
         },
         "Start": 54,
-        "End": 65
+        "End": 64
       }
     ]
   },
   {
-    "Input": "Anlaşma fiyatları 12,345 $'dan başlıyor",
-    "NotSupported": "dotnet",
+    "Input": "Anlaşma fiyatları 12.345 $'dan başlıyor",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "12,345 $",
+        "Text": "12.345 $",
         "TypeName": "currency",
         "Resolution": {
           "value": "12345",
           "unit": "Dollar"
         },
         "Start": 18,
-        "End": 26
+        "End": 25
       }
     ]
   },
   {
     "Input": "batman'  warner bros.'un en büyük bütçeli filmi olarak, şu ana dek tek başına gişede 247 milyon $ hasılat yaptı.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -132,30 +124,28 @@
           "unit": "Dollar"
         },
         "Start": 85,
-        "End": 97
+        "End": 96
       }
     ]
   },
   {
-    "Input": "coyle'nin faiz değeri tahmini değeri ekim 2014'te 8.10 milyon £ ",
-    "NotSupported": "dotnet",
+    "Input": "coyle'nin faiz değeri tahmini değeri ekim 2014'te 8,10 milyon £ ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "8.10 milyon £",
+        "Text": "8,10 milyon £",
         "TypeName": "currency",
         "Resolution": {
           "value": "8100000",
           "unit": "Pound"
         },
         "Start": 50,
-        "End": 63
+        "End": 62
       }
     ]
   },
   {
     "Input": "net faiz geliri ilk çeyrekte 254 milyon $'a %27 battı",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -166,13 +156,12 @@
           "unit": "Dollar"
         },
         "Start": 29,
-        "End": 41
+        "End": 40
       }
     ]
   },
   {
     "Input": "bir federal temyiz mahkemesi, boru hattı şirketlerinin müşterilere 1 milyar $'lık maliyetten bir kısmına geçmesini engelleyen bir doğal gaz düzenlemesine karar verdi.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -183,13 +172,12 @@
           "unit": "Dollar"
         },
         "Start": 67,
-        "End": 77
+        "End": 76
       }
     ]
   },
   {
     "Input": "1988 çeyreğinde toplamda 35 milyon $ tutarında bir kerelik kazançlar da yer aldı.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -200,13 +188,12 @@
           "unit": "Dollar"
         },
         "Start": 25,
-        "End": 36
+        "End": 35
       }
     ]
   },
   {
     "Input": "y. j. park ve ailesi, dört yıl boyunca burada küçük bir daire almak için uğradılar, ancak başlangıçta ihtiyaç duydukları 40.000 $ 'ı biriktirmeye ne kadar yaklaştıkça, fiyat o kadar arttı.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -217,30 +204,28 @@
           "unit": "Dollar"
         },
         "Start": 121,
-        "End": 129
+        "End": 128
       }
     ]
   },
   {
     "Input": "robert wallach, bir ABD'li yargıç tarafından New York'ta altı yıl hapis cezasına çarptırıldı ve wedtech skandalındaki haydut mahkumiyeti nedeniyle 250.000 $ para cezası aldı",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " 250.000 $ ",
+        "Text": "250.000 $",
         "TypeName": "currency",
         "Resolution": {
           "value": "250000",
           "unit": "Dollar"
         },
-        "Start": 146,
-        "End": 157
+        "Start": 147,
+        "End": 155
       }
     ]
   },
   {
     "Input": "Bugün Çarşamba günü yayınlanan Orta Doğu Ekonomik Anketi'nde (mees) yayınlanan bir makale, Irak'ın müşterilerinden birleşmiş milletler nezaretinde olmayan bir hesaba 1 Ocak'tan itibaren resmi petrol fiyatı üzerinden varil başına 50 sent daha fazla ödeme yapmalarını istediğini ortaya koyuyor.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -251,13 +236,12 @@
           "unit": "Cent"
         },
         "Start": 229,
-        "End": 236
+        "End": 235
       }
     ]
   },
   {
     "Input": "genel motorlar corp.'un yavaş satışlara tepki gösteren chevrolet bölümü, çekirdek kompakt otomobil hattının iki kapılı versiyonu olan 1990 beretta'sında 800 $'lık indirim yapacağını söyledi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -268,30 +252,28 @@
           "unit": "Dollar"
         },
         "Start": 153,
-        "End": 158
+        "End": 157
       }
     ]
   },
   {
     "Input": "cuma günü borsada işlem gören ulusal piyasada işlem gören hisse senetleri 2,75 $ değer kaybetti",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2,75 $",
         "TypeName": "currency",
         "Resolution": {
-          "value": "2.75",
+          "value": "2,75",
           "unit": "Dollar"
         },
         "Start": 74,
-        "End": 80
+        "End": 79
       }
     ]
   },
   {
     "Input": "Aynı zamanda, yatırımcılar yeniden yapılanmanın şirketin yıllık nakit faiz faturasını 90 milyon $'dan çıkaracağını tahmin ediyor.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -302,13 +284,12 @@
           "unit": "Dollar"
         },
         "Start": 86,
-        "End": 97
+        "End": 96
       }
     ]
   },
   {
     "Input": "1990'da sermaye harcaması bir miktar artacak, mr. Marous, bu yıl tahminen 470 milyon $ olduğunu söyledi.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -319,21 +300,21 @@
           "unit": "Dollar"
         },
         "Start": 74,
-        "End": 86
+        "End": 85
       }
     ]
   },
   {
-    "Input": "'` Shearson gerçekten sadece 300 milyon $'lık bir sermayeye sahip 'diyor. s & p.",
-    "NotSupported": "dotnet",
+    "Input": "'` Shearson gerçekten sadece 300 milyon c$'lık bir sermayeye sahip 'diyor. s & p.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "300 milyon $",
+        "Text": "300 milyon c$",
         "TypeName": "currency",
         "Resolution": {
           "value": "300000000",
-          "unit": "Dollar"
+          "unit": "Canadian dollar",
+          "isoCurrency": "CAD"
         },
         "Start": 29,
         "End": 41
@@ -341,25 +322,23 @@
     ]
   },
   {
-    "Input": "aralık kontratı 1.20 sent'e yükseldi",
-    "NotSupported": "dotnet",
+    "Input": "aralık kontratı 1,20 sent'e yükseldi",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1.20 sent",
+        "Text": "1,20 sent",
         "TypeName": "currency",
         "Resolution": {
-          "value": "1.2",
+          "value": "1,2",
           "unit": "Cent"
         },
         "Start": 16,
-        "End": 25
+        "End": 24
       }
     ]
   },
   {
     "Input": "walter kirchberger, painewebber şirketinden bir analist, hisse sahiplerine daha yüksek, 70 $ - hisse fiyatı teklifin stena - tiphook teklifini bloke etmenin oldukça etkili bir yöntemi olduğunu söyledi.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -370,13 +349,12 @@
           "unit": "Dollar"
         },
         "Start": 88,
-        "End": 92
+        "End": 91
       }
     ]
   },
   {
     "Input": "Bu yılın üçüncü çeyreğinde net satışlar geçen yıl 14 milyon $'dı.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -387,13 +365,12 @@
           "unit": "Dollar"
         },
         "Start": 50,
-        "End": 61
+        "End": 60
       }
     ]
   },
   {
     "Input": "ilk ulusal Chicago bankası aile şirketi olan 48 milyar $'lık varlıklarıyla, finansal sorunlu ülkelerde kredi ve yatırımlardaki zararları bir kenara bıraktığını söyledi.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -404,13 +381,12 @@
           "unit": "Dollar"
         },
         "Start": 45,
-        "End": 56
+        "End": 55
       }
     ]
   },
   {
     "Input": "Fluor Corp. endonezya'daki iria jaya'daki bir bakır madeninde, bir liman limanı olan mcmoran bakır şirketi için mühendislik ve inşaat - yönetim hizmetleri vermek için 300 milyon $'lık bir sözleşme yapıldığını söyledi.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -421,30 +397,28 @@
           "unit": "Dollar"
         },
         "Start": 167,
-        "End": 179
+        "End": 178
       }
     ]
   },
   {
-    "Input": "amerikan borsaları geçen Cuma'dan bir önceki satışa göre bir koltuğun 5,000 $'ın altında satıldığını söyledi.",
-    "NotSupported": "dotnet",
+    "Input": "amerikan borsaları geçen Cuma'dan bir önceki satışa göre bir koltuğun 5.000 $'ın altında satıldığını söyledi.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5,000 $",
+        "Text": "5.000 $",
         "TypeName": "currency",
         "Resolution": {
           "value": "5000",
           "unit": "Dollar"
         },
         "Start": 70,
-        "End": 77
+        "End": 76
       }
     ]
   },
   {
     "Input": "Time Warner tarafından satın alınan Warner iletişim şirketi, sony ve iki üreticiye karşı 1 milyar $'lık bir ihlal ihlali davası açtı.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -455,99 +429,93 @@
           "unit": "Dollar"
         },
         "Start": 89,
-        "End": 99
+        "End": 98
       }
     ]
   },
   {
-    "Input": "ağustosta, asarco, lac d'amiante du quebec iştiraki aracılığıyla, bir asbest madencilik limited ortaklığına üçte bir kalan hissesini 11.7 milyon $'a sattı.",
-    "NotSupported": "dotnet",
+    "Input": "ağustosta, asarco, lac d'amiante du quebec iştiraki aracılığıyla, bir asbest madencilik limited ortaklığına üçte bir kalan hissesini 11,7 milyon $'a sattı.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "11.7 milyon $",
+        "Text": "11,7 milyon $",
         "TypeName": "currency",
         "Resolution": {
           "value": "11700000",
           "unit": "Dollar"
         },
         "Start": 133,
-        "End": 146
+        "End": 145
       }
     ]
   },
   {
-    "Input": "1988'de yurtiçinde üretilen oyuncak ve oyun ihracatı 1987'den % 19'a düşerek 10.5 milyar $'a geriledi.",
-    "NotSupported": "dotnet",
+    "Input": "1988'de yurtiçinde üretilen oyuncak ve oyun ihracatı 1987'den % 19'a düşerek 10,5 milyar hk $'a geriledi.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10.5 milyar $",
+        "Text": "10,5 milyar hk $",
         "TypeName": "currency",
         "Resolution": {
-          "value": "10050000000",
+          "value": "10500000000",
           "unit": "Hong Kong dollar",
           "isoCurrency": "HKD"
         },
         "Start": 77,
-        "End": 90
+        "End": 92
       }
     ]
   },
   {
-    "Input": "Mali dördüncü çeyrek satışları, bir önceki yıla göre% 18 artarak 1.17 milyar $'dan gerçekleşti.",
-    "NotSupported": "dotnet",
+    "Input": "Mali dördüncü çeyrek satışları, bir önceki yıla göre% 18 artarak 1,17 milyar $'dan gerçekleşti.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1.17 milyar $",
+        "Text": "1,17 milyar $",
         "TypeName": "currency",
         "Resolution": {
           "value": "1170000000",
           "unit": "Dollar"
         },
         "Start": 65,
-        "End": 78
+        "End": 77
       }
     ]
   },
   {
-    "Input": "Dün işlemin ilk saatlerinde, fiyatlar her 1/4 puan için 1/4 puan kadar düştü veya yaklaşık 2.50 $ düştü.",
-    "NotSupported": "dotnet",
+    "Input": "Dün işlemin ilk saatlerinde, fiyatlar her 1/4 puan için 1/4 puan kadar düştü veya yaklaşık 2,50 $ düştü.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2.50 $",
+        "Text": "2,50 $",
         "TypeName": "currency",
         "Resolution": {
-          "value": "2.5",
+          "value": "2,5",
           "unit": "Dollar"
         },
         "Start": 91,
-        "End": 97
+        "End": 96
       }
     ]
   },
   {
-    "Input": "Örneğin, New Jersey'den 300,000 $ kabul etmesi istendi ancak reddetti.",
-    "NotSupported": "dotnet",
+    "Input": "Örneğin, New Jersey'den 300.000 $ kabul etmesi istendi ancak reddetti.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "300,000 $",
+        "Text": "300.000 $",
         "TypeName": "currency",
         "Resolution": {
           "value": "300000",
           "unit": "Dollar"
         },
         "Start": 24,
-        "End": 33
+        "End": 32
       }
     ]
   },
   {
     "Input": "satışlar% 6,2 artışla 1,45 milyar $ 'a yükseldi.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -558,13 +526,12 @@
           "unit": "Dollar"
         },
         "Start": 22,
-        "End": 35
+        "End": 34
       }
     ]
   },
   {
     "Input": "Dün öğleden sonra, itfalar, toplam nakit pozisyonunun% 15'inden az bir kısmını 2 milyar $ tutarında sadakat borcu olarak temsil etti.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -575,13 +542,12 @@
           "unit": "Dollar"
         },
         "Start": 79,
-        "End": 89
+        "End": 88
       }
     ]
   },
   {
     "Input": "onvia.com şirketi 34 sent geriledi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -592,64 +558,60 @@
           "unit": "Cent"
         },
         "Start": 18,
-        "End": 25
+        "End": 24
       }
     ]
   },
   {
-    "Input": "TW prospektüse göre, satın alma işleminin daha önce tamamlanmış olması durumunda, vergi öncesi kazancının, 1989'un ilk altı ayında borçlanma senetleri üzerindeki faiz dahil sabit giderlerini karşılamak için yaklaşık 62.7 milyon $ tutarında olmadığını belirtti.",
-    "NotSupported": "dotnet",
+    "Input": "TW prospektüse göre, satın alma işleminin daha önce tamamlanmış olması durumunda, vergi öncesi kazancının, 1989'un ilk altı ayında borçlanma senetleri üzerindeki faiz dahil sabit giderlerini karşılamak için yaklaşık 62,7 milyon $ tutarında olmadığını belirtti.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "62.7 milyon $",
+        "Text": "62,7 milyon $",
         "TypeName": "currency",
         "Resolution": {
           "value": "62700000",
           "unit": "Dollar"
         },
         "Start": 216,
-        "End": 229
+        "End": 228
       }
     ]
   },
   {
-    "Input": "filenet, 30 Eylül ve hissedarlar üzerinde 22.5 milyon $ tutarında nakit ve menkul kıymet bulunduğunu belirtti.",
-    "NotSupported": "dotnet",
+    "Input": "filenet, 30 Eylül ve hissedarlar üzerinde 22,5 milyon $ tutarında nakit ve menkul kıymet bulunduğunu belirtti.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "22.5 milyon $",
+        "Text": "22,5 milyon $",
         "TypeName": "currency",
         "Resolution": {
           "value": "22500000",
           "unit": "Dollar"
         },
         "Start": 42,
-        "End": 55
+        "End": 54
       }
     ]
   },
   {
-    "Input": "Şehrin en pahalı 20 restoranı için akşam yemeğinin fiyatı 63.45 $'dan yüzde 8 arttı.",
-    "NotSupported": "dotnet",
+    "Input": "Şehrin en pahalı 20 restoranı için akşam yemeğinin fiyatı 63,45 $'dan yüzde 8 arttı.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "63.45 $",
+        "Text": "63,45 $",
         "TypeName": "currency",
         "Resolution": {
-          "value": "63.45",
+          "value": "63,45",
           "unit": "Dollar"
         },
         "Start": 58,
-        "End": 65
+        "End": 64
       }
     ]
   },
   {
     "Input": "trans dünya havayolları şirketi, drexel burnham üzerinden 150 milyon $'lık kıdemli not sunmaktadır.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -660,47 +622,44 @@
           "unit": "Dollar"
         },
         "Start": 58,
-        "End": 70
+        "End": 69
       }
     ]
   },
   {
-    "Input": "Portobello mantarlı fettuccine 8.50 $'a mal oluyor.",
-    "NotSupported": "dotnet",
+    "Input": "Portobello mantarlı fettuccine 8,50 $'a mal oluyor.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "8.50 $",
+        "Text": "8,50 $",
         "TypeName": "currency",
         "Resolution": {
-          "value": "8.5",
+          "value": "8,5",
           "unit": "Dollar"
         },
         "Start": 31,
-        "End": 37
+        "End": 36
       }
     ]
   },
   {
     "Input": "mart teslimatı 14,27 sent avansla sona erdi.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "14,27 sent",
         "TypeName": "currency",
         "Resolution": {
-          "value": "14.27",
+          "value": "14,27",
           "unit": "Cent"
         },
         "Start": 15,
-        "End": 25
+        "End": 24
       }
     ]
   },
   {
     "Input": "1988'in üçüncü çeyreğinde faiz gideri 75,3 milyon $'dı.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -711,30 +670,28 @@
           "unit": "Dollar"
         },
         "Start": 38,
-        "End": 51
+        "End": 50
       }
     ]
   },
   {
-    "Input": "2.38 milyar $'lık dalkon kalkan talep sahiplerinin güveni, bir kalkanın iflasından kaynaklanan yaralanma taleplerini çözmek için bir robins iflas - yeniden yapılanma planının bir parçası olarak kuruldu.",
-    "NotSupported": "dotnet",
+    "Input": "2,38 milyar $'lık dalkon kalkan talep sahiplerinin güveni, bir kalkanın iflasından kaynaklanan yaralanma taleplerini çözmek için bir robins iflas - yeniden yapılanma planının bir parçası olarak kuruldu.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2.38 milyar $",
+        "Text": "2,38 milyar $",
         "TypeName": "currency",
         "Resolution": {
           "value": "2380000000",
           "unit": "Dollar"
         },
         "Start": 0,
-        "End": 13
+        "End": 12
       }
     ]
   },
   {
     "Input": "Teklif şartları,% 32,99 oranında hisseye 528 milyon frank koydu.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -745,13 +702,12 @@
           "unit": "Franc"
         },
         "Start": 41,
-        "End": 57
+        "End": 56
       }
     ]
   },
   {
     "Input": "dünya bankası yetkilileri cuma günü yaptığı açıklamada, Rusya 'nın yardımların ve tüberkülozun yayılması ile mücadele etmek için 150 milyon $'lık bir dünya bankası kredisi kabul ettiğini ve dört yıl süren bir müzakere sürecinin sona erdiğini söyledi.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -759,17 +715,15 @@
         "TypeName": "currency",
         "Resolution": {
           "value": "150000000",
-          "unit": "United States dollar",
-          "isoCurrency": "USD"
+          "unit": "Dollar"
         },
         "Start": 129,
-        "End": 141
+        "End": 140
       }
     ]
   },
   {
     "Input": "önceki Bellsouth anlaşması, yaklaşık 98 $'lık bir payla değerlendi.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -780,51 +734,50 @@
           "unit": "Dollar"
         },
         "Start": 37,
-        "End": 41
+        "End": 40
       }
     ]
   },
   {
-    "Input": "Dokuz ay boyunca Ethyl, net payının% 2 veya 1.40 $ oranında düştüğünü belirtti",
-    "NotSupported": "dotnet",
+    "Input": "Dokuz ay boyunca Ethyl, net payının% 2 veya 1,40 $ oranında düştüğünü belirtti",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1.40 $",
+        "Text": "1,40 $",
         "TypeName": "currency",
         "Resolution": {
-          "value": "1.4",
+          "value": "1,4",
           "unit": "Dollar"
         },
         "Start": 44,
-        "End": 50
+        "End": 49
       }
     ]
   },
   {
-    "Input": "Analistlerin beklentileri, Ağustos ayındaki 2,0 milyar açık ile karşılaştırıldığında, Eylül ayındaki cari açığın 1,6 milyar (2.54 milyar $) olduğunu gösteriyor.",
-    "NotSupported": "dotnet",
+    "Input": "Analistlerin beklentileri, Ağustos ayındaki 2,0 milyar açık ile karşılaştırıldığında, Eylül ayındaki cari açığın 1,6 milyar (2,54 milyar $) olduğunu gösteriyor.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2.54 milyar $",
+        "Text": "2,54 milyar $",
         "TypeName": "currency",
         "Resolution": {
           "value": "2540000000",
           "unit": "Dollar"
         },
         "Start": 125,
-        "End": 138
+        "End": 137
       }
     ]
   },
   {
-    "Input": "12 Aralık 1994 itibariyle 125 milyon Avustralya doları sıfır - kupon eurobond, 50.9375'te fiyatlandı ve hambros bankası şirketi aracılığıyla % 15.06 daha az ücret verdi.",
+    "Input": "12 Aralık 1994 itibariyle 125 milyon avustralya doları sıfır - kupon eurobond, 50.9375'te fiyatlandı ve hambros bankası şirketi aracılığıyla % 15.06 daha az ücret verdi.",
+    "Comment": "Trukish does not have equivalent for -of-, sıfır is included in the number and very hard to extract",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "125 milyon Avustralya doları",
+        "Text": "125 milyon avustralya doları",
         "TypeName": "currency",
         "Resolution": {
           "value": "125000000",
@@ -832,31 +785,29 @@
           "isoCurrency": "AUD"
         },
         "Start": 26,
-        "End": 54
+        "End": 53
       }
     ]
   },
   {
     "Input": "Cuma günü, baş kabine sekreteri sekiz kabine bakanının sektörden beş milyon yen aldığını açıkladı.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " beş milyon yen",
+        "Text": "beş milyon yen",
         "TypeName": "currency",
         "Resolution": {
           "value": "5000000",
           "unit": "Japanese yen",
           "isoCurrency": "JPY"
         },
-        "Start": 64,
-        "End": 79
+        "Start": 65,
+        "End": 78
       }
     ]
   },
   {
     "Input": "başbakan toshiki kaifu tarafından 450 bin yen dahil",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -868,30 +819,28 @@
           "isoCurrency": "JPY"
         },
         "Start": 34,
-        "End": 45
+        "End": 44
       }
     ]
   },
   {
     "Input": "Fransız devlet kontrolü altındaki bir kimyasal madde üreticisi olan Orkem s.a., İngiltere’nin% 59,2’si payıyla 470 peni değerinde bir teklif veriyor. iki taraf, özel kimyasal grup kaplamalarının henüz sahip olmadığı kardeşleri plc olarak nitelendirdi.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "470 peni ",
+        "Text": "470 peni",
         "TypeName": "currency",
         "Resolution": {
           "value": "470",
-          "unit": "Pence"
+          "unit": "Penny"
         },
         "Start": 111,
-        "End": 120
+        "End": 118
       }
     ]
   },
   {
     "Input": "Bay Bowder 300 milyon $'lık kazancından bahsetti",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -899,90 +848,84 @@
         "TypeName": "currency",
         "Resolution": {
           "value": "300000000",
-          "unit": "Canadian dollar",
-          "isoCurrency": "CAD"
+          "unit": "Dollar"
         },
         "Start": 11,
-        "End": 23
+        "End": 22
       }
     ]
   },
   {
-    "Input": "bir hisse yaklaşık 1.34 $ c tutarında.",
-    "NotSupported": "dotnet",
+    "Input": "bir hisse yaklaşık 1,34 $ c tutarında.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1.34 $ c",
+        "Text": "1,34 $ c",
         "TypeName": "currency",
         "Resolution": {
-          "value": "1.34",
+          "value": "1,34",
           "unit": "Canadian dollar",
           "isoCurrency": "CAD"
         },
         "Start": 19,
-        "End": 27
+        "End": 26
       }
     ]
   },
   {
-    "Input": "yumurta fiyatları ortalama 64.2 sent bir düzine.",
-    "NotSupported": "dotnet",
+    "Input": "yumurta fiyatları ortalama 64,2 sent bir düzine.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "64.2 sent",
+        "Text": "64,2 sent",
         "TypeName": "currency",
         "Resolution": {
-          "value": "64.2",
+          "value": "64,2",
           "unit": "Cent"
         },
         "Start": 27,
-        "End": 36
+        "End": 35
       }
     ]
   },
   {
     "Input": "Yine de, 1989 yılının tamamının satışlarının, yılın ikinci yarısında iki büyük sözleşmeye ilişkin beklenen faturaları yansıtan 20 milyar frank seviyesinde olacağını bekliyor.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "20 milyar frank ",
+        "Text": "20 milyar frank",
         "TypeName": "currency",
         "Resolution": {
           "value": "20000000000",
           "unit": "Franc"
         },
         "Start": 127,
-        "End": 143
+        "End": 141
       }
     ]
   },
   {
-    "Input": "İşlem, Bay Murdoch'un uluslararası haberleşme yeri olan Avustralya merkezli bir haber kuruluşu olan zeta'nın 6.65 milyar peseta değerindeki bir haklar sorununa abone olma çağrısında bulundu.",
-    "NotSupported": "dotnet",
+    "Input": "İşlem, Bay Murdoch'un uluslararası haberleşme yeri olan Avustralya merkezli bir haber kuruluşu olan zeta'nın 6,65 milyar peseta değerindeki bir haklar sorununa abone olma çağrısında bulundu.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "6.65 milyar peseta",
+        "Text": "6,65 milyar peseta",
         "TypeName": "currency",
         "Resolution": {
           "value": "6650000000",
           "unit": "Peseta"
         },
         "Start": 109,
-        "End": 127
+        "End": 126
       }
     ]
   },
   {
     "Input": "Fujitsu şirketi Hiroşima şehri için su işleri bilgisayar sistemi tasarlamak üzere tartışmalı bir yenlik teklifini geri çekmek istediğini bildirdi.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "bir yen",
+        "Text": "bir yenlik",
         "TypeName": "currency",
         "Resolution": {
           "value": "1",
@@ -990,47 +933,44 @@
           "isoCurrency": "JPY"
         },
         "Start": 93,
-        "End": 100
+        "End": 102
       }
     ]
   },
   {
-    "Input": "250 milyon Hollanda guldeni 15 Kasım 1999'a göre% 73/4 tahvil, 1011/4 olarak fiyatlandırılmış ve ihraç fiyatlarında% 7,57 ve amro bankası üzerinden% 7,86 daha az tam ücret sağlamıştır.",
-    "NotSupported": "dotnet",
+    "Input": "250 milyon hollanda guldeni 15 Kasım 1999'a göre% 73/4 tahvil, 1011/4 olarak fiyatlandırılmış ve ihraç fiyatlarında% 7,57 ve amro bankası üzerinden% 7,86 daha az tam ücret sağlamıştır.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "250 milyon Hollanda guldeni ",
+        "Text": "250 milyon hollanda guldeni",
         "TypeName": "currency",
         "Resolution": {
           "value": "250000000",
           "unit": "Netherlands guilder"
         },
         "Start": 0,
-        "End": 28
+        "End": 26
       }
     ]
   },
   {
-    "Input": "Buna ek olarak, bankanın 1 Ocak 1990 tarihinden sonra 1.015 Frank'ta societe generap bip'de% 30.84 hisse satın alma seçeneği bulunmaktadır.",
-    "NotSupported": "dotnet",
+    "Input": "Buna ek olarak, bankanın 1 Ocak 1990 tarihinden sonra 1.015 frank'ta societe generap bip'de% 30,84 hisse satın alma seçeneği bulunmaktadır.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1.015 Frank",
+        "Text": "1.015 frank",
         "TypeName": "currency",
         "Resolution": {
           "value": "1015",
           "unit": "Franc"
         },
         "Start": 54,
-        "End": 65
+        "End": 64
       }
     ]
   },
   {
     "Input": "hisselerin bir peni geç kapanması için işlemde",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1041,13 +981,12 @@
           "unit": "Penny"
         },
         "Start": 11,
-        "End": 19
+        "End": 18
       }
     ]
   },
   {
     "Input": "hisse başına 197 peni daha düşük.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1055,20 +994,19 @@
         "TypeName": "currency",
         "Resolution": {
           "value": "197",
-          "unit": "Pence"
+          "unit": "Penny"
         },
         "Start": 13,
-        "End": 21
+        "End": 20
       }
     ]
   },
   {
     "Input": "üç aylık faaliyet karı 361 milyon sterline yükseldi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "361 milyon sterlin",
+        "Text": "361 milyon sterline",
         "TypeName": "currency",
         "Resolution": {
           "value": "361000000",
@@ -1081,11 +1019,10 @@
   },
   {
     "Input": "geçen yıl, bütün kentin ilçe işletmelerinin brüt çıktı değeri, ilk etapta ilk sırada yer alarak ilk kez 100 milyar yuanı geçmiştir.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "100 milyar yuan",
+        "Text": "100 milyar yuanı",
         "TypeName": "currency",
         "Resolution": {
           "value": "100000000000",
@@ -1099,7 +1036,6 @@
   },
   {
     "Input": "sırayla, francis leung pak - pccw'de% 8'lik bir hisseyi 323 milyon avro  karşılığında telefónica'ya satmayı kabul etti.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1111,13 +1047,12 @@
           "isoCurrency": "EUR"
         },
         "Start": 56,
-        "End": 71
+        "End": 70
       }
     ]
   },
   {
     "Input": "IPL, kingfisher havayollarını, seri için resmi hakem ortağı olarak (yaklaşık 15 milyon sterlin) anlaşma imzaladı.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1128,13 +1063,12 @@
           "unit": "Pound"
         },
         "Start": 77,
-        "End": 94
+        "End": 93
       }
     ]
   },
   {
     "Input": "Malone, sözleşmenin ihlali nedeniyle 20th Century-Fox'u 1,6 milyon $ karşılığında dava etti.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1145,13 +1079,12 @@
           "unit": "Dollar"
         },
         "Start": 56,
-        "End": 68
+        "End": 67
       }
     ]
   },
   {
     "Input": "2003 yılında, bayern münih dortmund maaşlarını ödemek için birkaç aylığına dortmund'a 2 milyon € borç verdi.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1163,17 +1096,16 @@
           "isoCurrency": "EUR"
         },
         "Start": 86,
-        "End": 96
+        "End": 95
       }
     ]
   },
   {
-    "Input": "lockheed martin ve amerika birleşik devletleri hükümeti, Hindistan’ın 126 savaş uçağı için 10 milyar ABD $'lık sözleşmesi için yoğun bir şekilde kulis yaptı.",
-    "NotSupported": "dotnet",
+    "Input": "lockheed martin ve amerika birleşik devletleri hükümeti, Hindistan’ın 126 savaş uçağı için 10 milyar abd $'lık sözleşmesi için yoğun bir şekilde kulis yaptı.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10 milyar ABD $",
+        "Text": "10 milyar abd $",
         "TypeName": "currency",
         "Resolution": {
           "value": "10000000000",
@@ -1181,13 +1113,12 @@
           "isoCurrency": "USD"
         },
         "Start": 91,
-        "End": 106
+        "End": 105
       }
     ]
   },
   {
     "Input": "npd araştırma firmasına göre, tüm taşınabilir pencerelerin ortalama satış fiyatı ekim 2008'de 659 $'dan düştü",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1198,13 +1129,12 @@
           "unit": "Dollar"
         },
         "Start": 94,
-        "End": 99
+        "End": 98
       }
     ]
   },
   {
     "Input": "Doğu standı (worcester caddesi) standı 1934'te tamamlandı ve bu kapasite yaklaşık 80.000 izleyiciye yükseldi, ancak 60.000 £'e mal oldu.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1215,13 +1145,12 @@
           "unit": "Pound"
         },
         "Start": 116,
-        "End": 124
+        "End": 123
       }
     ]
   },
   {
     "Input": "fulham takım arkadaşı johnny haynes ilk 100 £'lik oyuncu oldu.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1232,30 +1161,28 @@
           "unit": "Pound"
         },
         "Start": 40,
-        "End": 45
+        "End": 44
       }
     ]
   },
   {
-    "Input": "dokuz ay boyunca amr'ın net karı % 15 arttı ve 415.9 milyon $'a ulaştı",
-    "NotSupported": "dotnet",
+    "Input": "dokuz ay boyunca amr'ın net karı % 15 arttı ve 415,9 milyon $'a ulaştı",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "415.9 milyon $",
+        "Text": "415,9 milyon $",
         "TypeName": "currency",
         "Resolution": {
           "value": "415900000",
           "unit": "Dollar"
         },
         "Start": 47,
-        "End": 61
+        "End": 60
       }
     ]
   },
   {
     "Input": "Rolling Stone, harpercollins'ın 2008 yılında kitap projesini 3 milyon $'a satın aldığını belirtti.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1266,30 +1193,28 @@
           "unit": "Dollar"
         },
         "Start": 61,
-        "End": 71
+        "End": 70
       }
     ]
   },
   {
     "Input": "2013 Forbes dergisinin baskısında Keith, “ülke müziğinin 500 milyon $'lık adamı” başlıklı kapakta yer alıyor.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " 500 milyon $",
+        "Text": "500 milyon $",
         "TypeName": "currency",
         "Resolution": {
           "value": "500000000",
           "unit": "Dollar"
         },
-        "Start": 56,
-        "End": 69
+        "Start": 57,
+        "End": 68
       }
     ]
   },
   {
     "Input": "harry ferguson, ABD ford'unu, 1952'de mahkemeye yerleşmiş olan 90 milyon £ tazminat talebinde bulunan yasadışı kullanımı nedeniyle dava etti.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1300,13 +1225,12 @@
           "unit": "Pound"
         },
         "Start": 63,
-        "End": 74
+        "End": 73
       }
     ]
   },
   {
     "Input": "Aerosmith, 1972 yılının ortalarında columbia ile 125.000 $ 'a imza attı ve ilk albümü aerosmith'i çıkardı.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1317,13 +1241,12 @@
           "unit": "Dollar"
         },
         "Start": 49,
-        "End": 58
+        "End": 57
       }
     ]
   },
   {
     "Input": "2001'de 186 milyon $'a odwalla inc satın aldığından beri Coke'nin en büyük satın alımlarından biriydi.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1334,13 +1257,12 @@
           "unit": "Dollar"
         },
         "Start": 8,
-        "End": 20
+        "End": 19
       }
     ]
   },
   {
     "Input": "Daha sonra, Apple ve Creative bir çözüme ulaştılar; Apple, Creative’e 100 milyon $ ödedi ve Creative, “ipod için yapıldı” aksesuar programına katıldı.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1351,13 +1273,12 @@
           "unit": "Dollar"
         },
         "Start": 70,
-        "End": 82
+        "End": 81
       }
     ]
   },
   {
     "Input": "Ardından hart - scott dosyalaması gözden geçirilir ve genellikle güven karşıtı endişeler genellikle karşılanır, hart - scott şimdi hedef firmaların yöneticilerine bir teklifin erken haberlerini vermek ve düzenleyici incelemeyi geciktirme taktiği olarak kullanma şansı vermek için kullanılır. 20.000 $'lık vergi, milyarlarca dolarlık bir anlaşmada küçük bir maliyet, ancak binlerce küçük, dostane anlaşma için ciddi bir engel olacaktır.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1368,24 +1289,12 @@
           "unit": "Dollar"
         },
         "Start": 292,
-        "End": 300
-      },
-      {
-        "Text": "dollar",
-        "TypeName": "currency",
-        "Resolution": {
-          "value": null,
-          "unit": "Dollar"
-        },
-        "Start": 292,
-        "End": 297
+        "End": 299
       }
     ]
   },
   {
-    "Input": "dolar: 143.80 yen: yükselişte 0.95; 1,8500 Mark: yükselişte 0.0085",
-    "NotSupported": "python",
-    "NotSupported": "dotnet",
+    "Input": "dolar: 143,80 yen, yükselişte 0 , 95; 1 , 8500 mark, yükselişte 0 , 0085 .",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1396,83 +1305,77 @@
           "unit": "Dollar"
         },
         "Start": 0,
-        "End": 5
+        "End": 4
       },
       {
-        "Text": "143.80 yen",
+        "Text": "143,80 yen",
         "TypeName": "currency",
         "Resolution": {
-          "value": "143.8",
+          "value": "143,8",
           "unit": "Japanese yen",
           "isoCurrency": "JPY"
         },
-        "Start": 9,
-        "End": 18
+        "Start": 7,
+        "End": 16
       }
     ]
   },
   {
     "Input": "Yalnızca 3 dolar 50 sent'e mal olur.",
-    "NotSupported": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 dolar 50 sent",
         "TypeName": "currency",
         "Resolution": {
-          "value": "3.5",
+          "value": "3,5",
           "unit": "Dollar"
         },
         "Start": 9,
-        "End": 24
+        "End": 23
       }
     ]
   },
   {
     "Input": "sadece on üç dolar kırk beş sente mal oldu",
-    "NotSupported": "python",
+    "Comment": "Sente is a suffixed version of sent which is ambiguous with the actual currency unit sente",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "on üç dolar kırk beş sent",
+        "Text": "on üç dolar kırk beş sente",
         "TypeName": "currency",
         "Resolution": {
-          "value": "13.45",
+          "value": "13,45",
           "unit": "Dollar"
         },
         "Start": 7,
-        "End": 32
+        "End": 33
       }
     ]
   },
   {
-    "Input": "bir dolar ve bir ve bir puanlık kredi puanınıza mal olur.",
-    "NotSupported": "python",
-    "NotSupported": "dotnet",
+    "Input": "bir dolar bir sent ve bir puanlık kredi puanınıza mal olur.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "bir dolar ve bir",
+        "Text": "bir dolar bir sent",
         "TypeName": "currency",
         "Resolution": {
           "unit": "Dollar",
-          "value": "1.01"
+          "value": "1,01"
         },
         "Start": 0,
-        "End": 16
+        "End": 17
       }
     ]
   },
   {
-    "Input": "Bu size 10 ABD doları ve bana ise 100 Çin Yuanı'na mal olur",
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
+    "Input": "Bu size 10 abd doları ve bana ise 100 çin yuanı'na mal olur",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10 ABD doları",
+        "Text": "10 abd doları",
         "TypeName": "currency",
         "Resolution": {
           "isoCurrency": "USD",
@@ -1480,29 +1383,27 @@
           "value": "10"
         },
         "Start": 8,
-        "End": 21
+        "End": 20
       },
       {
-        "Text": "100 chinese yuan",
+        "Text": "100 çin yuanı",
         "TypeName": "currency",
         "Resolution": {
           "isoCurrency": "CNY",
           "unit": "Chinese yuan",
           "value": "100"
         },
-        "Start": 33,
-        "End": 48
+        "Start": 34,
+        "End": 46
       }
     ]
   },
   {
-    "Input": "Bu size 10 ABD doları ve bana 100 $ ve elliye mal olur",
-    "NotSupported": "python",
-    "NotSupported": "dotnet",
+    "Input": "Bu size 10 abd doları ve bana 100 c$ elli sent'e mal olur",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10 ABD doları",
+        "Text": "10 abd doları",
         "TypeName": "currency",
         "Resolution": {
           "isoCurrency": "USD",
@@ -1510,34 +1411,32 @@
           "value": "10"
         },
         "Start": 8,
-        "End": 21
+        "End": 20
       },
       {
-        "Text": "c $ 100 and fifty",
+        "Text": "100 c$ elli sent",
         "TypeName": "currency",
         "Resolution": {
-          "isoCurrency": "CAD",
           "unit": "Canadian dollar",
-          "value": "100.5"
+          "isoCurrency": "CAD",
+          "value": "100,5"
         },
-        "Start": 33,
-        "End": 49
+        "Start": 30,
+        "End": 45
       }
     ]
   },
   {
-    "Input": "bir kuai ve beş mao beş gerekebilir.",
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
+    "Input": "bir kuai beş mao beş fen gerekebilir.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "bir kuai ve beş mao beş",
+        "Text": "bir kuai beş mao beş fen",
         "TypeName": "currency",
         "Resolution": {
           "isoCurrency": "CNY",
           "unit": "Chinese yuan",
-          "value": "1.55"
+          "value": "1,55"
         },
         "Start": 0,
         "End": 23
@@ -1545,44 +1444,39 @@
     ]
   },
   {
-    "Input": "Bu bir dolar ve iki kredi puanına veya üç puanına mal olur.",
-    "NotSupported": "python",
-    "NotSupported": "dotnet",
+    "Input": "Bu bir dolar iki sent kredi puanına veya üç puanına mal olur.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "bir dolar ve iki",
+        "Text": "bir dolar iki sent",
         "TypeName": "currency",
         "Resolution": {
           "unit": "Dollar",
-          "value": "1.02"
+          "value": "1,02"
         },
         "Start": 3,
-        "End": 19
+        "End": 20
       }
     ]
   },
   {
     "Input": "Hey, maliyeti 4,25 $ ve 32 çeyrek",
-    "NotSupported": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4,25 $ ",
+        "Text": "4,25 $",
         "TypeName": "currency",
         "Resolution": {
           "unit": "Dollar",
-          "value": "4.25"
+          "value": "4,25"
         },
         "Start": 14,
-        "End": 21
+        "End": 19
       }
     ]
   },
   {
     "Input": "Hey, maliyeti 100 元!",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1594,13 +1488,12 @@
           "isoCurrency": "CNY"
         },
         "Start": 14,
-        "End": 19
+        "End": 18
       }
     ]
   },
   {
     "Input": "Bu kitabın maliyeti 100 ₡",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1612,17 +1505,16 @@
           "isoCurrency": "CRC"
         },
         "Start": 20,
-        "End": 25
+        "End": 24
       }
     ]
   },
   {
     "Input": "Bisikleti almak için 100 ₾  harcadım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "100 ₾ ",
+        "Text": "100 ₾",
         "TypeName": "currency",
         "Resolution": {
           "value": "100",
@@ -1630,17 +1522,16 @@
           "isoCurrency": "GEL"
         },
         "Start": 21,
-        "End": 27
+        "End": 25
       }
     ]
   },
   {
     "Input": "Tebrikler! Bir araba ve yarışmayı kazandığın için 100.000 ₭ kazanacaksın.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "100.000 ₭ ",
+        "Text": "100.000 ₭",
         "TypeName": "currency",
         "Resolution": {
           "value": "100000",
@@ -1648,17 +1539,16 @@
           "isoCurrency": "LAK"
         },
         "Start": 50,
-        "End": 60
+        "End": 58
       }
     ]
   },
   {
     "Input": "Bob, bana acil olarak 100.000 ரூ ödünç verebilir misin ve gelecek pazartesi faiziyle geri ödeyeceğim.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "100.000 ரூ ",
+        "Text": "100.000 ரூ",
         "TypeName": "currency",
         "Resolution": {
           "value": "100000",
@@ -1666,34 +1556,32 @@
           "isoCurrency": "LKR"
         },
         "Start": 22,
-        "End": 33
+        "End": 31
       }
     ]
   },
   {
-    "Input": "Bu yeni dizüstü bilgisayar için 100,000 sent'in pahalı olduğunu düşünüyor musun?",
-    "NotSupported": "dotnet",
+    "Input": "Bu yeni dizüstü bilgisayar için 100.000 sent'in pahalı olduğunu düşünüyor musun?",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "100,000 sent",
+        "Text": "100.000 sent",
         "TypeName": "currency",
         "Resolution": {
           "value": "100000",
           "unit": "Cent"
         },
         "Start": 32,
-        "End": 44
+        "End": 43
       }
     ]
   },
   {
-    "Input": "Çekilişin ilk tutarı 100,000,000 ABD doları, istiyormusun?",
-    "NotSupported": "dotnet",
+    "Input": "Çekilişin ilk tutarı 100.000.000 abd doları, istiyormusun?",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "100,000,000 ABD doları",
+        "Text": "100.000.000 abd doları",
         "TypeName": "currency",
         "Resolution": {
           "value": "100000000",
@@ -1701,13 +1589,12 @@
           "isoCurrency": "USD"
         },
         "Start": 21,
-        "End": 43
+        "End": 42
       }
     ]
   },
   {
     "Input": "bana 5 dolar versene",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1718,7 +1605,7 @@
           "unit": "Dollar"
         },
         "Start": 5,
-        "End": 12
+        "End": 11
       }
     ]
   }
