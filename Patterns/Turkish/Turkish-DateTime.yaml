@@ -31,7 +31,7 @@ ReferencePrefixRegex: !simpleRegex
 FutureSuffixRegex: !simpleRegex
   def: \b(ileride|gelecekte)\b
 DayRegex: !simpleRegex
-  def: (?<day>(10|20|30|(1|2|3)?1|(1|2)?2|(1|2)?3|(1|2)?4|(1|2)?5|(1|2)?6|(1|2)?7|(1|2)?8|(1|2)?9))
+  def: (?<day>(10|20|30|(1|2|3)1|(1|2)2|(1|2)3|(1|2)4|(1|2)5|(1|2)6|(1|2)7|(1|2)8|(1|2)9|1|2|3|4|5|6|7|8|9))
 # TODO: Update following regex for Turkish
 ImplicitDayRegex: !simpleRegex
   def: (the\s*)?(?<day>(3[0-1]|[0-2]?\d)(th|nd|rd|st))\b
@@ -88,15 +88,15 @@ WeekDayRegex: !simpleRegex
 SingleWeekDayRegex: !simpleRegex
   def: \b(?<weekday>pazartesi|salı|çarşamba|perşembe|cuma|cumartesi|pazar|pzt|sal|çrş|per|cum|cmt|paz)\b
 WrittenMonthRegex: !simpleRegex
-  def: (?<month>ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|aralık|oca|şub|mar|nis|may|haz|eyl|eki|kas|ara)(\sayı)
+  def: (?<month>ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|aralık|oca|şub|mar|nis|may|haz|eyl|eki|kas|ara)(\sayı)?
 MonthSuffixRegex: !nestedRegex
   def: (?<msuf>((?<!\d+)((ocak|şubat|mart|mayıs|ağustos|aralık)(ta)|(nisan|haziran|temmuz|kasım)(da)|(eylül|ekim)(de))|{WrittenMonthRegex}(nda)))
   references: [WrittenMonthRegex]
 ProperMonthSuffixRegex: !nestedRegex
-  def: (?<pmsuf>({DayRegex}\s+(ocak|şubat|mart|mayıs|ağustos|aralık)('ta)|(nisan|haziran|temmuz|kasım)('da)|(eylül|ekim)('de)))
+  def: (?<msuf>({DayRegex}\s+(ocak|şubat|mart|mayıs|ağustos|aralık)('ta)|(nisan|haziran|temmuz|kasım)('da)|(eylül|ekim)('de)))
   references: [DayRegex]
 MonthPossessiveSuffixRegex: !simpleRegex
-  def: (?<mpsuf>((ocak|şubat|mart|nisan|mayıs|haziran|kasım|aralık)('ın)|(temmuz|ağustos)('un)|eylül'ün|ekim'in))
+  def: (?<msuf>((ocak|şubat|mart|nisan|mayıs|haziran|kasım|aralık)('ın)|(temmuz|ağustos)('un)|eylül'ün|ekim'in))
 DateUnitRegex: !simpleRegex
   def: (?<unit>yıl|ay|hafta|gün)\b
 DateTokenPrefix: 'on '
@@ -238,21 +238,21 @@ RelativeMonthRegex: !nestedRegex
   def: \b({RelativeRegex}\s+ay)\b
   references: [ RelativeRegex ]
 WeekDayOfMonthRegex: !nestedRegex
-  def: (?<wom>({MonthPossessiveSuffixRegex}|{WrittenMonthRegex}\s+ayının)\s+(?<cardinal>birinci|1'inci|1.|ilk|ikinci|2'nci|2.|üçüncü|3'üncü|3.|dördüncü|4'üncü|4.|beşinci|5'inci|5.|son)\s+{WeekDayRegex}(\s+günü)?)
-  references: [ MonthPossessiveSuffixRegex, WrittenMonthRegex, WeekDayRegex ]
+  def: (?<wom>({MonthPossessiveSuffixRegex}|{WrittenMonthRegex}\s+ayının|{RelativeRegex}\s+ayın)\s+(?<cardinal>birinci|1'inci|1.|ilk|ikinci|2'nci|2.|üçüncü|3'üncü|3.|dördüncü|4'üncü|4.|beşinci|5'inci|5.|son)\s+{WeekDayRegex}(\s+günü)?)
+  references: [ MonthPossessiveSuffixRegex, WrittenMonthRegex, WeekDayRegex, RelativeRegex ]
 # TODO: Update following regex 
 RelativeWeekDayRegex: !nestedRegex
   def: \b({WrittenNumRegex}\s+{WeekDayRegex}\s+(from\s+now|later))\b
   references: [ WrittenNumRegex, WeekDayRegex ]
-DateExtractor1: !nestedRegex
+DateExtractor1: !nestedRegex   # 22 Nisan OR 22 Nisan Çarşamba OR 22 Nisan (Çarşamba) OR 22 Nisan, Çarşamba
   def: \b({DayRegex}\s*{WrittenMonthRegex})((\s*\(\s*{WeekDayRegex}\s*\))|\s*,?\s+{WeekDayRegex}(\s+günü)?)?
   references: [ WeekDayRegex, DayRegex, WrittenMonthRegex ]
 DateExtractor2: !nestedRegex
-  def: \b({DayRegex}\s*{WrittenMonthRegex}\s*{DateYearRegex})((\s*\(\s*{WeekDayRegex}\s*\))|\s*,?\s+{WeekDayRegex}(\s+günü)?)?
+  def: \b({DayRegex}\s*([/\\.]\s*)?{WrittenMonthRegex}\s*([/\\.]\s*)?{DateYearRegex})((\s*\(\s*{WeekDayRegex}\s*\))|\s*,?\s+{WeekDayRegex}(\s+günü)?)?
   references: [ WeekDayRegex, WrittenMonthRegex, DayRegex, DateYearRegex ]
 DateExtractor3: !nestedRegex
-  def: \b({DayRegex}\s*[/\\.]\s*{MonthNumRegex}\s*[/\\.]\s*{DateYearRegex})((\s*\(\s*{WeekDayRegex}\s*\))|\s*,?\s+{WeekDayRegex}(\s+günü)?)?
-  references: [ WeekDayRegex, MonthNumRegex, DayRegex, DateYearRegex ]
+  def: \b({MonthPossessiveSuffixRegex}\s+({WrittenDaySuffixRegex|{DaySuffixRegex}))\b
+  references: [ MonthPossessiveSuffixRegex, WrittenDaySuffixRegex, DaySuffixRegex ]
 DateExtractor4: !nestedRegex
   def: ({RelativeRegex}\s+)?({WeekDayRegex}\s+)?(\({DayRegex}\s*{WrittenMonthRegex}(\s*{DateYearRegex})?\))\b
   references: [ RelativeRegex, DayRegex, WeekDayRegex, WrittenMonthRegex, DateYearRegex ]
@@ -262,9 +262,6 @@ DateExtractor5: !nestedRegex
 DateExtractor6: !nestedRegex
   def: \b({RelativeRegex}\s+ayın\s+{WrittenDaySuffixRegex})\b
   references: [ RelativeRegex, WrittenDaySuffixRegex ]
-DateExtractor7: !nestedRegex
-  def: \b({MonthPossessiveSuffixRegex}\s+({WrittenDaySuffixRegex|{DaySuffixRegex}))\b
-  references: [ MonthPossessiveSuffixRegex, WrittenDaySuffixRegex, DaySuffixRegex ]
 # TODO: Update 7L, 7S, 8, 9L, 9S, A for Turkish
 DateExtractor7L: !nestedRegex
   def: \b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}{DateExtractorYearTermRegex}(?![%])\b
@@ -442,7 +439,7 @@ TimeRegex11: !nestedRegex
   references: [ TimeTokenPrefix, TimeRegexWithDotConnector, DescRegex ]
 PureNumFromTo1: !nestedRegex
   def: (({TimePrefix})\s*)?(saat\s)?{PeriodHourNumFromRegex}\s*(({TimePrefix})\s*)?{PeriodHourNumToRegex}(\s+{TillRegex})?
-  references: [ PeriodHourNumRegex, TimePrefix, TillRegex ]
+  references: [ PeriodHourNumFromRegex, PeriodHourNumToRegex, TimePrefix, TillRegex ]
 PureNumFromTo2: !nestedRegex
   def: (({TimePrefix})\s*)?(saat\s)?{HourNumFromRegex}\s*(({TimePrefix})\s*)?({HourNumToRegex}\s+)(\s+{TillRegex})?
   references: [ TimePrefix, HourNumFromRegex, HourNumToRegex, TillRegex ]
@@ -454,7 +451,7 @@ PureNumBetweenAnd: !nestedRegex
   references: [ HourRegex, PeriodHourNumRegex, TwoDigitHourRegex, BaseDateTime.TwoDigitMinuteRegex, TimePrefix, RangeConnectorRegex, RangeSuffixRegex ]
 SpecificTimeFromTo: !nestedRegex
   def: (?<time1>((\b{TimePrefix}\s+)?({HourRegex}(\s*)?:(\s*)?{MinuteFromRegex}|{HourWithMinuteZeroFromRegex})|{HourNumFromRegex}|{PeriodHourNumFromRegex}))\s*(?<time2>((\b{TimePrefix}\s+)?({HourRegex}(\s*)?:(\s*)?{MinuteToRegex}|{HourWithMinuteZeroToRegex})|{HourNumToRegex}|{PeriodHourNumToRegex}))\s*{TillRegex}\s*
-  references: [ TimePrefix, HourRegex, MinuteFromRegex, HourWithMinuteZeroFromRegex, HourNumFromRegex, PeriodHourNumRegex, MinuteToRegex, HourWithMinuteZeroToRegex, HourNumToRegex, PeriodHourNumToRegex, TillRegex ]
+  references: [ TimePrefix, HourRegex, MinuteFromRegex, HourWithMinuteZeroFromRegex, HourNumFromRegex, PeriodHourNumFromRegex, MinuteToRegex, HourWithMinuteZeroToRegex, HourNumToRegex, PeriodHourNumToRegex, TillRegex ]
 SpecificTimeBetweenAnd: !nestedRegex
   def: (?<time1>({TimeRegex2}|{HourRegex}|{PeriodHourNumRegex}))\s*{RangeConnectorRegex}\s*(?<time2>({TimeRegex2}|{HourRegex}|{PeriodHourNumRegex}))({RangeSuffixRegex}\s+)?
   references: [ TimeRegex2, RangeConnectorRegex, HourRegex, PeriodHourNumRegex, RangeSuffixRegex ]
@@ -553,14 +550,17 @@ HalfRegex: !simpleRegex
   def: (?<half>yarım\s+(?<unit>saat|gün|hafta|ay|yıl))\b
 ConjunctionRegex: !simpleRegex
   def: \b(ve|ile)\b
+# Major holidays + holiday w/ weekday in name
 HolidayRegex1: !nestedRegex
-  def: \b(({YearRegex}(\s+yılının)?|{RelativeRegex}\s+yıl)\s+)?(?<holiday>temiz pazartesi|yılbaşı gecesi|noel günü|noel|yuandan festivali|yuandan|paskalya|yılbaşı|şükran günü)\b
+  def: \b(({YearRegex}(\s+yılının)?|{RelativeRegex}\s+yıl)\s+)?(?<holiday>mardi gras|((washington'ın|mao'nun) doğum günü)|çin yeni yılı|yılbaşı gecesi|yılbaşı|yuan dan|noel arifesi|noel günü|noel|kara cuma|yuandan|paskalya|temiz pazartesi|kül çarşambası|palm sunday|(kutsal (perşembe|cuma))|(beyaz (pazartesi|pazar))|trinity sunday|hamsin yortusu|corpus christi|siber pazartesi|(ramazan|şeker|kurban|(29 ekim )?cumhuriyet|(30 ağustos )?zafer|(23 nisan )?ulusal egemenlik ve çocuk|(19 mayıs )?atatürk'ü anma(\s*,\s*)? gençlik ve spor)\sbayramı|(15 temmuz )?demokrasi ve mill(î|i) birlik günü)\b
   references: [ YearRegex, RelativeRegex ]
+# Extra religious or local holidays
 HolidayRegex2: !nestedRegex
-  def: \b(({YearRegex}(\s+yılının)?|{RelativeRegex}\s+yıl)\s+)?(?<holiday>işçi bayramı)\b
+  def: \b(({YearRegex}(\s+yılının)?|{RelativeRegex}\s+yıl)\s+)?(?<holiday>(şükran|tüm azizler|aziz patrick|amerikan bağımsızlık|azizler|bütün ruhlar|guy fawkes|cinco de mayo|1 nisan şaka|tomb\s*sweeping|)\sgünü|white lover day|aya yorgi yortusu|cadılar bayramı|((qingming|dragon)\sfestivali))\b
   references: [ YearRegex, RelativeRegex ]
+# General holidays (must be followed by "day")
 HolidayRegex3: !nestedRegex
-  def: (({YearRegex}(\s+yılının)?|{RelativeRegex}\s+yıl)\s+)?(?<holiday>(sevgililer|anneler|babalar|öğretmenler|kadınlar|martin luther king)\s+günü)
+  def: (({YearRegex}(\s+yılının)?|{RelativeRegex}\s+yıl)\s+)?(?<holiday>(bağımsızlık|başkanlar|mlk|martin luther king( jr)?|canberra|(isa'nın (göğe yükselişi|miracı))|columbus|ağaç( dikme)?|ağaçlandırma|(1 mayıs )?emek ve dayanışma|anneler|babalar|(dünya)?\s(kadınlar|bekarlar)|öğretmenler|gençlik|kızlar|sevgililer|dünya|dağ sıçanı|bastille|gaziler|anma|ay|bahar|fener)\s+günü|((işçi|quebec ulusal) bayramı)|abd başkanı yemin töreni|ay festivali)
   references: [ YearRegex, RelativeRegex ]
 AMTimeRegex: !simpleRegex
   def: (?<am>sabah)
@@ -582,7 +582,7 @@ AroundRegex: !simpleRegex
 AgoRegex: !simpleRegex
   def: \b((?<day>dünden|bugünden)\s+(önce|evvel))\b
 LaterRegex: !simpleRegex
-  def: \b((?<day>yarından|bugünden)\s+(itibaren|sonra))\b
+  def: \b((?<day>yarından|bugünden)\s+(itibaren|sonra)|sonra)\b
 InConnectorRegex: !simpleRegex
   def: \b
 SinceNumSuffixRegex: !simpleRegex
@@ -636,7 +636,7 @@ SingleAmbiguousMonthRegex: !simpleRegex
   def: ^(the\s+)?(ocak|mayıs|ekim|aralık)$
 # Filter ambiguous single word datetime extractions in CalendarMode or when adding the modifier
 SingleAmbiguousTermsRegex: !simpleRegex
-  def: ^(the\s+)?(day|week|month|year)$
+  def: ^(gün|hafta|ay|yıl)$
 UnspecificDatePeriodRegex: !simpleRegex
   def: ^(gün|hafta|hafta sonu|ay|yıl)$
 PrepositionSuffixRegex: !simpleRegex
@@ -1010,23 +1010,74 @@ DoubleNumbers: !dictionary
 HolidayNames: !dictionary
   types: [ string, 'string[]' ]
   entries:
-    paskalya: [ paskalya ]
-    babalar: [ babalargünü ]
-    anneler: [ annelergünü ]
-    şükran: [ şükrangünü ]
+    easterday: [ paskalya ]
+    ashwednesday: [ külçarşamba ]
+    palmsunday: [ palmsunday ]
+    maundythursday: [ kutsalperşembe ]
+    goodfriday: [ kutsalcuma ]
+    eastersaturday: [ eastersaturday ]
+    eastermonday: [ eastermonday ]
+    ascensionday: [ isanıngöğeyükselişi, isanınmiracı ]
+    whitesunday: [ beyazpazar ]
+    whitemonday: [ beyazpazartesi ]
+    trinitysunday: [ trinitysunday ]
+    corpuschristi: [ corpuschristi ]
+    earthday: [ dünyagünü ]
+    fathers: [ babalargünü ]
+    mothers: [ annelergünü ]
+    thanksgiving: [ şükrangünü ]
+    blackfriday: [ karacuma ]
+    cybermonday: [ siberpazartesi ]
     martinlutherking: [ martinlutherkinggünü ]
-    işçi: [ işçibayramı ] # 1 May
-    yuandan: [ yuandanfestivali, yuandan ]
-    çocukbayramı: [ ulusalegemenlikveçocukbayramı, çocukbayramı ] # 23 April
-    öğretmenlergünü: [ öğretmenlergünü ]
-    kadınlargünü: [ kadınlargünü ] # 8 March
-    noel: [ noelgünü, noel ]
-    yeniyıl: [ yeniyıl ]
-    yılbaşı: [ yılbaşı ]
-    sevgililergünü: [ sevgililergünü ]
-    halloween: [ halloween ]
-    noelarifesi: [ noelarifesi ]
-    yılbaşıgecesi: [ yılbaşıgecesi ]
+    washingtonsbirthday: [ washingtonındoğumgünü, başkanlargünü ]
+    canberra: [ canberragünü ]
+    labour: [ işçibayramı ]
+    columbus: [ columbusgünü ]
+    memorial: [ anmagünü ]
+    yuandan: [ yuandan ]
+    maosbirthday: [ maonundoğumgünü ]
+    teachersday: [ öğretmenlergünü ]
+    singleday: [ dünyabekarlargünü, bekarlargünü ]
+    allsaintsday: [ tümazizlergünü ]
+    youthday: [ gençlikgünü ]
+    childrenday: [ dünyaçocukgünü ]
+    femaleday: [ kadınlargünü ]
+    treeplantingday: [ ağaçdikmegünü, ağaçgünü ]
+    arborday: [ ağaçlandırmagünü ]
+    girlsday: [ kızlargünü ]
+    whiteloverday: [ whiteloverday ]
+    loverday: [ sevgililergünü ]
+    christmas: [ noelgünü, noel ]
+    xmas: [ xmasday, xmas ]
+    newyear: [ yeniyıl ]
+    newyearday: [ yılbaşı ]
+    newyearsday: [ newyearsday ]
+    inaugurationday: [ abdbaşkanıyemintöreni ]
+    groundhougday: [ dağsıçanıgünü ]
+    valentinesday: [ sevgililergünü ]
+    stpatrickday: [ azizpatrickgünü ]
+    aprilfools: [ 1nisanşakagünü ]
+    stgeorgeday: [ ayayorgiyortusu ]
+    mayday: [ 1mayısemekvedayanışmagünü ]
+    cincodemayoday: [ cincodemayogünü ]
+    baptisteday: [ quebeculusalbayramı ]
+    usindependenceday: [ amerikabağımsızlıkgünü ]
+    independenceday: [ bağımsızlıkgünü ]
+    bastilleday: [ bastillegünü ]
+    halloweenday: [ cadılarbayramı ]
+    allhallowday: [ azizlergünü ]
+    allsoulsday: [ bütünruhlargünü ]
+    guyfawkesday: [ guyfawkesgünü ]
+    veteransday: [ gazilergünü ]
+    christmaseve: [ noelarifesi ]
+    newyeareve: [ yılbaşıgecesi ]
+    ramadan: [ ramazanbayramı, şekerbayramı ]
+    sacrifice: [ kurbanbayramı ]
+    republic: [ cumhuriyetbayramı, 29ekimcumhuriyetbayramı ]
+    victory: [ zaferbayramı, 30ağustoszaferbayramı ]
+    children: [ ulusalegemenlikveçocukbayramı, 23nisanulusalegemenlikveçocukbayramı ]
+    youth: [ atatürküanmagençlikvesporbayramı, 19mayısatatürküanmagençlikvesporbayramı ]
+    democracy: [ demokrasivemillibirlikgünü, demokrasivemillîbirlikgünü, 15temmuzdemokrasivemillibirlikgünü, 15temmuzdemokrasivemillîbirlikgünü ]
 WrittenDecades: !dictionary
   types: [ string, int ]
   entries:

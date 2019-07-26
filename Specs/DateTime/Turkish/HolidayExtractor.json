@@ -1,7 +1,6 @@
 [
   {
     "Input": "Noel'de döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -14,7 +13,6 @@
   },
   {
     "Input": "Noel günü döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -26,21 +24,19 @@
     ]
   },
   {
-    "Input": "Yuandan festivalinde döneceğiem",
-    "NotSupported": "dotnet",
+    "Input": "Yuandan'da döneceğiem",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Yuandan festivali",
+        "Text": "Yuandan",
         "Type": "date",
         "Start": 0,
-        "Length": 17
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Şükran Günü'nde döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -53,7 +49,6 @@
   },
   {
     "Input": "Babalar Günü'nde döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -66,7 +61,6 @@
   },
   {
     "Input": "Bu yıl Yuandan'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -79,7 +73,6 @@
   },
   {
     "Input": "2016 Yuandan'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -92,7 +85,6 @@
   },
   {
     "Input": "Temiz Pazartesi'nde döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -105,7 +97,6 @@
   },
   {
     "Input": "Martin Luther King Günü Amerika'nın resmi tatil günüdür",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -113,6 +104,90 @@
         "Type": "date",
         "Start": 0,
         "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Ramazan Bayramı'nda döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Ramazan Bayramı",
+        "Type": "date",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Kurban Bayramı'nda döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Kurban Bayramı",
+        "Type": "date",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Cumhuriyet Bayramı'nda döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Cumhuriyet Bayramı",
+        "Type": "date",
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Zafer Bayramı'nda döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Zafer Bayramı",
+        "Type": "date",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ulusal Egemenlik ve Çocuk Bayramı'nda döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Ulusal Egemenlik ve Çocuk Bayramı",
+        "Type": "date",
+        "Start": 0,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "Atatürk'ü Anma, Gençlik ve Spor Bayramı'nda döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Atatürk'ü Anma, Gençlik ve Spor Bayramı",
+        "Type": "date",
+        "Start": 0,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "Demokrasi ve Milli Birlik Günü'nde döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Demokrasi ve Milli Birlik Günü",
+        "Type": "date",
+        "Start": 0,
+        "Length": 30
       }
     ]
   }
