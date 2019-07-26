@@ -2378,7 +2378,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "on Friday next week between 8am and 2pm",
@@ -2404,7 +2404,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "between half past seven and 4pm of tomorrow",
