@@ -1,5 +1,4 @@
 emoji
-grapheme
 pre-commit==1.16.1
 autopep8
 flake8
