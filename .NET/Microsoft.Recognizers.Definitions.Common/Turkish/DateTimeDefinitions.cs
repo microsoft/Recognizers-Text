@@ -129,6 +129,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string DateExtractor9L = $@"\b({WeekDayRegex}\s+)?{DayRegex}\s*/\s*{MonthNumRegex}{DateExtractorYearTermRegex}(?![%])\b";
       public static readonly string DateExtractor9S = $@"\b({WeekDayRegex}\s+)?{DayRegex}\s*/\s*{MonthNumRegex}(?![%])\b";
       public static readonly string DateExtractorA = $@"\b({WeekDayRegex}\s+)?{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}";
+      public static readonly string DateExtractorA = $@"\b({WeekDayRegex}\s+)?{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}";
       public static readonly string OfMonth = $@"^{WrittenMonthRegex}\s*ayının";
       public static readonly string MonthEnd = $@"{WrittenMonthRegex}\s*(ayı)?\s*$";
       public static readonly string WeekDayEnd = $@"(bu\s+)?{WeekDayRegex}\s*,?\s*$";
