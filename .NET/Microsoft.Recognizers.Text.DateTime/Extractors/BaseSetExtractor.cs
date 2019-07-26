@@ -136,22 +136,30 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (match.Success)
                 {
-                    var trimmedText = text.Remove(match.Index, match.Length);
-                    trimmedText = trimmedText.Insert(match.Index, match.Groups["weekday"].ToString());
-
-                    var ers = extractor.Extract(trimmedText, reference);
-                    foreach (var er in ers)
+                    if (match.Value.EndsWith("s"))
                     {
-                        if (er.Start <= match.Index && er.Text.Contains(match.Groups["weekday"].Value))
-                        {
-                            var len = (er.Length ?? 0) + 1;
-                            if (match.Groups[Constants.PrefixGroupName].ToString() != string.Empty)
-                            {
-                                len += match.Groups[Constants.PrefixGroupName].ToString().Length;
-                            }
+                        var trimmedText = text.Remove(match.Index, match.Length);
+                        trimmedText = trimmedText.Insert(match.Index, match.Groups["weekday"].ToString());
 
-                            ret.Add(new Token(er.Start ?? 0, er.Start + len ?? 0));
+                        var ers = extractor.Extract(trimmedText, reference);
+                        foreach (var er in ers)
+                        {
+                            if (er.Start <= match.Index && er.Text.Contains(match.Groups["weekday"].Value))
+                            {
+                                var len = (er.Length ?? 0) + 1;
+                                if (match.Groups[Constants.PrefixGroupName].ToString() != string.Empty)
+                                {
+                                    len += match.Groups[Constants.PrefixGroupName].ToString().Length;
+                                }
+
+                                ret.Add(new Token(er.Start ?? 0, er.Start + len ?? 0));
+                            }
                         }
+                    }
+                    else
+                    {
+                        // this function is used to extract SetWeekDay when the plural is not formed adding 's'
+                        config.SetWeekDayExtractor(extractor, text, match, reference, ref ret);
                     }
                 }
             }

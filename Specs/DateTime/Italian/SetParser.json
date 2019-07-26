@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2744475+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "settimanalmente",
@@ -28,7 +28,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2754476+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni due settimane",
@@ -52,7 +52,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2779449+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "quotidianamente",
@@ -76,7 +76,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2794445+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni giorno",
@@ -100,7 +100,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2829445+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni mese",
@@ -124,7 +124,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2844439+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "annualmente",
@@ -148,8 +148,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2854444+08:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "una volta all'anno",
@@ -169,11 +168,35 @@
     ]
   },
   {
+    "Input": "Andrò via ogni anno",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2854444+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni anno",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
+        },
+        "Start": 10,
+        "Length": 9
+      }
+    ]
+  },
+  {
     "Input": "Andrò via ogni due giorni",
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2909444+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni due giorni",
@@ -197,7 +220,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2959472+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni tre settimane",
@@ -221,7 +244,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2989494+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "3pm ogni giorno",
@@ -245,7 +268,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.3109498+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni 4/15",
@@ -269,7 +292,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.3259514+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni lunedì",
@@ -293,7 +316,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.3379507+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni lunedì alle 4pm",
@@ -317,7 +340,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.3429518+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni mattina",
@@ -341,7 +364,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.3609535+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni mattina alle 9am",
@@ -365,7 +388,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.3730732+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni pomeriggio alle 4pm",
@@ -389,7 +412,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.3840706+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni notte alle 9pm",
@@ -413,7 +436,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.3930718+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni notte alle 9",
@@ -433,15 +456,38 @@
     ]
   },
   {
-    "Input": "Andrò via la mattina alle 9am",
+    "Input": "Andrò via tutte le mattine alle 9am",
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.4065719+08:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "la mattina alle 9am",
+        "Text": "tutte le mattine alle 9am",
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
+        },
+        "Start": 10,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni mattina alle 9",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4170727+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni mattina alle 9",
         "Type": "set",
         "Value": {
           "Timex": "T09",
@@ -458,27 +504,50 @@
     ]
   },
   {
-    "Input": "Andrò via di mattina alle 9",
+    "Input": "Andrò via tutte le mattine",
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.4170727+08:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "di mattina alle 9",
+        "Text": "tutte le mattine",
         "Type": "set",
         "Value": {
-          "Timex": "T09",
+          "Timex": "TMO",
           "FutureResolution": {
-            "set": "Set: T09"
+            "set": "Set: TMO"
           },
           "PastResolution": {
-            "set": "Set: T09"
+            "set": "Set: TMO"
           }
         },
         "Start": 10,
-        "Length": 17
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via tutti i giorni",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4170727+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tutti i giorni",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
+        },
+        "Start": 10,
+        "Length": 14
       }
     ]
   },
@@ -487,7 +556,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.4295727+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "9am ogni domenica",
@@ -507,15 +576,14 @@
     ]
   },
   {
-    "Input": "Andrò via alle 9am la domenica",
+    "Input": "Andrò via alle 9am tutte le domeniche",
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.4505726+08:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "alle 9am la domenica",
+        "Text": "9am tutte le domeniche",
         "Type": "set",
         "Value": {
           "Timex": "XXXX-WXX-7T09",
@@ -526,21 +594,20 @@
             "set": "Set: XXXX-WXX-7T09"
           }
         },
-        "Start": 10,
-        "Length": 20
+        "Start": 15,
+        "Length": 22
       }
     ]
   },
   {
-    "Input": "Andrò via il lunedì",
+    "Input": "Andrò via i lunedì",
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.4570731+08:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "il lunedì",
+        "Text": "i lunedì",
         "Type": "set",
         "Value": {
           "Timex": "XXXX-WXX-1",
@@ -552,20 +619,19 @@
           }
         },
         "Start": 10,
-        "Length": 9
+        "Length": 8
       }
     ]
   },
   {
-    "Input": "Andrò via la domenica",
+    "Input": "Andrò via le domeniche",
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.4635727+08:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "la domenica",
+        "Text": "le domeniche",
         "Type": "set",
         "Value": {
           "Timex": "XXXX-WXX-7",
@@ -577,7 +643,7 @@
           }
         },
         "Start": 10,
-        "Length": 11
+        "Length": 12
       }
     ]
   }

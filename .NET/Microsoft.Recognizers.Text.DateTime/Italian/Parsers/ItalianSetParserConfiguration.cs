@@ -1,5 +1,8 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
@@ -116,19 +119,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
             var trimmedText = text.Trim();
-            if (trimmedText.Equals("giorno") || trimmedText.Equals("giornata"))
+            if (trimmedText.Equals("giorno") || trimmedText.Equals("giornata") || trimmedText.Equals("giorni"))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("settimana"))
+            else if (trimmedText.Equals("settimana") || trimmedText.Equals("settimane"))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("mese"))
+            else if (trimmedText.Equals("mese") || trimmedText.Equals("mesi"))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("anno") || trimmedText.Equals("annata"))
+            else if (trimmedText.Equals("anno") || trimmedText.Equals("annata") || trimmedText.Equals("anni"))
             {
                 // year
                 timex = "P1Y";
@@ -140,6 +143,44 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             }
 
             return true;
+        }
+
+         // for SetWeekDay when the plural is not formed by adding 's'
+        public void SetWeekDayParser(IDateTimeExtractor extractor, string text, Match match, DateObject reference, ref List<ExtractResult> ers, ref bool success)
+        {
+            var trimmedText = text.Remove(match.Index, match.Length);
+            string weekday = string.Empty;
+            if (match.Groups["g0"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g0"].ToString() + "a";
+            }
+            else if (match.Groups["g1"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g1"].ToString() + "io";
+            }
+            else if (match.Groups["g2"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g2"].ToString() + "e";
+            }
+            else if (match.Groups["g3"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g3"].ToString() + "ì";
+            }
+            else if (match.Groups["g4"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g4"].ToString() + "a";
+            }
+            else if (match.Groups["g5"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g5"].ToString() + "o";
+            }
+
+            trimmedText = trimmedText.Insert(match.Index, weekday);
+            ers = extractor.Extract(trimmedText, reference);
+            if (ers.Count == 1 && ers.First().Length == trimmedText.Length)
+            {
+                success = true;
+            }
         }
     }
 }

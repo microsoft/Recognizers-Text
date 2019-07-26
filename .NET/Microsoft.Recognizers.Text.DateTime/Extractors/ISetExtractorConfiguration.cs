@@ -1,4 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -33,5 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeExtractor TimePeriodExtractor { get; }
 
         IDateTimeExtractor DateTimePeriodExtractor { get; }
+
+        void SetWeekDayExtractor(IDateTimeExtractor extractor, string text, Match match, DateObject reference, ref List<Token> ret);
     }
 }

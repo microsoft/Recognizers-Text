@@ -22,6 +22,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
     public static class DateTimeDefinitions
     {
       public const string TillRegex = @"(?<till>\b(fino\s+a(l(l[aoe'])?|gli|i)?|a(l(l[aoe'])?|gli|i)?|e(\s+(il?|l[aoe']|gli))?)\b|--|-|—|——|~)";
+      public const string RestrictedTillRegex = @"(?<till>\b(fino\s+a(l(l[aoe'])?|gli|i)?)\b|--|-|—|——|~)";
       public static readonly string RangeConnectorRegex = $@"(?<and>\b(e(\s+l[aoe']|gli|i)?|a(l(l[aoe'])?|gli|i)?)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
       public const string RelativeRegex = @"\b(?<order>prossim['oaie]|seguent[ei]|successiv[oaei]|in\s+arrivo|quest['oaie]|ultim['oaie]|passat[oaie]|precedent[ei]|scors[oaie]|corrent[ei]|il?|l[oae']|gli)";
       public const string StrictRelativeRegex = @"(?<order>prossim['oaie]|seguent[ei]|successiv[oaei]|in\s+arrivo|quest['oaie]|ultim['oaie]|passat[oaie]|precedent[ei]|scors[oaie]|corrent[ei])";
@@ -102,7 +103,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+giorni\s+da\s+(?<day>ieri|domani|oggi))\b";
       public const string StrictWeekDay = @"\b(?<weekday>domenica|lunedì|martedì|mercoledì|giovedì|venerdì|sabato|lun|mar|mer|gio|ven|sab|dom)\b";
       public static readonly string RelativeDayRegex = $@"\b(((il|l')\s*)?{RelativeRegex}\s+giorno)\b";
-      public const string SetWeekDayRegex = @"\b(?<prefix>(di|la|il)\s+)?(?<weekday>mattina|pomeriggio|sera|notte|domenica|lunedì|martedì|mercoledì|giovedì|venerdì|sabato)s\b";
+      public const string SetWeekDayRegex = @"\b(?<prefix>(tutt[ei]\s+)?(le|i)\s+)(?<weekday>(?<g0>mattin|ser)|(?<g1>pomerigg)|(?<g2>nott)|(?<g3>luned|marted|mercoled|gioved|venerd)|(?<g4>domenic)|(?<g5>sabat))(e|i|ì|he)\b";
       public static readonly string WeekDayOfMonthRegex = $@"(?<wom>((la|il)\s+)?(?<cardinal>prim[ao]|second[ao]|terz[ao]|quart[ao]|quint[ao]|ultim[ao])\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
       public static readonly string RelativeWeekDayRegex = $@"\b({WrittenNumRegex}\s+{WeekDayRegex}\s+(da\s+ora|dopo))\b";
       public static readonly string SpecialDate = $@"(?<=\b(il|l'|al(l')?)\s*){DayRegex}\b";
@@ -167,7 +168,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string PeriodDescRegex = @"(?<desc>pm|am|p\.m\.|a\.m\.)";
       public const string PeriodPmRegex = @"\b(?<pm>(nel|questo)\s+pomeriggio|(questa|di)\s+sera|(durante\s+la|in)\s+serata|nella\s+notte)\b";
       public const string PeriodAmRegex = @"\b(?<am>al mattino|alla mattina|di mattina|in mattinata)\b";
-      public static readonly string PureNumFromTo = $@"(da(ll[e'])?\s*)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?";
+      public static readonly string PureNumFromTo = $@"((?<!dell[e']\s*)|da(ll[e'])?\s*)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?";
       public static readonly string PureNumBetweenAnd = $@"([tf]ra(\s+l[e'])?\s*)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex}))?\s*{RangeConnectorRegex}\s*({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex}))?";
       public static readonly string SpecificTimeFromTo = $@"(da(ll[e'])?\s*)(?<time1>(({TimeRegex2}|{TimeRegex5}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{TillRegex}\s*(?<time2>(({TimeRegex2}|{TimeRegex5}|{TimeRegexWithDotConnector}(?<rightDesc>\s*{DescRegex}))|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))";
       public static readonly string SpecificTimeBetweenAnd = $@"([tf]ra(\s+l[e'])?\s*)(?<time1>(({TimeRegex2}|{TimeRegex5}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{RangeConnectorRegex}\s*(?<time2>(({TimeRegex2}|{TimeRegex5}|{TimeRegexWithDotConnector}(?<rightDesc>\s*{DescRegex}))|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))";
@@ -195,9 +196,9 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|or[ae]|hrs?|h|minut[oi]|mins?|second[oi]|secs?)\b";
       public const string SuffixAndRegex = @"(?<suffix>\s*e\s+(un\s+)?(?<suffix_num>mezzo|mezza|quarto))";
       public const string PeriodicRegex = @"\b(?<periodic>giornalier[oaei]|giornalmente|quotidian[oaei]|quotidianamente|mensil[ei]|mensilmente|settimanal[ei]|settimanalmente|bisettimanal[ei]|annual[ei]|annualmente)\b";
-      public static readonly string EachUnitRegex = $@"(?<each>(ogni|tutte\s+le|tutti\s+(gl)?i)(?<other>\s+altro)?\s*{DurationUnitRegex})";
-      public const string EachPrefixRegex = @"\b(?<each>(ogni|tutte\s+le|tutti\s+(gl)?i)\s*$)";
-      public const string SetEachRegex = @"\b(?<each>(ogni|tutte\s+le|tutti\s+(gl)?i)\s*)";
+      public static readonly string EachUnitRegex = $@"(?<each>(ogni|tutte\s+le|tutti\s+(gl)?i|una\s+volta\s+(al(l')?|l'))(?<other>\s+altro)?\s*{DurationUnitRegex})";
+      public const string EachPrefixRegex = @"\b(?<each>(ogni|tutte\s+le|tutti\s+(gl)?i|una\s+volta\s+(al(l')?|l'))\s*$)";
+      public const string SetEachRegex = @"\b(?<each>(ogni|tutte\s+le|tutti\s+(gl)?i|una\s+volta\s+(al(l')?|l'))\s*)";
       public const string SetLastRegex = @"(?<last>prossim[oaei]|seguent[ei]|in\s+arrivo|quest[oaei]|ultim[oaei]|passat[oaei]|scors[oaei]|precedent[ei]|corrent[ei])";
       public const string EachDayRegex = @"^\s*(ogni|tutti\s+i)\s+giorn[oi]\b";
       public static readonly string DurationFollowedUnit = $@"(^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})";
@@ -363,7 +364,9 @@ namespace Microsoft.Recognizers.Definitions.Italian
             { @"giovedì", 4 },
             { @"venerdì", 5 },
             { @"sabato", 6 },
+            { @"sabati", 6 },
             { @"domenica", 0 },
+            { @"domeniche", 0 },
             { @"lun", 1 },
             { @"mar", 2 },
             { @"mer", 3 },
@@ -634,20 +637,27 @@ namespace Microsoft.Recognizers.Definitions.Italian
         };
       public const string DefaultLanguageFallback = @"DMY";
       public static readonly string[] DurationDateRestrictions = {  };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\bgiorno|pomeriggio|sera|notte\b", @"\b(buona?\s*(giorno|pomeriggio|sera|notte))\b" }
+        };
       public static readonly IList<string> MorningTermList = new List<string>
         {
             @"mattino",
             @"mattina",
+            @"mattine",
             @"mattinata"
         };
       public static readonly IList<string> AfternoonTermList = new List<string>
         {
             @"pomeriggio",
+            @"pomeriggi",
             @"dopo pranzo"
         };
       public static readonly IList<string> EveningTermList = new List<string>
         {
             @"sera",
+            @"sere",
             @"serata"
         };
       public static readonly IList<string> DaytimeTermList = new List<string>
@@ -659,6 +669,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly IList<string> NightTermList = new List<string>
         {
             @"notte",
+            @"notti",
             @"nottata"
         };
       public static readonly IList<string> SameDayTerms = new List<string>

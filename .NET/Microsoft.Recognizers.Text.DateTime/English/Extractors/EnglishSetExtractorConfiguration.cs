@@ -1,6 +1,8 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -73,5 +75,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex ISetExtractorConfiguration.SetWeekDayRegex => SetWeekDayRegex;
 
         Regex ISetExtractorConfiguration.SetEachRegex => SetEachRegex;
+
+         // for SetWeekDay when the plural is not formed by adding 's'
+        public void SetWeekDayExtractor(IDateTimeExtractor extractor, string text, Match match, DateObject reference, ref List<Token> ret)
+        {
+
+        }
     }
 }
