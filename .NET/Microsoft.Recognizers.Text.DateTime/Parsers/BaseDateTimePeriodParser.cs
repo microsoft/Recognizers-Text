@@ -732,42 +732,27 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Parse "pm"
-            string matchPmStr = string.Empty, matchAmStr = string.Empty, descStr = string.Empty;
-            string matchPmStr1 = string.Empty, matchAmStr1 = string.Empty, descStr1 = string.Empty;
-            var matchPmStrGroup = match.Groups[Constants.PmGroupName];
-            var matchAmStrGroup = match.Groups[Constants.AmGroupName];
+            string descStr = string.Empty, beginDescStr = string.Empty, endDescStr = string.Empty;
+            var matchPmStr = match.Groups[Constants.PmGroupName].Value;
+            var matchAmStr = match.Groups[Constants.AmGroupName].Value;
             var descStrGroup = match.Groups[Constants.DescGroupName];
-            if (matchPmStrGroup.Captures.Count > 0)
+
+            if (descStrGroup.Captures.Count > 1)
             {
-                matchPmStr = matchPmStrGroup.Captures[0].Value;
-                if (matchPmStrGroup.Captures.Count > 1)
-                {
-                    matchPmStr1 = matchPmStrGroup.Captures[1].Value;
-                }
+                // first particle am/pm in patterns like "between 8am and 2pm"
+                beginDescStr = descStrGroup.Captures[0].Value;
+
+                // second particle am/pm
+                endDescStr = descStrGroup.Captures[1].Value;
+            }
+            else if (descStrGroup.Captures.Count > 0)
+            {
+                descStr = descStrGroup.Value;
             }
 
-            if (matchAmStrGroup.Captures.Count > 0)
+            if (descStrGroup.Captures.Count > 1)
             {
-                matchAmStr = matchAmStrGroup.Captures[0].Value;
-                if (matchAmStrGroup.Captures.Count > 1)
-                {
-                    matchAmStr1 = matchAmStrGroup.Captures[1].Value;
-                }
-            }
-
-            if (descStrGroup.Captures.Count > 0)
-            {
-                descStr = descStrGroup.Captures[0].Value;
-
-                if (descStrGroup.Captures.Count > 1)
-                {
-                    descStr1 = descStrGroup.Captures[1].Value;
-                }
-            }
-
-            if (matchPmStrGroup.Captures.Count > 1 || matchAmStrGroup.Captures.Count > 1 || descStrGroup.Captures.Count > 1)
-            {
-                if (!string.IsNullOrEmpty(matchAmStr) || (!string.IsNullOrEmpty(descStr) && descStr.StartsWith("a")))
+                if (!string.IsNullOrEmpty(beginDescStr) && beginDescStr.StartsWith("a"))
                 {
                     if (beginHour >= Constants.HalfDayHourCount)
                     {
@@ -776,22 +761,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     hasAm = true;
                 }
-                else if (!string.IsNullOrEmpty(matchPmStr) || (!string.IsNullOrEmpty(descStr) && descStr.StartsWith("p")))
+                else if (!string.IsNullOrEmpty(beginDescStr) && beginDescStr.StartsWith("p"))
                 {
                     if (beginHour < Constants.HalfDayHourCount)
                     {
                         beginHour += Constants.HalfDayHourCount;
                     }
 
-                    if (endHour < Constants.HalfDayHourCount)
-                    {
-                        endHour += Constants.HalfDayHourCount;
-                    }
-
                     hasPm = true;
                 }
 
-                if (!string.IsNullOrEmpty(matchAmStr1) || (!string.IsNullOrEmpty(descStr1) && descStr1.StartsWith("a")))
+                if (!string.IsNullOrEmpty(endDescStr) && endDescStr.StartsWith("a"))
                 {
                     if (endHour >= Constants.HalfDayHourCount)
                     {
@@ -800,7 +780,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     hasAm = true;
                 }
-                else if (!string.IsNullOrEmpty(matchPmStr1) || (!string.IsNullOrEmpty(descStr1) && descStr1.StartsWith("p")))
+                else if (!string.IsNullOrEmpty(endDescStr) && endDescStr.StartsWith("p"))
                 {
                     if (endHour < Constants.HalfDayHourCount)
                     {
