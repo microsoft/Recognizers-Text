@@ -34,5 +34,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             ParserInitialize(Parsers);
             TestDateTimeParser(testSpec);
         }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void HolidayExtractor(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            TestDateTimeExtractor(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void HolidayParser(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            ParserInitialize(Parsers);
+            TestDateTimeParser(testSpec);
+        }
     }
 }
