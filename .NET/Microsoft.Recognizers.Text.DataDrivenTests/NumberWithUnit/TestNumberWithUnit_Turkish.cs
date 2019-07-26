@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void CurrencyModel(TestModel testSpec)
         {
-            TestNumberWithUnit(testSpec);
+            TestCurrency(testSpec);
         }
     }
 }
