@@ -6,6 +6,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public abstract class AbstractYearExtractor : IDateExtractor
     {
+
+        public AbstractYearExtractor()
+        {
+        }
+
         public AbstractYearExtractor(IDateExtractorConfiguration config)
         {
             this.Config = config;

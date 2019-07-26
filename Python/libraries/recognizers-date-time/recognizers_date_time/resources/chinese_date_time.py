@@ -35,6 +35,7 @@ class ChineseDateTime:
     DateThisRe = f'这个|这一个|这|这一|本|今'
     DateLastRe = f'上个|上一个|上|上一|去'
     DateNextRe = f'下个|下一个|下|下一|明'
+    RelativeRegex = f'(?<order>({DateThisRe}|{DateLastRe}|{DateNextRe}))'
     SpecialDate = f'(?<thisyear>({DateThisRe}|{DateLastRe}|{DateNextRe})年)?(?<thismonth>({DateThisRe}|{DateLastRe}|{DateNextRe})月)?{DateDayRegexInChinese}'
     DateUnitRegex = f'(?<unit>年|个月|周|日|天)'
     BeforeRegex = f'以前|之前|前'

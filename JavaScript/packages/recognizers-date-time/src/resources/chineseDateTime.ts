@@ -32,6 +32,7 @@ export namespace ChineseDateTime {
     export const DateThisRe = `这个|这一个|这|这一|本|今`;
     export const DateLastRe = `上个|上一个|上|上一|去`;
     export const DateNextRe = `下个|下一个|下|下一|明`;
+    export const RelativeRegex = `(?<order>(${DateThisRe}|${DateLastRe}|${DateNextRe}))`;
     export const SpecialDate = `(?<thisyear>(${DateThisRe}|${DateLastRe}|${DateNextRe})年)?(?<thismonth>(${DateThisRe}|${DateLastRe}|${DateNextRe})月)?${DateDayRegexInChinese}`;
     export const DateUnitRegex = `(?<unit>年|个月|周|日|天)`;
     export const BeforeRegex = `以前|之前|前`;

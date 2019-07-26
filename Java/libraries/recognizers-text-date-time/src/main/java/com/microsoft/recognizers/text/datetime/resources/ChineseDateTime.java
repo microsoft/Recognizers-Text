@@ -68,6 +68,11 @@ public class ChineseDateTime {
 
     public static final String DateNextRe = "下个|下一个|下|下一|明";
 
+    public static final String RelativeRegex = "(?<order>({DateThisRe}|{DateLastRe}|{DateNextRe}))"
+            .replace("{DateThisRe}", DateThisRe)
+            .replace("{DateLastRe}", DateLastRe)
+            .replace("{DateNextRe}", DateNextRe);
+
     public static final String SpecialDate = "(?<thisyear>({DateThisRe}|{DateLastRe}|{DateNextRe})年)?(?<thismonth>({DateThisRe}|{DateLastRe}|{DateNextRe})月)?{DateDayRegexInChinese}"
             .replace("{DateThisRe}", DateThisRe)
             .replace("{DateLastRe}", DateLastRe)

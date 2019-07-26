@@ -8,7 +8,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class ChineseDateExtractorConfiguration : IDateTimeExtractor
+    public class ChineseDateExtractorConfiguration : AbstractYearExtractor, IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
 
@@ -55,6 +55,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex SpecialDate = new Regex(DateTimeDefinitions.SpecialDate, RegexFlags);
 
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
+
+        public static readonly IParser NumberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
 
         public static readonly Regex[] DateRegexList =
         {
@@ -109,12 +111,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly ChineseDurationExtractorConfiguration DurationExtractor = new ChineseDurationExtractorConfiguration();
 
-        public List<ExtractResult> Extract(string text)
+        public override List<ExtractResult> Extract(string text)
         {
             return Extract(text, DateObject.Now);
         }
 
-        public List<ExtractResult> Extract(string text, DateObject referenceTime)
+        public override List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
             var tokens = new List<Token>();
             tokens.AddRange(BasicRegexMatch(text));
@@ -122,72 +124,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             tokens.AddRange(DurationWithBeforeAndAfter(text, referenceTime));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
-        }
-
-        public int GetYearFromText(Match match)
-        {
-            int year = Constants.InvalidYear;
-
-            var numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
-
-            var yearStr = match.Groups["year"].Value;
-            if (!string.IsNullOrEmpty(yearStr))
-            {
-                year = int.Parse(yearStr);
-                if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
-                {
-                    year += 1900;
-                }
-                else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
-                {
-                    year += 2000;
-                }
-            }
-            else
-            {
-                var firstTwoYearNumStr = match.Groups["firsttwoyearnum"].Value;
-                if (!string.IsNullOrEmpty(firstTwoYearNumStr))
-                {
-                    var er = new ExtractResult
-                    {
-                        Text = firstTwoYearNumStr,
-                        Start = match.Groups["firsttwoyearnum"].Index,
-                        Length = match.Groups["firsttwoyearnum"].Length,
-                    };
-
-                    var firstTwoYearNum = Convert.ToInt32((double)(numberParser.Parse(er).Value ?? 0));
-
-                    var lastTwoYearNum = 0;
-                    var lastTwoYearNumStr = match.Groups["lasttwoyearnum"].Value;
-                    if (!string.IsNullOrEmpty(lastTwoYearNumStr))
-                    {
-                        er.Text = lastTwoYearNumStr;
-                        er.Start = match.Groups["lasttwoyearnum"].Index;
-                        er.Length = match.Groups["lasttwoyearnum"].Length;
-
-                        lastTwoYearNum = Convert.ToInt32((double)(numberParser.Parse(er).Value ?? 0));
-                    }
-
-                    // Exclude pure number like "nineteen", "twenty four"
-                    if ((firstTwoYearNum < 100 && lastTwoYearNum == 0) ||
-                        (firstTwoYearNum < 100 && firstTwoYearNum % 10 == 0 && lastTwoYearNumStr.Trim().Split(' ').Length == 1))
-                    {
-                        year = Constants.InvalidYear;
-                        return year;
-                    }
-
-                    if (firstTwoYearNum >= 100)
-                    {
-                        year = firstTwoYearNum + lastTwoYearNum;
-                    }
-                    else
-                    {
-                        year = (firstTwoYearNum * 100) + lastTwoYearNum;
-                    }
-                }
-            }
-
-            return year;
         }
 
         // Match basic patterns in DateRegexList
