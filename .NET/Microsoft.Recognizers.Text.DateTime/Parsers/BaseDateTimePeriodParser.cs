@@ -732,27 +732,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Parse "pm"
-            string descStr = string.Empty, beginDescStr = string.Empty, endDescStr = string.Empty;
             var matchPmStr = match.Groups[Constants.PmGroupName].Value;
             var matchAmStr = match.Groups[Constants.AmGroupName].Value;
-            var descStrGroup = match.Groups[Constants.DescGroupName];
+            var descStr = match.Groups[Constants.DescGroupName].Value;
+            var beginDescStr = match.Groups[Constants.LeftAmPmGroupName].Value;
+            var endDescStr = match.Groups[Constants.RightAmPmGroupName].Value;
 
-            if (descStrGroup.Captures.Count > 1)
+            if (!string.IsNullOrEmpty(beginDescStr) && !string.IsNullOrEmpty(endDescStr))
             {
-                // first particle am/pm in patterns like "between 8am and 2pm"
-                beginDescStr = descStrGroup.Captures[0].Value;
-
-                // second particle am/pm
-                endDescStr = descStrGroup.Captures[1].Value;
-            }
-            else if (descStrGroup.Captures.Count > 0)
-            {
-                descStr = descStrGroup.Value;
-            }
-
-            if (descStrGroup.Captures.Count > 1)
-            {
-                if (!string.IsNullOrEmpty(beginDescStr) && beginDescStr.StartsWith("a"))
+                if (beginDescStr.StartsWith("a"))
                 {
                     if (beginHour >= Constants.HalfDayHourCount)
                     {
@@ -761,7 +749,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     hasAm = true;
                 }
-                else if (!string.IsNullOrEmpty(beginDescStr) && beginDescStr.StartsWith("p"))
+                else if (beginDescStr.StartsWith("p"))
                 {
                     if (beginHour < Constants.HalfDayHourCount)
                     {
@@ -780,7 +768,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     hasAm = true;
                 }
-                else if (!string.IsNullOrEmpty(endDescStr) && endDescStr.StartsWith("p"))
+                else if (endDescStr.StartsWith("p"))
                 {
                     if (endHour < Constants.HalfDayHourCount)
                     {
