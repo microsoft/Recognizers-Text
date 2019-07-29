@@ -130,6 +130,8 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
     readonly nextPrefixRegex: RegExp;
     readonly previousPrefixRegex: RegExp;
     readonly thisPrefixRegex: RegExp;
+    readonly nextSuffixRegex: RegExp;
+    readonly pastSuffixRegex: RegExp;
     readonly numberCombinedWithUnit: RegExp;
     readonly laterEarlyPeriodRegex: RegExp;
     readonly weekWithWeekDayRangeRegex: RegExp;
@@ -174,6 +176,9 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp("(prochain|prochaine)\b");
         this.previousPrefixRegex = RegExpUtility.getSafeRegExp("(dernier)\b");
         this.thisPrefixRegex = RegExpUtility.getSafeRegExp("(ce|cette)\b");
+
+        this.nextSuffixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex);
+        this.pastSuffixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex);
 
         this.inConnectorRegex = config.utilityConfiguration.inConnectorRegex;
         this.unitMap = config.unitMap;
@@ -240,7 +245,10 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
 
     isWeekOnly(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return FrenchDateTime.WeekTerms.some(o => trimedText.endsWith(o)) &&
+        return (FrenchDateTime.WeekTerms.some(o => trimedText.endsWith(o)) ||
+            (FrenchDateTime.WeekTerms.some(o => trimedText.includes(o)) &&
+            (RegExpUtility.isMatch(this.nextSuffixRegex, trimedText) || 
+            RegExpUtility.isMatch(this.pastSuffixRegex, trimedText)))) &&
             !FrenchDateTime.WeekendTerms.some(o => trimedText.endsWith(o));
     }
 

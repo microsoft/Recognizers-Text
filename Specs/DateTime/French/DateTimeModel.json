@@ -1692,7 +1692,6 @@
     "Context": {
       "ReferenceDateTime": "2019-07-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "la semaine prochaine",
@@ -1717,7 +1716,6 @@
     "Context": {
       "ReferenceDateTime": "2019-07-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "la semaine prochaine",
@@ -1742,7 +1740,6 @@
     "Context": {
       "ReferenceDateTime": "2019-07-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "la semaine derniere",

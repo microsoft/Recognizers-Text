@@ -28,7 +28,7 @@ class EnglishDateTime:
     CenturySuffixRegex = f'(^century)\\b'
     ReferencePrefixRegex = f'(that|same)\\b'
     FutureSuffixRegex = f'\\b(in\\s+the\\s+)?(future|hence)\\b'
-    DayRegex = f'(the\\s*)?(?<!(\\d+:|\\$)\\s*)(?<=\\b)(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?)(?=\\b|t)'
+    DayRegex = f'(the\\s*)?(?<!(\\d+:?|\\$)\\s*)(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?)(?=\\b|t)'
     ImplicitDayRegex = f'(the\\s*)?(?<day>(?:3[0-1]|[0-2]?\\d)(?:th|nd|rd|st))\\b'
     MonthNumRegex = f'(?<month>1[0-2]|(0)?[1-9])\\b'
     WrittenOneToNineRegex = f'(?:one|two|three|four|five|six|seven|eight|nine)'

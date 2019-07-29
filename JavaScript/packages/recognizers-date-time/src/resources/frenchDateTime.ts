@@ -14,7 +14,7 @@ export namespace FrenchDateTime {
     export const TillRegex = `(?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)`;
     export const RangeConnectorRegex = `(?<and>de la|au|[aà]|et(\\s*la)?|--|-|—|——)`;
     export const RelativeRegex = `(?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))`;
-    export const StrictRelativeRegex = `(?<order>prochaine?|ce(tte)?|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))`;
+    export const StrictRelativeRegex = `(?<order>prochaine?|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))`;
     export const NextSuffixRegex = `(?<order>prochaines?|prochain|suivante)\\b`;
     export const PastSuffixRegex = `(?<order>derni[eè]re?|pr[eé]c[eé]dente)\\b`;
     export const ThisPrefixRegex = `(?<order>ce(tte)?|au\\s+cours+(du|de))\\b`;
@@ -40,7 +40,7 @@ export namespace FrenchDateTime {
     export const BetweenRegex = `\\b(entre\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
     export const YearWordRegex = `\\b(?<year>l'ann[ée]e)\\b`;
     export const MonthWithYear = `\\b((?<month>avril|avr\\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\\.|f[eé]vr|janvier|janv\\.|janv|jan|juillet|jul|juil\\.|juil|juin|jun|mars?|mai|novembre|nov\\.|nov|octobre|oct\\.|oct|septembre|sept\\.|sept|sep)(\\s*),?(\\s+de)?(\\s*)(${YearRegex}|(?<order>cette)\\s*${YearWordRegex})|${YearWordRegex}\\s*(${PastSuffixRegex}|${NextSuffixRegex}))`;
-    export const OneWordPeriodRegex = `\\b((${RelativeRegex}\\s+)?(?<month>avril|avr\\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\\.|f[eé]vr|janvier|janv\\.|janv|jan|juillet|jul|juil\\.|juil|juin|jun|mars?|mai|novembre|nov\\.|nov|octobre|oct\\.|oct|septembre|sept\\.|sept|sep)|${RelativeRegex}\\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)|weekend|week-end|(mois|l'année))\\b`;
+    export const OneWordPeriodRegex = `\\b((${RelativeRegex}\\s+)?(?<month>avril|avr\\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\\.|f[eé]vr|janvier|janv\\.|janv|jan|juillet|jul|juil\\.|juil|juin|jun|mars?|mai|novembre|nov\\.|nov|octobre|oct\\.|oct|septembre|sept\\.|sept|sep)|(la\\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)\\s+${StrictRelativeRegex}|${RelativeRegex}\\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)|weekend|week-end|(mois|l'année))\\b`;
     export const MonthNumWithYear = `(${YearRegex}(\\s*)[/\\-\\.](\\s*)${MonthNumRegex})|(${MonthNumRegex}(\\s*)[/\\-](\\s*)${YearRegex})`;
     export const WeekOfMonthRegex = `(?<wom>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+semaine\\s+${MonthSuffixRegex})`;
     export const WeekOfYearRegex = `(?<woy>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+semaine(\\s+de)?\\s+(${YearRegex}|${RelativeRegex}\\s+ann[ée]e))`;
