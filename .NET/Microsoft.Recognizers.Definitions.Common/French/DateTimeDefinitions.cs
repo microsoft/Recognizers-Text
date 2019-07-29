@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string TillRegex = @"(?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)";
       public const string RangeConnectorRegex = @"(?<and>de la|au|[aà]|et(\s*la)?|--|-|—|——)";
       public const string RelativeRegex = @"(?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
-      public const string StrictRelativeRegex = @"(?<order>prochaine?|ce(tte)?|derni[eè]re|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
+      public const string StrictRelativeRegex = @"(?<order>prochaine?|derni[eè]re|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
       public const string NextSuffixRegex = @"(?<order>prochaines?|prochain|suivante)\b";
       public const string PastSuffixRegex = @"(?<order>derni[eè]re?|pr[eé]c[eé]dente)\b";
       public const string ThisPrefixRegex = @"(?<order>ce(tte)?|au\s+cours+(du|de))\b";
@@ -50,7 +50,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string BetweenRegex = $@"\b(entre\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b";
       public const string YearWordRegex = @"\b(?<year>l'ann[ée]e)\b";
       public static readonly string MonthWithYear = $@"\b((?<month>avril|avr\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\.|f[eé]vr|janvier|janv\.|janv|jan|juillet|jul|juil\.|juil|juin|jun|mars?|mai|novembre|nov\.|nov|octobre|oct\.|oct|septembre|sept\.|sept|sep)(\s*),?(\s+de)?(\s*)({YearRegex}|(?<order>cette)\s*{YearWordRegex})|{YearWordRegex}\s*({PastSuffixRegex}|{NextSuffixRegex}))";
-      public static readonly string OneWordPeriodRegex = $@"\b(({RelativeRegex}\s+)?(?<month>avril|avr\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\.|f[eé]vr|janvier|janv\.|janv|jan|juillet|jul|juil\.|juil|juin|jun|mars?|mai|novembre|nov\.|nov|octobre|oct\.|oct|septembre|sept\.|sept|sep)|{RelativeRegex}\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)|weekend|week-end|(mois|l'année))\b";
+      public static readonly string OneWordPeriodRegex = $@"\b(({RelativeRegex}\s+)?(?<month>avril|avr\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\.|f[eé]vr|janvier|janv\.|janv|jan|juillet|jul|juil\.|juil|juin|jun|mars?|mai|novembre|nov\.|nov|octobre|oct\.|oct|septembre|sept\.|sept|sep)|(la\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)\s+{StrictRelativeRegex}|{RelativeRegex}\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)|weekend|week-end|(mois|l'année))\b";
       public static readonly string MonthNumWithYear = $@"({YearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){YearRegex})";
       public static readonly string WeekOfMonthRegex = $@"(?<wom>(le\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\s+semaine\s+{MonthSuffixRegex})";
       public static readonly string WeekOfYearRegex = $@"(?<woy>(le\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\s+semaine(\s+de)?\s+({YearRegex}|{RelativeRegex}\s+ann[ée]e))";
