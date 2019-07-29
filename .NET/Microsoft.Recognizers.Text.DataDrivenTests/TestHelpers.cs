@@ -12,6 +12,7 @@ using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Italian;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
+using Microsoft.Recognizers.Text.DateTime.Turkish;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.Sequence;
@@ -156,7 +157,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetDutchExtractor(extractorName);
                 case Culture.Japanese:
                     return GetJapaneseExtractor(extractorName);
-        }
+                case Culture.Turkish:
+                    return GetTurkishExtractor(extractorName);
+            }
 
             throw new Exception($"Extractor '{extractorName}' for '{culture}' not supported");
         }
@@ -187,6 +190,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetJapaneseParser(parserName);
                 case Culture.Dutch:
                     return GetDutchParser(parserName);
+                case Culture.Turkish:
+                    return GetTurkishParser(parserName);
             }
 
             throw new Exception($"Parser '{parserName}' for '{culture}' not supported");
@@ -825,6 +830,68 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             throw new Exception($"Parser '{parserName}' for Italian not supported");
         }
 
+        public static IDateTimeExtractor GetTurkishExtractor(DateTimeExtractors extractorName)
+        {
+            var config = new BaseOptionsConfiguration();
+            var previewConfig = new BaseOptionsConfiguration(DateTimeOptions.EnablePreview);
+            switch (extractorName)
+            {
+                case DateTimeExtractors.Date:
+                    return new BaseDateExtractor(new TurkishDateExtractorConfiguration(config));
+                case DateTimeExtractors.Time:
+                    return new BaseTimeExtractor(new TurkishTimeExtractorConfiguration(config));
+                case DateTimeExtractors.DatePeriod:
+                    return new BaseDatePeriodExtractor(new TurkishDatePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.TimePeriod:
+                    return new BaseTimePeriodExtractor(new TurkishTimePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.DateTime:
+                    return new BaseDateTimeExtractor(new TurkishDateTimeExtractorConfiguration(config));
+                case DateTimeExtractors.DateTimePeriod:
+                    return new BaseDateTimePeriodExtractor(new TurkishDateTimePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.Duration:
+                    return new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(config));
+                case DateTimeExtractors.Holiday:
+                    return new BaseHolidayExtractor(new TurkishHolidayExtractorConfiguration(config));
+                case DateTimeExtractors.Set:
+                    return new BaseSetExtractor(new TurkishSetExtractorConfiguration(config));
+                case DateTimeExtractors.Merged:
+                    return new BaseMergedDateTimeExtractor(new TurkishMergedExtractorConfiguration(config));
+                case DateTimeExtractors.MergedSkipFromTo:
+                    return new BaseMergedDateTimeExtractor(new TurkishMergedExtractorConfiguration(new BaseOptionsConfiguration(DateTimeOptions.SkipFromToMerge)));
+            }
+
+            throw new Exception($"Extractor '{extractorName}' for Turkish not supported");
+        }
+
+        public static IDateTimeParser GetTurkishParser(DateTimeParsers parserName)
+        {
+            var commonConfiguration = new TurkishCommonDateTimeParserConfiguration(new BaseOptionsConfiguration());
+            switch (parserName)
+            {
+                case DateTimeParsers.Date:
+                    return new BaseDateParser(new TurkishDateParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Time:
+                    return new DateTime.Turkish.TimeParser(new TurkishTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DatePeriod:
+                    return new BaseDatePeriodParser(new TurkishDatePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.TimePeriod:
+                    return new BaseTimePeriodParser(new TurkishTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTime:
+                    return new BaseDateTimeParser(new TurkishDateTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTimePeriod:
+                    return new BaseDateTimePeriodParser(new TurkishDateTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Duration:
+                    return new BaseDurationParser(new TurkishDurationParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Holiday:
+                    return new BaseHolidayParser(new TurkishHolidayParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Set:
+                    return new BaseSetParser(new TurkishSetParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Merged:
+                    return new BaseMergedDateTimeParser(new TurkishMergedParserConfiguration(new BaseOptionsConfiguration()));
+            }
+
+            throw new Exception($"Parser '{parserName}' for Turkish not supported");
+        }
     }
 
     [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1402: CSharp.Naming : File may only contain a single type", Justification = "TODO")]
