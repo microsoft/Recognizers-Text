@@ -1608,5 +1608,38 @@
         "End": 11
       }
     ]
+  },
+  {
+    "Input": "Fiyatı 100 avroydu",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 avroydu",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Euro",
+          "isoCurrency": "EUR"
+        },
+        "Start": 7,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "Fiyatı 50 dolardan başlıyor",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "50 dolardan",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "50",
+          "unit": "Dollar"
+        },
+        "Start": 7,
+        "End": 17
+      }
+    ]
   }
 ]
