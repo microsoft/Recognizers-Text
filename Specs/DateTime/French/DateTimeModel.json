@@ -1686,5 +1686,80 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": []
+  },
+  {
+    "Input": "que faites-vous jusqu'à la semaine prochaine, gratuit pour un verre?",
+    "Context": {
+      "ReferenceDateTime": "2019-07-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "la semaine prochaine",
+        "Start": 24,
+        "End": 43,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W32",
+              "type": "daterange",
+              "start": "2019-08-05",
+              "end": "2019-08-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "prendre un verre la semaine prochaine et discuter",
+    "Context": {
+      "ReferenceDateTime": "2019-07-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "la semaine prochaine",
+        "Start": 17,
+        "End": 36,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W32",
+              "type": "daterange",
+              "start": "2019-08-05",
+              "end": "2019-08-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "où es-tu allé la semaine derniere",
+    "Context": {
+      "ReferenceDateTime": "2019-07-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "la semaine derniere",
+        "Start": 14,
+        "End": 32,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W30",
+              "type": "daterange",
+              "start": "2019-07-22",
+              "end": "2019-07-29"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
