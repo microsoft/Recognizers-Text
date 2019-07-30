@@ -3,38 +3,51 @@
 AgeSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Year: yaş|yaşında|yaşındayım|yaşındayken|yaşından|yıllık
-    Month: aylık|aydan|aylıkken|ay
-    Week: haftalık|haftalıkken
-    Day: günlük
+    Year: yaş|yaşına|yaşında|yaşındayım|yaşındasın|yaşındayız|yaşındasınız|yaşındalar|yaşındayken|yaşından|yaşındadır|yıllık
+    Month: ay|aydan|aylık|aylıkken|aylıktı|aylıkmış|aylıktır
+    Week: haftadan|haftalık|haftalıkken|haftalıktı|haftalıkmış|haftalıktır
+    Day: günden|günlük|günlükken|günlüktü|günlükmüş|günlüktür
 #AreaExtractorConfiguration
 AreaSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Square kilometer: kilometrekare|kilometre kare|km2|km^2|km²
-    Square hectometer: hektometrekare|hektometre kare|hm2|hm^2|hm²
-    Square decameter: dekametrekare|dekametre kare|dam2|dam^2|dam²
-    Square meter: metrekaredir|metrekare|metre kare|m2|m^2|m²
-    Square decimeter: desimetrekare|desimetre kare|dm2|dm^2|dm²
-    Square centimeter: santimetrekare|santimetre kare|cm2|cm^2|cm²
-    Square millimeter: milimetrekare|milimetre kare|mm2|mm^2|mm²
-    Square inch: inç kare|inçkare|in2|in^2|in²
-    Square foot: fit kare|fitkare|ft2|ft^2|ft²|ayakkare
-    Square mile: mil kare|milkare|mi2|mi^2|mi²
-    Square yard: yarda kare|yardakare|yd2|yd^2|yd²
-    Acre: akre|ac|dönümlük|dönüm
-    Ar: ar|a
-    Dekar: dekar|daa
-    Hektar: hektar|ha
+    Square kilometer: kilometrekare|kilometre kare|km2|km^2|km²|kilometrekareye|kilometrekarede|kilometrekareden|kilometrekareyi|kilometrekarenin|kilometrekaredir|kilometrekaresi|kilometrekaresini|kilometrekaresinin|kilometrekareydi|kilometrekareymiş|kilometre kareye|kilometre karede|kilometre kareden|kilometre kareyi|kilometre karenin|kilometre karedir|kilometre karesi|kilometre karesini|kilometre karesinin|kilometre kareydi|kilometre kareymiş
+    Square hectometer: hektometrekare|hektometre kare|hm2|hm^2|hm²|hektometrekareye|hektometrekarede|hektometrekareden|hektometrekareyi|hektometrekarenin|hektometrekaredir|hektometrekaresi|hektometrekaresini|hektometrekaresinin|hektometrekareydi|hektometrekareymiş|hektometre kareye|hektometre karede|hektometre kareden|hektometre kareyi|hektometre karenin|hektometre karedir|hektometre karesi|hektometre karesini|hektometre karesinin|hektometre kareydi|hektometre kareymiş
+    Square decameter: dekametrekare|dekametre kare|dam2|dam^2|dam²|dekametrekareye|dekametrekarede|dekametrekareden|dekametrekareyi|dekametrekarenin|dekametrekaredir|dekametrekaresi|dekametrekaresini|dekametrekaresinin|dekametrekareydi|dekametrekareymiş|dekametre kareye|dekametre karede|dekametre kareden|dekametre kareyi|dekametre karenin|dekametre karedir|dekametre karesi|dekametre karesini|dekametre karesinin|dekametre kareydi|dekametre kareymiş
+    Square meter: metrekare|metre kare|m2|m^2|m²|metrekaredir|metrekareye|metrekarede|metrekareden|metrekareyi|metrekarenin|metrekaredir|metrekaresi|metrekaresini|metrekaresinin|metrekareydi|metrekareymiş|metre kareye|metre karede|metre kareden|metre kareyi|metre karenin|metre karedir|metre karesi|metre karesini|metre karesinin|metre kareydi|metre kareymiş
+    Square decimeter: desimetrekare|desimetre kare|dm2|dm^2|dm²|desimetrekareye|desimetrekarede|desimetrekareden|desimetrekareyi|desimetrekarenin|desimetrekaredir|desimetrekaresi|desimetrekaresini|desimetrekaresinin|desimetrekareydi|desimetrekareymiş|desimetre kareye|desimetre karede|desimetre kareden|desimetre kareyi|desimetre karenin|desimetre karedir|desimetre karesi|desimetre karesini|desimetre karesinin|desimetre kareydi|desimetre kareymiş
+    Square centimeter: santimetrekare|santimetre kare|cm2|cm^2|cm²|santimetrekareye|santimetrekarede|santimetrekareden|santimetrekareyi|santimetrekarenin|santimetrekaredir|santimetrekaresi|santimetrekaresini|santimetrekaresinin|santimetrekareydi|santimetrekareymiş|santimetre kareye|santimetre karede|santimetre kareden|santimetre kareyi|santimetre karenin|santimetre karedir|santimetre karesi|santimetre karesini|santimetre karesinin|santimetre kareydi|santimetre kareymiş
+    Square millimeter: milimetrekare|milimetre kare|mm2|mm^2|mm²|milimetrekareye|milimetrekarede|milimetrekareden|milimetrekareyi|milimetrekarenin|milimetrekaredir|milimetrekaresi|milimetrekaresini|milimetrekaresinin|milimetrekareydi|milimetrekareymiş|milimetre kareye|milimetre karede|milimetre kareden|milimetre kareyi|milimetre karenin|milimetre karedir|milimetre karesi|milimetre karesini|milimetre karesinin|milimetre kareydi|milimetre kareymiş
+    Square inch: inç kare|inçkare|in2|in^2|in²|inçkareye|inçkarede|inçkareden|inçkareyi|inçkarenin|inçkaredir|inçkaresi|inçkaresini|inçkaresinin|inçkareydi|inçkareymiş|inç kareye|inç karede|inç kareden|inç kareyi|inç karenin|inç karedir|inç karesi|inç karesini|inç karesinin|inç kareydi|inç kareymiş
+    Square foot: fit kare|fitkare|ft2|ft^2|ft²|ayakkare|ayak kare|fitkareye|fitkarede|fitkareden|fitkareyi|fitkarenin|fitkaredir|fitkaresi|fitkaresini|fitkaresinin|fitkareydi|fitkareymiş|fit kareye|fit karede|fit kareden|fit kareyi|fit karenin|fit karedir|fit karesi|fit karesini|fit karesinin|fit kareydi|fit kareymiş|ayakkareye|ayakkarede|ayakkareden|ayakkareyi|ayakkarenin|ayakkaredir|ayakkaresi|ayakkaresini|ayakkaresinin|ayakkareydi|ayakkareymiş|ayak kareye|ayak karede|ayak kareden|ayak kareyi|ayak karenin|ayak karedir|ayak karesi|ayak karesini|ayak karesinin|ayak kareydi|ayak kareymiş
+    Square mile: mil kare|milkare|mi2|mi^2|mi²|milkareye|milkarede|milkareden|milkareyi|milkarenin|milkaredir|milkaresi|milkaresini|milkaresinin|milkareydi|milkareymiş|mil kareye|mil karede|mil kareden|mil kareyi|mil karenin|mil karedir|mil karesi|mil karesini|mil karesinin|mil kareydi|mil kareymiş
+    Square yard: yarda kare|yardakare|yd2|yd^2|yd²|yardakareye|yardakarede|yardakareden|yardakareyi|yardakarenin|yardakaredir|yardakaresi|yardakaresini|yardakaresinin|yardakareydi|yardakareymiş|yarda kareye|yarda karede|yarda kareden|yarda kareyi|yarda karenin|yarda karedir|yarda karesi|yarda karesini|yarda karesinin|yarda kareydi|yarda kareymiş
+    Acre: akre|ac|dönümlük|dönüm|akreye|akrede|akreden|akreyi|akrenin|akredir|akresi|akresini|akresinin|akreydi|akreymiş|dönüme|dönümde|dönümden|dönümü|dönümün|dönümdür|dönümünü|dönümünün|dönümüydü|dönümüymüş|dönümlüktür|dönümlüktü|dönümlükmüş
+    Ar: ar|a|ara|arda|ardan|arı|arın|ardır|arını|arının|ardı|armış
+    Dekar: dekar|daa|dekara|dekarda|dekardan|dekarı|dekarın|dekardır|dekarını|dekarının|dekardı|dekarmış
+    Hektar: hektar|ha|hektara|hektarda|hektardan|hektarı|hektarın|hektardır|hektarını|hektarının|hektardı|hektarmış
 AmbiguousAreaUnitList: !list
   types: [ string ]
   entries:
     - fitkare
+    - fit kare
     - ar
+    - ara
+    - arda
+    - ardan
+    - arı
+    - arın
+    - ardır
+    - arını
+    - arının
+    - ardı
+    - armış
+    - akre
     - dönüm
     - ha
     - a
     - daa
+    - ac
 #CurrencyExtractorConfiguration
 CurrencySuffixList: !dictionary
 #Reference Source: https://tr.wikipedia.org/wiki/Kategori:B%C3%B6lgelerine_g%C3%B6re_para_birimleri
@@ -42,349 +55,349 @@ CurrencySuffixList: !dictionary
   entries:
 #Abhazya -> Rus Rublesi
 #Afghan afghani
-    Afganistan afganisi: afganistan afganisi|afgani|؋|afn|af|afs
-    Pul: pul
+    Afganistan afganisi: afganistan afganisi|afgani|؋|afn|af|afs|afganistan afganisine|afganistan afganisinde|afganistan afganisinden|afganistan afganisini|afganistan afganisinin|afganistan afganisidir|afganistan afganisiydi|afganistan afganisiymiş
+    Pul: pul|pula|pulda|puldan|pulu|pulun|puldur|puldu|pulmuş|pulluk
 #Euro
-    Euro: euro|€|eur|avro
-    Cent: sent|s
+    Euro: euro|€|eur|avro|avroya|avroda|avrodan|avroyu|avronun|avrodur|avroydu|avroymuş|avroluk
+    Cent: sent|s|sentte|sentten|senti|sentin|senttir|sentti|sentmiş|sentlik
 #Albanian lek
 #No use of "ALL" "L"
-    Albanian lek: arnavut leki|lek|L|
+    Albanian lek: arnavut leki|lek|L|arnavut lekine|arnavut lekinde|arnavut lekinden|arnavut lekini|arnavut lekinin|arnavut lekinin|arnavut lekidir|arnavut lekiydi|arnavut lekiymiş
     Qindarkë: qindarkë|qindarke
 #Angolan kwanza
-    Angolan kwanza: angola kvanzası|kz|aoa|kvanza 
+    Angolan kwanza: angola kvanzası|kz|aoa|kvanza|angola kvanzasına|angola kvanzasında|angola kvanzasından|angola kvanzasını|angola kvanzasının|angola kvanzasıdır|angola kvanzasıydı|angola kvanzasıymış|kvanzaya|kvanzada|kvanzadan|kvanzayı|kvanzanın|kvanzadır|kvanzaydı|kvanzaymış
 #Armenian
 #No use of "AMD"
-    Armenian dram: ermeni dramı|amd
+    Armenian dram: ermeni dramı|amd|ermeni dramına|ermeni dramında|ermeni dramından|ermeni dramını|ermeni dramının|ermeni dramıdır|ermeni dramıydı|ermeni dramıymış
 #Aruban florin
-    Aruban florin: aruba florini|aruba ƒ|awg|florin
+    Aruban florin: aruba florini|aruba ƒ|awg|aruba florin|aruba florinine|aruba florininde|aruba florininden|aruba florinini|aruba florininin|aruba florinidir|aruba floriniydi||aruba floriniymiş
 #Bangladeshi taka
-    Bangladeshi taka: bangladeş takası|৳|bdt|taka
+    Bangladeshi taka: bangladeş takası|৳|bdt|taka|bangladeş takasına|bangladeş takasında|bangladeş takasından|bangladeş takasını|bangladeş takasının|bangladeş takasıdır|bangladeş takasıydı|bangladeş takasıymış
     Paisa: poisha|paisa
 #Bhutanese ngultrum
-    Bhutanese ngultrum: bhutan ngultrumu|nu.|btn
+    Bhutanese ngultrum: bhutan ngultrumu|nu.|btn|bhutan ngultrumuna|bhutan ngultrumundabhutan ngultrumundan|bhutan ngultrumunu|bhutan ngultrumunun|bhutan ngultrumudur|bhutan ngultrumuydu|bhutan ngultrumuymuş
     Chetrum: chetrum
 #Bolivian boliviano
-    Bolivian boliviano: bolivya bolivyanosu|bob|bs.
+    Bolivian boliviano: bolivya bolivyanosu|bob|bs.|bolivya bolivyanosuna|bolivya bolivyanosunda|bolivya bolivyanosundan|bolivya bolivyanosunu|bolivya bolivyanosunun|bolivya bolivyanosudur|bolivya bolivyanosuydı|bolivya bolivyanosuymuş
 #Bosnia and Herzegovina convertible mark
-    Bosnia and Herzegovina convertible mark: konvertibl bosna hersek markı|konvertibl bosna-hersek markı|bam|km
+    Bosnia and Herzegovina convertible mark: konvertibl bosna hersek markı|konvertibl bosna-hersek markı|bam|km|konvertibl bosna hersek markına|konvertibl bosna hersek markında|konvertibl bosna hersek markından|konvertibl bosna hersek markını|konvertibl bosna hersek markının|konvertibl bosna hersek markıdır|konvertibl bosna hersek markıydı|konvertibl bosna hersek markıymış|konvertibl bosna-hersek markına|konvertibl bosna-hersek markında|konvertibl bosna-hersek markından|konvertibl bosna-hersek markını|konvertibl bosna-hersek markının|konvertibl bosna-hersek markıdır|konvertibl bosna-hersek markıydı|konvertibl bosna-hersek markıymış
     Fening: feninga
 #Botswana pula
-    Botswana pula: botsvana pulası|bwp|pula
+    Botswana pula: botsvana pulası|bwp|botsvana pula|botsvana pulasına|botsvana pulasında|botsvana pulasından|botsvana pulasını|botsvana pulasının|botsvana pulasıdır|botsvana pulasıydı|botsvana pulasıymış
     Thebe: thebe
 #Brazilian real
-    Brazilian real: brezilya reali|r$|brl|real|r
+    Brazilian real: brezilya reali|r$|brl|real|r|brezilya realine|brezilya realinde|brezilya realinden|brezilya realini|brezilya realinin|brezilya realidir|brezilya realiydi|brezilya realiymiş
 #Bulgarian lev
-    Bulgarian lev: bulgar levası|bgn|лв
-    Stotinka: stotinkas
+    Bulgarian lev: bulgar levası|bgn|лв|bulgar levasına|bulgar levasında|bulgar levasından|bulgar levasını|bulgar levasının|bulgar levasıdır|bulgar levasıydı|bulgar levasıymış
+    Stotinka: stotinka|stotinkaya|stotinkada|stotinkadan|stotinkayı|stotinkanın|stotinkadır|stotinkaydı|stotinkaymış
 #Cambodian riel
-    Cambodian riel: kamboçya rieli|khr|៛
+    Cambodian riel: kamboçya rieli|khr|៛|kamboçya rieline|kamboçya rielinde|kamboçya rielinden|kamboçya rielini|kamboçya rielinin|kamboçya rielidir|kamboçya rieliydi|kamboçya rieliymiş
     Sens: sens
 #Cape Verdean escudo
 #No use of "esc" and "$"
-    Cape Verdean escudo: cape verdean esküdosu|cve
+    Cape Verdean escudo: cape verdean esküdosu|cve|cape verdean esküdosuna||cape verdean esküdosunda|cape verdean esküdosundan|cape verdean esküdosunu|cape verdean esküdosunun|cape verdean esküdosudur|cape verdean esküdosuydu|cape verdean esküdosuymuş
 #Costa Rican colón
-    Costa Rican colón: kosta rika kolonu|crc|₡
+    Costa Rican colón: kosta rika kolonu|crc|₡|kosta rika kolonuna|kosta rika kolonunda|kosta rika kolonundan|kosta rika kolonunu|kosta rika kolonunun|kosta rika kolonudur|kosta rika kolonuydu|kosta rika kolonuymuş
 #Salvadoran colón
-    Salvadoran colón: svc|el salvador kolonu
+    Salvadoran colón: svc|el salvador kolonu|el salvador kolonuna|el salvador kolonunda|el salvador kolonundan|el salvador kolonunu|el salvador kolonunun|el salvador kolonudur|el salvador kolonuydu|el salvador kolonuymuş
     Céntimo: céntimo
 #Croatian kuna
-    Croatian kuna: hırvatistan kunası|kn|hrk
-    Lipa: lipa
+    Croatian kuna: hırvatistan kunası|kn|hrk|hırvatistan kunasına|hırvatistan kunasında|hırvatistan kunasından|hırvatistan kunasını|hırvatistan kunasının|hırvatistan kunasıdır|hırvatistan kunasıydı|hırvatistan kunasıymış
+    Lipa: lipa|lipaya|lipada|lipadan|lipayı|lipanın|lipadır|lipaydı|lipaymış
 #Czech koruna
-    Czech koruna: Çek korunası|czk|kč
+    Czech koruna: çek korunası|czk|kč|çek korunasına|çek korunasında|çek korunasından|çek korunasını|çek korunasının|çek korunasıdır|çek korunasıydı|çek korunasıymış
     Haléř: haléř
 #Eritrean nakfa
-    Eritrean nakfa: eritre nakfası|nfk|ern
+    Eritrean nakfa: eritre nakfası|nfk|ern|eritre nakfasına|eritre nakfasında|eritre nakfasından|eritre nakfasını|eritre nakfasının|eritre nakfasıdır|eritre nakfasıydı|eritre nakfasıymış
 #Ethiopian birr
-    Ethiopian birr: etiyopya birri|etb
+    Ethiopian birr: etiyopya birri|etb|etiyopya birrine|etiyopya birrinde|etiyopya birrinden|etiyopya birrini|etiyopya birrinin|etiyopya birridir|etiyopya birriydi|etiyopya birriymiş
 #Gambian dalasi
     Gambian dalasi: gmd
     Butut: butut
 #Georgian lari
-    Georgian lari: gürcistan larisi|lari|gel|₾
-    Tetri: tetri
+    Georgian lari: gürcistan larisi|lari|gel|₾|gürcistan larisine|gürcistan larisinde|gürcistan larisinden|gürcistan larisini|gürcistan larisinin|gürcistan larisidir|gürcistan larisiydi|gürcistan larisiymiş
+    Tetri: tetri|tetriye|tetride|tetriden|tetriyi|tetrinin|tetridir|tetriydi|tetriymiş
 #Ghanaian cedi
-    Ghanaian cedi: gana sedisi|ghs|₵|gh₵
+    Ghanaian cedi: gana sedisi|ghs|₵|gh₵|gana sedisine|gana sedisinde|gana sedisinden|gana sedisini|gana sedisinin|gana sedisidir|gana sedisiydi|gana sedisiymiş
     Pesewa: pesewa
 #Guatemalan quetzal
-    Guatemalan quetzal: guatemala quetzalı|gtq
+    Guatemalan quetzal: guatemala quetzalı|gtq|guatemala quetzalına|guatemala quetzalında|guatemala quetzalından|guatemala quetzalını|guatemala quetzalının|guatemala quetzalıdır|guatemala quetzalıydı|guatemala quetzalıymış
 #Haitian gourde
 #No use of G
-    Haitian gourde: haiti gurdu|htg
+    Haitian gourde: haiti gurdu|htg|haiti gurduna|haiti gurdunda|haiti gurdundan|haiti gurdunu|haiti gurdunun|haiti gurdudur|haiti gurduydu|haiti gurduymuş
 #Honduran lempira
 #No use of L
-    Honduran lempira: honduras lempirası|hnl
+    Honduran lempira: honduras lempirası|hnl|honduras lempirasına|honduras lempirasında|honduras lempirasından|honduras lempirasını|honduras lempirasının|honduras lempirasıdır|honduras lempirasıydı|honduras lempirasıymış
 #Hungarian forint
-    Hungarian forint: macar forinti|huf|ft
+    Hungarian forint: macar forinti|huf|ft|macar forintine|macar forintinde|macar forintinden|macar forintini|macar forintinin|macar forintidir|macar forintiydi|macar forintiymiş
     Fillér: fillér
 #Iranian rial
-    Iranian rial: iran riyali|irr
+    Iranian rial: iran riyali|irr|iran riyaline|iran riyalinde|iran riyalinden|iran riyalini|iran riyalinin|iran riyalidir|iran riyaliydi|iran riyaliymiş
 #Yemeni rial
-    Yemeni rial: yemen riyali|yer
+    Yemeni rial: yemen riyali|yer|yemen riyaline|yemen riyalinde|yemen riyalinden|yemen riyalini|yemen riyalinin|yemen riyalidir|yemen riyaliydi|yemen riyaliymiş
 #Israeli new shekel
-    Israeli new shekel: yeni israil şekeli|₪|ils
+    Israeli new shekel: yeni israil şekeli|₪|ils|yeni israil şekeline|yeni israil şekelinde|yeni israil şekelinden|yeni israil şekelini|yeni israil şekelinin|yeni israil şekelidir|yeni israil şekeliydi|yeni israil şekeliymiş
     Agora: agora
 #Lithuanian litas
-    Lithuanian litas: ltl|litvanya litası
+    Lithuanian litas: ltl|litvanya litası|litvanya litasına|litvanya litasında|litvanya litasından|litvanya litasını|litvanya litasının|litvanya litasıdır|litvanya litasıydı|litvanya litasıymış
 #Japanese yen
-    Japanese yen: japon yeni|jpy|yen|¥|yenlik
+    Japanese yen: japon yeni|jpy|yen|¥|yenlik|japon yenine|japon yeninde|japon yeninden|japon yenini|japon yeninin|japon yenidir|japon yeniydi|japon yeniymiş
 #Kazakhstani tenge
-    Kazakhstani tenge: kazakistan tengesi|kzt
+    Kazakhstani tenge: kazakistan tengesi|kzt|kazakistan tengesine|kazakistan tengesinde|kazakistan tengesinden|kazakistan tengesini|kazakistan tengesinin|kazakistan tengesidir|kazakistan tengesiydi|kazakistan tengesiymiş
 #Kenyan shilling
-    Kenyan shilling: kenya şilini|kenya sh|kes
+    Kenyan shilling: kenya şilini|kenya sh|kes|kenya şilinine|kenya şilininde|kenya şilininden|kenya şilinini|kenya şilininin|kenya şilinidir|kenya şiliniydi|kenya şiliniymiş
 #North Korean won
-    North Korean won: kuzey kore wonu|kpw
-    South Korean won: güney kore wonu|krw
-    Korean won: kore wonu|₩
+    North Korean won: kuzey kore wonu|kpw|kuzey kore wonuna|kuzey kore wonunda|kuzey kore wonundan|kuzey kore wonunu|kuzey kore wonunun|kuzey kore wonudur|kuzey kore wonuydu|kuzey kore wonuymuş
+    South Korean won: güney kore wonu|krw|güney kore wonuna|güney kore wonunda|güney kore wonundan|güney kore wonunu|güney kore wonunun|güney kore wonudur|güney kore wonuydu|güney kore wonuymuş
+    Korean won: kore wonu|₩|kore wonuna|kore wonunda|kore wonundan|kore wonunu|kore wonunun|kore wonudur|kore wonuydu|kore wonuymuş
 #Kyrgyzstani som
-    Kyrgyzstani som: kırgızistan somu|kgs
+    Kyrgyzstani som: kırgızistan somu|kgs|kırgızistan somuna|kırgızistan somunda|kırgızistan somundan|kırgızistan somunu|kırgızistan somunun|kırgızistan somudur|kırgızistan somuydu|kırgızistan somuymuş
 #Uzbekistan som
-    Uzbekitan som: özbekistan somu|uzs
+    Uzbekitan som: özbekistan somu|uzs|özbekistan somuna|özbekistan somunda|özbekistan somundan|özbekistan somunu|özbekistan somunun|özbekistan somudur|özbekistan somuydu|özbekistan somuymuş
 #Lao kip
-    Lao kip: laos kipi|lak|₭n|₭
+    Lao kip: laos kipi|lak|₭n|₭|laos kipine|laos kipinde|laos kipinden|laos kipini|laos kipinin|laos kipidir|laos kipiydi|laos kipiymiş
     Att: att
 #Lesotho loti
-    Lesotho loti: lesotho lotisi|lsl|loti
+    Lesotho loti: lesotho lotisi|lsl|loti|lesotho lotisine|lesotho lotisinde|lesotho lotisinden|lesotho lotisini|lesotho lotisinin|lesotho lotisidir|lesotho lotisiydi|lesotho lotisiymiş
     Sente: sente|lisente
 #South African rand
-    South African rand: güney afrika randı|zar
+    South African rand: güney afrika randı|zar|güney afrika randına|güney afrika randında|güney afrika randından|güney afrika randını|güney afrika randının|güney afrika randıdır|güney afrika randıydı|güney afrika randıymış
 #Macanese pataca
-    Macanese pataca: makao patakası|mop
+    Macanese pataca: makao patakası|mop|makao patakasına|makao patakasında|makao patakasından|makao patakasını|makao patakasının|makao patakasıdır|makao patakasıydı|makao patakasıymış
     Avo: avo
 #Macedonian denar
-    Macedonian denar: makedonya dinarı|makedon denarı|mkd|ден
+    Macedonian denar: makedonya dinarı|makedon denarı|mkd|ден|makedonya dinarına|makedonya dinarında|makedonya dinarından|makedonya dinarını|makedonya dinarının|makedonya dinarıdır|makedonya dinarıydı|makedonya dinarıymış
     Deni: deni
 #Malagasy ariary
     Malagasy ariary: malagasy ariary|mga
     Iraimbilanja: iraimbilanja
 #Malawian kwacha
-    Malawian kwacha: malavi kvaçası|mk|mwk
+    Malawian kwacha: malavi kvaçası|malavi mk|mwk|malavi kvaçasına|malavi kvaçasında|malavi kvaçasından|malavi kvaçasını|malavi kvaçasının|malavi kvaçasıdır|malavi kvaçasıydı|malavi kvaçasıymış
     Tambala: tambala
 #Malaysian ringgit
-    Malaysian ringgit: malezya ringgiti|rm|myr
+    Malaysian ringgit: malezya ringgiti|rm|myr|malezya ringgitine|malezya ringgitinde|malezya ringgitinden|malezya ringgitini|malezya ringgitinin|malezya ringgitidir|malezya ringgitiydi|malezya ringgitiymiş
 #Mauritanian ouguiya
-    Mauritanian ouguiya: moritanya ouguiyası|um|mro
+    Mauritanian ouguiya: moritanya ouguiyası|um|mro|moritanya ouguiyasına|moritanya ouguiyasında|moritanya ouguiyasından|moritanya ouguiyasını|moritanya ouguiyasının|moritanya ouguiyasıdır|moritanya ouguiyasıydı|moritanya ouguiyasıymış
     Khoums: khoums
 #Mongolian tögrög
-    Mongolian tögrög: moğolistan tugriki|mnt|₮
+    Mongolian tögrög: moğolistan tugriki|mnt|₮|moğolistan tugrikine|moğolistan tugrikinde|moğolistan tugrikinden|moğolistan tugrikini|moğolistan tugrikinin|moğolistan tugrikidir|moğolistan tugrikiydi|moğolistan tugrikiymiş
 #Mozambican metical
-    Mozambican metical: mozambik metikali|mt|mzn
+    Mozambican metical: mozambik metikali|mt|mzn|mozambik metikaline|mozambik metikalinde|mozambik metikalinden|mozambik metikalini|mozambik metikalinin|mozambik metikalidir|mozambik metikaliydi|mozambik metikaliymiş
 #Burmese kyat
-    Burmese kyat: burma kyatı|ks|mmk
+    Burmese kyat: burma kyatı|ks|mmk|burma kyatına|burma kyatında|burma kyatından|burma kyatını|burma kyatının|burma kyatıdır|burma kyatıydı|burma kyatıymış
     Pya: pya
 #Nicaraguan córdoba
-    Nicaraguan córdoba: nikaragua kordobası|nio
+    Nicaraguan córdoba: nikaragua kordobası|nio|nikaragua kordobasına|nikaragua kordobasında|nikaragua kordobasından|nikaragua kordobasını|nikaragua kordobasının|nikaragua kordobasıdır|nikaragua kordobasıydı|nikaragua kordobasıymış
 #Nigerian naira
-    Nigerian naira: nijerya nairası|naira|ngn|₦
+    Nigerian naira: nijerya nairası|naira|ngn|₦|nijerya nairasına|nijerya nairasında|nijerya nairasından|nijerya nairasını|nijerya nairasının|nijerya nairasıdır|nijerya nairasıydı|nijerya nairasıymış
     Kobo: kobo
 #Turkish lira
-    Turkish lira: türk lirası|try|tl
-    Kuruş: kuruş
+    Turkish lira: türk lirası|try|tl|türk lirasına|türk lirasında|türk lirasından|türk lirasını|türk lirasının|türk lirasıdır|türk lirasıydı|türk lirasıymış
+    Kuruş: kuruş|kuruşa|kuruşta||kuruştan|kuruşu|kuruşun|kuruştur|kuruştu|kuruşmuş
 #Omani rial
-    Omani rial: umman riyali|omr|ر.ع.
+    Omani rial: umman riyali|omr|ر.ع.|umman riyaline|umman riyalinde|umman riyalinden|umman riyalini|umman riyalinin|umman riyalidir|umman riyaliydi|umman riyaliymiş
 #Panamanian balboa
-    Panamanian balboa: panama balboası|b/.|pab
+    Panamanian balboa: panama balboası|b/.|pab|panama balboasına|panama balboasında|panama balboasından|panama balboasını|panama balboasının|panama balboasıdır|panama balboasıydı|panama balboasıymış
     Centesimo: centesimo
 #Papua New Guinean kina
-    Papua New Guinean kina: papua yeni gine kinası|kina|pgk
+    Papua New Guinean kina: papua yeni gine kinası|kina|pgk|papua yeni gine kinasına|papua yeni gine kinasında|papua yeni gine kinasından|papua yeni gine kinasını|papua yeni gine kinasının|papua yeni gine kinasıdır|papua yeni gine kinasıydı|papua yeni gine kinasıymış
     Toea: toea
 #Paraguayan guaraní
-    Paraguayan guaraní: paraguay guaranisi|₲|pyg
+    Paraguayan guaraní: paraguay guaranisi|₲|pyg|paraguay guaranisine|paraguay guaranisinde|paraguay guaranisinden|paraguay guaranisini|paraguay guaranisinin|paraguay guaranisidir|paraguay guaranisiydi|paraguay guaranisiymiş
 #Peruvian sol
-    Peruvian sol: peru solü|sol|peru nuevo solü|pen
+    Peruvian sol: peru solü|sol|peru nuevo solü|pen|peru solüne|peru solünde|peru solünden|peru solünü|peru solünün|peru solüdür|peru solüydü|peru solüymüş|peru nuevo solüne|peru nuevo solünde|peru nuevo solünden|peru nuevo solünü|peru nuevo solünün|peru nuevo solüdür|peru nuevo solüydü|peru nuevo solüymüş
 #Polish zloty
-    Polish złoty: zloti|polonya zlotisi|zł|pln
+    Polish złoty: zloti|polonya zlotisi|zł|pln|polonya zlotisine|polonya zlotisinde|polonya zlotisinden|polonya zlotisini|polonya zlotisinin|polonya zlotisidir|polonya zlotisiydi|polonya zlotisiymiş|zlotiye|zlotide|zlotiden|zlotiyi|zlotinin|zlotidir|zlotiydi|zlotiymiş
     Grosz: grosz
 #Qatari riyal
-    Qatari riyal: katar riyali|qar
-    Saudi riyal: suudi arabistan riyali|sar
-    Riyal: riyal|﷼
-    Qatari dirham: qatari dirhem
-    Halala: halala
+    Qatari riyal: katar riyali|qar|katar riyaline|katar riyalinde|katar riyalinden|katar riyalini|katar riyalinin|katar riyalidir|katar riyaliydi|katar riyaliymiş
+    Saudi riyal: suudi arabistan riyali|sar|suudi arabistan riyaline|suudi arabistan riyalinde|suudi arabistan riyalinden|suudi arabistan riyalini|suudi arabistan riyalinin|suudi arabistan riyalidir|suudi arabistan riyaliydi|suudi arabistan riyaliymiş
+    Riyal: riyal|﷼|riyale|riyalde|riyalden|riyali|riyalini|riyalinin|riyalidir|riyaliydi|riyaliymiş
+    Qatari dirham: katar dirhem|katar dirheme|katar dirhemde|katar dirhemden|katar dirhemi|katar dirhemin|katar dirheminin|katar dirhemdir|katar dirhemdi|katar dirhemmiş
+    Halala: halala|halalaya|halalada|halaladan|halalayı|halalanın|halaladır|halalaydı|halalaymış
 #Samoan tālā
-    Samoan tālā: Samoa talası|tala|wst
-    Sene: sene
+    Samoan tālā: samoa talası|tālā|tala|wst|samoa talasına|samoa talasında|samoa talasından|samoa talasını|samoa talasının|samoa talasıdır|samoa talasıydı|samoa talasıymış
+    Sene: sene|seneye|senede|seneden|seneyi|senenin|senedir|seneydi|seneymiş
 #São Tomé and Príncipe dobra
-    São Tomé and Príncipe dobra: são tomé ve príncipe dobrası|sao tome ve principe dobrası|dobra|std
+    São Tomé and Príncipe dobra: são tomé ve príncipe dobrası|sao tome ve principe dobrası|dobra|std|são tomé ve príncipe dobrasına|são tomé ve príncipe dobrasında|são tomé ve príncipe dobrasından|são tomé ve príncipe dobrasını|são tomé ve príncipe dobrasının|são tomé ve príncipe dobrasıdır|são tomé ve príncipe dobrasıydı|são tomé ve príncipe dobrasıymış
 #Sierra Leonean leone
-    Sierra Leonean leone: sierra leone leonesi|sll|le
+    Sierra Leonean leone: sierra leone leonesi|sll|le|sierra leone leonesine|sierra leone leonesinde|sierra leone leonesinden|sierra leone leonesini|sierra leone leonesinin|sierra leone leonesidir|sierra leone leonesiydi|sierra leone leonesiymiş
 #Spain
-    Peseta: ispanyol pesetası|peseta|esp
+    Peseta: ispanyol pesetası|peseta|esp|ispanyol pesetasına|ispanyol pesetasında|ispanyol pesetasından|ispanyol pesetasını|ispanyol pesetasının|ispanyol pesetasıdır|ispanyol pesetasıydı|ispanyol pesetasıymış
 #Netherlands guilder
-    Netherlands guilder: hollanda antilleri|hollanda guldeni|ang|gulden|hollanda ƒ|fl|nlg|hollanda florini
+    Netherlands guilder: hollanda antilleri|hollanda guldeni|ang|gulden|hollanda ƒ|fl|nlg|hollanda florini|hollanda florin|hollanda antillerine|hollanda antillerinde|hollanda antillerinden|hollanda antillerini|hollanda antillerinin|hollanda antilleridir|hollanda antilleriydi|hollanda antilleriymiş|hollanda guldenine|hollanda guldeninde|hollanda guldeninden|hollanda guldenini|hollanda guldeninin|hollanda guldenidir|hollanda guldeniydi|hollanda guldeniymiş|hollanda florinine|hollanda florininde|hollanda florininden|hollanda florinini|hollanda florininin|hollanda florinidir|hollanda floriniydi|hollanda floriniymiş
 #Swazi lilangeni
-    Swazi lilangeni: svaziland lilangenisi|lilangeni|szl
+    Swazi lilangeni: svaziland lilangenisi|lilangeni|szl|svaziland lilangenisine|svaziland lilangenisinde|svaziland lilangenisinden|svaziland lilangenisini|svaziland lilangenisinin|svaziland lilangenisidir|svaziland lilangenisiydi|svaziland lilangenisiymiş
 #Tajikistani somoni
-    Tajikistani somoni: tacikistan somonisi|tjs|somoni
+    Tajikistani somoni: tacikistan somonisi|tjs|somoni|tacikistan somonisine|tacikistan somonisinde|tacikistan somonisinden|tacikistan somonisini|tacikistan somonisinin|tacikistan somonisidir|tacikistan somonisiydi|tacikistan somonisiymiş
     Diram: diram
 #Thai baht
-    Thai baht: tayland bahtı|฿|thb|baht
+    Thai baht: tayland bahtı|฿|thb|baht|tayland bahtına|tayland bahtında|tayland bahtından|tayland bahtını|tayland bahtının|tayland bahtıdır|tayland bahtıydı|tayland bahtıymış
     Satang: satang
 #Tongan paʻanga
-    Tongan paʻanga: tonga paʻangası|paʻanga|tonga pa'angası|pa'anga
+    Tongan paʻanga: tonga paʻangası|paʻanga|tonga pa'angası|pa'anga|tonga paʻangasına|tonga paʻangasında|tonga paʻangasından|tonga paʻangasını|tonga paʻangasının|tonga paʻangasıdır|tonga paʻangasıydı|tonga paʻangasıymış|tonga pa'angasına|tonga pa'angasında|tonga pa'angasından|tonga pa'angasını|tonga pa'angasının|tonga pa'angasıdır|tonga pa'angasıydı|tonga pa'angasıymış
     Seniti: seniti
 #Ukrainian hryvnia
-    Ukrainian hryvnia: ukrayna grivnası|grivna|uah|₴
+    Ukrainian hryvnia: ukrayna grivnası|grivna|uah|₴|ukrayna grivnasına|ukrayna grivnasında|ukrayna grivnasından|ukrayna grivnasını|ukrayna grivnasının|ukrayna grivnasıdır|ukrayna grivnasıydı|ukrayna grivnasıymış
 #Vanuatu vatu
-    Vanuatu vatu: vanuatu vatusu|vatu|vuv
+    Vanuatu vatu: vanuatu vatusu|vatu|vuv|vanuatu vatusuna|vanuatu vatusunda|vanuatu vatusundan|vanuatu vatusunu|vanuatu vatusunun|vanuatu vatusudur|vanuatu vatusuydu|vanuatu vatusuymuş
 #Venezuelan bolívar
-    Venezuelan bolívar: venezuela bolívarı|venezuela bolivarı|bs.f.|vef
+    Venezuelan bolívar: venezuela bolívarı|venezuela bolivarı|bs.f.|vef|venezuela bolívarına|venezuela bolívarında|venezuela bolívarından|venezuela bolívarını|venezuela bolívarının|venezuela bolívarıdır|venezuela bolívarıydı|venezuela bolívarıymış|venezuela bolivarına|venezuela bolivarında|venezuela bolivarından|venezuela bolivarını|venezuela bolivarının|venezuela bolivarıdır|venezuela bolivarıydı|venezuela bolivarıymış
 #Vietnamese dong
-    Vietnamese dong: vietnam dongu|vnd|đồng|dong
+    Vietnamese dong: vietnam dongu|vnd|đồng|dong|vietnam donguna|vietnam dongunda|vietnam dongundan|vietnam dongunu|vietnam dongunun|vietnam dongudur|vietnam donguydu|vietnam donguymuş
     Hàos: hàos|haos
 #Zambian kwacha
-    Zambian kwacha: zambiya kvaçası|zk|zmw|kvaça
+    Zambian kwacha: zambiya kvaçası|zk|zmw|kvaça|zambiya kvaçasına|zambiya kvaçasında|zambiya kvaçasından|zambiya kvaçasını|zambiya kvaçasının|zambiya kvaçasıdır|zambiya kvaçasıydı|zambiya kvaçasıymış|kvaçaya|kvaçada|kvaçadan|kvaçayı|kvaçanın|kvaçadır|kvaçaydı|kvaçaymış
 #Dirham
-    Moroccan dirham: fas dirhemi|mad|د.م.
-    United Arab Emirates dirham: birleşik arap emirlikleri|د.إ|aed
+    Moroccan dirham: fas dirhemi|mad|د.م.|fas dirhemine|fas dirheminde|fas dirheminden|fas dirhemini|fas dirheminin|fas dirhemidir|fas dirhemiydi|fas dirhemiymiş
+    United Arab Emirates dirham: birleşik arap emirlikleri dirhemi|د.إ|aed|birleşik arap emirlikleri dirhemine|birleşik arap emirlikleri dirheminde|birleşik arap emirlikleri dirheminden|birleşik arap emirlikleri dirhemini|birleşik arap emirlikleri dirheminin|birleşik arap emirlikleri dirhemidir|birleşik arap emirlikleri dirhemiydi|birleşik arap emirlikleri dirhemiymiş
 #Manat
-    Azerbaijani manat: azerbaycan manatı|azn
-    Turkmenistan manat: türkmenistan manatı|türkmenistan yeni manat|tmt
-    Manat: manat
+    Azerbaijani manat: azerbaycan manatı|azn|azerbaycan manatına|azerbaycan manatında|azerbaycan manatından|azerbaycan manatını|azerbaycan manatının|azerbaycan manatıdır|azerbaycan manatıydı|azerbaycan manatıymış
+    Turkmenistan manat: türkmenistan manatı|türkmenistan yeni manat|tmt|türkmenistan manatına|türkmenistan manatında|türkmenistan manatından|türkmenistan manatını|türkmenistan manatının|türkmenistan manatıdır|türkmenistan manatıydı|türkmenistan manatıymış
+    Manat: manat|manata|manatta|manattan|manatı|manatın|manattır|manattı|manatmış
     Qəpik: qəpik|qepik
 #Shilling
-    Somali shilling: somali şilini|sos
-    Somaliland shilling: somaliland şilini
-    Tanzanian shilling: tanzanya şilini|tsh|tzs
-    Ugandan shilling: uganda şilini|uganda sh|ugx
+    Somali shilling: somali şilini|sos|somali şilinine|somali şilininde|somali şilininden|somali şilinini|somali şilininin|somali şilinidir|somali şiliniydi|somali şiliniymiş
+    Somaliland shilling: somaliland şilini|somaliland şilinine|somaliland şilininde|somaliland şilininden|somaliland şilinini|somaliland şilininin|somaliland şilinidir|somaliland şiliniydi|somaliland şiliniymiş
+    Tanzanian shilling: tanzanya şilini|tsh|tzs|tanzanya şilinine|tanzanya şilininde|tanzanya şilininden|tanzanya şilinini|tanzanya şilininin|tanzanya şilinidir|tanzanya şiliniydi|tanzanya şiliniymiş
+    Ugandan shilling: uganda şilini|uganda sh|ugx|uganda şilinine|uganda şilininde|uganda şilininden|uganda şilinini|uganda şilininin|uganda şilinidir|uganda şiliniydi|uganda şiliniymiş
 #Leu
-    Romanian leu: romen leyi|rumen leyi|ron
-    Moldovan leu: moldova leyi|mdl
+    Romanian leu: romen leyi|rumen leyi|ron|romen leyine|romen leyinde|romen leyinden|romen leyini|romen leyinin|romen leyidir|romen leyiydi|romen leyiymiş|rumen leyine|rumen leyinde|rumen leyinden|rumen leyini|rumen leyinin|rumen leyidir|rumen leyiydi|rumen leyiymiş
+    Moldovan leu: moldova leyi|mdl|moldova leyine|moldova leyinde|moldova leyinden|moldova leyini|moldova leyinin|moldova leyidir|moldova leyiydi|moldova leyiymiş
     Leu: ley
     Ban: ban
 #Rupee
-    Nepalese rupee: nepal rupisi|npr
-    Pakistani rupee: pakistan rupisi|pkr
-    Indian rupee: hindistan rupisi|inr|₹
-    Seychellois rupee: seyşeller rupisi|scr|sr|sre
-    Mauritian rupee: mauritius rupisi|mur
-    Maldivian rufiyaa: maldiv rufiyaası|mvr|.ރ
-    Sri Lankan rupee: sri lanka rupisi|lkr|රු|ரூ
-    Indonesian rupiah: Endonezya rupiahı|rupiah|perak|rp|idr
-    Rupee: rupi
+    Nepalese rupee: nepal rupisi|npr|nepal rupisine|nepal rupisinde|nepal rupisinden|nepal rupisini|nepal rupisinin|nepal rupisidir|nepal rupisiydi|nepal rupisiymiş
+    Pakistani rupee: pakistan rupisi|pkr|pakistan rupisine|pakistan rupisinde|pakistan rupisinden|pakistan rupisini|pakistan rupisinin|pakistan rupisidir|pakistan rupisiydi|pakistan rupisiymiş
+    Indian rupee: hindistan rupisi|inr|₹|hindistan rupisine|hindistan rupisinde|hindistan rupisinden|hindistan rupisini|hindistan rupisinin|hindistan rupisidir|hindistan rupisiydi|hindistan rupisiymiş
+    Seychellois rupee: seyşeller rupisi|scr|sr|sre|seyşeller rupisine|seyşeller rupisinde|seyşeller rupisinden|seyşeller rupisini|seyşeller rupisinin|seyşeller rupisidir|seyşeller rupisiydi|seyşeller rupisiymiş
+    Mauritian rupee: mauritius rupisi|mur|mauritius rupisine|mauritius rupisinde|mauritius rupisinden|mauritius rupisini|mauritius rupisinin|mauritius rupisidir|mauritius rupisiydi|mauritius rupisiymiş
+    Maldivian rufiyaa: maldiv rufiyaası|maldiv rf|mvr|.ރ|maldiv rufiyaasına|maldiv rufiyaasında|maldiv rufiyaasından|maldiv rufiyaasını|maldiv rufiyaasının|maldiv rufiyaasıdır|maldiv rufiyaasıydı|maldiv rufiyaasıymış
+    Sri Lankan rupee: sri lanka rupisi|lkr|රු|ரூ|sri lanka rupisine|sri lanka rupisinde|sri lanka rupisinden|sri lanka rupisini|sri lanka rupisinin|sri lanka rupisidir|sri lanka rupisiydi|sri lanka rupisiymiş
+    Indonesian rupiah: endonezya rupiahı|rupiah|perak|rp|idr|endonezya rupiahına|endonezya rupiahında|endonezya rupiahından|endonezya rupiahını|endonezya rupiahının|endonezya rupiahıdır|endonezya rupiahıydı|endonezya rupiahıymış
+    Rupee: rupi|rupiye|rupide|rupiden|rupiyi|rupinin|rupidir|rupiydi|rupiymiş
 #Krone
-    Danish krone: danimarka kronu|dkk
-    Norwegian krone: norveç kronu|nok
+    Danish krone: danimarka kronu|dkk|danimarka kronuna|danimarka kronunda|danimarka kronundan|danimarka kronunu|danimarka kronunun|danimarka kronudur|danimarka kronuydu|danimarka kronuymuş
+    Norwegian krone: norveç kronu|nok|norveç kronuna|norveç kronunda|norveç kronundan|norveç kronunu|norveç kronunun|norveç kronudur|norveç kronuydu|norveç kronuymuş
     #Faroese króna -> Danimarka Kronu
-    Icelandic króna: izlanda kronu|isk
-    Swedish krona: isveç kronu|sek
-    Krone: kron
+    Icelandic króna: izlanda kronu|isk|izlanda kronuna|izlanda kronunda|izlanda kronundan|izlanda kronunu|izlanda kronunun|izlanda kronudur|izlanda kronuydu|izlanda kronuymuş
+    Swedish krona: isveç kronu|sek|isveç kronuna|isveç kronunda|isveç kronundan|isveç kronunu|isveç kronunun|isveç kronudur|isveç kronuydu|isveç kronuymuş
+    Krone: kron|krona|kronda|krondan|kronu|kronun|krondur|krondu|kronmuş
     Øre: Øre|oyra|eyrir
 #Franc
-    West African CFA franc: batı afrika cfa frangı|xof
-    Central African CFA franc: orta afrika cfa frangı|xaf
-    Comorian franc: komorlar franc|kmf
-    Congolese franc: kongo frangı|cdf
-    Burundian franc: burundi frangı|bif
-    Djiboutian franc: cibuti frangı|djf
-    CFP franc: cfp frangı|xpf
-    Guinean franc: gine frangı|gnf
-    Swiss franc: isviçre frangı|chf|sfr.
-    Rwandan franc: Ruanda frangı|rwf|rf|r₣|frw
-    Belgian franc: belçika frangı|bi.|b.fr.|bef
+    West African CFA franc: batı afrika cfa frangı|xof|batı afrika cfa frangına|batı afrika cfa frangında|batı afrika cfa frangından|batı afrika cfa frangını|batı afrika cfa frangının|batı afrika cfa frangıdır|batı afrika cfa frangıydı|batı afrika cfa frangıymış
+    Central African CFA franc: orta afrika cfa frangı|xaf|orta afrika cfa frangına|orta afrika cfa frangında|orta afrika cfa frangından|orta afrika cfa frangını|orta afrika cfa frangının|orta afrika cfa frangıdır|orta afrika cfa frangıydı|orta afrika cfa frangıymış
+    Comorian franc: komorlar frangı|kmf|komorlar frangına|komorlar frangında|komorlar frangından|komorlar frangını|komorlar frangının|komorlar frangıdır|komorlar frangıydı|komorlar frangıymış
+    Congolese franc: kongo frangı|cdf|kongo frangına|kongo frangında|kongo frangından|kongo frangını|kongo frangının|kongo frangıdır|kongo frangıydı|kongo frangıymış
+    Burundian franc: burundi frangı|bif|burundi frangına|burundi frangında|burundi frangından|burundi frangını|burundi frangının|burundi frangıdır|burundi frangıydı|burundi frangıymış
+    Djiboutian franc: cibuti frangı|djf|cibuti frangına|cibuti frangında|cibuti frangından|cibuti frangını|cibuti frangının|cibuti frangıdır|cibuti frangıydı|cibuti frangıymış
+    CFP franc: cfp frangı|xpf|cfp frangına|cfp frangında|cfp frangından|cfp frangını|cfp frangının|cfp frangıdır|cfp frangıydı|cfp frangıymış
+    Guinean franc: gine frangı|gnf|gine frangına|gine frangında|gine frangından|gine frangını|gine frangının|gine frangıdır|gine frangıydı|gine frangıymış
+    Swiss franc: isviçre frangı|chf|sfr.|isviçre frangına|isviçre frangında|isviçre frangından|isviçre frangını|isviçre frangının|isviçre frangıdır|isviçre frangıydı|isviçre frangıymış
+    Rwandan franc: ruanda frangı|rwf|ruanda rf|r₣|frw|ruanda frangına|ruanda frangında|ruanda frangından|ruanda frangını|ruanda frangının|ruanda frangıdır|ruanda frangıydı|ruanda frangıymış
+    Belgian franc: belçika frangı|bi.|b.fr.|bef|belçika frangına|belçika frangında|belçika frangından|belçika frangını|belçika frangının|belçika frangıdır|belçika frangıydı|belçika frangıymış
     Rappen: rappen
-    Franc: frank|fr.|fs
+    Franc: frank|fr.|fs|franga|frankta|frantan|frangı|frangın|franktır|franktı|frankmış
     Centime: centime
 #Ruble
-    Russian ruble: rus rublesi|₽|rub
-    New Belarusian ruble: yeni beyaz rusya rublesi|yeni belarus rublesi|byn
-    Old Belarusian ruble: eski beyaz rusya rublesi|eski belarus rublesi|byr
-    Transnistrian ruble: transdinyester rublesi|prb|р.
-    Belarusian ruble: beyaz rusya rublesi|belarus rublesi
-    Kopek: kopek
+    Russian ruble: rus rublesi|₽|rub|rus rublesine|rus rublesinde|rus rublesinden|rus rublesini|rus rublesinin|rus rublesidir|rus rublesiydi|rus rublesiymiş
+    New Belarusian ruble: yeni beyaz rusya rublesi|yeni belarus rublesi|byn|yeni beyaz rusya rublesine|yeni beyaz rusya rublesinde|yeni beyaz rusya rublesinden|yeni beyaz rusya rublesini|yeni beyaz rusya rublesinin|yeni beyaz rusya rublesidir|yeni beyaz rusya rublesiydi|yeni beyaz rusya rublesiymiş|yeni belarus rublesine|yeni belarus rublesinde|yeni belarus rublesinden|yeni belarus rublesini|yeni belarus rublesinin|yeni belarus rublesidir|yeni belarus rublesiydi|yeni belarus rublesiymiş
+    Old Belarusian ruble: eski beyaz rusya rublesi|eski belarus rublesi|byr|eski beyaz rusya rublesine|eski beyaz rusya rublesinde|eski beyaz rusya rublesinden|eski beyaz rusya rublesini|eski beyaz rusya rublesinin|eski beyaz rusya rublesidir|eski beyaz rusya rublesiydi|eski beyaz rusya rublesiymiş|eski belarus rublesine|eski belarus rublesinde|eski belarus rublesinden|eski belarus rublesini|eski belarus rublesinin|eski belarus rublesidir|eski belarus rublesiydi|eski belarus rublesiymiş
+    Transnistrian ruble: transdinyester rublesi|prb|р.|transdinyester rublesine|transdinyester rublesinde|transdinyester rublesinden|transdinyester rublesini|transdinyester rublesinin|transdinyester rublesidir|transdinyester rublesiydi|transdinyester rublesiymiş
+    Belarusian ruble: beyaz rusya rublesi|belarus rublesi|beyaz rusya rublesine|beyaz rusya rublesinde|beyaz rusya rublesinden|beyaz rusya rublesini|beyaz rusya rublesinin|beyaz rusya rublesidir|beyaz rusya rublesiydi|beyaz rusya rublesiymiş|belarus rublesine|belarus rublesinde|belarus rublesinden|belarus rublesini|belarus rublesinin|belarus rublesidir|belarus rublesiydi|belarus rublesiymiş
+    Kopek: kopek|kopeğe|kopekte|kopekten|kopeği|kopeğin|kopektir|kopekti|kopekmiş
     Kapyeyka: kapyeyka
-    Ruble: ruble|br
+    Ruble: ruble|br|rubleye|rublede|rubleden|rubleyi|rublenin|rubledir|rubleydi|rubleymiş
 #Dinar
-    Algerian dinar: cezayir dinarı|د.ج|dzd
-    Bahraini dinar: bahreyn dinarı|bhd|.د.ب
-    Santeem: santeem
-    Iraqi dinar: ırak dinarı|iqd|ع.د
-    Jordanian dinar: ürdün dinarı|د.ا|jod
-    Kuwaiti dinar: kuveyt dinarı|kwd|د.ك
-    Libyan dinar: libya dinarı|lyd
-    Serbian dinar: sırp dinarı|din.|rsd|дин.
-    Tunisian dinar: tunus dinarı|tnd
-    Yugoslav dinar: yugoslav dinarı|yun
-    Dinar: dinar
-    Fils: fils
+    Algerian dinar: cezayir dinarı|د.ج|dzd|cezayir dinarına|cezayir dinarında|cezayir dinarından|cezayir dinarını|cezayir dinarının|cezayir dinarıdır|cezayir dinarıydı|cezayir dinarıymış
+    Bahraini dinar: bahreyn dinarı|bhd|.د.ب|bahreyn dinarına|bahreyn dinarında|bahreyn dinarından|bahreyn dinarını|bahreyn dinarının|bahreyn dinarıdır|bahreyn dinarıydı|bahreyn dinarıymış
+    Santeem: santeem|santeeme|santeemde|santeemden|santeemi|santeemin|santeemdir|santeemdi|santeemmiş
+    Iraqi dinar: ırak dinarı|iqd|ع.د|ırak dinarına|ırak dinarında|ırak dinarından|ırak dinarını|ırak dinarının|ırak dinarıdır|ırak dinarıydı|ırak dinarıymış
+    Jordanian dinar: ürdün dinarı|د.ا|jod|ürdün dinarına|ürdün dinarında|ürdün dinarından|ürdün dinarını|ürdün dinarının|ürdün dinarıdır|ürdün dinarıydı|ürdün dinarıymış
+    Kuwaiti dinar: kuveyt dinarı|kwd|د.ك|kuveyt dinarına|kuveyt dinarında|kuveyt dinarından|kuveyt dinarını|kuveyt dinarının|kuveyt dinarıdır|kuveyt dinarıydı|kuveyt dinarıymış
+    Libyan dinar: libya dinarı|lyd|libya dinarına|libya dinarında|libya dinarından|libya dinarını|libya dinarının|libya dinarıdır|libya dinarıydı|libya dinarıymış
+    Serbian dinar: sırp dinarı|din.|rsd|дин.|sırp dinarına|sırp dinarında|sırp dinarından|sırp dinarını|sırp dinarının|sırp dinarıdır|sırp dinarıydı|sırp dinarıymış
+    Tunisian dinar: tunus dinarı|tnd|tunus dinarına|tunus dinarında|tunus dinarından|tunus dinarını|tunus dinarının|tunus dinarıdır|tunus dinarıydı|tunus dinarıymış
+    Yugoslav dinar: yugoslav dinarı|yun|yugoslav dinarına|yugoslav dinarında|yugoslav dinarından|yugoslav dinarını|yugoslav dinarının|yugoslav dinarıdır|yugoslav dinarıydı|yugoslav dinarıymış
+    Dinar: dinar|dinara|dinarda|dinardan|dinarı|dinarın|dinardır|dinardı|dinarmış
+    Fils: fils|filse|filste|filsten|filsi|filsin|filstir|filsti|filsmiş
     Para: para|napa
-    Santim: santim|santîm
-    Dirhem: dirhem
-    Millime: milim
+    Santim: santim|santîm|santime|santimde|santimden|santimi|santimin|santimdir|santimdi|santimmiş
+    Dirhem: dirhem|dirheme|dirhemde|dirhemden|dirhemi|dirhemin|dirhemdir|dirhemdi|dirhemmiş
+    Millime: milim|milime|milimde|milimden|milimi|milimin|milimdir|milimdi|milimmiş
 #Peso
-    Argentine peso: arjantin pesosu|ars
-    Chilean peso: şili pesos|clp
-    Colombian peso: kolombiya pesosu|cop
-    Cuban convertible peso: konvertibl küba pesosu|cuc
-    Cuban peso: küba pesosu|cup
-    Dominican peso: dominik pesosu|dop
-    Mexican peso: meksika pesosu|mxn
-    Philippine peso: filipinler pesosu|₱|php
-    Uruguayan peso: uruguay pesos|uyu
-    Peso: peso
+    Argentine peso: arjantin pesosu|ars|arjantin pesosuna|arjantin pesosunda|arjantin pesosundan|arjantin pesosunu|arjantin pesosunun|arjantin pesosudur|arjantin pesosuydu|arjantin pesosuymuş
+    Chilean peso: şili pesosu|clp|şili pesosuna|şili pesosunda|şili pesosundan|şili pesosunu|şili pesosunun|şili pesosudur|şili pesosuydu|şili pesosuymuş
+    Colombian peso: kolombiya pesosu|cop|kolombiya pesosuna|kolombiya pesosunda|kolombiya pesosundan|kolombiya pesosunu|kolombiya pesosunun|kolombiya pesosudur|kolombiya pesosuydu|kolombiya pesosuymuş
+    Cuban convertible peso: konvertibl küba pesosu|cuc|konvertibl küba pesosuna|konvertibl küba pesosunda|konvertibl küba pesosundan|konvertibl küba pesosunu|konvertibl küba pesosunun|konvertibl küba pesosudur|konvertibl küba pesosuydu|konvertibl küba pesosuymuş
+    Cuban peso: küba pesosu|cup|küba pesosuna|küba pesosunda|küba pesosundan|küba pesosunu|küba pesosunun|küba pesosudur|küba pesosuydu|küba pesosuymuş
+    Dominican peso: dominik pesosu|dop|dominik pesosuna|dominik pesosunda|dominik pesosundan|dominik pesosunu|dominik pesosunun|dominik pesosudur|dominik pesosuydu|dominik pesosuymuş
+    Mexican peso: meksika pesosu|mxn|meksika pesosuna|meksika pesosunda|meksika pesosundan|meksika pesosunu|meksika pesosunun|meksika pesosudur|meksika pesosuydu|meksika pesosuymuş
+    Philippine peso: filipinler pesosu|₱|php|filipinler pesosuna|filipinler pesosunda|filipinler pesosundan|filipinler pesosunu|filipinler pesosunun|filipinler pesosudur|filipinler pesosuydu|filipinler pesosuymuş
+    Uruguayan peso: uruguay pesosu|uyu|uruguay pesosuna|uruguay pesosunda|uruguay pesosundan|uruguay pesosunu|uruguay pesosunun|uruguay pesosudur|uruguay pesosuydu|uruguay pesosuymuş
+    Peso: peso|pesoya|pesoda|pesodan|pesoyu|pesodur|pesoydu|pesoymuş
     Centavo: centavo
 #Pound
     #Alderney pound -> Sterlin (GBP)
-    British pound: ingiliz sterlini|ingiliz £|gbp|ingiliz poundu
-    Guernsey pound: guernsey sterlini|ggp|guernsey poundu|guernsey £
+    British pound: ingiliz sterlini|ingiliz £|gbp|ingiliz poundu|ingiliz sterlinine|ingiliz sterlininde|ingiliz sterlininden|ingiliz sterlinini|ingiliz sterlininin|ingiliz sterlinidir|ingiliz sterliniydi|ingiliz sterliniymiş|ingiliz pounduna|ingiliz poundunda|ingiliz poundundan|ingiliz poundunu|ingiliz poundunun|ingiliz poundudur|ingiliz pounduydu|ingiliz pounduymuş
+    Guernsey pound: guernsey sterlini|guernsey £|ggp|guernsey poundu|guernsey sterlinine|guernsey sterlininde|guernsey sterlininden|guernsey sterlinini|guernsey sterlininin|guernsey sterlinidir|guernsey sterliniydi|guernsey sterliniymiş|guernsey pounduna|guernsey poundunda|guernsey poundundan|guernsey poundunu|guernsey poundunun|guernsey poundudur|guernsey pounduydu|guernsey pounduymuş
     #Ascension pound -> Saint Helena sterlini
-    Saint Helena pound: saint helena sterlini|saint helena £|shp|saint helena poundu
-    Egyptian pound: mısır lirası|egp|ج.م
-    Falkland Islands pound: falkland adaları sterlini|falkland adaları £|fkp|falkland adaları poundu
-    Gibraltar pound: gibraltar sterlini|gibraltar £|gip|gibraltar poundu
-    Manx pound: manx sterlini|manx £|imp|manx poundu
-    Jersey pound: jersey sterlini|jersey £|jep|jersey poundu
-    Lebanese pound: lübnan lirası|lbp|ل.ل
+    Saint Helena pound: saint helena sterlini|saint helena £|shp|saint helena poundu|saint helena sterlinine|saint helena sterlininde|saint helena sterlininden|saint helena sterlinini|saint helena sterlininin|saint helena sterlinidir|saint helena sterliniydi|saint helena sterliniymiş|saint helena pounduna|saint helena poundunda|saint helena poundundan|saint helena poundunu|saint helena poundunun|saint helena poundudur|saint helena pounduydu|saint helena pounduymuş
+    Egyptian pound: mısır lirası|egp|ج.م|mısır lirasına|mısır lirasında|mısır lirasından|mısır lirasını|mısır lirasının|mısır lirasıdır|mısır lirasıydı|mısır lirasıymış
+    Falkland Islands pound: falkland adaları sterlini|falkland adaları £|fkp|falkland adaları poundu|falkland adaları sterlinine|falkland adaları sterlininde|falkland adaları sterlininden|falkland adaları sterlinini|falkland adaları sterlininin|falkland adaları sterlinidir|falkland adaları sterliniydi|falkland adaları sterliniymiş|falkland adaları pounduna|falkland adaları poundunda|falkland adaları poundundan|falkland adaları poundunu|falkland adaları poundunun|falkland adaları poundudur|falkland adaları pounduydu|falkland adaları pounduymuş
+    Gibraltar pound: gibraltar sterlini|gibraltar £|gip|gibraltar poundu|gibraltar sterlinine|gibraltar sterlininde|gibraltar sterlininden|gibraltar sterlinini|gibraltar sterlininin|gibraltar sterlinidir|gibraltar sterliniydi|gibraltar sterliniymiş|gibraltar pounduna|gibraltar poundunda|gibraltar poundundan|gibraltar poundunu|gibraltar poundunun|gibraltar poundudur|gibraltar pounduydu|gibraltar pounduymuş
+    Manx pound: manx sterlini|manx £|imp|manx poundu|manx sterlinine|manx sterlininde|manx sterlininden|manx sterlinini|manx sterlininin|manx sterlinidir|manx sterliniydi|manx sterliniymiş|manx pounduna|manx poundunda|manx poundundan|manx poundunu|manx poundunun|manx poundudur|manx pounduydu|manx pounduymuş
+    Jersey pound: jersey sterlini|jersey £|jep|jersey poundu|jersey sterlinine|jersey sterlininde|jersey sterlininden|jersey sterlinini|jersey sterlininin|jersey sterlinidir|jersey sterliniydi|jersey sterliniymiş|jersey pounduna|jersey poundunda|jersey poundundan|jersey poundunu|jersey poundunun|jersey poundudur|jersey pounduydu|jersey pounduymuş
+    Lebanese pound: lübnan lirası|lbp|ل.ل|lübnan lirasına|lübnan lirasında|lübnan lirasından|lübnan lirasını|lübnan lirasının|lübnan lirasıdır|lübnan lirasıydı|lübnan lirasıymış
     #South Georgia and the South Sandwich Islands pound -> Falkland Adaları sterlini
-    South Sudanese pound: güney sudan lirası|ssp
-    Sudanese pound: sudan lirası|ج.س.|sdg
-    Syrian pound: suriye lirası|ل.س|syp
+    South Sudanese pound: güney sudan lirası|ssp|güney sudan lirasına|güney sudan lirasında|güney sudan lirasından|güney sudan lirasını|güney sudan lirasının|güney sudan lirasıdır|güney sudan lirasıydı|güney sudan lirasıymış
+    Sudanese pound: sudan lirası|ج.س.|sdg|sudan lirasına|sudan lirasında|sudan lirasından|sudan lirasını|sudan lirasının|sudan lirasıdır|sudan lirasıydı|sudan lirasıymış
+    Syrian pound: suriye lirası|ل.س|syp|suriye lirasına|suriye lirasında|suriye lirasından|suriye lirasını|suriye lirasının|suriye lirasıdır|suriye lirasıydı|suriye lirasıymış
     #Tristan da Cunha -> Sterlin (GBP)
-    Pound: pound|sterlin|£|sterlini|sterline
-    Shilling: shillings|shilling|shilingi|sh
-    Penny: peni
+    Pound: pound|sterlin|£|sterline|sterlinde|sterlinden|sterlini|sterlinin|sterlindir|sterlindi|sterlinmiş
+    Shilling: şilin|şiline|şilinde|şilinden|şilini|şilinin|şilindir|şilindi|şilinmiş
+    Penny: peni|peniye|penide|peniden|peniyi|peninin|penidir|peniydi|peniymiş
 #Dollar
-    United States dollar: abd doları|a.b.d. doları|amerika birleşik devletleri doları|amerikan doları|usd|abd $|a.b.d. $
-    East Caribbean dollar: doğu karayip doları|xcd
-    Australian dollar: avustralya doları|aud
-    Bahamian dollar: bahama doları|bsd
-    Barbadian dollar: barbados doları|bbd
-    Belize dollar: belize doları|bzd
-    Bermudian dollar: bermuda doları|bmd
+    United States dollar: abd doları|a.b.d. doları|amerika birleşik devletleri doları|amerikan doları|usd|abd $|a.b.d. $|abd$|a.b.d.$|abd dolarına|abd dolarında|abd dolarından|abd dolarını|abd dolarının|abd dolarıdır|abd dolarıydı|abd dolarıymış|a.b.d. dolarına|a.b.d. dolarında|a.b.d. dolarından|a.b.d. dolarını|a.b.d. dolarının|a.b.d. dolarıdır|a.b.d. dolarıydı|a.b.d. dolarıymış|amerika birleşik devletleri dolarına|amerika birleşik devletleri dolarında|amerika birleşik devletleri dolarından|amerika birleşik devletleri dolarını|amerika birleşik devletleri dolarının|amerika birleşik devletleri dolarıdır|amerika birleşik devletleri dolarıydı|amerika birleşik devletleri dolarıymış|amerikan dolarına|amerikan dolarında|amerikan dolarından|amerikan dolarını|amerikan dolarının|amerikan dolarıdır|amerikan dolarıydı|amerikan dolarıymış
+    East Caribbean dollar: doğu karayip doları|xcd|doğu karayip $|doğu karayip dolarına|doğu karayip dolarında|doğu karayip dolarından|doğu karayip dolarını|doğu karayip dolarının|doğu karayip dolarıdır|doğu karayip dolarıydı|doğu karayip dolarıymış
+    Australian dollar: avustralya doları|aud|avustralya $|avustralya$|avustralya dolarına|avustralya dolarında|avustralya dolarından|avustralya dolarını|avustralya dolarının|avustralya dolarıdır|avustralya dolarıydı|avustralya dolarıymış
+    Bahamian dollar: bahama doları|bsd|bahama $|bahama$|bahama dolarına|bahama dolarında|bahama dolarından|bahama dolarını|bahama dolarının|bahama dolarıdır|bahama dolarıydı|bahama dolarıymış
+    Barbadian dollar: barbados doları|bbd|barbados $|barbados dolarına|barbados dolarında|barbados dolarından|barbados dolarını|barbados dolarının|barbados dolarıdır|barbados dolarıydı|barbados dolarıymış
+    Belize dollar: belize doları|bzd|belize $|belize dolarına|belize dolarında|belize dolarından|belize dolarını|belize dolarının|belize dolarıdır|belize dolarıydı|belize dolarıymış
+    Bermudian dollar: bermuda doları|bmd|bermuda $|bermuda dolarına|bermuda dolarında|bermuda dolarından|bermuda dolarını|bermuda dolarının|bermuda dolarıdır|bermuda dolarıydı|bermuda dolarıymış
     #British Virgin Islands dollar -> Amerikan Doları
-    Brunei dollar: brunei doları|bnd
+    Brunei dollar: brunei doları|bnd|brunei $|brunei dolarına|brunei dolarında|brunei dolarından|brunei dolarını|brunei dolarının|brunei dolarıdır|brunei dolarıydı|brunei dolarıymış
     Sen: sen
-    Singapore dollar: singapur doları|sgd
-    Canadian dollar: kanada doları|cad|$ c|c$
-    Cayman Islands dollar: cayman adaları doları|kyd
-    New Zealand dollar: yeni zelanda doları|nzd|kiwi
+    Singapore dollar: singapur doları|sgd|singapur $|s$|singapur dolarına|singapur dolarında|singapur dolarından|singapur dolarını|singapur dolarının|singapur dolarıdır|singapur dolarıydı|singapur dolarıymış
+    Canadian dollar: kanada doları|cad|$ c|can$|c$|kanada $|kanada dolarına|kanada dolarında|kanada dolarından|kanada dolarını|kanada dolarının|kanada dolarıdır|kanada dolarıydı|kanada dolarıymış
+    Cayman Islands dollar: cayman adaları doları|kyd|cayman adaları $|cayman adaları dolarına|cayman adaları dolarında|cayman adaları dolarından|cayman adaları dolarını|cayman adaları dolarının|cayman adaları dolarıdır|cayman adaları dolarıydı|cayman adaları dolarıymış
+    New Zealand dollar: yeni zelanda doları|nzd|kiwi|yeni zelanda $|nz$|yeni zelanda dolarına|yeni zelanda dolarında|yeni zelanda dolarından|yeni zelanda dolarını|yeni zelanda dolarının|yeni zelanda dolarıdır|yeni zelanda dolarıydı|yeni zelanda dolarıymış
     #Cook Islands dollar -> Yeni Zelanda Doları
-    Fijian dollar: fiji doları|fjd
-    Guyanese dollar: guyana doları|gyd
-    Hong Kong dollar: hong kong doları|hkd|hk$|hk $
-    Jamaican dollar: jamaika doları|jmd
+    Fijian dollar: fiji doları|fjd|fiji $|fiji dolarına|fiji dolarında|fiji dolarından|fiji dolarını|fiji dolarının|fiji dolarıdır|fiji dolarıydı|fiji dolarıymış
+    Guyanese dollar: guyana doları|gyd|gy$|guyana dolarına|guyana dolarında|guyana dolarından|guyana dolarını|guyana dolarının|guyana dolarıdır|guyana dolarıydı|guyana dolarıymış
+    Hong Kong dollar: hong kong doları|hkd|hong kong $|hk$|hk $|hong kong dolarına|hong kong dolarında|hong kong dolarından|hong kong dolarını|hong kong dolarının|hong kong dolarıdır|hong kong dolarıydı|hong kong dolarıymış
+    Jamaican dollar: jamaika doları|jmd|jamaika $|jamaika dolarına|jamaika dolarında|jamaika dolarından|jamaika dolarını|jamaika dolarının|jamaika dolarıdır|jamaika dolarıydı|jamaika dolarıymış
     #Kiribati dollar -> Avustralya Doları
-    Liberian dollar: liberya dolları|lrd
+    Liberian dollar: liberya dolları|lrd|liberya $|liberya dolarına|liberya dolarında|liberya dolarından|liberya dolarını|liberya dolarının|liberya dolarıdır|liberya dolarıydı|liberya dolarıymış
     #Micronesian dollar -> Amerikan Doları
-    Namibian dollar: namibya doları|nad
+    Namibian dollar: namibya doları|nad|namibya $|namibya dolarına|namibya dolarında|namibya dolarından|namibya dolarını|namibya dolarının|namibya dolarıdır|namibya dolarıydı|namibya dolarıymış
     #Nauruan dollar -> Avustralya Doları
     #Niue dollar -> Yeni Zelanda Doları
     #Palauan dollar -> Amerikan Doları
-    Pitcairn Islands dollar: pitcairn adaları doları
-    Solomon Islands dollar: solomon adaları doları|sbd
-    Surinamese dollar: surinam doları|srd
-    New Taiwan dollar: yeni tayvan doları|twd|ntd
-    Trinidad and Tobago dollar: trinidad ve tobago doları|ttd
-    Tuvaluan dollar: tuvalu doları
-    Dollar: dolar|$
+    Pitcairn Islands dollar: pitcairn adaları doları|pitcairn adaları $|pitcairn adaları dolarına|pitcairn adaları dolarında|pitcairn adaları dolarından|pitcairn adaları dolarını|pitcairn adaları dolarının|pitcairn adaları dolarıdır|pitcairn adaları dolarıydı|pitcairn adaları dolarıymış
+    Solomon Islands dollar: solomon adaları doları|sbd|solomon adaları $|si$|solomon adaları dolarına|solomon adaları dolarında|solomon adaları dolarından|solomon adaları dolarını|solomon adaları dolarının|solomon adaları dolarıdır|solomon adaları dolarıydı|solomon adaları dolarıymış
+    Surinamese dollar: surinam doları|srd|surinam $|surinam dolarına|surinam dolarında|surinam dolarından|surinam dolarını|surinam dolarının|surinam dolarıdır|surinam dolarıydı|surinam dolarıymış
+    New Taiwan dollar: yeni tayvan doları|nt$|twd|ntd|yeni tayvan dolarına|yeni tayvan dolarında|yeni tayvan dolarından|yeni tayvan dolarını|yeni tayvan dolarının|yeni tayvan dolarıdır|yeni tayvan dolarıydı|yeni tayvan dolarıymış
+    Trinidad and Tobago dollar: trinidad ve tobago doları|trinidad ve tobago $|trinidad $|ttd|trinidad ve tobago dolarına|trinidad ve tobago dolarında|trinidad ve tobago dolarından|trinidad ve tobago dolarını|trinidad ve tobago dolarının|trinidad ve tobago dolarıdır|trinidad ve tobago dolarıydı|trinidad ve tobago dolarıymış
+    Tuvaluan dollar: tuvalu doları|tuvalu $|tuvalu dolarına|tuvalu dolarında|tuvalu dolarından|tuvalu dolarını|tuvalu dolarının|tuvalu dolarıdır|tuvalu dolarıydı|tuvalu dolarıymış
+    Dollar: dolar|$|dolara|dolarda|dolardan|doları|doların|dolardır|dolardı|dolarmış
 #Chinese yuan
-    Chinese yuan: yuan|kuai|çin yuanı|renminbi|cny|rmb|￥|元|yuanı
+    Chinese yuan: yuan|kuai|çin yuanı|renminbi|cny|rmb|￥|元|yuana|yuanda|yuandan|yuanı|yuanın|yuandır|yuandı|yuanmış|çin yuana|çin yuanda|çin yuandan|çin yuanı|çin yuanın|çin yuandır|çin yuandı|çin yuanmış
     Fen: fen
     Jiao: jiao|mao
 #Additional
-    Finnish markka: fin markkası|fim|markka|fin markı
-    Penni: penni
+    Finnish markka: fin markkası|fin mk|fim|markka|fin markı|fin markkasına|fin markkasında|fin markkasından|fin markkasını|fin markkasının|fin markkasıdır|fin markkasıydı|fin markkasıymış|fin markına|fin markında|fin markından|fin markını|fin markının|fin markıdır|fin markıydı|fin markıymış|markkaya|markkada|markkadan|markkayı|markkanın|markkadır|markkaydı|markkaymış
+    Penni: penni|penniye|pennide|penniden|penniyi|penninin|pennidir|penniydi|penniymiş
 CurrencyNameToIsoCodeMap: !dictionary
   types: [ string, string ]
   entries:
@@ -541,8 +554,6 @@ CurrencyNameToIsoCodeMap: !dictionary
     Trinidad and Tobago dollar: TTD
     Tuvaluan dollar: TVD
     Chinese yuan: CNY
-    Pitcairn Islands dollar: PND
-    Guernsey pound: GGP
     # Fake ISO code
     # Special main unit
     Rial: __RI
@@ -687,34 +698,107 @@ AmbiguousCurrencyUnitList: !list
     - std
     - yer
     - yen
-    - yeni
+    - fen
+    - pula
+    - pulda
+    - puldan
+    - pulu
+    - pulun
+    - puldur
+    - puldu
+    - pulmuş
+    - pulluk
+    - ermeni dramı
+    - ermeni dramına
+    - ermeni dramından
+    - ermeni dramını
+    - ermeni dramının
+    - ermeni dramıdır
+    - bangladeş takasında
+    - frank
+    - santim
+    - santime
+    - santimde
+    - santimden
+    - santimi
+    - santimin
+    - santimdir
+    - santimdi
+    - santimmiş
+    - milim
+    - milime
+    - milimde
+    - milimden
+    - milimi
+    - milimin
+    - milimdir
+    - milimdi
+    - milimmiş
+    - agora
+    - sene
+    - seneye
+    - senede
+    - seneden
+    - seneyi
+    - senenin
+    - senedir
+    - seneydi
+    - seneymiş
+    - kopek
+    - kopeğe
+    - kopekte
+    - kopekten
+    - kopeği
+    - kopeğin
+    - kopektir
+    - kopekti
+    - kopekmiş
 # DimensionExtractorConfiguration
 # Values in those list are usually lowercase, unless they must be matched by the letter case exactly.
 InformationSuffixList: !dictionary
   types: [ string, string ]
   entries:
 # Information
-    Bit: bit|-bit
-    Kilobit: kilobit|kb|Kb|kbit
-    Megabit: megabit|mb|Mb|mbit
-    Gigabit: gigabit|gb|Gb|gbit
-    Terabit: terabit|tb|Tb|tbit
-    Petabit: petabit|pb|Pb|pbit
-    Byte: byte|bayt
-    Kilobyte: kilobayt|kilobyte|kB|KB|kilo byte|kbyte
-    Megabyte: megabayt|megabyte|mB|MB|mega byte|mbyte
-    Gigabyte: gigabayt|gigabyte|gB|GB|giga byte|gbyte
-    Terabyte: terabayt|terabyte|tB|TB|tera byte|tbyte
-    Petabyte: petabayt|petabyte|pB|PB|peta byte|pbyte
+    Bit: -bit|bit|bitlik|bite|bitte|bitten|biti|bitin|bittir|bitti|bitmiş
+    Kilobit: kilobit|kilo bit|kb|Kb|kbit|kilobitlik|kilobite|kilobitte|kilobitten|kilobiti|kilobitin|kilobittir|kilobitti|kilobitmiş|kilo bitlik|kilo bite|kilo bitte|kilo bitten|kilo biti|kilo bitin|kilo bittir
+    Megabit: megabit|mega bit|mb|Mb|mbit|megabitlik|megabite|megabitte|megabitten|megabiti|megabitin|megabittir|megabitti|megabitmiş|mega bitlik|mega bite|mega bitte|mega bitten|mega biti|mega bitin|mega bittir
+    Gigabit: gigabit|giga bit|gb|Gb|gbit|gigabitlik|gigabite|gigabitte|gigabitten|gigabiti|gigabitin|gigabittir|gigabitti|gigabitmiş|giga bitlik|giga bite|giga bitte|giga bitten|giga biti|giga bitin|giga bittir
+    Terabit: terabit|tera bit|tb|Tb|tbit|terabitlik|terabite|terabitte|terabitten|terabiti|terabitin|terabittir|terabitti|terabitmiş|tera bitlik|tera bite|tera bitte|tera bitten|tera biti|tera bitin|tera bittir
+    Petabit: petabit|peta bit|pb|Pb|pbit|petabitlik|petabite|petabitte|petabitten|petabiti|petabitin|petabittir|petabitti|petabitmiş|peta bitlik|peta bite|peta bitte|peta bitten|peta biti|peta bitin|peta bittir
+    Byte: byte|bayt|baytlık|bayta|baytta|bayttan|baytı|baytın|bayttır|bayttı
+    Kilobyte: kilobayt|kilobyte|kB|KB|kilo byte|kbyte|kilobaytlık|kilobayta|kilobaytta|kilobayttan|kilobaytı|kilobaytın|kilobayttır|kilobayttı
+    Megabyte: megabayt|megabyte|mB|MB|mega byte|mbyte|megabaytlık|megabayta|megabaytta|megabayttan|megabaytı|megabaytın|megabayttır|megabayttı
+    Gigabyte: gigabayt|gigabyte|gB|GB|giga byte|gbyte|gigabaytlık|gigabayta|gigabaytta|gigabayttan|gigabaytı|gigabaytın|gigabayttır|gigabayttı
+    Terabyte: terabayt|terabyte|tB|TB|tera byte|tbyte|terabaytlık|terabayta|terabaytta|terabayttan|terabaytı|terabaytın|terabayttır|terabayttı
+    Petabyte: petabayt|petabyte|pB|PB|peta byte|pbyte|petabaytlık|petabayta|petabaytta|petabayttan|petabaytı|petabaytın|petabayttır|petabayttı
 AmbiguousDimensionUnitList: !list
   types: [ string ]
   entries:
+    - varil
+    - varile
+    - varilde
+    - varilden
+    - varili
+    - varilin
+    - varildir
+    - varildi
+    - varilmiş
+    - varillik
     - pound
     - dram
-    - varil
     - cup
     - in
     - '"'
+    - bit
+    - bitlik
+    - bite
+    - bitte
+    - bitten
+    - biti
+    - bitin
+    - bittir
+    - bitti
+    - bitmiş
 #TurkishNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
   def: (?<=(\s|^))
@@ -724,29 +808,76 @@ BuildSuffix: !simpleRegex
 LengthSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Kilometer: km|kilometre
-    Hectometer: hm|hektometre
-    Decameter: dam|dekametre
-    Meter: m|metre
-    Decimeter: dm|desimetre
-    Centimeter: cm|santimetre
-    Millimeter: mm|milimetre
-    Micrometer: μm|mikrometre
-    Nanometer: nm|nanometre
-    Picometer: pm|pikometre
-    Mile: mil|mi|milden
-    Yard: yarda|yd
-    Inch: inç|in|'"'
-    Foot: fit|ft|ayak|adım|ayakla
-    Light year: ışık yılı|Iy
+    Kilometer: km|kilometre|kilometreye|kilometrede|kilometreden|kilometreyi|kilometrenin|kilometresi|kilometresini|kilometresinin|kilometresinden|kilometredir|kilometreydi|kilometreymiş
+    Hectometer: hm|hektometre|hektometre|hektometreye|hektometrede|hektometreden|hektometreyi|hektometrenin|hektometresi|hektometresini|hektometresinin|hektometresinden|hektometredir|hektometreydi|hektometreymiş
+    Decameter: dam|dekametre|dekametre|dekametreye|dekametrede|dekametreden|dekametreyi|dekametrenin|dekametresi|dekametresini|dekametresinin|dekametresinden|dekametredir|dekametreydi|dekametreymiş
+    Meter: m|metre|metre|metreye|metrede|metreden|metreyi|metrenin|metresi|metresini|metresinin|metresinden|metredir|metreydi|metreymiş
+    Decimeter: dm|desimetre|desimetre|desimetreye|desimetrede|desimetreden|desimetreyi|desimetrenin|desimetresi|desimetresini|desimetresinin|desimetresinden|desimetredir|desimetreydi|desimetreymiş
+    Centimeter: cm|santimetre|santimetre|santimetreye|santimetrede|santimetreden|santimetreyi|santimetrenin|santimetresi|santimetresini|santimetresinin|santimetresinden|santimetredir|santimetreydi|santimetreymiş
+    Millimeter: mm|milimetre|milimetre|milimetreye|milimetrede|milimetreden|milimetreyi|milimetrenin|milimetresi|milimetresini|milimetresinin|milimetresinden|milimetredir|milimetreydi|milimetreymiş
+    Micrometer: μm|mikrometre|mikrometre|mikrometreye|mikrometrede|mikrometreden|mikrometreyi|mikrometrenin|mikrometresi|mikrometresini|mikrometresinin|mikrometresinden|mikrometredir|mikrometreydi|mikrometreymiş
+    Nanometer: nm|nanometre|nanometre|nanometreye|nanometrede|nanometreden|nanometreyi|nanometrenin|nanometresi|nanometresini|nanometresinin|nanometresinden|nanometredir|nanometreydi|nanometreymiş
+    Picometer: pm|pikometre|pikometre|pikometreye|pikometrede|pikometreden|pikometreyi|pikometrenin|pikometresi|pikometresini|pikometresinin|pikometresinden|pikometredir|pikometreydi|pikometreymiş
+    Mile: mil|mi|mile|milde|milden|mili|milin|milini|milinin|milinden|mildir|mildi|milmiş
+    Yard: yarda|yd|yardaya|yardada|yardadan|yardayı|yardanın|yardadır|yardaydı|yardaymış
+    Inch: inç|in|'"'|inçe|inçte|inçten|inçi|inçin|inçtir|inçti|inçmiş
+    Foot: fit|ft|ayak|adım|ayakla|fite|fitte|fitten|fiti|fitin|fittir|fitti|fitmiş|ayağa|ayakta|ayaktan|ayağı|ayağın|ayaktır|ayaktı|ayakmış|adıma|adımda|adımdan|adımı|adımın|adımdır|adımdı|adımmış
+    Light year: ışık yılı|Iy|ışık yılına|ışık yılında|ışık yılından|ışık yılını|ışık yılının|ışık yılıdır|ışık yılıydı|ışık yılıymış
     Pt: pt|pts
 AmbiguousLengthUnitList: !list
   types: [ string ]
   entries:
     - m
+    - mi
+    - mil
+    - mile
+    - milde
+    - milden
+    - mili
+    - milin
+    - milini
+    - milinin
+    - milinden
+    - mildir
+    - mildi
+    - yarda
+    - yardadır
+    - yardaydı
+    - yardaymış
     - fit
+    - fitte
+    - fitten
+    - fiti
+    - fitin
+    - fittir
+    - fitti
+    - fitmiş
+    - ayak
+    - ayakla
+    - ayağa
+    - ayakta
+    - ayaktan
+    - ayağı
+    - ayağın
+    - ayaktır
+    - ayaktı
+    - ayakmış
+    - adıma
+    - adımda
+    - adımdan
+    - adımı
+    - adımın
+    - adımdır
+    - adımdı
+    - adımmış
     - adım
 #SpeedExtractorConfiguration
+SpeedPrefixList: !dictionary
+  types: [ string, string ]
+  entries:
+    Per hour: saatte
+    Per minute: dakikada
+    Per second: saniyede
 SpeedSuffixList: !dictionary
   types: [ string, string ]
   entries:
@@ -760,22 +891,16 @@ SpeedSuffixList: !dictionary
     Foot per minute: ft/dk|fit bölü dakika|fit/dakika
     Yard per minute: yarda bölü dakika|yarda/dakika|yd/dk
     Yard per second: yarda bölü saniye|yarda/saniye|yd/s|yd/sn
-SpeedPrefixList: !dictionary
-  types: [ string, string ]
-  entries:
-    PerHour: saatte
-    PerMinute: dakikada
-    PerSecond: saniyede
 #TemperatureExtractorConfiguration
 TemperatureSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    F: derece fahrenhayt|derece fahrenheit|derece f|fahrenheit derece|fahrenhayt derece|fahrenheit|°f|f|fahrenhayta|fahrenhaytı|fahrenhayttan|fahrenhayt|derece fahrenhaytı|derece fahrenhayttır
-    K: k|K|kelvin
+    F: fahrenhayt|fahrenheit|°f|f|fahrenhayta|fahrenhaytta|fahrenhayttan|fahrenhaytı|fahrenhaytın|fahrenhayttır|fahrenhayttı|fahrenhaytmış|derece fahrenhayt|derece fahrenheit|derece f|fahrenheit derece|fahrenhayt derece|derece fahrenhayta|derece fahrenhaytta|derece fahrenhayttan|derece fahrenhaytı|derece fahrenhaytın|derece fahrenhayttır|derece fahrenhayttı|derece fahrenhaytmış|fahrenhayt dereceye|fahrenhayt derecede|fahrenhayt dereceden|fahrenhayt dereceyi|fahrenhayt derecenin|fahrenhayt derecedir|fahrenhayt dereceydi|fahrenhayt dereceymiş|fahrenheit dereceye|fahrenheit derecede|fahrenheit dereceden|fahrenheit dereceyi|fahrenheit derecenin|fahrenheit derecedir|fahrenheit dereceydi|fahrenheit dereceymiş
+    K: k|K|kelvin|kelvine|kelvinde|kelvinden|kelvini|kelvinin|kelvindir|kelvindi|kelvinmiş
     R: rankine|°r
     D: delisle|°de
-    C: santigrat derece|derece c|celsius|°c|c|santigratı|santigrata|santigrat dereceyi|santigratta|santigrat
-    Degree: derece|°|derecede|dereceyi|dereceye
+    C: santigrat|celsius|°c|c|santigrata|santigratta|santigrattan|santigratı|santigratın|santigrattır|santigrattı|santigratmış|derece c|santigrat derece|santigrat dereceye|santigrat derecede|santigrat dereceden|santigrat dereceyi|santigrat derecenin|santigrat derecedir|santigrat dereceydi|santigrat dereceymiş
+    Degree: derece|°|dereceye|derecede|dereceden|dereceyi|derecenin|derecedir|dereceydi|dereceymiş
 AmbiguousTemperatureUnitList: !list
   types: [ string ]
   entries:
@@ -787,45 +912,86 @@ AmbiguousTemperatureUnitList: !list
 VolumeSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Cubic meter: metreküp|m3|m^3|m³
-    Cubic centimeter: santimetreküp|cm3|cm^3|cm³
-    Cubic millimiter: milimetreküp|mm3|mm^3|mm³
-    Hectoliter: hektolitre|hl
-    Decaliter: dekalitre|dal
-    Liter: litre|l
-    Deciliter: desilitre|dl
-    Centiliter: santilitre|cl
-    Milliliter: mililitre|ml
-    Cubic yard: kübik yard|kübik yds|cu yds|cu yd|yard/-3|yds/-3|yd/-3|yards^3|yard^3|yds^3|yd^3|yard³|yds³|yd³|yarda küp
-    Cubic inch: inç küp
-    Cubic foot: fit küp
-    Cubic mile: mil küp
-    Fluid ounce: sıvı ons
-    Teaspoon: tatlı kaşığı
-    Tablespoon: yemek kaşığı
-    Pint: pint
-    Volume unit: sıvı dram|çeyrek pint|kuart|minim|kord|peck|buşel|fıçı
+    Cubic meter: metreküp|metre küp|m3|m^3|m³|metreküpe|metreküpte|metreküpten|metreküpü|metreküpün|metreküptür|metreküptü|metreküpmüş|metreküplük|metre küpe|metre küpte|metre küpten|metre küpü|metre küpün|metre küptür|metre küptü|metre küpmüş|metre küplük
+    Cubic centimeter: santimetreküp|santimetre küp|cm3|cm^3|cm³|santimetreküpe|santimetreküpte|santimetreküpten|santimetreküpü|santimetreküpün|santimetreküptür|santimetreküptü|santimetreküpmüş|santimetreküplük|santimetre küpe|santimetre küpte|santimetre küpten|santimetre küpü|santimetre küpün|santimetre küptür|santimetre küptü|santimetre küpmüş|santimetre küplük
+    Cubic millimiter: milimetreküp|milimetre küp|mm3|mm^3|mm³|milimetreküpe|milimetreküpte|milimetreküpten|milimetreküpü|milimetreküpün|milimetreküptür|milimetreküptümili|milimetreküpmüş|milimetreküplük|milimetre küpe|milimetre küpte|milimetre küpten|milimetre küpü|milimetre küpün|milimetre küptür|milimetre küptü|milimetre küpmüş|milimetre küplük
+    Hectoliter: hektolitre|hekto litre|hl|hektolitreye|hektolitrede|hektolitreden|hektolitreyi|hektolitrenin|hektolitredir|hektolitreydi|hektolitreymiş|hekto litreye|hekto litrede|hekto litreden|hekto litreyi|hekto litrenin|hekto litredir|hekto litreydi|hekto litreymiş
+    Decaliter: dekalitre|deka litre|dal|dekalitreye|dekalitrede|dekalitreden|dekalitreyi|dekalitrenin|dekalitredir|dekalitreydi|dekalitreymiş|dekalitrelik|deka litreye|deka litrede|deka litreden|deka litreyi|deka litrenin|deka litredir|deka litreydi|deka litreymiş|deka litrelik
+    Liter: litre|l|litrelik
+    Deciliter: desilitre|desi litre|dl|desilitreye|desilitrede|desilitreden|desilitreyi|desilitrenin|desilitredir|desilitreydi|desilitreymiş|desilitrelik|desi litreye|desi litrede|desi litreden|desi litreyi|desi litrenin|desi litredir|desi litreydi|desi litreymiş|desi litrelik
+    Centiliter: santilitre|santi litre|cl|santilitreye|santilitrede|santilitreden|santilitreyi|santilitrenin|santilitredir|santilitreydi|santilitreymiş|santilitrelik|santi litreye|santi litrede|santi litreden|santi litreyi|santi litrenin|santi litredir|santi litreydi|santi litreymiş|santi litrelik
+    Milliliter: mililitre|mili litre|ml|mililitreye|mililitrede|mililitreden|mililitreyi|mililitrenin|mililitredir|mililitreydi|mililitreymiş|mililitrelik|mili litreye|mili litrede|mili litreden|mili litreyi|mili litrenin|mili litredir|mili litreydi|mili litreymiş|mili litrelik
+    Cubic yard: kübik yard|kübik yarda|yarda küp|kübik yds|cu yds|cu yd|yard/-3|yds/-3|yd/-3|yards^3|yard^3|yds^3|yd^3|yard³|yds³|yd³|kübik yardaya|kübik yardada|kübik yardadan|kübik yardanın|kübik yardadır|kübik yardaydı|kübik yardaymış|kübik yardalık|yarda küpe|yarda küpte|yarda küpten|yarda küpü|yarda küpün|yarda küptür|yarda küptü|yarda küpmüş|yarda küplük
+    Cubic inch: inçküp|inç küp|inçküpe|inçküpte|inçküpten|inçküpü|inçküpün|inçküptür|inçküptü|inçküpmüş|inç küpe|inç küpte|inç küpten|inç küpü|inç küpün|inç küptür|inç küptü|inç küpmüş|inç küplük
+    Cubic foot: fitküp|fit küp|fitküpe|fitküpte|fitküpten|fitküpü|fitküpün|fitküptür|fitküptü|fitküpmüş|fit küpe|fit küpte|fit küpten|fit küpü|fit küpün|fit küptür|fit küptü|fit küpmüş|fit küplük
+    Cubic mile: milküp|mil küp|milküpe|milküpte|milküpten|milküpü|milküpün|milküptür|milküptü|milküpmüş|mil küpe|mil küpte|mil küpten|mil küpü|mil küpün|mil küptür|mil küptü|mil küpmüş|mil küplük
+    Fluid ounce: sıvı ons|fl oz|sıvı onsa|sıvı onsta|sıvı onstan|sıvı onsu|sıvı onsun|sıvı onstur|sıvı onstu|sıvı onsmuş|sıvı onsluk
+    Teaspoon: tatlı kaşığı|tatlı kaşığına|tatlı kaşığında|tatlı kaşığından|tatlı kaşığını|tatlı kaşığının|tatlı kaşığıdır|tatlı kaşığıydı|tatlı kaşığıymış
+    Tablespoon: yemek kaşığı|yemek kaşığına|yemek kaşığında|yemek kaşığından|yemek kaşığını|yemek kaşığının|yemek kaşığıdır|yemek kaşığıydı|yemek kaşığıymış
+    Pint: pint|pinte|pintte|pintten|pinti|pintin|pinttir|pintti|pintmiş|pintlik
+    Volume unit: sıvı dram|çeyrek pint|quart|kuart|minim|kord|peck|buşel|büyük fıçı|sıvı drama|sıvı dramda|sıvı dramdan|sıvı dramı|sıvıdramın|sıvı dramdır|sıvı dramdı|sıvı drammış|sıvı dramlık|çeyrek pinte|çeyrek pintte|çeyrek pintten|çeyrek pinti|çeyrek pintin|çeyrek pinttir|çeyrek pintti|çeyrek pintmiş|çeyrek pintlik|buşele|buşelde|buşelden|buşeli|buşelin|buşeldir|buşeldi|buşelmiş|buşellik
 AmbiguousVolumeUnitList: !list
   types: [ string ]
   entries:
     - dal
+    - pinti
+    - büyük fıçı
 #WeightExtractorConfiguration
 WeightSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Kilogram: kg|kilogram|kilo
-    Gram: g|gram
-    Milligram: mg|miligram
-    Barrel: varil
-    Gallon: galon|galonluk
-    Metric ton: metrik tonu|metrik tona|metrik tondan|metrik ton
-    Ton: t|ton|tona
-    Pound: lb|libre|libreden|libreye
-    Ounce: oz|ons
-    Weight unit: karat|zerre|dram
+    Kilogram: kg|kilogram|kilo|kilograma|kilogramda||kilogramdan|kilogramı|kilogramın|kilogramdır|kilogramdı|kilogrammış|kilogramlık|kiloya|kiloda|kilodan|kiloyu|kilonun|kilodur|kiloydu|kiloymuş|kiloluk
+    Gram: g|gram|grama|gramda||gramdan|gramı|gramın|gramdır|gramdı|grammış|gramlık
+    Milligram: mg|miligram|miligrama|miligramda||miligramdan|miligramı|miligramın|miligramdır|miligramdı|miligrammış|miligramlık
+    Barrel: varil|varile|varilde|varilden|varili|varilin|varildir|varildi|varilmiş|varillik
+    Gallon: galon|galona|galonda|galondan|galonu|galonun|galondur|galondu|galonmuş|galonluk
+    Metric ton: metrik ton|metrik tona|metrik tonda|metrik tondan|metrik tonu|metrik tonun|metrik tondur|metrik tondu|metrik tonmuş|metrik tonluk
+    Ton: t|ton|tona|tonda|tondan|tonu|tonun|tondur|tondu|tonmuş|tonluk
+    Pound: lb|libre|libreye|librede|libreden|libreyi|librenin|libredir|libreydi|libreymiş|librelik
+    Ounce: oz|ons|onsa|onsta|onstan|onsu|onsun|onstur|onstu|onsmuş|onsluk
+    Weight unit: karat|zerre|dram|karata|karatta|karattan|karatı|karatın|karattır|karattı|karatmış|karatlık|zerreye|zerrede|zerreden|zerreyi|zerrenin|zerredir|zerreydi|zerreymiş|zerrelik|drama|dramda|dramdan|dramı|dramın|dramdır|dramdı|drammış|dramlık
 AmbiguousWeightUnitList: !list
   types: [ string ]
   entries:
+    - varil
+    - varile
+    - varilde
+    - varilden
+    - varili
+    - varilin
+    - varildir
+    - varildi
+    - varilmiş
+    - varillik
+    - galon
+    - galona
+    - galonda
+    - galondan
+    - galonu
+    - galonun
+    - galondur
+    - galondu
+    - galonmuş
+    - galonluk
     - pound
     - ton
+    - tona
+    - tonda
+    - tondan
+    - tonu
+    - tonun
+    - tondur
+    - tondu
+    - tonmuş
+    - tonluk
+    - dram
+    - drama
+    - dramda
+    - dramdan
+    - dramı
+    - dramın
+    - dramdır
+    - dramdı
+    - drammış
+    - dramlık
 ...

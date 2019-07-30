@@ -595,7 +595,6 @@
   },
   {
     "Input": "1995 yılında Canon, dahili görüntü sabitleme özellikli ilk ticari slr lensi piyasaya sürdü, ef 75 -300 mm f / 4-5. 6 usm.",
-    "NotSupported": "java, javascript",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -770,7 +769,6 @@
   },
   {
     "Input": "o bir mil sağlayabilir",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -787,7 +785,6 @@
   },
   {
     "Input": "Bu alan 20 kilometre kare büyüklüğündedir",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -804,7 +801,6 @@
   },
    {
     "Input": "Bu bölge iki hektometre kare büyüklüğe sahip",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -821,7 +817,6 @@
   },
    {
     "Input": "Bu bölge bir dekametre kare",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -838,7 +833,6 @@
   },
    {
     "Input": "o bir metre kare",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -855,7 +849,6 @@
   },
    {
     "Input": "Alanın büyüklüğü 100 desimetre kare",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -870,9 +863,8 @@
       }
     ]
   },
-   {
+  {
     "Input": "Burası sekiz santimetre kare",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -889,7 +881,6 @@
   },
   {
     "Input": "Burası beş milimetre kare",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -900,6 +891,38 @@
         "Resolution": {
           "unit": "Square millimeter",
           "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Burası beş akreden büyük",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "beş akreden",
+        "Start": 7,
+        "End": 17,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Acre",
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "On mililitrelik şişe",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "on mililitrelik",
+        "Start": 0,
+        "End": 14,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Milliliter",
+          "value": "10"
         }
       }
     ]

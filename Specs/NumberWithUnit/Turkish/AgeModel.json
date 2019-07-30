@@ -241,7 +241,6 @@
   },
   {
     "Input": "o 40 - 50 yaşında",
-    "NotSupported": "javascript, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -253,6 +252,38 @@
         },
         "Start": 7,
         "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "Henüz 17 yaşındasın",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "17 yaşındasın",
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Year",
+          "value": "17"
+        },
+        "Start": 6,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "Bebek 20 günlükmüş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20 günlükmüş",
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Day",
+          "value": "20"
+        },
+        "Start": 6,
+        "End": 17
       }
     ]
   }
