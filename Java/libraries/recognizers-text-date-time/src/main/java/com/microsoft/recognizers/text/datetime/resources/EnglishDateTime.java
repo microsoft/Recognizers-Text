@@ -613,6 +613,8 @@ public class EnglishDateTime {
 
     public static final String SuffixRegex = "^\\s*(in the\\s+)?(morning|afternoon|evening|night)\\b";
 
+    public static final String NonTimeContextTokens = "(building)";
+
     public static final String DateTimeTimeOfDayRegex = "\\b(?<timeOfDay>morning|afternoon|night|evening)\\b";
 
     public static final String DateTimeSpecificTimeOfDayRegex = "\\b(({RelativeRegex}\\s+{DateTimeTimeOfDayRegex})\\b|\\btonight)\\b"
@@ -625,7 +627,8 @@ public class EnglishDateTime {
     public static final String TimeOfTodayBeforeRegex = "{DateTimeSpecificTimeOfDayRegex}(\\s*,)?(\\s+(at|around|in|on))?\\s*$"
             .replace("{DateTimeSpecificTimeOfDayRegex}", DateTimeSpecificTimeOfDayRegex);
 
-    public static final String SimpleTimeOfTodayAfterRegex = "({HourNumRegex}|{BaseDateTime.HourRegex})\\s*(,\\s*)?(in\\s+)?{DateTimeSpecificTimeOfDayRegex}"
+    public static final String SimpleTimeOfTodayAfterRegex = "(?<!{NonTimeContextTokens}\\s*)\\b({HourNumRegex}|{BaseDateTime.HourRegex})\\s*(,\\s*)?(in\\s+)?{DateTimeSpecificTimeOfDayRegex}\\b"
+            .replace("{NonTimeContextTokens}", NonTimeContextTokens)
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
             .replace("{DateTimeSpecificTimeOfDayRegex}", DateTimeSpecificTimeOfDayRegex);
