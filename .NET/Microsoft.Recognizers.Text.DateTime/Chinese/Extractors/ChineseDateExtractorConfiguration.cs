@@ -46,11 +46,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex WeekDayOfMonthRegex = new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexFlags);
 
-        public static readonly Regex ThisRe = new Regex(DateTimeDefinitions.DateThisRe, RegexFlags);
+        public static readonly Regex ThisRe = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
-        public static readonly Regex LastRe = new Regex(DateTimeDefinitions.DateLastRe, RegexFlags);
+        public static readonly Regex LastRe = new Regex(DateTimeDefinitions.LastPrefixRegex, RegexFlags);
 
-        public static readonly Regex NextRe = new Regex(DateTimeDefinitions.DateNextRe, RegexFlags);
+        public static readonly Regex NextRe = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
 
         public static readonly Regex SpecialDate = new Regex(DateTimeDefinitions.SpecialDate, RegexFlags);
 
@@ -110,6 +110,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly ChineseDurationExtractorConfiguration DurationExtractor = new ChineseDurationExtractorConfiguration();
+
+        public ChineseDateExtractorConfiguration(IDateExtractorConfiguration config = null)
+            : base(config)
+        {
+        }
 
         public override List<ExtractResult> Extract(string text)
         {

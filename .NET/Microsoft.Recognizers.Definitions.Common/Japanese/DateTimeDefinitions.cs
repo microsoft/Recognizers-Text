@@ -44,11 +44,11 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string SpecialDayRegex = @"(最近|前天|后天|昨天|明天|今天|今日|明日|昨日|大后天|大前天|後天|大後天|きょう|あす|あした|きのう|明後日|一昨日|この日|前日|二日前|おととい|あさって)";
       public const string SpecialDayWithNumRegex = @"^[.]";
       public static readonly string WeekDayOfMonthRegex = $@"((({MonthRegex}|{MonthNumRegex})的\s*)(?<cardinal>第一个|第二个|第三个|第四个|第五个|最后一个)\s*{WeekDayRegex})";
-      public const string DateThisRe = @"这个|这一个|这|这一|本|今";
-      public const string DateLastRe = @"上个|上一个|上|上一|去";
-      public const string DateNextRe = @"下个|下一个|下|下一|明";
-      public static readonly string RelativeRegex = $@"(?<order>({DateThisRe}|{DateLastRe}|{DateNextRe}))";
-      public static readonly string SpecialDate = $@"(?<thisyear>({DateThisRe}|{DateLastRe}|{DateNextRe})年)?(?<thismonth>({DateThisRe}|{DateLastRe}|{DateNextRe})月)?{DateDayRegexInJapanese}";
+      public const string ThisPrefixRegex = @"这个|这一个|这|这一|本|今";
+      public const string LastPrefixRegex = @"上个|上一个|上|上一|去";
+      public const string NextPrefixRegex = @"下个|下一个|下|下一|明";
+      public static readonly string RelativeRegex = $@"(?<order>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex}))";
+      public static readonly string SpecialDate = $@"(?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})年)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})月)?{DateDayRegexInJapanese}";
       public const string DateUnitRegex = @"(?<unit>年|个月|周|日|天)";
       public const string BeforeRegex = @"以前|之前|前";
       public const string AfterRegex = @"以后|以後|之后|之後|后|後";

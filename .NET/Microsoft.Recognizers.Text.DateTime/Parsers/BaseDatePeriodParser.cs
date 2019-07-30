@@ -23,6 +23,51 @@ namespace Microsoft.Recognizers.Text.DateTime
             config = configuration;
         }
 
+        public static DateContext GetYearContext(Regex yearRegex, Regex relativeRegex, IDateExtractor dateExtractor, string startDateStr, string endDateStr, string text)
+        {
+            var isEndDatePureYear = false;
+            var isDateRelative = false;
+            int contextYear = Constants.InvalidYear;
+
+            var yearMatchForEndDate = yearRegex.Match(endDateStr);
+
+            if (yearMatchForEndDate.Success && yearMatchForEndDate.Length == endDateStr.Length)
+            {
+                isEndDatePureYear = true;
+            }
+
+            var relativeMatchForStartDate = relativeRegex.Match(startDateStr);
+            var relativeMatchForEndDate = relativeRegex.Match(endDateStr);
+            isDateRelative = relativeMatchForStartDate.Success || relativeMatchForEndDate.Success;
+
+            if (!isEndDatePureYear && !isDateRelative)
+            {
+                foreach (Match match in yearRegex.Matches(text))
+                {
+                    var year = dateExtractor.GetYearFromText(match);
+
+                    if (year != Constants.InvalidYear)
+                    {
+                        if (contextYear == Constants.InvalidYear)
+                        {
+                            contextYear = year;
+                        }
+                        else
+                        {
+                            // This indicates that the text has two different year value, no common context year
+                            if (contextYear != year)
+                            {
+                                contextYear = Constants.InvalidYear;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return new DateContext() { Year = contextYear };
+        }
+
         public ParseResult Parse(ExtractResult result)
         {
             return this.Parse(result, DateObject.Now);
@@ -288,7 +333,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var isSpecificDate = false;
                 var isStartByWeek = false;
                 var isEndByWeek = false;
-                var dateContext = GetYearContext(match.Groups["start"].Value.Trim(), match.Groups["end"].Value.Trim(), text);
+                var dateContext = GetYearContext(config.YearRegex, config.RelativeRegex, config.DateExtractor, match.Groups["start"].Value.Trim(), match.Groups["end"].Value.Trim(), text);
 
                 var startResolution = ParseSingleTimePoint(match.Groups["start"].Value.Trim(), referenceDate, dateContext);
 
@@ -1319,7 +1364,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er[1].Text = weekPrefix + " " + er[1].Text;
                 }
 
-                var dateContext = GetYearContext(er[0].Text, er[1].Text, text);
+                var dateContext = GetYearContext(config.YearRegex, config.RelativeRegex, config.DateExtractor, er[0].Text, er[1].Text, text);
 
                 pr1 = this.config.DateParser.Parse(er[0], referenceDate);
                 pr2 = this.config.DateParser.Parse(er[1], referenceDate);
@@ -2153,51 +2198,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Success = true;
 
             return ret;
-        }
-
-        private DateContext GetYearContext(string startDateStr, string endDateStr, string text)
-        {
-            var isEndDatePureYear = false;
-            var isDateRelative = false;
-            int contextYear = Constants.InvalidYear;
-
-            var yearMatchForEndDate = this.config.YearRegex.Match(endDateStr);
-
-            if (yearMatchForEndDate.Success && yearMatchForEndDate.Length == endDateStr.Length)
-            {
-                isEndDatePureYear = true;
-            }
-
-            var relativeMatchForStartDate = this.config.RelativeRegex.Match(startDateStr);
-            var relativeMatchForEndDate = this.config.RelativeRegex.Match(endDateStr);
-            isDateRelative = relativeMatchForStartDate.Success || relativeMatchForEndDate.Success;
-
-            if (!isEndDatePureYear && !isDateRelative)
-            {
-                foreach (Match match in config.YearRegex.Matches(text))
-                {
-                    var year = config.DateExtractor.GetYearFromText(match);
-
-                    if (year != Constants.InvalidYear)
-                    {
-                        if (contextYear == Constants.InvalidYear)
-                        {
-                            contextYear = year;
-                        }
-                        else
-                        {
-                            // This indicates that the text has two different year value, no common context year
-                            if (contextYear != year)
-                            {
-                                contextYear = Constants.InvalidYear;
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-
-            return new DateContext() { Year = contextYear };
         }
     }
 }

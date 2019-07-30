@@ -3314,5 +3314,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "我从四月的最后一个星期一到十月一日不在",
+    "Context": {
+      "ReferenceDateTime": "2019-03-22T00:00:00"
+    },
+    "NotSupported":  "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "从四月的最后一个星期一到十月一日",
+        "Start": 1,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-04-WXX-1-#5,XXXX-10-01,P155D)",
+              "type": "daterange",
+              "start": "2019-04-29",
+              "end": "2019-10-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

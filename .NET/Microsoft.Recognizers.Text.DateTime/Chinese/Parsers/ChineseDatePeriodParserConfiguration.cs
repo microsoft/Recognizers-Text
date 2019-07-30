@@ -873,7 +873,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (er.Count >= 2)
             {
-                var dateContext = GetYearContext(er[0].Text, er[1].Text, text);
+                var dateContext = BaseDatePeriodParser.GetYearContext(config.DatePeriodYearRegex, config.RelativeRegex, new ChineseDateExtractorConfiguration(), er[0].Text, er[1].Text, text);
 
                 if (pr1.Value == null || pr2.Value == null)
                 {

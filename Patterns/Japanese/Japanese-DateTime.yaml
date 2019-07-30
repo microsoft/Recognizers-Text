@@ -51,18 +51,18 @@ SpecialDayWithNumRegex: !simpleRegex
 WeekDayOfMonthRegex: !nestedRegex
   def: ((({MonthRegex}|{MonthNumRegex})的\s*)(?<cardinal>第一个|第二个|第三个|第四个|第五个|最后一个)\s*{WeekDayRegex})
   references: [MonthRegex, MonthNumRegex, WeekDayRegex]
-DateThisRe: !simpleRegex
+ThisPrefixRegex: !simpleRegex
   def: 这个|这一个|这|这一|本|今
-DateLastRe: !simpleRegex
+LastPrefixRegex: !simpleRegex
   def: 上个|上一个|上|上一|去
-DateNextRe: !simpleRegex
+NextPrefixRegex: !simpleRegex
   def: 下个|下一个|下|下一|明
 RelativeRegex: !nestedRegex
-  def: (?<order>({DateThisRe}|{DateLastRe}|{DateNextRe}))
-  references: [DateThisRe, DateLastRe, DateNextRe]
+  def: (?<order>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex}))
+  references: [ThisPrefixRegex, LastPrefixRegex, NextPrefixRegex]
 SpecialDate: !nestedRegex
-  def: (?<thisyear>({DateThisRe}|{DateLastRe}|{DateNextRe})年)?(?<thismonth>({DateThisRe}|{DateLastRe}|{DateNextRe})月)?{DateDayRegexInJapanese}
-  references: [DateThisRe, DateLastRe, DateNextRe, DateDayRegexInJapanese]
+  def: (?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})年)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})月)?{DateDayRegexInJapanese}
+  references: [ThisPrefixRegex, LastPrefixRegex, NextPrefixRegex, DateDayRegexInJapanese]
 DateUnitRegex: !simpleRegex
   def: (?<unit>年|个月|周|日|天)
 BeforeRegex: !simpleRegex

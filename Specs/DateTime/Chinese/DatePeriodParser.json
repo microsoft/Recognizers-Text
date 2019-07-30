@@ -1355,5 +1355,85 @@
         "Length": 15
       }
     ]
+  },
+  {
+    "Input": "我从四月的最后一个星期一到十月一日不在",
+    "Context": {
+      "ReferenceDateTime": "2019-07-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "从四月的最后一个星期一到十月一日",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-04-WXX-1-#5,XXXX-10-01,P155D)",
+          "FutureResolution": {
+            "startDate": "2019-04-29",
+            "endDate": "2019-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-04-29",
+            "endDate": "2019-10-01"
+          }
+        },
+        "Start": 1,
+        "Length": 16
+      }
+    ]
+  },
+  ,
+  {
+    "Input": "我从8月的最后一个星期一到十月一日不在",
+    "Context": {
+      "ReferenceDateTime": "2019-07-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "从8月的最后一个星期一到十月一日",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-08-WXX-1-#4,XXXX-10-01,P36D)",
+          "FutureResolution": {
+            "startDate": "2019-08-27",
+            "endDate": "2019-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-27",
+            "endDate": "2019-10-01"
+          }
+        },
+        "Start": 1,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "我从上周四到十月一日都不在",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T17:09:00"
+    },
+    "comment": "This case gets wrong timex now (2019-07-25,XXXX-10-01,P67.2849497971204D)",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "从上周四到十月一日",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-07-25,XXXX-10-01,P68)",
+          "FutureResolution": {
+            "startDate": "2019-07-25",
+            "endDate": "2019-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-07-25",
+            "endDate": "2019-10-01"
+          }
+        },
+        "Start": 13,
+        "Length": 27
+      }
+    ]
   }
 ]

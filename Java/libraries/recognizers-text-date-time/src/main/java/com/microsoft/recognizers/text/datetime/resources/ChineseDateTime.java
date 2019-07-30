@@ -62,21 +62,21 @@ public class ChineseDateTime {
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{WeekDayRegex}", WeekDayRegex);
 
-    public static final String DateThisRe = "这个|这一个|这|这一|本|今";
+    public static final String ThisPrefixRegex = "这个|这一个|这|这一|本|今";
 
-    public static final String DateLastRe = "上个|上一个|上|上一|去";
+    public static final String LastPrefixRegex = "上个|上一个|上|上一|去";
 
-    public static final String DateNextRe = "下个|下一个|下|下一|明";
+    public static final String NextPrefixRegex = "下个|下一个|下|下一|明";
 
-    public static final String RelativeRegex = "(?<order>({DateThisRe}|{DateLastRe}|{DateNextRe}))"
-            .replace("{DateThisRe}", DateThisRe)
-            .replace("{DateLastRe}", DateLastRe)
-            .replace("{DateNextRe}", DateNextRe);
+    public static final String RelativeRegex = "(?<order>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex}))"
+            .replace("{ThisPrefixRegex}", ThisPrefixRegex)
+            .replace("{LastPrefixRegex}", LastPrefixRegex)
+            .replace("{NextPrefixRegex}", NextPrefixRegex);
 
-    public static final String SpecialDate = "(?<thisyear>({DateThisRe}|{DateLastRe}|{DateNextRe})年)?(?<thismonth>({DateThisRe}|{DateLastRe}|{DateNextRe})月)?{DateDayRegexInChinese}"
-            .replace("{DateThisRe}", DateThisRe)
-            .replace("{DateLastRe}", DateLastRe)
-            .replace("{DateNextRe}", DateNextRe)
+    public static final String SpecialDate = "(?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})年)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})月)?{DateDayRegexInChinese}"
+            .replace("{ThisPrefixRegex}", ThisPrefixRegex)
+            .replace("{LastPrefixRegex}", LastPrefixRegex)
+            .replace("{NextPrefixRegex}", NextPrefixRegex)
             .replace("{DateDayRegexInChinese}", DateDayRegexInChinese);
 
     public static final String DateUnitRegex = "(?<unit>年|个月|周|日|天)";
