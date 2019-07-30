@@ -13590,7 +13590,79 @@
             }
           ]
         }
-      }      
+      }
+    ]
+  },
+  {
+    "Input": "Let's go for coffee on building 34 this afternoon",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "this afternoon",
+        "Start": 35,
+        "End": 48,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-07-30TAF",
+              "type": "datetimerange",
+              "start": "2019-07-30 12:00:00",
+              "end": "2019-07-30 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's go for coffee on building 4 this afternoon",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "this afternoon",
+        "Start": 34,
+        "End": 47,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-07-30TAF",
+              "type": "datetimerange",
+              "start": "2019-07-30 12:00:00",
+              "end": "2019-07-30 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "134 this afternoon",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "this afternoon",
+        "Start": 4,
+        "End": 17,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-07-30TAF",
+              "type": "datetimerange",
+              "start": "2019-07-30 12:00:00",
+              "end": "2019-07-30 16:00:00"
+            }
+          ]
+        }
+      }
     ]
   }
 ]
