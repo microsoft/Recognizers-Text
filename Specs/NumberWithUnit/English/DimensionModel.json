@@ -814,5 +814,24 @@
     "Input": "I ' m tired",
     "NotSupported": "javascript, python, java",
     "Results": []
+  },
+  {
+    "Input": "I'm 1.8m tall.",
+    "Results": [
+      {
+        "Text": "1.8m",
+        "Start": 4,
+        "End": 7,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "value": "1.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It cost 1.8M dollars.",
+    "Results": []
   }
 ]
