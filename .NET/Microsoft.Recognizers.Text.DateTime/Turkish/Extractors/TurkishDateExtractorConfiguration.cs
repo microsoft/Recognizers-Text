@@ -171,17 +171,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
                 ImplicitDateList = ImplicitDateList.Concat(new[] { DayRegex });
             }
 
-            // 3-23-2017
+            // Gelecek Pazar (1 Nisan 2016)
             var dateRegex4 = new Regex(DateTimeDefinitions.DateExtractor4, RegexFlags);
 
-            // 23-3-2015
+            // 23-3-2015 (,Pazar|(Pazar))?
             var dateRegex5 = new Regex(DateTimeDefinitions.DateExtractor5, RegexFlags);
 
-            // on (Sunday,)? 1.3
+            // Gelecek Pazar (1-1-2016)
             var dateRegex6 = new Regex(DateTimeDefinitions.DateExtractor6, RegexFlags);
 
-            // on (Sunday,)? 24-12
+            // 6 Nisan'da or Altı Nisan'da
+            var dateRegex7 = new Regex(DateTimeDefinitions.DateExtractor7, RegexFlags);
+
+            // 2015 yılı Nisan'ın 6'sı(nda)? (Pazar)?
             var dateRegex8 = new Regex(DateTimeDefinitions.DateExtractor8, RegexFlags);
+
+            // 6'ncı Çarşamba or Altıncı Çarşamba
+            var dateRegex9 = new Regex(DateTimeDefinitions.DateExtractor9, RegexFlags);
 
             // "(Sunday,)? 7/23, 2018", year part is required
             var dateRegex7L = new Regex(DateTimeDefinitions.DateExtractor7L, RegexFlags);
@@ -200,10 +206,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
             DateRegexList = new List<Regex>
             {
-                // (Sunday,)? April 5 or (Sunday,)? April 5, 2016
+                // 5 Nisan (Pazar|(Pazar)|,Pazar)? or 5 Nisan 2016 (Pazar|(Pazar)|,Pazar)?
                 new Regex(DateTimeDefinitions.DateExtractor1, RegexFlags),
 
-                // (Sunday,)? 6th of April
+                // Gelecek ayın 6'sı(nda)? (Pazar)? or Gelecek ayın altısı(nda)? (Pazar)?
                 new Regex(DateTimeDefinitions.DateExtractor3, RegexFlags),
             };
 
