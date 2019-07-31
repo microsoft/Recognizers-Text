@@ -1413,14 +1413,13 @@
     "Context": {
       "ReferenceDateTime": "2019-07-30T17:09:00"
     },
-    "comment": "This case gets wrong timex now (2019-07-25,XXXX-10-01,P67.2849497971204D)",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "从上周四到十月一日",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2019-07-25,XXXX-10-01,P68)",
+          "Timex": "(2019-07-25,XXXX-10-01,P68D)",
           "FutureResolution": {
             "startDate": "2019-07-25",
             "endDate": "2019-10-01"
@@ -1430,8 +1429,8 @@
             "endDate": "2019-10-01"
           }
         },
-        "Start": 13,
-        "Length": 27
+        "Start": 1,
+        "Length": 9
       }
     ]
   }

@@ -13592,5 +13592,30 @@
         }
       }      
     ]
+  },
+  {
+    "Input": "I will leave from next friday to Oct 1st 2020.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T08:00:00"
+    },
+    "NotSupported":"python, java",
+    "Results": [
+      {
+        "Text": "from next friday to oct 1st 2020",
+        "Start": 13,
+        "End": 44,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-08-09,2020-10-01,P419D)",
+              "type": "daterange",
+              "start": "2019-08-09",
+              "end": "2020-10-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

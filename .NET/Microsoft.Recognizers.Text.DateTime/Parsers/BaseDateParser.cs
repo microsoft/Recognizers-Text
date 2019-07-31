@@ -256,7 +256,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var value = referenceDate.AddDays(numOfDays + swift);
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
-                ret.FutureValue = ret.PastValue = value;
+                ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
                 ret.Success = true;
 
                 return ret;
@@ -284,7 +284,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
-                ret.FutureValue = ret.PastValue = value;
+                ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
                 ret.Success = true;
 
                 return ret;
@@ -305,7 +305,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
-                ret.FutureValue = ret.PastValue = value;
+                ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
                 ret.Success = true;
 
                 return ret;
@@ -320,7 +320,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var value = referenceDate.This((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
-                ret.FutureValue = ret.PastValue = value;
+                ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
                 ret.Success = true;
 
                 return ret;
@@ -342,7 +342,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
-                ret.FutureValue = ret.PastValue = value;
+                ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
                 ret.Success = true;
 
                 return ret;
