@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-using DateObject = System.DateTime;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
@@ -137,10 +136,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             return true;
         }
 
-        // for SetWeekDay when the plural is not formed by adding 's'
-        public void SetWeekDayParser(IDateTimeExtractor extractor, string text, Match match, DateObject reference, ref List<ExtractResult> ers, ref bool success)
-        {
-
-        }
+        public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
     }
 }

@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Collections.Immutable;
-using System.Linq;
 using System.Text.RegularExpressions;
-using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
@@ -145,10 +143,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             return true;
         }
 
-         // for SetWeekDay when the plural is not formed by adding 's'
-        public void SetWeekDayParser(IDateTimeExtractor extractor, string text, Match match, DateObject reference, ref List<ExtractResult> ers, ref bool success)
+        public string WeekDayGroupMatchString(Match match)
         {
-            var trimmedText = text.Remove(match.Index, match.Length);
             string weekday = string.Empty;
             if (match.Groups["g0"].ToString() != string.Empty)
             {
@@ -175,12 +171,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 weekday = match.Groups["g5"].ToString() + "o";
             }
 
-            trimmedText = trimmedText.Insert(match.Index, weekday);
-            ers = extractor.Extract(trimmedText, reference);
-            if (ers.Count == 1 && ers.First().Length == trimmedText.Length)
-            {
-                success = true;
-            }
+            return weekday;
         }
     }
 }

@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -53,6 +51,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         bool GetMatchedUnitTimex(string text, out string timex);
 
-        void SetWeekDayParser(IDateTimeExtractor extractor, string text, Match match, DateObject reference, ref List<ExtractResult> ers, ref bool success);
+        string WeekDayGroupMatchString(Match match);
     }
 }

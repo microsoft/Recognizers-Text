@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using DateObject = System.DateTime;
@@ -221,20 +222,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             match = this.config.SetWeekDayRegex.Match(text);
             if (match.Success)
             {
-                if (match.Value.EndsWith("s"))
+                var trimmedText = text.Remove(match.Index, match.Length);
+
+                trimmedText = trimmedText.Insert(match.Index, config.WeekDayGroupMatchString(match));
+                ers = extractor.Extract(trimmedText, refDate);
+                if (ers.Count == 1 && ers.First().Length == trimmedText.Length)
                 {
-                    var trimmedText = text.Remove(match.Index, match.Length);
-                    trimmedText = trimmedText.Insert(match.Index, match.Groups["weekday"].ToString());
-                    ers = extractor.Extract(trimmedText, refDate);
-                    if (ers.Count == 1 && ers.First().Length == trimmedText.Length)
-                    {
-                        success = true;
-                    }
-                }
-                else
-                {
-                    // this function is used to extract SetWeekDay when the plural is not formed adding 's'
-                    config.SetWeekDayParser(extractor, text, match, refDate, ref ers, ref success);
+                    success = true;
                 }
             }
 

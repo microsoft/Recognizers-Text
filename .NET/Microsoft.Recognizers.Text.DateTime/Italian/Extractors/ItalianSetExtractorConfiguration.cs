@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Italian;
-using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
@@ -79,10 +77,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         Regex ISetExtractorConfiguration.SetEachRegex => SetEachRegex;
 
-         // for SetWeekDay when the plural is not formed by adding 's'
-        public void SetWeekDayExtractor(IDateTimeExtractor extractor, string text, Match match, DateObject reference, ref List<Token> ret)
+        public Tuple<string, int> WeekDayGroupMatchTuple(Match match)
         {
-            var trimmedText = text.Remove(match.Index, match.Length);
+
             string weekday = string.Empty;
             int del = 0;
             if (match.Groups["g0"].ToString() != string.Empty)
@@ -116,22 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 del = 0;
             }
 
-            trimmedText = trimmedText.Insert(match.Index, weekday);
-
-            var ers = extractor.Extract(trimmedText, reference);
-            foreach (var er in ers)
-            {
-                if (er.Start <= match.Index && er.Text.Contains(match.Groups["weekday"].Value))
-                {
-                    var len = (er.Length ?? 0) + del;
-                    if (match.Groups[Constants.PrefixGroupName].ToString() != string.Empty)
-                    {
-                        len += match.Groups[Constants.PrefixGroupName].ToString().Length;
-                    }
-
-                    ret.Add(new Token(er.Start ?? 0, er.Start + len ?? 0));
-                }
-            }
+            return Tuple.Create<string, int>(weekday, del);
         }
     }
 }

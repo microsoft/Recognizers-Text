@@ -1,11 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-
-using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
@@ -143,10 +140,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             return true;
         }
 
-        // for SetWeekDay when the plural is not formed by adding 's'
-        public void SetWeekDayParser(IDateTimeExtractor extractor, string text, Match match, DateObject reference, ref List<ExtractResult> ers, ref bool success)
-        {
-
-        }
+        public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
     }
 }

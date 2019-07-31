@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Collections.Immutable;
+﻿using System;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Spanish;
-
-using DateObject = System.DateTime;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -77,10 +75,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex ISetExtractorConfiguration.SetEachRegex => SetEachRegex;
 
-        // for SetWeekDay when the plural is not formed by adding 's'
-        public void SetWeekDayExtractor(IDateTimeExtractor extractor, string text, Match match, DateObject reference, ref List<Token> ret)
-        {
-
-        }
+        public Tuple<string, int> WeekDayGroupMatchTuple(Match match) => SetHandler.WeekDayGroupMatchTuple(match);
     }
 }
