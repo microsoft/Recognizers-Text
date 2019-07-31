@@ -30,15 +30,6 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             var rawData = File.ReadAllText(specsFile);
             var specs = JsonConvert.DeserializeObject<IList<TestModel>>(rawData);
 
-            // Adding a pseudo test case to avoid test failure causing by returning empty sequence.
-            // https://github.com/microsoft/testfx-docs/blob/master/RFCs/005-Framework-Extensibility-Custom-DataSource.md#remarks
-            if (!specs.Any())
-            {
-                var pseudoTest = new TestModel();
-                pseudoTest.NotSupported = Platform.DotNet;
-                specs.Add(pseudoTest);
-            }
-
             var data = specs.Select(spec => new[] { spec });
             return data;
         }
