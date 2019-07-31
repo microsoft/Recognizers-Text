@@ -18,6 +18,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex ThisPrefixRegex =
             new Regex(@"(ce|cette)\b", RegexFlags);
 
+        public static readonly Regex NextSuffixRegex =
+            new Regex(DateTimeDefinitions.NextSuffixRegex, RegexFlags);
+
+        public static readonly Regex PastSuffixRegex =
+            new Regex(DateTimeDefinitions.PastSuffixRegex, RegexFlags);
+
         public static readonly Regex RelativeRegex =
             new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
 
@@ -303,7 +309,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o)) &&
+            return (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o)) ||
+                (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.Contains(o)) && (NextSuffixRegex.IsMatch(trimmedText) || PastSuffixRegex.IsMatch(trimmedText)))) &&
                    !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
         }
 

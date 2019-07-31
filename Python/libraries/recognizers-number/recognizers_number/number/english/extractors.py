@@ -143,7 +143,7 @@ class EnglishDoubleExtractor(BaseNumberExtractor):
                 val='DoubleNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    EnglishNumeric.DoubleWithMultiplierRegex),
+                    EnglishNumeric.DoubleWithMultiplierRegex, regex.S),
                 val='DoubleNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(

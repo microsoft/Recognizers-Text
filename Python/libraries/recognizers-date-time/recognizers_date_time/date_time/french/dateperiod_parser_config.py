@@ -224,6 +224,10 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._past_prefix_regex = RegExpUtility.get_safe_reg_exp('(dernier)\b')
         self._this_prefix_regex = RegExpUtility.get_safe_reg_exp(
             '(ce|cette)\b')
+        self._next_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.NextSuffixRegex)
+        self._past_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.PastSuffixRegex)
 
         self._in_connector_regex = config.utility_configuration.in_connector_regex
         self._unit_map = config.unit_map
@@ -286,7 +290,10 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
 
     def is_week_only(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return any(trimmed_source.endswith(o) for o in FrenchDateTime.WeekTerms) and not\
+        return (any(trimmed_source.endswith(o) for o in FrenchDateTime.WeekTerms) or
+                (any(trimmed_source.__contains__(o) for o in FrenchDateTime.WeekTerms) and
+                 (self._next_suffix_regex.search(trimmed_source) or
+                  self._past_suffix_regex.search(trimmed_source)))) and not\
             any(trimmed_source.endswith(o)
                 for o in FrenchDateTime.WeekendTerms)
 

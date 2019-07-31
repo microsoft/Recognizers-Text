@@ -620,5 +620,37 @@
         "End": 31
       }
     ]
+  },
+  {
+    "Input": "Sıcaklık 20 fahrenhayttı",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20 fahrenhayttı",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "F"
+        },
+        "Start": 9,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "Sıcaklık 25 derecenin üzerindeydi.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "25 derecenin",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "25",
+          "unit": "Degree"
+        },
+        "Start": 9,
+        "End": 20
+      }
+    ]
   }
 ]

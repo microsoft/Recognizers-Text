@@ -25,7 +25,7 @@ public class FrenchDateTime {
 
     public static final String RelativeRegex = "(?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))";
 
-    public static final String StrictRelativeRegex = "(?<order>prochaine?|ce(tte)?|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))";
+    public static final String StrictRelativeRegex = "(?<order>prochaine?|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))";
 
     public static final String NextSuffixRegex = "(?<order>prochaines?|prochain|suivante)\\b";
 
@@ -113,8 +113,9 @@ public class FrenchDateTime {
             .replace("{PastSuffixRegex}", PastSuffixRegex)
             .replace("{NextSuffixRegex}", NextSuffixRegex);
 
-    public static final String OneWordPeriodRegex = "\\b(({RelativeRegex}\\s+)?(?<month>avril|avr\\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\\.|f[eé]vr|janvier|janv\\.|janv|jan|juillet|jul|juil\\.|juil|juin|jun|mars?|mai|novembre|nov\\.|nov|octobre|oct\\.|oct|septembre|sept\\.|sept|sep)|{RelativeRegex}\\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)|weekend|week-end|(mois|l'année))\\b"
-            .replace("{RelativeRegex}", RelativeRegex);
+    public static final String OneWordPeriodRegex = "\\b(({RelativeRegex}\\s+)?(?<month>avril|avr\\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\\.|f[eé]vr|janvier|janv\\.|janv|jan|juillet|jul|juil\\.|juil|juin|jun|mars?|mai|novembre|nov\\.|nov|octobre|oct\\.|oct|septembre|sept\\.|sept|sep)|(la\\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)\\s+{StrictRelativeRegex}|{RelativeRegex}\\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)|weekend|week-end|(mois|l'année))\\b"
+            .replace("{RelativeRegex}", RelativeRegex)
+            .replace("{StrictRelativeRegex}", StrictRelativeRegex);
 
     public static final String MonthNumWithYear = "({YearRegex}(\\s*)[/\\-\\.](\\s*){MonthNumRegex})|({MonthNumRegex}(\\s*)[/\\-](\\s*){YearRegex})"
             .replace("{YearRegex}", YearRegex)

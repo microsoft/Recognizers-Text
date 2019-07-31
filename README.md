@@ -64,11 +64,11 @@ The table below summarizes the currently supported entities. Support for English
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
 | Number (cardinal)    | :x:  | :x:     | ✓     |        |       |         |        |        |        |         |
 | Ordinal              | :x:  | :x:     | ✓     |        |       |         |        |        |        |         |
-| Percentage           | :x:  | :x:     | **PA**|        |       |         |        |        |        |         |
-| Number Range         | :x:  | :x:     | **S)**|        |       |         |        |        |        |         |
+| Percentage           | :x:  | :x:     | ✓     |        |       |         |        |        |        |         |
+| Number Range         | :x:  | :x:     | **SO**|        |       |         |        |        |        |         |
 | Unit - Age           | :x:  | :x:     | ✓     |        |       |         |        |        |        |         |
 | Unit - Currency      | :x:  | :x:     | ✓     |        |       |         |        |        |        |         |
-| Unit - Dimensions    | :x:  | :x:     | **PA**|        |       |         |        |        |        |         | 
+| Unit - Dimensions    | :x:  | :x:     | ✓     |        |       |         |        |        |        |         | 
 | Unit - Temperature   | :x:  | :x:     | ✓     |        |       |         |        |        |        |         | 
 | Choice - Boolean     | ✓    | ✓      | **SO**|        |       |         |        |        |        |         |
 | Seq. - E-mail        | G    | G       | G     |        |       |         |        |        |        |         |

@@ -461,6 +461,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     },
                 }));
 
+            RegisterModel<CurrencyModel>(
+                Culture.Turkish,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Turkish.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Turkish.CurrencyParserConfiguration())
+                    },
+                }));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)
