@@ -3,11 +3,9 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDatePeriodParserConfiguration : IOptionsConfiguration
+    public interface IDatePeriodParserConfiguration : ISimpleDatePeriodParserConfiguration
     {
         string TokenBeforeDate { get; }
-
-        IDateExtractor DateExtractor { get; }
 
         IExtractor CardinalExtractor { get; }
 
@@ -36,8 +34,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex MonthWithYear { get; }
 
         Regex MonthNumWithYear { get; }
-
-        Regex YearRegex { get; }
 
         Regex PastRegex { get; }
 
@@ -102,8 +98,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex MoreThanRegex { get; }
 
         Regex CenturySuffixRegex { get; }
-
-        Regex RelativeRegex { get; }
 
         Regex UnspecificEndOfRangeRegex { get; }
 

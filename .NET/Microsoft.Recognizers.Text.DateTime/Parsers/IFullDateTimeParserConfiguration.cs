@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IFullDateTimeParserConfiguration : IOptionsConfiguration
+    public interface IFullDateTimeParserConfiguration : ISimpleDatePeriodParserConfiguration
     {
         int TwoNumYear { get; }
 
@@ -39,10 +39,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex SinceSuffixRegex { get; }
 
         Regex EqualRegex { get; }
-
-        Regex DatePeriodYearRegex { get; }
-
-        Regex RelativeRegex { get; }
 
         ImmutableDictionary<string, string> UnitMap { get; }
 

@@ -5,7 +5,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class JapaneseDateExtractorConfiguration : IDateTimeExtractor
+    public class JapaneseDateExtractorConfiguration : AbstractYearExtractor, IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
 
@@ -119,6 +119,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private static readonly JapaneseDurationExtractorConfiguration DurationExtractor = new JapaneseDurationExtractorConfiguration();
 
+        public JapaneseDateExtractorConfiguration(IDateExtractorConfiguration config = null)
+            : base(config)
+        {
+        }
+
         public static List<Token> ExtractRaw(string text)
         {
             var tokens = new List<Token>();
@@ -128,12 +133,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return tokens;
         }
 
-        public List<ExtractResult> Extract(string text)
+        public override List<ExtractResult> Extract(string text)
         {
             return Extract(text, DateObject.Now);
         }
 
-        public List<ExtractResult> Extract(string text, DateObject referenceTime)
+        public override List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
             var tokens = new List<Token>();
             tokens.AddRange(BasicRegexMatch(text));

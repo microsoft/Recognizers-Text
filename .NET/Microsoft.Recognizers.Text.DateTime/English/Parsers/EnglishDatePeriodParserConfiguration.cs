@@ -202,13 +202,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex NowRegex { get; }
 
+        Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
+
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
 
         Regex IDatePeriodParserConfiguration.PreviousPrefixRegex => PreviousPrefixRegex;
 
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
-
-        Regex IDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 
         Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
 

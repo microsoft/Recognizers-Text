@@ -23,28 +23,28 @@ namespace Microsoft.Recognizers.Text.DateTime
             config = configuration;
         }
 
-        public static DateContext GetYearContext(Regex yearRegex, Regex relativeRegex, IDateExtractor dateExtractor, string startDateStr, string endDateStr, string text)
+        public static DateContext GetYearContext(ISimpleDatePeriodParserConfiguration config, string startDateStr, string endDateStr, string text)
         {
             var isEndDatePureYear = false;
             var isDateRelative = false;
             int contextYear = Constants.InvalidYear;
 
-            var yearMatchForEndDate = yearRegex.Match(endDateStr);
+            var yearMatchForEndDate = config.YearRegex.Match(endDateStr);
 
             if (yearMatchForEndDate.Success && yearMatchForEndDate.Length == endDateStr.Length)
             {
                 isEndDatePureYear = true;
             }
 
-            var relativeMatchForStartDate = relativeRegex.Match(startDateStr);
-            var relativeMatchForEndDate = relativeRegex.Match(endDateStr);
+            var relativeMatchForStartDate = config.RelativeRegex.Match(startDateStr);
+            var relativeMatchForEndDate = config.RelativeRegex.Match(endDateStr);
             isDateRelative = relativeMatchForStartDate.Success || relativeMatchForEndDate.Success;
 
             if (!isEndDatePureYear && !isDateRelative)
             {
-                foreach (Match match in yearRegex.Matches(text))
+                foreach (Match match in config.YearRegex.Matches(text))
                 {
-                    var year = dateExtractor.GetYearFromText(match);
+                    var year = config.DateExtractor.GetYearFromText(match);
 
                     if (year != Constants.InvalidYear)
                     {
@@ -333,7 +333,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var isSpecificDate = false;
                 var isStartByWeek = false;
                 var isEndByWeek = false;
-                var dateContext = GetYearContext(config.YearRegex, config.RelativeRegex, config.DateExtractor, match.Groups["start"].Value.Trim(), match.Groups["end"].Value.Trim(), text);
+                var dateContext = GetYearContext(this.config, match.Groups["start"].Value.Trim(), match.Groups["end"].Value.Trim(), text);
 
                 var startResolution = ParseSingleTimePoint(match.Groups["start"].Value.Trim(), referenceDate, dateContext);
 
@@ -1364,7 +1364,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er[1].Text = weekPrefix + " " + er[1].Text;
                 }
 
-                var dateContext = GetYearContext(config.YearRegex, config.RelativeRegex, config.DateExtractor, er[0].Text, er[1].Text, text);
+                var dateContext = GetYearContext(this.config, er[0].Text, er[1].Text, text);
 
                 pr1 = this.config.DateParser.Parse(er[0], referenceDate);
                 pr2 = this.config.DateParser.Parse(er[1], referenceDate);

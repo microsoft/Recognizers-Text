@@ -11,6 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public ChineseDateTimeParserConfiguration(DateTimeOptions options = DateTimeOptions.None)
             : base(options)
         {
+            DateExtractor = new ChineseDateExtractorConfiguration();
+
             DateParser = new ChineseDateParserConfiguration(this);
             TimeParser = new ChineseTimeParserConfiguration(this);
             DateTimeParser = new ChineseDateTimeParser(this);
@@ -36,7 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             NextRegex = ChineseDateExtractorConfiguration.NextRegex;
             ThisRegex = ChineseDateExtractorConfiguration.ThisRegex;
             LastRegex = ChineseDateExtractorConfiguration.LastRegex;
-            DatePeriodYearRegex = ChineseDateExtractorConfiguration.DatePeriodYearRegex;
+            YearRegex = ChineseDateExtractorConfiguration.YearRegex;
             RelativeRegex = ChineseDateExtractorConfiguration.RelativeRegex;
             StrictWeekDayRegex = ChineseDateExtractorConfiguration.WeekDayRegex;
             WeekDayOfMonthRegex = ChineseDateExtractorConfiguration.WeekDayOfMonthRegex;
@@ -57,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public string LastMonthToken => DateTimeDefinitions.ParserConfigurationLastMonthToken;
 
         public string DatePrefix => DateTimeDefinitions.ParserConfigurationDatePrefix;
+
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeParser DateParser { get; }
 
@@ -102,7 +106,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public Regex LastRegex { get; }
 
-        public Regex DatePeriodYearRegex { get; }
+        public Regex YearRegex { get; }
 
         public Regex RelativeRegex { get; }
 

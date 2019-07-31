@@ -11,6 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public JapaneseDateTimeParserConfiguration(DateTimeOptions options = DateTimeOptions.None)
                 : base(options)
         {
+            DateExtractor = new JapaneseDateExtractorConfiguration();
+
             DateParser = new JapaneseDateParserConfiguration(this);
             TimeParser = new JapaneseTimeParserConfiguration(this);
             DateTimeParser = new JapaneseDateTimeParser(this);
@@ -36,6 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             NextRegex = JapaneseDateExtractorConfiguration.NextRegex;
             ThisRegex = JapaneseDateExtractorConfiguration.ThisRegex;
             LastRegex = JapaneseDateExtractorConfiguration.LastRegex;
+            YearRegex = JapaneseDateExtractorConfiguration.YearRegex;
             DatePeriodYearRegex = JapaneseDateExtractorConfiguration.DatePeriodYearRegex;
             RelativeRegex = JapaneseDateExtractorConfiguration.RelativeRegex;
             StrictWeekDayRegex = JapaneseDateExtractorConfiguration.WeekDayRegex;
@@ -57,6 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public string LastMonthToken => DateTimeDefinitions.ParserConfigurationLastMonthToken;
 
         public string DatePrefix => DateTimeDefinitions.ParserConfigurationDatePrefix;
+
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeParser DateParser { get; }
 
@@ -101,6 +106,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public Regex ThisRegex { get; }
 
         public Regex LastRegex { get; }
+
+        public Regex YearRegex { get; }
 
         public Regex DatePeriodYearRegex { get; }
 

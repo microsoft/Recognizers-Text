@@ -1382,7 +1382,6 @@
       }
     ]
   },
-  ,
   {
     "Input": "我从8月的最后一个星期一到十月一日不在",
     "Context": {
@@ -1396,12 +1395,12 @@
         "Value": {
           "Timex": "(XXXX-08-WXX-1-#4,XXXX-10-01,P36D)",
           "FutureResolution": {
-            "startDate": "2019-08-27",
+            "startDate": "2019-08-26",
             "endDate": "2019-10-01"
           },
           "PastResolution": {
-            "startDate": "2019-08-27",
-            "endDate": "2019-10-01"
+            "startDate": "2018-08-27",
+            "endDate": "2018-10-01"
           }
         },
         "Start": 1,
