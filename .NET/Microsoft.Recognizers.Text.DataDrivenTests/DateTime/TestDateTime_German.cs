@@ -203,13 +203,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestDateTime(testSpec);
         }
 
-        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void DateTimeModelSplitDateAndTime(TestModel testSpec)
         {
             TestDateTime(testSpec);
         }
-        */
     }
 }
