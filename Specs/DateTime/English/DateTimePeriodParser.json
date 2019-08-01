@@ -2372,5 +2372,57 @@
         "Length": 29
       }
     ]
+  },
+  {
+    "Input": "Can you schedule us on Friday next week between 8am and 2pm?",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "on Friday next week between 8am and 2pm",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2017-11-17T08,2017-11-17T14,PT6H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 08:00:00",
+            "endDateTime": "2017-11-17 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-17 08:00:00",
+            "endDateTime": "2017-11-17 14:00:00"
+          }
+        },
+        "Start": 20,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out between half past seven and 4pm of tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between half past seven and 4pm of tomorrow",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H30M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 07:30:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 07:30:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 43
+      }
+    ]
   }
 ]
