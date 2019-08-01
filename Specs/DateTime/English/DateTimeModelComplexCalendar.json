@@ -11652,6 +11652,7 @@
           "values": [
             {
               "timex": "2019-08-01TAF",
+              "Mod": "end",
               "type": "datetimerange",
               "start": "2019-08-01 14:00:00",
               "end": "2019-08-01 16:00:00"
@@ -11676,6 +11677,7 @@
           "values": [
             {
               "timex": "2019-08-01TMO",
+              "Mod": "end",
               "type": "datetimerange",
               "start": "2019-08-01 10:00:00",
               "end": "2019-08-01 12:00:00"
@@ -11700,6 +11702,7 @@
           "values": [
             {
               "timex": "2019-08-01TEV",
+              "Mod": "start",
               "type": "datetimerange",
               "start": "2019-08-01 16:00:00",
               "end": "2019-08-01 18:00:00"

@@ -816,9 +816,11 @@ class BaseDateTimePeriodParser(DateTimeParser):
             if RegExpUtility.get_group(match, 'early'):
                 has_early = True
                 result.comment = 'early'
+                result.mod = TimeTypeConstants.EARLY_MOD
             elif RegExpUtility.get_group(match, 'late'):
                 has_late = True
                 result.comment = 'late'
+                result.mod = TimeTypeConstants.LATE_MOD
 
         matched = self.config.get_matched_time_range(time_str)
         if not matched.success:
