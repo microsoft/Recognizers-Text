@@ -39,7 +39,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             ThisRegex = JapaneseDateExtractorConfiguration.ThisRegex;
             LastRegex = JapaneseDateExtractorConfiguration.LastRegex;
             YearRegex = JapaneseDateExtractorConfiguration.YearRegex;
-            DatePeriodYearRegex = JapaneseDateExtractorConfiguration.DatePeriodYearRegex;
             RelativeRegex = JapaneseDateExtractorConfiguration.RelativeRegex;
             StrictWeekDayRegex = JapaneseDateExtractorConfiguration.WeekDayRegex;
             WeekDayOfMonthRegex = JapaneseDateExtractorConfiguration.WeekDayOfMonthRegex;

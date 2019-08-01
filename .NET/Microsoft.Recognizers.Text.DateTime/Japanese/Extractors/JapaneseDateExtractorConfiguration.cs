@@ -21,8 +21,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
 
-        public static readonly Regex DatePeriodYearRegex = new Regex(DateTimeDefinitions.DatePeriodYearRegex, RegexFlags);
-
         public static readonly Regex RelativeRegex = new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
 
         public static readonly Regex ZeroToNineIntegerRegexJap = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexJap, RegexFlags);
