@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using DateObject = System.DateTime;
@@ -222,7 +223,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success)
             {
                 var trimmedText = text.Remove(match.Index, match.Length);
-                trimmedText = trimmedText.Insert(match.Index, match.Groups["weekday"].ToString());
+
+                trimmedText = trimmedText.Insert(match.Index, config.WeekDayGroupMatchString(match));
                 ers = extractor.Extract(trimmedText, refDate);
                 if (ers.Count == 1 && ers.First().Length == trimmedText.Length)
                 {

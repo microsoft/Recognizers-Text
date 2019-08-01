@@ -1,276 +1,301 @@
 [
   {
     "Input": "Andrò via settimanalmente",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "settimanalmente",
-        "Type": "set"
+        "Type": "set",
+        "Start": 10,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Andrò via quotidianamente",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "quotidianamente",
-        "Type": "set"
+        "Type": "set",
+        "Start": 10,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Andrò via ogni giorno",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni giorno",
-        "Type": "set"
+        "Type": "set",
+        "Start": 10,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Andrò via ogni mese",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni mese",
-        "Type": "set"
+        "Type": "set",
+        "Start": 10,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Andrò via annualmente",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "annualmente",
-        "Type": "set"
+        "Type": "set",
+        "Start": 10,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Andrò via una volta all'anno",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "una volta all'anno",
-        "Type": "set"
+        "Type": "set",
+        "Start": 10,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Andrò via ogni due giorni",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni due giorni",
-        "Type": "set"
+        "Type": "set",
+        "Start": 10,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Andrò via ogni tre settimane",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni tre settimane",
-        "Type": "set"
+        "Type": "set",
+        "Start": 10,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Andrò via alle 3pm ogni giorno",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "alle 3pm ogni giorno",
-        "Type": "set"
+        "Text": "3pm ogni giorno",
+        "Type": "set",
+        "Start": 15,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Andrò via ogni 4/15",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni 4/15",
-        "Type": "set"
+        "Type": "set",
+        "Start": 10,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Andrò via ogni lunedì",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni lunedì",
-        "Type": "set"
+        "Type": "set",
+        "Start": 10,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Andrò via ogni lunedì alle 4pm",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni lunedì alle 4pm",
-        "Type": "set"
+        "Type": "set",
+        "Start": 10,
+        "Length": 20
       }
     ]
   },
   {
     "Input": "Andrò via ogni mattina",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni mattina",
-        "Type": "set"
+        "Type": "set",
+        "Start": 10,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Andrò via ogni mattina alle 9am",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni mattina alle 9am",
-        "Type": "set"
+        "Type": "set",
+        "Start": 10,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Andrò via ogni pomeriggio alle 4pm",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni pomeriggio alle 4pm",
-        "Type": "set"
+        "Type": "set",
+        "Start": 10,
+        "Length": 24
       }
     ]
   },
   {
     "Input": "Andrò via ogni notte alle 9pm",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni notte alle 9pm",
-        "Type": "set"
+        "Type": "set",
+        "Start": 10,
+        "Length": 19
       }
     ]
   },
   {
     "Input": "Andrò via ogni notte alle 9",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni notte alle 9",
-        "Type": "set"
+        "Type": "set",
+        "Start": 10,
+        "Length": 17
       }
     ]
   },
   {
-    "Input": "Andrò via la mattina alle 9am",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "Input": "Andrò via tutte le mattine alle 9am",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "la mattina alle 9am",
-        "Type": "set"
+        "Text": "tutte le mattine alle 9am",
+        "Type": "set",
+        "Start": 10,
+        "Length": 25
       }
     ]
   },
   {
-    "Input": "Andrò via di mattina alle 9",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "Input": "Andrò via ogni mattina alle 9",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "di mattina alle 9",
-        "Type": "set"
+        "Text": "ogni mattina alle 9",
+        "Type": "set",
+        "Start": 10,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via tutte le mattine",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tutte le mattine",
+        "Type": "set",
+        "Start": 10,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via tutti i giorni",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tutti i giorni",
+        "Type": "set",
+        "Start": 10,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Andrò via alle 9am ogni domenica",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "alle 9am ogni domenica",
-        "Type": "set"
+        "Text": "9am ogni domenica",
+        "Type": "set",
+        "Start": 15,
+        "Length": 17
       }
     ]
   },
   {
-    "Input": "Andrò via alle 9am di lunedì",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "Input": "Andrò via alle 9am di ogni lunedì",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "alle 9am di lunedì",
-        "Type": "set"
+        "Text": "9am di ogni lunedì",
+        "Type": "set",
+        "Start": 15,
+        "Length": 18
       }
     ]
   },
   {
-    "Input": "Andrò via alle 9am il lunedì",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "Input": "Andrò via alle 9am tutti i lunedì",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "alle 9am il lunedì",
-        "Type": "set"
+        "Text": "9am tutti i lunedì",
+        "Type": "set",
+        "Start": 15,
+        "Length": 18
       }
     ]
   },
   {
-    "Input": "Andrò via il lunedì",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "Input": "Andrò via i lunedì",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "il lunedì",
-        "Type": "set"
-      }
-    ]
-  },
-  {
-    "Input": "Andrò via la domenica",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "la domenica",
-        "Type": "set"
-      }
-    ]
-  },
-  {
-    "Input": "Andrò via di domenica",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "di domenica",
-        "Type": "set"
+        "Text": "i lunedì",
+        "Type": "set",
+        "Start": 10,
+        "Length": 8
       }
     ]
   }

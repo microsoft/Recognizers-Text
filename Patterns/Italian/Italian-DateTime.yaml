@@ -1,6 +1,8 @@
 ---
 TillRegex: !simpleRegex
   def: (?<till>\b(fino\s+a(l(l[aoe'])?|gli|i)?|a(l(l[aoe'])?|gli|i)?|e(\s+(il?|l[aoe']|gli))?)\b|--|-|—|——|~)
+RestrictedTillRegex: !simpleRegex
+  def: (?<till>\b(fino\s+a(l(l[aoe'])?|gli|i)?)\b|--|-|—|——|~)
 RangeConnectorRegex: !nestedRegex
   def: (?<and>\b(e(\s+l[aoe']|gli|i)?|a(l(l[aoe'])?|gli|i)?)\b|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
@@ -207,8 +209,10 @@ StrictWeekDay: !simpleRegex
 RelativeDayRegex: !nestedRegex
   def: \b(((il|l')\s*)?{RelativeRegex}\s+giorno)\b
   references: [ RelativeRegex ]
+#SetWeekDayRegex: !simpleRegex
+#  def: \b(?<prefix>(tutt[ei]\s+)?(le|i)\s+)(?<weekday>mattine|pomeriggi|sere|notti|domeniche|lunedì|martedì|mercoledì|giovedì|venerdì|sabati)\b
 SetWeekDayRegex: !simpleRegex
-  def: \b(?<prefix>di\s+)?(?<weekday>mattina|pomeriggio|sera|notte|domenica|lunedì|martedì|mercoledì|giovedì|venerdì|sabato)\b
+  def: \b(?<prefix>(tutt[ei]\s+)?(le|i)\s+)(?<weekday>(?<g0>mattin|ser)|(?<g1>pomerigg)|(?<g2>nott)|(?<g3>luned|marted|mercoled|gioved|venerd)|(?<g4>domenic)|(?<g5>sabat))(e|i|ì|he)\b
 WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>((la|il)\s+)?(?<cardinal>prim[ao]|second[ao]|terz[ao]|quart[ao]|quint[ao]|ultim[ao])\s+{WeekDayRegex}\s+{MonthSuffixRegex})
   references: [ WeekDayRegex, MonthSuffixRegex ]
@@ -382,7 +386,7 @@ PeriodPmRegex: !simpleRegex
 PeriodAmRegex: !simpleRegex
   def: \b(?<am>al mattino|alla mattina|di mattina|in mattinata)\b
 PureNumFromTo: !nestedRegex
-  def: (da(ll[e'])?\s*)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?
+  def: ((?<!dell[e']\s*)|da(ll[e'])?\s*)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?
   references: [ HourRegex, PeriodHourNumRegex, PeriodDescRegex, TillRegex, PmRegex, AmRegex ]
 PureNumBetweenAnd: !nestedRegex
   def: ([tf]ra(\s+l[e'])?\s*)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex}))?\s*{RangeConnectorRegex}\s*({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex}))?
@@ -451,14 +455,14 @@ DurationUnitRegex: !nestedRegex
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*e\s+(un\s+)?(?<suffix_num>mezzo|mezza|quarto))
 PeriodicRegex: !simpleRegex
-  def: \b(?<periodic>giornalier[oaei]|mensil[ei]|settimanal[ei]|bisettimanal[ei]|annual[ei])\b
+  def: \b(?<periodic>giornalier[oaei]|giornalmente|quotidian[oaei]|quotidianamente|mensil[ei]|mensilmente|settimanal[ei]|settimanalmente|bisettimanal[ei]|annual[ei]|annualmente)\b
 EachUnitRegex: !nestedRegex
-  def: (?<each>(ogni|tutte\s+le|tutti\s+(gl)?i)(?<other>\s+altro)?\s*{DurationUnitRegex})
+  def: (?<each>(ogni|tutte\s+le|tutti\s+(gl)?i|una\s+volta\s+(al(l')?|l'))(?<other>\s+altro)?\s*{DurationUnitRegex})
   references: [ DurationUnitRegex ]
 EachPrefixRegex: !simpleRegex
-  def: \b(?<each>(ogni|tutte\s+le|tutti\s+(gl)?i)\s*$)
+  def: \b(?<each>(ogni|tutte\s+le|tutti\s+(gl)?i|una\s+volta\s+(al(l')?|l'))\s*$)
 SetEachRegex: !simpleRegex
-  def: \b(?<each>(ogni|tutte\s+le|tutti\s+(gl)?i)\s*)
+  def: \b(?<each>(ogni|tutte\s+le|tutti\s+(gl)?i|una\s+volta\s+(al(l')?|l'))\s*)
 SetLastRegex: !simpleRegex
   def: (?<last>prossim[oaei]|seguent[ei]|in\s+arrivo|quest[oaei]|ultim[oaei]|passat[oaei]|scors[oaei]|precedent[ei]|corrent[ei])
 EachDayRegex: !simpleRegex
@@ -715,7 +719,9 @@ DayOfWeek: !dictionary
     giovedì: 4
     venerdì: 5
     sabato: 6
+    sabati: 6
     domenica: 0
+    domeniche: 0
     lun: 1
     mar: 2
     mer: 3
@@ -988,22 +994,29 @@ SpecialDecadeCases: !dictionary
     'duemila': 2000
 DefaultLanguageFallback: DMY
 DurationDateRestrictions: []
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '\bgiorno|pomeriggio|sera|notte\b': '\b(buona?\s*(giorno|pomeriggio|sera|notte))\b'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]
   entries: 
     - mattino
     - mattina
+    - mattine
     - mattinata
 AfternoonTermList: !list
   types: [ string ]
   entries: 
     - pomeriggio
+    - pomeriggi
     - dopo pranzo
 EveningTermList: !list
   types: [ string ]
   entries: 
     - sera
+    - sere
     - serata
 DaytimeTermList: !list
   types: [ string ]
@@ -1015,6 +1028,7 @@ NightTermList: !list
   types: [ string ]
   entries: 
     - notte
+    - notti
     - nottata
 SameDayTerms: !list
   types: [ string ]
