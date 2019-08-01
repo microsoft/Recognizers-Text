@@ -1,10 +1,15 @@
 import pytest
 from runner import get_specs
-from recognizers_sequence.sequence.sequence_recognizer import recognize_phone_number, recognize_email
+from recognizers_sequence.sequence.sequence_recognizer import *
 
 MODEL_FUNCTION = {
     'PhoneNumber': recognize_phone_number,
     'Email': recognize_email,
+    'URL': recognize_url,
+    'GUID': recognize_guid,
+    'Mention': recognize_mention,
+    'Hashtag': recognize_hashtag,
+    'IpAddress': recognize_ip_address
 }
 
 
@@ -13,6 +18,7 @@ MODEL_FUNCTION = {
 def test_sequence_recognizer(
         culture, model, options, context, source, expected_results):
     results = get_results(culture, model, source)
+
     assert len(results) == len(expected_results)
     for actual, expected in zip(results, expected_results):
         assert actual.type_name == expected['TypeName']
@@ -28,4 +34,5 @@ def get_results(culture, model, source):
 def resolution_assert(actual, expected, props):
     for prop in props:
         if prop in expected['Resolution']:
+            print(actual.resolution[prop])
             assert actual.resolution[prop] == expected['Resolution'][prop]
