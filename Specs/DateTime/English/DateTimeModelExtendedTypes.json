@@ -1685,5 +1685,48 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Cortana could try to arrange a Skype call this or next week please?",
+    "Context": {
+      "ReferenceDateTime": "2019-08-01T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "this or next week",
+        "Text": "this",
+        "Start": 42,
+        "End": 45,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W31",
+              "type": "daterange",
+              "start": "2019-07-29",
+              "end": "2019-08-05"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "this or next week",
+        "Text": "next week",
+        "Start": 50,
+        "End": 58,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W32",
+              "type": "daterange",
+              "start": "2019-08-05",
+              "end": "2019-08-12"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
