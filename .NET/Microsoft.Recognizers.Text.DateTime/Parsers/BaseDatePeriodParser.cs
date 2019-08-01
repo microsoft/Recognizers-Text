@@ -23,6 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             config = configuration;
         }
 
+        // @TODO Refactor code to remove the cycle between BaseDatePeriodParser and its config.
         public static DateContext GetYearContext(ISimpleDatePeriodParserConfiguration config, string startDateStr, string endDateStr, string text)
         {
             var isEndDatePureYear = false;

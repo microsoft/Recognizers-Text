@@ -1,11 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
+﻿using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface ISimpleDatePeriodParserConfiguration : IOptionsConfiguration
+    public interface ISimpleDatePeriodParserConfiguration
     {
         Regex YearRegex { get; }
 

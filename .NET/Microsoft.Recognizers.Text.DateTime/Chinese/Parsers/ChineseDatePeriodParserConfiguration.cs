@@ -873,6 +873,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (er.Count >= 2)
             {
+                // @TODO Refactor code to remove the cycle between BaseDatePeriodParser and its config.
                 var dateContext = BaseDatePeriodParser.GetYearContext(this.config, er[0].Text, er[1].Text, text);
 
                 if (pr1.Value == null || pr2.Value == null)
