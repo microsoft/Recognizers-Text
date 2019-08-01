@@ -1,7 +1,6 @@
 [
   {
     "Input": "123e4567-e89b-12d3-a456-426655440000",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "123e4567-e89b-12d3-a456-426655440000",
@@ -15,7 +14,6 @@
   },
   {
     "Input": "{123e4567-e89b-12d3-a456-426655440000}",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "{123e4567-e89b-12d3-a456-426655440000}",
@@ -29,7 +27,6 @@
   },
   {
     "Input": "urn:uuid:123e4567-e89b-12d3-a456-426655440000",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "urn:uuid:123e4567-e89b-12d3-a456-426655440000",
@@ -43,7 +40,6 @@
   },
   {
     "Input": "urn:uuid:123E4567-E89B-12D3-A456-426655440000",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "urn:uuid:123E4567-E89B-12D3-A456-426655440000",
@@ -57,17 +53,14 @@
   },
   {
     "Input": "{123e4567e-89b-12d3-a456-426655440000} is not a guid number, it is irregular",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "{123k4567-e89b-12d3-a456-426655440000} is not a guid number, it contains 'k'",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "06e828879afc4064abadf6fb60b8a1f3",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "06e828879afc4064abadf6fb60b8a1f3",
@@ -81,7 +74,6 @@
   },
   {
     "Input": "{06e828879afc4064abadf6fb60b8a1f3}",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "{06e828879afc4064abadf6fb60b8a1f3}",
@@ -95,7 +87,6 @@
   },
   {
     "Input": "%7B06e828879afc4064abadf6fb60b8a1f3%7D",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "%7B06e828879afc4064abadf6fb60b8a1f3%7D",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "X'06e828879afc4064abadf6fb60b8a1f3'",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "X'06e828879afc4064abadf6fb60b8a1f3'",
@@ -123,7 +113,6 @@
   },
   {
     "Input": "%7B06e82887-9afc-4064-abad-f6fb60b8a1f3%7D",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "%7B06e82887-9afc-4064-abad-f6fb60b8a1f3%7D",
@@ -137,7 +126,6 @@
   },
   {
     "Input": "X'06e82887-9afc-4064-abad-f6fb60b8a1f3'",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "X'06e82887-9afc-4064-abad-f6fb60b8a1f3'",
@@ -151,7 +139,6 @@
   },
   {
     "Input": "06582887-9123-4064-1234-161260181113",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "06582887-9123-4064-1234-161260181113",
@@ -165,7 +152,6 @@
   },
   {
     "Input": "06582887912340641234161260181113",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "06582887912340641234161260181113",
@@ -179,12 +165,10 @@
   },
   {
     "Input": "a06e828879afc4064abadf6fb60b8a1f3 is not a GUID, it is too long.",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "06e82887-9afc-4064-abad-f6fb60b8a1f3d is not a GUID, it is too long.",
-    "NotSupportedByDesign": "python",
     "Results": []
   }
 ]

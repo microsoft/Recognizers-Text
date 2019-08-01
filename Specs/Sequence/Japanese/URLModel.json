@@ -2,7 +2,6 @@
   {
     "Input": "はmicrosoft.comです",
     "Notsupport": "java",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "microsoft.com",
