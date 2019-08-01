@@ -411,7 +411,7 @@
   },
   {
     "Input": "[image: image2.png]http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.",
-    "NotSupportedByDesign": "javascript. python",
+    "NotSupportedByDesign": "javascript, python",
     "Results": []
   },
   {
