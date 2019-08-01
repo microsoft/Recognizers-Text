@@ -34,5 +34,4 @@ def get_results(culture, model, source):
 def resolution_assert(actual, expected, props):
     for prop in props:
         if prop in expected['Resolution']:
-            print(actual.resolution[prop])
             assert actual.resolution[prop] == expected['Resolution'][prop]
