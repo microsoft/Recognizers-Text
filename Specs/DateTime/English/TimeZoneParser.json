@@ -667,5 +667,59 @@
         "Length": 17
       }
     ]
+  },
+  {
+    "Input": "I'm in the Madrid time",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Madrid time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "utcOffsetMins": "60",
+            "value": "UTC+01:00"
+          }
+        },
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "I'm in the Madrid timezone",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Madrid timezone",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "utcOffsetMins": "60",
+            "value": "UTC+01:00"
+          }
+        },
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "I'm in the Madrid            timezone",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Madrid            timezone",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "utcOffsetMins": "60",
+            "value": "UTC+01:00"
+          }
+        },
+        "Start": 11,
+        "Length": 26
+      }
+    ]
   }
 ]

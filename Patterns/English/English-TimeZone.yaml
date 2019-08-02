@@ -514,7 +514,6 @@ FullToMinMapping: !dictionary
    bellevue time: -480
    pacific daylight time: -420
    pacific time: -480
-   pacific timezone: -480
    afghanistan standard time: 270
    alaskan standard time: -540
    arab standard time: 180
@@ -558,10 +557,8 @@ FullToMinMapping: !dictionary
    european central time: 60
    central: -300
    central time: -300
-   central timezone: -300
    eastern: -240
    eastern time: -240
-   eastern timezone: -240
    eastern standard time: -300
    eastern standard time (mexico): -300
    egypt standard time: 120
@@ -591,7 +588,6 @@ FullToMinMapping: !dictionary
    morocco standard time: 0
    mountain: -360
    mountain time: -360
-   mountain timezone: -360
    mountain standard time: -420
    mountain standard time (mexico): -420
    myanmar standard time: 390
@@ -606,7 +602,6 @@ FullToMinMapping: !dictionary
    pacific: -420
    west coast: -420
    west coast time: -420
-   west coast timezone: -420
    pacific sa standard time: -240
    pacific standard time: -480
    pacific standard time (mexico): -480
@@ -658,6 +653,18 @@ FullToMinMapping: !dictionary
    austrialian west daylight time: 540
    colombia time: -300
    hong kong time: 480
+   madrid time: 60
+   bilbao time: 60
+   seville time: 60
+   valencia time: 60
+   malaga Time: 60
+   las Palmas: 60
+   zaragoza: 60
+   alicante: 60
+   alche: 60
+   oviedo: 60
+   gijón: 60
+   avilés: 60
 MajorLocations: !list
   types: [ string ]
   entries:
@@ -1428,7 +1435,17 @@ MajorLocations: !list
     - Jakarta
     - Amsterdam
     - Brussels
-    - Barcelona
+    - Valencia
+    - Seville
+    - Bilbao
+    - Malaga
+    - Las Palmas
+    - Zaragoza
+    - Alicante
+    - Elche
+    - Oviedo
+    - Gijón
+    - Avilés
     # special locations
     - West Coast
     - Central

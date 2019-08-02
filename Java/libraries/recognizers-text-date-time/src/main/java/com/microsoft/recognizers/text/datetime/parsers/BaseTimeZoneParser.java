@@ -32,6 +32,12 @@ public class BaseTimeZoneParser implements IDateTimeParser {
         return candidateResults;
     }
 
+    public String normalizeText(String text) {
+        text = text.replaceAll("\\s+", " ");
+        text = text.replaceAll("timezone", "time");
+        return  text;
+    }
+
     @Override
     public ParseResult parse(ExtractResult extractResult) {
         return this.parse(extractResult, LocalDateTime.now());
@@ -43,6 +49,7 @@ public class BaseTimeZoneParser implements IDateTimeParser {
         result = new DateTimeParseResult(er);
 
         String text = er.getText().toLowerCase();
+        String normalizedText = normalizeText(text);
         Match match = Arrays.stream(RegExpUtility.getMatches(directUtcRegex, text)).findFirst().orElse(null);
         String matched = match != null ? match.getGroup("").value : "";
         int offsetInMinutes = computeMinutes(matched);
@@ -53,16 +60,16 @@ public class BaseTimeZoneParser implements IDateTimeParser {
 
             result.setValue(value);
             result.setResolutionStr(resolutionStr);
-        } else if (checkAbbrToMin(text)) {
-            int utcMinuteShift = EnglishTimeZone.AbbrToMinMapping.getOrDefault(text, 0);
+        } else if (checkAbbrToMin(normalizedText)) {
+            int utcMinuteShift = EnglishTimeZone.AbbrToMinMapping.getOrDefault(normalizedText, 0);
 
             DateTimeResolutionResult value = getDateTimeResolutionResult(utcMinuteShift, text);
             String resolutionStr = String.format("%s: %d", Constants.UtcOffsetMinsKey, utcMinuteShift);
 
             result.setValue(value);
             result.setResolutionStr(resolutionStr);
-        } else if (checkFullToMin(text)) {
-            int utcMinuteShift = EnglishTimeZone.FullToMinMapping.getOrDefault(text, 0);
+        } else if (checkFullToMin(normalizedText)) {
+            int utcMinuteShift = EnglishTimeZone.FullToMinMapping.getOrDefault(normalizedText, 0);
 
             DateTimeResolutionResult value = getDateTimeResolutionResult(utcMinuteShift, text);
             String resolutionStr = String.format("%s: %d", Constants.UtcOffsetMinsKey, utcMinuteShift);
