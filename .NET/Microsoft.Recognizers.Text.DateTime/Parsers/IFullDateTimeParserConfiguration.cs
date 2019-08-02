@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IFullDateTimeParserConfiguration : IOptionsConfiguration
+    public interface IFullDateTimeParserConfiguration : ISimpleDatePeriodParserConfiguration, IOptionsConfiguration
     {
         int TwoNumYear { get; }
 

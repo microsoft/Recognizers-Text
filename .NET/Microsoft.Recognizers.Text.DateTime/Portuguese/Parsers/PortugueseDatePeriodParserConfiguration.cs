@@ -192,7 +192,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
 
-        Regex IDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
+        Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 
         Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
 

@@ -13,7 +13,7 @@ MonthNumRegex: !simpleRegex
 TwoNumYear: '50'
 YearNumRegex: !simpleRegex
   def: (?<year>((1[5-9]|20)\d{2})|2100)
-YearRegex: !simpleRegex
+SimpleYearRegex: !simpleRegex
   def: (?<year>(\d{2,4}))
 ZeroToNineIntegerRegexChs: !simpleRegex
   def: '[一二三四五六七八九零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]'
@@ -41,15 +41,18 @@ SpecialDayWithNumRegex: !simpleRegex
 WeekDayOfMonthRegex: !nestedRegex
   def: ((({MonthRegex}|{MonthNumRegex})的\s*)(?<cardinal>第一个|第二个|第三个|第四个|第五个|最后一个)\s*{WeekDayRegex})
   references: [MonthRegex, MonthNumRegex, WeekDayRegex]
-DateThisRe: !simpleRegex
+ThisPrefixRegex: !simpleRegex
   def: 这个|这一个|这|这一|本|今
-DateLastRe: !simpleRegex
+LastPrefixRegex: !simpleRegex
   def: 上个|上一个|上|上一|去
-DateNextRe: !simpleRegex
+NextPrefixRegex: !simpleRegex
   def: 下个|下一个|下|下一|明
+RelativeRegex: !nestedRegex
+  def: (?<order>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex}))
+  references: [ThisPrefixRegex, LastPrefixRegex, NextPrefixRegex]
 SpecialDate: !nestedRegex
-  def: (?<thisyear>({DateThisRe}|{DateLastRe}|{DateNextRe})年)?(?<thismonth>({DateThisRe}|{DateLastRe}|{DateNextRe})月)?{DateDayRegexInChinese}
-  references: [DateThisRe, DateLastRe, DateNextRe, DateDayRegexInChinese]
+  def: (?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})年)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})月)?{DateDayRegexInChinese}
+  references: [ThisPrefixRegex, LastPrefixRegex, NextPrefixRegex, DateDayRegexInChinese]
 DateUnitRegex: !simpleRegex
   def: (?<unit>年|个月|周|日|天)
 BeforeRegex: !simpleRegex
@@ -58,28 +61,28 @@ AfterRegex: !simpleRegex
   def: 以后|以後|之后|之後|后|後
 # (农历)?(2016年)?一月三日(星期三)?
 DateRegexList1: !nestedRegex
-  def: ({LunarRegex}(\s*))?((({YearRegex}|{DateYearInChineseRegex})年)(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?
-  references: [LunarRegex, YearRegex, DateYearInChineseRegex, MonthRegex, DateDayRegexInChinese, WeekDayRegex, BeforeRegex, AfterRegex]
+  def: ({LunarRegex}(\s*))?((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?
+  references: [LunarRegex, SimpleYearRegex, DateYearInChineseRegex, MonthRegex, DateDayRegexInChinese, WeekDayRegex, BeforeRegex, AfterRegex]
 # (2015年)?(农历)?十月初一(星期三)?
 DateRegexList2: !nestedRegex
-  def: ((({YearRegex}|{DateYearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?
-  references: [MonthRegex, DateDayRegexInChinese, YearRegex, LunarRegex, WeekDayRegex, DateYearInChineseRegex, BeforeRegex, AfterRegex]
+  def: ((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?
+  references: [MonthRegex, DateDayRegexInChinese, SimpleYearRegex, LunarRegex, WeekDayRegex, DateYearInChineseRegex, BeforeRegex, AfterRegex]
 # (2015年)?(农历)?十月二十(星期三)?
 DateRegexList3: !nestedRegex
-  def: ((({YearRegex}|{DateYearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*)({DayRegexNumInChinese}|{DayRegex})((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?
-  references: [MonthRegex, DayRegexNumInChinese, YearRegex, LunarRegex, WeekDayRegex, DateYearInChineseRegex, BeforeRegex, AfterRegex, DayRegex]
+  def: ((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*)({DayRegexNumInChinese}|{DayRegex})((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?
+  references: [MonthRegex, DayRegexNumInChinese, SimpleYearRegex, LunarRegex, WeekDayRegex, DateYearInChineseRegex, BeforeRegex, AfterRegex, DayRegex]
 # 7/23
 DateRegexList4: !nestedRegex
-  def: '{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*){YearRegex})?'
-  references: [MonthNumRegex, DayRegex, YearRegex]
+  def: '{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*){SimpleYearRegex})?'
+  references: [MonthNumRegex, DayRegex, SimpleYearRegex]
 # 23/7
 DateRegexList5: !nestedRegex
-  def: '{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){YearRegex})?'
-  references: [DayRegex, MonthNumRegex, YearRegex]
+  def: '{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){SimpleYearRegex})?'
+  references: [DayRegex, MonthNumRegex, SimpleYearRegex]
 # 3-23-2017
 DateRegexList6: !nestedRegex
-  def: '{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{YearRegex}'
-  references: [DayRegex, MonthNumRegex, YearRegex]
+  def: '{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{SimpleYearRegex}'
+  references: [DayRegex, MonthNumRegex, SimpleYearRegex]
 # 23-3-2015
 DateRegexList7: !nestedRegex
   def: '{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{YearNumRegex}'
@@ -107,12 +110,12 @@ DatePeriodNextRegex: !simpleRegex
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)
   references: [DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextRegex]
-DatePeriodYearRegex: !nestedRegex
-  def: (({YearNumRegex})(\s*年)?|({YearRegex})\s*年)
-  references: [YearNumRegex, YearRegex]
+YearRegex: !nestedRegex
+  def: (({YearNumRegex})(\s*年)?|({SimpleYearRegex})\s*年)
+  references: [YearNumRegex, SimpleYearRegex]
 StrictYearRegex: !nestedRegex
-  def: '({DatePeriodYearRegex}(?=[\u4E00-\u9FFF]|\s|$|\W))'
-  references: [DatePeriodYearRegex]
+  def: '({YearRegex}(?=[\u4E00-\u9FFF]|\s|$|\W))'
+  references: [YearRegex]
 YearRegexInNumber: !simpleRegex
   def: (?<year>(\d{3,4}))
 DatePeriodYearInChineseRegex: !nestedRegex
@@ -122,11 +125,11 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>({RelativeMonthRegex}|{MonthRegex}))
   references: [RelativeMonthRegex, MonthRegex]
 SimpleCasesRegex: !nestedRegex
-  def: ((从)\s*)?(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex})\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInChinese}|{DayRegex})\s*{DatePeriodTillRegex}\s*({DatePeriodDayRegexInChinese}|{DayRegex})((\s+|\s*,\s*){DatePeriodYearRegex})?
-  references: [DatePeriodYearRegex, DatePeriodYearInChineseRegex, MonthSuffixRegex, DatePeriodDayRegexInChinese, DayRegex, DatePeriodTillRegex]
+  def: ((从)\s*)?(({YearRegex}|{DatePeriodYearInChineseRegex})\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInChinese}|{DayRegex})\s*{DatePeriodTillRegex}\s*({DatePeriodDayRegexInChinese}|{DayRegex})((\s+|\s*,\s*){YearRegex})?
+  references: [YearRegex, DatePeriodYearInChineseRegex, MonthSuffixRegex, DatePeriodDayRegexInChinese, DayRegex, DatePeriodTillRegex]
 YearAndMonth: !nestedRegex
-  def: ({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*{MonthRegex}
-  references: [DatePeriodYearInChineseRegex, DatePeriodYearRegex, MonthRegex]
+  def: ({DatePeriodYearInChineseRegex}|{YearRegex})\s*{MonthRegex}
+  references: [DatePeriodYearInChineseRegex, YearRegex, MonthRegex]
 PureNumYearAndMonth: !nestedRegex
   def: ({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})
   references: [YearRegexInNumber, MonthNumRegex]
@@ -147,11 +150,11 @@ NumberCombinedWithUnit: !nestedRegex
 DateRangePrepositions: !simpleRegex
   def: ((从|在|自)\s*)?
 YearToYear: !nestedRegex
-  def: ({DateRangePrepositions})({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*({DatePeriodTillRegex}|后|後|之后|之後)\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})(\s*((之间|之内|期间|中间|间)|前|之前))?
-  references: [DatePeriodYearInChineseRegex, DatePeriodYearRegex, DatePeriodTillRegex, DateRangePrepositions]
+  def: ({DateRangePrepositions})({DatePeriodYearInChineseRegex}|{YearRegex})\s*({DatePeriodTillRegex}|后|後|之后|之後)\s*({DatePeriodYearInChineseRegex}|{YearRegex})(\s*((之间|之内|期间|中间|间)|前|之前))?
+  references: [DatePeriodYearInChineseRegex, YearRegex, DatePeriodTillRegex, DateRangePrepositions]
 YearToYearSuffixRequired: !nestedRegex
-  def: ({DateRangePrepositions})({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*({DatePeriodTillSuffixRequiredRegex})\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*(之间|之内|期间|中间|间)
-  references: [DatePeriodYearInChineseRegex, DatePeriodYearRegex, DatePeriodTillSuffixRequiredRegex, DateRangePrepositions]
+  def: ({DateRangePrepositions})({DatePeriodYearInChineseRegex}|{YearRegex})\s*({DatePeriodTillSuffixRequiredRegex})\s*({DatePeriodYearInChineseRegex}|{YearRegex})\s*(之间|之内|期间|中间|间)
+  references: [DatePeriodYearInChineseRegex, YearRegex, DatePeriodTillSuffixRequiredRegex, DateRangePrepositions]
 MonthToMonth: !nestedRegex
   def: ({DateRangePrepositions})({MonthRegex}){DatePeriodTillRegex}({MonthRegex})
   references: [MonthRegex, DatePeriodTillRegex, DateRangePrepositions]
@@ -165,11 +168,11 @@ FutureRegex: !simpleRegex
 SeasonRegex: !simpleRegex
   def: (?<season>春|夏|秋|冬)(天|季)?
 SeasonWithYear: !nestedRegex
-  def: (({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?{SeasonRegex}
-  references: [DatePeriodYearRegex,DatePeriodYearInChineseRegex, SeasonRegex]
+  def: (({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?{SeasonRegex}
+  references: [YearRegex,DatePeriodYearInChineseRegex, SeasonRegex]
 QuarterRegex: !nestedRegex
-  def: (({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)
-  references: [DatePeriodYearRegex, DatePeriodYearInChineseRegex]
+  def: (({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)
+  references: [YearRegex, DatePeriodYearInChineseRegex]
 CenturyRegex: !simpleRegex
   def: (?<century>\d|1\d|2\d)世纪
 CenturyRegexInChinese: !simpleRegex
@@ -254,14 +257,14 @@ DurationAmbiguousUnits: !list
     - 个月
     - 年
 LunarHolidayRegex: !nestedRegex
-  def: (({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)
-  references: [DatePeriodYearRegex, DatePeriodYearInChineseRegex]
+  def: (({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)
+  references: [YearRegex, DatePeriodYearInChineseRegex]
 HolidayRegexList1: !nestedRegex
-  def: (({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|平安夜|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)
-  references: [DatePeriodYearRegex, DatePeriodYearInChineseRegex]
+  def: (({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|平安夜|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)
+  references: [YearRegex, DatePeriodYearInChineseRegex]
 HolidayRegexList2: !nestedRegex
-  def: (({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母亲节|父亲节|感恩节|万圣节)
-  references: [DatePeriodYearRegex, DatePeriodYearInChineseRegex]
+  def: (({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母亲节|父亲节|感恩节|万圣节)
+  references: [YearRegex, DatePeriodYearInChineseRegex]
 #SetExtractorChs
 SetUnitRegex: !simpleRegex
   def: (?<unit>年|月|周|星期|日|天|小时|时|分钟|分|秒钟|秒)

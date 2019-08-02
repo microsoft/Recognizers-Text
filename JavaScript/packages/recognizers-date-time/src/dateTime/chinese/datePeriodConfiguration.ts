@@ -174,7 +174,7 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
 
     constructor(dmyDateFormat: boolean) {
         this.simpleCasesRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SimpleCasesRegex);
-        this.yearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodYearRegex);
+        this.yearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.YearRegex);
         this.seasonRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SeasonRegex);
         this.seasonMap = ChineseDateTime.ParserConfigurationSeasonMap;
         this.quarterRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.QuarterRegex);

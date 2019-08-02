@@ -1,12 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
-
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Chinese;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class ChineseDateExtractorConfiguration : IDateTimeExtractor
+    public class ChineseDateExtractorConfiguration : AbstractYearExtractor, IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
 
@@ -21,6 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex MonthNumRegex = new Regex(DateTimeDefinitions.MonthNumRegex, RegexFlags);
 
         public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+
+        public static readonly Regex RelativeRegex = new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
 
         public static readonly Regex ZeroToNineIntegerRegexChs = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexChs, RegexFlags);
 
@@ -40,15 +44,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex WeekDayOfMonthRegex = new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexFlags);
 
-        public static readonly Regex ThisRe = new Regex(DateTimeDefinitions.DateThisRe, RegexFlags);
+        public static readonly Regex ThisRe = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
-        public static readonly Regex LastRe = new Regex(DateTimeDefinitions.DateLastRe, RegexFlags);
+        public static readonly Regex LastRe = new Regex(DateTimeDefinitions.LastPrefixRegex, RegexFlags);
 
-        public static readonly Regex NextRe = new Regex(DateTimeDefinitions.DateNextRe, RegexFlags);
+        public static readonly Regex NextRe = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
 
         public static readonly Regex SpecialDate = new Regex(DateTimeDefinitions.SpecialDate, RegexFlags);
 
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
+
+        public static readonly IParser NumberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
 
         public static readonly Regex[] DateRegexList =
         {
@@ -103,12 +109,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly ChineseDurationExtractorConfiguration DurationExtractor = new ChineseDurationExtractorConfiguration();
 
-        public List<ExtractResult> Extract(string text)
+        public ChineseDateExtractorConfiguration(IDateExtractorConfiguration config = null)
+            : base(config)
+        {
+        }
+
+        public override List<ExtractResult> Extract(string text)
         {
             return Extract(text, DateObject.Now);
         }
 
-        public List<ExtractResult> Extract(string text, DateObject referenceTime)
+        public override List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
             var tokens = new List<Token>();
             tokens.AddRange(BasicRegexMatch(text));

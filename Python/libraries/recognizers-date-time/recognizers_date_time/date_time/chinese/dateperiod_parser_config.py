@@ -174,7 +174,7 @@ class ChineseDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._one_word_period_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.OneWordPeriodRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.DatePeriodYearRegex)
+            ChineseDateTime.YearRegex)
         self._past_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.PastRegex)
         self._future_regex = RegExpUtility.get_safe_reg_exp(

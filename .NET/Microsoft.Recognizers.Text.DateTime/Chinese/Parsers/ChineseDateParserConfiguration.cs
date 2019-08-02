@@ -282,7 +282,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 var value = referenceDate.AddDays(ChineseDateTimeParserConfiguration.GetSwiftDay(match.Value));
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
-                ret.FutureValue = ret.PastValue = value;
+                ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
                 ret.Success = true;
 
                 return ret;
@@ -322,7 +322,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var value = reference.Next((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
 
                 result.Timex = DateTimeFormatUtil.LuisDate(value);
-                result.FutureValue = result.PastValue = value;
+                result.FutureValue = result.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
                 result.Success = true;
             }
 
@@ -340,7 +340,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var value = reference.This((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
 
                 result.Timex = DateTimeFormatUtil.LuisDate(value);
-                result.FutureValue = result.PastValue = value;
+                result.FutureValue = result.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
                 result.Success = true;
             }
 
@@ -358,7 +358,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var value = reference.Last((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
 
                 result.Timex = DateTimeFormatUtil.LuisDate(value);
-                result.FutureValue = result.PastValue = value;
+                result.FutureValue = result.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
                 result.Success = true;
             }
 

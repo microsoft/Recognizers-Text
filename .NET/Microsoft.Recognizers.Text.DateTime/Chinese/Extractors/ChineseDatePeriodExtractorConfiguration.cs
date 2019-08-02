@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex MonthRegex = new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
 
-        public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.DatePeriodYearRegex, RegexFlags);
+        public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
 
         public static readonly Regex StrictYearRegex = new Regex(DateTimeDefinitions.StrictYearRegex, RegexFlags);
 
