@@ -1,7 +1,7 @@
 import { MetaData } from "./metaData";
 
 export interface IExtractor {
-    extract(input: string): Array<ExtractResult>
+    extract(input: string): ExtractResult[]
 }
 
 export class ExtractResult {
@@ -27,6 +27,6 @@ export class ExtractResult {
             length: source.length,
             text: source,
             type: 'custom'
-        }
+        };
     }
 }

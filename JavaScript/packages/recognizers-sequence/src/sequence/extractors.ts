@@ -13,7 +13,7 @@ export abstract class BaseSequenceExtractor implements IExtractor {
 
     protected extractType: string;
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string): ExtractResult[] {
         let results = new Array<ExtractResult>();
 
         if (StringUtility.isNullOrWhitespace(source)) {
@@ -36,7 +36,7 @@ export abstract class BaseSequenceExtractor implements IExtractor {
 
                 // Keep Source Data for extra information
                 matchSource.set(match, typeExtracted);
-            })
+            });
         });
 
         // Form the extracted results from all the matched intervals in the text.
@@ -61,8 +61,7 @@ export abstract class BaseSequenceExtractor implements IExtractor {
                     }
                 }
             }
-            else
-            {
+            else {
                 lastNotMatched = i;
             }
         }
@@ -70,7 +69,7 @@ export abstract class BaseSequenceExtractor implements IExtractor {
         return results;
     }
 
-    isValidMatch(match: Match): Boolean {
+    isValidMatch(match: Match): boolean {
         return true;
     }
 }
@@ -99,13 +98,13 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
 			.set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.DKPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex)), Constants.PHONE_NUMBER_REGEX_DK)
 			.set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.ITPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex)), Constants.PHONE_NUMBER_REGEX_IT)
 			.set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.NLPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex)), Constants.PHONE_NUMBER_REGEX_NL)
-            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.SpecialPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex)), Constants.PHONE_NUMBER_REGEX_SPECIAL)
+            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.SpecialPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex)), Constants.PHONE_NUMBER_REGEX_SPECIAL);
     }
-    extract(source: string): Array<ExtractResult> {
-        let ers = super.extract(source)
-        let ret = new Array<ExtractResult>()
-        let formatIndicatorRegex = new RegExp(BasePhoneNumbers.FormatIndicatorRegex, "ig")
-        let digitRegex = new RegExp("[0-9]")
+    extract(source: string): ExtractResult[] {
+        let ers = super.extract(source);
+        let ret = new Array<ExtractResult>();
+        let formatIndicatorRegex = new RegExp(BasePhoneNumbers.FormatIndicatorRegex, "ig");
+        let digitRegex = new RegExp("[0-9]");
         for (let er of ers) {
             let ch = source[er.start - 1];
             if (er.start === 0 || BasePhoneNumbers.BoundaryMarkers.indexOf(ch) === -1) {
@@ -120,12 +119,12 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
                         }
                         
                         let front = source.substring(0, er.start - 1);
-                        let match = front.match(BasePhoneNumbers.InternationDialingPrefixRegex) 
+                        let match = front.match(BasePhoneNumbers.InternationDialingPrefixRegex); 
                         if (match) {
                             let moveOffset = match[0].length + 1;
                             er.start = er.start - moveOffset;
                             er.length = er.length + moveOffset;
-                            er.text = source.substring(er.start, er.start + er.length)
+                            er.text = source.substring(er.start, er.start + er.length);
                             ret.push(er);
                         }
                     }
@@ -136,7 +135,9 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
         let m: RegExpExecArray | null;
         while (true) {
             m = maskRegex.exec(source);
-            if (m == null) break;
+            if (m == null) {
+break;
+}
             for (let i = ret.length - 1; i >= 0; --i) {
                 if (ret[i].start >= m.index && ret[i].start + ret[i].length <= m.index + m[0].length) {
                     ret.splice(i, 1);
@@ -154,10 +155,10 @@ export class BaseIpExtractor extends BaseSequenceExtractor {
         super();
         this.regexes = new Map<RegExp, string>()
             .set(RegExpUtility.getSafeRegExp(BaseIp.Ipv4Regex), Constants.IP_REGEX_IPV4)
-            .set(RegExpUtility.getSafeRegExp(BaseIp.Ipv6Regex), Constants.IP_REGEX_IPV6)
+            .set(RegExpUtility.getSafeRegExp(BaseIp.Ipv6Regex), Constants.IP_REGEX_IPV6);
     }
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string): ExtractResult[] {
         let results = new Array<ExtractResult>();
 
         if (StringUtility.isNullOrWhitespace(source)) {
@@ -175,7 +176,7 @@ export class BaseIpExtractor extends BaseSequenceExtractor {
 
                 // Keep Source Data for extra information
                 matchSource.set(match, typeExtracted);
-            })
+            });
         });
         
         let lastNotMatched = -1;
@@ -206,8 +207,7 @@ export class BaseIpExtractor extends BaseSequenceExtractor {
                     }
                 }
             }
-            else
-            {
+            else {
                 lastNotMatched = i;
             }
         }
@@ -226,7 +226,7 @@ export class BaseMentionExtractor extends BaseSequenceExtractor {
     constructor(){
         super();
         this.regexes = new Map<RegExp, string>()
-            .set(RegExpUtility.getSafeRegExp(BaseMention.MentionRegex), Constants.MENTION_REGEX)
+            .set(RegExpUtility.getSafeRegExp(BaseMention.MentionRegex), Constants.MENTION_REGEX);
     }
 }
 
@@ -236,7 +236,7 @@ export class BaseHashtagExtractor extends BaseSequenceExtractor {
     constructor(){
         super();
         this.regexes = new Map<RegExp, string>()
-            .set(RegExpUtility.getSafeRegExp(BaseHashtag.HashtagRegex), Constants.HASHTAG_REGEX)
+            .set(RegExpUtility.getSafeRegExp(BaseHashtag.HashtagRegex), Constants.HASHTAG_REGEX);
     }
 }
 
@@ -246,7 +246,7 @@ export class BaseEmailExtractor extends BaseSequenceExtractor {
     constructor(){
         super();
         this.regexes = new Map<RegExp, string>()
-            .set(RegExpUtility.getSafeRegExp(BaseEmail.EmailRegex), Constants.EMAIL_REGEX)
+            .set(RegExpUtility.getSafeRegExp(BaseEmail.EmailRegex), Constants.EMAIL_REGEX);
             // EmailRegex2 will break the code as it's not supported in Javascript, comment out for now
             // .set(RegExpUtility.getSafeRegExp(BaseEmail.EmailRegex2), Constants.EMAIL_REGEX)
     }
@@ -266,11 +266,11 @@ export class BaseURLExtractor extends BaseSequenceExtractor {
         this.regexes = new Map<RegExp, string>()
             .set(config.UrlRegex, Constants.URL_REGEX)
             .set(RegExpUtility.getSafeRegExp(BaseURL.UrlRegex2), Constants.URL_REGEX)
-            .set(config.IpUrlRegex, Constants.URL_REGEX)
+            .set(config.IpUrlRegex, Constants.URL_REGEX);
         this.ambiguousTimeTerm = RegExpUtility.getSafeRegExp(BaseURL.AmbiguousTimeTerm);
     }
 
-    isValidMatch(match: Match): Boolean {
+    isValidMatch(match: Match): boolean {
         // For cases like "7.am" or "8.pm" which are more likely time terms.
         return !RegExpUtility.isMatch(this.ambiguousTimeTerm, match.value);
     }
@@ -282,6 +282,6 @@ export class BaseGUIDExtractor extends BaseSequenceExtractor {
     constructor() {
         super();
         this.regexes = new Map<RegExp, string>()
-            .set(RegExpUtility.getSafeRegExp(BaseGUID.GUIDRegex), Constants.GUID_REGEX)
+            .set(RegExpUtility.getSafeRegExp(BaseGUID.GUIDRegex), Constants.GUID_REGEX);
     }
 }

@@ -63,13 +63,11 @@ export class NumberWithUnitParser implements IParser {
         if (extResult.data && typeof extResult.data === "object") {
             numberResult = extResult.data as ExtractResult;
         }
-        else if (extResult.type === Constants.SYS_NUM)
-        {
+        else if (extResult.type === Constants.SYS_NUM) {
             ret.value = this.config.internalNumberParser.parse(extResult).value;
             return ret;
         }
-        else
-        { 
+        else { 
             // if there is no unitResult, means there is just unit
             numberResult = { start: -1, length: 0, text: null, type: null };
         }
@@ -110,8 +108,7 @@ export class NumberWithUnitParser implements IParser {
             lastUnit = lastUnit.substring(this.config.connectorToken.length).trim();
         }
 
-        if (key && key.length && (this.config.unitMap !== null))
-        {
+        if (key && key.length && (this.config.unitMap !== null)) {
             let unitValue = null;
             if (this.config.unitMap.has(lastUnit)) {
                 unitValue = this.config.unitMap.get(lastUnit);
@@ -133,7 +130,7 @@ export class NumberWithUnitParser implements IParser {
         return ret;
     }
 
-    private addIfNotContained(keys: Array<string>, newKey: string): void {
+    private addIfNotContained(keys: string[], newKey: string): void {
         if (!keys.some(key => key.includes(newKey))) {
             keys.push(newKey);
         }
@@ -155,28 +152,30 @@ export class BaseCurrencyParser implements IParser {
 
         if (extResult.data instanceof Array) {
             result = this.mergeCompoundUnit(extResult);
-        } else {
+        }
+ else {
             result = this.numberWithUnitParser.parse(extResult);
             let value: UnitValue = result.value;
             if (!this.config.currencyNameToIsoCodeMap.has(value.unit) || this.config.currencyNameToIsoCodeMap.get(value.unit).startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
                 result.value = {
                     unit: value.unit,
                     number: value.number
-                } as UnitValue
-            } else {
+                } as UnitValue;
+            }
+ else {
                 result.value = {
                     unit: value.unit,
                     number: value.number,
                     isoCurrency: this.config.currencyNameToIsoCodeMap.get(value.unit)
-                } as UnitValueIso
+                } as UnitValueIso;
             }
         }
         return result;
     }
 
     private mergeCompoundUnit(compoundResult: ExtractResult): ParseResult {
-        let results: Array<ParseResult> = [];
-        let compoundUnit: Array<ParseResult> = compoundResult.data;
+        let results: ParseResult[] = [];
+        let compoundUnit: ParseResult[] = compoundResult.data;
 
         let count = 0;
         let result: ParseResult = null;
@@ -223,7 +222,8 @@ export class BaseCurrencyParser implements IParser {
                 if (this.config.currencyFractionMapping.has(mainUnitIsoCode)) {
                     fractionUnitsString = this.config.currencyFractionMapping.get(mainUnitIsoCode);
                 }
-            } else {
+            }
+ else {
                 // Match pure number as fraction unit.
                 if (extractResult.type === NumberConstants.SYS_NUM) {
                     numberValue += parseResult.value * (1.0 / 100);
@@ -248,7 +248,8 @@ export class BaseCurrencyParser implements IParser {
                     numberValue += parseFloat(parseResultValue.number) * (1.0 / fractionNumValue);
                     result.resolutionStr += ' ' + parseResult.resolutionStr;
                     result.length = parseResult.start + parseResult.length - result.start;
-                } else {
+                }
+ else {
                     // If the fraction unit doesn't match the main unit, finish process this group.
                     if (result !== null) {
                         if (StringUtility.isNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
@@ -256,7 +257,8 @@ export class BaseCurrencyParser implements IParser {
                                 number: numberValue.toString(),
                                 unit: mainUnitValue
                             } as UnitValue;
-                        } else {
+                        }
+ else {
                             result.value = {
                                 number: numberValue.toString(),
                                 unit: mainUnitValue,
@@ -283,7 +285,8 @@ export class BaseCurrencyParser implements IParser {
                     number: numberValue.toString(),
                     unit: mainUnitValue
                 } as UnitValue;
-            } else {
+            }
+ else {
                 result.value = {
                     number: numberValue.toString(),
                     unit: mainUnitValue,
@@ -306,7 +309,7 @@ export class BaseCurrencyParser implements IParser {
         return unitsMap.has(fractionUnitCode);
     }
 
-    private resolveText(prs: Array<ParseResult>, source: string, bias: number) {
+    private resolveText(prs: ParseResult[], source: string, bias: number) {
         prs.forEach(parseResult => {
             if (parseResult.start !== null && parseResult.length !== null) {
                 parseResult.text = source.substr(parseResult.start - bias, parseResult.length);
@@ -331,7 +334,8 @@ export class BaseMergedUnitParser implements IParser {
 
         if (extResult.type === Constants.SYS_UNIT_CURRENCY) {
             result = this.currencyParser.parse(extResult);
-        } else {
+        }
+ else {
             result = this.numberWithUnitParser.parse(extResult);
         }
 

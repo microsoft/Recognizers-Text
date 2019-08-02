@@ -3,7 +3,7 @@ import { Constants } from "../constants";
 import { NumberMode, LongFormatType } from "../models";
 import { SpanishNumeric } from "../../resources/spanishNumeric";
 import { BaseNumbers } from "../../resources/baseNumbers";
-import { RegExpUtility } from "@microsoft/recognizers-text"
+import { RegExpUtility } from "@microsoft/recognizers-text";
 
 export class SpanishNumberExtractor extends BaseNumberExtractor {
     protected extractType: string = Constants.SYS_NUM;
@@ -212,10 +212,10 @@ export class SpanishOrdinalExtractor extends BaseNumberExtractor {
 
 export class SpanishPercentageExtractor extends BasePercentageExtractor {
     constructor() {
-        super(new SpanishNumberExtractor())
+        super(new SpanishNumberExtractor());
     }
 
-    protected initRegexes(): Array<RegExp> {
+    protected initRegexes(): RegExp[] {
         let regexStrs = [
             SpanishNumeric.NumberWithPrefixPercentage
         ];

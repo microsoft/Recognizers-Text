@@ -19,13 +19,10 @@ export class BaseIpParser extends BaseSequenceParser{
         let result = "";
         
         let number = "";
-        for(var i = 0; i < text.length; i++)
-        {
-            var c = text[i];
-            if (c == '.' || c == ':')
-            {
-                if (number != "")
-                {
+        for(let i = 0; i < text.length; i++) {
+            let c = text[i];
+            if (c == '.' || c == ':') {
+                if (number != "") {
                     number = number == "0" ? number : number.replace(/^(0*)/,"");
                     number = number == "" ? "0" : number;
                     result += number;
@@ -33,11 +30,9 @@ export class BaseIpParser extends BaseSequenceParser{
                 result += text[i];
                 number = "";
             }
-            else
-            {
+            else {
                 number += c.toString();
-                if (i == text.length - 1)
-                {
+                if (i == text.length - 1) {
                     number = number == "0" ? number : number.replace(/^(0*)/,"");
                     number = number == "" ? "0" : number;
                     result += number;

@@ -153,21 +153,26 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
 
         if (trimedText === "aujourd'hui" || trimedText === "auj") {
             swift = 0;
-        } else if (trimedText === "demain" ||
+        }
+ else if (trimedText === "demain" ||
             trimedText.endsWith("a2m1") ||
             trimedText.endsWith("lendemain") ||
             trimedText.endsWith("jour suivant")) {
             swift = 1;
-        } else if (trimedText === "hier") {
+        }
+ else if (trimedText === "hier") {
             swift = -1;
-        } else if (trimedText.endsWith("après demain") ||
+        }
+ else if (trimedText.endsWith("après demain") ||
             trimedText.endsWith("après-demain") ||
             trimedText.endsWith("apres-demain")) {
             swift = 2;
-        } else if (trimedText.endsWith("avant-hier") ||
+        }
+ else if (trimedText.endsWith("avant-hier") ||
             trimedText.endsWith("avant hier")) {
             swift = -2;
-        } else if (trimedText.endsWith("dernier")) {
+        }
+ else if (trimedText.endsWith("dernier")) {
             swift = -1;
         }
 
@@ -179,7 +184,8 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
         let swift = 0;
         if (trimedText.endsWith("prochaine") || trimedText.endsWith("prochain")) {
             swift = 1;
-        } else if (trimedText === "dernière" ||
+        }
+ else if (trimedText === "dernière" ||
             trimedText.endsWith("dernières") ||
             trimedText.endsWith("derniere") ||
             trimedText.endsWith("dernieres")) {

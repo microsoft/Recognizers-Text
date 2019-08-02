@@ -2,7 +2,7 @@ import { ParseResult } from "@microsoft/recognizers-text";
 import { INumberParserConfiguration } from "../parsers";
 import { CultureInfo, Culture } from "../../culture";
 import { FrenchNumeric } from "../../resources/frenchNumeric";
-import { RegExpUtility } from "@microsoft/recognizers-text"
+import { RegExpUtility } from "@microsoft/recognizers-text";
 
 export class FrenchNumberParserConfiguration implements INumberParserConfiguration {
 
@@ -19,10 +19,10 @@ export class FrenchNumberParserConfiguration implements INumberParserConfigurati
     readonly nonDecimalSeparatorChar: string;
     readonly decimalSeparatorChar: string;
     readonly wordSeparatorToken: string;
-    readonly writtenDecimalSeparatorTexts: ReadonlyArray<string>;
-    readonly writtenGroupSeparatorTexts: ReadonlyArray<string>;
-    readonly writtenIntegerSeparatorTexts: ReadonlyArray<string>;
-    readonly writtenFractionSeparatorTexts: ReadonlyArray<string>;
+    readonly writtenDecimalSeparatorTexts: readonly string[];
+    readonly writtenGroupSeparatorTexts: readonly string[];
+    readonly writtenIntegerSeparatorTexts: readonly string[];
+    readonly writtenFractionSeparatorTexts: readonly string[];
 
     constructor(ci?: CultureInfo) {
         if (!ci) {
@@ -51,7 +51,7 @@ export class FrenchNumberParserConfiguration implements INumberParserConfigurati
         this.digitalNumberRegex = RegExpUtility.getSafeRegExp(FrenchNumeric.DigitalNumberRegex);
     }
 
-    normalizeTokenSet(tokens: ReadonlyArray<string>, context: ParseResult): ReadonlyArray<string> {
+    normalizeTokenSet(tokens: readonly string[], context: ParseResult): readonly string[] {
         return tokens;
     }
 

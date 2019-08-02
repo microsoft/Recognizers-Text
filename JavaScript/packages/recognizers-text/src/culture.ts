@@ -11,7 +11,7 @@ export class Culture {
   static readonly Dutch: string = "nl-nl"
   static readonly Italian: string = "it-it"
 
-  static readonly supportedCultures: Array<Culture> = [
+  static readonly supportedCultures: Culture[] = [
     new Culture("English", Culture.English),
     new Culture("EnglishOthers", Culture.EnglishOthers),
     new Culture("Chinese", Culture.Chinese),
@@ -28,12 +28,12 @@ export class Culture {
   readonly cultureCode: string
 
   protected constructor(cultureName: string, cultureCode: string) {
-    this.cultureName = cultureName
-    this.cultureCode = cultureCode
+    this.cultureName = cultureName;
+    this.cultureCode = cultureCode;
   }
 
-  static getSupportedCultureCodes(): Array<string> {
-    return Culture.supportedCultures.map(c => c.cultureCode)
+  static getSupportedCultureCodes(): string[] {
+    return Culture.supportedCultures.map(c => c.cultureCode);
   }
 
   static mapToNearestLanguage(cultureCode: string): string {
@@ -48,7 +48,7 @@ export class Culture {
           if (supportedCultureCode.startsWith(culturePrefix)) {
             cultureCode = supportedCultureCode;
           }
-        })
+        });
       }
     }
 

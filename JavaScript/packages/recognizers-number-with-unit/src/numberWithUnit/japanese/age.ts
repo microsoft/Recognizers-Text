@@ -6,7 +6,7 @@ import { JapaneseNumericWithUnit } from "../../resources/japaneseNumericWithUnit
 export class JapaneseAgeExtractorConfiguration extends JapaneseNumberWithUnitExtractorConfiguration {
     readonly suffixList: ReadonlyMap<string, string>;
     readonly prefixList: ReadonlyMap<string, string>;
-    readonly ambiguousUnitList: ReadonlyArray<string>;
+    readonly ambiguousUnitList: readonly string[];
     readonly extractType: string;
 
     constructor(ci?: CultureInfo) {

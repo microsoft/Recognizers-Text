@@ -82,7 +82,7 @@ class ParamsRegexWriter extends CodeWriter {
     }
 
     write() {
-        return `export const ${this.name} = (${this.params}) => { return \`${this.definition}\`; }`
+        return `export const ${this.name} = (${this.params}) => { return \`${this.definition}\`; }`;
     }
 }
 
@@ -91,7 +91,7 @@ class DictionaryWriter extends CodeWriter {
     readonly valueType: string;
     readonly entries: string[];
 
-    constructor(name: string, keyType: string, valueType: string, entries: Object) {
+    constructor(name: string, keyType: string, valueType: string, entries: Record<string, any>) {
         super(name);
         this.entries = [];
         this.keyType = toJsType(keyType);
@@ -113,14 +113,18 @@ class DictionaryWriter extends CodeWriter {
     }
 
     write() {
-        return `export const ${this.name}: ReadonlyMap<${this.keyType}, ${this.valueType}> = new Map<${this.keyType}, ${this.valueType}>([${this.entries.join(',')}]);`
+        return `export const ${this.name}: ReadonlyMap<${this.keyType}, ${this.valueType}> = new Map<${this.keyType}, ${this.valueType}>([${this.entries.join(',')}]);`;
     }
 }
 
 
 function sanitize(value: string, valueType: string = null) : string {
-    if (!valueType) valueType = typeof value;
-    if (valueType === 'number' || valueType === 'boolean') return value;
+    if (!valueType) {
+valueType = typeof value;
+}
+    if (valueType === 'number' || valueType === 'boolean') {
+return value;
+}
 
     let stringified = JSON.stringify(value);
     return stringified.slice(1, stringified.length - 1);
@@ -140,17 +144,17 @@ class ArrayWriter extends CodeWriter {
     readonly valueType: string;
     readonly entries: string[];
 
-    constructor(name: string, entries: Array<any>) {
+    constructor(name: string, entries: any[]) {
         super(name);
         this.entries = [];
         this.valueType = typeof(entries[0]);
         entries.forEach(element => {
-            this.entries.push(`"${sanitize(element)}"`)
+            this.entries.push(`"${sanitize(element)}"`);
         });
     }
 
     write() {
-        return `export const ${this.name} = [ ${this.entries.join(',')} ];`
+        return `export const ${this.name} = [ ${this.entries.join(',')} ];`;
     }
 }
 

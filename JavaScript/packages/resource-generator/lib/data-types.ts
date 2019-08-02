@@ -16,7 +16,7 @@ export namespace DataTypes {
     export class Dictionary {
         keyType: string;
         valueType: string;
-        entries: Object;
+        entries: Record<string, any>;
     }
 
     export class List {

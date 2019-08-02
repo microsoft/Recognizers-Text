@@ -3,8 +3,8 @@ import { CultureInfo, Culture } from "@microsoft/recognizers-text-number";
 import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration } from "@microsoft/recognizers-text-number-with-unit";
 import { BaseDateTimeExtractor, DateTimeExtra, TimeResult, TimeResolutionUtils } from "./baseDateTime";
 import { BaseTimeParser } from "../baseTime";
-import { Constants, TimeTypeConstants } from "../constants"
-import { IDateTimeParser, DateTimeParseResult } from "../parsers"
+import { Constants, TimeTypeConstants } from "../constants";
+import { IDateTimeParser, DateTimeParseResult } from "../parsers";
 import { DateTimeResolutionResult, DateTimeFormatUtil, DateUtils, StringMap } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 
@@ -47,7 +47,9 @@ export class ChineseTimeParser extends BaseTimeParser {
     }
 
     public parse(er: ExtractResult, referenceTime?: Date): DateTimeParseResult | null {
-        if (!referenceTime) referenceTime = new Date();
+        if (!referenceTime) {
+referenceTime = new Date();
+}
 
         let extra: DateTimeExtra<TimeType> = er.data;
         if (!extra) {
@@ -117,7 +119,8 @@ export class ChineseTimeParser extends BaseTimeParser {
         let noDescription = StringUtility.isNullOrEmpty(dayDescription);
         if (noDescription) {
             result.comment = 'ampm';
-        } else {
+        }
+ else {
             this.addDescription(timeResult, dayDescription);
         }
 

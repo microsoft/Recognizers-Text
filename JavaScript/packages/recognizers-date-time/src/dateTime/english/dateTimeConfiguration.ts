@@ -1,16 +1,16 @@
-import { IDateTimeExtractor, IDateTimeExtractorConfiguration, IDateTimeParserConfiguration } from "../baseDateTime"
+import { IDateTimeExtractor, IDateTimeExtractorConfiguration, IDateTimeParserConfiguration } from "../baseDateTime";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { RegExpUtility, StringUtility } from "@microsoft/recognizers-text";
-import { BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number"
-import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
+import { BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number";
+import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
 import { EnglishDateTime } from "../../resources/englishDateTime";
-import { ICommonDateTimeParserConfiguration, IDateTimeParser } from "../parsers"
-import { EnglishDateTimeUtilityConfiguration } from "./baseConfiguration"
+import { ICommonDateTimeParserConfiguration, IDateTimeParser } from "../parsers";
+import { EnglishDateTimeUtilityConfiguration } from "./baseConfiguration";
 import { IDateTimeUtilityConfiguration } from "../utilities";
-import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"
-import { EnglishDateExtractorConfiguration } from "./dateConfiguration"
-import { EnglishTimeExtractorConfiguration } from "./timeConfiguration"
+import { EnglishDurationExtractorConfiguration } from "./durationConfiguration";
+import { EnglishDateExtractorConfiguration } from "./dateConfiguration";
+import { EnglishTimeExtractorConfiguration } from "./timeConfiguration";
 
 export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractorConfiguration {
     readonly datePointExtractor: IDateTimeExtractor
@@ -149,5 +149,7 @@ export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfig
         return swift;
     }
 
-    public haveAmbiguousToken(text: string, matchedText: string): boolean { return false; }
+    public haveAmbiguousToken(text: string, matchedText: string): boolean {
+ return false; 
+}
 }

@@ -42,8 +42,8 @@ export class PhoneNumberParser extends BaseSequenceParser {
         
         // Formatted score
         if (formatIndicatorRegex.test(phoneNumberText)) {
-            var formatMathes = phoneNumberText.match(formatIndicatorRegex);
-            var formatIndicatorCount = formatMathes.length;
+            let formatMathes = phoneNumberText.match(formatIndicatorRegex);
+            let formatIndicatorCount = formatMathes.length;
             score += Math.min(formatIndicatorCount, this.maxFormatIndicatorNum) * this.formattedAward;
             score -= formatMathes.some(match => match.length > 1) ? this.continueFormatIndicatorDeductionScore : 0;
             if (this.singleBracketRegex.test(phoneNumberText) && !this.completeBracketRegex.test(phoneNumberText)) {
@@ -78,8 +78,7 @@ export class PhoneNumberParser extends BaseSequenceParser {
         }
 
         // Special award for special USphonenumber, i.e. 223-4567 or 223 - 4567
-        if (noAreaCodeUSphonenumbeRegex.test(phoneNumberText))
-        {
+        if (noAreaCodeUSphonenumbeRegex.test(phoneNumberText)) {
             score += this.lengthAward * 1.5;
         }
 

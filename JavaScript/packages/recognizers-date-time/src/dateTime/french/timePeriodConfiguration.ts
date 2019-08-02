@@ -89,8 +89,7 @@ export class FrenchTimePeriodParserConfiguration implements ITimePeriodParserCon
 
         let trimmedText = text.trim().toLowerCase();
 
-        if (trimmedText.endsWith("s"))
-        {
+        if (trimmedText.endsWith("s")) {
             trimmedText = trimmedText.substring(0, trimmedText.length - 1);
         }
 
@@ -102,9 +101,11 @@ export class FrenchTimePeriodParserConfiguration implements ITimePeriodParserCon
         let timeOfDay = "";
         if (FrenchDateTime.MorningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Morning;
-        } else if (FrenchDateTime.AfternoonTermList.some(o => trimmedText.endsWith(o))) {
+        }
+ else if (FrenchDateTime.AfternoonTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Afternoon;
-        } else if (FrenchDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
+        }
+ else if (FrenchDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Evening;
         }
         else if (trimmedText === FrenchDateTime.DaytimeTermList[0] ||
@@ -112,8 +113,7 @@ export class FrenchTimePeriodParserConfiguration implements ITimePeriodParserCon
             trimmedText.endsWith(FrenchDateTime.DaytimeTermList[2])) {
             timeOfDay = Constants.Daytime;
         }
-        else if (FrenchDateTime.NightTermList.some(o => trimmedText.endsWith(o)))
-        {
+        else if (FrenchDateTime.NightTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Night;
         }
         else {

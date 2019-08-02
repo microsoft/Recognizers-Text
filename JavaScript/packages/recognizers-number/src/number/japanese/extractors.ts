@@ -121,7 +121,7 @@ export class JapaneseDoubleExtractor extends BaseNumberExtractor {
                 regExp: RegExpUtility.getSafeRegExp(JapaneseNumeric.DoubleWithMultiplierRegex, "gis"),
                 value: "DoubleNum"
             },
-            { //１５.２万
+            { // １５.２万
                 regExp: RegExpUtility.getSafeRegExp(JapaneseNumeric.DoubleWithThousandsRegex, "gis"),
                 value: "DoubleJpn"
             },

@@ -167,20 +167,25 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
         // TODO: add the relative day logic if needed. If yes, the whole method should be abstracted.
         if (trimedText === "hoy" || trimedText === "el dia") {
             swift = 0;
-        } else if (trimedText === "mañana" ||
+        }
+ else if (trimedText === "mañana" ||
             trimedText.endsWith("dia siguiente") ||
             trimedText.endsWith("el dia de mañana") ||
             trimedText.endsWith("proximo dia")) {
             swift = 1;
-        } else if (trimedText === "ayer") {
+        }
+ else if (trimedText === "ayer") {
             swift = -1;
-        } else if (trimedText.endsWith("pasado mañana") ||
+        }
+ else if (trimedText.endsWith("pasado mañana") ||
             trimedText.endsWith("dia despues de mañana")) {
             swift = 2;
-        } else if (trimedText.endsWith("anteayer") ||
+        }
+ else if (trimedText.endsWith("anteayer") ||
             trimedText.endsWith("dia antes de ayer")) {
             swift = -2;
-        } else if (trimedText.endsWith("ultimo dia")) {
+        }
+ else if (trimedText.endsWith("ultimo dia")) {
             swift = -1;
         }
 

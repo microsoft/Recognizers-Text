@@ -3,7 +3,7 @@ import { CultureInfo, Culture, BaseNumberExtractor, BaseNumberParser } from "@mi
 import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration, NumberWithUnitParser, ChineseNumberWithUnitParserConfiguration, UnitValue } from "@microsoft/recognizers-text-number-with-unit";
 import { BaseDateTimeExtractor } from "./baseDateTime";
 import { IDurationParserConfiguration, BaseDurationParser } from "../baseDuration";
-import { Constants, TimeTypeConstants } from "../constants"
+import { Constants, TimeTypeConstants } from "../constants";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers";
 import { DateTimeResolutionResult, StringMap } from "../utilities";
@@ -15,7 +15,7 @@ export enum DurationType {
 class DurationExtractorConfiguration extends ChineseNumberWithUnitExtractorConfiguration {
     readonly suffixList: ReadonlyMap<string, string>;
     readonly prefixList: ReadonlyMap<string, string>;
-    readonly ambiguousUnitList: ReadonlyArray<string>;
+    readonly ambiguousUnitList: readonly string[];
     readonly extractType: string;
 
     constructor() {
@@ -41,8 +41,10 @@ export class ChineseDurationExtractor extends BaseDateTimeExtractor<DurationType
         this.halfSuffixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DurationHalfSuffixRegex);
     }
 
-    extract(source: string, refDate: Date): Array<ExtractResult> {
-        if (!refDate) refDate = new Date();
+    extract(source: string, refDate: Date): ExtractResult[] {
+        if (!refDate) {
+refDate = new Date();
+}
         let referenceDate = refDate;
 
         let results = new Array<ExtractResult>();
@@ -103,7 +105,9 @@ export class ChineseDurationParser extends BaseDurationParser {
     }
 
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
-        if (!referenceDate) referenceDate = new Date();
+        if (!referenceDate) {
+referenceDate = new Date();
+}
         let resultValue;
         if (extractorResult.type === this.parserName) {
             let innerResult = new DateTimeResolutionResult();

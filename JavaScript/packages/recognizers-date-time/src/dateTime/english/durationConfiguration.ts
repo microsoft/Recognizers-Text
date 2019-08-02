@@ -1,8 +1,8 @@
-import { IDurationExtractorConfiguration, IDurationParserConfiguration } from "../baseDuration"
+import { IDurationExtractorConfiguration, IDurationParserConfiguration } from "../baseDuration";
 import { RegExpUtility } from "@microsoft/recognizers-text";
-import { BaseNumberExtractor, BaseNumberParser, EnglishCardinalExtractor } from "@microsoft/recognizers-text-number"
+import { BaseNumberExtractor, BaseNumberParser, EnglishCardinalExtractor } from "@microsoft/recognizers-text-number";
 import { EnglishDateTime } from "../../resources/englishDateTime";
-import { ICommonDateTimeParserConfiguration } from "../parsers"
+import { ICommonDateTimeParserConfiguration } from "../parsers";
 
 export class EnglishDurationExtractorConfiguration implements IDurationExtractorConfiguration {
     readonly allRegex: RegExp

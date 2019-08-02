@@ -133,7 +133,7 @@ export class FrenchSetParserConfiguration implements ISetParserConfiguration {
         return {
             timex,
             matched: true
-        }
+        };
     }
 
     getMatchedUnitTimex(text: string): { matched: boolean; timex: string; } {

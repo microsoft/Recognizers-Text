@@ -19,7 +19,7 @@ export class ChoiceExtractor implements IExtractor {
         this.config = config;
     }
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string): ExtractResult[] {
         let results = new Array<ExtractResult>();
         let trimmedSource = source.toLowerCase();
 
@@ -65,7 +65,8 @@ export class ChoiceExtractor implements IExtractor {
             let topResult = partialResults.reduce((top, value) => top = top.data.score < value.data.score ? value : top, partialResults[0]);
             topResult.data.otherMatches = partialResults.filter(r => r !== topResult);
             results.push(topResult);
-        } else {
+        }
+        else {
             results = partialResults;
         }
 
@@ -100,7 +101,7 @@ export class ChoiceExtractor implements IExtractor {
     private tokenize(source: string): string[] {
         let tokens: string[] = [];
         let chars = splitter.splitGraphemes(source);
-        let token: string = '';
+        let token = '';
         chars.forEach(c => {
             let codePoint = c.codePointAt(0) || c.charAt(0);
             if (codePoint > 0xFFFF) {
@@ -111,9 +112,11 @@ export class ChoiceExtractor implements IExtractor {
                     tokens.push(token);
                     token = '';
                 }
-            } else if (!(this.config.tokenRegex.test(c) || StringUtility.isWhitespace(c))) {
+            }
+            else if (!(this.config.tokenRegex.test(c) || StringUtility.isWhitespace(c))) {
                 token = token.concat(c);
-            } else if (!StringUtility.isNullOrWhitespace(token)) {
+            }
+            else if (!StringUtility.isNullOrWhitespace(token)) {
                 tokens.push(token);
                 token = '';
             }
@@ -141,7 +144,7 @@ export class BooleanExtractor extends ChoiceExtractor {
     constructor(config: IBooleanExtractorConfiguration) {
         let regexesMap = new Map<RegExp, string>()
             .set(config.regexTrue, Constants.SYS_BOOLEAN_TRUE)
-            .set(config.regexFalse, Constants.SYS_BOOLEAN_FALSE)
+            .set(config.regexFalse, Constants.SYS_BOOLEAN_FALSE);
         
         let optionsConfig: IChoiceExtractorConfiguration = {
             regexesMap: regexesMap,
@@ -149,7 +152,7 @@ export class BooleanExtractor extends ChoiceExtractor {
             allowPartialMatch: false,
             maxDistance: 2,
             onlyTopMatch: config.onlyTopMatch
-        }
+        };
         super(optionsConfig);
         this.extractType = Constants.SYS_BOOLEAN;
     }
