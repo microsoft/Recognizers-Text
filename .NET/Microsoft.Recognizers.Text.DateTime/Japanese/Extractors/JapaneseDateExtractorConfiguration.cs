@@ -5,7 +5,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class JapaneseDateExtractorConfiguration : IDateTimeExtractor
+    public class JapaneseDateExtractorConfiguration : AbstractYearExtractor, IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
 
@@ -20,6 +20,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public static readonly Regex MonthNumRegex = new Regex(DateTimeDefinitions.MonthNumRegex, RegexFlags);
 
         public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+
+        public static readonly Regex RelativeRegex = new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
 
         public static readonly Regex ZeroToNineIntegerRegexJap = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexJap, RegexFlags);
 
@@ -43,11 +45,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex WeekDayOfMonthRegex = new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexFlags);
 
-        public static readonly Regex ThisRe = new Regex(DateTimeDefinitions.DateThisRe, RegexFlags);
+        public static readonly Regex ThisRe = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
-        public static readonly Regex LastRe = new Regex(DateTimeDefinitions.DateLastRe, RegexFlags);
+        public static readonly Regex LastRe = new Regex(DateTimeDefinitions.LastPrefixRegex, RegexFlags);
 
-        public static readonly Regex NextRe = new Regex(DateTimeDefinitions.DateNextRe, RegexFlags);
+        public static readonly Regex NextRe = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
 
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
 
@@ -115,6 +117,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private static readonly JapaneseDurationExtractorConfiguration DurationExtractor = new JapaneseDurationExtractorConfiguration();
 
+        public JapaneseDateExtractorConfiguration(IDateExtractorConfiguration config = null)
+            : base(config)
+        {
+        }
+
         public static List<Token> ExtractRaw(string text)
         {
             var tokens = new List<Token>();
@@ -124,12 +131,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return tokens;
         }
 
-        public List<ExtractResult> Extract(string text)
+        public override List<ExtractResult> Extract(string text)
         {
             return Extract(text, DateObject.Now);
         }
 
-        public List<ExtractResult> Extract(string text, DateObject referenceTime)
+        public override List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
             var tokens = new List<Token>();
             tokens.AddRange(BasicRegexMatch(text));

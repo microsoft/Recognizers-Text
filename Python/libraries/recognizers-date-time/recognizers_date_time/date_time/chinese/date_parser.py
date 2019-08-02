@@ -22,9 +22,9 @@ class ChineseDateParser(BaseDateParser):
         self.special_date_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.SpecialDate)
         self.token_next_regex = RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.DateNextRe)
+            ChineseDateTime.NextPrefixRegex)
         self.token_last_regex = RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.DateLastRe)
+            ChineseDateTime.LastPrefixRegex)
         self.month_max_days: List[int] = [
             31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 

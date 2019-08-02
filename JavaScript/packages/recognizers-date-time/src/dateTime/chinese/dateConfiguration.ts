@@ -206,8 +206,8 @@ export class ChineseDateParser extends BaseDateParser {
         super(config);
         this.lunarRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.LunarRegex);
         this.specialDateRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SpecialDate);
-        this.tokenNextRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateNextRe);
-        this.tokenLastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateLastRe);
+        this.tokenNextRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.NextPrefixRegex);
+        this.tokenLastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.LastPrefixRegex);
         this.monthMaxDays = [ 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
     }
 

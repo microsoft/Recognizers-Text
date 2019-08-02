@@ -4832,5 +4832,31 @@
         "Length": 12
       }
     ]
+  },
+  {
+    "Input": "4月の最終月曜日から10月1日まで",
+    "Context": {
+      "ReferenceDateTime": "2019-07-22T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
+    "Results": [
+      {
+        "Text": "4月の最後の月曜日から10月1日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-08-WXX-1-#4,XXXX-10-01,P36D)",
+          "FutureResolution": {
+            "startDate": "2019-08-26",
+            "endDate": "2019-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-08-27",
+            "endDate": "2018-10-01"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
   }
 ]

@@ -9742,5 +9742,31 @@
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
+  },
+  {
+    "Input": "4月の最終月曜日から10月1日まで",
+    "Context": {
+      "ReferenceDateTime": "2019-07-22T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4月の最終月曜日から10月1日まで",
+        "Start": 1,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-04-WXX-1-#5,XXXX-10-01,P155D)",
+              "type": "daterange",
+              "start": "2019-04-29",
+              "end": "2019-10-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
