@@ -48,7 +48,7 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
         this.simpleCasesRegexes = [
             RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumFromTo),
             RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumBetweenAnd)
-        ]
+        ];
 
         this.prepositionRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PrepositionRegex);
         this.tillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex);

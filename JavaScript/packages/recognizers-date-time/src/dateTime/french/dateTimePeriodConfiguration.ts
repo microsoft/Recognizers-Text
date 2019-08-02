@@ -49,7 +49,7 @@ export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeri
             RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumFromTo, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumBetweenAnd, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificTimeOfDayRegex, "gis")
-        ]
+        ];
 
         this.prepositionRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PrepositionRegex);
         this.tillRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TillRegex);

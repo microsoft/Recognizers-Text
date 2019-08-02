@@ -33,7 +33,9 @@ export namespace PortugueseNumeric {
     export const PlaceHolderPureNumber = `\\b`;
     export const AllIntRegexWithLocks = `((?<=\\b)${AllIntRegex}(?=\\b))`;
     export const AllIntRegexWithDozenSuffixLocks = `(?<=\\b)(((meia)?\\s+(d[úu]zia))|(${AllIntRegex}\\s+(e|com)\\s+)?(${AllIntRegex}\\s+(d[úu]zia(s)?|dezena(s)?)))(?=\\b)`;
-    export const NumbersWithPlaceHolder = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?=${placeholder})`; }
+    export const NumbersWithPlaceHolder = (placeholder: string) => {
+ return `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?=${placeholder})`; 
+};
     export const NumbersWithSuffix = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*${BaseNumbers.NumberMultiplierRegex}(?=\\b)`;
     export const RoundNumberIntegerRegexWithLocks = `(?<=\\b)(${DigitsNumberRegex})+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
     export const NumbersWithDozenSuffix = `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s+dezena(s)?(?=\\b)`;
@@ -61,8 +63,12 @@ export namespace PortugueseNumeric {
     export const DoubleWithMultiplierRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s*${BaseNumbers.NumberMultiplierRegex}(?=\\b)`;
     export const DoubleExponentialNotationRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))(\\d+(,\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)`;
     export const DoubleCaretExponentialNotationRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))(\\d+(,\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)`;
-    export const DoubleDecimalPointRegex = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))\\d+,\\d+(?!(,\\d+))(?=${placeholder})`; }
-    export const DoubleWithoutIntegralRegex = (placeholder: string) => { return `(?<=\\s|^)(?<!(\\d+)),\\d+(?!(,\\d+))(?=${placeholder})`; }
+    export const DoubleDecimalPointRegex = (placeholder: string) => {
+ return `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))\\d+,\\d+(?!(,\\d+))(?=${placeholder})`; 
+};
+    export const DoubleWithoutIntegralRegex = (placeholder: string) => {
+ return `(?<=\\s|^)(?<!(\\d+)),\\d+(?!(,\\d+))(?=${placeholder})`; 
+};
     export const DoubleWithRoundNumber = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
     export const DoubleAllFloatRegex = `((?<=\\b)${AllFloatRegex}(?=\\b))`;
     export const NumberWithSuffixPercentage = `(?<!%)(${BaseNumbers.NumberReplaceToken})(\\s*)(%(?!${BaseNumbers.NumberReplaceToken})|(por cento|pontos percentuais)\\b)`;

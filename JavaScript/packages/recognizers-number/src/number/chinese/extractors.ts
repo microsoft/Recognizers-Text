@@ -2,7 +2,7 @@ import { BaseNumberExtractor, RegExpValue, BasePercentageExtractor } from "../ex
 import { Constants } from "../constants";
 import { LongFormatType } from "../models";
 import { ChineseNumeric } from "../../resources/chineseNumeric";
-import { RegExpUtility } from "@microsoft/recognizers-text"
+import { RegExpUtility } from "@microsoft/recognizers-text";
 
 export enum ChineseNumberExtractorMode {
     // Number extraction with an allow list that filters what numbers to extract.

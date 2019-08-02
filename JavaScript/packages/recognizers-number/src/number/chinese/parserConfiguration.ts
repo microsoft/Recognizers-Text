@@ -2,7 +2,7 @@ import { ParseResult } from "@microsoft/recognizers-text";
 import { ICJKNumberParserConfiguration } from "../cjkParsers";
 import { CultureInfo, Culture } from "../../culture";
 import { ChineseNumeric } from "../../resources/chineseNumeric";
-import { RegExpUtility } from "@microsoft/recognizers-text"
+import { RegExpUtility } from "@microsoft/recognizers-text";
 
 export class ChineseNumberParserConfiguration implements ICJKNumberParserConfiguration {
 
@@ -20,18 +20,18 @@ export class ChineseNumberParserConfiguration implements ICJKNumberParserConfigu
     readonly wordSeparatorToken: string;
     readonly zeroChar: string;
     readonly pairChar: string;
-    readonly writtenDecimalSeparatorTexts: ReadonlyArray<string>;
-    readonly writtenGroupSeparatorTexts: ReadonlyArray<string>;
-    readonly writtenIntegerSeparatorTexts: ReadonlyArray<string>;
-    readonly writtenFractionSeparatorTexts: ReadonlyArray<string>;
+    readonly writtenDecimalSeparatorTexts: readonly string[];
+    readonly writtenGroupSeparatorTexts: readonly string[];
+    readonly writtenIntegerSeparatorTexts: readonly string[];
+    readonly writtenFractionSeparatorTexts: readonly string[];
     
     readonly zeroToNineMap: ReadonlyMap<string, number>;
     readonly roundNumberMapChar: ReadonlyMap<string, number>;
     readonly fullToHalfMap: ReadonlyMap<string, string>;
     readonly tratoSimMap: ReadonlyMap<string, string>;
     readonly unitMap: ReadonlyMap<string, string>;
-    readonly roundDirectList: ReadonlyArray<string>;
-    readonly tenChars: ReadonlyArray<string>;
+    readonly roundDirectList: readonly string[];
+    readonly tenChars: readonly string[];
     readonly digitNumRegex: RegExp;
     readonly dozenRegex: RegExp;
     readonly percentageRegex: RegExp;
@@ -89,7 +89,7 @@ export class ChineseNumberParserConfiguration implements ICJKNumberParserConfigu
         this.roundNumberIntegerRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.RoundNumberIntegerRegex, "gis");
     }
 
-    normalizeTokenSet(tokens: ReadonlyArray<string>, context: ParseResult): ReadonlyArray<string> {
+    normalizeTokenSet(tokens: readonly string[], context: ParseResult): readonly string[] {
         return tokens;
     }
 

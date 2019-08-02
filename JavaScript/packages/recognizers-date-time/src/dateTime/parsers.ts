@@ -3,15 +3,15 @@ import { BaseNumberParser, BaseNumberExtractor } from "@microsoft/recognizers-te
 import { IDateTimeUtilityConfiguration, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, MatchingUtil, AgoLaterUtil } from "./utilities";
 import { BaseDateTime } from "../resources/baseDateTime";
 import { Constants, TimeTypeConstants } from "./constants";
-import { BaseDateExtractor, BaseDateParser} from "./baseDate"
-import { BaseTimeExtractor, BaseTimeParser} from "./baseTime"
-import { BaseDatePeriodExtractor, BaseDatePeriodParser} from "./baseDatePeriod"
-import { BaseTimePeriodExtractor, BaseTimePeriodParser} from "./baseTimePeriod"
-import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser} from "./baseDateTime"
-import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser} from "./baseDateTimePeriod"
-import { BaseSetExtractor, BaseSetParser} from "./baseSet"
-import { BaseDurationExtractor, BaseDurationParser} from "./baseDuration"
-import { BaseHolidayExtractor, BaseHolidayParser} from "./baseHoliday"
+import { BaseDateExtractor, BaseDateParser} from "./baseDate";
+import { BaseTimeExtractor, BaseTimeParser} from "./baseTime";
+import { BaseDatePeriodExtractor, BaseDatePeriodParser} from "./baseDatePeriod";
+import { BaseTimePeriodExtractor, BaseTimePeriodParser} from "./baseTimePeriod";
+import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser} from "./baseDateTime";
+import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser} from "./baseDateTimePeriod";
+import { BaseSetExtractor, BaseSetParser} from "./baseSet";
+import { BaseDurationExtractor, BaseDurationParser} from "./baseDuration";
+import { BaseHolidayExtractor, BaseHolidayParser} from "./baseHoliday";
 
 export class DateTimeParseResult extends ParseResult {
     // TimexStr is only used in extractors related with date and time

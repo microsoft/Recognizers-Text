@@ -34,7 +34,7 @@ export class BooleanParser extends ChoiceParser<boolean> {
         ]);
         let config: IChoiceParserConfiguration<boolean> = {
             resolutions: resolutions
-        }
+        };
         super(config);
     }
 }

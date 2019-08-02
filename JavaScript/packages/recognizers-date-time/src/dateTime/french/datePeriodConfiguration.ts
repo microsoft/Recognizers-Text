@@ -8,7 +8,7 @@ import { FrenchDurationExtractorConfiguration } from "./durationConfiguration";
 import { BaseDateTime } from "../../resources/baseDateTime";
 import { FrenchDateTime } from "../../resources/frenchDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers";
-import { IDateTimeExtractor } from "../baseDateTime"
+import { IDateTimeExtractor } from "../baseDateTime";
 
 export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[];
@@ -219,8 +219,8 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
             trimedText.endsWith("derniere") || 
             trimedText.endsWith("dernier")) {
             swift = -1;
-        } else if (trimedText.startsWith("cette"))
-        {
+        }
+ else if (trimedText.startsWith("cette")) {
             swift = 0;
         }
 

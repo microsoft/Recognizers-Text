@@ -74,7 +74,7 @@ export abstract class AbstractNumberModel implements IModel {
 
     parse(query: string): ModelResult[] {
         query = QueryProcessor.preProcess(query, true);
-        let parseNums: ParseResult[]
+        let parseNums: ParseResult[];
 
         try {
             let extractResults = this.extractor.extract(query);

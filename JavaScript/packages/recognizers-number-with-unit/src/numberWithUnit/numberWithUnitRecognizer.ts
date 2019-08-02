@@ -30,23 +30,23 @@ export enum NumberWithUnitOptions {
     None = 0,
 }
 
-export function recognizeCurrency(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None, fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
+export function recognizeCurrency(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None, fallbackToDefaultCulture: boolean = true): ModelResult[] {
     return recognizeByModel(recognizer => recognizer.getCurrencyModel(culture, fallbackToDefaultCulture), query, culture, options);
 }
 
-export function recognizeTemperature(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None, fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
+export function recognizeTemperature(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None, fallbackToDefaultCulture: boolean = true): ModelResult[] {
     return recognizeByModel(recognizer => recognizer.getTemperatureModel(culture, fallbackToDefaultCulture), query, culture, options);
 }
 
-export function recognizeDimension(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None, fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
+export function recognizeDimension(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None, fallbackToDefaultCulture: boolean = true): ModelResult[] {
     return recognizeByModel(recognizer => recognizer.getDimensionModel(culture, fallbackToDefaultCulture), query, culture, options);
 }
 
-export function recognizeAge(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None, fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
+export function recognizeAge(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None, fallbackToDefaultCulture: boolean = true): ModelResult[] {
     return recognizeByModel(recognizer => recognizer.getAgeModel(culture, fallbackToDefaultCulture), query, culture, options);
 }
 
-function recognizeByModel(getModelFunc: (n: NumberWithUnitRecognizer) => IModel, query: string, culture: string, options: NumberWithUnitOptions): Array<ModelResult> {
+function recognizeByModel(getModelFunc: (n: NumberWithUnitRecognizer) => IModel, query: string, culture: string, options: NumberWithUnitOptions): ModelResult[] {
     let recognizer = new NumberWithUnitRecognizer(culture, options);
     let model = getModelFunc(recognizer);
     return model.parse(query);
@@ -58,7 +58,7 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
     }
 
     protected InitializeConfiguration() {
-        //#region English
+        // #region English
         this.registerModel("CurrencyModel", Culture.English, (options) => new CurrencyModel(new Map<IExtractor, IParser>([
             [new BaseMergedUnitExtractor(new EnglishCurrencyExtractorConfiguration()), new BaseMergedUnitParser(new EnglishCurrencyParserConfiguration())]
         ])));
@@ -71,9 +71,9 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
         this.registerModel("AgeModel", Culture.English, (options) => new AgeModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new EnglishAgeExtractorConfiguration()), new NumberWithUnitParser(new EnglishAgeParserConfiguration())]
         ])));
-        //#endregion
+        // #endregion
 
-        //#region Spanish
+        // #region Spanish
         this.registerModel("CurrencyModel", Culture.Spanish, (options) => new CurrencyModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new SpanishCurrencyExtractorConfiguration()), new NumberWithUnitParser(new SpanishCurrencyParserConfiguration())]
         ])));
@@ -86,9 +86,9 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
         this.registerModel("AgeModel", Culture.Spanish, (options) => new AgeModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new SpanishAgeExtractorConfiguration()), new NumberWithUnitParser(new SpanishAgeParserConfiguration())]
         ])));
-        //#endregion
+        // #endregion
 
-        //#region Portuguese
+        // #region Portuguese
         this.registerModel("CurrencyModel", Culture.Portuguese, (options) => new CurrencyModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new PortugueseCurrencyExtractorConfiguration()), new NumberWithUnitParser(new PortugueseCurrencyParserConfiguration())]
         ])));
@@ -101,9 +101,9 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
         this.registerModel("AgeModel", Culture.Portuguese, (options) => new AgeModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new PortugueseAgeExtractorConfiguration()), new NumberWithUnitParser(new PortugueseAgeParserConfiguration())]
         ])));
-        //#endregion
+        // #endregion
 
-        //#region Chinese
+        // #region Chinese
         this.registerModel("CurrencyModel", Culture.Chinese, (options) => new CurrencyModel(new Map<IExtractor, IParser>([
             [new BaseMergedUnitExtractor(new ChineseCurrencyExtractorConfiguration()), new BaseMergedUnitParser(new ChineseCurrencyParserConfiguration())],
             [new NumberWithUnitExtractor(new EnglishCurrencyExtractorConfiguration()), new NumberWithUnitParser(new EnglishCurrencyParserConfiguration())]
@@ -120,9 +120,9 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
             [new NumberWithUnitExtractor(new ChineseAgeExtractorConfiguration()), new NumberWithUnitParser(new ChineseAgeParserConfiguration())],
             [new NumberWithUnitExtractor(new EnglishAgeExtractorConfiguration()), new NumberWithUnitParser(new EnglishAgeParserConfiguration())]
         ])));
-        //#endregion
+        // #endregion
 
-        //#region Japanese
+        // #region Japanese
         this.registerModel("CurrencyModel", Culture.Japanese, (options) => new CurrencyModel(new Map<IExtractor, IParser>([
             [new BaseMergedUnitExtractor(new JapaneseCurrencyExtractorConfiguration()), new BaseMergedUnitParser(new JapaneseCurrencyParserConfiguration())],
             [new NumberWithUnitExtractor(new EnglishCurrencyExtractorConfiguration()), new NumberWithUnitParser(new EnglishCurrencyParserConfiguration())]
@@ -131,9 +131,9 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
             [new NumberWithUnitExtractor(new JapaneseAgeExtractorConfiguration()), new NumberWithUnitParser(new JapaneseAgeParserConfiguration())],
             [new NumberWithUnitExtractor(new EnglishAgeExtractorConfiguration()), new NumberWithUnitParser(new EnglishAgeParserConfiguration())]
         ])));
-        //#endregion
+        // #endregion
 
-        //#region French
+        // #region French
         this.registerModel("CurrencyModel", Culture.French, (options) => new CurrencyModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new FrenchCurrencyExtractorConfiguration()), new NumberWithUnitParser(new FrenchCurrencyParserConfiguration())]
         ])));
@@ -146,11 +146,11 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
         this.registerModel("AgeModel", Culture.French, (options) => new AgeModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new FrenchAgeExtractorConfiguration()), new NumberWithUnitParser(new FrenchAgeParserConfiguration())]
         ])));
-        //#endregion
+        // #endregion
     }
 
     protected IsValidOptions(options: number): boolean {
-        return options >= 0 && options <= NumberWithUnitOptions.None
+        return options >= 0 && options <= NumberWithUnitOptions.None;
     }
 
     getCurrencyModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IModel {

@@ -30,7 +30,9 @@ export namespace SpanishNumeric {
     export const AllIntRegex = `(${SeparaIntRegex}|mil(\\s+${BelowThousandsRegex})?)`;
     export const PlaceHolderPureNumber = `\\b`;
     export const PlaceHolderDefault = `\\D|\\b`;
-    export const NumbersWithPlaceHolder = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!([\\.,]\\d+[a-zA-Z]))(?=${placeholder})`; }
+    export const NumbersWithPlaceHolder = (placeholder: string) => {
+ return `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!([\\.,]\\d+[a-zA-Z]))(?=${placeholder})`; 
+};
     export const NumbersWithSuffix = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*${BaseNumbers.NumberMultiplierRegex}(?=\\b)`;
     export const RoundNumberIntegerRegexWithLocks = `(?<=\\b)(${DigitsNumberRegex})+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
     export const NumbersWithDozenSuffix = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+docenas?(?=\\b)`;
@@ -58,8 +60,12 @@ export namespace SpanishNumeric {
     export const FractionPrepositionRegex = `(?<=\\b)(?<numerator>(${AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>(${AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)`;
     export const AllPointRegex = `((\\s+${ZeroToNineIntegerRegex})+|(\\s+${AllIntRegex}))`;
     export const AllFloatRegex = `${AllIntRegex}(\\s+(coma|con))${AllPointRegex}`;
-    export const DoubleDecimalPointRegex = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+(?!([\\.,]\\d+))(?=${placeholder})`; }
-    export const DoubleWithoutIntegralRegex = (placeholder: string) => { return `(?<=\\s|^)(?<!(\\d+))[\\.,]\\d+(?!([\\.,]\\d+))(?=${placeholder})`; }
+    export const DoubleDecimalPointRegex = (placeholder: string) => {
+ return `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+(?!([\\.,]\\d+))(?=${placeholder})`; 
+};
+    export const DoubleWithoutIntegralRegex = (placeholder: string) => {
+ return `(?<=\\s|^)(?<!(\\d+))[\\.,]\\d+(?!([\\.,]\\d+))(?=${placeholder})`; 
+};
     export const DoubleWithMultiplierRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[\\.,])))\\d+[\\.,]\\d+\\s*${BaseNumbers.NumberMultiplierRegex}(?=\\b)`;
     export const DoubleWithRoundNumber = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[\\.,])))\\d+[\\.,]\\d+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
     export const DoubleAllFloatRegex = `((?<=\\b)${AllFloatRegex}(?=\\b))`;

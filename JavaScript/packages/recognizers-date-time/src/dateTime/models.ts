@@ -32,7 +32,10 @@ export class DateTimeModel implements IDateTimeModel {
                 let parseResult = this.parser.parse(result, referenceDate);
                 if (Array.isArray(parseResult.value)) {
                     parseDates.push(...parseResult.value);
-                } else { parseDates.push(parseResult); }
+                }
+ else {
+ parseDates.push(parseResult); 
+}
             }
         }
         catch(err) {

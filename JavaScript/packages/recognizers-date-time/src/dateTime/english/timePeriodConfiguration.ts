@@ -1,11 +1,11 @@
-import { ITimePeriodExtractorConfiguration, ITimePeriodParserConfiguration } from "../baseTimePeriod"
+import { ITimePeriodExtractorConfiguration, ITimePeriodParserConfiguration } from "../baseTimePeriod";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { RegExpUtility, IExtractor } from "@microsoft/recognizers-text";
 import { EnglishDateTime } from "../../resources/englishDateTime";
-import { ICommonDateTimeParserConfiguration } from "../parsers"
+import { ICommonDateTimeParserConfiguration } from "../parsers";
 import { IDateTimeUtilityConfiguration, TimexUtil } from "../utilities";
-import { EnglishTimeExtractorConfiguration } from "./timeConfiguration"
-import { IDateTimeExtractor } from "../baseDateTime"
+import { EnglishTimeExtractorConfiguration } from "./timeConfiguration";
+import { IDateTimeExtractor } from "../baseDateTime";
 import { EnglishIntegerExtractor } from "@microsoft/recognizers-text-number";
 import { Constants } from "../constants";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
@@ -87,24 +87,29 @@ export class EnglishTimePeriodParserConfiguration implements ITimePeriodParserCo
         if (trimmedText.endsWith("s")) {
             trimmedText = trimmedText.substring(0, trimmedText.length - 1);
         }
-        let matched = false,
-        timex = null,
-        beginHour = 0,
-        endHour = 0,
-        endMin = 0;
+        let matched = false;
+        let timex = null;
+        let beginHour = 0;
+        let endHour = 0;
+        let endMin = 0;
 
         let timeOfDay = "";
         if (EnglishDateTime.MorningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Morning;
-        } else if (EnglishDateTime.AfternoonTermList.some(o => trimmedText.endsWith(o))) {
+        }
+ else if (EnglishDateTime.AfternoonTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Afternoon;
-        } else if (EnglishDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
+        }
+ else if (EnglishDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Evening;
-        } else if (EnglishDateTime.DaytimeTermList.some(o => trimmedText.localeCompare(o) == 0)) {
+        }
+ else if (EnglishDateTime.DaytimeTermList.some(o => trimmedText.localeCompare(o) == 0)) {
             timeOfDay = Constants.Daytime;
-        } else if (EnglishDateTime.NightTermList.some(o => trimmedText.endsWith(o))) {
+        }
+ else if (EnglishDateTime.NightTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Night;
-        } else {
+        }
+ else {
             timex = null;
             matched = false;
             return {matched, timex, beginHour, endHour, endMin};

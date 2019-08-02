@@ -7,7 +7,7 @@ import { ChineseNumericWithUnit } from "../../resources/chineseNumericWithUnit";
 export class ChineseTemperatureExtractorConfiguration extends ChineseNumberWithUnitExtractorConfiguration {
     readonly suffixList: ReadonlyMap<string, string>;
     readonly prefixList: ReadonlyMap<string, string>;
-    readonly ambiguousUnitList: ReadonlyArray<string>;
+    readonly ambiguousUnitList: readonly string[];
     readonly extractType: string;
     readonly ambiguousUnitNumberMultiplierRegex: RegExp;
 

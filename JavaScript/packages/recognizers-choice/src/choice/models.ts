@@ -45,13 +45,13 @@ export class BooleanModel extends ChoiceModel {
         let results: any = {
             value: sources.value,
             score: sources.data.score
-        }
+        };
         if (sources.data.otherMatches) {
             results.otherResults = sources.data.otherMatches.map(o => ({
                 text: o.text,
                 value: o.value,
                 score: o.data.score
-            }))
+            }));
         }
         return results;
     }

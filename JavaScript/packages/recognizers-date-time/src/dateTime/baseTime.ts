@@ -1,8 +1,8 @@
 import { IExtractor, ExtractResult } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
-import { RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text-number"
+import { RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text-number";
 import { Token, DateTimeFormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, DateUtils, StringMap } from "./utilities";
-import { IDateTimeParser, DateTimeParseResult } from "./parsers"
+import { IDateTimeParser, DateTimeParseResult } from "./parsers";
 import { IDateTimeExtractor } from "./baseDateTime";
 
 export interface ITimeExtractorConfiguration {
@@ -19,11 +19,13 @@ export class BaseTimeExtractor implements IDateTimeExtractor {
         this.config = config;
     }
 
-    extract(text: string, refDate: Date): Array<ExtractResult> {
-        if (!refDate) refDate = new Date();
+    extract(text: string, refDate: Date): ExtractResult[] {
+        if (!refDate) {
+refDate = new Date();
+}
         let referenceDate = refDate;
 
-        let tokens: Array<Token> = new Array<Token>()
+        let tokens: Token[] = new Array<Token>()
         .concat(this.basicRegexMatch(text))
         .concat(this.atRegexMatch(text))
         .concat(this.specialsRegexMatch(text, referenceDate));
@@ -32,7 +34,7 @@ export class BaseTimeExtractor implements IDateTimeExtractor {
         return result;
     }
 
-    basicRegexMatch(text: string): Array<Token> {
+    basicRegexMatch(text: string): Token[] {
         let ret = [];
         this.config.timeRegexList.forEach(regexp => {
             let matches = RegExpUtility.getMatches(regexp, text);
@@ -43,7 +45,7 @@ export class BaseTimeExtractor implements IDateTimeExtractor {
         return ret;
     }
 
-    atRegexMatch(text: string): Array<Token> {
+    atRegexMatch(text: string): Token[] {
         let ret = [];
         // handle "at 5", "at seven"
         let matches = RegExpUtility.getMatches(this.config.atRegex, text);
@@ -57,7 +59,7 @@ export class BaseTimeExtractor implements IDateTimeExtractor {
             return ret;
         }
 
-    specialsRegexMatch(text: string, refDate: Date): Array<Token> {
+    specialsRegexMatch(text: string, refDate: Date): Token[] {
         let ret = [];
         // handle "ish"
         if (this.config.ishRegex !== null) {
@@ -89,7 +91,9 @@ export class BaseTimeExtractor implements IDateTimeExtractor {
         }
 
         public parse(er: ExtractResult, referenceTime?: Date): DateTimeParseResult | null {
-            if (!referenceTime) referenceTime = new Date();
+            if (!referenceTime) {
+referenceTime = new Date();
+}
             let value = null;
             if (er.type === this.ParserName) {
                 let innerResult = this.internalParse(er.text, referenceTime);
@@ -105,7 +109,7 @@ export class BaseTimeExtractor implements IDateTimeExtractor {
             let ret = new DateTimeParseResult(er);
             ret.value = value,
             ret.timexStr = value === null ? "" : value.timex,
-            ret.resolutionStr = ""
+            ret.resolutionStr = "";
 
             return ret;
         }

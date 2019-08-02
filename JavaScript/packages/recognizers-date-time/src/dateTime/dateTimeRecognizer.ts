@@ -13,7 +13,7 @@ export enum DateTimeOptions {
 }
 
 export function recognizeDateTime(query: string, culture: string, options: DateTimeOptions = DateTimeOptions.None,
-        referenceDate: Date = new Date(), fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
+        referenceDate: Date = new Date(), fallbackToDefaultCulture: boolean = true): ModelResult[] {
     let recognizer = new DateTimeRecognizer(culture, options);
     let model = recognizer.getDateTimeModel(culture, fallbackToDefaultCulture);
     return model.parse(query, referenceDate);
@@ -25,40 +25,40 @@ export default class DateTimeRecognizer extends Recognizer<DateTimeOptions> {
     }
 
     protected InitializeConfiguration() {
-        //#region English
+        // #region English
         this.registerModel("DateTimeModel", Culture.English, (options) => new DateTimeModel(
             new BaseMergedParser(new EnglishMergedParserConfiguration(new EnglishCommonDateTimeParserConfiguration()), this.Options),
             new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), this.Options)
         ));
-        //#endregion
+        // #endregion
 
-        //#region EnglishOhters
+        // #region EnglishOhters
         this.registerModel("DateTimeModel", Culture.EnglishOthers, (options) => new DateTimeModel(
             new BaseMergedParser(new EnglishMergedParserConfiguration(new EnglishCommonDateTimeParserConfiguration(true)), this.Options),
             new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(true), this.Options)
         ));
-        //#endregion
+        // #endregion
 
-        //#region Spanish
+        // #region Spanish
         this.registerModel("DateTimeModel", Culture.Spanish, (options) => new DateTimeModel(
             new BaseMergedParser(new SpanishMergedParserConfiguration(), this.Options),
             new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), this.Options)
         ));
-        //#endregion
+        // #endregion
 
-        //#region Chinese
+        // #region Chinese
         this.registerModel("DateTimeModel", Culture.Chinese, (options) => new DateTimeModel(
             new ChineseFullMergedParser(),
             new ChineseMergedExtractor(this.Options)
         ));
-        //#endregion
+        // #endregion
 
-        //#region French
+        // #region French
         this.registerModel("DateTimeModel", Culture.French, (options) => new DateTimeModel(
             new BaseMergedParser(new FrenchMergedParserConfiguration(), this.Options),
             new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(), this.Options)
         ));
-        //#endregion
+        // #endregion
     }
 
     protected IsValidOptions(options: number): boolean {

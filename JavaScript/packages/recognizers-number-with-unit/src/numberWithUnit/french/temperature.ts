@@ -7,7 +7,7 @@ import { BaseUnits } from "../../resources/baseUnits";
 export class FrenchTemperatureExtractorConfiguration extends FrenchNumberWithUnitExtractorConfiguration {
     readonly suffixList: ReadonlyMap<string, string>;
     readonly prefixList: ReadonlyMap<string, string>;
-    readonly ambiguousUnitList: ReadonlyArray<string>;
+    readonly ambiguousUnitList: readonly string[];
     readonly extractType: string;
     readonly ambiguousUnitNumberMultiplierRegex: RegExp;
 

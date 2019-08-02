@@ -2,15 +2,15 @@ import * as generator from "./lib/base-code-generator";
 import { join, basename } from "path";
 
 class ResourceConfig {
-    input: Array<string>;
+    input: string[];
     output: string;
-    header: Array<string>;
-    footer: Array<string>;
+    header: string[];
+    footer: string[];
 }
 
 class ResourceDefinitions {
     outputPath: string;
-    configFiles: Array<ResourceConfig>;
+    configFiles: ResourceConfig[];
 }
 
 const resourcesPath = '../../../Patterns/';
@@ -25,9 +25,10 @@ class Startup {
             let outputFilePath = join(outputPath, config.output).concat('.ts');
             console.log(`${ basename(inputFilePath) } => ${ basename(outputFilePath) }`);
             try {
-                generator.generate(inputFilePath, outputFilePath, config.header.join('\n') , config.footer.join('\n'))
-            } catch (err) {
-                console.log(`Error while creating the resource ${ basename(outputFilePath) }`, err.toString())
+                generator.generate(inputFilePath, outputFilePath, config.header.join('\n') , config.footer.join('\n'));
+            }
+ catch (err) {
+                console.log(`Error while creating the resource ${ basename(outputFilePath) }`, err.toString());
             }
         });
 
