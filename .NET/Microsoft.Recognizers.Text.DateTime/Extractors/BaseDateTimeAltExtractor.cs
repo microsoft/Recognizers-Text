@@ -395,16 +395,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var resultEnd = result.Start + result.Length;
                     foreach (var relativeTermsMatch in relativeTermsMatches)
                     {
-                        if (relativeTermsMatch.Index > resultEnd)
+                        var relativeTermsMatchEnd = relativeTermsMatch.Index + relativeTermsMatch.Length;
+                        if (relativeTermsMatch.Index > resultEnd || relativeTermsMatchEnd < result.Start)
                         {
                             // Check whether middle string is a connector
-                            var middleBegin = resultEnd ?? 0;
-                            var middleEnd = relativeTermsMatch.Index;
+                            var middleBegin = relativeTermsMatch.Index > resultEnd ? resultEnd ?? 0 : relativeTermsMatchEnd;
+                            var middleEnd = relativeTermsMatch.Index > resultEnd ? relativeTermsMatch.Index : result.Start ?? 0;
 
                             if (IsConnectorOrWhiteSpace(middleBegin, middleEnd, text))
                             {
-                                var parentTextStart = result.Start;
-                                var parentTextLen = relativeTermsMatch.Index + relativeTermsMatch.Length - result.Start;
+                                var parentTextStart = relativeTermsMatch.Index > resultEnd ? result.Start : relativeTermsMatch.Index;
+                                var parentTextLen = relativeTermsMatch.Index > resultEnd ? relativeTermsMatchEnd - result.Start : resultEnd - relativeTermsMatch.Index;
                                 var parentText = text.Substring(parentTextStart ?? 0, parentTextLen ?? 0);
 
                                 var contextErs = new ExtractResult();

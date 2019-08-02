@@ -13810,5 +13810,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Cortana could try to arrange a Skype call this or next week please?",
+    "Context": {
+      "ReferenceDateTime": "2019-08-01T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next week",
+        "Start": 50,
+        "End": 58,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W32",
+              "type": "daterange",
+              "start": "2019-08-05",
+              "end": "2019-08-12"
+            }
+          ]
+        }
+      }      
+    ]
   }
 ]
