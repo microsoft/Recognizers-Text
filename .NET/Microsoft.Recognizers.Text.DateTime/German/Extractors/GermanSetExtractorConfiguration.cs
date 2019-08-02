@@ -1,6 +1,8 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.German;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
@@ -76,5 +78,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex ISetExtractorConfiguration.SetWeekDayRegex => SetWeekDayRegex;
 
         Regex ISetExtractorConfiguration.SetEachRegex => SetEachRegex;
+
+        public Tuple<string, int> WeekDayGroupMatchTuple(Match match) => SetHandler.WeekDayGroupMatchTuple(match);
     }
 }

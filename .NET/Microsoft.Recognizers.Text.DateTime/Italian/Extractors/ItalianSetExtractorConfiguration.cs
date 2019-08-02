@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Italian;
 
@@ -75,5 +76,44 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         Regex ISetExtractorConfiguration.SetWeekDayRegex => SetWeekDayRegex;
 
         Regex ISetExtractorConfiguration.SetEachRegex => SetEachRegex;
+
+        public Tuple<string, int> WeekDayGroupMatchTuple(Match match)
+        {
+
+            string weekday = string.Empty;
+            int del = 0;
+            if (match.Groups["g0"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g0"].ToString() + "a";
+                del = 0;
+            }
+            else if (match.Groups["g1"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g1"].ToString() + "io";
+                del = -1;
+            }
+            else if (match.Groups["g2"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g2"].ToString() + "e";
+                del = 0;
+            }
+            else if (match.Groups["g3"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g3"].ToString() + "ì";
+                del = 0;
+            }
+            else if (match.Groups["g4"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g4"].ToString() + "a";
+                del = 1;
+            }
+            else if (match.Groups["g5"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g5"].ToString() + "o";
+                del = 0;
+            }
+
+            return Tuple.Create<string, int>(weekday, del);
+        }
     }
 }

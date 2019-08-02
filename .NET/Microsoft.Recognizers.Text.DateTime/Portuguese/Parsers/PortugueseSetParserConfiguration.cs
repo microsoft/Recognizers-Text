@@ -139,5 +139,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
             return true;
         }
+
+        public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
     }
 }

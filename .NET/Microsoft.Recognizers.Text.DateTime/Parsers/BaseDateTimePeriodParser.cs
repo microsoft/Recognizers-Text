@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             Config = configuration;
         }
 
-        protected IDateTimePeriodParserConfiguration Config { get;  private set; }
+        protected IDateTimePeriodParserConfiguration Config { get; private set; }
 
         public ParseResult Parse(ExtractResult result)
         {
@@ -194,12 +194,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     hasEarly = true;
                     ret.Comment = Constants.Comment_Early;
+                    ret.Mod = Constants.EARLY_MOD;
                 }
 
                 if (!hasEarly && !string.IsNullOrEmpty(match.Groups["late"].Value))
                 {
                     hasLate = true;
                     ret.Comment = Constants.Comment_Late;
+                    ret.Mod = Constants.LATE_MOD;
                 }
             }
             else
@@ -735,33 +737,84 @@ namespace Microsoft.Recognizers.Text.DateTime
             var matchPmStr = match.Groups[Constants.PmGroupName].Value;
             var matchAmStr = match.Groups[Constants.AmGroupName].Value;
             var descStr = match.Groups[Constants.DescGroupName].Value;
-            if (!string.IsNullOrEmpty(matchAmStr) || (!string.IsNullOrEmpty(descStr) && descStr.StartsWith("a")))
+            var beginDescStr = match.Groups[Constants.LeftAmPmGroupName].Value;
+            var endDescStr = match.Groups[Constants.RightAmPmGroupName].Value;
+
+            if (!string.IsNullOrEmpty(beginDescStr) && !string.IsNullOrEmpty(endDescStr))
             {
-                if (beginHour >= Constants.HalfDayHourCount)
+                if (beginDescStr.StartsWith("a"))
+                {
+                    if (beginHour >= Constants.HalfDayHourCount)
+                    {
+                        beginHour -= Constants.HalfDayHourCount;
+                    }
+
+                    hasAm = true;
+                }
+                else if (beginDescStr.StartsWith("p"))
+                {
+                    if (beginHour < Constants.HalfDayHourCount)
+                    {
+                        beginHour += Constants.HalfDayHourCount;
+                    }
+
+                    hasPm = true;
+                }
+
+                if (!string.IsNullOrEmpty(endDescStr) && endDescStr.StartsWith("a"))
+                {
+                    if (endHour >= Constants.HalfDayHourCount)
+                    {
+                        endHour -= Constants.HalfDayHourCount;
+                    }
+
+                    hasAm = true;
+                }
+                else if (endDescStr.StartsWith("p"))
+                {
+                    if (endHour < Constants.HalfDayHourCount)
+                    {
+                        endHour += Constants.HalfDayHourCount;
+                    }
+
+                    hasPm = true;
+                }
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(matchAmStr) || (!string.IsNullOrEmpty(descStr) && descStr.StartsWith("a")))
+                {
+                    if (beginHour >= Constants.HalfDayHourCount)
+                    {
+                        beginHour -= Constants.HalfDayHourCount;
+                    }
+
+                    if (endHour >= Constants.HalfDayHourCount)
+                    {
+                        endHour -= Constants.HalfDayHourCount;
+                    }
+
+                    hasAm = true;
+                }
+                else if (!string.IsNullOrEmpty(matchPmStr) || (!string.IsNullOrEmpty(descStr) && descStr.StartsWith("p")))
+                {
+                    if (beginHour < Constants.HalfDayHourCount)
+                    {
+                        beginHour += Constants.HalfDayHourCount;
+                    }
+
+                    if (endHour < Constants.HalfDayHourCount)
+                    {
+                        endHour += Constants.HalfDayHourCount;
+                    }
+
+                    hasPm = true;
+                }
+
+                if (beginHour > endHour && beginHour >= Constants.HalfDayHourCount)
                 {
                     beginHour -= Constants.HalfDayHourCount;
                 }
-
-                if (endHour >= Constants.HalfDayHourCount)
-                {
-                    endHour -= Constants.HalfDayHourCount;
-                }
-
-                hasAm = true;
-            }
-            else if (!string.IsNullOrEmpty(matchPmStr) || (!string.IsNullOrEmpty(descStr) && descStr.StartsWith("p")))
-            {
-                if (beginHour < Constants.HalfDayHourCount)
-                {
-                    beginHour += Constants.HalfDayHourCount;
-                }
-
-                if (endHour < Constants.HalfDayHourCount)
-                {
-                    endHour += Constants.HalfDayHourCount;
-                }
-
-                hasPm = true;
             }
 
             if (!hasAm && !hasPm && beginHour <= Constants.HalfDayHourCount && endHour <= Constants.HalfDayHourCount)
@@ -896,7 +949,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var dateStr = pr2.TimexStr.Split('T')[0];
                 var durationStr = DateTimeFormatUtil.LuisTimeSpan(pastEnd - pastBegin);
-                ret.Timex = $"({dateStr + pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((pastEnd - pastBegin).TotalHours)}H)";
+                ret.Timex = $"({dateStr + pr1.TimexStr},{pr2.TimexStr},{durationStr})";
             }
 
             var ampmStr1 = ((DateTimeResolutionResult)pr1.Value).Comment;
