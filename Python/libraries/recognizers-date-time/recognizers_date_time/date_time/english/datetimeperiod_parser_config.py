@@ -19,7 +19,7 @@ class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         self._period_time_of_day_with_date_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.PeriodTimeOfDayWithDateRegex)
         self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
-            EnglishDateTime.SpecificTimeOfDayRegex)
+            EnglishDateTime.PeriodSpecificTimeOfDayRegex)
         self._past_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.PreviousPrefixRegex)
         self._future_regex = RegExpUtility.get_safe_reg_exp(

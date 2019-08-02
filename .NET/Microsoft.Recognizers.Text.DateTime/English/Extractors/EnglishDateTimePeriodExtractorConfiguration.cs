@@ -47,6 +47,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex WeekDaysRegex =
             new Regex(DateTimeDefinitions.WeekDayRegex, RegexFlags);
 
+        public static readonly Regex PeriodSpecificTimeOfDayRegex =
+            new Regex(DateTimeDefinitions.PeriodSpecificTimeOfDayRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex[] SimpleCases =
@@ -57,9 +60,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static readonly Regex PeriodTimeOfDayRegex =
             new Regex(DateTimeDefinitions.PeriodTimeOfDayRegex, RegexFlags);
-
-        private static readonly Regex PeriodSpecificTimeOfDayRegex =
-            new Regex(DateTimeDefinitions.PeriodSpecificTimeOfDayRegex, RegexFlags);
 
         private static readonly Regex TimeUnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexFlags);

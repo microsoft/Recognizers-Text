@@ -412,8 +412,11 @@ SuffixAfterRegex: !simpleRegex
   def: \b(((at)\s)?(or|and)\s+(above|after|later|greater)(?!\s+than))\b
 PrepositionRegex: !simpleRegex
   def: (?<prep>^(at|on|of)(\s+the)?$)
-TimeOfDayRegex: !simpleRegex
-  def: \b(?<timeOfDay>((((in\s+(the)?\s+)?((?<early>early(\s+|-))|(?<late>late(r?\s+|-)))?(in\s+(the)?\s+)?(morning|afternoon|night|evening)))|(((in\s+(the)?\s+)?)(daytime|business\s+hour)))s?)\b
+LaterEarlyRegex: !simpleRegex
+  def: ((?<early>early(\s+|-))|(?<late>late(r?\s+|-)))
+TimeOfDayRegex: !nestedRegex
+  def: \b(?<timeOfDay>((((in\s+(the)?\s+)?{LaterEarlyRegex}?(in\s+(the)?\s+)?(morning|afternoon|night|evening)))|(((in\s+(the)?\s+)?)(daytime|business\s+hour)))s?)\b
+  references: [ LaterEarlyRegex ]
 SpecificTimeOfDayRegex: !nestedRegex
   def: \b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\btonight)s?\b
   references: [ TimeOfDayRegex, StrictRelativeRegex ]
@@ -453,14 +456,15 @@ UnspecificEndOfRegex: !simpleRegex
   def: \b(the\s+)?(eod|(end\s+of\s+day))\b
 UnspecificEndOfRangeRegex: !simpleRegex
   def: \b(eoy)\b
-PeriodTimeOfDayRegex: !simpleRegex
-  def: \b((in\s+(the)?\s+)?((?<early>early(\s+|-))|(?<late>late(\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\b
+PeriodTimeOfDayRegex: !nestedRegex
+  def: \b((in\s+(the)?\s+)?{LaterEarlyRegex}?(this\s+)?{DateTimeTimeOfDayRegex})\b
+  references: [ DateTimeTimeOfDayRegex, LaterEarlyRegex ]
 PeriodSpecificTimeOfDayRegex: !nestedRegex
-  def: \b(({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\btonight)\b
-  references: [ PeriodTimeOfDayRegex, StrictRelativeRegex ]
+  def: \b({LaterEarlyRegex}?this\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\btonight)\b
+  references: [ PeriodTimeOfDayRegex, StrictRelativeRegex, DateTimeTimeOfDayRegex, LaterEarlyRegex ]
 PeriodTimeOfDayWithDateRegex: !nestedRegex
- def: \b(({TimeOfDayRegex}(\s+(on|of))?))\b
- references: [ TimeOfDayRegex ]
+ def: \b(({PeriodTimeOfDayRegex}(\s+(on|of))?))\b
+ references: [ PeriodTimeOfDayRegex ]
 LessThanRegex: !simpleRegex
   def: \b(less\s+than)\b
 MoreThanRegex: !simpleRegex

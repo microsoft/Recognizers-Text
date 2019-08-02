@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
-            SpecificTimeOfDayRegex = EnglishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
+            SpecificTimeOfDayRegex = EnglishDateTimePeriodExtractorConfiguration.PeriodSpecificTimeOfDayRegex;
             TimeOfDayRegex = EnglishDateTimeExtractorConfiguration.TimeOfDayRegex;
             PreviousPrefixRegex = EnglishDatePeriodExtractorConfiguration.PreviousPrefixRegex;
             FutureRegex = EnglishDatePeriodExtractorConfiguration.NextPrefixRegex;
