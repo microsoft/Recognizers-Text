@@ -1,20 +1,8 @@
-from abc import ABC, abstractmethod
-from typing import List
-from recognizers_text.model import ModelResult
+from recognizers_text.matcher import matcher
+from abc import abstractmethod
 
 
-class Matcher(ABC):
-    @property
-    @abstractmethod
-    def model_type_name(self) -> str:
-        pass
-
-    @abstractmethod
-    def parse(self, source: str) -> List[ModelResult]:
-        pass
-
-
-class AbstractMatcher(Matcher):
+class AbstractMatcher(matcher):
     @property
     @abstractmethod
     def __init__(self, values: [str], ids: [str]):
