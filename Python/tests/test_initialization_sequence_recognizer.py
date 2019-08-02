@@ -13,14 +13,12 @@ class TestInitializationSequenceRecognizer:
     spanish_culture = Culture.Spanish
     invalid_culture = "vo-id"
 
-    @staticmethod
-    def assert_models_equal(expected, actual):
+    def assert_models_equal(self, expected, actual):
         assert actual.model_type_name == expected.model_type_name
         assert isinstance(actual.extractor, type(expected.extractor))
         assert isinstance(actual.parser, type(expected.parser))
 
-    @staticmethod
-    def assert_models_distinct(expected, actual):
+    def assert_models_distinct(self, expected, actual):
         assert actual.model_type_name == expected.model_type_name
         assert not isinstance(actual.extractor, type(expected.extractor))
         assert not isinstance(actual.parser, type(expected.parser))
@@ -69,3 +67,8 @@ class TestInitializationSequenceRecognizer:
     def test_initialization_with_invalid_options_throw_error(self):
         with pytest.raises(ValueError):
             SequenceRecognizer(self.invalid_culture, -1)
+
+
+if __name__ == '__main__':
+    tests = TestInitializationSequenceRecognizer()
+    tests.test_without_culture_use_target_culture()

@@ -1,7 +1,6 @@
 [
   {
     "Input": "My PC IP address is 1.1.1.1",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "1.1.1.1",
@@ -15,7 +14,6 @@
   },
   {
     "Input": "My PC IP address is 1.1.1.2/25",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "1.1.1.2",
@@ -29,7 +27,6 @@
   },
   {
     "Input": "My PC IP address is 0.0.0.0",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "0.0.0.0",
@@ -43,7 +40,6 @@
   },
   {
     "Input": "My PC IP address is 255.255.255.255",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "255.255.255.255",
@@ -57,7 +53,6 @@
   },
   {
     "Input": "8.8.8.8 is the ip address",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "8.8.8.8",
@@ -71,7 +66,6 @@
   },
   {
     "Input": "8.8.8.1/24 is the ip address",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "8.8.8.1",
@@ -85,7 +79,6 @@
   },
   {
     "Input": "08.008.08.08 is the ip address",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "08.008.08.08",
@@ -99,37 +92,30 @@
   },
   {
     "Input": "My PC IP address is not 256.1.1.1",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "wrong IP address 1111.1.1.1",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "wrong IP address 1101.1.1.1",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "wrong IP address 1.1000.1.1",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "wrong IP address 1.1.1000.1",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "wrong IP address 1.1.1.256",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "My PC IPv6 address is ABEF:452::FE10",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "ABEF:452::FE10",
@@ -143,7 +129,6 @@
   },
   {
     "Input": "My PC IPv6 address is 12::1",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "12::1",
@@ -157,7 +142,6 @@
   },
   {
     "Input": "My PC IPv6 address is ::",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "::",
@@ -171,7 +155,6 @@
   },
   {
     "Input": "My PC IPv6 address is ::1",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "::1",
@@ -185,7 +168,6 @@
   },
   {
     "Input": "My PC IPv6 address is 1::1",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "1::1",
@@ -199,7 +181,6 @@
   },
   {
     "Input": "My PC IPv6 address is 1::",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "1::",
@@ -213,7 +194,6 @@
   },
   {
     "Input": "My PC IPv6 address is 0000:0000:0000:0000:0000:0000:0000:0000",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "0000:0000:0000:0000:0000:0000:0000:0000",
@@ -227,7 +207,6 @@
   },
   {
     "Input": "My PC IPv6 address is 123:45::ADC:6",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "123:45::ADC:6",
@@ -241,7 +220,6 @@
   },
   {
     "Input": "My PC IPv6 address is ::1:123:23",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "::1:123:23",
@@ -255,7 +233,6 @@
   },
   {
     "Input": "My PC IPv6 address is FEDC:BA98:7654:3210:FEDC:BA98:7654:3210",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "FEDC:BA98:7654:3210:FEDC:BA98:7654:3210",
@@ -269,7 +246,6 @@
   },
   {
     "Input": "My PC IPv6 address is fe80:0000:0000:0000:0204:61ff:fe9d:f156",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "fe80:0000:0000:0000:0204:61ff:fe9d:f156",
@@ -283,7 +259,6 @@
   },
   {
     "Input": "My PC IPv6 address is fe80:0:0:0:204:61ff:fe9d:f156",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "fe80:0:0:0:204:61ff:fe9d:f156",
@@ -297,7 +272,6 @@
   },
   {
     "Input": "My PC IPv6 address is fe80::204:61ff:fe9d:f156",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "fe80::204:61ff:fe9d:f156",
@@ -311,7 +285,6 @@
   },
   {
     "Input": "My PC IPv6 address is 2001::",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "2001::",
@@ -325,57 +298,46 @@
   },
   {
     "Input": "the train arrives at 10:00",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "wrong IPV6 address FE06::1::2",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "wrong IPV6 address :",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "I say:",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "I said :",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "lync:",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "lync: :",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": ":as you say",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": ": as you say",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "wrong IPV6 address 12::44:f:45::1",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "wrong IPV6 address JKLN:ssej::1",
-    "NotSupportedByDesign": "python",
     "Results": []
   }
 ]
