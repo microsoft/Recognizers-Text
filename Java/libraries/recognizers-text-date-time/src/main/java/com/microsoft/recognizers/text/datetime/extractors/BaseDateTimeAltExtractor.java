@@ -203,15 +203,16 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
             if (!result.getType().equals(Constants.SYS_DATETIME_DATETIMEALT)) {
                 int resultEnd = result.getStart() + result.getLength();
                 for (Match relativeTermsMatch : relativeTermsMatches) {
-                    if (relativeTermsMatch.index > resultEnd) {
+                    int relativeTermsMatchEnd = relativeTermsMatch.index + relativeTermsMatch.length;
+                    if (relativeTermsMatch.index > resultEnd || relativeTermsMatchEnd < result.getStart()) {
                         // Check whether middle string is a connector
-                        int middleBegin = resultEnd;
-                        int middleEnd = relativeTermsMatch.index;
+                        int middleBegin = relativeTermsMatch.index > resultEnd ? resultEnd : relativeTermsMatchEnd;
+                        int middleEnd = relativeTermsMatch.index > resultEnd ? relativeTermsMatch.index : result.getStart();
                         String middleStr = text.substring(middleBegin, middleEnd).trim().toLowerCase();
                         Match[] orTermMatches = RegExpUtility.getMatches(config.getOrRegex(), middleStr);
                         if (orTermMatches.length == 1 && orTermMatches[0].index == 0 && orTermMatches[0].length == middleStr.length()) {
-                            int parentTextStart = result.getStart();
-                            int parentTextEnd = relativeTermsMatch.index + relativeTermsMatch.length;
+                            int parentTextStart = relativeTermsMatch.index > resultEnd ? result.getStart() : relativeTermsMatch.index;
+                            int parentTextEnd = relativeTermsMatch.index > resultEnd ? relativeTermsMatchEnd : resultEnd;
                             String parentText = text.substring(parentTextStart, parentTextEnd);
 
                             ExtractResult contextErs = new ExtractResult();
