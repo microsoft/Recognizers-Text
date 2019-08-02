@@ -114,10 +114,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly ImmutableDictionary<string, int> MonthOfYear =
             DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
 
-          public static readonly Regex MonthRegex =
-            new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
-
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly Regex DayRegex =
             new Regex(DateTimeDefinitions.ImplicitDayRegex, RegexFlags);
 
