@@ -11,7 +11,7 @@ class AbstractSequenceModel(Model):
     @property
     @abstractmethod
     def model_type_name(self) -> str:
-        raise NotImplementedError 
+        raise NotImplementedError
 
     def __init__(self, parser: Parser, extractor: Extractor):
         self.extractor = extractor
