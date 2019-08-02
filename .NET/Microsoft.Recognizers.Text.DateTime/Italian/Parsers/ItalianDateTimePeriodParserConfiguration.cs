@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public ItalianDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
-            : base(config.Options)
+            : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             DateExtractor = config.DateExtractor;

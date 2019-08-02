@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace Microsoft.Recognizers.Text
 {
@@ -66,7 +67,8 @@ namespace Microsoft.Recognizers.Text
             {
                 // Handle cases like EnglishOthers with cultureCode "en-*"
                 var fallbackCultureCodes = SupportedCultureCodes
-                    .Where(o => o.EndsWith("*") && cultureCode.StartsWith(o.Split('-').First())).ToList();
+                    .Where(o => o.EndsWith("*", StringComparison.Ordinal) &&
+                                cultureCode.StartsWith(o.Split('-').First(), StringComparison.Ordinal)).ToList();
 
                 if (fallbackCultureCodes.Count == 1)
                 {
@@ -76,7 +78,7 @@ namespace Microsoft.Recognizers.Text
                 // If there is no cultureCode like "-*", map only the prefix
                 // For example, "es-mx" will be mapped to "es-es"
                 fallbackCultureCodes = SupportedCultureCodes
-                    .Where(o => cultureCode.StartsWith(o.Split('-').First())).ToList();
+                    .Where(o => cultureCode.StartsWith(o.Split('-').First(), StringComparison.Ordinal)).ToList();
 
                 if (fallbackCultureCodes.Any())
                 {

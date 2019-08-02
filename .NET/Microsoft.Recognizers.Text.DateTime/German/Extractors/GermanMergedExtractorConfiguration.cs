@@ -52,8 +52,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public GermanMergedExtractorConfiguration(DateTimeOptions options)
-            : base(options)
+        public GermanMergedExtractorConfiguration(IDateTimeOptionsConfiguration config)
+            : base(config)
         {
             DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));

@@ -39,14 +39,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private static readonly JapaneseSetExtractorConfiguration SetExtractor = new JapaneseSetExtractorConfiguration();
 
-        private static readonly BaseHolidayExtractor HolidayExtractor = new BaseHolidayExtractor(new JapaneseHolidayExtractorConfiguration());
+        private readonly IDateTimeOptionsConfiguration config;
 
-        private readonly DateTimeOptions options;
-
-        public JapaneseMergedExtractorConfiguration(DateTimeOptions options)
+        public JapaneseMergedExtractorConfiguration(IDateTimeOptionsConfiguration config)
         {
-            this.options = options;
+            this.config = config;
+
+            HolidayExtractor = new BaseHolidayExtractor(new JapaneseHolidayExtractorConfiguration(config));
         }
+
+        private BaseHolidayExtractor HolidayExtractor { get; }
 
         public List<ExtractResult> Extract(string text)
         {
@@ -236,5 +238,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 }
             }
         }
+
     }
 }

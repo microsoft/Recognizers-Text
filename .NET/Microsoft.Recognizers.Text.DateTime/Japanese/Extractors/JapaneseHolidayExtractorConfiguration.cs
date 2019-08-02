@@ -18,8 +18,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public JapaneseHolidayExtractorConfiguration()
-            : base()
+        public JapaneseHolidayExtractorConfiguration(IDateTimeOptionsConfiguration config)
+            : base(config)
         {
         }
 

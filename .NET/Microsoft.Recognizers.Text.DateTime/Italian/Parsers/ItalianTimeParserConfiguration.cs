@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             new Regex(DateTimeDefinitions.NightRegex, RegexOptions.Singleline);
 
         public ItalianTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
-            : base(config.Options)
+            : base(config)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = ItalianTimeExtractorConfiguration.AtRegex;

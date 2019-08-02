@@ -8,8 +8,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
     public class JapaneseDateTimeParserConfiguration : BaseDateTimeOptionsConfiguration, IFullDateTimeParserConfiguration
     {
-        public JapaneseDateTimeParserConfiguration(DateTimeOptions options = DateTimeOptions.None)
-                : base(options)
+        public JapaneseDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
+                : base(config)
         {
             DateExtractor = new JapaneseDateExtractorConfiguration();
 

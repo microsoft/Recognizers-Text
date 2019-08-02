@@ -48,8 +48,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public PortugueseMergedExtractorConfiguration(DateTimeOptions options)
-            : base(options)
+        public PortugueseMergedExtractorConfiguration(IDateTimeOptionsConfiguration config)
+            : base(config)
         {
             DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));

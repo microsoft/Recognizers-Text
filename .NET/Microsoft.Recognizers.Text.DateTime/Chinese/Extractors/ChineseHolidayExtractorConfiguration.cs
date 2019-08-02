@@ -18,8 +18,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public ChineseHolidayExtractorConfiguration()
-            : base()
+        public ChineseHolidayExtractorConfiguration(IDateTimeOptionsConfiguration config)
+            : base(config)
         {
         }
 

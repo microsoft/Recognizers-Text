@@ -8,8 +8,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class ChineseDateTimeParserConfiguration : BaseDateTimeOptionsConfiguration, IFullDateTimeParserConfiguration
     {
-        public ChineseDateTimeParserConfiguration(DateTimeOptions options = DateTimeOptions.None)
-            : base(options)
+        public ChineseDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
+            : base(config)
         {
             DateExtractor = new ChineseDateExtractorConfiguration();
 
