@@ -87,7 +87,7 @@ public class EnglishDateTimePeriodParserConfiguration extends BaseOptionsConfigu
 
         pureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
         pureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
-        specificTimeOfDayRegex = EnglishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
+        specificTimeOfDayRegex = EnglishDateTimePeriodExtractorConfiguration.PeriodSpecificTimeOfDayRegex;
         timeOfDayRegex = EnglishDateTimeExtractorConfiguration.TimeOfDayRegex;
         pastRegex = EnglishDatePeriodExtractorConfiguration.PreviousPrefixRegex;
         futureRegex = EnglishDatePeriodExtractorConfiguration.NextPrefixRegex;

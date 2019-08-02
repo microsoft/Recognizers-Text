@@ -167,7 +167,8 @@ export namespace EnglishDateTime {
     export const SpecificTimeBetweenAnd = `(between\\s+)(?<time1>((${TimeRegex2}|${FirstTimeRegexInTimeRange})|(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?))\\s*${RangeConnectorRegex}\\s*(?<time2>((${TimeRegex2}|${TimeRegexWithDotConnector}(?<rightDesc>\\s*${DescRegex}))|(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<rightDesc>${DescRegex}))?))`;
     export const SuffixAfterRegex = `\\b(((at)\\s)?(or|and)\\s+(above|after|later|greater)(?!\\s+than))\\b`;
     export const PrepositionRegex = `(?<prep>^(at|on|of)(\\s+the)?$)`;
-    export const TimeOfDayRegex = `\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(r?\\s+|-)))?(in\\s+(the)?\\s+)?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b`;
+    export const LaterEarlyRegex = `((?<early>early(\\s+|-))|(?<late>late(r?\\s+|-)))`;
+    export const TimeOfDayRegex = `\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?${LaterEarlyRegex}?(in\\s+(the)?\\s+)?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b`;
     export const SpecificTimeOfDayRegex = `\\b((${StrictRelativeRegex}\\s+${TimeOfDayRegex})\\b|\\btonight)s?\\b`;
     export const TimeFollowedUnit = `^\\s*${TimeUnitRegex}`;
     export const TimeNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)${TimeUnitRegex}`;
@@ -184,9 +185,9 @@ export namespace EnglishDateTime {
     export const SpecificEndOfRegex = `(the\\s+)?end of(\\s+the)?\\s*$`;
     export const UnspecificEndOfRegex = `\\b(the\\s+)?(eod|(end\\s+of\\s+day))\\b`;
     export const UnspecificEndOfRangeRegex = `\\b(eoy)\\b`;
-    export const PeriodTimeOfDayRegex = `\\b((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\\b`;
-    export const PeriodSpecificTimeOfDayRegex = `\\b((${StrictRelativeRegex}\\s+${PeriodTimeOfDayRegex})\\b|\\btonight)\\b`;
-    export const PeriodTimeOfDayWithDateRegex = `\\b((${TimeOfDayRegex}(\\s+(on|of))?))\\b`;
+    export const PeriodTimeOfDayRegex = `\\b((in\\s+(the)?\\s+)?${LaterEarlyRegex}?(this\\s+)?${DateTimeTimeOfDayRegex})\\b`;
+    export const PeriodSpecificTimeOfDayRegex = `\\b(${LaterEarlyRegex}?this\\s+${DateTimeTimeOfDayRegex}|(${StrictRelativeRegex}\\s+${PeriodTimeOfDayRegex})\\b|\\btonight)\\b`;
+    export const PeriodTimeOfDayWithDateRegex = `\\b((${PeriodTimeOfDayRegex}(\\s+(on|of))?))\\b`;
     export const LessThanRegex = `\\b(less\\s+than)\\b`;
     export const MoreThanRegex = `\\b(more\\s+than)\\b`;
     export const DurationUnitRegex = `(?<unit>${DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\\b`;

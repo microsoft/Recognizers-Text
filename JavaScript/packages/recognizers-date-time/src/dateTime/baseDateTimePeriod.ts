@@ -582,9 +582,11 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
             if (!StringUtility.isNullOrEmpty(match.groups('early').value)) {
                 hasEarly = true;
                 result.comment = 'early';
+                result.mod = Constants.EARLY_MOD;
             } else if (!StringUtility.isNullOrEmpty(match.groups('late').value)) {
                 hasLate = true;
                 result.comment = 'late';
+                result.mod = Constants.LATE_MOD;
             }
         }
 

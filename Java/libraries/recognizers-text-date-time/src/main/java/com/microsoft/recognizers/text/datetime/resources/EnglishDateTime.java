@@ -595,7 +595,10 @@ public class EnglishDateTime {
 
     public static final String PrepositionRegex = "(?<prep>^(at|on|of)(\\s+the)?$)";
 
-    public static final String TimeOfDayRegex = "\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(r?\\s+|-)))?(in\\s+(the)?\\s+)?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b";
+    public static final String LaterEarlyRegex = "((?<early>early(\\s+|-))|(?<late>late(r?\\s+|-)))";
+
+    public static final String TimeOfDayRegex = "\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?{LaterEarlyRegex}?(in\\s+(the)?\\s+)?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b"
+            .replace("{LaterEarlyRegex}", LaterEarlyRegex);
 
     public static final String SpecificTimeOfDayRegex = "\\b(({StrictRelativeRegex}\\s+{TimeOfDayRegex})\\b|\\btonight)s?\\b"
             .replace("{TimeOfDayRegex}", TimeOfDayRegex)
@@ -644,14 +647,18 @@ public class EnglishDateTime {
 
     public static final String UnspecificEndOfRangeRegex = "\\b(eoy)\\b";
 
-    public static final String PeriodTimeOfDayRegex = "\\b((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\\b";
+    public static final String PeriodTimeOfDayRegex = "\\b((in\\s+(the)?\\s+)?{LaterEarlyRegex}?(this\\s+)?{DateTimeTimeOfDayRegex})\\b"
+            .replace("{DateTimeTimeOfDayRegex}", DateTimeTimeOfDayRegex)
+            .replace("{LaterEarlyRegex}", LaterEarlyRegex);
 
-    public static final String PeriodSpecificTimeOfDayRegex = "\\b(({StrictRelativeRegex}\\s+{PeriodTimeOfDayRegex})\\b|\\btonight)\\b"
+    public static final String PeriodSpecificTimeOfDayRegex = "\\b({LaterEarlyRegex}?this\\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\\s+{PeriodTimeOfDayRegex})\\b|\\btonight)\\b"
             .replace("{PeriodTimeOfDayRegex}", PeriodTimeOfDayRegex)
-            .replace("{StrictRelativeRegex}", StrictRelativeRegex);
+            .replace("{StrictRelativeRegex}", StrictRelativeRegex)
+            .replace("{DateTimeTimeOfDayRegex}", DateTimeTimeOfDayRegex)
+            .replace("{LaterEarlyRegex}", LaterEarlyRegex);
 
-    public static final String PeriodTimeOfDayWithDateRegex = "\\b(({TimeOfDayRegex}(\\s+(on|of))?))\\b"
-            .replace("{TimeOfDayRegex}", TimeOfDayRegex);
+    public static final String PeriodTimeOfDayWithDateRegex = "\\b(({PeriodTimeOfDayRegex}(\\s+(on|of))?))\\b"
+            .replace("{PeriodTimeOfDayRegex}", PeriodTimeOfDayRegex);
 
     public static final String LessThanRegex = "\\b(less\\s+than)\\b";
 
