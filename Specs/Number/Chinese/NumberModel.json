@@ -4430,5 +4430,42 @@
         }
       }
     ]
+  },
+  {
+    "Input": "这不是五这是二百零一",
+    "Results": [
+      {
+        "Text": "五",
+        "Start": 3,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "这是五那是四",
+    "Results": [
+      {
+        "Text": "五",
+        "Start": 2,
+        "End": 2,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      },
+      {
+        "Text": "四",
+        "Start": 5,
+        "End": 5,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4"
+        }
+      }
+    ]
   }
 ]
