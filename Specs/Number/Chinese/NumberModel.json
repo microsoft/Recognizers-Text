@@ -4476,5 +4476,56 @@
         }
       }
     ]
+  },
+  {
+    "Input": "这不是四川这是五台山",
+    "Results": [
+      {
+        "Text": "五",
+        "Start": 7,
+        "End": 7,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "这不是四川这是五",
+    "Results": [
+      {
+        "Text": "五",
+        "Start": 7,
+        "End": 7,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "这不是一这是九台",
+    "Results": [
+      {
+        "Text": "一",
+        "Start": 3,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution":  {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "九",
+        "Start": 6,
+        "End": 6,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9"
+        }
+      }
+    ]
   }
 ]
