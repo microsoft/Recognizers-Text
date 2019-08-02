@@ -535,7 +535,7 @@
               "Mod": "after",
               "type": "timerange",
               "start": "20:00:00",
-			  "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -561,7 +561,7 @@
               "Mod": "before",
               "type": "timerange",
               "end": "20:00:00",
-			  "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -587,7 +587,7 @@
               "Mod": "since",
               "type": "timerange",
               "start": "20:00:00",
-			  "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -975,14 +975,14 @@
               "Mod": "before",
               "type": "datetimerange",
               "end": "2016-11-15 12:00:00",
-			  "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "2016-11-15T00:00",
               "Mod": "before",
               "type": "datetimerange",
               "end": "2016-11-15 00:00:00",
-			  "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1008,7 +1008,7 @@
               "Mod": "before",
               "type": "timerange",
               "end": "14:00:00",
-			  "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1277,7 +1277,7 @@
               "Mod": "before",
               "type": "daterange",
               "end": "2016-11-08",
-			  "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1303,7 +1303,7 @@
               "Mod": "before",
               "type": "daterange",
               "end": "2016-11-08",
-			  "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1329,7 +1329,7 @@
               "Mod": "before",
               "type": "daterange",
               "end": "2016-11-08",
-			  "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1355,7 +1355,7 @@
               "Mod": "since",
               "type": "daterange",
               "start": "2016-01-01",
-			  "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1381,7 +1381,7 @@
               "Mod": "after",
               "type": "daterange",
               "start": "2016-01-01",
-			  "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1407,7 +1407,7 @@
               "Mod": "before",
               "type": "daterange",
               "end": "2016-01-01",
-			  "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1433,7 +1433,7 @@
               "Mod": "since",
               "type": "daterange",
               "start": "2016-01-01",
-			  "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1459,7 +1459,7 @@
               "Mod": "before",
               "type": "daterange",
               "end": "2016-01-01",
-			  "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
