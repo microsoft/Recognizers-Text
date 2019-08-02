@@ -896,6 +896,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 08:00:00",
             "endDateTime": "2016-11-08 10:00:00"
@@ -922,6 +923,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 08:00:00",
             "endDateTime": "2016-11-08 10:00:00"
@@ -948,6 +950,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 10:00:00",
             "endDateTime": "2016-11-08 12:00:00"
@@ -974,6 +977,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TAF",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 12:00:00",
             "endDateTime": "2016-11-08 14:00:00"
@@ -1000,6 +1004,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TAF",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 14:00:00",
             "endDateTime": "2016-11-08 16:00:00"
@@ -1026,6 +1031,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TEV",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 16:00:00",
             "endDateTime": "2016-11-08 18:00:00"
@@ -1052,6 +1058,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TEV",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 18:00:00",
             "endDateTime": "2016-11-08 20:00:00"
@@ -1078,6 +1085,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TNI",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 20:00:00",
             "endDateTime": "2016-11-08 22:00:00"
@@ -1104,6 +1112,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TNI",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 22:00:00",
             "endDateTime": "2016-11-08 23:59:59"
@@ -1130,6 +1139,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TNI",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 22:00:00",
             "endDateTime": "2016-11-08 23:59:59"
@@ -1156,6 +1166,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 08:00:00",
             "endDateTime": "2016-11-08 10:00:00"
@@ -1182,6 +1193,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 10:00:00",
             "endDateTime": "2016-11-08 12:00:00"
@@ -1208,6 +1220,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TAF",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 12:00:00",
             "endDateTime": "2016-11-08 14:00:00"
@@ -1234,6 +1247,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TAF",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 14:00:00",
             "endDateTime": "2016-11-08 16:00:00"
@@ -1260,6 +1274,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TEV",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 16:00:00",
             "endDateTime": "2016-11-08 18:00:00"
@@ -1286,6 +1301,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TEV",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 18:00:00",
             "endDateTime": "2016-11-08 20:00:00"
@@ -1312,6 +1328,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TNI",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 20:00:00",
             "endDateTime": "2016-11-08 22:00:00"
@@ -1338,6 +1355,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TNI",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 22:00:00",
             "endDateTime": "2016-11-08 23:59:59"
@@ -1364,6 +1382,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TNI",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 22:00:00",
             "endDateTime": "2016-11-08 23:59:59"
