@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    public class PortugueseDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
+    public class PortugueseDateParserConfiguration : BaseDateTimeOptionsConfiguration, IDateParserConfiguration
     {
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;

@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Text.Number.Dutch;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
-    public class DutchDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
+    public class DutchDatePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
         // Base regexes
         public static readonly Regex TillRegex =
@@ -236,7 +236,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             ReferenceDatePeriodRegex,
         };
 
-        public DutchDatePeriodExtractorConfiguration(IOptionsConfiguration config)
+        public DutchDatePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));

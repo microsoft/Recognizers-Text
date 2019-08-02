@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianDateTimeExtractorConfiguration : BaseOptionsConfiguration, IDateTimeExtractorConfiguration
+    public class ItalianDateTimeExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeExtractorConfiguration
     {
 
         // à - time at which, en - length of time, dans - amount of time
@@ -67,7 +67,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public ItalianDateTimeExtractorConfiguration(IOptionsConfiguration config)
+        public ItalianDateTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             IntegerExtractor = Number.Italian.IntegerExtractor.GetInstance();

@@ -5,9 +5,9 @@ using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
+    public class GermanTimeZoneExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimeZoneExtractorConfiguration
     {
-        public GermanTimeZoneExtractorConfiguration(IOptionsConfiguration config)
+        public GermanTimeZoneExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
         }

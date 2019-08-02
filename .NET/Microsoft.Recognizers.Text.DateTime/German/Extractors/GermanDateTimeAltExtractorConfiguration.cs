@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
+    public class GermanDateTimeAltExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         private static readonly Regex DayRegex =
             new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
 
-        public GermanDateTimeAltExtractorConfiguration(IOptionsConfiguration config)
+        public GermanDateTimeAltExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));

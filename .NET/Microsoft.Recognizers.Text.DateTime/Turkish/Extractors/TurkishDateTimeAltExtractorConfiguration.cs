@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Definitions.Turkish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
-    public class TurkishDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
+    public class TurkishDateTimeAltExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         private static readonly Regex DayRegex =
             new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
 
-        public TurkishDateTimeAltExtractorConfiguration(IOptionsConfiguration config)
+        public TurkishDateTimeAltExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DateExtractor = new BaseDateExtractor(new TurkishDateExtractorConfiguration(this));

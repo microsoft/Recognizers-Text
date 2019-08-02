@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {
-        public SpanishCommonDateTimeParserConfiguration(IOptionsConfiguration config)
+        public SpanishCommonDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();

@@ -10,7 +10,7 @@ using Microsoft.Recognizers.Text.Number.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDateExtractorConfiguration : BaseOptionsConfiguration, IDateExtractorConfiguration
+    public class GermanDateExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateExtractorConfiguration
     {
         public static readonly Regex MonthRegex =
             new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
@@ -125,7 +125,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public GermanDateExtractorConfiguration(IOptionsConfiguration config)
+        public GermanDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();

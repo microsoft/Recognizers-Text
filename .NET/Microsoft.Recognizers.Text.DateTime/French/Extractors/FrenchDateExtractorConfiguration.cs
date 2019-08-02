@@ -10,7 +10,7 @@ using Microsoft.Recognizers.Text.Number.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDateExtractorConfiguration : BaseOptionsConfiguration, IDateExtractorConfiguration
+    public class FrenchDateExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateExtractorConfiguration
     {
         public static readonly Regex MonthRegex =
             new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
@@ -133,7 +133,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public FrenchDateExtractorConfiguration(IOptionsConfiguration config)
+        public FrenchDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             IntegerExtractor = Number.French.IntegerExtractor.GetInstance();

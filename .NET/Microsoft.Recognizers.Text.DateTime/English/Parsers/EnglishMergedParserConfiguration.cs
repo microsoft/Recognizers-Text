@@ -5,7 +5,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public sealed class EnglishMergedParserConfiguration : EnglishCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
-        public EnglishMergedParserConfiguration(IOptionsConfiguration config)
+        public EnglishMergedParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             BeforeRegex = EnglishMergedExtractorConfiguration.BeforeRegex;

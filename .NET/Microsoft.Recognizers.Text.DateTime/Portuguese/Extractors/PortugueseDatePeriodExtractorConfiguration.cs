@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.Number.Portuguese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    public class PortugueseDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
+    public class PortugueseDatePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
         // base regexes
         public static readonly Regex TillRegex =
@@ -199,7 +199,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             RelativeDecadeRegex,
         };
 
-        public PortugueseDatePeriodExtractorConfiguration(IOptionsConfiguration config)
+        public PortugueseDatePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));

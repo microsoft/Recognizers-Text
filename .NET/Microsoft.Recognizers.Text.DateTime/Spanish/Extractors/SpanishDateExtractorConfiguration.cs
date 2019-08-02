@@ -11,7 +11,7 @@ using Microsoft.Recognizers.Text.Number.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDateExtractorConfiguration : BaseOptionsConfiguration, IDateExtractorConfiguration
+    public class SpanishDateExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateExtractorConfiguration
     {
         public static readonly Regex MonthRegex =
             new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
@@ -121,7 +121,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public SpanishDateExtractorConfiguration(IOptionsConfiguration config)
+        public SpanishDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance();

@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public FrenchHolidayParserConfiguration(IOptionsConfiguration config)
+        public FrenchHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             this.HolidayRegexList = FrenchHolidayExtractorConfiguration.HolidayRegexList;

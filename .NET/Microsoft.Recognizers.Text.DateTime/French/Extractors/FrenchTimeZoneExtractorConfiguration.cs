@@ -5,9 +5,9 @@ using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
+    public class FrenchTimeZoneExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimeZoneExtractorConfiguration
     {
-        public FrenchTimeZoneExtractorConfiguration(IOptionsConfiguration config)
+        public FrenchTimeZoneExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
         }

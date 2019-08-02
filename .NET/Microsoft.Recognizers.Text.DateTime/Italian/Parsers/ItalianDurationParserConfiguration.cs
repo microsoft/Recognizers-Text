@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration
+    public class ItalianDurationParserConfiguration : BaseDateTimeOptionsConfiguration, IDurationParserConfiguration
     {
         public ItalianDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config.Options)

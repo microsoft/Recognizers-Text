@@ -10,7 +10,7 @@ using Microsoft.Recognizers.Text.Number.Turkish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
-    public class TurkishDateExtractorConfiguration : BaseOptionsConfiguration, IDateExtractorConfiguration
+    public class TurkishDateExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateExtractorConfiguration
     {
 
         public static readonly Regex MonthRegex =
@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         private static readonly Regex DayRegex =
             new Regex(DateTimeDefinitions.ImplicitDayRegex, RegexFlags);
 
-        public TurkishDateExtractorConfiguration(IOptionsConfiguration config)
+        public TurkishDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             IntegerExtractor = Number.Turkish.IntegerExtractor.GetInstance();

@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.Turkish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
-    public class TurkishTimeExtractorConfiguration : BaseOptionsConfiguration, ITimeExtractorConfiguration
+    public class TurkishTimeExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimeExtractorConfiguration
     {
         // part 1: smallest component
         // --------------------------------------
@@ -122,7 +122,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public TurkishTimeExtractorConfiguration(IOptionsConfiguration config)
+        public TurkishTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));

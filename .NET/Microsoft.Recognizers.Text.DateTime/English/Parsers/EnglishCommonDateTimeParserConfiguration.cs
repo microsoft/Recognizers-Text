@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishCommonDateTimeParserConfiguration : BaseDateParserConfiguration, ICommonDateTimeParserConfiguration
     {
-        public EnglishCommonDateTimeParserConfiguration(IOptionsConfiguration config)
+        public EnglishCommonDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();

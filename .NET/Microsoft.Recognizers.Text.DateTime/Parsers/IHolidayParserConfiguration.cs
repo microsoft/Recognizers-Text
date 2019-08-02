@@ -6,7 +6,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IHolidayParserConfiguration : IOptionsConfiguration
+    public interface IHolidayParserConfiguration : IDateTimeOptionsConfiguration
     {
         IImmutableDictionary<string, string> VariableHolidaysTimexDictionary { get; }
 

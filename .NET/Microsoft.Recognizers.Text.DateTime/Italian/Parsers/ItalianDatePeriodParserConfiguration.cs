@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Definitions.Italian;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianDatePeriodParserConfiguration : BaseOptionsConfiguration, IDatePeriodParserConfiguration
+    public class ItalianDatePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDatePeriodParserConfiguration
     {
         public static readonly Regex UpcomingPrefixRegex =
             new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexFlags);

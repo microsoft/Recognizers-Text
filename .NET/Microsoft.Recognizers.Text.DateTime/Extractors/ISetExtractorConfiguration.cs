@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface ISetExtractorConfiguration : IOptionsConfiguration
+    public interface ISetExtractorConfiguration : IDateTimeOptionsConfiguration
     {
         Regex LastRegex { get; }
 

@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {
-        public PortugueseCommonDateTimeParserConfiguration(IOptionsConfiguration config)
+        public PortugueseCommonDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             UtilityConfiguration = new PortugueseDatetimeUtilityConfiguration();

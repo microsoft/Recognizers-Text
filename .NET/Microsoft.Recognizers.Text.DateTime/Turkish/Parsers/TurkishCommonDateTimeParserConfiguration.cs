@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
     public class TurkishCommonDateTimeParserConfiguration : BaseDateParserConfiguration, ICommonDateTimeParserConfiguration
     {
-        public TurkishCommonDateTimeParserConfiguration(IOptionsConfiguration config)
+        public TurkishCommonDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             UtilityConfiguration = new TurkishDatetimeUtilityConfiguration();

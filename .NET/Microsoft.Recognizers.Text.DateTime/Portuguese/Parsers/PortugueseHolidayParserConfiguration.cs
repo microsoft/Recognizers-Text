@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public PortugueseHolidayParserConfiguration(IOptionsConfiguration config)
+        public PortugueseHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             this.HolidayRegexList = PortugueseHolidayExtractorConfiguration.HolidayRegexList;

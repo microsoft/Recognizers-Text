@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.Number.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
+    public class FrenchDatePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
         // base regexes
 
@@ -216,7 +216,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             RelativeDecadeRegex,
         };
 
-        public FrenchDatePeriodExtractorConfiguration(IOptionsConfiguration config)
+        public FrenchDatePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));

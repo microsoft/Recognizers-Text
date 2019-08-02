@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchCommonDateTimeParserConfiguration : BaseDateParserConfiguration, ICommonDateTimeParserConfiguration
     {
-        public DutchCommonDateTimeParserConfiguration(IOptionsConfiguration config)
+        public DutchCommonDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             UtilityConfiguration = new DutchDatetimeUtilityConfiguration();

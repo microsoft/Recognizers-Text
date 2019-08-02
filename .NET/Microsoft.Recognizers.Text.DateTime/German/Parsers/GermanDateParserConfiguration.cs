@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
+    public class GermanDateParserConfiguration : BaseDateTimeOptionsConfiguration, IDateParserConfiguration
     {
         public GermanDateParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

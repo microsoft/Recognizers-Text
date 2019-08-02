@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Globalization;
-using System.Linq;
+
 using Microsoft.Recognizers.Definitions.English;
 using DateObject = System.DateTime;
 
@@ -10,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public EnglishHolidayParserConfiguration(IOptionsConfiguration config)
+        public EnglishHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             this.HolidayRegexList = EnglishHolidayExtractorConfiguration.HolidayRegexList;

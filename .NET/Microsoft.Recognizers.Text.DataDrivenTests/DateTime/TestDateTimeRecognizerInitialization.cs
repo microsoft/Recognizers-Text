@@ -21,8 +21,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
 
         public TestDateTimeRecognizerInitialization()
         {
-            var config = new BaseOptionsConfiguration();
-            var configEnableDmy = new BaseOptionsConfiguration(DateTimeOptions.None, true);
+            var config = new BaseDateTimeOptionsConfiguration();
+            var configEnableDmy = new BaseDateTimeOptionsConfiguration(DateTimeOptions.None, true);
 
             defaultEnglishControlModel = new DateTimeModel(
                     new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(config)),

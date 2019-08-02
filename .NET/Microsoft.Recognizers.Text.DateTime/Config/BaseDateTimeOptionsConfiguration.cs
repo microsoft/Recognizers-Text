@@ -1,14 +1,14 @@
 ﻿namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseOptionsConfiguration : IOptionsConfiguration
+    public class BaseDateTimeOptionsConfiguration : IDateTimeOptionsConfiguration
     {
-        public BaseOptionsConfiguration(DateTimeOptions options = DateTimeOptions.None, bool dmyDateFormat = false)
+        public BaseDateTimeOptionsConfiguration(DateTimeOptions options = DateTimeOptions.None, bool dmyDateFormat = false)
         {
             Options = options;
             DmyDateFormat = dmyDateFormat;
         }
 
-        public BaseOptionsConfiguration(IOptionsConfiguration config)
+        public BaseDateTimeOptionsConfiguration(IDateTimeOptionsConfiguration config)
         {
             Options = config.Options;
             DmyDateFormat = config.DmyDateFormat;

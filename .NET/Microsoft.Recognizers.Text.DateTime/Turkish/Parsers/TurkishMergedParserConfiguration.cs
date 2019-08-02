@@ -5,7 +5,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
     public sealed class TurkishMergedParserConfiguration : TurkishCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
-        public TurkishMergedParserConfiguration(IOptionsConfiguration config)
+        public TurkishMergedParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             BeforeRegex = TurkishMergedExtractorConfiguration.BeforeRegex;

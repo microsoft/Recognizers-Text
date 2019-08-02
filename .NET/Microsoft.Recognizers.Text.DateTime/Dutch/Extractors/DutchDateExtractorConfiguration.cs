@@ -10,7 +10,7 @@ using Microsoft.Recognizers.Text.Number.Dutch;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
-    public class DutchDateExtractorConfiguration : BaseOptionsConfiguration, IDateExtractorConfiguration
+    public class DutchDateExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateExtractorConfiguration
     {
         public static readonly Regex MonthNumRegex =
             new Regex(DateTimeDefinitions.MonthNumRegex, RegexFlags);
@@ -119,7 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static readonly Regex DayRegex =
             new Regex(DateTimeDefinitions.ImplicitDayRegex, RegexFlags);
 
-        public DutchDateExtractorConfiguration(IOptionsConfiguration config)
+        public DutchDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance();

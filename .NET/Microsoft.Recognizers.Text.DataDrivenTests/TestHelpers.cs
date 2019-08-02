@@ -199,7 +199,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeExtractor GetDutchExtractor(DateTimeExtractors extractorName)
         {
-            var enableDmyConfig = new BaseOptionsConfiguration(DateTimeOptions.None, dmyDateFormat: true);
+            var enableDmyConfig = new BaseDateTimeOptionsConfiguration(DateTimeOptions.None, dmyDateFormat: true);
 
             switch (extractorName)
             {
@@ -226,7 +226,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Merged:
                     return new BaseMergedDateTimeExtractor(new DutchMergedExtractorConfiguration(enableDmyConfig));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new BaseMergedDateTimeExtractor(new DutchMergedExtractorConfiguration(new BaseOptionsConfiguration(DateTimeOptions.SkipFromToMerge)));
+                    return new BaseMergedDateTimeExtractor(new DutchMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(DateTimeOptions.SkipFromToMerge)));
             }
 
             throw new Exception($"Extractor '{extractorName}' for Dutch not supported");
@@ -234,7 +234,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetDutchParser(DateTimeParsers parserName)
         {
-            var commonConfiguration = new DutchCommonDateTimeParserConfiguration(new BaseOptionsConfiguration(DateTimeOptions.None, dmyDateFormat: true));
+            var commonConfiguration = new DutchCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration(DateTimeOptions.None, dmyDateFormat: true));
 
             switch (parserName)
             {
@@ -259,7 +259,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new DutchSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
-                    return new BaseMergedDateTimeParser(new DutchMergedParserConfiguration(new BaseOptionsConfiguration(DateTimeOptions.None, dmyDateFormat: true)));
+                    return new BaseMergedDateTimeParser(new DutchMergedParserConfiguration(new BaseDateTimeOptionsConfiguration(DateTimeOptions.None, dmyDateFormat: true)));
             }
 
             throw new Exception($"Parser '{parserName}' for Dutch not supported");
@@ -267,8 +267,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeExtractor GetEnglishExtractor(DateTimeExtractors extractorName)
         {
-            var config = new BaseOptionsConfiguration();
-            var previewConfig = new BaseOptionsConfiguration(DateTimeOptions.EnablePreview);
+            var config = new BaseDateTimeOptionsConfiguration();
+            var previewConfig = new BaseDateTimeOptionsConfiguration(DateTimeOptions.EnablePreview);
             switch (extractorName)
             {
                 case DateTimeExtractors.Date:
@@ -294,7 +294,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Merged:
                     return new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(config));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(new BaseOptionsConfiguration(DateTimeOptions.SkipFromToMerge)));
+                    return new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(DateTimeOptions.SkipFromToMerge)));
             }
 
             throw new Exception($"Extractor '{extractorName}' for English not supported");
@@ -302,7 +302,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetEnglishParser(DateTimeParsers parserName)
         {
-            var commonConfiguration = new EnglishCommonDateTimeParserConfiguration(new BaseOptionsConfiguration());
+            var commonConfiguration = new EnglishCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration());
             switch (parserName)
             {
                 case DateTimeParsers.Date:
@@ -326,7 +326,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new EnglishSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
-                    return new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(new BaseOptionsConfiguration()));
+                    return new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(new BaseDateTimeOptionsConfiguration()));
             }
 
             throw new Exception($"Parser '{parserName}' for English not supported");
@@ -334,8 +334,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeExtractor GetEnglishOthersExtractor(DateTimeExtractors extractorName)
         {
-            var enableDmyConfig = new BaseOptionsConfiguration(DateTimeOptions.None, true);
-            var enableDmyPreviewConfig = new BaseOptionsConfiguration(DateTimeOptions.EnablePreview, true);
+            var enableDmyConfig = new BaseDateTimeOptionsConfiguration(DateTimeOptions.None, true);
+            var enableDmyPreviewConfig = new BaseDateTimeOptionsConfiguration(DateTimeOptions.EnablePreview, true);
             switch (extractorName)
             {
                 case DateTimeExtractors.Date:
@@ -361,7 +361,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Merged:
                     return new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(enableDmyConfig));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(new BaseOptionsConfiguration(DateTimeOptions.SkipFromToMerge, true)));
+                    return new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(DateTimeOptions.SkipFromToMerge, true)));
             }
 
             throw new Exception($"Extractor '{extractorName}' for English-Others not supported");
@@ -369,7 +369,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetEnglishOthersParser(DateTimeParsers parserName)
         {
-            var commonConfiguration = new EnglishCommonDateTimeParserConfiguration(new BaseOptionsConfiguration(DateTimeOptions.None, true));
+            var commonConfiguration = new EnglishCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration(DateTimeOptions.None, true));
             switch (parserName)
             {
                 case DateTimeParsers.Date:
@@ -393,7 +393,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new EnglishSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
-                    return new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(new BaseOptionsConfiguration()));
+                    return new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(new BaseDateTimeOptionsConfiguration()));
             }
 
             throw new Exception($"Parser '{parserName}' for English-Others not supported");
@@ -522,7 +522,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeExtractor GetSpanishExtractor(DateTimeExtractors extractorName)
         {
-            var config = new BaseOptionsConfiguration(DateTimeOptions.None);
+            var config = new BaseDateTimeOptionsConfiguration(DateTimeOptions.None);
             switch (extractorName)
             {
                 case DateTimeExtractors.Date:
@@ -552,7 +552,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetSpanishParser(DateTimeParsers parserName)
         {
-            var commonConfiguration = new SpanishCommonDateTimeParserConfiguration(new BaseOptionsConfiguration());
+            var commonConfiguration = new SpanishCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration());
 
             switch (parserName)
             {
@@ -583,7 +583,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeExtractor GetPortugueseExtractor(DateTimeExtractors extractorName)
         {
-            var config = new BaseOptionsConfiguration();
+            var config = new BaseDateTimeOptionsConfiguration();
             switch (extractorName)
             {
                 case DateTimeExtractors.Date:
@@ -613,7 +613,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetPortugueseParser(DateTimeParsers parserName)
         {
-            var commonConfiguration = new PortugueseCommonDateTimeParserConfiguration(new BaseOptionsConfiguration());
+            var commonConfiguration = new PortugueseCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration());
 
             switch (parserName)
             {
@@ -644,7 +644,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeExtractor GetFrenchExtractor(DateTimeExtractors extractorName)
         {
-            var config = new BaseOptionsConfiguration();
+            var config = new BaseDateTimeOptionsConfiguration();
             switch (extractorName)
             {
                 case DateTimeExtractors.Date:
@@ -676,7 +676,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetFrenchParser(DateTimeParsers parserName)
         {
-            var commonConfiguration = new FrenchCommonDateTimeParserConfiguration(new BaseOptionsConfiguration());
+            var commonConfiguration = new FrenchCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration());
             switch (parserName)
             {
                 case DateTimeParsers.Date:
@@ -706,7 +706,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeExtractor GetGermanExtractor(DateTimeExtractors extractorName)
         {
-            var config = new BaseOptionsConfiguration();
+            var config = new BaseDateTimeOptionsConfiguration();
             switch (extractorName)
             {
                 case DateTimeExtractors.Date:
@@ -738,7 +738,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetGermanParser(DateTimeParsers parserName)
         {
-            var commonConfiguration = new GermanCommonDateTimeParserConfiguration(new BaseOptionsConfiguration());
+            var commonConfiguration = new GermanCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration());
             switch (parserName)
             {
                 case DateTimeParsers.Date:
@@ -768,7 +768,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeExtractor GetItalianExtractor(DateTimeExtractors extractorName)
         {
-            var config = new BaseOptionsConfiguration();
+            var config = new BaseDateTimeOptionsConfiguration();
             switch (extractorName)
             {
                 case DateTimeExtractors.Date:
@@ -802,7 +802,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetItalianParser(DateTimeParsers parserName)
         {
-            var commonConfiguration = new ItalianCommonDateTimeParserConfiguration(new BaseOptionsConfiguration());
+            var commonConfiguration = new ItalianCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration());
             switch (parserName)
             {
                 case DateTimeParsers.Date:
@@ -832,8 +832,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeExtractor GetTurkishExtractor(DateTimeExtractors extractorName)
         {
-            var config = new BaseOptionsConfiguration();
-            var previewConfig = new BaseOptionsConfiguration(DateTimeOptions.EnablePreview);
+            var config = new BaseDateTimeOptionsConfiguration();
+            var previewConfig = new BaseDateTimeOptionsConfiguration(DateTimeOptions.EnablePreview);
             switch (extractorName)
             {
                 case DateTimeExtractors.Date:
@@ -857,7 +857,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Merged:
                     return new BaseMergedDateTimeExtractor(new TurkishMergedExtractorConfiguration(config));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new BaseMergedDateTimeExtractor(new TurkishMergedExtractorConfiguration(new BaseOptionsConfiguration(DateTimeOptions.SkipFromToMerge)));
+                    return new BaseMergedDateTimeExtractor(new TurkishMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(DateTimeOptions.SkipFromToMerge)));
             }
 
             throw new Exception($"Extractor '{extractorName}' for Turkish not supported");
@@ -865,7 +865,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetTurkishParser(DateTimeParsers parserName)
         {
-            var commonConfiguration = new TurkishCommonDateTimeParserConfiguration(new BaseOptionsConfiguration());
+            var commonConfiguration = new TurkishCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration());
             switch (parserName)
             {
                 case DateTimeParsers.Date:
@@ -887,7 +887,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new TurkishSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
-                    return new BaseMergedDateTimeParser(new TurkishMergedParserConfiguration(new BaseOptionsConfiguration()));
+                    return new BaseMergedDateTimeParser(new TurkishMergedParserConfiguration(new BaseDateTimeOptionsConfiguration()));
             }
 
             throw new Exception($"Parser '{parserName}' for Turkish not supported");

@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.Number.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
+    public class SpanishDatePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
         // base regexes
         public static readonly Regex TillRegex =
@@ -201,7 +201,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             ReferenceDatePeriodRegex,
         };
 
-        public SpanishDatePeriodExtractorConfiguration(IOptionsConfiguration config)
+        public SpanishDatePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
