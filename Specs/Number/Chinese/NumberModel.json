@@ -4442,6 +4442,15 @@
         "Resolution": {
           "value": "5"
         }
+      },
+      {
+        "Text": "二百零一",
+        "Start": 6,
+        "End": 9,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "201"
+        }
       }
     ]
   },
