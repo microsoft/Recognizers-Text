@@ -17,8 +17,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             YearRegex = ItalianDatePeriodExtractorConfiguration.YearRegex;
 
             SuperfluousWordMatcher = ItalianMergedExtractorConfiguration.SuperfluousWordMatcher;
-
+            DateParser = new BaseDateParser(new ItalianDateParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new ItalianDatePeriodParserConfiguration(this));
+            DateTimeParser = new BaseDateTimeParser(new ItalianDateTimeParserConfiguration(this));
+            DurationParser = new BaseDurationParser(new ItalianDurationParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new ItalianTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new ItalianDateTimePeriodParserConfiguration(this));
             SetParser = new BaseSetParser(new ItalianSetParserConfiguration(this));

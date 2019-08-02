@@ -1,10 +1,16 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Definitions.Italian;
+
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianDurationParserConfiguration : BaseDateTimeOptionsConfiguration, IDurationParserConfiguration
     {
+        public static readonly Regex InexactNumberUnitRegex2 = new Regex(DateTimeDefinitions.InexactNumberUnitRegex2, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public ItalianDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -21,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             FollowedUnit = ItalianDurationExtractorConfiguration.DurationFollowedUnit;
             ConjunctionRegex = ItalianDurationExtractorConfiguration.ConjunctionRegex;
             InexactNumberRegex = ItalianDurationExtractorConfiguration.InexactNumberRegex;
-            InexactNumberUnitRegex = ItalianDurationExtractorConfiguration.InexactNumberUnitRegex;
+            InexactNumberUnitRegex = InexactNumberUnitRegex2;
             DurationUnitRegex = ItalianDurationExtractorConfiguration.DurationUnitRegex;
 
             UnitMap = config.UnitMap;
