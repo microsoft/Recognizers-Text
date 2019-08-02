@@ -1,7 +1,6 @@
 [
   {
     "Input": "@BotSys, let's go for the meeting.",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "@BotSys",
@@ -14,7 +13,6 @@
   },
   {
     "Input": "@Alice, please respond.",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "@Alice",
@@ -27,7 +25,6 @@
   },
   {
     "Input": "You can contact @Bob for more information",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "@Bob",
@@ -40,7 +37,6 @@
   },
   {
     "Input": "This is @Carol_2.",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "@Carol_2",
@@ -53,7 +49,6 @@
   },
   {
     "Input": "@DaveDaveDaveDaveDave can be longer",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "@DaveDaveDaveDaveDave",
@@ -66,7 +61,6 @@
   },
   {
     "Input": "Hello, @Carol, please write to me at Dave@abc.com for more information on task #A1",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "@Carol",
@@ -79,7 +73,6 @@
   },
   {
     "Input": "Hi, @Eve, you can find my CV at https://frank.website.com/CV/#cite_2",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "@Eve",
@@ -92,7 +85,6 @@
   },
   {
     "Input": "@! is not a valid mention",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
@@ -102,12 +94,10 @@
   },
   {
     "Input": "abc@efg.com, which is an email rather than a mention",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "Hi@HowardsCreekFD, please respond.",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "@HowardsCreekFD",
@@ -120,7 +110,6 @@
   },
   {
     "Input": "I talked to:@Howard",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "@Howard",
