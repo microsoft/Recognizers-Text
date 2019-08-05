@@ -234,7 +234,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             CardinalExtractor = Number.Italian.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
         }
 
         public IDateExtractor DatePointExtractor { get; }

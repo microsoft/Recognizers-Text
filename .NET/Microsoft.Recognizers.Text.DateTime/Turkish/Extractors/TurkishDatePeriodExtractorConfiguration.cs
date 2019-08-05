@@ -243,7 +243,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             CardinalExtractor = Number.Turkish.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.Turkish.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
         }
 
         public IDateExtractor DatePointExtractor { get; }

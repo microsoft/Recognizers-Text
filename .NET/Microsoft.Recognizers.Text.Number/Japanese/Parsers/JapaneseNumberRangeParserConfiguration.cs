@@ -9,19 +9,14 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public JapaneseNumberRangeParserConfiguration()
-            : this(new CultureInfo(Culture.Japanese))
+        public JapaneseNumberRangeParserConfiguration(INumberOptionsConfiguration config)
         {
-        }
-
-        public JapaneseNumberRangeParserConfiguration(CultureInfo ci)
-        {
-            CultureInfo = ci;
+            CultureInfo = new CultureInfo(config.Culture);
 
             NumberExtractor = new NumberExtractor();
             OrdinalExtractor = new OrdinalExtractor();
 
-            NumberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration());
+            NumberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(config));
 
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);
             LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags);

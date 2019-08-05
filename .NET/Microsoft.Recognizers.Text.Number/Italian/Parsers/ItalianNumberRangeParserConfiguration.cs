@@ -10,19 +10,14 @@ namespace Microsoft.Recognizers.Text.Number.Italian
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public ItalianNumberRangeParserConfiguration()
-            : this(new CultureInfo(Culture.Italian))
+        public ItalianNumberRangeParserConfiguration(INumberOptionsConfiguration config)
         {
-        }
-
-        public ItalianNumberRangeParserConfiguration(CultureInfo ci)
-        {
-            CultureInfo = ci;
+            CultureInfo = new CultureInfo(config.Culture);
 
             NumberExtractor = Italian.NumberExtractor.GetInstance();
             OrdinalExtractor = Italian.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(config));
 
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);
             LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags);

@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.Portuguese.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
             DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration(this));

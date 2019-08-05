@@ -12,7 +12,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
                : base(ci)
         {
             this.InternalNumberExtractor = NumberExtractor.GetInstance();
-            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new PortugueseNumberParserConfiguration());
+            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new PortugueseNumberParserConfiguration(
+                                                                                  new BaseNumberOptionsConfiguration(ci.Name)));
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
         }
 

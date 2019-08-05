@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             integerExtractor = new IntegerExtractor();
             ordinalExtractor = new OrdinalExtractor();
             durationExtractor = new ChineseDurationExtractorConfiguration();
-            numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
+            numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(new BaseNumberOptionsConfiguration(configuration.Culture)));
         }
 
         public ParseResult Parse(ExtractResult extResult)

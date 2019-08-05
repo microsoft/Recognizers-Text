@@ -49,10 +49,11 @@ namespace Microsoft.Recognizers.Text.Number
 
                 return parsedNumbers.Select(BuildModelResult).Where(r => r != null).ToList();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 // Nothing to do. Exceptions in parse should not break users of recognizers.
                 // No result.
+                Console.WriteLine(e);
             }
 
             return new List<ModelResult>();

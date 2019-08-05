@@ -138,7 +138,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             IntegerExtractor = Number.French.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance();
-            NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
 

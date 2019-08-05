@@ -243,7 +243,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             CardinalExtractor = Number.Dutch.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.Dutch.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
         }
 
         public IDateExtractor DatePointExtractor { get; }

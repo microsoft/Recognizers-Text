@@ -199,7 +199,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
         }
 
         public IDateExtractor DatePointExtractor { get; }

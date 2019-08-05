@@ -208,7 +208,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.Spanish.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
         }
 
         public IDateExtractor DatePointExtractor { get; }

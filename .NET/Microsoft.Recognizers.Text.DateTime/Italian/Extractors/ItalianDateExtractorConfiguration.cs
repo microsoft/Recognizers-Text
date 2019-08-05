@@ -134,7 +134,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         {
             IntegerExtractor = Number.Italian.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
-            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
             UtilityConfiguration = new ItalianDatetimeUtilityConfiguration();
 

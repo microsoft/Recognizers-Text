@@ -10,12 +10,12 @@ namespace Microsoft.Recognizers.Text.Number.English
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public NumberRangeExtractor(NumberOptions options = NumberOptions.None)
+        public NumberRangeExtractor(INumberOptionsConfiguration config)
             : base(
                   NumberExtractor.GetInstance(),
                   OrdinalExtractor.GetInstance(),
-                  new BaseNumberParser(new EnglishNumberParserConfiguration()),
-                  options)
+                  new BaseNumberParser(new EnglishNumberParserConfiguration(config)),
+                  config)
         {
             var regexes = new Dictionary<Regex, string>()
             {

@@ -8,18 +8,13 @@ namespace Microsoft.Recognizers.Text.Number.English
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public EnglishNumberRangeParserConfiguration()
-            : this(new CultureInfo(Culture.English))
+        public EnglishNumberRangeParserConfiguration(INumberOptionsConfiguration config)
         {
-        }
-
-        public EnglishNumberRangeParserConfiguration(CultureInfo ci)
-        {
-            CultureInfo = ci;
+            CultureInfo = new CultureInfo(config.Culture);
 
             NumberExtractor = English.NumberExtractor.GetInstance();
             OrdinalExtractor = English.OrdinalExtractor.GetInstance();
-            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration(config));
 
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);
             LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags);

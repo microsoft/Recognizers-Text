@@ -126,7 +126,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         {
             IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.Portuguese.OrdinalExtractor.GetInstance();
-            NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
             UtilityConfiguration = new PortugueseDatetimeUtilityConfiguration();
 

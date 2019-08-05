@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private readonly IExtractor integerExtractor = new IntegerExtractor();
 
-        private readonly IParser numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
+        private readonly IParser numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(new BaseNumberOptionsConfiguration(Culture.Chinese)));
 
         private readonly IFullDateTimeParserConfiguration config;
 

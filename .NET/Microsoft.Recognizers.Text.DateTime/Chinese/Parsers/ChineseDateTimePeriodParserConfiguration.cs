@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static readonly IExtractor CardinalExtractor = new CardinalExtractor();
 
         private static readonly IParser CardinalParser = AgnosticNumberParserFactory.GetParser(
-            AgnosticNumberParserType.Cardinal, new ChineseNumberParserConfiguration());
+            AgnosticNumberParserType.Cardinal, new ChineseNumberParserConfiguration(new BaseNumberOptionsConfiguration(Culture.Chinese)));
 
         private readonly IFullDateTimeParserConfiguration config;
 

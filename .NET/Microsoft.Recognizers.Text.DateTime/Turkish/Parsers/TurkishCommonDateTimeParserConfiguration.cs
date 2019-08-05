@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             OrdinalExtractor = Number.Turkish.OrdinalExtractor.GetInstance();
 
             TimeZoneParser = new BaseTimeZoneParser();
-            NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
             DateExtractor = new BaseDateExtractor(new TurkishDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new TurkishTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new TurkishDateTimeExtractorConfiguration(this));

@@ -8,18 +8,13 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public TurkishNumberRangeParserConfiguration()
-            : this(new CultureInfo(Culture.Turkish))
+        public TurkishNumberRangeParserConfiguration(INumberOptionsConfiguration config)
         {
-        }
-
-        public TurkishNumberRangeParserConfiguration(CultureInfo ci)
-        {
-            CultureInfo = ci;
+            CultureInfo = new CultureInfo(config.Culture);
 
             NumberExtractor = Turkish.NumberExtractor.GetInstance();
             OrdinalExtractor = Turkish.OrdinalExtractor.GetInstance();
-            NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(config));
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);
             LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags);
         }

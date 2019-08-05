@@ -126,7 +126,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             IntegerExtractor = Number.Turkish.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.Turkish.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
             DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));
             UtilityConfiguration = new TurkishDatetimeUtilityConfiguration();
 

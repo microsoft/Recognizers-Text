@@ -206,7 +206,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.Portuguese.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
         }
 
         public IDateExtractor DatePointExtractor { get; }

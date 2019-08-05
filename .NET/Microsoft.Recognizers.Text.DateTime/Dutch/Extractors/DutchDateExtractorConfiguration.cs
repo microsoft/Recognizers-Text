@@ -125,7 +125,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.Dutch.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
             DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));
             UtilityConfiguration = new DutchDatetimeUtilityConfiguration();
 

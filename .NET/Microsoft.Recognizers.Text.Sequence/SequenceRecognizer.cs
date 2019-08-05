@@ -66,8 +66,8 @@ namespace Microsoft.Recognizers.Text.Sequence
         public IModel GetPhoneNumberModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
             if (culture != null && (
-                culture.ToLowerInvariant().StartsWith("zh-", StringComparison.InvariantCulture) ||
-                culture.ToLowerInvariant().StartsWith("ja-", StringComparison.InvariantCulture)))
+                culture.ToLowerInvariant().StartsWith("zh-", StringComparison.Ordinal) ||
+                culture.ToLowerInvariant().StartsWith("ja-", StringComparison.Ordinal)))
             {
                 return GetModel<PhoneNumberModel>(Culture.Chinese, fallbackToDefaultCulture);
             }
