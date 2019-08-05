@@ -1,15 +1,12 @@
 from abc import ABC, abstractmethod
-from typing import TypeVar
 
 
-class IMatcher(ABC):
-
-    T = TypeVar('T')
+class Matcher(ABC):
 
     @abstractmethod
-    def init(self, values: list()[T], ids: []) -> None:
+    def init(self, values: [], ids: []) -> None:
         raise NotImplementedError
 
     @abstractmethod
-    def find(self, query_text: list()[T]) -> list()[T]:
+    def find(self, query_text: []) -> list():
         raise NotImplementedError

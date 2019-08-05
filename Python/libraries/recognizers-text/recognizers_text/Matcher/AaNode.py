@@ -1,28 +1,20 @@
-from typing import TypeVar
 from .Node import Node
 
 
 class AaNode(Node):
-    T = TypeVar('T')
 
-    def __init__(self, c: [T] = [], depth: int = 0, parent=[T]):
+    def __init__(self, c: [] = [], depth: int = 0, parent=[]):
         self.__word = c,
         self.__depth = depth,
         self.__parent = parent,
         self.__fail = 0
 
-    def __getitem__(self, c: [T]):
-        pass
-
-    def __setitem__(self, c: [T], value):
-        pass
-
     @property
-    def word(self) -> [T]:
+    def word(self) -> []:
         return self.__word
 
     @word.setter
-    def word(self, word) -> [T]:
+    def word(self, word) -> []:
         self.__word = word
 
     @property
@@ -45,7 +37,7 @@ class AaNode(Node):
     def fail(self):
         return self.__fail
 
-    @depth.setter
+    @fail.setter
     def fail(self, fail):
         self.__fail = fail
 

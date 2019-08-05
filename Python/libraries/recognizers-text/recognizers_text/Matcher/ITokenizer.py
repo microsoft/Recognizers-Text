@@ -1,10 +1,7 @@
 from abc import ABC, abstractmethod
-from typing import TypeVar
 
 
-class ITokenizer(ABC):
-
-    T = TypeVar('T')
+class Tokenizer(ABC):
 
     @abstractmethod
     def tokenize(self, _input: str) -> list():

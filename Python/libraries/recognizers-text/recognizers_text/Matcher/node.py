@@ -1,18 +1,8 @@
-from typing import TypeVar
-
 
 class Node(object):
     def __init__(self):
         self.__values = set(),
-        self.__children = dict(),
-
-    T = TypeVar('T')
-
-    def __getitem__(self, c: [T]):
-        pass
-
-    def __setitem__(self, c: [T], value):
-        pass
+        self.__children = dict()
 
     def end(self) -> bool:
         return self.values is not None & any(self.values)
