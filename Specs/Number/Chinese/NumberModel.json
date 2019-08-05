@@ -4513,7 +4513,7 @@
         "Start": 3,
         "End": 3,
         "TypeName": "number",
-        "Resolution":  {
+        "Resolution": {
           "value": "1"
         }
       },
@@ -4524,6 +4524,75 @@
         "TypeName": "number",
         "Resolution": {
           "value": "9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "答案是四不是五",
+    "Results": [
+      {
+        "Text": "四",
+        "Start": 3,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4"
+        }
+      },
+      {
+        "Text": "五",
+        "Start": 6,
+        "End": 6,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "答案不是四而是五",
+    "Results": [
+      {
+        "Text": "四",
+        "Start": 4,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4"
+        }
+      },
+      {
+        "Text": "五",
+        "Start": 7,
+        "End": 7,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "数量不是一却是五",
+    "Results": [
+      {
+        "Text": "一",
+        "Start": 4,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "五",
+        "Start": 7,
+        "End": 7,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
         }
       }
     ]
