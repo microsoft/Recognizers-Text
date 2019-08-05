@@ -1328,13 +1328,13 @@
     "Input": "三双",
     "Results": [
       {
-        "Text": "三双",
+        "Text": "三",
         "TypeName": "number",
         "Resolution": {
-          "value": "6"
+          "value": "3"
         },
         "Start": 0,
-        "End": 1
+        "End": 0
       }
     ]
   },
@@ -1356,13 +1356,13 @@
     "Input": "十双",
     "Results": [
       {
-        "Text": "十双",
+        "Text": "十",
         "TypeName": "number",
         "Resolution": {
-          "value": "20"
+          "value": "10"
         },
         "Start": 0,
-        "End": 1
+        "End": 0
       }
     ]
   },
@@ -1509,13 +1509,13 @@
     "Input": "两双",
     "Results": [
       {
-        "Text": "两双",
+        "Text": "两",
         "TypeName": "number",
         "Resolution": {
-          "value": "4"
+          "value": "2"
         },
         "Start": 0,
-        "End": 1
+        "End": 0
       }
     ]
   },
@@ -2449,13 +2449,13 @@
     "Input": "三雙",
     "Results": [
       {
-        "Text": "三雙",
+        "Text": "三",
         "TypeName": "number",
         "Resolution": {
-          "value": "6"
+          "value": "3"
         },
         "Start": 0,
-        "End": 1
+        "End": 0
       }
     ]
   },
@@ -2477,13 +2477,13 @@
     "Input": "十雙",
     "Results": [
       {
-        "Text": "十雙",
+        "Text": "十",
         "TypeName": "number",
         "Resolution": {
-          "value": "20"
+          "value": "10"
         },
         "Start": 0,
-        "End": 1
+        "End": 0
       }
     ]
   },
@@ -2588,13 +2588,13 @@
     "Input": "兩雙",
     "Results": [
       {
-        "Text": "兩雙",
+        "Text": "兩",
         "TypeName": "number",
         "Resolution": {
-          "value": "4"
+          "value": "2"
         },
         "Start": 0,
-        "End": 1
+        "End": 0
       }
     ]
   },
@@ -4593,6 +4593,43 @@
         "TypeName": "number",
         "Resolution": {
           "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "袜子五双九点九",
+    "Results": [
+      {
+        "Text": "五",
+        "Start": 2,
+        "End": 2,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      },
+      {
+        "Text": "九点九",
+        "Start": 4,
+        "End": 6,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "六双",
+    "Results": [
+      {
+        "Text": "六",
+        "Start": 0,
+        "End": 0,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6"
         }
       }
     ]
