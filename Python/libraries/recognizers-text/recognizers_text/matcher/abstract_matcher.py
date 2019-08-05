@@ -3,22 +3,14 @@ from abc import abstractmethod
 
 
 class AbstractMatcher(matcher):
-    @property
     @abstractmethod
-    def __init__(self, values: [str], ids: [str]):
+    def init(self, values: [str], ids: [str]):
         pass
 
-    @property
     @abstractmethod
     def find(self, query_text: [str]) -> [str]:
         pass
 
-    @property
-    @abstractmethod
-    def insert(self, value: [str], id: str):
-        pass
-
-    @property
     @abstractmethod
     def insert(self, value: [str], id: str):
         pass
