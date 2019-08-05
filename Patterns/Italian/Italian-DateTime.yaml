@@ -536,9 +536,11 @@ NightStartEndRegex: !simpleRegex
   def: (^((di\s+|questa\s+|sta)?notte|nottata))|(((di\s+|questa\s+|sta)?notte|nottata)$)
 InexactNumberRegex: !simpleRegex
   def: \b(un\s+po'\s+di|alcun[ei]|parecchie?|divers[ie]|molt[oaei]|poc[oa]|poch[ei])\b
+#The following regex is used in DurationExtractor, it allows to extract patterns such as "in the next hours" where the InexactNumberRegex match is missing (but a "next/previous" element is present)
 InexactNumberUnitRegex: !nestedRegex
   def: \b((({InexactNumberRegex}\s+|(?<=(prossim[ei]|scors[ei]|ultim[ei])\s+)){DurationUnitRegex})|({DurationUnitRegex}(?=\s+(seguenti|successiv[ei]|passat[ei]|precedent[ei]))))\b
   references: [InexactNumberRegex, DurationUnitRegex]
+#The following regex is used in DurationParser, it allows to parse patterns such as "in the next hours" where the InexactNumberRegex match is missing
 InexactNumberUnitRegex2: !nestedRegex
   def: \b({InexactNumberRegex}\s+{DurationUnitRegex}|(?<unit>ore|minuti|secondi))
   references: [InexactNumberRegex, DurationUnitRegex]
