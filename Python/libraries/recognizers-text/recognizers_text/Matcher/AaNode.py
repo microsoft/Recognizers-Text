@@ -47,4 +47,4 @@ class AaNode(Node):
         return self.__children.values.select(child)
 
     def to_string(self):
-       return  self.__word.to_string()
+        return self.__word.to_string()
