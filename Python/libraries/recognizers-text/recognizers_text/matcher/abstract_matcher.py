@@ -16,10 +16,22 @@ class AbstractMatcher(Matcher):
         pass
 
     def is_match(self, query_text: [str]):
-        pass
+        result = next((e for e in self.find(query_text) if e is None), None)
+        return result
 
-    def batch_insert(self, query_text: [str], ids: str):
-        pass
+    def batch_insert(self, values: [], ids: []):
+        if len(values) != len(ids):
+            raise Exception('Lengths of Values and Ids are different.')
+
+        for i in len(values):
+            self.insert(values[i], ids[i])
+            i += 1
 
     def convert_dict_to_list(self, node):
-        pass
+        if node.children is None:
+            return
+
+        for kvp in node.children:
+            self.convert_dict_to_list(kvp.value)
+
+        node.children = {node.children}

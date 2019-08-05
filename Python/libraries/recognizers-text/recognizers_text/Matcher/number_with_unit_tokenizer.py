@@ -2,7 +2,7 @@ from .simple_tokenizer import SimpleTokenizer
 from .token import Token
 
 
-class NumberWithUnitTokenizer(SimpleTokenizer):
+class NumberWithUnitTokenizer(SimpleTokenizer, Token):
 
     def __init__(self):
         self.__special_tokens_characters = ['$']

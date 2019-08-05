@@ -11,14 +11,30 @@ class TrieTree(AbstractMatcher):
     def root(self) -> Node():
         return self.__root
 
-    # This class should be overrided from AbstractMatcher
     def insert(self, value: [], _id: str) -> None:
-        pass
+        node = self.root
 
-    # This class should be overrided from AbstractMatcher
+        for item in value:
+            child = node[item]
+
+            if child is None:
+                child = node[item] = Node()
+
+            node = child
+
+        node.add_value(id)
+
     def init(self, values: [], ids: []) -> None:
-        pass
+        self.batch_insert(values, ids)
+        self.convert_dict_to_list(self.root)
 
-    # This class should be overrided from AbstractMatcher
     def find(self, query_text: []) -> []:
-        pass
+        query_array = query_text
+
+        i = 0
+        while i < len(query_array):
+
+            node = self.root
+            j = i
+            while j <= len(query_array):
+                j += 1
