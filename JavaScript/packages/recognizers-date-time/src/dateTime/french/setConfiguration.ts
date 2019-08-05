@@ -106,7 +106,7 @@ export class FrenchSetParserConfiguration implements ISetParserConfiguration {
         let trimedText = text.trim().toLowerCase();
         let timex = "";
 
-        if (trimedText === "quotidien" || trimedText === "quotidienne" || 
+        if (trimedText === "quotidien" || trimedText === "quotidienne" ||
             trimedText === "jours" || trimedText === "journellement") {
             timex = "P1D";
         }

@@ -32,7 +32,7 @@ class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorCon
     readonly durationExtractor: BaseDurationExtractor
     readonly rangeConnectorRegex: RegExp
     readonly nowRegex: RegExp
-    
+
     constructor(dmyDateFormat: boolean) {
         this.simpleCasesRegexes = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.SimpleCasesRegex),
@@ -84,10 +84,10 @@ export class ChineseDatePeriodExtractor extends BaseDatePeriodExtractor {
 
     extract(source: string, refDate: Date): ExtractResult[] {
         if (!refDate) {
-refDate = new Date();
-}
+            refDate = new Date();
+        }
         let referenceDate = refDate;
-        
+
         let tokens: Token[] = new Array<Token>()
             .concat(super.matchSimpleCases(source))
             .concat(super.mergeTwoTimePoints(source, refDate))
@@ -211,7 +211,7 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
         if (trimmedSource.endsWith('前年')) {
             return -2;
         }
-        if (trimmedSource. endsWith('后年')) {
+        if (trimmedSource.endsWith('后年')) {
             return 2;
         }
         if (trimmedSource.startsWith('下个')) {
@@ -238,10 +238,10 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
         if (trimmedSource.startsWith('明年')) {
             swift = 1;
         }
- else if (trimmedSource.startsWith('去年')) {
+        else if (trimmedSource.startsWith('去年')) {
             swift = -1;
         }
- else if (trimmedSource.startsWith('今年')) {
+        else if (trimmedSource.startsWith('今年')) {
             swift = 0;
         }
         return swift;
@@ -317,8 +317,8 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
 
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
         if (!referenceDate) {
-referenceDate = new Date();
-}
+            referenceDate = new Date();
+        }
         let resultValue;
         if (extractorResult.type === this.parserName) {
             let source = extractorResult.text.trim().toLowerCase();
@@ -363,7 +363,7 @@ referenceDate = new Date();
                     innerResult.pastResolution[TimeTypeConstants.START_DATE] = DateTimeFormatUtil.formatDate(innerResult.pastValue[0]);
                     innerResult.pastResolution[TimeTypeConstants.END_DATE] = DateTimeFormatUtil.formatDate(innerResult.pastValue[1]);
                 }
- else {
+                else {
                     innerResult.futureResolution = {};
                     innerResult.pastResolution = {};
                 }
@@ -392,8 +392,8 @@ referenceDate = new Date();
         let match = this.getMatchSimpleCase(source);
 
         if (!match || match.index !== 0 || match.length !== source.length) {
-return result;
-}
+            return result;
+        }
         let days = match.groups('day');
         let beginDay = this.config.dayOfMonth.get(days.captures[0]);
         let endDay = this.config.dayOfMonth.get(days.captures[1]);
@@ -401,14 +401,14 @@ return result;
         if (!StringUtility.isNullOrEmpty(monthStr)) {
             month = this.config.monthOfYear.get(monthStr) - 1;
         }
- else {
+        else {
             monthStr = match.groups('relmonth').value;
             month += this.config.getSwiftDayOrMonth(monthStr);
             if (month < 0) {
                 month = 0;
                 year--;
             }
- else if (month > 11) {
+            else if (month > 11) {
                 month = 11;
                 year++;
             }
@@ -419,7 +419,7 @@ return result;
             year = Number.parseInt(yearStr, 10);
             inputYear = true;
         }
- else {
+        else {
             noYear = true;
         }
 
@@ -430,11 +430,11 @@ return result;
         let pastYear = year;
         let startDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, month, beginDay);
         if (noYear && startDate < referenceDate) {
-futureYear++;
-}
+            futureYear++;
+        }
         if (noYear && startDate >= referenceDate) {
-pastYear--;
-}
+            pastYear--;
+        }
 
         result.timex = `(${beginDateLuis},${endDateLuis},P${endDay - beginDay}D)`;
         result.futureValue = [
@@ -456,7 +456,7 @@ pastYear--;
         let match = RegExpUtility.getMatches(this.config.yearRegex, trimmedSource).pop();
         if (!match || match.length !== trimmedSource.length) {
             match = RegExpUtility.getMatches(this.yearInChineseRegex, trimmedSource).pop();
-            isChinese =  (match && match.length === trimmedSource.length);
+            isChinese = (match && match.length === trimmedSource.length);
         }
 
         if (!match || match.length !== trimmedSource.length) {
@@ -473,7 +473,7 @@ pastYear--;
             if (year < 100 && year >= 30) {
                 year += 1900;
             }
- else if (year < 30) {
+            else if (year < 30) {
                 year += 2000;
             }
         }
@@ -509,11 +509,11 @@ pastYear--;
                 }
                 year = yearNum;
             }
- else {
+            else {
                 year = yearNum;
             }
         }
- else {
+        else {
             year = Number.parseInt(yearStr, 10);
         }
 
@@ -539,8 +539,8 @@ pastYear--;
             }
         }
         result.timex = noYear ?
-        `XXXX-${DateTimeFormatUtil.toString(month + 1, 2)}-W${DateTimeFormatUtil.toString(cardinal, 2)}` :
-        `${DateTimeFormatUtil.toString(year, 4)}-${DateTimeFormatUtil.toString(month + 1, 2)}-W${DateTimeFormatUtil.toString(cardinal, 2)}`;
+            `XXXX-${DateTimeFormatUtil.toString(month + 1, 2)}-W${DateTimeFormatUtil.toString(cardinal, 2)}` :
+            `${DateTimeFormatUtil.toString(year, 4)}-${DateTimeFormatUtil.toString(month + 1, 2)}-W${DateTimeFormatUtil.toString(cardinal, 2)}`;
         result.futureValue = [futureDate, DateUtils.addDays(futureDate, this.inclusiveEndPeriod ? 6 : 7)];
         result.pastValue = [pastDate, DateUtils.addDays(pastDate, this.inclusiveEndPeriod ? 6 : 7)];
         result.success = true;
@@ -551,11 +551,11 @@ pastYear--;
         let firstDay = new Date(year, month, 1);
         let firstWeekday = DateUtils.this(firstDay, weekday);
         if (weekday === 0) {
-weekday = 7;
-}
+            weekday = 7;
+        }
         if (weekday < firstDay.getDay()) {
-firstWeekday = DateUtils.next(firstDay, weekday);
-}
+            firstWeekday = DateUtils.next(firstDay, weekday);
+        }
         firstWeekday.setDate(firstWeekday.getDate() + (7 * (cardinal - 1)));
         return firstWeekday;
     }
@@ -564,8 +564,8 @@ firstWeekday = DateUtils.next(firstDay, weekday);
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.seasonWithYearRegex, source).pop();
         if (!match || match.length !== source.length) {
-return result;
-}
+            return result;
+        }
 
         let year = referenceDate.getFullYear();
         let yearNum = match.groups('year').value;
@@ -580,14 +580,14 @@ return result;
             }
             year = this.convertYear(yearNum, false);
         }
- else if (!StringUtility.isNullOrEmpty(yearChinese)) {
+        else if (!StringUtility.isNullOrEmpty(yearChinese)) {
             hasYear = true;
             if (this.config.isYearOnly(yearChinese)) {
                 yearChinese = yearChinese.substr(0, yearChinese.length - 1);
             }
             year = this.convertYear(yearChinese, true);
         }
- else if (!StringUtility.isNullOrEmpty(yearRelative)) {
+        else if (!StringUtility.isNullOrEmpty(yearRelative)) {
             hasYear = true;
             year += this.config.getSwiftDayOrMonth(yearRelative);
         }
@@ -595,7 +595,7 @@ return result;
         if (year < 100 && year >= 90) {
             year += 1900;
         }
- else if (year < 100 && year < 20) {
+        else if (year < 100 && year < 20) {
             year += 2000;
         }
 
@@ -614,8 +614,8 @@ return result;
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.quarterRegex, source).pop();
         if (!match || match.length !== source.length) {
-return result;
-}
+            return result;
+        }
 
         let year = referenceDate.getFullYear();
         let yearNum = match.groups('year').value;
@@ -628,20 +628,20 @@ return result;
             }
             year = this.convertYear(yearNum, false);
         }
- else if (!StringUtility.isNullOrEmpty(yearChinese)) {
+        else if (!StringUtility.isNullOrEmpty(yearChinese)) {
             if (this.config.isYearOnly(yearChinese)) {
                 yearChinese = yearChinese.substr(0, yearChinese.length - 1);
             }
             year = this.convertYear(yearChinese, true);
         }
- else if (!StringUtility.isNullOrEmpty(yearRelative)) {
+        else if (!StringUtility.isNullOrEmpty(yearRelative)) {
             year += this.config.getSwiftDayOrMonth(yearRelative);
         }
 
         if (year < 100 && year >= 90) {
             year += 1900;
         }
- else if (year < 100 && year < 20) {
+        else if (year < 100 && year < 20) {
             year += 2000;
         }
 
@@ -662,13 +662,13 @@ return result;
         // if there are NO spaces between number and unit
         let match = RegExpUtility.getMatches(this.numberCombinedWithUnitRegex, source).pop();
         if (!match) {
-return result;
-}
+            return result;
+        }
 
         let sourceUnit = match.groups('unit').value.trim().toLowerCase();
         if (!this.config.unitMap.has(sourceUnit)) {
-return result;
-}
+            return result;
+        }
 
         let numStr = match.groups('num').value;
         let beforeStr = source.substr(0, match.index).trim().toLowerCase();
@@ -681,18 +681,18 @@ return result;
         // for case "前两年" "后三年"
         let durationResult = this.config.durationExtractor.extract(source, referenceDate).pop();
         if (!durationResult) {
-return result;
-}
+            return result;
+        }
 
         let match = RegExpUtility.getMatches(this.unitRegex, durationResult.text).pop();
         if (!match) {
-return result;
-}
+            return result;
+        }
 
         let sourceUnit = match.groups('unit').value.trim().toLowerCase();
         if (!this.config.unitMap.has(sourceUnit)) {
-return result;
-}
+            return result;
+        }
 
         let beforeStr = source.substr(0, durationResult.start).trim().toLowerCase();
         let numberStr = durationResult.text.substr(0, match.index).trim().toLowerCase();
@@ -719,23 +719,23 @@ return result;
         let beginDate = new Date(referenceDate);
         let endDate = new Date(referenceDate);
         let difference = Number.parseFloat(numStr);
-        switch(unitStr) {
+        switch (unitStr) {
             case 'D':
                 beginDate = hasPast ? DateUtils.addDays(referenceDate, -difference) : beginDate;
                 endDate = hasFuture ? DateUtils.addDays(referenceDate, difference) : endDate;
-            break;
+                break;
             case 'W':
                 beginDate = hasPast ? DateUtils.addDays(referenceDate, -7 * difference) : beginDate;
                 endDate = hasFuture ? DateUtils.addDays(referenceDate, 7 * difference) : endDate;
-            break;
+                break;
             case 'MON':
                 beginDate = hasPast ? DateUtils.addMonths(referenceDate, -Math.round(difference)) : beginDate;
                 endDate = hasFuture ? DateUtils.addMonths(referenceDate, Math.round(difference)) : endDate;
-            break;
+                break;
             case 'Y':
                 beginDate = hasPast ? DateUtils.addYears(referenceDate, -Math.round(difference)) : beginDate;
                 endDate = hasFuture ? DateUtils.addYears(referenceDate, Math.round(difference)) : endDate;
-            break;
+                break;
             default: return result;
         }
         if (hasFuture) {
@@ -783,20 +783,20 @@ return result;
             }
             year = this.convertYear(yearNum, false);
         }
- else if (!StringUtility.isNullOrEmpty(yearChinese)) {
+        else if (!StringUtility.isNullOrEmpty(yearChinese)) {
             if (this.config.isYearOnly(yearChinese)) {
                 yearChinese = yearChinese.substr(0, yearChinese.length - 1);
             }
             year = this.convertYear(yearChinese, true);
         }
- else if (!StringUtility.isNullOrEmpty(yearRelative)) {
+        else if (!StringUtility.isNullOrEmpty(yearRelative)) {
             year += this.config.getSwiftDayOrMonth(yearRelative);
         }
 
         if (year < 100 && year >= 90) {
             year += 1900;
         }
- else if (year < 100 && year < 20) {
+        else if (year < 100 && year < 20) {
             year += 2000;
         }
 
@@ -837,16 +837,16 @@ return result;
             beginYear = this.convertChineseToNumber(yearMatches[0].groups('year').value);
             endYear = this.convertChineseToNumber(yearMatches[1].groups('year').value);
         }
- else if (chineseYearMatches.length === 2) {
+        else if (chineseYearMatches.length === 2) {
             beginYear = this.convertYear(chineseYearMatches[0].groups('yearchs').value, true);
             endYear = this.convertYear(chineseYearMatches[1].groups('yearchs').value, true);
         }
- else if (yearMatches.length === 1 && chineseYearMatches.length === 1) {
+        else if (yearMatches.length === 1 && chineseYearMatches.length === 1) {
             if (yearMatches[0].index < chineseYearMatches[0].index) {
                 beginYear = this.convertChineseToNumber(yearMatches[0].groups('year').value);
                 endYear = this.convertChineseToNumber(chineseYearMatches[0].groups('yearchs').value);
             }
- else {
+            else {
                 beginYear = this.convertChineseToNumber(chineseYearMatches[0].groups('yearchs').value);
                 endYear = this.convertChineseToNumber(yearMatches[0].groups('year').value);
             }
@@ -873,7 +873,7 @@ return result;
         if (year < 100 && year >= 90) {
             result += 1900;
         }
- else if (year < 100 && year < 20) {
+        else if (year < 100 && year < 20) {
             result += 2000;
         }
         return result;

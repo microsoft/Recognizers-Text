@@ -43,8 +43,8 @@ export class ChineseDurationExtractor extends BaseDateTimeExtractor<DurationType
 
     extract(source: string, refDate: Date): ExtractResult[] {
         if (!refDate) {
-refDate = new Date();
-}
+            refDate = new Date();
+        }
         let referenceDate = refDate;
 
         let results = new Array<ExtractResult>();
@@ -106,8 +106,8 @@ export class ChineseDurationParser extends BaseDurationParser {
 
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
         if (!referenceDate) {
-referenceDate = new Date();
-}
+            referenceDate = new Date();
+        }
         let resultValue;
         if (extractorResult.type === this.parserName) {
             let innerResult = new DateTimeResolutionResult();

@@ -26,7 +26,7 @@ export class FrenchAgeExtractorConfiguration extends FrenchNumberWithUnitExtract
 
 export class FrenchAgeParserConfiguration extends FrenchNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.French);
         }
 

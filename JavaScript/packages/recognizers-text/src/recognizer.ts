@@ -8,9 +8,9 @@ export abstract class Recognizer<TRecognizerOptions> {
 
   protected constructor(targetCulture: string, options: TRecognizerOptions, lazyInitialization: boolean);
   protected constructor(targetCulture: string, options: any, lazyInitialization: boolean) {
-    if(!this.IsValidOptions(options)) {
-throw new Error(`${options} is not a valid options value.`);
-}
+    if (!this.IsValidOptions(options)) {
+      throw new Error(`${options} is not a valid options value.`);
+    }
     this.TargetCulture = targetCulture;
     this.Options = options;
     this.InitializeConfiguration();

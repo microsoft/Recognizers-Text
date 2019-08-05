@@ -4,7 +4,7 @@ import { Constants } from "../constants";
 import { INumberWithUnitExtractorConfiguration } from "../extractors";
 import { BaseNumberWithUnitParserConfiguration } from "../parsers";
 import { EnglishNumericWithUnit } from "../../resources/englishNumericWithUnit";
-import { BaseUnits} from "../../resources/baseUnits";
+import { BaseUnits } from "../../resources/baseUnits";
 
 export abstract class EnglishNumberWithUnitExtractorConfiguration implements INumberWithUnitExtractorConfiguration {
     abstract readonly suffixList: ReadonlyMap<string, string>;

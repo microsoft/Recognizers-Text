@@ -23,12 +23,12 @@ class Startup {
         specs.configFiles.forEach(config => {
             let inputFilePath = join(resourcesPath, ...config.input).concat('.yaml');
             let outputFilePath = join(outputPath, config.output).concat('.ts');
-            console.log(`${ basename(inputFilePath) } => ${ basename(outputFilePath) }`);
+            console.log(`${basename(inputFilePath)} => ${basename(outputFilePath)}`);
             try {
-                generator.generate(inputFilePath, outputFilePath, config.header.join('\n') , config.footer.join('\n'));
+                generator.generate(inputFilePath, outputFilePath, config.header.join('\n'), config.footer.join('\n'));
             }
- catch (err) {
-                console.log(`Error while creating the resource ${ basename(outputFilePath) }`, err.toString());
+            catch (err) {
+                console.log(`Error while creating the resource ${basename(outputFilePath)}`, err.toString());
             }
         });
 

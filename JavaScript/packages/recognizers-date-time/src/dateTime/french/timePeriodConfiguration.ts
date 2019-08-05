@@ -102,10 +102,10 @@ export class FrenchTimePeriodParserConfiguration implements ITimePeriodParserCon
         if (FrenchDateTime.MorningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Morning;
         }
- else if (FrenchDateTime.AfternoonTermList.some(o => trimmedText.endsWith(o))) {
+        else if (FrenchDateTime.AfternoonTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Afternoon;
         }
- else if (FrenchDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
+        else if (FrenchDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Evening;
         }
         else if (trimmedText === FrenchDateTime.DaytimeTermList[0] ||

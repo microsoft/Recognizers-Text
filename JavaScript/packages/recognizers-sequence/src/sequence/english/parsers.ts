@@ -39,7 +39,7 @@ export class PhoneNumberParser extends BaseSequenceParser {
         // Country code score or area code score 
         score += countryCodeRegex.test(phoneNumberText) ?
             this.countryCodeAward : areaCodeRegex.test(phoneNumberText) ? this.areaCodeAward : 0;
-        
+
         // Formatted score
         if (formatIndicatorRegex.test(phoneNumberText)) {
             let formatMathes = phoneNumberText.match(formatIndicatorRegex);
@@ -50,28 +50,28 @@ export class PhoneNumberParser extends BaseSequenceParser {
                 score -= this.wrongFormatIndicatorDeductionScore;
             }
         }
-       
+
         // Same tailing digit deduction
         if (this.tailSameDigitRegex.test(phoneNumberText)) {
             score -= (phoneNumberText.match(this.tailSameDigitRegex)[0].length - this.tailSameLimit) * this.tailSameDeductionScore;
-           
+
         }
-        
+
         // Length score
         if (this.digitRegex.test(phoneNumberText)) {
             score += Math.min((phoneNumberText.match(this.digitRegex).length - this.phoneNumberLengthBase),
                 this.maxLengthAwardNum) * this.lengthAward;
         }
-        
+
         // Pure digit deduction
         if (this.pureDigitRegex.test(phoneNumberText)) {
             score -= phoneNumberText.length > this.pureDigitLengthLimit ?
                 (phoneNumberText.length - this.pureDigitLengthLimit) * this.lengthAward : 0;
         }
-        
+
         // Special format deduction
         score -= BasePhoneNumbers.TypicalDeductionRegexList.some(o => new RegExp(o).test(phoneNumberText)) ? this.typicalFormatDeductionScore : 0;
-        
+
         // Continue digit deduction
         if (this.continueDigitRegex.test(phoneNumberText)) {
             score -= Math.max(phoneNumberText.match(this.continueDigitRegex).length - 1, 0) * this.continueDigitDeductionScore;
@@ -94,23 +94,23 @@ export class PhoneNumberParser extends BaseSequenceParser {
 }
 
 export class IpParser extends BaseIpParser {
-    
+
 }
 
 export class MentionParser extends BaseSequenceParser {
-    
-} 
+
+}
 
 export class HashtagParser extends BaseSequenceParser {
-    
+
 }
 
 export class EmailParser extends BaseSequenceParser {
-    
+
 }
 
 export class URLParser extends BaseSequenceParser {
-    
+
 }
 
 export class GUIDParser extends BaseSequenceParser {
@@ -128,7 +128,7 @@ export class GUIDParser extends BaseSequenceParser {
 
         let guidElementRegex = new RegExp(BaseGUID.GUIDRegexElement);
 
-        if (guidElementRegex.test(GUIDText)){
+        if (guidElementRegex.test(GUIDText)) {
             let elementMatch = GUIDText.match(guidElementRegex);
             let startIndex = elementMatch.index;
             let elementGUID = elementMatch[0];

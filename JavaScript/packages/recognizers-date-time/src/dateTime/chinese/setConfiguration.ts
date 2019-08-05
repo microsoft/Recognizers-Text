@@ -55,8 +55,8 @@ export class ChineseSetExtractor extends BaseSetExtractor {
 
     extract(source: string, refDate: Date): ExtractResult[] {
         if (!refDate) {
-refDate = new Date();
-}
+            refDate = new Date();
+        }
         let referenceDate = refDate;
 
         let tokens: Token[] = new Array<Token>()
@@ -127,17 +127,17 @@ class ChineseSetParserConfiguration implements ISetParserConfiguration {
     public getMatchedUnitTimex(source: string): { matched: boolean, timex: string } {
         let timex = '';
         if (source === '天' || source === '日') {
-timex = 'P1D';
-}
+            timex = 'P1D';
+        }
         else if (source === '周' || source === '星期') {
-timex = 'P1W';
-}
+            timex = 'P1W';
+        }
         else if (source === '月') {
-timex = 'P1M';
-}
+            timex = 'P1M';
+        }
         else if (source === '年') {
-timex = 'P1Y';
-}
+            timex = 'P1Y';
+        }
         return { matched: timex !== '', timex: timex };
     }
 }
@@ -151,8 +151,8 @@ export class ChineseSetParser extends BaseSetParser {
 
     parse(er: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
         if (!referenceDate) {
-referenceDate = new Date();
-}
+            referenceDate = new Date();
+        }
         let value = null;
         if (er.type === BaseSetParser.ParserName) {
             let innerResult = this.parseEachUnit(er.text);
@@ -179,8 +179,8 @@ referenceDate = new Date();
 
         let ret = new DateTimeParseResult(er);
         ret.value = value,
-        ret.timexStr = value === null ? "" : value.timex,
-        ret.resolutionStr = "";
+            ret.timexStr = value === null ? "" : value.timex,
+            ret.resolutionStr = "";
 
         return ret;
     }
@@ -191,18 +191,18 @@ referenceDate = new Date();
         // handle "each month"
         let match = RegExpUtility.getMatches(this.config.eachUnitRegex, text).pop();
         if (!match || match.length !== text.length) {
-return ret;
-}
+            return ret;
+        }
 
         let sourceUnit = match.groups("unit").value;
         if (StringUtility.isNullOrEmpty(sourceUnit) || !this.config.unitMap.has(sourceUnit)) {
-return ret;
-}
+            return ret;
+        }
 
         let getMatchedUnitTimex = this.config.getMatchedUnitTimex(sourceUnit);
         if (!getMatchedUnitTimex.matched) {
-return ret;
-}
+            return ret;
+        }
 
         ret.timex = getMatchedUnitTimex.timex;
         ret.futureValue = "Set: " + ret.timex;
@@ -215,15 +215,15 @@ return ret;
         let result = new DateTimeResolutionResult();
         let ers = this.config.timeExtractor.extract(text, refDate);
         if (ers.length !== 1) {
-return result;
-}
+            return result;
+        }
 
         let er = ers[0];
         let beforeStr = text.substr(0, er.start);
         let match = RegExpUtility.getMatches(this.config.eachDayRegex, beforeStr).pop();
         if (!match) {
-return result;
-}
+            return result;
+        }
 
         let pr = this.config.timeParser.parse(er);
         result.timex = pr.timexStr;
@@ -238,15 +238,15 @@ return result;
         let result = new DateTimeResolutionResult();
         let ers = extractor.extract(text, refDate);
         if (ers.length !== 1) {
-return result;
-}
+            return result;
+        }
 
         let er = ers[0];
         let beforeStr = text.substr(0, er.start);
         let match = RegExpUtility.getMatches(this.config.eachPrefixRegex, beforeStr).pop();
         if (!match) {
-return result;
-}
+            return result;
+        }
 
         let timex = parser.parse(er).timexStr;
         result.timex = timex;

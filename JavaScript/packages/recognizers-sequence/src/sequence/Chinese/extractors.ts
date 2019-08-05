@@ -13,7 +13,7 @@ export class ChineseURLExtractorConfiguration implements IURLExtractorConfigurat
     }
 }
 
-export class ChinesePhoneNumberExtractorConfiguration implements IPhoneNumberExtractorConfiguration{
+export class ChinesePhoneNumberExtractorConfiguration implements IPhoneNumberExtractorConfiguration {
     readonly WordBoundariesRegex: string;
     readonly NonWordBoundariesRegex: string;
     readonly EndWordBoundariesRegex: string;

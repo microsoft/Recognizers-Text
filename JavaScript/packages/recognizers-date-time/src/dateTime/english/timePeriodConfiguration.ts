@@ -97,22 +97,22 @@ export class EnglishTimePeriodParserConfiguration implements ITimePeriodParserCo
         if (EnglishDateTime.MorningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Morning;
         }
- else if (EnglishDateTime.AfternoonTermList.some(o => trimmedText.endsWith(o))) {
+        else if (EnglishDateTime.AfternoonTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Afternoon;
         }
- else if (EnglishDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
+        else if (EnglishDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Evening;
         }
- else if (EnglishDateTime.DaytimeTermList.some(o => trimmedText.localeCompare(o) == 0)) {
+        else if (EnglishDateTime.DaytimeTermList.some(o => trimmedText.localeCompare(o) == 0)) {
             timeOfDay = Constants.Daytime;
         }
- else if (EnglishDateTime.NightTermList.some(o => trimmedText.endsWith(o))) {
+        else if (EnglishDateTime.NightTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Night;
         }
- else {
+        else {
             timex = null;
             matched = false;
-            return {matched, timex, beginHour, endHour, endMin};
+            return { matched, timex, beginHour, endHour, endMin };
         }
 
         let parseResult = TimexUtil.parseTimeOfDay(timeOfDay);
@@ -122,6 +122,6 @@ export class EnglishTimePeriodParserConfiguration implements ITimePeriodParserCo
         endMin = parseResult.endMin;
 
         matched = true;
-        return {matched, timex, beginHour, endHour, endMin};
+        return { matched, timex, beginHour, endHour, endMin };
     }
 }

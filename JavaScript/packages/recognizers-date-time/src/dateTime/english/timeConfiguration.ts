@@ -117,7 +117,7 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
                     if (adjust.hour >= 12) {
                         deltaHour = -12;
                     }
- else {
+                    else {
                         adjust.hasAm = true;
                     }
                 }
@@ -135,15 +135,15 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
                             if (adjust.hour === 12) {
                                 adjust.hasPm = true;
                             }
- else {
+                            else {
                                 adjust.hasAm = true;
                             }
                         }
- else {
+                        else {
                             adjust.hasPm = true;
                         }
                     }
- else if (RegExpUtility.getMatches(this.nightRegex, pmStr).length > 0) {
+                    else if (RegExpUtility.getMatches(this.nightRegex, pmStr).length > 0) {
                         // for hour <=3 or === 12, we treat it as am, for example 1 in the night (midnight) === 1am
                         if (adjust.hour <= 3 || adjust.hour === 12) {
                             if (adjust.hour === 12) {
@@ -152,11 +152,11 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
                             deltaHour = 0;
                             adjust.hasAm = true;
                         }
- else {
+                        else {
                             adjust.hasPm = true;
                         }
                     }
- else {
+                    else {
                         adjust.hasPm = true;
                     }
                 }

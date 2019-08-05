@@ -30,11 +30,11 @@ export abstract class BaseDateTimeExtractor<T> implements IDateTimeExtractor {
     constructor(regexesDictionary: Map<RegExp, T>) {
         this.regexesDictionary = regexesDictionary;
     }
-    
+
     extract(source: string, refDate: Date): ExtractResult[] {
         if (!refDate) {
-refDate = new Date();
-}
+            refDate = new Date();
+        }
         let referenceDate = refDate;
 
         let results = new Array<ExtractResult>();
@@ -48,11 +48,11 @@ refDate = new Date();
             matched[i] = false;
         }
 
-        let collections: { matches: Match[], value: T}[] = [];
+        let collections: { matches: Match[], value: T }[] = [];
         this.regexesDictionary.forEach((value, regex) => {
             let matches = RegExpUtility.getMatches(regex, source);
             if (matches.length > 0) {
-                collections.push({ matches: matches, value: value});
+                collections.push({ matches: matches, value: value });
             }
         });
 
@@ -104,7 +104,7 @@ export class TimeResolutionUtils {
             timeResult.hour += 12;
             timeResult.lowBound = lowBoundMap.get(description);
         }
- else {
+        else {
             timeResult.lowBound = 0;
         }
     }
@@ -134,10 +134,10 @@ export class TimeResolutionUtils {
             if (char === '十') {
                 value *= 10;
             }
- else if (index === 0) {
+            else if (index === 0) {
                 value *= numbersMap.get(char);
             }
- else {
+            else {
                 value += numbersMap.get(char);
             }
         }

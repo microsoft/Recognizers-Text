@@ -27,7 +27,7 @@ export class ChineseCurrencyExtractorConfiguration extends ChineseNumberWithUnit
 
 export class ChineseCurrencyParserConfiguration extends ChineseNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.Chinese);
         }
 

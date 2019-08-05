@@ -26,7 +26,7 @@ export class JapaneseAgeExtractorConfiguration extends JapaneseNumberWithUnitExt
 
 export class JapaneseAgeParserConfiguration extends JapaneseNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.Japanese);
         }
 

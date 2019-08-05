@@ -82,7 +82,7 @@ export class FrenchNumberParserConfiguration implements INumberParserConfigurati
                 value = 0;
             }
         }
-        
+
         return finalValue;
     }
 }

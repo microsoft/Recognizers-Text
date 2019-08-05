@@ -24,31 +24,31 @@ export namespace DataTypes {
         entries: string[];
     }
 
-    export function getSimpleRegex(data: any) : SimpleRegex {
+    export function getSimpleRegex(data: any): SimpleRegex {
         let result = new SimpleRegex();
         result.def = data.def;
         return result;
     }
 
-    export function getNestedRegex(data: any) : NestedRegex {
+    export function getNestedRegex(data: any): NestedRegex {
         let result = new NestedRegex();
         result.def = data.def;
         result.references = data.references;
         return result;
     }
 
-    export function getParamsRegex(data: any) : ParamsRegex {
+    export function getParamsRegex(data: any): ParamsRegex {
         let result = new ParamsRegex();
         result.def = data.def;
         result.params = data.params;
         return result;
     }
 
-    export function getDictionary(data: any) : Dictionary {
+    export function getDictionary(data: any): Dictionary {
         let result = new Dictionary();
         result.keyType = data.types[0];
         result.valueType = data.types[1];
-        result.entries =  data.entries;
+        result.entries = data.entries;
         return result;
     }
 
@@ -59,11 +59,11 @@ export namespace DataTypes {
         return result;
     }
 
-    export function getCharacter(data: any) : string {
+    export function getCharacter(data: any): string {
         return data;
     }
 
-    export function getBoolean(data: any) : boolean {
+    export function getBoolean(data: any): boolean {
         return Boolean(JSON.parse(data));
     }
 }

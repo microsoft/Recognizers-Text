@@ -10,7 +10,7 @@ export class DictionaryUtils {
             if (StringUtility.isNullOrEmpty(key)) {
                 return;
             }
-            
+
             this.bindUnitsString(source, key, value);
         });
     }

@@ -9,11 +9,11 @@ import { FrenchMergedParserConfiguration, FrenchMergedExtractorConfiguration } f
 import { ChineseMergedExtractor, ChineseMergedParser, ChineseFullMergedParser } from "./chinese/mergedConfiguration";
 
 export enum DateTimeOptions {
-    None = 0, SkipFromToMerge = 1, SplitDateAndTime = 2, Calendar = 4 
+    None = 0, SkipFromToMerge = 1, SplitDateAndTime = 2, Calendar = 4
 }
 
 export function recognizeDateTime(query: string, culture: string, options: DateTimeOptions = DateTimeOptions.None,
-        referenceDate: Date = new Date(), fallbackToDefaultCulture: boolean = true): ModelResult[] {
+    referenceDate: Date = new Date(), fallbackToDefaultCulture: boolean = true): ModelResult[] {
     let recognizer = new DateTimeRecognizer(culture, options);
     let model = recognizer.getDateTimeModel(culture, fallbackToDefaultCulture);
     return model.parse(query, referenceDate);

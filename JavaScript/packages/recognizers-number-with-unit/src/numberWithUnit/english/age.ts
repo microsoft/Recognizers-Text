@@ -26,7 +26,7 @@ export class EnglishAgeExtractorConfiguration extends EnglishNumberWithUnitExtra
 
 export class EnglishAgeParserConfiguration extends EnglishNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.English);
         }
 

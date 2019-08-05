@@ -74,8 +74,8 @@ export class ModelFactory<TModelOptions> {
         culture = Culture.mapToNearestLanguage(culture);
         let cacheResult = this.getModelFromCache(modelTypeName, culture, options);
         if (cacheResult) {
-return { containsModel: true, model: cacheResult };
-}
+            return { containsModel: true, model: cacheResult };
+        }
 
         let key = this.generateKey(modelTypeName, culture);
         if (this.modelFactories.has(key)) {

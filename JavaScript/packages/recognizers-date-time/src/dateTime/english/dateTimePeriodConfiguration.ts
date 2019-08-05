@@ -157,19 +157,19 @@ export class EnglishDateTimePeriodParserConfiguration implements IDateTimePeriod
             endHour = 12;
             success = true;
         }
- else if (RegExpUtility.getMatches(this.afternoonStartEndRegex, source).length > 0) {
+        else if (RegExpUtility.getMatches(this.afternoonStartEndRegex, source).length > 0) {
             timeStr = 'TAF';
             beginHour = 12;
             endHour = 16;
             success = true;
         }
- else if (RegExpUtility.getMatches(this.eveningStartEndRegex, source).length > 0) {
+        else if (RegExpUtility.getMatches(this.eveningStartEndRegex, source).length > 0) {
             timeStr = 'TEV';
             beginHour = 16;
             endHour = 20;
             success = true;
         }
- else if (RegExpUtility.getMatches(this.nightStartEndRegex, source).length > 0) {
+        else if (RegExpUtility.getMatches(this.nightStartEndRegex, source).length > 0) {
             timeStr = 'TNI';
             beginHour = 20;
             endHour = 23;
@@ -182,11 +182,11 @@ export class EnglishDateTimePeriodParserConfiguration implements IDateTimePeriod
     getSwiftPrefix(source: string): number {
         let swift = 0;
         if (source.startsWith('next')) {
-swift = 1;
-}
+            swift = 1;
+        }
         else if (source.startsWith('last')) {
-swift = -1;
-}
+            swift = -1;
+        }
         return swift;
     }
 }

@@ -48,14 +48,14 @@ export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractor
         this.connectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ConnectorRegex);
         this.utilityConfiguration = new EnglishDateTimeUtilityConfiguration();
     }
-            
+
     isConnectorToken(source: string): boolean {
         return (StringUtility.isNullOrWhitespace(source)
-                    || RegExpUtility.getMatches(this.connectorRegex, source).length > 0
-                    || RegExpUtility.getMatches(this.prepositionRegex, source).length > 0);
-            }
+            || RegExpUtility.getMatches(this.connectorRegex, source).length > 0
+            || RegExpUtility.getMatches(this.prepositionRegex, source).length > 0);
+    }
 }
-  
+
 
 export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfiguration {
     tokenBeforeDate: string;
@@ -150,6 +150,6 @@ export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfig
     }
 
     public haveAmbiguousToken(text: string, matchedText: string): boolean {
- return false; 
-}
+        return false;
+    }
 }

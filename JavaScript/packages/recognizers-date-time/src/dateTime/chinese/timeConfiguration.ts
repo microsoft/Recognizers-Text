@@ -19,9 +19,9 @@ export class ChineseTimeExtractor extends BaseDateTimeExtractor<TimeType> {
 
     constructor() {
         super(new Map<RegExp, TimeType>([
-            [ RegExpUtility.getSafeRegExp(ChineseDateTime.TimeRegexes1), TimeType.ChineseTime ],
-            [ RegExpUtility.getSafeRegExp(ChineseDateTime.TimeRegexes2), TimeType.DigitTime ],
-            [ RegExpUtility.getSafeRegExp(ChineseDateTime.TimeRegexes3), TimeType.LessTime ]
+            [RegExpUtility.getSafeRegExp(ChineseDateTime.TimeRegexes1), TimeType.ChineseTime],
+            [RegExpUtility.getSafeRegExp(ChineseDateTime.TimeRegexes2), TimeType.DigitTime],
+            [RegExpUtility.getSafeRegExp(ChineseDateTime.TimeRegexes3), TimeType.LessTime]
         ]));
     }
 }
@@ -48,8 +48,8 @@ export class ChineseTimeParser extends BaseTimeParser {
 
     public parse(er: ExtractResult, referenceTime?: Date): DateTimeParseResult | null {
         if (!referenceTime) {
-referenceTime = new Date();
-}
+            referenceTime = new Date();
+        }
 
         let extra: DateTimeExtra<TimeType> = er.data;
         if (!extra) {
@@ -99,7 +99,7 @@ referenceTime = new Date();
         let minute = !StringUtility.isNullOrEmpty(extra.namedEntity('half').value)
             ? 30
             : quarter !== -1 ? quarter * 15
-            : this.matchToValue(extra.namedEntity('min').value);
+                : this.matchToValue(extra.namedEntity('min').value);
         let second = this.matchToValue(extra.namedEntity('sec').value);
 
         return new TimeResult(hour, minute, second);
@@ -120,7 +120,7 @@ referenceTime = new Date();
         if (noDescription) {
             result.comment = 'ampm';
         }
- else {
+        else {
             this.addDescription(timeResult, dayDescription);
         }
 

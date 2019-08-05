@@ -55,14 +55,14 @@ export class ChineseDateTimeExtractor extends BaseDateTimeExtractor {
 
     extract(source: string, refDate: Date): ExtractResult[] {
         if (!refDate) {
-refDate = new Date();
-}
+            refDate = new Date();
+        }
         let referenceDate = refDate;
 
         let tokens: Token[] = new Array<Token>()
-        .concat(this.mergeDateAndTime(source, referenceDate))
-        .concat(this.basicRegexMatch(source))
-        .concat(this.timeOfToday(source, referenceDate));
+            .concat(this.mergeDateAndTime(source, referenceDate))
+            .concat(this.basicRegexMatch(source))
+            .concat(this.timeOfToday(source, referenceDate));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
@@ -71,12 +71,12 @@ refDate = new Date();
         let tokens: Token[] = new Array<Token>();
         let ers = this.config.datePointExtractor.extract(source, refDate);
         if (ers.length < 1) {
-return tokens;
-}
+            return tokens;
+        }
         ers = ers.concat(this.config.timePointExtractor.extract(source, refDate));
         if (ers.length < 2) {
-return tokens;
-}
+            return tokens;
+        }
         ers = ers.sort((erA, erB) => erA.start < erB.start ? -1 : erA.start === erB.start ? 0 : 1);
         let i = 0;
         while (i < ers.length - 1) {
@@ -85,8 +85,8 @@ return tokens;
                 j++;
             }
             if (j >= ers.length) {
-break;
-}
+                break;
+            }
             if (ers[i].type === Constants.SYS_DATETIME_DATE && ers[j].type === Constants.SYS_DATETIME_TIME) {
                 let middleBegin = ers[i].start + ers[i].length;
                 let middleEnd = ers[j].start;
@@ -118,8 +118,8 @@ break;
             }
 
             if (StringUtility.isNullOrWhitespace(beforeStr)) {
-return;
-}
+                return;
+            }
 
             let match = RegExpUtility.getMatches(this.config.timeOfTodayBeforeRegex, beforeStr).pop();
             if (match && StringUtility.isNullOrWhitespace(beforeStr.substr(match.index + match.length))) {
@@ -176,10 +176,10 @@ class ChineseDateTimeParserConfiguration implements IDateTimeParserConfiguration
         if (trimmedText.endsWith('现在')) {
             return { matched: true, timex: 'PRESENT_REF' };
         }
- else if (trimmedText === '刚刚才' || trimmedText === '刚刚' || trimmedText === '刚才') {
+        else if (trimmedText === '刚刚才' || trimmedText === '刚刚' || trimmedText === '刚才') {
             return { matched: true, timex: 'PAST_REF' };
         }
- else if (trimmedText === '立刻' || trimmedText === '马上') {
+        else if (trimmedText === '立刻' || trimmedText === '马上') {
             return { matched: true, timex: 'FUTURE_REF' };
         }
         return { matched: false, timex: null };
@@ -190,7 +190,7 @@ class ChineseDateTimeParserConfiguration implements IDateTimeParserConfiguration
         if (text === '明晚' || text === '明早' || text === '明晨') {
             swift = 1;
         }
- else if (text === '昨晚') {
+        else if (text === '昨晚') {
             swift = -1;
         }
         return swift;
@@ -201,7 +201,7 @@ class ChineseDateTimeParserConfiguration implements IDateTimeParserConfiguration
         if (hour < 12 && ['今晚', '明晚', '昨晚'].some(o => o === text)) {
             result += 12;
         }
- else if (hour >= 12 && ['今早', '今晨', '明早', '明晨'].some(o => o === text)) {
+        else if (hour >= 12 && ['今早', '今晨', '明早', '明晨'].some(o => o === text)) {
             result -= 12;
         }
         return result;
@@ -216,8 +216,8 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
 
     parse(er: ExtractResult, refTime?: Date): DateTimeParseResult {
         if (!refTime) {
-refTime = new Date();
-}
+            refTime = new Date();
+        }
         let referenceTime = refTime;
 
         let value = null;
@@ -240,8 +240,8 @@ refTime = new Date();
 
         let ret = new DateTimeParseResult(er); {
             ret.value = value,
-            ret.timexStr = value === null ? "" : value.timex,
-            ret.resolutionStr = "";
+                ret.timexStr = value === null ? "" : value.timex,
+                ret.resolutionStr = "";
         };
 
         return ret;

@@ -121,7 +121,7 @@ export class ChoiceExtractor implements IExtractor {
                 token = '';
             }
         });
-        
+
         if (!StringUtility.isNullOrWhitespace(token)) {
             tokens.push(token);
             token = '';
@@ -145,7 +145,7 @@ export class BooleanExtractor extends ChoiceExtractor {
         let regexesMap = new Map<RegExp, string>()
             .set(config.regexTrue, Constants.SYS_BOOLEAN_TRUE)
             .set(config.regexFalse, Constants.SYS_BOOLEAN_FALSE);
-        
+
         let optionsConfig: IChoiceExtractorConfiguration = {
             regexesMap: regexesMap,
             tokenRegex: config.tokenRegex,

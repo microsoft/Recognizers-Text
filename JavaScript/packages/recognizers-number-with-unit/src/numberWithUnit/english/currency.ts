@@ -27,7 +27,7 @@ export class EnglishCurrencyExtractorConfiguration extends EnglishNumberWithUnit
 
 export class EnglishCurrencyParserConfiguration extends EnglishNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.English);
         }
 

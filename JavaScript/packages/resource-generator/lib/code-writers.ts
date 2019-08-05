@@ -12,7 +12,7 @@ export abstract class CodeWriter {
 class DefaultWriter extends CodeWriter {
     readonly definition: string;
 
-    constructor (name: string, definition: string) {
+    constructor(name: string, definition: string) {
         super(name);
         this.definition = sanitize(definition);
     }
@@ -25,7 +25,7 @@ class DefaultWriter extends CodeWriter {
 class BooleanWriter extends CodeWriter {
     readonly definition: boolean;
 
-    constructor (name: string, definition: boolean) {
+    constructor(name: string, definition: boolean) {
         super(name);
         this.definition = definition;
     }
@@ -38,7 +38,7 @@ class BooleanWriter extends CodeWriter {
 class SimpleRegexWriter extends CodeWriter {
     readonly definition: string;
 
-    constructor (name: string, definition: string) {
+    constructor(name: string, definition: string) {
         super(name);
         this.definition = sanitize(definition, 'regex');
     }
@@ -51,7 +51,7 @@ class SimpleRegexWriter extends CodeWriter {
 class NestedRegexWriter extends CodeWriter {
     readonly definition: string;
 
-    constructor (name: string, definition: string, references: string[]) {
+    constructor(name: string, definition: string, references: string[]) {
         super(name);
         references.forEach((value, index) => {
             let regex = new RegExp(`{${value}}`, 'g');
@@ -70,7 +70,7 @@ class ParamsRegexWriter extends CodeWriter {
     readonly definition: string;
     readonly params: string;
 
-    constructor (name: string, definition: string, params: string[]) {
+    constructor(name: string, definition: string, params: string[]) {
         super(name);
         params.forEach((value, index) => {
             let regex = new RegExp(`{${value}}`, 'g');
@@ -106,8 +106,8 @@ class DictionaryWriter extends CodeWriter {
         else {
             valueQuote1 = valueQuote2 = this.valueType === 'number' ? '' : '"';
         }
-        
-        for(let propName in entries) {
+
+        for (let propName in entries) {
             this.entries.push(`["${sanitize(propName, this.keyType)}", ${valueQuote1}${sanitize(entries[propName], this.valueType)}${valueQuote2}]`);
         }
     }
@@ -118,20 +118,20 @@ class DictionaryWriter extends CodeWriter {
 }
 
 
-function sanitize(value: string, valueType: string = null) : string {
+function sanitize(value: string, valueType: string = null): string {
     if (!valueType) {
-valueType = typeof value;
-}
+        valueType = typeof value;
+    }
     if (valueType === 'number' || valueType === 'boolean') {
-return value;
-}
+        return value;
+    }
 
     let stringified = JSON.stringify(value);
     return stringified.slice(1, stringified.length - 1);
 }
 
 function toJsType(type: string): string {
-    switch(type) {
+    switch (type) {
         case 'char': return 'string';
         case 'long':
         case 'double':
@@ -147,7 +147,7 @@ class ArrayWriter extends CodeWriter {
     constructor(name: string, entries: any[]) {
         super(name);
         this.entries = [];
-        this.valueType = typeof(entries[0]);
+        this.valueType = typeof (entries[0]);
         entries.forEach(element => {
             this.entries.push(`"${sanitize(element)}"`);
         });

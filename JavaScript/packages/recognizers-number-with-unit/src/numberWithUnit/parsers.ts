@@ -46,7 +46,7 @@ export abstract class BaseNumberWithUnitParserConfiguration implements INumberWi
     }
 
     BindDictionary(dictionary: ReadonlyMap<string, string>): void {
-        DictionaryUtils.bindDictionary(dictionary, this.unitMap); 
+        DictionaryUtils.bindDictionary(dictionary, this.unitMap);
     }
 }
 
@@ -67,7 +67,7 @@ export class NumberWithUnitParser implements IParser {
             ret.value = this.config.internalNumberParser.parse(extResult).value;
             return ret;
         }
-        else { 
+        else {
             // if there is no unitResult, means there is just unit
             numberResult = { start: -1, length: 0, text: null, type: null };
         }
@@ -153,7 +153,7 @@ export class BaseCurrencyParser implements IParser {
         if (extResult.data instanceof Array) {
             result = this.mergeCompoundUnit(extResult);
         }
- else {
+        else {
             result = this.numberWithUnitParser.parse(extResult);
             let value: UnitValue = result.value;
             if (!this.config.currencyNameToIsoCodeMap.has(value.unit) || this.config.currencyNameToIsoCodeMap.get(value.unit).startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
@@ -162,7 +162,7 @@ export class BaseCurrencyParser implements IParser {
                     number: value.number
                 } as UnitValue;
             }
- else {
+            else {
                 result.value = {
                     unit: value.unit,
                     number: value.number,
@@ -223,7 +223,7 @@ export class BaseCurrencyParser implements IParser {
                     fractionUnitsString = this.config.currencyFractionMapping.get(mainUnitIsoCode);
                 }
             }
- else {
+            else {
                 // Match pure number as fraction unit.
                 if (extractResult.type === NumberConstants.SYS_NUM) {
                     numberValue += parseResult.value * (1.0 / 100);
@@ -249,7 +249,7 @@ export class BaseCurrencyParser implements IParser {
                     result.resolutionStr += ' ' + parseResult.resolutionStr;
                     result.length = parseResult.start + parseResult.length - result.start;
                 }
- else {
+                else {
                     // If the fraction unit doesn't match the main unit, finish process this group.
                     if (result !== null) {
                         if (StringUtility.isNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
@@ -258,7 +258,7 @@ export class BaseCurrencyParser implements IParser {
                                 unit: mainUnitValue
                             } as UnitValue;
                         }
- else {
+                        else {
                             result.value = {
                                 number: numberValue.toString(),
                                 unit: mainUnitValue,
@@ -286,7 +286,7 @@ export class BaseCurrencyParser implements IParser {
                     unit: mainUnitValue
                 } as UnitValue;
             }
- else {
+            else {
                 result.value = {
                     number: numberValue.toString(),
                     unit: mainUnitValue,
@@ -305,7 +305,7 @@ export class BaseCurrencyParser implements IParser {
     private checkUnitsStringContains(fractionUnitCode: string, fractionUnitsString: string): boolean {
         let unitsMap = new Map<string, string>();
         DictionaryUtils.bindUnitsString(unitsMap, '', fractionUnitsString);
-        
+
         return unitsMap.has(fractionUnitCode);
     }
 
@@ -335,7 +335,7 @@ export class BaseMergedUnitParser implements IParser {
         if (extResult.type === Constants.SYS_UNIT_CURRENCY) {
             result = this.currencyParser.parse(extResult);
         }
- else {
+        else {
             result = this.numberWithUnitParser.parse(extResult);
         }
 

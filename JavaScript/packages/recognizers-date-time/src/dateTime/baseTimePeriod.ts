@@ -27,8 +27,8 @@ export class BaseTimePeriodExtractor implements IDateTimeExtractor {
 
     extract(source: string, refDate: Date): ExtractResult[] {
         if (!refDate) {
-refDate = new Date();
-}
+            refDate = new Date();
+        }
         let referenceDate = refDate;
 
         let tokens: Token[] = new Array<Token>()
@@ -122,7 +122,7 @@ refDate = new Date();
 
             ers = ers.sort((x, y) => (x.start - y.start));
         }
-        
+
         // merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"
         let idx = 0;
         while (idx < ers.length - 1) {
@@ -160,7 +160,7 @@ refDate = new Date();
 
                 // handle "between"
                 let beforeStr = text.substring(0, periodBegin).trim().toLowerCase();
-                let betweenIndex = this.config.getBetweenTokenIndex(beforeStr, );
+                let betweenIndex = this.config.getBetweenTokenIndex(beforeStr);
                 if (betweenIndex.matched) {
                     periodBegin = betweenIndex.index;
                     ret.push(new Token(periodBegin, periodEnd));
@@ -288,7 +288,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                     if (!endHour) {
                         endHour = Number.parseInt(hourStr, 10);
                     }
-        
+
                     // parse "pm"
                     let leftDesc = matches[0].groups("leftDesc").value;
                     let rightDesc = matches[0].groups("rightDesc").value;
@@ -302,54 +302,54 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                         let rightPmValid = !StringUtility.isNullOrEmpty(rightDesc) &&
                             RegExpUtility.getMatches(this.config.utilityConfiguration.pmDescRegex, rightDesc.toLowerCase()).length;
                         if (!StringUtility.isNullOrEmpty(amStr) || rightAmValid) {
-        
+
                             if (endHour >= 12) {
                                 endHour -= 12;
                             }
-        
+
                             if (beginHour >= 12 && beginHour - 12 < endHour) {
                                 beginHour -= 12;
                             }
-        
+
                             // Resolve case like "11 to 3am"
                             if (beginHour < 12 && beginHour > endHour) {
                                 beginHour += 12;
                             }
-        
+
                             isValid = true;
                         }
                         else if (!StringUtility.isNullOrEmpty(pmStr) || rightPmValid) {
-                            
+
                             if (endHour < 12) {
                                 endHour += 12;
                             }
-        
+
                             // Resolve case like "11 to 3pm"
                             if (beginHour + 12 < endHour) {
                                 beginHour += 12;
                             }
-        
+
                             isValid = true;
                         }
                     }
-        
+
                     if (isValid) {
                         let beginStr = "T" + DateTimeFormatUtil.toString(beginHour, 2);
                         let endStr = "T" + DateTimeFormatUtil.toString(endHour, 2);
-        
+
                         if (beginHour >= endHour) {
                             endHour += 24;
                         }
-        
+
                         ret.timex = `(${beginStr},${endStr},PT${endHour - beginHour}H)`;
-        
+
                         ret.futureValue = ret.pastValue = {
                             item1: new Date(year, month, day, beginHour, 0, 0),
                             item2: new Date(year, month, day, endHour, 0, 0)
                         };
-        
+
                         ret.success = true;
-        
+
                         return ret;
                     }
                 }
@@ -357,7 +357,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
         }
         return ret;
     }
-    
+
     private parseSpecificTimeCases(source: string, reference: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let year = reference.getFullYear();
@@ -395,7 +395,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
             if (this.config.numbers.has(hourStr)) {
                 beginHour = this.config.numbers.get(hourStr);
             }
- else {
+            else {
                 beginHour = parseInt(hourStr, 10);
             }
 
@@ -404,7 +404,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
             if (this.config.numbers.has(hourStr)) {
                 endHour = this.config.numbers.get(hourStr);
             }
- else {
+            else {
                 endHour = parseInt(hourStr, 10);
             }
 
@@ -419,28 +419,28 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                 let minuteCapture = match.groups('min').captures[i];
 
                 let minuteCaptureIndex = source.indexOf(minuteCapture, lastGroupIndex);
-                
+
                 if (minuteCaptureIndex >= time1StartIndex && minuteCaptureIndex + minuteCapture.length <= time1EndIndex) {
                     beginMinute = parseInt(minuteCapture, 10);
                 }
- else if (minuteCaptureIndex >= time2StartIndex && minuteCaptureIndex + minuteCapture.length <= time2EndIndex) {
+                else if (minuteCaptureIndex >= time2StartIndex && minuteCaptureIndex + minuteCapture.length <= time2EndIndex) {
                     endMinute = parseInt(minuteCapture, 10);
                 }
                 lastGroupIndex = minuteCaptureIndex + 1;
             }
 
             lastGroupIndex = 0;
-            
+
             // Get beginSecond (if exists) and endSecond (if exists)
             for (let i = 0; i < match.groups('sec').captures.length; i++) {
                 let secondCapture = match.groups('sec').captures[i];
 
                 let secondCaptureIndex = source.indexOf(secondCapture, lastGroupIndex);
-                
+
                 if (secondCaptureIndex >= time1StartIndex && secondCaptureIndex + secondCapture.length <= time1EndIndex) {
                     beginSecond = parseInt(secondCapture, 10);
                 }
- else if (secondCaptureIndex >= time2StartIndex && secondCaptureIndex + secondCapture.length <= time2EndIndex) {
+                else if (secondCaptureIndex >= time2StartIndex && secondCaptureIndex + secondCapture.length <= time2EndIndex) {
                     endSecond = parseInt(secondCapture, 10);
                 }
                 lastGroupIndex = secondCaptureIndex + 1;
@@ -451,7 +451,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
             // Get leftDesc (if exists) and rightDesc (if exists)
             let leftDesc = match.groups('leftDesc').value;
             let rightDesc = match.groups('rightDesc').value;
-            
+
             for (let i = 0; i < match.groups('desc').captures.length; i++) {
                 let descCapture = match.groups('desc').captures[i];
 
@@ -460,7 +460,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                 if (descCaptureIndex >= time1StartIndex && descCaptureIndex + descCapture.length <= time1EndIndex && StringUtility.isNullOrEmpty(leftDesc)) {
                     leftDesc = descCapture;
                 }
- else if (descCaptureIndex >= time2StartIndex && descCaptureIndex + descCapture.length <= time2EndIndex && StringUtility.isNullOrEmpty(rightDesc)) {
+                else if (descCaptureIndex >= time2StartIndex && descCaptureIndex + descCapture.length <= time2EndIndex && StringUtility.isNullOrEmpty(rightDesc)) {
                     rightDesc = descCapture;
                 }
 
@@ -484,7 +484,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                         beginDateTime = DateUtils.addHours(beginDateTime, -12);
                     }
                 }
- else if (hasLeftPm) {
+                else if (hasLeftPm) {
                     if (beginHour < 12) {
                         beginDateTime = DateUtils.addHours(beginDateTime, 12);
                     }
@@ -495,25 +495,25 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                         endDateTime = DateUtils.addHours(endDateTime, -12);
                     }
                 }
- else if (hasRightPm) {
+                else if (hasRightPm) {
                     if (endHour < 12) {
                         endDateTime = DateUtils.addHours(endDateTime, 12);
                     }
                 }
             }
- else if (hasLeft || hasRight) {
+            else if (hasLeft || hasRight) {
                 if (hasLeftAm) {
                     if (beginHour >= 12) {
                         beginDateTime = DateUtils.addHours(beginDateTime, -12);
                     }
-                    
+
                     if (endHour < 12) {
                         if (endDateTime < beginDateTime) {
                             endDateTime = DateUtils.addHours(endDateTime, 12);
                         }
                     }
                 }
- else if (hasLeftPm) {
+                else if (hasLeftPm) {
                     if (beginHour < 12) {
                         beginDateTime = DateUtils.addHours(beginDateTime, 12);
                     }
@@ -524,7 +524,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                             if (span >= 12) {
                                 endDateTime = DateUtils.addHours(endDateTime, 24);
                             }
- else {
+                            else {
                                 endDateTime = DateUtils.addHours(endDateTime, 12);
                             }
                         }
@@ -542,7 +542,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                         }
                     }
                 }
- else if (hasRightPm) {
+                else if (hasRightPm) {
                     if (endHour < 12) {
                         endDateTime = DateUtils.addHours(endDateTime, 12);
                     }
@@ -551,7 +551,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                         if (endDateTime.getTime() < beginDateTime.getTime()) {
                             beginDateTime = DateUtils.addHours(beginDateTime, -12);
                         }
- else {
+                        else {
                             let span = DateUtils.totalHoursFloor(endDateTime, beginDateTime);
                             if (span > 12) {
                                 beginDateTime = DateUtils.addHours(beginDateTime, 12);
@@ -560,12 +560,12 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                     }
                 }
             }
- else if (!hasLeft && !hasRight && beginHour <= 12 && endHour <= 12) {
+            else if (!hasLeft && !hasRight && beginHour <= 12 && endHour <= 12) {
                 if (beginHour > endHour) {
                     if (beginHour === 12) {
                         beginDateTime = DateUtils.addHours(beginDateTime, -12);
                     }
- else {
+                    else {
                         endDateTime = DateUtils.addHours(endDateTime, 12);
                     }
                 }
@@ -700,10 +700,10 @@ export class BaseTimePeriodParser implements IDateTimeParser {
 
         let hours = DateUtils.totalHoursFloor(endTime, beginTime);
         let minutes = DateUtils.totalMinutesFloor(endTime, beginTime) % 60;
-        ret.timex = `(${pr1.timexStr},${pr2.timexStr},PT` + 
-                    (hours > 0 ? `${hours}H` : '') +
-                    (minutes > 0 ? `${minutes}M` : '') + 
-                    ')';
+        ret.timex = `(${pr1.timexStr},${pr2.timexStr},PT` +
+            (hours > 0 ? `${hours}H` : '') +
+            (minutes > 0 ? `${minutes}M` : '') +
+            ')';
         ret.futureValue = ret.pastValue = { item1: beginTime, item2: endTime };
         ret.success = true;
 

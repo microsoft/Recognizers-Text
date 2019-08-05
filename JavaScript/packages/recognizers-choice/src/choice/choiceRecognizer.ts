@@ -17,7 +17,7 @@ export enum ChoiceOptions {
 }
 
 export function recognizeBoolean(query: string, culture: string, options: ChoiceOptions = ChoiceOptions.None,
-        fallbackToDefaultCulture: boolean = true): ModelResult[] {
+    fallbackToDefaultCulture: boolean = true): ModelResult[] {
     let recognizer = new ChoiceRecognizer(culture, options);
     let model = recognizer.getBooleanModel(culture, fallbackToDefaultCulture);
     return model.parse(query);

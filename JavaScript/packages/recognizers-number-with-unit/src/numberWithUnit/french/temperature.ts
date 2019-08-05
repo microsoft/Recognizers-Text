@@ -30,7 +30,7 @@ export class FrenchTemperatureExtractorConfiguration extends FrenchNumberWithUni
 
 export class FrenchTemperatureParserConfiguration extends FrenchNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.French);
         }
 

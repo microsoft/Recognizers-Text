@@ -47,8 +47,8 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
 
     extract(source: string, refDate: Date): ExtractResult[] {
         if (!refDate) {
-refDate = new Date();
-}
+            refDate = new Date();
+        }
         let referenceDate = refDate;
 
         let result: ExtractResult[] = new Array<ExtractResult>();
@@ -115,8 +115,8 @@ refDate = new Date();
     protected addTo(destination: ExtractResult[], source: ExtractResult[], text: string) {
         source.forEach(value => {
             if (this.options === DateTimeOptions.SkipFromToMerge && this.shouldSkipFromMerge(value)) {
-return;
-}
+                return;
+            }
 
             let isFound = false;
             let overlapIndexes = new Array<number>();
@@ -130,7 +130,7 @@ return;
                         }
                         overlapIndexes.push(index);
                     }
- else {
+                    else {
                         return;
                     }
                 }
@@ -138,7 +138,7 @@ return;
             if (!isFound) {
                 destination.push(value);
             }
- else if (overlapIndexes.length) {
+            else if (overlapIndexes.length) {
                 let tempDst = new Array<ExtractResult>();
                 for (let i = 0; i < destination.length; i++) {
                     if (overlapIndexes.indexOf(i) === -1) {
@@ -183,7 +183,7 @@ return;
                 er.text = source.substr(er.start, er.length);
                 isSuccess = true;
             }
-            if(!isSuccess){
+            if (!isSuccess) {
                 let after = this.hasTokenIndex(beforeStr.trim(), this.config.afterRegex);
                 if (after.matched) {
                     let modLength = beforeStr.length - after.index;
@@ -193,7 +193,7 @@ return;
                     isSuccess = true;
                 }
             }
-            if(!isSuccess){
+            if (!isSuccess) {
                 let since = this.hasTokenIndex(beforeStr.trim(), this.config.sinceRegex);
                 if (since.matched) {
                     let modLength = beforeStr.length - since.index;
@@ -402,20 +402,20 @@ export class BaseMergedParser implements IDateTimeParser {
         else {
             if (hasMod) {
                 if (type === Constants.SYS_DATETIME_DATE) {
-return Constants.SYS_DATETIME_DATEPERIOD;
-}
+                    return Constants.SYS_DATETIME_DATEPERIOD;
+                }
                 if (type === Constants.SYS_DATETIME_TIME) {
-return Constants.SYS_DATETIME_TIMEPERIOD;
-}
+                    return Constants.SYS_DATETIME_TIMEPERIOD;
+                }
                 if (type === Constants.SYS_DATETIME_DATETIME) {
-return Constants.SYS_DATETIME_DATETIMEPERIOD;
-}
+                    return Constants.SYS_DATETIME_DATETIMEPERIOD;
+                }
             }
         }
         return type;
     }
 
-    protected determineSourceEntityType(sourceType: string, newType: string, hasMod: boolean): string|null {
+    protected determineSourceEntityType(sourceType: string, newType: string, hasMod: boolean): string | null {
         if (!hasMod) {
             return null;
         }
@@ -449,8 +449,8 @@ return Constants.SYS_DATETIME_DATETIMEPERIOD;
 
     protected dateTimeResolution(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean, hasSince: boolean): { [s: string]: StringMap[]; } {
         if (!slot) {
-return null;
-}
+            return null;
+        }
 
         let result = new Map<string, any>();
         let resolutions = new Array<StringMap>();
@@ -462,8 +462,8 @@ return null;
 
         let value: DateTimeResolutionResult = slot.value;
         if (!value) {
-return null;
-}
+            return null;
+        }
 
         let isLunar = value.isLunar;
         let mod = value.mod;
@@ -486,23 +486,23 @@ return null;
         let pastValues = Array.from(this.getValues(past)).sort();
         if (isEqual(futureValues, pastValues)) {
             if (pastValues.length > 0) {
-this.addResolutionFieldsAny(result, Constants.ResolveKey, past);
-}
+                this.addResolutionFieldsAny(result, Constants.ResolveKey, past);
+            }
         }
- else {
+        else {
             if (pastValues.length > 0) {
-this.addResolutionFieldsAny(result, Constants.ResolveToPastKey, past);
-}
+                this.addResolutionFieldsAny(result, Constants.ResolveToPastKey, past);
+            }
             if (futureValues.length > 0) {
-this.addResolutionFieldsAny(result, Constants.ResolveToFutureKey, future);
-}
+                this.addResolutionFieldsAny(result, Constants.ResolveToFutureKey, future);
+            }
         }
 
         if (comment && comment === 'ampm') {
             if (result.has('resolve')) {
                 this.resolveAMPM(result, 'resolve');
             }
- else {
+            else {
                 this.resolveAMPM(result, 'resolveToPast');
                 this.resolveAMPM(result, 'resolveToFuture');
             }
@@ -601,17 +601,17 @@ this.addResolutionFieldsAny(result, Constants.ResolveToFutureKey, future);
         let key = TimeTypeConstants.VALUE;
         let value = resolutions[type];
         if (!value || this.dateMinValue === value || this.dateTimeMinValue === value) {
-return;
-}
+            return;
+        }
 
         if (!StringUtility.isNullOrEmpty(mod)) {
             if (mod === TimeTypeConstants.beforeMod) {
                 key = TimeTypeConstants.END;
             }
- else if (mod === TimeTypeConstants.afterMod) {
+            else if (mod === TimeTypeConstants.afterMod) {
                 key = TimeTypeConstants.START;
             }
- else if (mod === TimeTypeConstants.sinceMod) {
+            else if (mod === TimeTypeConstants.sinceMod) {
                 key = TimeTypeConstants.START;
             }
         }
@@ -630,7 +630,7 @@ return;
                 if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end)) {
                     result[TimeTypeConstants.END] = start;
                 }
- else {
+                else {
                     result[TimeTypeConstants.END] = end;
                 }
                 return;
@@ -643,7 +643,7 @@ return;
                 if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end)) {
                     result[TimeTypeConstants.START] = end;
                 }
- else {
+                else {
                     result[TimeTypeConstants.START] = start;
                 }
                 return;
@@ -655,8 +655,8 @@ return;
         }
 
         if (StringUtility.isNullOrEmpty(start) || StringUtility.isNullOrEmpty(end)) {
-return;
-}
+            return;
+        }
 
         result[TimeTypeConstants.START] = start;
         result[TimeTypeConstants.END] = end;
@@ -668,13 +668,13 @@ return;
 
     protected resolveAMPM(valuesMap: Map<string, any>, keyName: string) {
         if (!valuesMap.has(keyName)) {
-return;
-}
+            return;
+        }
 
         let resolution: StringMap = valuesMap.get(keyName);
         if (!valuesMap.has('timex')) {
-return;
-}
+            return;
+        }
 
         let timex = valuesMap.get('timex');
         valuesMap.delete(keyName);
@@ -695,11 +695,11 @@ return;
 
             case Constants.SYS_DATETIME_TIMEPERIOD:
                 if (resolution.hasOwnProperty(TimeTypeConstants.START)) {
-resolutionPm[TimeTypeConstants.START] = DateTimeFormatUtil.toPm(resolution[TimeTypeConstants.START]);
-}
+                    resolutionPm[TimeTypeConstants.START] = DateTimeFormatUtil.toPm(resolution[TimeTypeConstants.START]);
+                }
                 if (resolution.hasOwnProperty(TimeTypeConstants.END)) {
-resolutionPm[TimeTypeConstants.END] = DateTimeFormatUtil.toPm(resolution[TimeTypeConstants.END]);
-}
+                    resolutionPm[TimeTypeConstants.END] = DateTimeFormatUtil.toPm(resolution[TimeTypeConstants.END]);
+                }
                 resolutionPm['timex'] = DateTimeFormatUtil.allStringToPm(timex);
                 break;
 

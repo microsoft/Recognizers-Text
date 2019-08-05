@@ -18,7 +18,7 @@ export abstract class AbstractSequenceModel implements IModel {
             let extractResults = this.extractor.extract(query);
             parseResults = extractResults.map(r => this.parser.parse(r));
         }
-        catch(err) {
+        catch (err) {
             // Nothing to do. Exceptions in result process should not affect other extracted entities.
             // No result.
         }
@@ -33,7 +33,7 @@ export abstract class AbstractSequenceModel implements IModel {
                     typeName: this.modelTypeName
                 }));
         }
-   }
+    }
 }
 
 export class PhoneNumberModel extends AbstractSequenceModel {
@@ -41,12 +41,12 @@ export class PhoneNumberModel extends AbstractSequenceModel {
 
     parse(query: string): ModelResult[] {
         let parseResults = new Array<ParseResult>();
-        
+
         try {
             let extractResults = this.extractor.extract(query);
             parseResults = extractResults.map(r => this.parser.parse(r));
         }
-        catch(err) {
+        catch (err) {
             // Nothing to do. Exceptions in result process should not affect other extracted entities.
             // No result.
         }
@@ -77,7 +77,7 @@ export class IpAddressModel extends AbstractSequenceModel {
             let extractResults = this.extractor.extract(query);
             parseResults = extractResults.map(r => this.parser.parse(r));
         }
-        catch(err) {
+        catch (err) {
             // Nothing to do. Exceptions in result process should not affect other extracted entities.
             // No result.
         }
@@ -87,9 +87,9 @@ export class IpAddressModel extends AbstractSequenceModel {
                 .map(o => ({
                     start: o.start,
                     end: o.start + o.length - 1,
-                    resolution: { 
+                    resolution: {
                         "value": o.resolutionStr,
-                        "type": o.data 
+                        "type": o.data
                     },
                     text: o.text,
                     typeName: this.modelTypeName
@@ -119,12 +119,12 @@ export class GUIDModel extends AbstractSequenceModel {
 
     parse(query: string): ModelResult[] {
         let parseResults = new Array<ParseResult>();
-        
+
         try {
             let extractResults = this.extractor.extract(query);
             parseResults = extractResults.map(r => this.parser.parse(r));
         }
-        catch(err) {
+        catch (err) {
             // Nothing to do. in result process should not affect other extracted entities.
             // No result.
         }

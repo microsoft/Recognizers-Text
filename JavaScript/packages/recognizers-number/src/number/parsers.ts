@@ -66,11 +66,11 @@ export class BaseNumberParser implements IParser {
             if (this.arabicNumberRegex.test(extResult.text)) {
                 extra = "Num";
             }
- else {
+            else {
                 extra = this.config.langMarker;
             }
         }
-        
+
         // Resolve symbol prefix
         let isNegative = false;
         let matchNegative = extResult.text.match(this.config.negativeNumberSignRegex);
@@ -209,12 +209,12 @@ export class BaseNumberParser implements IParser {
             let splitIndex = fracWords.length - 1;
             let currentValue = this.config.resolveCompositeNumber(fracWords[splitIndex]);
             let roundValue = 1;
-            
-            if (fracWords.length == 1){
+
+            if (fracWords.length == 1) {
                 result.value = 1 / this.getIntValue(fracWords);
                 return result;
             }
-            
+
             for (splitIndex = fracWords.length - 2; splitIndex >= 0; splitIndex--) {
 
                 if (this.config.writtenFractionSeparatorTexts.indexOf(fracWords[splitIndex]) > -1 ||
@@ -598,7 +598,7 @@ export class BaseNumberParser implements IParser {
         // "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
         let cultureRegex = RegExpUtility.getSafeRegExp(String.raw`^(en|es|fr)(-)?\b`, "is");
 
-        return (ch == this.config.nonDecimalSeparatorChar && !(distance <= decimalLength && (cultureRegex.exec(culture.code) !== null)) );
+        return (ch == this.config.nonDecimalSeparatorChar && !(distance <= decimalLength && (cultureRegex.exec(culture.code) !== null)));
     }
 
     protected getDigitalValue(digitsStr: string, power: number): number {
@@ -612,7 +612,7 @@ export class BaseNumberParser implements IParser {
         let calStack = new Array<BigNumber>();
 
         for (let i = 0; i < digitsStr.length; i++) {
-            
+
             let ch = digitsStr[i];
             let skippableNonDecimal = this.skipNonDecimalSeparator(ch, strLength - i, this.config.cultureInfo);
 

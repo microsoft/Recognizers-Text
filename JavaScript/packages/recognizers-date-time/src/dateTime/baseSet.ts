@@ -7,7 +7,7 @@ import { BaseDateExtractor, BaseDateParser } from "./baseDate";
 import { BaseDatePeriodExtractor, BaseDatePeriodParser } from "./baseDatePeriod";
 import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "./baseTimePeriod";
 import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser } from "./baseDateTime";
-import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser} from "./baseDateTimePeriod";
+import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "./baseDateTimePeriod";
 import { Token, DateTimeResolutionResult, StringMap } from "./utilities";
 
 export interface ISetExtractorConfiguration {
@@ -38,21 +38,21 @@ export class BaseSetExtractor implements IDateTimeExtractor {
 
     extract(source: string, refDate: Date): ExtractResult[] {
         if (!refDate) {
-refDate = new Date();
-}
+            refDate = new Date();
+        }
         let referenceDate = refDate;
 
         let tokens: Token[] = new Array<Token>()
-        .concat(this.matchEachUnit(source))
-        .concat(this.matchPeriodic(source))
-        .concat(this.matchEachDuration(source, referenceDate))
-        .concat(this.timeEveryday(source, referenceDate))
-        .concat(this.matchEach(this.config.dateExtractor, source, referenceDate))
-        .concat(this.matchEach(this.config.timeExtractor, source, referenceDate))
-        .concat(this.matchEach(this.config.dateTimeExtractor, source, referenceDate))
-        .concat(this.matchEach(this.config.datePeriodExtractor, source, referenceDate))
-        .concat(this.matchEach(this.config.timePeriodExtractor, source, referenceDate))
-        .concat(this.matchEach(this.config.dateTimePeriodExtractor, source, referenceDate));
+            .concat(this.matchEachUnit(source))
+            .concat(this.matchPeriodic(source))
+            .concat(this.matchEachDuration(source, referenceDate))
+            .concat(this.timeEveryday(source, referenceDate))
+            .concat(this.matchEach(this.config.dateExtractor, source, referenceDate))
+            .concat(this.matchEach(this.config.timeExtractor, source, referenceDate))
+            .concat(this.matchEach(this.config.dateTimeExtractor, source, referenceDate))
+            .concat(this.matchEach(this.config.datePeriodExtractor, source, referenceDate))
+            .concat(this.matchEach(this.config.timePeriodExtractor, source, referenceDate))
+            .concat(this.matchEach(this.config.dateTimePeriodExtractor, source, referenceDate));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
@@ -77,8 +77,8 @@ refDate = new Date();
         let ret = [];
         this.config.durationExtractor.extract(source, refDate).forEach(er => {
             if (RegExpUtility.getMatches(this.config.lastRegex, er.text).length > 0) {
-return;
-}
+                return;
+            }
             let beforeStr = source.substr(0, er.start);
             let matches = RegExpUtility.getMatches(this.config.eachPrefixRegex, beforeStr);
             if (matches && matches.length > 0) {
@@ -99,7 +99,7 @@ return;
                     ret.push(new Token(beforeMatches[0].index, er.start + er.length));
                 }
             }
- else {
+            else {
                 let afterMatches = RegExpUtility.getMatches(this.config.eachDayRegex, afterStr);
                 if (afterMatches && afterMatches.length > 0) {
                     ret.push(new Token(er.start, er.start + er.length + afterMatches[0].length));
@@ -171,8 +171,8 @@ export class BaseSetParser implements IDateTimeParser {
 
     parse(er: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
         if (!referenceDate) {
-referenceDate = new Date();
-}
+            referenceDate = new Date();
+        }
         let value = null;
         if (er.type === BaseSetParser.ParserName) {
             let innerResult = this.parseEachUnit(er.text);
@@ -222,8 +222,8 @@ referenceDate = new Date();
 
         let ret = new DateTimeParseResult(er);
         ret.value = value,
-        ret.timexStr = value === null ? "" : value.timex,
-        ret.resolutionStr = "";
+            ret.timexStr = value === null ? "" : value.timex,
+            ret.resolutionStr = "";
 
         return ret;
     }

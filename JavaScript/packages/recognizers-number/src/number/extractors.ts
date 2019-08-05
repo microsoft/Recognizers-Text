@@ -17,7 +17,7 @@ export abstract class BaseNumberExtractor implements IExtractor {
 
     protected extractType: string = "";
 
-    protected negativeNumberTermsRegex : RegExp = null;
+    protected negativeNumberTermsRegex: RegExp = null;
 
     extract(source: string): ExtractResult[] {
         if (!source || source.trim().length === 0) {

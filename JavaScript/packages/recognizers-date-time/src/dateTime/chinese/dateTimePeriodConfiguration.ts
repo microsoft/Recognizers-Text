@@ -86,15 +86,15 @@ export class ChineseDateTimePeriodExtractor extends BaseDateTimePeriodExtractor 
 
     extract(source: string, refDate: Date): ExtractResult[] {
         if (!refDate) {
-refDate = new Date();
-}
+            refDate = new Date();
+        }
         let referenceDate = refDate;
 
         let tokens: Token[] = new Array<Token>()
-        .concat(this.mergeDateAndTimePeriod(source, referenceDate))
-        .concat(this.mergeTwoTimePoints(source, referenceDate))
-        .concat(this.matchNubmerWithUnit(source))
-        .concat(this.matchNight(source, referenceDate));
+            .concat(this.mergeDateAndTimePeriod(source, referenceDate))
+            .concat(this.mergeTwoTimePoints(source, referenceDate))
+            .concat(this.matchNubmerWithUnit(source))
+            .concat(this.matchNight(source, referenceDate));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
@@ -315,33 +315,33 @@ class ChineseDateTimePeriodParserConfiguration implements IDateTimePeriodParserC
                 timeStr = 'TEV';
                 beginHour = 16;
                 endHour = 20;
-            break;
+                break;
             case '今早':
             case '今晨':
                 swift = 0;
                 timeStr = 'TMO';
                 beginHour = 8;
                 endHour = 12;
-            break;
+                break;
             case '明晚':
                 swift = 1;
                 timeStr = 'TEV';
                 beginHour = 16;
                 endHour = 20;
-            break;
+                break;
             case '明早':
             case '明晨':
                 swift = 1;
                 timeStr = 'TMO';
                 beginHour = 8;
                 endHour = 12;
-            break;
+                break;
             case '昨晚':
                 swift = -1;
                 timeStr = 'TEV';
                 beginHour = 16;
                 endHour = 20;
-            break;
+                break;
             default:
                 return {
                     timeStr: '',
@@ -394,8 +394,8 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
 
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
         if (!referenceDate) {
-referenceDate = new Date();
-}
+            referenceDate = new Date();
+        }
         let resultValue;
         if (extractorResult.type === this.parserName) {
             let source = extractorResult.text.trim().toLowerCase();
@@ -433,8 +433,8 @@ referenceDate = new Date();
         let erDate = this.config.dateExtractor.extract(text, referenceTime).pop();
         let erTimePeriod = this.config.timePeriodExtractor.extract(text, referenceTime).pop();
         if (!erDate || !erTimePeriod) {
-return result;
-}
+            return result;
+        }
 
         let prDate = this.config.dateParser.parse(erDate, referenceTime);
         let prTimePeriod = this.config.timePeriodParser.parse(erTimePeriod, referenceTime);
@@ -478,29 +478,29 @@ return result;
             prs = this.getTwoPoints(datetimeErs[0], datetimeErs[1], this.config.dateTimeParser, this.config.dateTimeParser, referenceTime);
             bothHasDate = true;
         }
- else if (datetimeErs.length === 1 && timeErs.length === 2) {
+        else if (datetimeErs.length === 1 && timeErs.length === 2) {
             if (ExtractResult.isOverlap(datetimeErs[0], timeErs[0])) {
                 prs = this.getTwoPoints(datetimeErs[0], timeErs[1], this.config.dateTimeParser, this.config.timeParser, referenceTime);
                 beginHasDate = true;
             }
- else {
+            else {
                 prs = this.getTwoPoints(timeErs[0], datetimeErs[0], this.config.timeParser, this.config.dateTimeParser, referenceTime);
                 endHasDate = true;
             }
         }
- else if (datetimeErs.length === 1 && timeErs.length === 1) {
+        else if (datetimeErs.length === 1 && timeErs.length === 1) {
             if (timeErs[0].start < datetimeErs[0].start) {
                 prs = this.getTwoPoints(timeErs[0], datetimeErs[0], this.config.timeParser, this.config.dateTimeParser, referenceTime);
                 endHasDate = true;
             }
- else {
+            else {
                 prs = this.getTwoPoints(datetimeErs[0], timeErs[0], this.config.dateTimeParser, this.config.timeParser, referenceTime);
                 beginHasDate = true;
             }
         }
         if (!prs || !prs.begin.value || !prs.end.value) {
-return result;
-}
+            return result;
+        }
 
         let futureBegin: Date = prs.begin.value.futureValue;
         let futureEnd: Date = prs.end.value.futureValue;
@@ -508,11 +508,11 @@ return result;
         let pastEnd: Date = prs.end.value.pastValue;
 
         if (futureBegin.getTime() > futureEnd.getTime()) {
-futureBegin = pastBegin;
-}
+            futureBegin = pastBegin;
+        }
         if (pastEnd.getTime() < pastBegin.getTime()) {
-pastEnd = futureEnd;
-}
+            pastEnd = futureEnd;
+        }
 
         let rightTime = DateUtils.safeCreateFromMinValueWithDateAndTime(referenceTime);
         let leftTime = DateUtils.safeCreateFromMinValueWithDateAndTime(referenceTime);
@@ -521,13 +521,13 @@ pastEnd = futureEnd;
             rightTime = DateUtils.safeCreateFromMinValueWithDateAndTime(futureEnd);
             leftTime = DateUtils.safeCreateFromMinValueWithDateAndTime(futureBegin);
         }
- else if (beginHasDate){
+        else if (beginHasDate) {
             // TODO: Handle "明天下午两点到五点"
             futureEnd = DateUtils.safeCreateFromMinValueWithDateAndTime(futureBegin, futureEnd);
             pastEnd = DateUtils.safeCreateFromMinValueWithDateAndTime(pastBegin, pastEnd);
             leftTime = DateUtils.safeCreateFromMinValueWithDateAndTime(futureBegin);
         }
- else if (endHasDate) {
+        else if (endHasDate) {
             // TODO: Handle "明天下午两点到五点"
             futureBegin = DateUtils.safeCreateFromMinValueWithDateAndTime(futureEnd, futureBegin);
             pastBegin = DateUtils.safeCreateFromMinValueWithDateAndTime(pastEnd, pastBegin);
@@ -606,42 +606,42 @@ pastEnd = futureEnd;
             beginHour = 8;
             endHour = 12;
         }
- else if (RegExpUtility.isMatch(this.TMIRegex, source)) {
+        else if (RegExpUtility.isMatch(this.TMIRegex, source)) {
             timeStr = 'TMI';
             beginHour = 11;
             endHour = 13;
         }
-else if (RegExpUtility.isMatch(this.TAFRegex, source)) {
+        else if (RegExpUtility.isMatch(this.TAFRegex, source)) {
             timeStr = 'TAF';
             beginHour = 12;
             endHour = 16;
         }
- else if (RegExpUtility.isMatch(this.TEVRegex, source)) {
+        else if (RegExpUtility.isMatch(this.TEVRegex, source)) {
             timeStr = 'TEV';
             beginHour = 16;
             endHour = 20;
         }
- else if (RegExpUtility.isMatch(this.TNIRegex, source)) {
+        else if (RegExpUtility.isMatch(this.TNIRegex, source)) {
             timeStr = 'TNI';
             beginHour = 20;
             endHour = 23;
             endMin = 59;
         }
- else {
+        else {
             return result;
         }
 
         // handle Date followed by morning, afternoon
         let timeMatch = RegExpUtility.getMatches(this.timeOfDayRegex, source).pop();
         if (!timeMatch) {
-return result;
-}
+            return result;
+        }
 
         let beforeStr = source.substr(0, timeMatch.index).trim();
         let erDate = this.config.dateExtractor.extract(beforeStr, referenceTime).pop();
         if (!erDate || erDate.length !== beforeStr.length) {
-return result;
-}
+            return result;
+        }
 
         let prDate = this.config.dateParser.parse(erDate, referenceTime);
         let futureDate: Date = prDate.value.futureValue;
@@ -664,7 +664,7 @@ return result;
     protected parseNumberWithUnit(text: string, referenceTime: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let ers = this.cardinalExtractor.extract(text);
-        
+
         if (ers.length === 1) {
             let er = ers[0];
 
@@ -673,12 +673,12 @@ return result;
             if (sourceUnit.startsWith('个')) {
                 sourceUnit = sourceUnit.substr(1);
             }
-    
+
             let beforeStr = text.substr(0, er.start).trim().toLowerCase();
-    
+
             return this.parseCommonDurationWithUnit(beforeStr, sourceUnit, pr.resolutionStr, pr.value, referenceTime);
         }
-        
+
         // handle "last hour"
         let match = RegExpUtility.getMatches(this.unitRegex, text).pop();
 
@@ -696,8 +696,8 @@ return result;
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.relativeTimeUnitRegex, text).pop();
         if (!match) {
-return result;
-}
+            return result;
+        }
 
         let sourceUnit = match.groups('unit').value.toLowerCase();
         let beforeStr = text.substr(0, match.index).trim().toLowerCase();
@@ -709,8 +709,8 @@ return result;
         let result = new DateTimeResolutionResult();
 
         if (!this.config.unitMap.has(sourceUnit)) {
-return result;
-}
+            return result;
+        }
 
         let unitStr = this.config.unitMap.get(sourceUnit);
 
@@ -721,25 +721,25 @@ return result;
         let hasFuture = futureMatch && futureMatch.length === beforeStr.length;
 
         if (!hasPast && !hasFuture) {
-return result;
-}
+            return result;
+        }
 
         let beginDate = new Date(referenceDate);
         let endDate = new Date(referenceDate);
 
-        switch(unitStr) {
+        switch (unitStr) {
             case 'H':
                 beginDate = hasPast ? DateUtils.addHours(beginDate, -swift) : beginDate;
                 endDate = hasFuture ? DateUtils.addHours(endDate, swift) : endDate;
-            break;
+                break;
             case 'M':
                 beginDate = hasPast ? DateUtils.addMinutes(beginDate, -swift) : beginDate;
                 endDate = hasFuture ? DateUtils.addMinutes(endDate, swift) : endDate;
-            break;
+                break;
             case 'S':
                 beginDate = hasPast ? DateUtils.addSeconds(beginDate, -swift) : beginDate;
                 endDate = hasFuture ? DateUtils.addSeconds(endDate, swift) : endDate;
-            break;
+                break;
             default: return result;
         }
 

@@ -26,7 +26,7 @@ export class PortugueseAgeExtractorConfiguration extends PortugueseNumberWithUni
 
 export class PortugueseAgeParserConfiguration extends PortugueseNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.Portuguese);
         }
 

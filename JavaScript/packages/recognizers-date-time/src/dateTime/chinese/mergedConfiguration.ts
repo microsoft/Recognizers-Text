@@ -70,8 +70,8 @@ export class ChineseMergedExtractor extends BaseMergedExtractor {
 
     extract(source: string, refDate: Date): ExtractResult[] {
         if (!refDate) {
-refDate = new Date();
-}
+            refDate = new Date();
+        }
         let referenceDate = refDate;
 
         let result: ExtractResult[] = new Array<ExtractResult>();
@@ -113,7 +113,7 @@ refDate = new Date();
             if (!isFound) {
                 destination.push(er);
             }
- else if (rmIndex >= 0) {
+            else if (rmIndex >= 0) {
                 destination.splice(rmIndex, rmLength);
                 destination.splice(0, destination.length, ...this.moveOverlap(destination, er));
                 destination.splice(rmIndex, 0, er);
@@ -125,7 +125,7 @@ refDate = new Date();
         let duplicated = new Array<number>();
         for (let i = 0; i < destination.length; i++) {
             if (result.text.includes(destination[i].text)
-            && (result.start === destination[i].start || result.start + result.length === destination[i].start + destination[i].length)) {
+                && (result.start === destination[i].start || result.start + result.length === destination[i].start + destination[i].length)) {
                 duplicated.push(i);
             }
         }
@@ -346,8 +346,8 @@ export class ChineseFullMergedParser extends BaseMergedParser {
 
     protected dateTimeResolution(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean, hasSince: boolean = false): { [s: string]: StringMap[]; } {
         if (!slot) {
-return null;
-}
+            return null;
+        }
 
         let result = new Map<string, any>();
         let resolutions = new Array<StringMap>();
@@ -358,8 +358,8 @@ return null;
 
         let value: DateTimeResolutionResult = slot.value;
         if (!value) {
-return null;
-}
+            return null;
+        }
 
         let isLunar = value.isLunar;
         let mod = value.mod;
@@ -381,23 +381,23 @@ return null;
         let pastValues = Array.from(this.getValues(past)).sort();
         if (isEqual(futureValues, pastValues)) {
             if (pastValues.length > 0) {
-this.addResolutionFieldsAny(result, Constants.ResolveKey, past);
-}
+                this.addResolutionFieldsAny(result, Constants.ResolveKey, past);
+            }
         }
- else {
+        else {
             if (pastValues.length > 0) {
-this.addResolutionFieldsAny(result, Constants.ResolveToPastKey, past);
-}
+                this.addResolutionFieldsAny(result, Constants.ResolveToPastKey, past);
+            }
             if (futureValues.length > 0) {
-this.addResolutionFieldsAny(result, Constants.ResolveToFutureKey, future);
-}
+                this.addResolutionFieldsAny(result, Constants.ResolveToFutureKey, future);
+            }
         }
 
         if (comment && comment === 'ampm') {
             if (result.has('resolve')) {
                 this.resolveAMPM(result, 'resolve');
             }
- else {
+            else {
                 this.resolveAMPM(result, 'resolveToPast');
                 this.resolveAMPM(result, 'resolveToFuture');
             }
@@ -439,14 +439,14 @@ this.addResolutionFieldsAny(result, Constants.ResolveToFutureKey, future);
     protected determineDateTimeType(type: string, hasMod: boolean): string {
         if (hasMod) {
             if (type === Constants.SYS_DATETIME_DATE) {
-return Constants.SYS_DATETIME_DATEPERIOD;
-}
+                return Constants.SYS_DATETIME_DATEPERIOD;
+            }
             if (type === Constants.SYS_DATETIME_TIME) {
-return Constants.SYS_DATETIME_TIMEPERIOD;
-}
+                return Constants.SYS_DATETIME_TIMEPERIOD;
+            }
             if (type === Constants.SYS_DATETIME_DATETIME) {
-return Constants.SYS_DATETIME_DATETIMEPERIOD;
-}
+                return Constants.SYS_DATETIME_DATETIMEPERIOD;
+            }
         }
         return type;
     }

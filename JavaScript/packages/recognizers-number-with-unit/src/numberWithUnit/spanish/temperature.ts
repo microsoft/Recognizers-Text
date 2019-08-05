@@ -30,7 +30,7 @@ export class SpanishTemperatureExtractorConfiguration extends SpanishNumberWithU
 
 export class SpanishTemperatureParserConfiguration extends SpanishNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.Spanish);
         }
 

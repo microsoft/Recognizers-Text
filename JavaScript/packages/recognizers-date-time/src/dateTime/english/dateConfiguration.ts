@@ -36,32 +36,32 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor1),
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor3),
 
-            enableDmy?
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5):
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5) :
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4),
 
-            enableDmy?
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4):
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4) :
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5),
 
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor6),
 
-            enableDmy?
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9L):
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9L) :
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7L),
 
-            enableDmy?
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9S):
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9S) :
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7S),
 
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor8),
 
-            enableDmy?
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7L):
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7L) :
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9L),
 
-            enableDmy?
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7S):
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7S) :
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9S),
 
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractorA),
@@ -173,26 +173,26 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
         if (trimmedText === "today") {
             swift = 0;
         }
- else if (trimmedText === "tomorrow" || trimmedText === "tmr") {
+        else if (trimmedText === "tomorrow" || trimmedText === "tmr") {
             swift = 1;
         }
- else if (trimmedText === "yesterday") {
+        else if (trimmedText === "yesterday") {
             swift = -1;
         }
- else if (trimmedText.endsWith("day after tomorrow") ||
+        else if (trimmedText.endsWith("day after tomorrow") ||
             trimmedText.endsWith("day after tmr")) {
             swift = 2;
         }
- else if (trimmedText.endsWith("day before yesterday")) {
+        else if (trimmedText.endsWith("day before yesterday")) {
             swift = -2;
         }
- else if (trimmedText.endsWith("day after")) {
+        else if (trimmedText.endsWith("day after")) {
             swift = 1;
         }
- else if (trimmedText.endsWith("day before")) {
+        else if (trimmedText.endsWith("day before")) {
             swift = -1;
         }
- else if (matches.length) {
+        else if (matches.length) {
             swift = this.getSwift(source);
         }
         return swift;
@@ -210,7 +210,7 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
         if (nextPrefixMatches.length) {
             swift = 1;
         }
- else if (pastPrefixMatches.length) {
+        else if (pastPrefixMatches.length) {
             swift = -1;
         }
         return swift;

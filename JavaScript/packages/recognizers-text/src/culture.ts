@@ -37,14 +37,14 @@ export class Culture {
   }
 
   static mapToNearestLanguage(cultureCode: string): string {
-    if (cultureCode !== undefined) {    
+    if (cultureCode !== undefined) {
       cultureCode = cultureCode.toLowerCase();
       let supportedCultureCodes = Culture.getSupportedCultureCodes();
-      
+
       if (supportedCultureCodes.indexOf(cultureCode) < 0) {
         let culturePrefix = cultureCode.split('-')[0].trim();
 
-        supportedCultureCodes.forEach(function(supportedCultureCode) {
+        supportedCultureCodes.forEach(function (supportedCultureCode) {
           if (supportedCultureCode.startsWith(culturePrefix)) {
             cultureCode = supportedCultureCode;
           }

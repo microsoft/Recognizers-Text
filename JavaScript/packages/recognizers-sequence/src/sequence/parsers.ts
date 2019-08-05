@@ -8,7 +8,7 @@ export class BaseSequenceParser implements IParser {
     }
 }
 
-export class BaseIpParser extends BaseSequenceParser{
+export class BaseIpParser extends BaseSequenceParser {
     parse(extResult: ExtractResult): ParseResult {
         let result = new ParseResult(extResult);
         result.resolutionStr = this.dropLeadingZeros(extResult.text);
@@ -17,13 +17,13 @@ export class BaseIpParser extends BaseSequenceParser{
 
     private dropLeadingZeros(text: string): string {
         let result = "";
-        
+
         let number = "";
-        for(let i = 0; i < text.length; i++) {
+        for (let i = 0; i < text.length; i++) {
             let c = text[i];
             if (c == '.' || c == ':') {
                 if (number != "") {
-                    number = number == "0" ? number : number.replace(/^(0*)/,"");
+                    number = number == "0" ? number : number.replace(/^(0*)/, "");
                     number = number == "" ? "0" : number;
                     result += number;
                 }
@@ -33,7 +33,7 @@ export class BaseIpParser extends BaseSequenceParser{
             else {
                 number += c.toString();
                 if (i == text.length - 1) {
-                    number = number == "0" ? number : number.replace(/^(0*)/,"");
+                    number = number == "0" ? number : number.replace(/^(0*)/, "");
                     number = number == "" ? "0" : number;
                     result += number;
                 }

@@ -10,13 +10,13 @@ export class JapaneseNumberParserConfiguration implements ICJKNumberParserConfig
     readonly ordinalNumberMap: ReadonlyMap<string, number>;
     readonly roundNumberMap: ReadonlyMap<string, number>;
     readonly cultureInfo: CultureInfo;
-    readonly digitalNumberRegex: RegExp; 
+    readonly digitalNumberRegex: RegExp;
     readonly fractionMarkerToken: string;
     readonly halfADozenRegex: RegExp;
     readonly halfADozenText: string;
     readonly langMarker: string;
     readonly nonDecimalSeparatorChar: string;
-    readonly decimalSeparatorChar: string; 
+    readonly decimalSeparatorChar: string;
     readonly wordSeparatorToken: string;
     readonly zeroChar: string;
     readonly pairChar: string;

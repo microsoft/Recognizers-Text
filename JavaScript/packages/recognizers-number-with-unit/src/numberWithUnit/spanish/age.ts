@@ -26,7 +26,7 @@ export class SpanishAgeExtractorConfiguration extends SpanishNumberWithUnitExtra
 
 export class SpanishAgeParserConfiguration extends SpanishNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.Spanish);
         }
 

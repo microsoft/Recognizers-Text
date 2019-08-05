@@ -24,7 +24,7 @@ export class ChineseNumberParserConfiguration implements ICJKNumberParserConfigu
     readonly writtenGroupSeparatorTexts: readonly string[];
     readonly writtenIntegerSeparatorTexts: readonly string[];
     readonly writtenFractionSeparatorTexts: readonly string[];
-    
+
     readonly zeroToNineMap: ReadonlyMap<string, number>;
     readonly roundNumberMapChar: ReadonlyMap<string, number>;
     readonly fullToHalfMap: ReadonlyMap<string, string>;

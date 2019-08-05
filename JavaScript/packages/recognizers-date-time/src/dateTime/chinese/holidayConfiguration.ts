@@ -33,14 +33,14 @@ class ChineseHolidayParserConfiguration extends BaseHolidayParserConfiguration {
 
     getSwiftYear(source: string): number {
         if (source.endsWith('年')) {
-return 0;
-}
+            return 0;
+        }
         if (source.endsWith('去年')) {
-return -1;
-}
+            return -1;
+        }
         if (source.endsWith('明年')) {
-return 1;
-}
+            return 1;
+        }
         return null;
     }
 
@@ -105,79 +105,79 @@ export class ChineseHolidayParser extends BaseHolidayParser {
     }
 
     private static NewYear(year: number): Date {
- return new Date(year, 1 - 1, 1); 
-}
+        return new Date(year, 1 - 1, 1);
+    }
     private static ChsNationalDay(year: number): Date {
- return new Date(year, 10 - 1, 1); 
-}
+        return new Date(year, 10 - 1, 1);
+    }
     private static LaborDay(year: number): Date {
- return new Date(year, 5 - 1, 1); 
-}
+        return new Date(year, 5 - 1, 1);
+    }
     private static ChristmasEve(year: number): Date {
- return new Date(year, 12 - 1, 24); 
-}
+        return new Date(year, 12 - 1, 24);
+    }
     private static ChristmasDay(year: number): Date {
- return new Date(year, 12 - 1, 25); 
-}
+        return new Date(year, 12 - 1, 25);
+    }
     private static LoverDay(year: number): Date {
- return new Date(year, 2 - 1, 14); 
-}
+        return new Date(year, 2 - 1, 14);
+    }
     private static ChsMilBuildDay(year: number): Date {
- return new Date(year, 8 - 1, 1); 
-}
+        return new Date(year, 8 - 1, 1);
+    }
     private static FoolDay(year: number): Date {
- return new Date(year, 4 - 1, 1); 
-}
+        return new Date(year, 4 - 1, 1);
+    }
     private static GirlsDay(year: number): Date {
- return new Date(year, 3 - 1, 7); 
-}
+        return new Date(year, 3 - 1, 7);
+    }
     private static TreePlantDay(year: number): Date {
- return new Date(year, 3 - 1, 12); 
-}
+        return new Date(year, 3 - 1, 12);
+    }
     private static FemaleDay(year: number): Date {
- return new Date(year, 3 - 1, 8); 
-}
+        return new Date(year, 3 - 1, 8);
+    }
     private static ChildrenDay(year: number): Date {
- return new Date(year, 6 - 1, 1); 
-}
+        return new Date(year, 6 - 1, 1);
+    }
     private static YouthDay(year: number): Date {
- return new Date(year, 5 - 1, 4); 
-}
+        return new Date(year, 5 - 1, 4);
+    }
     private static TeacherDay(year: number): Date {
- return new Date(year, 9 - 1, 10); 
-}
+        return new Date(year, 9 - 1, 10);
+    }
     private static SinglesDay(year: number): Date {
- return new Date(year, 11 - 1, 11); 
-}
+        return new Date(year, 11 - 1, 11);
+    }
     private static HalloweenDay(year: number): Date {
- return new Date(year, 10 - 1, 31); 
-}
+        return new Date(year, 10 - 1, 31);
+    }
     private static MidautumnDay(year: number): Date {
- return new Date(year, 8 - 1, 15); 
-}
+        return new Date(year, 8 - 1, 15);
+    }
     private static SpringDay(year: number): Date {
- return new Date(year, 1 - 1, 1); 
-}
+        return new Date(year, 1 - 1, 1);
+    }
     private static NewYearEve(year: number): Date {
- return DateUtils.addDays(new Date(year, 1 - 1, 1), -1); 
-}
+        return DateUtils.addDays(new Date(year, 1 - 1, 1), -1);
+    }
     private static LanternDay(year: number): Date {
- return new Date(year, 1 - 1, 15); 
-}
+        return new Date(year, 1 - 1, 15);
+    }
     private static QingMingDay(year: number): Date {
- return new Date(year, 4 - 1, 4); 
-}
+        return new Date(year, 4 - 1, 4);
+    }
     private static DragonBoatDay(year: number): Date {
- return new Date(year, 5 - 1, 5); 
-}
+        return new Date(year, 5 - 1, 5);
+    }
     private static ChongYangDay(year: number): Date {
- return new Date(year, 9 - 1, 9); 
-}
+        return new Date(year, 9 - 1, 9);
+    }
 
     parse(er: ExtractResult, referenceDate?: Date): DateTimeParseResult {
         if (!referenceDate) {
-referenceDate = new Date();
-}
+            referenceDate = new Date();
+        }
         let value = null;
 
         if (er.type === BaseHolidayParser.ParserName) {
@@ -210,8 +210,8 @@ referenceDate = new Date();
 
         let holidayStr = this.config.sanitizeHolidayToken(match.groups("holiday").value.toLowerCase());
         if (StringUtility.isNullOrEmpty(holidayStr)) {
-return ret;
-}
+            return ret;
+        }
 
         // get year (if exist)
         let year = referenceDate.getFullYear();
@@ -227,14 +227,14 @@ return ret;
             }
             year = this.convertYear(yearNum, false);
         }
- else if (!StringUtility.isNullOrEmpty(yearChinese)) {
+        else if (!StringUtility.isNullOrEmpty(yearChinese)) {
             hasYear = true;
             if (this.config.getSwiftYear(yearChinese) === 0) {
                 yearChinese = yearChinese.substr(0, yearChinese.length - 1);
             }
             year = this.convertYear(yearChinese, true);
         }
- else if (!StringUtility.isNullOrEmpty(yearRelative)) {
+        else if (!StringUtility.isNullOrEmpty(yearRelative)) {
             hasYear = true;
             year += this.config.getSwiftYear(yearRelative);
         }
@@ -242,7 +242,7 @@ return ret;
         if (year < 100 && year >= 90) {
             year += 1900;
         }
- else if (year < 100 && year < 20) {
+        else if (year < 100 && year < 20) {
             year += 2000;
         }
 
@@ -252,11 +252,11 @@ return ret;
             date = this.fixedHolidayDictionary.get(holidayStr)(year);
             timex = `-${DateTimeFormatUtil.toString(date.getMonth() + 1, 2)}-${DateTimeFormatUtil.toString(date.getDate(), 2)}`;
         }
- else if (this.config.holidayFuncDictionary.has(holidayStr)) {
+        else if (this.config.holidayFuncDictionary.has(holidayStr)) {
             date = this.config.holidayFuncDictionary.get(holidayStr)(year);
             timex = this.config.variableHolidaysTimexDictionary.get(holidayStr);
         }
- else {
+        else {
             return ret;
         }
 
@@ -265,7 +265,7 @@ return ret;
             ret.futureValue = new Date(year, date.getMonth(), date.getDate());
             ret.pastValue = new Date(year, date.getMonth(), date.getDate());
         }
- else {
+        else {
             ret.timex = "XXXX" + timex;
             ret.futureValue = this.getDateValue(date, referenceDate, holidayStr, 1, (d, r) => d.getTime() < r.getTime());
             ret.pastValue = this.getDateValue(date, referenceDate, holidayStr, -1, (d, r) => d.getTime() >= r.getTime());
@@ -297,11 +297,11 @@ return ret;
                     }
                 }
             }
- else {
+            else {
                 year = yearNum;
             }
         }
- else {
+        else {
             year = Number.parseInt(yearStr, 10);
         }
 

@@ -18,7 +18,7 @@ export abstract class ChoiceModel implements IModel {
             let extractResults = this.extractor.extract(source);
             parseResults = extractResults.map(r => this.parser.parse(r));
         }
-        catch(err) {
+        catch (err) {
             // Nothing to do. Exceptions in parse should not break users of recognizers.
             // No result.
         }

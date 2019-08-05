@@ -31,7 +31,7 @@ export class CultureInfo extends BaseCultureInfo {
     if (bigNumber.decimalPlaces()) {
       s = bigNumber.precision(15, BigNumber.ROUND_HALF_UP).toString();
     }
- else {
+    else {
       s = bigNumber.toString().toUpperCase();
     }
 
@@ -49,7 +49,7 @@ export class CultureInfo extends BaseCultureInfo {
 
     // TODO: Use BigNumber.toFormat instead
     let culture = Culture.supportedCultures.find(c => c.cultureCode === this.code);
-    if(culture && culture.longFormat) {
+    if (culture && culture.longFormat) {
       return s
         .split(',')
         .map(t => t.split('.').join(culture.longFormat.decimalsMark))

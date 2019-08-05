@@ -124,7 +124,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly nextPrefixRegex: RegExp
     readonly previousPrefixRegex: RegExp
     readonly thisPrefixRegex: RegExp
-    readonly restOfDateRegex : RegExp
+    readonly restOfDateRegex: RegExp
     readonly laterEarlyPeriodRegex: RegExp
     readonly weekWithWeekDayRangeRegex: RegExp
     readonly unspecificEndOfRangeRegex: RegExp
@@ -135,7 +135,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly cardinalMap: ReadonlyMap<string, number>
     readonly seasonMap: ReadonlyMap<string, string>
     readonly unitMap: ReadonlyMap<string, string>
-    
+
     constructor(config: EnglishCommonDateTimeParserConfiguration) {
         this.dateExtractor = config.dateExtractor;
         this.dateParser = config.dateParser;
@@ -183,7 +183,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
         if (RegExpUtility.getMatches(this.nextPrefixRegex, trimmedSource).length > 0) {
             swift = 1;
         }
- else if (RegExpUtility.getMatches(this.previousPrefixRegex, trimmedSource).length > 0) {
+        else if (RegExpUtility.getMatches(this.previousPrefixRegex, trimmedSource).length > 0) {
             swift = -1;
         }
         return swift;
@@ -195,10 +195,10 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
         if (RegExpUtility.getMatches(this.nextPrefixRegex, trimmedSource).length > 0) {
             swift = 1;
         }
- else if (RegExpUtility.getMatches(this.previousPrefixRegex, trimmedSource).length > 0) {
+        else if (RegExpUtility.getMatches(this.previousPrefixRegex, trimmedSource).length > 0) {
             swift = -1;
         }
- else if (RegExpUtility.getMatches(this.thisPrefixRegex, trimmedSource).length > 0) {
+        else if (RegExpUtility.getMatches(this.thisPrefixRegex, trimmedSource).length > 0) {
             swift = 0;
         }
         return swift;

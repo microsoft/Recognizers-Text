@@ -32,7 +32,7 @@ export class NumberWithUnitExtractor implements IExtractor {
         if (this.config.suffixList && this.config.suffixList.size > 0) {
             this.suffixRegexes = this.buildRegexFromSet(Array.from(this.config.suffixList.values()));
         }
- else {
+        else {
             this.suffixRegexes = new Set<RegExp>(); // empty
         }
 
@@ -49,7 +49,7 @@ export class NumberWithUnitExtractor implements IExtractor {
 
             this.prefixRegexes = this.buildRegexFromSet(Array.from(this.config.prefixList.values()));
         }
- else {
+        else {
             this.prefixRegexes = new Set<RegExp>(); // empty
         }
 
@@ -286,8 +286,8 @@ export class NumberWithUnitExtractor implements IExtractor {
                 let pattern = `${this.config.buildPrefix}(${regexTokens.join('|')})${this.config.buildSuffix}`;
                 let options = "gs";
                 if (ignoreCase) {
-options += "i";
-}
+                    options += "i";
+                }
                 return RegExpUtility.getSafeRegExp(pattern, options);
             }));
     }
@@ -330,8 +330,8 @@ options += "i";
         let pattern = `${this.config.buildPrefix}(${regexTokens.join('|')})${this.config.buildSuffix}`;
         let options = "gs";
         if (ignoreCase) {
-options += "i";
-}
+            options += "i";
+        }
         return RegExpUtility.getSafeRegExp(pattern, options);
     }
 
@@ -345,11 +345,11 @@ options += "i";
             }
             if (!stringB) {
                 return -1;
-            } 
+            }
             return stringB.localeCompare(stringA);
         }
     }
-    
+
 
     private DimensionInsideTime(dimension: Match, time: Match): boolean {
         let isSubMatch = false;
@@ -376,7 +376,7 @@ export class BaseMergedUnitExtractor implements IExtractor {
         if (this.config.extractType === Constants.SYS_UNIT_CURRENCY) {
             result = this.mergeCompoundUnits(source);
         }
- else {
+        else {
             result = this.innerExtractor.extract(source);
         }
 
@@ -404,7 +404,7 @@ export class BaseMergedUnitExtractor implements IExtractor {
             let middleEnd = ers[i + 1].start;
 
             let middleStr = source.substring(middleBegin, middleEnd).trim().toLowerCase();
-            
+
             // Separated by whitespace
             if (StringUtility.isNullOrEmpty(middleStr)) {
                 groups[i + 1] = groups[i];
@@ -416,7 +416,7 @@ export class BaseMergedUnitExtractor implements IExtractor {
             if (match && match.index === 0 && match.length === middleStr.length) {
                 groups[i + 1] = groups[i];
             }
- else {
+            else {
                 groups[i + 1] = groups[i] + 1;
             }
         }
@@ -438,7 +438,7 @@ export class BaseMergedUnitExtractor implements IExtractor {
             }
 
             // Reduce extract results in same group
-            if (i + 1 < ers.length && groups[i  + 1] === groups[i]) {
+            if (i + 1 < ers.length && groups[i + 1] === groups[i]) {
                 let group = groups[i];
 
                 let periodBegin = result[group].start;
@@ -507,7 +507,7 @@ export class BaseMergedUnitExtractor implements IExtractor {
 
             if (!overlap) {
                 result.push(extractResult);
-            } 
+            }
         });
 
         result.sort((x, y) => x.start - y.start);

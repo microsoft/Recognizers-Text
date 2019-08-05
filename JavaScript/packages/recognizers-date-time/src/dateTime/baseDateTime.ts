@@ -39,8 +39,8 @@ export class BaseDateTimeExtractor implements IDateTimeExtractor {
 
     extract(source: string, refDate: Date): ExtractResult[] {
         if (!refDate) {
-refDate = new Date();
-}
+            refDate = new Date();
+        }
         let referenceDate = refDate;
 
         let tokens: Token[] = new Array<Token>();
@@ -59,12 +59,12 @@ refDate = new Date();
         let tokens: Token[] = new Array<Token>();
         let ers = this.config.datePointExtractor.extract(source, refDate);
         if (ers.length < 1) {
-return tokens;
-}
+            return tokens;
+        }
         ers = ers.concat(this.config.timePointExtractor.extract(source, refDate));
         if (ers.length < 2) {
-return tokens;
-}
+            return tokens;
+        }
         ers = ers.sort((erA, erB) => erA.start < erB.start ? -1 : erA.start === erB.start ? 0 : 1);
         let i = 0;
         while (i < ers.length - 1) {
@@ -73,8 +73,8 @@ return tokens;
                 j++;
             }
             if (j >= ers.length) {
-break;
-}
+                break;
+            }
             if ((ers[i].type === Constants.SYS_DATETIME_DATE && ers[j].type === Constants.SYS_DATETIME_TIME) ||
                 (ers[i].type === Constants.SYS_DATETIME_TIME && ers[j].type === Constants.SYS_DATETIME_DATE)) {
                 let middleBegin = ers[i].start + ers[i].length;
@@ -108,9 +108,9 @@ break;
     protected basicRegexMatch(source: string): Token[] {
         let tokens: Token[] = new Array<Token>();
         RegExpUtility.getMatches(this.config.nowRegex, source)
-        .forEach(match => {
-            tokens.push(new Token(match.index, match.index + match.length));
-        });
+            .forEach(match => {
+                tokens.push(new Token(match.index, match.index + match.length));
+            });
         return tokens;
     }
 
@@ -124,8 +124,8 @@ break;
                 beforeStr = source.substr(0, er.start + innerMatches[0].length);
             }
             if (StringUtility.isNullOrWhitespace(beforeStr)) {
-return;
-}
+                return;
+            }
             let matches = RegExpUtility.getMatches(this.config.timeOfTodayBeforeRegex, beforeStr);
             if (matches && matches.length > 0) {
                 let begin = matches[0].index;
@@ -134,9 +134,9 @@ return;
             }
         });
         RegExpUtility.getMatches(this.config.simpleTimeOfTodayBeforeRegex, source)
-        .forEach(match => {
-            tokens.push(new Token(match.index, match.index + match.length));
-        });
+            .forEach(match => {
+                tokens.push(new Token(match.index, match.index + match.length));
+            });
         return tokens;
     }
 
@@ -146,8 +146,8 @@ return;
         ers.forEach(er => {
             let afterStr = source.substr(er.start + er.length);
             if (StringUtility.isNullOrWhitespace(afterStr)) {
-return;
-}
+                return;
+            }
             let matches = RegExpUtility.getMatches(this.config.timeOfTodayAfterRegex, afterStr);
             if (matches && matches.length > 0) {
                 let begin = er.start;
@@ -156,9 +156,9 @@ return;
             }
         });
         RegExpUtility.getMatches(this.config.simpleTimeOfTodayAfterRegex, source)
-        .forEach(match => {
-            tokens.push(new Token(match.index, match.index + match.length));
-        });
+            .forEach(match => {
+                tokens.push(new Token(match.index, match.index + match.length));
+            });
         return tokens;
     }
 
@@ -171,7 +171,7 @@ return;
             if (beforeMatches && beforeMatches.length > 0) {
                 tokens.push(new Token(beforeMatches[0].index, er.start + er.length));
             }
- else {
+            else {
                 let afterStr = source.substr(er.start + er.length);
                 let afterMatches = RegExpUtility.getMatches(this.config.specificEndOfRegex, afterStr);
                 if (afterMatches && afterMatches.length > 0) {
@@ -240,8 +240,8 @@ export class BaseDateTimeParser implements IDateTimeParser {
 
     public parse(er: ExtractResult, refTime: Date): DateTimeParseResult {
         if (!refTime) {
-refTime = new Date();
-}
+            refTime = new Date();
+        }
         let referenceTime = refTime;
 
         let value = null;
@@ -274,8 +274,8 @@ refTime = new Date();
 
         let ret = new DateTimeParseResult(er); {
             ret.value = value,
-            ret.timexStr = value === null ? "" : value.timex,
-            ret.resolutionStr = "";
+                ret.timexStr = value === null ? "" : value.timex,
+                ret.resolutionStr = "";
         };
         return ret;
     }

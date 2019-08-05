@@ -65,7 +65,7 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
         this.registerModel("TemperatureModel", Culture.English, (options) => new TemperatureModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new EnglishTemperatureExtractorConfiguration()), new NumberWithUnitParser(new EnglishTemperatureParserConfiguration())]
         ])));
-        this.registerModel("DimensionModel", Culture.English,(options) =>  new DimensionModel(new Map<IExtractor, IParser>([
+        this.registerModel("DimensionModel", Culture.English, (options) => new DimensionModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new EnglishDimensionExtractorConfiguration()), new NumberWithUnitParser(new EnglishDimensionParserConfiguration())]
         ])));
         this.registerModel("AgeModel", Culture.English, (options) => new AgeModel(new Map<IExtractor, IParser>([

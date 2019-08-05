@@ -20,9 +20,9 @@ export class ChineseTimePeriodExtractor extends BaseDateTimeExtractor<TimePeriod
 
     constructor() {
         super(new Map<RegExp, TimePeriodType>([
-            [ RegExpUtility.getSafeRegExp(ChineseDateTime.TimePeriodRegexes1), TimePeriodType.FullTime ],
-            [ RegExpUtility.getSafeRegExp(ChineseDateTime.TimePeriodRegexes2), TimePeriodType.ShortTime ],
-            [ RegExpUtility.getSafeRegExp(ChineseDateTime.TimeOfDayRegex), TimePeriodType.ShortTime ]
+            [RegExpUtility.getSafeRegExp(ChineseDateTime.TimePeriodRegexes1), TimePeriodType.FullTime],
+            [RegExpUtility.getSafeRegExp(ChineseDateTime.TimePeriodRegexes2), TimePeriodType.ShortTime],
+            [RegExpUtility.getSafeRegExp(ChineseDateTime.TimeOfDayRegex), TimePeriodType.ShortTime]
         ]));
     }
 }
@@ -46,8 +46,8 @@ class ChineseTimePeriodParserConfiguration implements ITimePeriodParserConfigura
     }
 
     getMatchedTimexRange(text: string): any {
- return null; 
-}
+        return null;
+    }
 }
 
 export class ChineseTimePeriodParser extends BaseTimePeriodParser {
@@ -65,21 +65,21 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
         this.lowBoundMap = ChineseDateTime.TimeLowBoundDesc;
     }
 
-    public parse(er: ExtractResult, referenceTime?: Date): DateTimeParseResult{
+    public parse(er: ExtractResult, referenceTime?: Date): DateTimeParseResult {
         if (!referenceTime) {
-referenceTime = new Date();
-}
+            referenceTime = new Date();
+        }
 
         let result = new DateTimeParseResult(er);
         let extra: DateTimeExtra<TimePeriodType> = er.data;
-        
+
         if (!extra) {
             return result;
         }
 
         let parseResult = this.parseChineseTimeOfDay(er.text, referenceTime);
 
-        if(!parseResult.success) {
+        if (!parseResult.success) {
             parseResult = this.parseTimePeriod(extra, referenceTime);
         }
 
@@ -120,7 +120,7 @@ referenceTime = new Date();
         return ret;
     }
 
-    private GetMatchedTimexRange(text: string): {matched: boolean, timex: string, beginHour: number, endHour: number, endMin: number} {
+    private GetMatchedTimexRange(text: string): { matched: boolean, timex: string, beginHour: number, endHour: number, endMin: number } {
         let trimmedText = text.trim();
         let matched = false;
         let timex = null;
@@ -132,25 +132,25 @@ referenceTime = new Date();
         if (ChineseDateTime.MorningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Morning;
         }
- else if (ChineseDateTime.MidDayTermList.some(o => trimmedText.endsWith(o))) {
+        else if (ChineseDateTime.MidDayTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.MidDay;
         }
- else if (ChineseDateTime.AfternoonTermList.some(o => trimmedText.endsWith(o))) {
+        else if (ChineseDateTime.AfternoonTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Afternoon;
         }
- else if (ChineseDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
+        else if (ChineseDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Evening;
         }
- else if (ChineseDateTime.DaytimeTermList.some(o => trimmedText.localeCompare(o) == 0)) {
+        else if (ChineseDateTime.DaytimeTermList.some(o => trimmedText.localeCompare(o) == 0)) {
             timeOfDay = Constants.Daytime;
         }
- else if (ChineseDateTime.NightTermList.some(o => trimmedText.endsWith(o))) {
+        else if (ChineseDateTime.NightTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Night;
         }
- else {
+        else {
             timex = null;
             matched = false;
-            return {matched, timex, beginHour, endHour, endMin};
+            return { matched, timex, beginHour, endHour, endMin };
         }
 
         let parseResult = TimexUtil.parseTimeOfDay(timeOfDay);
@@ -160,7 +160,7 @@ referenceTime = new Date();
         endMin = parseResult.endMin;
 
         matched = true;
-        return {matched, timex, beginHour, endHour, endMin};
+        return { matched, timex, beginHour, endHour, endMin };
     }
 
     private parseTimePeriod(extra: DateTimeExtra<TimePeriodType>, referenceTime: Date): DateTimeResolutionResult {
@@ -273,7 +273,7 @@ referenceTime = new Date();
         if (spanMin !== 0 && spanSec === 0) {
             spanTimex = spanTimex + `${spanMin}M`;
         }
- else if (spanSec !== 0) {
+        else if (spanSec !== 0) {
             spanTimex = spanTimex + `${spanMin}M${spanSec}S`;
         }
         return spanTimex;

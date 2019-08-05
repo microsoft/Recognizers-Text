@@ -41,8 +41,8 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
 
     extract(source: string, refDate: Date): ExtractResult[] {
         if (!refDate) {
-refDate = new Date();
-}
+            refDate = new Date();
+        }
         let referenceDate = refDate;
 
         let tokens: Token[] = new Array<Token>();
@@ -133,7 +133,7 @@ refDate = new Date();
                 er.push(nowEr);
                 er = er.sort((x, y) => (x.start - y.start));
             }
- else {
+            else {
                 return tokens;
             }
 
@@ -194,8 +194,8 @@ refDate = new Date();
         durations.forEach(duration => {
             let beforeStr = source.substring(0, duration.start).toLowerCase();
             if (StringUtility.isNullOrWhitespace(beforeStr)) {
-return;
-}
+                return;
+            }
             let match = RegExpUtility.getMatches(this.config.pastRegex, beforeStr).pop();
             if (this.matchRegexInPrefix(beforeStr, match)) {
                 tokens.push(new Token(match.index, duration.end));
@@ -223,8 +223,8 @@ return;
         let tokens: Token[] = new Array<Token>();
         let ers = this.config.datePointExtractor.extract(source, refDate);
         if (ers.length < 1) {
-return tokens;
-}
+            return tokens;
+        }
         ers.forEach(er => {
             if (er.start && er.length) {
                 let beforeStr = source.substring(0, er.start);
@@ -325,8 +325,8 @@ export class BaseDatePeriodParser implements IDateTimeParser {
 
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
         if (!referenceDate) {
-referenceDate = new Date();
-}
+            referenceDate = new Date();
+        }
         let resultValue;
         if (extractorResult.type === this.parserName) {
             let source = extractorResult.text.trim().toLowerCase();
@@ -384,7 +384,7 @@ referenceDate = new Date();
                     innerResult.pastResolution[TimeTypeConstants.END_DATE] = DateTimeFormatUtil.formatDate(innerResult.pastValue[1]);
 
                 }
- else {
+                else {
                     innerResult.futureResolution = {};
                     innerResult.pastResolution = {};
                 }
@@ -407,8 +407,8 @@ referenceDate = new Date();
             match = RegExpUtility.getMatches(this.config.monthNumWithYear, trimmedSource).pop();
         }
         if (!match || match.length !== trimmedSource.length) {
-return result;
-}
+            return result;
+        }
 
         let monthStr = match.groups('month').value;
         let yearStr = match.groups('year').value;
@@ -419,8 +419,8 @@ return result;
         if (!year || isNaN(year)) {
             let swift = this.config.getSwiftYear(orderStr);
             if (swift < -1) {
-return result;
-}
+                return result;
+            }
             year = referenceDate.getFullYear() + swift;
         }
         let beginDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, month, 1);
@@ -455,8 +455,8 @@ return result;
         let match = this.getMatchSimpleCase(source);
 
         if (!match || match.index !== 0 || match.length !== source.length) {
-return result;
-}
+            return result;
+        }
         let days = match.groups('day');
         let beginDay = this.config.dayOfMonth.get(days.captures[0]);
         let endDay = this.config.dayOfMonth.get(days.captures[1]);
@@ -469,14 +469,14 @@ return result;
         if (!StringUtility.isNullOrEmpty(monthStr)) {
             month = this.config.monthOfYear.get(monthStr) - 1;
         }
- else {
+        else {
             monthStr = match.groups('relmonth').value;
             month += this.config.getSwiftDayOrMonth(monthStr);
             if (month < 0) {
                 month = 0;
                 year--;
             }
- else if (month > 11) {
+            else if (month > 11) {
                 month = 11;
                 year++;
             }
@@ -492,11 +492,11 @@ return result;
         let pastYear = year;
         let startDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, month, beginDay);
         if (noYear && startDate < referenceDate) {
-futureYear++;
-}
+            futureYear++;
+        }
         if (noYear && startDate >= referenceDate) {
-pastYear--;
-}
+            pastYear--;
+        }
 
         result.timex = `(${beginDateLuis},${endDateLuis},P${endDay - beginDay}D)`;
         result.futureValue = [
@@ -511,7 +511,7 @@ pastYear--;
         return result;
     }
 
-    private isPresent(swift: number): boolean{
+    private isPresent(swift: number): boolean {
         return swift === 0;
     }
 
@@ -552,8 +552,8 @@ pastYear--;
         }
 
         if (!match || match.index !== 0 || match.length !== trimedText.length) {
-return result;
-}
+            return result;
+        }
 
         if (match.groups("EarlyPrefix").value) {
             earlyPrefix = true;
@@ -575,10 +575,10 @@ return result;
 
         let monthStr = match.groups('month').value;
         let swift = 0;
-        if (!StringUtility.isNullOrEmpty(monthStr)){
+        if (!StringUtility.isNullOrEmpty(monthStr)) {
             swift = this.config.getSwiftYear(trimedText);
         }
-        else{
+        else {
             swift = this.config.getSwiftDayOrMonth(trimedText);
         }
 
@@ -591,15 +591,15 @@ return result;
         if (match.groups("RelEarly").value) {
             earlierPrefix = true;
             if (this.isPresent(swift)) {
-result.mod = null;
-}
+                result.mod = null;
+            }
         }
 
         if (match.groups("RelLate").value) {
             laterPrefix = true;
             if (this.isPresent(swift)) {
-result.mod = null;
-}
+                result.mod = null;
+            }
         }
 
         if (!StringUtility.isNullOrEmpty(monthStr)) {
@@ -611,17 +611,17 @@ result.mod = null;
                 futureYear = year;
                 pastYear = year;
             }
- else {
+            else {
                 result.timex = `XXXX-${DateTimeFormatUtil.toString(month + 1, 2)}`;
                 if (month < referenceDate.getMonth()) {
-futureYear++;
-}
+                    futureYear++;
+                }
                 if (month >= referenceDate.getMonth()) {
-pastYear--;
-}
+                    pastYear--;
+                }
             }
         }
- else {
+        else {
             swift = this.config.getSwiftDayOrMonth(trimedText);
             if (this.config.isWeekOnly(trimedText)) {
                 let monday = DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Monday), 7 * swift);
@@ -651,7 +651,7 @@ pastYear--;
                         endDate = referenceDate;
                     }
                 }
- else if (laterPrefix && swift === 0) {
+                else if (laterPrefix && swift === 0) {
                     if (beginDate < referenceDate) {
                         beginDate = referenceDate;
                     }
@@ -681,7 +681,7 @@ pastYear--;
                 futureYear = year;
                 pastYear = year;
             }
- else if (this.config.isYearOnly(trimedText)) {
+            else if (this.config.isYearOnly(trimedText)) {
                 let tempDate = new Date(referenceDate);
                 tempDate.setFullYear(referenceDate.getFullYear() + swift);
                 year = tempDate.getFullYear();
@@ -705,7 +705,7 @@ pastYear--;
                         endDate = referenceDate;
                     }
                 }
- else if (laterPrefix && swift === 0) {
+                else if (laterPrefix && swift === 0) {
                     if (beginDate < referenceDate) {
                         beginDate = referenceDate;
                     }
@@ -718,7 +718,7 @@ pastYear--;
                 return result;
             }
         }
-        
+
         // only "month" will come to here
         let futureStart = DateUtils.safeCreateFromMinValue(futureYear, month, 1);
         let futureEnd = this.inclusiveEndPeriod
@@ -754,7 +754,7 @@ pastYear--;
                 futureEnd = pastEnd = referenceDate;
             }
         }
- else if (laterPrefix && futureYear === pastYear) {
+        else if (laterPrefix && futureYear === pastYear) {
             if (futureStart < referenceDate) {
                 futureStart = pastStart = referenceDate;
             }
@@ -779,7 +779,7 @@ pastYear--;
                     return er;
                 });
             }
- else {
+            else {
                 let nowPr = this.parseNowAsDate(source, referenceDate);
                 if (!nowPr || !nowPr.start || ers.length < 1) {
                     return result;
@@ -798,7 +798,7 @@ pastYear--;
                 weekPrefix = match.groups("week").value;
             }
 
-            if (! StringUtility.isNullOrWhitespace(weekPrefix)) {
+            if (!StringUtility.isNullOrWhitespace(weekPrefix)) {
                 ers[0].text = weekPrefix + " " + ers[0].text;
                 ers[1].text = weekPrefix + " " + ers[1].text;
             }
@@ -807,8 +807,8 @@ pastYear--;
         }
 
         if (prs.length < 2) {
-return result;
-}
+            return result;
+        }
 
         let prBegin = prs[0];
         let prEnd = prs[1];
@@ -856,8 +856,8 @@ return result;
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.yearRegex, trimmedSource).pop();
         if (!match || match.length !== trimmedSource.length) {
-return result;
-}
+            return result;
+        }
 
         let year = Number.parseInt(match.value, 10);
         let beginDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, 0, 1);
@@ -880,15 +880,15 @@ return result;
         if (ers.length === 1) {
             let pr = this.config.durationParser.parse(ers[0]);
             if (pr === null) {
-return result;
-}
+                return result;
+            }
 
             let beforeStr = source.substr(0, pr.start).trim();
             let mod: string;
             let durationResult: DateTimeResolutionResult = pr.value;
             if (StringUtility.isNullOrEmpty(durationResult.timex)) {
-return result;
-}
+                return result;
+            }
 
             let prefixMatch = RegExpUtility.getMatches(this.config.pastRegex, beforeStr).pop();
             if (prefixMatch) {
@@ -967,12 +967,12 @@ return result;
         let unitStr = timex.substr(timex.length - 1);
         let swift = Number.parseInt(numStr, 10) || 0;
         if (swift === 0) {
-return result;
-}
+            return result;
+        }
 
         if (!isPositiveSwift) {
-swift *= -1;
-}
+            swift *= -1;
+        }
         switch (unitStr) {
             case 'D': result.setDate(date.getDate() + swift); break;
             case 'W': result.setDate(date.getDate() + (7 * swift)); break;
@@ -986,8 +986,8 @@ swift *= -1;
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.weekOfMonthRegex, source).pop();
         if (!match || match.length !== source.length) {
-return result;
-}
+            return result;
+        }
 
         let cardinalStr = match.groups('cardinal').value;
         let monthStr = match.groups('month').value;
@@ -1003,7 +1003,7 @@ return result;
             month = tempDate.getMonth();
             year = tempDate.getFullYear();
         }
- else {
+        else {
             month = this.config.monthOfYear.get(monthStr) - 1;
             noYear = true;
         }
@@ -1044,8 +1044,8 @@ return result;
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.weekOfYearRegex, source).pop();
         if (!match || match.length !== source.length) {
-return result;
-}
+            return result;
+        }
 
         let cardinalStr = match.groups('cardinal').value;
         let yearStr = match.groups('year').value;
@@ -1055,8 +1055,8 @@ return result;
         if (isNaN(year)) {
             let swift = this.config.getSwiftYear(orderStr);
             if (swift < -1) {
-return result;
-}
+                return result;
+            }
             year = referenceDate.getFullYear() + swift;
         }
 
@@ -1072,9 +1072,9 @@ return result;
             targetWeekMonday = lastDayWeekMonday;
             weekNum = DateUtils.getWeekNumber(targetWeekMonday).weekNo;
 
-            result.timex = `${ DateTimeFormatUtil.toString(year, 4) }-W${ DateTimeFormatUtil.toString(weekNum, 2) }`;
+            result.timex = `${DateTimeFormatUtil.toString(year, 4)}-W${DateTimeFormatUtil.toString(weekNum, 2)}`;
         }
- else {
+        else {
             let cardinal = this.config.cardinalMap.get(cardinalStr);
 
             let firstDay = DateUtils.safeCreateFromMinValue(year, 0, 1);
@@ -1085,13 +1085,13 @@ return result;
             }
 
             targetWeekMonday = DateUtils.addDays(firstDayWeekMonday, 7 * (cardinal - 1));
-            result.timex = `${ DateTimeFormatUtil.toString(year, 4) }-W${ DateTimeFormatUtil.toString(cardinal, 2) }`;
+            result.timex = `${DateTimeFormatUtil.toString(year, 4)}-W${DateTimeFormatUtil.toString(cardinal, 2)}`;
         }
 
         result.futureValue = [targetWeekMonday, DateUtils.addDays(targetWeekMonday, this.inclusiveEndPeriod ? 6 : 7)];
         result.pastValue = [targetWeekMonday, DateUtils.addDays(targetWeekMonday, this.inclusiveEndPeriod ? 6 : 7)];
         result.success = true;
-        
+
         return result;
     }
 
@@ -1099,13 +1099,13 @@ return result;
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.allHalfYearRegex, source).pop();
         if (!match || match.length !== source.length) {
-return result;
-}
+            return result;
+        }
 
         let cardinalStr = match.groups('cardinal').value;
         let yearStr = match.groups('year').value;
         let orderStr = match.groups('order').value;
-        let numberStr = match.groups('number').value; 
+        let numberStr = match.groups('number').value;
 
         let year = Number.parseInt(yearStr, 10);
 
@@ -1117,11 +1117,11 @@ return result;
             year = referenceDate.getFullYear() + swift;
         }
 
-        let quarterNum : number;
+        let quarterNum: number;
         if (!numberStr) {
             quarterNum = this.config.cardinalMap.get(cardinalStr);
         }
- else {
+        else {
             quarterNum = parseInt(numberStr);
         }
 
@@ -1142,14 +1142,14 @@ return result;
             match = RegExpUtility.getMatches(this.config.quarterRegexYearFront, source).pop();
         }
         if (!match || match.length !== source.length) {
-return result;
-}
+            return result;
+        }
 
         let cardinalStr = match.groups('cardinal').value;
         let yearStr = match.groups('year').value;
         let orderQuarterStr = match.groups('orderQuarter').value;
         let orderStr = StringUtility.isNullOrEmpty(orderQuarterStr) ? match.groups('order').value : '';
-        let numberStr = match.groups('number').value; 
+        let numberStr = match.groups('number').value;
 
         let noSpecificYear = false;
         let year = Number.parseInt(yearStr, 10);
@@ -1163,11 +1163,11 @@ return result;
             year = referenceDate.getFullYear() + swift;
         }
 
-        let quarterNum : number;
+        let quarterNum: number;
         if (!StringUtility.isNullOrEmpty(cardinalStr)) {
             quarterNum = this.config.cardinalMap.get(cardinalStr);
         }
- else if (!StringUtility.isNullOrEmpty(orderQuarterStr)) {
+        else if (!StringUtility.isNullOrEmpty(orderQuarterStr)) {
             let month = referenceDate.getMonth() + 1;
             quarterNum = Math.ceil(month / Constants.TrimesterMonthCount);
             let swift = this.config.getSwiftYear(orderQuarterStr);
@@ -1176,12 +1176,12 @@ return result;
                 quarterNum += Constants.QuarterCount;
                 year -= 1;
             }
- else if (quarterNum > Constants.QuarterCount) {
+            else if (quarterNum > Constants.QuarterCount) {
                 quarterNum -= Constants.QuarterCount;
                 year += 1;
             }
         }
- else {
+        else {
             quarterNum = parseInt(numberStr);
         }
 
@@ -1191,19 +1191,19 @@ return result;
         if (noSpecificYear) {
             if (endDate < referenceDate) {
                 result.pastValue = [beginDate, endDate];
-                
+
                 let futureBeginDate = DateUtils.safeCreateDateResolveOverflow(year + 1, (quarterNum - 1) * Constants.TrimesterMonthCount, 1);
                 let futureEndDate = DateUtils.safeCreateDateResolveOverflow(year + 1, quarterNum * Constants.TrimesterMonthCount, 1);
                 result.futureValue = [futureBeginDate, futureEndDate];
             }
- else if (endDate > referenceDate) {
+            else if (endDate > referenceDate) {
                 result.futureValue = [beginDate, endDate];
-                
+
                 let pastBeginDate = DateUtils.safeCreateDateResolveOverflow(year - 1, (quarterNum - 1) * Constants.TrimesterMonthCount, 1);
                 let pastEndDate = DateUtils.safeCreateDateResolveOverflow(year - 1, quarterNum * Constants.TrimesterMonthCount, 1);
                 result.pastValue = [pastBeginDate, pastEndDate];
             }
- else {
+            else {
                 result.futureValue = [beginDate, endDate];
                 result.pastValue = [beginDate, endDate];
             }
@@ -1222,8 +1222,8 @@ return result;
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.seasonRegex, source).pop();
         if (!match || match.length !== source.length) {
-return result;
-}
+            return result;
+        }
 
         let swift = this.config.getSwiftYear(source);
         let yearStr = match.groups('year').value;
@@ -1232,11 +1232,11 @@ return result;
         let season = this.config.seasonMap.get(seasonStr);
         if (swift >= -1 || !StringUtility.isNullOrEmpty(yearStr)) {
             if (StringUtility.isNullOrEmpty(yearStr)) {
-yearStr = DateTimeFormatUtil.toString(year + swift, 4);
-}
+                yearStr = DateTimeFormatUtil.toString(year + swift, 4);
+            }
             result.timex = `${yearStr}-${season}`;
         }
- else {
+        else {
             result.timex = season;
         }
         result.success = true;
@@ -1247,8 +1247,8 @@ yearStr = DateTimeFormatUtil.toString(year + swift, 4);
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.whichWeekRegex, source).pop();
         if (!match) {
-return result;
-}
+            return result;
+        }
         let num = Number.parseInt(match.groups('number').value, 10);
         let year = referenceDate.getFullYear();
         result.timex = `${DateTimeFormatUtil.toString(year, 4)}-W${DateTimeFormatUtil.toString(num, 2)}`;
@@ -1273,8 +1273,8 @@ return result;
         let match = RegExpUtility.getMatches(this.config.weekOfRegex, source).pop();
         let ers = this.config.dateExtractor.extract(source, referenceDate);
         if (!match || ers.length !== 1) {
-return result;
-}
+            return result;
+        }
 
         let dateResolution: DateTimeResolutionResult = this.config.dateParser.parse(ers[0], referenceDate).value;
         result.timex = dateResolution.timex;
@@ -1290,8 +1290,8 @@ return result;
         let match = RegExpUtility.getMatches(this.config.monthOfRegex, source).pop();
         let ers = this.config.dateExtractor.extract(source, referenceDate);
         if (!match || ers.length !== 1) {
-return result;
-}
+            return result;
+        }
 
         let dateResolution: DateTimeResolutionResult = this.config.dateParser.parse(ers[0], referenceDate).value;
         result.timex = dateResolution.timex;
@@ -1306,12 +1306,12 @@ return result;
         let firstDay = new Date(year, month, 1);
         let firstWeekday = DateUtils.this(firstDay, weekday);
         if (weekday === 0) {
-weekday = 7;
-}
+            weekday = 7;
+        }
         let firstDayOfWeek = firstDay.getDay() !== 0 ? firstDay.getDay() : 7;
         if (weekday < firstDayOfWeek) {
-firstWeekday = DateUtils.next(firstDay, weekday);
-}
+            firstWeekday = DateUtils.next(firstDay, weekday);
+        }
         firstWeekday.setDate(firstWeekday.getDate() + (7 * (cardinal - 1)));
         return firstWeekday;
     }

@@ -27,7 +27,7 @@ export class JapaneseCurrencyExtractorConfiguration extends JapaneseNumberWithUn
 
 export class JapaneseCurrencyParserConfiguration extends JapaneseNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.Japanese);
         }
 

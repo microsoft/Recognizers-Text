@@ -31,8 +31,8 @@ export class ConditionalMatch {
 export class RegExpUtility {
     static getMatches(regex: RegExp, source: string): Match[] {
         if (!regex) {
-return [];
-}
+            return [];
+        }
 
         return this.getMatchesSimple(regex, source);
     }
@@ -46,7 +46,7 @@ return [];
                 strAfter = strAfter.trim();
             }
         }
-        
+
         return new ConditionalMatch(match, match && StringUtility.isNullOrEmpty(strAfter));
     }
 
@@ -69,8 +69,8 @@ return [];
                 lastGroup = groupKey;
 
                 if (!groups[groupKey]) {
-groups[groupKey] = { value: '', index: 0, length: 0, captures: [] };
-}
+                    groups[groupKey] = { value: '', index: 0, length: 0, captures: [] };
+                }
 
                 if (match[key]) {
                     let index = match.index + match[0].indexOf(match[key]);
@@ -151,11 +151,11 @@ groups[groupKey] = { value: '', index: 0, length: 0, captures: [] };
         while (counter > 0 && closePos < source.length) {
             let c = source[++closePos];
             if (c === '(') {
-counter++;
-}
+                counter++;
+            }
             else if (c === ')') {
-counter--;
-}
+                counter--;
+            }
         }
         return closePos;
     }
@@ -168,38 +168,38 @@ export class QueryProcessor {
 
     static preProcess(query: string, caseSensitive: boolean = false, recode: boolean = true): string {
 
-    if (recode) {
-        query = query
-            .replace(/０/g, "0")
-            .replace(/１/g, "1")
-            .replace(/２/g, "2")
-            .replace(/３/g, "3")
-            .replace(/４/g, "4")
-            .replace(/５/g, "5")
-            .replace(/６/g, "6")
-            .replace(/７/g, "7")
-            .replace(/８/g, "8")
-            .replace(/９/g, "9")
-            .replace(/：/g, ":")
-            .replace(/－/g, "-")
-            .replace(/，/g, ",")
-            .replace(/／/g, "/")
-            .replace(/Ｇ/g, "G")
-            .replace(/Ｍ/g, "M")
-            .replace(/Ｔ/g, "T")
-            .replace(/Ｋ/g, "K")
-            .replace(/ｋ/g, "k")
-            .replace(/．/g, ".")
-            .replace(/（/g, "(")
-            .replace(/）/g, ")")
-            .replace(/％/g, "%")
-            .replace(/、/g, ",");
+        if (recode) {
+            query = query
+                .replace(/０/g, "0")
+                .replace(/１/g, "1")
+                .replace(/２/g, "2")
+                .replace(/３/g, "3")
+                .replace(/４/g, "4")
+                .replace(/５/g, "5")
+                .replace(/６/g, "6")
+                .replace(/７/g, "7")
+                .replace(/８/g, "8")
+                .replace(/９/g, "9")
+                .replace(/：/g, ":")
+                .replace(/－/g, "-")
+                .replace(/，/g, ",")
+                .replace(/／/g, "/")
+                .replace(/Ｇ/g, "G")
+                .replace(/Ｍ/g, "M")
+                .replace(/Ｔ/g, "T")
+                .replace(/Ｋ/g, "K")
+                .replace(/ｋ/g, "k")
+                .replace(/．/g, ".")
+                .replace(/（/g, "(")
+                .replace(/）/g, ")")
+                .replace(/％/g, "%")
+                .replace(/、/g, ",");
         }
 
         if (!caseSensitive) {
             query = query.toLowerCase();
         }
- else {
+        else {
             query = QueryProcessor.toLowerTermSensitive(query);
         }
 
@@ -252,12 +252,12 @@ export class StringUtility {
             .map((s) => {
                 let length = s.length;
                 if (length === 0) {
-return s;
-}
-                let first =  StringUtility.removeDiacritics(s.substring(0, 1));
-                if(length === 1) {
-return first;
-}
+                    return s;
+                }
+                let first = StringUtility.removeDiacritics(s.substring(0, 1));
+                if (length === 1) {
+                    return first;
+                }
                 let last = length > 1 ? StringUtility.removeDiacritics(s.substring(length - 1)) : '';
                 let mid = s.substring(1, length - 1);
                 // console.log(first + mid + last)

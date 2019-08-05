@@ -27,7 +27,7 @@ export class PortugueseCurrencyExtractorConfiguration extends PortugueseNumberWi
 
 export class PortugueseCurrencyParserConfiguration extends PortugueseNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.Portuguese);
         }
 

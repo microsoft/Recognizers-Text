@@ -22,7 +22,7 @@ export abstract class AbstractNumberWithUnitModel implements IModel {
 
         let extractionResults = new Array<ModelResult>();
 
-        try{
+        try {
             for (let kv of this.extractorParsersMap.entries()) {
                 let extractor = kv[0];
                 let parser = kv[1];
@@ -36,7 +36,7 @@ export abstract class AbstractNumberWithUnitModel implements IModel {
                                 parseResults.push(r.value[j]);
                             }
                         }
- else {
+                        else {
                             parseResults.push(r);
                         }
                     }
@@ -65,7 +65,7 @@ export abstract class AbstractNumberWithUnitModel implements IModel {
                 });
             }
         }
-        catch(err) {
+        catch (err) {
             // Nothing to do. Exceptions in result process should not affect other extracted entities.
             // No result.
         }
@@ -75,11 +75,11 @@ export abstract class AbstractNumberWithUnitModel implements IModel {
     }
 
     private getResolution(data: any): any {
-        if(typeof data === 'undefined') {
-return null;
-}
+        if (typeof data === 'undefined') {
+            return null;
+        }
 
-        let result =  typeof data === "string"
+        let result = typeof data === "string"
             ? { value: data.toString() }
             : { value: (data as UnitValue).number, unit: (data as UnitValue).unit };
 
