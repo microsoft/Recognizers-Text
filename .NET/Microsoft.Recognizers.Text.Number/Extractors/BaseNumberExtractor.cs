@@ -13,8 +13,6 @@ namespace Microsoft.Recognizers.Text.Number
         public static readonly Regex CurrencyRegex =
             new Regex(BaseNumbers.CurrencyRegex, RegexOptions.Singleline | RegexOptions.ExplicitCapture);
 
-        private static Dictionary<string, List<ExtractResult>> cache = new Dictionary<string, List<ExtractResult>>();
-
         protected BaseNumberExtractor(NumberOptions options = NumberOptions.None)
         {
             Options = options;
@@ -36,11 +34,6 @@ namespace Microsoft.Recognizers.Text.Number
 
         public virtual List<ExtractResult> Extract(string source)
         {
-
-            if (cache.Keys.Contains(ExtractType + Options + source))
-            {
-                return cache[ExtractType + Options + source];
-            }
 
             if (string.IsNullOrEmpty(source))
             {
@@ -137,8 +130,6 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             result = FilterAmbiguity(result, source);
-
-            // cache.Add(ExtractType + Options + source, result);
 
             return result;
         }
