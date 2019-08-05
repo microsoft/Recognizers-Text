@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchSetExtractorConfiguration : BaseOptionsConfiguration, ISetExtractorConfiguration
+    public class FrenchSetExtractorConfiguration : BaseDateTimeOptionsConfiguration, ISetExtractorConfiguration
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public FrenchSetExtractorConfiguration(IOptionsConfiguration config)
+        public FrenchSetExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));

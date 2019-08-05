@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
+    public class GermanTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ITimeParserConfiguration
     {
         private static readonly Regex TimeSuffixFull =
             new Regex(DateTimeDefinitions.TimeSuffixFull, RegexOptions.Singleline);

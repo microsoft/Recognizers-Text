@@ -5,9 +5,9 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public abstract class BaseDateParserConfiguration : BaseOptionsConfiguration, ICommonDateTimeParserConfiguration
+    public abstract class BaseDateParserConfiguration : BaseDateTimeOptionsConfiguration, ICommonDateTimeParserConfiguration
     {
-        protected BaseDateParserConfiguration(IOptionsConfiguration config)
+        protected BaseDateParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
         }

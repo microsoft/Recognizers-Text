@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
-    public class TurkishDateTimeParserConfiguration : BaseOptionsConfiguration, IDateTimeParserConfiguration
+    public class TurkishDateTimeParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeParserConfiguration
     {
         public static readonly Regex AmTimeRegex =
              new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags);

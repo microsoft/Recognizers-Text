@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
-    public class DutchTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
+    public class DutchTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ITimeParserConfiguration
     {
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;

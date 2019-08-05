@@ -6,7 +6,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public sealed class FrenchMergedParserConfiguration : FrenchCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
-        public FrenchMergedParserConfiguration(IOptionsConfiguration config)
+        public FrenchMergedParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             BeforeRegex = FrenchMergedExtractorConfiguration.BeforeRegex;

@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
+    public class EnglishTimeZoneExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimeZoneExtractorConfiguration
     {
         public static readonly Regex DirectUtcRegex =
             new Regex(TimeZoneDefinitions.DirectUtcRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public static readonly List<string> AmbiguousTimezoneList = TimeZoneDefinitions.AmbiguousTimezoneList.ToList();
 
-        public EnglishTimeZoneExtractorConfiguration(IOptionsConfiguration config)
+        public EnglishTimeZoneExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             if ((Options & DateTimeOptions.EnablePreview) != 0)

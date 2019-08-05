@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchCommonDateTimeParserConfiguration : BaseDateParserConfiguration, ICommonDateTimeParserConfiguration
     {
-        public DutchCommonDateTimeParserConfiguration(IOptionsConfiguration config)
+        public DutchCommonDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             UtilityConfiguration = new DutchDatetimeUtilityConfiguration();
@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             OrdinalExtractor = Number.Dutch.OrdinalExtractor.GetInstance();
 
             TimeZoneParser = new BaseTimeZoneParser();
-            NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
             DateExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new DutchDateTimeExtractorConfiguration(this));

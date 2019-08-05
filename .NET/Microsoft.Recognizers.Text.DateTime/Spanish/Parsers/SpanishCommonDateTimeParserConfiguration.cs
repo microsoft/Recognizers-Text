@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {
-        public SpanishCommonDateTimeParserConfiguration(IOptionsConfiguration config)
+        public SpanishCommonDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.Spanish.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
             DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(this));

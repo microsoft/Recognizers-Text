@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Text.Number.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
+    public class GermanDatePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
         // base regexes
         public static readonly Regex TillRegex =
@@ -192,14 +192,14 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             RelativeDecadeRegex,
         };
 
-        public GermanDatePeriodExtractorConfiguration(IOptionsConfiguration config)
+        public GermanDatePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
         }
 
         public IDateExtractor DatePointExtractor { get; }

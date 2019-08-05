@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.Dutch;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
-    public class DutchDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration,
+    public class DutchDateTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration,
         IDateTimePeriodExtractorConfiguration
     {
         public static readonly Regex AmDescRegex =
@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             DutchTimePeriodExtractorConfiguration.PureNumBetweenAnd,
         };
 
-        public DutchDateTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+        public DutchDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;

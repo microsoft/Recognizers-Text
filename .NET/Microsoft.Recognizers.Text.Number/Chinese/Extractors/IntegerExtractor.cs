@@ -3,6 +3,7 @@ using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Text.Number.Config;
 
 namespace Microsoft.Recognizers.Text.Number.Chinese
 {
@@ -10,7 +11,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public IntegerExtractor(ChineseNumberExtractorMode mode = ChineseNumberExtractorMode.Default)
+        public IntegerExtractor(CJKNumberExtractorMode mode = CJKNumberExtractorMode.Default)
         {
             var regexes = new Dictionary<Regex, TypeTag>()
             {
@@ -48,7 +49,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
             switch (mode)
             {
-                case ChineseNumberExtractorMode.Default:
+                case CJKNumberExtractorMode.Default:
                     // 一百五十五, 负一亿三百二十二.
                     // Uses an allow list to avoid extracting "四" from "四川"
                     regexes.Add(
@@ -56,7 +57,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.CHINESE));
                     break;
 
-                case ChineseNumberExtractorMode.ExtractAll:
+                case CJKNumberExtractorMode.ExtractAll:
                     // 一百五十五, 负一亿三百二十二, "四" from "四川".
                     // Uses no allow lists and extracts all potential integers (useful in Units, for example).
                     regexes.Add(

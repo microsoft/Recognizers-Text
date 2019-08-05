@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
 
-        public static readonly IParser NumberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
+        public static readonly IParser NumberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(new BaseNumberOptionsConfiguration(Culture.Chinese)));
 
         public static readonly Regex[] DateRegexList =
         {

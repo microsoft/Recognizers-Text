@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Text.Number.Turkish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
-    public class TurkishDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
+    public class TurkishDatePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
         // Base regexes
         public static readonly Regex TillRegex =
@@ -236,14 +236,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             ReferenceDatePeriodRegex,
         };
 
-        public TurkishDatePeriodExtractorConfiguration(IOptionsConfiguration config)
+        public TurkishDatePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new TurkishDateExtractorConfiguration(this));
             CardinalExtractor = Number.Turkish.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.Turkish.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
         }
 
         public IDateExtractor DatePointExtractor { get; }

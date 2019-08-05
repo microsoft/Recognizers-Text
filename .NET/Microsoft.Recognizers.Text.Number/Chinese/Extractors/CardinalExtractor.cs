@@ -1,12 +1,14 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.Number.Config;
+
 namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class CardinalExtractor : BaseNumberExtractor
     {
         // CardinalExtractor = Int + Double
-        public CardinalExtractor(ChineseNumberExtractorMode mode = ChineseNumberExtractorMode.Default)
+        public CardinalExtractor(CJKNumberExtractorMode mode = CJKNumberExtractorMode.Default)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 

@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private static readonly IExtractor CardinalExtractor = new CardinalExtractor();
 
         private static readonly IParser CardinalParser = AgnosticNumberParserFactory.GetParser(
-            AgnosticNumberParserType.Cardinal, new JapaneseNumberParserConfiguration());
+            AgnosticNumberParserType.Cardinal, new JapaneseNumberParserConfiguration(new BaseNumberOptionsConfiguration(Culture.Japanese)));
 
         private readonly IFullDateTimeParserConfiguration config;
 

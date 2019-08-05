@@ -2,8 +2,10 @@
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Text.Number.Config;
 using Microsoft.Recognizers.Text.Number.Japanese;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
@@ -22,7 +24,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
         protected JapaneseNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
-            this.UnitNumExtractor = new NumberExtractor(JapaneseNumberExtractorMode.ExtractAll);
+            this.UnitNumExtractor = new NumberExtractor(CJKNumberExtractorMode.ExtractAll);
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;

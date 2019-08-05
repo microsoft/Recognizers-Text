@@ -14,15 +14,13 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public PortugueseNumberParserConfiguration()
-               : this(new CultureInfo(Culture.Portuguese))
+        public PortugueseNumberParserConfiguration(INumberOptionsConfiguration config)
         {
-        }
 
-        public PortugueseNumberParserConfiguration(CultureInfo ci)
-        {
+            this.Config = config;
             this.LangMarker = NumbersDefinitions.LangMarker;
-            this.CultureInfo = ci;
+            this.CultureInfo = new CultureInfo(config.Culture);
+
             this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
             this.IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
 

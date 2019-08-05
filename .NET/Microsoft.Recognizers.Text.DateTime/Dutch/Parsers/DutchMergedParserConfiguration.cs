@@ -6,7 +6,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public sealed class DutchMergedParserConfiguration : DutchCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
-        public DutchMergedParserConfiguration(IOptionsConfiguration config)
+        public DutchMergedParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             BeforeRegex = DutchMergedExtractorConfiguration.BeforeRegex;

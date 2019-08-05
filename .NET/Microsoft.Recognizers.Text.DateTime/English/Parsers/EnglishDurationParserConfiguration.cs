@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration
+    public class EnglishDurationParserConfiguration : BaseDateTimeOptionsConfiguration, IDurationParserConfiguration
     {
         public EnglishDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

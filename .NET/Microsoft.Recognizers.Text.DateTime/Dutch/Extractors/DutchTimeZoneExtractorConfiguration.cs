@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
-    public class DutchTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
+    public class DutchTimeZoneExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimeZoneExtractorConfiguration
     {
         public static readonly Regex DirectUtcRegex =
             new Regex(TimeZoneDefinitions.DirectUtcRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public static readonly List<string> AmbiguousTimezoneList = TimeZoneDefinitions.AmbiguousTimezoneList.ToList();
 
-        public DutchTimeZoneExtractorConfiguration(IOptionsConfiguration config)
+        public DutchTimeZoneExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             if ((Options & DateTimeOptions.EnablePreview) != 0)

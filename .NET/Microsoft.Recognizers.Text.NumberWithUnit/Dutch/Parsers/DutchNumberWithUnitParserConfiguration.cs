@@ -10,7 +10,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Dutch
             : base(ci)
         {
             this.InternalNumberExtractor = NumberExtractor.GetInstance();
-            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new DutchNumberParserConfiguration());
+            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new DutchNumberParserConfiguration(
+                                                                                  new BaseNumberOptionsConfiguration(Culture.Dutch)));
             this.ConnectorToken = string.Empty;
         }
 

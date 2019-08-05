@@ -14,19 +14,19 @@ namespace Microsoft.Recognizers.Text.Number
         private readonly BaseNumberParser numberParser;
 
         public BaseNumberRangeExtractor(BaseNumberExtractor numberExtractor, BaseNumberExtractor ordinalExtractor, BaseNumberParser numberParser,
-                                        NumberOptions options = NumberOptions.None)
+                                        INumberOptionsConfiguration config)
         {
             this.numberExtractor = numberExtractor;
             this.ordinalExtractor = ordinalExtractor;
             this.numberParser = numberParser;
-            Options = options;
+            Config = config;
         }
 
         internal abstract System.Collections.Immutable.ImmutableDictionary<Regex, string> Regexes { get; }
 
         internal abstract Regex AmbiguousFractionConnectorsRegex { get; }
 
-        protected virtual NumberOptions Options { get; } = NumberOptions.None;
+        protected virtual INumberOptionsConfiguration Config { get; }
 
         protected virtual string ExtractType { get; } = string.Empty;
 
@@ -95,7 +95,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             // In ExperimentalMode, cases like "from 3 to 5" and "between 10 and 15" are set to closed at both start and end
-            if ((Options & NumberOptions.ExperimentalMode) != 0)
+            if ((Config.Options & NumberOptions.ExperimentalMode) != 0)
             {
                 foreach (var result in results)
                 {
@@ -257,7 +257,7 @@ namespace Microsoft.Recognizers.Text.Number
         {
             var removeFractionWithInConnector = false;
 
-            if ((Options & NumberOptions.ExperimentalMode) != 0)
+            if ((Config.Options & NumberOptions.ExperimentalMode) != 0)
             {
                 removeFractionWithInConnector = IsFractionWithInConnector(numberStr);
             }

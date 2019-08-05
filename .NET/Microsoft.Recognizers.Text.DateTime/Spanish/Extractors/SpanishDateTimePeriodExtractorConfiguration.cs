@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration,
+    public class SpanishDateTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration,
         IDateTimePeriodExtractorConfiguration
     {
         public static readonly Regex NumberCombinedWithUnit =
@@ -63,7 +63,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         private static readonly Regex BetweenRegex =
             new Regex(DateTimeDefinitions.BetweenRegex, RegexFlags);
 
-        public SpanishDateTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+        public SpanishDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;

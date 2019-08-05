@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
+    public class ItalianTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; // "TimePeriod";
 
@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         private static readonly Regex BeforeRegex =
             new Regex(DateTimeDefinitions.BeforeRegex2, RegexFlags);
 
-        public ItalianTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+        public ItalianTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;

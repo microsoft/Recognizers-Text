@@ -19,7 +19,8 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         public TestNumberRecognizerInitialization()
         {
             controlModel = new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration()),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                                                          new EnglishNumberParserConfiguration(new BaseNumberOptionsConfiguration(EnglishCulture))),
                     NumberExtractor.GetInstance(NumberMode.PureNumber));
         }
 

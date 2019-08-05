@@ -26,14 +26,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static readonly ChineseDateTimePeriodExtractorConfiguration DateTimePeriodExtractor = new ChineseDateTimePeriodExtractorConfiguration();
         private static readonly ChineseDurationExtractorConfiguration DurationExtractor = new ChineseDurationExtractorConfiguration();
         private static readonly ChineseSetExtractorConfiguration SetExtractor = new ChineseSetExtractorConfiguration();
-        private static readonly BaseHolidayExtractor HolidayExtractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration());
 
-        private readonly DateTimeOptions options;
+        private readonly IDateTimeOptionsConfiguration config;
 
-        public ChineseMergedExtractorConfiguration(DateTimeOptions options)
+        public ChineseMergedExtractorConfiguration(IDateTimeOptionsConfiguration config)
         {
-            this.options = options;
+            this.config = config;
+
+            HolidayExtractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration(config));
         }
+
+        private BaseHolidayExtractor HolidayExtractor { get; }
 
         public List<ExtractResult> Extract(string text)
         {

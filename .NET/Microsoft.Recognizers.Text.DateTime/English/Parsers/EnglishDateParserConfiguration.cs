@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
+    public class EnglishDateParserConfiguration : BaseDateTimeOptionsConfiguration, IDateParserConfiguration
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

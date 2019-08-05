@@ -6,7 +6,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public sealed class PortugueseMergedParserConfiguration : PortugueseCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
-        public PortugueseMergedParserConfiguration(IOptionsConfiguration config)
+        public PortugueseMergedParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             BeforeRegex = PortugueseMergedExtractorConfiguration.BeforeRegex;

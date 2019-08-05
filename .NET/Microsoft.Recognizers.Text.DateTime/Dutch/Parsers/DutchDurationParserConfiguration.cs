@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
-    public class DutchDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration
+    public class DutchDurationParserConfiguration : BaseDateTimeOptionsConfiguration, IDurationParserConfiguration
     {
         public DutchDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

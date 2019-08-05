@@ -14,21 +14,13 @@ namespace Microsoft.Recognizers.Text.Number.Italian
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public ItalianNumberParserConfiguration(NumberOptions options)
-            : this()
+        public ItalianNumberParserConfiguration(INumberOptionsConfiguration config)
         {
-            this.Options = options;
-        }
 
-        public ItalianNumberParserConfiguration()
-            : this(new CultureInfo(Culture.Italian))
-        {
-        }
-
-        public ItalianNumberParserConfiguration(CultureInfo ci)
-        {
+            this.Config = config;
             this.LangMarker = NumbersDefinitions.LangMarker;
-            this.CultureInfo = ci;
+            this.CultureInfo = new CultureInfo(config.Culture);
+
             this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
             this.IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
 

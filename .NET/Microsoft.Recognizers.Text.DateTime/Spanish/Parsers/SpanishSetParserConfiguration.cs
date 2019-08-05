@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
+    public class SpanishSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
         public SpanishSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

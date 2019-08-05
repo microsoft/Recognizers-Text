@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
+    public class FrenchTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; // "TimePeriod";
 
@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         private static readonly Regex BeforeRegex =
             new Regex(DateTimeDefinitions.BeforeRegex2, RegexFlags);
 
-        public FrenchTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+        public FrenchTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;

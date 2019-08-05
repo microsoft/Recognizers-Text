@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchMergedExtractorConfiguration : BaseOptionsConfiguration, IMergedExtractorConfiguration
+    public class FrenchMergedExtractorConfiguration : BaseDateTimeOptionsConfiguration, IMergedExtractorConfiguration
     {
         // avant - 'before'
         public static readonly Regex BeforeRegex =
@@ -50,8 +50,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public FrenchMergedExtractorConfiguration(DateTimeOptions options)
-            : base(options)
+        public FrenchMergedExtractorConfiguration(IDateTimeOptionsConfiguration config)
+            : base(config)
         {
             DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(this));

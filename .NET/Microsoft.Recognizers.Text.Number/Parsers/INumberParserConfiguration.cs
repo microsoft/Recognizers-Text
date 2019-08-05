@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         ImmutableDictionary<string, string> RelativeReferenceRelativeToMap { get; }
 
-        NumberOptions Options { get; }
+        INumberOptionsConfiguration Config { get; }
 
         CultureInfo CultureInfo { get; }
 
@@ -86,7 +86,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         public ImmutableDictionary<string, string> RelativeReferenceRelativeToMap { get; set; }
 
-        public NumberOptions Options { get; set; }
+        public INumberOptionsConfiguration Config { get; set; }
 
         public CultureInfo CultureInfo { get; set; }
 
@@ -166,11 +166,11 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 if (tokenList[i].Contains("-"))
                 {
-                    var splitedTokens = tokenList[i].Split('-');
-                    if (splitedTokens.Length == 2 && OrdinalNumberMap.ContainsKey(splitedTokens[1]))
+                    var splitTokens = tokenList[i].Split('-');
+                    if (splitTokens.Length == 2 && OrdinalNumberMap.ContainsKey(splitTokens[1]))
                     {
-                        fracWords.Add(splitedTokens[0]);
-                        fracWords.Add(splitedTokens[1]);
+                        fracWords.Add(splitTokens[0]);
+                        fracWords.Add(splitTokens[1]);
                     }
                     else
                     {
