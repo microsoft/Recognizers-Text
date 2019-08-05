@@ -204,7 +204,7 @@ NumbersWithHalfDozen: !nestedRegex
   def: 半({RoundNumberIntegerRegex}|打)
   references: [RoundNumberIntegerRegex]
 NumbersWithDozen: !nestedRegex
-  def: '{AllIntRegex}[双雙对對打](?!{AllIntRegex})'
+  def: '{AllIntRegex}[对對打](?!{AllIntRegex})'
   references: [AllIntRegex]
 PointRegexStr: !simpleRegex
   def: '[点點\.．]'
