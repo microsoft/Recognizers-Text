@@ -8,5 +8,5 @@ class Matcher(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def find(self, query_text: []) -> list():
+    def find(self, query_text: []) -> []:
         raise NotImplementedError

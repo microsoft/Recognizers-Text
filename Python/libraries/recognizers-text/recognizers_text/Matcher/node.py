@@ -2,7 +2,7 @@
 class Node(object):
     def __init__(self):
         self.__values = set(),
-        self.__children = dict()
+        self.__children = {}
 
     def end(self) -> bool:
         return self.values is not None & any(self.values)
@@ -16,11 +16,11 @@ class Node(object):
         self.__values = values
 
     @property
-    def children(self) -> dict():
+    def children(self) -> {}:
         return self.__children
 
     @children.setter
-    def children(self, children) -> dict():
+    def children(self, children) -> {}:
         self.__children = children
 
     def get_enumerator(self):

@@ -12,13 +12,13 @@ class TrieTree:
         return self.__root
 
     # This class should be overrided from AbstractMatcher
-    def insert(self, value: list(), _id: str) -> None:
+    def insert(self, value: [], _id: str) -> None:
         pass
 
     # This class should be overrided from AbstractMatcher
-    def init(self, values: list(), ids: []) -> None:
+    def init(self, values: [], ids: []) -> None:
         pass
 
     # This class should be overrided from AbstractMatcher
-    def find(self, query_text: list()) -> list[MatchResult]:
+    def find(self, query_text: []) -> []:
         pass
