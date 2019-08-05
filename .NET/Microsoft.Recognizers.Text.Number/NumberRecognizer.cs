@@ -102,7 +102,8 @@ namespace Microsoft.Recognizers.Text.Number
             RegisterModel<NumberRangeModel>(
                 Culture.English,
                 options => new NumberRangeModel(
-                    new BaseNumberRangeParser(new EnglishNumberRangeParserConfiguration(new BaseNumberOptionsConfiguration(Culture.English, options))),
+                    new BaseNumberRangeParser(new EnglishNumberRangeParserConfiguration(
+                                                  new BaseNumberOptionsConfiguration(Culture.English, options))),
                     new English.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.English, options))));
 
             RegisterModel<NumberModel>(
@@ -344,7 +345,8 @@ namespace Microsoft.Recognizers.Text.Number
             /* RegisterModel<NumberRangeModel>(
                Culture.Turkish,
                options => new NumberRangeModel(
-                   new BaseNumberRangeParser(new TurkishNumberRangeParserConfiguration()),
+                   new BaseNumberRangeParser(new TurkishNumberRangeParserConfiguration(
+                                                 new BaseNumberOptionsConfiguration(Culture.Turkish, options))),
                    new Turkish.NumberRangeExtractor(options)));*/
         }
 
