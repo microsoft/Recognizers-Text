@@ -42,7 +42,9 @@ class AaNode(Node):
         self.__fail = fail
 
     def get_enumerator(self):
-        pass
+        child: Node
+        child.getEnumerator()
+        return self.__children.values.select(child)
 
     def to_string(self):
-        pass
+       return  self.__word.to_string()
