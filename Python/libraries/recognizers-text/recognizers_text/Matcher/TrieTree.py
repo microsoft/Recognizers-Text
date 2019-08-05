@@ -1,8 +1,8 @@
 from .Node import Node
-from .match_result import MatchResult
+from .abstract_matcher import AbstractMatcher
 
 
-class TrieTree:
+class TrieTree(AbstractMatcher):
 
     def __init__(self):
         self.__root = Node()

@@ -1,8 +1,8 @@
-from recognizers_text.matcher import matcher
+from .matcher import Matcher
 from abc import abstractmethod
 
 
-class AbstractMatcher(matcher):
+class AbstractMatcher(Matcher):
     @abstractmethod
     def init(self, values: [str], ids: [str]):
         pass
