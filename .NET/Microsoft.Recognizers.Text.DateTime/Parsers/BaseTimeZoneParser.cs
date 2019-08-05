@@ -72,7 +72,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static string NormalizeText(string text)
         {
             text = Regex.Replace(text, @"\s+", " ");
-            return Regex.Replace(text, @"timezone", "time");
+            text = Regex.Replace(text, @"timezone$", string.Empty);
+            text = Regex.Replace(text, @"time$", string.Empty);
+            return text.TrimEnd(' ');
         }
 
         public ParseResult Parse(ExtractResult result)

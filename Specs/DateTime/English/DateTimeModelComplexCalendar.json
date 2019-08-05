@@ -3089,9 +3089,9 @@
             {
               "timex": "2018-06-26T15",
               "type": "datetime",
-              "timezone": "UTC-07:00",
+              "timezone": "UTC-08:00",
               "timezoneText": "pacific",
-              "utcOffsetMins": "-420",
+              "utcOffsetMins": "-480",
               "value": "2018-06-26 15:00:00"
             }
           ]

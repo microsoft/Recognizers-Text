@@ -705,11 +705,11 @@
     ]
   },
   {
-    "Input": "I'm in the Madrid            timezone",
+    "Input": "I'm in the Madrid  timezone",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Madrid            timezone",
+        "Text": "Madrid  timezone",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -718,7 +718,30 @@
           }
         },
         "Start": 11,
-        "Length": 26
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "I'm in the Madrid ",
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "I'm in the Russia time zone 3",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "russia time zone 3",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "utcOffsetMins": "240",
+            "value": "UTC+04:00"
+          }
+        },
+        "Start": 11,
+        "Length": 18
       }
     ]
   }

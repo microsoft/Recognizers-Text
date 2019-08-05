@@ -179,7 +179,6 @@ FullNameList: !list
     - Central European Standard Time
     - Central Pacific Standard Time
     - Central Standard Time
-    - Central Standard Time
     - China Standard Time
     - Dateline Standard Time
     - E. Africa Standard Time
@@ -214,7 +213,6 @@ FullNameList: !list
     - Middle East Standard Time
     - Montevideo Standard Time
     - Morocco Standard Time
-    - Mountain Standard Time
     - Mountain Standard Time
     - Myanmar Standard Time
     - N. Central Asia Standard Time
@@ -497,167 +495,162 @@ AbbrToMinMapping: !dictionary
 FullToMinMapping: !dictionary
  types: [ string , int ]
  entries:
-   beijing time: 480
-   shanghai time: 480
-   shenzhen time: 480
-   suzhou time: 480
-   tianjian time: 480
-   chengdu time: 480
-   guangzhou time: 480
-   wuxi time: 480
-   xiamen time: 480
-   chongqing time: 480
-   shenyang time: 480
-   china time: 480
-   redmond time: -480
-   seattle time: -480
-   bellevue time: -480
-   pacific daylight time: -420
-   pacific time: -480
-   afghanistan standard time: 270
-   alaskan standard time: -540
-   arab standard time: 180
-   arabian standard time: 180
-   arabic standard time: 180
-   argentina standard time: -180
-   atlantic standard time: -240
-   aus central standard time: 570
-   aus eastern standard time: 600
-   azerbaijan standard time: 240
-   azores standard time: -60
-   bahia standard time: -180
-   bangladesh standard time: 360
-   belarus standard time: 180
-   canada central standard time: -360
-   cape verde standard time: -60
-   caucasus standard time: 240
-   cen. australia standard time: 570
-   central australia standard time: 570
-   central america standard time: -360
-   central asia standard time: 360
-   central brazilian standard time: -240
-   central europe time: 60
-   central european time: 60
-   central europe std time: 60
-   central european std time: 60
-   central europe standard time: 60
-   central european standard time: 60
-   central europe summer time: 120
-   central european summer time: 120
-   central pacific standard time: 660
-   central standard time: -360
+   beijing: 480
+   shanghai: 480
+   shenzhen: 480
+   suzhou: 480
+   tianjian: 480
+   chengdu: 480
+   guangzhou: 480
+   wuxi: 480
+   xiamen: 480
+   chongqing: 480
+   shenyang: 480
+   china: 480
+   redmond: -480
+   seattle: -480
+   bellevue: -480
+   pacific daylight: -420
+   pacific: -480
+   afghanistan standard: 270
+   alaskan standard: -540
+   arab standard: 180
+   arabian standard: 180
+   arabic standard: 180
+   argentina standard: -180
+   atlantic standard: -240
+   aus central standard: 570
+   aus eastern standard: 600
+   azerbaijan standard: 240
+   azores standard: -60
+   bahia standard: -180
+   bangladesh standard: 360
+   belarus standard: 180
+   canada central standard: -360
+   cape verde standard: -60
+   caucasus standard: 240
+   cen. australia standard: 570
+   central australia standard: 570
+   central america standard: -360
+   central asia standard: 360
+   central brazilian standard: -240
+   central europe: 60
+   central european: 60
+   central europe std: 60
+   central european std: 60
+   central europe standard: 60
+   central european standard: 60
+   central europe summer: 120
+   central european summer: 120
+   central pacific standard: 660
+   central standard: -360
    central standard time (mexico): -360
-   china standard time: 480
-   dateline standard time: -720
-   e. africa standard time: 180
-   e. australia standard time: 600
-   e. europe standard time: 120
-   e. south america standard time: -180
-   europe central time: 60
-   european central time: 60
+   china standard: 480
+   dateline standard: -720
+   e. africa standard: 180
+   e. australia standard: 600
+   e. europe standard: 120
+   e. south america standard: -180
+   europe central: 60
+   european central: 60
    central: -300
-   central time: -300
    eastern: -240
-   eastern time: -240
-   eastern standard time: -300
+   eastern standard: -300
    eastern standard time (mexico): -300
-   egypt standard time: 120
-   ekaterinburg standard time: 300
-   fiji standard time: 720
-   fle standard time: 120
-   georgian standard time: 240
-   gmt standard time: 0
-   greenland standard time: -180
-   greenwich standard time: 0
-   gtb standard time: 120
-   hawaiian standard time: -600
-   india standard time: 330
-   iran standard time: 210
-   israel standard time: 120
-   jordan standard time: 120
-   kaliningrad standard time: 120
-   kamchatka standard time: 720
-   korea standard time: 540
-   libya standard time: 120
-   line islands standard time: 840
-   magadan standard time: 660
-   mauritius standard time: 240
-   mid-atlantic standard time: -120
-   middle east standard time: 120
-   montevideo standard time: -180
-   morocco standard time: 0
+   egypt standard: 120
+   ekaterinburg standard: 300
+   fiji standard: 720
+   fle standard: 120
+   georgian standard: 240
+   gmt standard: 0
+   greenland standard: -180
+   greenwich standard: 0
+   gtb standard: 120
+   hawaiian standard: -600
+   india standard: 330
+   iran standard: 210
+   israel standard: 120
+   jordan standard: 120
+   kaliningrad standard: 120
+   kamchatka standard: 720
+   korea standard: 540
+   libya standard: 120
+   line islands standard: 840
+   magadan standard: 660
+   mauritius standard: 240
+   mid-atlantic standard: -120
+   middle east standard: 120
+   montevideo standard: -180
+   morocco standard: 0
    mountain: -360
-   mountain time: -360
-   mountain standard time: -420
+   mountain standard: -420
    mountain standard time (mexico): -420
-   myanmar standard time: 390
-   n. central asia standard time: 420
-   namibia standard time: 60
-   nepal standard time: 345
-   new zealand standard time: 720
-   newfoundland standard time: -210
-   north asia east standard time: 480
-   north asia standard time: 420
-   north korea standard time: 510
-   pacific: -420
+   myanmar standard: 390
+   n. central asia standard: 420
+   namibia standard: 60
+   nepal standard: 345
+   new zealand standard: 720
+   newfoundland standard: -210
+   north asia east standard: 480
+   north asia standard: 420
+   north korea standard: 510
    west coast: -420
-   west coast time: -420
-   pacific sa standard time: -240
-   pacific standard time: -480
+   pacific sa standard: -240
+   pacific standard: -480
    pacific standard time (mexico): -480
-   pakistan standard time: 300
-   paraguay standard time: -240
-   romance standard time: 60
+   pakistan standard: 300
+   paraguay standard: -240
+   romance standard: 60
    russia time zone 10: 660
    russia time zone 11: 720
    russia time zone 3: 240
-   russian standard time: 180
-   sa eastern standard time: -180
-   sa pacific standard time: -300
-   sa western standard time: -240
-   samoa standard time: -660
-   se asia standard time: 420
-   singapore standard time: 480
-   singapore time: 480
-   south africa standard time: 120
-   sri lanka standard time: 330
-   syria standard time: 120
-   taipei standard time: 480
-   tasmania standard time: 600
-   tokyo standard time: 540
-   tonga standard time: 780
-   turkey standard time: 180
-   ulaanbaatar standard time: 480
-   us eastern standard time: -300
-   us mountain standard time: -420
-   venezuela standard time: -240
-   vladivostok standard time: 600
-   w. australia standard time: 480
-   w. central africa standard time: 60
-   w. europe standard time: 0
-   western european time: 0
-   west europe standard time: 0
-   west europe std time: 0
-   western europe standard time: 0
-   western europe summer time: 60
-   w. europe summer time: 60
-   western european summer time: 60
-   west europe summer time: 60
-   west asia standard time: 300
-   west pacific standard time: 600
-   yakutsk standard time: 540
-   pacific daylight saving time: -420
-   australian western daylight time: 540
-   australian west daylight time: 540
-   austrialian western daylight time: 540
-   austrialian west daylight time: 540
-   colombia time: -300
-   hong kong time: 480
-   madrid time: 60
-   bilbao time: 60
-   seville time: 60
-   valencia time: 60
-   malaga Time: 60
+   russian standard: 180
+   sa eastern standard: -180
+   sa pacific standard: -300
+   sa western standard: -240
+   samoa standard: -660
+   se asia standard: 420
+   singapore standard: 480
+   singapore: 480
+   south africa standard: 120
+   sri lanka standard: 330
+   syria standard: 120
+   taipei standard: 480
+   tasmania standard: 600
+   tokyo standard: 540
+   tonga standard: 780
+   turkey standard: 180
+   ulaanbaatar standard: 480
+   us eastern standard: -300
+   us mountain standard: -420
+   venezuela standard: -240
+   vladivostok standard: 600
+   w. australia standard: 480
+   w. central africa standard: 60
+   w. europe standard: 0
+   western european: 0
+   west europe standard: 0
+   west europe std: 0
+   western europe standard: 0
+   western europe summer: 60
+   w. europe summer: 60
+   western european summer: 60
+   west europe summer: 60
+   west asia standard: 300
+   west pacific standard: 600
+   yakutsk standard: 540
+   pacific daylight saving: -420
+   australian western daylight: 540
+   australian west daylight: 540
+   austrialian western daylight: 540
+   austrialian west daylight: 540
+   colombia: -300
+   hong kong: 480
+   madrid: 60
+   bilbao: 60
+   seville: 60
+   valencia: 60
+   malaga: 60
    las Palmas: 60
    zaragoza: 60
    alicante: 60
