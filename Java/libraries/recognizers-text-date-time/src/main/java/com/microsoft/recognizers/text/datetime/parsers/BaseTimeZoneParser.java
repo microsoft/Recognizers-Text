@@ -34,8 +34,7 @@ public class BaseTimeZoneParser implements IDateTimeParser {
 
     public String normalizeText(String text) {
         text = text.replaceAll("\\s+", " ");
-        text = text.replaceAll("timezone$", "");
-        text = text.replaceAll("time$", "");
+        text = text.replace("time$|timezone$", "");
         return  text.trim();
     }
 

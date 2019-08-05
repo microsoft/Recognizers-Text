@@ -723,12 +723,12 @@
     ]
   },
   {
-    "Input": "I'm in the Madrid ",
+    "Input": "I'm in Madrid.",
     "NotSupported": "javascript, python",
     "Results": []
   },
   {
-    "Input": "I'm in the Russia time zone 3",
+    "Input": "I'm on Russia time zone 3",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -740,8 +740,44 @@
             "value": "UTC+04:00"
           }
         },
-        "Start": 11,
+        "Start": 7,
         "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "All times in central standard time (mexico)",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "central standard time (mexico)",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "utcOffsetMins": "-360",
+            "value": "UTC-06:00"
+          }
+        },
+        "Start": 13,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "I'm on Russia time zone 10",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "russia time zone 10",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "utcOffsetMins": "660",
+            "value": "UTC+11:00"
+          }
+        },
+        "Start": 7,
+        "Length": 19
       }
     ]
   }
