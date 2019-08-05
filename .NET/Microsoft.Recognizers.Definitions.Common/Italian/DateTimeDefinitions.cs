@@ -208,7 +208,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string AllRegex = @"\b(?<all>(tutt[oa](\s+(il|l[a']))?|inter[oa])(\s*|-)(?<unit>anno|mese|settimana|giorno)|(?<unit>anno|mese|settimana|giorno)\s+inter[oa])\b";
       public const string HalfRegex = @"\b((?<half>(metà|mezz[oa])\s+(?<unit>anno|mese|settimana|giorno|ora))|(?<half>(?<unit>semestr[ei])))\b";
       public const string ConjunctionRegex = @"\b((e(\s+per)?)|con)\b";
-      public static readonly string HolidayRegex1 = $@"\b(?<holiday>capodanno cinese|cenone di capodanno|veglione di capodanno|(la )?vigilia di capodanno|capodanno|mercoledì delle ceneri|le ceneri|martedì grasso|primo dell'anno|festa del papà|pesce d'aprile|vigilia di natale|la vigilia|giorno di natale|natale|halloween|pasqua|lunedì dell'angelo)(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s*anno))?\b";
+      public static readonly string HolidayRegex1 = $@"\b(?<holiday>capodanno cinese|cenone di capodanno|veglione di capodanno|(la )?vigilia di capodanno|capodanno|mercoledì delle ceneri|le ceneri|martedì grasso|primo dell'anno|festa del papà|pesce d'aprile|vigilia di natale|la vigilia|giorno di natale|natale|halloween|domenica di pasqua|pasqua|lunedì dell'angelo)(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s*anno))?\b";
       public static readonly string HolidayRegex2 = $@"\b(?<holiday>giorno dei morti|i morti|tutti i santi|i santi|giorno dell'independenza|((giorno|festa) del)?la liberazione|festa della repubblica|festa del lavoro|festa dei lavoratori)(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s*anno))?\b";
       public static readonly string HolidayRegex3 = $@"(?<holiday>(giorno\s+((di|del(la)?)\s+)?)?(pasqua|quaresima|memoria|ringraziamento|san patrizio|festa della mamma|festa delle donne|festa della donna|san valentino|ferragosto))(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s*anno))?";
       public const string DateTokenPrefix = @"il ";
@@ -594,7 +594,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
         };
       public static readonly Dictionary<string, IEnumerable<string>> HolidayNames = new Dictionary<string, IEnumerable<string>>
         {
-            { @"easterday", new string[] { @"pasqua" } },
+            { @"easterday", new string[] { @"pasqua", @"giornodipasqua", @"domenicadipasqua" } },
             { @"eastermonday", new string[] { @"lunedidell'angelo" } },
             { @"fathersday", new string[] { @"festadelpapà" } },
             { @"mothersday", new string[] { @"festadellamamma" } },

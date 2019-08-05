@@ -484,7 +484,7 @@ HalfRegex: !simpleRegex
 ConjunctionRegex: !simpleRegex
   def: \b((e(\s+per)?)|con)\b
 HolidayRegex1: !nestedRegex
-  def: \b(?<holiday>capodanno cinese|cenone di capodanno|veglione di capodanno|(la )?vigilia di capodanno|capodanno|mercoledì delle ceneri|le ceneri|martedì grasso|primo dell'anno|festa del papà|pesce d'aprile|vigilia di natale|la vigilia|giorno di natale|natale|halloween|pasqua|lunedì dell'angelo)(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s*anno))?\b
+  def: \b(?<holiday>capodanno cinese|cenone di capodanno|veglione di capodanno|(la )?vigilia di capodanno|capodanno|mercoledì delle ceneri|le ceneri|martedì grasso|primo dell'anno|festa del papà|pesce d'aprile|vigilia di natale|la vigilia|giorno di natale|natale|halloween|domenica di pasqua|pasqua|lunedì dell'angelo)(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s*anno))?\b
   references: [ YearRegex, RelativeRegex ]
 HolidayRegex2: !nestedRegex
   def: \b(?<holiday>giorno dei morti|i morti|tutti i santi|i santi|giorno dell'independenza|((giorno|festa) del)?la liberazione|festa della repubblica|festa del lavoro|festa dei lavoratori)(\s+((del|di)\s+)?({YearRegex}|{RelativeRegex}\s*anno))?\b
@@ -955,7 +955,7 @@ DoubleNumbers: !dictionary
 HolidayNames: !dictionary
   types: [ string, 'string[]' ]
   entries: 
-    easterday: [ pasqua ]
+    easterday: [ pasqua, giornodipasqua, domenicadipasqua ]
     eastermonday: [ lunedidell'angelo ]
     fathersday: [ festadelpapà ]
     mothersday: [ festadellamamma ]

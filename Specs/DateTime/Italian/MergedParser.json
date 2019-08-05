@@ -178,9 +178,14 @@
         "Value": {
           "values": [
             {
-              "timex": "",
+              "timex": "XXXX-03-27",
               "type": "date",
-              "value": "not resolved"
+              "value": "2016-03-27"
+            },
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2017-04-16"
             }
           ]
         },
@@ -788,39 +793,24 @@
     "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "domenica",
+        "Text": "domenica di Pasqua",
         "Type": "datetimeV2.date",
         "Value": {
           "values": [
             {
-              "timex": "XXXX-WXX-7",
+              "timex": "XXXX-03-27",
               "type": "date",
-              "value": "2016-11-06"
+              "value": "2016-03-27"
             },
             {
-              "timex": "XXXX-WXX-7",
+              "timex": "XXXX-03-27",
               "type": "date",
-              "value": "2016-11-13"
+              "value": "2017-04-16"
             }
           ]
         },
         "Start": 29,
-        "Length": 8
-      },
-      {
-        "Text": "Pasqua",
-        "Type": "datetimeV2.date",
-        "Value": {
-          "values": [
-            {
-              "timex": "",
-              "type": "date",
-              "value": "not resolved"
-            }
-          ]
-        },
-        "Start": 41,
-        "Length": 6
+        "Length": 18
       }
     ]
   },
@@ -1485,7 +1475,7 @@
               "Mod": "before",
               "type": "daterange",
               "end": "2020-01-01",
-			  "sourceEntity": "datetimerange"
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -1511,7 +1501,7 @@
               "Mod": "before",
               "type": "daterange",
               "end": "2012-01-01",
-			  "sourceEntity": "datetimerange"
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -1537,7 +1527,7 @@
               "Mod": "since",
               "type": "daterange",
               "start": "2012-01-01",
-			  "sourceEntity": "datetimerange"
+              "sourceEntity": "datetimerange"
             }
           ]
         },
