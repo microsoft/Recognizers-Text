@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dal 4 al 22 questo mese",
@@ -30,7 +30,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dal 4-23 nel prossimo mese",
@@ -56,7 +56,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dal 3 fino al 12 Set",
@@ -82,7 +82,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "da venerdì 11 fino a martedì 15",
@@ -108,7 +108,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dal 4 al 23 il prossimo mese",
@@ -134,7 +134,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dal 4 fino al 23 di questo mese",
@@ -160,7 +160,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "tra il 4 e il 22 questo mese",
@@ -186,7 +186,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "tra il 3 e il 12 di Set",
@@ -212,7 +212,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dal 4 al 22 Gennaio 1995",
@@ -238,7 +238,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "tra il 4-22 Gennaio 1995",
@@ -264,7 +264,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "tra il 4 settembre e l'8 settembre",
@@ -290,7 +290,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "questa settimana",
@@ -316,10 +316,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "prossima settimana",
+        "Text": "la prossima settimana",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-W46",
@@ -332,8 +332,8 @@
             "endDate": "2016-11-21"
           }
         },
-        "Start": 14,
-        "Length": 18
+        "Start": 11,
+        "Length": 21
       }
     ]
   },
@@ -342,7 +342,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "la settimana corrente",
@@ -368,7 +368,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "Febbraio",
@@ -394,7 +394,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "questo Settembre",
@@ -420,7 +420,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "lo scorso Set",
@@ -446,7 +446,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "il prossimo Giugno",
@@ -472,7 +472,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "la terza settimana di questo mese",
@@ -498,7 +498,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "l'ultima settimana di luglio",
@@ -524,7 +524,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "settimana del 16 settembre",
@@ -550,7 +550,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "mese del 16 settembre",
@@ -576,7 +576,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "2015.3",
@@ -602,7 +602,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "2015-3",
@@ -628,7 +628,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "2015/3",
@@ -654,7 +654,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "3/2015",
@@ -680,7 +680,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": []
   },
   {
@@ -688,10 +688,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "prossimi 2 giorni",
+        "Text": "i prossimi 2 giorni",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-08,2016-11-10,P2D)",
@@ -704,8 +704,8 @@
             "endDate": "2016-11-10"
           }
         },
-        "Start": 2,
-        "Length": 17
+        "Start": 0,
+        "Length": 19
       }
     ]
   },
@@ -714,7 +714,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "diversi giorni passati",
@@ -740,7 +740,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "la settimana",
@@ -766,7 +766,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "questa settimana",
@@ -792,7 +792,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "la mia settimana",
@@ -818,7 +818,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "il weekend",
@@ -844,7 +844,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "questo weekend",
@@ -870,7 +870,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "il mio weekend",
@@ -896,7 +896,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dal 2 Ott al 22 Ottobre",
@@ -922,7 +922,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dal 12 Gennaio 2016 - 01/22/2016",
@@ -948,7 +948,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dal 1 Gen fino a Mer, 22 di Gen",
@@ -974,7 +974,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "da oggi fino a domani",
@@ -1000,7 +1000,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "tra il 2 Ott e il 22 Ottobre",
@@ -1026,7 +1026,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "Novembre 19-20",
@@ -1052,7 +1052,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dal 19 al 20 Novembre",
@@ -1078,7 +1078,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "tra il 19 e il 20 Novembre",
@@ -1104,7 +1104,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "resto della settimana",
@@ -1130,7 +1130,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "resto di questa settimana",
@@ -1156,7 +1156,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "resto della mia settimana",
@@ -1182,7 +1182,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "resto della settimana corrente",
@@ -1208,7 +1208,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "resto del mese",
@@ -1234,7 +1234,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "resto dell'anno",
@@ -1260,7 +1260,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-13T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "resto della mia settimana",
@@ -1286,7 +1286,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "weekend",
@@ -1312,7 +1312,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "questo weekend",
@@ -1338,7 +1338,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "giugno 2016",
@@ -1364,7 +1364,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "giugno del prossimo anno",
@@ -1390,10 +1390,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "prossimo anno",
+        "Text": "il prossimo anno",
         "Type": "daterange",
         "Value": {
           "Timex": "2017",
@@ -1406,8 +1406,8 @@
             "endDate": "2018-01-01"
           }
         },
-        "Start": 14,
-        "Length": 13
+        "Start": 11,
+        "Length": 16
       }
     ]
   },
@@ -1416,10 +1416,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "prossimi 3 giorni",
+        "Text": "i prossimi 3 giorni",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-08,2016-11-11,P3D)",
@@ -1432,8 +1432,8 @@
             "endDate": "2016-11-11"
           }
         },
-        "Start": 13,
-        "Length": 17
+        "Start": 11,
+        "Length": 19
       }
     ]
   },
@@ -1442,10 +1442,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "prossimi 3 mesi",
+        "Text": "i prossimi 3 mesi",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-08,2017-02-08,P3M)",
@@ -1458,8 +1458,8 @@
             "endDate": "2017-02-08"
           }
         },
-        "Start": 13,
-        "Length": 15
+        "Start": 11,
+        "Length": 17
       }
     ]
   },
@@ -1468,7 +1468,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": []
   },
   {
@@ -1476,7 +1476,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "le ultime 3 settimane",
@@ -1502,7 +1502,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "gli ultimi 3 anni",
@@ -1528,7 +1528,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "3 settimane precedenti",
@@ -1554,7 +1554,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "la prima settimana di Ott",
@@ -1580,7 +1580,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "la terza settimana del 2027",
@@ -1606,7 +1606,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "la terza settimana del prossimo anno",
@@ -1632,7 +1632,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "il terzo trimestre del 2016",
@@ -1658,7 +1658,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "il terzo trimestre di quest'anno",
@@ -1684,7 +1684,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "2016 per il terzo trimestre",
@@ -1710,7 +1710,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "questa estate",
@@ -1730,18 +1730,18 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "prossima primavera",
+        "Text": "la prossima primavera",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-SP",
           "FutureResolution": {},
           "PastResolution": {}
         },
-        "Start": 11,
-        "Length": 18
+        "Start": 8,
+        "Length": 21
       }
     ]
   },
@@ -1750,7 +1750,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "estate",
@@ -1770,7 +1770,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "estate",
@@ -1790,7 +1790,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "l'estate 2016",
@@ -1810,7 +1810,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "l'estate del 2016",
@@ -1830,7 +1830,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "mese in arrivo",
@@ -1856,7 +1856,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "prossimo mese",
@@ -1882,7 +1882,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "fine mese",
@@ -1909,7 +1909,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "fine settimana",
@@ -1936,7 +1936,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "fine di quest'anno",
@@ -1963,7 +1963,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "inizio del prossimo anno",
@@ -1990,7 +1990,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "inizio della prossima settimana",
@@ -2017,7 +2017,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "inizio del prossimo mese",
@@ -2044,7 +2044,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "fine dell'anno scorso",
@@ -2071,7 +2071,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "fine della scorsa settimana",
@@ -2098,7 +2098,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "fine dello scorso mese",
@@ -2126,7 +2126,7 @@
       "ReferenceDateTime": "2017-11-14T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "la prossima settimana tra mercoledì e venerdì",
@@ -2153,7 +2153,7 @@
       "ReferenceDateTime": "2017-11-14T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "la scorsa settimana tra mercoledì e venerdì",
@@ -2179,7 +2179,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-14T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "questa settimana da mar a gio",
@@ -2205,7 +2205,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "questa settimana",
@@ -2231,7 +2231,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "la prima settimana di quest'anno",
@@ -2257,7 +2257,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "prima settimana del 2015",
@@ -2283,7 +2283,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "seconda settimana del 2015",
@@ -2309,7 +2309,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "questo weekend",
@@ -2336,7 +2336,7 @@
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "l'ultimo weekend del 2015",
@@ -2362,7 +2362,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "anno 247",
@@ -2388,7 +2388,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "anni 1970",
@@ -2414,7 +2414,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "anni 2000",
@@ -2440,7 +2440,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "anni 70",
@@ -2466,7 +2466,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "anni '70",
@@ -2492,7 +2492,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "anni settanta",
@@ -2518,7 +2518,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "anni millenovecentosettanta",
@@ -2544,7 +2544,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "anni duemiladieci",
@@ -2570,7 +2570,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "anni duemila",
@@ -2596,7 +2596,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "anni trenta",
@@ -2622,7 +2622,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dal 2 al 7 Feb duemiladiciotto",
@@ -2648,7 +2648,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "tra il 2 e il 7 Feb duemiladiciotto",
@@ -2674,7 +2674,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "a Feb tra il 2-7 duemiladiciotto",
@@ -2700,7 +2700,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "Giugno del millenovecentonovantanove",
@@ -2726,7 +2726,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "millenovecentoventotto",
@@ -2752,7 +2752,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "millesettecentottantanove",
@@ -2778,7 +2778,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "la terza settimana del duemilaventisette",
@@ -2804,7 +2804,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "il primo trimestre del duemilaventi",
@@ -2830,7 +2830,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "primavera del millenovecentosettantotto",
@@ -2850,7 +2850,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "anno duecentosessantasette",
@@ -2876,7 +2876,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "la settimana dopo la prossima",
@@ -2902,7 +2902,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "il mese dopo il prossimo",
@@ -2928,7 +2928,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "l'anno dopo il prossimo",
@@ -2954,7 +2954,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "il weekend dopo il prossimo",
@@ -2980,7 +2980,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "2014-2018",
@@ -3006,7 +3006,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "tra 2014-2018",
@@ -3032,7 +3032,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dal 2014 al 2018",
@@ -3058,7 +3058,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "nel 2014 fino al 2018",
@@ -3084,7 +3084,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dal duemila fino al duemilaquattordici",
@@ -3110,7 +3110,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "2 decenni passati",
@@ -3136,7 +3136,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ultimi due decenni",
@@ -3162,7 +3162,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "prossimo decennio",
@@ -3188,7 +3188,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "prossimi 3 decenni",
@@ -3214,7 +3214,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "4 settimane in futuro",
@@ -3240,7 +3240,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "due giorni da questo momento",
@@ -3266,7 +3266,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "a partire dalla settimana prossima",
@@ -3293,7 +3293,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "fine della prossima settimana",
@@ -3320,7 +3320,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "inizio della prossima settimana",
@@ -3347,7 +3347,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "fine di Marzo",
@@ -3374,7 +3374,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "metà della prossima settimana",
@@ -3401,7 +3401,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "a partire dalla prossima settimana",
@@ -3428,7 +3428,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "metà estate",

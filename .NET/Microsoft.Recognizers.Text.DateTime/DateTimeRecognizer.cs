@@ -5,6 +5,7 @@ using Microsoft.Recognizers.Text.DateTime.Dutch;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.DateTime.German;
+using Microsoft.Recognizers.Text.DateTime.Italian;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 
@@ -100,6 +101,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                         new GermanMergedParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.German, options))),
                     new BaseMergedDateTimeExtractor(
                         new GermanMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.German, options)))));
+
+            RegisterModel<DateTimeModel>(
+                Culture.Italian,
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new ItalianMergedParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Italian, options))),
+                    new BaseMergedDateTimeExtractor(
+                        new ItalianMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Italian, options)))));
 
             // TODO to be uncommented when all tests for Dutch are green.
             // RegisterModel<DateTimeModel>(

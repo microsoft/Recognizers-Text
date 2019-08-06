@@ -4,8 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ott/2",
@@ -23,7 +22,9 @@
               "value": "2017-10-02"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 15
       }
     ]
   },
@@ -32,11 +33,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "22/04",
+        "Text": "il 22/04",
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -51,7 +51,9 @@
               "value": "2017-04-22"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 15
       }
     ]
   },
@@ -60,8 +62,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ventinove maggio",
@@ -79,7 +80,9 @@
               "value": "2017-05-29"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 26
       }
     ]
   },
@@ -88,11 +91,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "due Ago",
+        "Text": "due ago",
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -107,7 +109,9 @@
               "value": "2017-08-02"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 17
       }
     ]
   },
@@ -116,8 +120,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "oggi",
@@ -130,7 +133,9 @@
               "value": "2016-11-07"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 11
       }
     ]
   },
@@ -139,8 +144,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "domani",
@@ -153,7 +157,9 @@
               "value": "2016-11-08"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 13
       }
     ]
   },
@@ -162,8 +168,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ieri",
@@ -176,7 +181,9 @@
               "value": "2016-11-06"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 11
       }
     ]
   },
@@ -185,8 +192,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "venerdì",
@@ -204,7 +210,9 @@
               "value": "2016-11-11"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 14
       }
     ]
   },
@@ -213,8 +221,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dal 4-23 nel prossimo mese",
@@ -228,7 +235,9 @@
               "end": "2016-12-23"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 36
       }
     ]
   },
@@ -237,8 +246,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "tra il 3 e il 12 di set",
@@ -258,7 +266,9 @@
               "end": "2017-09-12"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 33
       }
     ]
   },
@@ -267,8 +277,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "questo settembre",
@@ -282,7 +291,9 @@
               "end": "2016-10-01"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 26
       }
     ]
   },
@@ -291,11 +302,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "12 gennaio 2016 - 01/22/2016",
+        "Text": "il 12 gennaio 2016 - 01/22/2016",
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -306,7 +316,9 @@
               "end": "2016-01-22"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 41
       }
     ]
   },
@@ -315,8 +327,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "i prossimi 3 giorni",
@@ -330,7 +341,9 @@
               "end": "2016-11-11"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 29
       }
     ]
   },
@@ -339,8 +352,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "l'ultima settimana di luglio",
@@ -348,19 +360,21 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-07-W04",
+              "timex": "XXXX-07-W05",
               "type": "daterange",
               "start": "2016-07-25",
               "end": "2016-08-01"
             },
             {
-              "timex": "XXXX-07-W04",
+              "timex": "XXXX-07-W05",
               "type": "daterange",
               "start": "2017-07-24",
               "end": "2017-07-31"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 38
       }
     ]
   },
@@ -369,8 +383,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "2015-3",
@@ -384,7 +397,9 @@
               "end": "2015-04-01"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 16
       }
     ]
   },
@@ -393,8 +408,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "questa estate",
@@ -407,7 +421,9 @@
               "value": "not resolved"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 20
       }
     ]
   },
@@ -416,8 +432,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "da domani",
@@ -428,10 +443,13 @@
               "timex": "2016-11-08",
               "Mod": "since",
               "type": "daterange",
-              "start": "2016-11-08"
+              "start": "2016-11-08",
+              "sourceEntity": "datetimepoint"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 19
       }
     ]
   },
@@ -440,8 +458,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "da agosto",
@@ -452,16 +469,20 @@
               "timex": "XXXX-08",
               "Mod": "since",
               "type": "daterange",
-              "start": "2016-08-01"
+              "start": "2016-08-01",
+              "sourceEntity": "datetimerange"
             },
             {
               "timex": "XXXX-08",
               "Mod": "since",
               "type": "daterange",
-              "start": "2017-08-01"
+              "start": "2017-08-01",
+              "sourceEntity": "datetimerange"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 19
       }
     ]
   },
@@ -470,8 +491,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "da questo agosto",
@@ -482,10 +502,13 @@
               "timex": "2016-08",
               "Mod": "since",
               "type": "daterange",
-              "start": "2016-08-01"
+              "start": "2016-08-01",
+              "sourceEntity": "datetimerange"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 26
       }
     ]
   },
@@ -494,8 +517,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "adesso",
@@ -508,7 +530,9 @@
               "value": "2016-11-07 00:00:00"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 13
       }
     ]
   },
@@ -517,11 +541,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "14 Ottobre per le 8:00:31am",
+        "Text": "il 14 ottobre per le 8:00:31am",
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -536,7 +559,9 @@
               "value": "2017-10-14 08:00:31"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 37
       }
     ]
   },
@@ -545,8 +570,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "domani alle 8:00am",
@@ -559,7 +583,9 @@
               "value": "2016-11-08 08:00:00"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 25
       }
     ]
   },
@@ -568,11 +594,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "alle 10, stanotte",
+        "Text": "10, stanotte",
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -582,7 +607,9 @@
               "value": "2016-11-07 22:00:00"
             }
           ]
-        }
+        },
+        "Start": 13,
+        "End": 24
       }
     ]
   },
@@ -591,11 +618,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "alle 8am stamattina",
+        "Text": "8am stamattina",
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -605,7 +631,9 @@
               "value": "2016-11-07 08:00:00"
             }
           ]
-        }
+        },
+        "Start": 13,
+        "End": 26
       }
     ]
   },
@@ -614,8 +642,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "alla fine di domani",
@@ -623,12 +650,14 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-08T23:59",
+              "timex": "2016-11-08T23:59:59",
               "type": "datetime",
-              "value": "2016-11-08 23:59:00"
+              "value": "2016-11-08 23:59:59"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 26
       }
     ]
   },
@@ -637,8 +666,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "alla fine di domenica",
@@ -646,17 +674,19 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-WXX-7T23:59",
+              "timex": "XXXX-WXX-7T23:59:59",
               "type": "datetime",
-              "value": "2016-11-06 23:59:00"
+              "value": "2016-11-06 23:59:59"
             },
             {
-              "timex": "XXXX-WXX-7T23:59",
+              "timex": "XXXX-WXX-7T23:59:59",
               "type": "datetime",
-              "value": "2016-11-13 23:59:00"
+              "value": "2016-11-13 23:59:59"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 28
       }
     ]
   },
@@ -665,8 +695,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "alla fine di questa domenica",
@@ -674,12 +703,14 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-13T23:59",
+              "timex": "2016-11-13T23:59:59",
               "type": "datetime",
-              "value": "2016-11-13 23:59:00"
+              "value": "2016-11-13 23:59:59"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 35
       }
     ]
   },
@@ -688,8 +719,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dalle cinque alle sette oggi",
@@ -709,7 +739,9 @@
               "end": "2016-11-07 19:00:00"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 38
       }
     ]
   },
@@ -718,8 +750,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dalle 5 alle 6pm del 22 aprile",
@@ -739,7 +770,9 @@
               "end": "2017-04-22 18:00:00"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 40
       }
     ]
   },
@@ -748,8 +781,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dalle 3:00 alle 4:00 domani",
@@ -769,7 +801,9 @@
               "end": "2016-11-08 16:00:00"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 37
       }
     ]
   },
@@ -778,8 +812,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "stasera",
@@ -793,7 +826,9 @@
               "end": "2016-11-07 20:00:00"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 14
       }
     ]
   },
@@ -802,8 +837,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "domani notte",
@@ -817,7 +851,9 @@
               "end": "2016-11-08 23:59:59"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 19
       }
     ]
   },
@@ -826,8 +862,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "prossimo lunedì pomeriggio",
@@ -841,7 +876,9 @@
               "end": "2016-11-14 16:00:00"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 36
       }
     ]
   },
@@ -850,11 +887,34 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "tra un'ora",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07T17:12:00",
+              "type": "datetime",
+              "value": "2016-11-07 17:12:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò la prossima ora",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "la prossima ora",
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -865,7 +925,9 @@
               "end": "2016-11-07 17:12:00"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 22
       }
     ]
   },
@@ -874,8 +936,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "martedì in mattinata",
@@ -895,7 +956,9 @@
               "end": "2016-11-08 12:00:00"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 27
       }
     ]
   },
@@ -904,8 +967,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "3 ore",
@@ -918,7 +980,9 @@
               "value": "10800"
             }
           ]
-        }
+        },
+        "Start": 14,
+        "End": 18
       }
     ]
   },
@@ -927,8 +991,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "3,5 anni",
@@ -941,7 +1004,9 @@
               "value": "110376000"
             }
           ]
-        }
+        },
+        "Start": 14,
+        "End": 21
       }
     ]
   },
@@ -950,8 +1015,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "3 minuti",
@@ -964,7 +1028,9 @@
               "value": "180"
             }
           ]
-        }
+        },
+        "Start": 14,
+        "End": 21
       }
     ]
   },
@@ -973,8 +1039,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "123.45 sec",
@@ -987,7 +1052,9 @@
               "value": "123.45"
             }
           ]
-        }
+        },
+        "Start": 14,
+        "End": 23
       }
     ]
   },
@@ -996,8 +1063,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "tutto il giorno",
@@ -1010,7 +1076,9 @@
               "value": "86400"
             }
           ]
-        }
+        },
+        "Start": 14,
+        "End": 28
       }
     ]
   },
@@ -1019,8 +1087,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ventiquattro ore",
@@ -1033,7 +1100,9 @@
               "value": "86400"
             }
           ]
-        }
+        },
+        "Start": 14,
+        "End": 29
       }
     ]
   },
@@ -1042,8 +1111,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "tutto il mese",
@@ -1056,7 +1124,9 @@
               "value": "2592000"
             }
           ]
-        }
+        },
+        "Start": 14,
+        "End": 26
       }
     ]
   },
@@ -1065,8 +1135,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "un'ora",
@@ -1079,7 +1148,9 @@
               "value": "3600"
             }
           ]
-        }
+        },
+        "Start": 14,
+        "End": 19
       }
     ]
   },
@@ -1088,8 +1159,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "qualche ora",
@@ -1102,7 +1172,9 @@
               "value": "10800"
             }
           ]
-        }
+        },
+        "Start": 14,
+        "End": 24
       }
     ]
   },
@@ -1111,8 +1183,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "qualche minuto",
@@ -1125,7 +1196,9 @@
               "value": "180"
             }
           ]
-        }
+        },
+        "Start": 14,
+        "End": 27
       }
     ]
   },
@@ -1134,8 +1207,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "alcuni giorni",
@@ -1148,7 +1220,9 @@
               "value": "259200"
             }
           ]
-        }
+        },
+        "Start": 14,
+        "End": 26
       }
     ]
   },
@@ -1157,8 +1231,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "diverse settimane",
@@ -1171,7 +1244,9 @@
               "value": "1814400"
             }
           ]
-        }
+        },
+        "Start": 14,
+        "End": 30
       }
     ]
   },
@@ -1180,8 +1255,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "settimanalmente",
@@ -1194,7 +1268,9 @@
               "value": "not resolved"
             }
           ]
-        }
+        },
+        "Start": 10,
+        "End": 24
       }
     ]
   },
@@ -1203,8 +1279,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni giorno",
@@ -1217,7 +1292,9 @@
               "value": "not resolved"
             }
           ]
-        }
+        },
+        "Start": 10,
+        "End": 20
       }
     ]
   },
@@ -1226,8 +1303,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "annualmente",
@@ -1240,7 +1316,9 @@
               "value": "not resolved"
             }
           ]
-        }
+        },
+        "Start": 10,
+        "End": 20
       }
     ]
   },
@@ -1249,8 +1327,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni due giorni",
@@ -1263,7 +1340,9 @@
               "value": "not resolved"
             }
           ]
-        }
+        },
+        "Start": 10,
+        "End": 24
       }
     ]
   },
@@ -1272,8 +1351,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni tre settimane",
@@ -1286,7 +1364,9 @@
               "value": "not resolved"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 28
       }
     ]
   },
@@ -1295,8 +1375,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "3pm ogni giorno",
@@ -1309,7 +1388,9 @@
               "value": "not resolved"
             }
           ]
-        }
+        },
+        "Start": 15,
+        "End": 29
       }
     ]
   },
@@ -1318,8 +1399,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni lunedì",
@@ -1332,7 +1412,9 @@
               "value": "not resolved"
             }
           ]
-        }
+        },
+        "Start": 10,
+        "End": 20
       }
     ]
   },
@@ -1341,8 +1423,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ogni lunedì alle 4pm",
@@ -1355,7 +1436,9 @@
               "value": "not resolved"
             }
           ]
-        }
+        },
+        "Start": 10,
+        "End": 29
       }
     ]
   },
@@ -1364,8 +1447,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "7:56:30 pm",
@@ -1378,7 +1460,9 @@
               "value": "19:56:30"
             }
           ]
-        }
+        },
+        "Start": 13,
+        "End": 22
       }
     ]
   },
@@ -1387,11 +1471,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "le sette e mezza",
+        "Text": "sette e mezza",
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1406,7 +1489,9 @@
               "value": "19:30:00"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 20
       }
     ]
   },
@@ -1415,11 +1500,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "le otto e 20 di sera",
+        "Text": "otto e 20 di sera",
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1429,7 +1513,9 @@
               "value": "20:20:00"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 24
       }
     ]
   },
@@ -1438,8 +1524,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "la mattina alle 7",
@@ -1452,7 +1537,9 @@
               "value": "07:00:00"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 24
       }
     ]
   },
@@ -1461,8 +1548,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "il pomeriggio alle 7",
@@ -1475,7 +1561,9 @@
               "value": "19:00:00"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 27
       }
     ]
   },
@@ -1484,8 +1572,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "verso mezzogiorno",
@@ -1498,7 +1585,9 @@
               "value": "12:00:00"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 24
       }
     ]
   },
@@ -1507,11 +1596,40 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "verso le 11",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T11",
+              "Mod": "approx",
+              "type": "timerange",
+              "value": "11:00:00"
+            },
+            {
+              "timex": "T23",
+              "Mod": "approx",
+              "type": "timerange"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 11 circa",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "11 circa",
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1521,7 +1639,9 @@
               "value": "11:00:00"
             }
           ]
-        }
+        },
+        "Start": 13,
+        "End": 20
       }
     ]
   },
@@ -1530,8 +1650,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "1140 a.m.",
@@ -1544,7 +1663,9 @@
               "value": "11:40:00"
             }
           ]
-        }
+        },
+        "Start": 12,
+        "End": 20
       }
     ]
   },
@@ -1553,8 +1674,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "12 mezzogiorno",
@@ -1567,7 +1687,9 @@
               "value": "12:00:00"
             }
           ]
-        }
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -1576,8 +1698,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dalle 5 alle 6pm",
@@ -1591,7 +1712,9 @@
               "end": "18:00:00"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 26
       }
     ]
   },
@@ -1600,8 +1723,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dalle 5 alle sette di mattina",
@@ -1615,7 +1737,9 @@
               "end": "07:00:00"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 39
       }
     ]
   },
@@ -1624,8 +1748,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "tra le 5 e le 6 del pomeriggio",
@@ -1639,7 +1762,9 @@
               "end": "18:00:00"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 40
       }
     ]
   },
@@ -1648,8 +1773,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dalle 4:00 alle 7",
@@ -1669,7 +1793,9 @@
               "end": "19:00:00"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 27
       }
     ]
   },
@@ -1678,8 +1804,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dalle 3 di mattina fino alle 5pm",
@@ -1693,7 +1818,9 @@
               "end": "17:00:00"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 42
       }
     ]
   },
@@ -1702,8 +1829,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "tra le 4pm e le 5pm",
@@ -1717,7 +1843,9 @@
               "end": "17:00:00"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "End": 29
       }
     ]
   },
@@ -1726,8 +1854,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "in mattinata",
@@ -1741,7 +1868,9 @@
               "end": "12:00:00"
             }
           ]
-        }
+        },
+        "Start": 14,
+        "End": 25
       }
     ]
   },
@@ -1750,8 +1879,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "in serata",
@@ -1765,7 +1893,9 @@
               "end": "20:00:00"
             }
           ]
-        }
+        },
+        "Start": 14,
+        "End": 22
       }
     ]
   },
@@ -1774,8 +1904,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-28T14:11:10.9626841"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "adesso",
@@ -1788,7 +1917,9 @@
               "value": "2017-09-28 14:11:10"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 13
       }
     ]
   },
@@ -1797,8 +1928,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "tra 5 minuti",
@@ -1811,7 +1941,9 @@
               "value": "2016-11-07 00:05:00"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "End": 19
       }
     ]
   },
@@ -1820,8 +1952,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "in 5 minuti",
@@ -1834,17 +1965,18 @@
               "value": "2016-11-07 00:05:00"
             }
           ]
-        }
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   },
   {
-    "Input": "organizzami un appuntamento lunedì della settimana prossima alle 9 am o all' 1 pm",
+    "Input": "organizzami un appuntamento lunedì della settimana prossima alle 9 am o all'1 pm",
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "lunedì della settimana prossima alle 9 am",
@@ -1857,7 +1989,9 @@
               "value": "2017-12-11 09:00:00"
             }
           ]
-        }
+        },
+        "Start": 28,
+        "End": 68
       },
       {
         "Text": "1 pm",
@@ -1870,7 +2004,9 @@
               "value": "13:00:00"
             }
           ]
-        }
+        },
+        "Start": 76,
+        "End": 79
       }
     ]
   },
@@ -1879,8 +2015,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "prossima settimana di lun",
@@ -1893,7 +2028,9 @@
               "value": "2017-12-11"
             }
           ]
-        }
+        },
+        "Start": 31,
+        "End": 55
       },
       {
         "Text": "mar",
@@ -1911,7 +2048,9 @@
               "value": "2017-12-05"
             }
           ]
-        }
+        },
+        "Start": 59,
+        "End": 61
       }
     ]
   },
@@ -1920,34 +2059,23 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "la mattina dalle 9",
-        "TypeName": "datetimeV2.time",
+        "Text": "la mattina dalle 9 alle 10",
+        "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
             {
-              "timex": "T09",
-              "type": "time",
-              "value": "09:00:00"
+              "timex": "(T09,T10,PT1H)",
+              "type": "timerange",
+              "start": "09:00:00",
+              "end": "10:00:00"
             }
           ]
-        }
-      },
-      {
-        "Text": "10",
-        "TypeName": "datetimeV2.time",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "T10",
-              "type": "time",
-              "value": "10:00:00"
-            }
-          ]
-        }
+        },
+        "Start": 28,
+        "End": 53
       }
     ]
   },
@@ -1956,11 +2084,10 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "il prossimo lunedì 1-3 pm",
+        "Text": "prossimo lunedì 1-3 pm",
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -1971,7 +2098,9 @@
               "end": "2017-12-11 15:00:00"
             }
           ]
-        }
+        },
+        "Start": 31,
+        "End": 52
       },
       {
         "Text": "5-6 pm",
@@ -1985,7 +2114,9 @@
               "end": "18:00:00"
             }
           ]
-        }
+        },
+        "Start": 56,
+        "End": 61
       }
     ]
   },
@@ -1994,8 +2125,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "lunedì 8-9am",
@@ -2015,7 +2145,9 @@
               "end": "2017-12-04 09:00:00"
             }
           ]
-        }
+        },
+        "Start": 0,
+        "End": 11
       },
       {
         "Text": "9-10 am",
@@ -2029,7 +2161,9 @@
               "end": "10:00:00"
             }
           ]
-        }
+        },
+        "Start": 15,
+        "End": 21
       }
     ]
   },
@@ -2038,11 +2172,10 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "per la prossima settimana di martedì",
+        "Text": "prossima settimana di martedì",
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -2052,7 +2185,9 @@
               "value": "2017-12-12"
             }
           ]
-        }
+        },
+        "Start": 66,
+        "End": 94
       },
       {
         "Text": "giovedì",
@@ -2070,7 +2205,9 @@
               "value": "2017-12-07"
             }
           ]
-        }
+        },
+        "Start": 101,
+        "End": 107
       }
     ]
   },
@@ -2079,11 +2216,10 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "la prossima settimana martedì alle 9 am",
+        "Text": "prossima settimana martedì alle 9 am",
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -2093,7 +2229,9 @@
               "value": "2017-12-12 09:00:00"
             }
           ]
-        }
+        },
+        "Start": 66,
+        "End": 101
       },
       {
         "Text": "giovedì alle 1 pm",
@@ -2111,7 +2249,9 @@
               "value": "2017-12-07 13:00:00"
             }
           ]
-        }
+        },
+        "Start": 105,
+        "End": 121
       }
     ]
   }
