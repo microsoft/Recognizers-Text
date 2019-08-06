@@ -9,18 +9,11 @@ from .match_result import MatchResult
 
 class TrieTree(AbstractMatcher):
 
-    @property
-    def model_type_name(self) -> str:
-        pass
-
-    def parse(self, source: str) -> List[ModelResult]:
-        pass
-
     def __init__(self):
         self.__root = Node()
 
     @property
-    def root(self) -> Node():
+    def root(self) -> Node:
         return self.__root
 
     def insert(self, value: [], _id: str) -> None:
@@ -30,7 +23,8 @@ class TrieTree(AbstractMatcher):
             child = node[item]
 
             if child is None:
-                child = node[item] = Node()
+                node[item] = Node()
+                child = node[item]
 
             node = child
 

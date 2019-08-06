@@ -1,6 +1,6 @@
 class Node:
     def __init__(self):
-        self.__values = set(),
+        self.__values = [],
         self.__children = {}
 
     def __iter__(self):
@@ -27,7 +27,7 @@ class Node:
         return self.__values
 
     @values.setter
-    def values(self, values):
+    def values(self, values) -> []:
         self.__values = values
 
     @property
@@ -39,10 +39,10 @@ class Node:
         self.__children = children
 
     def get_enumerator(self):
-        self.children.values
+        return self.__children.values
 
     def add_value(self, value) -> None:
         if self.values is None:
             self.values = []
 
-        self.values.__add__(value)
+        self.values.append(value)
