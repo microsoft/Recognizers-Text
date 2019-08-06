@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDurationExtractorConfiguration : IOptionsConfiguration
+    public interface IDurationExtractorConfiguration : IDateTimeOptionsConfiguration
     {
         Regex FollowedUnit { get; }
 

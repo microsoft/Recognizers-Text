@@ -11,7 +11,7 @@ using Microsoft.Recognizers.Text.Number.Portuguese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    public class PortugueseDateExtractorConfiguration : BaseOptionsConfiguration, IDateExtractorConfiguration
+    public class PortugueseDateExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateExtractorConfiguration
     {
         public static readonly Regex MonthRegex =
             new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
@@ -121,12 +121,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public PortugueseDateExtractorConfiguration(IOptionsConfiguration config)
+        public PortugueseDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.Portuguese.OrdinalExtractor.GetInstance();
-            NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
             UtilityConfiguration = new PortugueseDatetimeUtilityConfiguration();
 

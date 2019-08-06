@@ -5,9 +5,9 @@ using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    internal class SpanishTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
+    internal class SpanishTimeZoneExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimeZoneExtractorConfiguration
     {
-        public SpanishTimeZoneExtractorConfiguration(IOptionsConfiguration config)
+        public SpanishTimeZoneExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
         }

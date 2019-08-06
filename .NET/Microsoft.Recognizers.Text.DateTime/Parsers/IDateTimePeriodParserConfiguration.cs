@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDateTimePeriodParserConfiguration : IOptionsConfiguration
+    public interface IDateTimePeriodParserConfiguration : IDateTimeOptionsConfiguration
     {
         string TokenBeforeDate { get; }
 

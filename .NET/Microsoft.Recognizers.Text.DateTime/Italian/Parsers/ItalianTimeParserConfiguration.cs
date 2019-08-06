@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
+    public class ItalianTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ITimeParserConfiguration
     {
         private static readonly Regex LunchRegex =
             new Regex(DateTimeDefinitions.LunchRegex, RegexOptions.Singleline);
@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             new Regex(DateTimeDefinitions.NightRegex, RegexOptions.Singleline);
 
         public ItalianTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
-            : base(config.Options)
+            : base(config)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = ItalianTimeExtractorConfiguration.AtRegex;

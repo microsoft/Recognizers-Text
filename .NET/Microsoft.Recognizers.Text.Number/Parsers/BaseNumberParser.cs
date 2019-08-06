@@ -161,7 +161,7 @@ namespace Microsoft.Recognizers.Text.Number
             // Add "offset" and "relativeTo" for ordinal
             if (!string.IsNullOrEmpty(ret.Type) && ret.Type.Contains(Constants.MODEL_ORDINAL))
             {
-                if ((this.Config.Options & NumberOptions.SuppressExtendedTypes) == 0 && ret.Metadata.IsOrdinalRelative)
+                if ((this.Config.Config.Options & NumberOptions.SuppressExtendedTypes) == 0 && ret.Metadata.IsOrdinalRelative)
                 {
                     var offset = Config.RelativeReferenceOffsetMap[extResult.Text];
                     var relativeTo = Config.RelativeReferenceRelativeToMap[extResult.Text];
@@ -309,7 +309,7 @@ namespace Microsoft.Recognizers.Text.Number
             handle = Config.HalfADozenRegex.Replace(handle, Config.HalfADozenText);
 
             // Handling cases like "last", "next one", "previous one"
-            if ((this.Config.Options & NumberOptions.SuppressExtendedTypes) == 0)
+            if ((this.Config.Config.Options & NumberOptions.SuppressExtendedTypes) == 0)
             {
                 if (extResult.Metadata != null && extResult.Metadata.IsOrdinalRelative)
                 {

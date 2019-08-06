@@ -357,6 +357,7 @@
   </Rules>
   <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
     <Rule Id="CA1707" Action="None" />
+    <Rule Id="CA1308" Action="None" /> <!-- Disabling ToUpper warning -->
   </Rules>
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
     <Rule Id="SA0001" Action="Error" />

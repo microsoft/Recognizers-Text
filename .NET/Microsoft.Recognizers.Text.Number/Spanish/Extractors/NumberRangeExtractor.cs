@@ -11,9 +11,13 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public NumberRangeExtractor(NumberOptions options = NumberOptions.None)
-            : base(NumberExtractor.GetInstance(), OrdinalExtractor.GetInstance(), new BaseNumberParser(new SpanishNumberParserConfiguration()), options)
+        public NumberRangeExtractor(INumberOptionsConfiguration config)
+            : base(NumberExtractor.GetInstance(),
+                   OrdinalExtractor.GetInstance(),
+                   new BaseNumberParser(new SpanishNumberParserConfiguration(config)),
+                   config)
         {
+
             var regexes = new Dictionary<Regex, string>()
             {
                 {

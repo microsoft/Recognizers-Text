@@ -10,7 +10,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
             : base(ci)
         {
             this.InternalNumberExtractor = NumberExtractor.GetInstance();
-            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new GermanNumberParserConfiguration());
+            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new GermanNumberParserConfiguration(
+                                                                                  new BaseNumberOptionsConfiguration(ci.Name)));
             this.ConnectorToken = string.Empty;
         }
 

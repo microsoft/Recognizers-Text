@@ -9,20 +9,15 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public DutchNumberRangeParserConfiguration()
-            : this(new CultureInfo(Culture.Dutch))
+        public DutchNumberRangeParserConfiguration(INumberOptionsConfiguration config)
         {
-        }
-
-        public DutchNumberRangeParserConfiguration(CultureInfo ci)
-        {
-            CultureInfo = ci;
+            CultureInfo = new CultureInfo(config.Culture);
 
             NumberExtractor = Dutch.NumberExtractor.GetInstance();
             OrdinalExtractor = Dutch.OrdinalExtractor.GetInstance();
 
             // @TODO Change init to follow design in other languages
-            NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration(config));
 
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);
             LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags);

@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
-    public class DutchTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
+    public class DutchTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
         public static readonly Regex TillRegex =
             new Regex(DateTimeDefinitions.TillRegex, RegexFlags);
@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public DutchTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+        public DutchTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;

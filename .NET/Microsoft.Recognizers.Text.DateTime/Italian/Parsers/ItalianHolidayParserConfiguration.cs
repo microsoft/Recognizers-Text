@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public ItalianHolidayParserConfiguration(IOptionsConfiguration config)
+        public ItalianHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);

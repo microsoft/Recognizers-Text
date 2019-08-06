@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishMergedExtractorConfiguration : BaseOptionsConfiguration, IMergedExtractorConfiguration
+    public class EnglishMergedExtractorConfiguration : BaseDateTimeOptionsConfiguration, IMergedExtractorConfiguration
     {
         public static readonly Regex BeforeRegex =
             new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public EnglishMergedExtractorConfiguration(IOptionsConfiguration config)
+        public EnglishMergedExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));

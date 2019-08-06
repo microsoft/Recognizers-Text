@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
+    public class FrenchHolidayExtractorConfiguration : BaseDateTimeOptionsConfiguration, IHolidayExtractorConfiguration
     {
         public static readonly Regex YearRegex =
             new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public FrenchHolidayExtractorConfiguration(IOptionsConfiguration config)
+        public FrenchHolidayExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
         }

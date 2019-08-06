@@ -27,17 +27,17 @@ class PortugueseDateTime:
     FullTextYearRegex = f'^[\\*]'
     YearRegex = f'({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})'
     RelativeMonthRegex = f'(?<relmonth>([nd]?es[st]e|pr[óo]ximo|passsado|[uú]ltimo)\\s+m[eê]s)\\b'
-    MonthRegex = f'(?<month>abril|abr|agosto|ago|dezembro|dez|fevereiro|fev|janeiro|jan|julho|jul|junho|jun|mar[çc]o|mar|maio|mai|novembro|nov|outubro|out|septembro|setembro|sept|set)'
+    MonthRegex = f'(?<month>abr(il)?|ago(sto)?|dez(embro)?|fev(ereiro)?|jan(eiro)?|ju[ln](ho)?|mar([çc]o)?|maio?|nov(embro)?|out(ubro)?|sep?t(embro)?)'
     MonthSuffixRegex = f'(?<msuf>((em|no)\\s+|d[eo]\\s+)?({RelativeMonthRegex}|{MonthRegex}))'
-    DateUnitRegex = f'(?<unit>anos|ano|meses|m[êe]s|semanas|semana|dia(s)?)\\b'
-    PastRegex = f'(?<past>\\b(passad(a|o)(s)?|[uú]ltim[oa](s)?|anterior(es)?|h[aá]|pr[ée]vi[oa](s)?)\\b)'
+    DateUnitRegex = f'(?<unit>anos?|meses|m[êe]s|semanas?|dias?)\\b'
+    PastRegex = f'(?<past>\\b(passad[ao](s)?|[uú]ltim[oa](s)?|anterior(es)?|h[aá]|pr[ée]vi[oa](s)?)\\b)'
     FutureRegex = f'(?<past>\\b(seguinte(s)?|pr[oó]xim[oa](s)?|dentro\\s+de|em|daqui\\s+a)\\b)'
     SimpleCasesRegex = f'\\b((desde\\s+[oa]|desde|d[oa])\\s+)?(dia\\s+)?({DayRegex})\\s*{TillRegex}\\s*(o dia\\s+)?({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*){YearRegex})?\\b'
     MonthFrontSimpleCasesRegex = f'\\b{MonthSuffixRegex}\\s+((desde\\s+[oa]|desde|d[oa])\\s+)?(dia\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b'
     MonthFrontBetweenRegex = f'\\b{MonthSuffixRegex}\\s+((entre|entre\\s+[oa]s?)\\s+)(dias?\\s+)?({DayRegex})\\s*{AndRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b'
     DayBetweenRegex = f'\\b((entre|entre\\s+[oa]s?)\\s+)(dia\\s+)?({DayRegex})\\s*{AndRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*){YearRegex})?\\b'
-    OneWordPeriodRegex = f'\\b(((pr[oó]xim[oa]?|[nd]?es[st]e|aquel[ea]|[uú]ltim[oa]?|em)\\s+)?(?<month>abril|abr|agosto|ago|dezembro|dez|fevereiro|fev|janeiro|jan|julho|jul|junho|jun|mar[çc]o|mar|maio|mai|novembro|nov|outubro|out|septembro|setembro|sept|set)|(?<=\\b(de|do|da|o|a)\\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]s?|est(e|a))\\s+(fim de semana|fins de semana|semana|m[êe]s|ano)|fim de semana|fins de semana|(m[êe]s|anos)? [àa] data)\\b'
-    MonthWithYearRegex = f'\\b(((pr[oó]xim[oa](s)?|[nd]?es[st]e|aquele|[uú]ltim[oa]?|em)\\s+)?(?<month><month>abril|abr|agosto|ago|dezembro|dez|fevereiro|fev|janeiro|jan|julho|jul|junho|jun|mar[çc]o|mar|maio|mai|novembro|nov|outubro|out|septembro|setembro|sept|set)\\s+((de|do|da|o|a)\\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\\s+ano))\\b'
+    OneWordPeriodRegex = f'\\b(((pr[oó]xim[oa]?|[nd]?es[st]e|aquel[ea]|[uú]ltim[oa]?|em)\\s+)?(?<month>abr(il)?|ago(sto)?|dez(embro)?|fev(ereiro)?|jan(eiro)?|ju[ln](ho)?|mar([çc]o)?|maio?|nov(embro)?|out(ubro)?|sep?t(embro)?)|(?<=\\b(de|do|da|o|a)\\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]s?|est(e|a))\\s+(fim de semana|fins de semana|semana|m[êe]s|ano)|fim de semana|fins de semana|(m[êe]s|anos)? [àa] data)\\b'
+    MonthWithYearRegex = f'\\b(((pr[oó]xim[oa](s)?|[nd]?es[st]e|aquele|[uú]ltim[oa]?|em)\\s+)?(?<month>abr(il)?|ago(sto)?|dez(embro)?|fev(ereiro)?|jan(eiro)?|ju[ln](ho)?|mar([çc]o)?|maio?|nov(embro)?|out(ubro)?|sep?t(embro)?)\\s+((de|do|da|o|a)\\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\\s+ano))\\b'
     MonthNumWithYearRegex = f'({YearRegex}(\\s*?)[/\\-\\.](\\s*?){MonthNumRegex})|({MonthNumRegex}(\\s*?)[/\\-](\\s*?){YearRegex})'
     WeekOfMonthRegex = f'(?<wom>(a|na\\s+)?(?<cardinal>primeira?|1a|segunda|2a|terceira|3a|[qc]uarta|4a|quinta|5a|[uú]ltima)\\s+semana\\s+{MonthSuffixRegex})'
     WeekOfYearRegex = f'(?<woy>(a|na\\s+)?(?<cardinal>primeira?|1a|segunda|2a|terceira|3a|[qc]uarta|4a|quinta|5a|[uú]ltima?)\\s+semana(\\s+d[oe]?)?\\s+({YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|[nd]?es[st]e)\\s+ano))'
@@ -51,7 +51,7 @@ class PortugueseDateTime:
     WhichWeekRegex = f'\\b(semana)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b'
     WeekOfRegex = f'(semana)(\\s*)((do|da|de))'
     MonthOfRegex = f'(mes)(\\s*)((do|da|de))'
-    RangeUnitRegex = f'\\b(?<unit>anos|ano|meses|m[êe]s|semanas|semana)\\b'
+    RangeUnitRegex = f'\\b(?<unit>anos?|meses|m[êe]s|semanas?)\\b'
     InConnectorRegex = f'\\b(em)\\b'
     SinceYearSuffixRegex = f'^[.]'
     WithinNextPrefixRegex = f'^[.]'
@@ -61,7 +61,7 @@ class PortugueseDateTime:
     FromRegex = f'((desde|de)(\\s*a(s)?)?)$'
     ConnectorAndRegex = f'(e\\s*([àa](s)?)?)$'
     BetweenRegex = f'(entre\\s*([oa](s)?)?)'
-    WeekDayRegex = f'\\b(?<weekday>domingos?|segundas?-feiras?|segundas?\\s+feiras?|segundas?|2a|ter[çca]s?-feiras?|ter[çc]as?\\s+feiras?|ter[cça]s?|3a|quartas?-feiras?|quartas?\\s+feiras?|quartas?|4a|quintas?-feiras?|quintas?\\s+feiras?|quintas?|5a|sextas?-feiras?|sextas?\\s+feiras?|sextas?|6a|s[aá]bados?|2ª|3ª|4ª|5ª|6ª|dom|seg|ter|qua|qui|sex|sab|seg\\.|ter[cç]\\.|qua\\.|qui\\.|sex\\.|s[aá]b\\.|dom\\.)\\b'
+    WeekDayRegex = f'\\b(?<weekday>(domingos?|(segunda|ter[çc]a|quarta|quinta|sexta)s?([-\\s+]feiras?)?|s[aá]bados?|(2|3|4|5|6)[aª])\\b|(dom|seg|ter[cç]|qua|qui|sex|sab)\\b(\\.?(?=\\s|,|;|$)))'
     OnRegex = f'(?<=\\b(em|no)\\s+)({DayRegex}s?)\\b'
     RelaxedOnRegex = f'(?<=\\b(em|n[oa]|d[oa])\\s+)(dia\\s+)?((?<day>10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)s?)\\b'
     ThisRegex = f'\\b(([nd]?es[st][ea]\\s*){WeekDayRegex})|({WeekDayRegex}\\s*([nd]?es[st]a\\s+semana))\\b'
@@ -262,26 +262,38 @@ class PortugueseDateTime:
                         ("5a", 5)])
     DayOfWeek = dict([("segunda-feira", 1),
                       ("segundas-feiras", 1),
+                      ("segunda feira", 1),
+                      ("segundas feiras", 1),
                       ("segunda", 1),
                       ("segundas", 1),
                       ("terça-feira", 2),
                       ("terças-feiras", 2),
+                      ("terça feira", 2),
+                      ("terças feiras", 2),
                       ("terça", 2),
                       ("terças", 2),
                       ("terca-feira", 2),
                       ("tercas-feiras", 2),
+                      ("terca feira", 2),
+                      ("tercas feiras", 2),
                       ("terca", 2),
                       ("tercas", 2),
                       ("quarta-feira", 3),
                       ("quartas-feiras", 3),
+                      ("quarta feira", 3),
+                      ("quartas feiras", 3),
                       ("quarta", 3),
                       ("quartas", 3),
                       ("quinta-feira", 4),
                       ("quintas-feiras", 4),
+                      ("quinta feira", 4),
+                      ("quintas feiras", 4),
                       ("quinta", 4),
                       ("quintas", 4),
                       ("sexta-feira", 5),
                       ("sextas-feiras", 5),
+                      ("sexta feira", 5),
+                      ("sextas feiras", 5),
                       ("sexta", 5),
                       ("sextas", 5),
                       ("sabado", 6),
@@ -291,17 +303,24 @@ class PortugueseDateTime:
                       ("domingo", 0),
                       ("domingos", 0),
                       ("seg", 1),
+                      ("seg.", 1),
                       ("2a", 1),
                       ("ter", 2),
+                      ("ter.", 2),
                       ("3a", 2),
                       ("qua", 3),
+                      ("qua.", 3),
                       ("4a", 3),
                       ("qui", 4),
+                      ("qui.", 4),
                       ("5a", 4),
                       ("sex", 5),
+                      ("sex.", 5),
                       ("6a", 5),
                       ("sab", 6),
-                      ("dom", 0)])
+                      ("sab.", 6),
+                      ("dom", 0),
+                      ("dom.", 0)])
     MonthOfYear = dict([("janeiro", 1),
                         ("fevereiro", 2),
                         ("março", 3),

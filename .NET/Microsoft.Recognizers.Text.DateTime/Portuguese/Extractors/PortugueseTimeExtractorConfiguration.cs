@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.Portuguese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    public class PortugueseTimeExtractorConfiguration : BaseOptionsConfiguration, ITimeExtractorConfiguration
+    public class PortugueseTimeExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimeExtractorConfiguration
     {
         // part 1: smallest component
         // --------------------------------------
@@ -111,7 +111,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public PortugueseTimeExtractorConfiguration(IOptionsConfiguration config)
+        public PortugueseTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));

@@ -5,8 +5,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public sealed class ItalianMergedParserConfiguration : ItalianCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
-        public ItalianMergedParserConfiguration(IOptionsConfiguration options)
-            : base(options)
+        public ItalianMergedParserConfiguration(IDateTimeOptionsConfiguration config)
+            : base(config)
         {
             BeforeRegex = ItalianMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = ItalianMergedExtractorConfiguration.AfterRegex;

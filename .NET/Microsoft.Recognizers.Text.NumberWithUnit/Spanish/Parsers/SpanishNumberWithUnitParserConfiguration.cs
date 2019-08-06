@@ -12,7 +12,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
                : base(ci)
         {
             this.InternalNumberExtractor = NumberExtractor.GetInstance();
-            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration());
+            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration(
+                                                                                  new BaseNumberOptionsConfiguration(ci.Name)));
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
         }
 

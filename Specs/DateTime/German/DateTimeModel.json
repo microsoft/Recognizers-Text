@@ -1226,5 +1226,125 @@
     },
     "NotSupported": "javascript, python",
     "Results": []
+  },
+  {
+    "Input": "Lass uns um 18:12 einen Kaffee trinken gehen",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "18:12",
+        "Start": 12,
+        "End": 16,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T18:12",
+              "type": "time",
+              "value": "18:12:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Lass uns um 18 uhr 12 einen Kaffee trinken gehen",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "18 uhr 12",
+        "Start": 12,
+        "End": 20,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T18:12",
+              "type": "time",
+              "value": "18:12:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Lass uns um 18 uhr und 12 einen Kaffee trinken gehen",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "18 uhr und 12",
+        "Start": 12,
+        "End": 24,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T18:12",
+              "type": "time",
+              "value": "18:12:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Lass uns um 18.12 uhr einen Kaffee trinken gehen",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "18.12 uhr",
+        "Start": 12,
+        "End": 20,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T18:12",
+              "type": "time",
+              "value": "18:12:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Es ist zehn Uhr.",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "zehn uhr",
+        "Start": 7,
+        "End": 14,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            },
+            {
+              "timex": "T22",
+              "type": "time",
+              "value": "22:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

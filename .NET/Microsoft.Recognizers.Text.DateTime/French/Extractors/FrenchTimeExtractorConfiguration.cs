@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchTimeExtractorConfiguration : BaseOptionsConfiguration, ITimeExtractorConfiguration
+    public class FrenchTimeExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimeExtractorConfiguration
     {
         // part 1: smallest component
         // --------------------------------
@@ -123,7 +123,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public FrenchTimeExtractorConfiguration(IOptionsConfiguration config)
+        public FrenchTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));

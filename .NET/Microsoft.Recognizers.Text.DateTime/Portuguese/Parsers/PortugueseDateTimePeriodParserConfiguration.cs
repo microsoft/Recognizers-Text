@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    public class PortugueseDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
+    public class PortugueseDateTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
         public PortugueseDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

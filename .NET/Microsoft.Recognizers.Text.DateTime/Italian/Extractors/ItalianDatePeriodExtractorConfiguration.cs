@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.Number.Italian;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
+    public class ItalianDatePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
         // base regexes
 
@@ -227,14 +227,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             ReferenceDatePeriodRegex,
         };
 
-        public ItalianDatePeriodExtractorConfiguration(IOptionsConfiguration config)
+        public ItalianDatePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
             CardinalExtractor = Number.Italian.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
         }
 
         public IDateExtractor DatePointExtractor { get; }

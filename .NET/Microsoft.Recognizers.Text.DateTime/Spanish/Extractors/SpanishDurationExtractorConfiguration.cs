@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDurationExtractorConfiguration : BaseOptionsConfiguration, IDurationExtractorConfiguration
+    public class SpanishDurationExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDurationExtractorConfiguration
     {
         public static readonly Regex UnitRegex =
             new Regex(DateTimeDefinitions.UnitRegex, RegexFlags);
@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public SpanishDurationExtractorConfiguration(IOptionsConfiguration config)
+        public SpanishDurationExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();

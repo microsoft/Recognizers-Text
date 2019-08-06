@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Definitions.Dutch;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
-    public class DutchDatePeriodParserConfiguration : BaseOptionsConfiguration, IDatePeriodParserConfiguration
+    public class DutchDatePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDatePeriodParserConfiguration
     {
         public static readonly Regex NextPrefixRegex =
             new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);

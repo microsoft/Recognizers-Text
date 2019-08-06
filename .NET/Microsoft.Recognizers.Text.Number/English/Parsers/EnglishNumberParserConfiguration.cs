@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
@@ -10,21 +11,21 @@ namespace Microsoft.Recognizers.Text.Number.English
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public EnglishNumberParserConfiguration(NumberOptions options)
-            : this()
+        public EnglishNumberParserConfiguration(INumberOptionsConfiguration config)
         {
-            this.Options = options;
-        }
 
-        public EnglishNumberParserConfiguration()
-            : this(new CultureInfo(Culture.English))
-        {
-        }
-
-        public EnglishNumberParserConfiguration(CultureInfo ci)
-        {
+            this.Config = config;
             this.LangMarker = NumbersDefinitions.LangMarker;
-            this.CultureInfo = ci;
+
+            // @TODO Temporary workaround
+            var culture = config.Culture;
+            if (culture.IndexOf("*", StringComparison.Ordinal) != -1)
+            {
+                culture = config.Culture.Replace("*", "us");
+            }
+
+            this.CultureInfo = new CultureInfo(culture);
+
             this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
             this.IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
 

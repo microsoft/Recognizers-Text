@@ -5,12 +5,12 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianDateTimeParserConfiguration : BaseOptionsConfiguration, IDateTimeParserConfiguration
+    public class ItalianDateTimeParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeParserConfiguration
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public ItalianDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
-            : base(config.Options)
+            : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;

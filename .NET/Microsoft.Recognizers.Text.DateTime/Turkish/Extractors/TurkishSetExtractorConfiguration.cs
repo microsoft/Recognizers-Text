@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
-    public class TurkishSetExtractorConfiguration : BaseOptionsConfiguration, ISetExtractorConfiguration
+    public class TurkishSetExtractorConfiguration : BaseDateTimeOptionsConfiguration, ISetExtractorConfiguration
     {
         public static readonly Regex SetUnitRegex =
             new Regex(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public TurkishSetExtractorConfiguration(IOptionsConfiguration config)
+        public TurkishSetExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));

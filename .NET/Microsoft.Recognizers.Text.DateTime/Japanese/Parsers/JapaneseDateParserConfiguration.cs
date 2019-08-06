@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             config = configuration;
             integerExtractor = new IntegerExtractor();
             durationExtractor = new JapaneseDurationExtractorConfiguration();
-            numberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration());
+            numberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
         }
 
         public ParseResult Parse(ExtractResult extResult)

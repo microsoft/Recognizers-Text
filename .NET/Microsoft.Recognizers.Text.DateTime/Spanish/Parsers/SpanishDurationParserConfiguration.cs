@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration
+    public class SpanishDurationParserConfiguration : BaseDateTimeOptionsConfiguration, IDurationParserConfiguration
     {
         public SpanishDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration
+    public class FrenchDurationParserConfiguration : BaseDateTimeOptionsConfiguration, IDurationParserConfiguration
     {
         public FrenchDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

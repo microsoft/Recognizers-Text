@@ -10,7 +10,7 @@ using Microsoft.Recognizers.Text.Number.Italian;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianDateExtractorConfiguration : BaseOptionsConfiguration, IDateExtractorConfiguration
+    public class ItalianDateExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateExtractorConfiguration
     {
         public static readonly Regex MonthRegex =
             new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
@@ -129,12 +129,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public ItalianDateExtractorConfiguration(IOptionsConfiguration config)
+        public ItalianDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             IntegerExtractor = Number.Italian.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
-            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
             UtilityConfiguration = new ItalianDatetimeUtilityConfiguration();
 

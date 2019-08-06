@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.Dutch;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
-    public class DutchTimeExtractorConfiguration : BaseOptionsConfiguration, ITimeExtractorConfiguration
+    public class DutchTimeExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimeExtractorConfiguration
     {
         // part 1: smallest component
         // --------------------------------------
@@ -125,7 +125,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public DutchTimeExtractorConfiguration(IOptionsConfiguration config)
+        public DutchTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));

@@ -113,7 +113,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string TimePrefix = $@"(?<prefix>(um\s*)?({LessThanOneHour})(\s*(vor\W|nach\W))?)";
       public static readonly string TimeSuffix = $@"(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})";
       public static readonly string TimeSuffixFull = $@"(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex}|(?<pm>nachmittag(s)?|nacht(s)?|abend(s)?))";
-      public static readonly string BasicTime = $@"(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|\b{BaseDateTime.HourRegex}(?![%\d]))";
+      public static readonly string BasicTime = $@"(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(:|\s+uhr(\s+und)?\s+){BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|\b{BaseDateTime.HourRegex}(?![%\d]))";
       public const string MidnightRegex = @"(?<midnight>mitternacht|mitten in der nacht)";
       public const string MidmorningRegex = @"(?<midmorning>mitten am vormittag)";
       public const string MidafternoonRegex = @"(?<midafternoon>mitten am nachmittag)";

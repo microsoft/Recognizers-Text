@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
+    public class EnglishDateTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
         public static readonly Regex MorningStartEndRegex =
             new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexFlags);

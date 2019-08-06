@@ -3,7 +3,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDateTimeExtractorConfiguration : IOptionsConfiguration
+    public interface IDateTimeExtractorConfiguration : IDateTimeOptionsConfiguration
     {
         Regex NowRegex { get; }
 

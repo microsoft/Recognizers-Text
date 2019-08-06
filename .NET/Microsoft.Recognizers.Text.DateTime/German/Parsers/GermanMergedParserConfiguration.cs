@@ -6,7 +6,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public sealed class GermanMergedParserConfiguration : GermanCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
-        public GermanMergedParserConfiguration(IOptionsConfiguration config)
+        public GermanMergedParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             BeforeRegex = GermanMergedExtractorConfiguration.BeforeRegex;

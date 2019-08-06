@@ -4,19 +4,19 @@
         <name>Microsoft.Recognizers.Text.Number</name>
     </assembly>
     <members>
-        <member name="T:Microsoft.Recognizers.Text.Number.Chinese.ChineseNumberExtractorMode">
+        <member name="T:Microsoft.Recognizers.Text.Number.Config.CJKNumberExtractorMode">
             <summary>
-            These modes only apply to ChineseNumberExtractor.
-            The default more utilizes an allow list to avoid extracting numbers in ambiguous/undesired combinations of Chinese ideograms.
+            These modes only apply to CJK NumberExtractors.
+            The default mode utilizes an allow list to avoid extracting numbers in ambiguous/undesired combinations of Chinese/Japanese ideograms.
             ExtractAll mode is to be used in cases where extraction should be more aggressive (e.g. in Units extraction).
             </summary>
         </member>
-        <member name="F:Microsoft.Recognizers.Text.Number.Chinese.ChineseNumberExtractorMode.Default">
+        <member name="F:Microsoft.Recognizers.Text.Number.Config.CJKNumberExtractorMode.Default">
             <summary>
             Number extraction with an allow list that filters what numbers to extract.
             </summary>
         </member>
-        <member name="F:Microsoft.Recognizers.Text.Number.Chinese.ChineseNumberExtractorMode.ExtractAll">
+        <member name="F:Microsoft.Recognizers.Text.Number.Config.CJKNumberExtractorMode.ExtractAll">
             <summary>
             Extract all number-related terms aggressively.
             </summary>
@@ -51,16 +51,6 @@
             <param name="positionMap">position Map.</param>
             <param name="numExtResults">number extractor result.</param>
             <returns>return according type "builtin.num" or "builtin.num.percentage".</returns>
-        </member>
-        <member name="F:Microsoft.Recognizers.Text.Number.Japanese.JapaneseNumberExtractorMode.Default">
-            <summary>
-            Number extraction with an allow list that filters what numbers to extract.
-            </summary>
-        </member>
-        <member name="F:Microsoft.Recognizers.Text.Number.Japanese.JapaneseNumberExtractorMode.ExtractAll">
-            <summary>
-            Extract all number-related terms aggressively.
-            </summary>
         </member>
         <member name="T:Microsoft.Recognizers.Text.Number.Korean.KoreanNumberExtractorMode">
             <summary>

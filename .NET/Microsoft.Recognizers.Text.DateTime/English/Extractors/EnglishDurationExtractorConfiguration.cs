@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDurationExtractorConfiguration : BaseOptionsConfiguration, IDurationExtractorConfiguration
+    public class EnglishDurationExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDurationExtractorConfiguration
     {
         public static readonly Regex DurationUnitRegex =
             new Regex(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public EnglishDurationExtractorConfiguration(IOptionsConfiguration config)
+        public EnglishDurationExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();

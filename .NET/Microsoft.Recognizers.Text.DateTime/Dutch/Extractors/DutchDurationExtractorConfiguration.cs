@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.Dutch;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
-    public class DutchDurationExtractorConfiguration : BaseOptionsConfiguration, IDurationExtractorConfiguration
+    public class DutchDurationExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDurationExtractorConfiguration
     {
         public static readonly Regex DurationUnitRegex =
             new Regex(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public DutchDurationExtractorConfiguration(IOptionsConfiguration config)
+        public DutchDurationExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             CardinalExtractor = Number.Dutch.CardinalExtractor.GetInstance();

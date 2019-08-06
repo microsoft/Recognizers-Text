@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
-    public class TurkishMergedExtractorConfiguration : BaseOptionsConfiguration, IMergedExtractorConfiguration
+    public class TurkishMergedExtractorConfiguration : BaseDateTimeOptionsConfiguration, IMergedExtractorConfiguration
     {
         public static readonly Regex BeforeRegex =
             new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public TurkishMergedExtractorConfiguration(IOptionsConfiguration config)
+        public TurkishMergedExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DateExtractor = new BaseDateExtractor(new TurkishDateExtractorConfiguration(this));
