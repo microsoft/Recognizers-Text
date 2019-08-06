@@ -2,14 +2,26 @@
 
 BUILD_CONFIGURATION=${BUILD_CONFIGURATION:-Debug}
 
-echo "// Building .NET platform"
+echo "// Checking .NET platform"
 
 command -v dotnet >/dev/null 2>&1 || { echo >&2 "dotnet not found. Make sure it's installed and included in PATH. Aborting."; exit 1; }
-command -v nuget >/dev/null 2>&1 || { echo >&2 "NuGet not found. Make sure it's installed and included in PATH. Aborting."; exit 1; }
+command -v nuget >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+    nuget_command='nuget'
+else
+    command -v mono >/dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        echo "// Using mono with buildtools/nuget.exe as NuGet command"
+        nuget_command='mono buildtools/nuget.exe'
+    else
+        echo >&2 "NuGet not found. Make sure it's install end included in PATH. Aborting.";
+        exit 1;
+    fi
+fi
 command -v msbuild >/dev/null 2>&1 || { echo >&2 "MSBuild not found. Make sure it's installed and included in PATH. Aborting."; exit 1; }
 
 echo "// Restoring NuGet dependencies"
-nuget restore
+$nuget_command restore
 
 echo "// Build .NET solution ($BUILD_CONFIGURATION)"
 rm -rf build
