@@ -26,6 +26,16 @@ namespace Microsoft.Recognizers.Text.Number
                                 GetKeyRegex(this.Config.CardinalNumberMap.Keys) + "|" +
                                 GetKeyRegex(this.Config.OrdinalNumberMap.Keys);
 
+            /*For Italian, we invert the order of Cardinal and Ordinal in singleIntFrac in order to correctly extract
+             * ordinals that contain cardinals such as 'tredicesimo' (thirteenth) which starts with 'tre' (three).
+             * With the standard order, the parser fails to return '13' since only the cardinal 'tre' (3) is extracted*/
+            if (config.CultureInfo.Name == "it-IT")
+            {
+                singleIntFrac = $"{this.Config.WordSeparatorToken}| -|" +
+                                    GetKeyRegex(this.Config.OrdinalNumberMap.Keys) + "|" +
+                                    GetKeyRegex(this.Config.CardinalNumberMap.Keys);
+            }
+
             string textNumberPattern;
 
             // Checks for languages that use "compound numbers". I.e. written number parts are not separated by whitespaces or special characters (e.g., dreihundert in German).

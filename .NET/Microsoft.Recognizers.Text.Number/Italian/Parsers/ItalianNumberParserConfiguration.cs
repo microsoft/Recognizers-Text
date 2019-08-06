@@ -86,6 +86,19 @@ namespace Microsoft.Recognizers.Text.Number.Italian
                 }
             }
 
+            /*The following piece of code is needed to compute the fraction pattern number+'e mezzo'
+             * e.g. 'due e mezzo' ('two and a half') where the numerator is omitted in Italian.
+             * It works by inserting the numerator 'un' ('a') in the list fracWords
+             * so that the pattern is correctly processed.*/
+            fracLen = fracWords.Count;
+            if (fracLen > 2)
+            {
+                if (fracWords[fracLen - 1] == "mezzo" && fracWords[fracLen - 2] == "e")
+                {
+                    fracWords.Insert(fracLen - 1, "un");
+                }
+            }
+
             return fracWords;
         }
 

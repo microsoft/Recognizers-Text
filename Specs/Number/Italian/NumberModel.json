@@ -245,10 +245,16 @@
   },
   {
     "Input": " il 4 maggio ",
-    "NotSupported": "dotnet",
-    "Comment": "4 is extracted as number but it is part of a date (May the 4th), same happens in English test for 4 May",
     "NotSupportedByDesign": "javascript,python,java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "4",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4"
+        }
+      }
+    ]
   },
   {
     "Input": "il liquido da 0,25ml",
@@ -1194,8 +1200,6 @@
   },
   {
     "Input": "uno e mezzo",
-    "NotSupported": "dotnet",
-    "Comment": "mezzo in this context means 0.5 but set in dictionary to 2. recognized as 1/2=0.5 instead of 1+0.5=1.5",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
