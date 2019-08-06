@@ -4666,7 +4666,7 @@
     "Input": "四万亿",
     "Results": [
       {
-        "Text": "四万三千兆",
+        "Text": "四万亿",
         "Start": 0,
         "End": 2,
         "TypeName": "number",
