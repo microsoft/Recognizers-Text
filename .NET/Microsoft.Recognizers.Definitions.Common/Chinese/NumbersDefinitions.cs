@@ -149,8 +149,6 @@ namespace Microsoft.Recognizers.Definitions.Chinese
         };
       public static readonly IList<char> RoundDirectList = new List<char>
         {
-            '万',
-            '萬',
             '亿',
             '兆',
             '億'
