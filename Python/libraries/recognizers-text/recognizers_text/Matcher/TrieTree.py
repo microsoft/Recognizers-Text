@@ -1,8 +1,20 @@
+from typing import List
+
+from recognizers_text import ModelResult
+
 from .Node import Node
 from .abstract_matcher import AbstractMatcher
+from .match_result import MatchResult
 
 
 class TrieTree(AbstractMatcher):
+
+    @property
+    def model_type_name(self) -> str:
+        pass
+
+    def parse(self, source: str) -> List[ModelResult]:
+        pass
 
     def __init__(self):
         self.__root = Node()
@@ -31,10 +43,22 @@ class TrieTree(AbstractMatcher):
     def find(self, query_text: []) -> []:
         query_array = query_text
 
-        i = 0
-        while i < len(query_array):
-
+        for i in range(0, len(query_array)):
             node = self.root
+
             j = i
-            while j <= len(query_array):
-                j += 1
+
+            for j in range(0, len(query_array)):
+
+                if node.end:
+                    yield MatchResult(i, j - i, node.values)
+
+                if j == len(query_array):
+                    break
+
+                text = query_array[j]
+
+                if node[text] is None:
+                    break
+
+                node = node[text]
