@@ -8,7 +8,7 @@ import { FrenchDurationExtractorConfiguration } from "./durationConfiguration";
 import { BaseDateTime } from "../../resources/baseDateTime";
 import { FrenchDateTime } from "../../resources/frenchDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers";
-import { IDateTimeExtractor } from "../baseDateTime"
+import { IDateTimeExtractor } from "../baseDateTime";
 
 export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[];
@@ -196,9 +196,9 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
             swift = 1;
         }
 
-        if (trimedText.endsWith("dernière") || 
+        if (trimedText.endsWith("dernière") ||
             trimedText.endsWith("dernières") ||
-            trimedText.endsWith("derniere") || 
+            trimedText.endsWith("derniere") ||
             trimedText.endsWith("dernieres")) {
             swift = -1;
         }
@@ -209,18 +209,18 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
     getSwiftYear(source: string): number {
         let trimedText = source.trim().toLowerCase();
         let swift = -10;
-        if (trimedText.endsWith("prochain") || trimedText.endsWith("prochaine")){
+        if (trimedText.endsWith("prochain") || trimedText.endsWith("prochaine")) {
             swift = 1;
         }
 
-        if (trimedText.endsWith("dernières") || 
+        if (trimedText.endsWith("dernières") ||
             trimedText.endsWith("dernière") ||
-            trimedText.endsWith("dernieres") || 
-            trimedText.endsWith("derniere") || 
+            trimedText.endsWith("dernieres") ||
+            trimedText.endsWith("derniere") ||
             trimedText.endsWith("dernier")) {
             swift = -1;
-        } else if (trimedText.startsWith("cette"))
-        {
+        }
+        else if (trimedText.startsWith("cette")) {
             swift = 0;
         }
 
@@ -247,8 +247,8 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
         let trimedText = source.trim().toLowerCase();
         return (FrenchDateTime.WeekTerms.some(o => trimedText.endsWith(o)) ||
             (FrenchDateTime.WeekTerms.some(o => trimedText.includes(o)) &&
-            (RegExpUtility.isMatch(this.nextSuffixRegex, trimedText) || 
-            RegExpUtility.isMatch(this.pastSuffixRegex, trimedText)))) &&
+                (RegExpUtility.isMatch(this.nextSuffixRegex, trimedText) ||
+                    RegExpUtility.isMatch(this.pastSuffixRegex, trimedText)))) &&
             !FrenchDateTime.WeekendTerms.some(o => trimedText.endsWith(o));
     }
 

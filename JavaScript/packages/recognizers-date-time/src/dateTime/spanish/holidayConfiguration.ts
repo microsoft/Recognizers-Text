@@ -63,15 +63,33 @@ export class SpanishHolidayParserConfiguration extends BaseHolidayParserConfigur
     }
 
     // All JavaScript dates are zero-based (-1)
-    private static NewYear(year: number): Date { return new Date(year, 1 - 1, 1); }
-    private static NewYearEve(year: number): Date { return new Date(year, 12 - 1, 31); }
-    private static ChristmasDay(year: number): Date { return new Date(year, 12 - 1, 25); }
-    private static ChristmasEve(year: number): Date { return new Date(year, 12 - 1, 24); }
-    private static FemaleDay(year: number): Date { return new Date(year, 3 - 1, 8); }
-    private static ChildrenDay(year: number): Date { return new Date(year, 6 - 1, 1); }
-    private static HalloweenDay(year: number): Date { return new Date(year, 10 - 1, 31); }
-    private static TeacherDay(year: number): Date { return new Date(year, 9 - 1, 11); }
-    private static EasterDay(year: number): Date { return DateUtils.minValue(); }
+    private static NewYear(year: number): Date {
+        return new Date(year, 1 - 1, 1);
+    }
+    private static NewYearEve(year: number): Date {
+        return new Date(year, 12 - 1, 31);
+    }
+    private static ChristmasDay(year: number): Date {
+        return new Date(year, 12 - 1, 25);
+    }
+    private static ChristmasEve(year: number): Date {
+        return new Date(year, 12 - 1, 24);
+    }
+    private static FemaleDay(year: number): Date {
+        return new Date(year, 3 - 1, 8);
+    }
+    private static ChildrenDay(year: number): Date {
+        return new Date(year, 6 - 1, 1);
+    }
+    private static HalloweenDay(year: number): Date {
+        return new Date(year, 10 - 1, 31);
+    }
+    private static TeacherDay(year: number): Date {
+        return new Date(year, 9 - 1, 11);
+    }
+    private static EasterDay(year: number): Date {
+        return DateUtils.minValue();
+    }
 
     getSwiftYear(text: string): number {
         let trimedText = text.trim().toLowerCase();

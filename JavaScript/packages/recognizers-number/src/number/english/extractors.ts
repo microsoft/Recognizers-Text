@@ -3,7 +3,7 @@ import { Constants } from "../constants";
 import { NumberMode, LongFormatType } from "../models";
 import { EnglishNumeric } from "../../resources/englishNumeric";
 import { BaseNumbers } from "../../resources/baseNumbers";
-import { RegExpUtility } from "@microsoft/recognizers-text"
+import { RegExpUtility } from "@microsoft/recognizers-text";
 
 export class EnglishNumberExtractor extends BaseNumberExtractor {
     protected extractType: string = Constants.SYS_NUM;
@@ -224,10 +224,10 @@ export class EnglishOrdinalExtractor extends BaseNumberExtractor {
 
 export class EnglishPercentageExtractor extends BasePercentageExtractor {
     constructor() {
-        super(new EnglishNumberExtractor())
+        super(new EnglishNumberExtractor());
     }
 
-    protected initRegexes(): Array<RegExp> {
+    protected initRegexes(): RegExp[] {
         let regexStrs = [
             EnglishNumeric.NumberWithSuffixPercentage,
             EnglishNumeric.NumberWithPrefixPercentage

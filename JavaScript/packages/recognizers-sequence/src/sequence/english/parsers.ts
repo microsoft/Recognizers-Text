@@ -39,47 +39,46 @@ export class PhoneNumberParser extends BaseSequenceParser {
         // Country code score or area code score 
         score += countryCodeRegex.test(phoneNumberText) ?
             this.countryCodeAward : areaCodeRegex.test(phoneNumberText) ? this.areaCodeAward : 0;
-        
+
         // Formatted score
         if (formatIndicatorRegex.test(phoneNumberText)) {
-            var formatMathes = phoneNumberText.match(formatIndicatorRegex);
-            var formatIndicatorCount = formatMathes.length;
+            let formatMathes = phoneNumberText.match(formatIndicatorRegex);
+            let formatIndicatorCount = formatMathes.length;
             score += Math.min(formatIndicatorCount, this.maxFormatIndicatorNum) * this.formattedAward;
             score -= formatMathes.some(match => match.length > 1) ? this.continueFormatIndicatorDeductionScore : 0;
             if (this.singleBracketRegex.test(phoneNumberText) && !this.completeBracketRegex.test(phoneNumberText)) {
                 score -= this.wrongFormatIndicatorDeductionScore;
             }
         }
-       
+
         // Same tailing digit deduction
         if (this.tailSameDigitRegex.test(phoneNumberText)) {
             score -= (phoneNumberText.match(this.tailSameDigitRegex)[0].length - this.tailSameLimit) * this.tailSameDeductionScore;
-           
+
         }
-        
+
         // Length score
         if (this.digitRegex.test(phoneNumberText)) {
             score += Math.min((phoneNumberText.match(this.digitRegex).length - this.phoneNumberLengthBase),
                 this.maxLengthAwardNum) * this.lengthAward;
         }
-        
+
         // Pure digit deduction
         if (this.pureDigitRegex.test(phoneNumberText)) {
             score -= phoneNumberText.length > this.pureDigitLengthLimit ?
                 (phoneNumberText.length - this.pureDigitLengthLimit) * this.lengthAward : 0;
         }
-        
+
         // Special format deduction
         score -= BasePhoneNumbers.TypicalDeductionRegexList.some(o => new RegExp(o).test(phoneNumberText)) ? this.typicalFormatDeductionScore : 0;
-        
+
         // Continue digit deduction
         if (this.continueDigitRegex.test(phoneNumberText)) {
             score -= Math.max(phoneNumberText.match(this.continueDigitRegex).length - 1, 0) * this.continueDigitDeductionScore;
         }
 
         // Special award for special USphonenumber, i.e. 223-4567 or 223 - 4567
-        if (noAreaCodeUSphonenumbeRegex.test(phoneNumberText))
-        {
+        if (noAreaCodeUSphonenumbeRegex.test(phoneNumberText)) {
             score += this.lengthAward * 1.5;
         }
 
@@ -95,23 +94,23 @@ export class PhoneNumberParser extends BaseSequenceParser {
 }
 
 export class IpParser extends BaseIpParser {
-    
+
 }
 
 export class MentionParser extends BaseSequenceParser {
-    
-} 
+
+}
 
 export class HashtagParser extends BaseSequenceParser {
-    
+
 }
 
 export class EmailParser extends BaseSequenceParser {
-    
+
 }
 
 export class URLParser extends BaseSequenceParser {
-    
+
 }
 
 export class GUIDParser extends BaseSequenceParser {
@@ -129,7 +128,7 @@ export class GUIDParser extends BaseSequenceParser {
 
         let guidElementRegex = new RegExp(BaseGUID.GUIDRegexElement);
 
-        if (guidElementRegex.test(GUIDText)){
+        if (guidElementRegex.test(GUIDText)) {
             let elementMatch = GUIDText.match(guidElementRegex);
             let startIndex = elementMatch.index;
             let elementGUID = elementMatch[0];

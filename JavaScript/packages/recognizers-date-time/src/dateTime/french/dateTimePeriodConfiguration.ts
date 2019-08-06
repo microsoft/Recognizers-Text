@@ -49,7 +49,7 @@ export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeri
             RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumFromTo, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumBetweenAnd, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificTimeOfDayRegex, "gis")
-        ]
+        ];
 
         this.prepositionRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PrepositionRegex);
         this.tillRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TillRegex);
@@ -64,8 +64,8 @@ export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeri
         this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PeriodTimeOfDayWithDateRegex);
         this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeTimeUnitRegex);
         this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RestOfDateTimeRegex);
-        this.generalEndingRegex= RegExpUtility.getSafeRegExp(FrenchDateTime.GeneralEndingRegex);
-        this.middlePauseRegex= RegExpUtility.getSafeRegExp(FrenchDateTime.MiddlePauseRegex);
+        this.generalEndingRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.GeneralEndingRegex);
+        this.middlePauseRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MiddlePauseRegex);
 
         this.fromRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.FromRegex2);
         this.connectorAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorAndRegex);
@@ -221,15 +221,15 @@ export class FrenchDateTimePeriodParserConfiguration implements IDateTimePeriodP
         let swift = 0;
 
         // TODO: Replace with a regex
-        if (trimedText.startsWith("prochain") || 
+        if (trimedText.startsWith("prochain") ||
             trimedText.endsWith("prochain") ||
-            trimedText.startsWith("prochaine") || 
+            trimedText.startsWith("prochaine") ||
             trimedText.endsWith("prochaine")) {
             swift = 1;
         }
-        else if (trimedText.startsWith("derniere") || 
-            trimedText.startsWith("dernier")||
-            trimedText.endsWith("derniere") || 
+        else if (trimedText.startsWith("derniere") ||
+            trimedText.startsWith("dernier") ||
+            trimedText.endsWith("derniere") ||
             trimedText.endsWith("dernier")) {
             swift = -1;
         }

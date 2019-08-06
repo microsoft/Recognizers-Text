@@ -74,13 +74,13 @@ export abstract class AbstractNumberModel implements IModel {
 
     parse(query: string): ModelResult[] {
         query = QueryProcessor.preProcess(query, true);
-        let parseNums: ParseResult[]
+        let parseNums: ParseResult[];
 
         try {
             let extractResults = this.extractor.extract(query);
             parseNums = extractResults.map(r => this.parser.parse(r));
         }
-        catch(err) {
+        catch (err) {
             // Nothing to do. Exceptions in result process should not affect other extracted entities.
             // No result.
         }

@@ -4,7 +4,7 @@ import { BasePhoneNumbers } from "../../resources/basePhoneNumbers";
 import { BaseURL } from "../../resources/baseURL";
 import { IURLExtractorConfiguration } from "../extractors";
 
-export class EnglishPhoneNumberExtractorConfiguration implements IPhoneNumberExtractorConfiguration{
+export class EnglishPhoneNumberExtractorConfiguration implements IPhoneNumberExtractorConfiguration {
     readonly WordBoundariesRegex: string;
     readonly NonWordBoundariesRegex: string;
     readonly EndWordBoundariesRegex: string;
@@ -16,19 +16,19 @@ export class EnglishPhoneNumberExtractorConfiguration implements IPhoneNumberExt
     }
 }
 
-export class IpExtractor extends BaseIpExtractor{
+export class IpExtractor extends BaseIpExtractor {
 
 }
 
-export class MentionExtractor extends BaseMentionExtractor{
+export class MentionExtractor extends BaseMentionExtractor {
 
 }
 
-export class HashtagExtractor extends BaseHashtagExtractor{
+export class HashtagExtractor extends BaseHashtagExtractor {
 
 }
 
-export class EmailExtractor extends BaseEmailExtractor{
+export class EmailExtractor extends BaseEmailExtractor {
 
 }
 

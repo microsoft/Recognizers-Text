@@ -106,7 +106,7 @@ export class FrenchSetParserConfiguration implements ISetParserConfiguration {
         let trimedText = text.trim().toLowerCase();
         let timex = "";
 
-        if (trimedText === "quotidien" || trimedText === "quotidienne" || 
+        if (trimedText === "quotidien" || trimedText === "quotidienne" ||
             trimedText === "jours" || trimedText === "journellement") {
             timex = "P1D";
         }
@@ -133,7 +133,7 @@ export class FrenchSetParserConfiguration implements ISetParserConfiguration {
         return {
             timex,
             matched: true
-        }
+        };
     }
 
     getMatchedUnitTimex(text: string): { matched: boolean; timex: string; } {

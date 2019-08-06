@@ -17,7 +17,7 @@ export class SpanishDimensionExtractorConfiguration extends SpanishNumberWithUni
 
     readonly suffixList: ReadonlyMap<string, string>;
     readonly prefixList: ReadonlyMap<string, string>;
-    readonly ambiguousUnitList: ReadonlyArray<string>;
+    readonly ambiguousUnitList: readonly string[];
     readonly extractType: string;
 
     constructor(ci?: CultureInfo) {
@@ -31,7 +31,7 @@ export class SpanishDimensionExtractorConfiguration extends SpanishNumberWithUni
 
         this.suffixList = dimensionSuffixList;
         this.prefixList = new Map<string, string>();
-        this.ambiguousUnitList = SpanishNumericWithUnit.AmbiguousDimensionUnitList
+        this.ambiguousUnitList = SpanishNumericWithUnit.AmbiguousDimensionUnitList;
     }
 }
 
