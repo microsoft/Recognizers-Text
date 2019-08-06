@@ -29,6 +29,7 @@ module.exports = {
         'curly': ["error"],           
         "spaced-comment": ["warn", "always"],
         'semi': 'error', 
-        'brace-style': ["error", "stroustrup"],  
+        'brace-style': ["error", "stroustrup"],
+        'indent': ['error', 4]  
     },
 }; 
