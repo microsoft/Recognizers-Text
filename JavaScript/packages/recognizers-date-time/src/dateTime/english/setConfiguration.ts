@@ -1,21 +1,21 @@
-import { ISetExtractorConfiguration, ISetParserConfiguration } from "../baseSet"
+import { ISetExtractorConfiguration, ISetParserConfiguration } from "../baseSet";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { BaseDatePeriodExtractor, BaseDatePeriodParser } from "../baseDatePeriod";
 import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "../baseTimePeriod";
 import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
-import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
+import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { EnglishDateTime } from "../../resources/englishDateTime";
-import { ICommonDateTimeParserConfiguration } from "../parsers"
-import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"
-import { EnglishTimeExtractorConfiguration } from "./timeConfiguration"
-import { EnglishDateExtractorConfiguration } from "./dateConfiguration"
-import { EnglishDateTimeExtractorConfiguration } from "./dateTimeConfiguration"
-import { EnglishTimePeriodExtractorConfiguration } from "./timePeriodConfiguration"
-import { EnglishDatePeriodExtractorConfiguration } from "./datePeriodConfiguration"
-import { EnglishDateTimePeriodExtractorConfiguration } from "./dateTimePeriodConfiguration"
+import { ICommonDateTimeParserConfiguration } from "../parsers";
+import { EnglishDurationExtractorConfiguration } from "./durationConfiguration";
+import { EnglishTimeExtractorConfiguration } from "./timeConfiguration";
+import { EnglishDateExtractorConfiguration } from "./dateConfiguration";
+import { EnglishDateTimeExtractorConfiguration } from "./dateTimeConfiguration";
+import { EnglishTimePeriodExtractorConfiguration } from "./timePeriodConfiguration";
+import { EnglishDatePeriodExtractorConfiguration } from "./datePeriodConfiguration";
+import { EnglishDateTimePeriodExtractorConfiguration } from "./dateTimePeriodConfiguration";
 
 export class EnglishSetExtractorConfiguration implements ISetExtractorConfiguration {
     readonly lastRegex: RegExp;
@@ -42,13 +42,13 @@ export class EnglishSetExtractorConfiguration implements ISetExtractorConfigurat
         this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(dmyDateFormat));
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
         this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(dmyDateFormat));
-        this.lastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetLastRegex)
-        this.eachPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachPrefixRegex)
-        this.periodicRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodicRegex)
-        this.eachUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachUnitRegex)
-        this.eachDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachDayRegex)
-        this.setWeekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetWeekDayRegex)
-        this.setEachRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetEachRegex)
+        this.lastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetLastRegex);
+        this.eachPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachPrefixRegex);
+        this.periodicRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodicRegex);
+        this.eachUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachUnitRegex);
+        this.eachDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachDayRegex);
+        this.setWeekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetWeekDayRegex);
+        this.setEachRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetEachRegex);
         this.beforeEachDayRegex = null;
     }
 }

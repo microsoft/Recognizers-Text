@@ -5,7 +5,7 @@ import { LongFormatType } from "./number/models";
 
 export class Culture extends BaseCulture {
 
-  static readonly supportedCultures: Array<Culture> = [
+  static readonly supportedCultures: Culture[] = [
     new Culture("English", Culture.English, new LongFormatType(',', '.')),
     new Culture("EnglishOthers", Culture.EnglishOthers, new LongFormatType(',', '.')),
     new Culture("Chinese", Culture.Chinese, null),
@@ -30,7 +30,8 @@ export class CultureInfo extends BaseCultureInfo {
     let s: string;
     if (bigNumber.decimalPlaces()) {
       s = bigNumber.precision(15, BigNumber.ROUND_HALF_UP).toString();
-    } else {
+    }
+    else {
       s = bigNumber.toString().toUpperCase();
     }
 
@@ -43,12 +44,12 @@ export class CultureInfo extends BaseCultureInfo {
       // mimic .NET behavior by adding leading 0 to exponential. E.g.: 1E-07
       let p = s.split('e-');
       p[1] = p[1].length === 1 ? ('0' + p[1]) : p[1];
-      s = p.join('E-')
+      s = p.join('E-');
     }
 
     // TODO: Use BigNumber.toFormat instead
     let culture = Culture.supportedCultures.find(c => c.cultureCode === this.code);
-    if(culture && culture.longFormat) {
+    if (culture && culture.longFormat) {
       return s
         .split(',')
         .map(t => t.split('.').join(culture.longFormat.decimalsMark))

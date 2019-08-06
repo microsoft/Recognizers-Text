@@ -10,41 +10,41 @@ export enum SequenceOptions {
     None = 0,
 }
 
-export function recognizePhoneNumber(query: string, culture: string, options: SequenceOptions  = SequenceOptions .None): Array<ModelResult> {
-    if (culture.toLowerCase().startsWith("zh-") || culture.toLowerCase().startsWith("ja-")){
+export function recognizePhoneNumber(query: string, culture: string, options: SequenceOptions = SequenceOptions.None): ModelResult[] {
+    if (culture.toLowerCase().startsWith("zh-") || culture.toLowerCase().startsWith("ja-")) {
         return recognizeByModel(recognizer => recognizer.getPhoneNumberModel(), query, Culture.Chinese, options);
     }
     return recognizeByModel(recognizer => recognizer.getPhoneNumberModel(), query, culture, options);
 }
 
-export function recognizeIpAddress(query: string, culture: string, options: SequenceOptions  = SequenceOptions .None): Array<ModelResult> {
+export function recognizeIpAddress(query: string, culture: string, options: SequenceOptions = SequenceOptions.None): ModelResult[] {
     return recognizeByModel(recognizer => recognizer.getIpAddressModel(), query, culture, options);
 }
 
-export function recognizeMention(query: string, culture: string, options: SequenceOptions  = SequenceOptions .None): Array<ModelResult> {
+export function recognizeMention(query: string, culture: string, options: SequenceOptions = SequenceOptions.None): ModelResult[] {
     return recognizeByModel(recognizer => recognizer.getMentionModel(), query, culture, options);
 }
 
-export function recognizeHashtag(query: string, culture: string, options: SequenceOptions  = SequenceOptions .None): Array<ModelResult> {
+export function recognizeHashtag(query: string, culture: string, options: SequenceOptions = SequenceOptions.None): ModelResult[] {
     return recognizeByModel(recognizer => recognizer.getHashtagModel(), query, culture, options);
 }
 
-export function recognizeEmail(query: string, culture: string, options: SequenceOptions  = SequenceOptions .None): Array<ModelResult> {
+export function recognizeEmail(query: string, culture: string, options: SequenceOptions = SequenceOptions.None): ModelResult[] {
     return recognizeByModel(recognizer => recognizer.getEmailModel(), query, culture, options);
 }
 
-export function recognizeURL(query: string, culture: string, options: SequenceOptions  = SequenceOptions .None): Array<ModelResult> {
-    if (culture.toLowerCase().startsWith("zh-") || culture.toLowerCase().startsWith("ja-")){
+export function recognizeURL(query: string, culture: string, options: SequenceOptions = SequenceOptions.None): ModelResult[] {
+    if (culture.toLowerCase().startsWith("zh-") || culture.toLowerCase().startsWith("ja-")) {
         return recognizeByModel(recognizer => recognizer.getURLModel(), query, Culture.Chinese, options);
     }
     return recognizeByModel(recognizer => recognizer.getURLModel(), query, culture, options);
 }
 
-export function recognizeGUID(query: string, culture: string, options: SequenceOptions = SequenceOptions.None): Array<ModelResult> {
+export function recognizeGUID(query: string, culture: string, options: SequenceOptions = SequenceOptions.None): ModelResult[] {
     return recognizeByModel(recognizer => recognizer.getGUIDModel(), query, culture, options);
 }
 
-function recognizeByModel(getModelFunc: (n: SequenceRecognizer) => IModel, query: string, culture: string, options: SequenceOptions): Array<ModelResult> {
+function recognizeByModel(getModelFunc: (n: SequenceRecognizer) => IModel, query: string, culture: string, options: SequenceOptions): ModelResult[] {
     let recognizer = new SequenceRecognizer(culture, options);
     let model = getModelFunc(recognizer);
     return model.parse(query);
@@ -57,9 +57,9 @@ export default class SequenceRecognizer extends Recognizer<SequenceOptions> {
     }
 
     protected IsValidOptions(options: any): boolean {
-        return options >= 0 && options <= SequenceOptions.None
+        return options >= 0 && options <= SequenceOptions.None;
     }
-    
+
     protected InitializeConfiguration() {
         this.registerModel("PhoneNumberModel", Culture.English, (options) => new PhoneNumberModel(
             new PhoneNumberParser(),
@@ -76,7 +76,7 @@ export default class SequenceRecognizer extends Recognizer<SequenceOptions> {
             new BaseURLExtractor(new EnglishURLExtractorConfiguration())));
         this.registerModel("URLModel", Culture.Chinese, (options) => new URLModel(
             new URLParser(),
-            new BaseURLExtractor(new ChineseURLExtractorConfiguration())))
+            new BaseURLExtractor(new ChineseURLExtractorConfiguration())));
         this.registerModel("GUIDModel", Culture.English, (options) => new GUIDModel(new GUIDParser(), new GUIDExtractor()));
     }
 

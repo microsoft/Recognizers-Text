@@ -29,8 +29,10 @@ export class ConditionalMatch {
 }
 
 export class RegExpUtility {
-    static getMatches(regex: RegExp, source: string): Array<Match> {
-        if (!regex) return [];
+    static getMatches(regex: RegExp, source: string): Match[] {
+        if (!regex) {
+            return [];
+        }
 
         return this.getMatchesSimple(regex, source);
     }
@@ -44,11 +46,11 @@ export class RegExpUtility {
                 strAfter = strAfter.trim();
             }
         }
-        
+
         return new ConditionalMatch(match, match && StringUtility.isNullOrEmpty(strAfter));
     }
 
-    static getMatchesSimple(regex: RegExp, source: string): Array<Match> {
+    static getMatchesSimple(regex: RegExp, source: string): Match[] {
 
         // Word boundary (\b) in JS is not unicode-aware, so words starting/ending with accentuated characters will not match
         // use a normalized string to match, the return matches' values using the original one
@@ -66,7 +68,9 @@ export class RegExpUtility {
                 let groupKey = key.substr(0, key.lastIndexOf('__'));
                 lastGroup = groupKey;
 
-                if (!groups[groupKey]) groups[groupKey] = { value: '', index: 0, length: 0, captures: [] };
+                if (!groups[groupKey]) {
+                    groups[groupKey] = { value: '', index: 0, length: 0, captures: [] };
+                }
 
                 if (match[key]) {
                     let index = match.index + match[0].indexOf(match[key]);
@@ -146,8 +150,12 @@ export class RegExpUtility {
         let closePos = startPos;
         while (counter > 0 && closePos < source.length) {
             let c = source[++closePos];
-            if (c === '(') counter++;
-            else if (c === ')') counter--;
+            if (c === '(') {
+                counter++;
+            }
+            else if (c === ')') {
+                counter--;
+            }
         }
         return closePos;
     }
@@ -160,37 +168,38 @@ export class QueryProcessor {
 
     static preProcess(query: string, caseSensitive: boolean = false, recode: boolean = true): string {
 
-    if (recode) {
-        query = query
-            .replace(/０/g, "0")
-            .replace(/１/g, "1")
-            .replace(/２/g, "2")
-            .replace(/３/g, "3")
-            .replace(/４/g, "4")
-            .replace(/５/g, "5")
-            .replace(/６/g, "6")
-            .replace(/７/g, "7")
-            .replace(/８/g, "8")
-            .replace(/９/g, "9")
-            .replace(/：/g, ":")
-            .replace(/－/g, "-")
-            .replace(/，/g, ",")
-            .replace(/／/g, "/")
-            .replace(/Ｇ/g, "G")
-            .replace(/Ｍ/g, "M")
-            .replace(/Ｔ/g, "T")
-            .replace(/Ｋ/g, "K")
-            .replace(/ｋ/g, "k")
-            .replace(/．/g, ".")
-            .replace(/（/g, "(")
-            .replace(/）/g, ")")
-            .replace(/％/g, "%")
-            .replace(/、/g, ",");
+        if (recode) {
+            query = query
+                .replace(/０/g, "0")
+                .replace(/１/g, "1")
+                .replace(/２/g, "2")
+                .replace(/３/g, "3")
+                .replace(/４/g, "4")
+                .replace(/５/g, "5")
+                .replace(/６/g, "6")
+                .replace(/７/g, "7")
+                .replace(/８/g, "8")
+                .replace(/９/g, "9")
+                .replace(/：/g, ":")
+                .replace(/－/g, "-")
+                .replace(/，/g, ",")
+                .replace(/／/g, "/")
+                .replace(/Ｇ/g, "G")
+                .replace(/Ｍ/g, "M")
+                .replace(/Ｔ/g, "T")
+                .replace(/Ｋ/g, "K")
+                .replace(/ｋ/g, "k")
+                .replace(/．/g, ".")
+                .replace(/（/g, "(")
+                .replace(/）/g, ")")
+                .replace(/％/g, "%")
+                .replace(/、/g, ",");
         }
 
         if (!caseSensitive) {
             query = query.toLowerCase();
-        } else {
+        }
+        else {
             query = QueryProcessor.toLowerTermSensitive(query);
         }
 
@@ -242,9 +251,13 @@ export class StringUtility {
         return input.split(' ')
             .map((s) => {
                 let length = s.length;
-                if (length === 0) return s;
-                let first =  StringUtility.removeDiacritics(s.substring(0, 1));
-                if(length === 1) return first;
+                if (length === 0) {
+                    return s;
+                }
+                let first = StringUtility.removeDiacritics(s.substring(0, 1));
+                if (length === 1) {
+                    return first;
+                }
                 let last = length > 1 ? StringUtility.removeDiacritics(s.substring(length - 1)) : '';
                 let mid = s.substring(1, length - 1);
                 // console.log(first + mid + last)

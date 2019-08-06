@@ -18,7 +18,7 @@ export abstract class ChoiceModel implements IModel {
             let extractResults = this.extractor.extract(source);
             parseResults = extractResults.map(r => this.parser.parse(r));
         }
-        catch(err) {
+        catch (err) {
             // Nothing to do. Exceptions in parse should not break users of recognizers.
             // No result.
         }
@@ -45,13 +45,13 @@ export class BooleanModel extends ChoiceModel {
         let results: any = {
             value: sources.value,
             score: sources.data.score
-        }
+        };
         if (sources.data.otherMatches) {
             results.otherResults = sources.data.otherMatches.map(o => ({
                 text: o.text,
                 value: o.value,
                 score: o.data.score
-            }))
+            }));
         }
         return results;
     }

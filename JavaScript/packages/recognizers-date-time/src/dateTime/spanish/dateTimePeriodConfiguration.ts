@@ -48,7 +48,7 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
         this.simpleCasesRegexes = [
             RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumFromTo),
             RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumBetweenAnd)
-        ]
+        ];
 
         this.prepositionRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PrepositionRegex);
         this.tillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex);
@@ -64,7 +64,7 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
         this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeTimeUnitRegex);
         this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RestOfDateTimeRegex);
         this.generalEndingRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.GeneralEndingRegex);
-        this.middlePauseRegex= RegExpUtility.getSafeRegExp(SpanishDateTime.MiddlePauseRegex);
+        this.middlePauseRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.MiddlePauseRegex);
 
         this.fromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex);
         this.connectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex);

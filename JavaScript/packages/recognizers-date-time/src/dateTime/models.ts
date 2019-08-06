@@ -32,10 +32,13 @@ export class DateTimeModel implements IDateTimeModel {
                 let parseResult = this.parser.parse(result, referenceDate);
                 if (Array.isArray(parseResult.value)) {
                     parseDates.push(...parseResult.value);
-                } else { parseDates.push(parseResult); }
+                }
+                else {
+                    parseDates.push(parseResult);
+                }
             }
         }
-        catch(err) {
+        catch (err) {
             // Nothing to do. Exceptions in parse should not break users of recognizers.
             // No result.
         }

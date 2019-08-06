@@ -1,16 +1,16 @@
-import { IDateTimeExtractor, IDateTimeExtractorConfiguration, IDateTimeParserConfiguration } from "../baseDateTime"
+import { IDateTimeExtractor, IDateTimeExtractorConfiguration, IDateTimeParserConfiguration } from "../baseDateTime";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { RegExpUtility, StringUtility } from "@microsoft/recognizers-text";
-import { BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number"
-import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
+import { BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number";
+import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
 import { EnglishDateTime } from "../../resources/englishDateTime";
-import { ICommonDateTimeParserConfiguration, IDateTimeParser } from "../parsers"
-import { EnglishDateTimeUtilityConfiguration } from "./baseConfiguration"
+import { ICommonDateTimeParserConfiguration, IDateTimeParser } from "../parsers";
+import { EnglishDateTimeUtilityConfiguration } from "./baseConfiguration";
 import { IDateTimeUtilityConfiguration } from "../utilities";
-import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"
-import { EnglishDateExtractorConfiguration } from "./dateConfiguration"
-import { EnglishTimeExtractorConfiguration } from "./timeConfiguration"
+import { EnglishDurationExtractorConfiguration } from "./durationConfiguration";
+import { EnglishDateExtractorConfiguration } from "./dateConfiguration";
+import { EnglishTimeExtractorConfiguration } from "./timeConfiguration";
 
 export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractorConfiguration {
     readonly datePointExtractor: IDateTimeExtractor
@@ -48,14 +48,14 @@ export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractor
         this.connectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ConnectorRegex);
         this.utilityConfiguration = new EnglishDateTimeUtilityConfiguration();
     }
-            
+
     isConnectorToken(source: string): boolean {
         return (StringUtility.isNullOrWhitespace(source)
-                    || RegExpUtility.getMatches(this.connectorRegex, source).length > 0
-                    || RegExpUtility.getMatches(this.prepositionRegex, source).length > 0);
-            }
+            || RegExpUtility.getMatches(this.connectorRegex, source).length > 0
+            || RegExpUtility.getMatches(this.prepositionRegex, source).length > 0);
+    }
 }
-  
+
 
 export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfiguration {
     tokenBeforeDate: string;
@@ -149,5 +149,7 @@ export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfig
         return swift;
     }
 
-    public haveAmbiguousToken(text: string, matchedText: string): boolean { return false; }
+    public haveAmbiguousToken(text: string, matchedText: string): boolean {
+        return false;
+    }
 }

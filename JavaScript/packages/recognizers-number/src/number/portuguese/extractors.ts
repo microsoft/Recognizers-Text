@@ -3,7 +3,7 @@ import { Constants } from "../constants";
 import { NumberMode, LongFormatType } from "../models";
 import { PortugueseNumeric } from "../../resources/portugueseNumeric";
 import { BaseNumbers } from "../../resources/baseNumbers";
-import { RegExpUtility } from "@microsoft/recognizers-text"
+import { RegExpUtility } from "@microsoft/recognizers-text";
 
 export class PortugueseNumberExtractor extends BaseNumberExtractor {
     protected extractType: string = Constants.SYS_NUM;
@@ -216,10 +216,10 @@ export class PortugueseOrdinalExtractor extends BaseNumberExtractor {
 
 export class PortuguesePercentageExtractor extends BasePercentageExtractor {
     constructor() {
-        super(new PortugueseNumberExtractor())
+        super(new PortugueseNumberExtractor());
     }
 
-    protected initRegexes(): Array<RegExp> {
+    protected initRegexes(): RegExp[] {
         let regexStrs = [
             PortugueseNumeric.NumberWithSuffixPercentage
         ];

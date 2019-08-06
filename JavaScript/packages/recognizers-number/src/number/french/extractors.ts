@@ -3,7 +3,7 @@ import { Constants } from "../constants";
 import { NumberMode, LongFormatType } from "../models";
 import { FrenchNumeric } from "../../resources/frenchNumeric";
 import { BaseNumbers } from "../../resources/baseNumbers";
-import { RegExpUtility } from "@microsoft/recognizers-text"
+import { RegExpUtility } from "@microsoft/recognizers-text";
 
 export class FrenchNumberExtractor extends BaseNumberExtractor {
     protected extractType: string = Constants.SYS_NUM;
@@ -212,10 +212,10 @@ export class FrenchOrdinalExtractor extends BaseNumberExtractor {
 
 export class FrenchPercentageExtractor extends BasePercentageExtractor {
     constructor() {
-        super(new FrenchNumberExtractor())
+        super(new FrenchNumberExtractor());
     }
 
-    protected initRegexes(): Array<RegExp> {
+    protected initRegexes(): RegExp[] {
         let regexStrs = [
             FrenchNumeric.NumberWithSuffixPercentage,
             FrenchNumeric.NumberWithPrefixPercentage
