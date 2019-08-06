@@ -48,7 +48,7 @@ class TrieTree(AbstractMatcher):
 
             j = i
 
-            for j in range(0, len(query_array)):
+            for j in range(j, len(query_array)):
 
                 if node.end:
                     yield MatchResult(i, j - i, node.values)
