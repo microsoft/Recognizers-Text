@@ -4633,5 +4633,47 @@
         }
       }
     ]
+  },
+  {
+    "Input": "一万五千亿",
+    "Results": [
+      {
+        "Text": "一万五千亿",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1500000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "四千三百亿",
+    "Results": [
+      {
+        "Text": "四千三百亿",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "430000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "四万亿",
+    "Results": [
+      {
+        "Text": "四万三千兆",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4000000000000"
+        }
+      }
+    ]
   }
 ]

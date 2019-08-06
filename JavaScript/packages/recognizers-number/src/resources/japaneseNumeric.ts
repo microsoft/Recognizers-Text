@@ -26,7 +26,7 @@ export namespace JapaneseNumeric {
     export const ZeroToNineMap: ReadonlyMap<string, number> = new Map<string, number>([["0", 0], ["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9", 9], ["零", 0], ["一", 1], ["二", 2], ["三", 3], ["四", 4], ["五", 5], ["六", 6], ["七", 7], ["八", 8], ["九", 9], ["半", 0.5]]);
     export const FullToHalfMap: ReadonlyMap<string, string> = new Map<string, string>([["０", "0"], ["１", "1"], ["２", "2"], ["３", "3"], ["４", "4"], ["５", "5"], ["６", "6"], ["７", "7"], ["８", "8"], ["９", "9"], ["／", "/"], ["－", "-"], ["，", "'"], ["、", "'"], ["Ｇ", "G"], ["Ｍ", "M"], ["Ｔ", "T"], ["Ｋ", "K"], ["ｋ", "k"], ["．", "."]]);
     export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["万万", "億"], ["億万", "兆"], ["万億", "兆"], [" ", ""]]);
-    export const RoundDirectList = ["万", "億", "兆"];
+    export const RoundDirectList = ["亿", "億", "兆"];
     export const TenChars = ["十"];
     export const DigitalNumberRegex = `((?<=(\\d|\\b))${BaseNumbers.MultiplierLookupRegex}(?=\\b))`;
     export const ZeroToNineFullHalfRegex = `[\\d１２３４５６７８９０]`;
