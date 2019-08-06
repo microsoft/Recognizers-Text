@@ -88,10 +88,10 @@
         "Text": "Montag von fünf bis sieben",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2018-02-05T05,2018-02-05T07,PT2H)",
+          "Timex": "(XXXX-WXX-1T05,XXXX-WXX-1T07,PT2H)",
           "FutureResolution": {
-            "startDateTime": "2018-02-05 05:00:00",
-            "endDateTime": "2018-02-05 07:00:00"
+            "startDateTime": "2018-02-12 05:00:00",
+            "endDateTime": "2018-02-12 07:00:00"
           },
           "PastResolution": {
             "startDateTime": "2018-02-05 05:00:00",
@@ -140,14 +140,14 @@
         "Text": "dienstagabend",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "2016-11-08TEV",
+          "Timex": "XXXX-WXX-2TEV",
           "FutureResolution": {
             "startDateTime": "2016-11-08 16:00:00",
             "endDateTime": "2016-11-08 20:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 16:00:00",
-            "endDateTime": "2016-11-08 20:00:00"
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
           }
         },
         "Start": 9,
@@ -192,14 +192,14 @@
         "Text": "dienstagnacht",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "2016-11-08TNI",
+          "Timex": "XXXX-WXX-2TNI",
           "FutureResolution": {
             "startDateTime": "2016-11-08 20:00:00",
             "endDateTime": "2016-11-08 23:59:59"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
+            "startDateTime": "2016-11-01 20:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
           }
         },
         "Start": 21,
@@ -244,14 +244,14 @@
         "Text": "zur primetime am sonntag",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "2018-12-23TNI",
+          "Timex": "XXXX-WXX-7TNI",
           "FutureResolution": {
             "startDateTime": "2018-12-23 20:00:00",
             "endDateTime": "2018-12-23 23:59:59"
           },
           "PastResolution": {
-            "startDateTime": "2018-12-23 20:00:00",
-            "endDateTime": "2018-12-23 23:59:59"
+            "startDateTime": "2018-12-16 20:00:00",
+            "endDateTime": "2018-12-16 23:59:59"
           }
         },
         "Start": 10,
@@ -556,14 +556,14 @@
         "Text": "dienstagmorgen",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "2016-11-08TMO",
+          "Timex": "XXXX-WXX-2TMO",
           "FutureResolution": {
             "startDateTime": "2016-11-08 08:00:00",
             "endDateTime": "2016-11-08 12:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 08:00:00",
-            "endDateTime": "2016-11-08 12:00:00"
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
           }
         },
         "Start": 41,
@@ -582,14 +582,14 @@
         "Text": "Dienstagabend",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "2016-11-08TEV",
+          "Timex": "XXXX-WXX-2TEV",
           "FutureResolution": {
             "startDateTime": "2016-11-08 16:00:00",
             "endDateTime": "2016-11-08 20:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 16:00:00",
-            "endDateTime": "2016-11-08 20:00:00"
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
           }
         },
         "Start": 26,
@@ -608,14 +608,14 @@
         "Text": "dienstag am vormittag",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "2016-11-08TMO",
+          "Timex": "XXXX-WXX-2TMO",
           "FutureResolution": {
             "startDateTime": "2016-11-08 08:00:00",
             "endDateTime": "2016-11-08 12:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 08:00:00",
-            "endDateTime": "2016-11-08 12:00:00"
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
           }
         },
         "Start": 20,
