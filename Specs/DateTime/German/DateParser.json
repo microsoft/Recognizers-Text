@@ -250,12 +250,12 @@
         "Text": "Freitag",
         "Type": "date",
         "Value": {
-          "Timex": "2016-11-11",
+          "Timex": "XXXX-WXX-5",
           "FutureResolution": {
             "date": "2016-11-11"
           },
           "PastResolution": {
-            "date": "2016-11-11"
+            "date": "2016-11-04"
           }
         },
         "Start": 13,

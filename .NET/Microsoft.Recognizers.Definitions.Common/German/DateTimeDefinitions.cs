@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})";
       public static readonly string OnRegex = $@"(?<=\bam\s+)({DayRegex}s?)\b";
       public const string RelaxedOnRegex = @"(?<=\b(am|an dem)\s+)((?<day>10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)([\.]))";
-      public static readonly string ThisRegex = $@"(((diese((n|m)|(\s*woche))(\s*am)?\s+){WeekDayRegex})|({WeekDayRegex})|diese(n|r)?\s*(sommer|winter|frühling|herbst))";
+      public static readonly string ThisRegex = $@"(((diese((n|m)|(\s*woche))(\s*am)?\s+){WeekDayRegex})|diese(n|r)?\s*(sommer|winter|frühling|herbst))";
       public static readonly string LastDateRegex = $@"({PreviousPrefixRegex}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{PreviousPrefixRegex}\s*woche))";
       public static readonly string NextDateRegex = $@"({NextPrefixRegex}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{NextPrefixRegex}\s*woche))";
       public static readonly string SpecialDayRegex = $@"(vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+(tag|morgen))|\bgestern\b|\bmorgen\b|heute|(heutig(e|en|es)?|aktuelle(n|s)?) (datum|tag(s|es)?))";

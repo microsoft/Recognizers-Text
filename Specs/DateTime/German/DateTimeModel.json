@@ -189,7 +189,12 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-11",
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2016-11-04"
+            },
+            {
+              "timex": "XXXX-WXX-5",
               "type": "date",
               "value": "2016-11-11"
             }
@@ -575,7 +580,13 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-08TMO",
+              "timex": "XXXX-WXX-2TMO",
+              "type": "datetimerange",
+              "start": "2016-11-01 08:00:00",
+              "end": "2016-11-01 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2TMO",
               "type": "datetimerange",
               "start": "2016-11-08 08:00:00",
               "end": "2016-11-08 12:00:00"
@@ -600,7 +611,13 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-08TMO",
+              "timex": "XXXX-WXX-2TMO",
+              "type": "datetimerange",
+              "start": "2016-11-01 08:00:00",
+              "end": "2016-11-01 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2TMO",
               "type": "datetimerange",
               "start": "2016-11-08 08:00:00",
               "end": "2016-11-08 12:00:00"
@@ -817,7 +834,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-07",
+              "timex": "XXXX-WXX-1",
               "type": "set",
               "value": "not resolved"
             }
@@ -841,7 +858,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-09T16",
+              "timex": "XXXX-WXX-3T16",
               "type": "set",
               "value": "not resolved"
             }
@@ -865,7 +882,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-09",
+              "timex": "XXXX-WXX-3",
               "type": "set",
               "value": "not resolved"
             }
@@ -1226,5 +1243,29 @@
     },
     "NotSupported": "javascript, python",
     "Results": []
+  },
+  {
+    "Input": "Ich gehe jeden Montag um 4 Uhr",
+    "Context": {
+      "ReferenceDateTime": "2019-08-06T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "jeden montag um 4 uhr",
+        "Start": 9,
+        "End": 29,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1T04",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
