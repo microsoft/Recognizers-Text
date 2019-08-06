@@ -783,7 +783,7 @@
   },
   {
     "Input": "I'm at MSK+7, not MSK",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "MSK+7",
@@ -813,7 +813,7 @@
   },
   {
     "Input": "I'm at MSK-1.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "MSK-1",
@@ -826,6 +826,48 @@
         },
         "Start": 7,
         "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at UTC + 4",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "utc + 4",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+04:00",
+            "UtcOffsetMins": 240
+          }
+        },
+        "Start": 18,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at UTC -4",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "UTC -4",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-04:00",
+            "UtcOffsetMins": -240
+          }
+        },
+        "Start": 18,
+        "Length": 6
       }
     ]
   }

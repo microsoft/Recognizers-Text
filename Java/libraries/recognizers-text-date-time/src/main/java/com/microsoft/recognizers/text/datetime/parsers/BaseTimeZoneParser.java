@@ -13,6 +13,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class BaseTimeZoneParser implements IDateTimeParser {
@@ -50,9 +51,9 @@ public class BaseTimeZoneParser implements IDateTimeParser {
 
         String text = er.getText().toLowerCase();
         String normalizedText = normalizeText(text);
-        Match match = Arrays.stream(RegExpUtility.getMatches(directUtcRegex, text)).findFirst().orElse(null);
-        String matched = match != null ? match.getGroup("").value : "";
-        int offsetInMinutes = computeMinutes(matched);
+        Matcher match = directUtcRegex.matcher(text);
+        String matched = match.find() ? match.group(2) : "";
+        int offsetInMinutes = matched != null ? computeMinutes(matched) : Constants.InvalidOffsetValue;
 
         if (offsetInMinutes != Constants.InvalidOffsetValue) {
             DateTimeResolutionResult value = getDateTimeResolutionResult(offsetInMinutes, text);
@@ -123,6 +124,7 @@ public class BaseTimeZoneParser implements IDateTimeParser {
             return Constants.InvalidOffsetValue;
         }
 
+        utcOffset = utcOffset.trim();
         int sign = Constants.PositiveSign; // later than utc, default value
         if (utcOffset.startsWith("+") || utcOffset.startsWith("-") || utcOffset.startsWith("±")) {
             if (utcOffset.startsWith("-")) {

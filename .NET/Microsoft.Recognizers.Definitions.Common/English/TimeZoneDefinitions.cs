@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Definitions.English
 
     public static class TimeZoneDefinitions
     {
-      public const string DirectUtcRegex = @"\b(utc|gmt|msk)(\s*[+\-\u00B1]?\s*[\d]{1,2}(\s*:\s*[\d]{1,2})?)?\b";
+      public const string DirectUtcRegex = @"\b(utc|gmt)(\s*[+\-\u00B1]?\s*[\d]{1,2}(\s*:\s*[\d]{1,2})?)?\b";
       public static readonly IList<string> AbbreviationsList = new List<string>
         {
             @"ACT",
@@ -130,6 +130,16 @@ namespace Microsoft.Recognizers.Definitions.English
             @"PYST",
             @"RST",
             @"MSK",
+            @"MSK-1",
+            @"MSK+1",
+            @"MSK+2",
+            @"MSK+3",
+            @"MSK+4",
+            @"MSK+5",
+            @"MSK+6",
+            @"MSK+7",
+            @"MSK+8",
+            @"MSK+9",
             @"SAEST",
             @"SAPST",
             @"SAWST",
@@ -444,6 +454,16 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"pyst", -10000 },
             { @"rst", 60 },
             { @"msk", 180 },
+            { @"msk-1", 120 },
+            { @"msk+1", 240 },
+            { @"msk+2", 300 },
+            { @"msk+3", 360 },
+            { @"msk+4", 420 },
+            { @"msk+5", 480 },
+            { @"msk+6", 540 },
+            { @"msk+7", 600 },
+            { @"msk+8", 660 },
+            { @"msk+9", 720 },
             { @"saest", -180 },
             { @"sapst", -300 },
             { @"sawst", -240 },
