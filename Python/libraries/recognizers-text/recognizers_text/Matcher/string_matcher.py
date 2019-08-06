@@ -8,7 +8,6 @@ from multipledispatch import dispatch
 from .match_result import MatchResult
 
 
-
 class StringMatcher:
 
     def __init__(self, match_strategy: MatchStrategy = MatchStrategy.TrieTree, tokenizer: Tokenizer = None):
@@ -78,7 +77,7 @@ class StringMatcher:
             end_token = query_tokens[r.start + r.length - 1]
             start = start_token.start
             length = end_token.end - start_token.start
-            r_text = query_text[start: start + length]
+            r_text = query_text[ start : start + length]
 
             match_result = MatchResult()
             match_result.start = start
