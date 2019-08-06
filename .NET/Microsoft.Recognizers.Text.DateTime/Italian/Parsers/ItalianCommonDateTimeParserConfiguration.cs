@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             TimePeriodExtractor = new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration(this));
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new ItalianDateTimePeriodExtractorConfiguration(this));
             DateParser = new BaseDateParser(new ItalianDateParserConfiguration(this));
-            TimeParser = new BaseTimeParser(new ItalianTimeParserConfiguration(this));
+            TimeParser = new TimeParser(new ItalianTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new ItalianDateTimeParserConfiguration(this));
             DurationParser = new BaseDurationParser(new ItalianDurationParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new ItalianDatePeriodParserConfiguration(this));

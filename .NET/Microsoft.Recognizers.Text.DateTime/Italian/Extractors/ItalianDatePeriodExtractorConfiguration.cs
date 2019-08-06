@@ -66,7 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         // **In Italian, Past/Next is suffix, but interface enforces this
         // next, in
         public static readonly Regex NextPrefixRegex =
-            new Regex(DateTimeDefinitions.NextSuffixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
 
         public static readonly Regex FutureSuffixRegex =
             new Regex(DateTimeDefinitions.FutureSuffixRegex, RegexFlags);
