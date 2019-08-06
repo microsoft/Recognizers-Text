@@ -1,10 +1,10 @@
 from recognizers_text.Matcher.simple_tokenizer import SimpleTokenizer
 
 
-class TestStringMatcher:
+class TestSimpleTokenizer:
 
     @staticmethod
-    def test_simple_string_matcher():
+    def test_english_tokenized():
         tokenizer = SimpleTokenizer()
         text = '   Hi, could     you give me a beer, please?'
         tokenized_text = tokenizer.tokenize(text)
