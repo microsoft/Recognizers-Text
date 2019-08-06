@@ -27,7 +27,7 @@ export namespace ChineseNumeric {
     export const FullToHalfMap: ReadonlyMap<string, string> = new Map<string, string>([["０", "0"], ["１", "1"], ["２", "2"], ["３", "3"], ["４", "4"], ["５", "5"], ["６", "6"], ["７", "7"], ["８", "8"], ["９", "9"], ["／", "/"], ["－", "-"], ["，", "'"], ["Ｇ", "G"], ["Ｍ", "M"], ["Ｔ", "T"], ["Ｋ", "K"], ["ｋ", "k"], ["．", "."]]);
     export const TratoSimMap: ReadonlyMap<string, string> = new Map<string, string>([["佰", "百"], ["點", "点"], ["個", "个"], ["幾", "几"], ["對", "对"], ["雙", "双"]]);
     export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["萬萬", "億"], ["億萬", "兆"], ["萬億", "兆"], ["万万", "亿"], ["万亿", "兆"], ["亿万", "兆"], [" ", ""], ["多", ""], ["余", ""], ["几", ""]]);
-    export const RoundDirectList = ["万", "萬", "亿", "兆", "億"];
+    export const RoundDirectList = ["亿", "兆", "億"];
     export const TenChars = ["十", "拾"];
     export const DigitalNumberRegex = `((?<=(\\d|\\b))${BaseNumbers.MultiplierLookupRegex}(?=\\b))`;
     export const ZeroToNineFullHalfRegex = `[\\d１２３４５６７８９０]`;
