@@ -13,6 +13,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         // until
         public static readonly Regex TillRegex =
+            new Regex(DateTimeDefinitions.RestrictedTillRegex, RegexFlags);
+
+        public static readonly Regex FullTillRegex =
             new Regex(DateTimeDefinitions.TillRegex, RegexFlags);
 
         // and
@@ -194,8 +197,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         private static readonly Regex ConnectorAndRegex =
             new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexFlags);
 
+        private static readonly Regex RangePrefixRegex =
+            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexFlags);
+
         private static readonly Regex BeforeRegex =
-            new Regex(DateTimeDefinitions.BeforeRegex2, RegexFlags);
+            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
 
         private static readonly Regex[] SimpleCasesRegexes =
         {
@@ -216,9 +222,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             SeasonRegex,
             WhichWeekRegex,
             RestOfDateRegex,
-            PastPrefixRegex,
-            NextPrefixRegex,
-            ThisPrefixRegex,
             LaterEarlyPeriodRegex,
             WeekWithWeekDayRangeRegex,
             YearPlusNumberRegex,
@@ -318,10 +321,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            var beforeMatch = BeforeRegex.Match(text);
+            var beforeMatch = BeforeRegex.MatchEnd(text, false);
+            var fromMatch = RangePrefixRegex.MatchEnd(text, false);
+
             if (beforeMatch.Success)
             {
                 index = beforeMatch.Index;
+            }
+            else if (fromMatch.Success)
+            {
+                index = fromMatch.Index;
+
+                return fromMatch.Success;
             }
 
             return beforeMatch.Success;
@@ -329,7 +340,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool HasConnectorToken(string text)
         {
-            return ConnectorAndRegex.IsMatch(text);
+            return ConnectorAndRegex.IsMatch(text) || FullTillRegex.IsMatch(text);
         }
     }
 }

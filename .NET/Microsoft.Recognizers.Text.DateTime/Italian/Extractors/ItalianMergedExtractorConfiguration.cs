@@ -17,6 +17,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex SinceRegex =
             new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
 
+        public static readonly Regex TillRegex =
+            new Regex(DateTimeDefinitions.RestrictedTillRegex, RegexFlags);
+
         public static readonly Regex AroundRegex =
             new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
 
