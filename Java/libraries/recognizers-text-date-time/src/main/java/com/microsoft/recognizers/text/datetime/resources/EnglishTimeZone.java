@@ -19,7 +19,7 @@ import com.google.common.collect.ImmutableMap;
 
 public class EnglishTimeZone {
 
-    public static final String DirectUtcRegex = "\\b(utc|gmt)(\\s*[+\\-\\u00B1]?\\s*[\\d]{1,2}(\\s*:\\s*[\\d]{1,2})?)?\\b";
+    public static final String DirectUtcRegex = "\\b(utc|gmt|msk)(\\s*[+\\-\\u00B1]?\\s*[\\d]{1,2}(\\s*:\\s*[\\d]{1,2})?)?\\b";
 
     public static final List<String> AbbreviationsList = Arrays.asList("ACT", "AFT", "AKST", "AKDT", "ABST", "AST", "ARBST", "ARST", "ART", "ADT", "ACST", "AEST", "AEDT", "AZT", "AZST", "AZOT", "AZOST", "BST", "CCST", "CT", "CVT", "AMT", "AMST", "ACDT", "CAST", "CADT", "BTT", "CBT", "CBST", "CET", "CEST", "SBT", "CST", "CDT", "CSTM", "CDTM", "BIT", "ET", "EAT", "EET", "EEST", "ESAT", "ESAST", "EST", "EDT", "ESTM", "EDTM", "EGST", "YEKT", "FJT", "FJST", "GET", "GMT", "GNST", "GNDT", "GST", "GTBST", "HAST", "HST", "HADT", "HDT", "IST", "IRST", "IRDT", "ISST", "ISDT", "JST", "JDT", "PETT", "KST", "LINT", "MAGT", "MAGST", "MUT", "MAT", "MEST", "MVST", "MOST", "WEST", "MST", "MDT", "MSTM", "MDTM", "MYST", "NCAST", "NMST", "NMDT", "NPT", "NZT", "NZST", "NZDT", "NST", "NDT", "IRKT", "KRAT", "PSAT", "PSAST", "PST", "PDT", "PSTM", "PDTM", "PKT", "PYT", "PYST", "RST", "MSK", "SAEST", "SAPST", "SAWST", "SST", "SMST", "THA", "SNST", "SAST", "SLT", "SGT", "TIST", "TAST", "TADT", "TST", "TOT", "TOST", "TRT", "ULAT", "UTC", "VET", "VLAT", "AWST", "WAT", "ECT", "WAST", "WET", "WPST", "YAKT", "PDST", "PT", "AWDT", "COT", "HKT");
 

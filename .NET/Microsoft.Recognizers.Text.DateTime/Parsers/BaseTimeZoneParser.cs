@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static readonly Regex TimeZoneEndRegex = new Regex("time$|timezone$", RegexOptions.Singleline);
 
         // Compute UTC offset in minutes from matched timezone offset in text. e.g. "-4:30" -> -270; "+8"-> 480.
-        public static int ComputeMinutes(string utcOffset)
+        public static int ComputeMinutes(string timeZone, string utcOffset)
         {
             if (utcOffset.Length == 0)
             {
@@ -34,6 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             int hours = 0;
             int minutes = 0;
+            int utcMinuteShift = 0;
             if (utcOffset.Contains(":"))
             {
                 var tokens = utcOffset.Split(':').ToList();
@@ -50,13 +51,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return Constants.InvalidOffsetValue;
             }
 
+            if (TimeZoneDefinitions.AbbrToMinMapping.ContainsKey(timeZone) &&
+                TimeZoneDefinitions.AbbrToMinMapping[timeZone] != Constants.InvalidOffsetValue)
+            {
+                utcMinuteShift = TimeZoneDefinitions.AbbrToMinMapping[timeZone];
+            }
+
             if (minutes != 0 && minutes != 15 && minutes != 30 && minutes != 45 && minutes != 60)
             {
                 return Constants.InvalidOffsetValue;
             }
 
-            int offsetInMinutes = (hours * 60) + minutes;
-            offsetInMinutes *= sign;
+            int offsetInMinutes = (((hours * 60) + minutes) * sign) + utcMinuteShift;
 
             return offsetInMinutes;
         }
@@ -100,8 +106,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             string text = er.Text;
             string normalizedText = NormalizeText(text);
-            string matched = Regex.Match(text, TimeZoneDefinitions.DirectUtcRegex).Groups[2].Value;
-            int offsetInMinutes = ComputeMinutes(matched);
+            var matched = Regex.Match(text, TimeZoneDefinitions.DirectUtcRegex);
+            int offsetInMinutes = ComputeMinutes(matched.Groups[1].Value, matched.Groups[2].Value);
 
             if (offsetInMinutes != Constants.InvalidOffsetValue)
             {
