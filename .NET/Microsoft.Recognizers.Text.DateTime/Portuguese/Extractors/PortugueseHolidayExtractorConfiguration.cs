@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.Portuguese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    public class PortugueseHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
+    public class PortugueseHolidayExtractorConfiguration : BaseDateTimeOptionsConfiguration, IHolidayExtractorConfiguration
     {
         public static readonly Regex[] HolidayRegexList =
         {
@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public PortugueseHolidayExtractorConfiguration(IOptionsConfiguration config)
+        public PortugueseHolidayExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
         }

@@ -10,7 +10,7 @@ using Microsoft.Recognizers.Text.Number.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDateExtractorConfiguration : BaseOptionsConfiguration, IDateExtractorConfiguration
+    public class EnglishDateExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateExtractorConfiguration
     {
 
         public static readonly Regex MonthRegex =
@@ -120,13 +120,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private static readonly Regex DayRegex =
             new Regex(DateTimeDefinitions.ImplicitDayRegex, RegexFlags);
 
-        public EnglishDateExtractorConfiguration(IOptionsConfiguration config)
+        public EnglishDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
             UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
 

@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
+    public class GermanTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
         public static readonly Regex TillRegex =
             new Regex(DateTimeDefinitions.TillRegex, RegexFlags);
@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public GermanTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+        public GermanTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;

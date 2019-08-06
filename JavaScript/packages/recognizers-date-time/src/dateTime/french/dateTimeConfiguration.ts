@@ -57,7 +57,7 @@ export class FrenchDateTimeExtractorConfiguration implements IDateTimeExtractorC
     }
 
     isConnectorToken(source: string): boolean {
-        
+
         return (source === "" ||
             RegExpUtility.getFirstMatchIndex(this.prepositionRegex, source).matched ||
             RegExpUtility.getFirstMatchIndex(this.connectorRegex, source).matched);
@@ -127,12 +127,12 @@ export class FrenchDateTimeParserConfiguration implements IDateTimeParserConfigu
         if (trimedText.endsWith("maintenant")) {
             timex = "PRESENT_REF";
         }
-        else if (trimedText === "récemment" || 
+        else if (trimedText === "récemment" ||
             trimedText === "précédemment" ||
             trimedText === "auparavant") {
             timex = "PAST_REF";
         }
-        else if (trimedText === "dès que possible" || 
+        else if (trimedText === "dès que possible" ||
             trimedText === "dqp") {
             timex = "FUTURE_REF";
         }
@@ -153,15 +153,15 @@ export class FrenchDateTimeParserConfiguration implements IDateTimeParserConfigu
         let trimedText = text.trim().toLowerCase();
         let swift = 0;
 
-        if (trimedText.startsWith("prochain") || 
+        if (trimedText.startsWith("prochain") ||
             trimedText.endsWith("prochain") ||
-            trimedText.startsWith("prochaine") || 
+            trimedText.startsWith("prochaine") ||
             trimedText.endsWith("prochaine")) {
             swift = 1;
         }
-        else if (trimedText.startsWith("dernier") || 
+        else if (trimedText.startsWith("dernier") ||
             trimedText.startsWith("dernière") ||
-            trimedText.endsWith("dernier") || 
+            trimedText.endsWith("dernier") ||
             trimedText.endsWith("dernière")) {
             swift = -1;
         }

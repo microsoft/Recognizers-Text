@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
-    public class DutchDateTimeExtractorConfiguration : BaseOptionsConfiguration, IDateTimeExtractorConfiguration
+    public class DutchDateTimeExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeExtractorConfiguration
     {
         public static readonly Regex PrepositionRegex =
             new Regex(DateTimeDefinitions.PrepositionRegex, RegexFlags);
@@ -63,7 +63,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public DutchDateTimeExtractorConfiguration(IOptionsConfiguration config)
+        public DutchDateTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance();

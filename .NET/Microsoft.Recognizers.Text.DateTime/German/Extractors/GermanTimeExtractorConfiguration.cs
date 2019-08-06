@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanTimeExtractorConfiguration : BaseOptionsConfiguration, ITimeExtractorConfiguration
+    public class GermanTimeExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimeExtractorConfiguration
     {
         // part 1: smallest component
         // --------------------------------------
@@ -121,7 +121,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public GermanTimeExtractorConfiguration(IOptionsConfiguration config)
+        public GermanTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));

@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public DutchHolidayParserConfiguration(IOptionsConfiguration config)
+        public DutchHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             this.HolidayRegexList = DutchHolidayExtractorConfiguration.HolidayRegexList;

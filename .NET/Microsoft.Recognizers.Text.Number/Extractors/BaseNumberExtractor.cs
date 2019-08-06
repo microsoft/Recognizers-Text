@@ -34,6 +34,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         public virtual List<ExtractResult> Extract(string source)
         {
+
             if (string.IsNullOrEmpty(source))
             {
                 return new List<ExtractResult>();
@@ -93,7 +94,7 @@ namespace Microsoft.Recognizers.Text.Number
                                 if (match.Success)
                                 {
                                     start = match.Index;
-                                    length = length + match.Length;
+                                    length += match.Length;
                                     substr = match.Value + substr;
                                 }
                             }

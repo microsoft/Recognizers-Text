@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Definitions.Portuguese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    public class PortugueseDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration, IDateTimePeriodExtractorConfiguration
+    public class PortugueseDateTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodExtractorConfiguration
     {
         public static readonly Regex NumberCombinedWithUnit =
             new Regex(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit, RegexFlags);
@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         private static readonly Regex BetweenRegex =
             new Regex(DateTimeDefinitions.BetweenRegex, RegexFlags);
 
-        public PortugueseDateTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+        public PortugueseDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;

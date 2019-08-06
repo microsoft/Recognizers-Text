@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
+    public class SpanishHolidayExtractorConfiguration : BaseDateTimeOptionsConfiguration, IHolidayExtractorConfiguration
     {
         public static readonly Regex[] HolidayRegexList =
         {
@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public SpanishHolidayExtractorConfiguration(IOptionsConfiguration config)
+        public SpanishHolidayExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
         }

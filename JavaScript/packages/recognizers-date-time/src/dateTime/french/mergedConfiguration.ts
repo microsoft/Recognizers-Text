@@ -40,7 +40,7 @@ export class FrenchMergedExtractorConfiguration implements IMergedExtractorConfi
     readonly singleAmbiguousMonthRegex: RegExp;
     readonly prepositionSuffixRegex: RegExp;
     readonly numberEndingPattern: RegExp
-    readonly filterWordRegexList:RegExp[];
+    readonly filterWordRegexList: RegExp[];
 
     constructor(dmyDateFormat: boolean = false) {
         this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex);

@@ -13,15 +13,13 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public SpanishNumberParserConfiguration()
-               : this(new CultureInfo(Culture.Spanish))
+        public SpanishNumberParserConfiguration(INumberOptionsConfiguration config)
         {
-        }
 
-        public SpanishNumberParserConfiguration(CultureInfo ci)
-        {
+            this.Config = config;
             this.LangMarker = NumbersDefinitions.LangMarker;
-            this.CultureInfo = ci;
+            this.CultureInfo = new CultureInfo(config.Culture);
+
             this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
             this.IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
 
@@ -41,6 +39,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                 NumbersDefinitions.OrdinalNumberMap,
                 NumbersDefinitions.PrefixCardinalMap,
                 NumbersDefinitions.SuffixOrdinalMap);
+
             this.RelativeReferenceOffsetMap = NumbersDefinitions.RelativeReferenceOffsetMap.ToImmutableDictionary();
             this.RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();

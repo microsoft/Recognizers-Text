@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {
-        public FrenchCommonDateTimeParserConfiguration(IOptionsConfiguration config)
+        public FrenchCommonDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             IntegerExtractor = Number.French.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
             DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration(this));

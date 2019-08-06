@@ -28,11 +28,11 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         public ImmutableDictionary<string, string> RelativeReferenceRelativeToMap { get; private set; }
 
+        public INumberOptionsConfiguration Config { get; }
+
         public ImmutableDictionary<string, long> OrdinalNumberMap { get; }
 
         public ImmutableDictionary<string, long> RoundNumberMap { get; }
-
-        public NumberOptions Options { get; }
 
         public CultureInfo CultureInfo { get; }
 

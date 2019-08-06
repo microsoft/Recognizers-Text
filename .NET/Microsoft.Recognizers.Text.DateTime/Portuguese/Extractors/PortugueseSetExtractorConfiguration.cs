@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    public class PortugueseSetExtractorConfiguration : BaseOptionsConfiguration, ISetExtractorConfiguration
+    public class PortugueseSetExtractorConfiguration : BaseDateTimeOptionsConfiguration, ISetExtractorConfiguration
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public PortugueseSetExtractorConfiguration(IOptionsConfiguration config)
+        public PortugueseSetExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));

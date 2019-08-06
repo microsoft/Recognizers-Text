@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var referenceDate = reference;
 
             object value = null;
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = ParseBasicRegexMatch(er.Text, referenceDate);
                 if (!innerResult.Success)

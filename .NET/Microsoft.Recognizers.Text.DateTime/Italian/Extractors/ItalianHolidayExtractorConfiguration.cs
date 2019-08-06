@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.Italian;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
+    public class ItalianHolidayExtractorConfiguration : BaseDateTimeOptionsConfiguration, IHolidayExtractorConfiguration
     {
         public static readonly Regex YearRegex =
             new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public ItalianHolidayExtractorConfiguration(IOptionsConfiguration config)
+        public ItalianHolidayExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
         }

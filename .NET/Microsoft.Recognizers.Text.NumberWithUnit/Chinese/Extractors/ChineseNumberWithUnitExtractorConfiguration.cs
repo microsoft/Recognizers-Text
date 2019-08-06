@@ -6,11 +6,13 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number.Chinese;
+using Microsoft.Recognizers.Text.Number.Config;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {
     public abstract class ChineseNumberWithUnitExtractorConfiguration : INumberWithUnitExtractorConfiguration
     {
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex CompoundUnitConnRegex =
@@ -22,7 +24,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         protected ChineseNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
-            this.UnitNumExtractor = new NumberExtractor(ChineseNumberExtractorMode.ExtractAll);
+            this.UnitNumExtractor = new NumberExtractor(CJKNumberExtractorMode.ExtractAll);
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;

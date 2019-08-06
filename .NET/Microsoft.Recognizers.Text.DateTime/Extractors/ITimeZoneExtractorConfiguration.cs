@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface ITimeZoneExtractorConfiguration : IOptionsConfiguration
+    public interface ITimeZoneExtractorConfiguration : IDateTimeOptionsConfiguration
     {
         Regex DirectUtcRegex { get; }
 

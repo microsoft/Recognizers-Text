@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.Turkish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
-    public class TurkishDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
+    public class TurkishDateTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
         public static readonly Regex MorningStartEndRegex =
             new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexFlags);

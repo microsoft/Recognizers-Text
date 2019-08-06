@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
-    public class TurkishSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
+    public class TurkishSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
         public TurkishSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

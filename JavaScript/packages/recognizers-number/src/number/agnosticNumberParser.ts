@@ -28,7 +28,7 @@ export class AgnosticNumberParserFactory {
             parser = new BaseCJKNumberParser(languageConfiguration as ChineseNumberParserConfiguration);
         }
         else if (isJapanese) {
-            parser = new BaseCJKNumberParser(languageConfiguration as JapaneseNumberParserConfiguration);        
+            parser = new BaseCJKNumberParser(languageConfiguration as JapaneseNumberParserConfiguration);
         }
         else {
             parser = new BaseNumberParser(languageConfiguration);

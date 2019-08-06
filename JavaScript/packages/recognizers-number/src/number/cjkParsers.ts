@@ -14,8 +14,8 @@ export interface ICJKNumberParserConfiguration extends INumberParserConfiguratio
     readonly fullToHalfMap: ReadonlyMap<string, string>;
     readonly tratoSimMap: ReadonlyMap<string, string>;
     readonly unitMap: ReadonlyMap<string, string>;
-    readonly roundDirectList: ReadonlyArray<string>;
-    readonly tenChars: ReadonlyArray<string>;
+    readonly roundDirectList: readonly string[];
+    readonly tenChars: readonly string[];
     readonly digitNumRegex: RegExp;
     readonly dozenRegex: RegExp;
     readonly percentageRegex: RegExp;
@@ -53,7 +53,7 @@ export class BaseCJKNumberParser extends BaseNumberParser {
             data: extResult.data,
             text: this.replaceTraditionalWithSimplified(extResult.text),
             type: extResult.type
-        }
+        };
 
         if (!extra) {
             return result;
@@ -61,24 +61,30 @@ export class BaseCJKNumberParser extends BaseNumberParser {
 
         if (extra.includes("Per")) {
             result = this.perParseCJK(getExtResult);
-        } else if (extra.includes("Num")) {
+        }
+ else if (extra.includes("Num")) {
             getExtResult.text = this.replaceFullWithHalf(getExtResult.text);
             result = this.digitNumberParse(getExtResult);
             if(RegExpUtility.isMatch(this.config.negativeNumberSignRegex, getExtResult.text) && result.value > 0){
                 result.value = - result.value;
             }
             result.resolutionStr = this.toString(result.value);
-        } else if (extra.includes("Pow")) {
+        }
+ else if (extra.includes("Pow")) {
             getExtResult.text = this.replaceFullWithHalf(getExtResult.text);
             result = this.powerNumberParse(getExtResult);
             result.resolutionStr = this.toString(result.value);
-        } else if (extra.includes("Frac")) {
+        }
+ else if (extra.includes("Frac")) {
             result = this.fracParseCJK(getExtResult);
-        } else if (extra.includes("Dou")) {
+        }
+ else if (extra.includes("Dou")) {
             result = this.douParseCJK(getExtResult);
-        } else if (extra.includes("Integer")) {
+        }
+ else if (extra.includes("Integer")) {
             result = this.intParseCJK(getExtResult);
-        } else if (extra.includes("Ordinal")) {
+        }
+ else if (extra.includes("Ordinal")) {
             result = this.ordParseCJK(getExtResult);
         }
 
@@ -117,7 +123,9 @@ export class BaseCJKNumberParser extends BaseNumberParser {
     }
 
     private replaceUnit(value: string): string {
-        if (StringUtility.isNullOrEmpty(value)) return value;
+        if (StringUtility.isNullOrEmpty(value)) {
+return value;
+}
         let result = value;
         this.config.unitMap.forEach((value: string, key: string) => {
             result = result.replace(new RegExp(key, 'g'), value);
@@ -137,9 +145,11 @@ export class BaseCJKNumberParser extends BaseNumberParser {
 
             if (resultText === "半額" || resultText === "半折" || resultText === "半折") {
                 result.value = 50;
-            } else if (resultText === "10成" || resultText === "10割" || resultText === "十割") {
+            }
+ else if (resultText === "10成" || resultText === "10割" || resultText === "十割") {
                 result.value = 100;
-            } else {
+            }
+ else {
                 let matches = RegExpUtility.getMatches(this.config.speGetNumberRegex, resultText);
                 let intNumber: number;
 
@@ -148,9 +158,11 @@ export class BaseCJKNumberParser extends BaseNumberParser {
 
                     if (intNumberChar === this.config.pairChar) {
                         intNumber = 5;
-                    } else if (this.config.tenChars.some(o => o === intNumberChar)) {
+                    }
+ else if (this.config.tenChars.some(o => o === intNumberChar)) {
                         intNumber = 10;
-                    } else {
+                    }
+ else {
                         intNumber = this.config.zeroToNineMap.get(intNumberChar);
                     }
 
@@ -159,12 +171,14 @@ export class BaseCJKNumberParser extends BaseNumberParser {
 
                     if (pointNumberChar === "半") {
                         pointNumber = 0.5;
-                    } else {
+                    }
+ else {
                         pointNumber = this.config.zeroToNineMap.get(pointNumberChar) * 0.1;
                     }
 
                     result.value = (intNumber + pointNumber) * 10;
-                } else if (matches.length === 5) {
+                }
+ else if (matches.length === 5) {
                     // Deal the Japanese percentage case like "xxx割xxx分xxx厘", get the integer value and convert into result.
                     let intNumberChar = matches[0].value.charAt(0);
                     let pointNumberChar = matches[1].value.charAt(0);
@@ -176,20 +190,24 @@ export class BaseCJKNumberParser extends BaseNumberParser {
                     intNumber = this.config.zeroToNineMap.get(intNumberChar);
 
                     result.value = (intNumber + pointNumber + dotNumber) * 10;
-                } else {
+                }
+ else {
                     let intNumberChar = matches[0].value.charAt(0);
 
                     if (intNumberChar === this.config.pairChar) {
                         intNumber = 5;
-                    } else if (this.config.tenChars.some(o => o === intNumberChar)) {
+                    }
+ else if (this.config.tenChars.some(o => o === intNumberChar)) {
                         intNumber = 10;
-                    } else {
+                    }
+ else {
                         intNumber = this.config.zeroToNineMap.get(intNumberChar);
                     }
                     result.value = intNumber * 10;
                 }
             }
-        } else if (extResult.data.includes("Num")) {
+        }
+ else if (extResult.data.includes("Num")) {
             let doubleMatch = RegExpUtility.getMatches(this.config.percentageRegex, resultText).pop();
             let doubleText = doubleMatch.value;
 
@@ -210,20 +228,22 @@ export class BaseCJKNumberParser extends BaseNumberParser {
             }
 
             result.value = this.getDigitValueCJK(resultText, power);
-        } else {
+        }
+ else {
             let doubleMatch = RegExpUtility.getMatches(this.config.percentageRegex, resultText).pop();
             let doubleText = this.replaceUnit(doubleMatch.value);
 
             let splitResult = RegExpUtility.split(this.config.pointRegex, doubleText);
             if (splitResult[0] === "") {
-                splitResult[0] = this.config.zeroChar
+                splitResult[0] = this.config.zeroChar;
             }
 
             let doubleValue = this.getIntValueCJK(splitResult[0]);
             if (splitResult.length === 2) {
                 if (RegExpUtility.isMatch(this.config.negativeNumberSignRegex, splitResult[0])) {
                     doubleValue -= this.getPointValueCJK(splitResult[1]);
-                } else {
+                }
+ else {
                     doubleValue += this.getPointValueCJK(splitResult[1]);
                 }
             }
@@ -247,7 +267,8 @@ export class BaseCJKNumberParser extends BaseNumberParser {
             intPart = splitResult[0] || "";
             demoPart = splitResult[1] || "";
             numPart = splitResult[2] || "";
-        } else {
+        }
+ else {
             intPart = this.config.zeroChar;
             demoPart = splitResult[0] || "";
             numPart = splitResult[1] || "";
@@ -267,7 +288,8 @@ export class BaseCJKNumberParser extends BaseNumberParser {
 
         if (RegExpUtility.isMatch(this.config.negativeNumberSignRegex, intPart)) {
             result.value = intValue - numValue / demoValue;
-        } else {
+        }
+ else {
             result.value = intValue + numValue / demoValue;
         }
 
@@ -284,7 +306,8 @@ export class BaseCJKNumberParser extends BaseNumberParser {
             resultText = this.replaceUnit(resultText);
             let power = this.config.roundNumberMapChar.get(resultText.charAt(resultText.length - 1));
             result.value = this.getDigitValueCJK(resultText.substr(0, resultText.length - 1), power);
-        } else {
+        }
+ else {
             resultText = this.replaceUnit(resultText);
             let splitResult = RegExpUtility.split(this.config.pointRegex, resultText);
 
@@ -294,7 +317,8 @@ export class BaseCJKNumberParser extends BaseNumberParser {
 
             if (RegExpUtility.isMatch(this.config.negativeNumberSignRegex, splitResult[0])) {
                 result.value = this.getIntValueCJK(splitResult[0]) - this.getPointValueCJK(splitResult[1]);
-            } else {
+            }
+ else {
                 result.value = this.getIntValueCJK(splitResult[0]) + this.getPointValueCJK(splitResult[1]);
             }
         }
@@ -318,7 +342,8 @@ export class BaseCJKNumberParser extends BaseNumberParser {
 
         if (RegExpUtility.isMatch(this.config.digitNumRegex, resultText) && !RegExpUtility.isMatch(this.config.roundNumberIntegerRegex, resultText)) {
             result.value = this.getDigitValueCJK(resultText, 1);
-        } else {
+        }
+ else {
             result.value = this.getIntValueCJK(resultText);
         }
 
@@ -352,10 +377,12 @@ export class BaseCJKNumberParser extends BaseNumberParser {
             isDozen = true;
             if (this.config.cultureInfo.code.toLowerCase() === Culture.Chinese) {
                 resultStr = resultStr.substr(0, resultStr.length - 1);
-            } else if (this.config.cultureInfo.code.toLowerCase() === Culture.Japanese) {
+            }
+ else if (this.config.cultureInfo.code.toLowerCase() === Culture.Japanese) {
                 resultStr = resultStr.substr(0, resultStr.length - 3);
             }
-        } else if (RegExpUtility.isMatch(this.config.pairRegex, resultStr)) {
+        }
+ else if (RegExpUtility.isMatch(this.config.pairRegex, resultStr)) {
             isPair = true;
             resultStr = resultStr.substr(0, resultStr.length - 1);
         }
@@ -382,14 +409,16 @@ export class BaseCJKNumberParser extends BaseNumberParser {
                     if (isRoundBefore) {
                         intValue += partValue * roundRecent;
                         isRoundBefore = false;
-                    } else {
+                    }
+ else {
                         partValue += beforeValue * roundDefault;
                         intValue += partValue * roundRecent;
                     }
 
                     roundBefore = -1;
                     partValue = 0;
-                } else {
+                }
+ else {
                     isRoundBefore = true;
                     partValue += beforeValue * roundRecent;
                     roundBefore = roundRecent;
@@ -401,17 +430,20 @@ export class BaseCJKNumberParser extends BaseNumberParser {
                 }
 
                 roundDefault = roundRecent / 10;
-            } else if (this.config.zeroToNineMap.has(currentChar)) {
+            }
+ else if (this.config.zeroToNineMap.has(currentChar)) {
                 if (index !== resultStr.length - 1) {
-                    let is_not_round_next = this.config.tenChars.some(o => o === resultStr.charAt(index + 1)) || !this.config.roundNumberMapChar.has(resultStr.charAt(index + 1))
+                    let is_not_round_next = this.config.tenChars.some(o => o === resultStr.charAt(index + 1)) || !this.config.roundNumberMapChar.has(resultStr.charAt(index + 1));
                     if (currentChar === this.config.zeroChar && is_not_round_next) {
                         beforeValue = 1;
                         roundDefault = 1;
-                    } else {
+                    }
+ else {
                         beforeValue = this.config.zeroToNineMap.get(currentChar);
                         isRoundBefore = false;
                     }
-                } else {
+                }
+ else {
                     if (index === resultStr.length - 1 && this.config.cultureInfo.code.toLowerCase() === Culture.Japanese) {
                         roundDefault = 1;
                     }

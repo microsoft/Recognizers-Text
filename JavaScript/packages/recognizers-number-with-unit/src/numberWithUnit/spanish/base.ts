@@ -9,7 +9,7 @@ import { BaseUnits } from "../../resources/baseUnits";
 export abstract class SpanishNumberWithUnitExtractorConfiguration implements INumberWithUnitExtractorConfiguration {
     abstract readonly suffixList: ReadonlyMap<string, string>;
     abstract readonly prefixList: ReadonlyMap<string, string>;
-    abstract readonly ambiguousUnitList: ReadonlyArray<string>;
+    abstract readonly ambiguousUnitList: readonly string[];
     readonly abstract extractType: string;
 
     readonly cultureInfo: CultureInfo;

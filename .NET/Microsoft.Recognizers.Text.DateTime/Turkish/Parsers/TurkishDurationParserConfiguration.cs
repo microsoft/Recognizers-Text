@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
-    public class TurkishDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration
+    public class TurkishDurationParserConfiguration : BaseDateTimeOptionsConfiguration, IDurationParserConfiguration
     {
         public TurkishDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

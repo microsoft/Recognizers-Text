@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.Italian;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianDurationExtractorConfiguration : BaseOptionsConfiguration, IDurationExtractorConfiguration
+    public class ItalianDurationExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDurationExtractorConfiguration
     {
         public static readonly Regex DurationUnitRegex =
             new Regex(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
@@ -56,7 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public ItalianDurationExtractorConfiguration(IOptionsConfiguration config)
+        public ItalianDurationExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             CardinalExtractor = Number.Italian.CardinalExtractor.GetInstance();

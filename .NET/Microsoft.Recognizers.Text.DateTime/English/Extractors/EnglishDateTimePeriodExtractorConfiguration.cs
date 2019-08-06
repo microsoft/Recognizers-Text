@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration,
+    public class EnglishDateTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration,
         IDateTimePeriodExtractorConfiguration
     {
         public static readonly Regex TimeNumberCombinedWithUnit =
@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private static readonly Regex MiddlePauseRegex =
             new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexFlags);
 
-        public EnglishDateTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+        public EnglishDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;

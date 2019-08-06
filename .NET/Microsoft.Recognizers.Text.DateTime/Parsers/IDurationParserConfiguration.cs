@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDurationParserConfiguration : IOptionsConfiguration
+    public interface IDurationParserConfiguration : IDateTimeOptionsConfiguration
     {
         IExtractor CardinalExtractor { get; }
 

@@ -10,12 +10,12 @@
         "Text": "pasqua",
         "Type": "date",
         "Value": {
-          "Timex": "",
+          "Timex": "XXXX-03-27",
           "FutureResolution": {
-            "date": "0001-01-01"
+            "date": "2017-04-16"
           },
           "PastResolution": {
-            "date": "0001-01-01"
+            "date": "2016-03-27"
           }
         },
         "Start": 10,

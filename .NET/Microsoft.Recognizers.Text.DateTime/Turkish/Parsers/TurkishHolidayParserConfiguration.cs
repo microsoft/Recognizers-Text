@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
-using System.Linq;
+
 using Microsoft.Recognizers.Definitions.Turkish;
 using DateObject = System.DateTime;
 
@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
     public class TurkishHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public TurkishHolidayParserConfiguration(IOptionsConfiguration config)
+        public TurkishHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             this.HolidayRegexList = TurkishHolidayExtractorConfiguration.HolidayRegexList;

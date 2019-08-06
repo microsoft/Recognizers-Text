@@ -4,12 +4,12 @@ import { Constants } from "../constants";
 import { INumberWithUnitExtractorConfiguration } from "../extractors";
 import { BaseNumberWithUnitParserConfiguration } from "../parsers";
 import { EnglishNumericWithUnit } from "../../resources/englishNumericWithUnit";
-import { BaseUnits} from "../../resources/baseUnits";
+import { BaseUnits } from "../../resources/baseUnits";
 
 export abstract class EnglishNumberWithUnitExtractorConfiguration implements INumberWithUnitExtractorConfiguration {
     abstract readonly suffixList: ReadonlyMap<string, string>;
     abstract readonly prefixList: ReadonlyMap<string, string>;
-    abstract readonly ambiguousUnitList: ReadonlyArray<string>;
+    abstract readonly ambiguousUnitList: readonly string[];
     readonly abstract extractType: string;
 
     readonly cultureInfo: CultureInfo;

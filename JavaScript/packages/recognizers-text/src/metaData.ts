@@ -5,6 +5,6 @@ export class MetaData {
         return this.isHoliday;
     }
     set IsHoliday(isHoliday: boolean) {
-        this.isHoliday = isHoliday
+        this.isHoliday = isHoliday;
     }
 }

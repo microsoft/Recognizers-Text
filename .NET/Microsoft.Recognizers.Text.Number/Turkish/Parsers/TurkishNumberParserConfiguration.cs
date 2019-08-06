@@ -10,15 +10,12 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public TurkishNumberParserConfiguration()
-            : this(new CultureInfo(Culture.Turkish))
+        public TurkishNumberParserConfiguration(INumberOptionsConfiguration config)
         {
-        }
 
-        public TurkishNumberParserConfiguration(CultureInfo ci)
-        {
+            this.Config = config;
             this.LangMarker = NumbersDefinitions.LangMarker;
-            this.CultureInfo = ci;
+            this.CultureInfo = new CultureInfo(config.Culture);
 
             this.DecimalSeparatorChar = NumbersDefinitions.DecimalSeparatorChar;
             this.FractionMarkerToken = NumbersDefinitions.FractionMarkerToken;

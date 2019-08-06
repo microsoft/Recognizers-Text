@@ -3,6 +3,7 @@ using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Text.Number.Config;
 
 namespace Microsoft.Recognizers.Text.Number.Japanese
 {
@@ -11,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public IntegerExtractor(JapaneseNumberExtractorMode mode = JapaneseNumberExtractorMode.Default)
+        public IntegerExtractor(CJKNumberExtractorMode mode = CJKNumberExtractorMode.Default)
         {
             var regexes = new Dictionary<Regex, TypeTag>
             {
@@ -44,7 +45,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
 
             switch (mode)
             {
-                case JapaneseNumberExtractorMode.Default:
+                case CJKNumberExtractorMode.Default:
                     // 一百五十五, 负一亿三百二十二.
                     // Uses an allow list to avoid extracting "西九条" from "九"
                     regexes.Add(
@@ -52,7 +53,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE));
                     break;
 
-                case JapaneseNumberExtractorMode.ExtractAll:
+                case CJKNumberExtractorMode.ExtractAll:
                     // 一百五十五, 负一亿三百二十二, "西九条" from "九"
                     // Uses no allow lists and extracts all potential integers (useful in Units, for example).
                     regexes.Add(

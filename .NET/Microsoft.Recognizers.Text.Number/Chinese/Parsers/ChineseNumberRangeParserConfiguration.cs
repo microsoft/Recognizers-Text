@@ -9,18 +9,13 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public ChineseNumberRangeParserConfiguration()
-           : this(new CultureInfo(Culture.Chinese))
+        public ChineseNumberRangeParserConfiguration(INumberOptionsConfiguration config)
         {
-        }
-
-        public ChineseNumberRangeParserConfiguration(CultureInfo ci)
-        {
-            CultureInfo = ci;
+            CultureInfo = new CultureInfo(config.Culture);
 
             NumberExtractor = new NumberExtractor();
             OrdinalExtractor = new OrdinalExtractor();
-            NumberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
+            NumberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(config));
 
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);
             LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags);

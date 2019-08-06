@@ -6,7 +6,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public sealed class SpanishMergedParserConfiguration : SpanishCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
-        public SpanishMergedParserConfiguration(IOptionsConfiguration config)
+        public SpanishMergedParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             BeforeRegex = SpanishMergedExtractorConfiguration.BeforeRegex;

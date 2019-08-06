@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDateTimeExtractorConfiguration : BaseOptionsConfiguration, IDateTimeExtractorConfiguration
+    public class GermanDateTimeExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeExtractorConfiguration
     {
         public static readonly Regex PrepositionRegex =
             new Regex(DateTimeDefinitions.PrepositionRegex, RegexFlags);
@@ -63,7 +63,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public GermanDateTimeExtractorConfiguration(IOptionsConfiguration config)
+        public GermanDateTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();

@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianMergedExtractorConfiguration : BaseOptionsConfiguration, IMergedExtractorConfiguration
+    public class ItalianMergedExtractorConfiguration : BaseDateTimeOptionsConfiguration, IMergedExtractorConfiguration
     {
         public static readonly Regex BeforeRegex =
             new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags); // avant - 'before'
@@ -16,6 +16,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public static readonly Regex SinceRegex =
             new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+
+        public static readonly Regex TillRegex =
+            new Regex(DateTimeDefinitions.RestrictedTillRegex, RegexFlags);
 
         public static readonly Regex AroundRegex =
             new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
@@ -47,7 +50,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public ItalianMergedExtractorConfiguration(IOptionsConfiguration config)
+        public ItalianMergedExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));

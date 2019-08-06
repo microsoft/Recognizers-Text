@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDatePeriodExtractorConfiguration : IOptionsConfiguration
+    public interface IDatePeriodExtractorConfiguration : IDateTimeOptionsConfiguration
     {
         IEnumerable<Regex> SimpleCasesRegexes { get; }
 

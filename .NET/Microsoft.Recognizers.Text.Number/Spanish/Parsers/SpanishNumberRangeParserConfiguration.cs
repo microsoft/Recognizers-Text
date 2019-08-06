@@ -9,19 +9,15 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public SpanishNumberRangeParserConfiguration()
-            : this(new CultureInfo(Culture.Spanish))
+        public SpanishNumberRangeParserConfiguration(INumberOptionsConfiguration config)
         {
-        }
 
-        public SpanishNumberRangeParserConfiguration(CultureInfo ci)
-        {
-            CultureInfo = ci;
+            CultureInfo = new CultureInfo(config.Culture);
 
             NumberExtractor = Spanish.NumberExtractor.GetInstance();
             OrdinalExtractor = Spanish.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration(config));
 
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);
             LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags);

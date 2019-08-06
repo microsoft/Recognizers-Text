@@ -8,9 +8,9 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public abstract class BaseHolidayParserConfiguration : BaseOptionsConfiguration, IHolidayParserConfiguration
+    public abstract class BaseHolidayParserConfiguration : BaseDateTimeOptionsConfiguration, IHolidayParserConfiguration
     {
-        protected BaseHolidayParserConfiguration(IOptionsConfiguration config)
+        protected BaseHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
                 : base(config)
         {
             this.VariableHolidaysTimexDictionary = BaseDateTime.VariableHolidaysTimexDictionary.ToImmutableDictionary();

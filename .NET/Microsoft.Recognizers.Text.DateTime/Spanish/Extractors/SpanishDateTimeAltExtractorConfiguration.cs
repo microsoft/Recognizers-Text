@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
+    public class SpanishDateTimeAltExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         private static readonly Regex DayRegex =
             new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
 
-        public SpanishDateTimeAltExtractorConfiguration(IOptionsConfiguration config)
+        public SpanishDateTimeAltExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));

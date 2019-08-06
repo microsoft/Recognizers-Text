@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
-    public class TurkishTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
+    public class TurkishTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ITimeParserConfiguration
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

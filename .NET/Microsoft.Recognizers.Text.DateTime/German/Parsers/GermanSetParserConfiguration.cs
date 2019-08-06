@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
+    public class GermanSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
         public GermanSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

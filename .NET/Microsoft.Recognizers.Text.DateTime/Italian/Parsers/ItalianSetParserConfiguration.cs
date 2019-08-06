@@ -4,10 +4,10 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
+    public class ItalianSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
         public ItalianSetParserConfiguration(ICommonDateTimeParserConfiguration config)
-            : base(config.Options)
+            : base(config)
         {
             DurationExtractor = config.DurationExtractor;
             TimeExtractor = config.TimeExtractor;

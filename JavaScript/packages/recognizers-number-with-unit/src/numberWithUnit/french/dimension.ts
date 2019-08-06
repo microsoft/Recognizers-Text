@@ -16,7 +16,7 @@ export class FrenchDimensionExtractorConfiguration extends FrenchNumberWithUnitE
 
     readonly suffixList: ReadonlyMap<string, string>;
     readonly prefixList: ReadonlyMap<string, string>;
-    readonly ambiguousUnitList: ReadonlyArray<string>;
+    readonly ambiguousUnitList: readonly string[];
     readonly extractType: string;
 
     constructor(ci?: CultureInfo) {
@@ -30,7 +30,7 @@ export class FrenchDimensionExtractorConfiguration extends FrenchNumberWithUnitE
 
         this.suffixList = dimensionSuffixList;
         this.prefixList = new Map<string, string>();
-        this.ambiguousUnitList = FrenchNumericWithUnit.AmbiguousDimensionUnitList
+        this.ambiguousUnitList = FrenchNumericWithUnit.AmbiguousDimensionUnitList;
     }
 }
 

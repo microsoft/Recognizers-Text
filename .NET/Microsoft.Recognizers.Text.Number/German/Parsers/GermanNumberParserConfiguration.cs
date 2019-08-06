@@ -13,15 +13,13 @@ namespace Microsoft.Recognizers.Text.Number.German
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public GermanNumberParserConfiguration()
-            : this(new CultureInfo(Culture.German))
+        public GermanNumberParserConfiguration(INumberOptionsConfiguration config)
         {
-        }
 
-        public GermanNumberParserConfiguration(CultureInfo ci)
-        {
+            this.Config = config;
             this.LangMarker = NumbersDefinitions.LangMarker;
-            this.CultureInfo = ci;
+            this.CultureInfo = new CultureInfo(config.Culture);
+
             this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
             this.IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
 

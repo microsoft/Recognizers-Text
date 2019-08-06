@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
+    public class FrenchSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
         public FrenchSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

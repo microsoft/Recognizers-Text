@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Definitions.Dutch;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
-    public class DutchDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
+    public class DutchDateTimeAltExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static readonly Regex DayRegex =
             new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
 
-        public DutchDateTimeAltExtractorConfiguration(IOptionsConfiguration config)
+        public DutchDateTimeAltExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DateExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));

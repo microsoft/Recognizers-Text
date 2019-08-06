@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanSetExtractorConfiguration : BaseOptionsConfiguration, ISetExtractorConfiguration
+    public class GermanSetExtractorConfiguration : BaseDateTimeOptionsConfiguration, ISetExtractorConfiguration
     {
         public static readonly Regex SetUnitRegex =
             new Regex(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public GermanSetExtractorConfiguration(IOptionsConfiguration config)
+        public GermanSetExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));

@@ -21,16 +21,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
 
         public TestDateTimeRecognizerInitialization()
         {
-            var config = new BaseOptionsConfiguration();
-            var configEnableDmy = new BaseOptionsConfiguration(DateTimeOptions.None, true);
+            var defaultConfig = new BaseDateTimeOptionsConfiguration(Culture.English, DateTimeOptions.None, false);
+            var dmyConfig = new BaseDateTimeOptionsConfiguration(Culture.EnglishOthers, DateTimeOptions.None, true);
 
             defaultEnglishControlModel = new DateTimeModel(
-                    new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(config)),
-                    new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(config)));
+                    new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(defaultConfig)),
+                    new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(defaultConfig)));
 
             otherEnglishControlModel = new DateTimeModel(
-                    new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(configEnableDmy)),
-                    new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(configEnableDmy)));
+                    new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(dmyConfig)),
+                    new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(dmyConfig)));
         }
 
         [TestMethod]

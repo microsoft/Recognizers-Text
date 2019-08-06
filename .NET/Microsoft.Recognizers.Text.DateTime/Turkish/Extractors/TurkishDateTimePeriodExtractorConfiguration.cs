@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.Turkish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
-    public class TurkishDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration,
+    public class TurkishDateTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration,
         IDateTimePeriodExtractorConfiguration
     {
         public static readonly Regex TimeNumberCombinedWithUnit =
@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         private static readonly Regex MiddlePauseRegex =
             new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexFlags);
 
-        public TurkishDateTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+        public TurkishDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;

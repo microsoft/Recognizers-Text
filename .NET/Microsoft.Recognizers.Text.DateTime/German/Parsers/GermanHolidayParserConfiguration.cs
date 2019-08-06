@@ -5,7 +5,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public GermanHolidayParserConfiguration(IOptionsConfiguration config)
+        public GermanHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             this.HolidayRegexList = GermanHolidayExtractorConfiguration.HolidayRegexList;
