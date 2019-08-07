@@ -45,31 +45,15 @@ class StringMatcher:
     def init(self, values: []) -> None:
         self.init(values, list(map(lambda v: str(v), values)))
 
-    @dispatch(dict)
-    def init(self, values_dictionary: {}) -> None:
-        values = []
-        ids = []
-        for item in values_dictionary:
-            id = item
-            for value in values_dictionary[item]:
-                values.append(value)
-                ids.append(id)
-
-        self.init(values, ids)
-
-    @dispatch(list, list)
-    def init(self, values, ids: [] = []) -> None:
-        tokenized_values = self.get_tokenized_text(values)
-        self.matcher.init(tokenized_values, ids)
-
-    @dispatch(list)
+    @dispatch(object)
     def find(self, tokenized_query: []) -> []:
         return self.matcher.find(tokenized_query)
 
     @dispatch(str)
     def find(self, query_text: str = "") -> []:
+        print(query_text)
         query_tokens = self.__tokenizer.tokenize(query_text)
-        tokenized_query_text = map(lambda t: t.Text, query_tokens)
+        tokenized_query_text = list(map(lambda t: t.text, query_tokens))
 
         for r in self.find(tokenized_query_text):
             start_token = query_tokens[r.start]
@@ -84,7 +68,7 @@ class StringMatcher:
             match_result.text = r_text,
             match_result.canonical_values = r.canonical_values,
 
-            yield match_result
+            return match_result
 
     def get_tokenized_text(self, values: []) -> []:
         return list(map(lambda x: x.text, list(map(lambda t: self.tokenizer.tokenize(t), values))))
