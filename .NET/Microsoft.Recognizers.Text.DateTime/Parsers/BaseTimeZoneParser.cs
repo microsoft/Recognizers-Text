@@ -11,6 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_TIMEZONE; // "TimeZone";
 
+        public static readonly Regex TimeZoneEndRegex = new Regex("time$|timezone$", RegexOptions.Singleline);
+
         // Compute UTC offset in minutes from matched timezone offset in text. e.g. "-4:30" -> -270; "+8"-> 480.
         public static int ComputeMinutes(string utcOffset)
         {
@@ -18,6 +20,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 return Constants.InvalidOffsetValue;
             }
+
+            utcOffset = utcOffset.Trim();
 
             int sign = Constants.PositiveSign; // later than utc, default value
             if (utcOffset.StartsWith("+") || utcOffset.StartsWith("-") || utcOffset.StartsWith("±"))
@@ -69,6 +73,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             return TimeSpan.FromMinutes(offsetMins).ToString(@"hh\:mm");
         }
 
+        public static string NormalizeText(string text)
+        {
+            text = Regex.Replace(text, @"\s+", " ");
+            text = TimeZoneEndRegex.Replace(text, string.Empty);
+            return text.TrimEnd(' ');
+        }
+
         public ParseResult Parse(ExtractResult result)
         {
             return Parse(result, DateObject.Now);
@@ -90,6 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             };
 
             string text = er.Text;
+            string normalizedText = NormalizeText(text);
             string matched = Regex.Match(text, TimeZoneDefinitions.DirectUtcRegex).Groups[2].Value;
             int offsetInMinutes = ComputeMinutes(matched);
 
@@ -98,17 +110,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                 result.Value = GetDateTimeResolutionResult(offsetInMinutes, text);
                 result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + offsetInMinutes;
             }
-            else if (TimeZoneDefinitions.AbbrToMinMapping.ContainsKey(text) &&
-                     TimeZoneDefinitions.AbbrToMinMapping[text] != Constants.InvalidOffsetValue)
+            else if (TimeZoneDefinitions.AbbrToMinMapping.ContainsKey(normalizedText) &&
+                     TimeZoneDefinitions.AbbrToMinMapping[normalizedText] != Constants.InvalidOffsetValue)
             {
-                int utcMinuteShift = TimeZoneDefinitions.AbbrToMinMapping[text];
+                int utcMinuteShift = TimeZoneDefinitions.AbbrToMinMapping[normalizedText];
 
                 result.Value = GetDateTimeResolutionResult(utcMinuteShift, text);
                 result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift;
             }
-            else if (TimeZoneDefinitions.FullToMinMapping.ContainsKey(text))
+            else if (TimeZoneDefinitions.FullToMinMapping.ContainsKey(normalizedText))
             {
-                int utcMinuteShift = TimeZoneDefinitions.FullToMinMapping[text];
+                int utcMinuteShift = TimeZoneDefinitions.FullToMinMapping[normalizedText];
                 result.Value = GetDateTimeResolutionResult(utcMinuteShift, text);
                 result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift;
             }

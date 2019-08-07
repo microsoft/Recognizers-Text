@@ -3089,9 +3089,9 @@
             {
               "timex": "2018-06-26T15",
               "type": "datetime",
-              "timezone": "UTC-07:00",
+              "timezone": "UTC-08:00",
               "timezoneText": "pacific",
-              "utcOffsetMins": "-420",
+              "utcOffsetMins": "-480",
               "value": "2018-06-26 15:00:00"
             }
           ]
@@ -11749,6 +11749,60 @@
               "type": "daterange",
               "start": "2019-08-05",
               "end": "2019-08-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you schedule a meeting for us at 3pm russia time zone 6",
+    "Context": {
+      "ReferenceDateTime": "2019-08-01T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3pm russia time zone 6",
+        "Start": 46,
+        "End": 67,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T15",
+              "type": "time",
+              "timezone": "UTC+07:00",
+              "timezoneText": "russia time zone 6",
+              "utcOffsetMins": "420",
+              "value": "15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We will meet on West Coast at 9pm Pacific time",
+    "Context": {
+      "ReferenceDateTime": "2019-08-01T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "9pm pacific time",
+        "Start": 30,
+        "End": 45,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T21",
+              "type": "time",
+              "timezone": "UTC-08:00",
+              "timezoneText": "pacific time",
+              "utcOffsetMins": "-480",
+              "value": "21:00:00"
             }
           ]
         }
