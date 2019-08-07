@@ -9,6 +9,18 @@ class AaNode(Node):
         self.__parent = parent,
         self.__fail = 0
 
+    def __getitem__(self, item):
+        if self.children is not None and item in self.children:
+            return self.children[item]
+        else:
+            return None
+
+    def __setitem__(self, key, value):
+        if self.children is None:
+            self.children = {}
+
+        self.children[key] = value
+
     @property
     def word(self) -> []:
         return self.__word
