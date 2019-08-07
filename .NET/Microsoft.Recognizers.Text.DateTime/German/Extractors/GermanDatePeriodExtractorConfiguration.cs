@@ -190,6 +190,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             YearPlusNumberRegex,
             DecadeWithCenturyRegex,
             RelativeDecadeRegex,
+            ReferenceDatePeriodRegex,
         };
 
         public GermanDatePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)

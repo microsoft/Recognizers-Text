@@ -720,7 +720,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "Wochenende",
+        "Text": "am Wochenende",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-W45-WE",
@@ -733,8 +733,8 @@
             "endDate": "2016-11-14"
           }
         },
-        "Start": 3,
-        "Length": 10
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
