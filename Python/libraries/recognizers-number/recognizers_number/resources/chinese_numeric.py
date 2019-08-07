@@ -122,7 +122,7 @@ class ChineseNumeric:
                     ("多", ""),
                     ("余", ""),
                     ("几", "")])
-    RoundDirectList = [r'万', r'萬', r'亿', r'兆', r'億']
+    RoundDirectList = [r'亿', r'兆', r'億']
     TenChars = [r'十', r'拾']
     DigitalNumberRegex = f'((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     ZeroToNineFullHalfRegex = f'[\\d１２３４５６７８９０]'

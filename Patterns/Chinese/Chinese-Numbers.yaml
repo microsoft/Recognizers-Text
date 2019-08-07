@@ -131,8 +131,6 @@ UnitMap: !dictionary
 RoundDirectList: !list
   types: [char]
   entries:
-    - 万
-    - 萬
     - 亿
     - 兆
     - 億

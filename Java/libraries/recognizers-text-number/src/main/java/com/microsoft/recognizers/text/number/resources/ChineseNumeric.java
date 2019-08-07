@@ -155,7 +155,7 @@ public class ChineseNumeric {
         .put("几", "")
         .build();
 
-    public static final List<Character> RoundDirectList = Arrays.asList('万', '萬', '亿', '兆', '億');
+    public static final List<Character> RoundDirectList = Arrays.asList('亿', '兆', '億');
 
     public static final List<Character> TenChars = Arrays.asList('十', '拾');
 
