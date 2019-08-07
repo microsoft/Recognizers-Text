@@ -13837,7 +13837,7 @@
     ]
   },
   {
-    "Input": "Yes, we are the Calendar.help team. May I ask Cortana to help?",
+    "Input": "Yes. May I ask why?",
     "Context": {
       "ReferenceDateTime": "2018-01-07T00:00:00"
     },

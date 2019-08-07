@@ -97,7 +97,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string WeekOfRegex = @"(the\s+)?(week)(\s+of)(\s+the)?";
       public const string MonthOfRegex = @"(month)(\s*)(of)";
       public const string MonthRegex = @"(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?)";
-      public const string AmbiguousMonthP0Regex = @"\b(((! |\? |\. |, )may i)|(^may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\b";
+      public const string AmbiguousMonthP0Regex = @"\b((((!|\.|\?|,|;|)\s+|^)may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\b";
       public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})";
       public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
       public static readonly string OnRegex = $@"(?<=\bon\s+)({DayRegex}s?)\b";
@@ -692,7 +692,7 @@ namespace Microsoft.Recognizers.Definitions.English
         {
             { @"\bmorning|afternoon|evening|night|day\b", @"\b(good\s+(morning|afternoon|evening|night|day))|(nighty\s+night)\b" },
             { @"\bnow\b", @"\b(^now,)|\b((is|are)\s+now\s+for|for\s+now)\b" },
-            { @"\bmay\b", @"\b(((! |\? |\. |, |^)may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\b" }
+            { @"\bmay\b", @"\b((((!|\.|\?|,|;|)\s+|^)may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\b" }
         };
       public static readonly IList<string> MorningTermList = new List<string>
         {
