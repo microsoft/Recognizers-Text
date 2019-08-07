@@ -7,8 +7,6 @@ from .ac_automaton import AcAutomaton
 from multipledispatch import dispatch
 from .match_result import MatchResult
 
-
-
 class StringMatcher:
 
     def __init__(self, match_strategy: MatchStrategy = MatchStrategy.TrieTree, tokenizer: Tokenizer = None):
@@ -70,8 +68,7 @@ class StringMatcher:
     @dispatch(str)
     def find(self, query_text: str = "") -> []:
         query_tokens = self.__tokenizer.tokenize(query_text)
-        tokenized_query_text = list(map(lambda t: t.text, query_tokens))
-        result = []
+        tokenized_query_text = map(lambda t: t.Text, query_tokens)
 
         for r in self.find(tokenized_query_text):
             start_token = query_tokens[r.start]

@@ -14,7 +14,7 @@ class AaNode(Node):
         return self.__word
 
     @word.setter
-    def word(self, word) -> []:
+    def word(self, word):
         self.__word = word
 
     @property
@@ -42,9 +42,7 @@ class AaNode(Node):
         self.__fail = fail
 
     def get_enumerator(self):
-        child: Node
-        child.getEnumerator()
-        return self.__children.values.select(child)
+        map(lambda child: AaNode(child), self.values).getEnumerator
 
     def to_string(self):
-        return self.__word.to_string()
+        return str(self.__word)
