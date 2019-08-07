@@ -7,6 +7,7 @@ from .ac_automaton import AcAutomaton
 from multipledispatch import dispatch
 from .match_result import MatchResult
 
+
 class StringMatcher:
 
     def __init__(self, match_strategy: MatchStrategy = MatchStrategy.TrieTree, tokenizer: Tokenizer = None):
