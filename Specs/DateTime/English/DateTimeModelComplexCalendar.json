@@ -11808,5 +11808,21 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Yes. May I ask why?",
+    "Context": {
+      "ReferenceDateTime": "2018-01-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Ok, may I ask Cortana to help?",
+    "Context": {
+      "ReferenceDateTime": "2018-01-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": []
   }
 ]
