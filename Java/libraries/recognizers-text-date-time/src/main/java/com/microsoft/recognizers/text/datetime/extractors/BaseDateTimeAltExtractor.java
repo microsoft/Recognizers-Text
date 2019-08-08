@@ -197,6 +197,15 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
             relativeTermsMatches.addAll(Arrays.asList(RegExpUtility.getMatches(regex, text)));
         }
 
+        List<ExtractResult> results = new ArrayList<>();
+        
+        // Filtered out if there is no relative term or the only one found is "this". Like "3 this"
+        if (relativeTermsMatches.size() == 0 || (relativeTermsMatches.size() == 1 &&
+            RegExpUtility.getMatches(config.getOrRegex(), relativeTermsMatches.get(0).value).length > 0)) {
+            results.addAll(ers);
+            return results;
+        }
+
         List<ExtractResult> relativeDatePeriodErs = new ArrayList<>();
         int i = 0;
         for (ExtractResult result : ers.toArray(new ExtractResult[0])) {
@@ -255,12 +264,11 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
             i++;
         }
 
-        List<ExtractResult> result = new ArrayList<>();
-        result.addAll(ers);
-        result.addAll(relativeDatePeriodErs);
-        result.sort(Comparator.comparingInt(er -> er.getStart()));
+        results.addAll(ers);
+        results.addAll(relativeDatePeriodErs);
+        results.sort(Comparator.comparingInt(er -> er.getStart()));
 
-        return result;
+        return results;
     }
 
     private boolean isConnectorOrWhiteSpace(int start, int end, String text) {
