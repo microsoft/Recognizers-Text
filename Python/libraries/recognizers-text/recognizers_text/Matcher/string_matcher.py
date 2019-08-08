@@ -54,15 +54,15 @@ class StringMatcher:
 
     @dispatch(object)
     def init(self, values_dictionary: {}) -> None:
-       values = []
-       ids = []
-       for item in values_dictionary:
-           id = item.key
-           for value in item.value:
-               values.append(value)
-               ids.append(id)
-       tokenized_values = self.get_tokenized_text(values)
-       self.init(tokenized_values, ids)
+        values = []
+        ids = []
+        for item in values_dictionary:
+            id = item.key
+            for value in item.value:
+                values.append(value)
+                ids.append(id)
+        tokenized_values = self.get_tokenized_text(values)
+        self.init(tokenized_values, ids)
 
     @dispatch(object, object)
     def init(self, tokenized_values: [] = [], ids: [] = []) -> None:
