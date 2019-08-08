@@ -41,9 +41,19 @@ class StringMatcher:
     def matcher(self, matcher) -> None:
         self.__matcher = matcher
 
-    @dispatch(list)
-    def init(self, values: []) -> None:
-        self.init(values, list(map(lambda v: str(v), values)))
+    @dispatch({})
+    def init(self, values_dictionary: {}) -> None:
+        values = []
+        ids = []
+
+        for item in values_dictionary:
+            id = item.key
+            for value in item.value:
+                values.append(value)
+                ids.append(id)
+
+        tokenized_values = self.get_tokenized_text(values)
+        self.init(tokenized_values, ids)
 
     @dispatch(object)
     def find(self, tokenized_query: []) -> []:
