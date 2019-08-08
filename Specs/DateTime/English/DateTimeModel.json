@@ -13851,5 +13851,12 @@
     },
     "NotSupported": "javascript, python",
     "Results": []
+  },
+  {
+    "Input": "ABC-12345-A1B2C3 this is yet to be submitted",
+    "Context": {
+      "ReferenceDateTime": "2019-08-08T00:00:00"
+    },
+    "Results": []
   }
 ]

@@ -383,6 +383,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 relativeTermsMatches.AddRange(regex.Matches(text).Cast<Match>());
             }
 
+            if (relativeTermsMatches.Count == 0 || (relativeTermsMatches.Count == 1 && config.ThisPrefixRegex.IsMatch(relativeTermsMatches[0].Value)))
+            {
+                return;
+            }
+
             // Remove overlapping matches
             relativeTermsMatches.RemoveAll(m =>
                 ers.Any(e => e.Start <= m.Index && e.Start + e.Length >= m.Index + m.Length));

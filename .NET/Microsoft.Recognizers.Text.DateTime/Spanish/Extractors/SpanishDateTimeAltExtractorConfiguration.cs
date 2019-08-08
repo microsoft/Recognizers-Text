@@ -59,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex IDateTimeAltExtractorConfiguration.OrRegex => OrRegex;
 
+        Regex IDateTimeAltExtractorConfiguration.ThisPrefixRegex => ThisPrefixRegex;
+
         Regex IDateTimeAltExtractorConfiguration.DayRegex => DayRegex;
 
         Regex IDateTimeAltExtractorConfiguration.RangePrefixRegex => RangePrefixRegex;

@@ -49,6 +49,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IDateTimeAltExtractorConfiguration.OrRegex => OrRegex;
 
+        Regex IDateTimeAltExtractorConfiguration.ThisPrefixRegex => ThisPrefixRegex;
+
         Regex IDateTimeAltExtractorConfiguration.DayRegex => DayRegex;
 
         Regex IDateTimeAltExtractorConfiguration.RangePrefixRegex => RangePrefixRegex;
