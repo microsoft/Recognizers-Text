@@ -198,6 +198,8 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
         }
 
         List<ExtractResult> results = new ArrayList<>();
+        
+        // Filtered out if there is no relative term or the only one found is "this". Like "3 this"
         if (relativeTermsMatches.size() == 0 || (relativeTermsMatches.size() == 1 &&
             RegExpUtility.getMatches(config.getOrRegex(), relativeTermsMatches.get(0).value).length > 0)) {
             results.addAll(ers);
