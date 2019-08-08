@@ -27,3 +27,27 @@ class TestStringMatcher:
             if match is not None:
                 assert value == match
                 assert ids[i] == match.canonical_values()
+
+    @staticmethod
+    def test_string_matcher():
+        utc_8_value = 'UTC+08:00'
+        utc_8_words = ['beijingtime', 'chongqingtime', 'hongkongtime', 'urumqitime']
+        utc_2_value = 'UTC+02:00'
+        utc_2_words = ['cairotime', 'beiruttime', 'gazatime', 'ammantime']
+        value_dictionary = [[utc_2_value, utc_2_words], [utc_8_value, utc_8_words]]
+        string_matcher = StringMatcher()
+        string_matcher.init(value_dictionary)
+
+        for value in utc_8_words:
+            sentence = 'please change {}, thanks'.format(value)
+            matches: [MatchResult] = string_matcher.find(sentence)
+            assert value == next((e.text for e in matches), None)
+            assert utc_8_value == next((e.canonical_values for e in matches), None)
+            assert 14 == next((e.start for e in matches), None)
+
+        for value in utc_2_words:
+            sentence = 'please change {}, thanks'.format(value)
+            matches: [MatchResult] = string_matcher.find(sentence)
+            assert value == next((e.text for e in matches), None)
+            assert utc_2_value == next((e.canonical_values for e in matches), None)
+            assert 14 == next((e.start for e in matches), None)
