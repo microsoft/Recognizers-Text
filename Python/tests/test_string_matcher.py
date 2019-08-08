@@ -23,6 +23,7 @@ class TestStringMatcher:
         for i in range(0, len(values)):
             value = values[i]
             match = MatchResult(string_matcher.find(value))
+            print(match)
             if match is not None:
-                assert value == match.text()
+                assert value == match
                 assert ids[i] == match.canonical_values()
