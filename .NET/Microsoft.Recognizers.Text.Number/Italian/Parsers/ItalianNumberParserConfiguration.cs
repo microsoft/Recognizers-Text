@@ -71,11 +71,11 @@ namespace Microsoft.Recognizers.Text.Number.Italian
                 }
             }
 
-            /*The following piece of code is needed in Italian to correctly compute some fraction patterns
-             * e.g. 'due milioni duemiladuecento quinti' (=2002200/5) which is otherwise interpreted as
-             * 2000000/2205 (in Italian, isolated ordinals <10 have a different form respect to when
-             * they are concatenated to other numbers, so the following lines try to keep them isolated
-             * by concatenating the two previous numbers) */
+            // The following piece of code is needed in Italian to correctly compute some fraction patterns
+            // e.g. 'due milioni duemiladuecento quinti' (=2002200/5) which is otherwise interpreted as
+            // 2000000/2205 (in Italian, isolated ordinals <10 have a different form respect to when
+            // they are concatenated to other numbers, so the following lines try to keep them isolated
+            // by concatenating the two previous numbers)
             var fracLen = fracWords.Count;
             if (fracLen > 2 && this.OneToNineOrdinalRegex.Match(fracWords[fracLen - 1]).Success)
             {
@@ -86,10 +86,10 @@ namespace Microsoft.Recognizers.Text.Number.Italian
                 }
             }
 
-            /*The following piece of code is needed to compute the fraction pattern number+'e mezzo'
-             * e.g. 'due e mezzo' ('two and a half') where the numerator is omitted in Italian.
-             * It works by inserting the numerator 'un' ('a') in the list fracWords
-             * so that the pattern is correctly processed.*/
+            // The following piece of code is needed to compute the fraction pattern number+'e mezzo'
+            // e.g. 'due e mezzo' ('two and a half') where the numerator is omitted in Italian.
+            // It works by inserting the numerator 'un' ('a') in the list fracWords
+            // so that the pattern is correctly processed.
             fracLen = fracWords.Count;
             if (fracLen > 2)
             {
