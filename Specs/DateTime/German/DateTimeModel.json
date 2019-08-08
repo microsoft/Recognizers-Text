@@ -1387,5 +1387,53 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Am Wochenende bin ich nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "am wochenende",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W32-WE",
+              "type": "daterange",
+              "start": "2019-08-10",
+              "end": "2019-08-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Unter der woche bin ich nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "der woche",
+        "Start": 6,
+        "End": 14,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W32",
+              "type": "daterange",
+              "start": "2019-08-05",
+              "end": "2019-08-12"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
