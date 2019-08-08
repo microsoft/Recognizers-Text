@@ -1,5 +1,6 @@
 from .matcher import Matcher
 from abc import abstractmethod
+from .Node import Node
 
 
 class AbstractMatcher(Matcher):
@@ -26,11 +27,11 @@ class AbstractMatcher(Matcher):
         for i in range(0, len(values)):
             self.insert(values[i], ids[i])
 
-    def convert_dict_to_list(self, node):
-        if node.children is None:
+    def convert_dict_to_list(self, node: Node):
+        if len(node.children) == 0:
             return
 
         for kvp in node.children:
-            self.convert_dict_to_list(kvp.value)
+            self.convert_dict_to_list(node.children[kvp])
 
-        node.children = {node.children}
+        node.children = dict(node.children)
