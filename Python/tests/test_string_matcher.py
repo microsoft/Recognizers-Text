@@ -22,10 +22,9 @@ class TestStringMatcher:
         string_matcher.init(values, ids)
         for i in range(0, len(values)):
             value = values[i]
-            match = MatchResult(string_matcher.find(value))
-            print(match)
+            match = string_matcher.find(value)
             if match is not None:
-                assert value == match
+                assert value == match.text()
                 assert ids[i] == match.canonical_values()
 
     @staticmethod
