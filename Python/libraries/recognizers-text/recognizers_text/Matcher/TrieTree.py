@@ -18,14 +18,14 @@ class TrieTree(AbstractMatcher):
 
     def insert(self, value: [], id: str) -> None:
         node = self.root
+        for item in value:
+            child = node[item]
 
-        child = node[value]
+            if child is None:
+                node[item] = Node()
+                child = node[item]
 
-        if child is None:
-            node[value] = Node()
-            child = node[value]
-
-        node = child
+            node = child
 
         node.add_value(id)
 

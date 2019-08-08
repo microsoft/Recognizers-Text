@@ -56,8 +56,8 @@ class StringMatcher:
         values = []
         ids = []
         for item in values_dictionary:
-            id = item.key
-            for value in item.value:
+            id = item
+            for value in values_dictionary[item]:
                 values.append(value)
                 ids.append(id)
 
@@ -66,8 +66,8 @@ class StringMatcher:
 
     @dispatch(object, list)
     def init(self, tokenized_values, ids: [] = []) -> None:
-
-        self.matcher.init(tokenized_values, ids)
+        tokenized_values_list = tokenized_values.tolist()
+        self.matcher.init(tokenized_values_list, ids)
 
     @dispatch(object)
     def find(self, tokenized_query: []) -> []:
@@ -97,6 +97,13 @@ class StringMatcher:
     def get_tokenized_text(self, values: []) -> []:
 
         source_list = list(map(lambda t: self.tokenizer.tokenize(t), values))
-        source_mapped_list = list(map(lambda x: x[0].text, source_list))
-        array_list = np.array(source_mapped_list)
+        general_list = []
+        for item in range(0, len(source_list)):
+            sublist = []
+            for i in range(0, len(source_list[item])):
+                sublist.append(source_list[item][i].text)
+                if i == 0:
+                    general_list.append(sublist)
+
+        array_list = np.array(general_list)
         return array_list

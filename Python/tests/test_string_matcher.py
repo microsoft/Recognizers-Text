@@ -30,10 +30,10 @@ class TestStringMatcher:
     @staticmethod
     def test_string_matcher():
         utc_8_value = 'UTC+08:00'
-        utc_8_words = ['beijingtime', 'chongqingtime', 'hongkongtime', 'urumqitime']
+        utc_8_words = ['beijing time', 'chongqing time', 'hong kong time', 'urumqi time']
         utc_2_value = 'UTC+02:00'
-        utc_2_words = ['cairotime', 'beiruttime', 'gazatime', 'ammantime']
-        value_dictionary = [[utc_2_value, utc_2_words], [utc_8_value, utc_8_words]]
+        utc_2_words = ['cairo time', 'beirut time', 'gaza time', 'amman time']
+        value_dictionary = {utc_2_value: utc_2_words, utc_8_value: utc_8_words}
         string_matcher = StringMatcher()
         string_matcher.init(value_dictionary)
 
