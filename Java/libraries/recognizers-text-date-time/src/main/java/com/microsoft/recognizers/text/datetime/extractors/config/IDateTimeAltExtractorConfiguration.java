@@ -16,6 +16,8 @@ public interface IDateTimeAltExtractorConfiguration {
 
     Pattern getOrRegex();
 
+    Pattern getThisPrefixRegex();
+
     Pattern getDayRegex();
 
     Pattern getRangePrefixRegex();
