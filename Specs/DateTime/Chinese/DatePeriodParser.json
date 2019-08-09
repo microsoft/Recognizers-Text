@@ -1433,5 +1433,30 @@
         "Length": 9
       }
     ]
+  },
+  {
+    "Input": "我是7月4日到7月6日去北京",
+    "Context": {
+      "ReferenceDateTime": "2019-08-08T16:09:00"
+    },
+    "Results": [
+      {
+        "Text": "7月4日到7月6日",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-07-04,XXXX-07-06,P2D)",
+          "FutureResolution": {
+            "startDate": "2020-07-04",
+            "endDate": "2020-07-06"
+          },
+          "PastResolution": {
+            "startDate": "2019-07-04",
+            "endDate": "2019-07-06"
+          }
+        },
+        "Start": 2,
+        "Length": 9
+      }
+    ]
   }
 ]
