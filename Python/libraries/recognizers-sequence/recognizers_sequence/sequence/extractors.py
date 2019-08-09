@@ -3,6 +3,8 @@ from typing import List, Dict, Set, Pattern, Match
 from collections import namedtuple
 import regex as re
 from recognizers_sequence.sequence.config.url_configuration import URLConfiguration
+from recognizers_text.Matcher.string_matcher import StringMatcher
+
 from .constants import *
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor, ExtractResult
@@ -299,9 +301,23 @@ class BaseURLExtractor(SequenceExtractor):
     def config(self, config):
         self._config = config
 
+    def tld_matcher(self) -> StringMatcher:
+        return self._tld_matcher
+
     def _is_valid_match(self, match: Match) -> bool:
+        is_valid_tld = False
+        is_ip_url = RegExpUtility.get_group(match, 'IPurl')
+
+        if not is_ip_url:
+            tld_string = RegExpUtility.get_group(match, 'Tld')
+            tld_matches = self.tld_matcher().find(tld_string)
+            if any(o.start == 0 and o.end == len(tld_string) for o in tld_matches):
+                is_valid_tld = True
+
         # For cases like "7.am" or "8.pm" which are more likely time terms.
-        return re.match(self.ambiguous_time_term.re, match.group(0)) is None
+        if re.match(self.ambiguous_time_term.re, match.group(0)) is not None:
+            return False
+        return is_valid_tld or is_ip_url
 
     @property
     def regexes(self) -> List[ReVal]:
@@ -313,6 +329,9 @@ class BaseURLExtractor(SequenceExtractor):
 
     def __init__(self, config):
         self.config = config
+
+        self._tld_matcher = StringMatcher()
+        self.tld_matcher().init(BaseURL.TldList)
 
         self._regexes = [
             ReVal(config.ip_url_regex, Constants.URL_REGEX),

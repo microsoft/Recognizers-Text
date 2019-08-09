@@ -4,7 +4,7 @@ from recognizers_text.model import ModelResult
 
 
 class Matcher(ABC):
-    @property
+
     @abstractmethod
     def init(self, values: [], ids: []) -> None:
         raise NotImplementedError
