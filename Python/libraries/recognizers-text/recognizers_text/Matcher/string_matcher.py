@@ -6,7 +6,6 @@ from .trie_tree import TrieTree
 from .ac_automaton import AcAutomaton
 from multipledispatch import dispatch
 from .match_result import MatchResult
-import numpy as np
 
 
 class StringMatcher:
@@ -46,11 +45,6 @@ class StringMatcher:
     def init(self, values: []) -> None:
         self.init(values, list(map(lambda v: str(v), values)))
 
-    @dispatch(list, list)
-    def init(self, values: [], ids: [] = []) -> None:
-        tokenized_values = self.get_tokenized_text(values)
-        self.init(tokenized_values, ids)
-
     @dispatch(dict)
     def init(self, values_dictionary: {}) -> None:
         values = []
@@ -61,13 +55,12 @@ class StringMatcher:
                 values.append(value)
                 ids.append(id)
 
-        tokenized_values = self.get_tokenized_text(values)
-        self.init(tokenized_values, ids)
+        self.init(values, ids)
 
-    @dispatch(object, list)
-    def init(self, tokenized_values, ids: [] = []) -> None:
-        tokenized_values_list = tokenized_values.tolist()
-        self.matcher.init(tokenized_values_list, ids)
+    @dispatch(list, list)
+    def init(self, values, ids: [] = []) -> None:
+        tokenized_values = self.get_tokenized_text(values)
+        self.matcher.init(tokenized_values, ids)
 
     @dispatch(object)
     def find(self, tokenized_query: []) -> []:
@@ -75,7 +68,6 @@ class StringMatcher:
 
     @dispatch(str)
     def find(self, query_text: str = "") -> []:
-        print(query_text)
         query_tokens = self.__tokenizer.tokenize(query_text)
         tokenized_query_text = list(map(lambda t: t.text, query_tokens))
 
@@ -95,15 +87,4 @@ class StringMatcher:
             return match_result
 
     def get_tokenized_text(self, values: []) -> []:
-
-        source_list = list(map(lambda t: self.tokenizer.tokenize(t), values))
-        general_list = []
-        for item in range(0, len(source_list)):
-            sublist = []
-            for i in range(0, len(source_list[item])):
-                sublist.append(source_list[item][i].text)
-                if i == 0:
-                    general_list.append(sublist)
-
-        array_list = np.array(general_list)
-        return array_list
+        return list(map(lambda t: map(lambda i: i.text,self.tokenizer.tokenize(t)), values))

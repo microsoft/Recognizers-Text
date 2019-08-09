@@ -11,7 +11,7 @@ class MatchResult:
         return self.__text
 
     @text.setter
-    def text(self, text) -> str:
+    def text(self, text) -> None:
         self.__text = text
 
     @property
@@ -19,7 +19,7 @@ class MatchResult:
         return self.__start
 
     @start.setter
-    def start(self, start) -> int:
+    def start(self, start) -> None:
         self.__start = start
 
     @property
@@ -27,7 +27,7 @@ class MatchResult:
         return self.__length
 
     @length.setter
-    def length(self, length) -> int:
+    def length(self, length) -> None:
         self.__length = length
 
     @property

@@ -34,17 +34,23 @@ class TrieTree(AbstractMatcher):
         list(self.root)
 
     def find(self, query_text: []) -> []:
-        for i in range(0, len(query_text)):
+        query_array = query_text
+
+        for i in range(0, len(query_array)):
             node = self.root
+
             j = i
-            for j in range(j, len(query_text)+1):
+
+            for j in range(j, len(query_array)):
+
                 if node.end:
                     yield MatchResult(i, j - i, node.values)
 
-                if j == len(query_text):
+                if j == len(query_array):
                     break
 
-                text = query_text[j]
+                text = query_array[j]
+
                 if node[text] is None:
                     break
 
