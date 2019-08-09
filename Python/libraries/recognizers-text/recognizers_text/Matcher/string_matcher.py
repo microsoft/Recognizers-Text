@@ -87,4 +87,4 @@ class StringMatcher:
             return match_result
 
     def get_tokenized_text(self, values: []) -> []:
-        return list(map(lambda t: map(lambda i: i.text,self.tokenizer.tokenize(t)), values))
+        return list(map(lambda t: map(lambda i: i.text, self.tokenizer.tokenize(t)), values))
