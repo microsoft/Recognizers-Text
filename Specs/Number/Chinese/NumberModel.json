@@ -1342,13 +1342,13 @@
     "Input": "一百对",
     "Results": [
       {
-        "Text": "一百对",
+        "Text": "一百",
         "TypeName": "number",
         "Resolution": {
-          "value": "200"
+          "value": "100"
         },
         "Start": 0,
-        "End": 2
+        "End": 1
       }
     ]
   },
@@ -1370,13 +1370,13 @@
     "Input": "一百五十对",
     "Results": [
       {
-        "Text": "一百五十对",
+        "Text": "一百五十",
         "TypeName": "number",
         "Resolution": {
-          "value": "300"
+          "value": "150"
         },
         "Start": 0,
-        "End": 4
+        "End": 3
       }
     ]
   },
@@ -2463,13 +2463,13 @@
     "Input": "壹百對",
     "Results": [
       {
-        "Text": "壹百對",
+        "Text": "壹百",
         "TypeName": "number",
         "Resolution": {
-          "value": "200"
+          "value": "100"
         },
         "Start": 0,
-        "End": 2
+        "End": 1
       }
     ]
   },
@@ -2491,13 +2491,13 @@
     "Input": "壹百五十對",
     "Results": [
       {
-        "Text": "壹百五十對",
+        "Text": "壹百五十",
         "TypeName": "number",
         "Resolution": {
-          "value": "300"
+          "value": "150"
         },
         "Start": 0,
-        "End": 4
+        "End": 3
       }
     ]
   },
@@ -4598,43 +4598,6 @@
     ]
   },
   {
-    "Input": "袜子五双九点九",
-    "Results": [
-      {
-        "Text": "五",
-        "Start": 2,
-        "End": 2,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "5"
-        }
-      },
-      {
-        "Text": "九点九",
-        "Start": 4,
-        "End": 6,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "9.9"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "六双",
-    "Results": [
-      {
-        "Text": "六",
-        "Start": 0,
-        "End": 0,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "6"
-        }
-      }
-    ]
-  },
-  {
     "Input": "一万五千亿",
     "Results": [
       {
@@ -4672,6 +4635,80 @@
         "TypeName": "number",
         "Resolution": {
           "value": "4000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "袜子五双九点九",
+    "Results": [
+      {
+        "Text": "五",
+        "Start": 2,
+        "End": 2,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      },
+      {
+        "Text": "九点九",
+        "Start": 4,
+        "End": 6,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "六双",
+    "Results": [
+      {
+        "Text": "六",
+        "Start": 0,
+        "End": 0,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "五十对耳环",
+    "Results": [
+      {
+        "Text": "五十",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "50"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "戒指一对八千",
+    "Results": [
+      {
+        "Text": "一",
+        "Start": 2,
+        "End": 2,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "八千",
+        "Start": 4,
+        "End": 5,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8000"
         }
       }
     ]
