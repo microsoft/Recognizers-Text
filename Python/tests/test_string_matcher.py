@@ -40,13 +40,13 @@ class TestStringMatcher:
         for value in utc_8_words:
             sentence = 'please change {}, thanks'.format(value)
             matches: [MatchResult] = string_matcher.find(sentence)
-            assert value == next((e.text for e in matches), None)
-            assert utc_8_value == next((e.canonical_values for e in matches), None)
-            assert 14 == next((e.start for e in matches), None)
+            assert value == matches.text
+            assert utc_8_value == matches.canonical_values[0]
+            assert 14 == matches.start
 
         for value in utc_2_words:
             sentence = 'please change {}, thanks'.format(value)
             matches: [MatchResult] = string_matcher.find(sentence)
-            assert value == next((e.text for e in matches), None)
-            assert utc_2_value == next((e.canonical_values for e in matches), None)
-            assert 14 == next((e.start for e in matches), None)
+            assert value == matches.text
+            assert str(utc_2_value) == matches.canonical_values[0]
+            assert 14 == matches.start

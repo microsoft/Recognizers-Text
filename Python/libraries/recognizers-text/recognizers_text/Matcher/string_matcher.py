@@ -86,11 +86,11 @@ class StringMatcher:
             length = end_token.end - start_token.start
             r_text = query_text[start: start + length]
 
-            match_result: MatchResult
+            match_result: MatchResult = MatchResult()
             match_result.start = start
             match_result.length = length
-            match_result.text = r_text,
-            match_result.canonical_values = r.canonical_values,
+            match_result.text = r_text
+            match_result.canonical_values = r.canonical_values
 
             return match_result
 

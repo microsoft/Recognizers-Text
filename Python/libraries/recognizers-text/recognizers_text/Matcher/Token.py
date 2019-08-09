@@ -1,7 +1,7 @@
 class Token(object):
     def __init__(self, start: int, length: int, text: str):
-        self.__length = start
-        self.__start = length
+        self.__length = length
+        self.__start = start
         self.__text = text
 
     @property
