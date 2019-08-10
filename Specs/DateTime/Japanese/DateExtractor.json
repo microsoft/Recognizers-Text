@@ -1108,7 +1108,7 @@
       {
         "Text": "2016 年 1 月 12 日",
         "Type": "date",
-        "Start": 5,
+        "Start": 4,
         "Length": 15
       }
     ]
@@ -1132,7 +1132,7 @@
       {
         "Text": "2016年1月12日 月曜日",
         "Type": "date",
-        "Start": 11,
+        "Start": 10,
         "Length": 14
       }
     ]
@@ -1348,7 +1348,7 @@
       {
         "Text": "今週の木曜日",
         "Type": "date",
-        "Start": 5,
+        "Start": 4,
         "Length": 6
       }
     ]
@@ -1540,7 +1540,7 @@
       {
         "Text": "二日後",
         "Type": "date",
-        "Start": 3,
+        "Start": 2,
         "Length": 3
       }
     ]
@@ -1670,7 +1670,7 @@
       {
         "Text": "7.6 金曜日",
         "Type": "date",
-        "Start": 8,
+        "Start": 7,
         "Length": 7
       }
     ]
@@ -1685,7 +1685,7 @@
       {
         "Text": "7/6 金曜日",
         "Type": "date",
-        "Start": 8,
+        "Start": 7,
         "Length": 7
       }
     ]
@@ -1700,7 +1700,7 @@
       {
         "Text": "7-6 金曜日",
         "Type": "date",
-        "Start": 8,
+        "Start": 7,
         "Length": 7
       }
     ]
@@ -1715,7 +1715,7 @@
       {
         "Text": "2018-7-6 金曜日",
         "Type": "date",
-        "Start": 8,
+        "Start": 7,
         "Length": 12
       }
     ]
@@ -2274,10 +2274,11 @@
   },
   {
     "Input": "再来月",
+    "Comment": "Pronounciation: さらいげつ",
     "NotSupportedByDesign": "dotNet, javascript, python, java",
     "Results": [
       {
-        "Text": "さらいげつ",
+        "Text": "再来月",
         "Type": "date",
         "Start": 0,
         "Length": 3
@@ -2361,7 +2362,7 @@
     "NotSupportedByDesign": "dotNet, javascript, python, java",
     "Results": [
       {
-        "Text": "先月",
+        "Text": "前月",
         "Type": "date",
         "Start": 0,
         "Length": 2

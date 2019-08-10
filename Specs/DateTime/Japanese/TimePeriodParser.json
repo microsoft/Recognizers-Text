@@ -21,8 +21,8 @@
             "endTime": "18:00:00"
           }
         },
-        "Start": 12,
-        "Length": 8
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -48,8 +48,8 @@
             "endTime": "07:00:00"
           }
         },
-        "Start": 12,
-        "Length": 25
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -75,8 +75,8 @@
             "endTime": "18:00:00"
           }
         },
-        "Start": 12,
-        "Length": 17
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -102,8 +102,8 @@
             "endTime": "18:00:00"
           }
         },
-        "Start": 12,
-        "Length": 19
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -129,8 +129,8 @@
             "endTime": "17:00:00"
           }
         },
-        "Start": 12,
-        "Length": 15
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -156,7 +156,7 @@
             "endTime": "17:00:00"
           }
         },
-        "Start": 12,
+        "Start": 0,
         "Length": 12
       }
     ]
@@ -183,8 +183,8 @@
             "endTime": "17:00:00"
           }
         },
-        "Start": 12,
-        "Length": 9
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -210,8 +210,8 @@
             "endTime": "07:00:00"
           }
         },
-        "Start": 12,
-        "Length": 16
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -237,8 +237,8 @@
             "endTime": "17:00:00"
           }
         },
-        "Start": 12,
-        "Length": 31
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -264,8 +264,8 @@
             "endTime": "17:00:00"
           }
         },
-        "Start": 12,
-        "Length": 32
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -274,11 +274,12 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "Comment": "'今日の' shouldn't be annotated by TimePeriodParser",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "今日の午後4時から午後5時の間",
+        "Text": "午後4時から午後5時の間",
         "Type": "timerange",
         "Value": {
           "Timex": "(T16,T17,PT1H)",
@@ -291,8 +292,8 @@
             "endTime": "17:00:00"
           }
         },
-        "Start": 12,
-        "Length": 19
+        "Start": 3,
+        "Length": 12
       }
     ]
   },
@@ -318,8 +319,8 @@
             "endTime": "12:00:00"
           }
         },
-        "Start": 11,
-        "Length": 14
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -345,8 +346,8 @@
             "endTime": "16:00:00"
           }
         },
-        "Start": 11,
-        "Length": 16
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -372,8 +373,8 @@
             "endTime": "23:59:59"
           }
         },
-        "Start": 11,
-        "Length": 12
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -399,8 +400,8 @@
             "endTime": "10:00:00"
           }
         },
-        "Start": 11,
-        "Length": 21
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -426,8 +427,8 @@
             "endTime": "12:00:00"
           }
         },
-        "Start": 11,
-        "Length": 20
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -453,8 +454,8 @@
             "endTime": "10:00:00"
           }
         },
-        "Start": 11,
-        "Length": 20
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -480,8 +481,8 @@
             "endTime": "14:00:00"
           }
         },
-        "Start": 11,
-        "Length": 22
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -507,8 +508,8 @@
             "endTime": "16:00:00"
           }
         },
-        "Start": 11,
-        "Length": 21
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -534,13 +535,14 @@
             "endTime": "18:00:00"
           }
         },
-        "Start": 11,
-        "Length": 20
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "深夜に会いましょう。",
+    "Comment": "TBD: Need to find 'early evening' in Japanese. 深夜 is night.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -551,18 +553,18 @@
         "Text": "深夜に",
         "Type": "timerange",
         "Value": {
-          "Timex": "TEV",
+          "Timex": "TNI",
           "FutureResolution": {
-            "startTime": "18:00:00",
-            "endTime": "20:00:00"
+            "startTime": "20:00:00",
+            "endTime": "23:59:00"
           },
           "PastResolution": {
-            "startTime": "18:00:00",
-            "endTime": "20:00:00"
+            "startTime": "20:00:00",
+            "endTime": "23:59:00"
           }
         },
-        "Start": 11,
-        "Length": 19
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -588,8 +590,8 @@
             "endTime": "16:00:00"
           }
         },
-        "Start": 11,
-        "Length": 15
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -615,8 +617,8 @@
             "endTime": "16:00:00"
           }
         },
-        "Start": 11,
-        "Length": 18
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -642,8 +644,8 @@
             "endTime": "12:00:00"
           }
         },
-        "Start": 20,
-        "Length": 7
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -669,8 +671,8 @@
             "endTime": "03:00:00"
           }
         },
-        "Start": 32,
-        "Length": 16
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -696,8 +698,8 @@
             "endTime": "15:00:00"
           }
         },
-        "Start": 13,
-        "Length": 15
+        "Start": 4,
+        "Length": 11
       }
     ]
   },
@@ -723,8 +725,8 @@
             "endTime": "03:00:00"
           }
         },
-        "Start": 13,
-        "Length": 15
+        "Start": 4,
+        "Length": 11
       }
     ]
   },
@@ -750,8 +752,8 @@
             "endTime": "11:00:00"
           }
         },
-        "Start": 13,
-        "Length": 19
+        "Start": 4,
+        "Length": 14
       }
     ]
   },
@@ -777,8 +779,8 @@
             "endTime": "23:00:00"
           }
         },
-        "Start": 13,
-        "Length": 19
+        "Start": 4,
+        "Length": 14
       }
     ]
   },
@@ -804,8 +806,8 @@
             "endTime": "11:50:00"
           }
         },
-        "Start": 32,
-        "Length": 18
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
@@ -831,8 +833,8 @@
             "endTime": "15:30:00"
           }
         },
-        "Start": 15,
-        "Length": 20
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -858,8 +860,8 @@
             "endTime": "15:30:00"
           }
         },
-        "Start": 15,
-        "Length": 23
+        "Start": 0,
+        "Length": 18
       }
     ]
   },
@@ -885,8 +887,8 @@
             "endTime": "15:30:00"
           }
         },
-        "Start": 15,
-        "Length": 20
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
@@ -912,8 +914,8 @@
             "endTime": "13:00:00"
           }
         },
-        "Start": 20,
-        "Length": 20
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
@@ -939,8 +941,8 @@
             "endTime": "01:00:00"
           }
         },
-        "Start": 20,
-        "Length": 17
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -966,8 +968,8 @@
             "endTime": "03:30:00"
           }
         },
-        "Start": 15,
-        "Length": 14
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -993,8 +995,8 @@
             "endTime": "03:00:00"
           }
         },
-        "Start": 15,
-        "Length": 14
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -1020,8 +1022,8 @@
             "endTime": "15:00:00"
           }
         },
-        "Start": 32,
-        "Length": 16
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -1047,8 +1049,8 @@
             "endTime": "15:00:00"
           }
         },
-        "Start": 32,
-        "Length": 14
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -1074,8 +1076,8 @@
             "endTime": "03:00:00"
           }
         },
-        "Start": 32,
-        "Length": 14
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -1101,8 +1103,8 @@
             "endTime": "11:00:00"
           }
         },
-        "Start": 32,
-        "Length": 15
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -1128,8 +1130,8 @@
             "endTime": "03:00:00"
           }
         },
-        "Start": 32,
-        "Length": 14
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -1155,8 +1157,8 @@
             "endTime": "15:00:00"
           }
         },
-        "Start": 32,
-        "Length": 14
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -1182,8 +1184,8 @@
             "endTime": "11:30:00"
           }
         },
-        "Start": 15,
-        "Length": 20
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -1209,8 +1211,8 @@
             "endTime": "12:50:00"
           }
         },
-        "Start": 15,
-        "Length": 25
+        "Start": 0,
+        "Length": 18
       }
     ]
   },
@@ -1236,8 +1238,8 @@
             "endTime": "03:00:00"
           }
         },
-        "Start": 15,
-        "Length": 21
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
@@ -1263,8 +1265,8 @@
             "endTime": "10:00:00"
           }
         },
-        "Start": 15,
-        "Length": 18
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
@@ -1290,8 +1292,8 @@
             "endTime": "23:00:00"
           }
         },
-        "Start": 15,
-        "Length": 18
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -1317,8 +1319,8 @@
             "endTime": "18:00:00"
           }
         },
-        "Start": 14,
-        "Length": 21
+        "Start": 0,
+        "Length": 6
       }
     ]
   }
