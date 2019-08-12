@@ -351,6 +351,8 @@ CurrencySuffixList: !dictionary
     Mark Finlandais: marks finlandais|mark finlandais|fim|mark
 CompoundUnitConnectorRegex: !simpleRegex
     def: (?<spacer>[^.])
+AmbiguousFractionRegex: !simpleRegex
+    def: \s+sur
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:

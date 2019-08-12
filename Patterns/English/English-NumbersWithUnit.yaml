@@ -637,6 +637,8 @@ FractionalUnitNameToCodeMap: !dictionary
     Ngwee: NGWEE
 CompoundUnitConnectorRegex: !simpleRegex
     def: (?<spacer>and)
+AmbiguousFractionRegex: !simpleRegex
+    def: \s+(over|in|out\s+of)
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:

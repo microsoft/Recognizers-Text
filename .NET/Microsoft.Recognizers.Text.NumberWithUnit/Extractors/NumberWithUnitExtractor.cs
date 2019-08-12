@@ -73,6 +73,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 var numbers = this.config.UnitNumExtractor.Extract(source).OrderBy(o => o.Start);
 
                 // Special case for cases where number multipliers clash with unit
+                // Or ambiguous fraction like "$2000 over 3 year" should be only recognized "$2000"
                 var ambiguousMultiplierRegex = this.config.AmbiguousUnitNumberMultiplierRegex;
                 if (ambiguousMultiplierRegex != null)
                 {
@@ -81,9 +82,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         var match = ambiguousMultiplierRegex.Matches(number.Text);
                         if (match.Count == 1)
                         {
-                            var newLength = number.Text.Length - match[0].Length;
+                            var newLength = match[0].Index;
                             number.Text = number.Text.Substring(0, newLength);
                             number.Length = newLength;
+                            number.Data = Number.Constants.INTEGER_PREFIX + Number.Constants.NUMBER_SUFFIX;
                         }
                     }
                 }

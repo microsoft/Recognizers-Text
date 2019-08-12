@@ -1771,5 +1771,37 @@
         "End": 16
       }
     ]
+  },
+  {
+    "Input": "I want to loan $10000 over 3 years",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "$10000",
+        "Start": 15,
+        "End": 20,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want to earn $10000 in 3 years",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "$10000",
+        "Start": 15,
+        "End": 20,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10000"
+        }
+      }
+    ]
   }
 ]
