@@ -41,6 +41,10 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
     def ambiguous_unit_number_multiplier_regex(self) -> Pattern:
         return None
 
+    @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        raise NotImplementedError
+
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Chinese)

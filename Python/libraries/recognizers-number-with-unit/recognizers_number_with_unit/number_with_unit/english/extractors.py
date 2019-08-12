@@ -14,6 +14,10 @@ from recognizers_number_with_unit.resources.base_units import BaseUnits
 # pylint: disable=abstract-method
 class EnglishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfiguration):
     @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return EnglishNumericWithUnit.AmbiguityFiltersDict
+
+    @property
     def unit_num_extractor(self) -> Extractor:
         return self._unit_num_extractor
 
@@ -58,6 +62,10 @@ class EnglishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
 
 class EnglishAgeExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):
     @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return EnglishNumericWithUnit.AmbiguityFiltersDict
+
+    @property
     def extract_type(self) -> str:
         return Constants.SYS_UNIT_AGE
 
@@ -81,6 +89,11 @@ class EnglishAgeExtractorConfiguration(EnglishNumberWithUnitExtractorConfigurati
 
 
 class EnglishCurrencyExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):
+
+    @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return EnglishNumericWithUnit.AmbiguityFiltersDict
+
     @property
     def extract_type(self) -> str:
         return Constants.SYS_UNIT_CURRENCY
@@ -105,6 +118,11 @@ class EnglishCurrencyExtractorConfiguration(EnglishNumberWithUnitExtractorConfig
 
 
 class EnglishDimensionExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):
+
+    @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return EnglishNumericWithUnit.AmbiguityFiltersDict
+
     @property
     def extract_type(self) -> str:
         return Constants.SYS_UNIT_DIMENSION
@@ -136,6 +154,11 @@ class EnglishDimensionExtractorConfiguration(EnglishNumberWithUnitExtractorConfi
 
 
 class EnglishTemperatureExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):
+
+    @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return EnglishNumericWithUnit.AmbiguityFiltersDict
+
     @property
     def extract_type(self) -> str:
         return Constants.SYS_UNIT_TEMPERATURE

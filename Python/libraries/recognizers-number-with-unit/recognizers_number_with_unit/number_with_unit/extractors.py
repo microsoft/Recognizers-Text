@@ -4,11 +4,15 @@ from copy import deepcopy
 from collections import namedtuple
 from itertools import chain
 import regex
-
 from .constants import *
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor, ExtractResult
 from recognizers_number.culture import CultureInfo
+from recognizers_text.Matcher.string_matcher import StringMatcher
+from recognizers_text.Matcher.match_strategy import MatchStrategy
+from recognizers_text.Matcher.number_with_unit_tokenizer import NumberWithUnitTokenizer
+from recognizers_text.Matcher.match_result import MatchResult
+
 
 PrefixUnitResult = namedtuple('PrefixUnitResult', ['offset', 'unit'])
 
@@ -70,6 +74,11 @@ class NumberWithUnitExtractorConfiguration(ABC):
         raise NotImplementedError
 
     @property
+    @abstractmethod
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        raise NotImplementedError
+
+    @property
     def culture_info(self) -> CultureInfo:
         return self._culture_info
 
@@ -78,142 +87,194 @@ class NumberWithUnitExtractorConfiguration(ABC):
 
 
 class NumberWithUnitExtractor(Extractor):
+
+    @property
+    def separator(self):
+        return ['|']
+
+    @property
+    def max_prefix_match_len(self):
+        return self.__max_prefix_match_len
+
+    @max_prefix_match_len.setter
+    def max_prefix_match_len(self, value):
+        self.__max_prefix_match_len = value
+
+    @property
+    def separate_regex(self):
+        return self.__separate_regex
+
+    @separate_regex.setter
+    def separate_regex(self, value):
+        self.__separate_regex = value
+
     def __init__(self, config: NumberWithUnitExtractorConfiguration):
-        self.config: NumberWithUnitExtractorConfiguration = config
+        self.config = config
+        self.max_prefix_match_len = 0
         if self.config.suffix_list:
-            self.suffix_regex: Set[Pattern] = self._build_regex_from_set(
-                self.config.suffix_list.values())
-        else:
-            self.suffix_regex: Set[Pattern] = set()
+            self.suffix_matcher = self._build_matcher_from_set(
+                list(self.config.suffix_list.values()))
 
         if self.config.prefix_list:
-            max_length = max(
-                map(len, ('|'.join(self.config.prefix_list.values()).split('|'))))
+            for pre_match in self.config.prefix_list.values():
+                match_list = str(pre_match).split(self.separator[0])
+                for match in match_list:
+                    if self.max_prefix_match_len >= len(match):
+                        self.max_prefix_match_len = self.max_prefix_match_len
+                    else:
+                        self.max_prefix_match_len = len(match)
 
-            self.max_prefix_match_len = max_length + 2
-            self.prefix_regex: Set[Pattern] = self._build_regex_from_set(
-                self.config.prefix_list.values())
-        else:
-            self.max_prefix_match_len = 0
-            self.prefix_regex: Set[Pattern] = set()
+            # 2 is the maximum length of spaces.
+            self.max_prefix_match_len += 2
+            self.prefix_matcher = self._build_matcher_from_set(self.config.prefix_list.values())
+
         self.separate_regex = self._build_separate_regex_from_config()
 
     def extract(self, source: str) -> List[ExtractResult]:
+
         if not self._pre_check_str(source):
             return list()
 
+        non_unit_match: Match = None
+
+        if hasattr(self, 'prefix_matcher'):
+            prefix_match: List[MatchResult] = sorted(self.prefix_matcher.find(source), key=lambda o: o.start)
+
+        if hasattr(self, 'suffix_matcher'):
+            suffix_match: List[MatchResult] = sorted(self.suffix_matcher.find(source), key=lambda o: o.start)
+
         mapping_prefix: Dict[float, PrefixUnitResult] = dict()
         matched: List[bool] = [False] * len(source)
-        numbers: List[ExtractResult] = self.config.unit_num_extractor.extract(
-            source)
         result: List[ExtractResult] = list()
         source_len = len(source)
+        prefix_matched = False
 
-        # Special case for cases where number multipliers clash with unit
-        ambiguous_multiplier_regex = self.config.ambiguous_unit_number_multiplier_regex
-        if ambiguous_multiplier_regex is not None:
+        prefix_match_len = 0
+        suffix_matcher_len = 0
 
-            for num in numbers:
-                match = list(filter(lambda x: x.group(), regex.finditer(
-                    ambiguous_multiplier_regex, num.text)))
-                if match and len(match) == 1:
-                    new_length = num.length - \
-                        (match[0].span()[1] - match[0].span()[0])
-                    num.text = num.text[0:new_length]
-                    num.length = new_length
+        if hasattr(self, 'prefix_matcher'):
+            prefix_match_len = len(prefix_match)
 
-        # Mix prefix and numbers, make up a prefix-number combination
-        if self.max_prefix_match_len != 0:
-            for num in numbers:
-                if num.start is None or num.length is None:
+        if hasattr(self, 'suffix_matcher'):
+            suffix_matcher_len = len(suffix_match)
+
+        if prefix_match_len > 0 or suffix_matcher_len > 0:
+
+            numbers: List[ExtractResult] = self.config.unit_num_extractor.extract(
+                source)
+
+            # Special case for cases where number multipliers clash with unit
+            ambiguous_multiplier_regex = self.config.ambiguous_unit_number_multiplier_regex
+            if ambiguous_multiplier_regex is not None:
+
+                for num in numbers:
+                    match = list(filter(lambda x: x.group(), regex.finditer(
+                        ambiguous_multiplier_regex, num.text)))
+                    if match and len(match) == 1:
+                        new_length = num.length - \
+                            (match[0].span()[1] - match[0].span()[0])
+                        num.text = num.text[0:new_length]
+                        num.length = new_length
+
+            for number in numbers:
+                if number.start is None or number.length is None:
                     continue
-                max_find_prefix = min(self.max_prefix_match_len, num.start)
-                if max_find_prefix == 0:
-                    continue
+                start = int(number.start)
+                length = int(number.length)
+                max_find_pref = min(self.max_prefix_match_len, number.start)
+                max_find_suff = source_len - start - length
 
-                left: str = source[num.start - max_find_prefix:num.start]
-                last_index = len(left)
-                best_match: Match = None
-                for pattern in self.prefix_regex:
-                    collection = list(filter(lambda x: len(
-                        x.group()), regex.finditer(pattern, left)))
-                    for match in collection:
-                        if left[match.start():last_index].strip() == match.group():
-                            if best_match is None or best_match.start() >= match.start():
-                                best_match = match
-                if best_match:
-                    mapping_prefix[num.start] = PrefixUnitResult(
-                        offset=last_index - best_match.start(),
-                        unit=left[best_match.start():last_index]
-                    )
-        for num in numbers:
-            if num.start is None or num.length is None:
-                continue
-            start = num.start
-            length = num.length
-            max_find_len = source_len - start - length
+                if max_find_pref != 0:
+                    last_index = start
+                    best_match = None
 
-            prefix_unit: PrefixUnitResult = mapping_prefix.get(start, None)
+                    for m in prefix_match:
+                        if m.length > 0 and m.end > start:
+                            break
 
-            if max_find_len > 0:
-                right = source[start + length:start + length + max_find_len]
-                unit_match_list = map(lambda x: list(
-                    regex.finditer(x, right)), self.suffix_regex)
-                unit_match = chain.from_iterable(unit_match_list)
-                unit_match = list(filter(lambda x: x.group(), unit_match))
+                        if m.length > 0 and source[m.start: m.start + (last_index - m.start)].strip() == m.text():
+                            best_match = m
+                            break
 
-                max_len = 0
-                for match in unit_match:
-                    if match.group():
-                        end_pos = match.start() + len(match.group())
-                        if match.start() >= 0:
-                            middle: str = right[:min(
-                                match.start(), len(right))]
-                            if max_len < end_pos and (not middle.strip() or middle.strip() == self.config.connector_token):
-                                max_len = end_pos
-                if max_len != 0:
-                    for i in range(length + max_len):
-                        matched[i + start] = True
-                    ex_result = ExtractResult()
-                    ex_result.start = start
-                    ex_result.length = length + max_len
-                    ex_result.text = source[start:start + length + max_len]
-                    ex_result.type = self.config.extract_type
+                    if best_match is not None:
+                        off_set = last_index - best_match.start
+                        unit_str = source[best_match.start:best_match.start + off_set]
+                        mapping_prefix.__setitem__(number.start.value, PrefixUnitResult(off_set=off_set, unit=unit_str))
 
-                    if prefix_unit:
-                        ex_result.start -= prefix_unit.offset
-                        ex_result.length += prefix_unit.offset
-                        ex_result.text = prefix_unit.unit + ex_result.text
+                prefix_unit: PrefixUnitResult = mapping_prefix.get(start, None)
+                if max_find_suff > 0:
 
-                    num.start = start - ex_result.start
-                    ex_result.data = num
+                    max_len = 0
+                    first_index = start + length
 
-                    is_not_unit = False
-                    if ex_result.type == Constants.SYS_UNIT_DIMENSION:
-                        non_unit_match = self.config.non_unit_regex.finditer(
-                            source)
-                        for match in non_unit_match:
-                            if ex_result.start >= match.start() and ex_result.end <= match.end():
-                                is_not_unit = True
+                    for m in suffix_match:
 
-                    if is_not_unit:
-                        continue
+                        if m.length > 0 and m.start >= first_index:
 
-                    result.append(ex_result)
-                    continue
-            if prefix_unit:
-                ex_result = ExtractResult()
-                ex_result.start = num.start - prefix_unit.offset
-                ex_result.length = num.length + prefix_unit.offset
-                ex_result.text = prefix_unit.unit + num.text
-                ex_result.type = self.config.extract_type
+                            end_pos = m.start + m.length - first_index
+                            if max_len < end_pos:
+                                mid_str = source[first_index: first_index + (m.start - first_index)]
+                                if mid_str is None or str.isspace(mid_str) \
+                                        or mid_str.strip() is self.config.connector_token:
+                                    max_len = end_pos
 
-                num.start = start - ex_result.start
-                ex_result.data = num
-                result.append(ex_result)
+                    if max_len != 0:
+                        substr = source[start: start + length + max_len]
+                        er = ExtractResult
 
+                        er.start = start
+                        er.length = length + max_len
+                        er.text = substr
+                        er.type = self.config.extract_type
+
+                        if prefix_unit is not None:
+                            prefix_matched = True
+                            er.start -= prefix_unit.offset
+                            er.length += prefix_unit.offset
+                            er.text = prefix_unit.unit + er.text
+
+                        # Relative position will be used in Parser
+                        number.start = start - er.start
+                        er.data = number
+
+                        # Special treatment, handle cases like '2:00 pm', '00 pm' is not dimension
+                        is_not_unit = False
+
+                        if er.type is Constants.SYS_UNIT_DIMENSION:
+                            if non_unit_match is None:
+                                non_unit_match = self.config.non_unit_regex.finditer(source)
+
+                            for time in non_unit_match:
+                                if er.start >= time.index and er.start + er.length <= time.index + time.length:
+                                    is_not_unit = True
+                                    break
+
+                        if is_not_unit:
+                            continue
+
+                        result.append(er)
+
+            if prefix_unit is not None and not prefix_matched:
+                er: ExtractResult
+                er.start = number.start - prefix_unit.offset
+                er.length = number.length + prefix_unit.offset
+                er.text = prefix_unit.unit + number.text
+                er.type = self.config.extract_type
+
+                # Relative position will be used in Parser
+                number.start = start - er.start
+                er.data = number
+                result.append(er)
+
+        # Extract Separate unit
         if self.separate_regex:
-            result = self._extract_separate_units(source, result)
+            if non_unit_match is None:
+                non_unit_match = self.config.non_unit_regex.match(source)
+
+            self._extract_separate_units(source, result, non_unit_match)
+
+            # Remove common ambiguous cases
+            result = self._filter_ambiguity(result, source)
 
         return result
 
@@ -223,11 +284,11 @@ class NumberWithUnitExtractor(Extractor):
     def _pre_check_str(self, source: str) -> bool:
         return len(source) != 0
 
-    def _extract_separate_units(self, source: str, num_depend_source: List[ExtractResult]) -> List[ExtractResult]:
+    def _extract_separate_units(self, source: str, num_depend_source: List[ExtractResult], non_unit_matches) -> List[ExtractResult]:
         result = deepcopy(num_depend_source)
         match_result: List[bool] = [False] * len(source)
         for ex_result in num_depend_source:
-            for i in range(ex_result.start, ex_result.end + 1):
+            for i in range(ex_result.start, ex_result.data.end + 1):
                 match_result[i] = True
         match_collection = list(
             filter(lambda x: x.group(), regex.finditer(self.separate_regex, source)))
@@ -241,9 +302,7 @@ class NumberWithUnitExtractor(Extractor):
 
                 is_not_unit = False
                 if match.group() == Constants.AMBIGUOUS_TIME_TERM:
-                    non_unit_match = self.config.non_unit_regex.finditer(
-                        source)
-                    for time in non_unit_match:
+                    for time in non_unit_matches:
                         if self._dimension_inside_time(match, time):
                             is_not_unit = True
 
@@ -260,6 +319,26 @@ class NumberWithUnitExtractor(Extractor):
 
     def _build_regex_from_set(self, definitions: List[str], ignore_case: bool = False) -> Set[Pattern]:
         return set(map(lambda x: self.__build_regex_from_str(x, ignore_case), definitions))
+
+    def _build_matcher_from_set(self, definitions: List[str], ignore_case: bool = False) -> StringMatcher:
+
+        matcher = StringMatcher(match_strategy=MatchStrategy.TrieTree, tokenizer=NumberWithUnitTokenizer())
+
+        match_term_list = list(map(lambda words:
+                                   list(filter(lambda word: not str.isspace(word) and word is not None,
+                                               str(words).strip().split('|'))),
+                                   definitions))
+
+        match_terms = self.distinct(match_term_list)
+        flatted_list = []
+
+        for item in match_terms:
+            for i in item:
+                flatted_list.append(i)
+
+        matcher.init(flatted_list)
+
+        return matcher
 
     def __build_regex_from_str(self, source: str, ignore_case: bool) -> Pattern:
         tokens = map(regex.escape, source.split('|'))
@@ -314,6 +393,33 @@ class NumberWithUnitExtractor(Extractor):
             is_sub_match = True
 
         return is_sub_match
+
+    @staticmethod
+    def distinct(list1):
+
+        # intialize a null list
+        unique_list = []
+
+        # traverse for all elements
+        for x in list1:
+            # check if exists in unique_list or not
+            if x not in unique_list:
+                unique_list.append(x)
+            # print list
+        return unique_list
+
+    def _filter_ambiguity(self, ers: List[ExtractResult], text: str,) -> List[ExtractResult]:
+
+        if hasattr(self, 'config.ambiguity_filters_dict'):
+            if self.config.ambiguity_filters_dict is not None:
+                for regex_var in self.config.ambiguity_filters_dict:
+                    reg_len = len(regex.finditer(regex_var, text))
+                    if reg_len > 0:
+                        matches = self.config.ambiguity_filters_dict[regex_var]
+                        ers = list(filter(lambda x: list(filter(lambda m: m.start <= x.start and m.start +
+                                                                m.length >= x.start, matches)), ers))
+
+        return ers
 
 
 class BaseMergedUnitExtractor(Extractor):

@@ -84,7 +84,7 @@ class StringMatcher:
             match_result.text = r_text
             match_result.canonical_values = r.canonical_values
 
-            return match_result
+            yield match_result
 
     def get_tokenized_text(self, values: []) -> []:
-        return list(map(lambda t: map(lambda i: i.text, self.tokenizer.tokenize(t)), values))
+        return list(map(lambda t: list(map(lambda i: i.text, self.tokenizer.tokenize(t))), values))
