@@ -19,8 +19,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         private static readonly Regex CompoundUnitConnRegex =
             new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexFlags);
 
-        private static readonly Regex AmbiguousFractionRegex =
-            new Regex(NumbersWithUnitDefinitions.AmbiguousFractionRegex, RegexFlags);
+        private static readonly Regex AmbiguousUnitsRegex =
+            new Regex(NumbersWithUnitDefinitions.AmbiguousUnitsRegex, RegexFlags);
 
         private static readonly Regex NonUnitsRegex =
             new Regex(BaseUnits.PmNonUnitRegex, RegexFlags);
@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public Regex NonUnitRegex => NonUnitsRegex;
 
-        public virtual Regex AmbiguousUnitNumberMultiplierRegex => AmbiguousFractionRegex;
+        public virtual Regex AmbiguousUnitNumbersRegex => AmbiguousUnitsRegex;
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
 

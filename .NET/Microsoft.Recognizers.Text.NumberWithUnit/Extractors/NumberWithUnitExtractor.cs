@@ -74,12 +74,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                 // Special case for cases where number multipliers clash with unit
                 // Or ambiguous fraction like "$2000 over 3 year" should be only recognized "$2000"
-                var ambiguousMultiplierRegex = this.config.AmbiguousUnitNumberMultiplierRegex;
-                if (ambiguousMultiplierRegex != null)
+                var ambiguousUnitNumbersRegex = this.config.AmbiguousUnitNumbersRegex;
+                if (ambiguousUnitNumbersRegex != null)
                 {
                     foreach (var number in numbers)
                     {
-                        var match = ambiguousMultiplierRegex.Matches(number.Text);
+                        var match = ambiguousUnitNumbersRegex.Matches(number.Text);
                         if (match.Count == 1)
                         {
                             var newLength = match[0].Index;

@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 
         public Regex NonUnitRegex => NonUnitsRegex;
 
-        public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
+        public virtual Regex AmbiguousUnitNumbersRegex => null;
 
         public abstract string ExtractType { get; }
 

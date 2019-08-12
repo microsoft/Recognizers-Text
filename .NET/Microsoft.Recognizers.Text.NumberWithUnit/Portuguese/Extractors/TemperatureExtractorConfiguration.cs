@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex AmbiguousUnitMultiplierRegex =
-            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexFlags);
+            new Regex(BaseUnits.AmbiguousUnitNumbersRegex, RegexFlags);
 
         public TemperatureExtractorConfiguration()
                : this(new CultureInfo(Culture.Portuguese))
@@ -35,6 +35,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 
         public override string ExtractType => Constants.SYS_UNIT_TEMPERATURE;
 
-        public override Regex AmbiguousUnitNumberMultiplierRegex => AmbiguousUnitMultiplierRegex;
+        public override Regex AmbiguousUnitNumbersRegex => AmbiguousUnitMultiplierRegex;
     }
 }

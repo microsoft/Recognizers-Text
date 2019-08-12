@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Turkish
             NumbersWithUnitDefinitions.AmbiguousTemperatureUnitList.ToImmutableList();
 
         private static readonly Regex AmbiguousUnitMultiplierRegex =
-            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexOptions.None);
+            new Regex(BaseUnits.AmbiguousUnitNumbersRegex, RegexOptions.None);
 
         public TemperatureExtractorConfiguration()
                : this(new CultureInfo(Culture.Turkish))
@@ -36,6 +36,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Turkish
 
         public override string ExtractType => Constants.SYS_UNIT_TEMPERATURE;
 
-        public override Regex AmbiguousUnitNumberMultiplierRegex => AmbiguousUnitMultiplierRegex;
+        public override Regex AmbiguousUnitNumbersRegex => AmbiguousUnitMultiplierRegex;
     }
 }

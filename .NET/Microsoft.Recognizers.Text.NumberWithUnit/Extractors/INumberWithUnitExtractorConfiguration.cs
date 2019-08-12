@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         Regex NonUnitRegex { get; }
 
-        Regex AmbiguousUnitNumberMultiplierRegex { get; }
+        Regex AmbiguousUnitNumbersRegex { get; }
 
         Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
     }

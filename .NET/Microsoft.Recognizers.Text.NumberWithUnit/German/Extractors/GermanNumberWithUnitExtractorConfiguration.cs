@@ -44,7 +44,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
 
         public Regex NonUnitRegex => NonUnitsRegex;
 
-        public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
+        public virtual Regex AmbiguousUnitNumbersRegex => null;
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
 

@@ -272,7 +272,7 @@ namespace Microsoft.Recognizers.Definitions.French
             { @"Mark Finlandais", @"marks finlandais|mark finlandais|fim|mark" }
         };
       public const string CompoundUnitConnectorRegex = @"(?<spacer>[^.])";
-      public const string AmbiguousFractionRegex = @"\s+sur";
+      public const string AmbiguousUnitsRegex = @"\s+sur";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
             { @"Dollar", @"$" },

@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
 
         public Regex NonUnitRegex => NonUnitsRegex;
 
-        public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
+        public virtual Regex AmbiguousUnitNumbersRegex => null;
 
         public IExtractor IntegerExtractor { get; }
 

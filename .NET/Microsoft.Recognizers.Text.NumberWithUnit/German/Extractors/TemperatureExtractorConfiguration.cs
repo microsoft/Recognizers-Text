@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
             NumbersWithUnitDefinitions.AmbiguousTemperatureUnitList.ToImmutableList();
 
         private static readonly Regex AmbiguousUnitMultiplierRegex =
-            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexFlags);
+            new Regex(BaseUnits.AmbiguousUnitNumbersRegex, RegexFlags);
 
         public TemperatureExtractorConfiguration()
             : this(new CultureInfo(Culture.German))
@@ -38,6 +38,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
 
         public override string ExtractType => Constants.SYS_UNIT_TEMPERATURE;
 
-        public override Regex AmbiguousUnitNumberMultiplierRegex => AmbiguousUnitMultiplierRegex;
+        public override Regex AmbiguousUnitNumbersRegex => AmbiguousUnitMultiplierRegex;
     }
 }

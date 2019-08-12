@@ -559,7 +559,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Ngwee", @"NGWEE" }
         };
       public const string CompoundUnitConnectorRegex = @"(?<spacer>and)";
-      public const string AmbiguousFractionRegex = @"\s+(over|in|out\s+of)";
+      public const string AmbiguousUnitsRegex = @"\s+(over|in|out\s+of)";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
             { @"Dollar", @"$" },
