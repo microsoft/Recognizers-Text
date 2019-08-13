@@ -48,19 +48,36 @@ namespace Microsoft.Recognizers.Definitions
       public const string CountryCodeRegex = @"^(\(\s?(\+\s?|00)\d{1,3}\s?\)|(\+\s?|00)\d{1,3})";
       public const string AreaCodeIndicatorRegex = @"\(";
       public const string FormatIndicatorRegex = @"(\s|-|/|\.)+";
+      public static readonly IList<char> ColonMarkers = new List<char>
+        {
+            ':'
+        };
+      public const string ColonBeginRegex = @"(([A-Za-z])\s*$)";
       public static readonly IList<char> SpecialBoundaryMarkers = new List<char>
         {
             '-',
             ' '
         };
-      public static readonly IList<char> BoundaryMarkers = new List<char>
+      public static readonly IList<char> BoundaryStartMarkers = new List<char>
         {
             '-',
             '.',
             '/',
             '+',
             '#',
-            '*'
+            '*',
+            ',',
+            ':',
+            '%'
+        };
+      public static readonly IList<char> BoundaryEndMarkers = new List<char>
+        {
+            '/',
+            '+',
+            '#',
+            '*',
+            ':',
+            '%'
         };
     }
 }

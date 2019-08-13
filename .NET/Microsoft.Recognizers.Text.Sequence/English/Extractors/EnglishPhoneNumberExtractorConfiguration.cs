@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
 
 namespace Microsoft.Recognizers.Text.Sequence.English
@@ -11,6 +12,10 @@ namespace Microsoft.Recognizers.Text.Sequence.English
             WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex;
             NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex;
             EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex;
+            ColonBeginRegex = new Regex(BasePhoneNumbers.ColonBeginRegex);
+            ColonMarkers = (List<char>)BasePhoneNumbers.ColonMarkers;
+            BoundaryStartMarkers = (List<char>)BasePhoneNumbers.BoundaryStartMarkers;
+            BoundaryEndMarkers = (List<char>)BasePhoneNumbers.BoundaryEndMarkers;
         }
     }
 }

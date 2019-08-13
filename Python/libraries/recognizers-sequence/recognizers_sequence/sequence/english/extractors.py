@@ -21,6 +21,22 @@ class EnglishPhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
     def end_word_boundaries_regex(self) -> str:
         return self._EndWordBoundariesRegex
 
+    @property
+    def colon_begin_regex(self) -> str:
+        return self._ColonBeginRegex
+
+    @property
+    def colon_markers(self) -> str:
+        return self._ColonMarkers
+
+    @property
+    def boundary_start_markers(self) -> str:
+        return self._BoundaryStartMarkers
+
+    @property
+    def boundary_end_markers(self) -> str:
+        return self._BoundaryEndMarkers
+
     def __init__(self, culture_info: CultureInfo = None):
         if culture_info is None:
             culture_info = CultureInfo(Culture.English)
@@ -28,6 +44,10 @@ class EnglishPhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
         self._WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex
         self._NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex
         self._EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex
+        self._ColonBeginRegex = BasePhoneNumbers.ColonBeginRegex
+        self._ColonMarkers = BasePhoneNumbers.ColonMarkers
+        self._BoundaryStartMarkers = BasePhoneNumbers.BoundaryStartMarkers
+        self._BoundaryEndMarkers = BasePhoneNumbers.BoundaryEndMarkers
 
 
 class EnglishIpExtractor(BaseIpExtractor):

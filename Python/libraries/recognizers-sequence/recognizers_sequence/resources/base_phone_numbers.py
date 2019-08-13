@@ -54,6 +54,9 @@ class BasePhoneNumbers:
     CountryCodeRegex = f'^(\\(\\s?(\\+\\s?|00)\\d{{1,3}}\\s?\\)|(\\+\\s?|00)\\d{{1,3}})'
     AreaCodeIndicatorRegex = f'\\('
     FormatIndicatorRegex = f'(\\s|-|/|\\.)+'
+    ColonMarkers = [r':']
+    ColonBeginRegex = f'(([A-Za-z])\\s*$)'
     SpecialBoundaryMarkers = [r'-', r' ']
-    BoundaryMarkers = [r'-', r'.', r'/', r'+', r'#', r'*']
+    BoundaryStartMarkers = [r'-', r'.', r'/', r'+', r'#', r'*', r',', r':', r'%']
+    BoundaryEndMarkers = [r'/', r'+', r'#', r'*', r':', r'%']
 # pylint: enable=line-too-long

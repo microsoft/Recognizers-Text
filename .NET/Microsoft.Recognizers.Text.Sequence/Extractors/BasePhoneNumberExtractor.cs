@@ -2,6 +2,7 @@
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Xml;
 using Microsoft.Recognizers.Definitions;
 
 namespace Microsoft.Recognizers.Text.Sequence
@@ -14,6 +15,8 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public BasePhoneNumberExtractor(PhoneNumberConfiguration config)
         {
+            this.config = config;
+
             var wordBoundariesRegex = config.WordBoundariesRegex;
             var nonWordBoundariesRegex = config.NonWordBoundariesRegex;
             var endWordBoundariesRegex = config.EndWordBoundariesRegex;
@@ -69,8 +72,6 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         protected sealed override string ExtractType { get; } = Constants.SYS_PHONE_NUMBER;
 
-        private static List<char> BoundaryMarkers => BasePhoneNumbers.BoundaryMarkers.ToList();
-
         private static List<char> SpecialBoundaryMarkers => BasePhoneNumbers.SpecialBoundaryMarkers.ToList();
 
         public override List<ExtractResult> Extract(string text)
@@ -79,10 +80,20 @@ namespace Microsoft.Recognizers.Text.Sequence
 
             foreach (var er in ers)
             {
+                if (er.Start + er.Length < text.Length)
+                {
+                    var ch = text[(int)(er.Start + er.Length)];
+                    if (this.config.BoundaryEndMarkers.Contains(ch))
+                    {
+                        ers.Remove(er);
+                        continue;
+                    }
+                }
+
                 if (er.Start != 0)
                 {
                     var ch = text[(int)(er.Start - 1)];
-                    if (BoundaryMarkers.Contains(ch))
+                    if (this.config.BoundaryStartMarkers.Contains(ch))
                     {
                         if (SpecialBoundaryMarkers.Contains(ch) &&
                             CheckFormattedPhoneNumber(er.Text) &&
@@ -102,6 +113,16 @@ namespace Microsoft.Recognizers.Text.Sequence
                                 er.Start = er.Start - moveOffset;
                                 er.Length = er.Length + moveOffset;
                                 er.Text = text.Substring((int)er.Start, (int)er.Length);
+                                continue;
+                            }
+                        }
+
+                        // Handle "tel:123456".
+                        if (this.config.ColonMarkers.Contains(ch))
+                        {
+                            var front = text.Substring(0, (int)(er.Start - 1));
+                            if (this.config.ColonBeginRegex.IsMatch(front))
+                            {
                                 continue;
                             }
                         }

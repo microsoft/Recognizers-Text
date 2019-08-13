@@ -43,7 +43,7 @@ export abstract class BaseSequenceExtractor implements IExtractor {
         let lastNotMatched = -1;
         for (let i = 0; i < source.length; i++) {
             if (matched[i]) {
-                if (i + 1 == source.length || !matched[i + 1]) {
+                if (i + 1 === source.length || !matched[i + 1]) {
                     let start = lastNotMatched + 1;
                     let length = i - lastNotMatched;
                     let substr = source.substr(start, length);
@@ -78,13 +78,19 @@ export interface IPhoneNumberExtractorConfiguration {
     WordBoundariesRegex: string;
     NonWordBoundariesRegex: string;
     EndWordBoundariesRegex: string;
+    ColonBeginRegex: string;
+    ColonMarkers: string[];
+    BoundaryStartMarkers: string[];
+    BoundaryEndMarkers: string[];
 }
 
 export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
     regexes: Map<RegExp, string>;
+    config: IPhoneNumberExtractorConfiguration;
 
     constructor(config: IPhoneNumberExtractorConfiguration) {
         super();
+        this.config = config;
         let wordBoundariesRegex = config.WordBoundariesRegex;
         let nonWordBoundariesRegex = config.NonWordBoundariesRegex;
         let endWordBoundariesRegex = config.EndWordBoundariesRegex;
@@ -106,28 +112,42 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
         let formatIndicatorRegex = new RegExp(BasePhoneNumbers.FormatIndicatorRegex, "ig");
         let digitRegex = new RegExp("[0-9]");
         for (let er of ers) {
+            if (er.start + er.length < source.length) {
+                let ch = source[ er.start+er.length ];
+                if (this.config.BoundaryEndMarkers.indexOf(ch) !== -1){
+                    continue;
+                }
+            }
             let ch = source[er.start - 1];
-            if (er.start === 0 || BasePhoneNumbers.BoundaryMarkers.indexOf(ch) === -1) {
-                ret.push(er);
-            }
-            else if (BasePhoneNumbers.SpecialBoundaryMarkers.indexOf(ch) != -1 &&
-                formatIndicatorRegex.test(er.text) &&
-                er.start >= 2) {
-                let chGap = source[er.start - 2];
-                if (!chGap.match(digitRegex)) {
-                    ret.push(er);
+            if (er.start !== 0 && this.config.BoundaryStartMarkers.indexOf(ch) !== -1) {
+                if (BasePhoneNumbers.SpecialBoundaryMarkers.indexOf(ch) !== -1 &&
+                    formatIndicatorRegex.test(er.text) &&
+                    er.start >= 2) {
+                    let chGap = source[er.start - 2];
+                    if (chGap.match(digitRegex)) {
+                        let front = source.substring(0, er.start - 1);
+                        let match = front.match(BasePhoneNumbers.InternationDialingPrefixRegex);
+                        if (match) {
+                            let moveOffset = match[0].length + 1;
+                            er.start = er.start - moveOffset;
+                            er.length = er.length + moveOffset;
+                            er.text = source.substring(er.start, er.start + er.length);
+                            ret.push(er);
+                        }
+                        continue;
+                    }
                 }
-
-                let front = source.substring(0, er.start - 1);
-                let match = front.match(BasePhoneNumbers.InternationDialingPrefixRegex);
-                if (match) {
-                    let moveOffset = match[0].length + 1;
-                    er.start = er.start - moveOffset;
-                    er.length = er.length + moveOffset;
-                    er.text = source.substring(er.start, er.start + er.length);
-                    ret.push(er);
+                else if (this.config.ColonMarkers.indexOf(ch) !== -1) {
+                    let front = source.substring(0, er.start - 1);
+                    if(!front.match(this.config.ColonBeginRegex)) {
+                        continue;
+                    }
+                }
+                else {
+                    continue;
                 }
             }
+            ret.push(er);
         }
 
         // filter hexadecimal address like 00 10 00 31 46 D9 E9 11

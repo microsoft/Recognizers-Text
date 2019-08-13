@@ -31,6 +31,9 @@ export namespace BasePhoneNumbers {
     export const CountryCodeRegex = `^(\\(\\s?(\\+\\s?|00)\\d{1,3}\\s?\\)|(\\+\\s?|00)\\d{1,3})`;
     export const AreaCodeIndicatorRegex = `\\(`;
     export const FormatIndicatorRegex = `(\\s|-|/|\\.)+`;
+    export const ColonMarkers = [ ":" ];
+    export const ColonBeginRegex = `(([A-Za-z])\\s*$)`;
     export const SpecialBoundaryMarkers = [ "-"," " ];
-    export const BoundaryMarkers = [ "-",".","/","+","#","*" ];
+    export const BoundaryStartMarkers = [ "-",".","/","+","#","*",",",":","%" ];
+    export const BoundaryEndMarkers = [ "/","+","#","*",":","%" ];
 }

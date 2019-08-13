@@ -4646,5 +4646,32 @@
         }
       }
     ]
+  },
+  {
+    "Input": "March 1 14377:00 is not a phone number",
+    "Results": []
+  },
+  {
+    "Input": "200.38294427 is not a phone number.",
+    "Results": []
+  },
+  {
+    "Input": "My phone number is:1234 5678.",
+    "Results": [
+      {
+        "Text": "1234 5678",
+        "Start": 19,
+        "End": 27,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.5",
+          "value": "1234 5678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "+1,032.923 is not a phone number",
+    "Results": []
   }
 ]

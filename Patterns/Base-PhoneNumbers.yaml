@@ -56,12 +56,18 @@ AreaCodeIndicatorRegex: !simpleRegex
   def: \(
 FormatIndicatorRegex: !simpleRegex
   def: (\s|-|/|\.)+
+ColonMarkers: !list
+  types: [char]
+  entries:
+  - ':'
+ColonBeginRegex: !simpleRegex
+  def: (([A-Za-z])\s*$)
 SpecialBoundaryMarkers: !list
   types: [char]
   entries:
     - '-'
     - ' '
-BoundaryMarkers: !list
+BoundaryStartMarkers: !list
   types: [char]
   entries:
     - '-'
@@ -70,4 +76,16 @@ BoundaryMarkers: !list
     - '+'
     - '#'
     - '*'
+    - ','
+    - ':'
+    - '%'
+BoundaryEndMarkers: !list
+  types: [char]
+  entries:
+    - '/'
+    - '+'
+    - '#'
+    - '*'
+    - ':'
+    - '%'
 ...

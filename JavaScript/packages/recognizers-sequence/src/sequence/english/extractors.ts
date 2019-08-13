@@ -8,11 +8,20 @@ export class EnglishPhoneNumberExtractorConfiguration implements IPhoneNumberExt
     readonly WordBoundariesRegex: string;
     readonly NonWordBoundariesRegex: string;
     readonly EndWordBoundariesRegex: string;
+    readonly ColonBeginRegex: string;
+    readonly ColonMarkers: string[];
+    readonly BoundaryEndMarkers: string[];
+    readonly BoundaryStartMarkers: string[];
+
 
     constructor() {
         this.WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex;
         this.NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex;
         this.EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex;
+        this.BoundaryEndMarkers = BasePhoneNumbers.BoundaryEndMarkers;
+        this.BoundaryStartMarkers = BasePhoneNumbers.BoundaryStartMarkers;
+        this.ColonBeginRegex = BasePhoneNumbers.ColonBeginRegex;
+        this.ColonMarkers = BasePhoneNumbers.ColonMarkers;
     }
 }
 
