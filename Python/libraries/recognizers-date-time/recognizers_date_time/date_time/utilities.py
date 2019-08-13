@@ -64,7 +64,7 @@ def __token_to_result(token: Token, source: str, name: str) -> ExtractResult:
     result.start = token.start
     result.length = token.length
     result.text = source[token.start:token.end]
-    result.type = name
+    result.type = name 
     return result
 
 
@@ -390,7 +390,11 @@ class AgoLaterUtil:
                                           utility_configuration: DateTimeUtilityConfiguration,
                                           mode: AgoLaterMode) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
-        duration_extract = duration_extractor.extract(source, reference)
+
+        if duration_extractor:
+            duration_extract = duration_extractor.extract(source, reference)
+        else:
+            return result
 
         if not duration_extract:
             return result
