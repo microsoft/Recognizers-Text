@@ -12,7 +12,7 @@ class TestStringMatcher:
         for value in values:
             match = string_matcher.find(value)
             if match is not None:
-                assert value == match.text()
+                assert value == match.text
 
     @staticmethod
     def test_simple_with_ids_string_matcher():
@@ -24,8 +24,8 @@ class TestStringMatcher:
             value = values[i]
             match = string_matcher.find(value)
             if match is not None:
-                assert value == match.text()
-                assert ids[i] == match.canonical_values()
+                assert value == match.text
+                assert ids[i] == match.canonical_values[0]
 
     @staticmethod
     def test_string_matcher():

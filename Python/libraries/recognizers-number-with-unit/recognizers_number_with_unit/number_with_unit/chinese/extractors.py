@@ -102,7 +102,7 @@ class ChineseCurrencyExtractorConfiguration(ChineseNumberWithUnitExtractorConfig
     def ambiguous_unit_list(self) -> List[str]:
         return self._ambiguous_unit_list
 
-    def __init__(self, culture_info: CultureInfo = None):
+    def __init__(self, culture_info: CultureInfo = Culture.Chinese):
         super().__init__(culture_info)
         self._suffix_list = ChineseNumericWithUnit.CurrencySuffixList
         self._prefix_list = ChineseNumericWithUnit.CurrencyPrefixList
