@@ -1,28 +1,26 @@
 [
-  {
-    "Input": "It costs you 10 us dollar and me c $ 100 and fifty.",
+ {
+    "Input": "the hart - scott filing is then reviewed and any antitrust concerns usually met . typically , hart - scott is used now to give managers of target firms early news of a bid and a chance to use regulatory review as a delaying tactic . the $ 20,000 tax would be a small cost in a multibillion - dollar deal , but a serious drag on thousands of small , friendly deals .",
     "Results": [
       {
-        "Text": "10 us dollar",
+        "Text": "$ 20,000",
         "TypeName": "currency",
         "Resolution": {
-          "isoCurrency": "USD",
-          "unit": "United States dollar",
-          "value": "10"
+          "value": "20000",
+          "unit": "Dollar"
         },
-        "Start": 13,
-        "End": 24
+        "Start": 237,
+        "End": 244
       },
       {
-        "Text": "c $ 100 and fifty",
+        "Text": "dollar",
         "TypeName": "currency",
         "Resolution": {
-          "isoCurrency": "CAD",
-          "unit": "Canadian dollar",
-          "value": "100.5"
+          "value": null,
+          "unit": "Dollar"
         },
-        "Start": 33,
-        "End": 49
+        "Start": 292,
+        "End": 297
       }
     ]
   }

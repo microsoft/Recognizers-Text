@@ -475,7 +475,8 @@ class BaseMergedUnitExtractor(Extractor):
 
             # Separated by connector
             match = self.config.compound_unit_connector_regex.match(middle_str)
-            splitted_match = match.string.split(" ")
+            if match is not None:
+                splitted_match = match.string.split(" ")
             if match and match.pos == 0 and len(splitted_match[0]) == len(middle_str):
                 groups[idx + 1] = groups[idx]
             else:
@@ -541,8 +542,8 @@ class BaseMergedUnitExtractor(Extractor):
             middle_begin = ers[j - 1].start + ers[j - 1].length
             middle_end = num_ers[i].start
 
-            middle_str = source[middle_begin:middle_end -
-                                middle_begin].strip().lower()
+            middle_str = source[middle_begin: middle_begin + (middle_end -
+                                middle_begin)].strip().lower()
 
             # separated by whitespace
             if not middle_str:
