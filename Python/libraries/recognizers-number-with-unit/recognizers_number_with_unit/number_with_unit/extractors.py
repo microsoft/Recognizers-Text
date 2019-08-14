@@ -543,7 +543,7 @@ class BaseMergedUnitExtractor(Extractor):
             middle_end = num_ers[i].start
 
             middle_str = source[middle_begin: middle_begin + (middle_end -
-                                middle_begin)].strip().lower()
+                                                              middle_begin)].strip().lower()
 
             # separated by whitespace
             if not middle_str:
