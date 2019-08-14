@@ -2526,6 +2526,7 @@
   },
   {
     "Input": "$20",
+    "NotSupported": "javascript, python, java",
     "Results": []
   }
 ]
