@@ -17,6 +17,7 @@ class BasePhoneNumbers:
     WordBoundariesRegex = f'\\b'
     NonWordBoundariesRegex = f'\\B'
     EndWordBoundariesRegex = f'\\b'
+    PreCheckPhoneNumberRegex = f'(\\d{{1,4}}.){{2,4}}\\s?\\d{{2,3}}'
 
     def GeneralPhoneNumberRegex(WordBoundariesRegex, EndWordBoundariesRegex):
         return f'({WordBoundariesRegex}(((\\d[\\s]?){{4,12}}))(-?[\\d\\s?]{{3}}\\d)(?!-){EndWordBoundariesRegex})|(\\(\\d{{5}}\\)\\s?\\d{{5,6}})|\\+\\d{{2}}\\(\\d\\)\\d{{10}}'

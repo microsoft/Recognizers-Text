@@ -14,6 +14,7 @@ export namespace BasePhoneNumbers {
     export const WordBoundariesRegex = `\\b`;
     export const NonWordBoundariesRegex = `\\B`;
     export const EndWordBoundariesRegex = `\\b`;
+    export const PreCheckPhoneNumberRegex = `(\\d{1,4}.){2,4}\\s?\\d{2,3}`;
     export const GeneralPhoneNumberRegex = (WordBoundariesRegex: string, EndWordBoundariesRegex: string) => { return `(${WordBoundariesRegex}(((\\d[\\s]?){4,12}))(-?[\\d\\s?]{3}\\d)(?!-)${EndWordBoundariesRegex})|(\\(\\d{5}\\)\\s?\\d{5,6})|\\+\\d{2}\\(\\d\\)\\d{10}`; }
     export const BRPhoneNumberRegex = (WordBoundariesRegex: string, NonWordBoundariesRegex: string, EndWordBoundariesRegex: string) => { return `((\\(\\s?(\\+\\s?|00)55\\s?\\)\\s?)|(((?<!\\d)\\+\\s?|${WordBoundariesRegex}00)55\\s?)|${WordBoundariesRegex})?(((${NonWordBoundariesRegex}\\(\\s?))\\d{2,3}(\\s?\\))|(${WordBoundariesRegex}\\d{2,3}))\\s?\\d{4,5}-?\\d{3,5}(?!-)${EndWordBoundariesRegex}`; }
     export const UKPhoneNumberRegex = (WordBoundariesRegex: string, NonWordBoundariesRegex: string, EndWordBoundariesRegex: string) => { return `(((${WordBoundariesRegex}(00)|${NonWordBoundariesRegex}\\+)\\s?)?(${WordBoundariesRegex}\\d{2}\\s?)?((\\s?\\(0\\)[-\\s]?|${WordBoundariesRegex}|(?<=(\\b^#)\\d{2}))\\d{2,5}|\\(0\\d{3,4}\\))[/-]?\\s?(\\d{5,8}|\\d{3,4}[-\\s]?\\d{3,4})(?!-)${EndWordBoundariesRegex})`; }

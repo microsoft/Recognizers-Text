@@ -125,8 +125,11 @@ class BasePhoneNumberExtractor(SequenceExtractor):
         return Constants.SYS_PHONE_NUMBER
 
     def extract(self, source: str):
-        extract_results = super().extract(source)
         ret = []
+        pre_check_phone_number_regex = re.compile(BasePhoneNumbers.PreCheckPhoneNumberRegex)
+        if (pre_check_phone_number_regex.search(source) is None):
+            return ret
+        extract_results = super().extract(source)
         format_indicator_regex = re.compile(
             BasePhoneNumbers.FormatIndicatorRegex, re.IGNORECASE | re.DOTALL)
         for er in extract_results:

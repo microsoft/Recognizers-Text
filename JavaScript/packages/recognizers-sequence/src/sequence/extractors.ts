@@ -107,8 +107,11 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
             .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.SpecialPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex)), Constants.PHONE_NUMBER_REGEX_SPECIAL);
     }
     extract(source: string): ExtractResult[] {
-        let ers = super.extract(source);
         let ret = new Array<ExtractResult>();
+        if (!source.match(BasePhoneNumbers.PreCheckPhoneNumberRegex)) {
+            return ret;
+        }
+        let ers = super.extract(source);
         let formatIndicatorRegex = new RegExp(BasePhoneNumbers.FormatIndicatorRegex, "ig");
         let digitRegex = new RegExp("[0-9]");
         for (let er of ers) {

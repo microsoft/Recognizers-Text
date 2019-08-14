@@ -11,6 +11,8 @@ namespace Microsoft.Recognizers.Text.Sequence
     {
         private static readonly Regex InternationDialingPrefixRegex = new Regex(BasePhoneNumbers.InternationDialingPrefixRegex);
 
+        private static readonly Regex PreCheckPhoneNumberRegex = new Regex(BasePhoneNumbers.PreCheckPhoneNumberRegex, RegexOptions.Compiled);
+
         private PhoneNumberConfiguration config;
 
         public BasePhoneNumberExtractor(PhoneNumberConfiguration config)
@@ -76,6 +78,11 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public override List<ExtractResult> Extract(string text)
         {
+            if (!PreCheckPhoneNumberRegex.IsMatch(text))
+            {
+                return new List<ExtractResult>();
+            }
+
             var ers = base.Extract(text);
 
             foreach (var er in ers)
