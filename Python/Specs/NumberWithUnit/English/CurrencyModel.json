@@ -1436,6 +1436,7 @@
   },
   {
     "Input": "dollar : 143.80 yen , up 0 . 95 ; 1 . 8500 marks , up 0 . 0085 .",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "dollar",
@@ -1462,6 +1463,7 @@
   },
   {
     "Input": "it only cost 3 dollars 50 cents.",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 dollars 50 cents",
@@ -1477,6 +1479,7 @@
   },
   {
     "Input": "it only cost thirteen dollars and forty-five cents",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "thirteen dollars and forty-five cents",
@@ -1492,6 +1495,7 @@
   },
   {
     "Input": "it only cost thirteen dollars forty-five cents",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "thirteen dollars forty-five cents",
@@ -1507,6 +1511,7 @@
   },
   {
     "Input": "it only cost thirteen dollars forty five",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "thirteen dollars forty five",
@@ -1522,6 +1527,7 @@
   },
   {
     "Input": "It costs one dollar and one and one point of your credit points.",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "one dollar and one",
@@ -1565,6 +1571,7 @@
   },
   {
     "Input": "It costs you 10 us dollar and me c $ 100 and fifty.",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "10 us dollar",
@@ -1592,7 +1599,7 @@
   },
   {
     "Input": "It may need one kuai and five mao five.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "one kuai and five mao five",
@@ -1609,6 +1616,7 @@
   },
   {
     "Input": "It costs one dollar and two and three points of your credit points.",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "one dollar and two",
@@ -1624,6 +1632,7 @@
   },
   {
     "Input": "Hey, the cost is $4.25 and 32 is the quantity!",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "$4.25",
