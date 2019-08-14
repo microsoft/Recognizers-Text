@@ -158,7 +158,7 @@ class NumberWithUnitExtractor(Extractor):
         if hasattr(self, 'suffix_matcher'):
             suffix_matcher_len = len(suffix_match)
 
-        if len(prefix_match) > 0 or len(suffix_match) > 0:
+        if prefix_match_len > 0 or suffix_matcher_len > 0:
 
             numbers: List[ExtractResult] = self.config.unit_num_extractor.extract(
                 source)
@@ -464,8 +464,8 @@ class BaseMergedUnitExtractor(Extractor):
             middle_begin = ers[idx].start + ers[idx].length
             middle_end = ers[idx + 1].start
 
-            middle_str = source[middle_begin: middle_begin+(middle_end -
-                                                            middle_begin)].strip().lower()
+            middle_str = source[middle_begin: middle_begin +(middle_end -
+                                middle_begin)].strip().lower()
 
             # Separated by whitespace
             if not middle_str:
