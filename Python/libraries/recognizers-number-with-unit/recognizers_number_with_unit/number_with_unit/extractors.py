@@ -551,6 +551,14 @@ class BaseMergedUnitExtractor(Extractor):
                 i = i + 1
                 continue
 
+            match = self.config.compound_unit_connector_regex.match(middle_str)
+            if match is not None:
+                splitted_match = match.string.split(" ")
+            if match and match.pos == 0 and len(splitted_match[0]) == len(middle_str):
+                unit_numbers.append(num_ers[i])
+                i = i + 1
+                continue
+
             i = i + 1
 
         for extract_result in unit_numbers:

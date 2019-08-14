@@ -1,26 +1,16 @@
 [
- {
-    "Input": "the hart - scott filing is then reviewed and any antitrust concerns usually met . typically , hart - scott is used now to give managers of target firms early news of a bid and a chance to use regulatory review as a delaying tactic . the $ 20,000 tax would be a small cost in a multibillion - dollar deal , but a serious drag on thousands of small , friendly deals .",
+  {
+    "Input": "It costs one dollar and one and one point of your credit points.",
     "Results": [
       {
-        "Text": "$ 20,000",
+        "Text": "one dollar and one",
         "TypeName": "currency",
         "Resolution": {
-          "value": "20000",
-          "unit": "Dollar"
+          "unit": "Dollar",
+          "value": "1.01"
         },
-        "Start": 237,
-        "End": 244
-      },
-      {
-        "Text": "dollar",
-        "TypeName": "currency",
-        "Resolution": {
-          "value": null,
-          "unit": "Dollar"
-        },
-        "Start": 292,
-        "End": 297
+        "Start": 9,
+        "End": 26
       }
     ]
   }
