@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Definitions.Utilities;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.French;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.French
@@ -23,7 +24,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
         protected FrenchNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
-            this.UnitNumExtractor = NumberExtractor.GetInstance();
+            this.UnitNumExtractor = NumberExtractor.GetInstance(NumberMode.Unit);
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;

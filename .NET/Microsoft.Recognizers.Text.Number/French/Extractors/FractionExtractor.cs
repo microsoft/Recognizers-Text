@@ -12,14 +12,14 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly ConcurrentDictionary<(NumberOptions, string), FractionExtractor> Instances =
-            new ConcurrentDictionary<(NumberOptions, string), FractionExtractor>();
+        private static readonly ConcurrentDictionary<(NumberMode, NumberOptions, string), FractionExtractor> Instances =
+            new ConcurrentDictionary<(NumberMode, NumberOptions, string), FractionExtractor>();
 
-        private FractionExtractor(NumberOptions options)
+        private FractionExtractor(NumberMode mode, NumberOptions options)
         {
             Options = options;
 
-            this.Regexes = new Dictionary<Regex, TypeTag>
+            var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
                     new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexFlags),
@@ -37,11 +37,16 @@ namespace Microsoft.Recognizers.Text.Number.French
                     new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.FRENCH)
                 },
-                {
+            };
+
+            if (mode != NumberMode.Unit)
+            {
+                regexes.Add(
                     new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.FRENCH)
-                },
-            }.ToImmutableDictionary();
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.FRENCH));
+            }
+
+            Regexes = regexes.ToImmutableDictionary();
         }
 
         internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
@@ -50,12 +55,12 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION; // "Fraction";
 
-        public static FractionExtractor GetInstance(NumberOptions options = NumberOptions.None, string placeholder = "")
+        public static FractionExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None, string placeholder = "")
         {
-            var cacheKey = (options, placeholder);
+            var cacheKey = (mode, options, placeholder);
             if (!Instances.ContainsKey(cacheKey))
             {
-                var instance = new FractionExtractor(options);
+                var instance = new FractionExtractor(mode, options);
                 Instances.TryAdd(cacheKey, instance);
             }
 
