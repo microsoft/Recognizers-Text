@@ -51,6 +51,9 @@ class NumberWithUnitParser(Parser):
         number_result = None
         if source.data and isinstance(source.data, ExtractResult):
             number_result = source.data
+        elif source.type == Constants.SYS_NUM:
+            ret.value = self.config.internal_number_parser.parse(source).value
+            return ret
         else:  # if there is no unitResult, means there is just unit
             number_result = ExtractResult()
             number_result.start = -1
@@ -145,12 +148,15 @@ class BaseCurrencyParser(Parser):
         fraction_unit_string = ''
 
         idx = 0
+
         while idx < len(compound_unit):
             extract_result = compound_unit[idx]
             parse_result = self.number_with_unit_parser.parse(extract_result)
             parse_result_value = parse_result.value
-            unit_value = parse_result_value.unit if parse_result_value else None
-
+            if hasattr(parse_result_value, 'unit'):
+                unit_value = parse_result_value.unit if parse_result_value else None
+            else:
+                unit_value = None
             # Process a new group
             if count == 0:
                 if not extract_result.type == Constants.SYS_UNIT_CURRENCY:
@@ -186,7 +192,7 @@ class BaseCurrencyParser(Parser):
                 if extract_result.type == Constants.SYS_NUM:
                     number_value = number_value + \
                         float(parse_result.value) * (1 / 100)
-                    result.resolution_str = result.resolution_str + ' ' + parse_result.resolution_str
+                    result.resolution_str = result.resolution_str + ' ' + str(parse_result.resolution_str or '')
                     result.length = parse_result.start + parse_result.length - result.start
                     count = count + 1
                     idx = idx + 1
@@ -202,7 +208,7 @@ class BaseCurrencyParser(Parser):
                     number_value = number_value + (
                         float(parse_result_value.number) * (1 / fraction_num_value) if parse_result_value else 0)
                     result.resolution_str = result.resolution_str + ' ' + parse_result.resolution_str
-                    result.length = parse_result.start + parse_result.length - result.length
+                    result.length = parse_result.start + parse_result.length - result.start
                 else:
                     if result:
                         if not main_unit_iso_code or main_unit_iso_code.startswith(Constants.FAKE_ISO_CODE_PREFIX):
@@ -234,6 +240,7 @@ class BaseCurrencyParser(Parser):
                             compound_result.start)
 
         ret = ParseResult(compound_result)
+        # just one value...
         ret.value = results
         return ret
 

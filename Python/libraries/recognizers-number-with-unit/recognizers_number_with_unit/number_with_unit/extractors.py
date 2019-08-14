@@ -145,7 +145,7 @@ class NumberWithUnitExtractor(Extractor):
 
         mapping_prefix: Dict[float, PrefixUnitResult] = dict()
         matched: List[bool] = [False] * len(source)
-        result: List[ExtractResult] = list()
+        result = []
         source_len = len(source)
         prefix_matched = False
 
@@ -158,7 +158,7 @@ class NumberWithUnitExtractor(Extractor):
         if hasattr(self, 'suffix_matcher'):
             suffix_matcher_len = len(suffix_match)
 
-        if prefix_match_len > 0 or suffix_matcher_len > 0:
+        if len(prefix_match) > 0 or len(suffix_match) > 0:
 
             numbers: List[ExtractResult] = self.config.unit_num_extractor.extract(
                 source)
@@ -192,16 +192,15 @@ class NumberWithUnitExtractor(Extractor):
                         if m.length > 0 and m.end > start:
                             break
 
-                        if m.length > 0 and source[m.start: m.start + (last_index - m.start)].strip() == m.text():
+                        if m.length > 0 and source[m.start: m.start + (last_index - m.start)].strip() == m.text:
                             best_match = m
                             break
 
                     if best_match is not None:
                         off_set = last_index - best_match.start
                         unit_str = source[best_match.start:best_match.start + off_set]
-                        mapping_prefix.__setitem__(number.start.value, PrefixUnitResult(off_set=off_set, unit=unit_str))
-
-                prefix_unit: PrefixUnitResult = mapping_prefix.get(start, None)
+                        self.add_element(mapping_prefix, number.start, (PrefixUnitResult(off_set, unit_str)))
+                prefix_unit = mapping_prefix.get(start, None)
                 if max_find_suff > 0:
 
                     max_len = 0
@@ -220,7 +219,7 @@ class NumberWithUnitExtractor(Extractor):
 
                     if max_len != 0:
                         substr = source[start: start + length + max_len]
-                        er = ExtractResult
+                        er = ExtractResult()
 
                         er.start = start
                         er.length = length + max_len
@@ -229,9 +228,9 @@ class NumberWithUnitExtractor(Extractor):
 
                         if prefix_unit is not None:
                             prefix_matched = True
-                            er.start -= prefix_unit.offset
-                            er.length += prefix_unit.offset
-                            er.text = prefix_unit.unit + er.text
+                            er.start -= prefix_unit[0].offset
+                            er.length += prefix_unit[0].offset
+                            er.text = prefix_unit[0].unit + er.text
 
                         # Relative position will be used in Parser
                         number.start = start - er.start
@@ -253,18 +252,18 @@ class NumberWithUnitExtractor(Extractor):
                             continue
 
                         result.append(er)
+                if 'prefix_unit' in locals():
+                    if prefix_unit is not None and not prefix_matched:
+                        er = ExtractResult()
+                        er.start = number.start - prefix_unit[0].offset
+                        er.length = number.length + prefix_unit[0].offset
+                        er.text = prefix_unit[0].unit + number.text
+                        er.type = self.config.extract_type
 
-            if prefix_unit is not None and not prefix_matched:
-                er: ExtractResult
-                er.start = number.start - prefix_unit.offset
-                er.length = number.length + prefix_unit.offset
-                er.text = prefix_unit.unit + number.text
-                er.type = self.config.extract_type
-
-                # Relative position will be used in Parser
-                number.start = start - er.start
-                er.data = number
-                result.append(er)
+                        # Relative position will be used in Parser
+                        number.start = start - er.start
+                        er.data = number
+                        result.append(er)
 
         # Extract Separate unit
         if self.separate_regex:
@@ -288,8 +287,12 @@ class NumberWithUnitExtractor(Extractor):
         result = deepcopy(num_depend_source)
         match_result: List[bool] = [False] * len(source)
         for ex_result in num_depend_source:
-            for i in range(ex_result.start, ex_result.data.end + 1):
-                match_result[i] = True
+            start = ex_result.start
+            i = 0
+            while i < ex_result.length:
+                match_result[start + i] = True
+                i += 1
+
         match_collection = list(
             filter(lambda x: x.group(), regex.finditer(self.separate_regex, source)))
         for match in match_collection:
@@ -314,8 +317,8 @@ class NumberWithUnitExtractor(Extractor):
                 to_add.length = len(match.group())
                 to_add.text = match.group()
                 to_add.type = self.config.extract_type
-                result.append(to_add)
-        return result
+                num_depend_source.append(to_add)
+        #return result
 
     def _build_regex_from_set(self, definitions: List[str], ignore_case: bool = False) -> Set[Pattern]:
         return set(map(lambda x: self.__build_regex_from_str(x, ignore_case), definitions))
@@ -408,6 +411,12 @@ class NumberWithUnitExtractor(Extractor):
             # print list
         return unique_list
 
+    @staticmethod
+    def add_element(dict, key, value):
+        if key not in dict:
+            dict[key] = []
+        dict[key].append(value)
+
     def _filter_ambiguity(self, ers: List[ExtractResult], text: str,) -> List[ExtractResult]:
 
         if hasattr(self, 'config.ambiguity_filters_dict'):
@@ -447,24 +456,27 @@ class BaseMergedUnitExtractor(Extractor):
                 idx = idx + 1
                 continue
 
-            if isinstance(ers[idx].data, ExtractResult):
+            if isinstance(ers[idx].data, ExtractResult) and not str(ers[idx].data.data).startswith("Integer"):
                 groups[idx + 1] = groups[idx] + 1
                 idx = idx + 1
                 continue
 
             middle_begin = ers[idx].start + ers[idx].length
-            middle_end = ers[idx].start
+            middle_end = ers[idx + 1].start
 
-            middle_str = source[middle_begin:middle_end -
-                                middle_begin].strip().lower()
+            middle_str = source[middle_begin: middle_begin+(middle_end -
+                                middle_begin)].strip().lower()
 
             # Separated by whitespace
             if not middle_str:
                 groups[idx + 1] = groups[idx]
+                idx = idx + 1
+                continue
 
             # Separated by connector
             match = self.config.compound_unit_connector_regex.match(middle_str)
-            if match:
+            splitted_match = match.string.split(" ")
+            if match and match.pos == 0 and len(splitted_match[0]) == len(middle_str):
                 groups[idx + 1] = groups[idx]
             else:
                 groups[idx + 1] = groups[idx] + 1
@@ -493,7 +505,7 @@ class BaseMergedUnitExtractor(Extractor):
                 period_end = ers[idx + 1].start + ers[idx + 1].length
 
                 result[group].length = period_end - period_begin
-                result[group].text = source[period_begin:period_end - period_begin]
+                result[group].text = source[period_begin:period_begin + (period_end - period_begin)]
                 result[group].type = Constants.SYS_UNIT_CURRENCY
                 if isinstance(result[group].data, list):
                     result[group].data.append(ers[idx + 1])

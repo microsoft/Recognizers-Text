@@ -1,0 +1,1766 @@
+[
+  {
+    "Input": "montgomery county , md . - - $ 75 million of general obligation , series b , consolidated public improvement bonds of 1989 , through a manufacturers hanover trust co . group .",
+    "Results": [
+      {
+        "Text": "$ 75 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "75000000",
+          "unit": "Dollar"
+        },
+        "Start": 29,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "finnish conglomerate nokia oy ab said it reached an agreement to buy dutch cable company nkf kabel b . v . for 420 million finnish markka .",
+    "Results": [
+      {
+        "Text": "420 million finnish markka",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "420000000",
+          "unit": "Finnish markka"
+        },
+        "Start": 111,
+        "End": 136
+      }
+    ]
+  },
+  {
+    "Input": "national paid siegel and shuster $94,000 to drop all claims .",
+    "Results": [
+      {
+        "Text": "$94,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "94000",
+          "unit": "Dollar"
+        },
+        "Start": 33,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "general dynamics services co . , a unit of general dynamics corp . , won a $48.2 million army contract to establish maintenance facilities for tracked vehicles in pakistan .",
+    "Results": [
+      {
+        "Text": "$48.2 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "48200000",
+          "unit": "Dollar"
+        },
+        "Start": 75,
+        "End": 87
+      }
+    ]
+  },
+  {
+    "Input": "the price of the second simulator ranges between c $ 16.4 million",
+    "Results": [
+      {
+        "Text": "c $ 16.4 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "16400000",
+          "unit": "Canadian dollar",
+          "isoCurrency": "CAD"
+        },
+        "Start": 49,
+        "End": 64
+      }
+    ]
+  },
+  {
+    "Input": "golar gas holding co . , a subsidiary of gotaas - larsen shipping corp . , offering of $ 280 million first preferred ship mortgage notes , via merrill lynch capital markets .",
+    "Results": [
+      {
+        "Text": "$ 280 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "280000000",
+          "unit": "Dollar"
+        },
+        "Start": 87,
+        "End": 99
+      }
+    ]
+  },
+  {
+    "Input": "bard / ems had 1988 sales of about $ 14 million , birtcher said .",
+    "Results": [
+      {
+        "Text": "$ 14 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "14000000",
+          "unit": "Dollar"
+        },
+        "Start": 35,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "accord prices start at $ 12,345 .",
+    "Results": [
+      {
+        "Text": "$ 12,345",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "12345",
+          "unit": "Dollar"
+        },
+        "Start": 23,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "` ` batman ' ' alone has racked up more than $ 247 million in box - office receipts to date , making it warner bros . ' largest grossing film ever .",
+    "Results": [
+      {
+        "Text": "$ 247 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "247000000",
+          "unit": "Dollar"
+        },
+        "Start": 45,
+        "End": 57
+      }
+    ]
+  },
+  {
+    "Input": "coyle ' s net worth was estimated at £ 8.10 million in october 2014 .",
+    "Results": [
+      {
+        "Text": "£ 8.10 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "8100000",
+          "unit": "Pound"
+        },
+        "Start": 37,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "net interest income sank 27 % in the quarter to $ 254 million.",
+    "Results": [
+      {
+        "Text": "$ 254 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "254000000",
+          "unit": "Dollar"
+        },
+        "Start": 48,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "a federal appeals court struck down a natural - gas regulation that had prevented pipeline companies from passing to customers part of $ 1 billion in costs from controversial ` ` take - or - pay ' ' contracts .",
+    "Results": [
+      {
+        "Text": "$ 1 billion",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1000000000",
+          "unit": "Dollar"
+        },
+        "Start": 135,
+        "End": 145
+      }
+    ]
+  },
+  {
+    "Input": "the 1988 quarter also included one - time gains totaling about $ 35 million .",
+    "Results": [
+      {
+        "Text": "$ 35 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "35000000",
+          "unit": "Dollar"
+        },
+        "Start": 63,
+        "End": 74
+      }
+    ]
+  },
+  {
+    "Input": "y . j . park and her family scrimped for four years to buy a tiny apartment here , but found that the closer they got to saving the $ 40,000 they originally needed , the more the price rose .",
+    "Results": [
+      {
+        "Text": "$ 40,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "40000",
+          "unit": "Dollar"
+        },
+        "Start": 132,
+        "End": 139
+      }
+    ]
+  },
+  {
+    "Input": "e . robert wallach was sentenced by a u . s . judge in new york to six years in prison and fined $ 250,000 for his racketeering conviction in the wedtech scandal .",
+    "Results": [
+      {
+        "Text": "$ 250,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "250000",
+          "unit": "Dollar"
+        },
+        "Start": 97,
+        "End": 105
+      }
+    ]
+  },
+  {
+    "Input": "an article in the middle east economic survey ( mees ) published today wednesday reveals that iraq has asked its clients to pay 50 cents more per barrel of oil over the official oil price as of december 1 into an account not under united nations supervision .",
+    "Results": [
+      {
+        "Text": "50 cents",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "50",
+          "unit": "Cent"
+        },
+        "Start": 128,
+        "End": 135
+      }
+    ]
+  },
+  {
+    "Input": "general motors corp . ' s chevrolet division , reacting to slow sales , said it will offer $ 800 rebates on its 1990 beretta , the two - door version of its core compact - car line .",
+    "Results": [
+      {
+        "Text": "$ 800",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "800",
+          "unit": "Dollar"
+        },
+        "Start": 91,
+        "End": 95
+      }
+    ]
+  },
+  {
+    "Input": "( storer also took $ 125 million of junior sci tv bonds as partial payment for the tv assets . )",
+    "Results": [
+      {
+        "Text": "$ 125 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125000000",
+          "unit": "Dollar"
+        },
+        "Start": 19,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "in national over - the - counter trading friday , scimed shares tumbled $ 2.75 .",
+    "Results": [
+      {
+        "Text": "$ 2.75",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2.75",
+          "unit": "Dollar"
+        },
+        "Start": 72,
+        "End": 77
+      }
+    ]
+  },
+  {
+    "Input": "at the same time , investors estimate the restructuring would cut the company ' s annual cash interest bill from about $ 90 million.",
+    "Results": [
+      {
+        "Text": "$ 90 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "90000000",
+          "unit": "Dollar"
+        },
+        "Start": 119,
+        "End": 130
+      }
+    ]
+  },
+  {
+    "Input": "capital expenditure in 1990 will rise slightly , mr . marous said , from an estimated $ 470 million this year .",
+    "Results": [
+      {
+        "Text": "$ 470 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "470000000",
+          "unit": "Dollar"
+        },
+        "Start": 86,
+        "End": 98
+      }
+    ]
+  },
+  {
+    "Input": "shearson ` ` really only has $ 300 million of capital , ' ' says mr . bowman of s & p .",
+    "Results": [
+      {
+        "Text": "$ 300 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "300000000",
+          "unit": "Dollar"
+        },
+        "Start": 29,
+        "End": 41
+      }
+    ]
+  },
+  {
+    "Input": "it may be straightforward - - he wants money for food - - or incredibly convoluted ; his sister is at this very moment near death in hoboken , he has lost his wallet and has only $ 1.22 in change to put toward a bus ticket costing , and wo n ' t you give him the difference ?",
+    "Results": [
+      {
+        "Text": "$ 1.22",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1.22",
+          "unit": "Dollar"
+        },
+        "Start": 179,
+        "End": 184
+      }
+    ]
+  },
+  {
+    "Input": "the december contract rose 1.20 cents ",
+    "Results": [
+      {
+        "Text": "1.20 cents",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1.2",
+          "unit": "Cent"
+        },
+        "Start": 27,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "walter kirchberger , an analyst with painewebber inc . , said that offering holders a higher , $ 70 - a - share price is ` ` a fairly effective method of blocking ' ' the stena - tiphook bid .",
+    "Results": [
+      {
+        "Text": "$ 70",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "70",
+          "unit": "Dollar"
+        },
+        "Start": 95,
+        "End": 98
+      }
+    ]
+  },
+  {
+    "Input": "net sales for this year ' s third quarter were $ 14 million  last year .",
+    "Results": [
+      {
+        "Text": "$ 14 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "14000000",
+          "unit": "Dollar"
+        },
+        "Start": 47,
+        "End": 58
+      }
+    ]
+  },
+  {
+    "Input": "the parent company of first national bank of chicago , with $ 48 billion in assets , said it set aside to absorb losses on loans and investments in financially troubled countries .",
+    "Results": [
+      {
+        "Text": "$ 48 billion",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "48000000000",
+          "unit": "Dollar"
+        },
+        "Start": 60,
+        "End": 71
+      }
+    ]
+  },
+  {
+    "Input": "fluor corp . said it was awarded a $ 300 million contract to provide engineering and construction - management services at a copper mine in irian jaya , indonesia , for a unit of freeport - mcmoran copper co .",
+    "Results": [
+      {
+        "Text": "$ 300 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "300000000",
+          "unit": "Dollar"
+        },
+        "Start": 35,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "the american stock exchange said a seat was sold for down $ 5,000 from the previous sale last friday .",
+    "Results": [
+      {
+        "Text": "$ 5,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "5000",
+          "unit": "Dollar"
+        },
+        "Start": 58,
+        "End": 64
+      }
+    ]
+  },
+  {
+    "Input": "warner communications inc . , which is being acquired by time warner , has filed a $ 1 billion breach - of - contract suit against sony and the two producers .",
+    "Results": [
+      {
+        "Text": "$ 1 billion",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1000000000",
+          "unit": "Dollar"
+        },
+        "Start": 83,
+        "End": 93
+      }
+    ]
+  },
+  {
+    "Input": "in august , asarco , through its lac d ' amiante du quebec subsidiary , sold its remaining one - third interest in an asbestos mining limited partnership in canada for $ 11.7 million .",
+    "Results": [
+      {
+        "Text": "$ 11.7 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "11700000",
+          "unit": "Dollar"
+        },
+        "Start": 168,
+        "End": 181
+      }
+    ]
+  },
+  {
+    "Input": "in 1988 , exports of domestically produced toys and games fell 19 % from 1987 , to hk $ 10.05 billion .",
+    "Results": [
+      {
+        "Text": "hk $ 10.05 billion",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "10050000000",
+          "unit": "Hong Kong dollar",
+          "isoCurrency": "HKD"
+        },
+        "Start": 83,
+        "End": 100
+      }
+    ]
+  },
+  {
+    "Input": "fiscal fourth - quarter sales grew about 18 % to from $ 1.17 billion a year earlier .",
+    "Results": [
+      {
+        "Text": "$ 1.17 billion",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1170000000",
+          "unit": "Dollar"
+        },
+        "Start": 54,
+        "End": 67
+      }
+    ]
+  },
+  {
+    "Input": "during the first hour of trading yesterday , prices fell as much as 1 / 4 point , or down about $ 2.50 for each face amount .",
+    "Results": [
+      {
+        "Text": "$ 2.50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2.5",
+          "unit": "Dollar"
+        },
+        "Start": 96,
+        "End": 101
+      }
+    ]
+  },
+  {
+    "Input": "new jersey , for example , was asked to accept $ 300,000 , but refused .",
+    "Results": [
+      {
+        "Text": "$ 300,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "300000",
+          "unit": "Dollar"
+        },
+        "Start": 47,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "sales rose 6 . 2 % to $ 1.45 billion .",
+    "Results": [
+      {
+        "Text": "$ 1.45 billion",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1450000000",
+          "unit": "Dollar"
+        },
+        "Start": 22,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "as of yesterday afternoon , the redemptions represented less than 15 % of the total cash position of about $ 2 billion of fidelity ' s stock funds .",
+    "Results": [
+      {
+        "Text": "$ 2 billion",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2000000000",
+          "unit": "Dollar"
+        },
+        "Start": 107,
+        "End": 117
+      }
+    ]
+  },
+  {
+    "Input": "onvia . com inc . , down 34 cents",
+    "Results": [
+      {
+        "Text": "34 cents",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "34",
+          "unit": "Cent"
+        },
+        "Start": 25,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "the tw prospectus says that if the acquisition had been completed earlier , pretax earnings ` ` would have been insufficient to cover its fixed charges , including interest on debt securities , ' ' by approximately $ 62.7 million in the first six months of 1989 .",
+    "Results": [
+      {
+        "Text": "$ 62.7 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "62700000",
+          "unit": "Dollar"
+        },
+        "Start": 215,
+        "End": 228
+      }
+    ]
+  },
+  {
+    "Input": "filenet noted that it had cash and marketable securities totaling $ 22.5 million on sept . 30 , and stockholders.",
+    "Results": [
+      {
+        "Text": "$ 22.5 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "22500000",
+          "unit": "Dollar"
+        },
+        "Start": 66,
+        "End": 79
+      }
+    ]
+  },
+  {
+    "Input": "for the 20 most expensive restaurants in the city , the price of a dinner rose from $ 63.45 , also an 8 percent increase .",
+    "Results": [
+      {
+        "Text": "$ 63.45",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "63.45",
+          "unit": "Dollar"
+        },
+        "Start": 84,
+        "End": 90
+      }
+    ]
+  },
+  {
+    "Input": "trans world airlines inc . , offering of $ 150 million senior notes , via drexel burnham .",
+    "Results": [
+      {
+        "Text": "$ 150 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "150000000",
+          "unit": "Dollar"
+        },
+        "Start": 41,
+        "End": 53
+      }
+    ]
+  },
+  {
+    "Input": "the fettuccine with portobello mushrooms costs $ 8.50 .",
+    "Results": [
+      {
+        "Text": "$ 8.50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "8.5",
+          "unit": "Dollar"
+        },
+        "Start": 47,
+        "End": 52
+      }
+    ]
+  },
+  {
+    "Input": "the march delivery ended with an advance of  to 14.27 cents .",
+    "Results": [
+      {
+        "Text": "14.27 cents",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "14.27",
+          "unit": "Cent"
+        },
+        "Start": 48,
+        "End": 58
+      }
+    ]
+  },
+  {
+    "Input": "interest expense in the 1988 third quarter was $ 75.3 million .",
+    "Results": [
+      {
+        "Text": "$ 75.3 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "75300000",
+          "unit": "Dollar"
+        },
+        "Start": 47,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "the $ 2.38 billion dalkon shield claimants trust was established as part of a . h . robins ' bankruptcy - reorganization plan to resolve injury claims arising from use of the shield .",
+    "Results": [
+      {
+        "Text": "$ 2.38 billion",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2380000000",
+          "unit": "Dollar"
+        },
+        "Start": 4,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "the terms of the offer put a value of 528 million francs on the 32 . 99 % shareholding .",
+    "Results": [
+      {
+        "Text": "528 million francs",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "528000000",
+          "unit": "Franc"
+        },
+        "Start": 38,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "russia has accepted a us $ 150 million world bank loan to combat the spread of aids and tuberculosis , ending a negotiating process that lasted four years , world bank officials said friday .",
+    "Results": [
+      {
+        "Text": "us $ 150 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "150000000",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 22,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "the previous bellsouth pact was valued at about $ 98 a share .",
+    "Results": [
+      {
+        "Text": "$ 98",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "98",
+          "unit": "Dollar"
+        },
+        "Start": 48,
+        "End": 51
+      }
+    ]
+  },
+  {
+    "Input": "one dealer said the talk was that the firm sold about $ 500 million of bellwether 30 - year bonds .",
+    "Results": [
+      {
+        "Text": "$ 500 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "500000000",
+          "unit": "Dollar"
+        },
+        "Start": 54,
+        "End": 66
+      }
+    ]
+  },
+  {
+    "Input": "for the third quarter , sears said its total revenue rose 4 . 8 % to $ 13.18 billion a year earlier .",
+    "Results": [
+      {
+        "Text": "$ 13.18 billion",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13180000000",
+          "unit": "Dollar"
+        },
+        "Start": 69,
+        "End": 83
+      }
+    ]
+  },
+  {
+    "Input": "for the nine months , ethyl said net fell 2 % or $ 1.40 a share",
+    "Results": [
+      {
+        "Text": "$ 1.40",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1.4",
+          "unit": "Dollar"
+        },
+        "Start": 49,
+        "End": 54
+      }
+    ]
+  },
+  {
+    "Input": "analysts ' expectations suggest a september current account deficit of 1 . 6 billion ( $ 2.54 billion ) , compared with august ' s 2 . 0 billion deficit .",
+    "Results": [
+      {
+        "Text": "$ 2.54 billion",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2540000000",
+          "unit": "Dollar"
+        },
+        "Start": 87,
+        "End": 100
+      }
+    ]
+  },
+  {
+    "Input": "125 million australian dollars of zero - coupon eurobonds due dec . 12 , 1994 , priced at 50 . 9375 to yield 15 . 06 % less fees via hambros bank ltd .",
+    "Results": [
+      {
+        "Text": "125 million australian dollars",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125000000",
+          "unit": "Australian dollar",
+          "isoCurrency": "AUD"
+        },
+        "Start": 0,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "on friday , the chief cabinet secretary announced that eight cabinet ministers had received five million yen from the industry",
+    "Results": [
+      {
+        "Text": "five million yen",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "5000000",
+          "unit": "Japanese yen",
+          "isoCurrency": "JPY"
+        },
+        "Start": 92,
+        "End": 107
+      }
+    ]
+  },
+  {
+    "Input": " including 450,000 yen by prime minister toshiki kaifu .",
+    "Results": [
+      {
+        "Text": "450,000 yen",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "450000",
+          "unit": "Japanese yen",
+          "isoCurrency": "JPY"
+        },
+        "Start": 11,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "orkem s . a . , a french state - controlled chemical manufacturer , is making a friendly bid of 470 pence a share for the 59 . 2 % of u . k . specialty chemical group coates brothers plc which it does n ' t already own , the two sides said .",
+    "Results": [
+      {
+        "Text": "470 pence",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "470",
+          "unit": "Pence"
+        },
+        "Start": 96,
+        "End": 104
+      }
+    ]
+  },
+  {
+    "Input": "august adjusted spending by wage - earning families was down 0 . 6 % to 309,381 yen from a year earlier .",
+    "Results": [
+      {
+        "Text": "309,381 yen",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "309381",
+          "unit": "Japanese yen",
+          "isoCurrency": "JPY"
+        },
+        "Start": 72,
+        "End": 82
+      }
+    ]
+  },
+  {
+    "Input": "national income realty trust said it will resume dividend payments with a 12-cent-a-share dividend to be paid nov . 6 to shares of record oct . 25 .",
+    "Results": [
+      {
+        "Text": "12-cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "12",
+          "unit": "Cent"
+        },
+        "Start": 74,
+        "End": 80
+      }
+    ]
+  },
+  {
+    "Input": "mr . bowder said the c $ 300 million charge to earnings",
+    "Results": [
+      {
+        "Text": "c $ 300 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "300000000",
+          "unit": "Canadian dollar",
+          "isoCurrency": "CAD"
+        },
+        "Start": 21,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "would amount to about c $ 1.34 a share .",
+    "Results": [
+      {
+        "Text": "c $ 1.34",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1.34",
+          "unit": "Canadian dollar",
+          "isoCurrency": "CAD"
+        },
+        "Start": 22,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "egg prices averaged 64.2 cents a dozen .",
+    "Results": [
+      {
+        "Text": "64.2 cents",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "64.2",
+          "unit": "Cent"
+        },
+        "Start": 20,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "still , it said it expects sales for all of 1989 to be on the order of 20 billion francs , reflecting anticipated billings for two large contracts in the second half of the year .",
+    "Results": [
+      {
+        "Text": "20 billion francs",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "20000000000",
+          "unit": "Franc"
+        },
+        "Start": 71,
+        "End": 87
+      }
+    ]
+  },
+  {
+    "Input": "the transaction called for mr . murdoch ' s news international plc , a unit of australia - based news corp . , to subscribe to a rights issue by zeta valued at 6.65 billion pesetas .",
+    "Results": [
+      {
+        "Text": "6.65 billion pesetas",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "6650000000",
+          "unit": "Peseta"
+        },
+        "Start": 160,
+        "End": 179
+      }
+    ]
+  },
+  {
+    "Input": "fujitsu ltd . said it wants to withdraw its controversial one-yen bid to design a waterworks computer system for the city of hiroshima .",
+    "Results": [
+      {
+        "Text": "one-yen",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1",
+          "unit": "Japanese yen",
+          "isoCurrency": "JPY"
+        },
+        "Start": 58,
+        "End": 64
+      }
+    ]
+  },
+  {
+    "Input": "250 million dutch guilders of 7 3 / 4 % bonds due nov . 15 , 1999 , priced at 101 1 / 4 to yield 7 . 57 % at issue price and 7 . 86 % less full fees , via amro bank .",
+    "Results": [
+      {
+        "Text": "250 million dutch guilders",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "250000000",
+          "unit": "Netherlands guilder"
+        },
+        "Start": 0,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "in addition , the bank has an option to buy a 30 . 84 % stake in bip from societe generale after jan . 1 , 1990 at 1,015 francs a share .",
+    "Results": [
+      {
+        "Text": "1,015 francs",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1015",
+          "unit": "Franc"
+        },
+        "Start": 115,
+        "End": 126
+      }
+    ]
+  },
+  {
+    "Input": "its shares slid in late dealings to close one penny",
+    "Results": [
+      {
+        "Text": "one penny",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1",
+          "unit": "Penny"
+        },
+        "Start": 42,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "per share lower at 197 pence.",
+    "Results": [
+      {
+        "Text": "197 pence",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "197",
+          "unit": "Pence"
+        },
+        "Start": 19,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "its quarterly operating profit improved to 361 million pounds ",
+    "Results": [
+      {
+        "Text": "361 million pounds",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "361000000",
+          "unit": "Pound"
+        },
+        "Start": 43,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "last year , the gross output value of township enterprises of the whole city broke through 100 billion yuan for the first time , ranking first in the entire province .",
+    "Results": [
+      {
+        "Text": "100 billion yuan",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000000000",
+          "unit": "Chinese yuan",
+          "isoCurrency": "CNY"
+        },
+        "Start": 91,
+        "End": 106
+      }
+    ]
+  },
+  {
+    "Input": "rangers got to keep an estimated £ 50 million saved by baxendale - walker ' s advice .",
+    "Results": [
+      {
+        "Text": "£ 50 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "50000000",
+          "unit": "Pound"
+        },
+        "Start": 33,
+        "End": 44
+      }
+    ]
+  },
+  {
+    "Input": "in turn , francis leung pak - to has agreed to sell an 8 % stake in pccw to telefónica for 323 million euros .",
+    "Results": [
+      {
+        "Text": "323 million euros",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "323000000",
+          "unit": "Euro",
+          "isoCurrency": "EUR"
+        },
+        "Start": 91,
+        "End": 107
+      }
+    ]
+  },
+  {
+    "Input": "uefa charged ferguson for bringing the game into disrepute with his comments , and on 1 may that year he was fined 10,000 swiss francs  .",
+    "Results": [
+      {
+        "Text": "10,000 swiss francs",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "10000",
+          "unit": "Swiss franc",
+          "isoCurrency": "CHF"
+        },
+        "Start": 115,
+        "End": 133
+      }
+    ]
+  },
+  {
+    "Input": "the ipl signed up kingfisher airlines as the official umpire partner for the series in a ( approximately £ 15 million ) deal .",
+    "Results": [
+      {
+        "Text": "£ 15 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15000000",
+          "unit": "Pound"
+        },
+        "Start": 105,
+        "End": 116
+      }
+    ]
+  },
+  {
+    "Input": "the revenue of adelaide ' s electronics industry has grown at about 15 % per annum since 1990 , and in 2011 exceeds a $ 4 billion .",
+    "Results": [
+      {
+        "Text": "$ 4 billion",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "4000000000",
+          "unit": "Dollar"
+        },
+        "Start": 118,
+        "End": 128
+      }
+    ]
+  },
+  {
+    "Input": "abel and associates bid $ 4 million for doing the film ' s effects and paramount accepted .",
+    "Results": [
+      {
+        "Text": "$ 4 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "4000000",
+          "unit": "Dollar"
+        },
+        "Start": 24,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "malone sued 20th century - fox for $ 1.6 million for breach of contract ;",
+    "Results": [
+      {
+        "Text": "$ 1.6 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1600000",
+          "unit": "Dollar"
+        },
+        "Start": 35,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "in 2003 , bayern munich loaned € 2 million to dortmund for a couple of months to pay their payroll .",
+    "Results": [
+      {
+        "Text": "€ 2 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2000000",
+          "unit": "Euro",
+          "isoCurrency": "EUR"
+        },
+        "Start": 31,
+        "End": 41
+      }
+    ]
+  },
+  {
+    "Input": "lockheed martin and the united states government intensively lobbied for india ' s us $ 10 billion contract for 126 fighter jets .",
+    "Results": [
+      {
+        "Text": "us $ 10 billion",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "10000000000",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 83,
+        "End": 97
+      }
+    ]
+  },
+  {
+    "Input": "according to research firm npd , the average selling price of all windows portable pcs has fallen from $ 659 in october 2008 to",
+    "Results": [
+      {
+        "Text": "$ 659",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "659",
+          "unit": "Dollar"
+        },
+        "Start": 103,
+        "End": 107
+      }
+    ]
+  },
+  {
+    "Input": "one . tel floated on the australian stock exchange at $ 2 per share in november 1997 .",
+    "Results": [
+      {
+        "Text": "$ 2",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2",
+          "unit": "Dollar"
+        },
+        "Start": 54,
+        "End": 56
+      }
+    ]
+  },
+  {
+    "Input": "the east stand ( worcester avenue ) stand was finished in 1934 and this increased capacity to around 80 , 000 spectators but cost £ 60,000 .",
+    "Results": [
+      {
+        "Text": "£ 60,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "60000",
+          "unit": "Pound"
+        },
+        "Start": 130,
+        "End": 137
+      }
+    ]
+  },
+  {
+    "Input": "his fulham teammate johnny haynes became the first £ 100 player .",
+    "Results": [
+      {
+        "Text": "£ 100",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Pound"
+        },
+        "Start": 51,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "for the nine months , amr ' s net rose 15 % to $ 415.9 million",
+    "Results": [
+      {
+        "Text": "$ 415.9 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "415900000",
+          "unit": "Dollar"
+        },
+        "Start": 47,
+        "End": 61
+      }
+    ]
+  },
+  {
+    "Input": "the airline ' s share price already is far below the 210 pence  level seen after the company announced the rights issue in late september .",
+    "Results": [
+      {
+        "Text": "210 pence",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "210",
+          "unit": "Pence"
+        },
+        "Start": 53,
+        "End": 61
+      }
+    ]
+  },
+  {
+    "Input": "rolling stone noted , ` ` harpercollins acquired the book project for $ 3 million in 2008 .",
+    "Results": [
+      {
+        "Text": "$ 3 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "3000000",
+          "unit": "Dollar"
+        },
+        "Start": 70,
+        "End": 80
+      }
+    ]
+  },
+  {
+    "Input": "their conclusion was a terse pronouncement that $ 48 \" is not adequate . \"",
+    "Results": [
+      {
+        "Text": "$ 48",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "48",
+          "unit": "Dollar"
+        },
+        "Start": 48,
+        "End": 51
+      }
+    ]
+  },
+  {
+    "Input": "2013 , edition of forbes magazine features keith on the cover with the caption ` ` country music ' s $ 500 million man ' ' .",
+    "Results": [
+      {
+        "Text": "$ 500 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "500000000",
+          "unit": "Dollar"
+        },
+        "Start": 101,
+        "End": 113
+      }
+    ]
+  },
+  {
+    "Input": "harry ferguson sued us ford for illegal use of his patents asking for compensation of £ 90 million , settled out of court in 1952 .",
+    "Results": [
+      {
+        "Text": "£ 90 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "90000000",
+          "unit": "Pound"
+        },
+        "Start": 86,
+        "End": 97
+      }
+    ]
+  },
+  {
+    "Input": "aerosmith signed with columbia in mid - 1972 for a reported $ 125,000 and issued their debut album , aerosmith .",
+    "Results": [
+      {
+        "Text": "$ 125,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125000",
+          "unit": "Dollar"
+        },
+        "Start": 60,
+        "End": 68
+      }
+    ]
+  },
+  {
+    "Input": "it was one of coke ' s largest acquisitions since it bought odwalla inc . for $ 186 million in 2001 .",
+    "Results": [
+      {
+        "Text": "$ 186 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "186000000",
+          "unit": "Dollar"
+        },
+        "Start": 78,
+        "End": 90
+      }
+    ]
+  },
+  {
+    "Input": "subsequently , apple and creative reached a settlement , with apple paying $ 100 million to creative , and creative joining the ` ` made for ipod ' ' accessory program .",
+    "Results": [
+      {
+        "Text": "$ 100 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000000",
+          "unit": "Dollar"
+        },
+        "Start": 75,
+        "End": 87
+      }
+    ]
+  },
+  {
+    "Input": "the hart - scott filing is then reviewed and any antitrust concerns usually met . typically , hart - scott is used now to give managers of target firms early news of a bid and a chance to use regulatory review as a delaying tactic . the $ 20,000 tax would be a small cost in a multibillion - dollar deal , but a serious drag on thousands of small , friendly deals .",
+    "Results": [
+      {
+        "Text": "$ 20,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "20000",
+          "unit": "Dollar"
+        },
+        "Start": 237,
+        "End": 244
+      },
+      {
+        "Text": "dollar",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": null,
+          "unit": "Dollar"
+        },
+        "Start": 292,
+        "End": 297
+      }
+    ]
+  },
+  {
+    "Input": "dollar : 143.80 yen , up 0 . 95 ; 1 . 8500 marks , up 0 . 0085 .",
+    "Results": [
+      {
+        "Text": "dollar",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": null,
+          "unit": "Dollar"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "143.80 yen",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "143.8",
+          "unit": "Japanese yen",
+          "isoCurrency": "JPY"
+        },
+        "Start": 9,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "it only cost 3 dollars 50 cents.",
+    "Results": [
+      {
+        "Text": "3 dollars 50 cents",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "3.5",
+          "unit": "Dollar"
+        },
+        "Start": 13,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "it only cost thirteen dollars and forty-five cents",
+    "Results": [
+      {
+        "Text": "thirteen dollars and forty-five cents",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13.45",
+          "unit": "Dollar"
+        },
+        "Start": 13,
+        "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "it only cost thirteen dollars forty-five cents",
+    "Results": [
+      {
+        "Text": "thirteen dollars forty-five cents",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13.45",
+          "unit": "Dollar"
+        },
+        "Start": 13,
+        "End": 45
+      }
+    ]
+  },
+  {
+    "Input": "it only cost thirteen dollars forty five",
+    "Results": [
+      {
+        "Text": "thirteen dollars forty five",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13.45",
+          "unit": "Dollar"
+        },
+        "Start": 13,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "It costs one dollar and one and one point of your credit points.",
+    "Results": [
+      {
+        "Text": "one dollar and one",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "1.01"
+        },
+        "Start": 9,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "It costs you 10 us dollar and me 100 chinese yuan.",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "10 us dollar",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "10"
+        },
+        "Start": 13,
+        "End": 24
+      },
+      {
+        "Text": "100 chinese yuan",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "100"
+        },
+        "Start": 33,
+        "End": 48
+      }
+    ]
+  },
+  {
+    "Input": "It costs you 10 us dollar and me c $ 100 and fifty.",
+    "Results": [
+      {
+        "Text": "10 us dollar",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "10"
+        },
+        "Start": 13,
+        "End": 24
+      },
+      {
+        "Text": "c $ 100 and fifty",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CAD",
+          "unit": "Canadian dollar",
+          "value": "100.5"
+        },
+        "Start": 33,
+        "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "It may need one kuai and five mao five.",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "one kuai and five mao five",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "1.55"
+        },
+        "Start": 12,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "It costs one dollar and two and three points of your credit points.",
+    "Results": [
+      {
+        "Text": "one dollar and two",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "1.02"
+        },
+        "Start": 9,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Hey, the cost is $4.25 and 32 is the quantity!",
+    "Results": [
+      {
+        "Text": "$4.25",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "4.25"
+        },
+        "Start": 17,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "Hey, the cost is 100元!",
+    "Results": [
+      {
+        "Text": "100元",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Chinese yuan",
+          "value": "100",
+          "isoCurrency": "CNY"
+        },
+        "Start": 17,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "The price of this book is 100 ₡",
+    "Results": [
+      {
+        "Text": "100 ₡",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Costa Rican colón",
+          "isoCurrency": "CRC"
+        },
+        "Start": 26,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "I spend 100₾ buying the new bicycle.",
+    "Results": [
+      {
+        "Text": "100₾",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Georgian lari",
+          "isoCurrency": "GEL"
+        },
+        "Start": 8,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "Congratulations! You will win a car and 100,000 ₭ as you won the champion of the competition.",
+    "Results": [
+      {
+        "Text": "100,000 ₭",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000",
+          "unit": "Lao kip",
+          "isoCurrency": "LAK"
+        },
+        "Start": 40,
+        "End": 48
+      }
+    ]
+  },
+  {
+    "Input": "Bob, can you borrow me 100,000 ரூ for emergency and I will pay back with interest next Monday.",
+    "Results": [
+      {
+        "Text": "100,000 ரூ",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000",
+          "unit": "Sri Lankan rupee",
+          "isoCurrency": "LKR"
+        },
+        "Start": 23,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "Do you think sen 100,000 is expensive this new laptop?",
+    "Results": [
+      {
+        "Text": "sen 100,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000",
+          "unit": "Sen"
+        },
+        "Start": 13,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "The first price of the lottory is u.s $ 100,000,000, do you want it?",
+    "Results": [
+      {
+        "Text": "u.s $ 100,000,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000000",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 34,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "Give me 5 dollars",
+    "Results": [
+      {
+        "Text": "5 dollars",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "5",
+          "unit": "Dollar"
+        },
+        "Start": 8,
+        "End": 16
+      }
+    ]
+  }
+]
