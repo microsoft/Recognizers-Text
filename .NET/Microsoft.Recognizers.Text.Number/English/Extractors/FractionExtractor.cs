@@ -38,20 +38,21 @@ namespace Microsoft.Recognizers.Text.Number.English
                 },
             };
 
-            if (mode == NumberMode.Unit)
+            // Not add FractionPrepositionRegex when the mode is Unit to avoid wrong recognize cases like "$1000 over 3"
+            if (mode != NumberMode.Unit)
             {
-            }
-            else if ((Options & NumberOptions.PercentageMode) != 0)
-            {
-                regexes.Add(
-                    new Regex(NumbersDefinitions.FractionPrepositionWithinPercentModeRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH));
-            }
-            else
-            {
-                regexes.Add(
-                    new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH));
+                if ((Options & NumberOptions.PercentageMode) != 0)
+                {
+                    regexes.Add(
+                        new Regex(NumbersDefinitions.FractionPrepositionWithinPercentModeRegex, RegexFlags),
+                        RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH));
+                }
+                else
+                {
+                    regexes.Add(
+                        new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags),
+                        RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH));
+                }
             }
 
             Regexes = regexes.ToImmutableDictionary();

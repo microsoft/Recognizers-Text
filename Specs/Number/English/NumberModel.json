@@ -2498,5 +2498,31 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I want to earn $10000 in 3 years",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10000",
+        "Start": 16,
+        "End": 20,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000"
+        }
+      },
+      {
+        "Text": "3",
+        "Start": 25,
+        "End": 25,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        }
+      }
+    ]
   }
 ]

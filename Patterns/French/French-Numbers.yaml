@@ -112,7 +112,7 @@ FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(et\s+)?)?(un|une)(\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\s+)?demis?)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, SuffixOrdinalRegex ]
 FractionPrepositionRegex: !nestedRegex
-  def: (?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sur\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)
+  def: (?<![¥$€£₩]\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sur\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)
   references: [ AllIntRegex ]
 #Double Regex
 AllPointRegex: !nestedRegex
