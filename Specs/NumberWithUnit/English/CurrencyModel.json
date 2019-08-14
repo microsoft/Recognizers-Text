@@ -1803,5 +1803,20 @@
         }
       }
     ]
+  },
+  {
+    "Input": "$20",
+    "Results": [
+      {
+        "Text": "$20",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "20"
+        }
+      }
+    ]
   }
 ]
