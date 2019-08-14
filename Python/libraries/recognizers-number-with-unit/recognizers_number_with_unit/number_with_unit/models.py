@@ -71,10 +71,17 @@ class AbstractNumberWithUnitModel(Model):
                 'isoCurrency': data.iso_currency
             }
         elif isinstance(data, list):
-            return {
-                'value': data[0].value.number,
-                'unit': data[0].value.unit
-            }
+            if hasattr(data[0].value, 'iso_currency'):
+                return {
+                    'value': data[0].value.number,
+                    'unit': data[0].value.unit,
+                    'isoCurrency': data[0].value.iso_currency
+                }
+            else:
+                return {
+                    'value': data[0].value.number,
+                    'unit': data[0].value.unit
+                }
 
         return None
 
