@@ -49,7 +49,7 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
             builder.AddRange(cardExtract.Regexes);
 
             // Add Fraction
-            var fracExtract = FractionExtractor.GetInstance(Options);
+            var fracExtract = FractionExtractor.GetInstance(mode, Options);
             builder.AddRange(fracExtract.Regexes);
 
             Regexes = builder.ToImmutable();

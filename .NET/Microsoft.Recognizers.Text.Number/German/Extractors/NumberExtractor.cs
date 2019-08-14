@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.Number.German
             builder.AddRange(cardExtract.Regexes);
 
             // Add Fraction
-            var fracExtract = FractionExtractor.GetInstance();
+            var fracExtract = FractionExtractor.GetInstance(mode);
             builder.AddRange(fracExtract.Regexes);
 
             Regexes = builder.ToImmutable();

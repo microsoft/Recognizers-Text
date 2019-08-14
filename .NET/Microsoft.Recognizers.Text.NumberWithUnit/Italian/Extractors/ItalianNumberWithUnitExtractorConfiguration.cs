@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Italian;
 using Microsoft.Recognizers.Definitions.Utilities;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Italian;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Italian
@@ -24,7 +25,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Italian
         protected ItalianNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
-            this.UnitNumExtractor = NumberExtractor.GetInstance();
+            this.UnitNumExtractor = NumberExtractor.GetInstance(NumberMode.Unit);
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;

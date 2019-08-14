@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             builder.AddRange(cardExtract.Regexes);
 
             // Add Fraction
-            var fracExtract = FractionExtractor.GetInstance(Options);
+            var fracExtract = FractionExtractor.GetInstance(mode, Options);
             builder.AddRange(fracExtract.Regexes);
 
             this.Regexes = builder.ToImmutable();
