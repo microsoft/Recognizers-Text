@@ -465,7 +465,7 @@ class BaseMergedUnitExtractor(Extractor):
             middle_end = ers[idx + 1].start
 
             middle_str = source[middle_begin: middle_begin+(middle_end -
-                                middle_begin)].strip().lower()
+                                                            middle_begin)].strip().lower()
 
             # Separated by whitespace
             if not middle_str:
