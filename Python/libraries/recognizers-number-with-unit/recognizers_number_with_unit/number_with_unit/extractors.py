@@ -429,11 +429,9 @@ class NumberWithUnitExtractor(Extractor):
                     if reg_length > 0:
                         matches = reg_len
                         ers = list(filter(lambda x: list(filter(lambda m: m.start <= x.start and m.start +
-                                                                          len(m) >= x.start, matches)), ers))
+                                                                len(m) >= x.start, matches)), ers))
                 except Exception:
                     pass
-
-
 
         return ers
 
