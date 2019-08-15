@@ -241,10 +241,13 @@ class NumberWithUnitExtractor(Extractor):
 
                         if er.type is Constants.SYS_UNIT_DIMENSION:
                             if non_unit_match is None:
-                                non_unit_match = self.config.non_unit_regex.finditer(source)
-
+                                non_unit_match = list(self.config.non_unit_regex.finditer(source))
+# time.index
                             for time in non_unit_match:
-                                if er.start >= time.index and er.start + er.length <= time.index + time.length:
+                                trimmed_source = source.lower()
+                                index = trimmed_source.index(time.group())
+                                if er.start >= time.start() and er.start + er.length <= \
+                                        time.start() + len(time.group()):
                                     is_not_unit = True
                                     break
 
@@ -268,7 +271,10 @@ class NumberWithUnitExtractor(Extractor):
         # Extract Separate unit
         if self.separate_regex:
             if non_unit_match is None:
-                non_unit_match = self.config.non_unit_regex.match(source)
+                try:
+                    non_unit_match = list(self.config.non_unit_regex.match(source))
+                except:
+                    non_unit_match = []
 
             self._extract_separate_units(source, result, non_unit_match)
 
@@ -424,12 +430,19 @@ class NumberWithUnitExtractor(Extractor):
                 regexvar_value = self.config.ambiguity_filters_dict[regex_var]
 
                 try:
-                    reg_len = list(map(lambda x: x.group(), regex.finditer(regexvar_value, text)))
+                    reg_len = list(filter(lambda x: x.group(), regex.finditer(regexvar_value, text)))
+
                     reg_length = len(reg_len)
                     if reg_length > 0:
+
                         matches = reg_len
-                        ers = list(filter(lambda x: list(filter(lambda m: m.start <= x.start and m.start +
-                                                                len(m) >= x.start, matches)), ers))
+                        new_ers = list(filter(lambda x: list(filter(lambda m: m.start() < x.start + x.length and m.start() +
+                                                                len(m.group()) > x.start, matches)), ers))
+                        if len(new_ers) > 0:
+                            for item in ers:
+                                for i in new_ers:
+                                    if item is i:
+                                        ers.remove(item)
                 except Exception:
                     pass
 
