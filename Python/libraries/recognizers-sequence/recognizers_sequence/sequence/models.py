@@ -124,6 +124,7 @@ class GUIDModel(AbstractSequenceModel):
             'score': '%g' % data.value
         }
 
+
 class HashtagModel(AbstractSequenceModel):
 
     @property
