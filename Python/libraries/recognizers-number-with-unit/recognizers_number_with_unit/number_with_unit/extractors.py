@@ -419,14 +419,21 @@ class NumberWithUnitExtractor(Extractor):
 
     def _filter_ambiguity(self, ers: List[ExtractResult], text: str,) -> List[ExtractResult]:
 
-        if hasattr(self, 'config.ambiguity_filters_dict'):
-            if self.config.ambiguity_filters_dict is not None:
-                for regex_var in self.config.ambiguity_filters_dict:
-                    reg_len = len(regex.finditer(regex_var, text))
-                    if reg_len > 0:
-                        matches = self.config.ambiguity_filters_dict[regex_var]
+        if self.config.ambiguity_filters_dict is not None:
+            for regex_var in self.config.ambiguity_filters_dict:
+                regexvar_value = self.config.ambiguity_filters_dict[regex_var]
+
+                try:
+                    reg_len = list(map(lambda x: x.group(), regex.finditer(regexvar_value, text)))
+                    reg_length = len(reg_len)
+                    if reg_length > 0:
+                        matches = reg_len
                         ers = list(filter(lambda x: list(filter(lambda m: m.start <= x.start and m.start +
-                                                                m.length >= x.start, matches)), ers))
+                                                                          len(m) >= x.start, matches)), ers))
+                except Exception:
+                    pass
+
+
 
         return ers
 

@@ -43,7 +43,7 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
 
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        raise NotImplementedError
+        return None
 
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
