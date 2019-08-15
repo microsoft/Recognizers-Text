@@ -95,7 +95,7 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
 
     @property
     def week_day_of_month_regex(self) -> any:
-        return None
+        return self._week_day_of_month_regex
 
     @property
     def for_the_regex(self) -> any:
@@ -188,6 +188,8 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
             ChineseDateTime.DateNextRegex)
         self._last_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.DateLastRegex)
+        self._week_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.WeekDayOfMonthRegex)
         self._week_day_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.WeekDayRegex)
         self._integer_extractor = ChineseIntegerExtractor()

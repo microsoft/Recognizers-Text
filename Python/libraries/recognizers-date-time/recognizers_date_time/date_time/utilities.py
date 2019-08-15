@@ -390,7 +390,11 @@ class AgoLaterUtil:
                                           utility_configuration: DateTimeUtilityConfiguration,
                                           mode: AgoLaterMode) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
-        duration_extract = duration_extractor.extract(source, reference)
+
+        if duration_extractor:
+            duration_extract = duration_extractor.extract(source, reference)
+        else:
+            return result
 
         if not duration_extract:
             return result
