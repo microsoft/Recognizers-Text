@@ -437,7 +437,7 @@ class NumberWithUnitExtractor(Extractor):
 
                         matches = reg_len
                         new_ers = list(filter(lambda x: list(filter(lambda m: m.start() < x.start + x.length and m.start() +
-                                                                len(m.group()) > x.start, matches)), ers))
+                                                                    len(m.group()) > x.start, matches)), ers))
                         if len(new_ers) > 0:
                             for item in ers:
                                 for i in new_ers:
