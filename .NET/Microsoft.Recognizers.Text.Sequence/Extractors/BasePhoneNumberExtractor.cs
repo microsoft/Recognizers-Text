@@ -90,7 +90,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                 if (er.Start + er.Length < text.Length)
                 {
                     var ch = text[(int)(er.Start + er.Length)];
-                    if (this.config.BoundaryEndMarkers.Contains(ch))
+                    if (BasePhoneNumbers.ForbiddenSuffixMarkers.Contains(ch))
                     {
                         ers.Remove(er);
                         continue;
@@ -100,7 +100,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                 if (er.Start != 0)
                 {
                     var ch = text[(int)(er.Start - 1)];
-                    if (this.config.BoundaryStartMarkers.Contains(ch))
+                    if (BasePhoneNumbers.BoundaryMarkers.Contains(ch))
                     {
                         if (SpecialBoundaryMarkers.Contains(ch) &&
                             CheckFormattedPhoneNumber(er.Text) &&
@@ -124,11 +124,16 @@ namespace Microsoft.Recognizers.Text.Sequence
                             }
                         }
 
+                        ers.Remove(er);
+                    }
+
+                    if (this.config.ForbiddenPrefixMarkers.Contains(ch))
+                    {
                         // Handle "tel:123456".
-                        if (this.config.ColonMarkers.Contains(ch))
+                        if (BasePhoneNumbers.ColonMarkers.Contains(ch))
                         {
                             var front = text.Substring(0, (int)(er.Start - 1));
-                            if (this.config.ColonBeginRegex.IsMatch(front))
+                            if (this.config.ColonPrefixCheckRegex.IsMatch(front))
                             {
                                 continue;
                             }

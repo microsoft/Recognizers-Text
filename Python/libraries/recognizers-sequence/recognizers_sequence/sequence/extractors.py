@@ -135,32 +135,38 @@ class BasePhoneNumberExtractor(SequenceExtractor):
         for er in extract_results:
             if er.start + er.length < len(source):
                 ch = source[er.start + er.length]
-                if ch in self.config.boundary_end_markers:
+                if ch in BasePhoneNumbers.ForbiddenSuffixMarkers:
                     continue
             ch = source[er.start - 1]
-            if er.start != 0 and ch in self.config.boundary_start_markers:
-                if ch in BasePhoneNumbers.SpecialBoundaryMarkers and \
-                        format_indicator_regex.search(er.text) and \
-                        er.start >= 2:
-                    ch_gap = source[er.start - 2]
-                    if ch_gap.isdigit():
-                        front = source[0:er.start - 1]
-                        international_dialing_prefix_regex = re.compile(
-                            BasePhoneNumbers.InternationDialingPrefixRegex)
-                        match = international_dialing_prefix_regex.search(front)
-                        if match is not None:
-                            er.start = match.start()
-                            er.length = er.length + match.end() - match.start() + 1
-                            er.text = source[er.start:er.start + er.length].strip()
+            if er.start != 0:
+                if ch in BasePhoneNumbers.BoundaryMarkers:
+                    if ch in BasePhoneNumbers.SpecialBoundaryMarkers and \
+                            format_indicator_regex.search(er.text) and \
+                            er.start >= 2:
+                        ch_gap = source[er.start - 2]
+                        if ch_gap.isdigit():
+                            front = source[0:er.start - 1]
+                            international_dialing_prefix_regex = re.compile(
+                                BasePhoneNumbers.InternationDialingPrefixRegex)
+                            match = international_dialing_prefix_regex.search(front)
+                            if match is not None:
+                                er.start = match.start()
+                                er.length = er.length + match.end() - match.start() + 1
+                                er.text = source[er.start:er.start + er.length].strip()
+                                ret.append(er)
+                        else:
                             ret.append(er)
-                        continue
-                elif ch in self.config.colon_markers:
-                    front = source[0:er.start - 1]
-                    colon_begin_regex = re.compile(self.config.colon_begin_regex)
-                    if colon_begin_regex.search(front) is None:
-                        continue
-                else:
                     continue
+                elif ch in self.config.forbidden_prefix_markers:
+                    # Handle "tel:123456".
+                    if ch in BasePhoneNumbers.ColonMarkers:
+                        front = source[0:er.start - 1]
+                        colon_prefix_check_regex = re.compile(self.config.colon_prefix_check_regex)
+                        # If the char before ':' is not letter, ignore it.
+                        if colon_prefix_check_regex.search(front) is None:
+                            continue
+                    else:
+                        continue
             ret.append(er)
 
         # filter hexadecimal address like 00 10 00 31 46 D9 E9 11

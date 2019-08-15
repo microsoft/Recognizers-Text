@@ -4346,10 +4346,10 @@
     "Input": "My phone number is 837.824.1482X63888.",
     "Results": [
       {
-        "Text": "837.824.1482X63888",
+        "Text": "837.824.1482x63888",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "837.824.1482X63888",
+          "value": "837.824.1482x63888",
           "score": "0.9"
         }
       }
@@ -4398,10 +4398,10 @@
     "Input": "My phone number is 837.824.1482 X 63888.",
     "Results": [
       {
-        "Text": "837.824.1482 X 63888",
+        "Text": "837.824.1482 x 63888",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "837.824.1482 X 63888",
+          "value": "837.824.1482 x 63888",
           "score": "1"
         }
       }
@@ -4672,6 +4672,18 @@
   },
   {
     "Input": "+1,032.923 is not a phone number",
+    "Results": []
+  },
+  {
+    "Input": "0\t0\t0\t0\t0",
+    "Results": []
+  },
+  {
+    "Input": "0\t0\t0\t0",
+    "Results": []
+  },
+  {
+    "Input": "0\t0\t0",
     "Results": []
   }
 ]

@@ -18,13 +18,13 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public string EndWordBoundariesRegex { get; set; }
 
-        public Regex ColonBeginRegex { get; set; }
+        public Regex ColonPrefixCheckRegex { get; set; }
 
         public List<char> ColonMarkers { get; set; }
 
-        public List<char> BoundaryStartMarkers { get; set; }
+        public List<char> ForbiddenPrefixMarkers { get; set; }
 
-        public List<char> BoundaryEndMarkers { get; set; }
+        public List<char> ForbiddenSuffixMarkers { get; set; }
 
     }
 }

@@ -25,32 +25,10 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string WordBoundariesRegex = @"(\b|(?<=[\u0800-\u9FFF]))";
       public const string NonWordBoundariesRegex = @"(\B|(?<=[\u0800-\u9FFF]))";
       public const string EndWordBoundariesRegex = @"(\b|(?=[\u0800-\u9FFF]))";
-      public static readonly IList<char> ColonMarkers = new List<char>
+      public const string ColonPrefixCheckRegex = @"(([A-Za-z]|[\u4E00-\u9FA5])\s*$)";
+      public static readonly IList<char> ForbiddenPrefixMarkers = new List<char>
         {
             ':',
-            '：'
-        };
-      public const string ColonBeginRegex = @"(([A-Za-z]|[\u4E00-\u9FA5])\s*$)";
-      public static readonly IList<char> BoundaryStartMarkers = new List<char>
-        {
-            '-',
-            '.',
-            '/',
-            '+',
-            '#',
-            '*',
-            ':',
-            '：',
-            '%'
-        };
-      public static readonly IList<char> BoundaryEndMarkers = new List<char>
-        {
-            '/',
-            '+',
-            '#',
-            '*',
-            ':',
-            '：',
             '%'
         };
     }

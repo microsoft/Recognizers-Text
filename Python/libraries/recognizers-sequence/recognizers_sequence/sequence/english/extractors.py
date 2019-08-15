@@ -22,20 +22,24 @@ class EnglishPhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
         return self._EndWordBoundariesRegex
 
     @property
-    def colon_begin_regex(self) -> str:
-        return self._ColonBeginRegex
+    def colon_prefix_check_regex(self) -> str:
+        return self._ColonPrefixCheckRegex
 
     @property
     def colon_markers(self) -> str:
         return self._ColonMarkers
 
     @property
-    def boundary_start_markers(self) -> str:
-        return self._BoundaryStartMarkers
+    def boundary_markers(self) -> str:
+        return self._BoundaryMarkers
+
+    @property
+    def forbidden_prefix_markers(self) -> str:
+        return self._ForbiddenPrefixMarkers
 
     @property
     def boundary_end_markers(self) -> str:
-        return self._BoundaryEndMarkers
+        return self._ForbiddenSuffixMarkers
 
     def __init__(self, culture_info: CultureInfo = None):
         if culture_info is None:
@@ -44,10 +48,8 @@ class EnglishPhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
         self._WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex
         self._NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex
         self._EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex
-        self._ColonBeginRegex = BasePhoneNumbers.ColonBeginRegex
-        self._ColonMarkers = BasePhoneNumbers.ColonMarkers
-        self._BoundaryStartMarkers = BasePhoneNumbers.BoundaryStartMarkers
-        self._BoundaryEndMarkers = BasePhoneNumbers.BoundaryEndMarkers
+        self._ColonPrefixCheckRegex = BasePhoneNumbers.ColonPrefixCheckRegex
+        self._ForbiddenPrefixMarkers = BasePhoneNumbers.ForbiddenPrefixMarkers
 
 
 class EnglishIpExtractor(BaseIpExtractor):

@@ -42,10 +42,10 @@
     "Input": "urn:uuid:123E4567-E89B-12D3-A456-426655440000",
     "Results": [
       {
-        "Text": "urn:uuid:123E4567-E89B-12D3-A456-426655440000",
+        "Text": "urn:uuid:123e4567-e89b-12d3-a456-426655440000",
         "TypeName": "guid",
         "Resolution": {
-          "value": "urn:uuid:123E4567-E89B-12D3-A456-426655440000",
+          "value": "urn:uuid:123e4567-e89b-12d3-a456-426655440000",
           "score": "1"
         }
       }
@@ -89,10 +89,10 @@
     "Input": "%7B06e828879afc4064abadf6fb60b8a1f3%7D",
     "Results": [
       {
-        "Text": "%7B06e828879afc4064abadf6fb60b8a1f3%7D",
+        "Text": "%7b06e828879afc4064abadf6fb60b8a1f3%7d",
         "TypeName": "guid",
         "Resolution": {
-          "value": "%7B06e828879afc4064abadf6fb60b8a1f3%7D",
+          "value": "%7b06e828879afc4064abadf6fb60b8a1f3%7d",
           "score": "0.9"
         }
       }
@@ -102,10 +102,10 @@
     "Input": "X'06e828879afc4064abadf6fb60b8a1f3'",
     "Results": [
       {
-        "Text": "X'06e828879afc4064abadf6fb60b8a1f3'",
+        "Text": "x'06e828879afc4064abadf6fb60b8a1f3'",
         "TypeName": "guid",
         "Resolution": {
-          "value": "X'06e828879afc4064abadf6fb60b8a1f3'",
+          "value": "x'06e828879afc4064abadf6fb60b8a1f3'",
           "score": "0.9"
         }
       }
@@ -115,10 +115,10 @@
     "Input": "%7B06e82887-9afc-4064-abad-f6fb60b8a1f3%7D",
     "Results": [
       {
-        "Text": "%7B06e82887-9afc-4064-abad-f6fb60b8a1f3%7D",
+        "Text": "%7b06e82887-9afc-4064-abad-f6fb60b8a1f3%7d",
         "TypeName": "guid",
         "Resolution": {
-          "value": "%7B06e82887-9afc-4064-abad-f6fb60b8a1f3%7D",
+          "value": "%7b06e82887-9afc-4064-abad-f6fb60b8a1f3%7d",
           "score": "1"
         }
       }
@@ -128,10 +128,10 @@
     "Input": "X'06e82887-9afc-4064-abad-f6fb60b8a1f3'",
     "Results": [
       {
-        "Text": "X'06e82887-9afc-4064-abad-f6fb60b8a1f3'",
+        "Text": "x'06e82887-9afc-4064-abad-f6fb60b8a1f3'",
         "TypeName": "guid",
         "Resolution": {
-          "value": "X'06e82887-9afc-4064-abad-f6fb60b8a1f3'",
+          "value": "x'06e82887-9afc-4064-abad-f6fb60b8a1f3'",
           "score": "1"
         }
       }

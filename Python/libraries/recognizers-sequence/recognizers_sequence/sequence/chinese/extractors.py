@@ -33,46 +33,28 @@ class ChinesePhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
         self.__end_word_boundaries_regex = end_word_boundaries_regex
 
     @property
-    def colon_begin_regex(self) -> str:
-        return self.__colon_begin_regex
+    def colon_prefix_check_regex(self) -> str:
+        return self.__colon_prefix_check_regex
 
-    @colon_begin_regex.setter
-    def colon_begin_regex(self, colon_begin_regex):
-        self.__colon_begin_regex = colon_begin_regex
-
-    @property
-    def colon_markers(self) -> str:
-        return self.__colon_markers
-
-    @colon_markers.setter
-    def colon_markers(self, colon_markers):
-        self.__colon_markers = colon_markers
+    @colon_prefix_check_regex.setter
+    def colon_prefix_check_regex(self, colon_prefix_check_regex):
+        self.__colon_prefix_check_regex = colon_prefix_check_regex
 
     @property
-    def boundary_start_markers(self) -> str:
-        return self.__boundary_start_markers
+    def forbidden_prefix_markers(self) -> str:
+        return self.__forbidden_prefix_markers
 
-    @boundary_start_markers.setter
-    def boundary_start_markers(self, boundary_start_markers):
-        self.__boundary_start_markers = boundary_start_markers
-
-    @property
-    def boundary_end_markers(self) -> str:
-        return self.__boundary_end_markers
-
-    @boundary_end_markers.setter
-    def boundary_end_markers(self, boundary_end_markers):
-        self.__boundary_end_markers = boundary_end_markers
+    @forbidden_prefix_markers.setter
+    def forbidden_prefix_markers(self, forbidden_prefix_markers):
+        self.__forbidden_prefix_markers = forbidden_prefix_markers
 
     def __init__(self, options=None):
         super().__init__(options)
         self.__word_boundaries_regex = ChinesePhoneNumbers.WordBoundariesRegex
         self.__non_word_boundaries_regex = ChinesePhoneNumbers.NonWordBoundariesRegex
         self.__end_word_boundaries_regex = ChinesePhoneNumbers.EndWordBoundariesRegex
-        self.__colon_begin_regex = ChinesePhoneNumbers.ColonBeginRegex
-        self.__colon_markers = ChinesePhoneNumbers.ColonMarkers
-        self.__boundary_start_markers = ChinesePhoneNumbers.BoundaryStartMarkers
-        self.__boundary_end_markers = ChinesePhoneNumbers.BoundaryEndMarkers
+        self.__colon_prefix_check_regex = ChinesePhoneNumbers.ColonPrefixCheckRegex
+        self.__forbidden_prefix_markers = ChinesePhoneNumbers.ForbiddenPrefixMarkers
 
 
 class ChineseURLExtractorConfiguration(URLConfiguration):

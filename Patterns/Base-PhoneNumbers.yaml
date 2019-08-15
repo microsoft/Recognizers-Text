@@ -51,7 +51,7 @@ TypicalDeductionRegexList: !list
     - \)\.
     - ^0(0|11)(-)
 PhoneNumberMaskRegex: !simpleRegex
-  def: ([0-9A-E]{2}(\s[0-9A-E]{2}){7})
+  def: ([0-9a-e]{2}(\s[0-9a-e]{2}){7})
 CountryCodeRegex: !simpleRegex
   def: ^(\(\s?(\+\s?|00)\d{1,3}\s?\)|(\+\s?|00)\d{1,3})
 AreaCodeIndicatorRegex: !simpleRegex
@@ -62,14 +62,15 @@ ColonMarkers: !list
   types: [char]
   entries:
   - ':'
-ColonBeginRegex: !simpleRegex
+# Handle cases like "tel:123456" and "1767:1771"
+ColonPrefixCheckRegex: !simpleRegex
   def: (([A-Za-z])\s*$)
 SpecialBoundaryMarkers: !list
   types: [char]
   entries:
     - '-'
     - ' '
-BoundaryStartMarkers: !list
+BoundaryMarkers: !list
   types: [char]
   entries:
     - '-'
@@ -78,10 +79,13 @@ BoundaryStartMarkers: !list
     - '+'
     - '#'
     - '*'
+ForbiddenPrefixMarkers: !list
+  types: [char]
+  entries:
     - ','
     - ':'
     - '%'
-BoundaryEndMarkers: !list
+ForbiddenSuffixMarkers: !list
   types: [char]
   entries:
     - '/'

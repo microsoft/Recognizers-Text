@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Definitions
             @"\)\.",
             @"^0(0|11)(-)"
         };
-      public const string PhoneNumberMaskRegex = @"([0-9A-E]{2}(\s[0-9A-E]{2}){7})";
+      public const string PhoneNumberMaskRegex = @"([0-9a-e]{2}(\s[0-9a-e]{2}){7})";
       public const string CountryCodeRegex = @"^(\(\s?(\+\s?|00)\d{1,3}\s?\)|(\+\s?|00)\d{1,3})";
       public const string AreaCodeIndicatorRegex = @"\(";
       public const string FormatIndicatorRegex = @"(\s|-|/|\.)+";
@@ -53,25 +53,28 @@ namespace Microsoft.Recognizers.Definitions
         {
             ':'
         };
-      public const string ColonBeginRegex = @"(([A-Za-z])\s*$)";
+      public const string ColonPrefixCheckRegex = @"(([A-Za-z])\s*$)";
       public static readonly IList<char> SpecialBoundaryMarkers = new List<char>
         {
             '-',
             ' '
         };
-      public static readonly IList<char> BoundaryStartMarkers = new List<char>
+      public static readonly IList<char> BoundaryMarkers = new List<char>
         {
             '-',
             '.',
             '/',
             '+',
             '#',
-            '*',
+            '*'
+        };
+      public static readonly IList<char> ForbiddenPrefixMarkers = new List<char>
+        {
             ',',
             ':',
             '%'
         };
-      public static readonly IList<char> BoundaryEndMarkers = new List<char>
+      public static readonly IList<char> ForbiddenSuffixMarkers = new List<char>
         {
             '/',
             '+',

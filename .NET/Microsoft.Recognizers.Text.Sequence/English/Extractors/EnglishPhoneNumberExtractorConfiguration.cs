@@ -12,10 +12,10 @@ namespace Microsoft.Recognizers.Text.Sequence.English
             WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex;
             NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex;
             EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex;
-            ColonBeginRegex = new Regex(BasePhoneNumbers.ColonBeginRegex);
+            ColonPrefixCheckRegex = new Regex(BasePhoneNumbers.ColonPrefixCheckRegex);
             ColonMarkers = (List<char>)BasePhoneNumbers.ColonMarkers;
-            BoundaryStartMarkers = (List<char>)BasePhoneNumbers.BoundaryStartMarkers;
-            BoundaryEndMarkers = (List<char>)BasePhoneNumbers.BoundaryEndMarkers;
+            ForbiddenPrefixMarkers = (List<char>)BasePhoneNumbers.ForbiddenPrefixMarkers;
+            ForbiddenSuffixMarkers = (List<char>)BasePhoneNumbers.ForbiddenSuffixMarkers;
         }
     }
 }

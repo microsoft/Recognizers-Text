@@ -17,18 +17,14 @@ export class ChinesePhoneNumberExtractorConfiguration implements IPhoneNumberExt
     readonly WordBoundariesRegex: string;
     readonly NonWordBoundariesRegex: string;
     readonly EndWordBoundariesRegex: string;
-    readonly ColonBeginRegex: string;
-    readonly ColonMarkers: string[];
-    readonly BoundaryEndMarkers: string[];
-    readonly BoundaryStartMarkers: string[];
+    readonly ColonPrefixCheckRegex: string;
+    readonly ForbiddenPrefixMarkers: string[];
 
     constructor() {
         this.WordBoundariesRegex = ChinesePhoneNumbers.WordBoundariesRegex;
         this.NonWordBoundariesRegex = ChinesePhoneNumbers.NonWordBoundariesRegex;
         this.EndWordBoundariesRegex = ChinesePhoneNumbers.EndWordBoundariesRegex;
-        this.ColonBeginRegex = ChinesePhoneNumbers.ColonBeginRegex;
-        this.ColonMarkers = ChinesePhoneNumbers.ColonMarkers;
-        this.BoundaryEndMarkers = ChinesePhoneNumbers.BoundaryEndMarkers;
-        this.BoundaryStartMarkers = ChinesePhoneNumbers.BoundaryStartMarkers;
+        this.ColonPrefixCheckRegex = ChinesePhoneNumbers.ColonPrefixCheckRegex;
+        this.ForbiddenPrefixMarkers = ChinesePhoneNumbers.ForbiddenPrefixMarkers;
     }
 }

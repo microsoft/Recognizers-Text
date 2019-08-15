@@ -78,10 +78,8 @@ export interface IPhoneNumberExtractorConfiguration {
     WordBoundariesRegex: string;
     NonWordBoundariesRegex: string;
     EndWordBoundariesRegex: string;
-    ColonBeginRegex: string;
-    ColonMarkers: string[];
-    BoundaryStartMarkers: string[];
-    BoundaryEndMarkers: string[];
+    ColonPrefixCheckRegex: string;
+    ForbiddenPrefixMarkers: string[];
 }
 
 export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
@@ -117,37 +115,46 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
         for (let er of ers) {
             if (er.start + er.length < source.length) {
                 let ch = source[ er.start+er.length ];
-                if (this.config.BoundaryEndMarkers.indexOf(ch) !== -1){
+                if (BasePhoneNumbers.ForbiddenSuffixMarkers.indexOf(ch) !== -1){
                     continue;
                 }
             }
             let ch = source[er.start - 1];
-            if (er.start !== 0 && this.config.BoundaryStartMarkers.indexOf(ch) !== -1) {
-                if (BasePhoneNumbers.SpecialBoundaryMarkers.indexOf(ch) !== -1 &&
-                    formatIndicatorRegex.test(er.text) &&
-                    er.start >= 2) {
-                    let chGap = source[er.start - 2];
-                    if (chGap.match(digitRegex)) {
-                        let front = source.substring(0, er.start - 1);
-                        let match = front.match(BasePhoneNumbers.InternationDialingPrefixRegex);
-                        if (match) {
-                            let moveOffset = match[0].length + 1;
-                            er.start = er.start - moveOffset;
-                            er.length = er.length + moveOffset;
-                            er.text = source.substring(er.start, er.start + er.length);
+            if (er.start !== 0) {
+                if(BasePhoneNumbers.BoundaryMarkers.indexOf(ch) !== -1) {
+                    if (BasePhoneNumbers.SpecialBoundaryMarkers.indexOf(ch) !== -1 &&
+                        formatIndicatorRegex.test(er.text) &&
+                        er.start >= 2) {
+                        let chGap = source[er.start - 2];
+                        if (chGap.match(digitRegex)) {
+                            let front = source.substring(0, er.start - 1);
+                            let match = front.match(BasePhoneNumbers.InternationDialingPrefixRegex);
+                            if (match) {
+                                let moveOffset = match[0].length + 1;
+                                er.start = er.start - moveOffset;
+                                er.length = er.length + moveOffset;
+                                er.text = source.substring(er.start, er.start + er.length);
+                                ret.push(er);
+                            }
+                        }
+                        else {
                             ret.push(er);
                         }
-                        continue;
                     }
-                }
-                else if (this.config.ColonMarkers.indexOf(ch) !== -1) {
-                    let front = source.substring(0, er.start - 1);
-                    if(!front.match(this.config.ColonBeginRegex)) {
-                        continue;
-                    }
-                }
-                else {
                     continue;
+                }
+                else if (this.config.ForbiddenPrefixMarkers.indexOf(ch) !== -1) {
+                    // Handle "tel:123456".
+                    if (BasePhoneNumbers.ColonMarkers.indexOf(ch) !== -1) {
+                        let front = source.substring(0, er.start - 1);
+                        // If the char before ':' is not letter, ignore it.
+                        if(!front.match(this.config.ColonPrefixCheckRegex)) {
+                            continue;
+                        }
+                    }
+                    else {
+                        continue;
+                    }
                 }
             }
             ret.push(er);

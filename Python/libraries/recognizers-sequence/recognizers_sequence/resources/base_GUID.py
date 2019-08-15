@@ -13,6 +13,6 @@
 
 
 class BaseGUID:
-    GUIDRegexElement = f'(([A-Fa-f0-9]{{8}}(-[A-Fa-f0-9]{{4}}){{3}}-[A-Fa-f0-9]{{12}})|([A-Fa-f0-9]{{32}}))'
-    GUIDRegex = f'(\\b{GUIDRegexElement}\\b|\\{{{GUIDRegexElement}\\}}|urn:uuid:{GUIDRegexElement}\\b|%7[Bb]{GUIDRegexElement}%7[Dd]|[Xx]\\\'{GUIDRegexElement}\\\')'
+    GUIDRegexElement = f'(([a-f0-9]{{8}}(-[a-f0-9]{{4}}){{3}}-[a-f0-9]{{12}})|([a-f0-9]{{32}}))'
+    GUIDRegex = f'(\\b{GUIDRegexElement}\\b|\\{{{GUIDRegexElement}\\}}|urn:uuid:{GUIDRegexElement}\\b|%7[b]{GUIDRegexElement}%7[d]|[x]\\\'{GUIDRegexElement}\\\')'
 # pylint: enable=line-too-long
