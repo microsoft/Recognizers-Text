@@ -64,7 +64,7 @@ def __token_to_result(token: Token, source: str, name: str) -> ExtractResult:
     result.start = token.start
     result.length = token.length
     result.text = source[token.start:token.end]
-    result.type = name 
+    result.type = name
     return result
 
 
