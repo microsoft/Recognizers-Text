@@ -240,7 +240,7 @@ class BaseCurrencyParser(Parser):
                             compound_result.start)
 
         ret = ParseResult(compound_result)
-        # just one value...
+
         ret.value = results
         return ret
 
