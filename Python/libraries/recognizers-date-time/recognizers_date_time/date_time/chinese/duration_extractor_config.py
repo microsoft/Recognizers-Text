@@ -16,7 +16,7 @@ class ChineseDurationExtractorConfiguration(ChineseNumberWithUnitExtractorConfig
         return self._prefix_list
 
     @property
-    def ambiguous_unit_list(self) -> Dict[str, str]:
+    def ambiguous_unit_list(self) -> str:
         return self._ambiguous_unit_list
 
     @property

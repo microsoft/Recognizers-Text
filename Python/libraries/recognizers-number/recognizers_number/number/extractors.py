@@ -32,14 +32,13 @@ class BaseNumberExtractor(Extractor):
         if source is None or len(source.strip()) is 0:
             return list()
         result: List[ExtractResult] = list()
-        match_source: Dict[[Match], str] = dict()
+        match_source = dict()
         matched: List[bool] = [False] * len(source)
 
         matches_list = list(map(
             lambda x: MatchesVal(matches=list(regex.finditer(x.re, source)),
                                  val=x.val), self.regexes))
         matches_list = list(filter(lambda x: len(x.matches) > 0, matches_list))
-
         for ml in matches_list:
             for m in ml.matches:
                 for j in range(len(m.group())):

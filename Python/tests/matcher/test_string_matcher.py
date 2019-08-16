@@ -12,7 +12,7 @@ class TestStringMatcher:
         for value in values:
             match = string_matcher.find(value)
             if match is not None:
-                assert value == match.text
+                assert value == match[0].text
 
     @staticmethod
     def test_simple_with_ids_string_matcher():
@@ -24,8 +24,8 @@ class TestStringMatcher:
             value = values[i]
             match = string_matcher.find(value)
             if match is not None:
-                assert value == match.text
-                assert ids[i] == match.canonical_values[0]
+                assert value == match[0].text
+                assert ids[i] == match[0].canonical_values[0]
 
     @staticmethod
     def test_string_matcher():
@@ -40,13 +40,13 @@ class TestStringMatcher:
         for value in utc_8_words:
             sentence = 'please change {}, thanks'.format(value)
             matches: [MatchResult] = string_matcher.find(sentence)
-            assert value == matches.text
-            assert utc_8_value == matches.canonical_values[0]
-            assert 14 == matches.start
+            assert value == matches[0].text
+            assert utc_8_value == matches[0].canonical_values[0]
+            assert 14 == matches[0].start
 
         for value in utc_2_words:
             sentence = 'please change {}, thanks'.format(value)
             matches: [MatchResult] = string_matcher.find(sentence)
-            assert value == matches.text
-            assert str(utc_2_value) == matches.canonical_values[0]
-            assert 14 == matches.start
+            assert value == matches[0].text
+            assert str(utc_2_value) == matches[0].canonical_values[0]
+            assert 14 == matches[0].start

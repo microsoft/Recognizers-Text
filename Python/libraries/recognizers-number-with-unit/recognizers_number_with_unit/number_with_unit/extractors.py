@@ -101,6 +101,22 @@ class NumberWithUnitExtractor(Extractor):
         self.__max_prefix_match_len = value
 
     @property
+    def prefix_matcher(self):
+        return self.__prefix_matcher
+
+    @prefix_matcher.setter
+    def prefix_matcher(self, value):
+        self.__prefix_matcher = value
+
+    @property
+    def suffix_matcher(self):
+        return self.__suffix_matcher
+
+    @suffix_matcher.setter
+    def suffix_matcher(self, value):
+        self.__suffix_matcher = value
+
+    @property
     def separate_regex(self):
         return self.__separate_regex
 
@@ -112,8 +128,10 @@ class NumberWithUnitExtractor(Extractor):
         self.config = config
         self.max_prefix_match_len = 0
         if self.config.suffix_list:
-            self.suffix_matcher = self._build_matcher_from_set(
+            self.__suffix_matcher = self._build_matcher_from_set(
                 list(self.config.suffix_list.values()))
+        else:
+            self.__suffix_matcher = StringMatcher()
 
         if self.config.prefix_list:
             for pre_match in self.config.prefix_list.values():
@@ -126,42 +144,29 @@ class NumberWithUnitExtractor(Extractor):
 
             # 2 is the maximum length of spaces.
             self.max_prefix_match_len += 2
-            self.prefix_matcher = self._build_matcher_from_set(self.config.prefix_list.values())
+            self.__prefix_matcher = self._build_matcher_from_set(self.config.prefix_list.values())
+        else:
+            self.__prefix_matcher = StringMatcher()
 
         self.separate_regex = self._build_separate_regex_from_config()
 
     def extract(self, source: str) -> List[ExtractResult]:
 
         if not self._pre_check_str(source):
-            return list()
+            return []
 
-        non_unit_match: Match = None
-
-        if hasattr(self, 'prefix_matcher'):
-            prefix_match: List[MatchResult] = sorted(self.prefix_matcher.find(source), key=lambda o: o.start)
-
-        if hasattr(self, 'suffix_matcher'):
-            suffix_match: List[MatchResult] = sorted(self.suffix_matcher.find(source), key=lambda o: o.start)
+        non_unit_match = None
 
         mapping_prefix: Dict[float, PrefixUnitResult] = dict()
-        matched: List[bool] = [False] * len(source)
+        matched = [False] * len(source)
         result = []
-        source_len = len(source)
         prefix_matched = False
+        prefix_match: List[MatchResult] = sorted(self.prefix_matcher.find(source), key=lambda o: o.start)
+        suffix_match: List[MatchResult] = sorted(self.suffix_matcher.find(source), key=lambda o: o.start)
 
-        prefix_match_len = 0
-        suffix_matcher_len = 0
+        if len(prefix_match) > 0 or len(suffix_match) > 0:
 
-        if hasattr(self, 'prefix_matcher'):
-            prefix_match_len = len(prefix_match)
-
-        if hasattr(self, 'suffix_matcher'):
-            suffix_matcher_len = len(suffix_match)
-
-        if prefix_match_len > 0 or suffix_matcher_len > 0:
-
-            numbers: List[ExtractResult] = self.config.unit_num_extractor.extract(
-                source)
+            numbers: List[ExtractResult] = sorted(self.config.unit_num_extractor.extract(source), key=lambda o: o.start)
 
             # Special case for cases where number multipliers clash with unit
             ambiguous_multiplier_regex = self.config.ambiguous_unit_number_multiplier_regex
@@ -182,7 +187,7 @@ class NumberWithUnitExtractor(Extractor):
                 start = int(number.start)
                 length = int(number.length)
                 max_find_pref = min(self.max_prefix_match_len, number.start)
-                max_find_suff = source_len - start - length
+                max_find_suff = len(source) - start - length
 
                 if max_find_pref != 0:
                     last_index = start
@@ -329,7 +334,7 @@ class NumberWithUnitExtractor(Extractor):
     def _build_regex_from_set(self, definitions: List[str], ignore_case: bool = False) -> Set[Pattern]:
         return set(map(lambda x: self.__build_regex_from_str(x, ignore_case), definitions))
 
-    def _build_matcher_from_set(self, definitions: List[str], ignore_case: bool = False) -> StringMatcher:
+    def _build_matcher_from_set(self, definitions) -> StringMatcher:
 
         matcher = StringMatcher(match_strategy=MatchStrategy.TrieTree, tokenizer=NumberWithUnitTokenizer())
 

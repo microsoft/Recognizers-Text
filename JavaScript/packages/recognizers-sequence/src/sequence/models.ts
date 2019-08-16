@@ -1,4 +1,4 @@
-import { IModel, ModelResult, IExtractor, IParser, ParseResult } from "@microsoft/recognizers-text";
+import { IModel, ModelResult, IExtractor, IParser, ParseResult, QueryProcessor } from "@microsoft/recognizers-text";
 
 export abstract class AbstractSequenceModel implements IModel {
     public abstract readonly modelTypeName: string;
@@ -41,6 +41,7 @@ export class PhoneNumberModel extends AbstractSequenceModel {
 
     parse(query: string): ModelResult[] {
         let parseResults = new Array<ParseResult>();
+        query = QueryProcessor.preProcess(query);
 
         try {
             let extractResults = this.extractor.extract(query);
@@ -119,6 +120,7 @@ export class GUIDModel extends AbstractSequenceModel {
 
     parse(query: string): ModelResult[] {
         let parseResults = new Array<ParseResult>();
+        query = QueryProcessor.preProcess(query);
 
         try {
             let extractResults = this.extractor.extract(query);

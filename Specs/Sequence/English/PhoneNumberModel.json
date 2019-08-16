@@ -4346,10 +4346,10 @@
     "Input": "My phone number is 837.824.1482X63888.",
     "Results": [
       {
-        "Text": "837.824.1482X63888",
+        "Text": "837.824.1482x63888",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "837.824.1482X63888",
+          "value": "837.824.1482x63888",
           "score": "0.9"
         }
       }
@@ -4398,10 +4398,10 @@
     "Input": "My phone number is 837.824.1482 X 63888.",
     "Results": [
       {
-        "Text": "837.824.1482 X 63888",
+        "Text": "837.824.1482 x 63888",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "837.824.1482 X 63888",
+          "value": "837.824.1482 x 63888",
           "score": "1"
         }
       }
@@ -4646,5 +4646,92 @@
         }
       }
     ]
+  },
+  {
+    "Input": "March 1 14377:00 is not a phone number",
+    "Results": []
+  },
+  {
+    "Input": "200.38294427 is not a phone number.",
+    "Results": []
+  },
+  {
+    "Input": "My phone number is:1234 5678.",
+    "Results": [
+      {
+        "Text": "1234 5678",
+        "Start": 19,
+        "End": 27,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.5",
+          "value": "1234 5678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "+1,032.923 is not a phone number",
+    "Results": []
+  },
+  {
+    "Input": "0\t0\t0\t0\t0",
+    "Results": []
+  },
+  {
+    "Input": "0\t0\t0\t0",
+    "Results": []
+  },
+  {
+    "Input": "0\t0\t0",
+    "Results": []
+  },
+  {
+    "Input": "58 2105",
+    "Results": []
+  },
+  {
+    "Input": "1 506 64",
+    "Results": []
+  },
+  {
+    "Input": "37 41 4",
+    "Results": []
+  },
+  {
+    "Input": "25 32 2",
+    "Results": []
+  },
+  {
+    "Input": "19 32 2",
+    "Results": []
+  },
+  {
+    "Input": "15 3  20",
+    "Results": []
+  },
+  {
+    "Input": "03 473",
+    "Results": []
+  },
+  {
+    "Input": "20 15 11",
+    "Results": []
+  },
+  {
+    "Input": "8244 45",
+    "Results": []
+  },
+  {
+    "Input": "8198 27",
+    "Results": []
+  },
+  {
+    "Input": "8196 12",
+    "Results": []
+  },
+  {
+    "Input": "10 41 20",
+    "Results": []
   }
 ]

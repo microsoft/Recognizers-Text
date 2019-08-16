@@ -84,7 +84,6 @@ class StringMatcher:
             match_result.text = r_text
             match_result.canonical_values = r.canonical_values
             result.append(match_result)
-
         return result
 
     def get_tokenized_text(self, values: []) -> []:

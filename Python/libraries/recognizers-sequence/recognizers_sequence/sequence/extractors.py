@@ -82,6 +82,14 @@ class SequenceExtractor(Extractor):
         return True
 
 
+def count_digits(candidate_string: str):
+    count = 0
+    for t in candidate_string:
+        if t.isdigit():
+            count += 1
+    return count
+
+
 class BasePhoneNumberExtractor(SequenceExtractor):
 
     def __init__(self, config):
@@ -125,29 +133,52 @@ class BasePhoneNumberExtractor(SequenceExtractor):
         return Constants.SYS_PHONE_NUMBER
 
     def extract(self, source: str):
-        extract_results = super().extract(source)
         ret = []
+        pre_check_phone_number_regex = re.compile(BasePhoneNumbers.PreCheckPhoneNumberRegex)
+        if (pre_check_phone_number_regex.search(source) is None):
+            return ret
+        extract_results = super().extract(source)
         format_indicator_regex = re.compile(
             BasePhoneNumbers.FormatIndicatorRegex, re.IGNORECASE | re.DOTALL)
         for er in extract_results:
+            if count_digits(er.text) < 7 and er.data != "ITPhoneNumber":
+                continue
+            if er.start + er.length < len(source):
+                ch = source[er.start + er.length]
+                if ch in BasePhoneNumbers.ForbiddenSuffixMarkers:
+                    continue
             ch = source[er.start - 1]
-            if er.start == 0 or ch not in BasePhoneNumbers.BoundaryMarkers:
-                ret.append(er)
-            elif ch in BasePhoneNumbers.SpecialBoundaryMarkers and \
-                    format_indicator_regex.search(er.text) and \
-                    er.start >= 2:
-                ch_gap = source[er.start - 2]
-                if not ch_gap.isdigit():
-                    ret.append(er)
-                front = source[0:er.start - 1]
-                international_dialing_prefix_regex = re.compile(
-                    BasePhoneNumbers.InternationDialingPrefixRegex)
-                match = international_dialing_prefix_regex.search(front)
-                if match is not None:
-                    er.start = match.start()
-                    er.length = er.length + match.end() - match.start() + 1
-                    er.text = source[er.start:er.start + er.length].strip()
-                    ret.append(er)
+            if er.start != 0:
+                if ch in BasePhoneNumbers.BoundaryMarkers:
+                    # Handle cases like "-1234567" and "-1234+5678"
+                    if ch in BasePhoneNumbers.SpecialBoundaryMarkers and \
+                            format_indicator_regex.search(er.text) and \
+                            er.start >= 2:
+                        ch_gap = source[er.start - 2]
+                        if ch_gap.isdigit():
+                            front = source[0:er.start - 1]
+                            international_dialing_prefix_regex = re.compile(
+                                BasePhoneNumbers.InternationDialingPrefixRegex)
+                            match = international_dialing_prefix_regex.search(front)
+                            if match is not None:
+                                er.start = match.start()
+                                er.length = er.length + match.end() - match.start() + 1
+                                er.text = source[er.start:er.start + er.length].strip()
+                                ret.append(er)
+                        else:
+                            ret.append(er)
+                    continue
+                elif ch in self.config.forbidden_prefix_markers:
+                    # Handle "tel:123456".
+                    if ch in BasePhoneNumbers.ColonMarkers:
+                        front = source[0:er.start - 1]
+                        colon_prefix_check_regex = re.compile(self.config.colon_prefix_check_regex)
+                        # If the char before ':' is not letter, ignore it.
+                        if colon_prefix_check_regex.search(front) is None:
+                            continue
+                    else:
+                        continue
+            ret.append(er)
 
         # filter hexadecimal address like 00 10 00 31 46 D9 E9 11
         for m in re.finditer(BasePhoneNumbers.PhoneNumberMaskRegex, source):
