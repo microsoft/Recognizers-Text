@@ -16,7 +16,7 @@ class FrenchNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigur
 
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        pass
+        return FrenchNumericWithUnit.AmbiguityFiltersDict
 
     @property
     def unit_num_extractor(self) -> Extractor:

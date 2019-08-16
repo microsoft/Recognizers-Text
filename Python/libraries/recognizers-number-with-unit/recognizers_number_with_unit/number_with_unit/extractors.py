@@ -218,8 +218,8 @@ class NumberWithUnitExtractor(Extractor):
                             end_pos = m.start + m.length - first_index
                             if max_len < end_pos:
                                 mid_str = source[first_index: first_index + (m.start - first_index)]
-                                if mid_str is None or str.isspace(mid_str) \
-                                        or mid_str.strip() is self.config.connector_token:
+                                if mid_str is None or not mid_str or str.isspace(mid_str) \
+                                        or mid_str.strip() == self.config.connector_token:
                                     max_len = end_pos
 
                     if max_len != 0:
