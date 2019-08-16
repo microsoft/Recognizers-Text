@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Definitions
       public const string WordBoundariesRegex = @"\b";
       public const string NonWordBoundariesRegex = @"\B";
       public const string EndWordBoundariesRegex = @"\b";
+      public const string PreCheckPhoneNumberRegex = @"(\d{1,4}.){2,4}\s?\d{2,3}";
       public static readonly Func<string, string, string> GeneralPhoneNumberRegex = (WordBoundariesRegex, EndWordBoundariesRegex) => $@"({WordBoundariesRegex}(((\d[\s]?){{4,12}}))(-?[\d\s?]{{3}}\d)(?!-){EndWordBoundariesRegex})|(\(\d{{5}}\)\s?\d{{5,6}})|\+\d{{2}}\(\d\)\d{{10}}";
       public static readonly Func<string, string, string, string> BRPhoneNumberRegex = (WordBoundariesRegex, NonWordBoundariesRegex, EndWordBoundariesRegex) => $@"((\(\s?(\+\s?|00)55\s?\)\s?)|(((?<!\d)\+\s?|{WordBoundariesRegex}00)55\s?)|{WordBoundariesRegex})?((({NonWordBoundariesRegex}\(\s?))\d{{2,3}}(\s?\))|({WordBoundariesRegex}\d{{2,3}}))\s?\d{{4,5}}-?\d{{3,5}}(?!-){EndWordBoundariesRegex}";
       public static readonly Func<string, string, string, string> UKPhoneNumberRegex = (WordBoundariesRegex, NonWordBoundariesRegex, EndWordBoundariesRegex) => $@"((({WordBoundariesRegex}(00)|{NonWordBoundariesRegex}\+)\s?)?({WordBoundariesRegex}\d{{2}}\s?)?((\s?\(0\)[-\s]?|{WordBoundariesRegex}|(?<=(\b^#)\d{{2}}))\d{{2,5}}|\(0\d{{3,4}}\))[/-]?\s?(\d{{5,8}}|\d{{3,4}}[-\s]?\d{{3,4}})(?!-){EndWordBoundariesRegex})";
@@ -44,10 +45,15 @@ namespace Microsoft.Recognizers.Definitions
             @"\)\.",
             @"^0(0|11)(-)"
         };
-      public const string PhoneNumberMaskRegex = @"([0-9A-E]{2}(\s[0-9A-E]{2}){7})";
+      public const string PhoneNumberMaskRegex = @"([0-9a-e]{2}(\s[0-9a-e]{2}){7})";
       public const string CountryCodeRegex = @"^(\(\s?(\+\s?|00)\d{1,3}\s?\)|(\+\s?|00)\d{1,3})";
       public const string AreaCodeIndicatorRegex = @"\(";
       public const string FormatIndicatorRegex = @"(\s|-|/|\.)+";
+      public static readonly IList<char> ColonMarkers = new List<char>
+        {
+            ':'
+        };
+      public const string ColonPrefixCheckRegex = @"(([A-Za-z])\s*$)";
       public static readonly IList<char> SpecialBoundaryMarkers = new List<char>
         {
             '-',
@@ -61,6 +67,21 @@ namespace Microsoft.Recognizers.Definitions
             '+',
             '#',
             '*'
+        };
+      public static readonly IList<char> ForbiddenPrefixMarkers = new List<char>
+        {
+            ',',
+            ':',
+            '%'
+        };
+      public static readonly IList<char> ForbiddenSuffixMarkers = new List<char>
+        {
+            '/',
+            '+',
+            '#',
+            '*',
+            ':',
+            '%'
         };
     }
 }

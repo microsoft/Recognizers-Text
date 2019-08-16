@@ -32,11 +32,29 @@ class ChinesePhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
     def end_word_boundaries_regex(self, end_word_boundaries_regex):
         self.__end_word_boundaries_regex = end_word_boundaries_regex
 
+    @property
+    def colon_prefix_check_regex(self) -> str:
+        return self.__colon_prefix_check_regex
+
+    @colon_prefix_check_regex.setter
+    def colon_prefix_check_regex(self, colon_prefix_check_regex):
+        self.__colon_prefix_check_regex = colon_prefix_check_regex
+
+    @property
+    def forbidden_prefix_markers(self) -> str:
+        return self.__forbidden_prefix_markers
+
+    @forbidden_prefix_markers.setter
+    def forbidden_prefix_markers(self, forbidden_prefix_markers):
+        self.__forbidden_prefix_markers = forbidden_prefix_markers
+
     def __init__(self, options=None):
         super().__init__(options)
         self.__word_boundaries_regex = ChinesePhoneNumbers.WordBoundariesRegex
         self.__non_word_boundaries_regex = ChinesePhoneNumbers.NonWordBoundariesRegex
         self.__end_word_boundaries_regex = ChinesePhoneNumbers.EndWordBoundariesRegex
+        self.__colon_prefix_check_regex = ChinesePhoneNumbers.ColonPrefixCheckRegex
+        self.__forbidden_prefix_markers = ChinesePhoneNumbers.ForbiddenPrefixMarkers
 
 
 class ChineseURLExtractorConfiguration(URLConfiguration):

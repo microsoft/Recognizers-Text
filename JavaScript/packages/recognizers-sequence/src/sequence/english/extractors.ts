@@ -8,11 +8,16 @@ export class EnglishPhoneNumberExtractorConfiguration implements IPhoneNumberExt
     readonly WordBoundariesRegex: string;
     readonly NonWordBoundariesRegex: string;
     readonly EndWordBoundariesRegex: string;
+    readonly ColonPrefixCheckRegex: string;
+    readonly ForbiddenPrefixMarkers: string[];
+
 
     constructor() {
         this.WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex;
         this.NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex;
         this.EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex;
+        this.ForbiddenPrefixMarkers = BasePhoneNumbers.ForbiddenPrefixMarkers;
+        this.ColonPrefixCheckRegex = BasePhoneNumbers.ColonPrefixCheckRegex;
     }
 }
 

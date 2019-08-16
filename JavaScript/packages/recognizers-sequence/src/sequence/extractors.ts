@@ -43,7 +43,7 @@ export abstract class BaseSequenceExtractor implements IExtractor {
         let lastNotMatched = -1;
         for (let i = 0; i < source.length; i++) {
             if (matched[i]) {
-                if (i + 1 == source.length || !matched[i + 1]) {
+                if (i + 1 === source.length || !matched[i + 1]) {
                     let start = lastNotMatched + 1;
                     let length = i - lastNotMatched;
                     let substr = source.substr(start, length);
@@ -78,13 +78,17 @@ export interface IPhoneNumberExtractorConfiguration {
     WordBoundariesRegex: string;
     NonWordBoundariesRegex: string;
     EndWordBoundariesRegex: string;
+    ColonPrefixCheckRegex: string;
+    ForbiddenPrefixMarkers: string[];
 }
 
 export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
     regexes: Map<RegExp, string>;
+    config: IPhoneNumberExtractorConfiguration;
 
     constructor(config: IPhoneNumberExtractorConfiguration) {
         super();
+        this.config = config;
         let wordBoundariesRegex = config.WordBoundariesRegex;
         let nonWordBoundariesRegex = config.NonWordBoundariesRegex;
         let endWordBoundariesRegex = config.EndWordBoundariesRegex;
@@ -101,33 +105,68 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
             .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.SpecialPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex)), Constants.PHONE_NUMBER_REGEX_SPECIAL);
     }
     extract(source: string): ExtractResult[] {
-        let ers = super.extract(source);
         let ret = new Array<ExtractResult>();
+        if (!source.match(BasePhoneNumbers.PreCheckPhoneNumberRegex)) {
+            return ret;
+        }
+        let ers = super.extract(source);
         let formatIndicatorRegex = new RegExp(BasePhoneNumbers.FormatIndicatorRegex, "ig");
         let digitRegex = new RegExp("[0-9]");
         for (let er of ers) {
+            let Digits = 0;
+            for (let t of er.text) {
+                if (t.match(digitRegex)) {
+                    Digits++ ; 
+                }
+            }
+            if (Digits < 7 && er.data !== "ITPhoneNumber") {
+                continue;
+            }
+            if (er.start + er.length < source.length) {
+                let ch = source[ er.start+er.length ];
+                if (BasePhoneNumbers.ForbiddenSuffixMarkers.indexOf(ch) !== -1){
+                    continue;
+                }
+            }
             let ch = source[er.start - 1];
-            if (er.start === 0 || BasePhoneNumbers.BoundaryMarkers.indexOf(ch) === -1) {
-                ret.push(er);
-            }
-            else if (BasePhoneNumbers.SpecialBoundaryMarkers.indexOf(ch) != -1 &&
-                formatIndicatorRegex.test(er.text) &&
-                er.start >= 2) {
-                let chGap = source[er.start - 2];
-                if (!chGap.match(digitRegex)) {
-                    ret.push(er);
+            if (er.start !== 0) {
+                if(BasePhoneNumbers.BoundaryMarkers.indexOf(ch) !== -1) {
+                    if (BasePhoneNumbers.SpecialBoundaryMarkers.indexOf(ch) !== -1 &&
+                        formatIndicatorRegex.test(er.text) &&
+                        er.start >= 2) {
+                        let chGap = source[er.start - 2];
+                        if (chGap.match(digitRegex)) {
+                            let front = source.substring(0, er.start - 1);
+                            let match = front.match(BasePhoneNumbers.InternationDialingPrefixRegex);
+                            if (match) {
+                                let moveOffset = match[0].length + 1;
+                                er.start = er.start - moveOffset;
+                                er.length = er.length + moveOffset;
+                                er.text = source.substring(er.start, er.start + er.length);
+                                ret.push(er);
+                            }
+                        }
+                        else {
+                            ret.push(er);
+                        }
+                    }
+                    continue;
                 }
-
-                let front = source.substring(0, er.start - 1);
-                let match = front.match(BasePhoneNumbers.InternationDialingPrefixRegex);
-                if (match) {
-                    let moveOffset = match[0].length + 1;
-                    er.start = er.start - moveOffset;
-                    er.length = er.length + moveOffset;
-                    er.text = source.substring(er.start, er.start + er.length);
-                    ret.push(er);
+                else if (this.config.ForbiddenPrefixMarkers.indexOf(ch) !== -1) {
+                    // Handle "tel:123456".
+                    if (BasePhoneNumbers.ColonMarkers.indexOf(ch) !== -1) {
+                        let front = source.substring(0, er.start - 1);
+                        // If the char before ':' is not letter, ignore it.
+                        if(!front.match(this.config.ColonPrefixCheckRegex)) {
+                            continue;
+                        }
+                    }
+                    else {
+                        continue;
+                    }
                 }
             }
+            ret.push(er);
         }
 
         // filter hexadecimal address like 00 10 00 31 46 D9 E9 11

@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
@@ -16,6 +17,14 @@ namespace Microsoft.Recognizers.Text.Sequence
         public string NonWordBoundariesRegex { get; set; }
 
         public string EndWordBoundariesRegex { get; set; }
+
+        public Regex ColonPrefixCheckRegex { get; set; }
+
+        public List<char> ColonMarkers { get; set; }
+
+        public List<char> ForbiddenPrefixMarkers { get; set; }
+
+        public List<char> ForbiddenSuffixMarkers { get; set; }
 
     }
 }
