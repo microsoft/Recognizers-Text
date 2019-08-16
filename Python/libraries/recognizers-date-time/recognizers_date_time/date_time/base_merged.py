@@ -55,11 +55,6 @@ class MergedExtractorConfiguration:
 
     @property
     @abstractmethod
-    def holiday_extractor(self) -> DateTimeExtractor:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
     def duration_extractor(self) -> DateTimeExtractor:
         raise NotImplementedError
 
@@ -70,7 +65,27 @@ class MergedExtractorConfiguration:
 
     @property
     @abstractmethod
+    def holiday_extractor(self) -> DateTimeExtractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def time_zone_extractor(self) -> DateTimeZoneExtractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def datetime_alt_extractor(self) -> DateTimeListExtractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def integer_extractor(self) -> Extractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def term_filter_regexes(self) -> List[Pattern]:
         raise NotImplementedError
 
     @property
