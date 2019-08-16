@@ -70,7 +70,6 @@ class ChineseTimeParser(BaseTimeParser):
         return TimeResult(_all / 60, _all % 60, second)
 
     def handle_digit(self, extra: DateTimeExtra) -> TimeResult:
-        print(extra.named_entity)
         hour = self.match_to_value(next(iter(extra.named_entity['hour']), ''))
         minute = self.match_to_value(next(iter(extra.named_entity['min']), ''))
         second = self.match_to_value(next(iter(extra.named_entity['sec']), ''))

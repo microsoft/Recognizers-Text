@@ -25,18 +25,18 @@ class NumberWithUnitTokenizer(SimpleTokenizer):
             c = chars[i]
             if str.isspace(c):
                 if in_token:
-                    tokens.append(Token(token_start, i - token_start, input[token_start: i - token_start]))
+                    tokens.append(Token(token_start, i - token_start, input[token_start: token_start + (i - token_start)]))
                     in_token = False
-            elif not (c in self.special_tokens_characters) and (str.isdigit(c) or str.isalpha(c)) or \
+            elif not (c in self.special_tokens_characters) and not (str.isdigit(c) or str.isalpha(c)) or \
                     self.is_chinese(c) or self.is_japanese(c):
 
                 # Non-splittable currency units (as "$") are treated as regular letters. For instance, 'us$' should be
                 # a single token
                 if in_token:
-                    tokens.append(Token(token_start, i - token_start, input[token_start: i - token_start]))
+                    tokens.append(Token(token_start, i - token_start, input[token_start: token_start + (i - token_start)]))
                     in_token = False
 
-                tokens.append(Token(i, 1, input[i:1]))
+                tokens.append(Token(i, 1, input[i: token_start + (i - token_start) + 1]))
 
             else:
                 if in_token and i > 0:
@@ -44,14 +44,14 @@ class NumberWithUnitTokenizer(SimpleTokenizer):
                     if self.is_splittable_unit(c, pre_char):
 
                         # Split if letters or non-splittable units are adjacent with digits.
-                        tokens.append(Token(token_start, i - token_start, input[token_start: i - token_start]))
+                        tokens.append(Token(token_start, i - token_start, input[token_start: token_start + (i - token_start)]))
                         token_start = i
                 if not in_token:
                     token_start = i
                     in_token = True
 
         if in_token:
-            tokens.append(Token(token_start, len(chars) - token_start, input[token_start: len(chars) - token_start]))
+            tokens.append(Token(token_start, len(chars) - token_start, input[token_start: token_start + (len(chars) - token_start)]))
 
         return tokens
 

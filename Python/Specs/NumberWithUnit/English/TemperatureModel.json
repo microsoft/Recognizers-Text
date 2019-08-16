@@ -1,0 +1,612 @@
+[
+  {
+    "Input": "the temperature outside is 40 deg celsius",
+    "Results": [
+      {
+        "Text": "40 deg celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "40",
+          "unit": "C"
+        },
+        "Start": 27,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "its 90 fahrenheit in texas",
+    "Results": [
+      {
+        "Text": "90 fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "90",
+          "unit": "F"
+        },
+        "Start": 4,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "-5 degree fahrenheit",
+    "Results": [
+      {
+        "Text": "-5 degree fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "-5",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "6 deg c",
+    "Results": [
+      {
+        "Text": "6 deg c",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "6",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "98.6 degrees f is normal temperature",
+    "Results": [
+      {
+        "Text": "98.6 degrees f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98.6",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "set the temperature to 30 degrees celsius",
+    "Results": [
+      {
+        "Text": "30 degrees celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "30",
+          "unit": "C"
+        },
+        "Start": 23,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "normal temperature is 98.6 degrees fahrenheit",
+    "Results": [
+      {
+        "Text": "98.6 degrees fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98.6",
+          "unit": "F"
+        },
+        "Start": 22,
+        "End": 44
+      }
+    ]
+  },
+  {
+    "Input": "100 degrees f",
+    "Results": [
+      {
+        "Text": "100 degrees f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "20 degrees c",
+    "Results": [
+      {
+        "Text": "20 degrees c",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "100.2 degrees farenheit is low",
+    "Results": [
+      {
+        "Text": "100.2 degrees farenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100.2",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "10.5 celcius",
+    "Results": [
+      {
+        "Text": "10.5 celcius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "10.5",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "20 degrees celsius",
+    "Results": [
+      {
+        "Text": "20 degrees celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "20.3 celsius",
+    "Results": [
+      {
+        "Text": "20.3 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20.3",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "34.5 celcius",
+    "Results": [
+      {
+        "Text": "34.5 celcius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "34.5",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "the temperature outside is 98 degrees",
+    "Results": [
+      {
+        "Text": "98 degrees",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98",
+          "unit": "Degree"
+        },
+        "Start": 27,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "set the thermostat to 85°",
+    "Results": [
+      {
+        "Text": "85°",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "85",
+          "unit": "Degree"
+        },
+        "Start": 22,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "raise the temperature by 5 degrees",
+    "Results": [
+      {
+        "Text": "5 degrees",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "5",
+          "unit": "Degree"
+        },
+        "Start": 25,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "set the temperature to 70 degrees f",
+    "Results": [
+      {
+        "Text": "70 degrees f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "70",
+          "unit": "F"
+        },
+        "Start": 23,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "raise the temperature by 20 degrees",
+    "Results": [
+      {
+        "Text": "20 degrees",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "Degree"
+        },
+        "Start": 25,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "set the temperature to 100 degrees",
+    "Results": [
+      {
+        "Text": "100 degrees",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100",
+          "unit": "Degree"
+        },
+        "Start": 23,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "keep the temperature at 75 degrees f",
+    "Results": [
+      {
+        "Text": "75 degrees f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "75",
+          "unit": "F"
+        },
+        "Start": 24,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "let the temperature be at 40 celsius",
+    "Results": [
+      {
+        "Text": "40 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "40",
+          "unit": "C"
+        },
+        "Start": 26,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "let the temperature be at 50 deg. ",
+    "Results": [
+      {
+        "Text": "50 deg.",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "50",
+          "unit": "Degree"
+        },
+        "Start": 26,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "convert 10 celsius to fahrenheit",
+    "Results": [
+      {
+        "Text": "10 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "10",
+          "unit": "C"
+        },
+        "Start": 8,
+        "End": 17
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 22,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "34.9 centigrate to farenheit",
+    "Results": [
+      {
+        "Text": "34.9 centigrate",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "34.9",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 14
+      },
+      {
+        "Text": "farenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 19,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "convert 200 celsius celsius into fahrenheit",
+    "Results": [
+      {
+        "Text": "200 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "200",
+          "unit": "C"
+        },
+        "Start": 8,
+        "End": 18
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 20,
+        "End": 26
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 33,
+        "End": 42
+      }
+    ]
+  },
+  {
+    "Input": "fahrenheit to celsius 101 fahrenheit is how much celsius",
+    "Results": [
+      {
+        "Text": "101 fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "101",
+          "unit": "F"
+        },
+        "Start": 22,
+        "End": 35
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 9
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 14,
+        "End": 20
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 49,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "50 degrees celsius celsius to fahrenheit",
+    "Results": [
+      {
+        "Text": "50 degrees celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "50",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 17
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 19,
+        "End": 25
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 30,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "could you convert 51 fahrenheit to degrees celsius",
+    "Results": [
+      {
+        "Text": "51 fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "51",
+          "unit": "F"
+        },
+        "Start": 18,
+        "End": 30
+      },
+      {
+        "Text": "degrees celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 35,
+        "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "convert 106 degree fahrenheit to degrees celsius",
+    "Results": [
+      {
+        "Text": "106 degree fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "106",
+          "unit": "F"
+        },
+        "Start": 8,
+        "End": 28
+      },
+      {
+        "Text": "degrees celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 33,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "convert 45 degrees fahrenheit to celsius",
+    "Results": [
+      {
+        "Text": "45 degrees fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "45",
+          "unit": "F"
+        },
+        "Start": 8,
+        "End": 28
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 33,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "how to convert - 20 degrees fahrenheit to celsius",
+    "Results": [
+      {
+        "Text": "- 20 degrees fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "-20",
+          "unit": "F"
+        },
+        "Start": 15,
+        "End": 37
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 42,
+        "End": 48
+      }
+    ]
+  }
+]

@@ -1,0 +1,337 @@
+[
+  {
+    "Input": "江苏彩民15元中大乐透1600万 奖池36.57亿",
+    "Results": [
+      {
+        "Text": "15元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "value": "15",
+          "unit": "Chinese yuan"
+        },
+        "Start": 4,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "其中，四川彩友中得1注1000万元基本头奖；",
+    "Results": [
+      {
+        "Text": "1000万元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "value": "10000000",
+          "unit": "Chinese yuan"
+        },
+        "Start": 11,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "本期开奖结束后，奖池金额攀升至36.57亿元。",
+    "Results": [
+      {
+        "Text": "36.57亿元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "value": "3657000000",
+          "unit": "Chinese yuan"
+        },
+        "Start": 15,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "１欧元可以",
+    "Results": [
+      {
+        "Text": "1欧元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "value": "1",
+          "unit": "Euro"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "兑换１．０７５３美元",
+    "Results": [
+      {
+        "Text": "1.0753美元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "1.0753",
+          "unit": "United States dollar"
+        },
+        "Start": 2,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "兑换1.0092瑞士法郎",
+    "Results": [
+      {
+        "Text": "1.0092瑞士法郎",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CHF",
+          "value": "1.0092",
+          "unit": "Swiss franc"
+        },
+        "Start": 2,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "2016年由于并购等直接投资，中国资金净流出1200亿美元",
+    "Results": [
+      {
+        "Text": "1200亿美元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "120000000000",
+          "unit": "United States dollar"
+        },
+        "Start": 22,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "宝安科技公司与国际精密的15位股东签署收购协议，以每股1.95港元",
+    "Results": [
+      {
+        "Text": "1.95港元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "HKD",
+          "value": "1.95",
+          "unit": "Hong Kong dollar"
+        },
+        "Start": 27,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "央行到期定存单5306亿台币",
+    "Results": [
+      {
+        "Text": "5306亿台币",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "TWD",
+          "value": "530600000000",
+          "unit": "New Taiwan dollar"
+        },
+        "Start": 7,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "东芝重组另需1万亿日元 已向交易银行申请贷款",
+    "Results": [
+      {
+        "Text": "1万亿日元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "JPY",
+          "value": "1000000000000",
+          "unit": "Japanese yen"
+        },
+        "Start": 6,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "10日元5日本銭",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "10日元5日本銭",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "JPY",
+          "value": "10.05",
+          "unit": "Japanese yen"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "达到445奈拉兑换",
+    "Results": [
+      {
+        "Text": "445奈拉",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "NGN",
+          "value": "445",
+          "unit": "Nigerian naira"
+        },
+        "Start": 2,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "十五美元",
+    "Results": [
+      {
+        "Text": "十五美元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "15",
+          "unit": "United States dollar"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "十美元",
+    "Results": [
+      {
+        "Text": "十美元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "10",
+          "unit": "United States dollar"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "苹果折扣一美元",
+    "Results": [
+      {
+        "Text": "一美元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "1",
+          "unit": "United States dollar"
+        },
+        "Start": 4,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "这台电脑两美元",
+    "Results": [
+      {
+        "Text": "两美元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "2",
+          "unit": "United States dollar"
+        },
+        "Start": 4,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "这台电脑两美元又三美分",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "两美元又三美分",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "2.03",
+          "unit": "United States dollar"
+        },
+        "Start": 4,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "这个手机壳五元三毛",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "五元三毛",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "value": "5.3",
+          "unit": "Chinese yuan"
+        },
+        "Start": 5,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "这个手机壳花费你五美元和花费我三块",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "五美元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "5",
+          "unit": "United States dollar"
+        },
+        "Start": 8,
+        "End": 10
+      },
+      {
+        "Text": "三块",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "value": "3",
+          "unit": "Chinese yuan"
+        },
+        "Start": 15,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "我有一千元",
+    "Results": [
+      {
+        "Text": "一千元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "value": "1000",
+          "unit": "Chinese yuan"
+        },
+        "Start": 2,
+        "End": 4
+      }
+    ]
+  }
+]
