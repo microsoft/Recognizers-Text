@@ -87,7 +87,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
             foreach (var er in ers)
             {
-                if (GetDigital(er.Text) < 7 && er.Data.ToString() != "ITPhoneNumber")
+                if (CountDigits(er.Text) < 7 && er.Data.ToString() != "ITPhoneNumber")
                 {
                     ers.Remove(er);
                     continue;
@@ -175,18 +175,18 @@ namespace Microsoft.Recognizers.Text.Sequence
             return Regex.IsMatch(phoneNumberText, BasePhoneNumbers.FormatIndicatorRegex);
         }
 
-        private int GetDigital(string phoneNumberText)
+        private int CountDigits(string candidateString)
         {
-            var cnt = 0;
-            foreach (var t in phoneNumberText)
+            var count = 0;
+            foreach (var t in candidateString)
             {
                 if (char.IsNumber(t))
                 {
-                    ++cnt;
+                    ++count;
                 }
             }
 
-            return cnt;
+            return count;
         }
     }
 }

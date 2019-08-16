@@ -113,13 +113,13 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
         let formatIndicatorRegex = new RegExp(BasePhoneNumbers.FormatIndicatorRegex, "ig");
         let digitRegex = new RegExp("[0-9]");
         for (let er of ers) {
-            let DigitalNum = 0;
+            let Digits = 0;
             for (let t of er.text) {
                 if (t.match(digitRegex)) {
-                    DigitalNum++ ; 
+                    Digits++ ; 
                 }
             }
-            if (DigitalNum < 7 && er.data !== "ITPhoneNumber"){
+            if (Digits < 7 && er.data !== "ITPhoneNumber") {
                 continue;
             }
             if (er.start + er.length < source.length) {

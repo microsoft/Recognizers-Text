@@ -82,12 +82,12 @@ class SequenceExtractor(Extractor):
         return True
 
 
-def get_digital(phone_number_text: str):
-    cnt = 0
-    for t in phone_number_text:
+def count_digits(candidate_string: str):
+    count = 0
+    for t in candidate_string:
         if t.isdigit():
-            cnt += 1
-    return cnt
+            count += 1
+    return count
 
 
 class BasePhoneNumberExtractor(SequenceExtractor):
@@ -141,7 +141,7 @@ class BasePhoneNumberExtractor(SequenceExtractor):
         format_indicator_regex = re.compile(
             BasePhoneNumbers.FormatIndicatorRegex, re.IGNORECASE | re.DOTALL)
         for er in extract_results:
-            if get_digital(er.text) < 7 and er.data != "ITPhoneNumber":
+            if count_digits(er.text) < 7 and er.data != "ITPhoneNumber":
                 continue
             if er.start + er.length < len(source):
                 ch = source[er.start + er.length]
