@@ -82,6 +82,14 @@ class SequenceExtractor(Extractor):
         return True
 
 
+def get_digital(phone_number_text: str):
+    cnt = 0
+    for t in phone_number_text:
+        if t.isdigit():
+            cnt += 1
+    return cnt
+
+
 class BasePhoneNumberExtractor(SequenceExtractor):
 
     def __init__(self, config):
@@ -133,6 +141,8 @@ class BasePhoneNumberExtractor(SequenceExtractor):
         format_indicator_regex = re.compile(
             BasePhoneNumbers.FormatIndicatorRegex, re.IGNORECASE | re.DOTALL)
         for er in extract_results:
+            if get_digital(er.text) < 7 and er.data != "ITPhoneNumber":
+                continue
             if er.start + er.length < len(source):
                 ch = source[er.start + er.length]
                 if ch in BasePhoneNumbers.ForbiddenSuffixMarkers:
@@ -140,6 +150,7 @@ class BasePhoneNumberExtractor(SequenceExtractor):
             ch = source[er.start - 1]
             if er.start != 0:
                 if ch in BasePhoneNumbers.BoundaryMarkers:
+                    # Handle cases like "-1234567" and "-1234+5678"
                     if ch in BasePhoneNumbers.SpecialBoundaryMarkers and \
                             format_indicator_regex.search(er.text) and \
                             er.start >= 2:

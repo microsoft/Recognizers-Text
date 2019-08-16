@@ -4685,5 +4685,53 @@
   {
     "Input": "0\t0\t0",
     "Results": []
+  },
+  {
+    "Input": "58 2105",
+    "Results": []
+  },
+  {
+    "Input": "1 506 64",
+    "Results": []
+  },
+  {
+    "Input": "37 41 4",
+    "Results": []
+  },
+  {
+    "Input": "25 32 2",
+    "Results": []
+  },
+  {
+    "Input": "19 32 2",
+    "Results": []
+  },
+  {
+    "Input": "15 3  20",
+    "Results": []
+  },
+  {
+    "Input": "03 473",
+    "Results": []
+  },
+  {
+    "Input": "20 15 11",
+    "Results": []
+  },
+  {
+    "Input": "8244 45",
+    "Results": []
+  },
+  {
+    "Input": "8198 27",
+    "Results": []
+  },
+  {
+    "Input": "8196 12",
+    "Results": []
+  },
+  {
+    "Input": "10 41 20",
+    "Results": []
   }
 ]

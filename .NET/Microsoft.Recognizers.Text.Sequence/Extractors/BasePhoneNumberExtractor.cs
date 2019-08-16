@@ -87,6 +87,12 @@ namespace Microsoft.Recognizers.Text.Sequence
 
             foreach (var er in ers)
             {
+                if (GetDigital(er.Text) < 7 && er.Data.ToString() != "ITPhoneNumber")
+                {
+                    ers.Remove(er);
+                    continue;
+                }
+
                 if (er.Start + er.Length < text.Length)
                 {
                     var ch = text[(int)(er.Start + er.Length)];
@@ -124,6 +130,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                             }
                         }
 
+                        // Handle cases like "-1234567" and "-1234+5678"
                         ers.Remove(er);
                     }
 
@@ -166,6 +173,20 @@ namespace Microsoft.Recognizers.Text.Sequence
         private bool CheckFormattedPhoneNumber(string phoneNumberText)
         {
             return Regex.IsMatch(phoneNumberText, BasePhoneNumbers.FormatIndicatorRegex);
+        }
+
+        private int GetDigital(string phoneNumberText)
+        {
+            var cnt = 0;
+            foreach (var t in phoneNumberText)
+            {
+                if (char.IsNumber(t))
+                {
+                    ++cnt;
+                }
+            }
+
+            return cnt;
         }
     }
 }
