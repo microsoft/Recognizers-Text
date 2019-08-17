@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(er|e|es)?|hälfte)(?=\b)";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(und\s+)?)?eine?(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb(er|e|es)?|hälfte)(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)";
-      public static readonly string AllPointRegex = $@"((\s*{ZeroToNineIntegerRegex})+|(\s*{SeparaIntRegex}))";
+      public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
       public static readonly string AllFloatRegex = $@"({AllIntRegex}(\s*komma\s*){AllPointRegex})";
       public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))(\d+(\.\d+)?)e([+-]*[1-9]\d*)(?=\b)";

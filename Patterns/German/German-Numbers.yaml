@@ -88,7 +88,7 @@ FractionPrepositionRegex: !nestedRegex
   references: [ AllIntRegex ]
 #Double Regex
 AllPointRegex: !nestedRegex
-  def: ((\s*{ZeroToNineIntegerRegex})+|(\s*{SeparaIntRegex}))
+  def: ((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))
   references: [ ZeroToNineIntegerRegex, SeparaIntRegex ]
 AllFloatRegex: !nestedRegex
   def: ({AllIntRegex}(\s*komma\s*){AllPointRegex})
