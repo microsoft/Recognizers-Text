@@ -924,13 +924,13 @@ public class ChineseDateTime {
 
     public static final String DefaultLanguageFallback = "DMY";
 
-    public static final List<String> MorningTermList = Arrays.asList("早","上午", "早上", "清晨");
+    public static final List<String> MorningTermList = Arrays.asList("早", "上午", "早上", "清晨");
 
     public static final List<String> MidDayTermList = Arrays.asList("中午", "正午");
 
     public static final List<String> AfternoonTermList = Arrays.asList("下午", "午后");
 
-    public static final List<String> EveningTermList = Arrays.asList("晚","晚上", "夜里", "傍晚", "夜晚");
+    public static final List<String> EveningTermList = Arrays.asList("晚", "晚上", "夜里", "傍晚", "夜晚");
 
     public static final List<String> DaytimeTermList = Arrays.asList("白天", "日间");
 
