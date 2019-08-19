@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     continue;
                 }
 
-                // for cases like "早稻田" and "晚安"
+                // for cases like "早" in "早稻田" and "晚" in "晚安"
                 if (SingleWordMOAndEVRegex.IsMatch(extractResult.Text))
                 {
                     continue;
