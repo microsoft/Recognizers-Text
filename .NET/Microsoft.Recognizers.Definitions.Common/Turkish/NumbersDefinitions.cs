@@ -55,8 +55,9 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string NegativeAllIntRegexWithLocks = $@"((?<=\b){NegativeAllIntRegex}(?=\b))";
       public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((yarım\s+)?düzine)|({AllIntRegex}\s+düzine))(?=\b)";
       public const string RoundNumberOrdinalRegex = @"(yüzüncü|bininci|milyonuncu|milyarıncı|trilyonuncu)";
+      public const string NumberOrdinalRegex = @"(birinci|ilk|ikinci|üçüncü|dördüncü|beşinci|altıncı|yedinci|sekizinci|dokuzuncu)";
       public const string TensOrdinalRegex = @"(onuncu|yirminci|otuzuncu|kırkıncı|ellinci|altmışıncı|yetmişinci|sekseninci|doksanıncı)";
-      public static readonly string OneToHundredOrdinalRegex = $@"(({TensNumberIntegerRegex}\s)?(birinci|ikinci|üçüncü|dördüncü|beşinci|altıncı|yedinci|sekizinci|dokuzuncu)|{TensOrdinalRegex})";
+      public static readonly string OneToHundredOrdinalRegex = $@"(({TensNumberIntegerRegex}\s)?{NumberOrdinalRegex}|{TensOrdinalRegex})";
       public static readonly string HundredsOrdinalRegex = $@"(({TwoToNineIntegerRegex}\s)?(yüzüncü))";
       public static readonly string HundredToThousandOrdinalRegex = $@"({HundredsNumberIntegerRegex}\s{OneToHundredOrdinalRegex}|{HundredsOrdinalRegex})";
       public static readonly string ThousandsOrdinalRegex = $@"(({TwoToNineIntegerRegex}\s)?(bininci))";
@@ -69,11 +70,10 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string AboveTrillionOrdinalRegex = $@"({TrillionsNumberIntegerRegex}\s({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex}|{BillionToTrillionOrdinalRegex})|{TrillionsOrdinalRegex})";
       public const string RelativeOrdinalRegex = @"((bir\s)?(sonraki|önceki)|sondan birinci|sondan bir önceki|sondan ikinci|(en\s)?son)";
       public static readonly string AllOrdinalRegex = $@"({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex}|{BillionToTrillionOrdinalRegex}|{AboveTrillionOrdinalRegex})";
-      public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(1(\.|'inci)|2(\.|'nci)|3(\.|'üncü)|4(\.|'üncü)|5(\.|'inci)|6(\.|'ıncı)|7(\.|'inci)|8(\.|'inci)|9(\.|'uncu))))(?=\b)";
-      public const string OrdinalTensSuffixRegex = @"(?<=\b)((\d*(10(\.|'uncu)|20(\.|'nci)|30(\.|'uncu)|40(\.|'ıncı)|50(\.|'inci)|60(\.|'ıncı)|70(\.|'inci)|80(\.|'inci)|90(\.|'ıncı))))(?=\b)";
-      public const string OrdinalRoundSuffixRegex = @"(?<=\b)((\d*(00(\.|'üncü)|000(\.|'inci)|000\.?000(\.|'uncu)|000(\.?000){2}(\.|'ıncı)|000(\.?000){2}\.?000(\.|'uncu))))(?=\b)";
-      public static readonly string OrdinalNumericRegex = $@"(?<=\b)({OrdinalSuffixRegex}|{OrdinalTensSuffixRegex}|{OrdinalRoundSuffixRegex})(?=\b)";
-      public static readonly string OrdinalTurkishRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
+      public const string AllOrdinalSuffix = @"(onu(?=nda)?|yirmisi(?=nde)?|otuzu(?=nda)?|kırkı(?=nda)?|ellisi(?=nde)?|altmışı(?=nda)?|yetmişi(?=nde)?|sekseni(?=nde)?|doksanı(?=nda)?|((on|yirmi|otuz)\s+)?(biri(?=nde)?|ilk|ikisi(?=nde)?|üçü(?=nde)?|dördü(?=nde)?|beşi(?=nde)?|altısı(?=nda)?|yedisi(?=nde)?|sekizi(?=nde)?|dokuzu(?=nda)?))";
+      public const string OrdinalSuffixRegex = @"(?<=\b)(\d*(00(\.|'üncü)|000(\.|'inci)|000\.?000(\.|'uncu)|000\.?000\.?000(\.|'ıncı)|000\.?000\.?000\.?000(\.|'uncu)|10(\.|'uncu|'u(?=nda)?)|20(\.|'nci|'si(?=nde)?)|30(\.|'uncu|'u(?=nda)?)|40(\.|'ıncı|'ı(?=nda)?)|50(\.|'inci|'si(?=nde)?)|60(\.|'ıncı|'ı(?=nda)?)|70(\.|'inci|'i(?=nde)?)|80(\.|'inci|'i(?=nde)?)|90(\.|'ıncı|'ı(?=nda)?)|1(\.|'inci|'i(?=nde)?)|2(\.|'nci|'si(?=nde)?)|3(\.|'üncü|'ü(?=nde)?)|4(\.|'üncü|'ü(?=nde)?)|5(\.|'inci|'i(?=nde)?)|6(\.|'ıncı|'sı(?=nda)?)|7(\.|'inci|'si(?=nde)?)|8(\.|'inci|'i(?=nde)?)|9(\.|'uncu|'u(?=nda)?)))";
+      public const string OrdinalNumericRegex = @"(?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*('inci|'ıncı|'uncu|'üncü|'nci|'ncı))(?=\b)";
+      public static readonly string OrdinalTurkishRegex = $@"(?<=\b)({AllOrdinalRegex}(?=\b)|{AllOrdinalSuffix})";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}\s)?(buçuk|çeyrek|yarım))(?=\b)";
@@ -179,36 +179,46 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly Dictionary<string, long> OrdinalNumberMap = new Dictionary<string, long>
         {
             { @"birinci", 1 },
+            { @"biri", 1 },
+            { @"ilk", 1 },
             { @"ikinci", 2 },
+            { @"ikisi", 2 },
             { @"ikincil", 2 },
             { @"yarım", 2 },
             { @"buçuk", 2 },
             { @"üçüncü", 3 },
+            { @"üçü", 3 },
             { @"dördüncü", 4 },
+            { @"dördü", 4 },
             { @"çeyrek", 4 },
             { @"beşinci", 5 },
+            { @"beşi", 5 },
             { @"altıncı", 6 },
+            { @"altısı", 6 },
             { @"yedinci", 7 },
+            { @"yedisi", 7 },
             { @"sekizinci", 8 },
+            { @"sekizi", 8 },
             { @"dokuzuncu", 9 },
+            { @"dokuzu", 9 },
             { @"onuncu", 10 },
-            { @"on birinci", 11 },
-            { @"on ikinci", 12 },
-            { @"on üçüncü", 13 },
-            { @"on dördüncü", 14 },
-            { @"on beşinci", 15 },
-            { @"on altıncı", 16 },
-            { @"on yedinci", 17 },
-            { @"on sekizinci", 18 },
-            { @"on dokuzuncu", 19 },
+            { @"onu", 10 },
             { @"yirminci", 20 },
+            { @"yirmisi", 20 },
             { @"otuzuncu", 30 },
+            { @"otuzu", 30 },
             { @"kırkıncı", 40 },
+            { @"kırkı", 40 },
             { @"ellinci", 50 },
+            { @"ellisi", 50 },
             { @"altmışıncı", 60 },
+            { @"altmışı", 60 },
             { @"yetmişinci", 70 },
+            { @"yetmişi", 70 },
             { @"sekseninci", 80 },
+            { @"sekseni", 80 },
             { @"donsanıncı", 90 },
+            { @"doksanı", 90 },
             { @"yüzüncü", 100 },
             { @"bininci", 1000 },
             { @"milyonuncu", 1000000 },

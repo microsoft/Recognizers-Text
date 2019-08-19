@@ -292,10 +292,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Mayıs'ın on birinde",
+        "Text": "Mayıs'ın on biri",
         "Type": "date",
         "Start": 0,
-        "Length": 19
+        "Length": 16
       }
     ]
   },
@@ -304,10 +304,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Mayıs'ın dördünde",
+        "Text": "Mayıs'ın dördü",
         "Type": "date",
         "Start": 0,
-        "Length": 17
+        "Length": 14
       }
     ]
   },
@@ -316,10 +316,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Mart'ın 4'ünde",
+        "Text": "Mart'ın 4'ü",
         "Type": "date",
         "Start": 0,
-        "Length": 14
+        "Length": 11
       }
     ]
   },
@@ -340,16 +340,15 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Haziran'ın yirmi ikisinde",
+        "Text": "Haziran'ın yirmi ikisi",
         "Type": "date",
         "Start": 0,
-        "Length": 25
+        "Length": 22
       }
     ]
   },
   {
     "Input": "27'nci kata gideceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
@@ -363,14 +362,13 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "27'si Çarşamba günü",
+        "Text": "27'si Çarşamba",
         "Type": "date",
         "Start": 0,
-        "Length": 16
+        "Length": 14
       }
     ]
   },
@@ -403,10 +401,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Gelecek ayın 20'sinde",
+        "Text": "Gelecek ayın 20'si",
         "Type": "date",
         "Start": 0,
-        "Length": 21
+        "Length": 18
       }
     ]
   },
@@ -415,10 +413,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Bu ayın 31'inde",
+        "Text": "Bu ayın 31'i",
         "Type": "date",
         "Start": 0,
-        "Length": 15
+        "Length": 12
       }
     ]
   },
@@ -505,10 +503,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "gelecek ayın 20'sinde",
+        "Text": "gelecek ayın 20'si",
         "Type": "date",
         "Start": 8,
-        "Length": 21
+        "Length": 18
       }
     ]
   },
@@ -553,10 +551,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Yirmi bir Eylül bin dokuz yüz yetmiş sekizde",
+        "Text": "Yirmi bir Eylül bin dokuz yüz yetmiş sekiz",
         "Type": "date",
         "Start": 0,
-        "Length": 44
+        "Length": 42
       }
     ]
   },
@@ -565,16 +563,17 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10 Eylül bin dokuz yüz birde",
+        "Text": "10 Eylül bin dokuz yüz bir",
         "Type": "date",
         "Start": 0,
-        "Length": 28
+        "Length": 26
       }
     ]
   },
   {
     "Input": "iki bin yılı Eylül'ün onunda",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "iki bin yılı Eylül'ün onunda",
@@ -621,15 +620,15 @@
     ]
   },
   {
-    "Input": "Yarından itibaren üç hafta uygun musun?",
-    "NotSupported": "dotnet",
+    "Input": "Yarından itibaren üç hafta sonra uygun musun?",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "Yarından itibaren üç hafta",
+        "Text": "Yarından itibaren üç hafta sonra",
         "Type": "date",
         "Start": 0,
-        "Length": 26
+        "Length": 32
       }
     ]
   },
@@ -653,7 +652,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
