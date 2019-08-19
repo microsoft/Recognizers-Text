@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Definitions
         {
             ':'
         };
-      public const string ColonPrefixCheckRegex = @"(([A-Za-z])\s*$)";
+      public const string ColonPrefixCheckRegex = @"(([a-z])\s*$)";
       public static readonly IList<char> SpecialBoundaryMarkers = new List<char>
         {
             '-',

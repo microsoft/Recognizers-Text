@@ -14,6 +14,6 @@ export namespace ChinesePhoneNumbers {
     export const WordBoundariesRegex = `(\\b|(?<=[\\u0800-\\u9FFF]))`;
     export const NonWordBoundariesRegex = `(\\B|(?<=[\\u0800-\\u9FFF]))`;
     export const EndWordBoundariesRegex = `(\\b|(?=[\\u0800-\\u9FFF]))`;
-    export const ColonPrefixCheckRegex = `(([A-Za-z]|[\\u4E00-\\u9FA5])\\s*$)`;
+    export const ColonPrefixCheckRegex = `(([a-z]|[\\u4E00-\\u9FA5])\\s*$)`;
     export const ForbiddenPrefixMarkers = [ ":","%" ];
 }

@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string WordBoundariesRegex = @"(\b|(?<=[\u0800-\u9FFF]))";
       public const string NonWordBoundariesRegex = @"(\B|(?<=[\u0800-\u9FFF]))";
       public const string EndWordBoundariesRegex = @"(\b|(?=[\u0800-\u9FFF]))";
-      public const string ColonPrefixCheckRegex = @"(([A-Za-z]|[\u4E00-\u9FA5])\s*$)";
+      public const string ColonPrefixCheckRegex = @"(([a-z]|[\u4E00-\u9FA5])\s*$)";
       public static readonly IList<char> ForbiddenPrefixMarkers = new List<char>
         {
             ':',

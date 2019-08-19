@@ -56,7 +56,7 @@ class BasePhoneNumbers:
     AreaCodeIndicatorRegex = f'\\('
     FormatIndicatorRegex = f'(\\s|-|/|\\.)+'
     ColonMarkers = [r':']
-    ColonPrefixCheckRegex = f'(([A-Za-z])\\s*$)'
+    ColonPrefixCheckRegex = f'(([a-z])\\s*$)'
     SpecialBoundaryMarkers = [r'-', r' ']
     BoundaryMarkers = [r'-', r'.', r'/', r'+', r'#', r'*']
     ForbiddenPrefixMarkers = [r',', r':', r'%']
