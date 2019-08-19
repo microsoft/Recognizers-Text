@@ -14,6 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex UntilRegex = new Regex(DateTimeDefinitions.ParserConfigurationUntil, RegexFlags);
         public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexFlags);
         public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexFlags);
+        public static readonly Regex SingleWordMOAndEVRegex = new Regex(DateTimeDefinitions.SingleWordMorningAndEveningRegex, RegexFlags);
         public static readonly Regex EqualRegex = new Regex(BaseDateTime.EqualRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
@@ -105,6 +106,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 // for cases like "12号"
                 if (Regex.IsMatch(extractResult.Text, negativeCaseRegex))
+                {
+                    continue;
+                }
+
+                // for cases like "早稻田" and "晚安"
+                if (SingleWordMOAndEVRegex.IsMatch(extractResult.Text))
                 {
                     continue;
                 }

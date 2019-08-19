@@ -521,6 +521,7 @@ class ChineseDateTime:
     DateTimePeriodAFRegex = f'(下午|午后|傍晚)'
     DateTimePeriodEVRegex = f'(晚上|夜里|夜晚|晚)'
     DateTimePeriodNIRegex = f'(半夜|夜间|深夜)'
+    SingleWordMorningAndEveningRegex = f'^[早晚]$'
     DurationUnitValueMap = dict([("Y", 31536000),
                                  ("Mon", 2592000),
                                  ("W", 604800),

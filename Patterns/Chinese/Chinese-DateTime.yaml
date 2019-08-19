@@ -770,6 +770,8 @@ DateTimePeriodEVRegex: !simpleRegex
   def: (晚上|夜里|夜晚|晚)
 DateTimePeriodNIRegex: !simpleRegex
   def: (半夜|夜间|深夜)
+SingleWordMorningAndEveningRegex: !simpleRegex
+  def: ^[早晚]$
 DurationUnitValueMap: !dictionary
   types: [string, int]
   entries:

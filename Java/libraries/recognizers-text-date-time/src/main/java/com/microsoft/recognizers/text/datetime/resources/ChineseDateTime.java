@@ -872,6 +872,8 @@ public class ChineseDateTime {
 
     public static final String DateTimePeriodNIRegex = "(半夜|夜间|深夜)";
 
+    public static final String SingleWordMorningAndEveningRegex = "^[早晚]$";
+
     public static final ImmutableMap<String, Integer> DurationUnitValueMap = ImmutableMap.<String, Integer>builder()
         .put("Y", 31536000)
         .put("Mon", 2592000)

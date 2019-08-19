@@ -568,6 +568,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string DateTimePeriodAFRegex = @"(下午|午后|傍晚)";
       public const string DateTimePeriodEVRegex = @"(晚上|夜里|夜晚|晚)";
       public const string DateTimePeriodNIRegex = @"(半夜|夜间|深夜)";
+      public const string SingleWordMorningAndEveningRegex = @"^[早晚]$";
       public static readonly Dictionary<string, int> DurationUnitValueMap = new Dictionary<string, int>
         {
             { @"Y", 31536000 },
