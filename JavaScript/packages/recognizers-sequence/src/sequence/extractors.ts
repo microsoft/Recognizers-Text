@@ -146,6 +146,10 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
                                 ret.push(er);
                             }
                         }
+                        // Handle cases like "91a-677-0060".
+                        else if (chGap <= 'z' && chGap >= 'a') {
+                            continue;
+                        }
                         else {
                             ret.push(er);
                         }
