@@ -165,6 +165,9 @@ class BasePhoneNumberExtractor(SequenceExtractor):
                                 er.length = er.length + match.end() - match.start() + 1
                                 er.text = source[er.start:er.start + er.length].strip()
                                 ret.append(er)
+                        # Handle cases like "91a-677-0060".
+                        elif ch_gap.islower():
+                            continue
                         else:
                             ret.append(er)
                     continue

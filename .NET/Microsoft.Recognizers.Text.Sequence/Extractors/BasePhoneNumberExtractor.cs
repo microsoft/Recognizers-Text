@@ -118,6 +118,13 @@ namespace Microsoft.Recognizers.Text.Sequence
                             var charGap = text[(int)(er.Start - 2)];
                             if (!char.IsNumber(charGap) && !char.IsWhiteSpace(charGap))
                             {
+                                // Handle cases like "91a-677-0060".
+                                if (char.IsLower(charGap))
+                                {
+                                    ers.Remove(er);
+                                    i--;
+                                }
+
                                 continue;
                             }
 

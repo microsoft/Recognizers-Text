@@ -4714,5 +4714,13 @@
         }
       }
     ]
+  },
+  {
+    "Input": "91a-677-0060 is not a phone number",
+    "Results": []
+  },
+  {
+    "Input": "9a1-677-0060 and a91-677-0060 are not phone numbers",
+    "Results": []
   }
 ]
