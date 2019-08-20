@@ -23,7 +23,7 @@ export abstract class FrenchNumberWithUnitExtractorConfiguration implements INum
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
-        this.unitNumExtractor = new FrenchNumberExtractor();
+        this.unitNumExtractor = new FrenchNumberExtractor(NumberMode.Unit);
 
         this.buildPrefix = FrenchNumericWithUnit.BuildPrefix;
         this.buildSuffix = FrenchNumericWithUnit.BuildSuffix;

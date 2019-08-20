@@ -32,7 +32,7 @@ export class PortugueseNumberExtractor extends BaseNumberExtractor {
         cardExtract.regexes.forEach(r => regexes.push(r));
 
         // Add Fraction
-        let fracExtract = new PortugueseFractionExtractor();
+        let fracExtract = new PortugueseFractionExtractor(mode);
         fracExtract.regexes.forEach(r => regexes.push(r));
 
         this.regexes = regexes;
@@ -164,7 +164,7 @@ export class PortugueseFractionExtractor extends BaseNumberExtractor {
 
     protected extractType: string = Constants.SYS_NUM_FRACTION;
 
-    constructor() {
+    constructor(mode: NumberMode = NumberMode.Default) {
         super();
 
         let regexes = new Array<RegExpValue>(
@@ -183,12 +183,16 @@ export class PortugueseFractionExtractor extends BaseNumberExtractor {
             {
                 regExp: RegExpUtility.getSafeRegExp(PortugueseNumeric.FractionNounWithArticleRegex),
                 value: "FracPor"
-            },
-            {
-                regExp: RegExpUtility.getSafeRegExp(PortugueseNumeric.FractionPrepositionRegex),
-                value: "FracPor"
             }
         );
+
+        // Not add FractionPrepositionRegex when the mode is Unit to avoid wrong recognize cases like "$1000 over 3"
+        if (mode != NumberMode.Unit){
+            regexes.push({
+                regExp: RegExpUtility.getSafeRegExp(PortugueseNumeric.FractionPrepositionRegex),
+                value: "FracPor"
+                });
+        };
 
         this.regexes = regexes;
     }

@@ -23,7 +23,7 @@ export abstract class SpanishNumberWithUnitExtractorConfiguration implements INu
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
-        this.unitNumExtractor = new SpanishNumberExtractor();
+        this.unitNumExtractor = new SpanishNumberExtractor(NumberMode.Unit);
 
         this.buildPrefix = SpanishNumericWithUnit.BuildPrefix;
         this.buildSuffix = SpanishNumericWithUnit.BuildSuffix;
