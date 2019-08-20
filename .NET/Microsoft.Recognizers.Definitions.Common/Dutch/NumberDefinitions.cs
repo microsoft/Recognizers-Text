@@ -54,8 +54,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(en\s+)?)?({AllIntRegex})(\s+|\s*-\s*|\s*/\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))n?|halven|vierdes)(?=\b)";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(en\s)?)?(een)(\s+|\s*-\s*|\s*/\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|halve|helft|kwart)(?=\b)";
-      public static readonly string FractionPrepositionRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(op|op\s+de|van\s+de|uit|uit\s+de)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
-      public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
+      public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(op|op\s+de|van\s+de|uit|uit\s+de)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
+      public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
       public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+komma){AllPointRegex}";
       public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
@@ -220,6 +220,10 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"g", 1000000000 },
             { @"b", 1000000000 },
             { @"t", 1000000000000 }
+        };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"[¥$€£₩]", @"[¥$€£₩]\d+" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {

@@ -147,8 +147,8 @@ FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\b)(({AllIntRegex}\s)?(buçuk|çeyrek|yarım))(?=\b)
   references: [ AllIntRegex ]
 FractionPrepositionRegex: !nestedRegex
-  def: (?<=\b)(eksi\s)?(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(bölü)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)
-  references: [ AllIntRegex ]
+  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(eksi\s)?(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(bölü)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)
+  references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]
 # Double Regex
 AllPointRegex: !nestedRegex
   def: ((\s{ZeroToNineIntegerRegex})+|(\s{AllIntRegex}))
@@ -381,6 +381,7 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '\bone\b': '\b(bu|şu)\b'
+    '[¥$€£₩]': '[¥$€£₩]\d+'
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
   entries:

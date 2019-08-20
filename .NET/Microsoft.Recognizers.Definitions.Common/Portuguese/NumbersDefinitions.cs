@@ -66,7 +66,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+((e|com)\s+)?)?({AllIntRegex})(\s+((e|com)\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)(?=\b)";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(e\s+)?)?(um|um[as])(\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\s+)?mei[oa]?)(?=\b)";
-      public static readonly string FractionPrepositionRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)";
+      public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)";
       public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+(vírgula|virgula|e|ponto)){AllPointRegex}";
       public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)";
@@ -389,6 +389,10 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"g", 1000000000 },
             { @"b", 1000000000 },
             { @"t", 1000000000000 }
+        };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"[¥$€£₩]", @"[¥$€£₩]\d+" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {

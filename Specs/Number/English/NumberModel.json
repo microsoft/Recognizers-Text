@@ -2502,12 +2502,34 @@
   {
     "Input": "I want to earn $10000 in 3 years",
     "NotSupported": "javascript, python, java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "3",
+        "Start": 25,
+        "End": 25,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        }
+      }
+    ]
   },
   {
     "Input": "I want to earn $2000 over 3 years",
     "NotSupported": "javascript, python, java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "3",
+        "Start": 26,
+        "End": 26,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        }
+      }
+    ]
   },
   {
     "Input": "2000 over 3",

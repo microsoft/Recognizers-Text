@@ -112,8 +112,8 @@ FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(y\s+)?)?(un|un[oa])(\s+)(({AllOrdinalRegex})|({SufixRoundOrdinalRegex})|(y\s+)?medi[oa]s?)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, SufixRoundOrdinalRegex ]
 FractionPrepositionRegex: !nestedRegex
-  def: (?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)
-  references: [ AllIntRegex ]
+  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)
+  references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]
 
 AllPointRegex: !nestedRegex
   def: ((\s+{ZeroToNineIntegerRegex})+|(\s+{AllIntRegex}))
@@ -476,6 +476,10 @@ RoundNumberMap: !dictionary
     g: 1000000000
     b: 1000000000
     t: 1000000000000
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '[¥$€£₩]': '[¥$€£₩]\d+'
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
 # TODO: modify below regex according to the counterpart in English

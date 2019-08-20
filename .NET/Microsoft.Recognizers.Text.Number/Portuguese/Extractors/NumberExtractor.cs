@@ -8,6 +8,8 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 {
     public class NumberExtractor : BaseNumberExtractor
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
@@ -45,9 +47,24 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             builder.AddRange(fracExtract.Regexes);
 
             this.Regexes = builder.ToImmutable();
+
+            var ambiguityBuilder = ImmutableDictionary.CreateBuilder<Regex, Regex>();
+
+            // Do not filter the ambiguous number cases like '$2000' in NumberWithUnit, otherwise they can't be resolved.
+            if (mode != NumberMode.Unit)
+            {
+                foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
+                {
+                    ambiguityBuilder.Add(new Regex(item.Key, RegexFlags), new Regex(item.Value, RegexFlags));
+                }
+            }
+
+            AmbiguityFiltersDict = ambiguityBuilder.ToImmutable();
         }
 
         internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+
+        protected sealed override ImmutableDictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
         protected sealed override NumberOptions Options { get; }
 

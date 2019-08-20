@@ -29,5 +29,6 @@ namespace Microsoft.Recognizers.Definitions
       public const string NumberMultiplierRegex = @"(K|k|M|G|T|B|b)";
       public const string MultiplierLookupRegex = @"(k|m|t|g|b)";
       public const string CurrencyRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(b|m|t|g)(?=\b)";
+      public const string CommonCurrencySymbol = @"[¥$€£₩]";
     }
 }
