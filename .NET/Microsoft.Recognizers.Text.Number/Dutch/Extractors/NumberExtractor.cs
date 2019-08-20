@@ -2,6 +2,7 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Dutch;
 
 namespace Microsoft.Recognizers.Text.Number.Dutch
@@ -55,6 +56,11 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
             // Do not filter the ambiguous number cases like '$2000' in NumberWithUnit, otherwise they can't be resolved.
             if (mode != NumberMode.Unit)
             {
+                foreach (var item in BaseNumbers.AmbiguityFiltersDict)
+                {
+                    ambiguityBuilder.Add(new Regex(item.Key, RegexFlags), new Regex(item.Value, RegexFlags));
+                }
+
                 foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
                 {
                     ambiguityBuilder.Add(new Regex(item.Key, RegexFlags), new Regex(item.Value, RegexFlags));

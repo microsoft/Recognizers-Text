@@ -508,7 +508,7 @@ RoundNumberMap: !dictionary
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    '[¥$€£₩]': '[¥$€£₩]\d+'
+    '^[.]': ''
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
   entries:

@@ -360,7 +360,6 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '\bone\b': '\b(the|this|that|which)\s+(one)\b'
-    '[¥$€£₩]': '[¥$€£₩]\d+'
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
   entries:

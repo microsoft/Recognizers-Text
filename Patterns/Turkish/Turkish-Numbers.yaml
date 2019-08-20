@@ -381,7 +381,6 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '\bone\b': '\b(bu|şu)\b'
-    '[¥$€£₩]': '[¥$€£₩]\d+'
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
   entries:

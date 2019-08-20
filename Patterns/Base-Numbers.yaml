@@ -15,5 +15,9 @@ MultiplierLookupRegex: !simpleRegex
 CurrencyRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(b|m|t|g)(?=\b)
 CommonCurrencySymbol: !simpleRegex
-  def: [¥$€£₩]
+  def: (¥|\$|€|£|₩)
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '(¥|\$|€|£|₩)': '(¥|\$|€|£|₩)\d+'
 ...
