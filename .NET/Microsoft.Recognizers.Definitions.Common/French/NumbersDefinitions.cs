@@ -349,7 +349,7 @@ namespace Microsoft.Recognizers.Definitions.French
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"[¥$€£₩]", @"[¥$€£₩]\d+" }
+            { @"^[.]", @"" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {

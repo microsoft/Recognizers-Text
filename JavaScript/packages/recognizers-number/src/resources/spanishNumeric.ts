@@ -55,7 +55,7 @@ export namespace SpanishNumeric {
     export const FractionNotationWithSpacesRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))`;
     export const FractionNounRegex = `(?<=\\b)(${AllIntRegex}\\s+((y|con)\\s+)?)?(${AllIntRegex})(\\s+((y|con)\\s)?)(((${AllOrdinalRegex})s?|(${SpecialFractionInteger})|(${SufixRoundOrdinalRegex})s?)|medi[oa]s?|tercios?)(?=\\b)`;
     export const FractionNounWithArticleRegex = `(?<=\\b)(${AllIntRegex}\\s+(y\\s+)?)?(un|un[oa])(\\s+)((${AllOrdinalRegex})|(${SufixRoundOrdinalRegex})|(y\\s+)?medi[oa]s?)(?=\\b)`;
-    export const FractionPrepositionRegex = `(?<=\\b)(?<numerator>(${AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>(${AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)`;
+    export const FractionPrepositionRegex = `(?<!${BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>(${AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>(${AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)`;
     export const AllPointRegex = `((\\s+${ZeroToNineIntegerRegex})+|(\\s+${AllIntRegex}))`;
     export const AllFloatRegex = `${AllIntRegex}(\\s+(coma|con))${AllPointRegex}`;
     export const DoubleDecimalPointRegex = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+(?!([\\.,]\\d+))(?=${placeholder})`; }
@@ -108,6 +108,7 @@ export namespace SpanishNumeric {
     export const PrefixCardinalMap: ReadonlyMap<string, number> = new Map<string, number>([["dos", 2],["tres", 3],["cuatro", 4],["cinco", 5],["seis", 6],["siete", 7],["ocho", 8],["nueve", 9],["diez", 10],["once", 11],["doce", 12],["trece", 13],["catorce", 14],["quince", 15],["dieciseis", 16],["dieciséis", 16],["diecisiete", 17],["dieciocho", 18],["diecinueve", 19],["veinte", 20],["ventiuna", 21],["veintiun", 21],["veintiún", 21],["veintidos", 22],["veintitres", 23],["veinticuatro", 24],["veinticinco", 25],["veintiseis", 26],["veintisiete", 27],["veintiocho", 28],["veintinueve", 29],["treinta", 30],["cuarenta", 40],["cincuenta", 50],["sesenta", 60],["setenta", 70],["ochenta", 80],["noventa", 90],["cien", 100],["doscientos", 200],["trescientos", 300],["cuatrocientos", 400],["quinientos", 500],["seiscientos", 600],["setecientos", 700],["ochocientos", 800],["novecientos", 900]]);
     export const SuffixOrdinalMap: ReadonlyMap<string, number> = new Map<string, number>([["milesimo", 1000],["millonesimo", 1000000],["billonesimo", 1000000000000]]);
     export const RoundNumberMap: ReadonlyMap<string, number> = new Map<string, number>([["mil", 1000],["milesimo", 1000],["millon", 1000000],["millón", 1000000],["millones", 1000000],["millonesimo", 1000000],["billon", 1000000000000],["billón", 1000000000000],["billones", 1000000000000],["billonesimo", 1000000000000],["trillon", 1000000000000000000],["trillón", 1000000000000000000],["trillones", 1000000000000000000],["trillonesimo", 1000000000000000000],["docena", 12],["docenas", 12],["k", 1000],["m", 1000000],["g", 1000000000],["b", 1000000000],["t", 1000000000000]]);
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^[.]", ""]]);
     export const RelativeReferenceOffsetMap: ReadonlyMap<string, string> = new Map<string, string>([["", ""]]);
     export const RelativeReferenceRelativeToMap: ReadonlyMap<string, string> = new Map<string, string>([["", ""]]);
 }

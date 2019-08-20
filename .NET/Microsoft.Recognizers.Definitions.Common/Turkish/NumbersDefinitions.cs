@@ -237,8 +237,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"\bone\b", @"\b(bu|şu)\b" },
-            { @"[¥$€£₩]", @"[¥$€£₩]\d+" }
+            { @"\bone\b", @"\b(bu|şu)\b" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {

@@ -248,8 +248,7 @@ namespace Microsoft.Recognizers.Definitions.English
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"\bone\b", @"\b(the|this|that|which)\s+(one)\b" },
-            { @"[¥$€£₩]", @"[¥$€£₩]\d+" }
+            { @"\bone\b", @"\b(the|this|that|which)\s+(one)\b" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {

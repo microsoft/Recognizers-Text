@@ -157,8 +157,9 @@ public class PortugueseNumeric {
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{SuffixRoundOrdinalRegex}", SuffixRoundOrdinalRegex);
 
-    public static final String FractionPrepositionRegex = "(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)"
-            .replace("{AllIntRegex}", AllIntRegex);
+    public static final String FractionPrepositionRegex = "(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)"
+            .replace("{AllIntRegex}", AllIntRegex)
+            .replace("{BaseNumbers.CommonCurrencySymbol}", BaseNumbers.CommonCurrencySymbol);
 
     public static final String AllFloatRegex = "{AllIntRegex}(\\s+(vírgula|virgula|e|ponto)){AllPointRegex}"
             .replace("{AllIntRegex}", AllIntRegex)
@@ -517,6 +518,10 @@ public class PortugueseNumeric {
         .put("g", 1000000000L)
         .put("b", 1000000000L)
         .put("t", 1000000000000L)
+        .build();
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("^[.]", "")
         .build();
 
     public static final ImmutableMap<String, String> RelativeReferenceOffsetMap = ImmutableMap.<String, String>builder()
