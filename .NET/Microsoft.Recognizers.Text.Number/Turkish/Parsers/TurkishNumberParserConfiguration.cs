@@ -17,6 +17,9 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
             this.LangMarker = NumbersDefinitions.LangMarker;
             this.CultureInfo = new CultureInfo(config.Culture);
 
+            this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
+            this.IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
+
             this.DecimalSeparatorChar = NumbersDefinitions.DecimalSeparatorChar;
             this.FractionMarkerToken = NumbersDefinitions.FractionMarkerToken;
             this.NonDecimalSeparatorChar = NumbersDefinitions.NonDecimalSeparatorChar;

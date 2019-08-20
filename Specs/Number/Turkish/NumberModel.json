@@ -2116,5 +2116,25 @@
         }
       }
     ]
+  },
+  {
+    "Input": "onbinaltıyüz",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "onbinaltıyüz",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10600"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10.000tl",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
   }
 ]
