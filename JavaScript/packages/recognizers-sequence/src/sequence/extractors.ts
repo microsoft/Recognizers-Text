@@ -119,7 +119,7 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
                     Digits++ ; 
                 }
             }
-            if (Digits < 7 && er.data !== "ITPhoneNumber") {
+            if ((Digits < 7 && er.data !== "ITPhoneNumber")) {
                 continue;
             }
             if (er.start + er.length < source.length) {
