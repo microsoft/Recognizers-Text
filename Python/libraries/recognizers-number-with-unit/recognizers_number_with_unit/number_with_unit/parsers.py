@@ -153,9 +153,9 @@ class BaseCurrencyParser(Parser):
             extract_result = compound_unit[idx]
             parse_result = self.number_with_unit_parser.parse(extract_result)
             parse_result_value = parse_result.value
-            if hasattr(parse_result_value, 'unit'):
+            try:
                 unit_value = parse_result_value.unit if parse_result_value else None
-            else:
+            except AttributeError:
                 unit_value = None
             # Process a new group
             if count == 0:

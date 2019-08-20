@@ -19,6 +19,10 @@ PrefixUnitResult = namedtuple('PrefixUnitResult', ['offset', 'unit'])
 
 class NumberWithUnitExtractorConfiguration(ABC):
     @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        raise NotImplementedError
+
+    @property
     @abstractmethod
     def extract_type(self) -> str:
         raise NotImplementedError
@@ -260,18 +264,18 @@ class NumberWithUnitExtractor(Extractor):
                             continue
 
                         result.append(er)
-                if 'prefix_unit' in locals():
-                    if prefix_unit is not None and not prefix_matched:
-                        er = ExtractResult()
-                        er.start = number.start - prefix_unit[0].offset
-                        er.length = number.length + prefix_unit[0].offset
-                        er.text = prefix_unit[0].unit + number.text
-                        er.type = self.config.extract_type
 
-                        # Relative position will be used in Parser
-                        number.start = start - er.start
-                        er.data = number
-                        result.append(er)
+                if prefix_unit and prefix_unit is not None and not prefix_matched:
+                    er = ExtractResult()
+                    er.start = number.start - prefix_unit[0].offset
+                    er.length = number.length + prefix_unit[0].offset
+                    er.text = prefix_unit[0].unit + number.text
+                    er.type = self.config.extract_type
+
+                    # Relative position will be used in Parser
+                    number.start = start - er.start
+                    er.data = number
+                    result.append(er)
 
         # Extract Separate unit
         if self.separate_regex:
@@ -329,7 +333,6 @@ class NumberWithUnitExtractor(Extractor):
                 to_add.text = match.group()
                 to_add.type = self.config.extract_type
                 num_depend_source.append(to_add)
-        #return result
 
     def _build_regex_from_set(self, definitions: List[str], ignore_case: bool = False) -> Set[Pattern]:
         return set(map(lambda x: self.__build_regex_from_str(x, ignore_case), definitions))
@@ -344,13 +347,10 @@ class NumberWithUnitExtractor(Extractor):
                                    definitions))
 
         match_terms = self.distinct(match_term_list)
-        flatted_list = []
 
-        for item in match_terms:
-            for i in item:
-                flatted_list.append(i)
+        flatten = [item for sublist in match_terms for item in sublist]
 
-        matcher.init(flatted_list)
+        matcher.init(flatten)
 
         return matcher
 
@@ -435,12 +435,11 @@ class NumberWithUnitExtractor(Extractor):
                 regexvar_value = self.config.ambiguity_filters_dict[regex_var]
 
                 try:
-                    reg_len = list(filter(lambda x: x.group(), regex.finditer(regexvar_value, text)))
+                    reg_match = list(filter(lambda x: x.group(), regex.finditer(regexvar_value, text)))
 
-                    reg_length = len(reg_len)
-                    if reg_length > 0:
+                    if len(reg_match) > 0:
 
-                        matches = reg_len
+                        matches = reg_match
                         new_ers = list(filter(lambda x: list(filter(lambda m: m.start() < x.start + x.length and m.start() +
                                                                     len(m.group()) > x.start, matches)), ers))
                         if len(new_ers) > 0:
