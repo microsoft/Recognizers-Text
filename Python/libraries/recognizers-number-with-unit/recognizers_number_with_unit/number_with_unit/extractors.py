@@ -20,7 +20,7 @@ PrefixUnitResult = namedtuple('PrefixUnitResult', ['offset', 'unit'])
 class NumberWithUnitExtractorConfiguration(ABC):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        raise NotImplementedError
+        pass
 
     @property
     @abstractmethod
@@ -75,11 +75,6 @@ class NumberWithUnitExtractorConfiguration(ABC):
     @property
     @abstractmethod
     def ambiguous_unit_number_multiplier_regex(self) -> Pattern:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
         raise NotImplementedError
 
     @property

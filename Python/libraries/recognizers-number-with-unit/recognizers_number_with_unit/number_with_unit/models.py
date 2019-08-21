@@ -1,6 +1,5 @@
 from abc import abstractmethod
 from typing import List
-from collections import namedtuple
 
 from recognizers_text.model import Model, ModelResult
 from recognizers_text.extractor import Extractor
@@ -26,14 +25,12 @@ class AbstractNumberWithUnitModel(Model):
 
     def parse(self, query: str) -> List[ModelResult]:
         query = QueryProcessor.preprocess(query, True)
-
         extraction_results = []
 
         try:
             for item in self.extractor_parser:
                 extract_results = item.extractor.extract(query)
-                parse_results = [r for r in [item.parser.parse(
-                    r) for r in extract_results] if not r.value is None]
+                parse_results = [r for r in [item.parser.parse(r) for r in extract_results] if not r.value is None]
 
                 for parse_result in parse_results:
                     model_result = ModelResult()
@@ -54,7 +51,8 @@ class AbstractNumberWithUnitModel(Model):
 
         return extraction_results
 
-    def get_resolution(self, data):
+    @staticmethod
+    def get_resolution(data):
         if isinstance(data, str):
             return {
                 'value': data

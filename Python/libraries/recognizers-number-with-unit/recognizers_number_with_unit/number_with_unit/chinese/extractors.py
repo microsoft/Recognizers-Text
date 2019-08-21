@@ -45,6 +45,26 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
         return None
 
+    @property
+    def extract_type(self) -> str:
+        raise NotImplementedError
+
+    @property
+    def suffix_list(self) -> Dict[str, str]:
+        raise NotImplementedError
+
+    @property
+    def prefix_list(self) -> Dict[str, str]:
+        raise NotImplementedError
+
+    @property
+    def ambiguous_unit_list(self) -> List[str]:
+        raise NotImplementedError
+
+    @property
+    def culture_info(self) -> CultureInfo:
+        return self._culture_info
+
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Chinese)
