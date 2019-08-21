@@ -1,4 +1,4 @@
-import { BaseNumberExtractor, RegExpValue, BasePercentageExtractor } from "../extractors";
+import { BaseNumberExtractor, RegExpValue, RegExpRegExp, BasePercentageExtractor } from "../extractors";
 import { Constants } from "../constants";
 import { NumberMode, LongFormatType } from "../models";
 import { PortugueseNumeric } from "../../resources/portugueseNumeric";
@@ -36,6 +36,22 @@ export class PortugueseNumberExtractor extends BaseNumberExtractor {
         fracExtract.regexes.forEach(r => regexes.push(r));
 
         this.regexes = regexes;
+
+        // Add filter
+        let AmbiguityFiltersDict = new Array<RegExpRegExp>();
+
+        if (mode != NumberMode.Unit){
+
+            for (let [ key, value ] of BaseNumbers.AmbiguityFiltersDict){
+                AmbiguityFiltersDict.push({ regExpKey: RegExpUtility.getSafeRegExp(key, "gs"), regExpValue: RegExpUtility.getSafeRegExp(value, "gs")})
+            }
+            
+            for (let [ key, value ] of PortugueseNumeric.AmbiguityFiltersDict){
+                AmbiguityFiltersDict.push({ regExpKey: RegExpUtility.getSafeRegExp(key, "gs"), regExpValue: RegExpUtility.getSafeRegExp(value, "gs")})
+            }
+        }
+
+        this.AmbiguityFiltersDict = AmbiguityFiltersDict;
     }
 }
 

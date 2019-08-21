@@ -1,4 +1,4 @@
-import { BaseNumberExtractor, RegExpValue, BasePercentageExtractor } from "../extractors";
+import { BaseNumberExtractor, RegExpValue, RegExpRegExp, BasePercentageExtractor } from "../extractors";
 import { Constants } from "../constants";
 import { NumberMode, LongFormatType } from "../models";
 import { JapaneseNumeric } from "../../resources/japaneseNumeric";
@@ -27,6 +27,10 @@ export class JapaneseNumberExtractor extends BaseNumberExtractor {
         fracExtract.regexes.forEach(r => regexes.push(r));
 
         this.regexes = regexes;
+
+        // Add filter
+        let AmbiguityFiltersDict = new Array<RegExpRegExp>();
+        this.AmbiguityFiltersDict = AmbiguityFiltersDict;
     }
 }
 
