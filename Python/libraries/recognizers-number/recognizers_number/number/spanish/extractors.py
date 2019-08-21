@@ -32,7 +32,7 @@ class SpanishNumberExtractor(BaseNumberExtractor):
 
         self.__regexes.extend(cardinal_ex.regexes)
 
-        fraction_ex = SpanishFractionExtractor()
+        fraction_ex = SpanishFractionExtractor(mode)
         self.__regexes.extend(fraction_ex.regexes)
 
 
@@ -157,7 +157,7 @@ class SpanishFractionExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_FRACTION
 
-    def __init__(self):
+    def __init__(self, mode):
         self.__regexes = [
             ReVal(
                 re=SpanishNumeric.FractionNotationRegex,
@@ -170,11 +170,14 @@ class SpanishFractionExtractor(BaseNumberExtractor):
                 val='FracSpa'),
             ReVal(
                 re=SpanishNumeric.FractionNounWithArticleRegex,
-                val='FracSpa'),
-            ReVal(
-                re=SpanishNumeric.FractionPrepositionRegex,
                 val='FracSpa')
         ]
+
+        if mode != NumberMode.Unit:
+            self.__regexes.append(
+                ReVal(
+                    re=SpanishNumeric.FractionPrepositionRegex,
+                    val='FracSpa'))
 
 
 class SpanishOrdinalExtractor(BaseNumberExtractor):

@@ -39,7 +39,7 @@ class EnglishNumberExtractor(BaseNumberExtractor):
 
         self.__regexes.extend(cardinal_ex.regexes)
 
-        fraction_ex = EnglishFractionExtractor()
+        fraction_ex = EnglishFractionExtractor(mode)
         self.__regexes.extend(fraction_ex.regexes)
 
 
@@ -173,7 +173,7 @@ class EnglishFractionExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_FRACTION
 
-    def __init__(self):
+    def __init__(self, mode):
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -190,12 +190,15 @@ class EnglishFractionExtractor(BaseNumberExtractor):
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     EnglishNumeric.FractionNounWithArticleRegex),
-                val='FracEng'),
-            ReVal(
-                re=RegExpUtility.get_safe_reg_exp(
-                    EnglishNumeric.FractionPrepositionRegex),
                 val='FracEng')
         ]
+
+        if mode != NumberMode.Unit:
+            self.__regexes.append(
+                ReVal(
+                    re=RegExpUtility.get_safe_reg_exp(
+                        EnglishNumeric.FractionPrepositionRegex),
+                    val='FracEng'))
 
 
 class EnglishOrdinalExtractor(BaseNumberExtractor):

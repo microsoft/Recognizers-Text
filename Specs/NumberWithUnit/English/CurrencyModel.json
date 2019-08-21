@@ -1774,7 +1774,6 @@
   },
   {
     "Input": "I want to loan $10000 over 3 years",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "$10000",
@@ -1790,7 +1789,6 @@
   },
   {
     "Input": "I want to earn $10000 in 3 years",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "$10000",

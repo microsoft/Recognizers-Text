@@ -4,6 +4,7 @@ from recognizers_text.culture import Culture
 from recognizers_text.extractor import Extractor
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.culture import CultureInfo
+from recognizers_number.number.models import NumberMode
 from recognizers_number.number.portuguese.extractors import PortugueseNumberExtractor
 from recognizers_number_with_unit.number_with_unit.constants import Constants
 from recognizers_number_with_unit.number_with_unit.extractors import NumberWithUnitExtractorConfiguration
@@ -45,7 +46,7 @@ class PortugueseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConf
         if culture_info is None:
             culture_info = CultureInfo(Culture.Portuguese)
         super().__init__(culture_info)
-        self._unit_num_extractor = PortugueseNumberExtractor()
+        self._unit_num_extractor = PortugueseNumberExtractor(NumberMode.Unit)
         self._build_prefix = PortugueseNumericWithUnit.BuildPrefix
         self._build_suffix = PortugueseNumericWithUnit.BuildSuffix
         self._connector_token = PortugueseNumericWithUnit.ConnectorToken

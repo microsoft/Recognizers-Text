@@ -39,7 +39,7 @@ class PortugueseNumberExtractor(BaseNumberExtractor):
 
         self.__regexes.extend(cardinal_ex.regexes)
 
-        fraction_ex = PortugueseFractionExtractor()
+        fraction_ex = PortugueseFractionExtractor(mode)
         self.__regexes.extend(fraction_ex.regexes)
 
 
@@ -173,7 +173,7 @@ class PortugueseFractionExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_FRACTION
 
-    def __init__(self):
+    def __init__(self, mode):
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -190,12 +190,14 @@ class PortugueseFractionExtractor(BaseNumberExtractor):
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     PortugueseNumeric.FractionNounWithArticleRegex),
-                val='FracPor'),
-            ReVal(
-                re=RegExpUtility.get_safe_reg_exp(
-                    PortugueseNumeric.FractionPrepositionRegex),
                 val='FracPor')
         ]
+
+        if mode != NumberMode.Unit:
+            self.__regexes.append(ReVal(
+                re=RegExpUtility.get_safe_reg_exp(
+                    PortugueseNumeric.FractionPrepositionRegex),
+                val='FracPor'))
 
 
 class PortugueseOrdinalExtractor(BaseNumberExtractor):

@@ -39,7 +39,7 @@ class FrenchNumberExtractor(BaseNumberExtractor):
 
         self.__regexes.extend(cardinal_ex.regexes)
 
-        fraction_ex = FrenchFractionExtractor()
+        fraction_ex = FrenchFractionExtractor(mode)
         self.__regexes.extend(fraction_ex.regexes)
 
 
@@ -173,7 +173,7 @@ class FrenchFractionExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_FRACTION
 
-    def __init__(self):
+    def __init__(self, mode):
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -190,12 +190,15 @@ class FrenchFractionExtractor(BaseNumberExtractor):
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     FrenchNumeric.FractionNounWithArticleRegex),
-                val='FracFr'),
-            ReVal(
-                re=RegExpUtility.get_safe_reg_exp(
-                    FrenchNumeric.FractionPrepositionRegex),
                 val='FracFr')
         ]
+
+        if mode != NumberMode.Unit:
+            self.__regexes.append(
+                ReVal(
+                    re=RegExpUtility.get_safe_reg_exp(
+                        FrenchNumeric.FractionPrepositionRegex),
+                    val='FracFr'))
 
 
 class FrenchOrdinalExtractor(BaseNumberExtractor):
