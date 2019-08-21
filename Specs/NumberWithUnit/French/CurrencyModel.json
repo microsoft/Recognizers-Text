@@ -1536,7 +1536,7 @@
   },
   {
     "Input": "Je veux un crédit de EUR 1000 sur 3 ans",
-    "NotSupported": "python,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "eur 1000",
@@ -1552,7 +1552,7 @@
   },
   {
     "Input": "Je veux un crédit de 1000 EUR sur 3 ans",
-    "NotSupported": "python,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "1000 eur",

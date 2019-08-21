@@ -33,7 +33,7 @@ public class SpanishNumberWithUnitParserConfiguration extends BaseNumberWithUnit
 
     public SpanishNumberWithUnitParserConfiguration(CultureInfo ci) {
         super(ci);
-        this.internalNumberExtractor = new NumberExtractor(NumberMode.Default);
+        this.internalNumberExtractor = NumberExtractor.getInstance(NumberMode.Default);
         this.internalNumberParser = AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration());
     }
 }

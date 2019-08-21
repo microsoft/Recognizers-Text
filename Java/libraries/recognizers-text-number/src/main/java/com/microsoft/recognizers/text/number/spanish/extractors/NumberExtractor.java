@@ -4,13 +4,16 @@ import static com.microsoft.recognizers.text.number.NumberMode.Default;
 
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.NumberMode;
+import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.BaseNumbers;
 import com.microsoft.recognizers.text.number.resources.SpanishNumeric;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
+import org.javatuples.Pair;
 
 public class NumberExtractor extends BaseNumberExtractor {
 
@@ -26,11 +29,31 @@ public class NumberExtractor extends BaseNumberExtractor {
         return Constants.SYS_NUM;
     }
 
-    public NumberExtractor() {
-        this(Default);
+    private static final ConcurrentHashMap<Pair<NumberMode, NumberOptions>, NumberExtractor> instances = new ConcurrentHashMap<>();
+
+    public static NumberExtractor getInstance(NumberOptions options) {
+        return getInstance(NumberMode.Default, options);
     }
 
-    public NumberExtractor(NumberMode mode) {
+    public static NumberExtractor getInstance(NumberMode mode) {
+        return getInstance(mode, NumberOptions.None);
+    }
+
+    public static NumberExtractor getInstance() {
+        return getInstance(NumberMode.Default, NumberOptions.None);
+    }
+
+    public static NumberExtractor getInstance(NumberMode mode, NumberOptions options) {
+        Pair<NumberMode, NumberOptions> key = Pair.with(mode, options);
+        if (!instances.containsKey(key)) {
+            NumberExtractor instance = new NumberExtractor(mode, options);
+            instances.put(key, instance);
+        }
+
+        return instances.get(key);
+    }
+
+    private NumberExtractor(NumberMode mode, NumberOptions options) {
         HashMap<Pattern, String> builder = new HashMap<>();
 
         //Add Cardinal
@@ -55,7 +78,7 @@ public class NumberExtractor extends BaseNumberExtractor {
         builder.putAll(cardExtract.getRegexes());
 
         //Add Fraction
-        FractionExtractor fracExtract = new FractionExtractor();
+        FractionExtractor fracExtract = new FractionExtractor(mode);
         builder.putAll(fracExtract.getRegexes());
 
         this.regexes = Collections.unmodifiableMap(builder);

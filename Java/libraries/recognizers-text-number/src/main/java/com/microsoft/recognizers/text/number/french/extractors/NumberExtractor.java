@@ -80,7 +80,7 @@ public class NumberExtractor extends BaseNumberExtractor {
 
         builder.putAll(cardExtract.getRegexes());
 
-        FractionExtractor fracExtract = new FractionExtractor();
+        FractionExtractor fracExtract = new FractionExtractor(mode);
         builder.putAll(fracExtract.getRegexes());
 
         this.regexes = Collections.unmodifiableMap(builder);

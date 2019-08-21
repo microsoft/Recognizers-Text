@@ -47,6 +47,10 @@ public class NumberExtractor extends BaseNumberExtractor {
         return getInstance(NumberMode.Default, NumberOptions.None);
     }
 
+    public static NumberExtractor getInstance(NumberMode mode) {
+        return getInstance(mode, NumberOptions.None);
+    }
+
     public static NumberExtractor getInstance(NumberMode mode, NumberOptions options) {
         Pair<NumberMode, NumberOptions> key = Pair.with(mode, options);
         if (!instances.containsKey(key)) {
@@ -86,7 +90,7 @@ public class NumberExtractor extends BaseNumberExtractor {
         builder.putAll(cardinalExtractor.getRegexes());
 
         // Add Fraction
-        FractionExtractor fractionExtractor = FractionExtractor.getInstance(this.options);
+        FractionExtractor fractionExtractor = FractionExtractor.getInstance(mode, this.options);
         builder.putAll(fractionExtractor.getRegexes());
 
         this.regexes = Collections.unmodifiableMap(builder);
