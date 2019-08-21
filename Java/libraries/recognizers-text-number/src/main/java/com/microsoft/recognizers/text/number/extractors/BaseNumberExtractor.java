@@ -17,10 +17,15 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public abstract class BaseNumberExtractor implements IExtractor {
 
     protected abstract Map<Pattern, String> getRegexes();
+
+    protected Map<Pattern, Pattern> getAmbiguityFiltersDict() {
+        return null;
+    }
 
     protected abstract String getExtractType();
 
@@ -105,8 +110,29 @@ public abstract class BaseNumberExtractor implements IExtractor {
                 last = i;
             }
         }
-
+        result = filterAmbiguity(result, source);
         return result;
+    }
+
+    private ArrayList<ExtractResult> filterAmbiguity(ArrayList<ExtractResult> ers, String input) {
+        if (getAmbiguityFiltersDict() != null) {
+            for (Map.Entry<Pattern, Pattern> pair : getAmbiguityFiltersDict().entrySet()) {
+                final Pattern key = pair.getKey();
+                final Pattern value = pair.getValue();
+
+                Optional<Match> keyMatch = Arrays.stream(RegExpUtility.getMatches(key, input)).findFirst();
+                if (keyMatch.isPresent()) {
+                    final Match[] matches = RegExpUtility.getMatches(value, input);
+                    List<ExtractResult> newErs = ers.stream()
+                        .filter(er -> Arrays.stream(matches).noneMatch(m -> m.index < er.getStart() + er.getLength() && m.index + m.length > er.getStart()))
+                        .collect(Collectors.toList());
+                    ers.clear();
+                    ers.addAll(newErs);
+                }
+            }
+        }
+
+        return ers;
     }
 
     protected Pattern generateLongFormatNumberRegexes(LongFormatType type) {
