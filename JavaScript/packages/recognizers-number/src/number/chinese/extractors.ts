@@ -29,8 +29,8 @@ export class ChineseNumberExtractor extends BaseNumberExtractor {
         this.regexes = regexes;
 
         // Add filter
-        let AmbiguityFiltersDict = new Array<RegExpRegExp>();
-        this.AmbiguityFiltersDict = AmbiguityFiltersDict;
+        let ambiguityFiltersDict = new Array<RegExpRegExp>();
+        this.ambiguityFiltersDict = ambiguityFiltersDict;
     }
 }
 

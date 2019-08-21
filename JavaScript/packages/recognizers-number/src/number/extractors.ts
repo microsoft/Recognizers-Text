@@ -20,7 +20,7 @@ export abstract class BaseNumberExtractor implements IExtractor {
 
     regexes: RegExpValue[];
 
-    AmbiguityFiltersDict: RegExpRegExp[];
+    ambiguityFiltersDict: RegExpRegExp[];
 
     protected extractType: string = "";
 
@@ -93,8 +93,8 @@ export abstract class BaseNumberExtractor implements IExtractor {
     }
 
     private FilterAmbiguity(ers: ExtractResult[], text: string) {
-        if (this.AmbiguityFiltersDict !== null && this.AmbiguityFiltersDict !== undefined){
-            for (let regex of this.AmbiguityFiltersDict){
+        if (this.ambiguityFiltersDict !== null && this.ambiguityFiltersDict !== undefined){
+            for (let regex of this.ambiguityFiltersDict){
                 if (RegExpUtility.isMatch(regex.regExpKey, text)){
                     let matches = RegExpUtility.getMatches(regex.regExpValue, text);
                     if (matches && matches.length){

@@ -38,21 +38,21 @@ export class FrenchNumberExtractor extends BaseNumberExtractor {
         this.regexes = regexes;
 
         // Add filter
-        let AmbiguityFiltersDict = new Array<RegExpRegExp>();
+        let ambiguityFiltersDict = new Array<RegExpRegExp>();
 
         if (mode != NumberMode.Unit){
 
             for (let [ key, value ] of BaseNumbers.AmbiguityFiltersDict){
-                AmbiguityFiltersDict.push({ regExpKey: RegExpUtility.getSafeRegExp(key, "gs"), regExpValue: RegExpUtility.getSafeRegExp(value, "gs")})
+                ambiguityFiltersDict.push({ regExpKey: RegExpUtility.getSafeRegExp(key, "gs"), regExpValue: RegExpUtility.getSafeRegExp(value, "gs")})
             }
             
             for (let [ key, value ] of FrenchNumeric.AmbiguityFiltersDict){
-                AmbiguityFiltersDict.push({ regExpKey: RegExpUtility.getSafeRegExp(key, "gs"), regExpValue: RegExpUtility.getSafeRegExp(value, "gs")})
+                ambiguityFiltersDict.push({ regExpKey: RegExpUtility.getSafeRegExp(key, "gs"), regExpValue: RegExpUtility.getSafeRegExp(value, "gs")})
             }
             
         }
 
-        this.AmbiguityFiltersDict = AmbiguityFiltersDict;
+        this.ambiguityFiltersDict = ambiguityFiltersDict;
     }
 }
 

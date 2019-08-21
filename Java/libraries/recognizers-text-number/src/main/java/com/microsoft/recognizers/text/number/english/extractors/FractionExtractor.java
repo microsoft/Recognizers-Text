@@ -69,7 +69,6 @@ public class FractionExtractor extends BaseNumberExtractor {
             }
         }
 
-
         this.regexes = Collections.unmodifiableMap(builder);
     }
 }
