@@ -1758,5 +1758,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Je veux un crédit de EUR 1000 sur 3 ans",
+    "Context": {
+      "ReferenceDateTime": "2019-08-12T00:00:00"
+    },
+    "NotSupported": "javascript, python,java",
+    "Results": [
+      {
+        "Text": "3 ans",
+        "Start": 34,
+        "End": 38,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3Y",
+              "type": "duration",
+              "value": "94608000"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

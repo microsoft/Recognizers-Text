@@ -10,6 +10,7 @@ from recognizers_number.number.models import LongFormatType
 from recognizers_number.number.constants import Constants
 
 ReVal = namedtuple('ReVal', ['re', 'val'])
+ReRe = namedtuple('ReRe', ['reKey', 'reVal'])
 MatchesVal = namedtuple('MatchesVal', ['matches', 'val'])
 
 
@@ -18,6 +19,10 @@ class BaseNumberExtractor(Extractor):
     @abstractmethod
     def regexes(self) -> List[ReVal]:
         raise NotImplementedError
+
+    @property
+    def ambiguity_filters_dict(self) -> List[ReRe]:
+        pass
 
     @property
     @abstractmethod
@@ -77,7 +82,25 @@ class BaseNumberExtractor(Extractor):
                         value.type = self._extract_type
                         value.data = match_source.get(src_match, None)
                         result.append(value)
+
+        result = self._filter_ambiguity(result, source)
         return result
+
+    def _filter_ambiguity(self, ers: List[ExtractResult], text: str) -> List[ExtractResult]:
+        if self.ambiguity_filters_dict is not None:
+            for item in self.ambiguity_filters_dict:
+                if regex.search(item.reKey, text):
+                    matches = list(regex.finditer(item.reVal, text))
+                    if matches and len(matches):
+                        ers = list(filter(lambda x: self._filter_item(x, matches), ers))
+        return ers
+
+    def _filter_item(self, er: ExtractResult, matches: List[Match]) -> bool:
+        for match in matches:
+            if match.start() < er.start + er.length and match.end() > er.start:
+                return False
+
+        return True
 
     def _generate_format_regex(self, format_type: LongFormatType,
                                placeholder: str = None) -> Pattern:

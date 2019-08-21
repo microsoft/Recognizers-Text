@@ -13902,5 +13902,52 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I want to loan $10000 over 3 years",
+    "Context": {
+      "ReferenceDateTime": "2019-08-12T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "3 years",
+        "Start": 27,
+        "End": 33,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3Y",
+              "type": "duration",
+              "value": "94608000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want to loan $10000 in 3 years",
+    "Context": {
+      "ReferenceDateTime": "2019-08-12T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "in 3 years",
+        "Start": 22,
+        "End": 31,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-08-12",
+              "type": "date",
+              "value": "2022-08-12"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -2,6 +2,7 @@ package com.microsoft.recognizers.text.numberwithunit.spanish.extractors;
 
 import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.IExtractor;
+import com.microsoft.recognizers.text.number.NumberMode;
 import com.microsoft.recognizers.text.number.spanish.extractors.NumberExtractor;
 import com.microsoft.recognizers.text.numberwithunit.extractors.INumberWithUnitExtractorConfiguration;
 import com.microsoft.recognizers.text.numberwithunit.resources.SpanishNumericWithUnit;
@@ -18,7 +19,7 @@ public abstract class SpanishNumberWithUnitExtractorConfiguration implements INu
     protected SpanishNumberWithUnitExtractorConfiguration(CultureInfo cultureInfo) {
         this.cultureInfo = cultureInfo;
 
-        this.unitNumExtractor = new NumberExtractor();
+        this.unitNumExtractor = NumberExtractor.getInstance(NumberMode.Unit);;
         this.compoundUnitConnectorRegex =
                 Pattern.compile(SpanishNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }

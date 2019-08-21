@@ -23,7 +23,7 @@ export abstract class EnglishNumberWithUnitExtractorConfiguration implements INu
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
-        this.unitNumExtractor = new EnglishNumberExtractor();
+        this.unitNumExtractor = new EnglishNumberExtractor(NumberMode.Unit);
 
         this.buildPrefix = EnglishNumericWithUnit.BuildPrefix;
         this.buildSuffix = EnglishNumericWithUnit.BuildSuffix;

@@ -11,6 +11,8 @@
 
 package com.microsoft.recognizers.text.number.resources;
 
+import com.google.common.collect.ImmutableMap;
+
 public class BaseNumbers {
 
     public static final String NumberReplaceToken = "@builtin.num";
@@ -37,4 +39,10 @@ public class BaseNumbers {
     public static final String MultiplierLookupRegex = "(k|m|t|g|b)";
 
     public static final String CurrencyRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(b|m|t|g)(?=\\b)";
+
+    public static final String CommonCurrencySymbol = "(¥|\\$|€|£|₩)";
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("(¥|\\$|€|£|₩)", "(¥|\\$|€|£|₩)\\d+")
+        .build();
 }

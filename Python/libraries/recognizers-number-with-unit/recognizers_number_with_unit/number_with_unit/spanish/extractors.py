@@ -4,6 +4,7 @@ from recognizers_text.culture import Culture
 from recognizers_text.extractor import Extractor
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.culture import CultureInfo
+from recognizers_number.number.models import NumberMode
 from recognizers_number.number.spanish.extractors import SpanishNumberExtractor
 from recognizers_number_with_unit.number_with_unit.constants import Constants
 from recognizers_number_with_unit.number_with_unit.extractors import NumberWithUnitExtractorConfiguration
@@ -45,7 +46,7 @@ class SpanishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         if culture_info is None:
             culture_info = CultureInfo(Culture.Spanish)
         super().__init__(culture_info)
-        self._unit_num_extractor = SpanishNumberExtractor()
+        self._unit_num_extractor = SpanishNumberExtractor(NumberMode.Unit)
         self._build_prefix = SpanishNumericWithUnit.BuildPrefix
         self._build_suffix = SpanishNumericWithUnit.BuildSuffix
         self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(

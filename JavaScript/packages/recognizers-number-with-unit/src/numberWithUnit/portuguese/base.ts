@@ -23,7 +23,7 @@ export abstract class PortugueseNumberWithUnitExtractorConfiguration implements 
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
-        this.unitNumExtractor = new PortugueseNumberExtractor();
+        this.unitNumExtractor = new PortugueseNumberExtractor(NumberMode.Unit);
 
         this.buildPrefix = PortugueseNumericWithUnit.BuildPrefix;
         this.buildSuffix = PortugueseNumericWithUnit.BuildSuffix;
