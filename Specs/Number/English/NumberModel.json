@@ -2501,7 +2501,6 @@
   },
   {
     "Input": "I want to earn $10000 in 3 years",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3",
@@ -2517,7 +2516,6 @@
   },
   {
     "Input": "I want to earn $2000 over 3 years",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3",
@@ -2548,7 +2546,6 @@
   },
   {
     "Input": "$20",
-    "NotSupported": "python",
     "Results": []
   }
 ]

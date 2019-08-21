@@ -88,11 +88,11 @@ export abstract class BaseNumberExtractor implements IExtractor {
             }
         }
 
-        result = this.FilterAmbiguity(result, source);
+        result = this.filterAmbiguity(result, source);
         return result;
     }
 
-    private FilterAmbiguity(ers: ExtractResult[], text: string) {
+    private filterAmbiguity(ers: ExtractResult[], text: string) {
         if (this.ambiguityFiltersDict !== null && this.ambiguityFiltersDict !== undefined){
             for (let regex of this.ambiguityFiltersDict){
                 if (RegExpUtility.isMatch(regex.regExpKey, text)){

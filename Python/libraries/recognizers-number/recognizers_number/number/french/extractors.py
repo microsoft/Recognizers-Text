@@ -3,8 +3,9 @@ import regex
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.models import NumberMode, LongFormatMode
+from recognizers_number.resources import BaseNumbers
 from recognizers_number.resources.french_numeric import FrenchNumeric
-from recognizers_number.number.extractors import ReVal, BaseNumberExtractor, BasePercentageExtractor
+from recognizers_number.number.extractors import ReVal, ReRe, BaseNumberExtractor, BasePercentageExtractor
 from recognizers_number.number.constants import Constants
 
 
@@ -12,6 +13,10 @@ class FrenchNumberExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
+
+    @property
+    def ambiguity_filters_dict(self) -> List[ReRe]:
+        return self.__ambiguity_filters_dict
 
     @property
     def _extract_type(self) -> str:
@@ -41,6 +46,17 @@ class FrenchNumberExtractor(BaseNumberExtractor):
 
         fraction_ex = FrenchFractionExtractor(mode)
         self.__regexes.extend(fraction_ex.regexes)
+
+        ambiguity_filters_dict: List[ReRe] = list()
+
+        if mode != NumberMode.Unit:
+            for key, value in BaseNumbers.AmbiguityFiltersDict.items():
+                ambiguity_filters_dict.append(ReRe(reKey=RegExpUtility.get_safe_reg_exp(key),
+                                                   reVal=RegExpUtility.get_safe_reg_exp(value)))
+            for key, value in FrenchNumeric.AmbiguityFiltersDict.items():
+                ambiguity_filters_dict.append(ReRe(reKey=RegExpUtility.get_safe_reg_exp(key),
+                                                   reVal=RegExpUtility.get_safe_reg_exp(value)))
+        self.__ambiguity_filters_dict = ambiguity_filters_dict
 
 
 class FrenchCardinalExtractor(BaseNumberExtractor):

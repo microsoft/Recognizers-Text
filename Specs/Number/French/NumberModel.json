@@ -1661,7 +1661,6 @@
   },
   {
     "Input": "Je veux un crédit de €1000 sur 3 ans",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "un",
