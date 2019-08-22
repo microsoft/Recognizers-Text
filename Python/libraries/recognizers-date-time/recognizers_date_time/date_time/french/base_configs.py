@@ -33,6 +33,14 @@ class FrenchDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
     def am_pm_desc_regex(self) -> Pattern:
         return self._am_pm_desc_regex
 
+    @property
+    def time_unit_regex(self) -> Pattern:
+        return self._time_unit_regex
+
+    @property
+    def within_next_prefix_regex(self) -> Pattern:
+        return self._within_next_prefix_regex
+
     def __init__(self):
         self._later_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.LaterRegex)
@@ -48,3 +56,7 @@ class FrenchDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
             FrenchDateTime.PmDescRegex)
         self._am_pm_desc_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.AmPmDescRegex)
+        self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.TimeUnitRegex)
+        self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.WithinNextPrefixRegex)

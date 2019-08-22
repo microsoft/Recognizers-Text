@@ -24,9 +24,18 @@ from .datetime_extractor_config import FrenchDateTimeExtractorConfiguration
 from .datetimeperiod_extractor_config import FrenchDateTimePeriodExtractorConfiguration
 from .set_extractor_config import FrenchSetExtractorConfiguration
 from .holiday_extractor_config import FrenchHolidayExtractorConfiguration
+from ...resources.base_date_time import BaseDateTime
 
 
 class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
+    @property
+    def ambiguity_filters_dict(self) -> Pattern:
+        return None
+
+    @property
+    def unspecified_date_period_regex(self) -> Pattern:
+        return self._unspecified_date_period_regex
+
     @property
     def date_extractor(self) -> DateTimeExtractor:
         return self._date_extractor
@@ -78,6 +87,18 @@ class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
     @property
     def since_regex(self) -> Pattern:
         return self._since_regex
+
+    @property
+    def around_regex(self) -> Pattern:
+        return self._around_regex
+
+    @property
+    def equal_regex(self) -> Pattern:
+        return self._equal_regex
+
+    @property
+    def suffix_after_regex(self) -> Pattern:
+        return self._suffix_after_regex
 
     @property
     def from_to_regex(self) -> Pattern:
@@ -135,3 +156,11 @@ class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
             FrenchHolidayExtractorConfiguration())
         self._integer_extractor = FrenchIntegerExtractor()
         self._filter_word_regex_list = []
+        self._unspecified_date_period_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.UnspecificDatePeriodRegex
+        )
+        self._around_regex = FrenchDateTime.AroundRegex
+        self._equal_regex = BaseDateTime.EqualRegex
+        self._suffix_after_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SuffixAfterRegex
+        )
