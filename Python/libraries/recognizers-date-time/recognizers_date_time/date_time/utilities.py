@@ -3,6 +3,8 @@ from abc import ABC, abstractmethod
 from typing import List, Dict, Pattern, Union
 from datetime import datetime, timedelta
 import calendar
+
+from build.lib.recognizers_date_time import DateTimeOptions
 from datedelta import datedelta
 import regex
 
@@ -11,6 +13,137 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_date_time.date_time.constants import TimeTypeConstants, Constants
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.parsers import DateTimeParser, DateTimeParseResult
+from recognizers_text.Matcher.string_matcher import StringMatcher, MatchResult
+
+
+class RegexExtension:
+
+    @staticmethod
+    def match_begin(regex: Pattern, text: str, trim: bool):
+        match = regex.match(text)
+
+        if match is None:
+            return None
+
+        str_before = text[0: text.index(match.group())]
+
+        if trim:
+            str_before = str_before.strip()
+
+        return ConditionalMatch(match, match and (str.isspace(str_before) or str_before is None))
+
+    @staticmethod
+    def match_end(regex: Pattern, text: str, trim: bool):
+        match = regex.search(text)
+
+        if match is None:
+            return None
+
+        srt_after = text[:match.index + len(text.index(match.group()))]
+
+        if trim:
+            srt_after = srt_after.strip()
+
+        return ConditionalMatch(match, match and (str.isspace(srt_after) or srt_after is None))
+
+
+class ConditionalMatch:
+
+    def __init__(self, match: Pattern, success: bool):
+        self._match = match,
+        self._success = success
+
+    @property
+    def match(self) -> Pattern:
+        return self._match
+
+    @match.setter
+    def match(self, value):
+        self._match = value
+
+    @property
+    def success(self) -> bool:
+        return self._success
+
+    @success.setter
+    def success(self, value):
+        self._success = value
+
+    @property
+    def index(self) -> int:
+        return str.index(self.match.groups())
+
+    @property
+    def length(self) -> int:
+        return len(self.match)
+
+    @property
+    def value(self) -> str:
+        return self.match
+
+    @property
+    def groups(self):
+        return self.match.groups()
+
+
+class MatchingUtil:
+
+    @staticmethod
+    def pre_process_text_remove_superfluous_words(text: str, matcher: StringMatcher, superfluous_word_matches) -> str:
+        superfluous_word_matches = MatchingUtil.remove_sub_matches(matcher.find(text))
+
+        bias = 0
+
+        for match in superfluous_word_matches:
+            text = text[match.start - bias: match.length]
+
+            bias += match.length
+
+        return text, superfluous_word_matches
+
+    @staticmethod
+    def post_process_recover_superfluous_words(extract_results: List[ExtractResult], superfluous_word_matches,
+                                               origin_text: str):
+        for match in superfluous_word_matches:
+            for extract_result in extract_results:
+
+                extract_result_end = extract_result.start + extract_result.length
+                if match.start > extract_result.start and extract_result_end >= match.start:
+                    extract_result.length += len(match)
+
+                if match.start <= extract_result.start:
+                    extract_result.start += len(match)
+
+        for extract_result in extract_results:
+            extract_result.text = origin_text[extract_result.start: extract_result.start + extract_result.length]
+
+        return extract_results
+
+    @staticmethod
+    def remove_sub_matches(match_results: List[MatchResult]):
+        match_list = list(filter(lambda x: list(
+            filter(lambda m: m.start() < x.start + x.length and m.start() +
+                   len(m.group()) > x.start, match_results)), match_results))
+
+        if len(match_list) > 0:
+            for item in match_results:
+                for i in match_list:
+                    if item is i:
+                        match_results.remove(item)
+
+        return match_results
+
+
+class DateTimeOptionsConfiguration(ABC):
+    @property
+    @abstractmethod
+    def options(self) -> DateTimeOptions:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def dmy_date_format(self) -> bool:
+        raise NotImplementedError
 
 
 class DateTimeOptions(IntFlag):
@@ -18,6 +151,10 @@ class DateTimeOptions(IntFlag):
     SKIP_FROM_TO_MERGE = 1
     SPLIT_DATE_AND_TIME = 2
     CALENDAR = 4
+    EXTENDED_TYPES = 8
+    FAIL_FAST = 2097152
+    EXPERIMENTAL_MODE = 4194304
+    ENABLE_PREVIEW = 8388608
 
 
 class Token:
@@ -302,6 +439,16 @@ class DateTimeUtilityConfiguration(ABC):
     def am_pm_desc_regex(self) -> Pattern:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def time_unit_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def within_next_prefix_regex(self) -> Pattern:
+        raise NotImplementedError
+
 
 class MatchedIndex:
     def __init__(self, matched: bool, index: int):
@@ -356,29 +503,55 @@ class AgoLaterUtil:
         if pos <= len(source):
             after_string = source[pos:]
             before_string = source[0: extract_result.start]
-            value = MatchingUtil.get_ago_later_index(
-                after_string, config.ago_regex)
+            is_time_duration = config.time_unit_regex.search(extract_result.text)
 
-            if value.matched:
-                ret.append(Token(extract_result.start, extract_result.start +
-                                 extract_result.length + value.index))
-            else:
+            if MatchingUtil.get_ago_later_index(after_string, config.ago_regex).matched:
+                # We don't support cases like "5 minutes from today" for now
+                # Cases like "5 minutes ago" or "5 minutes from now" are supported
+                # Cases like "2 days before today" or "2 weeks from today" are also supported
+                is_day_match_in_after_string = RegExpUtility.get_group(
+                    config.ago_regex.match(after_string), 'day')
+
+                value = MatchingUtil.get_ago_later_index(
+                    after_string, config.ago_regex)
+
+                if not(is_time_duration and is_day_match_in_after_string):
+                    ret.append(Token(extract_result.start, extract_result.start +
+                                     extract_result.length + value.index))
+
+            elif MatchingUtil.get_ago_later_index(after_string, config.later_regex).matched:
+
+                is_day_match_in_after_string = RegExpUtility.get_group(
+                    config.later_regex.search(after_string), 'day')
+
                 value = MatchingUtil.get_ago_later_index(
                     after_string, config.later_regex)
-                if value.matched:
-                    ret.append(Token(
-                        extract_result.start, extract_result.start + extract_result.length + value.index))
-                else:
+
+                if not(is_time_duration and is_day_match_in_after_string):
+                    ret.append(Token(extract_result.start, extract_result.start +
+                                     extract_result.length + value.index))
+
+            elif MatchingUtil.get_in_index(before_string, config.in_connector_regex).matched:
+                # For range unit like "week, month, year", it should output dateRange or datetimeRange
+                if not (config.range_unit_regex.search(extract_result.text)):
                     value = MatchingUtil.get_in_index(
                         before_string, config.in_connector_regex)
 
-                    # for range unit like "week, month, year", it should output dateRange or datetimeRange
-                    if regex.search(config.range_unit_regex, extract_result.text):
-                        return ret
+                    if extract_result.start is not None and extract_result.length is not None and extract_result.start >= value.index:
+                        ret.append(Token(extract_result.start - value.index, extract_result.start + extract_result.length))
 
-                    if (value.matched and extract_result.start and extract_result.length and extract_result.start >= value.index):
-                        ret.append(Token(extract_result.start - value.index,
-                                         extract_result.start + extract_result.length))
+            elif MatchingUtil.get_in_index(before_string, config.within_next_prefix_regex).matched:
+
+                #For range unit like "week, month, year, day, second, minute, hour",
+                # it should output dateRange or datetimeRange
+                if not (config.range_unit_regex.search(extract_result.text)) and not config.time_unit_regex.search(
+                        extract_result.text):
+                    value = MatchingUtil.get_in_index(
+                        before_string, config.within_next_prefix_regex)
+                    if extract_result.start is not None and extract_result.length is not None and extract_result.start >= value.index:
+                        ret.append(
+                            Token(extract_result.start - value.index, extract_result.start + extract_result.length))
+
         return ret
 
     @staticmethod
