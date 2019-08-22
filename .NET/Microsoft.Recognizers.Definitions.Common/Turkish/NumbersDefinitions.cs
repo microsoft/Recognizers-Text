@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
     public static class NumbersDefinitions
     {
       public const string LangMarker = @"Tr";
-      public const bool CompoundNumberLanguage = false;
+      public const bool CompoundNumberLanguage = true;
       public const bool MultiDecimalSeparatorCulture = true;
       public const string DigitsNumberRegex = @"\d+|\d{1,3}(\.\d{3})";
       public const string RoundNumberIntegerRegex = @"(yüz|bin|milyon|milyar|trilyon)";
@@ -32,22 +32,22 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string NegativeNumberTermsRegex = @"(?<negTerm>(eksi|negatif)\s+)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
       public const string TensNumberIntegerRegex = @"(on|yirmi|otuz|kırk|elli|altmış|yetmiş|seksen|doksan)";
-      public static readonly string HundredsNumberIntegerRegex = $@"({TwoToNineIntegerRegex}\syüz|yüz)";
-      public static readonly string TenToHundredRegex = $@"({TensNumberIntegerRegex}(\s{OneToNineIntegerRegex}))";
-      public static readonly string HundredToThousandRegex = $@"({HundredsNumberIntegerRegex}(\s({OneToNineIntegerRegex}|{TenToHundredRegex}|{TensNumberIntegerRegex})))";
-      public static readonly string ThousandsNumberIntegerRegex = $@"(({HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{TwoToNineIntegerRegex}|{TensNumberIntegerRegex})\sbin|bin)";
-      public static readonly string ThousandToMillionRegex = $@"({ThousandsNumberIntegerRegex}(\s({HundredToThousandRegex}|{HundredsNumberIntegerRegex}|{TenToHundredRegex}|{{TensNumberIntegerRegex}}|{OneToNineIntegerRegex})))";
-      public static readonly string MillionsNumberIntegerRegex = $@"(({HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})\smilyon)";
-      public static readonly string MillionToBillionRegex = $@"({MillionsNumberIntegerRegex}(\s({ThousandToMillionRegex}|{ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})))";
-      public static readonly string BillionsNumberIntegerRegex = $@"(({HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})\smilyar)";
-      public static readonly string BillionToTrillionRegex = $@"({BillionsNumberIntegerRegex}(\s({MillionToBillionRegex}|{MillionsNumberIntegerRegex}|{ThousandToMillionRegex}|{ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})))";
-      public static readonly string TrillionsNumberIntegerRegex = $@"(({ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})\strilyon)";
-      public static readonly string AboveTrillionRegex = $@"({TrillionsNumberIntegerRegex}(\s({BillionToTrillionRegex}|{BillionsNumberIntegerRegex}|{MillionToBillionRegex}|{MillionsNumberIntegerRegex}|{ThousandToMillionRegex}|{ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})))";
+      public static readonly string HundredsNumberIntegerRegex = $@"({TwoToNineIntegerRegex}\s*yüz|yüz)";
+      public static readonly string TenToHundredRegex = $@"({TensNumberIntegerRegex}(\s*{OneToNineIntegerRegex}))";
+      public static readonly string HundredToThousandRegex = $@"({HundredsNumberIntegerRegex}(\s*({OneToNineIntegerRegex}|{TenToHundredRegex}|{TensNumberIntegerRegex})))";
+      public static readonly string ThousandsNumberIntegerRegex = $@"(({HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{TwoToNineIntegerRegex}|{TensNumberIntegerRegex})\s*bin|bin)";
+      public static readonly string ThousandToMillionRegex = $@"({ThousandsNumberIntegerRegex}(\s*({HundredToThousandRegex}|{HundredsNumberIntegerRegex}|{TenToHundredRegex}|{{TensNumberIntegerRegex}}|{OneToNineIntegerRegex})))";
+      public static readonly string MillionsNumberIntegerRegex = $@"(({HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})\s*milyon)";
+      public static readonly string MillionToBillionRegex = $@"({MillionsNumberIntegerRegex}(\s*({ThousandToMillionRegex}|{ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})))";
+      public static readonly string BillionsNumberIntegerRegex = $@"(({HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})\s*milyar)";
+      public static readonly string BillionToTrillionRegex = $@"({BillionsNumberIntegerRegex}(\s*({MillionToBillionRegex}|{MillionsNumberIntegerRegex}|{ThousandToMillionRegex}|{ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})))";
+      public static readonly string TrillionsNumberIntegerRegex = $@"(({ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})\s*trilyon)";
+      public static readonly string AboveTrillionRegex = $@"({TrillionsNumberIntegerRegex}(\s*({BillionToTrillionRegex}|{BillionsNumberIntegerRegex}|{MillionToBillionRegex}|{MillionsNumberIntegerRegex}|{ThousandToMillionRegex}|{ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})))";
       public static readonly string AllIntRegex = $@"({AboveTrillionRegex}|{BillionToTrillionRegex}|{MillionToBillionRegex}|{ThousandToMillionRegex}|{MillionsNumberIntegerRegex}|{BillionsNumberIntegerRegex}|{TrillionsNumberIntegerRegex}|{ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{HundredsNumberIntegerRegex}|{TenToHundredRegex}|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})";
       public static readonly string NegativeAllIntRegex = $@"(eksi\s)({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}|{ThousandToMillionRegex}|{MillionToBillionRegex}|{BillionToTrillionRegex}|{AboveTrillionRegex})";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
-      public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})";
+      public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";
       public static readonly string NumbersWithSuffix = $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)";
       public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+düzine(?=\b)";
@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string RelativeOrdinalRegex = @"((bir\s)?(sonraki|önceki)|sondan birinci|sondan bir önceki|sondan ikinci|(en\s)?son)";
       public static readonly string AllOrdinalRegex = $@"({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex}|{BillionToTrillionOrdinalRegex}|{AboveTrillionOrdinalRegex})";
       public const string AllOrdinalSuffix = @"(onu(?=nda)?|yirmisi(?=nde)?|otuzu(?=nda)?|kırkı(?=nda)?|ellisi(?=nde)?|altmışı(?=nda)?|yetmişi(?=nde)?|sekseni(?=nde)?|doksanı(?=nda)?|((on|yirmi|otuz)\s+)?(biri(?=nde)?|ilk|ikisi(?=nde)?|üçü(?=nde)?|dördü(?=nde)?|beşi(?=nde)?|altısı(?=nda)?|yedisi(?=nde)?|sekizi(?=nde)?|dokuzu(?=nda)?))";
-      public const string OrdinalSuffixRegex = @"(?<=\b)(\d*(00(\.|'üncü)|000(\.|'inci)|000\.?000(\.|'uncu)|000\.?000\.?000(\.|'ıncı)|000\.?000\.?000\.?000(\.|'uncu)|10(\.|'uncu|'u(?=nda)?)|20(\.|'nci|'si(?=nde)?)|30(\.|'uncu|'u(?=nda)?)|40(\.|'ıncı|'ı(?=nda)?)|50(\.|'inci|'si(?=nde)?)|60(\.|'ıncı|'ı(?=nda)?)|70(\.|'inci|'i(?=nde)?)|80(\.|'inci|'i(?=nde)?)|90(\.|'ıncı|'ı(?=nda)?)|1(\.|'inci|'i(?=nde)?)|2(\.|'nci|'si(?=nde)?)|3(\.|'üncü|'ü(?=nde)?)|4(\.|'üncü|'ü(?=nde)?)|5(\.|'inci|'i(?=nde)?)|6(\.|'ıncı|'sı(?=nda)?)|7(\.|'inci|'si(?=nde)?)|8(\.|'inci|'i(?=nde)?)|9(\.|'uncu|'u(?=nda)?)))";
+      public const string OrdinalSuffixRegex = @"(?<=\b)(\d*(00(\.(?!\d+)|'üncü)|000(\.(?!\d+)|'inci)|000\.?000(\.(?!\d+)|'uncu)|000\.?000\.?000(\.(?!\d+)|'ıncı)|000\.?000\.?000\.?000(\.(?!\d+)|'uncu)|10(\.(?!\d+)|'uncu|'u(?=nda)?)|20(\.(?!\d+)|'nci|'si(?=nde)?)|30(\.(?!\d+)|'uncu|'u(?=nda)?)|40(\.(?!\d+)|'ıncı|'ı(?=nda)?)|50(\.(?!\d+)|'inci|'si(?=nde)?)|60(\.(?!\d+)|'ıncı|'ı(?=nda)?)|70(\.(?!\d+)|'inci|'i(?=nde)?)|80(\.(?!\d+)|'inci|'i(?=nde)?)|90(\.(?!\d+)|'ıncı|'ı(?=nda)?)|1(\.(?!\d+)|'inci|'i(?=nde)?)|2(\.(?!\d+)|'nci|'si(?=nde)?)|3(\.(?!\d+)|'üncü|'ü(?=nde)?)|4(\.(?!\d+)|'üncü|'ü(?=nde)?)|5(\.(?!\d+)|'inci|'i(?=nde)?)|6(\.(?!\d+)|'ıncı|'sı(?=nda)?)|7(\.(?!\d+)|'inci|'si(?=nde)?)|8(\.(?!\d+)|'inci|'i(?=nde)?)|9(\.(?!\d+)|'uncu|'u(?=nda)?)))";
       public const string OrdinalNumericRegex = @"(?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*('inci|'ıncı|'uncu|'üncü|'nci|'ncı))(?=\b)";
       public static readonly string OrdinalTurkishRegex = $@"(?<=\b)({AllOrdinalRegex}(?=\b)|{AllOrdinalSuffix})";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
