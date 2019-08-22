@@ -43,7 +43,7 @@ class SpanishDateTime:
     MonthFrontSimpleCasesRegex = f'\\b{MonthSuffixRegex}\\s+((desde\\s+el|desde|del)\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b'
     MonthFrontBetweenRegex = f'\\b{MonthSuffixRegex}\\s+((entre|entre\\s+el)\\s+)({DayRegex})\\s*{AndRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b'
     DayBetweenRegex = f'\\b((entre|entre\\s+el)\\s+)({DayRegex})(\\s+{MonthSuffixRegex})?\\s*{AndRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b'
-    OneWordPeriodRegex = f'\\b(((((la|el)\\s+)?mes\\s+(({OfPrepositionRegex})\\s+))|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\\s+))?({MonthRegex})|((la|el)\\s+)?((({RelativeRegex}\\s+){DateUnitRegex}(\\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\\s+{AfterNextSuffixRegex}))|va\\s+de\\s+{DateUnitRegex})'
+    OneWordPeriodRegex = f'\\b(((((la|el)\\s+)?mes\\s+(({OfPrepositionRegex})\\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\\s+))?({MonthRegex})|((la|el)\\s+)?((({RelativeRegex}\\s+){DateUnitRegex}(\\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\\s+{AfterNextSuffixRegex}))|va\\s+de\\s+{DateUnitRegex})'
     MonthWithYearRegex = f'\\b(((pr[oó]xim[oa](s)?|este|esta|[uú]ltim[oa]?)\\s+)?({MonthRegex})(\\s+|(\\s*[,-]\\s*))((de|del|de la)\\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año))\\b'
     MonthNumWithYearRegex = f'({YearRegex}(\\s*?)[/\\-\\.~](\\s*?){MonthNumRegex})|({MonthNumRegex}(\\s*?)[/\\-\\.~](\\s*?){YearRegex})'
     WeekOfMonthRegex = f'(?<wom>(la\\s+)?(?<cardinal>primera?|1ra|segunda|2da|tercera?|3ra|cuarta|4ta|quinta|5ta|[uú]ltima)\\s+semana\\s+{MonthSuffixRegex})'
@@ -54,7 +54,7 @@ class SpanishDateTime:
     QuarterRegex = f'(el\\s+)?{QuarterTermRegex}((\\s+del?|\\s*,\\s*)?\\s+({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+a[ñn]o|a[ñn]o(\\s+{AfterNextSuffixRegex})))?'
     QuarterRegexYearFront = f'({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+a[ñn]o)\\s+(el\\s+)?{QuarterTermRegex}'
     AllHalfYearRegex = f'^[.]'
-    EarlyPrefixRegex = f'\\b(?<EarlyPrefix>((comienzos|inicios)\\s+({OfPrepositionRegex})))\\b'
+    EarlyPrefixRegex = f'\\b(?<EarlyPrefix>((comienzos?|inicios?)\\s+({OfPrepositionRegex})))\\b'
     MidPrefixRegex = f'\\b(?<MidPrefix>(mediados\\s+({OfPrepositionRegex})))\\b'
     LaterPrefixRegex = f'\\b(?<LatePrefix>((fines|finales)\\s+({OfPrepositionRegex})))\\b'
     PrefixPeriodRegex = f'({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})'
@@ -418,6 +418,7 @@ class SpanishDateTime:
     NextPrefixRegex = f'(pr[oó]xim[oa]|siguiente|{UpcomingPrefixRegex})\\b'
     PastPrefixRegex = f'.^'
     PreviousPrefixRegex = f'([uú]ltim[oa]|{PastPrefixRegex})\\b'
+    PreviousSuffixRegex = f'\\b(pasad[ao])\\b'
     ThisPrefixRegex = f'(est[ea])\\b'
     RelativeDayRegex = f'(?<relday>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\\s+días)|(días\\s+((que\\s+viene)|pasado)))\\b'
     RestOfDateRegex = f'\\bresto\\s+((del|de)\\s+)?((la|el|est[ae])\\s+)?(?<duration>semana|mes|año|decada)(\\s+actual)?\\b'
@@ -451,10 +452,10 @@ class SpanishDateTime:
     MinusOneDayTerms = [r'ayer', r'ultimo dia']
     PlusTwoDayTerms = [r'pasado mañana', r'dia despues de mañana']
     MinusTwoDayTerms = [r'anteayer', r'dia antes de ayer']
-    MonthTerms = [r'mes', r'meses']
+    MonthTerms = [r'mes', r'meses', r'mes pasado', r'mes pasados']
     MonthToDateTerms = [r'mes a la fecha', r'meses a la fecha']
     WeekendTerms = [r'fin de semana']
-    WeekTerms = [r'semana']
+    WeekTerms = [r'semana', r'semana pasada']
     YearTerms = [r'año', r'años']
     YearToDateTerms = [r'año a la fecha', r'años a la fecha']
     SpecialCharactersEquivalent = dict([("á", "a"),

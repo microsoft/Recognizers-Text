@@ -107,7 +107,7 @@ public class SpanishDateTime {
             .replace("{MonthSuffixRegex}", MonthSuffixRegex)
             .replace("{YearRegex}", YearRegex);
 
-    public static final String OneWordPeriodRegex = "\\b(((((la|el)\\s+)?mes\\s+(({OfPrepositionRegex})\\s+))|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\\s+))?({MonthRegex})|((la|el)\\s+)?((({RelativeRegex}\\s+){DateUnitRegex}(\\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\\s+{AfterNextSuffixRegex}))|va\\s+de\\s+{DateUnitRegex})"
+    public static final String OneWordPeriodRegex = "\\b(((((la|el)\\s+)?mes\\s+(({OfPrepositionRegex})\\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\\s+))?({MonthRegex})|((la|el)\\s+)?((({RelativeRegex}\\s+){DateUnitRegex}(\\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\\s+{AfterNextSuffixRegex}))|va\\s+de\\s+{DateUnitRegex})"
             .replace("{MonthRegex}", MonthRegex)
             .replace("{RelativeRegex}", RelativeRegex)
             .replace("{OfPrepositionRegex}", OfPrepositionRegex)
@@ -148,7 +148,7 @@ public class SpanishDateTime {
 
     public static final String AllHalfYearRegex = "^[.]";
 
-    public static final String EarlyPrefixRegex = "\\b(?<EarlyPrefix>((comienzos|inicios)\\s+({OfPrepositionRegex})))\\b"
+    public static final String EarlyPrefixRegex = "\\b(?<EarlyPrefix>((comienzos?|inicios?)\\s+({OfPrepositionRegex})))\\b"
             .replace("{OfPrepositionRegex}", OfPrepositionRegex);
 
     public static final String MidPrefixRegex = "\\b(?<MidPrefix>(mediados\\s+({OfPrepositionRegex})))\\b"
@@ -890,6 +890,8 @@ public class SpanishDateTime {
     public static final String PreviousPrefixRegex = "([uú]ltim[oa]|{PastPrefixRegex})\\b"
             .replace("{PastPrefixRegex}", PastPrefixRegex);
 
+    public static final String PreviousSuffixRegex = "\\b(pasad[ao])\\b";
+
     public static final String ThisPrefixRegex = "(est[ea])\\b";
 
     public static final String RelativeDayRegex = "(?<relday>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\\s+días)|(días\\s+((que\\s+viene)|pasado)))\\b";
@@ -962,13 +964,13 @@ public class SpanishDateTime {
 
     public static final List<String> MinusTwoDayTerms = Arrays.asList("anteayer", "dia antes de ayer");
 
-    public static final List<String> MonthTerms = Arrays.asList("mes", "meses");
+    public static final List<String> MonthTerms = Arrays.asList("mes", "meses", "mes pasado", "mes pasados");
 
     public static final List<String> MonthToDateTerms = Arrays.asList("mes a la fecha", "meses a la fecha");
 
     public static final List<String> WeekendTerms = Arrays.asList("fin de semana");
 
-    public static final List<String> WeekTerms = Arrays.asList("semana");
+    public static final List<String> WeekTerms = Arrays.asList("semana", "semana pasada");
 
     public static final List<String> YearTerms = Arrays.asList("año", "años");
 

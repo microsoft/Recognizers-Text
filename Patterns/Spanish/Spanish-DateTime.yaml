@@ -72,7 +72,7 @@ DayBetweenRegex: !nestedRegex
   def: \b((entre|entre\s+el)\s+)({DayRegex})(\s+{MonthSuffixRegex})?\s*{AndRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*)(en\s+|del\s+|de\s+)?{YearRegex})?\b
   references: [ DayRegex, AndRegex, MonthSuffixRegex, YearRegex ]
 OneWordPeriodRegex: !nestedRegex
-  def: \b(((((la|el)\s+)?mes\s+(({OfPrepositionRegex})\s+))|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+))?({MonthRegex})|((la|el)\s+)?((({RelativeRegex}\s+){DateUnitRegex}(\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\s+{AfterNextSuffixRegex}))|va\s+de\s+{DateUnitRegex})
+  def: \b(((((la|el)\s+)?mes\s+(({OfPrepositionRegex})\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+))?({MonthRegex})|((la|el)\s+)?((({RelativeRegex}\s+){DateUnitRegex}(\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\s+{AfterNextSuffixRegex}))|va\s+de\s+{DateUnitRegex})
   references: [MonthRegex, RelativeRegex, OfPrepositionRegex, AfterNextSuffixRegex,DateUnitRegex]
 MonthWithYearRegex: !nestedRegex
   def: \b(((pr[oó]xim[oa](s)?|este|esta|[uú]ltim[oa]?)\s+)?({MonthRegex})(\s+|(\s*[,-]\s*))((de|del|de la)\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año))\b
@@ -104,7 +104,7 @@ AllHalfYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 EarlyPrefixRegex: !nestedRegex
-  def: \b(?<EarlyPrefix>((comienzos|inicios)\s+({OfPrepositionRegex})))\b
+  def: \b(?<EarlyPrefix>((comienzos?|inicios?)\s+({OfPrepositionRegex})))\b
   references: [OfPrepositionRegex]
 MidPrefixRegex: !nestedRegex
   def: \b(?<MidPrefix>(mediados\s+({OfPrepositionRegex})))\b
@@ -797,6 +797,8 @@ PastPrefixRegex: !simpleRegex
 PreviousPrefixRegex: !nestedRegex
   def: ([uú]ltim[oa]|{PastPrefixRegex})\b
   references: [ PastPrefixRegex ]
+PreviousSuffixRegex: !simpleRegex
+  def: \b(pasad[ao])\b
 ThisPrefixRegex: !simpleRegex
   def: (est[ea])\b
 RelativeDayRegex: !simpleRegex
@@ -913,6 +915,8 @@ MonthTerms: !list
   entries:
     - mes
     - meses
+    - mes pasado
+    - mes pasados
 MonthToDateTerms: !list
   types: [ string ]
   entries:
@@ -926,6 +930,7 @@ WeekTerms: !list
   types: [ string ]
   entries:
     - semana
+    - semana pasada
 YearTerms: !list
   types: [ string ]
   entries:

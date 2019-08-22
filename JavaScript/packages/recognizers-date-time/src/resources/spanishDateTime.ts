@@ -40,7 +40,7 @@ export namespace SpanishDateTime {
     export const MonthFrontSimpleCasesRegex = `\\b${MonthSuffixRegex}\\s+((desde\\s+el|desde|del)\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
     export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+((entre|entre\\s+el)\\s+)(${DayRegex})\\s*${AndRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
     export const DayBetweenRegex = `\\b((entre|entre\\s+el)\\s+)(${DayRegex})(\\s+${MonthSuffixRegex})?\\s*${AndRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
-    export const OneWordPeriodRegex = `\\b(((((la|el)\\s+)?mes\\s+((${OfPrepositionRegex})\\s+))|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\\s+))?(${MonthRegex})|((la|el)\\s+)?(((${RelativeRegex}\\s+)${DateUnitRegex}(\\s+${AfterNextSuffixRegex})?)|${DateUnitRegex}(\\s+${AfterNextSuffixRegex}))|va\\s+de\\s+${DateUnitRegex})`;
+    export const OneWordPeriodRegex = `\\b(((((la|el)\\s+)?mes\\s+((${OfPrepositionRegex})\\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\\s+))?(${MonthRegex})|((la|el)\\s+)?(((${RelativeRegex}\\s+)${DateUnitRegex}(\\s+${AfterNextSuffixRegex})?)|${DateUnitRegex}(\\s+${AfterNextSuffixRegex}))|va\\s+de\\s+${DateUnitRegex})`;
     export const MonthWithYearRegex = `\\b(((pr[oó]xim[oa](s)?|este|esta|[uú]ltim[oa]?)\\s+)?(${MonthRegex})(\\s+|(\\s*[,-]\\s*))((de|del|de la)\\s+)?(${YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año))\\b`;
     export const MonthNumWithYearRegex = `(${YearRegex}(\\s*?)[/\\-\\.~](\\s*?)${MonthNumRegex})|(${MonthNumRegex}(\\s*?)[/\\-\\.~](\\s*?)${YearRegex})`;
     export const WeekOfMonthRegex = `(?<wom>(la\\s+)?(?<cardinal>primera?|1ra|segunda|2da|tercera?|3ra|cuarta|4ta|quinta|5ta|[uú]ltima)\\s+semana\\s+${MonthSuffixRegex})`;
@@ -51,7 +51,7 @@ export namespace SpanishDateTime {
     export const QuarterRegex = `(el\\s+)?${QuarterTermRegex}((\\s+del?|\\s*,\\s*)?\\s+(${YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+a[ñn]o|a[ñn]o(\\s+${AfterNextSuffixRegex})))?`;
     export const QuarterRegexYearFront = `(${YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+a[ñn]o)\\s+(el\\s+)?${QuarterTermRegex}`;
     export const AllHalfYearRegex = `^[.]`;
-    export const EarlyPrefixRegex = `\\b(?<EarlyPrefix>((comienzos|inicios)\\s+(${OfPrepositionRegex})))\\b`;
+    export const EarlyPrefixRegex = `\\b(?<EarlyPrefix>((comienzos?|inicios?)\\s+(${OfPrepositionRegex})))\\b`;
     export const MidPrefixRegex = `\\b(?<MidPrefix>(mediados\\s+(${OfPrepositionRegex})))\\b`;
     export const LaterPrefixRegex = `\\b(?<LatePrefix>((fines|finales)\\s+(${OfPrepositionRegex})))\\b`;
     export const PrefixPeriodRegex = `(${EarlyPrefixRegex}|${MidPrefixRegex}|${LaterPrefixRegex})`;
@@ -217,6 +217,7 @@ export namespace SpanishDateTime {
     export const NextPrefixRegex = `(pr[oó]xim[oa]|siguiente|${UpcomingPrefixRegex})\\b`;
     export const PastPrefixRegex = `.^`;
     export const PreviousPrefixRegex = `([uú]ltim[oa]|${PastPrefixRegex})\\b`;
+    export const PreviousSuffixRegex = `\\b(pasad[ao])\\b`;
     export const ThisPrefixRegex = `(est[ea])\\b`;
     export const RelativeDayRegex = `(?<relday>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\\s+días)|(días\\s+((que\\s+viene)|pasado)))\\b`;
     export const RestOfDateRegex = `\\bresto\\s+((del|de)\\s+)?((la|el|est[ae])\\s+)?(?<duration>semana|mes|año|decada)(\\s+actual)?\\b`;
@@ -250,10 +251,10 @@ export namespace SpanishDateTime {
     export const MinusOneDayTerms = [ "ayer","ultimo dia" ];
     export const PlusTwoDayTerms = [ "pasado mañana","dia despues de mañana" ];
     export const MinusTwoDayTerms = [ "anteayer","dia antes de ayer" ];
-    export const MonthTerms = [ "mes","meses" ];
+    export const MonthTerms = [ "mes","meses","mes pasado","mes pasados" ];
     export const MonthToDateTerms = [ "mes a la fecha","meses a la fecha" ];
     export const WeekendTerms = [ "fin de semana" ];
-    export const WeekTerms = [ "semana" ];
+    export const WeekTerms = [ "semana","semana pasada" ];
     export const YearTerms = [ "año","años" ];
     export const YearToDateTerms = [ "año a la fecha","años a la fecha" ];
     export const SpecialCharactersEquivalent: ReadonlyMap<string, string> = new Map<string, string>([["á", "a"],["é", "e"],["í", "i"],["ó", "o"],["ú", "u"]]);

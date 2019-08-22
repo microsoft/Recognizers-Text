@@ -15,6 +15,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex PreviousPrefixRegex =
             new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
+        public static readonly Regex PreviousSuffixRegex =
+            new Regex(DateTimeDefinitions.PreviousSuffixRegex, RegexFlags);
+
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
@@ -223,7 +226,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 swift = 1;
             }
 
-            if (PreviousPrefixRegex.IsMatch(trimmedText))
+            if (PreviousPrefixRegex.IsMatch(trimmedText) || PreviousSuffixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
