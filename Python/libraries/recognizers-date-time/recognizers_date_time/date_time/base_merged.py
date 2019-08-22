@@ -17,7 +17,10 @@ from .base_timeperiod import BaseTimePeriodParser
 from .base_datetimeperiod import BaseDateTimePeriodParser
 from .base_duration import BaseDurationParser
 from .base_set import BaseSetParser
-from .utilities import Token, merge_all_tokens, RegExpUtility, DateTimeOptions, DateTimeFormatUtil, DateUtils
+from .utilities import Token, merge_all_tokens, RegExpUtility, DateTimeOptions, DateTimeFormatUtil, DateUtils,\
+    MatchingUtil, RegexExtension
+from .datetime_zone_extractor import DateTimeZoneExtractor
+from .datetime_list_extractor import DateTimeListExtractor
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
@@ -105,6 +108,16 @@ class MergedExtractorConfiguration:
 
     @property
     @abstractmethod
+    def around_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def equal_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def from_to_regex(self) -> Pattern:
         raise NotImplementedError
 
@@ -125,6 +138,31 @@ class MergedExtractorConfiguration:
 
     @property
     @abstractmethod
+    def suffix_after_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def unspecified_date_period_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def fail_fast_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def superfluous_word_matcher(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def ambiguity_filters_dict(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def filter_word_regex_list(self) -> List[Pattern]:
         raise NotImplementedError
 
@@ -138,11 +176,69 @@ class BaseMergedExtractor(DateTimeExtractor):
         self.config = config
         self.options = options
 
+    def has_token_index(self, source: str, pattern: Pattern) -> MatchedIndex:
+
+        # Support cases has two or more specific tokens
+        # For example, "show me sales after 2010 and before 2018 or before 2000"
+        # When extract "before 2000", we need the second "before" which will be
+        # matched in the second Regex match
+        match = regex.search(pattern, source)
+        if match:
+            return MatchedIndex(True, match.start())
+
+        return MatchedIndex(False, -1)
+        # def has_token_index(text, regex_eval: Pattern):
+
+        #   match = regex.search('(?r)' + str(regex_eval), text)
+
+        #  if match and match is not None and not str.isspace(text[match.index: len(match) + match.index]):
+        #     index = match.index
+        #    return True, index
+
+        # return False
+
+    def try_merge_modifier_token(self, er: ExtractResult, token_regex: Pattern, text: str):
+        start = er.start if er.start else 0
+        before_str = text[0:start]
+
+        if self.has_token_index(before_str.rstrip(), token_regex).matched:
+            boolean, token_index = self.has_token_index(before_str.rstrip(), token_regex)
+
+            mod_length = len(before_str) - token_index
+
+            er.length += mod_length
+            er.start -= mod_length
+            start = er.start if er.start else 0
+            length = er.length if er.length else 0
+            er.text = text[start: start + length]
+            return True
+
+        return False
+
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
         if reference is None:
             reference = datetime.now()
 
         result: List[ExtractResult] = list()
+
+        if (self.options and DateTimeOptions.FAIL_FAST) != 0 and self.is_fail_fast_case(source):
+
+            ''' @TODO needs better handling of holidays and timezones.
+             self.add_to(result,self.config.holiday_extractor.extract(source,reference), source)
+             result = self.add_mod(result,source)
+            '''
+            return result
+
+        origin_text = source
+
+        super_fluous_word_matches = None
+
+        if (self.options and DateTimeOptions.ENABLE_PREVIEW) != 0:
+            source, super_fluous_word_matches = MatchingUtil.pre_process_text_remove_superfluous_words(
+                source,
+                self.config.superfluous_word_matcher
+            )
+        # The order is important, since there can be conflicts in merging
         result = self.add_to(
             result, self.config.date_extractor.extract(source, reference), source)
         result = self.add_to(
@@ -162,17 +258,33 @@ class BaseMergedExtractor(DateTimeExtractor):
         result = self.add_to(
             result, self.config.holiday_extractor.extract(source, reference), source)
 
+        if (self.options and DateTimeOptions.ENABLE_PREVIEW) != 0:
+            self.add_to(result, self.config.time_zone_extractor.extract(source, reference), source)
+            result = self.config.time_zone_extractor.remove_ambiguous_time_zone(result)
+
         # this should be at the end since if need the extractor to determine the previous text contains time or not
         result = self.add_to(
             result, self.number_ending_regex_match(source, result), source)
 
+        # Modify time entity to an alternative DateTime expression if it follows a DateTime entity
+        if (self.options and DateTimeOptions.EXTENDED_TYPES) != 0:
+            result = self.config.datetime_alt_extractor.extract(result, source, reference)
+
+        result = self.filter_unespecific_date_period(result)
+
+        # Remove common ambiguous cases
+        result = self._filter_ambiguity(result, source)
+
         result = self.add_mod(result, source)
 
         # filtering
-        if self.options & DateTimeOptions.CALENDAR:
+        if self.options and DateTimeOptions.CALENDAR:
             result = self.check_calendar_filter_list(result, source)
 
         result = sorted(result, key=lambda x: x.start)
+
+        if (self.options and DateTimeOptions.ENABLE_PREVIEW) != 0:
+            result = MatchingUtil.post_process_recover_superfluous_words(result, super_fluous_word_matches, origin_text)
 
         return result
 
@@ -211,6 +323,42 @@ class BaseMergedExtractor(DateTimeExtractor):
     def should_skip_from_merge(self, source: ExtractResult) -> bool:
         return regex.search(self.config.from_to_regex, source.text)
 
+    def is_fail_fast_case(self, input: str):
+        return self.config.fail_fast_regex is not None and not self.config.fail_fast_regex.finditer(input)
+
+    def filter_unespecific_date_period(self, ers: List[ExtractResult]) -> List[ExtractResult]:
+        for e in ers:
+            if self.config.unspecified_date_period_regex.search(e.text) is not None:
+                ers.remove(e)
+
+        return ers
+
+    def _filter_ambiguity(self, ers: List[ExtractResult], text: str, ) -> List[ExtractResult]:
+
+        if self.config.ambiguity_filters_dict is not None:
+            for regex_var in self.config.ambiguity_filters_dict:
+                regexvar_value = self.config.ambiguity_filters_dict[regex_var]
+
+                try:
+                    reg_len = list(filter(lambda x: x.group(), regex.finditer(regexvar_value, text)))
+
+                    reg_length = len(reg_len)
+                    if reg_length > 0:
+
+                        matches = reg_len
+                        new_ers = list(filter(lambda x: list(
+                            filter(lambda m: m.start() < x.start + x.length and m.start() +
+                                   len(m.group()) > x.start, matches)), ers))
+                        if len(new_ers) > 0:
+                            for item in ers:
+                                for i in new_ers:
+                                    if item is i:
+                                        ers.remove(item)
+                except Exception:
+                    pass
+
+        return ers
+
     def number_ending_regex_match(self, source: str, extract_results: List[ExtractResult]) -> List[ExtractResult]:
         tokens: List[Token] = list()
 
@@ -234,7 +382,52 @@ class BaseMergedExtractor(DateTimeExtractor):
         return merge_all_tokens(tokens, source, Constants.SYS_DATETIME_TIME)
 
     def add_mod(self, ers: List[ExtractResult], source: str) -> List[ExtractResult]:
-        return list(map(lambda x: self.add_mod_item(x, source), ers))
+
+        for er in ers:
+            success = self.try_merge_modifier_token(er, self.config.before_regex, source)
+
+            if not success:
+                success = self.try_merge_modifier_token(er, self.config.after_regex, source)
+
+            if not success:
+                success = self.try_merge_modifier_token(er, self.config.since_regex, source)
+
+            if not success:
+                self.try_merge_modifier_token(er, self.config.around_regex, source)
+
+            if not success:
+                self.try_merge_modifier_token(er, self.config.equal_regex, source)
+
+            if er.type == Constants.SYS_DATETIME_DATEPERIOD or \
+                er.type == Constants.SYS_DATETIME_DATE or \
+                    er.type == Constants.SYS_DATETIME_TIME:
+
+                start = er.start if er.start else 0
+                length = er.length if er.length else 0
+                after_str = source[start + length:]
+
+                match = RegexExtension.match_begin(self.config.suffix_after_regex, after_str, True)
+
+                if match:
+                    is_followed_by_other_entity = True
+
+                    if match.length == len(after_str.strip()):
+                        is_followed_by_other_entity = False
+                    else:
+                        next_str = after_str.strip()[match.length].strip()
+                        next_er = next((e for e in ers if e.start > er.start), None)
+
+                        if next_er is None or not next_str.startswith(next_er.text):
+                            is_followed_by_other_entity = False
+
+                    if not is_followed_by_other_entity:
+                        mod_length = match.length + after_str.index(match.value)
+                        er.length += mod_length
+                        start = er.start if er.start else 0
+                        length = er.length if er.length else 0
+                        er.text = source[start: start + length]
+
+        return ers
 
     def add_mod_item(self, er: ExtractResult, source: str) -> ExtractResult:
         before_str = source[0:er.start]
@@ -269,13 +462,6 @@ class BaseMergedExtractor(DateTimeExtractor):
                 er.text = source[er.start:er.start + er.length]
 
         return er
-
-    def has_token_index(self, source: str, pattern: Pattern) -> MatchedIndex:
-        match = regex.search(pattern, source)
-        if match:
-            return MatchedIndex(True, match.start())
-
-        return MatchedIndex(False, -1)
 
     def check_calendar_filter_list(self, ers: List[ExtractResult], source: str) -> List[ExtractResult]:
         for er in reversed(ers):
