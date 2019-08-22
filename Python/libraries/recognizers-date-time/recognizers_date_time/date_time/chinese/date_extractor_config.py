@@ -7,6 +7,7 @@ from ..constants import Constants
 from ..extractors import DateTimeExtractor
 from ..base_date import DateTimeUtilityConfiguration
 from ..base_date import DateExtractorConfiguration
+from ...resources.base_date_time import BaseDateTime
 
 
 class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
@@ -67,6 +68,14 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
         return None
 
     @property
+    def strict_relative_regex(self) -> Pattern:
+        return None
+
+    @property
+    def range_connector_symbol_regex(self) -> Pattern:
+        return self._range_connector_symbol_regex
+
+    @property
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
         return None
 
@@ -104,3 +113,6 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
                 ChineseDateTime.WeekDayOfMonthRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.SpecialDate)
         ]
+        self._range_connector_symbol_regex = RegExpUtility.get_safe_reg_exp(
+            BaseDateTime.RangeConnectorSymbolRegex
+        )

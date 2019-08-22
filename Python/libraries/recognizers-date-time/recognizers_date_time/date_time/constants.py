@@ -16,6 +16,10 @@ class Constants:
     # SourceEntity Types
     SYS_DATETIME_DATETIMEPOINT: str = 'datetimepoint'
 
+    # Multiple Duration Types
+    MultipleDuration_Prefix = 'multipleDuration'
+    MultipleDuration_Date = MultipleDuration_Prefix + 'Date'
+
     # keys
     TimexKey: str = 'timex'
     CommentKey: str = 'Comment'
@@ -33,6 +37,7 @@ class Constants:
     FourDigitsYearLength: int = 4
     MinMonth: int = 1
     MaxMonth: int = 12
+    InvalidYear = -2147483648
 
     MinYearNum: int = int(BaseDateTime.MinYearNum)
     MaxYearNum: int = int(BaseDateTime.MaxYearNum)
