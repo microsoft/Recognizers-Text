@@ -61,13 +61,11 @@ class ChineseMergedExtractorConfiguration implements IMergedExtractorConfigurati
 
 export class ChineseMergedExtractor extends BaseMergedExtractor {
     private readonly dayOfMonthRegex: RegExp;
-    private readonly SingleWordMOAndEVRegex: RegExp;
 
     constructor(options: DateTimeOptions, dmyDateFormat: boolean = false) {
         let config = new ChineseMergedExtractorConfiguration(dmyDateFormat);
         super(config, options);
         this.dayOfMonthRegex = RegExpUtility.getSafeRegExp(`^\\d{1,2}号`, 'gi');
-        this.SingleWordMOAndEVRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SingleWordMorningAndEveningRegex);
     }
 
     extract(source: string, refDate: Date): ExtractResult[] {
@@ -146,10 +144,6 @@ export class ChineseMergedExtractor extends BaseMergedExtractor {
             }
 
             if (RegExpUtility.isMatch(this.dayOfMonthRegex, value.text)) {
-                return false;
-            }
-
-            if (RegExpUtility.isMatch(this.SingleWordMOAndEVRegex, value.text)) {
                 return false;
             }
 

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Definitions.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
@@ -14,7 +15,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex UntilRegex = new Regex(DateTimeDefinitions.ParserConfigurationUntil, RegexFlags);
         public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexFlags);
         public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexFlags);
-        public static readonly Regex SingleWordMOAndEVRegex = new Regex(DateTimeDefinitions.SingleWordMorningAndEveningRegex, RegexFlags);
         public static readonly Regex EqualRegex = new Regex(BaseDateTime.EqualRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
@@ -34,8 +34,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             this.config = config;
 
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
             HolidayExtractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration(config));
         }
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
         private BaseHolidayExtractor HolidayExtractor { get; }
 
@@ -59,6 +62,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             AddTo(ret, HolidayExtractor.Extract(text, referenceTime));
 
             CheckBlackList(ref ret, text);
+
+            ret = FilterAmbiguity(ret, text);
 
             AddMod(ret, text);
 
@@ -88,7 +93,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static void CheckBlackList(ref List<ExtractResult> extractResults, string text)
         {
             var ret = new List<ExtractResult>();
-            const string negativeCaseRegex = @"^\d{1,2}号";
 
             foreach (var extractResult in extractResults)
             {
@@ -104,22 +108,35 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     }
                 }
 
-                // for cases like "12号"
-                if (Regex.IsMatch(extractResult.Text, negativeCaseRegex))
-                {
-                    continue;
-                }
-
-                // for cases like "早" in "早稻田" and "晚" in "晚安"
-                if (SingleWordMOAndEVRegex.IsMatch(extractResult.Text))
-                {
-                    continue;
-                }
-
                 ret.Add(extractResult);
             }
 
             extractResults = ret;
+        }
+
+        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
+        {
+            var ambiguityResults = new List<ExtractResult>();
+
+            if (this.AmbiguityFiltersDict != null)
+            {
+                foreach (var regex in this.AmbiguityFiltersDict)
+                {
+                    if (regex.Key.IsMatch(text))
+                    {
+                        foreach (var extractResult in extractResults)
+                        {
+                            if (regex.Value.IsMatch(extractResult.Text))
+                            {
+                                ambiguityResults.Add(extractResult);
+                            }
+                        }
+                    }
+                }
+            }
+
+            extractResults = extractResults.Except(ambiguityResults).ToList();
+            return extractResults;
         }
 
         private void AddMod(List<ExtractResult> ers, string text)
