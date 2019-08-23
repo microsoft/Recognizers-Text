@@ -5,7 +5,6 @@ from recognizers_date_time.date_time.date_time_extractor import DateTimeExtracto
 
 class DateExtractor(DateTimeExtractor):
 
-    @property
     @abstractmethod
     def get_year_from_text(self, match: Pattern, text, reference) -> int:
         raise NotImplementedError

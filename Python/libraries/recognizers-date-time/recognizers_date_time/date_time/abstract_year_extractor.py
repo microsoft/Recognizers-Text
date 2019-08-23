@@ -13,7 +13,6 @@ class AbstractYearExtractor(DateExtractor):
     def __init__(self, config: DateExtractorConfiguration):
         self.config = config
 
-    @property
     @abstractmethod
     def extract(self, extract_result, text, reference: datetime = None) -> List[ExtractResult]:
         raise NotImplementedError
@@ -35,7 +34,7 @@ class AbstractYearExtractor(DateExtractor):
 
             if not (str.isspace(first_two_year_num_str) or first_two_year_num_str is None):
 
-                er = ExtractResult
+                er = ExtractResult()
                 er.text = first_two_year_num_str
                 er.start = RegExpUtility.get_group(
                     match, 'firsttwoyearnum').index()
@@ -50,7 +49,7 @@ class AbstractYearExtractor(DateExtractor):
                 match, 'lasttwoyearnum')
 
             if not (str.isspace(last_two_year_num_str) or last_two_year_num_str is None):
-                er = ExtractResult
+                er = ExtractResult()
                 er.text = last_two_year_num_str
                 er.start = RegExpUtility.get_group(
                     match, 'lasttwoyearnum').index()
