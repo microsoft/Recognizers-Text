@@ -128,22 +128,6 @@
     ]
   },
   {
-    "Input": "एक सौ प्रतिशत",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "एक सौ प्रतिशत",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "100%"
-        },
-        "Start": 0,
-        "End": 12
-      }
-    ]
-  },
-  {
     "Input": "बीस का प्रतिशत",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",

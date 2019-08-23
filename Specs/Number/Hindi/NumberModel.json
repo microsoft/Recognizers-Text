@@ -704,23 +704,6 @@
     ]
   },
   {
-    "Input": "तीन",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "तीन",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "3"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
     "Input": "एक खरब",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -989,23 +972,6 @@
         },
         "Start": 0,
         "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "बावन",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "बावन",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "52"
-        },
-        "Start": 0,
-        "End": 3
       }
     ]
   },
@@ -1828,40 +1794,6 @@
         },
         "Start": 8,
         "End": 17
-      }
-    ]
-  },
-  {
-    "Input": "एक चौथाई",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "एक चौथाई",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "fraction",
-          "value": "0.25"
-        },
-        "Start": 0,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "आठवां भाग",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "आठवां भाग",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "fraction",
-          "value": "0.125"
-        },
-        "Start": 0,
-        "End": 8
       }
     ]
   },

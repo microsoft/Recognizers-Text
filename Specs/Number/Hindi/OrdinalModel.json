@@ -671,25 +671,6 @@
     ]
   },
   {
-    "Input": "मुझे अगली 3 किताबें चाहिए।",
-    "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "अगली",
-        "Start": 5,
-        "End": 8,
-        "TypeName": "ordinal.relative",
-        "Resolution": {
-          "offset": "1",
-          "relativeTo": "current",
-          "value": "current+1"
-        }
-      }
-    ]
-  },
-  {
     "Input": "वह दूसरे स्थान पर आई",
     "NotSupported": "javascript, python, java",
     "NotSupported": "dotnet",
