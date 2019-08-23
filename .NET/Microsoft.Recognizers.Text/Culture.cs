@@ -19,6 +19,7 @@ namespace Microsoft.Recognizers.Text
         public const string Swedish = "sv-se";
         public const string Bulgarian = "bg-bg";
         public const string Turkish = "tr-tr";
+        public const string Hindi = "hi-in";
 
         public static readonly Culture[] SupportedCultures =
         {
@@ -36,6 +37,7 @@ namespace Microsoft.Recognizers.Text
             new Culture("Swedish", Swedish),
             new Culture("Bulgarian", Bulgarian),
             new Culture("Turkish", Turkish),
+            new Culture("Hindi", Hindi),
         };
 
         private static readonly string[] SupportedCultureCodes = SupportedCultures.Select(c => c.CultureCode).ToArray();

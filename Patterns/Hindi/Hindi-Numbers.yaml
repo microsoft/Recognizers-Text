@@ -1,0 +1,397 @@
+---
+LangMarker: Hin
+#Does this language use non-whitespace-separated numbers?
+CompoundNumberLanguage: !bool false
+#Does this culture uses period and comma intercheangeably as decimal separator?
+MultiDecimalSeparatorCulture: !bool true
+#Integer Regex
+RoundNumberIntegerRegex: !simpleRegex
+  def: (?:hundred|thousand|million|billion|trillion)
+ZeroToNineIntegerRegex: !simpleRegex
+  def: (?:three|seven|eight|four|five|zero|nine|one|two|six)
+TwoToNineIntegerRegex: !simpleRegex
+  def: (?:three|seven|eight|four|five|nine|two|six)
+NegativeNumberTermsRegex: !simpleRegex
+  def: (?<negTerm>(minus|negative)\s+)
+NegativeNumberSignRegex: !nestedRegex
+  def: ^{NegativeNumberTermsRegex}.*
+  references: [ NegativeNumberTermsRegex ]
+AnIntRegex: !simpleRegex
+  def: (an?)(?=\s)
+TenToNineteenIntegerRegex: !simpleRegex
+  def: (?:seventeen|thirteen|fourteen|eighteen|nineteen|fifteen|sixteen|eleven|twelve|ten)
+TensNumberIntegerRegex: !simpleRegex
+  def: (?:seventy|twenty|thirty|eighty|ninety|forty|fifty|sixty)
+SeparaIntRegex: !nestedRegex
+  def: (?:(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))
+  references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex, AnIntRegex ]
+AllIntRegex: !nestedRegex
+  def: (?:((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*{SeparaIntRegex})
+  references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, SeparaIntRegex ]
+PlaceHolderPureNumber: !simpleRegex
+  def: \b
+PlaceHolderDefault: !simpleRegex
+  def: \D|\b
+NumbersWithPlaceHolder: !paramsRegex
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})
+  params: [ placeholder ]
+NumbersWithSuffix: !nestedRegex
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
+  references: [ BaseNumbers.NumberMultiplierRegex ]
+RoundNumberIntegerRegexWithLocks: !nestedRegex
+  def: (?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)
+  references: [ RoundNumberIntegerRegex ]
+NumbersWithDozenSuffix: !simpleRegex
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dozen(s)?(?=\b)
+AllIntRegexWithLocks: !nestedRegex
+  def: ((?<=\b){AllIntRegex}(?=\b))
+  references: [ AllIntRegex ]
+AllIntRegexWithDozenSuffixLocks: !nestedRegex
+  def: (?<=\b)(((half\s+)?a\s+dozen)|({AllIntRegex}\s+dozen(s)?))(?=\b)
+  references: [ AllIntRegex ]
+#Ordinal Regex
+RoundNumberOrdinalRegex: !simpleRegex
+  def: (?:hundredth|thousandth|millionth|billionth|trillionth)
+NumberOrdinalRegex: !simpleRegex
+  def: (?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)
+RelativeOrdinalRegex: !simpleRegex
+  def: (?<relativeOrdinal>(next|previous|current)\s+one|(the\s+second|next)\s+to\s+last|the\s+one\s+before\s+the\s+last(\s+one)?|the\s+last\s+but\s+one|(ante)?penultimate|last|next|previous|current)
+BasicOrdinalRegex: !nestedRegex
+  def: ({NumberOrdinalRegex}|{RelativeOrdinalRegex})
+  references: [ NumberOrdinalRegex, RelativeOrdinalRegex ]
+SuffixBasicOrdinalRegex: !nestedRegex
+  def: (?:(((({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})
+  references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex ]
+SuffixRoundNumberOrdinalRegex: !nestedRegex
+  def: (?:({AllIntRegex}\s+){RoundNumberOrdinalRegex})
+  references: [ AllIntRegex, RoundNumberOrdinalRegex ]
+AllOrdinalRegex: !nestedRegex
+  def: (?:{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})
+  references: [ SuffixBasicOrdinalRegex, SuffixRoundNumberOrdinalRegex ]
+OrdinalSuffixRegex: !simpleRegex
+  def: (?<=\b)(?:(\d*(1st|2nd|3rd|[4-90]th))|(1[1-2]th))(?=\b)
+OrdinalNumericRegex: !simpleRegex
+  def: (?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*\s*th)(?=\b)
+OrdinalRoundNumberRegex: !nestedRegex
+  def: (?<!an?\s+){RoundNumberOrdinalRegex}
+  references: [ RoundNumberOrdinalRegex ]
+OrdinalEnglishRegex: !nestedRegex
+  def: (?<=\b){AllOrdinalRegex}(?=\b)
+  references: [ AllOrdinalRegex ]
+#Fraction Regex
+FractionNotationWithSpacesRegex: !simpleRegex
+  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
+FractionNotationRegex: !simpleRegex
+  def: (((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
+FractionNounRegex: !nestedRegex
+  def: (?<=\b)({AllIntRegex}\s+(and\s+)?)?({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
+FractionNounWithArticleRegex: !nestedRegex
+  def: (?<=\b)((({AllIntRegex}\s+(and\s+)?)?(an?|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter))|(half))(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
+FractionPrepositionRegex: !nestedRegex
+  def: (?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(over|in|out\s+of)\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)
+  references: [ AllIntRegex ]
+FractionPrepositionWithinPercentModeRegex: !nestedRegex
+  def: (?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)
+  references: [ AllIntRegex ]
+#Double Regex
+AllPointRegex: !nestedRegex
+  def: ((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))
+  references: [ ZeroToNineIntegerRegex, SeparaIntRegex ]
+AllFloatRegex: !nestedRegex
+  def: '{AllIntRegex}(\s+point){AllPointRegex}'
+  references: [ AllIntRegex, AllPointRegex ]
+DoubleWithMultiplierRegex: !nestedRegex
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
+  references: [ BaseNumbers.NumberMultiplierRegex ]
+DoubleExponentialNotationRegex: !simpleRegex
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e([+-]*[1-9]\d*)(?=\b)
+DoubleCaretExponentialNotationRegex: !simpleRegex
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[1-9]\d*)(?=\b)
+DoubleDecimalPointRegex: !paramsRegex
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})
+  params: [ placeholder ]
+DoubleWithoutIntegralRegex: !paramsRegex
+  def: (?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})
+  params: [ placeholder ]
+DoubleWithRoundNumber: !nestedRegex
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}(?=\b)
+  references: [ RoundNumberIntegerRegex ]
+DoubleAllFloatRegex: !nestedRegex
+  def: ((?<=\b){AllFloatRegex}(?=\b))
+  references: [ AllFloatRegex ]
+ConnectorRegex: !simpleRegex
+    def: (?<spacer>and)
+#Percentage Regex
+NumberWithSuffixPercentage: !nestedRegex
+  def: (?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(per\s*cents?|percentage|cents?)\b)
+  references: [ BaseNumbers.NumberReplaceToken ]
+FractionNumberWithSuffixPercentage: !nestedRegex
+  def: (({BaseNumbers.FractionNumberReplaceToken})\s+of)
+  references: [ BaseNumbers.FractionNumberReplaceToken ]
+NumberWithPrefixPercentage: !nestedRegex
+  def: (per\s*cents?\s+of)(\s*)({BaseNumbers.NumberReplaceToken})
+  references: [ BaseNumbers.NumberReplaceToken ]
+NumberWithPrepositionPercentage: !nestedRegex
+  def: ({BaseNumbers.NumberReplaceToken})\s*(in|out\s+of)\s*({BaseNumbers.NumberReplaceToken})
+  references: [ BaseNumbers.NumberReplaceToken ]
+#NumberRange Regex
+TillRegex: !simpleRegex
+  def: (to|through|--|-|—|——|~|–)
+MoreRegex: !simpleRegex
+  def: (?:(bigger|greater|more|higher|larger)(\s+than)?|above|over|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)
+LessRegex: !simpleRegex
+  def: (?:(less|lower|smaller|fewer)(\s+than)?|below|under|(?<!>|=)<)
+EqualRegex: !simpleRegex
+  def: (equal(s|ing)?(\s+(to|than))?|(?<!<|>)=)
+MoreOrEqualPrefix: !nestedRegex
+  def: ((no\s+{LessRegex})|(at\s+least))
+  references: [ LessRegex ]
+MoreOrEqual: !nestedRegex
+  def: (?:({MoreRegex}\s+(or)?\s+{EqualRegex})|({EqualRegex}\s+(or)?\s+{MoreRegex})|{MoreOrEqualPrefix}(\s+(or)?\s+{EqualRegex})?|({EqualRegex}\s+(or)?\s+)?{MoreOrEqualPrefix}|>\s*=)
+  references: [ MoreRegex, EqualRegex, LessRegex, MoreOrEqualPrefix ]
+MoreOrEqualSuffix: !simpleRegex
+  def: ((and|or)\s+(((more|greater|higher|larger|bigger)((?!\s+than)|(\s+than(?!(\s*\d+)))))|((over|above)(?!\s+than))))
+LessOrEqualPrefix: !nestedRegex
+  def: ((no\s+{MoreRegex})|(at\s+most)|(up\s+to))
+  references: [ MoreRegex ]
+LessOrEqual: !nestedRegex
+  def: (({LessRegex}\s+(or)?\s+{EqualRegex})|({EqualRegex}\s+(or)?\s+{LessRegex})|{LessOrEqualPrefix}(\s+(or)?\s+{EqualRegex})?|({EqualRegex}\s+(or)?\s+)?{LessOrEqualPrefix}|<\s*=)
+  references: [ LessRegex, EqualRegex, MoreRegex, LessOrEqualPrefix ]
+LessOrEqualSuffix: !simpleRegex
+  def: ((and|or)\s+(less|lower|smaller|fewer)((?!\s+than)|(\s+than(?!(\s*\d+)))))
+NumberSplitMark: !simpleRegex
+  def: (?![,.](?!\d+))
+MoreRegexNoNumberSucceed: !simpleRegex
+  def: ((bigger|greater|more|higher|larger)((?!\s+than)|\s+(than(?!(\s*\d+))))|(above|over)(?!(\s*\d+)))
+LessRegexNoNumberSucceed: !simpleRegex
+  def: ((less|lower|smaller|fewer)((?!\s+than)|\s+(than(?!(\s*\d+))))|(below|under)(?!(\s*\d+)))
+EqualRegexNoNumberSucceed: !simpleRegex
+  def: (equal(s|ing)?((?!\s+(to|than))|(\s+(to|than)(?!(\s*\d+)))))
+OneNumberRangeMoreRegex1: !nestedRegex
+  def: ({MoreOrEqual}|{MoreRegex})\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)
+  references: [ MoreOrEqual, MoreRegex, NumberSplitMark ]
+OneNumberRangeMoreRegex2: !nestedRegex
+  def: (?<number1>({NumberSplitMark}.)+)\s*{MoreOrEqualSuffix}
+  references: [ MoreOrEqualSuffix, NumberSplitMark ]
+OneNumberRangeMoreSeparateRegex: !nestedRegex
+  def: ({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){EqualRegexNoNumberSucceed})
+  references: [ EqualRegex, MoreRegex, EqualRegexNoNumberSucceed, MoreRegexNoNumberSucceed, NumberSplitMark ]
+OneNumberRangeLessRegex1: !nestedRegex
+  def: ({LessOrEqual}|{LessRegex})\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)
+  references: [ LessOrEqual, LessRegex, NumberSplitMark ]
+OneNumberRangeLessRegex2: !nestedRegex
+  def: (?<number2>({NumberSplitMark}.)+)\s*{LessOrEqualSuffix}
+  references: [ LessOrEqualSuffix, NumberSplitMark ]
+OneNumberRangeLessSeparateRegex: !nestedRegex
+  def: ({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){LessRegexNoNumberSucceed})|({LessRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){EqualRegexNoNumberSucceed})
+  references: [ EqualRegex, LessRegex, EqualRegexNoNumberSucceed, LessRegexNoNumberSucceed, NumberSplitMark ]
+OneNumberRangeEqualRegex: !nestedRegex
+  def: '{EqualRegex}\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)'
+  references: [ EqualRegex, NumberSplitMark ]
+TwoNumberRangeRegex1: !nestedRegex
+  def: between\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)\s*and\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)
+  references: [ NumberSplitMark ]
+TwoNumberRangeRegex2: !nestedRegex
+  def: ({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(and|but|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})
+  references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
+TwoNumberRangeRegex3: !nestedRegex
+  def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|but|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
+  references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
+TwoNumberRangeRegex4: !nestedRegex
+  def: (from\s+)?(?<number1>({NumberSplitMark}(?!\bfrom\b).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)
+  references: [ TillRegex, NumberSplitMark ]
+AmbiguousFractionConnectorsRegex: !simpleRegex
+  def: (\bin\b)
+# "in" is ambiguous for cases like "more than 30000 in 2009", other connector "out of", "over" is not ambiguous in English
+#Parser
+DecimalSeparatorChar: !char '.'
+FractionMarkerToken: over
+NonDecimalSeparatorChar: !char ','
+HalfADozenText: six
+WordSeparatorToken: and
+WrittenDecimalSeparatorTexts: [point]
+WrittenGroupSeparatorTexts: [punto]
+WrittenIntegerSeparatorTexts: [and]
+WrittenFractionSeparatorTexts: [and]
+HalfADozenRegex: !simpleRegex
+  def: half\s+a\s+dozen
+DigitalNumberRegex: !nestedRegex
+  def: ((?<=\b)(hundred|thousand|[mb]illion|trillion|dozen(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
+  references: [ BaseNumbers.MultiplierLookupRegex ]
+CardinalNumberMap: !dictionary
+  types: [ string, long ]
+  entries:
+    a: 1
+    zero: 0
+    an: 1
+    one: 1
+    two: 2
+    three: 3
+    four: 4
+    five: 5
+    six: 6
+    seven: 7
+    eight: 8
+    nine: 9
+    ten: 10
+    eleven: 11
+    twelve: 12
+    dozen: 12
+    dozens: 12
+    thirteen: 13
+    fourteen: 14
+    fifteen: 15
+    sixteen: 16
+    seventeen: 17
+    eighteen: 18
+    nineteen: 19
+    twenty: 20
+    thirty: 30
+    forty: 40
+    fifty: 50
+    sixty: 60
+    seventy: 70
+    eighty: 80
+    ninety: 90
+    hundred: 100
+    thousand: 1000
+    million: 1000000
+    billion: 1000000000
+    trillion: 1000000000000
+OrdinalNumberMap: !dictionary
+  types: [ string, long ]
+  entries:
+    first: 1
+    second: 2
+    secondary: 2
+    half: 2
+    third: 3
+    fourth: 4
+    quarter: 4
+    fifth: 5
+    sixth: 6
+    seventh: 7
+    eighth: 8
+    ninth: 9
+    tenth: 10
+    eleventh: 11
+    twelfth: 12
+    thirteenth: 13
+    fourteenth: 14
+    fifteenth: 15
+    sixteenth: 16
+    seventeenth: 17
+    eighteenth: 18
+    nineteenth: 19
+    twentieth: 20
+    thirtieth: 30
+    fortieth: 40
+    fiftieth: 50
+    sixtieth: 60
+    seventieth: 70
+    eightieth: 80
+    ninetieth: 90
+    hundredth: 100
+    thousandth: 1000
+    millionth: 1000000
+    billionth: 1000000000
+    trillionth: 1000000000000
+    firsts: 1
+    halves: 2
+    thirds: 3
+    fourths: 4
+    quarters: 4
+    fifths: 5
+    sixths: 6
+    sevenths: 7
+    eighths: 8
+    ninths: 9
+    tenths: 10
+    elevenths: 11
+    twelfths: 12
+    thirteenths: 13
+    fourteenths: 14
+    fifteenths: 15
+    sixteenths: 16
+    seventeenths: 17
+    eighteenths: 18
+    nineteenths: 19
+    twentieths: 20
+    thirtieths: 30
+    fortieths: 40
+    fiftieths: 50
+    sixtieths: 60
+    seventieths: 70
+    eightieths: 80
+    ninetieths: 90
+    hundredths: 100
+    thousandths: 1000
+    millionths: 1000000
+    billionths: 1000000000
+    trillionths: 1000000000000
+RoundNumberMap: !dictionary
+  types: [ string, long ]
+  entries:
+    hundred: 100
+    thousand: 1000
+    million: 1000000
+    billion: 1000000000
+    trillion: 1000000000000
+    hundredth: 100
+    thousandth: 1000
+    millionth: 1000000
+    billionth: 1000000000
+    trillionth: 1000000000000
+    hundredths: 100
+    thousandths: 1000
+    millionths: 1000000
+    billionths: 1000000000
+    trillionths: 1000000000000
+    dozen: 12
+    dozens: 12
+    k: 1000
+    m: 1000000
+    g: 1000000000
+    b: 1000000000
+    t: 1000000000000
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '\bone\b': '\b(the|this|that|which)\s+(one)\b'
+RelativeReferenceOffsetMap: !dictionary
+  types: [ string, string ]
+  entries:
+    last: 0
+    next one: 1
+    current: 0
+    current one: 0
+    previous one: -1
+    the second to last: -1
+    the one before the last one: -1
+    the one before the last: -1
+    next to last: -1
+    penultimate: -1
+    the last but one: -1
+    antepenultimate: -2
+    next: 1
+    previous: -1
+RelativeReferenceRelativeToMap: !dictionary
+  types: [ string, string ]
+  entries:
+    last: end
+    next one: current
+    previous one: current
+    current: current
+    current one: current
+    the second to last: end
+    the one before the last one: end
+    the one before the last: end
+    next to last: end
+    penultimate: end
+    the last but one: end
+    antepenultimate: end
+    next: current
+    previous: current
+...

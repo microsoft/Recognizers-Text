@@ -5,6 +5,7 @@ using Microsoft.Recognizers.Text.Number.Dutch;
 using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Text.Number.French;
 using Microsoft.Recognizers.Text.Number.German;
+using Microsoft.Recognizers.Text.Number.Hindi;
 using Microsoft.Recognizers.Text.Number.Italian;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Number.Korean;
@@ -348,6 +349,34 @@ namespace Microsoft.Recognizers.Text.Number
                    new BaseNumberRangeParser(new TurkishNumberRangeParserConfiguration(
                                                  new BaseNumberOptionsConfiguration(Culture.Turkish, options))),
                    new Turkish.NumberRangeExtractor(options)));*/
+
+            RegisterModel<NumberModel>(
+                Culture.Hindi,
+                options => new NumberModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new HindiNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
+                    Hindi.MergedNumberExtractor.GetInstance(NumberMode.PureNumber, options)));
+
+            RegisterModel<OrdinalModel>(
+                Culture.Hindi,
+                options => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new HindiNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
+                    Hindi.OrdinalExtractor.GetInstance(options)));
+
+            RegisterModel<PercentModel>(
+                Culture.Hindi,
+                options => new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new HindiNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
+                    new Hindi.PercentageExtractor(options)));
+
+            RegisterModel<NumberRangeModel>(
+                Culture.Hindi,
+                options => new NumberRangeModel(
+                    new BaseNumberRangeParser(new HindiNumberRangeParserConfiguration(
+                                                  new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
+                    new Hindi.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Hindi, options))));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)
