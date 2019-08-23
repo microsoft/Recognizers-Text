@@ -41,6 +41,30 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
     def ambiguous_unit_number_multiplier_regex(self) -> Pattern:
         return None
 
+    @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return None
+
+    @property
+    def extract_type(self) -> str:
+        raise NotImplementedError
+
+    @property
+    def suffix_list(self) -> Dict[str, str]:
+        raise NotImplementedError
+
+    @property
+    def prefix_list(self) -> Dict[str, str]:
+        raise NotImplementedError
+
+    @property
+    def ambiguous_unit_list(self) -> List[str]:
+        raise NotImplementedError
+
+    @property
+    def culture_info(self) -> CultureInfo:
+        return self._culture_info
+
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Chinese)
@@ -98,7 +122,7 @@ class ChineseCurrencyExtractorConfiguration(ChineseNumberWithUnitExtractorConfig
     def ambiguous_unit_list(self) -> List[str]:
         return self._ambiguous_unit_list
 
-    def __init__(self, culture_info: CultureInfo = None):
+    def __init__(self, culture_info: CultureInfo = Culture.Chinese):
         super().__init__(culture_info)
         self._suffix_list = ChineseNumericWithUnit.CurrencySuffixList
         self._prefix_list = ChineseNumericWithUnit.CurrencyPrefixList

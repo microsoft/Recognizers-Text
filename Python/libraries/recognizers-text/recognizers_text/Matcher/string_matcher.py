@@ -71,7 +71,6 @@ class StringMatcher:
         query_tokens = self.__tokenizer.tokenize(query_text)
         tokenized_query_text = list(map(lambda t: t.text, query_tokens))
         result = []
-
         for r in self.find(tokenized_query_text):
             start_token = query_tokens[r.start]
             end_token = query_tokens[r.start + r.length - 1]
@@ -88,4 +87,4 @@ class StringMatcher:
         return result
 
     def get_tokenized_text(self, values: []) -> []:
-        return list(map(lambda t: map(lambda i: i.text, self.tokenizer.tokenize(t)), values))
+        return list(map(lambda t: list(map(lambda i: i.text, self.tokenizer.tokenize(t))), values))

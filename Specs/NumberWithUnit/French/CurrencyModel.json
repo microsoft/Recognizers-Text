@@ -1531,7 +1531,7 @@
   },
   {
     "Input": "pour cent",
-    "NotSupported": "javascript,python,java",
+    "NotSupported": "javascript,java",
     "Results": []
   },
   {

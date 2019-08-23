@@ -14,6 +14,11 @@ from recognizers_number_with_unit.resources.base_units import BaseUnits
 
 # pylint: disable=abstract-method
 class FrenchNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfiguration):
+
+    @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return FrenchNumericWithUnit.AmbiguityFiltersDict
+
     @property
     def unit_num_extractor(self) -> Extractor:
         return self._unit_num_extractor
