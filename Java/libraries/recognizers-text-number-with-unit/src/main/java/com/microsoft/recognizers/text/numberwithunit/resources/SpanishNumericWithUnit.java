@@ -507,4 +507,6 @@ public class SpanishNumericWithUnit {
         .put("Grano", "grano|granos")
         .put("Quilate", "ct|quilate|quilates")
         .build();
+
+    public static final List<String> AmbiguousAgeUnitList = Arrays.asList("años", "año", "meses", "mes", "semanas", "semana", "dias", "días", "día", "dia");
 }

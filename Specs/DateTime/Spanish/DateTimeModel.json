@@ -486,5 +486,105 @@
     },
     "NotSupported": "python",
     "Results": []
+  },
+  {
+    "Input": "semana pasada.",
+    "Context": {
+      "ReferenceDateTime": "2019-08-23T01:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "semana pasada",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W33",
+              "type": "daterange",
+              "start": "2019-08-12",
+              "end": "2019-08-19"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "la semana pasada.",
+    "Context": {
+      "ReferenceDateTime": "2019-08-23T01:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "la semana pasada",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W33",
+              "type": "daterange",
+              "start": "2019-08-12",
+              "end": "2019-08-19"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "el mes pasado",
+    "Context": {
+      "ReferenceDateTime": "2019-08-23T01:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "el mes pasado",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-07",
+              "type": "daterange",
+              "start": "2019-07-01",
+              "end": "2019-08-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "mes pasado",
+    "Context": {
+      "ReferenceDateTime": "2019-08-23T01:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "mes pasado",
+        "Start": 0,
+        "End": 9,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-07",
+              "type": "daterange",
+              "start": "2019-07-01",
+              "end": "2019-08-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

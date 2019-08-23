@@ -926,7 +926,7 @@ public class SpanishDateTime {
 
     public static final String DurationConnectorRegex = "^[.]";
 
-    public static final String SuffixAfterRegex = "^[.]";
+    public static final String SuffixAfterRegex = "^[.](?!$)";
 
     public static final String YearPeriodRegex = "^[.]";
 

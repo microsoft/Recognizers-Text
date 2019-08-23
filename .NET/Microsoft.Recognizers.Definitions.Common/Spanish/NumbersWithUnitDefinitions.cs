@@ -525,5 +525,18 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Grano", @"grano|granos" },
             { @"Quilate", @"ct|quilate|quilates" }
         };
+      public static readonly IList<string> AmbiguousAgeUnitList = new List<string>
+        {
+            @"años",
+            @"año",
+            @"meses",
+            @"mes",
+            @"semanas",
+            @"semana",
+            @"dias",
+            @"días",
+            @"día",
+            @"dia"
+        };
     }
 }

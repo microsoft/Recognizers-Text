@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Spanish;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Number.Spanish;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish

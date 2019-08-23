@@ -758,4 +758,17 @@ WeightSuffixList: !dictionary
     Onza: oz|onza|onzas
     Grano: grano|granos
     Quilate: ct|quilate|quilates
+AmbiguousAgeUnitList: !list
+  types: [ string ]
+  entries:
+    - años
+    - año
+    - meses
+    - mes
+    - semanas
+    - semana
+    - dias
+    - días
+    - día
+    - dia
 ...

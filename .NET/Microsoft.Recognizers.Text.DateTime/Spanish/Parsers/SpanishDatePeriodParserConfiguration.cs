@@ -34,18 +34,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static IList<string> monthTermsPadded =
-            DateTimeDefinitions.MonthTerms.Select(str => $" {str} ").ToList();
-
-        private static IList<string> weekendTermsPadded =
-            DateTimeDefinitions.WeekendTerms.Select(str => $" {str} ").ToList();
-
-        private static IList<string> weekTermsPadded =
-            DateTimeDefinitions.WeekTerms.Select(str => $" {str} ").ToList();
-
-        private static IList<string> yearTermsPadded =
-            DateTimeDefinitions.YearTerms.Select(str => $" {str} ").ToList();
-
         public SpanishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -288,7 +276,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimmedText = text.Trim();
             return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o)) ||
-                   (monthTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
+                   (DateTimeDefinitions.MonthTerms.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsMonthToDate(string text)
@@ -301,7 +289,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimmedText = text.Trim();
             return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o)) ||
-                   (weekendTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
+                   (DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsWeekOnly(string text)
@@ -316,7 +304,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimmedText = text.Trim();
             return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o)) ||
-                   (yearTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
+                   (DateTimeDefinitions.YearTerms.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsYearToDate(string text)

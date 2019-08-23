@@ -842,7 +842,7 @@ DurationConnectorRegex: !simpleRegex
   def: ^[.]
 SuffixAfterRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  def: ^[.](?!$)
 YearPeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
