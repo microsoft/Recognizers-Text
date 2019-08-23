@@ -25,7 +25,7 @@ class TestStringMatcher:
             match = string_matcher.find(value)
             if match is not None:
                 assert value == match[0].text
-                assert ids[i] == match[0].canonical_values.pop()
+                assert ids[i] == match[0].canonical_values[0]
 
     @staticmethod
     def test_string_matcher():

@@ -96,6 +96,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string OfMonth = $@"^(\s*des\s*|\s*)?{MonthRegex}";
       public static readonly string MonthEnd = $@"{MonthRegex}\s*(de[rmn])?\s*$";
       public static readonly string WeekDayEnd = $@"{WeekDayRegex}\s*,?\s*$";
+      public const string WeekDayStart = @"^[\.]";
       public const string RangeUnitRegex = @"(?<unit>jahren?|jahr|monaten?|monat|wochen?|tagen?|tag)";
       public const string OclockRegex = @"(?<oclock>uhr)";
       public const string HourNumRegex = @"\b(?<hournum>einundzwanzig|zweiundzwanzig|dreiundzwanzig|vierundzwanzig|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|'null'|eins?|zwei|zwo|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)\b";
@@ -166,8 +167,8 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string SuffixAndRegex = @"(?<suffix>\s*und\s+(eine\s+)?(?<suffix_num>halbe|viertel))";
       public const string PeriodicRegex = @"(?<periodic>(all)?täglich(er|en|es|e)?|(all)?monatlich(er|en|es|e)?|(all)?wöchentlich(er|en|es|e)?|(all)?jährlich(er|en|es|e)?)\b";
       public static readonly string EachUnitRegex = $@"(?<each>(jede(s|r|n|m)?|alle)(?<other>\s+andere(n)?)?\s*{DurationUnitRegex})";
-      public const string EachPrefixRegex = @"\b(?<each>(jede(r|n|s)?|alle)\s*$)";
-      public const string SetEachRegex = @"\b(?<each>(jede(r|n|s)?|alle)\s*)";
+      public const string EachPrefixRegex = @"\b(?<each>(jede(r|n|s|m)?|alle)\s*$)";
+      public const string SetEachRegex = @"\b(?<each>(jede(r|n|s|m)?|alle)\s*)";
       public const string SetLastRegex = @"(?<last>nächste(r|n|s)?|kommende(r|n|s)?|diese(r|n|m|s)?|letzte(r|n|s)?|vorige(r|n|s)?|vorherige(r|n|s)?|jetzige(r|n|s)?|derzeitige(r|n|s)?)\b";
       public const string EachDayRegex = @"\s*(jeden)\s*tag\s*\b";
       public const string BeforeEachDayRegex = @"(jeden)\s*tag\s*";

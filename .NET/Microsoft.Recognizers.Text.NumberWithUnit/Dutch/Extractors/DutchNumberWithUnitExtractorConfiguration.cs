@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Dutch;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Dutch;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Dutch
@@ -21,7 +22,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Dutch
         protected DutchNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
-            this.UnitNumExtractor = NumberExtractor.GetInstance();
+            this.UnitNumExtractor = NumberExtractor.GetInstance(NumberMode.Unit);
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = string.Empty;

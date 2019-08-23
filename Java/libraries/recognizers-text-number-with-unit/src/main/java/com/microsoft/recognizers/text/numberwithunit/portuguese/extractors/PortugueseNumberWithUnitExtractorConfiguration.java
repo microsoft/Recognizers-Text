@@ -2,6 +2,7 @@ package com.microsoft.recognizers.text.numberwithunit.portuguese.extractors;
 
 import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.IExtractor;
+import com.microsoft.recognizers.text.number.NumberMode;
 import com.microsoft.recognizers.text.number.portuguese.extractors.NumberExtractor;
 import com.microsoft.recognizers.text.numberwithunit.extractors.INumberWithUnitExtractorConfiguration;
 import com.microsoft.recognizers.text.numberwithunit.resources.PortugueseNumericWithUnit;
@@ -18,7 +19,7 @@ public abstract class PortugueseNumberWithUnitExtractorConfiguration implements 
     protected PortugueseNumberWithUnitExtractorConfiguration(CultureInfo cultureInfo) {
         this.cultureInfo = cultureInfo;
 
-        this.unitNumExtractor = new NumberExtractor();
+        this.unitNumExtractor = NumberExtractor.getInstance(NumberMode.Unit);;
         this.compoundUnitConnectorRegex =
                 Pattern.compile(PortugueseNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }

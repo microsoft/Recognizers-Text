@@ -2,6 +2,7 @@ package com.microsoft.recognizers.text.numberwithunit.french.extractors;
 
 import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.IExtractor;
+import com.microsoft.recognizers.text.number.NumberMode;
 import com.microsoft.recognizers.text.number.french.extractors.NumberExtractor;
 import com.microsoft.recognizers.text.numberwithunit.extractors.INumberWithUnitExtractorConfiguration;
 import com.microsoft.recognizers.text.numberwithunit.resources.FrenchNumericWithUnit;
@@ -18,7 +19,7 @@ public abstract class FrenchNumberWithUnitExtractorConfiguration implements INum
     protected FrenchNumberWithUnitExtractorConfiguration(CultureInfo cultureInfo) {
         this.cultureInfo = cultureInfo;
 
-        this.unitNumExtractor = NumberExtractor.getInstance();
+        this.unitNumExtractor = NumberExtractor.getInstance(NumberMode.Unit);
         this.compoundUnitConnectorRegex =
                 Pattern.compile(FrenchNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }

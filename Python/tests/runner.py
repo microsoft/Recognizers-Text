@@ -33,7 +33,6 @@ def get_suite_config(json_path):
 
 
 def get_suite(json_path):
-    print(json_path)
     return {'specs': json.load(
         open(json_path, encoding='utf-8-sig')), 'config': get_suite_config(json_path)}
 

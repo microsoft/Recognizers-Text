@@ -298,5 +298,10 @@
         }
       }
     ]
+  },
+  {
+    "Input": "10.000tl",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
   }
 ]

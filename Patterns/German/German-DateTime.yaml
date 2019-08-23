@@ -205,6 +205,8 @@ MonthEnd: !nestedRegex
 WeekDayEnd: !nestedRegex
   def: '{WeekDayRegex}\s*,?\s*$'
   references: [ WeekDayRegex ]
+WeekDayStart: !simpleRegex
+  def: ^[\.]
 RangeUnitRegex: !simpleRegex
   def: (?<unit>jahren?|jahr|monaten?|monat|wochen?|tagen?|tag)
 OclockRegex: !simpleRegex
@@ -384,9 +386,9 @@ EachUnitRegex: !nestedRegex
   def: (?<each>(jede(s|r|n|m)?|alle)(?<other>\s+andere(n)?)?\s*{DurationUnitRegex})
   references: [ DurationUnitRegex ]
 EachPrefixRegex: !simpleRegex
-  def: \b(?<each>(jede(r|n|s)?|alle)\s*$)
+  def: \b(?<each>(jede(r|n|s|m)?|alle)\s*$)
 SetEachRegex: !simpleRegex
-  def: \b(?<each>(jede(r|n|s)?|alle)\s*)
+  def: \b(?<each>(jede(r|n|s|m)?|alle)\s*)
 SetLastRegex: !simpleRegex
   def: (?<last>nächste(r|n|s)?|kommende(r|n|s)?|diese(r|n|m|s)?|letzte(r|n|s)?|vorige(r|n|s)?|vorherige(r|n|s)?|jetzige(r|n|s)?|derzeitige(r|n|s)?)\b
 EachDayRegex: !simpleRegex
