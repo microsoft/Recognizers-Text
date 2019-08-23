@@ -915,8 +915,6 @@ MonthTerms: !list
   entries:
     - mes
     - meses
-    - mes pasado
-    - mes pasados
 MonthToDateTerms: !list
   types: [ string ]
   entries:
@@ -930,7 +928,6 @@ WeekTerms: !list
   types: [ string ]
   entries:
     - semana
-    - semana pasada
 YearTerms: !list
   types: [ string ]
   entries:

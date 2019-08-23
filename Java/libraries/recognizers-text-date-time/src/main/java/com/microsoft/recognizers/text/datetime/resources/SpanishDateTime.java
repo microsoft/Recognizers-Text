@@ -964,13 +964,13 @@ public class SpanishDateTime {
 
     public static final List<String> MinusTwoDayTerms = Arrays.asList("anteayer", "dia antes de ayer");
 
-    public static final List<String> MonthTerms = Arrays.asList("mes", "meses", "mes pasado", "mes pasados");
+    public static final List<String> MonthTerms = Arrays.asList("mes", "meses");
 
     public static final List<String> MonthToDateTerms = Arrays.asList("mes a la fecha", "meses a la fecha");
 
     public static final List<String> WeekendTerms = Arrays.asList("fin de semana");
 
-    public static final List<String> WeekTerms = Arrays.asList("semana", "semana pasada");
+    public static final List<String> WeekTerms = Arrays.asList("semana");
 
     public static final List<String> YearTerms = Arrays.asList("año", "años");
 

@@ -1,4 +1,6 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -21,6 +23,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
+        public static readonly Regex AfterNextSuffixRegex =
+            new Regex(DateTimeDefinitions.AfterNextSuffixRegex, RegexFlags);
+
         public static readonly Regex RelativeRegex =
             new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
 
@@ -28,6 +33,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static IList<string> monthTermsPadded =
+            DateTimeDefinitions.MonthTerms.Select(str => $" {str} ").ToList();
+
+        private static IList<string> weekendTermsPadded =
+            DateTimeDefinitions.WeekendTerms.Select(str => $" {str} ").ToList();
+
+        private static IList<string> weekTermsPadded =
+            DateTimeDefinitions.WeekTerms.Select(str => $" {str} ").ToList();
+
+        private static IList<string> yearTermsPadded =
+            DateTimeDefinitions.YearTerms.Select(str => $" {str} ").ToList();
 
         public SpanishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -270,7 +287,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool IsMonthOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o)) ||
+                   (monthTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsMonthToDate(string text)
@@ -282,20 +300,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool IsWeekend(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o)) ||
+                   (weekendTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o)) &&
-                   !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
+            return (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o)) ||
+                   (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText))) &&
+                   !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.Contains(o));
         }
 
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o)) ||
+                   (yearTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsYearToDate(string text)

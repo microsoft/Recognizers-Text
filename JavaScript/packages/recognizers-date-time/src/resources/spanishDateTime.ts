@@ -251,10 +251,10 @@ export namespace SpanishDateTime {
     export const MinusOneDayTerms = [ "ayer","ultimo dia" ];
     export const PlusTwoDayTerms = [ "pasado mañana","dia despues de mañana" ];
     export const MinusTwoDayTerms = [ "anteayer","dia antes de ayer" ];
-    export const MonthTerms = [ "mes","meses","mes pasado","mes pasados" ];
+    export const MonthTerms = [ "mes","meses" ];
     export const MonthToDateTerms = [ "mes a la fecha","meses a la fecha" ];
     export const WeekendTerms = [ "fin de semana" ];
-    export const WeekTerms = [ "semana","semana pasada" ];
+    export const WeekTerms = [ "semana" ];
     export const YearTerms = [ "año","años" ];
     export const YearToDateTerms = [ "año a la fecha","años a la fecha" ];
     export const SpecialCharactersEquivalent: ReadonlyMap<string, string> = new Map<string, string>([["á", "a"],["é", "e"],["í", "i"],["ó", "o"],["ú", "u"]]);

@@ -89,6 +89,8 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         numbers = config.getNumbers();
         writtenDecades = config.getWrittenDecades();
         specialDecadeCases = config.getSpecialDecadeCases();
+
+        afterNextSuffixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AfterNextSuffixRegex);
     }
 
     // Regex
@@ -184,6 +186,8 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     private final Pattern moreThanRegex;
 
     private final Pattern centurySuffixRegex;
+
+    private final Pattern afterNextSuffixRegex;
 
     private final Pattern nowRegex;
 
@@ -563,7 +567,9 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     @Override
     public boolean isMonthOnly(String text) {
         String trimmedText = text.trim().toLowerCase();
-        return SpanishDateTime.MonthTerms.stream().anyMatch(o -> trimmedText.endsWith(o));
+        Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
+        return SpanishDateTime.MonthTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) ||
+                SpanishDateTime.MonthTerms.stream().anyMatch(o -> trimmedText.contains(o)) && matchAfterNext.isPresent();
     }
 
     @Override
@@ -575,13 +581,17 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     @Override
     public boolean isWeekend(String text) {
         String trimmedText = text.trim().toLowerCase();
-        return SpanishDateTime.WeekendTerms.stream().anyMatch(o -> trimmedText.endsWith(o));
+        Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
+        return SpanishDateTime.WeekendTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) ||
+                SpanishDateTime.WeekendTerms.stream().anyMatch(o -> trimmedText.contains(o)) && matchAfterNext.isPresent();
     }
 
     @Override
     public boolean isWeekOnly(String text) {
         String trimmedText = text.trim().toLowerCase();
-        return SpanishDateTime.WeekTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) &&
+        Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
+        return (SpanishDateTime.WeekTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) ||
+                SpanishDateTime.WeekTerms.stream().anyMatch(o -> trimmedText.contains(o)) && matchAfterNext.isPresent()) &&
                 !SpanishDateTime.WeekendTerms.stream().anyMatch(o -> trimmedText.endsWith(o));
     }
 

@@ -542,9 +542,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly IList<string> MonthTerms = new List<string>
         {
             @"mes",
-            @"meses",
-            @"mes pasado",
-            @"mes pasados"
+            @"meses"
         };
       public static readonly IList<string> MonthToDateTerms = new List<string>
         {
@@ -557,8 +555,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
         };
       public static readonly IList<string> WeekTerms = new List<string>
         {
-            @"semana",
-            @"semana pasada"
+            @"semana"
         };
       public static readonly IList<string> YearTerms = new List<string>
         {
