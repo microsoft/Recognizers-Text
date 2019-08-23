@@ -120,6 +120,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string OfMonth = $@"(^\s*(di\s+)?){MonthRegex}";
       public static readonly string MonthEnd = $@"{MonthRegex}\s*,?\s*(il)?\s*$";
       public static readonly string WeekDayEnd = $@"(quest[oa]\s+)?{WeekDayRegex}\s*,?\s*$";
+      public const string WeekDayStart = @"^[\.]";
       public const string RangeUnitRegex = @"\b(?<unit>l'anno|ann[oi]?|mes[ei]|settiman[ae])\b";
       public const string HourNumRegex = @"\b(?<hournum>zero|(?<=l')una|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|undici|dodici|tredici|quattordici|quindici|sedici|diciassette|diciotto|diciannove|venti|ventuno|ventidue|ventitre|ventiquattro)\b";
       public const string FivesRegex = @"(?<tens>(quindici|venti(\s*cinque)?|trenta(\s*cinque)?|quaranta(\s*cinque)?|cinquanta(\s*cinque)?|dieci|cinque))\b";
