@@ -256,7 +256,7 @@ class BaseDateExtractor(DateTimeExtractor):
                 sub_text = text[:year_group.index]
 
                 # If the following text (include the "year" part) doesn't start with a Date entity, it's a valid match
-                if not self.starts_with_basic_date(text):
+                if not self.starts_with_basic_date(sub_text):
                     is_valid_match = True
                 else:
 
