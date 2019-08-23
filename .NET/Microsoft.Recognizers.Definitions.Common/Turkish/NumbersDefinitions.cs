@@ -68,8 +68,8 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string BillionToTrillionOrdinalRegex = $@"({BillionsNumberIntegerRegex}\s({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex})|{BillionsOrdinalRegex})";
       public static readonly string TrillionsOrdinalRegex = $@"((({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}|{TensNumberIntegerRegex}|{HundredsNumberIntegerRegex})\s)?(trilyonuncu))";
       public static readonly string AboveTrillionOrdinalRegex = $@"({TrillionsNumberIntegerRegex}\s({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex}|{BillionToTrillionOrdinalRegex})|{TrillionsOrdinalRegex})";
-      public const string RelativeOrdinalRegex = @"((bir\s)?(sonraki|önceki)|sondan birinci|sondan bir önceki|sondan ikinci|(en\s)?son)";
-      public static readonly string AllOrdinalRegex = $@"({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex}|{BillionToTrillionOrdinalRegex}|{AboveTrillionOrdinalRegex})";
+      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(bir\s+)?(sonraki|önceki)|sondan\s+birinci|sondan\s+bir\s+önceki|sondan\s+ikinci|(en\s+)?son|[iİ]lki|sonuncu(su)?|şimdiki)";
+      public static readonly string AllOrdinalRegex = $@"({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex}|{BillionToTrillionOrdinalRegex}|{AboveTrillionOrdinalRegex}|{RelativeOrdinalRegex})";
       public const string AllOrdinalSuffix = @"(onu(?=nda)?|yirmisi(?=nde)?|otuzu(?=nda)?|kırkı(?=nda)?|ellisi(?=nde)?|altmışı(?=nda)?|yetmişi(?=nde)?|sekseni(?=nde)?|doksanı(?=nda)?|((on|yirmi|otuz)\s+)?(biri(?=nde)?|ilk|ikisi(?=nde)?|üçü(?=nde)?|dördü(?=nde)?|beşi(?=nde)?|altısı(?=nda)?|yedisi(?=nde)?|sekizi(?=nde)?|dokuzu(?=nda)?))";
       public const string OrdinalSuffixRegex = @"(?<=\b)(\d*(00(\.(?!\d+)|'üncü)|000(\.(?!\d+)|'inci)|000\.?000(\.(?!\d+)|'uncu)|000\.?000\.?000(\.(?!\d+)|'ıncı)|000\.?000\.?000\.?000(\.(?!\d+)|'uncu)|10(\.(?!\d+)|'uncu|'u(?=nda)?)|20(\.(?!\d+)|'nci|'si(?=nde)?)|30(\.(?!\d+)|'uncu|'u(?=nda)?)|40(\.(?!\d+)|'ıncı|'ı(?=nda)?)|50(\.(?!\d+)|'inci|'si(?=nde)?)|60(\.(?!\d+)|'ıncı|'ı(?=nda)?)|70(\.(?!\d+)|'inci|'i(?=nde)?)|80(\.(?!\d+)|'inci|'i(?=nde)?)|90(\.(?!\d+)|'ıncı|'ı(?=nda)?)|1(\.(?!\d+)|'inci|'i(?=nde)?)|2(\.(?!\d+)|'nci|'si(?=nde)?)|3(\.(?!\d+)|'üncü|'ü(?=nde)?)|4(\.(?!\d+)|'üncü|'ü(?=nde)?)|5(\.(?!\d+)|'inci|'i(?=nde)?)|6(\.(?!\d+)|'ıncı|'sı(?=nda)?)|7(\.(?!\d+)|'inci|'si(?=nde)?)|8(\.(?!\d+)|'inci|'i(?=nde)?)|9(\.(?!\d+)|'uncu|'u(?=nda)?)))";
       public const string OrdinalNumericRegex = @"(?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*('inci|'ıncı|'uncu|'üncü|'nci|'ncı))(?=\b)";
@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}\s)?(buçuk|çeyrek|yarım))(?=\b)";
-      public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(eksi\s)?(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(bölü)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
+      public static readonly string FractionPrepositionRegex = $@"(?<=\b)(eksi\s)?(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(bölü)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s{ZeroToNineIntegerRegex})+|(\s{AllIntRegex}))";
       public static readonly string FloatRegex1 = $@"(({NegativeAllIntRegex}|{AllIntRegex})(\s(nokta)){AllPointRegex})";
       public static readonly string FloatRegex2 = $@"{AllIntRegex}(\s+(tam)\s+)((onda)\s+{OneToNineIntegerRegex}|(yüzde)\s+({OneToNineIntegerRegex}|{TenToHundredRegex})|(binde)\s+({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}))";
@@ -252,6 +252,12 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {
             { @"en son", @"0" },
+            { @"son", @"0" },
+            { @"sonuncu", @"0" },
+            { @"sonuncusu", @"0" },
+            { @"şimdiki", @"0" },
+            { @"ilki", @"0" },
+            { @"İlki", @"0" },
             { @"bir sonraki", @"1" },
             { @"bir önceki", @"-1" },
             { @"sondan ikinci", @"-1" },
@@ -263,12 +269,17 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
         {
             { @"en son", @"end" },
+            { @"son", @"end" },
+            { @"sonuncu", @"end" },
+            { @"sonuncusu", @"end" },
+            { @"şimdiki", @"current" },
+            { @"ilki", @"current" },
+            { @"İlki", @"current" },
             { @"bir sonraki", @"current" },
             { @"bir önceki", @"current" },
             { @"sondan birinci", @"end" },
             { @"en sondan bir önceki", @"end" },
             { @"sondan bir önceki", @"end" },
-            { @"the last but one", @"end" },
             { @"sondan ikinci", @"end" },
             { @"sonraki", @"current" },
             { @"önceki", @"current" }
