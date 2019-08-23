@@ -93,6 +93,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string OfMonth = $@"^\s*de\s*{MonthRegex}";
       public static readonly string MonthEnd = $@"{MonthRegex}\s*(le)?\s*$";
       public static readonly string WeekDayEnd = $@"{WeekDayRegex}\s*,?\s*$";
+      public const string WeekDayStart = @"^[\.]";
       public const string RangeUnitRegex = @"\b(?<unit>(l')?ann[eé]e(s)?|mois|semaines?)\b";
       public const string HourNumRegex = @"\b(?<hournum>zero|[aá]\s+une?|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|dix-six|dix-sept|dix-huit|dix-neuf|vingt|vingt-et-un|vingt-deux|vingt-trois|dix)\b";
       public const string MinuteNumRegex = @"(?<minnum>un|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)";

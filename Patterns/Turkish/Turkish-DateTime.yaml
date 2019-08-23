@@ -295,6 +295,9 @@ MonthEnd: !nestedRegex
 WeekDayEnd: !nestedRegex
   def: '(bu\s+)?{WeekDayRegex}\s*,?\s*$'
   references: [ WeekDayRegex ]
+WeekDayStart: !nestedRegex
+  def: '\s*,?\s*{WeekDayRegex}'
+  references: [ WeekDayRegex ]
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>hafta|ay|yıl)\b
 HourNumRegex: !simpleRegex

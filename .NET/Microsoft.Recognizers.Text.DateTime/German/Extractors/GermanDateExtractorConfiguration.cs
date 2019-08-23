@@ -96,6 +96,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex WeekDayEnd =
             new Regex(DateTimeDefinitions.WeekDayEnd, RegexFlags);
 
+        public static readonly Regex WeekDayStart =
+            new Regex(DateTimeDefinitions.WeekDayStart, RegexFlags);
+
         public static readonly Regex YearSuffix =
             new Regex(DateTimeDefinitions.YearSuffix, RegexFlags);
 
@@ -203,6 +206,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IDateExtractorConfiguration.MonthEnd => MonthEnd;
 
         Regex IDateExtractorConfiguration.WeekDayEnd => WeekDayEnd;
+
+        Regex IDateExtractorConfiguration.WeekDayStart => WeekDayStart;
 
         Regex IDateExtractorConfiguration.DateUnitRegex => DateUnitRegex;
 

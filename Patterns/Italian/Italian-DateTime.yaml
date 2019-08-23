@@ -260,6 +260,8 @@ MonthEnd: !nestedRegex
 WeekDayEnd: !nestedRegex
   def: '(quest[oa]\s+)?{WeekDayRegex}\s*,?\s*$'
   references: [ WeekDayRegex ]
+WeekDayStart: !simpleRegex
+  def: ^[\.]
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>l'anno|ann[oi]?|mes[ei]|settiman[ae])\b
 HourNumRegex: !simpleRegex
