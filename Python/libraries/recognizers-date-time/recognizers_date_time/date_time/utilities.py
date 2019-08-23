@@ -39,16 +39,12 @@ class RegexExtension:
         if match is None:
             return None
 
-        srt_after = text[text.index(match.group()) + (match.end() - match.start()):]
+        srt_after = text[:match.index + len(text.index(match.group()))]
 
         if trim:
             srt_after = srt_after.strip()
 
-        success = match and (str.isspace(srt_after) or srt_after is None)
-
-        conditional = ConditionalMatch(match, success)
-
-        return conditional
+        return ConditionalMatch(match, match and (str.isspace(srt_after) or srt_after is None))
 
 
 class ConditionalMatch:
@@ -75,19 +71,19 @@ class ConditionalMatch:
 
     @property
     def index(self) -> int:
-        return self.match[0].string.index(self.match[0].group())
+        return str.index(self.match.groups())
 
     @property
     def length(self) -> int:
-        return len(self.match[0].group())
+        return len(self.match)
 
     @property
     def value(self) -> str:
-        return self.match[0].string
+        return self.match
 
     @property
     def groups(self):
-        return self.match[0].groups()
+        return self.match.groups()
 
 
 class MatchingUtil:
@@ -96,7 +92,7 @@ class MatchingUtil:
     def pre_process_text_remove_superfluous_words(text: str, matcher: StringMatcher, superfluous_word_matches) -> str:
         superfluous_word_matches = MatchingUtil.remove_sub_matches(matcher.find(text))
 
-        bias = 0[0]
+        bias = 0
 
         for match in superfluous_word_matches:
             text = text[match.start - bias: match.length]

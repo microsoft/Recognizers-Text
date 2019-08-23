@@ -250,10 +250,10 @@ class BaseDateExtractor(DateTimeExtractor):
             year_group = RegExpUtility.get_group(
                 match, 'year')
             # If the "year" part is not at the end of the match, it's a valid match
-            if not text.index(year_group) + len(year_group) == text.index(match.group()) + (match.end() - match.start()):
+            if not year_group.index + len(year_group) == len(text.index(match.groups())) + len(match):
                 is_valid_match = True
             else:
-                sub_text = text[text.index(year_group):]
+                sub_text = text[:year_group.index]
 
                 # If the following text (include the "year" part) doesn't start with a Date entity, it's a valid match
                 if not self.starts_with_basic_date(sub_text):
@@ -263,11 +263,12 @@ class BaseDateExtractor(DateTimeExtractor):
                     # If the following text (include the "year" part) starts with a Date entity,
                     # but the following text (doesn't include the "year" part) also starts with a
                     # valid Date entity, the current match is still valid
+
                     # For example, "10-1-2018-10-2-2018". Match "10-1-2018" is valid because
                     # though "2018-10-2" a valid match (indicates the first year "2018" might
                     # belongs to the second Date entity), but "10-2-2018" is also
 
-                    sub_text = text[text.index(year_group) + len(year_group):].strip()
+                    sub_text = text[:year_group.index + len(year_group)].strip()
                     sub_text = self.trim_start_range_connector_symbols(sub_text)
                     is_valid_match = self.starts_with_basic_date(sub_text)
 
@@ -276,16 +277,16 @@ class BaseDateExtractor(DateTimeExtractor):
     # TODO: Simplify this method to improve the performance
     def trim_start_range_connector_symbols(self, text: str):
 
-        range_connector_symbol_matches = [self.config.range_connector_symbol_regex.match(text)]
+        range_connector_symbol_matches = self.config.range_connector_symbol_regex.match(text)
 
         for symbol_match in range_connector_symbol_matches:
             start_symbol_length = -1
 
-            if symbol_match and text.index(symbol_match.group()) == 0 and len(symbol_match.group()) > start_symbol_length:
-                start_symbol_length = len(symbol_match.group())
+            if symbol_match and symbol_match.index() == 0 and len(symbol_match) > start_symbol_length:
+                start_symbol_length = len(symbol_match)
 
             if start_symbol_length > 0:
-                text = text[start_symbol_length:]
+                text = text[:start_symbol_length]
 
         return text.strip()
 
@@ -330,7 +331,7 @@ class BaseDateExtractor(DateTimeExtractor):
                 if match is not None:
                     start_index = match.start()
                     result_length = result.length if result.length else 0
-                    end_index = match.start() + len(match.group()) + result_length
+                    end_index = source.index(match.group()) + len(match.group()) + result_length
 
                     self.extend_with_week_day_and_year(
                         start_index, end_index, self.config.month_of_year[str(RegExpUtility.get_group(
@@ -421,8 +422,7 @@ class BaseDateExtractor(DateTimeExtractor):
                     res_end = res_start + result.length + space_len + len(match.group())
 
                     # Check if prefix contains 'the', include it if any
-                    prefix = source[: res_start or 0]
-                    prefix_match = self.config.prefix_article_regex.match(prefix)
+                    prefix_match = self.config.prefix_article_regex.match(prefix_match)
                     if prefix_match:
                         res_start = prefix_match.start()
 
@@ -436,7 +436,7 @@ class BaseDateExtractor(DateTimeExtractor):
                     self.config.week_day_regex, suffix_str.strip())
                 if (match is not None and match.start() == 0 and num >= 1 and num <= 5 and
                         result.type == NumberConstants.SYS_NUM_ORDINAL):
-                    week_day_str = RegExpUtility.get_group(match, 'weekday').lower()
+                    week_day_str = RegExpUtility.get_group(match, 'weekday')
 
                     if week_day_str in self.config.day_of_week:
                         ret.append(
@@ -453,7 +453,7 @@ class BaseDateExtractor(DateTimeExtractor):
 
                     self.extend_with_week_day_and_year(start_index, end_index,
                                                        self.config.month_of_year[RegExpUtility.get_group(
-                                                           match, 'month').lower()], num, source, reference)
+                                                           match_case, 'month')], num, source, reference)
 
                     ret.append(Token(start_index, start_index +
                                      result.length + len(match.group())))
@@ -523,21 +523,21 @@ class BaseDateExtractor(DateTimeExtractor):
                 continue
 
             match = RegexExtension.match_end(self.config.in_connector_regex, before_str, True)
+
             if match:
-                if match.success:
 
-                    start_token = match.index
-                    range_unit_math = self.config.range_unit_regex.match(text[duration.start: duration.start
-                                                                              + duration.length])
+                start_token = match.index
+                range_unit_math = self.config.range_unit_regex.match(text[duration.start: duration.start
+                                                                          + duration.length])
 
-                    if range_unit_math:
-                        since_year_match = self.config.since_year_suffix_regex.match(after_str)
+                if range_unit_math:
+                    since_year_match = self.config.since_year_suffix_regex.match(after_str)
 
-                        if since_year_match:
-                            ret.append(Token(start_token, duration.end + len(since_year_match)))
+                    if since_year_match:
+                        ret.append(Token(start_token, duration.end + len(since_year_match)))
 
-                        else:
-                            ret.append(Token(start_token, duration.end))
+                    else:
+                        ret.append(Token(start_token, duration.end))
 
         return ret
 
