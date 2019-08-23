@@ -5,6 +5,7 @@ from recognizers_text.extractor import ExtractResult
 
 class DateTimeListExtractor:
 
+    @property
     @abstractmethod
     def extract(self, extract_result, text, reference) -> List[ExtractResult]:
         raise NotImplementedError

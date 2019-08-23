@@ -208,7 +208,7 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
             SpanishDateTime.LessThanRegex
         )
         self._in_connector_regex = RegExpUtility.get_safe_reg_exp(
-            SpanishDateTime.InConnectorRegexC
+            SpanishDateTime.InConnectorRegex
         )
         self._range_unit_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.RangeUnitRegex
