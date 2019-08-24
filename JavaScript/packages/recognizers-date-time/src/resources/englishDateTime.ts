@@ -119,6 +119,7 @@ export namespace EnglishDateTime {
     export const OfMonth = `^\\s*of\\s*${MonthRegex}`;
     export const MonthEnd = `${MonthRegex}\\s*(the)?\\s*$`;
     export const WeekDayEnd = `(this\\s+)?${WeekDayRegex}\\s*,?\\s*$`;
+    export const WeekDayStart = `^[\\.]`;
     export const RangeUnitRegex = `\\b(?<unit>years?|months?|weeks?)\\b`;
     export const HourNumRegex = `\\b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\\b`;
     export const MinuteNumRegex = `(?<minnum>ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)?|twenty|thirty|forty|fifty|one|two|three|five|eight)`;

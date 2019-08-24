@@ -464,4 +464,5 @@ class SpanishNumericWithUnit:
                              ("Onza", "oz|onza|onzas"),
                              ("Grano", "grano|granos"),
                              ("Quilate", "ct|quilate|quilates")])
+    AmbiguousAgeUnitList = [r'años', r'año', r'meses', r'mes', r'semanas', r'semana', r'dias', r'días', r'día', r'dia']
 # pylint: enable=line-too-long

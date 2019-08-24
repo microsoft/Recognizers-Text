@@ -86,6 +86,7 @@ export namespace SpanishDateTime {
     export const OfMonthRegex = `^\\s*de\\s*${MonthSuffixRegex}`;
     export const MonthEndRegex = `(${MonthRegex}\\s*(el)?\\s*$)`;
     export const WeekDayEnd = `${WeekDayRegex}\\s*,?\\s*$`;
+    export const WeekDayStart = `^[\\.]`;
     export const DateYearRegex = `(?<year>${YearRegex}|${TwoDigitYearRegex})`;
     export const DateExtractor1 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}?((\\s*(de)|[/\\\\\\.\\-])\\s*)?${MonthRegex}\\b`;
     export const DateExtractor2 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}\\s*([\\.\\-]|de)\\s*${MonthRegex}(\\s*,\\s*|\\s*(del?)\\s*)${DateYearRegex}\\b`;
@@ -234,7 +235,7 @@ export namespace SpanishDateTime {
     export const CommonDatePrefixRegex = `^[\\.]`;
     export const DurationUnitRegex = `^[\\.]`;
     export const DurationConnectorRegex = `^[.]`;
-    export const SuffixAfterRegex = `^[.]`;
+    export const SuffixAfterRegex = `^[.](?!$)`;
     export const YearPeriodRegex = `^[.]`;
     export const FutureSuffixRegex = `\\b(despu[ée]s)\\b`;
     export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
