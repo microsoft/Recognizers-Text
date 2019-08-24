@@ -47,6 +47,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SingleAmbiguousMonthRegex { get; }
 
+        Regex AmbiguousRangeModifierPrefix { get; }
+
+        Regex PotentialAmbiguousRangeRegex { get; }
+
         Regex PrepositionSuffixRegex { get; }
 
         Regex NumberEndingPattern { get; }

@@ -644,6 +644,9 @@ RestOfDateTimeRegex: !simpleRegex
   def: \b((günün|günümün|bugünün)\s+(geri kalanı))\b
 MealTimeRegex: !simpleRegex
   def: \b(at\s+)?(?<mealTime>öğle yemeği zamanı|öğle yemeği vakti)\b
+AmbiguousRangeModifierPrefix: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 NumberEndingPattern: !nestedRegex
   def: ^(?<newTime>{PeriodAtHourNumRegex}|{HourRegex}((\.)?$|(\.,|,|!|\?)))\s+(?<meeting>toplantı|randevu|konferans|çağrı|skype\s(araması|görüşmesi))
   references: [ PeriodAtHourNumRegex ]

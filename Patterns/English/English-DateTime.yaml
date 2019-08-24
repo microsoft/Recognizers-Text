@@ -530,7 +530,7 @@ AfterRegex: !nestedRegex
   def: ((\b{InclusiveModPrepositions}?((after|(starting|beginning)(\s+on)?(?!\sfrom)|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to){InclusiveModPrepositions}?\b\s*?)|(?<!\w|<)((?<include>>\s*=)|>))(\s+the)?
   references: [ InclusiveModPrepositions ]
 SinceRegex: !simpleRegex
-  def: (?:(?:\b(?:since|after\s+or\s+equal\s+to|starting\s+(?:from|on|with)|as\s+early\s+as|any\s+time\s+from)\b\s*)|(?<!\w|<)(>=))
+  def: (?:(?:\b(?:since|after\s+or\s+equal\s+to|starting\s+(?:from|on|with)|as\s+early\s+as|(any\s+time\s+)?from)\b\s*)|(?<!\w|<)(>=))
 AroundRegex: !simpleRegex
   def: (?:\b(?:around|circa)\s*\b)
 AgoRegex: !simpleRegex
@@ -601,6 +601,8 @@ RestOfDateTimeRegex: !simpleRegex
   def: \brest\s+(of\s+)?((the|my|this|current)\s+)?(?<unit>day)\b
 MealTimeRegex: !simpleRegex
   def: \b(at\s+)?(?<mealTime>lunchtime)\b
+AmbiguousRangeModifierPrefix: !simpleRegex
+  def: (from)
 NumberEndingPattern: !nestedRegex
   def: ^(?:\s+(?<meeting>meeting|appointment|conference|call|skype call)\s+to\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})([\.]?$|(\.,|,|!|\?)))
   references: [PeriodHourNumRegex, HourRegex]

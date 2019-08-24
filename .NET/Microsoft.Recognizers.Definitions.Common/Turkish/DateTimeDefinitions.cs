@@ -281,6 +281,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string RestOfDateRegex = @"\b(((bu\s)?(haftanın|ayın|yılın)|haftamın|ayımın|yılımın)\s+(geri kalanı))\b";
       public const string RestOfDateTimeRegex = @"\b((günün|günümün|bugünün)\s+(geri kalanı))\b";
       public const string MealTimeRegex = @"\b(at\s+)?(?<mealTime>öğle yemeği zamanı|öğle yemeği vakti)\b";
+      public const string AmbiguousRangeModifierPrefix = @"^[.]";
       public static readonly string NumberEndingPattern = $@"^(?<newTime>{PeriodAtHourNumRegex}|{{HourRegex}}((\.)?$|(\.,|,|!|\?)))\s+(?<meeting>toplantı|randevu|konferans|çağrı|skype\s(araması|görüşmesi))";
       public const string OneOnOneRegex = @"\b(1\s*:\s*1(?!\d))|(bire bir|bir\s*-\s*bir|bir\s*:\s*bir)\b";
       public static readonly string LaterEarlyPeriodRegex = $@"\b((?<suffix>{OneWordPeriodRegex})\s*\b\s*({PrefixPeriodRegex}))\b";

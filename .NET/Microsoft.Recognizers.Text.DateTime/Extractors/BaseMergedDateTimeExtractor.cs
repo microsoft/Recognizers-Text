@@ -35,9 +35,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             return false;
         }
 
-        public static bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text)
+        public bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text, bool ambiguous = false)
         {
             var beforeStr = text.Substring(0, er.Start ?? 0);
+
+            // Avoid adding mod for "from" in "from ... to ..."
+            if (ambiguous && this.config.AmbiguousRangeModifierPrefix.IsMatch(beforeStr))
+            {
+                var matches = this.config.PotentialAmbiguousRangeRegex.Matches(text).Cast<Match>();
+                if (matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                {
+                    return false;
+                }
+            }
 
             if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex))
             {
@@ -46,6 +56,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Length += modLength;
                 er.Start -= modLength;
                 er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                if (er.Metadata == null)
+                {
+                    er.Metadata = new Metadata { HasMod = true };
+                }
+                else
+                {
+                    er.Metadata.HasMod = true;
+                }
 
                 return true;
             }
@@ -293,7 +311,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!success)
                 {
-                    success = TryMergeModifierToken(er, config.SinceRegex, text);
+                    success = TryMergeModifierToken(er, config.SinceRegex, text, true);
                 }
 
                 if (!success)
@@ -339,6 +357,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var modLength = match.Length + afterStr.IndexOf(match.Value, StringComparison.Ordinal);
                             er.Length += modLength;
                             er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                            if (er.Metadata == null)
+                            {
+                                er.Metadata = new Metadata { HasMod = true };
+                            }
+                            else
+                            {
+                                er.Metadata.HasMod = true;
+                            }
                         }
                     }
                 }
