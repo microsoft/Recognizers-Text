@@ -256,7 +256,7 @@
     ]
   },
   {
-    "Input": "semana and semanas should not be recognized as the age",
+    "Input": "semana o semanas",
     "Results": []
   }
 ]
