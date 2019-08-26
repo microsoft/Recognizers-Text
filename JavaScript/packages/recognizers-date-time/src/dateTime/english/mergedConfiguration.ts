@@ -39,6 +39,8 @@ export class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
     readonly fromToRegex: RegExp
     readonly singleAmbiguousMonthRegex: RegExp
     readonly prepositionSuffixRegex: RegExp
+    readonly ambiguousRangeModifierPrefix: RegExp
+    readonly potentialAmbiguousRangeRegex: RegExp
     readonly numberEndingPattern: RegExp
     readonly filterWordRegexList: RegExp[]
 
@@ -59,6 +61,8 @@ export class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
         this.fromToRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FromToRegex);
         this.singleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SingleAmbiguousMonthRegex);
         this.prepositionSuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionSuffixRegex);
+        this.ambiguousRangeModifierPrefix = RegExpUtility.getSafeRegExp(EnglishDateTime.AmbiguousRangeModifierPrefix);
+        this.potentialAmbiguousRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FromToRegex);
         this.numberEndingPattern = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberEndingPattern);
         this.filterWordRegexList = [
             RegExpUtility.getSafeRegExp(EnglishDateTime.OneOnOneRegex)

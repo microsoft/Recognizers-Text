@@ -7,4 +7,13 @@ export class MetaData {
     set IsHoliday(isHoliday: boolean) {
         this.isHoliday = isHoliday;
     }
+
+    private hasMod: boolean = false;
+
+    get HasMod(): boolean {
+        return this.hasMod;
+    }
+    set HasMod(hasMod: boolean) {
+        this.hasMod = hasMod;
+    }
 }
