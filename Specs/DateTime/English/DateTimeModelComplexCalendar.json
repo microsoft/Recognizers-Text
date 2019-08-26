@@ -11949,7 +11949,6 @@
     "Context": {
       "ReferenceDateTime": "2019-08-24T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 days from today",
@@ -11973,7 +11972,6 @@
     "Context": {
       "ReferenceDateTime": "2019-08-24T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "from october",
