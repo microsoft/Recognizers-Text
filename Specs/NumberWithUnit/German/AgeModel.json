@@ -221,7 +221,7 @@
     ]
   },
   {
-    "Input": "Semana ou semanas",
+    "Input": "Woche oder Wochen",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": []
