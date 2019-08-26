@@ -26,6 +26,8 @@ public class SpanishNumericWithUnit {
         .put("Día", "dias|días|día|dia")
         .build();
 
+    public static final List<String> AmbiguousAgeUnitList = Arrays.asList("años", "año", "meses", "mes", "semanas", "semana", "dias", "días", "día", "dia");
+
     public static final ImmutableMap<String, String> AreaSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilómetro cuadrado", "kilómetro cuadrado|kilómetros cuadrados|km2|km^2|km²")
         .put("Hectómetro cuadrado", "hectómetro cuadrado|hectómetros cuadrados|hm2|hm^2|hm²|hectárea|hectáreas")
@@ -507,6 +509,4 @@ public class SpanishNumericWithUnit {
         .put("Grano", "grano|granos")
         .put("Quilate", "ct|quilate|quilates")
         .build();
-
-    public static final List<String> AmbiguousAgeUnitList = Arrays.asList("años", "año", "meses", "mes", "semanas", "semana", "dias", "días", "día", "dia");
 }

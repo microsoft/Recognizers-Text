@@ -18,6 +18,7 @@ class SpanishNumericWithUnit:
                           ("Mes", "meses|mes"),
                           ("Semana", "semanas|semana"),
                           ("Día", "dias|días|día|dia")])
+    AmbiguousAgeUnitList = [r'años', r'año', r'meses', r'mes', r'semanas', r'semana', r'dias', r'días', r'día', r'dia']
     AreaSuffixList = dict([("Kilómetro cuadrado", "kilómetro cuadrado|kilómetros cuadrados|km2|km^2|km²"),
                            ("Hectómetro cuadrado", "hectómetro cuadrado|hectómetros cuadrados|hm2|hm^2|hm²|hectárea|hectáreas"),
                            ("Decámetro cuadrado", "decámetro cuadrado|decámetros cuadrados|dam2|dam^2|dam²|área|áreas"),
@@ -464,5 +465,4 @@ class SpanishNumericWithUnit:
                              ("Onza", "oz|onza|onzas"),
                              ("Grano", "grano|granos"),
                              ("Quilate", "ct|quilate|quilates")])
-    AmbiguousAgeUnitList = [r'años', r'año', r'meses', r'mes', r'semanas', r'semana', r'dias', r'días', r'día', r'dia']
 # pylint: enable=line-too-long

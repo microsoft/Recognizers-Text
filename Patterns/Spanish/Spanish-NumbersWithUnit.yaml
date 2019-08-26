@@ -7,6 +7,20 @@ AgeSuffixList: !dictionary
     Mes: meses|mes
     Semana: semanas|semana
     Día: dias|días|día|dia
+# @TODO: This is a workaround. A redesign of Age is necessary to properly address the issue.
+AmbiguousAgeUnitList: !list
+  types: [ string ]
+  entries:
+    - años
+    - año
+    - meses
+    - mes
+    - semanas
+    - semana
+    - dias
+    - días
+    - día
+    - dia
 #AreaExtractorConfiguration
 AreaSuffixList: !dictionary
   types: [ string, string ]
@@ -758,17 +772,4 @@ WeightSuffixList: !dictionary
     Onza: oz|onza|onzas
     Grano: grano|granos
     Quilate: ct|quilate|quilates
-AmbiguousAgeUnitList: !list
-  types: [ string ]
-  entries:
-    - años
-    - año
-    - meses
-    - mes
-    - semanas
-    - semana
-    - dias
-    - días
-    - día
-    - dia
 ...

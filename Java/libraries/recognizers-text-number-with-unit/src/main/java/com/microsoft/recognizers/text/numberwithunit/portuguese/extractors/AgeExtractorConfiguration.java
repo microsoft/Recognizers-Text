@@ -36,7 +36,7 @@ public class AgeExtractorConfiguration extends PortugueseNumberWithUnitExtractor
 
     @Override
     public List<String> getAmbiguousUnitList() {
-        return Collections.emptyList();
+        return PortugueseNumericWithUnit.AmbiguousAgeUnitList;
     }
 
     public static Map<String, String> AgeSuffixList = PortugueseNumericWithUnit.AgeSuffixList;

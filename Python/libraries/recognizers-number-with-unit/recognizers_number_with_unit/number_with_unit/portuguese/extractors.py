@@ -83,7 +83,7 @@ class PortugueseAgeExtractorConfiguration(PortugueseNumberWithUnitExtractorConfi
         super().__init__(culture_info)
         self._suffix_list = PortugueseNumericWithUnit.AgeSuffixList
         self._prefix_list = dict()
-        self._ambiguous_unit_list = list()
+        self._ambiguous_unit_list = PortugueseNumericWithUnit.AmbiguousAgeUnitList
 
 
 class PortugueseCurrencyExtractorConfiguration(PortugueseNumberWithUnitExtractorConfiguration):
