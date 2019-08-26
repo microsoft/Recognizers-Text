@@ -92,6 +92,14 @@ class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
         return self._preposition_suffix_regex
 
     @property
+    def ambiguous_range_modifier_prefix(self) -> Pattern:
+        return self._ambiguous_range_modifier_prefix
+
+    @property
+    def potential_ambiguous_range_regex(self) -> Pattern:
+        return self._from_to_regex
+
+    @property
     def number_ending_pattern(self) -> Pattern:
         return self._number_ending_pattern
 
@@ -112,6 +120,8 @@ class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
             FrenchDateTime.SingleAmbiguousMonthRegex)
         self._preposition_suffix_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.PrepositionSuffixRegex)
+        self._ambiguous_range_modifier_prefix = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.AmbiguousRangeModifierPrefix)
         self._number_ending_pattern = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.NumberEndingPattern)
 

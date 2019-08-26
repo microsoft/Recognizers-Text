@@ -70,6 +70,7 @@ class FrenchDateTime:
     SetWeekDayRegex = f'\\b(?<prefix>le\\s+)?(?<weekday>matin([ée]e)?|apres-midi|soir([ée]e)?|dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)s\\b'
     WeekDayOfMonthRegex = f'(?<wom>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})'
     RelativeWeekDayRegex = f'^[.]'
+    AmbiguousRangeModifierPrefix = f'^[.]'
     NumberEndingPattern = f'^[.]'
     SpecialDate = f'(?<=\\b([àa]|au|le)\\s+){DayRegex}(?!:)\\b'
     DateYearRegex = f'(?<year>{YearRegex}|{TwoDigitYearRegex})'
