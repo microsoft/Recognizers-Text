@@ -21,6 +21,16 @@ public class Metadata {
         this.isHoliday = isHoliday;
     }
 
+    private boolean hasMod = false;
+
+    public boolean getHasMod() {
+        return hasMod;
+    }
+
+    public void setHasMod(boolean hasMod) {
+        this.hasMod = hasMod;
+    }
+
     public boolean getIsPossiblyIncludePeriodEnd() {
         return possiblyIncludePeriodEnd;
     }
