@@ -219,5 +219,11 @@
         }
       }
     ]
+  },
+  {
+    "Input": "tegan und tag sehen nicht nach alter aus",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": []
   }
 ]

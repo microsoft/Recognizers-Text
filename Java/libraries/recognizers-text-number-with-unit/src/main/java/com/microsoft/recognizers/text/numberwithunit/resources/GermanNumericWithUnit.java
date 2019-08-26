@@ -442,4 +442,6 @@ public class GermanNumericWithUnit {
         .build();
 
     public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz", "stone", "dram");
+
+    public static final List<String> AmbiguousAgeUnitList = Arrays.asList("jahren", "jahre", "monaten", "monate", "wochen", "woche", "tagen", "tage");
 }

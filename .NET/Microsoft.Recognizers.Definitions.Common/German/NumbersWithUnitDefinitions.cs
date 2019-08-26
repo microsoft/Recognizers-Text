@@ -532,5 +532,16 @@ namespace Microsoft.Recognizers.Definitions.German
             @"stone",
             @"dram"
         };
+      public static readonly IList<string> AmbiguousAgeUnitList = new List<string>
+        {
+            @"jahren",
+            @"jahre",
+            @"monaten",
+            @"monate",
+            @"wochen",
+            @"woche",
+            @"tagen",
+            @"tage"
+        };
     }
 }

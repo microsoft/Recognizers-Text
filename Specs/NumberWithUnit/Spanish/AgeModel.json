@@ -257,7 +257,6 @@
   },
   {
     "Input": "semana and semanas should not be recognized as the age",
-    "NotSupported": "javascript, python",
     "Results": []
   }
 ]
