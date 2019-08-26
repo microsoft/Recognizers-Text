@@ -9,6 +9,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
     {
         public static readonly ImmutableDictionary<string, string> AgeSuffixList = NumbersWithUnitDefinitions.AgeSuffixList.ToImmutableDictionary();
 
+        public static readonly ImmutableList<string> AmbiguousAgeUnitList = NumbersWithUnitDefinitions.AmbiguousAgeUnitList.ToImmutableList();
+
         public AgeExtractorConfiguration()
                : this(new CultureInfo(Culture.Portuguese))
         {
@@ -23,7 +25,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
-        public override ImmutableList<string> AmbiguousUnitList => null;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousAgeUnitList;
 
         public override string ExtractType => Constants.SYS_UNIT_AGE;
     }

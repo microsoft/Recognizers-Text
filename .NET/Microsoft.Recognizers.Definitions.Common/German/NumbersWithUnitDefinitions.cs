@@ -28,6 +28,17 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"Week", @"woche alt|wochen alt|wochen|woche" },
             { @"Day", @"tag alt|tage alt|tagen|tage" }
         };
+      public static readonly IList<string> AmbiguousAgeUnitList = new List<string>
+        {
+            @"jahren",
+            @"jahre",
+            @"monaten",
+            @"monate",
+            @"wochen",
+            @"woche",
+            @"tagen",
+            @"tage"
+        };
       public static readonly Dictionary<string, string> AreaSuffixList = new Dictionary<string, string>
         {
             { @"Square kilometer", @"qkm|quadratkilometer|km^2|km²" },

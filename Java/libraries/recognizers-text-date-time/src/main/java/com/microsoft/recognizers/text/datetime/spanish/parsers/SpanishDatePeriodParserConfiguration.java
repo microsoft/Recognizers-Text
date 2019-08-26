@@ -24,6 +24,7 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
 
     public static final Pattern nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
     public static final Pattern previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex);
+    public static final Pattern previousSuffixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousSuffixRegex);
     public static final Pattern thisPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ThisPrefixRegex);
     public static final Pattern relativeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeRegex);
     public static final Pattern unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnspecificEndOfRangeRegex);
@@ -88,6 +89,8 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         numbers = config.getNumbers();
         writtenDecades = config.getWrittenDecades();
         specialDecadeCases = config.getSpecialDecadeCases();
+
+        afterNextSuffixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AfterNextSuffixRegex);
     }
 
     // Regex
@@ -183,6 +186,8 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     private final Pattern moreThanRegex;
 
     private final Pattern centurySuffixRegex;
+
+    private final Pattern afterNextSuffixRegex;
 
     private final Pattern nowRegex;
 
@@ -509,11 +514,12 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         int swift = 0;
 
         Optional<Match> matchNext = Arrays.stream(RegExpUtility.getMatches(nextPrefixRegex, trimmedText)).findFirst();
-        Optional<Match> matchPast = Arrays.stream(RegExpUtility.getMatches(previousPrefixRegex, trimmedText)).findFirst();
+        Optional<Match> matchPastPrefix = Arrays.stream(RegExpUtility.getMatches(previousPrefixRegex, trimmedText)).findFirst();
+        Optional<Match> matchPastSuffix = Arrays.stream(RegExpUtility.getMatches(previousSuffixRegex, trimmedText)).findFirst();
 
         if (matchNext.isPresent()) {
             swift = 1;
-        } else if (matchPast.isPresent()) {
+        } else if (matchPastPrefix.isPresent() || matchPastSuffix.isPresent()) {
             swift = -1;
         }
 
@@ -561,7 +567,9 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     @Override
     public boolean isMonthOnly(String text) {
         String trimmedText = text.trim().toLowerCase();
-        return SpanishDateTime.MonthTerms.stream().anyMatch(o -> trimmedText.endsWith(o));
+        Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
+        return SpanishDateTime.MonthTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) ||
+                SpanishDateTime.MonthTerms.stream().anyMatch(o -> trimmedText.contains(o)) && matchAfterNext.isPresent();
     }
 
     @Override
@@ -573,13 +581,17 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     @Override
     public boolean isWeekend(String text) {
         String trimmedText = text.trim().toLowerCase();
-        return SpanishDateTime.WeekendTerms.stream().anyMatch(o -> trimmedText.endsWith(o));
+        Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
+        return SpanishDateTime.WeekendTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) ||
+                SpanishDateTime.WeekendTerms.stream().anyMatch(o -> trimmedText.contains(o)) && matchAfterNext.isPresent();
     }
 
     @Override
     public boolean isWeekOnly(String text) {
         String trimmedText = text.trim().toLowerCase();
-        return SpanishDateTime.WeekTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) &&
+        Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
+        return (SpanishDateTime.WeekTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) ||
+                SpanishDateTime.WeekTerms.stream().anyMatch(o -> trimmedText.contains(o)) && matchAfterNext.isPresent()) &&
                 !SpanishDateTime.WeekendTerms.stream().anyMatch(o -> trimmedText.endsWith(o));
     }
 

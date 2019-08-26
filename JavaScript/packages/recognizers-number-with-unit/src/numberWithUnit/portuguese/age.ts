@@ -20,7 +20,7 @@ export class PortugueseAgeExtractorConfiguration extends PortugueseNumberWithUni
 
         this.suffixList = PortugueseNumericWithUnit.AgeSuffixList;
         this.prefixList = new Map<string, string>();
-        this.ambiguousUnitList = new Array<string>();
+        this.ambiguousUnitList = PortugueseNumericWithUnit.AmbiguousAgeUnitList;
     }
 }
 

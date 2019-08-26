@@ -18,6 +18,7 @@ class PortugueseNumericWithUnit:
                           ("Mês", "meses|mes|mês"),
                           ("Semana", "semanas|semana"),
                           ("Dia", "dias|dia")])
+    AmbiguousAgeUnitList = [r'anos', r'ano', r'meses', r'mes', r'mês', r'semanas', r'semana', r'dias', r'dia']
     AreaSuffixList = dict([("Quilômetro quadrado", "quilômetro quadrado|quilómetro quadrado|quilometro quadrado|quilômetros quadrados|quilómetros quadrados|quilomeros quadrados|km2|km^2|km²"),
                            ("Hectare", "hectômetro quadrado|hectómetro quadrado|hectômetros quadrados|hectómetros cuadrados|hm2|hm^2|hm²|hectare|hectares"),
                            ("Decâmetro quadrado", "decâmetro quadrado|decametro quadrado|decâmetros quadrados|decametro quadrado|dam2|dam^2|dam²|are|ares"),
