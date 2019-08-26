@@ -12,6 +12,46 @@ from ...resources.base_date_time import BaseDateTime
 
 class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
     @property
+    def week_day_end(self) -> Pattern:
+        pass
+
+    @property
+    def week_day_and_day_regex(self) -> Pattern:
+        pass
+
+    @property
+    def prefix_article_regex(self) -> Pattern:
+        pass
+
+    @property
+    def month_of_year(self) -> Dict[str, int]:
+        pass
+
+    @property
+    def year_suffix(self) -> Pattern:
+        pass
+
+    @property
+    def more_than_regex(self) -> Pattern:
+        pass
+
+    @property
+    def less_than_regex(self) -> Pattern:
+        pass
+
+    @property
+    def in_connector_regex(self) -> Pattern:
+        pass
+
+    @property
+    def range_unit_regex(self) -> Pattern:
+        pass
+
+    @property
+    def since_year_suffix_regex(self) -> Pattern:
+        pass
+
+    @property
     def date_regex_list(self) -> List[Pattern]:
         return self._date_regex_list
 

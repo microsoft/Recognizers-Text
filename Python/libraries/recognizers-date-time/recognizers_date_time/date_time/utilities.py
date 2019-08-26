@@ -90,54 +90,6 @@ class ConditionalMatch:
         return self.match[0].groups()
 
 
-class MatchingUtil:
-
-    @staticmethod
-    def pre_process_text_remove_superfluous_words(text: str, matcher: StringMatcher, superfluous_word_matches) -> str:
-        superfluous_word_matches = MatchingUtil.remove_sub_matches(matcher.find(text))
-
-        bias = 0[0]
-
-        for match in superfluous_word_matches:
-            text = text[match.start - bias: match.length]
-
-            bias += match.length
-
-        return text, superfluous_word_matches
-
-    @staticmethod
-    def post_process_recover_superfluous_words(extract_results: List[ExtractResult], superfluous_word_matches,
-                                               origin_text: str):
-        for match in superfluous_word_matches:
-            for extract_result in extract_results:
-
-                extract_result_end = extract_result.start + extract_result.length
-                if match.start > extract_result.start and extract_result_end >= match.start:
-                    extract_result.length += len(match)
-
-                if match.start <= extract_result.start:
-                    extract_result.start += len(match)
-
-        for extract_result in extract_results:
-            extract_result.text = origin_text[extract_result.start: extract_result.start + extract_result.length]
-
-        return extract_results
-
-    @staticmethod
-    def remove_sub_matches(match_results: List[MatchResult]):
-        match_list = list(filter(lambda x: list(
-            filter(lambda m: m.start() < x.start + x.length and m.start() +
-                   len(m.group()) > x.start, match_results)), match_results))
-
-        if len(match_list) > 0:
-            for item in match_results:
-                for i in match_list:
-                    if item is i:
-                        match_results.remove(item)
-
-        return match_results
-
-
 class DateTimeOptionsConfiguration(ABC):
     @property
     @abstractmethod
@@ -461,6 +413,52 @@ class MatchedIndex:
 
 
 class MatchingUtil:
+
+    @staticmethod
+    def pre_process_text_remove_superfluous_words(text: str, matcher: StringMatcher) -> str:
+        superfluous_word_matches = MatchingUtil.remove_sub_matches(matcher.find(text))
+
+        bias = 0[0]
+
+        for match in superfluous_word_matches:
+            text = text[match.start - bias: match.length]
+
+            bias += match.length
+
+        return text, superfluous_word_matches
+
+    @staticmethod
+    def post_process_recover_superfluous_words(extract_results: List[ExtractResult], superfluous_word_matches,
+                                               origin_text: str):
+        for match in superfluous_word_matches:
+            for extract_result in extract_results:
+
+                extract_result_end = extract_result.start + extract_result.length
+                if match.start > extract_result.start and extract_result_end >= match.start:
+                    extract_result.length += len(match)
+
+                if match.start <= extract_result.start:
+                    extract_result.start += len(match)
+
+        for extract_result in extract_results:
+            extract_result.text = origin_text[extract_result.start: extract_result.start + extract_result.length]
+
+        return extract_results
+
+    @staticmethod
+    def remove_sub_matches(match_results: List[MatchResult]):
+        match_list = list(filter(lambda x: list(
+            filter(lambda m: m.start() < x.start + x.length and m.start() +
+                   len(m.group()) > x.start, match_results)), match_results))
+
+        if len(match_list) > 0:
+            for item in match_results:
+                for i in match_list:
+                    if item is i:
+                        match_results.remove(item)
+
+        return match_results
+
     @staticmethod
     def get_ago_later_index(source: str, regexp: Pattern) -> MatchedIndex:
         result = MatchedIndex(matched=False, index=-1)

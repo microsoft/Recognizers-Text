@@ -120,6 +120,14 @@ class EnglishMergedExtractorConfiguration(MergedExtractorConfiguration):
     def filter_word_regex_list(self) -> List[Pattern]:
         return self._filter_word_regex_list
 
+    @property
+    def superfluous_word_matcher(self) -> Pattern:
+        return self._superfluous_word_matcher
+
+    @property
+    def fail_fast_regex(self) -> Pattern:
+        return self._fail_fast_regex
+
     def __init__(self):
         self._integer_extractor = EnglishIntegerExtractor()
         self._date_extractor = BaseDateExtractor(
@@ -165,4 +173,8 @@ class EnglishMergedExtractorConfiguration(MergedExtractorConfiguration):
         self._equal_regex = BaseDateTime.EqualRegex
         self._suffix_after_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.SuffixAfterRegex
+        )
+        self._superfluous_word_matcher = EnglishDateTime.SuperfluousWordList
+        self._fail_fast_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.FailFastRegex
         )
