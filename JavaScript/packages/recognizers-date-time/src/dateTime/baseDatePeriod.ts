@@ -327,7 +327,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         if (!referenceDate) {
             referenceDate = new Date();
         }
-        let resultValue;
+        let resultValue = null;
         if (extractorResult.type === this.parserName) {
             let source = extractorResult.text.trim().toLowerCase();
             let innerResult = this.parseMonthWithYear(source, referenceDate);
