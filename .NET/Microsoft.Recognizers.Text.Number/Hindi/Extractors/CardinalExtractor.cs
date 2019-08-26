@@ -1,6 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.Hindi;
 
 namespace Microsoft.Recognizers.Text.Number.Hindi
@@ -19,8 +20,8 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
             builder.AddRange(intExtract.Regexes);
 
             // Add Double Regexes
-            // var douExtract = DoubleExtractor.GetInstance(placeholder);
-            // builder.AddRange(douExtract.Regexes);
+            var douExtract = DoubleExtractor.GetInstance(placeholder);
+            builder.AddRange(douExtract.Regexes);
 
             Regexes = builder.ToImmutable();
         }

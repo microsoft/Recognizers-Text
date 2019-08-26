@@ -2,6 +2,7 @@
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.Hindi;
 
 namespace Microsoft.Recognizers.Text.Number.Hindi
@@ -15,15 +16,7 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
 
             this.Config = config;
             this.LangMarker = NumbersDefinitions.LangMarker;
-
-            // @TODO Temporary workaround
-            var culture = config.Culture;
-            if (culture.IndexOf("*", StringComparison.Ordinal) != -1)
-            {
-                culture = config.Culture.Replace("*", "in");
-            }
-
-            this.CultureInfo = new CultureInfo(culture);
+            this.CultureInfo = new CultureInfo(config.Culture);
 
             this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
             this.IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;

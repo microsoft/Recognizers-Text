@@ -397,21 +397,7 @@
     </None>
     <None Update="German\NumbersWithUnitDefinitions.tt">
     </None>
-    <None Update="Hindi\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-    </None>
-    <None Update="Hindi\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-    </None>
     <None Update="Hindi\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Hindi\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-    </None>
-    <None Update="Hindi\TimeZoneDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
     </None>
     <None Update="Italian\ChoiceDefinitions.tt">
     </None>
@@ -459,10 +445,6 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="T5.TextTransform.Tool" Version="1.1.0-*" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT' ">
