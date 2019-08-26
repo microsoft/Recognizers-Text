@@ -22,8 +22,8 @@ class AbstractYearExtractor(DateExtractor):
 
         year_str = RegExpUtility.get_group(
             match, 'year')
-        if not (str.isspace(year_str) or year_str is None):
-            year = year_str
+        if year_str and not (str.isspace(year_str) or year_str is None):
+            year = int(year_str)
             if year < 100 and year >= Constants.MinTwoDigitYearPastNum:
                 year += 1900
             elif year >= 0 and year < Constants.MaxTwoDigitYearFutureNum:
@@ -36,8 +36,7 @@ class AbstractYearExtractor(DateExtractor):
 
                 er = ExtractResult()
                 er.text = first_two_year_num_str
-                er.start = RegExpUtility.get_group(
-                    match, 'firsttwoyearnum').index()
+                er.start = match.string.index(RegExpUtility.get_group(match, 'firsttwoyearnum'))
                 er.length = len(RegExpUtility.get_group(
                     match, 'firsttwoyearnum'))
 
@@ -51,8 +50,7 @@ class AbstractYearExtractor(DateExtractor):
             if not (str.isspace(last_two_year_num_str) or last_two_year_num_str is None):
                 er = ExtractResult()
                 er.text = last_two_year_num_str
-                er.start = RegExpUtility.get_group(
-                    match, 'lasttwoyearnum').index()
+                er.start = match.string.index(RegExpUtility.get_group(match, 'lasttwoyearnum'))
                 er.length = len(RegExpUtility.get_group(
                     match, 'lasttwoyearnum'))
 

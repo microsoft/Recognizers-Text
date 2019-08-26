@@ -230,7 +230,11 @@ class BaseDateExtractor(DateTimeExtractor):
                         relative_regex = RegexExtension.match_end(self.config.strict_relative_regex, pre_text, True)
 
                         if relative_regex:
-                            ret.append(Token(relative_regex.index, match.index() + match.end() - match.start()))
+                            if relative_regex.success:
+                                ret.append(Token(relative_regex.index, source.index(match.group()) + match.end() - match.start()))
+                            else:
+                                ret.append(Token(source.index(match.group()),
+                                                 source.index(match.group()) + match.end() - match.start()))
                         else:
                             ret.append(Token(source.index(match.group()),
                                              source.index(match.group()) + match.end() - match.start()))
@@ -453,7 +457,7 @@ class BaseDateExtractor(DateTimeExtractor):
 
                     self.extend_with_week_day_and_year(start_index, end_index,
                                                        self.config.month_of_year[RegExpUtility.get_group(
-                                                           match, 'month').lower()], num, source, reference)
+                                                           match, 'month').lower() or str(reference.month)], num, source, reference)
 
                     ret.append(Token(start_index, start_index +
                                      result.length + len(match.group())))
@@ -468,12 +472,12 @@ class BaseDateExtractor(DateTimeExtractor):
         year = reference.year
 
         # Check whether there's a year
-        suffix = text[:end_index]
+        suffix = text[end_index:]
         match_year = self.config.year_suffix.match(suffix)
 
         if match_year and match_year.start() == 0:
 
-            year = AbstractYearExtractor.get_year_from_text(match_year)
+            year = AbstractYearExtractor.get_year_from_text(self, match_year)
 
             if year >= Constants.MinYearNum and year <= Constants.MaxYearNum:
                 end_index += len(match_year.groups())
