@@ -221,7 +221,7 @@ class BaseMergedExtractor(DateTimeExtractor):
 
         result: List[ExtractResult] = list()
 
-        if (self.options and DateTimeOptions.FAIL_FAST) != 0 and self.is_fail_fast_case(source):
+        if (self.options & DateTimeOptions.FAIL_FAST) != 0 and self.is_fail_fast_case(source):
 
             ''' @TODO needs better handling of holidays and timezones.
              self.add_to(result,self.config.holiday_extractor.extract(source,reference), source)
@@ -233,7 +233,7 @@ class BaseMergedExtractor(DateTimeExtractor):
 
         super_fluous_word_matches = None
 
-        if (self.options and DateTimeOptions.ENABLE_PREVIEW) != 0:
+        if (self.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
             source, super_fluous_word_matches = MatchingUtil.pre_process_text_remove_superfluous_words(
                 source,
                 self.config.superfluous_word_matcher
@@ -258,7 +258,7 @@ class BaseMergedExtractor(DateTimeExtractor):
         result = self.add_to(
             result, self.config.holiday_extractor.extract(source, reference), source)
 
-        if (self.options and DateTimeOptions.ENABLE_PREVIEW) != 0:
+        if (self.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
             self.add_to(result, self.config.time_zone_extractor.extract(source, reference), source)
             result = self.config.time_zone_extractor.remove_ambiguous_time_zone(result)
 
@@ -267,7 +267,7 @@ class BaseMergedExtractor(DateTimeExtractor):
             result, self.number_ending_regex_match(source, result), source)
 
         # Modify time entity to an alternative DateTime expression if it follows a DateTime entity
-        if (self.options and DateTimeOptions.EXTENDED_TYPES) != 0:
+        if (self.options & DateTimeOptions.EXTENDED_TYPES) != 0:
             result = self.config.datetime_alt_extractor.extract(result, source, reference)
 
         result = self.filter_unespecific_date_period(result)
@@ -278,12 +278,12 @@ class BaseMergedExtractor(DateTimeExtractor):
         result = self.add_mod(result, source)
 
         # filtering
-        if self.options and DateTimeOptions.CALENDAR:
+        if self.options & DateTimeOptions.CALENDAR:
             result = self.check_calendar_filter_list(result, source)
 
         result = sorted(result, key=lambda x: x.start)
 
-        if (self.options and DateTimeOptions.ENABLE_PREVIEW) != 0:
+        if (self.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
             result = MatchingUtil.post_process_recover_superfluous_words(result, super_fluous_word_matches, origin_text)
 
         return result
