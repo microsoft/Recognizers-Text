@@ -292,7 +292,7 @@
   },
   {
     "Input": "这个手机壳花费你五美元和花费我三块",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "五美元",
