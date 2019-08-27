@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from collections import namedtuple
 from datedelta import datedelta
 
-from recognizers_text.extractor import ExtractResult
+from recognizers_text.extractor import ExtractResult, Extractor
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number import BaseNumberParser, BaseNumberExtractor
 from .constants import Constants, TimeTypeConstants
@@ -101,6 +101,11 @@ class DatePeriodExtractorConfiguration(ABC):
 
     @property
     @abstractmethod
+    def ordinal_extractor(self) -> Extractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def number_parser(self) -> BaseNumberParser:
         raise NotImplementedError
 
@@ -135,6 +140,10 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
             reference = datetime.now()
         tokens = []
         tokens += self.match_simple_cases(source)
+
+        simple_cases_results = merge_all_tokens(tokens, source, self.extractor_type_name)
+        ordinal_extractions = self.config.ordinal_extractor.extract(source)
+
         tokens += self.merge_two_time_points(source, reference)
         tokens += self.match_duration(source, reference)
         tokens += self.single_time_point_with_patterns(source, reference)
