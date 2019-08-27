@@ -89,6 +89,7 @@ class SpanishDateTime:
     OfMonthRegex = f'^\\s*de\\s*{MonthSuffixRegex}'
     MonthEndRegex = f'({MonthRegex}\\s*(el)?\\s*$)'
     WeekDayEnd = f'{WeekDayRegex}\\s*,?\\s*$'
+    WeekDayStart = f'^[\\.]'
     DateYearRegex = f'(?<year>{YearRegex}|{TwoDigitYearRegex})'
     DateExtractor1 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}?((\\s*(de)|[/\\\\\\.\\-])\\s*)?{MonthRegex}\\b'
     DateExtractor2 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}\\s*([\\.\\-]|de)\\s*{MonthRegex}(\\s*,\\s*|\\s*(del?)\\s*){DateYearRegex}\\b'
