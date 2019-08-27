@@ -256,9 +256,12 @@ class BaseMergedExtractor(DateTimeExtractor):
         return er
 
     def has_token_index(self, source: str, pattern: Pattern) -> MatchedIndex:
-        match = regex.search(pattern, source)
-        if match:
-            return MatchedIndex(True, match.start())
+        # This part is different from C# because no Regex RightToLeft option in Python
+        match_result = list(regex.finditer(pattern, source))
+        if match_result:
+            match = match_result[-1]
+            if not source[match.end():].strip():
+                return MatchedIndex(True, match.start())
 
         return MatchedIndex(False, -1)
 
