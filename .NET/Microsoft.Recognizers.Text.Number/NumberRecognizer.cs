@@ -350,7 +350,8 @@ namespace Microsoft.Recognizers.Text.Number
                                                  new BaseNumberOptionsConfiguration(Culture.Turkish, options))),
                    new Turkish.NumberRangeExtractor(options)));*/
 
-            RegisterModel<NumberModel>(
+            // @TODO Uncomment once all the tests pass
+            /*RegisterModel<NumberModel>(
                 Culture.Hindi,
                 options => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new HindiNumberParserConfiguration(
@@ -376,7 +377,7 @@ namespace Microsoft.Recognizers.Text.Number
                 options => new NumberRangeModel(
                     new BaseNumberRangeParser(new HindiNumberRangeParserConfiguration(
                                                   new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
-                    new Hindi.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Hindi, options))));
+                    new Hindi.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Hindi, options))));*/
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)
