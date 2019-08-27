@@ -158,7 +158,7 @@ class MergedExtractorConfiguration:
 
     @property
     @abstractmethod
-    def ambiguity_filters_dict(self) -> Pattern:
+    def ambiguity_filters_dict(self) -> {}:
         raise NotImplementedError
 
     @property
@@ -176,7 +176,8 @@ class BaseMergedExtractor(DateTimeExtractor):
         self.config = config
         self.options = options
 
-    def has_token_index(self, source: str, pattern: Pattern) -> MatchedIndex:
+    @staticmethod
+    def has_token_index(source: str, pattern: Pattern) -> MatchedIndex:
 
         # Support cases has two or more specific tokens
         # For example, "show me sales after 2010 and before 2018 or before 2000"
@@ -187,15 +188,6 @@ class BaseMergedExtractor(DateTimeExtractor):
             return MatchedIndex(True, match.start())
 
         return MatchedIndex(False, -1)
-        # def has_token_index(text, regex_eval: Pattern):
-
-        #   match = regex.search('(?r)' + str(regex_eval), text)
-
-        #  if match and match is not None and not str.isspace(text[match.index: len(match) + match.index]):
-        #     index = match.index
-        #    return True, index
-
-        # return False
 
     def try_merge_modifier_token(self, er: ExtractResult, token_regex: Pattern, text: str):
         start = er.start if er.start else 0

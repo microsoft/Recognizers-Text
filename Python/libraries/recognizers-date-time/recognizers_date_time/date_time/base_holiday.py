@@ -33,6 +33,7 @@ class BaseHolidayExtractor(DateTimeExtractor):
         tokens = []
         tokens += self.__holiday_match(source)
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
+
         return result
 
     def __holiday_match(self, source: str) -> List[Token]:
