@@ -3,26 +3,41 @@ from typing import List, Pattern, Dict, Match
 from collections import namedtuple
 import regex
 
+from recognizers_text.extractor import Metadata
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor, ExtractResult
 from recognizers_number.resources.base_numbers import BaseNumbers
 from recognizers_number.number.models import LongFormatType
 from recognizers_number.number.constants import Constants
+from recognizers_number.number.number_recognizer import NumberOptions
 
 ReVal = namedtuple('ReVal', ['re', 'val'])
 MatchesVal = namedtuple('MatchesVal', ['matches', 'val'])
 
 
 class BaseNumberExtractor(Extractor):
+
+    def __init__(self, options: NumberOptions.NONE):
+        self.options = options
+
     @property
     @abstractmethod
     def regexes(self) -> List[ReVal]:
         raise NotImplementedError
 
     @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        pass
+
+    @property
     @abstractmethod
     def _extract_type(self) -> str:
         raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def options(self) -> NumberOptions:
+        return self.options
 
     @property
     def _negative_number_terms(self) -> Pattern:
@@ -59,24 +74,64 @@ class BaseNumberExtractor(Extractor):
                         x.start() == start and (
                             x.end() - x.start()) == length)), None)
 
-                    # extract negative numbers
-                    if self._negative_number_terms is not None:
-                        match = regex.search(self._negative_number_terms,
-                                             source[0:start])
-                        if match is not None:
-                            start = match.start()
-                            length = length + match.end() - match.start()
-                            substr = source[start:start + length].strip()
-
                     if src_match is not None:
+
+                        original_match = min(list(map(lambda y: [match_source[y].priority, match_source[y].name, y],
+                                                      filter(lambda x: x.key.index == start and
+                                                             x.key.length == length, match_source))))
+
+                        # extract negative numbers
+                        if self._negative_number_terms is not None:
+                            match = regex.search(self._negative_number_terms,
+                                                 source[0:start])
+                            if match is not None:
+                                start = match.start()
+                                length = length + match.end() - match.start()
+                                substr = source[start:start + length].strip()
+
                         value = ExtractResult()
                         value.start = start
                         value.length = length
                         value.text = substr
                         value.type = self._extract_type
                         value.data = match_source.get(src_match, None)
+
+                        if Constants.MODEL_ORDINAL in self._extract_type:
+                            value.metadata = Metadata()
+                            if (self.options & NumberOptions.SUPPRESS_EXTENDED_TYPES) != 0 \
+                                    and RegExpUtility.get_group(original_match, Constants.RELATIVE_ORDINAL_GROUP_NAME).success:
+
+                                value.metadata.is_ordinal_relative = True
+
                         result.append(value)
+
+            result = self.fi
+
         return result
+
+    def _filter_ambiguity(self, ers: List[ExtractResult], text: str,) -> List[ExtractResult]:
+
+        if self.ambiguity_filters_dict is not None:
+            for regex_var in self.ambiguity_filters_dict:
+                regexvar_value = self.ambiguity_filters_dict[regex_var]
+
+                try:
+                    reg_match = list(filter(lambda x: x.group(), regex.finditer(regexvar_value, text)))
+
+                    if len(reg_match) > 0:
+
+                        matches = reg_match
+                        new_ers = list(filter(lambda x: list(filter(lambda m: m.start() < x.start + x.length and m.start() +
+                                                                    len(m.group()) > x.start, matches)), ers))
+                        if len(new_ers) > 0:
+                            for item in ers:
+                                for i in new_ers:
+                                    if item is i:
+                                        ers.remove(item)
+                except Exception:
+                    pass
+
+        return ers
 
     def _generate_format_regex(self, format_type: LongFormatType,
                                placeholder: str = None) -> Pattern:
