@@ -1,5 +1,6 @@
 from typing import List, Pattern
 
+from recognizers_text.extractor import Extractor
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number import BaseNumberParser, BaseNumberExtractor
 from recognizers_number.number.english.extractors import EnglishIntegerExtractor
@@ -86,6 +87,10 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
     def range_connector_regex(self) -> Pattern:
         return self._range_connector_regex
+
+    @property
+    def ordinal_extractor(self) -> Extractor:
+        return self._ordinal_extractor
 
     @property
     def now_regex(self) -> Pattern:
