@@ -1,5 +1,5 @@
 from abc import abstractmethod
-from typing import List, Pattern
+from typing import List, Match
 import datetime
 from recognizers_text.extractor import ExtractResult
 from recognizers_date_time.date_time.base_date import DateExtractorConfiguration
@@ -17,7 +17,7 @@ class AbstractYearExtractor(DateExtractor):
     def extract(self, extract_result, text, reference: datetime = None) -> List[ExtractResult]:
         raise NotImplementedError
 
-    def get_year_from_text(self, match: Pattern) -> int:
+    def get_year_from_text(self, match: Match) -> int:
         year = Constants.InvalidYear
 
         year_str = RegExpUtility.get_group(
@@ -40,32 +40,32 @@ class AbstractYearExtractor(DateExtractor):
                 er.length = len(RegExpUtility.get_group(
                     match, 'firsttwoyearnum'))
 
-            first_two_year_num = self.config.number_parser.parse(er).value if \
-                self.config.number_parser.parse(er).value else 0
-
-            last_two_year_num = 0
-            last_two_year_num_str = RegExpUtility.get_group(
-                match, 'lasttwoyearnum')
-
-            if not (str.isspace(last_two_year_num_str) or last_two_year_num_str is None):
-                er = ExtractResult()
-                er.text = last_two_year_num_str
-                er.start = match.string.index(RegExpUtility.get_group(match, 'lasttwoyearnum'))
-                er.length = len(RegExpUtility.get_group(
-                    match, 'lasttwoyearnum'))
-
-                last_two_year_num = self.config.number_parser.parse(er).value if \
+                first_two_year_num = self.config.number_parser.parse(er).value if \
                     self.config.number_parser.parse(er).value else 0
 
-            if (first_two_year_num < 100 and last_two_year_num == 0)\
-                    or (first_two_year_num < 100 and first_two_year_num % 10 == 0
-                        and len(last_two_year_num_str.strip().split(' ')) == 1):
-                year = Constants.InvalidYear
-            return year
+                last_two_year_num = 0
+                last_two_year_num_str = RegExpUtility.get_group(
+                    match, 'lasttwoyearnum')
 
-            if first_two_year_num >= 100:
-                year = first_two_year_num + last_two_year_num
-            else:
-                year = (first_two_year_num * 100) + last_two_year_num
+                if not (str.isspace(last_two_year_num_str) or last_two_year_num_str is None):
+                    er = ExtractResult()
+                    er.text = last_two_year_num_str
+                    er.start = match.string.index(RegExpUtility.get_group(match, 'lasttwoyearnum'))
+                    er.length = len(RegExpUtility.get_group(
+                        match, 'lasttwoyearnum'))
+
+                    last_two_year_num = self.config.number_parser.parse(er).value if \
+                        self.config.number_parser.parse(er).value else 0
+
+                if (first_two_year_num < 100 and last_two_year_num == 0)\
+                        or (first_two_year_num < 100 and first_two_year_num % 10 == 0
+                            and len(last_two_year_num_str.strip().split(' ')) == 1):
+                    year = Constants.InvalidYear
+                    return year
+
+                if first_two_year_num >= 100:
+                    year = first_two_year_num + last_two_year_num
+                else:
+                    year = (first_two_year_num * 100) + last_two_year_num
 
         return year
