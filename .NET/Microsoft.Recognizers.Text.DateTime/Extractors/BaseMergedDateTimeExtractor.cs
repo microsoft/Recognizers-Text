@@ -35,12 +35,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return false;
         }
 
-        public bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text, bool ambiguous = false)
+        public bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text, bool potentialAmbiguity = false)
         {
             var beforeStr = text.Substring(0, er.Start ?? 0);
 
-            // Avoid adding mod for "from" in "from ... to ..."
-            if (ambiguous && this.config.AmbiguousRangeModifierPrefix.IsMatch(beforeStr))
+            // Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
+            if (potentialAmbiguity && this.config.AmbiguousRangeModifierPrefix != null && this.config.AmbiguousRangeModifierPrefix.IsMatch(beforeStr))
             {
                 var matches = this.config.PotentialAmbiguousRangeRegex.Matches(text).Cast<Match>();
                 if (matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
@@ -56,14 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Length += modLength;
                 er.Start -= modLength;
                 er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
-                if (er.Metadata == null)
-                {
-                    er.Metadata = new Metadata { HasMod = true };
-                }
-                else
-                {
-                    er.Metadata.HasMod = true;
-                }
+                AssignModMetadata(er);
 
                 return true;
             }
@@ -146,6 +139,18 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
+        }
+
+        private void AssignModMetadata(ExtractResult er)
+        {
+            if (er.Metadata == null)
+            {
+                er.Metadata = new Metadata { HasMod = true };
+            }
+            else
+            {
+                er.Metadata.HasMod = true;
+            }
         }
 
         private bool IsFailFastCase(string input)
@@ -309,9 +314,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                     success = TryMergeModifierToken(er, config.AfterRegex, text);
                 }
 
+                // The SinceRegex contains potential ambiguity part("from"), so the parameter potentialAmbiguity is true.
                 if (!success)
                 {
-                    success = TryMergeModifierToken(er, config.SinceRegex, text, true);
+                    success = TryMergeModifierToken(er, config.SinceRegex, text, potentialAmbiguity: true);
                 }
 
                 if (!success)
@@ -357,14 +363,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var modLength = match.Length + afterStr.IndexOf(match.Value, StringComparison.Ordinal);
                             er.Length += modLength;
                             er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
-                            if (er.Metadata == null)
-                            {
-                                er.Metadata = new Metadata { HasMod = true };
-                            }
-                            else
-                            {
-                                er.Metadata.HasMod = true;
-                            }
+                            AssignModMetadata(er);
                         }
                     }
                 }

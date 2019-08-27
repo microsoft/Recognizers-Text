@@ -112,9 +112,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
 
-        Regex IMergedExtractorConfiguration.AmbiguousRangeModifierPrefix => AmbiguousRangeModifierPrefix;
+        Regex IMergedExtractorConfiguration.AmbiguousRangeModifierPrefix => null;
 
-        Regex IMergedExtractorConfiguration.PotentialAmbiguousRangeRegex => FromToRegex;
+        Regex IMergedExtractorConfiguration.PotentialAmbiguousRangeRegex => null;
 
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
 
