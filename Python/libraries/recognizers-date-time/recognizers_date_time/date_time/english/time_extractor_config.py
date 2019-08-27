@@ -18,6 +18,10 @@ class EnglishTimeExtractorConfiguration(TimeExtractorConfiguration):
     def ish_regex(self) -> Pattern:
         return self._ish_regex
 
+    @property
+    def time_before_after_regex(self) -> Pattern:
+        return self._time_before_after_regex
+
     def __init__(self):
         self._time_regex_list: List[Pattern] = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex1),
@@ -35,3 +39,5 @@ class EnglishTimeExtractorConfiguration(TimeExtractorConfiguration):
             EnglishDateTime.AtRegex)
         self._ish_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.IshRegex)
+        self._time_before_after_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.TimeBeforeAfterRegex)
