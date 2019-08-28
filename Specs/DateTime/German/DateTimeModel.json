@@ -1435,5 +1435,40 @@
         }
       }
     ]
+  },
+  {
+    "Input": "2",
+    "Context": {
+      "ReferenceDateTime": "2019-08-27T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "Ich gehe um viertel nach drei",
+    "Context": {
+      "ReferenceDateTime": "2019-08-27T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "viertel nach drei",
+        "Start": 12,
+        "End": 28,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T03:15",
+              "type": "time",
+              "value": "03:15:00"
+            },
+            {
+              "timex": "T15:15",
+              "type": "time",
+              "value": "15:15:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
