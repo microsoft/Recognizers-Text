@@ -1059,51 +1059,5 @@
         "Length": 2
       }
     ]
-  },
-  {
-    "Input": "今日头条报道了今日在北京举行的奥运会",
-    "Context": {
-      "ReferenceDateTime": "2018-08-28T18:00:00"
-    },
-    "Results": [
-      {
-        "Text": "今日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-08-28",
-          "FutureResolution": {
-            "date": "2018-08-28"
-          },
-          "PastResolution": {
-            "date": "2018-08-28"
-          }
-        },
-        "Start": 7,
-        "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "今日我们将去参观今日头条总部",
-    "Context": {
-      "ReferenceDateTime": "2018-08-28T18:00:00"
-    },
-    "Results": [
-      {
-        "Text": "今日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-08-28",
-          "FutureResolution": {
-            "date": "2018-08-28"
-          },
-          "PastResolution": {
-            "date": "2018-08-28"
-          }
-        },
-        "Start": 0,
-        "Length": 2
-      }
-    ]
   }
 ]

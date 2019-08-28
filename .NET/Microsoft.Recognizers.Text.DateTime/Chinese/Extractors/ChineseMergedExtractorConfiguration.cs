@@ -105,15 +105,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         continue;
                     }
 
-                    tmpChar = text.Substring(endIndex, 2);
-
-                    // for case "今日头条"
-                    if (extractResult.Text.Equals("今日") && endIndex < text.Length && tmpChar.Equals("头条"))
+                    if (endIndex <= (text.Length - 2))
                     {
-                        continue;
+                        tmpChar = text.Substring(endIndex, 2);
+
+                        // for case "今日头条"
+                        if (extractResult.Text.Equals("今日") && endIndex < text.Length && tmpChar.Equals("头条"))
+                        {
+                            continue;
+                        }
                     }
 
-                    if (extractResult.Start != 0)
+                    if (extractResult.Start != 0 && endIndex <= (text.Length - 3))
                     {
                         var preTempChar = text.Substring((int)extractResult.Start - 1, 1);
                         var sufTempChar = text.Substring(endIndex, 3);
