@@ -104,6 +104,27 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         continue;
                     }
+
+                    tmpChar = text.Substring(endIndex, 2);
+
+                    // for case "今日头条"
+                    if (extractResult.Text.Equals("今日") && endIndex < text.Length && tmpChar.Equals("头条"))
+                    {
+                        continue;
+                    }
+
+                    if (extractResult.Start != 0)
+                    {
+                        var preTempChar = text.Substring((int)extractResult.Start - 1, 1);
+                        var sufTempChar = text.Substring(endIndex, 3);
+
+                        // for case "《明日之后》"
+                        if (extractResult.Text.Equals("明日") && endIndex < text.Length &&
+                            preTempChar.Equals("《") && sufTempChar.Equals("之后》"))
+                        {
+                            continue;
+                        }
+                    }
                 }
 
                 ret.Add(extractResult);
