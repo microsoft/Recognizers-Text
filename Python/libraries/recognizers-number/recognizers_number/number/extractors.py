@@ -96,6 +96,7 @@ class BaseNumberExtractor(Extractor):
                         value.type = self._extract_type
                         value.data = match_source.get(src_match, None)
 
+                        # Add Metadata information for Ordinal
                         if Constants.MODEL_ORDINAL in self._extract_type:
                             value.metadata = Metadata()
                             if (self.options & NumberOptions.SUPPRESS_EXTENDED_TYPES) != 0 \
@@ -105,7 +106,7 @@ class BaseNumberExtractor(Extractor):
 
                         result.append(value)
 
-            result = self.fi
+        result = self._filter_ambiguity(result, source)
 
         return result
 
