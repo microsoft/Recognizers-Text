@@ -770,6 +770,13 @@ DateTimePeriodEVRegex: !simpleRegex
   def: (晚上|夜里|夜晚|晚)
 DateTimePeriodNIRegex: !simpleRegex
   def: (半夜|夜间|深夜)
+# For cases like "12号", singleWord "早" and "晚"
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '早': '^早$'
+    '晚': '^晚$'
+    '^\d{1,2}号': '^\d{1,2}号'
 DurationUnitValueMap: !dictionary
   types: [string, int]
   entries:
