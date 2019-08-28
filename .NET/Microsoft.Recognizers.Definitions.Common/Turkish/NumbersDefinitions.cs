@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}\s)?(buçuk|çeyrek|yarım))(?=\b)";
-      public static readonly string FractionPrepositionRegex = $@"(?<=\b)(eksi\s)?(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(bölü)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
+      public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(eksi\s)?(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(bölü)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s{ZeroToNineIntegerRegex})+|(\s{AllIntRegex}))";
       public static readonly string FloatRegex1 = $@"(({NegativeAllIntRegex}|{AllIntRegex})(\s(nokta)){AllPointRegex})";
       public static readonly string FloatRegex2 = $@"{AllIntRegex}(\s+(tam)\s+)((onda)\s+{OneToNineIntegerRegex}|(yüzde)\s+({OneToNineIntegerRegex}|{TenToHundredRegex})|(binde)\s+({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}))";
