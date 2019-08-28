@@ -1,4 +1,5 @@
 ---
+CheckBothBeforeAfter: !bool false
 TillRegex: !nestedRegex
   def: (?<till>\b(to|(un)?till?|thru|through)\b|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]

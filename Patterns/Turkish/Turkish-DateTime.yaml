@@ -1,4 +1,5 @@
 ---
+CheckBothBeforeAfter: !bool true
 TillRegex: !simpleRegex
   def: (?<till>\b(kadar|dek|değin)\b)
 RangeConnectorRegex : !simpleRegex
@@ -208,7 +209,7 @@ DateYearRegex: !nestedRegex
   def: (?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, TwoDigitYearRegex ]
 YearSuffix: !nestedRegex
-  def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
+  def: (,?\s*({DateYearRegex}|{FullTextYearRegex})(\s+yılı)?)
   references: [ DateYearRegex, FullTextYearRegex ]
 OnRegex: !simpleRegex
   def: ^[\*]
@@ -570,18 +571,18 @@ SinceRegex: !simpleRegex
 AroundRegex: !simpleRegex
   def: (\b(takriben|yaklaşık)\s*|\s*(civarında|civarı|dolaylarında)\b)
 AgoRegex: !simpleRegex
-  def: \b(önce|evvel)\b
+  def: \b((?<day>bugünden|gün|dünden|dün)\s+)?(önce|evvel)\b
 LaterRegex: !simpleRegex
-  def: \b(sonra|içinde|(?<day>yarından|bugünden)\s+(itibaren|sonra)|şu andan itibaren)\b
+  def: \b(sonra|(?<day>yarından|yarın|bugünden|gün)\s+(itibaren|sonra)|şu andan itibaren)
 InConnectorRegex: !simpleRegex
-  def: ^[\*]
+  def: \b(içinde)\b
 SinceNumSuffixRegex: !simpleRegex
   def: \b^(?!0)(\d{0,3}((1|2|7|8)'den|(3|4|5)'ten|(6|9)'dan)|\d{0,2}(10'dan|20'den|30'dan|40'tan|50'den|60'tan|70'ten|80'den|90'dan|00'den)|\d000'den)\b
 SinceYearSuffixRegex: !nestedRegex
   def: ({YearSuffix}\s+(yılından beri)|{SinceNumSuffixRegex}\s+beri)
   references: [ YearSuffix, SinceNumSuffixRegex ]
 WithinNextPrefixRegex: !nestedRegex
-  def: \b((?<next>{NextPrefixRegex})?\s+?\d+\s+(hafta|ay|yıl)\s+(içinde))\b
+  def: \b((?<next>{NextPrefixRegex})?(\s+)?(\d+\s+(hafta|ay|yıl)\s+)?içinde)\b
   references: [ NextPrefixRegex ]
 MorningStartEndRegex: !simpleRegex
   def: (^sabah$)

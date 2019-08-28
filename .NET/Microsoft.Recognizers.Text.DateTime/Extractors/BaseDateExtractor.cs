@@ -93,6 +93,30 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
                 }
+                else if (Config.CheckBothBeforeAfter)
+                {
+                    // Check also afterStr
+                    match = Config.InConnectorRegex.MatchBegin(afterStr, trim: true);
+                    if (match.Success)
+                    {
+                        var endToken = duration.Start + duration.Length + match.Index + match.Length;
+                        var rangeUnitMatch = Config.RangeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
+
+                        if (rangeUnitMatch.Success)
+                        {
+                            var sinceYearMatch = Config.SinceYearSuffixRegex.Match(beforeStr);
+
+                            if (sinceYearMatch.Success)
+                            {
+                                ret.Add(new Token(sinceYearMatch.Index, endToken - sinceYearMatch.Index));
+                            }
+                            else
+                            {
+                                ret.Add(new Token(duration.Start, endToken - duration.Start));
+                            }
+                        }
+                    }
+                }
             }
 
             return ret;
@@ -448,6 +472,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Check whether there's a year
             var suffix = text.Substring(endIndex);
+            var prefix = text.Substring(0, startIndex);
             var matchYear = this.Config.YearSuffix.Match(suffix);
             if (matchYear.Success && matchYear.Index == 0)
             {
@@ -458,11 +483,25 @@ namespace Microsoft.Recognizers.Text.DateTime
                     endIndex += matchYear.Length;
                 }
             }
+            else if (Config.CheckBothBeforeAfter)
+            {
+                // Check also in prefix
+                matchYear = this.Config.YearSuffix.Match(prefix);
+                if (matchYear.Success && matchYear.Index + matchYear.Length == prefix.TrimEnd().Length)
+                {
+                    year = GetYearFromText(matchYear);
+
+                    if (year >= Constants.MinYearNum && year <= Constants.MaxYearNum)
+                    {
+                        startIndex -= matchYear.Length + (prefix.Length - prefix.TrimEnd().Length);
+                    }
+                }
+
+            }
 
             var date = DateObject.MinValue.SafeCreateFromValue(year, month, day);
 
             // Check whether there's a weekday
-            var prefix = text.Substring(0, startIndex);
             var matchWeekDay = this.Config.WeekDayEnd.Match(prefix);
 
             // Check for weekday in the suffix

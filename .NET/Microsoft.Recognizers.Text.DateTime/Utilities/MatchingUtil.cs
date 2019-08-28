@@ -23,6 +23,20 @@ namespace Microsoft.Recognizers.Text.DateTime
             return false;
         }
 
+        public static bool GetAgoLaterIndexInBeforeString(string text, Regex regex, out int index)
+        {
+            index = -1;
+            var match = regex.MatchEnd(text, trim: true);
+
+            if (match.Success)
+            {
+                index = match.Index;
+                return true;
+            }
+
+            return false;
+        }
+
         public static bool GetTermIndex(string text, Regex regex, out int index)
         {
             index = -1;
@@ -39,6 +53,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static bool ContainsAgoLaterIndex(string text, Regex regex)
         {
             return GetAgoLaterIndex(text, regex, out var index);
+        }
+
+        public static bool ContainsAgoLaterIndexInBeforeString(string text, Regex regex)
+        {
+            return GetAgoLaterIndexInBeforeString(text, regex, out var index);
         }
 
         public static bool ContainsTermIndex(string text, Regex regex)

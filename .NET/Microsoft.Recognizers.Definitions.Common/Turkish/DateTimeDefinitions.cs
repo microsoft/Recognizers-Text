@@ -21,6 +21,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
 
     public static class DateTimeDefinitions
     {
+      public const bool CheckBothBeforeAfter = true;
       public const string TillRegex = @"(?<till>\b(kadar|dek|değin)\b)";
       public const string RangeConnectorRegex = @"(?<and>\b(ile|ila)\b|(-|—|——|–))";
       public const string RelativeRegex = @"\b(?<order>ertesi|(bir\s+)?sonraki|gelecek|bu|geçen|son|aynı|(bir\s+)?önceki|evvelki|önümüzdeki)\b";
@@ -105,7 +106,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string WeekOfRegex = @"(haftası)";
       public const string MonthOfRegex = @"(ayı)";
       public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})";
-      public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
+      public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex})(\s+yılı)?)";
       public const string OnRegex = @"^[\*]";
       public const string RelaxedOnRegex = @"(?<day>(10|20|30|31|(1|2)[1-9])('i|'si|'sı|'ü|'u))(?=(nde|nda))\b";
       public const string PrefixWeekDayRegex = @"(\s*[-—–])";
@@ -250,12 +251,12 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string AfterRegex = $@"((\b((sonra|sonrasında|daha sonra))(?!\s+veya aynı))|(?<!\w|<)((?<include>>=)|>))";
       public const string SinceRegex = @"((\b(((den|dan)\s+)?beri|sonra veya aynı|((den|dan|ile)\s+)?(başlayarak|başlayan)|erkenden|herhangi bir zamanda)\b\s*)|(?<!\w|<)(>=))";
       public const string AroundRegex = @"(\b(takriben|yaklaşık)\s*|\s*(civarında|civarı|dolaylarında)\b)";
-      public const string AgoRegex = @"\b(önce|evvel)\b";
-      public const string LaterRegex = @"\b(sonra|içinde|(?<day>yarından|bugünden)\s+(itibaren|sonra)|şu andan itibaren)\b";
-      public const string InConnectorRegex = @"^[\*]";
+      public const string AgoRegex = @"\b((?<day>bugünden|gün|dünden|dün)\s+)?(önce|evvel)\b";
+      public const string LaterRegex = @"\b(sonra|(?<day>yarından|yarın|bugünden|gün)\s+(itibaren|sonra)|şu andan itibaren)";
+      public const string InConnectorRegex = @"\b(içinde)\b";
       public const string SinceNumSuffixRegex = @"\b^(?!0)(\d{0,3}((1|2|7|8)'den|(3|4|5)'ten|(6|9)'dan)|\d{0,2}(10'dan|20'den|30'dan|40'tan|50'den|60'tan|70'ten|80'den|90'dan|00'den)|\d000'den)\b";
       public static readonly string SinceYearSuffixRegex = $@"({YearSuffix}\s+(yılından beri)|{SinceNumSuffixRegex}\s+beri)";
-      public static readonly string WithinNextPrefixRegex = $@"\b((?<next>{NextPrefixRegex})?\s+?\d+\s+(hafta|ay|yıl)\s+(içinde))\b";
+      public static readonly string WithinNextPrefixRegex = $@"\b((?<next>{NextPrefixRegex})?(\s+)?(\d+\s+(hafta|ay|yıl)\s+)?içinde)\b";
       public const string MorningStartEndRegex = @"(^sabah$)";
       public const string AfternoonStartEndRegex = @"(^öğle$)";
       public const string EveningStartEndRegex = @"(^akşam$)";

@@ -591,6 +591,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ambiguous = false;
                     }
                 }
+                else if (this.config.CheckBothBeforeAfter)
+                {
+                    // Check also in prefix
+                    var prefix = trimmedText.Substring(0, er[0].Start ?? 0);
+                    matchYear = this.config.YearSuffix.Match(prefix);
+                    if (matchYear.Success)
+                    {
+                        year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matchYear);
+                        if (year != Constants.InvalidYear)
+                        {
+                            ambiguous = false;
+                        }
+                    }
+                }
             }
 
             // Handling relative month
