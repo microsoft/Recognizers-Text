@@ -18,12 +18,18 @@ class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
     def ish_regex(self) -> Pattern:
         return self._ish_regex
 
+    @property
+    def time_before_after_regex(self) -> Pattern:
+        return self._time_before_after_regex
+
     def __init__(self):
         self._time_regex_list: List[Pattern] = SpanishTimeExtractorConfiguration.get_time_regex_list(
         )
         self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.AtRegex)
         self._ish_regex: Pattern = None
+        self._time_before_after_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.TimeBeforeAfterRegex)
 
     @staticmethod
     def get_time_regex_list() -> List[Pattern]:

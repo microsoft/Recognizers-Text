@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List, Optional, Pattern, Dict
+from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime, timedelta
 import calendar
 from datedelta import datedelta
@@ -211,7 +211,6 @@ class BaseDateExtractor(DateTimeExtractor):
 
     def basic_regex_match(self, source: str) -> []:
         from .utilities import Token
-        # from .utilities import get_tokens_from_regex
         from .utilities import RegexExtension
         ret: List[Token] = list()
 
@@ -244,7 +243,7 @@ class BaseDateExtractor(DateTimeExtractor):
     # this method is to validate whether the match is part of date range and is a correct split
     # For example: in case "10-1 - 11-7", "10-1 - 11" can be matched by some of the Regexes,
     # but the full text is a date range, so "10-1 - 11" is not a correct split
-    def validate_match(self, match: Pattern, text: str):
+    def validate_match(self, match: Match, text: str):
 
         # If the match doesn't contains "year" part, it will not be ambiguous and it's a valid match
         is_valid_match = not RegExpUtility.get_group(
@@ -336,7 +335,7 @@ class BaseDateExtractor(DateTimeExtractor):
                     result_length = result.length if result.length else 0
                     end_index = match.start() + len(match.group()) + result_length
 
-                    self.extend_with_week_day_and_year(
+                    start_index, end_index = self.extend_with_week_day_and_year(
                         start_index, end_index, self.config.month_of_year[str(RegExpUtility.get_group(
                             match, 'month')).lower()], num, source, reference)
 
@@ -465,7 +464,7 @@ class BaseDateExtractor(DateTimeExtractor):
         return ret
 
     def extend_with_week_day_and_year(self, start_index: int, end_index: int, month: int,
-                                      day: int, text: str, reference: datetime) -> None:
+                                      day: int, text: str, reference: datetime):
         from .abstract_year_extractor import AbstractYearExtractor
         from .utilities import DateUtils
         import calendar
@@ -480,7 +479,7 @@ class BaseDateExtractor(DateTimeExtractor):
             year = AbstractYearExtractor.get_year_from_text(self, match_year)
 
             if year >= Constants.MinYearNum and year <= Constants.MaxYearNum:
-                end_index += len(match_year.groups())
+                end_index += len(match_year.group())
 
         date = DateUtils.safe_create_from_value(DateUtils.min_value, year, month, day)
 
@@ -503,6 +502,8 @@ class BaseDateExtractor(DateTimeExtractor):
 
                 if not date == DateUtils.min_value and week_day_1 == week_day_2:
                     start_index = match_week_day.end()
+
+        return start_index, end_index
 
     def extract_relative_duration_date_with_in_prefix(self, text: str, duration_er: [ExtractResult],
                                                       reference: datetime):

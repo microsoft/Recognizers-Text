@@ -8,12 +8,81 @@ from build.lib.recognizers_date_time import DateTimeOptions
 from datedelta import datedelta
 import regex
 
-from recognizers_text.extractor import ExtractResult
+from recognizers_text.Matcher.number_with_unit_tokenizer import NumberWithUnitTokenizer
+from recognizers_text.Matcher.match_strategy import MatchStrategy
+from recognizers_text.extractor import ExtractResult, Metadata
 from recognizers_text.utilities import RegExpUtility
 from recognizers_date_time.date_time.constants import TimeTypeConstants, Constants
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.parsers import DateTimeParser, DateTimeParseResult
 from recognizers_text.Matcher.string_matcher import StringMatcher, MatchResult
+
+
+class TimeZoneUtility:
+
+    def merge_time_zones(self, original_ers: [ExtractResult], time_zone_ers: [ExtractResult], text: str):
+
+        for er in original_ers:
+            for time_zone_er in time_zone_ers:
+
+                begin = er.start + er.length
+                end = time_zone_er.start
+
+                if begin < end:
+                    gap_text = text[begin: begin + (end - begin)]
+
+                    if gap_text.isspace() or gap_text is None:
+                        new_length = time_zone_er.start + time_zone_er.length - er.start
+
+                        er.text = text[er.start:new_length]
+                        er.length = new_length
+                        er.data = {Constants.SYS_DATETIME_TIMEZONE, time_zone_er}
+
+                if er.overlap(time_zone_er):
+                    er.data = {Constants.SYS_DATETIME_TIMEZONE, time_zone_er}
+
+        return original_ers
+
+    def should_resolve_time_zone(self, er: ExtractResult, options: DateTimeOptions):
+        enable_preview = (options & DateTimeOptions.ENABLE_PREVIEW) != 0
+
+        if not enable_preview:
+            return False
+
+        has_time_zone_data = False
+
+        if isinstance(er.data, {}):
+            meta_data = er.data
+            if meta_data is not None and Constants.SYS_DATETIME_TIMEZONE in meta_data.keys():
+                has_time_zone_data = True
+
+        return has_time_zone_data
+
+    def build_matcher_from_lists(self, collections: []):
+
+        matcher: StringMatcher = StringMatcher(MatchStrategy.TrieTree, NumberWithUnitTokenizer())
+
+        matcher_list = []
+
+        for collection in collections:
+            list(map(lambda x: matcher_list.append(x.strip().lower()), collection))
+
+        matcher_list = self.distinct(matcher_list)
+
+        matcher.init(matcher_list)
+
+        return matcher
+
+    @staticmethod
+    def distinct(list1):
+
+        unique_list = []
+        for x in list1:
+
+            if x not in unique_list:
+                unique_list.append(x)
+
+        return unique_list
 
 
 class RegexExtension:
@@ -49,6 +118,14 @@ class RegexExtension:
         conditional = ConditionalMatch(match, success)
 
         return conditional
+
+    @staticmethod
+    def is_exact_match(regex: Pattern, text: str, trim: bool):
+        match = regex.search(text)
+
+        length = len(text.strip()) if trim else len(text)
+
+        return match and len(match.group()) == length
 
 
 class ConditionalMatch:
@@ -102,6 +179,23 @@ class DateTimeOptionsConfiguration(ABC):
         raise NotImplementedError
 
 
+class DurationParsingUtil:
+
+    @staticmethod
+    def is_time_duration_unit(uni_str: str):
+
+        if uni_str == 'H':
+            result = True
+        elif uni_str == 'M':
+            result = True
+        elif uni_str == 'S':
+            result = True
+        else:
+            result = False
+
+        return result
+
+
 class DateTimeOptions(IntFlag):
     NONE = 0
     SKIP_FROM_TO_MERGE = 1
@@ -114,13 +208,28 @@ class DateTimeOptions(IntFlag):
 
 
 class Token:
-    def __init__(self, start: int, end: int):
+    def __init__(self, start: int, end: int, metadata: Metadata = None):
         self.start: int = start
         self.end: int = end
+        self.metadata = metadata
 
     @property
     def length(self) -> int:
+        if self.start > self.end:
+            return 0
         return self.end - self.start
+
+    @property
+    def start(self) -> int:
+        return self.start
+
+    @property
+    def end(self) -> int:
+        return self.end
+
+    @property
+    def metadata(self) -> int:
+        return self.metadata
 
 
 def merge_all_tokens(tokens: List[Token], source: str, extractor_name: str) -> List[ExtractResult]:
@@ -415,7 +524,7 @@ class MatchedIndex:
 class MatchingUtil:
 
     @staticmethod
-    def pre_process_text_remove_superfluous_words(text: str, matcher: StringMatcher) -> str:
+    def pre_process_text_remove_superfluous_words(text: str, matcher: Pattern) -> str:
         superfluous_word_matches = MatchingUtil.remove_sub_matches(matcher.find(text))
 
         bias = 0[0]

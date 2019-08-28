@@ -10,10 +10,11 @@ from recognizers_number.number.parsers import BaseNumberParser
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, RegExpUtility
+from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, RegExpUtility,\
+    DateTimeOptionsConfiguration, DateTimeOptions, DurationParsingUtil, RegexExtension
 
 
-class DurationExtractorConfiguration(ABC):
+class DurationExtractorConfiguration(DateTimeOptionsConfiguration):
     @property
     @abstractmethod
     def all_regex(self) -> Pattern:
@@ -59,14 +60,50 @@ class DurationExtractorConfiguration(ABC):
     def cardinal_extractor(self) -> BaseNumberExtractor:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def during_regex(self) -> BaseNumberExtractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def unit_map(self) -> {}:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def unit_value_map(self) -> {}:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def duration_unit_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def duration_connector_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def more_than_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def less_than_regex(self) -> Pattern:
+        raise NotImplementedError
+
 
 class BaseDurationExtractor(DateTimeExtractor):
     @property
     def extractor_type_name(self) -> str:
         return Constants.SYS_DATETIME_DURATION
 
-    def __init__(self, config: DurationExtractorConfiguration):
+    def __init__(self, config: DurationExtractorConfiguration, merge: bool = True):
         self.config = config
+        self.merge = merge
 
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
         if reference is None:
@@ -76,8 +113,133 @@ class BaseDurationExtractor(DateTimeExtractor):
         tokens.extend(self.number_with_unit_and_suffix(source, tokens))
         tokens.extend(self.implicit_duration(source))
 
-        result = merge_all_tokens(tokens, source, self.extractor_type_name)
-        return result
+        rets = merge_all_tokens(tokens, source, self.extractor_type_name)
+
+        if self.merge:
+            rets = self.merge_multiple_duration(source, rets)
+
+        rets = self.tag_inequality_prefix(source, rets)
+
+        return rets
+
+    def tag_inequality_prefix(self, text: str, ers: [ExtractResult]):
+
+        for er in ers:
+            before_string = text[0: er.start]
+            is_inequality_prefix_matched = False
+
+            match = RegexExtension.match_end(self.config.more_than_regex, before_string, True)
+
+            if match.success:
+                er.data = TimeTypeConstants.MORE_THAN_MOD
+                is_inequality_prefix_matched = True
+
+            if not is_inequality_prefix_matched:
+
+                match = RegexExtension.match_end(self.config.less_than_regex, before_string, True)
+
+                if match.success:
+                    er.data = TimeTypeConstants.LESS_THAN_MOD
+                    is_inequality_prefix_matched = True
+
+            if is_inequality_prefix_matched:
+                er.length += er.start - text.index(match.group())
+                er.start = text.index(match.group())
+                er.text = text[er.start: er.start + er.length]
+
+        return ers
+
+    def merge_multiple_duration(self, text: str, extractor_results: [ExtractResult]):
+
+        if extractor_results.count() <= 1:
+            return extractor_results
+
+        unit_map = self.config.unit_map
+        unit_value_map = self.config.unit_value_map
+        unit_regex = self.config.duration_unit_regex
+
+        ret = []
+
+        first_extraction_index = 0
+        time_unit = 0
+        total_unit = 0
+
+        while first_extraction_index < extractor_results.count():
+            cur_unit = None
+            unit_match = unit_regex.search(extractor_results[first_extraction_index].text)
+
+            if unit_match and str(RegExpUtility.get_group(unit_match, 'unit')) in unit_map:
+
+                cur_unit = str(RegExpUtility.get_group(unit_match, 'unit'))
+                total_unit += 1
+                if DurationParsingUtil.is_time_duration_unit(unit_map[cur_unit]):
+                    time_unit += 1
+
+            if not cur_unit:
+                first_extraction_index += 1
+                continue
+
+            second_extraction_index = first_extraction_index + 1
+
+            while second_extraction_index < extractor_results.count():
+                valid = False
+                mid_str_begin = extractor_results[second_extraction_index - 1].start +\
+                    extractor_results[second_extraction_index - 1].length if \
+                    extractor_results[second_extraction_index - 1].length else 0
+
+                mid_str_end = extractor_results[second_extraction_index].start \
+                    if extractor_results[second_extraction_index].start else 0
+                mid_str = text[mid_str_begin, mid_str_begin + (mid_str_end - mid_str_begin)]
+
+                match = self.config.duration_connector_regex.search(mid_str)
+                if match:
+                    unit_match = unit_regex.match(extractor_results[second_extraction_index].text)
+                    if unit_match and str(RegExpUtility.get_group(unit_match, 'unit')) in unit_map:
+                        next_unit_str = str(RegExpUtility.get_group(unit_match, 'unit'))
+                        if unit_value_map[next_unit_str] != unit_value_map[cur_unit]:
+
+                            valid = True
+                            if unit_value_map[next_unit_str] < unit_value_map[cur_unit]:
+                                cur_unit = next_unit_str
+
+                        total_unit += 1
+                        if DurationParsingUtil.is_time_duration_unit(unit_map[next_unit_str]):
+                            time_unit += 1
+
+                if not valid:
+                    break
+
+                second_extraction_index += 1
+
+            if second_extraction_index - 1 > first_extraction_index:
+
+                node: ExtractResult = ExtractResult()
+                node.start = extractor_results[first_extraction_index].start
+                node.length = extractor_results[second_extraction_index - 1].start +\
+                    extractor_results[second_extraction_index - 1].length -\
+                    node.start
+                node.text = text[node.start or 0: node.length or 0]
+                node.type = extractor_results[first_extraction_index].type
+
+                if time_unit == total_unit:
+                    type = Constants.MultipleDuration_Time
+                elif time_unit == 0:
+                    type = Constants.MultipleDuration_Date
+                else:
+                    type = Constants.MultipleDuration_DateTime
+
+                node.data = type
+
+                ret.append(node)
+
+                time_unit = 0
+                total_unit = 0
+            else:
+                ret.append(extractor_results[first_extraction_index])
+
+            first_extraction_index = second_extraction_index
+
+        return ret
 
     def number_with_unit(self, source: str) -> List[Token]:
         ers: List[ExtractResult] = self.config.cardinal_extractor.extract(
@@ -104,6 +266,12 @@ class BaseDurationExtractor(DateTimeExtractor):
             self.config.half_regex, source))
         result.extend(self.get_tokens_from_regex(
             self.config.relative_duration_unit_regex, source))
+
+        if (self.config.options & DateTimeOptions.CALENDAR) != 0:
+            result.extend(self.get_tokens_from_regex(
+                self.config.during_regex, source)
+            )
+
         return result
 
     def __cardinal_to_token(self, cardinal: ExtractResult, source: str) -> Optional[Token]:

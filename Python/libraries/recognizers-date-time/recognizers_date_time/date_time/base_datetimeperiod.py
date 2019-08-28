@@ -163,12 +163,18 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
         if reference is None:
             reference = datetime.now()
 
+        # var dateErs, el metodo existe hay que agregar
+        # var timeErs, el metodo existe hay que agregar
+
         tokens: List[Token] = list()
         tokens.extend(self.match_simple_cases(source, reference))
-        tokens.extend(self.merge_two_time_points(source, reference))
+        tokens.extend(self.merge_two_time_points(source, reference))  # check output match, if they don't , add missing params and implem
         tokens.extend(self.match_duration(source, reference))
+        # match time of date
         tokens.extend(self.match_night(source, reference))
         tokens.extend(self.match_relative_unit(source))
+        #MatchDateWithPeriodPrefix
+        #MergeDateWithTimePeriodSuffix
 
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
         return result

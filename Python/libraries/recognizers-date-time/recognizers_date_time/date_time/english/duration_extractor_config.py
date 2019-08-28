@@ -44,6 +44,34 @@ class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
     def cardinal_extractor(self) -> BaseNumberExtractor:
         return self._cardinal_extractor
 
+    @property
+    def during_regex(self) -> Pattern:
+        return self._during_regex
+
+    @property
+    def unit_map(self) -> Pattern:
+        return self._unit_map
+
+    @property
+    def unit_value_map(self) -> {}:
+        return self._unit_value_map
+
+    @property
+    def duration_unit_regex(self) -> {}:
+        return self._duration_unit_regex
+
+    @property
+    def duration_connector_regex(self) -> Pattern:
+        return self._duration_connector_regex
+
+    @property
+    def more_than_regex(self) -> Pattern:
+        return self._more_than_regex
+
+    @property
+    def less_than_regex(self) -> Pattern:
+        return self._less_than_regex
+
     def __init__(self):
         self._all_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.AllRegex)
@@ -60,5 +88,23 @@ class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
         self._suffix_and_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.SuffixAndRegex)
         self._relative_duration_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            EnglishDateTime.RelativeDurationUnitRegex)
+            EnglishDateTime.RelativeDurationUnitRegex
+        )
+        self._during_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.DuringRegex
+        )
         self._cardinal_extractor: BaseNumberExtractor = EnglishCardinalExtractor()
+        self._unit_map = EnglishDateTime.UnitMap
+        self._unit_value_map = EnglishDateTime.UnitValueMap
+        self._duration_unit_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.DurationUnitRegex
+        )
+        self._duration_connector_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.DurationConnectorRegex
+        )
+        self._more_than_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.MoreThanRegex
+        )
+        self._less_than_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.LessThanRegex
+        )

@@ -20,6 +20,8 @@ class Constants:
     # Multiple Duration Types
     MultipleDuration_Prefix = 'multipleDuration'
     MultipleDuration_Date = MultipleDuration_Prefix + 'Date'
+    MultipleDuration_Time = MultipleDuration_Prefix + 'Time'
+    MultipleDuration_DateTime = MultipleDuration_Prefix + 'DateTime'
 
     # keys
     TimexKey: str = 'timex'
@@ -57,6 +59,26 @@ class Constants:
     Daytime: str = "TDT"
     Night: str = "TNI"
     BusinessHour = "TBH"
+
+    # Groups' names for named groups in regexes
+    NextGroupName = "next"
+
+    NextGroupName = 'next'
+    AmGroupName = 'am'
+    PmGroupName = 'pm'
+    ImplicitAmGroupName = 'iam'
+    ImplicitPmGroupName = 'ipm'
+    PrefixGroupName = 'prefix'
+    SuffixGroupName = 'suffix'
+    DescGroupName = 'desc'
+    SecondGroupName = 'sec'
+    MinuteGroupName = 'min'
+    HourGroupName = 'hour'
+    YearGroupName = 'year'
+    TimeOfDayGroupName = 'timeOfDay'
+    BusinessDayGroupName = 'business'
+    LeftAmPmGroupName = 'leftDesc'
+    RightAmPmGroupName = 'rightDesc'
 
 
 class TimeTypeConstants:

@@ -5,15 +5,17 @@ from datetime import datetime, timedelta
 from collections import namedtuple
 from datedelta import datedelta
 
-from recognizers_text.extractor import ExtractResult, Extractor
+from recognizers_text.extractor import ExtractResult, Extractor, Metadata
 from recognizers_text.utilities import RegExpUtility
+from recognizers_date_time.date_time.date_extractor import DateExtractor
 from recognizers_number.number import BaseNumberParser, BaseNumberExtractor
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
 from .base_date import BaseDateParser
 from .base_duration import BaseDurationParser
-from .utilities import Token, merge_all_tokens, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, RegExpUtility
+from .utilities import Token, merge_all_tokens, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek,\
+    RegExpUtility, RegexExtension
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
@@ -76,6 +78,11 @@ class DatePeriodExtractorConfiguration(ABC):
 
     @property
     @abstractmethod
+    def time_unit_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def in_connector_regex(self) -> Pattern:
         raise NotImplementedError
 
@@ -91,7 +98,7 @@ class DatePeriodExtractorConfiguration(ABC):
 
     @property
     @abstractmethod
-    def date_point_extractor(self) -> DateTimeExtractor:
+    def date_point_extractor(self) -> DateExtractor:
         raise NotImplementedError
 
     @property
@@ -102,6 +109,11 @@ class DatePeriodExtractorConfiguration(ABC):
     @property
     @abstractmethod
     def ordinal_extractor(self) -> Extractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def cardinal_extractor(self) -> Extractor:
         raise NotImplementedError
 
     @property
@@ -126,6 +138,56 @@ class DatePeriodExtractorConfiguration(ABC):
     def has_connector_token(self, source: str) -> bool:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def within_next_prefix_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def future_suffix_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def ago_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def later_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def less_than_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def more_than_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def duration_date_restrictions(self) -> [str]:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def year_period_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def century_suffix_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def month_num_regex(self) -> Pattern:
+        raise NotImplementedError
+
 
 class BaseDatePeriodExtractor(DateTimeExtractor):
     @property
@@ -146,10 +208,208 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
         tokens += self.merge_two_time_points(source, reference)
         tokens += self.match_duration(source, reference)
-        tokens += self.single_time_point_with_patterns(source, reference)
+        tokens += self.single_time_point_with_patterns(source, ordinal_extractions, reference)
+        tokens += self.match_complex_cases(source, simple_cases_results, reference)
+        tokens += self.match_year_period(source, reference)
+        tokens += self.match_ordinal_number_with_century_suffix(source, ordinal_extractions)
+
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
 
         return result
+
+    def match_ordinal_number_with_century_suffix(self, text: str, ordinal_extractions: [ExtractResult]):
+        ret = []
+
+        for er in ordinal_extractions:
+            if er.start + er.length >= len(text):
+                continue
+
+            after_string = text[er.start + er.length:]
+            trimmed_after_string = after_string.rstrip()
+            white_spaces_count = len(after_string) - len(trimmed_after_string)
+            after_string_offset = (er.start + er.length) + white_spaces_count
+
+            match = self.config.century_suffix_regex.match(trimmed_after_string)
+
+            if match:
+                ret.append(Token(er.start, after_string_offset + text.index(match.group()) +
+                                 (match.end() - match.start())))
+
+        return ret
+
+    def match_year_period(self, text: str, reference: datetime):
+        ret = []
+
+        metadata = Metadata()
+        metadata.possibly_included_period_end = True
+
+        matches: [Match] = self.config.year_period_regex.search(text)
+
+        for match in matches:
+            match_year = self.config.year_regex.match(match)
+
+            if match_year is not None and (match_year.end() - match_year.start()) == len(match.group()):
+                year = self.config.date_point_extractor.get_year_from_text(match_year)
+                if not (year >= Constants.MinYearNum and year <= Constants.MaxYearNum):
+                    continue
+
+                metadata.possibly_included_period_end = False
+            else:
+                year_matches = self.config.year_regex.search(match.group())
+                all_digit_year = True
+                is_valid_year = True
+
+                for year_match in year_matches:
+                    year = self.config.date_point_extractor.get_year_from_text(year_match)
+                    if not (year >= Constants.MinYearNum and year <= Constants.MaxYearNum):
+                        is_valid_year = False
+                        break
+                    elif len(year_match) != Constants.FourDigitsYearLength:
+                        all_digit_year = False
+
+                    if not is_valid_year:
+                        continue
+
+                    if all_digit_year:
+
+                        if self.has_invalid_dash_context(match, text):
+                            continue
+
+                ret.append(Token(match.start(), match.start() - (match.end() - match.start()), metadata))
+
+        return ret
+
+    def has_invalid_dash_context(self, match: Match, text: str):
+
+        has_invalid_dash_context = False
+
+        has_dash_prefix, dash_prefix_index = self.has_dash_prefix(match, text)
+
+        if has_dash_prefix:
+            has_digit_number_before_dash, number_start_index = self.has_digit_number_before_dash(text, dash_prefix_index)
+
+            if has_digit_number_before_dash:
+                digit_number_str = text[number_start_index: number_start_index + (text.index(match.group()) - 1 - number_start_index)]
+
+                if RegexExtension.is_exact_match(self.config.month_num_regex, digit_number_str, True):
+                    has_invalid_dash_context = True
+
+        has_dash_suffix, dash_suffix_index = self.has_dash_suffix(match, text)
+
+        if has_dash_suffix:
+
+            has_digit_number_after_dash, number_end_index = self.has_digit_number_after_dash(text, dash_suffix_index)
+
+            number_start_index = text.index(match.group()) + (match.end() - match.start()) + 1
+            digit_number_str = text[number_start_index: number_start_index + (number_end_index - number_start_index)]
+
+            if RegexExtension.is_exact_match(self.config.month_num_regex, digit_number_str, True):
+                has_invalid_dash_context = True
+
+        return has_invalid_dash_context
+
+    def has_digit_number_after_dash(self, source: str, dash_suffix_index: int):
+
+        has_digit_number_after_dash = False
+        number_end_index = -1
+
+        i = dash_suffix_index + 1
+
+        for i in range(i, len(source) + 1, 1):
+
+            if source[i] == ' ':
+                continue
+            if self.is_digit_char(source[i]):
+                has_digit_number_after_dash = True
+
+            if self.is_digit_char(source[i]):
+                if has_digit_number_after_dash:
+                    number_end_index = i + 1
+                break
+
+        if has_digit_number_after_dash and number_end_index == -1:
+            number_end_index = 0
+
+        return has_digit_number_after_dash, number_end_index
+
+    def has_dash_suffix(self, match: Match, source: str):
+
+        has_dash_suffix = False
+
+        dash_suffix_index = -1
+
+        i = source.index(match.group()) + (match.end() - match.start())
+        for i in range(i, len(source) + 1, 1):
+            if source[i] != ' ' and source[i] != '-':
+                break
+            elif source[i] == '-':
+                has_dash_suffix = True
+                dash_suffix_index = i
+                break
+        return has_dash_suffix, dash_suffix_index
+
+    def has_dash_prefix(self, match: Match, source: str):
+
+        has_dash_prefix = False
+
+        dash_prefix_index = -1
+
+        i = source.index(match.group()) - 1
+        for i in range(i, 0, -1):
+            if source[i] != ' ' and source[i] != '-':
+                break
+
+            elif source[i] == '-':
+                has_dash_prefix = True
+                dash_prefix_index = i
+                break
+        return has_dash_prefix, dash_prefix_index
+
+    def has_digit_number_before_dash(self, source: str, dash_prefix_index: int):
+
+        has_digit_number_before_dash = False
+        number_start_index = -1
+
+        i = dash_prefix_index - 1
+
+        for i in range(i, 0, -1):
+
+            if source[i] == ' ':
+                continue
+            if self.is_digit_char(source[i]):
+                has_digit_number_before_dash = True
+
+            if self.is_digit_char(source[i]):
+                if has_digit_number_before_dash:
+                    number_start_index = i + 1
+                break
+
+        if has_digit_number_before_dash and number_start_index == -1:
+            number_start_index = 0
+
+        return has_digit_number_before_dash, number_start_index
+
+    def is_digit_char(self, ch: chr):
+        return ch >= '0' and ch <= '9'
+
+    def match_complex_cases(self, text: str, simple_date_range_results: [ExtractResult], reference: datetime):
+
+        er = self.config.date_point_extractor.extract(text, reference)
+
+        er.extend(list(
+            filter(
+                lambda simple_date_range: not any(
+                    list(
+                        filter(
+                            lambda date_point: date_point.start <= simple_date_range.start and
+                            date_point.start + date_point.length >= simple_date_range.start + simple_date_range.length,
+                            er))),
+                simple_date_range_results))
+        )
+
+        er = sorted(er, key=lambda x: x.start)
+
+        return self.merge_multiple_extractions(text, er)
 
     def match_simple_cases(self, source: str) -> List[ExtractResult]:
         tokens = []
@@ -268,6 +528,59 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
             idx += 1
         return tokens
 
+    def merge_multiple_extractions(self, source: str, er: [ExtractResult]):
+        tokens = []
+
+        metadata = Metadata()
+        metadata.possibly_included_period_end = True
+
+        if er.count() < 1:
+            return tokens
+
+        idx = 0
+
+        while idx < len(er) - 1:
+            middle_begin = er[idx].start + (er[idx].length or 0)
+            middle_end = er[idx + 1].start or 0
+
+            if middle_begin >= middle_end:
+                idx += 1
+                continue
+
+            middle_str = source[middle_begin:middle_end].strip().lower()
+            match = self.config.till_regex.search(middle_str)
+
+            if match and match.group() and match.start() == 0 and match.end() - match.start() == len(middle_str):
+                period_begin = er[idx].start
+                period_end = (er[idx + 1].start or 0) + \
+                             (er[idx + 1].length or 0)
+                before_str = source[0:period_begin].strip().lower()
+                from_token_index = self.config.get_from_token_index(before_str)
+                between_token_index = self.config.get_between_token_index(
+                    before_str)
+
+                if from_token_index.matched or between_token_index.matched:
+                    period_begin = from_token_index.index if from_token_index.matched else between_token_index.index
+                tokens.append(Token(period_begin, period_end, metadata))
+                idx += 2
+                continue
+
+            if self.config.has_connector_token(middle_str):
+                period_begin = er[idx].start or 0
+                period_end = (er[idx + 1].start or 0) + \
+                             (er[idx + 1].length or 0)
+                before_str = source[0:period_begin].strip().lower()
+                between_token_index = self.config.get_between_token_index(
+                    before_str)
+
+                if between_token_index.matched:
+                    period_begin = between_token_index.index
+                    tokens.append(Token(period_begin, period_end, metadata))
+                    idx += 2
+                    continue
+
+            idx += 1
+
     def match_duration(self, source: str, reference: datetime) -> List[ExtractResult]:
         tokens = []
         durations = []
@@ -280,46 +593,132 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
         for duration in durations:
             before_str = source[0:duration.start].lower()
+            after_str = source[duration.start: duration.start + duration.end - duration.start]
 
-            if not before_str:
-                break
+            if not before_str and not after_str:
+                continue
 
-            match = self.config.past_regex.search(before_str)
-            if self.__match_regex_in_prefix(before_str, match):
-                tokens.append(Token(match.start(), duration.end))
-                break
+            match = RegexExtension.match_end(self.config.within_next_prefix_regex, before_str, True)
 
-            match = self.config.future_regex.search(before_str)
-            if self.__match_regex_in_prefix(before_str, match):
-                tokens.append(Token(match.start(), duration.end))
-                break
+            if match.success:
+                start_token = match.index
+                duration_str = source[duration.start: duration.start + duration.end - duration.start]
+                match_date = self.config.date_unit_regex.search(duration_str)
+                match_time = self.config.time_unit_regex.search(duration_str)
 
-            match = self.config.in_connector_regex.search(before_str)
-            if self.__match_regex_in_prefix(before_str, match):
-                range_str = source[duration.start:duration.start +
-                                   duration.length]
-                range_match = self.config.range_unit_regex.search(range_str)
+                if match_date and not match_time:
+                    tokens.append(Token(start_token, duration.end))
+                    continue
 
-                if range_match:
-                    tokens.append(Token(match.start(), duration.end))
-                break
+            #_past_regex = PreviousPrefixRegex
+
+            match = RegexExtension.match_end(self.config.past_regex, before_str, True)
+
+            index = -1
+
+            if match.success:
+                index = match.index
+
+            if index < 0:
+
+                match = RegexExtension.match_end(self.config.future_regex, before_str, True)
+
+                if match.success:
+                    index = match.index
+
+            if index >= 0:
+
+                prefix = before_str[0:index].strip()
+                duration_text = source[duration.start: duration.start + duration.end - duration.start]
+                numbers_in_prefix = self.config.cardinal_extractor.extract(prefix)
+                numbers_in_duration = self.config.cardinal_extractor.extract(duration_text)
+
+                if any(numbers_in_prefix) and not any(numbers_in_duration):
+
+                    last_number = sorted(numbers_in_prefix, key=lambda x: (x.start + x.end - x.start))[-1]
+
+                    if last_number.start + last_number.end - last_number.start == len(prefix):
+                        tokens.append(Token(last_number.start, duration.end))
+
+                else:
+                    tokens.append(Token(index, duration.end))
+
+                continue
+
+            match = RegexExtension.match_begin(self.config.past_regex, after_str, True)
+            if match.success:
+                tokens.append(Token(match.start(), duration.end + match.index + match.length))
+                continue
+
+            match = RegexExtension.match_begin(self.config.future_regex, after_str, True)
+            if match.success:
+                tokens.append(Token(match.start(), duration.end + match.index + match.length))
+                continue
+
+            match = RegexExtension.match_begin(self.config.future_suffix_regex, after_str, True)
+            if match.success:
+                tokens.append(Token(match.start(), duration.end + match.index + match.length))
+                continue
         return tokens
 
-    def single_time_point_with_patterns(self, source: str, reference: datetime) -> List[ExtractResult]:
-        tokens = []
-        ers = self.config.date_point_extractor.extract(source, reference)
+    def single_time_point_with_patterns(self, source: str, ordinal_extractions: [ExtractResult], reference: datetime) -> List[ExtractResult]:
+        ret = []
+        date_points = self.config.date_point_extractor.extract(source, reference)
 
-        if len(ers) < 1:
-            return tokens
+        date_points.extend(list(filter(lambda o: not any(list(filter(lambda x: x.overlap(o), date_points))),
+                                       ordinal_extractions)))
 
-        for er in ers:
-            if er.start and er.length:
-                before_str = source[0:er.start]
-                tokens += self.__get_token_for_regex_matching(
-                    before_str, self.config.week_of_regex, er)
-                tokens += self.__get_token_for_regex_matching(
-                    before_str, self.config.month_of_regex, er)
-        return tokens
+        if date_points.count() < 1:
+            return ret
+
+        for extraction_result in date_points:
+
+            if extraction_result.start is not None and extraction_result.length is not None:
+                before_string = source[0: extraction_result.start]
+                ret.extend(self.__get_token_for_regex_matching(before_string,
+                                                               self.config.week_of_regex, extraction_result))
+                ret.extend(self.__get_token_for_regex_matching(before_string,
+                                                               self.config.month_of_regex, extraction_result))
+
+                if self.is_relative_duration_date(extraction_result):
+                    ret.extend(self.__get_token_for_regex_matching(before_string,
+                                                                   self.config.less_than_regex, extraction_result))
+                    ret.extend(self.__get_token_for_regex_matching(before_string,
+                                                                   self.config.more_than_regex, extraction_result))
+
+                    if self.is_date_relative_to_now_or_today(extraction_result):
+
+                        match = self.config.within_next_prefix_regex.search(before_string)
+                        if match:
+
+                            is_next = not RegExpUtility.get_group(match, Constants.NextGroupName)
+
+                            if not is_next and self.is_ago_relative_duration_date(extraction_result) is not None:
+                                ret.extend(self.__get_token_for_regex_matching(
+                                    before_string,
+                                    self.config.within_next_prefix_regex,
+                                    extraction_result)
+                                )
+
+        return ret
+
+    def is_ago_relative_duration_date(self, er: ExtractResult):
+        return self.config.ago_regex.search(er.text)
+
+    def is_relative_duration_date(self, er: ExtractResult):
+
+        is_ago = self.config.ago_regex.search(er.text)
+        is_later = self.config.later_regex.search(er.text)
+
+        return is_ago or is_later
+
+    def is_date_relative_to_now_or_today(self, er: ExtractResult):
+        for flag_word in self.config.duration_date_restrictions:
+
+            if flag_word in er.text:
+                return True
+
+        return False
 
     def __match_regex_in_prefix(self, source: str, match: Match) -> bool:
         return match and not source[match.end():].strip()

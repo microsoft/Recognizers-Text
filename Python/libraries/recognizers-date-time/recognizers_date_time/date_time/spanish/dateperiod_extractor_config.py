@@ -87,6 +87,42 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     def now_regex(self) -> Pattern:
         return self._now_regex
 
+    @property
+    def future_suffix_regex(self) -> Pattern:
+        return self._future_suffix_regex
+
+    @property
+    def ago_regex(self) -> Pattern:
+        return self._ago_regex
+
+    @property
+    def later_regex(self) -> Pattern:
+        return self._later_regex
+
+    @property
+    def less_than_regex(self) -> Pattern:
+        return self._less_than_regex
+
+    @property
+    def more_than_regex(self) -> Pattern:
+        return self._more_than_regex
+
+    @property
+    def duration_date_restrictions(self) -> [str]:
+        return self._duration_date_restrictions
+
+    @property
+    def year_period_regex(self) -> Pattern:
+        return self._year_period_regex
+
+    @property
+    def month_num_regex(self) -> Pattern:
+        return self._month_num_regex
+
+    @property
+    def century_suffix_regex(self) -> Pattern:
+        return self._century_suffix_regex
+
     def __init__(self):
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.SimpleCasesRegex),
@@ -156,6 +192,31 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             SpanishDurationExtractorConfiguration())
         self._now_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.NowRegex)
+        self._future_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.FutureSuffixRegex
+        )
+        self._ago_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.AgoRegex
+        )
+        self._later_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.LaterRegex
+        )
+        self._less_than_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.LessThanRegex
+        )
+        self._more_than_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.MoreThanRegex
+        )
+        self._duration_date_restrictions = SpanishDateTime.DurationDateRestrictions
+        self._year_period_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.YearPeriodRegex
+        )
+        self._month_num_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.MonthNumRegex
+        )
+        self._century_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.CenturySuffixRegex
+        )
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)

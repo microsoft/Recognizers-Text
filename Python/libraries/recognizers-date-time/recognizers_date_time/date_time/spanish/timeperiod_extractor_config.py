@@ -36,6 +36,14 @@ class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
     def integer_extractor(self) -> Extractor:
         return self._integer_extractor
 
+    @property
+    def token_before_date(self) -> str:
+        return self._token_before_date
+
+    @property
+    def pure_number_regex(self) -> List[Pattern]:
+        return self._pure_number_regex
+
     def __init__(self):
         self._single_time_extractor = BaseTimeExtractor(
             SpanishTimeExtractorConfiguration())
@@ -60,6 +68,8 @@ class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
             SpanishDateTime.ConnectorAndRegex)
         self.between_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.BetweenRegex)
+        self._token_before_date = SpanishDateTime.TokenBeforeDate
+        self._pure_number_regex = [SpanishDateTime.PureNumFromTo, SpanishDateTime.PureNumFromTo]
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)

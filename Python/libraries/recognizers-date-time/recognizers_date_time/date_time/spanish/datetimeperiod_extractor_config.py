@@ -1,5 +1,6 @@
 from typing import List, Pattern
 
+from recognizers_text.extractor import Extractor
 from recognizers_number import BaseNumberExtractor, SpanishCardinalExtractor
 from recognizers_text.utilities import RegExpUtility
 from ...resources.spanish_date_time import SpanishDateTime
@@ -106,6 +107,18 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
     def middle_pause_regex(self) -> Pattern:
         return self._middle_pause_regex
 
+    @property
+    def within_next_prefix_regex(self) -> Pattern:
+        return self._within_next_prefix_regex
+
+    @property
+    def time_unit_regex(self) -> Pattern:
+        return self._time_unit_regex
+
+    @property
+    def cardinal_extractor(self) -> Extractor:
+        return self._cardinal_extractor
+
     def __init__(self):
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.PureNumFromTo),
@@ -162,6 +175,12 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
             SpanishDurationExtractorConfiguration())
         self._time_period_extractor = BaseTimePeriodExtractor(
             SpanishTimePeriodExtractorConfiguration())
+        self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.WithinNextPrefixRegex
+        )
+        self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.TimeUnitRegex
+        )
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)

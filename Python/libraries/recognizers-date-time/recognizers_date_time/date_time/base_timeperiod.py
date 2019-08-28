@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List, Optional, Pattern, Dict
+from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime, timedelta
 from collections import namedtuple
 import regex
@@ -11,12 +11,12 @@ from recognizers_date_time.date_time.base_time import BaseTimeExtractor, BaseTim
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, get_tokens_from_regex, DateTimeResolutionResult, DateTimeUtilityConfiguration, DateTimeFormatUtil, ResolutionStartEnd
+from .utilities import Token, merge_all_tokens, get_tokens_from_regex, DateTimeResolutionResult, DateTimeUtilityConfiguration, DateTimeFormatUtil, ResolutionStartEnd, DateTimeOptionsConfiguration, DateTimeOptions, TimeZoneUtility
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
 
-class TimePeriodExtractorConfiguration(ABC):
+class TimePeriodExtractorConfiguration(DateTimeOptionsConfiguration):
     @property
     @abstractmethod
     def simple_cases_regex(self) -> List[Pattern]:
@@ -59,6 +59,16 @@ class TimePeriodExtractorConfiguration(ABC):
     def has_connector_token(self, source: str) -> bool:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def token_before_date(self) -> str:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def pure_number_regex(self) -> List[Pattern]:
+        raise NotImplementedError
+
 
 class BaseTimePeriodExtractor(DateTimeExtractor):
     @property
@@ -76,22 +86,84 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
         tokens.extend(self.merge_two_time_points(source, reference))
         tokens.extend(self.match_night(source))
 
+        if (self.config.options & DateTimeOptions.CALENDAR) != 0:
+            tokens.extend(self.match_pure_number_cases(source))
+
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
+
+        if (self.config.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
+            # When TimeZone be migrated enable it
+            pass
+
+        if source == 'morgen':
+            result = []
+
         return result
+
+    def match_pure_number_cases(self, text):
+        ret = []
+
+        for regexp in self.config.pure_number_regex:
+
+            matches = regexp.search(text)
+            for match in matches:
+                after_str = text[text.index(match.group()) + (match.end() - match.start()):]
+                ending_match = self.config.general_ending_regex.search(after_str)
+                if ending_match:
+                    ret.append(Token(text.index(match.group()),
+                                     text.index(match.group()) + (match.end() - match.start())))
+        return ret
 
     def match_simple_cases(self, source: str) -> List[Token]:
         result: List[Token] = list()
 
-        for pattern in self.config.simple_cases_regex:
-            for match in regex.finditer(pattern, source):
-                pm = RegExpUtility.get_group(match, 'pm')
-                am = RegExpUtility.get_group(match, 'am')
-                desc = RegExpUtility.get_group(match, 'desc')
+        for regexp in self.config.simple_cases_regex:
+            matches: [Match] = regexp.search(source)
 
-                if pm or am or desc:
-                    result.append(Token(match.start(), match.end()))
+            for match in matches:
+
+                if RegExpUtility.get_group(match, Constants.MinuteGroupName) or RegExpUtility.get_group(match, Constants.SecondGroupName):
+
+                    end_with_valid_token = True
+                    if (source.index(match.group()) + (match.end() - match.start())) == len(source):
+                        end_with_valid_token = True
+
+                    else:
+                        after_str = source[source.index(match.group()) + (match.end() - match.start())]
+
+                        end_with_general_endings = self.config.general_ending_regex.match(after_str)
+                        end_with_am_pm = RegExpUtility.get_group(match, Constants.RightAmPmGroupName)
+
+                        if end_with_general_endings or end_with_am_pm or after_str.lstrip().startswith(self.config.token_before_date):
+                            end_with_valid_token = True
+                        elif (self.config.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
+                            #When TimeZone be migrated enable it
+                            end_with_valid_token = False
+
+                    if end_with_valid_token:
+                        result.append(Token(source.index(match.group()), source.index(match.group()) + (match.end() - match.start())))
+                else:
+                    match_pm_str = RegExpUtility.get_group(match, Constants.PmGroupName)
+                    match_am_str = RegExpUtility.get_group(match, Constants.AmGroupName)
+                    desc_str = RegExpUtility.get_group(match, Constants.DescGroupName)
+
+                    if not match_pm_str or not match_am_str or not desc_str:
+                        result.append(Token(source.index(match.group()), source.index(match.group()) + (match.end() - match.start())))
+                    else:
+                        after_str = source[source.index(match.group()) + (match.end() - match.start()):]
+
+                        # When TimeZone be migrated enable it
+                        if (self.config.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
+                            result.append(Token(source.index(match.group()),
+                                                source.index(match.group()) + (match.end() - match.start())))
 
         return result
+
+    def starts_with_time_zone(self, after_text: str):
+        # it needs TimeZone
+        starts_with_time_zone = False
+
+        time_zone_ers = self.config.time
 
     def merge_two_time_points(self, source: str, reference: datetime) -> List[Token]:
         result: List[Token] = list()
