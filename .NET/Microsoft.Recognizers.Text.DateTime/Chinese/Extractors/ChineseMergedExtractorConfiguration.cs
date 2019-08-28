@@ -61,9 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             AddTo(ret, SetExtractor.Extract(text, referenceTime));
             AddTo(ret, HolidayExtractor.Extract(text, referenceTime));
 
-            CheckDenyList(ref ret, text);
-
-            ret = FilterAmbiguity(ret, text);
+            ret = CheckDenyList(ret, text);
 
             AddMod(ret, text);
 
@@ -90,7 +88,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // add some negative case
-        private static void CheckDenyList(ref List<ExtractResult> extractResults, string text)
+        private List<ExtractResult> CheckDenyList(List<ExtractResult> extractResults, string text)
         {
             var ret = new List<ExtractResult>();
 
@@ -111,7 +109,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.Add(extractResult);
             }
 
-            extractResults = ret;
+            ret = FilterAmbiguity(ret, text);
+
+            return ret;
         }
 
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
