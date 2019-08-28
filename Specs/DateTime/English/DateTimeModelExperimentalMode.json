@@ -3668,7 +3668,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "between 3 and 5 on 1/1/2015",
@@ -3688,6 +3687,65 @@
               "type": "datetimerange",
               "start": "2015-01-01 15:00:00",
               "end": "2015-01-01 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "He will come after his parents after 2016 and before 2018, or before 2019",
+    "Context": {
+      "ReferenceDateTime": "2015-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "after 2016",
+        "Start": 31,
+        "End": 40,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2017-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "before 2018",
+        "Start": 46,
+        "End": 56,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "before 2019",
+        "Start": 62,
+        "End": 72,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2019-01-01"
             }
           ]
         }
@@ -3730,7 +3788,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "before 2010",
@@ -3773,7 +3830,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "after 2010",

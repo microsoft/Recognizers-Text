@@ -2415,7 +2415,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "later than 1/1/2016",
@@ -2441,7 +2440,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "1/1/2016",
@@ -2491,7 +2489,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "before 1/1/2016",
@@ -2543,7 +2540,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "1/1/2016",
@@ -2567,7 +2563,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "earlier than 1/1/2016",
@@ -2619,7 +2614,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "before Feb 2018",
@@ -2645,7 +2639,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Feb 2018",
@@ -2696,7 +2689,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "later than 2016",
@@ -2722,7 +2714,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2016",
@@ -2773,7 +2764,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "after 6:30PM today",
@@ -2799,7 +2789,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "6:30PM today",
@@ -2849,7 +2838,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the day after tomorrow",
@@ -2873,7 +2861,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "before the day after tomorrow",
@@ -2925,7 +2912,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "earlier than 3pm 5/15/2018",
@@ -2951,7 +2937,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "3pm 5/15/2018",
@@ -2975,7 +2960,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "two days after today",
@@ -3047,7 +3031,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "before 2010",
@@ -3090,7 +3073,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "after 2010",
@@ -4358,6 +4340,65 @@
         },
         "Start": 14,
         "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "He will leave after 2016 and before 2018, or before 2019",
+    "Context": {
+      "ReferenceDateTime": "2015-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "after 2016",
+        "Start": 14,
+        "Length": 10,
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2017-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "before 2018",
+        "Start": 29,
+        "Length": 11,
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "before 2019",
+        "Start": 45,
+        "Length": 11,
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2019",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2019-01-01"
+            }
+          ]
+        }
       }
     ]
   }
