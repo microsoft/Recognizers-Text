@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Start -= modLength;
                 er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
 
-                AssignModMetadata(er);
+                er.Metadata = AssignModMetadata(er.Metadata);
 
                 return true;
             }
@@ -142,16 +142,18 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private void AssignModMetadata(ref ExtractResult er)
+        private Metadata AssignModMetadata(Metadata metadata)
         {
-            if (er.Metadata == null)
+            if (metadata == null)
             {
-                er.Metadata = new Metadata { HasMod = true };
+                metadata = new Metadata { HasMod = true };
             }
             else
             {
-                er.Metadata.HasMod = true;
+                metadata.HasMod = true;
             }
+
+            return metadata;
         }
 
         private bool IsFailFastCase(string input)
@@ -364,7 +366,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var modLength = match.Length + afterStr.IndexOf(match.Value, StringComparison.Ordinal);
                             er.Length += modLength;
                             er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
-                            AssignModMetadata(er);
+
+                            er.Metadata = AssignModMetadata(er.Metadata);
                         }
                     }
                 }
