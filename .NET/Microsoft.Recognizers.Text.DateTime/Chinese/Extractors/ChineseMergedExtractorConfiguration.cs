@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             AddTo(ret, SetExtractor.Extract(text, referenceTime));
             AddTo(ret, HolidayExtractor.Extract(text, referenceTime));
 
-            ret = CheckDenyList(ret, text);
+            ret = FilterAmbiguity(ret, text);
 
             AddMod(ret, text);
 
@@ -87,79 +87,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return tempDst;
         }
 
-        // add some negative case
-        private List<ExtractResult> CheckDenyList(List<ExtractResult> extractResults, string text)
-        {
-            var ret = new List<ExtractResult>();
-
-            foreach (var extractResult in extractResults)
-            {
-                var endIndex = (int)extractResult.Start + (int)extractResult.Length;
-                if (endIndex != text.Length)
-                {
-                    var tmpChar = text.Substring(endIndex, 1);
-
-                    // for cases like "12周岁"
-                    if (extractResult.Text.EndsWith("周") && endIndex < text.Length && tmpChar.Equals("岁"))
-                    {
-                        continue;
-                    }
-
-                    if (endIndex <= (text.Length - 2))
-                    {
-                        tmpChar = text.Substring(endIndex, 2);
-
-                        // for case "今日头条"
-                        if (extractResult.Text.Equals("今日") && endIndex < text.Length && tmpChar.Equals("头条"))
-                        {
-                            continue;
-                        }
-                    }
-
-                    if (extractResult.Start != 0 && endIndex <= (text.Length - 3))
-                    {
-                        var preTempChar = text.Substring((int)extractResult.Start - 1, 1);
-                        var sufTempChar = text.Substring(endIndex, 3);
-
-                        // for case "《明日之后》"
-                        if (extractResult.Text.Equals("明日") && endIndex < text.Length &&
-                            preTempChar.Equals("《") && sufTempChar.Equals("之后》"))
-                        {
-                            continue;
-                        }
-                    }
-                }
-
-                ret.Add(extractResult);
-            }
-
-            ret = FilterAmbiguity(ret, text);
-
-            return ret;
-        }
-
+        // Filter some bad cases like "十二周岁" and "12号", etc.
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
         {
-            var ambiguityResults = new List<ExtractResult>();
-
             if (this.AmbiguityFiltersDict != null)
             {
                 foreach (var regex in this.AmbiguityFiltersDict)
                 {
                     if (regex.Key.IsMatch(text))
                     {
-                        foreach (var extractResult in extractResults)
-                        {
-                            if (regex.Value.IsMatch(extractResult.Text))
-                            {
-                                ambiguityResults.Add(extractResult);
-                            }
-                        }
+                        var matches = regex.Value.Matches(text).Cast<Match>();
+                        extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start)).ToList();
                     }
                 }
             }
 
-            extractResults = extractResults.Except(ambiguityResults).ToList();
             return extractResults;
         }
 
