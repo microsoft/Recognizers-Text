@@ -94,10 +94,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 foreach (var regex in this.AmbiguityFiltersDict)
                 {
-                    if (regex.Key.IsMatch(text))
+                    foreach (var extractResult in extractResults)
                     {
-                        var matches = regex.Value.Matches(text).Cast<Match>();
-                        extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start)).ToList();
+                        if (regex.Key.IsMatch(extractResult.Text))
+                        {
+                            var matches = regex.Value.Matches(text).Cast<Match>();
+                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                                .ToList();
+                        }
                     }
                 }
             }
