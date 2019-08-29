@@ -664,7 +664,6 @@
   },
   {
     "Input": "1995 में कैनन ने आंतरिक छवि स्थिरीकरण के साथ पहला व्यावसायिक रूप से उपलब्ध एसएलआर लेंस, 75-300 मिमी एफ / 4 - 5 पेश किया। 6 usm है।",
-    "NotSupported": "java, javascript",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -832,25 +831,7 @@
     ]
   },
   {
-    "Input": "इस फ़ाइल का आकार 100 एमबी है",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "100 एमबी",
-        "TypeName": "dimension",
-        "Resolution": {
-          "unit": "Megabyte",
-          "value": "100"
-        },
-        "Start": 17,
-        "End": 24
-      }
-    ]
-  },
-  {
     "Input": "मैं आपको 2:00 बजे एक सरप्राइज दूंगा",
-    "NotSupported": "python, java",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
@@ -884,7 +865,6 @@
   },
   {
     "Input": "वह एक मील दे सकता है।",
-    "NotSupported": "javascript, python, java",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -902,7 +882,6 @@
   },
   {
     "Input": "मैं थक गया हूँ",
-    "NotSupported": "javascript, python, java",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []

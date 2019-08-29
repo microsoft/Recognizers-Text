@@ -256,7 +256,6 @@
   },
   {
     "Input": "वह लगभग 40 - 50 साल का है।",
-    "NotSupported": "javascript, java",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [

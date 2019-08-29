@@ -1607,7 +1607,6 @@
   },
   {
     "Input": "डॉलर : 143.80 येन , 0 . 95 ऊपर ; 1 . 8500 मार्क , 0 . 0085 ऊपर.",
-    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1636,7 +1635,6 @@
   },
   {
     "Input": "इसकी कीमत केवल 3 डॉलर 50 सेंट है।",
-    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1654,7 +1652,6 @@
   },
   {
     "Input": "इसकी कीमत केवल तेरह डॉलर और पैंतालीस सेंट है",
-    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1672,7 +1669,6 @@
   },
   {
     "Input": "इसमें केवल तेरह डॉलर पैंतालीस सेंट की लागत थी",
-    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1690,7 +1686,6 @@
   },
   {
     "Input": "इसमें केवल तेरह डॉलर पैंतालीस की लागत थी",
-    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1708,7 +1703,6 @@
   },
   {
     "Input": "इसकी कीमत आपको 10 अमेरिकी डॉलर और मेरे लिए 100 चीनी युआन है।",
-    "NotSupported": "javascript",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1738,7 +1732,6 @@
   },
   {
     "Input": "इसकी कीमत आपको 10 अमेरिकी डॉलर और मेरे लिए $ 100 और पचास है।",
-    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1768,7 +1761,6 @@
   },
   {
     "Input": "इसमें एक कुआई और पांच माओ पांच की जरूरत पड़ सकती है।",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1787,7 +1779,6 @@
   },
   {
     "Input": "अरे, लागत $4.25 है और 32 मात्रा है!",
-    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
