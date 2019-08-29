@@ -104,12 +104,6 @@ public class NumberExtractor extends BaseNumberExtractor {
 
         HashMap<Pattern, Pattern> ambiguityFiltersDict = new HashMap<>();
         if (mode != NumberMode.Unit) {
-            for (Map.Entry<String, String> pair : BaseNumbers.AmbiguityFiltersDict.entrySet()) {
-                Pattern key = RegExpUtility.getSafeRegExp(pair.getKey());
-                Pattern val = RegExpUtility.getSafeRegExp(pair.getValue());
-                ambiguityFiltersDict.put(key, val);
-            }
-
             for (Map.Entry<String, String> pair : EnglishNumeric.AmbiguityFiltersDict.entrySet()) {
                 Pattern key = RegExpUtility.getSafeRegExp(pair.getKey());
                 Pattern val = RegExpUtility.getSafeRegExp(pair.getValue());

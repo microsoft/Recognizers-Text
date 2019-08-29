@@ -876,9 +876,9 @@ public class ChineseDateTime {
         .put("早", "(?<!今|明|日|号)早(?!上)")
         .put("晚", "(?<!今|明|昨|傍|夜|日|号)晚(?!上)")
         .put("^\\d{1,2}号", "^\\d{1,2}号")
-        .put("周", "周(?=岁)")
-        .put("今日", "今日(?=头条)")
-        .put("明日", "(?<=《)明日(?=之后》)")
+        .put("周", "周岁")
+        .put("今日", "今日头条")
+        .put("明日", "《明日之后》")
         .build();
 
     public static final ImmutableMap<String, Integer> DurationUnitValueMap = ImmutableMap.<String, Integer>builder()

@@ -51,14 +51,8 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 
             var ambiguityBuilder = ImmutableDictionary.CreateBuilder<Regex, Regex>();
 
-            // Do not filter the ambiguous number cases like '$2000' in NumberWithUnit, otherwise they can't be resolved.
             if (mode != NumberMode.Unit)
             {
-                foreach (var item in BaseNumbers.AmbiguityFiltersDict)
-                {
-                    ambiguityBuilder.Add(new Regex(item.Key, RegexFlags), new Regex(item.Value, RegexFlags));
-                }
-
                 foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
                 {
                     ambiguityBuilder.Add(new Regex(item.Key, RegexFlags), new Regex(item.Value, RegexFlags));
