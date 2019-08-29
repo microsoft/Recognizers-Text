@@ -2136,5 +2136,20 @@
     "Input": "10.000tl",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
+  },
+  {
+    "Input": "1. sırada",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1",
+        "Start": 0,
+        "End": 0,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
   }
 ]

@@ -124,10 +124,10 @@ AboveTrillionOrdinalRegex: !nestedRegex
   def: ({TrillionsNumberIntegerRegex}\s({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex}|{BillionToTrillionOrdinalRegex})|{TrillionsOrdinalRegex})
   references: [TrillionsNumberIntegerRegex, OneToHundredOrdinalRegex, HundredToThousandOrdinalRegex, ThousandToMillionOrdinalRegex, MillionToBillionOrdinalRegex, BillionToTrillionOrdinalRegex, TrillionsOrdinalRegex]
 RelativeOrdinalRegex: !simpleRegex
-  def: ((bir\s)?(sonraki|önceki)|sondan birinci|sondan bir önceki|sondan ikinci|(en\s)?son)
+  def: (?<relativeOrdinal>(bir\s+)?(sonraki|önceki)|sondan\s+birinci|sondan\s+bir\s+önceki|sondan\s+ikinci|(en\s+)?son|[iİ]lki|sonuncu(su)?|şimdiki)
 AllOrdinalRegex: !nestedRegex
-  def: ({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex}|{BillionToTrillionOrdinalRegex}|{AboveTrillionOrdinalRegex})
-  references: [OneToHundredOrdinalRegex, HundredToThousandOrdinalRegex, ThousandToMillionOrdinalRegex, MillionToBillionOrdinalRegex, BillionToTrillionOrdinalRegex, AboveTrillionOrdinalRegex]
+  def: ({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex}|{BillionToTrillionOrdinalRegex}|{AboveTrillionOrdinalRegex}|{RelativeOrdinalRegex})
+  references: [OneToHundredOrdinalRegex, HundredToThousandOrdinalRegex, ThousandToMillionOrdinalRegex, MillionToBillionOrdinalRegex, BillionToTrillionOrdinalRegex, AboveTrillionOrdinalRegex, RelativeOrdinalRegex]
 AllOrdinalSuffix: !simpleRegex
   def: (onu(?=nda)?|yirmisi(?=nde)?|otuzu(?=nda)?|kırkı(?=nda)?|ellisi(?=nde)?|altmışı(?=nda)?|yetmişi(?=nde)?|sekseni(?=nde)?|doksanı(?=nda)?|((on|yirmi|otuz)\s+)?(biri(?=nde)?|ilk|ikisi(?=nde)?|üçü(?=nde)?|dördü(?=nde)?|beşi(?=nde)?|altısı(?=nda)?|yedisi(?=nde)?|sekizi(?=nde)?|dokuzu(?=nda)?))
 OrdinalSuffixRegex: !simpleRegex
@@ -394,6 +394,12 @@ RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
   entries:
     en son: 0
+    son: 0
+    sonuncu: 0
+    sonuncusu: 0
+    şimdiki: 0
+    ilki: 0
+    İlki: 0
     bir sonraki: 1
     bir önceki: -1
     sondan ikinci: -1
@@ -405,12 +411,17 @@ RelativeReferenceRelativeToMap: !dictionary
   types: [ string, string ]
   entries:
     en son: end
+    son: end
+    sonuncu: end
+    sonuncusu: end
+    şimdiki: current
+    ilki: current
+    İlki: current
     bir sonraki: current
     bir önceki: current
     sondan birinci: end
     en sondan bir önceki: end
     sondan bir önceki: end
-    the last but one: end
     sondan ikinci: end
     sonraki: current
     önceki: current
