@@ -574,8 +574,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"晚", @"(?<!今|明|昨|傍|夜|日|号)晚(?!上)" },
             { @"^\d{1,2}号", @"^\d{1,2}号" },
             { @"周", @"周(?=岁)" },
-            { @"今日", @"今日(?=头条)"},
-            { @"明日", @"(?<=《)明日(?=之后》)"}
+            { @"今日", @"今日(?=头条)" },
+            { @"明日", @"(?<=《)明日(?=之后》)" }
         };
       public static readonly Dictionary<string, int> DurationUnitValueMap = new Dictionary<string, int>
         {

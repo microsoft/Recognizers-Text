@@ -22,6 +22,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -101,25 +102,27 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
         return this.extract(input, LocalDateTime.now());
     }
 
-    private List<ExtractResult> filterAmbiguity(List<ExtractResult> ers, String input) {
+    private ArrayList<ExtractResult> filterAmbiguity(ArrayList<ExtractResult> extractResults, String input) {
         if (config.getAmbiguityFiltersDict() != null) {
-            for (Pair<Pattern, Pattern> pair : config.getAmbiguityFiltersDict()) {
-                final Pattern key = pair.getValue0();
-                final Pattern value = pair.getValue1();
+            for (Map.Entry<Pattern, Pattern> pair : config.getAmbiguityFiltersDict().entrySet()) {
+                final Pattern key = pair.getKey();
+                final Pattern value = pair.getValue();
 
-                Optional<Match> keyMatch = Arrays.stream(RegExpUtility.getMatches(key, input)).findFirst();
-                if (keyMatch.isPresent()) {
-                    final Match[] matches = RegExpUtility.getMatches(value, input);
-                    List<ExtractResult> newErs = ers.stream()
+                for (ExtractResult extractResult : extractResults){
+                    Optional<Match> keyMatch = Arrays.stream(RegExpUtility.getMatches(key, extractResult.getText())).findFirst();
+                    if (keyMatch.isPresent()) {
+                        final Match[] matches = RegExpUtility.getMatches(value, input);
+                        List<ExtractResult> newErs = extractResults.stream()
                             .filter(er -> Arrays.stream(matches).noneMatch(m -> m.index < er.getStart() + er.getLength() && m.index + m.length > er.getStart()))
                             .collect(Collectors.toList());
-                    ers.clear();
-                    ers.addAll(newErs);
+                        extractResults.clear();
+                        extractResults.addAll(newErs);
+                    }
                 }
             }
         }
 
-        return ers;
+        return extractResults;
     }
 
     private void addTo(List<ExtractResult> dst, List<ExtractResult> src, String text) {
