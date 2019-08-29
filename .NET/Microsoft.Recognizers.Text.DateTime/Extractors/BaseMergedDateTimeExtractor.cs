@@ -56,6 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Length += modLength;
                 er.Start -= modLength;
                 er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
                 AssignModMetadata(er);
 
                 return true;
@@ -141,7 +142,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private void AssignModMetadata(ExtractResult er)
+        private void AssignModMetadata(ref ExtractResult er)
         {
             if (er.Metadata == null)
             {
@@ -314,9 +315,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     success = TryMergeModifierToken(er, config.AfterRegex, text);
                 }
 
-                // The SinceRegex contains potential ambiguity part("from"), so the parameter potentialAmbiguity is true.
                 if (!success)
                 {
+                    // SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
                     success = TryMergeModifierToken(er, config.SinceRegex, text, potentialAmbiguity: true);
                 }
 
