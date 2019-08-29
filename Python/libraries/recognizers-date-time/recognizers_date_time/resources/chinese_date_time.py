@@ -521,9 +521,12 @@ class ChineseDateTime:
     DateTimePeriodAFRegex = f'(下午|午后|傍晚)'
     DateTimePeriodEVRegex = f'(晚上|夜里|夜晚|晚)'
     DateTimePeriodNIRegex = f'(半夜|夜间|深夜)'
-    AmbiguityFiltersDict = dict([("早", "^早$"),
-                                 ("晚", "^晚$"),
-                                 ("^\\d{1,2}号", "^\\d{1,2}号")])
+    AmbiguityFiltersDict = dict([("早", "(?<!今|明|日|号)早(?!上)"),
+                                 ("晚", "(?<!今|明|昨|傍|夜|日|号)晚(?!上)"),
+                                 ("^\\d{1,2}号", "^\\d{1,2}号"),
+                                 ("周", "周(?=岁)"),
+                                 ("今日", "今日(?=头条)"),
+                                 ("明日", "(?<=《)明日(?=之后》)")])
     DurationUnitValueMap = dict([("Y", 31536000),
                                  ("Mon", 2592000),
                                  ("W", 604800),
