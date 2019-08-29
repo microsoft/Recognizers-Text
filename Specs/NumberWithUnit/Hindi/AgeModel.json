@@ -1,6 +1,7 @@
 [
   {
     "Input": "जब वह पांच वर्ष की थी, उसने बाइक चलाना सीख लिया था।",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
