@@ -150,7 +150,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"Nicaraguan córdoba", @"nikaragua kordobası|nio|nikaragua kordobasına|nikaragua kordobasında|nikaragua kordobasından|nikaragua kordobasını|nikaragua kordobasının|nikaragua kordobasıdır|nikaragua kordobasıydı|nikaragua kordobasıymış" },
             { @"Nigerian naira", @"nijerya nairası|naira|ngn|₦|nijerya nairasına|nijerya nairasında|nijerya nairasından|nijerya nairasını|nijerya nairasının|nijerya nairasıdır|nijerya nairasıydı|nijerya nairasıymış" },
             { @"Kobo", @"kobo" },
-            { @"Turkish lira", @"türk lirası|try|tl|türk lirasına|türk lirasında|türk lirasından|türk lirasını|türk lirasının|türk lirasıdır|türk lirasıydı|türk lirasıymış" },
+            { @"Turkish lira", @"türk lirası|try|tl|türk lirasına|türk lirasında|türk lirasından|türk lirasını|türk lirasının|türk lirasıdır|türk lirasıydı|türk lirasıymış|lira|lirası|lirasına|lirasında|lirasından" },
             { @"Kuruş", @"kuruş|kuruşa|kuruşta||kuruştan|kuruşu|kuruşun|kuruştur|kuruştu|kuruşmuş" },
             { @"Omani rial", @"umman riyali|omr|ر.ع.|umman riyaline|umman riyalinde|umman riyalinden|umman riyalini|umman riyalinin|umman riyalidir|umman riyaliydi|umman riyaliymiş" },
             { @"Panamanian balboa", @"panama balboası|b/.|pab|panama balboasına|panama balboasında|panama balboasından|panama balboasını|panama balboasının|panama balboasıdır|panama balboasıydı|panama balboasıymış" },
