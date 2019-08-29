@@ -80,6 +80,26 @@ class SpanishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
         return self._utility_configuration
 
+    @property
+    def number_as_time_regex(self) -> Pattern:
+        return self._number_as_time_regex
+
+    @property
+    def date_number_connector_regex(self) -> Pattern:
+        return self._date_number_connector_regex
+
+    @property
+    def suffix_after_regex(self) -> Pattern:
+        return self._suffix_after_regex
+
+    @property
+    def year_suffix(self) -> Pattern:
+        return self._year_suffix
+
+    @property
+    def year_regex(self) -> Pattern:
+        return self._year_regex
+
     def __init__(self):
         self.preposition_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.PrepositionRegex)
@@ -110,6 +130,20 @@ class SpanishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
             SpanishDateTime.ConnectorRegex)
         self._night_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.TimeOfDayRegex)
+        self._number_as_time_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.NumberAsTimeRegex)
+        self._date_number_connector_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.DateNumberConnectorRegex
+        )
+        self._suffix_after_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.SuffixAfterRegex
+        )
+        self._year_suffix = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.YearSuffix
+        )
+        self._year_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.YearRegex
+        )
 
         self._date_point_extractor = BaseDateExtractor(
             SpanishDateExtractorConfiguration())
@@ -120,4 +154,5 @@ class SpanishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         self._utility_configuration = SpanishDateTimeUtilityConfiguration()
 
     def is_connector_token(self, source: str) -> bool:
-        return source.strip() == '' or regex.search(self.connector_regex, source) is not None or regex.search(self.preposition_regex, source) is not None
+        return source.strip() == '' or regex.search(self.connector_regex, source) is not None or regex.search(
+            self.preposition_regex, source) is not None

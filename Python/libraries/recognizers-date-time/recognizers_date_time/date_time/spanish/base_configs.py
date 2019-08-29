@@ -41,6 +41,10 @@ class SpanishDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
     def within_next_prefix_regex(self) -> Pattern:
         return self._within_next_prefix_regex
 
+    @property
+    def common_date_prefix_regex(self) -> Pattern:
+        return self._common_date_prefix_regex
+
     def __init__(self):
         self._later_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.LaterRegex)
@@ -60,3 +64,5 @@ class SpanishDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
             SpanishDateTime.TimeUnitRegex)
         self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.WithinNextPrefixRegex)
+        self._common_date_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.CommonDatePrefixRegex)

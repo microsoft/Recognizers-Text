@@ -45,6 +45,10 @@ class EnglishDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
     def within_next_prefix_regex(self) -> Pattern:
         return self._within_next_prefix_regex
 
+    @property
+    def common_date_prefix_regex(self) -> Pattern:
+        return self._common_date_prefix_regex
+
     def __init__(self):
         self._later_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.LaterRegex)
@@ -64,3 +68,5 @@ class EnglishDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
             EnglishDateTime.TimeUnitRegex)
         self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.WithinNextPrefixRegex)
+        self._common_date_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.CommonDatePrefixRegex)

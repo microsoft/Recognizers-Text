@@ -514,6 +514,11 @@ class DateTimeUtilityConfiguration(ABC):
     def within_next_prefix_regex(self) -> Pattern:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def common_date_prefix_regex(self) -> Pattern:
+        raise NotImplementedError
+
 
 class MatchedIndex:
     def __init__(self, matched: bool, index: int):

@@ -119,6 +119,42 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
     def cardinal_extractor(self) -> Extractor:
         return self._cardinal_extractor
 
+    @property
+    def token_before_date(self) -> str:
+        return self._token_before_date
+
+    @property
+    def within_next_prefix_regex(self) -> Pattern:
+        return self._within_next_prefix_regex
+
+    @property
+    def future_suffix_regex(self) -> Pattern:
+        return self._future_suffix_regex
+
+    @property
+    def date_unit_regex(self) -> Pattern:
+        return self._date_unit_regex
+
+    @property
+    def am_desc_regex(self) -> Pattern:
+        return self._am_desc_regex
+
+    @property
+    def pm_desc_regex(self) -> Pattern:
+        return self._pm_desc_regex
+
+    @property
+    def prefix_day_regex(self) -> Pattern:
+        return self._prefix_day_regex
+
+    @property
+    def before_regex(self) -> Pattern:
+        return self._before_regex
+
+    @property
+    def after_regex(self) -> Pattern:
+        return self._after_regex
+
     def __init__(self):
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.PureNumFromTo),
@@ -180,6 +216,32 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         )
         self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.TimeUnitRegex
+        )
+        self._token_before_date = SpanishDateTime.TokenBeforeDate
+        self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.WithinNextPrefixRegex
+        )
+        self._future_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.FutureSuffixRegex
+        )
+        self._date_unit_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.DateUnitRegex
+        )
+        self._am_desc_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.AmDescRegex
+        )
+        self._pm_desc_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.PmDescRegex
+        )
+        self._prefix_day_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.PrefixDayRegex
+        )
+
+        self._before_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.BeforeRegex
+        )
+        self._after_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.AfterRegex
         )
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
