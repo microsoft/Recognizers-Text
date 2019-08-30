@@ -2551,7 +2551,6 @@
   },
   {
     "Input": "2000 over 3",
-    "NotSupported":  "Python",
     "Results": [
       {
         "Text": "2000 over 3",
