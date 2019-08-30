@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Definitions.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
@@ -33,8 +34,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             this.config = config;
 
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
             HolidayExtractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration(config));
         }
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
         private BaseHolidayExtractor HolidayExtractor { get; }
 
@@ -57,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             AddTo(ret, SetExtractor.Extract(text, referenceTime));
             AddTo(ret, HolidayExtractor.Extract(text, referenceTime));
 
-            CheckBlackList(ref ret, text);
+            ret = CheckDenyList(ret, text);
 
             AddMod(ret, text);
 
@@ -84,10 +88,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // add some negative case
-        private static void CheckBlackList(ref List<ExtractResult> extractResults, string text)
+        private List<ExtractResult> CheckDenyList(List<ExtractResult> extractResults, string text)
         {
             var ret = new List<ExtractResult>();
-            const string negativeCaseRegex = @"^\d{1,2}号";
 
             foreach (var extractResult in extractResults)
             {
@@ -103,16 +106,37 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     }
                 }
 
-                // for cases like "12号"
-                if (Regex.IsMatch(extractResult.Text, negativeCaseRegex))
-                {
-                    continue;
-                }
-
                 ret.Add(extractResult);
             }
 
-            extractResults = ret;
+            ret = FilterAmbiguity(ret, text);
+
+            return ret;
+        }
+
+        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
+        {
+            var ambiguityResults = new List<ExtractResult>();
+
+            if (this.AmbiguityFiltersDict != null)
+            {
+                foreach (var regex in this.AmbiguityFiltersDict)
+                {
+                    if (regex.Key.IsMatch(text))
+                    {
+                        foreach (var extractResult in extractResults)
+                        {
+                            if (regex.Value.IsMatch(extractResult.Text))
+                            {
+                                ambiguityResults.Add(extractResult);
+                            }
+                        }
+                    }
+                }
+            }
+
+            extractResults = extractResults.Except(ambiguityResults).ToList();
+            return extractResults;
         }
 
         private void AddMod(List<ExtractResult> ers, string text)

@@ -28,6 +28,18 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Semana", @"semanas|semana" },
             { @"Dia", @"dias|dia" }
         };
+      public static readonly IList<string> AmbiguousAgeUnitList = new List<string>
+        {
+            @"anos",
+            @"ano",
+            @"meses",
+            @"mes",
+            @"mês",
+            @"semanas",
+            @"semana",
+            @"dias",
+            @"dia"
+        };
       public static readonly Dictionary<string, string> AreaSuffixList = new Dictionary<string, string>
         {
             { @"Quilômetro quadrado", @"quilômetro quadrado|quilómetro quadrado|quilometro quadrado|quilômetros quadrados|quilómetros quadrados|quilomeros quadrados|km2|km^2|km²" },

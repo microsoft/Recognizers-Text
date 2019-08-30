@@ -15,6 +15,10 @@ from recognizers_number_with_unit.resources.base_units import BaseUnits
 # pylint: disable=abstract-method
 class PortugueseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfiguration):
     @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return None
+
+    @property
     def unit_num_extractor(self) -> Extractor:
         return self._unit_num_extractor
 
@@ -79,7 +83,7 @@ class PortugueseAgeExtractorConfiguration(PortugueseNumberWithUnitExtractorConfi
         super().__init__(culture_info)
         self._suffix_list = PortugueseNumericWithUnit.AgeSuffixList
         self._prefix_list = dict()
-        self._ambiguous_unit_list = list()
+        self._ambiguous_unit_list = PortugueseNumericWithUnit.AmbiguousAgeUnitList
 
 
 class PortugueseCurrencyExtractorConfiguration(PortugueseNumberWithUnitExtractorConfiguration):

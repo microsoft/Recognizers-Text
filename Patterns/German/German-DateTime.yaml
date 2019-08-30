@@ -205,6 +205,8 @@ MonthEnd: !nestedRegex
 WeekDayEnd: !nestedRegex
   def: '{WeekDayRegex}\s*,?\s*$'
   references: [ WeekDayRegex ]
+WeekDayStart: !simpleRegex
+  def: ^[\.]
 RangeUnitRegex: !simpleRegex
   def: (?<unit>jahren?|jahr|monaten?|monat|wochen?|tagen?|tag)
 OclockRegex: !simpleRegex
@@ -236,7 +238,7 @@ WrittenTimeRegex: !nestedRegex
   def: (um\s*)?(?<writtentime>{HourNumRegex}(\s*{OclockRegex}\s*)({MinuteNumRegex}|{MinuteNumRegex}und(?<tens>zwanzig|dreißig|vierzig|fünfzig)))
   references: [ HourNumRegex, MinuteNumRegex , OclockRegex]
 TimePrefix: !nestedRegex
-  def: (?<prefix>(um\s*)?({LessThanOneHour})(\s*(vor\W|nach\W))?)
+  def: (?<prefix>({LessThanOneHour})(\s*(vor\W|nach\W))?)
   references: [ LessThanOneHour ]
 TimeSuffix: !nestedRegex
   def: (?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})
@@ -279,10 +281,10 @@ ConnectNumRegex: !nestedRegex
   def: '{BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex}'
   references: [ BaseDateTime.HourRegex, DescRegex ]
 TimeRegex1: !nestedRegex
-  def: ({TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}\b)\s*{DescRegex}
+  def: ({TimePrefix}\s+)?({WrittenTimeRegex}(\s*{DescRegex})?|({HourNumRegex}|{BaseDateTime.HourRegex}\b)\s*{DescRegex})
   references: [ TimePrefix, WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, DescRegex ]
 TimeRegex2: !nestedRegex
-  def: ({TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)
+  def: ({TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?(:|\s+uhr(\s+und)?\s+)(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex, DescRegex ]
 TimeRegex3: !nestedRegex
   def: ({TimePrefix}\s+)?{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})
@@ -297,7 +299,7 @@ TimeRegex6: !nestedRegex
   def: ({BasicTime}(\s*{DescRegex})?\s+{TimeSuffix})
   references: [ BasicTime, DescRegex, TimeSuffix ]
 TimeRegex7: !nestedRegex
-  def: (({AmPmPrefixRegex})?({BasicTime})((\s*{DescRegex}))?)
+  def: (({AmPmPrefixRegex})({BasicTime})((\s*{DescRegex}))?)
   references: [ TimeSuffixFull, BasicTime, DescRegex, AmPmPrefixRegex ]
 TimeRegex8: !nestedRegex
   def: ({TimeSuffixFull}(\s*(um|gegen)\s*){BasicTime}((\s*{DescRegex})?))
@@ -384,9 +386,9 @@ EachUnitRegex: !nestedRegex
   def: (?<each>(jede(s|r|n|m)?|alle)(?<other>\s+andere(n)?)?\s*{DurationUnitRegex})
   references: [ DurationUnitRegex ]
 EachPrefixRegex: !simpleRegex
-  def: \b(?<each>(jede(r|n|s)?|alle)\s*$)
+  def: \b(?<each>(jede(r|n|s|m)?|alle)\s*$)
 SetEachRegex: !simpleRegex
-  def: \b(?<each>(jede(r|n|s)?|alle)\s*)
+  def: \b(?<each>(jede(r|n|s|m)?|alle)\s*)
 SetLastRegex: !simpleRegex
   def: (?<last>nächste(r|n|s)?|kommende(r|n|s)?|diese(r|n|m|s)?|letzte(r|n|s)?|vorige(r|n|s)?|vorherige(r|n|s)?|jetzige(r|n|s)?|derzeitige(r|n|s)?)\b
 EachDayRegex: !simpleRegex

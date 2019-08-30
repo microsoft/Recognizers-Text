@@ -468,10 +468,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Check for weekday in the suffix
             if (!matchWeekDay.Success)
             {
-                suffix = text.Substring(endIndex);
-                var weekDayStart = @"^\s*,?\s*" + this.Config.WeekDayRegex;
-                Regex weekDayStartRegex = new Regex(weekDayStart, RegexOptions.Compiled | RegexOptions.IgnoreCase);
-                matchWeekDay = weekDayStartRegex.Match(suffix);
+                matchWeekDay = this.Config.WeekDayStart.Match(suffix);
             }
 
             if (matchWeekDay.Success)

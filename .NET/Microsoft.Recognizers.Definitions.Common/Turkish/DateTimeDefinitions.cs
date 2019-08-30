@@ -138,6 +138,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string OfMonth = $@"^\s*{MonthRegex}";
       public static readonly string MonthEnd = $@"{MonthPossessiveSuffixRegex}\s*$";
       public static readonly string WeekDayEnd = $@"(bu\s+)?{WeekDayRegex}\s*,?\s*$";
+      public static readonly string WeekDayStart = $@"\s*,?\s*{WeekDayRegex}";
       public const string RangeUnitRegex = @"\b(?<unit>hafta|ay|yıl)\b";
       public const string HourNumRegex = @"\b(?<hournum>bir|iki|üç|dört|beş|altı|yedi|sekiz|dokuz|on|on bir|on iki)\b";
       public const string AtHourNumRegex = @"\b(?<hournum>birde|ikide|üçte|dörtte|beşte|altıda|yedide|sekizde|dokuzda|onda|on birde|on ikide|1'de|2'de|3'te|4'te|5'te|6'da|7'de|8'de|9'da|10'da|11'de|12'de|13'te|14'te|15'te|16'da|17'de|18'de|19'da|20'de|21'de|22'de|23'te|24'te)\b";

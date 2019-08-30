@@ -26,6 +26,8 @@ public class GermanNumericWithUnit {
         .put("Day", "tag alt|tage alt|tagen|tage")
         .build();
 
+    public static final List<String> AmbiguousAgeUnitList = Arrays.asList("jahren", "jahre", "monaten", "monate", "wochen", "woche", "tagen", "tage");
+
     public static final ImmutableMap<String, String> AreaSuffixList = ImmutableMap.<String, String>builder()
         .put("Square kilometer", "qkm|quadratkilometer|km^2|km²")
         .put("Square hectometer", "qhm|quadrathektometer|hm^2|hm²|hektar")
