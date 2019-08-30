@@ -181,16 +181,18 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
             }
 
             if (!success) {
+                // SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
                 success = this.tryMergeModifierToken(er, this.config.sinceRegex, source, true);
             }
         });
     }
 
-    private tryMergeModifierToken(er:ExtractResult, regex: RegExp, source: string, ambiguous:boolean = false): boolean {
+    private tryMergeModifierToken(er:ExtractResult, regex: RegExp, source: string, potentialAmbiguity:boolean = false): boolean {
         let beforeStr = source.substr(0, er.start).toLowerCase();
 
-        // Avoid adding mod for "from" in "from ... to ..."
-        if (ambiguous && RegExpUtility.isMatch(this.config.ambiguousRangeModifierPrefix, beforeStr)) {
+        // Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
+        if (potentialAmbiguity && this.config.ambiguousRangeModifierPrefix &&
+            RegExpUtility.isMatch(this.config.ambiguousRangeModifierPrefix, beforeStr)) {
             let matches = RegExpUtility.getMatches(this.config.potentialAmbiguousRangeRegex, source);
             if (matches.find(m => m.index < er.start + er.length && m.index + m.length > er.start)) {
                 return false
@@ -203,18 +205,25 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
             er.length += modLength;
             er.start -= modLength;
             er.text = source.substr(er.start, er.length);
-            if (er.metaData === undefined || er.metaData === null) {
-                let metaData = new MetaData();
-                metaData.HasMod = true;
-                er.metaData = metaData;
-            } else {
-                er.metaData.HasMod = true;
-            }
+            
+            er.metaData = this.assignModMetadata(er.metaData);
 
             return true;
         }
 
         return false;
+    }
+
+    private assignModMetadata(metadata: MetaData): MetaData {
+
+        if (metadata === undefined || metadata === null) {
+            metadata = new MetaData();
+            metadata.HasMod = true;
+        } else {
+            metadata.HasMod = true;
+        }
+
+        return metadata
     }
 
     private hasTokenIndex(source: string, regex: RegExp): { matched: boolean, index: number } {

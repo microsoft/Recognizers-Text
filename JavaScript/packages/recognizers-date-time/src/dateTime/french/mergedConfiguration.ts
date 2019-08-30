@@ -51,8 +51,8 @@ export class FrenchMergedExtractorConfiguration implements IMergedExtractorConfi
         this.fromToRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.FromToRegex);
         this.singleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SingleAmbiguousMonthRegex);
         this.prepositionSuffixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PrepositionSuffixRegex);
-        this.ambiguousRangeModifierPrefix = RegExpUtility.getSafeRegExp(FrenchDateTime.AmbiguousRangeModifierPrefix);
-        this.potentialAmbiguousRangeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.FromToRegex);
+        this.ambiguousRangeModifierPrefix = null;
+        this.potentialAmbiguousRangeRegex = null;
         this.numberEndingPattern = RegExpUtility.getSafeRegExp(FrenchDateTime.NumberEndingPattern);
 
         this.dateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(dmyDateFormat));
