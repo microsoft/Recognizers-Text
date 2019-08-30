@@ -213,6 +213,7 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
                 modifiedToken = tryMergeModifierToken(er, config.getAfterRegex(), text);
             }
 
+            // SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
             if (!modifiedToken.result) {
                 modifiedToken = tryMergeModifierToken(er, config.getSinceRegex(), text, true);
             }
@@ -251,16 +252,8 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
                         int modLength = match.getMatch().get().length + afterStr.indexOf(match.getMatch().get().value);
                         int length = newEr.getLength() + modLength;
                         String newText = text.substring(newEr.getStart(), newEr.getStart() + length);
-                        if (er.getMetadata() == null) {
-                            Metadata metadata = new Metadata() {
-                                {
-                                    setHasMod(true);
-                                }
-                            };
-                            er.setMetadata(metadata);
-                        } else {
-                            er.getMetadata().setHasMod(true);
-                        }
+
+                        er.setMetadata(assignModMetadata(er.getMetadata()));
 
                         ers.set(index, new ExtractResult(er.getStart(), length, newText, er.getType(), er.getData(), er.getMetadata()));
                     }
@@ -277,11 +270,12 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
         return tryMergeModifierToken(er, tokenRegex, text, false);
     }
 
-    private MergeModifierResult tryMergeModifierToken(ExtractResult er, Pattern tokenRegex, String text, boolean ambiguous) {
+    private MergeModifierResult tryMergeModifierToken(ExtractResult er, Pattern tokenRegex, String text, boolean potentialAmbiguity) {
         String beforeStr = text.substring(0, er.getStart()).toLowerCase();
 
-        // Avoid adding mod for "from" in "from ... to ..."
-        if (ambiguous && Arrays.stream(RegExpUtility.getMatches(config.getAmbiguousRangeModifierPrefix(), text)).findFirst().isPresent()) {
+        // Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
+        if (potentialAmbiguity &&  config.getAmbiguousRangeModifierPrefix() != null &&
+            Arrays.stream(RegExpUtility.getMatches(config.getAmbiguousRangeModifierPrefix(), text)).findFirst().isPresent()) {
             final Match[] matches = RegExpUtility.getMatches(config.getPotentialAmbiguousRangeRegex(), text);
             if (Arrays.stream(matches).anyMatch(m -> m.index < er.getStart() + er.getLength() && m.index + m.length > er.getStart())) {
                 return new MergeModifierResult(false, er);
@@ -298,21 +292,28 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
             er.setText(newText);
             er.setLength(length);
             er.setStart(start);
-            if (er.getMetadata() == null) {
-                Metadata metadata = new Metadata() {
-                    {
-                        setHasMod(true);
-                    }
-                };
-                er.setMetadata(metadata);
-            } else {
-                er.getMetadata().setHasMod(true);
-            }
+
+            er.setMetadata(assignModMetadata(er.getMetadata()));
 
             return new MergeModifierResult(true, er);
         }
 
         return new MergeModifierResult(false, er);
+    }
+
+    private Metadata assignModMetadata(Metadata metadata) {
+
+        if (metadata == null) {
+            metadata = new Metadata() {
+                {
+                    setHasMod(true);
+                }
+            };
+        } else {
+            metadata.setHasMod(true);
+        }
+
+        return metadata;
     }
 
     private ResultIndex hasTokenIndex(String text, Pattern pattern) {

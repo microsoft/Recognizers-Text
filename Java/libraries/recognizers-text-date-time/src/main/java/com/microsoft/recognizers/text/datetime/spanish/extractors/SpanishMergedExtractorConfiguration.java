@@ -176,11 +176,11 @@ public class SpanishMergedExtractorConfiguration extends BaseOptionsConfiguratio
     }
 
     public final Pattern getAmbiguousRangeModifierPrefix() {
-        return AmbiguousRangeModifierPrefix;
+        return null;
     }
 
     public final Pattern getPotentialAmbiguousRangeRegex() {
-        return FromToRegex;
+        return null;
     }
 
     public final Pattern getNumberEndingPattern() {
