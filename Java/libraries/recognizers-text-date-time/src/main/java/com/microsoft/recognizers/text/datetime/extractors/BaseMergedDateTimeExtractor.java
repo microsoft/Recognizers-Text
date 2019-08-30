@@ -102,11 +102,11 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
         return this.extract(input, LocalDateTime.now());
     }
 
-    private ArrayList<ExtractResult> filterAmbiguity(ArrayList<ExtractResult> extractResults, String input) {
+    private List<ExtractResult> filterAmbiguity(List<ExtractResult> extractResults, String input) {
         if (config.getAmbiguityFiltersDict() != null) {
-            for (Map.Entry<Pattern, Pattern> pair : config.getAmbiguityFiltersDict().entrySet()) {
-                final Pattern key = pair.getKey();
-                final Pattern value = pair.getValue();
+            for (Pair<Pattern, Pattern> pair : config.getAmbiguityFiltersDict()) {
+                final Pattern key = pair.getValue0();
+                final Pattern value = pair.getValue1();
 
                 for (ExtractResult extractResult : extractResults){
                     Optional<Match> keyMatch = Arrays.stream(RegExpUtility.getMatches(key, extractResult.getText())).findFirst();
