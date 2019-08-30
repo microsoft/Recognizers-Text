@@ -14000,5 +14000,28 @@
         }
       }
     ]
+  },
+  {
+    "Input": "6,107.31 August 2019 should not include the decimal",
+    "Comment": "Something wrong with negative lookbehind in java",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "august 2019",
+        "Start": 9,
+        "End": 19,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08",
+              "type": "daterange",
+              "start": "2019-08-01",
+              "end": "2019-09-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -3805,5 +3805,16 @@
         "Length": 7
       }
     ]
+  },
+  {
+    "Input": "6,107.31 August 2019 should not include the decimal",
+    "Results": [
+      {
+        "Text": "August 2019",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 11
+      }
+    ]
   }
 ]

@@ -1587,5 +1587,11 @@
         "Length": 26
       }
     ]
+  },
+  {
+    "Input": "6,107.31 August 2019 should not include the decimal",
+    "Comment": "Something wrong with negative lookbehind in java",
+    "NotSupported": "java",
+    "Results": []
   }
 ]
