@@ -93,11 +93,11 @@ class SpanishMergedExtractorConfiguration(MergedExtractorConfiguration):
 
     @property
     def ambiguous_range_modifier_prefix(self) -> Pattern:
-        return self._ambiguous_range_modifier_prefix
+        return None
 
     @property
     def potential_ambiguous_range_regex(self) -> Pattern:
-        return self._from_to_regex
+        return None
 
     @property
     def number_ending_pattern(self) -> Pattern:

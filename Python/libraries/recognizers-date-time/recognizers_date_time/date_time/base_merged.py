@@ -237,14 +237,15 @@ class BaseMergedExtractor(DateTimeExtractor):
         if not success:
             success = self.try_merge_modifier_token(er, self.config.after_regex, source)
         if not success:
+            # SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
             success = self.try_merge_modifier_token(er, self.config.since_regex, source, True)
         return er
 
-    def try_merge_modifier_token(self, er: ExtractResult, pattern: Pattern, source: str, ambiguous: bool = False) -> bool:
+    def try_merge_modifier_token(self, er: ExtractResult, pattern: Pattern, source: str, potentialAmbiguity: bool = False) -> bool:
         before_str = source[0:er.start]
 
-        # Avoid adding mod for "from" in "from ... to ..."
-        if ambiguous and regex.search(self.config.ambiguous_range_modifier_prefix, before_str):
+        # Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
+        if potentialAmbiguity and self.config.ambiguous_range_modifier_prefix and regex.search(self.config.ambiguous_range_modifier_prefix, before_str):
             matches = list(regex.finditer(self.config.potential_ambiguous_range_regex, source))
             if matches and len(matches):
                 return self._filter_item(er, matches)
@@ -255,12 +256,8 @@ class BaseMergedExtractor(DateTimeExtractor):
             er.length += mod_len
             er.start -= mod_len
             er.text = source[er.start:er.start + er.length]
-            if not er.meta_data:
-                meta_data = MetaData()
-                meta_data.has_mod = True
-                er.meta_data = meta_data
-            else:
-                er.meta_data.has_mod = True
+
+            er.meta_data = self.assign_mod_metadata(er.meta_data)
             return True
 
         return False
@@ -270,6 +267,15 @@ class BaseMergedExtractor(DateTimeExtractor):
             if match.start() < er.start + er.length and match.end() > er.start:
                 return False
         return True
+
+    def assign_mod_metadata(self, meta_data: MetaData) -> MetaData:
+        if not meta_data:
+            meta_data = MetaData()
+            meta_data.has_mod = True
+        else:
+            meta_data.has_mod = True
+
+        return meta_data
 
     def has_token_index(self, source: str, pattern: Pattern) -> MatchedIndex:
         match = regex.search(pattern, source)
