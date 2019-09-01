@@ -108,7 +108,7 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
                 final Pattern key = pair.getValue0();
                 final Pattern value = pair.getValue1();
 
-                for (ExtractResult extractResult : extractResults){
+                for (ExtractResult extractResult : extractResults) {
                     Optional<Match> keyMatch = Arrays.stream(RegExpUtility.getMatches(key, extractResult.getText())).findFirst();
                     if (keyMatch.isPresent()) {
                         final Match[] matches = RegExpUtility.getMatches(value, input);

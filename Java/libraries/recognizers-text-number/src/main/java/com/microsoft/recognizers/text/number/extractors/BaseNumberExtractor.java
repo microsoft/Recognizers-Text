@@ -111,6 +111,7 @@ public abstract class BaseNumberExtractor implements IExtractor {
             }
         }
         result = filterAmbiguity(result, source);
+        
         return result;
     }
 
@@ -120,7 +121,7 @@ public abstract class BaseNumberExtractor implements IExtractor {
                 final Pattern key = pair.getKey();
                 final Pattern value = pair.getValue();
 
-                for (ExtractResult extractResult : extractResults){
+                for (ExtractResult extractResult : extractResults) {
                     Optional<Match> keyMatch = Arrays.stream(RegExpUtility.getMatches(key, extractResult.getText())).findFirst();
                     if (keyMatch.isPresent()) {
                         final Match[] matches = RegExpUtility.getMatches(value, input);

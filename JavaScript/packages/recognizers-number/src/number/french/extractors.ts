@@ -40,7 +40,7 @@ export class FrenchNumberExtractor extends BaseNumberExtractor {
         // Add filter
         let ambiguityFiltersDict = new Array<RegExpRegExp>();
 
-        if (mode != NumberMode.Unit){            
+        if (mode != NumberMode.Unit) {            
             for (let [ key, value ] of FrenchNumeric.AmbiguityFiltersDict){
                 ambiguityFiltersDict.push({ regExpKey: RegExpUtility.getSafeRegExp(key, "gs"), regExpValue: RegExpUtility.getSafeRegExp(value, "gs")})
             }
