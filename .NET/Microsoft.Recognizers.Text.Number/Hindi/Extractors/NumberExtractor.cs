@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
 
             var ambiguityBuilder = ImmutableDictionary.CreateBuilder<Regex, Regex>();
 
-            // Do not filter the ambiguous number cases like 'that one' in NumberWithUnit, otherwise they can't be resolved.
+            // Do not filter the ambiguous number cases like '$2000' in NumberWithUnit, otherwise they can't be resolved.
             if (mode != NumberMode.Unit)
             {
                 foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
