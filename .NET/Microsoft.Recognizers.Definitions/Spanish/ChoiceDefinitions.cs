@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 	{
 		public const string LangMarker = "Spa";
 		public const string TokenizerRegex = @"[^\w\d]";
-		public const string TrueRegex = @"\b(verdad|verdadero|sí|sip|s|si|cierto|por supuesto|ok)\b|(\uD83D\uDC4D|\uD83D\uDC4C)";
-		public const string FalseRegex = @"\b(falso|no|nop|n|no)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)";
+		public const string TrueRegex = @"\b(verdad|verdadero|sí|sip|s|si|cierto|por supuesto|ok|yes|correcto|afirmativo|bueno|bien|esta bien|listo|de una|oki|hagale|dale|obvio|sip|seh|sipi|eso)\b|(\uD83D\uDC4D|\uD83D\uDC4C)";
+		public const string FalseRegex = @"\b(falso|no|nop|n|no|para nada|negativo|incorrecto|nah|nada|nunca)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)";
 	}
 }
