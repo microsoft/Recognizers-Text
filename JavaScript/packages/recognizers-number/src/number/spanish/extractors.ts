@@ -40,7 +40,7 @@ export class SpanishNumberExtractor extends BaseNumberExtractor {
         // Add filter
         let ambiguityFiltersDict = new Array<RegExpRegExp>();
 
-        if (mode != NumberMode.Unit){            
+        if (mode != NumberMode.Unit) {            
             for (let [ key, value ] of SpanishNumeric.AmbiguityFiltersDict){
                 ambiguityFiltersDict.push({ regExpKey: RegExpUtility.getSafeRegExp(key, "gs"), regExpValue: RegExpUtility.getSafeRegExp(value, "gs")})
             }
@@ -194,7 +194,7 @@ export class SpanishFractionExtractor extends BaseNumberExtractor {
         );
 
         // Not add FractionPrepositionRegex when the mode is Unit to avoid wrong recognize cases like "$1000 over 3"
-        if (mode != NumberMode.Unit){
+        if (mode != NumberMode.Unit) {
             regexes.push({
                 regExp: RegExpUtility.getSafeRegExp(SpanishNumeric.FractionPrepositionRegex),
                 value: "FracSpa"
