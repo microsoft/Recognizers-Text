@@ -14023,5 +14023,45 @@
         }
       }
     ]
+  },
+  {
+    "Input": "feb 30 2019",
+    "Results": [
+      {
+        "Text": "feb 30 2019",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-02-30",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "feb 30",
+    "Results": [
+      {
+        "Text": "feb 30",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-30",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

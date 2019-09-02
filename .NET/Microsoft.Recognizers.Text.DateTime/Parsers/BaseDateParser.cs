@@ -779,12 +779,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
             var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
 
-            if (noYear && futureDate < referenceDate)
+            if (noYear && futureDate < referenceDate && !futureDate.IsDefaultValue())
             {
                 futureDate = futureDate.AddYears(+1);
             }
 
-            if (noYear && pastDate >= referenceDate)
+            if (noYear && pastDate >= referenceDate && !pastDate.IsDefaultValue())
             {
                 pastDate = pastDate.AddYears(-1);
             }

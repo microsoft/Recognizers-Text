@@ -40,9 +40,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static void AddSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod, Dictionary<string, string> res)
         {
+            // If the date is invalid, the result should be invalid.
             if (resolutionDic.ContainsKey(type) &&
-                !resolutionDic[type].Equals(DateMinString, StringComparison.Ordinal) &&
-                !resolutionDic[type].Equals(DateTimeMinString, StringComparison.Ordinal))
+                !resolutionDic[type].StartsWith(DateMinString, StringComparison.Ordinal))
             {
                 if (!string.IsNullOrEmpty(mod))
                 {
@@ -143,6 +143,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
             {
+                if (start.StartsWith(DateMinString) || end.StartsWith(DateMinString))
+                {
+                    return;
+                }
+
                 res.Add(DateTimeResolutionKey.Start, start);
                 res.Add(DateTimeResolutionKey.End, end);
             }
