@@ -7,6 +7,18 @@ from ..base_time import TimeExtractorConfiguration
 
 class FrenchTimeExtractorConfiguration(TimeExtractorConfiguration):
     @property
+    def options(self):
+        pass
+
+    @property
+    def dmy_date_format(self) -> bool:
+        pass
+
+    @property
+    def time_zone_extractor(self):
+        pass
+
+    @property
     def time_regex_list(self) -> List[Pattern]:
         return self._time_regex_list
 

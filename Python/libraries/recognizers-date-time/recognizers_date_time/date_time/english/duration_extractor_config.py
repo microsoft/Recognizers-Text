@@ -5,9 +5,18 @@ from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.english.extractors import EnglishCardinalExtractor
 from ...resources.english_date_time import EnglishDateTime
 from ..base_duration import DurationExtractorConfiguration
+from ..utilities import BaseDateTimeOptionsConfiguration
 
 
-class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
+class EnglishDurationExtractorConfiguration(BaseDateTimeOptionsConfiguration, DurationExtractorConfiguration):
+    @property
+    def options(self):
+        pass
+
+    @property
+    def dmy_date_format(self) -> bool:
+        pass
+
     @property
     def all_regex(self) -> Pattern:
         return self._all_regex

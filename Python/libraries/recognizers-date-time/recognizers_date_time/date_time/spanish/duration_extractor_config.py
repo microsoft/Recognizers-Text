@@ -9,6 +9,14 @@ from ..base_duration import DurationExtractorConfiguration
 
 class SpanishDurationExtractorConfiguration(DurationExtractorConfiguration):
     @property
+    def options(self):
+        pass
+
+    @property
+    def dmy_date_format(self) -> bool:
+        pass
+
+    @property
     def all_regex(self) -> Pattern:
         return self._all_regex
 

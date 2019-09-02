@@ -9,7 +9,7 @@ from recognizers_text.extractor import Extractor, ExtractResult
 from recognizers_number.resources.base_numbers import BaseNumbers
 from recognizers_number.number.models import LongFormatType
 from recognizers_number.number.constants import Constants
-from recognizers_number.number.number_recognizer import NumberOptions
+
 
 ReVal = namedtuple('ReVal', ['re', 'val'])
 MatchesVal = namedtuple('MatchesVal', ['matches', 'val'])
@@ -17,7 +17,7 @@ MatchesVal = namedtuple('MatchesVal', ['matches', 'val'])
 
 class BaseNumberExtractor(Extractor):
 
-    def __init__(self, options: NumberOptions.NONE):
+    def __init__(self, options):
         self.options = options
 
     @property
@@ -27,7 +27,7 @@ class BaseNumberExtractor(Extractor):
 
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        pass
+        return None
 
     @property
     @abstractmethod
@@ -36,14 +36,15 @@ class BaseNumberExtractor(Extractor):
 
     @property
     @abstractmethod
-    def options(self) -> NumberOptions:
+    def options(self):
         return self.options
 
     @property
     def _negative_number_terms(self) -> Pattern:
-        pass
+        return None
 
     def extract(self, source: str) -> List[ExtractResult]:
+        from recognizers_number.number.number_recognizer import NumberOptions
         if source is None or len(source.strip()) is 0:
             return list()
         result: List[ExtractResult] = list()
@@ -76,9 +77,9 @@ class BaseNumberExtractor(Extractor):
 
                     if src_match is not None:
 
-                        original_match = min(list(map(lambda y: [match_source[y].priority, match_source[y].name, y],
-                                                      filter(lambda x: x.key.index == start and
-                                                             x.key.length == length, match_source))))
+                        original_match = min(list(map(lambda y: [match_source[y], y],
+                                                      filter(lambda x: x.start() == start and
+                                                             len(x.group()) == length, list(match_source)))))
 
                         # extract negative numbers
                         if self._negative_number_terms is not None:

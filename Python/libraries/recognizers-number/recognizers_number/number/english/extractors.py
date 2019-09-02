@@ -1,5 +1,7 @@
-from typing import Pattern, List, NamedTuple
+from typing import Pattern, List, NamedTuple, Dict
 import regex
+
+from recognizers_text import ExtractResult
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.models import NumberMode, LongFormatMode
@@ -9,6 +11,17 @@ from recognizers_number.number.constants import Constants
 
 
 class EnglishNumberExtractor(BaseNumberExtractor):
+
+    @property
+    def options(self):
+        pass
+
+    def extract(self, source: str) -> List[ExtractResult]:
+        return super().extract(source)
+
+    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
+        return super()._generate_format_regex(format_type, placeholder)
+
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
@@ -16,10 +29,6 @@ class EnglishNumberExtractor(BaseNumberExtractor):
     @property
     def _extract_type(self) -> str:
         return Constants.SYS_NUM
-
-    @property
-    def _negative_number_terms(self) -> Pattern:
-        return self.__negative_number_terms
 
     def __init__(self, mode: NumberMode = NumberMode.DEFAULT):
         self.__negative_number_terms = RegExpUtility.get_safe_reg_exp(
@@ -44,6 +53,17 @@ class EnglishNumberExtractor(BaseNumberExtractor):
 
 
 class EnglishCardinalExtractor(BaseNumberExtractor):
+
+    @property
+    def options(self):
+        pass
+
+    def extract(self, source: str) -> List[ExtractResult]:
+        return super().extract(source)
+
+    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
+        return super()._generate_format_regex(format_type, placeholder)
+
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
@@ -65,6 +85,17 @@ class EnglishCardinalExtractor(BaseNumberExtractor):
 
 
 class EnglishIntegerExtractor(BaseNumberExtractor):
+
+    @property
+    def options(self):
+        pass
+
+    def extract(self, source: str) -> List[ExtractResult]:
+        return super().extract(source)
+
+    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
+        return super()._generate_format_regex(format_type, placeholder)
+
     @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
@@ -115,6 +146,17 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
 
 
 class EnglishDoubleExtractor(BaseNumberExtractor):
+
+    @property
+    def options(self):
+        pass
+
+    def extract(self, source: str) -> List[ExtractResult]:
+        return super().extract(source)
+
+    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
+        return super()._generate_format_regex(format_type, placeholder)
+
     @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
@@ -165,6 +207,17 @@ class EnglishDoubleExtractor(BaseNumberExtractor):
 
 
 class EnglishFractionExtractor(BaseNumberExtractor):
+
+    @property
+    def options(self):
+        pass
+
+    def extract(self, source: str) -> List[ExtractResult]:
+        return super().extract(source)
+
+    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
+        return super()._generate_format_regex(format_type, placeholder)
+
     @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
@@ -199,6 +252,17 @@ class EnglishFractionExtractor(BaseNumberExtractor):
 
 
 class EnglishOrdinalExtractor(BaseNumberExtractor):
+
+    @property
+    def options(self):
+        pass
+
+    def extract(self, source: str) -> List[ExtractResult]:
+        return super().extract(source)
+
+    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
+        return super()._generate_format_regex(format_type, placeholder)
+
     @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes

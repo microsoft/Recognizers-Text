@@ -4,7 +4,6 @@ from typing import List, Dict, Pattern, Union
 from datetime import datetime, timedelta
 import calendar
 
-from build.lib.recognizers_date_time import DateTimeOptions
 from datedelta import datedelta
 import regex
 
@@ -43,7 +42,7 @@ class TimeZoneUtility:
 
         return original_ers
 
-    def should_resolve_time_zone(self, er: ExtractResult, options: DateTimeOptions):
+    def should_resolve_time_zone(self, er: ExtractResult, options):
         enable_preview = (options & DateTimeOptions.ENABLE_PREVIEW) != 0
 
         if not enable_preview:
@@ -170,13 +169,48 @@ class ConditionalMatch:
 class DateTimeOptionsConfiguration(ABC):
     @property
     @abstractmethod
-    def options(self) -> DateTimeOptions:
+    def options(self):
         raise NotImplementedError
 
     @property
     @abstractmethod
     def dmy_date_format(self) -> bool:
         raise NotImplementedError
+
+
+class DateTimeOptions(IntFlag):
+    NONE = 0
+    SKIP_FROM_TO_MERGE = 1
+    SPLIT_DATE_AND_TIME = 2
+    CALENDAR = 4
+    EXTENDED_TYPES = 8
+    FAIL_FAST = 2097152
+    EXPERIMENTAL_MODE = 4194304
+    ENABLE_PREVIEW = 8388608
+
+
+class BaseDateTimeOptionsConfiguration(DateTimeOptionsConfiguration):
+
+    def __init__(self, options=DateTimeOptions.NONE, dmy_date_format=False):
+
+        self._options = options
+        self._dmy_date_format = dmy_date_format
+
+    @property
+    def options(self):
+        return self._options
+
+    @options.setter
+    def options(self, value):
+        self._options = value
+
+    @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
+
+    @dmy_date_format.setter
+    def dmy_date_format(self, value):
+        self._dmy_date_format = value
 
 
 class DurationParsingUtil:
@@ -196,40 +230,41 @@ class DurationParsingUtil:
         return result
 
 
-class DateTimeOptions(IntFlag):
-    NONE = 0
-    SKIP_FROM_TO_MERGE = 1
-    SPLIT_DATE_AND_TIME = 2
-    CALENDAR = 4
-    EXTENDED_TYPES = 8
-    FAIL_FAST = 2097152
-    EXPERIMENTAL_MODE = 4194304
-    ENABLE_PREVIEW = 8388608
-
-
 class Token:
     def __init__(self, start: int, end: int, metadata: Metadata = None):
-        self.start: int = start
-        self.end: int = end
-        self.metadata = metadata
+        self._start: int = start
+        self._end: int = end
+        self._metadata = metadata
 
     @property
     def length(self) -> int:
-        if self.start > self.end:
+        if self._start > self._end:
             return 0
-        return self.end - self.start
+        return self._end - self._start
 
     @property
     def start(self) -> int:
-        return self.start
+        return self._start
+
+    @start.setter
+    def start(self, value) -> int:
+        self._start = value
 
     @property
     def end(self) -> int:
-        return self.end
+        return self._end
+
+    @end.setter
+    def end(self, value) -> int:
+        self._end = value
 
     @property
-    def metadata(self) -> int:
-        return self.metadata
+    def metadata(self):
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, value):
+        self._metadata = value
 
 
 def merge_all_tokens(tokens: List[Token], source: str, extractor_name: str) -> List[ExtractResult]:

@@ -1,15 +1,14 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime
 import regex
-from build.lib.recognizers_date_time import DateTimeOptions
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import ExtractResult
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import DateTimeOptionsConfiguration, TimeZoneUtility
+from .utilities import DateTimeOptionsConfiguration
 
 
 class TimeExtractorConfiguration(DateTimeOptionsConfiguration):
@@ -49,7 +48,8 @@ class BaseTimeExtractor(DateTimeExtractor):
         self.config = config
 
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
-        from .utilities import merge_all_tokens
+        from recognizers_date_time import DateTimeOptions
+        from .utilities import merge_all_tokens, TimeZoneUtility
 
         if reference is None:
             reference = datetime.now()
@@ -71,6 +71,7 @@ class BaseTimeExtractor(DateTimeExtractor):
         return result
 
     def before_after_regex_match(self, source: str) -> []:
+        from recognizers_date_time import DateTimeOptions
         from .utilities import Token
         result: List[Token] = list()
 
