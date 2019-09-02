@@ -19,5 +19,4 @@ export namespace BaseNumbers {
     export const MultiplierLookupRegex = `(k|m|t|g|b)`;
     export const CurrencyRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(b|m|t|g)(?=\\b)`;
     export const CommonCurrencySymbol = `(¥|\\$|€|£|₩)`;
-    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["(¥|\\$|€|£|₩)", "(¥|\\$|€|£|₩)\\d+"]]);
 }

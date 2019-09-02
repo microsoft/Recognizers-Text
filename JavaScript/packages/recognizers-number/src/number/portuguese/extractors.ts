@@ -40,12 +40,7 @@ export class PortugueseNumberExtractor extends BaseNumberExtractor {
         // Add filter
         let ambiguityFiltersDict = new Array<RegExpRegExp>();
 
-        if (mode != NumberMode.Unit){
-
-            for (let [ key, value ] of BaseNumbers.AmbiguityFiltersDict){
-                ambiguityFiltersDict.push({ regExpKey: RegExpUtility.getSafeRegExp(key, "gs"), regExpValue: RegExpUtility.getSafeRegExp(value, "gs")})
-            }
-            
+        if (mode != NumberMode.Unit) {            
             for (let [ key, value ] of PortugueseNumeric.AmbiguityFiltersDict){
                 ambiguityFiltersDict.push({ regExpKey: RegExpUtility.getSafeRegExp(key, "gs"), regExpValue: RegExpUtility.getSafeRegExp(value, "gs")})
             }
@@ -203,7 +198,7 @@ export class PortugueseFractionExtractor extends BaseNumberExtractor {
         );
 
         // Not add FractionPrepositionRegex when the mode is Unit to avoid wrong recognize cases like "$1000 over 3"
-        if (mode != NumberMode.Unit){
+        if (mode != NumberMode.Unit) {
             regexes.push({
                 regExp: RegExpUtility.getSafeRegExp(PortugueseNumeric.FractionPrepositionRegex),
                 value: "FracPor"

@@ -88,6 +88,7 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\NumbersDefinitions.cs" Link="Turkish\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\NumbersWithUnitDefinitions.cs" Link="Turkish\NumbersWithUnitDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Hindi\NumbersDefinitions.cs" Link="Hindi\NumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Hindi\NumbersWithUnitDefinitions.cs" Link="Hindi\NumbersWithUnitDefinitions.cs" />
   </ItemGroup>
 
   <ItemGroup>
