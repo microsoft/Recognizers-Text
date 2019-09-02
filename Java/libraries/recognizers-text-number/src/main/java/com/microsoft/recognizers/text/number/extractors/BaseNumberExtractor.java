@@ -125,11 +125,9 @@ public abstract class BaseNumberExtractor implements IExtractor {
                     Optional<Match> keyMatch = Arrays.stream(RegExpUtility.getMatches(key, extractResult.getText())).findFirst();
                     if (keyMatch.isPresent()) {
                         final Match[] matches = RegExpUtility.getMatches(value, input);
-                        List<ExtractResult> newErs = extractResults.stream()
+                        extractResults = extractResults.stream()
                             .filter(er -> Arrays.stream(matches).noneMatch(m -> m.index < er.getStart() + er.getLength() && m.index + m.length > er.getStart()))
-                            .collect(Collectors.toList());
-                        extractResults.clear();
-                        extractResults.addAll(newErs);
+                            .collect(Collectors.toCollection(ArrayList::new));
                     }
                 }
             }
