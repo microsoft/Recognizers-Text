@@ -14002,6 +14002,31 @@
     ]
   },
   {
+    "Input": "Must deliver sixteen (16) units before the thirty-first day of the month.",
+    "Context": {
+      "ReferenceDateTime": "2019-08-12T00:00:00"
+    },
+	"Comment": "Interpretation as ordinal + month is not ideal, but it is interpreatable and should guarantee that the recognizers don't raise exceptional behaviour.",
+    "Results": [
+      {
+        "Text": "the month",
+        "Start": 63,
+        "End": 71,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08",
+              "type": "daterange",
+              "start": "2019-08-01",
+              "end": "2019-09-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "6,107.31 August 2019 should not include the decimal",
     "Comment": "Something wrong with negative lookbehind in java",
     "NotSupported": "java",
