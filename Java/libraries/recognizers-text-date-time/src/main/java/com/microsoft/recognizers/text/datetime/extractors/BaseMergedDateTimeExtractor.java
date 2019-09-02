@@ -213,8 +213,8 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
                 modifiedToken = tryMergeModifierToken(er, config.getAfterRegex(), text);
             }
 
-            // SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
             if (!modifiedToken.result) {
+                // SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
                 modifiedToken = tryMergeModifierToken(er, config.getSinceRegex(), text, true);
             }
 
