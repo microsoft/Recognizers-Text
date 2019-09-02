@@ -31,7 +31,7 @@ Good starting points for contribution are:
 * the json spec cases temporarily marked as ```NotSupported``` ([Specs](./Specs)); and
 * translating json test spec cases that work in English, but don't yet exist in a target language.
 
-The links below describe the project structure and provide both an overview and tips on how to contribute (altough some steps may have become a little out-of-date). Thank you!
+The links below describe the project structure and provide both an overview and tips on how to contribute (although some steps may have become a little out-of-date). Thank you!
 
 * [Overview and language resources](https://blog.botframework.com/2018/01/24/contributing-luis-microsoft-recognizers-text-part-1/)
 * [Implementing language specific behaviour](https://blog.botframework.com/2018/02/01/contributing-luis-microsoft-recognizers-text-part-2/)

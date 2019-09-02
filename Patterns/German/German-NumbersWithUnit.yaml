@@ -7,6 +7,18 @@ AgeSuffixList: !dictionary
     Month: monat alt|monate alt|monaten|monate
     Week: woche alt|wochen alt|wochen|woche
     Day: tag alt|tage alt|tagen|tage
+# @TODO: This is a workaround. A redesign of Age is necessary to properly address the issue.
+AmbiguousAgeUnitList: !list
+  types: [ string ]
+  entries:
+    - jahren
+    - jahre
+    - monaten
+    - monate
+    - wochen
+    - woche
+    - tagen
+    - tage
 #AreaExtractorConfiguration
 AreaSuffixList: !dictionary
   types: [ string, string ]

@@ -3473,7 +3473,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "later this week",
@@ -3487,6 +3486,65 @@
               "type": "daterange",
               "start": "2018-05-31",
               "end": "2018-06-04"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "He will come after his parents after 2016 and before 2018, or before 2019",
+    "Context": {
+      "ReferenceDateTime": "2015-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "after 2016",
+        "Start": 31,
+        "End": 40,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2017-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "before 2018",
+        "Start": 46,
+        "End": 56,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "before 2019",
+        "Start": 62,
+        "End": 72,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2019-01-01"
             }
           ]
         }
@@ -3523,7 +3581,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "later this year",
@@ -3548,7 +3605,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "later in the year",
@@ -3573,7 +3629,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "two days after today",
@@ -3669,7 +3724,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-01T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "5/3/18 @ 17:49:19",
@@ -3780,7 +3834,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "between 3 and 5 on 1/1/2015",
@@ -3842,7 +3895,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "before 2010",
@@ -3885,7 +3937,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "after 2010",
@@ -13949,5 +14000,31 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Must deliver sixteen (16) units before the thirty-first day of the month.",
+    "Context": {
+      "ReferenceDateTime": "2019-08-12T00:00:00"
+    },
+	"Comment": "Interpretation as ordinal + month is not ideal, but it is interpreatable and should guarantee that the recognizers don't raise exceptional behaviour.",
+    "Results": [
+      {
+        "Text": "the month",
+        "Start": 63,
+        "End": 71,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08",
+              "type": "daterange",
+              "start": "2019-08-01",
+              "end": "2019-09-01"
+            }
+          ]
+        }
+      }
+    ]
   }
+  
 ]

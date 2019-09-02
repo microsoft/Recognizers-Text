@@ -41,8 +41,4 @@ public class BaseNumbers {
     public static final String CurrencyRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(b|m|t|g)(?=\\b)";
 
     public static final String CommonCurrencySymbol = "(¥|\\$|€|£|₩)";
-
-    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
-        .put("(¥|\\$|€|£|₩)", "(¥|\\$|€|£|₩)\\d+")
-        .build();
 }

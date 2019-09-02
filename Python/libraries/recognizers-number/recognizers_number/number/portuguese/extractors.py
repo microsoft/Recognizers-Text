@@ -50,9 +50,6 @@ class PortugueseNumberExtractor(BaseNumberExtractor):
         ambiguity_filters_dict: List[ReRe] = list()
 
         if mode != NumberMode.Unit:
-            for key, value in BaseNumbers.AmbiguityFiltersDict.items():
-                ambiguity_filters_dict.append(ReRe(reKey=RegExpUtility.get_safe_reg_exp(key),
-                                                   reVal=RegExpUtility.get_safe_reg_exp(value)))
             for key, value in PortugueseNumeric.AmbiguityFiltersDict.items():
                 ambiguity_filters_dict.append(ReRe(reKey=RegExpUtility.get_safe_reg_exp(key),
                                                    reVal=RegExpUtility.get_safe_reg_exp(value)))

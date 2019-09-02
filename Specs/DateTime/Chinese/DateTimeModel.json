@@ -3289,7 +3289,7 @@
         }
       }
     ]
-  },  
+  },
   {
     "Input": "时间从2016年6月1日-6月30日",
     "Context": {
@@ -3334,6 +3334,102 @@
               "type": "daterange",
               "start": "2019-04-29",
               "end": "2019-10-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "今日我们将去参观今日头条总部",
+    "Context": {
+      "ReferenceDateTime": "2019-08-28T08:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "今日",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08-28",
+              "type": "date",
+              "value": "2019-08-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "今日头条报道了今日在北京举行的奥运会",
+    "Context": {
+      "ReferenceDateTime": "2019-08-28T08:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "今日",
+        "Start": 7,
+        "End": 8,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08-28",
+              "type": "date",
+              "value": "2019-08-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "《明日之后》将于明日正式上线",
+    "Context": {
+      "ReferenceDateTime": "2019-08-28T08:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "明日",
+        "Start": 8,
+        "End": 9,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08-29",
+              "type": "date",
+              "value": "2019-08-29"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "明日我们将迎来《明日之后》周年庆活动",
+    "Context": {
+      "ReferenceDateTime": "2019-08-28T08:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "明日",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08-29",
+              "type": "date",
+              "value": "2019-08-29"
             }
           ]
         }

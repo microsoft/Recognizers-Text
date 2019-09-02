@@ -62,11 +62,6 @@ namespace Microsoft.Recognizers.Text.Number.English
             // Do not filter the ambiguous number cases like 'that one' in NumberWithUnit, otherwise they can't be resolved.
             if (mode != NumberMode.Unit)
             {
-                foreach (var item in BaseNumbers.AmbiguityFiltersDict)
-                {
-                    ambiguityBuilder.Add(new Regex(item.Key, RegexFlags), new Regex(item.Value, RegexFlags));
-                }
-
                 foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
                 {
                     ambiguityBuilder.Add(new Regex(item.Key, RegexFlags), new Regex(item.Value, RegexFlags));

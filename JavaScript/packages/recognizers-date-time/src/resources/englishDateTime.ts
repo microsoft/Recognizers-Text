@@ -87,7 +87,6 @@ export namespace EnglishDateTime {
     export const WeekOfRegex = `(the\\s+)?(week)(\\s+of)(\\s+the)?`;
     export const MonthOfRegex = `(month)(\\s*)(of)`;
     export const MonthRegex = `(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?)`;
-    export const AmbiguousMonthP0Regex = `\\b((((!|\\.|\\?|,|;|)\\s+|^)may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\\b`;
     export const DateYearRegex = `(?<year>${BaseDateTime.FourDigitYearRegex}|${TwoDigitYearRegex})`;
     export const YearSuffix = `(,?\\s*(${DateYearRegex}|${FullTextYearRegex}))`;
     export const OnRegex = `(?<=\\bon\\s+)(${DayRegex}s?)\\b`;
@@ -119,6 +118,7 @@ export namespace EnglishDateTime {
     export const OfMonth = `^\\s*of\\s*${MonthRegex}`;
     export const MonthEnd = `${MonthRegex}\\s*(the)?\\s*$`;
     export const WeekDayEnd = `(this\\s+)?${WeekDayRegex}\\s*,?\\s*$`;
+    export const WeekDayStart = `^[\\.]`;
     export const RangeUnitRegex = `\\b(?<unit>years?|months?|weeks?)\\b`;
     export const HourNumRegex = `\\b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\\b`;
     export const MinuteNumRegex = `(?<minnum>ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)?|twenty|thirty|forty|fifty|one|two|three|five|eight)`;

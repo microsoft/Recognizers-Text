@@ -206,9 +206,11 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
     }
 
     private hasTokenIndex(source: string, regex: RegExp): { matched: boolean, index: number } {
+        // This part is different from C# because no Regex RightToLeft option in JS
         let result = { matched: false, index: -1 };
-        let match = RegExpUtility.getMatches(regex, source).pop();
-        if (match) {
+        let matchResult = RegExpUtility.getMatches(regex, source);
+        let match = matchResult[matchResult.length - 1];
+        if (match && !source.substr(match.index + match.length).trim().length) {
             result.matched = true;
             result.index = match.index;
         }

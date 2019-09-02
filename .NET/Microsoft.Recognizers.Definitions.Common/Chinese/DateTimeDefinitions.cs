@@ -569,6 +569,15 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string DateTimePeriodAFRegex = @"(下午|午后|傍晚)";
       public const string DateTimePeriodEVRegex = @"(晚上|夜里|夜晚|晚)";
       public const string DateTimePeriodNIRegex = @"(半夜|夜间|深夜)";
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"早", @"(?<!今|明|日|号)早(?!上)" },
+            { @"晚", @"(?<!今|明|昨|傍|夜|日|号)晚(?!上)" },
+            { @"^\d{1,2}号", @"^\d{1,2}号" },
+            { @"周", @"周岁" },
+            { @"今日", @"今日头条" },
+            { @"明日", @"《明日之后》" }
+        };
       public static readonly Dictionary<string, int> DurationUnitValueMap = new Dictionary<string, int>
         {
             { @"Y", 31536000 },
