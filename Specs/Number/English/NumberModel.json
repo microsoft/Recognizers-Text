@@ -2503,6 +2503,16 @@
     "Input": "I want to earn $10000 in 3 years",
     "Results": [
       {
+        "Text": "10000",
+        "Start": 16,
+        "End": 20,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000"
+        }
+      },
+      {
         "Text": "3",
         "Start": 25,
         "End": 25,
@@ -2517,6 +2527,16 @@
   {
     "Input": "I want to earn $2000 over 3 years",
     "Results": [
+      {
+        "Text": "2000",
+        "Start": 16,
+        "End": 19,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2000"
+        }
+      },
       {
         "Text": "3",
         "Start": 26,
@@ -2546,6 +2566,17 @@
   },
   {
     "Input": "$20",
-    "Results": []
+    "Results": [
+      {
+        "Text": "20",
+        "Start": 1,
+        "End": 2,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "20"
+        }
+      }
+    ]
   }
 ]

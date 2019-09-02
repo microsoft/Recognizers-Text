@@ -407,22 +407,25 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return isSubMatch;
         }
 
-        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)
+        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
         {
             if (this.config.AmbiguityFiltersDict != null)
             {
-                foreach (var regex in config.AmbiguityFiltersDict)
+                foreach (var regex in this.config.AmbiguityFiltersDict)
                 {
-                    if (regex.Key.IsMatch(text))
+                    foreach (var extractResult in extractResults)
                     {
-                        var matches = regex.Value.Matches(text).Cast<Match>();
-                        ers = ers.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
-                                 .ToList();
+                        if (regex.Key.IsMatch(extractResult.Text))
+                        {
+                            var matches = regex.Value.Matches(text).Cast<Match>();
+                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                                .ToList();
+                        }
                     }
                 }
             }
 
-            return ers;
+            return extractResults;
         }
     }
 }

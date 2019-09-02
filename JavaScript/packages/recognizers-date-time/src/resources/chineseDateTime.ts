@@ -166,7 +166,7 @@ export namespace ChineseDateTime {
     export const DateTimePeriodAFRegex = `(下午|午后|傍晚)`;
     export const DateTimePeriodEVRegex = `(晚上|夜里|夜晚|晚)`;
     export const DateTimePeriodNIRegex = `(半夜|夜间|深夜)`;
-    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["早", "^早$"],["晚", "^晚$"],["^\\d{1,2}号", "^\\d{1,2}号"]]);
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["早", "(?<!今|明|日|号)早(?!上)"],["晚", "(?<!今|明|昨|傍|夜|日|号)晚(?!上)"],["^\\d{1,2}号", "^\\d{1,2}号"],["周", "周岁"],["今日", "今日头条"],["明日", "《明日之后》"]]);
     export const DurationUnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["Y", 31536000],["Mon", 2592000],["W", 604800],["D", 86400],["H", 3600],["M", 60],["S", 1]]);
     export const HolidayNoFixedTimex: ReadonlyMap<string, string> = new Map<string, string>([["父亲节", "-06-WXX-6-3"],["母亲节", "-05-WXX-7-2"],["感恩节", "-11-WXX-4-4"]]);
     export const MergedBeforeRegex = `(前|之前)$`;
