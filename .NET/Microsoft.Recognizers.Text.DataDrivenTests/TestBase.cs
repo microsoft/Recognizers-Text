@@ -385,7 +385,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                         continue;
                     }
 
-                    Assert.AreEqual(expected.Resolution[key], actual.Resolution[key], GetMessage(testSpec));
+                    Assert.AreEqual(expected.Resolution[key].ToString(), actual.Resolution[key].ToString(), GetMessage(testSpec));
                 }
             }
         }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.English;
+using Microsoft.Recognizers.Definitions.Arabic;
 
 namespace Microsoft.Recognizers.Text.Choice.Arabic
 {

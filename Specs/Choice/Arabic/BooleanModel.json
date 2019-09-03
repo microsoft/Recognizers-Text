@@ -1,9 +1,9 @@
 [
   {
-    "Input": "متاكد!",
+    "Input": "بالتأكيد!",
     "Results": [
       {
-        "Text": "متاكد",
+        "Text": "بالتأكيد",
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
@@ -20,20 +20,20 @@
         "TypeName": "boolean",
         "Resolution": {
           "value": false,
-          "score": 0.5
+          "score": 0.52
         }
       }
     ]
   },
   {
-    "Input": "أعتقد أن هذا سينجح لذلك نعم سأفعل.",
+    "Input": "أعتقد أن هذا سينجح. لذلك نعم سوف أقوم بذلك.",
     "Results": [
       {
         "Text": "نعم",
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
-          "score": 0.46666666666666667
+          "score": 0.466666666666667
         }
       }
     ]
@@ -46,7 +46,7 @@
         "TypeName": "boolean",
         "Resolution": {
           "value": false,
-          "score": 0.48571428571428571
+          "score": 0.52
         }
       }
     ]
@@ -59,7 +59,7 @@
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
-          "score": 0.52
+          "score": 0.55
         }
       }
     ]
@@ -72,7 +72,7 @@
         "TypeName": "boolean",
         "Resolution": {
           "value": false,
-          "score": 0.52
+          "score": 0.55
         }
       }
     ]
@@ -91,50 +91,50 @@
     ]
   },
   {
-    "Input": "نختلف ، فإنه ليس على ما يرام",
+    "Input": "نختلف ، فإنه ليس صحيح",
     "Results": [
       {
-        "Text": "ليس",
+        "Text": "ليس صحيح",
         "TypeName": "boolean",
         "Resolution": {
           "value": false,
-          "score": 0.64
+          "score": 0.7
         }
       }
     ]
   },
   {
-    "Input": "اتفق، لا بأس",
+    "Input": "اتفق، لا مشكلة",
     "Results": [
       {
         "Text": "اتفق",
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
-          "score": 0.55
+          "score": 0.6
         }
       }
     ]
   },
   {
-    "Input": "أتفق، فإنه ليس على ما يرام",
+    "Input": "أتفق، فإنه ليس صحيح",
     "NotSupportedByDesign": "python",
     "Results": [
       {
-        "Text": "ليس",
+        "Text": "ليس صحيح",
         "TypeName": "boolean",
         "Resolution": {
           "value": false,
-          "score": 0.64
+          "score": 0.7
         }
       }
     ]
   },
   {
-    "Input": "نختلف",
+    "Input": "أختلف",
     "Results": [
       {
-        "Text": "نختلف",
+        "Text": "أختلف",
         "TypeName": "boolean",
         "Resolution": {
           "value": false,
@@ -151,7 +151,7 @@
         "TypeName": "boolean",
         "Resolution": {
           "value": false,
-          "score": 0.7
+          "score": 0.52
         }
       }
     ]
@@ -164,7 +164,7 @@
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
-          "score": 0.55
+          "score": 0.6
         }
       }
     ]
