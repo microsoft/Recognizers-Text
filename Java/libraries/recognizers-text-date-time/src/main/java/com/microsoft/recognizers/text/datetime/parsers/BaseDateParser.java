@@ -430,7 +430,7 @@ public class BaseDateParser implements IDateTimeParser {
 
         LocalDateTime futureDate = value;
         LocalDateTime pastDate = value;
-        if (noYear && futureDate.isBefore(referenceDate) && !futureDate.isEqual(LocalDateTime.MIN)) {
+        if (noYear && futureDate.isBefore(referenceDate)) {
             futureDate = computeDate(cardinal, weekday, month, year + 1);
             if (futureDate.getMonthValue() != month) {
                 futureDate = futureDate.minusDays(7);

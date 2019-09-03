@@ -724,7 +724,8 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
     }
 
     public void addSingleDateTimeToResolution(Map<String, String> resolutionDic, String type, String mod, Map<String, String> res) {
-        // If the date is invalid, the result should be invalid.
+        // If an "invalid" Date or DateTime is extracted, it should not have an assigned resolution.
+        // Only valid entities should pass this condition.
         if (resolutionDic.containsKey(type) && !resolutionDic.get(type).startsWith(dateMinString)) {
             if (!StringUtility.isNullOrEmpty(mod)) {
                 if (mod.equals(Constants.BEFORE_MOD)) {

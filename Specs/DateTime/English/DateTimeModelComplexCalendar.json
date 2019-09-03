@@ -11999,5 +11999,94 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Feb 30 is a invalid date.",
+    "Context": {
+      "ReferenceDateTime": "2019-01-30T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "feb 30",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-02-30",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Feb 30 is a invalid date.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "feb 30",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-30",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "6,107.31 August 2019 should not include the decimal",
+    "Comment": "Only August 2019 should be extracted as a DateRange, so no output in Date only. Java disabled due to issue in lookbehind.",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "august 2019",
+        "Start": 9,
+        "End": 19,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08",
+              "type": "daterange",
+              "start": "2019-08-01",
+              "end": "2019-09-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "That's absurd like saying we should meet in feb 30 2019 17:20!",
+    "Results": [
+      {
+        "Text": "feb 30 2019 17:20",
+        "Start": 44,
+        "End": 60,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-02-30T17:20",
+              "type": "datetime",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

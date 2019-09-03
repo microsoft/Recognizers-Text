@@ -40,7 +40,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static void AddSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod, Dictionary<string, string> res)
         {
-            // If the date is invalid, the result should be invalid.
+            // If an "invalid" Date or DateTime is extracted, it should not have an assigned resolution.
+            // Only valid entities should pass this condition.
             if (resolutionDic.ContainsKey(type) &&
                 !resolutionDic[type].StartsWith(DateMinString, StringComparison.Ordinal))
             {
@@ -141,13 +142,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
+            if (!AreUnresolvedDates(start, end))
             {
-                if (start.StartsWith(DateMinString) || end.StartsWith(DateMinString))
-                {
-                    return;
-                }
-
                 res.Add(DateTimeResolutionKey.Start, start);
                 res.Add(DateTimeResolutionKey.End, end);
             }
@@ -243,6 +239,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_TIME, TimeTypeConstants.END_TIME, mod, res);
             }
+        }
+
+        public static bool AreUnresolvedDates(string startDate, string endDate)
+        {
+            return string.IsNullOrEmpty(startDate) || string.IsNullOrEmpty(endDate)
+                   || startDate.StartsWith(DateMinString, StringComparison.Ordinal) || endDate.StartsWith(DateMinString, StringComparison.Ordinal);
         }
 
         public ParseResult Parse(ExtractResult er)
