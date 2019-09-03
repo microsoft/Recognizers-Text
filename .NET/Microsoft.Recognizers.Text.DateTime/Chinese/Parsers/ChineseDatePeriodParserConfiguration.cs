@@ -715,6 +715,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     }
                     else if (trimmedText.EndsWith("年"))
                     {
+                        // Handle like "(今年)上半年"，"(明年)下半年"
+                        var firstHalf = match.Groups["firstHalf"].Value;
+                        var secondHalf = match.Groups["secondHalf"].Value;
+                        var hasHalf = false;
+
+                        if (!string.IsNullOrEmpty(firstHalf))
+                        {
+                            trimmedText = trimmedText.Substring(0, trimmedText.Length - firstHalf.Length);
+                            hasHalf = true;
+                        }
+                        else if (!string.IsNullOrEmpty(secondHalf))
+                        {
+                            trimmedText = trimmedText.Substring(0, trimmedText.Length - secondHalf.Length);
+                            hasHalf = true;
+                        }
+
                         year = referenceDate.AddYears(swift).Year;
                         if (trimmedText.EndsWith("去年"))
                         {
@@ -733,64 +749,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             year += 2;
                         }
 
-                        // Handle like "(今年)上半年"，"(明年)下半年"
-                        var firstHalf = match.Groups["firstHalf"].Value;
-                        var secondHalf = match.Groups["secondHalf"].Value;
-                        var halfType = 0;
+                        var beginDate = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
+                        var endDate = DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
 
-                        if (!string.IsNullOrEmpty(firstHalf))
+                        ret.Timex = year.ToString("D4");
+
+                        if (hasHalf)
                         {
-                            halfType = 1;
-                        }
-                        else if (!string.IsNullOrEmpty(secondHalf))
-                        {
-                            halfType = 2;
-                        }
-
-                        if (halfType != 0)
-                        {
-                            if (trimmedText.StartsWith("去年"))
+                            if (!string.IsNullOrEmpty(firstHalf))
                             {
-                                year--;
-                            }
-                            else if (trimmedText.StartsWith("明年"))
-                            {
-                                year++;
-                            }
-                            else if (trimmedText.StartsWith("前年"))
-                            {
-                                year -= 2;
-                            }
-                            else if (trimmedText.StartsWith("后年"))
-                            {
-                                year += 2;
-                            }
-
-                            DateObject beginDate, endDate;
-
-                            if (halfType == 1)
-                            {
-                                beginDate = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
                                 endDate = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
                             }
                             else
                             {
                                 beginDate = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
-                                endDate = DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
                             }
 
-                            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                             ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},P6M)";
-                            ret.Success = true;
-                            return ret;
                         }
 
-                        ret.Timex = year.ToString("D4");
-                        ret.FutureValue =
-                            ret.PastValue =
-                                new Tuple<DateObject, DateObject>(
-                                    DateObject.MinValue.SafeCreateFromValue(year, 1, 1),
-                                    DateObject.MinValue.SafeCreateFromValue(year, 12, 31).AddDays(1));
+                        ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                         ret.Success = true;
                         return ret;
                     }
@@ -828,17 +806,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 // Handle like "2016年上半年"，"2017年下半年"
                 var firstHalf = match.Groups["firstHalf"].Value;
                 var secondHalf = match.Groups["secondHalf"].Value;
-                var halfType = 0;
+                var hasHalf = false;
 
                 if (!string.IsNullOrEmpty(firstHalf))
                 {
                     tmp = tmp.Substring(0, tmp.Length - firstHalf.Length);
-                    halfType = 1;
+                    hasHalf = true;
                 }
                 else if (!string.IsNullOrEmpty(secondHalf))
                 {
                     tmp = tmp.Substring(0, tmp.Length - secondHalf.Length);
-                    halfType = 2;
+                    hasHalf = true;
                 }
 
                 // Trim() to handle extra whitespaces like '07 年'
@@ -873,14 +851,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 ret.Timex = year.ToString("D4");
 
-                if (halfType == 1)
+                if (hasHalf)
                 {
-                    endDay = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
-                    ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P6M)";
-                }
-                else if (halfType == 2)
-                {
-                    beginDay = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
+                    if (!string.IsNullOrEmpty(firstHalf))
+                    {
+                        endDay = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
+                    }
+                    else
+                    {
+                        beginDay = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
+                    }
+
                     ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P6M)";
                 }
 
@@ -899,17 +880,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 // Handle like "二零一七年上半年"，"二零一七年下半年"
                 var firstHalf = match.Groups["firstHalf"].Value;
                 var secondHalf = match.Groups["secondHalf"].Value;
-                var halfType = 0;
+                var hasHalf = false;
 
                 if (!string.IsNullOrEmpty(firstHalf))
                 {
                     tmp = tmp.Substring(0, tmp.Length - firstHalf.Length);
-                    halfType = 1;
+                    hasHalf = true;
                 }
                 else if (!string.IsNullOrEmpty(secondHalf))
                 {
                     tmp = tmp.Substring(0, tmp.Length - secondHalf.Length);
-                    halfType = 2;
+                    hasHalf = true;
                 }
 
                 if (tmp.EndsWith("年"))
@@ -939,14 +920,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 ret.Timex = year.ToString("D4");
 
-                if (halfType == 1)
+                if (hasHalf)
                 {
-                    endDay = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
-                    ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P6M)";
-                }
-                else if (halfType == 2)
-                {
-                    beginDay = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
+                    if (!string.IsNullOrEmpty(firstHalf))
+                    {
+                        endDay = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
+                    }
+                    else
+                    {
+                        beginDay = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
+                    }
+
                     ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P6M)";
                 }
 
