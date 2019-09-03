@@ -212,6 +212,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
     </Compile>
+    <Compile Update="Hindi\NumbersDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="Hindi\NumbersWithUnitDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
