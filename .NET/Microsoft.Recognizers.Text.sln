@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{ED7B6456-AB0A-48CE-8F85-711FE87F09C2}"
 EndProject
@@ -18,6 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Files", "Data Files", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23084BAE-6EB0-439A-BD71-31A783680711}"
 	ProjectSection(SolutionItems) = preProject
+		..\Patterns\Arabic\Arabic-Choice.yaml = ..\Patterns\Arabic\Arabic-Choice.yaml
 		..\Patterns\Base-Currency.yaml = ..\Patterns\Base-Currency.yaml
 		..\Patterns\Base-DateTime.yaml = ..\Patterns\Base-DateTime.yaml
 		..\Patterns\Base-Email.yaml = ..\Patterns\Base-Email.yaml
@@ -52,6 +53,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\German\German-Numbers.yaml = ..\Patterns\German\German-Numbers.yaml
 		..\Patterns\German\German-NumbersWithUnit.yaml = ..\Patterns\German\German-NumbersWithUnit.yaml
 		..\Patterns\Hindi\Hindi-Numbers.yaml = ..\Patterns\Hindi\Hindi-Numbers.yaml
+		..\Patterns\Hindi\Hindi-NumbersWithUnit.yaml = ..\Patterns\Hindi\Hindi-NumbersWithUnit.yaml
 		..\Patterns\Italian\Italian-Choice.yaml = ..\Patterns\Italian\Italian-Choice.yaml
 		..\Patterns\Italian\Italian-DateTime.yaml = ..\Patterns\Italian\Italian-DateTime.yaml
 		..\Patterns\Italian\Italian-Numbers.yaml = ..\Patterns\Italian\Italian-Numbers.yaml
@@ -74,8 +76,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\Turkish\Turkish-DateTime.yaml = ..\Patterns\Turkish\Turkish-DateTime.yaml
 		..\Patterns\Turkish\Turkish-Numbers.yaml = ..\Patterns\Turkish\Turkish-Numbers.yaml
 		..\Patterns\Turkish\Turkish-NumbersWithUnit.yaml = ..\Patterns\Turkish\Turkish-NumbersWithUnit.yaml
-		..\Patterns\Hindi\Hindi-Numbers.yaml = ..\Patterns\Hindi\Hindi-Numbers.yaml
-		..\Patterns\Hindi\Hindi-NumbersWithUnit.yaml = ..\Patterns\Hindi\Hindi-NumbersWithUnit.yaml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.DataDrivenTests", "Microsoft.Recognizers.Text.DataDrivenTests\Microsoft.Recognizers.Text.DataDrivenTests.csproj", "{2783050D-97E2-4F10-99F0-E2D970FD996A}"

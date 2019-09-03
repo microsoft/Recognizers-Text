@@ -32,6 +32,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Arabic\ChoiceDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="BaseCurrency.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -207,11 +212,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
     </Compile>
-    <Compile Update="Hindi\NumbersDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-    </Compile>
     <Compile Update="Hindi\NumbersWithUnitDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -330,6 +330,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Arabic\ChoiceDefinitions.tt">
+    </None>
     <None Update="BaseCurrency.tt">
     </None>
     <None Update="BaseDateTime.tt">
@@ -452,6 +454,10 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="T5.TextTransform.Tool" Version="1.1.0-*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT' ">

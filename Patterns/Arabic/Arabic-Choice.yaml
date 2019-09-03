@@ -1,0 +1,8 @@
+LangMarker: Ara
+#Boolean Recognizers
+TokenizerRegex: !simpleRegex
+  def: '[^\w\d]'
+TrueRegex: !simpleRegex
+  def: \b(صحيح|نعم|حسنا|موافق|بالتأكيد|بالطبع|هيا)\b|(\uD83D\uDC4D|\uD83D\uDC4C|\u0001f44c)
+FalseRegex: !simpleRegex
+  def: \b(لست متاحا|لا أستطيع|ليس تماما|لست أوافق|لا|غير موافق)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90|\u0001F44E|\u0001F590)

@@ -1,0 +1,185 @@
+[
+  {
+    "Input": "متاكد!",
+    "Results": [
+      {
+        "Text": "متاكد",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "أنا لا أظن ذلك. لا.",
+    "Results": [
+      {
+        "Text": "لا",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "Input": "أعتقد أن هذا سينجح لذلك نعم سأفعل.",
+    "Results": [
+      {
+        "Text": "نعم",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.46666666666666667
+        }
+      }
+    ]
+  },
+  {
+    "Input": "لا، قلت الرابع من يوليو",
+    "Results": [
+      {
+        "Text": "لا",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.48571428571428571
+        }
+      }
+    ]
+  },
+  {
+    "Input": "نعم... قلت لا بصل",
+    "Results": [
+      {
+        "Text": "نعم",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.52
+        }
+      }
+    ]
+  },
+  {
+    "Input": "قلت لا ليس نعم!",
+    "Results": [
+      {
+        "Text": "لا",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.52
+        }
+      }
+    ]
+  },
+  {
+    "Input": "نعم. أنا أقول لا",
+    "Results": [
+      {
+        "Text": "نعم",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "نختلف ، فإنه ليس على ما يرام",
+    "Results": [
+      {
+        "Text": "ليس",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+  {
+    "Input": "اتفق، لا بأس",
+    "Results": [
+      {
+        "Text": "اتفق",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "أتفق، فإنه ليس على ما يرام",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "ليس",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+  {
+    "Input": "نختلف",
+    "Results": [
+      {
+        "Text": "نختلف",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "انها ليست على ما يرام",
+    "Results": [
+      {
+        "Text": "ليست",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌 لا بأس",
+    "Results": [
+      {
+        "Text": "👌",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌👌👌",
+    "Results": [
+      {
+        "Text": "👌",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
+  }
+]
