@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29215.179
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{ED7B6456-AB0A-48CE-8F85-711FE87F09C2}"
 EndProject
@@ -54,6 +54,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\German\German-NumbersWithUnit.yaml = ..\Patterns\German\German-NumbersWithUnit.yaml
 		..\Patterns\Hindi\Hindi-Numbers.yaml = ..\Patterns\Hindi\Hindi-Numbers.yaml
 		..\Patterns\Hindi\Hindi-NumbersWithUnit.yaml = ..\Patterns\Hindi\Hindi-NumbersWithUnit.yaml
+		..\Patterns\Hindi\Hindi-Choice.yaml = ..\Patterns\Hindi\Hindi-Choice.yaml
 		..\Patterns\Italian\Italian-Choice.yaml = ..\Patterns\Italian\Italian-Choice.yaml
 		..\Patterns\Italian\Italian-DateTime.yaml = ..\Patterns\Italian\Italian-DateTime.yaml
 		..\Patterns\Italian\Italian-Numbers.yaml = ..\Patterns\Italian\Italian-Numbers.yaml

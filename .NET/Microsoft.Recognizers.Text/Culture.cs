@@ -5,7 +5,7 @@ namespace Microsoft.Recognizers.Text
 {
     public sealed class Culture
     {
-        public const string Arabic = "ar";
+        public const string Arabic = "ar-*";
         public const string English = "en-us";
         public const string EnglishOthers = "en-*";
         public const string Chinese = "zh-cn";
