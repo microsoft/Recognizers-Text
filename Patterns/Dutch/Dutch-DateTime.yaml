@@ -8,7 +8,7 @@ RangeConnectorRegex: !nestedRegex
 ArticleRegex: !simpleRegex
   def: \b(de|het|een)\b
 RelativeRegex: !simpleRegex
-  def: \b(?<order>dit|deze|volgende?|komende?|aankomende?|aanstaande?|huidige?|vorige?|verleden|voorgaande?|vorige?|laatste|afgelopen)\b
+  def: (?<order>dit|deze|volgende?|komende?|aankomende?|aanstaande?|huidige?|vorige?|verleden|voorgaande?|vorige?|laatste|afgelopen)
 StrictRelativeRegex: !simpleRegex
   def: \b(?<order>dit|deze|volgende?|komende?|aankomende?|aanstaande?|huidige?|vorige?|verleden|voorgaande?|vorige?|laatste|afgelopen)\b
 UpcomingPrefixRegex: !simpleRegex
@@ -17,7 +17,7 @@ NextPrefixRegex: !nestedRegex
   def: \b(volgende?|eerstvolgende|{UpcomingPrefixRegex})\b
   references: [ UpcomingPrefixRegex ]
 AfterNextSuffixRegex: !simpleRegex
-  def: \b(na\s+((de|het)\s+)?volgende)\b
+  def: \b(na\s+((de|het)\s+)?volgende?)\b
 PastPrefixRegex: !simpleRegex
   def: ((deze\s+)?verleden)\b
 PreviousPrefixRegex: !nestedRegex
@@ -35,6 +35,10 @@ FutureSuffixRegex: !simpleRegex
   def: \b(in\s+de\s+)?(toekomst|vanaf)\b
 DayRegex: !simpleRegex
   def: (de\s*)?(?<day>(3[0-1]|[1-2]\d|0?[1-9])(ste|e|de)?)(?=\b|t)
+# 1-31 written
+WrittenDayRegex: !nestedRegex
+  def: \b(?<day>({WrittenOneToNineRegex})|({WrittenElevenToNineteenRegex})|(({WrittenOneToNineRegex}en)?twintig)|(((één|een)en)?dertig))\b
+  references: [WrittenOneToNineRegex, WrittenElevenToNineteenRegex]
 ImplicitDayRegex: !simpleRegex
   def: (de\s*)?(?<day>(3[0-1]|[0-2]?\d)(ste|e|de))\b
 MonthNumRegex: !simpleRegex
@@ -94,7 +98,7 @@ RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>((van\s+)?de\s+)?{RelativeRegex}\s+maand)\b
   references: [RelativeRegex]
 WrittenMonthRegex: !simpleRegex
-  def: (((de\s+)?maand\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|okt|nov|dec))
+  def: (((de\s+)?maand\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|okt|nov|dec))
 MonthSuffixRegex: !nestedRegex
   def: (?<msuf>((in|van|tijdens|sinds|tot)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
@@ -183,7 +187,7 @@ MonthOfRegex: !simpleRegex
   def: (maand)(\s*)(van)
 MonthRegex: !simpleRegex
   def: (?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|december|jan\.?|feb\.?|mar\.?|apr\.?|mei|jun\.?|jul\.?|aug\.?|sep\.?|sept\.?|oct\.?|okt\.?|nov\.?|dec\.?)
-# This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
+# This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016.
 # The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
   def: (?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})
@@ -236,8 +240,8 @@ DateExtractor1: !nestedRegex
   def: \b({WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))(\s*\(\s*{WeekDayRegex}\s*\))?({DateExtractorYearTermRegex}\b)?
   references: [ WeekDayRegex, MonthRegex, DayRegex, DateExtractorYearTermRegex ]
 DateExtractor3: !nestedRegex
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\.)?(\s+|\s*,\s*|\s*-\s*){MonthRegex}(\.)?((\s+|\s*,\s*|\s+in\s+){DateYearRegex})?\b
-  references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?({DayRegex}|{WrittenDayRegex})(\.)?(\s+|\s*,\s*|\s*-\s*){MonthRegex}(\.)?((\s+|\s*,\s*|\s+in\s+){DateYearRegex})?\b
+  references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex, WrittenDayRegex ]
 DateExtractor4: !nestedRegex
   def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
@@ -334,7 +338,7 @@ AtRegex: !nestedRegex
   references: [ WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, MidTimeRegex ]
 IshRegex: !nestedRegex
   def: '\b({BaseDateTime.HourRegex}(-|——)?ish|noonish|noon)\b'
-  references: [ BaseDateTime.HourRegex ]  
+  references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
   def: ([^A-Za-z]{1,}|\b)(?<unit>uren|uur|u|minuten|minuut|min\.?|mins|secondes|seconden|seconde|secs|sec\.?)\b
 RestrictedTimeUnitRegex: !simpleRegex
@@ -468,7 +472,7 @@ EachPrefixRegex: !simpleRegex
 SetEachRegex: !simpleRegex
   def: \b(?<each>(iedere|elke)\s*)
 SetLastRegex: !simpleRegex
-  def: (?<last>volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)
+  def: (?<last>volgende?|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)
 EachDayRegex: !simpleRegex
   def: ^\s*(elke)\s*dag\b
 DurationFollowedUnit: !nestedRegex
@@ -489,13 +493,14 @@ HalfRegex: !simpleRegex
 ConjunctionRegex: !simpleRegex
   def: \b((en(\s+voor)?)|plus)\b
 HolidayRegex1: !nestedRegex
-  def: \b(?<holiday>goede\s+vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|oudejaarsavond|nieuwjaar|nieuwjaarsdag|bevrijdingsdag)(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b
+  def: \b(?<holiday>(goede\s+vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|bevrijdingsdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b
   references: [ YearRegex, RelativeRegex ]
+# TODO: re-add oude?jaardsavond
 HolidayRegex2: !nestedRegex
-  def: \b(?<holiday>yuandan|nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid)(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b
+  def: \b(?<holiday>(nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid|martin luther kingdag|mlkdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b
   references: [ YearRegex, RelativeRegex ]
 HolidayRegex3: !nestedRegex # -dag suffix
-  def: (?<holiday>(valentijn|valentijnsdag|nieuwjaarsdag|prinsjesdag|koningsdag|koninginnedag|bevrijdingsdag|hemelvaartsdag|eerste kerstdag|1e kerst|tweede kerstdag|2e kerstdag|vaderdag|moederdag|meisjesdag|amerikaanse onafhankelijkheidsdag|onafhankelijkheidsdag|nederlandse veteranendag|veteranendag|2e kerstdag|1e kerstdag|boomplantdag|boomfeestdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?
+  def: \b(?<holiday>(yuandan|valentijnsdag|valentijn|oude?jaarsavond|nieuwjaarsdag|eerste paasdag|tweede paasdag|prinsjesdag|koningsdag|koninginnedag|bevrijdingsdag|hemelvaartsdag|eerste kerstdag|1e kerstdag|tweede kerstdag|2e kerstdag|vaderdag|moederdag|meisjesdag|amerikaanse onafhankelijkheidsdag|onafhankelijkheidsdag|nederlandse veteranendag|veteranendag|boomplantdag|boomfeestdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b
   references: [ YearRegex, RelativeRegex ]
 AMTimeRegex: !simpleRegex
   def: (?<am>('s morgens|'s ochtends)|in\s+de\s+(morgen|ochtend))
@@ -719,7 +724,7 @@ CardinalMap: !dictionary
     5de: 5
 DayOfWeek: !dictionary
   types: [ string, int ]
-  entries: 
+  entries:
     maandag: 1
     dinsdag: 2
     woensdag: 3
@@ -973,14 +978,14 @@ DayOfMonth: !dictionary
     '31e': 31
 DoubleNumbers: !dictionary
   types: [ string, double ]
-  entries: 
+  entries:
     half: 0.5
     halve: 0.5
     kwart: 0.25
     kwartaal: 0.25
 HolidayNames: !dictionary
   types: [ string, 'string[]' ]
-  entries: 
+  entries:
     # Dutch specific Holidays
     kingsday: [ koningsdag ] # 27 april
     queensday: [ koninginnedag ] # 30 april
@@ -995,17 +1000,17 @@ HolidayNames: !dictionary
     dagvandearbeid: [ dagvandearbeid, dagvandenarbeid ] # 1 May
     # International Holidays
     christmas: [ kerstfeest, kerstmis, kerst, xmas ]
-    easterday: [ pasen ] 
-    fathers: [ vaderdag, vadersdag ] 
-    mothers: [ moederdag, moedersdag ] 
-    singleday: [ singleday, vrijgezellendag ] 
+    easterday: [ pasen, paasdag ]
+    fathers: [ vaderdag, vadersdag ]
+    mothers: [ moederdag, moedersdag ]
+    singleday: [ singleday, vrijgezellendag ]
     femaleday: [ femaleday, vrouwendag ]
     treeplantingday: [ boomplantdag, boomfeestdag ]
     girlsday: [ girlsday, meisjesdag ]
     newyear: [ oudennieuw, oud&nieuw ]
     newyearday: [ nieuwjaarsdag ]
     newyearsday: [ nieuwjaarsdag ]
-    newyeareve: [ oudejaarsavond, silvester, silvesteravond ]
+    newyeareve: [ oudejaarsavond, oudjaarsavond, silvester, silvesteravond ]
     valentinesday: [ valentijnsdag, valetijnsdag ]
     aprilfools: [ 1aprilgrap, 1april ]
     independenceday: [ onafhankelijkheidsdag ]
@@ -1017,8 +1022,8 @@ HolidayNames: !dictionary
     christmaseve: [ kerstavond ]
     # Holidays not celebrated extensively in the Netherlands
     columbus: [ columbusday ] # TODO or remove?
-    thanksgiving: [ thanksgivingday, thanksgiving, dankzeggingsdag ] 
-    martinlutherking: [ martinlutherkingday, martinlutherkingjrday ] # TODO or remove?
+    thanksgiving: [ thanksgivingday, thanksgiving, dankzeggingsdag ]
+    martinlutherking: [ martinlutherkingday, martinlutherkingjrday, martinlutherkingdag, martin luther king dag, mlkdag ] # TODO or remove?
     washingtonsbirthday: [ washingtonsbirthday, washingtonbirthday ] # TODO or remove?
     canberra: [ canberraday ] # TODO or remove?
     memorial: [ memorialday, memorial day ] # US only, no Dutch variant
@@ -1035,16 +1040,16 @@ HolidayNames: !dictionary
     whiteloverday: [ whiteloverday ] # TODO or remove?
     loverday: [ loverday ] # TODO or remove?
     groundhougday: [ groundhougday, bosmarmottendag ]
-    inaugurationday: [ inaugurationday, inauguratiedag ] 
+    inaugurationday: [ inaugurationday, inauguratiedag ]
     arborday: [ arborday ] # TODO or remove?
 
 WrittenDecades: !dictionary
   types: [ string, int ]
   entries:
-    'jaren 0': 0 
+    'jaren 0': 0
     'jaren nul': 0
     'jaren 10': 10
-    'jaren tien': 10 
+    'jaren tien': 10
     'jaren 20': 20
     'jaren twintig': 20
     'twintiger jaren': 20
@@ -1085,7 +1090,7 @@ SuperfluousWordList: !list
     - maybe
     - say
     - like
-# For DurationDateRestrictions, only translate these terms if this particular circumstance applies in the target language. If not, keep it empty. 
+# For DurationDateRestrictions, only translate these terms if this particular circumstance applies in the target language. If not, keep it empty.
 DurationDateRestrictions: []
 # Cases collected from mined data
 AmbiguityFiltersDict: !dictionary
@@ -1097,56 +1102,57 @@ AmbiguityFiltersDict: !dictionary
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]
-  entries: 
+  entries:
     - morgen # ambiguous (morning vs tomorrow)
 AfternoonTermList: !list
   types: [ string ]
-  entries: 
+  entries:
     - middag
 EveningTermList: !list
   types: [ string ]
-  entries: 
+  entries:
     - avond
 DaytimeTermList: !list
   types: [ string ]
-  entries: 
+  entries:
     - dag
     - overdag
 NightTermList: !list
   types: [ string ]
-  entries: 
+  entries:
     - nacht
 SameDayTerms: !list
   types: [ string ]
-  entries: 
+  entries:
     - vandaag
 PlusOneDayTerms: !list
   types: [ string ]
-  entries: 
+  entries:
     - morgen
     - dag na
     - volgende dag
 MinusOneDayTerms: !list
   types: [ string ]
-  entries: 
+  entries:
     - gisteren
     - dag voor
     - vorige dag
 PlusTwoDayTerms: !list
   types: [ string ]
-  entries: 
+  entries:
     - overmorgen
 MinusTwoDayTerms: !list
   types: [ string ]
-  entries: 
+  entries:
     - eergisteren
 # For DatePeriodParserConfiguration Logic
 FutureTerms: !list
   types: [ string ]
   entries:
     - deze
+    - volgend
     - volgende
-    - dit 
+    - dit
 LastCardinalTerms: !list
   types: [ string ]
   entries:
@@ -1175,7 +1181,7 @@ YearTerms: !list
     - jaar
 GenericYearTerms: !list
   types: [ string ]
-  entries: 
+  entries:
     - j
 YearToDateTerms: !list
   types: [ string ]

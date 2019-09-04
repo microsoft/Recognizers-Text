@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         {
             var trimmedText = text.Trim().ToLowerInvariant();
             var swift = -10;
-            if (trimmedText.StartsWith("volgende"))
+            if (trimmedText.StartsWith("volgend") || trimmedText.StartsWith("volgende"))
             {
                 swift = 1;
             }
@@ -83,6 +83,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 { "veteransday", DutchVeteransday },
                 { "christmaseve", ChristmasEve },
                 { "newyeareve", NewYearEve },
+                { "oudejaarsavond", NewYearEve },
                 { "easterday", EasterDay },
                 { "kingsday", KingsDay },
                 { "queensday", QueensDay },
