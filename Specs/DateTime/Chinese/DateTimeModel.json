@@ -3560,5 +3560,130 @@
         }
       }
     ]
+  },
+  {
+    "Input": "我上半月都不在北京",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T08:00:00"
+    },
+    "NotSupported":  "javascript, python, java",
+    "Results": [
+      {
+        "Text": "上半月",
+        "Start": 1,
+        "End": 3,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-09-01,2019-09-16,P15D)",
+              "type": "daterange",
+              "start": "2019-09-01",
+              "end": "2019-09-16"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我下半周都不在北京",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T08:00:00"
+    },
+    "NotSupported":  "javascript, python, java",
+    "Results": [
+      {
+        "Text": "下半周",
+        "Start": 1,
+        "End": 3,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-09-05,2019-09-09,P4D)",
+              "type": "daterange",
+              "start": "2019-09-05",
+              "end": "2019-09-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我上个半年都不在北京",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T08:00:00"
+    },
+    "NotSupported":  "javascript, python, java",
+    "Results": [
+      {
+        "Text": "上个半年",
+        "Start": 1,
+        "End": 4,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2019-07-01,P6M)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2019-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我2018年前半年都不在北京",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T08:00:00"
+    },
+    "NotSupported":  "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2018年前半年",
+        "Start": 1,
+        "End": 8,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-01-01,2018-07-01,P6M)",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2018-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我今年后半年都不在北京",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T08:00:00"
+    },
+    "NotSupported":  "javascript, python, java",
+    "Results": [
+      {
+        "Text": "今年后半年",
+        "Start": 1,
+        "End": 5,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-07-01,2020-01-01,P6M)",
+              "type": "daterange",
+              "start": "2019-07-01",
+              "end": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

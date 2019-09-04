@@ -666,6 +666,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
                 else
                 {
+                    DateObject beginDay, endDay;
+                    var halfTag = !string.IsNullOrEmpty(match.Groups["halfTag"].Value);
                     var swift = 0;
                     if (nextMatch.Success)
                     {
@@ -678,6 +680,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                     if (trimmedText.EndsWith("周") | trimmedText.EndsWith("星期"))
                     {
+                        // Handle like "上半周"，"下半周"
+                        if (halfTag)
+                        {
+                            beginDay = swift == -1 ? referenceDate.This(DayOfWeek.Monday) : referenceDate.This(DayOfWeek.Thursday);
+                            endDay = swift == -1 ? referenceDate.This(DayOfWeek.Thursday) : referenceDate.This(DayOfWeek.Sunday).AddDays(1);
+                            ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P{(endDay - beginDay).TotalDays}D)";
+                            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
+                            ret.Success = true;
+                            return ret;
+                        }
+
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
                         ret.Timex = DateTimeFormatUtil.ToIsoWeekTimex(monday);
                         ret.FutureValue =
@@ -708,6 +721,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                     if (trimmedText.EndsWith("月"))
                     {
+                        // Handle like "上半月"，"下半月"
+                        if (halfTag)
+                        {
+                            var monthStartDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
+                            var monthEndDay = DateObject.MinValue.SafeCreateFromValue(year, month + 1, 1);
+                            var halfMonthDay = (int)((monthEndDay - monthStartDay).TotalDays / 2);
+
+                            beginDay = swift == -1 ? monthStartDay : monthStartDay.AddDays(halfMonthDay);
+                            endDay = swift == -1 ? monthStartDay.AddDays(halfMonthDay) : monthEndDay;
+
+                            ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P{(endDay - beginDay).TotalDays}D)";
+                            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
+                            ret.Success = true;
+                            return ret;
+                        }
+
                         month = referenceDate.AddMonths(swift).Month;
                         year = referenceDate.AddMonths(swift).Year;
                         ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
@@ -715,19 +744,31 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     }
                     else if (trimmedText.EndsWith("年"))
                     {
-                        // Handle like "(今年)上半年"，"(明年)下半年"
+                        // Handle like "上(个)半年"，"下(个)半年"
+                        if (halfTag)
+                        {
+                            var yearStartDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
+                            var yearEndDay = DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
+
+                            beginDay = swift == -1 ? yearStartDay : yearStartDay.AddMonths(6);
+                            endDay = swift == -1 ? yearStartDay.AddMonths(6) : yearEndDay;
+
+                            ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P6M)";
+                            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
+                            ret.Success = true;
+                            return ret;
+                        }
+
+                        // Handle like "今年上半年"，"明年下半年"
                         var firstHalf = match.Groups["firstHalf"].Value;
                         var secondHalf = match.Groups["secondHalf"].Value;
                         var hasHalf = false;
 
-                        if (!string.IsNullOrEmpty(firstHalf))
+                        if (!string.IsNullOrEmpty(firstHalf) || !string.IsNullOrEmpty(secondHalf))
                         {
-                            trimmedText = trimmedText.Substring(0, trimmedText.Length - firstHalf.Length);
-                            hasHalf = true;
-                        }
-                        else if (!string.IsNullOrEmpty(secondHalf))
-                        {
-                            trimmedText = trimmedText.Substring(0, trimmedText.Length - secondHalf.Length);
+                            var halfText = !string.IsNullOrEmpty(firstHalf) ? firstHalf : secondHalf;
+                            swift = 0;
+                            trimmedText = trimmedText.Substring(0, trimmedText.Length - halfText.Length);
                             hasHalf = true;
                         }
 
@@ -808,14 +849,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var secondHalf = match.Groups["secondHalf"].Value;
                 var hasHalf = false;
 
-                if (!string.IsNullOrEmpty(firstHalf))
+                if (!string.IsNullOrEmpty(firstHalf) || !string.IsNullOrEmpty(secondHalf))
                 {
-                    tmp = tmp.Substring(0, tmp.Length - firstHalf.Length);
-                    hasHalf = true;
-                }
-                else if (!string.IsNullOrEmpty(secondHalf))
-                {
-                    tmp = tmp.Substring(0, tmp.Length - secondHalf.Length);
+                    var halfText = !string.IsNullOrEmpty(firstHalf) ? firstHalf : secondHalf;
+                    tmp = tmp.Substring(0, tmp.Length - halfText.Length);
                     hasHalf = true;
                 }
 
@@ -882,14 +919,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var secondHalf = match.Groups["secondHalf"].Value;
                 var hasHalf = false;
 
-                if (!string.IsNullOrEmpty(firstHalf))
+                if (!string.IsNullOrEmpty(firstHalf) || !string.IsNullOrEmpty(secondHalf))
                 {
-                    tmp = tmp.Substring(0, tmp.Length - firstHalf.Length);
-                    hasHalf = true;
-                }
-                else if (!string.IsNullOrEmpty(secondHalf))
-                {
-                    tmp = tmp.Substring(0, tmp.Length - secondHalf.Length);
+                    var halfText = !string.IsNullOrEmpty(firstHalf) ? firstHalf : secondHalf;
+                    tmp = tmp.Substring(0, tmp.Length - halfText.Length);
                     hasHalf = true;
                 }
 
