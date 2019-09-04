@@ -12001,7 +12001,7 @@
     ]
   },
   {
-    "Input": "Feb 30 is a invalid date.",
+    "Input": "Feb 30 is an invalid date.",
     "Context": {
       "ReferenceDateTime": "2019-01-30T00:00:00"
     },
@@ -12024,7 +12024,7 @@
     ]
   },
   {
-    "Input": "Feb 30 is a invalid date.",
+    "Input": "Feb 30 is an invalid date.",
     "Context": {
       "ReferenceDateTime": "2019-07-30T00:00:00"
     },
@@ -12068,6 +12068,18 @@
         }
       }
     ]
+  },
+  {
+    "Input": "0.8/15 looks like a formula",
+    "Comment": "Java disabled due to issue in lookbehind.",
+    "NotSupported": "java",
+    "Results": []
+  },
+  {
+    "Input": "8/1.5 looks like a formula",
+    "Comment": "Java disabled due to issue in lookbehind.",
+    "NotSupported": "java",
+    "Results": []
   },
   {
     "Input": "That's absurd like saying we should meet in feb 30 2019 17:20!",

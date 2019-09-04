@@ -14050,6 +14050,18 @@
     ]
   },
   {
+    "Input": "0.8/15 looks like a formula",
+    "Comment": "Java disabled due to issue in lookbehind.",
+    "NotSupported": "java",
+    "Results": []
+  },
+  {
+    "Input": "8/1.5 looks like a formula",
+    "Comment": "Java disabled due to issue in lookbehind.",
+    "NotSupported": "java",
+    "Results": []
+  },
+  {
     "Input": "feb 30 2019",
     "Context": {
       "ReferenceDateTime": "2020-07-30T00:00:00"

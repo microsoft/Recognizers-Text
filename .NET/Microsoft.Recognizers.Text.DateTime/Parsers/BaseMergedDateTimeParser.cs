@@ -243,8 +243,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static bool AreUnresolvedDates(string startDate, string endDate)
         {
-            return string.IsNullOrEmpty(startDate) || string.IsNullOrEmpty(endDate)
-                   || startDate.StartsWith(DateMinString, StringComparison.Ordinal) || endDate.StartsWith(DateMinString, StringComparison.Ordinal);
+            return string.IsNullOrEmpty(startDate) || string.IsNullOrEmpty(endDate) ||
+                   startDate.StartsWith(DateMinString, StringComparison.Ordinal) || endDate.StartsWith(DateMinString, StringComparison.Ordinal);
         }
 
         public ParseResult Parse(ExtractResult er)
