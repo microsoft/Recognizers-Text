@@ -160,7 +160,7 @@ class BaseDateTimeExtractor(DateTimeExtractor):
         time_ers = self.config.time_point_extractor.extract(source, reference)
         time_num_matches = self.config.number_as_time_regex.search(source)
 
-        if time_ers.count() == 0 and time_num_matches.count() == 0:
+        if len(time_ers) == 0 and len(time_num_matches) == 0:
             return ret
 
         ers = date_ers
@@ -171,7 +171,7 @@ class BaseDateTimeExtractor(DateTimeExtractor):
 
             idx = 0
 
-            for idx in range(idx, time_num_matches.count(), 1):
+            for idx in range(idx, len(time_num_matches), 1):
                 match = time_num_matches[idx]
                 node = ExtractResult()
                 node.start = source.index(match.group())
@@ -186,14 +186,14 @@ class BaseDateTimeExtractor(DateTimeExtractor):
 
         i = 0
 
-        while i < ers.count() - 1:
+        while i < len(ers) - 1:
 
             j = i + 1
 
-            while j < ers.count() and ers[i].overlap(ers[j]):
+            while j < len(ers) and ers[i].overlap(ers[j]):
                 j += 1
 
-            if j >= ers.count():
+            if j >= len(ers):
                 break
 
             if ((ers[i].type is Constants.SYS_DATETIME_DATE and ers[j].type is Constants.SYS_DATETIME_TIME) or
@@ -236,14 +236,14 @@ class BaseDateTimeExtractor(DateTimeExtractor):
             i = j
 
         idx = 0
-        for idx in range(idx, ret.count(), 1):
+        for idx in range(idx, len(ret), 1):
             after_str = source[ret[idx].end:]
             match = self.config.suffix_regex.search(after_str)
             if match:
                 ret[idx] = Token(ret[idx].start, ret[idx].end + len(match.group()))
 
         idx = 0
-        for idx in range(idx, ret.count(), 1):
+        for idx in range(idx, len(ret), 1):
             before_str = source[0: ret[idx].start]
             match = self.config.utility_configuration.common_date_prefix_regex.search(before_str)
             if match:

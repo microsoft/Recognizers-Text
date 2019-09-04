@@ -18,7 +18,7 @@ MatchesVal = namedtuple('MatchesVal', ['matches', 'val'])
 class BaseNumberExtractor(Extractor):
 
     def __init__(self, options):
-        self.options = options
+        self._options = options
 
     @property
     @abstractmethod
@@ -35,9 +35,8 @@ class BaseNumberExtractor(Extractor):
         raise NotImplementedError
 
     @property
-    @abstractmethod
     def options(self):
-        return self.options
+        return self._options
 
     @property
     def _negative_number_terms(self) -> Pattern:

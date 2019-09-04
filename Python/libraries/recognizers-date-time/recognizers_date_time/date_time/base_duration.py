@@ -151,7 +151,7 @@ class BaseDurationExtractor(DateTimeExtractor):
 
     def merge_multiple_duration(self, text: str, extractor_results: [ExtractResult]):
 
-        if extractor_results.count() <= 1:
+        if len(extractor_results) <= 1:
             return extractor_results
 
         unit_map = self.config.unit_map
@@ -356,6 +356,11 @@ class DurationParserConfiguration(ABC):
     @abstractmethod
     def double_numbers(self) -> Dict[str, float]:
         raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def options(self) -> DateTimeOptions:
+        return DateTimeOptions.NONE
 
 
 class BaseDurationParser(DateTimeParser):

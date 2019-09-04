@@ -13,6 +13,7 @@ from .base_configs import EnglishDateTimeUtilityConfiguration
 from .date_extractor_config import EnglishDateExtractorConfiguration
 from .time_extractor_config import EnglishTimeExtractorConfiguration
 from .duration_extractor_config import EnglishDurationExtractorConfiguration
+from ..utilities import DateTimeOptions
 
 
 class EnglishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
@@ -92,6 +93,14 @@ class EnglishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
     def year_regex(self) -> Pattern:
         return self._year_regex
 
+    @property
+    def options(self):
+        return self._options
+
+    @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
+
     def __init__(self):
         self._date_point_extractor = BaseDateExtractor(
             EnglishDateExtractorConfiguration())
@@ -138,6 +147,7 @@ class EnglishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         self._year_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.YearRegex
         )
+        self._options = DateTimeOptions.NONE
 
     def is_connector_token(self, source: str) -> bool:
         return source.strip() == '' or regex.search(self.connector_regex, source) is not None or regex.search(self.preposition_regex, source) is not None

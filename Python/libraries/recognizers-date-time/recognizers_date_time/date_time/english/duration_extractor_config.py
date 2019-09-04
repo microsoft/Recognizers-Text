@@ -6,16 +6,17 @@ from recognizers_number.number.english.extractors import EnglishCardinalExtracto
 from ...resources.english_date_time import EnglishDateTime
 from ..base_duration import DurationExtractorConfiguration
 from ..utilities import BaseDateTimeOptionsConfiguration
+from ..utilities import DateTimeOptions
 
 
 class EnglishDurationExtractorConfiguration(BaseDateTimeOptionsConfiguration, DurationExtractorConfiguration):
     @property
     def options(self):
-        pass
+        return self._options
 
     @property
     def dmy_date_format(self) -> bool:
-        pass
+        return self._dmy_date_format
 
     @property
     def all_regex(self) -> Pattern:
@@ -117,3 +118,4 @@ class EnglishDurationExtractorConfiguration(BaseDateTimeOptionsConfiguration, Du
         self._less_than_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.LessThanRegex
         )
+        self._options = DateTimeOptions.NONE

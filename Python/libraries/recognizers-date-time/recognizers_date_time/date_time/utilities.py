@@ -101,11 +101,11 @@ class RegexExtension:
         return ConditionalMatch(match, match and (str.isspace(str_before) or str_before is None))
 
     @staticmethod
-    def match_end(regex: Pattern, text: str, trim: bool):
-        match = regex.search(text)
+    def match_end(regexp: Pattern, text: str, trim: bool):
+        match = regex.search(regexp, text)
 
         if match is None:
-            return None
+            return ConditionalMatch(regexp, False)
 
         srt_after = text[text.index(match.group()) + (match.end() - match.start()):]
 
@@ -198,7 +198,7 @@ class BaseDateTimeOptionsConfiguration(DateTimeOptionsConfiguration):
 
     @property
     def options(self):
-        return self._options
+        raise NotImplementedError
 
     @options.setter
     def options(self, value):
@@ -206,7 +206,7 @@ class BaseDateTimeOptionsConfiguration(DateTimeOptionsConfiguration):
 
     @property
     def dmy_date_format(self) -> bool:
-        return self._dmy_date_format
+        raise NotImplementedError
 
     @dmy_date_format.setter
     def dmy_date_format(self, value):
