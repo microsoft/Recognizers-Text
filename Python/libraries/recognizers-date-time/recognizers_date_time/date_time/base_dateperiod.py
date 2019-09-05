@@ -15,7 +15,7 @@ from .parsers import DateTimeParser, DateTimeParseResult
 from .base_date import BaseDateParser
 from .base_duration import BaseDurationParser
 from .utilities import Token, merge_all_tokens, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek,\
-    RegExpUtility, RegexExtension
+    RegExpUtility, RegexExtension, DateTimeOptions
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
@@ -534,7 +534,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
         metadata = Metadata()
         metadata.possibly_included_period_end = True
 
-        if er.count() < 1:
+        if len(er) < 1:
             return tokens
 
         idx = 0
@@ -668,7 +668,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
         date_points.extend(list(filter(lambda o: not any(list(filter(lambda x: x.overlap(o), date_points))),
                                        ordinal_extractions)))
 
-        if date_points.count() < 1:
+        if len(date_points) < 1:
             return ret
 
         for extraction_result in date_points:

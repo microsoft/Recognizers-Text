@@ -249,13 +249,13 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
         i = 0
 
-        while i < ers.count() - 1:
+        while i < len(ers) - 1:
 
             j = i + 1
-            while j < ers.count() and ers[i].overlap(ers[j]):
+            while j < len(ers) and ers[i].overlap(ers[j]):
                 j += 1
 
-            if j >= ers.count():
+            if j >= len(ers):
                 break
 
             if ers[i].type == Constants.SYS_DATETIME_DATE and ers[j].type == Constants.SYS_DATETIME_TIME:
@@ -278,7 +278,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             i = j
 
         idx = 0
-        for idx in range(idx, ret.count(), 1):
+        for idx in range(idx, len(ret), 1):
             after_str = text[ret[idx].end]
             match = self.config.suffix_regex.search(after_str)
             if match:
@@ -316,7 +316,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
         for match in matches:
             ret.append(Token(text.index(match.group()), text.index(match.group()) + (match.end - match.start)))
 
-        if date_ers.count() == 0:
+        if len(date_ers) == 0:
             return ret
 
         for er in date_ers:
@@ -384,7 +384,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                 if before_str:
 
                     time_ers = self.config.time_period_extractor.extract(before_str)
-                    if time_ers.count() > 0:
+                    if len(time_ers) > 0:
 
                         for tp in time_ers:
                             mid_str = before_str[tp.start + (tp.length or 0)]
@@ -398,7 +398,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                 if after_str:
 
                     time_ers = self.config.time_period_extractor.extract(after_str)
-                    if time_ers.count() > 0:
+                    if len(time_ers) > 0:
                         for tp in time_ers:
                             mid_str = after_str[0: (tp.start or 0)]
                             if not mid_str:
@@ -518,7 +518,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
         points: [ExtractResult] = sorted(date_ers, key=lambda x: x.start)
 
-        for i in range(idx, points.count() - 1, 1):
+        for i in range(idx, len(points) - 1, 1):
 
             if points[idx].type == points[idx + 1].type:
                 continue
