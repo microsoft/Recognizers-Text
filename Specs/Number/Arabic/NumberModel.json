@@ -1,0 +1,2451 @@
+[
+  {
+    "Input": "192.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "192"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "192.168.1.2",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "192"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "168",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "168"
+        },
+        "Start": 4,
+        "End": 6
+      },
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 8,
+        "End": 8
+      },
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 10,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "السائل 180.25مل",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "السائل 180مل",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": " طريق 29كم ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": " 4 مايو ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "السائل .25مل",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": ".08",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": ".08",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.08"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "واحد",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "مفرد",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": ".23456000",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": ".23456000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.23456"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "4.800",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4.800",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4.8"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "مائة وثلاثة وثلثين",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "مائة وثلاثة وثلثين",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "103.666666666667"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "سته عشر",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "سته عشر",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "16"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "ثلثي",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ثلثي",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.666666666666667"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "مائة وستة عشر",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "مائة وستة عشر",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "116"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "مائة وستون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "مائة وستون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "106"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "مائة وواحد وستون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "مائة وواحد وستون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "161"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "واحد من تريليون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد من تريليون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1E-12"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "واحد من مائة تريليون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "مائة تريليون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1E-10"
+        },
+        "Start": 8,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": " نصف دستة",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "نصف دستة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6"
+        },
+        "Start": 1,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": " 3 دستات",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 دستات",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "36"
+        },
+        "Start": 1,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "دستة",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "دستة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": " ثلاث دستات ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ثلاث دستات",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "36"
+        },
+        "Start": 1,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": " ثلاث مائة ودستتين",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ثلاث مائة ودستتين",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "324"
+        },
+        "Start": 1,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "1,234,567",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1,234,567",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1234567"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1, 234, 567",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "234",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "234"
+        },
+        "Start": 3,
+        "End": 5
+      },
+      {
+        "Text": "567",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "567"
+        },
+        "Start": 8,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "9.2321312",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9.2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9.2321312"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": " -9.2321312",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-9.2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-9.2321312"
+        },
+        "Start": 1,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": " -1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1"
+        },
+        "Start": 1,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "-4/5",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0.8"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "- 1 4/5",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "- 1 4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1.8"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "ثلاثه",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ثلاثه",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": " 123456789101231",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "123456789101231"
+        },
+        "Start": 1,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "-123456789101231",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-123456789101231"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": " -123456789101231",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-123456789101231"
+        },
+        "Start": 1,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "10 آلاف",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 آلاف",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "100 ألف",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 ألف",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "10 مليار",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 مليار",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000000000"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "- 10 آلاف",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "- 10 آلاف",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-10000"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "2 مليون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 مليون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2000000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "1 تريليون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 تريليون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": " ثلاثه ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ثلاثه",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        },
+        "Start": 1,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "تريليون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "تريليون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "واحد وعشرون تريليون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد وعشرون تريليون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21000000000000"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "واحد وعشرون تريليون وثلاثمائة",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد وعشرون تريليون وثلاثمائة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21000000000300"
+        },
+        "Start": 0,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "واحد وعشرون تريليون وثلاثمائة",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد وعشرون تريليون وثلاثمائة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21000000000300"
+        },
+        "Start": 0,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "اثنان وخمسين",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "اثنان وخمسين",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "52",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "52",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "ثلاثمائة و واحد وثلاثون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ثلاثمائة و واحد وثلاثون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "331"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "مئتين واثني ألف",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "مئتين واثني ألف",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "202000"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "ألفين ومائتين",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ألفين ومائتين",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2200"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": " 2.33 ألف",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2.33 ألف",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2330"
+        },
+        "Start": 1,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "مائثتين فاصلة ثلاثة من مائة",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "مائثتين فاصلة ثلاثة من مائة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200.03"
+        },
+        "Start": 0,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": " 200 نقطة",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "200 نقطة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200."
+        },
+        "Start": 1,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1e10",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1e10",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "1.1^23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.1^23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8.95430243255239"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": " 322 مائة ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "322 مائة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "32200"
+        },
+        "Start": 1,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "سبعين",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "سبعين",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "70"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "اثنان وخمسون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "اثنان وخمسون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "2 1/4",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 1/4",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2.25"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "3/4",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3/4",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.75"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "ثمن",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ثمن",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.125"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "خمسة أثمان",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "خمسة أثمان",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.625"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "نصف",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "نصف",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.5"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "ثلاثة أرباع",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ثلاثة أرباع",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.75"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "عشرين وثلاثة أخماس",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "عشرين وثلاثة أخماس",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "20.6"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "ثلاثة وعشرون خمس",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ثلاثة وعشرون خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4.6"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "ثلاثة وعشرون وثلاثة أخماس",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ثلاثة وعشرون وثلاثة أخماس",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "23.6"
+        },
+        "Start": 0,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "مائتا ألف وأربعمائة وأربعون و ثلاثة أخماس",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "مائتا ألف وأربعمائة وأربعون و ثلاثة أخماس",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200440.6"
+        },
+        "Start": 0,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "واحد ونصف",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد ونصف",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1.5"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "واحد ورابع",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد ورابع",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1.25"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "خمسة وربع",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "خمسة وربع",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5.25"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "مائة وثلاثة أرباع",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "مائة وثلاثة أرباع",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100.75"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "واحد بالمائة",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد بالمائة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.01"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "1.1^+23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8.95430243255239"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "2.5^-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2.5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.4"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "-2500^-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-2500^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0.0004"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "-1.1^+23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-1.1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-8.95430243255239"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "-2.5^-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-2.5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0.4"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "-1.1^--23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-1.1^--23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-8.95430243255239"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "-127.32e13",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-127.32e13",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1.2732E+15"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "12.32e+14",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12.32e+14",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1.232E+15"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "-12e-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-12e-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1.2"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "1.2 بليون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.2 بليون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1200000000"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "خمس",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.2"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "واحد من مائة ألف تريليون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد من مائة ألف تريليون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1E-07"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "خمس",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.2"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "ثلاثة أخماس",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ثلاثة أخماس",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.6"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "خمس العشرون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "خمس العشرون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "ثلاثة وخمس",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ثلاثة وخمس",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3.2"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "واحد وعشرين خمس",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد وعشرين خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4.2"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "واحد من واحد وعشرون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد من واحد وعشرون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "واحد من اثنان وعشرون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد من اثنان وعشرون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.04"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "ثلاثة من واحد وعشرون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ثلاثة من واحد وعشرون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.142857142857143"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "ثلاثة من واحد وعشرون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ثلاثة من واحد وعشرون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.142857142857143"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "خمس خمس العشرين",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "خمس خمس العشرين",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.8"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "مائة وثلاثون خمس",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "مائة وثلاثون خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "26"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "مائة واثنان وثلاثون خمس",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "مائة واثنان وثلاثون خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "مائة واثنان وثلاثون خمس",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "مائة واثنان وثلاثون خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "مائة واثنان وثلاثون أخماس",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "مائة واثنان وثلاثون أخماس",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "مائة وثلاثون وخمسين",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "مائة وثلاثون وخمسين",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "130.4"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "واحد من مائة وخمسة",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد من مائة وخمسة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.00952380952380952"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "مائة من ألف وخمسة",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "مائة من ألف وخمسة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.0995024875621891"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "واحد على ثلاثة",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد على ثلاثة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "واحد على واحد وعشرون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد على واحد وعشرون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "واحد على مائة وواحد وعشرون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد على مائة وواحد وعشرون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.00826446280991736"
+        },
+        "Start": 0,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "1 على ثلاثة",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 على ثلاثة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "1 على 3",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 على 3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "واحد على 3",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد على 3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "واحد على 20",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد على 20",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.05"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "واحد على عشرين",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد على عشرين",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.05"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "واحد على مائة",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد على مائة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.01"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "واحد على مائة وخمسة وعشرين",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد على مائة وخمسة وعشرين",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.008"
+        },
+        "Start": 0,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": " كم يساوي خمسة وتسعون مائة خمس ؟",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "خمسة وتسعون مائة خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "19000"
+        },
+        "Start": 10,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "احجز مقعد من الدرجة الأولى إلى سياتل",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "الجواب سالب 95 مائة خمس",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "95 مائة خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-19000"
+        },
+        "Start": 12,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "الجواب هو ناقص 90 - 500 خمس",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ناقص 90 - 500 خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1900"
+        },
+        "Start": 10,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "الجواب هو ناقص واحد",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ناقص واحد",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1"
+        },
+        "Start": 10,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "الجواب هو ناقص مائة وثلاثين خمسا",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ناقص مائة وثلاثين خمسا",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-2.85714285714286"
+        },
+        "Start": 10,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "الجواب سالب واحد على 20",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "سالب واحد على 20",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0.05"
+        },
+        "Start": 7,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "الجواب هو ناقص خمس فاصلة خمسة",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ناقص خمس فاصلة خمسة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-5.5"
+        },
+        "Start": 10,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "الجواب هو ناقص 5",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ناقص 5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-5"
+        },
+        "Start": 10,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "واحد من أربعة",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد من أربعة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.25"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "ثمن",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ثمن",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.125"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "خمسة أثمان",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "خمسة أثمان",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.625"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "90 - خمسمائة خمسة",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "90 - خمسمائة خمسة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1900"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "واحد من كل ثلاثة",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "واحد من كل ثلاثة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "1 في واحد وعشرين",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 في واحد وعشرين",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "خمسة أثمان",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "خمسة أثمان",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.625"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "1 234 567",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 234 567",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1234567"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "40 000 هو نفس 40 000",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "40 000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40000"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "40 000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "وفي الوقت الراهن، يبلغ عدد سكان الصين 1 414 021 100 نسمة.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 414 021 100",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1414021100"
+        },
+        "Start": 38,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "سيتم التعرف على 423 0000 كرقمين.",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "423",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "423"
+        },
+        "Start": 16,
+        "End": 18
+      },
+      {
+        "Text": "0000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 20,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "1 234 567.89 هو تنسيق رقم صالح.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 234 567.89",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1234567.89"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "صفر هو 0",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "صفر",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "0",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 7,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "هل من وقت للاجتماع في 5/17/2018؟",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        },
+        "Start": 22,
+        "End": 22
+      },
+      {
+        "Text": "17",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "17"
+        },
+        "Start": 24,
+        "End": 25
+      },
+      {
+        "Text": "2018",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2018"
+        },
+        "Start": 27,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "رقم هاتفي هو +1-222-2222/2222",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 14,
+        "End": 14
+      },
+      {
+        "Text": "222",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "222"
+        },
+        "Start": 16,
+        "End": 18
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2222"
+        },
+        "Start": 20,
+        "End": 23
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2222"
+        },
+        "Start": 20,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "يمكنني أن أعطيك 10 مليون",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 مليون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000000"
+        },
+        "Start": 16,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "1M ليس رقما.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "يمكنني أن أعطيك 310 يوان",
+    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "310",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "321"
+        },
+        "Start": 16,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "أربعة آلاف وثلاثمائة وواحد وعشرون رقم صالح",
+    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "أربعة آلاف وثلاثمائة وواحد وعشرون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4321"
+        },
+        "Start": 0,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "4 آلاف و 3 مائة و صفر رقمان صالحان",
+    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4 آلاف و 3 مائة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4300"
+        },
+        "Start": 0,
+        "End": 14
+      },
+      {
+        "Text": "صفر",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 18,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "4000 و 3 مائة وواحد وعشرون رقمان صالحان",
+    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4000"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "3 مائة وواحد وعشرون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "321"
+        },
+        "Start": 7,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "3 مائة و مائتين رقمان صالحان",
+    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 مائة",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "مائتين",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200"
+        },
+        "Start": 9,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "300 و 212 رقمان صالحان",
+    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "300",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "212",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "212"
+        },
+        "Start": 6,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "300 وسالب واحد رقمان صالحان.",
+    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "300",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "سالب واحد",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1"
+        },
+        "Start": 5,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "ثلاثمائة وواحد رقم صالح",
+    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ثلاثمائة وواحد",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "301"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "الشخص الذي ذكرته غير صالح",
+    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "هذا واحد لك غير صحيح",
+    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "أي واحد تفضله؟",
+    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "هذا جيد حقاً",
+    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "في بعض البلدان يمكنك كتابة 5.00 أو 5,00.",
+    "NotSupported": "java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5.00",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        },
+        "Start": 27,
+        "End": 30
+      },
+      {
+        "Text": "5,00",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        },
+        "Start": 35,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "مقتل ستة وعشرون شخصا في حادث في تيكمان",
+    "NotSupportedByDesign": "java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ستة وعشرون",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "26"
+        },
+        "Start": 5,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "على نصف الناس جاءوا إلى هنا.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "نصف",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.5"
+        },
+        "Start": 4,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "أريد أن أكسب 10000 دولار في 3 سنوات",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        },
+        "Start": 28,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "أريد أن أكسب 2000 دولار على مدى 3 سنوات",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        },
+        "Start": 32,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "2000 على 3",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2000 على 3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "666.666666666667"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "20 دولار أمريكي",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  }
+]
