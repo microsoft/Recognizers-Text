@@ -685,7 +685,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                     if (trimmedText.EndsWith("周") | trimmedText.EndsWith("星期"))
                     {
-
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
                         ret.Timex = DateTimeFormatUtil.ToIsoWeekTimex(monday);
                         ret.FutureValue =
@@ -716,7 +715,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                     if (trimmedText.EndsWith("月"))
                     {
-
                         month = referenceDate.AddMonths(swift).Month;
                         year = referenceDate.AddMonths(swift).Year;
                         ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
