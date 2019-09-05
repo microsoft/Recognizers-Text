@@ -666,7 +666,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
                 else
                 {
-                    var halfTag = !string.IsNullOrEmpty(match.Groups["halfTag"].Value);
                     var swift = 0;
                     if (nextMatch.Success)
                     {
@@ -677,14 +676,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         swift = -1;
                     }
 
+                    // Handle cases with "(上|下)半" like "上半月"、 "下半年"
+                    if (!string.IsNullOrEmpty(match.Groups["halfTag"].Value))
+                    {
+                        ret = HandleWithHalfTag(trimmedText, referenceDate, ret, swift);
+                        return ret;
+                    }
+
                     if (trimmedText.EndsWith("周") | trimmedText.EndsWith("星期"))
                     {
-                        // Handle like "上半周"，"下半周"
-                        if (halfTag)
-                        {
-                            ret = HandleWithHalfTag(trimmedText, referenceDate, ret, swift);
-                            return ret;
-                        }
 
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
                         ret.Timex = DateTimeFormatUtil.ToIsoWeekTimex(monday);
@@ -716,12 +716,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                     if (trimmedText.EndsWith("月"))
                     {
-                        // Handle like "上半月"，"下半月"
-                        if (halfTag)
-                        {
-                            ret = HandleWithHalfTag(trimmedText, referenceDate, ret, swift);
-                            return ret;
-                        }
 
                         month = referenceDate.AddMonths(swift).Month;
                         year = referenceDate.AddMonths(swift).Year;
@@ -730,13 +724,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     }
                     else if (trimmedText.EndsWith("年"))
                     {
-                        // Handle like "上(个)半年"，"下(个)半年"
-                        if (halfTag)
-                        {
-                            ret = HandleWithHalfTag(trimmedText, referenceDate, ret, swift);
-                            return ret;
-                        }
-
                         // Handle like "今年上半年"，"明年下半年"
                         trimmedText = HandleWithHalfYear(match, trimmedText, out bool hasHalf, out bool isFirstHalf);
                         swift = hasHalf ? 0 : swift;
@@ -787,14 +774,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             DateObject beginDay, endDay;
             int year = referenceDate.Year, month = referenceDate.Month;
+
             if (text.EndsWith("周"))
             {
+                // Handle like "上半周"，"下半周"
                 beginDay = swift == -1 ? referenceDate.This(DayOfWeek.Monday) : referenceDate.This(DayOfWeek.Thursday);
                 endDay = swift == -1 ? referenceDate.This(DayOfWeek.Thursday) : referenceDate.This(DayOfWeek.Sunday).AddDays(1);
                 ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P{(endDay - beginDay).TotalDays}D)";
             }
             else if (text.EndsWith("月"))
             {
+                // Handle like "上半月"，"下半月"
                 var monthStartDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
                 var monthEndDay = DateObject.MinValue.SafeCreateFromValue(year, month + 1, 1);
                 var halfMonthDay = (int)((monthEndDay - monthStartDay).TotalDays / 2);
@@ -805,6 +795,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             else
             {
+                // Handle like "上(个)半年"，"下(个)半年"
                 beginDay = swift == -1 ? DateObject.MinValue.SafeCreateFromValue(year, 1, 1) : DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
                 endDay = swift == -1 ? DateObject.MinValue.SafeCreateFromValue(year, 7, 1) : DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
                 ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P6M)";
@@ -904,6 +895,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var secondHalf = match.Groups["secondHalf"].Value;
             hasHalf = false;
             isFirstHalf = !string.IsNullOrEmpty(firstHalf) ? true : false;
+
             if (isFirstHalf || !string.IsNullOrEmpty(secondHalf))
             {
                 var halfText = isFirstHalf ? firstHalf : secondHalf;
