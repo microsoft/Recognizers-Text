@@ -679,8 +679,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     // Handle cases with "(上|下)半" like "上半月"、 "下半年"
                     if (!string.IsNullOrEmpty(match.Groups["halfTag"].Value))
                     {
-                        ret = HandleWithHalfTag(trimmedText, referenceDate, ret, swift);
-                        return ret;
+                        return HandleWithHalfTag(trimmedText, referenceDate, ret, swift);
                     }
 
                     if (trimmedText.EndsWith("周") | trimmedText.EndsWith("星期"))
@@ -812,37 +811,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (match.Success)
             {
-                var tmp = match.Value;
+                var yearStr = match.Value;
 
                 // Handle like "2016年上半年"，"2017年下半年"
-                tmp = HandleWithHalfYear(match, tmp, out bool hasHalf, out bool isFirstHalf);
+                yearStr = HandleWithHalfYear(match, yearStr, out bool hasHalf, out bool isFirstHalf);
 
                 // Trim() to handle extra whitespaces like '07 年'
-                if (tmp.EndsWith("年"))
+                if (yearStr.EndsWith("年"))
                 {
-                    tmp = tmp.Substring(0, tmp.Length - 1).Trim();
+                    yearStr = yearStr.Substring(0, yearStr.Length - 1).Trim();
                 }
 
-                var num = 0;
-                var year = 0;
-                if (tmp.Length == 2)
-                {
-                    num = int.Parse(tmp);
-                    if (num < 100 && num >= 30)
-                    {
-                        num += 1900;
-                    }
-                    else if (num < 30)
-                    {
-                        num += 2000;
-                    }
-
-                    year = num;
-                }
-                else
-                {
-                    year = int.Parse(tmp);
-                }
+                var year = int.Parse(yearStr);
 
                 ret = HandleYearResult(ret, hasHalf, isFirstHalf, year);
 
@@ -853,32 +833,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (match.Success)
             {
-                var tmp = match.Value;
+                var yearStr = match.Value;
 
                 // Handle like "二零一七年上半年"，"二零一七年下半年"
-                tmp = HandleWithHalfYear(match, tmp, out bool hasHalf, out bool isFirstHalf);
+                yearStr = HandleWithHalfYear(match, yearStr, out bool hasHalf, out bool isFirstHalf);
 
-                if (tmp.EndsWith("年"))
+                if (yearStr.EndsWith("年"))
                 {
-                    tmp = tmp.Substring(0, tmp.Length - 1);
+                    yearStr = yearStr.Substring(0, yearStr.Length - 1);
                 }
 
-                if (tmp.Length == 1)
+                if (yearStr.Length == 1)
                 {
                     return ret;
                 }
 
-                var re = ConvertChineseToInteger(tmp);
-                var year = re;
-
-                if (year < 100 && year >= this.config.TwoNumYear)
-                {
-                    year += 1900;
-                }
-                else if (year < 100 && year < this.config.TwoNumYear)
-                {
-                    year += 2000;
-                }
+                var year = ConvertChineseToInteger(yearStr);
 
                 ret = HandleYearResult(ret, hasHalf, isFirstHalf, year);
                 return ret;
@@ -906,6 +876,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private DateTimeResolutionResult HandleYearResult(DateTimeResolutionResult ret, bool hasHalf, bool isFirstHalf, int year)
         {
+            if (year < 100 && year >= this.config.TwoNumYear)
+            {
+                year += 1900;
+            }
+            else if (year < 100 && year < this.config.TwoNumYear)
+            {
+                year += 2000;
+            }
+
             var beginDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
             var endDay = DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
 
