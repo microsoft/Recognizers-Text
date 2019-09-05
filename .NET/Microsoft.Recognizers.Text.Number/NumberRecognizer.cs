@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Recognizers.Text.Number.Arabic;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Number.Dutch;
 using Microsoft.Recognizers.Text.Number.English;
@@ -79,6 +80,13 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected override void InitializeConfiguration()
         {
+            RegisterModel<NumberModel>(
+                Culture.Arabic,
+                (options) => new NumberModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ArabicNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Arabic, options))),
+                    Arabic.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
+
             RegisterModel<NumberModel>(
                 Culture.English,
                 options => new NumberModel(

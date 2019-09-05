@@ -31,6 +31,7 @@
 
   <ItemGroup>
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Arabic\ChoiceDefinitions.cs" Link="Arabic\ChoiceDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Arabic\NumbersDefinitions.cs" Link="Arabic\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseCurrency.cs" Link="BaseCurrency.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseDateTime.cs" Link="BaseDateTime.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseEmail.cs" Link="BaseEmail.cs" />
@@ -120,5 +121,5 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
+  
 </Project>
