@@ -13,7 +13,7 @@ from recognizers_number.number.constants import Constants
 class FrenchNumberExtractor(BaseNumberExtractor):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict()
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
@@ -65,7 +65,7 @@ class FrenchNumberExtractor(BaseNumberExtractor):
 class FrenchCardinalExtractor(BaseNumberExtractor):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict()
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
@@ -73,7 +73,7 @@ class FrenchCardinalExtractor(BaseNumberExtractor):
 
     @property
     def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms()
+        return super()._negative_number_terms
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -107,7 +107,7 @@ class FrenchCardinalExtractor(BaseNumberExtractor):
 class FrenchIntegerExtractor(BaseNumberExtractor):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict()
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
@@ -115,7 +115,7 @@ class FrenchIntegerExtractor(BaseNumberExtractor):
 
     @property
     def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms()
+        return super()._negative_number_terms
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -178,7 +178,7 @@ class FrenchIntegerExtractor(BaseNumberExtractor):
 class FrenchDoubleExtractor(BaseNumberExtractor):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict()
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
@@ -186,7 +186,7 @@ class FrenchDoubleExtractor(BaseNumberExtractor):
 
     @property
     def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms()
+        return super()._negative_number_terms
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -249,7 +249,7 @@ class FrenchDoubleExtractor(BaseNumberExtractor):
 class FrenchFractionExtractor(BaseNumberExtractor):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict()
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
@@ -257,7 +257,7 @@ class FrenchFractionExtractor(BaseNumberExtractor):
 
     @property
     def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms()
+        return super()._negative_number_terms
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -304,7 +304,7 @@ class FrenchFractionExtractor(BaseNumberExtractor):
 class FrenchOrdinalExtractor(BaseNumberExtractor):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict()
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
@@ -312,7 +312,7 @@ class FrenchOrdinalExtractor(BaseNumberExtractor):
 
     @property
     def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms()
+        return super()._negative_number_terms
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
