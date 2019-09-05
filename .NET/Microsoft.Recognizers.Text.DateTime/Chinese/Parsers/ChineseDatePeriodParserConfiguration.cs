@@ -737,8 +737,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                                 year += 2;
                             }
 
-                            ret = HandleYearResult(ret, hasHalf, isFirstHalf, year);
-                            return ret;
+                            return HandleYearResult(ret, hasHalf, isFirstHalf, year);
                         default:
                             break;
                     }
@@ -820,9 +819,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 var year = int.Parse(yearStr);
 
-                ret = HandleYearResult(ret, hasHalf, isFirstHalf, year);
-
-                return ret;
+                return HandleYearResult(ret, hasHalf, isFirstHalf, year);
             }
 
             match = ChineseDatePeriodExtractorConfiguration.YearInChineseRegex.MatchExact(text, trim: true);
@@ -846,8 +843,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 var year = ConvertChineseToInteger(yearStr);
 
-                ret = HandleYearResult(ret, hasHalf, isFirstHalf, year);
-                return ret;
+                return HandleYearResult(ret, hasHalf, isFirstHalf, year);
             }
 
             return ret;
