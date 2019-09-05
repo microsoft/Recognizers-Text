@@ -94,6 +94,11 @@ class DurationExtractorConfiguration(DateTimeOptionsConfiguration):
     @abstractmethod
     def less_than_regex(self) -> Pattern:
         raise NotImplementedError
+    
+    @property
+    @abstractmethod
+    def options(self) -> DateTimeOptions:
+        raise NotImplementedError
 
 
 class BaseDurationExtractor(DateTimeExtractor):
@@ -164,7 +169,7 @@ class BaseDurationExtractor(DateTimeExtractor):
         time_unit = 0
         total_unit = 0
 
-        while first_extraction_index < extractor_results.count():
+        while first_extraction_index < len(extractor_results):
             cur_unit = None
             unit_match = unit_regex.search(extractor_results[first_extraction_index].text)
 
@@ -181,7 +186,7 @@ class BaseDurationExtractor(DateTimeExtractor):
 
             second_extraction_index = first_extraction_index + 1
 
-            while second_extraction_index < extractor_results.count():
+            while second_extraction_index < len(extractor_results):
                 valid = False
                 mid_str_begin = extractor_results[second_extraction_index - 1].start +\
                     extractor_results[second_extraction_index - 1].length if \
