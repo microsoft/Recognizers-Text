@@ -738,8 +738,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         }
 
                         // Handle like "今年上半年"，"明年下半年"
-                        bool hasHalf, isFirstHalf;
-                        trimmedText = HandleWithHalfYear(match, trimmedText, out hasHalf, out isFirstHalf);
+                        trimmedText = HandleWithHalfYear(match, trimmedText, out bool hasHalf, out bool isFirstHalf);
                         swift = hasHalf ? 0 : swift;
 
                         year = referenceDate.AddYears(swift).Year;
@@ -827,8 +826,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var tmp = match.Value;
 
                 // Handle like "2016年上半年"，"2017年下半年"
-                bool hasHalf, isFirstHalf;
-                tmp = HandleWithHalfYear(match, tmp, out hasHalf, out isFirstHalf);
+                tmp = HandleWithHalfYear(match, tmp, out bool hasHalf, out bool isFirstHalf);
 
                 // Trim() to handle extra whitespaces like '07 年'
                 if (tmp.EndsWith("年"))
@@ -869,8 +867,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var tmp = match.Value;
 
                 // Handle like "二零一七年上半年"，"二零一七年下半年"
-                bool hasHalf, isFirstHalf;
-                tmp = HandleWithHalfYear(match, tmp, out hasHalf, out isFirstHalf);
+                tmp = HandleWithHalfYear(match, tmp, out bool hasHalf, out bool isFirstHalf);
 
                 if (tmp.EndsWith("年"))
                 {
@@ -901,6 +898,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
+        private string HandleWithHalfYear(ConditionalMatch match, string text, out bool hasHalf, out bool isFirstHalf)
+        {
+            var firstHalf = match.Groups["firstHalf"].Value;
+            var secondHalf = match.Groups["secondHalf"].Value;
+            hasHalf = false;
+            isFirstHalf = !string.IsNullOrEmpty(firstHalf) ? true : false;
+            if (isFirstHalf || !string.IsNullOrEmpty(secondHalf))
+            {
+                var halfText = isFirstHalf ? firstHalf : secondHalf;
+                text = text.Substring(0, text.Length - halfText.Length);
+                hasHalf = true;
+            }
+
+            return text;
+        }
+
         private DateTimeResolutionResult HandleYearResult(DateTimeResolutionResult ret, bool hasHalf, bool isFirstHalf, int year)
         {
             var beginDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
@@ -926,22 +939,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             ret.Success = true;
 
             return ret;
-        }
-
-        private string HandleWithHalfYear(ConditionalMatch match, string text, out bool hasHalf, out bool isFirstHalf)
-        {
-            var firstHalf = match.Groups["firstHalf"].Value;
-            var secondHalf = match.Groups["secondHalf"].Value;
-            hasHalf = false;
-            isFirstHalf = !string.IsNullOrEmpty(firstHalf) ? true : false;
-            if (isFirstHalf || !string.IsNullOrEmpty(secondHalf))
-            {
-                var halfText = isFirstHalf ? firstHalf : secondHalf;
-                text = text.Substring(0, text.Length - halfText.Length);
-                hasHalf = true;
-            }
-
-            return text;
         }
 
         // parse entities that made up by two time points
