@@ -20,6 +20,18 @@ from .datetime_extractor_config import FrenchDateTimeExtractorConfiguration
 
 class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
     @property
+    def options(self):
+        return self._options
+
+    @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
+
+    @property
+    def suffix_regex(self) -> Pattern:
+        return self._suffix_regex
+
+    @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
         return self._cardinal_extractor
 

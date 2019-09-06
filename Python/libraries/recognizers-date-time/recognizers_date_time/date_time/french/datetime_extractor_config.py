@@ -17,6 +17,14 @@ from .duration_extractor_config import FrenchDurationExtractorConfiguration
 
 class FrenchDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
     @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
+
+    @property
+    def options(self):
+        return self._options
+
+    @property
     def date_point_extractor(self) -> DateTimeExtractor:
         return self._date_point_extractor
 

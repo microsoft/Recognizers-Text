@@ -13,7 +13,7 @@ from ..base_date import BaseDateExtractor
 from ..base_dateperiod import DatePeriodExtractorConfiguration, MatchedIndex
 from .duration_extractor_config import EnglishDurationExtractorConfiguration
 from .date_extractor_config import EnglishDateExtractorConfiguration
-
+from .common_configs import EnglishOrdinalExtractor
 
 class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
@@ -93,7 +93,7 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._range_connector_regex
 
     @property
-    def ordinal_extractor(self) -> Extractor:
+    def ordinal_extractor(self) -> BaseNumberExtractor:
         return self._ordinal_extractor
 
     @property
@@ -237,6 +237,7 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._century_suffix_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.CenturySuffixRegex
         )
+        self._ordinal_extractor = EnglishOrdinalExtractor()
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         return MatchedIndex(True, source.rfind('from')) if source.endswith('from') else MatchedIndex(False, -1)

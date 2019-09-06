@@ -9,9 +9,18 @@ from ..base_timeperiod import TimePeriodExtractorConfiguration, MatchedIndex
 from ..base_time import BaseTimeExtractor
 from .time_extractor_config import FrenchTimeExtractorConfiguration
 from .base_configs import FrenchDateTimeUtilityConfiguration
+from ..utilities import DateTimeOptions
 
 
 class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
+    @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
+
+    @property
+    def options(self):
+        return self._options
+
     @property
     def simple_cases_regex(self) -> List[Pattern]:
         return self._simple_cases_regex
@@ -45,6 +54,7 @@ class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         return self._pure_number_regex
 
     def __init__(self):
+        self._options = DateTimeOptions.NONE
         self._single_time_extractor = BaseTimeExtractor(
             FrenchTimeExtractorConfiguration())
         self._integer_extractor = FrenchIntegerExtractor()
@@ -73,6 +83,7 @@ class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         self._token_before_date = FrenchDateTime.TokenBeforeDate
         self._pure_number_regex = [FrenchDateTime.PureNumFromTo, FrenchDateTime.PureNumFromTo]
 
+        
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)
         if match:
