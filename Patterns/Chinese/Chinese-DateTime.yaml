@@ -136,7 +136,7 @@ PureNumYearAndMonth: !nestedRegex
   def: ({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})
   references: [YearRegexInNumber, MonthNumRegex]
 OneWordPeriodRegex: !nestedRegex
-  def: (((明年|今年|去年)\s*)?({MonthRegex}|{HalfYearRegex})|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})(?<halfTag>半)?\s*(周末|周|月|年)|周末|今年|明年|去年|前年|后年)
+  def: (((?<yearrel>(明|今|去)年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})(?<halfTag>半)?\s*(周末|周|月|年)|周末|(今|明|去|前|后)年(\s*{HalfYearRegex})?)
   references: [MonthRegex, DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextRegex, HalfYearRegex]
 WeekOfMonthRegex: !nestedRegex
   def: (?<wom>{MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)
@@ -420,6 +420,43 @@ ParserConfigurationUnitValueMap: !dictionary
     second: 1
     secs: 1
     sec: 1
+MonthTerms: !list
+  types: [ string ]
+  entries:
+    - 月
+WeekendTerms: !list
+  types: [ string ]
+  entries:
+    - 周末
+WeekTerms: !list
+  types: [ string ]
+  entries:
+    - 周
+    - 星期
+YearTerms: !list
+  types: [ string ]
+  entries:
+    - 年
+ThisYearTerms: !list
+  types: [ string ]
+  entries:
+    - 今年
+LastYearTerms: !list
+  types: [ string ]
+  entries:
+    - 去年
+NextYearTerms: !list
+  types: [ string ]
+  entries:
+    - 明年
+YearAfterNextTerms: !list
+  types: [ string ]
+  entries:
+    - 后年
+YearBeforeLastTerms: !list
+  types: [ string ]
+  entries:
+    - 前年
 ParserConfigurationSeasonMap: !dictionary
   types: [string, string]
   entries:

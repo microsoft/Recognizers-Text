@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using DateObject = System.DateTime;
@@ -541,7 +543,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var yearRel = match.Groups["yearrel"].Value;
             if (!string.IsNullOrEmpty(yearNum))
             {
-                if (yearNum.EndsWith("年"))
+                if (IsYearOnly(yearNum))
                 {
                     yearNum = yearNum.Substring(0, yearNum.Length - 1);
                 }
@@ -550,7 +552,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             else if (!string.IsNullOrEmpty(yearChs))
             {
-                if (yearChs.EndsWith("年"))
+                if (IsYearOnly(yearChs))
                 {
                     yearChs = yearChs.Substring(0, yearChs.Length - 1);
                 }
@@ -559,11 +561,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             else if (!string.IsNullOrEmpty(yearRel))
             {
-                if (yearRel.EndsWith("去年"))
+                if (IsLastYear(yearRel))
                 {
                     year--;
                 }
-                else if (yearRel.EndsWith("明年"))
+                else if (IsNextYear(yearRel))
                 {
                     year++;
                 }
@@ -611,7 +613,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (match.Success)
             {
                 var monthStr = match.Groups["month"].Value;
-                if (trimmedText.Equals("今年"))
+                if (IsThisYear(trimmedText))
                 {
                     ret.Timex = referenceDate.Year.ToString("D4");
                     ret.FutureValue =
@@ -628,18 +630,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (!string.IsNullOrEmpty(monthStr))
                 {
                     var swift = -10;
-
-                    if (trimmedText.StartsWith("明年"))
+                    var yearRel = match.Groups["yearrel"].Value;
+                    if (!string.IsNullOrEmpty(yearRel))
                     {
-                        swift = 1;
-                    }
-                    else if (trimmedText.StartsWith("去年"))
-                    {
-                        swift = -1;
-                    }
-                    else if (trimmedText.StartsWith("今年"))
-                    {
-                        swift = 0;
+                        if (IsNextYear(yearRel))
+                        {
+                            swift = 1;
+                        }
+                        else if (IsLastYear(yearRel))
+                        {
+                            swift = -1;
+                        }
+                        else if (IsThisYear(yearRel))
+                        {
+                            swift = 0;
+                        }
                     }
 
                     month = ToMonthNumber(monthStr);
@@ -682,7 +687,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         return HandleWithHalfTag(trimmedText, referenceDate, ret, swift);
                     }
 
-                    if (trimmedText.EndsWith("周") | trimmedText.EndsWith("星期"))
+                    if (IsWeekOnly(trimmedText))
                     {
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
                         ret.Timex = DateTimeFormatUtil.ToIsoWeekTimex(monday);
@@ -695,7 +700,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         return ret;
                     }
 
-                    if (trimmedText.EndsWith("周末"))
+                    if (IsWeekend(trimmedText))
                     {
                         var beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7 * swift);
                         var endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift);
@@ -712,39 +717,38 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         return ret;
                     }
 
-                    if (trimmedText.EndsWith("月"))
+                    if (IsMonthOnly(trimmedText))
                     {
                         month = referenceDate.AddMonths(swift).Month;
                         year = referenceDate.AddMonths(swift).Year;
                         ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
                         futureYear = pastYear = year;
                     }
-                    else if (trimmedText.EndsWith("年"))
+                    else if (IsYearOnly(trimmedText))
                     {
                         // Handle like "今年上半年"，"明年下半年"
                         trimmedText = HandleWithHalfYear(match, trimmedText, out bool hasHalf, out bool isFirstHalf);
                         swift = hasHalf ? 0 : swift;
 
                         year = referenceDate.AddYears(swift).Year;
-                        if (trimmedText.EndsWith("去年"))
+                        if (IsLastYear(trimmedText))
                         {
                             year--;
                         }
-                        else if (trimmedText.EndsWith("明年"))
+                        else if (IsNextYear(trimmedText))
                         {
                             year++;
                         }
-                        else if (trimmedText.EndsWith("前年"))
+                        else if (IsYearBeforeLast(trimmedText))
                         {
                             year -= 2;
                         }
-                        else if (trimmedText.EndsWith("后年"))
+                        else if (IsYearAfterNext(trimmedText))
                         {
                             year += 2;
                         }
 
-                        ret = HandleYearResult(ret, hasHalf, isFirstHalf, year);
-                        return ret;
+                        return HandleYearResult(ret, hasHalf, isFirstHalf, year);
                     }
                 }
             }
@@ -772,14 +776,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             DateObject beginDay, endDay;
             int year = referenceDate.Year, month = referenceDate.Month;
 
-            if (text.EndsWith("周"))
+            if (IsWeekOnly(text))
             {
                 // Handle like "上半周"，"下半周"
                 beginDay = swift == -1 ? referenceDate.This(DayOfWeek.Monday) : referenceDate.This(DayOfWeek.Thursday);
                 endDay = swift == -1 ? referenceDate.This(DayOfWeek.Thursday) : referenceDate.This(DayOfWeek.Sunday).AddDays(1);
                 ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P{(endDay - beginDay).TotalDays}D)";
             }
-            else if (text.EndsWith("月"))
+            else if (IsMonthOnly(text))
             {
                 // Handle like "上半月"，"下半月"
                 var monthStartDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
@@ -817,7 +821,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 yearStr = HandleWithHalfYear(match, yearStr, out bool hasHalf, out bool isFirstHalf);
 
                 // Trim() to handle extra whitespaces like '07 年'
-                if (yearStr.EndsWith("年"))
+                if (IsYearOnly(yearStr))
                 {
                     yearStr = yearStr.Substring(0, yearStr.Length - 1).Trim();
                 }
@@ -836,7 +840,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 // Handle like "二零一七年上半年"，"二零一七年下半年"
                 yearStr = HandleWithHalfYear(match, yearStr, out bool hasHalf, out bool isFirstHalf);
 
-                if (yearStr.EndsWith("年"))
+                if (IsYearOnly(yearStr))
                 {
                     yearStr = yearStr.Substring(0, yearStr.Length - 1);
                 }
@@ -1242,7 +1246,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (!string.IsNullOrEmpty(yearNum))
                 {
                     hasYear = true;
-                    if (yearNum.EndsWith("年"))
+                    if (IsYearOnly(yearNum))
                     {
                         yearNum = yearNum.Substring(0, yearNum.Length - 1);
                     }
@@ -1252,7 +1256,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 else if (!string.IsNullOrEmpty(yearChs))
                 {
                     hasYear = true;
-                    if (yearChs.EndsWith("年"))
+                    if (IsYearOnly(yearChs))
                     {
                         yearChs = yearChs.Substring(0, yearChs.Length - 1);
                     }
@@ -1262,11 +1266,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 else if (!string.IsNullOrEmpty(yearRel))
                 {
                     hasYear = true;
-                    if (yearRel.EndsWith("去年"))
+                    if (IsLastYear(yearRel))
                     {
                         year--;
                     }
-                    else if (yearRel.EndsWith("明年"))
+                    else if (IsNextYear(yearRel))
                     {
                         year++;
                     }
@@ -1313,7 +1317,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var yearRel = match.Groups["yearrel"].Value;
             if (!string.IsNullOrEmpty(yearNum))
             {
-                if (yearNum.EndsWith("年"))
+                if (IsYearOnly(yearNum))
                 {
                     yearNum = yearNum.Substring(0, yearNum.Length - 1);
                 }
@@ -1322,7 +1326,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             else if (!string.IsNullOrEmpty(yearChs))
             {
-                if (yearChs.EndsWith("年"))
+                if (IsYearOnly(yearChs))
                 {
                     yearChs = yearChs.Substring(0, yearChs.Length - 1);
                 }
@@ -1331,11 +1335,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             else if (!string.IsNullOrEmpty(yearRel))
             {
-                if (yearRel.EndsWith("去年"))
+                if (IsLastYear(yearRel))
                 {
                     year--;
                 }
-                else if (yearRel.EndsWith("明年"))
+                else if (IsNextYear(yearRel))
                 {
                     year++;
                 }
@@ -1475,6 +1479,60 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private int ToMonthNumber(string monthStr)
         {
             return this.config.MonthOfYear[monthStr] > 12 ? this.config.MonthOfYear[monthStr] % 12 : this.config.MonthOfYear[monthStr];
+        }
+
+        private bool IsMonthOnly(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o));
+        }
+
+        private bool IsWeekend(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
+        }
+
+        private bool IsWeekOnly(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o));
+        }
+
+        private bool IsYearOnly(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o));
+        }
+
+        private bool IsThisYear(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.ThisYearTerms.Any(o => trimmedText.Equals(o));
+        }
+
+        private bool IsLastYear(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.LastYearTerms.Any(o => trimmedText.Equals(o));
+        }
+
+        private bool IsNextYear(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.NextYearTerms.Any(o => trimmedText.Equals(o));
+        }
+
+        private bool IsYearAfterNext(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.YearAfterNextTerms.Any(o => trimmedText.Equals(o));
+        }
+
+        private bool IsYearBeforeLast(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.YearBeforeLastTerms.Any(o => trimmedText.Equals(o));
         }
     }
 }
