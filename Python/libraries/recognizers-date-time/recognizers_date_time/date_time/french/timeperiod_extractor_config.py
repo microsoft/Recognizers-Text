@@ -83,7 +83,6 @@ class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         self._token_before_date = FrenchDateTime.TokenBeforeDate
         self._pure_number_regex = [FrenchDateTime.PureNumFromTo, FrenchDateTime.PureNumFromTo]
 
-        
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)
         if match:

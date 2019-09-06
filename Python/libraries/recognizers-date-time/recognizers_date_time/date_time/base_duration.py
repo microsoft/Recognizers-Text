@@ -94,7 +94,7 @@ class DurationExtractorConfiguration(DateTimeOptionsConfiguration):
     @abstractmethod
     def less_than_regex(self) -> Pattern:
         raise NotImplementedError
-    
+
     @property
     @abstractmethod
     def options(self) -> DateTimeOptions:

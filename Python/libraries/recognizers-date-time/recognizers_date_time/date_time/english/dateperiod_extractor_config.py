@@ -15,6 +15,7 @@ from .duration_extractor_config import EnglishDurationExtractorConfiguration
 from .date_extractor_config import EnglishDateExtractorConfiguration
 from .common_configs import EnglishOrdinalExtractor
 
+
 class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
     def simple_cases_regexes(self) -> List[Pattern]:
