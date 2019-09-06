@@ -646,19 +646,20 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                 continue
 
             match = RegexExtension.match_begin(self.config.past_regex, after_str, True)
-            if match.success:
-                tokens.append(Token(match.start(), duration.end + match.index + match.length))
-                continue
+            if match:
+                if match.success:
+                    tokens.append(Token(match.start(), duration.end + match.index + match.length))
+                    continue
 
-            match = RegexExtension.match_begin(self.config.future_regex, after_str, True)
-            if match.success:
-                tokens.append(Token(match.start(), duration.end + match.index + match.length))
-                continue
+                match = RegexExtension.match_begin(self.config.future_regex, after_str, True)
+                if match.success:
+                    tokens.append(Token(match.start(), duration.end + match.index + match.length))
+                    continue
 
-            match = RegexExtension.match_begin(self.config.future_suffix_regex, after_str, True)
-            if match.success:
-                tokens.append(Token(match.start(), duration.end + match.index + match.length))
-                continue
+                match = RegexExtension.match_begin(self.config.future_suffix_regex, after_str, True)
+                if match.success:
+                    tokens.append(Token(match.start(), duration.end + match.index + match.length))
+                    continue
         return tokens
 
     def single_time_point_with_patterns(self, source: str, ordinal_extractions: [ExtractResult], reference: datetime) -> List[ExtractResult]:

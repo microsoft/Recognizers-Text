@@ -312,7 +312,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
     def match_time_of_day(self, text: str, reference: datetime, date_ers: [ExtractResult]):
         ret = []
 
-        matches: [Match] = self.config.specific_time_of_day_regex.search(text)
+        matches: [Match] = self.config.specific_time_of_day_regex.finditer(text)
         for match in matches:
             ret.append(Token(text.index(match.group()), text.index(match.group()) + (match.end - match.start)))
 
@@ -321,7 +321,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
         for er in date_ers:
 
-            after_str = after_str[er.start + (er.length or 0):]
+            after_str = text[er.start + (er.length or 0):]
 
             match = self.config.period_time_of_day_with_date_regex.search(after_str)
 

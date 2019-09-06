@@ -185,6 +185,8 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             FrenchDateTime.MonthOfRegex)
         self._date_unit_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.DateUnitRegex)
+        self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.WithinNextPrefixRegex)
         self._in_connector_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.InConnectorRegex)
         self._range_unit_regex = RegExpUtility.get_safe_reg_exp(

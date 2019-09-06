@@ -16,6 +16,7 @@ from .time_extractor_config import FrenchTimeExtractorConfiguration
 from .duration_extractor_config import FrenchDurationExtractorConfiguration
 from .timeperiod_extractor_config import FrenchTimePeriodExtractorConfiguration
 from .datetime_extractor_config import FrenchDateTimeExtractorConfiguration
+from ..utilities import DateTimeOptions
 
 
 class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
@@ -255,6 +256,7 @@ class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
         self._after_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.AfterRegex
         )
+        self._options = DateTimeOptions.NONE
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)
