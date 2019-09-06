@@ -5,16 +5,17 @@ from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.french.extractors import FrenchCardinalExtractor
 from ...resources.french_date_time import FrenchDateTime
 from ..base_duration import DurationExtractorConfiguration
+from ..utilities import DateTimeOptions
 
 
 class FrenchDurationExtractorConfiguration(DurationExtractorConfiguration):
     @property
     def options(self):
-        pass
+        return self._options
 
     @property
     def dmy_date_format(self) -> bool:
-        pass
+        return self._dmy_date_format
 
     @property
     def all_regex(self) -> Pattern:
@@ -89,6 +90,7 @@ class FrenchDurationExtractorConfiguration(DurationExtractorConfiguration):
         return self._less_than_regex
 
     def __init__(self):
+        self._options = DateTimeOptions.NONE
         self._all_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.AllRegex)
         self._half_regex: Pattern = RegExpUtility.get_safe_reg_exp(
