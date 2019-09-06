@@ -423,9 +423,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 var beginDay = DateObject.MinValue.SafeCreateFromValue(beginYear, 1, 1);
                 var endDay = DateObject.MinValue.SafeCreateFromValue(endYear, 1, 1);
-                var beginTimex = DateTimeFormatUtil.LuisDate(beginYear, 1, 1);
-                var endTimex = DateTimeFormatUtil.LuisDate(endYear, 1, 1);
-                ret.Timex = $"({beginTimex},{endTimex},P{endYear - beginYear}Y)";
+                ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDay, endDay, DatePeriodTimexType.ByYear);
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
                 ret.Success = true;
                 return ret;
@@ -594,7 +592,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 endDay = DateObject.MinValue.SafeCreateFromValue(year, month + 1, 1);
             }
 
-            ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
+            ret.Timex = DateTimeFormatUtil.LuisDate(year, month);
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
             ret.Success = true;
             return ret;
@@ -615,7 +613,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var monthStr = match.Groups["month"].Value;
                 if (IsThisYear(trimmedText))
                 {
-                    ret.Timex = referenceDate.Year.ToString("D4");
+                    ret.Timex = TimexUtility.GenerateYearTimex(referenceDate);
                     ret.FutureValue =
                         ret.PastValue =
                             new Tuple<DateObject, DateObject>(DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, 1, 1), referenceDate);
@@ -651,13 +649,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                     if (swift >= -1)
                     {
-                        ret.Timex = (referenceDate.Year + swift).ToString("D4") + "-" + month.ToString("D2");
                         year = year + swift;
+                        ret.Timex = DateTimeFormatUtil.LuisDate(year, month);
                         futureYear = pastYear = year;
                     }
                     else
                     {
-                        ret.Timex = "XXXX-" + month.ToString("D2");
+                        ret.Timex = DateTimeFormatUtil.LuisDate(Constants.InvalidYear, month);
                         if (month < referenceDate.Month)
                         {
                             futureYear++;
@@ -705,9 +703,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         var beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7 * swift);
                         var endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift);
 
-                        ret.Timex = beginDate.Year.ToString("D4") + "-W" +
-                                    Cal.GetWeekOfYear(beginDate, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
-                                        .ToString("D2") + "-WE";
+                        ret.Timex = TimexUtility.GenerateWeekendTimex(beginDate);
 
                         ret.FutureValue =
                             ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate.AddDays(1));
@@ -721,7 +717,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         month = referenceDate.AddMonths(swift).Month;
                         year = referenceDate.AddMonths(swift).Year;
-                        ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
+                        ret.Timex = DateTimeFormatUtil.LuisDate(year, month);
                         futureYear = pastYear = year;
                     }
                     else if (IsYearOnly(trimmedText))
@@ -781,7 +777,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 // Handle like "上半周"，"下半周"
                 beginDay = swift == -1 ? referenceDate.This(DayOfWeek.Monday) : referenceDate.This(DayOfWeek.Thursday);
                 endDay = swift == -1 ? referenceDate.This(DayOfWeek.Thursday) : referenceDate.This(DayOfWeek.Sunday).AddDays(1);
-                ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P{(endDay - beginDay).TotalDays}D)";
+                ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDay, endDay, DatePeriodTimexType.ByDay);
             }
             else if (IsMonthOnly(text))
             {
@@ -792,14 +788,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 beginDay = swift == -1 ? monthStartDay : monthStartDay.AddDays(halfMonthDay);
                 endDay = swift == -1 ? monthStartDay.AddDays(halfMonthDay) : monthEndDay;
-                ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P{(endDay - beginDay).TotalDays}D)";
+                ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDay, endDay, DatePeriodTimexType.ByDay);
             }
             else
             {
                 // Handle like "上(个)半年"，"下(个)半年"
                 beginDay = swift == -1 ? DateObject.MinValue.SafeCreateFromValue(year, 1, 1) : DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
                 endDay = swift == -1 ? DateObject.MinValue.SafeCreateFromValue(year, 7, 1) : DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
-                ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P6M)";
+                ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDay, endDay, DatePeriodTimexType.ByMonth);
             }
 
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
@@ -889,7 +885,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var beginDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
             var endDay = DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
 
-            ret.Timex = year.ToString("D4");
+            ret.Timex = DateTimeFormatUtil.LuisDate(year);
 
             if (hasHalf)
             {
@@ -902,7 +898,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     beginDay = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
                 }
 
-                ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P6M)";
+                ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDay, endDay, DatePeriodTimexType.ByMonth);
             }
 
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
@@ -1188,12 +1184,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 month = referenceDate.AddMonths(swift).Month;
                 year = referenceDate.AddMonths(swift).Year;
-                ret.Timex = referenceDate.Year.ToString("D4") + "-" + month.ToString("D2");
+                ret.Timex = DateTimeFormatUtil.LuisDate(referenceDate.Year, month);
             }
             else
             {
                 month = ToMonthNumber(monthStr);
-                ret.Timex = "XXXX" + "-" + month.ToString("D2");
+                ret.Timex = DateTimeFormatUtil.LuisDate(Constants.InvalidYear, month);
                 year = referenceDate.Year;
                 noYear = true;
             }
@@ -1361,7 +1357,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var beginDate = DateObject.MinValue.SafeCreateFromValue(year, (quarterNum * 3) - 2, 1);
             var endDate = DateObject.MinValue.SafeCreateFromValue(year, (quarterNum * 3) + 1, 1);
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
-            ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},P3M)";
+            ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDate, endDate, DatePeriodTimexType.ByMonth);
             ret.Success = true;
 
             return ret;

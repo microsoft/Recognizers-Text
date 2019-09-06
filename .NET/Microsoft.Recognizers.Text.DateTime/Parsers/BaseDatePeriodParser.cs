@@ -1211,7 +1211,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
                     DateObject.MinValue.SafeCreateFromValue(year, month, 1), dateValue);
 
-                ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
+                ret.Timex = DateTimeFormatUtil.LuisDate(year, month);
 
                 ret.Success = true;
             }
