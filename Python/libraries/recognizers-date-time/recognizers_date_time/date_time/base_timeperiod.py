@@ -11,7 +11,7 @@ from recognizers_date_time.date_time.base_time import BaseTimeExtractor, BaseTim
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, get_tokens_from_regex, DateTimeResolutionResult, DateTimeUtilityConfiguration, DateTimeFormatUtil, ResolutionStartEnd, DateTimeOptionsConfiguration, DateTimeOptions, TimeZoneUtility
+from .utilities import Token, merge_all_tokens, get_tokens_from_regex, DateTimeResolutionResult, DateTimeUtilityConfiguration, DateTimeFormatUtil, ResolutionStartEnd, DateTimeOptionsConfiguration, DateTimeOptions, TimeZoneUtility, ConditionalMatch
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
@@ -82,7 +82,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
         if reference is None:
             reference = datetime.now()
 
-        tokens = self.match_simple_cases(source)
+        tokens = self.match_simple_cases(self.config.simple_cases_regex, source)
         tokens.extend(self.merge_two_time_points(source, reference))
         tokens.extend(self.match_night(source))
 
@@ -114,48 +114,49 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                                      text.index(match.group()) + (match.end() - match.start())))
         return ret
 
-    def match_simple_cases(self, source: str) -> List[Token]:
+    def match_simple_cases(self, regexp: Pattern, source: str) -> List[Token]:
         result: List[Token] = list()
 
         for regexp in self.config.simple_cases_regex:
-            matches: [Match] = regexp.search(source)
+            matches: [Match] = regex.finditer(regexp, source)
 
-            for match in matches:
+            if matches:
+                for match in matches:
 
-                if RegExpUtility.get_group(match, Constants.MinuteGroupName) or RegExpUtility.get_group(match, Constants.SecondGroupName):
+                    if RegExpUtility.get_group(match, Constants.MinuteGroupName) or RegExpUtility.get_group(match, Constants.SecondGroupName):
 
-                    end_with_valid_token = True
-                    if (source.index(match.group()) + (match.end() - match.start())) == len(source):
                         end_with_valid_token = True
-
-                    else:
-                        after_str = source[source.index(match.group()) + (match.end() - match.start())]
-
-                        end_with_general_endings = self.config.general_ending_regex.match(after_str)
-                        end_with_am_pm = RegExpUtility.get_group(match, Constants.RightAmPmGroupName)
-
-                        if end_with_general_endings or end_with_am_pm or after_str.lstrip().startswith(self.config.token_before_date):
+                        if (source.index(match.group()) + (match.end() - match.start())) == len(source):
                             end_with_valid_token = True
-                        elif (self.config.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
-                            #When TimeZone be migrated enable it
-                            end_with_valid_token = False
 
-                    if end_with_valid_token:
-                        result.append(Token(source.index(match.group()), source.index(match.group()) + (match.end() - match.start())))
-                else:
-                    match_pm_str = RegExpUtility.get_group(match, Constants.PmGroupName)
-                    match_am_str = RegExpUtility.get_group(match, Constants.AmGroupName)
-                    desc_str = RegExpUtility.get_group(match, Constants.DescGroupName)
+                        else:
+                            after_str = source[source.index(match.group()) + (match.end() - match.start())]
 
-                    if not match_pm_str or not match_am_str or not desc_str:
-                        result.append(Token(source.index(match.group()), source.index(match.group()) + (match.end() - match.start())))
+                            end_with_general_endings = self.config.general_ending_regex.match(after_str)
+                            end_with_am_pm = RegExpUtility.get_group(match, Constants.RightAmPmGroupName)
+
+                            if end_with_general_endings or end_with_am_pm or after_str.lstrip().startswith(self.config.token_before_date):
+                                end_with_valid_token = True
+                            elif (self.config.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
+                                #When TimeZone be migrated enable it
+                                end_with_valid_token = False
+
+                        if end_with_valid_token:
+                            result.append(Token(source.index(match.group()), source.index(match.group()) + (match.end() - match.start())))
                     else:
-                        after_str = source[source.index(match.group()) + (match.end() - match.start()):]
+                        match_pm_str = RegExpUtility.get_group(match, Constants.PmGroupName)
+                        match_am_str = RegExpUtility.get_group(match, Constants.AmGroupName)
+                        desc_str = RegExpUtility.get_group(match, Constants.DescGroupName)
 
-                        # When TimeZone be migrated enable it
-                        if (self.config.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
-                            result.append(Token(source.index(match.group()),
-                                                source.index(match.group()) + (match.end() - match.start())))
+                        if not match_pm_str or not match_am_str or not desc_str:
+                            result.append(Token(source.index(match.group()), source.index(match.group()) + (match.end() - match.start())))
+                        else:
+                            after_str = source[source.index(match.group()) + (match.end() - match.start()):]
+
+                            # When TimeZone be migrated enable it
+                            if (self.config.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
+                                result.append(Token(source.index(match.group()),
+                                                    source.index(match.group()) + (match.end() - match.start())))
 
         return result
 

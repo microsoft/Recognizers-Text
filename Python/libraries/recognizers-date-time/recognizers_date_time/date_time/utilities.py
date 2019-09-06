@@ -198,7 +198,7 @@ class BaseDateTimeOptionsConfiguration(DateTimeOptionsConfiguration):
 
     @property
     def options(self):
-        raise NotImplementedError
+        return self._options
 
     @options.setter
     def options(self, value):
@@ -206,7 +206,7 @@ class BaseDateTimeOptionsConfiguration(DateTimeOptionsConfiguration):
 
     @property
     def dmy_date_format(self) -> bool:
-        raise NotImplementedError
+        return self._dmy_date_format
 
     @dmy_date_format.setter
     def dmy_date_format(self, value):
