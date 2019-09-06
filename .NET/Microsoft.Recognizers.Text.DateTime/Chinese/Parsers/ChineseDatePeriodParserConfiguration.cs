@@ -676,70 +676,75 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         swift = -1;
                     }
 
-                    var srcUnit = match.Groups["unit"].Value;
-                    var unitStr = this.config.UnitMap[srcUnit];
-
                     // Handle cases with "(上|下)半" like "上半月"、 "下半年"
                     if (!string.IsNullOrEmpty(match.Groups["halfTag"].Value))
                     {
-                        return HandleWithHalfTag(unitStr, referenceDate, ret, swift);
+                        return HandleWithHalfTag(trimmedText, referenceDate, ret, swift);
                     }
 
-                    switch (unitStr)
+                    if (trimmedText.EndsWith("周") | trimmedText.EndsWith("星期"))
                     {
-                        case Constants.TimexWeek:
-                            var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
-                            ret.Timex = DateTimeFormatUtil.ToIsoWeekTimex(monday);
-                            ret.FutureValue =
-                                ret.PastValue =
-                                    new Tuple<DateObject, DateObject>(
-                                        referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift),
-                                        referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift).AddDays(1));
-                            ret.Success = true;
-                            return ret;
-                        case Constants.TimexWeekend:
-                            var beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7 * swift);
-                            var endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift);
+                        var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
+                        ret.Timex = DateTimeFormatUtil.ToIsoWeekTimex(monday);
+                        ret.FutureValue =
+                            ret.PastValue =
+                                new Tuple<DateObject, DateObject>(
+                                    referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift),
+                                    referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift).AddDays(1));
+                        ret.Success = true;
+                        return ret;
+                    }
 
-                            ret.Timex = beginDate.Year.ToString("D4") + "-W" +
-                                        Cal.GetWeekOfYear(beginDate, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
-                                            .ToString("D2") + "-WE";
-                            ret.FutureValue =
-                                ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate.AddDays(1));
-                            ret.Success = true;
-                            return ret;
-                        case Constants.TimexMonthFull:
-                            month = referenceDate.AddMonths(swift).Month;
-                            year = referenceDate.AddMonths(swift).Year;
-                            ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
-                            futureYear = pastYear = year;
-                            break;
-                        case Constants.TimexYear:
-                            // Handle like "今年上半年"，"明年下半年"
-                            trimmedText = HandleWithHalfYear(match, trimmedText, out bool hasHalf, out bool isFirstHalf);
-                            swift = hasHalf ? 0 : swift;
+                    if (trimmedText.EndsWith("周末"))
+                    {
+                        var beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7 * swift);
+                        var endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift);
 
-                            year = referenceDate.AddYears(swift).Year;
-                            if (trimmedText.EndsWith("去年"))
-                            {
-                                year--;
-                            }
-                            else if (trimmedText.EndsWith("明年"))
-                            {
-                                year++;
-                            }
-                            else if (trimmedText.EndsWith("前年"))
-                            {
-                                year -= 2;
-                            }
-                            else if (trimmedText.EndsWith("后年"))
-                            {
-                                year += 2;
-                            }
+                        ret.Timex = beginDate.Year.ToString("D4") + "-W" +
+                                    Cal.GetWeekOfYear(beginDate, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
+                                        .ToString("D2") + "-WE";
 
-                            return HandleYearResult(ret, hasHalf, isFirstHalf, year);
-                        default:
-                            break;
+                        ret.FutureValue =
+                            ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate.AddDays(1));
+
+                        ret.Success = true;
+
+                        return ret;
+                    }
+
+                    if (trimmedText.EndsWith("月"))
+                    {
+                        month = referenceDate.AddMonths(swift).Month;
+                        year = referenceDate.AddMonths(swift).Year;
+                        ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
+                        futureYear = pastYear = year;
+                    }
+                    else if (trimmedText.EndsWith("年"))
+                    {
+                        // Handle like "今年上半年"，"明年下半年"
+                        trimmedText = HandleWithHalfYear(match, trimmedText, out bool hasHalf, out bool isFirstHalf);
+                        swift = hasHalf ? 0 : swift;
+
+                        year = referenceDate.AddYears(swift).Year;
+                        if (trimmedText.EndsWith("去年"))
+                        {
+                            year--;
+                        }
+                        else if (trimmedText.EndsWith("明年"))
+                        {
+                            year++;
+                        }
+                        else if (trimmedText.EndsWith("前年"))
+                        {
+                            year -= 2;
+                        }
+                        else if (trimmedText.EndsWith("后年"))
+                        {
+                            year += 2;
+                        }
+
+                        ret = HandleYearResult(ret, hasHalf, isFirstHalf, year);
+                        return ret;
                     }
                 }
             }
@@ -762,35 +767,35 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        private DateTimeResolutionResult HandleWithHalfTag(string unitStr, DateObject referenceDate, DateTimeResolutionResult ret, int swift)
+        private DateTimeResolutionResult HandleWithHalfTag(string text, DateObject referenceDate, DateTimeResolutionResult ret, int swift)
         {
             DateObject beginDay, endDay;
             int year = referenceDate.Year, month = referenceDate.Month;
 
-            switch (unitStr)
+            if (text.EndsWith("周"))
             {
-                case Constants.TimexWeek:
-                    // Handle like "上半周"，"下半周"
-                    beginDay = swift == -1 ? referenceDate.This(DayOfWeek.Monday) : referenceDate.This(DayOfWeek.Thursday);
-                    endDay = swift == -1 ? referenceDate.This(DayOfWeek.Thursday) : referenceDate.This(DayOfWeek.Sunday).AddDays(1);
-                    ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P{(endDay - beginDay).TotalDays}D)";
-                    break;
-                case Constants.TimexMonthFull:
-                    // Handle like "上半月"，"下半月"
-                    var monthStartDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
-                    var monthEndDay = DateObject.MinValue.SafeCreateFromValue(year, month + 1, 1);
-                    var halfMonthDay = (int)((monthEndDay - monthStartDay).TotalDays / 2);
+                // Handle like "上半周"，"下半周"
+                beginDay = swift == -1 ? referenceDate.This(DayOfWeek.Monday) : referenceDate.This(DayOfWeek.Thursday);
+                endDay = swift == -1 ? referenceDate.This(DayOfWeek.Thursday) : referenceDate.This(DayOfWeek.Sunday).AddDays(1);
+                ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P{(endDay - beginDay).TotalDays}D)";
+            }
+            else if (text.EndsWith("月"))
+            {
+                // Handle like "上半月"，"下半月"
+                var monthStartDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
+                var monthEndDay = DateObject.MinValue.SafeCreateFromValue(year, month + 1, 1);
+                var halfMonthDay = (int)((monthEndDay - monthStartDay).TotalDays / 2);
 
-                    beginDay = swift == -1 ? monthStartDay : monthStartDay.AddDays(halfMonthDay);
-                    endDay = swift == -1 ? monthStartDay.AddDays(halfMonthDay) : monthEndDay;
-                    ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P{(endDay - beginDay).TotalDays}D)";
-                    break;
-                default:
-                    // Handle like "上(个)半年"，"下(个)半年"
-                    beginDay = swift == -1 ? DateObject.MinValue.SafeCreateFromValue(year, 1, 1) : DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
-                    endDay = swift == -1 ? DateObject.MinValue.SafeCreateFromValue(year, 7, 1) : DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
-                    ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P6M)";
-                    break;
+                beginDay = swift == -1 ? monthStartDay : monthStartDay.AddDays(halfMonthDay);
+                endDay = swift == -1 ? monthStartDay.AddDays(halfMonthDay) : monthEndDay;
+                ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P{(endDay - beginDay).TotalDays}D)";
+            }
+            else
+            {
+                // Handle like "上(个)半年"，"下(个)半年"
+                beginDay = swift == -1 ? DateObject.MinValue.SafeCreateFromValue(year, 1, 1) : DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
+                endDay = swift == -1 ? DateObject.MinValue.SafeCreateFromValue(year, 7, 1) : DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
+                ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P6M)";
             }
 
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
