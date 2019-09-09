@@ -111,28 +111,29 @@ public abstract class BaseNumberExtractor implements IExtractor {
             }
         }
         result = filterAmbiguity(result, source);
+        
         return result;
     }
 
-    private ArrayList<ExtractResult> filterAmbiguity(ArrayList<ExtractResult> ers, String input) {
+    private ArrayList<ExtractResult> filterAmbiguity(ArrayList<ExtractResult> extractResults, String input) {
         if (getAmbiguityFiltersDict() != null) {
             for (Map.Entry<Pattern, Pattern> pair : getAmbiguityFiltersDict().entrySet()) {
                 final Pattern key = pair.getKey();
                 final Pattern value = pair.getValue();
 
-                Optional<Match> keyMatch = Arrays.stream(RegExpUtility.getMatches(key, input)).findFirst();
-                if (keyMatch.isPresent()) {
-                    final Match[] matches = RegExpUtility.getMatches(value, input);
-                    List<ExtractResult> newErs = ers.stream()
-                        .filter(er -> Arrays.stream(matches).noneMatch(m -> m.index < er.getStart() + er.getLength() && m.index + m.length > er.getStart()))
-                        .collect(Collectors.toList());
-                    ers.clear();
-                    ers.addAll(newErs);
+                for (ExtractResult extractResult : extractResults) {
+                    Optional<Match> keyMatch = Arrays.stream(RegExpUtility.getMatches(key, extractResult.getText())).findFirst();
+                    if (keyMatch.isPresent()) {
+                        final Match[] matches = RegExpUtility.getMatches(value, input);
+                        extractResults = extractResults.stream()
+                            .filter(er -> Arrays.stream(matches).noneMatch(m -> m.index < er.getStart() + er.getLength() && m.index + m.length > er.getStart()))
+                            .collect(Collectors.toCollection(ArrayList::new));
+                    }
                 }
             }
         }
 
-        return ers;
+        return extractResults;
     }
 
     protected Pattern generateLongFormatNumberRegexes(LongFormatType type) {

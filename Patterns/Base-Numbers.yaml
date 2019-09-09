@@ -16,8 +16,4 @@ CurrencyRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(b|m|t|g)(?=\b)
 CommonCurrencySymbol: !simpleRegex
   def: (¥|\$|€|£|₩)
-AmbiguityFiltersDict: !dictionary
-  types: [ string, string ]
-  entries:
-    '(¥|\$|€|£|₩)': '(¥|\$|€|£|₩)\d+'
 ...

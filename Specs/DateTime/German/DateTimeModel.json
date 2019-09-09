@@ -1470,5 +1470,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Wie wird das Wetter nächsten Donnerstag bis Samstag in Genf",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "nächsten donnerstag bis samstag",
+        "Start": 20,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-09-12,2019-09-14,P2D)",
+              "type": "daterange",
+              "start": "2019-09-12",
+              "end": "2019-09-14"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

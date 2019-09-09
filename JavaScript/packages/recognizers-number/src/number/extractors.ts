@@ -92,19 +92,21 @@ export abstract class BaseNumberExtractor implements IExtractor {
         return result;
     }
 
-    private filterAmbiguity(ers: ExtractResult[], text: string) {
+    private filterAmbiguity(extractResults: ExtractResult[], text: string) {
         if (this.ambiguityFiltersDict !== null && this.ambiguityFiltersDict !== undefined){
             for (let regex of this.ambiguityFiltersDict){
-                if (RegExpUtility.isMatch(regex.regExpKey, text)){
-                    let matches = RegExpUtility.getMatches(regex.regExpValue, text);
-                    if (matches && matches.length){
-                        ers = ers.filter(er => matches.find(m => m.index < er.start + er.length && m.index + m.length > er.start) === undefined);
+                for (let extractResult of extractResults){
+                    if (RegExpUtility.isMatch(regex.regExpKey, extractResult.text)){
+                        let matches = RegExpUtility.getMatches(regex.regExpValue, text);
+                        if (matches && matches.length){
+                            extractResults = extractResults.filter(er => matches.find(m => m.index < er.start + er.length && m.index + m.length > er.start) === undefined);
+                        }
                     }
                 }
             }
         }
 
-        return ers;
+        return extractResults;
     }
 
     protected generateLongFormatNumberRegexes(type: LongFormatType, placeholder: string = BaseNumbers.PlaceHolderDefault): RegExp {

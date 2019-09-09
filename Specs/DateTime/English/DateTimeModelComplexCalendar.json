@@ -12001,6 +12001,31 @@
     ]
   },
   {
+    "Input": "I will have a long vacation from next monday to friday",
+    "Context": {
+      "ReferenceDateTime": "2019-09-05T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from next monday to friday",
+        "Start": 28,
+        "End": 53,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-09-09,2019-09-13,P4D)",
+              "type": "daterange",
+              "start": "2019-09-09",
+              "end": "2019-09-13"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Feb 30 is an invalid date.",
     "Context": {
       "ReferenceDateTime": "2019-01-30T00:00:00"

@@ -202,9 +202,6 @@ WeekOfRegex: !simpleRegex
   def: (haftası)
 MonthOfRegex: !simpleRegex
   def: (ayı)
-# Cases collected from mined data. Regex to be removed once all platforms move to AmbiguityFiltersDict. 
-AmbiguousMonthP0Regex: !simpleRegex
-  def: \b(bir\s+ara)\b
 # This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 # The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
