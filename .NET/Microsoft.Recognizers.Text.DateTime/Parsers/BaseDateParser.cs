@@ -380,8 +380,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     pastDate = pastDate.AddDays(-7);
                 }
 
-                ret.FutureValue = futureDate;
-                ret.PastValue = pastDate;
+                ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day);
+                ret.PastValue = DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day);
                 ret.Success = true;
 
                 return ret;

@@ -1351,6 +1351,16 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (er.Count >= 2)
             {
+                // Propagate the possible future relative context from the first entity to the second one in the range.
+                // Handles cases like "next monday to friday"
+                var futureMatchForStartDate = config.FutureRegex.Match(er[0].Text);
+                var futureMatchForEndDate = config.FutureRegex.Match(er[1].Text);
+
+                if (futureMatchForStartDate.Success && !futureMatchForEndDate.Success)
+                {
+                    er[1].Text = futureMatchForStartDate.Value + " " + er[1].Text;
+                }
+
                 var match = this.config.WeekWithWeekDayRangeRegex.Match(text);
                 string weekPrefix = null;
 
