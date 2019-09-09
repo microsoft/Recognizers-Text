@@ -5822,5 +5822,27 @@
         "Length": 32
       }
     ]
+  },
+  {
+    "Input": "6,107.31 August 2019 should not include the decimal",
+    "Results": [
+      {
+        "Text": "August 2019",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-08",
+          "FutureResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          }
+        },
+        "Start": 9,
+        "Length": 11
+      }
+    ]
   }
 ]

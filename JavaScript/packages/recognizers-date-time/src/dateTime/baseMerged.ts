@@ -260,6 +260,7 @@ export class BaseMergedParser implements IDateTimeParser {
     protected readonly config: IMergedParserConfiguration;
     private readonly options: DateTimeOptions;
 
+    private readonly dateDefaultValue = DateTimeFormatUtil.formatDate(new Date(1, 0, 1, 0, 0, 0, 0));
     private readonly dateMinValue = DateTimeFormatUtil.formatDate(DateUtils.minValue());
     private readonly dateTimeMinValue = DateTimeFormatUtil.formatDateTime(DateUtils.minValue());
 
@@ -626,7 +627,7 @@ export class BaseMergedParser implements IDateTimeParser {
     private addSingleDateTimeToResolution(resolutions: StringMap, type: string, mod: string, result: StringMap) {
         let key = TimeTypeConstants.VALUE;
         let value = resolutions[type];
-        if (!value || this.dateMinValue === value || this.dateTimeMinValue === value) {
+        if (!value || this.dateMinValue === value || this.dateTimeMinValue === value || value.startsWith(this.dateDefaultValue)) {
             return;
         }
 
