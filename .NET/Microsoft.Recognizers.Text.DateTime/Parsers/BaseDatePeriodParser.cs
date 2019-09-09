@@ -1351,7 +1351,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (er.Count >= 2)
             {
-                // Handle like "next monday to friday"
+                // Propagate the possible future relative context from the first entity to the second one in the range.
+                // Handles cases like "next monday to friday"
                 var futureMatchForStartDate = config.FutureRegex.Match(er[0].Text);
                 var futureMatchForEndDate = config.FutureRegex.Match(er[1].Text);
 
