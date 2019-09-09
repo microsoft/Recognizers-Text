@@ -12049,7 +12049,7 @@
   {
     "Input": "6,107.31 August 2019 should not include the decimal",
     "Comment": "Only August 2019 should be extracted as a DateRange, so no output in Date only. Java disabled due to issue in lookbehind.",
-    "NotSupported": "java",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "august 2019",
@@ -12072,13 +12072,13 @@
   {
     "Input": "0.8/15 looks like a formula",
     "Comment": "Java disabled due to issue in lookbehind.",
-    "NotSupported": "java",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": []
   },
   {
     "Input": "8/1.5 looks like a formula",
     "Comment": "Java disabled due to issue in lookbehind.",
-    "NotSupported": "java",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": []
   },
   {
