@@ -8,6 +8,7 @@ from recognizers_number.number.models import NumberMode, LongFormatMode
 from recognizers_number.resources.french_numeric import FrenchNumeric
 from recognizers_number.number.extractors import ReVal, BaseNumberExtractor, BasePercentageExtractor
 from recognizers_number.number.constants import Constants
+from recognizers_date_time.date_time.utilities import DateTimeOptions
 
 
 class FrenchNumberExtractor(BaseNumberExtractor):
@@ -17,7 +18,7 @@ class FrenchNumberExtractor(BaseNumberExtractor):
 
     @property
     def options(self):
-        pass
+        return self._options
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -69,7 +70,7 @@ class FrenchCardinalExtractor(BaseNumberExtractor):
 
     @property
     def options(self):
-        pass
+        return self._options
 
     @property
     def _negative_number_terms(self) -> Pattern:
@@ -111,7 +112,7 @@ class FrenchIntegerExtractor(BaseNumberExtractor):
 
     @property
     def options(self):
-        pass
+        return self._options
 
     @property
     def _negative_number_terms(self) -> Pattern:
@@ -182,7 +183,7 @@ class FrenchDoubleExtractor(BaseNumberExtractor):
 
     @property
     def options(self):
-        pass
+        return self._options
 
     @property
     def _negative_number_terms(self) -> Pattern:
@@ -253,7 +254,7 @@ class FrenchFractionExtractor(BaseNumberExtractor):
 
     @property
     def options(self):
-        pass
+        return self._options
 
     @property
     def _negative_number_terms(self) -> Pattern:
@@ -308,7 +309,7 @@ class FrenchOrdinalExtractor(BaseNumberExtractor):
 
     @property
     def options(self):
-        pass
+        return self._options
 
     @property
     def _negative_number_terms(self) -> Pattern:
@@ -342,6 +343,7 @@ class FrenchOrdinalExtractor(BaseNumberExtractor):
                     FrenchNumeric.OrdinalFrenchRegex),
                 val='OrdFr')
         ]
+        self._options = DateTimeOptions.NONE
 
 
 class FrenchPercentageExtractor(BasePercentageExtractor):
