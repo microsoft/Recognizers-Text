@@ -18,6 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Files", "Data Files", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23084BAE-6EB0-439A-BD71-31A783680711}"
 	ProjectSection(SolutionItems) = preProject
+		..\Patterns\Arabic\Arabic-Choice.yaml = ..\Patterns\Arabic\Arabic-Choice.yaml
 		..\Patterns\Base-Currency.yaml = ..\Patterns\Base-Currency.yaml
 		..\Patterns\Base-DateTime.yaml = ..\Patterns\Base-DateTime.yaml
 		..\Patterns\Base-Email.yaml = ..\Patterns\Base-Email.yaml
@@ -52,6 +53,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\German\German-Numbers.yaml = ..\Patterns\German\German-Numbers.yaml
 		..\Patterns\German\German-NumbersWithUnit.yaml = ..\Patterns\German\German-NumbersWithUnit.yaml
 		..\Patterns\Hindi\Hindi-Numbers.yaml = ..\Patterns\Hindi\Hindi-Numbers.yaml
+		..\Patterns\Hindi\Hindi-NumbersWithUnit.yaml = ..\Patterns\Hindi\Hindi-NumbersWithUnit.yaml
+		..\Patterns\Hindi\Hindi-Choice.yaml = ..\Patterns\Hindi\Hindi-Choice.yaml
 		..\Patterns\Italian\Italian-Choice.yaml = ..\Patterns\Italian\Italian-Choice.yaml
 		..\Patterns\Italian\Italian-DateTime.yaml = ..\Patterns\Italian\Italian-DateTime.yaml
 		..\Patterns\Italian\Italian-Numbers.yaml = ..\Patterns\Italian\Italian-Numbers.yaml

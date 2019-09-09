@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             AddTo(ret, SetExtractor.Extract(text, referenceTime));
             AddTo(ret, HolidayExtractor.Extract(text, referenceTime));
 
-            ret = CheckDenyList(ret, text);
+            ret = FilterAmbiguity(ret, text);
 
             AddMod(ret, text);
 
@@ -87,55 +87,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return tempDst;
         }
 
-        // add some negative case
-        private List<ExtractResult> CheckDenyList(List<ExtractResult> extractResults, string text)
-        {
-            var ret = new List<ExtractResult>();
-
-            foreach (var extractResult in extractResults)
-            {
-                var endIndex = (int)extractResult.Start + (int)extractResult.Length;
-                if (endIndex != text.Length)
-                {
-                    var tmpChar = text.Substring(endIndex, 1);
-
-                    // for cases like "12周岁"
-                    if (extractResult.Text.EndsWith("周") && endIndex < text.Length && tmpChar.Equals("岁"))
-                    {
-                        continue;
-                    }
-                }
-
-                ret.Add(extractResult);
-            }
-
-            ret = FilterAmbiguity(ret, text);
-
-            return ret;
-        }
-
+        // Filter some bad cases like "十二周岁" and "12号", etc.
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
         {
-            var ambiguityResults = new List<ExtractResult>();
-
             if (this.AmbiguityFiltersDict != null)
             {
                 foreach (var regex in this.AmbiguityFiltersDict)
                 {
-                    if (regex.Key.IsMatch(text))
+                    foreach (var extractResult in extractResults)
                     {
-                        foreach (var extractResult in extractResults)
+                        if (regex.Key.IsMatch(extractResult.Text))
                         {
-                            if (regex.Value.IsMatch(extractResult.Text))
-                            {
-                                ambiguityResults.Add(extractResult);
-                            }
+                            var matches = regex.Value.Matches(text).Cast<Match>();
+                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                                .ToList();
                         }
                     }
                 }
             }
 
-            extractResults = extractResults.Except(ambiguityResults).ToList();
             return extractResults;
         }
 

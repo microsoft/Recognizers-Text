@@ -1672,6 +1672,15 @@
         }
       },
       {
+        "Text": "1000",
+        "Start": 22,
+        "End": 25,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000"
+        }
+      },
+      {
         "Text": "3",
         "Start": 31,
         "End": 31,

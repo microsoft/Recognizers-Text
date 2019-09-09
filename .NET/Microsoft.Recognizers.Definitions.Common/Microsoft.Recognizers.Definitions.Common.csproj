@@ -32,6 +32,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Arabic\ChoiceDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="BaseCurrency.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -207,10 +212,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
     </Compile>
+    <Compile Update="Hindi\ChoiceDefinitions.cs">
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Hindi\NumbersDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Hindi\NumbersWithUnitDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
     </Compile>
     <Compile Update="Italian\DateTimeDefinitions.cs">
       <DesignTime>True</DesignTime>
@@ -325,6 +340,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Arabic\ChoiceDefinitions.tt">
+    </None>
     <None Update="BaseCurrency.tt">
     </None>
     <None Update="BaseDateTime.tt">
@@ -397,7 +414,11 @@
     </None>
     <None Update="German\NumbersWithUnitDefinitions.tt">
     </None>
+    <None Update="Hindi\ChoiceDefinitions.tt">
+    </None>
     <None Update="Hindi\NumbersDefinitions.tt">
+    </None>
+    <None Update="Hindi\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Italian\ChoiceDefinitions.tt">
     </None>

@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Arabic\ChoiceDefinitions.cs" Link="Arabic\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseCurrency.cs" Link="BaseCurrency.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseDateTime.cs" Link="BaseDateTime.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseEmail.cs" Link="BaseEmail.cs" />
@@ -65,6 +66,9 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\DateTimeDefinitions.cs" Link="German\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\NumbersDefinitions.cs" Link="German\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\NumbersWithUnitDefinitions.cs" Link="German\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Hindi\NumbersDefinitions.cs" Link="Hindi\NumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Hindi\NumbersWithUnitDefinitions.cs" Link="Hindi\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Hindi\ChoiceDefinitions.cs" Link="Hindi\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\ChoiceDefinitions.cs" Link="Italian\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\DateTimeDefinitions.cs" Link="Italian\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\NumbersDefinitions.cs" Link="Italian\NumbersDefinitions.cs" />
@@ -87,10 +91,10 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\DateTimeDefinitions.cs" Link="Turkish\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\NumbersDefinitions.cs" Link="Turkish\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\NumbersWithUnitDefinitions.cs" Link="Turkish\NumbersWithUnitDefinitions.cs" />
-    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Hindi\NumbersDefinitions.cs" Link="Hindi\NumbersDefinitions.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Arabic\" />
     <Folder Include="Chinese\" />
     <Folder Include="Dutch\" />
     <Folder Include="English\" />

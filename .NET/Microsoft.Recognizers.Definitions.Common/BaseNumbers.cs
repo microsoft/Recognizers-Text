@@ -30,9 +30,5 @@ namespace Microsoft.Recognizers.Definitions
       public const string MultiplierLookupRegex = @"(k|m|t|g|b)";
       public const string CurrencyRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(b|m|t|g)(?=\b)";
       public const string CommonCurrencySymbol = @"(¥|\$|€|£|₩)";
-      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
-        {
-            { @"(¥|\$|€|£|₩)", @"(¥|\$|€|£|₩)\d+" }
-        };
     }
 }

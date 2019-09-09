@@ -104,7 +104,6 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string WhichWeekRegex = @"\b((?<cardinal>((on|yirmi|otuz|kırk|elli)\s)?(birinci|ikinci|üçüncü|dördüncü|beşinci|altıncı|yedinci|sekizinci|dokuzuncu|onuncu|yirminci|otuzuncu|kırkıncı|ellinci)|elli birinci|elli ikinci|(1|2|3|4|5)?1(.|'inci)|(1|2|3|4|5)?2(.|'inci)|(1|2|3|4)?3(.|'üncü)|(1|2|3|4)?4(.|'üncü)|(1|2|3|4)?5(.|'inci)|(1|2|3|4)?6(.|'ıncı)|(1|2|3|4)?7(.|'nci)|(1|2|3|4)?8(.|'inci)|(1|2|3|4)?9(.|'uncu))|son)\s+hafta\b";
       public const string WeekOfRegex = @"(haftası)";
       public const string MonthOfRegex = @"(ayı)";
-      public const string AmbiguousMonthP0Regex = @"\b(bir\s+ara)\b";
       public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})";
       public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
       public const string OnRegex = @"^[\*]";

@@ -3289,7 +3289,7 @@
         }
       }
     ]
-  },  
+  },
   {
     "Input": "时间从2016年6月1日-6月30日",
     "Context": {
@@ -3334,6 +3334,352 @@
               "type": "daterange",
               "start": "2019-04-29",
               "end": "2019-10-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "今日我们将去参观今日头条总部",
+    "Context": {
+      "ReferenceDateTime": "2019-08-28T08:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "今日",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08-28",
+              "type": "date",
+              "value": "2019-08-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "今日头条报道了今日在北京举行的奥运会",
+    "Context": {
+      "ReferenceDateTime": "2019-08-28T08:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "今日",
+        "Start": 7,
+        "End": 8,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08-28",
+              "type": "date",
+              "value": "2019-08-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "《明日之后》将于明日正式上线",
+    "Context": {
+      "ReferenceDateTime": "2019-08-28T08:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "明日",
+        "Start": 8,
+        "End": 9,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08-29",
+              "type": "date",
+              "value": "2019-08-29"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "明日我们将迎来《明日之后》周年庆活动",
+    "Context": {
+      "ReferenceDateTime": "2019-08-28T08:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "明日",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08-29",
+              "type": "date",
+              "value": "2019-08-29"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我去年上半年都不在北京",
+    "Context": {
+      "ReferenceDateTime": "2019-09-02T08:00:00"
+    },
+    "NotSupported":  "javascript, python, java",
+    "Results": [
+      {
+        "Text": "去年上半年",
+        "Start": 1,
+        "End": 5,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-01-01,2018-07-01,P6M)",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2018-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我上半年都不在北京",
+    "Context": {
+      "ReferenceDateTime": "2019-09-02T08:00:00"
+    },
+    "NotSupported":  "javascript, python, java",
+    "Results": [
+      {
+        "Text": "上半年",
+        "Start": 1,
+        "End": 3,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2019-07-01,P6M)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2019-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我明年下半年都不在北京",
+    "Context": {
+      "ReferenceDateTime": "2019-09-02T08:00:00"
+    },
+    "NotSupported":  "javascript, python, java",
+    "Results": [
+      {
+        "Text": "明年下半年",
+        "Start": 1,
+        "End": 5,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-07-01,2021-01-01,P6M)",
+              "type": "daterange",
+              "start": "2020-07-01",
+              "end": "2021-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我2017年上半年都不在北京",
+    "Context": {
+      "ReferenceDateTime": "2019-09-02T08:00:00"
+    },
+    "NotSupported":  "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2017年上半年",
+        "Start": 1,
+        "End": 8,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-01,2017-07-01,P6M)",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2017-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我二零一七年下半年都不在北京",
+    "Context": {
+      "ReferenceDateTime": "2019-09-02T08:00:00"
+    },
+    "NotSupported":  "javascript, python, java",
+    "Results": [
+      {
+        "Text": "二零一七年下半年",
+        "Start": 1,
+        "End": 8,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-07-01,2018-01-01,P6M)",
+              "type": "daterange",
+              "start": "2017-07-01",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我上半月都不在北京",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T08:00:00"
+    },
+    "NotSupported":  "javascript, python, java",
+    "Results": [
+      {
+        "Text": "上半月",
+        "Start": 1,
+        "End": 3,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-09-01,2019-09-16,P15D)",
+              "type": "daterange",
+              "start": "2019-09-01",
+              "end": "2019-09-16"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我下半周都不在北京",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T08:00:00"
+    },
+    "NotSupported":  "javascript, python, java",
+    "Results": [
+      {
+        "Text": "下半周",
+        "Start": 1,
+        "End": 3,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-09-05,2019-09-09,P4D)",
+              "type": "daterange",
+              "start": "2019-09-05",
+              "end": "2019-09-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我上个半年都不在北京",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T08:00:00"
+    },
+    "NotSupported":  "javascript, python, java",
+    "Results": [
+      {
+        "Text": "上个半年",
+        "Start": 1,
+        "End": 4,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2019-07-01,P6M)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2019-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我2018年前半年都不在北京",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T08:00:00"
+    },
+    "NotSupported":  "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2018年前半年",
+        "Start": 1,
+        "End": 8,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-01-01,2018-07-01,P6M)",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2018-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我今年后半年都不在北京",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T08:00:00"
+    },
+    "NotSupported":  "javascript, python, java",
+    "Results": [
+      {
+        "Text": "今年后半年",
+        "Start": 1,
+        "End": 5,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-07-01,2020-01-01,P6M)",
+              "type": "daterange",
+              "start": "2019-07-01",
+              "end": "2020-01-01"
             }
           ]
         }

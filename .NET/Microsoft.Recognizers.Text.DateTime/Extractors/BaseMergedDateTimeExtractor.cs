@@ -243,37 +243,25 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ers;
         }
 
-        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)
+        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
         {
             if (this.config.AmbiguityFiltersDict != null)
             {
-                foreach (var regex in config.AmbiguityFiltersDict)
+                foreach (var regex in this.config.AmbiguityFiltersDict)
                 {
-                    if (regex.Key.IsMatch(text))
+                    foreach (var extractResult in extractResults)
                     {
-                        var matches = regex.Value.Matches(text).Cast<Match>();
-                        ers = ers.Where(er =>
-                                !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
-                            .ToList();
+                        if (regex.Key.IsMatch(extractResult.Text))
+                        {
+                            var matches = regex.Value.Matches(text).Cast<Match>();
+                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                                .ToList();
+                        }
                     }
                 }
             }
 
-            return ers;
-        }
-
-        private bool FilterAmbiguousSingleWord(ExtractResult er, string text)
-        {
-            if (config.SingleAmbiguousMonthRegex.IsMatch(er.Text))
-            {
-                var stringBefore = text.Substring(0, (int)er.Start).TrimEnd();
-                if (!config.PrepositionSuffixRegex.IsMatch(stringBefore))
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return extractResults;
         }
 
         // Handle cases like "move 3pm appointment to 4"
