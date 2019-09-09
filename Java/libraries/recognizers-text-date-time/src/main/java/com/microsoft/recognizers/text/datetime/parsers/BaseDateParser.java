@@ -667,11 +667,11 @@ public class BaseDateParser implements IDateTimeParser {
         LocalDateTime futureDate = DateUtil.safeCreateFromMinValue(year, month, day);
         LocalDateTime pastDate = DateUtil.safeCreateFromMinValue(year, month, day);
 
-        if (noYear && futureDate.isBefore(referenceDate)) {
+        if (noYear && futureDate.isBefore(referenceDate) && !futureDate.isEqual(DateUtil.minValue())) {
             futureDate = futureDate.plusYears(1);
         }
 
-        if (noYear && (pastDate.isEqual(referenceDate) || pastDate.isAfter(referenceDate))) {
+        if (noYear && (pastDate.isEqual(referenceDate) || pastDate.isAfter(referenceDate)) && !pastDate.isEqual(DateUtil.minValue())) {
             pastDate = pastDate.minusYears(1);
         }
 

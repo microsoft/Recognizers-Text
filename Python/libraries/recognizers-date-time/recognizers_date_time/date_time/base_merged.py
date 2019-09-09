@@ -635,7 +635,7 @@ class BaseMergedParser(DateTimeParser):
     def __add_single_date_time_to_resolution(self, resolutions: Dict[str, str], dtype: str, mod: str, result: Dict[str, str]):
         key = TimeTypeConstants.VALUE
         value = resolutions[dtype]
-        if not value or self.__date_min_value == value or self.__date_time_min_value == value:
+        if not value or value.startswith(self.__date_min_value):
             return
 
         if mod:
