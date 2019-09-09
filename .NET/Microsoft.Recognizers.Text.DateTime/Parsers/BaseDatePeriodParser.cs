@@ -1406,7 +1406,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pastEnd = futureEnd;
             }
 
-            ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(futureEnd - futureBegin).TotalDays}D)";
+            if (!futureEnd.IsDefaultValue() && !futureBegin.IsDefaultValue())
+            {
+                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(futureEnd - futureBegin).TotalDays}D)";
+            }
+            else
+            {
+                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr})";
+            }
+
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
             ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
             ret.Success = true;
