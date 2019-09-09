@@ -383,11 +383,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 relativeTermsMatches.AddRange(regex.Matches(text).Cast<Match>());
             }
 
-            // Filtered out if there is no relative term or the only one found is "this". Like "3 this"
-            if (relativeTermsMatches.Count == 0 || (relativeTermsMatches.Count == 1 && config.ThisPrefixRegex.IsMatch(relativeTermsMatches[0].Value)))
-            {
-                return;
-            }
+            // Filtered out relative term "this" which is behind an extractResult.
+            // Handle cases like "3 this"
+            relativeTermsMatches = relativeTermsMatches.Where(relativeTerm =>
+                !(config.ThisPrefixRegex.IsMatch(relativeTerm.Value) &&
+                    ers.Any(er => er.Start + er.Length < relativeTerm.Index &&
+                        string.IsNullOrWhiteSpace(text.Substring((int)er.Start + (int)er.Length, relativeTerm.Index - ((int)er.Start + (int)er.Length))))))
+                            .ToList();
 
             // Remove overlapping matches
             relativeTermsMatches.RemoveAll(m =>

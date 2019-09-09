@@ -12024,5 +12024,61 @@
         }
       }
     ]
+  },
+  {
+    "Input": "The request is: ABC-12345-A1B2C3 this is yet to be submitted as I need the approval. @cortana@calendar.help could you kindly arrange a 30 minutes Teams call this week with the above attendees please. Look forward to speaking again this week",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "30 minutes",
+        "Start": 135,
+        "End": 144,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "this week",
+        "Start": 157,
+        "End": 165,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W37",
+              "type": "daterange",
+              "start": "2019-09-09",
+              "end": "2019-09-16"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "this week",
+        "Start": 231,
+        "End": 239,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W37",
+              "type": "daterange",
+              "start": "2019-09-09",
+              "end": "2019-09-16"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
