@@ -312,69 +312,71 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
     def match_time_of_day(self, text: str, reference: datetime, date_ers: [ExtractResult]):
         ret = []
 
-        matches: [Match] = self.config.specific_time_of_day_regex.finditer(text)
-        for match in matches:
-            ret.append(Token(text.index(match.group()), text.index(match.group()) + (match.end - match.start)))
+        matches: [Match] = self.config.specific_time_of_day_regex.match(text)
+        if matches is not None:
 
-        if len(date_ers) == 0:
-            return ret
+            for match in matches:
+                ret.append(Token(text.index(match.group()), text.index(match.group()) + (match.end - match.start)))
 
-        for er in date_ers:
+            if len(date_ers) == 0:
+                return ret
 
-            after_str = text[er.start + (er.length or 0):]
+            for er in date_ers:
 
-            match = self.config.period_time_of_day_with_date_regex.search(after_str)
+                after_str = text[er.start + (er.length or 0):]
 
-            if match:
+                match = self.config.period_time_of_day_with_date_regex.match(after_str)
 
-                if after_str[0: after_str.index(match.group())]:
-                    start = er.start or 0
-                    end = start + er.length + (len(RegExpUtility.get_group(match, Constants.TimeOfDayGroupName)) or 0)
+                if match:
 
-                    ret.append(Token(start, end))
-                    continue
+                    if after_str[0: after_str.index(match.group())]:
+                        start = er.start or 0
+                        end = start + er.length + (len(RegExpUtility.get_group(match, Constants.TimeOfDayGroupName)) or 0)
 
-                connector_str = after_str[0: after_str.index(match.group())]
+                        ret.append(Token(start, end))
+                        continue
 
-                if RegexExtension.is_exact_match(self.config.middle_pause_regex, connector_str, True):
-
-                    suffix = after_str[after_str.index(match.group()) + (match.end - match.start):].strip()
-
-                    ending_match = self.config.general_ending_regex.search(suffix)
-                    if ending_match:
-                        ret.append(Token((er.start or 0), er.start + er.length + after_str.index(match.group()) + (match.end - match.start)))
-
-            if not match:
-                match = self.config.am_desc_regex.search(after_str)
-
-            if match or not after_str[0: after_str.index(match.group())]:
-                match = self.config.pm_desc_regex.search(after_str)
-
-            if match:
-
-                if after_str[0: after_str.index(match.group())]:
-                    ret.append(Token((er.start or 0), er.start + er.length + after_str.index(match.group()) + (match.end - match.start)))
-
-            prefix_str = text[0: er.start or 0]
-
-            match = self.config.period_time_of_day_with_date_regex.search(prefix_str)
-            if match:
-
-                if prefix_str[prefix_str.index(match.group()) + (match.end - match.start):]:
-                    mid_str = text[prefix_str.index(match.group()) + (match.end - match.start), er.start]
-                    if not (mid_str is None or mid_str == '') and (mid_str is None or mid_str == ' '):
-                        ret.append(Token(prefix_str.index(match.group()), er.start + (er.length or 0)))
-                else:
-
-                    connector_str = prefix_str[prefix_str.index(match.group()) + (match.end - match.start)]
+                    connector_str = after_str[0: after_str.index(match.group())]
 
                     if RegexExtension.is_exact_match(self.config.middle_pause_regex, connector_str, True):
 
-                        suffix = text[er.start + (er.length or 0)].lstrip(' ')
+                        suffix = after_str[after_str.index(match.group()) + (match.end - match.start):].strip()
 
                         ending_match = self.config.general_ending_regex.search(suffix)
                         if ending_match:
-                            ret.append(Token(suffix.index(match.group()) + er.start + (er.length or 0)))
+                            ret.append(Token((er.start or 0), er.start + er.length + after_str.index(match.group()) + (match.end - match.start)))
+
+                if not match:
+                    match = self.config.am_desc_regex.search(after_str)
+
+                if match or not after_str[0: after_str.index(match.group())]:
+                    match = self.config.pm_desc_regex.search(after_str)
+
+                if match:
+
+                    if after_str[0: after_str.index(match.group())]:
+                        ret.append(Token((er.start or 0), er.start + er.length + after_str.index(match.group()) + (match.end - match.start)))
+
+                prefix_str = text[0: er.start or 0]
+
+                match = self.config.period_time_of_day_with_date_regex.search(prefix_str)
+                if match:
+
+                    if prefix_str[prefix_str.index(match.group()) + (match.end - match.start):]:
+                        mid_str = text[prefix_str.index(match.group()) + (match.end - match.start), er.start]
+                        if not (mid_str is None or mid_str == '') and (mid_str is None or mid_str == ' '):
+                            ret.append(Token(prefix_str.index(match.group()), er.start + (er.length or 0)))
+                    else:
+
+                        connector_str = prefix_str[prefix_str.index(match.group()) + (match.end - match.start)]
+
+                        if RegexExtension.is_exact_match(self.config.middle_pause_regex, connector_str, True):
+
+                            suffix = text[er.start + (er.length or 0)].lstrip(' ')
+
+                            ending_match = self.config.general_ending_regex.search(suffix)
+                            if ending_match:
+                                ret.append(Token(suffix.index(match.group()) + er.start + (er.length or 0)))
 
         for e in ret:
 

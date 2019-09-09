@@ -167,8 +167,7 @@ class BaseSetExtractor(DateTimeExtractor):
             trimmed_source = source[0:match.start()] + source[match.end():]
 
             for extract_result in extractor.extract(trimmed_source, reference):
-                if (extract_result.start <= match.start()
-                        and extract_result.start + extract_result.length > match.start()):
+                if extract_result.start <= match.start() < extract_result.start + extract_result.length:
                     yield Token(extract_result.start, extract_result.start + extract_result.length + len(match.group()))
 
         for match in regex.finditer(self.config.set_week_day_regex, source):

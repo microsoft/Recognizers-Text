@@ -243,14 +243,14 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
         metadata = Metadata()
         metadata.possibly_included_period_end = True
 
-        matches: [Match] = self.config.year_period_regex.search(text)
+        matches: [Match] = self.config.year_period_regex.finditer(text)
 
         for match in matches:
             match_year = self.config.year_regex.match(match)
 
             if match_year is not None and (match_year.end() - match_year.start()) == len(match.group()):
                 year = self.config.date_point_extractor.get_year_from_text(match_year)
-                if not (year >= Constants.MinYearNum and year <= Constants.MaxYearNum):
+                if not (Constants.MinYearNum <= year <= Constants.MaxYearNum):
                     continue
 
                 metadata.possibly_included_period_end = False

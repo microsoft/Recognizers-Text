@@ -168,7 +168,7 @@ class BaseDateTimeExtractor(DateTimeExtractor):
         time_ers = self.config.time_point_extractor.extract(source, reference)
         time_num_matches = self.config.number_as_time_regex.match(source)
 
-        if len(time_ers) == 0 and len(time_num_matches) == 0:
+        if len(time_ers) == 0 and time_num_matches == 0:
             return ret
 
         ers = date_ers
