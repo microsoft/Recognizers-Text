@@ -1800,7 +1800,7 @@
     ]
   },
   {
-    "Input": "I'll leave once a week",
+    "Input": "Let's meet once a week",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1823,15 +1823,15 @@
     ]
   },
   {
-    "Input": "I'll leave once a year",
+    "Input": "I go on vacation once a year",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
         "Text": "once a year",
-        "Start": 11,
-        "End": 21,
+        "Start": 17,
+        "End": 27,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [

@@ -621,9 +621,9 @@
     ]
   },
   {
-    "Input": "I'll leave once a year",
+    "Input": "I go on vacation once a year",
     "Context": {
-      "ReferenceDateTime": "2017-09-27T17:25:54.2909444+08:00"
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
@@ -638,15 +638,15 @@
             "set": "Set: P1Y"
           }
         },
-        "Start": 11,
+        "Start": 17,
         "Length": 11
       }
     ]
   },
   {
-    "Input": "I'll leave once a week",
+    "Input": "Let's meet once a week",
     "Context": {
-      "ReferenceDateTime": "2017-09-27T17:25:54.2909444+08:00"
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
