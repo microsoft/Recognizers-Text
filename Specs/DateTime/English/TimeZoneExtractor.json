@@ -271,14 +271,14 @@
     ]
   },
   {
-    "Input": "It's 1pm Central Daylight Time",
+    "Input": "It's about 1pm ACDT",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "central daylight time",
+        "Text": "acdt",
         "Type": "timezone",
-        "Start": 9,
-        "Length": 21
+        "Start": 15,
+        "Length": 4
       }
     ]
   }

@@ -171,6 +171,8 @@ FullNameList: !list
     - AUS Eastern Standard Time
     - Australian Eastern Time
     - Australian Eastern Standard Time
+    - Australian Central Daylight Time
+    - Australian Eastern Daylight Time
     - Azerbaijan Standard Time
     - Azores Standard Time
     - Bahia Standard Time
@@ -314,167 +316,119 @@ LocationTimeSuffixRegex: !simpleRegex
 AmbiguousTimezoneList: !list
   types: [string]
   entries:
-    - bit
-    - get
-    - art
-    - cast
-    - eat
-    - lint
-    - mat
-    - most
-    - west
-    - vet
-    - wet
-    - cot
-    - pt
-    - et
-    - eastern
-    - pacific
-    - central
-    - mountain
-    - west coast
-# For Parsing
-AbbrToMinMapping: !dictionary
- types: [ string , int ]
- entries:
-   act: -10000
-   aft: 270
-   akst: -540
-   akdt: -480
    abst: 180
-   #ast: 180
-   ast: -10000
-   arbst: 180
-   #ast: 240
-   arst: 180
-   art: -180
-   #ast: -240
-   #adt: 240
-   #adt: -180
-   adt: -10000
+   acdt: 630
    acst: 570
-   aet: 600
-   aest: 600
+   act: -10000
+   #adt: -180
+   #adt: 240
+   adt: -10000
    aedt: 660
-   azt: 240
-   azst: 300
-   azot: -60
-   azost: 0
-   #bst: 360
-   #bst: 660
-   #bst: 60
-   bst: -10000
-   ccst: -360
-   ct: -360
-   cvt: -60
-   #amt: 240
-   #amt: -240
-   amt: -10000
+   aest: 600
+   aet: 600
+   aft: 270
+   akdt: -480
+   akst: -540
    #amst: -180
    #amst: 300
    amst: -10000
-   acdt: 630
-   cast: 480
-   cadt: -360
+   #amt: -240
+   #amt: 240
+   amt: -10000
+   arbst: 180
+   arst: 180
+   art: -180
+   #ast: -240
+   #ast: 180
+   #ast: 240
+   ast: -10000
+   awdt: 540
+   awst: 480
+   azost: 0
+   azot: -60
+   azst: 300
+   azt: 240
+   bit: -720
+   #bst: 360
+   #bst: 60
+   #bst: 660
+   bst: -10000
    btt: 360
-   cbt: -240
+   cadt: -360
+   cast: 480
    cbst: -240
-   cet: 60
+   cbt: -240
+   ccst: -360
+   #cdt: -240
+   #cdt: -300
+   cdt: -10000
+   cdtm: -360
    cest: 120
-   sbt: 660
+   #cet: 120
+   cet: 60
+   cot: -300
+   #cst: -300
    #cst: -360
    #cst: 480
-   #cst: -300
-   cst: -10000
-   #cdt: -300
-   #cdt: -240
-   cdt: -10000
-   cstm: -360
-   cdtm: -360
    #cst: 480
-   bit: -720
-   et: -240
+   cst: -10000
+   cstm: -360
+   ct: -360
+   cvt: -60
    eat: 180
+   #ect: -300
+   #ect: 60
+   ect: -10000
+   edt: -240
+   edtm: -300
+   eest: 180
+   #eet: 180
    eet: 120
    #eet: -10000
-   esat: -180
-   esast: -180
-   est: -300
-   edt: -240
-   estm: -300
-   edtm: -300
    egst: 0
-   yekt: 300
-   fjt: 720
+   esast: -180
+   esat: -180
+   est: -300
+   estm: -300
+   et: -240
    fjst: 780
+   fjt: 720
    get: 240
    gmt: 0
-   gnst: -180
    gndt: -180
-   #gst: 240
+   gnst: -180
    #gst: -120
+   #gst: 240
    gst: -10000
    gtbst: 120
-   hast: -600
-   hst: -600
    hadt: -540
+   hast: -600
    hdt: -540
-   #ist: 330
+   hkt: 480
+   hst: -600
+   irdt: 270
+   irkt: 480
+   irst: 210
+   isdt: 120
+   isst: 120
    #ist: 60
    #ist: 120
+   #ist: 330
    ist: -10000
-   irst: 210
-   irdt: 270
-   isst: 120
-   isdt: 120
-   jst: 540
    jdt: 120
-   eest: 180
-   pett: 720
-   #kst: 540
-   kst: -10000
-   #cet: 120
-   lint: 840
-   magt: 660
-   magst: 720
-   mut: 240
-   mat: -120
-   mest: 120
-   mvst: -180
-   most: 0
-   mst: -420
-   mdt: -360
-   mstm: -420
-   mdtm: -420
-   myst: 390
-   ncast: 420
-   nmst: 60
-   nmdt: 60
-   npt: 345
-   nzst: 720
-   nzt: 720
-   nzdt: 780
-   nst: -210
-   ndt: -150
-   irkt: 480
+   jst: 540
    krat: 420
    #kst: 510
-   psat: -240
-   psast: -240
-   pst: -480
-   pdt: -420
-   pstm: -480
-   pdtm: -480
-   pkt: 300
-   #pyt: -240
-   #pyt: -510
-   pyt: -10000
-   #pyst: -180
-   #pyst: -510
-   pyst: -10000
-   rst: 60
-   msk: 180
-   msk-1: 120
+   #kst: 540
+   kst: -10000
+   lint: 840
+   magst: 720
+   magt: 660
+   mat: -120
+   mdt: -360
+   mdtm: -420
+   mest: 120
+   most: 0
    msk+1: 240
    msk+2: 300
    msk+3: 360
@@ -484,51 +438,76 @@ AbbrToMinMapping: !dictionary
    msk+7: 600
    msk+8: 660
    msk+9: 720
+   msk-1: 120
+   msk: 180
+   mst: -420
+   mstm: -420
+   mut: 240
+   mvst: -180
+   myst: 390
+   ncast: 420
+   ndt: -150
+   nmdt: 60
+   nmst: 60
+   npt: 345
+   nst: -210
+   nzdt: 780
+   nzst: 720
+   nzt: 720
+   pdst: -420
+   pdt: -420
+   pdtm: -480
+   pett: 720
+   pkt: 300
+   psast: -240
+   psat: -240
+   pst: -480
+   pstm: -480
+   pt: -420
+   #pyst: -180
+   #pyst: -510
+   pyst: -10000
+   #pyt: -240
+   #pyt: -510
+   pyt: -10000
+   rst: 60
    saest: -180
    sapst: -300
-   sawst: -240
-   #sst: 480
-   #sst: -660
-   sst: -10000
-   smst: 780
-   tha: 420
-   #sst: 480
-   snst: 480
    sast: 120
-   slt: 330
+   sawst: -240
+   sbt: 660
    sgt: 480
+   slt: 330
+   smst: 780
+   snst: 480
+   #sst: -660
    #sst: 120
-   tist: 480
-   tast: 600
+   #sst: 480
+   #sst: 480
+   sst: -10000
    tadt: 600
-   tst: 540
-   tot: 780
+   tast: 600
+   tha: 420
+   tist: 480
    tost: 840
+   tot: 780
    trt: 180
-   #eet: 180
+   tst: 540
    ulat: 480
    utc: 0
    vet: -240
    vlat: 600
-   awst: 480
+   #wast: 300
+   wast: 120
+   #wast: -10000
    #wat: 60
    #wat: 480
    wat: -10000
-   #ect: 60
-   #ect: -300
-   ect: -10000
-   wast: 120
-   #wast: -10000
-   wet: 0
    west: 60
-   #wast: 300
+   wet: 0
    wpst: 600
    yakt: 540
-   pt: -420
-   pdst: -420
-   awdt: 540
-   cot: -300
-   hkt: 480
+   yekt: 300
 # FullToMinMapping list do not need the "time" or "timezone" after its name.
 # Except for case like "eastern standard time (mexico)", "russia time zone 10"
 FullToMinMapping: !dictionary
@@ -562,6 +541,8 @@ FullToMinMapping: !dictionary
    aus eastern standard: 600
    australian eastern: 600
    australian eastern standard: 600
+   australian central daylight: 630
+   australian eastern daylight Time: 660
    azerbaijan standard: 240
    azores standard: -60
    bahia standard: -180
@@ -575,7 +556,6 @@ FullToMinMapping: !dictionary
    central america standard: -360
    central asia standard: 360
    central brazilian standard: -240
-   central daylight: -300
    central europe: 60
    central european: 60
    central europe std: 60
@@ -597,7 +577,6 @@ FullToMinMapping: !dictionary
    european central: 60
    central: -300
    eastern: -240
-   eastern daylight: -240
    eastern standard time (mexico): -300
    eastern standard: -300
    egypt standard: 120

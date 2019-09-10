@@ -12125,5 +12125,71 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'm at Eastern Daylight Time",
+    "NotSupported":"javascript,python",
+    "Results": [
+      {
+        "Text": "eastern daylight time",
+        "Start": 7,
+        "End": 27,
+        "TypeName": "datetimeV2.timezone",
+        "Resolution": {
+          "values": [
+            {
+              "type": "timezone",
+              "value": "UTC+XX:XX",
+              "utcOffsetMins": "-10000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'm at Central Daylight Time",
+    "NotSupported":"javascript,python",
+    "Results": [
+      {
+        "Text": "central daylight time",
+        "Start": 7,
+        "End": 27,
+        "TypeName": "datetimeV2.timezone",
+        "Resolution": {
+          "values": [
+            {
+              "type": "timezone",
+              "value": "UTC+XX:XX",
+              "utcOffsetMins": "-10000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It's about 1pm ACDT",
+    "NotSupported":"javascript,python",
+    "Results": [
+      {
+        "Text": "1pm acdt",
+        "Start": 11,
+        "End": 18,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T13",
+              "type": "time",
+              "timezone": "UTC+10:30",
+              "timezoneText": "acdt",
+              "utcOffsetMins": "630",
+              "value": "13:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

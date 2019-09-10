@@ -880,8 +880,8 @@
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
-            "Value": "UTC-04:00",
-            "UtcOffsetMins": -240
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
           }
         },
         "Start": 7,
@@ -898,12 +898,30 @@
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
-            "Value": "UTC-05:00",
-            "UtcOffsetMins": -300
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
           }
         },
         "Start": 7,
         "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "It's about 1pm ACDT",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "acdt",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+10:30",
+            "UtcOffsetMins": 630
+          }
+        },
+        "Start": 15,
+        "Length": 4
       }
     ]
   }
