@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string SimpleCasesRegex = $@"((从)\s*)?(({YearRegex}|{DatePeriodYearInChineseRegex})\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInChinese}|{DayRegex})\s*{DatePeriodTillRegex}\s*({DatePeriodDayRegexInChinese}|{DayRegex})((\s+|\s*,\s*){YearRegex})?";
       public static readonly string YearAndMonth = $@"({DatePeriodYearInChineseRegex}|{YearRegex})\s*{MonthRegex}";
       public static readonly string PureNumYearAndMonth = $@"({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})";
-      public static readonly string OneWordPeriodRegex = $@"(((?<yearrel>(明|今|去)年)\s*)?({MonthRegex}|{HalfYearRegex})|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})(?<halfTag>半)?\s*(周末|周|月|年)|周末|(今|明|去|前|后)年(\s*{HalfYearRegex})?)";
+      public static readonly string OneWordPeriodRegex = $@"(((?<yearrel>(明|今|去)年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})(?<halfTag>半)?\s*(周末|周|月|年)|周末|(今|明|去|前|后)年(\s*{HalfYearRegex})?)";
       public static readonly string WeekOfMonthRegex = $@"(?<wom>{MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)";
       public const string UnitRegex = @"(?<unit>年|(个)?月|周|日|天)";
       public static readonly string FollowedUnit = $@"^\s*{UnitRegex}";
