@@ -671,10 +671,10 @@ public class EnglishDateTime {
 
     public static final String PeriodicRegex = "\\b(?<periodic>daily|monthly|weekly|biweekly|yearly|annual(ly)?)\\b";
 
-    public static final String EachUnitRegex = "(?<each>(each|every)(?<other>\\s+other)?\\s*{DurationUnitRegex})"
+    public static final String EachUnitRegex = "(?<each>(each|every|once an?)(?<other>\\s+other)?\\s*{DurationUnitRegex})"
             .replace("{DurationUnitRegex}", DurationUnitRegex);
 
-    public static final String EachPrefixRegex = "\\b(?<each>(each|(every))\\s*$)";
+    public static final String EachPrefixRegex = "\\b(?<each>(each|(every)|once an?)\\s*$)";
 
     public static final String SetEachRegex = "\\b(?<each>(each|(every))\\s*)";
 
