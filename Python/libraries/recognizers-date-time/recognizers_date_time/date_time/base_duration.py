@@ -194,7 +194,7 @@ class BaseDurationExtractor(DateTimeExtractor):
 
                 mid_str_end = extractor_results[second_extraction_index].start \
                     if extractor_results[second_extraction_index].start else 0
-                mid_str = text[mid_str_begin, mid_str_begin + (mid_str_end - mid_str_begin)]
+                mid_str = text[mid_str_begin, mid_str_end - mid_str_begin]
 
                 match = self.config.duration_connector_regex.search(mid_str)
                 if match:

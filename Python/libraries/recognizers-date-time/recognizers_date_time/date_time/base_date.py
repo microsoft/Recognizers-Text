@@ -1,10 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime, timedelta
-import calendar
+from recognizers_date_time.date_time.abstract_year_extractor import AbstractYearExtractor
 from datedelta import datedelta
-import regex
-
 from recognizers_text.extractor import ExtractResult
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number import BaseNumberExtractor, BaseNumberParser
@@ -12,6 +10,8 @@ from recognizers_number.number import Constants as NumberConstants
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
+import regex
+import calendar
 
 
 class DateTimeUtilityConfiguration(ABC):
@@ -188,12 +188,12 @@ class DateExtractorConfiguration(ABC):
         raise NotImplementedError
 
 
-class BaseDateExtractor(DateTimeExtractor):
+class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
     @property
     def extractor_type_name(self) -> str:
         return Constants.SYS_DATETIME_DATE
 
-    def __init__(self, config: DateExtractorConfiguration):
+    def __init__(self, config):
         self.config = config
 
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:

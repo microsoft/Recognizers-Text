@@ -31,7 +31,7 @@ class RegExpUtility:
     @staticmethod
     def get_group(match: Match, group: str, default_val: str = '') -> str:
         if match is None:
-            return False
+            return None
         return match.groupdict().get(group, default_val) or default_val
 
     @staticmethod

@@ -267,7 +267,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
                 middle_str = text[middle_begin: middle_end].strip()
 
-                if self.is_valid_connector_for_date_and_time_period(middle_end):
+                if self.is_valid_connector_for_date_and_time_period(middle_str):
                     begin = ers[i].start or 0
                     end = (ers[j].start or 0) + (ers[j].length or 0)
                     ret.append(Token(begin, end))
@@ -562,21 +562,21 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             if not before_str and not after_str:
                 continue
 
-            match = self.config.within_next_prefix_regex.search(before_str)
+            match = self.config.within_next_prefix_regex.match(before_str)
             if self.match_prefix_regex_in_segment(before_str, match):
                 start_token = text.index(match.group())
-                match = self.config.time_unit_regex.search(text[duration.start: duration.start + duration.length])
+                match = self.config.time_unit_regex.match(text[duration.start: duration.start + duration.length])
                 if match:
                     ret.append(Token(start_token, duration.end))
                     continue
 
-            match = self.config.previous_prefix_regex.search(before_str)
+            match = self.config.previous_prefix_regex.match(before_str)
             index = -1
             if match and before_str[before_str.index(match.group()) + (match.end() - match.start())]:
                 index = before_str.index(match.group())
 
             if index < 0:
-                match = self.config.next_prefix_regex.search(before_str)
+                match = self.config.next_prefix_regex.match(before_str)
                 if match and before_str[before_str.index(match.group()) + (match.end() - match.start())]:
                     index = before_str.index(match.group())
 

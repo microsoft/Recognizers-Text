@@ -2,7 +2,7 @@ from abc import abstractmethod
 from typing import List, Match
 import datetime
 from recognizers_text.extractor import ExtractResult
-from recognizers_date_time.date_time.base_date import DateExtractorConfiguration
+
 from recognizers_date_time.date_time.date_extractor import DateExtractor
 from recognizers_date_time.date_time.constants import Constants
 from recognizers_text.utilities import RegExpUtility
@@ -10,7 +10,7 @@ from recognizers_text.utilities import RegExpUtility
 
 class AbstractYearExtractor(DateExtractor):
 
-    def __init__(self, config: DateExtractorConfiguration):
+    def __init__(self, config):
         self.config = config
 
     @abstractmethod
@@ -32,7 +32,7 @@ class AbstractYearExtractor(DateExtractor):
             first_two_year_num_str = RegExpUtility.get_group(
                 match, 'firsttwoyearnum')
 
-            if not (str.isspace(first_two_year_num_str) or first_two_year_num_str is None):
+            if first_two_year_num_str and not (str.isspace(first_two_year_num_str) or first_two_year_num_str is None):
 
                 er = ExtractResult()
                 er.text = first_two_year_num_str

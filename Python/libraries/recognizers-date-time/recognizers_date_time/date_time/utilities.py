@@ -102,7 +102,7 @@ class RegexExtension:
 
     @staticmethod
     def match_end(regexp: Pattern, text: str, trim: bool):
-        match = regex.search(regexp, text)
+        match = regex.match(regexp, text)
 
         if match is None:
             return ConditionalMatch(regexp, False)
@@ -120,7 +120,7 @@ class RegexExtension:
 
     @staticmethod
     def is_exact_match(regex: Pattern, text: str, trim: bool):
-        match = regex.search(text)
+        match = regex.match(text)
 
         length = len(text.strip()) if trim else len(text)
 

@@ -407,7 +407,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                 simple_date_range_results))
         )
 
-        er = sorted(er, key=lambda x: x.start)
+        er = list(sorted(er, key=lambda x: x.start))
 
         return self.merge_multiple_extractions(text, er)
 
