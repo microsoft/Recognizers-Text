@@ -1017,32 +1017,24 @@ HolidayNames: !dictionary
     bastilleday: [ fransenationalefeestdag, bestormingvandebastille ]
     halloweenday: [ halloween, allerheiligenavond ]
     allhallowday: [ allerheiligen ]
-    allsaintsday: [ allerheiligen ] # Duplicate of allhallowday?
+    allsaintsday: [ allerheiligen ]
     allsoulsday: [ allerzielen ]
     christmaseve: [ kerstavond ]
     # Holidays not celebrated extensively in the Netherlands
-    columbus: [ columbusday ] # TODO or remove?
+    columbus: [ columbusday, columbusday ]
     thanksgiving: [ thanksgivingday, thanksgiving, dankzeggingsdag ]
-    martinlutherking: [ martinlutherkingday, martinlutherkingjrday, martinlutherkingdag, martin luther king dag, mlkdag ] # TODO or remove?
-    washingtonsbirthday: [ washingtonsbirthday, washingtonbirthday ] # TODO or remove?
-    canberra: [ canberraday ] # TODO or remove?
-    memorial: [ memorialday, memorial day ] # US only, no Dutch variant
-    yuandan: [ yuandan ] # TODO or remove?
-    maosbirthday: [ maosbirthday ] # TODO or remove?
-    youthday: [ youthday ] # TODO or remove?
-    childrenday: [ childrenday, childday ] # TODO or remove?
+    martinlutherking: [ martinlutherkingday, martinlutherkingjrday, martinlutherkingdag, mlkdag ]
+    washingtonsbirthday: [ washingtonsbirthday, washingtonbirthday ]
+    yuandan: [ yuandan ]
+    youthday: [ jongerendag ]
+    childrenday: [ childrenday, childday, kinderendag ]
     stgeorgeday: [ sintjoris ]
-    mayday: [ mayday ]
-    cincodemayoday: [ cincodemayo ]
-    baptisteday: [ baptisteday ] # TODO or remove?
+    mayday: [ dagvandearbeid ]
+    stpatrickday: [ stpatrickday, stpatricksday ] 
     usindependenceday: [ amerikaanseonafhankelijkheidsdag, usonafhankelijkheidsdag ]
-    stpatrickday: [ stpatrickday ] # TODO or remove?
-    whiteloverday: [ whiteloverday ] # TODO or remove?
-    loverday: [ loverday ] # TODO or remove?
     groundhougday: [ groundhougday, bosmarmottendag ]
     inaugurationday: [ inaugurationday, inauguratiedag ]
-    arborday: [ arborday ] # TODO or remove?
-
+    arborday: [ boomfeestdag ]
 WrittenDecades: !dictionary
   types: [ string, int ]
   entries:
