@@ -12173,7 +12173,7 @@
     ]
   },
   {
-    "Input": "The request is: ABC-12345-A1B2C3 this is yet to be submitted as I need the approval. @cortana@calendar.help could you kindly arrange a 30 minutes Teams call this week with the above attendees please. Look forward to speaking again this week",
+    "Input": "The request is ABC-12345-A1B2C3 this round. Let's arrange a 30 minutes call this week. Look forward to speaking again this week.",
     "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
@@ -12181,8 +12181,8 @@
     "Results": [
       {
         "Text": "30 minutes",
-        "Start": 135,
-        "End": 144,
+        "Start": 60,
+        "End": 69,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -12196,8 +12196,8 @@
       },
       {
         "Text": "this week",
-        "Start": 157,
-        "End": 165,
+        "Start": 76,
+        "End": 84,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -12212,9 +12212,85 @@
       },
       {
         "Text": "this week",
-        "Start": 231,
-        "End": 239,
+        "Start": 118,
+        "End": 126,
         "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W37",
+              "type": "daterange",
+              "start": "2019-09-09",
+              "end": "2019-09-16"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We've met last week this time, right?",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "last week",
+        "Start": 10,
+        "End": 18,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W36",
+              "type": "daterange",
+              "start": "2019-09-02",
+              "end": "2019-09-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Open ABC-12345-A1B2C3 next",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Was it last week or this?",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "last week or this",
+        "Text": "last week",
+        "Start": 7,
+        "End": 15,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W36",
+              "type": "daterange",
+              "start": "2019-09-02",
+              "end": "2019-09-09"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "last week or this",
+        "Text": "this",
+        "Start": 20,
+        "End": 23,
+        "TypeName": "datetimeV2.datetimealt",
         "Resolution": {
           "values": [
             {
