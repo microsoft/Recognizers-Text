@@ -651,7 +651,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"allsaintsday", new string[] { @"allerheiligen" } },
             { @"allsoulsday", new string[] { @"allerzielen" } },
             { @"christmaseve", new string[] { @"kerstavond" } },
-            { @"columbus", new string[] { @"columbusday", @"columbusday" } },
+            { @"columbus", new string[] { @"columbusday", @"columbusdag" } },
             { @"thanksgiving", new string[] { @"thanksgivingday", @"thanksgiving", @"dankzeggingsdag" } },
             { @"martinlutherking", new string[] { @"martinlutherkingday", @"martinlutherkingjrday", @"martinlutherkingdag", @"mlkdag" } },
             { @"washingtonsbirthday", new string[] { @"washingtonsbirthday", @"washingtonbirthday" } },

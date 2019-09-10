@@ -1021,7 +1021,7 @@ HolidayNames: !dictionary
     allsoulsday: [ allerzielen ]
     christmaseve: [ kerstavond ]
     # Holidays not celebrated extensively in the Netherlands
-    columbus: [ columbusday, columbusday ]
+    columbus: [ columbusday, columbusdag ]
     thanksgiving: [ thanksgivingday, thanksgiving, dankzeggingsdag ]
     martinlutherking: [ martinlutherkingday, martinlutherkingjrday, martinlutherkingdag, mlkdag ]
     washingtonsbirthday: [ washingtonsbirthday, washingtonbirthday ]
