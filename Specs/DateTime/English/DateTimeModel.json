@@ -14220,5 +14220,118 @@
         }
       }
     ]
+  },
+  {
+    "Input": "The request is ABC-12345-A1B2C3 this round. Let's arrange a 30 minutes call this week. Look forward to speaking again this week.",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "30 minutes",
+        "Start": 60,
+        "End": 69,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "this week",
+        "Start": 76,
+        "End": 84,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W37",
+              "type": "daterange",
+              "start": "2019-09-09",
+              "end": "2019-09-16"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "this week",
+        "Start": 118,
+        "End": 126,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W37",
+              "type": "daterange",
+              "start": "2019-09-09",
+              "end": "2019-09-16"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We've met last week this time, right?",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "last week",
+        "Start": 10,
+        "End": 18,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W36",
+              "type": "daterange",
+              "start": "2019-09-02",
+              "end": "2019-09-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Open ABC-12345-A1B2C3 next",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "Was it last week or this?",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "last week",
+        "Start": 7,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W36",
+              "type": "daterange",
+              "start": "2019-09-02",
+              "end": "2019-09-09"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
