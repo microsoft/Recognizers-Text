@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Utilities
 {
     public static class RegExpUtility
     {
-        // These three variables use "String.raw" method, that does not exist in dotnet and I could not find the equivalent
-        private static Regex matchGroup;
+        private const string NameGroup = "name";
+
+        private static int index = 0;
 
         public static List<string> GetMatches(Regex regex, string input)
         {
@@ -28,8 +25,25 @@ namespace Microsoft.Recognizers.Text.Utilities
             return matchStrs;
         }
 
-        /*
-        public static ConditionalMatch MatchEnd(this Regex regex, string text, bool trim) // Can not import ConditionalMatch
+        // Regex match with match length equals to text length
+        public static bool IsExactMatch(this Regex regex, string text, bool trim)
+        {
+            var match = regex.Match(text);
+            var length = trim ? text.Trim().Length : text.Length;
+
+            return match.Success && match.Length == length;
+        }
+
+        // We can't trim before match as we may use the match index later
+        public static ConditionalMatch MatchExact(this Regex regex, string text, bool trim)
+        {
+            var match = regex.Match(text);
+            var length = trim ? text.Trim().Length : text.Length;
+
+            return new ConditionalMatch(match, match.Success && match.Length == length);
+        }
+
+        public static ConditionalMatch MatchEnd(this Regex regex, string text, bool trim)
         {
             var match = Regex.Match(text, regex.ToString(), RegexOptions.RightToLeft | regex.Options);
             var strAfter = text.Substring(match.Index + match.Length);
@@ -42,36 +56,20 @@ namespace Microsoft.Recognizers.Text.Utilities
             return new ConditionalMatch(match, match.Success && string.IsNullOrEmpty(strAfter));
         }
 
-        */
-
-        public static Regex GetFirstMatchIndex(Regex regex, string source)
+        // We can't trim before match as we may use the match index later
+        public static ConditionalMatch MatchBegin(this Regex regex, string text, bool trim)
         {
-            bool matched;
-            int index;
-            string value;
-        }
+            var match = regex.Match(text);
+            var strBefore = text.Substring(0, match.Index);
 
-        /*
-        {
-        var matches = GetMatches(regex, source);
-
-            // Do not have length property even if matches is recognized as a Match objects list, because Match does not have it
-            if (matches.Length)
+            if (trim)
             {
-                return { }
+                strBefore = strBefore.Trim();
             }
 
-            return regex;
-        }
-        */
-
-        public static GetFirstMatchIndex(Regex regex, string source)
-        {
-            var matches = GetMatches(regex, source);
-            if(matches.)
+            return new ConditionalMatch(match, match.Success && string.IsNullOrEmpty(strBefore));
         }
 
-        // Is this right?
         public static string[] Split(Regex regex, string source)
         {
             return regex.Split(source);
@@ -79,18 +77,16 @@ namespace Microsoft.Recognizers.Text.Utilities
 
         private static string SanitizeGroups(string source)
         {
+            Regex matchGroup = new Regex(@"\?< (?<name>\w +) >");
 
-            var index = 0;
-            matchGroup = new Regex(@"\?< (?<name>\w +) >");
-
-            // Cannot convert lambda expression to type int
-            var result = Regex.Replace(source, matchGroup, MatchEvaluator(matchGroup, name, index));
+            var result = Regex.Replace(source, matchGroup.ToString(), ReplaceMatchGroup);
             return result;
         }
 
-        private static string MatchEvaluator(Regex regex, string name, int index)
+        private static string ReplaceMatchGroup(Match match)
         {
-            return regex.Replace(name, $"{name}__{index++}");
+            var name = match.Groups[NameGroup]?.Value;
+            return match.Value.Replace(name, $"{name}__{index++}");
         }
     }
 }

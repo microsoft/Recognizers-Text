@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.DateTime
+namespace Microsoft.Recognizers.Text.Utilities
 {
     public class ConditionalMatch
     {

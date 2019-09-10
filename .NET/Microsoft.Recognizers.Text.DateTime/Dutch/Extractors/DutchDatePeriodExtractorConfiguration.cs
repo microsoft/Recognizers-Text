@@ -5,6 +5,7 @@ using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Dutch;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Dutch;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
