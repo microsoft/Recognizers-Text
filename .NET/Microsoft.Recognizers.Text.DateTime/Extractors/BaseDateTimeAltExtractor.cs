@@ -383,14 +383,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 relativeTermsMatches.AddRange(regex.Matches(text).Cast<Match>());
             }
 
-            // Filtered out relative term "this" which is behind an extractResult.
-            // Handle cases like "3 this"
-            relativeTermsMatches = relativeTermsMatches.Where(relativeTerm =>
-                !(config.ThisPrefixRegex.IsMatch(relativeTerm.Value) &&
-                    ers.Any(er => er.Start + er.Length < relativeTerm.Index &&
-                        string.IsNullOrWhiteSpace(text.Substring((int)er.Start + (int)er.Length, relativeTerm.Index - ((int)er.Start + (int)er.Length))))))
-                            .ToList();
-
             // Remove overlapping matches
             relativeTermsMatches.RemoveAll(m =>
                 ers.Any(e => e.Start <= m.Index && e.Start + e.Length >= m.Index + m.Length));
@@ -410,7 +402,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var middleBegin = relativeTermsMatch.Index > resultEnd ? resultEnd ?? 0 : relativeTermsMatchEnd;
                             var middleEnd = relativeTermsMatch.Index > resultEnd ? relativeTermsMatch.Index : result.Start ?? 0;
 
-                            if (IsConnectorOrWhiteSpace(middleBegin, middleEnd, text))
+                            if (IsConnectorOrWhiteSpace(middleBegin, middleEnd, text, true))
                             {
                                 var parentTextStart = relativeTermsMatch.Index > resultEnd ? result.Start : relativeTermsMatch.Index;
                                 var parentTextLen = relativeTermsMatch.Index > resultEnd ? relativeTermsMatchEnd - result.Start : resultEnd - relativeTermsMatch.Index;
@@ -461,7 +453,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             ers.Sort((a, b) => a.Start - b.Start ?? 0);
         }
 
-        private bool IsConnectorOrWhiteSpace(int start, int end, string text)
+        private bool IsConnectorOrWhiteSpace(int start, int end, string text, bool isRelativeTerm = false)
         {
             if (end <= start)
             {
@@ -470,7 +462,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var middleStr = text.Substring(start, end - start).Trim();
 
-            if (string.IsNullOrEmpty(middleStr))
+            // If contain single-word relative entity, shouldn't be separated by space
+            if (!isRelativeTerm && string.IsNullOrEmpty(middleStr))
             {
                 return true;
             }
