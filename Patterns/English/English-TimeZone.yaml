@@ -316,6 +316,29 @@ LocationTimeSuffixRegex: !simpleRegex
 AmbiguousTimezoneList: !list
   types: [string]
   entries:
+    - bit
+    - get
+    - art
+    - cast
+    - eat
+    - lint
+    - mat
+    - most
+    - west
+    - vet
+    - wet
+    - cot
+    - pt
+    - et
+    - eastern
+    - pacific
+    - central
+    - mountain
+    - west coast
+# For Parsing
+AbbrToMinMapping: !dictionary
+ types: [ string , int ]
+ entries:
    abst: 180
    acdt: 630
    acst: 570
