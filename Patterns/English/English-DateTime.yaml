@@ -476,10 +476,10 @@ SuffixAndRegex: !simpleRegex
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>daily|monthly|weekly|biweekly|yearly|annual(ly)?)\b
 EachUnitRegex: !nestedRegex
-  def: (?<each>(each|every)(?<other>\s+other)?\s*{DurationUnitRegex})
+  def: (?<each>(each|every|once an?)(?<other>\s+other)?\s*{DurationUnitRegex})
   references: [ DurationUnitRegex ]
 EachPrefixRegex: !simpleRegex
-  def: \b(?<each>(each|(every))\s*$)
+  def: \b(?<each>(each|(every)|once an?)\s*$)
 SetEachRegex: !simpleRegex
   def: \b(?<each>(each|(every))\s*)
 SetLastRegex: !simpleRegex
