@@ -1562,7 +1562,7 @@
             {
               "timex": "PT0.5H",
               "type": "duration",
-			        "value": 1800
+              "value": 1800
             }
           ]
         }
