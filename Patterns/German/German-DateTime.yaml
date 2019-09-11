@@ -430,11 +430,11 @@ AMTimeRegex: !simpleRegex
 PMTimeRegex: !simpleRegex
   def: (?<pm>nachmittags?|abends?|nachts?)
 BeforeRegex: !simpleRegex
-  def: (vorher(ige(s|n|r)?)?|bevor|vor(\W)?|vorige(s|n|r)?)
+  def: (vorher(ige(s|n|r)?)?|bevor|vor(\W)?|vorige(s|n|r)?|bis)
 AfterRegex: !simpleRegex
   def: (nach(\W)?)
 SinceRegex: !simpleRegex
-  def: \b(seit)\b
+  def: \b(seit|ab)\b
 AgoRegex: !simpleRegex
   def: \b(danach)\b
 AroundRegex: !simpleRegex
