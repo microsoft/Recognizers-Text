@@ -14006,7 +14006,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-	"Comment": "Interpretation as ordinal + month is not ideal, but it is interpreatable and should guarantee that the recognizers don't raise exceptional behaviour.",
+    "Comment": "Interpretation as ordinal + month is not ideal, but it is interpreatable and should guarantee that the recognizers don't raise exceptional behaviour.",
     "Results": [
       {
         "Text": "the month",
@@ -14311,7 +14311,7 @@
   },
   {
     "Input": "Was it last week or this?",
-	"Context": {
+    "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
     "NotSupported": "javascript, python",
@@ -14321,14 +14321,14 @@
         "Start": 7,
         "End": 15,
         "TypeName": "datetimeV2.daterange",
-		"Resolution": {
+        "Resolution": {
           "values": [
             {
               "timex": "2019-W36",
               "type": "daterange",
               "start": "2019-09-02",
               "end": "2019-09-09"
-			}
+            }
           ]
         }
       }
@@ -14370,7 +14370,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
-	"NotSupported": "java",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "one second",
