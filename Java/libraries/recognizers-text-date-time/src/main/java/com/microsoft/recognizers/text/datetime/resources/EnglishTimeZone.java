@@ -212,7 +212,7 @@ public class EnglishTimeZone {
         .put("australian eastern", 600)
         .put("australian eastern standard", 600)
         .put("australian central daylight", 630)
-        .put("australian eastern daylight Time", 660)
+        .put("australian eastern daylight", 660)
         .put("azerbaijan standard", 240)
         .put("azores standard", -60)
         .put("bahia standard", -180)

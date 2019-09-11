@@ -565,7 +565,7 @@ FullToMinMapping: !dictionary
    australian eastern: 600
    australian eastern standard: 600
    australian central daylight: 630
-   australian eastern daylight Time: 660
+   australian eastern daylight: 660
    azerbaijan standard: 240
    azores standard: -60
    bahia standard: -180
@@ -581,6 +581,7 @@ FullToMinMapping: !dictionary
    central brazilian standard: -240
    #central daylight: -240
    #central daylight: -300
+   #central daylight: 630
    central daylight: -10000
    central europe: 60
    central european: 60
@@ -604,6 +605,7 @@ FullToMinMapping: !dictionary
    central: -300
    eastern: -240
    #eastern daylight: -240
+   #eastern daylight: 660
    eastern daylight: -10000
    eastern standard time (mexico): -300
    eastern standard: -300

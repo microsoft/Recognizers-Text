@@ -119,7 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift;
             }
             else if (TimeZoneDefinitions.FullToMinMapping.ContainsKey(normalizedText) &&
-                     TimeZoneDefinitions.AbbrToMinMapping[normalizedText] != Constants.InvalidOffsetValue)
+                     TimeZoneDefinitions.FullToMinMapping[normalizedText] != Constants.InvalidOffsetValue)
             {
                 int utcMinuteShift = TimeZoneDefinitions.FullToMinMapping[normalizedText];
                 result.Value = GetDateTimeResolutionResult(utcMinuteShift, text);

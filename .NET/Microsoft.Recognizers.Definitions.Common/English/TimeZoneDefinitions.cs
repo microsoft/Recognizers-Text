@@ -537,7 +537,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"australian eastern", 600 },
             { @"australian eastern standard", 600 },
             { @"australian central daylight", 630 },
-            { @"australian eastern daylight Time", 660 },
+            { @"australian eastern daylight", 660 },
             { @"azerbaijan standard", 240 },
             { @"azores standard", -60 },
             { @"bahia standard", -180 },
