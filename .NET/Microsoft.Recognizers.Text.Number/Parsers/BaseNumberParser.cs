@@ -359,7 +359,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                 var smallValue = char.IsDigit(numerator[0]) ?
                     GetDigitalValue(numerator, 1) :
-                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator)); // ACAACA
+                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
 
                 var bigValue = char.IsDigit(denominator[0]) ?
                     GetDigitalValue(denominator, 1) :
@@ -695,22 +695,6 @@ namespace Microsoft.Recognizers.Text.Number
 
             return ch == Config.NonDecimalSeparatorChar && !(distance <= decimalLength && isMultiDecimalSeparatorCulture);
         }
-
-        // private List<string> GetMatches(string input)
-        // {
-        //    var successMatch = TextNumberRegex.Match(input);
-        //    var matchStrs = new List<string>();
-
-        // // Store all match str.
-        //    while (successMatch.Success)
-        //    {
-        //        var matchStr = successMatch.Groups[0].Value;
-        //        matchStrs.Add(matchStr);
-        //        successMatch = successMatch.NextMatch();
-        //    }
-
-        // return matchStrs;
-        // }
 
         private double GetIntValue(List<string> matchStrs)
         {
