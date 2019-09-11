@@ -870,5 +870,59 @@
         "Length": 6
       }
     ]
+  },
+  {
+    "Input": "I'm at Eastern Daylight Time",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "eastern daylight time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
+          }
+        },
+        "Start": 7,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "I'm at Central Daylight Time",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "central daylight Time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
+          }
+        },
+        "Start": 7,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "It's about 1pm ACDT",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "acdt",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+10:30",
+            "UtcOffsetMins": 630
+          }
+        },
+        "Start": 15,
+        "Length": 4
+      }
+    ]
   }
 ]
