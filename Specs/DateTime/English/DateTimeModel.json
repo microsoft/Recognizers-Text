@@ -14006,7 +14006,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-	"Comment": "Interpretation as ordinal + month is not ideal, but it is interpreatable and should guarantee that the recognizers don't raise exceptional behaviour.",
+    "Comment": "Interpretation as ordinal + month is not ideal, but it is interpreatable and should guarantee that the recognizers don't raise exceptional behaviour.",
     "Results": [
       {
         "Text": "the month",
@@ -14328,6 +14328,61 @@
               "type": "daterange",
               "start": "2019-09-02",
               "end": "2019-09-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please schedule a ½ hour Teams call.",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "½ hour",
+        "Start": 18,
+        "End": 23,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT0.5H",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's target a second round",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "It happened due to a one second time difference.",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "one second",
+        "Start": 21,
+        "End": 30,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1S",
+              "type": "duration",
+              "value": "1"
             }
           ]
         }
