@@ -8,13 +8,17 @@ from recognizers_number.number.models import NumberMode, LongFormatMode
 from recognizers_number.resources.english_numeric import EnglishNumeric
 from recognizers_number.number.extractors import ReVal, BaseNumberExtractor, BasePercentageExtractor
 from recognizers_number.number.constants import Constants
+from recognizers_date_time.date_time.utilities import DateTimeOptions
 
 
 class EnglishNumberExtractor(BaseNumberExtractor):
+    @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
-        pass
+        return self._options
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -53,10 +57,13 @@ class EnglishNumberExtractor(BaseNumberExtractor):
 
 
 class EnglishCardinalExtractor(BaseNumberExtractor):
+    @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
-        pass
+        return self._options
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -85,10 +92,13 @@ class EnglishCardinalExtractor(BaseNumberExtractor):
 
 
 class EnglishIntegerExtractor(BaseNumberExtractor):
+    @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
-        pass
+        return self._options
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -146,10 +156,13 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
 
 
 class EnglishDoubleExtractor(BaseNumberExtractor):
+    @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
-        pass
+        return self._options
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -207,10 +220,13 @@ class EnglishDoubleExtractor(BaseNumberExtractor):
 
 
 class EnglishFractionExtractor(BaseNumberExtractor):
+    @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
-        pass
+        return self._options
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -252,10 +268,13 @@ class EnglishFractionExtractor(BaseNumberExtractor):
 
 
 class EnglishOrdinalExtractor(BaseNumberExtractor):
+    @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
-        pass
+        return self._options
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -286,6 +305,7 @@ class EnglishOrdinalExtractor(BaseNumberExtractor):
                 re=EnglishNumeric.OrdinalRoundNumberRegex,
                 val='OrdEng')
         ]
+        self._options = DateTimeOptions.NONE
 
 
 class EnglishPercentageExtractor(BasePercentageExtractor):
