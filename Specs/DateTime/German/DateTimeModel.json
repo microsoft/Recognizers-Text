@@ -1618,5 +1618,55 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Was läuft auf TV ab 14 Uhr",
+    "Context": {
+      "ReferenceDateTime": "2019-09-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "ab 14 uhr",
+        "Start": 17,
+        "End": 25,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T14",
+              "Mod": "since",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "start": "14:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Was läuft auf TV bis 14 Uhr",
+    "Context": {
+      "ReferenceDateTime": "2019-09-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "bis 14 uhr",
+        "Start": 17,
+        "End": 26,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T14",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "14:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

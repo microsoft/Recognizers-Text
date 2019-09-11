@@ -188,9 +188,9 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string TokenBeforeTime = @"um ";
       public const string AMTimeRegex = @"(?<am>morgens|vormittags?|früh)";
       public const string PMTimeRegex = @"(?<pm>nachmittags?|abends?|nachts?)";
-      public const string BeforeRegex = @"(vorher(ige(s|n|r)?)?|bevor|vor(\W)?|vorige(s|n|r)?)";
+      public const string BeforeRegex = @"(vorher(ige(s|n|r)?)?|bevor|vor(\W)?|vorige(s|n|r)?|bis)";
       public const string AfterRegex = @"(nach(\W)?)";
-      public const string SinceRegex = @"\b(seit)\b";
+      public const string SinceRegex = @"\b(seit|ab)\b";
       public const string AgoRegex = @"\b(danach)\b";
       public const string AroundRegex = @"(\b(ca\.?|gegen|circa)\s*\b)";
       public const string LaterRegex = @"\b(später|von jetzt|(ab|nach) (?<day>morgen|heute))\b";
