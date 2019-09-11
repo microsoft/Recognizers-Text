@@ -14310,24 +14310,55 @@
     "Results": []
   },
   {
-    "Input": "Was it last week or this?",
+    "Input": "Please schedule a ½ hour Teams call.",
     "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "last week",
-        "Start": 7,
-        "End": 15,
-        "TypeName": "datetimeV2.daterange",
+        "Text": "½ hour",
+        "Start": 18,
+        "End": 23,
+        "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
             {
-              "timex": "2019-W36",
-              "type": "daterange",
-              "start": "2019-09-02",
-              "end": "2019-09-09"
+              "timex": "PT0.5H",
+              "type": "duration",
+              "value": 1800
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's target a second round",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "It happened due to a one second time difference.",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "one second",
+        "Start": 21,
+        "End": 30,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1S",
+              "type": "duration",
+              "value": 1
             }
           ]
         }
