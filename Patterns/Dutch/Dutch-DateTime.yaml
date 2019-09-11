@@ -584,6 +584,9 @@ RestOfDateTimeRegex: !simpleRegex
   def: \brest\s+(van\s+)?((de|het|mijn|dit|deze|huidige)\s+)?(?<unit>dag)\b
 MealTimeRegex: !simpleRegex
   def: \b((tijdens\s+de\s+)?(?<mealTime>lunch))|((om|tegen)\s+lunchtijd)\b
+AmbiguousRangeModifierPrefix: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 NumberEndingPattern: !nestedRegex
   def: ^(\s+(?<meeting>vergadering|afspraak|conferentie|telefoontje|skype-gesprek)\s+om\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})((\.)?$|(\.,|,|!|\?)))
   references: [PeriodHourNumRegex, HourRegex]

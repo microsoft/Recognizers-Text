@@ -498,6 +498,9 @@ RestOfDateTimeRegex: !simpleRegex
   def: \brest\s+((des|diesen)\s+)((aktuellen|heutigen)\s+)?(?<unit>tages)\b
 MealTimeRegex: !simpleRegex
   def: \b((zu(m|r))\s+)?(?<mealTime>(essenszeit|mittagessen|mittag))\b
+AmbiguousRangeModifierPrefix: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 NumberEndingPattern: !nestedRegex
   def: ^(\s+(?<meeting>meeting|termin|telefonkonferenz|conference|skype call|call)\s+to\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})((\.)?$|(\.,|,|!|\?)))
   references: [PeriodHourNumRegex, HourRegex]

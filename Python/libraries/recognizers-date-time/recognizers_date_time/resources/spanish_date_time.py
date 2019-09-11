@@ -84,6 +84,7 @@ class SpanishDateTime:
     WeekDayAndDayRegex = f'^[.]'
     WeekDayOfMonthRegex = f'(?<wom>(el\\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3er|cuarto|4to|quinto|5to|[uú]ltimo)\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})'
     RelativeWeekDayRegex = f'^[.]'
+    AmbiguousRangeModifierPrefix = f'^[.]'
     NumberEndingPattern = f'^[.]'
     SpecialDateRegex = f'(?<=\\b(en)\\s+el\\s+){DayRegex}\\b'
     OfMonthRegex = f'^\\s*de\\s*{MonthSuffixRegex}'

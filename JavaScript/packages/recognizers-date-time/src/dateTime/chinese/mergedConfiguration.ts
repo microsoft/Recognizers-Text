@@ -43,6 +43,8 @@ class ChineseMergedExtractorConfiguration implements IMergedExtractorConfigurati
     readonly fromToRegex: RegExp
     readonly singleAmbiguousMonthRegex: RegExp
     readonly prepositionSuffixRegex: RegExp
+    readonly ambiguousRangeModifierPrefix: RegExp
+    readonly potentialAmbiguousRangeRegex: RegExp
     readonly numberEndingPattern: RegExp
     readonly filterWordRegexList: RegExp[]
 

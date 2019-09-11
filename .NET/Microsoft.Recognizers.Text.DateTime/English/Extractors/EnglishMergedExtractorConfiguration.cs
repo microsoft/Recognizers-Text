@@ -33,6 +33,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex PrepositionSuffixRegex =
             new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexFlags);
 
+        public static readonly Regex AmbiguousRangeModifierPrefix =
+            new Regex(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags);
+
         public static readonly Regex NumberEndingPattern =
             new Regex(DateTimeDefinitions.NumberEndingPattern, RegexFlags);
 
@@ -123,6 +126,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
 
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
+
+        Regex IMergedExtractorConfiguration.AmbiguousRangeModifierPrefix => AmbiguousRangeModifierPrefix;
+
+        Regex IMergedExtractorConfiguration.PotentialAmbiguousRangeRegex => FromToRegex;
 
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
 

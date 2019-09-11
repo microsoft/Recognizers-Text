@@ -249,6 +249,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string RestOfDateRegex = @"\brest\s+(van\s+)?((de|het|mijn|dit|deze|huidige)\s+)?(?<duration>week|maand|jaar|decennium)\b";
       public const string RestOfDateTimeRegex = @"\brest\s+(van\s+)?((de|het|mijn|dit|deze|huidige)\s+)?(?<unit>dag)\b";
       public const string MealTimeRegex = @"\b((tijdens\s+de\s+)?(?<mealTime>lunch))|((om|tegen)\s+lunchtijd)\b";
+      public const string AmbiguousRangeModifierPrefix = @"^[.]";
       public static readonly string NumberEndingPattern = $@"^(\s+(?<meeting>vergadering|afspraak|conferentie|telefoontje|skype-gesprek)\s+om\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})((\.)?$|(\.,|,|!|\?)))";
       public const string OneOnOneRegex = @"\b(1\s*:\s*1)|(één\s+(op\s)één|één\s*-\s*één|één\s*:\s*één)\b";
       public static readonly string LaterEarlyPeriodRegex = $@"\b({PrefixPeriodRegex})\s*\b\s*(?<suffix>{OneWordPeriodRegex})\b";
