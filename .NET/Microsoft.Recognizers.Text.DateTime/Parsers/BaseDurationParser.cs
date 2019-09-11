@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
@@ -19,7 +18,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static bool IsLessThanDay(string unit)
         {
-            return unit.Equals("S") || unit.Equals("M") || unit.Equals("H");
+            return unit.Equals("S", StringComparison.Ordinal) ||
+                   unit.Equals("M", StringComparison.Ordinal) ||
+                   unit.Equals("H", StringComparison.Ordinal);
         }
 
         public ParseResult Parse(ExtractResult result)
@@ -32,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var referenceTime = refTime;
 
             object value = null;
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = ParseMergedDuration(er.Text, referenceTime);
                 if (!innerResult.Success)
@@ -232,6 +233,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success)
             {
                 var numVal = match.Groups["half"].Success ? 0.5 : 1;
+                numVal = match.Groups["quarter"].Success ? 0.25 : numVal;
+                numVal = match.Groups["threequarter"].Success ? 0.75 : numVal;
+
                 numVal += ParseNumberWithUnitAndSuffix(suffixStr);
 
                 var srcUnit = match.Groups["unit"].Value;

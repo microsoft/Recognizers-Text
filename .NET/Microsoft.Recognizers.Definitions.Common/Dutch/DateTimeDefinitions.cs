@@ -24,11 +24,11 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string TillRegex = $@"(?<till>\b(tot|totdat|gedurende|tijdens|ten tijde van)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
       public static readonly string RangeConnectorRegex = $@"(?<and>\b(en|tot en met|t/m|tot|tot aan)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
       public const string ArticleRegex = @"\b(de|het|een)\b";
-      public const string RelativeRegex = @"\b(?<order>dit|deze|volgende?|komende?|aankomende?|aanstaande?|huidige?|vorige?|verleden|voorgaande?|vorige?|laatste|afgelopen)\b";
+      public const string RelativeRegex = @"(?<order>dit|deze|volgende?|komende?|aankomende?|aanstaande?|huidige?|vorige?|verleden|voorgaande?|vorige?|laatste|afgelopen)";
       public const string StrictRelativeRegex = @"\b(?<order>dit|deze|volgende?|komende?|aankomende?|aanstaande?|huidige?|vorige?|verleden|voorgaande?|vorige?|laatste|afgelopen)\b";
       public const string UpcomingPrefixRegex = @"((aankomende?|komende?|aanstaande))";
       public static readonly string NextPrefixRegex = $@"\b(volgende?|eerstvolgende|{UpcomingPrefixRegex})\b";
-      public const string AfterNextSuffixRegex = @"\b(na\s+((de|het)\s+)?volgende)\b";
+      public const string AfterNextSuffixRegex = @"\b(na\s+((de|het)\s+)?volgende?)\b";
       public const string PastPrefixRegex = @"((deze\s+)?verleden)\b";
       public static readonly string PreviousPrefixRegex = $@"(voorgaand[e]|vorige?|afgelopen|verleden|laatste|{PastPrefixRegex})\b";
       public const string ThisPrefixRegex = @"(dit|deze|huidige?)\b";
@@ -37,6 +37,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string ReferencePrefixRegex = @"(dezelfde|hetzelfde|dat|die|overeenkomstige)\b";
       public const string FutureSuffixRegex = @"\b(in\s+de\s+)?(toekomst|vanaf)\b";
       public const string DayRegex = @"(de\s*)?(?<day>(3[0-1]|[1-2]\d|0?[1-9])(ste|e|de)?)(?=\b|t)";
+      public static readonly string WrittenDayRegex = $@"\b(?<day>({WrittenOneToNineRegex})|({WrittenElevenToNineteenRegex})|(({WrittenOneToNineRegex}en)?twintig)|(((één|een)en)?dertig))\b";
       public const string ImplicitDayRegex = @"(de\s*)?(?<day>(3[0-1]|[0-2]?\d)(ste|e|de))\b";
       public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)?\.?\b";
       public const string WrittenOneToNineRegex = @"(één|een|twee|drie|vier|vijf|zes|zeven|acht|negen)";
@@ -59,7 +60,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string WeekDayRegex = @"\b(?<weekday>maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|zondag|ma|ma\.|di|di\.|wo|wo\.|woe|woe\.|do|do\.|vr|vr\.|vrij|za|za\.|zat|zat\.|zo|zo\.)(en)?\b";
       public const string SingleWeekDayRegex = @"\b(?<weekday>maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|zondag|ma|ma\.|di|di\.|wo|wo\.|woe|woe\.|do|do\.|vr|vr\.|vrij|za|za\.|zat|zat\.|zo|zo\.)(en)?\b";
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>((van\s+)?de\s+)?{RelativeRegex}\s+maand)\b";
-      public const string WrittenMonthRegex = @"(((de\s+)?maand\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|okt|nov|dec))";
+      public const string WrittenMonthRegex = @"(((de\s+)?maand\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|okt|nov|dec))";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>((in|van|tijdens|sinds|tot)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
       public const string DateUnitRegex = @"(?<unit>eeuw(en)?|jaar|jaren|maand(en)?|week|weken|(werk)?dag(en)?)\b";
       public const string DateTokenPrefix = @"op ";
@@ -114,7 +115,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string DatePreposition = @"\b(op)";
       public static readonly string DateExtractorYearTermRegex = $@"(\s+|\s*,\s*){DateYearRegex}";
       public static readonly string DateExtractor1 = $@"\b({WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))(\s*\(\s*{WeekDayRegex}\s*\))?({DateExtractorYearTermRegex}\b)?";
-      public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\.)?(\s+|\s*,\s*|\s*-\s*){MonthRegex}(\.)?((\s+|\s*,\s*|\s+in\s+){DateYearRegex})?\b";
+      public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?({DayRegex}|{WrittenDayRegex})(\.)?(\s+|\s*,\s*|\s*-\s*){MonthRegex}(\.)?((\s+|\s*,\s*|\s+in\s+){DateYearRegex})?\b";
       public static readonly string DateExtractor4 = $@"\b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}";
       public static readonly string DateExtractor5 = $@"\b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}";
       public static readonly string DateExtractor6 = $@"(?<={DatePreposition}\s+)({StrictRelativeRegex}\s+)?({WeekDayRegex}\s+)?{MonthNumRegex}[\-\.]{DayRegex}(?![%])\b";
@@ -202,7 +203,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string EachUnitRegex = $@"(?<each>(iedere|elke)(?<other>\s+andere)?\s*{DurationUnitRegex})";
       public const string EachPrefixRegex = @"\b(?<each>(iedere|elke)\s*$)";
       public const string SetEachRegex = @"\b(?<each>(iedere|elke)\s*)";
-      public const string SetLastRegex = @"(?<last>volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)";
+      public const string SetLastRegex = @"(?<last>volgende?|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)";
       public const string EachDayRegex = @"^\s*(elke)\s*dag\b";
       public static readonly string DurationFollowedUnit = $@"^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}";
       public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
@@ -211,9 +212,9 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string AllRegex = @"\b(?<all>((ge)?hele|volledige|ganse|heel|volledig)(\s+|-)(?<unit>jaar|maand|week|dag))\b";
       public const string HalfRegex = @"(((een)\s*)|\b)(?<half>(half|halve)\s+(?<unit>jaar|maand|week|dag|uur))\b";
       public const string ConjunctionRegex = @"\b((en(\s+voor)?)|plus)\b";
-      public static readonly string HolidayRegex1 = $@"\b(?<holiday>goede\s+vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|oudejaarsavond|nieuwjaar|nieuwjaarsdag|bevrijdingsdag)(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
-      public static readonly string HolidayRegex2 = $@"\b(?<holiday>yuandan|nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid)(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
-      public static readonly string HolidayRegex3 = $@"(?<holiday>(valentijn|valentijnsdag|nieuwjaarsdag|prinsjesdag|koningsdag|koninginnedag|bevrijdingsdag|hemelvaartsdag|eerste kerstdag|1e kerst|tweede kerstdag|2e kerstdag|vaderdag|moederdag|meisjesdag|amerikaanse onafhankelijkheidsdag|onafhankelijkheidsdag|nederlandse veteranendag|veteranendag|2e kerstdag|1e kerstdag|boomplantdag|boomfeestdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?";
+      public static readonly string HolidayRegex1 = $@"\b(?<holiday>(goede\s+vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|bevrijdingsdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
+      public static readonly string HolidayRegex2 = $@"\b(?<holiday>(nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid|martin luther kingdag|mlkdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
+      public static readonly string HolidayRegex3 = $@"\b(?<holiday>(yuandan|valentijnsdag|valentijn|oude?jaarsavond|nieuwjaarsdag|eerste paasdag|tweede paasdag|prinsjesdag|koningsdag|koninginnedag|bevrijdingsdag|hemelvaartsdag|eerste kerstdag|1e kerstdag|tweede kerstdag|2e kerstdag|vaderdag|moederdag|meisjesdag|amerikaanse onafhankelijkheidsdag|onafhankelijkheidsdag|nederlandse veteranendag|veteranendag|boomplantdag|boomfeestdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
       public const string AMTimeRegex = @"(?<am>('s morgens|'s ochtends)|in\s+de\s+(morgen|ochtend))";
       public const string PMTimeRegex = @"\b(?<pm>('s middags|'s avonds|'s nachts)|in\s+de\s+(middag|avond|nacht))\b";
       public const string InclusiveModPrepositions = @"(?<include>((in|tegen|tijdens|op)\s+of\s+)|(\s+of\s+(in|tegen|tijdens|op)))";
@@ -631,7 +632,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"tweedekerstdag", new string[] { @"tweedekerstdag", @"2ekerstdag" } },
             { @"dagvandearbeid", new string[] { @"dagvandearbeid", @"dagvandenarbeid" } },
             { @"christmas", new string[] { @"kerstfeest", @"kerstmis", @"kerst", @"xmas" } },
-            { @"easterday", new string[] { @"pasen" } },
+            { @"easterday", new string[] { @"pasen", @"paasdag" } },
             { @"fathers", new string[] { @"vaderdag", @"vadersdag" } },
             { @"mothers", new string[] { @"moederdag", @"moedersdag" } },
             { @"singleday", new string[] { @"singleday", @"vrijgezellendag" } },
@@ -641,7 +642,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"newyear", new string[] { @"oudennieuw", @"oud&nieuw" } },
             { @"newyearday", new string[] { @"nieuwjaarsdag" } },
             { @"newyearsday", new string[] { @"nieuwjaarsdag" } },
-            { @"newyeareve", new string[] { @"oudejaarsavond", @"silvester", @"silvesteravond" } },
+            { @"newyeareve", new string[] { @"oudejaarsavond", @"oudjaarsavond", @"silvester", @"silvesteravond" } },
             { @"valentinesday", new string[] { @"valentijnsdag", @"valetijnsdag" } },
             { @"aprilfools", new string[] { @"1aprilgrap", @"1april" } },
             { @"independenceday", new string[] { @"onafhankelijkheidsdag" } },
@@ -651,27 +652,20 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"allsaintsday", new string[] { @"allerheiligen" } },
             { @"allsoulsday", new string[] { @"allerzielen" } },
             { @"christmaseve", new string[] { @"kerstavond" } },
-            { @"columbus", new string[] { @"columbusday" } },
+            { @"columbus", new string[] { @"columbusday", @"columbusdag" } },
             { @"thanksgiving", new string[] { @"thanksgivingday", @"thanksgiving", @"dankzeggingsdag" } },
-            { @"martinlutherking", new string[] { @"martinlutherkingday", @"martinlutherkingjrday" } },
+            { @"martinlutherking", new string[] { @"martinlutherkingday", @"martinlutherkingjrday", @"martinlutherkingdag", @"mlkdag" } },
             { @"washingtonsbirthday", new string[] { @"washingtonsbirthday", @"washingtonbirthday" } },
-            { @"canberra", new string[] { @"canberraday" } },
-            { @"memorial", new string[] { @"memorialday", @"memorial day" } },
             { @"yuandan", new string[] { @"yuandan" } },
-            { @"maosbirthday", new string[] { @"maosbirthday" } },
-            { @"youthday", new string[] { @"youthday" } },
-            { @"childrenday", new string[] { @"childrenday", @"childday" } },
+            { @"youthday", new string[] { @"jongerendag" } },
+            { @"childrenday", new string[] { @"childrenday", @"childday", @"kinderendag" } },
             { @"stgeorgeday", new string[] { @"sintjoris" } },
-            { @"mayday", new string[] { @"mayday" } },
-            { @"cincodemayoday", new string[] { @"cincodemayo" } },
-            { @"baptisteday", new string[] { @"baptisteday" } },
+            { @"mayday", new string[] { @"dagvandearbeid" } },
+            { @"stpatrickday", new string[] { @"stpatrickday", @"stpatricksday" } },
             { @"usindependenceday", new string[] { @"amerikaanseonafhankelijkheidsdag", @"usonafhankelijkheidsdag" } },
-            { @"stpatrickday", new string[] { @"stpatrickday" } },
-            { @"whiteloverday", new string[] { @"whiteloverday" } },
-            { @"loverday", new string[] { @"loverday" } },
             { @"groundhougday", new string[] { @"groundhougday", @"bosmarmottendag" } },
             { @"inaugurationday", new string[] { @"inaugurationday", @"inauguratiedag" } },
-            { @"arborday", new string[] { @"arborday" } }
+            { @"arborday", new string[] { @"boomfeestdag" } }
         };
       public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
         {
@@ -774,6 +768,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly IList<string> FutureTerms = new List<string>
         {
             @"deze",
+            @"volgend",
             @"volgende",
             @"dit"
         };

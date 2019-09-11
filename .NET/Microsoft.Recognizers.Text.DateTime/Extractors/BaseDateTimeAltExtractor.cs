@@ -383,12 +383,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 relativeTermsMatches.AddRange(regex.Matches(text).Cast<Match>());
             }
 
-            // Filtered out if there is no relative term or the only one found is "this". Like "3 this"
-            if (relativeTermsMatches.Count == 0 || (relativeTermsMatches.Count == 1 && config.ThisPrefixRegex.IsMatch(relativeTermsMatches[0].Value)))
-            {
-                return;
-            }
-
             // Remove overlapping matches
             relativeTermsMatches.RemoveAll(m =>
                 ers.Any(e => e.Start <= m.Index && e.Start + e.Length >= m.Index + m.Length));
@@ -408,7 +402,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var middleBegin = relativeTermsMatch.Index > resultEnd ? resultEnd ?? 0 : relativeTermsMatchEnd;
                             var middleEnd = relativeTermsMatch.Index > resultEnd ? relativeTermsMatch.Index : result.Start ?? 0;
 
-                            if (IsConnectorOrWhiteSpace(middleBegin, middleEnd, text))
+                            if (IsConnectorOrWhiteSpace(middleBegin, middleEnd, text, true))
                             {
                                 var parentTextStart = relativeTermsMatch.Index > resultEnd ? result.Start : relativeTermsMatch.Index;
                                 var parentTextLen = relativeTermsMatch.Index > resultEnd ? relativeTermsMatchEnd - result.Start : resultEnd - relativeTermsMatch.Index;
@@ -459,7 +453,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             ers.Sort((a, b) => a.Start - b.Start ?? 0);
         }
 
-        private bool IsConnectorOrWhiteSpace(int start, int end, string text)
+        private bool IsConnectorOrWhiteSpace(int start, int end, string text, bool isRelativeTerm = false)
         {
             if (end <= start)
             {
@@ -468,7 +462,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var middleStr = text.Substring(start, end - start).Trim();
 
-            if (string.IsNullOrEmpty(middleStr))
+            // If contain single-word relative entity, shouldn't be separated by space
+            if (!isRelativeTerm && string.IsNullOrEmpty(middleStr))
             {
                 return true;
             }
