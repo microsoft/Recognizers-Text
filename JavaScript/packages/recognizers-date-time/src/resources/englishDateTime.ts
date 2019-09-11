@@ -242,6 +242,7 @@ export namespace EnglishDateTime {
     export const RestOfDateRegex = `\\brest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<duration>week|month|year|decade)\\b`;
     export const RestOfDateTimeRegex = `\\brest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<unit>day)\\b`;
     export const MealTimeRegex = `\\b(at\\s+)?(?<mealTime>lunchtime)\\b`;
+    export const AmbiguousRangeModifierPrefix = `(from)`;
     export const NumberEndingPattern = `^(?:\\s+(?<meeting>meeting|appointment|conference|((skype|teams)\\s+)?call)\\s+to\\s+(?<newTime>${PeriodHourNumRegex}|${HourRegex})([\\.]?$|(\\.,|,|!|\\?)))`;
     export const OneOnOneRegex = `\\b(1\\s*:\\s*1(?!\\d))|(one (on )?one|one\\s*-\\s*one|one\\s*:\\s*one)\\b`;
     export const LaterEarlyPeriodRegex = `\\b((${PrefixPeriodRegex})\\s*\\b\\s*(?<suffix>${OneWordPeriodRegex})|(${UnspecificEndOfRangeRegex}))\\b`;

@@ -810,6 +810,8 @@ public class EnglishDateTime {
 
     public static final String MealTimeRegex = "\\b(at\\s+)?(?<mealTime>lunchtime)\\b";
 
+    public static final String AmbiguousRangeModifierPrefix = "(from)";
+
     public static final String NumberEndingPattern = "^(?:\\s+(?<meeting>meeting|appointment|conference|((skype|teams)\\s+)?call)\\s+to\\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})([\\.]?$|(\\.,|,|!|\\?)))"
             .replace("{PeriodHourNumRegex}", PeriodHourNumRegex)
             .replace("{HourRegex}", HourRegex);

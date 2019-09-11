@@ -252,6 +252,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string RestOfDateRegex = @"\brest\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>week|month|year|decade)\b";
       public const string RestOfDateTimeRegex = @"\brest\s+(of\s+)?((the|my|this|current)\s+)?(?<unit>day)\b";
       public const string MealTimeRegex = @"\b(at\s+)?(?<mealTime>lunchtime)\b";
+      public const string AmbiguousRangeModifierPrefix = @"(from)";
       public static readonly string NumberEndingPattern = $@"^(?:\s+(?<meeting>meeting|appointment|conference|((skype|teams)\s+)?call)\s+to\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})([\.]?$|(\.,|,|!|\?)))";
       public const string OneOnOneRegex = @"\b(1\s*:\s*1(?!\d))|(one (on )?one|one\s*-\s*one|one\s*:\s*one)\b";
       public static readonly string LaterEarlyPeriodRegex = $@"\b(({PrefixPeriodRegex})\s*\b\s*(?<suffix>{OneWordPeriodRegex})|({UnspecificEndOfRangeRegex}))\b";
