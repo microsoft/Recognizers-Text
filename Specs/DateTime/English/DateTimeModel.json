@@ -14310,6 +14310,31 @@
     "Results": []
   },
   {
+    "Input": "Was it last week or this?",
+	"Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "last week",
+        "Start": 7,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+		"Resolution": {
+          "values": [
+            {
+              "timex": "2019-W36",
+              "type": "daterange",
+              "start": "2019-09-02",
+              "end": "2019-09-09"
+			}
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Please schedule a ½ hour Teams call.",
     "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
