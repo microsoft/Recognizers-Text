@@ -1514,7 +1514,7 @@
             {
               "timex": "PT0.25H",
               "type": "duration",
-              "value": 900
+              "value": "900"
             }
           ]
         }
@@ -1538,7 +1538,7 @@
             {
               "timex": "PT0.75H",
               "type": "duration",
-              "value": 2700
+              "value": "2700"
             }
           ]
         }
@@ -1562,7 +1562,7 @@
             {
               "timex": "PT0.5H",
               "type": "duration",
-              "value": 1800
+              "value": "1800"
             }
           ]
         }

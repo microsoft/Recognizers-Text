@@ -210,7 +210,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string EachDayRegex = @"^\s*(each|every)\s*day\b";
       public static readonly string DurationFollowedUnit = $@"(^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})";
       public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
-      public static readonly string AnUnitRegex = $@"\b((?<half>half\s+)?an?|another)\s+{DurationUnitRegex}";
+      public static readonly string AnUnitRegex = $@"(\b((?<half>(half)\s+)?an?|another)|(?<half>(½|half)))\s+{DurationUnitRegex}";
       public const string DuringRegex = @"\b(for|during)\s+the\s+(?<unit>year|month|week|day)\b";
       public const string AllRegex = @"\b(?<all>(all|full|whole)(\s+|-)(?<unit>year|month|week|day))\b";
       public const string HalfRegex = @"((an?\s*)|\b)(?<half>half\s+(?<unit>year|month|week|day|hour))\b";
@@ -252,7 +252,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string RestOfDateRegex = @"\brest\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>week|month|year|decade)\b";
       public const string RestOfDateTimeRegex = @"\brest\s+(of\s+)?((the|my|this|current)\s+)?(?<unit>day)\b";
       public const string MealTimeRegex = @"\b(at\s+)?(?<mealTime>lunchtime)\b";
-      public static readonly string NumberEndingPattern = $@"^(?:\s+(?<meeting>meeting|appointment|conference|call|skype call)\s+to\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})([\.]?$|(\.,|,|!|\?)))";
+      public static readonly string NumberEndingPattern = $@"^(?:\s+(?<meeting>meeting|appointment|conference|((skype|teams)\s+)?call)\s+to\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})([\.]?$|(\.,|,|!|\?)))";
       public const string OneOnOneRegex = @"\b(1\s*:\s*1(?!\d))|(one (on )?one|one\s*-\s*one|one\s*:\s*one)\b";
       public static readonly string LaterEarlyPeriodRegex = $@"\b(({PrefixPeriodRegex})\s*\b\s*(?<suffix>{OneWordPeriodRegex})|({UnspecificEndOfRangeRegex}))\b";
       public static readonly string WeekWithWeekDayRangeRegex = $@"\b((?<week>({NextPrefixRegex}|{PreviousPrefixRegex}|this)\s+week)((\s+between\s+{WeekDayRegex}\s+and\s+{WeekDayRegex})|(\s+from\s+{WeekDayRegex}\s+to\s+{WeekDayRegex})))\b";
@@ -266,7 +266,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string NumberAsTimeRegex = $@"\b({WrittenTimeRegex}|{PeriodHourNumRegex}|{BaseDateTime.HourRegex})\b";
       public static readonly string TimeBeforeAfterRegex = $@"\b(((?<=\b(before|no later than|by|after)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b";
       public const string DateNumberConnectorRegex = @"^\s*(?<connector>\s+at)\s*$";
-      public const string DecadeRegex = @"(?<decade>(?:nough|twen|thir|for|four|fif|six|seven|eight|nine)ties|two\s+thousands)";
+      public const string DecadeRegex = @"(?<decade>(?:nough|twen|thir|fou?r|fif|six|seven|eight|nine)ties|two\s+thousands)";
       public static readonly string DecadeWithCenturyRegex = $@"(the\s+)?(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?(\s)?s\b)|(({CenturyRegex}(\s+|-)(and\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(and\s+)?(?<decade>tens|hundreds)))";
       public static readonly string RelativeDecadeRegex = $@"\b((the\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?decades?)\b";
       public static readonly string YearPeriodRegex = $@"((((from|during|in)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((between)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))";
@@ -692,7 +692,8 @@ namespace Microsoft.Recognizers.Definitions.English
         {
             { @"\bmorning|afternoon|evening|night|day\b", @"\b(good\s+(morning|afternoon|evening|night|day))|(nighty\s+night)\b" },
             { @"\bnow\b", @"\b(^now,)|\b((is|are)\s+now\s+for|for\s+now)\b" },
-            { @"\bmay\b", @"\b((((!|\.|\?|,|;|)\s+|^)may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\b" }
+            { @"\bmay\b", @"\b((((!|\.|\?|,|;|)\s+|^)may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\b" },
+            { @"\b(a|one) second\b", @"\b(?<!an?\s+)(a|one) second (round|time)\b" }
         };
       public static readonly IList<string> MorningTermList = new List<string>
         {
