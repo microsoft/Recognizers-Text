@@ -111,7 +111,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string CommonDatePrefixRegex = @"^[\.]";
       public static readonly string LessThanOneHour = $@"(?<lth>(ein(er?)?\s+)?((drei)?viertel|halb(en?)?)(\s*stunden?)?)|{BaseDateTime.DeltaMinuteRegex}(\s+(min(uten?)?))|{DeltaMinuteNumRegex}(\s+(min(uten?)?))";
       public static readonly string WrittenTimeRegex = $@"(um\s*)?(?<writtentime>{HourNumRegex}(\s*{OclockRegex}\s*)({MinuteNumRegex}|{MinuteNumRegex}und(?<tens>zwanzig|dreißig|vierzig|fünfzig)))";
-      public static readonly string TimePrefix = $@"(?<prefix>({LessThanOneHour})(\s*(vor\W|nach\W))?)";
+      public static readonly string TimePrefix = $@"(?<prefix>({LessThanOneHour})(\s*(vor(\W)?|nach(\W)?))?)";
       public static readonly string TimeSuffix = $@"(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})";
       public static readonly string TimeSuffixFull = $@"(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex}|(?<pm>nachmittag(s)?|nacht(s)?|abend(s)?))";
       public static readonly string BasicTime = $@"(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(:|\s+uhr(\s+und)?\s+){BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|\b{BaseDateTime.HourRegex}(?![%\d]))";
@@ -188,8 +188,8 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string TokenBeforeTime = @"um ";
       public const string AMTimeRegex = @"(?<am>morgens|vormittags?|früh)";
       public const string PMTimeRegex = @"(?<pm>nachmittags?|abends?|nachts?)";
-      public const string BeforeRegex = @"(vorher(ige(s|n|r)?)?|bevor|vor\W|vorige(s|n|r)?)";
-      public const string AfterRegex = @"(nach\W)";
+      public const string BeforeRegex = @"(vorher(ige(s|n|r)?)?|bevor|vor(\W)?|vorige(s|n|r)?)";
+      public const string AfterRegex = @"(nach(\W)?)";
       public const string SinceRegex = @"\b(seit)\b";
       public const string AgoRegex = @"\b(danach)\b";
       public const string AroundRegex = @"(\b(ca\.?|gegen|circa)\s*\b)";

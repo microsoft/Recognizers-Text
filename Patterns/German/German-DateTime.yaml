@@ -238,7 +238,7 @@ WrittenTimeRegex: !nestedRegex
   def: (um\s*)?(?<writtentime>{HourNumRegex}(\s*{OclockRegex}\s*)({MinuteNumRegex}|{MinuteNumRegex}und(?<tens>zwanzig|dreißig|vierzig|fünfzig)))
   references: [ HourNumRegex, MinuteNumRegex , OclockRegex]
 TimePrefix: !nestedRegex
-  def: (?<prefix>({LessThanOneHour})(\s*(vor\W|nach\W))?)
+  def: (?<prefix>({LessThanOneHour})(\s*(vor(\W)?|nach(\W)?))?)
   references: [ LessThanOneHour ]
 TimeSuffix: !nestedRegex
   def: (?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})
@@ -430,9 +430,9 @@ AMTimeRegex: !simpleRegex
 PMTimeRegex: !simpleRegex
   def: (?<pm>nachmittags?|abends?|nachts?)
 BeforeRegex: !simpleRegex
-  def: (vorher(ige(s|n|r)?)?|bevor|vor\W|vorige(s|n|r)?)
+  def: (vorher(ige(s|n|r)?)?|bevor|vor(\W)?|vorige(s|n|r)?)
 AfterRegex: !simpleRegex
-  def: (nach\W)
+  def: (nach(\W)?)
 SinceRegex: !simpleRegex
   def: \b(seit)\b
 AgoRegex: !simpleRegex
