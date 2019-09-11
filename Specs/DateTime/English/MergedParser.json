@@ -3381,19 +3381,21 @@
         "Length": 9
       },
       {
-        "Text": "today",
-        "Type": "datetimeV2.date",
+        "Text": "from today",
+        "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
             {
               "timex": "2018-05-29",
-              "type": "date",
-              "value": "2018-05-29"
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2018-05-29"
             }
           ]
         },
-        "Start": 27,
-        "Length": 5
+        "Start": 22,
+        "Length": 10
       }
     ]
   },

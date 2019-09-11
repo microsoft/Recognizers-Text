@@ -203,7 +203,7 @@ class EnglishDateTime:
     EachDayRegex = f'^\\s*(each|every)\\s*day\\b'
     DurationFollowedUnit = f'(^\\s*{DurationUnitRegex}\\s+{SuffixAndRegex})|(^\\s*{SuffixAndRegex}?(\\s+|-)?{DurationUnitRegex})'
     NumberCombinedWithDurationUnit = f'\\b(?<num>\\d+(\\.\\d*)?)(-)?{DurationUnitRegex}'
-    AnUnitRegex = f'\\b((?<half>half\\s+)?an?|another)\\s+{DurationUnitRegex}'
+    AnUnitRegex = f'(\\b((?<half>(half)\\s+)?an?|another)|(?<half>(½|half)))\\s+{DurationUnitRegex}'
     DuringRegex = f'\\b(for|during)\\s+the\\s+(?<unit>year|month|week|day)\\b'
     AllRegex = f'\\b(?<all>(all|full|whole)(\\s+|-)(?<unit>year|month|week|day))\\b'
     HalfRegex = f'((an?\\s*)|\\b)(?<half>half\\s+(?<unit>year|month|week|day|hour))\\b'
@@ -216,7 +216,7 @@ class EnglishDateTime:
     InclusiveModPrepositions = f'(?<include>((on|in|at)\\s+or\\s+)|(\\s+or\\s+(on|in|at)))'
     BeforeRegex = f'((\\b{InclusiveModPrepositions}?(?:before|in\\s+advance\\s+of|prior\\s+to|(no\\s+later|earlier|sooner)\\s+than|ending\\s+(with|on)|by|(un)?till?|(?<include>as\\s+late\\s+as)){InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|>)((?<include><\\s*=)|<))(\\s+the)?'
     AfterRegex = f'((\\b{InclusiveModPrepositions}?((after|(starting|beginning)(\\s+on)?(?!\\sfrom)|(?<!no\\s+)later than)|(year greater than))(?!\\s+or equal to){InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|<)((?<include>>\\s*=)|>))(\\s+the)?'
-    SinceRegex = f'(?:(?:\\b(?:since|after\\s+or\\s+equal\\s+to|starting\\s+(?:from|on|with)|as\\s+early\\s+as|any\\s+time\\s+from)\\b\\s*)|(?<!\\w|<)(>=))'
+    SinceRegex = f'(?:(?:\\b(?:since|after\\s+or\\s+equal\\s+to|starting\\s+(?:from|on|with)|as\\s+early\\s+as|(any\\s+time\\s+)?from)\\b\\s*)|(?<!\\w|<)(>=))'
     AroundRegex = f'(?:\\b(?:around|circa)\\s*\\b)'
     AgoRegex = f'\\b(ago|before\\s+(?<day>yesterday|today))\\b'
     LaterRegex = f'\\b(?:later(?!((\\s+in)?\\s*{OneWordPeriodRegex})|(\\s+{TimeOfDayRegex}))|from now|(from|after) (?<day>tomorrow|tmr|today))\\b'
@@ -245,7 +245,8 @@ class EnglishDateTime:
     RestOfDateRegex = f'\\brest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<duration>week|month|year|decade)\\b'
     RestOfDateTimeRegex = f'\\brest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<unit>day)\\b'
     MealTimeRegex = f'\\b(at\\s+)?(?<mealTime>lunchtime)\\b'
-    NumberEndingPattern = f'^(?:\\s+(?<meeting>meeting|appointment|conference|call|skype call)\\s+to\\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})([\\.]?$|(\\.,|,|!|\\?)))'
+    AmbiguousRangeModifierPrefix = f'(from)'
+    NumberEndingPattern = f'^(?:\\s+(?<meeting>meeting|appointment|conference|((skype|teams)\\s+)?call)\\s+to\\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})([\\.]?$|(\\.,|,|!|\\?)))'
     OneOnOneRegex = f'\\b(1\\s*:\\s*1(?!\\d))|(one (on )?one|one\\s*-\\s*one|one\\s*:\\s*one)\\b'
     LaterEarlyPeriodRegex = f'\\b(({PrefixPeriodRegex})\\s*\\b\\s*(?<suffix>{OneWordPeriodRegex})|({UnspecificEndOfRangeRegex}))\\b'
     WeekWithWeekDayRangeRegex = f'\\b((?<week>({NextPrefixRegex}|{PreviousPrefixRegex}|this)\\s+week)((\\s+between\\s+{WeekDayRegex}\\s+and\\s+{WeekDayRegex})|(\\s+from\\s+{WeekDayRegex}\\s+to\\s+{WeekDayRegex})))\\b'
@@ -259,7 +260,7 @@ class EnglishDateTime:
     NumberAsTimeRegex = f'\\b({WrittenTimeRegex}|{PeriodHourNumRegex}|{BaseDateTime.HourRegex})\\b'
     TimeBeforeAfterRegex = f'\\b(((?<=\\b(before|no later than|by|after)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\\b'
     DateNumberConnectorRegex = f'^\\s*(?<connector>\\s+at)\\s*$'
-    DecadeRegex = f'(?<decade>(?:nough|twen|thir|for|four|fif|six|seven|eight|nine)ties|two\\s+thousands)'
+    DecadeRegex = f'(?<decade>(?:nough|twen|thir|fou?r|fif|six|seven|eight|nine)ties|two\\s+thousands)'
     DecadeWithCenturyRegex = f'(the\\s+)?(((?<century>\\d|1\\d|2\\d)?(\')?(?<decade>\\d0)(\')?(\\s)?s\\b)|(({CenturyRegex}(\\s+|-)(and\\s+)?)?{DecadeRegex})|({CenturyRegex}(\\s+|-)(and\\s+)?(?<decade>tens|hundreds)))'
     RelativeDecadeRegex = f'\\b((the\\s+)?{RelativeRegex}\\s+((?<number>[\\w,]+)\\s+)?decades?)\\b'
     YearPeriodRegex = f'((((from|during|in)\\s+)?{YearRegex}\\s*({TillRegex})\\s*{YearRegex})|(((between)\\s+){YearRegex}\\s*({RangeConnectorRegex})\\s*{YearRegex}))'
@@ -634,7 +635,8 @@ class EnglishDateTime:
     DurationDateRestrictions = [r'today', r'now']
     AmbiguityFiltersDict = dict([("\\bmorning|afternoon|evening|night|day\\b", "\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b"),
                                  ("\\bnow\\b", "\\b(^now,)|\\b((is|are)\\s+now\\s+for|for\\s+now)\\b"),
-                                 ("\\bmay\\b", "\\b((((!|\\.|\\?|,|;|)\\s+|^)may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\\b")])
+                                 ("\\bmay\\b", "\\b((((!|\\.|\\?|,|;|)\\s+|^)may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\\b"),
+                                 ("\\b(a|one) second\\b", "\\b(?<!an?\\s+)(a|one) second (round|time)\\b")])
     MorningTermList = [r'morning']
     AfternoonTermList = [r'afternoon']
     EveningTermList = [r'evening']

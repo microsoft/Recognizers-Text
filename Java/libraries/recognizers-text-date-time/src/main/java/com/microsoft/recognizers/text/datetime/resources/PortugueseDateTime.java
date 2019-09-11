@@ -182,6 +182,8 @@ public class PortugueseDateTime {
 
     public static final String RelativeWeekDayRegex = "^[.]";
 
+    public static final String AmbiguousRangeModifierPrefix = "^[.]";
+
     public static final String NumberEndingPattern = "^[.]";
 
     public static final String SpecialDateRegex = "(?<=\\bno\\s+){DayRegex}\\b"

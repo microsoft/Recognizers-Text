@@ -40,6 +40,8 @@ export class SpanishMergedExtractorConfiguration implements IMergedExtractorConf
     readonly fromToRegex: RegExp;
     readonly singleAmbiguousMonthRegex: RegExp;
     readonly prepositionSuffixRegex: RegExp;
+    readonly ambiguousRangeModifierPrefix: RegExp;
+    readonly potentialAmbiguousRangeRegex: RegExp;
     readonly numberEndingPattern: RegExp;
     readonly filterWordRegexList: RegExp[];
 
@@ -50,6 +52,8 @@ export class SpanishMergedExtractorConfiguration implements IMergedExtractorConf
         this.fromToRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromToRegex);
         this.singleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SingleAmbiguousMonthRegex);
         this.prepositionSuffixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PrepositionSuffixRegex);
+        this.ambiguousRangeModifierPrefix = null;
+        this.potentialAmbiguousRangeRegex = null;
         this.numberEndingPattern = RegExpUtility.getSafeRegExp(SpanishDateTime.NumberEndingPattern);
 
         this.dateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(dmyDateFormat));

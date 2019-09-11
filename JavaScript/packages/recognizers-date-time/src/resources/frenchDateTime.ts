@@ -67,6 +67,7 @@ export namespace FrenchDateTime {
     export const SetWeekDayRegex = `\\b(?<prefix>le\\s+)?(?<weekday>matin([ée]e)?|apres-midi|soir([ée]e)?|dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)s\\b`;
     export const WeekDayOfMonthRegex = `(?<wom>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
     export const RelativeWeekDayRegex = `^[.]`;
+    export const AmbiguousRangeModifierPrefix = `^[.]`;
     export const NumberEndingPattern = `^[.]`;
     export const SpecialDate = `(?<=\\b([àa]|au|le)\\s+)${DayRegex}(?!:)\\b`;
     export const DateYearRegex = `(?<year>${YearRegex}|${TwoDigitYearRegex})`;

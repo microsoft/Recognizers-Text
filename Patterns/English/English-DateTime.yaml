@@ -493,7 +493,7 @@ NumberCombinedWithDurationUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 AnUnitRegex: !nestedRegex
-  def: \b((?<half>half\s+)?an?|another)\s+{DurationUnitRegex}
+  def: (\b((?<half>(half)\s+)?an?|another)|(?<half>(½|half)))\s+{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 DuringRegex: !simpleRegex
   def: \b(for|during)\s+the\s+(?<unit>year|month|week|day)\b
@@ -529,7 +529,7 @@ AfterRegex: !nestedRegex
   def: ((\b{InclusiveModPrepositions}?((after|(starting|beginning)(\s+on)?(?!\sfrom)|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to){InclusiveModPrepositions}?\b\s*?)|(?<!\w|<)((?<include>>\s*=)|>))(\s+the)?
   references: [ InclusiveModPrepositions ]
 SinceRegex: !simpleRegex
-  def: (?:(?:\b(?:since|after\s+or\s+equal\s+to|starting\s+(?:from|on|with)|as\s+early\s+as|any\s+time\s+from)\b\s*)|(?<!\w|<)(>=))
+  def: (?:(?:\b(?:since|after\s+or\s+equal\s+to|starting\s+(?:from|on|with)|as\s+early\s+as|(any\s+time\s+)?from)\b\s*)|(?<!\w|<)(>=))
 AroundRegex: !simpleRegex
   def: (?:\b(?:around|circa)\s*\b)
 AgoRegex: !simpleRegex
@@ -600,8 +600,10 @@ RestOfDateTimeRegex: !simpleRegex
   def: \brest\s+(of\s+)?((the|my|this|current)\s+)?(?<unit>day)\b
 MealTimeRegex: !simpleRegex
   def: \b(at\s+)?(?<mealTime>lunchtime)\b
+AmbiguousRangeModifierPrefix: !simpleRegex
+  def: (from)
 NumberEndingPattern: !nestedRegex
-  def: ^(?:\s+(?<meeting>meeting|appointment|conference|call|skype call)\s+to\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})([\.]?$|(\.,|,|!|\?)))
+  def: ^(?:\s+(?<meeting>meeting|appointment|conference|((skype|teams)\s+)?call)\s+to\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})([\.]?$|(\.,|,|!|\?)))
   references: [PeriodHourNumRegex, HourRegex]
 OneOnOneRegex: !simpleRegex
   def: \b(1\s*:\s*1(?!\d))|(one (on )?one|one\s*-\s*one|one\s*:\s*one)\b
@@ -636,7 +638,7 @@ TimeBeforeAfterRegex: !nestedRegex
 DateNumberConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+at)\s*$
 DecadeRegex: !simpleRegex
-  def: (?<decade>(?:nough|twen|thir|for|four|fif|six|seven|eight|nine)ties|two\s+thousands)
+  def: (?<decade>(?:nough|twen|thir|fou?r|fif|six|seven|eight|nine)ties|two\s+thousands)
 DecadeWithCenturyRegex: !nestedRegex
   def: (the\s+)?(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?(\s)?s\b)|(({CenturyRegex}(\s+|-)(and\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(and\s+)?(?<decade>tens|hundreds)))
   references: [ CenturyRegex, DecadeRegex ]
@@ -1081,6 +1083,7 @@ AmbiguityFiltersDict: !dictionary
     '\bmorning|afternoon|evening|night|day\b': '\b(good\s+(morning|afternoon|evening|night|day))|(nighty\s+night)\b'
     '\bnow\b': '\b(^now,)|\b((is|are)\s+now\s+for|for\s+now)\b'
     '\bmay\b': '\b((((!|\.|\?|,|;|)\s+|^)may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\b'
+    '\b(a|one) second\b': '\b(?<!an?\s+)(a|one) second (round|time)\b'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]

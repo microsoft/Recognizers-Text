@@ -1,10 +1,11 @@
 from abc import abstractmethod, ABC
-from typing import List, Optional, Pattern, Dict
+from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime
 from collections import namedtuple
 import regex
 
 from recognizers_text.extractor import Extractor, ExtractResult
+from recognizers_text.meta_data import MetaData
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
@@ -101,6 +102,16 @@ class MergedExtractorConfiguration:
     @property
     @abstractmethod
     def preposition_suffix_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def ambiguous_range_modifier_prefix(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def potential_ambiguous_range_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
@@ -222,38 +233,49 @@ class BaseMergedExtractor(DateTimeExtractor):
         return list(map(lambda x: self.add_mod_item(x, source), ers))
 
     def add_mod_item(self, er: ExtractResult, source: str) -> ExtractResult:
-        before_str = source[0:er.start]
-        is_success = False
+        success = self.try_merge_modifier_token(er, self.config.before_regex, source)
+        if not success:
+            success = self.try_merge_modifier_token(er, self.config.after_regex, source)
+        if not success:
+            # SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
+            success = self.try_merge_modifier_token(er, self.config.since_regex, source, True)
+        return er
 
-        before = self.has_token_index(
-            before_str.strip(), self.config.before_regex)
-        if before.matched:
-            mod_len = len(before_str) - before.index
+    def try_merge_modifier_token(self, er: ExtractResult, pattern: Pattern, source: str, potentialAmbiguity: bool = False) -> bool:
+        before_str = source[0:er.start]
+
+        # Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
+        if potentialAmbiguity and self.config.ambiguous_range_modifier_prefix and regex.search(self.config.ambiguous_range_modifier_prefix, before_str):
+            matches = list(regex.finditer(self.config.potential_ambiguous_range_regex, source))
+            if matches and len(matches):
+                return self._filter_item(er, matches)
+
+        token = self.has_token_index(before_str.strip(), pattern)
+        if token.matched:
+            mod_len = len(before_str) - token.index
             er.length += mod_len
             er.start -= mod_len
             er.text = source[er.start:er.start + er.length]
-            is_success = True
 
-        if not is_success:
-            after = self.has_token_index(
-                before_str.strip(), self.config.after_regex)
-            if after.matched:
-                mod_len = len(before_str) - after.index
-                er.length += mod_len
-                er.start -= mod_len
-                er.text = source[er.start:er.start + er.length]
-                is_success = True
+            er.meta_data = self.assign_mod_metadata(er.meta_data)
+            return True
 
-        if not is_success:
-            since = self.has_token_index(
-                before_str.strip(), self.config.since_regex)
-            if not is_success and since.matched:
-                mod_len = len(before_str) - since.index
-                er.length += mod_len
-                er.start -= mod_len
-                er.text = source[er.start:er.start + er.length]
+        return False
 
-        return er
+    def _filter_item(self, er: ExtractResult, matches: List[Match]) -> bool:
+        for match in matches:
+            if match.start() < er.start + er.length and match.end() > er.start:
+                return False
+        return True
+
+    def assign_mod_metadata(self, meta_data: MetaData) -> MetaData:
+        if not meta_data:
+            meta_data = MetaData()
+            meta_data.has_mod = True
+        else:
+            meta_data.has_mod = True
+
+        return meta_data
 
     def has_token_index(self, source: str, pattern: Pattern) -> MatchedIndex:
         # This part is different from C# because no Regex RightToLeft option in Python
@@ -358,28 +380,29 @@ class BaseMergedParser(DateTimeParser):
         has_after = False
         has_since = False
         mod_str = ''
-        before_match = self.config.before_regex.match(source.text)
-        after_match = self.config.after_regex.match(source.text)
-        since_match = self.config.since_regex.match(source.text)
+        if source.meta_data and source.meta_data.has_mod:
+            before_match = self.config.before_regex.match(source.text)
+            after_match = self.config.after_regex.match(source.text)
+            since_match = self.config.since_regex.match(source.text)
 
-        if before_match:
-            has_before = True
-            source.start += before_match.end()
-            source.length -= before_match.end()
-            source.text = source.text[before_match.end():]
-            mod_str = before_match.group()
-        elif after_match:
-            has_after = True
-            source.start += after_match.end()
-            source.length -= after_match.end()
-            source.text = source.text[after_match.end():]
-            mod_str = after_match.group()
-        elif since_match:
-            has_since = True
-            source.start += since_match.end()
-            source.length -= since_match.end()
-            source.text = source.text[since_match.end():]
-            mod_str = since_match.group()
+            if before_match:
+                has_before = True
+                source.start += before_match.end()
+                source.length -= before_match.end()
+                source.text = source.text[before_match.end():]
+                mod_str = before_match.group()
+            elif after_match:
+                has_after = True
+                source.start += after_match.end()
+                source.length -= after_match.end()
+                source.text = source.text[after_match.end():]
+                mod_str = after_match.group()
+            elif since_match:
+                has_since = True
+                source.start += since_match.end()
+                source.length -= since_match.end()
+                source.text = source.text[since_match.end():]
+                mod_str = since_match.group()
 
         if source.type == Constants.SYS_DATETIME_DATE:
             result = self.config.date_parser.parse(source, reference)

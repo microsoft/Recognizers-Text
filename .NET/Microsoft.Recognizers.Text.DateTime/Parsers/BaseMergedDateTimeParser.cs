@@ -271,76 +271,79 @@ namespace Microsoft.Recognizers.Text.DateTime
             // For example, cases like "on or later than", "earlier than or in" have inclusive modifier
             var hasInclusiveModifier = false;
             var modStr = string.Empty;
-            var beforeMatch = Config.BeforeRegex.MatchBegin(er.Text, trim: true);
-            var afterMatch = Config.AfterRegex.MatchBegin(er.Text, trim: true);
-            var sinceMatch = Config.SinceRegex.MatchBegin(er.Text, trim: true);
-            var aroundMatch = Config.AroundRegex.MatchBegin(er.Text, trim: true);
-            var equalMatch = Config.EqualRegex.MatchBegin(er.Text, trim: true);
-
-            if (beforeMatch.Success)
+            if (er.Metadata != null && er.Metadata.HasMod)
             {
-                hasBefore = true;
-                er.Start += beforeMatch.Length;
-                er.Length -= beforeMatch.Length;
-                er.Text = er.Text.Substring(beforeMatch.Length);
-                modStr = beforeMatch.Value;
+                var beforeMatch = Config.BeforeRegex.MatchBegin(er.Text, trim: true);
+                var afterMatch = Config.AfterRegex.MatchBegin(er.Text, trim: true);
+                var sinceMatch = Config.SinceRegex.MatchBegin(er.Text, trim: true);
+                var aroundMatch = Config.AroundRegex.MatchBegin(er.Text, trim: true);
+                var equalMatch = Config.EqualRegex.MatchBegin(er.Text, trim: true);
 
-                if (!string.IsNullOrEmpty(beforeMatch.Groups["include"].Value))
+                if (beforeMatch.Success)
                 {
-                    hasInclusiveModifier = true;
+                    hasBefore = true;
+                    er.Start += beforeMatch.Length;
+                    er.Length -= beforeMatch.Length;
+                    er.Text = er.Text.Substring(beforeMatch.Length);
+                    modStr = beforeMatch.Value;
+
+                    if (!string.IsNullOrEmpty(beforeMatch.Groups["include"].Value))
+                    {
+                        hasInclusiveModifier = true;
+                    }
                 }
-            }
-            else if (afterMatch.Success)
-            {
-                hasAfter = true;
-                er.Start += afterMatch.Length;
-                er.Length -= afterMatch.Length;
-                er.Text = er.Text.Substring(afterMatch.Length);
-                modStr = afterMatch.Value;
+                else if (afterMatch.Success)
+                {
+                    hasAfter = true;
+                    er.Start += afterMatch.Length;
+                    er.Length -= afterMatch.Length;
+                    er.Text = er.Text.Substring(afterMatch.Length);
+                    modStr = afterMatch.Value;
 
-                if (!string.IsNullOrEmpty(afterMatch.Groups["include"].Value))
-                {
-                    hasInclusiveModifier = true;
+                    if (!string.IsNullOrEmpty(afterMatch.Groups["include"].Value))
+                    {
+                        hasInclusiveModifier = true;
+                    }
                 }
-            }
-            else if (sinceMatch.Success)
-            {
-                hasSince = true;
-                er.Start += sinceMatch.Length;
-                er.Length -= sinceMatch.Length;
-                er.Text = er.Text.Substring(sinceMatch.Length);
-                modStr = sinceMatch.Value;
-            }
-            else if (aroundMatch.Success)
-            {
-                hasAround = true;
-                er.Start += aroundMatch.Length;
-                er.Length -= aroundMatch.Length;
-                er.Text = er.Text.Substring(aroundMatch.Length);
-                modStr = aroundMatch.Value;
-            }
-            else if (equalMatch.Success)
-            {
-                hasEqual = true;
-                er.Start += equalMatch.Length;
-                er.Length -= equalMatch.Length;
-                er.Text = er.Text.Substring(equalMatch.Length);
-                modStr = equalMatch.Value;
-            }
-            else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal) && Config.YearRegex.Match(er.Text).Success) ||
-                     er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) ||
-                     er.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
-            {
-                // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
-                // 2012 or after/above
-                // 3 pm or later
-                var match = Config.SuffixAfter.MatchEnd(er.Text, trim: true);
-                if (match.Success)
+                else if (sinceMatch.Success)
                 {
-                    hasDateAfter = true;
-                    er.Length -= match.Length;
-                    er.Text = er.Text.Substring(0, er.Length ?? 0);
-                    modStr = match.Value;
+                    hasSince = true;
+                    er.Start += sinceMatch.Length;
+                    er.Length -= sinceMatch.Length;
+                    er.Text = er.Text.Substring(sinceMatch.Length);
+                    modStr = sinceMatch.Value;
+                }
+                else if (aroundMatch.Success)
+                {
+                    hasAround = true;
+                    er.Start += aroundMatch.Length;
+                    er.Length -= aroundMatch.Length;
+                    er.Text = er.Text.Substring(aroundMatch.Length);
+                    modStr = aroundMatch.Value;
+                }
+                else if (equalMatch.Success)
+                {
+                    hasEqual = true;
+                    er.Start += equalMatch.Length;
+                    er.Length -= equalMatch.Length;
+                    er.Text = er.Text.Substring(equalMatch.Length);
+                    modStr = equalMatch.Value;
+                }
+                else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal) && Config.YearRegex.Match(er.Text).Success) ||
+                    er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) ||
+                    er.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
+                {
+                    // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
+                    // 2012 or after/above
+                    // 3 pm or later
+                    var match = Config.SuffixAfter.MatchEnd(er.Text, trim: true);
+                    if (match.Success)
+                    {
+                        hasDateAfter = true;
+                        er.Length -= match.Length;
+                        er.Text = er.Text.Substring(0, er.Length ?? 0);
+                        modStr = match.Value;
+                    }
                 }
             }
 

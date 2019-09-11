@@ -145,6 +145,9 @@ WeekDayOfMonthRegex: !nestedRegex
 RelativeWeekDayRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+AmbiguousRangeModifierPrefix: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 NumberEndingPattern: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]

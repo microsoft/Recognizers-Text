@@ -1495,5 +1495,128 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Setze Timer auf eine Viertelstunde.",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T00:00:00"
+    },
+	"Debug": true,
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "eine viertelstunde",
+        "Start": 16,
+        "End": 33,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT0.25H",
+              "type": "duration",
+              "value": "900"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Setze Timer auf ein Dreiviertelstunde",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "ein dreiviertelstunde",
+        "Start": 16,
+        "End": 36,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT0.75H",
+              "type": "duration",
+              "value": "2700"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "eine halbe Stunde",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "eine halbe stunde",
+        "Start": 0,
+        "End": 16,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT0.5H",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "lass uns nach dem Wochenende treffen",
+    "Context": {
+      "ReferenceDateTime": "2019-09-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "nach dem wochenende",
+        "Start": 9,
+        "End": 27,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W37-WE",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2019-09-16"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "lass uns vor dem Wochenende treffen",
+    "Context": {
+      "ReferenceDateTime": "2019-09-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "vor dem wochenende",
+        "Start": 9,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W37-WE",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2019-09-14"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
