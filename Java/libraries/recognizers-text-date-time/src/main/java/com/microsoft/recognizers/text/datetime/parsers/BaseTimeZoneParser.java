@@ -99,7 +99,10 @@ public class BaseTimeZoneParser implements IDateTimeParser {
     }
 
     private boolean checkFullToMin(String text) {
-        return EnglishTimeZone.FullToMinMapping.containsKey(text);
+        if (EnglishTimeZone.FullToMinMapping.containsKey(text)) {
+            return EnglishTimeZone.FullToMinMapping.get(text) != Constants.InvalidOffsetValue;
+        }
+        return false;
     }
 
     private DateTimeResolutionResult getDateTimeResolutionResult(int offsetInMinutes, String text) {
