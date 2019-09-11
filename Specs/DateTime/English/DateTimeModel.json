@@ -14314,7 +14314,6 @@
     "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "½ hour",
@@ -14326,7 +14325,7 @@
             {
               "timex": "PT0.5H",
               "type": "duration",
-              "value": 1800
+              "value": "1800"
             }
           ]
         }
@@ -14338,7 +14337,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript,python",
     "Results": []
   },
   {
@@ -14346,7 +14345,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
-    "NotSupported": "javascript, python",
+	"NotSupported": "java",
     "Results": [
       {
         "Text": "one second",
@@ -14358,7 +14357,7 @@
             {
               "timex": "PT1S",
               "type": "duration",
-              "value": 1
+              "value": "1"
             }
           ]
         }
