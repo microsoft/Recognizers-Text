@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
 {
     public class DoubleExtractor : BaseNumberExtractor
     {
-        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture | RegexOptions.RightToLeft;
 
         private static readonly ConcurrentDictionary<string, DoubleExtractor> Instances =
             new ConcurrentDictionary<string, DoubleExtractor>();
@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
                 },
                 {
                     new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.ENGLISH)
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.ARABIC)
                 },
                 {
                     new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexFlags),

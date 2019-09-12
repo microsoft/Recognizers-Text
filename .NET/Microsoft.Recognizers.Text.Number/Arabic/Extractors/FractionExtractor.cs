@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
 {
     public class FractionExtractor : BaseNumberExtractor
     {
-        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture | RegexOptions.RightToLeft;
 
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions, string), FractionExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions, string), FractionExtractor>();
@@ -30,11 +30,11 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
                 },
                 {
                     new Regex(NumbersDefinitions.FractionNounRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC)
                 },
                 {
                     new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC)
                 },
             };
 
@@ -45,13 +45,13 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
                 {
                     regexes.Add(
                         new Regex(NumbersDefinitions.FractionPrepositionWithinPercentModeRegex, RegexFlags),
-                        RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH));
+                        RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC));
                 }
                 else
                 {
                     regexes.Add(
                         new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags),
-                        RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH));
+                        RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC));
                 }
             }
 
