@@ -550,21 +550,6 @@
     ]
   },
   {
-    "Input": " -123456789101231",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "-123456789101231",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-123456789101231"
-        },
-        "Start": 1,
-        "End": 16
-      }
-    ]
-  },
-  {
     "Input": "1",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1221,21 +1206,6 @@
         },
         "Start": 0,
         "End": 23
-      }
-    ]
-  },
-  {
-    "Input": "خمس",
-    "NotSupportedByDesign": "javascript,python,java,dotnet",
-    "Results": [
-      {
-        "Text": "خمس",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.2"
-        },
-        "Start": 0,
-        "End": 2
       }
     ]
   },
