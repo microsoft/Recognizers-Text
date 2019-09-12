@@ -42,7 +42,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
     </Compile>
-
     <Compile Update="BaseCurrency.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -425,6 +424,8 @@
     <None Update="German\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Hindi\ChoiceDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Hindi\NumbersDefinitions.tt">
     </None>
