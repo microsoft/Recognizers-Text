@@ -790,21 +790,6 @@
     ]
   },
   {
-    "Input": "اثنان و خمسون",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "اثنان و خمسون",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "52"
-        },
-        "Start": 0,
-        "End": 12
-      }
-    ]
-  },
-  {
     "Input": "2 1/4",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1315,21 +1300,6 @@
     ]
   },
   {
-    "Input": "ثلاثة من واحد و عشرون",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "ثلاثة من واحد و عشرون",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.142857142857143"
-        },
-        "Start": 0,
-        "End": 20
-      }
-    ]
-  },
-  {
     "Input": "خمس خمس العشرون",
     "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
@@ -1356,21 +1326,6 @@
         },
         "Start": 0,
         "End": 16
-      }
-    ]
-  },
-  {
-    "Input": "مائة و اثنان و ثلاثون خمس",
-    "NotSupportedByDesign": "javascript,python,java,dotnet",
-    "Results": [
-      {
-        "Text": "مائة و اثنان و ثلاثون خمس",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "26.4"
-        },
-        "Start": 0,
-        "End": 24
       }
     ]
   },
@@ -1740,36 +1695,6 @@
     ]
   },
   {
-    "Input": "ثمن",
-    "NotSupportedByDesign": "javascript,python,java,dotnet",
-    "Results": [
-      {
-        "Text": "ثمن",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.125"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "خمسة أثمان",
-    "NotSupportedByDesign": "javascript,python,java,dotnet",
-    "Results": [
-      {
-        "Text": "خمسة أثمان",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.625"
-        },
-        "Start": 0,
-        "End": 9
-      }
-    ]
-  },
-  {
     "Input": "90 - خمسمائة خمسة",
     "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
@@ -1812,21 +1737,6 @@
         },
         "Start": 0,
         "End": 16
-      }
-    ]
-  },
-  {
-    "Input": "خمسة أثمان",
-    "NotSupportedByDesign": "javascript,python,java,dotnet",
-    "Results": [
-      {
-        "Text": "خمسة أثمان",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.625"
-        },
-        "Start": 0,
-        "End": 9
       }
     ]
   },
