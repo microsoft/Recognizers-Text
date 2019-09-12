@@ -12478,6 +12478,32 @@
     ]
   },
   {
+    "Input": "let's meet around dinner",
+    "Context": {
+      "ReferenceDateTime": "2019-09-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "around dinner",
+        "Start": 11,
+        "End": 23,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMED",
+              "Mod": "approx",
+              "type": "timerange",
+              "start": "16:00:00",
+              "end": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "We will have lunch together with Jim",
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"

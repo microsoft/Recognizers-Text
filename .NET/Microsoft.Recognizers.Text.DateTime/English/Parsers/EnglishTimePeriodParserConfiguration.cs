@@ -91,19 +91,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 timeOfDay = Constants.BusinessHour;
             }
-            else if (DateTimeDefinitions.BreakfastTermList.All(o => trimmedText.Contains(o)))
+            else if (DateTimeDefinitions.BreakfastTermList.Any(o => trimmedText.Contains(o)))
             {
                 timeOfDay = Constants.Breakfast;
             }
-            else if (DateTimeDefinitions.BrunchTermList.All(o => trimmedText.Contains(o)))
+            else if (DateTimeDefinitions.BrunchTermList.Any(o => trimmedText.Contains(o)))
             {
                 timeOfDay = Constants.Brunch;
             }
-            else if (DateTimeDefinitions.LunchTermList.All(o => trimmedText.Contains(o)))
+            else if (DateTimeDefinitions.LunchTermList.Any(o => trimmedText.Contains(o)))
             {
                 timeOfDay = Constants.Lunch;
             }
-            else if (DateTimeDefinitions.DinnerTermList.All(o => trimmedText.Contains(o)))
+            else if (DateTimeDefinitions.DinnerTermList.Any(o => trimmedText.Contains(o)))
             {
                 timeOfDay = Constants.Dinner;
             }
