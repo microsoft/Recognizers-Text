@@ -91,6 +91,22 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 timeOfDay = Constants.BusinessHour;
             }
+            else if (DateTimeDefinitions.BreakfastTermList.All(o => trimmedText.Contains(o)))
+            {
+                timeOfDay = Constants.Breakfast;
+            }
+            else if (DateTimeDefinitions.BrunchTermList.All(o => trimmedText.Contains(o)))
+            {
+                timeOfDay = Constants.Brunch;
+            }
+            else if (DateTimeDefinitions.LunchTermList.All(o => trimmedText.Contains(o)))
+            {
+                timeOfDay = Constants.Lunch;
+            }
+            else if (DateTimeDefinitions.DinnerTermList.All(o => trimmedText.Contains(o)))
+            {
+                timeOfDay = Constants.Dinner;
+            }
             else
             {
                 timex = null;

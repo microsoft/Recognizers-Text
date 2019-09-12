@@ -14445,5 +14445,62 @@
         }
       }
     ]
+  },
+  {
+    "Input": "let's meet after breakfast",
+    "Context": {
+      "ReferenceDateTime": "2019-09-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "after breakfast",
+        "Start": 11,
+        "End": 25,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMEB",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "let's meet before lunch",
+    "Context": {
+      "ReferenceDateTime": "2019-09-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "before lunch",
+        "Start": 11,
+        "End": 22,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMEL",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "11:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We will have lunch together with Jim",
+    "Context": {
+      "ReferenceDateTime": "2019-09-12T00:00:00"
+    },
+    "Results": []
   }
 ]

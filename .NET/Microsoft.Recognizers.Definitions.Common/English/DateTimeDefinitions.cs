@@ -178,7 +178,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string SuffixAfterRegex = @"\b(((at)\s)?(or|and)\s+(above|after|later|greater)(?!\s+than))\b";
       public const string PrepositionRegex = @"(?<prep>^(at|on|of)(\s+the)?$)";
       public const string LaterEarlyRegex = @"((?<early>early(\s+|-))|(?<late>late(r?\s+|-)))";
-      public static readonly string TimeOfDayRegex = $@"\b(?<timeOfDay>((((in\s+(the)?\s+)?{LaterEarlyRegex}?(in\s+(the)?\s+)?(morning|afternoon|night|evening)))|(((in\s+(the)?\s+)?)(daytime|business\s+hour)))s?)\b";
+      public static readonly string TimeOfDayRegex = $@"\b(?<timeOfDay>((((in\s+(the)?\s+)?{LaterEarlyRegex}?(in\s+(the)?\s+)?(morning|afternoon|night|evening)))|(?<=(before|after)\s+)(breakfast|brunch|lunch(time)?|dinner(time)?|supper)|(((in\s+(the)?\s+)?)(daytime|business\s+hour)))s?)\b";
       public static readonly string SpecificTimeOfDayRegex = $@"\b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\btonight)s?\b";
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
       public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
@@ -707,6 +707,25 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly IList<string> EveningTermList = new List<string>
         {
             @"evening"
+        };
+      public static readonly IList<string> BreakfastTermList = new List<string>
+        {
+            @"breakfast"
+        };
+      public static readonly IList<string> BrunchTermList = new List<string>
+        {
+            @"brunch"
+        };
+      public static readonly IList<string> LunchTermList = new List<string>
+        {
+            @"lunch",
+            @"lunchtime"
+        };
+      public static readonly IList<string> DinnerTermList = new List<string>
+        {
+            @"dinner",
+            @"dinnertime",
+            @"supper"
         };
       public static readonly IList<string> DaytimeTermList = new List<string>
         {

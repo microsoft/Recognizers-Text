@@ -414,7 +414,7 @@ PrepositionRegex: !simpleRegex
 LaterEarlyRegex: !simpleRegex
   def: ((?<early>early(\s+|-))|(?<late>late(r?\s+|-)))
 TimeOfDayRegex: !nestedRegex
-  def: \b(?<timeOfDay>((((in\s+(the)?\s+)?{LaterEarlyRegex}?(in\s+(the)?\s+)?(morning|afternoon|night|evening)))|(((in\s+(the)?\s+)?)(daytime|business\s+hour)))s?)\b
+  def: \b(?<timeOfDay>((((in\s+(the)?\s+)?{LaterEarlyRegex}?(in\s+(the)?\s+)?(morning|afternoon|night|evening)))|(?<=(before|after)\s+)(breakfast|brunch|lunch(time)?|dinner(time)?|supper)|(((in\s+(the)?\s+)?)(daytime|business\s+hour)))s?)\b
   references: [ LaterEarlyRegex ]
 SpecificTimeOfDayRegex: !nestedRegex
   def: \b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\btonight)s?\b
@@ -1097,6 +1097,25 @@ EveningTermList: !list
   types: [ string ]
   entries: 
     - evening
+BreakfastTermList: !list
+  types: [ string ]
+  entries: 
+    - breakfast
+BrunchTermList: !list
+  types: [ string ]
+  entries: 
+    - brunch
+LunchTermList: !list
+  types: [ string ]
+  entries: 
+    - lunch
+    - lunchtime
+DinnerTermList: !list
+  types: [ string ]
+  entries: 
+    - dinner
+    - dinnertime
+    - supper
 DaytimeTermList: !list
   types: [ string ]
   entries: 
