@@ -42,6 +42,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+
+>>>>>>> a9e16b45ae4174726df1911f089d2362ec6bf6cb
     <Compile Update="BaseCurrency.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
