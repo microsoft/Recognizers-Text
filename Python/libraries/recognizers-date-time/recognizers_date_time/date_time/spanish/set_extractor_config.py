@@ -120,3 +120,4 @@ class SpanishSetExtractorConfiguration(SetExtractorConfiguration):
         self._date_time_period_extractor = BaseDateTimePeriodExtractor(
             SpanishDateTimePeriodExtractorConfiguration())
         self._cardinal_extractor = SpanishCardinalExtractor()
+        
