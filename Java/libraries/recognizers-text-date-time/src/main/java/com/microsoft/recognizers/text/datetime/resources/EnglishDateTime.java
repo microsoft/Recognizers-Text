@@ -597,8 +597,14 @@ public class EnglishDateTime {
 
     public static final String LaterEarlyRegex = "((?<early>early(\\s+|-))|(?<late>late(r?\\s+|-)))";
 
-    public static final String TimeOfDayRegex = "\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?{LaterEarlyRegex}?(in\\s+(the)?\\s+)?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b"
-            .replace("{LaterEarlyRegex}", LaterEarlyRegex);
+    public static final String MealTimeRegex = "\\b(?<mealTime>breakfast|brunch|lunch(time)?|dinner(time)?|supper)\\b";
+
+    public static final String UnspecificTimePeriodRegex = "({MealTimeRegex})"
+            .replace("{MealTimeRegex}", MealTimeRegex);
+
+    public static final String TimeOfDayRegex = "\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?{LaterEarlyRegex}?(in\\s+(the)?\\s+)?(morning|afternoon|night|evening)))|{MealTimeRegex}|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b"
+            .replace("{LaterEarlyRegex}", LaterEarlyRegex)
+            .replace("{MealTimeRegex}", MealTimeRegex);
 
     public static final String SpecificTimeOfDayRegex = "\\b(({StrictRelativeRegex}\\s+{TimeOfDayRegex})\\b|\\btonight)s?\\b"
             .replace("{TimeOfDayRegex}", TimeOfDayRegex)
@@ -807,8 +813,6 @@ public class EnglishDateTime {
     public static final String RestOfDateRegex = "\\brest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<duration>week|month|year|decade)\\b";
 
     public static final String RestOfDateTimeRegex = "\\brest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<unit>day)\\b";
-
-    public static final String MealTimeRegex = "\\b(at\\s+)?(?<mealTime>lunchtime)\\b";
 
     public static final String AmbiguousRangeModifierPrefix = "(from)";
 
@@ -1323,6 +1327,14 @@ public class EnglishDateTime {
     public static final List<String> AfternoonTermList = Arrays.asList("afternoon");
 
     public static final List<String> EveningTermList = Arrays.asList("evening");
+
+    public static final List<String> BreakfastTermList = Arrays.asList("breakfast");
+
+    public static final List<String> BrunchTermList = Arrays.asList("brunch");
+
+    public static final List<String> LunchTermList = Arrays.asList("lunch", "lunchtime");
+
+    public static final List<String> DinnerTermList = Arrays.asList("dinner", "dinnertime", "supper");
 
     public static final List<String> DaytimeTermList = Arrays.asList("daytime");
 
