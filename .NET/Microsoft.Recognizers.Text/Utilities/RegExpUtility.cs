@@ -5,7 +5,7 @@ namespace Microsoft.Recognizers.Text.Utilities
 {
     public static class RegExpUtility
     {
-        private const string NameGrou = "name";
+        private const string NameGroup = "name";
 
         private static int index = 0;
 
