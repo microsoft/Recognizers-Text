@@ -3,9 +3,22 @@ from typing import List, Pattern
 from recognizers_text.utilities import RegExpUtility
 from ...resources.spanish_date_time import SpanishDateTime
 from ..base_time import TimeExtractorConfiguration
+from ..utilities import DateTimeOptions
 
 
 class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
+    @property
+    def time_zone_extractor(self):
+        return self._time_zone_extractor
+
+    @property
+    def options(self):
+        return self._options
+
+    @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
+
     @property
     def time_regex_list(self) -> List[Pattern]:
         return self._time_regex_list
@@ -30,6 +43,7 @@ class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
         self._ish_regex: Pattern = None
         self._time_before_after_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.TimeBeforeAfterRegex)
+        self._options = DateTimeOptions.NONE
 
     @staticmethod
     def get_time_regex_list() -> List[Pattern]:

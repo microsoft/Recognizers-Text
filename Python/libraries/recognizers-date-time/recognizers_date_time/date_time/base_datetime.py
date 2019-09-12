@@ -116,10 +116,12 @@ class DateTimeExtractorConfiguration(DateTimeOptionsConfiguration):
         raise NotImplementedError
 
     @property
+    @abstractmethod
     def dmy_date_format(self) -> bool:
         raise NotImplementedError
 
     @property
+    @abstractmethod
     def options(self):
         raise NotImplementedError
 

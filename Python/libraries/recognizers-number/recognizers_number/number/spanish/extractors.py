@@ -6,6 +6,7 @@ from recognizers_number.number.extractors import ReVal, BaseNumberExtractor, \
     BasePercentageExtractor
 from recognizers_number.number.constants import Constants
 from recognizers_text import ExtractResult
+from recognizers_date_time.date_time.utilities import DateTimeOptions
 
 
 class SpanishNumberExtractor(BaseNumberExtractor):
@@ -15,7 +16,7 @@ class SpanishNumberExtractor(BaseNumberExtractor):
 
     @property
     def options(self):
-        pass
+        return self._options
 
     @property
     def _negative_number_terms(self) -> Pattern:
@@ -56,6 +57,7 @@ class SpanishNumberExtractor(BaseNumberExtractor):
 
         fraction_ex = SpanishFractionExtractor()
         self.__regexes.extend(fraction_ex.regexes)
+        self._options = DateTimeOptions.NONE
 
 
 class SpanishCardinalExtractor(BaseNumberExtractor):
@@ -65,7 +67,7 @@ class SpanishCardinalExtractor(BaseNumberExtractor):
 
     @property
     def options(self):
-        pass
+        return self._options
 
     @property
     def _negative_number_terms(self) -> Pattern:
@@ -98,6 +100,7 @@ class SpanishCardinalExtractor(BaseNumberExtractor):
         # Add double regexes
         double_ex = SpanishDoubleExtractor(placeholder)
         self.__regexes.extend(double_ex.regexes)
+        self._options = DateTimeOptions.NONE
 
 
 class SpanishIntegerExtractor(BaseNumberExtractor):
@@ -107,7 +110,7 @@ class SpanishIntegerExtractor(BaseNumberExtractor):
 
     @property
     def options(self):
-        pass
+        return self._options
 
     @property
     def _negative_number_terms(self) -> Pattern:
@@ -164,6 +167,7 @@ class SpanishIntegerExtractor(BaseNumberExtractor):
                 re=SpanishNumeric.AllIntRegexWithDozenSuffixLocks,
                 val='IntegerSpa')
         ]
+        self._options = DateTimeOptions.NONE
 
 
 class SpanishDoubleExtractor(BaseNumberExtractor):
@@ -173,7 +177,7 @@ class SpanishDoubleExtractor(BaseNumberExtractor):
 
     @property
     def options(self):
-        pass
+        return self._options
 
     @property
     def _negative_number_terms(self) -> Pattern:
@@ -230,6 +234,7 @@ class SpanishDoubleExtractor(BaseNumberExtractor):
                     placeholder),
                 val='DoubleNum')
         ]
+        self._options = DateTimeOptions.NONE
 
 
 class SpanishFractionExtractor(BaseNumberExtractor):
@@ -239,7 +244,7 @@ class SpanishFractionExtractor(BaseNumberExtractor):
 
     @property
     def options(self):
-        pass
+        return self._options
 
     @property
     def _negative_number_terms(self) -> Pattern:
@@ -281,6 +286,7 @@ class SpanishFractionExtractor(BaseNumberExtractor):
                 re=SpanishNumeric.FractionPrepositionRegex,
                 val='FracSpa')
         ]
+        self._options = DateTimeOptions.NONE
 
 
 class SpanishOrdinalExtractor(BaseNumberExtractor):
@@ -290,7 +296,7 @@ class SpanishOrdinalExtractor(BaseNumberExtractor):
 
     @property
     def options(self):
-        pass
+        return self._options
 
     @property
     def _negative_number_terms(self) -> Pattern:
@@ -323,6 +329,7 @@ class SpanishOrdinalExtractor(BaseNumberExtractor):
                 re=SpanishNumeric.OrdinalNounRegex,
                 val='OrdSpa')
         ]
+        self._options = DateTimeOptions.NONE
 
 
 class SpanishPercentageExtractor(BasePercentageExtractor):
