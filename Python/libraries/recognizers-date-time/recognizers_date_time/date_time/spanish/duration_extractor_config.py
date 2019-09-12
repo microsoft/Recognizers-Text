@@ -130,3 +130,4 @@ class SpanishDurationExtractorConfiguration(DurationExtractorConfiguration):
         )
 
         self._options = DateTimeOptions.NONE
+        
