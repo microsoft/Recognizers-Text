@@ -24,25 +24,25 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public const string LangMarker = @"Ara";
       public const bool CompoundNumberLanguage = false;
       public const bool MultiDecimalSeparatorCulture = true;
-      public const string RoundNumberIntegerRegex = @"(ال)?(?:مائة|ألف|مليون|مليار|تريليون)";
+      public const string RoundNumberIntegerRegex = @"(ال)?(?:مائة|آلاف|مائتين|مائتان|ثلاثمائة|أربعمائة|خمسمائة|ستمائة|سبعمائة|ثمانمائة|تسعمائة|ألف|ألفين|مليون|مليار|تريليون)";
       public const string ZeroToNineIntegerRegex = @"(ال)?(?:ثلاثة|سبعة|ثلاث|سبع|ثامن|ثمانية|أربعة|أربع|خمس|خمسة|صفر|تسع|تسعة|واحد|واحدة|اثنين|اثنتين|اثنان|اثنتين|ست|ستة)";
       public const string TwoToNineIntegerRegex = @"(ال)?(?:ثلاث|ثلاثة|سبع|سبعة|ثمان|ثمانية|أربع|أربعة|خمس|خمسة|تسع|تسعة|اثنان|اثنتان|اثتنين|اثنتان|ست|ستة)";
       public const string NegativeNumberTermsRegex = @"(?<negTerm>(minus|negative)\s+)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
       public const string AnIntRegex = @"(واحد|أحد)(?=\s)";
-      public const string TenToNineteenIntegerRegex = @"(?:سبعة عشر|ثلاثة عشر|أربعة عشر|ثمانية عشر|تسعة عشر|خمسة عشر|ستة عشر|حادية عشر|ثاينة عشر|عشرة)";
-      public const string TensNumberIntegerRegex = @"(?:سبعون|سبعين|عشرون|عشرين|ثلاثون|ثلاثين|ثمانون|ثمانين|تسعون|تسعين|أربعون|اربعين|خمسون|خمسين|ستون|ستين)";
-      public static readonly string SeparaIntRegex = $@"(?:(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+و(\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))";
-      public static readonly string AllIntRegex = $@"(?:{RoundNumberIntegerRegex}((\s*و\s*)*({SeparaIntRegex}))*|((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+و(\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex}|{SeparaIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+و(\s+)?)*{SeparaIntRegex})";
+      public const string TenToNineteenIntegerRegex = @"(?:سبعة عشر|ثلاثة عشر|أربعة عشر|ثمانية عشر|تسعة عشر|خمسة عشر|ستة عشر|حادية عشر|ثانية عشر|عشرة)";
+      public const string TensNumberIntegerRegex = @"(?:سبعون|سبعين|عشرون|عشرين|ثلاثون|ثلاثين|ثمانون|ثمانين|تسعون|تسعين|أربعون|أربعين|خمسون|خمسين|ستون|ستين)";
+      public static readonly string SeparaIntRegex = $@"(?:(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(و\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|({ZeroToNineIntegerRegex}(\s+(و\s+)?|\s*-\s*){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))";
+      public static readonly string AllIntRegex = $@"(?:((\s+و\s+)?({SeparaIntRegex}\s+)?({RoundNumberIntegerRegex})(\s+و\s+)({SeparaIntRegex}))+|((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(و\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(و\s+)?)*{SeparaIntRegex})";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
       public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[\u0621-\u064A]))(?={placeholder})";
       public static readonly string NumbersWithSuffix = $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)";
-      public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+دستة(?=\b)";
+      public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))(\d+\s+)?(دستة|دستات|دست)(?=\b)";
       public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
-      public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((نصف\s+)?\s+دستة)|({AllIntRegex}\s+دستة))(?=\b)";
-      public const string RoundNumberOrdinalRegex = @"(?:واحدة? بالمئة|واحدة? بالمائة| واحدة? من مائة|واحدة? على مائة|واحدة? من ألف| واحدة? على ألف|واحدة? من مليون|واحدة? على مليون|واحدة? بالمليون|واحدة? من مليار|واحدة? بالمليار|واحدة? بالتريليون|واحدة? من تريليون)";
+      public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((نصف\s+)?\s+(دستة|دستات|دست))|({AllIntRegex}\s+(دستة|دستات|دست)))(?=\b)";
+      public const string RoundNumberOrdinalRegex = @"(?:واحدة? بالمئة|واحدة? بالمائة| واحدة? من مائة|واحدة? على مائة|واحدة? من ألف| واحدة? على ألف|واحدة? من مليون|واحدة? على مليون|واحدة? بالمليون|واحدة? من مليار|ثمن|واحدة? بالمليار|واحدة? بالتريليون|واحدة? من تريليون)";
       public const string NumberOrdinalRegex = @"(?:أولى?|ثانية?|ثالثة?|رابعة?|خامسة?|سادسة?|سابعة?|ثامنة?|تاسعة?|عاشرة?|حادية? عشرة?|ثانية? عشرة?|ثالثة? عشرة?|رابعة? عشرة?|خامسة? عشرة?|ساجسة? عشرة?|سابعة? عشرة?|ثمانية? عشرة?|تاسعة? عشرة?|عشرون|ثلاثون|أربعون|خمسون|ستون|سبعون|ثمانون|تسعون)";
       public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(تالي|سابق|حالي)\s+one|(الsecond|next)\s+to\s+last|الone\s+before\s+الlast(\s+one)?|الlast\s+but\s+one|(ante)?penultimate|last|next|previous|current)";
       public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
@@ -57,9 +57,9 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(and\s+)?)?({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)(?=\b)";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}\s+(and\s+)?)?(an?|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter))|(half))(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(على|في|من)\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
-      public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
+      public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+على\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
-      public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+point){AllPointRegex}";
+      public static readonly string AllFloatRegex = $@"{AllIntRegex}\s*(فاصلة|نقطة)\s*{AllPointRegex}";
       public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e([+-]*[1-9]\d*)(?=\b)";
       public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
@@ -95,25 +95,26 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string OneNumberRangeEqualRegex = $@"{EqualRegex}\s*(ال)?(?<number1>({NumberSplitMark}.)+)";
       public static readonly string TwoNumberRangeRegex1 = $@"بين\s*(ال)?(?<number1>({NumberSplitMark}.)+)\s*و\s*(ال)?(?<number2>({NumberSplitMark}.)+)";
       public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(و|لكن|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})";
-      public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|but|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})";
-      public static readonly string TwoNumberRangeRegex4 = $@"(من\s+)?(?<number1>({NumberSplitMark}(?!\bمن\b).)+)\s*{TillRegex}\s*(ال)?(?<number2>({NumberSplitMark}.)+)";
+      public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(و|لكن|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})";
+      public static readonly string TwoNumberRangeRegex4 = $@"(من\s+)?(?<number1>({NumberSplitMark}(?!\من\b).)+)\s*{TillRegex}\s*(ال)?(?<number2>({NumberSplitMark}.)+)";
       public const string AmbiguousFractionConnectorsRegex = @"(\bمن|في|بين|من|بين\b)";
       public const char DecimalSeparatorChar = '.';
       public const string FractionMarkerToken = @"أكثر";
       public const char NonDecimalSeparatorChar = ',';
       public const string HalfADozenText = @"ستة";
       public const string WordSeparatorToken = @"و";
-      public static readonly string[] WrittenDecimalSeparatorTexts = { @"(نقطة | فاصلة)" };
+      public static readonly string[] WrittenDecimalSeparatorTexts = { @"نقطة | فاصلة" };
       public static readonly string[] WrittenGroupSeparatorTexts = { @"punto" };
       public static readonly string[] WrittenIntegerSeparatorTexts = { @"و" };
       public static readonly string[] WrittenFractionSeparatorTexts = { @"و" };
       public const string HalfADozenRegex = @"نصف?\sدستة";
-      public static readonly string DigitalNumberRegex = $@"((?<=\b)(مائة|ألف|مليون|مليار|ترليون|دستة|دستات)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
+      public static readonly string DigitalNumberRegex = $@"((?<=\b)(مائة|دست|ألف|ألفين|مائتين|ألفين|ثلاثمائة|أربعمائة|خمسمائة|ستمائة|سبعمائة|تسعمائة|ثمانمائة|مليون|مليار|ترليون|دستة|دستات)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
       public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
         {
             { @"واحد", 1 },
             { @"صفر", 0 },
             { @"اثنان", 2 },
+            { @"اثنين", 2 },
             { @"ثلاثة", 3 },
             { @"أربعة", 4 },
             { @"خمسة", 5 },
@@ -142,7 +143,17 @@ namespace Microsoft.Recognizers.Definitions.Arabic
             { @"ثمانون", 80 },
             { @"تسعون", 90 },
             { @"مائة", 100 },
+            { @"مائتين", 200 },
+            { @"ثلاثمائة", 300 },
+            { @"أربعمائة", 400 },
+            { @"خمسمائة", 500 },
+            { @"ستمائة", 600 },
+            { @"سبعمائة", 700 },
+            { @"ثمانمائة", 800 },
+            { @"تسعمائة", 900 },
             { @"ألف", 1000 },
+            { @"آلاف", 1000 },
+            { @"ألفين", 2000 },
             { @"مليون", 1000000 },
             { @"مليار", 1000000000 },
             { @"تريليون", 1000000000000 }
@@ -214,15 +225,21 @@ namespace Microsoft.Recognizers.Definitions.Arabic
             { @"مليون", 1000000 },
             { @"مليار", 1000000000 },
             { @"تريليون", 1000000000000 },
+            { @"مائتين", 200 },
+            { @"ثلاثمائة", 300 },
+            { @"أربعمائة", 400 },
+            { @"خمسمائة", 500 },
+            { @"ستمائة", 600 },
+            { @"سبعمائة", 700 },
+            { @"ثمانمائة", 800 },
+            { @"تسعمائة", 900 },
+            { @"ألفين", 2000 },
             { @"دستة", 12 },
-            { @"دستات", 12 },
-            { @"م", 1000000 },
-            { @"ب", 1000000000 },
-            { @"ت", 1000000000000 }
+            { @"دستات", 12 }
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"\bواحد\b", @"\b(ال|هذا|ذاك|الذي)\s+(واحد)\b" }
+            { @"\bواحد\b", @"\b(الذي|هذا|ذلك|ذاك)\s+(one)\b" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {
@@ -233,10 +250,10 @@ namespace Microsoft.Recognizers.Definitions.Arabic
         };
       public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
         {
-            { @"آخر", @"end" },
-            { @"التالي", @"current" },
-            { @"السابق", @"current" },
-            { @"الحالي", @"current" }
+            { @"آخر", @"نهاية" },
+            { @"التالي", @"الحالي" },
+            { @"السابق", @"الحالي" },
+            { @"الحالي", @"الحالي" }
         };
     }
 }

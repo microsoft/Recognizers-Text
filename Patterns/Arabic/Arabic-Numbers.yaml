@@ -6,7 +6,7 @@ CompoundNumberLanguage: !bool false
 MultiDecimalSeparatorCulture: !bool true
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
-  def: (ال)?(?:مائة|آلاف|ألفين|مائتين|مائتين|مائتان|ثلاثمائة|أربعمائة|خمسمائة|ستمائة|سبعمائة|ثمانمائة|تسعمائة|ألف|ألفين|مليون|مليار|تريليون)
+  def: (ال)?(?:مائة|آلاف|مائتين|مائتان|ثلاثمائة|أربعمائة|خمسمائة|ستمائة|سبعمائة|ثمانمائة|تسعمائة|ألف|ألفين|مليون|مليار|تريليون)
 ZeroToNineIntegerRegex: !simpleRegex
   def: (ال)?(?:ثلاثة|سبعة|ثلاث|سبع|ثامن|ثمانية|أربعة|أربع|خمس|خمسة|صفر|تسع|تسعة|واحد|واحدة|اثنين|اثنتين|اثنان|اثنتين|ست|ستة)
 TwoToNineIntegerRegex: !simpleRegex
@@ -23,7 +23,7 @@ TenToNineteenIntegerRegex: !simpleRegex
 TensNumberIntegerRegex: !simpleRegex
   def: (?:سبعون|سبعين|عشرون|عشرين|ثلاثون|ثلاثين|ثمانون|ثمانين|تسعون|تسعين|أربعون|أربعين|خمسون|خمسين|ستون|ستين)
 SeparaIntRegex: !nestedRegex
-  def:(?:(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+و(\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))
+  def: (?:(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(و\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|({ZeroToNineIntegerRegex}(\s+(و\s+)?|\s*-\s*){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))
   references:
     [
       TenToNineteenIntegerRegex,
@@ -33,7 +33,7 @@ SeparaIntRegex: !nestedRegex
       AnIntRegex,
     ]
 AllIntRegex: !nestedRegex
-  def: (?:{RoundNumberIntegerRegex}((\s*و\s*)*({SeparaIntRegex}))*|((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+و(\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex}|{SeparaIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+و(\s+)?)*{SeparaIntRegex})
+  def: (?:((\s+و\s+)?({SeparaIntRegex}\s+)?({RoundNumberIntegerRegex})(\s+و\s+)({SeparaIntRegex}))+|((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(و\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(و\s+)?)*{SeparaIntRegex})
   references:
     [
       TenToNineteenIntegerRegex,
@@ -57,16 +57,16 @@ RoundNumberIntegerRegexWithLocks: !nestedRegex
   def: (?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [RoundNumberIntegerRegex]
 NumbersWithDozenSuffix: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+دستة(?=\b)
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))(\d+\s+)?(دستة|دستات|دست)(?=\b)
 AllIntRegexWithLocks: !nestedRegex
   def: ((?<=\b){AllIntRegex}(?=\b))
   references: [AllIntRegex]
 AllIntRegexWithDozenSuffixLocks: !nestedRegex
-  def: (?<=\b)(((نصف\s+)?\s+دستة)|({AllIntRegex}\s+دستة))(?=\b)
+  def: (?<=\b)(((نصف\s+)?\s+(دستة|دستات|دست))|({AllIntRegex}\s+(دستة|دستات|دست)))(?=\b)
   references: [AllIntRegex]
 #Ordinal Regex
 RoundNumberOrdinalRegex: !simpleRegex
-  def: (?:واحدة? بالمئة|واحدة? بالمائة| واحدة? من مائة|واحدة? على مائة|واحدة? من ألف| واحدة? على ألف|واحدة? من مليون|واحدة? على مليون|واحدة? بالمليون|واحدة? من مليار|واحدة? بالمليار|واحدة? بالتريليون|واحدة? من تريليون)
+  def: (?:واحدة? بالمئة|واحدة? بالمائة| واحدة? من مائة|واحدة? على مائة|واحدة? من ألف| واحدة? على ألف|واحدة? من مليون|واحدة? على مليون|واحدة? بالمليون|واحدة? من مليار|ثمن|واحدة? بالمليار|واحدة? بالتريليون|واحدة? من تريليون)
 NumberOrdinalRegex: !simpleRegex
   def: (?:أولى?|ثانية?|ثالثة?|رابعة?|خامسة?|سادسة?|سابعة?|ثامنة?|تاسعة?|عاشرة?|حادية? عشرة?|ثانية? عشرة?|ثالثة? عشرة?|رابعة? عشرة?|خامسة? عشرة?|ساجسة? عشرة?|سابعة? عشرة?|ثمانية? عشرة?|تاسعة? عشرة?|عشرون|ثلاثون|أربعون|خمسون|ستون|سبعون|ثمانون|تسعون)
 RelativeOrdinalRegex: !simpleRegex
@@ -237,7 +237,7 @@ TwoNumberRangeRegex2: !nestedRegex
       OneNumberRangeLessRegex2,
     ]
 TwoNumberRangeRegex3: !nestedRegex
-  def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|but|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
+  def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(و|لكن|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
   references:
     [
       OneNumberRangeMoreRegex1,
@@ -264,7 +264,7 @@ WrittenFractionSeparatorTexts: [و]
 HalfADozenRegex: !simpleRegex
   def: نصف?\sدستة
 DigitalNumberRegex: !nestedRegex
-  def: ((?<=\b)(مائة|ألف|مليون|مليار|ترليون|دستة|دستات)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
+  def: ((?<=\b)(مائة|دست|ألف|ألفين|مائتين|ألفين|ثلاثمائة|أربعمائة|خمسمائة|ستمائة|سبعمائة|تسعمائة|ثمانمائة|مليون|مليار|ترليون|دستة|دستات)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [BaseNumbers.MultiplierLookupRegex]
 CardinalNumberMap: !dictionary
   types: [string, long]
@@ -393,6 +393,7 @@ RoundNumberMap: !dictionary
     ثمانمائة: 800
     تسعمائة: 900
     ألف: 1000
+    ألفين: 2000
     مليون: 1000000
     مليار: 1000000000
     تريليون: 1000000000000
@@ -401,7 +402,7 @@ RoundNumberMap: !dictionary
 AmbiguityFiltersDict: !dictionary
   types: [string, string]
   entries:
-    '\bone\b': '\b(the|this|that|which)\s+(one)\b'
+    '\bواحد\b': '\b(الذي|هذا|ذلك|ذاك)\s+(one)\b'
 RelativeReferenceOffsetMap: !dictionary
   types: [string, string]
   entries:
@@ -412,7 +413,8 @@ RelativeReferenceOffsetMap: !dictionary
 RelativeReferenceRelativeToMap: !dictionary
   types: [string, string]
   entries:
-    آخر: end
-    التالي: current
-    السابق: current
-    الحالي: current
+    آخر: نهاية
+    التالي: الحالي
+    السابق: الحالي
+    الحالي: الحالي
+...

@@ -344,6 +344,8 @@
     <None Update="Arabic\ChoiceDefinitions.tt">
     </None>
     <None Update="Arabic\NumbersDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="BaseCurrency.tt">
     </None>
