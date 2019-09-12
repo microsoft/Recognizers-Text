@@ -42,10 +42,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
 
->>>>>>> a9e16b45ae4174726df1911f089d2362ec6bf6cb
     <Compile Update="BaseCurrency.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -481,10 +478,6 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="T5.TextTransform.Tool" Version="1.1.0-*" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT' ">
