@@ -11,7 +11,7 @@ from recognizers_text import ExtractResult
 class SpanishNumberExtractor(BaseNumberExtractor):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict()
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
@@ -19,7 +19,7 @@ class SpanishNumberExtractor(BaseNumberExtractor):
 
     @property
     def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms()
+        return super()._negative_number_terms
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -61,7 +61,7 @@ class SpanishNumberExtractor(BaseNumberExtractor):
 class SpanishCardinalExtractor(BaseNumberExtractor):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict()
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
@@ -69,7 +69,7 @@ class SpanishCardinalExtractor(BaseNumberExtractor):
 
     @property
     def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms()
+        return super()._negative_number_terms
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -103,7 +103,7 @@ class SpanishCardinalExtractor(BaseNumberExtractor):
 class SpanishIntegerExtractor(BaseNumberExtractor):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict()
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
@@ -111,7 +111,7 @@ class SpanishIntegerExtractor(BaseNumberExtractor):
 
     @property
     def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms()
+        return super()._negative_number_terms
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -169,7 +169,7 @@ class SpanishIntegerExtractor(BaseNumberExtractor):
 class SpanishDoubleExtractor(BaseNumberExtractor):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict()
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
@@ -177,7 +177,7 @@ class SpanishDoubleExtractor(BaseNumberExtractor):
 
     @property
     def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms()
+        return super()._negative_number_terms
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -235,7 +235,7 @@ class SpanishDoubleExtractor(BaseNumberExtractor):
 class SpanishFractionExtractor(BaseNumberExtractor):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict()
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
@@ -243,7 +243,7 @@ class SpanishFractionExtractor(BaseNumberExtractor):
 
     @property
     def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms()
+        return super()._negative_number_terms
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -286,7 +286,7 @@ class SpanishFractionExtractor(BaseNumberExtractor):
 class SpanishOrdinalExtractor(BaseNumberExtractor):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict()
+        return super().ambiguity_filters_dict
 
     @property
     def options(self):
@@ -294,7 +294,7 @@ class SpanishOrdinalExtractor(BaseNumberExtractor):
 
     @property
     def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms()
+        return super()._negative_number_terms
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)

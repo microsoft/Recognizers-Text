@@ -365,7 +365,7 @@ class DurationParserConfiguration(ABC):
     @property
     @abstractmethod
     def options(self) -> DateTimeOptions:
-        return DateTimeOptions.NONE
+        return NotImplementedError
 
 
 class BaseDurationParser(DateTimeParser):

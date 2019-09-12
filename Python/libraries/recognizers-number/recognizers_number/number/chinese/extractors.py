@@ -5,6 +5,7 @@ from recognizers_number.number.extractors import ReVal, BaseNumberExtractor
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.constants import Constants
 from recognizers_number.resources.chinese_numeric import ChineseNumeric
+from recognizers_date_time.date_time.utilities import DateTimeOptions
 
 
 class ChineseNumberExtractorMode(Enum):
@@ -13,6 +14,10 @@ class ChineseNumberExtractorMode(Enum):
 
 
 class ChineseNumberExtractor(BaseNumberExtractor):
+    @property
+    def options(self):
+        return self._options
+
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
@@ -30,8 +35,14 @@ class ChineseNumberExtractor(BaseNumberExtractor):
         fraction_ex = ChineseFractionExtractor()
         self.__regexes.extend(fraction_ex.regexes)
 
+        self._options = DateTimeOptions.NONE
+
 
 class ChineseCardinalExtractor(BaseNumberExtractor):
+    @property
+    def options(self):
+        return self._options
+
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
@@ -48,9 +59,14 @@ class ChineseCardinalExtractor(BaseNumberExtractor):
 
         double_ex = ChineseDoubleExtractor()
         self.__regexes.extend(double_ex.regexes)
+        self._options = DateTimeOptions.NONE
 
 
 class ChineseIntegerExtractor(BaseNumberExtractor):
+    @property
+    def options(self):
+        return self._options
+
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
@@ -102,9 +118,14 @@ class ChineseIntegerExtractor(BaseNumberExtractor):
                     val='IntegerChs'
                 )
             )
+        self._options = DateTimeOptions.NONE
 
 
 class ChineseDoubleExtractor(BaseNumberExtractor):
+    @property
+    def options(self):
+        return self._options
+
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
@@ -148,9 +169,14 @@ class ChineseDoubleExtractor(BaseNumberExtractor):
                     ChineseNumeric.DoubleScientificNotationRegex),
                 val='DoublePow')
         ]
+        self._options = DateTimeOptions.NONE
 
 
 class ChineseFractionExtractor(BaseNumberExtractor):
+    @property
+    def options(self):
+        return self._options
+
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
@@ -174,9 +200,14 @@ class ChineseFractionExtractor(BaseNumberExtractor):
                     ChineseNumeric.AllFractionNumber),
                 val='FracChs')
         ]
+        self._options = DateTimeOptions.NONE
 
 
 class ChineseOrdinalExtractor(BaseNumberExtractor):
+    @property
+    def options(self):
+        return self._options
+
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
@@ -195,9 +226,14 @@ class ChineseOrdinalExtractor(BaseNumberExtractor):
                     ChineseNumeric.OrdinalNumbersRegex),
                 val='OrdinalChs')
         ]
+        self._options = DateTimeOptions.NONE
 
 
 class ChinesePercentageExtractor(BaseNumberExtractor):
+    @property
+    def options(self):
+        return self._options
+
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
@@ -297,3 +333,4 @@ class ChinesePercentageExtractor(BaseNumberExtractor):
                     ChineseNumeric.SpecialsFoldsPercentageRegex),
                 val='PerSpe')
         ]
+        self._options = DateTimeOptions.NONE
