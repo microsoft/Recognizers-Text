@@ -39,6 +39,7 @@ namespace Microsoft.Recognizers.Text.Number
         public const string SWEDISH = "Swe";
         public const string BULGARIAN = "Bul";
         public const string TURKISH = "Tr";
+        public const string ARABIC = "Ara";
 
         // Regex Prefixes / Suffixes
         public const string FRACTION_PREFIX = "Frac";

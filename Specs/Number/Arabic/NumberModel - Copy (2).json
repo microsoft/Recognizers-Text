@@ -292,17 +292,17 @@
     ]
   },
   {
-    "Input": "واحد من مائة مليون",
+    "Input": "واحد من مائة تريليون",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "واحد من مائة مليون",
+        "Text": "مائة تريليون",
         "TypeName": "number",
         "Resolution": {
-          "value": "1E-08"
+          "value": "1E-10"
         },
-        "Start": 0,
-        "End": 17
+        "Start": 8,
+        "End": 19
       }
     ]
   },
@@ -367,17 +367,17 @@
     ]
   },
   {
-    "Input": " ثلاث مائة و دستتين",
+    "Input": " ثلاث مائة ودستتين",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "ثلاث مائة و دستتين",
+        "Text": "ثلاث مائة ودستتين",
         "TypeName": "number",
         "Resolution": {
           "value": "324"
         },
         "Start": 1,
-        "End": 18
+        "End": 17
       }
     ]
   },
@@ -625,17 +625,17 @@
     ]
   },
   {
-    "Input": "واحد و عشرون تريليون و ثلاث مائة",
+    "Input": "واحد و عشرون تريليون و ثلاثمائة",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "واحد و عشرون تريليون و ثلاث مائة",
+        "Text": "واحد و عشرون تريليون و ثلاثمائة",
         "TypeName": "number",
         "Resolution": {
           "value": "21000000000300"
         },
         "Start": 0,
-        "End": 31
+        "End": 30
       }
     ]
   },
@@ -2208,7 +2208,7 @@
     ]
   },
   {
-    "Input": "300 و سالب واحد رقمان صالحان.",
+    "Input": "300 وسالب واحد رقمان صالحان.",
     "NotSupported": "javascript, java, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -2227,24 +2227,24 @@
         "Resolution": {
           "value": "-1"
         },
-        "Start": 6,
-        "End": 14
+        "Start": 5,
+        "End": 13
       }
     ]
   },
   {
-    "Input": "ثلاثمائة و واحد رقم صالح",
+    "Input": "ثلاثمائة وواحد رقم صالح",
     "NotSupported": "javascript, java, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "ثلاثمائة و واحد",
+        "Text": "ثلاثمائة وواحد",
         "TypeName": "number",
         "Resolution": {
           "value": "301"
         },
         "Start": 0,
-        "End": 14
+        "End": 13
       }
     ]
   },
@@ -2374,23 +2374,8 @@
     ]
   },
   {
-    "Input": "20دولار أمريكي",
+    "Input": "20 دولار أمريكي",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
-  },
-  {
-    "Input": "مائة ألف",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "مائة ألف",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "100000"
-        },
-        "Start": 0,
-        "End": 7
-      }
-    ]
   }
 ]

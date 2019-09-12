@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
 {
     public class IntegerExtractor : BaseNumberExtractor
     {
-        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture | RegexOptions.RightToLeft;
 
         private static readonly ConcurrentDictionary<string, IntegerExtractor> Instances =
             new ConcurrentDictionary<string, IntegerExtractor>();
@@ -36,11 +36,11 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
                 },
                 {
                     new Regex(NumbersDefinitions.AllIntRegexWithLocks, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.ENGLISH)
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.ARABIC)
                 },
                 {
                     new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.ENGLISH)
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.ARABIC)
                 },
                 {
                     GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder, RegexFlags),
