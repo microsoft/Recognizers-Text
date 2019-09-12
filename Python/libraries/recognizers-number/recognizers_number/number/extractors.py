@@ -77,9 +77,9 @@ class BaseNumberExtractor(Extractor):
                     if src_match is not None:
 
                         original_match_list = list(map(lambda y: [match_source[y], y],
-                                                      filter(lambda x: x.start() == start and
-                                                             len(x.group()) == length,
-                                                      list(match_source))))
+                                                       filter(lambda x: x.start() == start and
+                                                              len(x.group()) == length,
+                                                              list(match_source))))
 
                         original_match = []
                         regs = 0
