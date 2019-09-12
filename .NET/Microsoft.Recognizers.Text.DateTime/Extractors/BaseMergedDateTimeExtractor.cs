@@ -121,10 +121,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret = FilterUnspecificDatePeriod(ret);
 
+            ret = AddMod(ret, text);
+
             // Remove common ambiguous cases
             ret = FilterAmbiguity(ret, text);
 
-            ret = AddMod(ret, text);
+            ret = FilterUnspecificTimePeriod(ret);
 
             // Filtering
             if ((this.config.Options & DateTimeOptions.CalendarMode) != 0)
@@ -240,6 +242,16 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<ExtractResult> FilterUnspecificDatePeriod(List<ExtractResult> ers)
         {
             ers.RemoveAll(o => this.config.UnspecificDatePeriodRegex.IsMatch(o.Text));
+            return ers;
+        }
+
+        private List<ExtractResult> FilterUnspecificTimePeriod(List<ExtractResult> ers)
+        {
+            if (this.config.UnspecificTimePeriodRegex != null)
+            {
+                ers.RemoveAll(o => this.config.UnspecificTimePeriodRegex.IsExactMatch(o.Text, true));
+            }
+
             return ers;
         }
 

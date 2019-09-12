@@ -59,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex UnspecificDatePeriodRegex { get; }
 
+        Regex UnspecificTimePeriodRegex { get; }
+
         // Regex to act as umbrella for key terms so that sentences that clearly don't have entities can be rejected quickly
         Regex FailFastRegex { get; }
 
