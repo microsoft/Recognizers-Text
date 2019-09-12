@@ -12,6 +12,14 @@ from .time_extractor_config import EnglishTimeExtractorConfiguration
 
 class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
     @property
+    def options(self):
+        return self._options
+
+    @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
+
+    @property
     def simple_cases_regex(self) -> List[Pattern]:
         return self._simple_cases_regex
 

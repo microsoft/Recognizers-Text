@@ -1,6 +1,5 @@
 from typing import Pattern, Dict
 
-
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.parsers import BaseNumberParser
@@ -13,6 +12,10 @@ from .duration_extractor_config import EnglishDurationExtractorConfiguration
 
 
 class EnglishDurationParserConfiguration(DurationParserConfiguration):
+    @property
+    def options(self):
+        return self._cardinal_extractor
+
     @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
         return self._cardinal_extractor

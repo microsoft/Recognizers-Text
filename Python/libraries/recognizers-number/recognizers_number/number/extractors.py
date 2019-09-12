@@ -76,9 +76,18 @@ class BaseNumberExtractor(Extractor):
 
                     if src_match is not None:
 
-                        original_match = min(list(map(lambda y: [match_source[y], y],
+                        original_match_list = list(map(lambda y: [match_source[y], y],
                                                       filter(lambda x: x.start() == start and
-                                                             len(x.group()) == length, list(match_source)))))
+                                                             len(x.group()) == length,
+                                                      list(match_source))))
+
+                        original_match = []
+                        regs = 0
+                        for om in original_match_list:
+                            if om not in original_match:
+                                if len(om[1].regs) > regs:
+                                    regs = len(om[1].regs)
+                                    original_match.append(om)
 
                         # extract negative numbers
                         if self._negative_number_terms is not None:
