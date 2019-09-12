@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Recognizers.Definitions.Portuguese;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese

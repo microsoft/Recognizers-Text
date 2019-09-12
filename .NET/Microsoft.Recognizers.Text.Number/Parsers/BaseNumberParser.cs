@@ -359,11 +359,11 @@ namespace Microsoft.Recognizers.Text.Number
 
                 var smallValue = char.IsDigit(numerator[0]) ?
                     GetDigitalValue(numerator, 1) :
-                    GetIntValue(GetMatches(numerator));
+                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
 
                 var bigValue = char.IsDigit(denominator[0]) ?
                     GetDigitalValue(denominator, 1) :
-                    GetIntValue(GetMatches(denominator));
+                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
 
                 result.Value = smallValue / bigValue;
             }
@@ -475,14 +475,14 @@ namespace Microsoft.Recognizers.Text.Number
                     if (i < fracWords.Count - 1 && Config.WrittenFractionSeparatorTexts.Contains(fracWords[i]))
                     {
                         var numerStr = string.Join(" ", fracWords.GetRange(i + 1, fracWords.Count - 1 - i));
-                        numerValue = GetIntValue(GetMatches(numerStr));
+                        numerValue = GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerStr));
                         mixedIndex = i + 1;
                         break;
                     }
                 }
 
                 var intStr = string.Join(" ", fracWords.GetRange(0, mixedIndex));
-                intValue = GetIntValue(GetMatches(intStr));
+                intValue = GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, intStr));
 
                 // Find mixed number
                 if (mixedIndex != fracWords.Count && numerValue < denominator)
@@ -694,22 +694,6 @@ namespace Microsoft.Recognizers.Text.Number
             const int decimalLength = 3;
 
             return ch == Config.NonDecimalSeparatorChar && !(distance <= decimalLength && isMultiDecimalSeparatorCulture);
-        }
-
-        private List<string> GetMatches(string input)
-        {
-            var successMatch = TextNumberRegex.Match(input);
-            var matchStrs = new List<string>();
-
-            // Store all match str.
-            while (successMatch.Success)
-            {
-                var matchStr = successMatch.Groups[0].Value;
-                matchStrs.Add(matchStr);
-                successMatch = successMatch.NextMatch();
-            }
-
-            return matchStrs;
         }
 
         private double GetIntValue(List<string> matchStrs)
