@@ -413,6 +413,11 @@ PrepositionRegex: !simpleRegex
   def: (?<prep>^(at|on|of)(\s+the)?$)
 LaterEarlyRegex: !simpleRegex
   def: ((?<early>early(\s+|-))|(?<late>late(r?\s+|-)))
+MealTimeRegex: !simpleRegex
+  def: \b(?<mealTime>breakfast|brunch|lunch(time)?|dinner(time)?|supper)\b
+UnspecificTimePeriodRegex: !nestedRegex
+  def: ({MealTimeRegex})
+  references: [ MealTimeRegex ]
 TimeOfDayRegex: !nestedRegex
   def: \b(?<timeOfDay>((((in\s+(the)?\s+)?{LaterEarlyRegex}?(in\s+(the)?\s+)?(morning|afternoon|night|evening)))|{MealTimeRegex}|(((in\s+(the)?\s+)?)(daytime|business\s+hour)))s?)\b
   references: [ LaterEarlyRegex, MealTimeRegex ]
@@ -581,9 +586,6 @@ SingleAmbiguousTermsRegex: !simpleRegex
   def: ^(the\s+)?(day|week|month|year)$
 UnspecificDatePeriodRegex: !simpleRegex
   def: ^(week(end)?|month|year)$
-UnspecificTimePeriodRegex: !nestedRegex
-  def: {MealTimeRegex}
-  references: [ MealTimeRegex ]
 PrepositionSuffixRegex: !simpleRegex
   def: \b(on|in|at|around|from|to)$
 FlexibleDayRegex: !simpleRegex
@@ -601,8 +603,6 @@ RestOfDateRegex: !simpleRegex
   def: \brest\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>week|month|year|decade)\b
 RestOfDateTimeRegex: !simpleRegex
   def: \brest\s+(of\s+)?((the|my|this|current)\s+)?(?<unit>day)\b
-MealTimeRegex: !simpleRegex
-  def: (breakfast|brunch|lunch(time)?|dinner(time)?|supper)
 AmbiguousRangeModifierPrefix: !simpleRegex
   def: (from)
 NumberEndingPattern: !nestedRegex
