@@ -91,21 +91,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 timeOfDay = Constants.BusinessHour;
             }
-            else if (DateTimeDefinitions.BreakfastTermList.Any(o => trimmedText.Contains(o)))
+            else if (DateTimeDefinitions.MealtimeBreakfastTermList.Any(o => trimmedText.Contains(o)))
             {
-                timeOfDay = Constants.Breakfast;
+                timeOfDay = Constants.MealtimeBreakfast;
             }
-            else if (DateTimeDefinitions.BrunchTermList.Any(o => trimmedText.Contains(o)))
+            else if (DateTimeDefinitions.MealtimeBrunchTermList.Any(o => trimmedText.Contains(o)))
             {
-                timeOfDay = Constants.Brunch;
+                timeOfDay = Constants.MealtimeBrunch;
             }
-            else if (DateTimeDefinitions.LunchTermList.Any(o => trimmedText.Contains(o)))
+            else if (DateTimeDefinitions.MealtimeLunchTermList.Any(o => trimmedText.Contains(o)))
             {
-                timeOfDay = Constants.Lunch;
+                timeOfDay = Constants.MealtimeLunch;
             }
-            else if (DateTimeDefinitions.DinnerTermList.Any(o => trimmedText.Contains(o)))
+            else if (DateTimeDefinitions.MealtimeDinnerTermList.Any(o => trimmedText.Contains(o)))
             {
-                timeOfDay = Constants.Dinner;
+                timeOfDay = Constants.MealtimeDinner;
             }
             else
             {

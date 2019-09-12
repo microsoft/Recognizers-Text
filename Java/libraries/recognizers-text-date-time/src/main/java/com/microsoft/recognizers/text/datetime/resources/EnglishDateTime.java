@@ -1328,13 +1328,13 @@ public class EnglishDateTime {
 
     public static final List<String> EveningTermList = Arrays.asList("evening");
 
-    public static final List<String> BreakfastTermList = Arrays.asList("breakfast");
+    public static final List<String> MealtimeBreakfastTermList = Arrays.asList("breakfast");
 
-    public static final List<String> BrunchTermList = Arrays.asList("brunch");
+    public static final List<String> MealtimeBrunchTermList = Arrays.asList("brunch");
 
-    public static final List<String> LunchTermList = Arrays.asList("lunch", "lunchtime");
+    public static final List<String> MealtimeLunchTermList = Arrays.asList("lunch", "lunchtime");
 
-    public static final List<String> DinnerTermList = Arrays.asList("dinner", "dinnertime", "supper");
+    public static final List<String> MealtimeDinnerTermList = Arrays.asList("dinner", "dinnertime", "supper");
 
     public static final List<String> DaytimeTermList = Arrays.asList("daytime");
 

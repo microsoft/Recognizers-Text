@@ -255,23 +255,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                     result.EndHour = 23;
                     result.EndMin = 59;
                     break;
-                case Constants.Breakfast:
-                    result.Timex = Constants.Breakfast;
+                case Constants.MealtimeBreakfast:
+                    result.Timex = Constants.MealtimeBreakfast;
                     result.BeginHour = 8;
                     result.EndHour = 12;
                     break;
-                case Constants.Brunch:
-                    result.Timex = Constants.Brunch;
+                case Constants.MealtimeBrunch:
+                    result.Timex = Constants.MealtimeBrunch;
                     result.BeginHour = 8;
                     result.EndHour = 12;
                     break;
-                case Constants.Lunch:
-                    result.Timex = Constants.Lunch;
+                case Constants.MealtimeLunch:
+                    result.Timex = Constants.MealtimeLunch;
                     result.BeginHour = 11;
                     result.EndHour = 13;
                     break;
-                case Constants.Dinner:
-                    result.Timex = Constants.Dinner;
+                case Constants.MealtimeDinner:
+                    result.Timex = Constants.MealtimeDinner;
                     result.BeginHour = 16;
                     result.EndHour = 20;
                     break;

@@ -1100,20 +1100,20 @@ EveningTermList: !list
   types: [ string ]
   entries: 
     - evening
-BreakfastTermList: !list
+MealtimeBreakfastTermList: !list
   types: [ string ]
   entries: 
     - breakfast
-BrunchTermList: !list
+MealtimeBrunchTermList: !list
   types: [ string ]
   entries: 
     - brunch
-LunchTermList: !list
+MealtimeLunchTermList: !list
   types: [ string ]
   entries: 
     - lunch
     - lunchtime
-DinnerTermList: !list
+MealtimeDinnerTermList: !list
   types: [ string ]
   entries: 
     - dinner

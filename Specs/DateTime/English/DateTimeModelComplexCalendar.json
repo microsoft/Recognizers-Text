@@ -12505,6 +12505,8 @@
   },
   {
     "Input": "We will have lunch together with Jim",
+    "Comment":"Disable this for now because of new features in .NET",
+    "NotSupported": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },

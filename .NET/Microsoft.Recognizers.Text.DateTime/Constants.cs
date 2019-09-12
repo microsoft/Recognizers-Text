@@ -162,10 +162,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string Daytime = "TDT";
         public const string Night = "TNI";
         public const string BusinessHour = "TBH";
-        public const string Breakfast = "TMEB";
-        public const string Brunch = "TMER";
-        public const string Lunch = "TMEL";
-        public const string Dinner = "TMED";
+        public const string MealtimeBreakfast = "TMEB";
+        public const string MealtimeBrunch = "TMER";
+        public const string MealtimeLunch = "TMEL";
+        public const string MealtimeDinner = "TMED";
 
         // Invalid year
         public const int InvalidYear = int.MinValue;
