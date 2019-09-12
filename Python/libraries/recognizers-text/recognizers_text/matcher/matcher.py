@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from typing import List
 from recognizers_text.model import ModelResult
 
+
 class Matcher(ABC):
 
     @abstractmethod
