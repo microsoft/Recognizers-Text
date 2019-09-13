@@ -528,16 +528,21 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
             idx += 1
         return tokens
 
-    def merge_multiple_extractions(self, source: str, er: [ExtractResult]):
+    def merge_multiple_extractions(self, source: str, erd: [ExtractResult]):
         tokens = []
 
         metadata = Metadata()
         metadata.possibly_included_period_end = True
 
+        if len(erd) < 1:
+            return tokens
+        er = []
+        for x in erd:
+            if x.data is not None:
+                er.append(x)
+        idx = 0
         if len(er) < 1:
             return tokens
-
-        idx = 0
 
         while idx < len(er) - 1:
             middle_begin = er[idx].start + (er[idx].length or 0)
