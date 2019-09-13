@@ -1,4 +1,4 @@
-from recognizers_text.Matcher.simple_tokenizer import SimpleTokenizer
+from recognizers_text.matcher.simple_tokenizer import SimpleTokenizer
 
 
 class TestSimpleTokenizer:

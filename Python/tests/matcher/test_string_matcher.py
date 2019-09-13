@@ -1,5 +1,5 @@
-from recognizers_text.Matcher.string_matcher import StringMatcher
-from recognizers_text.Matcher.match_result import MatchResult
+from recognizers_text.matcher.string_matcher import StringMatcher
+from recognizers_text.matcher.match_result import MatchResult
 
 
 class TestStringMatcher:
