@@ -310,7 +310,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             var matches = this.config.TimeOfDayRegex.Matches(text);
             foreach (Match match in matches)
             {
-                ret.Add(new Token(match.Index, match.Index + match.Length));
+                Metadata metadata = null;
+
+                if (match.Groups[Constants.MealTimeGroupName].Success)
+                {
+                    metadata = new Metadata
+                    {
+                        IsMealtime = true,
+                    };
+                }
+
+                var token = new Token(match.Index, match.Index + match.Length, metadata);
+
+                ret.Add(token);
             }
 
             return ret;

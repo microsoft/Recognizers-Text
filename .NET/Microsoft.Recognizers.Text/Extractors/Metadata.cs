@@ -21,5 +21,7 @@
         public string Offset { get; set; } = string.Empty;
 
         public string RelativeTo { get; set; } = string.Empty;
+
+        public bool IsMealtime { get; set; } = false;
     }
 }
