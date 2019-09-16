@@ -14531,5 +14531,29 @@
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
     "Results": []
+  },
+  {
+    "Input": "We will have that staff dinner seven p . m .",
+    "NotSupported": "javascript, python, java",
+    "Context": {
+      "ReferenceDateTime": "2019-09-12T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "seven p . m .",
+        "Start": 31,
+        "End": 43,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

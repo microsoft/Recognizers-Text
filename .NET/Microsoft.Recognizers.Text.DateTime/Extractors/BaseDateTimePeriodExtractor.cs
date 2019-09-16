@@ -312,7 +312,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Regarding the phrase as-- {Date} {TimePeriod}, like "2015-9-23 1pm to 4"
             // Or {TimePeriod} on {Date}, like "1:30 to 4 on 2015-9-23"
             var timePeriodErs = config.TimePeriodExtractor.Extract(text, reference);
-            dateErs.AddRange(timePeriodErs);
+
+            // Mealtime periods (like "dinnertime") are not currently fully supported in merging.
+            foreach (var timePeriod in timePeriodErs)
+            {
+                if (timePeriod.Metadata == null || !timePeriod.Metadata.IsMealtime)
+                {
+                    dateErs.Add(timePeriod);
+                }
+            }
 
             var points = dateErs.OrderBy(x => x.Start).ToList();
 

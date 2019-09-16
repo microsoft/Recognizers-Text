@@ -12511,5 +12511,34 @@
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
     "Results": []
+  },
+  {
+    "Input": "We will have that staff dinner march twenty second at seven p . m .",
+    "NotSupported": "javascript, python, java",
+    "Context": {
+      "ReferenceDateTime": "2019-09-12T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "march twenty second at seven p . m .",
+        "Start": 31,
+        "End": 66,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-03-22T19",
+              "type": "datetime",
+              "value": "2019-03-22 19:00:00"
+            },
+            {
+              "timex": "XXXX-03-22T19",
+              "type": "datetime",
+              "value": "2020-03-22 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
