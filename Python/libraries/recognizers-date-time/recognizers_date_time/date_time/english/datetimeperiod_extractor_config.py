@@ -16,6 +16,7 @@ from .time_extractor_config import EnglishTimeExtractorConfiguration
 from .duration_extractor_config import EnglishDurationExtractorConfiguration
 from .timeperiod_extractor_config import EnglishTimePeriodExtractorConfiguration
 from .datetime_extractor_config import EnglishDateTimeExtractorConfiguration
+from ..utilities import DateTimeOptions
 
 
 class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
@@ -225,6 +226,7 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         self._suffix_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.SuffixRegex
         )
+        self._options = DateTimeOptions.NONE
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         if source.endswith('from'):

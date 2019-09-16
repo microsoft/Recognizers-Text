@@ -8,6 +8,7 @@ from ..extractors import DateTimeExtractor
 from ..base_timeperiod import TimePeriodExtractorConfiguration, MatchedIndex
 from ..base_time import BaseTimeExtractor
 from .time_extractor_config import EnglishTimeExtractorConfiguration
+from ..utilities import DateTimeOptions
 
 
 class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
@@ -67,6 +68,7 @@ class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         self._integer_extractor = EnglishIntegerExtractor()
         self._token_before_date = EnglishDateTime.TokenBeforeDate
         self._pure_number_regex = [EnglishDateTime.PureNumFromTo, EnglishDateTime.PureNumFromTo]
+        self._options = DateTimeOptions.NONE
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         index = -1
