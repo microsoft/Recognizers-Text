@@ -21,10 +21,6 @@ class SpanishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         return self._dmy_date_format
 
     @property
-    def options(self):
-        return self._options
-
-    @property
     def date_point_extractor(self) -> DateTimeExtractor:
         return self._date_point_extractor
 
@@ -109,6 +105,7 @@ class SpanishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         return self._year_regex
 
     def __init__(self):
+        super().__init__()
         self.preposition_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.PrepositionRegex)
         self._now_regex = RegExpUtility.get_safe_reg_exp(
@@ -160,7 +157,6 @@ class SpanishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         self._duration_extractor = BaseDurationExtractor(
             SpanishDurationExtractorConfiguration())
         self._utility_configuration = SpanishDateTimeUtilityConfiguration()
-        self._options = DateTimeOptions.NONE
 
     def is_connector_token(self, source: str) -> bool:
         return source.strip() == '' or regex.search(self.connector_regex, source) is not None or regex.search(

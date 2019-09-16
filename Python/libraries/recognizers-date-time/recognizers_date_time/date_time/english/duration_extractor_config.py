@@ -5,18 +5,10 @@ from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.english.extractors import EnglishCardinalExtractor
 from ...resources.english_date_time import EnglishDateTime
 from ..base_duration import DurationExtractorConfiguration
-from ..utilities import BaseDateTimeOptionsConfiguration
-from ..utilities import DateTimeOptions
+from ..utilities import DateTimeOptionsConfiguration
 
 
-class EnglishDurationExtractorConfiguration(BaseDateTimeOptionsConfiguration, DurationExtractorConfiguration):
-    @property
-    def options(self):
-        return self._options
-
-    @property
-    def dmy_date_format(self) -> bool:
-        return self._dmy_date_format
+class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
 
     @property
     def all_regex(self) -> Pattern:
@@ -83,6 +75,7 @@ class EnglishDurationExtractorConfiguration(BaseDateTimeOptionsConfiguration, Du
         return self._less_than_regex
 
     def __init__(self):
+        super().__init__()
         self._all_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.AllRegex)
         self._half_regex: Pattern = RegExpUtility.get_safe_reg_exp(
@@ -118,4 +111,3 @@ class EnglishDurationExtractorConfiguration(BaseDateTimeOptionsConfiguration, Du
         self._less_than_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.LessThanRegex
         )
-        self._options = DateTimeOptions.NONE

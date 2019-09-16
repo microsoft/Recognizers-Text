@@ -11,9 +11,6 @@ from .time_extractor_config import EnglishTimeExtractorConfiguration
 
 
 class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
-    @property
-    def options(self):
-        return self._options
 
     @property
     def dmy_date_format(self) -> bool:
@@ -52,6 +49,7 @@ class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         return self._pure_number_regex
 
     def __init__(self):
+        super().__init__()
         self._simple_cases_regex: List[Pattern] = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumFromTo),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumBetweenAnd)

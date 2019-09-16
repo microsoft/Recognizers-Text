@@ -5,13 +5,9 @@ from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.spanish.extractors import SpanishCardinalExtractor
 from ...resources.spanish_date_time import SpanishDateTime
 from ..base_duration import DurationExtractorConfiguration
-from ..utilities import BaseDateTimeOptionsConfiguration, DateTimeOptions
 
 
 class SpanishDurationExtractorConfiguration(DurationExtractorConfiguration):
-    @property
-    def options(self):
-        return self._options
 
     @property
     def dmy_date_format(self) -> bool:
@@ -90,6 +86,7 @@ class SpanishDurationExtractorConfiguration(DurationExtractorConfiguration):
         return self._less_than_regex
 
     def __init__(self):
+        super().__init__()
         self._all_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.AllRegex)
         self._half_regex: Pattern = RegExpUtility.get_safe_reg_exp(
@@ -128,5 +125,3 @@ class SpanishDurationExtractorConfiguration(DurationExtractorConfiguration):
         self._less_than_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.LessThanRegex
         )
-
-        self._options = DateTimeOptions.NONE

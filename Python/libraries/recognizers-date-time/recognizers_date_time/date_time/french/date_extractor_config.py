@@ -15,9 +15,6 @@ from ..utilities import DateTimeOptions
 
 
 class FrenchDateExtractorConfiguration(DateExtractorConfiguration):
-    @property
-    def options(self):
-        return self._options
 
     @property
     def date_regex_list(self) -> List[Pattern]:
@@ -128,7 +125,6 @@ class FrenchDateExtractorConfiguration(DateExtractorConfiguration):
         return self._week_day_and_day_regex
 
     def __init__(self):
-        self._options = DateTimeOptions.NONE
         if FrenchDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
             date_extractor_4 = FrenchDateTime.DateExtractor5
             date_extractor_5 = FrenchDateTime.DateExtractor4

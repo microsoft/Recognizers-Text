@@ -1,6 +1,5 @@
 from typing import List, Pattern
 
-from recognizers_text.extractor import Extractor
 from recognizers_number import BaseNumberExtractor, FrenchCardinalExtractor
 from recognizers_text.utilities import RegExpUtility
 from ...resources.french_date_time import FrenchDateTime
@@ -16,17 +15,9 @@ from .time_extractor_config import FrenchTimeExtractorConfiguration
 from .duration_extractor_config import FrenchDurationExtractorConfiguration
 from .timeperiod_extractor_config import FrenchTimePeriodExtractorConfiguration
 from .datetime_extractor_config import FrenchDateTimeExtractorConfiguration
-from ..utilities import DateTimeOptions
 
 
 class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
-    @property
-    def options(self):
-        return self._options
-
-    @property
-    def dmy_date_format(self) -> bool:
-        return self._dmy_date_format
 
     @property
     def suffix_regex(self) -> Pattern:
@@ -125,20 +116,8 @@ class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
         return self._within_next_prefix_regex
 
     @property
-    def time_unit_regex(self) -> Pattern:
-        return self._time_unit_regex
-
-    @property
-    def cardinal_extractor(self) -> Extractor:
-        return self._cardinal_extractor
-
-    @property
     def token_before_date(self) -> str:
         return self._token_before_date
-
-    @property
-    def within_next_prefix_regex(self) -> Pattern:
-        return self._within_next_prefix_regex
 
     @property
     def future_suffix_regex(self) -> Pattern:
@@ -169,6 +148,7 @@ class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
         return self._after_regex
 
     def __init__(self):
+        super().__init__()
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.PureNumFromTo),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.PureNumBetweenAnd),
@@ -231,9 +211,6 @@ class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
             FrenchDateTime.TimeUnitRegex
         )
         self._token_before_date = FrenchDateTime.TokenBeforeDate
-        self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            FrenchDateTime.WithinNextPrefixRegex
-        )
         self._future_suffix_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.FutureSuffixRegex
         )
@@ -256,7 +233,9 @@ class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
         self._after_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.AfterRegex
         )
-        self._options = DateTimeOptions.NONE
+        self._suffix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SuffixRegex
+        )
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)

@@ -8,10 +8,6 @@ from ..utilities import DateTimeOptions
 
 class FrenchTimeExtractorConfiguration(TimeExtractorConfiguration):
     @property
-    def options(self):
-        return self._options
-
-    @property
     def dmy_date_format(self) -> bool:
         return self._dmy_date_format
 
@@ -36,6 +32,7 @@ class FrenchTimeExtractorConfiguration(TimeExtractorConfiguration):
         return self._time_before_after_regex
 
     def __init__(self):
+        super().__init__()
         self._time_regex_list: List[Pattern] = FrenchTimeExtractorConfiguration.get_time_regex_list(
         )
         self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(

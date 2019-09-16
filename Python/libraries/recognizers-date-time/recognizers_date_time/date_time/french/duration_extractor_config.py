@@ -9,9 +9,6 @@ from ..utilities import DateTimeOptions
 
 
 class FrenchDurationExtractorConfiguration(DurationExtractorConfiguration):
-    @property
-    def options(self):
-        return self._options
 
     @property
     def dmy_date_format(self) -> bool:
@@ -90,7 +87,7 @@ class FrenchDurationExtractorConfiguration(DurationExtractorConfiguration):
         return self._less_than_regex
 
     def __init__(self):
-        self._options = DateTimeOptions.NONE
+        super().__init__()
         self._all_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.AllRegex)
         self._half_regex: Pattern = RegExpUtility.get_safe_reg_exp(

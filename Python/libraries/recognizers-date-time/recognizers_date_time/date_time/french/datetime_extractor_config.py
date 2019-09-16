@@ -17,13 +17,6 @@ from ..utilities import DateTimeOptions
 
 
 class FrenchDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
-    @property
-    def dmy_date_format(self) -> bool:
-        return self._dmy_date_format
-
-    @property
-    def options(self):
-        return self._options
 
     @property
     def date_point_extractor(self) -> DateTimeExtractor:
@@ -110,7 +103,7 @@ class FrenchDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         return self._year_regex
 
     def __init__(self):
-        self._options = DateTimeOptions.NONE
+        super().__init__()
         self.preposition_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.PrepositionRegex)
         self._now_regex = RegExpUtility.get_safe_reg_exp(
