@@ -45,6 +45,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex UnspecificDatePeriodRegex =
             new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
 
+        public static readonly Regex UnspecificTimePeriodRegex =
+            new Regex(DateTimeDefinitions.UnspecificTimePeriodRegex, RegexFlags);
+
         public static readonly Regex FailFastRegex =
             new Regex(DateTimeDefinitions.FailFastRegex, RegexFlags | RegexOptions.Compiled);
 
@@ -136,6 +139,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IMergedExtractorConfiguration.SuffixAfterRegex => SuffixAfterRegex;
 
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
+
+        Regex IMergedExtractorConfiguration.UnspecificTimePeriodRegex => UnspecificTimePeriodRegex;
 
         Regex IMergedExtractorConfiguration.FailFastRegex => FailFastRegex;
 

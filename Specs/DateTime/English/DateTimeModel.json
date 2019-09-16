@@ -2283,10 +2283,11 @@
   },
   {
     "Input": "Book this lunch in my calendar on Tue May 9. Don't contact people.",
+    "Comment":"Disable this for now because of new features in .NET",
+    "NotSupported": "javascript, python, Java",
     "Context": {
       "ReferenceDateTime": "2018-01-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "tue may 9",
@@ -14445,5 +14446,90 @@
         }
       }
     ]
+  },
+  {
+    "Input": "let's meet after breakfast",
+    "Context": {
+      "ReferenceDateTime": "2019-09-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "after breakfast",
+        "Start": 11,
+        "End": 25,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMEB",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "let's meet before lunch",
+    "Context": {
+      "ReferenceDateTime": "2019-09-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "before lunch",
+        "Start": 11,
+        "End": 22,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMEL",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "11:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "let's meet around dinner",
+    "Context": {
+      "ReferenceDateTime": "2019-09-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "around dinner",
+        "Start": 11,
+        "End": 23,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMED",
+              "Mod": "approx",
+              "type": "timerange",
+              "start": "16:00:00",
+              "end": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We will have lunch together with Jim",
+    "Comment":"Disable this for now because of new features in .NET",
+    "NotSupported": "javascript, python, java",
+    "Context": {
+      "ReferenceDateTime": "2019-09-12T00:00:00"
+    },
+    "Results": []
   }
 ]

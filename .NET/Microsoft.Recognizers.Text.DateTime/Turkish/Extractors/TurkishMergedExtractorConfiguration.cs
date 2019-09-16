@@ -136,6 +136,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
 
+        Regex IMergedExtractorConfiguration.UnspecificTimePeriodRegex => null;
+
         Regex IMergedExtractorConfiguration.FailFastRegex => FailFastRegex;
 
         IEnumerable<Regex> IMergedExtractorConfiguration.TermFilterRegexes => TermFilterRegexes;

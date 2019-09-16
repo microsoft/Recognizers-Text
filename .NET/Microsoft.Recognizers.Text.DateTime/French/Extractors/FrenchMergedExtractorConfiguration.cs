@@ -122,6 +122,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
 
+        Regex IMergedExtractorConfiguration.UnspecificTimePeriodRegex => null;
+
         public Regex FailFastRegex { get; } = null;
 
         IEnumerable<Regex> IMergedExtractorConfiguration.TermFilterRegexes => TermFilterRegexes;

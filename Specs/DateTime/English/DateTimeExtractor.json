@@ -650,6 +650,8 @@
   },
   {
     "Input": "ADD LUNCH AT 12:30 PM ON FRI",
+    "Comment":"Disable this for now because of new features in .NET",
+    "NotSupported": "javascript, python, Java",
     "Results": [
       {
         "Text": "12:30 PM ON FRI",

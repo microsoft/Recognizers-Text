@@ -2171,10 +2171,11 @@
   },
   {
     "Input": "Book this lunch in my calendar on Tue May 9. Don't contact people.",
+    "Comment":"Disable this for now because of new features in .NET",
+    "NotSupported": "javascript, python, Java",
     "Context": {
       "ReferenceDateTime": "2018-01-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "tue may 9",
