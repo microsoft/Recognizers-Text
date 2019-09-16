@@ -10,9 +10,6 @@ from recognizers_number.number.constants import Constants
 
 
 class PortugueseNumberExtractor(BaseNumberExtractor):
-    @property
-    def options(self):
-        return self._options
 
     @property
     def regexes(self) -> List[ReVal]:
@@ -27,6 +24,7 @@ class PortugueseNumberExtractor(BaseNumberExtractor):
         return self.__negative_number_terms
 
     def __init__(self, mode: NumberMode = NumberMode.DEFAULT, options: NumberOptions = NumberOptions.NONE):
+        super().__init__(options)
         self.__negative_number_terms = RegExpUtility.get_safe_reg_exp(
             PortugueseNumeric.NegativeNumberTermsRegex)
         self.__regexes: List[ReVal] = list()
@@ -59,6 +57,7 @@ class PortugueseCardinalExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_CARDINAL
 
     def __init__(self, placeholder: str = PortugueseNumeric.PlaceHolderDefault):
+        super().__init__()
         self.__regexes: List[ReVal] = list()
 
         # Add integer regexes
@@ -80,6 +79,7 @@ class PortugueseIntegerExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_INTEGER
 
     def __init__(self, placeholder: str = PortugueseNumeric.PlaceHolderDefault):
+        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -130,6 +130,7 @@ class PortugueseDoubleExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_DOUBLE
 
     def __init__(self, placeholder):
+        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -180,6 +181,7 @@ class PortugueseFractionExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_FRACTION
 
     def __init__(self):
+        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -214,6 +216,7 @@ class PortugueseOrdinalExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_ORDINAL
 
     def __init__(self):
+        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
