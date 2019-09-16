@@ -5,6 +5,7 @@ using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Turkish;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Turkish;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {

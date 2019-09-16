@@ -1,6 +1,5 @@
 from .matcher import Matcher
 from abc import abstractmethod
-from .node import Node
 
 
 class AbstractMatcher(Matcher):

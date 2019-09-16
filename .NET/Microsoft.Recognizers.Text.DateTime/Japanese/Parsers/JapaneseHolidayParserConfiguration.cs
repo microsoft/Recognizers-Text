@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Japanese;
-
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
