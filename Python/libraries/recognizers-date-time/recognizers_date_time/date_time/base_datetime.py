@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime, timedelta
 from collections import namedtuple

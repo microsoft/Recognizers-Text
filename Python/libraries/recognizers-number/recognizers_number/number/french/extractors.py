@@ -8,17 +8,13 @@ from recognizers_number.number.models import NumberMode, LongFormatMode
 from recognizers_number.resources.french_numeric import FrenchNumeric
 from recognizers_number.number.extractors import ReVal, BaseNumberExtractor, BasePercentageExtractor
 from recognizers_number.number.constants import Constants
-from recognizers_date_time.date_time.utilities import DateTimeOptions
+from ..number_options import NumberOptions
 
 
 class FrenchNumberExtractor(BaseNumberExtractor):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
         return super().ambiguity_filters_dict
-
-    @property
-    def options(self):
-        return self._options
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -42,6 +38,7 @@ class FrenchNumberExtractor(BaseNumberExtractor):
         return self.__negative_number_terms
 
     def __init__(self, mode: NumberMode = NumberMode.DEFAULT):
+        super().__init__()
         self.__negative_number_terms = RegExpUtility.get_safe_reg_exp(
             FrenchNumeric.NegativeNumberTermsRegex)
         self.__regexes: List[ReVal] = list()
@@ -69,10 +66,6 @@ class FrenchCardinalExtractor(BaseNumberExtractor):
         return super().ambiguity_filters_dict
 
     @property
-    def options(self):
-        return self._options
-
-    @property
     def _negative_number_terms(self) -> Pattern:
         return super()._negative_number_terms
 
@@ -94,6 +87,7 @@ class FrenchCardinalExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_CARDINAL
 
     def __init__(self, placeholder: str = FrenchNumeric.PlaceHolderDefault):
+        super().__init__()
         self.__regexes: List[ReVal] = list()
 
         # Add integer regexes
@@ -109,10 +103,6 @@ class FrenchIntegerExtractor(BaseNumberExtractor):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
         return super().ambiguity_filters_dict
-
-    @property
-    def options(self):
-        return self._options
 
     @property
     def _negative_number_terms(self) -> Pattern:
@@ -136,6 +126,7 @@ class FrenchIntegerExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_INTEGER
 
     def __init__(self, placeholder: str = FrenchNumeric.PlaceHolderDefault):
+        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -182,10 +173,6 @@ class FrenchDoubleExtractor(BaseNumberExtractor):
         return super().ambiguity_filters_dict
 
     @property
-    def options(self):
-        return self._options
-
-    @property
     def _negative_number_terms(self) -> Pattern:
         return super()._negative_number_terms
 
@@ -207,6 +194,7 @@ class FrenchDoubleExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_DOUBLE
 
     def __init__(self, placeholder):
+        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -253,10 +241,6 @@ class FrenchFractionExtractor(BaseNumberExtractor):
         return super().ambiguity_filters_dict
 
     @property
-    def options(self):
-        return self._options
-
-    @property
     def _negative_number_terms(self) -> Pattern:
         return super()._negative_number_terms
 
@@ -278,6 +262,7 @@ class FrenchFractionExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_FRACTION
 
     def __init__(self):
+        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -308,10 +293,6 @@ class FrenchOrdinalExtractor(BaseNumberExtractor):
         return super().ambiguity_filters_dict
 
     @property
-    def options(self):
-        return self._options
-
-    @property
     def _negative_number_terms(self) -> Pattern:
         return super()._negative_number_terms
 
@@ -333,6 +314,7 @@ class FrenchOrdinalExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_ORDINAL
 
     def __init__(self):
+        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -343,7 +325,6 @@ class FrenchOrdinalExtractor(BaseNumberExtractor):
                     FrenchNumeric.OrdinalFrenchRegex),
                 val='OrdFr')
         ]
-        self._options = DateTimeOptions.NONE
 
 
 class FrenchPercentageExtractor(BasePercentageExtractor):

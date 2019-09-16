@@ -7,14 +7,14 @@ import calendar
 from datedelta import datedelta
 import regex
 
-from recognizers_text.Matcher.number_with_unit_tokenizer import NumberWithUnitTokenizer
-from recognizers_text.Matcher.match_strategy import MatchStrategy
+from recognizers_text.matcher.number_with_unit_tokenizer import NumberWithUnitTokenizer
+from recognizers_text.matcher.match_strategy import MatchStrategy
 from recognizers_text.extractor import ExtractResult, Metadata
 from recognizers_text.utilities import RegExpUtility
 from recognizers_date_time.date_time.constants import TimeTypeConstants, Constants
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.parsers import DateTimeParser, DateTimeParseResult
-from recognizers_text.Matcher.string_matcher import StringMatcher, MatchResult
+from recognizers_text.matcher.string_matcher import StringMatcher, MatchResult
 
 
 class TimeZoneUtility:

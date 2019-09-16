@@ -15,14 +15,7 @@ from recognizers_number.number.portuguese.extractors import PortugueseNumberExtr
 from recognizers_number.number.portuguese.parsers import PortugueseNumberParserConfiguration
 from recognizers_number.number.french.extractors import FrenchNumberExtractor, FrenchOrdinalExtractor, FrenchPercentageExtractor
 from recognizers_number.number.french.parsers import FrenchNumberParserConfiguration
-
-
-class NumberOptions(IntFlag):
-    NONE = 0
-    PERCENTAGE_MODE = 1
-    SUPPRESS_EXTENDED_TYPES = 2097152
-    EXPERIMENTAL_MODE = 4194304
-    ENABLE_PREVIEW = 8388608
+from .number_options import NumberOptions
 
 
 class NumberRecognizer(Recognizer[NumberOptions]):

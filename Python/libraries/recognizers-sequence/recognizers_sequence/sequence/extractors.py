@@ -3,7 +3,7 @@ from typing import List, Dict, Set, Pattern, Match
 from collections import namedtuple
 import regex as re
 from recognizers_sequence.sequence.config.url_configuration import URLConfiguration
-from recognizers_text.Matcher.string_matcher import StringMatcher
+from recognizers_text.matcher.string_matcher import StringMatcher
 
 from .constants import *
 from recognizers_text.utilities import RegExpUtility

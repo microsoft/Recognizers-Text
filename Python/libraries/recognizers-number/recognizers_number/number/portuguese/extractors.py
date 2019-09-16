@@ -1,6 +1,7 @@
 import regex
 from typing import Pattern, List, NamedTuple
 
+from ..number_options import NumberOptions
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.models import NumberMode, LongFormatMode
 from recognizers_number.resources.portuguese_numeric import PortugueseNumeric
@@ -9,6 +10,10 @@ from recognizers_number.number.constants import Constants
 
 
 class PortugueseNumberExtractor(BaseNumberExtractor):
+    @property
+    def options(self):
+        return self._options
+
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
@@ -21,7 +26,7 @@ class PortugueseNumberExtractor(BaseNumberExtractor):
     def _negative_number_terms(self) -> Pattern:
         return self.__negative_number_terms
 
-    def __init__(self, mode: NumberMode = NumberMode.DEFAULT):
+    def __init__(self, mode: NumberMode = NumberMode.DEFAULT, options: NumberOptions = NumberOptions.NONE):
         self.__negative_number_terms = RegExpUtility.get_safe_reg_exp(
             PortugueseNumeric.NegativeNumberTermsRegex)
         self.__regexes: List[ReVal] = list()
@@ -41,6 +46,7 @@ class PortugueseNumberExtractor(BaseNumberExtractor):
 
         fraction_ex = PortugueseFractionExtractor()
         self.__regexes.extend(fraction_ex.regexes)
+        self._options = options
 
 
 class PortugueseCardinalExtractor(BaseNumberExtractor):

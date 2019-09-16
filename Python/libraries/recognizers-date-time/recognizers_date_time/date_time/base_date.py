@@ -5,7 +5,6 @@ from recognizers_date_time.date_time.abstract_year_extractor import AbstractYear
 from datedelta import datedelta
 from recognizers_text.extractor import ExtractResult
 from recognizers_text.utilities import RegExpUtility
-from recognizers_number import BaseNumberExtractor, BaseNumberParser
 from recognizers_number.number import Constants as NumberConstants
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
@@ -124,17 +123,17 @@ class DateExtractorConfiguration(ABC):
 
     @property
     @abstractmethod
-    def ordinal_extractor(self) -> BaseNumberExtractor:
+    def ordinal_extractor(self):
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def integer_extractor(self) -> BaseNumberExtractor:
+    def integer_extractor(self):
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def number_parser(self) -> BaseNumberParser:
+    def number_parser(self):
         raise NotImplementedError
 
     @property
@@ -633,17 +632,17 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 class DateParserConfiguration(ABC):
     @property
     @abstractmethod
-    def ordinal_extractor(self) -> BaseNumberExtractor:
+    def ordinal_extractor(self):
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def integer_extractor(self) -> BaseNumberExtractor:
+    def integer_extractor(self):
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def cardinal_extractor(self) -> BaseNumberExtractor:
+    def cardinal_extractor(self):
         raise NotImplementedError
 
     @property
@@ -658,7 +657,7 @@ class DateParserConfiguration(ABC):
 
     @property
     @abstractmethod
-    def number_parser(self) -> BaseNumberParser:
+    def number_parser(self):
         raise NotImplementedError
 
     @property

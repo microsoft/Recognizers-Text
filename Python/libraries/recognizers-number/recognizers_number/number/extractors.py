@@ -9,14 +9,15 @@ from recognizers_text.extractor import Extractor, ExtractResult
 from recognizers_number.resources.base_numbers import BaseNumbers
 from recognizers_number.number.models import LongFormatType
 from recognizers_number.number.constants import Constants
-from recognizers_date_time.date_time.utilities import DateTimeOptions
+from .number_options import NumberOptions
 
 ReVal = namedtuple('ReVal', ['re', 'val'])
 MatchesVal = namedtuple('MatchesVal', ['matches', 'val'])
 
 
 class BaseNumberExtractor(Extractor):
-    def __init__(self, options=DateTimeOptions.NONE):
+
+    def __init__(self, options=NumberOptions.NONE):
         self._options = options
 
     @property
@@ -34,16 +35,14 @@ class BaseNumberExtractor(Extractor):
         raise NotImplementedError
 
     @property
-    @abstractmethod
     def options(self):
-        raise NotImplementedError
+        return self._options
 
     @property
     def _negative_number_terms(self) -> Pattern:
         return None
 
     def extract(self, source: str) -> List[ExtractResult]:
-        from recognizers_number.number.number_recognizer import NumberOptions
         if source is None or len(source.strip()) is 0:
             return list()
         result: List[ExtractResult] = list()

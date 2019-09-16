@@ -6,7 +6,7 @@ from recognizers_number.number.extractors import ReVal, BaseNumberExtractor, \
     BasePercentageExtractor
 from recognizers_number.number.constants import Constants
 from recognizers_text import ExtractResult
-from recognizers_date_time.date_time.utilities import DateTimeOptions
+from ..number_options import NumberOptions
 
 
 class SpanishNumberExtractor(BaseNumberExtractor):
@@ -57,7 +57,7 @@ class SpanishNumberExtractor(BaseNumberExtractor):
 
         fraction_ex = SpanishFractionExtractor()
         self.__regexes.extend(fraction_ex.regexes)
-        self._options = DateTimeOptions.NONE
+        self._options = NumberOptions.NONE
 
 
 class SpanishCardinalExtractor(BaseNumberExtractor):
@@ -100,7 +100,7 @@ class SpanishCardinalExtractor(BaseNumberExtractor):
         # Add double regexes
         double_ex = SpanishDoubleExtractor(placeholder)
         self.__regexes.extend(double_ex.regexes)
-        self._options = DateTimeOptions.NONE
+        self._options = NumberOptions.NONE
 
 
 class SpanishIntegerExtractor(BaseNumberExtractor):
@@ -167,7 +167,7 @@ class SpanishIntegerExtractor(BaseNumberExtractor):
                 re=SpanishNumeric.AllIntRegexWithDozenSuffixLocks,
                 val='IntegerSpa')
         ]
-        self._options = DateTimeOptions.NONE
+        self._options = NumberOptions.NONE
 
 
 class SpanishDoubleExtractor(BaseNumberExtractor):
@@ -234,7 +234,7 @@ class SpanishDoubleExtractor(BaseNumberExtractor):
                     placeholder),
                 val='DoubleNum')
         ]
-        self._options = DateTimeOptions.NONE
+        self._options = NumberOptions.NONE
 
 
 class SpanishFractionExtractor(BaseNumberExtractor):
@@ -286,7 +286,7 @@ class SpanishFractionExtractor(BaseNumberExtractor):
                 re=SpanishNumeric.FractionPrepositionRegex,
                 val='FracSpa')
         ]
-        self._options = DateTimeOptions.NONE
+        self._options = NumberOptions.NONE
 
 
 class SpanishOrdinalExtractor(BaseNumberExtractor):
@@ -329,7 +329,7 @@ class SpanishOrdinalExtractor(BaseNumberExtractor):
                 re=SpanishNumeric.OrdinalNounRegex,
                 val='OrdSpa')
         ]
-        self._options = DateTimeOptions.NONE
+        self._options = NumberOptions.NONE
 
 
 class SpanishPercentageExtractor(BasePercentageExtractor):

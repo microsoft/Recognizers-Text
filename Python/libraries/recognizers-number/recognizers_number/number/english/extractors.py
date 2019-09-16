@@ -8,7 +8,6 @@ from recognizers_number.number.models import NumberMode, LongFormatMode
 from recognizers_number.resources.english_numeric import EnglishNumeric
 from recognizers_number.number.extractors import ReVal, BaseNumberExtractor, BasePercentageExtractor
 from recognizers_number.number.constants import Constants
-from recognizers_date_time.date_time.utilities import DateTimeOptions
 
 
 class EnglishNumberExtractor(BaseNumberExtractor):
@@ -16,12 +15,12 @@ class EnglishNumberExtractor(BaseNumberExtractor):
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
         return super().ambiguity_filters_dict
 
-    @property
-    def options(self):
-        return self._options
-
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
+
+    @property
+    def _negative_number_terms(self) -> Pattern:
+        return self.__negative_number_terms
 
     def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
         return super()._generate_format_regex(format_type, placeholder)
@@ -54,16 +53,13 @@ class EnglishNumberExtractor(BaseNumberExtractor):
 
         fraction_ex = EnglishFractionExtractor()
         self.__regexes.extend(fraction_ex.regexes)
+        super().__init__()
 
 
 class EnglishCardinalExtractor(BaseNumberExtractor):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
         return super().ambiguity_filters_dict
-
-    @property
-    def options(self):
-        return self._options
 
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
@@ -80,6 +76,7 @@ class EnglishCardinalExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_CARDINAL
 
     def __init__(self, placeholder: str = EnglishNumeric.PlaceHolderDefault):
+        super().__init__()
         self.__regexes: List[ReVal] = list()
 
         # Add integer regexes
@@ -96,10 +93,6 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
         return super().ambiguity_filters_dict
 
-    @property
-    def options(self):
-        return self._options
-
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
 
@@ -114,7 +107,8 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_INTEGER
 
-    def __init__(self, placeholder: str = EnglishNumeric.PlaceHolderDefault):
+    def __init__(self, placeholder=EnglishNumeric.PlaceHolderDefault):
+        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -160,10 +154,6 @@ class EnglishDoubleExtractor(BaseNumberExtractor):
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
         return super().ambiguity_filters_dict
 
-    @property
-    def options(self):
-        return self._options
-
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
 
@@ -179,6 +169,7 @@ class EnglishDoubleExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_DOUBLE
 
     def __init__(self, placeholder):
+        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -224,10 +215,6 @@ class EnglishFractionExtractor(BaseNumberExtractor):
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
         return super().ambiguity_filters_dict
 
-    @property
-    def options(self):
-        return self._options
-
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
 
@@ -243,6 +230,7 @@ class EnglishFractionExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_FRACTION
 
     def __init__(self):
+        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -272,10 +260,6 @@ class EnglishOrdinalExtractor(BaseNumberExtractor):
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
         return super().ambiguity_filters_dict
 
-    @property
-    def options(self):
-        return self._options
-
     def extract(self, source: str) -> List[ExtractResult]:
         return super().extract(source)
 
@@ -291,6 +275,7 @@ class EnglishOrdinalExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_ORDINAL
 
     def __init__(self):
+        super().__init__()
         self.__regexes = [
             ReVal(
                 re=EnglishNumeric.OrdinalSuffixRegex,
@@ -305,7 +290,6 @@ class EnglishOrdinalExtractor(BaseNumberExtractor):
                 re=EnglishNumeric.OrdinalRoundNumberRegex,
                 val='OrdEng')
         ]
-        self._options = DateTimeOptions.NONE
 
 
 class EnglishPercentageExtractor(BasePercentageExtractor):

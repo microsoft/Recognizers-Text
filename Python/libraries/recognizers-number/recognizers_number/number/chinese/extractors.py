@@ -1,11 +1,11 @@
 from typing import List
 from enum import Enum
 
+from ..number_options import NumberOptions
 from recognizers_number.number.extractors import ReVal, BaseNumberExtractor
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.constants import Constants
 from recognizers_number.resources.chinese_numeric import ChineseNumeric
-from recognizers_date_time.date_time.utilities import DateTimeOptions
 
 
 class ChineseNumberExtractorMode(Enum):
@@ -35,7 +35,7 @@ class ChineseNumberExtractor(BaseNumberExtractor):
         fraction_ex = ChineseFractionExtractor()
         self.__regexes.extend(fraction_ex.regexes)
 
-        self._options = DateTimeOptions.NONE
+        self._options = NumberOptions.NONE
 
 
 class ChineseCardinalExtractor(BaseNumberExtractor):
@@ -59,7 +59,7 @@ class ChineseCardinalExtractor(BaseNumberExtractor):
 
         double_ex = ChineseDoubleExtractor()
         self.__regexes.extend(double_ex.regexes)
-        self._options = DateTimeOptions.NONE
+        self._options = NumberOptions.NONE
 
 
 class ChineseIntegerExtractor(BaseNumberExtractor):
@@ -118,7 +118,7 @@ class ChineseIntegerExtractor(BaseNumberExtractor):
                     val='IntegerChs'
                 )
             )
-        self._options = DateTimeOptions.NONE
+        self._options = NumberOptions.NONE
 
 
 class ChineseDoubleExtractor(BaseNumberExtractor):
@@ -169,7 +169,7 @@ class ChineseDoubleExtractor(BaseNumberExtractor):
                     ChineseNumeric.DoubleScientificNotationRegex),
                 val='DoublePow')
         ]
-        self._options = DateTimeOptions.NONE
+        self._options = NumberOptions.NONE
 
 
 class ChineseFractionExtractor(BaseNumberExtractor):
@@ -200,7 +200,7 @@ class ChineseFractionExtractor(BaseNumberExtractor):
                     ChineseNumeric.AllFractionNumber),
                 val='FracChs')
         ]
-        self._options = DateTimeOptions.NONE
+        self._options = NumberOptions.NONE
 
 
 class ChineseOrdinalExtractor(BaseNumberExtractor):
@@ -226,7 +226,7 @@ class ChineseOrdinalExtractor(BaseNumberExtractor):
                     ChineseNumeric.OrdinalNumbersRegex),
                 val='OrdinalChs')
         ]
-        self._options = DateTimeOptions.NONE
+        self._options = NumberOptions.NONE
 
 
 class ChinesePercentageExtractor(BaseNumberExtractor):
@@ -333,4 +333,4 @@ class ChinesePercentageExtractor(BaseNumberExtractor):
                     ChineseNumeric.SpecialsFoldsPercentageRegex),
                 val='PerSpe')
         ]
-        self._options = DateTimeOptions.NONE
+        self._options = NumberOptions.NONE
