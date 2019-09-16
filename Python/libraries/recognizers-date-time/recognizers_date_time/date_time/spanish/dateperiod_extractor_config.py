@@ -1,7 +1,8 @@
 from typing import List, Pattern
 
+from recognizers_text import Extractor
 from recognizers_text.utilities import RegExpUtility
-from recognizers_number.number import BaseNumberParser, BaseNumberExtractor
+from recognizers_number.number import BaseNumberParser, BaseNumberExtractor, SpanishOrdinalExtractor, SpanishCardinalExtractor
 from recognizers_number.number.spanish.extractors import SpanishIntegerExtractor
 from recognizers_number.number.spanish.parsers import SpanishNumberParserConfiguration
 from ...resources.base_date_time import BaseDateTime
@@ -15,6 +16,23 @@ from .date_extractor_config import SpanishDateExtractorConfiguration
 
 
 class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
+
+    @property
+    def time_unit_regex(self) -> Pattern:
+        return self._time_unit_regex
+
+    @property
+    def ordinal_extractor(self) -> Extractor:
+        return self._ordinal_extractor
+
+    @property
+    def cardinal_extractor(self) -> Extractor:
+        return self._cardinal_extractor
+
+    @property
+    def within_next_prefix_regex(self) -> Pattern:
+        return self._within_next_prefix_regex
+
     @property
     def simple_cases_regexes(self) -> List[Pattern]:
         return self._simple_cases_regexes
@@ -151,6 +169,11 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(
                 SpanishDateTime.WeekWithWeekDayRangeRegex)
         ]
+        self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.TimeUnitRegex)
+        self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.WithinNextPrefixRegex
+        )
         self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(
             BaseDateTime.IllegalYearRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(
@@ -217,6 +240,8 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._century_suffix_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.CenturySuffixRegex
         )
+        self._ordinal_extractor = SpanishOrdinalExtractor()
+        self._cardinal_extractor = SpanishCardinalExtractor()
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)

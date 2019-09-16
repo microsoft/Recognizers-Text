@@ -4,7 +4,7 @@ import regex
 from recognizers_text.utilities import RegExpUtility
 from ...resources.spanish_date_time import SpanishDateTime
 from ..extractors import DateTimeExtractor
-from ..utilities import DateTimeUtilityConfiguration
+from ..utilities import DateTimeUtilityConfiguration, DateTimeOptions
 from ..base_date import BaseDateExtractor
 from ..base_time import BaseTimeExtractor
 from ..base_duration import BaseDurationExtractor
@@ -160,6 +160,7 @@ class SpanishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         self._duration_extractor = BaseDurationExtractor(
             SpanishDurationExtractorConfiguration())
         self._utility_configuration = SpanishDateTimeUtilityConfiguration()
+        self._options = DateTimeOptions.NONE
 
     def is_connector_token(self, source: str) -> bool:
         return source.strip() == '' or regex.search(self.connector_regex, source) is not None or regex.search(
