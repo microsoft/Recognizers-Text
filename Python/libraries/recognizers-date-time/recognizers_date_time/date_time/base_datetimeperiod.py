@@ -233,6 +233,18 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
         return result
 
+    def match_date_with_period_prefix(self, source, reference, date_ers):
+        result = []
+
+        for date_er in date_ers:
+            date_str_end = date_er.start + date_er.length
+            before_str = source[0:date_er.start].strip()
+            match = regex.match(self.config.prefix_day_regex, before_str)
+            if match:
+                result.append(Token(match.pos, date_str_end))
+        return result
+
+
     def merge_date_with_time_period_suffix(self, text: str, date_ers: [ExtractResult], time_ers: [ExtractResult]):
 
         ret = []
@@ -298,116 +310,89 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
         return False
 
-    def match_date_with_period_prefix(self, text: str, reference: datetime, date_ers: [ExtractResult]):
-        ret = []
+    def match_time_of_day(self, source: str, reference: datetime, date_ers: [ExtractResult]):
+        tokens: List[Token] = list()
+        source = source.strip().lower()
 
-        for date_er in date_ers:
-            date_str_end = date_er.start + date_er.length
-            before_str = text[0: date_er.start].rstrip()
-            match = self.config.prefix_day_regex.search(before_str)
+        matches = regex.finditer(
+            self.config.specific_time_of_day_regex, source)
+        tokens.extend(map(lambda x: Token(x.start(), x.end()), matches))
+
+        ers_date: List[ExtractResult] = self.config.single_date_extractor.extract(
+            source, reference)
+
+        for er in ers_date:
+            after_str = source[er.start + er.length:]
+            match = regex.search(
+                self.config.period_time_of_day_with_date_regex, after_str)
+
             if match:
-                ret.append(Token(before_str.index(match.group()), date_str_end))
+                if not after_str[0:match.start()].strip():
+                    tokens.append(
+                        Token(er.start, er.start + er.length + match.end()))
+                else:
+                    pause_match = regex.search(
+                        self.config.middle_pause_regex, after_str[0:match.start()].strip())
+                    if pause_match:
+                        suffix = after_str[match.end():].strip()
 
-        return ret
-
-    def match_time_of_day(self, text: str, reference: datetime, date_ers: [ExtractResult]):
-        ret = []
-
-        matches = list(regex.finditer(self.config.specific_time_of_day_regex, text))
-
-        if matches is not None:
-
-            for match in matches:
-                ret.append(Token(match.start(), match.end()))
-
-            if len(date_ers) == 0:
-                return ret
-
-            for er in date_ers:
-
-                after_str = text[er.start + (er.length or 0):].strip()
-
-                match = regex.match(self.config.period_time_of_day_with_date_regex, after_str)
-
-                if match:
-
-                    if after_str[0: after_str.index(match.group())]:
-                        start = er.start or 0
-                        end = start + er.length + (len(RegExpUtility.get_group(match, Constants.TimeOfDayGroupName)) or 0)
-
-                        ret.append(Token(start, end))
-                        continue
-
-                    connector_str = after_str[0: after_str.index(match.group())]
-
-                    if RegexExtension.is_exact_match(self.config.middle_pause_regex, connector_str, True):
-
-                        suffix = after_str[after_str.index(match.group()) + (match.end() - match.start()):].strip()
-
-                        ending_match = self.config.general_ending_regex.search(suffix)
+                        ending_match = regex.search(
+                            self.config.general_ending_regex, suffix)
                         if ending_match:
-                            ret.append(Token((er.start or 0), er.start + er.length + after_str.index(match.group()) + (match.end() - match.start())))
+                            tokens.append(
+                                Token(er.start, er.start + er.length + match.end()))
 
-                if not match:
-                    match = regex.match(self.config.am_desc_regex, after_str)
+            before_str = source[0:er.start]
+            match = regex.search(
+                self.config.period_time_of_day_with_date_regex, before_str)
 
-                if not match:
-                    match = regex.match(self.config.pm_desc_regex, after_str)
+            if match:
+                if not before_str[match.end():].strip():
+                    middle_str = source[match.end():er.start]
+                    if middle_str == ' ':
+                        tokens.append(
+                            Token(match.start(), er.start + er.length))
+                else:
+                    pause_match = regex.search(
+                        self.config.middle_pause_regex, before_str[match.end():])
+                    if pause_match:
+                        suffix = source[er.start + er.length:].strip()
 
-                if match:
-                    if after_str[0: after_str.index(match.group())]:
-                        ret.append(Token((er.start or 0), er.start + er.length + after_str.index(match.group()) + (match.end() - match.start())))
+                        ending_match = regex.search(
+                            self.config.general_ending_regex, suffix)
+                        if ending_match:
+                            tokens.append(
+                                Token(match.start(), er.start + er.length))
 
-                prefix_str = text[0: er.start or 0]
+            # check whether there are adjacent time period strings, before or after
+            for token in tokens:
+                # try to extract a time period in before-string
+                if token.start > 0:
+                    before_str = source[0:token.start].strip()
+                    if before_str:
+                        ers_time = self.config.time_period_extractor.extract(
+                            before_str, reference)
 
-                match = regex.match(self.config.period_time_of_day_with_date_regex, prefix_str)
+                        for er_time in ers_time:
+                            middle_str = before_str[er_time.start +
+                                                    er_time.length:].strip()
+                            if not middle_str:
+                                tokens.append(Token(er_time.start,
+                                                    er_time.start + er_time.length + len(middle_str) + token.length))
 
-                if match:
-                    if prefix_str[prefix_str.index(match.group()) + (match.end() - match.start()):]:
-                        mid_str = text[prefix_str.index(match.group()) + (match.end() - match.start()), er.start]
-                        if not (mid_str is None or mid_str == '') and (mid_str is None or mid_str == ' '):
-                            ret.append(Token(prefix_str.index(match.group()), er.start + (er.length or 0)))
-                    else:
+                if token.start + token.length <= len(source):
+                    after_str = source[token.start + token.length:]
+                    if after_str:
+                        ers_time = self.config.time_period_extractor.extract(
+                            after_str, reference)
+                        for er_time in ers_time:
+                            middle_str = after_str[0:er_time.start]
+                            if not middle_str:
+                                token_end = token.start + token.length + \
+                                            len(middle_str) + er_time.length
+                                tokens.append(Token(token.start, token_end))
 
-                        connector_str = prefix_str[prefix_str.index(match.group()) + (match.end() - match.start())]
-
-                        if RegexExtension.is_exact_match(self.config.middle_pause_regex, connector_str, True):
-
-                            suffix = text[er.start + (er.length or 0)].lstrip(' ')
-
-                            ending_match = regex.match(self.config.general_ending_regex, suffix)
-                            if ending_match:
-                                ret.append(Token(er.start, er.end))
-
-        for e in ret:
-
-            if e.start > 0:
-
-                before_str = text[0: e.start]
-                if before_str:
-
-                    time_ers = self.config.time_period_extractor.extract(before_str)
-                    if len(time_ers) > 0:
-
-                        for tp in time_ers:
-                            mid_str = before_str[tp.start + (tp.length or 0)]
-
-                            if not mid_str:
-                                ret.append(Token((tp.start or 0), tp.start + tp.length + len(mid_str) + (e.length or 0)))
-
-            if e.start + e.length <= len(text):
-                after_str = text[e.start + e.length:]
-
-                if after_str:
-
-                    time_ers = self.config.time_period_extractor.extract(after_str)
-                    if len(time_ers) > 0:
-                        for tp in time_ers:
-                            mid_str = after_str[0: (tp.start or 0)]
-                            if not mid_str:
-                                ret.append(Token(e.start, e.start + e.length + len(mid_str) + (tp.length or 0)))
-
-        return ret
+        return tokens
 
     def match_simple_cases(self, source: str, reference: datetime) -> List[Token]:
         tokens: List[Token] = list()
@@ -451,7 +436,8 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
         source = source.strip().lower()
         ers_datetime: List[ExtractResult] = self.config.single_date_time_extractor.extract(
             source, reference)
-
+        ers_time: List[ExtractResult] = self.config.single_time_extractor.extract(
+            source, reference)
         inner_marks: List[ExtractResult] = list()
 
         j = 0
@@ -459,15 +445,15 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
         for er_datetime in ers_datetime:
             inner_marks.append(er_datetime)
 
-            while j < len(time_ers) and time_ers[j].start + time_ers[j].length < er_datetime.start:
-                inner_marks.append(time_ers[j])
+            while j < len(ers_time) and ers_time[j].start + ers_time[j].length < er_datetime.start:
+                inner_marks.append(ers_time[j])
                 j += 1
 
-            while j < len(time_ers) and time_ers[j].overlap(er_datetime):
+            while j < len(ers_time) and ers_time[j].overlap(er_datetime):
                 j += 1
 
-        while j < len(time_ers):
-            inner_marks.append(time_ers[j])
+        while j < len(ers_time):
+            inner_marks.append(ers_time[j])
             j += 1
         inner_marks = sorted(inner_marks, key=lambda x: x.start)
 
@@ -515,111 +501,119 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
             idx += 1
 
-        time_period_ers = self.config.time_period_extractor.extract(source, reference)
-
-        date_ers.extend(time_period_ers)
-
-        points: [ExtractResult] = sorted(date_ers, key=lambda x: x.start)
-
-        for i in range(idx, len(points) - 1, 1):
-
-            if points[idx].type == points[idx + 1].type:
-                continue
-
-            mid_begin = points[idx].start + (points[idx].length or 0)
-            mid_end = points[idx].start or 0
-
-            if mid_end - mid_begin > 0:
-                mid_str = source[mid_begin: mid_end]
-
-                if mid_str or mid_str.lstrip().startswith(self.config.token_before_date):
-                    extended_str = points[idx].text + source[points[idx + 1].start + points[idx + 1].length:]
-                    extended_date_er = next(e for e in self.config.single_date_extractor.extract(extended_str))
-                    offset = 0
-                    if extended_date_er is not None and extended_date_er.start == 0:
-                        offset = extended_date_er.length - points[idx].length
-
-                    tokens.append(Token(points[idx].start or 0, offset + points[idx + 1].start + (points[idx + 1].length or 0)))
-                    idx += 2
-
         return tokens
 
-    def match_duration(self, text: str, reference: datetime) -> List[Token]:
+    def match_duration(self, source: str, reference: datetime) -> List[Token]:
 
-        ret = []
+        tokens: List[Token] = list()
+        source = source.strip().lower()
 
-        durations = []
+        ers_duration: List[ExtractResult] = self.config.duration_extractor.extract(
+            source, reference)
+        durations: List[Token] = list()
 
-        duration_extractions = self.config.duration_extractor.extract(text, reference)
-
-        for er in duration_extractions:
+        for er in ers_duration:
             if regex.search(self.config.time_unit_regex, er.text):
                 durations.append(Token(er.start, er.start + er.length))
 
         for duration in durations:
-            before_str = text[0: duration.start]
-            after_str = text[duration.start + duration.length:]
-
-            if not before_str and not after_str:
-                continue
-
-            match = self.config.within_next_prefix_regex.match(before_str)
-            if self.match_prefix_regex_in_segment(before_str, match):
-                start_token = text.index(match.group())
-                match = self.config.time_unit_regex.match(text[duration.start: duration.start + duration.length])
-                if match:
-                    ret.append(Token(start_token, duration.end))
+            before_str = source[0:duration.start].strip()
+            if before_str:
+                match = regex.search(
+                    self.config.previous_prefix_regex, before_str)
+                if match and not before_str[match.end():]:
+                    tokens.append(Token(match.start(), duration.end))
                     continue
 
-            match = self.config.previous_prefix_regex.match(before_str)
-            index = -1
-            if match and before_str[before_str.index(match.group()) + (match.end() - match.start())]:
-                index = before_str.index(match.group())
+                match = regex.search(self.config.next_prefix_regex, before_str)
+                if match and not before_str[match.end():]:
+                    tokens.append(Token(match.start(), duration.end))
 
-            if index < 0:
-                match = self.config.next_prefix_regex.match(before_str)
-                if match and before_str[before_str.index(match.group()) + (match.end() - match.start())]:
-                    index = before_str.index(match.group())
+        return tokens
 
-            if index >= 0:
+    def match_night(self, source: str, reference: datetime) -> List[Token]:
+        tokens: List[Token] = list()
+        source = source.strip().lower()
 
-                prefix = before_str[0, index].strip()
-                duration_text = text[duration.start: duration.start + duration.length]
-                numbers_in_prefix = self.config.cardinal_extractor.extract(prefix)
-                numbers_in_duration = self.config.cardinal_extractor.extract(duration_text)
+        matches = regex.finditer(
+            self.config.specific_time_of_day_regex, source)
+        tokens.extend(map(lambda x: Token(x.start(), x.end()), matches))
 
-                if any(numbers_in_prefix) and not any(numbers_in_duration):
-                    last_number = sorted(numbers_in_prefix, key=lambda x: x.start + x.length)[-1]
+        ers_date: List[ExtractResult] = self.config.single_date_extractor.extract(
+            source, reference)
 
-                    if last_number.start + last_number.length == len(prefix):
-                        ret.append(Token(last_number.start, duration.end))
+        for er in ers_date:
+            after_str = source[er.start + er.length:]
+            match = regex.search(
+                self.config.period_time_of_day_with_date_regex, after_str)
+
+            if match:
+                if not after_str[0:match.start()].strip():
+                    tokens.append(
+                        Token(er.start, er.start + er.length + match.end()))
                 else:
-                    ret.append(Token(index, duration.end))
+                    pause_match = regex.search(
+                        self.config.middle_pause_regex, after_str[0:match.start()].strip())
+                    if pause_match:
+                        suffix = after_str[match.end():].strip()
 
-                continue
+                        ending_match = regex.search(
+                            self.config.general_ending_regex, suffix)
+                        if ending_match:
+                            tokens.append(
+                                Token(er.start, er.start + er.length + match.end()))
 
-            match_date_unit = self.config.date_unit_regex.search(after_str)
-            if not match_date_unit:
+            before_str = source[0:er.start]
+            match = regex.search(
+                self.config.period_time_of_day_with_date_regex, before_str)
 
-                match = self.config.previous_prefix_regex.search(after_str)
-                if match and after_str[0: after_str.index(match.group())]:
-                    ret.append(Token(duration.start,
-                                     duration.start + duration.length + after_str.index(match.group()) + (
-                                         match.end() - match.start())))
+            if match:
+                if not before_str[match.end():].strip():
+                    middle_str = source[match.end():er.start]
+                    if middle_str == ' ':
+                        tokens.append(
+                            Token(match.start(), er.start + er.length))
+                else:
+                    pause_match = regex.search(
+                        self.config.middle_pause_regex, before_str[match.end():])
+                    if pause_match:
+                        suffix = source[er.start + er.length:].strip()
 
-                match = self.config.next_prefix_regex.search(after_str)
-                if match and after_str[0: after_str.index(match.group())]:
-                    ret.append(Token(duration.start,
-                                     duration.start + duration.length + after_str.index(match.group()) + (
-                                         match.end() - match.start())))
+                        ending_match = regex.search(
+                            self.config.general_ending_regex, suffix)
+                        if ending_match:
+                            tokens.append(
+                                Token(match.start(), er.start + er.length))
 
-                match = self.config.future_suffix_regex.search(after_str)
-                if match and after_str[0: after_str.index(match.group())]:
-                    ret.append(Token(duration.start,
-                                     duration.start + duration.length + after_str.index(match.group()) + (
-                                         match.end() - match.start())))
+            # check whether there are adjacent time period strings, before or after
+            for token in tokens:
+                # try to extract a time period in before-string
+                if token.start > 0:
+                    before_str = source[0:token.start].strip()
+                    if before_str:
+                        ers_time = self.config.time_period_extractor.extract(
+                            before_str, reference)
 
-        return ret
+                        for er_time in ers_time:
+                            middle_str = before_str[er_time.start +
+                                                    er_time.length:].strip()
+                            if not middle_str:
+                                tokens.append(Token(er_time.start,
+                                                    er_time.start + er_time.length + len(middle_str) + token.length))
+
+                if token.start + token.length <= len(source):
+                    after_str = source[token.start + token.length:]
+                    if after_str:
+                        ers_time = self.config.time_period_extractor.extract(
+                            after_str, reference)
+                        for er_time in ers_time:
+                            middle_str = after_str[0:er_time.start]
+                            if not middle_str:
+                                token_end = token.start + token.length + \
+                                            len(middle_str) + er_time.length
+                                tokens.append(Token(token.start, token_end))
+
+        return tokens
 
     def match_prefix_regex_in_segment(self, before_str: str, match: Match):
         result = match and before_str[before_str.index(match.group()) + (match.end() - match.start())]

@@ -6821,11 +6821,10 @@
     "Context": {
       "ReferenceDateTime": "2018-08-08T00:00:00"
     },
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "semana del 18",
+        "Text": "la semana del 18",
         "Type": "daterange",
         "Value": {
           "Timex": "XXXX-XX-18",
@@ -6838,8 +6837,8 @@
             "endDate": "2018-07-23"
           }
         },
-        "Start": 31,
-        "Length": 13
+        "Start": 28,
+        "Length": 16
       }
     ]
   },
@@ -6948,6 +6947,84 @@
         },
         "Start": 0,
         "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "la semana pasada",
+    "Context": {
+      "ReferenceDateTime": "2019-08-21T17:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "la semana pasada",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W33",
+          "FutureResolution": {
+            "startDate": "2019-08-12",
+            "endDate": "2019-08-19"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-12",
+            "endDate": "2019-08-19"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "semana pasada",
+    "Context": {
+      "ReferenceDateTime": "2019-08-21T17:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "semana pasada",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W33",
+          "FutureResolution": {
+            "startDate": "2019-08-12",
+            "endDate": "2019-08-19"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-12",
+            "endDate": "2019-08-19"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "el mes pasado",
+    "Context": {
+      "ReferenceDateTime": "2019-08-21T17:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "el mes pasado",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-07",
+          "FutureResolution": {
+            "startDate": "2019-07-01",
+            "endDate": "2019-08-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-07-01",
+            "endDate": "2019-08-01"
+          }
+        },
+        "Start": 0,
+        "Length": 13
       }
     ]
   }

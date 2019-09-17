@@ -1435,5 +1435,238 @@
         }
       }
     ]
+  },
+  {
+    "Input": "2",
+    "Context": {
+      "ReferenceDateTime": "2019-08-27T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "Ich gehe um viertel nach drei",
+    "Context": {
+      "ReferenceDateTime": "2019-08-27T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "viertel nach drei",
+        "Start": 12,
+        "End": 28,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T03:15",
+              "type": "time",
+              "value": "03:15:00"
+            },
+            {
+              "timex": "T15:15",
+              "type": "time",
+              "value": "15:15:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Wie wird das Wetter nächsten Donnerstag bis Samstag in Genf",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "nächsten donnerstag bis samstag",
+        "Start": 20,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-09-12,2019-09-14,P2D)",
+              "type": "daterange",
+              "start": "2019-09-12",
+              "end": "2019-09-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Setze Timer auf eine Viertelstunde.",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T00:00:00"
+    },
+	"Debug": true,
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "eine viertelstunde",
+        "Start": 16,
+        "End": 33,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT0.25H",
+              "type": "duration",
+              "value": "900"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Setze Timer auf ein Dreiviertelstunde",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "ein dreiviertelstunde",
+        "Start": 16,
+        "End": 36,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT0.75H",
+              "type": "duration",
+              "value": "2700"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "eine halbe Stunde",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "eine halbe stunde",
+        "Start": 0,
+        "End": 16,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT0.5H",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "lass uns nach dem Wochenende treffen",
+    "Context": {
+      "ReferenceDateTime": "2019-09-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "nach dem wochenende",
+        "Start": 9,
+        "End": 27,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W37-WE",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2019-09-16"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "lass uns vor dem Wochenende treffen",
+    "Context": {
+      "ReferenceDateTime": "2019-09-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "vor dem wochenende",
+        "Start": 9,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W37-WE",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2019-09-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Was läuft auf TV ab 14 Uhr",
+    "Context": {
+      "ReferenceDateTime": "2019-09-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "ab 14 uhr",
+        "Start": 17,
+        "End": 25,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T14",
+              "Mod": "since",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "start": "14:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Was läuft auf TV bis 14 Uhr",
+    "Context": {
+      "ReferenceDateTime": "2019-09-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "bis 14 uhr",
+        "Start": 17,
+        "End": 26,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T14",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "14:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

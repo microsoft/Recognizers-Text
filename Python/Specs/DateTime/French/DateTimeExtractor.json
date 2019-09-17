@@ -1,5 +1,71 @@
 [
   {
+    "Input": "Je reviendrai maintenant",
+    "Results": [
+      {
+        "Text": "maintenant",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dès que possible",
+    "Results": [
+      {
+        "Text": "dès que possible",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dqp",
+    "Results": [
+      {
+        "Text": "dqp",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai en ce moment",
+    "Results": [
+      {
+        "Text": "ce moment",
+        "Type": "datetime",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 21/04/2016, 8:00pm",
+    "Results": [
+      {
+        "Text": "21/04/2016, 8:00pm",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 21/04/2016, 8:00:13pm",
+    "Results": [
+      {
+        "Text": "21/04/2016, 8:00:13pm",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  },
+  {
     "Input": "Je reviendrai 14 Octobre 8:00am",
     "Results": [
       {
