@@ -325,15 +325,15 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
             for er in date_ers:
 
-                after_str = text[er.start() + (er.length or 0):].strip()
+                after_str = text[er.start + (er.length or 0):].strip()
 
                 match = regex.match(self.config.period_time_of_day_with_date_regex, after_str)
 
                 if match:
 
                     if after_str[0: after_str.index(match.group())]:
-                        start = er.start() or 0
-                        end = start + er.length() + (len(RegExpUtility.get_group(match, Constants.TimeOfDayGroupName)) or 0)
+                        start = er.start or 0
+                        end = start + er.length + (len(RegExpUtility.get_group(match, Constants.TimeOfDayGroupName)) or 0)
 
                         ret.append(Token(start, end))
                         continue
@@ -356,7 +356,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
                 if match:
                     if after_str[0: after_str.index(match.group())]:
-                        ret.append(Token((er.start() or 0), er.start() + er.length() + after_str.index(match.group()) + (match.end() - match.start())))
+                        ret.append(Token((er.start or 0), er.start + er.length + after_str.index(match.group()) + (match.end() - match.start())))
 
                 prefix_str = text[0: er.start or 0]
 
@@ -364,7 +364,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
                 if match:
                     if prefix_str[prefix_str.index(match.group()) + (match.end() - match.start()):]:
-                        mid_str = text[prefix_str.index(match.group()) + (match.end() - match.start()), er.start()]
+                        mid_str = text[prefix_str.index(match.group()) + (match.end() - match.start()), er.start]
                         if not (mid_str is None or mid_str == '') and (mid_str is None or mid_str == ' '):
                             ret.append(Token(prefix_str.index(match.group()), er.start + (er.length or 0)))
                     else:
@@ -373,11 +373,11 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
                         if RegexExtension.is_exact_match(self.config.middle_pause_regex, connector_str, True):
 
-                            suffix = text[er.start() + (er.length() or 0)].lstrip(' ')
+                            suffix = text[er.start + (er.length or 0)].lstrip(' ')
 
                             ending_match = regex.match(self.config.general_ending_regex, suffix)
                             if ending_match:
-                                ret.append(Token(er.start(), er.end()))
+                                ret.append(Token(er.start, er.end))
 
         for e in ret:
 

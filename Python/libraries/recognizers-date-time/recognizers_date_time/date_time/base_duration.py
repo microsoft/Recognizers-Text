@@ -357,11 +357,6 @@ class DurationParserConfiguration(ABC):
     def double_numbers(self) -> Dict[str, float]:
         raise NotImplementedError
 
-    @property
-    @abstractmethod
-    def options(self) -> DateTimeOptions:
-        return NotImplementedError
-
 
 class BaseDurationParser(DateTimeParser):
     @property

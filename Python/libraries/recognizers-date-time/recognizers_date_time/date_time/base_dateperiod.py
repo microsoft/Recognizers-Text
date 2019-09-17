@@ -3,6 +3,8 @@ from abc import ABC, abstractmethod
 from typing import List, Optional, Pattern, Match, Dict
 from datetime import datetime, timedelta
 from collections import namedtuple
+
+import regex
 from datedelta import datedelta
 
 from recognizers_text.extractor import ExtractResult, Extractor, Metadata
@@ -229,7 +231,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
             white_spaces_count = len(after_string) - len(trimmed_after_string)
             after_string_offset = (er.start + er.length) + white_spaces_count
 
-            match = self.config.century_suffix_regex.match(trimmed_after_string)
+            match = regex.match(self.config.century_suffix_regex, trimmed_after_string)
 
             if match:
                 ret.append(Token(er.start, after_string_offset + text.index(match.group()) +
@@ -243,10 +245,10 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
         metadata = Metadata()
         metadata.possibly_included_period_end = True
 
-        matches: [Match] = self.config.year_period_regex.finditer(text)
+        matches = list(regex.finditer(self.config.year_period_regex, text))
 
         for match in matches:
-            match_year = self.config.year_regex.match(match)
+            match_year = regex.match(self.config.year_regex, match)
 
             if match_year is not None and (match_year.end() - match_year.start()) == len(match.group()):
                 year = self.config.date_point_extractor.get_year_from_text(match_year)
@@ -255,13 +257,13 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
                 metadata.possibly_included_period_end = False
             else:
-                year_matches = self.config.year_regex.search(match.group())
+                year_matches = regex.search(self.config.year_regex, match.group())
                 all_digit_year = True
                 is_valid_year = True
 
                 for year_match in year_matches:
                     year = self.config.date_point_extractor.get_year_from_text(year_match)
-                    if not (year >= Constants.MinYearNum and year <= Constants.MaxYearNum):
+                    if not (Constants.MinYearNum <= year <= Constants.MaxYearNum):
                         is_valid_year = False
                         break
                     elif len(year_match) != Constants.FourDigitsYearLength:
@@ -415,7 +417,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
         tokens = []
 
         for regexp in self.config.simple_cases_regexes:
-            matches = regexp.finditer(source)
+            matches = list(regex.finditer(regexp, source))
 
             for match in matches:
                 add_token = True
@@ -713,8 +715,8 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
     def is_relative_duration_date(self, er: ExtractResult):
 
-        is_ago = self.config.ago_regex.search(er.text)
-        is_later = self.config.later_regex.search(er.text)
+        is_ago = regex.search(self.config.ago_regex, er.text)
+        is_later = regex.search(self.config.later_regex, er.text)
 
         return is_ago or is_later
 
@@ -726,12 +728,14 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
         return False
 
-    def __match_regex_in_prefix(self, source: str, match: Match) -> bool:
+    @staticmethod
+    def __match_regex_in_prefix(source: str, match: Match) -> bool:
         return match and not source[match.end():].strip()
 
-    def __get_token_for_regex_matching(self, source: str, regexp: Pattern, er: ExtractResult) -> List[Token]:
+    @staticmethod
+    def __get_token_for_regex_matching(source: str, regexp: Pattern, er: ExtractResult) -> List[Token]:
         tokens = []
-        match = regexp.search(source)
+        match = regex.search(regexp, source)
 
         if match and source.strip().endswith(match.group().strip()):
             start_index = source.rfind(match.group())
@@ -739,7 +743,8 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
         return tokens
 
-    def __infix_boundary_check(self, match: Match, source: str) -> bool:
+    @staticmethod
+    def __infix_boundary_check(match: Match, source: str) -> bool:
         is_match_infix_of_source = False
         if match.start() > 0 and match.end() < len(source):
             if source[match.start():match.end()] == match.group():
