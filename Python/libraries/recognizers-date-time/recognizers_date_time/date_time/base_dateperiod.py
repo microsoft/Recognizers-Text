@@ -600,73 +600,29 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
         for duration in durations:
             before_str = source[0:duration.start].lower()
-            after_str = source[duration.start: duration.start + duration.end - duration.start]
 
-            if not before_str and not after_str:
-                continue
+            if not before_str:
+                break
 
-            match = RegexExtension.match_end(self.config.within_next_prefix_regex, before_str, True)
+            match = self.config.past_regex.search(before_str)
+            if self.__match_regex_in_prefix(before_str, match):
+                tokens.append(Token(match.start(), duration.end))
+                break
 
-            if match.success:
-                start_token = match.index
-                duration_str = source[duration.start: duration.start + duration.end - duration.start]
-                match_date = self.config.date_unit_regex.search(duration_str)
-                match_time = self.config.time_unit_regex.search(duration_str)
+            match = self.config.future_regex.search(before_str)
+            if self.__match_regex_in_prefix(before_str, match):
+                tokens.append(Token(match.start(), duration.end))
+                break
 
-                if match_date and not match_time:
-                    tokens.append(Token(start_token, duration.end))
-                    continue
+            match = self.config.in_connector_regex.search(before_str)
+            if self.__match_regex_in_prefix(before_str, match):
+                range_str = source[duration.start:duration.start +
+                                                  duration.length]
+                range_match = self.config.range_unit_regex.search(range_str)
 
-            #_past_regex = PreviousPrefixRegex
-
-            match = RegexExtension.match_end(self.config.past_regex, before_str, True)
-
-            index = -1
-
-            if match.success:
-                index = match.index
-
-            if index < 0:
-
-                match = RegexExtension.match_end(self.config.future_regex, before_str, True)
-
-                if match.success:
-                    index = match.index
-
-            if index >= 0:
-
-                prefix = before_str[0:index].strip()
-                duration_text = source[duration.start: duration.start + duration.end - duration.start]
-                numbers_in_prefix = self.config.cardinal_extractor.extract(prefix)
-                numbers_in_duration = self.config.cardinal_extractor.extract(duration_text)
-
-                if any(numbers_in_prefix) and not any(numbers_in_duration):
-
-                    last_number = sorted(numbers_in_prefix, key=lambda x: (x.start + x.end - x.start))[-1]
-
-                    if last_number.start + last_number.end - last_number.start == len(prefix):
-                        tokens.append(Token(last_number.start, duration.end))
-
-                else:
-                    tokens.append(Token(index, duration.end))
-
-                continue
-
-            match = RegexExtension.match_begin(self.config.past_regex, after_str, True)
-            if match:
-                if match.success:
-                    tokens.append(Token(match.start(), duration.end + match.index + match.length))
-                    continue
-
-                match = RegexExtension.match_begin(self.config.future_regex, after_str, True)
-                if match.success:
-                    tokens.append(Token(match.start(), duration.end + match.index + match.length))
-                    continue
-
-                match = RegexExtension.match_begin(self.config.future_suffix_regex, after_str, True)
-                if match.success:
-                    tokens.append(Token(match.start(), duration.end + match.index + match.length))
-                    continue
+                if range_match:
+                    tokens.append(Token(match.start(), duration.end))
+                break
         return tokens
 
     def single_time_point_with_patterns(self, source: str, ordinal_extractions: [ExtractResult], reference: datetime) -> List[ExtractResult]:

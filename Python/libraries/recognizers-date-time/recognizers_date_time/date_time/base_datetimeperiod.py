@@ -298,116 +298,13 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
         return False
 
-    def match_date_with_period_prefix(self, text: str, reference: datetime, date_ers: [ExtractResult]):
-        ret = []
+    def match_date_with_period_prefix(self, source: str, reference: datetime, date_ers: [ExtractResult]):
+        result = []
+        matches =  list(regex.finditer(self.config.specific_time_of_day_regex, source))
 
-        for date_er in date_ers:
-            date_str_end = date_er.start + date_er.length
-            before_str = text[0: date_er.start].rstrip()
-            match = self.config.prefix_day_regex.search(before_str)
-            if match:
-                ret.append(Token(before_str.index(match.group()), date_str_end))
+        for match in matches:
 
-        return ret
 
-    def match_time_of_day(self, text: str, reference: datetime, date_ers: [ExtractResult]):
-        ret = []
-
-        matches = list(regex.finditer(self.config.specific_time_of_day_regex, text))
-
-        if matches is not None:
-
-            for match in matches:
-                ret.append(Token(match.start(), match.end()))
-
-            if len(date_ers) == 0:
-                return ret
-
-            for er in date_ers:
-
-                after_str = text[er.start + (er.length or 0):].strip()
-
-                match = regex.match(self.config.period_time_of_day_with_date_regex, after_str)
-
-                if match:
-
-                    if after_str[0: after_str.index(match.group())]:
-                        start = er.start or 0
-                        end = start + er.length + (len(RegExpUtility.get_group(match, Constants.TimeOfDayGroupName)) or 0)
-
-                        ret.append(Token(start, end))
-                        continue
-
-                    connector_str = after_str[0: after_str.index(match.group())]
-
-                    if RegexExtension.is_exact_match(self.config.middle_pause_regex, connector_str, True):
-
-                        suffix = after_str[after_str.index(match.group()) + (match.end() - match.start()):].strip()
-
-                        ending_match = self.config.general_ending_regex.search(suffix)
-                        if ending_match:
-                            ret.append(Token((er.start or 0), er.start + er.length + after_str.index(match.group()) + (match.end() - match.start())))
-
-                if not match:
-                    match = regex.match(self.config.am_desc_regex, after_str)
-
-                if not match:
-                    match = regex.match(self.config.pm_desc_regex, after_str)
-
-                if match:
-                    if after_str[0: after_str.index(match.group())]:
-                        ret.append(Token((er.start or 0), er.start + er.length + after_str.index(match.group()) + (match.end() - match.start())))
-
-                prefix_str = text[0: er.start or 0]
-
-                match = regex.match(self.config.period_time_of_day_with_date_regex, prefix_str)
-
-                if match:
-                    if prefix_str[prefix_str.index(match.group()) + (match.end() - match.start()):]:
-                        mid_str = text[prefix_str.index(match.group()) + (match.end() - match.start()), er.start]
-                        if not (mid_str is None or mid_str == '') and (mid_str is None or mid_str == ' '):
-                            ret.append(Token(prefix_str.index(match.group()), er.start + (er.length or 0)))
-                    else:
-
-                        connector_str = prefix_str[prefix_str.index(match.group()) + (match.end() - match.start())]
-
-                        if RegexExtension.is_exact_match(self.config.middle_pause_regex, connector_str, True):
-
-                            suffix = text[er.start + (er.length or 0)].lstrip(' ')
-
-                            ending_match = regex.match(self.config.general_ending_regex, suffix)
-                            if ending_match:
-                                ret.append(Token(er.start, er.end))
-
-        for e in ret:
-
-            if e.start > 0:
-
-                before_str = text[0: e.start]
-                if before_str:
-
-                    time_ers = self.config.time_period_extractor.extract(before_str)
-                    if len(time_ers) > 0:
-
-                        for tp in time_ers:
-                            mid_str = before_str[tp.start + (tp.length or 0)]
-
-                            if not mid_str:
-                                ret.append(Token((tp.start or 0), tp.start + tp.length + len(mid_str) + (e.length or 0)))
-
-            if e.start + e.length <= len(text):
-                after_str = text[e.start + e.length:]
-
-                if after_str:
-
-                    time_ers = self.config.time_period_extractor.extract(after_str)
-                    if len(time_ers) > 0:
-                        for tp in time_ers:
-                            mid_str = after_str[0: (tp.start or 0)]
-                            if not mid_str:
-                                ret.append(Token(e.start, e.start + e.length + len(mid_str) + (tp.length or 0)))
-
-        return ret
 
     def match_simple_cases(self, source: str, reference: datetime) -> List[Token]:
         tokens: List[Token] = list()
