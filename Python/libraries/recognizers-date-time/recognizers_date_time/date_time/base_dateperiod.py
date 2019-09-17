@@ -616,8 +616,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
             match = self.config.in_connector_regex.search(before_str)
             if self.__match_regex_in_prefix(before_str, match):
-                range_str = source[duration.start:duration.start +
-                                                  duration.length]
+                range_str = source[duration.start:duration.start + duration.length]
                 range_match = self.config.range_unit_regex.search(range_str)
 
                 if range_match:
