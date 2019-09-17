@@ -13,13 +13,6 @@ from ..utilities import DateTimeOptions
 
 
 class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
-    @property
-    def dmy_date_format(self) -> bool:
-        return self._dmy_date_format
-
-    @property
-    def options(self):
-        return self._options
 
     @property
     def simple_cases_regex(self) -> List[Pattern]:
@@ -54,7 +47,7 @@ class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         return self._pure_number_regex
 
     def __init__(self):
-        self._options = DateTimeOptions.NONE
+        super().__init__()
         self._single_time_extractor = BaseTimeExtractor(
             FrenchTimeExtractorConfiguration())
         self._integer_extractor = FrenchIntegerExtractor()

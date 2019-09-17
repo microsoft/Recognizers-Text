@@ -14,7 +14,8 @@ from .base_timeperiod import BaseTimePeriodExtractor
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, RegExpUtility, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, RegexExtension, DateTimeOptionsConfiguration, DateTimeOptions, TimeZoneUtility
+from .utilities import Token, merge_all_tokens, RegExpUtility, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, \
+    RegexExtension, DateTimeOptionsConfiguration, DateTimeOptions, TimeZoneUtility, get_tokens_from_regex
 
 
 class MatchedTimeRange:
@@ -227,7 +228,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
 
         if (self.config.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
-            # When TimeZone be migrated enable it
+            # When TimeZone is migrated enable it
             pass
 
         return result
@@ -312,20 +313,21 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
     def match_time_of_day(self, text: str, reference: datetime, date_ers: [ExtractResult]):
         ret = []
 
-        matches: [Match] = self.config.specific_time_of_day_regex.match(text)
+        matches = list(regex.finditer(self.config.specific_time_of_day_regex, text))
+
         if matches is not None:
 
             for match in matches:
-                ret.append(Token(text.index(match.group()), text.index(match.group()) + (match.end - match.start)))
+                ret.append(Token(match.start(), match.end()))
 
             if len(date_ers) == 0:
                 return ret
 
             for er in date_ers:
 
-                after_str = text[er.start + (er.length or 0):]
+                after_str = text[er.start + (er.length or 0):].strip()
 
-                match = self.config.period_time_of_day_with_date_regex.match(after_str)
+                match = regex.match(self.config.period_time_of_day_with_date_regex, after_str)
 
                 if match:
 
@@ -340,43 +342,42 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
                     if RegexExtension.is_exact_match(self.config.middle_pause_regex, connector_str, True):
 
-                        suffix = after_str[after_str.index(match.group()) + (match.end - match.start):].strip()
+                        suffix = after_str[after_str.index(match.group()) + (match.end() - match.start()):].strip()
 
                         ending_match = self.config.general_ending_regex.search(suffix)
                         if ending_match:
-                            ret.append(Token((er.start or 0), er.start + er.length + after_str.index(match.group()) + (match.end - match.start)))
+                            ret.append(Token((er.start or 0), er.start + er.length + after_str.index(match.group()) + (match.end() - match.start())))
 
                 if not match:
-                    match = self.config.am_desc_regex.search(after_str)
+                    match = regex.match(self.config.am_desc_regex, after_str)
 
-                if match or not after_str[0: after_str.index(match.group())]:
-                    match = self.config.pm_desc_regex.search(after_str)
+                if not match:
+                    match = regex.match(self.config.pm_desc_regex, after_str)
 
                 if match:
-
                     if after_str[0: after_str.index(match.group())]:
-                        ret.append(Token((er.start or 0), er.start + er.length + after_str.index(match.group()) + (match.end - match.start)))
+                        ret.append(Token((er.start or 0), er.start + er.length + after_str.index(match.group()) + (match.end() - match.start())))
 
                 prefix_str = text[0: er.start or 0]
 
-                match = self.config.period_time_of_day_with_date_regex.search(prefix_str)
-                if match:
+                match = regex.match(self.config.period_time_of_day_with_date_regex, prefix_str)
 
-                    if prefix_str[prefix_str.index(match.group()) + (match.end - match.start):]:
-                        mid_str = text[prefix_str.index(match.group()) + (match.end - match.start), er.start]
+                if match:
+                    if prefix_str[prefix_str.index(match.group()) + (match.end() - match.start()):]:
+                        mid_str = text[prefix_str.index(match.group()) + (match.end() - match.start()), er.start]
                         if not (mid_str is None or mid_str == '') and (mid_str is None or mid_str == ' '):
                             ret.append(Token(prefix_str.index(match.group()), er.start + (er.length or 0)))
                     else:
 
-                        connector_str = prefix_str[prefix_str.index(match.group()) + (match.end - match.start)]
+                        connector_str = prefix_str[prefix_str.index(match.group()) + (match.end() - match.start())]
 
                         if RegexExtension.is_exact_match(self.config.middle_pause_regex, connector_str, True):
 
                             suffix = text[er.start + (er.length or 0)].lstrip(' ')
 
-                            ending_match = self.config.general_ending_regex.search(suffix)
+                            ending_match = regex.match(self.config.general_ending_regex, suffix)
                             if ending_match:
-                                ret.append(Token(suffix.index(match.group()) + er.start + (er.length or 0)))
+                                ret.append(Token(er.start, er.end))
 
         for e in ret:
 
@@ -411,8 +412,8 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
     def match_simple_cases(self, source: str, reference: datetime) -> List[Token]:
         tokens: List[Token] = list()
         source = source.strip().lower()
-        simple_cases_matches = list(map(lambda x: list(
-            regex.finditer(x, source)), self.config.simple_cases_regexes))
+        simple_cases_matches = list(filter(lambda t: t != [], map(lambda x: list(
+            regex.finditer(x, source)), self.config.simple_cases_regexes)))
 
         for matches in simple_cases_matches:
             for match in matches:

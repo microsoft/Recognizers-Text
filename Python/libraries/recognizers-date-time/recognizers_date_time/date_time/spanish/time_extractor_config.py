@@ -36,6 +36,7 @@ class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
         return self._time_before_after_regex
 
     def __init__(self):
+        super().__init__()
         self._time_regex_list: List[Pattern] = SpanishTimeExtractorConfiguration.get_time_regex_list(
         )
         self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(
@@ -43,7 +44,6 @@ class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
         self._ish_regex: Pattern = None
         self._time_before_after_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.TimeBeforeAfterRegex)
-        self._options = DateTimeOptions.NONE
 
     @staticmethod
     def get_time_regex_list() -> List[Pattern]:

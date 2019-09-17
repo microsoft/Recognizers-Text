@@ -20,13 +20,6 @@ from ..utilities import DateTimeOptions
 
 
 class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
-    @property
-    def options(self):
-        return self._options
-
-    @property
-    def dmy_date_format(self) -> bool:
-        return self._dmy_date_format
 
     @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
@@ -153,6 +146,7 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         return self._suffix_regex
 
     def __init__(self):
+        super().__init__()
         self._cardinal_extractor = EnglishCardinalExtractor()
         self._single_date_extractor = BaseDateExtractor(
             EnglishDateExtractorConfiguration())

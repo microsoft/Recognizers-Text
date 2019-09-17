@@ -4,7 +4,7 @@ import regex
 from recognizers_text.utilities import RegExpUtility
 from ...resources.spanish_date_time import SpanishDateTime
 from ..extractors import DateTimeExtractor
-from ..utilities import DateTimeUtilityConfiguration
+from ..utilities import DateTimeUtilityConfiguration, DateTimeOptions
 from ..base_date import BaseDateExtractor
 from ..base_time import BaseTimeExtractor
 from ..base_duration import BaseDurationExtractor
@@ -19,10 +19,6 @@ class SpanishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
     @property
     def dmy_date_format(self) -> bool:
         return self._dmy_date_format
-
-    @property
-    def options(self):
-        return self._options
 
     @property
     def date_point_extractor(self) -> DateTimeExtractor:
@@ -109,6 +105,7 @@ class SpanishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         return self._year_regex
 
     def __init__(self):
+        super().__init__()
         self.preposition_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.PrepositionRegex)
         self._now_regex = RegExpUtility.get_safe_reg_exp(

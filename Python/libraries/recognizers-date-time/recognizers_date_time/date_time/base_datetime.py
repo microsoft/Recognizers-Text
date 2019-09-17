@@ -115,16 +115,6 @@ class DateTimeExtractorConfiguration(DateTimeOptionsConfiguration):
     def year_regex(self) -> Pattern:
         raise NotImplementedError
 
-    @property
-    @abstractmethod
-    def dmy_date_format(self) -> bool:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def options(self):
-        raise NotImplementedError
-
 
 class BaseDateTimeExtractor(DateTimeExtractor):
     @property

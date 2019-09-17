@@ -193,7 +193,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         return Constants.SYS_DATETIME_DATE
 
     def __init__(self, config):
-        self.config = config
+        super().__init__(config)
 
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
         from .utilities import merge_all_tokens
@@ -215,7 +215,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
         for regexp in self.config.date_regex_list:
 
-            matches = regexp.finditer(source)
+            matches = list(regexp.finditer(source))
             if matches is not None:
                 for match in matches:
 
@@ -607,7 +607,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
     @staticmethod
     def strip_inequality_prefix(er: ExtractResult, regexp: Pattern):
-        if regex.search(er.text):
+        if regex.search(regexp, er.text):
             original_length = len(er.text)
             er.text = str(regexp).replace(er.text, '').strip()
             er.start += original_length - len(er.text)

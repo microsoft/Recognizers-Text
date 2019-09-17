@@ -9,9 +9,15 @@ from ..base_timeperiod import TimePeriodExtractorConfiguration, MatchedIndex
 from ..base_time import BaseTimeExtractor
 from .time_extractor_config import SpanishTimeExtractorConfiguration
 from .base_configs import SpanishDateTimeUtilityConfiguration
+from ..utilities import DateTimeOptions
 
 
 class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
+
+    @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
+
     @property
     def simple_cases_regex(self) -> List[Pattern]:
         return self._simple_cases_regex
@@ -45,6 +51,7 @@ class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         return self._pure_number_regex
 
     def __init__(self):
+        super().__init__()
         self._single_time_extractor = BaseTimeExtractor(
             SpanishTimeExtractorConfiguration())
         self._integer_extractor = SpanishIntegerExtractor()

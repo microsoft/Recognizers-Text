@@ -16,9 +16,18 @@ from .time_extractor_config import SpanishTimeExtractorConfiguration
 from .duration_extractor_config import SpanishDurationExtractorConfiguration
 from .timeperiod_extractor_config import SpanishTimePeriodExtractorConfiguration
 from .datetime_extractor_config import SpanishDateTimeExtractorConfiguration
+from ..utilities import DateTimeOptions
 
 
 class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
+    @property
+    def suffix_regex(self) -> Pattern:
+        return self._suffix_regex
+
+    @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
+
     @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
         return self._cardinal_extractor
@@ -156,6 +165,7 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         return self._after_regex
 
     def __init__(self):
+        super().__init__()
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.PureNumFromTo),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.PureNumBetweenAnd)
@@ -242,6 +252,9 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         )
         self._after_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.AfterRegex
+        )
+        self._suffix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.SuffixRegex
         )
 
     def get_from_token_index(self, source: str) -> MatchedIndex:

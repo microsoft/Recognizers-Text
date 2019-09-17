@@ -95,11 +95,6 @@ class DurationExtractorConfiguration(DateTimeOptionsConfiguration):
     def less_than_regex(self) -> Pattern:
         raise NotImplementedError
 
-    @property
-    @abstractmethod
-    def options(self) -> DateTimeOptions:
-        raise NotImplementedError
-
 
 class BaseDurationExtractor(DateTimeExtractor):
     @property
@@ -361,11 +356,6 @@ class DurationParserConfiguration(ABC):
     @abstractmethod
     def double_numbers(self) -> Dict[str, float]:
         raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def options(self) -> DateTimeOptions:
-        return NotImplementedError
 
 
 class BaseDurationParser(DateTimeParser):

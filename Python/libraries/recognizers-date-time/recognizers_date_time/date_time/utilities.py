@@ -166,18 +166,6 @@ class ConditionalMatch:
         return self.match[0].groups()
 
 
-class DateTimeOptionsConfiguration(ABC):
-    @property
-    @abstractmethod
-    def options(self):
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def dmy_date_format(self) -> bool:
-        raise NotImplementedError
-
-
 class DateTimeOptions(IntFlag):
     NONE = 0
     SKIP_FROM_TO_MERGE = 1
@@ -189,28 +177,18 @@ class DateTimeOptions(IntFlag):
     ENABLE_PREVIEW = 8388608
 
 
-class BaseDateTimeOptionsConfiguration(DateTimeOptionsConfiguration):
-
-    def __init__(self, options=DateTimeOptions.NONE, dmy_date_format=False):
-
-        self._options = options
-        self._dmy_date_format = dmy_date_format
-
+class DateTimeOptionsConfiguration():
     @property
     def options(self):
         return self._options
-
-    @options.setter
-    def options(self, value):
-        self._options = value
 
     @property
     def dmy_date_format(self) -> bool:
         return self._dmy_date_format
 
-    @dmy_date_format.setter
-    def dmy_date_format(self, value):
-        self._dmy_date_format = value
+    def __init__(self, options=DateTimeOptions.NONE, dmy_date_format=False):
+        self._options = options
+        self._dmy_date_format = dmy_date_format
 
 
 class DurationParsingUtil:
