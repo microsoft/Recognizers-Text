@@ -2498,5 +2498,85 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I want to earn $10000 in 3 years",
+    "Results": [
+      {
+        "Text": "10000",
+        "Start": 16,
+        "End": 20,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000"
+        }
+      },
+      {
+        "Text": "3",
+        "Start": 25,
+        "End": 25,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want to earn $2000 over 3 years",
+    "Results": [
+      {
+        "Text": "2000",
+        "Start": 16,
+        "End": 19,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2000"
+        }
+      },
+      {
+        "Text": "3",
+        "Start": 26,
+        "End": 26,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2000 over 3",
+    "Results": [
+      {
+        "Text": "2000 over 3",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "666.666666666667"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "$20",
+    "Results": [
+      {
+        "Text": "20",
+        "Start": 1,
+        "End": 2,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "20"
+        }
+      }
+    ]
   }
 ]

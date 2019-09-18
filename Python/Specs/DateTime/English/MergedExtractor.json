@@ -1192,10 +1192,10 @@
         "Length": 9
       },
       {
-        "Text": "today",
+        "Text": "from today",
         "Type": "date",
-        "Start": 27,
-        "Length": 5
+        "Start": 22,
+        "Length": 10
       }
     ]
   }

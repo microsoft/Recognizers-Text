@@ -1533,5 +1533,35 @@
     "Input": "pour cent",
     "NotSupported": "javascript,java",
     "Results": []
+  },
+  {
+    "Input": "Je veux un crédit de EUR 1000 sur 3 ans",
+    "Results": [
+      {
+        "Text": "eur 1000",
+        "Start": 21,
+        "End": 28,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "1000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je veux un crédit de 1000 EUR sur 3 ans",
+    "Results": [
+      {
+        "Text": "1000 eur",
+        "Start": 21,
+        "End": 28,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "1000"
+        }
+      }
+    ]
   }
 ]
