@@ -227,7 +227,7 @@ class ChineseNumericWithUnit:
                                ("Surinamese dollar", "苏里南元"),
                                ("Trinidad and Tobago dollar", "特立尼达多巴哥元"),
                                ("Tuvaluan dollar", "吐瓦鲁元"),
-                               ("Chinese yuan", "人民币|人民币元|元人民币|块钱|块|圆"),
+                               ("Chinese yuan", "人民币|人民币元|元人民币|块钱|块|元|圆"),
                                ("Fen", "分钱|分"),
                                ("Jiao", "毛钱|毛|角钱|角"),
                                ("Finnish markka", "芬兰马克"),

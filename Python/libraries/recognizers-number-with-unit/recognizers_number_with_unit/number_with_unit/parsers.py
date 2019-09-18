@@ -142,7 +142,7 @@ class BaseCurrencyParser(Parser):
 
         count = 0
         result = None
-        number_value = None
+        number_value = ''
         extensible_result = ''
         main_unit_value = ''
         main_unit_iso_code = ''
@@ -159,7 +159,7 @@ class BaseCurrencyParser(Parser):
             except AttributeError:
                 unit_value = None
 
-            if number_value is None:
+            if not number_value:
                 extensible_result = main_unit_value
             else:
                 extensible_result = ''
@@ -187,7 +187,7 @@ class BaseCurrencyParser(Parser):
                 # If the main unit can't be recognized, finish process this group.
                 if not main_unit_iso_code:
                     result.value = UnitValue(
-                        str(number_value), main_unit_value)
+                        self.__get_number_value(number_value), main_unit_value)
                     results.append(result)
                     result = None
                     idx = idx + 1
@@ -219,24 +219,24 @@ class BaseCurrencyParser(Parser):
                 else:
                     # If the fraction unit doesn't match the main unit, finish process this group.
                     if result:
-                        if extensible_result == unit_value and parse_result_value.Number:
+                        if extensible_result == unit_value and parse_result_value.number:
                             result.length = extract_result.start + extract_result.length - result.start
                             number_value = float(parse_result_value.number)
                             result.value = CurrencyUnitValue(
-                                str(number_value), main_unit_value, main_unit_iso_code)
-                            count = count + 1
+                                self.__get_number_value(number_value), main_unit_value, main_unit_iso_code)
+                            idx = idx + 1
                             continue
                         if not main_unit_iso_code or main_unit_iso_code.startswith(Constants.FAKE_ISO_CODE_PREFIX):
                             result.value = UnitValue(
-                                str(number_value), main_unit_value)
+                                self.__get_number_value(number_value), main_unit_value)
                         else:
                             result.value = CurrencyUnitValue(
-                                str(number_value), main_unit_value, main_unit_iso_code)
+                                self.__get_number_value(number_value), main_unit_value, main_unit_iso_code)
 
                         results.append(result)
                         result = None
                     count = 0
-                    number_value = None
+                    number_value = ''
                     continue
 
             count = count + 1
@@ -244,10 +244,10 @@ class BaseCurrencyParser(Parser):
 
         if result:
             if not main_unit_iso_code or main_unit_iso_code.startswith(Constants.FAKE_ISO_CODE_PREFIX):
-                result.value = UnitValue(str(number_value), main_unit_value)
+                result.value = UnitValue(self.__get_number_value(number_value), main_unit_value)
             else:
                 result.value = CurrencyUnitValue(
-                    str(number_value), main_unit_value, main_unit_iso_code)
+                    self.__get_number_value(number_value), main_unit_value, main_unit_iso_code)
 
             results.append(result)
 
@@ -270,8 +270,14 @@ class BaseCurrencyParser(Parser):
 
     def __resolve_text(self, prs: List[ParseResult], source: str, bias: int):
         for parse_result in prs:
-            if parse_result.start and parse_result.length:
+            if parse_result.start is not None and parse_result.length is not None:
                 parse_result.text = source[parse_result.start - bias:parse_result.start - bias + parse_result.length]
+
+    def __get_number_value(self, number_value):
+        if number_value:
+            return '{:g}'.format(number_value)
+        else:
+            return None
 
 
 class BaseMergedUnitParser(Parser):

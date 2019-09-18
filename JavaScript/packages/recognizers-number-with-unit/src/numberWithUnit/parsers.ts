@@ -191,7 +191,7 @@ export class BaseCurrencyParser implements IParser {
             let parseResultValue: UnitValue = parseResult.value;
             let unitValue = parseResultValue != null ? parseResultValue.unit : null;
 
-            extensibleResult  = numberValue === null ? mainUnitIsoCode : '';
+            extensibleResult  = numberValue === null ? mainUnitValue : '';
 
             // Process a new group
             if (count === 0) {
@@ -203,6 +203,8 @@ export class BaseCurrencyParser implements IParser {
                 result = new ParseResult(extractResult);
 
                 mainUnitValue = unitValue;
+
+                // Nothing to resolve. This happens when the entity is a currency name only (no numerical value).
                 if (parseResultValue.number != null) {
                     numberValue = parseFloat(parseResultValue.number);
                 }

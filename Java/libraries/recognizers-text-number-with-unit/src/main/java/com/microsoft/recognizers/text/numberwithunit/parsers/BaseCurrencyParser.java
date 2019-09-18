@@ -53,6 +53,9 @@ public class BaseCurrencyParser implements IParser {
     private ParseResult mergeCompoundUnit(ExtractResult compoundResult) {
         List<ParseResult> results = new ArrayList<>();
         List<ExtractResult> compoundUnit = (List<ExtractResult>)compoundResult.getData();
+        java.text.NumberFormat NF = java.text.NumberFormat.getInstance();
+        NF.setMinimumFractionDigits(0);
+        NF.setGroupingUsed(false);
 
         int count = 0;
         ParseResult result = null;
@@ -83,6 +86,7 @@ public class BaseCurrencyParser implements IParser {
                 mainUnitValue = unitValue;
                 if (parseResultValue.isPresent() && parseResultValue.get().number != null) {
                     numberValue = Double.parseDouble(parseResultValue.get().number);
+                    NF.format(numberValue);
                 }
 
                 result.setResolutionStr(parseResult.getResolutionStr());
@@ -90,11 +94,7 @@ public class BaseCurrencyParser implements IParser {
 
                 // If the main unit can't be recognized, finish process this group.
                 if (mainUnitIsoCode == null || mainUnitIsoCode.isEmpty()) {
-                    if (numberValue < 0) {
-                        result.setValue(new CurrencyUnitValue("null", mainUnitValue, mainUnitIsoCode));
-                    } else {
-                        result.setValue(new CurrencyUnitValue(String.valueOf(numberValue), mainUnitValue, mainUnitIsoCode));
-                    }
+                    result.setValue(new UnitValue(numberValue < 0 ? null : NF.format(numberValue), mainUnitValue));
                     results.add(result);
                     result = null;
                     continue;
@@ -135,18 +135,14 @@ public class BaseCurrencyParser implements IParser {
                             result.setLength(extractResult.getStart() + extractResult.getLength() - result.getStart());
                             result.setText(result.getText() + extractResult.getText());
                             numberValue = Double.parseDouble(parseResultValue.get().number);
-                            result.setValue(new CurrencyUnitValue(String.valueOf(numberValue), mainUnitValue, mainUnitIsoCode));
+                            result.setValue(new CurrencyUnitValue(NF.format(numberValue), mainUnitValue, mainUnitIsoCode));
                             continue;
                         }
                         if (mainUnitIsoCode == null || mainUnitIsoCode.isEmpty() ||
                             mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
-                            result.setValue(new UnitValue(String.valueOf(numberValue), mainUnitValue));
+                            result.setValue(new UnitValue(numberValue < 0 ? null : NF.format(numberValue), mainUnitValue));
                         } else {
-                            if (numberValue < 0) {
-                                result.setValue(new CurrencyUnitValue("null", mainUnitValue, mainUnitIsoCode));
-                            } else {
-                                result.setValue(new CurrencyUnitValue(String.valueOf(numberValue), mainUnitValue, mainUnitIsoCode));
-                            }
+                            result.setValue(new CurrencyUnitValue(numberValue < 0 ? null : NF.format(numberValue), mainUnitValue, mainUnitIsoCode));
                         }
 
                         results.add(result);
@@ -166,13 +162,9 @@ public class BaseCurrencyParser implements IParser {
         if (result != null) {
             if (mainUnitIsoCode == null || mainUnitIsoCode.isEmpty() ||
                 mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
-                result.setValue(new UnitValue(String.valueOf(numberValue), mainUnitValue));
+                result.setValue(new UnitValue(numberValue < 0 ? null : NF.format(numberValue), mainUnitValue));
             } else {
-                if (numberValue < 0) {
-                    result.setValue(new CurrencyUnitValue("null", mainUnitValue, mainUnitIsoCode));
-                } else {
-                    result.setValue(new CurrencyUnitValue(String.valueOf(numberValue), mainUnitValue, mainUnitIsoCode));
-                }
+                result.setValue(new CurrencyUnitValue(numberValue < 0 ? null : NF.format(numberValue), mainUnitValue, mainUnitIsoCode));
             }
 
             results.add(result);

@@ -123,6 +123,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     };
 
                     mainUnitValue = unitValue;
+
+                    // Nothing to resolve. This happens when the entity is a currency name only (no numerical value).
                     if (parseResultValue?.Number != null)
                     {
                         numberValue = double.Parse(parseResultValue.Number);
