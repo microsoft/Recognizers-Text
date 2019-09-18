@@ -1658,37 +1658,5 @@
         "End": 41
       }
     ]
-  },
-  {
-    "Input": "Je veux un crédit de €1000 sur 3 ans",
-    "Results": [
-      {
-        "Text": "un",
-        "Start": 8,
-        "End": 9,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1"
-        }
-      },
-      {
-        "Text": "1000",
-        "Start": 22,
-        "End": 25,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1000"
-        }
-      },
-      {
-        "Text": "3",
-        "Start": 31,
-        "End": 31,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "3"
-        }
-      }
-    ]
   }
 ]

@@ -4611,41 +4611,5 @@
         "Length": 14
       }
     ]
-  },
-  {
-    "Input": "semana pasada",
-    "NotSupportedByDesign": "javascript, python",
-    "Results": [
-      {
-        "Text": "semana pasada",
-        "Type": "daterange",
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "la semana pasada",
-    "NotSupportedByDesign": "javascript, python",
-    "Results": [
-      {
-        "Text": "la semana pasada",
-        "Type": "daterange",
-        "Start": 0,
-        "Length": 16
-      }
-    ]
-  },
-  {
-    "Input": "el mes pasado",
-    "NotSupportedByDesign": "javascript, python",
-    "Results": [
-      {
-        "Text": "el mes pasado",
-        "Type": "daterange",
-        "Start": 0,
-        "Length": 13
-      }
-    ]
   }
 ]

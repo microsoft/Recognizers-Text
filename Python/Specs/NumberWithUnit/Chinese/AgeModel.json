@@ -119,35 +119,5 @@
         "End": 8
       }
     ]
-  },
-  {
-    "Input": "十二周岁",
-    "Results": [
-      {
-        "Text": "十二周岁",
-        "TypeName": "age",
-        "Resolution": {
-          "value": "12",
-          "unit": "Year"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "他已经有十二周大了",
-    "Results": [
-      {
-        "Text": "十二周大",
-        "TypeName": "age",
-        "Resolution": {
-          "value": "12",
-          "unit": "Week"
-        },
-        "Start": 4,
-        "End": 7
-      }
-    ]
   }
 ]

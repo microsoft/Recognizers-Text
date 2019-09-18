@@ -1641,56 +1641,5 @@
         "End": 17
       }
     ]
-  },
-  {
-    "Input": "50 Lira",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "50 lira",
-        "TypeName": "currency",
-        "Resolution": {
-          "value": "50",
-          "unit": "Turkish lira",
-          "isoCurrency": "TRY"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "50 tl 30 kuruş",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "50 tl 30 kuruş",
-        "TypeName": "currency",
-        "Resolution": {
-          "value": "50,3",
-          "unit": "Turkish lira",
-          "isoCurrency": "TRY"
-        },
-        "Start": 0,
-        "End": 13
-      }
-    ]
-  },
-  {
-    "Input": "50 tl 3 kuruş",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "50 tl 3 kuruş",
-        "TypeName": "currency",
-        "Resolution": {
-          "value": "50,03",
-          "unit": "Turkish lira",
-          "isoCurrency": "TRY"
-        },
-        "Start": 0,
-        "End": 12
-      }
-    ]
   }
 ]
