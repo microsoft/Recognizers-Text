@@ -244,7 +244,6 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                 result.append(Token(match.pos, date_str_end))
         return result
 
-
     def merge_date_with_time_period_suffix(self, text: str, date_ers: [ExtractResult], time_ers: [ExtractResult]):
 
         ret = []
@@ -389,7 +388,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                             middle_str = after_str[0:er_time.start]
                             if not middle_str:
                                 token_end = token.start + token.length + \
-                                            len(middle_str) + er_time.length
+                                    len(middle_str) + er_time.length
                                 tokens.append(Token(token.start, token_end))
 
         return tokens
@@ -610,7 +609,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                             middle_str = after_str[0:er_time.start]
                             if not middle_str:
                                 token_end = token.start + token.length + \
-                                            len(middle_str) + er_time.length
+                                    len(middle_str) + er_time.length
                                 tokens.append(Token(token.start, token_end))
 
         return tokens
