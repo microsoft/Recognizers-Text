@@ -179,7 +179,8 @@ export class BaseCurrencyParser implements IParser {
 
         let count = 0;
         let result: ParseResult = null;
-        let numberValue = 0.0;
+        let numberValue = null;
+        let extensibleResult = '';
         let mainUnitValue = '';
         let mainUnitIsoCode = '';
         let fractionUnitsString = '';
@@ -189,6 +190,8 @@ export class BaseCurrencyParser implements IParser {
             let parseResult = this.numberWithUnitParser.parse(extractResult);
             let parseResultValue: UnitValue = parseResult.value;
             let unitValue = parseResultValue != null ? parseResultValue.unit : null;
+
+            extensibleResult  = numberValue === null ? mainUnitIsoCode : '';
 
             // Process a new group
             if (count === 0) {
@@ -200,7 +203,9 @@ export class BaseCurrencyParser implements IParser {
                 result = new ParseResult(extractResult);
 
                 mainUnitValue = unitValue;
-                numberValue = parseFloat(parseResultValue.number);
+                if (parseResultValue.number != null) {
+                    numberValue = parseFloat(parseResultValue.number);
+                }
                 result.resolutionStr = parseResult.resolutionStr;
 
                 if (this.config.currencyNameToIsoCodeMap.has(unitValue)) {
@@ -252,15 +257,26 @@ export class BaseCurrencyParser implements IParser {
                 else {
                     // If the fraction unit doesn't match the main unit, finish process this group.
                     if (result !== null) {
+                        if(extensibleResult === unitValue && parseResultValue.number != null) {
+                            result.length = extractResult.start + extractResult.length - result.start;
+                            result.text = result.text + extractResult.text;
+                            numberValue = parseFloat(parseResultValue.number);
+                            result.value = {
+                                number: numberValue ? numberValue.toString() : 'null',
+                                unit: mainUnitValue,
+                                isoCurrency: mainUnitIsoCode
+                            } as UnitValueIso;
+                            continue;
+                        }
                         if (StringUtility.isNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
                             result.value = {
-                                number: numberValue.toString(),
+                                number: numberValue ? numberValue.toString() : 'null',
                                 unit: mainUnitValue
                             } as UnitValue;
                         }
                         else {
                             result.value = {
-                                number: numberValue.toString(),
+                                number: numberValue ? numberValue.toString() : 'null',
                                 unit: mainUnitValue,
                                 isoCurrency: mainUnitIsoCode
                             } as UnitValueIso;
@@ -272,6 +288,7 @@ export class BaseCurrencyParser implements IParser {
 
                     count = 0;
                     i -= 1;
+                    numberValue = null;
                     continue;
                 }
             }
@@ -282,13 +299,13 @@ export class BaseCurrencyParser implements IParser {
         if (result !== null) {
             if (StringUtility.isNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
                 result.value = {
-                    number: numberValue.toString(),
+                    number: numberValue ? numberValue.toString() : 'null',
                     unit: mainUnitValue
                 } as UnitValue;
             }
             else {
                 result.value = {
-                    number: numberValue.toString(),
+                    number: numberValue ? numberValue.toString() : 'null',
                     unit: mainUnitValue,
                     isoCurrency: mainUnitIsoCode
                 } as UnitValueIso;

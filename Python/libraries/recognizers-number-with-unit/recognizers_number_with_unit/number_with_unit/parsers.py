@@ -142,7 +142,8 @@ class BaseCurrencyParser(Parser):
 
         count = 0
         result = None
-        number_value = 0.0
+        number_value = None
+        extensible_result = ''
         main_unit_value = ''
         main_unit_iso_code = ''
         fraction_unit_string = ''
@@ -157,6 +158,12 @@ class BaseCurrencyParser(Parser):
                 unit_value = parse_result_value.unit if parse_result_value else None
             except AttributeError:
                 unit_value = None
+
+            if number_value is None:
+                extensible_result = main_unit_value
+            else:
+                extensible_result = ''
+
             # Process a new group
             if count == 0:
                 if not extract_result.type == Constants.SYS_UNIT_CURRENCY:
@@ -210,7 +217,15 @@ class BaseCurrencyParser(Parser):
                     result.resolution_str = result.resolution_str + ' ' + parse_result.resolution_str
                     result.length = parse_result.start + parse_result.length - result.start
                 else:
+                    # If the fraction unit doesn't match the main unit, finish process this group.
                     if result:
+                        if extensible_result == unit_value and parse_result_value.Number:
+                            result.length = extract_result.start + extract_result.length - result.start
+                            number_value = float(parse_result_value.number)
+                            result.value = CurrencyUnitValue(
+                                str(number_value), main_unit_value, main_unit_iso_code)
+                            count = count + 1
+                            continue
                         if not main_unit_iso_code or main_unit_iso_code.startswith(Constants.FAKE_ISO_CODE_PREFIX):
                             result.value = UnitValue(
                                 str(number_value), main_unit_value)
@@ -221,7 +236,7 @@ class BaseCurrencyParser(Parser):
                         results.append(result)
                         result = None
                     count = 0
-                    idx = idx - 1
+                    number_value = None
                     continue
 
             count = count + 1
@@ -256,8 +271,7 @@ class BaseCurrencyParser(Parser):
     def __resolve_text(self, prs: List[ParseResult], source: str, bias: int):
         for parse_result in prs:
             if parse_result.start and parse_result.length:
-                parse_result.text = source[parse_result.start -
-                                           bias:parse_result.length]
+                parse_result.text = source[parse_result.start - bias:parse_result.start - bias + parse_result.length]
 
 
 class BaseMergedUnitParser(Parser):

@@ -73,6 +73,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         private string GetResolutionStr(object value)
         {
+            if (value == null)
+            {
+                return null;
+            }
+
             return Config.CultureInfo != null ?
                 ((double)value).ToString(Config.CultureInfo) :
                 value.ToString();
@@ -85,7 +90,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             var count = 0;
             ParseResult result = null;
-            var numberValue = 0.0;
+            double? numberValue = null;
+            var extensibleResult = string.Empty;
             var mainUnitValue = string.Empty;
             string mainUnitIsoCode = string.Empty;
             string fractionUnitsString = string.Empty;
@@ -96,6 +102,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 var parseResult = numberWithUnitParser.Parse(extractResult);
                 var parseResultValue = parseResult.Value as UnitValue;
                 var unitValue = parseResultValue?.Unit;
+
+                extensibleResult = numberValue == null ? mainUnitValue : string.Empty;
 
                 // Process a new group
                 if (count == 0)
@@ -115,7 +123,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     };
 
                     mainUnitValue = unitValue;
-                    numberValue = double.Parse(parseResultValue?.Number);
+                    if (parseResultValue?.Number != null)
+                    {
+                        numberValue = double.Parse(parseResultValue.Number);
+                    }
+
                     result.ResolutionStr = parseResult.ResolutionStr;
 
                     Config.CurrencyNameToIsoCodeMap.TryGetValue(unitValue, out mainUnitIsoCode);
@@ -163,6 +175,22 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         // If the fraction unit doesn't match the main unit, finish process this group.
                         if (result != null)
                         {
+                            // If the fraction unit is same with main unit and main unit does not have numberValue, combine them.
+                            // For example "人民币50元".
+                            if (extensibleResult == unitValue && parseResultValue.Number != null)
+                            {
+                                result.Length = extractResult.Start + extractResult.Length - result.Start;
+                                result.Text = result.Text + extractResult.Text;
+                                numberValue = double.Parse(parseResultValue.Number);
+                                result.Value = new CurrencyUnitValue
+                                {
+                                    Number = GetResolutionStr(numberValue),
+                                    Unit = mainUnitValue,
+                                    IsoCurrency = mainUnitIsoCode,
+                                };
+                                continue;
+                            }
+
                             if (string.IsNullOrEmpty(mainUnitIsoCode) ||
                                 mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX, StringComparison.Ordinal))
                             {
@@ -188,6 +216,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                         count = 0;
                         idx -= 1;
+                        numberValue = null;
                         continue;
                     }
                 }
