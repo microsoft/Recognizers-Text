@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -44,18 +45,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             rets = TagInequalityPrefix(text, rets);
 
             return rets;
-        }
-
-        private static List<Token> GetTokenFromRegex(Regex regex, string text)
-        {
-          var ret = new List<Token>();
-          var matches = regex.Matches(text);
-          foreach (Match match in matches)
-          {
-            ret.Add(new Token(match.Index, match.Index + match.Length));
-          }
-
-          return ret;
         }
 
         // handle cases look like: {more than | less than} {duration}?
@@ -120,7 +109,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> NumberWithUnit(string text)
         {
             var ret = new List<Token>();
-            var ers = this.config.CardinalExtractor.Extract(text);
+            var ers = ExtractNumbersBeforeUnit(text);
+
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
@@ -133,15 +123,38 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "3hrs"
-            ret.AddRange(GetTokenFromRegex(config.NumberCombinedWithUnit, text));
+            ret.AddRange(Token.GetTokenFromRegex(config.NumberCombinedWithUnit, text));
 
             // handle "an hour"
-            ret.AddRange(GetTokenFromRegex(config.AnUnitRegex, text));
+            ret.AddRange(Token.GetTokenFromRegex(config.AnUnitRegex, text));
 
             // handle "few" related cases
-            ret.AddRange(GetTokenFromRegex(config.InexactNumberUnitRegex, text));
+            ret.AddRange(Token.GetTokenFromRegex(config.InexactNumberUnitRegex, text));
 
             return ret;
+        }
+
+        // @TODO improve re-use with Parser
+        private List<ExtractResult> ExtractNumbersBeforeUnit(string text)
+        {
+            var ers = this.config.CardinalExtractor.Extract(text);
+
+            // In special cases some languages will treat "both" as a number to be combined with duration units.
+            var specialNumberUnitTokens = Token.GetTokenFromRegex(config.SpecialNumberUnitRegex, text);
+
+            foreach (var token in specialNumberUnitTokens)
+            {
+                var er = new ExtractResult
+                {
+                    Start = token.Start,
+                    Length = token.Length,
+                    Text = text.Substring(token.Start, token.Length),
+                };
+
+                ers.Add(er);
+            }
+
+            return ers;
         }
 
         // handle cases that don't contain number
@@ -150,18 +163,18 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new List<Token>();
 
             // handle "all day", "all year"
-            ret.AddRange(GetTokenFromRegex(config.AllRegex, text));
+            ret.AddRange(Token.GetTokenFromRegex(config.AllRegex, text));
 
             // handle "half day", "half year"
-            ret.AddRange(GetTokenFromRegex(config.HalfRegex, text));
+            ret.AddRange(Token.GetTokenFromRegex(config.HalfRegex, text));
 
             // handle "next day", "last year"
-            ret.AddRange(GetTokenFromRegex(config.RelativeDurationUnitRegex, text));
+            ret.AddRange(Token.GetTokenFromRegex(config.RelativeDurationUnitRegex, text));
 
             // handle "during/for the day/week/month/year"
             if ((config.Options & DateTimeOptions.CalendarMode) != 0)
             {
-                ret.AddRange(GetTokenFromRegex(config.DuringRegex, text));
+                ret.AddRange(Token.GetTokenFromRegex(config.DuringRegex, text));
             }
 
             return ret;
@@ -250,8 +263,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     node.Text = text.Substring(node.Start ?? 0, node.Length ?? 0);
                     node.Type = extractorResults[firstExtractionIndex].Type;
 
-                    // add multiple duration type to extract result
-                    string type = null;
+                    // Add multiple duration type to extract result
+                    string type = Constants.MultipleDuration_DateTime; // Default type
                     if (timeUnit == totalUnit)
                     {
                         type = Constants.MultipleDuration_Time;
@@ -259,10 +272,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     else if (timeUnit == 0)
                     {
                         type = Constants.MultipleDuration_Date;
-                    }
-                    else
-                    {
-                        type = Constants.MultipleDuration_DateTime;
                     }
 
                     node.Data = type;

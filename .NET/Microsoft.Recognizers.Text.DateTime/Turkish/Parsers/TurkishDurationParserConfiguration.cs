@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             InexactNumberRegex = TurkishDurationExtractorConfiguration.InexactNumberRegex;
             InexactNumberUnitRegex = TurkishDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = TurkishDurationExtractorConfiguration.DurationUnitRegex;
+            SpecialNumberUnitRegex = TurkishDurationExtractorConfiguration.SpecialNumberUnitRegex;
 
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
@@ -58,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
+
+        public Regex SpecialNumberUnitRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

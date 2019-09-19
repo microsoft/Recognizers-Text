@@ -86,6 +86,7 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"eins", 1 },
             { @"einer", 1 },
             { @"einen", 1 },
+            { @"beiden", 2 },
             { @"zwei", 2 },
             { @"zwo", 2 },
             { @"drei", 3 },

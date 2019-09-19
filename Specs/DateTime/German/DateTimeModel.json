@@ -1668,5 +1668,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Was wird das wetter in den nächsten beiden Tage?",
+    "Context": {
+      "ReferenceDateTime": "2019-09-19T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "nächsten beiden tage",
+        "Start": 27,
+        "End": 46,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-09-20,2019-09-22,P2D)",
+              "type": "daterange",
+              "start": "2019-09-20",
+              "end": "2019-09-22"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

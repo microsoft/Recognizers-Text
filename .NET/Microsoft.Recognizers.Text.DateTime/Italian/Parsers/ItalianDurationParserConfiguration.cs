@@ -25,10 +25,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             HalfDateUnitRegex = ItalianDurationExtractorConfiguration.HalfRegex;
             SuffixAndRegex = ItalianDurationExtractorConfiguration.SuffixAndRegex;
             FollowedUnit = ItalianDurationExtractorConfiguration.DurationFollowedUnit;
+
             ConjunctionRegex = ItalianDurationExtractorConfiguration.ConjunctionRegex;
             InexactNumberRegex = ItalianDurationExtractorConfiguration.InexactNumberRegex;
             InexactNumberUnitRegex = InexactNumberUnitRegex2;
             DurationUnitRegex = ItalianDurationExtractorConfiguration.DurationUnitRegex;
+            SpecialNumberUnitRegex = ItalianDurationExtractorConfiguration.SpecialNumberUnitRegex;
 
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
@@ -62,6 +64,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
+
+        public Regex SpecialNumberUnitRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

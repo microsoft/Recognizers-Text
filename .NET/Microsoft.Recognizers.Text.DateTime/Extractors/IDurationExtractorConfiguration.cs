@@ -35,10 +35,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex MoreThanRegex { get; }
 
+        Regex SpecialNumberUnitRegex { get; }
+
         IExtractor CardinalExtractor { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, long> UnitValueMap { get; }
+
     }
 }

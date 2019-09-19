@@ -195,6 +195,7 @@ public class GermanNumeric {
         .put("eins", 1L)
         .put("einer", 1L)
         .put("einen", 1L)
+        .put("beiden", 2L)
         .put("zwei", 2L)
         .put("zwo", 2L)
         .put("drei", 3L)
