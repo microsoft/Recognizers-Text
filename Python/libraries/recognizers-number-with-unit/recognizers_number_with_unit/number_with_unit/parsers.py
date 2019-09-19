@@ -211,15 +211,9 @@ class BaseCurrencyParser(Parser):
                     result.length = parse_result.start + parse_result.length - result.start
                 else:
                     if result:
-                        if not main_unit_iso_code or main_unit_iso_code.startswith(Constants.FAKE_ISO_CODE_PREFIX):
-                            result.value = UnitValue(
-                                self.__get_number_value(number_value), main_unit_value)
-                        else:
-                            result.value = CurrencyUnitValue(
-                                self.__get_number_value(number_value), main_unit_value, main_unit_iso_code)
-
-                        results.append(result)
+                        self.__add_to_results(result, main_unit_iso_code, number_value, main_unit_value, results)
                         result = None
+
                     count = 0
                     number_value = ''
                     continue
@@ -228,13 +222,7 @@ class BaseCurrencyParser(Parser):
             idx = idx + 1
 
         if result:
-            if not main_unit_iso_code or main_unit_iso_code.startswith(Constants.FAKE_ISO_CODE_PREFIX):
-                result.value = UnitValue(self.__get_number_value(number_value), main_unit_value)
-            else:
-                result.value = CurrencyUnitValue(
-                    self.__get_number_value(number_value), main_unit_value, main_unit_iso_code)
-
-            results.append(result)
+            self.__add_to_results(result, main_unit_iso_code, number_value, main_unit_value, results)
 
         self.__resolve_text(results, compound_result.text,
                             compound_result.start)
@@ -263,6 +251,16 @@ class BaseCurrencyParser(Parser):
             return '{:g}'.format(number_value)
         else:
             return None
+
+    def __add_to_results(self, result, main_unit_iso_code, number_value, main_unit_value, results):
+        if not main_unit_iso_code or main_unit_iso_code.startswith(Constants.FAKE_ISO_CODE_PREFIX):
+            result.value = UnitValue(
+                self.__get_number_value(number_value), main_unit_value)
+        else:
+            result.value = CurrencyUnitValue(
+                self.__get_number_value(number_value), main_unit_value, main_unit_iso_code)
+
+        results.append(result)
 
 
 class BaseMergedUnitParser(Parser):

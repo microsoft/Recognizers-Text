@@ -254,21 +254,7 @@ export class BaseCurrencyParser implements IParser {
                 else {
                     // If the fraction unit doesn't match the main unit, finish process this group.
                     if (result !== null) {
-                        if (StringUtility.isNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
-                            result.value = {
-                                number: numberValue ? numberValue.toString() : 'null',
-                                unit: mainUnitValue
-                            } as UnitValue;
-                        }
-                        else {
-                            result.value = {
-                                number: numberValue ? numberValue.toString() : 'null',
-                                unit: mainUnitValue,
-                                isoCurrency: mainUnitIsoCode
-                            } as UnitValueIso;
-                        }
-
-                        results.push(result);
+                        this.addToResults(result, mainUnitIsoCode, numberValue, mainUnitValue, results);
                         result = null;
                     }
 
@@ -283,21 +269,7 @@ export class BaseCurrencyParser implements IParser {
         }
 
         if (result !== null) {
-            if (StringUtility.isNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
-                result.value = {
-                    number: numberValue ? numberValue.toString() : 'null',
-                    unit: mainUnitValue
-                } as UnitValue;
-            }
-            else {
-                result.value = {
-                    number: numberValue ? numberValue.toString() : 'null',
-                    unit: mainUnitValue,
-                    isoCurrency: mainUnitIsoCode
-                } as UnitValueIso;
-            }
-
-            results.push(result);
+            this.addToResults(result, mainUnitIsoCode, numberValue, mainUnitValue, results);
         }
 
         this.resolveText(results, compoundResult.text, compoundResult.start);
@@ -312,12 +284,30 @@ export class BaseCurrencyParser implements IParser {
         return unitsMap.has(fractionUnitCode);
     }
 
-    private resolveText(prs: ParseResult[], source: string, bias: number) {
+    private resolveText(prs: ParseResult[], source: string, bias: number): void {
         prs.forEach(parseResult => {
             if (parseResult.start !== null && parseResult.length !== null) {
                 parseResult.text = source.substr(parseResult.start - bias, parseResult.length);
             }
         });
+    }
+
+    private addToResults(result: ParseResult, mainUnitIsoCode: string, numberValue: number, mainUnitValue: string, results: ParseResult[]): void{
+        if (StringUtility.isNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
+            result.value = {
+                number: numberValue ? numberValue.toString() : 'null',
+                unit: mainUnitValue
+            } as UnitValue;
+        }
+        else {
+            result.value = {
+                number: numberValue ? numberValue.toString() : 'null',
+                unit: mainUnitValue,
+                isoCurrency: mainUnitIsoCode
+            } as UnitValueIso;
+        }
+
+        results.push(result);
     }
 }
 

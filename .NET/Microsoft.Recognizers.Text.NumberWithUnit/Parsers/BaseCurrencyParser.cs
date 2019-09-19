@@ -84,6 +84,31 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 value.ToString();
         }
 
+        private void AddToResult(ParseResult result, string mainUnitIsoCode, object numberValue,
+            string mainUnitValue, List<ParseResult> results)
+        {
+            if (string.IsNullOrEmpty(mainUnitIsoCode) ||
+                mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX, StringComparison.Ordinal))
+            {
+                result.Value = new UnitValue
+                {
+                    Number = GetResolutionStr(numberValue),
+                    Unit = mainUnitValue,
+                };
+            }
+            else
+            {
+                result.Value = new CurrencyUnitValue
+                {
+                    Number = GetResolutionStr(numberValue),
+                    Unit = mainUnitValue,
+                    IsoCurrency = mainUnitIsoCode,
+                };
+            }
+
+            results.Add(result);
+        }
+
         private ParseResult MergeCompoundUnit(ExtractResult compoundResult)
         {
             var results = new List<ParseResult>();
@@ -174,26 +199,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         // If the fraction unit doesn't match the main unit, finish process this group.
                         if (result != null)
                         {
-                            if (string.IsNullOrEmpty(mainUnitIsoCode) ||
-                                mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX, StringComparison.Ordinal))
-                            {
-                                result.Value = new UnitValue
-                                {
-                                    Number = GetResolutionStr(numberValue),
-                                    Unit = mainUnitValue,
-                                };
-                            }
-                            else
-                            {
-                                result.Value = new CurrencyUnitValue
-                                {
-                                    Number = GetResolutionStr(numberValue),
-                                    Unit = mainUnitValue,
-                                    IsoCurrency = mainUnitIsoCode,
-                                };
-                            }
-
-                            results.Add(result);
+                            AddToResult(result, mainUnitIsoCode, numberValue, mainUnitValue, results);
                             result = null;
                         }
 
@@ -209,26 +215,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             if (result != null)
             {
-                if (string.IsNullOrEmpty(mainUnitIsoCode) ||
-                    mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX, StringComparison.Ordinal))
-                {
-                    result.Value = new UnitValue
-                    {
-                        Number = GetResolutionStr(numberValue),
-                        Unit = mainUnitValue,
-                    };
-                }
-                else
-                {
-                    result.Value = new CurrencyUnitValue
-                    {
-                        Number = GetResolutionStr(numberValue),
-                        Unit = mainUnitValue,
-                        IsoCurrency = mainUnitIsoCode,
-                    };
-                }
-
-                results.Add(result);
+                AddToResult(result, mainUnitIsoCode, numberValue, mainUnitValue, results);
             }
 
             ResolveText(results, compoundResult.Text, (int)compoundResult.Start);

@@ -56,12 +56,11 @@ public class BaseCurrencyParser implements IParser {
 
         int count = 0;
         ParseResult result = null;
-        // Make the default numberValue negative to check if there is no Value.
-        double numberValue = -1;
+        // Make the default numberValue a constant to check if there is no Value.
+        double numberValue = Double.MIN_VALUE;
         String mainUnitValue = "";
         String mainUnitIsoCode = "";
         String fractionUnitsString = "";
-        String extensibleResult = "";
 
         for (int idx = 0; idx < compoundUnit.size(); idx++) {
             ExtractResult extractResult = compoundUnit.get(idx);
@@ -88,7 +87,7 @@ public class BaseCurrencyParser implements IParser {
 
                 // If the main unit can't be recognized, finish process this group.
                 if (mainUnitIsoCode == null || mainUnitIsoCode.isEmpty()) {
-                    result.setValue(new UnitValue(numberValue < 0 ? null : getNumberValue(numberValue), mainUnitValue));
+                    result.setValue(new UnitValue(getNumberValue(numberValue), mainUnitValue));
                     results.add(result);
                     result = null;
                     continue;
@@ -125,22 +124,24 @@ public class BaseCurrencyParser implements IParser {
                 } else {
                     // If the fraction unit doesn't match the main unit, finish process this group.
                     if (result != null) {
-                        addToResults(result,mainUnitIsoCode,numberValue,mainUnitValue,results);
+                        addToResults(result, mainUnitIsoCode, numberValue, mainUnitValue, results);
+                        result = null;
                     }
-                    result = null;
 
                     count = 0;
                     idx -= 1;
-                    numberValue = -1;
+                    numberValue = Double.MIN_VALUE;
                     continue;
                 }
             }
 
             count++;
         }
+
         if (result != null) {
-            addToResults(result,mainUnitIsoCode,numberValue,mainUnitValue,results);
+            addToResults(result, mainUnitIsoCode, numberValue, mainUnitValue, results);
         }
+
         resolveText(results, compoundResult.getText(), compoundResult.getStart());
 
         return new ParseResult(null, null, null, null, null, results, null);
@@ -163,14 +164,18 @@ public class BaseCurrencyParser implements IParser {
     }
 
     private String getNumberValue(double numberValue) {
-        java.text.NumberFormat numberFormat = java.text.NumberFormat.getInstance();
-        numberFormat.setMinimumFractionDigits(0);
-        numberFormat.setGroupingUsed(false);
-        return numberFormat.format(numberValue);
+        if (numberValue == Double.MIN_VALUE) {
+            return null;
+        } else {
+            java.text.NumberFormat numberFormat = java.text.NumberFormat.getInstance();
+            numberFormat.setMinimumFractionDigits(0);
+            numberFormat.setGroupingUsed(false);
+            return numberFormat.format(numberValue);
+        }
     }
 
     private  void addToResults(ParseResult result, String mainUnitIsoCode,
-                               Double numberValue, String mainUnitValue,List<ParseResult> results) {
+                               Double numberValue, String mainUnitValue, List<ParseResult> results) {
         if (mainUnitIsoCode == null || mainUnitIsoCode.isEmpty() ||
                 mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
             result.setValue(new UnitValue(numberValue < 0 ? null : getNumberValue(numberValue), mainUnitValue));
