@@ -143,7 +143,6 @@ class BaseCurrencyParser(Parser):
         count = 0
         result = None
         number_value = ''
-        extensible_result = ''
         main_unit_value = ''
         main_unit_iso_code = ''
         fraction_unit_string = ''
@@ -158,12 +157,6 @@ class BaseCurrencyParser(Parser):
                 unit_value = parse_result_value.unit if parse_result_value else None
             except AttributeError:
                 unit_value = None
-
-            if not number_value:
-                extensible_result = main_unit_value
-            else:
-                extensible_result = ''
-
             # Process a new group
             if count == 0:
                 if not extract_result.type == Constants.SYS_UNIT_CURRENCY:
@@ -217,15 +210,7 @@ class BaseCurrencyParser(Parser):
                     result.resolution_str = result.resolution_str + ' ' + parse_result.resolution_str
                     result.length = parse_result.start + parse_result.length - result.start
                 else:
-                    # If the fraction unit doesn't match the main unit, finish process this group.
                     if result:
-                        if extensible_result == unit_value and parse_result_value.number:
-                            result.length = extract_result.start + extract_result.length - result.start
-                            number_value = float(parse_result_value.number)
-                            result.value = CurrencyUnitValue(
-                                self.__get_number_value(number_value), main_unit_value, main_unit_iso_code)
-                            idx = idx + 1
-                            continue
                         if not main_unit_iso_code or main_unit_iso_code.startswith(Constants.FAKE_ISO_CODE_PREFIX):
                             result.value = UnitValue(
                                 self.__get_number_value(number_value), main_unit_value)

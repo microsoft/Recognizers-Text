@@ -335,12 +335,13 @@
     ]
   },
   {
-    "Input": "人民币50元6角三分",
+    "Input": "50元6角三分",
+    "notSupported": "dotnet",
     "Results": [
       {
-        "Text": "人民币50元6角三分",
+        "Text": "50元6角三分",
         "Start": 0,
-        "End": 9,
+        "End": 6,
         "TypeName": "currency",
         "Resolution": {
           "isoCurrency": "CNY",
@@ -378,6 +379,33 @@
     ]
   },
   {
+    "Input": "人民币美元",
+    "Results": [
+      {
+        "Text": "人民币",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": null
+        }
+      },
+      {
+        "Text": "美元",
+        "Start": 3,
+        "End": 4,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": null
+        }
+      }
+    ]
+  },
+  {
     "Input": "4人民币 5美元",
     "Results": [
       {
@@ -395,6 +423,33 @@
         "Text": "5美元",
         "Start": 5,
         "End": 7,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4人民币5美元",
+    "Results": [
+      {
+        "Text": "4人民币",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "4"
+        }
+      },
+      {
+        "Text": "5美元",
+        "Start": 4,
+        "End": 6,
         "TypeName": "currency",
         "Resolution": {
           "isoCurrency": "USD",
@@ -439,6 +494,7 @@
   },
   {
     "Input": "人民币 8千元",
+    "NotSupported":"javascript, java, dotnet, python",
     "Results": [
       {
         "Text": "人民币 8千元",
