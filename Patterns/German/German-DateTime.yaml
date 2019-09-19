@@ -378,6 +378,8 @@ MoreThanRegex: !simpleRegex
   def: \b(mehr\s+als)\b
 DurationUnitRegex: !simpleRegex
   def: (?<unit>jahr(e(n|s)?)?|monat(en?|s)?|wochen?|tag(e(n|s)?)?|stunden?|std?|h|min(uten?)?|sek(unden?)?)\b
+SpecialNumberUnitRegex: !simpleRegex
+  def: \b(?<specialNum>beiden)\b
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*und\s+(eine\s+)?(?<suffix_num>halbe|viertel))
 PeriodicRegex: !simpleRegex

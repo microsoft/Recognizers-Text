@@ -45,14 +45,17 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
 
     @Override
     public List<ExtractResult> extract(String input, LocalDateTime reference) {
+
         List<ExtractResult> ret = new ArrayList<>();
         String originInput = input;
         Iterable<MatchResult<String>> superfluousWordMatches = null;
+
         if (this.config.getOptions().match(DateTimeOptions.EnablePreview)) {
             ProcessedSuperfluousWords processedSuperfluousWords = MatchingUtil.preProcessTextRemoveSuperfluousWords(input, this.config.getSuperfluousWordMatcher());
             input = processedSuperfluousWords.getText();
             superfluousWordMatches = processedSuperfluousWords.getSuperfluousWordMatches();
         }
+
         // The order is important, since there is a problem in merging
         addTo(ret, this.config.getDateExtractor().extract(input, reference), input);
         addTo(ret, this.config.getTimeExtractor().extract(input, reference), input);
@@ -229,6 +232,7 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
 
             if (newEr.getType().equals(Constants.SYS_DATETIME_DATEPERIOD) || newEr.getType().equals(Constants.SYS_DATETIME_DATE) || 
                 newEr.getType().equals(Constants.SYS_DATETIME_TIME)) {
+                
                 // 2012 or after/above, 3 pm or later
                 String afterStr = text.substring(newEr.getStart() + newEr.getLength()).toLowerCase();
 

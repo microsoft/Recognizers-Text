@@ -20,10 +20,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             HalfDateUnitRegex = DutchDurationExtractorConfiguration.HalfRegex;
             SuffixAndRegex = DutchDurationExtractorConfiguration.SuffixAndRegex;
             FollowedUnit = DutchDurationExtractorConfiguration.DurationFollowedUnit;
+
             ConjunctionRegex = DutchDurationExtractorConfiguration.ConjunctionRegex;
             InexactNumberRegex = DutchDurationExtractorConfiguration.InexactNumberRegex;
             InexactNumberUnitRegex = DutchDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = DutchDurationExtractorConfiguration.DurationUnitRegex;
+            SpecialNumberUnitRegex = DutchDurationExtractorConfiguration.SpecialNumberUnitRegex;
+
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
             DoubleNumbers = config.DoubleNumbers;
@@ -56,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
+
+        public Regex SpecialNumberUnitRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

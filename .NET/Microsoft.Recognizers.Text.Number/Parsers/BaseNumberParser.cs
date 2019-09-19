@@ -858,7 +858,7 @@ namespace Microsoft.Recognizers.Text.Number
                 var prefix = "0.";
                 var tempInt = GetIntValue(matchStrs);
                 var all = prefix + tempInt;
-                ret = double.Parse(all);
+                ret = double.Parse(all, CultureInfo.InvariantCulture);
             }
             else
             {

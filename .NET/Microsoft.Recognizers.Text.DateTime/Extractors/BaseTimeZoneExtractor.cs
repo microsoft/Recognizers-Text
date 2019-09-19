@@ -121,16 +121,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new List<Token>();
 
             // Direct UTC matches
-            var directUtc = this.config.DirectUtcRegex.Matches(text);
-            foreach (Match match in directUtc)
+            if (this.config.DirectUtcRegex != null)
             {
-                ret.Add(new Token(match.Index, match.Index + match.Length));
-            }
+                var directUtc = this.config.DirectUtcRegex.Matches(text);
+                foreach (Match match in directUtc)
+                {
+                    ret.Add(new Token(match.Index, match.Index + match.Length));
+                }
 
-            var matches = this.config.TimeZoneMatcher.Find(text);
-            foreach (MatchResult<string> match in matches)
-            {
-                ret.Add(new Token(match.Start, match.Start + match.Length));
+                var matches = this.config.TimeZoneMatcher.Find(text);
+                foreach (MatchResult<string> match in matches)
+                {
+                    ret.Add(new Token(match.Start, match.Start + match.Length));
+                }
             }
 
             return ret;
