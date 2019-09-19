@@ -335,6 +335,23 @@
     ]
   },
   {
+    "Input": "50元6角三分",
+    "NotSupported": "python,dotnet",
+    "Results": [
+      {
+        "Text": "50元6角三分",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "50.63"
+        }
+      }
+    ]
+  },
+  {
     "Input": "人民币 美元",
     "Results": [
       {
