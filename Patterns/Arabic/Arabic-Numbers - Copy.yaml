@@ -19,9 +19,9 @@ NegativeNumberSignRegex: !nestedRegex
 AnIntRegex: !simpleRegex
   def: (واحد|أحد)(?=\s)
 TenToNineteenIntegerRegex: !simpleRegex
-  def: (ال)?(?:سبعة عشر|ثلاثة عشر|أربعة عشر|ثمانية عشر|تسعة عشر|خمسة عشر|ستة عشر|حادية عشر|ثانية عشر|عشرة)
+  def: (?:سبعة عشر|ثلاثة عشر|أربعة عشر|ثمانية عشر|تسعة عشر|خمسة عشر|ستة عشر|حادية عشر|ثانية عشر|عشرة)
 TensNumberIntegerRegex: !simpleRegex
-  def: (ال)?(?:سبعون|سبعين|عشرون|عشرين|ثلاثون|ثلاثين|ثمانون|ثمانين|تسعون|تسعين|أربعون|أربعين|خمسون|خمسين|ستون|ستين)
+  def: (?:سبعون|سبعين|عشرون|عشرين|ثلاثون|ثلاثين|ثمانون|ثمانين|تسعون|تسعين|أربعون|أربعين|خمسون|خمسين|ستون|ستين)
 SeparaIntRegex: !nestedRegex
   def: (?:(({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(\s+(و\s+)?|\s*-\s*){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))
   references:
@@ -69,11 +69,11 @@ RoundNumberOrdinalRegex: !nestedRegex
   def: (?:(((من|على)\s+)|(ب))({RoundNumberIntegerRegex}))
   references: [RoundNumberIntegerRegex]
 NumberOrdinalRegex: !simpleRegex
-  def: (?:ثلث|ربع|خمس|سدس|سبع|نصف|ثمن|تسع|عشر|أنصاف|أثلاث|أرباع|أخماس|أسداس|أسباع|أثمان|أتساع|أعشر|أعشار|أول|ثاني|ثالث|رابع|خامس|سادس|سابع|ثامن|تاسع|عاشر|الأول|الأولى|الثاني|الثانية|الثالث|الثالثة|الرابع|الرابعة|خامس|خامسة|الخامسة|السادس|السادسة|السابع|السابعة|الثامن|الثامنة|التاسع|التاسعة|المليون|المليار|التريليون|المليارات|المليار|المائة|المائتان|الثلاثمائة|الأربعمائة|الخمسمائة|الستمائة|السبعمائة|التسعمائة|التريليون|المائة|المائتان|الثلاثمائة|الأربعمائة|الخمسمائة|الستمائة|التسعمائة|الحادية عشرة|الثانية عشرة|الثالثة عشرة|الرابعة عشرة|الخامسة عشرة|السادسة عشرة|السابعة عشرة|الثامنة عشرة|التاسعة عشرة|الحادية|الألف)
+  def: (?:ثلث|ربع|خمس|سدس|سبع|نصف|ثمن|تسع|عشر|أنصاف|أثلاث|أرباع|أخماس|أسداس|أسباع|أثمان|أتساع|أعشر|أعشار|أول|أولى|ثاني|ثانية|ثالث|ثالثة|رابع|رابعة|خامس|خامسة|سادس|سادسة|سابع|سابعة|ثامن|ثامنة|تاسع|تاسعة|المليون|المليار|التريليون|المائة|المائتان|الثلاثمائة|الأربعمائة|الخمسمائة|الستمائة|التسعمائة|الألف)
 RelativeOrdinalRegex: !simpleRegex
   def: (?<relativeOrdinal>((قبل|بعد|سبق|سبقت)(\s+))?((ال)?(تالي|سابق|قادم|آخر|أخير|حالي)(ة)?))
 BasicOrdinalRegex: !nestedRegex
-  def: ({NumberOrdinalRegex}((\s+و\s+)({AllIntRegex}))?|{RelativeOrdinalRegex})
+  def: ({NumberOrdinalRegex}|{RelativeOrdinalRegex})
   references: [NumberOrdinalRegex, RelativeOrdinalRegex]
 SuffixBasicOrdinalRegex: !nestedRegex
   def: (?:(((({ZeroToNineIntegerRegex}(\s+و\s+){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})*)\s+(و\s+)?)*({TensNumberIntegerRegex}\s+)?{BasicOrdinalRegex}|{BasicOrdinalRegex})
@@ -89,12 +89,12 @@ SuffixRoundNumberOrdinalRegex: !nestedRegex
   def: (?:({AllIntRegex}\s+){RoundNumberOrdinalRegex})
   references: [AllIntRegex, RoundNumberOrdinalRegex]
 AllOrdinalRegex: !nestedRegex
-  def: (?:{SuffixBasicOrdinalRegex}|{AllIntRegex}|{SuffixRoundNumberOrdinalRegex})
-  references: [SuffixBasicOrdinalRegex, SuffixRoundNumberOrdinalRegex, AllIntRegex]
+  def: (?:{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})
+  references: [SuffixBasicOrdinalRegex, SuffixRoundNumberOrdinalRegex]
 OrdinalNumericRegex: !simpleRegex
   def: (?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*\s*th)(?=\b)
 OrdinalRoundNumberRegex: !nestedRegex
-  def: {RoundNumberOrdinalRegex}
+  def: (?<!an?\s+){RoundNumberOrdinalRegex}
   references: [RoundNumberOrdinalRegex]
 OrdinalEnglishRegex: !nestedRegex
   def: (?<=\b){AllOrdinalRegex}(?=\b)
@@ -146,7 +146,7 @@ ConnectorRegex: !simpleRegex
   def: (?<spacer>and)
 #Percentage Regex
 NumberWithSuffixPercentage: !nestedRegex
-  def: (?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|((بالمائة|في المائة)\b)
+  def: (?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(لكل\s*نسبة\b)
   references: [BaseNumbers.NumberReplaceToken]
 FractionNumberWithSuffixPercentage: !nestedRegex
   def: (({BaseNumbers.FractionNumberReplaceToken})\s+من)
@@ -265,7 +265,7 @@ WrittenFractionSeparatorTexts: [و]
 HalfADozenRegex: !simpleRegex
   def: نصف?\sدستة
 DigitalNumberRegex: !nestedRegex
-  def: ((?<=\b)(مائة|مائتان|دست|دستات|ألف|ألفين|مائتين|ألفين|ثلاثمائة|أربعمائة|خمسمائة|ستمائة|سبعمائة|تسعمائة|ثمانمائة|مليون|مليار|ترليون)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
+  def: ((?<=\b)(مائة|مائتان|دست|ألف|ألفين|مائتين|ألفين|ثلاثمائة|أربعمائة|خمسمائة|ستمائة|سبعمائة|تسعمائة|ثمانمائة|مليون|مليار|ترليون)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [BaseNumbers.MultiplierLookupRegex]
 CardinalNumberMap: !dictionary
   types: [string, long]
@@ -314,12 +314,9 @@ CardinalNumberMap: !dictionary
     ألف: 1000
     آلاف: 1000
     ألفين: 2000
-    المليون: 1000000
     مليون: 1000000
     مليار: 1000000000
-    المليار: 1000000000
     تريليون: 1000000000000
-    التريليون: 1000000000000
     الواحد: 1
     الصفر: 0
     الاثنان: 2
@@ -372,112 +369,39 @@ OrdinalNumberMap: !dictionary
   types: [string, long]
   entries:
     أول: 1
-    أولى: 1
-    الأول: 1
-    الأولى: 1
     ثاني: 2
-    ثانية: 2
-    الثاني: 2
-    الثانية: 2
     ثان: 2
     نصف: 2
     ثلث: 3
-    الثالث: 3
-    الثالثة: 3
-    ثالث: 3
-    ثالثة: 3
     ربع: 4
-    الرابع: 4
-    الرابعة: 4
-    رابع: 4
-    رابعة: 4
     خمس: 5
-    الخامس: 5
-    الخامسة: 5
-    خامس: 5
-    خامسة: 5
     سدس: 6
-    السادس: 6
-    السادسة: 6
-    سادس: 6
-    سادسة: 6
     سبع: 7
-    السابع: 7
-    السابعة: 7
-    سابع: 7
-    سابعة: 7
     ثمن: 8
-    الثامن: 8
-    الثامنة: 8
-    ثامن: 8
-    ثامنة: 8
     تسع: 9
-    التاسع: 9
-    التاسعة: 9
-    تاسع: 9
-    تاسعة: 9
     واحد من عشرة: 10
     واحد من إحدى عشر: 11
-    الحادية عشرة: 11
     واحد من إثنى عشر: 12
-    الثانية عشرة: 12
     واحد من ثلاثة عشر: 13
-    الثالثة عشرة: 13
     واحد من أربعة عشر: 14
-    الرابعة عشرة: 14
     واحد من خمسة عشر: 15
-    الخامسة عشرة: 15
     واحد من ستة عشر: 16
-    السادسة عشرة: 16
     واحد من سبعة عشر: 17
-    السابعة عشرة: 17
     واحد من ثمانية عشر: 18
-    الثامنة عشرة: 18
     واحد من تسعة عشر: 19
-    التاسعة: 10
     واحد من عشرين: 20
-    العشرون: 20
-    العشرين: 20
     واحد من ثلاثين: 30
-    الثلاثون: 30
-    الثلاثين: 30
     واحد من أربعين: 40
-    الأربعون: 40
-    الأربعين: 40
     واحد من خمسين: 50
-    الخمسون: 50
-    الخمسين: 50
     واحد من ستين: 60
-    الستون: 60
-    الستين: 60
     واحد من سبعين: 70
-    السبعون: 70
-    السبعين: 70
     واحد من ثمانين: 80
-    الثمانون: 80
-    الثمانين: 80
     واحد من تسعين: 90
-    التسعون: 90
-    التسعين: 90
     واحد من مائة: 100
-    المائة: 100
-    المائتان: 200
-    المائتين: 200
-    الثلاثمائة: 300
-    الأربعمائة: 400
-    الخمسمائة: 500
-    الستمائة: 600
-    السبعمائة: 700
-    الثمانمائة: 800
-    التسعمائة: 100
-    الألف: 1000
     واحد من ألف: 1000
     واحد من مليون: 1000000
-    المليون: 1000000
     واحد من مليار: 1000000000
-    المليار: 1000000000
     واحد من تريليون: 1000000000000
-    التريليون: 1000000000000
     أوائل: 1
     أنصاف: 2
     أثلاث: 3
@@ -500,7 +424,7 @@ OrdinalNumberMap: !dictionary
     ألوف: 1000
     ملايين: 1000000
     مليارات: 1000000000
-    تريليون: 1000000000000
+    بليونات: 1000000000000
 RoundNumberMap: !dictionary
   types: [string, long]
   entries:
@@ -568,7 +492,7 @@ RelativeReferenceOffsetMap: !dictionary
     قادمة: 1
     القادم: 1
     القادمة: 1
-    السابقة: -1
+    السابقة: 0
     الحالي: 0
     الحالية: 0
     السابق: -1

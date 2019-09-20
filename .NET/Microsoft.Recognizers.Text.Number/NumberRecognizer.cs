@@ -80,14 +80,27 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected override void InitializeConfiguration()
         {
-            /*
             RegisterModel<NumberModel>(
                 Culture.Arabic,
                 (options) => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ArabicNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Arabic, options))),
                     Arabic.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
-            */
+
+            RegisterModel<OrdinalModel>(
+                Culture.Arabic,
+                options => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new ArabicNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Arabic, options))),
+                    Arabic.OrdinalExtractor.GetInstance(options)));
+
+            RegisterModel<PercentModel>(
+                Culture.Arabic,
+                options => new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ArabicNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Arabic, options))),
+                    new Arabic.PercentageExtractor(options)));
+
             RegisterModel<NumberModel>(
                 Culture.English,
                 options => new NumberModel(

@@ -714,6 +714,14 @@ namespace Microsoft.Recognizers.Text.Number
 
         private double GetIntValue(List<string> matchStrs)
         {
+            // workarround to solve "و" which means "and" before rounded number in Arabic.
+            // ألف و مائة = one thousand and one hundred
+            // but in arabic there is no integer before hundred, because it's 100 by default.
+            if (matchStrs.Count == 1 && matchStrs.First() == "و")
+            {
+                return 1;
+            }
+
             var isEnd = new bool[matchStrs.Count];
             for (var i = 0; i < isEnd.Length; i++)
             {
