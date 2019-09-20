@@ -25,7 +25,7 @@ class EnglishNumeric:
     AnIntRegex = f'(an?)(?=\\s)'
     TenToNineteenIntegerRegex = f'(?:seventeen|thirteen|fourteen|eighteen|nineteen|fifteen|sixteen|eleven|twelve|ten)'
     TensNumberIntegerRegex = f'(?:seventy|twenty|thirty|eighty|ninety|forty|fifty|sixty)'
-    SeparaIntRegex = f'(?:(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\\s+{RoundNumberIntegerRegex})+))'
+    SeparaIntRegex = f'(?:(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\\s+{RoundNumberIntegerRegex})+))'
     AllIntRegex = f'(?:((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\\s+{RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*{SeparaIntRegex})'
     PlaceHolderPureNumber = f'\\b'
     PlaceHolderDefault = f'\\D|\\b'
