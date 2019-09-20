@@ -254,7 +254,8 @@ export class BaseCurrencyParser implements IParser {
                 else {
                     // If the fraction unit doesn't match the main unit, finish process this group.
                     if (result !== null) {
-                        this.addToResults(result, mainUnitIsoCode, numberValue, mainUnitValue, results);
+                        result = this.createCurrencyResult(result, mainUnitIsoCode, numberValue, mainUnitValue);
+                        results.push(result);
                         result = null;
                     }
 
@@ -269,7 +270,8 @@ export class BaseCurrencyParser implements IParser {
         }
 
         if (result !== null) {
-            this.addToResults(result, mainUnitIsoCode, numberValue, mainUnitValue, results);
+            result = this.createCurrencyResult(result, mainUnitIsoCode, numberValue, mainUnitValue);
+            results.push(result);
         }
 
         this.resolveText(results, compoundResult.text, compoundResult.start);
@@ -292,7 +294,7 @@ export class BaseCurrencyParser implements IParser {
         });
     }
 
-    private addToResults(result: ParseResult, mainUnitIsoCode: string, numberValue: number, mainUnitValue: string, results: ParseResult[]): void{
+    private createCurrencyResult(result: ParseResult, mainUnitIsoCode: string, numberValue: number, mainUnitValue: string): ParseResult{
         if (StringUtility.isNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
             result.value = {
                 number: numberValue ? numberValue.toString() : 'null',
@@ -307,7 +309,7 @@ export class BaseCurrencyParser implements IParser {
             } as UnitValueIso;
         }
 
-        results.push(result);
+        return result;
     }
 }
 

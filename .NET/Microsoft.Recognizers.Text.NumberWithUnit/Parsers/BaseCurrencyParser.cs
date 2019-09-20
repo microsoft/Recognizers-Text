@@ -84,8 +84,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 value.ToString();
         }
 
-        private void AddToResult(ParseResult result, string mainUnitIsoCode, object numberValue,
-            string mainUnitValue, List<ParseResult> results)
+        private ParseResult CreateCurrencyResult(ParseResult result, string mainUnitIsoCode, object numberValue, string mainUnitValue)
         {
             if (string.IsNullOrEmpty(mainUnitIsoCode) ||
                 mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX, StringComparison.Ordinal))
@@ -106,7 +105,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 };
             }
 
-            results.Add(result);
+            return result;
         }
 
         private ParseResult MergeCompoundUnit(ExtractResult compoundResult)
@@ -199,7 +198,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         // If the fraction unit doesn't match the main unit, finish process this group.
                         if (result != null)
                         {
-                            AddToResult(result, mainUnitIsoCode, numberValue, mainUnitValue, results);
+                            result = CreateCurrencyResult(result, mainUnitIsoCode, numberValue, mainUnitValue);
+                            results.Add(result);
                             result = null;
                         }
 
@@ -215,7 +215,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             if (result != null)
             {
-                AddToResult(result, mainUnitIsoCode, numberValue, mainUnitValue, results);
+                result = CreateCurrencyResult(result, mainUnitIsoCode, numberValue, mainUnitValue);
+                results.Add(result);
             }
 
             ResolveText(results, compoundResult.Text, (int)compoundResult.Start);

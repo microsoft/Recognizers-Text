@@ -124,7 +124,8 @@ public class BaseCurrencyParser implements IParser {
                 } else {
                     // If the fraction unit doesn't match the main unit, finish process this group.
                     if (result != null) {
-                        addToResults(result, mainUnitIsoCode, numberValue, mainUnitValue, results);
+                        result = createCurrencyResult(result, mainUnitIsoCode, numberValue, mainUnitValue);
+                        results.add(result);
                         result = null;
                     }
 
@@ -139,7 +140,8 @@ public class BaseCurrencyParser implements IParser {
         }
 
         if (result != null) {
-            addToResults(result, mainUnitIsoCode, numberValue, mainUnitValue, results);
+            result = createCurrencyResult(result, mainUnitIsoCode, numberValue, mainUnitValue);
+            results.add(result);
         }
 
         resolveText(results, compoundResult.getText(), compoundResult.getStart());
@@ -174,15 +176,13 @@ public class BaseCurrencyParser implements IParser {
         }
     }
 
-    private  void addToResults(ParseResult result, String mainUnitIsoCode,
-                               Double numberValue, String mainUnitValue, List<ParseResult> results) {
+    private ParseResult createCurrencyResult(ParseResult result, String mainUnitIsoCode, Double numberValue, String mainUnitValue) {
         if (mainUnitIsoCode == null || mainUnitIsoCode.isEmpty() ||
                 mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
-            result.setValue(new UnitValue(numberValue < 0 ? null : getNumberValue(numberValue), mainUnitValue));
+            result.setValue(new UnitValue(getNumberValue(numberValue), mainUnitValue));
         } else {
-            result.setValue(new CurrencyUnitValue(numberValue < 0 ? null : getNumberValue(numberValue), mainUnitValue, mainUnitIsoCode));
+            result.setValue(new CurrencyUnitValue(getNumberValue(numberValue), mainUnitValue, mainUnitIsoCode));
         }
-
-        results.add(result);
+        return result;
     }
 }
