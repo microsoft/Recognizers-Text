@@ -42,7 +42,7 @@ public class EnglishNumeric {
 
     public static final String TensNumberIntegerRegex = "(?:seventy|twenty|thirty|eighty|ninety|forty|fifty|sixty)";
 
-    public static final String SeparaIntRegex = "(?:(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))"
+    public static final String SeparaIntRegex = "(?:(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\\s+{RoundNumberIntegerRegex})+))"
             .replace("{TenToNineteenIntegerRegex}", TenToNineteenIntegerRegex)
             .replace("{TensNumberIntegerRegex}", TensNumberIntegerRegex)
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex)
