@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
     public class OrdinalExtractor : BaseNumberExtractor
     {
 
-        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture | RegexOptions.RightToLeft;
 
         private static readonly ConcurrentDictionary<string, OrdinalExtractor> Instances =
             new ConcurrentDictionary<string, OrdinalExtractor>();

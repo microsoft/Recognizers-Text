@@ -66,7 +66,7 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
   references: [AllIntRegex]
 #Ordinal Regex
 RoundNumberOrdinalRegex: !nestedRegex
-  def: (?:(((من|على)\s+)|(ب))({RoundNumberIntegerRegex}))
+  def: (?:((من|على)\s+)({RoundNumberIntegerRegex}))
   references: [RoundNumberIntegerRegex]
 NumberOrdinalRegex: !simpleRegex
   def: (?:ثلث|ربع|خمس|سدس|سبع|نصف|ثمن|تسع|عشر|أنصاف|أثلاث|أرباع|أخماس|أسداس|أسباع|أثمان|أتساع|أعشر|أعشار|أول|ثاني|ثالث|رابع|خامس|سادس|سابع|ثامن|تاسع|عاشر|الأول|الأولى|الثاني|الثانية|الثالث|الثالثة|الرابع|الرابعة|خامس|خامسة|الخامسة|السادس|السادسة|السابع|السابعة|الثامن|الثامنة|التاسع|التاسعة|المليون|المليار|التريليون|المليارات|المليار|المائة|المائتان|الثلاثمائة|الأربعمائة|الخمسمائة|الستمائة|السبعمائة|التسعمائة|التريليون|المائة|المائتان|الثلاثمائة|الأربعمائة|الخمسمائة|الستمائة|التسعمائة|الحادية عشرة|الثانية عشرة|الثالثة عشرة|الرابعة عشرة|الخامسة عشرة|السادسة عشرة|السابعة عشرة|الثامنة عشرة|التاسعة عشرة|الحادية|الألف)
@@ -89,8 +89,8 @@ SuffixRoundNumberOrdinalRegex: !nestedRegex
   def: (?:({AllIntRegex}\s+){RoundNumberOrdinalRegex})
   references: [AllIntRegex, RoundNumberOrdinalRegex]
 AllOrdinalRegex: !nestedRegex
-  def: (?:{SuffixBasicOrdinalRegex}|{AllIntRegex}|{SuffixRoundNumberOrdinalRegex})
-  references: [SuffixBasicOrdinalRegex, SuffixRoundNumberOrdinalRegex, AllIntRegex]
+  def: (?:{SuffixBasicOrdinalRegex}|(({NumberOrdinalRegex})(\s+و\s+))?{AllIntRegex}|{SuffixRoundNumberOrdinalRegex})
+  references: [SuffixBasicOrdinalRegex, SuffixRoundNumberOrdinalRegex, NumberOrdinalRegex, AllIntRegex]
 OrdinalNumericRegex: !simpleRegex
   def: (?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*\s*th)(?=\b)
 OrdinalRoundNumberRegex: !nestedRegex
@@ -108,7 +108,7 @@ FractionNounRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(و\s+)?)?({AllIntRegex}(\s+|\s*-\s*))?((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|أنصاف|أرباع)(?=\b)
   references: [AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)((({AllIntRegex}\s+(و\s+)?)?(an?|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|نصف|ربع))|(نصف))(?=\b)
+  def: (?<=\b)((({AllIntRegex}\s+(و\s+)?)?(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|نصف|ربع))|(نصف))(?=\b)
   references: [AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(على|في|من)\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)
@@ -146,13 +146,13 @@ ConnectorRegex: !simpleRegex
   def: (?<spacer>and)
 #Percentage Regex
 NumberWithSuffixPercentage: !nestedRegex
-  def: (?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|((بالمائة|في المائة)\b)
+  def: (?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(بالمائة)\b)
   references: [BaseNumbers.NumberReplaceToken]
 FractionNumberWithSuffixPercentage: !nestedRegex
   def: (({BaseNumbers.FractionNumberReplaceToken})\s+من)
   references: [BaseNumbers.FractionNumberReplaceToken]
 NumberWithPrefixPercentage: !nestedRegex
-  def: (لكل\s*cents?\s+من)(\s*)({BaseNumbers.NumberReplaceToken})
+  def: (بالمائة)(\s*)({BaseNumbers.NumberReplaceToken})
   references: [BaseNumbers.NumberReplaceToken]
 NumberWithPrepositionPercentage: !nestedRegex
   def: ({BaseNumbers.NumberReplaceToken})\s*(في|خارج\s+من)\s*({BaseNumbers.NumberReplaceToken})

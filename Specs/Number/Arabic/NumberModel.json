@@ -218,7 +218,7 @@
   },
   {
     "Input": "مائة و ثلاثة و ثلث",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "مائة و ثلاثة و ثلث",
@@ -717,7 +717,7 @@
   },
   {
     "Input": "مائتين فاصلة ثلاثة من مائة",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "مائتين فاصلة ثلاثة من مائة",
@@ -912,7 +912,7 @@
   },
   {
     "Input": "ثلاثة و عشرون خمس",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "ثلاثة و عشرون خمس",
@@ -957,7 +957,7 @@
   },
   {
     "Input": "واحد و نصف",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "واحد و نصف",
@@ -972,7 +972,7 @@
   },
   {
     "Input": "واحد و ربع",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "واحد و ربع",
@@ -987,7 +987,7 @@
   },
   {
     "Input": "خمسة و ربع",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "خمسة و ربع",
@@ -1002,7 +1002,7 @@
   },
   {
     "Input": "مائة و ثلاثة أرباع",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "مائة و ثلاثة أرباع",
@@ -1227,7 +1227,7 @@
   },
   {
     "Input": "خمس العشرون",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "خمس العشرون",
@@ -1242,7 +1242,7 @@
   },
   {
     "Input": "ثلاثة و خمس",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "ثلاثة و خمس",
@@ -1257,7 +1257,7 @@
   },
   {
     "Input": "واحد و عشرون خمس",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "واحد و عشرون خمس",
@@ -1317,7 +1317,7 @@
   },
   {
     "Input": "خمس خمس العشرون",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "خمس خمس العشرون",
@@ -1332,7 +1332,7 @@
   },
   {
     "Input": "مائة و ثلاثون خمس",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "مائة و ثلاثون خمس",
@@ -1347,7 +1347,7 @@
   },
   {
     "Input": "مائة و اثنان و ثلاثون خمس",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "مائة و اثنان و ثلاثون خمس",
@@ -1362,7 +1362,7 @@
   },
   {
     "Input": "مائة و اثنان و ثلاثون أخماس",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "مائة و اثنان و ثلاثون أخماس",
@@ -1573,7 +1573,7 @@
   },
   {
     "Input": " كم يساوي خمسة و تسعون مائة خمس ؟",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "خمسة و تسعون مائة خمس",
@@ -1587,13 +1587,8 @@
     ]
   },
   {
-    "Input": "احجز مقعد من الدرجة الأولى إلى سياتل",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": []
-  },
-  {
     "Input": "الجواب سالب 95 مائة خمس",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "95 مائة خمس",
@@ -1608,7 +1603,7 @@
   },
   {
     "Input": "الجواب هو ناقص 90 - 500 خمس",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "ناقص 90 - 500 خمس",
@@ -1638,7 +1633,7 @@
   },
   {
     "Input": "الجواب هو ناقص مائة و ثلاثين خمس",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "ناقص مائة و ثلاثين خمس",
@@ -1668,7 +1663,7 @@
   },
   {
     "Input": "الجواب هو سالب خمس فاصلة خمسة",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "ناقص خمس فاصلة خمسة",
@@ -1713,7 +1708,7 @@
   },
   {
     "Input": "90 - خمسمائة خمسة",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
         "Text": "90 - خمسمائة خمسة",
@@ -1989,32 +1984,32 @@
     ]
   },
   {
-    "Input": "أربعة آلاف و ثلاثمائة و واحد و عشرون رقم صالح",
+    "Input": "أربعة ألف و ثلاثمائة و واحد و عشرون رقم صالح",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "أربعة آلاف و ثلاثمائة و واحد و عشرون",
+        "Text": "أربعة ألف و ثلاثمائة و واحد و عشرون",
         "TypeName": "number",
         "Resolution": {
           "value": "4321"
         },
         "Start": 0,
-        "End": 35
+        "End": 34
       }
     ]
   },
   {
-    "Input": "4 آلاف و 3 مائة و صفر رقمان صالحان",
-    "NotSupportedByDesign": "javascript,python,java",
+    "Input": "أربعة ألف و ثلاثمائة و صفر رقمان صالحان",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
-        "Text": "4 آلاف و 3 مائة",
+        "Text": "أربعة ألف و ثلاثمائة",
         "TypeName": "number",
         "Resolution": {
           "value": "4300"
         },
         "Start": 0,
-        "End": 14
+        "End": 13
       },
       {
         "Text": "صفر",
@@ -2028,35 +2023,11 @@
     ]
   },
   {
-    "Input": "4000 و 3 مائة و واحد و عشرون رقمان صالحان",
-    "NotSupportedByDesign": "javascript,python,java",
+    "Input": "ثلاثمائة و مائتين رقمان صالحان",
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
-        "Text": "4000",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "4000"
-        },
-        "Start": 0,
-        "End": 3
-      },
-      {
-        "Text": "ثلاثمائة و واحد و عشرون",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "321"
-        },
-        "Start": 7,
-        "End": 25
-      }
-    ]
-  },
-  {
-    "Input": "3 مائة و مائتين رقمان صالحان",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "3 مائة",
+        "Text": "ثلاثمائة",
         "TypeName": "number",
         "Resolution": {
           "value": "300"

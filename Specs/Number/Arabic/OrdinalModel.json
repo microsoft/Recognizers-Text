@@ -238,11 +238,11 @@
     ]
   },
   {
-    "Input": "العشرين",
+    "Input": "العشرون",
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "العشرين",
+        "Text": "العشرون",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "20",
@@ -255,11 +255,11 @@
     ]
   },
   {
-    "Input": "الخامسة و العشرين",
+    "Input": "الخامسة و عشرون",
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "الخامسة و العشرين",
+        "Text": "الخامسة و عشرون",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "25",
@@ -267,16 +267,16 @@
           "value": "25"
         },
         "Start": 0,
-        "End": 16
+        "End": 14
       }
     ]
   },
   {
-    "Input": "الحادية و العشرين",
+    "Input": "الاثنان و عشرون",
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "الحادية و العشرين",
+        "Text": "الاثنان و عشرون",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "22",
@@ -284,7 +284,7 @@
           "value": "22"
         },
         "Start": 0,
-        "End": 16
+        "End": 14
       }
     ]
   },
@@ -301,7 +301,7 @@
           "value": "125"
         },
         "Start": 0,
-        "End": 19
+        "End": 20
       }
     ]
   },
@@ -424,7 +424,7 @@
     ]
   },
   {
-    "Input": "أريد الكتب الثلاث القادمة",
+    "Input": "أريد الكتب القادمة",
     "NotSupported": "javascript, python, java",
     "Results": [
       {
@@ -435,8 +435,8 @@
           "relativeTo": "current",
           "value": "current+1"
         },
-        "Start": 19,
-        "End": 25
+        "Start": 11,
+        "End": 17
       }
     ]
   },

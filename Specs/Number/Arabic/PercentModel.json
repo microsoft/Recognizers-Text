@@ -1,5 +1,33 @@
 [
   {
+    "Input": "100%",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": " 100% ",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 1,
+        "End": 4
+      }
+    ]
+  },
+  {
     "Input": " 100 بالمائة",
     "Results": [
       {
@@ -23,35 +51,21 @@
           "value": "240%"
         },
         "Start": 0,
-        "End": 12
+        "End": 10
       }
     ]
   },
   {
-    "Input": "عشرين بالمائة",
+    "Input": "ثلاثون بالمائة",
     "Results": [
       {
-        "Text": "عشرين بالمائة",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "20%"
-        },
-        "Start": 0,
-        "End": 13
-      }
-    ]
-  },
-  {
-    "Input": "ثلاثين بالمائة",
-    "Results": [
-      {
-        "Text": "ثلاثين بالمائة",
+        "Text": "ثلاثون بالمائة",
         "TypeName": "percentage",
         "Resolution": {
           "value": "30%"
         },
         "Start": 0,
-        "End": 15
+        "End": 13
       }
     ]
   },
@@ -65,21 +79,21 @@
           "value": "100%"
         },
         "Start": 0,
-        "End": 12
+        "End": 11
       }
     ]
   },
   {
-    "Input": "عشرين بالمائة",
+    "Input": "عشرون بالمائة",
     "Results": [
       {
-        "Text": "عشرين بالمائة",
+        "Text": "عشرون بالمائة",
         "TypeName": "percentage",
         "Resolution": {
           "value": "20%"
         },
         "Start": 0,
-        "End": 14
+        "End": 12
       }
     ]
   },
@@ -98,16 +112,16 @@
     ]
   },
   {
-    "Input": "اثنين و عشرين بالمائة",
+    "Input": "اثنين و عشرون بالمائة",
     "Results": [
       {
-        "Text": "اثنين و عشرين بالمائة",
+        "Text": "اثنين و عشرون بالمائة",
         "TypeName": "percentage",
         "Resolution": {
           "value": "22%"
         },
         "Start": 0,
-        "End": 22
+        "End": 20
       }
     ]
   },
@@ -121,7 +135,7 @@
           "value": "210%"
         },
         "Start": 0,
-        "End": 12
+        "End": 10
       }
     ]
   },
@@ -135,7 +149,7 @@
           "value": "10%"
         },
         "Start": 0,
-        "End": 11
+        "End": 9
       }
     ]
   },
@@ -149,7 +163,7 @@
           "value": "-5%"
         },
         "Start": 10,
-        "End": 27
+        "End": 26
       }
     ]
   },
