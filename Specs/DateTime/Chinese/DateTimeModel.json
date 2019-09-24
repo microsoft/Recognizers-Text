@@ -3685,5 +3685,59 @@
         }
       }
     ]
+  },
+  {
+    "Input": "2019年7月25日早间粮油行情简析",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T08:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2019年7月25日早间",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-07-25TMO",
+              "type": "datetimerange",
+              "start": "2019-07-25 08:00:00",
+              "end": "2019-07-25 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "7月25日早间中小板公告汇总",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T08:00:00"
+    },
+    "Results": [
+      {
+        "Text": "7月25日早间",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-25TMO",
+              "type": "datetimerange",
+              "start": "2019-07-25 08:00:00",
+              "end": "2019-07-25 12:00:00"
+            },
+            {
+              "timex": "XXXX-07-25TMO",
+              "type": "datetimerange",
+              "start": "2020-07-25 08:00:00",
+              "end": "2020-07-25 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

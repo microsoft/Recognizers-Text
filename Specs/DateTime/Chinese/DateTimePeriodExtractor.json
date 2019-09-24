@@ -130,5 +130,27 @@
         "Length": 5
       }
     ]
+  },
+  {
+    "Input": "2019年7月25日早间粮油行情简析",
+    "Results": [
+      {
+        "Text": "2019年7月25日早间",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "7月25日早间中小板公告汇总",
+    "Results": [
+      {
+        "Text": "7月25日早间",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
   }
 ]
