@@ -16,8 +16,12 @@
         // For Ordinal.relative, a subtype of Ordinal
         public bool IsOrdinalRelative { get; set; } = false;
 
+        public bool HasMod { get; set; } = false;
+
         public string Offset { get; set; } = string.Empty;
 
         public string RelativeTo { get; set; } = string.Empty;
+
+        public bool IsMealtime { get; set; } = false;
     }
 }

@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -1211,7 +1212,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
                     DateObject.MinValue.SafeCreateFromValue(year, month, 1), dateValue);
 
-                ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
+                ret.Timex = DateTimeFormatUtil.LuisDate(year, month);
 
                 ret.Success = true;
             }
@@ -1351,6 +1352,16 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (er.Count >= 2)
             {
+                // Propagate the possible future relative context from the first entity to the second one in the range.
+                // Handles cases like "next monday to friday"
+                var futureMatchForStartDate = config.FutureRegex.Match(er[0].Text);
+                var futureMatchForEndDate = config.FutureRegex.Match(er[1].Text);
+
+                if (futureMatchForStartDate.Success && !futureMatchForEndDate.Success)
+                {
+                    er[1].Text = futureMatchForStartDate.Value + " " + er[1].Text;
+                }
+
                 var match = this.config.WeekWithWeekDayRangeRegex.Match(text);
                 string weekPrefix = null;
 
@@ -1396,7 +1407,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pastEnd = futureEnd;
             }
 
-            ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(futureEnd - futureBegin).TotalDays}D)";
+            if (!futureEnd.IsDefaultValue() && !futureBegin.IsDefaultValue())
+            {
+                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(futureEnd - futureBegin).TotalDays}D)";
+            }
+            else
+            {
+                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr})";
+            }
+
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
             ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
             ret.Success = true;

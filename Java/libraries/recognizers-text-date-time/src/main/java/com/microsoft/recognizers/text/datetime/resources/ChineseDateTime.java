@@ -158,17 +158,21 @@ public class ChineseDateTime {
             .replace("{DatePeriodLastRegex}", DatePeriodLastRegex)
             .replace("{DatePeriodNextRegex}", DatePeriodNextRegex);
 
-    public static final String YearRegex = "(({YearNumRegex})(\\s*年)?|({SimpleYearRegex})\\s*年)"
+    public static final String HalfYearRegex = "((?<firstHalf>(上|前)半年)|(?<secondHalf>(下|后)半年))";
+
+    public static final String YearRegex = "(({YearNumRegex})(\\s*年)?|({SimpleYearRegex})\\s*年){HalfYearRegex}?"
             .replace("{YearNumRegex}", YearNumRegex)
-            .replace("{SimpleYearRegex}", SimpleYearRegex);
+            .replace("{SimpleYearRegex}", SimpleYearRegex)
+            .replace("{HalfYearRegex}", HalfYearRegex);
 
     public static final String StrictYearRegex = "({YearRegex}(?=[\\u4E00-\\u9FFF]|\\s|$|\\W))"
             .replace("{YearRegex}", YearRegex);
 
     public static final String YearRegexInNumber = "(?<year>(\\d{3,4}))";
 
-    public static final String DatePeriodYearInChineseRegex = "(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年"
-            .replace("{ZeroToNineIntegerRegexChs}", ZeroToNineIntegerRegexChs);
+    public static final String DatePeriodYearInChineseRegex = "(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年{HalfYearRegex}?"
+            .replace("{ZeroToNineIntegerRegexChs}", ZeroToNineIntegerRegexChs)
+            .replace("{HalfYearRegex}", HalfYearRegex);
 
     public static final String MonthSuffixRegex = "(?<msuf>({RelativeMonthRegex}|{MonthRegex}))"
             .replace("{RelativeMonthRegex}", RelativeMonthRegex)
@@ -191,11 +195,12 @@ public class ChineseDateTime {
             .replace("{YearRegexInNumber}", YearRegexInNumber)
             .replace("{MonthNumRegex}", MonthNumRegex);
 
-    public static final String OneWordPeriodRegex = "(((明年|今年|去年)\\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\\s*(周末|周|月|年)|周末|今年|明年|去年|前年|后年)"
+    public static final String OneWordPeriodRegex = "(((?<yearrel>(明|今|去)年)\\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})(?<halfTag>半)?\\s*(周末|周|月|年)|周末|(今|明|去|前|后)年(\\s*{HalfYearRegex})?)"
             .replace("{MonthRegex}", MonthRegex)
             .replace("{DatePeriodThisRegex}", DatePeriodThisRegex)
             .replace("{DatePeriodLastRegex}", DatePeriodLastRegex)
-            .replace("{DatePeriodNextRegex}", DatePeriodNextRegex);
+            .replace("{DatePeriodNextRegex}", DatePeriodNextRegex)
+            .replace("{HalfYearRegex}", HalfYearRegex);
 
     public static final String WeekOfMonthRegex = "(?<wom>{MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\\s*周\\s*)"
             .replace("{MonthSuffixRegex}", MonthSuffixRegex);
@@ -519,6 +524,24 @@ public class ChineseDateTime {
         .put("secs", 1L)
         .put("sec", 1L)
         .build();
+
+    public static final List<String> MonthTerms = Arrays.asList("月");
+
+    public static final List<String> WeekendTerms = Arrays.asList("周末");
+
+    public static final List<String> WeekTerms = Arrays.asList("周", "星期");
+
+    public static final List<String> YearTerms = Arrays.asList("年");
+
+    public static final List<String> ThisYearTerms = Arrays.asList("今年");
+
+    public static final List<String> LastYearTerms = Arrays.asList("去年");
+
+    public static final List<String> NextYearTerms = Arrays.asList("明年");
+
+    public static final List<String> YearAfterNextTerms = Arrays.asList("后年");
+
+    public static final List<String> YearBeforeLastTerms = Arrays.asList("前年");
 
     public static final ImmutableMap<String, String> ParserConfigurationSeasonMap = ImmutableMap.<String, String>builder()
         .put("春", "SP")
@@ -872,6 +895,15 @@ public class ChineseDateTime {
 
     public static final String DateTimePeriodNIRegex = "(半夜|夜间|深夜)";
 
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("早", "(?<!今|明|日|号)早(?!上)")
+        .put("晚", "(?<!今|明|昨|傍|夜|日|号)晚(?!上)")
+        .put("^\\d{1,2}号", "^\\d{1,2}号")
+        .put("周", "周岁")
+        .put("今日", "今日头条")
+        .put("明日", "《明日之后》")
+        .build();
+
     public static final ImmutableMap<String, Integer> DurationUnitValueMap = ImmutableMap.<String, Integer>builder()
         .put("Y", 31536000)
         .put("Mon", 2592000)
@@ -924,13 +956,13 @@ public class ChineseDateTime {
 
     public static final String DefaultLanguageFallback = "DMY";
 
-    public static final List<String> MorningTermList = Arrays.asList("早","上午", "早上", "清晨");
+    public static final List<String> MorningTermList = Arrays.asList("早", "上午", "早上", "清晨");
 
     public static final List<String> MidDayTermList = Arrays.asList("中午", "正午");
 
     public static final List<String> AfternoonTermList = Arrays.asList("下午", "午后");
 
-    public static final List<String> EveningTermList = Arrays.asList("晚","晚上", "夜里", "傍晚", "夜晚");
+    public static final List<String> EveningTermList = Arrays.asList("晚", "晚上", "夜里", "傍晚", "夜晚");
 
     public static final List<String> DaytimeTermList = Arrays.asList("白天", "日间");
 

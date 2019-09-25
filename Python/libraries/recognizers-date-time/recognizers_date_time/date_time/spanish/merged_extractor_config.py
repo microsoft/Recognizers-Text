@@ -113,6 +113,14 @@ class SpanishMergedExtractorConfiguration(MergedExtractorConfiguration):
         return self._preposition_suffix_regex
 
     @property
+    def ambiguous_range_modifier_prefix(self) -> Pattern:
+        return None
+
+    @property
+    def potential_ambiguous_range_regex(self) -> Pattern:
+        return None
+
+    @property
     def number_ending_pattern(self) -> Pattern:
         return self._number_ending_pattern
 
@@ -133,6 +141,8 @@ class SpanishMergedExtractorConfiguration(MergedExtractorConfiguration):
             SpanishDateTime.SingleAmbiguousMonthRegex)
         self._preposition_suffix_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.PrepositionSuffixRegex)
+        self._ambiguous_range_modifier_prefix = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.AmbiguousRangeModifierPrefix)
         self._number_ending_pattern = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.NumberEndingPattern)
 

@@ -205,6 +205,8 @@ MonthEnd: !nestedRegex
 WeekDayEnd: !nestedRegex
   def: '{WeekDayRegex}\s*,?\s*$'
   references: [ WeekDayRegex ]
+WeekDayStart: !simpleRegex
+  def: ^[\.]
 RangeUnitRegex: !simpleRegex
   def: (?<unit>jahren?|jahr|monaten?|monat|wochen?|tagen?|tag)
 OclockRegex: !simpleRegex
@@ -222,7 +224,7 @@ PmRegexFull: !simpleRegex
 AmRegex: !simpleRegex
   def: (?<am>(((am|gegen)\s+)?(früh|vormittags?)|(morgens|(am|gegen) morgen)))
 LunchRegex: !simpleRegex
-  def: \b(mittagessen|mittags?)\b
+  def: \b(mittag(essen|s)?)\b
 NightRegex: !simpleRegex
   def: \b(mitternacht|(nachts?|primetime))\b
 AmPmPrefixRegex: !simpleRegex
@@ -230,13 +232,13 @@ AmPmPrefixRegex: !simpleRegex
 CommonDatePrefixRegex: !simpleRegex
   def: ^[\.]
 LessThanOneHour: !nestedRegex
-  def: (?<lth>(einer?\s+)?(viertel|dreiviertel|halb(en|e)?)(\s+stunden?)?)|{BaseDateTime.DeltaMinuteRegex}(\s+(minute|minuten|min))|{DeltaMinuteNumRegex}(\s+(minute|minuten|min))
+  def: (?<lth>(ein(er?)?\s+)?((drei)?viertel|halb(en?)?)(\s*stunden?)?)|{BaseDateTime.DeltaMinuteRegex}(\s+(min(uten?)?))|{DeltaMinuteNumRegex}(\s+(min(uten?)?))
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]
 WrittenTimeRegex: !nestedRegex
   def: (um\s*)?(?<writtentime>{HourNumRegex}(\s*{OclockRegex}\s*)({MinuteNumRegex}|{MinuteNumRegex}und(?<tens>zwanzig|dreißig|vierzig|fünfzig)))
   references: [ HourNumRegex, MinuteNumRegex , OclockRegex]
 TimePrefix: !nestedRegex
-  def: (?<prefix>(um\s*)?({LessThanOneHour})(\s*(vor\W|nach\W))?)
+  def: (?<prefix>({LessThanOneHour})(\s*(vor(\W)?|nach(\W)?))?)
   references: [ LessThanOneHour ]
 TimeSuffix: !nestedRegex
   def: (?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})
@@ -262,10 +264,10 @@ AtRegex: !nestedRegex
   def: (((?<=\b(um|gegen)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(?![%\d])|{MidTimeRegex}))|{MidTimeRegex})\b
   references: [ WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, MidTimeRegex ]
 IshRegex: !nestedRegex
-  def: '\b({BaseDateTime.HourRegex}(-|——)?ish|noonish|noon)\b'
+  def: '\b(noonish)\b'
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
-  def: (?<unit>stunden|stunde|std?|h|minuten?|min|sekunden?|sek|s)\b
+  def: (?<unit>stunden?|std?|h|minuten?|min|sekunden?|sek|s)\b
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>stunde|minute)\b
 FivesRegex: !simpleRegex
@@ -279,10 +281,10 @@ ConnectNumRegex: !nestedRegex
   def: '{BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex}'
   references: [ BaseDateTime.HourRegex, DescRegex ]
 TimeRegex1: !nestedRegex
-  def: ({TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}\b)\s*{DescRegex}
+  def: ({TimePrefix}\s+)?({WrittenTimeRegex}(\s*{DescRegex})?|({HourNumRegex}|{BaseDateTime.HourRegex}\b)\s*{DescRegex})
   references: [ TimePrefix, WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, DescRegex ]
 TimeRegex2: !nestedRegex
-  def: ({TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)
+  def: ({TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?(:|\s+uhr(\s+und)?\s+)(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex, DescRegex ]
 TimeRegex3: !nestedRegex
   def: ({TimePrefix}\s+)?{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})
@@ -297,7 +299,7 @@ TimeRegex6: !nestedRegex
   def: ({BasicTime}(\s*{DescRegex})?\s+{TimeSuffix})
   references: [ BasicTime, DescRegex, TimeSuffix ]
 TimeRegex7: !nestedRegex
-  def: (({AmPmPrefixRegex})?({BasicTime})((\s*{DescRegex}))?)
+  def: (({AmPmPrefixRegex})({BasicTime})((\s*{DescRegex}))?)
   references: [ TimeSuffixFull, BasicTime, DescRegex, AmPmPrefixRegex ]
 TimeRegex8: !nestedRegex
   def: ({TimeSuffixFull}(\s*(um|gegen)\s*){BasicTime}((\s*{DescRegex})?))
@@ -321,9 +323,9 @@ SpecificTimeBetweenAnd: !nestedRegex
   def: (?<preDesc>({PmRegex}|{AmRegex})\s+)?(zwischen\s+)(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))\s*{RangeConnectorRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))
   references: [ TimeRegex2, RangeConnectorRegex, HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex ]
 PrepositionRegex: !simpleRegex
-  def: (?<prep>^(um|am|vom|von|in|zur)(\s+(de[rmn]))?$)
+  def: (?<prep>^(um|am|vo[mn]|in|zur)(\s+(de[rmn]))?$)
 TimeOfDayRegex: !simpleRegex
-  def: \b(?<timeOfDay>(((((?<early>(früh am|am frühen|früher)(\s+|-))|(?<late>(spät am|am späten|später)(\s+|-)))?((am )?morgens?(?! (früh|vor|nach|abend|(nacht|primetime)|morgen))|(vor|nach)mittags?|abends?|früh|(nachts?|primetime))))))\b
+  def: \b(?<timeOfDay>(((((?<early>(früh( am|er)|am frühen)(\s+|-))|(?<late>(spät( am|er)|am späten)(\s+|-)))?((am )?morgens?(?! (früh|vor|nach|abend|(nacht|primetime)|morgen))|(vor|nach)mittags?|abends?|früh|(nachts?|primetime))))))\b
 SpecificTimeOfDayRegex: !nestedRegex
   def: \b((({StrictRelativeRegex}|heute)\s+{TimeOfDayRegex}))\b
   references: [ TimeOfDayRegex, StrictRelativeRegex ]
@@ -363,7 +365,7 @@ UnspecificEndOfRangeRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 PeriodTimeOfDayRegex: !simpleRegex
-  def: \b(((?<early>(früh am|früher|am frühen)(\s+|-))|(?<late>(spät am|später|am späten)(\s+|-)))?(?<timeOfDay>morgens?|früh|(vor|nach)mittags?|(nachts?|primetime)|abends?))\b
+  def: \b(((?<early>(früh( am|er)|am frühen)(\s+|-))|(?<late>(spät( am|er)|am späten)(\s+|-)))?(?<timeOfDay>morgens?|früh|(vor|nach)mittags?|(nachts?|primetime)|abends?))\b
 PeriodSpecificTimeOfDayRegex: !nestedRegex
   def: (({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})|heute)
   references: [ PeriodTimeOfDayRegex, StrictRelativeRegex ]
@@ -375,18 +377,20 @@ LessThanRegex: !simpleRegex
 MoreThanRegex: !simpleRegex
   def: \b(mehr\s+als)\b
 DurationUnitRegex: !simpleRegex
-  def: (?<unit>jahr(en|es|e)?|monat(en|e|s)?|wochen?|tag(en|es|e)?|stunden?|std?|h|minuten?|min|sekunden?|sek)\b
+  def: (?<unit>jahr(e(n|s)?)?|monat(en?|s)?|wochen?|tag(e(n|s)?)?|stunden?|std?|h|min(uten?)?|sek(unden?)?)\b
+SpecialNumberUnitRegex: !simpleRegex
+  def: \b(?<specialNum>beiden)\b
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*und\s+(eine\s+)?(?<suffix_num>halbe|viertel))
 PeriodicRegex: !simpleRegex
-  def: (?<periodic>(all)?täglich(er|en|es|e)?|(all)?monatlich(er|en|es|e)?|(all)?wöchentlich(er|en|es|e)?|(all)?jährlich(er|en|es|e)?)\b
+  def: (?<periodic>(all)?täglich(e(r|n|s)?)?|(all)?monatlich(e(r|n|s)?)?|(all)?wöchentlich(e(r|n|s)?)?|(all)?jährlich(e(r|n|s)?)?)\b
 EachUnitRegex: !nestedRegex
   def: (?<each>(jede(s|r|n|m)?|alle)(?<other>\s+andere(n)?)?\s*{DurationUnitRegex})
   references: [ DurationUnitRegex ]
 EachPrefixRegex: !simpleRegex
-  def: \b(?<each>(jede(r|n|s)?|alle)\s*$)
+  def: \b(?<each>(jede(r|n|s|m)?|alle)\s*$)
 SetEachRegex: !simpleRegex
-  def: \b(?<each>(jede(r|n|s)?|alle)\s*)
+  def: \b(?<each>(jede(r|n|s|m)?|alle)\s*)
 SetLastRegex: !simpleRegex
   def: (?<last>nächste(r|n|s)?|kommende(r|n|s)?|diese(r|n|m|s)?|letzte(r|n|s)?|vorige(r|n|s)?|vorherige(r|n|s)?|jetzige(r|n|s)?|derzeitige(r|n|s)?)\b
 EachDayRegex: !simpleRegex
@@ -400,18 +404,18 @@ NumberCombinedWithDurationUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 AnUnitRegex: !nestedRegex
-  def: \b(((ein(er|es|en|em|e)?)(?<half>\s+halb(es|er|en|e))?))\s+{DurationUnitRegex}
+  def: \b(((((ein(e(r|s|n|m)?)?)(?<half>\s+halb(e(s|r|n)?))?))\s+{DurationUnitRegex})|((ein(e(r|s|n|m)?)?)\s+((?<quarter>viertel)|(?<threequarter>dreiviertel))(?<unit>stunde)))
   references: [ DurationUnitRegex ]
 DuringRegex: !simpleRegex
   def: \b(während|im\slaufe)\s+(de[sr])\s+(?<unit>jahres|monats|woche|tages)\b
 AllRegex: !simpleRegex
-  def: \b(?<all>ganz(en|es|er|e)\s+(?<unit>jahr|monat|woche|tag))\b
+  def: \b(?<all>ganz(e(n|s|r)?)\s+(?<unit>jahr|monat|woche|tag))\b
 HalfRegex: !simpleRegex
-  def: (((ein(en|er|es|e)?)\s*)|\b)(?<half>halb(en|er|es|e)?\s+(?<unit>jahr(er|es|e)?|monat(s|e)?|woch(en|e)?|tag(en|er|es|e)?|stund(en|e)?))\b
+  def: (((ein(e(n|r|s)?)?)\s*)|\b)(?<half>halb(e(n|r|s)?)?\s+(?<unit>jahr(e(r|s)?)?|monat(s|e)?|woch(en?)?|tag(e(n|r|s)?)?|stund(en?)?))\b
 ConjunctionRegex: !simpleRegex
   def: \b((und(\s+für)?)|mit|für)\b
 HolidayRegex1: !nestedRegex
-  def: \b((dieses jahr)\s*)?(?<holiday>reformationstag|reformationsfest|gedenktag der reformation|martinstag|st. martin|sankt martin|martinsfest|martini|nikolaustag|dreikönigstag|dreikönigsfest|walpurgisnacht|nationalfeiertag|mariä empfängnis|weihnachten|weihnachtstag|erste(r|n)? weihnachtstag|1. weihnachtstag|erste(r|n)? weihnachtsfeiertag|1\. weihnachtsfeiertag|zweite(r|n)? weihnachtstag|zweite(r|n)? weihnachtsfeiertag|2\. weihnachtstag|zweite(r|n)? weihnachtsfeiertag|stefanitag|stafanstag|berchtoldstag|bechtelistag|bächtelistag|berchtelistag|bärzelistag|josefstag|joseftag|josefitag|ostermontag|ostersonntag|bundesfeiertag|bundesfeier|mariä himmelfahrt|tag der deutschen einheit|ostern|vatertag|muttertag|erntedankfest|thanksgiving|martin luther king day|martin luther king jr day|washington's birthday|washington birthday|canberraday|tag der arbeit|columbus day|memorial day|yuandan|mao's birthday|teachersday|teacher day|single day|allerheiligen|tag der jugend|kindertag|frauentag|treeplanting day|tag des baumes|girlsday|white lover day|loverday|weihnachten|weihnachtstag|xmas|neujahr|neujahrstag|neujahr|neujahrstag|neujahr|inauguration day|murmeltiertag|sommeranfang|winteranfang|frühlingsanfang|herbstanfang|valentinstag|st patrick day|erster april|april scherz|georgstag|mayday|maitag|tag der arbeit|maifeiertag|geburt johannes des täufers|us unabhängigkeitstag|unabhängigkeitstag|sturm auf die bastille|halloween|allerheiligen|allerseelen|guy fawkes day|guy fawkes night|veterans day|heiligabend|silvester|pi-tag|pitag|pi (tag|day))(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|{RelativeRegex}\s+jahres))?\b
+  def: \b((dieses jahr)\s*)?(?<holiday>reformations(tag|fest)|gedenktag der reformation|martinstag|st. martin|sankt martin|martinsfest|martini|nikolaustag|dreikönigstag|dreikönigsfest|walpurgisnacht|nationalfeiertag|mariä empfängnis|weihnachten|weihnachtstag|erste(r|n)? weihnachtstag|1. weihnachtstag|erste(r|n)? weihnachtsfeiertag|1\. weihnachtsfeiertag|zweite(r|n)? weihnachtstag|zweite(r|n)? weihnachtsfeiertag|2\. weihnachtstag|zweite(r|n)? weihnachtsfeiertag|stefanitag|stafanstag|berchtoldstag|bechtelistag|bächtelistag|berchtelistag|bärzelistag|josefstag|joseftag|josefitag|ostermontag|ostersonntag|bundesfeiertag|bundesfeier|mariä himmelfahrt|tag der deutschen einheit|ostern|vatertag|muttertag|erntedankfest|thanksgiving|martin luther king day|martin luther king jr day|washington's birthday|washington birthday|canberraday|tag der arbeit|columbus day|memorial day|yuandan|mao's birthday|teachersday|teacher day|single day|allerheiligen|tag der jugend|kindertag|frauentag|treeplanting day|tag des baumes|girlsday|white lover day|loverday|weihnachten|weihnachtstag|xmas|neujahr|neujahrstag|neujahr|neujahrstag|neujahr|inauguration day|murmeltiertag|sommeranfang|winteranfang|frühlingsanfang|herbstanfang|valentinstag|st patrick day|erster april|april scherz|georgstag|mayday|maitag|tag der arbeit|maifeiertag|geburt johannes des täufers|us unabhängigkeitstag|unabhängigkeitstag|sturm auf die bastille|halloween|allerheiligen|allerseelen|guy fawkes day|guy fawkes night|veterans day|heiligabend|silvester|pi-tag|pitag|pi (tag|day))(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|{RelativeRegex}\s+jahres))?\b
   references: [ YearRegex, RelativeRegex ]
 HolidayRegex2: !nestedRegex
   def: \b((dieses jahr)\s*)?(?<holiday>martin luther king|martin luther king jr|allerheiligen|tree planting day|white lover|st patrick|st george|independence|us independence|allerheiligen|allerseelen|guy fawkes|silvester|weiberfastnacht|karneval|aschermittwoch|palmensonntag|karfreitag|christi himmelfahrt|pfingstsonntag|pfingstmontag|fronleichnam|rosenmontag|fastnacht|gründonnerstag|himmelfahrt|volkstrauertag|buß und bettag|buß- und bettag|buss- und bettag|buss und bettag|totensonntag|erste(r|n)? advent|1\. advent|zweite(r|n)? advent|2\. advent|dritte(r|n)? advent|3\. advent|vierte(r|n)? advent|4\. advent|schweizer buss- und bettag|schweizer buss und bettag|schweizer buß und bettag|schweizer buß- und bettag)(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|{RelativeRegex}\s+jahres))?\b
@@ -428,11 +432,11 @@ AMTimeRegex: !simpleRegex
 PMTimeRegex: !simpleRegex
   def: (?<pm>nachmittags?|abends?|nachts?)
 BeforeRegex: !simpleRegex
-  def: (vorher(ige(s|n|r)?)?|bevor|vor\W|vorige(s|n|r)?)
+  def: (vorher(ige(s|n|r)?)?|bevor|vor(\W)?|vorige(s|n|r)?|bis)
 AfterRegex: !simpleRegex
-  def: (nach\W)
+  def: (nach(\W)?)
 SinceRegex: !simpleRegex
-  def: \b(seit)\b
+  def: \b(seit|ab)\b
 AgoRegex: !simpleRegex
   def: \b(danach)\b
 AroundRegex: !simpleRegex
@@ -454,9 +458,9 @@ AfternoonStartEndRegex: !simpleRegex
 EveningStartEndRegex: !simpleRegex
   def: (^(abends?)|(abends?)$)
 NightStartEndRegex: !simpleRegex
-  def: (^(über nacht|nachts?|nächtens|in der nacht|primetime))|((über nacht|nachts?|nächtens|primetime)$)
+  def: (^(über nacht|in der nacht|nachts?|nächtens|primetime))|((über nacht|nachts?|nächtens|primetime)$)
 InexactNumberRegex: !simpleRegex
-  def: \b((ein )?paar|einige|wenige|einige wenige)\b
+  def: \b((ein )?paar|einige( wenige)?|wenige)\b
 InexactNumberUnitRegex: !nestedRegex
   def: ({InexactNumberRegex})\s+({DurationUnitRegex})
   references: [InexactNumberRegex, DurationUnitRegex]
@@ -467,7 +471,7 @@ RelativeDurationUnitRegex: !nestedRegex
   def: (((?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s*)({DurationUnitRegex})))
   references: [NextPrefixRegex, PreviousPrefixRegex, ThisPrefixRegex, DurationUnitRegex, RestrictedTimeUnitRegex]
 ReferenceDatePeriodRegex: !nestedRegex
-  def: \b{ReferencePrefixRegex}\s+(?<duration>tag|monat|jahr(zehnt)?|wochenende|wochentag)\b
+  def: \b{ReferencePrefixRegex}\s+(?<duration>tag|monat|jahr(zehnt)?|wochen(ende|tag))\b
   references: [ReferencePrefixRegex]
 ConnectorRegex: !simpleRegex
   def: ^(-|,|für|t|gegen)$
@@ -478,31 +482,34 @@ SingleAmbiguousMonthRegex: !simpleRegex
 UnspecificDatePeriodRegex: !simpleRegex
   def: ^(woche(nende)?|monat|jahr)$
 PrepositionSuffixRegex: !simpleRegex
-  def: \b(am|in|um|gegen|von|vom|zum|zur)$
+  def: \b(am|in|um|gegen|vo[mn]|zu(m|r))$
 FlexibleDayRegex: !simpleRegex
   def: (?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)
 ForTheRegex: !nestedRegex
   def: \b(für den {FlexibleDayRegex})
   references: [FlexibleDayRegex]
 WeekDayAndDayOfMonthRegex: !nestedRegex
-  def: \b{WeekDayRegex}\s+((der|den)\s+{FlexibleDayRegex})\b
+  def: \b{WeekDayRegex}\s+((de(r|n))\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
 WeekDayAndDayRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex|{OclockRegex}}))))\b
   references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex, OclockRegex]
 RestOfDateRegex: !simpleRegex
-  def: \brest\s+((der|des|dieser)\s+)((aktuellen|jetzigen)\s+)?(?<duration>woche|monats|jahres)\b
+  def: \brest\s+((de[rs]|dieser)\s+)((aktuellen|jetzigen)\s+)?(?<duration>woche|monats|jahres)\b
 RestOfDateTimeRegex: !simpleRegex
   def: \brest\s+((des|diesen)\s+)((aktuellen|heutigen)\s+)?(?<unit>tages)\b
 MealTimeRegex: !simpleRegex
-  def: \b((zum|zur)\s+)?(?<mealTime>(essenszeit|mittagessen|mittag))\b
+  def: \b((zu(m|r))\s+)?(?<mealTime>(essenszeit|mittagessen|mittag))\b
+AmbiguousRangeModifierPrefix: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 NumberEndingPattern: !nestedRegex
-  def: ^(\s+(?<meeting>meeting|termin|telefonkonferenz|conference|call|skype call)\s+to\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})((\.)?$|(\.,|,|!|\?)))
+  def: ^(\s+(?<meeting>meeting|termin|telefonkonferenz|conference|skype call|call)\s+to\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})((\.)?$|(\.,|,|!|\?)))
   references: [PeriodHourNumRegex, HourRegex]
 OneOnOneRegex: !simpleRegex
   def: \b(1\s*:\s*1)|(one (on )?one|one\s*-\s*one|one\s*:\s*one)\b
 LaterEarlyPeriodRegex: !nestedRegex
-  def: \b((?<LatePrefix>spät(er|en|e)?)|(?<EarlyPrefix>früh(er|en|e)))\s+(?<suffix>{OneWordPeriodRegex})\b
+  def: \b((?<LatePrefix>spät(e(r|n)?)?)|(?<EarlyPrefix>früh(e(r|n)?)))\s+(?<suffix>{OneWordPeriodRegex})\b
   references: [OneWordPeriodRegex]
 WeekWithWeekDayRangeRegex: !nestedRegex
   def: \b((?<week>({NextPrefixRegex}|{PreviousPrefixRegex}|diese(r|n|m))\s+woche)((\s+zwischen\s+{WeekDayRegex}\s+und\s+{WeekDayRegex})|(\s+vo(n|m)\s+{WeekDayRegex}\s+(bis\s+)?zum\s+{WeekDayRegex})))\b

@@ -3,6 +3,8 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Definitions.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
@@ -33,8 +35,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             this.config = config;
 
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
             HolidayExtractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration(config));
         }
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
         private BaseHolidayExtractor HolidayExtractor { get; }
 
@@ -57,7 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             AddTo(ret, SetExtractor.Extract(text, referenceTime));
             AddTo(ret, HolidayExtractor.Extract(text, referenceTime));
 
-            CheckBlackList(ref ret, text);
+            ret = FilterAmbiguity(ret, text);
 
             AddMod(ret, text);
 
@@ -83,36 +88,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return tempDst;
         }
 
-        // add some negative case
-        private static void CheckBlackList(ref List<ExtractResult> extractResults, string text)
+        // Filter some bad cases like "十二周岁" and "12号", etc.
+        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
         {
-            var ret = new List<ExtractResult>();
-            const string negativeCaseRegex = @"^\d{1,2}号";
-
-            foreach (var extractResult in extractResults)
+            if (this.AmbiguityFiltersDict != null)
             {
-                var endIndex = (int)extractResult.Start + (int)extractResult.Length;
-                if (endIndex != text.Length)
+                foreach (var regex in this.AmbiguityFiltersDict)
                 {
-                    var tmpChar = text.Substring(endIndex, 1);
-
-                    // for cases like "12周岁"
-                    if (extractResult.Text.EndsWith("周") && endIndex < text.Length && tmpChar.Equals("岁"))
+                    foreach (var extractResult in extractResults)
                     {
-                        continue;
+                        if (regex.Key.IsMatch(extractResult.Text))
+                        {
+                            var matches = regex.Value.Matches(text).Cast<Match>();
+                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                                .ToList();
+                        }
                     }
                 }
-
-                // for cases like "12号"
-                if (Regex.IsMatch(extractResult.Text, negativeCaseRegex))
-                {
-                    continue;
-                }
-
-                ret.Add(extractResult);
             }
 
-            extractResults = ret;
+            return extractResults;
         }
 
         private void AddMod(List<ExtractResult> ers, string text)

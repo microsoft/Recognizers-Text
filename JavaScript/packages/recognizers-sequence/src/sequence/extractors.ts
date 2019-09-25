@@ -119,7 +119,7 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
                     Digits++ ; 
                 }
             }
-            if (Digits < 7 && er.data !== "ITPhoneNumber") {
+            if ((Digits < 7 && er.data !== "ITPhoneNumber")) {
                 continue;
             }
             if (er.start + er.length < source.length) {
@@ -145,6 +145,10 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
                                 er.text = source.substring(er.start, er.start + er.length);
                                 ret.push(er);
                             }
+                        }
+                        // Handle cases like "91a-677-0060".
+                        else if (chGap <= 'z' && chGap >= 'a') {
+                            continue;
                         }
                         else {
                             ret.push(er);

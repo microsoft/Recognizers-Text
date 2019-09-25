@@ -29,6 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             InexactNumberRegex = PortugueseDurationExtractorConfiguration.InexactNumberRegex;
             InexactNumberUnitRegex = PortugueseDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = PortugueseDurationExtractorConfiguration.DurationUnitRegex;
+            SpecialNumberUnitRegex = PortugueseDurationExtractorConfiguration.SpecialNumberUnitRegex;
         }
 
         public IExtractor CardinalExtractor { get; }
@@ -58,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
+
+        public Regex SpecialNumberUnitRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

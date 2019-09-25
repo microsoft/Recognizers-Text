@@ -11,9 +11,16 @@ export interface RegExpValue {
     value: string;
 }
 
+export interface RegExpRegExp {
+    regExpKey: RegExp;
+    regExpValue: RegExp;
+}
+
 export abstract class BaseNumberExtractor implements IExtractor {
 
     regexes: RegExpValue[];
+
+    ambiguityFiltersDict: RegExpRegExp[];
 
     protected extractType: string = "";
 
@@ -81,7 +88,25 @@ export abstract class BaseNumberExtractor implements IExtractor {
             }
         }
 
+        result = this.filterAmbiguity(result, source);
         return result;
+    }
+
+    private filterAmbiguity(extractResults: ExtractResult[], text: string) {
+        if (this.ambiguityFiltersDict !== null && this.ambiguityFiltersDict !== undefined){
+            for (let regex of this.ambiguityFiltersDict){
+                for (let extractResult of extractResults){
+                    if (RegExpUtility.isMatch(regex.regExpKey, extractResult.text)){
+                        let matches = RegExpUtility.getMatches(regex.regExpValue, text);
+                        if (matches && matches.length){
+                            extractResults = extractResults.filter(er => matches.find(m => m.index < er.start + er.length && m.index + m.length > er.start) === undefined);
+                        }
+                    }
+                }
+            }
+        }
+
+        return extractResults;
     }
 
     protected generateLongFormatNumberRegexes(type: LongFormatType, placeholder: string = BaseNumbers.PlaceHolderDefault): RegExp {

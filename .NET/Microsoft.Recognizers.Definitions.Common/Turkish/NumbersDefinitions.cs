@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
     public static class NumbersDefinitions
     {
       public const string LangMarker = @"Tr";
-      public const bool CompoundNumberLanguage = false;
+      public const bool CompoundNumberLanguage = true;
       public const bool MultiDecimalSeparatorCulture = true;
       public const string DigitsNumberRegex = @"\d+|\d{1,3}(\.\d{3})";
       public const string RoundNumberIntegerRegex = @"(yüz|bin|milyon|milyar|trilyon)";
@@ -32,22 +32,22 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string NegativeNumberTermsRegex = @"(?<negTerm>(eksi|negatif)\s+)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
       public const string TensNumberIntegerRegex = @"(on|yirmi|otuz|kırk|elli|altmış|yetmiş|seksen|doksan)";
-      public static readonly string HundredsNumberIntegerRegex = $@"({TwoToNineIntegerRegex}\syüz|yüz)";
-      public static readonly string TenToHundredRegex = $@"({TensNumberIntegerRegex}(\s{OneToNineIntegerRegex}))";
-      public static readonly string HundredToThousandRegex = $@"({HundredsNumberIntegerRegex}(\s({OneToNineIntegerRegex}|{TenToHundredRegex}|{TensNumberIntegerRegex})))";
-      public static readonly string ThousandsNumberIntegerRegex = $@"(({HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{TwoToNineIntegerRegex}|{TensNumberIntegerRegex})\sbin|bin)";
-      public static readonly string ThousandToMillionRegex = $@"({ThousandsNumberIntegerRegex}(\s({HundredToThousandRegex}|{HundredsNumberIntegerRegex}|{TenToHundredRegex}|{{TensNumberIntegerRegex}}|{OneToNineIntegerRegex})))";
-      public static readonly string MillionsNumberIntegerRegex = $@"(({HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})\smilyon)";
-      public static readonly string MillionToBillionRegex = $@"({MillionsNumberIntegerRegex}(\s({ThousandToMillionRegex}|{ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})))";
-      public static readonly string BillionsNumberIntegerRegex = $@"(({HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})\smilyar)";
-      public static readonly string BillionToTrillionRegex = $@"({BillionsNumberIntegerRegex}(\s({MillionToBillionRegex}|{MillionsNumberIntegerRegex}|{ThousandToMillionRegex}|{ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})))";
-      public static readonly string TrillionsNumberIntegerRegex = $@"(({ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})\strilyon)";
-      public static readonly string AboveTrillionRegex = $@"({TrillionsNumberIntegerRegex}(\s({BillionToTrillionRegex}|{BillionsNumberIntegerRegex}|{MillionToBillionRegex}|{MillionsNumberIntegerRegex}|{ThousandToMillionRegex}|{ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})))";
+      public static readonly string HundredsNumberIntegerRegex = $@"({TwoToNineIntegerRegex}\s*yüz|yüz)";
+      public static readonly string TenToHundredRegex = $@"({TensNumberIntegerRegex}(\s*{OneToNineIntegerRegex}))";
+      public static readonly string HundredToThousandRegex = $@"({HundredsNumberIntegerRegex}(\s*({OneToNineIntegerRegex}|{TenToHundredRegex}|{TensNumberIntegerRegex})))";
+      public static readonly string ThousandsNumberIntegerRegex = $@"(({HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{TwoToNineIntegerRegex}|{TensNumberIntegerRegex})\s*bin|bin)";
+      public static readonly string ThousandToMillionRegex = $@"({ThousandsNumberIntegerRegex}(\s*({HundredToThousandRegex}|{HundredsNumberIntegerRegex}|{TenToHundredRegex}|{{TensNumberIntegerRegex}}|{OneToNineIntegerRegex})))";
+      public static readonly string MillionsNumberIntegerRegex = $@"(({HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})\s*milyon)";
+      public static readonly string MillionToBillionRegex = $@"({MillionsNumberIntegerRegex}(\s*({ThousandToMillionRegex}|{ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})))";
+      public static readonly string BillionsNumberIntegerRegex = $@"(({HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})\s*milyar)";
+      public static readonly string BillionToTrillionRegex = $@"({BillionsNumberIntegerRegex}(\s*({MillionToBillionRegex}|{MillionsNumberIntegerRegex}|{ThousandToMillionRegex}|{ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})))";
+      public static readonly string TrillionsNumberIntegerRegex = $@"(({ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})\s*trilyon)";
+      public static readonly string AboveTrillionRegex = $@"({TrillionsNumberIntegerRegex}(\s*({BillionToTrillionRegex}|{BillionsNumberIntegerRegex}|{MillionToBillionRegex}|{MillionsNumberIntegerRegex}|{ThousandToMillionRegex}|{ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{OneToNineIntegerRegex}|{TensNumberIntegerRegex})))";
       public static readonly string AllIntRegex = $@"({AboveTrillionRegex}|{BillionToTrillionRegex}|{MillionToBillionRegex}|{ThousandToMillionRegex}|{MillionsNumberIntegerRegex}|{BillionsNumberIntegerRegex}|{TrillionsNumberIntegerRegex}|{ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{HundredsNumberIntegerRegex}|{TenToHundredRegex}|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})";
       public static readonly string NegativeAllIntRegex = $@"(eksi\s)({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}|{ThousandToMillionRegex}|{MillionToBillionRegex}|{BillionToTrillionRegex}|{AboveTrillionRegex})";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
-      public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})";
+      public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";
       public static readonly string NumbersWithSuffix = $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)";
       public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+düzine(?=\b)";
@@ -55,8 +55,9 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string NegativeAllIntRegexWithLocks = $@"((?<=\b){NegativeAllIntRegex}(?=\b))";
       public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((yarım\s+)?düzine)|({AllIntRegex}\s+düzine))(?=\b)";
       public const string RoundNumberOrdinalRegex = @"(yüzüncü|bininci|milyonuncu|milyarıncı|trilyonuncu)";
+      public const string NumberOrdinalRegex = @"(birinci|ilk|ikinci|üçüncü|dördüncü|beşinci|altıncı|yedinci|sekizinci|dokuzuncu)";
       public const string TensOrdinalRegex = @"(onuncu|yirminci|otuzuncu|kırkıncı|ellinci|altmışıncı|yetmişinci|sekseninci|doksanıncı)";
-      public static readonly string OneToHundredOrdinalRegex = $@"(({TensNumberIntegerRegex}\s)?(birinci|ikinci|üçüncü|dördüncü|beşinci|altıncı|yedinci|sekizinci|dokuzuncu)|{TensOrdinalRegex})";
+      public static readonly string OneToHundredOrdinalRegex = $@"(({TensNumberIntegerRegex}\s)?{NumberOrdinalRegex}|{TensOrdinalRegex})";
       public static readonly string HundredsOrdinalRegex = $@"(({TwoToNineIntegerRegex}\s)?(yüzüncü))";
       public static readonly string HundredToThousandOrdinalRegex = $@"({HundredsNumberIntegerRegex}\s{OneToHundredOrdinalRegex}|{HundredsOrdinalRegex})";
       public static readonly string ThousandsOrdinalRegex = $@"(({TwoToNineIntegerRegex}\s)?(bininci))";
@@ -67,17 +68,16 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string BillionToTrillionOrdinalRegex = $@"({BillionsNumberIntegerRegex}\s({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex})|{BillionsOrdinalRegex})";
       public static readonly string TrillionsOrdinalRegex = $@"((({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}|{TensNumberIntegerRegex}|{HundredsNumberIntegerRegex})\s)?(trilyonuncu))";
       public static readonly string AboveTrillionOrdinalRegex = $@"({TrillionsNumberIntegerRegex}\s({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex}|{BillionToTrillionOrdinalRegex})|{TrillionsOrdinalRegex})";
-      public const string RelativeOrdinalRegex = @"((bir\s)?(sonraki|önceki)|sondan birinci|sondan bir önceki|sondan ikinci|(en\s)?son)";
-      public static readonly string AllOrdinalRegex = $@"({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex}|{BillionToTrillionOrdinalRegex}|{AboveTrillionOrdinalRegex})";
-      public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(1(\.|'inci)|2(\.|'nci)|3(\.|'üncü)|4(\.|'üncü)|5(\.|'inci)|6(\.|'ıncı)|7(\.|'inci)|8(\.|'inci)|9(\.|'uncu))))(?=\b)";
-      public const string OrdinalTensSuffixRegex = @"(?<=\b)((\d*(10(\.|'uncu)|20(\.|'nci)|30(\.|'uncu)|40(\.|'ıncı)|50(\.|'inci)|60(\.|'ıncı)|70(\.|'inci)|80(\.|'inci)|90(\.|'ıncı))))(?=\b)";
-      public const string OrdinalRoundSuffixRegex = @"(?<=\b)((\d*(00(\.|'üncü)|000(\.|'inci)|000\.?000(\.|'uncu)|000(\.?000){2}(\.|'ıncı)|000(\.?000){2}\.?000(\.|'uncu))))(?=\b)";
-      public static readonly string OrdinalNumericRegex = $@"(?<=\b)({OrdinalSuffixRegex}|{OrdinalTensSuffixRegex}|{OrdinalRoundSuffixRegex})(?=\b)";
-      public static readonly string OrdinalTurkishRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
+      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(bir\s+)?(sonraki|önceki)|sondan\s+birinci|sondan\s+bir\s+önceki|sondan\s+ikinci|(en\s+)?son|[iİ]lki|sonuncu(su)?|şimdiki)";
+      public static readonly string AllOrdinalRegex = $@"({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex}|{BillionToTrillionOrdinalRegex}|{AboveTrillionOrdinalRegex}|{RelativeOrdinalRegex})";
+      public const string AllOrdinalSuffix = @"(onu(?=nda)?|yirmisi(?=nde)?|otuzu(?=nda)?|kırkı(?=nda)?|ellisi(?=nde)?|altmışı(?=nda)?|yetmişi(?=nde)?|sekseni(?=nde)?|doksanı(?=nda)?|((on|yirmi|otuz)\s+)?(biri(?=nde)?|ilk|ikisi(?=nde)?|üçü(?=nde)?|dördü(?=nde)?|beşi(?=nde)?|altısı(?=nda)?|yedisi(?=nde)?|sekizi(?=nde)?|dokuzu(?=nda)?))";
+      public const string OrdinalSuffixRegex = @"(?<=\b)(\d*(00(\.(?!\d+)|'üncü)|000(\.(?!\d+)|'inci)|000\.?000(\.(?!\d+)|'uncu)|000\.?000\.?000(\.(?!\d+)|'ıncı)|000\.?000\.?000\.?000(\.(?!\d+)|'uncu)|10(\.(?!\d+)|'uncu|'u(?=nda)?)|20(\.(?!\d+)|'nci|'si(?=nde)?)|30(\.(?!\d+)|'uncu|'u(?=nda)?)|40(\.(?!\d+)|'ıncı|'ı(?=nda)?)|50(\.(?!\d+)|'inci|'si(?=nde)?)|60(\.(?!\d+)|'ıncı|'ı(?=nda)?)|70(\.(?!\d+)|'inci|'i(?=nde)?)|80(\.(?!\d+)|'inci|'i(?=nde)?)|90(\.(?!\d+)|'ıncı|'ı(?=nda)?)|1(\.(?!\d+)|'inci|'i(?=nde)?)|2(\.(?!\d+)|'nci|'si(?=nde)?)|3(\.(?!\d+)|'üncü|'ü(?=nde)?)|4(\.(?!\d+)|'üncü|'ü(?=nde)?)|5(\.(?!\d+)|'inci|'i(?=nde)?)|6(\.(?!\d+)|'ıncı|'sı(?=nda)?)|7(\.(?!\d+)|'inci|'si(?=nde)?)|8(\.(?!\d+)|'inci|'i(?=nde)?)|9(\.(?!\d+)|'uncu|'u(?=nda)?)))";
+      public const string OrdinalNumericRegex = @"(?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*('inci|'ıncı|'uncu|'üncü|'nci|'ncı))(?=\b)";
+      public static readonly string OrdinalTurkishRegex = $@"(?<=\b)({AllOrdinalRegex}(?=\b)|{AllOrdinalSuffix})";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}\s)?(buçuk|çeyrek|yarım))(?=\b)";
-      public static readonly string FractionPrepositionRegex = $@"(?<=\b)(eksi\s)?(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(bölü)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
+      public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(eksi\s)?(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(bölü)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s{ZeroToNineIntegerRegex})+|(\s{AllIntRegex}))";
       public static readonly string FloatRegex1 = $@"(({NegativeAllIntRegex}|{AllIntRegex})(\s(nokta)){AllPointRegex})";
       public static readonly string FloatRegex2 = $@"{AllIntRegex}(\s+(tam)\s+)((onda)\s+{OneToNineIntegerRegex}|(yüzde)\s+({OneToNineIntegerRegex}|{TenToHundredRegex})|(binde)\s+({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}))";
@@ -179,36 +179,46 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly Dictionary<string, long> OrdinalNumberMap = new Dictionary<string, long>
         {
             { @"birinci", 1 },
+            { @"biri", 1 },
+            { @"ilk", 1 },
             { @"ikinci", 2 },
+            { @"ikisi", 2 },
             { @"ikincil", 2 },
             { @"yarım", 2 },
             { @"buçuk", 2 },
             { @"üçüncü", 3 },
+            { @"üçü", 3 },
             { @"dördüncü", 4 },
+            { @"dördü", 4 },
             { @"çeyrek", 4 },
             { @"beşinci", 5 },
+            { @"beşi", 5 },
             { @"altıncı", 6 },
+            { @"altısı", 6 },
             { @"yedinci", 7 },
+            { @"yedisi", 7 },
             { @"sekizinci", 8 },
+            { @"sekizi", 8 },
             { @"dokuzuncu", 9 },
+            { @"dokuzu", 9 },
             { @"onuncu", 10 },
-            { @"on birinci", 11 },
-            { @"on ikinci", 12 },
-            { @"on üçüncü", 13 },
-            { @"on dördüncü", 14 },
-            { @"on beşinci", 15 },
-            { @"on altıncı", 16 },
-            { @"on yedinci", 17 },
-            { @"on sekizinci", 18 },
-            { @"on dokuzuncu", 19 },
+            { @"onu", 10 },
             { @"yirminci", 20 },
+            { @"yirmisi", 20 },
             { @"otuzuncu", 30 },
+            { @"otuzu", 30 },
             { @"kırkıncı", 40 },
+            { @"kırkı", 40 },
             { @"ellinci", 50 },
+            { @"ellisi", 50 },
             { @"altmışıncı", 60 },
+            { @"altmışı", 60 },
             { @"yetmişinci", 70 },
+            { @"yetmişi", 70 },
             { @"sekseninci", 80 },
+            { @"sekseni", 80 },
             { @"donsanıncı", 90 },
+            { @"doksanı", 90 },
             { @"yüzüncü", 100 },
             { @"bininci", 1000 },
             { @"milyonuncu", 1000000 },
@@ -242,6 +252,12 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {
             { @"en son", @"0" },
+            { @"son", @"0" },
+            { @"sonuncu", @"0" },
+            { @"sonuncusu", @"0" },
+            { @"şimdiki", @"0" },
+            { @"ilki", @"0" },
+            { @"İlki", @"0" },
             { @"bir sonraki", @"1" },
             { @"bir önceki", @"-1" },
             { @"sondan ikinci", @"-1" },
@@ -253,12 +269,17 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
         {
             { @"en son", @"end" },
+            { @"son", @"end" },
+            { @"sonuncu", @"end" },
+            { @"sonuncusu", @"end" },
+            { @"şimdiki", @"current" },
+            { @"ilki", @"current" },
+            { @"İlki", @"current" },
             { @"bir sonraki", @"current" },
             { @"bir önceki", @"current" },
             { @"sondan birinci", @"end" },
             { @"en sondan bir önceki", @"end" },
             { @"sondan bir önceki", @"end" },
-            { @"the last but one", @"end" },
             { @"sondan ikinci", @"end" },
             { @"sonraki", @"current" },
             { @"önceki", @"current" }

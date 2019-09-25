@@ -7,7 +7,9 @@ export enum NumberMode {
     // Add 67.5 billion & million support.
     Currency,
     // Don't extract number from cases like 16ml
-    PureNumber
+    PureNumber,
+    // Unit is for unit
+    Unit
 }
 
 export class LongFormatType {

@@ -5,6 +5,7 @@ namespace Microsoft.Recognizers.Text
 {
     public sealed class Culture
     {
+        public const string Arabic = "ar-*";
         public const string English = "en-us";
         public const string EnglishOthers = "en-*";
         public const string Chinese = "zh-cn";
@@ -19,9 +20,11 @@ namespace Microsoft.Recognizers.Text
         public const string Swedish = "sv-se";
         public const string Bulgarian = "bg-bg";
         public const string Turkish = "tr-tr";
+        public const string Hindi = "hi-in";
 
         public static readonly Culture[] SupportedCultures =
         {
+            new Culture("Arabic", Arabic),
             new Culture("EnglishOthers", EnglishOthers),
             new Culture("English", English),
             new Culture("Chinese", Chinese),
@@ -36,6 +39,7 @@ namespace Microsoft.Recognizers.Text
             new Culture("Swedish", Swedish),
             new Culture("Bulgarian", Bulgarian),
             new Culture("Turkish", Turkish),
+            new Culture("Hindi", Hindi),
         };
 
         private static readonly string[] SupportedCultureCodes = SupportedCultures.Select(c => c.CultureCode).ToArray();

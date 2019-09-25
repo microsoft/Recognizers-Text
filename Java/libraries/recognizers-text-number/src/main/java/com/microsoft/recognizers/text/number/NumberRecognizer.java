@@ -154,7 +154,7 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
         //region Spanish
         registerModel(NumberModel.class, Culture.Spanish, (options) -> new NumberModel(
                 AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration()),
-                new com.microsoft.recognizers.text.number.spanish.extractors.NumberExtractor(NumberMode.PureNumber)));
+                com.microsoft.recognizers.text.number.spanish.extractors.NumberExtractor.getInstance(NumberMode.PureNumber)));
         registerModel(OrdinalModel.class, Culture.Spanish, (options) -> new OrdinalModel(
                 AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Ordinal, new SpanishNumberParserConfiguration()),
                 new com.microsoft.recognizers.text.number.spanish.extractors.OrdinalExtractor()));
@@ -166,7 +166,7 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
         //region Portuguese
         registerModel(NumberModel.class, Culture.Portuguese, (options) -> new NumberModel(
                 AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new PortugueseNumberParserConfiguration()),
-                new com.microsoft.recognizers.text.number.portuguese.extractors.NumberExtractor(NumberMode.PureNumber)));
+                com.microsoft.recognizers.text.number.portuguese.extractors.NumberExtractor.getInstance(NumberMode.PureNumber)));
         registerModel(OrdinalModel.class, Culture.Portuguese, (options) -> new OrdinalModel(
                 AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Ordinal, new PortugueseNumberParserConfiguration()),
                 new com.microsoft.recognizers.text.number.portuguese.extractors.OrdinalExtractor()));

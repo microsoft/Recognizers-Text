@@ -110,17 +110,19 @@ DatePeriodNextRegex: !simpleRegex
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)
   references: [DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextRegex]
+HalfYearRegex: !simpleRegex
+  def: ((?<firstHalf>(上|前)半年)|(?<secondHalf>(下|后)半年))
 YearRegex: !nestedRegex
-  def: (({YearNumRegex})(\s*年)?|({SimpleYearRegex})\s*年)
-  references: [YearNumRegex, SimpleYearRegex]
+  def: (({YearNumRegex})(\s*年)?|({SimpleYearRegex})\s*年){HalfYearRegex}?
+  references: [YearNumRegex, SimpleYearRegex, HalfYearRegex]
 StrictYearRegex: !nestedRegex
   def: '({YearRegex}(?=[\u4E00-\u9FFF]|\s|$|\W))'
   references: [YearRegex]
 YearRegexInNumber: !simpleRegex
   def: (?<year>(\d{3,4}))
 DatePeriodYearInChineseRegex: !nestedRegex
-  def: (?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年
-  references: [ZeroToNineIntegerRegexChs]
+  def: (?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年{HalfYearRegex}?
+  references: [ZeroToNineIntegerRegexChs, HalfYearRegex]
 MonthSuffixRegex: !nestedRegex
   def: (?<msuf>({RelativeMonthRegex}|{MonthRegex}))
   references: [RelativeMonthRegex, MonthRegex]
@@ -134,8 +136,8 @@ PureNumYearAndMonth: !nestedRegex
   def: ({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})
   references: [YearRegexInNumber, MonthNumRegex]
 OneWordPeriodRegex: !nestedRegex
-  def: (((明年|今年|去年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*(周末|周|月|年)|周末|今年|明年|去年|前年|后年)
-  references: [MonthRegex, DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextRegex]
+  def: (((?<yearrel>(明|今|去)年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})(?<halfTag>半)?\s*(周末|周|月|年)|周末|(今|明|去|前|后)年(\s*{HalfYearRegex})?)
+  references: [MonthRegex, DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextRegex, HalfYearRegex]
 WeekOfMonthRegex: !nestedRegex
   def: (?<wom>{MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)
   references: [MonthSuffixRegex]
@@ -418,6 +420,43 @@ ParserConfigurationUnitValueMap: !dictionary
     second: 1
     secs: 1
     sec: 1
+MonthTerms: !list
+  types: [ string ]
+  entries:
+    - 月
+WeekendTerms: !list
+  types: [ string ]
+  entries:
+    - 周末
+WeekTerms: !list
+  types: [ string ]
+  entries:
+    - 周
+    - 星期
+YearTerms: !list
+  types: [ string ]
+  entries:
+    - 年
+ThisYearTerms: !list
+  types: [ string ]
+  entries:
+    - 今年
+LastYearTerms: !list
+  types: [ string ]
+  entries:
+    - 去年
+NextYearTerms: !list
+  types: [ string ]
+  entries:
+    - 明年
+YearAfterNextTerms: !list
+  types: [ string ]
+  entries:
+    - 后年
+YearBeforeLastTerms: !list
+  types: [ string ]
+  entries:
+    - 前年
 ParserConfigurationSeasonMap: !dictionary
   types: [string, string]
   entries:
@@ -770,6 +809,16 @@ DateTimePeriodEVRegex: !simpleRegex
   def: (晚上|夜里|夜晚|晚)
 DateTimePeriodNIRegex: !simpleRegex
   def: (半夜|夜间|深夜)
+# For cases like "12号", singleWord "早" and "晚"
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '早': '(?<!今|明|日|号)早(?!上)'
+    '晚': '(?<!今|明|昨|傍|夜|日|号)晚(?!上)'
+    '^\d{1,2}号': '^\d{1,2}号'
+    '周': '周岁'
+    '今日': '今日头条'
+    '明日': '《明日之后》'
 DurationUnitValueMap: !dictionary
   types: [string, int]
   entries:

@@ -33,7 +33,7 @@ export namespace BasePhoneNumbers {
     export const AreaCodeIndicatorRegex = `\\(`;
     export const FormatIndicatorRegex = `(\\s|-|/|\\.)+`;
     export const ColonMarkers = [ ":" ];
-    export const ColonPrefixCheckRegex = `(([A-Za-z])\\s*$)`;
+    export const ColonPrefixCheckRegex = `(([a-z])\\s*$)`;
     export const SpecialBoundaryMarkers = [ "-"," " ];
     export const BoundaryMarkers = [ "-",".","/","+","#","*" ];
     export const ForbiddenPrefixMarkers = [ ",",":","%" ];

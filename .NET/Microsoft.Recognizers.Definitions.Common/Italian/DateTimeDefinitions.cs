@@ -120,6 +120,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string OfMonth = $@"(^\s*(di\s+)?){MonthRegex}";
       public static readonly string MonthEnd = $@"{MonthRegex}\s*,?\s*(il)?\s*$";
       public static readonly string WeekDayEnd = $@"(quest[oa]\s+)?{WeekDayRegex}\s*,?\s*$";
+      public const string WeekDayStart = @"^[\.]";
       public const string RangeUnitRegex = @"\b(?<unit>l'anno|ann[oi]?|mes[ei]|settiman[ae])\b";
       public const string HourNumRegex = @"\b(?<hournum>zero|(?<=l')una|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|undici|dodici|tredici|quattordici|quindici|sedici|diciassette|diciotto|diciannove|venti|ventuno|ventidue|ventitre|ventiquattro)\b";
       public const string FivesRegex = @"(?<tens>(quindici|venti(\s*cinque)?|trenta(\s*cinque)?|quaranta(\s*cinque)?|cinquanta(\s*cinque)?|dieci|cinque))\b";
@@ -152,6 +153,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string TimeUnitRegex = @"(\b\d+([\.,]\d*)?|\b)(?<unit>or[ae]|hrs|hr|h|minut[oi]|mins|min|second[oi]|secs|sec)\b";
       public const string RestrictedTimeUnitRegex = @"(?<unit>ore|minuti)\b";
       public static readonly string ConnectNumRegex = $@"{BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\s*{DescRegex}";
+      public const string AmbiguousRangeModifierPrefix = @"^[.]";
       public static readonly string NumberEndingPattern = $@"^(\s+(?<meeting>riunione|appuntamento|conferenza|chiamata|chiamata skype)\s+all['e]\s*(?<newTime>{PeriodHourNumRegex}|{HourRegex})((\.)?$|(\.,|,|!|\?)))";
       public static readonly string TimeRegex1 = $@"(((((?<=\b(da|al)?(le|l'|ore)\s*)({EngTimeRegex}))|((?<=\b(da|al)?(le|l'|ore)\s*)({HourNumRegex}|{BaseDateTime.HourRegex})(?![\.,]\d+)(?=\s*({PrepRegex}))))|(({TimePrefix}\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}))|(({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s+{TimePrefix}))((\s*{DescRegex})|\b))";
       public static readonly string TimeRegex2 = $@"({BaseDateTime.HourRegex})(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";

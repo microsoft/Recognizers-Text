@@ -62,15 +62,16 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string DatePeriodLastRegex = @"上个|上一个|上|上一";
       public const string DatePeriodNextRegex = @"下个|下一个|下|下一";
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)";
-      public static readonly string YearRegex = $@"(({YearNumRegex})(\s*年)?|({SimpleYearRegex})\s*年)";
+      public const string HalfYearRegex = @"((?<firstHalf>(上|前)半年)|(?<secondHalf>(下|后)半年))";
+      public static readonly string YearRegex = $@"(({YearNumRegex})(\s*年)?|({SimpleYearRegex})\s*年){HalfYearRegex}?";
       public static readonly string StrictYearRegex = $@"({YearRegex}(?=[\u4E00-\u9FFF]|\s|$|\W))";
       public const string YearRegexInNumber = @"(?<year>(\d{3,4}))";
-      public static readonly string DatePeriodYearInChineseRegex = $@"(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年";
+      public static readonly string DatePeriodYearInChineseRegex = $@"(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年{HalfYearRegex}?";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>({RelativeMonthRegex}|{MonthRegex}))";
       public static readonly string SimpleCasesRegex = $@"((从)\s*)?(({YearRegex}|{DatePeriodYearInChineseRegex})\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInChinese}|{DayRegex})\s*{DatePeriodTillRegex}\s*({DatePeriodDayRegexInChinese}|{DayRegex})((\s+|\s*,\s*){YearRegex})?";
       public static readonly string YearAndMonth = $@"({DatePeriodYearInChineseRegex}|{YearRegex})\s*{MonthRegex}";
       public static readonly string PureNumYearAndMonth = $@"({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})";
-      public static readonly string OneWordPeriodRegex = $@"(((明年|今年|去年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*(周末|周|月|年)|周末|今年|明年|去年|前年|后年)";
+      public static readonly string OneWordPeriodRegex = $@"(((?<yearrel>(明|今|去)年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})(?<halfTag>半)?\s*(周末|周|月|年)|周末|(今|明|去|前|后)年(\s*{HalfYearRegex})?)";
       public static readonly string WeekOfMonthRegex = $@"(?<wom>{MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)";
       public const string UnitRegex = @"(?<unit>年|(个)?月|周|日|天)";
       public static readonly string FollowedUnit = $@"^\s*{UnitRegex}";
@@ -222,6 +223,43 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"second", 1 },
             { @"secs", 1 },
             { @"sec", 1 }
+        };
+      public static readonly IList<string> MonthTerms = new List<string>
+        {
+            @"月"
+        };
+      public static readonly IList<string> WeekendTerms = new List<string>
+        {
+            @"周末"
+        };
+      public static readonly IList<string> WeekTerms = new List<string>
+        {
+            @"周",
+            @"星期"
+        };
+      public static readonly IList<string> YearTerms = new List<string>
+        {
+            @"年"
+        };
+      public static readonly IList<string> ThisYearTerms = new List<string>
+        {
+            @"今年"
+        };
+      public static readonly IList<string> LastYearTerms = new List<string>
+        {
+            @"去年"
+        };
+      public static readonly IList<string> NextYearTerms = new List<string>
+        {
+            @"明年"
+        };
+      public static readonly IList<string> YearAfterNextTerms = new List<string>
+        {
+            @"后年"
+        };
+      public static readonly IList<string> YearBeforeLastTerms = new List<string>
+        {
+            @"前年"
         };
       public static readonly Dictionary<string, string> ParserConfigurationSeasonMap = new Dictionary<string, string>
         {
@@ -568,6 +606,15 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string DateTimePeriodAFRegex = @"(下午|午后|傍晚)";
       public const string DateTimePeriodEVRegex = @"(晚上|夜里|夜晚|晚)";
       public const string DateTimePeriodNIRegex = @"(半夜|夜间|深夜)";
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"早", @"(?<!今|明|日|号)早(?!上)" },
+            { @"晚", @"(?<!今|明|昨|傍|夜|日|号)晚(?!上)" },
+            { @"^\d{1,2}号", @"^\d{1,2}号" },
+            { @"周", @"周岁" },
+            { @"今日", @"今日头条" },
+            { @"明日", @"《明日之后》" }
+        };
       public static readonly Dictionary<string, int> DurationUnitValueMap = new Dictionary<string, int>
         {
             { @"Y", 31536000 },

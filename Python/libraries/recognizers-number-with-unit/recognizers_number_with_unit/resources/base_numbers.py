@@ -25,4 +25,5 @@ class BaseNumbers:
     NumberMultiplierRegex = f'(K|k|M|G|T|B|b)'
     MultiplierLookupRegex = f'(k|m|t|g|b)'
     CurrencyRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(b|m|t|g)(?=\\b)'
+    CommonCurrencySymbol = f'(¥|\\$|€|£|₩)'
 # pylint: enable=line-too-long

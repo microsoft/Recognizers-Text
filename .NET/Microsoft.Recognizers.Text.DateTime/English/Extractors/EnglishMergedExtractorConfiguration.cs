@@ -33,6 +33,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex PrepositionSuffixRegex =
             new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexFlags);
 
+        public static readonly Regex AmbiguousRangeModifierPrefix =
+            new Regex(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags);
+
         public static readonly Regex NumberEndingPattern =
             new Regex(DateTimeDefinitions.NumberEndingPattern, RegexFlags);
 
@@ -41,6 +44,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public static readonly Regex UnspecificDatePeriodRegex =
             new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
+
+        public static readonly Regex UnspecificTimePeriodRegex =
+            new Regex(DateTimeDefinitions.UnspecificTimePeriodRegex, RegexFlags);
 
         public static readonly Regex FailFastRegex =
             new Regex(DateTimeDefinitions.FailFastRegex, RegexFlags | RegexOptions.Compiled);
@@ -124,11 +130,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
 
+        Regex IMergedExtractorConfiguration.AmbiguousRangeModifierPrefix => AmbiguousRangeModifierPrefix;
+
+        Regex IMergedExtractorConfiguration.PotentialAmbiguousRangeRegex => FromToRegex;
+
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
 
         Regex IMergedExtractorConfiguration.SuffixAfterRegex => SuffixAfterRegex;
 
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
+
+        Regex IMergedExtractorConfiguration.UnspecificTimePeriodRegex => UnspecificTimePeriodRegex;
 
         Regex IMergedExtractorConfiguration.FailFastRegex => FailFastRegex;
 

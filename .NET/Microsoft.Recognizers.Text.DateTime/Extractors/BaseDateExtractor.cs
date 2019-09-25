@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -331,13 +332,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 // Get week day from text directly, compare it with the weekday generated above
                                 // to see whether they refer to the same week day
                                 var extractedWeekDayStr = matchCase.Groups["weekday"].Value;
-                                var matchLength = result.Start + result.Length - matchCase.Index;
+
+                                // calculate matchLength considering that matchCase can preceed or follow result
+                                var matchLength = matchCase.Index < result.Start ? result.Start + result.Length - matchCase.Index : matchCase.Index + matchCase.Length - result.Start;
 
                                 if (!date.Equals(DateObject.MinValue) &&
                                     numWeekDayInt == Config.DayOfWeek[extractedWeekDayStr] &&
                                     matchCase.Length == matchLength)
                                 {
-                                    ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
+                                    if (matchCase.Index < result.Start)
+                                    {
+                                        ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
+                                    }
+                                    else
+                                    {
+                                        ret.Add(new Token((int)result.Start, matchCase.Index + matchCase.Length));
+                                    }
+
                                     isFound = true;
                                 }
                             }
@@ -454,6 +465,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Check whether there's a weekday
             var prefix = text.Substring(0, startIndex);
             var matchWeekDay = this.Config.WeekDayEnd.Match(prefix);
+
+            // Check for weekday in the suffix
+            if (!matchWeekDay.Success)
+            {
+                matchWeekDay = this.Config.WeekDayStart.Match(suffix);
+            }
+
             if (matchWeekDay.Success)
             {
                 // Get weekday from context directly, compare it with the weekday extraction above
@@ -466,7 +484,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     if (!date.Equals(DateObject.MinValue) && weekDay1 == weekDay2)
                     {
-                        startIndex = matchWeekDay.Index;
+                        if (matchWeekDay.Index < startIndex)
+                        {
+                            startIndex = matchWeekDay.Index;
+                        }
+                        else
+                        {
+                            endIndex += matchWeekDay.Length;
+                        }
                     }
                 }
             }

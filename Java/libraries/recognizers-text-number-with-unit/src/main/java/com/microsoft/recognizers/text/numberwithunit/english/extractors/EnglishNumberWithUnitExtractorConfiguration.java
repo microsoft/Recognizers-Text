@@ -2,6 +2,7 @@ package com.microsoft.recognizers.text.numberwithunit.english.extractors;
 
 import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.IExtractor;
+import com.microsoft.recognizers.text.number.NumberMode;
 import com.microsoft.recognizers.text.number.english.extractors.NumberExtractor;
 import com.microsoft.recognizers.text.numberwithunit.extractors.INumberWithUnitExtractorConfiguration;
 import com.microsoft.recognizers.text.numberwithunit.resources.EnglishNumericWithUnit;
@@ -18,7 +19,7 @@ public abstract class EnglishNumberWithUnitExtractorConfiguration implements INu
     protected EnglishNumberWithUnitExtractorConfiguration(CultureInfo cultureInfo) {
         this.cultureInfo = cultureInfo;
 
-        this.unitNumExtractor = NumberExtractor.getInstance();
+        this.unitNumExtractor = NumberExtractor.getInstance(NumberMode.Unit);
         this.compoundUnitConnectorRegex =
                 Pattern.compile(EnglishNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }

@@ -1,6 +1,7 @@
 package com.microsoft.recognizers.text.number.german.extractors;
 
 import com.microsoft.recognizers.text.number.Constants;
+import com.microsoft.recognizers.text.number.NumberMode;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.GermanNumeric;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -24,7 +25,7 @@ public class FractionExtractor extends BaseNumberExtractor {
         return Constants.SYS_NUM_FRACTION;
     }
 
-    public FractionExtractor() {
+    public FractionExtractor(NumberMode mode) {
 
         HashMap<Pattern, String> builder = new HashMap<>();
 
@@ -32,7 +33,9 @@ public class FractionExtractor extends BaseNumberExtractor {
         builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.FractionNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
         builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.FractionNounRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracGer");
         builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.FractionNounWithArticleRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracGer");
-        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.FractionPrepositionRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracGer");
+        if (mode != NumberMode.Unit) {
+            builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.FractionPrepositionRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracGer");
+        }
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

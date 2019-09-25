@@ -85,11 +85,13 @@ namespace Microsoft.Recognizers.Text.Sequence
 
             var ers = base.Extract(text);
 
-            foreach (var er in ers)
+            for (var i = 0; i < ers.Count; i++)
             {
+                var er = ers[i];
                 if (CountDigits(er.Text) < 7 && er.Data.ToString() != "ITPhoneNumber")
                 {
                     ers.Remove(er);
+                    i--;
                     continue;
                 }
 
@@ -99,6 +101,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                     if (BasePhoneNumbers.ForbiddenSuffixMarkers.Contains(ch))
                     {
                         ers.Remove(er);
+                        i--;
                         continue;
                     }
                 }
@@ -115,6 +118,13 @@ namespace Microsoft.Recognizers.Text.Sequence
                             var charGap = text[(int)(er.Start - 2)];
                             if (!char.IsNumber(charGap) && !char.IsWhiteSpace(charGap))
                             {
+                                // Handle cases like "91a-677-0060".
+                                if (char.IsLower(charGap))
+                                {
+                                    ers.Remove(er);
+                                    i--;
+                                }
+
                                 continue;
                             }
 
@@ -132,6 +142,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
                         // Handle cases like "-1234567" and "-1234+5678"
                         ers.Remove(er);
+                        i--;
                     }
 
                     if (this.config.ForbiddenPrefixMarkers.Contains(ch))
@@ -147,6 +158,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                         }
 
                         ers.Remove(er);
+                        i--;
                     }
                 }
             }

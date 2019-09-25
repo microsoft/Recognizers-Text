@@ -194,6 +194,8 @@ public class FrenchDateTime {
 
     public static final String RelativeWeekDayRegex = "^[.]";
 
+    public static final String AmbiguousRangeModifierPrefix = "^[.]";
+
     public static final String NumberEndingPattern = "^[.]";
 
     public static final String SpecialDate = "(?<=\\b([àa]|au|le)\\s+){DayRegex}(?!:)\\b"
@@ -262,6 +264,8 @@ public class FrenchDateTime {
 
     public static final String WeekDayEnd = "{WeekDayRegex}\\s*,?\\s*$"
             .replace("{WeekDayRegex}", WeekDayRegex);
+
+    public static final String WeekDayStart = "^[\\.]";
 
     public static final String RangeUnitRegex = "\\b(?<unit>(l')?ann[eé]e(s)?|mois|semaines?)\\b";
 

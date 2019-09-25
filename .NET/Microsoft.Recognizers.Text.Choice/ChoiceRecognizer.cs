@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Microsoft.Recognizers.Text.Choice.Arabic;
 using Microsoft.Recognizers.Text.Choice.Bulgarian;
 using Microsoft.Recognizers.Text.Choice.Chinese;
 using Microsoft.Recognizers.Text.Choice.Dutch;
@@ -92,6 +93,11 @@ namespace Microsoft.Recognizers.Text.Choice
             RegisterModel<BooleanModel>(
                 Culture.Bulgarian,
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new BulgarianBooleanExtractorConfiguration())));
+
+            RegisterModel<BooleanModel>(
+                Culture.Arabic,
+                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new ArabicBooleanExtractorConfiguration())));
+
         }
     }
 }

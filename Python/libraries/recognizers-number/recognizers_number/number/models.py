@@ -14,6 +14,7 @@ class NumberMode(Enum):
     DEFAULT = 0
     CURRENCY = 1
     PURE_NUMBER = 2
+    Unit = 3
 
 
 LongFormatType = namedtuple(

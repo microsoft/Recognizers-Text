@@ -26,6 +26,8 @@ public class PortugueseNumericWithUnit {
         .put("Dia", "dias|dia")
         .build();
 
+    public static final List<String> AmbiguousAgeUnitList = Arrays.asList("anos", "ano", "meses", "mes", "mês", "semanas", "semana", "dias", "dia");
+
     public static final ImmutableMap<String, String> AreaSuffixList = ImmutableMap.<String, String>builder()
         .put("Quilômetro quadrado", "quilômetro quadrado|quilómetro quadrado|quilometro quadrado|quilômetros quadrados|quilómetros quadrados|quilomeros quadrados|km2|km^2|km²")
         .put("Hectare", "hectômetro quadrado|hectómetro quadrado|hectômetros quadrados|hectómetros cuadrados|hm2|hm^2|hm²|hectare|hectares")

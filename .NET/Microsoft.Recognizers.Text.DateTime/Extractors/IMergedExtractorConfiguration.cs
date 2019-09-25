@@ -47,6 +47,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SingleAmbiguousMonthRegex { get; }
 
+        Regex AmbiguousRangeModifierPrefix { get; }
+
+        Regex PotentialAmbiguousRangeRegex { get; }
+
         Regex PrepositionSuffixRegex { get; }
 
         Regex NumberEndingPattern { get; }
@@ -54,6 +58,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex SuffixAfterRegex { get; }
 
         Regex UnspecificDatePeriodRegex { get; }
+
+        Regex UnspecificTimePeriodRegex { get; }
 
         // Regex to act as umbrella for key terms so that sentences that clearly don't have entities can be rejected quickly
         Regex FailFastRegex { get; }

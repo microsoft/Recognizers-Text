@@ -88,54 +88,57 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
         // For example, cases like "on or later than", "earlier than or in" have inclusive modifier
         boolean hasInclusiveModifier = false;
         String modStr = "";
-        ConditionalMatch beforeMatch = RegexExtension.matchBegin(config.getBeforeRegex(), er.getText(), true);
-        ConditionalMatch afterMatch = RegexExtension.matchBegin(config.getAfterRegex(), er.getText(), true);
-        ConditionalMatch sinceMatch = RegexExtension.matchBegin(config.getSinceRegex(), er.getText(), true);
-        ConditionalMatch aroundMatch = RegexExtension.matchBegin(config.getAroundRegex(), er.getText(), true);
 
-        if (beforeMatch.getSuccess()) {
-            hasBefore = true;
-            er.setStart(er.getStart() + beforeMatch.getMatch().get().length);
-            er.setLength(er.getLength() - beforeMatch.getMatch().get().length);
-            er.setText(er.getText().substring(beforeMatch.getMatch().get().length));
-            modStr = beforeMatch.getMatch().get().value;
+        if (er.getMetadata() != null && er.getMetadata().getHasMod()) {
+            ConditionalMatch beforeMatch = RegexExtension.matchBegin(config.getBeforeRegex(), er.getText(), true);
+            ConditionalMatch afterMatch = RegexExtension.matchBegin(config.getAfterRegex(), er.getText(), true);
+            ConditionalMatch sinceMatch = RegexExtension.matchBegin(config.getSinceRegex(), er.getText(), true);
+            ConditionalMatch aroundMatch = RegexExtension.matchBegin(config.getAroundRegex(), er.getText(), true);
 
-            if (!StringUtility.isNullOrEmpty(beforeMatch.getMatch().get().getGroup("include").value)) {
-                hasInclusiveModifier = true;
-            }
-        } else if (afterMatch.getSuccess()) {
-            hasAfter = true;
-            er.setStart(er.getStart() + afterMatch.getMatch().get().length);
-            er.setLength(er.getLength() - afterMatch.getMatch().get().length);
-            er.setText(er.getText().substring(afterMatch.getMatch().get().length));
-            modStr = afterMatch.getMatch().get().value;
+            if (beforeMatch.getSuccess()) {
+                hasBefore = true;
+                er.setStart(er.getStart() + beforeMatch.getMatch().get().length);
+                er.setLength(er.getLength() - beforeMatch.getMatch().get().length);
+                er.setText(er.getText().substring(beforeMatch.getMatch().get().length));
+                modStr = beforeMatch.getMatch().get().value;
 
-            if (!StringUtility.isNullOrEmpty(afterMatch.getMatch().get().getGroup("include").value)) {
-                hasInclusiveModifier = true;
-            }
-        } else if (sinceMatch.getSuccess()) {
-            hasSince = true;
-            er.setStart(er.getStart() + sinceMatch.getMatch().get().length);
-            er.setLength(er.getLength() - sinceMatch.getMatch().get().length);
-            er.setText(er.getText().substring(sinceMatch.getMatch().get().length));
-            modStr = sinceMatch.getMatch().get().value;
-        } else if (aroundMatch.getSuccess()) {
-            hasAround = true;
-            er.setStart(er.getStart() + aroundMatch.getMatch().get().length);
-            er.setLength(er.getLength() - aroundMatch.getMatch().get().length);
-            er.setText(er.getText().substring(aroundMatch.getMatch().get().length));
-            modStr = aroundMatch.getMatch().get().value;
-        } else if ((er.getType().equals(Constants.SYS_DATETIME_DATEPERIOD) &&
+                if (!StringUtility.isNullOrEmpty(beforeMatch.getMatch().get().getGroup("include").value)) {
+                    hasInclusiveModifier = true;
+                }
+            } else if (afterMatch.getSuccess()) {
+                hasAfter = true;
+                er.setStart(er.getStart() + afterMatch.getMatch().get().length);
+                er.setLength(er.getLength() - afterMatch.getMatch().get().length);
+                er.setText(er.getText().substring(afterMatch.getMatch().get().length));
+                modStr = afterMatch.getMatch().get().value;
+
+                if (!StringUtility.isNullOrEmpty(afterMatch.getMatch().get().getGroup("include").value)) {
+                    hasInclusiveModifier = true;
+                }
+            } else if (sinceMatch.getSuccess()) {
+                hasSince = true;
+                er.setStart(er.getStart() + sinceMatch.getMatch().get().length);
+                er.setLength(er.getLength() - sinceMatch.getMatch().get().length);
+                er.setText(er.getText().substring(sinceMatch.getMatch().get().length));
+                modStr = sinceMatch.getMatch().get().value;
+            } else if (aroundMatch.getSuccess()) {
+                hasAround = true;
+                er.setStart(er.getStart() + aroundMatch.getMatch().get().length);
+                er.setLength(er.getLength() - aroundMatch.getMatch().get().length);
+                er.setText(er.getText().substring(aroundMatch.getMatch().get().length));
+                modStr = aroundMatch.getMatch().get().value;
+            } else if ((er.getType().equals(Constants.SYS_DATETIME_DATEPERIOD) &&
                 Arrays.stream(RegExpUtility.getMatches(config.getYearRegex(), er.getText())).findFirst().isPresent()) ||
                 (er.getType().equals(Constants.SYS_DATETIME_DATE)) || (er.getType().equals(Constants.SYS_DATETIME_TIME))) {
-            // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
-            // 2012 or after/above, 3 pm or later
-            ConditionalMatch match = RegexExtension.matchEnd(config.getSuffixAfterRegex(), er.getText(), true);
-            if (match.getSuccess()) {
-                hasYearAfter = true;
-                er.setLength(er.getLength() - match.getMatch().get().length);
-                er.setText(er.getLength() > 0 ? er.getText().substring(0, er.getLength()) : "");
-                modStr = match.getMatch().get().value;
+                // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
+                // 2012 or after/above, 3 pm or later
+                ConditionalMatch match = RegexExtension.matchEnd(config.getSuffixAfterRegex(), er.getText(), true);
+                if (match.getSuccess()) {
+                    hasYearAfter = true;
+                    er.setLength(er.getLength() - match.getMatch().get().length);
+                    er.setText(er.getLength() > 0 ? er.getText().substring(0, er.getLength()) : "");
+                    modStr = match.getMatch().get().value;
+                }
             }
         }
 
@@ -724,7 +727,9 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
     }
 
     public void addSingleDateTimeToResolution(Map<String, String> resolutionDic, String type, String mod, Map<String, String> res) {
-        if (resolutionDic.containsKey(type) && !resolutionDic.get(type).equals(dateMinString) && !resolutionDic.get(type).equals(dateTimeMinString)) {
+        // If an "invalid" Date or DateTime is extracted, it should not have an assigned resolution.
+        // Only valid entities should pass this condition.
+        if (resolutionDic.containsKey(type) && !resolutionDic.get(type).startsWith(dateMinString)) {
             if (!StringUtility.isNullOrEmpty(mod)) {
                 if (mod.equals(Constants.BEFORE_MOD)) {
                     res.put(DateTimeResolutionKey.END, resolutionDic.get(type));

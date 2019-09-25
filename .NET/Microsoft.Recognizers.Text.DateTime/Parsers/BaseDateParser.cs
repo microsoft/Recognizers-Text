@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -380,8 +380,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     pastDate = pastDate.AddDays(-7);
                 }
 
-                ret.FutureValue = futureDate;
-                ret.PastValue = pastDate;
+                ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day);
+                ret.PastValue = DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day);
                 ret.Success = true;
 
                 return ret;
@@ -779,12 +779,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
             var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
 
-            if (noYear && futureDate < referenceDate)
+            if (noYear && futureDate < referenceDate && !futureDate.IsDefaultValue())
             {
                 futureDate = futureDate.AddYears(+1);
             }
 
-            if (noYear && pastDate >= referenceDate)
+            if (noYear && pastDate >= referenceDate && !pastDate.IsDefaultValue())
             {
                 pastDate = pastDate.AddYears(-1);
             }

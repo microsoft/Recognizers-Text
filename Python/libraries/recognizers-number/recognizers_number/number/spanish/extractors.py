@@ -1,9 +1,10 @@
 from typing import Pattern, List, NamedTuple, Dict
 
+from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.models import NumberMode, LongFormatMode
+from recognizers_number.resources import BaseNumbers
 from recognizers_number.resources.spanish_numeric import SpanishNumeric
-from recognizers_number.number.extractors import ReVal, BaseNumberExtractor, \
-    BasePercentageExtractor
+from recognizers_number.number.extractors import ReVal, ReRe, BaseNumberExtractor, BasePercentageExtractor
 from recognizers_number.number.constants import Constants
 from recognizers_text import ExtractResult
 from ..number_options import NumberOptions
@@ -36,6 +37,10 @@ class SpanishNumberExtractor(BaseNumberExtractor):
         return self.__regexes
 
     @property
+    def ambiguity_filters_dict(self) -> List[ReRe]:
+        return self.__ambiguity_filters_dict
+
+    @property
     def _extract_type(self) -> str:
         return Constants.SYS_NUM
 
@@ -55,9 +60,17 @@ class SpanishNumberExtractor(BaseNumberExtractor):
 
         self.__regexes.extend(cardinal_ex.regexes)
 
-        fraction_ex = SpanishFractionExtractor()
+        fraction_ex = SpanishFractionExtractor(mode)
         self.__regexes.extend(fraction_ex.regexes)
         self._options = NumberOptions.NONE
+
+        ambiguity_filters_dict: List[ReRe] = list()
+
+        if mode != NumberMode.Unit:
+            for key, value in SpanishNumeric.AmbiguityFiltersDict.items():
+                ambiguity_filters_dict.append(ReRe(reKey=RegExpUtility.get_safe_reg_exp(key),
+                                                   reVal=RegExpUtility.get_safe_reg_exp(value)))
+        self.__ambiguity_filters_dict = ambiguity_filters_dict
 
 
 class SpanishCardinalExtractor(BaseNumberExtractor):
@@ -268,7 +281,7 @@ class SpanishFractionExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_FRACTION
 
-    def __init__(self):
+    def __init__(self, mode):
         self.__regexes = [
             ReVal(
                 re=SpanishNumeric.FractionNotationRegex,
@@ -281,12 +294,15 @@ class SpanishFractionExtractor(BaseNumberExtractor):
                 val='FracSpa'),
             ReVal(
                 re=SpanishNumeric.FractionNounWithArticleRegex,
-                val='FracSpa'),
-            ReVal(
-                re=SpanishNumeric.FractionPrepositionRegex,
                 val='FracSpa')
         ]
         self._options = NumberOptions.NONE
+
+        if mode != NumberMode.Unit:
+            self.__regexes.append(
+                ReVal(
+                    re=SpanishNumeric.FractionPrepositionRegex,
+                    val='FracSpa'))
 
 
 class SpanishOrdinalExtractor(BaseNumberExtractor):

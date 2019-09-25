@@ -2,6 +2,7 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Turkish;
 
 namespace Microsoft.Recognizers.Text.Number.Turkish
@@ -49,7 +50,7 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
             builder.AddRange(cardExtract.Regexes);
 
             // Add Fraction
-            var fracExtract = FractionExtractor.GetInstance(Options);
+            var fracExtract = FractionExtractor.GetInstance(mode, Options);
             builder.AddRange(fracExtract.Regexes);
 
             Regexes = builder.ToImmutable();

@@ -20,7 +20,7 @@ export class SpanishAgeExtractorConfiguration extends SpanishNumberWithUnitExtra
 
         this.suffixList = SpanishNumericWithUnit.AgeSuffixList;
         this.prefixList = new Map<string, string>();
-        this.ambiguousUnitList = new Array<string>();
+        this.ambiguousUnitList = SpanishNumericWithUnit.AmbiguousAgeUnitList;
     }
 }
 

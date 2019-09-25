@@ -67,6 +67,7 @@ export namespace FrenchDateTime {
     export const SetWeekDayRegex = `\\b(?<prefix>le\\s+)?(?<weekday>matin([ée]e)?|apres-midi|soir([ée]e)?|dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)s\\b`;
     export const WeekDayOfMonthRegex = `(?<wom>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
     export const RelativeWeekDayRegex = `^[.]`;
+    export const AmbiguousRangeModifierPrefix = `^[.]`;
     export const NumberEndingPattern = `^[.]`;
     export const SpecialDate = `(?<=\\b([àa]|au|le)\\s+)${DayRegex}(?!:)\\b`;
     export const DateYearRegex = `(?<year>${YearRegex}|${TwoDigitYearRegex})`;
@@ -83,6 +84,7 @@ export namespace FrenchDateTime {
     export const OfMonth = `^\\s*de\\s*${MonthRegex}`;
     export const MonthEnd = `${MonthRegex}\\s*(le)?\\s*$`;
     export const WeekDayEnd = `${WeekDayRegex}\\s*,?\\s*$`;
+    export const WeekDayStart = `^[\\.]`;
     export const RangeUnitRegex = `\\b(?<unit>(l')?ann[eé]e(s)?|mois|semaines?)\\b`;
     export const HourNumRegex = `\\b(?<hournum>zero|[aá]\\s+une?|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|dix-six|dix-sept|dix-huit|dix-neuf|vingt|vingt-et-un|vingt-deux|vingt-trois|dix)\\b`;
     export const MinuteNumRegex = `(?<minnum>un|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)`;

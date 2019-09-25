@@ -1,6 +1,7 @@
 package com.microsoft.recognizers.text.number.portuguese.extractors;
 
 import com.microsoft.recognizers.text.number.Constants;
+import com.microsoft.recognizers.text.number.NumberMode;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.PortugueseNumeric;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -24,7 +25,7 @@ public class FractionExtractor extends BaseNumberExtractor {
         return Constants.SYS_NUM_FRACTION;
     }
 
-    public FractionExtractor() {
+    public FractionExtractor(NumberMode mode) {
 
         HashMap<Pattern, String> builder = new HashMap<>();
 
@@ -32,7 +33,9 @@ public class FractionExtractor extends BaseNumberExtractor {
         builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.FractionNotationWithSpacesRegex, Pattern.UNICODE_CHARACTER_CLASS) , "FracNum");
         builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.FractionNounRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracPor");
         builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.FractionNounWithArticleRegex, Pattern.UNICODE_CHARACTER_CLASS) , "FracPor");
-        builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.FractionPrepositionRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracPor");
+        if (mode != NumberMode.Unit) {
+            builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.FractionPrepositionRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracPor");
+        }
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

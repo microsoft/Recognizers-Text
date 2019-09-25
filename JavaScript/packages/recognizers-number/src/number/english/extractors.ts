@@ -1,4 +1,4 @@
-import { BaseNumberExtractor, RegExpValue, BasePercentageExtractor } from "../extractors";
+import { BaseNumberExtractor, RegExpValue, RegExpRegExp, BasePercentageExtractor } from "../extractors";
 import { Constants } from "../constants";
 import { NumberMode, LongFormatType } from "../models";
 import { EnglishNumeric } from "../../resources/englishNumeric";
@@ -36,10 +36,22 @@ export class EnglishNumberExtractor extends BaseNumberExtractor {
         cardExtract.regexes.forEach(r => regexes.push(r));
 
         // Add Fraction
-        let fracExtract = new EnglishFractionExtractor();
+        let fracExtract = new EnglishFractionExtractor(mode);
         fracExtract.regexes.forEach(r => regexes.push(r));
 
         this.regexes = regexes;
+
+        // Add filter
+        let ambiguityFiltersDict = new Array<RegExpRegExp>();
+
+        if (mode != NumberMode.Unit) {
+            for (let [ key, value ] of EnglishNumeric.AmbiguityFiltersDict){
+                ambiguityFiltersDict.push({ regExpKey: RegExpUtility.getSafeRegExp(key, "gs"), regExpValue: RegExpUtility.getSafeRegExp(value, "gs")})
+            }
+            
+        }
+
+        this.ambiguityFiltersDict = ambiguityFiltersDict;
     }
 }
 
@@ -164,7 +176,7 @@ export class EnglishFractionExtractor extends BaseNumberExtractor {
 
     protected extractType: string = Constants.SYS_NUM_FRACTION;
 
-    constructor() {
+    constructor(mode: NumberMode = NumberMode.Default) {
         super();
 
         let regexes = new Array<RegExpValue>(
@@ -183,12 +195,16 @@ export class EnglishFractionExtractor extends BaseNumberExtractor {
             {
                 regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.FractionNounWithArticleRegex, "gis"),
                 value: "FracEng"
-            },
-            {
-                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.FractionPrepositionRegex, "gis"),
-                value: "FracEng"
             }
         );
+
+        // Not add FractionPrepositionRegex when the mode is Unit to avoid wrong recognize cases like "$1000 over 3"
+        if (mode != NumberMode.Unit) {
+            regexes.push({
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.FractionPrepositionRegex, "gis"),
+                value: "FracEng"
+                });
+        };
 
         this.regexes = regexes;
     }

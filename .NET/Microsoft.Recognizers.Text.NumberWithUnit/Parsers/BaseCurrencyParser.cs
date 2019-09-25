@@ -73,9 +73,39 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         private string GetResolutionStr(object value)
         {
+            // Nothing to resolve. This happens when the entity is a currency name only (no numerical value).
+            if (value == null)
+            {
+                return null;
+            }
+
             return Config.CultureInfo != null ?
                 ((double)value).ToString(Config.CultureInfo) :
                 value.ToString();
+        }
+
+        private ParseResult CreateCurrencyResult(ParseResult result, string mainUnitIsoCode, object numberValue, string mainUnitValue)
+        {
+            if (string.IsNullOrEmpty(mainUnitIsoCode) ||
+                mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX, StringComparison.Ordinal))
+            {
+                result.Value = new UnitValue
+                {
+                    Number = GetResolutionStr(numberValue),
+                    Unit = mainUnitValue,
+                };
+            }
+            else
+            {
+                result.Value = new CurrencyUnitValue
+                {
+                    Number = GetResolutionStr(numberValue),
+                    Unit = mainUnitValue,
+                    IsoCurrency = mainUnitIsoCode,
+                };
+            }
+
+            return result;
         }
 
         private ParseResult MergeCompoundUnit(ExtractResult compoundResult)
@@ -85,7 +115,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             var count = 0;
             ParseResult result = null;
-            var numberValue = 0.0;
+            double? numberValue = null;
             var mainUnitValue = string.Empty;
             string mainUnitIsoCode = string.Empty;
             string fractionUnitsString = string.Empty;
@@ -115,7 +145,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     };
 
                     mainUnitValue = unitValue;
-                    numberValue = double.Parse(parseResultValue?.Number);
+
+                    if (parseResultValue?.Number != null)
+                    {
+                        numberValue = double.Parse(parseResultValue.Number);
+                    }
+
                     result.ResolutionStr = parseResult.ResolutionStr;
 
                     Config.CurrencyNameToIsoCodeMap.TryGetValue(unitValue, out mainUnitIsoCode);
@@ -163,31 +198,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         // If the fraction unit doesn't match the main unit, finish process this group.
                         if (result != null)
                         {
-                            if (string.IsNullOrEmpty(mainUnitIsoCode) ||
-                                mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX, StringComparison.Ordinal))
-                            {
-                                result.Value = new UnitValue
-                                {
-                                    Number = GetResolutionStr(numberValue),
-                                    Unit = mainUnitValue,
-                                };
-                            }
-                            else
-                            {
-                                result.Value = new CurrencyUnitValue
-                                {
-                                    Number = GetResolutionStr(numberValue),
-                                    Unit = mainUnitValue,
-                                    IsoCurrency = mainUnitIsoCode,
-                                };
-                            }
-
+                            result = CreateCurrencyResult(result, mainUnitIsoCode, numberValue, mainUnitValue);
                             results.Add(result);
                             result = null;
                         }
 
                         count = 0;
                         idx -= 1;
+                        numberValue = null;
                         continue;
                     }
                 }
@@ -197,25 +215,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             if (result != null)
             {
-                if (string.IsNullOrEmpty(mainUnitIsoCode) ||
-                    mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX, StringComparison.Ordinal))
-                {
-                    result.Value = new UnitValue
-                    {
-                        Number = GetResolutionStr(numberValue),
-                        Unit = mainUnitValue,
-                    };
-                }
-                else
-                {
-                    result.Value = new CurrencyUnitValue
-                    {
-                        Number = GetResolutionStr(numberValue),
-                        Unit = mainUnitValue,
-                        IsoCurrency = mainUnitIsoCode,
-                    };
-                }
-
+                result = CreateCurrencyResult(result, mainUnitIsoCode, numberValue, mainUnitValue);
                 results.Add(result);
             }
 

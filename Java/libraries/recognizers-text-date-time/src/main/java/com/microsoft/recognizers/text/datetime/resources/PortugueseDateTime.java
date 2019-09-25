@@ -182,6 +182,8 @@ public class PortugueseDateTime {
 
     public static final String RelativeWeekDayRegex = "^[.]";
 
+    public static final String AmbiguousRangeModifierPrefix = "^[.]";
+
     public static final String NumberEndingPattern = "^[.]";
 
     public static final String SpecialDateRegex = "(?<=\\bno\\s+){DayRegex}\\b"
@@ -195,6 +197,8 @@ public class PortugueseDateTime {
 
     public static final String WeekDayEnd = "{WeekDayRegex}\\s*,?\\s*$"
             .replace("{WeekDayRegex}", WeekDayRegex);
+
+    public static final String WeekDayStart = "^[\\.]";
 
     public static final String DateYearRegex = "(?<year>{YearRegex}|{TwoDigitYearRegex})"
             .replace("{YearRegex}", YearRegex)

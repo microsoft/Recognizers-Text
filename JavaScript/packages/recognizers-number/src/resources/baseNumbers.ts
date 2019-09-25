@@ -18,4 +18,5 @@ export namespace BaseNumbers {
     export const NumberMultiplierRegex = `(K|k|M|G|T|B|b)`;
     export const MultiplierLookupRegex = `(k|m|t|g|b)`;
     export const CurrencyRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(b|m|t|g)(?=\\b)`;
+    export const CommonCurrencySymbol = `(¥|\\$|€|£|₩)`;
 }

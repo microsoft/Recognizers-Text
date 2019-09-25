@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.Matcher;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -35,9 +36,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             return false;
         }
 
-        public static bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text)
+        public bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text, bool potentialAmbiguity = false)
         {
             var beforeStr = text.Substring(0, er.Start ?? 0);
+
+            // Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
+            if (potentialAmbiguity && this.config.AmbiguousRangeModifierPrefix != null && this.config.AmbiguousRangeModifierPrefix.IsMatch(beforeStr))
+            {
+                var matches = this.config.PotentialAmbiguousRangeRegex.Matches(text).Cast<Match>();
+                if (matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                {
+                    return false;
+                }
+            }
 
             if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex))
             {
@@ -46,6 +57,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Length += modLength;
                 er.Start -= modLength;
                 er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                er.Metadata = AssignModMetadata(er.Metadata);
 
                 return true;
             }
@@ -128,6 +141,20 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
+        }
+
+        private Metadata AssignModMetadata(Metadata metadata)
+        {
+            if (metadata == null)
+            {
+                metadata = new Metadata { HasMod = true };
+            }
+            else
+            {
+                metadata.HasMod = true;
+            }
+
+            return metadata;
         }
 
         private bool IsFailFastCase(string input)
@@ -217,37 +244,25 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ers;
         }
 
-        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)
+        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
         {
             if (this.config.AmbiguityFiltersDict != null)
             {
-                foreach (var regex in config.AmbiguityFiltersDict)
+                foreach (var regex in this.config.AmbiguityFiltersDict)
                 {
-                    if (regex.Key.IsMatch(text))
+                    foreach (var extractResult in extractResults)
                     {
-                        var matches = regex.Value.Matches(text).Cast<Match>();
-                        ers = ers.Where(er =>
-                                !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
-                            .ToList();
+                        if (regex.Key.IsMatch(extractResult.Text))
+                        {
+                            var matches = regex.Value.Matches(text).Cast<Match>();
+                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                                .ToList();
+                        }
                     }
                 }
             }
 
-            return ers;
-        }
-
-        private bool FilterAmbiguousSingleWord(ExtractResult er, string text)
-        {
-            if (config.SingleAmbiguousMonthRegex.IsMatch(er.Text))
-            {
-                var stringBefore = text.Substring(0, (int)er.Start).TrimEnd();
-                if (!config.PrepositionSuffixRegex.IsMatch(stringBefore))
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return extractResults;
         }
 
         // Handle cases like "move 3pm appointment to 4"
@@ -293,7 +308,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!success)
                 {
-                    success = TryMergeModifierToken(er, config.SinceRegex, text);
+                    // SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
+                    success = TryMergeModifierToken(er, config.SinceRegex, text, potentialAmbiguity: true);
                 }
 
                 if (!success)
@@ -339,6 +355,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var modLength = match.Length + afterStr.IndexOf(match.Value, StringComparison.Ordinal);
                             er.Length += modLength;
                             er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                            er.Metadata = AssignModMetadata(er.Metadata);
                         }
                     }
                 }

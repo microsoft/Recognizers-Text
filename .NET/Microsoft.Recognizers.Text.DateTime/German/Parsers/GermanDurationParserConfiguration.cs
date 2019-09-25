@@ -24,6 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             InexactNumberRegex = GermanDurationExtractorConfiguration.InexactNumberRegex;
             InexactNumberUnitRegex = GermanDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = GermanDurationExtractorConfiguration.DurationUnitRegex;
+            SpecialNumberUnitRegex = GermanDurationExtractorConfiguration.SpecialNumberUnitRegex;
 
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
@@ -57,6 +58,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
+
+        public Regex SpecialNumberUnitRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

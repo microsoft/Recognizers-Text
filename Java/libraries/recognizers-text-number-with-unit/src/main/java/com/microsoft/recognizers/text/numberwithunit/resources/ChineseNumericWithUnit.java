@@ -240,7 +240,7 @@ public class ChineseNumericWithUnit {
         .put("Surinamese dollar", "苏里南元")
         .put("Trinidad and Tobago dollar", "特立尼达多巴哥元")
         .put("Tuvaluan dollar", "吐瓦鲁元")
-        .put("Chinese yuan", "人民币|人民币元|块钱|块|元|圆")
+        .put("Chinese yuan", "人民币|人民币元|元人民币|块钱|块|元|圆")
         .put("Fen", "分钱|分")
         .put("Jiao", "毛钱|毛|角钱|角")
         .put("Finnish markka", "芬兰马克")

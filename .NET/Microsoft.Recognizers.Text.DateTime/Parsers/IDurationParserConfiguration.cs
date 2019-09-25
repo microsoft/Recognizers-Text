@@ -33,10 +33,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex DurationUnitRegex { get; }
 
+        Regex SpecialNumberUnitRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, long> UnitValueMap { get; }
 
         IImmutableDictionary<string, double> DoubleNumbers { get; }
+
     }
 }

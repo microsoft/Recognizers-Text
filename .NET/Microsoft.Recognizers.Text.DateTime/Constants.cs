@@ -128,6 +128,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string BusinessDayGroupName = "business";
         public const string LeftAmPmGroupName = "leftDesc";
         public const string RightAmPmGroupName = "rightDesc";
+        public const string MealTimeGroupName = "mealTime";
 
         public const string DECADE_UNIT = "10Y";
         public const string FORTNIGHT_UNIT = "2W";
@@ -162,6 +163,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string Daytime = "TDT";
         public const string Night = "TNI";
         public const string BusinessHour = "TBH";
+        public const string MealtimeBreakfast = "TMEB";
+        public const string MealtimeBrunch = "TMER";
+        public const string MealtimeLunch = "TMEL";
+        public const string MealtimeDinner = "TMED";
 
         // Invalid year
         public const int InvalidYear = int.MinValue;

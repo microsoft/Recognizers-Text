@@ -2,6 +2,7 @@ package com.microsoft.recognizers.text.numberwithunit.german.extractors;
 
 import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.IExtractor;
+import com.microsoft.recognizers.text.number.NumberMode;
 import com.microsoft.recognizers.text.number.german.extractors.NumberExtractor;
 import com.microsoft.recognizers.text.numberwithunit.extractors.INumberWithUnitExtractorConfiguration;
 import com.microsoft.recognizers.text.numberwithunit.resources.GermanNumericWithUnit;
@@ -18,7 +19,7 @@ public abstract class GermanNumberWithUnitExtractorConfiguration implements INum
     protected GermanNumberWithUnitExtractorConfiguration(CultureInfo cultureInfo) {
         this.cultureInfo = cultureInfo;
 
-        this.unitNumExtractor = NumberExtractor.getInstance();
+        this.unitNumExtractor = NumberExtractor.getInstance(NumberMode.Unit);
         this.compoundUnitConnectorRegex =
                 Pattern.compile(GermanNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }

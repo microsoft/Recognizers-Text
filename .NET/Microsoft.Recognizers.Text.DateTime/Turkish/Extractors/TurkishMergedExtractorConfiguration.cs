@@ -33,6 +33,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public static readonly Regex PrepositionSuffixRegex =
             new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexFlags);
 
+        public static readonly Regex AmbiguousRangeModifierPrefix =
+            new Regex(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags);
+
         public static readonly Regex NumberEndingPattern =
             new Regex(DateTimeDefinitions.NumberEndingPattern, RegexFlags);
 
@@ -123,11 +126,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
 
+        Regex IMergedExtractorConfiguration.AmbiguousRangeModifierPrefix => null;
+
+        Regex IMergedExtractorConfiguration.PotentialAmbiguousRangeRegex => null;
+
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
 
         Regex IMergedExtractorConfiguration.SuffixAfterRegex => SuffixAfterRegex;
 
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
+
+        Regex IMergedExtractorConfiguration.UnspecificTimePeriodRegex => null;
 
         Regex IMergedExtractorConfiguration.FailFastRegex => FailFastRegex;
 

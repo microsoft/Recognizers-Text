@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List
+from .meta_data import MetaData
 
 
 class ExtractResult:
@@ -9,7 +10,7 @@ class ExtractResult:
         self.text: str = ''
         self.type: str = ''
         self.data: object = None
-        self.metadata: object = None
+        self.meta_data: MetaData = None
 
     @property
     def end(self):

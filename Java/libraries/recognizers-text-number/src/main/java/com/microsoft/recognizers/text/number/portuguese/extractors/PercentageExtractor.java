@@ -28,7 +28,7 @@ public class PercentageExtractor extends BasePercentageExtractor {
     }
 
     public PercentageExtractor(NumberOptions options) {
-        super(new NumberExtractor());
+        super(NumberExtractor.getInstance(options));
         this.options = options;
 
         Set<String> builder = new HashSet<>();

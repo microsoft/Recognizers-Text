@@ -158,6 +158,9 @@ WeekDayOfMonthRegex: !nestedRegex
 RelativeWeekDayRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+AmbiguousRangeModifierPrefix: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 NumberEndingPattern: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -173,6 +176,8 @@ MonthEndRegex: !nestedRegex
 WeekDayEnd: !nestedRegex
   def: '{WeekDayRegex}\s*,?\s*$'
   references: [ WeekDayRegex ]
+WeekDayStart: !simpleRegex
+  def: ^[\.]
 DateYearRegex: !nestedRegex
   def: (?<year>{YearRegex}|{TwoDigitYearRegex})
   references: [ YearRegex, TwoDigitYearRegex ]

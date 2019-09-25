@@ -71,11 +71,13 @@ export namespace PortugueseDateTime {
     export const WeekDayAndDayRegex = `.^`;
     export const WeekDayOfMonthRegex = `(?<wom>(n?[ao]\\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
     export const RelativeWeekDayRegex = `^[.]`;
+    export const AmbiguousRangeModifierPrefix = `^[.]`;
     export const NumberEndingPattern = `^[.]`;
     export const SpecialDateRegex = `(?<=\\bno\\s+)${DayRegex}\\b`;
     export const OfMonthRegex = `^\\s*de\\s*${MonthSuffixRegex}`;
     export const MonthEndRegex = `(${MonthRegex}\\s*(o)?\\s*$)`;
     export const WeekDayEnd = `${WeekDayRegex}\\s*,?\\s*$`;
+    export const WeekDayStart = `^[\\.]`;
     export const DateYearRegex = `(?<year>${YearRegex}|${TwoDigitYearRegex})`;
     export const DateExtractor1 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}?((\\s*(de)|[/\\\\\\.\\-])\\s*)?${MonthRegex}\\b`;
     export const DateExtractor2 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}\\s*([\\.\\-]|de)?\\s*${MonthRegex}?(\\s*(,|de)\\s*)${YearRegex}\\b`;

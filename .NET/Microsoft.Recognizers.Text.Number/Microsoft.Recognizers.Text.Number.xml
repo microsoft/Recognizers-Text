@@ -75,11 +75,6 @@
             Default is for datetime
             </summary>
         </member>
-        <member name="F:Microsoft.Recognizers.Text.Number.NumberMode.Unit">
-            <summary>
-            Unit is for unit
-            </summary>
-        </member>
         <member name="F:Microsoft.Recognizers.Text.Number.NumberMode.Currency">
             <summary>
             Add 67.5 billion and million support.
@@ -88,6 +83,11 @@
         <member name="F:Microsoft.Recognizers.Text.Number.NumberMode.PureNumber">
             <summary>
             Don't extract number from cases like 16ml
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.NumberMode.Unit">
+            <summary>
+            Unit is for unit
             </summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.None">

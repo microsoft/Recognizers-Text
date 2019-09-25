@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -312,7 +313,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Regarding the phrase as-- {Date} {TimePeriod}, like "2015-9-23 1pm to 4"
             // Or {TimePeriod} on {Date}, like "1:30 to 4 on 2015-9-23"
             var timePeriodErs = config.TimePeriodExtractor.Extract(text, reference);
-            dateErs.AddRange(timePeriodErs);
+
+            // Mealtime periods (like "dinnertime") are not currently fully supported in merging.
+            foreach (var timePeriod in timePeriodErs)
+            {
+                if (timePeriod.Metadata == null || !timePeriod.Metadata.IsMealtime)
+                {
+                    dateErs.Add(timePeriod);
+                }
+            }
 
             var points = dateErs.OrderBy(x => x.Start).ToList();
 
@@ -464,7 +473,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             foreach (var tp in timeErs)
                             {
                                 var midStr = beforeStr.Substring(tp.Start + tp.Length ?? 0);
-                                if (string.IsNullOrWhiteSpace(midStr))
+                                if (string.IsNullOrWhiteSpace(midStr) && (tp.Metadata == null || !tp.Metadata.IsMealtime))
                                 {
                                     ret.Add(new Token(tp.Start ?? 0, tp.Start + tp.Length + midStr.Length + e.Length ?? 0));
                                 }
@@ -485,7 +494,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             foreach (var tp in timeErs)
                             {
                                 var midStr = afterStr.Substring(0, tp.Start ?? 0);
-                                if (string.IsNullOrWhiteSpace(midStr))
+                                if (string.IsNullOrWhiteSpace(midStr) && (tp.Metadata == null || !tp.Metadata.IsMealtime))
                                 {
                                     ret.Add(new Token(e.Start, e.Start + e.Length + midStr.Length + tp.Length ?? 0));
                                 }

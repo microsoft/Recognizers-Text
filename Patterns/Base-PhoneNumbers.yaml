@@ -64,7 +64,7 @@ ColonMarkers: !list
   - ':'
 # Handle cases like "tel:123456" and "1767:1771"
 ColonPrefixCheckRegex: !simpleRegex
-  def: (([A-Za-z])\s*$)
+  def: (([a-z])\s*$)
 SpecialBoundaryMarkers: !list
   types: [char]
   entries:

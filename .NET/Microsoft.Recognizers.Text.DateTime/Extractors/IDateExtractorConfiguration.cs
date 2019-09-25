@@ -17,6 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex WeekDayEnd { get; }
 
+        Regex WeekDayStart { get; }
+
         Regex DateUnitRegex { get; }
 
         Regex ForTheRegex { get; }

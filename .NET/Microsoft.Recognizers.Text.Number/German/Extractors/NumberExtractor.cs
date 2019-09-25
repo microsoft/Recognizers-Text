@@ -2,12 +2,15 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.Number.German
 {
     public class NumberExtractor : BaseNumberExtractor
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
@@ -39,13 +42,28 @@ namespace Microsoft.Recognizers.Text.Number.German
             builder.AddRange(cardExtract.Regexes);
 
             // Add Fraction
-            var fracExtract = FractionExtractor.GetInstance();
+            var fracExtract = FractionExtractor.GetInstance(mode);
             builder.AddRange(fracExtract.Regexes);
 
             Regexes = builder.ToImmutable();
+
+            var ambiguityBuilder = ImmutableDictionary.CreateBuilder<Regex, Regex>();
+
+            // Do not filter the ambiguous number cases like '$2000' in NumberWithUnit, otherwise they can't be resolved.
+            if (mode != NumberMode.Unit)
+            {
+                foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
+                {
+                    ambiguityBuilder.Add(new Regex(item.Key, RegexFlags), new Regex(item.Value, RegexFlags));
+                }
+            }
+
+            AmbiguityFiltersDict = ambiguityBuilder.ToImmutable();
         }
 
         internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+
+        protected sealed override ImmutableDictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
 

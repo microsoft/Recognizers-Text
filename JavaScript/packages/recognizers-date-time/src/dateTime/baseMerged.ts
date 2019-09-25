@@ -1,4 +1,4 @@
-import { IExtractor, ExtractResult } from "@microsoft/recognizers-text";
+import { IExtractor, ExtractResult, MetaData } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
 import { RegExpUtility, StringUtility, BaseNumberExtractor } from "@microsoft/recognizers-text-number";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers";
@@ -32,6 +32,8 @@ export interface IMergedExtractorConfiguration {
     fromToRegex: RegExp
     singleAmbiguousMonthRegex: RegExp
     prepositionSuffixRegex: RegExp
+    ambiguousRangeModifierPrefix: RegExp
+    potentialAmbiguousRangeRegex: RegExp
     numberEndingPattern: RegExp
     filterWordRegexList: RegExp[]
 }
@@ -173,42 +175,63 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
     protected addMod(ers: ExtractResult[], source: string) {
         let lastEnd = 0;
         ers.forEach(er => {
-            let beforeStr = source.substr(lastEnd, er.start).toLowerCase();
-            let isSuccess = false;
-            let before = this.hasTokenIndex(beforeStr.trim(), this.config.beforeRegex);
-            if (before.matched) {
-                let modLength = beforeStr.length - before.index;
-                er.length += modLength;
-                er.start -= modLength;
-                er.text = source.substr(er.start, er.length);
-                isSuccess = true;
+            let success = this.tryMergeModifierToken(er, this.config.beforeRegex, source);
+            if (!success) {
+                success = this.tryMergeModifierToken(er, this.config.afterRegex, source);
             }
-            if (!isSuccess) {
-                let after = this.hasTokenIndex(beforeStr.trim(), this.config.afterRegex);
-                if (after.matched) {
-                    let modLength = beforeStr.length - after.index;
-                    er.length += modLength;
-                    er.start -= modLength;
-                    er.text = source.substr(er.start, er.length);
-                    isSuccess = true;
-                }
-            }
-            if (!isSuccess) {
-                let since = this.hasTokenIndex(beforeStr.trim(), this.config.sinceRegex);
-                if (since.matched) {
-                    let modLength = beforeStr.length - since.index;
-                    er.length += modLength;
-                    er.start -= modLength;
-                    er.text = source.substr(er.start, er.length);
-                }
+
+            if (!success) {
+                // SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
+                success = this.tryMergeModifierToken(er, this.config.sinceRegex, source, true);
             }
         });
     }
 
+    private tryMergeModifierToken(er:ExtractResult, regex: RegExp, source: string, potentialAmbiguity:boolean = false): boolean {
+        let beforeStr = source.substr(0, er.start).toLowerCase();
+
+        // Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
+        if (potentialAmbiguity && this.config.ambiguousRangeModifierPrefix &&
+            RegExpUtility.isMatch(this.config.ambiguousRangeModifierPrefix, beforeStr)) {
+            let matches = RegExpUtility.getMatches(this.config.potentialAmbiguousRangeRegex, source);
+            if (matches.find(m => m.index < er.start + er.length && m.index + m.length > er.start)) {
+                return false
+            }
+        }
+
+        let token = this.hasTokenIndex(beforeStr.trim(), regex);
+        if (token.matched) {
+            let modLength = beforeStr.length - token.index;
+            er.length += modLength;
+            er.start -= modLength;
+            er.text = source.substr(er.start, er.length);
+            
+            er.metaData = this.assignModMetadata(er.metaData);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private assignModMetadata(metadata: MetaData): MetaData {
+
+        if (metadata === undefined || metadata === null) {
+            metadata = new MetaData();
+            metadata.HasMod = true;
+        } else {
+            metadata.HasMod = true;
+        }
+
+        return metadata
+    }
+
     private hasTokenIndex(source: string, regex: RegExp): { matched: boolean, index: number } {
+        // This part is different from C# because no Regex RightToLeft option in JS
         let result = { matched: false, index: -1 };
-        let match = RegExpUtility.getMatches(regex, source).pop();
-        if (match) {
+        let matchResult = RegExpUtility.getMatches(regex, source);
+        let match = matchResult[matchResult.length - 1];
+        if (match && !source.substr(match.index + match.length).trim().length) {
             result.matched = true;
             result.index = match.index;
         }
@@ -237,6 +260,7 @@ export class BaseMergedParser implements IDateTimeParser {
     protected readonly config: IMergedParserConfiguration;
     private readonly options: DateTimeOptions;
 
+    private readonly dateDefaultValue = DateTimeFormatUtil.formatDate(new Date(1, 0, 1, 0, 0, 0, 0));
     private readonly dateMinValue = DateTimeFormatUtil.formatDate(DateUtils.minValue());
     private readonly dateTimeMinValue = DateTimeFormatUtil.formatDateTime(DateUtils.minValue());
 
@@ -254,30 +278,33 @@ export class BaseMergedParser implements IDateTimeParser {
         let hasAfter = false;
         let hasSince = false;
         let modStr = "";
-        let beforeMatch = RegExpUtility.getMatches(this.config.beforeRegex, er.text).shift();
-        let afterMatch = RegExpUtility.getMatches(this.config.afterRegex, er.text).shift();
-        let sinceMatch = RegExpUtility.getMatches(this.config.sinceRegex, er.text).shift();
-        if (beforeMatch && beforeMatch.index === 0) {
-            hasBefore = true;
-            er.start += beforeMatch.length;
-            er.length -= beforeMatch.length;
-            er.text = er.text.substring(beforeMatch.length);
-            modStr = beforeMatch.value;
-        }
-        else if (afterMatch && afterMatch.index === 0) {
-            hasAfter = true;
-            er.start += afterMatch.length;
-            er.length -= afterMatch.length;
-            er.text = er.text.substring(afterMatch.length);
-            modStr = afterMatch.value;
-        }
-        else if (sinceMatch && sinceMatch.index === 0) {
-            hasSince = true;
-            er.start += sinceMatch.length;
-            er.length -= sinceMatch.length;
-            er.text = er.text.substring(sinceMatch.length);
-            modStr = sinceMatch.value;
-        }
+
+        if (er.metaData !== null && er.metaData !== undefined && er.metaData.HasMod) {
+            let beforeMatch = RegExpUtility.getMatches(this.config.beforeRegex, er.text).shift();
+            let afterMatch = RegExpUtility.getMatches(this.config.afterRegex, er.text).shift();
+            let sinceMatch = RegExpUtility.getMatches(this.config.sinceRegex, er.text).shift();
+            if (beforeMatch && beforeMatch.index === 0) {
+                hasBefore = true;
+                er.start += beforeMatch.length;
+                er.length -= beforeMatch.length;
+                er.text = er.text.substring(beforeMatch.length);
+                modStr = beforeMatch.value;
+            }
+            else if (afterMatch && afterMatch.index === 0) {
+                hasAfter = true;
+                er.start += afterMatch.length;
+                er.length -= afterMatch.length;
+                er.text = er.text.substring(afterMatch.length);
+                modStr = afterMatch.value;
+            }
+            else if (sinceMatch && sinceMatch.index === 0) {
+                hasSince = true;
+                er.start += sinceMatch.length;
+                er.length -= sinceMatch.length;
+                er.text = er.text.substring(sinceMatch.length);
+                modStr = sinceMatch.value;
+            }
+        }         
 
         if (er.type === Constants.SYS_DATETIME_DATE) {
             if (er.metaData !== null && er.metaData !== undefined && er.metaData.IsHoliday) {
@@ -600,7 +627,7 @@ export class BaseMergedParser implements IDateTimeParser {
     private addSingleDateTimeToResolution(resolutions: StringMap, type: string, mod: string, result: StringMap) {
         let key = TimeTypeConstants.VALUE;
         let value = resolutions[type];
-        if (!value || this.dateMinValue === value || this.dateTimeMinValue === value) {
+        if (!value || this.dateMinValue === value || this.dateTimeMinValue === value || value.startsWith(this.dateDefaultValue)) {
             return;
         }
 
