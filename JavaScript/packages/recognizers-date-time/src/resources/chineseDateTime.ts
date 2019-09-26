@@ -94,7 +94,7 @@ export namespace ChineseDateTime {
     export const DateTimePeriodLastRegex = `上个|上一个|上|上一`;
     export const DateTimePeriodNextRegex = `下个|下一个|下|下一`;
     export const AmPmDescRegex = `(?<daydesc>(am|a\\.m\\.|a m|a\\. m\\.|a\\.m|a\\. m|a m|pm|p\\.m\\.|p m|p\\. m\\.|p\\.m|p\\. m|p m))`;
-    export const TimeOfDayRegex = `(?<timeOfDay>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)`;
+    export const TimeOfDayRegex = `(?<timeOfDay>凌晨|清晨|早上|早间|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)`;
     export const SpecificTimeOfDayRegex = `(((${DateTimePeriodThisRegex}|${DateTimePeriodNextRegex}|${DateTimePeriodLastRegex})\\s+${TimeOfDayRegex})|(今晚|今早|今晨|明晚|明早|明晨|昨晚))`;
     export const DateTimePeriodUnitRegex = `(个)?(?<unit>(小时|钟头|分钟|秒钟|时|分|秒))`;
     export const DateTimePeriodFollowedUnit = `^\\s*${DateTimePeriodUnitRegex}`;
@@ -128,7 +128,7 @@ export namespace ChineseDateTime {
     export const TimeQuarterRegex = `(?<quarter>[一两二三四1-4])\\s*(刻钟|刻)`;
     export const TimeChineseTimeRegex = `${TimeHourRegex}(${TimeQuarterRegex}|${TimeHalfRegex}|((过|又)?${TimeMinuteRegex})(${TimeSecondRegex})?)?`;
     export const TimeDigitTimeRegex = `(?<hour>${TimeHourNumRegex}):(?<min>${TimeMinuteNumRegex})(:(?<sec>${TimeSecondNumRegex}))?`;
-    export const TimeDayDescRegex = `(?<daydesc>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|午夜|夜间|深夜|傍晚|晚)`;
+    export const TimeDayDescRegex = `(?<daydesc>凌晨|清晨|早上|早间|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|午夜|夜间|深夜|傍晚|晚)`;
     export const TimeApproximateDescPreffixRegex = `(大[约概]|差不多|可能|也许|约|不超过|不多[于过]|最[多长少]|少于|[超短长多]过|几乎要|将近|差点|快要|接近|至少|起码|超出|不到)`;
     export const TimeApproximateDescSuffixRegex = `(之前|以前|以后|以後|之后|之後|前|后|後|左右)`;
     export const TimeRegexes1 = `${TimeApproximateDescPreffixRegex}?${TimeDayDescRegex}?${TimeChineseTimeRegex}${TimeApproximateDescSuffixRegex}?`;
@@ -171,7 +171,7 @@ export namespace ChineseDateTime {
     export const ParserConfigurationMonthOfYear: ReadonlyMap<string, number> = new Map<string, number>([["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06", 6],["07", 7],["08", 8],["09", 9],["一月", 1],["二月", 2],["三月", 3],["四月", 4],["五月", 5],["六月", 6],["七月", 7],["八月", 8],["九月", 9],["十月", 10],["十一月", 11],["十二月", 12],["1月", 1],["2月", 2],["3月", 3],["4月", 4],["5月", 5],["6月", 6],["7月", 7],["8月", 8],["9月", 9],["10月", 10],["11月", 11],["12月", 12],["01月", 1],["02月", 2],["03月", 3],["04月", 4],["05月", 5],["06月", 6],["07月", 7],["08月", 8],["09月", 9],["正月", 13],["大年", 13]]);
     export const DateTimeSimpleAmRegex = `(?<am>早|晨)`;
     export const DateTimeSimplePmRegex = `(?<pm>晚)`;
-    export const DateTimePeriodMORegex = `(凌晨|清晨|早上|早|上午)`;
+    export const DateTimePeriodMORegex = `(凌晨|清晨|早上|早间|早|上午)`;
     export const DateTimePeriodMIRegex = `(中午)`;
     export const DateTimePeriodAFRegex = `(下午|午后|傍晚)`;
     export const DateTimePeriodEVRegex = `(晚上|夜里|夜晚|晚)`;
@@ -184,7 +184,7 @@ export namespace ChineseDateTime {
     export const TimeNumberDictionary: ReadonlyMap<string, number> = new Map<string, number>([["零", 0],["一", 1],["二", 2],["三", 3],["四", 4],["五", 5],["六", 6],["七", 7],["八", 8],["九", 9],["〇", 0],["两", 2],["十", 10]]);
     export const TimeLowBoundDesc: ReadonlyMap<string, number> = new Map<string, number>([["中午", 11],["下午", 12],["午后", 12],["晚上", 18],["夜里", 18],["夜晚", 18],["夜间", 18],["深夜", 18],["傍晚", 18],["晚", 18],["pm", 12]]);
     export const DefaultLanguageFallback = 'DMY';
-    export const MorningTermList = [ "早","上午","早上","清晨" ];
+    export const MorningTermList = [ "早","上午","早间","早上","清晨" ];
     export const MidDayTermList = [ "中午","正午" ];
     export const AfternoonTermList = [ "下午","午后" ];
     export const EveningTermList = [ "晚","晚上","夜里","傍晚","夜晚" ];

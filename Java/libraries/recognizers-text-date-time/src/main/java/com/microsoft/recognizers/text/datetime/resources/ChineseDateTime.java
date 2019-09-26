@@ -296,7 +296,7 @@ public class ChineseDateTime {
 
     public static final String AmPmDescRegex = "(?<daydesc>(am|a\\.m\\.|a m|a\\. m\\.|a\\.m|a\\. m|a m|pm|p\\.m\\.|p m|p\\. m\\.|p\\.m|p\\. m|p m))";
 
-    public static final String TimeOfDayRegex = "(?<timeOfDay>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)";
+    public static final String TimeOfDayRegex = "(?<timeOfDay>凌晨|清晨|早上|早间|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)";
 
     public static final String SpecificTimeOfDayRegex = "((({DateTimePeriodThisRegex}|{DateTimePeriodNextRegex}|{DateTimePeriodLastRegex})\\s+{TimeOfDayRegex})|(今晚|今早|今晨|明晚|明早|明晨|昨晚))"
             .replace("{DateTimePeriodThisRegex}", DateTimePeriodThisRegex)
@@ -404,7 +404,7 @@ public class ChineseDateTime {
             .replace("{TimeMinuteNumRegex}", TimeMinuteNumRegex)
             .replace("{TimeSecondNumRegex}", TimeSecondNumRegex);
 
-    public static final String TimeDayDescRegex = "(?<daydesc>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|午夜|夜间|深夜|傍晚|晚)";
+    public static final String TimeDayDescRegex = "(?<daydesc>凌晨|清晨|早上|早间|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|午夜|夜间|深夜|傍晚|晚)";
 
     public static final String TimeApproximateDescPreffixRegex = "(大[约概]|差不多|可能|也许|约|不超过|不多[于过]|最[多长少]|少于|[超短长多]过|几乎要|将近|差点|快要|接近|至少|起码|超出|不到)";
 
@@ -885,7 +885,7 @@ public class ChineseDateTime {
 
     public static final String DateTimeSimplePmRegex = "(?<pm>晚)";
 
-    public static final String DateTimePeriodMORegex = "(凌晨|清晨|早上|早|上午)";
+    public static final String DateTimePeriodMORegex = "(凌晨|清晨|早上|早间|早|上午)";
 
     public static final String DateTimePeriodMIRegex = "(中午)";
 
@@ -956,7 +956,7 @@ public class ChineseDateTime {
 
     public static final String DefaultLanguageFallback = "DMY";
 
-    public static final List<String> MorningTermList = Arrays.asList("早", "上午", "早上", "清晨");
+    public static final List<String> MorningTermList = Arrays.asList("早", "上午", "早间", "早上", "清晨");
 
     public static final List<String> MidDayTermList = Arrays.asList("中午", "正午");
 
