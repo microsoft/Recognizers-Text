@@ -598,5 +598,47 @@
         "Length": 7
       }
     ]
+  },
+  {
+    "Input": "7月25日早间，7月25日，7月25日早都是被支持的测例",
+    "Context": {
+      "ReferenceDateTime": "2019-08-19T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "7月25日早间",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-07-25TMO",
+          "FutureResolution": {
+            "startDateTime": "2020-07-25 08:00:00",
+            "endDateTime": "2020-07-25 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2019-07-25 08:00:00",
+            "endDateTime": "2019-07-25 12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      },
+      {
+        "Text": "7月25日早",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-07-25TMO",
+          "FutureResolution": {
+            "startDateTime": "2020-07-25 08:00:00",
+            "endDateTime": "2020-07-25 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2019-07-25 08:00:00",
+            "endDateTime": "2019-07-25 12:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 6
+      }
+    ]
   }
 ]

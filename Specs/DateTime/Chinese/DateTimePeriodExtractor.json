@@ -152,5 +152,25 @@
         "Length": 7
       }
     ]
+  },
+  {
+    "Input": "7月25日早间，7月25日，7月25日早都是被支持的测例",
+    "Context": {
+      "ReferenceDateTime": "2019-08-19T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "7月25日早间",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 7
+      },
+      {
+        "Text": "7月25日早",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 6
+      }
+    ]
   }
 ]
