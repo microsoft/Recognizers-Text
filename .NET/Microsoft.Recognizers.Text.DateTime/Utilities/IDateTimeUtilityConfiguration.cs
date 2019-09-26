@@ -27,5 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
         Regex AmPmDescRegex { get; }
 
         Regex CommonDatePrefixRegex { get; }
+
+        bool CheckBothBeforeAfter { get; }
     }
 }

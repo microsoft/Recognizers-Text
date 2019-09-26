@@ -73,26 +73,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                var match = Config.InConnectorRegex.MatchEnd(beforeStr, trim: true);
+                bool inPrefix = true;
+                ret.AddRange(ExtractInConnector(text, beforeStr, afterStr, duration, inPrefix, out bool success));
 
-                if (match.Success)
+                // Check also afterStr
+                if (!success && Config.CheckBothBeforeAfter)
                 {
-                    var startToken = match.Index;
-                    var rangeUnitMatch = Config.RangeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
-
-                    if (rangeUnitMatch.Success)
-                    {
-                        var sinceYearMatch = Config.SinceYearSuffixRegex.Match(afterStr);
-
-                        if (sinceYearMatch.Success)
-                        {
-                            ret.Add(new Token(startToken, duration.End + sinceYearMatch.Length));
-                        }
-                        else
-                        {
-                            ret.Add(new Token(startToken, duration.End));
-                        }
-                    }
+                    inPrefix = false;
+                    ret.AddRange(ExtractInConnector(text, afterStr, beforeStr, duration, inPrefix, out success));
                 }
             }
 
@@ -449,21 +437,20 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Check whether there's a year
             var suffix = text.Substring(endIndex);
-            var matchYear = this.Config.YearSuffix.Match(suffix);
-            if (matchYear.Success && matchYear.Index == 0)
-            {
-                year = GetYearFromText(matchYear);
+            var prefix = text.Substring(0, startIndex);
+            bool inSuffix = true;
+            endIndex += GetYearIndex(suffix, inSuffix, ref year, out bool success);
 
-                if (year >= Constants.MinYearNum && year <= Constants.MaxYearNum)
-                {
-                    endIndex += matchYear.Length;
-                }
+            // Check also in prefix
+            if (!success && Config.CheckBothBeforeAfter)
+            {
+                inSuffix = false;
+                startIndex -= GetYearIndex(prefix, inSuffix, ref year, out success);
             }
 
             var date = DateObject.MinValue.SafeCreateFromValue(year, month, day);
 
             // Check whether there's a weekday
-            var prefix = text.Substring(0, startIndex);
             var matchWeekDay = this.Config.WeekDayEnd.Match(prefix);
 
             // Check for weekday in the suffix
@@ -549,6 +536,57 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             StripInequalityPrefix(er, Config.MoreThanRegex);
             StripInequalityPrefix(er, Config.LessThanRegex);
+        }
+
+        // Used in ExtractRelativeDurationDateWithInPrefix to extract the connector "in" in cases like "In 3 days/weeks/months/years"
+        private List<Token> ExtractInConnector(string text, string firstStr, string secondStr, Token duration, bool inPrefix, out bool success)
+        {
+            List<Token> ret = new List<Token>();
+            var match = inPrefix ? Config.InConnectorRegex.MatchEnd(firstStr, trim: true) : Config.InConnectorRegex.MatchBegin(firstStr, trim: true);
+            success = match.Success;
+
+            if (match.Success)
+            {
+                var rangeUnitMatch = Config.RangeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
+
+                if (rangeUnitMatch.Success)
+                {
+                    var sinceYearMatch = Config.SinceYearSuffixRegex.Match(secondStr);
+
+                    if (sinceYearMatch.Success)
+                    {
+                        var start = inPrefix ? match.Index : sinceYearMatch.Index;
+                        var end = inPrefix ? duration.End + sinceYearMatch.Length : duration.End + match.Index + match.Length;
+                        ret.Add(new Token(start, end));
+                    }
+                    else
+                    {
+                        var start = inPrefix ? match.Index : duration.Start;
+                        var end = inPrefix ? duration.End : duration.End + match.Index + match.Length;
+                        ret.Add(new Token(start, end));
+                    }
+                }
+            }
+
+            return ret;
+        }
+
+        private int GetYearIndex(string affix, bool inSuffix, ref int year, out bool success)
+        {
+            int index = 0;
+            var matchYear = this.Config.YearSuffix.Match(affix);
+            success = inSuffix ? matchYear.Success && matchYear.Index == 0 : matchYear.Success && matchYear.Index + matchYear.Length == affix.TrimEnd().Length;
+            if (success)
+            {
+                year = GetYearFromText(matchYear);
+
+                if (year >= Constants.MinYearNum && year <= Constants.MaxYearNum)
+                {
+                    index = inSuffix ? matchYear.Length : matchYear.Length + (affix.Length - affix.TrimEnd().Length);
+                }
+            }
+
+            return index;
         }
     }
 }

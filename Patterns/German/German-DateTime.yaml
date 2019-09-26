@@ -1,4 +1,5 @@
 ---
+CheckBothBeforeAfter: !bool false
 TillRegex: !simpleRegex
   def: (?<till>zu|bis\s*zum|zum|bis|bis\s*hin(\s*zum)?|--|-|—|——)
 RangeConnectorRegex : !simpleRegex

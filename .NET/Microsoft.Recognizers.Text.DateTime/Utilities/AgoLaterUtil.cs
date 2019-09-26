@@ -48,14 +48,67 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
                     }
-                }
-                else if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.LaterRegex, out index))
-                {
-                    var isDayMatchInAfterString = utilityConfiguration.LaterRegex.Match(afterString).Groups["day"].Success;
 
-                    if (!(isTimeDuration && isDayMatchInAfterString))
+                    if (utilityConfiguration.CheckBothBeforeAfter && !isDayMatchInAfterString)
                     {
-                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
+                        // check if regex match is split between beforeString and afterString
+                        string beforeAfterStr = beforeString + afterString.Substring(0, index);
+                        if (MatchingUtil.GetAgoLaterIndexInBeforeString(beforeAfterStr, utilityConfiguration.AgoRegex, out var indexStart))
+                        {
+                            isDayMatchInAfterString = utilityConfiguration.AgoRegex.Match(beforeAfterStr).Groups["day"].Success;
+
+                            if (isDayMatchInAfterString && !(isTimeDuration && isDayMatchInAfterString))
+                            {
+                                ret.Add(new Token(indexStart, (er.Start + er.Length ?? 0) + index));
+                            }
+                        }
+                    }
+                }
+                else if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.GetAgoLaterIndexInBeforeString(beforeString, utilityConfiguration.AgoRegex, out index))
+                {
+                    // Check also beforeString
+                    var isDayMatchInBeforeString = utilityConfiguration.AgoRegex.Match(beforeString).Groups["day"].Success;
+                    if (!(isTimeDuration && isDayMatchInBeforeString))
+                    {
+                        ret.Add(new Token(index, (er.Start + er.Length ?? 0) + index));
+                    }
+                }
+                else if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.LaterRegex, out index) || (utilityConfiguration.CheckBothBeforeAfter &&
+                         MatchingUtil.GetAgoLaterIndexInBeforeString(beforeString, utilityConfiguration.LaterRegex, out index)))
+                {
+                    Token tokAfter = null, tokBefore = null;
+                    if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.LaterRegex, out index))
+                    {
+                        var isDayMatchInAfterString = utilityConfiguration.LaterRegex.Match(afterString).Groups["day"].Success;
+
+                        if (!(isTimeDuration && isDayMatchInAfterString))
+                        {
+                            tokAfter = new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index);
+                        }
+                    }
+
+                    // Check also beforeString
+                    if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.GetAgoLaterIndexInBeforeString(beforeString, utilityConfiguration.LaterRegex, out index))
+                    {
+                        var isDayMatchInBeforeString = utilityConfiguration.LaterRegex.Match(beforeString).Groups["day"].Success;
+                        if (!(isTimeDuration && isDayMatchInBeforeString))
+                        {
+                            tokBefore = new Token(index, er.Start + er.Length ?? 0);
+                        }
+                    }
+
+                    if (tokAfter != null && tokBefore != null && tokBefore.Start + tokBefore.Length > tokAfter.Start)
+                    {
+                        // merge overlapping tokens
+                        ret.Add(new Token(tokBefore.Start, tokAfter.Start + tokAfter.Length - tokBefore.Start));
+                    }
+                    else if (tokAfter != null)
+                    {
+                        ret.Add(tokAfter);
+                    }
+                    else if (tokBefore != null)
+                    {
+                        ret.Add(tokBefore);
                     }
                 }
                 else if (MatchingUtil.GetTermIndex(beforeString, utilityConfiguration.InConnectorRegex, out index))
@@ -69,6 +122,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
                 }
+                else if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.InConnectorRegex, out index))
+                {
+                    // Check also afterString
+                    // For range unit like "week, month, year", it should output dateRange or datetimeRange
+                    if (!utilityConfiguration.RangeUnitRegex.IsMatch(er.Text))
+                    {
+                        if (er.Start != null && er.Length != null)
+                        {
+                            ret.Add(new Token((int)er.Start, (int)er.Start + (int)er.Length + index));
+                        }
+                    }
+                }
                 else if (MatchingUtil.GetTermIndex(beforeString, utilityConfiguration.WithinNextPrefixRegex, out index))
                 {
                     // For range unit like "week, month, year, day, second, minute, hour", it should output dateRange or datetimeRange
@@ -77,6 +142,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (er.Start != null && er.Length != null && (int)er.Start >= index)
                         {
                             ret.Add(new Token((int)er.Start - index, (int)er.Start + (int)er.Length));
+                        }
+                    }
+                }
+                else if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.WithinNextPrefixRegex, out index))
+                {
+                    // Check also afterString
+                    // For range unit like "week, month, year, day, second, minute, hour", it should output dateRange or datetimeRange
+                    if (!utilityConfiguration.DateUnitRegex.IsMatch(er.Text) && !utilityConfiguration.TimeUnitRegex.IsMatch(er.Text))
+                    {
+                        if (er.Start != null && er.Length != null)
+                        {
+                            ret.Add(new Token((int)er.Start, (int)er.Start + (int)er.Length + index));
                         }
                     }
                 }
@@ -158,16 +235,45 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     swift = swiftDay(match.Groups["day"].Value);
                 }
+                else if (utilityConfiguration.CheckBothBeforeAfter && match.Success && !MatchingUtil.ContainsAgoLaterIndexInBeforeString(beforeStr, utilityConfiguration.AgoRegex))
+                {
+                    match = utilityConfiguration.AgoRegex.Match(beforeStr + " " + afterStr);
+                    if (match.Success && !string.IsNullOrEmpty(match.Groups["day"].Value))
+                    {
+                        swift = swiftDay(match.Groups["day"].Value);
+                    }
+                }
+
+                resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime.AddDays(swift), false);
+
+                ((DateTimeResolutionResult)durationParseResult.Value).Mod = Constants.BEFORE_MOD;
+            }
+            else if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.ContainsAgoLaterIndexInBeforeString(beforeStr, utilityConfiguration.AgoRegex))
+            {
+                var match = utilityConfiguration.AgoRegex.Match(beforeStr);
+                var swift = 0;
+
+                // Handle cases like "3 days before yesterday"
+                if (match.Success && !string.IsNullOrEmpty(match.Groups["day"].Value))
+                {
+                    swift = swiftDay(match.Groups["day"].Value);
+                }
 
                 resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime.AddDays(swift), false);
 
                 ((DateTimeResolutionResult)durationParseResult.Value).Mod = Constants.BEFORE_MOD;
             }
             else if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex) ||
-                     MatchingUtil.ContainsTermIndex(beforeStr, utilityConfiguration.InConnectorRegex))
+                     MatchingUtil.ContainsTermIndex(beforeStr, utilityConfiguration.InConnectorRegex) ||
+                     (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.ContainsAgoLaterIndexInBeforeString(beforeStr, utilityConfiguration.LaterRegex)))
             {
                 var match = utilityConfiguration.LaterRegex.Match(afterStr);
                 var swift = 0;
+
+                if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.ContainsAgoLaterIndexInBeforeString(beforeStr, utilityConfiguration.LaterRegex) && string.IsNullOrEmpty(match.Groups["day"].Value))
+                {
+                    match = utilityConfiguration.LaterRegex.Match(beforeStr);
+                }
 
                 // Handle cases like "3 days after tomorrow"
                 if (match.Success && !string.IsNullOrEmpty(match.Groups["day"].Value))
@@ -176,6 +282,38 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var yearMatch = utilityConfiguration.SinceYearSuffixRegex.Match(afterStr);
+                if (yearMatch.Success)
+                {
+                    var yearString = yearMatch.Groups[Constants.YearGroupName].Value;
+                    var yearEr = new ExtractResult { Text = yearString };
+                    var year = Convert.ToInt32((double)(numberParser.Parse(yearEr).Value ?? 0));
+                    referenceTime = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
+                }
+
+                resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime.AddDays(swift), true);
+
+                ((DateTimeResolutionResult)durationParseResult.Value).Mod = Constants.AFTER_MOD;
+            }
+            else if (utilityConfiguration.CheckBothBeforeAfter && (MatchingUtil.ContainsAgoLaterIndexInBeforeString(beforeStr, utilityConfiguration.LaterRegex) ||
+                     MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.InConnectorRegex) ||
+                     MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex)))
+            {
+                // Check also beforeStr
+                var match = utilityConfiguration.LaterRegex.Match(beforeStr);
+                var swift = 0;
+
+                if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex) && string.IsNullOrEmpty(match.Groups["day"].Value))
+                {
+                    match = utilityConfiguration.LaterRegex.Match(beforeStr);
+                }
+
+                // Handle cases like "3 days after tomorrow"
+                if (match.Success && !string.IsNullOrEmpty(match.Groups["day"].Value))
+                {
+                    swift = swiftDay(match.Groups["day"].Value);
+                }
+
+                var yearMatch = utilityConfiguration.SinceYearSuffixRegex.Match(beforeStr);
                 if (yearMatch.Success)
                 {
                     var yearString = yearMatch.Groups[Constants.YearGroupName].Value;
