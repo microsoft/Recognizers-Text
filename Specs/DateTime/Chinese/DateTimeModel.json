@@ -3742,6 +3742,7 @@
   },
   {
     "Input": "7月25日早间，7月25日，7月25日早都是被支持的测例",
+    "NotSupported": "javascript",
     "Context": {
       "ReferenceDateTime": "2019-09-03T08:00:00"
     },
