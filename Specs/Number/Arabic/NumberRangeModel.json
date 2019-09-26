@@ -1,0 +1,1072 @@
+[
+  {
+    "Input": "1995-01",
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "هذا العدد أكبر من عشرين و أقل من أو يساوي خمسة و ثلاثين.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكبر من عشرين و أقل من أو يساوي خمسة و ثلاثين",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(20,35]",
+          "score": 0.0
+        },
+        "Start": 10,
+        "End": 52
+      }
+    ]
+  },
+  {
+    "Input": "يتراوح العدد بين 20 و 30",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 20 و 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,30)",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "هو يرتب بين عشرة و خمسة عشر.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين عشرة و خمسة عشر",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[10,15)",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "انه يسجل بين سالب عشرة و خمسة عشر.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين سالب عشرة و خمسة عشر",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[-10,15)",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "هو يرتّب أكبر من عشرة و أقل من خمسة عشر.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكبر من عشرة و أقل من خمسة عشر",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,15)",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "هذا هو الرقم الذي هو أكبر من 100 وأصغر من 300",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكبر من 100 وأصغر من 300",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(100,300)",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "هذا العدد أكبر من أو يساوي 100 و أقل من أو يساوي ثلاثمائة",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكبر من أو يساوي 100 و أقل من أو يساوي ثلاثمائة",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[100,300]",
+          "score": 0.0
+        },
+        "Start": 10,
+        "End": 52
+      }
+    ]
+  },
+  {
+    "Input": "هناك على الأكثر 100 و على الأقل 20 تفاحة.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "على الأكثر 100 و على الأقل 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100]",
+          "score": 0.0
+        },
+        "Start": 5,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "هذه التفاح حوالي 20 ~ 100",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "20 ~ 100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100)",
+          "score": 0.0
+        },
+        "Start": 17,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "نطاق العدد هو 20 إلى 100",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "20 إلى 100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100)",
+          "score": 0.0
+        },
+        "Start": 14,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "يتراوح العدد من ألف إلى ألف وخمسمائة.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "من ألف إلى ألف وخمسمائة",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[1000,1500)",
+          "score": 0.0
+        },
+        "Start": 15,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "الرقم أكبر من 1000 وأقل من 1500",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكبر من 1000 وأقل من 1500",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(1000,1500)",
+          "score": 0.0
+        },
+        "Start": 6,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "العدد أكبر من ربع و أقل من نصف.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكبر من ربع و أقل من نصف",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(0.25,0.5)",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "هذا العدد أكبر من أو يساوي ثلاثة آلاف و تسعمائة وخمسة وستين.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكبر من أو يساوي ثلاثة آلاف و تسعمائة وخمسة وستين",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[3965,)",
+          "score": 0.0
+        },
+        "Start": 10,
+        "End": 54
+      }
+    ]
+  },
+  {
+    "Input": "هذا العدد أكبر من 4,565",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكبر من 4,565",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(4565,)",
+          "score": 0.0
+        },
+        "Start": 10,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "هو أكبر من ثلاثين سنة.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكبر من ثلاثين",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,)",
+          "score": 0.0
+        },
+        "Start": 3,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "عمره لا يقل عن ثلاثين عاما.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "لا يقل عن ثلاثين",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "هناك أكثر من 500 في هذه المنتجات.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكثر من 500",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[500,)",
+          "score": 0.0
+        },
+        "Start": 11,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "أكثر من 1/2 من الناس جاءوا إلى هنا",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكثر من 1/2",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(0.5,)",
+          "score": 0.0
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "العثور على الأرقام الرئيسية التي هي أصغر من أو تساوي 100",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أصغر من أو تساوي 100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,100]",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "العثور على الأرقام الأولية التي هي أقل من أو تساوي 100",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أقل من أو تساوي 100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,100]",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "هناك حوالي 500 أو أقل في هذه المنتجات.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "500 أو أقل",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,500]",
+          "score": 0.0
+        },
+        "Start": 11,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "البحث عن الأرقام الرئيسية التي هي < = 100",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "< = 100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,100]",
+          "score": 0.0
+        },
+        "Start": 34,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "ارتفاعه أقل من 170",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أقل من 170",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,170)",
+          "score": 0.0
+        },
+        "Start": 8,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "أقل من ألف باندا عملاقة لا تزال تعيش في البرية.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أقل من ألف",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,1000)",
+          "score": 0.0
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": " يساوي 170.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "يساوي 170",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[170,170]",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "x>10 و y<20",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": ">10",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,)",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      },
+      {
+        "Text": "<20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,20)",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "x أكبر من 10 وأصغر من 20. y لا يزيد عن 50 ولا تقل عن 20.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكبر من 10 وأصغر من 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,20)",
+          "score": 0.0
+        },
+        "Start": 2,
+        "End": 23
+      },
+      {
+        "Text": "لا يزيد عن 50 ولا تقل عن 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,50]",
+          "score": 0.0
+        },
+        "Start": 28,
+        "End": 54
+      }
+    ]
+  },
+  {
+    "Input": "الربع هو رقم كسر.",
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "الرقم يساوي 20.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "يساوي 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,20]",
+          "score": 0.0
+        },
+        "Start": 6,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "يساوي 20، عدد الطلاب في صفنا ليست كبيرة.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "يساوي 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,20]",
+          "score": 0.0
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "+1-222-2222/2222 هو رقم هاتف.",
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "+1-222-2222-2222 هو رقم هاتف.",
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "درجاته هي 200 أو أكثر",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "200 أو أكثر",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[200,)",
+          "score": 0.0
+        },
+        "Start": 10,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "درجاته هي أكثر من 190",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكثر من 190",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(190,)",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "نقاطه هي 200 أو أكثر",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "200 أو أكثر",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[200,)",
+          "score": 0.0
+        },
+        "Start": 9,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "نقاطه أقل من أو تساوي 30",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أقل من أو تساوي 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,30]",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "نقاطه أكبر من أو تساوي 30",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكبر من أو تساوي 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "نقاطه تساوي 5000 أو أقل",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "تساوي 5000 أو أقل",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000]",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "نقاطه تساوي 5000 أو أقل من 6000",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "تساوي 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,5000]",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      },
+      {
+        "Text": "أقل من 6000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,6000)",
+          "score": 0.0
+        },
+        "Start": 20,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "نقاطه تساوي 5000 أو أكثر ",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "تساوي 5000 أو أكثر",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,)",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "نقاطه تساوي 5000 أو أكثر من 4500",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "تساوي 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,5000]",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      },
+      {
+        "Text": "أكثر من 4500",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(4500,)",
+          "score": 0.0
+        },
+        "Start": 20,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "نقاطه أقل من أو يساوي 5000 ",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أقل من أو يساوي 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000]",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "نقاطه هي أكثر من أو يساوي 5000 ",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكثر من أو يساوي 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,)",
+          "score": 0.0
+        },
+        "Start": 9,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "نقاطه هي أكثر من 5000 أو ما يساوي 6000",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكثر من 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(5000,)",
+          "score": 0.0
+        },
+        "Start": 9,
+        "End": 20
+      },
+      {
+        "Text": "يساوي 6000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[6000,6000]",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "نقاطه تساوي 5000 أو أقل من 5000",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "تساوي 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,5000]",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      },
+      {
+        "Text": "أقل من 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000)",
+          "score": 0.0
+        },
+        "Start": 20,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "نطاق الرقم هو 1000-5000",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1000-5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[1000,5000)",
+          "score": 0.0
+        },
+        "Start": 14,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "نطاق العدد هو 1000 - 5000",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1000 - 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[1000,5000)",
+          "score": 0.0
+        },
+        "Start": 14,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "نطاق العدد هو 1000-5000",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1000-5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[1000,5000)",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "نطاق العدد هو 1000 – 5000",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1000 – 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[1000,5000)",
+          "score": 0.0
+        },
+        "Start": 14,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "ماذا عن 2 من 5 أو أكثر",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 من 5 أو أكثر",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[0.4,)",
+          "score": 0.0
+        },
+        "Start": 8,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "يمكنك أن تظهر لي سجلات أكثر من 30000 في عام 2009",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "أكثر من 30000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30000,)",
+          "score": 0.0
+        },
+        "Start": 23,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "هل يمكنك أن تريني سجلات أقل من 3000 في عام 2009",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "أقل من 3000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,3000)",
+          "score": 0.0
+        },
+        "Start": 24,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "هل لا يزال الحال عندما <30",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "<30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,)",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "هل لا يزال الحال عندما >= 30",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": ">= 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)",
+          "score": 0.0
+        },
+        "Start": 23,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "هل لا يزال الحال عندما <-30",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "<-30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,-30)",
+          "score": 0.0
+        },
+        "Start": 23,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "هل لا يزال الحال عندما <= -30",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "<= -30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,-30]",
+          "score": 0.0
+        },
+        "Start": 23,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "<a0> 29 /01",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "=>30",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "=<30",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "ومن 200 إلى 300 في عام 2008",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "العدد هو من 200 إلى 3000000 على 2008",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "من 200 إلى 3000000 على 2008",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[200,1494.02390438247)",
+          "score": 0.0
+        },
+        "Start": 9,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "جاء أكثر من نصف الناس هنا",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكثر من نصف",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(0.5,)",
+          "score": 0.0
+        },
+        "Start": 4,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "أكبر من 3000",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكبر من 3000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(3000,)",
+          "score": 0.0
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "تخطط شركة نيسان موتور لخفض ما يصل إلى 700 عامل متعاقد.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "يصل إلى 700",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,700]",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "عدد السيارات التي لديها حصان أكبر من 150",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكبر من 150",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(150,)",
+          "score": 0.0
+        },
+        "Start": -1,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "ارتفعت الأسهم أكثر من 20، فوق 170 للسهم الواحد",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "أكثر من 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(20,)",
+          "score": 0.0
+        },
+        "Start": 14,
+        "End": 23
+      },
+      {
+        "Text": "فوق 170",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(170,)",
+          "score": 0.0
+        },
+        "Start": 26,
+        "End": 32
+      }
+    ]
+  }
+]

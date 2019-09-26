@@ -28,5 +28,12 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             TestNumber(testSpec);
         }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void NumberRangeModel(TestModel testSpec)
+        {
+            TestNumber(testSpec);
+        }
     }
 }

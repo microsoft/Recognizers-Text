@@ -101,6 +101,13 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Arabic, options))),
                     new Arabic.PercentageExtractor(options)));
 
+            RegisterModel<NumberRangeModel>(
+                Culture.Arabic,
+                options => new NumberRangeModel(
+                    new BaseNumberRangeParser(new ArabicNumberRangeParserConfiguration(
+                                                  new BaseNumberOptionsConfiguration(Culture.Arabic, options))),
+                    new Arabic.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Arabic, options))));
+
             RegisterModel<NumberModel>(
                 Culture.English,
                 options => new NumberModel(
