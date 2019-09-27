@@ -21,6 +21,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 
     public static class DateTimeDefinitions
     {
+      public const bool CheckBothBeforeAfter = false;
       public const string TillRegex = @"(?<till>\b(fino\s+a(l(l[aoe'])?|gli|i)?|a(l(l[aoe'])?|gli|i)?|e\s+(il?|l[aoe']|gli))\b|--|-|—|——|~)";
       public const string RestrictedTillRegex = @"(?<till>\b(fino\s+a(l(l[aoe'])?|gli|i)?)\b|--|-|—|——|~)";
       public static readonly string RangeConnectorRegex = $@"(?<and>\b(e(\s+l[aoe']|gli|i)?|a(l(l[aoe'])?|gli|i)?)\b|{BaseDateTime.RangeConnectorSymbolRegex})";

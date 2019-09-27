@@ -89,6 +89,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IImmutableList<string> MinusTwoDayTerms { get; }
 
+        bool CheckBothBeforeAfter { get; }
+
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         int GetSwiftMonthOrYear(string text);

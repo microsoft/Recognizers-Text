@@ -582,14 +582,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 day = num;
 
                 var suffix = trimmedText.Substring(er[0].Start + er[0].Length ?? 0);
-                var matchYear = this.config.YearSuffix.Match(suffix);
-                if (matchYear.Success)
+                GetYearInAffix(suffix, ref year, ref ambiguous, out bool success);
+
+                // Check also in prefix
+                if (!success && this.config.CheckBothBeforeAfter)
                 {
-                    year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matchYear);
-                    if (year != Constants.InvalidYear)
-                    {
-                        ambiguous = false;
-                    }
+                    var prefix = trimmedText.Substring(0, er[0].Start ?? 0);
+                    GetYearInAffix(prefix, ref year, ref ambiguous, out success);
                 }
             }
 
@@ -919,6 +918,20 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return swift;
+        }
+
+        private void GetYearInAffix(string affix, ref int year, ref bool ambiguous, out bool success)
+        {
+            var matchYear = this.config.YearSuffix.Match(affix);
+            success = matchYear.Success;
+            if (success)
+            {
+                year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matchYear);
+                if (year != Constants.InvalidYear)
+                {
+                    ambiguous = false;
+                }
+            }
         }
     }
 }
