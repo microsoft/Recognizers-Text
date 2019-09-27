@@ -1,0 +1,2492 @@
+[
+  {
+    "Input": "1月1日 に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1月1日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "10月2日 に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10月2日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2016年1月12日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016年1月12日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "2016年1月12日月曜日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016年1月12日月曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "2016年2月22日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016年2月22日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "2016年4月21日戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016年4月21日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "2015年9月18日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015年9月18日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "4月22日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4月22日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2015年8月12日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015年8月12日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "2016年11月12日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016年11月12日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "1月1日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1月1日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "11月28日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11月28日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "7月の第1金曜日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7月の第1金曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "今から2週間後に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今から2週間後",
+        "Type": "date",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "火曜日に戻ります。いい知らせです。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "火曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "今週の金曜日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今週の金曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "来週の日曜日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "来週の日曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "私は最後の日に戻ります",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "最後の日",
+        "Type": "date",
+        "Start": 2,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "私はその日に戻ります",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "その日",
+        "Type": "date",
+        "Start": 2,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "2016年6月15日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016年6月15日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "5月11日に野球",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5月11日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "5月4日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5月4日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "3月4日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3月4日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "5月21日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5月21日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "8月2日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8月2日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "6月22日に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "6月22日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2か月前に戻りました。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2か月前",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "2日後に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2日後",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "私が1か月前にeメールを送付した相手は誰ですか",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1か月前",
+        "Type": "date",
+        "Start": 2,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "27日に戻りました",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "27日に戻りました。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "27日に戻りました！",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "21日に戻りました",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "22日に戻りました",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "2日に戻りました",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "2日に戻りました！",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "22日に戻りました？",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "一等賞",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "第17回ドアホーンテッドエクスペリエンスのチケットを入手する",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "2日の土曜日の予定は何ですか",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2日の土曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "27日水曜日のジョー・スミスさんとのミーティング",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27日水曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "21日木曜日に戻ります",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21日木曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "22日金曜日に戻ります",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22日金曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "23日土曜日に戻ります",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "23日土曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "15日金曜日にもどります",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15日金曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "7日木曜日に戻ります",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7日木曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "来月の20日に戻ります",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "来月の20日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "今月の31日に戻ります",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今月の31日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "コルタナが今週の金曜日か来週の火曜日にスカイプ通話を手配してくれます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今週の金曜日",
+        "Type": "date",
+        "Start": 5,
+        "Length": 6
+      },
+      {
+        "Text": "来週の火曜日",
+        "Type": "date",
+        "Start": 12,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "コルタナが今週の金曜日か今週の土曜日にスカイプ通話を手配してくれます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今週の金曜日",
+        "Type": "date",
+        "Start": 5,
+        "Length": 6
+      },
+      {
+        "Text": "今週の土曜日",
+        "Type": "date",
+        "Start": 12,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "2016年11月16日",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016年11月16日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "私たちは1か月と21日前に打ち合わせをしました",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1か月と21日前",
+        "Type": "date",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "私は2年1か月21日前にここを立ち去りました",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2年1か月21日前",
+        "Type": "date",
+        "Start": 2,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "私は2年と21日後にここを離れる予定です",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2年と21日後",
+        "Type": "date",
+        "Start": 2,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "私は2年1か月21日前にここを離れました",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2年1か月21日前",
+        "Type": "date",
+        "Start": 2,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "私は1391年12月5日にここを離れました",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1391年12月5日",
+        "Type": "date",
+        "Start": 2,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "2018年1月22日月曜日",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2018年1月22日月曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "2018年1月21日日曜日",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2018年1月21日日曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "1978年9月21日",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1978年9月21日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "1901年9月10日",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1901年9月10日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "2000年9月10日",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2000年9月10日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "2015年5月13日はお暇ですか？",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015年5月13日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "2015年5月13日はご都合いかがでしょうか。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015年5月13日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "今から2週先の日曜日のご都合はいかがでしょうか？",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今から2週先の日曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "2週先の月曜日のご都合はいかがでしょうか？",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2週先の月曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "今日から2日後のご都合はいかがでしょうか。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今日から2日後",
+        "Type": "date",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "明日から3週間のご都合はいかがでしょうか。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "明日から3週間",
+        "Type": "date",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "あなたは昨日の2日前どこにいましたか。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "昨日の2日前",
+        "Type": "date",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "コルタナ、今週の金曜日6月15日のいつかにジムとスカイプ通話を設定してください。",
+    "Context": {
+      "ReferenceDateTime": "2018-06-14T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今週の金曜日6月15日",
+        "Type": "date",
+        "Start": 5,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "コルタナ、今週の金曜日（6月15日）のいつかにジムとスカイプ通話を設定してください。",
+    "Context": {
+      "ReferenceDateTime": "2018-06-14T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今週の金曜日（6月15日）",
+        "Type": "date",
+        "Start": 5,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "コルタナ、今週の金曜日6月22日のいつかにジムとスカイプ通話を設定してください。",
+    "Context": {
+      "ReferenceDateTime": "2018-06-20T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今週の金曜日6月22日",
+        "Type": "date",
+        "Start": 5,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "コルタナ、今週の金曜日6月23日のいつかにジムとスカイプ通話を設定してください。",
+    "Context": {
+      "ReferenceDateTime": "2018-06-20T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今週の金曜日",
+        "Type": "date",
+        "Start": 5,
+        "Length": 6
+      },
+      {
+        "Text": "6月23日",
+        "Type": "date",
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "3週間で出発します。",
+    "Context": {
+      "ReferenceDateTime": "2018-06-20T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3週間で",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "コルタナ、7月6日金曜日のいつかジムとスカイプ通話を設定してください。",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7月6日金曜日",
+        "Type": "date",
+        "Start": 5,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "コルタナ、2018年7月6日金曜日のいつかジムとスカイプ通話を設定してください。",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2018年7月6日金曜日",
+        "Type": "date",
+        "Start": 5,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "コルタナ、2営業日以内にSkype通話を設定してください。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2営業日以内",
+        "Type": "date",
+        "Start": 5,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "コルタナ、10月1日に何か設定してくれませんか。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10月1日",
+        "Type": "date",
+        "Start": 5,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "その6.25%転換...の額面金額",
+    "Comment": "1/4 shouldn't recognized as date here",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "15 日に戻ります。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "元旦に帰省します。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "元旦",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "1/1 に帰ります。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1/1",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "誕生日は10/03です。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10/03",
+        "Type": "date",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "それは 2016 年 1 月 12 日に発売されました。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016 年 1 月 12 日",
+        "Type": "date",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "それは2016年1月12日に発売されました。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016年1月12日",
+        "Type": "date",
+        "Start": 3,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "それが発売されたのは2016年1月12日 月曜日です。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016年1月12日 月曜日",
+        "Type": "date",
+        "Start": 10,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "02/22/2016",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "02/22/2016",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "21/04/2016に戻ります。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "21/04/2016",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "21/04/16に戻ります。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "21/04/16",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "9-18-15に戻ります。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "9-18-15",
+        "Type": "date",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "4.22 に戻ります。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4.22",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "4-22 に戻ります。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4-22",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "4.22に戻ります。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4.22",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "22/04 に戻ります。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2015/08/12 に戻ります。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015/08/12",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "11/12,2016に戻ります。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11/12,2016",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "一月二十二日 水曜日に戻ります。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一月二十二日 水曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "5月の第2日曜日は母の日です。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5月の第2日曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "今月の第一金曜日は定休日です。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今月の第一金曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "来週金曜日に戻ります。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "来週金曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "来週の水曜日に戻ります。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "来週の水曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "火曜日に戻ります。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "火曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "火曜に戻ります。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "火曜",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "帰るのは今週の木曜日です。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今週の木曜日",
+        "Type": "date",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "先週の月曜日に帰ってきました。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "先週の月曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "金曜日に帰ります。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "金曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "今日帰ります。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "今日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "明日帰ります。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "明日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "昨日帰ってきました。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "昨日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "きのう帰ってきました。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "きのう",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "明日帰る予定です。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "明日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "あした帰る予定です。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "あした",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "あす帰る予定です。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "あす",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "明後日帰る予定です。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "明後日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "あさって帰る予定です。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "あさって",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "一昨日帰ってきました。",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "一昨日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "おととい帰ってきました。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "おととい",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "2か月前に帰ってきました。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2か月前",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "二か月前に帰ってきました。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二か月前",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "私は二日後に帰ってきます。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二日後",
+        "Type": "date",
+        "Start": 2,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "27階に行きます。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "シンガポールと中国の外交関係25周年記念行事",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "27日水曜日のスミスさんとのミーティング",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "27日水曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "来月20日に戻ります。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "来月20日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "今月31日に戻ります。",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今月31日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "13.5.2015 は空いていますか？",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "13.5.2015",
+        "Type": "date",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "2015.5.13 は空いていますか？",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015.5.13",
+        "Type": "date",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "今日から2日間空いてますか？",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今日から2日間",
+        "Type": "date",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "明日から3週間空いてますか？",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明日から3週間",
+        "Type": "date",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "3 週間後に出発します。",
+    "Context": {
+      "ReferenceDateTime": "2018-06-20T00:00:00"
+    },
+    "NotSupported": "python,java,javascript",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 週間後",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "コルタナさん、7.6 金曜日にジムとの Skype を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7.6 金曜日",
+        "Type": "date",
+        "Start": 7,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "コルタナさん、7/6 金曜日にジムとの Skype を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7/6 金曜日",
+        "Type": "date",
+        "Start": 7,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "コルタナさん、7-6 金曜日にジムとの Skype を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7-6 金曜日",
+        "Type": "date",
+        "Start": 7,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "コルタナさん、2018-7-6 金曜日にジムとの Skype を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2018-7-6 金曜日",
+        "Type": "date",
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "月曜日",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "月曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "火曜日",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "火曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "水曜日",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "水曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "木曜日",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "木曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "金曜日",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "金曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "土曜日",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "土曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "日曜日",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "日曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "月曜",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "月曜",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "火曜",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "火曜",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "水曜",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "水曜",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "木曜",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "木曜",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "金曜",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "金曜",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "土曜",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "土曜",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "日曜",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "日曜",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "明治元年",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明治元年",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "明治二年",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明治二年",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "明治13年",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明治13年",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "大正元年",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "大正元年",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "大正二年",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "大正二年",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "大正13年",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "大正13年",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "昭和元年",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昭和元年",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "昭和二年",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昭和二年",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "昭和13年",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昭和13年",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "平成元年",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "平成元年",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "平成二年",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "平成二年",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "平成13年",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "平成13年",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "今日",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "今日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "きょう",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "きょう",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "明日",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "明日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "あす",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "あす",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "あした",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "あした",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "明後日",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "明後日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "あさって",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "あさって",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "明々後日",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明々後日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "しあさって",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "しあさって",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "昨日",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "昨日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "きのう",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "きのう",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "さくじつ",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "さくじつ",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "一昨日",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "一昨日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "おととい",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "おととい",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "おとつい",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "おとつい",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "いっさくじつ",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "いっさくじつ",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "今月",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "今月",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "こんげつ",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "こんげつ",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "来月",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "来月",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "らいげつ",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "らいげつ",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "再来月",
+    "Comment": "Pronounciation: さらいげつ",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "再来月",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "昨月",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "昨月",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "さくげつ",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "さくげつ",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "先月",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "先月",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "せんげつ",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "せんげつ",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "先々月",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "先々月",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "せんせんげつ",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "せんせんげつ",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "前月",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "前月",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "ぜんげつ",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ぜんげつ",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "今年",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今年",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "ことし",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ことし",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "来年",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "来年",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "らいねん",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "らいねん",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "再来年",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "再来年",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "さらいねん",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "さらいねん",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "昨年",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "昨年",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "さくねん",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "さくねん",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "きょねん",
+    "NotSupportedByDesign": "dotNet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "きょねん",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  }
+]

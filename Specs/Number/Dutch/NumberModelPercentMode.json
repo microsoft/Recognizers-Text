@@ -1,0 +1,43 @@
+[
+  {
+    "Input": "één van de drie",
+    "Results": [
+      {
+        "Text": "één",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "drie",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ],
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "1 in eenentwintig",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "eenentwintig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  }
+]

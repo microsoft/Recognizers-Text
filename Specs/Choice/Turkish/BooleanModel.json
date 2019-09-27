@@ -1,0 +1,226 @@
+[
+  {
+    "Input": "tabi !",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tabi",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sanmıyorum. Hayır.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Hayır",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sanırım bu işe yarayabilir. Yani evet yapacağım",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "evet",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.46666666666666667
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Hayır. Temmuz'un dördü dedim.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Hayır",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.48571428571428571
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Evet... Soğan yok dedim",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Evet",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.52
+        }
+      }
+    ]
+  },
+  {
+    "Input": "HAYIR dedim evet değil!",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "HAYIR",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.52
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Evet. Hayır dedim.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Evet",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Katılmıyorum, tamam değil",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tamam değil",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Katılıyorum, tamam",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "katılıyorum",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Katılıyorum, tamam değil",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tamam değil",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+  {
+    "Input": "katılmıyorum",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "katılmıyorum",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tamam değil",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tamam değil",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌 tamam",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "👌",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌👌👌",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "👌",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
+  }
+]

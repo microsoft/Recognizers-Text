@@ -1,0 +1,485 @@
+[
+  {
+    "Input": "Ich habe den Alarm auf acht Uhr vierzig eingestellt",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "acht Uhr vierzig",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:40",
+          "FutureResolution": {
+            "time": "08:40:00"
+          },
+          "PastResolution": {
+            "time": "08:40:00"
+          }
+        },
+        "Start": 23,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin um 7 zurück.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "7",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "Es ist 19:56.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "19:56",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56",
+          "FutureResolution": {
+            "time": "19:56:00"
+          },
+          "PastResolution": {
+            "time": "19:56:00"
+          }
+        },
+        "Start": 7,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Es ist acht Uhr morgens, ich will schlafen!",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "acht Uhr morgens",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08",
+          "FutureResolution": {
+            "time": "08:00:00"
+          },
+          "PastResolution": {
+            "time": "08:00:00"
+          }
+        },
+        "Start": 7,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Das dürfte gegen halb acht Vormittags sein.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "halb acht Vormittags",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        },
+        "Start": 17,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Das dürfte gegen viertel nach 7 Vormittags sein.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "viertel nach 7 Vormittags",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:15",
+          "FutureResolution": {
+            "time": "07:15:00"
+          },
+          "PastResolution": {
+            "time": "07:15:00"
+          }
+        },
+        "Start": 17,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Ich habe den Alarm auf 8:40 eingestellt",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "8:40",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:40",
+          "FutureResolution": {
+            "time": "08:40:00"
+          },
+          "PastResolution": {
+            "time": "08:40:00"
+          }
+        },
+        "Start": 23,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Um sieben bin ich wieder da",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "sieben",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        },
+        "Start": 3,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Um 19 Uhr bin ich wieder da",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "19 Uhr",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        },
+        "Start": 3,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Bin um 19:56 wieder da",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "19:56",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56",
+          "FutureResolution": {
+            "time": "19:56:00"
+          },
+          "PastResolution": {
+            "time": "19:56:00"
+          }
+        },
+        "Start": 7,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Es ist 19:56:30",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "19:56:30",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56:30",
+          "FutureResolution": {
+            "time": "19:56:30"
+          },
+          "PastResolution": {
+            "time": "19:56:30"
+          }
+        },
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin um 19:56:30 Uhr wieder zurück",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "19:56:30 Uhr",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56:30",
+          "FutureResolution": {
+            "time": "19:56:30"
+          },
+          "PastResolution": {
+            "time": "19:56:30"
+          }
+        },
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Gegen 12:34 ist das durch",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "12:34",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34",
+          "FutureResolution": {
+            "time": "12:34:00"
+          },
+          "PastResolution": {
+            "time": "12:34:00"
+          }
+        },
+        "Start": 6,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Gegen 12:34:25 ist das durch",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "12:34:25",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34:25",
+          "FutureResolution": {
+            "time": "12:34:25"
+          },
+          "PastResolution": {
+            "time": "12:34:25"
+          }
+        },
+        "Start": 6,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Es ist 7 Uhr",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "7 Uhr",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        },
+        "Start": 7,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Es ist sieben Uhr",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "sieben Uhr",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        },
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "8 Uhr Morgens",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "8 Uhr Morgens",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08",
+          "FutureResolution": {
+            "time": "08:00:00"
+          },
+          "PastResolution": {
+            "time": "08:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "20 Uhr Abends",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "20 Uhr Abends",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20",
+          "FutureResolution": {
+            "time": "20:00:00"
+          },
+          "PastResolution": {
+            "time": "20:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Es ist halb 9",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "halb 9",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:30",
+          "FutureResolution": {
+            "time": "08:30:00"
+          },
+          "PastResolution": {
+            "time": "08:30:00"
+          }
+        },
+        "Start": 7,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Es ist 8 Uhr nachts",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "8 Uhr nachts",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20",
+          "FutureResolution": {
+            "time": "20:00:00"
+          },
+          "PastResolution": {
+            "time": "20:00:00"
+          }
+        },
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Es ist 8 Uhr Abends",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "8 Uhr Abends",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20",
+          "FutureResolution": {
+            "time": "20:00:00"
+          },
+          "PastResolution": {
+            "time": "20:00:00"
+          }
+        },
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin um 7h01 zurück",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "7h01",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:01",
+          "FutureResolution": {
+            "time": "07:01:00"
+          },
+          "PastResolution": {
+            "time": "07:01:00"
+          }
+        },
+        "Start": 11,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin um 10 h 10 Uhr zurück.",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "10 h 10 Uhr",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10:10",
+          "FutureResolution": {
+            "time": "10:10:00"
+          },
+          "PastResolution": {
+            "time": "10:10:00"
+          }
+        },
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  }
+]

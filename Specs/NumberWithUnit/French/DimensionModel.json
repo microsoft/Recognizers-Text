@@ -1,0 +1,703 @@
+[
+  {
+    "Input": "75 litre",
+    "Results": [
+      {
+        "Text": "75 litre",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "75",
+          "unit": "Litre"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "75 L",
+    "Results": [
+      {
+        "Text": "75 l",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "75",
+          "unit": "Litre"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "75ml",
+    "Results": [
+      {
+        "Text": "75ml",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "75",
+          "unit": "Millilitre"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "son plus grand inconvénient peut être son épaisseur de 3 pouces, assez grand pour un consultant pour le décrire comme maladroit.",
+    "Results": [
+      {
+        "Text": "3 pouces",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Pouce"
+        },
+        "Start": 55,
+        "End": 62
+      }
+    ]
+  },
+  {
+    "Input": "Un ouragan a hurlé par une zone environ 20 dm de long là, tuant au moins quatorze personnes et transformant des douzaines de maisons dans des décombres.",
+    "Results": [
+      {
+        "Text": "20 dm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "20",
+          "unit": "Décimètres"
+        },
+        "Start": 40,
+        "End": 44
+      }
+    ]
+  },
+  {
+    "Input": "il faut plus de 10 1/2 mile de câble et de fil pour tout accrocher, et 23 ordinateurs.",
+    "Results": [
+      {
+        "Text": "10 1/2 mile",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10,5",
+          "unit": "Mile"
+        },
+        "Start": 16,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "le voyage de six hectometre à mon hôtel de l'aéroport qui avait pris 20 minutes plus tôt dans la journée a pris plus de trois heures.",
+    "Results": [
+      {
+        "Text": "six hectometre",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "6",
+          "unit": "Hectomètre"
+        },
+        "Start": 13,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Dans l'ensemble de l'industrie, la production de pétrole dans ce pays a chuté de 500000 barils par jour en barils au cours des huit premiers mois de cette année.",
+    "Results": [
+      {
+        "Text": "500000 barils",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "500000",
+          "unit": "Baril"
+        },
+        "Start": 81,
+        "End": 93
+      }
+    ]
+  },
+  {
+    "Input": "c'est ce qui 1) explique pourquoi nous sommes, eh bien, nous plutôt que bo jackson; 2) prévient qu'il est possible de se noyer dans un lac de deux pieds de profondeur en moyenne; et 3) prédit que 10 000 singes placés avant 10 000 pianos produiraient 1 118 morceaux de rock 'n' roll publiables.",
+    "Results": [
+      {
+        "Text": "deux pieds",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Pied"
+        },
+        "Start": 142,
+        "End": 151
+      }
+    ]
+  },
+  {
+    "Input": "Le 19 mai, la FDA a commencé à détenir des champignons chinois dans des boîtes de 68 onces après que plus de 100 personnes à Mississippi, à New York et en Pennsylvanie sont tombées malades en mangeant des champignons contaminés.",
+    "Results": [
+      {
+        "Text": "68 onces",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "68",
+          "unit": "Onces"
+        },
+        "Start": 82,
+        "End": 89
+      }
+    ]
+  },
+  {
+    "Input": "Monsieur hulings se réjouit qu'il ait vendu toutes ses actions une semaine avant que le marché ait chuté de 190 points le oct. 13, et il utilise l'argent pour aider à acheter une ferme de chevaux de 45 acres.",
+    "Results": [
+      {
+        "Text": "45 acres",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "45",
+          "unit": "Acre"
+        },
+        "Start": 199,
+        "End": 206
+      }
+    ]
+  },
+  {
+    "Input": "Alors, pour faire ces gardenettes tout à fait littéralement les pièces, Mme bartlett avaient jeté des murs sans fenêtre (la brique, le treillis, la haie) huit à 10 pieds de haut, lançant ses intérieurs dans le jour - la nuance longtemps stygienne.",
+    "Results": [
+      {
+        "Text": "10 pieds",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Pied"
+        },
+        "Start": 161,
+        "End": 168
+      }
+    ]
+  },
+  {
+    "Input": "La gestion ne veut pas de surprises, ' ' cite jack zaves, qui, comme le carburant - le directeur de services aux compagnies aériennes américaines, achète environ 2,4 milliard de gallons de kérosène une année.",
+    "Results": [
+      {
+        "Text": "2,4 milliard de gallons",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2400000000",
+          "unit": "Gallon"
+        },
+        "Start": 162,
+        "End": 184
+      }
+    ]
+  },
+  {
+    "Input": "un refroidisseur d'eau de 10 gallons avait renversé sur le sol, trempant la moquette rouge.",
+    "Results": [
+      {
+        "Text": "10 gallons",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Gallon"
+        },
+        "Start": 26,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "à proximité, six dauphins s'ébattent dans un aquarium d'eau salée de 1,5 million de gallons.",
+    "Results": [
+      {
+        "Text": "1,5 million de gallons",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1500000",
+          "unit": "Gallon"
+        },
+        "Start": 69,
+        "End": 90
+      }
+    ]
+  },
+  {
+    "Input": "et ce bébé est plus de deux livres.",
+    "Results": [
+      {
+        "Text": "deux livres",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Livre"
+        },
+        "Start": 23,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "Je n'ai pas confiance en gens(peuple) qui ne mangent pas, a dit Mme volokh, quoiqu'elle-même elle ait arrêté de déjeuner il y a quelques années pour laisser tomber 25 livres.",
+    "Results": [
+      {
+        "Text": "25 livres",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "25",
+          "unit": "Livre"
+        },
+        "Start": 164,
+        "End": 172
+      }
+    ]
+  },
+  {
+    "Input": "On permettra la coquille, une filiale de hollandais royal / le groupe de coquille(d'obus), exporter 0,9 billion de pieds cubes et le golfe, une unité d'Olympie et on permettra aux développements york ltd. d'exporter",
+    "Results": [
+      {
+        "Text": "0,9 billion de pieds cubes",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "900000000000",
+          "unit": "Pieds cube"
+        },
+        "Start": 100,
+        "End": 125
+      }
+    ]
+  },
+  {
+    "Input": "Les points culminants des factures, comme actuellement encadré, sont: - - une restriction du montant d'immobilier une famille peut posséder, à 660 mètres carrés dans la nation ' s six villes les plus grandes, mais plus dans de plus petites villes et des zones rurales.",
+    "Results": [
+      {
+        "Text": "660 mètres carrés",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "660",
+          "unit": "Mètre carré"
+        },
+        "Start": 143,
+        "End": 159
+      }
+    ]
+  },
+  {
+    "Input": "Tigrean des armées sont maintenant 200 miles au nord d'Addis-Ababa, menaçant la ville de dese, qui couperait mengistu ' s le capital(la capitale) du port d'assab, par lequel tout le carburant et d'autres provisions atteignent Addis-Ababa.",
+    "Results": [
+      {
+        "Text": "200 miles",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "200",
+          "unit": "Mile"
+        },
+        "Start": 35,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "Il a dit qu'un des ordinateurs a pris un voyage de trois pieds glissant à sur le sol.",
+    "Results": [
+      {
+        "Text": "trois pieds",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Pied"
+        },
+        "Start": 51,
+        "End": 61
+      }
+    ]
+  },
+  {
+    "Input": "Le coeur de ses participations est 190000 mètres carrés de propriété incroyablement chère dans le quartier marunouchi, le centre d'affaires et financier de Tokyo, souvent en plaisantant appelé 'mitsubishi le village. '",
+    "Results": [
+      {
+        "Text": "190000 mètres carrés",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "190000",
+          "unit": "Mètre carré"
+        },
+        "Start": 35,
+        "End": 54
+      }
+    ]
+  },
+  {
+    "Input": "Le satellite, construit par Hughes pour l'organisation de satellite de télécommunications internationale, fait partie d'un contrat de 700 millions $ attribué à Hughes en 1982 pour développer cinq des trois-tonnes satellites.",
+    "Results": [
+      {
+        "Text": "trois-tonnes",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Tonne"
+        },
+        "Start": 200,
+        "End": 211
+      }
+    ]
+  },
+  {
+    "Input": "Dans des 1996 armes biologiques de rapport sur, le centre pour des études stratégiques et internationales, une institution de recherche de politique publique à Washington, a averti que c'était facile pour - être des terroristes pour assembler des armes biologiques _ l'utilisation de l'équipement commercial avec une capacité de 130 gallons.",
+    "Results": [
+      {
+        "Text": "130 gallons",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "130",
+          "unit": "Gallon"
+        },
+        "Start": 329,
+        "End": 339
+      }
+    ]
+  },
+  {
+    "Input": "Le groupe commercial ' s la compilation de données de département de commerce a montré cet août des importations, le deuxième plus grand total mensuel de année, étaient en hausse de 5 % de juillet ' s 1.458.000,00 tonnes, mais au-dessous de lannée dernière ' s haut d'en juin 1988",
+    "Results": [
+      {
+        "Text": "1.458.000,00 tonnes",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1458000",
+          "unit": "Tonne"
+        },
+        "Start": 201,
+        "End": 219
+      }
+    ]
+  },
+  {
+    "Input": "À Non. 1, singh frappe des 9 - le coup d'approche de fer à dans six pieds de la tasse(coupe).",
+    "Results": [
+      {
+        "Text": "six pieds",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "6",
+          "unit": "Pied"
+        },
+        "Start": 64,
+        "End": 72
+      }
+    ]
+  },
+  {
+    "Input": "Ainsi quand l'année prochaine(suivante) ' s psyllium la récolte(culture) est récolté dans marche, cela peut être plus petit que les 16.000,00 tonnes métriques de quelques années passées - - directement à la crête du boom de psyllium.",
+    "Results": [
+      {
+        "Text": "16.000,00 tonnes métriques",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "16000",
+          "unit": "Tonne métrique"
+        },
+        "Start": 132,
+        "End": 157
+      }
+    ]
+  },
+  {
+    "Input": "Les 486 sont le descendant d'une longue série des puces Intel qui ont commencé à dominer le marché depuis qu'IBM a choisi la 8088 puce 16 bits pour son premier ordinateur individuel.",
+    "Results": [
+      {
+        "Text": "16 bits",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "16",
+          "unit": "Bit"
+        },
+        "Start": 135,
+        "End": 141
+      }
+    ]
+  },
+  {
+    "Input": "le Jiotto caspita ' ' peut fonctionner(courir) à plus de 188 miles a l'heure, un porte-parole d'entreprise a dit.",
+    "Results": [
+      {
+        "Text": "188 miles a l'heure",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "188",
+          "unit": "Miles par heure"
+        },
+        "Start": 57,
+        "End": 75
+      }
+    ]
+  },
+  {
+    "Input": "La marine a installé(configuré) un hélicoptère posant la zone juste 100 mètres d'une salle d'opération mobile, juste à la périphérie de Bagdad.",
+    "Results": [
+      {
+        "Text": "100 mètres",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "100",
+          "unit": "Mètres"
+        },
+        "Start": 68,
+        "End": 77
+      }
+    ]
+  },
+  {
+    "Input": "Caltrans planifie d'ajouter un deuxième niveau pour des bus et des co-voiturages au-dessus de la médiane d'une période 2,5-km de l'autoroute de port juste au sud de Los Angeles, près du mémorial le Colisée.",
+    "Results": [
+      {
+        "Text": "2,5-km",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2,5",
+          "unit": "Kilomètres"
+        },
+        "Start": 119,
+        "End": 124
+      }
+    ]
+  },
+  {
+    "Input": "Sur mon énergie(promenade en voiture) de quatre mi pour cultiver le siège social chaque matin, je conduis(roule) par quatre autres maisons vides.",
+    "Results": [
+      {
+        "Text": "quatre mi",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "4",
+          "unit": "Mile"
+        },
+        "Start": 41,
+        "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "Nous sommes insultés, a dit langa du siège social catholique grec, nord-ouest environ de 325 kilomètres de Bucarest.",
+    "Results": [
+      {
+        "Text": "325 kilomètres",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "325",
+          "unit": "Kilomètres"
+        },
+        "Start": 89,
+        "End": 102
+      }
+    ]
+  },
+  {
+    "Input": "Rotich est un minuscule (5 millimètres",
+    "Results": [
+      {
+        "Text": "5 millimètres",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "5",
+          "unit": "Millimètres"
+        },
+        "Start": 25,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "40 centimètres) 28 - l'année - vieux qui n'a pas commencé à fonctionner(courir) sérieusement jusqu'à il y a trois ans et n'avaient pas rivalisé à l'intérieur jusqu'à ce mois.",
+    "Results": [
+      {
+        "Text": "40 centimètres",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "40",
+          "unit": "Centimètres"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "Le parc de circuit (le Minnesota) dans shakopee est un 1/4 kilomètre a pavé ovale.",
+    "Results": [
+      {
+        "Text": "1/4 kilomètre",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "0,25",
+          "unit": "Kilomètres"
+        },
+        "Start": 55,
+        "End": 67
+      }
+    ]
+  },
+  {
+    "Input": "Castlecrag la montagne est placé(localisé) au sud de lac de douves, 1,6 km à l'ouest de mont(support) frink le long de la même ligne d'arête.",
+    "Results": [
+      {
+        "Text": "1,6 km",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1,6",
+          "unit": "Kilomètres"
+        },
+        "Start": 68,
+        "End": 73
+      }
+    ]
+  },
+  {
+    "Input": "Les collines javadi sont placées(localisées) environ 17 km d'ambur.",
+    "Results": [
+      {
+        "Text": "17 km",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "17",
+          "unit": "Kilomètres"
+        },
+        "Start": 53,
+        "End": 57
+      }
+    ]
+  },
+  {
+    "Input": "Après le lac Michigan tournant près de exposition pendant deux heures, commandant Hugo eckener a posé le dirigeable de 776 mètres à curtiss voisin - wright aéroport dans glenview.",
+    "Results": [
+      {
+        "Text": "776 mètres",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "776",
+          "unit": "Mètres"
+        },
+        "Start": 119,
+        "End": 128
+      }
+    ]
+  },
+  {
+    "Input": "échange avec la autoroute) 35 et la autoroute) 115 à Lindsay et peterborough (quitte 436) des mensonges 500 mètres à est de route de Bennett.",
+    "Results": [
+      {
+        "Text": "500 mètres",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "500",
+          "unit": "Mètres"
+        },
+        "Start": 104,
+        "End": 113
+      }
+    ]
+  },
+  {
+    "Input": "En 1995 le canon a présenté la première lentille slr disponible dans le commerce avec la stabilisation d'image interne, ef 75 - 300mm f / 4 - 5. 6 est usm.",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "300mm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "300",
+          "unit": "Millimètres"
+        },
+        "Start": 128,
+        "End": 132
+      }
+    ]
+  },
+  {
+    "Input": "Les armements de sterling de dagenham, Essex a produit un kit de conversion comprenant un nouveau 7,62mm le baril, le magazine, extracteur et éjecteur pour la vente commerciale.",
+    "Results": [
+      {
+        "Text": "7,62mm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "7,62",
+          "unit": "Millimètres"
+        },
+        "Start": 98,
+        "End": 103
+      },
+      {
+        "Text": "baril",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": null,
+          "unit": "Baril"
+        },
+        "Start": 108,
+        "End": 112
+      }
+    ]
+  },
+  {
+    "Input": "Le projet coûte 46 $. 8 millions et est destiné pour stimuler l'entreprise ' s la capacité de production de 25 % à 34500 tonnes métriques de cathode de cuivre une année.",
+    "Results": [
+      {
+        "Text": "34500 tonnes métriques",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "34500",
+          "unit": "Tonne métrique"
+        },
+        "Start": 115,
+        "End": 136
+      }
+    ]
+  },
+  {
+    "Input": "Acier canadien - la production de lingot a totalisé 291890 tonnes métriques la semaine fini le 7 octobre, en haut 14. 8 % de la semaine précédente ' s le total de, la statistique le Canada, une agence fédérale, a dit.",
+    "Results": [
+      {
+        "Text": "291890 tonnes métriques",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "291890",
+          "unit": "Tonne métrique"
+        },
+        "Start": 52,
+        "End": 74
+      }
+    ]
+  },
+  {
+    "Input": "Les panthères de la Floride vivent dans des gammes domestiques entre 190 km2.",
+    "Results": [
+      {
+        "Text": "190 km2",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "190",
+          "unit": "Kilomètre carré"
+        },
+        "Start": 69,
+        "End": 75
+      }
+    ]
+  },
+  {
+    "Input": "Une t.métrique est égale à 2.204,62 livres.",
+    "Results": [
+      {
+        "Text": "2.204,62 livres",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2204,62",
+          "unit": "Livre"
+        },
+        "Start": 27,
+        "End": 41
+      }
+    ]
+  }
+]

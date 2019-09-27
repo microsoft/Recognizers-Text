@@ -1,0 +1,128 @@
+[
+  {
+    "Input": "¡Por supuesto!",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Por supuesto",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "No lo creo. no.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "No",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Creo que eso funcionaría así que sí lo haré.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "sí",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.4666666666666667
+        }
+      }
+    ]
+  },
+  {
+    "Input": "No. Dije el 4 de Julio",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "No",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sí ... dije sin cebollas",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Sí",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "¡Dije que NO, en vez de sí!",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "NO",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.48571428571428571
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sí . dije que no",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Sí",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌 Está bien",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌👌👌",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
+  }
+]

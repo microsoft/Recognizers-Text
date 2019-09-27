@@ -1,0 +1,1466 @@
+[
+  {
+    "Input": "Ich bin an Ostern 2020 wieder zurück",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Ostern 2020",
+        "Type": "date",
+        "Value": {
+          "Timex": "2020-04-12",
+          "FutureResolution": {
+            "date": "2020-04-12"
+          },
+          "PastResolution": {
+            "date": "2020-04-12"
+          }
+        },
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Weiberfastnacht 2019",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Weiberfastnacht 2019",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-02-28",
+          "FutureResolution": {
+            "date": "2019-02-28"
+          },
+          "PastResolution": {
+            "date": "2019-02-28"
+          }
+        },
+        "Start": 20,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Weiberfastnacht",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Weiberfastnacht",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2017-02-23"
+          },
+          "PastResolution": {
+            "date": "2016-02-04"
+          }
+        },
+        "Start": 20,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Karneval",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Karneval",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2017-02-26"
+          },
+          "PastResolution": {
+            "date": "2016-02-07"
+          }
+        },
+        "Start": 20,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Karneval 2017",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Karneval 2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-02-26",
+          "FutureResolution": {
+            "date": "2017-02-26"
+          },
+          "PastResolution": {
+            "date": "2017-02-26"
+          }
+        },
+        "Start": 20,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Aschermittwoch",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Aschermittwoch",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2017-03-01"
+          },
+          "PastResolution": {
+            "date": "2016-02-10"
+          }
+        },
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Aschermittwoch 2019",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Aschermittwoch 2019",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-03-06",
+          "FutureResolution": {
+            "date": "2019-03-06"
+          },
+          "PastResolution": {
+            "date": "2019-03-06"
+          }
+        },
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Palmensonntag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Palmensonntag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2017-04-09"
+          },
+          "PastResolution": {
+            "date": "2016-03-20"
+          }
+        },
+        "Start": 20,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Palmensonntag 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Palmensonntag 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-03-25",
+          "FutureResolution": {
+            "date": "2018-03-25"
+          },
+          "PastResolution": {
+            "date": "2018-03-25"
+          }
+        },
+        "Start": 20,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Karfreitag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Karfreitag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2017-04-14"
+          },
+          "PastResolution": {
+            "date": "2016-03-25"
+          }
+        },
+        "Start": 20,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Karfreitag 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Karfreitag 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-03-30",
+          "FutureResolution": {
+            "date": "2018-03-30"
+          },
+          "PastResolution": {
+            "date": "2018-03-30"
+          }
+        },
+        "Start": 20,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Christi Himmelfahrt",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Christi Himmelfahrt",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2017-05-25"
+          },
+          "PastResolution": {
+            "date": "2016-05-05"
+          }
+        },
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Christi Himmelfahrt 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Christi Himmelfahrt 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-05-10",
+          "FutureResolution": {
+            "date": "2018-05-10"
+          },
+          "PastResolution": {
+            "date": "2018-05-10"
+          }
+        },
+        "Start": 20,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am Pfingstsonntag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Pfingstsonntag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2017-06-04"
+          },
+          "PastResolution": {
+            "date": "2016-05-15"
+          }
+        },
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am Pfingstsonntag 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Pfingstsonntag 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-05-20",
+          "FutureResolution": {
+            "date": "2018-05-20"
+          },
+          "PastResolution": {
+            "date": "2018-05-20"
+          }
+        },
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Pfingstmontag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Pfingstmontag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2017-06-05"
+          },
+          "PastResolution": {
+            "date": "2016-05-16"
+          }
+        },
+        "Start": 20,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Pfingstmontag 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Pfingstmontag 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-05-21",
+          "FutureResolution": {
+            "date": "2018-05-21"
+          },
+          "PastResolution": {
+            "date": "2018-05-21"
+          }
+        },
+        "Start": 20,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Fronleichnam",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Fronleichnam",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2017-06-15"
+          },
+          "PastResolution": {
+            "date": "2016-05-26"
+          }
+        },
+        "Start": 20,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Fronleichnam 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Fronleichnam 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-05-31",
+          "FutureResolution": {
+            "date": "2018-05-31"
+          },
+          "PastResolution": {
+            "date": "2018-05-31"
+          }
+        },
+        "Start": 20,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Rosenmontag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Rosenmontag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2017-02-27"
+          },
+          "PastResolution": {
+            "date": "2016-02-08"
+          }
+        },
+        "Start": 20,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Rosenmontag 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Rosenmontag 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-02-12",
+          "FutureResolution": {
+            "date": "2018-02-12"
+          },
+          "PastResolution": {
+            "date": "2018-02-12"
+          }
+        },
+        "Start": 20,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Fastnacht",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Fastnacht",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2017-02-28"
+          },
+          "PastResolution": {
+            "date": "2016-02-09"
+          }
+        },
+        "Start": 20,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Fastnacht 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Fastnacht 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-02-13",
+          "FutureResolution": {
+            "date": "2018-02-13"
+          },
+          "PastResolution": {
+            "date": "2018-02-13"
+          }
+        },
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Gründonnerstag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Gründonnerstag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2017-04-13"
+          },
+          "PastResolution": {
+            "date": "2016-03-24"
+          }
+        },
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Gründonnerstag 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Gründonnerstag 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-03-29",
+          "FutureResolution": {
+            "date": "2018-03-29"
+          },
+          "PastResolution": {
+            "date": "2018-03-29"
+          }
+        },
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Himmelfahrt",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Himmelfahrt",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2017-04-13"
+          },
+          "PastResolution": {
+            "date": "2016-03-24"
+          }
+        },
+        "Start": 20,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Himmelfahrt 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Himmelfahrt 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-03-29",
+          "FutureResolution": {
+            "date": "2018-03-29"
+          },
+          "PastResolution": {
+            "date": "2018-03-29"
+          }
+        },
+        "Start": 20,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Volkstrauertag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Volkstrauertag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2016-11-13"
+          },
+          "PastResolution": {
+            "date": "2015-11-15"
+          }
+        },
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Volkstrauertag 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Volkstrauertag 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-11-18",
+          "FutureResolution": {
+            "date": "2018-11-18"
+          },
+          "PastResolution": {
+            "date": "2018-11-18"
+          }
+        },
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am Buß- und Bettag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Buß- und Bettag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2016-11-16"
+          },
+          "PastResolution": {
+            "date": "2015-11-18"
+          }
+        },
+        "Start": 20,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Buß- und Bettag 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Buß- und Bettag 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-11-21",
+          "FutureResolution": {
+            "date": "2018-11-21"
+          },
+          "PastResolution": {
+            "date": "2018-11-21"
+          }
+        },
+        "Start": 20,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Totensonntag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Totensonntag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2016-11-20"
+          },
+          "PastResolution": {
+            "date": "2015-11-22"
+          }
+        },
+        "Start": 20,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Totensonntag 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Totensonntag 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-11-25",
+          "FutureResolution": {
+            "date": "2018-11-25"
+          },
+          "PastResolution": {
+            "date": "2018-11-25"
+          }
+        },
+        "Start": 20,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am erster Advent",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "erster Advent",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2015-11-29"
+          }
+        },
+        "Start": 20,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am erster Advent 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "erster Advent 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-12-02",
+          "FutureResolution": {
+            "date": "2018-12-02"
+          },
+          "PastResolution": {
+            "date": "2018-12-02"
+          }
+        },
+        "Start": 20,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am 1. Advent",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1. Advent",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2015-11-29"
+          }
+        },
+        "Start": 20,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am 1. Advent 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1. Advent 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-12-02",
+          "FutureResolution": {
+            "date": "2018-12-02"
+          },
+          "PastResolution": {
+            "date": "2018-12-02"
+          }
+        },
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am zweiten Advent",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "zweiten Advent",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2016-12-04"
+          },
+          "PastResolution": {
+            "date": "2015-12-06"
+          }
+        },
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am zweiten Advent 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "zweiten Advent 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-12-09",
+          "FutureResolution": {
+            "date": "2018-12-09"
+          },
+          "PastResolution": {
+            "date": "2018-12-09"
+          }
+        },
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am 2. Advent",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2. Advent",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2016-12-04"
+          },
+          "PastResolution": {
+            "date": "2015-12-06"
+          }
+        },
+        "Start": 20,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am 2. Advent 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2. Advent 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-12-09",
+          "FutureResolution": {
+            "date": "2018-12-09"
+          },
+          "PastResolution": {
+            "date": "2018-12-09"
+          }
+        },
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am 3. Advent",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3. Advent",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2016-12-11"
+          },
+          "PastResolution": {
+            "date": "2015-12-13"
+          }
+        },
+        "Start": 20,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am 3. Advent 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3. Advent 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-12-16",
+          "FutureResolution": {
+            "date": "2018-12-16"
+          },
+          "PastResolution": {
+            "date": "2018-12-16"
+          }
+        },
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am dritter Advent",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "dritter Advent",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2016-12-11"
+          },
+          "PastResolution": {
+            "date": "2015-12-13"
+          }
+        },
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am dritter Advent 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "dritter Advent 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-12-16",
+          "FutureResolution": {
+            "date": "2018-12-16"
+          },
+          "PastResolution": {
+            "date": "2018-12-16"
+          }
+        },
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am 4. Advent",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4. Advent",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2016-12-18"
+          },
+          "PastResolution": {
+            "date": "2015-12-20"
+          }
+        },
+        "Start": 20,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am 4. Advent 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4. Advent 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-12-23",
+          "FutureResolution": {
+            "date": "2018-12-23"
+          },
+          "PastResolution": {
+            "date": "2018-12-23"
+          }
+        },
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am vierter Advent",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "vierter Advent",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2016-12-18"
+          },
+          "PastResolution": {
+            "date": "2015-12-20"
+          }
+        },
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am vierter Advent 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "vierter Advent 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-12-23",
+          "FutureResolution": {
+            "date": "2018-12-23"
+          },
+          "PastResolution": {
+            "date": "2018-12-23"
+          }
+        },
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am schweizer Buß- und Bettag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "schweizer Buß- und Bettag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2017-09-17"
+          },
+          "PastResolution": {
+            "date": "2016-09-18"
+          }
+        },
+        "Start": 20,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "An Ostern bin ich wieder zurück.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Ostern",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2017-04-16"
+          },
+          "PastResolution": {
+            "date": "2016-03-27"
+          }
+        },
+        "Start": 3,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Ich freue mich schon auf Weihnachten.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Weihnachten",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        },
+        "Start": 25,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Silvester wird eine tolle Feier.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Silvester",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2016-12-31"
+          },
+          "PastResolution": {
+            "date": "2015-12-31"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Am Vatertag machen wir für gewöhnlich nichts besonderes.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Vatertag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX",
+          "FutureResolution": {
+            "date": "2017-05-25"
+          },
+          "PastResolution": {
+            "date": "2016-05-05"
+          }
+        },
+        "Start": 3,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Vatertag 2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Vatertag 2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-05-14",
+          "FutureResolution": {
+            "date": "2015-05-14"
+          },
+          "PastResolution": {
+            "date": "2015-05-14"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Wann ist Vatertag 2019?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Vatertag 2019",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-05-30",
+          "FutureResolution": {
+            "date": "2019-05-30"
+          },
+          "PastResolution": {
+            "date": "2019-05-30"
+          }
+        },
+        "Start": 9,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Wann ist Vatertag im Jahr 2019?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Vatertag im Jahr 2019",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-05-30",
+          "FutureResolution": {
+            "date": "2019-05-30"
+          },
+          "PastResolution": {
+            "date": "2019-05-30"
+          }
+        },
+        "Start": 9,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Wann ist Muttertag im Jahr 2019?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Muttertag im Jahr 2019",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-05-12",
+          "FutureResolution": {
+            "date": "2019-05-12"
+          },
+          "PastResolution": {
+            "date": "2019-05-12"
+          }
+        },
+        "Start": 9,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "An Mariä Himmelfahrt haben wir Bayern frei.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Mariä Himmelfahrt",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-08-15",
+          "FutureResolution": {
+            "date": "2017-08-15"
+          },
+          "PastResolution": {
+            "date": "2016-08-15"
+          }
+        },
+        "Start": 3,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Was machst du am Tag der deutschen Einheit?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Tag der deutschen Einheit",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-03",
+          "FutureResolution": {
+            "date": "2017-10-03"
+          },
+          "PastResolution": {
+            "date": "2016-10-03"
+          }
+        },
+        "Start": 17,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Was machst du an Ostermontag 2017?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Ostermontag 2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-04-17",
+          "FutureResolution": {
+            "date": "2017-04-17"
+          },
+          "PastResolution": {
+            "date": "2017-04-17"
+          }
+        },
+        "Start": 17,
+        "Length": 16
+      }
+    ]
+  }
+]

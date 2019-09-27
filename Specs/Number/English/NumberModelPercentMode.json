@@ -1,0 +1,54 @@
+[
+  {
+    "Input": "one out of three",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 11,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "1 in twenty-one",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "twenty-one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21"
+        },
+        "Start": 5,
+        "End": 14
+      }
+    ]
+  }
+]

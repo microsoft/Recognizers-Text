@@ -19,6 +19,14 @@ class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         return self._dmy_date_format
 
     @property
+    def options(self):
+        return self._options
+
+    @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
+
+    @property
     def simple_cases_regex(self) -> List[Pattern]:
         return self._simple_cases_regex
 
@@ -77,6 +85,7 @@ class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
             SpanishDateTime.BetweenRegex)
         self._token_before_date = SpanishDateTime.TokenBeforeDate
         self._pure_number_regex = [SpanishDateTime.PureNumFromTo, SpanishDateTime.PureNumFromTo]
+        self._options = DateTimeOptions.NONE
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)

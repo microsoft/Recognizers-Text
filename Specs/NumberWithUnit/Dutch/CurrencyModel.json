@@ -1,0 +1,389 @@
+[
+  {
+    "Input": "Hey, het gaat $4,25 kosten en 32 is het aantal dat ik wil afnemen!",
+    "Results": [
+      {
+        "Text": "$4,25",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "4,25"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het bedrag is 5 euro 50",
+    "Results": [
+      {
+        "Text": "5 euro 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "5,5"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het bedrag is vijf euro vijftig",
+    "Results": [
+      {
+        "Text": "vijf euro vijftig",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "5,5"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het bedrag is vijf euro",
+    "Results": [
+      {
+        "Text": "vijf euro",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "5"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Hey, het gaat €4,25 kosten en 32 is het aantal dat ik wil afnemen!",
+    "Results": [
+      {
+        "Text": "€4,25",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "4,25"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het bedrag is 3 euro en 50 cent",
+    "Results": [
+      {
+        "Text": "3 euro en 50 cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "3,5"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik vond laatst een cent op de grond",
+    "Results": [
+      {
+        "Text": "een cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Cent",
+          "value": "1"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Een broodje kost gemiddeld € 2,20",
+    "Results": [
+      {
+        "Text": "€ 2,20",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "2,2"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "De internationale symbolen voor munteenheden kunnen voor of achter het bedrag staan (bijvoorbeeld 200 EUR, EUR 500). In Nederland is het gebruikelijk de muntcode voor het bedrag te zetten, in Vlaanderen erachter.",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "200 EUR",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "200"
+        }
+      },
+      {
+        "Text": "EUR 500",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "500"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Voor negatieve bedragen is het aan te bevelen € -12 te schrijven.",
+    "Results": [
+      {
+        "Text": "€ -12",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "-12"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " Hij is me nog 24 euro schuldig",
+    "Results": [
+      {
+        "Text": "24 euro",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "24"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Hij is me nog € 24,- schuldig.",
+    "Results": [
+      {
+        "Text": "€ 24",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "24"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Hij is me nog een tientje schuldig.",
+    "Results": [
+      {
+        "Text": "tientje",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "10"
+        }
+      }
+    ],
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Een kwartje is 25 cent.",
+    "Results": [
+      {
+        "Text": "kwartje",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Netherlands guilder",
+          "value": "0,25"
+        }
+      },
+      {
+        "Text": "25 cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Cent",
+          "value": "0,25"
+        }
+      }
+    ],
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Een dubbeltje is 10 cent.",
+    "Results": [
+      {
+        "Text": "dubbeltje",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Netherlands guilder",
+          "value": "0,1"
+        }
+      },
+      {
+        "Text": "10 cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Cent",
+          "value": "0,1"
+        }
+      }
+    ],
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Een stuiver is 5 cent.",
+    "Results": [
+      {
+        "Text": "stuiver",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Netherlands guilder",
+          "value": "0,05"
+        }
+      },
+      {
+        "Text": "5 cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Cent",
+          "value": "0,05"
+        }
+      }
+    ],
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het zal een kuai en vijf mao vijf kosten.",
+    "Results": [
+      {
+        "Text": "een kuai en vijf mao vijf",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "1,55"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Microsoft CEO Satya Nadella heeft bijna een derde van zijn aandelen in de leverancier verkocht voor 35,9 miljoen dollar. Nadella verkocht 328.000 van zijn Microsoft-aandelen, dat was zo'n 29,6 procent van de totale aandelen die hij bezit.",
+    "Results": [
+      {
+        "Text": "35,9 miljoen dollar",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "35900000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het Amerikaanse defensie-onderdeel darpa, oftewel Defense Advanced Research Projects Agency, gaat omgerekend iets meer dan 1,7 miljard euro stoppen in onderzoek naar ai.",
+    "Results": [
+      {
+        "Text": "1,7 miljard euro",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "1700000000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Amerikaanse defensie investeert 2 miljard amerikaanse dollar in onderzoek naar ai",
+    "Results": [
+      {
+        "Text": "2 miljard amerikaanse dollar",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "2000000000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "  Het gewicht van de zilverguldens tussen 1839 en 1954 heeft tot gevolg dat 1000 kg (= 1 ton) aan guldens een waarde heeft van 100.000 gulden. De gewichtseenheid krijgt daarmee een geldswaarde.",
+    "Results": [
+      {
+        "Text": "100.000 gulden",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Netherlands guilder",
+          "value": "100000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "De markka was verdeeld in 100 penni (Finse en Zweedse naam). 1 euro is 5,94573 markka waard.",
+    "Results": [
+      {
+        "Text": "markka",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Finnish markka",
+          "value": null
+        }
+      },
+      {
+        "Text": "100 penni",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Penni",
+          "value": "100"
+        }
+      },
+      {
+        "Text": "1 euro",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "5,94573 markka",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Finnish markka",
+          "value": "5,94573"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "De kosten zijn 100元!",
+    "Results": [
+      {
+        "Text": "100元",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Chinese yuan",
+          "value": "100",
+          "isoCurrency": "CNY"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  }
+]

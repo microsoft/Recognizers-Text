@@ -1,0 +1,184 @@
+[
+  {
+    "Input": "Prima!",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "Prima",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik denk het niet.",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "niet",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik denk dat het wel gaat werken, dus ja ik zal het doen.",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "ja",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.44615384615384618
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nee, ik zei 4 juli.",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "Nee",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.52
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ja... Ik heb dat nooit gezegd",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "Ja",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik zei NEE in plaats van ja!",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "NEE",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.48571428571428571
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ja. Ik zei nee",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "Ja",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌 Dat is ok",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "👌",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌👌👌",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "👌",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga akkoord",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "akkoord",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga niet akkoord",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "niet",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Dat is vanzelfsprekend",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "vanzelfsprekend",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Natuurlijk gaan we dat doen!",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "Natuurlijk",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.52
+        }
+      }
+    ]
+  }
+]

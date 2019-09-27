@@ -1,0 +1,778 @@
+[
+  {
+    "Input": "são 180,25ml liquidos",
+    "Results": [
+      {
+        "Text": "180,25ml",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "180,25",
+          "unit": "Mililitro"
+        },
+        "Start": 4,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "sao 180ml líquidos",
+    "Results": [
+      {
+        "Text": "180ml",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "180",
+          "unit": "Mililitro"
+        },
+        "Start": 4,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": " 29km caminhando ",
+    "Results": [
+      {
+        "Text": "29km",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "29",
+          "unit": "Quilômetro"
+        },
+        "Start": 1,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "são ,25ml liquidos",
+    "Results": [
+      {
+        "Text": ",25ml",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "0,25",
+          "unit": "Mililitro"
+        },
+        "Start": 4,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "75ml",
+    "Results": [
+      {
+        "Text": "75ml",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "75",
+          "unit": "Mililitro"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "Su mayor inconveniente puede ser su espesor de 3 polegadas, lo suficientemente grande como para que un consultor lo describa como \"clunky\".",
+    "Results": [
+      {
+        "Text": "3 polegadas",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Polegada"
+        },
+        "Start": 47,
+        "End": 57
+      }
+    ]
+  },
+  {
+    "Input": "Se necesita más de 10 1/2 milhas de cable y alambre para conectar todo y 23 equipos",
+    "Results": [
+      {
+        "Text": "10 1/2 milhas",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10,5",
+          "unit": "Milha"
+        },
+        "Start": 19,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "Es lo que 1) explica por qué somos como nosotros mismos en lugar de Bo Jackson; 2) advierte que es posible ahogarse en un lago que promedia dois pés de profundidad; y 3) predice que 10.000 monos colocados ante 10.000 pianos producirían 1.118 melodías publicitables del rock'n'roll.",
+    "Results": [
+      {
+        "Text": "dois pés",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Pé"
+        },
+        "Start": 140,
+        "End": 147
+      }
+    ]
+  },
+  {
+    "Input": "El sr. Hulings se regodea que vendió todas sus acciones una semana antes de que el mercado se desplomara 190 puntos en oct. 13, y está utilizando el dinero para ayudar a comprar una granja de caballos de 45 acres.",
+    "Results": [
+      {
+        "Text": "45 acres",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "45",
+          "unit": "Acre"
+        },
+        "Start": 204,
+        "End": 211
+      }
+    ]
+  },
+  {
+    "Input": "Bartlett había levantado paredes sin ventanas (ladrillo, enrejado, seto) de ocho a dez pés de altura, convirtiendo sus interiores en una sombra stygiana de un día.",
+    "Results": [
+      {
+        "Text": "dez pés",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Pé"
+        },
+        "Start": 83,
+        "End": 89
+      }
+    ]
+  },
+  {
+    "Input": "'La administración no quiere sorpresas', comenta Jack Zaves, quien, como director de servicios de combustible de American Airlines, compra unos 2.400 milhões de galoes de combustible para aviones ao ano.",
+    "Results": [
+      {
+        "Text": "2.400 milhões de galoes",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2400000000",
+          "unit": "Galão"
+        },
+        "Start": 144,
+        "End": 166
+      }
+    ]
+  },
+  {
+    "Input": "Un refrigerador de agua de 10 galoes había caído no solo, empapando la alfombra roja.",
+    "Results": [
+      {
+        "Text": "10 galoes",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Galão"
+        },
+        "Start": 27,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "Cerca, seis delfines se divertirán en un acuario de agua salada de 1,5 milhoes de galões.",
+    "Results": [
+      {
+        "Text": "1,5 milhoes de galões",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1500000",
+          "unit": "Galão"
+        },
+        "Start": 67,
+        "End": 87
+      }
+    ]
+  },
+  {
+    "Input": "Y este bebé tiene más de duas libras.",
+    "Results": [
+      {
+        "Text": "duas libras",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Libra"
+        },
+        "Start": 25,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "No confío en las personas que no comen, dijo ms. Volokh, aunque ella misma dejó de comer el almuerzo hace unos años para bajar 25 libras.",
+    "Results": [
+      {
+        "Text": "25 libras",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "25",
+          "unit": "Libra"
+        },
+        "Start": 127,
+        "End": 135
+      }
+    ]
+  },
+  {
+    "Input": "Un tornado rugió através de un area de umas dez milhas de área, matando ao menos a catorce personas y convirtiendo decenas de hogares en escombros",
+    "Results": [
+      {
+        "Text": "dez milhas",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Milha"
+        },
+        "Start": 44,
+        "End": 53
+      }
+    ]
+  },
+  {
+    "Input": "Shell, una subsidiaria del grupo real holandés, se le permitirá exportar 0,9 bilhões de pés cúbicos, y el Golfo, una unidad de olympia & york developments ltd. se permitirá exportar",
+    "Results": [
+      {
+        "Text": "0,9 bilhões de pés cúbicos",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "900000000",
+          "unit": "Pé cúbico"
+        },
+        "Start": 73,
+        "End": 98
+      }
+    ]
+  },
+  {
+    "Input": "Ejércitos Tigrean ahora están 200 milhas ao norte de Addis Ababa, amenazando la ciudad de éstos, que cortaría la capital de Mengistu desde el puerto de Assab, a través del cual todos los combustibles y otros suministros llegan a Addis Ababa.",
+    "Results": [
+      {
+        "Text": "200 milhas",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "200",
+          "unit": "Milha"
+        },
+        "Start": 30,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "Dijo que una de las pc tomó un viaje de tres pes deslizándose por el suelo.",
+    "Results": [
+      {
+        "Text": "tres pes",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Pé"
+        },
+        "Start": 40,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "El núcleo de sus propiedades es de 190.000 metros quadrados de propiedad increíblemente caras en el distrito de Marunouchi, el centro financiero y de negocios de Tokyo, a menudo en broma llamada 'pueblo Mitsubishi'",
+    "Results": [
+      {
+        "Text": "190.000 metros quadrados",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "190000",
+          "unit": "Metro quadrado"
+        },
+        "Start": 35,
+        "End": 58
+      }
+    ]
+  },
+  {
+    "Input": "El satélite, construido por Hughes para la organización internacional de satélites de telecomunicaciones, forma parte de un contrato de 700 millones de dólares otorgado a Hughes en 1982 para desarrollar cinco satélites de tres toneladas.",
+    "Results": [
+      {
+        "Text": "tres toneladas",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Tonelada"
+        },
+        "Start": 222,
+        "End": 235
+      }
+    ]
+  },
+  {
+    "Input": "En un informe de 1996 sobre armas biológicas, el centro de estudios estratégicos e internacionales, una institución de investigación de políticas públicas en Washington, advirtió que era fácil para los posibles terroristas montar armas biológicas utilizando equipo comercial con una capacidad de 130 galoes.",
+    "Results": [
+      {
+        "Text": "130 galoes",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "130",
+          "unit": "Galão"
+        },
+        "Start": 296,
+        "End": 305
+      }
+    ]
+  },
+  {
+    "Input": "La recopilación de datos del departamento de comercio del grupo de comercio mostró que las importaciones de Agosto, el segundo mayor mensual del año, subieron un 5% respecto de las 1.458.000 toneladas de julio, pero por debajo del máximo del año pasado en junio de 1988.",
+    "Results": [
+      {
+        "Text": "1.458.000 toneladas",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1458000",
+          "unit": "Tonelada"
+        },
+        "Start": 181,
+        "End": 199
+      }
+    ]
+  },
+  {
+    "Input": "El 1 de noviembre, Singh tiró a unos seis pés de la taza",
+    "Results": [
+      {
+        "Text": "seis pés",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "6",
+          "unit": "Pé"
+        },
+        "Start": 37,
+        "End": 44
+      }
+    ]
+  },
+  {
+    "Input": "Una t.métrica es igual a 2.204,62 libras.",
+    "Results": [
+      {
+        "Text": "2.204,62 libras",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2204,62",
+          "unit": "Libra"
+        },
+        "Start": 25,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "Por lo que cuando el cultivo de psyllium del año que viene se coseche en marzo, puede ser menor que las 16.000 toneladas métricas de los últimos años, justo en la cresta del boom del psyllium.",
+    "Results": [
+      {
+        "Text": "16.000 toneladas métricas",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "16000",
+          "unit": "Tonelada métrica"
+        },
+        "Start": 104,
+        "End": 128
+      }
+    ]
+  },
+  {
+    "Input": "El 486 es el descendiente de una larga serie de chips Intel que comenzó a dominar el mercado desde que IBM eligió el chip de 16 bits 8088 para su primera computadora personal.",
+    "Results": [
+      {
+        "Text": "16 bits",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "16",
+          "unit": "bit"
+        },
+        "Start": 125,
+        "End": 131
+      }
+    ]
+  },
+  {
+    "Input": "El ''jiotto caspita'' puede funcionar a más de 188 milhas por hora, dijo un portavoz de la compañía.",
+    "Results": [
+      {
+        "Text": "188 milhas por hora",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "188",
+          "unit": "Milha por hora"
+        },
+        "Start": 47,
+        "End": 65
+      }
+    ]
+  },
+  {
+    "Input": "La marina de guerra ha instalado una zona de aterrizaje para helicópteros de apenas 100 metros en una sala de operaciones móvil, apenas en las cercanías de Bagdad.",
+    "Results": [
+      {
+        "Text": "100 metros",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "100",
+          "unit": "Metro"
+        },
+        "Start": 84,
+        "End": 93
+      }
+    ]
+  },
+  {
+    "Input": "Caltrans planea añadir una segunda cubierta para autobuses y las flotas de autos por encima de la mediana de un tramo de 2,5 milhas de la autopista Harbor, ao sul de Los Ángeles, cerca del coliseo conmemorativo.",
+    "Results": [
+      {
+        "Text": "2,5 milhas",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2,5",
+          "unit": "Milha"
+        },
+        "Start": 121,
+        "End": 130
+      }
+    ]
+  },
+  {
+    "Input": "Em minha viaje de quatro milhas a la sede de la granja cada mañana, conduje por otras quatro casas vacías.",
+    "Results": [
+      {
+        "Text": "quatro milhas",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "4",
+          "unit": "Milha"
+        },
+        "Start": 18,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "Fuimos insultados, dijo Langa desde el cuartel general católico griego, a unos 325 quilometro ao noroeste de Bucarest.",
+    "Results": [
+      {
+        "Text": "325 quilometro",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "325",
+          "unit": "Quilômetro"
+        },
+        "Start": 79,
+        "End": 92
+      }
+    ]
+  },
+  {
+    "Input": "Rotich es un pequeño (5 pés",
+    "Results": [
+      {
+        "Text": "5 pés",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "5",
+          "unit": "Pé"
+        },
+        "Start": 22,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "4 polegadas) de 28 años de edad que no comenzó a correr en serio hasta hace tres años y no había competido en el interior hasta este mes.",
+    "Results": [
+      {
+        "Text": "4 polegadas",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "4",
+          "unit": "Polegada"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "Raceway park (Minnesota) en Shakopee es un óvalo pavimentado de 1/4 de milha.",
+    "Results": [
+      {
+        "Text": "1/4 de milha",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "0,25",
+          "unit": "Milha"
+        },
+        "Start": 64,
+        "End": 75
+      }
+    ]
+  },
+  {
+    "Input": "Castlecrag montaña está situado ao sul do lago Moat, 1,6 km ao oeste del monte Frink a lo largo de la misma línea de cresta.",
+    "Results": [
+      {
+        "Text": "1,6 km",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1,6",
+          "unit": "Quilômetro"
+        },
+        "Start": 53,
+        "End": 58
+      }
+    ]
+  },
+  {
+    "Input": "Las colinas de Javadi se encuentran a unos 17 km de Ambur.",
+    "Results": [
+      {
+        "Text": "17 km",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "17",
+          "unit": "Quilômetro"
+        },
+        "Start": 43,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "Después de rodear el lago Michigan cerca de la exposición durante dos horas, el comandante Hugo Eckener aterrizó la aeronave de 776 pes en el cercano aeropuerto Curtiss-Wright en Glenview.",
+    "Results": [
+      {
+        "Text": "776 pes",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "776",
+          "unit": "Pé"
+        },
+        "Start": 128,
+        "End": 134
+      }
+    ]
+  },
+  {
+    "Input": "El intercambio con la carretera 35 y la carretera 115 a Lindsay y Peterborough (salida 436) se encuentra a 500 metros ao leste de la carretera Bennett.",
+    "Results": [
+      {
+        "Text": "500 metros",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "500",
+          "unit": "Metro"
+        },
+        "Start": 107,
+        "End": 116
+      }
+    ]
+  },
+  {
+    "Input": "Em 1995 a Cannon introduziu a primeira lente SLR disponível comercialmente com estabilização de imagem interna, 75 - 300 mm f / 4 - 5. 6 es usm.",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "300 mm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "300",
+          "unit": "Milímetro"
+        },
+        "Start": 117,
+        "End": 122
+      }
+    ]
+  },
+  {
+    "Input": "Los aspectos más destacados de los proyectos de ley son: -- una restricción de la cantidad de bienes raíces que una familia puede poseer, a 660 metros quadrados en las seis ciudades más grandes de la nación, pero más en ciudades pequeñas y áreas rurales.",
+    "Results": [
+      {
+        "Text": "660 metros quadrados",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "660",
+          "unit": "Metro quadrado"
+        },
+        "Start": 140,
+        "End": 159
+      }
+    ]
+  },
+  {
+    "Input": "El proyecto cuesta 46,8 millones de dólares, y está destinado a aumentar la capacidad de producción de la empresa en un 25% a 34.500 toneladas métricas de cátodos de cobre ao ano.",
+    "Results": [
+      {
+        "Text": "34.500 toneladas métricas",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "34500",
+          "unit": "Tonelada métrica"
+        },
+        "Start": 126,
+        "End": 150
+      }
+    ]
+  },
+  {
+    "Input": "La producción canadiense de lingotes de acero totalizó 291.890 toneladas métricas en la semana terminada el oct. 7, un 14,8% más que el total de la semana anterior, informó Statistics Canada, una agencia federal.",
+    "Results": [
+      {
+        "Text": "291.890 toneladas métricas",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "291890",
+          "unit": "Tonelada métrica"
+        },
+        "Start": 55,
+        "End": 80
+      }
+    ]
+  },
+  {
+    "Input": "Las panteras floridas viven en el hogar que se extiende por 190 km2.",
+    "Results": [
+      {
+        "Text": "190 km2",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "190",
+          "unit": "Quilômetro quadrado"
+        },
+        "Start": 60,
+        "End": 66
+      }
+    ]
+  },
+  {
+    "Input": "Un asteroide de uma milha de ancho nos golpea, en promedio, sólo una vez cada trescientos mil años.",
+    "Results": [
+      {
+        "Text": "uma milha",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1",
+          "unit": "Milha"
+        },
+        "Start": 16,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "Sin embargo, Premier incorporó el tren de potencia Nissan A12 (1.171 cc y 52 bhp) en lugar del motor Fiat original junto con una caja de cambios manual de Nissan.",
+    "Results": [
+      {
+        "Text": "1.171 cc",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1171",
+          "unit": "Centímetro cúbico"
+        },
+        "Start": 63,
+        "End": 70
+      }
+    ]
+  },
+  {
+    "Input": "En toda la industria, la producción de petróleo en este país se redujo en 500.000 barris diarios a [] barris nos primeiros oito meses deste año.",
+    "Results": [
+      {
+        "Text": "500.000 barris",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "500000",
+          "unit": "Barril"
+        },
+        "Start": 74,
+        "End": 87
+      },
+      {
+        "Text": "barris",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": null,
+          "unit": "Barril"
+        },
+        "Start": 102,
+        "End": 107
+      }
+    ]
+  },
+  {
+    "Input": "Sterling Armaments de Dagenham, Essex produjo un kit de conversión que comprende un nuevo barril de 7,62 mm, una revista, un extractor y un eyector para la venta comercial.",
+    "Results": [
+      {
+        "Text": "7,62 mm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "7,62",
+          "unit": "Milímetro"
+        },
+        "Start": 100,
+        "End": 106
+      },
+      {
+        "Text": "barril",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": null,
+          "unit": "Barril"
+        },
+        "Start": 90,
+        "End": 95
+      }
+    ]
+  },
+  {
+    "Input": "El 19 de mayo, la FDA comenzó a detener las setas chinas en latas de 68 oncas después de que más de 100 personas en Mississippi, Nueva York y Pennsylvania se enfermaron a comer hongos contaminados.",
+    "Results": [
+      {
+        "Text": "68 oncas",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "68",
+          "unit": "Onça"
+        },
+        "Start": 69,
+        "End": 76
+      }
+    ]
+  },
+  {
+    "Input": "El viaje de seis milhas de meu hotel ao aeropuerto que debería tardar 20 minutos, tardó más de tres horas.",
+    "Results": [
+      {
+        "Text": "seis milhas",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "6",
+          "unit": "Milha"
+        },
+        "Start": 12,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "2:00 pm",
+    "NotSupported": "java",
+    "Results": []
+  }
+]

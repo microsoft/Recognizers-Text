@@ -1,0 +1,818 @@
+[
+  {
+    "Input": "Tornerò adesso",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "adesso",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il prima possibile",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il prima possibile",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò proprio adesso",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "proprio adesso",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 15 alle 8:00",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "15 alle 8:00",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 15 alle 8:00:30",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "15 alle 8:00:30",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 15, 8pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "15, 8pm",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 04/21/2016, 8:00pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 04/21/2016, 8:00pm",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò 04/21/2016, 8:00:13pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "04/21/2016, 8:00:13pm",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 23 Ott alle sette",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 23 Ott alle sette",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 14 Ottobre 8:00am",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 14 Ottobre 8:00am",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 14 Ottobre 8:00:00am",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 14 Ottobre 8:00:00am",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 14 Ottobre, 8:00:01am",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 14 Ottobre, 8:00:01am",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò domani 8:00am",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "domani 8:00am",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò domani verso le 8:00am",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "domani verso le 8:00am",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò domani per le 8:00am",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "domani per le 8:00am",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò domani 8:00:05am",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "domani 8:00:05am",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il prossimo venerdì alle 3 e mezza",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "prossimo venerdì alle 3 e mezza",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 5 Maggio 2016, otto e 20 di sera",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 5 Maggio 2016, otto e 20 di sera",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 8pm del 15",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "8pm del 15",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle sette del 15",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "sette del 15",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 8pm della prossima domenica",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "8pm della prossima domenica",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 8pm di oggi",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "8pm di oggi",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle sette meno un quarto di domani",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "sette meno un quarto di domani",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 19:00, il 2016-12-22",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "19:00, il 2016-12-22",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle sette domani",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "sette domani",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò domani mattina alle 7",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "domani mattina alle 7",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 7:00 di domenica pomeriggio",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "7:00 di domenica pomeriggio",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle cinque e venti di domani mattina",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "cinque e venti di domani mattina",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 8:00, Ottobre 14",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "8:00, Ottobre 14",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 7, stamattina",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "7, stamattina",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 8pm di sera, Lunedì",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "8pm di sera, Lunedì",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 8pm di sera, 1 Gen",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "8pm di sera, 1 Gen",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 10pm stanotte",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "10pm stanotte",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 8am di stamattina",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "8am di stamattina",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 8pm di questa sera",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "8pm di questa sera",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò stanotte verso le 7",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "stanotte verso le 7",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò stamattina alle 7",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "stamattina alle 7",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò stamattina alle 7pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "stamattina alle 7pm",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò stamattina alle sette",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "stamattina alle sette",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò stamattina alle 7:00",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "stamattina alle 7:00",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò questa notte alle 7",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "questa notte alle 7",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò stanotte alle 7",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "stanotte alle 7",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "per 2 persone stanotte alle 9:30 pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "stanotte alle 9:30 pm",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "per 2 persone stanotte alle 9:30:31 pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "stanotte alle 9:30:31 pm",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò a fine giornata",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "fine giornata",
+        "Type": "datetime",
+        "Start": 10,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alla fine di domani",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "alla fine di domani",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alla fine di domenica",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "alla fine di domenica",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 2016-12-16T12:23:59",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "2016-12-16T12:23:59",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò in 5 ore",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "in 5 ore",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "vedo se sono disponibile per le 3pm di dom",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "3pm di dom",
+        "Type": "datetime",
+        "Start": 32,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Fissa un appuntamento per domani mattina alle 9.",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "domani mattina alle 9",
+        "Type": "datetime",
+        "Start": 26,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò domani mattina alle 9",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "domani mattina alle 9",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò domani alle 9",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "domani alle 9",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "questo venerdì all'una pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "questo venerdì all'una pm",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "AGGIUNGI PRANZO ALLE 12:30 PM IL VEN",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "12:30 PM IL VEN",
+        "Type": "datetime",
+        "Start": 21,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Aggiungi 649 stanotte a mezzanotte",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "stanotte a mezzanotte",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 1 Agosto alle 11 AM",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 1 Agosto alle 11 AM",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 1 Agosto alle 11 pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 1 Agosto alle 11 pm",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 1 Agosto alle 11 p.m.",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 1 Agosto alle 11 p.m.",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 25/02 alle 11 am",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 25/02 alle 11 am",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 6 Gen 2017 - 6:37am",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 6 Gen 2017 - 6:37am",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "16. Nov. 2016 10:38",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "16. Nov. 2016 10:38",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Partirò 1 giorno e 2 ore dopo",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "1 giorno e 2 ore dopo",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "L'ho incontrato 2 mesi, 1 giorno e 2 ore fa",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "2 mesi, 1 giorno e 2 ore fa",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Partirò 1 giorno e 30 minuti dopo",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "1 giorno e 30 minuti dopo",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via la mattina alle 9am",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "la mattina alle 9am",
+        "Type": "datetime",
+        "Start": 10,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via alle 9am di lunedì",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "9am di lunedì",
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via alle 9am il lunedì",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "9am il lunedì",
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 13
+      }
+    ]
+  }
+]

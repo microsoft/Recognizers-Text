@@ -1,0 +1,420 @@
+[
+  {
+    "Input": "Boek een kamer in Beijing tijd",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Beijing tijd",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+08:00",
+            "UtcOffsetMins": 480
+          }
+        },
+        "Start": 18,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Boek een kamer voor mij om UTC4:30",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "UTC4:30",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+04:30",
+            "UtcOffsetMins": 270
+          }
+        },
+        "Start": 27,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Reserveer een kamer om gmt-3",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "gmt-3",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-03:00",
+            "UtcOffsetMins": -180
+          }
+        },
+        "Start": 23,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Reserveer een kamer in de standaardtijd van afghanistan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "standaardtijd van afghanistan",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+04:30",
+            "UtcOffsetMins": 270
+          }
+        },
+        "Start": 26,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Reserveer een kamer in de middag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "in de middag",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+04:30",
+            "UtcOffsetMins": 270
+          }
+        },
+        "Start": 20,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "boek me een kamer rond utc 0",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "utc 0",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+00:00",
+            "UtcOffsetMins": 0
+          }
+        },
+        "Start": 23,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "boek me een kamer in PDST",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "PDST",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-07:00",
+            "UtcOffsetMins": -420
+          }
+        },
+        "Start": 21,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "boek me een kamer in AWDT",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "AWDT",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+09:00",
+            "UtcOffsetMins": 540
+          }
+        },
+        "Start": 21,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "boek me een kamer in COT",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "COT",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-05:00",
+            "UtcOffsetMins": -300
+          }
+        },
+        "Start": 21,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "boek me een kamer in hkt",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "hkt",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+08:00",
+            "UtcOffsetMins": 480
+          }
+        },
+        "Start": 21,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "boek me een kamer in pacific daylight saving time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "pacific daylight saving time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-07:00",
+            "UtcOffsetMins": -420
+          }
+        },
+        "Start": 21,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "boek me een kamer in austrialian western daylight tijd",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "austrialian western daylight tijd",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+09:00",
+            "UtcOffsetMins": 540
+          }
+        },
+        "Start": 21,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "boek me een kamer in austrialian west daylight tijd",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "austrialian west daylight tijd",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+09:00",
+            "UtcOffsetMins": 540
+          }
+        },
+        "Start": 21,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "boek me een kamer in colombia tijd",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "colombia tijd",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-05:00",
+            "UtcOffsetMins": -300
+          }
+        },
+        "Start": 21,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "boek me een kamer in hong kong tijd",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "hong kong tijd",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+08:00",
+            "UtcOffsetMins": 480
+          }
+        },
+        "Start": 21,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "boek me een kamer in aedt",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "aedt",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+11:00",
+            "UtcOffsetMins": 660
+          }
+        },
+        "Start": 21,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "boek me een kamer in PDT",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "PDT",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-07:00",
+            "UtcOffsetMins": -420
+          }
+        },
+        "Start": 21,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "boek me een kamer in TOST",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "TOST",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+14:00",
+            "UtcOffsetMins": 840
+          }
+        },
+        "Start": 21,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "boek me een kamer in pacific daylight tijd",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "pacific daylight tijd",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-07:00",
+            "UtcOffsetMins": -420
+          }
+        },
+        "Start": 21,
+        "Length": 21
+      }
+    ]
+  }
+]

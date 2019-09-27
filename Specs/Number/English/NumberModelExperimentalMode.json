@@ -1,0 +1,2559 @@
+[
+  {
+    "Input": "192.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "192"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "192.168.1.2",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "192"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "168",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "168"
+        },
+        "Start": 4,
+        "End": 6
+      },
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 8,
+        "End": 8
+      },
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 10,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "the 180.25ml liquid",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "the 180ml liquid",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": " 29km Road ",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": " the May 4th ",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "the .25ml liquid",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": ".08",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": ".08",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.08"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "an",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "a",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": ".23456000",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": ".23456000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.23456"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "4.800",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "4.800",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "4.8"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "one hundred and three and two thirds",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one hundred and three and two thirds",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "103.666666666667"
+        },
+        "Start": 0,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "sixteen",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "sixteen",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "16"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "two thirds",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "two thirds",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.666666666666667"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "one hundred and sixteen",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one hundred and sixteen",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "116"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "one hundred and six",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one hundred and six",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "106"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "one hundred and sixty-one",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one hundred and sixty-one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "161"
+        },
+        "Start": 0,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "a trillionth",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "a trillionth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-12"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "a hundred trillionths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "a hundred trillionths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-10"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": " half a  dozen",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "half a  dozen",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "6"
+        },
+        "Start": 1,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": " 3 dozens",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "3 dozens",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "36"
+        },
+        "Start": 1,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "a dozen",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "a dozen",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": " three dozens ",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "three dozens",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "36"
+        },
+        "Start": 1,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": " three hundred and two dozens",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "three hundred and two dozens",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "324"
+        },
+        "Start": 1,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "1,234,567",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1,234,567",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1234567"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1, 234, 567",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "234",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "234"
+        },
+        "Start": 3,
+        "End": 5
+      },
+      {
+        "Text": "567",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "567"
+        },
+        "Start": 8,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "9.2321312",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "9.2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "9.2321312"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": " -9.2321312",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "-9.2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "-9.2321312"
+        },
+        "Start": 1,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": " -1",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1"
+        },
+        "Start": 1,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "-4/5",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "-4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0.8"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "- 1 4/5",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "- 1 4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-1.8"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "three",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": " 123456789101231",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "123456789101231"
+        },
+        "Start": 1,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "-123456789101231",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-123456789101231"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": " -123456789101231",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-123456789101231"
+        },
+        "Start": 1,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "1",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "10k",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "10k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "10G",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "10g",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000000000"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "- 10  k",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "- 10  k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-10000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "2 million",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "2 million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2000000"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1 trillion",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1 trillion",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": " three ",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 1,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "one trillion",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one trillion",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "twenty-one trillion",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "twenty-one trillion",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000000"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "twenty-one trillion three hundred",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "twenty-one trillion three hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000300"
+        },
+        "Start": 0,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "twenty-one trillion and three hundred",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "twenty-one trillion and three hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000300"
+        },
+        "Start": 0,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "fifty - two",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "fifty - two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "fifty   two",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "fifty   two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "Three hundred  and  thirty one",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "three hundred  and  thirty one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "331"
+        },
+        "Start": 0,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "two hundred and two thousand",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "two hundred and two thousand",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "202000"
+        },
+        "Start": 0,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "two  thousand  and  two hundred",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "two  thousand  and  two hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2200"
+        },
+        "Start": 0,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": " 2.33 k",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "2.33 k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "2330"
+        },
+        "Start": 1,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": " two hundred point zero three",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "two hundred point zero three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "200.03"
+        },
+        "Start": 1,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": " two hundred point seventy-one",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "two hundred point seventy-one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "200.71"
+        },
+        "Start": 1,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "1e10",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1e10",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "10000000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "1.1^23",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1.1^23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "8.95430243255239"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": " 322 hundred ",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "322 hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "32200"
+        },
+        "Start": 1,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "seventy",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "seventy",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "70"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "fifty-two",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "fifty-two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "2  1/4",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "2  1/4",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2.25"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "3/4",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "3/4",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.75"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "one eighth",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one eighth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.125"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "five eighths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "five eighths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.625"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "a half",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "a half",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.5"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "three quarters",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "three quarters",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.75"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "twenty and three fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "twenty and three fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "20.6"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "twenty-three fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "twenty-three fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4.6"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "twenty and three and three fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "twenty and three and three fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "23.6"
+        },
+        "Start": 0,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "one million two thousand two hundred three fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one million two thousand two hundred three fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "200440.6"
+        },
+        "Start": 0,
+        "End": 48
+      }
+    ]
+  },
+  {
+    "Input": "one and a half",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one and a half",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1.5"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "one and a fourth",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one and a fourth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1.25"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "five and a quarter",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "five and a quarter",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "5.25"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "one hundred and three quarters",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one hundred and three quarters",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "100.75"
+        },
+        "Start": 0,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "a hundredth",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "a hundredth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.01"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "1.1^+23",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1.1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "8.95430243255239"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "2.5^-1",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "2.5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "0.4"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "-2500^-1",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "-2500^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-0.0004"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "-1.1^+23",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "-1.1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-8.95430243255239"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "-2.5^-1",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "-2.5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-0.4"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "-1.1^--23",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "-1.1^--23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-8.95430243255239"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "-127.32e13",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "-127.32e13",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-1.2732E+15"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "12.32e+14",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "12.32e+14",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "1.232E+15"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "-12e-1",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "-12e-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-1.2"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "1.2b",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1.2b",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1200000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "a fifth",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "a fifth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.2"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "a hundred thousand trillionths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "a hundred thousand trillionths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-07"
+        },
+        "Start": 0,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "one fifth",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one fifth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.2"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "three fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "three fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.6"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "twenty fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "twenty fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "three and a fifth",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "three and a fifth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "3.2"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "twenty one fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "twenty one fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4.2"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "a twenty-first",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "a twenty-first",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "one twenty-fifth",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one twenty-fifth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.04"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "three twenty-firsts",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "three twenty-firsts",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.142857142857143"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "three twenty firsts",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "three twenty firsts",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.142857142857143"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "twenty twenty fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "twenty twenty fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.8"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "one hundred and thirty fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one hundred and thirty fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26"
+        },
+        "Start": 0,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "one hundred thirty fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one hundred thirty fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2.85714285714286"
+        },
+        "Start": 0,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "one hundred thirty two fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one hundred thirty two fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "one hundred thirty-two fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one hundred thirty-two fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "one hundred and thirty-two fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one hundred and thirty-two fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "one hundred and thirty and two fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one hundred and thirty and two fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "130.4"
+        },
+        "Start": 0,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "one hundred thirty-fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one hundred thirty-fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2.85714285714286"
+        },
+        "Start": 0,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "one one hundred fifth",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one one hundred fifth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00952380952380952"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "one one hundred and fifth",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one one hundred and fifth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00952380952380952"
+        },
+        "Start": 0,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "one hundred one thousand fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one hundred one thousand fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0995024875621891"
+        },
+        "Start": 0,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "one over three",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one over three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "1 over twenty-one",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1 over twenty-one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "1 over one hundred and twenty one",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1 over one hundred and twenty one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00826446280991736"
+        },
+        "Start": 0,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "1 over three",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1 over three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "1 over 3",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1 over 3",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "one over 3",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one over 3",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "one over 20",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one over 20",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.05"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "one over twenty",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one over twenty",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.05"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "one over one hundred",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one over one hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.01"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "one over one hundred and twenty five",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one over one hundred and twenty five",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.008"
+        },
+        "Start": 0,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "ninety - five hundred fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ninety - five hundred fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1900"
+        },
+        "Start": 0,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Book a first class seat to seattle",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "The answer is negative ninety - five hundred fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "negative ninety - five hundred fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-1900"
+        },
+        "Start": 14,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "The answer is minus ninety - five hundred fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "minus ninety - five hundred fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-1900"
+        },
+        "Start": 14,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "The answer is minus one",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "minus one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1"
+        },
+        "Start": 14,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "The answer is minus one hundred thirty fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "minus one hundred thirty fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-2.85714285714286"
+        },
+        "Start": 14,
+        "End": 44
+      }
+    ]
+  },
+  {
+    "Input": "The answer is negative one over 20",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "negative one over 20",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0.05"
+        },
+        "Start": 14,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "The answer is minus five point five",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "minus five point five",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "-5.5"
+        },
+        "Start": 14,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "The answer is minus 5",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "minus 5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-5"
+        },
+        "Start": 14,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "one - fourth",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one - fourth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.25"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "one-eighth",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one-eighth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.125"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "five - eighths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "five - eighths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.625"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "ninety - five hundred-fifths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ninety - five hundred-fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1900"
+        },
+        "Start": 0,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "one out of three",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one out of three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "1 in twenty-one",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "twenty-one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21"
+        },
+        "Start": 5,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "five eighths of",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "five eighths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.625"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "1 234 567",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1 234 567",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1234567"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "40 000 is the same as 40 000",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "40 000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "40000"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "40 000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "40000"
+        },
+        "Start": 22,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "For now, China's population is 1 414 021 100.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1 414 021 100",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1414021100"
+        },
+        "Start": 31,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "423 0000 will be recognized as two numbers.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "423",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "423"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "0000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 4,
+        "End": 7
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 31,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "1 234 567.89 is a valid number format.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1 234 567.89",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1234567.89"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "zero is 0",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "zero",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "0",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 8,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "Any time to meet on 5/17/2018?",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "5"
+        },
+        "Start": 20,
+        "End": 20
+      },
+      {
+        "Text": "17",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "17"
+        },
+        "Start": 22,
+        "End": 23
+      },
+      {
+        "Text": "2018",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2018"
+        },
+        "Start": 25,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +1-222-2222/2222",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 20,
+        "End": 20
+      },
+      {
+        "Text": "222",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "222"
+        },
+        "Start": 22,
+        "End": 24
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2222"
+        },
+        "Start": 26,
+        "End": 29
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2222"
+        },
+        "Start": 31,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "I can give you 1M.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1m",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000"
+        },
+        "Start": 15,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "1m isn't a number.",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "I can give you 3 hundred and 21 yuan.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "3 hundred and 21",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "321"
+        },
+        "Start": 15,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "4 thousand 3 hundred and 21 is a valid number.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "4 thousand 3 hundred and 21",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4321"
+        },
+        "Start": 0,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "4 thousand 3 hundred and 0 are two valid numbers.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "4 thousand 3 hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4300"
+        },
+        "Start": 0,
+        "End": 19
+      },
+      {
+        "Text": "0",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 25,
+        "End": 25
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 31,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "4000 3 hundred and 21 are two valid numbers.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "4000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "4000"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "3 hundred and 21",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "321"
+        },
+        "Start": 5,
+        "End": 20
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 26,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "3 hundred and 2 hundred are two valid numbers.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "3 hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 8
+      },
+      {
+        "Text": "2 hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200"
+        },
+        "Start": 14,
+        "End": 22
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 28,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "3 hundred and 2.12 hundred are two valid numbers.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "3 hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 8
+      },
+      {
+        "Text": "2.12 hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "212"
+        },
+        "Start": 14,
+        "End": 25
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 31,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "3 hundred and negative one are two valid numbers.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "3 hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 8
+      },
+      {
+        "Text": "negative one",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1"
+        },
+        "Start": 14,
+        "End": 25
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 31,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "3 hundred and one is a valid numbers.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "3 hundred and one",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "301"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  }
+]

@@ -1,0 +1,948 @@
+[
+  {
+    "Input": "Meu telefone é 1 (877) 609-2233.",
+    "Results": [
+      {
+        "Text": "1 (877) 609-2233",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "1 (877) 609-2233",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +1 541-754-3010.",
+    "Results": [
+      {
+        "Text": "+1 541-754-3010",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+1 541-754-3010",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é (541) 754-3010.",
+    "Results": [
+      {
+        "Text": "(541) 754-3010",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(541) 754-3010",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 541-754-3010.",
+    "Results": [
+      {
+        "Text": "541-754-3010",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "541-754-3010",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +1-541-754-3010.",
+    "Results": [
+      {
+        "Text": "+1-541-754-3010",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+1-541-754-3010",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 1-541-754-3010.",
+    "Results": [
+      {
+        "Text": "1-541-754-3010",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "1-541-754-3010",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é (55) 3333-33333.",
+    "Results": [
+      {
+        "Text": "(55) 3333-33333",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(55) 3333-33333",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é (081) 3333-33333.",
+    "Results": [
+      {
+        "Text": "(081) 3333-33333",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(081) 3333-33333",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é ( 19 ) 38294427.",
+    "Results": [
+      {
+        "Text": "( 19 ) 38294427",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "( 19 ) 38294427",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é (19) 35831647.",
+    "Results": [
+      {
+        "Text": "(19) 35831647",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(19) 35831647",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é (21) 996205563.",
+    "Results": [
+      {
+        "Text": "(21) 996205563",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(21) 996205563",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é (21)99713-3601.",
+    "Results": [
+      {
+        "Text": "(21)99713-3601",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(21)99713-3601",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é (71)3019-9811.",
+    "Results": [
+      {
+        "Text": "(71)3019-9811",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(71)3019-9811",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 018 997821551.",
+    "Results": [
+      {
+        "Text": "018 997821551",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "018 997821551",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 21 995556144.",
+    "Results": [
+      {
+        "Text": "21 995556144",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "21 995556144",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 280930640.",
+    "Results": [
+      {
+        "Text": "280930640",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "280930640",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 92995299770.",
+    "Results": [
+      {
+        "Text": "92995299770",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "92995299770",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 972101245.",
+    "Results": [
+      {
+        "Text": "972101245",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "972101245",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +44 (0)7123 129683.",
+    "Results": [
+      {
+        "Text": "+44 (0)7123 129683",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44 (0)7123 129683",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +44 7123 123456.",
+    "Results": [
+      {
+        "Text": "+44 7123 123456",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44 7123 123456",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +44 7700900397.",
+    "Results": [
+      {
+        "Text": "+44 7700900397",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44 7700900397",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +447700 900 397.",
+    "Results": [
+      {
+        "Text": "+447700 900 397",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+447700 900 397",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 0044 07456934723.",
+    "Results": [
+      {
+        "Text": "0044 07456934723",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0044 07456934723",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 0044 07700 900873.",
+    "Results": [
+      {
+        "Text": "0044 07700 900873",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0044 07700 900873",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 004407624938475.",
+    "Results": [
+      {
+        "Text": "004407624938475",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "004407624938475",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 07098 785467.",
+    "Results": [
+      {
+        "Text": "07098 785467",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "07098 785467",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 07453 372 351.",
+    "Results": [
+      {
+        "Text": "07453 372 351",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "07453 372 351",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 07700 900873.",
+    "Results": [
+      {
+        "Text": "07700 900873",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "07700 900873",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 07700900095.",
+    "Results": [
+      {
+        "Text": "07700900095",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "07700900095",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 07877 954 457.",
+    "Results": [
+      {
+        "Text": "07877 954 457",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "07877 954 457",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 07893 564893.",
+    "Results": [
+      {
+        "Text": "07893 564893",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "07893 564893",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +49 171 1234567.",
+    "Results": [
+      {
+        "Text": "+49 171 1234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 171 1234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +49 1741234567.",
+    "Results": [
+      {
+        "Text": "+49 1741234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 1741234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +49 176 12345678.",
+    "Results": [
+      {
+        "Text": "+49 176 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 176 12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +49 176- 12345678.",
+    "Results": [
+      {
+        "Text": "+49 176- 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 176- 12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +49 176-12345678.",
+    "Results": [
+      {
+        "Text": "+49 176-12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 176-12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +49 176/ 12345678.",
+    "Results": [
+      {
+        "Text": "+49 176/ 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 176/ 12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +49 176/12345678.",
+    "Results": [
+      {
+        "Text": "+49 176/12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 176/12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +49 17612345678.",
+    "Results": [
+      {
+        "Text": "+49 17612345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 17612345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +491731234567.",
+    "Results": [
+      {
+        "Text": "+491731234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+491731234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +49176 12345678.",
+    "Results": [
+      {
+        "Text": "+49176 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49176 12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +49176- 12345678.",
+    "Results": [
+      {
+        "Text": "+49176- 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49176- 12345678",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é +49176/ 12345678.",
+    "Results": [
+      {
+        "Text": "+49176/ 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49176/ 12345678",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 00 49 176 12345678.",
+    "Results": [
+      {
+        "Text": "00 49 176 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00 49 176 12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 00 49 17612345678.",
+    "Results": [
+      {
+        "Text": "00 49 17612345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00 49 17612345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 0049 171 1234567.",
+    "Results": [
+      {
+        "Text": "0049 171 1234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0049 171 1234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 0049 176 12345678.",
+    "Results": [
+      {
+        "Text": "0049 176 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0049 176 12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 00491731234567.",
+    "Results": [
+      {
+        "Text": "00491731234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00491731234567",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 0049176 12345678.",
+    "Results": [
+      {
+        "Text": "0049176 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0049176 12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 004917612345678.",
+    "Results": [
+      {
+        "Text": "004917612345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "004917612345678",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 0171 1234567.",
+    "Results": [
+      {
+        "Text": "0171 1234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0171 1234567",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 01731234567.",
+    "Results": [
+      {
+        "Text": "01731234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "01731234567",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 0176 -12345678.",
+    "Results": [
+      {
+        "Text": "0176 -12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176 -12345678",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 0176 12 34 56 78.",
+    "Results": [
+      {
+        "Text": "0176 12 34 56 78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176 12 34 56 78",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 0176 123 456 78.",
+    "Results": [
+      {
+        "Text": "0176 123 456 78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176 123 456 78",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 0176 1234 5678.",
+    "Results": [
+      {
+        "Text": "0176 1234 5678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176 1234 5678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 0176 12345678.",
+    "Results": [
+      {
+        "Text": "0176 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176 12345678",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 0176- 12345678.",
+    "Results": [
+      {
+        "Text": "0176- 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176- 12345678",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 0176-12345678.",
+    "Results": [
+      {
+        "Text": "0176-12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176-12345678",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 0176/ 12345678.",
+    "Results": [
+      {
+        "Text": "0176/ 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176/ 12345678",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 0176/12345678.",
+    "Results": [
+      {
+        "Text": "0176/12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176/12345678",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 017612345678.",
+    "Results": [
+      {
+        "Text": "017612345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "017612345678",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 622 15 31 23.",
+    "Results": [
+      {
+        "Text": "622 15 31 23",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "622 15 31 23",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 632 139823.",
+    "Results": [
+      {
+        "Text": "632 139823",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "632 139823",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 679 124 898.",
+    "Results": [
+      {
+        "Text": "679 124 898",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "679 124 898",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 652123123.",
+    "Results": [
+      {
+        "Text": "652123123",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "652123123",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 3333/2/6666.",
+    "Results": [
+      {
+        "Text": "3333/2/6666",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "3333/2/6666",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meu telefone é 1000-1-999.",
+    "Results": [
+      {
+        "Text": "1000-1-999",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "1000-1-999",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "s666666666 é uma sequência de caracteres.",
+    "Results": []
+  },
+  {
+    "Input": "666666666s é uma sequência de caracteres.",
+    "Results": []
+  },
+  {
+    "Input": "s666666666s é uma sequência de caracteres.",
+    "Results": []
+  },
+  {
+    "Input": "666666666S é uma sequência de caracteres, mas não um telefone.",
+    "Results": []
+  },
+  {
+    "Input": "3333*2=6666 não parece um número telefônico.",
+    "Results": []
+  },
+  {
+    "Input": "3333/2=6666 não parece um número telefônico.",
+    "Results": []
+  },
+  {
+    "Input": "1000-1=999 não parece um número telefônico.",
+    "Results": []
+  },
+  {
+    "Input": "(456 (4)) 345 não parece um número telefônico.",
+    "Results": []
+  },
+  {
+    "Input": "(081)  342-86221d não parece um número telefônico.",
+    "Results": []
+  },
+  {
+    "Input": "19) 35831647 parece que tem um parenteses faltando antes do código de área",
+    "Results": [
+      {
+        "Text": "35831647",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "35831647",
+          "score": "0.3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "(19 35831647 parece que tem um parenteses faltando depois do código de área",
+    "Results": [
+      {
+        "Text": "19 35831647",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "19 35831647",
+          "score": "0.7"
+        }
+      }
+    ]
+  }
+]
