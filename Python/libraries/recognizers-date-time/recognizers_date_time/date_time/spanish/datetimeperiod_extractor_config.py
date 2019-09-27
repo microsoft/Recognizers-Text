@@ -25,10 +25,6 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         return self._suffix_regex
 
     @property
-    def options(self):
-        return self._options
-
-    @property
     def dmy_date_format(self) -> bool:
         return self._dmy_date_format
 
@@ -257,7 +253,6 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         self._after_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.AfterRegex
         )
-        self._options = DateTimeOptions.NONE
         self._suffix_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.SuffixRegex
         )

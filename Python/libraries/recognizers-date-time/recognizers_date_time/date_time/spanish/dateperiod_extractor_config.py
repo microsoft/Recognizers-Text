@@ -34,22 +34,6 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._within_next_prefix_regex
 
     @property
-    def time_unit_regex(self) -> Pattern:
-        return self._time_unit_regex
-
-    @property
-    def ordinal_extractor(self) -> Extractor:
-        return self._ordinal_extractor
-
-    @property
-    def cardinal_extractor(self) -> Extractor:
-        return self._cardinal_extractor
-
-    @property
-    def within_next_prefix_regex(self) -> Pattern:
-        return self._within_next_prefix_regex
-
-    @property
     def simple_cases_regexes(self) -> List[Pattern]:
         return self._simple_cases_regexes
 
