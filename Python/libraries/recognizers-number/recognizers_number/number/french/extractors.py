@@ -274,7 +274,7 @@ class FrenchFractionExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_FRACTION
 
-    def __init__(self):
+    def __init__(self, mode):
         super().__init__()
         self.__regexes = [
             ReVal(
