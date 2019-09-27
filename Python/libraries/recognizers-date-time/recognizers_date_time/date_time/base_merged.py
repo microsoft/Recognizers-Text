@@ -658,10 +658,12 @@ class BaseMergedParser(DateTimeParser):
 
         return result
 
-    def set_parse_result(self, slot: DateTimeParseResult, has_before: bool, has_after: bool, has_since: bool) -> DateTimeParseResult:
+    def set_parse_result(self, slot: DateTimeParseResult, has_before: bool, has_after: bool, has_since: bool)\
+            -> DateTimeParseResult:
         slot.value = self._date_time_resolution(
             slot, has_before, has_after, has_since)
-        slot.type = f'{self.parser_type_name}.{self._determine_date_time_types(slot.type, has_before, has_after, has_since)}'
+        slot.type = f'{self.parser_type_name}.' \
+                    f'{self._determine_date_time_types(slot.type, has_before, has_after, has_since)}'
         return slot
 
     def _get_parse_result(self, extractor_result: Extractor, reference: datetime) -> DateTimeParseResult:

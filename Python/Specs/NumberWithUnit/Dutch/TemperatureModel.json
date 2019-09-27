@@ -1,0 +1,548 @@
+[
+  {
+    "Input": "de temperatuur buiten is 40 graden Celsius",
+    "Results": [
+      {
+        "Text": "40 graden celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "40",
+          "unit": "C"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "het is 90 Fahrenheit in Texas",
+    "Results": [
+      {
+        "Text": "90 fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "90",
+          "unit": "F"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "-5 graden Fahrenheit",
+    "Results": [
+      {
+        "Text": "-5 graden fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "-5",
+          "unit": "F"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "6 gr. C",
+    "Results": [
+      {
+        "Text": "6 gr. c",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "6",
+          "unit": "C"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "98,6 graden F is de normale temperatuur",
+    "Results": [
+      {
+        "Text": "98,6 graden f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98,6",
+          "unit": "F"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Zet de temperatuur op 30 graden Celsius",
+    "Results": [
+      {
+        "Text": "30 graden celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "30",
+          "unit": "C"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "normale temperatuur is 98,6 graden Fahrenheit",
+    "Results": [
+      {
+        "Text": "98,6 graden fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98,6",
+          "unit": "F"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "100 graden F",
+    "Results": [
+      {
+        "Text": "100 graden f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100",
+          "unit": "F"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "20 graden C",
+    "Results": [
+      {
+        "Text": "20 graden c",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "C"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "100,2 graden Fahrenheit is laag",
+    "Results": [
+      {
+        "Text": "100,2 graden fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100,2",
+          "unit": "F"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "10,5 Celsius",
+    "Results": [
+      {
+        "Text": "10,5 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "10,5",
+          "unit": "C"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "20 graden Celsius",
+    "Results": [
+      {
+        "Text": "20 graden celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "C"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "20,3 Celsius",
+    "Results": [
+      {
+        "Text": "20,3 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20,3",
+          "unit": "C"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "34,5 Celsius",
+    "Results": [
+      {
+        "Text": "34,5 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "34,5",
+          "unit": "C"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "de temperatuur buiten is 30 graden",
+    "Results": [
+      {
+        "Text": "30 graden",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "30",
+          "unit": "Degree"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zet de thermostaat op 85°",
+    "Results": [
+      {
+        "Text": "85°",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "85",
+          "unit": "Degree"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "verhoog de temperatuur met 5 graden",
+    "Results": [
+      {
+        "Text": "5 graden",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "5",
+          "unit": "Degree"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zet de temperatuur op 70 graden F",
+    "Results": [
+      {
+        "Text": "70 graden f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "70",
+          "unit": "F"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "verhoog de temperatuur met 20 graden",
+    "Results": [
+      {
+        "Text": "20 graden",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "Degree"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zet de temperatuur op 100 graden",
+    "Results": [
+      {
+        "Text": "100 graden",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100",
+          "unit": "Degree"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "hou de temperatuur op 75 graden F",
+    "Results": [
+      {
+        "Text": "75 graden f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "75",
+          "unit": "F"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laat de temperatuur 40 Celsius zijn",
+    "Results": [
+      {
+        "Text": "40 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "40",
+          "unit": "C"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laat de temperatuur 50 graden zijn",
+    "Results": [
+      {
+        "Text": "50 graden",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "50",
+          "unit": "Degree"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "converteer 10 graden Celsius to Fahrenheit",
+    "Results": [
+      {
+        "Text": "10 graden celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "10",
+          "unit": "C"
+        }
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "34,9 graden Celsius naar Fahrenheit",
+    "Results": [
+      {
+        "Text": "34,9 graden celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "34,9",
+          "unit": "C"
+        }
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "converteer 200 graden Celsius naar Fahrenheit",
+    "Results": [
+      {
+        "Text": "200 graden celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "200",
+          "unit": "C"
+        }
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        }
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Fahrenheit naar Celsius: 101 Fahrenheit is hoeveel graden Celsius",
+    "Results": [
+      {
+        "Text": "101 fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "101",
+          "unit": "F"
+        }
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        }
+      },
+      {
+        "Text": "graden celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        }
+      },
+      {
+        "Text": "graden celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "50 graden Celsius naar Fahrenheit",
+    "Results": [
+      {
+        "Text": "50 graden celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "50",
+          "unit": "C"
+        }
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zou je 51 Fahrenheit naar graden Celsius kunnen converteren?",
+    "Results": [
+      {
+        "Text": "51 fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "51",
+          "unit": "F"
+        }
+      },
+      {
+        "Text": "graden celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "converteer 106 graden Fahrenheit naar graden Celsius",
+    "Results": [
+      {
+        "Text": "106 graden fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "106",
+          "unit": "F"
+        }
+      },
+      {
+        "Text": "graden celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "converteer 45 graden Fahrenheit naar Celsius",
+    "Results": [
+      {
+        "Text": "45 graden fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "45",
+          "unit": "F"
+        }
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "hoe converteer je - 20 graden Fahrenheit naar Celsius",
+    "Results": [
+      {
+        "Text": "- 20 graden fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "-20",
+          "unit": "F"
+        }
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  }
+]

@@ -119,21 +119,29 @@ class BaseNumberExtractor(Extractor):
 
         return result
 
-    def _filter_ambiguity(self, ers: List[ExtractResult], text: str) -> List[ExtractResult]:
+    def _filter_ambiguity(self, ers: List[ExtractResult], text: str,) -> List[ExtractResult]:
+
         if self.ambiguity_filters_dict is not None:
-            for item in self.ambiguity_filters_dict:
-                if regex.search(item.reKey, text):
-                    matches = list(regex.finditer(item.reVal, text))
-                    if matches and len(matches):
-                        ers = list(filter(lambda x: self._filter_item(x, matches), ers))
+            for regex_var in self.ambiguity_filters_dict:
+                regexvar_value = self.ambiguity_filters_dict[regex_var]
+
+                try:
+                    reg_match = list(filter(lambda x: x.group(), regex.finditer(regexvar_value, text)))
+
+                    if len(reg_match) > 0:
+
+                        matches = reg_match
+                        new_ers = list(filter(lambda x: list(filter(lambda m: m.start() < x.start + x.length and m.start() +
+                                                                    len(m.group()) > x.start, matches)), ers))
+                        if len(new_ers) > 0:
+                            for item in ers:
+                                for i in new_ers:
+                                    if item is i:
+                                        ers.remove(item)
+                except Exception:
+                    pass
+
         return ers
-
-    def _filter_item(self, er: ExtractResult, matches: List[Match]) -> bool:
-        for match in matches:
-            if match.start() < er.start + er.length and match.end() > er.start:
-                return False
-
-        return True
 
     def _generate_format_regex(self, format_type: LongFormatType,
                                placeholder: str = None) -> Pattern:

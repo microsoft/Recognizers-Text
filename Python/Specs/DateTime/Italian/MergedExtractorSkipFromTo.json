@@ -1,0 +1,40 @@
+[
+  {
+    "Input": "Cambia il mio appuntamento dalle 9am alle 11am",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Start": 23,
+        "Length": 3,
+        "Text": "9am",
+        "Type": "time"
+      },
+      {
+        "Start": 30,
+        "Length": 4,
+        "Text": "11am",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambia il mio appuntamento dal 19 Nov al 23 Nov",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Start": 23,
+        "Length": 8,
+        "Text": "19 Nov",
+        "Type": "date"
+      },
+      {
+        "Start": 35,
+        "Length": 3,
+        "Text": "Nov",
+        "Type": "daterange"
+      }
+    ]
+  }
+]

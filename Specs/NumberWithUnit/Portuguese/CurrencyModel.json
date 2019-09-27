@@ -1,0 +1,1522 @@
+[
+  {
+    "Input": "Condado de Montgomery, md. - - $ 75 milhões de obligaciones generales, Serie b , bonos consolidados de mejoramiento público de 1989 , A través de un Manufacturers Hanover Trust co. group.",
+    "Results": [
+      {
+        "Text": "$ 75 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "75000000",
+          "unit": "Dólar"
+        },
+        "Start": 31,
+        "End": 42
+      }
+    ]
+  },
+  {
+    "Input": "Conglomerado finlandés nokia ( oy ab ) dijo que llegó a un acuerdo para comprar la compañía de cable holandés NKF kabel b.v. por 420 milhoes de marcos finlandeses",
+    "Results": [
+      {
+        "Text": "420 milhoes de marcos finlandeses",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "420000000",
+          "unit": "Marco finlandês"
+        },
+        "Start": 129,
+        "End": 161
+      }
+    ]
+  },
+  {
+    "Input": "Nacional pagó a Siegel y Shuster $ 94.000 para cancelar todas las reclamaciones.",
+    "Results": [
+      {
+        "Text": "$ 94.000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "94000",
+          "unit": "Dólar"
+        },
+        "Start": 33,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "Servicios de dinámica general co., una unidad de Dinámica General corp., ganó un contrato del ejército de $ 48,2 milhoes para establecer facilidades del mantenimiento para los vehículos con seguimiento en Paquistán.",
+    "Results": [
+      {
+        "Text": "$ 48,2 milhoes",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "48200000",
+          "unit": "Dólar"
+        },
+        "Start": 106,
+        "End": 119
+      }
+    ]
+  },
+  {
+    "Input": "El precio del segundo simulador oscila entre C$ 16,4 milhoes",
+    "Results": [
+      {
+        "Text": "c$ 16,4 milhoes",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "16400000",
+          "unit": "Dólar canadense"
+        },
+        "Start": 45,
+        "End": 59
+      }
+    ]
+  },
+  {
+    "Input": "Golar Gas Holding co., una subsidiaria de Gotaas-Larsen Shipping corp., ofreciendo $ 280 milhoes por las notas preferidas de la hipoteca de buques, vía los mercados de capitales de Merrill Linch.",
+    "Results": [
+      {
+        "Text": "$ 280 milhoes",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "280000000",
+          "unit": "Dólar"
+        },
+        "Start": 83,
+        "End": 95
+      }
+    ]
+  },
+  {
+    "Input": "Bard/Ems tenía 1988 ventas de cerca de $ 14 milhões, según Birtcher.",
+    "Results": [
+      {
+        "Text": "$ 14 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "14000000",
+          "unit": "Dólar"
+        },
+        "Start": 39,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "Los precios del acuerdo comienzan en $ 12.345.",
+    "Results": [
+      {
+        "Text": "$ 12.345",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "12345",
+          "unit": "Dólar"
+        },
+        "Start": 37,
+        "End": 44
+      }
+    ]
+  },
+  {
+    "Input": "solamente Batman ha acumulado mas de $247 milhoes en taquilla hasta la fecha, convirtiendola en la película con mejor recaudación de Warner Bros.",
+    "Results": [
+      {
+        "Text": "$247 milhoes",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "247000000",
+          "unit": "Dólar"
+        },
+        "Start": 37,
+        "End": 48
+      }
+    ]
+  },
+  {
+    "Input": "El patrimonio neto de Coyle fue estimado en £ 8,10 milhões en Octuble del 2014.",
+    "Results": [
+      {
+        "Text": "£ 8,10 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "8100000",
+          "unit": "Libra"
+        },
+        "Start": 44,
+        "End": 57
+      }
+    ]
+  },
+  {
+    "Input": "Los ingresos netos por intereses cayeron un 27% en el trimestre a $ 254 milhões",
+    "Results": [
+      {
+        "Text": "$ 254 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "254000000",
+          "unit": "Dólar"
+        },
+        "Start": 66,
+        "End": 78
+      }
+    ]
+  },
+  {
+    "Input": "Un tribunal de apelaciones federal anuló una regulación de gas natural que había impedido que las compañías de gasoductos pasaran a los clientes un gasto de $ um bilhão en costos de contratos controversiales",
+    "Results": [
+      {
+        "Text": "$ um bilhão",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1000000000",
+          "unit": "Dólar"
+        },
+        "Start": 157,
+        "End": 167
+      }
+    ]
+  },
+  {
+    "Input": "El trimestre de 1988 también incluyó ganancias únicas por un total de aproximadamente $ 35 milhões.",
+    "Results": [
+      {
+        "Text": "$ 35 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "35000000",
+          "unit": "Dólar"
+        },
+        "Start": 86,
+        "End": 97
+      }
+    ]
+  },
+  {
+    "Input": "Y.J.Park y su familia subsistió durante cuatro años para comprar un pequeño apartamento aquí, pero se encontró que cuanto más cerca estaban de llegar a ahorrar los $ 40.000 que originalmente necesitaban, más subia el precio.",
+    "Results": [
+      {
+        "Text": "$ 40.000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "40000",
+          "unit": "Dólar"
+        },
+        "Start": 164,
+        "End": 171
+      }
+    ]
+  },
+  {
+    "Input": "E. Robert Wallach fue sentenciado por un juez en Nueva York a seis años de prisión y una multa de $250.000 por su extorsión en el escándalo de Wedtech.",
+    "Results": [
+      {
+        "Text": "$250.000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "250000",
+          "unit": "Dólar"
+        },
+        "Start": 98,
+        "End": 105
+      }
+    ]
+  },
+  {
+    "Input": "Un artículo publicado el miércoles en la encuesta económica de Oriente Medio revela que Irak pidió a sus clientes que paguen 50 centavos más por barril de petróleo sobre el precio oficial do petróleo a 1 de dezembro en una cuenta que no está bajo la supervisión de las naciones unidas.",
+    "Results": [
+      {
+        "Text": "50 centavos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "50",
+          "unit": "Centavo"
+        },
+        "Start": 125,
+        "End": 135
+      }
+    ]
+  },
+  {
+    "Input": "La división Chevrolet de General Motors Corp., reaccionando a las ventas lentas, dijo que ofrecerá rebajas de $ 800 en su Beretta 1990, la versión de dos puertas de su línea base de autos compactos.",
+    "Results": [
+      {
+        "Text": "$ 800",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "800",
+          "unit": "Dólar"
+        },
+        "Start": 110,
+        "End": 114
+      }
+    ]
+  },
+  {
+    "Input": "(El almacenista también tomó $ 125 milhões de bonos Junior SCI TV como pago parcial para los activos de TV).",
+    "Results": [
+      {
+        "Text": "$ 125 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125000000",
+          "unit": "Dólar"
+        },
+        "Start": 29,
+        "End": 41
+      }
+    ]
+  },
+  {
+    "Input": "En el mercado nacional de venta libre, las acciones de Scimed cayeron 2,75 dólares.",
+    "Results": [
+      {
+        "Text": "2,75 dólares",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2,75",
+          "unit": "Dólar"
+        },
+        "Start": 70,
+        "End": 81
+      }
+    ]
+  },
+  {
+    "Input": "Al mismo tiempo, los inversionistas estiman que la reestructuración reduciría la factura anual de intereses en efectivo de la compañía en aproximadamente U$D 90 milhões.",
+    "Results": [
+      {
+        "Text": "u$d 90 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "90000000",
+          "unit": "Dólar estadunidense"
+        },
+        "Start": 154,
+        "End": 167
+      }
+    ]
+  },
+  {
+    "Input": "Ao mesmo tempo, os investidores estimam que a reestructuração reduziria os débitos em aproximadamente USD$ 90 milhões.",
+    "Results": [
+      {
+        "Text": "usd$ 90 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "90000000",
+          "unit": "Dólar estadunidense"
+        },
+        "Start": 102,
+        "End": 116
+      }
+    ]
+  },
+  {
+    "Input": "Los gastos de capital en 1990 aumentarán ligeramente, dijo Mr.Marous, de un estimado de $ 470 milhões este año",
+    "Results": [
+      {
+        "Text": "$ 470 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "470000000",
+          "unit": "Dólar"
+        },
+        "Start": 88,
+        "End": 100
+      }
+    ]
+  },
+  {
+    "Input": "Shearson \"realmente solo tiene $ 300 milhões de capital\", dice el sr. Bowman de S&P.",
+    "Results": [
+      {
+        "Text": "$ 300 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "300000000",
+          "unit": "Dólar"
+        },
+        "Start": 31,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "Puede ser directo (él quiere el dinero para alimento) o increíblemente enrevesado; su hermana está en este momento cerca de la muerte en Hoboken, ha perdido su cartera y tiene sólo $ 1,22 en cambio para poner un billete de autobús, y no le das la diferencia?",
+    "Results": [
+      {
+        "Text": "$ 1,22",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1,22",
+          "unit": "Dólar"
+        },
+        "Start": 181,
+        "End": 186
+      }
+    ]
+  },
+  {
+    "Input": "El contrato de diciembre subió 1,20 centavos",
+    "Results": [
+      {
+        "Text": "1,20 centavos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1,2",
+          "unit": "Centavo"
+        },
+        "Start": 31,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "Walter Kirchberger, un analista de Painewebber inc., dijo que ofrecer a los interesados un precio más alto de $ 70 por acción es \"un método bastante efectivo de bloquear\" la oferta.",
+    "Results": [
+      {
+        "Text": "$ 70",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "70",
+          "unit": "Dólar"
+        },
+        "Start": 110,
+        "End": 113
+      }
+    ]
+  },
+  {
+    "Input": "Las ventas netas para el tercer trimestre de este año fueron de $ 14 milhões más que el año pasado.",
+    "Results": [
+      {
+        "Text": "$ 14 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "14000000",
+          "unit": "Dólar"
+        },
+        "Start": 64,
+        "End": 75
+      }
+    ]
+  },
+  {
+    "Input": "La compañía matriz del primer banco nacional de Chicago, con 48.000 milhões de dólares en activos, dijo que se reservó de absorber pérdidas en préstamos e inversiones en países con dificultades financieras.",
+    "Results": [
+      {
+        "Text": "48.000 milhões de dólares",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "48000000000",
+          "unit": "Dólar"
+        },
+        "Start": 61,
+        "End": 85
+      }
+    ]
+  },
+  {
+    "Input": "Fluor Corp. dijo que se le adjudicó un contrato de $ 300 milhões para prestar servicios de ingeniería y gestión de la construcción en una mina de cobre en Irian Jaya, Indonesia, para una unidad de Freeport-McMoran Copper co.",
+    "Results": [
+      {
+        "Text": "$ 300 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "300000000",
+          "unit": "Dólar"
+        },
+        "Start": 51,
+        "End": 63
+      }
+    ]
+  },
+  {
+    "Input": "La bolsa americana dijo que un asiento fue vendido por $ 5.000 desde la venta anterior el viernes pasado.",
+    "Results": [
+      {
+        "Text": "$ 5.000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "5000",
+          "unit": "Dólar"
+        },
+        "Start": 55,
+        "End": 61
+      }
+    ]
+  },
+  {
+    "Input": "Warner Communications Inc., que está siendo adquirida por Time Warner, ha presentado una demanda por violación de contrato de um bilhão de dólares contra Sony y dos productores.",
+    "Results": [
+      {
+        "Text": "um bilhão de dólares",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1000000000",
+          "unit": "Dólar"
+        },
+        "Start": 126,
+        "End": 145
+      }
+    ]
+  },
+  {
+    "Input": "En agosto, Asarco, a través de su subsidiaria Lac d'amiante Du Québec, vendió el interés restante de un tercio en una sociedad limitada minera de amianto en Canadá por $ 11,7 milhões.",
+    "Results": [
+      {
+        "Text": "$ 11,7 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "11700000",
+          "unit": "Dólar"
+        },
+        "Start": 168,
+        "End": 181
+      }
+    ]
+  },
+  {
+    "Input": "En 1988, las exportaciones de juguetes y juegos de producción nacional cayeron un 19% desde 1987 hasta alcanzar los 10050 milhões de dólares de Hong Kong.",
+    "Results": [
+      {
+        "Text": "10050 milhões de dólares de hong kong",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "10050000000",
+          "unit": "Dólar de Hong Kong"
+        },
+        "Start": 116,
+        "End": 152
+      }
+    ]
+  },
+  {
+    "Input": "Las ventas del cuarto trimestre fiscal crecieron cerca de 18% a $ 1,17 bilhões en comparacion com o ano anterior.",
+    "Results": [
+      {
+        "Text": "$ 1,17 bilhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1170000000",
+          "unit": "Dólar"
+        },
+        "Start": 64,
+        "End": 77
+      }
+    ]
+  },
+  {
+    "Input": "Durante la primera hora de ayer, los precios cayeron hasta 1/4 de punto, o bajaron alrededor de $ 2,50 por cada monto nominal.",
+    "Results": [
+      {
+        "Text": "$ 2,50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2,5",
+          "unit": "Dólar"
+        },
+        "Start": 96,
+        "End": 101
+      }
+    ]
+  },
+  {
+    "Input": "New Jersey, por ejemplo, se le pidió que aceptara $ 300.000, pero se negó",
+    "Results": [
+      {
+        "Text": "$ 300.000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "300000",
+          "unit": "Dólar"
+        },
+        "Start": 50,
+        "End": 58
+      }
+    ]
+  },
+  {
+    "Input": "Las ventas subieron 6,2% a $ 1,45 bilhões",
+    "Results": [
+      {
+        "Text": "$ 1,45 bilhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1450000000",
+          "unit": "Dólar"
+        },
+        "Start": 27,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "A partir de ayer por la tarde, los reembolsos representaron menos del 15% de la posición total de efectivo de alrededor de $ 2 bilhões de los fondos de acciones de fidelidad.",
+    "Results": [
+      {
+        "Text": "$ 2 bilhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2000000000",
+          "unit": "Dólar"
+        },
+        "Start": 123,
+        "End": 133
+      }
+    ]
+  },
+  {
+    "Input": "Onvia. Com Inc., bajó 34 centavos",
+    "Results": [
+      {
+        "Text": "34 centavos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "34",
+          "unit": "Centavo"
+        },
+        "Start": 22,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "El nuevo folleto dice que si la adquisición hubiera sido completada antes, las ganancias antes de impuestos \"habrían sido insuficientes para cubrir sus cargos fijos, incluyendo intereses sobre títulos de deuda\", por aproximadamente $ 62,7 milhões en el primer semestre de 1989.",
+    "Results": [
+      {
+        "Text": "$ 62,7 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "62700000",
+          "unit": "Dólar"
+        },
+        "Start": 232,
+        "End": 245
+      }
+    ]
+  },
+  {
+    "Input": "Filenet señaló que tenía efectivo y valores negociables por un total de $ 22,5 milhões en septiembre.",
+    "Results": [
+      {
+        "Text": "$ 22,5 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "22500000",
+          "unit": "Dólar"
+        },
+        "Start": 72,
+        "End": 85
+      }
+    ]
+  },
+  {
+    "Input": "Para los 20 restaurantes más caros de la ciudad, el precio de una cena aumentó a $ 63,45, también hubo un aumento del 8 por ciento.",
+    "Results": [
+      {
+        "Text": "$ 63,45",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "63,45",
+          "unit": "Dólar"
+        },
+        "Start": 81,
+        "End": 87
+      }
+    ]
+  },
+  {
+    "Input": "Trans Mundo Airlines Inc., ofreciendo billetes senior de 150 milhões de dólares, a través de Drexel Burnham.",
+    "Results": [
+      {
+        "Text": "150 milhões de dólares",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "150000000",
+          "unit": "Dólar"
+        },
+        "Start": 57,
+        "End": 78
+      }
+    ]
+  },
+  {
+    "Input": "El fettuccine con champiñones portobello cuesta $ 8,50.",
+    "Results": [
+      {
+        "Text": "$ 8,50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "8,5",
+          "unit": "Dólar"
+        },
+        "Start": 48,
+        "End": 53
+      }
+    ]
+  },
+  {
+    "Input": "El delivery de marzo terminó con un anticipo de 14,27 centavos",
+    "Results": [
+      {
+        "Text": "14,27 centavos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "14,27",
+          "unit": "Centavo"
+        },
+        "Start": 48,
+        "End": 61
+      }
+    ]
+  },
+  {
+    "Input": "En el tercer trimestre de 1988 fue de $ 75,3 milhões",
+    "Results": [
+      {
+        "Text": "$ 75,3 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "75300000",
+          "unit": "Dólar"
+        },
+        "Start": 38,
+        "End": 51
+      }
+    ]
+  },
+  {
+    "Input": "La confianza de los demandantes del protector del dalkon $ 2,38 bilhões fue establecida",
+    "Results": [
+      {
+        "Text": "$ 2,38 bilhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2380000000",
+          "unit": "Dólar"
+        },
+        "Start": 57,
+        "End": 70
+      }
+    ]
+  },
+  {
+    "Input": "Los términos de la oferta pusieron un valor de 528 milhões de francos por 32,99% de participación",
+    "Results": [
+      {
+        "Text": "528 milhões de francos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "528000000",
+          "unit": "Franco"
+        },
+        "Start": 47,
+        "End": 68
+      }
+    ]
+  },
+  {
+    "Input": "Rusia aceptó un préstamo del Banco Mundial de US$ 150 milhões para combatir la propagación del sida y la tuberculosis, poniendo fin a un proceso de negociación que duró cuatro años, dijeron el viernes funcionarios del Banco Mundial.",
+    "Results": [
+      {
+        "Text": "us$ 150 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "150000000",
+          "unit": "Dólar estadunidense"
+        },
+        "Start": 46,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "El pacto de la campana anterior estaba valorado en alrededor de $ 98 por acción",
+    "Results": [
+      {
+        "Text": "$ 98",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "98",
+          "unit": "Dólar"
+        },
+        "Start": 64,
+        "End": 67
+      }
+    ]
+  },
+  {
+    "Input": "Un distribuidor dijo que la conversación fue que la firma vendió cerca de 500 milhões de dólares de bonos de 30 años",
+    "Results": [
+      {
+        "Text": "500 milhões de dólares",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "500000000",
+          "unit": "Dólar"
+        },
+        "Start": 74,
+        "End": 95
+      }
+    ]
+  },
+  {
+    "Input": "Para el tercer trimestre, Sears dijo que sus ingresos totales aumentaron 4. 8% a $ 13180 milhões a un año antes.",
+    "Results": [
+      {
+        "Text": "$ 13180 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13180000000",
+          "unit": "Dólar"
+        },
+        "Start": 81,
+        "End": 95
+      }
+    ]
+  },
+  {
+    "Input": "Para los nueve meses, el etil dijo que la red cayó 2% o $ 1,40 por acción",
+    "Results": [
+      {
+        "Text": "$ 1,40",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1,4",
+          "unit": "Dólar"
+        },
+        "Start": 56,
+        "End": 61
+      }
+    ]
+  },
+  {
+    "Input": "Las expectativas de los analistas sugieren un déficit en cuenta corriente de septiembre de 1. 6 bilhões ($ 2,54 bilhões), comparado con los 2MM de agosto en déficit.",
+    "Results": [
+      {
+        "Text": "$ 2,54 bilhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2540000000",
+          "unit": "Dólar"
+        },
+        "Start": 105,
+        "End": 118
+      }
+    ]
+  },
+  {
+    "Input": "125 milhões de dólares australianos de eurobonos de cupón, a un precio de 50,9375 para producir 15,06% menos comisiones a través de Hambros Bank ltd.",
+    "Results": [
+      {
+        "Text": "125 milhões de dólares australianos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125000000",
+          "unit": "Dólar australiano"
+        },
+        "Start": 0,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "El viernes, el secretario jefe del gabinete anunció que ocho ministros del gabinete habían recibido cinco milhões de ienes de la industria",
+    "Results": [
+      {
+        "Text": "cinco milhões de ienes",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "5000000",
+          "unit": "Yen"
+        },
+        "Start": 100,
+        "End": 121
+      }
+    ]
+  },
+  {
+    "Input": "Incluyendo 450.000 yenes por el primer ministro Toshiki Kaifu",
+    "Results": [
+      {
+        "Text": "450.000 yenes",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "450000",
+          "unit": "Yen"
+        },
+        "Start": 11,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "Dóllar : 143,80 yenes, arriba de 0,95; 1.8500 pontos, arriba de 0,0085.",
+    "Results": [
+      {
+        "Text": "143,80 yenes",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "143,8",
+          "unit": "Yen"
+        },
+        "Start": 9,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "Orkem S.A., un fabricante francés de productos químicos controlados por el Estado, está haciendo una oferta amistosa de 470 penies por acción para los 59,2% de UK",
+    "Results": [
+      {
+        "Text": "470 penies",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "470",
+          "unit": "Pêni"
+        },
+        "Start": 120,
+        "End": 129
+      }
+    ]
+  },
+  {
+    "Input": "Agosto, el gasto ajustado de las familias asalariadas disminuyó 0,6% a 309.381 yenes de un año antes.",
+    "Results": [
+      {
+        "Text": "309.381 yenes",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "309381",
+          "unit": "Yen"
+        },
+        "Start": 71,
+        "End": 83
+      }
+    ]
+  },
+  {
+    "Input": "Sr. Bowder dijo que los C$ 300 milhões de ingresos...",
+    "Results": [
+      {
+        "Text": "c$ 300 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "300000000",
+          "unit": "Dólar canadense"
+        },
+        "Start": 24,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "Ascendería a alrededor de C$ 1,34 por acción.",
+    "Results": [
+      {
+        "Text": "c$ 1,34",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1,34",
+          "unit": "Dólar canadense"
+        },
+        "Start": 26,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "Los precios de los huevos promediaron 64,2 centavos la docena.",
+    "Results": [
+      {
+        "Text": "64,2 centavos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "64,2",
+          "unit": "Centavo"
+        },
+        "Start": 38,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "Aún así, dijo que espera que las ventas para 1989 sean del orden de los 20.000 milhões de francos, lo que refleja la facturación anticipada de dos grandes contratos en la segunda mitad del año.",
+    "Results": [
+      {
+        "Text": "20.000 milhões de francos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "20000000000",
+          "unit": "Franco"
+        },
+        "Start": 72,
+        "End": 96
+      }
+    ]
+  },
+  {
+    "Input": "La transacción pidió a Murdoch's News International, una unidad de noticias australia corp., para suscribir una emisión de derechos valorada en 6,65 bilhões de pesetas.",
+    "Results": [
+      {
+        "Text": "6,65 bilhões de pesetas",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "6650000000",
+          "unit": "Peseta"
+        },
+        "Start": 144,
+        "End": 166
+      }
+    ]
+  },
+  {
+    "Input": "Fujitsu ltd dijo que quiere retirar su polémica oferta de um yen para diseñar un sistema de computadoras de agua para la ciudad de hiroshima.",
+    "Results": [
+      {
+        "Text": "um yen",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1",
+          "unit": "Yen"
+        },
+        "Start": 58,
+        "End": 63
+      }
+    ]
+  },
+  {
+    "Input": "250 milhões de florins holandeses de 7 3/4% de bonos debidos nov. 15, 1999, a un precio de 101 1/4 para dar 7. 57% do preço de emisión y 7. 86% menos los honorarios completos, vía el banco del amro.",
+    "Results": [
+      {
+        "Text": "250 milhões de florins holandeses",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "250000000",
+          "unit": "Florim holandês"
+        },
+        "Start": 0,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "Además, el banco tiene la opción de comprar una participación de 30,84% en BIP societe generale después de enero. 1.1990 a 1.015 francos por acción.",
+    "Results": [
+      {
+        "Text": "1.015 francos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1015",
+          "unit": "Franco"
+        },
+        "Start": 123,
+        "End": 135
+      }
+    ]
+  },
+  {
+    "Input": "Sus acciones se deslizaron en los últimos tratos para cerrar um centavo",
+    "Results": [
+      {
+        "Text": "um centavo",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1",
+          "unit": "Centavo"
+        },
+        "Start": 61,
+        "End": 70
+      }
+    ]
+  },
+  {
+    "Input": "Por acción menor a 197 penies.",
+    "Results": [
+      {
+        "Text": "197 penies",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "197",
+          "unit": "Pêni"
+        },
+        "Start": 19,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "Su beneficio operativo trimestral mejoró a 361 milhões de libras",
+    "Results": [
+      {
+        "Text": "361 milhões de libras",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "361000000",
+          "unit": "Libra"
+        },
+        "Start": 43,
+        "End": 63
+      }
+    ]
+  },
+  {
+    "Input": "El año pasado, el valor bruto de producción de las empresas del municipio de toda la ciudad se rompió por 100 milhões de yuans por primera vez, ocupando el primer lugar en toda la provincia.",
+    "Results": [
+      {
+        "Text": "100 milhões de yuans",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000000",
+          "unit": "Yuan chinês"
+        },
+        "Start": 106,
+        "End": 125
+      }
+    ]
+  },
+  {
+    "Input": "Los guardabosques consiguieron guardar £ 50 milhões ahorrados por el consejo de Baxendale-Walker.",
+    "Results": [
+      {
+        "Text": "£ 50 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "50000000",
+          "unit": "Libra"
+        },
+        "Start": 39,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "A su vez, francis leung pak-to ha acordado vender una participación de 8% en PCCW a telefónica por 323 milhões de euros.",
+    "Results": [
+      {
+        "Text": "323 milhões de euros",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "323000000",
+          "unit": "Euro"
+        },
+        "Start": 99,
+        "End": 118
+      }
+    ]
+  },
+  {
+    "Input": "La UEFA acusó a ferguson de desacreditar el juego con sus comentarios, y el 1 de mayo de ese año fue multado con 10.000 francos suicos.",
+    "Results": [
+      {
+        "Text": "10.000 francos suicos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "10000",
+          "unit": "Franco suíço"
+        },
+        "Start": 113,
+        "End": 133
+      }
+    ]
+  },
+  {
+    "Input": "El IPL firmó a las líneas aéreas de martín pescador como el socio oficial del árbitro para la serie en un reparto (aproximadamente £ 15 milhões).",
+    "Results": [
+      {
+        "Text": "£ 15 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15000000",
+          "unit": "Libra"
+        },
+        "Start": 131,
+        "End": 142
+      }
+    ]
+  },
+  {
+    "Input": "Los ingresos de la industria electrónica de adelaide ha crecido en alrededor del 15% anual desde 1990, y en 2011 supera os $ 4 bilhões.",
+    "Results": [
+      {
+        "Text": "$ 4 bilhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "4000000000",
+          "unit": "Dólar"
+        },
+        "Start": 123,
+        "End": 133
+      }
+    ]
+  },
+  {
+    "Input": "Abel y sus asociados ofrecen 4 milhoes de dólares por hacer los efectos de la película.",
+    "Results": [
+      {
+        "Text": "4 milhoes de dólares",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "4000000",
+          "unit": "Dólar"
+        },
+        "Start": 29,
+        "End": 48
+      }
+    ]
+  },
+  {
+    "Input": "Malone demandó a 20th century-fox por $ 1,6 milhões por incumplimiento de contrato.",
+    "Results": [
+      {
+        "Text": "$ 1,6 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1600000",
+          "unit": "Dólar"
+        },
+        "Start": 38,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "En 2003, Bayern Munich prestó € 2 milhões a Dortmund por un par de meses para pagar su nómina.",
+    "Results": [
+      {
+        "Text": "€ 2 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2000000",
+          "unit": "Euro"
+        },
+        "Start": 30,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "Lockheed Martin y el gobierno de los Estados Unidos intensamente presionaron para el contrato de US$ 10 bilhões de la India para 126 aviones de combate.",
+    "Results": [
+      {
+        "Text": "us$ 10 bilhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "10000000000",
+          "unit": "Dólar estadunidense"
+        },
+        "Start": 97,
+        "End": 110
+      }
+    ]
+  },
+  {
+    "Input": "Según la firma de investigación NPD, el precio de venta promedio de todas las PC portátiles de las ventanas ha caído de $ 659 en octubre de 2008 a",
+    "Results": [
+      {
+        "Text": "$ 659",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "659",
+          "unit": "Dólar"
+        },
+        "Start": 120,
+        "End": 124
+      }
+    ]
+  },
+  {
+    "Input": "Tel flotó en la bolsa australiana a $ 2 por acción en noviembre de 1997.",
+    "Results": [
+      {
+        "Text": "$ 2",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2",
+          "unit": "Dólar"
+        },
+        "Start": 36,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "El stand del este (la avenida de Worcester) se terminó en 1934 y esta capacidad aumentada a alrededor 80.000 espectadores pero costó £ 60.000.",
+    "Results": [
+      {
+        "Text": "£ 60.000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "60000",
+          "unit": "Libra"
+        },
+        "Start": 133,
+        "End": 140
+      }
+    ]
+  },
+  {
+    "Input": "Su compañero de equipo Fulham Johnny Haynes se convirtió en el primer jugador de £ 100.",
+    "Results": [
+      {
+        "Text": "£ 100",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Libra"
+        },
+        "Start": 81,
+        "End": 85
+      }
+    ]
+  },
+  {
+    "Input": "Para los nueve meses, la red de AMR subió 15% a $ 415,9 milhões",
+    "Results": [
+      {
+        "Text": "$ 415,9 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "415900000",
+          "unit": "Dólar"
+        },
+        "Start": 48,
+        "End": 62
+      }
+    ]
+  },
+  {
+    "Input": "El precio de la acción de la aerolínea ya está muy por debajo del nivel de 210 penies visto después de que la compañía anunció la emisión de derechos a fines de septiembre.",
+    "Results": [
+      {
+        "Text": "210 penies",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "210",
+          "unit": "Pêni"
+        },
+        "Start": 75,
+        "End": 84
+      }
+    ]
+  },
+  {
+    "Input": "Rolling Stone observó, \"Harpercollins adquirió el proyecto de libro por $ 3 milhoes en 2008.",
+    "Results": [
+      {
+        "Text": "$ 3 milhoes",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "3000000",
+          "unit": "Dólar"
+        },
+        "Start": 72,
+        "End": 82
+      }
+    ]
+  },
+  {
+    "Input": "Su conclusión fue un pronunciamiento terso que $ 48 \"no es adecuado\"",
+    "Results": [
+      {
+        "Text": "$ 48",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "48",
+          "unit": "Dólar"
+        },
+        "Start": 47,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "2013, la edición de la revista forbes presenta a Keith en la portada con el título música country's $ 500 milhoes.",
+    "Results": [
+      {
+        "Text": "$ 500 milhoes",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "500000000",
+          "unit": "Dólar"
+        },
+        "Start": 100,
+        "End": 112
+      }
+    ]
+  },
+  {
+    "Input": "Harry Ferguson nos demandó por el uso ilegal de sus patentes pidiendo una indemnización de £ 90 milhões, resuelto fuera de la corte en 1952.",
+    "Results": [
+      {
+        "Text": "£ 90 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "90000000",
+          "unit": "Libra"
+        },
+        "Start": 91,
+        "End": 102
+      }
+    ]
+  },
+  {
+    "Input": "Aerosmith firmó con Columbia a mediados de 1972 por $ 125.000 y publicó su álbum debut, Aerosmith.",
+    "Results": [
+      {
+        "Text": "$ 125.000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125000",
+          "unit": "Dólar"
+        },
+        "Start": 52,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "Fue una de las mayores adquisiciones de Coke desde que compró Odwalla Inc. por $ 186 milhões en 2001.",
+    "Results": [
+      {
+        "Text": "$ 186 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "186000000",
+          "unit": "Dólar"
+        },
+        "Start": 79,
+        "End": 91
+      }
+    ]
+  },
+  {
+    "Input": "Apple y Creative llegaron a un acuerdo, con Apple pagando $ 100 milhões a Creative y Creative para unir-se ao programa de acesórios \"feito para ipod\".",
+    "Results": [
+      {
+        "Text": "$ 100 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000000",
+          "unit": "Dólar"
+        },
+        "Start": 58,
+        "End": 70
+      }
+    ]
+  },
+  {
+    "Input": "A su vez, francis leung pak-a ha acordado vender una participación de 8% en PCCW a telefónica por 323 milhões de euros.",
+    "Results": [
+      {
+        "Text": "323 milhões de euros",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "323000000",
+          "unit": "Euro"
+        },
+        "Start": 98,
+        "End": 117
+      }
+    ]
+  },
+  {
+    "Input": "Malone demandó a 20th century-fox por 1,6 milhoes de dólares por incumplimiento de contrato;",
+    "Results": [
+      {
+        "Text": "1,6 milhoes de dólares",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1600000",
+          "unit": "Dólar"
+        },
+        "Start": 38,
+        "End": 59
+      }
+    ]
+  },
+  {
+    "Input": "En 2003, Bayern munich prestó € 2 milhões a Dortmund por un par de meses para pagar su nómina.",
+    "Results": [
+      {
+        "Text": "€ 2 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2000000",
+          "unit": "Euro"
+        },
+        "Start": 30,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "Lockheed martin y el gobierno de los estados unidos intensamente presionaron para el contrato de US$ 10 bilhões de la India para 126 aviones de combate.",
+    "Results": [
+      {
+        "Text": "us$ 10 bilhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "10000000000",
+          "unit": "Dólar estadunidense"
+        },
+        "Start": 97,
+        "End": 110
+      }
+    ]
+  },
+  {
+    "Input": "La presentación de hart-scott se revisa y se resuelve cualquier problema antimonopolio. Por lo general, hart-scott se utiliza ahora para dar a los gerentes de las firmas objetivo noticias tempranas de una oferta y la oportunidad de utilizar la revisión regulatoria como una táctica de retraso. El impuesto de 20.000 dólares sería un pequeño costo en un acuerdo de varios billones de dólares, pero un grave obstáculo para miles de pequeños acuerdos amistosos.",
+    "Results": [
+      {
+        "Text": "20.000 dólares",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "20000",
+          "unit": "Dólar"
+        },
+        "Start": 309,
+        "End": 322
+      },
+      {
+        "Text": "dólares",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": null,
+          "unit": "Dólar"
+        },
+        "Start": 383,
+        "End": 389
+      }
+    ]
+  },
+  {
+    "Input": "El fideicomiso de rentas nacionales de bienes raíces dijo que reanudará los pagos de dividendos con un dividendo de 12 centavos de dólar que se pagará el 6 de noviembre a las acciones de récord el 25 de octubre.",
+    "Results": [
+      {
+        "Text": "12 centavos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "12",
+          "unit": "Centavo"
+        },
+        "Start": 116,
+        "End": 126
+      },
+      {
+        "Text": "dólar",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": null,
+          "unit": "Dólar"
+        },
+        "Start": 131,
+        "End": 135
+      }
+    ]
+  }
+]

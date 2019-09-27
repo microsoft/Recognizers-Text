@@ -1,0 +1,677 @@
+[
+  {
+    "Input": "나는 매주 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2744475+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매주",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "set": "Set: P1W"
+          },
+          "PastResolution": {
+            "set": "Set: P1W"
+          }
+        },
+        "Start": 11,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "나는 격주로 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2754476+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "격주로",
+        "Type": "set",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "set": "Set: P2W"
+          },
+          "PastResolution": {
+            "set": "Set: P2W"
+          }
+        },
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2779449+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
+        },
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2794445+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
+        },
+        "Start": 11,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "나는 매달 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2829445+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매달",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "set": "Set: P1M"
+          },
+          "PastResolution": {
+            "set": "Set: P1M"
+          }
+        },
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "나는 일 년에 한 번 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2844439+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "일 년에 한 번 ",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
+        },
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "나는 매년 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2854444+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매년",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
+        },
+        "Start": 11,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "나는 격일로 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2909444+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "격일로",
+        "Type": "set",
+        "Value": {
+          "Timex": "P2D",
+          "FutureResolution": {
+            "set": "Set: P2D"
+          },
+          "PastResolution": {
+            "set": "Set: P2D"
+          }
+        },
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "나는 3주마다  떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2959472+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3주마다",
+        "Type": "set",
+        "Value": {
+          "Timex": "P3W",
+          "FutureResolution": {
+            "set": "Set: P3W"
+          },
+          "PastResolution": {
+            "set": "Set: P3W"
+          }
+        },
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 오후 3시에 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2989494+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일 오후 3시",
+        "Type": "set",
+        "Value": {
+          "Timex": "T15",
+          "FutureResolution": {
+            "set": "Set: T15"
+          },
+          "PastResolution": {
+            "set": "Set: T15"
+          }
+        },
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 오후 3시에 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3039501+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일 오후 3시",
+        "Type": "set",
+        "Value": {
+          "Timex": "T15",
+          "FutureResolution": {
+            "set": "Set: T15"
+          },
+          "PastResolution": {
+            "set": "Set: T15"
+          }
+        },
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "나는 4월 15일마다 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3109498+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4월 15일마다",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-04-15",
+          "FutureResolution": {
+            "set": "Set: XXXX-04-15"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-04-15"
+          }
+        },
+        "Start": 11,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "나는 월요일마다 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3259514+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "월요일마다",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1"
+          }
+        },
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "나는 월요일 오후 4시마다 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3379507+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "월요일 오후 4시마다",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1T16",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1T16"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1T16"
+          }
+        },
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 아침 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3429518+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일 아침",
+        "Type": "set",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "set": "Set: TMO"
+          },
+          "PastResolution": {
+            "set": "Set: TMO"
+          }
+        },
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 아침 9시에 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3609535+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일 아침 9시에",
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
+        },
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 오후 4시에 떠날 거야.",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3730732+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일 오후 4시에",
+        "Type": "set",
+        "Value": {
+          "Timex": "T16",
+          "FutureResolution": {
+            "set": "Set: T16"
+          },
+          "PastResolution": {
+            "set": "Set: T16"
+          }
+        },
+        "Start": 11,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 밤 9시에 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3840706+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일 밤 9시에",
+        "Type": "set",
+        "Value": {
+          "Timex": "T21",
+          "FutureResolution": {
+            "set": "Set: T21"
+          },
+          "PastResolution": {
+            "set": "Set: T21"
+          }
+        },
+        "Start": 11,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 밤 9시에 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3930718+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일 밤 9시에",
+        "Type": "set",
+        "Value": {
+          "Timex": "T21",
+          "FutureResolution": {
+            "set": "Set: T21"
+          },
+          "PastResolution": {
+            "set": "Set: T21"
+          }
+        },
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 아침 9시에 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4065719+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일 아침 9시에",
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
+        },
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 아침 9시에 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4170727+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일 아침 9시에",
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
+        },
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "나는 매주 일요일 아침 9시에 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4295727+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매주 일요일 아침 9시",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7T09",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          }
+        },
+        "Start": 14,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "나는 매주 일요일 아침 9시에 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.438575+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매주 일요일 아침 9시",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7T09",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          }
+        },
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "나는 매주 일요일 아침 9시에 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4505726+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매주 일요일 아침 9시",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7T09",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          }
+        },
+        "Start": 14,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "나는 월요일마다 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4570731+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "월요일마다",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1"
+          }
+        },
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "나는 일요일마다 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4635727+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "일요일마다",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7"
+          }
+        },
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "나는 일요일마다 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4710739+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "일요일마다",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7"
+          }
+        },
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  }
+]

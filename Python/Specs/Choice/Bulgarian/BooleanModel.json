@@ -1,0 +1,212 @@
+[
+  {
+    "Input": "Определено!",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Определено",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Не мисля така. не.",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Не",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Мисля, че това ще проработи. така че да.",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "да",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.47500000000000003
+        }
+      }
+    ]
+  },
+  {
+    "Input": "не. Казах четвърти юли",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "не",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "да... Казах, без кромид",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "да",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Казах НЕ не да!",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "НЕ",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Да. Казах не",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Да",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "Input": "не съм съгласен, не е добре",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "не съм съгласен",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "Input": "съгласен съм, добре е",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "съгласен",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "съгласен съм, не е добре",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "не е добре",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.76
+        }
+      }
+    ]
+  },
+  {
+    "Input": "не съм съгласен",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "не съм съгласен",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "не е добре",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "не е добре",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌 Няма проблем",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌👌👌",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
+  }
+]

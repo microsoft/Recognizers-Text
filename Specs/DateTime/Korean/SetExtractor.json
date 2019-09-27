@@ -1,0 +1,275 @@
+[
+  {
+    "Input": "나는 매주 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매주",
+        "Type": "set",
+        "Start": 3,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "나는 날마다 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "날마다",
+        "Type": "set",
+        "Start": 3,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 떠날 거야.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일",
+        "Type": "set",
+        "Start": 3,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "나는 매달 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매달",
+        "Type": "set",
+        "Start": 3,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "나는 매년 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매년",
+        "Type": "set",
+        "Start": 3,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "나는 이틀마다 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이틀마다",
+        "Type": "set",
+        "Start": 3,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "나는 3주마다 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3주마다",
+        "Type": "set",
+        "Start": 3,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 오후 3시에 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일 오후 3시",
+        "Type": "set",
+        "Start": 3,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "나는 4월 15일마다 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4월 15일마다",
+        "Type": "set",
+        "Start": 3,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "나는 매주 월요일에 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매주 월요일",
+        "Type": "set",
+        "Start": 3,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "나는 월요일 오후 4시마다 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "월요일 오후 4시마다",
+        "Type": "set",
+        "Start": 3,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 아침에 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일 아침",
+        "Type": "set",
+        "Start": 3,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 아침 오전 9시에 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일 아침 오전 9시에",
+        "Type": "set",
+        "Start": 3,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 오후 4시에 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일 오후 4시에",
+        "Type": "set",
+        "Start": 3,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 밤 9시에 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일 밤 9시에",
+        "Type": "set",
+        "Start": 3,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "나는 매일 아침 9시에 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일 아침 9시에",
+        "Type": "set",
+        "Start": 3,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "나는 매주 일요일 아침 9시에 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매주 일요일 아침 9시에",
+        "Type": "set",
+        "Start": 3,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "나는 매주 월요일 아침 9시에 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매주 월요일 아침 9시에",
+        "Type": "set",
+        "Start": 3,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "나는 월요일마다 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "월요일마다",
+        "Type": "set",
+        "Start": 3,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "나는 일요일마다 떠날 거야. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "일요일마다",
+        "Type": "set",
+        "Start": 3,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "5월 9일 이틀 밤 예약이 가능합니까? ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "밤",
+        "Type": "set",
+        "Start": 9,
+        "Length": 1
+      }
+    ]
+  }
+]

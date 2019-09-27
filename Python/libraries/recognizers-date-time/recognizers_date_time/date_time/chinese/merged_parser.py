@@ -162,10 +162,7 @@ class ChineseMergedParser(BaseMergedParser):
                 resolutions.append(new_values)
 
         if not past and not future:
-            dummy = {}
-            dummy['timex'] = timex
-            dummy['type'] = output_type
-            dummy['value'] = 'not resolved'
+            dummy = {'timex': timex, 'type': output_type, 'value': 'not resolved'}
             resolutions.append(dummy)
 
         return {'values': resolutions}

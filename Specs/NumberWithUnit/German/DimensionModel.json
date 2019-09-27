@@ -1,0 +1,345 @@
+[
+  {
+    "Input": "75ml",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "75ml",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "75",
+          "unit": "Milliliter"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "Das Ding ist mindestens 3 Zoll breit.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "3 zoll",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Inch"
+        },
+        "Start": 24,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "Da müssen noch 3 Teelöffel Salz rein.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "3 teelöffel",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Teaspoon"
+        },
+        "Start": 15,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "Auf dem Oktoberfest wurden bisher insgesamt ca. achtzig Millionen liter Bier ausgeschenkt.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "achtzig millionen liter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "80000000",
+          "unit": "Liter"
+        },
+        "Start": 48,
+        "End": 70
+      }
+    ]
+  },
+  {
+    "Input": "Ein Fußballfeld ist zwischen 4.050 m² und 10.800 m² groß.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "4.050 m²",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "4050",
+          "unit": "Square meter"
+        },
+        "Start": 29,
+        "End": 36
+      },
+      {
+        "Text": "10.800 m²",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10800",
+          "unit": "Square meter"
+        },
+        "Start": 42,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "Eine Geschwindigkeitsbegrenzung von 120 km/h macht auf der Autobahn keinen Sinn.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "120 km/h",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "120",
+          "unit": "Kilometer per hour"
+        },
+        "Start": 36,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "Dafür brauchen wir mindestens 12 Kubikmeter Beton.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "12 kubikmeter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "12",
+          "unit": "Cubic meter"
+        },
+        "Start": 30,
+        "End": 42
+      }
+    ]
+  },
+  {
+    "Input": "Ein Pfund Hack bitte.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "ein pfund",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1",
+          "unit": "Pound"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "Das dürften ca. 50 Gigabyte an Daten sein die übertragen werden müssen.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "50 gigabyte",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "50",
+          "unit": "Gigabyte"
+        },
+        "Start": 16,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Dreizehn Meilen westlich von hier liegt die nächste Stadt.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "dreizehn meilen",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "13",
+          "unit": "Mile"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ein Tennisfeld(Einzel) ist 195,63 Quadratmeter groß. Für Doppel sind es 260,76 Quadratmeter. Dagegen wirkt eine Tischtennisfeld mit 4,18m^2 mickrig.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "195,63 quadratmeter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "195,63",
+          "unit": "Square meter"
+        },
+        "Start": 27,
+        "End": 45
+      },
+      {
+        "Text": "260,76 quadratmeter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "260,76",
+          "unit": "Square meter"
+        },
+        "Start": 72,
+        "End": 90
+      },
+      {
+        "Text": "4,18m^2",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "4,18",
+          "unit": "Square meter"
+        },
+        "Start": 132,
+        "End": 138
+      }
+    ]
+  },
+  {
+    "Input": "Während der 4004-Prozessor noch eine Strukturgröße von 10 μm hatte, werden die Prozessoren mit der Skylake-Architektur mit 14 nm gefertigt. Toshibas NAND-Flashspeicher von 2013 hatte eine von 19 Nanometern.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "10 μm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Micrometer"
+        },
+        "Start": 55,
+        "End": 59
+      },
+      {
+        "Text": "14 nm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "14",
+          "unit": "Nanometer"
+        },
+        "Start": 123,
+        "End": 127
+      },
+      {
+        "Text": "19 nanometern",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "19",
+          "unit": "Nanometer"
+        },
+        "Start": 192,
+        "End": 204
+      }
+    ]
+  },
+  {
+    "Input": "Das Licht bewegt sich mit 299.792.458 Metern pro Sekunde durch den leeren Raum.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "299.792.458 metern pro sekunde",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "299792458",
+          "unit": "Meter per second"
+        },
+        "Start": 26,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "Bei 500Km ist Pause.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "500km",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "500",
+          "unit": "Kilometer"
+        },
+        "Start": 4,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "Eine BGM-109 erreich eine Höchstgeschwindigkeit von 878 km/h bzw. 244 Metern pro Sekunde",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "878 km/h",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "878",
+          "unit": "Kilometer per hour"
+        },
+        "Start": 52,
+        "End": 59
+      },
+      {
+        "Text": "244 metern pro sekunde",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "244",
+          "unit": "Meter per second"
+        },
+        "Start": 66,
+        "End": 87
+      }
+    ]
+  },
+  {
+    "Input": "Wir brauchen da noch einen Teelöffel Salz.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "einen teelöffel",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1",
+          "unit": "Teaspoon"
+        },
+        "Start": 21,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "Sekunde",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "2:00 pm",
+    "NotSupported": "java",
+    "Results": []
+  }
+]

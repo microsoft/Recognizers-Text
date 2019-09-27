@@ -259,7 +259,7 @@ def merge_all_tokens(tokens: List[Token], source: str, extractor_name: str) -> L
             if token.start >= m_token.start and token.end <= m_token.end:
                 add = False
 
-            if token.start > m_token.start and token.start < m_token.end:
+            if m_token.start < token.start < m_token.end:
                 add = False
 
             if token.start <= m_token.start and token.end >= m_token.end:
@@ -439,7 +439,7 @@ class DateUtils:
 
     @staticmethod
     def is_valid_time(hour: int, minute: int, second: int) -> bool:
-        return hour >= 0 and hour < 24 and minute >= 0 and minute < 60 and second >= 0 and minute < 60
+        return 0 <= hour < 24 and 0 <= minute < 60 and second >= 0 and minute < 60
 
     @staticmethod
     def this(from_date: datetime, day_of_week: DayOfWeek) -> datetime:
@@ -561,7 +561,7 @@ class MatchingUtil:
             for extract_result in extract_results:
 
                 extract_result_end = extract_result.start + extract_result.length
-                if match.start > extract_result.start and extract_result_end >= match.start:
+                if extract_result.start < match.start <= extract_result_end:
                     extract_result.length += len(match)
 
                 if match.start <= extract_result.start:
@@ -626,7 +626,8 @@ class AgoLaterMode(Enum):
 
 class AgoLaterUtil:
     @staticmethod
-    def extractor_duration_with_before_and_after(source: str, extract_result: ExtractResult, ret: List[Token], config: DateTimeUtilityConfiguration) -> List[Token]:
+    def extractor_duration_with_before_and_after(source: str, extract_result: ExtractResult,
+                                                 ret: List[Token], config: DateTimeUtilityConfiguration) -> List[Token]:
         pos = extract_result.start + extract_result.length
 
         if pos <= len(source):
@@ -666,12 +667,15 @@ class AgoLaterUtil:
                     value = MatchingUtil.get_in_index(
                         before_string, config.in_connector_regex)
 
-                    if extract_result.start is not None and extract_result.length is not None and extract_result.start >= value.index:
-                        ret.append(Token(extract_result.start - value.index, extract_result.start + extract_result.length))
+                    if extract_result.start is not None\
+                            and extract_result.length is not None\
+                            and extract_result.start >= value.index:
+                        ret.append(Token(extract_result.start - value.index,
+                                         extract_result.start + extract_result.length))
 
             elif MatchingUtil.get_in_index(before_string, config.within_next_prefix_regex).matched:
 
-                #For range unit like "week, month, year, day, second, minute, hour",
+                # For range unit like "week, month, year, day, second, minute, hour",
                 # it should output dateRange or datetimeRange
                 if not (config.range_unit_regex.search(extract_result.text)) and not config.time_unit_regex.search(
                         extract_result.text):
@@ -741,7 +745,8 @@ class AgoLaterUtil:
         contains_ago = MatchingUtil.contains_ago_later_index(
             after_str, utility_configuration.ago_regex)
         contains_later_or_in = MatchingUtil.contains_ago_later_index(
-            after_str, utility_configuration.later_regex) or MatchingUtil.contains_in_index(before_str, utility_configuration.in_connector_regex)
+            after_str, utility_configuration.later_regex) or\
+            MatchingUtil.contains_in_index(before_str, utility_configuration.in_connector_regex)
 
         if contains_ago:
             result = AgoLaterUtil.get_date_result(

@@ -1,0 +1,487 @@
+[
+  {
+    "Input": "https://abc.com",
+    "Results": [
+      {
+        "Text": "https://abc.com",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://abc.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ftp://abc.com",
+    "Results": [
+      {
+        "Text": "ftp://abc.com",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "ftp://abc.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com",
+    "Results": [
+      {
+        "Text": "http://abc.com",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "www.abc.com",
+    "Results": [
+      {
+        "Text": "www.abc.com",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "www.abc.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "www.abc.com.cn",
+    "Results": [
+      {
+        "Text": "www.abc.com.cn",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "www.abc.com.cn"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "abc.com",
+    "Results": [
+      {
+        "Text": "abc.com",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "abc.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/file_name",
+    "Results": [
+      {
+        "Text": "http://abc.com/file_name",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/file_name"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/file_path/",
+    "Results": [
+      {
+        "Text": "http://abc.com/file_path/",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/file_path/"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/file_path/123.html",
+    "Results": [
+      {
+        "Text": "http://abc.com/file_path/123.html",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/file_path/123.html"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/search?id=123",
+    "Results": [
+      {
+        "Text": "http://abc.com/search?id=123",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/search?id=123"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/search?id=123&name=Alice",
+    "Results": [
+      {
+        "Text": "http://abc.com/search?id=123&name=Alice",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/search?id=123&name=Alice"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/123#cite_1",
+    "Results": [
+      {
+        "Text": "http://abc.com/123#cite_1",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/123#cite_1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com:8080",
+    "Results": [
+      {
+        "Text": "http://abc.com:8080",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com:8080"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "你好，@伊芙，你可以在这里看到我的简历https://frank.website.com/CV/#cite_2",
+    "Results": [
+      {
+        "Text": "https://frank.website.com/CV/#cite_2",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://frank.website.com/CV/#cite_2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Alice@abc.com是个邮箱不是个url地址",
+    "Results": []
+  },
+  {
+    "Input": "https:// 是不合法的",
+    "Results": []
+  },
+  {
+    "Input": "http://#是不合法的",
+    "Results": []
+  },
+  {
+    "Input": "httt://abc.com是不合法的, 没有这样的协议地址",
+    "Results": []
+  },
+  {
+    "Input": "你好， @Carol,请发送邮件到Dave@abc.com以获取更多关于#A1的信息",
+    "Results": []
+  },
+  {
+    "Input": "http://127.0.0.1:8080",
+    "Results": [
+      {
+        "Text": "http://127.0.0.1:8080",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://127.0.0.1:8080"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://localhost:8080",
+    "Results": [
+      {
+        "Text": "http://localhost:8080",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://localhost:8080"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://localhost:8080#123",
+    "Results": [
+      {
+        "Text": "http://localhost:8080#123",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://localhost:8080#123"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://localhost:8080/#/123",
+    "Results": [
+      {
+        "Text": "http://localhost:8080/#/123",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://localhost:8080/#/123"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://127.0.0.1:8080/#/123",
+    "Results": [
+      {
+        "Text": "http://127.0.0.1:8080/#/123",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://127.0.0.1:8080/#/123"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "['http://twitter.com/#!/KCGtechnoly/status/9042443475840', None]",
+    "Results": [
+      {
+        "Text": "http://twitter.com/#!/KCGtechnoly/status/9042443475840",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://twitter.com/#!/KCGtechnoly/status/9042443475840"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "DNS服务器地址是8.8.8.8",
+    "Results": []
+  },
+  {
+    "Input": "更多详情:https://bit.ly/2jm6eu3",
+    "Results": [
+      {
+        "Text": "https://bit.ly/2jm6eu3",
+        "Start": 5,
+        "End": 26,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://bit.ly/2jm6eu3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "五月五.https://t.co/YCUZfuyyHZ",
+    "Results": [
+      {
+        "Text": "https://t.co/YCUZfuyyHZ",
+        "Start": 4,
+        "End": 26,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://t.co/YCUZfuyyHZ"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "以下皆为合法地址：bit.ly, nyti.ms, sound.academy, pep.si, lero.aws...",
+    "Results": [
+      {
+        "Text": "bit.ly",
+        "Start": 9,
+        "End": 14,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "bit.ly"
+        }
+      },
+      {
+        "Text": "nyti.ms",
+        "Start": 17,
+        "End": 23,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "nyti.ms"
+        }
+      },
+      {
+        "Text": "sound.academy",
+        "Start": 26,
+        "End": 38,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "sound.academy"
+        }
+      },
+      {
+        "Text": "pep.si",
+        "Start": 41,
+        "End": 46,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "pep.si"
+        }
+      },
+      {
+        "Text": "lero.aws",
+        "Start": 49,
+        "End": 56,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "lero.aws"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "john.de@cooso.com.au",
+    "Results": []
+  },
+  {
+    "Input": "请访问https://luis.ai?action=add以获取更多信息",
+    "Results": [
+      {
+        "Text": "https://luis.ai?action=add",
+        "Start": 3,
+        "End": 28,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://luis.ai?action=add"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "working..是一个不合法的网址",
+    "Results": []
+  },
+  {
+    "Input": "7.am更像是一个日期而不是一个网址。",
+    "Results": []
+  },
+  {
+    "Input": "请访问https://7.am以获取更多信息。",
+    "Results": [
+      {
+        "Text": "https://7.am",
+        "Start": 3,
+        "End": 14,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://7.am"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "请访问27.pm和s7.am以获取更多信息。",
+    "Results": [
+      {
+        "Text": "27.pm",
+        "Start": 3,
+        "End": 7,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "27.pm"
+        }
+      },
+      {
+        "Text": "s7.am",
+        "Start": 9,
+        "End": 13,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "s7.am"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "百度.com 是不合法地址",
+    "Notsupport": "java",
+    "Results": []
+  },
+  {
+    "Input": "网址是microsoft.com",
+    "Notsupport": "java",
+    "Results": [
+      {
+        "Text": "microsoft.com",
+        "Start": 3,
+        "End": 15,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "microsoft.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "微软的官网是microsoft.com哦",
+    "Notsupport": "java",
+    "Results": [
+      {
+        "Text": "microsoft.com",
+        "Start": 6,
+        "End": 18,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "microsoft.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "微软的官网是：microsoft.com",
+    "Notsupport": "java",
+    "Results": [
+      {
+        "Text": "microsoft.com",
+        "Start": 7,
+        "End": 19,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "microsoft.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "微软的官网是：www.microsoft.com",
+    "Notsupport": "java",
+    "Results": [
+      {
+        "Text": "www.microsoft.com",
+        "Start": 7,
+        "End": 23,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "www.microsoft.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "微软的官网是：http://www.microsoft.com",
+    "Notsupport": "java",
+    "Results": [
+      {
+        "Text": "http://www.microsoft.com",
+        "Start": 7,
+        "End": 30,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://www.microsoft.com"
+        }
+      }      
+    ]
+  }
+]

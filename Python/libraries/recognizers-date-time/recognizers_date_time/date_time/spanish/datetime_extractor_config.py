@@ -13,6 +13,7 @@ from .base_configs import SpanishDateTimeUtilityConfiguration
 from .date_extractor_config import SpanishDateExtractorConfiguration
 from .time_extractor_config import SpanishTimeExtractorConfiguration
 from .duration_extractor_config import SpanishDurationExtractorConfiguration
+from ..utilities import DateTimeOptions
 
 
 class SpanishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
@@ -157,6 +158,7 @@ class SpanishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         self._duration_extractor = BaseDurationExtractor(
             SpanishDurationExtractorConfiguration())
         self._utility_configuration = SpanishDateTimeUtilityConfiguration()
+        self._options = DateTimeOptions.NONE
 
     def is_connector_token(self, source: str) -> bool:
         return source.strip() == '' or regex.search(self.connector_regex, source) is not None or regex.search(

@@ -1,0 +1,266 @@
+[
+  {
+    "Input": "Tornerò a pasqua",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "pasqua",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-03-27",
+          "FutureResolution": {
+            "date": "2017-04-16"
+          },
+          "PastResolution": {
+            "date": "2016-03-27"
+          }
+        },
+        "Start": 10,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il giorno di natale",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "giorno di natale",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        },
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò la vigilia di capodanno",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la vigilia di capodanno",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2016-12-31"
+          },
+          "PastResolution": {
+            "date": "2015-12-31"
+          }
+        },
+        "Start": 8,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò a natale",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "natale",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        },
+        "Start": 10,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò al capodanno cinese",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "capodanno cinese",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il giorno del ringraziamento",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "giorno del ringraziamento",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          }
+        },
+        "Start": 11,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò al ringraziamento",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "ringraziamento",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          }
+        },
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alla festa del papà",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "festa del papà",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-03-19",
+          "FutureResolution": {
+            "date": "2017-03-19"
+          },
+          "PastResolution": {
+            "date": "2016-03-19"
+          }
+        },
+        "Start": 13,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò al capodanno cinese del prossimo anno",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "capodanno cinese del prossimo anno",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2017-01-01"
+          }
+        },
+        "Start": 11,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il giorno del ringraziamento del 2010",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "giorno del ringraziamento del 2010",
+        "Type": "date",
+        "Value": {
+          "Timex": "2010-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2010-11-25"
+          },
+          "PastResolution": {
+            "date": "2010-11-25"
+          }
+        },
+        "Start": 11,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alla festa del papà del 2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "festa del papà del 2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-03-19",
+          "FutureResolution": {
+            "date": "2015-03-19"
+          },
+          "PastResolution": {
+            "date": "2015-03-19"
+          }
+        },
+        "Start": 13,
+        "Length": 23
+      }
+    ]
+  }
+]

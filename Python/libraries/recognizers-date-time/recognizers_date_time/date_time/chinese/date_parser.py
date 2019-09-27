@@ -68,7 +68,7 @@ class ChineseDateParser(BaseDateParser):
         return result
 
     def __parse_lunar_calendar(self, source: str) -> bool:
-        return regex.match(self.lunar_regex, source.strip()) != None
+        return regex.match(self.lunar_regex, source.strip()) is not None
 
     def parse_basic_regex_match(self, source: str, reference: datetime) -> DateTimeParseResult:
         trimmed_source = source.strip()
@@ -125,34 +125,34 @@ class ChineseDateParser(BaseDateParser):
             past_date: datetime
 
             if day > self.get_month_max_day(year, month):
-                futureMonth = month + 1
-                pastMonth = month - 1
-                futureYear = year
-                pastYear = year
+                future_month = month + 1
+                past_month = month - 1
+                future_year = year
+                past_year = year
 
-                if futureMonth == Constants.MaxMonth + 1:
-                    futureMonth = Constants.MinMonth
-                    futureYear = year + 1
+                if future_month == Constants.MaxMonth + 1:
+                    future_month = Constants.MinMonth
+                    future_year = year + 1
 
-                if pastMonth == Constants.MinMonth - 1:
-                    pastMonth = Constants.MaxMonth
-                    pastYear = year - 1
+                if past_month == Constants.MinMonth - 1:
+                    past_month = Constants.MaxMonth
+                    past_year = year - 1
 
-                isFutureValid = DateUtils.is_valid_date(
-                    futureYear, futureMonth, day)
-                isPastValid = DateUtils.is_valid_date(pastYear, pastMonth, day)
+                is_future_valid = DateUtils.is_valid_date(
+                    future_year, future_month, day)
+                is_past_valid = DateUtils.is_valid_date(past_year, past_month, day)
 
-                if isFutureValid and isPastValid:
+                if is_future_valid and is_past_valid:
                     future_date = DateUtils.safe_create_from_min_value(
-                        futureYear, futureMonth, day)
+                        future_year, future_month, day)
                     past_date = DateUtils.safe_create_from_min_value(
-                        pastYear, pastMonth, day)
-                elif isFutureValid and not isPastValid:
+                        past_year, past_month, day)
+                elif is_future_valid and not is_past_valid:
                     future_date = past_date = DateUtils.safe_create_from_min_value(
-                        futureYear, futureMonth, day)
-                elif not isFutureValid and not isPastValid:
+                        future_year, future_month, day)
+                elif not is_future_valid and not is_past_valid:
                     future_date = past_date = DateUtils.safe_create_from_min_value(
-                        pastYear, pastMonth, day)
+                        past_year, past_month, day)
                 else:
                     future_date = past_date = DateUtils.safe_create_from_min_value(
                         year, month, day)
@@ -346,11 +346,11 @@ class ChineseDateParser(BaseDateParser):
         return (year % 4 == 0) and (year % 100 != 0) or (year % 400 == 0)
 
     def get_month_max_day(self, year, month) -> int:
-        maxDay = self.month_max_days[month - 1]
+        max_day = self.month_max_days[month - 1]
 
         if not self.is_leap_year(year) and month == 2:
-            maxDay -= 1
-        return maxDay
+            max_day -= 1
+        return max_day
 
     def is_valid_date(self, year, month, day):
         if month < Constants.MinMonth:

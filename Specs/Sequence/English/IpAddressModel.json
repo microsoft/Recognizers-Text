@@ -1,0 +1,343 @@
+[
+  {
+    "Input": "My PC IP address is 1.1.1.1",
+    "Results": [
+      {
+        "Text": "1.1.1.1",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "1.1.1.1",
+          "type": "ipv4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IP address is 1.1.1.2/25",
+    "Results": [
+      {
+        "Text": "1.1.1.2",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "1.1.1.2",
+          "type": "ipv4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IP address is 0.0.0.0",
+    "Results": [
+      {
+        "Text": "0.0.0.0",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "0.0.0.0",
+          "type": "ipv4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IP address is 255.255.255.255",
+    "Results": [
+      {
+        "Text": "255.255.255.255",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "255.255.255.255",
+          "type": "ipv4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "8.8.8.8 is the ip address",
+    "Results": [
+      {
+        "Text": "8.8.8.8",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "8.8.8.8",
+          "type": "ipv4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "8.8.8.1/24 is the ip address",
+    "Results": [
+      {
+        "Text": "8.8.8.1",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "8.8.8.1",
+          "type": "ipv4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "08.008.08.08 is the ip address",
+    "Results": [
+      {
+        "Text": "08.008.08.08",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "8.8.8.8",
+          "type": "ipv4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IP address is not 256.1.1.1",
+    "Results": []
+  },
+  {
+    "Input": "wrong IP address 1111.1.1.1",
+    "Results": []
+  },
+  {
+    "Input": "wrong IP address 1101.1.1.1",
+    "Results": []
+  },
+  {
+    "Input": "wrong IP address 1.1000.1.1",
+    "Results": []
+  },
+  {
+    "Input": "wrong IP address 1.1.1000.1",
+    "Results": []
+  },
+  {
+    "Input": "wrong IP address 1.1.1.256",
+    "Results": []
+  },
+  {
+    "Input": "My PC IPv6 address is ABEF:452::FE10",
+    "Results": [
+      {
+        "Text": "ABEF:452::FE10",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "ABEF:452::FE10",
+          "type": "ipv6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IPv6 address is 12::1",
+    "Results": [
+      {
+        "Text": "12::1",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "12::1",
+          "type": "ipv6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IPv6 address is ::",
+    "Results": [
+      {
+        "Text": "::",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "::",
+          "type": "ipv6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IPv6 address is ::1",
+    "Results": [
+      {
+        "Text": "::1",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "::1",
+          "type": "ipv6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IPv6 address is 1::1",
+    "Results": [
+      {
+        "Text": "1::1",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "1::1",
+          "type": "ipv6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IPv6 address is 1::",
+    "Results": [
+      {
+        "Text": "1::",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "1::",
+          "type": "ipv6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IPv6 address is 0000:0000:0000:0000:0000:0000:0000:0000",
+    "Results": [
+      {
+        "Text": "0000:0000:0000:0000:0000:0000:0000:0000",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "0:0:0:0:0:0:0:0",
+          "type": "ipv6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IPv6 address is 123:45::ADC:6",
+    "Results": [
+      {
+        "Text": "123:45::ADC:6",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "123:45::ADC:6",
+          "type": "ipv6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IPv6 address is ::1:123:23",
+    "Results": [
+      {
+        "Text": "::1:123:23",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "::1:123:23",
+          "type": "ipv6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IPv6 address is FEDC:BA98:7654:3210:FEDC:BA98:7654:3210",
+    "Results": [
+      {
+        "Text": "FEDC:BA98:7654:3210:FEDC:BA98:7654:3210",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "FEDC:BA98:7654:3210:FEDC:BA98:7654:3210",
+          "type": "ipv6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IPv6 address is fe80:0000:0000:0000:0204:61ff:fe9d:f156",
+    "Results": [
+      {
+        "Text": "fe80:0000:0000:0000:0204:61ff:fe9d:f156",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "fe80:0:0:0:204:61ff:fe9d:f156",
+          "type": "ipv6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IPv6 address is fe80:0:0:0:204:61ff:fe9d:f156",
+    "Results": [
+      {
+        "Text": "fe80:0:0:0:204:61ff:fe9d:f156",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "fe80:0:0:0:204:61ff:fe9d:f156",
+          "type": "ipv6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IPv6 address is fe80::204:61ff:fe9d:f156",
+    "Results": [
+      {
+        "Text": "fe80::204:61ff:fe9d:f156",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "fe80::204:61ff:fe9d:f156",
+          "type": "ipv6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My PC IPv6 address is 2001::",
+    "Results": [
+      {
+        "Text": "2001::",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "2001::",
+          "type": "ipv6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "the train arrives at 10:00",
+    "Results": []
+  },
+  {
+    "Input": "wrong IPV6 address FE06::1::2",
+    "Results": []
+  },
+  {
+    "Input": "wrong IPV6 address :",
+    "Results": []
+  },
+  {
+    "Input": "I say:",
+    "Results": []
+  },
+  {
+    "Input": "I said :",
+    "Results": []
+  },
+  {
+    "Input": "lync:",
+    "Results": []
+  },
+  {
+    "Input": "lync: :",
+    "Results": []
+  },
+  {
+    "Input": ":as you say",
+    "Results": []
+  },
+  {
+    "Input": ": as you say",
+    "Results": []
+  },
+  {
+    "Input": "wrong IPV6 address 12::44:f:45::1",
+    "Results": []
+  },
+  {
+    "Input": "wrong IPV6 address JKLN:ssej::1",
+    "Results": []
+  }
+]

@@ -1,0 +1,475 @@
+[
+  {
+    "Input": "je partirai pour 3h",
+    "Results": [
+      {
+        "Text": "3h",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "je partirai pour 3jour",
+    "Results": [
+      {
+        "Text": "3jour",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je partirai pour 3,5ans",
+    "Results": [
+      {
+        "Text": "3,5ans",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "je partirai pour 3 h",
+    "Results": [
+      {
+        "Text": "3 h",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "je partirai pour 3 heures",
+    "Results": [
+      {
+        "Text": "3 heures",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "je partirai pour 3 hrs",
+    "Results": [
+      {
+        "Text": "3 hrs",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je partirai pour 3 hr",
+    "Results": [
+      {
+        "Text": "3 hr",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "je partirai pour 3 jour",
+    "Results": [
+      {
+        "Text": "3 jour",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "je partirai pour 3 mois",
+    "Results": [
+      {
+        "Text": "3 mois",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "je partirai pour 3 minutes",
+    "Results": [
+      {
+        "Text": "3 minutes",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "je partirai pour 3 min",
+    "Results": [
+      {
+        "Text": "3 min",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je partirai pour 3,5 seconde",
+    "Results": [
+      {
+        "Text": "3,5 seconde",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "je partirai pour 123,45 sec",
+    "Results": [
+      {
+        "Text": "123,45 sec",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "je partirai pour deux semaines",
+    "Results": [
+      {
+        "Text": "deux semaines",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "je partirai pour vingt min",
+    "Results": [
+      {
+        "Text": "vingt min",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "je partirai pour vingt quatre heures",
+    "Results": [
+      {
+        "Text": "vingt quatre heures",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour toute la journee",
+    "Results": [
+      {
+        "Text": "toute la journee",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour toute la semaine",
+    "Results": [
+      {
+        "Text": "toute la semaine",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour toute le mois",
+    "Results": [
+      {
+        "Text": "toute le mois",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour toute l'année",
+    "Results": [
+      {
+        "Text": "toute l'année",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour toute l'annee",
+    "Results": [
+      {
+        "Text": "toute l'annee",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour une heure",
+    "Results": [
+      {
+        "Text": "une heure",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pendant un ans",
+    "Results": [
+      {
+        "Text": "un ans",
+        "Type": "duration",
+        "Start": 20,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "demi année",
+    "Results": [
+      {
+        "Text": "demi année",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "demi-annee",
+    "Results": [
+      {
+        "Text": "demi-annee",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour 3-min",
+    "Results": [
+      {
+        "Text": "3-min",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour 30-minutes",
+    "Results": [
+      {
+        "Text": "30-minutes",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour demi heure",
+    "Results": [
+      {
+        "Text": "demi heure",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour une heure et demi",
+    "Results": [
+      {
+        "Text": "une heure et demi",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour un heure et demi",
+    "Results": [
+      {
+        "Text": "un heure et demi",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour une demi-heure",
+    "Results": [
+      {
+        "Text": "une demi-heure",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour deux heures",
+    "Results": [
+      {
+        "Text": "deux heures",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour deux et demi heures",
+    "Results": [
+      {
+        "Text": "deux et demi heures",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "en un semaine",
+    "Results": [
+      {
+        "Text": "un semaine",
+        "Type": "duration",
+        "Start": 3,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "en un jour",
+    "Results": [
+      {
+        "Text": "un jour",
+        "Type": "duration",
+        "Start": 3,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "pour un heure",
+    "Results": [
+      {
+        "Text": "un heure",
+        "Type": "duration",
+        "Start": 5,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "pour un mois",
+    "Results": [
+      {
+        "Text": "un mois",
+        "Type": "duration",
+        "Start": 5,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour quel qués heures",
+    "Results": [
+      {
+        "Text": "quel qués heures",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour quelques heures",
+    "Results": [
+      {
+        "Text": "quelques heures",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour quelqués minutes",
+    "Results": [
+      {
+        "Text": "quelqués minutes",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour quelque jours",
+    "Results": [
+      {
+        "Text": "quelque jours",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour plusieurs jours",
+    "Results": [
+      {
+        "Text": "plusieurs jours",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "cette coursdu semaines prochaine",
+    "Results": [
+      {
+        "Text": "semaines prochaine",
+        "Type": "duration",
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  }
+]

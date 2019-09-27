@@ -1,0 +1,122 @@
+[
+  {
+    "Input": "Ich mache das wöchentlich",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2744475+08:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "wöchentlich",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "set": "Set: P1W"
+          },
+          "PastResolution": {
+            "set": "Set: P1W"
+          }
+        },
+        "Start": 14,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ich mache das täglich",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2779449+08:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "täglich",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
+        },
+        "Start": 14,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ich mache das jeden Tag",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2744475+08:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "jeden Tag",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
+        },
+        "Start": 14,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Das ist ein monatlich auftretendes Problem.",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2779449+08:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "monatlich",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "set": "Set: P1M"
+          },
+          "PastResolution": {
+            "set": "Set: P1M"
+          }
+        },
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Das ist unser alljährliches Sommerfest.",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2779449+08:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "alljährliches",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
+        },
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  }
+]

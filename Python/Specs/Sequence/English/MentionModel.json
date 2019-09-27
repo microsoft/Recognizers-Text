@@ -1,0 +1,123 @@
+[
+  {
+    "Input": "@BotSys, let's go for the meeting.",
+    "Results": [
+      {
+        "Text": "@BotSys",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@BotSys"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "@Alice, please respond.",
+    "Results": [
+      {
+        "Text": "@Alice",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@Alice"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "You can contact @Bob for more information",
+    "Results": [
+      {
+        "Text": "@Bob",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@Bob"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This is @Carol_2.",
+    "Results": [
+      {
+        "Text": "@Carol_2",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@Carol_2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "@DaveDaveDaveDaveDave can be longer",
+    "Results": [
+      {
+        "Text": "@DaveDaveDaveDaveDave",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@DaveDaveDaveDaveDave"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Hello, @Carol, please write to me at Dave@abc.com for more information on task #A1",
+    "Results": [
+      {
+        "Text": "@Carol",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@Carol"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Hi, @Eve, you can find my CV at https://frank.website.com/CV/#cite_2",
+    "Results": [
+      {
+        "Text": "@Eve",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@Eve"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "@! is not a valid mention",
+    "Results": []
+  },
+  {
+    "Input": "use @ before username is not a mention",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "abc@efg.com, which is an email rather than a mention",
+    "Results": []
+  },
+  {
+    "Input": "Hi@HowardsCreekFD, please respond.",
+    "Results": [
+      {
+        "Text": "@HowardsCreekFD",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@HowardsCreekFD"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I talked to:@Howard",
+    "Results": [
+      {
+        "Text": "@Howard",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@Howard"
+        }
+      }
+    ]
+  }
+]

@@ -99,9 +99,11 @@ class TimeTypeConstants:
     END: str = 'end'
 
     # Mod Value
-    # "before" -> To mean "preceding in time". I.e. Does not include the extracted datetime entity in the resolution's ending point. Equivalent to "<"
+    # "before" -> To mean "preceding in time". I.e.
+    # Does not include the extracted datetime entity in the resolution's ending point. Equivalent to "<"
     BEFORE_MOD: str = 'before'
-    # "after" -> To mean "following in time". I.e. Does not include the extracted datetime entity in the resolution's starting point. Equivalent to ">"
+    # "after" -> To mean "following in time". I.e.
+    # Does not include the extracted datetime entity in the resolution's starting point. Equivalent to ">"
     AFTER_MOD: str = 'after'
     # "since" -> Same as "after", but including the extracted datetime entity. Equivalent to ">="
     SINCE_MOD: str = 'since'

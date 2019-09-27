@@ -1,0 +1,110 @@
+[
+  {
+    "Input": "Tornerò a natale",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "natale",
+        "Type": "date",
+        "Start": 10,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il giorno di natale",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "giorno di natale",
+        "Type": "date",
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò al capodanno cinese",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "capodanno cinese",
+        "Type": "date",
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il giorno del ringraziamento",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "giorno del ringraziamento",
+        "Type": "date",
+        "Start": 11,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alla festa del papà",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "festa del papà",
+        "Type": "date",
+        "Start": 13,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò al capodanno cinese di quest'anno",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "capodanno cinese di quest'anno",
+        "Type": "date",
+        "Start": 11,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò al capodanno cinese del 2016",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "capodanno cinese del 2016",
+        "Type": "date",
+        "Start": 11,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò al capodanno cinese 2016",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "capodanno cinese 2016",
+        "Type": "date",
+        "Start": 11,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il primo giorno di quaresima",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "giorno di quaresima",
+        "Type": "date",
+        "Start": 17,
+        "Length": 19
+      }
+    ]
+  }
+]

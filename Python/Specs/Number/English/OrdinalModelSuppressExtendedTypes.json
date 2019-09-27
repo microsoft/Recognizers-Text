@@ -1,0 +1,153 @@
+[
+  {
+    "Input": "delete last sentence in the note",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "Do you mean \"next\" or \"last\"?",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "Show me the antepenultimate.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "Show me the last but one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "Show me the penultimate.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "Show me the next to last.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "Show me the one before the last one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "Show me the second to last.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "Delete last sentence.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "Show me the previous one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "Show me the next one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "I want the last two books.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "I want the last one books.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "I want next 3 books.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "Give me the next item.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "I want last cookie.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "I want next to last.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "Turn to previous page.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "I like the first two books.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "first",
+        "Start": 11,
+        "End": 15,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want the next 3 books.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "The one before the last one is the right one",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "I meant the one before the last",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "I meant the current one",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Look at the current page",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  }
+]

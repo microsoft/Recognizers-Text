@@ -1,0 +1,497 @@
+[
+  {
+    "Input": "Rendez-vouz dans le matin",
+    "Results": [
+      {
+        "Text": "dans le matin",
+        "Type": "timerange",
+        "Start": 12,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Rendez-vouz dans l'apres-midi",
+    "Results": [
+      {
+        "Text": "dans l'apres-midi",
+        "Type": "timerange",
+        "Start": 12,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Rendez-vouz dans le nuit",
+    "Results": [
+      {
+        "Text": "dans le nuit",
+        "Type": "timerange",
+        "Start": 12,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Rendez-vouz dans la soiree",
+    "Results": [
+      {
+        "Text": "dans la soiree",
+        "Type": "timerange",
+        "Start": 12,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Rendez-vouz dans le soirée",
+    "Results": [
+      {
+        "Text": "dans le soirée",
+        "Type": "timerange",
+        "Start": 12,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors 5 au 6 ce soir",
+    "Results": [
+      {
+        "Text": "5 au 6 ce soir",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors 5 au 6 du soir",
+    "Results": [
+      {
+        "Text": "5 au 6 du soir",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors 5 au 6 dans l'apres midi",
+    "Results": [
+      {
+        "Text": "5 au 6 dans l'apres midi",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors 5 au sept dans le matin",
+    "Results": [
+      {
+        "Text": "5 au sept dans le matin",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors de 5 au 6 ce soir",
+    "Results": [
+      {
+        "Text": "de 5 au 6 ce soir",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors entre 5 au 6 dans la nuit",
+    "Results": [
+      {
+        "Text": "entre 5 au 6 dans la nuit",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors entre 5 au 6 dans la soiree",
+    "Results": [
+      {
+        "Text": "entre 5 au 6 dans la soiree",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors entre 5 au 6 dans l'apres midi",
+    "Results": [
+      {
+        "Text": "entre 5 au 6 dans l'apres midi",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer ce soir",
+    "Results": [
+      {
+        "Text": "ce soir",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer du matin",
+    "Results": [
+      {
+        "Text": "du matin",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Rendez-vouz ce soir",
+    "Results": [
+      {
+        "Text": "ce soir",
+        "Type": "timerange",
+        "Start": 12,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer debut matin",
+    "Results": [
+      {
+        "Text": "debut matin",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer fin de matinee",
+    "Results": [
+      {
+        "Text": "fin de matinee",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer tard matinee",
+    "Results": [
+      {
+        "Text": "tard matinee",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer tard matin",
+    "Results": [
+      {
+        "Text": "tard matin",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer tard matinée",
+    "Results": [
+      {
+        "Text": "tard matinée",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer tot matin",
+    "Results": [
+      {
+        "Text": "tot matin",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer tôt soiree",
+    "Results": [
+      {
+        "Text": "tôt soiree",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer tôt nuit",
+    "Results": [
+      {
+        "Text": "tôt nuit",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer tard apres-midi",
+    "Results": [
+      {
+        "Text": "tard apres-midi",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer tot apres midi",
+    "Results": [
+      {
+        "Text": "tot apres midi",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer tard soiree",
+    "Results": [
+      {
+        "Text": "tard soiree",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer tard nuit",
+    "Results": [
+      {
+        "Text": "tard nuit",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer debut nuit",
+    "Results": [
+      {
+        "Text": "debut nuit",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer debut soiree",
+    "Results": [
+      {
+        "Text": "debut soiree",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors 4pm au 5pm",
+    "Results": [
+      {
+        "Text": "4pm au 5pm",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors 4:00 jusqu'a 5pm",
+    "Results": [
+      {
+        "Text": "4:00 jusqu'a 5pm",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors 14:00 jusqu'a 15:00",
+    "Results": [
+      {
+        "Text": "14:00 jusqu'a 15:00",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors 18:00 jusqu'a 20:00",
+    "Results": [
+      {
+        "Text": "18:00 jusqu'a 20:00",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors de 4:00 et 7 heures",
+    "Results": [
+      {
+        "Text": "de 4:00 et 7 heures",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors 3pm a sept trente",
+    "Results": [
+      {
+        "Text": "3pm a sept trente",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors 4pm-5pm",
+    "Results": [
+      {
+        "Text": "4pm-5pm",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors 4:00 -5:00",
+    "Results": [
+      {
+        "Text": "4:00 -5:00",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors 4:00- 5:00",
+    "Results": [
+      {
+        "Text": "4:00- 5:00",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors 4:00 - 5:00",
+    "Results": [
+      {
+        "Text": "4:00 - 5:00",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors de 4pm au 5pm",
+    "Results": [
+      {
+        "Text": "de 4pm au 5pm",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors de 14:00 au 15:00",
+    "Results": [
+      {
+        "Text": "de 14:00 au 15:00",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors de 4pm au cinq trente",
+    "Results": [
+      {
+        "Text": "de 4pm au cinq trente",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors de 3 du matin jusqu'a 5pm",
+    "Results": [
+      {
+        "Text": "de 3 du matin jusqu'a 5pm",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Je vais dehors de 3 du matinee jusqu'a cinq dans l'apres-midi",
+    "Results": [
+      {
+        "Text": "de 3 du matinee jusqu'a cinq dans l'apres-midi",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 46
+      }
+    ]
+  }
+]

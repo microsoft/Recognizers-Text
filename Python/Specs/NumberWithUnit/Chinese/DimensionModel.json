@@ -1,0 +1,117 @@
+[
+  {
+    "Input": "去年，潜江虾稻产业综合产值突破180亿元，带动就业超10万人，龙虾养殖户户平增收16000元，带动全省养殖小龙虾387万亩。",
+    "Results": [
+      {
+        "Text": "387万亩",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3870000",
+          "unit": "Mu"
+        },
+        "Start": 56,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "阳西辣椒火辣上市日均20万公斤远销珠三角",
+    "Results": [
+      {
+        "Text": "20万公斤",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "200000",
+          "unit": "Kilogram"
+        },
+        "Start": 10,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "如今身高168公分",
+    "Results": [
+      {
+        "Text": "168公分",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "168",
+          "unit": "Centimeter"
+        },
+        "Start": 4,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "澳联邦警察与维州警方在墨尔本缴获近一吨冰毒，为澳洲史上最大冰毒走私案。（澳洲联邦警察局 ...",
+    "Results": [
+      {
+        "Text": "一吨",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1",
+          "unit": "Ton"
+        },
+        "Start": 17,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "如今身高168cm",
+    "Results": [
+      {
+        "Text": "168cm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "168",
+          "unit": "Centimeter"
+        },
+        "Start": 4,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "如今身高168CM",
+    "Results": [
+      {
+        "Text": "168cm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "168",
+          "unit": "Centimeter"
+        },
+        "Start": 4,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "这里水深超过250m",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "250m",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "250",
+          "unit": "Meter"
+        },
+        "Start": 6,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "dimension是什么意思",
+    "Results": []
+  },
+  {
+    "Input": "今天2:00 pm, 你将会收到一个惊喜！",
+    "NotSupported": "java",
+    "Results": []
+  }
+]

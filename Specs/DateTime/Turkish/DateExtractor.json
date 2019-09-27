@@ -573,12 +573,13 @@
   {
     "Input": "iki bin yılı Eylül'ün onunda",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "iki bin yılı Eylül'ün onu",
+        "Text": "iki bin yılı Eylül'ün onunda",
         "Type": "date",
         "Start": 0,
-        "Length": 25
+        "Length": 28
       }
     ]
   },
@@ -621,6 +622,7 @@
   {
     "Input": "Yarından itibaren üç hafta sonra uygun musun?",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "Yarından itibaren üç hafta sonra",

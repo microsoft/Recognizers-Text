@@ -1,0 +1,1214 @@
+[
+  {
+    "Input": "Ik ben om 7 uur terug",
+    "Results": [
+      {
+        "Text": "7 uur",
+        "Type": "time",
+        "Start": 10,
+        "Length": 5
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om zeven uur terug",
+    "Results": [
+      {
+        "Text": "zeven uur",
+        "Type": "time",
+        "Start": 10,
+        "Length": 9
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 7 uur ‘s avonds terug",
+    "Results": [
+      {
+        "Text": "7 uur ‘s avonds",
+        "Type": "time",
+        "Start": 10,
+        "Length": 15
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 7:56 ‘s avonds terug",
+    "Results": [
+      {
+        "Text": "7:56 ‘s avonds",
+        "Type": "time",
+        "Start": 10,
+        "Length": 14
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " Ik ben om 7:56:35 ‘s avonds terug",
+    "Results": [
+      {
+        "Text": "7:56:35 ‘s avonds",
+        "Type": "time",
+        "Start": 11,
+        "Length": 17
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 12:34 terug",
+    "Results": [
+      {
+        "Text": "12:34",
+        "Type": "time",
+        "Start": 10,
+        "Length": 5
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 12:34:20 terug",
+    "Results": [
+      {
+        "Text": "12:34:20",
+        "Type": "time",
+        "Start": 10,
+        "Length": 8
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om T12:34:20 terug",
+    "Results": [
+      {
+        "Text": "T12:34:20",
+        "Type": "time",
+        "Start": 10,
+        "Length": 9
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 00:00 terug",
+    "Results": [
+      {
+        "Text": "00:00",
+        "Type": "time",
+        "Start": 10,
+        "Length": 5
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " Ik ben om 00:00:30 terug",
+    "Results": [
+      {
+        "Text": "00:00:30",
+        "Type": "time",
+        "Start": 11,
+        "Length": 8
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is 7 uur",
+    "Results": [
+      {
+        "Text": "7 uur",
+        "Type": "time",
+        "Start": 7,
+        "Length": 5
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is zeven uur",
+    "Results": [
+      {
+        "Text": "zeven uur",
+        "Type": "time",
+        "Start": 7,
+        "Length": 9
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is 8 uur ‘s ochtends",
+    "Results": [
+      {
+        "Text": "8 uur ‘s ochtends",
+        "Type": "time",
+        "Start": 7,
+        "Length": 17
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is 8 uur ‘s nachts",
+    "Results": [
+      {
+        "Text": "8 uur ‘s nachts",
+        "Type": "time",
+        "Start": 7,
+        "Length": 15
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is half negen",
+    "Results": [
+      {
+        "Text": "half negen",
+        "Type": "time",
+        "Start": 7,
+        "Length": 10
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is kwart over acht",
+    "Results": [
+      {
+        "Text": "kwart over acht",
+        "Type": "time",
+        "Start": 7,
+        "Length": 15
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is kwart voor 10 ‘s avonds",
+    "Results": [
+      {
+        "Text": "kwart voor 10 ‘s avonds",
+        "Type": "time",
+        "Start": 7,
+        "Length": 23
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is drie minuten voor acht",
+    "Results": [
+      {
+        "Text": "drie minuten voor acht",
+        "Type": "time",
+        "Start": 7,
+        "Length": 22
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is half acht",
+    "Results": [
+      {
+        "Text": "half acht",
+        "Type": "time",
+        "Start": 7,
+        "Length": 9
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " Het is half acht ‘s avonds",
+    "Results": [
+      {
+        "Text": "half acht ‘s avonds",
+        "Type": "time",
+        "Start": 8,
+        "Length": 19
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is half acht ‘s ochtends",
+    "Results": [
+      {
+        "Text": "half acht ‘s ochtends",
+        "Type": "time",
+        "Start": 7,
+        "Length": 21
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is kwart voor 8 in de ochtend",
+    "Results": [
+      {
+        "Text": "kwart voor 8 in de ochtend",
+        "Type": "time",
+        "Start": 7,
+        "Length": 26
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is 10 voor half negen in de avond",
+    "Results": [
+      {
+        "Text": "10 voor half negen in de avond",
+        "Type": "time",
+        "Start": 7,
+        "Length": 30
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 7 uur in de avond terug",
+    "Results": [
+      {
+        "Text": "7 uur in de avond",
+        "Type": "time",
+        "Start": 10,
+        "Length": 17
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 7:00 ‘s avonds terug",
+    "Results": [
+      {
+        "Text": "7:00 ‘s avonds",
+        "Type": "time",
+        "Start": 10,
+        "Length": 14
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " Ik ben om 7:00:14 ‘s avonds terug",
+    "Results": [
+      {
+        "Text": "7:00:14 ‘s avonds",
+        "Type": "time",
+        "Start": 11,
+        "Length": 17
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om vier uur ‘s middags terug",
+    "Results": [
+      {
+        "Text": "vier uur ‘s middags",
+        "Type": "time",
+        "Start": 10,
+        "Length": 19
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga terug om zeven uur dertig ‘s avonds",
+    "Results": [
+      {
+        "Text": "zeven uur dertig ‘s avonds",
+        "Type": "time",
+        "Start": 15,
+        "Length": 26
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga terug om vier uur vijfendertig ‘s middags",
+    "Results": [
+      {
+        "Text": "vier uur vijfendertig ‘s middags",
+        "Type": "time",
+        "Start": 15,
+        "Length": 32
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om vijf over elf",
+    "Results": [
+      {
+        "Text": "vijf over elf",
+        "Type": "time",
+        "Start": 9,
+        "Length": 13
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om drie minuten voor vijf ",
+    "Results": [
+      {
+        "Text": "drie minuten voor vijf",
+        "Type": "time",
+        "Start": 9,
+        "Length": 22
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om half zes vanavond",
+    "Results": [
+      {
+        "Text": "half zes vanavond",
+        "Type": "time",
+        "Start": 9,
+        "Length": 17
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "I'll be back noonish",
+    "Results": [
+      {
+        "Text": "noonish",
+        "Type": "time",
+        "Start": 13,
+        "Length": 7
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben ‘s middags terug",
+    "Results": [
+      {
+        "Text": "‘s middags",
+        "Type": "time",
+        "Start": 7,
+        "Length": 10
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 12 uur ‘s middags terug",
+    "Results": [
+      {
+        "Text": "12 uur ‘s middags",
+        "Type": "time",
+        "Start": 10,
+        "Length": 17
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben tegen 11’en terug",
+    "Results": [
+      {
+        "Text": "tegen 11’en",
+        "Type": "time",
+        "Start": 7,
+        "Length": 11
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " Ik ben tegen 11-en terug",
+    "Results": [
+      {
+        "Text": "tegen 11-en",
+        "Type": "time",
+        "Start": 8,
+        "Length": 11
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 340pm terug",
+    "Results": [
+      {
+        "Text": "340pm",
+        "Type": "time",
+        "Start": 10,
+        "Length": 5
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 1140 a.m. terug",
+    "Results": [
+      {
+        "Text": "1140 a.m.",
+        "Type": "time",
+        "Start": 10,
+        "Length": 9
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "middernacht",
+    "Results": [
+      {
+        "Text": "middernacht",
+        "Type": "time",
+        "Start": 0,
+        "Length": 11
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "mid morgen",
+    "Results": [
+      {
+        "Text": "mid morgen",
+        "Type": "time",
+        "Start": 0,
+        "Length": 10
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "mid-morgen",
+    "Results": [
+      {
+        "Text": "mid-morgen",
+        "Type": "time",
+        "Start": 0,
+        "Length": 10
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "middag",
+    "Results": [
+      {
+        "Text": "middag",
+        "Type": "time",
+        "Start": 0,
+        "Length": 6
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "mid afternoon",
+    "Results": [
+      {
+        "Text": "mid afternoon",
+        "Type": "time",
+        "Start": 0,
+        "Length": 13
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "mid-day",
+    "Results": [
+      {
+        "Text": "mid-day",
+        "Type": "time",
+        "Start": 0,
+        "Length": 7
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "I'll be back 7 p m",
+    "Results": [
+      {
+        "Text": "7 p m",
+        "Type": "time",
+        "Start": 13,
+        "Length": 5
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 7 uur p.m. terug",
+    "Results": [
+      {
+        "Text": "7 uur p.m.",
+        "Type": "time",
+        "Start": 10,
+        "Length": 10
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 7:56 a m terug",
+    "Results": [
+      {
+        "Text": "7:56 a m",
+        "Type": "time",
+        "Start": 10,
+        "Length": 8
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 7:56:35 a.m. terug",
+    "Results": [
+      {
+        "Text": "7:56:35 a.m.",
+        "Type": "time",
+        "Start": 10,
+        "Length": 12
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om 7:56:35 am",
+    "Results": [
+      {
+        "Text": "7:56:35 am",
+        "Type": "time",
+        "Start": 9,
+        "Length": 10
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om 7:56:35 a. m.",
+    "Results": [
+      {
+        "Text": "7:56:35 a. m.",
+        "Type": "time",
+        "Start": 9,
+        "Length": 13
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om zeven uur dertig p.m.",
+    "Results": [
+      {
+        "Text": "zeven uur dertig p.m.",
+        "Type": "time",
+        "Start": 9,
+        "Length": 21
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 340 pm terug",
+    "Results": [
+      {
+        "Text": "340 pm",
+        "Type": "time",
+        "Start": 10,
+        "Length": 6
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 1140 a m terug",
+    "Results": [
+      {
+        "Text": "1140 a m",
+        "Type": "time",
+        "Start": 10,
+        "Length": 8
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "welke emails hebben p als onderwerp gekregen",
+    "Results": [],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "welke emails hebben een antwoord gehad",
+    "Results": [],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 12 uur lunchtijd terug",
+    "Results": [
+      {
+        "Text": "12 uur lunchtijd",
+        "Type": "time",
+        "Start": 10,
+        "Length": 16
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben met lunchtijd 12 uur terug",
+    "Results": [
+      {
+        "Text": "met lunchtijd 12 uur",
+        "Type": "time",
+        "Start": 7,
+        "Length": 20
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 19:00 terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "19:00",
+        "Type": "time",
+        "Start": 10,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben om 19:56 terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "19:56",
+        "Type": "time",
+        "Start": 10,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben om 19:56:35 terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "19:56:35",
+        "Type": "time",
+        "Start": 10,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben om 12:34:20u terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12:34:20u",
+        "Type": "time",
+        "Start": 10,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben om 00:00:30 terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "00:00:30",
+        "Type": "time",
+        "Start": 10,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Het is 8 uur 's morgens",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8 uur 's morgens",
+        "Type": "time",
+        "Start": 7,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Het is 8 uur 's avonds",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8 uur 's avonds",
+        "Type": "time",
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Het is half negen 's avonds",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "half negen 's avonds",
+        "Type": "time",
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Het is kwart voor 10 's avonds",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "kwart voor 10 's avonds",
+        "Type": "time",
+        "Start": 7,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Het is half acht 's morgens",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "half acht 's morgens",
+        "Type": "time",
+        "Start": 7,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Het is kwart voor 8 's morgens",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "kwart voor 8 's morgens",
+        "Type": "time",
+        "Start": 7,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Het is tien voor half 9 's avonds",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien voor half 9 's avonds",
+        "Type": "time",
+        "Start": 7,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga half acht 's avonds terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "half acht 's avonds",
+        "Type": "time",
+        "Start": 6,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga vijf over half acht 's avonds terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vijf over half acht 's avonds",
+        "Type": "time",
+        "Start": 6,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga vijf over elf terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vijf over elf",
+        "Type": "time",
+        "Start": 6,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga drie minuten voor half zes terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "drie minuten voor half zes",
+        "Type": "time",
+        "Start": 6,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga half zes 's avonds terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "half zes 's avonds",
+        "Type": "time",
+        "Start": 6,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga 's avonds half zes terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "s avonds half zes",
+        "Type": "time",
+        "Start": 7,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben rond het middaguur terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "rond het middaguur",
+        "Type": "time",
+        "Start": 7,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben het middaguur terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "het middaguur",
+        "Type": "time",
+        "Start": 7,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben rond elven terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "rond elven",
+        "Type": "time",
+        "Start": 7,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben 15:40 terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15:40",
+        "Type": "time",
+        "Start": 7,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben 11:40 's morgens terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11:40 's morgens",
+        "Type": "time",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "halverwege de ochtend",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "halverwege de ochtend",
+        "Type": "time",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "halverwege de middag",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "halverwege de middag",
+        "Type": "time",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "het middaguur",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "het middaguur",
+        "Type": "time",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben 19:00 terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "19:00",
+        "Type": "time",
+        "Start": 7,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben 7:56 terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7:56",
+        "Type": "time",
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben 7:56:35 terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7:56:35",
+        "Type": "time",
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben 12 uur lunchtijd terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12 uur lunchtijd",
+        "Type": "time",
+        "Start": 7,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben lunchtijd 12 uur terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "lunchtijd 12 uur",
+        "Type": "time",
+        "Start": 7,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben om lunchtijd 12 uur terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "om lunchtijd 12 uur",
+        "Type": "time",
+        "Start": 7,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, schedule a meeting for next week.\nBentonville, AR 72716 P: 479.277",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "21:00 schikt me",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21:00",
+        "Type": "time",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "9:00 schikt me",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "Ik ben om 21:00 terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21:00",
+        "Type": "time",
+        "Start": 10,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben om 9:00 terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9:00",
+        "Type": "time",
+        "Start": 10,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Dit product is geprijsd als 1.6714.",
+    "Comment": "1 shouldn't recognized as time here",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  }
+]

@@ -83,7 +83,7 @@ class ChineseBaseDateTimeExtractor(DateTimeExtractor):
         last = -1
         for i in range(len(source)):
             if matched[i]:
-                if (i + 1 == len(source) or not matched[i + 1]):
+                if i + 1 == len(source) or not matched[i + 1]:
                     start = last + 1
                     length = i - last
                     text = source[start:start+length].strip()

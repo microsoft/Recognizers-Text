@@ -1,0 +1,243 @@
+[
+  {
+    "Input": "When she was five years old, she learned to ride a bike.",
+    "Results": [
+      {
+        "Text": "five years old",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "5",
+          "unit": "Year"
+        },
+        "Start": 13,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "This saga is ten years old.",
+    "Results": [
+      {
+        "Text": "ten years old",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Year"
+        },
+        "Start": 13,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "I'm only 29 years old!",
+    "Results": [
+      {
+        "Text": "29 years old",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "29",
+          "unit": "Year"
+        },
+        "Start": 9,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "Now, after ninety five years of age, perspectives change.",
+    "Results": [
+      {
+        "Text": "ninety five years of age",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "95",
+          "unit": "Year"
+        },
+        "Start": 11,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "The Great Wall of China is more than 500 years old and extends for more than 5,000 miles.",
+    "Results": [
+      {
+        "Text": "500 years old",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "500",
+          "unit": "Year"
+        },
+        "Start": 37,
+        "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "She's 60 years old; she was born in May 8, 1945.",
+    "Results": [
+      {
+        "Text": "60 years old",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "60",
+          "unit": "Year"
+        },
+        "Start": 6,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "25% of cases are not diagnosed until around 3 years of age.",
+    "Results": [
+      {
+        "Text": "3 years of age",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Year"
+        },
+        "Start": 44,
+        "End": 57
+      }
+    ]
+  },
+  {
+    "Input": "When will there be pressure to fulfil a promise that is one year old?",
+    "Results": [
+      {
+        "Text": "one year old",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "1",
+          "unit": "Year"
+        },
+        "Start": 56,
+        "End": 67
+      }
+    ]
+  },
+  {
+    "Input": "It happened when the baby was only ten months old.",
+    "Results": [
+      {
+        "Text": "ten months old",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Month"
+        },
+        "Start": 35,
+        "End": 48
+      }
+    ]
+  },
+  {
+    "Input": "The committee proposal is 8 months old.",
+    "Results": [
+      {
+        "Text": "8 months old",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "8",
+          "unit": "Month"
+        },
+        "Start": 26,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "Aproximately 50% of cases are diagnosed at around eighteen months of age.",
+    "Results": [
+      {
+        "Text": "eighteen months of age",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "18",
+          "unit": "Month"
+        },
+        "Start": 50,
+        "End": 71
+      }
+    ]
+  },
+  {
+    "Input": "It is possible, but in 2006 95% of them were younger than three months old.",
+    "Results": [
+      {
+        "Text": "three months old",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Month"
+        },
+        "Start": 58,
+        "End": 73
+      }
+    ]
+  },
+  {
+    "Input": "If we go ahead in December, it will be three weeks old.",
+    "Results": [
+      {
+        "Text": "three weeks old",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Week"
+        },
+        "Start": 39,
+        "End": 53
+      }
+    ]
+  },
+  {
+    "Input": "At 6 weeks of age, one can already celebrate Christmas.",
+    "Results": [
+      {
+        "Text": "6 weeks of age",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "6",
+          "unit": "Week"
+        },
+        "Start": 3,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "A 90 day old utilities bill is quite late.",
+    "Results": [
+      {
+        "Text": "90 day old",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "90",
+          "unit": "Day"
+        },
+        "Start": 2,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "He is about 40 - 50 years old.",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "50 years old",
+        "Start": 17,
+        "End": 28,
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Year",
+          "value": "50"
+        }
+      }
+    ]
+  }
+]

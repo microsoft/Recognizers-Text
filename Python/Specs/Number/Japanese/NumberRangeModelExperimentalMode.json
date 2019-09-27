@@ -1,0 +1,326 @@
+[
+  {
+    "Input": "この数は20より大きいが35より小さいか等しい",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "20より大きいが35より小さいか等しい",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(20,35]"
+        },
+        "Start": 4,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "この数字は20と30の間にある",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "20と30の間",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,30]"
+        },
+        "Start": 5,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "彼のランキング第10と第15の間",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "第10と第15の間",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[10,15]"
+        },
+        "Start": 7,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "これは100より大きく300より小さい",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "100より大きく300より小さい",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(100,300)"
+        },
+        "Start": 3,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "これは、100以上310以下の数値です",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "100以上310以下",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[100,310]"
+        },
+        "Start": 4,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "これらのリンゴはたぶん20~100個",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "20~100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100]"
+        },
+        "Start": 11,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "数字の範囲は1000から1500です",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1000から1500",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[1000,1500]"
+        },
+        "Start": 6,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "数字は1000以上、1500以下で",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1000以上、1500以下",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[1000,1500]"
+        },
+        "Start": 3,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "数字は4分の1より大きく, 2分の1より小さい",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4分の1より大きく, 2分の1より小さい",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(0.25,0.5)"
+        },
+        "Start": 3,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "この数は3965以上です",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3965以上",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[3965,)"
+        },
+        "Start": 4,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "この数は3965大なりです",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3965大なり",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(3965,)"
+        },
+        "Start": 4,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "彼の年齢は30以上です",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "30以上",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)"
+        },
+        "Start": 5,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "この製品は500以上のものがあります",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "500以上",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[500,)"
+        },
+        "Start": 5,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "100以下の素数を見つける",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "100以下",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,100]"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "暁明の高さは170より低い",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "170より低い",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,170)"
+        },
+        "Start": 6,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "暁明の身長は170未満です",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "170未満",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,170)"
+        },
+        "Start": 6,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "xは107に等しいです",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "107に等しい",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[107,107]"
+        },
+        "Start": 2,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "xはイコール107です",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "イコール107",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[107,107]"
+        },
+        "Start": 2,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "xは10より大きくyは20より小さい",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "10より大きく",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,)"
+        },
+        "Start": 2,
+        "End": 8
+      },
+      {
+        "Text": "20より小さい",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,20)"
+        },
+        "Start": 11,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "1から5個のリンゴを私に与えてください",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1から5",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[1,5]"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "りんごを1以上ください",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1以上",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[1,)"
+        },
+        "Start": 4,
+        "End": 6
+      }
+    ]
+  }
+]

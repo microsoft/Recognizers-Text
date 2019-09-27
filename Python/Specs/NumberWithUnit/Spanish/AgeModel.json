@@ -1,0 +1,262 @@
+[
+  {
+    "Input": "Cuando tenía cinco años, hacía meriendas de mentira con mis muñecas.",
+    "Results": [
+      {
+        "Text": "cinco años",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "5",
+          "unit": "Año"
+        },
+        "Start": 13,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "Esta saga se remonta a casi diez años atrás.",
+    "Results": [
+      {
+        "Text": "diez años",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Año"
+        },
+        "Start": 28,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "¡Mi pelo ya está gris y sólo tengo 29 años!",
+    "Results": [
+      {
+        "Text": "29 años",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "29",
+          "unit": "Año"
+        },
+        "Start": 35,
+        "End": 41
+      }
+    ]
+  },
+  {
+    "Input": "Ahora cuenta noventa y cinco años: tiene una perspectiva de las cosas y tiene memoria.",
+    "Results": [
+      {
+        "Text": "noventa y cinco años",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "95",
+          "unit": "Año"
+        },
+        "Start": 13,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "La Gran Muralla china tiene más de 500 años y se extiende más de 5,000 millas.",
+    "Results": [
+      {
+        "Text": "500 años",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "500",
+          "unit": "Año"
+        },
+        "Start": 35,
+        "End": 42
+      }
+    ]
+  },
+  {
+    "Input": "Ya tiene 60 años, pues en principio nació el 8 de mayo de 1945.",
+    "Results": [
+      {
+        "Text": "60 años",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "60",
+          "unit": "Año"
+        },
+        "Start": 9,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "Y al 25% no se les diagnostica hasta que tienen casi tres años.",
+    "Results": [
+      {
+        "Text": "tres años",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Año"
+        },
+        "Start": 53,
+        "End": 61
+      }
+    ]
+  },
+  {
+    "Input": "¿Cuándo se va aplicar una presión seria para cumplir realmente esa promesa formulada hace un año?",
+    "Results": [
+      {
+        "Text": "un año",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "1",
+          "unit": "Año"
+        },
+        "Start": 90,
+        "End": 95
+      }
+    ]
+  },
+  {
+    "Input": "La sublevación se produjo cuando yo era un bebé y tenía tan solo diez meses.",
+    "Results": [
+      {
+        "Text": "diez meses",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Mes"
+        },
+        "Start": 65,
+        "End": 74
+      }
+    ]
+  },
+  {
+    "Input": "La propuesta de la Comisión tiene ya 8 meses.",
+    "Results": [
+      {
+        "Text": "8 meses",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "8",
+          "unit": "Mes"
+        },
+        "Start": 37,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "A alrededor del 50% de ellos no se les diagnostica hasta los dieciocho meses de edad.",
+    "Results": [
+      {
+        "Text": "dieciocho meses",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "18",
+          "unit": "Mes"
+        },
+        "Start": 61,
+        "End": 75
+      }
+    ]
+  },
+  {
+    "Input": "Es posible, pero en 2006 mataron a 330 000 focas arpa y el 95% de ellas tenían menos de tres meses.",
+    "Results": [
+      {
+        "Text": "tres meses",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Mes"
+        },
+        "Start": 88,
+        "End": 97
+      }
+    ]
+  },
+  {
+    "Input": "Si seguimos adelante con la resolución en el período parcial de sesiones de diciembre, tendrá para entonces tres semanas de antigüedad.",
+    "Results": [
+      {
+        "Text": "tres semanas",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Semana"
+        },
+        "Start": 108,
+        "End": 119
+      }
+    ]
+  },
+  {
+    "Input": "También pueden revocar su consentimiento hasta que el hijo haya cumplido 6 semanas de edad.",
+    "Results": [
+      {
+        "Text": "6 semanas",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "6",
+          "unit": "Semana"
+        },
+        "Start": 73,
+        "End": 81
+      }
+    ]
+  },
+  {
+    "Input": "Otras materias primas deberán utilizarse en un plazo de cinco días.",
+    "Results": [
+      {
+        "Text": "cinco días",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "5",
+          "unit": "Día"
+        },
+        "Start": 56,
+        "End": 65
+      }
+    ]
+  },
+  {
+    "Input": "Para clubes de los demás países, una cuenta vencida por 90 días se considera morosa.",
+    "Results": [
+      {
+        "Text": "90 días",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "90",
+          "unit": "Día"
+        },
+        "Start": 56,
+        "End": 62
+      }
+    ]
+  },
+  {
+    "Input": "Tiene unos 40 - 50 años",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "50 años",
+        "Start": 16,
+        "End": 22,
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Año",
+          "value": "50"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "semana o semanas",
+    "Results": []
+  }
+]

@@ -330,7 +330,8 @@ class ChineseDateTimePeriodParser(BaseDateTimePeriodParser):
 
             before_str = source[:er.start].strip().lower()
 
-            return self.__parse_common_duration_with_unit(before_str, source_unit, pr.resolution_str, float(pr.value), reference)
+            return self.__parse_common_duration_with_unit(before_str, source_unit,
+                                                          pr.resolution_str, float(pr.value), reference)
 
         # handle "last hour"
         match = regex.search(self.unit_regex, source)

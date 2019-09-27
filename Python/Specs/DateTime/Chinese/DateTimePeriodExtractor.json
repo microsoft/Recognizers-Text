@@ -1,0 +1,177 @@
+[
+  {
+    "Input": "明天2点到4点",
+    "Results": [
+      {
+        "Text": "明天2点到4点",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "从昨天下午两点到四点",
+    "Results": [
+      {
+        "Text": "从昨天下午两点到四点",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "从昨天下午两点到明天四点",
+    "Results": [
+      {
+        "Text": "从昨天下午两点到明天四点",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "从昨天5:00-6:00",
+    "Results": [
+      {
+        "Text": "从昨天5:00-6:00",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "1月15号4点和2月3号9点之间",
+    "Results": [
+      {
+        "Text": "1月15号4点和2月3号9点之间",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "2点-明天4点",
+    "Results": [
+      {
+        "Text": "2点-明天4点",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "昨晚",
+    "Results": [
+      {
+        "Text": "昨晚",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "昨天晚上",
+    "Results": [
+      {
+        "Text": "昨天晚上",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "明天上午",
+    "Results": [
+      {
+        "Text": "明天上午",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "上个小时",
+    "Results": [
+      {
+        "Text": "上个小时",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "之后5分钟",
+    "Results": [
+      {
+        "Text": "之后5分钟",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "之前3小时",
+    "Results": [
+      {
+        "Text": "之前3小时",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2019年7月25日早间粮油行情简析",
+    "Results": [
+      {
+        "Text": "2019年7月25日早间",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "7月25日早间中小板公告汇总",
+    "Results": [
+      {
+        "Text": "7月25日早间",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "7月25日早间，7月25日，7月25日早都是被支持的测例",
+    "NotSupported": "javascript",
+    "Context": {
+      "ReferenceDateTime": "2019-08-19T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "7月25日早间",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 7
+      },
+      {
+        "Text": "7月25日早",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 6
+      }
+    ]
+  }
+]
