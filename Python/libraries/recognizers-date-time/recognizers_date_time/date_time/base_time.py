@@ -211,7 +211,7 @@ class BaseTimeParser(DateTimeParser):
             return self.match_to_time(match, reference)
 
         hour = self.config.numbers.get(source, -1)
-        if hour >= 0 and hour <= 24:
+        if 0 <= hour <= 24:
             result = DateTimeResolutionResult()
             if hour == 24:
                 hour = 0

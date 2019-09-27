@@ -436,7 +436,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                 suffix_str = source[result.start + result.length:]
                 match = regex.match(
                     self.config.week_day_regex, suffix_str.strip())
-                if (match is not None and match.start() == 0 and num >= 1 and num <= 5 and
+                if (match is not None and match.start() == 0 and 1 <= num <= 5 and
                         result.type == NumberConstants.SYS_NUM_ORDINAL):
                     week_day_str = RegExpUtility.get_group(match, 'weekday').lower()
 
@@ -477,7 +477,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
             year = AbstractYearExtractor.get_year_from_text(self, match_year)
 
-            if year >= Constants.MinYearNum and year <= Constants.MaxYearNum:
+            if Constants.MinYearNum <= year <= Constants.MaxYearNum:
                 end_index += len(match_year.group())
 
         date = DateUtils.safe_create_from_value(DateUtils.min_value, year, month, day)
@@ -865,9 +865,9 @@ class BaseDateParser(DateTimeParser):
             if year_str:
                 year = int(year_str) if year_str.isnumeric() else 0
 
-                if year < 100 and year >= Constants.MinTwoDigitYearPastNum:
+                if 100 > year >= Constants.MinTwoDigitYearPastNum:
                     year += 1900
-                elif year >= 0 and year < Constants.MaxTwoDigitYearFutureNum:
+                elif 0 <= year < Constants.MaxTwoDigitYearFutureNum:
                     year += 2000
 
         no_year = False

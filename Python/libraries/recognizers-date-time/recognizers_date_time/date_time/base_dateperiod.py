@@ -392,7 +392,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
         return has_digit_number_before_dash, number_start_index
 
     def is_digit_char(self, ch: chr):
-        return ch >= '0' and ch <= '9'
+        return '0' <= ch <= '9'
 
     def match_complex_cases(self, text: str, simple_date_range_results: [ExtractResult], reference: datetime):
 
@@ -1129,7 +1129,7 @@ class BaseDatePeriodParser(DateTimeParser):
         result.success = True
         return result
 
-    def __Is_Present(self, swift):
+    def is_present(self, swift):
         return swift == 0
 
     def _parse_one_word_period(self, source: str, reference: datetime) -> DateTimeResolutionResult:
@@ -1197,11 +1197,11 @@ class BaseDatePeriodParser(DateTimeParser):
 
         if RegExpUtility.get_group(match, 'RelEarly'):
             early_prefix = True
-            if self.__Is_Present(swift):
+            if self.is_present(swift):
                 result.mod = None
         elif RegExpUtility.get_group(match, 'RelLate'):
             late_prefix = True
-            if self.__Is_Present(swift):
+            if self.is_present(swift):
                 result.mod = None
 
         month_str = RegExpUtility.get_group(match, 'month')
@@ -1738,10 +1738,10 @@ class BaseDatePeriodParser(DateTimeParser):
             quarter_num = math.ceil(month / Constants.TrimesterMonthCount)
             swift = self.config.get_swift_year(order_quarter_str)
             quarter_num += swift
-            if (quarter_num <= 0):
+            if quarter_num <= 0:
                 quarter_num += Constants.QuarterCount
                 year -= 1
-            elif (quarter_num > Constants.QuarterCount):
+            elif quarter_num > Constants.QuarterCount:
                 quarter_num -= Constants.QuarterCount
                 year += 1
         else:
@@ -1776,7 +1776,8 @@ class BaseDatePeriodParser(DateTimeParser):
             result.future_value = [begin_date, end_date]
             result.past_value = [begin_date, end_date]
 
-        result.timex = f'({DateTimeFormatUtil.luis_date_from_datetime(begin_date)},{DateTimeFormatUtil.luis_date_from_datetime(end_date)},P3M)'
+        result.timex = f'({DateTimeFormatUtil.luis_date_from_datetime(begin_date)},' \
+                       f'{DateTimeFormatUtil.luis_date_from_datetime(end_date)},P3M)'
         result.success = True
         return result
 

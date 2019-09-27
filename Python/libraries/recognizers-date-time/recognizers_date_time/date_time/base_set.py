@@ -429,7 +429,7 @@ class BaseSetParser(DateTimeParser):
         if match:
             trimmed_text = source[0:match.start()] + source[match.end():]
             er = extractor.extract(trimmed_text, reference)
-            if(len(er) == 1 and er[0].length == len(trimmed_text)):
+            if len(er) == 1 and er[0].length == len(trimmed_text):
                 success = True
 
         match = regex.search(self.config.set_week_day_regex, source)

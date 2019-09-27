@@ -24,9 +24,9 @@ class AbstractYearExtractor(DateExtractor):
             match, 'year')
         if year_str and not (str.isspace(year_str) or year_str is None):
             year = int(year_str)
-            if year < 100 and year >= Constants.MinTwoDigitYearPastNum:
+            if 100 > year >= Constants.MinTwoDigitYearPastNum:
                 year += 1900
-            elif year >= 0 and year < Constants.MaxTwoDigitYearFutureNum:
+            elif 0 <= year < Constants.MaxTwoDigitYearFutureNum:
                 year += 2000
         else:
             first_two_year_num_str = RegExpUtility.get_group(

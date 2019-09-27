@@ -309,7 +309,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         elif year_relative.strip() != '':
             year += self.config.get_swift_day_or_month(year_relative)
 
-        if year < 100 and year >= 90:
+        if 100 > year >= 90:
             year += 1900
         elif year < 100 and year < 20:
             year += 2000
@@ -386,7 +386,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
 
     def __sanitize_year(self, year: int) -> int:
         result = year
-        if year < 100 and year >= 90:
+        if 100 > year >= 90:
             result += 1900
         elif year < 100 and year < 20:
             result += 2000
@@ -411,7 +411,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
 
         year = self._convert_year(year_str, is_chinese)
         if len(year_str) == 2:
-            if year < 100 and year >= 30:
+            if 100 > year >= 30:
                 year += 1900
             elif year < 30:
                 year += 2000
@@ -525,7 +525,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
             has_year = True
             year += self.config.get_swift_day_or_month(year_relative)
 
-        if year < 100 and year >= 90:
+        if 100 > year >= 90:
             year += 1900
         elif year < 100 and year < 20:
             year += 2000
@@ -567,7 +567,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
             has_year = True
             year += self.config.get_swift_day_or_month(year_relative)
 
-        if year < 100 and year >= 90:
+        if 100 > year >= 90:
             year += 1900
         elif year < 100 and year < 20:
             year += 2000

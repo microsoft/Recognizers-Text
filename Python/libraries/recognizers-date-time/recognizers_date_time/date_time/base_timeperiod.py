@@ -138,7 +138,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                             if end_with_general_endings or end_with_am_pm or after_str.lstrip().startswith(self.config.token_before_date):
                                 end_with_valid_token = True
                             elif (self.config.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
-                                #When TimeZone be migrated enable it
+                                # When TimeZone be migrated enable it
                                 end_with_valid_token = False
 
                         if end_with_valid_token:
@@ -420,7 +420,7 @@ class BaseTimePeriodParser(DateTimeParser):
                     begin_hour -= 12
 
                 # Resolve case like "11 to 3am"
-                if begin_hour < 12 and begin_hour > end_hour:
+                if 12 > begin_hour > end_hour:
                     begin_hour += 12
 
                 valid = True
@@ -505,7 +505,7 @@ class BaseTimePeriodParser(DateTimeParser):
         begin_time: datetime = pr1.value.future_value
         end_time: datetime = pr2.value.future_value
 
-        if ampm_str2 and ampm_str2.endswith('ampm') and end_time <= begin_time and end_time + timedelta(hours=12) > begin_time:
+        if ampm_str2 and ampm_str2.endswith('ampm') and end_time <= begin_time < end_time + timedelta(hours=12):
             end_time: datetime = end_time + timedelta(hours=12)
             pr2.value.future_value = end_time
             pr2.timex_str = f'T{end_time.hour}'
@@ -528,7 +528,7 @@ class BaseTimePeriodParser(DateTimeParser):
             (end_time - begin_time).total_seconds() / 60 % 60)
 
         hours_str = f'{hours}H' if hours > 0 else ''
-        minutes_str = f'{minutes}M' if minutes > 0 and minutes < 60 else ''
+        minutes_str = f'{minutes}M' if 0 < minutes < 60 else ''
         result.timex = f'({pr1.timex_str},{pr2.timex_str},PT{hours_str}{minutes_str})'
         result.future_value = ResolutionStartEnd(begin_time, end_time)
         result.past_value = ResolutionStartEnd(begin_time, end_time)

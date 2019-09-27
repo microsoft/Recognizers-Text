@@ -206,7 +206,7 @@ class ChineseHolidayParser(BaseHolidayParser):
             has_year = True
             year += self.config.get_swift_year(reference.year)
 
-        if year < 100 and year >= 90:
+        if 100 > year >= 90:
             year += 1900
         elif year < 100 and year < 20:
             year += 2000

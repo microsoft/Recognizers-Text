@@ -29,7 +29,7 @@ class FrenchHolidayParserConfiguration(BaseHolidayParserConfiguration):
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.HolidayRegex4)
         ]
         self._holiday_names = FrenchDateTime.HolidayNames
-        #self._variable_holidays_timex_dictionary = FrenchDateTime.VariableHolidaysTimexDictionary
+        # self._variable_holidays_timex_dictionary = FrenchDateTime.VariableHolidaysTimexDictionary
 
     def _init_holiday_funcs(self) -> Dict[str, Callable[[int], datetime]]:
         local = dict([
