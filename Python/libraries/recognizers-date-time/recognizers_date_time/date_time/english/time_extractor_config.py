@@ -1,8 +1,10 @@
 from typing import List, Pattern
 
+from ..utilities import DateTimeOptions
 from recognizers_text.utilities import RegExpUtility
 from ...resources.english_date_time import EnglishDateTime
 from ..base_time import TimeExtractorConfiguration
+from ..extractors import DateTimeExtractor
 
 
 class EnglishTimeExtractorConfiguration(TimeExtractorConfiguration):
@@ -18,7 +20,16 @@ class EnglishTimeExtractorConfiguration(TimeExtractorConfiguration):
     def ish_regex(self) -> Pattern:
         return self._ish_regex
 
+    @property
+    def time_before_after_regex(self) -> Pattern:
+        return self._time_before_after_regex
+
+    @property
+    def time_zone_extractor(self) -> DateTimeExtractor:
+        return self._time_zone_extractor
+
     def __init__(self):
+        super().__init__()
         self._time_regex_list: List[Pattern] = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex1),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex2),
@@ -35,3 +46,5 @@ class EnglishTimeExtractorConfiguration(TimeExtractorConfiguration):
             EnglishDateTime.AtRegex)
         self._ish_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.IshRegex)
+        self._time_before_after_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.TimeBeforeAfterRegex)

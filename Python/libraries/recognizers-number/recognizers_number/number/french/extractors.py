@@ -1,5 +1,7 @@
-from typing import Pattern, List, NamedTuple
+from typing import Pattern, List, NamedTuple, Dict
 import regex
+
+from recognizers_text import ExtractResult
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.models import NumberMode, LongFormatMode
@@ -7,9 +9,23 @@ from recognizers_number.resources import BaseNumbers
 from recognizers_number.resources.french_numeric import FrenchNumeric
 from recognizers_number.number.extractors import ReVal, ReRe, BaseNumberExtractor, BasePercentageExtractor
 from recognizers_number.number.constants import Constants
+from ..number_options import NumberOptions
 
 
 class FrenchNumberExtractor(BaseNumberExtractor):
+    @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return super().ambiguity_filters_dict
+
+    def extract(self, source: str) -> List[ExtractResult]:
+        return super().extract(source)
+
+    def _filter_ambiguity(self, ers: List[ExtractResult], text: str) -> List[ExtractResult]:
+        return super()._filter_ambiguity(ers, text)
+
+    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
+        return super()._generate_format_regex(format_type, placeholder)
+
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
@@ -27,6 +43,7 @@ class FrenchNumberExtractor(BaseNumberExtractor):
         return self.__negative_number_terms
 
     def __init__(self, mode: NumberMode = NumberMode.DEFAULT):
+        super().__init__()
         self.__negative_number_terms = RegExpUtility.get_safe_reg_exp(
             FrenchNumeric.NegativeNumberTermsRegex)
         self.__regexes: List[ReVal] = list()
@@ -58,6 +75,23 @@ class FrenchNumberExtractor(BaseNumberExtractor):
 
 class FrenchCardinalExtractor(BaseNumberExtractor):
     @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return super().ambiguity_filters_dict
+
+    @property
+    def _negative_number_terms(self) -> Pattern:
+        return super()._negative_number_terms
+
+    def extract(self, source: str) -> List[ExtractResult]:
+        return super().extract(source)
+
+    def _filter_ambiguity(self, ers: List[ExtractResult], text: str) -> List[ExtractResult]:
+        return super()._filter_ambiguity(ers, text)
+
+    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
+        return super()._generate_format_regex(format_type, placeholder)
+
+    @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
 
@@ -66,6 +100,7 @@ class FrenchCardinalExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_CARDINAL
 
     def __init__(self, placeholder: str = FrenchNumeric.PlaceHolderDefault):
+        super().__init__()
         self.__regexes: List[ReVal] = list()
 
         # Add integer regexes
@@ -79,6 +114,23 @@ class FrenchCardinalExtractor(BaseNumberExtractor):
 
 class FrenchIntegerExtractor(BaseNumberExtractor):
     @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return super().ambiguity_filters_dict
+
+    @property
+    def _negative_number_terms(self) -> Pattern:
+        return super()._negative_number_terms
+
+    def extract(self, source: str) -> List[ExtractResult]:
+        return super().extract(source)
+
+    def _filter_ambiguity(self, ers: List[ExtractResult], text: str) -> List[ExtractResult]:
+        return super()._filter_ambiguity(ers, text)
+
+    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
+        return super()._generate_format_regex(format_type, placeholder)
+
+    @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
 
@@ -87,6 +139,7 @@ class FrenchIntegerExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_INTEGER
 
     def __init__(self, placeholder: str = FrenchNumeric.PlaceHolderDefault):
+        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -129,6 +182,23 @@ class FrenchIntegerExtractor(BaseNumberExtractor):
 
 class FrenchDoubleExtractor(BaseNumberExtractor):
     @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return super().ambiguity_filters_dict
+
+    @property
+    def _negative_number_terms(self) -> Pattern:
+        return super()._negative_number_terms
+
+    def extract(self, source: str) -> List[ExtractResult]:
+        return super().extract(source)
+
+    def _filter_ambiguity(self, ers: List[ExtractResult], text: str) -> List[ExtractResult]:
+        return super()._filter_ambiguity(ers, text)
+
+    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
+        return super()._generate_format_regex(format_type, placeholder)
+
+    @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
 
@@ -137,6 +207,7 @@ class FrenchDoubleExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_DOUBLE
 
     def __init__(self, placeholder):
+        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -179,6 +250,23 @@ class FrenchDoubleExtractor(BaseNumberExtractor):
 
 class FrenchFractionExtractor(BaseNumberExtractor):
     @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return super().ambiguity_filters_dict
+
+    @property
+    def _negative_number_terms(self) -> Pattern:
+        return super()._negative_number_terms
+
+    def extract(self, source: str) -> List[ExtractResult]:
+        return super().extract(source)
+
+    def _filter_ambiguity(self, ers: List[ExtractResult], text: str) -> List[ExtractResult]:
+        return super()._filter_ambiguity(ers, text)
+
+    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
+        return super()._generate_format_regex(format_type, placeholder)
+
+    @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
 
@@ -187,6 +275,7 @@ class FrenchFractionExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_FRACTION
 
     def __init__(self, mode):
+        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -216,6 +305,23 @@ class FrenchFractionExtractor(BaseNumberExtractor):
 
 class FrenchOrdinalExtractor(BaseNumberExtractor):
     @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return super().ambiguity_filters_dict
+
+    @property
+    def _negative_number_terms(self) -> Pattern:
+        return super()._negative_number_terms
+
+    def extract(self, source: str) -> List[ExtractResult]:
+        return super().extract(source)
+
+    def _filter_ambiguity(self, ers: List[ExtractResult], text: str) -> List[ExtractResult]:
+        return super()._filter_ambiguity(ers, text)
+
+    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
+        return super()._generate_format_regex(format_type, placeholder)
+
+    @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
 
@@ -224,6 +330,7 @@ class FrenchOrdinalExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_ORDINAL
 
     def __init__(self):
+        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(

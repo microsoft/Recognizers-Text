@@ -6,10 +6,16 @@ from recognizers_number.number.parsers import BaseNumberParser
 from recognizers_number.number.english.extractors import EnglishCardinalExtractor
 from recognizers_number.number.english.parsers import EnglishNumberParserConfiguration
 from ...resources.english_date_time import EnglishDateTime
-from ..base_duration import DurationParserConfiguration
+from ..extractors import DateTimeExtractor
+from ..base_duration import DurationParserConfiguration, BaseDurationExtractor
+from .duration_extractor_config import EnglishDurationExtractorConfiguration
 
 
 class EnglishDurationParserConfiguration(DurationParserConfiguration):
+    @property
+    def options(self):
+        return self._cardinal_extractor
+
     @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
         return self._cardinal_extractor
@@ -58,7 +64,12 @@ class EnglishDurationParserConfiguration(DurationParserConfiguration):
     def double_numbers(self) -> Dict[str, float]:
         return self._double_numbers
 
+    def duration_extractor(self) -> DateTimeExtractor:
+        return self._duration_extractor
+
     def __init__(self, config):
+        self.duration_extractor = BaseDurationExtractor(
+            EnglishDurationExtractorConfiguration(), False)
         self._cardinal_extractor: BaseNumberExtractor = EnglishCardinalExtractor()
         self._number_parser: BaseNumberParser = BaseNumberParser(
             EnglishNumberParserConfiguration())

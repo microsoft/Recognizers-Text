@@ -20,7 +20,7 @@ PrefixUnitResult = namedtuple('PrefixUnitResult', ['offset', 'unit'])
 class NumberWithUnitExtractorConfiguration(ABC):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        pass
+        raise NotImplementedError
 
     @property
     @abstractmethod
@@ -246,6 +246,7 @@ class NumberWithUnitExtractor(Extractor):
                         if er.type is Constants.SYS_UNIT_DIMENSION:
                             if non_unit_match is None:
                                 non_unit_match = list(self.config.non_unit_regex.finditer(source))
+                            # time.index
                             for time in non_unit_match:
                                 trimmed_source = source.lower()
                                 index = trimmed_source.index(time.group())

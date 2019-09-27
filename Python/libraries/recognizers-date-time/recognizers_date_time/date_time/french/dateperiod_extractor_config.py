@@ -12,6 +12,8 @@ from ..base_date import BaseDateExtractor
 from ..base_dateperiod import DatePeriodExtractorConfiguration, MatchedIndex
 from .duration_extractor_config import FrenchDurationExtractorConfiguration
 from .date_extractor_config import FrenchDateExtractorConfiguration
+from recognizers_text.extractor import Extractor
+from recognizers_number import FrenchOrdinalExtractor, BaseNumberExtractor
 
 
 class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
@@ -87,6 +89,58 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     def now_regex(self) -> Pattern:
         return self._now_regex
 
+    @property
+    def future_suffix_regex(self) -> Pattern:
+        return self._future_suffix_regex
+
+    @property
+    def ago_regex(self) -> Pattern:
+        return self._ago_regex
+
+    @property
+    def later_regex(self) -> Pattern:
+        return self._later_regex
+
+    @property
+    def less_than_regex(self) -> Pattern:
+        return self._less_than_regex
+
+    @property
+    def more_than_regex(self) -> Pattern:
+        return self._more_than_regex
+
+    @property
+    def duration_date_restrictions(self) -> [str]:
+        return self._duration_date_restrictions
+
+    @property
+    def year_period_regex(self) -> Pattern:
+        return self._year_period_regex
+
+    @property
+    def month_num_regex(self) -> Pattern:
+        return self._month_num_regex
+
+    @property
+    def century_suffix_regex(self) -> Pattern:
+        return self._century_suffix_regex
+
+    @property
+    def ordinal_extractor(self) -> BaseNumberExtractor:
+        return self._ordinal_extractor
+
+    @property
+    def cardinal_extractor(self) -> Extractor:
+        return self._cardinal_extractor
+
+    @property
+    def time_unit_regex(self) -> Pattern:
+        return self._time_unit_regex
+
+    @property
+    def within_next_prefix_regex(self) -> Pattern:
+        return self._within_next_prefix_regex
+
     def __init__(self):
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.SimpleCasesRegex),
@@ -131,6 +185,8 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             FrenchDateTime.MonthOfRegex)
         self._date_unit_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.DateUnitRegex)
+        self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.WithinNextPrefixRegex)
         self._in_connector_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.InConnectorRegex)
         self._range_unit_regex = RegExpUtility.get_safe_reg_exp(
@@ -152,6 +208,32 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             FrenchDurationExtractorConfiguration())
         self._now_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.NowRegex)
+        self._future_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.FutureSuffixRegex
+        )
+        self._ago_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.AgoRegex
+        )
+        self._later_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.LaterRegex
+        )
+        self._less_than_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.LessThanRegex
+        )
+        self._more_than_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.MoreThanRegex
+        )
+        self._duration_date_restrictions = FrenchDateTime.DurationDateRestrictions
+        self._year_period_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.YearPeriodRegex
+        )
+        self._month_num_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.MonthNumRegex
+        )
+        self._century_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.CenturySuffixRegex
+        )
+        self._ordinal_extractor = FrenchOrdinalExtractor()
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)

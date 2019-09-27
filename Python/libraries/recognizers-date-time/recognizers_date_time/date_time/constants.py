@@ -10,11 +10,18 @@ class Constants:
     SYS_DATETIME_DATETIMEPERIOD: str = 'datetimerange'
     SYS_DATETIME_DURATION: str = 'duration'
     SYS_DATETIME_SET: str = 'set'
+    SYS_DATETIME_TIMEZONE: str = 'timezone'
 
     SYS_DATETIME_MERGED: str = 'datetimeV2'
 
     # SourceEntity Types
     SYS_DATETIME_DATETIMEPOINT: str = 'datetimepoint'
+
+    # Multiple Duration Types
+    MultipleDuration_Prefix = 'multipleDuration'
+    MultipleDuration_Date = MultipleDuration_Prefix + 'Date'
+    MultipleDuration_Time = MultipleDuration_Prefix + 'Time'
+    MultipleDuration_DateTime = MultipleDuration_Prefix + 'DateTime'
 
     # keys
     TimexKey: str = 'timex'
@@ -33,6 +40,7 @@ class Constants:
     FourDigitsYearLength: int = 4
     MinMonth: int = 1
     MaxMonth: int = 12
+    InvalidYear = -2147483648
 
     MinYearNum: int = int(BaseDateTime.MinYearNum)
     MaxYearNum: int = int(BaseDateTime.MaxYearNum)
@@ -51,6 +59,26 @@ class Constants:
     Daytime: str = "TDT"
     Night: str = "TNI"
     BusinessHour = "TBH"
+
+    # Groups' names for named groups in regexes
+    NextGroupName = "next"
+
+    NextGroupName = 'next'
+    AmGroupName = 'am'
+    PmGroupName = 'pm'
+    ImplicitAmGroupName = 'iam'
+    ImplicitPmGroupName = 'ipm'
+    PrefixGroupName = 'prefix'
+    SuffixGroupName = 'suffix'
+    DescGroupName = 'desc'
+    SecondGroupName = 'sec'
+    MinuteGroupName = 'min'
+    HourGroupName = 'hour'
+    YearGroupName = 'year'
+    TimeOfDayGroupName = 'timeOfDay'
+    BusinessDayGroupName = 'business'
+    LeftAmPmGroupName = 'leftDesc'
+    RightAmPmGroupName = 'rightDesc'
 
 
 class TimeTypeConstants:

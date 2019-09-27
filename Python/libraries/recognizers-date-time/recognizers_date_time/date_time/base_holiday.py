@@ -3,7 +3,7 @@ from typing import List, Optional, Pattern, Callable, Dict, Match
 from datetime import datetime
 from calendar import Calendar
 
-from recognizers_text.extractor import ExtractResult
+from recognizers_text.extractor import ExtractResult, Metadata
 from ..resources.base_date_time import BaseDateTime
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
@@ -33,6 +33,12 @@ class BaseHolidayExtractor(DateTimeExtractor):
         tokens = []
         tokens += self.__holiday_match(source)
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
+
+        for er in result:
+
+            er.metadata = Metadata()
+            er.metadata.is_holiday = True
+
         return result
 
     def __holiday_match(self, source: str) -> List[Token]:

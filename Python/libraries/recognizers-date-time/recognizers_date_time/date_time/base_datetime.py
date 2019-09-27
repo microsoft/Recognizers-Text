@@ -1,22 +1,24 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime, timedelta
 from collections import namedtuple
 import regex
 
+from recognizers_date_time.date_time.date_extractor import DateExtractor
 from recognizers_text.extractor import ExtractResult
 from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.parsers import BaseNumberParser
 from .constants import Constants, TimeTypeConstants
+from recognizers_number.number.constants import Constants as NumConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, AgoLaterUtil, DateTimeFormatUtil, RegExpUtility, AgoLaterMode
+from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, AgoLaterUtil, DateTimeFormatUtil, RegExpUtility, AgoLaterMode, DateTimeOptionsConfiguration, DateTimeOptions
 
 
-class DateTimeExtractorConfiguration(ABC):
+class DateTimeExtractorConfiguration(DateTimeOptionsConfiguration):
     @property
     @abstractmethod
-    def date_point_extractor(self) -> DateTimeExtractor:
+    def date_point_extractor(self) -> DateExtractor:
         raise NotImplementedError
 
     @property
@@ -88,6 +90,31 @@ class DateTimeExtractorConfiguration(ABC):
     def is_connector_token(self, source: str) -> bool:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def number_as_time_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def date_number_connector_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def suffix_after_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def year_suffix(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def year_regex(self) -> Pattern:
+        raise NotImplementedError
+
 
 class BaseDateTimeExtractor(DateTimeExtractor):
     @property
@@ -109,28 +136,59 @@ class BaseDateTimeExtractor(DateTimeExtractor):
         tokens.extend(self.time_of_today_after(source, reference))
         tokens.extend(self.special_time_of_date(source, reference))
         tokens.extend(self.duration_with_before_and_after(source, reference))
+        tokens.extend(self.special_time_of_day(source, reference))
 
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
         return result
 
+    def special_time_of_day(self, text: str, reference: datetime):
+        ret = []
+        match = self.config.specific_end_of_regex.search(text)
+        if match:
+            ret.append(Token(text.index(match.group()), len(text)))
+
+        return ret
+
     def merge_date_and_time(self, source: str, reference: datetime) -> List[Token]:
-        tokens: List[Token] = list()
-        ers: List[ExtractResult] = self.config.date_point_extractor.extract(
+        ret: List[Token] = list()
+        date_ers: List[ExtractResult] = self.config.date_point_extractor.extract(
             source, reference)
 
-        if not ers:
-            return tokens
+        if not date_ers:
+            return ret
 
-        ers.extend(self.config.time_point_extractor.extract(source, reference))
+        time_ers = self.config.time_point_extractor.extract(source, reference)
+        time_num_matches = self.config.number_as_time_regex.match(source)
 
-        if len(ers) < 2:
-            return tokens
+        if len(time_ers) == 0 and time_num_matches == 0:
+            return ret
+
+        ers = date_ers
+        ers.extend(time_ers)
+
+        if (self.config.options & DateTimeOptions.CALENDAR) != 0:
+            num_ers = []
+
+            idx = 0
+
+            for idx in range(idx, len(time_num_matches), 1):
+                match = time_num_matches[idx]
+                node = ExtractResult()
+                node.start = source.index(match.group())
+                node.length = len(match.group())
+                node.text = match.text
+                node.type = NumConstants.SYS_NUM_INTEGER
+                num_ers.append(node)
+
+            ers.extend(num_ers)
 
         ers = sorted(ers, key=lambda x: x.start)
+
         i = 0
 
-        while i < len(ers)-1:
-            j = i+1
+        while i < len(ers) - 1:
+
+            j = i + 1
 
             while j < len(ers) and ers[i].overlap(ers[j]):
                 j += 1
@@ -139,26 +197,72 @@ class BaseDateTimeExtractor(DateTimeExtractor):
                 break
 
             if ((ers[i].type is Constants.SYS_DATETIME_DATE and ers[j].type is Constants.SYS_DATETIME_TIME) or
-                    (ers[i].type is Constants.SYS_DATETIME_TIME and ers[j].type is Constants.SYS_DATETIME_DATE)):
-                middle_begin = ers[i].start + ers[i].length
-                middle_end = ers[j].start
+                    (ers[i].type is Constants.SYS_DATETIME_TIME and ers[j].type is Constants.SYS_DATETIME_DATE)or
+                    (ers[i].type is Constants.SYS_DATETIME_DATE and ers[j] is NumConstants.SYS_NUM_INTEGER)):
+                middle_begin = ers[i].start + (ers[i].length or 0)
+                middle_end = ers[j].start or 0
 
                 if middle_begin > middle_end:
                     i = j + 1
                     continue
 
-                middle = source[middle_begin:middle_end].strip().lower()
+                middle_str = source[middle_begin: middle_end].strip()
+                valid = False
 
-                if self.config.is_connector_token(middle):
-                    begin = ers[i].start
-                    end = ers[j].start + ers[j].length
-                    tokens.append(Token(begin, end))
+                if ers[j].type is NumConstants.SYS_NUM_INTEGER:
+                    match = self.config.date_number_connector_regex.search(middle_str)
+                    if not middle_str or match:
+                        valid = True
+                else:
+
+                    match = self.config.suffix_after_regex.search(middle_str)
+                    if match:
+                        middle_str = middle_str[
+                            middle_str.index(match.group()) + len(match.group()): len(middle_end)].strip()
+
+                    if not (match and len(middle_str) == 0):
+                        if self.config.is_connector_token(middle_str):
+                            valid = True
+
+                if valid:
+                    begin = ers[i].start or 0
+                    end = (ers[j].start or 0) + (ers[j].length or 0)
+
+                    end_index, start_index = self.extend_with_date_time_and_year(begin, end, source, reference)
+
+                    ret.append(Token(start_index, end_index))
                     i = j + 1
                     continue
             i = j
 
-        tokens = list(map(lambda x: self.verify_end_token(source, x), tokens))
-        return tokens
+        idx = 0
+        for idx in range(idx, len(ret), 1):
+            after_str = source[ret[idx].end:]
+            match = self.config.suffix_regex.search(after_str)
+            if match:
+                ret[idx] = Token(ret[idx].start, ret[idx].end + len(match.group()))
+
+        idx = 0
+        for idx in range(idx, len(ret), 1):
+            before_str = source[0: ret[idx].start]
+            match = self.config.utility_configuration.common_date_prefix_regex.search(before_str)
+            if match:
+                ret[idx] = Token(ret[idx].start - len(match.group()), ret[idx].end)
+
+        return ret
+
+    def extend_with_date_time_and_year(self, start_index: int, end_index: int, text: str, reference: datetime):
+
+        suffix = text[end_index:]
+        match_year = self.config.year_suffix.search(suffix)
+        if match_year and suffix.index(match_year.group()) == 0:
+
+            check_year = self.config.date_point_extractor.get_year_from_text(self.config.year_regex.search(text))
+            year = self.config.date_point_extractor.get_year_from_text(match_year)
+            if year >= Constants.MinYearNum and year <= Constants.MaxYearNum and check_year == year:
+                end_index += (match_year.end() - match_year.start())
+
+        return end_index, start_index
 
     def verify_end_token(self, source: str, token: Token) -> Token:
         after_str = source[token.end:]

@@ -11,6 +11,58 @@ from .date_extractor import ChineseDateExtractor
 
 class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
+    def time_unit_regex(self) -> Pattern:
+        pass
+
+    @property
+    def ordinal_extractor(self) -> Extractor:
+        pass
+
+    @property
+    def cardinal_extractor(self) -> Extractor:
+        pass
+
+    @property
+    def within_next_prefix_regex(self) -> Pattern:
+        pass
+
+    @property
+    def future_suffix_regex(self) -> Pattern:
+        pass
+
+    @property
+    def ago_regex(self) -> Pattern:
+        pass
+
+    @property
+    def later_regex(self) -> Pattern:
+        pass
+
+    @property
+    def less_than_regex(self) -> Pattern:
+        pass
+
+    @property
+    def more_than_regex(self) -> Pattern:
+        pass
+
+    @property
+    def duration_date_restrictions(self) -> [str]:
+        pass
+
+    @property
+    def year_period_regex(self) -> Pattern:
+        pass
+
+    @property
+    def century_suffix_regex(self) -> Pattern:
+        pass
+
+    @property
+    def month_num_regex(self) -> Pattern:
+        return self._month_num_regex
+
+    @property
     def simple_cases_regexes(self) -> List[Pattern]:
         return self._simple_cases_regexes
 
@@ -123,6 +175,8 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             ChineseNumberParserConfiguration())
         self._now_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.NowRegex)
+        self._month_num_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.MonthNumRegex)
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         if source.endswith('从'):

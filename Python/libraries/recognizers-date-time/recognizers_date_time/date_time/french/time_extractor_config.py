@@ -3,9 +3,18 @@ from typing import List, Pattern
 from recognizers_text.utilities import RegExpUtility
 from ...resources.french_date_time import FrenchDateTime
 from ..base_time import TimeExtractorConfiguration
+from ..utilities import DateTimeOptions
 
 
 class FrenchTimeExtractorConfiguration(TimeExtractorConfiguration):
+    @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
+
+    @property
+    def time_zone_extractor(self):
+        return self._time_zone_extractor
+
     @property
     def time_regex_list(self) -> List[Pattern]:
         return self._time_regex_list
@@ -18,13 +27,21 @@ class FrenchTimeExtractorConfiguration(TimeExtractorConfiguration):
     def ish_regex(self) -> Pattern:
         return self._ish_regex
 
+    @property
+    def time_before_after_regex(self) -> Pattern:
+        return self._time_before_after_regex
+
     def __init__(self):
+        super().__init__()
         self._time_regex_list: List[Pattern] = FrenchTimeExtractorConfiguration.get_time_regex_list(
         )
         self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.AtRegex)
         self._ish_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.IshRegex)
+        self._time_before_after_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.TimeBeforeAfterRegex)
+        self._options = DateTimeOptions.NONE
 
     @staticmethod
     def get_time_regex_list() -> List[Pattern]:

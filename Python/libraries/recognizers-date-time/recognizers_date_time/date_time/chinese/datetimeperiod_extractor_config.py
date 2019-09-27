@@ -13,6 +13,53 @@ from .datetime_extractor import ChineseDateTimeExtractor
 
 class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
     @property
+    def options(self):
+        pass
+
+    @property
+    def dmy_date_format(self) -> bool:
+        pass
+
+    def token_before_date(self) -> str:
+        pass
+
+    @property
+    def within_next_prefix_regex(self) -> Pattern:
+        pass
+
+    @property
+    def future_suffix_regex(self) -> Pattern:
+        pass
+
+    @property
+    def date_unit_regex(self) -> Pattern:
+        pass
+
+    @property
+    def am_desc_regex(self) -> Pattern:
+        pass
+
+    @property
+    def pm_desc_regex(self) -> Pattern:
+        pass
+
+    @property
+    def prefix_day_regex(self) -> Pattern:
+        pass
+
+    @property
+    def before_regex(self) -> Pattern:
+        pass
+
+    @property
+    def after_regex(self) -> Pattern:
+        pass
+
+    @property
+    def suffix_regex(self) -> Pattern:
+        pass
+
+    @property
     def cardinal_extractor(self) -> Extractor:
         return self._cardinal_extractor
 

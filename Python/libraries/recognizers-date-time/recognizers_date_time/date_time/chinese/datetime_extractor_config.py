@@ -12,6 +12,34 @@ from .time_extractor import ChineseTimeExtractor
 
 class ChineseDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
     @property
+    def number_as_time_regex(self) -> Pattern:
+        pass
+
+    @property
+    def date_number_connector_regex(self) -> Pattern:
+        pass
+
+    @property
+    def suffix_after_regex(self) -> Pattern:
+        pass
+
+    @property
+    def year_suffix(self) -> Pattern:
+        pass
+
+    @property
+    def year_regex(self) -> Pattern:
+        pass
+
+    @property
+    def dmy_date_format(self) -> bool:
+        pass
+
+    @property
+    def options(self):
+        pass
+
+    @property
     def date_point_extractor(self) -> DateTimeExtractor:
         return self._date_point_extractor
 

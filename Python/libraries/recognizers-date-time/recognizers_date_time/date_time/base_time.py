@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime
 import regex
@@ -8,10 +8,16 @@ from recognizers_text.extractor import ExtractResult
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, DateTimeFormatUtil, DateUtils
+from .utilities import DateTimeOptionsConfiguration
 
 
-class TimeExtractorConfiguration(ABC):
+class TimeExtractorConfiguration(DateTimeOptionsConfiguration):
+
+    @property
+    @abstractmethod
+    def time_zone_extractor(self) -> DateTimeExtractor:
+        raise NotImplementedError
+
     @property
     @abstractmethod
     def time_regex_list(self) -> List[Pattern]:
@@ -27,6 +33,11 @@ class TimeExtractorConfiguration(ABC):
     def ish_regex(self) -> Pattern:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def time_before_after_regex(self) -> Pattern:
+        raise NotImplementedError
+
 
 class BaseTimeExtractor(DateTimeExtractor):
     @property
@@ -37,17 +48,46 @@ class BaseTimeExtractor(DateTimeExtractor):
         self.config = config
 
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
+        from recognizers_date_time import DateTimeOptions
+        from .utilities import merge_all_tokens, TimeZoneUtility
+
         if reference is None:
             reference = datetime.now()
 
         tokens = self.basic_regex_match(source)
         tokens.extend(self.at_regex_match(source))
+        tokens.extend(self.before_after_regex_match(source))
         tokens.extend(self.specials_regex_match(source))
 
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
+
+        if (self.config.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
+            result = TimeZoneUtility().merge_time_zones(
+                result,
+                self.config.time_zone_extractor.extract(source, reference),
+                source
+            )
+
         return result
 
-    def basic_regex_match(self, source: str) -> List[Token]:
+    def before_after_regex_match(self, source: str) -> []:
+        from recognizers_date_time import DateTimeOptions
+        from .utilities import Token
+        result: List[Token] = list()
+
+        if (self.config.options & DateTimeOptions.CALENDAR) != 0:
+
+            before_after_regex = self.config.time_before_after_regex
+            if before_after_regex.search(source):
+                matches: Match = before_after_regex.match(source)
+                for match in matches:
+                    result.append(Token(source.index(match.group()), source.index(match.group()) +
+                                        (match.end() - match.start())))
+
+        return result
+
+    def basic_regex_match(self, source: str) -> []:
+        from .utilities import Token
         result: List[Token] = list()
 
         for pattern in self.config.time_regex_list:
@@ -56,7 +96,8 @@ class BaseTimeExtractor(DateTimeExtractor):
 
         return result
 
-    def at_regex_match(self, source: str) -> List[Token]:
+    def at_regex_match(self, source: str) -> []:
+        from .utilities import Token
         result: List[Token] = list()
         matches = list(filter(lambda x: x.group(),
                               regex.finditer(self.config.at_regex, source)))
@@ -68,7 +109,8 @@ class BaseTimeExtractor(DateTimeExtractor):
 
         return result
 
-    def specials_regex_match(self, source: str) -> List[Token]:
+    def specials_regex_match(self, source: str) -> []:
+        from .utilities import Token
         result: List[Token] = list()
         if self.config.ish_regex:
             matches = list(filter(lambda x: x.group(),
@@ -109,7 +151,7 @@ class TimeParserConfiguration:
 
     @property
     @abstractmethod
-    def utility_configuration(self) -> DateTimeUtilityConfiguration:
+    def utility_configuration(self):
         raise NotImplementedError
 
     @abstractmethod
@@ -130,6 +172,7 @@ class BaseTimeParser(DateTimeParser):
         self.config = config
 
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
+        from .utilities import DateTimeFormatUtil
         if reference is None:
             reference = datetime.now()
 
@@ -150,11 +193,12 @@ class BaseTimeParser(DateTimeParser):
 
         return result
 
-    def internal_parser(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+    def internal_parser(self, source: str, reference: datetime):
         inner_result = self.parse_basic_regex_match(source, reference)
         return inner_result
 
-    def parse_basic_regex_match(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+    def parse_basic_regex_match(self, source: str, reference: datetime):
+        from .utilities import DateTimeResolutionResult, DateUtils
         source = source.strip().lower()
         offset = 0
         match = regex.search(self.config.at_regex, source)
@@ -189,7 +233,9 @@ class BaseTimeParser(DateTimeParser):
 
         return DateTimeResolutionResult()
 
-    def match_to_time(self, match: Match, reference: datetime) -> DateTimeResolutionResult:
+    def match_to_time(self, match: Match, reference: datetime):
+        from .utilities import DateTimeResolutionResult
+
         result: DateTimeResolutionResult = DateTimeResolutionResult()
         hour = 0
         minute = 0

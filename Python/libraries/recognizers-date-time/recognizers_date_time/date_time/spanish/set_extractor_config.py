@@ -18,6 +18,8 @@ from .dateperiod_extractor_config import SpanishDatePeriodExtractorConfiguration
 from .timeperiod_extractor_config import SpanishTimePeriodExtractorConfiguration
 from .datetime_extractor_config import SpanishDateTimeExtractorConfiguration
 from .datetimeperiod_extractor_config import SpanishDateTimePeriodExtractorConfiguration
+from recognizers_number import BaseNumberExtractor
+from recognizers_number.number.spanish.extractors import SpanishCardinalExtractor
 
 
 class SpanishSetExtractorConfiguration(SetExtractorConfiguration):
@@ -81,6 +83,10 @@ class SpanishSetExtractorConfiguration(SetExtractorConfiguration):
     def date_time_period_extractor(self) -> DateTimeExtractor:
         return self._date_time_period_extractor
 
+    @property
+    def cardinal_extractor(self) -> BaseNumberExtractor:
+        return self._cardinal_extractor
+
     def __init__(self):
         self._last_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.LastDateRegex)
@@ -113,3 +119,4 @@ class SpanishSetExtractorConfiguration(SetExtractorConfiguration):
             SpanishTimePeriodExtractorConfiguration())
         self._date_time_period_extractor = BaseDateTimePeriodExtractor(
             SpanishDateTimePeriodExtractorConfiguration())
+        self._cardinal_extractor = SpanishCardinalExtractor()
