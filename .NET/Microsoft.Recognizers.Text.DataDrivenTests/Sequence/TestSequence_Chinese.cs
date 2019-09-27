@@ -20,5 +20,12 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         {
             TestPhoneNumber(testSpec);
         }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void IpAddressModel(TestModel testSpec)
+        {
+            TestIpAddress(testSpec);
+        }
     }
 }
