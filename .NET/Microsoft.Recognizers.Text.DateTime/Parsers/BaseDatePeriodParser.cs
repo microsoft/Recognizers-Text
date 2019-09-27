@@ -579,10 +579,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (er != null)
             {
                 var beforeString = text.Substring(0, (int)er.Start);
+                var afterString = text.Substring((int)er.Start + (int)er.Length);
                 var isAgo = this.config.AgoRegex.Match(er.Text).Success;
                 var isLater = this.config.LaterRegex.Match(er.Text).Success;
 
-                if (!string.IsNullOrEmpty(beforeString) && (isAgo || isLater))
+                if ((!string.IsNullOrEmpty(beforeString) || (this.config.CheckBothBeforeAfter && !string.IsNullOrEmpty(afterString))) && (isAgo || isLater))
                 {
                     var isLessThanOrWithIn = false;
                     var isMoreThan = false;
@@ -591,21 +592,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // cases like "within 3 days from yesterday/tomorrow" does not make any sense
                     if (er.Text.Contains("today") || er.Text.Contains("now"))
                     {
-                        var match = this.config.WithinNextPrefixRegex.Match(beforeString);
-                        if (match.Success)
-                        {
-                            var isNext = !string.IsNullOrEmpty(match.Groups["next"].Value);
-
-                            // cases like "within the next 5 days before today" is not acceptable
-                            if (!(isNext && isAgo))
-                            {
-                                isLessThanOrWithIn = true;
-                            }
-                        }
+                        MatchWithinNextPrefix(beforeString, isAgo, ref isLessThanOrWithIn, ref isMoreThan);
+                    }
+                    else
+                    {
+                        isLessThanOrWithIn = isLessThanOrWithIn || this.config.LessThanRegex.Match(beforeString).Success;
+                        isMoreThan = this.config.MoreThanRegex.Match(beforeString).Success;
                     }
 
-                    isLessThanOrWithIn = isLessThanOrWithIn || this.config.LessThanRegex.Match(beforeString).Success;
-                    isMoreThan = this.config.MoreThanRegex.Match(beforeString).Success;
+                    // Check also afterString
+                    if (this.config.CheckBothBeforeAfter && !isLessThanOrWithIn && !isMoreThan)
+                    {
+                        MatchWithinNextPrefix(afterString, isAgo, ref isLessThanOrWithIn, ref isMoreThan);
+                    }
 
                     var pr = this.config.DateParser.Parse(er, referenceDate);
                     var durationExtractionResult = this.config.DurationExtractor.Extract(er.Text).FirstOrDefault();
@@ -1370,10 +1369,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                     weekPrefix = match.Groups["week"].ToString();
                 }
 
+                // Check if weekPrefix is already included in the extractions otherwise include it
                 if (!string.IsNullOrEmpty(weekPrefix))
                 {
-                    er[0].Text = weekPrefix + " " + er[0].Text;
-                    er[1].Text = weekPrefix + " " + er[1].Text;
+                    if (!er[0].Text.Contains(weekPrefix))
+                    {
+                        er[0].Text = weekPrefix + " " + er[0].Text;
+                    }
+
+                    if (!er[1].Text.Contains(weekPrefix))
+                    {
+                        er[1].Text = weekPrefix + " " + er[1].Text;
+                    }
                 }
 
                 var dateContext = GetYearContext(this.config, er[0].Text, er[1].Text, text);
@@ -1516,6 +1523,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                         // but for the "within" case it should start from the current day.
                         beginDate = modAndDateResult.BeginDate.AddDays(-1);
                         endDate = modAndDateResult.EndDate.AddDays(-1);
+                    }
+                    else if (this.config.CheckBothBeforeAfter)
+                    {
+                        // check also afterStr
+                        if (config.WithinNextPrefixRegex.IsExactMatch(afterStr, trim: true) && DurationParsingUtil.IsDateDuration(durationResult.Timex) &&
+                            (config.FutureRegex.MatchEnd(beforeStr, trim: true).Success || string.IsNullOrEmpty(beforeStr)))
+                        {
+                            modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
+
+                            // In GetModAndDate, this "future" resolution will add one day to beginDate/endDate,
+                            // but for the "within" case it should start from the current day.
+                            beginDate = modAndDateResult.BeginDate.AddDays(-1);
+                            endDate = modAndDateResult.EndDate.AddDays(-1);
+                            beforeStr = string.Empty;
+                        }
                     }
 
                     if (config.FutureRegex.IsExactMatch(beforeStr, trim: true))
@@ -2218,6 +2240,24 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Success = true;
 
             return ret;
+        }
+
+        private void MatchWithinNextPrefix(string subStr, bool isAgo, ref bool isLessThanOrWithIn, ref bool isMoreThan)
+        {
+            var match = this.config.WithinNextPrefixRegex.Match(subStr);
+            if (match.Success)
+            {
+                var isNext = !string.IsNullOrEmpty(match.Groups["next"].Value);
+
+                // cases like "within the next 5 days before today" is not acceptable
+                if (!(isNext && isAgo))
+                {
+                    isLessThanOrWithIn = true;
+                }
+            }
+
+            isLessThanOrWithIn = isLessThanOrWithIn || this.config.LessThanRegex.Match(subStr).Success;
+            isMoreThan = this.config.MoreThanRegex.Match(subStr).Success;
         }
     }
 }

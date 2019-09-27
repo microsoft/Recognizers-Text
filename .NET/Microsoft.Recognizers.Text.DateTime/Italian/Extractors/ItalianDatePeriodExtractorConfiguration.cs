@@ -305,6 +305,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         Regex IDatePeriodExtractorConfiguration.NowRegex => NowRegex;
 
+        bool IDatePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 
         public bool GetFromTokenIndex(string text, out int index)
