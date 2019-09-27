@@ -1,6 +1,5 @@
 from typing import List, Pattern
 
-from recognizers_date_time.date_time import DateTimeListExtractor, DateTimeZoneExtractor
 from recognizers_text.extractor import Extractor
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number import FrenchIntegerExtractor
@@ -30,11 +29,11 @@ from ...resources.base_date_time import BaseDateTime
 
 class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
     @property
-    def time_zone_extractor(self) -> DateTimeZoneExtractor:
+    def time_zone_extractor(self):
         pass
 
     @property
-    def datetime_alt_extractor(self) -> DateTimeListExtractor:
+    def datetime_alt_extractor(self):
         pass
 
     @property
