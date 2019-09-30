@@ -15,7 +15,10 @@ from recognizers_number.number.portuguese.extractors import PortugueseNumberExtr
 from recognizers_number.number.portuguese.parsers import PortugueseNumberParserConfiguration
 from recognizers_number.number.french.extractors import FrenchNumberExtractor, FrenchOrdinalExtractor, FrenchPercentageExtractor
 from recognizers_number.number.french.parsers import FrenchNumberParserConfiguration
-from .number_options import NumberOptions
+
+
+class NumberOptions(IntFlag):
+    NONE = 0
 
 
 class NumberRecognizer(Recognizer[NumberOptions]):

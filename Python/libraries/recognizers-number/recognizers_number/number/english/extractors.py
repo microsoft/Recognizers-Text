@@ -1,7 +1,5 @@
-from typing import Pattern, List, NamedTuple, Dict
+from typing import Pattern, List, NamedTuple
 import regex
-
-from recognizers_text import ExtractResult
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.models import NumberMode, LongFormatMode
@@ -13,20 +11,6 @@ from recognizers_number.number.constants import Constants
 
 class EnglishNumberExtractor(BaseNumberExtractor):
     @property
-    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict
-
-    def extract(self, source: str) -> List[ExtractResult]:
-        return super().extract(source)
-
-    @property
-    def _negative_number_terms(self) -> Pattern:
-        return self.__negative_number_terms
-
-    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
-        return super()._generate_format_regex(format_type, placeholder)
-
-    @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
 
@@ -37,6 +21,10 @@ class EnglishNumberExtractor(BaseNumberExtractor):
     @property
     def _extract_type(self) -> str:
         return Constants.SYS_NUM
+
+    @property
+    def _negative_number_terms(self) -> Pattern:
+        return self.__negative_number_terms
 
     def __init__(self, mode: NumberMode = NumberMode.DEFAULT):
         self.__negative_number_terms = RegExpUtility.get_safe_reg_exp(
@@ -58,7 +46,6 @@ class EnglishNumberExtractor(BaseNumberExtractor):
 
         fraction_ex = EnglishFractionExtractor(mode)
         self.__regexes.extend(fraction_ex.regexes)
-        super().__init__()
 
         ambiguity_filters_dict: List[ReRe] = list()
 
@@ -71,16 +58,6 @@ class EnglishNumberExtractor(BaseNumberExtractor):
 
 class EnglishCardinalExtractor(BaseNumberExtractor):
     @property
-    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict
-
-    def extract(self, source: str) -> List[ExtractResult]:
-        return super().extract(source)
-
-    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
-        return super()._generate_format_regex(format_type, placeholder)
-
-    @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
 
@@ -89,7 +66,6 @@ class EnglishCardinalExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_CARDINAL
 
     def __init__(self, placeholder: str = EnglishNumeric.PlaceHolderDefault):
-        super().__init__()
         self.__regexes: List[ReVal] = list()
 
         # Add integer regexes
@@ -103,16 +79,6 @@ class EnglishCardinalExtractor(BaseNumberExtractor):
 
 class EnglishIntegerExtractor(BaseNumberExtractor):
     @property
-    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict
-
-    def extract(self, source: str) -> List[ExtractResult]:
-        return super().extract(source)
-
-    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
-        return super()._generate_format_regex(format_type, placeholder)
-
-    @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
 
@@ -120,8 +86,7 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_INTEGER
 
-    def __init__(self, placeholder=EnglishNumeric.PlaceHolderDefault):
-        super().__init__()
+    def __init__(self, placeholder: str = EnglishNumeric.PlaceHolderDefault):
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -164,16 +129,6 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
 
 class EnglishDoubleExtractor(BaseNumberExtractor):
     @property
-    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict
-
-    def extract(self, source: str) -> List[ExtractResult]:
-        return super().extract(source)
-
-    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
-        return super()._generate_format_regex(format_type, placeholder)
-
-    @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
 
@@ -182,7 +137,6 @@ class EnglishDoubleExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_DOUBLE
 
     def __init__(self, placeholder):
-        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -225,16 +179,6 @@ class EnglishDoubleExtractor(BaseNumberExtractor):
 
 class EnglishFractionExtractor(BaseNumberExtractor):
     @property
-    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict
-
-    def extract(self, source: str) -> List[ExtractResult]:
-        return super().extract(source)
-
-    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
-        return super()._generate_format_regex(format_type, placeholder)
-
-    @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
 
@@ -243,7 +187,6 @@ class EnglishFractionExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_FRACTION
 
     def __init__(self, mode):
-        super().__init__()
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -273,16 +216,6 @@ class EnglishFractionExtractor(BaseNumberExtractor):
 
 class EnglishOrdinalExtractor(BaseNumberExtractor):
     @property
-    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict
-
-    def extract(self, source: str) -> List[ExtractResult]:
-        return super().extract(source)
-
-    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
-        return super()._generate_format_regex(format_type, placeholder)
-
-    @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
 
@@ -291,7 +224,6 @@ class EnglishOrdinalExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_ORDINAL
 
     def __init__(self):
-        super().__init__()
         self.__regexes = [
             ReVal(
                 re=EnglishNumeric.OrdinalSuffixRegex,

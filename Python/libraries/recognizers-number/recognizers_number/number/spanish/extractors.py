@@ -1,4 +1,4 @@
-from typing import Pattern, List, NamedTuple, Dict
+from typing import Pattern, List, NamedTuple
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.models import NumberMode, LongFormatMode
@@ -6,32 +6,9 @@ from recognizers_number.resources import BaseNumbers
 from recognizers_number.resources.spanish_numeric import SpanishNumeric
 from recognizers_number.number.extractors import ReVal, ReRe, BaseNumberExtractor, BasePercentageExtractor
 from recognizers_number.number.constants import Constants
-from recognizers_text import ExtractResult
-from ..number_options import NumberOptions
 
 
 class SpanishNumberExtractor(BaseNumberExtractor):
-    @property
-    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict
-
-    @property
-    def options(self):
-        return self._options
-
-    @property
-    def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms
-
-    def extract(self, source: str) -> List[ExtractResult]:
-        return super().extract(source)
-
-    def _filter_ambiguity(self, ers: List[ExtractResult], text: str) -> List[ExtractResult]:
-        return super()._filter_ambiguity(ers, text)
-
-    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
-        return super()._generate_format_regex(format_type, placeholder)
-
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
@@ -62,7 +39,6 @@ class SpanishNumberExtractor(BaseNumberExtractor):
 
         fraction_ex = SpanishFractionExtractor(mode)
         self.__regexes.extend(fraction_ex.regexes)
-        self._options = NumberOptions.NONE
 
         ambiguity_filters_dict: List[ReRe] = list()
 
@@ -74,27 +50,6 @@ class SpanishNumberExtractor(BaseNumberExtractor):
 
 
 class SpanishCardinalExtractor(BaseNumberExtractor):
-    @property
-    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict
-
-    @property
-    def options(self):
-        return self._options
-
-    @property
-    def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms
-
-    def extract(self, source: str) -> List[ExtractResult]:
-        return super().extract(source)
-
-    def _filter_ambiguity(self, ers: List[ExtractResult], text: str) -> List[ExtractResult]:
-        return super()._filter_ambiguity(ers, text)
-
-    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
-        return super()._generate_format_regex(format_type, placeholder)
-
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
@@ -113,31 +68,9 @@ class SpanishCardinalExtractor(BaseNumberExtractor):
         # Add double regexes
         double_ex = SpanishDoubleExtractor(placeholder)
         self.__regexes.extend(double_ex.regexes)
-        self._options = NumberOptions.NONE
 
 
 class SpanishIntegerExtractor(BaseNumberExtractor):
-    @property
-    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict
-
-    @property
-    def options(self):
-        return self._options
-
-    @property
-    def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms
-
-    def extract(self, source: str) -> List[ExtractResult]:
-        return super().extract(source)
-
-    def _filter_ambiguity(self, ers: List[ExtractResult], text: str) -> List[ExtractResult]:
-        return super()._filter_ambiguity(ers, text)
-
-    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
-        return super()._generate_format_regex(format_type, placeholder)
-
     @property
     def regexes(self) -> List[
             NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
@@ -180,31 +113,9 @@ class SpanishIntegerExtractor(BaseNumberExtractor):
                 re=SpanishNumeric.AllIntRegexWithDozenSuffixLocks,
                 val='IntegerSpa')
         ]
-        self._options = NumberOptions.NONE
 
 
 class SpanishDoubleExtractor(BaseNumberExtractor):
-    @property
-    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict
-
-    @property
-    def options(self):
-        return self._options
-
-    @property
-    def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms
-
-    def extract(self, source: str) -> List[ExtractResult]:
-        return super().extract(source)
-
-    def _filter_ambiguity(self, ers: List[ExtractResult], text: str) -> List[ExtractResult]:
-        return super()._filter_ambiguity(ers, text)
-
-    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
-        return super()._generate_format_regex(format_type, placeholder)
-
     @property
     def regexes(self) -> List[
             NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
@@ -247,31 +158,9 @@ class SpanishDoubleExtractor(BaseNumberExtractor):
                     placeholder),
                 val='DoubleNum')
         ]
-        self._options = NumberOptions.NONE
 
 
 class SpanishFractionExtractor(BaseNumberExtractor):
-    @property
-    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict
-
-    @property
-    def options(self):
-        return self._options
-
-    @property
-    def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms
-
-    def extract(self, source: str) -> List[ExtractResult]:
-        return super().extract(source)
-
-    def _filter_ambiguity(self, ers: List[ExtractResult], text: str) -> List[ExtractResult]:
-        return super()._filter_ambiguity(ers, text)
-
-    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
-        return super()._generate_format_regex(format_type, placeholder)
-
     @property
     def regexes(self) -> List[
             NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
@@ -296,7 +185,6 @@ class SpanishFractionExtractor(BaseNumberExtractor):
                 re=SpanishNumeric.FractionNounWithArticleRegex,
                 val='FracSpa')
         ]
-        self._options = NumberOptions.NONE
 
         if mode != NumberMode.Unit:
             self.__regexes.append(
@@ -306,27 +194,6 @@ class SpanishFractionExtractor(BaseNumberExtractor):
 
 
 class SpanishOrdinalExtractor(BaseNumberExtractor):
-    @property
-    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return super().ambiguity_filters_dict
-
-    @property
-    def options(self):
-        return self._options
-
-    @property
-    def _negative_number_terms(self) -> Pattern:
-        return super()._negative_number_terms
-
-    def extract(self, source: str) -> List[ExtractResult]:
-        return super().extract(source)
-
-    def _filter_ambiguity(self, ers: List[ExtractResult], text: str) -> List[ExtractResult]:
-        return super()._filter_ambiguity(ers, text)
-
-    def _generate_format_regex(self, format_type, placeholder: str = None) -> Pattern:
-        return super()._generate_format_regex(format_type, placeholder)
-
     @property
     def regexes(self) -> List[
             NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
@@ -345,7 +212,6 @@ class SpanishOrdinalExtractor(BaseNumberExtractor):
                 re=SpanishNumeric.OrdinalNounRegex,
                 val='OrdSpa')
         ]
-        self._options = NumberOptions.NONE
 
 
 class SpanishPercentageExtractor(BasePercentageExtractor):
