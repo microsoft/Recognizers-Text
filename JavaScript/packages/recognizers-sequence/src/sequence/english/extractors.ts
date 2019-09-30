@@ -1,8 +1,8 @@
-import { BasePhoneNumberExtractor, BaseIpExtractor, BaseMentionExtractor, BaseHashtagExtractor, BaseEmailExtractor, BaseURLExtractor, BaseGUIDExtractor, IPhoneNumberExtractorConfiguration } from "../extractors";
+import { BasePhoneNumberExtractor, IIpExtractorConfiguration, BaseMentionExtractor, BaseHashtagExtractor, BaseEmailExtractor, IURLExtractorConfiguration, BaseGUIDExtractor, IPhoneNumberExtractorConfiguration } from "../extractors";
 import { ExtractResult, RegExpUtility } from "@microsoft/recognizers-text";
 import { BasePhoneNumbers } from "../../resources/basePhoneNumbers";
 import { BaseURL } from "../../resources/baseURL";
-import { IURLExtractorConfiguration } from "../extractors";
+import { BaseIp } from "../../resources/baseIp";
 
 export class EnglishPhoneNumberExtractorConfiguration implements IPhoneNumberExtractorConfiguration {
     readonly WordBoundariesRegex: string;
@@ -21,8 +21,14 @@ export class EnglishPhoneNumberExtractorConfiguration implements IPhoneNumberExt
     }
 }
 
-export class IpExtractor extends BaseIpExtractor {
+export class EnglishIpExtractorConfiguration implements IIpExtractorConfiguration {
+    readonly Ipv4Regex: RegExp;
+    readonly Ipv6Regex: RegExp;
 
+    constructor() {
+        this.Ipv4Regex = RegExpUtility.getSafeRegExp(BaseIp.Ipv4Regex);
+        this.Ipv6Regex = RegExpUtility.getSafeRegExp(BaseIp.Ipv6Regex);
+    }
 }
 
 export class MentionExtractor extends BaseMentionExtractor {
