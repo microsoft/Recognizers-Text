@@ -393,7 +393,7 @@ class BaseMergedExtractor(DateTimeExtractor):
                 success = self.try_merge_modifier_token(er, self.config.after_regex, source)
 
             if not success:
-                success = self.try_merge_modifier_token(er, self.config.since_regex, source)
+                success = self.try_merge_modifier_token(er, self.config.since_regex, source, True)
 
             if not success:
                 self.try_merge_modifier_token(er, self.config.around_regex, source)
