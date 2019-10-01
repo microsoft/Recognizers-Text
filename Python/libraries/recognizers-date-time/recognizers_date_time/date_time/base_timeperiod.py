@@ -148,7 +148,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                         match_am_str = RegExpUtility.get_group(match, Constants.AmGroupName)
                         desc_str = RegExpUtility.get_group(match, Constants.DescGroupName)
 
-                        if not match_pm_str or not match_am_str or not desc_str:
+                        if match_pm_str or match_am_str or desc_str:
                             result.append(Token(source.index(match.group()), source.index(match.group()) + (match.end() - match.start())))
                         else:
                             after_str = source[source.index(match.group()) + (match.end() - match.start()):]
