@@ -245,10 +245,10 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
         metadata = Metadata()
         metadata.possibly_included_period_end = True
 
-        matches = list(regex.finditer(self.config.year_period_regex, text))
+        matches = regex.finditer(self.config.year_period_regex, text)
 
         for match in matches:
-            match_year = regex.match(self.config.year_regex, match)
+            match_year = regex.match(self.config.year_regex, match.string)
 
             if match_year is not None and (match_year.end() - match_year.start()) == len(match.group()):
                 year = self.config.date_point_extractor.get_year_from_text(match_year)
@@ -257,7 +257,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
                 metadata.possibly_included_period_end = False
             else:
-                year_matches = regex.search(self.config.year_regex, match.group())
+                year_matches = list(regex.finditer(self.config.year_regex, match.group()))
                 all_digit_year = True
                 is_valid_year = True
 
@@ -277,7 +277,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                         if self.has_invalid_dash_context(match, text):
                             continue
 
-                ret.append(Token(match.start(), match.start() - (match.end() - match.start()), metadata))
+            ret.append(Token(match.start(), match.start() - (match.end() - match.start()), metadata))
 
         return ret
 
