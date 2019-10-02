@@ -1733,10 +1733,9 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "iki bin yılı Eylül'ün onunda",
+        "Text": "iki bin yılı Eylül'ün onu",
         "Type": "date",
         "Value": {
           "Timex": "2000-09-10",
@@ -1748,7 +1747,7 @@
           }
         },
         "Start": 0,
-        "Length": 28
+        "Length": 25
       }
     ]
   },
@@ -2118,7 +2117,6 @@
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "Yarından itibaren üç hafta sonra",
@@ -2133,7 +2131,7 @@
           }
         },
         "Start": 0,
-        "Length": 26
+        "Length": 32
       }
     ]
   },
@@ -2143,7 +2141,6 @@
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "Dünden iki gün önce",
