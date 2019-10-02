@@ -254,7 +254,6 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                 year = self.config.date_point_extractor.get_year_from_text(match_year)
                 if not (Constants.MinYearNum <= year <= Constants.MaxYearNum):
                     continue
-                    
                 # Possibly include period end only apply for cases like "2014-2018", which are not single year cases
                 metadata.possibly_included_period_end = False
             else:
