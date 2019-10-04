@@ -79,6 +79,8 @@ class Constants:
     BusinessDayGroupName = 'business'
     LeftAmPmGroupName = 'leftDesc'
     RightAmPmGroupName = 'rightDesc'
+    AmPmGroupName = 'ampm'
+    HourNumGroupName = 'hournum'
 
 
 class TimeTypeConstants:
