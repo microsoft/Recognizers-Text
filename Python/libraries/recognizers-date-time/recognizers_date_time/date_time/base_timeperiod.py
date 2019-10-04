@@ -123,7 +123,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
             if matches:
                 for match in matches:
 
-                    if RegExpUtility.get_group(match, Constants.MinuteGroupName) or RegExpUtility.get_group(match, Constants.SecondGroupName):
+                    if RegExpUtility.get_group(match, Constants.minute_group_name) or RegExpUtility.get_group(match, Constants.second_group_name):
 
                         end_with_valid_token = True
                         if (source.index(match.group()) + (match.end() - match.start())) == len(source):
@@ -133,7 +133,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                             after_str = source[source.index(match.group()) + (match.end() - match.start())]
 
                             end_with_general_endings = self.config.general_ending_regex.match(after_str)
-                            end_with_am_pm = RegExpUtility.get_group(match, Constants.RightAmPmGroupName)
+                            end_with_am_pm = RegExpUtility.get_group(match, Constants.right_am_pm_group_name)
 
                             if end_with_general_endings or end_with_am_pm or after_str.lstrip().startswith(self.config.token_before_date):
                                 end_with_valid_token = True
@@ -144,9 +144,9 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                         if end_with_valid_token:
                             result.append(Token(source.index(match.group()), source.index(match.group()) + (match.end() - match.start())))
                     else:
-                        match_pm_str = RegExpUtility.get_group(match, Constants.PmGroupName)
-                        match_am_str = RegExpUtility.get_group(match, Constants.AmGroupName)
-                        desc_str = RegExpUtility.get_group(match, Constants.DescGroupName)
+                        match_pm_str = RegExpUtility.get_group(match, Constants.pm_group_name)
+                        match_am_str = RegExpUtility.get_group(match, Constants.am_group_name)
+                        desc_str = RegExpUtility.get_group(match, Constants.desc_group_name)
 
                         if match_pm_str or match_am_str or desc_str:
                             result.append(Token(source.index(match.group()), source.index(match.group()) + (match.end() - match.start())))

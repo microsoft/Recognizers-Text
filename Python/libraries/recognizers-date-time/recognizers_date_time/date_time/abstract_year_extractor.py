@@ -18,15 +18,15 @@ class AbstractYearExtractor(DateExtractor):
         raise NotImplementedError
 
     def get_year_from_text(self, match: Match) -> int:
-        year = Constants.InvalidYear
+        year = Constants.invalid_year
 
         year_str = RegExpUtility.get_group(
             match, 'year')
         if year_str and not (str.isspace(year_str) or year_str is None):
             year = int(year_str)
-            if 100 > year >= Constants.MinTwoDigitYearPastNum:
+            if 100 > year >= Constants.min_two_digit_year_past_num:
                 year += 1900
-            elif 0 <= year < Constants.MaxTwoDigitYearFutureNum:
+            elif 0 <= year < Constants.max_two_digit_year_future_num:
                 year += 2000
         else:
             first_two_year_num_str = RegExpUtility.get_group(
@@ -60,7 +60,7 @@ class AbstractYearExtractor(DateExtractor):
                 if (first_two_year_num < 100 and last_two_year_num == 0)\
                         or (first_two_year_num < 100 and first_two_year_num % 10 == 0
                             and len(last_two_year_num_str.strip().split(' ')) == 1):
-                    year = Constants.InvalidYear
+                    year = Constants.invalid_year
                     return year
 
                 if first_two_year_num >= 100:

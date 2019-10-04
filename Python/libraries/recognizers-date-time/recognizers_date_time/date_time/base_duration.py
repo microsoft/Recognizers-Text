@@ -222,11 +222,11 @@ class BaseDurationExtractor(DateTimeExtractor):
                 node.type = extractor_results[first_extraction_index].type
 
                 if time_unit == total_unit:
-                    duration_type = Constants.MultipleDuration_Time
+                    duration_type = Constants.multiple_duration_time
                 elif time_unit == 0:
-                    duration_type = Constants.MultipleDuration_Date
+                    duration_type = Constants.multiple_duration_date
                 else:
-                    duration_type = Constants.MultipleDuration_DateTime
+                    duration_type = Constants.multiple_duration_date_time
 
                 node.data = duration_type
 

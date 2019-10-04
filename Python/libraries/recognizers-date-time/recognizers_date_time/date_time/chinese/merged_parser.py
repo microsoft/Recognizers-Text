@@ -107,10 +107,10 @@ class ChineseMergedParser(BaseMergedParser):
         mod = value.mod
         comment = value.comment
 
-        self._add_resolution_fields_any(result, Constants.TimexKey, timex)
-        self._add_resolution_fields_any(result, Constants.CommentKey, comment)
-        self._add_resolution_fields_any(result, Constants.ModKey, mod)
-        self._add_resolution_fields_any(result, Constants.TypeKey, output_type)
+        self._add_resolution_fields_any(result, Constants.timex_key, timex)
+        self._add_resolution_fields_any(result, Constants.comment_key, comment)
+        self._add_resolution_fields_any(result, Constants.mod_key, mod)
+        self._add_resolution_fields_any(result, Constants.type_key, output_type)
         # self._add_resolution_fields_any(result, Constants.IsLunarKey, str(is_lunar).lower() if is_lunar else '')
 
         future_resolution = value.future_resolution
@@ -127,14 +127,14 @@ class ChineseMergedParser(BaseMergedParser):
         if len(intersect_values) == len(past_values) and len(intersect_values) == len(future_values):
             if past_values:
                 self._add_resolution_fields_any(
-                    result, Constants.ResolveKey, past)
+                    result, Constants.resolve_key, past)
         else:
             if past_values:
                 self._add_resolution_fields_any(
-                    result, Constants.ResolveToPastKey, past)
+                    result, Constants.resolve_to_past_key, past)
             if future_resolution:
                 self._add_resolution_fields_any(
-                    result, Constants.ResolveToFutureKey, future)
+                    result, Constants.resolve_to_future_key, future)
 
         if comment == 'ampm':
             if 'resolve' in result:
@@ -145,16 +145,16 @@ class ChineseMergedParser(BaseMergedParser):
 
         if is_lunar:
             self._add_resolution_fields_any(
-                result, Constants.IsLunarKey, is_lunar)
+                result, Constants.is_lunar_key, is_lunar)
 
         for value in result.values():
             if isinstance(value, dict):
                 new_values = {}
                 self._add_resolution_fields(
-                    new_values, Constants.TimexKey, timex)
-                self._add_resolution_fields(new_values, Constants.ModKey, mod)
+                    new_values, Constants.timex_key, timex)
+                self._add_resolution_fields(new_values, Constants.mod_key, mod)
                 self._add_resolution_fields(
-                    new_values, Constants.TypeKey, output_type)
+                    new_values, Constants.type_key, output_type)
 
                 for inner_key in value:
                     new_values[inner_key] = value[inner_key]

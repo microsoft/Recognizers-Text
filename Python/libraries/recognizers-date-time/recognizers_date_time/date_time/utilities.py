@@ -802,36 +802,36 @@ class TimexUtil:
     def parse_time_of_day(tod: str) -> TimeOfDayResolution:
         result = TimeOfDayResolution()
 
-        if tod == Constants.EarlyMorning:
-            result.timex = Constants.EarlyMorning
+        if tod == Constants.early_morning:
+            result.timex = Constants.early_morning
             result.begin_hour = 4
             result.end_hour = 8
-        elif tod == Constants.Morning:
-            result.timex = Constants.Morning
+        elif tod == Constants.morning:
+            result.timex = Constants.morning
             result.begin_hour = 8
             result.end_hour = 12
-        elif tod == Constants.MidDay:
-            result.timex = Constants.MidDay
+        elif tod == Constants.mid_day:
+            result.timex = Constants.mid_day
             result.begin_hour = 11
             result.end_hour = 13
-        elif tod == Constants.Afternoon:
-            result.timex = Constants.Afternoon
+        elif tod == Constants.afternoon:
+            result.timex = Constants.afternoon
             result.begin_hour = 12
             result.end_hour = 16
-        elif tod == Constants.Evening:
-            result.timex = Constants.Evening
+        elif tod == Constants.evening:
+            result.timex = Constants.evening
             result.begin_hour = 16
             result.end_hour = 20
-        elif tod == Constants.Daytime:
-            result.timex = Constants.Daytime
+        elif tod == Constants.daytime:
+            result.timex = Constants.daytime
             result.begin_hour = 8
             result.end_hour = 18
-        elif tod == Constants.BusinessHour:
-            result.timex = Constants.BusinessHour
+        elif tod == Constants.business_hour:
+            result.timex = Constants.business_hour
             result.begin_hour = 8
             result.end_hour = 18
-        elif tod == Constants.Night:
-            result.timex = Constants.Night
+        elif tod == Constants.night:
+            result.timex = Constants.night
             result.begin_hour = 20
             result.end_hour = 23
             result.end_min = 59

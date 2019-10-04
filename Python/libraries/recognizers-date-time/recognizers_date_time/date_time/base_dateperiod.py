@@ -253,7 +253,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
             # Single year cases like "1998"
             if match_year is not None and (match_year.end() - match_year.start()) == len(match.group()):
                 year = self.config.date_point_extractor.get_year_from_text(match_year)
-                if not (Constants.MinYearNum <= year <= Constants.MaxYearNum):
+                if not (Constants.min_year_num <= year <= Constants.max_year_num):
                     continue
 
                 # Possibly include period end only apply for cases like "2014-2018", which are not single year cases
@@ -265,10 +265,10 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
                 for year_match in year_matches:
                     year = self.config.date_point_extractor.get_year_from_text(year_match)
-                    if not (Constants.MinYearNum <= year <= Constants.MaxYearNum):
+                    if not (Constants.min_year_num <= year <= Constants.max_year_num):
                         is_valid_year = False
                         break
-                    elif len(year_match) != Constants.FourDigitsYearLength:
+                    elif len(year_match) != Constants.four_digits_year_length:
                         all_digit_year = False
 
                     if not is_valid_year:
@@ -445,15 +445,15 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                 match_year = self.config.year_regex.search(match.group())
 
                 if match_year and len(match_year.group()) == len(match.group()):
-                    year_str = match_year.group('year')
+                    year_str = match_year.group(Constants.year_group_name)
 
                     if not year_str:
                         year = self.__get_year_from_text(match_year)
 
-                        if not (Constants.MinYearNum <= year <= Constants.MaxYearNum):
+                        if not (Constants.min_year_num <= year <= Constants.max_year_num):
                             add_token = False
 
-                if (match.end() - match.start() == Constants.FourDigitsYearLength) and self.__infix_boundary_check(
+                if (match.end() - match.start() == Constants.four_digits_year_length) and self.__infix_boundary_check(
                         match, source):
                     sub_str = source[match.start() - 1: match.end() + 1]
 
@@ -467,22 +467,22 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
         return tokens
 
     def __get_year_from_text(self, match) -> int:
-        first_two_year_num_str = match.group('firsttwoyearnum')
+        first_two_year_num_str = match.group(Constants.first_two_year_num)
 
         if first_two_year_num_str:
             er = ExtractResult()
             er.text = first_two_year_num_str
-            er.start = match.start('firsttwoyearnum')
-            er.length = match.end('firsttwoyearnum') - er.start
+            er.start = match.start(Constants.first_two_year_num)
+            er.length = match.end(Constants.first_two_year_num) - er.start
             first_two_year_num = self.config.number_parser.parse(er).value
 
             last_two_year_num = 0
-            last_two_year_num_str = match.group('lasttwoyearnum')
+            last_two_year_num_str = match.group(Constants.last_two_year_num)
 
             if last_two_year_num_str:
                 er.text = last_two_year_num_str
-                er.start = match.start('lasttwoyearnum')
-                er.length = match.end('lasttwoyearnum') - er.start
+                er.start = match.start(Constants.last_two_year_num)
+                er.length = match.end(Constants.last_two_year_num) - er.start
                 last_two_year_num = self.config.number_parser.parse(er).value
 
             if first_two_year_num < 100 and last_two_year_num == 0 or first_two_year_num < 100 and first_two_year_num % 10 == 0 and len(
@@ -696,7 +696,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                         match = self.config.within_next_prefix_regex.search(before_string)
                         if match:
 
-                            is_next = not RegExpUtility.get_group(match, Constants.NextGroupName)
+                            is_next = not RegExpUtility.get_group(match, Constants.next_group_name)
 
                             # For "within" case
                             # Cases like "within the next 5 days before today" is not acceptable
@@ -976,8 +976,8 @@ class BaseDatePeriodParser(DateTimeParser):
     def parser_type_name(self) -> str:
         return Constants.SYS_DATETIME_DATEPERIOD
 
-    week_of_comment = 'WeekOf'
-    month_of_comment = 'MonthOf'
+    week_of_comment = Constants.week_of
+    month_of_comment = Constants.month_of
 
     def __init__(self, config: DatePeriodParserConfiguration, inclusive_end_period: bool = False):
         self.config = config
@@ -1070,9 +1070,9 @@ class BaseDatePeriodParser(DateTimeParser):
         if not (match and match.end() - match.start() == len(trimmed_source)):
             return result
 
-        month_str = RegExpUtility.get_group(match, 'month')
-        year_str = RegExpUtility.get_group(match, 'year')
-        order_str = RegExpUtility.get_group(match, 'order')
+        month_str = RegExpUtility.get_group(match, Constants.month_group_name)
+        year_str = RegExpUtility.get_group(match, Constants.year_group_name)
+        order_str = RegExpUtility.get_group(match, Constants.order)
         month = self.config.month_of_year.get(month_str)
         try:
             year = int(year_str)
@@ -1117,16 +1117,16 @@ class BaseDatePeriodParser(DateTimeParser):
         if not match or match.start() != 0 or match.group() != source:
             return result
 
-        days = match.captures('day')
+        days = match.captures(Constants.day_group_name)
         begin_day = self.config.day_of_month.get(days[0])
         end_day = self.config.day_of_month.get(days[1])
-        year_str = match.group('year')
+        year_str = match.group(Constants.year_group_name)
 
         if year_str:
             year = int(year_str)
             no_year = False
 
-        month_str = match.group('month')
+        month_str = match.group(Constants.month_group_name)
 
         if month_str:
             month = self.config.month_of_year.get(month_str)
@@ -1219,19 +1219,19 @@ class BaseDatePeriodParser(DateTimeParser):
 
         if RegExpUtility.get_group(match, 'EarlyPrefix'):
             early_prefix = True
-            trimmed_source = match.group('suffix')
+            trimmed_source = match.group(Constants.suffix_group_name)
             result.mod = TimeTypeConstants.EARLY_MOD
         elif RegExpUtility.get_group(match, 'LatePrefix'):
             late_prefix = True
-            trimmed_source = match.group('suffix')
+            trimmed_source = match.group(Constants.suffix_group_name)
             result.mod = TimeTypeConstants.LATE_MOD
         elif RegExpUtility.get_group(match, 'MidPrefix'):
             mid_prefix = True
-            trimmed_source = match.group('suffix')
+            trimmed_source = match.group(Constants.suffix_group_name)
             result.mod = TimeTypeConstants.MID_MOD
 
         swift = 0
-        month_str = RegExpUtility.get_group(match, 'month')
+        month_str = RegExpUtility.get_group(match, Constants.month_group_name)
         if month_str:
             swift = self.config.get_swift_year(trimmed_source)
         else:
@@ -1252,7 +1252,7 @@ class BaseDatePeriodParser(DateTimeParser):
             if self.is_present(swift):
                 result.mod = None
 
-        month_str = RegExpUtility.get_group(match, 'month')
+        month_str = RegExpUtility.get_group(match, Constants.month_group_name)
 
         if month_str:
             swift = self.config.get_swift_year(trimmed_source)
@@ -1425,7 +1425,7 @@ class BaseDatePeriodParser(DateTimeParser):
             # Handles cases like "next monday to friday"
             match = self.config.week_with_week_day_range_regex.search(source)
             if match:
-                week_prefix = RegExpUtility.get_group(match, 'week')
+                week_prefix = RegExpUtility.get_group(match, Constants.week_group_name)
 
                 if week_prefix:
                     ers[0].text = f'{week_prefix} {ers[0].text}'
@@ -1514,8 +1514,8 @@ class BaseDatePeriodParser(DateTimeParser):
         if not (match and len(match.group()) == len(source)):
             return result
 
-        cardinal_str = RegExpUtility.get_group(match, 'cardinal')
-        month_str = RegExpUtility.get_group(match, 'month')
+        cardinal_str = RegExpUtility.get_group(match, Constants.cardinal)
+        month_str = RegExpUtility.get_group(match, Constants.month_group_name)
         month = reference.month
         year = reference.year
         no_year = False
@@ -1579,9 +1579,9 @@ class BaseDatePeriodParser(DateTimeParser):
         if not (match and len(match.group()) == len(source)):
             return result
 
-        cardinal_str = match.group('cardinal')
-        year_str = match.group('year')
-        order_str = match.group('order')
+        cardinal_str = match.group(Constants.cardinal)
+        year_str = match.group(Constants.year_group_name)
+        order_str = match.group(Constants.order)
 
         if not year_str:
             swift = self.config.get_swift_year(order_str)
@@ -1639,10 +1639,10 @@ class BaseDatePeriodParser(DateTimeParser):
         if not (match and len(match.group()) == len(source)):
             return result
 
-        cardinal_str = match.group('cardinal')
-        year_str = match.group('year')
-        order_str = match.group('order')
-        number_str = match.group('number')
+        cardinal_str = match.group(Constants.cardinal)
+        year_str = match.group(Constants.year_group_name)
+        order_str = match.group(Constants.order)
+        number_str = match.group(Constants.number)
 
         try:
             year = int(year_str)
@@ -1659,9 +1659,9 @@ class BaseDatePeriodParser(DateTimeParser):
             quarter_num = self.config.cardinal_map[cardinal_str]
 
         begin_date = DateUtils.safe_create_date_resolve_overflow(
-            year, ((quarter_num - 1) * Constants.SemesterMonthCount) + 1, 1)
+            year, ((quarter_num - 1) * Constants.semester_month_count) + 1, 1)
         end_date = DateUtils.safe_create_date_resolve_overflow(
-            year, (quarter_num * Constants.SemesterMonthCount) + 1, 1)
+            year, (quarter_num * Constants.semester_month_count) + 1, 1)
 
         result.future_value = [begin_date, end_date]
         result.past_value = [begin_date, end_date]
@@ -1744,17 +1744,17 @@ class BaseDatePeriodParser(DateTimeParser):
 
         if match:
             diff_days = 0
-            duration_str = match.group('duration')
+            duration_str = match.group(TimeTypeConstants.DURATION)
             duration_unit = self.config.unit_map.get(duration_str)
-            if duration_unit == 'W':
+            if duration_unit == Constants.unit_W:
                 diff_days = 7 - begin_date.isoweekday()
                 end_date = reference + timedelta(days=diff_days)
                 rest_now_sunday = diff_days == 0
-            elif duration_unit == 'MON':
+            elif duration_unit == Constants.unit_MON:
                 end_date = DateUtils.safe_create_from_min_value(
                     begin_date.year, begin_date.month, DateUtils.last_day_of_month(begin_date.year, begin_date.month))
                 diff_days = end_date.day - begin_date.day + 1
-            elif duration_unit == 'Y':
+            elif duration_unit == Constants.unit_Y:
                 end_date = DateUtils.safe_create_from_min_value(
                     begin_date.year, 12, 31)
                 diff_days = DateUtils.day_of_year(
@@ -1779,11 +1779,11 @@ class BaseDatePeriodParser(DateTimeParser):
         if not (match and len(match.group()) == len(source)):
             return result
 
-        cardinal_str = RegExpUtility.get_group(match, 'cardinal')
-        year_str = RegExpUtility.get_group(match, 'year')
-        order_quarter_str = RegExpUtility.get_group(match, 'orderQuarter')
-        order_str = None if order_quarter_str else RegExpUtility.get_group(match, 'order')
-        quarter_str = RegExpUtility.get_group(match, 'number')
+        cardinal_str = RegExpUtility.get_group(match, Constants.cardinal)
+        year_str = RegExpUtility.get_group(match, Constants.year_group_name)
+        order_quarter_str = RegExpUtility.get_group(match, Constants.order_quarter)
+        order_str = None if order_quarter_str else RegExpUtility.get_group(match, Constants.order)
+        quarter_str = RegExpUtility.get_group(match, Constants.number)
 
         no_specific_value = False
         try:
@@ -1800,39 +1800,39 @@ class BaseDatePeriodParser(DateTimeParser):
             quarter_num = int(quarter_str)
         elif order_quarter_str:
             month = reference.month
-            quarter_num = math.ceil(month / Constants.TrimesterMonthCount)
+            quarter_num = math.ceil(month / Constants.trimester_month_count)
             swift = self.config.get_swift_year(order_quarter_str)
             quarter_num += swift
             if quarter_num <= 0:
-                quarter_num += Constants.QuarterCount
+                quarter_num += Constants.quarter_count
                 year -= 1
-            elif quarter_num > Constants.QuarterCount:
-                quarter_num -= Constants.QuarterCount
+            elif quarter_num > Constants.quarter_count:
+                quarter_num -= Constants.quarter_count
                 year += 1
         else:
             quarter_num = self.config.cardinal_map[cardinal_str]
 
         begin_date = DateUtils.safe_create_date_resolve_overflow(
-            year, ((quarter_num - 1) * Constants.TrimesterMonthCount) + 1, 1)
+            year, ((quarter_num - 1) * Constants.trimester_month_count) + 1, 1)
         end_date = DateUtils.safe_create_date_resolve_overflow(
-            year, (quarter_num * Constants.TrimesterMonthCount) + 1, 1)
+            year, (quarter_num * Constants.trimester_month_count) + 1, 1)
 
         if no_specific_value:
             if end_date < reference:
                 result.past_value = [begin_date, end_date]
 
                 future_begin_date = DateUtils.safe_create_date_resolve_overflow(
-                    year + 1, ((quarter_num - 1) * Constants.TrimesterMonthCount) + 1, 1)
+                    year + 1, ((quarter_num - 1) * Constants.trimester_month_count) + 1, 1)
                 future_end_date = DateUtils.safe_create_date_resolve_overflow(
-                    year + 1, (quarter_num * Constants.TrimesterMonthCount) + 1, 1)
+                    year + 1, (quarter_num * Constants.trimester_month_count) + 1, 1)
                 result.future_value = [future_begin_date, future_end_date]
             elif end_date > reference:
                 result.future_value = [begin_date, end_date]
 
                 past_begin_date = DateUtils.safe_create_date_resolve_overflow(
-                    year - 1, ((quarter_num - 1) * Constants.TrimesterMonthCount) + 1, 1)
+                    year - 1, ((quarter_num - 1) * Constants.trimester_month_count) + 1, 1)
                 past_end_date = DateUtils.safe_create_date_resolve_overflow(
-                    year - 1, (quarter_num * Constants.TrimesterMonthCount) + 1, 1)
+                    year - 1, (quarter_num * Constants.trimester_month_count) + 1, 1)
                 result.past_value = [past_begin_date, past_end_date]
             else:
                 result.future_value = [begin_date, end_date]
@@ -1853,9 +1853,9 @@ class BaseDatePeriodParser(DateTimeParser):
             return result
 
         swift = self.config.get_swift_year(source)
-        year_str = match.group('year')
+        year_str = match.group(Constants.year_group_name)
         year = reference.year
-        season_str = match.group('seas')
+        season_str = match.group(Constants.season)
         season = self.config.season_map[season_str]
         if swift >= -1 or year_str:
             if not year_str:
@@ -1873,7 +1873,7 @@ class BaseDatePeriodParser(DateTimeParser):
         if not match:
             return result
 
-        num = int(match.group('number'))
+        num = int(match.group(Constants.number))
         year = reference.year
         result.timex = f'{year:04d}-W{num:02d}'
 
@@ -1955,13 +1955,13 @@ class BaseDatePeriodParser(DateTimeParser):
 
         if not is_positive_swift:
             swift = swift * -1
-        if unit_str == 'D':
+        if unit_str == Constants.unit_D:
             result = result + timedelta(days=swift)
-        elif unit_str == 'W':
+        elif unit_str == Constants.unit_W:
             result = result + timedelta(weeks=swift)
-        elif unit_str == 'M':
+        elif unit_str == Constants.unit_M:
             result = result + datedelta(months=swift)
-        elif unit_str == 'Y':
+        elif unit_str == Constants.unit_Y:
             result = result + datedelta(years=swift)
 
         return result

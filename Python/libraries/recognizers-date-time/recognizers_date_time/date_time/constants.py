@@ -18,67 +18,91 @@ class Constants:
     SYS_DATETIME_DATETIMEPOINT: str = 'datetimepoint'
 
     # Multiple Duration Types
-    MultipleDuration_Prefix = 'multipleDuration'
-    MultipleDuration_Date = MultipleDuration_Prefix + 'Date'
-    MultipleDuration_Time = MultipleDuration_Prefix + 'Time'
-    MultipleDuration_DateTime = MultipleDuration_Prefix + 'DateTime'
+    multiple_duration_prefix = 'multipleDuration'
+    multiple_duration_date = multiple_duration_prefix + 'Date'
+    multiple_duration_time = multiple_duration_prefix + 'Time'
+    multiple_duration_date_time = multiple_duration_prefix + 'DateTime'
 
     # keys
-    TimexKey: str = 'timex'
-    CommentKey: str = 'Comment'
-    ModKey: str = 'Mod'
-    SourceType: str = 'sourceEntity'
-    TypeKey: str = 'type'
-    IsLunarKey: str = 'isLunar'
-    ResolveKey: str = 'resolve'
-    ResolveToPastKey: str = 'resolveToPast'
-    ResolveToFutureKey: str = 'resolveToFuture'
+    timex_key: str = 'timex'
+    comment_key: str = 'Comment'
+    mod_key: str = 'Mod'
+    source_type: str = 'sourceEntity'
+    type_key: str = 'type'
+    is_lunar_key: str = 'isLunar'
+    resolve_key: str = 'resolve'
+    resolve_to_past_key: str = 'resolveToPast'
+    resolve_to_future_key: str = 'resolveToFuture'
 
-    SemesterMonthCount: int = 6
-    TrimesterMonthCount: int = 3
-    QuarterCount: int = 4
-    FourDigitsYearLength: int = 4
-    MinMonth: int = 1
-    MaxMonth: int = 12
-    InvalidYear = -2147483648
+    semester_month_count: int = 6
+    trimester_month_count: int = 3
+    quarter_count: int = 4
+    four_digits_year_length: int = 4
+    min_month: int = 1
+    max_month: int = 12
+    invalid_year = -2147483648
 
-    MinYearNum: int = int(BaseDateTime.MinYearNum)
-    MaxYearNum: int = int(BaseDateTime.MaxYearNum)
+    min_year_num: int = int(BaseDateTime.MinYearNum)
+    max_year_num: int = int(BaseDateTime.MaxYearNum)
 
-    DEFAULT_LANGUAGE_FALLBACK_MDY: str = 'MDY'
-    DEFAULT_LANGUAGE_FALLBACK_DMY: str = 'DMY'
+    default_language_fallback_mdy: str = 'MDY'
+    default_language_fallback_dmy: str = 'DMY'
 
-    MaxTwoDigitYearFutureNum: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
-    MinTwoDigitYearPastNum: int = int(BaseDateTime.MinTwoDigitYearPastNum)
+    max_two_digit_year_future_num: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
+    min_two_digit_year_past_num: int = int(BaseDateTime.MinTwoDigitYearPastNum)
 
-    EarlyMorning: str = "TDA"
-    Morning: str = "TMO"
-    MidDay: str = "TMI"
-    Afternoon: str = "TAF"
-    Evening: str = "TEV"
-    Daytime: str = "TDT"
-    Night: str = "TNI"
-    BusinessHour = "TBH"
+    early_morning: str = "TDA"
+    morning: str = "TMO"
+    mid_day: str = "TMI"
+    afternoon: str = "TAF"
+    evening: str = "TEV"
+    daytime: str = "TDT"
+    night: str = "TNI"
+    business_hour = "TBH"
 
     # Groups' names for named groups in regexes
-    NextGroupName = "next"
+    next_group_name = "next"
 
-    NextGroupName = 'next'
-    AmGroupName = 'am'
-    PmGroupName = 'pm'
-    ImplicitAmGroupName = 'iam'
-    ImplicitPmGroupName = 'ipm'
-    PrefixGroupName = 'prefix'
-    SuffixGroupName = 'suffix'
-    DescGroupName = 'desc'
-    SecondGroupName = 'sec'
-    MinuteGroupName = 'min'
-    HourGroupName = 'hour'
-    YearGroupName = 'year'
-    TimeOfDayGroupName = 'timeOfDay'
-    BusinessDayGroupName = 'business'
-    LeftAmPmGroupName = 'leftDesc'
-    RightAmPmGroupName = 'rightDesc'
+    next_group_name = 'next'
+    am_group_name = 'am'
+    pm_group_name = 'pm'
+    implicit_am_group_name = 'iam'
+    implicit_pm_group_name = 'ipm'
+    prefix_group_name = 'prefix'
+    suffix_group_name = 'suffix'
+    desc_group_name = 'desc'
+    second_group_name = 'sec'
+    minute_group_name = 'min'
+    hour_group_name = 'hour'
+    day_group_name = 'day'
+    week_group_name = 'week'
+    month_group_name = 'month'
+    year_group_name = 'year'
+    time_of_day_group_name = 'timeOfDay'
+    business_day_group_name = 'business'
+    left_am_pm_group_name = 'leftDesc'
+    right_am_pm_group_name = 'rightDesc'
+
+    first_two_year_num = 'firsttwoyearnum'
+    last_two_year_num = 'lasttwoyearnum'
+
+    week_of = 'WeekOf'
+    month_of = 'MonthOf'
+
+    order = 'order'
+    order_quarter = 'orderQuarter'
+
+    number = 'number'
+
+    cardinal = 'cardinal'
+
+    season = 'seas'
+
+    unit_Y = 'Y'
+    unit_D = 'D'
+    unit_M = 'M'
+    unit_W = 'W'
+    unit_MON = 'MON'
 
 
 class TimeTypeConstants:
