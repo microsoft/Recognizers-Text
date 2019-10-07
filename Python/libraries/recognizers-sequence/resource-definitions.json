@@ -102,6 +102,19 @@
                 "class ChineseURL:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Chinese", "Chinese-Ip" ],
+            "output": "chinese_ip",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "from .base_ip import BaseIp",
+                "from .chinese_phone_numbers import ChinesePhoneNumbers as PhoneNumbersDefinitions",
+                "",
+                "",
+                "class ChineseIp:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
         }
     ]
 }

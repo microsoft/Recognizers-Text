@@ -52,8 +52,28 @@ class EnglishPhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
         self._ForbiddenPrefixMarkers = BasePhoneNumbers.ForbiddenPrefixMarkers
 
 
-class EnglishIpExtractor(BaseIpExtractor):
-    pass
+class EnglishIpExtractorConfiguration(IpConfiguration):
+    @property
+    def ipv4_regex(self) -> Pattern:
+        return self.__ipv4_regex
+
+    @ipv4_regex.setter
+    def ipv4_regex(self, ipv4_regex):
+        self.__ipv4_regex = ipv4_regex
+
+    @property
+    def ipv6_regex(self) -> Pattern:
+        return self.__ipv6_regex
+
+    @ipv6_regex.setter
+    def ipv6_regex(self, ipv6_regex):
+        self.__ipv6_regex = ipv6_regex
+
+    def __init__(self, options):
+        self.__ipv4_regex = RegExpUtility.get_safe_reg_exp(BaseIp.Ipv4Regex)
+        self.__ipv6_regex = RegExpUtility.get_safe_reg_exp(BaseIp.Ipv6Regex)
+
+        super().__init__(options)
 
 
 class EnglishMentionExtractor(BaseMentionExtractor):

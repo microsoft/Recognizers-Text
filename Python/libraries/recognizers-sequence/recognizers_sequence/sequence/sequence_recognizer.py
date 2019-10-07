@@ -22,15 +22,21 @@ class SequenceRecognizer(Recognizer[SequenceOptions]):
         self.register_model('PhoneNumberModel', Culture.English,
                             lambda options: PhoneNumberModel(PhoneNumberParser(),
                                                              BasePhoneNumberExtractor(EnglishPhoneNumberExtractorConfiguration())))
-        self.register_model('EmailModel', Culture.English,
-                            lambda options: EmailModel(EmailParser(), EnglishEmailExtractor()))
 
         self.register_model('PhoneNumberModel', Culture.Chinese,
                             lambda options: PhoneNumberModel(PhoneNumberParser(),
                                                              BasePhoneNumberExtractor(ChinesePhoneNumberExtractorConfiguration())))
 
+        self.register_model('EmailModel', Culture.English,
+                            lambda options: EmailModel(EmailParser(), EnglishEmailExtractor()))
+
         self.register_model('IpAddressModel', Culture.English,
-                            lambda options: IpAddressModel(IpParser(), EnglishIpExtractor()))
+                            lambda options: IpAddressModel(IpParser(),
+                                                           BaseIpExtractor(EnglishIpExtractorConfiguration(options))))
+
+        self.register_model('IpAddressModel', Culture.Chinese,
+                            lambda options: IpAddressModel(IpParser(),
+                                                           BaseIpExtractor(ChineseIpExtractorConfiguration(options))))
 
         self.register_model('MentionModel', Culture.English,
                             lambda options: MentionModel(MentionParser(), EnglishMentionExtractor()))
@@ -57,6 +63,8 @@ class SequenceRecognizer(Recognizer[SequenceOptions]):
         return self.get_model('PhoneNumberModel', culture, fallback_to_default_culture)
 
     def get_ip_address_model(self, culture: str = None, fallback_to_default_culture: bool = True) -> Model:
+        if culture and (culture.lower().startswith("zh-") or culture.lower().startswith("ja-")):
+            return self.get_model('IpAddressModel', Culture.Chinese, fallback_to_default_culture)
         return self.get_model('IpAddressModel', culture, fallback_to_default_culture)
 
     def get_mention_model(self, culture: str = None, fallback_to_default_culture: bool = True) -> Model:

@@ -76,7 +76,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                         }
 
                         if (substr.EndsWith(Constants.IPV6_ELLIPSIS) &&
-                            (i + 1 < text.Length && char.IsLetterOrDigit(text[i + 1]) && !SimpleTokenizer.IsCjk(text[start - 1])))
+                            (i + 1 < text.Length && char.IsLetterOrDigit(text[i + 1]) && !SimpleTokenizer.IsCjk(text[start + 1])))
                         {
                             continue;
                         }
