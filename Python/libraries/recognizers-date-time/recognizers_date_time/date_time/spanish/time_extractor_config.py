@@ -3,7 +3,6 @@ from typing import List, Pattern
 from recognizers_text.utilities import RegExpUtility
 from ...resources.spanish_date_time import SpanishDateTime
 from ..base_time import TimeExtractorConfiguration
-from ..utilities import DateTimeOptions
 
 
 class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
@@ -37,6 +36,7 @@ class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
 
     def __init__(self):
         super().__init__()
+        self._time_zone_extractor = None
         self._time_regex_list: List[Pattern] = SpanishTimeExtractorConfiguration.get_time_regex_list(
         )
         self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(
