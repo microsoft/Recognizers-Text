@@ -30,27 +30,27 @@ from ...resources.base_date_time import BaseDateTime
 class SpanishMergedExtractorConfiguration(MergedExtractorConfiguration):
     @property
     def time_zone_extractor(self):
-        pass
+        return self._time_zone_extractor
 
     @property
     def datetime_alt_extractor(self):
-        pass
+        return self._datetime_alt_extractor
 
     @property
     def term_filter_regexes(self) -> List[Pattern]:
-        pass
+        return self._term_filter_regexes
 
     @property
     def fail_fast_regex(self) -> Pattern:
-        pass
+        return self._fail_fast_regex
 
     @property
     def superfluous_word_matcher(self) -> Pattern:
-        pass
+        return self._superfluous_work_matcher
 
     @property
     def ambiguity_filters_dict(self) -> Pattern:
-        return None
+        return self._ambiguity_filters_dict
 
     @property
     def unspecified_date_period_regex(self) -> Pattern:
@@ -133,11 +133,11 @@ class SpanishMergedExtractorConfiguration(MergedExtractorConfiguration):
         return self._preposition_suffix_regex
 
     @property
-    def ambiguous_range_modifier_prefix(self) -> Pattern:
+    def ambiguous_range_modifier_prefix(self) -> None:
         return None
 
     @property
-    def potential_ambiguous_range_regex(self) -> Pattern:
+    def potential_ambiguous_range_regex(self) -> None:
         return None
 
     @property
@@ -149,6 +149,12 @@ class SpanishMergedExtractorConfiguration(MergedExtractorConfiguration):
         return self._filter_word_regex_list
 
     def __init__(self):
+        self._ambiguity_filters_dict = None
+        self._superfluous_work_matcher = None
+        self._fail_fast_regex = None
+        self._term_filter_regexes = None
+        self._datetime_alt_extractor = None
+        self._time_zone_extractor = None
         self._before_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.BeforeRegex)
         self._after_regex = RegExpUtility.get_safe_reg_exp(
