@@ -23,10 +23,6 @@ class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         return self._options
 
     @property
-    def dmy_date_format(self) -> bool:
-        return self._dmy_date_format
-
-    @property
     def simple_cases_regex(self) -> List[Pattern]:
         return self._simple_cases_regex
 
@@ -101,7 +97,7 @@ class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
         return MatchedIndex(False, -1)
 
-    def has_connector_token(self, source: str) -> bool:
+    def has_connector_token(self, source: str) -> MatchedIndex:
         match = self.connector_and_regex.search(source)
         if match:
             return MatchedIndex(True, match.start())
