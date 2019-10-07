@@ -85,6 +85,7 @@ class Constants:
     business_day_group_name = 'business'
     left_am_pm_group_name = 'leftDesc'
     right_am_pm_group_name = 'rightDesc'
+    holiday_group_name = 'holiday'
 
     first_two_year_num = 'firsttwoyearnum'
     last_two_year_num = 'lasttwoyearnum'
@@ -126,6 +127,19 @@ class Constants:
     unit = 'unit'
 
     half = 'half'
+
+    # Holidays
+    fathers = 'fathers'
+    mothers = 'mothers'
+    thanks_giving_day = 'thanksgivingday'
+    thanks_giving = 'thanksgiving'
+    black_friday = 'blackfriday'
+    martin_luther_king = 'martinlutherking'
+    washington_birthday = 'washingtonsbirthday'
+    labour = 'labour'
+    canberra = 'canberra'
+    columbus = 'columbus'
+    memorial = 'memorial'
 
 
 class TimeTypeConstants:

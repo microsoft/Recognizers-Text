@@ -123,6 +123,8 @@ class BaseHolidayParser(DateTimeParser):
         for pattern in self.config.holiday_regex_list:
             match = pattern.search(trimmed_text)
             if match and match.pos == 0 and match.endpos == len(trimmed_text):
+
+                # Value string will be set in Match2Date method
                 result = self._match2date(match, reference)
                 return result
 
@@ -131,11 +133,11 @@ class BaseHolidayParser(DateTimeParser):
     def _match2date(self, match: Match, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
         holiday_str = self.config.sanitize_holiday_token(
-            match.group('holiday').lower())
+            match.group(Constants.holiday_group_name).lower())
 
-        year_str = match.group('year')
-        order_str = match.group('order')
-        year = None
+        # get year (if exist)
+        year_str = match.group(Constants.year_group_name)
+        order_str = match.group(Constants.order)
         has_year = False
 
         if year_str:
@@ -154,8 +156,6 @@ class BaseHolidayParser(DateTimeParser):
         ) if holiday_str in values]), None)
 
         if holiday_key:
-            timex_str = ''
-            value = reference
             func = self.config.holiday_func_dictionary.get(holiday_key)
 
             if func:
@@ -239,17 +239,17 @@ class BaseHolidayParserConfiguration(HolidayParserConfiguration):
 
     def _init_holiday_funcs(self) -> Dict[str, Callable[[int], datetime]]:
         return dict([
-            ('fathers', BaseHolidayParserConfiguration.fathers_day),
-            ('mothers', BaseHolidayParserConfiguration.mothers_day),
-            ('thanksgivingday', BaseHolidayParserConfiguration.thanksgiving_day),
-            ('thanksgiving', BaseHolidayParserConfiguration.thanksgiving_day),
-            ('blackfriday', BaseHolidayParserConfiguration.black_friday),
-            ('martinlutherking', BaseHolidayParserConfiguration.martin_luther_king_day),
-            ('washingtonsbirthday', BaseHolidayParserConfiguration.washingtons_birthday),
-            ('labour', BaseHolidayParserConfiguration.labour_day),
-            ('canberra', BaseHolidayParserConfiguration.canberra_day),
-            ('columbus', BaseHolidayParserConfiguration.columbus_day),
-            ('memorial', BaseHolidayParserConfiguration.memorial_day)
+            (Constants.fathers, BaseHolidayParserConfiguration.fathers_day),
+            (Constants.mothers, BaseHolidayParserConfiguration.mothers_day),
+            (Constants.thanks_giving_day, BaseHolidayParserConfiguration.thanksgiving_day),
+            (Constants.thanks_giving, BaseHolidayParserConfiguration.thanksgiving_day),
+            (Constants.black_friday, BaseHolidayParserConfiguration.black_friday),
+            (Constants.martin_luther_king, BaseHolidayParserConfiguration.martin_luther_king_day),
+            (Constants.washington_birthday, BaseHolidayParserConfiguration.washingtons_birthday),
+            (Constants.labour, BaseHolidayParserConfiguration.labour_day),
+            (Constants.canberra, BaseHolidayParserConfiguration.canberra_day),
+            (Constants.columbus, BaseHolidayParserConfiguration.columbus_day),
+            (Constants.memorial, BaseHolidayParserConfiguration.memorial_day)
         ])
 
     @staticmethod
@@ -261,7 +261,6 @@ class BaseHolidayParserConfiguration(HolidayParserConfiguration):
     def get_last_day(year: int, month: int, day_of_week: DayOfWeek) -> int:
         return BaseHolidayParserConfiguration.get_day(year, month, -1, day_of_week)
 
-    # TODO auto-generate from YAML
     @staticmethod
     def mothers_day(year: int) -> datetime:
         return datetime(year, 5, BaseHolidayParserConfiguration.get_day(year, 5, 1, DayOfWeek.Sunday))
