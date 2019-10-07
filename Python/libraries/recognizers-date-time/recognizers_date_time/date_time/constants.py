@@ -71,6 +71,7 @@ class Constants:
     implicit_pm_group_name = 'ipm'
     prefix_group_name = 'prefix'
     suffix_group_name = 'suffix'
+    suffix_num_group_name = 'suffix_num'
     desc_group_name = 'desc'
     second_group_name = 'sec'
     minute_group_name = 'min'
@@ -95,6 +96,7 @@ class Constants:
     order_quarter = 'orderQuarter'
 
     number = 'number'
+    num = 'num'
 
     cardinal = 'cardinal'
 
@@ -107,6 +109,9 @@ class Constants:
     unit_M = 'M'
     unit_W = 'W'
     unit_MON = 'MON'
+    unit_S = 'S'
+    unit_H = 'H'
+    unit_T = 'T'
 
     # Prefix
     early_prefix = 'EarlyPrefix'
@@ -119,6 +124,8 @@ class Constants:
     late = 'late'
 
     unit = 'unit'
+
+    half = 'half'
 
 
 class TimeTypeConstants:

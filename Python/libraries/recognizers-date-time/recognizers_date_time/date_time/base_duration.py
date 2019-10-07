@@ -113,25 +113,29 @@ class BaseDurationExtractor(DateTimeExtractor):
         tokens.extend(self.number_with_unit_and_suffix(source, tokens))
         tokens.extend(self.implicit_duration(source))
 
-        rets = merge_all_tokens(tokens, source, self.extractor_type_name)
+        results = merge_all_tokens(tokens, source, self.extractor_type_name)
 
+        # First MergeMultipleDuration then ResolveMoreThanOrLessThanPrefix so cases like "more than
+        # 4 days and less than 1 week" will not be merged into one "multipleDuration"
         if self.merge:
-            rets = self.merge_multiple_duration(source, rets)
+            results = self.merge_multiple_duration(source, results)
 
-        rets = self.tag_inequality_prefix(source, rets)
+        results = self.tag_inequality_prefix(source, results)
 
-        return rets
+        return results
 
-    def tag_inequality_prefix(self, text: str, ers: [ExtractResult]):
-
-        for er in ers:
-            before_string = text[0: er.start]
+    # Handle cases look like: {more than | less than} {duration}?
+    def tag_inequality_prefix(self, text: str, extract_results: [ExtractResult]):
+        for extract_result in extract_results:
+            before_string = text[0: extract_result.start]
             is_inequality_prefix_matched = False
 
             match = RegexExtension.match_end(self.config.more_than_regex, before_string, True)
 
+            # The second condition is necessary so for "1 week" in "more than 4 days and less than
+            # 1 week", it will not be tagged incorrectly as "more than"
             if match.success:
-                er.data = TimeTypeConstants.MORE_THAN_MOD
+                extract_result.data = TimeTypeConstants.MORE_THAN_MOD
                 is_inequality_prefix_matched = True
 
             if not is_inequality_prefix_matched:
@@ -139,18 +143,17 @@ class BaseDurationExtractor(DateTimeExtractor):
                 match = RegexExtension.match_end(self.config.less_than_regex, before_string, True)
 
                 if match.success:
-                    er.data = TimeTypeConstants.LESS_THAN_MOD
+                    extract_result.data = TimeTypeConstants.LESS_THAN_MOD
                     is_inequality_prefix_matched = True
 
             if is_inequality_prefix_matched:
-                er.length += er.start - text.index(match.group())
-                er.start = text.index(match.group())
-                er.text = text[er.start: er.start + er.length]
+                extract_result.length += extract_result.start - text.index(match.group())
+                extract_result.start = text.index(match.group())
+                extract_result.text = text[extract_result.start: extract_result.start + extract_result.length]
 
-        return ers
+        return extract_results
 
     def merge_multiple_duration(self, text: str, extractor_results: [ExtractResult]):
-
         if len(extractor_results) <= 1:
             return extractor_results
 
@@ -158,7 +161,7 @@ class BaseDurationExtractor(DateTimeExtractor):
         unit_value_map = self.config.unit_value_map
         unit_regex = self.config.duration_unit_regex
 
-        ret = []
+        result = []
 
         first_extraction_index = 0
         time_unit = 0
@@ -230,43 +233,60 @@ class BaseDurationExtractor(DateTimeExtractor):
 
                 node.data = duration_type
 
-                ret.append(node)
+                result.append(node)
 
                 time_unit = 0
                 total_unit = 0
             else:
-                ret.append(extractor_results[first_extraction_index])
+                result.append(extractor_results[first_extraction_index])
 
             first_extraction_index = second_extraction_index
 
-        return ret
+        return result
 
+    # simple cases of a number followed by unit
     def number_with_unit(self, source: str) -> List[Token]:
-        ers: List[ExtractResult] = self.config.cardinal_extractor.extract(
+        extract_results: List[ExtractResult] = self.config.cardinal_extractor.extract(
             source)
         result: List[Token] = list(
-            filter(None, map(lambda x: self.__cardinal_to_token(x, source), ers)))
+            filter(None, map(lambda x: self.__cardinal_to_token(x, source), extract_results)))
+
+        # handle "3hrs"
         result.extend(self.get_tokens_from_regex(
             self.config.number_combined_with_unit, source))
+
+        # handle "an hour"
         result.extend(self.get_tokens_from_regex(
             self.config.an_unit_regex, source))
+
+        # handle "few" related cases
         result.extend(self.get_tokens_from_regex(
             self.config.inexact_number_unit_regex, source))
         return result
 
+    # handle cases look like: {number} {unit}? and {an|a} {half|quarter} {unit}?
+    # define the part "and {an|a} {half|quarter}" as Suffix
     def number_with_unit_and_suffix(self, source: str, tokens: List[Token]) -> List[Token]:
         result: List[Token] = list(
             filter(None, map(lambda x: self.__base_to_token(x, source), tokens)))
         return result
 
+    # handle cases that don't contain number
     def implicit_duration(self, source: str) -> List[Token]:
+
+        # handle "all day", "all year"
         result: List[Token] = self.get_tokens_from_regex(
             self.config.all_regex, source)
+
+        # handle "half day", "half year"
         result.extend(self.get_tokens_from_regex(
             self.config.half_regex, source))
+
+        # handle "next day", "last year"
         result.extend(self.get_tokens_from_regex(
             self.config.relative_duration_unit_regex, source))
 
+        # handle "during/for the day/week/month/year"
         if (self.config.options & DateTimeOptions.CALENDAR) != 0:
             result.extend(self.get_tokens_from_regex(
                 self.config.during_regex, source)
@@ -292,7 +312,8 @@ class BaseDurationExtractor(DateTimeExtractor):
 
         return None
 
-    def get_tokens_from_regex(self, pattern: Pattern, source: str) -> List[Token]:
+    @staticmethod
+    def get_tokens_from_regex(pattern: Pattern, source: str) -> List[Token]:
         return list(map(lambda x: Token(x.start(), x.end()), regex.finditer(pattern, source)))
 
 
@@ -391,6 +412,7 @@ class BaseDurationParser(DateTimeParser):
 
         return result
 
+    # simple cases made by a number followed an unit
     def parse_number_with_unit(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         source = source.strip()
 
@@ -407,6 +429,7 @@ class BaseDurationParser(DateTimeParser):
 
         return result
 
+    # handle cases that don't contain numbers
     def parse_implicit_duration(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         source = source.strip()
 
@@ -430,13 +453,13 @@ class BaseDurationParser(DateTimeParser):
         if match is None:
             return result
 
-        source_unit: str = match.group('unit') or ''
+        source_unit: str = match.group(Constants.unit) or ''
         if source_unit not in self.config.unit_map:
             return result
 
         num = QueryProcessor.float_or_int(num)
         unit = self.config.unit_map[source_unit]
-        is_time = 'T' if self.is_less_than_day(unit) else ''
+        is_time = Constants.unit_T if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
         result.future_value = QueryProcessor.float_or_int(
             num * self.config.unit_value_map[source_unit])
@@ -447,6 +470,7 @@ class BaseDurationParser(DateTimeParser):
     def parse_number_space_unit(self, source: str) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
 
+        # if there are spaces between number and unit
         ers = self.config.cardinal_extractor.extract(source)
         if len(ers) != 1:
             return result
@@ -459,8 +483,8 @@ class BaseDurationParser(DateTimeParser):
         match = regex.search(self.config.followed_unit, no_num)
 
         if match is not None:
-            suffix = RegExpUtility.get_group(match, 'suffix')
-            source_unit = RegExpUtility.get_group(match, 'unit')
+            suffix = RegExpUtility.get_group(match, Constants.suffix_group_name)
+            source_unit = RegExpUtility.get_group(match, Constants.unit)
 
         if source_unit not in self.config.unit_map:
             return result
@@ -481,7 +505,7 @@ class BaseDurationParser(DateTimeParser):
         match = regex.search(self.config.suffix_and_regex, source)
 
         if match is not None:
-            num = match.group('suffix_num') or ''
+            num = match.group(Constants.suffix_num_group_name) or ''
             return self.config.double_numbers.get(num, 0)
 
         return 0
@@ -489,23 +513,24 @@ class BaseDurationParser(DateTimeParser):
     def parse_number_combined_unit(self, source: str) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
 
+        # if there are NO spaces between number and unit
         match = regex.search(self.config.number_combined_with_unit, source)
         if match is None:
             return result
 
-        num = float(match.group('num')) + \
+        num = float(match.group(Constants.num)) + \
             self.parse_number_with_unit_and_suffix(source)
 
-        source_unit = match.group('unit') or ''
+        source_unit = match.group(Constants.unit) or ''
         if source_unit not in self.config.unit_map:
             return result
 
         unit = self.config.unit_map[source_unit]
-        if num > 1000 and unit in ['Y', 'MON', 'W']:
+        if num > 1000 and unit in [Constants.unit_Y, Constants.unit_MON, Constants.unit_W]:
             return result
 
         num = QueryProcessor.float_or_int(num)
-        is_time = 'T' if self.is_less_than_day(unit) else ''
+        is_time = Constants.unit_T if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
         result.future_value = QueryProcessor.float_or_int(
             num * self.config.unit_value_map[source_unit])
@@ -523,16 +548,16 @@ class BaseDurationParser(DateTimeParser):
         if match is None:
             return result
 
-        num = (0.5 if match.group('half') else 1) + \
+        num = (0.5 if match.group(Constants.half) else 1) + \
             self.parse_number_with_unit_and_suffix(source)
-        source_unit = match.group('unit') or ''
+        source_unit = match.group(Constants.unit) or ''
 
         if source_unit not in self.config.unit_map:
             return result
 
         num = QueryProcessor.float_or_int(num)
         unit = self.config.unit_map[source_unit]
-        is_time = 'T' if self.is_less_than_day(unit) else ''
+        is_time = Constants.unit_T if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
         result.future_value = QueryProcessor.float_or_int(
             num * self.config.unit_value_map[source_unit])
@@ -549,16 +574,16 @@ class BaseDurationParser(DateTimeParser):
 
         # set the inexact number "few", "some" to 3 for now
         num = float(3)
-        source_unit = match.group('unit') or ''
+        source_unit = match.group(Constants.unit) or ''
         if source_unit not in self.config.unit_map:
             return result
 
         unit = self.config.unit_map[source_unit]
-        if num > 1000 and unit in ['Y', 'MON', 'W']:
+        if num > 1000 and unit in [Constants.unit_Y, Constants.unit_MON, Constants.unit_W]:
             return result
 
         num = QueryProcessor.float_or_int(num)
-        is_time = 'T' if self.is_less_than_day(unit) else ''
+        is_time = Constants.unit_T if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
         result.future_value = QueryProcessor.float_or_int(
             num * self.config.unit_value_map[source_unit])
@@ -566,5 +591,6 @@ class BaseDurationParser(DateTimeParser):
         result.success = True
         return result
 
-    def is_less_than_day(self, source: str) -> bool:
-        return source in ['H', 'M', 'S']
+    @staticmethod
+    def is_less_than_day(source: str) -> bool:
+        return source in [Constants.unit_H, Constants.unit_M, Constants.unit_S]
