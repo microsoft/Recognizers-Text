@@ -123,7 +123,7 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
         return self._week_day_and_day_regex
 
     def __init__(self):
-        if SpanishDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
+        if SpanishDateTime.DefaultLanguageFallback == Constants.default_language_fallback_dmy:
             date_extractor_4 = SpanishDateTime.DateExtractor5
             date_extractor_5 = SpanishDateTime.DateExtractor4
             date_extractor_6 = SpanishDateTime.DateExtractor8

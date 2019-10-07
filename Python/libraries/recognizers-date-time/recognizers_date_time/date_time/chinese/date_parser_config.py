@@ -161,7 +161,7 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList5)
         ]
 
-        if ChineseDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
+        if ChineseDateTime.DefaultLanguageFallback == Constants.default_language_fallback_dmy:
             self._date_regex.append(RegExpUtility.get_safe_reg_exp(
                 ChineseDateTime.DateRegexList7))
             self._date_regex.append(RegExpUtility.get_safe_reg_exp(
