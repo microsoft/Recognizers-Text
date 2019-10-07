@@ -98,6 +98,8 @@ class Constants:
 
     cardinal = 'cardinal'
 
+    rel_month = 'relmonth'
+
     season = 'seas'
 
     unit_Y = 'Y'
@@ -105,6 +107,18 @@ class Constants:
     unit_M = 'M'
     unit_W = 'W'
     unit_MON = 'MON'
+
+    # Prefix
+    early_prefix = 'EarlyPrefix'
+    late_prefix = 'LatePrefix'
+    mid_prefix = 'MidPrefix'
+
+    rel_early = 'RelEarly'
+    rel_late = 'RelLate'
+    early = 'early'
+    late = 'late'
+
+    unit = 'unit'
 
 
 class TimeTypeConstants:
