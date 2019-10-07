@@ -4,7 +4,6 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.parsers import BaseNumberParser
 from ...resources.spanish_date_time import SpanishDateTime
-from ..base_duration import DurationParserConfiguration
 
 from ..extractors import DateTimeExtractor
 from ..base_duration import DurationParserConfiguration, BaseDurationExtractor
@@ -64,6 +63,7 @@ class SpanishDurationParserConfiguration(DurationParserConfiguration):
         return self._duration_extractor
 
     def __init__(self, config):
+        self._duration_extractor = None
         self.duration_extractor = BaseDurationExtractor(
             SpanishDurationExtractorConfiguration(), False)
         self._cardinal_extractor: BaseNumberExtractor = config.cardinal_extractor
@@ -82,6 +82,6 @@ class SpanishDurationParserConfiguration(DurationParserConfiguration):
             SpanishDateTime.HalfRegex)
         self._inexact_number_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.InexactNumberUnitRegex)
-        self._unit_map: Dict[str, int] = SpanishDateTime.UnitMap
+        self._unit_map: Dict[str, str] = SpanishDateTime.UnitMap
         self._unit_value_map: Dict[str, int] = SpanishDateTime.UnitValueMap
         self._double_numbers: Dict[str, float] = SpanishDateTime.DoubleNumbers
