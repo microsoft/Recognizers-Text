@@ -2,8 +2,9 @@ from typing import List, Pattern
 
 from recognizers_text import Extractor
 from recognizers_text.utilities import RegExpUtility
-from recognizers_number.number import BaseNumberParser, BaseNumberExtractor, SpanishOrdinalExtractor, SpanishCardinalExtractor
-from recognizers_number.number.spanish.extractors import SpanishIntegerExtractor, SpanishCardinalExtractor, SpanishOrdinalExtractor
+from recognizers_number.number import BaseNumberParser, BaseNumberExtractor
+from recognizers_number.number.spanish.extractors import SpanishIntegerExtractor,\
+    SpanishCardinalExtractor, SpanishOrdinalExtractor
 from recognizers_number.number.spanish.parsers import SpanishNumberParserConfiguration
 from ...resources.base_date_time import BaseDateTime
 from ...resources.spanish_date_time import SpanishDateTime
@@ -16,22 +17,6 @@ from .date_extractor_config import SpanishDateExtractorConfiguration
 
 
 class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
-
-    @property
-    def time_unit_regex(self) -> Pattern:
-        return self._time_unit_regex
-
-    @property
-    def ordinal_extractor(self) -> Extractor:
-        return self._ordinal_extractor
-
-    @property
-    def cardinal_extractor(self) -> Extractor:
-        return self._cardinal_extractor
-
-    @property
-    def within_next_prefix_regex(self) -> Pattern:
-        return self._within_next_prefix_regex
 
     @property
     def time_unit_regex(self) -> Pattern:
