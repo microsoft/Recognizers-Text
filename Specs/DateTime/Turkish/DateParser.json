@@ -672,14 +672,14 @@
     ]
   },
   {
-    "Input": "Aynı gün döneceğim",
+    "Input": "O gün döneceğim",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Aynı gün",
+        "Text": "O gün",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-07",
@@ -691,7 +691,7 @@
           }
         },
         "Start": 0,
-        "Length": 8
+        "Length": 5
       }
     ]
   },

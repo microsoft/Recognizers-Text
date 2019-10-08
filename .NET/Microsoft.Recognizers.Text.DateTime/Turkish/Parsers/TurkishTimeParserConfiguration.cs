@@ -20,6 +20,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         private static readonly Regex NightRegex =
             new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
 
+        private static readonly Regex HalfTokenRegex =
+            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags);
+
+        private static readonly Regex QuarterTokenRegex =
+            new Regex(DateTimeDefinitions.QuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex ToTokenRegex =
+            new Regex(DateTimeDefinitions.ToTokenRegex, RegexFlags);
+
         public TurkishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
          : base(config)
         {
@@ -51,17 +60,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
             var trimedPrefix = prefix.Trim();
 
-            if (trimedPrefix.StartsWith("half"))
+            if (HalfTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 30;
             }
-            else if (trimedPrefix.StartsWith("a quarter") || trimedPrefix.StartsWith("quarter"))
+            else if (QuarterTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 15;
-            }
-            else if (trimedPrefix.StartsWith("three quarter"))
-            {
-                deltaMin = 45;
             }
             else
             {
@@ -74,11 +79,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
                 else
                 {
                     minStr = match.Groups["deltaminnum"].Value;
-                    deltaMin = Numbers[minStr];
+                    if (!string.IsNullOrWhiteSpace(minStr))
+                    {
+                        deltaMin = Numbers[minStr];
+                    }
+                    else
+                    {
+                        return;
+                    }
+
                 }
             }
 
-            if (trimedPrefix.EndsWith("to"))
+            if (ToTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = -deltaMin;
             }
@@ -100,70 +113,66 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
             if (match.Success)
             {
-                var oclockStr = match.Groups["oclock"].Value;
-                if (string.IsNullOrEmpty(oclockStr))
+                var matchAmStr = match.Groups[Constants.AmGroupName].Value;
+                if (!string.IsNullOrEmpty(matchAmStr))
                 {
-                    var matchAmStr = match.Groups[Constants.AmGroupName].Value;
-                    if (!string.IsNullOrEmpty(matchAmStr))
+                    if (hour >= Constants.HalfDayHourCount)
                     {
-                        if (hour >= Constants.HalfDayHourCount)
-                        {
-                            deltaHour = -Constants.HalfDayHourCount;
-                        }
-                        else
-                        {
-                            hasAm = true;
-                        }
+                        deltaHour = -Constants.HalfDayHourCount;
+                    }
+                    else
+                    {
+                        hasAm = true;
+                    }
+                }
+
+                var matchPmStr = match.Groups[Constants.PmGroupName].Value;
+                if (!string.IsNullOrEmpty(matchPmStr))
+                {
+                    if (hour < Constants.HalfDayHourCount)
+                    {
+                        deltaHour = Constants.HalfDayHourCount;
                     }
 
-                    var matchPmStr = match.Groups[Constants.PmGroupName].Value;
-                    if (!string.IsNullOrEmpty(matchPmStr))
+                    if (LunchRegex.IsMatch(matchPmStr))
                     {
-                        if (hour < Constants.HalfDayHourCount)
+                        if (hour >= 10 && hour <= Constants.HalfDayHourCount)
                         {
-                            deltaHour = Constants.HalfDayHourCount;
-                        }
-
-                        if (LunchRegex.IsMatch(matchPmStr))
-                        {
-                            if (hour >= 10 && hour <= Constants.HalfDayHourCount)
-                            {
-                                deltaHour = 0;
-                                if (hour == Constants.HalfDayHourCount)
-                                {
-                                    hasPm = true;
-                                }
-                                else
-                                {
-                                    hasAm = true;
-                                }
-                            }
-                            else
+                            deltaHour = 0;
+                            if (hour == Constants.HalfDayHourCount)
                             {
                                 hasPm = true;
                             }
-                        }
-                        else if (NightRegex.IsMatch(matchPmStr))
-                        {
-                            if (hour <= 3 || hour == Constants.HalfDayHourCount)
+                            else
                             {
-                                if (hour == Constants.HalfDayHourCount)
-                                {
-                                    hour = 0;
-                                }
-
-                                deltaHour = 0;
                                 hasAm = true;
-                            }
-                            else
-                            {
-                                hasPm = true;
                             }
                         }
                         else
                         {
                             hasPm = true;
                         }
+                    }
+                    else if (NightRegex.IsMatch(matchPmStr))
+                    {
+                        if (hour <= 3 || hour == Constants.HalfDayHourCount)
+                        {
+                            if (hour == Constants.HalfDayHourCount)
+                            {
+                                hour = 0;
+                            }
+
+                            deltaHour = 0;
+                            hasAm = true;
+                        }
+                        else
+                        {
+                            hasPm = true;
+                        }
+                    }
+                    else
+                    {
+                        hasPm = true;
                     }
                 }
             }
