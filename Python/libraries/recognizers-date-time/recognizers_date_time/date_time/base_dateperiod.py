@@ -1855,7 +1855,7 @@ class BaseDatePeriodParser(DateTimeParser):
         swift = self.config.get_swift_year(source)
         year_str = match.group(Constants.year_group_name)
         year = reference.year
-        season_str = match.group(Constants.season)
+        season_str = match.group(Constants.seas)
         season = self.config.season_map[season_str]
         if swift >= -1 or year_str:
             if not year_str:

@@ -80,13 +80,17 @@ class Constants:
     month_group_name = 'month'
     year_group_name = 'year'
     hour_num_group_name = 'hournum'
+
     time_of_day_group_name = 'timeOfDay'
     business_day_group_name = 'business'
     left_am_pm_group_name = 'leftDesc'
     right_am_pm_group_name = 'rightDesc'
 
+    rel_month = 'relmonth'
     first_two_year_num = 'firsttwoyearnum'
     last_two_year_num = 'lasttwoyearnum'
+    year_chinese = 'yearchs'
+    year_relative = 'yearrel'
 
     week_of = 'WeekOf'
     month_of = 'MonthOf'
@@ -94,12 +98,15 @@ class Constants:
     order = 'order'
     order_quarter = 'orderQuarter'
 
+    num = 'num'
     number = 'number'
 
     cardinal = 'cardinal'
 
-    season = 'seas'
+    seas = 'seas'
+    season = 'season'
 
+    unit = 'unit'
     unit_Y = 'Y'
     unit_D = 'D'
     unit_M = 'M'

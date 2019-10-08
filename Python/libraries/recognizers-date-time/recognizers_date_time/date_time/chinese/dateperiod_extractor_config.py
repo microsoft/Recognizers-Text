@@ -12,51 +12,51 @@ from .date_extractor import ChineseDateExtractor
 class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
     def time_unit_regex(self) -> Pattern:
-        pass
+        return self._time_unit_regex
 
     @property
     def ordinal_extractor(self) -> Extractor:
-        pass
+        return self._ordinal_extractor
 
     @property
     def cardinal_extractor(self) -> Extractor:
-        pass
+        return self._cardinal_extractor
 
     @property
     def within_next_prefix_regex(self) -> Pattern:
-        pass
+        return self._within_next_prefix_regex
 
     @property
     def future_suffix_regex(self) -> Pattern:
-        pass
+        return self._future_suffix_regex
 
     @property
     def ago_regex(self) -> Pattern:
-        pass
+        return self._ago_regex
 
     @property
     def later_regex(self) -> Pattern:
-        pass
+        return self._later_regex
 
     @property
     def less_than_regex(self) -> Pattern:
-        pass
+        return self._less_than_regex
 
     @property
     def more_than_regex(self) -> Pattern:
-        pass
+        return self._more_than_regex
 
     @property
     def duration_date_restrictions(self) -> [str]:
-        pass
+        return self._duration_date_restrictions
 
     @property
     def year_period_regex(self) -> Pattern:
-        pass
+        return self._year_period_regex
 
     @property
     def century_suffix_regex(self) -> Pattern:
-        pass
+        return self._century_suffix_regex
 
     @property
     def month_num_regex(self) -> Pattern:
@@ -139,6 +139,18 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._now_regex
 
     def __init__(self):
+        self._century_suffix_regex = None
+        self._year_period_regex = None
+        self._duration_date_restrictions = None
+        self._more_than_regex = None
+        self._less_than_regex = None
+        self._later_regex = None
+        self._ago_regex = None
+        self._future_suffix_regex = None
+        self._within_next_prefix_regex = None
+        self._cardinal_extractor = None
+        self._ordinal_extractor = None
+        self._time_unit_regex = None
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.SimpleCasesRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.OneWordPeriodRegex),

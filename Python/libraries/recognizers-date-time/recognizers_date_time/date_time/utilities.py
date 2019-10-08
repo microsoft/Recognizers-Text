@@ -177,7 +177,7 @@ class DateTimeOptions(IntFlag):
     ENABLE_PREVIEW = 8388608
 
 
-class DateTimeOptionsConfiguration():
+class DateTimeOptionsConfiguration:
     @property
     def options(self):
         return self._options
