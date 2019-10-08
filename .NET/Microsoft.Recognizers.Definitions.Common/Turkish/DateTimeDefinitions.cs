@@ -69,7 +69,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string ProperMonthSuffixRegex = @"(?<msuf>(ocak|şubat|mart|mayıs|ağustos|aralık)('ta)|(nisan|haziran|temmuz|kasım)('da)|(eylül|ekim)('de))";
       public static readonly string MonthPossessiveSuffixRegex = $@"((?<month>(ocak|şubat|mart|nisan|mayıs|haziran|kasım|aralık)('ın)|(temmuz|ağustos)('un)|eylül'ün|ekim'in)|{MonthRegex}(\s+ayının)|{RelativeMonthRegex})";
       public const string MonthToSuffixRegex = @"(?<msuf>((ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|kasım|aralık)'a|(eylül|ekim)'e))";
-      public const string DateUnitRegex = @"(?<unit>yıl|sene|ay|hafta|(?<business>iş\s+)günü|gün)";
+      public const string DateUnitRegex = @"\b(?<unit>yıl|sene|ay|hafta|(?<business>iş\s+)günü|gün)(?!(den|dan)(?!\s+(az|fazla)))";
       public const string DateTokenPrefix = @"";
       public const string TimeTokenPrefix = @"";
       public const string TokenBeforeDate = @"";
@@ -241,10 +241,10 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string PeriodTimeOfDayRegex = @"\b(((?<timeOfDay>sabahın|öğlenin|akşamın|gecenin)\s(erken|geç)\ssaatlerinde)|((?<timeOfDay>sabah|öğlen|akşam|gece)\s(erken|geç)\ssaatlerde))\b";
       public static readonly string PeriodSpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\b(bu akşam|bu gece))\b";
       public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b((\s+){TimeOfDayRegex})\b";
-      public const string LessThanRegex = @"((dan|daha|den)\s+az|\baz)";
-      public const string MoreThanRegex = @"((dan|daha|den)\s+fazla|\bfazla|daha\s+fazla\s+zaman)";
-      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|(saat|sa\.?|dakika|dk\.?|saniye|s\.?|sn\.?)\b)";
-      public const string SuffixAndRegex = @"(?<suffix>\s*(?<suffix_num>buçuk))";
+      public const string LessThanRegex = @"((den|dan|ten|tan|daha)\s+az|\baz)";
+      public const string MoreThanRegex = @"((den|dan|ten|tan|\bdaha)\s+fazla|\bfazla|daha\s+fazla\s+zaman)";
+      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|saat|saniye|dakika|sa\.?\b|dk\.?\b|sn\.?\b|s\.?\b)";
+      public const string SuffixAndRegex = @"(?<suffix>\s*(?<suffix_num>buçuk|çeyrek))";
       public const string PeriodicRegex = @"\b(?<periodic>günlük|aylık|ayda bir|haftalık|(iki\s)?haftada bir|her hafta|yıllık|senelik|yılda bir|her sene|senede bir)\b";
       public static readonly string EachUnitRegex = $@"(?<each>(her)\s*(bir)?\s*{DurationUnitRegex})";
       public const string EachPrefixRegex = @"\b(?<each>(her)\s*$)";
@@ -253,10 +253,10 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string EachDayRegex = @"^\s*her\s*gün\b";
       public static readonly string DurationFollowedUnit = $@"(^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})";
       public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
-      public static readonly string AnUnitRegex = $@"\b((?<half>half\s+)?(an|a)|another)\s+{DurationUnitRegex}";
+      public static readonly string AnUnitRegex = $@"\b(bir((?<half>\s+buçuk)|\s+diğeri?)?|diğer)\s+{DurationUnitRegex}";
       public const string DuringRegex = @"\b(?<unit>gün|hafta|ay|yıl)\s+boyunca\b";
       public const string AllRegex = @"\b(?<all>(tüm|bütün)\s+(?<unit>gün|hafta|ay|yıl)|gün boyu)\b";
-      public const string HalfRegex = @"(?<half>yarım\s+(?<unit>saat|gün|hafta|ay|yıl))\b";
+      public const string HalfRegex = @"(?<half>yarım\s+(?<unit>saat|gün|iş\s+günü|hafta|ay|yıl))";
       public const string ConjunctionRegex = @"\b(ve|ile)\b";
       public static readonly string HolidayRegex1 = $@"\b(({YearRegex}(\s+yılının)?|{RelativeRegex}\s+yıl)\s+)?(?<holiday>mardi gras|((washington'ın|mao'nun) doğum günü)|çin yeni yılı|yılbaşı gecesi|yılbaşı|yuan dan|noel arifesi|noel günü|noel|kara cuma|yuandan|paskalya|temiz pazartesi|kül çarşambası|palm sunday|(kutsal (perşembe|cuma))|(beyaz (pazartesi|pazar))|trinity sunday|hamsin yortusu|corpus christi|siber pazartesi|(ramazan|şeker|kurban|(29 ekim )?cumhuriyet|(30 ağustos )?zafer|(23 nisan )?ulusal egemenlik ve çocuk|(19 mayıs )?atatürk'ü anma(\s*,\s*)? gençlik ve spor)\sbayramı|(15 temmuz )?demokrasi ve mill(î|i) birlik günü)\b";
       public static readonly string HolidayRegex2 = $@"\b(({YearRegex}(\s+yılının)?|{RelativeRegex}\s+yıl)\s+)?(?<holiday>(şükran|tüm azizler|aziz patrick|amerikan bağımsızlık|azizler|bütün ruhlar|guy fawkes|cinco de mayo|1 nisan şaka|tomb\s*sweeping|)\sgünü|white lover day|aya yorgi yortusu|cadılar bayramı|((qingming|dragon)\sfestivali))\b";

@@ -118,7 +118,7 @@ MonthPossessiveSuffixRegex: !nestedRegex
 MonthToSuffixRegex: !simpleRegex
   def: (?<msuf>((ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|kasım|aralık)'a|(eylül|ekim)'e))
 DateUnitRegex: !simpleRegex
-  def: (?<unit>yıl|sene|ay|hafta|(?<business>iş\s+)günü|gün)
+  def: \b(?<unit>yıl|sene|ay|hafta|(?<business>iş\s+)günü|gün)(?!(den|dan)(?!\s+(az|fazla)))
 # DateTokenPrefix, TimeTokenPrefix, TokenBeforeDate, TokenBeforeTime are not localized since there is no counterpart
 DateTokenPrefix: ''
 TimeTokenPrefix: ''
@@ -548,14 +548,14 @@ PeriodTimeOfDayWithDateRegex: !nestedRegex
  def: \b((\s+){TimeOfDayRegex})\b
  references: [ TimeOfDayRegex ]
 LessThanRegex: !simpleRegex
-  def: ((dan|daha|den)\s+az|\baz)
+  def: ((den|dan|ten|tan|daha)\s+az|\baz)
 MoreThanRegex: !simpleRegex
-  def: ((dan|daha|den)\s+fazla|\bfazla|daha\s+fazla\s+zaman)
+  def: ((den|dan|ten|tan|\bdaha)\s+fazla|\bfazla|daha\s+fazla\s+zaman)
 DurationUnitRegex: !nestedRegex
-  def: (?<unit>{DateUnitRegex}|(saat|sa\.?|dakika|dk\.?|saniye|s\.?|sn\.?)\b)
+  def: (?<unit>{DateUnitRegex}|saat|saniye|dakika|sa\.?\b|dk\.?\b|sn\.?\b|s\.?\b)
   references: [ DateUnitRegex ]
 SuffixAndRegex: !simpleRegex
-  def: (?<suffix>\s*(?<suffix_num>buçuk))
+  def: (?<suffix>\s*(?<suffix_num>buçuk|çeyrek))
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>günlük|aylık|ayda bir|haftalık|(iki\s)?haftada bir|her hafta|yıllık|senelik|yılda bir|her sene|senede bir)\b
 EachUnitRegex: !nestedRegex
@@ -576,14 +576,14 @@ NumberCombinedWithDurationUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 AnUnitRegex: !nestedRegex
-  def: \b((?<half>half\s+)?(an|a)|another)\s+{DurationUnitRegex}
+  def: \b(bir((?<half>\s+buçuk)|\s+diğeri?)?|diğer)\s+{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 DuringRegex: !simpleRegex
   def: \b(?<unit>gün|hafta|ay|yıl)\s+boyunca\b
 AllRegex: !simpleRegex
   def: \b(?<all>(tüm|bütün)\s+(?<unit>gün|hafta|ay|yıl)|gün boyu)\b
 HalfRegex: !simpleRegex
-  def: (?<half>yarım\s+(?<unit>saat|gün|hafta|ay|yıl))\b
+  def: (?<half>yarım\s+(?<unit>saat|gün|iş\s+günü|hafta|ay|yıl))
 ConjunctionRegex: !simpleRegex
   def: \b(ve|ile)\b
 # Major holidays + holiday w/ weekday in name

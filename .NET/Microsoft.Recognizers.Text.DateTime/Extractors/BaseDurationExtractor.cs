@@ -53,9 +53,18 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var er in ers)
             {
                 var beforeString = text.Substring(0, (int)er.Start);
+                var afterString = text.Substring((int)er.Start + (int)er.Length);
                 bool isInequalityPrefixMatched = false;
+                bool isMatchAfter = false;
 
                 var match = config.MoreThanRegex.MatchEnd(beforeString, trim: true);
+
+                // check also afterString
+                if (this.config.CheckBothBeforeAfter && !match.Success)
+                {
+                    match = config.MoreThanRegex.MatchBegin(afterString, trim: true);
+                    isMatchAfter = true;
+                }
 
                 // The second condition is necessary so for "1 week" in "more than 4 days and less than 1 week", it will not be tagged incorrectly as "more than"
                 if (match.Success)
@@ -68,6 +77,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     match = config.LessThanRegex.MatchEnd(beforeString, trim: true);
 
+                    // check also afterString
+                    if (this.config.CheckBothBeforeAfter && !match.Success)
+                    {
+                        match = config.LessThanRegex.MatchBegin(afterString, trim: true);
+                        isMatchAfter = true;
+                    }
+
                     if (match.Success)
                     {
                         er.Data = Constants.LESS_THAN_MOD;
@@ -77,9 +93,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (isInequalityPrefixMatched)
                 {
-                    er.Length += er.Start - match.Index;
-                    er.Start = match.Index;
-                    er.Text = text.Substring((int)er.Start, (int)er.Length);
+                    if (!isMatchAfter)
+                    {
+                        er.Length += er.Start - match.Index;
+                        er.Start = match.Index;
+                        er.Text = text.Substring((int)er.Start, (int)er.Length);
+                    }
+                    else
+                    {
+                        er.Length += match.Index + match.Length;
+                        er.Text = text.Substring((int)er.Start, (int)er.Length);
+                    }
                 }
             }
 
