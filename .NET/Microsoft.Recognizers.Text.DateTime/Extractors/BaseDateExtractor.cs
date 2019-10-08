@@ -540,7 +540,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             if (this.Config.CheckBothBeforeAfter)
             {
-                bool inPrefix = true;
+                bool inPrefix = false;
                 StripInequality(er, Config.MoreThanRegex, inPrefix);
                 StripInequality(er, Config.LessThanRegex, inPrefix);
             }
