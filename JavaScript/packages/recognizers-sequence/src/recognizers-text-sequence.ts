@@ -2,8 +2,8 @@ export { default as SequenceRecognizer, SequenceOptions, recognizePhoneNumber, r
 export { Culture } from "@microsoft/recognizers-text";
 export { AbstractSequenceModel, PhoneNumberModel, IpAddressModel, MentionModel, HashtagModel, EmailModel, URLModel, GUIDModel } from "./sequence/models";
 export { BaseSequenceExtractor, BasePhoneNumberExtractor, BaseIpExtractor, BaseMentionExtractor, BaseHashtagExtractor, BaseEmailExtractor, BaseURLExtractor, BaseGUIDExtractor } from "./sequence/extractors";
-export { EnglishPhoneNumberExtractorConfiguration, IpExtractor, MentionExtractor, HashtagExtractor, EmailExtractor, EnglishURLExtractorConfiguration, GUIDExtractor } from "./sequence/english/extractors";
-export { ChineseURLExtractorConfiguration, ChinesePhoneNumberExtractorConfiguration } from "./sequence/chinese/extractors";
+export { EnglishPhoneNumberExtractorConfiguration, EnglishIpExtractorConfiguration, MentionExtractor, HashtagExtractor, EmailExtractor, EnglishURLExtractorConfiguration, GUIDExtractor } from "./sequence/english/extractors";
+export { ChineseURLExtractorConfiguration, ChinesePhoneNumberExtractorConfiguration, ChineseIpExtractorConfiguration } from "./sequence/chinese/extractors";
 export { BaseSequenceParser, BaseIpParser } from "./sequence/parsers";
 export { PhoneNumberParser, IpParser, MentionParser, HashtagParser, EmailParser, URLParser, GUIDParser } from "./sequence/english/parsers";
 export { BasePhoneNumbers } from "./resources/basePhoneNumbers";

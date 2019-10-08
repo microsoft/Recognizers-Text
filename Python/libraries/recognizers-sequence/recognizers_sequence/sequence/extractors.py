@@ -12,6 +12,7 @@ from recognizers_number.culture import CultureInfo
 from recognizers_sequence.resources import *
 from urllib.parse import urlparse
 from os.path import splitext
+from recognizers_text.matcher.simple_tokenizer import SimpleTokenizer
 
 ReVal = namedtuple('ReVal', ['re', 'val'])
 MatchesVal = namedtuple('MatchesVal', ['matches', 'val'])
@@ -272,15 +273,17 @@ class BaseIpExtractor(SequenceExtractor):
                     start = last + 1
                     length = i - last
                     substring = source[start:start + length].strip()
-
+                    simple_tokenizer = SimpleTokenizer()
                     if substring.startswith(Constants.IPV6_ELLIPSIS) and (
                             start > 0 and (str.isdigit(source[start - 1]) or
-                                           str.isalpha(source[start - 1]))):
+                                           (str.isalpha(source[start - 1]) and
+                                            not simple_tokenizer.is_cjk(c=list(source)[start - 1])))):
                         continue
 
                     elif substring.endswith(Constants.IPV6_ELLIPSIS) and (
                             i + 1 < len(source) and (str.isdigit(source[i + 1]) or
-                                                     str.isalpha(source[i + 1]))):
+                                                     (str.isalpha(source[i + 1]) and
+                                                      not simple_tokenizer.is_cjk(c=list(source)[start - 1])))):
                         continue
 
                     src_match = next(
@@ -298,10 +301,11 @@ class BaseIpExtractor(SequenceExtractor):
                         result.append(value)
         return result
 
-    def __init__(self):
+    def __init__(self, config):
+        self.config = config
         self._regexes = [
-            ReVal(RegExpUtility.get_safe_reg_exp(BaseIp.Ipv4Regex), Constants.IP_REGEX_IPV4),
-            ReVal(RegExpUtility.get_safe_reg_exp(BaseIp.Ipv6Regex), Constants.IP_REGEX_IPV6)
+            ReVal(self.config.ipv4_regex, Constants.IP_REGEX_IPV4),
+            ReVal(self.config.ipv6_regex, Constants.IP_REGEX_IPV6)
         ]
 
 

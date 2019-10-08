@@ -1,0 +1,11 @@
+---
+Ipv4Regex: !nestedRegex
+  def: ({PhoneNumbersDefinitions.WordBoundariesRegex}(1\d{2}|2[0-4]\d|25[0-5]|0?[1-9]\d|0{0,2}\d)((\.(1\d{2}|2[0-4]\d|25[0-5]|0?[1-9]\d|0{0,2}\d)){3}){PhoneNumbersDefinitions.EndWordBoundariesRegex})
+  references: [ PhoneNumbersDefinitions.WordBoundariesRegex, PhoneNumbersDefinitions.EndWordBoundariesRegex ]
+Ipv6EllipsisRegexOther: !nestedRegex
+  def: ({PhoneNumbersDefinitions.NonWordBoundariesRegex}::{PhoneNumbersDefinitions.NonWordBoundariesRegex}|{PhoneNumbersDefinitions.NonWordBoundariesRegex}:(:{BaseIp.BasicIpv6Element}){1,7}{PhoneNumbersDefinitions.WordBoundariesRegex}|{PhoneNumbersDefinitions.WordBoundariesRegex}({BaseIp.BasicIpv6Element}:){1,7}:{PhoneNumbersDefinitions.NonWordBoundariesRegex})
+  references: [PhoneNumbersDefinitions.NonWordBoundariesRegex, PhoneNumbersDefinitions.WordBoundariesRegex, BasicIpv6Element, BaseIp.BasicIpv6Element]
+Ipv6Regex: !nestedRegex
+  def: ({PhoneNumbersDefinitions.WordBoundariesRegex}{BaseIp.MergedIpv6Regex}{PhoneNumbersDefinitions.WordBoundariesRegex})|({Ipv6EllipsisRegexOther})
+  references: [ PhoneNumbersDefinitions.WordBoundariesRegex, BaseIp.MergedIpv6Regex, Ipv6EllipsisRegexOther ]
+... 

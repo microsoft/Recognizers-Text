@@ -191,14 +191,19 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
     }
 }
 
+export interface IIpExtractorConfiguration {
+    Ipv4Regex: RegExp;
+    Ipv6Regex: RegExp;
+}
+
 export class BaseIpExtractor extends BaseSequenceExtractor {
     regexes: Map<RegExp, string>;
 
-    constructor() {
+    constructor(config: IIpExtractorConfiguration) {
         super();
         this.regexes = new Map<RegExp, string>()
-            .set(RegExpUtility.getSafeRegExp(BaseIp.Ipv4Regex), Constants.IP_REGEX_IPV4)
-            .set(RegExpUtility.getSafeRegExp(BaseIp.Ipv6Regex), Constants.IP_REGEX_IPV6);
+            .set(config.Ipv4Regex, Constants.IP_REGEX_IPV4)
+            .set(config.Ipv6Regex, Constants.IP_REGEX_IPV6);
     }
 
     extract(source: string): ExtractResult[] {

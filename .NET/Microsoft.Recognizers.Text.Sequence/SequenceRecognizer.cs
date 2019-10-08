@@ -77,6 +77,13 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public IModel GetIpAddressModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
+            if (culture != null && (
+                    culture.ToLowerInvariant().StartsWith("zh-", StringComparison.Ordinal) ||
+                    culture.ToLowerInvariant().StartsWith("ja-", StringComparison.Ordinal)))
+            {
+                return GetModel<IpAddressModel>(Culture.Chinese, fallbackToDefaultCulture);
+            }
+
             return GetModel<IpAddressModel>(Culture.English, fallbackToDefaultCulture);
         }
 
@@ -127,7 +134,15 @@ namespace Microsoft.Recognizers.Text.Sequence
 
             RegisterModel<IpAddressModel>(
                 Culture.English,
-                (options) => new IpAddressModel(new IpParser(), new IpExtractor()));
+                (options) => new IpAddressModel(
+                    new IpParser(),
+                    new BaseIpExtractor(new EnglishIpExtractorConfiguration(options))));
+
+            RegisterModel<IpAddressModel>(
+                Culture.Chinese,
+                (options) => new IpAddressModel(
+                    new IpParser(),
+                    new BaseIpExtractor(new ChineseIpExtractorConfiguration(options))));
 
             RegisterModel<MentionModel>(
                 Culture.English,
