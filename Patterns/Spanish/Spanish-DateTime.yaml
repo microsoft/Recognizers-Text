@@ -149,7 +149,7 @@ ConnectorAndRegex: !simpleRegex
 BetweenRegex: !simpleRegex
   def: (entre\s*(la(s)?)?)
 WeekDayRegex: !simpleRegex
-  def: \b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|sa|do)\b
+  def: \b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|s[aá]|do)\b
 OnRegex: !nestedRegex
   def: (?<=\ben\s+)({DayRegex}s?)\b
   references: [ DayRegex ]
