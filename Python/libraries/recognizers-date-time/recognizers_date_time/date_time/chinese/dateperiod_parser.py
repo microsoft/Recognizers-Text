@@ -296,8 +296,8 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
 
         year = reference.year
         year_num = RegExpUtility.get_group(match, Constants.year_group_name)
-        year_chinese = RegExpUtility.get_group(match, Constants.year_chs)
-        year_relative = RegExpUtility.get_group(match, Constants.year_rel)
+        year_chinese = RegExpUtility.get_group(match, Constants.year_chinese)
+        year_relative = RegExpUtility.get_group(match, Constants.year_relative)
 
         if year_num.strip() != '':
             if self.config.is_year_only(year_num):
@@ -355,18 +355,18 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
                 RegExpUtility.get_group(year_matches[1], Constants.year_group_name))
         elif len(chinese_year_matches) == 2:
             begin_year = self._convert_year(RegExpUtility.get_group(
-                chinese_year_matches[0], Constants.year_chs), True)
+                chinese_year_matches[0], Constants.year_chinese), True)
             end_year = self._convert_year(RegExpUtility.get_group(
-                chinese_year_matches[1], Constants.year_chs), True)
+                chinese_year_matches[1], Constants.year_chinese), True)
         elif len(year_matches) == 1 and len(chinese_year_matches) == 1:
             if year_matches[0].start() < chinese_year_matches[0].start():
                 begin_year = self.__convert_chinese_to_number(
                     RegExpUtility.get_group(year_matches[0], Constants.year_group_name))
                 end_year = self.__convert_chinese_to_number(
-                    RegExpUtility.get_group(chinese_year_matches[0], Constants.year_chs))
+                    RegExpUtility.get_group(chinese_year_matches[0], Constants.year_chinese))
             else:
                 begin_year = self.__convert_chinese_to_number(
-                    RegExpUtility.get_group(chinese_year_matches[0], Constants.year_chs))
+                    RegExpUtility.get_group(chinese_year_matches[0], Constants.year_chinese))
                 end_year = self.__convert_chinese_to_number(
                     RegExpUtility.get_group(year_matches[0], Constants.year_group_name))
 
@@ -509,8 +509,8 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
 
         year = reference.year
         year_num = RegExpUtility.get_group(match, Constants.year_group_name)
-        year_chinese = RegExpUtility.get_group(match, Constants.year_chs)
-        year_relative = RegExpUtility.get_group(match, Constants.year_rel)
+        year_chinese = RegExpUtility.get_group(match, Constants.year_chinese)
+        year_relative = RegExpUtility.get_group(match, Constants.year_relative)
         has_year = False
 
         if year_num.strip() != '':
@@ -551,8 +551,8 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
 
         year = reference.year
         year_num = RegExpUtility.get_group(match, Constants.year_group_name)
-        year_chinese = RegExpUtility.get_group(match, Constants.year_chs)
-        year_relative = RegExpUtility.get_group(match, Constants.year_rel)
+        year_chinese = RegExpUtility.get_group(match, Constants.year_chinese)
+        year_relative = RegExpUtility.get_group(match, Constants.year_relative)
         has_year = False
 
         if year_num.strip() != '':

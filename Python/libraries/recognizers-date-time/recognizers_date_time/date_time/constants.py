@@ -89,8 +89,8 @@ class Constants:
     rel_month = 'relmonth'
     first_two_year_num = 'firsttwoyearnum'
     last_two_year_num = 'lasttwoyearnum'
-    year_chs = 'yearchs'
-    year_rel = 'yearrel'
+    year_chinese = 'yearchs'
+    year_relative = 'yearrel'
 
     week_of = 'WeekOf'
     month_of = 'MonthOf'
