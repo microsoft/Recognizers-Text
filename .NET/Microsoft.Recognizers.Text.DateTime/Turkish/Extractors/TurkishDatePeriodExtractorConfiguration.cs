@@ -171,8 +171,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly Regex SuffixRegex =
-            new Regex(@"^'\p{L}*(?<match>.*)$", RegexFlags);
+        private static readonly Regex ExcludeSuffixRegex =
+            new Regex(DateTimeDefinitions.ExcludeSuffixRegex, RegexFlags);
+
+        private static readonly Regex FromRegex =
+            new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
 
         private static readonly Regex[] SimpleCasesRegexes =
         {
@@ -324,13 +327,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("itibaren"))
+            var fromMatch = FromRegex.Match(text);
+            if (fromMatch.Success)
             {
-                index = text.LastIndexOf("itibaren", StringComparison.Ordinal);
-                return true;
+                index = fromMatch.Index;
             }
 
-            return false;
+            return fromMatch.Success;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
@@ -345,9 +348,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             }
 
             string textTrm = text;
-            if (text.StartsWith("'"))
+
+            // do not include the suffix in textTrm
+            var noSuffixMatch = ExcludeSuffixRegex.Match(text);
+            if (noSuffixMatch.Success)
             {
-                textTrm = SuffixRegex.Match(text).Groups["match"].Value;
+                textTrm = noSuffixMatch.Groups["match"].Value;
             }
 
             textTrm = textTrm.TrimStart();
