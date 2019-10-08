@@ -384,29 +384,29 @@ class BaseMergedExtractor(DateTimeExtractor):
 
         return merge_all_tokens(tokens, source, Constants.SYS_DATETIME_TIME)
 
-    def add_mod(self, ers: List[ExtractResult], source: str) -> List[ExtractResult]:
+    def add_mod(self, extract_results: List[ExtractResult], source: str) -> List[ExtractResult]:
 
-        for er in ers:
-            success = self.try_merge_modifier_token(er, self.config.before_regex, source)
-
-            if not success:
-                success = self.try_merge_modifier_token(er, self.config.after_regex, source)
+        for extract_result in extract_results:
+            success = self.try_merge_modifier_token(extract_result, self.config.before_regex, source)
 
             if not success:
-                success = self.try_merge_modifier_token(er, self.config.since_regex, source, True)
+                success = self.try_merge_modifier_token(extract_result, self.config.after_regex, source)
 
             if not success:
-                self.try_merge_modifier_token(er, self.config.around_regex, source)
+                success = self.try_merge_modifier_token(extract_result, self.config.since_regex, source, True)
 
             if not success:
-                self.try_merge_modifier_token(er, self.config.equal_regex, source)
+                self.try_merge_modifier_token(extract_result, self.config.around_regex, source)
 
-            if er.type == Constants.SYS_DATETIME_DATEPERIOD or \
-                er.type == Constants.SYS_DATETIME_DATE or \
-                    er.type == Constants.SYS_DATETIME_TIME:
+            if not success:
+                self.try_merge_modifier_token(extract_result, self.config.equal_regex, source)
 
-                start = er.start if er.start else 0
-                length = er.length if er.length else 0
+            if extract_result.type == Constants.SYS_DATETIME_DATEPERIOD or \
+                extract_result.type == Constants.SYS_DATETIME_DATE or \
+                    extract_result.type == Constants.SYS_DATETIME_TIME:
+
+                start = extract_result.start if extract_result.start else 0
+                length = extract_result.length if extract_result.length else 0
                 after_str = source[start + length:]
 
                 match = RegexExtension.match_begin(self.config.suffix_after_regex, after_str, True)
@@ -418,46 +418,46 @@ class BaseMergedExtractor(DateTimeExtractor):
                         is_followed_by_other_entity = False
                     else:
                         next_str = after_str.strip()[match.length].strip()
-                        next_er = next((e for e in ers if e.start > er.start), None)
+                        next_er = next((e for e in extract_results if e.start > extract_result.start), None)
 
                         if next_er is None or not next_str.startswith(next_er.text):
                             is_followed_by_other_entity = False
 
                     if not is_followed_by_other_entity:
                         mod_length = match.length + after_str.index(match.value)
-                        er.length += mod_length
-                        start = er.start if er.start else 0
-                        length = er.length if er.length else 0
-                        er.text = source[start: start + length]
+                        extract_result.length += mod_length
+                        start = extract_result.start if extract_result.start else 0
+                        length = extract_result.length if extract_result.length else 0
+                        extract_result.text = source[start: start + length]
 
-        return ers
+        return extract_results
 
-    def add_mod_item(self, er: ExtractResult, source: str) -> ExtractResult:
-        success = self.try_merge_modifier_token(er, self.config.before_regex, source)
+    def add_mod_item(self, extract_result: ExtractResult, source: str) -> ExtractResult:
+        success = self.try_merge_modifier_token(extract_result, self.config.before_regex, source)
         if not success:
-            success = self.try_merge_modifier_token(er, self.config.after_regex, source)
+            success = self.try_merge_modifier_token(extract_result, self.config.after_regex, source)
         if not success:
             # SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
-            success = self.try_merge_modifier_token(er, self.config.since_regex, source, True)
-        return er
+            success = self.try_merge_modifier_token(extract_result, self.config.since_regex, source, True)
+        return extract_result
 
-    def try_merge_modifier_token(self, er: ExtractResult, pattern: Pattern, source: str, potentialAmbiguity: bool = False) -> bool:
-        before_str = source[0:er.start]
+    def try_merge_modifier_token(self, extract_result: ExtractResult, pattern: Pattern, source: str, potential_ambiguity: bool = False) -> bool:
+        before_str = source[0:extract_result.start]
 
         # Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
-        if potentialAmbiguity and self.config.ambiguous_range_modifier_prefix and regex.search(self.config.ambiguous_range_modifier_prefix, before_str):
+        if potential_ambiguity and self.config.ambiguous_range_modifier_prefix and regex.search(self.config.ambiguous_range_modifier_prefix, before_str):
             matches = list(regex.finditer(self.config.potential_ambiguous_range_regex, source))
             if matches and len(matches):
-                return self._filter_item(er, matches)
+                return self._filter_item(extract_result, matches)
 
         token = self.has_token_index(before_str.strip(), pattern)
         if token.matched:
             mod_len = len(before_str) - token.index
-            er.length += mod_len
-            er.start -= mod_len
-            er.text = source[er.start:er.start + er.length]
+            extract_result.length += mod_len
+            extract_result.start -= mod_len
+            extract_result.text = source[extract_result.start:extract_result.start + extract_result.length]
 
-            er.meta_data = self.assign_mod_metadata(er.meta_data)
+            extract_result.meta_data = self.assign_mod_metadata(extract_result.meta_data)
             return True
 
         return False

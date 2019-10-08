@@ -71,6 +71,7 @@ class Constants:
     implicit_pm_group_name = 'ipm'
     prefix_group_name = 'prefix'
     suffix_group_name = 'suffix'
+    suffix_num_group_name = 'suffix_num'
     desc_group_name = 'desc'
     second_group_name = 'sec'
     minute_group_name = 'min'
@@ -85,6 +86,7 @@ class Constants:
     business_day_group_name = 'business'
     left_am_pm_group_name = 'leftDesc'
     right_am_pm_group_name = 'rightDesc'
+    holiday_group_name = 'holiday'
 
     rel_month = 'relmonth'
     first_two_year_num = 'firsttwoyearnum'
@@ -100,11 +102,13 @@ class Constants:
 
     num = 'num'
     number = 'number'
+    num = 'num'
 
     cardinal = 'cardinal'
 
     seas = 'seas'
     season = 'season'
+    rel_month = 'relmonth'
 
     unit = 'unit'
     unit_Y = 'Y'
@@ -112,6 +116,36 @@ class Constants:
     unit_M = 'M'
     unit_W = 'W'
     unit_MON = 'MON'
+    unit_S = 'S'
+    unit_H = 'H'
+    unit_T = 'T'
+
+    # Prefix
+    early_prefix = 'EarlyPrefix'
+    late_prefix = 'LatePrefix'
+    mid_prefix = 'MidPrefix'
+
+    rel_early = 'RelEarly'
+    rel_late = 'RelLate'
+    early = 'early'
+    late = 'late'
+
+    unit = 'unit'
+
+    half = 'half'
+
+    # Holidays
+    fathers = 'fathers'
+    mothers = 'mothers'
+    thanks_giving_day = 'thanksgivingday'
+    thanks_giving = 'thanksgiving'
+    black_friday = 'blackfriday'
+    martin_luther_king = 'martinlutherking'
+    washington_birthday = 'washingtonsbirthday'
+    labour = 'labour'
+    canberra = 'canberra'
+    columbus = 'columbus'
+    memorial = 'memorial'
 
 
 class TimeTypeConstants:
