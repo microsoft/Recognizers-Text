@@ -234,7 +234,7 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             FrenchDateTime.CenturySuffixRegex
         )
         self._ordinal_extractor = FrenchOrdinalExtractor()
-        # ToDo When the implementation for these properties is added, change the None values to the respective Regexps
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._time_unit_regex = None
         self._cardinal_extractor = None
 

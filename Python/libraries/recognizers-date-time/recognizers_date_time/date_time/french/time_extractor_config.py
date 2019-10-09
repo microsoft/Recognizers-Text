@@ -38,7 +38,7 @@ class FrenchTimeExtractorConfiguration(TimeExtractorConfiguration):
         self._time_before_after_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.TimeBeforeAfterRegex)
         self._options = DateTimeOptions.NONE
-        # ToDo When the implementation for these properties is added, change the None values to the respective Regexps
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._time_zone_extractor = None
 
     @staticmethod

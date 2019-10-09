@@ -194,7 +194,7 @@ class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
         self._suffix_after_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.SuffixAfterRegex
         )
-        # ToDo When the implementation for these properties is added, change the None values to the respective Regexps
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._superfluous_word_matcher = None
         self._fail_fast_regex = None
         self._term_filter_regexes = None

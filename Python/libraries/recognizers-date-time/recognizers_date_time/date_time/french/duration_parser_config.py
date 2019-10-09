@@ -84,5 +84,5 @@ class FrenchDurationParserConfiguration(DurationParserConfiguration):
         self._unit_map = config.unit_map
         self._unit_value_map = config.unit_value_map
         self._double_numbers = config.double_numbers
-        # ToDo When the implementation for this property is added, change the None value to the respective Regexp
+        # TODO When the implementation for this property is added, change the None value to their respective Regexp
         self._duration_extractor = None
