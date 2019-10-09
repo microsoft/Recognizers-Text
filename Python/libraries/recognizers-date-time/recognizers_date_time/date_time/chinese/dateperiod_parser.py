@@ -453,18 +453,18 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
 
     def _get_week_of_month(self, cardinal, month, year, reference, no_year) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
-        seed_date = self._compute_date(cardinal, DayOfWeek.Monday, month, year)
+        seed_date = self._compute_date(cardinal, DayOfWeek.MONDAY, month, year)
 
         future_date = seed_date
         past_date = seed_date
 
         if no_year and future_date < reference:
-            future_date = self._compute_date(cardinal, DayOfWeek.Monday, month, year + 1)
+            future_date = self._compute_date(cardinal, DayOfWeek.MONDAY, month, year + 1)
             if not future_date.month == month:
                 future_date = future_date + timedelta(days=-7)
 
         if no_year and past_date >= reference:
-            past_date = self._compute_date(cardinal, DayOfWeek.Monday, month, year - 1)
+            past_date = self._compute_date(cardinal, DayOfWeek.MONDAY, month, year - 1)
             if not past_date.month == month:
                 past_date = past_date + timedelta(days=-7)
 

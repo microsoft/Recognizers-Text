@@ -263,40 +263,40 @@ class BaseHolidayParserConfiguration(HolidayParserConfiguration):
 
     @staticmethod
     def mothers_day(year: int) -> datetime:
-        return datetime(year, 5, BaseHolidayParserConfiguration.get_day(year, 5, 1, DayOfWeek.Sunday))
+        return datetime(year, 5, BaseHolidayParserConfiguration.get_day(year, 5, 1, DayOfWeek.SUNDAY))
 
     @staticmethod
     def fathers_day(year: int) -> datetime:
-        return datetime(year, 6, BaseHolidayParserConfiguration.get_day(year, 6, 2, DayOfWeek.Sunday))
+        return datetime(year, 6, BaseHolidayParserConfiguration.get_day(year, 6, 2, DayOfWeek.SUNDAY))
 
     @staticmethod
     def martin_luther_king_day(year: int) -> datetime:
-        return datetime(year, 1, BaseHolidayParserConfiguration.get_day(year, 1, 2, DayOfWeek.Monday))
+        return datetime(year, 1, BaseHolidayParserConfiguration.get_day(year, 1, 2, DayOfWeek.MONDAY))
 
     @staticmethod
     def washingtons_birthday(year: int) -> datetime:
-        return datetime(year, 2, BaseHolidayParserConfiguration.get_day(year, 2, 2, DayOfWeek.Monday))
+        return datetime(year, 2, BaseHolidayParserConfiguration.get_day(year, 2, 2, DayOfWeek.MONDAY))
 
     @staticmethod
     def canberra_day(year: int) -> datetime:
-        return datetime(year, 3, BaseHolidayParserConfiguration.get_day(year, 3, 0, DayOfWeek.Monday))
+        return datetime(year, 3, BaseHolidayParserConfiguration.get_day(year, 3, 0, DayOfWeek.MONDAY))
 
     @staticmethod
     def memorial_day(year: int) -> datetime:
-        return datetime(year, 5, BaseHolidayParserConfiguration.get_last_day(year, 5, DayOfWeek.Monday))
+        return datetime(year, 5, BaseHolidayParserConfiguration.get_last_day(year, 5, DayOfWeek.MONDAY))
 
     @staticmethod
     def labour_day(year: int) -> datetime:
-        return datetime(year, 9, BaseHolidayParserConfiguration.get_day(year, 9, 0, DayOfWeek.Monday))
+        return datetime(year, 9, BaseHolidayParserConfiguration.get_day(year, 9, 0, DayOfWeek.MONDAY))
 
     @staticmethod
     def columbus_day(year: int) -> datetime:
-        return datetime(year, 10, BaseHolidayParserConfiguration.get_day(year, 10, 1, DayOfWeek.Monday))
+        return datetime(year, 10, BaseHolidayParserConfiguration.get_day(year, 10, 1, DayOfWeek.MONDAY))
 
     @staticmethod
     def thanksgiving_day(year: int) -> datetime:
-        return datetime(year, 11, BaseHolidayParserConfiguration.get_day(year, 11, 3, DayOfWeek.Thursday))
+        return datetime(year, 11, BaseHolidayParserConfiguration.get_day(year, 11, 3, DayOfWeek.THURSDAY))
 
     @staticmethod
     def black_friday(year: int) -> datetime:
-        return datetime(year, 11, BaseHolidayParserConfiguration.get_day(year, 11, 3, DayOfWeek.Friday))
+        return datetime(year, 11, BaseHolidayParserConfiguration.get_day(year, 11, 3, DayOfWeek.FRIDAY))

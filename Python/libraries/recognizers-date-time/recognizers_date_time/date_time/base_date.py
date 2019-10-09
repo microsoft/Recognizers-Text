@@ -1001,8 +1001,8 @@ class BaseDateParser(DateTimeParser):
             weekday = self.config.day_of_week.get(weekday_str)
             value = DateUtils.this(reference, weekday)
 
-            if weekday < int(DayOfWeek.Monday):
-                weekday = int(DayOfWeek.Sunday)
+            if weekday < int(DayOfWeek.MONDAY):
+                weekday = int(DayOfWeek.SUNDAY)
 
             if weekday < reference.isoweekday():
                 value = DateUtils.next(reference, weekday)
@@ -1125,7 +1125,7 @@ class BaseDateParser(DateTimeParser):
         first_weekday = DateUtils.this(first_day, weekday)
 
         if weekday == 0:
-            weekday = int(DayOfWeek.Sunday)
+            weekday = int(DayOfWeek.SUNDAY)
 
         if weekday < first_day.isoweekday():
             first_weekday = DateUtils.next(first_day, weekday)
