@@ -4,7 +4,6 @@ import regex
 from recognizers_text.utilities import RegExpUtility
 from ...resources.french_date_time import FrenchDateTime
 from ..extractors import DateTimeExtractor
-from ..utilities import DateTimeUtilityConfiguration
 from ..base_date import BaseDateExtractor
 from ..base_time import BaseTimeExtractor
 from ..base_duration import BaseDurationExtractor
@@ -13,7 +12,6 @@ from .base_configs import FrenchDateTimeUtilityConfiguration
 from .date_extractor_config import FrenchDateExtractorConfiguration
 from .time_extractor_config import FrenchTimeExtractorConfiguration
 from .duration_extractor_config import FrenchDurationExtractorConfiguration
-from ..utilities import DateTimeOptions
 
 
 class FrenchDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
@@ -79,7 +77,7 @@ class FrenchDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         return self._unit_regex
 
     @property
-    def utility_configuration(self) -> DateTimeUtilityConfiguration:
+    def utility_configuration(self) -> FrenchDateTimeUtilityConfiguration:
         return self._utility_configuration
 
     @property
