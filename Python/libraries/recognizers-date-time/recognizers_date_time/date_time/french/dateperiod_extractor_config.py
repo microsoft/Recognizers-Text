@@ -1,7 +1,7 @@
 from typing import List, Pattern
 
 from recognizers_text.utilities import RegExpUtility
-from recognizers_number.number import BaseNumberParser, BaseNumberExtractor
+from recognizers_number.number import BaseNumberParser
 from recognizers_number.number.french.extractors import FrenchIntegerExtractor
 from recognizers_number.number.french.parsers import FrenchNumberParserConfiguration
 from ...resources.base_date_time import BaseDateTime
@@ -234,6 +234,9 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             FrenchDateTime.CenturySuffixRegex
         )
         self._ordinal_extractor = FrenchOrdinalExtractor()
+        # ToDo When the implementation for these properties is added, change the None values to the respective Regexps
+        self._time_unit_regex = None
+        self._cardinal_extractor = None
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)
