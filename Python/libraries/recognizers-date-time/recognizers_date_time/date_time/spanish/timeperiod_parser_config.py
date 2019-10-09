@@ -2,7 +2,6 @@ from typing import Pattern, Dict
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor
-from recognizers_number.number.spanish.extractors import SpanishIntegerExtractor
 from ...resources.spanish_date_time import SpanishDateTime
 from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser

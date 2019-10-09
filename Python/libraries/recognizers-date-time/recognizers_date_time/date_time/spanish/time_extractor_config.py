@@ -36,14 +36,15 @@ class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
 
     def __init__(self):
         super().__init__()
-        self._time_zone_extractor = None
         self._time_regex_list: List[Pattern] = SpanishTimeExtractorConfiguration.get_time_regex_list(
         )
         self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.AtRegex)
-        self._ish_regex: Pattern = None
         self._time_before_after_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.TimeBeforeAfterRegex)
+        # TODO When the implementation for these properties is added, change the None values to the respective Regexps
+        self._ish_regex: Pattern = None
+        self._time_zone_extractor = None
 
     @staticmethod
     def get_time_regex_list() -> List[Pattern]:
