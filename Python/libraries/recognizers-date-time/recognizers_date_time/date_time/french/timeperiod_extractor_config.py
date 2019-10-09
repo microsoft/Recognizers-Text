@@ -9,7 +9,6 @@ from ..base_timeperiod import TimePeriodExtractorConfiguration, MatchedIndex
 from ..base_time import BaseTimeExtractor
 from .time_extractor_config import FrenchTimeExtractorConfiguration
 from .base_configs import FrenchDateTimeUtilityConfiguration
-from ..utilities import DateTimeOptions
 
 
 class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
@@ -90,7 +89,7 @@ class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
         return MatchedIndex(False, -1)
 
-    def has_connector_token(self, source: str) -> bool:
+    def has_connector_token(self, source: str) -> MatchedIndex:
         match = self.connector_and_regex.search(source)
         if match:
             return MatchedIndex(True, match.start())
