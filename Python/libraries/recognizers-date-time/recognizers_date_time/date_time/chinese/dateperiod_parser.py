@@ -9,7 +9,7 @@ from recognizers_number import ChineseIntegerExtractor, CJKNumberParser, Chinese
 
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import Constants, TimeTypeConstants
-from ..utilities import DateTimeFormatUtil, DateTimeResolutionResult, DateUtils
+from ..utilities import DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek
 from ..parsers import DateTimeParseResult
 from ..base_dateperiod import BaseDatePeriodParser
 from .dateperiod_parser_config import ChineseDatePeriodParserConfiguration
@@ -453,18 +453,18 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
 
     def _get_week_of_month(self, cardinal, month, year, reference, no_year) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
-        seed_date = self._compute_date(cardinal, 1, month, year)
+        seed_date = self._compute_date(cardinal, DayOfWeek.Monday, month, year)
 
         future_date = seed_date
         past_date = seed_date
 
         if no_year and future_date < reference:
-            future_date = self._compute_date(cardinal, 1, month, year + 1)
+            future_date = self._compute_date(cardinal, DayOfWeek.Monday, month, year + 1)
             if not future_date.month == month:
                 future_date = future_date + timedelta(days=-7)
 
         if no_year and past_date >= reference:
-            past_date = self._compute_date(cardinal, 1, month, year - 1)
+            past_date = self._compute_date(cardinal, DayOfWeek.Monday, month, year - 1)
             if not past_date.month == month:
                 past_date = past_date + timedelta(days=-7)
 
@@ -480,7 +480,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         result.success = True
         return result
 
-    def _compute_date(self, cardinal: int, weekday: int, month: int, year: int):
+    def _compute_date(self, cardinal: int, weekday: DayOfWeek, month: int, year: int):
         first_day = datetime(year, month, 1)
         first_week_day = DateUtils.this(first_day, weekday)
 
