@@ -30,27 +30,23 @@ from ...resources.base_date_time import BaseDateTime
 class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
     @property
     def time_zone_extractor(self):
-        pass
+        return self._time_zone_extractor
 
     @property
     def datetime_alt_extractor(self):
-        pass
+        return self._datetime_alt_extractor
 
     @property
     def term_filter_regexes(self) -> List[Pattern]:
-        pass
+        return self._term_filter_regexes
 
     @property
     def fail_fast_regex(self) -> Pattern:
-        pass
+        return self._fail_fast_regex
 
     @property
     def superfluous_word_matcher(self) -> Pattern:
-        pass
-
-    @property
-    def ambiguity_filters_dict(self) -> Pattern:
-        return None
+        return self._superfluous_word_matcher
 
     @property
     def unspecified_date_period_regex(self) -> Pattern:
@@ -133,6 +129,14 @@ class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
         return self._preposition_suffix_regex
 
     @property
+    def number_ending_pattern(self) -> Pattern:
+        return self._number_ending_pattern
+
+    @property
+    def filter_word_regex_list(self) -> List[Pattern]:
+        return self._filter_word_regex_list
+
+    @property
     def ambiguous_range_modifier_prefix(self) -> Pattern:
         return None
 
@@ -141,12 +145,8 @@ class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
         return None
 
     @property
-    def number_ending_pattern(self) -> Pattern:
-        return self._number_ending_pattern
-
-    @property
-    def filter_word_regex_list(self) -> List[Pattern]:
-        return self._filter_word_regex_list
+    def ambiguity_filters_dict(self) -> Pattern:
+        return None
 
     def __init__(self):
         self._before_regex = RegExpUtility.get_safe_reg_exp(
@@ -194,3 +194,9 @@ class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
         self._suffix_after_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.SuffixAfterRegex
         )
+        # ToDo When the implementation for these properties is added, change the None values to the respective Regexps
+        self._superfluous_word_matcher = None
+        self._fail_fast_regex = None
+        self._term_filter_regexes = None
+        self._datetime_alt_extractor = None
+        self._time_zone_extractor = None
