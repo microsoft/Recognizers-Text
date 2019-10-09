@@ -64,11 +64,12 @@ class EnglishDurationParserConfiguration(DurationParserConfiguration):
     def double_numbers(self) -> Dict[str, float]:
         return self._double_numbers
 
+    @property
     def duration_extractor(self) -> DateTimeExtractor:
         return self._duration_extractor
 
     def __init__(self, config):
-        self.duration_extractor = BaseDurationExtractor(
+        self._duration_extractor = BaseDurationExtractor(
             EnglishDurationExtractorConfiguration(), False)
         self._cardinal_extractor: BaseNumberExtractor = EnglishCardinalExtractor()
         self._number_parser: BaseNumberParser = BaseNumberParser(
