@@ -116,6 +116,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             // 3.30pm, "am/pm" suffix is required here
             new Regex(DateTimeDefinitions.TimeRegex11, RegexFlags),
 
+            // saat 12'de öğleden sonra
+            new Regex(DateTimeDefinitions.TimeRegex12, RegexFlags),
+
             // 340pm
             ConnectNumRegex,
         };

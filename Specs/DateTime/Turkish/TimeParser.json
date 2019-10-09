@@ -1,7 +1,6 @@
 [
   {
     "Input": "Sekiz kırka alarm kur",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -16,14 +15,13 @@
             "time": "08:40:00"
           }
         },
-        "Start": 17,
-        "Length": 11
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Sabah sekiz kırka alarm kur",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -38,14 +36,13 @@
             "time": "08:40:00"
           }
         },
-        "Start": 17,
-        "Length": 14
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Akşam sekiz kırka alarm kur",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -60,14 +57,13 @@
             "time": "20:40:00"
           }
         },
-        "Start": 17,
-        "Length": 14
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "On kırk beşe alarm kur",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -82,14 +78,13 @@
             "time": "10:45:00"
           }
         },
-        "Start": 17,
-        "Length": 14
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "On beş on beşe alarm kur",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -104,14 +99,13 @@
             "time": "15:15:00"
           }
         },
-        "Start": 17,
-        "Length": 19
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "On beş otuza alarm kur",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -126,14 +120,13 @@
             "time": "15:30:00"
           }
         },
-        "Start": 17,
-        "Length": 18
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "On ona alarm kur",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -148,14 +141,13 @@
             "time": "10:10:00"
           }
         },
-        "Start": 17,
-        "Length": 7
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Akşam on elli beşe alarm kur",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -170,18 +162,17 @@
             "time": "22:55:00"
           }
         },
-        "Start": 17,
-        "Length": 20
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
   {
-    "Input": "Sabah akşam 7'de döneceğim",
-    "NotSupported": "dotnet",
+    "Input": "Sabah 7'de döneceğim",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Sabah akşam 7",
+        "Text": "Sabah 7'de",
         "Type": "time",
         "Value": {
           "Timex": "T07",
@@ -192,14 +183,13 @@
             "time": "07:00:00"
           }
         },
-        "Start": 16,
-        "Length": 5
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "7'de döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -214,14 +204,13 @@
             "time": "07:00:00"
           }
         },
-        "Start": 16,
+        "Start": 0,
         "Length": 1
       }
     ]
   },
   {
     "Input": "Yedide döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -236,14 +225,13 @@
             "time": "07:00:00"
           }
         },
-        "Start": 16,
-        "Length": 5
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
   {
     "Input": "Saat 19'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -258,14 +246,13 @@
             "time": "19:00:00"
           }
         },
-        "Start": 13,
-        "Length": 3
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Saat 19:56'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -280,14 +267,13 @@
             "time": "19:56:00"
           }
         },
-        "Start": 13,
-        "Length": 6
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Saat 19:56:30'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -302,18 +288,17 @@
             "time": "19:56:30"
           }
         },
-        "Start": 13,
-        "Length": 9
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "12:34'te döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "12/31/1899 12:34:00 PM",
+        "Text": "12:34",
         "Type": "time",
         "Value": {
           "Timex": "T12:34",
@@ -324,18 +309,17 @@
             "time": "12:34:00"
           }
         },
-        "Start": 13,
+        "Start": 0,
         "Length": 5
       }
     ]
   },
   {
     "Input": "12:34:25'te döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "12/31/1899 12:34:25 PM",
+        "Text": "12:34:25",
         "Type": "time",
         "Value": {
           "Timex": "T12:34:25",
@@ -346,14 +330,13 @@
             "time": "12:34:25"
           }
         },
-        "Start": 13,
+        "Start": 0,
         "Length": 8
       }
     ]
   },
   {
     "Input": "Saat 7",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -368,14 +351,13 @@
             "time": "07:00:00"
           }
         },
-        "Start": 5,
-        "Length": 9
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Saat yedi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -390,14 +372,13 @@
             "time": "07:00:00"
           }
         },
-        "Start": 5,
-        "Length": 13
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Sabah 8",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -412,14 +393,13 @@
             "time": "08:00:00"
           }
         },
-        "Start": 5,
-        "Length": 16
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Akşam 8",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -434,18 +414,17 @@
             "time": "20:00:00"
           }
         },
-        "Start": 5,
-        "Length": 14
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Saat sekiz buçuk",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "sekiz buçuk",
+        "Text": "Saat sekiz buçuk",
         "Type": "time",
         "Value": {
           "Timex": "T08:30",
@@ -456,40 +435,17 @@
             "time": "08:30:00"
           }
         },
-        "Start": 5,
-        "Length": 15
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Saat 8 buçuk",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "8 buçuk",
-        "Type": "time",
-        "Value": {
-          "Timex": "T20:30",
-          "FutureResolution": {
-            "time": "20:30:00"
-          },
-          "PastResolution": {
-            "time": "20:30:00"
-          }
-        },
-        "Start": 5,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "Saat sekizi 30 geçiyor",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "sekizi 30 geçe",
+        "Text": "Saat 8 buçuk",
         "Type": "time",
         "Value": {
           "Timex": "T08:30",
@@ -500,18 +456,38 @@
             "time": "08:30:00"
           }
         },
-        "Start": 5,
-        "Length": 18
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Saat sekizi 30 geçiyor",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "saat sekizi 30 geçiyor",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:30",
+          "FutureResolution": {
+            "time": "08:30:00"
+          },
+          "PastResolution": {
+            "time": "08:30:00"
+          }
+        },
+        "Start": 0,
+        "Length": 22
       }
     ]
   },
   {
     "Input": "Saat sekizi çeyrek geçiyor",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "sekizi çeyrek geçe",
+        "Text": "saat sekizi çeyrek geçiyor",
         "Type": "time",
         "Value": {
           "Timex": "T08:15",
@@ -522,40 +498,38 @@
             "time": "08:15:00"
           }
         },
-        "Start": 5,
-        "Length": 20
+        "Start": 0,
+        "Length": 26
       }
     ]
   },
   {
-    "Input": "Saat 9'u üç çeyrek geçiyor",
-    "NotSupported": "dotnet",
+    "Input": "Saat 9'u çeyrek geçiyor",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "9'u üç çeyrek geçe",
+        "Text": "saat 9'u çeyrek geçiyor",
         "Type": "time",
         "Value": {
-          "Timex": "T21:45",
+          "Timex": "T09:15",
           "FutureResolution": {
-            "time": "21:45:00"
+            "time": "09:15:00"
           },
           "PastResolution": {
-            "time": "21:45:00"
+            "time": "09:15:00"
           }
         },
-        "Start": 5,
+        "Start": 0,
         "Length": 23
       }
     ]
   },
   {
     "Input": "Saat sekize üç dakika kala",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "sekize üç dakika kala",
+        "Text": "Saat sekize üç dakika kala",
         "Type": "time",
         "Value": {
           "Timex": "T07:57",
@@ -566,14 +540,55 @@
             "time": "07:57:00"
           }
         },
-        "Start": 5,
-        "Length": 22
+        "Start": 0,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Saat dördü üç geçiyor",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Saat dördü üç geçiyor",
+        "Type": "time",
+        "Value": {
+          "Timex": "T04:03",
+          "FutureResolution": {
+            "time": "04:03:00"
+          },
+          "PastResolution": {
+            "time": "04:03:00"
+          }
+        },
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+    {
+    "Input": "Saat dörde çeyrek var",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Saat dörde çeyrek var",
+        "Type": "time",
+        "Value": {
+          "Timex": "T03:45",
+          "FutureResolution": {
+            "time": "03:45:00"
+          },
+          "PastResolution": {
+            "time": "03:45:00"
+          }
+        },
+        "Start": 0,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Saat yedi buçuk",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -588,14 +603,13 @@
             "time": "07:30:00"
           }
         },
-        "Start": 5,
-        "Length": 23
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Saat öğleden sonra yedi buçuk",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -611,13 +625,12 @@
           }
         },
         "Start": 5,
-        "Length": 25
+        "Length": 24
       }
     ]
   },
   {
     "Input": "Saat sabah yedi buçuk",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -633,17 +646,16 @@
           }
         },
         "Start": 5,
-        "Length": 30
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Saat sabah 8'e çeyrek var",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "sabah 8'e çeyrek kala",
+        "Text": "sabah 8'e çeyrek var",
         "Type": "time",
         "Value": {
           "Timex": "T07:45",
@@ -655,17 +667,16 @@
           }
         },
         "Start": 5,
-        "Length": 29
+        "Length": 20
       }
     ]
   },
   {
     "Input": "Saat akşam sekizi yirmi geçiyor",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "akşam sekizi yirmi geçe",
+        "Text": "akşam sekizi yirmi geçiyor",
         "Type": "time",
         "Value": {
           "Timex": "T20:20",
@@ -677,13 +688,12 @@
           }
         },
         "Start": 5,
-        "Length": 32
+        "Length": 26
       }
     ]
   },
   {
     "Input": "Öğleden sonra 7'de döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -698,21 +708,20 @@
             "time": "19:00:00"
           }
         },
-        "Start": 13,
-        "Length": 21
+        "Start": 0,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Öğleden sonra 7:00'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğleden sonra 7:00'da",
         "Type": "time",
         "Value": {
-          "Timex": "T19:00",
+          "Timex": "T19",
           "FutureResolution": {
             "time": "19:00:00"
           },
@@ -720,14 +729,13 @@
             "time": "19:00:00"
           }
         },
-        "Start": 13,
-        "Length": 14
+        "Start": 0,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Öğleden sonra 7:00:05'te döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -742,18 +750,17 @@
             "time": "19:00:05"
           }
         },
-        "Start": 13,
-        "Length": 17
+        "Start": 0,
+        "Length": 24
       }
     ]
   },
   {
     "Input": "Öğleden sonra saat yedide döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Öğleden sonra saat yedide ",
+        "Text": "Öğleden sonra saat yedide",
         "Type": "time",
         "Value": {
           "Timex": "T19",
@@ -764,14 +771,13 @@
             "time": "19:00:00"
           }
         },
-        "Start": 13,
-        "Length": 18
+        "Start": 0,
+        "Length": 25
       }
     ]
   },
   {
     "Input": "Akşam yedi otuzda döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -786,58 +792,55 @@
             "time": "19:30:00"
           }
         },
-        "Start": 13,
-        "Length": 15
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Yedi otuz beşte döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Yedi otuz beş",
         "Type": "time",
         "Value": {
-          "Timex": "T19:35",
+          "Timex": "T07:35",
           "FutureResolution": {
-            "time": "19:35:00"
+            "time": "07:35:00"
           },
           "PastResolution": {
-            "time": "19:35:00"
+            "time": "07:35:00"
           }
         },
-        "Start": 13,
-        "Length": 20
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "On bir yirmi döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "On bir yirmi",
         "Type": "time",
         "Value": {
-          "Timex": "T23:20",
+          "Timex": "T11:20",
           "FutureResolution": {
-            "time": "23:20:00"
+            "time": "11:20:00"
           },
           "PastResolution": {
-            "time": "23:20:00"
+            "time": "11:20:00"
           }
         },
-        "Start": 13,
-        "Length": 16
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Öğlen civarı döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -852,18 +855,17 @@
             "time": "12:00:00"
           }
         },
-        "Start": 13,
-        "Length": 7
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Öğlen 12'de döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Öğlen 12",
+        "Text": "Öğlen 12'de",
         "Type": "time",
         "Value": {
           "Timex": "T12",
@@ -874,14 +876,13 @@
             "time": "12:00:00"
           }
         },
-        "Start": 13,
-        "Length": 7
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "11 civarı döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -896,18 +897,17 @@
             "time": "11:00:00"
           }
         },
-        "Start": 13,
-        "Length": 5
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "15:40'ta döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "12/31/1899 3:40:00 PM",
+        "Text": "15:40",
         "Type": "time",
         "Value": {
           "Timex": "T15:40",
@@ -918,18 +918,17 @@
             "time": "15:40:00"
           }
         },
-        "Start": 13,
+        "Start": 0,
         "Length": 5
       }
     ]
   },
   {
     "Input": "11:40'ta döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "12/31/1899 11:40:00 AM",
+        "Text": "11:40",
         "Type": "time",
         "Value": {
           "Timex": "T11:40",
@@ -940,14 +939,13 @@
             "time": "11:40:00"
           }
         },
-        "Start": 13,
-        "Length": 9
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Gece yarısı",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -963,13 +961,12 @@
           }
         },
         "Start": 0,
-        "Length": 8
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Sabah ortası",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -985,13 +982,12 @@
           }
         },
         "Start": 0,
-        "Length": 10
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Öğlen ortası",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1013,7 +1009,6 @@
   },
   {
     "Input": "Gün ortası",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1029,13 +1024,12 @@
           }
         },
         "Start": 0,
-        "Length": 6
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Öğlen",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1051,17 +1045,16 @@
           }
         },
         "Start": 0,
-        "Length": 4
+        "Length": 5
       }
     ]
   },
   {
     "Input": "12'de öğle yemeği vakti döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "12'de öğle yemeği vakti ",
+        "Text": "12'de öğle yemeği vakti",
         "Type": "time",
         "Value": {
           "Timex": "T12",
@@ -1072,18 +1065,17 @@
             "time": "12:00:00"
           }
         },
-        "Start": 13,
-        "Length": 12
+        "Start": 0,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Gece yarısı 12'de döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Gece yarısı 12",
+        "Text": "Gece yarısı 12'de",
         "Type": "time",
         "Value": {
           "Timex": "T00",
@@ -1094,18 +1086,17 @@
             "time": "00:00:00"
           }
         },
-        "Start": 13,
-        "Length": 11
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Gece 12'de döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Gece 12",
+        "Text": "Gece 12'de",
         "Type": "time",
         "Value": {
           "Timex": "T00",
@@ -1116,18 +1107,17 @@
             "time": "00:00:00"
           }
         },
-        "Start": 13,
-        "Length": 15
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Gece yarısı saat 1'de döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Gece yarısı saat 1",
+        "Text": "Gece yarısı saat 1'de",
         "Type": "time",
         "Value": {
           "Timex": "T01",
@@ -1138,18 +1128,17 @@
             "time": "01:00:00"
           }
         },
-        "Start": 13,
-        "Length": 18
+        "Start": 0,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Saat 12'de öğle yemeği vakti döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Saat 12'de öğle yemeği vakti ",
+        "Text": "Saat 12'de öğle yemeği vakti",
         "Type": "time",
         "Value": {
           "Timex": "T12",
@@ -1160,18 +1149,17 @@
             "time": "12:00:00"
           }
         },
-        "Start": 13,
-        "Length": 20
+        "Start": 0,
+        "Length": 28
       }
     ]
   },
   {
     "Input": "Saat 11'de öğle yemeği vakti döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Saat 11'de öğle yemeği vakti ",
+        "Text": "Saat 11'de öğle yemeği vakti",
         "Type": "time",
         "Value": {
           "Timex": "T11",
@@ -1182,18 +1170,17 @@
             "time": "11:00:00"
           }
         },
-        "Start": 13,
-        "Length": 20
+        "Start": 0,
+        "Length": 28
       }
     ]
   },
   {
     "Input": "Saat 1'de öğle yemeği vakti döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Saat 1'de öğle yemeği vakti ",
+        "Text": "Saat 1'de öğle yemeği vakti",
         "Type": "time",
         "Value": {
           "Timex": "T13",
@@ -1204,14 +1191,13 @@
             "time": "13:00:00"
           }
         },
-        "Start": 13,
-        "Length": 19
+        "Start": 0,
+        "Length": 27
       }
     ]
   },
   {
     "Input": "Öğle yemeği vakti saat 11'de döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1226,18 +1212,17 @@
             "time": "11:00:00"
           }
         },
-        "Start": 13,
-        "Length": 23
+        "Start": 0,
+        "Length": 28
       }
     ]
   },
   {
     "Input": "Akşam 19:56:13'te döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Akşam 19:56:13",
+        "Text": "Akşam 19:56:13'te",
         "Type": "time",
         "Value": {
           "Timex": "T19:56:13",
@@ -1248,14 +1233,13 @@
             "time": "19:56:13"
           }
         },
-        "Start": 13,
-        "Length": 10
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "12:34:45'te döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1270,18 +1254,17 @@
             "time": "12:34:45"
           }
         },
-        "Start": 13,
+        "Start": 0,
         "Length": 8
       }
     ]
   },
   {
     "Input": "Öğleden sonra 19:00:25'de döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Öğleden sonra 19:00:25",
+        "Text": "Öğleden sonra 19:00:25'de",
         "Type": "time",
         "Value": {
           "Timex": "T19:00:25",
@@ -1292,18 +1275,17 @@
             "time": "19:00:25"
           }
         },
-        "Start": 13,
-        "Length": 17
+        "Start": 0,
+        "Length": 25
       }
     ]
   },
   {
     "Input": "Sabah yedi otuzda döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Sabah yedi otuz",
+        "Text": "Sabah yedi otuzda",
         "Type": "time",
         "Value": {
           "Timex": "T07:30",
@@ -1314,14 +1296,13 @@
             "time": "07:30:00"
           }
         },
-        "Start": 13,
-        "Length": 15
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "On biri beş geçe döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1336,14 +1317,13 @@
             "time": "11:05:00"
           }
         },
-        "Start": 16,
-        "Length": 11
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Beş otuza üç dakika kala döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1358,18 +1338,38 @@
             "time": "05:27:00"
           }
         },
-        "Start": 13,
-        "Length": 25
+        "Start": 0,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Beş otuzu üç dakika geçe döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Beş otuzu üç dakika geçe",
+        "Type": "time",
+        "Value": {
+          "Timex": "T05:33",
+          "FutureResolution": {
+            "time": "05:33:00"
+          },
+          "PastResolution": {
+            "time": "05:33:00"
+          }
+        },
+        "Start": 0,
+        "Length": 24
       }
     ]
   },
   {
     "Input": "Akşam beş otuzda döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Akşam beş otuz",
+        "Text": "Akşam beş otuzda",
         "Type": "time",
         "Value": {
           "Timex": "T17:30",
@@ -1380,14 +1380,13 @@
             "time": "17:30:00"
           }
         },
-        "Start": 13,
-        "Length": 24
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Beş otuzda akşam döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1402,14 +1401,13 @@
             "time": "17:30:00"
           }
         },
-        "Start": 13,
-        "Length": 24
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Öğlen döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1424,14 +1422,13 @@
             "time": "12:00:00"
           }
         },
-        "Start": 13,
-        "Length": 4
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Öğle yemeği vakti saat 12'de döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1446,8 +1443,8 @@
             "time": "12:00:00"
           }
         },
-        "Start": 13,
-        "Length": 23
+        "Start": 0,
+        "Length": 28
       }
     ]
   }
