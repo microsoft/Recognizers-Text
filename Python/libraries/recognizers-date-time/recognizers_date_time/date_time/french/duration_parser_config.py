@@ -3,10 +3,7 @@ from typing import Pattern, Dict
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.parsers import BaseNumberParser
-from recognizers_number.number.french.extractors import FrenchCardinalExtractor
-from recognizers_number.number.french.parsers import FrenchNumberParserConfiguration
 from ...resources.french_date_time import FrenchDateTime
-from ..base_duration import DurationParserConfiguration
 
 from ..extractors import DateTimeExtractor
 from ..base_duration import DurationParserConfiguration, BaseDurationExtractor
@@ -87,3 +84,5 @@ class FrenchDurationParserConfiguration(DurationParserConfiguration):
         self._unit_map = config.unit_map
         self._unit_value_map = config.unit_value_map
         self._double_numbers = config.double_numbers
+        # ToDo When the implementation for this property is added, change the None value to the respective Regexp
+        self._duration_extractor = None
