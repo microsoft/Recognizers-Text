@@ -38,10 +38,6 @@ class EnglishDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
         return self._time_unit_regex
 
     @property
-    def time_unit_regex(self) -> Pattern:
-        return self._time_unit_regex
-
-    @property
     def within_next_prefix_regex(self) -> Pattern:
         return self._within_next_prefix_regex
 
