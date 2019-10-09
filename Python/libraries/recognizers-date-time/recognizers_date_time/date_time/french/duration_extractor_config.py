@@ -5,7 +5,6 @@ from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.french.extractors import FrenchCardinalExtractor
 from ...resources.french_date_time import FrenchDateTime
 from ..base_duration import DurationExtractorConfiguration
-from ..utilities import DateTimeOptions
 
 
 class FrenchDurationExtractorConfiguration(DurationExtractorConfiguration):
@@ -47,11 +46,11 @@ class FrenchDurationExtractorConfiguration(DurationExtractorConfiguration):
         return self._relative_duration_unit_regex
 
     @property
-    def more_than_regex(self) -> BaseNumberExtractor:
+    def more_than_regex(self) -> Pattern:
         return self._more_than_regex
 
     @property
-    def less_than_regex(self) -> BaseNumberExtractor:
+    def less_than_regex(self) -> Pattern:
         return self._less_than_regex
 
     @property
@@ -77,14 +76,6 @@ class FrenchDurationExtractorConfiguration(DurationExtractorConfiguration):
     @property
     def duration_connector_regex(self) -> Pattern:
         return self._duration_connector_regex
-
-    @property
-    def more_than_regex(self) -> Pattern:
-        return self._more_than_regex
-
-    @property
-    def less_than_regex(self) -> Pattern:
-        return self._less_than_regex
 
     def __init__(self):
         super().__init__()
