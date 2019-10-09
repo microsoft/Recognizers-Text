@@ -42,7 +42,7 @@ class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
             SpanishDateTime.AtRegex)
         self._time_before_after_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.TimeBeforeAfterRegex)
-        # ToDo When the implementation for these properties is added, change the None values to the respective Regexps
+        # TODO When the implementation for these properties is added, change the None values to the respective Regexps
         self._ish_regex: Pattern = None
         self._time_zone_extractor = None
 
