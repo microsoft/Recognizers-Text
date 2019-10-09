@@ -3,7 +3,8 @@ from datetime import datetime, timedelta
 import regex
 
 from recognizers_text import RegExpUtility
-from recognizers_number import ExtractResult, ChineseCardinalExtractor, CJKNumberParser, ChineseNumberParserConfiguration
+from recognizers_number import ExtractResult, ChineseCardinalExtractor,\
+    CJKNumberParser, ChineseNumberParserConfiguration
 
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import TimeTypeConstants
@@ -344,7 +345,8 @@ class ChineseDateTimePeriodParser(BaseDateTimePeriodParser):
 
         return result
 
-    def __parse_common_duration_with_unit(self, before: str, unit: str, num: str, swift: float, reference: datetime) -> DateTimeResolutionResult:
+    def __parse_common_duration_with_unit(self, before: str, unit: str, num: str, swift: float, reference: datetime)\
+            -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
 
         if unit not in self.config.unit_map:

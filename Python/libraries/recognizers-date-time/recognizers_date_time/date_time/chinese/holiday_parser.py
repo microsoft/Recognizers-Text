@@ -1,7 +1,8 @@
 from typing import Optional, Match
 from datetime import datetime, timedelta
 from datedelta import datedelta
-from recognizers_number import ChineseIntegerExtractor, AgnosticNumberParserFactory, ParserType as AgnosticNumberParserType, ChineseNumberParserConfiguration, Constants as NumberConstants
+from recognizers_number import ChineseIntegerExtractor, AgnosticNumberParserFactory,\
+    ParserType as AgnosticNumberParserType, ChineseNumberParserConfiguration, Constants as NumberConstants
 from recognizers_text.extractor import ExtractResult
 
 from ...resources.chinese_date_time import ChineseDateTime
@@ -251,8 +252,7 @@ class ChineseHolidayParser(BaseHolidayParser):
                     year_num *= 10
                     ers = self.__integer_extractor.extract(char)
                     if ers and ers[-1].type == NumberConstants.SYS_NUM_INTEGER:
-                        year_num += int(
-                            self.__number_parser.parse(ers[-1]).value)
+                        year_num += int(self.__number_parser.parse(ers[-1]).value)
             else:
                 year = year_num
         else:

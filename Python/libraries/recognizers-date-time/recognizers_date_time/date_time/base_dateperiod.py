@@ -1276,24 +1276,24 @@ class BaseDatePeriodParser(DateTimeParser):
 
             if self.config.is_week_only(trimmed_source):
                 thursday = DateUtils.this(
-                    reference, DayOfWeek.Thursday) + datedelta(days=7 * swift)
+                    reference, DayOfWeek.THURSDAY) + datedelta(days=7 * swift)
                 result.timex = f'{thursday.year:04d}-W{DateUtils.week_of_year(thursday):02d}'
                 begin_date = DateUtils.this(
-                    reference, DayOfWeek.Monday) + datedelta(days=7 * swift)
+                    reference, DayOfWeek.MONDAY) + datedelta(days=7 * swift)
                 end_date = DateUtils.this(
-                    reference, DayOfWeek.Sunday) + datedelta(days=7 * swift)
+                    reference, DayOfWeek.SUNDAY) + datedelta(days=7 * swift)
 
                 if early_prefix:
                     end_date = DateUtils.this(
-                        reference, DayOfWeek.Wednesday) + datedelta(days=7 * swift)
+                        reference, DayOfWeek.WEDNESDAY) + datedelta(days=7 * swift)
                 elif mid_prefix:
                     begin_date = DateUtils.this(
-                        reference, DayOfWeek.Tuesday) + datedelta(days=7 * swift)
+                        reference, DayOfWeek.TUESDAY) + datedelta(days=7 * swift)
                     end_date = DateUtils.this(
-                        reference, DayOfWeek.Friday) + datedelta(days=7 * swift)
+                        reference, DayOfWeek.FRIDAY) + datedelta(days=7 * swift)
                 elif late_prefix:
                     begin_date = DateUtils.this(
-                        reference, DayOfWeek.Thursday) + datedelta(days=7 * swift)
+                        reference, DayOfWeek.THURSDAY) + datedelta(days=7 * swift)
 
                 if not self._inclusive_end_period:
                     end_date = end_date + datedelta(days=1)
@@ -1313,9 +1313,9 @@ class BaseDatePeriodParser(DateTimeParser):
 
             if self.config.is_weekend(trimmed_source):
                 begin_date = DateUtils.this(
-                    reference, DayOfWeek.Saturday) + datedelta(days=7 * swift)
+                    reference, DayOfWeek.SATURDAY) + datedelta(days=7 * swift)
                 end_date = DateUtils.this(
-                    reference, DayOfWeek.Sunday) + datedelta(days=7 * swift)
+                    reference, DayOfWeek.SUNDAY) + datedelta(days=7 * swift)
 
                 if not self._inclusive_end_period:
                     end_date = end_date + datedelta(days=1)
@@ -1599,12 +1599,12 @@ class BaseDatePeriodParser(DateTimeParser):
 
         if self.config.is_last_cardinal(cardinal_str):
             last_day = DateUtils.safe_create_from_min_value(year, 12, 31)
-            last_day_week_monday = DateUtils.this(last_day, DayOfWeek.Monday)
+            last_day_week_monday = DateUtils.this(last_day, DayOfWeek.MONDAY)
             week_num = DateUtils.week_of_year(last_day)
 
             if week_num == 1:
                 last_day_week_monday = DateUtils.this(
-                    last_day + datedelta(days=-7), DayOfWeek.Monday)
+                    last_day + datedelta(days=-7), DayOfWeek.MONDAY)
 
             target_week_monday = last_day_week_monday
             week_num = DateUtils.week_of_year(target_week_monday)
@@ -1613,12 +1613,12 @@ class BaseDatePeriodParser(DateTimeParser):
             cardinal = self.config.cardinal_map.get(cardinal_str)
 
             first_day = DateUtils.safe_create_from_min_value(year, 1, 1)
-            first_day_week_monday = DateUtils.this(first_day, DayOfWeek.Monday)
+            first_day_week_monday = DateUtils.this(first_day, DayOfWeek.MONDAY)
             week_num = DateUtils.week_of_year(first_day)
 
             if not week_num == 1:
                 first_day_week_monday = DateUtils.this(
-                    first_day + datedelta(days=7), DayOfWeek.Monday)
+                    first_day + datedelta(days=7), DayOfWeek.MONDAY)
 
             target_week_monday = first_day_week_monday + datedelta(days=7 * (cardinal - 1))
             result.timex = f'{year:04d}-W{week_num:02d}'
@@ -1879,7 +1879,7 @@ class BaseDatePeriodParser(DateTimeParser):
 
         first_day = DateUtils.safe_create_from_value(
             DateUtils.min_value, year, 1, 1)
-        first_thursday = DateUtils.this(first_day, DayOfWeek.Thursday)
+        first_thursday = DateUtils.this(first_day, DayOfWeek.THURSDAY)
         first_week = DateUtils.week_of_year(first_thursday)
 
         if first_week == 1:
@@ -1931,7 +1931,7 @@ class BaseDatePeriodParser(DateTimeParser):
         return result
 
     def __get_week_range_from_date(self, seed_date: datetime) -> List[datetime]:
-        begin_date = DateUtils.this(seed_date, DayOfWeek.Monday)
+        begin_date = DateUtils.this(seed_date, DayOfWeek.MONDAY)
         end_date = begin_date + timedelta(days=6 if self._inclusive_end_period else 7)
         return [begin_date, end_date]
 

@@ -13,51 +13,44 @@ from .datetime_extractor import ChineseDateTimeExtractor
 
 class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
     @property
-    def options(self):
-        pass
-
-    @property
-    def dmy_date_format(self) -> bool:
-        pass
-
     def token_before_date(self) -> str:
-        pass
+        return self._token_before_date
 
     @property
     def within_next_prefix_regex(self) -> Pattern:
-        pass
+        return self._within_next_prefix_regex
 
     @property
     def future_suffix_regex(self) -> Pattern:
-        pass
+        return self._future_suffix_regex
 
     @property
     def date_unit_regex(self) -> Pattern:
-        pass
+        return self._date_unit_regex
 
     @property
     def am_desc_regex(self) -> Pattern:
-        pass
+        return self._am_desc_regex
 
     @property
     def pm_desc_regex(self) -> Pattern:
-        pass
+        return self._pm_desc_regex
 
     @property
     def prefix_day_regex(self) -> Pattern:
-        pass
+        return self._prefix_day_regex
 
     @property
     def before_regex(self) -> Pattern:
-        pass
+        return self._before_regex
 
     @property
     def after_regex(self) -> Pattern:
-        pass
+        return self._after_regex
 
     @property
     def suffix_regex(self) -> Pattern:
-        pass
+        return self._suffix_regex
 
     @property
     def cardinal_extractor(self) -> Extractor:
@@ -76,18 +69,6 @@ class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         return self._single_date_time_extractor
 
     @property
-    def duration_extractor(self) -> DateTimeExtractor:
-        return None
-
-    @property
-    def time_period_extractor(self) -> DateTimeExtractor:
-        return None
-
-    @property
-    def simple_cases_regexes(self) -> Pattern:
-        return None
-
-    @property
     def preposition_regex(self) -> Pattern:
         return self._preposition_regex
 
@@ -104,20 +85,20 @@ class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         return self._time_of_day_regex
 
     @property
-    def period_time_of_day_with_date_regex(self) -> Pattern:
-        return None
-
-    @property
     def followed_unit(self) -> Pattern:
         return self._followed_unit
 
     @property
-    def number_combined_with_unit(self) -> Pattern:
+    def time_unit_regex(self) -> Pattern:
+        return self._time_unit_regex
+
+    @property
+    def period_time_of_day_with_date_regex(self) -> Pattern:
         return None
 
     @property
-    def time_unit_regex(self) -> Pattern:
-        return self._time_unit_regex
+    def number_combined_with_unit(self) -> Pattern:
+        return None
 
     @property
     def previous_prefix_regex(self) -> Pattern:
@@ -147,7 +128,20 @@ class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
     def middle_pause_regex(self) -> Pattern:
         return None
 
+    @property
+    def duration_extractor(self) -> DateTimeExtractor:
+        return None
+
+    @property
+    def time_period_extractor(self) -> DateTimeExtractor:
+        return None
+
+    @property
+    def simple_cases_regexes(self) -> Pattern:
+        return None
+
     def __init__(self):
+        super().__init__()
         self._cardinal_extractor = ChineseCardinalExtractor()
         self._single_date_extractor = ChineseDateExtractor()
         self._single_time_extractor = ChineseTimeExtractor()
@@ -164,6 +158,17 @@ class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
             ChineseDateTime.DateTimePeriodFollowedUnit)
         self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.DateTimePeriodUnitRegex)
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._suffix_regex = None
+        self._after_regex = None
+        self._before_regex = None
+        self._prefix_day_regex = None
+        self._pm_desc_regex = None
+        self._am_desc_regex = None
+        self._date_unit_regex = None
+        self._future_suffix_regex = None
+        self._within_next_prefix_regex = None
+        self._token_before_date = None
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         if source.endswith('从'):

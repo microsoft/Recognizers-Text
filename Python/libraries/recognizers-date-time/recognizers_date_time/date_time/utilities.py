@@ -400,13 +400,13 @@ class DateTimeFormatUtil:
 
 
 class DayOfWeek(IntEnum):
-    Monday = 1
-    Tuesday = 2
-    Wednesday = 3
-    Thursday = 4
-    Friday = 5
-    Saturday = 6
-    Sunday = 7
+    MONDAY = 1
+    TUESDAY = 2
+    WEDNESDAY = 3
+    THURSDAY = 4
+    FRIDAY = 5
+    SATURDAY = 6
+    SUNDAY = 7
 
 
 class DateUtils:
@@ -445,7 +445,7 @@ class DateUtils:
     def this(from_date: datetime, day_of_week: DayOfWeek) -> datetime:
         start = from_date.isoweekday()
         target = day_of_week if day_of_week >= int(
-            DayOfWeek.Monday) else int(DayOfWeek.Sunday)
+            DayOfWeek.MONDAY) else int(DayOfWeek.SUNDAY)
         result = from_date + timedelta(days=target-start)
         return result
 
