@@ -8,10 +8,6 @@ from ..utilities import DateTimeOptions
 
 class FrenchTimeExtractorConfiguration(TimeExtractorConfiguration):
     @property
-    def dmy_date_format(self) -> bool:
-        return self._dmy_date_format
-
-    @property
     def time_zone_extractor(self):
         return self._time_zone_extractor
 
@@ -42,6 +38,8 @@ class FrenchTimeExtractorConfiguration(TimeExtractorConfiguration):
         self._time_before_after_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.TimeBeforeAfterRegex)
         self._options = DateTimeOptions.NONE
+        # ToDo When the implementation for these properties is added, change the None values to the respective Regexps
+        self._time_zone_extractor = None
 
     @staticmethod
     def get_time_regex_list() -> List[Pattern]:
