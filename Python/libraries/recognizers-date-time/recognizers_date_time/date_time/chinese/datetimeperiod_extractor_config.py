@@ -158,7 +158,7 @@ class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
             ChineseDateTime.DateTimePeriodFollowedUnit)
         self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.DateTimePeriodUnitRegex)
-        # ToDo When the implementation for these properties is added, change the None values to the respective Regexps
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._suffix_regex = None
         self._after_regex = None
         self._before_regex = None

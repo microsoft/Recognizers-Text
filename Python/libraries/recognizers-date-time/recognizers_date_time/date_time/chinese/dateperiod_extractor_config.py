@@ -177,7 +177,7 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             ChineseDateTime.NowRegex)
         self._month_num_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.MonthNumRegex)
-        # ToDo When the implementation for these properties is added, change the None values to the respective Regexps
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._century_suffix_regex = None
         self._year_period_regex = None
         self._duration_date_restrictions = None

@@ -103,7 +103,7 @@ class ChineseDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
             ChineseDateTime.TimeOfTodayRegex)
         self._preposition_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.PrepositionRegex)
-        # ToDo When the implementation for these properties is added, change the None values to the respective Regexps
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._year_regex = None
         self._year_suffix = None
         self._suffix_after_regex = None
