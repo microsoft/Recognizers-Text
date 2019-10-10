@@ -74,6 +74,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
 
+        bool IDurationExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex IDurationExtractorConfiguration.FollowedUnit => FollowedUnit;
 
         Regex IDurationExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;

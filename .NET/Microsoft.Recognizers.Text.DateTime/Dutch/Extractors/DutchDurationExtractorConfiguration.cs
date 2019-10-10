@@ -70,6 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
 
+        bool IDurationExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex IDurationExtractorConfiguration.FollowedUnit => DurationFollowedUnit;
 
         Regex IDurationExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithDurationUnit;

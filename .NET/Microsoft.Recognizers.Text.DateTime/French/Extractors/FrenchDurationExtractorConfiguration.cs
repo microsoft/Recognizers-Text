@@ -71,6 +71,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
 
+        bool IDurationExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex IDurationExtractorConfiguration.FollowedUnit => DurationFollowedUnit;
 
         Regex IDurationExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithDurationUnit;

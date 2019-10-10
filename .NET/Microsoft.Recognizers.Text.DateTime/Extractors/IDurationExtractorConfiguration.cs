@@ -37,6 +37,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SpecialNumberUnitRegex { get; }
 
+        bool CheckBothBeforeAfter { get; }
+
         IExtractor CardinalExtractor { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }

@@ -87,13 +87,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private static void StripInequalityPrefix(ExtractResult er, Regex regex)
+        private static void StripInequality(ExtractResult er, Regex regex, bool inPrefix)
         {
             if (regex.IsMatch(er.Text))
             {
                 var originalLength = er.Text.Length;
                 er.Text = regex.Replace(er.Text, string.Empty).Trim();
-                er.Start += originalLength - er.Text.Length;
+                if (inPrefix)
+                {
+                    er.Start += originalLength - er.Text.Length;
+                }
+
                 er.Length = er.Text.Length;
                 er.Data = string.Empty;
             }
@@ -534,8 +538,18 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private void StripInequalityDuration(ExtractResult er)
         {
-            StripInequalityPrefix(er, Config.MoreThanRegex);
-            StripInequalityPrefix(er, Config.LessThanRegex);
+            if (this.Config.CheckBothBeforeAfter)
+            {
+                bool inPrefix = false;
+                StripInequality(er, Config.MoreThanRegex, inPrefix);
+                StripInequality(er, Config.LessThanRegex, inPrefix);
+            }
+            else
+            {
+                bool inPrefix = true;
+                StripInequality(er, Config.MoreThanRegex, inPrefix);
+                StripInequality(er, Config.LessThanRegex, inPrefix);
+            }
         }
 
         // Used in ExtractRelativeDurationDateWithInPrefix to extract the connector "in" in cases like "In 3 days/weeks/months/years"
