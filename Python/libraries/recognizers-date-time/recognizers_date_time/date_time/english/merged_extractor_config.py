@@ -30,15 +30,15 @@ from ...resources.base_date_time import BaseDateTime
 class EnglishMergedExtractorConfiguration(MergedExtractorConfiguration):
     @property
     def time_zone_extractor(self):
-        pass
+        return self._time_zone_extractor
 
     @property
     def datetime_alt_extractor(self):
-        pass
+        return self._datetime_alt_extractor
 
     @property
     def term_filter_regexes(self) -> List[Pattern]:
-        pass
+        return self._term_filter_regexes
 
     @property
     def ambiguity_filters_dict(self) -> Pattern:
@@ -200,3 +200,7 @@ class EnglishMergedExtractorConfiguration(MergedExtractorConfiguration):
         self._fail_fast_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.FailFastRegex
         )
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._time_zone_extractor = None
+        self._term_filter_regexes = None
+        self._datetime_alt_extractor = None
