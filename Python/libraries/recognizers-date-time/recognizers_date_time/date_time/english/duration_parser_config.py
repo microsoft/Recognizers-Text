@@ -64,11 +64,12 @@ class EnglishDurationParserConfiguration(DurationParserConfiguration):
     def double_numbers(self) -> Dict[str, float]:
         return self._double_numbers
 
+    @property
     def duration_extractor(self) -> DateTimeExtractor:
         return self._duration_extractor
 
     def __init__(self, config):
-        self.duration_extractor = BaseDurationExtractor(
+        self._duration_extractor = BaseDurationExtractor(
             EnglishDurationExtractorConfiguration(), False)
         self._cardinal_extractor: BaseNumberExtractor = EnglishCardinalExtractor()
         self._number_parser: BaseNumberParser = BaseNumberParser(
@@ -87,6 +88,6 @@ class EnglishDurationParserConfiguration(DurationParserConfiguration):
             EnglishDateTime.HalfRegex)
         self._inexact_number_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.InexactNumberUnitRegex)
-        self._unit_map: Dict[str, int] = EnglishDateTime.UnitMap
+        self._unit_map: Dict[str, str] = EnglishDateTime.UnitMap
         self._unit_value_map: Dict[str, int] = EnglishDateTime.UnitValueMap
         self._double_numbers: Dict[str, float] = EnglishDateTime.DoubleNumbers
