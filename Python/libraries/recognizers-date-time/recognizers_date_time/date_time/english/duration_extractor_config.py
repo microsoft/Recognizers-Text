@@ -5,7 +5,6 @@ from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.english.extractors import EnglishCardinalExtractor
 from ...resources.english_date_time import EnglishDateTime
 from ..base_duration import DurationExtractorConfiguration
-from ..utilities import DateTimeOptionsConfiguration
 
 
 class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
