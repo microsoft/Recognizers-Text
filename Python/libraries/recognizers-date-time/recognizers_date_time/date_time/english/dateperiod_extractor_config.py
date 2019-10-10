@@ -239,6 +239,8 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             EnglishDateTime.CenturySuffixRegex
         )
         self._ordinal_extractor = EnglishOrdinalExtractor()
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._cardinal_extractor = None
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         return MatchedIndex(True, source.rfind('from')) if source.endswith('from') else MatchedIndex(False, -1)
