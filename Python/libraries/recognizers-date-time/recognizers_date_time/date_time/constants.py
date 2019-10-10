@@ -18,47 +18,47 @@ class Constants:
     SYS_DATETIME_DATETIMEPOINT: str = 'datetimepoint'
 
     # Multiple Duration Types
-    multiple_duration_prefix = 'multipleDuration'
-    multiple_duration_date = multiple_duration_prefix + 'Date'
-    multiple_duration_time = multiple_duration_prefix + 'Time'
-    multiple_duration_date_time = multiple_duration_prefix + 'DateTime'
+    MULTIPLE_DURATION_PREFIX = 'multipleDuration'
+    MULTIPLE_DURATION_DATE = MULTIPLE_DURATION_PREFIX + 'Date'
+    MULTIPLE_DURATION_TIME = MULTIPLE_DURATION_PREFIX + 'Time'
+    MULTIPLE_DURATION_DATE_TIME = MULTIPLE_DURATION_PREFIX + 'DateTime'
 
     # keys
-    timex_key: str = 'timex'
-    comment_key: str = 'Comment'
-    mod_key: str = 'Mod'
-    source_type: str = 'sourceEntity'
-    type_key: str = 'type'
-    is_lunar_key: str = 'isLunar'
-    resolve_key: str = 'resolve'
-    resolve_to_past_key: str = 'resolveToPast'
-    resolve_to_future_key: str = 'resolveToFuture'
+    TIMEX_KEY: str = 'timex'
+    COMMENT_KEY: str = 'Comment'
+    MOD_KEY: str = 'Mod'
+    SOURCE_TYPE: str = 'sourceEntity'
+    TYPE_KEY: str = 'type'
+    IS_LUNAR_KEY: str = 'isLunar'
+    RESOLVE_KEY: str = 'resolve'
+    RESOLVE_TO_PAST_KEY: str = 'resolveToPast'
+    RESOLVE_TO_FUTURE_KEY: str = 'resolveToFuture'
 
-    semester_month_count: int = 6
-    trimester_month_count: int = 3
-    quarter_count: int = 4
-    four_digits_year_length: int = 4
-    min_month: int = 1
-    max_month: int = 12
-    invalid_year = -2147483648
+    SEMESTER_MONTH_COUNT: int = 6
+    TRIMESTER_MONTH_COUNT: int = 3
+    QUARTER_COUNT: int = 4
+    FOUR_DIGITS_YEAR_LENGTH: int = 4
+    MIN_MONTH: int = 1
+    MAX_MONTH: int = 12
+    INVALID_YEAR = -2147483648
 
-    min_year_num: int = int(BaseDateTime.MinYearNum)
-    max_year_num: int = int(BaseDateTime.MaxYearNum)
+    MIN_YEAR_NUM: int = int(BaseDateTime.MinYearNum)
+    MAX_YEAR_NUM: int = int(BaseDateTime.MaxYearNum)
 
-    default_language_fallback_mdy: str = 'MDY'
-    default_language_fallback_dmy: str = 'DMY'
+    DEFAULT_LANGUAGE_FALLBACK_MDY: str = 'MDY'
+    DEFAULT_LANGUAGE_FALLBACK_DMY: str = 'DMY'
 
-    max_two_digit_year_future_num: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
-    min_two_digit_year_past_num: int = int(BaseDateTime.MinTwoDigitYearPastNum)
+    MAX_TWO_DIGIT_YEAR_FUTURE_NUM: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
+    MIN_TWO_DIGIT_YEAR_PAST_NUM: int = int(BaseDateTime.MinTwoDigitYearPastNum)
 
-    early_morning: str = "TDA"
-    morning: str = "TMO"
-    mid_day: str = "TMI"
-    afternoon: str = "TAF"
-    evening: str = "TEV"
-    daytime: str = "TDT"
-    night: str = "TNI"
-    business_hour = "TBH"
+    EARLY_MORNING: str = "TDA"
+    MORNING: str = "TMO"
+    MID_DAY: str = "TMI"
+    AFTERNOON: str = "TAF"
+    EVENING: str = "TEV"
+    DAYTIME: str = "TDT"
+    NIGHT: str = "TNI"
+    BUSINESS_HOUR = "TBH"
 
     # Groups' names for named groups in regexes
     next_group_name = "next"

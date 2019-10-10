@@ -75,15 +75,15 @@ class SpanishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
 
         time_of_day = ""
         if any(trimmed_text.endswith(o) for o in SpanishDateTime.EarlyMorningTermList):
-            time_of_day = Constants.early_morning
+            time_of_day = Constants.EARLY_MORNING
         elif any(trimmed_text.endswith(o) for o in SpanishDateTime.MorningTermList):
-            time_of_day = Constants.morning
+            time_of_day = Constants.MORNING
         elif any(trimmed_text.endswith(o) for o in SpanishDateTime.AfternoonTermList):
-            time_of_day = Constants.afternoon
+            time_of_day = Constants.AFTERNOON
         elif any(trimmed_text.endswith(o) for o in SpanishDateTime.EveningTermList):
-            time_of_day = Constants.evening
+            time_of_day = Constants.EVENING
         elif any(trimmed_text.endswith(o) for o in SpanishDateTime.NightTermList):
-            time_of_day = Constants.night
+            time_of_day = Constants.NIGHT
         else:
             return MatchedTimeRegex(
                 matched=False,

@@ -477,7 +477,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
             year = AbstractYearExtractor.get_year_from_text(self, match_year)
 
-            if Constants.min_year_num <= year <= Constants.max_year_num:
+            if Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM:
                 end_index += len(match_year.group())
 
         date = DateUtils.safe_create_from_value(DateUtils.min_value, year, month, day)
@@ -616,11 +616,11 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
     @staticmethod
     def is_multiple_duration_date(er: ExtractResult):
-        return er.data is not None and er.data == Constants.multiple_duration_date
+        return er.data is not None and er.data == Constants.MULTIPLE_DURATION_DATE
 
     @staticmethod
     def is_multiple_duration(er: ExtractResult):
-        return er.data is not None and str(er.data).startswith(Constants.multiple_duration_prefix)
+        return er.data is not None and str(er.data).startswith(Constants.MULTIPLE_DURATION_PREFIX)
 
     # Cases like "more than 3 days", "less than 4 weeks"
     @staticmethod
@@ -865,9 +865,9 @@ class BaseDateParser(DateTimeParser):
             if year_str:
                 year = int(year_str) if year_str.isnumeric() else 0
 
-                if 100 > year >= Constants.min_two_digit_year_past_num:
+                if 100 > year >= Constants.MIN_TWO_DIGIT_YEAR_PAST_NUM:
                     year += 1900
-                elif 0 <= year < Constants.max_two_digit_year_future_num:
+                elif 0 <= year < Constants.MAX_TWO_DIGIT_YEAR_FUTURE_NUM:
                     year += 2000
 
         no_year = False

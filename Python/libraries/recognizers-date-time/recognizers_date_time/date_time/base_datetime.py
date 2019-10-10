@@ -265,7 +265,7 @@ class BaseDateTimeExtractor(DateTimeExtractor):
 
             check_year = self.config.date_point_extractor.get_year_from_text(self.config.year_regex.search(text))
             year = self.config.date_point_extractor.get_year_from_text(match_year)
-            if Constants.min_year_num <= year <= Constants.max_year_num and check_year == year:
+            if Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM and check_year == year:
                 end_index += (match_year.end() - match_year.start())
 
         return end_index, start_index

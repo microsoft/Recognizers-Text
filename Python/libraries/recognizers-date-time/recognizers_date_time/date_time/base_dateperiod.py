@@ -253,7 +253,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
             # Single year cases like "1998"
             if match_year is not None and (match_year.end() - match_year.start()) == len(match.group()):
                 year = self.config.date_point_extractor.get_year_from_text(match_year)
-                if not (Constants.min_year_num <= year <= Constants.max_year_num):
+                if not (Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM):
                     continue
 
                 # Possibly include period end only apply for cases like "2014-2018", which are not single year cases
@@ -265,10 +265,10 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
                 for year_match in year_matches:
                     year = self.config.date_point_extractor.get_year_from_text(year_match)
-                    if not (Constants.min_year_num <= year <= Constants.max_year_num):
+                    if not (Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM):
                         is_valid_year = False
                         break
-                    elif len(year_match) != Constants.four_digits_year_length:
+                    elif len(year_match) != Constants.FOUR_DIGITS_YEAR_LENGTH:
                         all_digit_year = False
 
                     if not is_valid_year:
@@ -450,10 +450,10 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                     if not year_str:
                         year = self.__get_year_from_text(match_year)
 
-                        if not (Constants.min_year_num <= year <= Constants.max_year_num):
+                        if not (Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM):
                             add_token = False
 
-                if (match.end() - match.start() == Constants.four_digits_year_length) and self.__infix_boundary_check(
+                if (match.end() - match.start() == Constants.FOUR_DIGITS_YEAR_LENGTH) and self.__infix_boundary_check(
                         match, source):
                     sub_str = source[match.start() - 1: match.end() + 1]
 
@@ -1659,9 +1659,9 @@ class BaseDatePeriodParser(DateTimeParser):
             quarter_num = self.config.cardinal_map[cardinal_str]
 
         begin_date = DateUtils.safe_create_date_resolve_overflow(
-            year, ((quarter_num - 1) * Constants.semester_month_count) + 1, 1)
+            year, ((quarter_num - 1) * Constants.SEMESTER_MONTH_COUNT) + 1, 1)
         end_date = DateUtils.safe_create_date_resolve_overflow(
-            year, (quarter_num * Constants.semester_month_count) + 1, 1)
+            year, (quarter_num * Constants.SEMESTER_MONTH_COUNT) + 1, 1)
 
         result.future_value = [begin_date, end_date]
         result.past_value = [begin_date, end_date]
@@ -1800,39 +1800,39 @@ class BaseDatePeriodParser(DateTimeParser):
             quarter_num = int(quarter_str)
         elif order_quarter_str:
             month = reference.month
-            quarter_num = math.ceil(month / Constants.trimester_month_count)
+            quarter_num = math.ceil(month / Constants.TRIMESTER_MONTH_COUNT)
             swift = self.config.get_swift_year(order_quarter_str)
             quarter_num += swift
             if quarter_num <= 0:
-                quarter_num += Constants.quarter_count
+                quarter_num += Constants.QUARTER_COUNT
                 year -= 1
-            elif quarter_num > Constants.quarter_count:
-                quarter_num -= Constants.quarter_count
+            elif quarter_num > Constants.QUARTER_COUNT:
+                quarter_num -= Constants.QUARTER_COUNT
                 year += 1
         else:
             quarter_num = self.config.cardinal_map[cardinal_str]
 
         begin_date = DateUtils.safe_create_date_resolve_overflow(
-            year, ((quarter_num - 1) * Constants.trimester_month_count) + 1, 1)
+            year, ((quarter_num - 1) * Constants.TRIMESTER_MONTH_COUNT) + 1, 1)
         end_date = DateUtils.safe_create_date_resolve_overflow(
-            year, (quarter_num * Constants.trimester_month_count) + 1, 1)
+            year, (quarter_num * Constants.TRIMESTER_MONTH_COUNT) + 1, 1)
 
         if no_specific_value:
             if end_date < reference:
                 result.past_value = [begin_date, end_date]
 
                 future_begin_date = DateUtils.safe_create_date_resolve_overflow(
-                    year + 1, ((quarter_num - 1) * Constants.trimester_month_count) + 1, 1)
+                    year + 1, ((quarter_num - 1) * Constants.TRIMESTER_MONTH_COUNT) + 1, 1)
                 future_end_date = DateUtils.safe_create_date_resolve_overflow(
-                    year + 1, (quarter_num * Constants.trimester_month_count) + 1, 1)
+                    year + 1, (quarter_num * Constants.TRIMESTER_MONTH_COUNT) + 1, 1)
                 result.future_value = [future_begin_date, future_end_date]
             elif end_date > reference:
                 result.future_value = [begin_date, end_date]
 
                 past_begin_date = DateUtils.safe_create_date_resolve_overflow(
-                    year - 1, ((quarter_num - 1) * Constants.trimester_month_count) + 1, 1)
+                    year - 1, ((quarter_num - 1) * Constants.TRIMESTER_MONTH_COUNT) + 1, 1)
                 past_end_date = DateUtils.safe_create_date_resolve_overflow(
-                    year - 1, (quarter_num * Constants.trimester_month_count) + 1, 1)
+                    year - 1, (quarter_num * Constants.TRIMESTER_MONTH_COUNT) + 1, 1)
                 result.past_value = [past_begin_date, past_end_date]
             else:
                 result.future_value = [begin_date, end_date]
