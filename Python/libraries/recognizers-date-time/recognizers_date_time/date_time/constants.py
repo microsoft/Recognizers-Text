@@ -73,6 +73,8 @@ class Constants:
     suffix_group_name = 'suffix'
     suffix_num_group_name = 'suffix_num'
     desc_group_name = 'desc'
+    left_desc_group_name = 'leftDesc'
+    right_desc_group_name = 'rightDesc'
     second_group_name = 'sec'
     minute_group_name = 'min'
     hour_group_name = 'hour'
