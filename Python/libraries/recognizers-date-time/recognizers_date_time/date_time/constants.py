@@ -78,6 +78,7 @@ class Constants:
     hour_group_name = 'hour'
     day_group_name = 'day'
     week_group_name = 'week'
+    WEEKDAY_GROUP_NAME = 'weekday'
     month_group_name = 'month'
     year_group_name = 'year'
     hour_num_group_name = 'hournum'
@@ -92,6 +93,7 @@ class Constants:
     first_two_year_num = 'firsttwoyearnum'
     last_two_year_num = 'lasttwoyearnum'
     year_chinese = 'yearchs'
+    OTHER = 'other'
     year_relative = 'yearrel'
 
     week_of = 'WeekOf'
@@ -119,6 +121,7 @@ class Constants:
     unit_S = 'S'
     unit_H = 'H'
     unit_T = 'T'
+    UNIT = 'unit'
 
     # Prefix
     early_prefix = 'EarlyPrefix'
@@ -129,8 +132,6 @@ class Constants:
     rel_late = 'RelLate'
     early = 'early'
     late = 'late'
-
-    unit = 'unit'
 
     half = 'half'
 
