@@ -133,11 +133,11 @@ class BaseHolidayParser(DateTimeParser):
     def _match2date(self, match: Match, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
         holiday_str = self.config.sanitize_holiday_token(
-            match.group(Constants.holiday_group_name).lower())
+            match.group(Constants.HOLIDAY_GROUP_NAME).lower())
 
         # get year (if exist)
-        year_str = match.group(Constants.year_group_name)
-        order_str = match.group(Constants.order)
+        year_str = match.group(Constants.YEAR_GROUP_NAME)
+        order_str = match.group(Constants.ORDER)
         has_year = False
 
         if year_str:
@@ -239,17 +239,17 @@ class BaseHolidayParserConfiguration(HolidayParserConfiguration):
 
     def _init_holiday_funcs(self) -> Dict[str, Callable[[int], datetime]]:
         return dict([
-            (Constants.fathers, BaseHolidayParserConfiguration.fathers_day),
-            (Constants.mothers, BaseHolidayParserConfiguration.mothers_day),
-            (Constants.thanks_giving_day, BaseHolidayParserConfiguration.thanksgiving_day),
-            (Constants.thanks_giving, BaseHolidayParserConfiguration.thanksgiving_day),
-            (Constants.black_friday, BaseHolidayParserConfiguration.black_friday),
-            (Constants.martin_luther_king, BaseHolidayParserConfiguration.martin_luther_king_day),
-            (Constants.washington_birthday, BaseHolidayParserConfiguration.washingtons_birthday),
-            (Constants.labour, BaseHolidayParserConfiguration.labour_day),
-            (Constants.canberra, BaseHolidayParserConfiguration.canberra_day),
-            (Constants.columbus, BaseHolidayParserConfiguration.columbus_day),
-            (Constants.memorial, BaseHolidayParserConfiguration.memorial_day)
+            (Constants.FATHERS, BaseHolidayParserConfiguration.fathers_day),
+            (Constants.MOTHERS, BaseHolidayParserConfiguration.mothers_day),
+            (Constants.THANKS_GIVING_DAY, BaseHolidayParserConfiguration.thanksgiving_day),
+            (Constants.THANKS_GIVING, BaseHolidayParserConfiguration.thanksgiving_day),
+            (Constants.BLACK_FRIDAY, BaseHolidayParserConfiguration.black_friday),
+            (Constants.MARTIN_LUTHER_KING, BaseHolidayParserConfiguration.martin_luther_king_day),
+            (Constants.WASHINGTON_BIRTHDAY, BaseHolidayParserConfiguration.washingtons_birthday),
+            (Constants.LABOUR, BaseHolidayParserConfiguration.labour_day),
+            (Constants.CANBERRA, BaseHolidayParserConfiguration.canberra_day),
+            (Constants.COLUMBUS, BaseHolidayParserConfiguration.columbus_day),
+            (Constants.MEMORIAL, BaseHolidayParserConfiguration.memorial_day)
         ])
 
     @staticmethod

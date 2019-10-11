@@ -841,8 +841,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
                                                              end_time.hour, end_time.minute, end_time.second)
                     ]
 
-                    if time_period_resolution_result.comment == Constants.am_pm_group_name:
-                        result.comment = Constants.am_pm_group_name
+                    if time_period_resolution_result.comment == Constants.AM_PM_GROUP_NAME:
+                        result.comment = Constants.AM_PM_GROUP_NAME
 
                     result.success = True
                     result.sub_date_time_entities = [
@@ -865,7 +865,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
         if not match or match.start() != 0:
             return result
 
-        hour_group = RegExpUtility.get_group_list(match, Constants.hour_group_name)
+        hour_group = RegExpUtility.get_group_list(match, Constants.HOUR_GROUP_NAME)
         begin_hour = self.config.numbers.get(hour_group[0])
 
         if not begin_hour:
@@ -893,9 +893,9 @@ class BaseDateTimePeriodParser(DateTimeParser):
 
         has_am = False
         has_pm = False
-        am_str = RegExpUtility.get_group(match, Constants.am_group_name)
-        pm_str = RegExpUtility.get_group(match, Constants.pm_group_name)
-        desc_str = RegExpUtility.get_group(match, Constants.desc_group_name)
+        am_str = RegExpUtility.get_group(match, Constants.AM_GROUP_NAME)
+        pm_str = RegExpUtility.get_group(match, Constants.PM_GROUP_NAME)
+        desc_str = RegExpUtility.get_group(match, Constants.DESC_GROUP_NAME)
 
         if am_str or desc_str.startswith('a'):
             if begin_hour >= 12:
@@ -912,7 +912,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
             has_pm = True
 
         if not has_am and not has_pm and begin_hour <= 12 and end_hour <= 12:
-            result.comment = Constants.am_pm_group_name
+            result.comment = Constants.AM_PM_GROUP_NAME
 
         begin_str = f'{date_str}T{begin_hour:02d}'
         end_str = f'{date_str}T{end_hour:02d}'
@@ -1007,8 +1007,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
             date_str = prs.end.timex_str.split('T')[0]
             result.timex = f'({date_str}{prs.begin.timex_str},{prs.end.timex_str},PT{total_hours}H)'
 
-        if begin.comment and begin.comment.endswith(Constants.am_pm_group_name) and end.comment and end.comment.endswith(Constants.am_pm_group_name):
-            result.comment = Constants.am_pm_group_name
+        if begin.comment and begin.comment.endswith(Constants.AM_PM_GROUP_NAME) and end.comment and end.comment.endswith(Constants.AM_PM_GROUP_NAME):
+            result.comment = Constants.AM_PM_GROUP_NAME
 
         result.future_value = [future_begin, future_end]
         result.past_value = [past_begin, past_end]
@@ -1031,14 +1031,14 @@ class BaseDateTimePeriodParser(DateTimeParser):
         match = regex.search(
             self.config.period_time_of_day_with_date_regex, source)
         if match:
-            time_str = RegExpUtility.get_group(match, Constants.time_of_day_group_name)
-            if RegExpUtility.get_group(match, Constants.early):
+            time_str = RegExpUtility.get_group(match, Constants.TIME_OF_DAY_GROUP_NAME)
+            if RegExpUtility.get_group(match, Constants.EARLY):
                 has_early = True
-                result.comment = Constants.early
+                result.comment = Constants.EARLY
                 result.mod = TimeTypeConstants.EARLY_MOD
-            elif RegExpUtility.get_group(match, Constants.late):
+            elif RegExpUtility.get_group(match, Constants.LATE):
                 has_late = True
-                result.comment = Constants.late
+                result.comment = Constants.LATE
                 result.mod = TimeTypeConstants.LATE_MOD
 
         matched = self.config.get_matched_time_range(time_str)
@@ -1236,7 +1236,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
         if not match:
             return result
 
-        src_unit = RegExpUtility.get_group(match, Constants.unit)
+        src_unit = RegExpUtility.get_group(match, Constants.UNIT)
         unit_str = self.config.unit_map.get(src_unit, None)
 
         if not unit_str:

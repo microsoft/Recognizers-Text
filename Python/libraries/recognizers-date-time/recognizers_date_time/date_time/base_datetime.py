@@ -622,7 +622,7 @@ class BaseDateTimeParser(DateTimeParser):
             hour -= 12
 
         time_str = parse_result2.timex_str
-        if time_str.endswith(Constants.am_pm_group_name):
+        if time_str.endswith(Constants.AM_PM_GROUP_NAME):
             time_str = time_str[:-4]
 
         time_str = f'T{hour:02d}{time_str[3:]}'
@@ -633,7 +633,7 @@ class BaseDateTimeParser(DateTimeParser):
         has_am_pm = regex.search(self.config.pm_time_regex, source) and regex.search(
             self.config.am_time_regex, source)
         if hour <= 12 and not has_am_pm and val.comment:
-            result.comment = Constants.am_pm_group_name
+            result.comment = Constants.AM_PM_GROUP_NAME
 
         result.future_value = datetime(
             future_date.year, future_date.month, future_date.day, hour, minute, second)
@@ -644,7 +644,7 @@ class BaseDateTimeParser(DateTimeParser):
         # change the value of time object
         parse_result2.timex_str = time_str
         if result.comment:
-            parse_result2.value.comment = Constants.am_pm_group_name if result.comment == Constants.am_pm_group_name else ''
+            parse_result2.value.comment = Constants.AM_PM_GROUP_NAME if result.comment == Constants.AM_PM_GROUP_NAME else ''
 
         # add the date and time object in case we want to split them
         result.sub_date_time_entities = [parse_result1, parse_result2]
@@ -679,10 +679,10 @@ class BaseDateTimeParser(DateTimeParser):
                 self.config.simple_time_of_today_before_regex, source), None)
 
         if whole_match and whole_match.group() == source:
-            hour_str = RegExpUtility.get_group(whole_match, Constants.hour_group_name, None)
+            hour_str = RegExpUtility.get_group(whole_match, Constants.HOUR_GROUP_NAME, None)
             if not hour_str:
                 hour_str = RegExpUtility.get_group(
-                    whole_match, Constants.hour_num_group_name).lower()
+                    whole_match, Constants.HOUR_NUM_GROUP_NAME).lower()
                 hour = self.config.numbers.get(hour_str)
             else:
                 hour = int(hour_str)
@@ -725,7 +725,7 @@ class BaseDateTimeParser(DateTimeParser):
         hour = self.config.get_hour(match_str, hour)
 
         # in this situation, luisStr cannot end up with "ampm", because we always have a "morning" or "night"
-        if time_str.endswith(Constants.am_pm_group_name):
+        if time_str.endswith(Constants.AM_PM_GROUP_NAME):
             time_str = time_str[0:-4]
 
         time_str = f'T{hour:02d}{time_str[3:]}'

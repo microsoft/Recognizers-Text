@@ -786,7 +786,7 @@ class BaseMergedParser(DateTimeParser):
                 self._add_resolution_fields_any(
                     result, Constants.RESOLVE_TO_FUTURE_KEY, future)
 
-        if comment == Constants.am_pm_group_name:
+        if comment == Constants.AM_PM_GROUP_NAME:
             if Constants.RESOLVE_KEY in result:
                 self._resolve_ampm(result, Constants.RESOLVE_KEY)
             else:
@@ -903,7 +903,7 @@ class BaseMergedParser(DateTimeParser):
             return
         timex = values_map[Constants.TIMEX_KEY]
         values_map.pop(key_name, None)
-        values_map[key_name + Constants.am_group_name] = resolution
+        values_map[key_name + Constants.AM_GROUP_NAME] = resolution
 
         resolution_pm = {}
         if values_map[Constants.TYPE_KEY] == Constants.SYS_DATETIME_TIME:
@@ -933,4 +933,4 @@ class BaseMergedParser(DateTimeParser):
                 resolution_pm[
                     TimeTypeConstants.END] = f'{split_value[0]} {DateTimeFormatUtil.to_pm(split_value[1])}'
             resolution_pm[Constants.TIMEX_KEY] = DateTimeFormatUtil.all_str_to_pm(timex)
-        values_map[key_name + Constants.pm_group_name] = resolution_pm
+        values_map[key_name + Constants.PM_GROUP_NAME] = resolution_pm
