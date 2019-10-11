@@ -12,7 +12,8 @@ from .constants import Constants, TimeTypeConstants
 from recognizers_number.number.constants import Constants as NumConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, AgoLaterUtil, DateTimeFormatUtil, RegExpUtility, AgoLaterMode, DateTimeOptionsConfiguration, DateTimeOptions
+from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, AgoLaterUtil,\
+    DateTimeFormatUtil, RegExpUtility, AgoLaterMode, DateTimeOptionsConfiguration, DateTimeOptions
 
 
 class DateTimeExtractorConfiguration(DateTimeOptionsConfiguration):
@@ -199,9 +200,12 @@ class BaseDateTimeExtractor(DateTimeExtractor):
             if j >= len(extract_results):
                 break
 
-            if ((extract_results[i].type is Constants.SYS_DATETIME_DATE and extract_results[j].type is Constants.SYS_DATETIME_TIME) or
-                    (extract_results[i].type is Constants.SYS_DATETIME_TIME and extract_results[j].type is Constants.SYS_DATETIME_DATE)or
-                    (extract_results[i].type is Constants.SYS_DATETIME_DATE and extract_results[j] is NumConstants.SYS_NUM_INTEGER)):
+            if ((extract_results[i].type is Constants.SYS_DATETIME_DATE and extract_results[j].type is
+                 Constants.SYS_DATETIME_TIME) or
+                    (extract_results[i].type is Constants.SYS_DATETIME_TIME and extract_results[j].type is
+                     Constants.SYS_DATETIME_DATE)or
+                    (extract_results[i].type is Constants.SYS_DATETIME_DATE and extract_results[j] is
+                     NumConstants.SYS_NUM_INTEGER)):
                 middle_begin = extract_results[i].start + (extract_results[i].length or 0)
                 middle_end = extract_results[j].start or 0
 
@@ -265,7 +269,7 @@ class BaseDateTimeExtractor(DateTimeExtractor):
 
             check_year = self.config.date_point_extractor.get_year_from_text(self.config.year_regex.search(text))
             year = self.config.date_point_extractor.get_year_from_text(match_year)
-            if Constants.min_year_num <= year <= Constants.max_year_num and check_year == year:
+            if Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM and check_year == year:
                 end_index += (match_year.end() - match_year.start())
 
         return end_index, start_index
@@ -593,7 +597,8 @@ class BaseDateTimeParser(DateTimeParser):
         # in this case "5 in the afternoon" will be extract as a Time entity
         correct_time_idx = 0
 
-        while correct_time_idx < len(extract_result2_list) and extract_result2_list[correct_time_idx].overlap(extract_result1):
+        while correct_time_idx < len(extract_result2_list) and\
+                extract_result2_list[correct_time_idx].overlap(extract_result1):
             correct_time_idx += 1
 
         if correct_time_idx >= len(extract_result2_list):
@@ -622,7 +627,7 @@ class BaseDateTimeParser(DateTimeParser):
             hour -= 12
 
         time_str = parse_result2.timex_str
-        if time_str.endswith(Constants.am_pm_group_name):
+        if time_str.endswith(Constants.AM_PM_GROUP_NAME):
             time_str = time_str[:-4]
 
         time_str = f'T{hour:02d}{time_str[3:]}'
@@ -633,7 +638,7 @@ class BaseDateTimeParser(DateTimeParser):
         has_am_pm = regex.search(self.config.pm_time_regex, source) and regex.search(
             self.config.am_time_regex, source)
         if hour <= 12 and not has_am_pm and val.comment:
-            result.comment = Constants.am_pm_group_name
+            result.comment = Constants.AM_PM_GROUP_NAME
 
         result.future_value = datetime(
             future_date.year, future_date.month, future_date.day, hour, minute, second)
@@ -644,7 +649,7 @@ class BaseDateTimeParser(DateTimeParser):
         # change the value of time object
         parse_result2.timex_str = time_str
         if result.comment:
-            parse_result2.value.comment = Constants.am_pm_group_name if result.comment == Constants.am_pm_group_name else ''
+            parse_result2.value.comment = Constants.AM_PM_GROUP_NAME if result.comment == Constants.AM_PM_GROUP_NAME else ''
 
         # add the date and time object in case we want to split them
         result.sub_date_time_entities = [parse_result1, parse_result2]
@@ -679,10 +684,10 @@ class BaseDateTimeParser(DateTimeParser):
                 self.config.simple_time_of_today_before_regex, source), None)
 
         if whole_match and whole_match.group() == source:
-            hour_str = RegExpUtility.get_group(whole_match, Constants.hour_group_name, None)
+            hour_str = RegExpUtility.get_group(whole_match, Constants.HOUR_GROUP_NAME, None)
             if not hour_str:
                 hour_str = RegExpUtility.get_group(
-                    whole_match, Constants.hour_num_group_name).lower()
+                    whole_match, Constants.HOUR_NUM_GROUP_NAME).lower()
                 hour = self.config.numbers.get(hour_str)
             else:
                 hour = int(hour_str)
@@ -725,7 +730,7 @@ class BaseDateTimeParser(DateTimeParser):
         hour = self.config.get_hour(match_str, hour)
 
         # in this situation, luisStr cannot end up with "ampm", because we always have a "morning" or "night"
-        if time_str.endswith(Constants.am_pm_group_name):
+        if time_str.endswith(Constants.AM_PM_GROUP_NAME):
             time_str = time_str[0:-4]
 
         time_str = f'T{hour:02d}{time_str[3:]}'

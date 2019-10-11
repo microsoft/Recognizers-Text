@@ -234,10 +234,10 @@ class BaseMergedExtractor(DateTimeExtractor):
 
         origin_text = source
 
-        super_fluous_word_matches = None
+        superfluous_word_matches = None
 
         if (self.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
-            source, super_fluous_word_matches = MatchingUtil.pre_process_text_remove_superfluous_words(
+            source, superfluous_word_matches = MatchingUtil.pre_process_text_remove_superfluous_words(
                 source,
                 self.config.superfluous_word_matcher
             )
@@ -287,7 +287,7 @@ class BaseMergedExtractor(DateTimeExtractor):
         result = sorted(result, key=lambda x: x.start)
 
         if (self.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
-            result = MatchingUtil.post_process_recover_superfluous_words(result, super_fluous_word_matches, origin_text)
+            result = MatchingUtil.post_process_recover_superfluous_words(result, superfluous_word_matches, origin_text)
 
         return result
 
@@ -372,7 +372,7 @@ class BaseMergedExtractor(DateTimeExtractor):
                 match = regex.search(
                     self.config.number_ending_pattern, after_str)
                 if match:
-                    new_time = RegExpUtility.get_group(match, 'newTime')
+                    new_time = RegExpUtility.get_group(match, Constants.NEW_TIME)
                     num_res = self.config.integer_extractor.extract(new_time)
                     if not num_res:
                         continue
@@ -437,7 +437,8 @@ class BaseMergedExtractor(DateTimeExtractor):
         if not success:
             success = self.try_merge_modifier_token(extract_result, self.config.after_regex, source)
         if not success:
-            # SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
+            # SinceRegex in English contains the term "from" which is
+            # potentially ambiguous with ranges in the form "from X to Y"
             success = self.try_merge_modifier_token(extract_result, self.config.since_regex, source, True)
         return extract_result
 
@@ -735,7 +736,8 @@ class BaseMergedParser(DateTimeParser):
 
         return results
 
-    def _date_time_resolution(self, slot: DateTimeParseResult, has_before, has_after, has_since) -> List[Dict[str, str]]:
+    def _date_time_resolution(self, slot: DateTimeParseResult, has_before, has_after, has_since) ->\
+            List[Dict[str, str]]:
         if not slot:
             return None
 
@@ -756,12 +758,12 @@ class BaseMergedParser(DateTimeParser):
         mod = value.mod
         comment = value.comment
 
-        self._add_resolution_fields_any(result, Constants.timex_key, timex)
-        self._add_resolution_fields_any(result, Constants.comment_key, comment)
-        self._add_resolution_fields_any(result, Constants.mod_key, mod)
-        self._add_resolution_fields_any(result, Constants.type_key, output_type)
+        self._add_resolution_fields_any(result, Constants.TIMEX_KEY, timex)
+        self._add_resolution_fields_any(result, Constants.COMMENT_KEY, comment)
+        self._add_resolution_fields_any(result, Constants.MOD_KEY, mod)
+        self._add_resolution_fields_any(result, Constants.TYPE_KEY, output_type)
         self._add_resolution_fields_any(
-            result, Constants.is_lunar_key, str(is_lunar).lower() if is_lunar else '')
+            result, Constants.IS_LUNAR_KEY, str(is_lunar).lower() if is_lunar else '')
 
         future_resolution = value.future_resolution
         past_resolution = value.past_resolution
@@ -777,32 +779,33 @@ class BaseMergedParser(DateTimeParser):
         if len(intersect_values) == len(past_values) and len(intersect_values) == len(future_values):
             if past_values:
                 self._add_resolution_fields_any(
-                    result, Constants.resolve_key, past)
+                    result, Constants.RESOLVE_KEY, past)
         else:
             if past_values:
                 self._add_resolution_fields_any(
-                    result, Constants.resolve_to_past_key, past)
+                    result, Constants.RESOLVE_TO_PAST_KEY, past)
             if future_resolution:
                 self._add_resolution_fields_any(
-                    result, Constants.resolve_to_future_key, future)
+                    result, Constants.RESOLVE_TO_FUTURE_KEY, future)
 
-        if comment == Constants.am_pm_group_name:
-            if Constants.resolve_key in result:
-                self._resolve_ampm(result, Constants.resolve_key)
+        if comment == Constants.AM_PM_GROUP_NAME:
+            if Constants.RESOLVE_KEY in result:
+                self._resolve_ampm(result, Constants.RESOLVE_KEY)
             else:
-                self._resolve_ampm(result, Constants.resolve_to_past_key)
-                self._resolve_ampm(result, Constants.resolve_to_future_key)
+                self._resolve_ampm(result, Constants.RESOLVE_TO_PAST_KEY)
+                self._resolve_ampm(result, Constants.RESOLVE_TO_FUTURE_KEY)
 
         for value in result.values():
             if isinstance(value, dict):
                 new_values = {}
                 self._add_resolution_fields(
-                    new_values, Constants.timex_key, timex)
-                self._add_resolution_fields(new_values, Constants.mod_key, mod)
+                    new_values, Constants.TIMEX_KEY, timex)
+                self._add_resolution_fields(new_values, Constants.MOD_KEY, mod)
 
-                self._add_resolution_fields(new_values, Constants.type_key, output_type)
-                self._add_resolution_fields(new_values, Constants.is_lunar_key, str(is_lunar).lower() if is_lunar else '')
-                self._add_resolution_fields(new_values, Constants.source_type, source_entity)
+                self._add_resolution_fields(new_values, Constants.TYPE_KEY, output_type)
+                self._add_resolution_fields(new_values, Constants.IS_LUNAR_KEY,
+                                            str(is_lunar).lower() if is_lunar else '')
+                self._add_resolution_fields(new_values, Constants.SOURCE_TYPE, source_entity)
 
                 for inner_key in value:
                     new_values[inner_key] = value[inner_key]
@@ -859,7 +862,8 @@ class BaseMergedParser(DateTimeParser):
 
         return result
 
-    def __add_single_date_time_to_resolution(self, resolutions: Dict[str, str], dtype: str, mod: str, result: Dict[str, str]):
+    def __add_single_date_time_to_resolution(self, resolutions: Dict[str, str], dtype: str,
+                                             mod: str, result: Dict[str, str]):
         key = TimeTypeConstants.VALUE
         value = resolutions[dtype]
         if not value or value.startswith(self.__date_min_value):
@@ -875,7 +879,8 @@ class BaseMergedParser(DateTimeParser):
 
         result[key] = value
 
-    def __add_period_to_resolution(self, resolutions: Dict[str, str], start_type: str, end_type: str, mod: str, result: Dict[str, str]):
+    def __add_period_to_resolution(self, resolutions: Dict[str, str], start_type: str,
+                                   end_type: str, mod: str, result: Dict[str, str]):
         start = resolutions.get(start_type, None)
         end = resolutions.get(end_type, None)
         if mod:
@@ -899,31 +904,31 @@ class BaseMergedParser(DateTimeParser):
         if key_name not in values_map:
             return
         resolution = values_map[key_name]
-        if Constants.timex_key not in values_map:
+        if Constants.TIMEX_KEY not in values_map:
             return
-        timex = values_map[Constants.timex_key]
+        timex = values_map[Constants.TIMEX_KEY]
         values_map.pop(key_name, None)
-        values_map[key_name + Constants.am_group_name] = resolution
+        values_map[key_name + Constants.AM_GROUP_NAME] = resolution
 
         resolution_pm = {}
-        if values_map[Constants.type_key] == Constants.SYS_DATETIME_TIME:
+        if values_map[Constants.TYPE_KEY] == Constants.SYS_DATETIME_TIME:
             resolution_pm[TimeTypeConstants.VALUE] = DateTimeFormatUtil.to_pm(
                 resolution[TimeTypeConstants.VALUE])
-            resolution_pm[Constants.timex_key] = DateTimeFormatUtil.to_pm(timex)
-        elif values_map[Constants.type_key] == Constants.SYS_DATETIME_DATETIME:
+            resolution_pm[Constants.TIMEX_KEY] = DateTimeFormatUtil.to_pm(timex)
+        elif values_map[Constants.TYPE_KEY] == Constants.SYS_DATETIME_DATETIME:
             split_value = resolution[TimeTypeConstants.VALUE].split(' ')
             resolution_pm[
                 TimeTypeConstants.VALUE] = f'{split_value[0]} {DateTimeFormatUtil.to_pm(split_value[1])}'
-            resolution_pm[Constants.timex_key] = DateTimeFormatUtil.all_str_to_pm(timex)
-        elif values_map[Constants.type_key] == Constants.SYS_DATETIME_TIMEPERIOD:
+            resolution_pm[Constants.TIMEX_KEY] = DateTimeFormatUtil.all_str_to_pm(timex)
+        elif values_map[Constants.TYPE_KEY] == Constants.SYS_DATETIME_TIMEPERIOD:
             if TimeTypeConstants.START in resolution:
                 resolution_pm[TimeTypeConstants.START] = DateTimeFormatUtil.to_pm(
                     resolution[TimeTypeConstants.START])
             if TimeTypeConstants.END in resolution:
                 resolution_pm[TimeTypeConstants.END] = DateTimeFormatUtil.to_pm(
                     resolution[TimeTypeConstants.END])
-            resolution_pm[Constants.timex_key] = DateTimeFormatUtil.all_str_to_pm(timex)
-        elif values_map[Constants.type_key] == Constants.SYS_DATETIME_DATETIMEPERIOD:
+            resolution_pm[Constants.TIMEX_KEY] = DateTimeFormatUtil.all_str_to_pm(timex)
+        elif values_map[Constants.TYPE_KEY] == Constants.SYS_DATETIME_DATETIMEPERIOD:
             if TimeTypeConstants.START in resolution:
                 split_value = resolution[TimeTypeConstants.START].split(' ')
                 resolution_pm[
@@ -932,5 +937,5 @@ class BaseMergedParser(DateTimeParser):
                 split_value = resolution[TimeTypeConstants.END].split(' ')
                 resolution_pm[
                     TimeTypeConstants.END] = f'{split_value[0]} {DateTimeFormatUtil.to_pm(split_value[1])}'
-            resolution_pm[Constants.timex_key] = DateTimeFormatUtil.all_str_to_pm(timex)
-        values_map[key_name + Constants.pm_group_name] = resolution_pm
+            resolution_pm[Constants.TIMEX_KEY] = DateTimeFormatUtil.all_str_to_pm(timex)
+        values_map[key_name + Constants.PM_GROUP_NAME] = resolution_pm

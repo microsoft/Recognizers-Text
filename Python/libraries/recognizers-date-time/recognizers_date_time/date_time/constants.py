@@ -18,138 +18,145 @@ class Constants:
     SYS_DATETIME_DATETIMEPOINT: str = 'datetimepoint'
 
     # Multiple Duration Types
-    multiple_duration_prefix = 'multipleDuration'
-    multiple_duration_date = multiple_duration_prefix + 'Date'
-    multiple_duration_time = multiple_duration_prefix + 'Time'
-    multiple_duration_date_time = multiple_duration_prefix + 'DateTime'
+    MULTIPLE_DURATION_PREFIX = 'multipleDuration'
+    MULTIPLE_DURATION_DATE = MULTIPLE_DURATION_PREFIX + 'Date'
+    MULTIPLE_DURATION_TIME = MULTIPLE_DURATION_PREFIX + 'Time'
+    MULTIPLE_DURATION_DATE_TIME = MULTIPLE_DURATION_PREFIX + 'DateTime'
 
     # keys
-    timex_key: str = 'timex'
-    comment_key: str = 'Comment'
-    mod_key: str = 'Mod'
-    source_type: str = 'sourceEntity'
-    type_key: str = 'type'
-    is_lunar_key: str = 'isLunar'
-    resolve_key: str = 'resolve'
-    resolve_to_past_key: str = 'resolveToPast'
-    resolve_to_future_key: str = 'resolveToFuture'
+    TIMEX_KEY: str = 'timex'
+    COMMENT_KEY: str = 'Comment'
+    MOD_KEY: str = 'Mod'
+    SOURCE_TYPE: str = 'sourceEntity'
+    TYPE_KEY: str = 'type'
+    IS_LUNAR_KEY: str = 'isLunar'
+    RESOLVE_KEY: str = 'resolve'
+    RESOLVE_TO_PAST_KEY: str = 'resolveToPast'
+    RESOLVE_TO_FUTURE_KEY: str = 'resolveToFuture'
 
-    semester_month_count: int = 6
-    trimester_month_count: int = 3
-    quarter_count: int = 4
-    four_digits_year_length: int = 4
-    min_month: int = 1
-    max_month: int = 12
-    invalid_year = -2147483648
+    SEMESTER_MONTH_COUNT: int = 6
+    TRIMESTER_MONTH_COUNT: int = 3
+    QUARTER_COUNT: int = 4
+    FOUR_DIGITS_YEAR_LENGTH: int = 4
+    MIN_MONTH: int = 1
+    MAX_MONTH: int = 12
+    INVALID_YEAR = -2147483648
 
-    min_year_num: int = int(BaseDateTime.MinYearNum)
-    max_year_num: int = int(BaseDateTime.MaxYearNum)
+    MIN_YEAR_NUM: int = int(BaseDateTime.MinYearNum)
+    MAX_YEAR_NUM: int = int(BaseDateTime.MaxYearNum)
 
-    default_language_fallback_mdy: str = 'MDY'
-    default_language_fallback_dmy: str = 'DMY'
+    DEFAULT_LANGUAGE_FALLBACK_MDY: str = 'MDY'
+    DEFAULT_LANGUAGE_FALLBACK_DMY: str = 'DMY'
 
-    max_two_digit_year_future_num: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
-    min_two_digit_year_past_num: int = int(BaseDateTime.MinTwoDigitYearPastNum)
+    MAX_TWO_DIGIT_YEAR_FUTURE_NUM: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
+    MIN_TWO_DIGIT_YEAR_PAST_NUM: int = int(BaseDateTime.MinTwoDigitYearPastNum)
 
-    early_morning: str = "TDA"
-    morning: str = "TMO"
-    mid_day: str = "TMI"
-    afternoon: str = "TAF"
-    evening: str = "TEV"
-    daytime: str = "TDT"
-    night: str = "TNI"
-    business_hour = "TBH"
+    EARLY_MORNING: str = "TDA"
+    MORNING: str = "TMO"
+    MID_DAY: str = "TMI"
+    AFTERNOON: str = "TAF"
+    EVENING: str = "TEV"
+    DAYTIME: str = "TDT"
+    NIGHT: str = "TNI"
+    BUSINESS_HOUR = "TBH"
 
     # Groups' names for named groups in regexes
-    next_group_name = "next"
-
-    next_group_name = 'next'
-    am_group_name = 'am'
-    pm_group_name = 'pm'
-    am_pm_group_name = 'ampm'
-    implicit_am_group_name = 'iam'
-    implicit_pm_group_name = 'ipm'
-    prefix_group_name = 'prefix'
-    suffix_group_name = 'suffix'
-    suffix_num_group_name = 'suffix_num'
-    desc_group_name = 'desc'
-    second_group_name = 'sec'
-    minute_group_name = 'min'
-    minute_num_group_name = 'minnum'
-    hour_group_name = 'hour'
-    day_group_name = 'day'
-    week_group_name = 'week'
+    NEXT_GROUP_NAME = "next"
+    AM_GROUP_NAME = 'am'
+    PM_GROUP_NAME = 'pm'
+    AM_PM_GROUP_NAME = 'ampm'
+    IMPLICIT_AM_GROUP_NAME = 'iam'
+    IMPLICIT_PM_GROUP_NAME = 'ipm'
+    PREFIX_GROUP_NAME = 'prefix'
+    SUFFIX_GROUP_NAME = 'suffix'
+    SUFFIX_NUM_GROUP_NAME = 'suffix_num'
+    DESC_GROUP_NAME = 'desc'
+    LEFT_DESC_GROUP_NAME = 'leftDesc'
+    RIGHT_DESC_GROUP_NAME = 'rightDesc'
+    SECOND_GROUP_NAME = 'sec'
+    MINUTE_GROUP_NAME = 'min'
+    HOUR_GROUP_NAME = 'hour'
+    DAY_GROUP_NAME = 'day'
+    WEEK_GROUP_NAME = 'week'
     WEEKDAY_GROUP_NAME = 'weekday'
-    month_group_name = 'month'
-    year_group_name = 'year'
-    hour_num_group_name = 'hournum'
-    mid_afternoon = 'midafternoon'
-    midday = 'midday'
+    MONTH_GROUP_NAME = 'month'
+    YEAR_GROUP_NAME = 'year'
+    HOUR_NUM_GROUP_NAME = 'hournum'
+    TENS_GROUP_NAME = 'tens'
 
-    time_of_day_group_name = 'timeOfDay'
-    business_day_group_name = 'business'
-    left_am_pm_group_name = 'leftDesc'
-    right_am_pm_group_name = 'rightDesc'
-    holiday_group_name = 'holiday'
+    TIME_OF_DAY_GROUP_NAME = 'timeOfDay'
+    BUSINESS_DAY_GROUP_NAME = 'business'
+    LEFT_AM_PM_GROUP_NAME = 'leftDesc'
+    RIGHT_AM_PM_GROUP_NAME = 'rightDesc'
+    HOLIDAY_GROUP_NAME = 'holiday'
 
-    rel_month = 'relmonth'
-    first_two_year_num = 'firsttwoyearnum'
-    last_two_year_num = 'lasttwoyearnum'
-    year_chinese = 'yearchs'
+    REL_MONTH = 'relmonth'
+    FIRST_TWO_YEAR_NUM = 'firsttwoyearnum'
+    LAST_TWO_YEAR_NUM = 'lasttwoyearnum'
+    YEAR_CHINESE = 'yearchs'
     OTHER = 'other'
-    year_relative = 'yearrel'
+    YEAR_RELATIVE = 'yearrel'
+    DAY_OF_MONTH = 'DayOfMonth'
 
-    week_of = 'WeekOf'
-    month_of = 'MonthOf'
+    NEW_TIME = 'newTime'
+    ENGLISH_TIME = 'engtime'
 
-    order = 'order'
-    order_quarter = 'orderQuarter'
+    WEEK_OF = 'WeekOf'
+    MONTH_OF = 'MonthOf'
 
-    num = 'num'
-    number = 'number'
-    num = 'num'
+    ORDER = 'order'
+    ORDER_QUARTER = 'orderQuarter'
 
-    cardinal = 'cardinal'
+    NUM = 'num'
+    NUMBER = 'number'
+    MIN_NUM = 'minnum'
 
-    seas = 'seas'
-    season = 'season'
-    rel_month = 'relmonth'
+    MID = 'mid'
+    MIDDAY = 'midday'
+    MID_AFTERNOON = 'midafternoon'
+    MID_MORNING = 'midmorning'
+    MID_NIGHT = 'midnight'
 
-    unit = 'unit'
-    unit_Y = 'Y'
-    unit_D = 'D'
-    unit_M = 'M'
-    unit_W = 'W'
-    unit_MON = 'MON'
-    unit_S = 'S'
-    unit_H = 'H'
-    unit_T = 'T'
+    CARDINAL = 'cardinal'
+
+    SEAS = 'seas'
+    SEASON = 'season'
+
     UNIT = 'unit'
+    UNIT_Y = 'Y'
+    UNIT_D = 'D'
+    UNIT_M = 'M'
+    UNIT_W = 'W'
+    UNIT_MON = 'MON'
+    UNIT_S = 'S'
+    UNIT_H = 'H'
+    UNIT_T = 'T'
+    UNIT_P = 'P'
 
     # Prefix
-    early_prefix = 'EarlyPrefix'
-    late_prefix = 'LatePrefix'
-    mid_prefix = 'MidPrefix'
+    EARLY_PREFIX = 'EarlyPrefix'
+    LATE_PREFIX = 'LatePrefix'
+    MID_PREFIX = 'MidPrefix'
 
-    rel_early = 'RelEarly'
-    rel_late = 'RelLate'
-    early = 'early'
-    late = 'late'
+    REL_EARLY = 'RelEarly'
+    REL_LATE = 'RelLate'
+    EARLY = 'early'
+    LATE = 'late'
 
-    half = 'half'
+    HALF = 'half'
 
     # Holidays
-    fathers = 'fathers'
-    mothers = 'mothers'
-    thanks_giving_day = 'thanksgivingday'
-    thanks_giving = 'thanksgiving'
-    black_friday = 'blackfriday'
-    martin_luther_king = 'martinlutherking'
-    washington_birthday = 'washingtonsbirthday'
-    labour = 'labour'
-    canberra = 'canberra'
-    columbus = 'columbus'
-    memorial = 'memorial'
+    FATHERS = 'fathers'
+    MOTHERS = 'mothers'
+    THANKS_GIVING_DAY = 'thanksgivingday'
+    THANKS_GIVING = 'thanksgiving'
+    BLACK_FRIDAY = 'blackfriday'
+    MARTIN_LUTHER_KING = 'martinlutherking'
+    WASHINGTON_BIRTHDAY = 'washingtonsbirthday'
+    LABOUR = 'labour'
+    CANBERRA = 'canberra'
+    COLUMBUS = 'columbus'
+    MEMORIAL = 'memorial'
 
 
 class TimeTypeConstants:
