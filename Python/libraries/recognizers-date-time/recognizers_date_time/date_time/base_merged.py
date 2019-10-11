@@ -200,8 +200,8 @@ class BaseMergedExtractor(DateTimeExtractor):
 
         return MatchedIndex(False, -1)
 
-    def try_merge_modifier_token(self, er: ExtractResult, token_regex: Pattern, text: str):
-        start = er.start if er.start else 0
+    def try_merge_modifier_token(self, extract_result: ExtractResult, token_regex: Pattern, text: str):
+        start = extract_result.start if extract_result.start else 0
         before_str = text[0:start]
 
         if self.has_token_index(before_str.rstrip(), token_regex).matched:
@@ -209,11 +209,11 @@ class BaseMergedExtractor(DateTimeExtractor):
 
             mod_length = len(before_str) - token_index
 
-            er.length += mod_length
-            er.start -= mod_length
-            start = er.start if er.start else 0
-            length = er.length if er.length else 0
-            er.text = text[start: start + length]
+            extract_result.length += mod_length
+            extract_result.start -= mod_length
+            start = extract_result.start if extract_result.start else 0
+            length = extract_result.length if extract_result.length else 0
+            extract_result.text = text[start: start + length]
             return True
 
         return False
@@ -234,10 +234,10 @@ class BaseMergedExtractor(DateTimeExtractor):
 
         origin_text = source
 
-        super_fluous_word_matches = None
+        superfluous_word_matches = None
 
         if (self.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
-            source, super_fluous_word_matches = MatchingUtil.pre_process_text_remove_superfluous_words(
+            source, superfluous_word_matches = MatchingUtil.pre_process_text_remove_superfluous_words(
                 source,
                 self.config.superfluous_word_matcher
             )
@@ -287,11 +287,11 @@ class BaseMergedExtractor(DateTimeExtractor):
         result = sorted(result, key=lambda x: x.start)
 
         if (self.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
-            result = MatchingUtil.post_process_recover_superfluous_words(result, super_fluous_word_matches, origin_text)
+            result = MatchingUtil.post_process_recover_superfluous_words(result, superfluous_word_matches, origin_text)
 
         return result
 
-    def add_to(self, destination: List[ExtractResult], source: List[ExtractResult], text: str) -> List[ExtractResult]:
+    def add_to(self, destinations: List[ExtractResult], source: List[ExtractResult], text: str) -> List[ExtractResult]:
         for value in source:
             if self.options & DateTimeOptions.SKIP_FROM_TO_MERGE and self.should_skip_from_merge(value):
                 continue
@@ -299,10 +299,10 @@ class BaseMergedExtractor(DateTimeExtractor):
             overlap_indexes: List[int] = list()
             first_index = -1
 
-            for index, dest in enumerate(destination):
-                if dest.overlap(value):
+            for index, destination in enumerate(destinations):
+                if destination.overlap(value):
                     is_found = True
-                    if dest.cover(value):
+                    if destination.cover(value):
                         if first_index == -1:
                             first_index = index
                         overlap_indexes.append(index)
@@ -310,40 +310,40 @@ class BaseMergedExtractor(DateTimeExtractor):
                         continue
 
             if not is_found:
-                destination.append(value)
+                destinations.append(value)
             elif overlap_indexes:
                 temp_dst: List[ExtractResult] = list()
 
-                for index, dest in enumerate(destination):
+                for index, destination in enumerate(destinations):
                     if index not in overlap_indexes:
-                        temp_dst.append(dest)
+                        temp_dst.append(destination)
 
                 # insert at the first overlap occurence to keep the order
                 temp_dst.insert(first_index, value)
-                destination = temp_dst
-        return destination
+                destinations = temp_dst
+        return destinations
 
     def should_skip_from_merge(self, source: ExtractResult) -> bool:
         return regex.search(self.config.from_to_regex, source.text)
 
-    def is_fail_fast_case(self, input: str):
-        return self.config.fail_fast_regex is not None and not self.config.fail_fast_regex.finditer(input)
+    def is_fail_fast_case(self, text: str):
+        return self.config.fail_fast_regex is not None and not self.config.fail_fast_regex.finditer(text)
 
-    def filter_unespecific_date_period(self, ers: List[ExtractResult]) -> List[ExtractResult]:
-        for e in ers:
-            if self.config.unspecified_date_period_regex.search(e.text) is not None:
-                ers.remove(e)
+    def filter_unespecific_date_period(self, extract_results: List[ExtractResult]) -> List[ExtractResult]:
+        for extract_result in extract_results:
+            if self.config.unspecified_date_period_regex.search(extract_result.text) is not None:
+                extract_results.remove(extract_result)
 
-        return ers
+        return extract_results
 
-    def _filter_ambiguity(self, ers: List[ExtractResult], text: str, ) -> List[ExtractResult]:
+    def _filter_ambiguity(self, extract_results: List[ExtractResult], text: str, ) -> List[ExtractResult]:
 
         if self.config.ambiguity_filters_dict is not None:
             for regex_var in self.config.ambiguity_filters_dict:
-                regexvar_value = self.config.ambiguity_filters_dict[regex_var]
+                regex_var_value = self.config.ambiguity_filters_dict[regex_var]
 
                 try:
-                    reg_len = list(filter(lambda x: x.group(), regex.finditer(regexvar_value, text)))
+                    reg_len = list(filter(lambda x: x.group(), regex.finditer(regex_var_value, text)))
 
                     reg_length = len(reg_len)
                     if reg_length > 0:
@@ -351,16 +351,16 @@ class BaseMergedExtractor(DateTimeExtractor):
                         matches = reg_len
                         new_ers = list(filter(lambda x: list(
                             filter(lambda m: m.start() < x.start + x.length and m.start() +
-                                   len(m.group()) > x.start, matches)), ers))
+                                   len(m.group()) > x.start, matches)), extract_results))
                         if len(new_ers) > 0:
-                            for item in ers:
+                            for item in extract_results:
                                 for i in new_ers:
                                     if item is i:
-                                        ers.remove(item)
+                                        extract_results.remove(item)
                 except Exception:
                     pass
 
-        return ers
+        return extract_results
 
     def number_ending_regex_match(self, source: str, extract_results: List[ExtractResult]) -> List[ExtractResult]:
         tokens: List[Token] = list()
@@ -372,7 +372,7 @@ class BaseMergedExtractor(DateTimeExtractor):
                 match = regex.search(
                     self.config.number_ending_pattern, after_str)
                 if match:
-                    new_time = RegExpUtility.get_group(match, 'newTime')
+                    new_time = RegExpUtility.get_group(match, Constants.NEW_TIME)
                     num_res = self.config.integer_extractor.extract(new_time)
                     if not num_res:
                         continue
@@ -437,15 +437,18 @@ class BaseMergedExtractor(DateTimeExtractor):
         if not success:
             success = self.try_merge_modifier_token(extract_result, self.config.after_regex, source)
         if not success:
-            # SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
+            # SinceRegex in English contains the term "from" which is
+            # potentially ambiguous with ranges in the form "from X to Y"
             success = self.try_merge_modifier_token(extract_result, self.config.since_regex, source, True)
         return extract_result
 
-    def try_merge_modifier_token(self, extract_result: ExtractResult, pattern: Pattern, source: str, potential_ambiguity: bool = False) -> bool:
+    def try_merge_modifier_token(self, extract_result: ExtractResult, pattern: Pattern, source: str,
+                                 potential_ambiguity: bool = False) -> bool:
         before_str = source[0:extract_result.start]
 
         # Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
-        if potential_ambiguity and self.config.ambiguous_range_modifier_prefix and regex.search(self.config.ambiguous_range_modifier_prefix, before_str):
+        if potential_ambiguity and self.config.ambiguous_range_modifier_prefix and \
+                regex.search(self.config.ambiguous_range_modifier_prefix, before_str):
             matches = list(regex.finditer(self.config.potential_ambiguous_range_regex, source))
             if matches and len(matches):
                 return self._filter_item(extract_result, matches)
@@ -733,7 +736,8 @@ class BaseMergedParser(DateTimeParser):
 
         return results
 
-    def _date_time_resolution(self, slot: DateTimeParseResult, has_before, has_after, has_since) -> List[Dict[str, str]]:
+    def _date_time_resolution(self, slot: DateTimeParseResult, has_before, has_after, has_since) ->\
+            List[Dict[str, str]]:
         if not slot:
             return None
 
@@ -754,12 +758,12 @@ class BaseMergedParser(DateTimeParser):
         mod = value.mod
         comment = value.comment
 
-        self._add_resolution_fields_any(result, Constants.timex_key, timex)
-        self._add_resolution_fields_any(result, Constants.comment_key, comment)
-        self._add_resolution_fields_any(result, Constants.mod_key, mod)
-        self._add_resolution_fields_any(result, Constants.type_key, output_type)
+        self._add_resolution_fields_any(result, Constants.TIMEX_KEY, timex)
+        self._add_resolution_fields_any(result, Constants.COMMENT_KEY, comment)
+        self._add_resolution_fields_any(result, Constants.MOD_KEY, mod)
+        self._add_resolution_fields_any(result, Constants.TYPE_KEY, output_type)
         self._add_resolution_fields_any(
-            result, Constants.is_lunar_key, str(is_lunar).lower() if is_lunar else '')
+            result, Constants.IS_LUNAR_KEY, str(is_lunar).lower() if is_lunar else '')
 
         future_resolution = value.future_resolution
         past_resolution = value.past_resolution
@@ -775,32 +779,33 @@ class BaseMergedParser(DateTimeParser):
         if len(intersect_values) == len(past_values) and len(intersect_values) == len(future_values):
             if past_values:
                 self._add_resolution_fields_any(
-                    result, Constants.resolve_key, past)
+                    result, Constants.RESOLVE_KEY, past)
         else:
             if past_values:
                 self._add_resolution_fields_any(
-                    result, Constants.resolve_to_past_key, past)
+                    result, Constants.RESOLVE_TO_PAST_KEY, past)
             if future_resolution:
                 self._add_resolution_fields_any(
-                    result, Constants.resolve_to_future_key, future)
+                    result, Constants.RESOLVE_TO_FUTURE_KEY, future)
 
-        if comment == 'ampm':
-            if Constants.resolve_key in result:
-                self._resolve_ampm(result, Constants.resolve_key)
+        if comment == Constants.AM_PM_GROUP_NAME:
+            if Constants.RESOLVE_KEY in result:
+                self._resolve_ampm(result, Constants.RESOLVE_KEY)
             else:
-                self._resolve_ampm(result, Constants.resolve_to_past_key)
-                self._resolve_ampm(result, Constants.resolve_to_future_key)
+                self._resolve_ampm(result, Constants.RESOLVE_TO_PAST_KEY)
+                self._resolve_ampm(result, Constants.RESOLVE_TO_FUTURE_KEY)
 
         for value in result.values():
             if isinstance(value, dict):
                 new_values = {}
                 self._add_resolution_fields(
-                    new_values, Constants.timex_key, timex)
-                self._add_resolution_fields(new_values, Constants.mod_key, mod)
+                    new_values, Constants.TIMEX_KEY, timex)
+                self._add_resolution_fields(new_values, Constants.MOD_KEY, mod)
 
-                self._add_resolution_fields(new_values, Constants.type_key, output_type)
-                self._add_resolution_fields(new_values, Constants.is_lunar_key, str(is_lunar).lower() if is_lunar else '')
-                self._add_resolution_fields(new_values, Constants.source_type, source_entity)
+                self._add_resolution_fields(new_values, Constants.TYPE_KEY, output_type)
+                self._add_resolution_fields(new_values, Constants.IS_LUNAR_KEY,
+                                            str(is_lunar).lower() if is_lunar else '')
+                self._add_resolution_fields(new_values, Constants.SOURCE_TYPE, source_entity)
 
                 for inner_key in value:
                     new_values[inner_key] = value[inner_key]
@@ -857,7 +862,8 @@ class BaseMergedParser(DateTimeParser):
 
         return result
 
-    def __add_single_date_time_to_resolution(self, resolutions: Dict[str, str], dtype: str, mod: str, result: Dict[str, str]):
+    def __add_single_date_time_to_resolution(self, resolutions: Dict[str, str], dtype: str,
+                                             mod: str, result: Dict[str, str]):
         key = TimeTypeConstants.VALUE
         value = resolutions[dtype]
         if not value or value.startswith(self.__date_min_value):
@@ -873,7 +879,8 @@ class BaseMergedParser(DateTimeParser):
 
         result[key] = value
 
-    def __add_period_to_resolution(self, resolutions: Dict[str, str], start_type: str, end_type: str, mod: str, result: Dict[str, str]):
+    def __add_period_to_resolution(self, resolutions: Dict[str, str], start_type: str,
+                                   end_type: str, mod: str, result: Dict[str, str]):
         start = resolutions.get(start_type, None)
         end = resolutions.get(end_type, None)
         if mod:
@@ -893,35 +900,35 @@ class BaseMergedParser(DateTimeParser):
         result[TimeTypeConstants.START] = start
         result[TimeTypeConstants.END] = end
 
-    def _resolve_ampm(self, values_map: Dict[str, str], keyname: str):
-        if keyname not in values_map:
+    def _resolve_ampm(self, values_map: Dict[str, str], key_name: str):
+        if key_name not in values_map:
             return
-        resolution = values_map[keyname]
-        if Constants.timex_key not in values_map:
+        resolution = values_map[key_name]
+        if Constants.TIMEX_KEY not in values_map:
             return
-        timex = values_map['timex']
-        values_map.pop(keyname, None)
-        values_map[keyname + 'Am'] = resolution
+        timex = values_map[Constants.TIMEX_KEY]
+        values_map.pop(key_name, None)
+        values_map[key_name + Constants.AM_GROUP_NAME] = resolution
 
         resolution_pm = {}
-        if values_map['type'] == Constants.SYS_DATETIME_TIME:
+        if values_map[Constants.TYPE_KEY] == Constants.SYS_DATETIME_TIME:
             resolution_pm[TimeTypeConstants.VALUE] = DateTimeFormatUtil.to_pm(
                 resolution[TimeTypeConstants.VALUE])
-            resolution_pm['timex'] = DateTimeFormatUtil.to_pm(timex)
-        elif values_map['type'] == Constants.SYS_DATETIME_DATETIME:
+            resolution_pm[Constants.TIMEX_KEY] = DateTimeFormatUtil.to_pm(timex)
+        elif values_map[Constants.TYPE_KEY] == Constants.SYS_DATETIME_DATETIME:
             split_value = resolution[TimeTypeConstants.VALUE].split(' ')
             resolution_pm[
                 TimeTypeConstants.VALUE] = f'{split_value[0]} {DateTimeFormatUtil.to_pm(split_value[1])}'
-            resolution_pm['timex'] = DateTimeFormatUtil.all_str_to_pm(timex)
-        elif values_map['type'] == Constants.SYS_DATETIME_TIMEPERIOD:
+            resolution_pm[Constants.TIMEX_KEY] = DateTimeFormatUtil.all_str_to_pm(timex)
+        elif values_map[Constants.TYPE_KEY] == Constants.SYS_DATETIME_TIMEPERIOD:
             if TimeTypeConstants.START in resolution:
                 resolution_pm[TimeTypeConstants.START] = DateTimeFormatUtil.to_pm(
                     resolution[TimeTypeConstants.START])
             if TimeTypeConstants.END in resolution:
                 resolution_pm[TimeTypeConstants.END] = DateTimeFormatUtil.to_pm(
                     resolution[TimeTypeConstants.END])
-            resolution_pm['timex'] = DateTimeFormatUtil.all_str_to_pm(timex)
-        elif values_map['type'] == Constants.SYS_DATETIME_DATETIMEPERIOD:
+            resolution_pm[Constants.TIMEX_KEY] = DateTimeFormatUtil.all_str_to_pm(timex)
+        elif values_map[Constants.TYPE_KEY] == Constants.SYS_DATETIME_DATETIMEPERIOD:
             if TimeTypeConstants.START in resolution:
                 split_value = resolution[TimeTypeConstants.START].split(' ')
                 resolution_pm[
@@ -930,5 +937,5 @@ class BaseMergedParser(DateTimeParser):
                 split_value = resolution[TimeTypeConstants.END].split(' ')
                 resolution_pm[
                     TimeTypeConstants.END] = f'{split_value[0]} {DateTimeFormatUtil.to_pm(split_value[1])}'
-            resolution_pm['timex'] = DateTimeFormatUtil.all_str_to_pm(timex)
-        values_map[keyname + 'Pm'] = resolution_pm
+            resolution_pm[Constants.TIMEX_KEY] = DateTimeFormatUtil.all_str_to_pm(timex)
+        values_map[key_name + Constants.PM_GROUP_NAME] = resolution_pm

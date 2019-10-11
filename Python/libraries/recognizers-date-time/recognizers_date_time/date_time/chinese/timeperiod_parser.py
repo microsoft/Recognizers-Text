@@ -86,17 +86,17 @@ class ChineseTimePeriodParser(BaseTimePeriodParser):
 
         time_of_day = ""
         if any(trimmed_text.endswith(o) for o in ChineseDateTime.MorningTermList):
-            time_of_day = Constants.morning
+            time_of_day = Constants.MORNING
         elif any(trimmed_text.endswith(o) for o in ChineseDateTime.MidDayTermList):
-            time_of_day = Constants.mid_day
+            time_of_day = Constants.MID_DAY
         elif any(trimmed_text.endswith(o) for o in ChineseDateTime.AfternoonTermList):
-            time_of_day = Constants.afternoon
+            time_of_day = Constants.AFTERNOON
         elif any(trimmed_text.endswith(o) for o in ChineseDateTime.EveningTermList):
-            time_of_day = Constants.evening
+            time_of_day = Constants.EVENING
         elif any(trimmed_text == o for o in ChineseDateTime.DaytimeTermList):
-            time_of_day = Constants.daytime
+            time_of_day = Constants.DAYTIME
         elif any(trimmed_text.endswith(o) for o in ChineseDateTime.NightTermList):
-            time_of_day = Constants.night
+            time_of_day = Constants.NIGHT
         else:
             timex = None
             matched = False

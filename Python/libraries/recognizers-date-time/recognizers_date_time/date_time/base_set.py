@@ -171,13 +171,14 @@ class BaseSetExtractor(DateTimeExtractor):
                     yield Token(extract_result.start, extract_result.start + extract_result.length + len(match.group()))
 
         for match in regex.finditer(self.config.set_week_day_regex, source):
-            trimmed_source = source[0:match.start(
-            )] + RegExpUtility.get_group(match, 'weekday') + source[match.end():]
+            trimmed_source = source[0:match.start()] \
+                + RegExpUtility.get_group(match, Constants.WEEKDAY_GROUP_NAME) + source[match.end():]
 
             for extract_result in extractor.extract(trimmed_source, reference):
-                if extract_result.start <= match.start() and RegExpUtility.get_group(match, 'weekday') in extract_result.text:
+                if extract_result.start <= match.start() and\
+                        RegExpUtility.get_group(match, Constants.WEEKDAY_GROUP_NAME) in extract_result.text:
                     length = extract_result.length + 1
-                    prefix = RegExpUtility.get_group(match, 'prefix')
+                    prefix = RegExpUtility.get_group(match, Constants.PREFIX_GROUP_NAME)
                     if prefix:
                         length += len(prefix)
 
@@ -370,14 +371,14 @@ class BaseSetParser(DateTimeParser):
         # handle "each month"
         match = regex.match(self.config.each_unit_regex, source)
         if match and len(match.group()) == len(source):
-            source_unit = RegExpUtility.get_group(match, 'unit')
+            source_unit = RegExpUtility.get_group(match, Constants.UNIT)
             if source_unit and source_unit in self.config.unit_map:
                 get_matched_unit_timex = self.config.get_matched_unit_timex(
                     source_unit)
                 if not get_matched_unit_timex.matched:
                     return result
 
-                if RegExpUtility.get_group(match, 'other'):
+                if RegExpUtility.get_group(match, Constants.OTHER):
                     get_matched_unit_timex = MatchedTimex(
                         matched=get_matched_unit_timex.matched, timex=get_matched_unit_timex.timex.replace('1', '2'))
 
@@ -434,8 +435,8 @@ class BaseSetParser(DateTimeParser):
 
         match = regex.search(self.config.set_week_day_regex, source)
         if match:
-            trimmed_text = source[0:match.start(
-            )] + RegExpUtility.get_group(match, 'weekday') + source[match.end():]
+            trimmed_text = source[0:match.start()]\
+                + RegExpUtility.get_group(match, Constants.WEEKDAY_GROUP_NAME) + source[match.end():]
             er = extractor.extract(trimmed_text, reference)
             if len(er) == 1 and er[0].length == len(trimmed_text):
                 success = True

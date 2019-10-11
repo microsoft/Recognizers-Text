@@ -171,9 +171,9 @@ class BaseDurationExtractor(DateTimeExtractor):
             cur_unit = None
             unit_match = unit_regex.search(extractor_results[first_extraction_index].text)
 
-            if unit_match and str(RegExpUtility.get_group(unit_match, 'unit')) in unit_map:
+            if unit_match and str(RegExpUtility.get_group(unit_match, Constants.UNIT)) in unit_map:
 
-                cur_unit = str(RegExpUtility.get_group(unit_match, 'unit'))
+                cur_unit = str(RegExpUtility.get_group(unit_match, Constants.UNIT))
                 total_unit += 1
                 if DurationParsingUtil.is_time_duration_unit(unit_map[cur_unit]):
                     time_unit += 1
@@ -225,11 +225,11 @@ class BaseDurationExtractor(DateTimeExtractor):
                 node.type = extractor_results[first_extraction_index].type
 
                 if time_unit == total_unit:
-                    duration_type = Constants.multiple_duration_time
+                    duration_type = Constants.MULTIPLE_DURATION_TIME
                 elif time_unit == 0:
-                    duration_type = Constants.multiple_duration_date
+                    duration_type = Constants.MULTIPLE_DURATION_DATE
                 else:
-                    duration_type = Constants.multiple_duration_date_time
+                    duration_type = Constants.MULTIPLE_DURATION_DATE_TIME
 
                 node.data = duration_type
 
@@ -453,13 +453,13 @@ class BaseDurationParser(DateTimeParser):
         if match is None:
             return result
 
-        source_unit: str = match.group(Constants.unit) or ''
+        source_unit: str = match.group(Constants.UNIT) or ''
         if source_unit not in self.config.unit_map:
             return result
 
         num = QueryProcessor.float_or_int(num)
         unit = self.config.unit_map[source_unit]
-        is_time = Constants.unit_T if self.is_less_than_day(unit) else ''
+        is_time = Constants.UNIT_T if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
         result.future_value = QueryProcessor.float_or_int(
             num * self.config.unit_value_map[source_unit])
@@ -483,8 +483,8 @@ class BaseDurationParser(DateTimeParser):
         match = regex.search(self.config.followed_unit, no_num)
 
         if match is not None:
-            suffix = RegExpUtility.get_group(match, Constants.suffix_group_name)
-            source_unit = RegExpUtility.get_group(match, Constants.unit)
+            suffix = RegExpUtility.get_group(match, Constants.SUFFIX_GROUP_NAME)
+            source_unit = RegExpUtility.get_group(match, Constants.UNIT)
 
         if source_unit not in self.config.unit_map:
             return result
@@ -505,7 +505,7 @@ class BaseDurationParser(DateTimeParser):
         match = regex.search(self.config.suffix_and_regex, source)
 
         if match is not None:
-            num = match.group(Constants.suffix_num_group_name) or ''
+            num = match.group(Constants.SUFFIX_NUM_GROUP_NAME) or ''
             return self.config.double_numbers.get(num, 0)
 
         return 0
@@ -518,19 +518,18 @@ class BaseDurationParser(DateTimeParser):
         if match is None:
             return result
 
-        num = float(match.group(Constants.num)) + \
-            self.parse_number_with_unit_and_suffix(source)
+        num = float(match.group(Constants.NUM)) + self.parse_number_with_unit_and_suffix(source)
 
-        source_unit = match.group(Constants.unit) or ''
+        source_unit = match.group(Constants.UNIT) or ''
         if source_unit not in self.config.unit_map:
             return result
 
         unit = self.config.unit_map[source_unit]
-        if num > 1000 and unit in [Constants.unit_Y, Constants.unit_MON, Constants.unit_W]:
+        if num > 1000 and unit in [Constants.UNIT_Y, Constants.UNIT_MON, Constants.UNIT_W]:
             return result
 
         num = QueryProcessor.float_or_int(num)
-        is_time = Constants.unit_T if self.is_less_than_day(unit) else ''
+        is_time = Constants.UNIT_T if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
         result.future_value = QueryProcessor.float_or_int(
             num * self.config.unit_value_map[source_unit])
@@ -548,16 +547,15 @@ class BaseDurationParser(DateTimeParser):
         if match is None:
             return result
 
-        num = (0.5 if match.group(Constants.half) else 1) + \
-            self.parse_number_with_unit_and_suffix(source)
-        source_unit = match.group(Constants.unit) or ''
+        num = (0.5 if match.group(Constants.HALF) else 1) + self.parse_number_with_unit_and_suffix(source)
+        source_unit = match.group(Constants.UNIT) or ''
 
         if source_unit not in self.config.unit_map:
             return result
 
         num = QueryProcessor.float_or_int(num)
         unit = self.config.unit_map[source_unit]
-        is_time = Constants.unit_T if self.is_less_than_day(unit) else ''
+        is_time = Constants.UNIT_T if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
         result.future_value = QueryProcessor.float_or_int(
             num * self.config.unit_value_map[source_unit])
@@ -574,16 +572,16 @@ class BaseDurationParser(DateTimeParser):
 
         # set the inexact number "few", "some" to 3 for now
         num = float(3)
-        source_unit = match.group(Constants.unit) or ''
+        source_unit = match.group(Constants.UNIT) or ''
         if source_unit not in self.config.unit_map:
             return result
 
         unit = self.config.unit_map[source_unit]
-        if num > 1000 and unit in [Constants.unit_Y, Constants.unit_MON, Constants.unit_W]:
+        if num > 1000 and unit in [Constants.UNIT_Y, Constants.UNIT_MON, Constants.UNIT_W]:
             return result
 
         num = QueryProcessor.float_or_int(num)
-        is_time = Constants.unit_T if self.is_less_than_day(unit) else ''
+        is_time = Constants.UNIT_T if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
         result.future_value = QueryProcessor.float_or_int(
             num * self.config.unit_value_map[source_unit])
@@ -593,4 +591,4 @@ class BaseDurationParser(DateTimeParser):
 
     @staticmethod
     def is_less_than_day(source: str) -> bool:
-        return source in [Constants.unit_H, Constants.unit_M, Constants.unit_S]
+        return source in [Constants.UNIT_H, Constants.UNIT_M, Constants.UNIT_S]

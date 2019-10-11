@@ -103,13 +103,13 @@ class ChineseDateParser(BaseDateParser):
             if has_month:
                 if regex.search(self.token_next_regex, month_str):
                     month += 1
-                    if month == Constants.max_month + 1:
-                        month = Constants.min_month
+                    if month == Constants.MAX_MONTH + 1:
+                        month = Constants.MIN_MONTH
                         year += 1
                 elif regex.search(self.token_last_regex, month_str):
                     month -= 1
-                    if month == Constants.min_month - 1:
-                        month = Constants.max_month
+                    if month == Constants.MIN_MONTH - 1:
+                        month = Constants.MAX_MONTH
                         year -= 1
 
                 if has_year:
@@ -130,12 +130,12 @@ class ChineseDateParser(BaseDateParser):
                 future_year = year
                 past_year = year
 
-                if future_month == Constants.max_month + 1:
-                    future_month = Constants.min_month
+                if future_month == Constants.MAX_MONTH + 1:
+                    future_month = Constants.MIN_MONTH
                     future_year = year + 1
 
-                if past_month == Constants.min_month - 1:
-                    past_month = Constants.max_month
+                if past_month == Constants.MIN_MONTH - 1:
+                    past_month = Constants.MAX_MONTH
                     past_year = year - 1
 
                 is_future_valid = DateUtils.is_valid_date(
@@ -283,9 +283,9 @@ class ChineseDateParser(BaseDateParser):
             if year_str.strip():
                 year = int(year_str) if year_str.isnumeric() else 0
 
-                if year < 100 and year >= Constants.min_two_digit_year_past_num:
+                if year < 100 and year >= Constants.MIN_TWO_DIGIT_YEAR_PAST_NUM:
                     year += 1900
-                elif year < 100 and year < Constants.max_two_digit_year_future_num:
+                elif year < 100 and year < Constants.MAX_TWO_DIGIT_YEAR_FUTURE_NUM:
                     year += 2000
 
         no_year = False
@@ -353,13 +353,13 @@ class ChineseDateParser(BaseDateParser):
         return max_day
 
     def is_valid_date(self, year, month, day):
-        if month < Constants.min_month:
+        if month < Constants.MIN_MONTH:
             year -= 1
-            month = Constants.max_month
+            month = Constants.MAX_MONTH
 
-        if month > Constants.max_month:
+        if month > Constants.MAX_MONTH:
             year += 1
-            month = Constants.min_month
+            month = Constants.MIN_MONTH
 
         return DateUtils.is_valid_date(year, month, day)
 

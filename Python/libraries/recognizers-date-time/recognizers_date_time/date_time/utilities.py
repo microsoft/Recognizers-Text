@@ -19,30 +19,32 @@ from recognizers_text.matcher.string_matcher import StringMatcher, MatchResult
 
 class TimeZoneUtility:
 
-    def merge_time_zones(self, original_ers: [ExtractResult], time_zone_ers: [ExtractResult], text: str):
+    @staticmethod
+    def merge_time_zones(original_extract_results: [ExtractResult], time_zone_ers: [ExtractResult], text: str):
 
-        for er in original_ers:
+        for extract_result in original_extract_results:
             for time_zone_er in time_zone_ers:
 
-                begin = er.start + er.length
+                begin = extract_result.start + extract_result.length
                 end = time_zone_er.start
 
                 if begin < end:
                     gap_text = text[begin: begin + (end - begin)]
 
                     if gap_text.isspace() or gap_text is None:
-                        new_length = time_zone_er.start + time_zone_er.length - er.start
+                        new_length = time_zone_er.start + time_zone_er.length - extract_result.start
 
-                        er.text = text[er.start:new_length]
-                        er.length = new_length
-                        er.data = {Constants.SYS_DATETIME_TIMEZONE, time_zone_er}
+                        extract_result.text = text[extract_result.start:new_length]
+                        extract_result.length = new_length
+                        extract_result.data = {Constants.SYS_DATETIME_TIMEZONE, time_zone_er}
 
-                if er.overlap(time_zone_er):
-                    er.data = {Constants.SYS_DATETIME_TIMEZONE, time_zone_er}
+                if extract_result.overlap(time_zone_er):
+                    extract_result.data = {Constants.SYS_DATETIME_TIMEZONE, time_zone_er}
 
-        return original_ers
+        return original_extract_results
 
-    def should_resolve_time_zone(self, er: ExtractResult, options):
+    @staticmethod
+    def should_resolve_time_zone(extract_result: ExtractResult, options):
         enable_preview = (options & DateTimeOptions.ENABLE_PREVIEW) != 0
 
         if not enable_preview:
@@ -50,8 +52,8 @@ class TimeZoneUtility:
 
         has_time_zone_data = False
 
-        if isinstance(er.data, {}):
-            meta_data = er.data
+        if isinstance(extract_result.data, {}):
+            meta_data = extract_result.data
             if meta_data is not None and Constants.SYS_DATETIME_TIMEZONE in meta_data.keys():
                 has_time_zone_data = True
 
@@ -196,11 +198,11 @@ class DurationParsingUtil:
     @staticmethod
     def is_time_duration_unit(uni_str: str):
 
-        if uni_str == 'H':
+        if uni_str == Constants.UNIT_H:
             result = True
-        elif uni_str == 'M':
+        elif uni_str == Constants.UNIT_M:
             result = True
-        elif uni_str == 'S':
+        elif uni_str == Constants.UNIT_S:
             result = True
         else:
             result = False
@@ -386,8 +388,8 @@ class DateTimeFormatUtil:
     def to_pm(source: str) -> str:
         result = ''
 
-        if source.startswith('T'):
-            result = 'T'
+        if source.startswith(Constants.UNIT_T):
+            result = Constants.UNIT_T
             source = source[1:]
 
         split = source.split(':')
@@ -427,7 +429,9 @@ class DateUtils:
 
     @staticmethod
     def safe_create_from_min_value_date_time(date: datetime, time: datetime = None) -> datetime:
-        return DateUtils.safe_create_from_value(DateUtils.min_value, date.year, date.month, date.day, time.hour if time else 0, time.minute if time else 0, time.second if time else 0)
+        return DateUtils.safe_create_from_value(DateUtils.min_value, date.year, date.month, date.day,
+                                                time.hour if time else 0, time.minute if time else 0,
+                                                time.second if time else 0)
 
     @staticmethod
     def is_valid_date(year: int, month: int, day: int) -> bool:
@@ -640,7 +644,7 @@ class AgoLaterUtil:
                 # Cases like "5 minutes ago" or "5 minutes from now" are supported
                 # Cases like "2 days before today" or "2 weeks from today" are also supported
                 is_day_match_in_after_string = RegExpUtility.get_group(
-                    config.ago_regex.match(after_string), 'day')
+                    config.ago_regex.match(after_string), Constants.DAY_GROUP_NAME)
 
                 value = MatchingUtil.get_ago_later_index(
                     after_string, config.ago_regex)
@@ -652,7 +656,7 @@ class AgoLaterUtil:
             elif MatchingUtil.get_ago_later_index(after_string, config.later_regex).matched:
 
                 is_day_match_in_after_string = RegExpUtility.get_group(
-                    config.later_regex.search(after_string), 'day')
+                    config.later_regex.search(after_string), Constants.DAY_GROUP_NAME)
 
                 value = MatchingUtil.get_ago_later_index(
                     after_string, config.later_regex)
@@ -681,7 +685,8 @@ class AgoLaterUtil:
                         extract_result.text):
                     value = MatchingUtil.get_in_index(
                         before_string, config.within_next_prefix_regex)
-                    if extract_result.start is not None and extract_result.length is not None and extract_result.start >= value.index:
+                    if extract_result.start is not None and extract_result.length is not None and\
+                            extract_result.start >= value.index:
                         ret.append(
                             Token(extract_result.start - value.index, extract_result.start + extract_result.length))
 
@@ -717,10 +722,10 @@ class AgoLaterUtil:
 
         after_str = source[duration.start + duration.length:]
         before_str = source[0:duration.start]
-        src_unit = match.group('unit')
+        src_unit = match.group(Constants.UNIT)
         duration_result: DateTimeResolutionResult = pr.value
         num_str = duration_result.timex[0:len(
-            duration_result.timex) - 1].replace('P', '').replace('T', '')
+            duration_result.timex) - 1].replace(Constants.UNIT_P, '').replace(Constants.UNIT_T, '')
         num = int(num_str)
 
         if not num:
@@ -772,19 +777,19 @@ class AgoLaterUtil:
         result = DateTimeResolutionResult()
         swift = 1 if is_future else -1
 
-        if unit_str == 'D':
+        if unit_str == Constants.UNIT_D:
             value += timedelta(days=num * swift)
-        elif unit_str == 'W':
+        elif unit_str == Constants.UNIT_W:
             value += timedelta(days=num * swift * 7)
-        elif unit_str == 'MON':
+        elif unit_str == Constants.UNIT_MON:
             value += datedelta(months=num * swift)
-        elif unit_str == 'Y':
+        elif unit_str == Constants.UNIT_Y:
             value += datedelta(years=num * swift)
-        elif unit_str == 'H':
+        elif unit_str == Constants.UNIT_H:
             value += timedelta(hours=num * swift)
-        elif unit_str == 'M':
+        elif unit_str == Constants.UNIT_M:
             value += timedelta(minutes=num * swift)
-        elif unit_str == 'S':
+        elif unit_str == Constants.UNIT_S:
             value += timedelta(seconds=num * swift)
         else:
             return result
@@ -802,36 +807,36 @@ class TimexUtil:
     def parse_time_of_day(tod: str) -> TimeOfDayResolution:
         result = TimeOfDayResolution()
 
-        if tod == Constants.early_morning:
-            result.timex = Constants.early_morning
+        if tod == Constants.EARLY_MORNING:
+            result.timex = Constants.EARLY_MORNING
             result.begin_hour = 4
             result.end_hour = 8
-        elif tod == Constants.morning:
-            result.timex = Constants.morning
+        elif tod == Constants.MORNING:
+            result.timex = Constants.MORNING
             result.begin_hour = 8
             result.end_hour = 12
-        elif tod == Constants.mid_day:
-            result.timex = Constants.mid_day
+        elif tod == Constants.MID_DAY:
+            result.timex = Constants.MID_DAY
             result.begin_hour = 11
             result.end_hour = 13
-        elif tod == Constants.afternoon:
-            result.timex = Constants.afternoon
+        elif tod == Constants.AFTERNOON:
+            result.timex = Constants.AFTERNOON
             result.begin_hour = 12
             result.end_hour = 16
-        elif tod == Constants.evening:
-            result.timex = Constants.evening
+        elif tod == Constants.EVENING:
+            result.timex = Constants.EVENING
             result.begin_hour = 16
             result.end_hour = 20
-        elif tod == Constants.daytime:
-            result.timex = Constants.daytime
+        elif tod == Constants.DAYTIME:
+            result.timex = Constants.DAYTIME
             result.begin_hour = 8
             result.end_hour = 18
-        elif tod == Constants.business_hour:
-            result.timex = Constants.business_hour
+        elif tod == Constants.BUSINESS_HOUR:
+            result.timex = Constants.BUSINESS_HOUR
             result.begin_hour = 8
             result.end_hour = 18
-        elif tod == Constants.night:
-            result.timex = Constants.night
+        elif tod == Constants.NIGHT:
+            result.timex = Constants.NIGHT
             result.begin_hour = 20
             result.end_hour = 23
             result.end_min = 59
