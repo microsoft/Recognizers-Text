@@ -456,8 +456,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
                     self.extend_with_week_day_and_year(start_index, end_index,
                                                        self.config.month_of_year[RegExpUtility.get_group(
-                                                           match, Constants.MONTH_GROUP_NAME).lower()
-                                                                                 or str(
+                                                           match, Constants.MONTH_GROUP_NAME).lower() or str(
                                                            reference.month)], num, source, reference)
 
                     ret.append(Token(start_index, start_index +
