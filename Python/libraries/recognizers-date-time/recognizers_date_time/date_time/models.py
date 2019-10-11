@@ -22,7 +22,7 @@ class DateTimeModel(Model):
         self.extractor = extractor
 
     def parse(self, query: str, reference: datetime = None) -> List[ModelResult]:  # pylint: disable=W0221
-        query = QueryProcessor.preprocess(query)
+        query = QueryProcessor.pre_process(query)
         parser_dates = []
 
         try:

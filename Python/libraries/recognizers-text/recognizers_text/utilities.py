@@ -47,7 +47,7 @@ class RegExpUtility:
 
 class QueryProcessor:
     @staticmethod
-    def preprocess(source: str, case_sensitive: bool = False, recode: bool = True) -> str:
+    def pre_process(source: str, case_sensitive: bool = False, recode: bool = True) -> str:
 
         result: str = source
 
