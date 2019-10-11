@@ -120,7 +120,8 @@ class BaseTimeExtractor(DateTimeExtractor):
 
 
 class AdjustParams:
-    def __init__(self, hour: int = 0, minute: int = 0, has_minute: bool = False, has_am: bool = False, has_pm: bool = False):
+    def __init__(self, hour: int = 0, minute: int = 0, has_minute: bool = False,
+                 has_am: bool = False, has_pm: bool = False):
         self.hour = hour
         self.minute = minute
         self.has_minute = has_minute
@@ -216,7 +217,7 @@ class BaseTimeParser(DateTimeParser):
             if hour == 24:
                 hour = 0
             if hour <= 12 and hour != 0:
-                result.comment = 'ampm'
+                result.comment = Constants.AM_PM_GROUP_NAME
 
             result.timex = f'T{hour:02d}'
             result.future_value = DateUtils.safe_create_from_min_value(
@@ -249,45 +250,45 @@ class BaseTimeParser(DateTimeParser):
         has_pm = False
         has_mid = False
 
-        eng_time_str = RegExpUtility.get_group(match, 'engtime')
+        eng_time_str = RegExpUtility.get_group(match, Constants.ENGLISH_TIME)
         if eng_time_str.strip():
             # get hour
-            hour_str = RegExpUtility.get_group(match, 'hournum')
+            hour_str = RegExpUtility.get_group(match, Constants.HOUR_NUM_GROUP_NAME)
             hour_str = hour_str.lower()
             hour = self.config.numbers[hour_str]
 
             # get minute
-            min_str = RegExpUtility.get_group(match, 'minnum')
-            tens_str = RegExpUtility.get_group(match, 'tens')
+            min_str = RegExpUtility.get_group(match, Constants.MIN_NUM)
+            tens_str = RegExpUtility.get_group(match, Constants.TENS_GROUP_NAME)
 
             if min_str.strip():
                 minute = self.config.numbers[min_str]
                 if tens_str.strip():
                     minute += self.config.numbers[tens_str]
                 has_minute = True
-        elif str.strip(RegExpUtility.get_group(match, 'mid')):
+        elif str.strip(RegExpUtility.get_group(match, Constants.MID)):
             has_mid = True
-            if str.strip(RegExpUtility.get_group(match, 'midnight')):
+            if str.strip(RegExpUtility.get_group(match, Constants.MID_NIGHT)):
                 hour = 0
                 minute = 0
                 second = 0
-            elif str.strip(RegExpUtility.get_group(match, 'midmorning')):
+            elif str.strip(RegExpUtility.get_group(match, Constants.MID_MORNING)):
                 hour = 10
                 minute = 0
                 second = 0
-            elif str.strip(RegExpUtility.get_group(match, 'midafternoon')):
+            elif str.strip(RegExpUtility.get_group(match, Constants.MID_AFTERNOON)):
                 hour = 14
                 minute = 0
                 second = 0
-            elif str.strip(RegExpUtility.get_group(match, 'midday')):
+            elif str.strip(RegExpUtility.get_group(match, Constants.MIDDAY)):
                 hour = 12
                 minute = 0
                 second = 0
         else:
             # get hour
-            hour_str = RegExpUtility.get_group(match, 'hour')
+            hour_str = RegExpUtility.get_group(match, Constants.HOUR_GROUP_NAME)
             if hour_str.strip() == '':
-                hour_str = RegExpUtility.get_group(match, 'hournum')
+                hour_str = RegExpUtility.get_group(match, Constants.HOUR_NUM_GROUP_NAME)
                 hour_str = hour_str.lower()
                 hour = self.config.numbers.get(hour_str, None)
                 if hour is None:
@@ -301,11 +302,11 @@ class BaseTimeParser(DateTimeParser):
             min_str = RegExpUtility.get_group(match, 'min')
             min_str = min_str.lower()
             if min_str.strip() == '':
-                min_str = RegExpUtility.get_group(match, 'minnum')
+                min_str = RegExpUtility.get_group(match, Constants.MIN_NUM)
                 if min_str.strip():
                     minute = self.config.numbers[min_str]
                     has_minute = True
-                tens_str = RegExpUtility.get_group(match, 'tens')
+                tens_str = RegExpUtility.get_group(match, Constants.TENS_GROUP_NAME)
                 if tens_str.strip():
                     minute += self.config.numbers[tens_str]
                     has_minute = True
@@ -313,24 +314,24 @@ class BaseTimeParser(DateTimeParser):
                 minute = int(min_str)
                 has_minute = True
             # get second
-            sec_str = RegExpUtility.get_group(match, 'sec')
+            sec_str = RegExpUtility.get_group(match, Constants.SECOND_GROUP_NAME)
             sec_str = sec_str.lower()
             if sec_str.strip():
                 second = int(sec_str)
                 has_seconds = True
 
         # adjust by desc string
-        desc_str = RegExpUtility.get_group(match, 'desc').lower()
+        desc_str = RegExpUtility.get_group(match, Constants.DESC_GROUP_NAME).lower()
 
         if any([regex.search(self.config.utility_configuration.am_desc_regex, desc_str),
                 regex.search(self.config.utility_configuration.am_pm_desc_regex, desc_str)]) or RegExpUtility.get_group(
-                match, 'iam'):
+                match, Constants.IMPLICIT_AM_GROUP_NAME):
             if hour >= 12:
                 hour -= 12
             if regex.search(self.config.utility_configuration.am_pm_desc_regex, desc_str) is None:
                 has_am = True
         elif regex.search(self.config.utility_configuration.pm_desc__regex,
-                          desc_str) is not None or RegExpUtility.get_group(match, 'ipm'):
+                          desc_str) is not None or RegExpUtility.get_group(match, Constants.IMPLICIT_PM_GROUP_NAME):
             if hour < 12:
                 hour += 12
             has_pm = True
@@ -346,7 +347,7 @@ class BaseTimeParser(DateTimeParser):
             has_minute = adjust.has_minute
 
         # adjust min by suffix
-        time_suffix = RegExpUtility.get_group(match, 'suffix')
+        time_suffix = RegExpUtility.get_group(match, Constants.SUFFIX_GROUP_NAME)
         time_suffix = time_suffix.lower()
         if time_suffix.strip():
             adjust = AdjustParams(hour, minute, has_minute, has_am, has_pm)
@@ -368,7 +369,7 @@ class BaseTimeParser(DateTimeParser):
             result.timex += f':{second:02d}'
 
         if hour <= 12 and not has_pm and not has_am and not has_mid:
-            result.comment = 'ampm'
+            result.comment = Constants.AM_PM_GROUP_NAME
 
         result.future_value = datetime(year, month, day, hour, minute, second)
         result.past_value = result.future_value

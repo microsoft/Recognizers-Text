@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime, timedelta
 from collections import namedtuple
@@ -14,8 +14,8 @@ from .base_timeperiod import BaseTimePeriodExtractor
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, RegExpUtility, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, \
-    RegexExtension, DateTimeOptionsConfiguration, DateTimeOptions
+from .utilities import Token, merge_all_tokens, RegExpUtility, DateTimeFormatUtil, DateTimeResolutionResult,\
+    DateUtils, RegexExtension, DateTimeOptionsConfiguration, DateTimeOptions
 
 
 class MatchedTimeRange:
@@ -269,7 +269,8 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             if j >= len(expected_results):
                 break
 
-            if expected_results[i].type == Constants.SYS_DATETIME_DATE and expected_results[j].type == Constants.SYS_DATETIME_TIME:
+            if expected_results[i].type == Constants.SYS_DATETIME_DATE and\
+                    expected_results[j].type == Constants.SYS_DATETIME_TIME:
                 middle_begin = expected_results[i].start + (expected_results[i].length or 0)
                 middle_end = expected_results[j].start or 0
                 if middle_begin > middle_end:
@@ -336,7 +337,8 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                             self.config.general_ending_regex, suffix)
                         if ending_match:
                             tokens.append(
-                                Token(expected_result.start, expected_result.start + expected_result.length + match.end()))
+                                Token(expected_result.start, expected_result.start + expected_result.length +
+                                      match.end()))
 
             before_str = source[0:expected_result.start]
             match = regex.search(
@@ -555,7 +557,8 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                             self.config.general_ending_regex, suffix)
                         if ending_match:
                             tokens.append(
-                                Token(expected_result.start, expected_result.start + expected_result.length + match.end()))
+                                Token(expected_result.start, expected_result.start +
+                                      expected_result.length + match.end()))
 
             before_str = source[0:expected_result.start]
             match = regex.search(
@@ -1007,7 +1010,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
             date_str = prs.end.timex_str.split('T')[0]
             result.timex = f'({date_str}{prs.begin.timex_str},{prs.end.timex_str},PT{total_hours}H)'
 
-        if begin.comment and begin.comment.endswith(Constants.AM_PM_GROUP_NAME) and end.comment and end.comment.endswith(Constants.AM_PM_GROUP_NAME):
+        if begin.comment and begin.comment.endswith(Constants.AM_PM_GROUP_NAME) and end.comment and\
+                end.comment.endswith(Constants.AM_PM_GROUP_NAME):
             result.comment = Constants.AM_PM_GROUP_NAME
 
         result.future_value = [future_begin, future_end]

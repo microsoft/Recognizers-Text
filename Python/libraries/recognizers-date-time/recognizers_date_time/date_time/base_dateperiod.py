@@ -485,7 +485,8 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                 er.length = match.end(Constants.LAST_TWO_YEAR_NUM) - er.start
                 last_two_year_num = self.config.number_parser.parse(er).value
 
-            if first_two_year_num < 100 and last_two_year_num == 0 or first_two_year_num < 100 and first_two_year_num % 10 == 0 and len(
+            if first_two_year_num < 100 and last_two_year_num == 0 or first_two_year_num < 100 and\
+                    first_two_year_num % 10 == 0 and len(
                     last_two_year_num_str.strip().split(' ')) == 1:
                 return -1
 
@@ -1131,7 +1132,7 @@ class BaseDatePeriodParser(DateTimeParser):
         if month_str:
             month = self.config.month_of_year.get(month_str)
         else:
-            month_str = match.group('relmonth')
+            month_str = match.group(Constants.REL_MONTH)
             month += self.config.get_swift_day_or_month(month_str)
 
             if month < 1:
@@ -1217,15 +1218,15 @@ class BaseDatePeriodParser(DateTimeParser):
         late_prefix = False
         mid_prefix = False
 
-        if RegExpUtility.get_group(match, 'EarlyPrefix'):
+        if RegExpUtility.get_group(match, Constants.EARLY_PREFIX):
             early_prefix = True
             trimmed_source = match.group(Constants.SUFFIX_GROUP_NAME)
             result.mod = TimeTypeConstants.EARLY_MOD
-        elif RegExpUtility.get_group(match, 'LatePrefix'):
+        elif RegExpUtility.get_group(match, Constants.LATE_PREFIX):
             late_prefix = True
             trimmed_source = match.group(Constants.SUFFIX_GROUP_NAME)
             result.mod = TimeTypeConstants.LATE_MOD
-        elif RegExpUtility.get_group(match, 'MidPrefix'):
+        elif RegExpUtility.get_group(match, Constants.MID_PREFIX):
             mid_prefix = True
             trimmed_source = match.group(Constants.SUFFIX_GROUP_NAME)
             result.mod = TimeTypeConstants.MID_MOD
@@ -1243,11 +1244,11 @@ class BaseDatePeriodParser(DateTimeParser):
             trimmed_source = match.string
             result.mod = TimeTypeConstants.LATE_MOD
 
-        if RegExpUtility.get_group(match, 'RelEarly'):
+        if RegExpUtility.get_group(match, Constants.REL_EARLY):
             early_prefix = True
             if self.is_present(swift):
                 result.mod = None
-        elif RegExpUtility.get_group(match, 'RelLate'):
+        elif RegExpUtility.get_group(match, Constants.REL_LATE):
             late_prefix = True
             if self.is_present(swift):
                 result.mod = None

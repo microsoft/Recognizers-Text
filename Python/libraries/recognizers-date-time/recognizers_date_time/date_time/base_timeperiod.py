@@ -144,14 +144,16 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                                 end_with_valid_token = False
 
                         if end_with_valid_token:
-                            result.append(Token(source.index(match.group()), source.index(match.group()) + (match.end() - match.start())))
+                            result.append(Token(source.index(match.group()), source.index(match.group()) +
+                                                (match.end() - match.start())))
                     else:
                         match_pm_str = RegExpUtility.get_group(match, Constants.PM_GROUP_NAME)
                         match_am_str = RegExpUtility.get_group(match, Constants.AM_GROUP_NAME)
                         desc_str = RegExpUtility.get_group(match, Constants.DESC_GROUP_NAME)
 
                         if match_pm_str or match_am_str or desc_str:
-                            result.append(Token(source.index(match.group()), source.index(match.group()) + (match.end() - match.start())))
+                            result.append(Token(source.index(match.group()), source.index(match.group()) +
+                                                (match.end() - match.start())))
                         else:
                             after_str = source[source.index(match.group()) + (match.end() - match.start()):]
 

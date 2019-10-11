@@ -171,9 +171,9 @@ class BaseDurationExtractor(DateTimeExtractor):
             cur_unit = None
             unit_match = unit_regex.search(extractor_results[first_extraction_index].text)
 
-            if unit_match and str(RegExpUtility.get_group(unit_match, 'unit')) in unit_map:
+            if unit_match and str(RegExpUtility.get_group(unit_match, Constants.UNIT)) in unit_map:
 
-                cur_unit = str(RegExpUtility.get_group(unit_match, 'unit'))
+                cur_unit = str(RegExpUtility.get_group(unit_match, Constants.UNIT))
                 total_unit += 1
                 if DurationParsingUtil.is_time_duration_unit(unit_map[cur_unit]):
                     time_unit += 1

@@ -82,6 +82,7 @@ class Constants:
     MONTH_GROUP_NAME = 'month'
     YEAR_GROUP_NAME = 'year'
     HOUR_NUM_GROUP_NAME = 'hournum'
+    TENS_GROUP_NAME = 'tens'
 
     TIME_OF_DAY_GROUP_NAME = 'timeOfDay'
     BUSINESS_DAY_GROUP_NAME = 'business'
@@ -95,6 +96,10 @@ class Constants:
     YEAR_CHINESE = 'yearchs'
     OTHER = 'other'
     YEAR_RELATIVE = 'yearrel'
+    DAY_OF_MONTH = 'DayOfMonth'
+
+    NEW_TIME = 'newTime'
+    ENGLISH_TIME = 'engtime'
 
     WEEK_OF = 'WeekOf'
     MONTH_OF = 'MonthOf'
@@ -104,6 +109,13 @@ class Constants:
 
     NUM = 'num'
     NUMBER = 'number'
+    MIN_NUM = 'minnum'
+
+    MID = 'mid'
+    MIDDAY = 'midday'
+    MID_AFTERNOON = 'midafternoon'
+    MID_MORNING = 'midmorning'
+    MID_NIGHT = 'midnight'
 
     CARDINAL = 'cardinal'
 

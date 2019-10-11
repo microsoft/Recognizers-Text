@@ -12,7 +12,8 @@ from .constants import Constants, TimeTypeConstants
 from recognizers_number.number.constants import Constants as NumConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, AgoLaterUtil, DateTimeFormatUtil, RegExpUtility, AgoLaterMode, DateTimeOptionsConfiguration, DateTimeOptions
+from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, AgoLaterUtil,\
+    DateTimeFormatUtil, RegExpUtility, AgoLaterMode, DateTimeOptionsConfiguration, DateTimeOptions
 
 
 class DateTimeExtractorConfiguration(DateTimeOptionsConfiguration):
@@ -199,9 +200,12 @@ class BaseDateTimeExtractor(DateTimeExtractor):
             if j >= len(extract_results):
                 break
 
-            if ((extract_results[i].type is Constants.SYS_DATETIME_DATE and extract_results[j].type is Constants.SYS_DATETIME_TIME) or
-                    (extract_results[i].type is Constants.SYS_DATETIME_TIME and extract_results[j].type is Constants.SYS_DATETIME_DATE)or
-                    (extract_results[i].type is Constants.SYS_DATETIME_DATE and extract_results[j] is NumConstants.SYS_NUM_INTEGER)):
+            if ((extract_results[i].type is Constants.SYS_DATETIME_DATE and extract_results[j].type is
+                 Constants.SYS_DATETIME_TIME) or
+                    (extract_results[i].type is Constants.SYS_DATETIME_TIME and extract_results[j].type is
+                     Constants.SYS_DATETIME_DATE)or
+                    (extract_results[i].type is Constants.SYS_DATETIME_DATE and extract_results[j] is
+                     NumConstants.SYS_NUM_INTEGER)):
                 middle_begin = extract_results[i].start + (extract_results[i].length or 0)
                 middle_end = extract_results[j].start or 0
 
@@ -593,7 +597,8 @@ class BaseDateTimeParser(DateTimeParser):
         # in this case "5 in the afternoon" will be extract as a Time entity
         correct_time_idx = 0
 
-        while correct_time_idx < len(extract_result2_list) and extract_result2_list[correct_time_idx].overlap(extract_result1):
+        while correct_time_idx < len(extract_result2_list) and\
+                extract_result2_list[correct_time_idx].overlap(extract_result1):
             correct_time_idx += 1
 
         if correct_time_idx >= len(extract_result2_list):

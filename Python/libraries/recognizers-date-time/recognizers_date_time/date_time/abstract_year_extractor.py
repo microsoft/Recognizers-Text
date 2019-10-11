@@ -30,29 +30,29 @@ class AbstractYearExtractor(DateExtractor):
                 year += 2000
         else:
             first_two_year_num_str = RegExpUtility.get_group(
-                match, 'firsttwoyearnum')
+                match, Constants.FIRST_TWO_YEAR_NUM)
 
             if first_two_year_num_str and not (str.isspace(first_two_year_num_str) or first_two_year_num_str is None):
 
                 er = ExtractResult()
                 er.text = first_two_year_num_str
-                er.start = match.string.index(RegExpUtility.get_group(match, 'firsttwoyearnum'))
+                er.start = match.string.index(RegExpUtility.get_group(match, Constants.FIRST_TWO_YEAR_NUM))
                 er.length = len(RegExpUtility.get_group(
-                    match, 'firsttwoyearnum'))
+                    match, Constants.FIRST_TWO_YEAR_NUM))
 
                 first_two_year_num = self.config.number_parser.parse(er).value if \
                     self.config.number_parser.parse(er).value else 0
 
                 last_two_year_num = 0
                 last_two_year_num_str = RegExpUtility.get_group(
-                    match, 'lasttwoyearnum')
+                    match, Constants.LAST_TWO_YEAR_NUM)
 
                 if not (str.isspace(last_two_year_num_str) or last_two_year_num_str is None):
                     er = ExtractResult()
                     er.text = last_two_year_num_str
-                    er.start = match.string.index(RegExpUtility.get_group(match, 'lasttwoyearnum'))
+                    er.start = match.string.index(RegExpUtility.get_group(match, Constants.LAST_TWO_YEAR_NUM))
                     er.length = len(RegExpUtility.get_group(
-                        match, 'lasttwoyearnum'))
+                        match, Constants.LAST_TWO_YEAR_NUM))
 
                     last_two_year_num = self.config.number_parser.parse(er).value if \
                         self.config.number_parser.parse(er).value else 0

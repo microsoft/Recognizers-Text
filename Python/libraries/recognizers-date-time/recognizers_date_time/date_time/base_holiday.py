@@ -163,7 +163,8 @@ class BaseHolidayParser(DateTimeParser):
                 timex_str = self.config.variable_holidays_timex_dictionary.get(
                     holiday_key)
                 if not timex_str:
-                    timex_str = f'-{DateTimeFormatUtil.to_str(value.month, 2)}-{DateTimeFormatUtil.to_str(value.day, 2)}'
+                    timex_str = f'-{DateTimeFormatUtil.to_str(value.month, 2)}-' \
+                                f'{DateTimeFormatUtil.to_str(value.day, 2)}'
             else:
                 return result
 

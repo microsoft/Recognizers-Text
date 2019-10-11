@@ -234,10 +234,10 @@ class BaseMergedExtractor(DateTimeExtractor):
 
         origin_text = source
 
-        super_fluous_word_matches = None
+        superfluous_word_matches = None
 
         if (self.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
-            source, super_fluous_word_matches = MatchingUtil.pre_process_text_remove_superfluous_words(
+            source, superfluous_word_matches = MatchingUtil.pre_process_text_remove_superfluous_words(
                 source,
                 self.config.superfluous_word_matcher
             )
@@ -287,7 +287,7 @@ class BaseMergedExtractor(DateTimeExtractor):
         result = sorted(result, key=lambda x: x.start)
 
         if (self.options & DateTimeOptions.ENABLE_PREVIEW) != 0:
-            result = MatchingUtil.post_process_recover_superfluous_words(result, super_fluous_word_matches, origin_text)
+            result = MatchingUtil.post_process_recover_superfluous_words(result, superfluous_word_matches, origin_text)
 
         return result
 
@@ -372,7 +372,7 @@ class BaseMergedExtractor(DateTimeExtractor):
                 match = regex.search(
                     self.config.number_ending_pattern, after_str)
                 if match:
-                    new_time = RegExpUtility.get_group(match, 'newTime')
+                    new_time = RegExpUtility.get_group(match, Constants.NEW_TIME)
                     num_res = self.config.integer_extractor.extract(new_time)
                     if not num_res:
                         continue
@@ -437,7 +437,8 @@ class BaseMergedExtractor(DateTimeExtractor):
         if not success:
             success = self.try_merge_modifier_token(extract_result, self.config.after_regex, source)
         if not success:
-            # SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
+            # SinceRegex in English contains the term "from" which is
+            # potentially ambiguous with ranges in the form "from X to Y"
             success = self.try_merge_modifier_token(extract_result, self.config.since_regex, source, True)
         return extract_result
 
@@ -735,7 +736,8 @@ class BaseMergedParser(DateTimeParser):
 
         return results
 
-    def _date_time_resolution(self, slot: DateTimeParseResult, has_before, has_after, has_since) -> List[Dict[str, str]]:
+    def _date_time_resolution(self, slot: DateTimeParseResult, has_before, has_after, has_since) ->\
+            List[Dict[str, str]]:
         if not slot:
             return None
 
@@ -801,7 +803,8 @@ class BaseMergedParser(DateTimeParser):
                 self._add_resolution_fields(new_values, Constants.MOD_KEY, mod)
 
                 self._add_resolution_fields(new_values, Constants.TYPE_KEY, output_type)
-                self._add_resolution_fields(new_values, Constants.IS_LUNAR_KEY, str(is_lunar).lower() if is_lunar else '')
+                self._add_resolution_fields(new_values, Constants.IS_LUNAR_KEY,
+                                            str(is_lunar).lower() if is_lunar else '')
                 self._add_resolution_fields(new_values, Constants.SOURCE_TYPE, source_entity)
 
                 for inner_key in value:
@@ -859,7 +862,8 @@ class BaseMergedParser(DateTimeParser):
 
         return result
 
-    def __add_single_date_time_to_resolution(self, resolutions: Dict[str, str], dtype: str, mod: str, result: Dict[str, str]):
+    def __add_single_date_time_to_resolution(self, resolutions: Dict[str, str], dtype: str,
+                                             mod: str, result: Dict[str, str]):
         key = TimeTypeConstants.VALUE
         value = resolutions[dtype]
         if not value or value.startswith(self.__date_min_value):
@@ -875,7 +879,8 @@ class BaseMergedParser(DateTimeParser):
 
         result[key] = value
 
-    def __add_period_to_resolution(self, resolutions: Dict[str, str], start_type: str, end_type: str, mod: str, result: Dict[str, str]):
+    def __add_period_to_resolution(self, resolutions: Dict[str, str], start_type: str,
+                                   end_type: str, mod: str, result: Dict[str, str]):
         start = resolutions.get(start_type, None)
         end = resolutions.get(end_type, None)
         if mod:
