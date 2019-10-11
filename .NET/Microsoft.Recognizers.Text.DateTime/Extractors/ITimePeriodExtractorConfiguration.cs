@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IEnumerable<Regex> PureNumberRegex { get; }
 
+        bool CheckBothBeforeAfter { get; }
+
         Regex TillRegex { get; }
 
         Regex TimeOfDayRegex { get; }

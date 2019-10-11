@@ -277,7 +277,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         // Handle "between"
                         periodBegin = betweenIndex;
                     }
-                    else if (this.config.GetBetweenTokenIndex(afterStr, out var afterIndex))
+                    else if (this.config.CheckBothBeforeAfter && this.config.GetBetweenTokenIndex(afterStr, out var afterIndex))
                     {
                         // Handle "between" in afterStr
                         periodEnd += afterIndex;
@@ -306,7 +306,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // handle "between...and..." case when "between" follows the datepoints
                     var afterStr = text.Substring(periodEnd, text.Length - periodEnd);
-                    if (this.config.GetBetweenTokenIndex(afterStr, out int afterIndex))
+                    if (this.config.CheckBothBeforeAfter && this.config.GetBetweenTokenIndex(afterStr, out int afterIndex))
                     {
                         periodEnd += afterIndex;
                         ret.Add(new Token(periodBegin, periodEnd));
