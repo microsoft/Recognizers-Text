@@ -70,10 +70,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // within "Days/Weeks/Months/Years" should be handled as dateRange here
                 // if duration contains "Seconds/Minutes/Hours", it should be treated as datetimeRange
                 bool inPrefix = true;
-                MatchWithinNextPrexixRegex(text, duration, out int startToken, out int endToken, out bool matchSuccess, inPrefix);
-                if (matchSuccess)
+                Token matchToken = MatchWithinNextPrexixRegex(text, duration, inPrefix);
+                if (matchToken.Start >= 0)
                 {
-                    ret.Add(new Token(startToken, endToken));
+                    ret.Add(matchToken);
                     continue;
                 }
 
@@ -81,10 +81,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (this.config.CheckBothBeforeAfter)
                 {
                     inPrefix = false;
-                    MatchWithinNextPrexixRegex(text, duration, out startToken, out endToken, out matchSuccess, inPrefix);
-                    if (matchSuccess)
+                    matchToken = MatchWithinNextPrexixRegex(text, duration, inPrefix);
+                    if (matchToken.Start >= 0)
                     {
-                        ret.Add(new Token(startToken, endToken));
+                        ret.Add(matchToken);
                         continue;
                     }
                 }
@@ -166,28 +166,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private static List<Token> GetTokenForRegexMatching(string text, Regex regex, ExtractResult er)
+        private static List<Token> GetTokenForRegexMatching(string text, Regex regex, ExtractResult er, bool inPrefix)
         {
             var ret = new List<Token>();
             var match = regex.Match(text);
-            if (match.Success && text.Trim().EndsWith(match.Value.Trim()))
+            bool isMatchAtEdge = inPrefix ? text.Trim().EndsWith(match.Value.Trim()) : text.Trim().StartsWith(match.Value.Trim());
+            if (match.Success && isMatchAtEdge)
             {
-                var startIndex = text.LastIndexOf(match.Value);
-                ret.Add(new Token(startIndex, (int)er.Start + (int)er.Length));
-            }
-
-            return ret;
-        }
-
-        // Get token in after string
-        private static List<Token> GetTokenForRegexMatchingAfter(string text, Regex regex, ExtractResult er, int matchStart, int matchLength)
-        {
-            var ret = new List<Token>();
-            var match = regex.Match(text);
-            if (match.Success && text.Trim().StartsWith(match.Value.Trim()))
-            {
-                var length = match.Index + match.Length;
-                ret.Add(new Token(matchStart, matchStart + matchLength + length));
+                var startIndex = inPrefix ? text.LastIndexOf(match.Value) : (int)er.Start;
+                var endIndex = (int)er.Start + (int)er.Length;
+                endIndex += inPrefix ? 0 : match.Index + match.Length;
+                ret.Add(new Token(startIndex, endIndex));
             }
 
             return ret;
@@ -615,15 +604,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // handle "between...and..." case when "between" follows the datepoints
-                    var afterStr = text.Substring(periodEnd, text.Length - periodEnd);
-                    if (this.config.GetBetweenTokenIndex(afterStr, out int afterIndex))
+                    if (this.config.CheckBothBeforeAfter)
                     {
-                        periodEnd += afterIndex;
-                        ret.Add(new Token(periodBegin, periodEnd, metadata));
+                        var afterStr = text.Substring(periodEnd, text.Length - periodEnd);
+                        if (this.config.GetBetweenTokenIndex(afterStr, out int afterIndex))
+                        {
+                            periodEnd += afterIndex;
+                            ret.Add(new Token(periodBegin, periodEnd, metadata));
 
-                        // merge two tokens here, increase the index by two
-                        idx += 2;
-                        continue;
+                            // merge two tokens here, increase the index by two
+                            idx += 2;
+                            continue;
+                        }
                     }
                 }
 
@@ -652,36 +644,40 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (extractionResult.Start != null && extractionResult.Length != null)
                 {
+                    bool inPrefix = true;
                     var beforeString = text.Substring(0, (int)extractionResult.Start);
                     var afterString = text.Substring((int)extractionResult.Start + (int)extractionResult.Length, text.Length - (int)extractionResult.Start - (int)extractionResult.Length);
-                    ret.AddRange(GetTokenForRegexMatching(beforeString, config.WeekOfRegex, extractionResult));
-                    ret.AddRange(GetTokenForRegexMatching(beforeString, config.MonthOfRegex, extractionResult));
+                    ret.AddRange(GetTokenForRegexMatching(beforeString, config.WeekOfRegex, extractionResult, inPrefix));
+                    ret.AddRange(GetTokenForRegexMatching(beforeString, config.MonthOfRegex, extractionResult, inPrefix));
 
                     // Check also afterString
                     if (this.config.CheckBothBeforeAfter)
                     {
-                        ret.AddRange(GetTokenForRegexMatchingAfter(afterString, config.WeekOfRegex, extractionResult, (int)extractionResult.Start, (int)extractionResult.Length));
-                        ret.AddRange(GetTokenForRegexMatchingAfter(afterString, config.MonthOfRegex, extractionResult, (int)extractionResult.Start, (int)extractionResult.Length));
+                        inPrefix = false;
+                        ret.AddRange(GetTokenForRegexMatching(afterString, config.WeekOfRegex, extractionResult, inPrefix));
+                        ret.AddRange(GetTokenForRegexMatching(afterString, config.MonthOfRegex, extractionResult, inPrefix));
                     }
 
                     // Cases like "3 days from today", "2 weeks before yesterday", "3 months after tomorrow"
                     if (IsRelativeDurationDate(extractionResult))
                     {
-                        ret.AddRange(GetTokenForRegexMatching(beforeString, config.LessThanRegex, extractionResult));
-                        ret.AddRange(GetTokenForRegexMatching(beforeString, config.MoreThanRegex, extractionResult));
+                        inPrefix = true;
+                        ret.AddRange(GetTokenForRegexMatching(beforeString, config.LessThanRegex, extractionResult, inPrefix));
+                        ret.AddRange(GetTokenForRegexMatching(beforeString, config.MoreThanRegex, extractionResult, inPrefix));
 
                         // Check also afterString
                         if (this.config.CheckBothBeforeAfter)
                         {
-                            ret.AddRange(GetTokenForRegexMatchingAfter(afterString, config.LessThanRegex, extractionResult, (int)extractionResult.Start, (int)extractionResult.Length));
-                            ret.AddRange(GetTokenForRegexMatchingAfter(afterString, config.MoreThanRegex, extractionResult, (int)extractionResult.Start, (int)extractionResult.Length));
+                            inPrefix = false;
+                            ret.AddRange(GetTokenForRegexMatching(afterString, config.LessThanRegex, extractionResult, inPrefix));
+                            ret.AddRange(GetTokenForRegexMatching(afterString, config.MoreThanRegex, extractionResult, inPrefix));
                         }
 
                         // For "within" case, only duration with relative to "today" or "now" makes sense
                         // Cases like "within 3 days from yesterday/tomorrow" does not make any sense
                         if (IsDateRelativeToNowOrToday(extractionResult))
                         {
-                            bool inPrefix = true;
+                            inPrefix = true;
                             var tokens = ExtractWithinNextPrefix(beforeString, inPrefix, extractionResult);
                             ret.AddRange(tokens);
 
@@ -728,35 +724,36 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // Matches "within (the next)?" part (in beforeStr or afterStr) in "within Days/Weeks/Months/Years"
-        private void MatchWithinNextPrexixRegex(string text, Token duration, out int startToken, out int endToken, out bool matchSuccess, bool inPrefix)
+        private Token MatchWithinNextPrexixRegex(string text, Token duration, bool inPrefix)
         {
             var beforeStr = text.Substring(0, duration.Start);
             var afterStr = text.Substring(duration.Start + duration.Length);
-            startToken = -1;
-            endToken = -1;
-            matchSuccess = false;
+            int startToken = -1;
+            int endToken = -1;
             var match = inPrefix ? config.WithinNextPrefixRegex.MatchEnd(beforeStr, trim: true) : config.WithinNextPrefixRegex.MatchBegin(afterStr, trim: true);
             if (match.Success)
             {
-                startToken = inPrefix ? match.Index : duration.Start;
-                endToken = inPrefix ? duration.End : duration.End + match.Index + match.Length;
                 var durationStr = text.Substring(duration.Start, duration.Length);
                 var matchDate = config.DateUnitRegex.Match(durationStr);
                 var matchTime = config.TimeUnitRegex.Match(durationStr);
 
-                matchSuccess = matchDate.Success && !matchTime.Success;
-
-                if (!inPrefix)
+                if (matchDate.Success && !matchTime.Success)
                 {
-                    // Check prefix for "next"
-                    match = config.FutureRegex.MatchEnd(beforeStr, trim: true);
-                    if (match.Success)
+                    startToken = inPrefix ? match.Index : duration.Start;
+                    endToken = inPrefix ? duration.End : duration.End + match.Index + match.Length;
+                    if (!inPrefix)
                     {
-                        startToken = match.Index;
+                        // Check prefix for "next"
+                        match = config.FutureRegex.MatchEnd(beforeStr, trim: true);
+                        if (match.Success)
+                        {
+                            startToken = match.Index;
+                        }
                     }
-
                 }
             }
+
+            return new Token(startToken, endToken);
         }
 
         private List<Token> ExtractWithinNextPrefix(string subStr, bool inPrefix, ExtractResult extractionResult)
@@ -771,14 +768,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // Cases like "within the next 5 days before today" is not acceptable
                 if (!(isNext && IsAgoRelativeDurationDate(extractionResult)))
                 {
-                    if (inPrefix)
-                    {
-                        tokens = GetTokenForRegexMatching(subStr, config.WithinNextPrefixRegex, extractionResult);
-                    }
-                    else
-                    {
-                        tokens = GetTokenForRegexMatchingAfter(subStr, config.WithinNextPrefixRegex, extractionResult, (int)extractionResult.Start, (int)extractionResult.Length);
-                    }
+                    tokens = GetTokenForRegexMatching(subStr, config.WithinNextPrefixRegex, extractionResult, inPrefix);
                 }
             }
 
