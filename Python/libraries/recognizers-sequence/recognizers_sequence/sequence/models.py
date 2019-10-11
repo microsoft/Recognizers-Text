@@ -56,7 +56,7 @@ class PhoneNumberModel(AbstractSequenceModel):
 
         model_results: List[ModelResult] = list()
         parse_results = []
-        query = QueryProcessor.pre_process(query)
+        query = QueryProcessor.preprocess(query)
 
         try:
             extract_results = self.extractor.extract(query)
@@ -98,7 +98,7 @@ class GUIDModel(AbstractSequenceModel):
     def parse(self, query: str) -> List[ModelResult]:
         model_results: List[ModelResult] = list()
         parse_results = []
-        query = QueryProcessor.pre_process(query)
+        query = QueryProcessor.preprocess(query)
 
         try:
             extract_results = self.extractor.extract(query)

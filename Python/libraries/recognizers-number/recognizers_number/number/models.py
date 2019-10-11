@@ -46,7 +46,7 @@ class AbstractNumberModel(Model):
         self.extractor: Extractor = extractor
 
     def parse(self, query: str) -> List[ModelResult]:
-        query = QueryProcessor.pre_process(query, True)
+        query = QueryProcessor.preprocess(query, True)
         results = []
 
         try:
