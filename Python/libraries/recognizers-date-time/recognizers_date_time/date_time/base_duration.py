@@ -518,8 +518,7 @@ class BaseDurationParser(DateTimeParser):
         if match is None:
             return result
 
-        num = float(match.group(Constants.NUM)) + \
-              self.parse_number_with_unit_and_suffix(source)
+        num = float(match.group(Constants.NUM)) + self.parse_number_with_unit_and_suffix(source)
 
         source_unit = match.group(Constants.UNIT) or ''
         if source_unit not in self.config.unit_map:
@@ -548,8 +547,7 @@ class BaseDurationParser(DateTimeParser):
         if match is None:
             return result
 
-        num = (0.5 if match.group(Constants.HALF) else 1) + \
-              self.parse_number_with_unit_and_suffix(source)
+        num = (0.5 if match.group(Constants.HALF) else 1) + self.parse_number_with_unit_and_suffix(source)
         source_unit = match.group(Constants.UNIT) or ''
 
         if source_unit not in self.config.unit_map:
