@@ -172,7 +172,7 @@ class BaseSetExtractor(DateTimeExtractor):
 
         for match in regex.finditer(self.config.set_week_day_regex, source):
             trimmed_source = source[0:match.start()] \
-                             + RegExpUtility.get_group(match, Constants.WEEKDAY_GROUP_NAME) + source[match.end():]
+                + RegExpUtility.get_group(match, Constants.WEEKDAY_GROUP_NAME) + source[match.end():]
 
             for extract_result in extractor.extract(trimmed_source, reference):
                 if extract_result.start <= match.start() and RegExpUtility.get_group(match, Constants.WEEKDAY_GROUP_NAME) \
@@ -436,7 +436,7 @@ class BaseSetParser(DateTimeParser):
         match = regex.search(self.config.set_week_day_regex, source)
         if match:
             trimmed_text = source[0:match.start()]\
-                           + RegExpUtility.get_group(match, Constants.WEEKDAY_GROUP_NAME) + source[match.end():]
+                + RegExpUtility.get_group(match, Constants.WEEKDAY_GROUP_NAME) + source[match.end():]
             er = extractor.extract(trimmed_text, reference)
             if len(er) == 1 and er[0].length == len(trimmed_text):
                 success = True
