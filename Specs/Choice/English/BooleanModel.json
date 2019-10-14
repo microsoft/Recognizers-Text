@@ -190,7 +190,7 @@
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
-          "score": 0.8
+          "score": 0.55
         }
       }
     ]
@@ -203,7 +203,7 @@
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
-          "score": 0.8
+          "score": 0.55
         }
       }
     ]
@@ -216,7 +216,7 @@
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
-          "score": 0.6
+          "score": 0.5
         }
       }
     ]

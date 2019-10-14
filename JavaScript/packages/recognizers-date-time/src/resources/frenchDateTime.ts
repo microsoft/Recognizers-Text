@@ -11,6 +11,7 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace FrenchDateTime {
+    export const CheckBothBeforeAfter = false;
     export const TillRegex = `(?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)`;
     export const RangeConnectorRegex = `(?<and>de la|au|[aà]|et(\\s*la)?|--|-|—|——)`;
     export const RelativeRegex = `(?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))`;

@@ -11,6 +11,7 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace EnglishDateTime {
+    export const CheckBothBeforeAfter = false;
     export const TillRegex = `(?<till>\\b(to|(un)?till?|thru|through)\\b|${BaseDateTime.RangeConnectorSymbolRegex})`;
     export const RangeConnectorRegex = `(?<and>\\b(and|through|to)\\b|${BaseDateTime.RangeConnectorSymbolRegex})`;
     export const RelativeRegex = `\\b(?<order>following|next|(up)?coming|this|last|past|previous|current|the)\\b`;
