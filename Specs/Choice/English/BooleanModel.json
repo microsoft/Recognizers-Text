@@ -181,5 +181,44 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Yeah that sounds good.",
+    "Results": [
+      {
+        "Text": "Yeah",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.8
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Yup that's fine",
+    "Results": [
+      {
+        "Text": "Yup",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.8
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Yeah, let's do that instead.",
+    "Results": [
+      {
+        "Text": "Yeah",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
   }
 ]
