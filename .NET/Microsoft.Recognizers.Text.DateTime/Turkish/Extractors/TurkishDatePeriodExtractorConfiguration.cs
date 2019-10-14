@@ -60,6 +60,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public static readonly Regex NowRegex =
              new Regex(DateTimeDefinitions.NowRegex, RegexFlags);
 
+        public static readonly Regex RangePrefixRegex =
+            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexFlags);
+
         // composite regexes
         public static readonly Regex SimpleCasesRegex =
             new Regex(DateTimeDefinitions.SimpleCasesRegex, RegexFlags);
@@ -167,6 +170,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             new Regex(DateTimeDefinitions.CenturySuffixRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex ExcludeSuffixRegex =
+            new Regex(DateTimeDefinitions.ExcludeSuffixRegex, RegexFlags);
+
+        private static readonly Regex FromRegex =
+            new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
 
         private static readonly Regex[] SimpleCasesRegexes =
         {
@@ -311,26 +320,49 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         Regex IDatePeriodExtractorConfiguration.NowRegex => NowRegex;
 
+        bool IDatePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("from"))
+            var fromMatch = FromRegex.Match(text);
+            if (fromMatch.Success)
             {
-                index = text.LastIndexOf("from", StringComparison.Ordinal);
-                return true;
+                index = fromMatch.Index;
             }
 
-            return false;
+            return fromMatch.Success;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("between"))
+            var match = RangePrefixRegex.MatchEnd(text, false);
+
+            if (match.Success)
             {
-                index = text.LastIndexOf("between", StringComparison.Ordinal);
+                index = match.Index;
+                return true;
+            }
+
+            string textTrm = text;
+
+            // do not include the suffix in textTrm
+            var noSuffixMatch = ExcludeSuffixRegex.Match(text);
+            if (noSuffixMatch.Success)
+            {
+                textTrm = noSuffixMatch.Groups["match"].Value;
+            }
+
+            textTrm = textTrm.TrimStart();
+            int diff = text.Length - textTrm.Length;
+            match = RangePrefixRegex.MatchBegin(textTrm, false);
+
+            if (match.Success)
+            {
+                index = diff + match.Index + match.Length;
                 return true;
             }
 

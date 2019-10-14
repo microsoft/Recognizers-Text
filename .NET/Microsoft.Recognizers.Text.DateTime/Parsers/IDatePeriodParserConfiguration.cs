@@ -121,6 +121,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IImmutableDictionary<string, int> SpecialDecadeCases { get; }
 
+        bool CheckBothBeforeAfter { get; }
+
         bool IsFuture(string text);
 
         bool IsYearToDate(string text);
