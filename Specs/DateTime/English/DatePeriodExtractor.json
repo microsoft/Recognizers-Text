@@ -3816,5 +3816,27 @@
         "Length": 11
       }
     ]
+  },
+  {
+    "Input": "I was not there from 2019/aug/01 to today",
+    "Results": [
+      {
+        "Text": "from 2019/aug/01 to today",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "I was not there from 2019-aug-1 to today",
+    "Results": [
+      {
+        "Text": "from 2019-aug-1 to today",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 24
+      }
+    ]
   }
 ]
