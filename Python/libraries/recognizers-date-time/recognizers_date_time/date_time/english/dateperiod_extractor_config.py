@@ -13,7 +13,7 @@ from ..base_date import BaseDateExtractor
 from ..base_dateperiod import DatePeriodExtractorConfiguration, MatchedIndex
 from .duration_extractor_config import EnglishDurationExtractorConfiguration
 from .date_extractor_config import EnglishDateExtractorConfiguration
-from .common_configs import EnglishOrdinalExtractor
+from .common_configs import EnglishOrdinalExtractor, EnglishCardinalExtractor
 
 
 class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
@@ -240,7 +240,7 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         )
         self._ordinal_extractor = EnglishOrdinalExtractor()
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
-        self._cardinal_extractor = None
+        self._cardinal_extractor = EnglishCardinalExtractor()
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         return MatchedIndex(True, source.rfind('from')) if source.endswith('from') else MatchedIndex(False, -1)
