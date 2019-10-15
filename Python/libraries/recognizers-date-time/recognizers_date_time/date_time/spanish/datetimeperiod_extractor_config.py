@@ -237,7 +237,6 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         self._prefix_day_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.PrefixDayRegex
         )
-
         self._before_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.BeforeRegex
         )
