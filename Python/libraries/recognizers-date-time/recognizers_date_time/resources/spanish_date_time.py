@@ -14,6 +14,7 @@ from .base_date_time import BaseDateTime
 
 
 class SpanishDateTime:
+    CheckBothBeforeAfter = True
     TillRegex = f'(?<till>hasta|al|a|--|-|—|——)(\\s+(el|la(s)?))?'
     AndRegex = f'(?<and>y|y\\s*el|--|-|—|——)'
     DayRegex = f'(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\\b|t)'
@@ -71,7 +72,7 @@ class SpanishDateTime:
     FromRegex = f'((desde|de)(\\s*la(s)?)?)$'
     ConnectorAndRegex = f'(y\\s*(la(s)?)?)$'
     BetweenRegex = f'(entre\\s*(la(s)?)?)'
-    WeekDayRegex = f'\\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|sa|do)\\b'
+    WeekDayRegex = f'\\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|s[aá]|do)\\b'
     OnRegex = f'(?<=\\ben\\s+)({DayRegex}s?)\\b'
     RelaxedOnRegex = f'(?<=\\b(en|el|del)\\s+)((?<day>10|11|12|13|14|15|16|17|18|19|1st|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)s?)\\b'
     ThisRegex = f'\\b((este\\s*){WeekDayRegex})|({WeekDayRegex}\\s*((de\\s+)?esta\\s+semana))\\b'

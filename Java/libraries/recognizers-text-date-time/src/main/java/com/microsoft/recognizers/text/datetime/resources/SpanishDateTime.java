@@ -19,6 +19,8 @@ import com.google.common.collect.ImmutableMap;
 
 public class SpanishDateTime {
 
+    public static final Boolean CheckBothBeforeAfter = false;
+
     public static final String TillRegex = "(?<till>hasta|al|a|--|-|—|——)(\\s+(el|la(s)?))?";
 
     public static final String AndRegex = "(?<and>y|y\\s*el|--|-|—|——)";
@@ -192,7 +194,7 @@ public class SpanishDateTime {
 
     public static final String BetweenRegex = "(entre\\s*(la(s)?)?)";
 
-    public static final String WeekDayRegex = "\\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|sa|do)\\b";
+    public static final String WeekDayRegex = "\\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|s[aá]|do)\\b";
 
     public static final String OnRegex = "(?<=\\ben\\s+)({DayRegex}s?)\\b"
             .replace("{DayRegex}", DayRegex);
