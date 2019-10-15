@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string PastPrefixRegex = @"(son|geçtiğimiz)\b";
       public static readonly string PreviousPrefixRegex = $@"(geçen|bir\s+önceki|önceki|evvelki|{PastPrefixRegex})\b";
       public const string ThisPrefixRegex = @"(bu|şimdiki)\b";
-      public const string RangePrefixRegex = @"(arası(nda)?|'sin[ae](\s+kadar)?|((gününe|'[ae]|ya|ne)\s+)?kadar|'ye(\s+kadar)?|'e)";
+      public const string RangePrefixRegex = @"(arası(nda|na)?|'s[iı]n[ae](\s+(kadar|dek|değin))?|((gününe|'[ae]|y[ae]|n[ae])\s+)?(kadar|dek|değin)|'y[ae](\s+(kadar|dek|değin))?|'[ea]|(?<!'\p{L}+)[ea](\s+(kadar|dek|değin)\b))";
       public const string CenturySuffixRegex = @"(^yüzyıl)";
       public const string ReferencePrefixRegex = @"(o|şu|aynı)\b";
       public const string FutureSuffixRegex = @"\b(ileride|gelecekte)\b";
@@ -156,7 +156,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string AtSecondRegex = @"(?<sec>[0-5]\d)('[dt][ae]\b)";
       public const string PmRegex = @"(?<pm>(öğle yemeği zamanı|öğle yemeği vakti|öğlen civarı|öğle saatlerinde|öğleden sonra|öğlen|öğle|akşamleyin|akşama doğru|akşam saatlerinde|akşamüstü|akşam|gece yarısı|gece yarısına doğru|geceleyin|gece boyunca|gece|ikindi|ikindi vakti))";
       public const string PmRegexFull = @"(?<pm>(öğle yemeği zamanı|öğle yemeği vakti|öğlen civarı|öğle saatlerinde|öğleden sonra|öğlen|öğle|akşamleyin|akşama doğru|akşam saatlerinde|akşamüstü|akşam|gece yarısı|gece yarısına doğru|geceleyin|gece boyunca|gece|ikindi|ikindi vakti))";
-      public const string AmRegex = @"(?<am>(sabahleyin|sabahları|sabah saatlerinde|sabah|öğleden önce|kuşluk vakti))";
+      public const string AmRegex = @"(?<am>(sabahleyin|sabahları|sabah\s+saatlerinde|sabah|öğleden\s+önce|kuşluk\s+vakti))";
       public const string LunchRegex = @"\b(öğle yemeği zamanı|öğle yemeği vakti|öğle saatlerinde|öğleden sonra|öğlen civarı|öğlen|öğle)";
       public const string NightRegex = @"\b(gece yarısı|gece)\b";
       public const string CommonDatePrefixRegex = @"^[\.]";
@@ -171,9 +171,9 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string HourNumToSuffixRegex = @"\b(?<hournum>on\s+(bir|iki|üç|dört|dörd|beş|altı|yedi|sekiz|dokuz)|yirmi\s+(bir|iki|üç)|bir|iki|üç|dört|dörd|beş|altı|yedi|sekiz|dokuz|on|yirmi)(a|e|ya|ye)\b";
       public static readonly string HourToSuffixRegex = $@"\b(?<hour>{HourRegex})('(a|e|ya|ye))\b";
       public static readonly string TimePrefix = $@"(?<suffix>(?<prefix>{AmRegex}|{PmRegex}))";
-      public static readonly string TimeSuffix = $@"(({HourPastSuffixRegex}|{HourNumPastSuffixRegex}|{WrittenTimeRegexPast})\s(?<prefix>({LessThanOneHour}\s((dakika\s+)?(geçe|geçiyor))))|({HourToSuffixRegex}|{HourNumToSuffixRegex}|{WrittenTimeRegexTo})\s(?<prefix>({LessThanOneHour}\s((dakika\s+)?(kala|var)))))";
+      public static readonly string TimeSuffix = $@"(({HourPastSuffixRegex}|{HourNumPastSuffixRegex}|{WrittenTimeRegexPast})\s+(?<prefix>({LessThanOneHour}\s+((dakika\s+)?(geçe|geçiyor))))|({HourToSuffixRegex}|{HourNumToSuffixRegex}|{WrittenTimeRegexTo})\s+(?<prefix>({LessThanOneHour}\s+((dakika\s+)?(kala|var)))))";
       public static readonly string TimeSuffixFull = $@"(?<suffix>{AmRegex}|{PmRegexFull}|{OclockRegex})";
-      public static readonly string TimeHalfRegex = $@"\b(({HourNumRegex}|{HourRegex})\s+(?<prefix>buçuk))\b";
+      public static readonly string TimeHalfRegex = $@"\b(({HourNumRegex}|{HourRegex})\s+(?<prefix>buçuk|buçuğa))\b";
       public static readonly string AtTimeHalfRegex = $@"\b(({HourNumRegex}|{HourRegex})\s+(?<prefix>buçuk)ta)\b";
       public static readonly string BasicTime = $@"\b(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{HourRegex})";
       public const string MidnightRegex = @"(?<midnight>gece yarısı)";
@@ -190,22 +190,22 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string FivesRegex = @"(?<tens>(beş|(((on|yirmi|otuz|kırk|elli)\s)?beş?)))\b";
       public const string HourRegex = @"\b(saat\s*)?(?<hour>2[0-4]|[0-1]?\d)";
       public const string AtHourRegex = @"\b(saat\s*)?(?<hour>2[0-4]|[0-1]?\d)('[dt][ae])";
-      public const string HourNumFromRegex = @"\b(?<hour>(00|06|09|0|10|16|19|6|9)'dan|(01|02|07|08|11|12|17|18|20|21|22|1|2|7|8)'den|(03|04|05|13|14|15|23|24|3|4|5)'ten)\b";
-      public const string HourNumToRegex = @"\b(?<hour>(00|09|0|10|19|9)'a|(01|03|04|05|08|11|13|14|15|18|21|23|24|1|3|4|5|8)'e|(02|07|12|17|22|2|7|20)'ye|(06|16|6)'ye)\b";
-      public const string MinuteFromRegex = @"(?<min>(01|02|07|08|11|12|17|18|20|21|22|27|28|31|32|37|38|41|42|47|48|50|51|52|57|58|1|2|7|8)'den|(03|04|05|13|14|15|23|24|25|33|34|35|43|44|45|53|54|55|3|4|5)'ten|(06|09|10|16|19|26|29|30|36|39|46|49|56|59|6|9)'dan|40'tan)";
-      public const string MinuteToRegex = @"(?<min>(01|03|04|05|08|11|13|14|15|18|21|23|24|25|28|31|33|34|35|38|41|43|44|45|48|51|53|54|55|58|1|3|4|5|8)'e|(02|07|12|17|20|22|27|32|37|42|47|50|52|57|2|7)'ye|(06|16|26|36|46|56|6|9)'ya|(09|10|19|29|30|39|40|49|59)'a)";
-      public const string HourWithMinuteZeroFromRegex = @"\b(?<hour>(00|06|09|0|10|16|19|6|9):00'dan|(01|02|07|08|11|12|17|18|20|21|22|1|2|7|8):00'den|(03|04|05|13|14|15|23|24|3|4|5):00'ten)\b";
+      public const string HourNumFromRegex = @"\b((?<hour>00|06|09|0|10|16|19|6|9)'dan|(?<hour>01|02|07|08|11|12|17|18|20|21|22|1|2|7|8)'den|(?<hour>03|04|05|13|14|15|23|24|3|4|5)'ten)\b";
+      public const string HourNumToRegex = @"\b((?<hour>00|09|0|10|19|9)'a|(?<hour>01|03|04|05|08|11|13|14|15|18|21|23|24|1|3|4|5|8)'e|(?<hour>02|07|12|17|22|2|7|20)'ye|(?<hour>06|16|6)'ya)\b";
+      public const string MinuteFromRegex = @"((?<min>01|02|07|08|11|12|17|18|20|21|22|27|28|31|32|37|38|41|42|47|48|50|51|52|57|58|1|2|7|8)'den|(?<min>03|04|05|13|14|15|23|24|25|33|34|35|43|44|45|53|54|55|3|4|5)'ten|(?<min>00|06|09|10|16|19|26|29|30|36|39|46|49|56|59|6|9)'dan|(?<min>40)'tan)";
+      public const string MinuteToRegex = @"((?<min>01|03|04|05|08|11|13|14|15|18|21|23|24|25|28|31|33|34|35|38|41|43|44|45|48|51|53|54|55|58|1|3|4|5|8)'e|(?<min>02|07|12|17|20|22|27|32|37|42|47|50|52|57|2|7)'ye|(?<min>00|06|16|26|36|46|56|6|9)'ya|(?<min>09|10|19|29|30|39|40|49|59)'a)";
+      public const string HourWithMinuteZeroFromRegex = @"\b(?<hour>2[0-4]|[0-1]?\d):00'(dan|den|tan|ten)\b";
       public const string HourWithMinuteZeroToRegex = @"\b(?<hour>(00|09|0|10|19|9):00'a|(01|03|04|05|08|11|13|14|15|18|21|23|24|1|3|4|5|8):00'e|(2|02|07|12|17|22|2|7|20):00'ye|(06|16|6):00'ye)\b";
       public const string PeriodHourNumRegex = @"\b(?<hour>sıfır|bir|iki|üç|dört|beş|altı|yedi|sekiz|dokuz|on|on bir|on iki|on üç|on dört|on beş|on altı|on yedi|on sekiz|on dokuz|yirmi|yirmi bir|yirmi iki|yirmi üç|yirmi dört)\b";
       public const string PeriodAtHourNumRegex = @"\b(?<hour>sıfırda|birde|ikide|üçte|dörtte|beşte|altıda|yedide|sekizde|dokuzda|onda|on birde|on ikide|on üçte|on dörtte|on beşte|on altıda|on yedide|on sekizde|on dokuzda|yirmide|yirmi birde|yirmi ikide|yirmi üçte|yirmi dörtte)\b";
       public const string PeriodHourNumFromRegex = @"\b(?<hour>sıfırdan|birden|ikiden|üçten|dörtten|beşten|altıdan|yediden|sekizden|dokuzdan|ondan|on birden|on ikiden|on üçten|on dörtten|on beşten|on altıdan|on yediden|on sekizden|on dokuzdan|yirmiden|yirmi birden|yirmi ikiden|yirmi üçten|yirmi dörtten)\b";
-      public const string PeriodHourNumToRegex = @"\b(?<hour>sıfıra|bire|ikiye|üçe|dörde|beşe|altıya|yediye|sekize|dokuza|ona|on bire|on ikiye|on üçe|on dörde|on beşe|on altıya|on yediye|on sekize|on dokuza|yirmiye|yirmi bire|yirmi ikiye|yirmi üçe|yirmi dörde)\b";
+      public const string PeriodHourNumToRegex = @"\b((?<hour>iki|yedi|on\s+iki|on\s+yedi|yirmi|yirmi\s+iki)ye|(?<hour>bir|üç|dörd|beş|sekiz|on bir|on\s+üç|on\s+dörd|on\s+beş|on\s+sekiz|yirmi\s+bir|yirmi\s+üç|yirmi\s+dörd)e|(?<hour>altı|on\s+altı)ya|(?<hour>sıfır|dokuz|on|on\s+dokuz)a)\b";
       public static readonly string ConnectNumRegex = $@"\b{HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)";
       public static readonly string TimeRegexWithDotConnector = $@"({HourRegex}(\s*\.\s*){BaseDateTime.MinuteRegex})";
       public static readonly string TimeRegex1 = $@"\b(({TimePrefix}\s+)(saat\s)?({WrittenTimeRegex}|{HourNumRegex}|{AtHourNumRegex}|{HourRegex}))|((saat\s)?({WrittenTimeRegex}|{HourNumRegex}|{AtHourNumRegex}|{HourRegex})\s+{TimePrefix})";
-      public static readonly string TimeRegex2 = $@"\b({TimePrefix}\s+)?(saat\s)?({HourRegex}:{BaseDateTime.MinuteRegex}:{BaseDateTime.SecondRegex})";
+      public static readonly string TimeRegex2 = $@"\b({TimePrefix}\s+)?(saat\s)?({HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?)";
       public static readonly string TimeRegex3 = $@"\b({TimePrefix}\s+)?(saat\s)?({HourRegex}:{BaseDateTime.MinuteRegex})";
-      public static readonly string TimeRegex4 = $@"\b({TimePrefix}\s+)?(saat\s)?{TimeSuffix}\b";
+      public static readonly string TimeRegex4 = $@"\b({TimePrefix}\s+)?(saat\s)?{TimeSuffix}(?=(\b|dan))";
       public static readonly string TimeRegex5 = $@"\b({TimePrefix}\s+)?(saat\s)?({HourRegex}|{HourNumRegex})?({AroundRegex})\b";
       public static readonly string TimeRegex6 = $@"\b({TimePrefix}\s+)?(saat\s+)?({TimeHalfRegex}|{AtTimeHalfRegex})";
       public static readonly string TimeRegex7 = $@"\b({TimePrefix}\s+(saat\s+)?)({AtHourWithZeroMinRegex}|{AtHourNumRegex}|({HourNumRegex}\s+{AtMinuteNumRegex})|{HourRegex}:{BaseDateTime.MinuteRegex}:{AtSecondRegex})";
@@ -215,17 +215,18 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string TimeRegex11 = $@"\b(({TimeRegexWithDotConnector})(?!\s*per\s*cent|%)|({TimeRegexWithDotConnector}(\s*{DescRegex})))";
       public static readonly string TimeRegex12 = $@"\b({TimePrefix}\s+)?(saat\s)?({AtWrittenTimeRegex}|{AtHourNumRegex}|{AtHourRegex})(\s+{TimePrefix})";
       public static readonly string TimeRegex13 = $@"\b({AtHourWithZeroMinRegex}|{AtHourNumRegex}|({HourNumRegex}\s+{AtMinuteNumRegex})|{HourRegex}:{BaseDateTime.MinuteRegex}:{AtMinuteRegex})\s+{TimePrefix}";
-      public static readonly string PureNumFromTo = $@"((({TimePrefix})\s*)?(saat\s)?{PeriodHourNumFromRegex}\s*(({TimePrefix})\s*)?{PeriodHourNumToRegex}(\s+{TillRegex})?|(({TimePrefix})\s*)?(saat\s)?{HourNumFromRegex}\s*(({TimePrefix})\s*)?({HourNumToRegex}\s+)(\s+{TillRegex})?)";
-      public static readonly string PureNumBetweenAnd = $@"(({TimePrefix})\s*)?(HourRegex|{PeriodHourNumRegex}|(HourRegex{BaseDateTime.TwoDigitMinuteRegex}))\s*{RangeConnectorRegex}\s*(({TimePrefix})\s*)?(HourRegex|{PeriodHourNumRegex}|(HourRegex{BaseDateTime.TwoDigitMinuteRegex}))({RangePrefixRegex}\s+)?";
-      public static readonly string SpecificTimeFromTo = $@"(?<time1>((\b{TimePrefix}\s+)?({HourRegex}(\s*)?:(\s*)?{MinuteFromRegex}|{HourWithMinuteZeroFromRegex})|{HourNumFromRegex}|{PeriodHourNumFromRegex}))\s*(?<time2>((\b{TimePrefix}\s+)?({HourRegex}(\s*)?:(\s*)?{MinuteToRegex}|{HourWithMinuteZeroToRegex})|{HourNumToRegex}|{PeriodHourNumToRegex}))\s*{TillRegex}\s*";
-      public static readonly string SpecificTimeBetweenAnd = $@"(?<time1>({TimeRegex2}|{HourRegex}|{PeriodHourNumRegex}))\s*{RangeConnectorRegex}\s*(?<time2>({TimeRegex2}|{HourRegex}|{PeriodHourNumRegex}))({RangePrefixRegex}\s+)?";
+      public static readonly string PureNumFromTo = $@"(((?<leftDesc>{TimePrefix})\s*)?(?<desc>saat\s+)?({PeriodHourNumFromRegex}|{HourNumFromRegex})\s*((?<rightDesc>{TimePrefix})\s*)?({PeriodHourNumToRegex}|{HourNumToRegex})(\s+{TillRegex})?)";
+      public static readonly string PureNumBetweenAnd = $@"((?<leftDesc>{TimePrefix})\s*)?({HourRegex}|{PeriodHourNumRegex}|({HourRegex}{BaseDateTime.TwoDigitMinuteRegex}))\s*{RangeConnectorRegex}\s*((?<leftDesc>{TimePrefix})\s*)?({HourRegex}|{PeriodHourNumRegex}|({HourRegex}{BaseDateTime.TwoDigitMinuteRegex}))(\s*{RangePrefixRegex}\b)?";
+      public static readonly string SpecificTimeFromTo = $@"(?<time1>((?<leftDesc>\b{TimePrefix}\s+)?({HourRegex}(\s*)?:(\s*)?{MinuteFromRegex}|{HourWithMinuteZeroFromRegex})|{HourNumFromRegex}|{PeriodHourNumFromRegex}))\s*(?<time2>((?<rightDesc>\b{TimePrefix}\s+)?({HourRegex}(\s*)?:(\s*)?{MinuteToRegex}|{HourWithMinuteZeroToRegex})|{HourNumToRegex}|{PeriodHourNumToRegex}))\s*{TillRegex}\b";
+      public static readonly string SpecificTimeBetweenAnd = $@"(?<time1>({TimeRegex2}|{HourRegex}|{PeriodHourNumRegex}))\s*{RangeConnectorRegex}\s*(?<time2>({TimeRegex2}|{HourRegex}|{PeriodHourNumRegex}))(\s*{RangePrefixRegex}\b)?";
       public const string SuffixAfterRegex = @"\b((veya|ve)\s+(sonrasında|sonra))\b";
       public const string PrepositionRegex = @"^[\*]";
-      public const string TimeOfDayRegex = @"\b(?<timeOfDay>((sabahın|öğlenin|akşamın|gecenin|günün|mesainin)\s+((erken|geç)\s(saatinde|saatlerinde))|iş\s+saati(nde)?|mesai(de)?))\b";
+      public const string LaterEarlyRegex = @"((?<early>(erkenden|erken(\s+saatte)?))|(?<late>geç(\s+saatte)?))";
+      public static readonly string TimeOfDayRegex = $@"\b(?<timeOfDay>(sabah|öğleden sonra|öğlen|öğle|akşam|gece|gün|mesai|iş)(ın|in|nin|ün|leyin|ları|leri|de)?(\s+{LaterEarlyRegex})?(\s+(saat(inde|te|lerinde|leri)|vaktinde|vakti|vakitlerinde))?(\s+(içinde|içi|dışında|dışı))?)";
       public static readonly string SpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{TimeOfDayRegex})\b|\bbu\s(sabah|akşam|gece))\b";
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
       public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
-      public static readonly string[] BusinessHourSplitStrings = { @"iş", @"saati", @"saatinde", @"mesai", @"mesaide" };
+      public static readonly string[] BusinessHourSplitStrings = { @"iş", @"saat" };
       public const string NowRegex = @"\b(?<now>(hemen\s+)?şimdi|en kısa\s(sürede|zamanda)|ilk fırsatta|bir an\s(önce|evvel)|hemen|vakit geçirmeden|(mümkün olduğunca|olabildiğince)\sçabuk|son\s(dönemlerde|zamanlarda|günlerde)|geçenlerde|yakınlarda|(bu|şu)\sıralar|yakın zamanda|(bu|şu|son)\sgünlerde|önceden|evvelce|bundan önce|daha önce)\b";
       public const string SuffixRegex = @"\b(sabah|sabahleyin|sabahtan|öğleden sonra|akşam|akşamleyin|gece|geceleyin)\b";
       public const string ExcludeSuffixRegex = @"^'\p{L}*(?<match>.*)$";
@@ -284,7 +285,8 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string RelativeDurationUnitRegex = $@"((?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))";
       public static readonly string ReferenceDatePeriodRegex = $@"\b{ReferencePrefixRegex}\s+(?<duration>hafta\s+sonu|hafta\s+sonları|(hafta|ay|yıl)(lar)?|sene(ler)?)\b";
       public const string ConnectorRegex = @"^(-|,|@)$";
-      public const string FromRegex = @"\b(itibaren)$";
+      public const string FromRegex = @"(\bitibaren|'den|'dan|'ten|'tan)$";
+      public const string PluralTokenRegex = @"(ları|leri)$";
       public const string FromToRegex = @"\b.+('?(den|dan|ten|tan)).+('?(e|a))\b.+";
       public static readonly string RelativeAtDateTimeUnitRegex = $@"(({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+({AtDateTimeUnitRegex}))";
       public const string SingleAmbiguousMonthRegex = @"^(ocak|mayıs|ekim|aralık|tem|ara)$";
@@ -864,6 +866,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
         {
             { @"yarım", 0.5 },
             { @"buçuk", 0.5 },
+            { @"buçuğa", 0.5 },
             { @"çeyrek", 0.25 },
             { @"çeyreği", 0.25 }
         };
@@ -987,7 +990,8 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly IList<string> AfternoonTermList = new List<string>
         {
             @"öğle",
-            @"öğlen"
+            @"öğlen",
+            @"öğleden sonra"
         };
       public static readonly IList<string> EveningTermList = new List<string>
         {

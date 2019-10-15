@@ -92,6 +92,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             PureNumFromTo, PureNumBetweenAnd,
         };
 
+        bool ITimePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 
         Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;

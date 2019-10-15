@@ -86,6 +86,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IEnumerable<Regex> PureNumberRegex => new[] { PureNumFromTo, PureNumBetweenAnd };
 
+        bool ITimePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 
         Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;

@@ -80,6 +80,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IEnumerable<Regex> PureNumberRegex => new Regex[] { PureNumFromTo, PureNumBetweenAnd };
 
+        bool ITimePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 
         Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => PortugueseDateTimeExtractorConfiguration.TimeOfDayRegex;

@@ -97,6 +97,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IEnumerable<Regex> PureNumberRegex => new Regex[] { PureNumFromTo, PureNumBetweenAnd };
 
+        bool ITimePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 
         Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => FrenchDateTimeExtractorConfiguration.TimeOfDayRegex;
