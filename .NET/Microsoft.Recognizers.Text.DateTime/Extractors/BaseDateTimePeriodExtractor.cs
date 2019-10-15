@@ -49,9 +49,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ers;
         }
 
-        private static bool MatchPrefixRegexInSegment(string beforeStr, Match match)
+        private static bool MatchPrefixRegexInSegment(string text, Match match, bool inPrefix)
         {
-            var result = match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length));
+            string subStr = inPrefix ? text.Substring(match.Index + match.Length) : text.Substring(0, match.Index);
+            var result = match.Success && string.IsNullOrWhiteSpace(subStr);
             return result;
         }
 
@@ -102,11 +103,25 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
 
-                    if (IsValidConnectorForDateAndTimePeriod(middleStr))
+                    bool inPrefix = true;
+                    if (IsValidConnectorForDateAndTimePeriod(middleStr, out int length, inPrefix))
                     {
                         var begin = ers[i].Start ?? 0;
                         var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);
                         ret.Add(new Token(begin, end));
+                    }
+                    else if (this.config.CheckBothBeforeAfter)
+                    {
+                        // Check also afterStr
+                        inPrefix = false;
+                        var afterStart = ers[j].Start + ers[j].Length ?? 0;
+                        var afterStr = text.Substring(afterStart);
+                        if (IsValidConnectorForDateAndTimePeriod(afterStr, out length, inPrefix) && middleStr.Length <= 4)
+                        {
+                            var begin = ers[i].Start ?? 0;
+                            var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0) + length;
+                            ret.Add(new Token(begin, end));
+                        }
                     }
 
                     i = j + 1;
@@ -133,8 +148,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
         // Valid connector in English for Before include: "before", "no later than", "in advance of", "prior to", "earlier than", "sooner than", "by", "till", "until"...
         // Valid connector in English for After include: "after", "later than"
-        private bool IsValidConnectorForDateAndTimePeriod(string text)
+        private bool IsValidConnectorForDateAndTimePeriod(string text, out int length, bool inPrefix)
         {
+            length = 0;
             var beforeAfterRegexes = new List<Regex>
             {
                 this.config.BeforeRegex,
@@ -143,8 +159,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var regex in beforeAfterRegexes)
             {
-                if (regex.IsExactMatch(text, trim: true))
+                var match = inPrefix ? regex.MatchExact(text, trim: true) : regex.MatchBegin(text, trim: true);
+                if (match.Success)
                 {
+                    length = match.Length;
                     return true;
                 }
             }
@@ -282,6 +300,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                         this.config.GetBetweenTokenIndex(beforeStr, out fromIndex))
                     {
                         periodBegin = fromIndex;
+                    }
+                    else if (this.config.CheckBothBeforeAfter)
+                    {
+                        var afterStr = text.Substring(periodEnd, text.Length - periodEnd);
+                        if (this.config.GetBetweenTokenIndex(afterStr, out var afterIndex))
+                        {
+                            // Handle "between" in afterStr
+                            periodEnd += afterIndex;
+                        }
                     }
 
                     ret.Add(new Token(periodBegin, periodEnd));
@@ -538,19 +565,27 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 // within (the) (next) "Seconds/Minutes/Hours" should be handled as datetimeRange here
                 // within (the) (next) XX days/months/years + "Seconds/Minutes/Hours" should also be handled as datetimeRange here
-                var match = config.WithinNextPrefixRegex.Match(beforeStr);
-                if (MatchPrefixRegexInSegment(beforeStr, match))
+                bool inPrefix = true;
+                Token token = MatchWithinNextPrefix(beforeStr, text, duration, inPrefix);
+                if (token.Start >= 0)
                 {
-                    var startToken = match.Index;
-                    match = config.TimeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
-                    if (match.Success)
+                    ret.Add(token);
+                    continue;
+                }
+
+                // check also afterStr
+                if (this.config.CheckBothBeforeAfter)
+                {
+                    inPrefix = false;
+                    token = MatchWithinNextPrefix(afterStr, text, duration, inPrefix);
+                    if (token.Start >= 0)
                     {
-                        ret.Add(new Token(startToken, duration.End));
+                        ret.Add(token);
                         continue;
                     }
                 }
 
-                match = this.config.PreviousPrefixRegex.Match(beforeStr);
+                var match = this.config.PreviousPrefixRegex.Match(beforeStr);
                 var index = -1;
                 if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
                 {
@@ -637,5 +672,41 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return ret;
         }
+
+        private Token MatchWithinNextPrefix(string subStr, string text, Token duration, bool inPrefix)
+        {
+            var startOut = -1;
+            var endOut = -1;
+            bool success = false;
+            var match = config.WithinNextPrefixRegex.Match(subStr);
+            if (MatchPrefixRegexInSegment(subStr, match, inPrefix))
+            {
+                var startToken = inPrefix ? match.Index : duration.Start;
+                var endToken = duration.End + (inPrefix ? 0 : match.Index + match.Length);
+                match = config.TimeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
+                success = match.Success;
+
+                if (!inPrefix)
+                {
+                    // Match prefix for "next"
+                    var beforeStr = text.Substring(0, duration.Start);
+                    var matchNext = this.config.NextPrefixRegex.Match(beforeStr);
+                    success = match.Success || matchNext.Success;
+                    if (MatchPrefixRegexInSegment(beforeStr, matchNext, true))
+                    {
+                        startToken = matchNext.Index;
+                    }
+                }
+
+                if (success)
+                {
+                    startOut = startToken;
+                    endOut = endToken;
+                }
+            }
+
+            return new Token(startOut, endOut);
+        }
+
     }
 }

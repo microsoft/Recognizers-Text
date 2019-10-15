@@ -564,7 +564,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var dateResult = this.Config.DateExtractor.Extract(trimmedText.Replace(ers[0].Text, string.Empty), referenceTime);
 
-                    var dateText = trimmedText.Replace(ers[0].Text, string.Empty).Replace(Config.TokenBeforeDate, string.Empty).Trim();
+                    // check if TokenBeforeDate is null
+                    var dateText = !string.IsNullOrEmpty(Config.TokenBeforeDate) ? trimmedText.Replace(ers[0].Text, string.Empty).Replace(Config.TokenBeforeDate, string.Empty).Trim() : trimmedText.Replace(ers[0].Text, string.Empty).Trim();
 
                     // If only one Date is extracted and the Date text equals to the rest part of source text
                     if (dateResult.Count == 1 && dateText.Equals(dateResult[0].Text))
@@ -938,7 +939,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var dateStr = pr1.TimexStr.Split('T')[0];
                 var durationStr = DateTimeFormatUtil.LuisTimeSpan(futureEnd - futureBegin);
-                ret.Timex = $"({pr1.TimexStr},{dateStr + pr2.TimexStr},{durationStr}";
+                ret.Timex = $"({pr1.TimexStr},{dateStr + pr2.TimexStr},{durationStr})";
             }
             else if (endHasDate)
             {
@@ -1045,6 +1046,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // Should also handle the multiple duration case like P1DT8H
                     // Set the beginTime equal to reference time for now
                     if (Config.WithinNextPrefixRegex.IsExactMatch(beforeStr, trim: true))
+                    {
+                        endTime = beginTime.AddSeconds(swiftSeconds);
+                    }
+
+                    if (this.Config.CheckBothBeforeAfter && Config.WithinNextPrefixRegex.IsExactMatch(afterStr, trim: true))
                     {
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }

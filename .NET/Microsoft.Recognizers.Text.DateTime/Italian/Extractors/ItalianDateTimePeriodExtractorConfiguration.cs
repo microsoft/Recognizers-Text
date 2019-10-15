@@ -108,6 +108,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex FollowedUnit => TimeFollowedUnit;
 
+        bool IDateTimePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => TimeNumberCombinedWithUnit;
 
         Regex IDateTimePeriodExtractorConfiguration.TimeUnitRegex => TimeUnitRegex;

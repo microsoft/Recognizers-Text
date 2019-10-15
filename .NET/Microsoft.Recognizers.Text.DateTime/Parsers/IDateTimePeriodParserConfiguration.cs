@@ -69,6 +69,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex AfterRegex { get; }
 
+        bool CheckBothBeforeAfter { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> Numbers { get; }

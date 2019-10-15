@@ -50,6 +50,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
+        private static readonly Regex FromRegex =
+            new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
+
+        private static readonly Regex ExcludeSuffixRegex =
+            new Regex(DateTimeDefinitions.ExcludeSuffixRegex, RegexFlags);
+
+        private static readonly Regex RangePrefixRegex =
+            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexFlags);
+
         private static readonly Regex[] SimpleCases =
         {
             TurkishTimePeriodExtractorConfiguration.PureNumFromTo,
@@ -60,7 +69,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             new Regex(DateTimeDefinitions.PeriodTimeOfDayRegex, RegexFlags);
 
         private static readonly Regex PeriodSpecificTimeOfDayRegex =
-            new Regex(DateTimeDefinitions.PeriodSpecificTimeOfDayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexFlags);
 
         private static readonly Regex TimeUnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexFlags);
@@ -73,6 +82,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         private static readonly Regex MiddlePauseRegex =
             new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexFlags);
+
+        private static readonly Regex RangeConnectorRegex =
+            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
 
         public TurkishDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
@@ -91,7 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         public Regex PrepositionRegex => TurkishTimePeriodExtractorConfiguration.PrepositionRegex;
 
-        public Regex TillRegex => TurkishTimePeriodExtractorConfiguration.TillRegex;
+        public Regex TillRegex => RangeConnectorRegex;
 
         public Regex TimeOfDayRegex => PeriodTimeOfDayRegex;
 
@@ -137,6 +149,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         Regex IDateTimePeriodExtractorConfiguration.AfterRegex => AfterRegex;
 
+        bool IDateTimePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         public string TokenBeforeDate { get; }
 
         public IExtractor CardinalExtractor { get; }
@@ -157,21 +171,34 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("from"))
+            var fromMatch = FromRegex.Match(text);
+            if (fromMatch.Success)
             {
-                index = text.LastIndexOf("from", StringComparison.Ordinal);
-                return true;
+                index = fromMatch.Index;
             }
 
-            return false;
+            return fromMatch.Success;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("between"))
+            string textTrm = text;
+
+            // do not include the suffix in textTrm
+            var noSuffixMatch = ExcludeSuffixRegex.Match(text);
+            if (noSuffixMatch.Success)
             {
-                index = text.LastIndexOf("between", StringComparison.Ordinal);
+                textTrm = noSuffixMatch.Groups["match"].Value;
+            }
+
+            textTrm = textTrm.TrimStart();
+            int diff = text.Length - textTrm.Length;
+            var match = RangePrefixRegex.MatchBegin(textTrm, false);
+
+            if (match.Success)
+            {
+                index = diff + match.Index + match.Length;
                 return true;
             }
 
@@ -180,9 +207,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         public bool HasConnectorToken(string text)
         {
-            var rangeConnetorRegex = new Regex(DateTimeDefinitions.RangeConnectorRegex);
-
-            return rangeConnetorRegex.IsExactMatch(text, trim: true);
+            return RangeConnectorRegex.IsExactMatch(text, trim: true);
         }
     }
 }
