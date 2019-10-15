@@ -2866,5 +2866,51 @@
         "Length": 26
       }
     ]
+  },
+  {
+    "Input": "i'll go back 2019-sep-1.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-21T08:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2019-sep-1",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-09-01",
+          "FutureResolution": {
+            "date": "2019-09-01"
+          },
+          "PastResolution": {
+            "date": "2019-09-01"
+          }
+        },
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "i'll go back 2019/sep/01.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-21T08:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2019/sep/01",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-09-01",
+          "FutureResolution": {
+            "date": "2019-09-01"
+          },
+          "PastResolution": {
+            "date": "2019-09-01"
+          }
+        },
+        "Start": 13,
+        "Length": 11
+      }
+    ]
   }
 ]

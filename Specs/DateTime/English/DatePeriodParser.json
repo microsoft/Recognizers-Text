@@ -5844,5 +5844,55 @@
         "Length": 11
       }
     ]
+  },
+  {
+    "Input": "I was not there from 2019-aug-1 to today",
+    "Context": {
+      "ReferenceDateTime": "2019-10-14T15:00:00"
+    },
+    "Results": [
+      {
+        "Text": "from 2019-aug-1 to today",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-08-01,2019-10-14,P74D)",
+          "FutureResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-10-14"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-10-14"
+          }
+        },
+        "Start": 16,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "I was not there from 2019/aug/01 to today",
+    "Context": {
+      "ReferenceDateTime": "2019-09-30T15:00:00"
+    },
+    "Results": [
+      {
+        "Text": "from 2019/aug/01 to today",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-08-01,2019-09-30,P60D)",
+          "FutureResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-30"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-30"
+          }
+        },
+        "Start": 16,
+        "Length": 25
+      }
+    ]
   }
 ]

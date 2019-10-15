@@ -376,9 +376,10 @@ public class EnglishDateTime {
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{WeekDayRegex}", WeekDayRegex);
 
-    public static final String DateExtractorA = "\\b({WeekDayRegex}\\s+)?{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{DayRegex}"
+    public static final String DateExtractorA = "\\b({WeekDayRegex}\\s+)?{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DayRegex}"
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex)
             .replace("{MonthNumRegex}", MonthNumRegex)
+            .replace("{MonthRegex}", MonthRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{WeekDayRegex}", WeekDayRegex);
 

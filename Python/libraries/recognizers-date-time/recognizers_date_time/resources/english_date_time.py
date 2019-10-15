@@ -117,7 +117,7 @@ class EnglishDateTime:
     DateExtractor8 = f'(?<={DatePreposition}\\s+)({StrictRelativeRegex}\\s+)?({WeekDayRegex}\\s+)?{DayRegex}[\\\\\\-]{MonthNumRegex}(?![%])\\b'
     DateExtractor9L = f'\\b({WeekDayRegex}\\s+)?{DayRegex}\\s*/\\s*{MonthNumRegex}{DateExtractorYearTermRegex}(?![%])\\b'
     DateExtractor9S = f'\\b({WeekDayRegex}\\s+)?{DayRegex}\\s*/\\s*{MonthNumRegex}(?![%])\\b'
-    DateExtractorA = f'\\b({WeekDayRegex}\\s+)?{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{DayRegex}'
+    DateExtractorA = f'\\b({WeekDayRegex}\\s+)?{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DayRegex}'
     OfMonth = f'^\\s*of\\s*{MonthRegex}'
     MonthEnd = f'{MonthRegex}\\s*(the)?\\s*$'
     WeekDayEnd = f'(this\\s+)?{WeekDayRegex}\\s*,?\\s*$'

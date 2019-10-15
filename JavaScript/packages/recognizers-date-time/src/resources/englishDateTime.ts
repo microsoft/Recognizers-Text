@@ -115,7 +115,7 @@ export namespace EnglishDateTime {
     export const DateExtractor8 = `(?<=${DatePreposition}\\s+)(${StrictRelativeRegex}\\s+)?(${WeekDayRegex}\\s+)?${DayRegex}[\\\\\\-]${MonthNumRegex}(?![%])\\b`;
     export const DateExtractor9L = `\\b(${WeekDayRegex}\\s+)?${DayRegex}\\s*/\\s*${MonthNumRegex}${DateExtractorYearTermRegex}(?![%])\\b`;
     export const DateExtractor9S = `\\b(${WeekDayRegex}\\s+)?${DayRegex}\\s*/\\s*${MonthNumRegex}(?![%])\\b`;
-    export const DateExtractorA = `\\b(${WeekDayRegex}\\s+)?${BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*${MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*${DayRegex}`;
+    export const DateExtractorA = `\\b(${WeekDayRegex}\\s+)?${BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*(${MonthNumRegex}|${MonthRegex})\\s*[/\\\\\\-\\.]\\s*${DayRegex}`;
     export const OfMonth = `^\\s*of\\s*${MonthRegex}`;
     export const MonthEnd = `${MonthRegex}\\s*(the)?\\s*$`;
     export const WeekDayEnd = `(this\\s+)?${WeekDayRegex}\\s*,?\\s*$`;
