@@ -80,23 +80,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         {
             var trimmedText = text.Trim();
 
-            if (trimmedText.Equals("daily"))
+            if (trimmedText.Equals("günlük"))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("weekly"))
+            else if (trimmedText.Equals("haftalık"))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("biweekly"))
+            else if (trimmedText.Equals("iki haftada bir"))
             {
                 timex = "P2W";
             }
-            else if (trimmedText.Equals("monthly"))
+            else if (trimmedText.Equals("aylık"))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("yearly") || trimmedText.Equals("annually") || trimmedText.Equals("annual"))
+            else if (trimmedText.Equals("yıllık") || trimmedText.Equals("senelik"))
             {
                 timex = "P1Y";
             }
@@ -113,19 +113,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         {
             var trimmedText = text.Trim();
 
-            if (trimmedText.Equals("day"))
+            if (trimmedText.Equals("gün"))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("week"))
+            else if (trimmedText.Equals("hafta"))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("month"))
+            else if (trimmedText.Equals("ay"))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("year"))
+            else if (trimmedText.Equals("yıl"))
             {
                 timex = "P1Y";
             }
