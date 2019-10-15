@@ -19,6 +19,8 @@ import com.google.common.collect.ImmutableMap;
 
 public class PortugueseDateTime {
 
+    public static final Boolean CheckBothBeforeAfter = false;
+
     public static final String TillRegex = "(?<till>ate|as|às|até|ateh|a|ao|--|-|—|——)(\\s+(o|[aà](s)?))?";
 
     public static final String AndRegex = "(?<and>e|e\\s*o|--|-|—|——)";
