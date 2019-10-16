@@ -24,8 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public TurkishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
-            // @TODO replace token with list of tokens (in Turkish many different suffixes can be used)
-            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate1;
+            TokenBeforeDate = DateTimeDefinitions.TokenListBeforeDate;
 
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;

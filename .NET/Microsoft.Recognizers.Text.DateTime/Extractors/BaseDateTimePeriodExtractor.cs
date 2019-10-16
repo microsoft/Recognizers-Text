@@ -104,7 +104,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
 
                     bool inPrefix = true;
-                    if (IsValidConnectorForDateAndTimePeriod(middleStr, out int length, inPrefix))
+                    int length = GetValidConnectorForDateAndTimePeriod(middleStr, inPrefix);
+                    if (length >= 0)
                     {
                         var begin = ers[i].Start ?? 0;
                         var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);
@@ -116,7 +117,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                         inPrefix = false;
                         var afterStart = ers[j].Start + ers[j].Length ?? 0;
                         var afterStr = text.Substring(afterStart);
-                        if (IsValidConnectorForDateAndTimePeriod(afterStr, out length, inPrefix) && middleStr.Length <= 4)
+                        length = GetValidConnectorForDateAndTimePeriod(afterStr, inPrefix);
+                        if (length >= 0 && middleStr.Length <= 4)
                         {
                             var begin = ers[i].Start ?? 0;
                             var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0) + length;
@@ -148,9 +150,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
         // Valid connector in English for Before include: "before", "no later than", "in advance of", "prior to", "earlier than", "sooner than", "by", "till", "until"...
         // Valid connector in English for After include: "after", "later than"
-        private bool IsValidConnectorForDateAndTimePeriod(string text, out int length, bool inPrefix)
+        private int GetValidConnectorForDateAndTimePeriod(string text, bool inPrefix)
         {
-            length = 0;
+            int length = -1;
             var beforeAfterRegexes = new List<Regex>
             {
                 this.config.BeforeRegex,
@@ -163,11 +165,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Success)
                 {
                     length = match.Length;
-                    return true;
+                    return length;
                 }
             }
 
-            return false;
+            return length;
         }
 
         // For cases like "Early in the day Wednesday"

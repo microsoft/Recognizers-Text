@@ -566,6 +566,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // check if TokenBeforeDate is null
                     var dateText = !string.IsNullOrEmpty(Config.TokenBeforeDate) ? trimmedText.Replace(ers[0].Text, string.Empty).Replace(Config.TokenBeforeDate, string.Empty).Trim() : trimmedText.Replace(ers[0].Text, string.Empty).Trim();
+                    if (this.Config.CheckBothBeforeAfter)
+                    {
+                        List<string> tokenListBeforeDate = Config.TokenBeforeDate.Split('|').ToList();
+                        foreach (string token in tokenListBeforeDate.Where(n => !string.IsNullOrEmpty(n)))
+                        {
+                            dateText = dateText.Replace(token, string.Empty).Trim();
+                        }
+                    }
 
                     // If only one Date is extracted and the Date text equals to the rest part of source text
                     if (dateResult.Count == 1 && dateText.Equals(dateResult[0].Text))
