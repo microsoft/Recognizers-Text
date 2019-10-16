@@ -146,6 +146,7 @@ class Constants:
     HALF = 'half'
 
     # Holidays
+    # These should not be constants, they should go on the resources files for English
     FATHERS = 'fathers'
     MOTHERS = 'mothers'
     THANKS_GIVING_DAY = 'thanksgivingday'
@@ -189,8 +190,6 @@ class TimeTypeConstants:
     UNTIL_MOD: str = 'until'
     EARLY_MOD: str = 'start'
     MID_MOD: str = 'mid'
-    MID_NIGHT_MOD: str = 'midnight'
-    MID_MORNING_MOD: str = 'midmorning'
     LATE_MOD: str = 'end'
     MORE_THAN_MOD: str = 'more'
     LESS_THAN_MOD: str = 'less'
