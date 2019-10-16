@@ -63,6 +63,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
+        private static readonly Regex ExcludeSuffixRegex =
+            new Regex(DateTimeDefinitions.ExcludeSuffixRegex, RegexFlags);
+
         public TurkishDateTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
@@ -115,6 +118,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         public bool IsConnector(string text)
         {
+            // do not include the suffix in text
+            var noSuffixMatch = ExcludeSuffixRegex.Match(text);
+            if (noSuffixMatch.Success)
+            {
+                text = noSuffixMatch.Groups["match"].Value;
+            }
+
             text = text.Trim();
             return string.IsNullOrEmpty(text) || PrepositionRegex.IsMatch(text) || ConnectorRegex.IsMatch(text);
         }

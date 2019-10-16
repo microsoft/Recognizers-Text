@@ -232,10 +232,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Öğleden sonra 7'de",
+        "Text": "Öğleden sonra 7",
         "Type": "time",
         "Start": 0,
-        "Length": 18
+        "Length": 15
       }
     ]
   },
@@ -244,10 +244,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Öğleden sonra 7:00'da",
+        "Text": "Öğleden sonra 7:00",
         "Type": "time",
         "Start": 0,
-        "Length": 21
+        "Length": 18
       }
     ]
   },
@@ -352,10 +352,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Öğlen 12'de",
+        "Text": "Öğlen 12",
         "Type": "time",
         "Start": 0,
-        "Length": 11
+        "Length": 8
       }
     ]
   },
@@ -472,10 +472,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Öğle yemeği vakti saat 12'de",
+        "Text": "Öğle yemeği vakti saat 12",
         "Type": "time",
         "Start": 0,
-        "Length": 28
+        "Length": 25
       }
     ]
   },

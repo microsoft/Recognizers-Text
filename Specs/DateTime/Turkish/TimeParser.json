@@ -172,7 +172,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Sabah 7'de",
+        "Text": "Sabah 7",
         "Type": "time",
         "Value": {
           "Timex": "T07",
@@ -184,7 +184,7 @@
           }
         },
         "Start": 0,
-        "Length": 10
+        "Length": 7
       }
     ]
   },
@@ -697,10 +697,31 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Öğleden sonra 7'de",
+        "Text": "Öğleden sonra 7",
         "Type": "time",
         "Value": {
           "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Öğleden sonra 7:00'da döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Öğleden sonra 7:00",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:00",
           "FutureResolution": {
             "time": "19:00:00"
           },
@@ -710,27 +731,6 @@
         },
         "Start": 0,
         "Length": 18
-      }
-    ]
-  },
-  {
-    "Input": "Öğleden sonra 7:00'da döneceğim",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "Öğleden sonra 7:00'da",
-        "Type": "time",
-        "Value": {
-          "Timex": "T19",
-          "FutureResolution": {
-            "time": "19:00:00"
-          },
-          "PastResolution": {
-            "time": "19:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 21
       }
     ]
   },
@@ -865,7 +865,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Öğlen 12'de",
+        "Text": "Öğlen 12",
         "Type": "time",
         "Value": {
           "Timex": "T12",
@@ -877,7 +877,7 @@
           }
         },
         "Start": 0,
-        "Length": 11
+        "Length": 8
       }
     ]
   },
@@ -1075,7 +1075,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Gece yarısı 12'de",
+        "Text": "Gece yarısı 12",
         "Type": "time",
         "Value": {
           "Timex": "T00",
@@ -1087,7 +1087,7 @@
           }
         },
         "Start": 0,
-        "Length": 17
+        "Length": 14
       }
     ]
   },
@@ -1096,7 +1096,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Gece 12'de",
+        "Text": "Gece 12",
         "Type": "time",
         "Value": {
           "Timex": "T00",
@@ -1108,7 +1108,7 @@
           }
         },
         "Start": 0,
-        "Length": 10
+        "Length": 7
       }
     ]
   },
@@ -1117,7 +1117,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Gece yarısı saat 1'de",
+        "Text": "Gece yarısı saat 1",
         "Type": "time",
         "Value": {
           "Timex": "T01",
@@ -1129,7 +1129,7 @@
           }
         },
         "Start": 0,
-        "Length": 21
+        "Length": 18
       }
     ]
   },
@@ -1201,7 +1201,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Öğle yemeği vakti saat 11'de",
+        "Text": "Öğle yemeği vakti saat 11",
         "Type": "time",
         "Value": {
           "Timex": "T11",
@@ -1213,7 +1213,7 @@
           }
         },
         "Start": 0,
-        "Length": 28
+        "Length": 25
       }
     ]
   },
@@ -1432,7 +1432,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Öğle yemeği vakti saat 12'de",
+        "Text": "Öğle yemeği vakti saat 12",
         "Type": "time",
         "Value": {
           "Timex": "T12",
@@ -1444,7 +1444,7 @@
           }
         },
         "Start": 0,
-        "Length": 28
+        "Length": 25
       }
     ]
   }
