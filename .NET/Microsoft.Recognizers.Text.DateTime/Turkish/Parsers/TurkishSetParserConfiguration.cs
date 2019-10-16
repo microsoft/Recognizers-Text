@@ -1,11 +1,18 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Turkish;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
     public class TurkishSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex DateUnitRegex =
+            new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
+
         public TurkishSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -79,24 +86,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
             var trimmedText = text.Trim();
+            var match = PeriodicRegex.MatchExact(trimmedText, trim: true);
 
-            if (trimmedText.Equals("günlük"))
+            if (match.Groups["daily"].Success)
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("haftalık"))
+            else if (match.Groups["weekly"].Success)
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("iki haftada bir"))
+            else if (match.Groups["biweekly"].Success)
             {
                 timex = "P2W";
             }
-            else if (trimmedText.Equals("aylık"))
+            else if (match.Groups["monthly"].Success)
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("yıllık") || trimmedText.Equals("senelik"))
+            else if (match.Groups["yearly"].Success)
             {
                 timex = "P1Y";
             }
@@ -112,20 +120,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
             var trimmedText = text.Trim();
+            var match = DateUnitRegex.MatchExact(trimmedText, trim: true);
 
-            if (trimmedText.Equals("gün"))
+            if (match.Groups["day"].Success)
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("hafta"))
+            else if (match.Groups["week"].Success)
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("ay"))
+            else if (match.Groups["month"].Success)
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("yıl"))
+            else if (match.Groups["year"].Success)
             {
                 timex = "P1Y";
             }

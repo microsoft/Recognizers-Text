@@ -118,12 +118,12 @@ MonthPossessiveSuffixRegex: !nestedRegex
 MonthToSuffixRegex: !simpleRegex
   def: (?<msuf>((ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|kasım|aralık)'a|(eylül|ekim)'e))
 DateUnitRegex: !simpleRegex
-  def: \b(?<unit>yıl|sene|ay|hafta|(?<business>iş\s+)günü|gün)(?!(den|dan)(?!\s+(az|fazla)))
+  def: \b(?<unit>(?<year>yıl|sene)|(?<month>ay)|(?<week>hafta)|(?<business>iş\s+)günü|(?<day>gün))(?!(den|dan)(?!\s+(az|fazla)))
 # DateTokenPrefix, TimeTokenPrefix, TokenBeforeDate, TokenBeforeTime are not localized since there is no counterpart
 DateTokenPrefix: ''
 TimeTokenPrefix: ''
 TokenBeforeDate: ''
-TokenBeforeDate1: '''de'
+TokenListBeforeDate: '''de|''da|''te|''ta'
 TokenBeforeTime: ''
 HalfTokenRegex: !simpleRegex
   def: \b(buçuk|buçuğa)$
@@ -436,9 +436,9 @@ HourWithMinuteZeroToRegex: !simpleRegex
 PeriodHourNumRegex: !simpleRegex
   def: \b(?<hour>sıfır|bir|iki|üç|dört|beş|altı|yedi|sekiz|dokuz|on|on\s+bir|on\s+iki|on\s+üç|on\s+dört|on\s+beş|on\s+altı|on\s+yedi|on\s+sekiz|on\s+dokuz|yirmi|yirmi\s+bir|yirmi\s+iki|yirmi\s+üç|yirmi\s+dört)\b
 PeriodAtHourNumRegex: !simpleRegex
-  def: \b((?<hour>sıfır|altı|dokuz|on|on\s+altı|on\s+dokuz|)da|(?<hour>bir|iki|yedi|sekiz|on\s+bir|on\s+iki|on\s+yedi|on\s+sekiz|yirmi|yirmi\s+bir|yirmi\s+iki)de|(?<hour>üç|dört|beş|on\s+üç|on\s+dört|on\s+beş|yirmi\s+üç|yirmi\s+dört)te)\b
+  def: \b((?<hour>sıfır|altı|dokuz|on|on\s+altı|on\s+dokuz)da|(?<hour>bir|iki|yedi|sekiz|on\s+bir|on\s+iki|on\s+yedi|on\s+sekiz|yirmi|yirmi\s+bir|yirmi\s+iki)de|(?<hour>üç|dört|beş|on\s+üç|on\s+dört|on\s+beş|yirmi\s+üç|yirmi\s+dört)te)\b
 PeriodHourNumFromRegex: !simpleRegex
-  def: \b((?<hour>sıfır|altı|dokuz|on|on\s+altı|on\s+dokuz|)dan|(?<hour>bir|iki|yedi|sekiz|on\s+bir|on\s+iki|on\s+yedi|on\s+sekiz|yirmi|yirmi\s+bir|yirmi\s+iki)den|(?<hour>üç|dört|beş|on\s+üç|on\s+dört|on\s+beş|yirmi\s+üç|yirmi\s+dört)ten)\b
+  def: \b((?<hour>sıfır|altı|dokuz|on|on\s+altı|on\s+dokuz)dan|(?<hour>bir|iki|yedi|sekiz|on\s+bir|on\s+iki|on\s+yedi|on\s+sekiz|yirmi|yirmi\s+bir|yirmi\s+iki)den|(?<hour>üç|dört|beş|on\s+üç|on\s+dört|on\s+beş|yirmi\s+üç|yirmi\s+dört)ten)\b
 PeriodHourNumToRegex: !simpleRegex
   def: \b((?<hour>iki|yedi|on\s+iki|on\s+yedi|yirmi|yirmi\s+iki)ye|(?<hour>bir|üç|dörd|beş|sekiz|on\s+bir|on\s+üç|on\s+dörd|on\s+beş|on\s+sekiz|yirmi\s+bir|yirmi\s+üç|yirmi\s+dörd)e|(?<hour>altı|on\s+altı)ya|(?<hour>sıfır|dokuz|on|on\s+dokuz)a)\b
 ConnectNumRegex: !nestedRegex
@@ -565,7 +565,7 @@ DurationUnitRegex: !nestedRegex
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*(?<suffix_num>buçuk|çeyrek))
 PeriodicRegex: !simpleRegex
-  def: \b(?<periodic>günlük|aylık|ayda bir|haftalık|(iki\s)?haftada bir|her hafta|yıllık|senelik|yılda bir|her sene|senede bir)\b
+  def: \b(?<periodic>(?<daily>günlük)|(?<weekly>haftalık|her\s+hafta)|(?<biweekly>(iki\s+)?haftada\s+bir)|(?<monthly>aylık|ayda\s+bir)|(?<yearly>yıllık|senelik|yılda\s+bir|her\s+sene|senede\s+bir))\b
 EachUnitRegex: !nestedRegex
   def: (?<each>(her)\s*(bir)?\s*{DurationUnitRegex})
   references: [ DurationUnitRegex ]
@@ -600,7 +600,7 @@ HolidayRegex1: !nestedRegex
   references: [ YearRegex, RelativeRegex ]
 # Extra religious or local holidays
 HolidayRegex2: !nestedRegex
-  def: \b(({YearRegex}(\s+yılının)?|{RelativeRegex}\s+yıl)\s+)?(?<holiday>(şükran|tüm azizler|aziz patrick|amerikan bağımsızlık|azizler|bütün ruhlar|guy fawkes|cinco de mayo|1 nisan şaka|tomb\s*sweeping|)\sgünü|white lover day|aya yorgi yortusu|cadılar bayramı|((qingming|dragon)\sfestivali))\b
+  def: \b(({YearRegex}(\s+yılının)?|{RelativeRegex}\s+yıl)\s+)?(?<holiday>(şükran|tüm azizler|aziz patrick|amerikan bağımsızlık|azizler|bütün ruhlar|guy fawkes|cinco de mayo|1 nisan şaka|tomb\s*sweeping)\sgünü|white lover day|aya yorgi yortusu|cadılar bayramı|((qingming|dragon)\sfestivali))\b
   references: [ YearRegex, RelativeRegex ]
 # General holidays (must be followed by "day")
 HolidayRegex3: !nestedRegex
