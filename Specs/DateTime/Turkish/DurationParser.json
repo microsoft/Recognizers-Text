@@ -634,7 +634,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Birkaç günden az",
+        "Text": "Birkaç günden az bir süre",
         "Type": "duration",
         "Value": {
           "Mod": "less",
@@ -647,7 +647,7 @@
           }
         },
         "Start": 0,
-        "Length": 16
+        "Length": 25
       }
     ]
   },

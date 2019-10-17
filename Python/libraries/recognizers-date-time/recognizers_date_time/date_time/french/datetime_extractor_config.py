@@ -4,7 +4,6 @@ import regex
 from recognizers_text.utilities import RegExpUtility
 from ...resources.french_date_time import FrenchDateTime
 from ..extractors import DateTimeExtractor
-from ..utilities import DateTimeUtilityConfiguration
 from ..base_date import BaseDateExtractor
 from ..base_time import BaseTimeExtractor
 from ..base_duration import BaseDurationExtractor
@@ -16,6 +15,7 @@ from .duration_extractor_config import FrenchDurationExtractorConfiguration
 
 
 class FrenchDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
+
     @property
     def date_point_extractor(self) -> DateTimeExtractor:
         return self._date_point_extractor
@@ -77,10 +77,31 @@ class FrenchDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         return self._unit_regex
 
     @property
-    def utility_configuration(self) -> DateTimeUtilityConfiguration:
+    def utility_configuration(self) -> FrenchDateTimeUtilityConfiguration:
         return self._utility_configuration
 
+    @property
+    def number_as_time_regex(self) -> Pattern:
+        return self._number_as_time_regex
+
+    @property
+    def date_number_connector_regex(self) -> Pattern:
+        return self._date_number_connector_regex
+
+    @property
+    def suffix_after_regex(self) -> Pattern:
+        return self._suffix_after_regex
+
+    @property
+    def year_suffix(self) -> Pattern:
+        return self._year_suffix
+
+    @property
+    def year_regex(self) -> Pattern:
+        return self._year_regex
+
     def __init__(self):
+        super().__init__()
         self.preposition_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.PrepositionRegex)
         self._now_regex = RegExpUtility.get_safe_reg_exp(
@@ -110,6 +131,20 @@ class FrenchDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
             FrenchDateTime.ConnectorRegex)
         self._night_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.NightRegex)
+        self._number_as_time_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.NumberAsTimeRegex)
+        self._date_number_connector_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.DateNumberConnectorRegex
+        )
+        self._suffix_after_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SuffixAfterRegex
+        )
+        self._year_suffix = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.YearSuffix
+        )
+        self._year_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.YearRegex
+        )
 
         self._date_point_extractor = BaseDateExtractor(
             FrenchDateExtractorConfiguration())

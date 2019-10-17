@@ -2,7 +2,6 @@ from typing import Pattern, Dict
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor
-from recognizers_number.number.spanish.extractors import SpanishIntegerExtractor
 from ...resources.spanish_date_time import SpanishDateTime
 from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
@@ -76,15 +75,15 @@ class SpanishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
 
         time_of_day = ""
         if any(trimmed_text.endswith(o) for o in SpanishDateTime.EarlyMorningTermList):
-            time_of_day = Constants.EarlyMorning
+            time_of_day = Constants.EARLY_MORNING
         elif any(trimmed_text.endswith(o) for o in SpanishDateTime.MorningTermList):
-            time_of_day = Constants.Morning
+            time_of_day = Constants.MORNING
         elif any(trimmed_text.endswith(o) for o in SpanishDateTime.AfternoonTermList):
-            time_of_day = Constants.Afternoon
+            time_of_day = Constants.AFTERNOON
         elif any(trimmed_text.endswith(o) for o in SpanishDateTime.EveningTermList):
-            time_of_day = Constants.Evening
+            time_of_day = Constants.EVENING
         elif any(trimmed_text.endswith(o) for o in SpanishDateTime.NightTermList):
-            time_of_day = Constants.Night
+            time_of_day = Constants.NIGHT
         else:
             return MatchedTimeRegex(
                 matched=False,

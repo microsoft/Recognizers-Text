@@ -39,7 +39,8 @@ class DateTimeModel(Model):
 
         return [self.__to_model_result(x) for x in parser_dates]
 
-    def __to_model_result(self, parse_result_value) -> ModelResult:
+    @staticmethod
+    def __to_model_result(parse_result_value) -> ModelResult:
         result = ModelResult()
         result.start = parse_result_value.start
         result.end = parse_result_value.start + parse_result_value.length - 1

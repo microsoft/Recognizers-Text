@@ -398,7 +398,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            if (this.config.SpecificEndOfRegex.IsMatch(beforeStr))
+            var afterStr = text.Substring(ers[0].Start + ers[0].Length ?? 0);
+            if (this.config.SpecificEndOfRegex.IsMatch(beforeStr) || this.config.SpecificEndOfRegex.IsMatch(afterStr))
             {
                 var pr = this.config.DateParser.Parse(ers[0], refDateTime);
                 var futureDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;

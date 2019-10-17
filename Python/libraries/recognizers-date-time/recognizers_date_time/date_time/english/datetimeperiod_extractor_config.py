@@ -16,9 +16,11 @@ from .time_extractor_config import EnglishTimeExtractorConfiguration
 from .duration_extractor_config import EnglishDurationExtractorConfiguration
 from .timeperiod_extractor_config import EnglishTimePeriodExtractorConfiguration
 from .datetime_extractor_config import EnglishDateTimeExtractorConfiguration
+from ..utilities import DateTimeOptions
 
 
 class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
+
     @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
         return self._cardinal_extractor
@@ -103,7 +105,48 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
     def middle_pause_regex(self) -> Pattern:
         return self._middle_pause_regex
 
+    @property
+    def token_before_date(self) -> str:
+        return self._token_before_date
+
+    @property
+    def within_next_prefix_regex(self) -> Pattern:
+        return self._within_next_prefix_regex
+
+    @property
+    def future_suffix_regex(self) -> Pattern:
+        return self._future_suffix_regex
+
+    @property
+    def date_unit_regex(self) -> Pattern:
+        return self._date_unit_regex
+
+    @property
+    def am_desc_regex(self) -> Pattern:
+        return self._am_desc_regex
+
+    @property
+    def pm_desc_regex(self) -> Pattern:
+        return self._pm_desc_regex
+
+    @property
+    def prefix_day_regex(self) -> Pattern:
+        return self._prefix_day_regex
+
+    @property
+    def before_regex(self) -> Pattern:
+        return self._before_regex
+
+    @property
+    def after_regex(self) -> Pattern:
+        return self._after_regex
+
+    @property
+    def suffix_regex(self) -> Pattern:
+        return self._suffix_regex
+
     def __init__(self):
+        super().__init__()
         self._cardinal_extractor = EnglishCardinalExtractor()
         self._single_date_extractor = BaseDateExtractor(
             EnglishDateExtractorConfiguration())
@@ -149,6 +192,35 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
             EnglishDateTime.MiddlePauseRegex)
         self.range_connector_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.RangeConnectorRegex)
+        self._token_before_date = EnglishDateTime.TokenBeforeDate
+        self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.WithinNextPrefixRegex
+        )
+        self._future_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.FutureSuffixRegex
+        )
+        self._date_unit_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.DateUnitRegex
+        )
+        self._am_desc_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.AmDescRegex
+        )
+        self._pm_desc_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PmDescRegex
+        )
+        self._prefix_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PrefixDayRegex
+        )
+        self._before_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.BeforeRegex
+        )
+        self._after_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.AfterRegex
+        )
+        self._suffix_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SuffixRegex
+        )
+        self._options = DateTimeOptions.NONE
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         if source.endswith('from'):

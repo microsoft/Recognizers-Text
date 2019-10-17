@@ -59,7 +59,8 @@ class DateTimeRecognizer(Recognizer[DateTimeOptions]):
         return self.get_model('DateTimeModel', culture, fallback_to_default_culture)
 
 
-def recognize_datetime(query: str, culture: str, options: DateTimeOptions = DateTimeOptions.NONE, reference: datetime = None, fallback_to_default_culture: bool = True) -> List[ModelResult]:
+def recognize_datetime(query: str, culture: str, options: DateTimeOptions = DateTimeOptions.NONE,
+                       reference: datetime = None, fallback_to_default_culture: bool = True) -> List[ModelResult]:
     recognizer = DateTimeRecognizer(culture, options)
     model = recognizer.get_datetime_model(culture, fallback_to_default_culture)
     return model.parse(query, reference)

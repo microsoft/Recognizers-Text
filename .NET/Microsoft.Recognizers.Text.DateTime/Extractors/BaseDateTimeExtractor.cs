@@ -278,7 +278,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var beforeStr = text.Substring(0, er.Start ?? 0);
 
-                var match = this.config.SpecificEndOfRegex.Match(beforeStr);
+                var match = this.config.SpecificEndOfRegex.MatchEnd(beforeStr, trim: true);
                 if (match.Success)
                 {
                     ret.Add(new Token(match.Index, er.Start + er.Length ?? 0));
@@ -287,7 +287,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var afterStr = text.Substring(er.Start + er.Length ?? 0);
 
-                    match = this.config.SpecificEndOfRegex.Match(afterStr);
+                    match = this.config.SpecificEndOfRegex.MatchBegin(afterStr, trim: true);
                     if (match.Success)
                     {
                         ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
