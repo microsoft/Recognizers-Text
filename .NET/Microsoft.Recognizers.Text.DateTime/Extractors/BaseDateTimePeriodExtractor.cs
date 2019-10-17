@@ -105,7 +105,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     bool inPrefix = true;
                     int length = GetValidConnectorForDateAndTimePeriod(middleStr, inPrefix);
-                    if (length >= 0)
+                    if (length != Constants.INVALID_CONNECTOR_CODE)
                     {
                         var begin = ers[i].Start ?? 0;
                         var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);
@@ -118,7 +118,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var afterStart = ers[j].Start + ers[j].Length ?? 0;
                         var afterStr = text.Substring(afterStart);
                         length = GetValidConnectorForDateAndTimePeriod(afterStr, inPrefix);
-                        if (length >= 0 && middleStr.Length <= 4)
+                        if (length != Constants.INVALID_CONNECTOR_CODE && middleStr.Length <= 4)
                         {
                             var begin = ers[i].Start ?? 0;
                             var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0) + length;
@@ -152,7 +152,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Valid connector in English for After include: "after", "later than"
         private int GetValidConnectorForDateAndTimePeriod(string text, bool inPrefix)
         {
-            int length = -1;
+            int length = Constants.INVALID_CONNECTOR_CODE;
             var beforeAfterRegexes = new List<Regex>
             {
                 this.config.BeforeRegex,
