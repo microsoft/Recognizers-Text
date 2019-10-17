@@ -52,13 +52,12 @@ class ChineseDateTimeExtractorConfiguration implements IDateTimeExtractorConfigu
 export class ChineseDateTimeExtractor extends BaseDateTimeExtractor {
     static beforeRegex: RegExp = RegExpUtility.getSafeRegExp(ChineseDateTime.BeforeRegex);
     static afterRegex: RegExp = RegExpUtility.getSafeRegExp(ChineseDateTime.AfterRegex);
-    private readonly dateTimePeriodUnitRegex: RegExp;
+    static dateTimePeriodUnitRegex: RegExp = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodUnitRegex);
     private readonly durationExtractor: ChineseDurationExtractor;
 
     constructor(dmyDateFormat: boolean) {
         super(new ChineseDateTimeExtractorConfiguration(dmyDateFormat));
         this.durationExtractor = new ChineseDurationExtractor();
-        this.dateTimePeriodUnitRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodUnitRegex);
     }
 
     extract(source: string, refDate: Date): ExtractResult[] {
@@ -148,8 +147,8 @@ export class ChineseDateTimeExtractor extends BaseDateTimeExtractor {
             let pos = er.start + er.length;
             if (pos < source.length) {
                 let suffix = source.substr(pos, 1);
-                let beforeMatch = RegExpUtility.getMatches(ChineseDateExtractor.beforeRegex, suffix).pop();
-                let afterMatch = RegExpUtility.getMatches(ChineseDateExtractor.afterRegex, suffix).pop();
+                let beforeMatch = RegExpUtility.getMatches(ChineseDateTimeExtractor.beforeRegex, suffix).pop();
+                let afterMatch = RegExpUtility.getMatches(ChineseDateTimeExtractor.afterRegex, suffix).pop();
 
                 if (beforeMatch && suffix.startsWith(beforeMatch.value) || afterMatch && suffix.startsWith(afterMatch.value)) {
                     let metadata = new MetaData();
@@ -396,7 +395,7 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
         let durationRes = this.durationExtractor.extract(source, referenceDate);
 
         if (durationRes) {
-            let match = RegExpUtility.getMatches(ChineseDateExtractor.dateTimePeriodUnitRegex, source).pop();
+            let match = RegExpUtility.getMatches(ChineseDateTimeExtractor.dateTimePeriodUnitRegex, source).pop();
             if (match) {
                 let suffix = source.substring(durationRes[0].start + durationRes[0].length);
                 let srcUnit = match.groups('unit').value;
@@ -407,7 +406,7 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
                 if (this.config.unitMap.has(srcUnit)) {
                     let unitStr = this.config.unitMap.get(srcUnit);
 
-                    let beforeMatch = RegExpUtility.getMatches(ChineseDateExtractor.beforeRegex, suffix).pop();
+                    let beforeMatch = RegExpUtility.getMatches(ChineseDateTimeExtractor.beforeRegex, suffix).pop();
                     if (beforeMatch && suffix.startsWith(beforeMatch.value)) {
                         let date : Date;
                         switch (unitStr) {
@@ -460,6 +459,7 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
         return result;
     }
 
+    // convert Chinese Number to Integer
     private convertChineseToNumber(source: string): number {
         let num = -1;
         let er = this.integerExtractor.extract(source);

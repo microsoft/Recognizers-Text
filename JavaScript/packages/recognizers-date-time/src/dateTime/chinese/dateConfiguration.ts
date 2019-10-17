@@ -526,6 +526,7 @@ export class ChineseDateParser extends BaseDateParser {
         return result;
     }
 
+    // convert Chinese Number to Integer
     private convertChineseToNumber(source: string): number {
         let num = -1;
         let er = this.config.integerExtractor.extract(source);
