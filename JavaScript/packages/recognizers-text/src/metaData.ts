@@ -16,4 +16,13 @@ export class MetaData {
     set HasMod(hasMod: boolean) {
         this.hasMod = hasMod;
     }
+
+    private isDurationWithBeforeAndAfter: boolean = false;
+
+    get IsDurationWithBeforeAndAfter(): boolean {
+        return this.isDurationWithBeforeAndAfter;
+    }
+    set IsDurationWithBeforeAndAfter(isDurationWithBeforeAndAfter: boolean) {
+        this.isDurationWithBeforeAndAfter = isDurationWithBeforeAndAfter;
+    }
 }

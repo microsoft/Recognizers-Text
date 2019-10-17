@@ -1,4 +1,4 @@
-import { IExtractor, ExtractResult, StringUtility, Match, RegExpUtility } from "@microsoft/recognizers-text";
+import { IExtractor, ExtractResult, StringUtility, Match, RegExpUtility, MetaData } from "@microsoft/recognizers-text";
 import { ChineseIntegerExtractor, AgnosticNumberParserFactory, ChineseNumberParserConfiguration, AgnosticNumberParserType, BaseNumberParser, BaseNumberExtractor } from "@microsoft/recognizers-text-number";
 import { Constants as NumberConstants } from "@microsoft/recognizers-text-number";
 import { IDateExtractorConfiguration, IDateParserConfiguration, BaseDateExtractor, BaseDateParser } from "../baseDate";
@@ -62,6 +62,9 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
 }
 
 export class ChineseDateExtractor extends BaseDateExtractor {
+    static beforeRegex: RegExp = RegExpUtility.getSafeRegExp(ChineseDateTime.BeforeRegex);
+    static afterRegex: RegExp = RegExpUtility.getSafeRegExp(ChineseDateTime.AfterRegex);
+    static dateTimePeriodUnitRegex: RegExp = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodUnitRegex);
     private readonly durationExtractor: ChineseDurationExtractor;
 
     constructor(dmyDateFormat: boolean) {
@@ -85,13 +88,20 @@ export class ChineseDateExtractor extends BaseDateExtractor {
 
     protected durationWithBeforeAndAfter(source: string, refDate: Date): Token[] {
         let ret = [];
-        let durEx = this.durationExtractor.extract(source, refDate);
-        durEx.forEach(er => {
-            let pos = er.start + er.length;
-            if (pos < source.length) {
-                let nextChar = source.substr(pos, 1);
-                if (nextChar === '前' || nextChar === '后') {
-                    ret.push(new Token(er.start, pos + 1));
+        let durationEr = this.durationExtractor.extract(source, refDate);
+        durationEr.forEach(er => {
+            if (!RegExpUtility.isMatch(ChineseDateExtractor.dateTimePeriodUnitRegex, er.text)) {
+                let pos = er.start + er.length;
+                if (pos < source.length) {
+                    let suffix = source.substr(pos, 1);
+                    let beforeMatch = RegExpUtility.getMatches(ChineseDateExtractor.beforeRegex, suffix).pop();
+                    let afterMatch = RegExpUtility.getMatches(ChineseDateExtractor.afterRegex, suffix).pop();
+
+                    if (beforeMatch && suffix.startsWith(beforeMatch.value) || afterMatch && suffix.startsWith(afterMatch.value)) {
+                        let metadata = new MetaData();
+                        metadata.IsDurationWithBeforeAndAfter = true;
+                        ret.push(new Token(er.start, pos + 1, metadata));
+                    }
                 }
             }
         });
@@ -187,6 +197,8 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
         this.thisRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateThisRegex);
         this.nextRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateNextRegex);
         this.lastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateLastRegex);
+        this.unitRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateUnitRegex);
+        this.unitMap = ChineseDateTime.ParserConfigurationUnitMap;
         this.weekDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.WeekDayRegex);
         this.integerExtractor = new ChineseIntegerExtractor();
         this.numberParser = AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration());
@@ -200,6 +212,7 @@ export class ChineseDateParser extends BaseDateParser {
     private readonly tokenNextRegex: RegExp
     private readonly tokenLastRegex: RegExp
     private readonly monthMaxDays: number[];
+    private readonly durationExtractor: ChineseDurationExtractor;
 
     constructor(dmyDateFormat: boolean) {
         let config = new ChineseDateParserConfiguration(dmyDateFormat);
@@ -209,6 +222,7 @@ export class ChineseDateParser extends BaseDateParser {
         this.tokenNextRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.NextPrefixRegex);
         this.tokenLastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.LastPrefixRegex);
         this.monthMaxDays = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        this.durationExtractor = new ChineseDurationExtractor();
     }
 
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
@@ -227,7 +241,7 @@ export class ChineseDateParser extends BaseDateParser {
             }
             if (!innerResult.success) {
                 // TODO create test
-                innerResult = this.parserDurationWithAgoAndLater(source, referenceDate);
+                innerResult = this.parserDurationWithBeforeAndAfter(source, referenceDate);
             }
             if (innerResult.success) {
                 innerResult.futureResolution = {};
@@ -512,6 +526,16 @@ export class ChineseDateParser extends BaseDateParser {
         return result;
     }
 
+    private convertChineseToNumber(source: string): number {
+        let num = -1;
+        let er = this.config.integerExtractor.extract(source);
+        if (er && er[0].type === NumberConstants.SYS_NUM_INTEGER) {
+            num = Number.parseInt(this.config.numberParser.parse(er[0]).value);
+        }
+
+        return num;
+    }
+
     private convertChineseYearToNumber(source: string): number {
         let year = 0;
         let er = this.config.integerExtractor.extract(source).pop();
@@ -570,5 +594,81 @@ export class ChineseDateParser extends BaseDateParser {
 
     private isNonleapYearFeb29th(year: number, month: number, day: number): boolean {
         return !DateUtils.isLeapYear(year) && month === 1 && day === 29;
+    }
+    
+    // Handle cases like "三天前"
+    private parserDurationWithBeforeAndAfter(source: string, referenceDate: Date): DateTimeResolutionResult {
+        let result = new DateTimeResolutionResult();
+        let durationRes = this.durationExtractor.extract(source, referenceDate);
+
+        if (durationRes) {
+            let match = RegExpUtility.getMatches(this.config.unitRegex, source).pop();
+            if (match) {
+                let suffix = source.substring(durationRes[0].start + durationRes[0].length);
+                let srcUnit = match.groups('unit').value;
+
+                let numberStr = source.substring(durationRes[0].start, match.index - durationRes[0].start);
+                let number =  this.convertChineseToNumber(numberStr);
+
+                if (this.config.unitMap.has(srcUnit)) {
+                    let unitStr = this.config.unitMap.get(srcUnit);
+
+                    let beforeMatch = RegExpUtility.getMatches(ChineseDateExtractor.beforeRegex, suffix).pop();
+                    if (beforeMatch && suffix.startsWith(beforeMatch.value)) {
+                        let date : Date;
+                        switch (unitStr) {
+                            case Constants.TimexDay:
+                                date = DateUtils.addDays(referenceDate, -number);
+                                break;
+                            case Constants.TimexWeek:
+                                date = DateUtils.addDays(referenceDate, -7 * number);
+                                break;
+                            case Constants.TimexMonthFull:
+                                date = DateUtils.addMonths(referenceDate, -number);
+                                break;
+                            case Constants.TimexYear:
+                                date = DateUtils.addYears(referenceDate, -number);
+                                break;
+                            default:
+                                return result;
+                        }
+
+                        result.timex = DateTimeFormatUtil.luisDateFromDate(date);
+                        result.futureValue = result.pastValue = date;
+                        result.success = true;
+                        return result;
+                    }
+
+                    let afterMatch = RegExpUtility.getMatches(ChineseDateExtractor.afterRegex, suffix).pop();
+                    if (afterMatch && suffix.startsWith(afterMatch.value)) {
+                        let date: Date;
+                        switch (unitStr) {
+                            case Constants.TimexDay:
+                                    date = DateUtils.addDays(referenceDate, number);
+                                break;
+                            case Constants.TimexWeek:
+                                    date = DateUtils.addDays(referenceDate, 7 * number);
+                                break;
+                            case Constants.TimexMonthFull:
+                                    date = DateUtils.addMonths(referenceDate, number);
+                                break;
+                            case Constants.TimexYear:
+                                    date = DateUtils.addYears(referenceDate, number);
+                                break;
+                            default:
+                                return result;
+                        }
+
+                        result.timex = DateTimeFormatUtil.luisDateFromDate(date);
+                        result.futureValue = result.pastValue = date;
+                        result.success = true;
+                        return result;
+                    }
+                }
+
+            }
+        }
+
+        return result;
     }
 }

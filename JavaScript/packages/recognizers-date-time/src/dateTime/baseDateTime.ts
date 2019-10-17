@@ -189,7 +189,7 @@ export class BaseDateTimeExtractor implements IDateTimeExtractor {
         return tokens;
     }
 
-    private durationWithBeforeAndAfter(source: string, refDate: Date): Token[] {
+    protected durationWithBeforeAndAfter(source: string, refDate: Date): Token[] {
         let tokens: Token[] = new Array<Token>();
         this.config.durationExtractor.extract(source, refDate).forEach(er => {
             let matches = RegExpUtility.getMatches(this.config.unitRegex, er.text);
