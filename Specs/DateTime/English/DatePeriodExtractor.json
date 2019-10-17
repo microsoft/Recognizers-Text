@@ -1882,17 +1882,17 @@
   },
   {
     "Input": "I'll be out in 3 years",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
     "Input": "I'll be out in 3 weeks",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
     "Input": "I'll be out in 3 months",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
@@ -2659,7 +2659,7 @@
   },
   {
     "Input": "I'll be out year 247",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "year 247",
@@ -2671,7 +2671,7 @@
   },
   {
     "Input": "In the 1970s",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the 1970s",
@@ -2683,7 +2683,7 @@
   },
   {
     "Input": "In the 2000s, he was born.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the 2000s",
@@ -2695,7 +2695,7 @@
   },
   {
     "Input": "In the 1970's",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the 1970's",
@@ -2707,7 +2707,7 @@
   },
   {
     "Input": "In the 70s",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the 70s",
@@ -2719,7 +2719,7 @@
   },
   {
     "Input": "In the 70's",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the 70's",
@@ -2731,7 +2731,7 @@
   },
   {
     "Input": "In the '40s",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the '40s",
@@ -2743,7 +2743,7 @@
   },
   {
     "Input": "In the seventies",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the seventies",
@@ -2755,7 +2755,7 @@
   },
   {
     "Input": "In the nineteen seventies",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the nineteen seventies",
@@ -2767,7 +2767,7 @@
   },
   {
     "Input": "In the two thousand and tens",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the two thousand and tens",
@@ -2779,7 +2779,7 @@
   },
   {
     "Input": "In the twenty-tens",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the twenty-tens",
@@ -2791,7 +2791,7 @@
   },
   {
     "Input": "In the two thousands",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the two thousands",
@@ -2803,7 +2803,7 @@
   },
   {
     "Input": "In the noughties",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the noughties",
@@ -2851,7 +2851,7 @@
   },
   {
     "Input": "It happened in June of nineteen ninety nine",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "June of nineteen ninety nine",
@@ -2911,7 +2911,7 @@
   },
   {
     "Input": "Year two hundred and sixty seven,",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Year two hundred and sixty seven",
@@ -2935,7 +2935,7 @@
   },
   {
     "Input": "It happened in the past 2 decades",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the past 2 decades",
@@ -2947,7 +2947,7 @@
   },
   {
     "Input": "It happened in the last two decades",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the last two decades",
@@ -2959,7 +2959,7 @@
   },
   {
     "Input": "It happened in the next decade",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the next decade",
@@ -2971,7 +2971,7 @@
   },
   {
     "Input": "It will happen 4 weeks in the future",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "4 weeks in the future",
@@ -2983,7 +2983,7 @@
   },
   {
     "Input": "It will happen 2 days hence",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2 days hence",
@@ -3331,7 +3331,7 @@
   },
   {
     "Input": "I'll be out between January 1st 2015 and Feb 2018",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "between January 1st 2015 and Feb 2018",
@@ -3343,7 +3343,7 @@
   },
   {
     "Input": "I'll be out between 2015 and Feb 2018",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "between 2015 and Feb 2018",
@@ -3355,7 +3355,7 @@
   },
   {
     "Input": "I'll be out from Feb 1st to March 2019",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "from Feb 1st to March 2019",
@@ -3367,7 +3367,7 @@
   },
   {
     "Input": "I'll be out between Feb 1st and March 2019",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "between Feb 1st and March 2019",
@@ -3379,7 +3379,7 @@
   },
   {
     "Input": "I'll be out between 2015 June and 2018 May",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "between 2015 June and 2018 May",
@@ -3391,7 +3391,7 @@
   },
   {
     "Input": "I'll be out between 2015 May and 2018",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "between 2015 May and 2018",
@@ -3403,7 +3403,7 @@
   },
   {
     "Input": "I'll be out between May 2015 and 2018",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "between May 2015 and 2018",
@@ -3415,7 +3415,7 @@
   },
   {
     "Input": "I'll be out between May 2015 and 2018 June",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "between May 2015 and 2018 June",
@@ -3427,7 +3427,7 @@
   },
   {
     "Input": "I'll be out between 2015 and January 5th 2018",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "between 2015 and January 5th 2018",
@@ -3439,7 +3439,7 @@
   },
   {
     "Input": "I'll be out from 2015 to May 5th, 2017",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "from 2015 to May 5th, 2017",
@@ -3451,7 +3451,7 @@
   },
   {
     "Input": "I'll be out from last Monday April to 2019",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "from last Monday April to 2019",
@@ -3463,7 +3463,7 @@
   },
   {
     "Input": "I'll be out from Week 31 to Week 35",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "from Week 31 to Week 35",
@@ -3475,7 +3475,7 @@
   },
   {
     "Input": "I'll be out between Week 31 and Week 35",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "between Week 31 and Week 35",
@@ -3514,7 +3514,7 @@
   },
   {
     "Input": "I was not there the same month that it happened.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "same month",
@@ -3526,7 +3526,7 @@
   },
   {
     "Input": "I was not there the same week that it happened.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "same week",
@@ -3538,7 +3538,7 @@
   },
   {
     "Input": "I weren't there that year.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "that year",
@@ -3550,7 +3550,7 @@
   },
   {
     "Input": "I have already finished all my work more than 2 weeks before today",
-    "NotSupported": "python, javascript",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "more than 2 weeks before today",
@@ -3562,7 +3562,7 @@
   },
   {
     "Input": "I will come back within 2 weeks from today",
-    "NotSupported": "python, javascript",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within 2 weeks from today",
@@ -3574,7 +3574,7 @@
   },
   {
     "Input": "I will come back less than 2 weeks from today",
-    "NotSupported": "python, javascript",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "less than 2 weeks from today",
@@ -3586,7 +3586,7 @@
   },
   {
     "Input": "This task should have been done more than 2 days before yesterday",
-    "NotSupported": "python, javascript",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "more than 2 days before yesterday",
@@ -3598,7 +3598,7 @@
   },
   {
     "Input": "This task will be done less than 3 days after tomorrow",
-    "NotSupported": "python, javascript",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "less than 3 days after tomorrow",
@@ -3625,7 +3625,7 @@
   },
   {
     "Input": "Cortana, can you please set something up for the week of the 18th.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "the week of the 18th",
@@ -3637,7 +3637,7 @@
   },
   {
     "Input": "sales where date is this decade.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "this decade",

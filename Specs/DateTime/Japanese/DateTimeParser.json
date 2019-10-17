@@ -5,7 +5,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "15日の8時20秒",
@@ -30,7 +30,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2016年4月21日の午後8時",
@@ -55,7 +55,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2016年4月21日の午後8時20秒",
@@ -80,7 +80,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "10月14日の午前8時",
@@ -105,7 +105,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "10月14日の午前8時31秒",
@@ -130,7 +130,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "10月14日の午前8時頃",
@@ -155,7 +155,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "10月14日の午前8時25秒",
@@ -180,7 +180,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2016年12月22日19時",
@@ -205,7 +205,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "日曜日、夜の午後8時",
@@ -230,7 +230,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "15日の8時24秒",
@@ -255,7 +255,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2016年4月21日、午後8時24秒",
@@ -280,7 +280,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "10月14日の午前8時13秒",
@@ -305,7 +305,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "今日の朝午前7時",
@@ -330,7 +330,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "今日の朝7時",
@@ -355,7 +355,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2016年12月16日の12時23分59秒",
@@ -380,7 +380,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2017年1月6日の午前6時37分",
@@ -405,7 +405,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2016年11月16日 10時38分",
@@ -430,7 +430,7 @@
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "一日の終わり",
@@ -455,7 +455,7 @@
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "一日の終わり",
@@ -479,7 +479,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "今",
@@ -503,7 +503,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "出来る限り早く",
@@ -527,7 +527,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "15日の8時",
@@ -551,7 +551,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "15日の8時0分20秒",
@@ -575,7 +575,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "15日の午後8時",
@@ -599,7 +599,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "5日の午前4時",
@@ -623,7 +623,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "2016年04月21日の午後8:00",
@@ -647,7 +647,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "2016年04月21日の午後8:00:20",
@@ -671,7 +671,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "10月23日の7時",
@@ -695,7 +695,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "10月14日の午前8:00",
@@ -719,7 +719,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "10月14日の午前8:00:31",
@@ -743,7 +743,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "10月14日の午前8:00頃",
@@ -767,7 +767,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "10月14日の午前8:00:25",
@@ -791,7 +791,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "2016年5月5日の夜8時20分過ぎ",
@@ -815,7 +815,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "15日午後8時",
@@ -839,7 +839,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "15日の7時",
@@ -863,7 +863,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "今日の午後8時",
@@ -887,7 +887,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "明日の7時15分前",
@@ -911,7 +911,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "2016-12-22 19:00",
@@ -935,7 +935,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "明日の午前8:00",
@@ -959,7 +959,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "明日の朝7時",
@@ -983,7 +983,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "今夜7時ぐらい",
@@ -1007,7 +1007,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "次の日曜日の午後7:00",
@@ -1031,7 +1031,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "明日の朝5時20分過ぎ",
@@ -1055,7 +1055,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "今朝の7時",
@@ -1079,7 +1079,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "今夜10時",
@@ -1103,7 +1103,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "日曜日、夜の午後8時",
@@ -1127,7 +1127,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "1月1日、夜の午後8時",
@@ -1151,7 +1151,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "1月1日の夜、午後8時",
@@ -1175,7 +1175,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "今夜午後10時",
@@ -1199,7 +1199,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "今朝の午前8時",
@@ -1223,7 +1223,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "今夜午後8時",
@@ -1247,7 +1247,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "その日の終わり",
@@ -1271,7 +1271,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "明日の終わり",
@@ -1295,7 +1295,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "日曜日の終わり",
@@ -1319,7 +1319,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "5時間以内",
@@ -1343,7 +1343,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "15日の8:00:24",
@@ -1367,7 +1367,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "04/21/2016、 8:00:24pm",
@@ -1391,7 +1391,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "10月14日の午前8:00:13",
@@ -1415,7 +1415,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "今朝7時",
@@ -1439,7 +1439,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "今日の夜午前7時",
@@ -1463,7 +1463,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "今日の朝7:00",
@@ -1487,7 +1487,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "今日の夜7時",
@@ -1511,7 +1511,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "今夜7時",
@@ -1535,7 +1535,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "2016-12-16T12:23:59",
@@ -1559,7 +1559,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "2017年1月6日 - 6:37am",
@@ -1583,7 +1583,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "2016年11月16日 10:38",
@@ -1607,7 +1607,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T19:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "1日と2時間後",
@@ -1631,7 +1631,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T19:15:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "1か月と2日と2時間30分前",
@@ -1655,7 +1655,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "あと1時間",
@@ -1679,7 +1679,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript, java",
     "Results": [
       {
         "Text": "あと1時間弱",

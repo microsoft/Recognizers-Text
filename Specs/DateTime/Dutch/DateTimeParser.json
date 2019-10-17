@@ -5,7 +5,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "nu",
@@ -30,7 +30,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "zo snel mogelijk",
@@ -55,7 +55,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "15 om 8:00",
@@ -80,7 +80,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "15 om 8:00:20",
@@ -105,7 +105,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "15, 20:00",
@@ -130,7 +130,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "de 15e om 4 uur 's morgens",
@@ -155,7 +155,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "21-04-2016, 20:00",
@@ -180,7 +180,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "23 okt. om zeven ",
@@ -205,7 +205,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "14 oktober 8:00 ",
@@ -230,7 +230,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "14 oktober 8:00:31 ",
@@ -255,7 +255,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "14 oktober rond 8:00 ",
@@ -280,7 +280,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "14 oktober op 8:00:31 ",
@@ -305,7 +305,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "14 oktober, 8:00 ",
@@ -330,7 +330,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5 mei, 2016, 10 voor half negen 's avonds ",
@@ -355,7 +355,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20:00 op 15",
@@ -380,7 +380,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20:00 op de 15e",
@@ -405,7 +405,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "zeven op 15",
@@ -430,7 +430,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20:00 vandaag",
@@ -455,7 +455,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "kwart voor zeven morgen",
@@ -480,7 +480,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "19:00, 22-12-2016",
@@ -505,7 +505,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "morgen 8:00",
@@ -530,7 +530,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "morgenochtend om 7",
@@ -555,7 +555,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "vanavond rond 7",
@@ -580,7 +580,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "7:00 op volgende zondagmiddag",
@@ -605,7 +605,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "tien voor half zes morgenochtend",
@@ -630,7 +630,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "7, vanmorgen",
@@ -655,7 +655,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "10, vanavond",
@@ -680,7 +680,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20:00 's avonds, zondag",
@@ -705,7 +705,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "22:00 vanavond",
@@ -730,7 +730,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "8:00 vanmorgen",
@@ -755,7 +755,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20:00 vanavond",
@@ -780,7 +780,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "het eind van de dag",
@@ -805,7 +805,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "eind van morgen",
@@ -830,7 +830,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "eind van de zondag",
@@ -855,7 +855,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "over 5 uur",
@@ -880,7 +880,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "15 om 8:00:24 ",
@@ -905,7 +905,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "14 oktober 8:00:13",
@@ -930,7 +930,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "deze morgen om 7",
@@ -955,7 +955,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "deze morgen om 7 uur 's ochtends",
@@ -980,7 +980,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "deze morgen om zeven",
@@ -1005,7 +1005,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "deze morgen om 7:00",
@@ -1030,7 +1030,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "deze avond om 7",
@@ -1055,7 +1055,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "vanavond om 7",
@@ -1080,7 +1080,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2016-12-16T12:23:59",
@@ -1105,7 +1105,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "6 jan 2017 - 6:37",
@@ -1130,7 +1130,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "16 nov. 2016 10:38",
@@ -1155,7 +1155,7 @@
       "ReferenceDateTime": "2017-11-23T19:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1 dag 2 uren later",
@@ -1180,7 +1180,7 @@
       "ReferenceDateTime": "2017-11-23T19:15:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1 maand 2 dagen 2 uren 30 min geleden",
@@ -1205,7 +1205,7 @@
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "over een uur",
@@ -1230,7 +1230,7 @@
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "over minder dan een uur",
@@ -1256,7 +1256,7 @@
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "eind van de dag ",
@@ -1281,7 +1281,7 @@
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "het eind van de dag",

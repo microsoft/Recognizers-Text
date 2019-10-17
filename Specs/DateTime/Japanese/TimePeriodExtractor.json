@@ -2,7 +2,7 @@
   {
     "Input": "午後5時から6時まで不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後5時から6時まで",
@@ -15,7 +15,7 @@
   {
     "Input": "午前5時から7時まで不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午前5時から7時まで",
@@ -28,7 +28,7 @@
   {
     "Input": "午後5時から6時の間、不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後5時から6時の間",
@@ -41,7 +41,7 @@
   {
     "Input": "午後5時から午後6時の間、不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後5時から午後6時の間",
@@ -54,7 +54,7 @@
   {
     "Input": "午後4時から午後5時まで不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後4時から午後5時まで",
@@ -67,7 +67,7 @@
   {
     "Input": "午後4時から5時まで不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後4時から5時まで",
@@ -80,7 +80,7 @@
   {
     "Input": "4時から7時まで不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4時から7時まで",
@@ -93,7 +93,7 @@
   {
     "Input": "午後3時から7時半まで不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後3時から7時半まで",
@@ -106,7 +106,7 @@
   {
     "Input": "午後3時20分から8時まで不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後3時20分から8時まで",
@@ -119,7 +119,7 @@
   {
     "Input": "午後4時から5時半まで不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後4時から5時半まで",
@@ -132,7 +132,7 @@
   {
     "Input": "午前3時から午後5時まで不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午前3時から午後5時まで",
@@ -145,7 +145,7 @@
   {
     "Input": "午後4時から5時半の間、不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後4時から5時半の間",
@@ -158,7 +158,7 @@
   {
     "Input": "午前3時から午後5時の間、不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午前3時から午後5時の間",
@@ -171,7 +171,7 @@
   {
     "Input": "午前中に会いましょう。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午前中",
@@ -184,7 +184,7 @@
   {
     "Input": "午後に会いましょう。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後",
@@ -197,7 +197,7 @@
   {
     "Input": "夜に会いましょう。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "夜に",
@@ -210,7 +210,7 @@
   {
     "Input": "早朝に会いましょう。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "早朝に",
@@ -223,7 +223,7 @@
   {
     "Input": "昼前に会いましょう。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "昼前に",
@@ -236,7 +236,7 @@
   {
     "Input": "昼すぎに会いましょう。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "昼すぎに",
@@ -249,7 +249,7 @@
   {
     "Input": "夕方前に会いましょう。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "夕方前に",
@@ -262,7 +262,7 @@
   {
     "Input": "夕方に会いましょう。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "夕方に",
@@ -275,7 +275,7 @@
   {
     "Input": "深夜に会いましょう。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "深夜に",
@@ -288,7 +288,7 @@
   {
     "Input": "午後2時から5時まで会議を設定して。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後2時から5時まで",
@@ -301,7 +301,7 @@
   {
     "Input": "午後6時から11時までジャンのパーティー",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後6時から11時まで",
@@ -314,7 +314,7 @@
   {
     "Input": "14時から16時30分まで会議を設定して。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "14時から16時30分",
@@ -327,7 +327,7 @@
   {
     "Input": "午後1時から4時まで会議を設定して。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後1時から4時まで",
@@ -340,7 +340,7 @@
   {
     "Input": "午後1時30分から4時まで会議を設定して。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後1時30分から4時まで",
@@ -353,13 +353,13 @@
   {
     "Input": "午後1時30分から4人の会議を設定して。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
     "Input": "こんにちはコルタナ。ジェニファーとスカイプ会議の予定を入れてください。私が出発する今週の金曜日午後に30分の会議が必要です。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後に",
@@ -372,7 +372,7 @@
   {
     "Input": "1時30分から3時30分まで会議を設定して。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1時30分から3時30分まで",
@@ -385,7 +385,7 @@
   {
     "Input": "午後1時30分から3時30分まで会議を設定して。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後1時30分から3時30分まで",
@@ -398,7 +398,7 @@
   {
     "Input": "午後1時30分から午後3時30分まで会議を設定して。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後1時30分から午後3時30分まで",
@@ -411,7 +411,7 @@
   {
     "Input": "1時から3時30分まで会議を設定して。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1時から3時30分まで",
@@ -424,7 +424,7 @@
   {
     "Input": "1時30分から3時まで会議を設定して。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1時30分から3時まで",
@@ -437,7 +437,7 @@
   {
     "Input": "10時から11時30分の間で会議を設定して。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "10時から11時30分の間",
@@ -450,7 +450,7 @@
   {
     "Input": "午前10時10分から12時50分の間で会議を設定して。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午前10時10分から12時50分の間",
@@ -463,7 +463,7 @@
   {
     "Input": "午後10時10分から3時の間で会議を設定して。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後10時10分から3時の間",
@@ -476,7 +476,7 @@
   {
     "Input": "午後10時10分から10時まで会議を設定して。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午後10時10分から10時まで",
@@ -489,7 +489,7 @@
   {
     "Input": "午前10時半から23時まで会議を設定して。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "午前10時半から23時まで",
@@ -502,7 +502,7 @@
   {
     "Input": "営業時間内に電話をかけてこないで。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "営業時間内に",

@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2744475+08:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "wöchentlich",
@@ -28,7 +28,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2779449+08:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "täglich",
@@ -52,7 +52,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2744475+08:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "jeden Tag",
@@ -76,7 +76,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2779449+08:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "monatlich",
@@ -100,7 +100,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2779449+08:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "alljährliches",

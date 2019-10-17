@@ -1,7 +1,7 @@
 [
   {
     "Input": "Ich habe den Alarm auf acht Uhr vierzig eingestellt",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "acht Uhr vierzig",
@@ -22,7 +22,7 @@
   },
   {
     "Input": "Ich bin um 7 zurück.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "7",
@@ -43,7 +43,7 @@
   },
   {
     "Input": "Es ist 19:56.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "19:56",
@@ -64,7 +64,7 @@
   },
   {
     "Input": "Es ist acht Uhr morgens, ich will schlafen!",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "acht Uhr morgens",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Das dürfte gegen halb acht Vormittags sein.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "halb acht Vormittags",
@@ -106,7 +106,7 @@
   },
   {
     "Input": "Das dürfte gegen viertel nach 7 Vormittags sein.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "viertel nach 7 Vormittags",
@@ -127,7 +127,7 @@
   },
   {
     "Input": "Ich habe den Alarm auf 8:40 eingestellt",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "8:40",
@@ -148,7 +148,7 @@
   },
   {
     "Input": "Um sieben bin ich wieder da",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "sieben",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Um 19 Uhr bin ich wieder da",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "19 Uhr",
@@ -190,7 +190,7 @@
   },
   {
     "Input": "Bin um 19:56 wieder da",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "19:56",
@@ -211,7 +211,7 @@
   },
   {
     "Input": "Es ist 19:56:30",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "19:56:30",
@@ -232,7 +232,7 @@
   },
   {
     "Input": "Ich bin um 19:56:30 Uhr wieder zurück",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "19:56:30 Uhr",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Gegen 12:34 ist das durch",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "12:34",
@@ -274,7 +274,7 @@
   },
   {
     "Input": "Gegen 12:34:25 ist das durch",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "12:34:25",
@@ -295,7 +295,7 @@
   },
   {
     "Input": "Es ist 7 Uhr",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "7 Uhr",
@@ -316,7 +316,7 @@
   },
   {
     "Input": "Es ist sieben Uhr",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "sieben Uhr",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "8 Uhr Morgens",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "8 Uhr Morgens",
@@ -358,7 +358,7 @@
   },
   {
     "Input": "20 Uhr Abends",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "20 Uhr Abends",
@@ -379,7 +379,7 @@
   },
   {
     "Input": "Es ist halb 9",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "halb 9",
@@ -400,7 +400,7 @@
   },
   {
     "Input": "Es ist 8 Uhr nachts",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "8 Uhr nachts",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "Es ist 8 Uhr Abends",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "8 Uhr Abends",
@@ -442,7 +442,7 @@
   },
   {
     "Input": "Ich bin um 7h01 zurück",
-    "NotSupported": "python",
+    "NotSupported": "",
     "Results": [
       {
         "Text": "7h01",
@@ -463,7 +463,7 @@
   },
   {
     "Input": "Ich bin um 10 h 10 Uhr zurück.",
-    "NotSupported": "python",
+    "NotSupported": "",
     "Results": [
       {
         "Text": "10 h 10 Uhr",

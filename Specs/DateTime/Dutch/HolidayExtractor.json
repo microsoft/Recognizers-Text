@@ -1,7 +1,7 @@
 [
   {
     "Input": "Ik ga terug met kerst",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "kerst",
@@ -13,7 +13,7 @@
   },
   {
     "Input": " Ik ga terug met kerst ",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "kerst",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Ik ga terug op Nieuwjaarsdag.",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "Nieuwjaarsdag",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Ik ga terug met thanksgiving",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "thanksgiving",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Ik ga terug op vaderdag.",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "vaderdag",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Ik ga terug op Nieuwjaarsdag dit jaar",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "Nieuwjaarsdag dit jaar",
@@ -73,7 +73,7 @@
   },
   {
     "Input": " Ik ga terug op Nieuwjaarsdag 2016",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "Nieuwjaarsdag 2016",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Ik ga terug op nieuwjaarsdag 2016",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "nieuwjaarsdag 2016",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Ik ga terug op koningsdag",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "koningsdag",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "Ik ga op Kerst terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "Kerst",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Ik ga op Eerste Kerstdag terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "Eerste Kerstdag",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Ik ga op Yuandan terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "Yuandan",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Ik ga op Thanksgiving terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "Thanksgiving",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Ik ga op Vaderdag terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "Vaderdag",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Ik ga op Yuandan dit jaar terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "Yuandan dit jaar",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "Ik ga op Yuandan 2016 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "Yuandan 2016",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "Ik ga terug op Eerste Paasdag",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "Eerste Paasdag",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "Ik ga op Martin Luther Kingdag terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "Martin Luther Kingdag",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "MLKdag is een Amerikaanse nationale feestdag",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "MLKdag",
@@ -229,12 +229,12 @@
   },
   {
     "Input": "Er is een feestdag vernoemd naar de naam van Martin Luther King",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
     "Input": "Ik ga terug op Dodenherdenking",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "Dodenherdenking",

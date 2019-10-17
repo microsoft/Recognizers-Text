@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2018-03-14T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Within 3 years",
@@ -70,7 +70,7 @@
   {
     "Input": "ADD LUNCH AT 12:30 PM ON FRI ",
     "Comment":"Disable this for now because of new features in .NET",
-    "NotSupported": "javascript, python, Java",
+    "NotSupported": "javascript, Java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -206,7 +206,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python, javascript, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "Easter",
@@ -235,7 +235,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python, javascript, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "Easter 2019",
@@ -506,7 +506,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "in 3 weeks",
@@ -530,7 +530,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "in 3 months",
@@ -554,7 +554,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "in 3 years",
@@ -700,7 +700,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
@@ -832,7 +832,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python, javascript, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "Easter Sunday",
@@ -861,7 +861,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python, javascript, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "Easter Monday 2017",
@@ -1608,7 +1608,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2012 or after",
@@ -1634,7 +1634,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within 5 days",
@@ -1659,7 +1659,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within 10 months",
@@ -1684,7 +1684,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within 3 years",
@@ -1709,7 +1709,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within 5 years 1 month 12 days",
@@ -1734,7 +1734,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within 15 seconds",
@@ -1759,7 +1759,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within 5 minutes",
@@ -1784,7 +1784,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within 5 hours",
@@ -1809,7 +1809,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within 1 day and 5 hours",
@@ -1834,7 +1834,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within 2 days 1 hour 5 minutes 30 seconds",
@@ -1859,7 +1859,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within the next 1 day and 5 hours",
@@ -1884,7 +1884,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within the upcoming 2 days 1 hour 5 minutes 30 seconds",
@@ -1909,7 +1909,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within the next 15 seconds",
@@ -1934,7 +1934,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within next 10 months",
@@ -2391,7 +2391,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "later than or at 1/1/2016",
@@ -2465,7 +2465,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "before or on 1/1/2016",
@@ -2516,7 +2516,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "on or earlier than 1/1/2016",
@@ -2590,7 +2590,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "before or in Feb 2018",
@@ -2665,7 +2665,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "later than or in 2016",
@@ -2740,7 +2740,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "at or after 6:30PM today",
@@ -2814,7 +2814,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "on or before the day after tomorrow",
@@ -2888,7 +2888,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "on or earlier than 3pm 5/15/2018",
@@ -2985,7 +2985,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "three weeks from tomorrow",
@@ -3009,7 +3009,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "two days before yesterday",
@@ -3150,7 +3150,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "more than 4 days",
@@ -3191,7 +3191,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "more than 1 hour and 30 minutes",
@@ -3216,7 +3216,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-12T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "more than 2 weeks before today",
@@ -3241,7 +3241,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "more than 2 weeks before today",
@@ -3266,7 +3266,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "more than 2 days before yesterday",
@@ -3291,7 +3291,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "less than 3 days after tomorrow",
@@ -3316,7 +3316,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "more than 2 weeks after today",
@@ -3341,7 +3341,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "3 minutes from now",
@@ -3365,7 +3365,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "3 minutes",
@@ -3406,7 +3406,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within 2 weeks after today",
@@ -3431,7 +3431,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within the next 2 weeks after today",
@@ -3456,7 +3456,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2 weeks before today",
@@ -3480,7 +3480,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2 weeks after tomorrow",
@@ -3504,7 +3504,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2 weeks before yesterday",
@@ -3528,7 +3528,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "from 2010 – 2020",
@@ -3569,7 +3569,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "after 2018",
@@ -3595,7 +3595,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "after Feb 2018",
@@ -3621,7 +3621,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "after Feb",
@@ -3654,7 +3654,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "1/1/2015 after 2:00",
@@ -3685,7 +3685,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "today before 4pm",
@@ -3710,7 +3710,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "next Wednesday later than 10 in the morning",
@@ -3735,7 +3735,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "previous Tuesday by 2 in the afternoon",
@@ -3760,7 +3760,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Feb 1st no later than 6:00",
@@ -3803,7 +3803,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "next week",
@@ -3853,7 +3853,7 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "Results": [
       {
         "Text": "2007",
@@ -3895,7 +3895,7 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "Results": [
       {
         "Text": "between 2007 and 2009",
@@ -3921,7 +3921,7 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "Results": [
       {
         "Text": "year 2008",
@@ -3947,7 +3947,7 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "Results": [
       {
         "Text": "the year",
@@ -3973,7 +3973,7 @@
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "Results": [
       {
         "Text": "the week",
@@ -3999,7 +3999,7 @@
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "Results": [
       {
         "Text": "the week after next",
@@ -4025,7 +4025,7 @@
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "Results": [
       {
         "Text": "week 31",
@@ -4051,7 +4051,7 @@
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "Results": [
       {
         "Text": "in 3 hours",
@@ -4076,7 +4076,7 @@
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "Results": [
       {
         "Text": "in 2 weeks",
@@ -4101,7 +4101,7 @@
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "Results": [
       {
         "Text": "in 2 days",
@@ -4126,7 +4126,7 @@
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "Results": [
       {
         "Text": "in 2 months",
@@ -4151,7 +4151,7 @@
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "Results": [
       {
         "Text": "in 2 years",
@@ -4176,7 +4176,7 @@
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "Results": [
       {
         "Text": "2 days from today",
@@ -4200,7 +4200,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "> 6pm today",
@@ -4226,7 +4226,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": ">= 6pm today",
@@ -4252,7 +4252,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "<6pm today",
@@ -4278,7 +4278,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "<=6pm today",
@@ -4304,7 +4304,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "6pm",
@@ -4328,7 +4328,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "6pm",

@@ -2,7 +2,7 @@
   {
     "Input": "Cambia il mio appuntamento dalle 9am alle 11am",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript,",
     "Results": [
       {
         "Start": 23,
@@ -21,7 +21,7 @@
   {
     "Input": "Cambia il mio appuntamento dal 19 Nov al 23 Nov",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript,",
     "Results": [
       {
         "Start": 23,

@@ -2,7 +2,7 @@
   {
     "Input": "8시 40분에 알람 설정해 줘. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "8시 40분",
@@ -24,7 +24,7 @@
   {
     "Input": "오전 8시 40분에 알람 설정해 줘. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오전 8시 40분",
@@ -46,7 +46,7 @@
   {
     "Input": "저녁 8시 40분에 알람 설정해 줘. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "저녁 8시 40분",
@@ -68,7 +68,7 @@
   {
     "Input": "10시 45분에 알람 설정해 줘. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "10시 45분",
@@ -90,7 +90,7 @@
   {
     "Input": "오후 3시 15분에 알람 설정해 줘. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오후 3시 15분 ",
@@ -112,7 +112,7 @@
   {
     "Input": "오후 3시 30분에 알람 설정해 줘. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오후 3시 30분",
@@ -134,7 +134,7 @@
   {
     "Input": "10시 10분에 알람 설정해 줘.",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "10시 10분",
@@ -156,7 +156,7 @@
   {
     "Input": "오후 10시 45분에 알람 설정해 줘. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오후 10시 45분",
@@ -178,7 +178,7 @@
   {
     "Input": "나는 오전오후 7시에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오전오후 7시",
@@ -200,7 +200,7 @@
   {
     "Input": "나는 7시에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "7",
@@ -222,7 +222,7 @@
   {
     "Input": "나는 오후 7시에 돌아올 거야.",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오후 7시",
@@ -244,7 +244,7 @@
   {
     "Input": "나는 오후 7시 56분에 돌아올 거야.",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오후 7시 56분",
@@ -266,7 +266,7 @@
   {
     "Input": "나는 오후 7시 56분 30초에 돌아올 거야.",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오후 7시 56분 30초",
@@ -288,7 +288,7 @@
   {
     "Input": "나는 12시 34분에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "12시 34분",
@@ -310,7 +310,7 @@
   {
     "Input": "나는 12시 34분 25초에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "12시 34분 25초",
@@ -332,7 +332,7 @@
   {
     "Input": "7시 정각입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "7시 정각",
@@ -354,7 +354,7 @@
   {
     "Input": "아침 8시입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "아침 8시",
@@ -376,7 +376,7 @@
   {
     "Input": "저녁 8시입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "저녁 8시",
@@ -398,7 +398,7 @@
   {
     "Input": "8시 30분입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "8시 30분",
@@ -420,7 +420,7 @@
   {
     "Input": "저녁 8시 30분입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "저녁 8시 30분",
@@ -442,7 +442,7 @@
   {
     "Input": "8시 15분입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "8시 15분",
@@ -464,7 +464,7 @@
   {
     "Input": "저녁 9시 45분입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "저녁 9시 45분",
@@ -486,7 +486,7 @@
   {
     "Input": "8시 3분 전입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "8시 3분 전",
@@ -508,7 +508,7 @@
   {
     "Input": "7시 30분 정각입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "7시 30분 정각",
@@ -530,7 +530,7 @@
   {
     "Input": "오후 7시 30분입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오후 7시 30분",
@@ -552,7 +552,7 @@
   {
     "Input": "아침 7시 30분입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "아침 7시 30분",
@@ -574,7 +574,7 @@
   {
     "Input": "아침 8시 15분 전입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "아침 8시 15분 전",
@@ -596,7 +596,7 @@
   {
     "Input": "저녁 8시 20분입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "저녁 8시 20분",
@@ -618,7 +618,7 @@
   {
     "Input": "나는 오후 7시에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오후 7시",
@@ -640,7 +640,7 @@
   {
     "Input": "나는 오후 7시 5초에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오후 7시 5초",
@@ -662,7 +662,7 @@
   {
     "Input": "나는 저녁 7시 30분에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "저녁 7시 30분",
@@ -684,7 +684,7 @@
   {
     "Input": "나는 저녁 7시 35분에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "저녁 7시 35분",
@@ -706,7 +706,7 @@
   {
     "Input": "나는 밤 11시 20분에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "밤 11시 20분",
@@ -728,7 +728,7 @@
   {
     "Input": "나는 정오쯤에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "정오쯤",
@@ -750,7 +750,7 @@
   {
     "Input": "나는 12시 정오에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "12시 정오",
@@ -772,7 +772,7 @@
   {
     "Input": "나는 11시쯤에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "11시쯤",
@@ -794,7 +794,7 @@
   {
     "Input": "나는 오후 3시 40분에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오후 3시 40분",
@@ -816,7 +816,7 @@
   {
     "Input": "나는 오전 11시 40분에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오전 11시 40분",
@@ -838,7 +838,7 @@
   {
     "Input": "자정",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "자정",
@@ -860,7 +860,7 @@
   {
     "Input": "오전 중간",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오전 중간",
@@ -882,7 +882,7 @@
   {
     "Input": "오후 중간",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오후 중간",
@@ -904,7 +904,7 @@
   {
     "Input": "한낮",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "한낮",
@@ -926,7 +926,7 @@
   {
     "Input": "정오",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "정오",
@@ -948,7 +948,7 @@
   {
     "Input": "나는 점심 12시에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "점심 12시",
@@ -970,7 +970,7 @@
   {
     "Input": "나는 자정 12시에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "자정 12시",
@@ -992,7 +992,7 @@
   {
     "Input": "나는 밤 12시에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "밤 12시",
@@ -1014,7 +1014,7 @@
   {
     "Input": "나는 한밤중 1시 정각에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "한밤중 1시 정각",
@@ -1036,7 +1036,7 @@
   {
     "Input": "나는 점심 12시 정각에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "점심 12시 정각",
@@ -1058,7 +1058,7 @@
   {
     "Input": "나는 점심 11시 정각에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "점심 11시 정각",
@@ -1080,7 +1080,7 @@
   {
     "Input": "나는 점심 1시 정각에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "점심 1시 정각",
@@ -1102,7 +1102,7 @@
   {
     "Input": "나는 오후 7시 56분 13초에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오후 7시 56분 13초",
@@ -1124,7 +1124,7 @@
   {
     "Input": "나는 12시 34분 45초에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "12시 34분 45초",
@@ -1146,7 +1146,7 @@
   {
     "Input": "나는 오후 7시 25초에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오후 7시 25초",
@@ -1168,7 +1168,7 @@
   {
     "Input": "나는 오전 7시 30분에 돌아갈 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "오전 7시 30분",
@@ -1190,7 +1190,7 @@
   {
     "Input": "나는 11시 5분에 돌아갈 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "11시 5분",
@@ -1212,7 +1212,7 @@
   {
     "Input": "나는 5시 27분에 돌아갈 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5시 27분",
@@ -1234,7 +1234,7 @@
   {
     "Input": "나는 밤 5시 30분에 돌아갈 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "밤 5시 30분",
@@ -1256,7 +1256,7 @@
   {
     "Input": "나는 정오에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "정오",
@@ -1278,7 +1278,7 @@
   {
     "Input": "나는 7시 1분에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "7시 1분",
@@ -1300,7 +1300,7 @@
   {
     "Input": "나는 밤 10시 10분에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "밤 10시 10분",
@@ -1322,7 +1322,7 @@
   {
     "Input": "나는 밤 10시 13분에 돌아올 거야. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "밤 10시 13분",

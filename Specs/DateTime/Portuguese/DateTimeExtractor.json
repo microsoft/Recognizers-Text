@@ -1,7 +1,7 @@
 [
   {
     "Input": "Vou voltar agora",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "agora",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Vou voltar assim que possível",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "assim que possível",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Vamos voltar assim que possamos",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "assim que possamos",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Vou voltar o mais rápido possível",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "o mais rápido possível",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Vou voltar o mais cedo possível",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "o mais cedo possível",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Vou voltar agora mesmo",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "agora mesmo",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "Vou voltar logo agora",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "logo agora",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Vou voltar neste momento",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "neste momento",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Vou voltar no 15 as 8:00",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "15 as 8:00",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "Vou voltar no 15 as 8:00:30",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "15 as 8:00:30",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Vou voltar no 15, 8pm",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "15, 8pm",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Vou voltar em 04/21/2016, 8:00pm",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "04/21/2016, 8:00pm",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Vou voltar em 04/21/2016, 8:00:13pm",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "04/21/2016, 8:00:13pm",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Vou voltar em 23 de Out às sete",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "23 de Out às sete",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Vou voltar em 14 de Outubro 8:00am",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "14 de Outubro 8:00am",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "Vou voltar em 14 de Outubro as 8:00:00am",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "14 de Outubro as 8:00:00am",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "Vou voltar em 14 de Outubro, 8:00am",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "14 de Outubro, 8:00am",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "Vou voltar em 14 de Outubro, 8:00:01am",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "14 de Outubro, 8:00:01am",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "Vou voltar amanhã 8:00am",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "amanhã 8:00am",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "Vou voltar amanhã cerca das 8:00am",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "amanhã cerca das 8:00am",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "Vou voltar amanhã por volta das 8:00am",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "amanhã por volta das 8:00am",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Vou voltar amanhã pelas 8:00am",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "amanhã pelas 8:00am",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "Vou voltar amanhã umas 8:00:05am",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "amanhã umas 8:00:05am",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "Vou voltar na próxima sexta-feira as tres e meia",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "próxima sexta-feira as tres e meia",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "Vou voltar em 5 de Maio, 2016, 20 minutos depois das 8 da tarde",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "5 de Maio, 2016, 20 minutos depois das 8 da tarde",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "Vou voltar 8pm do 15",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "8pm do 15",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "Vou voltar as sete no 15",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "sete no 15",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "Vo voltar as 8pm do próximo domingo",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "8pm do próximo domingo",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "Vou voltar as 8pm de hoje",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "8pm de hoje",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "Vou voltar 19:00, 2016-12-22",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "19:00, 2016-12-22",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "Vou voltar as 7 em ponto amanha",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "7 em ponto amanha",
@@ -373,7 +373,7 @@
   },
   {
     "Input": "Vou voltar amanhã pela manhã às 7",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "amanhã pela manhã às 7",
@@ -385,7 +385,7 @@
   },
   {
     "Input": "Vou voltar 5:00 do domingo a tarde",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "5:00 do domingo a tarde",
@@ -397,7 +397,7 @@
   },
   {
     "Input": "Vou voltar as cinco e vinte amanha de manha",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "cinco e vinte amanha de manha",
@@ -409,7 +409,7 @@
   },
   {
     "Input": "Vou voltar as cinco e vinte da manha de amanha",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "cinco e vinte da manha de amanha",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "Vou voltar 14 de outubro 8:00",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "14 de outubro 8:00",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "Vou voltar as 7, esta manhã",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "7, esta manhã",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "Vou voltar esta noite as 8",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "esta noite as 8",
@@ -457,7 +457,7 @@
   },
   {
     "Input": "Vou voltar as 8pm da tarde, Segunda-feira",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "8pm da tarde, Segunda-feira",
@@ -469,7 +469,7 @@
   },
   {
     "Input": "Vou voltar 8pm da noite, 1o de Janeiro",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "8pm da noite, 1o de Janeiro",
@@ -481,7 +481,7 @@
   },
   {
     "Input": "Vou voltar 8pm da noite, 1 de Janeiro",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "8pm da noite, 1 de Janeiro",
@@ -493,7 +493,7 @@
   },
   {
     "Input": "Vou voltar as 10pm desta noite",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "10pm desta noite",
@@ -505,7 +505,7 @@
   },
   {
     "Input": "Vou voltar as 10pm esta noite",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "10pm esta noite",
@@ -517,7 +517,7 @@
   },
   {
     "Input": "Vou voltar 8am de amanha",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "8am de amanha",
@@ -529,7 +529,7 @@
   },
   {
     "Input": "Vou voltar 8pm desta tarde",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "8pm desta tarde",
@@ -541,7 +541,7 @@
   },
   {
     "Input": "Voltei esta manhã às 7",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "esta manhã às 7",
@@ -553,7 +553,7 @@
   },
   {
     "Input": "Voltei esta manhã 7am",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "esta manhã 7am",
@@ -565,7 +565,7 @@
   },
   {
     "Input": "Voltei esta manha as sete",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "esta manha as sete",
@@ -577,7 +577,7 @@
   },
   {
     "Input": "Volvtei esta manha as 7:00",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "esta manha as 7:00",
@@ -589,7 +589,7 @@
   },
   {
     "Input": "Vou voltar esta noite as 7",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "esta noite as 7",
@@ -601,7 +601,7 @@
   },
   {
     "Input": "Voltei esta noite as 7",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "esta noite as 7",
@@ -613,7 +613,7 @@
   },
   {
     "Input": "para duas pessoas esta noite às 9:30 pm",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "esta noite às 9:30 pm",
@@ -625,7 +625,7 @@
   },
   {
     "Input": "para duas pessoas esta noite às 9:30:31 pm",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "esta noite às 9:30:31 pm",
@@ -637,7 +637,7 @@
   },
   {
     "Input": "Voltarei no final do dia",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "no final do dia",
@@ -649,7 +649,7 @@
   },
   {
     "Input": "Voltarei ao fim do dia",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "ao fim do dia",
@@ -661,7 +661,7 @@
   },
   {
     "Input": "Voltarei ao fim do dia de amanha",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "ao fim do dia de amanha",
@@ -673,7 +673,7 @@
   },
   {
     "Input": "Voltarei amanhã ao terminar o dia",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "amanhã ao terminar o dia",
@@ -685,7 +685,7 @@
   },
   {
     "Input": "Voltarei no fim do domingo",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "no fim do domingo",
@@ -697,7 +697,7 @@
   },
   {
     "Input": "Vou voltar dia 5 as 4 a.m.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "dia 5 as 4 a.m.",
@@ -709,7 +709,7 @@
   },
   {
     "Input": "Vou voltar 2016-12-16T12:23:59",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2016-12-16T12:23:59",
@@ -721,7 +721,7 @@
   },
   {
     "Input": "Vou voltar 8pm do dia 15",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "8pm do dia 15",

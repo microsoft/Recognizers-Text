@@ -595,7 +595,7 @@
   },
   {
     "Input": "I'll leave for 1 year 1 month 21 days",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "1 year 1 month 21 days",
@@ -607,7 +607,7 @@
   },
   {
     "Input": "I'll leave for 2 days 1 month",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2 days 1 month",
@@ -641,7 +641,7 @@
   },
   {
     "Input": "Can we wait another business day?",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "another business day",
@@ -653,7 +653,7 @@
   },
   {
     "Input": "I'll leave for half an business days.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "half an business days",
@@ -665,7 +665,7 @@
   },
   {
     "Input": "I'll leave for two decades.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "two decades",
@@ -677,7 +677,7 @@
   },
   {
     "Input": "I'll leave for a fortnight.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "a fortnight",

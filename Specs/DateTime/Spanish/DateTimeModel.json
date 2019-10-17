@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "",
     "Results": [
       {
         "Text": "domingo",
@@ -64,7 +64,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "",
     "Results": [
       {
         "Text": "sa",
@@ -124,7 +124,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "",
     "Results": [
       {
         "Text": "hoy",
@@ -164,7 +164,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "",
     "Results": [
       {
         "Text": "ayer",
@@ -203,7 +203,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "",
     "Results": [
       {
         "Text": "ayer",
@@ -242,7 +242,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "",
     "Results": [
       {
         "Text": "ayer",
@@ -281,7 +281,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "",
     "Results": [
       {
         "Text": "ayer",
@@ -320,7 +320,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "",
     "Results": [
       {
         "Text": "ayer",
@@ -359,7 +359,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "",
     "Results": [
       {
         "Text": "ayer",
@@ -398,7 +398,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "",
     "Results": [
       {
         "Text": "ayer",
@@ -437,7 +437,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "",
     "Results": [
       {
         "Text": "ayer",
@@ -476,7 +476,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "",
     "Results": []
   },
   {
@@ -484,7 +484,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "",
     "Results": []
   },
   {
@@ -492,7 +492,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-23T01:00:00"
     },
-    "NotSupported": "python, javascript",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "semana pasada",
@@ -517,7 +517,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-23T01:00:00"
     },
-    "NotSupported": "python, javascript",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "la semana pasada",
@@ -542,7 +542,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-23T01:00:00"
     },
-    "NotSupported": "python, javascript",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "el mes pasado",
@@ -567,7 +567,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-23T01:00:00"
     },
-    "NotSupported": "python, javascript",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "mes pasado",

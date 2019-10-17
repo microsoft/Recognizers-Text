@@ -1,7 +1,7 @@
 [
   {
     "Input": "sairei semanalmente",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "semanalmente",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "sairei diariamente",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "diariamente",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "saí todo dia",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "todo dia",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "minha saída diária",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "diária",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "sairei todos os dias",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "todos os dias",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "sairei cada mes",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "cada mes",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "sairei todos os meses",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "todos os meses",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "sairei todas as semanas",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "todas as semanas",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "sairei mensalmente",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "mensalmente",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "sairei anualmente",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "anualmente",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "salirei todos os anos",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "todos os anos",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "irei a cada dois dias",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "cada dois dias",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "virão cada tres semanas",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "cada tres semanas",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "irei a cada 3 semanas",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "cada 3 semanas",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "eu irei às 3pm todos os dias",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "3pm todos os dias",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "eu irei todos os dias as 3pm",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "todos os dias as 3pm",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "sairei cada 15/4",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "cada 15/4",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "sairei todos os domingos",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "todos os domingos",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "sairei todas as segundas",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "todas as segundas",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "sairei cada domingo as 4pm",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "cada domingo as 4pm",

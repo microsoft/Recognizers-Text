@@ -1,7 +1,7 @@
 [
   {
     "Input": "Me mudarei em 3 anos",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "em 3 anos",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Me mudarei em 3 semanas",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "em 3 semanas",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Estarei fora de 4 até 22 deste mes",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "4 até 22 deste mes",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Estarei fora de 4 a 22 deste mes",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "4 a 22 deste mes",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Estarei fora desde o 3 até o 12 de Sept jajaja",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "desde o 3 até o 12 de Sept",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Estarei fora de 4 a 23 do proximo mes",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "4 a 23 do proximo mes",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "Estarei fora de 4 ao 23 deste mes",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "4 ao 23 deste mes",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Estarei fora entre 4 e 22 este mes",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "entre 4 e 22 este mes",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Estarei fora entre 3 e 12 de Set jajaja",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "entre 3 e 12 de Set",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "Estarei fora de 4 ao 22 de janeiro, 2017",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "4 ao 22 de janeiro, 2017",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Estarei fora entre 4-22 de janeiro, 2017",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "entre 4-22 de janeiro, 2017",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Estarei fora esta semana",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "esta semana",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Estarei fora em Setembro",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "em Setembro",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Estarei fora nesse Setembro",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "nesse Setembro",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Estive fora no ultimo sept",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "ultimo sept",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "Estarei fora proximo junho",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "proximo junho",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "Estarei fora em junho 2016",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "em junho 2016",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "Estarei fora em junho do proximo ano",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "em junho do proximo ano",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "Estarei fora este fim de semana",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "este fim de semana",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "Estarei fora a terceira semana deste mes",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "terceira semana deste mes",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "Estarei fora na ultima semana de julho",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "na ultima semana de julho",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Estarei fora nos proximos 3 dias",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "proximos 3 dias",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "Estarei fora pelos proximos 3 meses",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "proximos 3 meses",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "Estive fora as 3 semanas passadas",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "3 semanas passadas",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "Estive fora os ultimos 3 anos",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "ultimos 3 anos",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "Estive fora as 3 semanas anteriores",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "3 semanas anteriores",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "Estareï fora de 2 de Out a 22 de Outubro",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de 2 de Out a 22 de Outubro",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "Estarei fora de 12 de Janeiro, 2016 - 22/02/2016",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de 12 de Janeiro, 2016 - 22/02/2016",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "Estarei fora de 1o de Jan até Qua, 22 de Jan",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de 1o de Jan até Qua, 22 de Jan",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "Estarei fora de hoje até amanhã",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de hoje até amanhã",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "Estarei fora de hoje até 22 de Outubro",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de hoje até 22 de Outubro",
@@ -373,7 +373,7 @@
   },
   {
     "Input": "Estarei fora de 2 de Out até o dia depois de amanhã",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de 2 de Out até o dia depois de amanhã",
@@ -385,7 +385,7 @@
   },
   {
     "Input": "Estarei fora de hoje até o proximo domingo",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de hoje até o proximo domingo",
@@ -397,7 +397,7 @@
   },
   {
     "Input": "Estarei fora desta sexta até o domingo seguinte",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "desta sexta até o domingo seguinte",
@@ -409,7 +409,7 @@
   },
   {
     "Input": "Estarei fora desde 2 de Out até 22 de Outubro",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "desde 2 de Out até 22 de Outubro",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "Estarei fora desde 2015/08/12 até 22 de Outubro",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "desde 2015/08/12 até 22 de Outubro",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "Estarei fora desde esta sexta-feira até proximo domingo",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "desde esta sexta-feira até proximo domingo",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "Estarei fora entre 2 de Out e 22 de Outubro",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "entre 2 de Out e 22 de Outubro",
@@ -457,7 +457,7 @@
   },
   {
     "Input": "Estarei fora 19-20 de Novembro",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "19-20 de Novembro",
@@ -469,7 +469,7 @@
   },
   {
     "Input": "Estarei fora de 19 a 20 de Novembro",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "19 a 20 de Novembro",
@@ -481,7 +481,7 @@
   },
   {
     "Input": "Estarei fora entre 19 e 20 de Novembro",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "entre 19 e 20 de Novembro",
@@ -493,7 +493,7 @@
   },
   {
     "Input": "Estarei fora o terceiro trimestre de 2016",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "o terceiro trimestre de 2016",
@@ -505,7 +505,7 @@
   },
   {
     "Input": "Estarei fora o terceiro trimestre deste ano",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "o terceiro trimestre deste ano",
@@ -517,7 +517,7 @@
   },
   {
     "Input": "Estarei fora em 2016 no terceiro trimestre",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2016 no terceiro trimestre",
@@ -529,7 +529,7 @@
   },
   {
     "Input": "Estarei fora 2015.3",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2015.3",
@@ -541,7 +541,7 @@
   },
   {
     "Input": "Estarei fora 2015-3",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2015-3",
@@ -553,7 +553,7 @@
   },
   {
     "Input": "Estarei fora 2015/3",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2015/3",
@@ -565,7 +565,7 @@
   },
   {
     "Input": "Estarei fora 3/2015",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "3/2015",
@@ -577,7 +577,7 @@
   },
   {
     "Input": "Estarei fora na terceira semana de 2027",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "na terceira semana de 2027",
@@ -589,7 +589,7 @@
   },
   {
     "Input": "Estarei fora a terceira semana do proximo ano",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "terceira semana do proximo ano",
@@ -601,7 +601,7 @@
   },
   {
     "Input": "Estarei fora este verão",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "este verão",
@@ -613,7 +613,7 @@
   },
   {
     "Input": "Estarei fora na primavera seguinte",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "na primavera seguinte",
@@ -625,7 +625,7 @@
   },
   {
     "Input": "Estarei fora no verao",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "no verao",
@@ -637,7 +637,7 @@
   },
   {
     "Input": "Estarei fora durante o verao",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "o verao",
@@ -649,7 +649,7 @@
   },
   {
     "Input": "Estarei fora no verao 2016",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "no verao 2016",
@@ -661,7 +661,7 @@
   },
   {
     "Input": "Estarei fora o verao de 2016",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "o verao de 2016",
@@ -673,7 +673,7 @@
   },
   {
     "Input": "Estarei fora 4-23 do proximo mes",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "4-23 do proximo mes",

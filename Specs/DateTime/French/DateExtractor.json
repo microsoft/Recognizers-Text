@@ -947,7 +947,7 @@
   },
   {
     "Input": "Qui ai-je envoye un mois il y a",
-    "NotSupported": "javascript, dotnet, python",
+    "NotSupported": "javascript, dotnet",
     "Results": [
       {
         "Text": "un mois il y a",

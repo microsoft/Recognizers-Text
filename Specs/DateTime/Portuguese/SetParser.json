@@ -1,7 +1,7 @@
 [
   {
     "Input": "Sairei semanalmente",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "semanalmente",
@@ -22,7 +22,7 @@
   },
   {
     "Input": "Sairei quinzenalmente",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "quinzenalmente",
@@ -43,7 +43,7 @@
   },
   {
     "Input": "Sairei diariamente",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "diariamente",
@@ -64,7 +64,7 @@
   },
   {
     "Input": "Minha saída diária",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "diária",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Sairei todos os dias",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "todos os dias",
@@ -106,7 +106,7 @@
   },
   {
     "Input": "Sairei a cada mes",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "cada mes",
@@ -127,7 +127,7 @@
   },
   {
     "Input": "Sairei todos os meses",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "todos os meses",
@@ -148,7 +148,7 @@
   },
   {
     "Input": "Sairei todas as semanas",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "todas as semanas",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Sairei anualmente",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "anualmente",
@@ -190,7 +190,7 @@
   },
   {
     "Input": "Sairei todos os anos",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "todos os anos",
@@ -211,7 +211,7 @@
   },
   {
     "Input": "Me irei a cada dois dias",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "cada dois dias",
@@ -232,7 +232,7 @@
   },
   {
     "Input": "Me irei a cada tres semanas",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "cada tres semanas",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Me irei a cada 3 semanas",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "cada 3 semanas",
@@ -274,7 +274,7 @@
   },
   {
     "Input": "Vou-me às 3pm todos os dias",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "3pm todos os dias",
@@ -295,7 +295,7 @@
   },
   {
     "Input": "Vou-me todos os dias as 3pm",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "todos os dias as 3pm",
@@ -316,7 +316,7 @@
   },
   {
     "Input": "Sairei em cada 15/4",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "cada 15/4",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "Sairei todas as segundas-feiras",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "todas as segundas-feiras",
@@ -358,7 +358,7 @@
   },
   {
     "Input": "Sairei toda segunda-feira",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "toda segunda-feira",
@@ -379,7 +379,7 @@
   },
   {
     "Input": "Sairei cada segunda-feira as 4pm",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "cada segunda-feira as 4pm",

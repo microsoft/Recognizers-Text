@@ -2,7 +2,7 @@
   {
     "Input": "3時間不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3時間",
@@ -15,7 +15,7 @@
   {
     "Input": "3日間不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3日間",
@@ -28,7 +28,7 @@
   {
     "Input": "3年半不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3年半",
@@ -41,7 +41,7 @@
   {
     "Input": "3か月不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3か月",
@@ -54,7 +54,7 @@
   {
     "Input": "3分不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3分",
@@ -67,7 +67,7 @@
   {
     "Input": "3秒半不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3秒半",
@@ -80,7 +80,7 @@
   {
     "Input": "123.45秒不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "123.45秒",
@@ -93,7 +93,7 @@
   {
     "Input": "2週間不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2週間",
@@ -106,7 +106,7 @@
   {
     "Input": "20分不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20分",
@@ -119,7 +119,7 @@
   {
     "Input": "24時間不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "24時間",
@@ -132,7 +132,7 @@
   {
     "Input": "まる1日不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "まる1日",
@@ -145,7 +145,7 @@
   {
     "Input": "まる1週間不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "まる1週間",
@@ -158,7 +158,7 @@
   {
     "Input": "まる1か月不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "まる1か月",
@@ -171,7 +171,7 @@
   {
     "Input": "まる1年不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "まる1年",
@@ -184,7 +184,7 @@
   {
     "Input": "まるひと月不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "まるひと月",
@@ -197,7 +197,7 @@
   {
     "Input": "まる1年間、不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "まる1年",
@@ -210,7 +210,7 @@
   {
     "Input": "1時間不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1時間",
@@ -223,7 +223,7 @@
   {
     "Input": "1年間不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1年",
@@ -236,7 +236,7 @@
   {
     "Input": "半年",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "半年",
@@ -249,7 +249,7 @@
   {
     "Input": "30分不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "30分",
@@ -262,7 +262,7 @@
   {
     "Input": "1時間半不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1時間半",
@@ -275,7 +275,7 @@
   {
     "Input": "2時間不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2時間",
@@ -288,7 +288,7 @@
   {
     "Input": "2時間半不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2時間半",
@@ -301,7 +301,7 @@
   {
     "Input": "1週間で",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1週間",
@@ -314,7 +314,7 @@
   {
     "Input": "1日で",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1日",
@@ -327,7 +327,7 @@
   {
     "Input": "1時間",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1時間",
@@ -340,7 +340,7 @@
   {
     "Input": "1か月間",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1か月",
@@ -353,7 +353,7 @@
   {
     "Input": "数時間不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "数時間",
@@ -366,7 +366,7 @@
   {
     "Input": "数分不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "数分",
@@ -379,7 +379,7 @@
   {
     "Input": "数日間、不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "数日",
@@ -392,7 +392,7 @@
   {
     "Input": "1年1か月と21日間、不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1年1か月と21日",
@@ -405,7 +405,7 @@
   {
     "Input": "1か月と2日間、不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1か月と2日",
@@ -418,7 +418,7 @@
   {
     "Input": "あなたがもう1週間不在なことに気づきました。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "もう1週間",
@@ -431,7 +431,7 @@
   {
     "Input": "もう1か月待てますか。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "もう1か月",
@@ -444,7 +444,7 @@
   {
     "Input": "もう1営業日待てますか。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "もう1営業日",
@@ -457,7 +457,7 @@
   {
     "Input": "半営業日不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "半営業日",
@@ -470,7 +470,7 @@
   {
     "Input": "20年間不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20年間",

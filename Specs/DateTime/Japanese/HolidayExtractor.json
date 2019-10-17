@@ -2,7 +2,7 @@
   {
     "Input": "クリスマスに戻ります。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "クリスマス",
@@ -15,7 +15,7 @@
   {
     "Input": "クリスマスの日に戻ります。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "クリスマスの日",
@@ -28,7 +28,7 @@
   {
     "Input": "元旦に戻ります。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "元旦",
@@ -41,7 +41,7 @@
   {
     "Input": "感謝祭の日に戻ります。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "感謝祭の日",
@@ -54,7 +54,7 @@
   {
     "Input": "父の日に戻ります。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "父の日",
@@ -67,7 +67,7 @@
   {
     "Input": "今年の元旦に戻ります。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "今年の元旦",
@@ -80,7 +80,7 @@
   {
     "Input": "2016年の元旦に戻ります。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2016年の元旦",
@@ -93,7 +93,7 @@
   {
     "Input": "2016年元旦に戻ります。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2016年元旦",
@@ -106,7 +106,7 @@
   {
     "Input": "クリーンマンデイに戻ります。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "クリーンマンデイ",
@@ -119,7 +119,7 @@
   {
     "Input": "キング牧師記念日は、アメリカの連邦祝日です。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "キング牧師記念日",
@@ -132,7 +132,7 @@
   {
     "Input": "マーティン・ルーサー・キングは、自分の名がつけられた祝日がある。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   }
 ]

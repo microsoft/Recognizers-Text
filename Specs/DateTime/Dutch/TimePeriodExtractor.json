@@ -10,7 +10,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 17:00 tot 18:00",
@@ -23,7 +23,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 17:00 tot 18:00 uur",
@@ -36,7 +36,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 5 tot 6 ʼs middags",
@@ -49,7 +49,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 5 tot zeven in de ochtend",
@@ -62,7 +62,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 5:00 tot 6:00PM",
@@ -75,7 +75,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg tussen 5 en 6PM",
@@ -88,7 +88,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg tussen 5PM en 6PM",
@@ -101,7 +101,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg tussen 5 en 6 ʼs middags",
@@ -114,7 +114,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg 4pm tot 5pm",
@@ -127,7 +127,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg 4-5pm",
@@ -140,7 +140,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg 4:00 tot 5pm",
@@ -153,7 +153,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg 4:00-5pm",
@@ -166,7 +166,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 4:00 tot 7 uur",
@@ -179,7 +179,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 3pm tot half acht ",
@@ -192,7 +192,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 4pm-5pm",
@@ -205,7 +205,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 4pm - 5pm",
@@ -218,7 +218,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg 16:00 – 17:00",
@@ -231,7 +231,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 16:00–17:00",
@@ -244,7 +244,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 16:00 – 17:00",
@@ -257,7 +257,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg 16:00–17:00",
@@ -270,7 +270,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg 20 minuten tot drie voor acht ʼs avonds",
@@ -283,7 +283,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 4 pm tot 5 pm",
@@ -296,7 +296,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 4pm tot half zes",
@@ -309,7 +309,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 16:00 tot 17:00",
@@ -322,7 +322,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 16:00 tot half zes",
@@ -335,7 +335,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 3 uur in de ochtend tot 5pm",
@@ -348,7 +348,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg van 3 uur in de ochtend tot vijf uur in de middag",
@@ -361,7 +361,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg tussen 16:00 uur en half zes",
@@ -374,7 +374,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben weg tussen 3 uur in de ochtend en 17:00 uur",
@@ -387,7 +387,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we in de ochtend afspreken",
@@ -400,7 +400,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we in de middag afspreken",
@@ -413,7 +413,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we in de avond afspreken ",
@@ -426,7 +426,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we ʼs avonds afspreken ",
@@ -439,7 +439,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we in de nacht afspreken ",
@@ -452,7 +452,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we ʼs nachts afspreken ",
@@ -465,7 +465,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we in de avonden afspreken",
@@ -478,7 +478,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we in de vroege ochtenden afspreken",
@@ -491,7 +491,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we in de late ochtenden afspreken",
@@ -504,7 +504,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we vroeg in de ochtend afspreken",
@@ -517,7 +517,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we laat in de ochtend afspreken",
@@ -530,7 +530,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we vroeg in de middag afspreken",
@@ -543,7 +543,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we laat in de middag afspreken",
@@ -556,7 +556,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we vroeg in de avond afspreken",
@@ -569,7 +569,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we laat in de avond afspreken",
@@ -582,7 +582,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we vroeg in de nacht afspreken",
@@ -595,7 +595,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we ʼs nachts laat afspreken",
@@ -608,7 +608,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "laten we ʼs nachts vroeg afspreken",
@@ -621,7 +621,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "afspraak maken van twee tot vijf ʼs middags",
@@ -634,7 +634,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Feestje bij Jean van 18:00 tot 23:00 uur",
@@ -647,7 +647,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "afspraak maken van 14:00 tot 16:30",
@@ -660,7 +660,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "afspraak maken van twee tot vijf in de middag",
@@ -673,7 +673,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "afspraak maken van 1 uur ʼs middags tot 4",
@@ -686,7 +686,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "afspraak maken van 1 uur in de middag tot 4.",
@@ -699,7 +699,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "afspraak maken van 13:30 tot 4!",
@@ -712,7 +712,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "afspraak maken van 13:30 uur tot 4!",
@@ -725,22 +725,22 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "afspraak maken 13:30 voor 4 personen",
     "Results": [],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "afspraak maken 13:30 uur voor 4 personen",
     "Results": [],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "afspraak maken om 13:30 uur voor 4 personen",
     "Results": [],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Hi Cortana- Maak alsjeblieft een skype afspraak met Jennifer.  Ik heb een afspraak van 30 minuten in de middag nodig, deze vrijdag zal ik vertrekken.",
@@ -753,7 +753,7 @@
         "Length": 12
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Hi Cortana- Maak alsjeblieft een skype afspraak met Jennifer. Ik heb vrijdag een afspraak van 30 minuten nodig, in de middag zal ik vertrekken.",
@@ -766,7 +766,7 @@
         "Length": 12
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "maak afspraak van 1:30 tot 3:30",
@@ -779,7 +779,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "maak afspraak van 1:30 pm tot 3:30",
@@ -792,7 +792,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "maak afspraak van 1:30 pm tot 3:30 pm",
@@ -805,7 +805,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "maak afspraak van 1 tot 3:30",
@@ -818,7 +818,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "maak afspraak van 1:30 tot 3",
@@ -831,12 +831,12 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "maak afspraak tussen 10 en 11:30",
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "tussen 10 en 11:30",
@@ -849,7 +849,7 @@
   {
     "Input": "maak afspraak tussen 10:10am en 12:50",
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "tussen 10:10am en 12:50",
@@ -862,7 +862,7 @@
   {
     "Input": "maak afspraak tussen 10:10pm en 3",
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "tussen 10:10pm en 3",
@@ -875,7 +875,7 @@
   {
     "Input": "maak afspraak van 22:10 tot 10",
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van 22:10 tot 10",
@@ -888,7 +888,7 @@
   {
     "Input": "maak afspraak van 10:30am tot 23",
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van 10:30am tot 23",
@@ -901,7 +901,7 @@
   {
     "Input": "Ik ben 5 tot 18:00 weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5 tot 18:00",
@@ -914,7 +914,7 @@
   {
     "Input": "Ik ben 5 tot 6 's middags weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5 tot 6 's middags",
@@ -927,7 +927,7 @@
   {
     "Input": "Ik ben 5 tot zeven uur 's morgens weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5 tot zeven uur 's morgens ",
@@ -940,7 +940,7 @@
   {
     "Input": "Ik ben van 5 tot 18:00 weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van 5 tot 18:00",
@@ -953,7 +953,7 @@
   {
     "Input": "Ik ben tussen 5 en 18:00 weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "tussen 5 en 18:00",
@@ -966,7 +966,7 @@
   {
     "Input": "Ik ben tussen 17:00 en 18:00 weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "tussen 17:00 en 18:00",
@@ -979,7 +979,7 @@
   {
     "Input": "Ik ben tussen 5 en 6 's middags weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "tussen 5 en 6 's middags",
@@ -992,7 +992,7 @@
   {
     "Input": "Ik ben 16:00 tot 17:00 weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "16:00 tot 17:00 ",
@@ -1005,7 +1005,7 @@
   {
     "Input": "Ik ben 4 tot 17:00 weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4 tot 17:00",
@@ -1018,7 +1018,7 @@
   {
     "Input": "Ik ben 4:00 tot 17:00 weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4:00 tot 17:00",
@@ -1031,7 +1031,7 @@
   {
     "Input": "Ik ben 4:00 tot 7 uur weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4:00 tot 7 uur ",
@@ -1044,7 +1044,7 @@
   {
     "Input": "Ik ben 15:00 tot half acht weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "15:00 tot half acht ",
@@ -1057,7 +1057,7 @@
   {
     "Input": "Ik ben 16:00-17:00 weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "16:00-17:00",
@@ -1070,7 +1070,7 @@
   {
     "Input": "Ik ben tien over half drie tot acht uur 's avonds weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "tien over half drie tot acht uur 's avonds",
@@ -1083,7 +1083,7 @@
   {
     "Input": "Ik ben van 16:00 tot 17:00 weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van 16:00 tot 17:00",
@@ -1096,7 +1096,7 @@
   {
     "Input": "Ik ben van 16:00 tot half zes weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van 16:00 tot half zes",
@@ -1109,7 +1109,7 @@
   {
     "Input": "Ik ben van 3 uur 's ochtends tot 17:00 weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van 3 uur 's ochtends tot 17:00 ",
@@ -1122,7 +1122,7 @@
   {
     "Input": "Ik ben van 3 uur 's ochtends tot vijf uur 's middags weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van 3 uur 's ochtends tot vijf uur 's middags ",
@@ -1135,7 +1135,7 @@
   {
     "Input": "Ik ben tussen 16:00 en half zes weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "tussen 16:00 en half zes",
@@ -1148,7 +1148,7 @@
   {
     "Input": "Ik ben tussen 3 uur 's ochtends en 17:00 weg",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "tussen 3 uur 's ochtends en 17:00",
@@ -1161,7 +1161,7 @@
   {
     "Input": "laten we 's ochtends afspreken",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "s ochtends",
@@ -1174,7 +1174,7 @@
   {
     "Input": "laten we 's middags afspreken",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "s middags",
@@ -1187,7 +1187,7 @@
   {
     "Input": "laten we 's nachts afspreken",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "s nachts",
@@ -1200,7 +1200,7 @@
   {
     "Input": "laten we 's avonds afspreken",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "s avonds",
@@ -1213,7 +1213,7 @@
   {
     "Input": "laten we vroeg in de ochtenden afspreken",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "vroeg in de ochtenden",
@@ -1226,7 +1226,7 @@
   {
     "Input": "laten we laat in de ochtenden afspreken",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "laat in de ochtenden",
@@ -1239,7 +1239,7 @@
   {
     "Input": "laten we laat in de nacht afspreken",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "laat in de nacht",
@@ -1252,7 +1252,7 @@
   {
     "Input": "regel een meeting van twee tot vijf uur 's middags",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van twee tot vijf uur 's middags",
@@ -1265,7 +1265,7 @@
   {
     "Input": "Feest bij Jean van 6 tot 23:00",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van 6 tot 23:00",
@@ -1278,7 +1278,7 @@
   {
     "Input": "regel meeting van 14:00 tot 16:30",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van 14:00 tot 16:30",
@@ -1291,7 +1291,7 @@
   {
     "Input": "regel meeting van twee tot vijf 's middags",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van twee tot vijf 's middags",
@@ -1304,7 +1304,7 @@
   {
     "Input": "regel meeting 13:00 tot 16:00",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "13:00 tot 16:00",
@@ -1317,7 +1317,7 @@
   {
     "Input": "regel meeting 13:00 tot 16:00.",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "13:00 tot 16:00",
@@ -1330,7 +1330,7 @@
   {
     "Input": "regel meeting 13:30 tot 4!",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "13:30 tot 4",
@@ -1343,13 +1343,13 @@
   {
     "Input": "regel meeting 13:30 tot 4 mensen",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
     "Input": "Hoi Cortana- plan alsjeblieft een Skypemeeting met Jennifer. Ik heb een meeting van 30 min 's middags nodig, deze vrijdag vertrek ik.",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "'s middags",
@@ -1362,7 +1362,7 @@
   {
     "Input": "Hoi Cortana- plan alsjeblieft een Skypemeeting met Jennifer. Ik heb een meeting van 30 min in de middag nodig, deze vrijdag vertrek ik.",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "in de middag",
@@ -1375,7 +1375,7 @@
   {
     "Input": "regel meeting van 1:30 tot 3:30",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van 1:30 tot 3:30",
@@ -1388,7 +1388,7 @@
   {
     "Input": "regel meeting van 13:30 tot 3:30",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van 13:30 tot 3:30",
@@ -1401,7 +1401,7 @@
   {
     "Input": "regel meeting van 13:30 tot 15:30",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van 13:30 tot 15:30",
@@ -1414,7 +1414,7 @@
   {
     "Input": "regel meeting van 1 tot 3:30",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1 tot 3:30",
@@ -1427,7 +1427,7 @@
   {
     "Input": "regel meeting van 1:30 tot 3",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van 1:30 tot 3",
@@ -1440,7 +1440,7 @@
   {
     "Input": "regel meeting tussen 10 en 11:30",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "tussen 10 en 11:30",
@@ -1453,7 +1453,7 @@
   {
     "Input": "regel meeting tussen 10:10 en 12:50",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "tussen 10:10 en 12:50",
@@ -1466,7 +1466,7 @@
   {
     "Input": "regel meeting tussen 22:10 en 3",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "tussen 22:10 en 3",
@@ -1479,7 +1479,7 @@
   {
     "Input": "regel meeting van 22:10 tot 10",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van 22:10 tot 10",
@@ -1492,7 +1492,7 @@
   {
     "Input": "regel meeting van 10:30 tot 23",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "van 10:30 tot 23",
@@ -1505,7 +1505,7 @@
   {
     "Input": "bel me niet tijdens kantooruren",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "tijdens kantooruren",

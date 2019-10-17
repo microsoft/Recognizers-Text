@@ -1,7 +1,7 @@
 [
   {
     "Input": "Estarei fora de cinco a sete hoje",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de cinco a sete hoje",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Estarei fora hoje de cinco a sete",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "hoje de cinco a sete",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Estarei fora de cinco a sete amanhã",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de cinco a sete amanhã",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Estarei fora das 5 até as 6 no próximo domingo",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "das 5 até as 6 no próximo domingo",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Estarei fora das 5 as 6pm no próximo domingo",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "das 5 as 6pm no próximo domingo",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Estarei fora das 5 até as 6pm do próximo domingo",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "das 5 até as 6pm do próximo domingo",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "Estarei fora de 4pm a 5pm hoje",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de 4pm a 5pm hoje",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Estarei fora de 4pm a 5pm de hoje",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de 4pm a 5pm de hoje",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Estarei fora de 4pm de hoje a 5pm de amanhã",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de 4pm de hoje a 5pm de amanhã",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "Estarei fora de 4pm a 5pm de amanhã",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de 4pm a 5pm de amanhã",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Estarei fora de 4pm a 5pm de 2017-6-6",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de 4pm a 5pm de 2017-6-6",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Estarei fora de 4pm a 5pm no 5 de Maio de 2018",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de 4pm a 5pm no 5 de Maio de 2018",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Estarei fora de 4:00 a 5pm 5 de Maio, 2018",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de 4:00 a 5pm 5 de Maio, 2018",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Estive fora de 4pm de 1 de Janeiro de 2016 a 5pm de hoje",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de 4pm de 1 de Janeiro de 2016 a 5pm de hoje",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Estarei fora de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "Estarei fora desde hoje às 4 até a próxima quarta-feira as 5",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "desde hoje às 4 até a próxima quarta-feira as 5",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "Estarei fora entre as 4pm e 5pm de hoje",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "entre as 4pm e 5pm de hoje",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "Estive fora entre as 4pm de 1 de janeiro de 2016 e as 5pm de hoje",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "entre as 4pm de 1 de janeiro de 2016 e as 5pm de hoje",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "Voltarei à noite",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "noite",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "Voltarei de madrugada",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "madrugada",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "Voltarei esta tarde",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "esta tarde",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Voltei esta manhã",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "esta manhã",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "Voltarei pela manhã",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "manhã",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "Voltarei de manhã",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "manhã",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "voltarei na próxima noite",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "próxima noite",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "Voltei ontem à noite",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "ontem à noite",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "Voltei de noite",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "noite",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "Voltarei amanhã à noite",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "amanhã à noite",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "Voltarei próxima segunda-feira à tarde",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "próxima segunda-feira à tarde",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "Voltarei no 5 de maio de noite",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "5 de maio de noite",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "Vou rebobinar os últimos 3 minutos",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "últimos 3 minutos",
@@ -373,7 +373,7 @@
   },
   {
     "Input": "Vou rebobinar os 3 minutos passados",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "3 minutos passados",
@@ -385,7 +385,7 @@
   },
   {
     "Input": "Vou rebobinar os previos 3 minutos",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "previos 3 minutos",
@@ -397,7 +397,7 @@
   },
   {
     "Input": "Vou rebobinar os 3 mins anteriores",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "3 mins anteriores",
@@ -409,7 +409,7 @@
   },
   {
     "Input": "Vou voltar em 3 horas",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "em 3 horas",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "Vou voltar em 5 h",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "em 5 h",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "Vou voltar dentro de 5 horas",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "dentro de 5 horas",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "Vou voltar no último minuto",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "último minuto",
@@ -457,7 +457,7 @@
   },
   {
     "Input": "Vou voltar na próxima hora",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "próxima hora",
