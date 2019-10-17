@@ -24,9 +24,30 @@ from .datetime_extractor_config import EnglishDateTimeExtractorConfiguration
 from .datetimeperiod_extractor_config import EnglishDateTimePeriodExtractorConfiguration
 from .set_extractor_config import EnglishSetExtractorConfiguration
 from .holiday_extractor_config import EnglishHolidayExtractorConfiguration
+from ...resources.base_date_time import BaseDateTime
 
 
 class EnglishMergedExtractorConfiguration(MergedExtractorConfiguration):
+    @property
+    def time_zone_extractor(self):
+        return self._time_zone_extractor
+
+    @property
+    def datetime_alt_extractor(self):
+        return self._datetime_alt_extractor
+
+    @property
+    def term_filter_regexes(self) -> List[Pattern]:
+        return self._term_filter_regexes
+
+    @property
+    def ambiguity_filters_dict(self) -> Pattern:
+        return self._ambiguity_filters_dict
+
+    @property
+    def unspecified_date_period_regex(self) -> Pattern:
+        return self._unspecified_date_period_regex
+
     @property
     def date_extractor(self) -> DateTimeExtractor:
         return self._date_extractor
@@ -80,6 +101,18 @@ class EnglishMergedExtractorConfiguration(MergedExtractorConfiguration):
         return self._since_regex
 
     @property
+    def around_regex(self) -> Pattern:
+        return self._around_regex
+
+    @property
+    def equal_regex(self) -> Pattern:
+        return self._equal_regex
+
+    @property
+    def suffix_after_regex(self) -> Pattern:
+        return self._suffix_after_regex
+
+    @property
     def from_to_regex(self) -> Pattern:
         return self._from_to_regex
 
@@ -106,6 +139,14 @@ class EnglishMergedExtractorConfiguration(MergedExtractorConfiguration):
     @property
     def filter_word_regex_list(self) -> List[Pattern]:
         return self._filter_word_regex_list
+
+    @property
+    def superfluous_word_matcher(self) -> Pattern:
+        return self._superfluous_word_matcher
+
+    @property
+    def fail_fast_regex(self) -> Pattern:
+        return self._fail_fast_regex
 
     def __init__(self):
         self._integer_extractor = EnglishIntegerExtractor()
@@ -146,3 +187,20 @@ class EnglishMergedExtractorConfiguration(MergedExtractorConfiguration):
         self._filter_word_regex_list = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.OneOnOneRegex)
         ]
+        self._unspecified_date_period_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.UnspecificDatePeriodRegex
+        )
+        self._ambiguity_filters_dict = EnglishDateTime.AmbiguityFiltersDict
+        self._around_regex = EnglishDateTime.AroundRegex
+        self._equal_regex = BaseDateTime.EqualRegex
+        self._suffix_after_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SuffixAfterRegex
+        )
+        self._superfluous_word_matcher = EnglishDateTime.SuperfluousWordList
+        self._fail_fast_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.FailFastRegex
+        )
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._time_zone_extractor = None
+        self._term_filter_regexes = None
+        self._datetime_alt_extractor = None

@@ -4,11 +4,12 @@ from datedelta import datedelta
 import regex
 
 from recognizers_text import RegExpUtility, ExtractResult
-from recognizers_number import ChineseIntegerExtractor, CJKNumberParser, ChineseNumberParserConfiguration, Constants as NumberConstants
+from recognizers_number import ChineseIntegerExtractor, CJKNumberParser, ChineseNumberParserConfiguration,\
+    Constants as NumberConstants
 
 from ...resources.chinese_date_time import ChineseDateTime
-from ..constants import TimeTypeConstants
-from ..utilities import DateTimeFormatUtil, DateTimeResolutionResult, DateUtils
+from ..constants import Constants, TimeTypeConstants
+from ..utilities import DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek
 from ..parsers import DateTimeParseResult
 from ..base_dateperiod import BaseDatePeriodParser
 from .dateperiod_parser_config import ChineseDatePeriodParserConfiguration
@@ -118,16 +119,16 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         if not match or match.start() != 0 or len(match.group()) != len(source):
             return result
 
-        days = RegExpUtility.get_group_list(match, 'day')
+        days = RegExpUtility.get_group_list(match, Constants.DAY_GROUP_NAME)
         begin_day = self.config.day_of_month[days[0]]
         end_day = self.config.day_of_month[days[1]]
 
-        month_str = RegExpUtility.get_group(match, 'month')
+        month_str = RegExpUtility.get_group(match, Constants.MONTH_GROUP_NAME)
 
         if month_str.strip() != '':
             month = self.config.month_of_year[month_str]
         else:
-            month_str = RegExpUtility.get_group(match, 'relmonth')
+            month_str = RegExpUtility.get_group(match, Constants.REL_MONTH)
             month += self.config.get_swift_day_or_month(month_str)
 
             if month < 0:
@@ -137,7 +138,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
                 month = 11
                 year += 1
 
-        year_str = RegExpUtility.get_group(match, 'year')
+        year_str = RegExpUtility.get_group(match, Constants.YEAR_GROUP_NAME)
         if year_str.strip() != '':
             year = int(year_str)
             input_year = True
@@ -184,11 +185,11 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         if not match:
             return result
 
-        source_unit = RegExpUtility.get_group(match, 'unit').strip().lower()
+        source_unit = RegExpUtility.get_group(match, Constants.UNIT).strip().lower()
         if source_unit not in self.config.unit_map:
             return result
 
-        num_str = RegExpUtility.get_group(match, 'num')
+        num_str = RegExpUtility.get_group(match, Constants.NUM)
         before_str = source[:match.start()].strip().lower()
 
         return self.__parse_common_duration_with_unit(before_str, source_unit, num_str, reference)
@@ -206,7 +207,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         if not match:
             return result
 
-        source_unit = RegExpUtility.get_group(match, 'unit').strip().lower()
+        source_unit = RegExpUtility.get_group(match, Constants.UNIT).strip().lower()
         if source_unit not in self.config.unit_map:
             return result
 
@@ -235,22 +236,22 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         end_date = reference
         difference = float(num)
 
-        if unit_str == 'D':
+        if unit_str == Constants.UNIT_D:
             if has_past:
                 begin_date += timedelta(days=-difference)
             if has_future:
                 end_date += timedelta(days=difference)
-        elif unit_str == 'W':
+        elif unit_str == Constants.UNIT_W:
             if has_past:
                 begin_date += timedelta(days=-7 * difference)
             if has_future:
                 end_date += timedelta(days=7 * difference)
-        elif unit_str == 'MON':
+        elif unit_str == Constants.UNIT_MON:
             if has_past:
                 begin_date += datedelta(months=int(-difference))
             if has_future:
                 end_date += datedelta(months=int(difference))
-        elif unit_str == 'Y':
+        elif unit_str == Constants.UNIT_Y:
             if has_past:
                 begin_date += datedelta(years=int(-difference))
             if has_future:
@@ -294,9 +295,9 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
             return result
 
         year = reference.year
-        year_num = RegExpUtility.get_group(match, 'year')
-        year_chinese = RegExpUtility.get_group(match, 'yearchs')
-        year_relative = RegExpUtility.get_group(match, 'yearrel')
+        year_num = RegExpUtility.get_group(match, Constants.YEAR_GROUP_NAME)
+        year_chinese = RegExpUtility.get_group(match, Constants.YEAR_CHINESE)
+        year_relative = RegExpUtility.get_group(match, Constants.YEAR_RELATIVE)
 
         if year_num.strip() != '':
             if self.config.is_year_only(year_num):
@@ -309,12 +310,12 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         elif year_relative.strip() != '':
             year += self.config.get_swift_day_or_month(year_relative)
 
-        if year < 100 and year >= 90:
+        if 100 > year >= 90:
             year += 1900
         elif year < 100 and year < 20:
             year += 2000
 
-        month_str = RegExpUtility.get_group(match, 'month')
+        month_str = RegExpUtility.get_group(match, Constants.MONTH_GROUP_NAME)
         month = self.config.month_of_year.get(month_str, 0) % 12
         if month == 0:
             month = 12
@@ -349,25 +350,25 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
 
         if len(year_matches) == 2:
             begin_year = self.__convert_chinese_to_number(
-                RegExpUtility.get_group(year_matches[0], 'year'))
+                RegExpUtility.get_group(year_matches[0], Constants.YEAR_GROUP_NAME))
             end_year = self.__convert_chinese_to_number(
-                RegExpUtility.get_group(year_matches[1], 'year'))
+                RegExpUtility.get_group(year_matches[1], Constants.YEAR_GROUP_NAME))
         elif len(chinese_year_matches) == 2:
             begin_year = self._convert_year(RegExpUtility.get_group(
-                chinese_year_matches[0], 'yearchs'), True)
+                chinese_year_matches[0], Constants.YEAR_CHINESE), True)
             end_year = self._convert_year(RegExpUtility.get_group(
-                chinese_year_matches[1], 'yearchs'), True)
+                chinese_year_matches[1], Constants.YEAR_CHINESE), True)
         elif len(year_matches) == 1 and len(chinese_year_matches) == 1:
             if year_matches[0].start() < chinese_year_matches[0].start():
                 begin_year = self.__convert_chinese_to_number(
-                    RegExpUtility.get_group(year_matches[0], 'year'))
+                    RegExpUtility.get_group(year_matches[0], Constants.YEAR_GROUP_NAME))
                 end_year = self.__convert_chinese_to_number(
-                    RegExpUtility.get_group(chinese_year_matches[0], 'yearchs'))
+                    RegExpUtility.get_group(chinese_year_matches[0], Constants.YEAR_CHINESE))
             else:
                 begin_year = self.__convert_chinese_to_number(
-                    RegExpUtility.get_group(chinese_year_matches[0], 'yearchs'))
+                    RegExpUtility.get_group(chinese_year_matches[0], Constants.YEAR_CHINESE))
                 end_year = self.__convert_chinese_to_number(
-                    RegExpUtility.get_group(year_matches[0], 'year'))
+                    RegExpUtility.get_group(year_matches[0], Constants.YEAR_GROUP_NAME))
 
         begin_year = self.__sanitize_year(begin_year)
         end_year = self.__sanitize_year(end_year)
@@ -384,9 +385,10 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         result.success = True
         return result
 
-    def __sanitize_year(self, year: int) -> int:
+    @staticmethod
+    def __sanitize_year(year: int) -> int:
         result = year
-        if year < 100 and year >= 90:
+        if 100 > year >= 90:
             result += 1900
         elif year < 100 and year < 20:
             result += 2000
@@ -411,7 +413,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
 
         year = self._convert_year(year_str, is_chinese)
         if len(year_str) == 2:
-            if year < 100 and year >= 30:
+            if 100 > year >= 30:
                 year += 1900
             elif year < 30:
                 year += 2000
@@ -451,18 +453,18 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
 
     def _get_week_of_month(self, cardinal, month, year, reference, no_year) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
-        seed_date = self._compute_date(cardinal, 1, month, year)
+        seed_date = self._compute_date(cardinal, DayOfWeek.MONDAY, month, year)
 
         future_date = seed_date
         past_date = seed_date
 
         if no_year and future_date < reference:
-            future_date = self._compute_date(cardinal, 1, month, year + 1)
+            future_date = self._compute_date(cardinal, DayOfWeek.MONDAY, month, year + 1)
             if not future_date.month == month:
                 future_date = future_date + timedelta(days=-7)
 
         if no_year and past_date >= reference:
-            past_date = self._compute_date(cardinal, 1, month, year - 1)
+            past_date = self._compute_date(cardinal, DayOfWeek.MONDAY, month, year - 1)
             if not past_date.month == month:
                 past_date = past_date + timedelta(days=-7)
 
@@ -478,7 +480,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         result.success = True
         return result
 
-    def _compute_date(self, cardinal: int, weekday: int, month: int, year: int):
+    def _compute_date(self, cardinal: int, weekday: DayOfWeek, month: int, year: int):
         first_day = datetime(year, month, 1)
         first_week_day = DateUtils.this(first_day, weekday)
 
@@ -506,9 +508,9 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
             return result
 
         year = reference.year
-        year_num = RegExpUtility.get_group(match, 'year')
-        year_chinese = RegExpUtility.get_group(match, 'yearchs')
-        year_relative = RegExpUtility.get_group(match, 'yearrel')
+        year_num = RegExpUtility.get_group(match, Constants.YEAR_GROUP_NAME)
+        year_chinese = RegExpUtility.get_group(match, Constants.YEAR_CHINESE)
+        year_relative = RegExpUtility.get_group(match, Constants.YEAR_RELATIVE)
         has_year = False
 
         if year_num.strip() != '':
@@ -525,12 +527,12 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
             has_year = True
             year += self.config.get_swift_day_or_month(year_relative)
 
-        if year < 100 and year >= 90:
+        if 100 > year >= 90:
             year += 1900
         elif year < 100 and year < 20:
             year += 2000
 
-        season_str = RegExpUtility.get_group(match, 'season')
+        season_str = RegExpUtility.get_group(match, Constants.SEASON)
         season = self.config.season_map.get(season_str, None)
 
         if has_year:
@@ -548,9 +550,9 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
             return result
 
         year = reference.year
-        year_num = RegExpUtility.get_group(match, 'year')
-        year_chinese = RegExpUtility.get_group(match, 'yearchs')
-        year_relative = RegExpUtility.get_group(match, 'yearrel')
+        year_num = RegExpUtility.get_group(match, Constants.YEAR_GROUP_NAME)
+        year_chinese = RegExpUtility.get_group(match, Constants.YEAR_CHINESE)
+        year_relative = RegExpUtility.get_group(match, Constants.YEAR_RELATIVE)
         has_year = False
 
         if year_num.strip() != '':
@@ -567,12 +569,12 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
             has_year = True
             year += self.config.get_swift_day_or_month(year_relative)
 
-        if year < 100 and year >= 90:
+        if 100 > year >= 90:
             year += 1900
         elif year < 100 and year < 20:
             year += 2000
 
-        cardinal_str = RegExpUtility.get_group(match, 'cardinal')
+        cardinal_str = RegExpUtility.get_group(match, Constants.CARDINAL)
         quarter_num = self.config.cardinal_map.get(cardinal_str, None)
 
         begin_date = DateUtils.safe_create_from_min_value(

@@ -8,9 +8,15 @@ from ..extractors import DateTimeExtractor
 from ..base_timeperiod import TimePeriodExtractorConfiguration, MatchedIndex
 from ..base_time import BaseTimeExtractor
 from .time_extractor_config import EnglishTimeExtractorConfiguration
+from ..utilities import DateTimeOptions
 
 
 class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
+
+    @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
+
     @property
     def simple_cases_regex(self) -> List[Pattern]:
         return self._simple_cases_regex
@@ -35,7 +41,16 @@ class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
     def integer_extractor(self) -> Extractor:
         return self._integer_extractor
 
+    @property
+    def token_before_date(self) -> str:
+        return self._token_before_date
+
+    @property
+    def pure_number_regex(self) -> List[Pattern]:
+        return self._pure_number_regex
+
     def __init__(self):
+        super().__init__()
         self._simple_cases_regex: List[Pattern] = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumFromTo),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumBetweenAnd)
@@ -49,6 +64,9 @@ class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         self._single_time_extractor = BaseTimeExtractor(
             EnglishTimeExtractorConfiguration())
         self._integer_extractor = EnglishIntegerExtractor()
+        self._token_before_date = EnglishDateTime.TokenBeforeDate
+        self._pure_number_regex = [EnglishDateTime.PureNumFromTo, EnglishDateTime.PureNumFromTo]
+        self._options = DateTimeOptions.NONE
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         index = -1

@@ -101,7 +101,7 @@ class EnglishTimeParserConfiguration(TimeParserConfiguration):
                         delta_hour = 12
                     if regex.search(self.lunch_regex, pm_str):
                         # for hour >= 10 and < 12
-                        if adjust.hour >= 10 and adjust.hour <= 12:
+                        if 10 <= adjust.hour <= 12:
                             delta_hour = 0
                             if adjust.hour == 12:
                                 adjust.has_pm = True

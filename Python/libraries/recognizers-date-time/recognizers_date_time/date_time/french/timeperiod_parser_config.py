@@ -76,16 +76,16 @@ class FrenchTimePeriodParserConfiguration(TimePeriodParserConfiguration):
 
         time_of_day = ""
         if any(trimmed_text.endswith(o) for o in FrenchDateTime.MorningTermList):
-            time_of_day = Constants.Morning
+            time_of_day = Constants.MORNING
         elif any(trimmed_text.endswith(o) for o in FrenchDateTime.AfternoonTermList):
-            time_of_day = Constants.Afternoon
+            time_of_day = Constants.AFTERNOON
         elif any(trimmed_text.endswith(o) for o in FrenchDateTime.EveningTermList):
-            time_of_day = Constants.Evening
+            time_of_day = Constants.EVENING
         elif source == FrenchDateTime.DaytimeTermList[0] or source.endswith(FrenchDateTime.DaytimeTermList[1]) \
                 or source.endswith(FrenchDateTime.DaytimeTermList[2]):
-            time_of_day = Constants.Daytime
+            time_of_day = Constants.DAYTIME
         elif any(trimmed_text.endswith(o) for o in FrenchDateTime.NightTermList):
-            time_of_day = Constants.Night
+            time_of_day = Constants.NIGHT
         else:
             return MatchedTimeRegex(
                 matched=False,

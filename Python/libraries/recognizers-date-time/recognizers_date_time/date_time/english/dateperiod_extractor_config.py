@@ -1,5 +1,6 @@
 from typing import List, Pattern
 
+from recognizers_text.extractor import Extractor
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number import BaseNumberParser, BaseNumberExtractor
 from recognizers_number.number.english.extractors import EnglishIntegerExtractor
@@ -12,6 +13,7 @@ from ..base_date import BaseDateExtractor
 from ..base_dateperiod import DatePeriodExtractorConfiguration, MatchedIndex
 from .duration_extractor_config import EnglishDurationExtractorConfiguration
 from .date_extractor_config import EnglishDateExtractorConfiguration
+from .common_configs import EnglishOrdinalExtractor, EnglishCardinalExtractor
 
 
 class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
@@ -60,6 +62,10 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._date_unit_regex
 
     @property
+    def time_unit_regex(self) -> Pattern:
+        return self._time_unit_regex
+
+    @property
     def in_connector_regex(self) -> Pattern:
         return self._in_connector_regex
 
@@ -88,8 +94,56 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._range_connector_regex
 
     @property
+    def ordinal_extractor(self) -> BaseNumberExtractor:
+        return self._ordinal_extractor
+
+    @property
+    def cardinal_extractor(self) -> Extractor:
+        return self._cardinal_extractor
+
+    @property
     def now_regex(self) -> Pattern:
         return self._now_regex
+
+    @property
+    def within_next_prefix_regex(self) -> Pattern:
+        return self._within_next_prefix_regex
+
+    @property
+    def future_suffix_regex(self) -> Pattern:
+        return self._future_suffix_regex
+
+    @property
+    def ago_regex(self) -> Pattern:
+        return self._ago_regex
+
+    @property
+    def later_regex(self) -> Pattern:
+        return self._later_regex
+
+    @property
+    def less_than_regex(self) -> Pattern:
+        return self._less_than_regex
+
+    @property
+    def more_than_regex(self) -> Pattern:
+        return self._more_than_regex
+
+    @property
+    def duration_date_restrictions(self) -> [str]:
+        return self._duration_date_restrictions
+
+    @property
+    def year_period_regex(self) -> Pattern:
+        return self._year_period_regex
+
+    @property
+    def month_num_regex(self) -> Pattern:
+        return self._month_num_regex
+
+    @property
+    def century_suffix_regex(self) -> Pattern:
+        return self._century_suffix_regex
 
     def __init__(self):
         self._simple_cases_regexes = [
@@ -151,7 +205,42 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._range_connector_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.RangeConnectorRegex)
         self._now_regex = RegExpUtility.get_safe_reg_exp(
-            EnglishDateTime.NowRegex)
+            EnglishDateTime.NowRegex
+        )
+        self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.WithinNextPrefixRegex
+        )
+        self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.TimeUnitRegex
+        )
+        self._future_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.FutureSuffixRegex
+        )
+        self._ago_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.AgoRegex
+        )
+        self._later_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.LaterRegex
+        )
+        self._less_than_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.LessThanRegex
+        )
+        self._more_than_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.MoreThanRegex
+        )
+        self._duration_date_restrictions = EnglishDateTime.DurationDateRestrictions
+        self._year_period_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.YearPeriodRegex
+        )
+        self._month_num_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.MonthNumRegex
+        )
+        self._century_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.CenturySuffixRegex
+        )
+        self._ordinal_extractor = EnglishOrdinalExtractor()
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._cardinal_extractor = EnglishCardinalExtractor()
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         return MatchedIndex(True, source.rfind('from')) if source.endswith('from') else MatchedIndex(False, -1)

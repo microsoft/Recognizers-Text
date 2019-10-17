@@ -11,6 +11,58 @@ from .date_extractor import ChineseDateExtractor
 
 class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
+    def time_unit_regex(self) -> Pattern:
+        return self._time_unit_regex
+
+    @property
+    def ordinal_extractor(self) -> Extractor:
+        return self._ordinal_extractor
+
+    @property
+    def cardinal_extractor(self) -> Extractor:
+        return self._cardinal_extractor
+
+    @property
+    def within_next_prefix_regex(self) -> Pattern:
+        return self._within_next_prefix_regex
+
+    @property
+    def future_suffix_regex(self) -> Pattern:
+        return self._future_suffix_regex
+
+    @property
+    def ago_regex(self) -> Pattern:
+        return self._ago_regex
+
+    @property
+    def later_regex(self) -> Pattern:
+        return self._later_regex
+
+    @property
+    def less_than_regex(self) -> Pattern:
+        return self._less_than_regex
+
+    @property
+    def more_than_regex(self) -> Pattern:
+        return self._more_than_regex
+
+    @property
+    def duration_date_restrictions(self) -> [str]:
+        return self._duration_date_restrictions
+
+    @property
+    def year_period_regex(self) -> Pattern:
+        return self._year_period_regex
+
+    @property
+    def century_suffix_regex(self) -> Pattern:
+        return self._century_suffix_regex
+
+    @property
+    def month_num_regex(self) -> Pattern:
+        return self._month_num_regex
+
+    @property
     def simple_cases_regexes(self) -> List[Pattern]:
         return self._simple_cases_regexes
 
@@ -43,6 +95,18 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._future_regex
 
     @property
+    def date_point_extractor(self) -> DateTimeExtractor:
+        return self._date_point_extractor
+
+    @property
+    def integer_extractor(self) -> Extractor:
+        return self._integer_extractor
+
+    @property
+    def number_parser(self) -> Parser:
+        return self._number_parser
+
+    @property
     def week_of_regex(self) -> Pattern:
         return None
 
@@ -61,18 +125,6 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
     def range_unit_regex(self) -> Pattern:
         return None
-
-    @property
-    def date_point_extractor(self) -> DateTimeExtractor:
-        return self._date_point_extractor
-
-    @property
-    def integer_extractor(self) -> Extractor:
-        return self._integer_extractor
-
-    @property
-    def number_parser(self) -> Parser:
-        return self._number_parser
 
     @property
     def duration_extractor(self) -> DateTimeExtractor:
@@ -123,6 +175,21 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             ChineseNumberParserConfiguration())
         self._now_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.NowRegex)
+        self._month_num_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.MonthNumRegex)
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._century_suffix_regex = None
+        self._year_period_regex = None
+        self._duration_date_restrictions = None
+        self._more_than_regex = None
+        self._less_than_regex = None
+        self._later_regex = None
+        self._ago_regex = None
+        self._future_suffix_regex = None
+        self._within_next_prefix_regex = None
+        self._cardinal_extractor = None
+        self._ordinal_extractor = None
+        self._time_unit_regex = None
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         if source.endswith('从'):
