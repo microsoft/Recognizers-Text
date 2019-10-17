@@ -169,7 +169,11 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(
                 EnglishDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.get_safe_reg_exp(
-                EnglishDateTime.WeekWithWeekDayRangeRegex)
+                EnglishDateTime.WeekWithWeekDayRangeRegex),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.YearPlusNumberRegex),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DecadeWithCenturyRegex),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.RelativeDecadeRegex),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.ReferenceDatePeriodRegex)
         ]
         self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(
             BaseDateTime.IllegalYearRegex)
@@ -239,7 +243,6 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             EnglishDateTime.CenturySuffixRegex
         )
         self._ordinal_extractor = EnglishOrdinalExtractor()
-        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._cardinal_extractor = EnglishCardinalExtractor()
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
