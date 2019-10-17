@@ -81,12 +81,12 @@ export class ChineseDateExtractor extends BaseDateExtractor {
         let tokens: Token[] = new Array<Token>()
             .concat(super.basicRegexMatch(source))
             .concat(super.implicitDate(source))
-            .concat(this.durationWithBeforeAndAfter(source, referenceDate));
+            .concat(this.durationWithAgoAndLater(source, referenceDate));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
 
-    protected durationWithBeforeAndAfter(source: string, refDate: Date): Token[] {
+    protected durationWithAgoAndLater(source: string, refDate: Date): Token[] {
         let ret = [];
         let durationEr = this.durationExtractor.extract(source, refDate);
         durationEr.forEach(er => {
@@ -99,7 +99,7 @@ export class ChineseDateExtractor extends BaseDateExtractor {
 
                     if (beforeMatch && suffix.startsWith(beforeMatch.value) || afterMatch && suffix.startsWith(afterMatch.value)) {
                         let metadata = new MetaData();
-                        metadata.IsDurationWithBeforeAndAfter = true;
+                        metadata.IsDurationWithAgoAndLater = true;
                         ret.push(new Token(er.start, pos + 1, metadata));
                     }
                 }
@@ -241,7 +241,7 @@ export class ChineseDateParser extends BaseDateParser {
             }
             if (!innerResult.success) {
                 // TODO create test
-                innerResult = this.parserDurationWithBeforeAndAfter(source, referenceDate);
+                innerResult = this.parserDurationWithAgoAndLater(source, referenceDate);
             }
             if (innerResult.success) {
                 innerResult.futureResolution = {};
@@ -598,7 +598,7 @@ export class ChineseDateParser extends BaseDateParser {
     }
     
     // Handle cases like "三天前"
-    private parserDurationWithBeforeAndAfter(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected parserDurationWithAgoAndLater(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let durationRes = this.durationExtractor.extract(source, referenceDate);
 

@@ -17,12 +17,12 @@ export class MetaData {
         this.hasMod = hasMod;
     }
 
-    private isDurationWithBeforeAndAfter: boolean = false;
+    private isDurationWithAgoAndLater: boolean = false;
 
-    get IsDurationWithBeforeAndAfter(): boolean {
-        return this.isDurationWithBeforeAndAfter;
+    get IsDurationWithAgoAndLater(): boolean {
+        return this.isDurationWithAgoAndLater;
     }
-    set IsDurationWithBeforeAndAfter(isDurationWithBeforeAndAfter: boolean) {
-        this.isDurationWithBeforeAndAfter = isDurationWithBeforeAndAfter;
+    set IsDurationWithAgoAndLater(isDurationWithAgoAndLater: boolean) {
+        this.isDurationWithAgoAndLater = isDurationWithAgoAndLater;
     }
 }

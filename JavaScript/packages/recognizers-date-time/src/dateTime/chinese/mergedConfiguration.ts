@@ -275,14 +275,14 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         let modStr = "";
         let beforeMatch = RegExpUtility.getMatches(this.config.beforeRegex, er.text).pop();
         let afterMatch = RegExpUtility.getMatches(this.config.afterRegex, er.text).pop();
-        if (beforeMatch && !this.isDurationWithBeforeAndAfter(er)) {
+        if (beforeMatch && !this.isDurationWithAgoAndLater(er)) {
             hasBefore = true;
             er.start += beforeMatch.length;
             er.length -= beforeMatch.length;
             er.text = er.text.substring(beforeMatch.length);
             modStr = beforeMatch.value;
         }
-        else if (afterMatch && !this.isDurationWithBeforeAndAfter(er)) {
+        else if (afterMatch && !this.isDurationWithAgoAndLater(er)) {
             hasAfter = true;
             er.start += afterMatch.length;
             er.length -= afterMatch.length;
@@ -453,7 +453,7 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         return type;
     }
 
-    protected isDurationWithBeforeAndAfter(er: ExtractResult): boolean {
-        return er.metaData && er.metaData.IsDurationWithBeforeAndAfter;
+    protected isDurationWithAgoAndLater(er: ExtractResult): boolean {
+        return er.metaData && er.metaData.IsDurationWithAgoAndLater;
     }
 }

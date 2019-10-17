@@ -70,7 +70,7 @@ export class ChineseDateTimeExtractor extends BaseDateTimeExtractor {
             .concat(this.mergeDateAndTime(source, referenceDate))
             .concat(this.basicRegexMatch(source))
             .concat(this.timeOfToday(source, referenceDate))
-            .concat(this.durationWithBeforeAndAfter(source, referenceDate));
+            .concat(this.durationWithAgoAndLater(source, referenceDate));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
@@ -140,7 +140,7 @@ export class ChineseDateTimeExtractor extends BaseDateTimeExtractor {
     }
 
     // Process case like "5分钟前" "二小时后"
-    protected durationWithBeforeAndAfter(source: string, refDate: Date): Token[] {
+    protected durationWithAgoAndLater(source: string, refDate: Date): Token[] {
         let ret = [];
         let durationEr = this.durationExtractor.extract(source, refDate);
         durationEr.forEach(er => {
@@ -152,7 +152,7 @@ export class ChineseDateTimeExtractor extends BaseDateTimeExtractor {
 
                 if (beforeMatch && suffix.startsWith(beforeMatch.value) || afterMatch && suffix.startsWith(afterMatch.value)) {
                     let metadata = new MetaData();
-                    metadata.IsDurationWithBeforeAndAfter = true;
+                    metadata.IsDurationWithAgoAndLater = true;
                     ret.push(new Token(er.start, pos + 1, metadata));
                 }
             }
@@ -266,7 +266,7 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
                 innerResult = this.parseTimeOfToday(er.text, referenceTime);
             }
             if (!innerResult.success) {
-                innerResult = this.parserDurationWithBeforeAndAfter(er.text, referenceTime);
+                innerResult = this.parserDurationWithAgoAndLater(er.text, referenceTime);
             }
             if (innerResult.success) {
                 innerResult.futureResolution = {};
@@ -390,7 +390,7 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
     }
 
     // Handle cases like "5分钟前", "1小时以后"
-    private parserDurationWithBeforeAndAfter(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected parserDurationWithAgoAndLater(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let durationRes = this.durationExtractor.extract(source, referenceDate);
 

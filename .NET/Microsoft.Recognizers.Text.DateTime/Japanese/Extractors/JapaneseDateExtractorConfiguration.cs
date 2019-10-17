@@ -141,7 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var tokens = new List<Token>();
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(ImplicitDate(text));
-            tokens.AddRange(DurationWithBeforeAndAfter(text, referenceTime));
+            tokens.AddRange(DurationWithAgoAndLater(text, referenceTime));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -179,7 +179,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         }
 
         // Process case like "三天前" "两个月前"
-        private List<Token> DurationWithBeforeAndAfter(string text, DateObject referenceTime)
+        private List<Token> DurationWithAgoAndLater(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
             var durationEr = DurationExtractor.Extract(text, referenceTime);
@@ -202,7 +202,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value)) ||
                         (afterMatch.Success && suffix.StartsWith(afterMatch.Value)))
                     {
-                        var metadata = new Metadata() { IsDurationWithBeforeAndAfter = true };
+                        var metadata = new Metadata() { IsDurationWithAgoAndLater = true };
                         ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 1, metadata));
                     }
                 }

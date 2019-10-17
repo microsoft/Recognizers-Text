@@ -521,7 +521,7 @@ export class BaseDateTimeParser implements IDateTimeParser {
     }
 
     // handle like "two hours ago"
-    private parserDurationWithAgoAndLater(text: string, referenceTime: Date): DateTimeResolutionResult {
+    protected parserDurationWithAgoAndLater(text: string, referenceTime: Date): DateTimeResolutionResult {
         return AgoLaterUtil.parseDurationWithAgoAndLater(
             text,
             referenceTime,
