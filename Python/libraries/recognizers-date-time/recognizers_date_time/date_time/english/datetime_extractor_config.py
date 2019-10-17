@@ -97,7 +97,7 @@ class EnglishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
 
     @property
     def specific_time_of_day_regex(self) -> Pattern:
-        return  self._specific_time_of_day_regex
+        return self._specific_time_of_day_regex
 
     def __init__(self):
         super().__init__()
