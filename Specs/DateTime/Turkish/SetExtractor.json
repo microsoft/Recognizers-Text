@@ -1,7 +1,6 @@
 [
   {
     "Input": "Haftalık ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -14,7 +13,6 @@
   },
   {
     "Input": "Günlük ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -27,7 +25,6 @@
   },
   {
     "Input": "Her gün ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -40,7 +37,6 @@
   },
   {
     "Input": "Her ay ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -53,7 +49,6 @@
   },
   {
     "Input": "Yıllık ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -66,7 +61,6 @@
   },
   {
     "Input": "Her iki gün ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -79,7 +73,6 @@
   },
   {
     "Input": "Her üç hafta ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -92,7 +85,6 @@
   },
   {
     "Input": "Her gün saat 15'te ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -104,12 +96,11 @@
     ]
   },
   {
-    "Input": "Her 4/15'te ayrılacağım",
-    "NotSupported": "dotnet",
+    "Input": "Her 15/4'te ayrılacağım",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Her 4/15",
+        "Text": "Her 15/4",
         "Type": "set",
         "Start": 0,
         "Length": 8
@@ -118,7 +109,6 @@
   },
   {
     "Input": "Her Pazartesi ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -131,7 +121,6 @@
   },
   {
     "Input": "Her Pazartesi saat 16'da ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -144,7 +133,6 @@
   },
   {
     "Input": "Her sabah ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -157,72 +145,66 @@
   },
   {
     "Input": "Her sabah saat 9'da ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Her sabah saat 9'da",
+        "Text": "Her sabah saat 9",
         "Type": "set",
         "Start": 0,
-        "Length": 19
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Her öğleden sonra saat 16'da ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Her öğleden sonra saat 16'da",
+        "Text": "Her öğleden sonra saat 16",
         "Type": "set",
         "Start": 0,
-        "Length": 28
+        "Length": 25
       }
     ]
   },
   {
     "Input": "Her gece saat 21'de ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Her gece saat 21'de",
+        "Text": "Her gece saat 21",
         "Type": "set",
         "Start": 0,
-        "Length": 19
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Her gece 21'de ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Her gece 21'de",
+        "Text": "Her gece 21",
         "Type": "set",
         "Start": 0,
-        "Length": 14
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Sabahları saat 9'da ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Sabahları saat 9'da",
+        "Text": "Sabahları saat 9",
         "Type": "set",
         "Start": 0,
-        "Length": 19
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Her Pazar saat 9'da ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -234,21 +216,19 @@
     ]
   },
   {
-    "Input": "Pazartesi'leri saat 9'da ayrılacağım",
-    "NotSupported": "dotnet",
+    "Input": "Pazartesileri saat 9'da ayrılacağım",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Pazartesi'leri saat 9",
+        "Text": "Pazartesileri saat 9",
         "Type": "set",
         "Start": 0,
-        "Length": 21
+        "Length": 20
       }
     ]
   },
   {
     "Input": "Pazartesi günleri ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -261,7 +241,6 @@
   },
   {
     "Input": "Pazar günleri ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -273,15 +252,14 @@
     ]
   },
   {
-    "Input": "Pazar'ları ayrılacağım",
-    "NotSupported": "dotnet",
+    "Input": "Pazarları ayrılacağım",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Pazar'ları",
+        "Text": "Pazarları",
         "Type": "set",
         "Start": 0,
-        "Length": 10
+        "Length": 9
       }
     ]
   }
