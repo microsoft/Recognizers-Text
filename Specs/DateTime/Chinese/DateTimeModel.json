@@ -2113,7 +2113,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T14:16:03"
     },
-    "NotSupported": "python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "10分钟之前",
@@ -3829,7 +3829,7 @@
           "values": [
             {
               "timex": "2018-08-25",
-              "type": "datetime",
+              "type": "date",
               "value": "2018-08-25"
             }
           ]
