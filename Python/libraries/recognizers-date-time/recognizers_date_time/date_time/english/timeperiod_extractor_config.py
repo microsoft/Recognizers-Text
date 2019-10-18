@@ -49,9 +49,80 @@ class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
     def pure_number_regex(self) -> List[Pattern]:
         return self._pure_number_regex
 
+    @property
+    def hour_regex(self) -> Pattern:
+        return self._hour_regex
+
+    @property
+    def period_hour_num_regex(self) -> Pattern:
+        return self._period_hour_num_regex
+
+    @property
+    def period_desc_regex(self) -> Pattern:
+        return self._period_desc_regex
+
+    @property
+    def pm_regex(self) -> Pattern:
+        return self._pm_regex
+
+    @property
+    def am_regex(self) -> Pattern:
+        return self._am_regex
+
+    @property
+    def preposition_regex(self) -> Pattern:
+        return self._preposition_regex
+
+    @property
+    def specific_time_of_day_regex(self) -> Pattern:
+        return self._specific_time_of_day_regex
+
+    @property
+    def time_unit_regex(self) -> Pattern:
+        return self._time_unit_regex
+    
+    @property
+    def time_followed_unit(self) -> Pattern:
+        return self._time_followed_unit
+    @property
+    def time_number_combined_with_unit(self):
+        return self._time_number_combined_with_unit
+
     def __init__(self):
         super().__init__()
+        self._time_number_combined_with_unit = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.TimeNumberCombinedWithUnit
+        )
+        self._time_followed_unit = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.TimeFollowedUnit
+        )
+        self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.TimeUnitRegex
+        )
+        self._hour_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.HourRegex
+        )
+        self._period_hour_num_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PeriodHourNumRegex
+        )
+        self._period_desc_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.DescRegex
+        )
+        self._pm_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PmRegex
+        )
+        self._am_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.AmRegex
+        )
+        self._preposition_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PrepositionRegex
+        )
+        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SpecificTimeOfDayRegex
+        )
         self._simple_cases_regex: List[Pattern] = [
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.SpecificTimeBetweenAnd),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.SpecificTimeFromTo),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumFromTo),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumBetweenAnd)
         ]
