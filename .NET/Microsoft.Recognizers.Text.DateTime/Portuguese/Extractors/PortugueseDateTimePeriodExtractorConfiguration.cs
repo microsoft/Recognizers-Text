@@ -117,6 +117,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex FutureSuffixRegex => PortugueseDatePeriodExtractorConfiguration.FutureSuffixRegex;
 
+        bool IDateTimePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex IDateTimePeriodExtractorConfiguration.PrefixDayRegex => PrefixDayRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.DateUnitRegex => DateUnitRegex;

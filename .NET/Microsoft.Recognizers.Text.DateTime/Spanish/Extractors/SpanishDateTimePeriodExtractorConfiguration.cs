@@ -118,6 +118,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex FutureSuffixRegex => SpanishDatePeriodExtractorConfiguration.FutureSuffixRegex;
 
+        bool IDateTimePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex IDateTimePeriodExtractorConfiguration.PrefixDayRegex => PrefixDayRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.DateUnitRegex => DateUnitRegex;
