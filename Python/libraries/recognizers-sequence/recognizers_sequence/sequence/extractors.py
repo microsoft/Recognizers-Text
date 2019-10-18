@@ -136,13 +136,15 @@ class BasePhoneNumberExtractor(SequenceExtractor):
     def extract(self, source: str):
         ret = []
         pre_check_phone_number_regex = re.compile(BasePhoneNumbers.PreCheckPhoneNumberRegex)
+        ssn_filter_regex = re.compile(BasePhoneNumbers.SSNFilterRegex)
         if (pre_check_phone_number_regex.search(source) is None):
             return ret
         extract_results = super().extract(source)
         format_indicator_regex = re.compile(
             BasePhoneNumbers.FormatIndicatorRegex, re.IGNORECASE | re.DOTALL)
         for er in extract_results:
-            if count_digits(er.text) < 7 and er.data != "ITPhoneNumber":
+            if (count_digits(er.text) < 7 and er.data != "ITPhoneNumber") or \
+                    ssn_filter_regex.search(er.text):
                 continue
             if er.start + er.length < len(source):
                 ch = source[er.start + er.length]
