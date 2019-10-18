@@ -172,12 +172,6 @@ class MergedExtractorConfiguration:
     def ambiguity_filters_dict(self) -> {}:
         raise NotImplementedError
 
-    @property
-    @abstractmethod
-    def filter_word_regex_list(self) -> List[Pattern]:
-        raise NotImplementedError
-
-
 class BaseMergedExtractor(DateTimeExtractor):
     @property
     def extractor_type_name(self) -> str:
@@ -492,7 +486,7 @@ class BaseMergedExtractor(DateTimeExtractor):
 
     def check_calendar_filter_list(self, ers: List[ExtractResult], source: str) -> List[ExtractResult]:
         for er in reversed(ers):
-            for pattern in self.config.filter_word_regex_list:
+            for pattern in self.config.term_filter_regexes:
                 if regex.search(pattern, er.text):
                     ers.remove(er)
                     break
