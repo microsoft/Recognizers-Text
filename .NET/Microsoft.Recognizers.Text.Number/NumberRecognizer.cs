@@ -11,6 +11,7 @@ using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Number.Korean;
 using Microsoft.Recognizers.Text.Number.Portuguese;
 using Microsoft.Recognizers.Text.Number.Spanish;
+using Microsoft.Recognizers.Text.Number.Swedish;
 using Microsoft.Recognizers.Text.Number.Turkish;
 
 namespace Microsoft.Recognizers.Text.Number
@@ -378,6 +379,27 @@ namespace Microsoft.Recognizers.Text.Number
                     new BaseNumberRangeParser(new HindiNumberRangeParserConfiguration(
                                                   new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
                     new Hindi.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Hindi, options))));*/
+
+            RegisterModel<NumberModel>(
+                Culture.Swedish,
+                (options) => new NumberModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SwedishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
+                    German.NumberExtractor.GetInstance(NumberMode.PureNumber)));
+
+            RegisterModel<OrdinalModel>(
+                Culture.Swedish,
+                (options) => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new SwedishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
+                    German.OrdinalExtractor.GetInstance()));
+
+            RegisterModel<PercentModel>(
+                Culture.Swedish,
+                (options) => new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SwedishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
+                    new German.PercentageExtractor()));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)
