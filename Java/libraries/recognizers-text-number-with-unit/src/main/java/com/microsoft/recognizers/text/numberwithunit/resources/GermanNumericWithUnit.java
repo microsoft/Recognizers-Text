@@ -398,10 +398,10 @@ public class GermanNumericWithUnit {
 
     public static final ImmutableMap<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
         .put("F", "grad fahrenheit|°fahrenheit|°f|fahrenheit")
-        .put("K", "k|K|kelvin")
+        .put("K", "k|K|kelvin|grad kelvin|°kelvin|°k|°K")
         .put("R", "rankine|°r")
         .put("D", "delisle|°de")
-        .put("C", "grad celsius|°celsius|°c")
+        .put("C", "grad celsius|°celsius|°c|celsius")
         .put("Degree", "grad|°")
         .build();
 
