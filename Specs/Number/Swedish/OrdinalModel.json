@@ -1,0 +1,17 @@
+[
+	{
+		"Input": "tredjedel",
+		"NotSupported": "javascript, python, java",
+		"Results": [
+			{
+				"Text": "tredjedel",
+				"TypeName": "ordinal",
+				"Resolution": {
+					"value": "0,33"
+				},
+				"Start": 0,
+				"End": 8
+			}
+		]
+	}
+]

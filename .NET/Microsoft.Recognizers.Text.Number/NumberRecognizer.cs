@@ -385,21 +385,14 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SwedishNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
-                    German.NumberExtractor.GetInstance(NumberMode.PureNumber)));
+                    Swedish.NumberExtractor.GetInstance(NumberMode.PureNumber)));
 
             RegisterModel<OrdinalModel>(
                 Culture.Swedish,
                 (options) => new OrdinalModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new SwedishNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
-                    German.OrdinalExtractor.GetInstance()));
-
-            RegisterModel<PercentModel>(
-                Culture.Swedish,
-                (options) => new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SwedishNumberParserConfiguration(
-                                                              new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
-                    new German.PercentageExtractor()));
+                    Swedish.OrdinalExtractor.GetInstance()));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)

@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
     public static class NumbersDefinitions
     {
       public const string LangMarker = @"Swe";
-      public const bool CompoundNumberLanguage = true;
+      public const bool CompoundNumberLanguage = false;
       public const bool MultiDecimalSeparatorCulture = false;
       public const string ZeroToNineIntegerRegex = @"(tre|sju|åtta|fyra|fem|noll|nio|ett|en|två|sex)";
       public const string RoundNumberIntegerRegex = @"(hundra|tusen|miljon(er)?|miljard(er)?|biljon(er)?|biljard(er)?|triljon(er)?)";

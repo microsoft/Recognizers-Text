@@ -1,0 +1,1378 @@
+[
+  {
+    "Input": "4,800",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "4,800",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "4,8"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": ",23456000",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": ",23456000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0,23456"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": ",08",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": ",08",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0,08"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "192.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "192"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "192.168.1.2",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "192"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "168",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "168"
+        },
+        "Start": 4,
+        "End": 6
+      },
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 8,
+        "End": 8
+      },
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 10,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ett halvt äpple",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ett halvt",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,5"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ett 1/2 äpple",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ett",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "1/2",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,5"
+        },
+        "Start": 4,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "1/2",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1/2",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,5"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "Svaret blir tre komma fjorton",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tre komma fjorton",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "3,14"
+        },
+        "Start": 12,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "Svaret är 48,3",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "48,3",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "48,3"
+        },
+        "Start": 10,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "Jag köpte ett halvt dussin ägg",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ett halvt dussin",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "6"
+        },
+        "Start": 10,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "Jag köpte ett dussin ägg",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ett dussin",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12"
+        },
+        "Start": 10,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "Jag köpte två dussin ägg",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två dussin",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "24"
+        },
+        "Start": 10,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ett år har trehundrasextiofem dagar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ett",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "trehundrasextiofem",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "365"
+        },
+        "Start": 11,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "Ett år har 365 dagar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ett",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "365",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "365"
+        },
+        "Start": 11,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "trehundra",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "trehundra",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "Jag ser trehundra apelsiner",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "trehundra",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "300"
+        },
+        "Start": 8,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "en",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "en två",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 1
+      },
+      {
+        "Text": "två",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 3,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "sexton",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sexton",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "16"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "två tredjedelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två tredjedelar",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,666666666666667"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "två hundradelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två hundradelar",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,02"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "en halv",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en halv",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,5"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "nittiofem komma tre",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "nittiofem komma tre",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "95,3"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "en miljonfemhundratrettiotvåtusensexhundranittiofyra",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en miljonfemhundratrettiotvåtusensexhundranittiofyra",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1532694"
+        },
+        "Start": 0,
+        "End": 51
+      }
+    ]
+  },
+  {
+    "Input": "jag har köpt två tjog ägg",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två tjog",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "40"
+        },
+        "Start": 13,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "två trettiondelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två trettiondelar",
+        "Start": 0,
+        "End": 16,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,0666666666666667"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "en och en halv",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en och en halv",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "minus en halv",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "minus en halv",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-2/3",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "-2/3",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0,666666666666667"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "minus två tredjedelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "minus två tredjedelar",
+        "Start": 0,
+        "End": 20,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0,666666666666667"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "två och tre sjuttiondedelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två och tre sjuttiondedelar",
+        "Start": 0,
+        "End": 26,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2,04285714285714"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "minus två och tre sjuttiondedelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "minus två och tre sjuttiondedelar",
+        "Start": 0,
+        "End": 32,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-2,04285714285714"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "12k",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "12k",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-12k",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "-12k",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-12000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "minus 1k",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "minus 1k",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "- 10  k",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "- 10  k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-10000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": " tre ",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tre",
+        "Start": 1,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tvåhundratrettioniomiljonertrehundrafyrtioniotusenetthundranittionio",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tvåhundratrettioniomiljonertrehundrafyrtioniotusenetthundranittionio",
+        "Start": 0,
+        "End": 67,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "239349199"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tvåhundratrettioniomiljonertrehundrafyrtioniotusenetthundranittionio komma tjugotre",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tvåhundratrettioniomiljonertrehundrafyrtioniotusenetthundranittionio komma tjugotre",
+        "Start": 0,
+        "End": 82,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "239349199,23"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tvåhundratrettioniomiljonertrehundrafyrtioniotusenetthundranittionio och en fjärdedel",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tvåhundratrettioniomiljonertrehundrafyrtioniotusenetthundranittionio och en fjärdedel",
+        "Start": 0,
+        "End": 84,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "239349199,25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "en miljarddels",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en miljarddels",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-09"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "två miljarddels gram",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två miljarddels",
+        "Start": 0,
+        "End": 14,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2E-09"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tjugoenbiljonertrehundra",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tjugoenbiljonertrehundra",
+        "Start": 0,
+        "End": 23,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000300"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "fem och en kvarts",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "fem och en kvarts",
+        "Start": 0,
+        "End": 16,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "5,25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "fem kvartar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "fem kvartar",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1,25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ett hundra komma noll tre",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ett hundra komma noll tre",
+        "Start": 0,
+        "End": 24,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "100,03"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "etthundratrettiotvå femtedelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "etthundratrettiotvå femtedelar",
+        "Start": 0,
+        "End": 29,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26,4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "100 delat med 5",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "100 delat med 5",
+        "Start": 0,
+        "End": 14,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ett hundra delat med fem",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ett hundra delat med fem",
+        "Start": 0,
+        "End": 23,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ett hundra delat med 5",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ett hundra delat med 5",
+        "Start": 0,
+        "End": 21,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "100 delat med fem",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "100 delat med fem",
+        "Start": 0,
+        "End": 16,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "fem delat med 100",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "fem delat med 100",
+        "Start": 0,
+        "End": 16,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,05"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "fem delat med 132",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "fem delat med 132",
+        "Start": 0,
+        "End": 16,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,0378787878787879"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 delat med två är fem",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 delat med två",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "5"
+        }
+      },
+      {
+        "Text": "fem",
+        "Start": 20,
+        "End": 22,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "fem delat med etthundratrettiotvå",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "fem delat med etthundratrettiotvå",
+        "Start": 0,
+        "End": 32,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,0378787878787879"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "sannolikheten är 1 på 20 att det lyckas",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 på 20",
+        "Start": 17,
+        "End": 23,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,05"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 av tjugoen gånger lyckas det",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 av tjugoen",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,0476190476190476"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "minus fem delat med etthundra",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "minus fem delat med etthundra",
+        "Start": 0,
+        "End": 28,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0,05"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "svaret är minus fem komma fem",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "minus fem komma fem",
+        "Start": 10,
+        "End": 28,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "-5,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "två hundra komma noll tre",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två hundra komma noll tre",
+        "Start": 0,
+        "End": 24,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "200,03"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1e10",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1e10",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "10000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1,1^23",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1,1^23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "8,95430243255239"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "-2500^-1",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "-2500^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-0,0004"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "-2,5^-1",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "-2,5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-0,4"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "-1,1^--23",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "-1,1^--23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-8,95430243255239"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "-127,32e13",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "-127,32e13",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-1,2732E+15"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "12,32e+14",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "12,32e+14",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "1,232E+15"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "-12e-1",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "-12e-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-1,2"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "2  1/4",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2  1/4",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2,25"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "en åttondel",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en åttondel",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,125"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "sex femtedelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sex femtedelar",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1,2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tjugo femtedelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tjugo femtedelar",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tjugoen femtedelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tjugoen femtedelar",
+        "Start": 0,
+        "End": 17,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4,2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "en tusendel",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en tusendel",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,001"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "två tusendelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två tusendelar",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,002"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "femhundra och en halv",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "femhundra och en halv",
+        "Start": 0,
+        "End": 20,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "500,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "femhundra och en tredjedel",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "femhundra och en tredjedel",
+        "Start": 0,
+        "End": 25,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "500,333333333333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "femhundra och två tredjedelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "femhundra och två tredjedelar",
+        "Start": 0,
+        "End": 28,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "500,666666666667"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "vinstsumman är på 1M",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1m",
+        "Start": 18,
+        "End": 19,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "flaskan med 180ml vätska",
+    "Results": []
+  },
+  {
+    "Input": "flaskan med ,25ml vätska",
+    "Results": []
+  },
+  {
+    "Input": "det är 29km till lund",
+    "Results": []
+  },
+  {
+    "Input": "1m = längd och inte nummer",
+    "Results": []
+  },
+]
