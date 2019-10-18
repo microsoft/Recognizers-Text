@@ -14,7 +14,7 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
     @property
     def month_regex(self) -> Pattern:
         return self._month_regex
-    
+
     @property
     def day_regex(self):
         return self._day_regex
@@ -178,7 +178,7 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
     @property
     def week_day_end(self) -> Pattern:
         pass
-    
+
     def __init__(self):
         self._datetime_period_unit_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.DateTimePeriodUnitRegex

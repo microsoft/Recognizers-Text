@@ -23,7 +23,7 @@ class ChineseDurationExtractorConfiguration(ChineseNumberWithUnitExtractorConfig
     @property
     def extract_type(self) -> str:
         return self._extract_type
-    
+
     @property
     def year_regex(self):
         return self._year_regex

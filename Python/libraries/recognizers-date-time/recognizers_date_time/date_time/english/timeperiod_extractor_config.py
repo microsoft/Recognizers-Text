@@ -80,10 +80,11 @@ class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
     @property
     def time_unit_regex(self) -> Pattern:
         return self._time_unit_regex
-    
+
     @property
     def time_followed_unit(self) -> Pattern:
         return self._time_followed_unit
+
     @property
     def time_number_combined_with_unit(self):
         return self._time_number_combined_with_unit

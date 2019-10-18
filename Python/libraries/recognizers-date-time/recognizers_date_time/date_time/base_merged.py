@@ -172,6 +172,7 @@ class MergedExtractorConfiguration:
     def ambiguity_filters_dict(self) -> {}:
         raise NotImplementedError
 
+
 class BaseMergedExtractor(DateTimeExtractor):
     @property
     def extractor_type_name(self) -> str:
