@@ -322,6 +322,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Swedish\NumbersDefinitions.cs">
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Bulgarian\ChoiceDefinitions.cs">
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -462,6 +467,8 @@
     <None Update="Spanish\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Swedish\ChoiceDefinitions.tt">
+    </None>
+    <None Update="Swedish\NumbersDefinitions.tt">
     </None>
     <None Update="Turkish\DateTimeDefinitions.tt">
     </None>
