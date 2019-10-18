@@ -19,6 +19,8 @@ import com.google.common.collect.ImmutableMap;
 
 public class FrenchDateTime {
 
+    public static final Boolean CheckBothBeforeAfter = false;
+
     public static final String TillRegex = "(?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)";
 
     public static final String RangeConnectorRegex = "(?<and>de la|au|[aà]|et(\\s*la)?|--|-|—|——)";

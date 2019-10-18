@@ -14,6 +14,7 @@ from .base_date_time import BaseDateTime
 
 
 class EnglishDateTime:
+    CheckBothBeforeAfter = True
     TillRegex = f'(?<till>\\b(to|(un)?till?|thru|through)\\b|{BaseDateTime.RangeConnectorSymbolRegex})'
     RangeConnectorRegex = f'(?<and>\\b(and|through|to)\\b|{BaseDateTime.RangeConnectorSymbolRegex})'
     RelativeRegex = f'\\b(?<order>following|next|(up)?coming|this|last|past|previous|current|the)\\b'

@@ -154,14 +154,14 @@
         "End": 114
       }
     ]
-  }
+  },
   {
     "Input": "Morgen werden es in Hamburg 18 °C.",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "18 °C",
+        "Text": "18 °c",
         "TypeName": "temperature",
         "Resolution": {
           "value": "18",
@@ -171,14 +171,14 @@
         "End": 32
       }
     ]
-  } 
+  },
   {
     "Input": "14 Celsius entsprechen 57,2 Fahrenheit.",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "14 Celsius",
+        "Text": "14 celsius",
         "TypeName": "temperature",
         "Resolution": {
           "value": "14",
@@ -188,7 +188,7 @@
         "End": 9
       },
       {
-        "Text": "57,2 Fahrenheit",
+        "Text": "57,2 fahrenheit",
         "TypeName": "temperature",
         "Resolution": {
           "value": "57,2",
