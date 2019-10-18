@@ -73,6 +73,14 @@ class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
     def less_than_regex(self) -> Pattern:
         return self._less_than_regex
 
+    @property
+    def conjunction_regex(self) -> Pattern:
+        return self._conjunction_regex
+
+    @property
+    def inexact_number_regex(self) -> Pattern:
+        return self._inexact_number_regex
+
     def __init__(self):
         super().__init__()
         self._all_regex: Pattern = RegExpUtility.get_safe_reg_exp(
@@ -110,3 +118,10 @@ class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
         self._less_than_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.LessThanRegex
         )
+        self._conjunction_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.ConjunctionRegex
+        )
+        self._inexact_number_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.InexactNumberRegex
+        )
+        self._special_number_with_unit_regex = None
