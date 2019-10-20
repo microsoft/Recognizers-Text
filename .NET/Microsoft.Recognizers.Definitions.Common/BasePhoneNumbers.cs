@@ -40,7 +40,6 @@ namespace Microsoft.Recognizers.Definitions
       public const string InternationDialingPrefixRegex = @"0(0|11)$";
       public static readonly IList<string> TypicalDeductionRegexList = new List<string>
         {
-            @"^\d{3}-\d{2}-\d{4}$",
             @"^\d{5}-\d{4}$",
             @"\)\.",
             @"^0(0|11)(-)"
@@ -83,5 +82,6 @@ namespace Microsoft.Recognizers.Definitions
             ':',
             '%'
         };
+      public const string SSNFilterRegex = @"^\d{3}-\d{2}-\d{4}$";
     }
 }
