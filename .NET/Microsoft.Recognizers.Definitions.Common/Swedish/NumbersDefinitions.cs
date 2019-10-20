@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
     public static class NumbersDefinitions
     {
       public const string LangMarker = @"Swe";
-      public const bool CompoundNumberLanguage = false;
+      public const bool CompoundNumberLanguage = true;
       public const bool MultiDecimalSeparatorCulture = false;
       public const string ZeroToNineIntegerRegex = @"(tre|sju|åtta|fyra|fem|noll|nio|ett|en|två|sex)";
       public const string RoundNumberIntegerRegex = @"(hundra|tusen|miljon(er)?|miljard(er)?|biljon(er)?|biljard(er)?|triljon(er)?)";
@@ -43,7 +43,9 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
       public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((ett\s+)?halvt\s+dussin)|({AllIntRegex}\s+dussin))(?=\b)";
       public const string RoundNumberOrdinalRegex = @"\bhundra\B(de(d?e?l?a?r?s?))|\btusende((de)?l(s|ar)?)?|\bmiljon\B(te)?(del(s|ar)?)?|\bmiljard\B(te)?(del(s|ar)?)?|\bbiljon\B(te)?(del(s|ar)?)?|\bbiljard\B(te)?(del(s|ar)?)?|\btriljon\B(te)?(del(s|ar)?)?";
-      public const string BasicOrdinalRegex = @"(först(e|a)|andr(a|e)|tredje(de)?l?(s|ar)?\b|fjärde(de)?l?(s|ar)?\b|femte(de)?l?(s|ar)?\b|sjätte(de)?l?(s|ar)?\b|sjunde(de)?l?(s|ar)?\b|\båtton\B(de(d?e?l?a?r?s?))|\bnion\B(de(d?e?l?a?r?s?))|\btion\B(de(d?e?l?a?r?s?))|elfte(del|dels|delar)?\b|tolfte(del|dels|delar)?\b|tretton\B(de(d?e?l?a?r?s?))\b|fjorton\B(de(d?e?l?a?r?s?))\b|femton\B(de(d?e?l?a?r?s?))\b|sexton\B(de(d?e?l?a?r?s?))\b|sjutton\B(de(d?e?l?a?r?s?))\b|arton\B(de(d?e?l?a?r?s?))\b|nitton\B(de(d?e?l?a?r?s?))\b|tjugon\B(de(d?e?l?a?r?s?))\b|trettion\B(de(d?e?l?a?r?s?))\b|fyrtion\B(de(d?e?l?a?r?s?))\b|femtion\B(de(d?e?l?a?r?s?))\b|sextion\B(de(d?e?l?a?r?s?))\b|sjuttion\B(de(d?e?l?a?r?s?))\b|åttion\B(de(d?e?l?a?r?s?))\b|nittion\B(de(d?e?l?a?r?s?))\b)";
+      public const string NumberOrdinalRegex = @"(först(e|a)|andr(a|e)|tredje(de)?l?(s|ar)?\b|fjärde(de)?l?(s|ar)?\b|femte(de)?l?(s|ar)?\b|sjätte(de)?l?(s|ar)?\b|sjunde(de)?l?(s|ar)?\b|\båtton\B(de(d?e?l?a?r?s?))|\bnion\B(de(d?e?l?a?r?s?))|\btion\B(de(d?e?l?a?r?s?))|elfte(del|dels|delar)?\b|tolfte(del|dels|delar)?\b|tretton\B(de(d?e?l?a?r?s?))\b|fjorton\B(de(d?e?l?a?r?s?))\b|femton\B(de(d?e?l?a?r?s?))\b|sexton\B(de(d?e?l?a?r?s?))\b|sjutton\B(de(d?e?l?a?r?s?))\b|arton\B(de(d?e?l?a?r?s?))\b|nitton\B(de(d?e?l?a?r?s?))\b|tjugon\B(de(d?e?l?a?r?s?))\b|trettion\B(de(d?e?l?a?r?s?))\b|fyrtion\B(de(d?e?l?a?r?s?))\b|femtion\B(de(d?e?l?a?r?s?))\b|sextion\B(de(d?e?l?a?r?s?))\b|sjuttion\B(de(d?e?l?a?r?s?))\b|åttion\B(de(d?e?l?a?r?s?))\b|nittion\B(de(d?e?l?a?r?s?))\b)";
+      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>((näst(a|e)|föregående)|näst sist(a|e)|sist(a|e)|nuvarande|tredje\s+från\s+slutet|senaste))";
+      public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
       public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-?\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(och\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-?\s*))?{BasicOrdinalRegex})";
       public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s+){RoundNumberOrdinalRegex})";
       public static readonly string AllOrdinalRegex = $@"({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
@@ -390,8 +392,10 @@ namespace Microsoft.Recognizers.Definitions.Swedish
         {
             { @"sista", @"0" },
             { @"siste", @"0" },
+            { @"senaste", @"0" },
             { @"nästa", @"1" },
             { @"näste", @"1" },
+            { @"nuvarande", @"0" },
             { @"föregående", @"-1" },
             { @"förra", @"-1" },
             { @"tidigare", @"-1" },
@@ -405,8 +409,10 @@ namespace Microsoft.Recognizers.Definitions.Swedish
         {
             { @"sista", @"end" },
             { @"siste", @"end" },
+            { @"senaste", @"end" },
             { @"nästa", @"current" },
             { @"näste", @"current" },
+            { @"nuvarande", @"current" },
             { @"föregående", @"current" },
             { @"förra", @"current" },
             { @"tidigare", @"current" },

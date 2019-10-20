@@ -47,12 +47,16 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
                     new Regex(NumbersDefinitions.DoubleCaretExponentialNotationRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
-                {
+               /* {
                     GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                },*/
+                {
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceComma, placeholder, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceComma, placeholder, RegexFlags),
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumBlankComma, placeholder),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
             };

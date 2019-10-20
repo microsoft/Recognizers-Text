@@ -17,6 +17,11 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
         private OrdinalExtractor()
         {
+
+            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
+
+            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
+
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
@@ -43,6 +48,10 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
         internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_ORDINAL; // "Ordinal";
+
+        protected sealed override Regex AmbiguousFractionConnectorsRegex { get; }
+
+        protected sealed override Regex RelativeReferenceRegex { get; }
 
         public static OrdinalExtractor GetInstance(string placeholder = "")
         {
