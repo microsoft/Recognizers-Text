@@ -14,8 +14,16 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
-        private NumberExtractor(NumberMode mode = NumberMode.Default)
+        private NumberExtractor(NumberMode mode, NumberOptions options)
         {
+            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + "$", RegexFlags);
+
+            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
+
+            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
+
+            Options = options;
+
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
             // Add Cardinal
@@ -30,6 +38,8 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
                         BaseNumberExtractor.CurrencyRegex,
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
                     break;
+                case NumberMode.Unit:
+                    break;
                 case NumberMode.Default:
                     break;
             }
@@ -42,14 +52,14 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             builder.AddRange(cardExtract.Regexes);
 
             // Add Fraction
-            var fracExtract = FractionExtractor.GetInstance(mode);
+            var fracExtract = FractionExtractor.GetInstance(mode, Options);
             builder.AddRange(fracExtract.Regexes);
 
             Regexes = builder.ToImmutable();
 
             var ambiguityBuilder = ImmutableDictionary.CreateBuilder<Regex, Regex>();
 
-            // Do not filter the ambiguous number cases like '$2000' in NumberWithUnit, otherwise they can't be resolved.
+            // Do not filter the ambiguous number cases like 'that one' in NumberWithUnit, otherwise they can't be resolved.
             if (mode != NumberMode.Unit)
             {
                 foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
@@ -65,7 +75,15 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
         protected sealed override ImmutableDictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
+        protected sealed override NumberOptions Options { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
+
+        protected sealed override Regex NegativeNumberTermsRegex { get; }
+
+        protected sealed override Regex AmbiguousFractionConnectorsRegex { get; }
+
+        protected sealed override Regex RelativeReferenceRegex { get; }
 
         public static NumberExtractor GetInstance(
             NumberMode mode = NumberMode.Default,
@@ -74,7 +92,7 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             var cacheKey = (mode, options);
             if (!Instances.ContainsKey(cacheKey))
             {
-                var instance = new NumberExtractor(mode);
+                var instance = new NumberExtractor(mode, options);
                 Instances.TryAdd(cacheKey, instance);
             }
 

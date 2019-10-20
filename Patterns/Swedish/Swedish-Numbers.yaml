@@ -18,9 +18,9 @@ TenToNineteenIntegerRegex: !simpleRegex
 TensNumberIntegerRegex: !simpleRegex
   def: (sjuttio|tjugo|trettio|åttio|nittio|fyrtio|femtio|sextio)
 NegativeNumberTermsRegex: !simpleRegex
-  def: ((minus|negativ)\s+)
+  def: (?<negTerm>((minus|negativ)\s+))
 NegativeNumberSignRegex: !nestedRegex
-  def: ^({NegativeNumberTermsRegex}\s+).*
+  def: ^({NegativeNumberTermsRegex}).*
   references: [ NegativeNumberTermsRegex ]
 SeparaIntRegex: !nestedRegex
   def: ((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))

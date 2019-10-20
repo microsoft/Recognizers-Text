@@ -30,8 +30,8 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string AnIntRegex = @"(en|ett)(?=\s)";
       public const string TenToNineteenIntegerRegex = @"(sjutton|tretton|fjorton|arton|nitton|femton|sexton|elva|tolv|tio)";
       public const string TensNumberIntegerRegex = @"(sjuttio|tjugo|trettio|åttio|nittio|fyrtio|femtio|sextio)";
-      public const string NegativeNumberTermsRegex = @"((minus|negativ)\s+)";
-      public static readonly string NegativeNumberSignRegex = $@"^({NegativeNumberTermsRegex}\s+).*";
+      public const string NegativeNumberTermsRegex = @"(?<negTerm>((minus|negativ)\s+))";
+      public static readonly string NegativeNumberSignRegex = $@"^({NegativeNumberTermsRegex}).*";
       public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))";
       public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})";
       public const string PlaceHolderPureNumber = @"\b";

@@ -12,11 +12,13 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly ConcurrentDictionary<(NumberMode, string), FractionExtractor> Instances =
-         new ConcurrentDictionary<(NumberMode, string), FractionExtractor>();
+        private static readonly ConcurrentDictionary<(NumberMode, NumberOptions, string), FractionExtractor> Instances =
+            new ConcurrentDictionary<(NumberMode, NumberOptions, string), FractionExtractor>();
 
-        private FractionExtractor(NumberMode mode)
+        private FractionExtractor(NumberMode mode, NumberOptions options)
         {
+            Options = options;
+
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
@@ -50,15 +52,17 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
         internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
+        protected sealed override NumberOptions Options { get; }
+
         // "Fraction";
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION;
 
-        public static FractionExtractor GetInstance(NumberMode mode = NumberMode.Default, string placeholder = "")
+        public static FractionExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None, string placeholder = "")
         {
-            var cacheKey = (mode, placeholder);
+            var cacheKey = (mode, options, placeholder);
             if (!Instances.ContainsKey(cacheKey))
             {
-                var instance = new FractionExtractor(mode);
+                var instance = new FractionExtractor(mode, options);
                 Instances.TryAdd(cacheKey, instance);
             }
 
