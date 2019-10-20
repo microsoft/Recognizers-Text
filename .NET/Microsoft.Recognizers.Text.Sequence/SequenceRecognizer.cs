@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Recognizers.Text.Sequence;
 using Microsoft.Recognizers.Text.Sequence.Chinese;
 using Microsoft.Recognizers.Text.Sequence.English;
+using Microsoft.Recognizers.Text.Sequence.Portuguese;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
@@ -72,7 +73,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                 return GetModel<PhoneNumberModel>(Culture.Chinese, fallbackToDefaultCulture);
             }
 
-            return GetModel<PhoneNumberModel>(Culture.English, fallbackToDefaultCulture);
+            return GetModel<PhoneNumberModel>(culture, fallbackToDefaultCulture);
         }
 
         public IModel GetIpAddressModel(string culture = null, bool fallbackToDefaultCulture = true)
@@ -131,6 +132,12 @@ namespace Microsoft.Recognizers.Text.Sequence
                 (options) => new PhoneNumberModel(
                     new PhoneNumberParser(),
                     new BasePhoneNumberExtractor(new ChinesePhoneNumberExtractorConfiguration(options))));
+
+            RegisterModel<PhoneNumberModel>(
+                Culture.Portuguese,
+                (options) => new PhoneNumberModel(
+                    new PhoneNumberParser(),
+                    new BasePhoneNumberExtractor(new PortuguesePhoneNumberExtractorConfiguration(options))));
 
             RegisterModel<IpAddressModel>(
                 Culture.English,

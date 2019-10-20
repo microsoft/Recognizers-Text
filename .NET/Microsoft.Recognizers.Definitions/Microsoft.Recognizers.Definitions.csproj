@@ -42,6 +42,7 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BasePhoneNumbers.cs" Link="BasePhoneNumbers.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseUnits.cs" Link="BaseUnits.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseURL.cs" Link="BaseURL.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\PhoneNumbersDefinitions.cs" Link="English\PhoneNumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\ChoiceDefinitions.cs" Link="Chinese\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\DateTimeDefinitions.cs" Link="Chinese\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\NumbersDefinitions.cs" Link="Chinese\NumbersDefinitions.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\DateTimeDefinitions.cs" Link="Portuguese\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\NumbersDefinitions.cs" Link="Portuguese\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\NumbersWithUnitDefinitions.cs" Link="Portuguese\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\PhoneNumbersDefinitions.cs" Link="Portuguese\PhoneNumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\ChoiceDefinitions.cs" Link="Spanish\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\DateTimeDefinitions.cs" Link="Spanish\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\NumbersDefinitions.cs" Link="Spanish\NumbersDefinitions.cs" />

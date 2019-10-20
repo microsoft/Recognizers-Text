@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
-using Microsoft.Recognizers.Definitions.English;
+using Microsoft.Recognizers.Definitions.Portuguese;
 
-namespace Microsoft.Recognizers.Text.Sequence.English
+namespace Microsoft.Recognizers.Text.Sequence.Portuguese
 {
-    public class EnglishPhoneNumberExtractorConfiguration : PhoneNumberConfiguration
+    public class PortuguesePhoneNumberExtractorConfiguration : PhoneNumberConfiguration
     {
-        public EnglishPhoneNumberExtractorConfiguration(SequenceOptions options)
+        public PortuguesePhoneNumberExtractorConfiguration(SequenceOptions options)
             : base(options)
         {
             WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex;

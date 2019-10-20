@@ -1,0 +1,5 @@
+---
+NumberReplaceToken: '@builtin.phonenumber'
+ForbiddenPrefixRegex: !simpleRegex
+  def: conta(\s+(número|bancária))?:?\s*$
+...

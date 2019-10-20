@@ -34,6 +34,10 @@ class EnglishPhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
         return self._BoundaryMarkers
 
     @property
+    def forbidden_prefix_regex(self) -> str:
+        return self._ForbiddenPrefixRegex
+
+    @property
     def forbidden_prefix_markers(self) -> str:
         return self._ForbiddenPrefixMarkers
 
@@ -49,6 +53,7 @@ class EnglishPhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
         self._NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex
         self._EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex
         self._ColonPrefixCheckRegex = BasePhoneNumbers.ColonPrefixCheckRegex
+        self._ForbiddenPrefixRegex = EnglishPhoneNumbers.ForbiddenPrefixRegex
         self._ForbiddenPrefixMarkers = BasePhoneNumbers.ForbiddenPrefixMarkers
 
 

@@ -4730,5 +4730,32 @@
   {
     "Input": "011-12-3456 is a SSN and should not be extracted",
     "Results": []
+  },
+  {
+    "Input": "account number 12345678",
+    "Results": []
+  },
+  {
+    "Input": "account #12345678",
+    "Results": []
+  },
+  {
+    "Input": "account 12345678",
+    "Results": []
+  },
+  {
+    "Input": "card number 1234567 and phone number is +55 11 12345-6789",
+    "Results": [
+      {
+        "Text": "+55 11 12345-6789",
+        "Start": 40,
+        "End": 56,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+55 11 12345-6789"
+        }
+      }
+    ]
   }
 ]

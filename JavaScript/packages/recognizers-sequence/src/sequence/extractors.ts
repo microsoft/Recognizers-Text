@@ -79,6 +79,7 @@ export interface IPhoneNumberExtractorConfiguration {
     NonWordBoundariesRegex: string;
     EndWordBoundariesRegex: string;
     ColonPrefixCheckRegex: string;
+    ForbiddenPrefixRegex: string;
     ForbiddenPrefixMarkers: string[];
 }
 
@@ -129,14 +130,19 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
                 }
             }
             let ch = source[er.start - 1];
+            let front = source.substring(0, er.start);
+            if (this.config.ForbiddenPrefixRegex && front.match(this.config.ForbiddenPrefixRegex)) {
+                continue;
+            }
+
+            front = source.substring(0, er.start - 1);
             if (er.start !== 0) {
-                if(BasePhoneNumbers.BoundaryMarkers.indexOf(ch) !== -1) {
+                if (BasePhoneNumbers.BoundaryMarkers.indexOf(ch) !== -1) {
                     if (BasePhoneNumbers.SpecialBoundaryMarkers.indexOf(ch) !== -1 &&
                         formatIndicatorRegex.test(er.text) &&
                         er.start >= 2) {
                         let chGap = source[er.start - 2];
                         if (chGap.match(digitRegex)) {
-                            let front = source.substring(0, er.start - 1);
                             let match = front.match(BasePhoneNumbers.InternationDialingPrefixRegex);
                             if (match) {
                                 let moveOffset = match[0].length + 1;
@@ -159,9 +165,8 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
                 else if (this.config.ForbiddenPrefixMarkers.indexOf(ch) !== -1) {
                     // Handle "tel:123456".
                     if (BasePhoneNumbers.ColonMarkers.indexOf(ch) !== -1) {
-                        let front = source.substring(0, er.start - 1);
                         // If the char before ':' is not letter, ignore it.
-                        if(!front.match(this.config.ColonPrefixCheckRegex)) {
+                        if (!front.match(this.config.ColonPrefixCheckRegex)) {
                             continue;
                         }
                     }
