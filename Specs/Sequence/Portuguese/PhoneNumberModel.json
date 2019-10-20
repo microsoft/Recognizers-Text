@@ -960,9 +960,5 @@
   {
     "Input": "conta número: 12345678",
     "Results": []
-  },
-  {
-    "Input": "conta número 1234567",
-    "Results": []
   }
 ]
