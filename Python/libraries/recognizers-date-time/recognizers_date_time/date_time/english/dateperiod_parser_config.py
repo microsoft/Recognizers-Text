@@ -30,6 +30,10 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._month_front_between_regex
 
     @property
+    def relative_regex(self) -> Pattern:
+        return self._relative_regex
+
+    @property
     def between_regex(self) -> Pattern:
         return self._between_regex
 
@@ -227,6 +231,8 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._unit_map = config.unit_map
         self._now_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.NowRegex)
+        self._relative_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.RelativeRegex)
 
     def get_swift_day_or_month(self, source: str) -> int:
         trimmed_source = source.strip().lower()
