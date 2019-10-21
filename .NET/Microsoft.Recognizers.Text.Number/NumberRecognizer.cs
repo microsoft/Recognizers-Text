@@ -393,6 +393,13 @@ namespace Microsoft.Recognizers.Text.Number
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new SwedishNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
                     Swedish.OrdinalExtractor.GetInstance()));
+
+            RegisterModel<PercentModel>(
+                Culture.Swedish,
+                (options) => new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SwedishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
+                    new Swedish.PercentageExtractor(options)));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)
