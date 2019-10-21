@@ -91,39 +91,7 @@ class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
     def __init__(self):
         super().__init__()
-        self._time_number_combined_with_unit = RegExpUtility.get_safe_reg_exp(
-            EnglishDateTime.TimeNumberCombinedWithUnit
-        )
-        self._time_followed_unit = RegExpUtility.get_safe_reg_exp(
-            EnglishDateTime.TimeFollowedUnit
-        )
-        self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
-            EnglishDateTime.TimeUnitRegex
-        )
-        self._hour_regex = RegExpUtility.get_safe_reg_exp(
-            EnglishDateTime.HourRegex
-        )
-        self._period_hour_num_regex = RegExpUtility.get_safe_reg_exp(
-            EnglishDateTime.PeriodHourNumRegex
-        )
-        self._period_desc_regex = RegExpUtility.get_safe_reg_exp(
-            EnglishDateTime.DescRegex
-        )
-        self._pm_regex = RegExpUtility.get_safe_reg_exp(
-            EnglishDateTime.PmRegex
-        )
-        self._am_regex = RegExpUtility.get_safe_reg_exp(
-            EnglishDateTime.AmRegex
-        )
-        self._preposition_regex = RegExpUtility.get_safe_reg_exp(
-            EnglishDateTime.PrepositionRegex
-        )
-        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
-            EnglishDateTime.SpecificTimeOfDayRegex
-        )
         self._simple_cases_regex: List[Pattern] = [
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.SpecificTimeBetweenAnd),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.SpecificTimeFromTo),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumFromTo),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumBetweenAnd)
         ]
