@@ -44,10 +44,6 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.SWEDISH)
                 },
                 {
-                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
-                },
-                {
                     GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
