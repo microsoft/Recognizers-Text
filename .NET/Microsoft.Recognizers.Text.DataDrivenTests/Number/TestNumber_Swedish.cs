@@ -47,12 +47,14 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             TestNumber(testSpec);
         }
 
+        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void PercentModel(TestModel testSpec)
         {
             TestNumber(testSpec);
         }
+        */
 
         /*
         [NetCoreTestDataSource]
