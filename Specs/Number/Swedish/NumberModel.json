@@ -1,5 +1,37 @@
 [
   {
+    "Input": "två genom två",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två genom två",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "tvåhundratre komma sextiosju",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tvåhundratre komma sextiosju",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "203,67"
+        },
+        "Start": 0,
+        "End": 27
+      }
+    ]
+  },
+  {
     "Input": "4,800",
     "NotSupported": "javascript, python, java",
     "Results": [
@@ -1063,6 +1095,22 @@
         "Text": "en åttondel",
         "Start": 0,
         "End": 10,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,125"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "en åttondedel",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en åttondedel",
+        "Start": 0,
+        "End": 12,
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",

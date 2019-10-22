@@ -295,5 +295,22 @@
         }
       }
     ]
+  },
+  {
+    "Input": "126:e",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "126:e",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "126",
+          "relativeTo": "start",
+          "value": "126"
+        }
+      }
+    ]
   }
 ]

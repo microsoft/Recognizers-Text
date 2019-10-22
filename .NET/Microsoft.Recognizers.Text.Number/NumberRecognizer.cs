@@ -385,7 +385,7 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SwedishNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
-                    Swedish.NumberExtractor.GetInstance(NumberMode.PureNumber)));
+                    Swedish.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
 
             RegisterModel<OrdinalModel>(
                 Culture.Swedish,

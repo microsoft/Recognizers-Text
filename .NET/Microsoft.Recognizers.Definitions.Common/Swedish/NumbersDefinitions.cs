@@ -23,15 +23,15 @@ namespace Microsoft.Recognizers.Definitions.Swedish
     {
       public const string LangMarker = @"Swe";
       public const bool CompoundNumberLanguage = true;
-      public const bool MultiDecimalSeparatorCulture = false;
-      public const string ZeroToNineIntegerRegex = @"(tre|sju|åtta|fyra|fem|noll|nio|ett|en|två|sex)";
+      public const bool MultiDecimalSeparatorCulture = true;
       public const string RoundNumberIntegerRegex = @"(hundra|tusen|miljon(er)?|miljard(er)?|biljon(er)?|biljard(er)?|triljon(er)?)";
+      public const string ZeroToNineIntegerRegex = @"(tre|sju|åtta|fyra|fem|noll|nio|ett|en|två|sex)";
       public const string TwoToNineIntegerRegex = @"(tre|sju|åtta|fyra|fem|nio|två|sex)";
-      public const string AnIntRegex = @"(en|ett)(?=\s)";
-      public const string TenToNineteenIntegerRegex = @"(sjutton|tretton|fjorton|arton|nitton|femton|sexton|elva|tolv|tio)";
-      public const string TensNumberIntegerRegex = @"(sjuttio|tjugo|trettio|åttio|nittio|fyrtio|femtio|sextio)";
       public const string NegativeNumberTermsRegex = @"(?<negTerm>((minus|negativ)\s+))";
       public static readonly string NegativeNumberSignRegex = $@"^({NegativeNumberTermsRegex}).*";
+      public const string AnIntRegex = @"(e(n|tt))(?=\s)";
+      public const string TenToNineteenIntegerRegex = @"(sjutton|tretton|fjorton|arton|nitton|femton|sexton|elva|tolv|tio)";
+      public const string TensNumberIntegerRegex = @"(sjuttio|tjugo|trettio|åttio|nittio|fyrtio|femtio|sextio)";
       public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))";
       public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})";
       public const string PlaceHolderPureNumber = @"\b";
@@ -42,23 +42,25 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dussin(?=\b)";
       public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
       public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((ett\s+)?halvt\s+dussin)|({AllIntRegex}\s+dussin))(?=\b)";
-      public const string RoundNumberOrdinalRegex = @"\bhundra\B(de(d?e?l?a?r?s?))|\btusende((de)?l(s|ar)?)?|\bmiljon\B(te)?(del(s|ar)?)?|\bmiljard\B(te)?(del(s|ar)?)?|\bbiljon\B(te)?(del(s|ar)?)?|\bbiljard\B(te)?(del(s|ar)?)?|\btriljon\B(te)?(del(s|ar)?)?";
-      public const string NumberOrdinalRegex = @"(först(e|a)|andr(a|e)|tredje(de)?l?(s|ar)?\b|fjärde(de)?l?(s|ar)?\b|femte(de)?l?(s|ar)?\b|sjätte(de)?l?(s|ar)?\b|sjunde(de)?l?(s|ar)?\b|\båtton\B(de(d?e?l?a?r?s?))|\bnion\B(de(d?e?l?a?r?s?))|\btion\B(de(d?e?l?a?r?s?))|elfte(del|dels|delar)?\b|tolfte(del|dels|delar)?\b|tretton\B(de(d?e?l?a?r?s?))\b|fjorton\B(de(d?e?l?a?r?s?))\b|femton\B(de(d?e?l?a?r?s?))\b|sexton\B(de(d?e?l?a?r?s?))\b|sjutton\B(de(d?e?l?a?r?s?))\b|arton\B(de(d?e?l?a?r?s?))\b|nitton\B(de(d?e?l?a?r?s?))\b|tjugon\B(de(d?e?l?a?r?s?))\b|trettion\B(de(d?e?l?a?r?s?))\b|fyrtion\B(de(d?e?l?a?r?s?))\b|femtion\B(de(d?e?l?a?r?s?))\b|sextion\B(de(d?e?l?a?r?s?))\b|sjuttion\B(de(d?e?l?a?r?s?))\b|åttion\B(de(d?e?l?a?r?s?))\b|nittion\B(de(d?e?l?a?r?s?))\b)";
+      public const string RoundNumberOrdinalRegex = @"(?:hundrade\b|tusende\b|miljonte\b|miljardte\b|biljonte\b|biljardte\b|triljonte\b|triljardte\b)";
+      public const string NumberOrdinalRegex = @"(?:först(e|a)|andr(a|e)|tredje|fjärde|femte|sjätte|sjunde|åttonde|nionde|tioende|elfte|tolfte|trettonde|fjortonde|femtonde|sextonde|sjuttonde|artonde|nittonde|tjugonde|trettionde|fyrtionde|femtionde|sextionde|sjuttionde|åttionde|nittionde)";
       public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>((näst(a|e)|föregående)|näst sist(a|e)|sist(a|e)|nuvarande|tredje\s+från\s+slutet|senaste))";
       public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
-      public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-?\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(och\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-?\s*))?{BasicOrdinalRegex})";
-      public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s+){RoundNumberOrdinalRegex})";
-      public static readonly string AllOrdinalRegex = $@"({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
-      public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(1:(e|a)|2:(a|e)|3:e|4:e|5:e|6:e|7:e|8:e|9:e|0:e))|(11:e|12:e))(?=\b)";
-      public const string OrdinalNumericRegex = @"(?<=\b)(\d{1,3}(\s*,\s*\d{3})*\s*(:(e|a)))(?=\b)";
+      public static readonly string SuffixBasicOrdinalRegex = $@"(?:(((({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-?\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(och\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-?\s*))?{BasicOrdinalRegex})";
+      public static readonly string SuffixRoundNumberOrdinalRegex = $@"(?:({AllIntRegex}\s+){RoundNumberOrdinalRegex})";
+      public static readonly string AllOrdinalRegex = $@"(?:{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
+      public const string OrdinalSuffixRegex = @"(?<=\b)(?:(\d*(1:(e|a)|2:(a|e)|3:e|4:e|5:e|6:e|7:e|8:e|9:e|0:e))|(11:e|12:e))(?=\b)";
+      public const string OrdinalNumericRegex = @"(?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*\s*(:(e|a)))(?=\b)";
       public static readonly string OrdinalRoundNumberRegex = $@"(?<!(en|ett)\s+){RoundNumberOrdinalRegex}";
       public static readonly string OrdinalSwedishRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
+      public const string RoundNumberFractionSwedishRegex = @"(?:hundradel(s|ar)?|tusendel(s|ar)?|miljon(te)?del(s|ar)?|miljarddel(s|ar)?|biljon(te)?del(s|ar)?|biljarddel(s|ar)?|triljon(te)?del(s|ar)?|triljarddel(s|ar)?)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
-      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(och\s+)?)?({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halvor|kvartar)(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}\s+(och\s+)?)?(en|ett)?(\s+|\s*-\s*)(?!\bförsta\b|\bandra\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halv(t)?|kvart(s)?))|(halva|hälften))(?=\b)";
-      public const string FractionOverRegex = @"(genom|delat (med|på)|delad (med|på)|dividerat (med|på)|dividerad (med|på)|(ut)?av|på)";
-      public static readonly string FractionPrepositionRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+({FractionOverRegex})\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
+      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(och\s+)?)?({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex}))((de)?l(s|ar)?)?|halvor|kvartar)(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}\s+(och\s+)?)?(en|ett)?(\s+|\s*-\s*)(?!\bförsta\b|\bandra\b)(({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex})|halv(t)?|kvart(s)?))|(halva|hälften))(?=\b)";
+      public const string FractionOverRegex = @"(genom|delat\s+(med|på)|delad\s+(med|på)|dividerat\s+(med|på)|dividerad\s+(med|på)|(ut)?av|på)";
+      public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+{FractionOverRegex}\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
+      public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+genom\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
       public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+komma){AllPointRegex}";
       public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
@@ -68,10 +70,36 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly Func<string, string> DoubleWithoutIntegralRegex = (placeholder) => $@"(?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
       public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}(?=\b)";
       public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
-      public static readonly string NumberWithSuffixPercentage = $@"(?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(procent)\b)";
+      public const string ConnectorRegex = @"(?<spacer>och)";
+      public static readonly string NumberWithSuffixPercentage = $@"(?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(procent|procentenheter)\b)";
       public static readonly string FractionNumberWithSuffixPercentage = $@"(({BaseNumbers.FractionNumberReplaceToken})\s+av)";
       public static readonly string NumberWithPrefixPercentage = $@"(procent\s+av)(\s*)({BaseNumbers.NumberReplaceToken})";
       public static readonly string NumberWithPrepositionPercentage = $@"({BaseNumbers.NumberReplaceToken})\s*(ut\s+av)\s*({BaseNumbers.NumberReplaceToken})";
+      public const string TillRegex = @"(to|through|--|-|—|——|~|–)";
+      public const string MoreRegex = @"(?:(bigger|greater|more|higher|larger)(\s+than)?|above|over|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)";
+      public const string LessRegex = @"(?:(less|lower|smaller|fewer)(\s+than)?|below|under|(?<!>|=)<)";
+      public const string EqualRegex = @"(equal(s|ing)?(\s+(to|than))?|(?<!<|>)=)";
+      public static readonly string MoreOrEqualPrefix = $@"((no\s+{LessRegex})|(at\s+least))";
+      public static readonly string MoreOrEqual = $@"(?:({MoreRegex}\s+(or)?\s+{EqualRegex})|({EqualRegex}\s+(or)?\s+{MoreRegex})|{MoreOrEqualPrefix}(\s+(or)?\s+{EqualRegex})?|({EqualRegex}\s+(or)?\s+)?{MoreOrEqualPrefix}|>\s*=)";
+      public const string MoreOrEqualSuffix = @"((and|or)\s+(((more|greater|higher|larger|bigger)((?!\s+than)|(\s+than(?!(\s*\d+)))))|((over|above)(?!\s+than))))";
+      public static readonly string LessOrEqualPrefix = $@"((no\s+{MoreRegex})|(at\s+most)|(up\s+to))";
+      public static readonly string LessOrEqual = $@"(({LessRegex}\s+(or)?\s+{EqualRegex})|({EqualRegex}\s+(or)?\s+{LessRegex})|{LessOrEqualPrefix}(\s+(or)?\s+{EqualRegex})?|({EqualRegex}\s+(or)?\s+)?{LessOrEqualPrefix}|<\s*=)";
+      public const string LessOrEqualSuffix = @"((and|or)\s+(less|lower|smaller|fewer)((?!\s+than)|(\s+than(?!(\s*\d+)))))";
+      public const string NumberSplitMark = @"(?![,.](?!\d+))";
+      public const string MoreRegexNoNumberSucceed = @"((bigger|greater|more|higher|larger)((?!\s+than)|\s+(than(?!(\s*\d+))))|(above|over)(?!(\s*\d+)))";
+      public const string LessRegexNoNumberSucceed = @"((less|lower|smaller|fewer)((?!\s+than)|\s+(than(?!(\s*\d+))))|(below|under)(?!(\s*\d+)))";
+      public const string EqualRegexNoNumberSucceed = @"(equal(s|ing)?((?!\s+(to|than))|(\s+(to|than)(?!(\s*\d+)))))";
+      public static readonly string OneNumberRangeMoreRegex1 = $@"({MoreOrEqual}|{MoreRegex})\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)";
+      public static readonly string OneNumberRangeMoreRegex2 = $@"(?<number1>({NumberSplitMark}.)+)\s*{MoreOrEqualSuffix}";
+      public static readonly string OneNumberRangeMoreSeparateRegex = $@"({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){EqualRegexNoNumberSucceed})";
+      public static readonly string OneNumberRangeLessRegex1 = $@"({LessOrEqual}|{LessRegex})\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)";
+      public static readonly string OneNumberRangeLessRegex2 = $@"(?<number2>({NumberSplitMark}.)+)\s*{LessOrEqualSuffix}";
+      public static readonly string OneNumberRangeLessSeparateRegex = $@"({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){LessRegexNoNumberSucceed})|({LessRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){EqualRegexNoNumberSucceed})";
+      public static readonly string OneNumberRangeEqualRegex = $@"{EqualRegex}\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)";
+      public static readonly string TwoNumberRangeRegex1 = $@"between\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)\s*and\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)";
+      public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(and|but|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})";
+      public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|but|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})";
+      public static readonly string TwoNumberRangeRegex4 = $@"(from\s+)?(?<number1>({NumberSplitMark}(?!\bfrom\b).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)";
       public const string AmbiguousFractionConnectorsRegex = @"^[.]";
       public const char DecimalSeparatorChar = ',';
       public const string FractionMarkerToken = @"av";
@@ -82,9 +110,9 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly string[] WrittenDecimalSeparatorTexts = { @"komma" };
       public static readonly string[] WrittenGroupSeparatorTexts = { @"punkt" };
       public static readonly string[] WrittenIntegerSeparatorTexts = { @"och" };
-      public static readonly string[] WrittenFractionSeparatorTexts = { @"genom" };
+      public static readonly string[] WrittenFractionSeparatorTexts = { @"av" };
       public const string HalfADozenRegex = @"ett\s+halvt\s+dussin";
-      public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundra|tusen|miljon|miljoner|miljard|miljarder|biljoner|triljoner|biljarder|dussin|tjog)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
+      public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundra|tusen|miljon|miljoner|miljard|miljarder|biljon|biljoner|triljon|triljoner|biljard|biljarder|dussin|tjog)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
       public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
         {
             { @"ingen", 0 },
@@ -145,6 +173,8 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"ettan", 1 },
             { @"andra", 2 },
             { @"andre", 2 },
+            { @"sekundära", 2 },
+            { @"sekundäre", 2 },
             { @"tvåa", 2 },
             { @"tvåan", 2 },
             { @"halva", 2 },
@@ -155,6 +185,8 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"hälft", 2 },
             { @"hälften", 2 },
             { @"tredje", 3 },
+            { @"tertiära", 3 },
+            { @"tertiäre", 3 },
             { @"fjärde", 4 },
             { @"kvart", 4 },
             { @"kvarten", 4 },
