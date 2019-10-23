@@ -686,33 +686,6 @@
     ]
   },
   {
-    "Input": "Gece erken saatte buluşalım",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "Gece erken saatte",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TNI",
-		  "Mod": "start",
-          "FutureResolution": {
-            "startTime": "20:00:00",
-            "endTime": "22:00:00"
-          },
-          "PastResolution": {
-            "startTime": "20:00:00",
-            "endTime": "22:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 17
-      }
-    ]
-  },
-  {
     "Input": "13'ten 16'ya kadar toplantı ayarla",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
