@@ -1,85 +1,5 @@
 [
   {
-    "Input": "två genom två",
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "två genom två",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "fraction",
-          "value": "1"
-        },
-        "Start": 0,
-        "End": 12
-      }
-    ]
-  },
-  {
-    "Input": "tvåhundratre komma sextiosju",
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "tvåhundratre komma sextiosju",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "decimal",
-          "value": "203,67"
-        },
-        "Start": 0,
-        "End": 27
-      }
-    ]
-  },
-  {
-    "Input": "4,800",
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "4,800",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "decimal",
-          "value": "4,8"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": ",23456000",
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": ",23456000",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "decimal",
-          "value": "0,23456"
-        },
-        "Start": 0,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": ",08",
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": ",08",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "decimal",
-          "value": "0,08"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
     "Input": "192.",
     "NotSupported": "javascript, python, java",
     "Results": [
@@ -142,18 +62,945 @@
     ]
   },
   {
-    "Input": "Ett halvt äpple",
+    "Input": "vätskan på 180,25ml",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "vätskan på 180ml",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": " 29km väg ",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": " den 4 maj ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "vätskan på ,25ml",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": ",08",
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "ett halvt",
+        "Text": ",08",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0,08"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "an",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": ",23456000",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": ",23456000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0,23456"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "4,800",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "4,800",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "4,8"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "etthundratrettiotvå femtedelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "etthundratrettiotvå femtedelar",
+        "Start": 0,
+        "End": 29,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26,4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "sexton",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sexton",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "16"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "två tredjedelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två tredjedelar",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,666666666666667"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "etthundrasexton",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "etthundrasexton",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "116"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "etthundrasex",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "etthundrasex",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "106"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "etthundrasextioen",
+    "Results": [
+      {
+        "Text": "etthundrasextioen",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "161"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "en triljondel",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en triljondel",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-18"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "etthundra triljontedelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "etthundra triljontedelar",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-16"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "etthundratusen kronor",
+    "Results": [
+      {
+        "Text": "etthundratusen",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "100000"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "Jag köpte ett halvt dussin ägg",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ett halvt dussin",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "6"
+        },
+        "Start": 10,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "Jag köpte ett dussin ägg",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ett dussin",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12"
+        },
+        "Start": 10,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "Jag köpte två dussin ägg",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två dussin",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "24"
+        },
+        "Start": 10,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": " 3 dussin",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 dussin",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "36"
+        },
+        "Start": 1,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "ett dussin",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ett dussin",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": " tre dussin ",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tre dussin",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "36"
+        },
+        "Start": 1,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": " trehundratvå dussin",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "trehundratvå dussin",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "324"
+        },
+        "Start": 1,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "1 234 567",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 234 567",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1234567"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1, 234, 567",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "234",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "234"
+        },
+        "Start": 3,
+        "End": 5
+      },
+      {
+        "Text": "567",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "567"
+        },
+        "Start": 8,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "9,2321312",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "9,2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "9,2321312"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": " -9,2321312",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "-9,2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "-9,2321312"
+        },
+        "Start": 1,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": " -1",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1"
+        },
+        "Start": 1,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "-4/5",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "-4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0,8"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "- 1 4/5",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "- 1 4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-1,8"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "tre",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tre",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": " 123456789101231",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "123456789101231"
+        },
+        "Start": 1,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "-123456789101231",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-123456789101231"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": " -123456789101231",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-123456789101231"
+        },
+        "Start": 1,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "1",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "10k",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "100k",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "100k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "100000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "10G",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10g",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000000000"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "- 10  k",
+    "Results": [
+      {
+        "Text": "- 10  k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-10000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "2 miljoner",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 miljoner",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2000000"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "1 triljon",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 triljon",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1E+18"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": " tre ",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tre",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 1,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "en triljon",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en triljon",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1E+18"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "tjugoen triljoner",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tjugoen triljoner",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2,1E+19"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "tjugoen triljonertrehundra",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tjugoen triljonertrehundra",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2,1E+19"
+        },
+        "Start": 0,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "femtio - två",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "femtio - två",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "femtio   två",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "femtio   två",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "Tre hundra  trettio en",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "Tre hundra  trettio en",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "331"
+        },
+        "Start": 0,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "1e10",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1e10",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "10000000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "1,1^23",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1,1^23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "8,95430243255239"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": " 322 hundra ",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "322 hundra",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "32200"
+        },
+        "Start": 1,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "sjuttio",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sjuttio",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "70"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "femtio-två",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "femtio-två",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "2  1/4",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2  1/4",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2,25"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "3/4",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3/4",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,75"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "en åttondel",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en åttondel",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,125"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "fem åttondelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "fem åttondelar",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,625"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "en halv",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en halv",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
           "value": "0,5"
         },
         "Start": 0,
-        "End": 8
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "tre kvarts",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tre kvarts",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,75"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "tjugo och tre femtedelar",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tjugo och tre femtedelar",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "20,6"
+        },
+        "Start": 0,
+        "End": 23
       }
     ]
   },
@@ -231,54 +1078,7 @@
       }
     ]
   },
-  {
-    "Input": "Jag köpte ett halvt dussin ägg",
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "ett halvt dussin",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "6"
-        },
-        "Start": 10,
-        "End": 25
-      }
-    ]
-  },
-  {
-    "Input": "Jag köpte ett dussin ägg",
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "ett dussin",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "12"
-        },
-        "Start": 10,
-        "End": 19
-      }
-    ]
-  },
-  {
-    "Input": "Jag köpte två dussin ägg",
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "två dussin",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "24"
-        },
-        "Start": 10,
-        "End": 19
-      }
-    ]
-  },
+
   {
     "Input": "Ett år har trehundrasextiofem dagar",
     "NotSupported": "javascript, python, java",
@@ -418,22 +1218,6 @@
         },
         "Start": 0,
         "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "två tredjedelar",
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "två tredjedelar",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "fraction",
-          "value": "0,666666666666667"
-        },
-        "Start": 0,
-        "End": 14
       }
     ]
   },
@@ -705,22 +1489,6 @@
         "Resolution": {
           "subtype": "decimal",
           "value": "100,03"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "etthundratrettiotvå femtedelar",
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "etthundratrettiotvå femtedelar",
-        "Start": 0,
-        "End": 29,
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "fraction",
-          "value": "26,4"
         }
       }
     ]
@@ -1088,6 +1856,54 @@
     ]
   },
   {
+    "Input": "4,800",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "4,800",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "4,8"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": ",23456000",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": ",23456000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0,23456"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": ",08",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": ",08",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0,08"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
     "Input": "en åttondel",
     "NotSupported": "javascript, python, java",
     "Results": [
@@ -1212,6 +2028,54 @@
           "subtype": "integer",
           "value": "1000000"
         }
+      }
+    ]
+  },
+  {
+    "Input": "två genom två",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två genom två",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "tvåhundratre komma sextiosju",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tvåhundratre komma sextiosju",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "203,67"
+        },
+        "Start": 0,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Ett halvt äpple",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ett halvt",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,5"
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
