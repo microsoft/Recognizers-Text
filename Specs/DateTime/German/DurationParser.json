@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Stunden",
@@ -28,7 +28,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Tagen",
@@ -52,7 +52,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3,5 Jahren",
@@ -76,7 +76,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3,5 Jahre",
@@ -100,7 +100,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vierundzwanzig Stunden",
@@ -124,7 +124,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Stunden",
@@ -148,7 +148,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Tage",
@@ -172,7 +172,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Monate",
@@ -196,7 +196,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Minuten",
@@ -220,7 +220,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3,5 Sekunden",
@@ -244,7 +244,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "123,45 sek",
@@ -268,7 +268,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zwei Wochen",
@@ -292,7 +292,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zwanzig min",
@@ -316,7 +316,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ganzen Tag",
@@ -340,7 +340,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ganze Woche",
@@ -364,7 +364,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ganzen Monat",
@@ -388,7 +388,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ganze Jahr",
@@ -412,7 +412,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "halbes Jahr",
@@ -436,7 +436,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 min",
@@ -460,7 +460,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "30 Minuten",
@@ -484,7 +484,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zwei Stunden",

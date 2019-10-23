@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat 17'den 18'e kadar",
@@ -30,7 +30,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5'ten sabah yediye kadar",
@@ -56,7 +56,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "17 ile 18 arasında",
@@ -82,7 +82,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğleden sonra 5 ile 6 arasında",
@@ -108,7 +108,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah 1'den 17'ye kadar",
@@ -134,7 +134,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "16'dan 17'ye dek",
@@ -160,7 +160,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "4:00'dan 7'ye kadar",
@@ -186,7 +186,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "16-17 arası",
@@ -212,7 +212,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah 3'ten 17'ye kadar",
@@ -238,7 +238,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah 3 ile 17 arası",
@@ -264,7 +264,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "16 ile 17 arasında",
@@ -290,7 +290,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah",
@@ -316,7 +316,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğleden sonra",
@@ -342,7 +342,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Gece",
@@ -368,7 +368,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Akşam",
@@ -394,7 +394,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Akşamları",
@@ -420,7 +420,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabahları erken saatte",
@@ -447,7 +447,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabahları geç saatte",
@@ -474,7 +474,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah erkenden",
@@ -501,7 +501,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah geç saatte",
@@ -528,7 +528,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğleden sonra erken saatte",
@@ -555,7 +555,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğleden sonra geç saatte",
@@ -582,7 +582,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Akşam erken saatte",
@@ -609,7 +609,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Akşam geç saatte",
@@ -636,7 +636,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Gece erken saatte",
@@ -663,7 +663,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Gece geç saatte",
@@ -690,7 +690,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "13'ten 16'ya kadar",
@@ -716,7 +716,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "13:30'dan 16'ya kadar",
@@ -742,7 +742,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah",
@@ -768,7 +768,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1:30'dan 3'e kadar",
@@ -794,7 +794,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11'den 3'e kadar",
@@ -820,7 +820,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "23'ten 3'e kadar",
@@ -846,7 +846,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "23:01'den 11'e kadar",
@@ -872,7 +872,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "sabah 11:01'den 11'e kadar",
@@ -898,7 +898,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11'den 11:50'ye kadar",
@@ -924,7 +924,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "13:30'dan 15:30'a kadar",
@@ -950,7 +950,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "15'ten 15:30'a kadar",
@@ -976,7 +976,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "0:01'den 13'e kadar",
@@ -1002,7 +1002,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "0:01'den 1'e kadar",
@@ -1028,7 +1028,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3'ten 3:30'a kadar",
@@ -1054,7 +1054,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1:30'dan 3'e kadar",
@@ -1080,7 +1080,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1:30'dan öğleden sonra 3'e kadar",
@@ -1106,7 +1106,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11'den 15'e kadar",
@@ -1132,7 +1132,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11'den 11:50'ye kadar",
@@ -1158,7 +1158,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11'den sabah 3'e kadar",
@@ -1184,7 +1184,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10'dan 11'e kadar",
@@ -1210,7 +1210,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "23'ten 3'e kadar",
@@ -1236,7 +1236,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "23'ten 15'e kadar",
@@ -1262,7 +1262,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10 ve 11:30 arasına",
@@ -1288,7 +1288,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10:10 ve 12:50 arasına",
@@ -1314,7 +1314,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "22:10 ve 3 arasına",
@@ -1340,7 +1340,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "22:10'dan 10'a kadar",
@@ -1366,7 +1366,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10:30'dan 23'e kadar",
@@ -1392,7 +1392,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "iş saatleri içinde",

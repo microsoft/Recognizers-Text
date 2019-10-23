@@ -1,7 +1,7 @@
 [
   {
     "Input": "Ich komme am 22. April zurück",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "22. April",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Ich komme am 12. Januar 2016 zurück",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "12. Januar 2016",
@@ -28,7 +28,7 @@
     "Context": {
       "ReferenceDateTime": "2016-01-01T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Dienstag den 12. Januar 2016",
@@ -40,7 +40,7 @@
   },
   {
     "Input": "Ich komme am 21/04/2016 zurück",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "21/04/2016",
@@ -53,7 +53,7 @@
   {
     "Input": "Ich komme am 22.04 zurück",
     "Comment": "Should be removed, as 22.04 could be an (incorrectly) formatted date (22.04.) or time (22:04).",
-    "NotSupported": "dotnet, javascript",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "22.04",
@@ -65,7 +65,7 @@
   },
   {
     "Input": "Ich komme am 22.04. zurück",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "22.04.",
@@ -77,7 +77,7 @@
   },
   {
     "Input": "Ich komme am 22/04 zurück",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "22/04",
@@ -89,7 +89,7 @@
   },
   {
     "Input": "Das Datum meiner Rückkehr wird der 2015/08/12 sein.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2015/08/12",
@@ -101,7 +101,7 @@
   },
   {
     "Input": "Ich komme wahrscheinlich diesen Dienstag zurück.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Dienstag",
@@ -113,7 +113,7 @@
   },
   {
     "Input": "Ich bin in 2 Wochen wieder da.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "in 2 Wochen",
@@ -125,7 +125,7 @@
   },
   {
     "Input": "Ich bin am Sonntag in 2 Wochen wieder da.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Sonntag in 2 Wochen",
@@ -137,7 +137,7 @@
   },
   {
     "Input": "Ich komme diese Woche Dienstag wieder.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diese Woche Dienstag",
@@ -149,7 +149,7 @@
   },
   {
     "Input": "Ich komme nächstes Jahr wieder.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächstes Jahr",
@@ -161,7 +161,7 @@
   },
   {
     "Input": "Ich bin am 15. wieder hier.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15.",
@@ -173,7 +173,7 @@
   },
   {
     "Input": "Ich bin am 15. November wieder hier.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15. November",
@@ -185,7 +185,7 @@
   },
   {
     "Input": "Ich bin am 15. November 2011 wieder hier.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15. November 2011",
@@ -197,7 +197,7 @@
   },
   {
     "Input": "Ich komme irgendwann nächstes Jahr im Sommer wieder.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächstes Jahr im Sommer",
@@ -209,7 +209,7 @@
   },
   {
     "Input": "Ich komme am 23.3.2017 wieder.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "23.3.2017",
@@ -221,7 +221,7 @@
   },
   {
     "Input": "Ich bin am zweiten Februar wieder da.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zweiten Februar",
@@ -233,7 +233,7 @@
   },
   {
     "Input": "Ich bin am zweiten Februar 2018 wieder da.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zweiten Februar 2018",
@@ -245,7 +245,7 @@
   },
   {
     "Input": "Bist du am 13.5.2015 frei?",
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "13.5.2015",
@@ -257,7 +257,7 @@
   },
   {
     "Input": "Bist du am 2015.5.13 frei?",
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "2015.5.13",

@@ -5,7 +5,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2019년 1월 4일",
@@ -30,7 +30,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2019년 1월 3일",
@@ -55,7 +55,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2019년 1월 2일",
@@ -80,7 +80,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2019년 1월 1일",
@@ -105,7 +105,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1990년대 ",
@@ -131,7 +131,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10월 2일",
@@ -161,7 +161,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "4월 22일",
@@ -191,7 +191,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5월 29일",
@@ -221,7 +221,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "8월 2일",
@@ -251,7 +251,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘",
@@ -276,7 +276,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "내일",
@@ -301,7 +301,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "어제",
@@ -326,7 +326,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "금요일",
@@ -356,7 +356,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 달 4일부터 23일까지",
@@ -382,7 +382,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "9월 3일에서 12일 사이에",
@@ -414,7 +414,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이번 9월",
@@ -440,7 +440,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "앞으로 사흘 ",
@@ -466,7 +466,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7월의 마지막 주",
@@ -498,7 +498,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년 3월",
@@ -524,7 +524,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이번 여름",
@@ -549,7 +549,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "내일부터 ",
@@ -575,7 +575,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "8월부터 ",
@@ -607,7 +607,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이번 8월부터 ",
@@ -633,7 +633,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "지금",
@@ -658,7 +658,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10월 14일 오전 8시 31초",
@@ -688,7 +688,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "내일 오전 8시",
@@ -713,7 +713,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 밤 10시",
@@ -738,7 +738,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 아침 8시",
@@ -763,7 +763,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "내일까지",
@@ -788,7 +788,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "일요일까지",
@@ -818,7 +818,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "일요일까지",
@@ -843,7 +843,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 5시부터 7시까지",
@@ -875,7 +875,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "4월 22일 오후 5시부터 6시까지 ",
@@ -907,7 +907,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "내일 3시부터 4시까지 ",
@@ -939,7 +939,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 저녁",
@@ -965,7 +965,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 밤",
@@ -991,7 +991,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 월요일 오후",
@@ -1017,7 +1017,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "한두 시간 후",
@@ -1043,7 +1043,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "화요일 오전에 ",
@@ -1075,7 +1075,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3시간",
@@ -1100,7 +1100,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3년 반",
@@ -1125,7 +1125,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3분",
@@ -1150,7 +1150,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "123.45초",
@@ -1175,7 +1175,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "하루 종일 내내",
@@ -1200,7 +1200,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "24시간 동안",
@@ -1225,7 +1225,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "한 달 내내",
@@ -1250,7 +1250,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "한 시간",
@@ -1275,7 +1275,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "몇 시간",
@@ -1300,7 +1300,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "몇 분",
@@ -1325,7 +1325,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "며칠",
@@ -1350,7 +1350,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "몇 주",
@@ -1375,7 +1375,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "매주",
@@ -1400,7 +1400,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "매일",
@@ -1425,7 +1425,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "매년",
@@ -1450,7 +1450,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "격일로",
@@ -1475,7 +1475,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3주에 한 번씩",
@@ -1500,7 +1500,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "매일 오후 3시에",
@@ -1525,7 +1525,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "매주 월요일",
@@ -1550,7 +1550,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "저녁 7시 56분 30초",
@@ -1575,7 +1575,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "저녁 7시 반",
@@ -1605,7 +1605,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "저녁 8시 20분",
@@ -1630,7 +1630,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "아침 7시에",
@@ -1655,7 +1655,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "저녁 7시에",
@@ -1680,7 +1680,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "정오쯤",
@@ -1705,7 +1705,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11시쯤",
@@ -1730,7 +1730,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오전 11시 40분",
@@ -1755,7 +1755,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "",
@@ -1780,7 +1780,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오후 5시부터 6시까지",
@@ -1806,7 +1806,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "아침 5시부터 7시까지",
@@ -1832,7 +1832,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오후 5시에서 6 시 사이에",
@@ -1858,7 +1858,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "4시부터 7시 정각까지",
@@ -1890,7 +1890,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "새벽 3시부터 오후 5시까지 ",
@@ -1916,7 +1916,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오후 4시에서 5시 사이에",
@@ -1942,7 +1942,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "아침에",
@@ -1968,7 +1968,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "저녁에",
@@ -1994,7 +1994,7 @@
       "ReferenceDateTime": "2017-09-28T14:11:10.9626841"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "지금",
@@ -2019,7 +2019,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5분 안에",
@@ -2044,7 +2044,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5분 안에",
@@ -2069,7 +2069,7 @@
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 월요일 아침 9시",
@@ -2109,7 +2109,7 @@
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 월요일 ",
@@ -2154,7 +2154,7 @@
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "아침 9시 정각",
@@ -2199,7 +2199,7 @@
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 월요일 오후1시에서 3시까지",
@@ -2241,7 +2241,7 @@
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "월요일 오전 8시에서 9시까지",
@@ -2289,7 +2289,7 @@
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 화요일 ",
@@ -2334,7 +2334,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -2343,7 +2343,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -2352,7 +2352,7 @@
       "ReferenceDateTime": "2018-01-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5월 9일 화요일 ",
@@ -2382,7 +2382,7 @@
       "ReferenceDateTime": "2018-01-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5월",
@@ -2414,7 +2414,7 @@
       "ReferenceDateTime": "2018-03-14T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1 시간",
@@ -2459,7 +2459,7 @@
       "ReferenceDateTime": "2018-03-14T01:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": " 4월 10일이 있는 주",
@@ -2491,7 +2491,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -2500,7 +2500,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -2509,7 +2509,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -2518,7 +2518,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -2527,7 +2527,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -2536,7 +2536,7 @@
       "ReferenceDateTime": "2018-03-14T01:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘",
@@ -2561,7 +2561,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -2570,7 +2570,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -2579,7 +2579,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -2588,7 +2588,7 @@
       "ReferenceDateTime": "2018-03-23T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "9개월 안에",
@@ -2630,7 +2630,7 @@
       "ReferenceDateTime": "2018-03-23T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2주 안에",
@@ -2670,7 +2670,7 @@
       "ReferenceDateTime": "2018-03-23T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 5일",
@@ -2712,7 +2712,7 @@
       "ReferenceDateTime": "2018-04-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7월 1일",
@@ -2742,7 +2742,7 @@
       "ReferenceDateTime": "2018-03-25T01:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2시간 ",
@@ -2783,7 +2783,7 @@
       "ReferenceDateTime": "2018-05-16T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "월요일 12시에서 4시까지",
@@ -2827,7 +2827,7 @@
       "ReferenceDateTime": "2018-05-16T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "월요일 11시에서 4시까지",
@@ -2871,7 +2871,7 @@
       "ReferenceDateTime": "2018-05-20T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "매주",
@@ -2912,7 +2912,7 @@
       "ReferenceDateTime": "2018-05-20T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "매주",
@@ -2990,7 +2990,7 @@
       "ReferenceDateTime": "2018-05-22T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "하루",
@@ -3015,7 +3015,7 @@
       "ReferenceDateTime": "2018-05-22T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "한 달 ",
@@ -3041,7 +3041,7 @@
       "ReferenceDateTime": "2018-05-18T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "수요일 이른 아침에 ",
@@ -3068,7 +3068,7 @@
       "ReferenceDateTime": "2018-05-18T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 중간",
@@ -3095,7 +3095,7 @@
       "ReferenceDateTime": "2018-05-18T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 늦게 ",
@@ -3122,7 +3122,7 @@
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -3131,7 +3131,7 @@
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -3140,7 +3140,7 @@
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -3149,7 +3149,7 @@
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2017년 4월",
@@ -3175,7 +3175,7 @@
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2017년 4월",
@@ -3201,7 +3201,7 @@
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "4월",
@@ -3233,7 +3233,7 @@
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "주 초에",
@@ -3259,7 +3259,7 @@
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이 달 초에",
@@ -3285,7 +3285,7 @@
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "올 해 초에",
@@ -3311,7 +3311,7 @@
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이번 주 후반에",
@@ -3337,7 +3337,7 @@
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이 달 말에",
@@ -3363,7 +3363,7 @@
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "올해 말에",
@@ -3389,7 +3389,7 @@
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "그해 말에 ",
@@ -3415,7 +3415,7 @@
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 이후로 이틀",
@@ -3440,7 +3440,7 @@
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "내일부터 3주",
@@ -3465,7 +3465,7 @@
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "그끄저께",
@@ -3490,7 +3490,7 @@
       "ReferenceDateTime": "2018-05-01T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1994년 12월 31일",
@@ -3515,7 +3515,7 @@
       "ReferenceDateTime": "2018-05-01T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2018년 3월 5일 오후 5시 49분 19초",
@@ -3540,7 +3540,7 @@
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년 1월 1일 10시에서 11시 30분 사이에",
@@ -3572,7 +3572,7 @@
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년 1월 1일 10시 30분부터 3시까지",
@@ -3598,7 +3598,7 @@
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년 1월 1일 3시에서 5시 사이에",
@@ -3630,7 +3630,7 @@
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년 1월 1일 3시 30분부터 5시 55분까지",
@@ -3662,7 +3662,7 @@
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2010년 이전",
@@ -3704,7 +3704,7 @@
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2010년 이후 ",
@@ -3778,7 +3778,7 @@
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "6월 15일 이번 금요일",
@@ -3808,7 +3808,7 @@
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "4일 이상",
@@ -3850,7 +3850,7 @@
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1시간 30분 이상",
@@ -3876,7 +3876,7 @@
       "ReferenceDateTime": "2018-06-12T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2주 전",
@@ -3902,7 +3902,7 @@
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "그끄저께",
@@ -3928,7 +3928,7 @@
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "내일로부터 3일 이내",
@@ -3954,7 +3954,7 @@
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "지금부터 3분 ",
@@ -3979,7 +3979,7 @@
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘부터 3분",
@@ -4019,7 +4019,7 @@
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5월 9일",
@@ -4065,7 +4065,7 @@
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "15세기",
@@ -4091,7 +4091,7 @@
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "21세기",
@@ -4117,7 +4117,7 @@
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2018년 이후에",
@@ -4143,7 +4143,7 @@
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": " 2018년 2월 이후에",
@@ -4169,7 +4169,7 @@
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2월 이후에",
@@ -4201,7 +4201,7 @@
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년 1월 1일 2시 이후에",
@@ -4233,7 +4233,7 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 오후 4시 이전에",
@@ -4259,7 +4259,7 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 수요일 오전 10시 이후에",
@@ -4285,7 +4285,7 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "지난 화요일 오후 2시에",
@@ -4311,7 +4311,7 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2월 1일 6시에 ",
@@ -4355,7 +4355,7 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 ",
@@ -4403,7 +4403,7 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2007년",
@@ -4445,7 +4445,7 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2007년에서 2009년 사이",
@@ -4471,7 +4471,7 @@
       "ReferenceDateTime": "2018-06-28T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 오전 9시",
@@ -4496,7 +4496,7 @@
       "ReferenceDateTime": "2018-06-28T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 저녁 9시",
@@ -4521,7 +4521,7 @@
       "ReferenceDateTime": "2018-06-28T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2008년 ",
@@ -4547,7 +4547,7 @@
       "ReferenceDateTime": "2018-06-28T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "올 해 ",
@@ -4573,7 +4573,7 @@
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이번 주 ",
@@ -4599,7 +4599,7 @@
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다다음 주 ",
@@ -4625,7 +4625,7 @@
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "31주",
@@ -4651,7 +4651,7 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2분 내",
@@ -4676,7 +4676,7 @@
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "두 달 내",
@@ -4701,7 +4701,7 @@
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2주 내",
@@ -4726,7 +4726,7 @@
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2년 내",
@@ -4751,7 +4751,7 @@
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이틀 후",
@@ -4776,7 +4776,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": " 2014년에서 2018년",
@@ -4802,7 +4802,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2014년에서 2018년 사이",
@@ -4828,7 +4828,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2014년부터 2018년까지",
@@ -4854,7 +4854,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": " 2014년에서 2018년 5월",
@@ -4880,7 +4880,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2014년에서 2018년 5월 2일",
@@ -4906,7 +4906,7 @@
       "ReferenceDateTime": "2018-07-06T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7월 6일 금요일",
@@ -4936,7 +4936,7 @@
       "ReferenceDateTime": "2018-07-09T22:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2시간 미만",
@@ -4994,7 +4994,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2008년 ",
@@ -5020,7 +5020,7 @@
       "ReferenceDateTime": "2018-07-11T20:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1월 24일 오후 1시 30분",
@@ -5050,7 +5050,7 @@
       "ReferenceDateTime": "2018-07-13T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11월 중순",
@@ -5084,7 +5084,7 @@
       "ReferenceDateTime": "2018-07-13T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "토요일 5시",
@@ -5124,7 +5124,7 @@
       "ReferenceDateTime": "2018-07-17T13:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "어젯밤",
@@ -5150,7 +5150,7 @@
       "ReferenceDateTime": "2018-07-17T13:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1년",
@@ -5176,7 +5176,7 @@
       "ReferenceDateTime": "2018-07-17T13:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "올해 독립 기념일",
@@ -5201,7 +5201,7 @@
       "ReferenceDateTime": "2018-07-24T13:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "독립 기념일 전에",
@@ -5233,7 +5233,7 @@
       "ReferenceDateTime": "2018-07-30T13:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "화요일",
@@ -5297,7 +5297,7 @@
       "ReferenceDateTime": "2018-07-31T13:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 ",
@@ -5323,7 +5323,7 @@
       "ReferenceDateTime": "2018-07-31T13:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 몇 주",
@@ -5349,7 +5349,7 @@
       "ReferenceDateTime": "2018-07-31T13:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 월요일에",
@@ -5374,7 +5374,7 @@
       "ReferenceDateTime": "2018-07-30T20:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5월 22일 오전 11시 30분",
@@ -5404,7 +5404,7 @@
       "ReferenceDateTime": "2018-08-01T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 수요일 저녁",
@@ -5430,7 +5430,7 @@
       "ReferenceDateTime": "2018-08-07T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "18번째 주",
@@ -5463,7 +5463,7 @@
       "ReferenceDateTime": "2018-08-08T10:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -5472,7 +5472,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -5481,7 +5481,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -5490,7 +5490,7 @@
       "ReferenceDateTime": "2018-08-16T10:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "내일 오전 10시쯤에",
@@ -5516,7 +5516,7 @@
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "바로 오전 7시",
@@ -5542,7 +5542,7 @@
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "바로 내일 ",
@@ -5568,7 +5568,7 @@
       "ReferenceDateTime": "2018-08-20T10:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "영업일 기준 앞으로 나흘 ",
@@ -5595,7 +5595,7 @@
       "ReferenceDateTime": "2018-08-21T10:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "영업일 기준 앞으로 나흘 ",
@@ -5622,7 +5622,7 @@
       "ReferenceDateTime": "2018-08-29T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "15분",
@@ -5685,7 +5685,7 @@
     },
     "Comment": "Not currently supported. The first number will be tagged as time.",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "18",
@@ -5735,7 +5735,7 @@
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다가오는 5년 ",
@@ -5761,7 +5761,7 @@
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다가오는 두 달",
@@ -5787,7 +5787,7 @@
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다가오는 이틀 ",
@@ -5813,7 +5813,7 @@
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "앞으로 5분",
@@ -5839,7 +5839,7 @@
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "지난 5분",
@@ -5865,7 +5865,7 @@
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "지난 5년",
@@ -5891,7 +5891,7 @@
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "지난 10주 ",
@@ -5917,7 +5917,7 @@
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "내일 오전 10시부터 12시까지",
@@ -5958,7 +5958,7 @@
       "ReferenceDateTime": "2018-09-06T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "내년 1사분기에 되도록 일찍",
@@ -5984,7 +5984,7 @@
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2012년 보다 매출이 좋은 년도",
@@ -6010,7 +6010,7 @@
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2012년 또는 그 이후",
@@ -6036,7 +6036,7 @@
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016년 그리고 그 이후는",
@@ -6062,7 +6062,7 @@
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016년 1월 1일 그리고 그 이후",
@@ -6089,7 +6089,7 @@
     },
     "Comment": "Known false positive needs to be supported in the future",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016년 1월 1일",
@@ -6114,7 +6114,7 @@
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016년 1월 1일",
@@ -6155,7 +6155,7 @@
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "올해 현재까지",
@@ -6181,7 +6181,7 @@
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2018년 또는 그 이후",
@@ -6207,7 +6207,7 @@
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년에서 2018년 사이 ",
@@ -6249,7 +6249,7 @@
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이번 주 ",
@@ -6291,7 +6291,7 @@
       "ReferenceDateTime": "2018-09-25T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2018년 이후 ",
@@ -6317,7 +6317,7 @@
       "ReferenceDateTime": "2018-09-21T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "월요일 2시 30분",
@@ -6357,7 +6357,7 @@
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오후 2시 30분 이전에",
@@ -6383,7 +6383,7 @@
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3월 29일 화요일 오전 11시 ",
@@ -6413,7 +6413,7 @@
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "6월 4일 오후 태평양 표준시 기준  9시 30분에서 4시 30분 사이에 ",
@@ -6445,7 +6445,7 @@
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3월에서 5월까지 ",
@@ -6477,7 +6477,7 @@
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "8월에서 10월 사이에",
@@ -6503,7 +6503,7 @@
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5월에서 3월까지 ",
@@ -6529,7 +6529,7 @@
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "9월에서 11월까지",
@@ -6561,7 +6561,7 @@
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5월에서 11월까지",
@@ -6587,7 +6587,7 @@
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11월에서 3월까지",
@@ -6619,7 +6619,7 @@
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -6628,7 +6628,7 @@
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "6시 45분에",
@@ -6658,7 +6658,7 @@
       "ReferenceDateTime": "2018-10-17T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2개월 전에 ",
@@ -6698,7 +6698,7 @@
       "ReferenceDateTime": "2018-10-17T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이틀 안에",
@@ -6738,7 +6738,7 @@
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10월1일부터 11월 7일까지 ",
@@ -6764,7 +6764,7 @@
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10월 25일부터 1월 25일까지 ",
@@ -6796,7 +6796,7 @@
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2018년 10월 1일부터 2018년 10월 7일까지",
@@ -6822,7 +6822,7 @@
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10월 1일에서 11월 7일 사이에 ",
@@ -6848,7 +6848,7 @@
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2017년 1월부터 2월까지 ",
@@ -6874,7 +6874,7 @@
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2017년 11월부터 2월까지 ",
@@ -6900,7 +6900,7 @@
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": " 2017년 11월부터 2월 5일까지 ",
@@ -6926,7 +6926,7 @@
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년 11월 18일부터 12월 19일까지",
@@ -6952,7 +6952,7 @@
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2014년 11월 18일부터 2015년 12월 19일까지",
@@ -6978,7 +6978,7 @@
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11월 18일, 19일에",
@@ -7010,7 +7010,7 @@
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "올해 5월부터 2020년 10월까지",
@@ -7036,7 +7036,7 @@
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5월부터 2020년 10월까지",
@@ -7062,7 +7062,7 @@
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2020년 5월1일부터 5월 7일까지 ",
@@ -7088,7 +7088,7 @@
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2019년 5월1일부터2020년 5월 7일까지 ",
@@ -7114,7 +7114,7 @@
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016년 8월 5일",
@@ -7139,7 +7139,7 @@
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "월요일 오전 10시부터 오후 12시까지",
@@ -7171,7 +7171,7 @@
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "어제 오후 3시부터 8시까지",
@@ -7197,7 +7197,7 @@
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "어제 오전 8시부터 오후 8시까지 ",
@@ -7223,7 +7223,7 @@
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "월요일 3시부터 8시까지",
@@ -7267,7 +7267,7 @@
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "어제 3시에서 8시 사이에 ",
@@ -7299,7 +7299,7 @@
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 월요일 오전 3시에서 8시 사이에",
@@ -7325,7 +7325,7 @@
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 월요일 오전 3시에서 오후 12시 사이에 ",
@@ -7351,7 +7351,7 @@
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 월요일 6시에서 8시까지",
@@ -7383,7 +7383,7 @@
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 월요일 아침 6시에서 8시까지",
@@ -7409,7 +7409,7 @@
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2018년 12월 ",
@@ -7435,7 +7435,7 @@
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2018년 12월에서 2019년 5월까지",
@@ -7461,7 +7461,7 @@
       "ReferenceDateTime": "2018-11-08T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "그 다음 날 ",
@@ -7486,7 +7486,7 @@
       "ReferenceDateTime": "2018-11-08T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -7495,7 +7495,7 @@
       "ReferenceDateTime": "2018-11-15T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 월요일",
@@ -7535,7 +7535,7 @@
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 수요일",
@@ -7560,7 +7560,7 @@
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "지난 주 월요일",
@@ -7585,7 +7585,7 @@
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이번 주 월요일",
@@ -7610,7 +7610,7 @@
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "하루 일과를 마칠 무렵",
@@ -7635,7 +7635,7 @@
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "하루 일과를 마칠 무렵",
@@ -7660,7 +7660,7 @@
       "ReferenceDateTime": "2018-11-23T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "연말",
@@ -7687,7 +7687,7 @@
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11월 20일",
@@ -7737,7 +7737,7 @@
       "ReferenceDateTime": "2018-11-27T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "월말",
@@ -7764,7 +7764,7 @@
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이번 주말",
@@ -7792,7 +7792,7 @@
     },
     "Comment": "between 9-6 PT can't be extracted as TimeZone is not enabled for now",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "수요일",
@@ -7863,7 +7863,7 @@
     },
     "Comment": "Not supported as the TimeZone is not enabled for now",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "태평양 표준시 기준 6시 30분에서 9시 사이",
@@ -7902,7 +7902,7 @@
     },
     "Comment": "Cst can't be recognized as TimeZone is not enabled for now",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "중부 표준시 기준 6시 30분에서 9시 사이는 어떠세요? ",
@@ -7934,7 +7934,7 @@
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년 첫 번째 주",
@@ -7960,7 +7960,7 @@
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년 1월 첫 번째 주",
@@ -7986,7 +7986,7 @@
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016년 마지막 주",
@@ -8012,7 +8012,7 @@
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016년 12월 마지막 주",
@@ -8038,7 +8038,7 @@
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2018년 세 번째 주",
@@ -8064,7 +8064,7 @@
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1월의 세 번째 주",
@@ -8096,7 +8096,7 @@
       "ReferenceDateTime": "2018-11-30T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "지난 주 이전",
@@ -8123,7 +8123,7 @@
       "ReferenceDateTime": "2018-11-30T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오후 3시",
@@ -8148,7 +8148,7 @@
       "ReferenceDateTime": "2018-12-05T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1시간 30분",
@@ -8173,7 +8173,7 @@
       "ReferenceDateTime": "2018-12-07T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -8182,7 +8182,7 @@
       "ReferenceDateTime": "2018-12-07T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -8192,7 +8192,7 @@
     },
     "Comment": "Not extracted may as a datetime range is not supported for now",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -8201,7 +8201,7 @@
       "ReferenceDateTime": "2018-12-13T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -8210,7 +8210,7 @@
       "ReferenceDateTime": "2019-01-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "화요일",
@@ -8240,7 +8240,7 @@
       "ReferenceDateTime": "2019-01-25T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "21일 월요일",
@@ -8270,7 +8270,7 @@
       "ReferenceDateTime": "2019-01-21T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "21일 월요일",
@@ -8295,7 +8295,7 @@
       "ReferenceDateTime": "2019-01-25T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "31일 일요일",
@@ -8325,7 +8325,7 @@
       "ReferenceDateTime": "2019-02-25T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "31일 금요일",
@@ -8355,7 +8355,7 @@
       "ReferenceDateTime": "2019-02-25T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5월 중순 이후",
@@ -8387,7 +8387,7 @@
       "ReferenceDateTime": "2019-02-25T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7월 말 이래",
@@ -8419,7 +8419,7 @@
       "ReferenceDateTime": "2019-01-24T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -8428,7 +8428,7 @@
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다가오는 금요일",
@@ -8453,7 +8453,7 @@
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 금요일",
@@ -8478,7 +8478,7 @@
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다가오는 목요일",
@@ -8503,7 +8503,7 @@
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "지난 수요일",
@@ -8528,7 +8528,7 @@
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7시 30분에서 9시 30분 사이에",
@@ -8560,7 +8560,7 @@
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7시 30분에서 9시 30분 사이에 ",
@@ -8592,7 +8592,7 @@
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "9시 30분에서 7시 30분 사이에 ",
@@ -8624,7 +8624,7 @@
       "ReferenceDateTime": "2019-02-27T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "21일 월요일 9시 30분에서  오후 3시 사이에",
@@ -8656,7 +8656,7 @@
       "ReferenceDateTime": "2019-02-27T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1월 15일 화요일 오후 1시부터 1시 15분까지 ",
@@ -8688,7 +8688,7 @@
       "ReferenceDateTime": "2019-02-28T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2019년 1월 18일",
@@ -8728,7 +8728,7 @@
       "ReferenceDateTime": "2019-03-01T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "매주 화요일",
@@ -8775,7 +8775,7 @@
       "ReferenceDateTime": "2019-02-27T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년 12월 ",
@@ -8801,7 +8801,7 @@
       "ReferenceDateTime": "2019-02-27T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -8810,7 +8810,7 @@
       "ReferenceDateTime": "2019-02-27T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -8819,7 +8819,7 @@
       "ReferenceDateTime": "2019-02-27T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
@@ -8828,7 +8828,7 @@
       "ReferenceDateTime": "2019-02-27T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   }
 ]

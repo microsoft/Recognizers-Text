@@ -1,7 +1,7 @@
 [
   {
     "Input": "Haftalık ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Haftalık",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Günlük ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Günlük",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Her gün ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her gün",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Her ay ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her ay",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Yıllık ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Yıllık",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Her iki gün ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her iki gün",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "Her üç hafta ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her üç hafta",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Her gün saat 15'te ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her gün saat 15",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Her 15/4'te ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her 15/4",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "Her Pazartesi ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her Pazartesi",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Her Pazartesi saat 16'da ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her Pazartesi saat 16",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Her sabah ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her sabah",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Her sabah saat 9'da ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her sabah saat 9",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Her öğleden sonra saat 16'da ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her öğleden sonra saat 16",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Her gece saat 21'de ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her gece saat 21",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "Her gece 21'de ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her gece 21",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "Sabahları saat 9'da ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabahları saat 9",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "Her Pazar saat 9'da ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her Pazar saat 9",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "Pazartesileri saat 9'da ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Pazartesileri saat 9",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "Pazartesi günleri ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Pazartesi günleri",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "Pazar günleri ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Pazar günleri",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Pazarları ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Pazarları",

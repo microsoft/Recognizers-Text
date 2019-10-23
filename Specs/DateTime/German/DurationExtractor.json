@@ -1,7 +1,7 @@
 [
   {
     "Input": "Ich gehe für 3 Stunden",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Stunden",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Ich gehe für 3 st",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 st",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Ich gehe für 5h nach draußen.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "5h",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Ich gehe für 7 Jahre ins Ausland",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "7 Jahre",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Ich gehe für sieben Jahre ins Ausland",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "sieben Jahre",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Das wird in etwa ein Jahr dauern.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ein Jahr",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "Ich bin für ein halbes Jahr weg",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ein halbes Jahr",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Ich bin für 3 Monate weg",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Monate",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Ich bin in 3 Minuten wieder da",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Minuten",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "3 min noch",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 min",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Das hat ja nur 3,5 Sekunden gedauert",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3,5 Sekunden",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "123,45 sek",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "123,45 sek",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Das geht noch für zwei Wochen so weiter",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zwei Wochen",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Dauer: zwanzig min",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zwanzig min",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Ich bin den ganzen Tag lang weg",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ganzen Tag",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "Ich bin die ganze Woche lang weg",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ganze Woche",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "Ich bin den ganzen Monat lang weg",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ganzen Monat",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "Ich bin das ganze Jahr lang weg",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ganze Jahr",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "Ich bin ein ganzes Jahr lang weg",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ganzes Jahr",

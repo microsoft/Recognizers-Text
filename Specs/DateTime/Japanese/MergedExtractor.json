@@ -2,7 +2,7 @@
   {
     "Input": "これは2日です。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2日",
@@ -15,7 +15,7 @@
   {
     "Input": "これは午後4時前です。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後4時前",
@@ -28,7 +28,7 @@
   {
     "Input": "これは明日午後4時前です。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "明日午後4時前",
@@ -41,7 +41,7 @@
   {
     "Input": "これは午後4時以降です。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後4時以降",
@@ -54,7 +54,7 @@
   {
     "Input": "これは明日午後4時以降です。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "明日午後4時以降",
@@ -67,7 +67,7 @@
   {
     "Input": "5分で戻ります。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5分で",
@@ -80,7 +80,7 @@
   {
     "Input": "この1週間",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "この1週間",
@@ -93,7 +93,7 @@
   {
     "Input": "10時間後に会議の予定を入れて。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10時間後に",
@@ -106,7 +106,7 @@
   {
     "Input": "この日はどうですか。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "この日",
@@ -119,7 +119,7 @@
   {
     "Input": "この週はどうですか。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "この週",
@@ -132,7 +132,7 @@
   {
     "Input": "私の一週間はどんなかんじですか。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "私の一週間",
@@ -145,7 +145,7 @@
   {
     "Input": "その週はどんなかんじですか。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "その週",
@@ -158,7 +158,7 @@
   {
     "Input": "私の一日はどんなかんじですか。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "私の一日",
@@ -171,7 +171,7 @@
   {
     "Input": "その日はどんなかんじですか。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "その日",
@@ -184,7 +184,7 @@
   {
     "Input": "午前9時から11時まで会議の予定を入れて。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前9時から11時まで",
@@ -197,7 +197,7 @@
   {
     "Input": "明日の午前9時から11時まで会議の予定を入れて。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "明日の午前9時から11時まで",
@@ -210,7 +210,7 @@
   {
     "Input": "7月22日のベルビューでの会議を8月22日に変更。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7月22日",
@@ -229,7 +229,7 @@
   {
     "Input": "7月2日以降",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7月2日以降",
@@ -242,7 +242,7 @@
   {
     "Input": "7月2日から",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7月2日から",
@@ -255,7 +255,7 @@
   {
     "Input": "7月2日以前",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7月2日以前",
@@ -268,7 +268,7 @@
   {
     "Input": "6月6日 12時15分",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "6月6日 12時15分",
@@ -281,7 +281,7 @@
   {
     "Input": "2012年6月6日 15時15分",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2012年6月6日 15時15分",
@@ -294,7 +294,7 @@
   {
     "Input": "5月29日",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5月29日",
@@ -307,7 +307,7 @@
   {
     "Input": "3月29日",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3月29日",
@@ -320,7 +320,7 @@
   {
     "Input": "私は3月に生まれました。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3月",
@@ -333,7 +333,7 @@
   {
     "Input": "5月に何が起きたのですか。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5月",
@@ -346,13 +346,13 @@
   {
     "Input": "notapplicable",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "午後3時の予定を4時に変更します。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後3時",
@@ -371,7 +371,7 @@
   {
     "Input": "午前10時の予定を11時に変更します。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -390,7 +390,7 @@
   {
     "Input": "午前10時の予定を20時に変更します。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -409,7 +409,7 @@
   {
     "Input": "午前10時の予定を13時に変更します。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -428,7 +428,7 @@
   {
     "Input": "午前10時の予定を0時に変更します。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -447,7 +447,7 @@
   {
     "Input": "午前10時の予定を24時に変更します。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -466,7 +466,7 @@
   {
     "Input": "午前10時の予定を4時に変更しますが、どうでしょうか。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -485,7 +485,7 @@
   {
     "Input": "午前10時の予定を4.3時に変更します。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -498,7 +498,7 @@
   {
     "Input": "午前10時の予定を26時に変更します。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -511,7 +511,7 @@
   {
     "Input": "午前10時の予定を4時以降に変更します。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -524,7 +524,7 @@
   {
     "Input": "午前10時の予定を25時に変更します。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -537,7 +537,7 @@
   {
     "Input": "次の会議は2017年3月16日に開かれますが、今日の午後2時に話し合うのはいかがでしょうか。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2017年3月16日",
@@ -556,7 +556,7 @@
   {
     "Input": "2018年4月1日、今日の午後2時に計画できます。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2018年4月1日",
@@ -575,7 +575,7 @@
   {
     "Input": "範囲は2012年以前です。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2012年以前",
@@ -588,7 +588,7 @@
   {
     "Input": "範囲は2012年までです。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2012年まで",
@@ -601,7 +601,7 @@
   {
     "Input": "範囲は2012年以降です。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2012年以降",
@@ -614,7 +614,7 @@
   {
     "Input": "2016年11月は不在にします。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016年11月",
@@ -627,7 +627,7 @@
   {
     "Input": "2016年11月",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016年11月",
@@ -640,7 +640,7 @@
   {
     "Input": "彼は2016年1月1日またはそれ以降に到着する予定です",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016年1月1日またはそれ以降",
@@ -653,7 +653,7 @@
   {
     "Input": "彼は2016年1月1日またはそれ以前に出発します。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016年1月1日またはそれ以前",
@@ -666,7 +666,7 @@
   {
     "Input": "この仕事は2016年1月1日またはそれ以前に完了します。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016年1月1日またはそれ以前",
@@ -679,7 +679,7 @@
   {
     "Input": "この仕事は2018年2月またはそれ以前に完了します。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2018年2月またはそれ以前",
@@ -692,7 +692,7 @@
   {
     "Input": "あなたは2016年またはそれ以前には出発できません。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016年またはそれ以前",
@@ -705,7 +705,7 @@
   {
     "Input": "今日の午後6時30分以降に退社できます。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "今日の午後6時30分以降",
@@ -718,7 +718,7 @@
   {
     "Input": "あなたは明後日またはその前に出発する必要があります。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "明後日またはその前",
@@ -731,7 +731,7 @@
   {
     "Input": "あなたは2018年5月15日の午後3時またはそれ以前に出発する必要があります。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2018年5月15日の午後3時またはそれ以前",
@@ -744,7 +744,7 @@
   {
     "Input": "今日から2日後のご都合はいかがでしょうか。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "今日から2日後",
@@ -757,7 +757,7 @@
   {
     "Input": "明日から3週間のご都合はいかがでしょうか。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "明日から3週間",
@@ -770,7 +770,7 @@
   {
     "Input": "昨日の2日前、あなたはどこにいましたか。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "昨日の2日前",
@@ -783,7 +783,7 @@
   {
     "Input": "今日から2週間以上前にもうすべての仕事を終えた。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "今日から2週間以上",
@@ -796,7 +796,7 @@
   {
     "Input": "今日から2週間以内に戻ってきます。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "今日から2週間以内",
@@ -809,7 +809,7 @@
   {
     "Input": "この仕事は昨日の2日以上前には終わらせておくべきだった。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "昨日の2日以上前",
@@ -822,7 +822,7 @@
   {
     "Input": "この仕事は明日から3日以内に終わらせます。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "明日から3日以内",
@@ -835,7 +835,7 @@
   {
     "Input": "今から3分後に始めましょう。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "今から3分後",
@@ -848,7 +848,7 @@
   {
     "Input": "今日から3分始めましょう。",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3分",

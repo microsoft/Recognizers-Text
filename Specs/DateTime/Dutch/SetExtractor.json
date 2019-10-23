@@ -10,7 +10,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal dagelijks vertrekken",
@@ -23,7 +23,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal elke dag vertrekken",
@@ -36,7 +36,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal elke maand vertrekken",
@@ -49,7 +49,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal jaarlijks vertrekken",
@@ -62,7 +62,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal elke twee dagen vertrekken",
@@ -75,7 +75,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal elke drie weken vertrekken",
@@ -88,7 +88,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal elke dag om 15:00 vertrekken",
@@ -101,7 +101,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal iedere dag om 15:00 vertrekken",
@@ -114,7 +114,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal elke 15/4 vertrekken",
@@ -127,7 +127,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal elke maandag vertrekken",
@@ -140,7 +140,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal elke maandag om 16:00 vertrekken",
@@ -153,7 +153,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal elke ochtend vertrekken",
@@ -166,7 +166,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal elke ochtend om 09:00 vertrekken",
@@ -179,7 +179,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal elke middag om 16:00 vertrekken",
@@ -192,7 +192,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal elke dag om 21:00 vertrekken",
@@ -205,7 +205,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal elke avond om 9 uur vertrekken",
@@ -218,7 +218,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal vertrekken om 09:00 's ochtends",
@@ -231,7 +231,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal vertrekken 's ochtends om 9",
@@ -244,7 +244,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik vertrek elke zondag ochtend om 9 uur",
@@ -257,7 +257,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal elke maandag vertrekken om 09:00",
@@ -270,7 +270,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal vertrekken om 9 uur 's ochtends elke maandag",
@@ -283,7 +283,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik zal elke zondag vertrekken",
@@ -296,12 +296,12 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik vertrek wekelijks",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "wekelijks",
@@ -314,7 +314,7 @@
   {
     "Input": "Ik vertrek dagelijks",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dagelijks",
@@ -327,7 +327,7 @@
   {
     "Input": "Ik vertrek elke dag",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "elke dag",
@@ -340,7 +340,7 @@
   {
     "Input": "Ik vertrek elke maand",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "elke maand",
@@ -353,7 +353,7 @@
   {
     "Input": "Ik vertrek jaarlijks",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "jaarlijks",
@@ -366,7 +366,7 @@
   {
     "Input": "Ik vertek elke twee dagen",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "elke twee dagen",
@@ -379,7 +379,7 @@
   {
     "Input": "Ik vertrek iedere dag 15:00",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "iedere dag 15:00",
@@ -392,7 +392,7 @@
   {
     "Input": "Ik vertrek elke dag 15:00",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "elke dag 15:00",
@@ -405,7 +405,7 @@
   {
     "Input": "Ik vertrek elke 15-4",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "15-4",
@@ -418,7 +418,7 @@
   {
     "Input": "Ik vertrek iedere maandag",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "iedere maandag",
@@ -431,7 +431,7 @@
   {
     "Input": "Ik vertrek elke maandag 16:00",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "elke maandag 16:00",
@@ -444,7 +444,7 @@
   {
     "Input": "Ik vertrek iedere ochtend",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "iedere ochtend",
@@ -457,7 +457,7 @@
   {
     "Input": "Ik vertrek iedere ochtend om 9:00",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "iedere ochtend om 9:00",
@@ -470,7 +470,7 @@
   {
     "Input": "Ik vertrek iedere middag om 16:00",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "iedere middag om 16:00",
@@ -483,7 +483,7 @@
   {
     "Input": "Ik vertrek iedere avond om 21:00",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "iedere avond om 21:00",
@@ -496,7 +496,7 @@
   {
     "Input": "Ik vertrek iedere avond om 9 uur",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "iedere avond om 9 uur",
@@ -509,7 +509,7 @@
   {
     "Input": "Ik vertrek de ochtenden om 9:00",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de ochtenden om 9:00",
@@ -522,7 +522,7 @@
   {
     "Input": "Ik vertrek op ochtenden om 9 uur",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "op ochtenden om 9 uur",
@@ -535,7 +535,7 @@
   {
     "Input": "Ik vertrek om 9 uur 's ochtends iedere zondag",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "9 uur 's ochtends iedere zondag",
@@ -548,7 +548,7 @@
   {
     "Input": "Ik vertrek om 9 uur 's ochtends op maandagen",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "9 uur 's ochtends op maandagen",
@@ -561,7 +561,7 @@
   {
     "Input": "Ik vertrek om 9:00 op maandagen",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "om 9:00 op maandagen",
@@ -574,7 +574,7 @@
   {
     "Input": "Ik vertrek op maandagen",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "op maandagen",
@@ -587,7 +587,7 @@
   {
     "Input": "Ik vertrek op zondagen",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "op zondagen",
@@ -600,7 +600,7 @@
   {
     "Input": "Ik vertrek zondagen",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "zondagen",
@@ -613,7 +613,7 @@
   {
     "Input": "Kan ik een boeking plaatsen voor de 9e van mei voor 2 nachten?",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "nachten",

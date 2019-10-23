@@ -1,7 +1,7 @@
 [
   {
     "Input": "Ich gehe jetzt zurück",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "jetzt",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "ich gehe so früh wie möglich zurück",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "so früh wie möglich",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Ich gehe genau jetzt weg.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "genau jetzt",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Ich gehe am 15. November um 8 Uhr los.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15. November um 8 Uhr",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Ich gehe am 15.08. um 8 Uhr los.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15.08. um 8 Uhr",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Ich gehe am 15. um 8 Uhr los.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15. um 8 Uhr",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "Ich gehe am 23. Oktober um 7 los.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "23. Oktober um 7",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Ich gehe am 14. Oktober um 8:00 los.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "14. Oktober um 8:00",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Das ganze ist am 14. Oktober um 8:00:00 Uhr vorbei",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "14. Oktober um 8:00:00 Uhr",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "Ich gehe dann diesen Montag um 8:00 los",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Montag um 8:00",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Um 8 Uhr heute Morgen",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "8 Uhr heute Morgen",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Um 8 Uhr diesen Morgen",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "8 Uhr diesen Morgen",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Ich gehe dann gegen 8 Uhr heute Abend nach Hause",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "8 Uhr heute Abend",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Am Ende des Tages",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Am Ende des Tages",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Am Ende des Monats",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Am Ende des Monats",

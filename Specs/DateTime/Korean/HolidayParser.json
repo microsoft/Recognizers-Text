@@ -5,7 +5,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "부활절",
@@ -30,7 +30,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "크리스마스",
@@ -55,7 +55,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "섣달그믐날",
@@ -80,7 +80,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "새해",
@@ -105,7 +105,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "추수감사절",
@@ -130,7 +130,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "아버지의 날",
@@ -155,7 +155,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "내년 새해",
@@ -180,7 +180,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2010년 추수감사절",
@@ -205,7 +205,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년 아버지의 날",
@@ -230,7 +230,7 @@
       "ReferenceDateTime": "2018-06-01T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "메이데이",
@@ -270,7 +270,7 @@
       "ReferenceDateTime": "2018-06-01T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "마틴 루터 킹 데이",

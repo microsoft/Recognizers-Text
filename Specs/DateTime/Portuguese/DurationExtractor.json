@@ -1,7 +1,7 @@
 [
   {
     "Input": "me vou por 3h",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3h",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "me vou por 3 dias",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 dias",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "me vou por 3,5 anos",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3,5 anos",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "me vou por 3 h",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 h",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "me vou por 3 horas",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 horas",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "me vou 3 dias",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 dias",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "me vou por 3 meses",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 meses",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "me vou por 3 minutos",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 minutos",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "me vou por 3 min",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 min",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "me vou por 3,5 segundos ",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3,5 segundos",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "me vou por 123,45 seg",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "123,45 seg",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "me vou por duas semanas",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "duas semanas",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "me vou 20 minutos",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "20 minutos",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "me vou por vinte e quatro horas",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vinte e quatro horas",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "me vou por todo o dia",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "todo o dia",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "me vou por toda a semana",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "toda a semana",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "estarei fora toda a semana",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "toda a semana",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "me vou por todo o mes",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "todo o mes",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "me vou por todo o ano",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "todo o ano",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "me vou por uma hora",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "uma hora",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "me vou por um ano",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "um ano",

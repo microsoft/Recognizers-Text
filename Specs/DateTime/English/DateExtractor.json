@@ -1174,7 +1174,7 @@
   },
   {
     "Input": "We had a meeting 1 month 21 days ago",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1 month 21 days ago",
@@ -1186,7 +1186,7 @@
   },
   {
     "Input": "i left here 2 years 1 month 21 days ago",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2 years 1 month 21 days ago",
@@ -1198,7 +1198,7 @@
   },
   {
     "Input": "i will leve here 2 years 21 days later",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2 years 21 days later",
@@ -1210,7 +1210,7 @@
   },
   {
     "Input": "i left here 1 month 2 years 21 days ago",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1 month 2 years 21 days ago",
@@ -1222,7 +1222,7 @@
   },
   {
     "Input": "i left here the 20th next month",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "the 20th next month",
@@ -1245,7 +1245,7 @@
   },
   {
     "Input": "monday, jan twenty two, 2018",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "monday, jan twenty two, 2018",
@@ -1257,7 +1257,7 @@
   },
   {
     "Input": "on sunday jan twenty one two thousand and eighteen",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "sunday jan twenty one two thousand and eighteen",
@@ -1269,7 +1269,7 @@
   },
   {
     "Input": "on september the twenty-first nineteen seventy eight",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "september the twenty-first nineteen seventy eight",
@@ -1281,7 +1281,7 @@
   },
   {
     "Input": "on september 10, nineteen zero one",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "september 10, nineteen zero one",
@@ -1293,7 +1293,7 @@
   },
   {
     "Input": "on the tenth of september, two thousand",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "tenth of september, two thousand",
@@ -1327,7 +1327,7 @@
   },
   {
     "Input": "Are you available two sundays from now?",
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "two sundays from now",
@@ -1339,7 +1339,7 @@
   },
   {
     "Input": "Are you available two monday later?",
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "two monday later",
@@ -1351,7 +1351,7 @@
   },
   {
     "Input": "Are you available two days after today?",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "two days after today",
@@ -1363,7 +1363,7 @@
   },
   {
     "Input": "Are you available three weeks from tomorrow?",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "three weeks from tomorrow",
@@ -1375,7 +1375,7 @@
   },
   {
     "Input": "Where were you two days before yesterday?",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "two days before yesterday",
@@ -1390,7 +1390,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
     },
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "this friday-jun-15",
@@ -1405,7 +1405,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
     },
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "this friday(jun-15)",
@@ -1420,7 +1420,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
     },
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "this friday (jun-15)",
@@ -1435,7 +1435,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "this friday june twenty two",
@@ -1450,7 +1450,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "this friday",
@@ -1471,7 +1471,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "python,javascript",
     "Results": [
       {
         "Text": "in 3 weeks",
@@ -1566,7 +1566,7 @@
   },
   {
     "Input": "i'll go back twenty second of june 2017",
-    "NotSupported": "javascript",
+    "NotSupported": "python,javascript",
     "Results": [
       {
         "Text": "twenty second of june 2017",
@@ -1578,7 +1578,7 @@
   },
   {
     "Input": "i'll go back twenty-second of june 2017",
-    "NotSupported": "javascript",
+    "NotSupported": "python,javascript",
     "Results": [
       {
         "Text": "twenty-second of june 2017",
@@ -1591,7 +1591,7 @@
   {
     "Input": "6,107.31 August 2019 should not include the decimal",
     "Comment": "Only August 2019 should be extracted as a DateRange, so no output in Date only. Java disabled due to issue in lookbehind.",
-    "NotSupported": "dotnet, java, javascript",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": []
   },
   {

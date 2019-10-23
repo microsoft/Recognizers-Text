@@ -1,7 +1,7 @@
 [
   {
     "Input": "Saat 17'den 18'e kadar yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat 17'den 18'e kadar",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Öğleden sonra 17'den 18'e kadar yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğleden sonra 17'den 18'e kadar",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "5'ten sabah yediye kadar yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5'ten sabah yediye kadar",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "17 ile 18 arasında yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "17 ile 18 arasında",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Öğleden sonra 5 ile 6 arasında yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğleden sonra 5 ile 6 arasında",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "16'dan 17'ye dek yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "16'dan 17'ye dek",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "16'dan 17'ye kadar yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "16'dan 17'ye kadar",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "4:00'dan 5'e kadar yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "4:00'dan 5'e kadar",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "4:00'dan 7'ye kadar yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "4:00'dan 7'ye kadar",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "15'ten yedi buçuğa kadar yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "15'ten yedi buçuğa kadar",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "16-17 arası yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "16-17 arası",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Üçe 20 kaladan akşam sekize kadar yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Üçe 20 kaladan akşam sekize kadar",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "16'dan beş buçuğa kadar yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "16'dan beş buçuğa kadar",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Sabah 3'ten 17'ye kadar yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah 3'ten 17'ye kadar",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Sabah 3'ten öğleden sonra beşe kadar yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah 3'ten öğleden sonra beşe kadar",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "16 ile beş buçuk arası yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "16 ile beş buçuk arası",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "Sabah 3 ile 17 arası yokum",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah 3 ile 17 arası",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "Sabah buluşalım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "Öğleden sonra buluşalım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğleden sonra",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "Gece buluşalım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Gece",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "Akşam buluşalım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Akşam",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Akşamları buluşalım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Akşamları",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "Sabahları erken saatte buluşalım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabahları erken saatte",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "Sabahları geç saatte buluşalım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabahları geç saatte",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "Sabah erkenden buluşalım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah erkenden",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "Sabah geç saatte buluşalım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah geç saatte",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "Öğleden sonra erken saatte buluşalım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğleden sonra erken saatte",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "Öğleden sonra geç saatte buluşalım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğleden sonra geç saatte",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "Akşam erken saatte buluşalım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Akşam erken saatte",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "Akşam geç saatte buluşalım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Akşam geç saatte",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "Gece erken saatte buluşalım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Gece erken saatte",
@@ -373,7 +373,7 @@
   },
   {
     "Input": "Gece geç saatte buluşalım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Gece geç saatte",
@@ -385,7 +385,7 @@
   },
   {
     "Input": "Saat on dörtten on yediye kadar toplantı ayarla",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat on dörtten on yediye kadar",
@@ -397,7 +397,7 @@
   },
   {
     "Input": "Jean'deki parti 18'den 23'e kadar",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "18'den 23'e kadar",
@@ -409,7 +409,7 @@
   },
   {
     "Input": "14:00'dan 16:30'a kadar toplantı ayarla",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "14:00'dan 16:30'a kadar",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "13'ten 16'ya kadar toplantı ayarla",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "13'ten 16'ya kadar",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "13:30'dan 16'ya kadar toplantı ayarla",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "13:30'dan 16'ya kadar",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "Merhaba Cortana - Lütfen Jennifer ile skype toplantısı planlayın. Öğleden sonra 30 dakikalık bir toplantıya ihtiyacım var, bu Cuma ayrılacağım.",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğleden sonra",
@@ -457,7 +457,7 @@
   },
   {
     "Input": "1:30'dan 3:30'a kadar toplantı ayarla",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1:30'dan 3:30'a kadar",
@@ -469,7 +469,7 @@
   },
   {
     "Input": "13:30'dan 3:30'a kadar toplantı ayarla",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "13:30'dan 3:30'a kadar",
@@ -481,7 +481,7 @@
   },
   {
     "Input": "13:30'dan 15:30'a kadar toplantı ayarla",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "13:30'dan 15:30'a kadar",
@@ -493,7 +493,7 @@
   },
   {
     "Input": "1'den 3:30'a kadar toplantı ayarla",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1'den 3:30'a kadar",
@@ -505,7 +505,7 @@
   },
   {
     "Input": "1:30'dan 3'e kadar toplantı ayarla",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1:30'dan 3'e kadar",
@@ -517,7 +517,7 @@
   },
   {
     "Input": "10 ve 11:30 arasına toplantı ayarla",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10 ve 11:30 arasına",
@@ -529,7 +529,7 @@
   },
   {
     "Input": "10:10 ve 12:50 arasına toplantı ayarla",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10:10 ve 12:50 arasına",
@@ -541,7 +541,7 @@
   },
   {
     "Input": "22:10 ve 3 arasına toplantı ayarla",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "22:10 ve 3 arasına",
@@ -553,7 +553,7 @@
   },
   {
     "Input": "22:10'dan 10'a kadar toplantı ayarla",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "22:10'dan 10'a kadar",
@@ -565,7 +565,7 @@
   },
   {
     "Input": "10:30'dan 23'e kadar toplantı ayarla",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10:30'dan 23'e kadar",
@@ -577,7 +577,7 @@
   },
   {
     "Input": "Beni iş saatleri içinde arama",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "iş saatleri içinde",

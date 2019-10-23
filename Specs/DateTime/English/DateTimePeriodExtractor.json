@@ -871,7 +871,7 @@
   },
   {
     "Input": "Can you schedule us 2015-09-23 1:30p.m. to 4.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2015-09-23 1:30p.m. to 4",
@@ -883,7 +883,7 @@
   },
   {
     "Input": "I'll go back tuesday AM",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "tuesday AM",
@@ -895,7 +895,7 @@
   },
   {
     "Input": "I'll go back tuesday PM",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "tuesday PM",
@@ -907,7 +907,7 @@
   },
   {
     "Input": "It will happen 2 hours in the future",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2 hours in the future",
@@ -919,7 +919,7 @@
   },
   {
     "Input": "It will happen between 10 and 11:30 on 1/1/2015",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "between 10 and 11:30 on 1/1/2015",
@@ -931,7 +931,7 @@
   },
   {
     "Input": "It will happen 1/1/2015 between 10 and 11:30",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1/1/2015 between 10 and 11:30",
@@ -943,7 +943,7 @@
   },
   {
     "Input": "It will happen from 10:30 to 3 on 1/1/2015",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "from 10:30 to 3 on 1/1/2015",
@@ -955,7 +955,7 @@
   },
   {
     "Input": "It will happen between 3 and 5 on 1/1/2015",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "between 3 and 5 on 1/1/2015",
@@ -967,7 +967,7 @@
   },
   {
     "Input": "It will happen from 3:30 to 5:55 on 1/1/2015",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "from 3:30 to 5:55 on 1/1/2015",
@@ -979,7 +979,7 @@
   },
   {
     "Input": "It will happen 1/1/2015 after 2:00",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1/1/2015 after 2:00",
@@ -991,7 +991,7 @@
   },
   {
     "Input": "It will happen today before 4pm",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "today before 4pm",
@@ -1003,7 +1003,7 @@
   },
   {
     "Input": "It will happen next Wednesday later than 10 in the morning",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "next Wednesday later than 10 in the morning",
@@ -1015,7 +1015,7 @@
   },
   {
     "Input": "It happened on previous Tuesday by 2 in the afternoon",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "previous Tuesday by 2 in the afternoon",
@@ -1027,7 +1027,7 @@
   },
   {
     "Input": "Let's go on Feb 1st no later than 6:00",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Feb 1st no later than 6:00",
@@ -1039,7 +1039,7 @@
   },
   {
     "Input": "It happened on next week after 2:00",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": []
   }
 ]

@@ -2,7 +2,7 @@
   {
     "Input": "나는 크리스마스에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "크리스마스",
@@ -15,7 +15,7 @@
   {
     "Input": "나는 새해에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "새해",
@@ -28,7 +28,7 @@
   {
     "Input": "나는 추수감사절에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "추수감사절",
@@ -41,7 +41,7 @@
   {
     "Input": "나는 아버지의 날에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "아버지의 날",
@@ -54,7 +54,7 @@
   {
     "Input": "나는 2016년 새해에 돌아갈 겁니다.",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016년 새해",
@@ -67,7 +67,7 @@
   {
     "Input": "나는 클린 먼데이에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "클린 먼데이",
@@ -80,7 +80,7 @@
   {
     "Input": "마틴 루터 킹 데이는 미국 연방 휴일입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "마틴 루터 킹 데이",
@@ -93,7 +93,7 @@
   {
     "Input": "마틴 루터 킹은 그의 이름을 딴 휴일이 있습니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   }
 ]

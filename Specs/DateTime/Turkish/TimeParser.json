@@ -1,7 +1,7 @@
 [
   {
     "Input": "Sekiz kırka alarm kur",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sekiz kırk",
@@ -22,7 +22,7 @@
   },
   {
     "Input": "Sabah sekiz kırka alarm kur",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah sekiz kırk",
@@ -43,7 +43,7 @@
   },
   {
     "Input": "Akşam sekiz kırka alarm kur",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Akşam sekiz kırk",
@@ -64,7 +64,7 @@
   },
   {
     "Input": "On kırk beşe alarm kur",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "On kırk beş",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "On beş on beşe alarm kur",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "On beş on beş",
@@ -106,7 +106,7 @@
   },
   {
     "Input": "On beş otuza alarm kur",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "On beş otuz",
@@ -127,7 +127,7 @@
   },
   {
     "Input": "On ona alarm kur",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "On on",
@@ -148,7 +148,7 @@
   },
   {
     "Input": "Akşam on elli beşe alarm kur",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Akşam on elli beş",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Sabah 7'de döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah 7",
@@ -190,7 +190,7 @@
   },
   {
     "Input": "7'de döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7",
@@ -211,7 +211,7 @@
   },
   {
     "Input": "Yedide döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Yedi",
@@ -232,7 +232,7 @@
   },
   {
     "Input": "Saat 19'da döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat 19",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Saat 19:56'da döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat 19:56",
@@ -274,7 +274,7 @@
   },
   {
     "Input": "Saat 19:56:30'da döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat 19:56:30",
@@ -295,7 +295,7 @@
   },
   {
     "Input": "12:34'te döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "12:34",
@@ -316,7 +316,7 @@
   },
   {
     "Input": "12:34:25'te döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "12:34:25",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "Saat 7",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat 7",
@@ -358,7 +358,7 @@
   },
   {
     "Input": "Saat yedi",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat yedi",
@@ -379,7 +379,7 @@
   },
   {
     "Input": "Sabah 8",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah 8",
@@ -400,7 +400,7 @@
   },
   {
     "Input": "Akşam 8",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Akşam 8",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "Saat sekiz buçuk",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat sekiz buçuk",
@@ -442,7 +442,7 @@
   },
   {
     "Input": "Saat 8 buçuk",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat 8 buçuk",
@@ -463,7 +463,7 @@
   },
   {
     "Input": "Saat sekizi 30 geçiyor",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "saat sekizi 30 geçiyor",
@@ -484,7 +484,7 @@
   },
   {
     "Input": "Saat sekizi çeyrek geçiyor",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "saat sekizi çeyrek geçiyor",
@@ -505,7 +505,7 @@
   },
   {
     "Input": "Saat 9'u çeyrek geçiyor",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "saat 9'u çeyrek geçiyor",
@@ -526,7 +526,7 @@
   },
   {
     "Input": "Saat sekize üç dakika kala",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat sekize üç dakika kala",
@@ -547,7 +547,7 @@
   },
   {
     "Input": "Saat dördü üç geçiyor",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat dördü üç geçiyor",
@@ -568,7 +568,7 @@
   },
     {
     "Input": "Saat dörde çeyrek var",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat dörde çeyrek var",
@@ -589,7 +589,7 @@
   },
   {
     "Input": "Saat yedi buçuk",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat yedi buçuk",
@@ -610,7 +610,7 @@
   },
   {
     "Input": "Saat öğleden sonra yedi buçuk",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "öğleden sonra yedi buçuk",
@@ -631,7 +631,7 @@
   },
   {
     "Input": "Saat sabah yedi buçuk",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "sabah yedi buçuk",
@@ -652,7 +652,7 @@
   },
   {
     "Input": "Saat sabah 8'e çeyrek var",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "sabah 8'e çeyrek var",
@@ -673,7 +673,7 @@
   },
   {
     "Input": "Saat akşam sekizi yirmi geçiyor",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "akşam sekizi yirmi geçiyor",
@@ -694,7 +694,7 @@
   },
   {
     "Input": "Öğleden sonra 7'de döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğleden sonra 7",
@@ -715,7 +715,7 @@
   },
   {
     "Input": "Öğleden sonra 7:00'da döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğleden sonra 7:00",
@@ -736,7 +736,7 @@
   },
   {
     "Input": "Öğleden sonra 7:00:05'te döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğleden sonra 7:00:05'te",
@@ -757,7 +757,7 @@
   },
   {
     "Input": "Öğleden sonra saat yedide döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğleden sonra saat yedide",
@@ -778,7 +778,7 @@
   },
   {
     "Input": "Akşam yedi otuzda döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Akşam yedi otuzda",
@@ -799,7 +799,7 @@
   },
   {
     "Input": "Yedi otuz beşte döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Yedi otuz beş",
@@ -820,7 +820,7 @@
   },
   {
     "Input": "On bir yirmi döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "On bir yirmi",
@@ -841,7 +841,7 @@
   },
   {
     "Input": "Öğlen civarı döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğlen civarı",
@@ -862,7 +862,7 @@
   },
   {
     "Input": "Öğlen 12'de döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğlen 12",
@@ -883,7 +883,7 @@
   },
   {
     "Input": "11 civarı döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11 civarı",
@@ -904,7 +904,7 @@
   },
   {
     "Input": "15:40'ta döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "15:40",
@@ -925,7 +925,7 @@
   },
   {
     "Input": "11:40'ta döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11:40",
@@ -946,7 +946,7 @@
   },
   {
     "Input": "Gece yarısı",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Gece yarısı",
@@ -967,7 +967,7 @@
   },
   {
     "Input": "Sabah ortası",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah ortası",
@@ -988,7 +988,7 @@
   },
   {
     "Input": "Öğlen ortası",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğlen ortası",
@@ -1009,7 +1009,7 @@
   },
   {
     "Input": "Gün ortası",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Gün ortası",
@@ -1030,7 +1030,7 @@
   },
   {
     "Input": "Öğlen",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğlen",
@@ -1051,7 +1051,7 @@
   },
   {
     "Input": "12'de öğle yemeği vakti döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "12'de öğle yemeği vakti",
@@ -1072,7 +1072,7 @@
   },
   {
     "Input": "Gece yarısı 12'de döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Gece yarısı 12",
@@ -1093,7 +1093,7 @@
   },
   {
     "Input": "Gece 12'de döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Gece 12",
@@ -1114,7 +1114,7 @@
   },
   {
     "Input": "Gece yarısı saat 1'de döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Gece yarısı saat 1",
@@ -1135,7 +1135,7 @@
   },
   {
     "Input": "Saat 12'de öğle yemeği vakti döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat 12'de öğle yemeği vakti",
@@ -1156,7 +1156,7 @@
   },
   {
     "Input": "Saat 11'de öğle yemeği vakti döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat 11'de öğle yemeği vakti",
@@ -1177,7 +1177,7 @@
   },
   {
     "Input": "Saat 1'de öğle yemeği vakti döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Saat 1'de öğle yemeği vakti",
@@ -1198,7 +1198,7 @@
   },
   {
     "Input": "Öğle yemeği vakti saat 11'de döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğle yemeği vakti saat 11",
@@ -1219,7 +1219,7 @@
   },
   {
     "Input": "Akşam 19:56:13'te döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Akşam 19:56:13'te",
@@ -1240,7 +1240,7 @@
   },
   {
     "Input": "12:34:45'te döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "12:34:45",
@@ -1261,7 +1261,7 @@
   },
   {
     "Input": "Öğleden sonra 19:00:25'de döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğleden sonra 19:00:25'de",
@@ -1282,7 +1282,7 @@
   },
   {
     "Input": "Sabah yedi otuzda döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabah yedi otuzda",
@@ -1303,7 +1303,7 @@
   },
   {
     "Input": "On biri beş geçe döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "On biri beş geçe",
@@ -1324,7 +1324,7 @@
   },
   {
     "Input": "Beş otuza üç dakika kala döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Beş otuza üç dakika kala",
@@ -1345,7 +1345,7 @@
   },
   {
     "Input": "Beş otuzu üç dakika geçe döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Beş otuzu üç dakika geçe",
@@ -1366,7 +1366,7 @@
   },
   {
     "Input": "Akşam beş otuzda döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Akşam beş otuzda",
@@ -1387,7 +1387,7 @@
   },
   {
     "Input": "Beş otuzda akşam döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Beş otuzda akşam",
@@ -1408,7 +1408,7 @@
   },
   {
     "Input": "Öğlen döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğlen",
@@ -1429,7 +1429,7 @@
   },
   {
     "Input": "Öğle yemeği vakti saat 12'de döneceğim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Öğle yemeği vakti saat 12",

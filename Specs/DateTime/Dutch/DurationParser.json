@@ -22,7 +22,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben 3 dagen weg",
@@ -47,7 +47,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben 3,5 jaar weg",
@@ -72,7 +72,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben 3 u weg",
@@ -97,7 +97,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben 3 uur weg",
@@ -122,7 +122,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben 3 maanden weg",
@@ -147,7 +147,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben 3 minuten weg",
@@ -172,7 +172,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben 3 min weg",
@@ -197,7 +197,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben 123,45 sec weg",
@@ -222,7 +222,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben twee weken weg",
@@ -247,7 +247,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "I'k ben twintig min weg",
@@ -272,7 +272,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben vierentwintig uur weg",
@@ -297,7 +297,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben de hele dag weg",
@@ -322,7 +322,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben de hele week weg",
@@ -347,7 +347,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben de hele maand weg",
@@ -372,7 +372,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben het hele jaar weg",
@@ -397,7 +397,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben de volle dag weg",
@@ -422,7 +422,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben de volle week weg",
@@ -447,7 +447,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben de volle maand weg",
@@ -472,7 +472,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben het volle jaar weg",
@@ -497,7 +497,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben een uur weg",
@@ -522,7 +522,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "half jaar",
@@ -547,7 +547,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "een half jaar",
@@ -572,7 +572,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben anderhalf uur weg",
@@ -597,7 +597,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben anderhalve dag weg",
@@ -622,7 +622,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben een kwartier uur weg",
@@ -647,7 +647,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben een half uur weg",
@@ -672,7 +672,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben twee uur weg",
@@ -697,7 +697,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben tweeëneenhalf uur weg",
@@ -722,7 +722,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben 1 jaar, 1 maand en 21 dagen weg",
@@ -747,7 +747,7 @@
         "Length": 27
       }
     ],
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben 2 dagen en 1 maand weg",
@@ -772,7 +772,7 @@
         "Length": 18
       }
     ],
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "ik ben een week en drie dagen weg",
@@ -797,7 +797,7 @@
         "Length": 22
       }
     ],
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben een paar weken weg",
@@ -822,7 +822,7 @@
         "Length": 14
       }
     ],
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben een paar dagen weg.",
@@ -847,7 +847,7 @@
         "Length": 14
       }
     ],
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben minder dan een paar dagen weg.",
@@ -873,7 +873,7 @@
         "Length": 25
       }
     ],
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben meer dan een uur weg",
@@ -899,7 +899,7 @@
         "Length": 16
       }
     ],
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben nog een uur weg",
@@ -924,7 +924,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik bedacht me dat je nog een week weg bent",
@@ -949,7 +949,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Kunnen we nog een maand wachten?",
@@ -974,7 +974,7 @@
       }
     ],
     "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript, java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik vertrek voor 3u",
@@ -982,7 +982,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3u",
@@ -1007,7 +1007,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3,5jaar",
@@ -1032,7 +1032,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 u",
@@ -1057,7 +1057,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 uren",
@@ -1082,7 +1082,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 maanden",
@@ -1107,7 +1107,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 minuten",
@@ -1132,7 +1132,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 min",
@@ -1157,7 +1157,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "123,45 sec",
@@ -1182,7 +1182,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "twee weken",
@@ -1207,7 +1207,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "twintig minuten",
@@ -1232,7 +1232,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de hele dag",
@@ -1257,7 +1257,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de hele week",
@@ -1282,7 +1282,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de hele maand",
@@ -1307,7 +1307,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "het hele jaar",
@@ -1332,7 +1332,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de gehele dag",
@@ -1357,7 +1357,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de gehele week",
@@ -1382,7 +1382,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de gehele maand",
@@ -1407,7 +1407,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "het gehele jaar",
@@ -1432,7 +1432,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "een uur",
@@ -1457,7 +1457,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "gehele dag",
@@ -1482,7 +1482,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "30 minuten",
@@ -1507,7 +1507,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "anderhalf uur",
@@ -1532,7 +1532,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "halfuur",
@@ -1557,7 +1557,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "twee uren",
@@ -1582,7 +1582,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tweeënhalf uur",
@@ -1607,7 +1607,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1 jaar, 1 maand, 21 dagen",
@@ -1632,7 +1632,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2 dagen, 1 maand",
@@ -1657,7 +1657,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "een week en drie dagen",
@@ -1682,7 +1682,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "een aantal weken",
@@ -1707,7 +1707,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "een aantal dagen",
@@ -1732,7 +1732,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "minder dan een aantal dagen",
@@ -1758,7 +1758,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "meer dan een uur",
@@ -1784,7 +1784,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "nog een uur",
@@ -1809,7 +1809,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "nog een week",
@@ -1834,7 +1834,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "nog een werkdag",
@@ -1856,7 +1856,7 @@
   {
     "Input": "Ik vertrek voor twee decennia",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "twee decennia",
@@ -1878,7 +1878,7 @@
   {
     "Input": "Ik vertrek voor veertien dagen",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "veertien dagen",

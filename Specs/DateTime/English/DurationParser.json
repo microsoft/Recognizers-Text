@@ -993,7 +993,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1 year 1 month 21 days",
@@ -1017,7 +1017,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2 days 1 month",
@@ -1041,7 +1041,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "one week three days",
@@ -1065,7 +1065,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "couple of weeks",
@@ -1089,7 +1089,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "a couple of days",
@@ -1113,7 +1113,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "less than a couple of days",
@@ -1138,7 +1138,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "more than an hour",
@@ -1232,7 +1232,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "python, javascript",
     "Results": [
       {
         "Text": "another business day",
@@ -1253,7 +1253,7 @@
   },
   {
     "Input": "I'll leave for two decades.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "two decades",
@@ -1274,7 +1274,7 @@
   },
   {
     "Input": "I'll leave for a fortnight.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "a fortnight",

@@ -5,7 +5,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Bugün saat beşten yediye kadar",
@@ -32,7 +32,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "22/4/2016'da 5'ten 6'ya kadar",
@@ -59,7 +59,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "22 Nisan'da 5'ten 6'ya kadar",
@@ -86,7 +86,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1 Ocak'ta 5'ten 6'ya kadar ",
@@ -113,7 +113,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Yarın 15'den 16'ya kadar",
@@ -140,7 +140,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Yarın 3'ten 4'e kadar ",
@@ -167,7 +167,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Yarın saat yedi buçuktan 16'ya kadar",
@@ -194,7 +194,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Bugün saat 16'dan yarın 17'ye kadar",
@@ -221,7 +221,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "23/04/2016 saat 14:00'ten, 21-2-2016, 3:32'ye kadar",
@@ -248,7 +248,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Bugün saat 16 ile 17 arasında",
@@ -275,7 +275,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1 Ocak 2016 saat 16 ve bugün saat 17 arasında",
@@ -302,7 +302,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Bu gece",
@@ -329,7 +329,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Bu akşam",
@@ -356,7 +356,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Bu sabah",
@@ -383,7 +383,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Bu öğleden sonra",
@@ -410,7 +410,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Önümüzdeki gece",
@@ -437,7 +437,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Geçen gece",
@@ -464,7 +464,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Yarın gece",
@@ -491,7 +491,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Gelecek Pazartesi öğleden sonra",
@@ -518,7 +518,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Son 3 dakikada ",
@@ -545,7 +545,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Geçen 3 dakikada ",
@@ -572,7 +572,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Önceki 3 dakikada ",
@@ -599,7 +599,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Önümüzdeki 5 saat",
@@ -626,7 +626,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Son dakikada ",
@@ -653,7 +653,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Önümüzdeki saat",
@@ -680,7 +680,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Önümüzdeki birkaç saat ",
@@ -707,7 +707,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Salı sabahı",
@@ -734,7 +734,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "bu Salı sabahı",
@@ -761,7 +761,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Salı sabahı",
@@ -788,7 +788,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Salı öğleden sonra",
@@ -815,7 +815,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Salı akşamı",
@@ -842,7 +842,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Salı sabah erkenden",
@@ -869,7 +869,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Salı sabah geç saatte",
@@ -896,7 +896,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Salı öğleden sonra erken saatte ",
@@ -923,7 +923,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Salı öğleden sonra geç saatte ",
@@ -950,7 +950,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Salı akşamı erken saatte",
@@ -977,7 +977,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Salı akşamı geç saatte ",
@@ -1004,7 +1004,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Salı gecesi erken saatte",
@@ -1031,7 +1031,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Salı gecesi geç saatte",
@@ -1058,7 +1058,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Salı sabahı erkenden",
@@ -1085,7 +1085,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Salı sabahı geç saatte ",
@@ -1112,7 +1112,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Günün geri kalanı",
@@ -1139,7 +1139,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Bugünün geri kalanı",
@@ -1166,7 +1166,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Günümün geri kalanı",
@@ -1193,7 +1193,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "21/2/2016 saat 14:00'ten 23/04/2016 saat 3:32'ye kadar",
@@ -1220,7 +1220,7 @@
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Cuma günü 13 ile 16 arasında",
@@ -1247,7 +1247,7 @@
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "yarın sabah 8 ile 14 arası",
@@ -1274,7 +1274,7 @@
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "9 Aralık sabah 8 ile 14 arası",
@@ -1301,7 +1301,7 @@
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Bu cuma öğleden sonra ",
@@ -1328,7 +1328,7 @@
       "ReferenceDateTime": "2017-11-14T19:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Cuma öğleden sonra 13 ile 16 arası",
@@ -1355,7 +1355,7 @@
       "ReferenceDateTime": "2017-11-17T19:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "23/09/2018 saat 13'ten 16'ya kadar ",
@@ -1382,7 +1382,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Önümüzdeki 2 saat",
@@ -1409,7 +1409,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "15 saniye içinde",
@@ -1436,7 +1436,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5 dakika içinde",
@@ -1463,7 +1463,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5 saat içinde",
@@ -1490,7 +1490,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1 gün 5 saat içinde",
@@ -1517,7 +1517,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2 gün 1 saat 5 dakika 30 saniye içinde",
@@ -1544,7 +1544,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "önümüzdeki 2 gün 1 saat 5 dakika 30 saniye içinde",
@@ -1571,7 +1571,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Önümüzdeki 5 saat içinde",
@@ -1598,7 +1598,7 @@
       "ReferenceDateTime": "2018-04-19T08:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Pazartesi 8'den 9'a kadar",
@@ -1625,7 +1625,7 @@
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Pazartesi 12-4 arası",
@@ -1652,7 +1652,7 @@
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Pazartesi 11-4 arası",
@@ -1679,7 +1679,7 @@
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1/1/2015'de 10 ve 11:30 arası",
@@ -1706,7 +1706,7 @@
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10 ve 11:30 arasında 1/1/2015'de",
@@ -1733,7 +1733,7 @@
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1/1/2015'de 10:30'dan 3'e kadar",
@@ -1760,7 +1760,7 @@
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1/1/2015'de 3 ile 5 arasında ",
@@ -1787,7 +1787,7 @@
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1/1/2015'de 3:30'dan 5:55'e kadar",

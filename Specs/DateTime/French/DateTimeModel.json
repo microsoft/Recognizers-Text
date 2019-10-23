@@ -1571,7 +1571,7 @@
     "Context": {
       "ReferenceDateTime": "2019-03-14T16:12:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vendredi 30 novembre 2019 entre 12h00 et 14h00",
@@ -1596,7 +1596,7 @@
     "Context": {
       "ReferenceDateTime": "2019-03-14T16:12:00"
     },
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "lundi 24 décembre à 10h",
@@ -1764,7 +1764,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-    "NotSupported": "javascript,  java",
+    "NotSupported": "javascript, python,java",
     "Results": [
       {
         "Text": "3 ans",

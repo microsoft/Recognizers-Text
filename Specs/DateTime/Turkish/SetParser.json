@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2744475+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Haftalık",
@@ -28,7 +28,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2754476+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "iki haftada bir",
@@ -52,7 +52,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2779449+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Günlük",
@@ -76,7 +76,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2794445+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her gün",
@@ -100,7 +100,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2829445+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her ay",
@@ -124,7 +124,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2844439+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Yıllık",
@@ -148,7 +148,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2854444+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Senelik",
@@ -172,7 +172,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2909444+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her iki gün",
@@ -196,7 +196,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2959472+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her üç hafta",
@@ -220,7 +220,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3039501+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her gün saat 15",
@@ -244,7 +244,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3109498+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her 15/4",
@@ -268,7 +268,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3259514+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her Pazartesi",
@@ -292,7 +292,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3379507+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her Pazartesi saat 16",
@@ -316,7 +316,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3429518+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her sabah",
@@ -340,7 +340,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3609535+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her sabah saat 9",
@@ -364,7 +364,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3730732+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her öğleden sonra saat 16",
@@ -388,7 +388,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3840706+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her gece saat 21",
@@ -412,7 +412,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3930718+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her gece 21",
@@ -436,7 +436,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4170727+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Sabahları saat 9",
@@ -460,7 +460,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4295727+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Her Pazar saat 9",
@@ -484,7 +484,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.438575+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Pazar'ları saat 9",
@@ -508,7 +508,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4505726+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Pazar'ları saat 9",
@@ -532,7 +532,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4570731+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Pazartesi günleri",
@@ -556,7 +556,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4635727+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Pazar günleri",
@@ -580,7 +580,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4710739+03:00"
     },
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Pazar'ları",

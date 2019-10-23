@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "pasqua",
@@ -28,7 +28,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "giorno di natale",
@@ -52,7 +52,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la vigilia di capodanno",
@@ -76,7 +76,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "natale",
@@ -100,7 +100,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "capodanno cinese",
@@ -124,7 +124,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "giorno del ringraziamento",
@@ -148,7 +148,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "ringraziamento",
@@ -172,7 +172,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "festa del papà",
@@ -196,7 +196,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "capodanno cinese del prossimo anno",
@@ -220,7 +220,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "giorno del ringraziamento del 2010",
@@ -244,7 +244,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "festa del papà del 2015",

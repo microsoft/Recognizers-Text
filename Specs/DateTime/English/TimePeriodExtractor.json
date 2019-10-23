@@ -601,7 +601,7 @@
   },
   {
     "Input": "set up meeting between 10 and 11:30",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "between 10 and 11:30",
@@ -613,7 +613,7 @@
   },
   {
     "Input": "set up meeting between 10:10am and 12:50",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "between 10:10am and 12:50",
@@ -625,7 +625,7 @@
   },
   {
     "Input": "set up meeting between 10:10pm and 3",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "between 10:10pm and 3",
@@ -637,7 +637,7 @@
   },
   {
     "Input": "set up meeting from 10:10pm to 10",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "from 10:10pm to 10",
@@ -649,7 +649,7 @@
   },
   {
     "Input": "set up meeting from 10:30am to 23",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "from 10:30am to 23",
@@ -661,7 +661,7 @@
   },
   {
     "Input": "Don't call me in the business hours",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "in the business hours",

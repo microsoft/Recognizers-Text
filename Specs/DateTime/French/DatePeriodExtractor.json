@@ -210,17 +210,17 @@
   },
   {
     "Input": "Je serai dehors dans 3 annees",
-    "NotSupported": "javascript, java",
+    "NotSupported": "python, javascript, java",
     "Results": []
   },
   {
     "Input": "Je serai dehors dans 3 semaines",
-    "NotSupported": "javascript, java",
+    "NotSupported": "python, javascript, java",
     "Results": []
   },
   {
     "Input": "Je serai dehors dans 3 mois",
-    "NotSupported": "javascript, java",
+    "NotSupported": "python, javascript, java",
     "Results": [
       {
         "Text": "mois",

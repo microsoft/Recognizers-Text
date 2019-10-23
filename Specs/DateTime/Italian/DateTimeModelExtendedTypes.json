@@ -5,7 +5,7 @@
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la prossima settimana lun alle 9 am",
@@ -43,7 +43,7 @@
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la prossima settimana lun",
@@ -81,7 +81,7 @@
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "di mattina alle 9",
@@ -119,7 +119,7 @@
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il prossimo lunedì 1-3 pm",
@@ -159,7 +159,7 @@
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "lunedì 8-9am",
@@ -211,7 +211,7 @@
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la prossima settimana martedì",
@@ -249,7 +249,7 @@
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la prossima settimana martedì alle 9 am",

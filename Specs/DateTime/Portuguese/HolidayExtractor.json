@@ -2,7 +2,7 @@
   {
     "TestType": "BasicTest",
     "Input": "Voltarei pro natal",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Start": 13,
@@ -15,7 +15,7 @@
   {
     "TestType": "BasicTest",
     "Input": "Estarei de volta pro natal do próximo ano",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Start": 21,
@@ -28,7 +28,7 @@
   {
     "TestType": "BasicTest",
     "Input": "Voltarei no dia de ação de graças",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Start": 12,
@@ -41,7 +41,7 @@
   {
     "TestType": "BasicTest",
     "Input": "Voltarei no dia dos pais",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Start": 12,
@@ -54,7 +54,7 @@
   {
     "TestType": "BasicTest",
     "Input": "Voltarei no dia de são francisco deste ano",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Start": 12,
@@ -67,7 +67,7 @@
   {
     "TestType": "BasicTest",
     "Input": "Voltarei no dia das mães de 2016",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Start": 12,
@@ -80,7 +80,7 @@
   {
     "TestType": "BasicTest",
     "Input": "Voltarei no dia das mães 2016",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Start": 12,
@@ -93,7 +93,7 @@
   {
     "TestType": "BasicTest",
     "Input": "Voltarei no dia do trabalho",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Start": 12,

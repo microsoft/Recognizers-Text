@@ -1,7 +1,7 @@
 [
   {
     "Input": "das sind 2 Tage",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2 Tage",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "es ist 4 Uhr",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "4 Uhr",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Das ganze findet dann am Montag um 4 Uhr statt",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Montag um 4 Uhr",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Wie sieht denn dieser Tag so aus?",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dieser Tag",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "letzte Woche",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "letzte Woche",
@@ -62,7 +62,7 @@
   {
     "Input": "Das meeting geht Morgen von 12 bis 14 Uhr.",
     "Comment": "Works on the console, fails in the test.",
-    "NotSupported": "dotnet, javascript",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "morgen von 12 bis 14 Uhr",
@@ -74,7 +74,7 @@
   },
   {
     "Input": "Verschieb mal das meeting vom 22. August auf den 23. August",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "22. August",
@@ -92,7 +92,7 @@
   },
   {
     "Input": "06/06 12:15",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "06/06 12:15",
@@ -104,7 +104,7 @@
   },
   {
     "Input": "6.6. 12:15",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "6.6. 12:15",
@@ -116,7 +116,7 @@
   },
   {
     "Input": "06/06/12 15:15",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "06/06/12 15:15",
@@ -128,7 +128,7 @@
   },
   {
     "Input": "6.6.12 15:15",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "6.6.12 15:15",
@@ -140,7 +140,7 @@
   },
   {
     "Input": "29. Mai",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "29. Mai",
@@ -152,7 +152,7 @@
   },
   {
     "Input": "Ich wurde im August geboren",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "August",
@@ -164,7 +164,7 @@
   },
   {
     "Input": "Das nächste meeting wird am 16. März 2017 sein. Wie wäre es denn mit einer Diskussionsrunde heute um 2 Uhr Nachmittags?",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "16. März 2017",

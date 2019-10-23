@@ -1,7 +1,7 @@
 [
   {
     "Input": "3 saatliğine ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 saat",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "3 günlüğüne ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 gün",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "3,5 yıllığına ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3,5 yıl",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "3 aylığına ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 ay",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "3 dakikalığına ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 dakika",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "3,5 saniyeliğine ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3,5 saniye",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "123,45 saniyeliğine ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "123,45 saniye",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "iki haftalığına ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "iki hafta",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "yirmi dakikalığına ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "yirmi dakika",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "yirmi dört saatliğine ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "yirmi dört saat",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "tüm gün için ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tüm gün",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Tüm hafta için ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Tüm hafta",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Tüm ay için ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Tüm ay",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Bütün yıl için ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Bütün yıl",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Bir yıllığına ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Bir yıl",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "Yarım yıl için ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Yarım yıl",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "30 dakikalığına ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "30 dakika",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "Yarım saatliğine ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Yarım saat",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "Bir buçuk saatliğine ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Bir buçuk saat",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "Bir gün içinde",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Bir gün",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "Bir saat için",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Bir saat",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Bir ay için",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Bir ay",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "Birkaç saatliğine ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Birkaç saat",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "Birkaç dakikalığına ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Birkaç dakika",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "Birkaç günlüğüne ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Birkaç gün",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "1 yıl 1 ay 21 günlüğüne ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1 yıl 1 ay 21 gün",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "2 gün 1 aylığına ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2 gün 1 ay",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "Diğer hafta olmadığını fark ettim",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Diğer hafta",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "Diğer ayı bekleyebilir miyiz?",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Diğer ay",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "Bir diğer iş gününü bekleyebilir miyiz?",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Bir diğer iş günü",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "Yarım iş günü için ayrılacağım",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Yarım iş günü",

@@ -1,7 +1,7 @@
 [
   {
     "Input": "Ich werde heute von 5 bis 7 Uhr weg sein",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "heute von 5 bis 7 Uhr",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Ich werde heute von 5 Uhr bis 7 Uhr weg sein",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "heute von 5 Uhr bis 7 Uhr",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Ich werde heute von 5 - 7 Uhr weg sein",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "heute von 5 - 7 Uhr",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Das geht nächsten Sonntag von 8 bis 16 Uhr.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten Sonntag von 8 bis 16 Uhr",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Das Projekt ging vom 7. April 2017 um 4 Uhr bis heute um 4 Uhr.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vom 7. April 2017 um 4 Uhr bis heute um 4 Uhr",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Das Projekt ging vom 7. April 2017 um 4 bis heute um 4.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vom 7. April 2017 um 4 bis heute um 4",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "Das Projekt ging vom 7. April 2017 um 4 Uhr bis zum 3. Juli 2018 um 4 Uhr.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vom 7. April 2017 um 4 Uhr bis zum 3. Juli 2018 um 4 Uhr",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Das Projekt ging vom 7/3/2017 15:00 bis zum 8/4/2017 16:30.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vom 7/3/2017 15:00 bis zum 8/4/2017 16:30",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Das Projekt ging vom 7.3.2017 15:00 bis zum 8.4.2017 16:30.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vom 7.3.2017 15:00 bis zum 8.4.2017 16:30",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "Das Projekt ging vom 7.3.2017 15 Uhr bis zum 8.4.2017 16 Uhr.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vom 7.3.2017 15 Uhr bis zum 8.4.2017 16 Uhr",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Das findet heute Nacht statt.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "heute Nacht",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Ich gehe innerhalb der nächsten 5 Stunden nach Hause.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten 5 Stunden",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Ich bin vor einer halben Stunde nach Hause gekommen.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vor einer halben Stunde",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Ich werde wohl irgendwann diesen Nachmittag zurück gehen.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Nachmittag",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Ich werde wohl irgendwann heute Nachmittag zurück kommen.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "heute Nachmittag",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "Ich komme heute zurück",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "heute",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "Diese Nacht",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Diese Nacht",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "Diesen Abend",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Diesen Abend",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "Diesen Morgen",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Diesen Morgen",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "Diesen Nachmittag",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Diesen Nachmittag",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "Dieser Nachmittag",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Dieser Nachmittag",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Die nächste Nacht",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächste Nacht",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "In der letzten Nacht",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "letzten Nacht",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "Morgen Nacht",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Morgen Nacht",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "nächsten Montag Nachmittag",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten Montag Nachmittag",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "nächste Montag Nachmittag",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächste Montag Nachmittag",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "Am 5. Mai in der Nacht",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "5. Mai in der Nacht",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "in den letzten 3 Minuten",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "letzten 3 Minuten",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "in den nächsten 3 Minuten",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten 3 Minuten",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "in den vorherigen 3 Minuten",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vorherigen 3 Minuten",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "in den nächsten 3 Stunden",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten 3 Stunden",

@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "dom",
@@ -79,7 +79,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "dom",
@@ -154,7 +154,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "amanhã",
@@ -209,7 +209,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript,python",
     "Results": []
   },
   {
@@ -217,7 +217,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript,python",
     "Results": []
   },
   {
@@ -225,7 +225,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript,python",
     "Results": []
   },
   {
@@ -233,7 +233,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript,python",
     "Results": []
   },
   {
@@ -241,7 +241,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript,python",
     "Results": []
   },
   {
@@ -249,7 +249,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript,python",
     "Results": []
   },
   {
@@ -257,7 +257,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript,python",
     "Results": []
   },
   {
@@ -265,7 +265,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript,python",
     "Results": []
   },
   {
@@ -273,7 +273,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "2000",
@@ -298,7 +298,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript,python",
     "Results": []
   },
   {
@@ -306,7 +306,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-05T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "terca-feira",
@@ -355,7 +355,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:01:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "terça",

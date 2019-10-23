@@ -2,7 +2,7 @@
   {
     "Input": "나는 오늘 5시부터 7시까지 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 5시부터 7시까지",
@@ -15,7 +15,7 @@
   {
     "Input": "나는 내일 5시부터 7시까지 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "내일 5시부터 7시까지",
@@ -28,7 +28,7 @@
   {
     "Input": "나는 다음 주 일요일 5시부터 6시까지 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 일요일 5시부터 6시까지",
@@ -41,7 +41,7 @@
   {
     "Input": "나는 다음 주 일요일 오후 5시부터 6시까지 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 일요일 오후 5시부터 6시까지 ",
@@ -54,7 +54,7 @@
   {
     "Input": "나는 오늘 오후 4시부터 5시까지 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 오후 4시부터 5시까지",
@@ -67,7 +67,7 @@
   {
     "Input": "나는 오늘 오후 4시부터 내일 오후 5시까지 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 오후 4시부터 내일 오후 5시까지",
@@ -80,7 +80,7 @@
   {
     "Input": "나는 내일 오후 4시부터 5시까지 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "내일 오후 4시부터 5시까지 ",
@@ -93,7 +93,7 @@
   {
     "Input": "나는 2017년 6월 6일 오후 4시부터 5시까지 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": " 2017년 6월 6일 오후 4시부터 5시까지 ",
@@ -106,7 +106,7 @@
   {
     "Input": "나는 2018년 5월 5일 오후 4시부터 5시까지 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": " 2018년 5월 5일 오후 4시부터 5시까지",
@@ -119,7 +119,7 @@
   {
     "Input": "나는 2018년 5월 5일  4시부터 5시까지 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2018년 5월 5일  4시부터 5시까지",
@@ -132,7 +132,7 @@
   {
     "Input": "나는 2016년 1월 1일 오후 4시부터 오늘 오후 5시까지 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": " 2016년 1월 1일 오후 4시부터 오늘 오후 5시까지 ",
@@ -145,7 +145,7 @@
   {
     "Input": "나는 2016년 2월 21일 오후 2시부터 2016년 4월 23일 3시 32분까지 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016년 2월 21일 오후 2시부터 2016년 4월 23일 3시 32분까지",
@@ -158,7 +158,7 @@
   {
     "Input": "나는 오늘 오후 4시부터 다음 주 수요일 5시까지 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 오후 4시부터 다음 주 수요일 5시까지",
@@ -171,7 +171,7 @@
   {
     "Input": "나는 오늘 오후 4시와 5시 사이에 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 오후 4시와 5시 사이에 ",
@@ -184,7 +184,7 @@
   {
     "Input": "나는 2016년 1월 1일 오후 4시와 오늘 오후 5시 사이에 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": " 2016년 1월 1일 오후 4시와 오늘 오후 5시 사이에 ",
@@ -197,7 +197,7 @@
   {
     "Input": "나는 오늘 밤에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 밤",
@@ -210,7 +210,7 @@
   {
     "Input": "나는 오늘 저녁에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 저녁",
@@ -223,7 +223,7 @@
   {
     "Input": "나는 오늘 아침에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 아침",
@@ -236,7 +236,7 @@
   {
     "Input": "나는 오늘 오후에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 오후",
@@ -249,7 +249,7 @@
   {
     "Input": "나는 그 다음 날 저녁에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "그 다음 날 저녁",
@@ -262,7 +262,7 @@
   {
     "Input": "나는 어제 저녁에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "어제 저녁",
@@ -275,7 +275,7 @@
   {
     "Input": "나는 내일 저녁에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "내일 저녁",
@@ -288,7 +288,7 @@
   {
     "Input": "나는 다음 주 월요일 오후에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 월요일 오후",
@@ -301,7 +301,7 @@
   {
     "Input": "나는 5월 5일 저녁에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5월 5일 저녁",
@@ -314,7 +314,7 @@
   {
     "Input": "나는 지난 3분에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "지난 3분",
@@ -327,7 +327,7 @@
   {
     "Input": "나는 앞으로 5시간에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "앞으로 5시간",
@@ -340,7 +340,7 @@
   {
     "Input": "나는 마지막 순간에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "마지막 순간",
@@ -353,7 +353,7 @@
   {
     "Input": "나는 다음 시간에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 시간",
@@ -366,7 +366,7 @@
   {
     "Input": "나는 지난 몇 분에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "지난 몇 분",
@@ -379,7 +379,7 @@
   {
     "Input": "나는 화요일 오전에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "화요일 오전에",
@@ -392,7 +392,7 @@
   {
     "Input": "나는 화요일 오후에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "화요일 오후에",
@@ -405,7 +405,7 @@
   {
     "Input": "나는 화요일 저녁에 돌아갈 겁니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "화요일 저녁에",
@@ -418,7 +418,7 @@
   {
     "Input": "화요일 이른 아침에 만나자. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "화요일 이른 아침에",
@@ -431,7 +431,7 @@
   {
     "Input": "화요일 늦은 아침에 만나자. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "화요일 늦은 아침에",
@@ -444,7 +444,7 @@
   {
     "Input": "화요일 이른 오후에 만나자. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "화요일 이른 오후에",
@@ -457,7 +457,7 @@
   {
     "Input": "화요일 늦은 오후에 만나자. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "화요일 늦은 오후에",
@@ -470,7 +470,7 @@
   {
     "Input": "화요일 이른 저녁에 만나자. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "화요일 이른 저녁에",
@@ -483,7 +483,7 @@
   {
     "Input": "화요일 늦은 저녁에 만나자. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "화요일 늦은 저녁에",
@@ -496,7 +496,7 @@
   {
     "Input": "화요일 이른 밤에 만나자. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "화요일 이른 밤에",
@@ -509,7 +509,7 @@
   {
     "Input": "화요일 늦은 밤에 만나자. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "화요일 늦은 밤에",
@@ -522,7 +522,7 @@
   {
     "Input": "나는 남은 하루 내내 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "남은 하루",
@@ -535,7 +535,7 @@
   {
     "Input": "나는 오늘 남은 하루 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 남은 하루 ",
@@ -548,7 +548,7 @@
   {
     "Input": "나는 남은 하루 자리를 비울 예정입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "남은 하루",
@@ -561,7 +561,7 @@
   {
     "Input": "코르타나, 금요일 오후 1시부터 4시까지 웨인과 비즈니스 미팅을 위해 스카이프 일정을 계획해 줘.",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "금요일 오후 1시부터 4시까지",
@@ -574,7 +574,7 @@
   {
     "Input": "내일 오전 8시부터 오후 2시까지 우리의 일정을 계획해 줄 수 있니?",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오전 8시부터 오후 2시까지",
@@ -587,7 +587,7 @@
   {
     "Input": "12월 9일 오전 8시부터 오후 2시까지 우리의 일정을 계획해 줄 수 있니?",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "12월 9일 오전 8시부터 오후 2시까지 ",
@@ -600,7 +600,7 @@
   {
     "Input": "안녕 코르타나, 제니퍼와 스카이프 회의 일정을 잡아 줘. 이번 금요일 오후에 30분간의 회의가 필요해.",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이번 금요일 오후에",
@@ -613,7 +613,7 @@
   {
     "Input": "2015년 9월 23일 오후 1시부터 4시까지 일정을 잡아주시겠습니까?",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년 9월 23일 오후 1시부터 4시까지",
@@ -626,7 +626,7 @@
   {
     "Input": "2015년 9월 23일 오후 1시 30분부터 4시까지 일정을 잡아주시겠습니까?",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년 9월 23일 오후 1시 30분부터 4시까지",
@@ -639,7 +639,7 @@
   {
     "Input": "이것은 앞으로 2시간 동안 발생할 것입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "앞으로 2시간 ",
@@ -652,7 +652,7 @@
   {
     "Input": "이것은 2015년 1월 1일 10시에서 11시 30분 사이에 발생할 것입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년 1월 1일 10시에서 11시 30분 사이에 ",
@@ -665,7 +665,7 @@
   {
     "Input": "이것은 2015년 1월 1일 10시 30분부터 3시까지 발생할 것입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": " 2015년 1월 1일 10시 30분부터 3시까지",
@@ -678,7 +678,7 @@
   {
     "Input": "이것은 2015년 1월 1일 3시에서 5시 사이에 발생할 것입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년 1월 1일 3시에서 5시 사이에",
@@ -691,7 +691,7 @@
   {
     "Input": "이것은 2015년 1월 1일 3시 30분부터 5시 55분까지 발생할 것입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": " 2015년 1월 1일 3시 30분부터 5시 55분까지",
@@ -704,7 +704,7 @@
   {
     "Input": "이것은 2015년 1월 1일 2시 이후에 발생할 것입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015년 1월 1일 2시 이후에",
@@ -717,7 +717,7 @@
   {
     "Input": "이것은 오늘 오후 4시 이전에 발생할 것입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘 오후 4시 이전에",
@@ -730,7 +730,7 @@
   {
     "Input": "이것은 다음 주 수요일 오전 10시 이후에 발생할 것입니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 수요일 오전 10시 이후에",
@@ -743,7 +743,7 @@
   {
     "Input": "이것은 지난 화요일 오후 2시에 발생하였습니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "지난 화요일 오후 2시에",
@@ -756,7 +756,7 @@
   {
     "Input": "2월 1일 6시에 시작하자. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2월 1일 6시에",
@@ -769,7 +769,7 @@
   {
     "Input": "이것은 다음 주 2시 이후에 발생하였습니다. ",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   }
 ]

@@ -277,7 +277,7 @@
   {
     "Input": "Nos vemos en la mañana",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "en la mañana",
@@ -301,7 +301,7 @@
   {
     "Input": "Nos vemos en la madrugada",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "en la madrugada",
@@ -314,7 +314,7 @@
   {
     "Input": "Estaré afuera de 5 a 6 pm",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 5 a 6 pm",
@@ -327,7 +327,7 @@
   {
     "Input": "Estaré afuera de 5 a 6 p. m.",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 5 a 5 p. m.",
@@ -340,7 +340,7 @@
   {
     "Input": "Estaré afuera de las 5 a las siete de la mañana",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 5 a las siete de la mañana",
@@ -353,7 +353,7 @@
   {
     "Input": "Estaré afuera de las 5 a las 6 pm",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 5 a las 6 pm",
@@ -366,7 +366,7 @@
   {
     "Input": "Estaré afuera entre 5 y 6 p. m.",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre 5 y 6 p. m.",
@@ -379,7 +379,7 @@
   {
     "Input": "Estaré afuera entre 5 pm y 6 pm",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre 5 pm y 6 pm",
@@ -392,7 +392,7 @@
   {
     "Input": "Estaré afuera entre las 5 y las 6 de la tarde",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre las 5 y las 6 de la tarde",
@@ -405,7 +405,7 @@
   {
     "Input": "Estaré afuera desde 4 pm hasta 5 pm",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde 4 pm hasta 5 pm",
@@ -418,7 +418,7 @@
   {
     "Input": "Estaré afuera desde las 4 hasta las 5 de la tarde",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 4 hasta las 5 de la tarde",
@@ -431,7 +431,7 @@
   {
     "Input": "Estaré afuera desde las 4 hasta las 5 p. m.",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 4 hasta las 5 p. m.",
@@ -444,7 +444,7 @@
   {
     "Input": "Estaré afuera de 4:00 a 5 pm",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 4:00 a 5 pm",
@@ -457,7 +457,7 @@
   {
     "Input": "Estaré afuera desde 4:00 hasta 5 p. m.",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde 4:00 hasta 5 p. m.",
@@ -470,7 +470,7 @@
   {
     "Input": "Estaré afuera de 4:00 a las 7",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 4:00 a las 7",
@@ -483,7 +483,7 @@
   {
     "Input": "Estaré afuera desde las 3 pm hasta las siete y media",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 3 pm hasta las siete y media",
@@ -496,7 +496,7 @@
   {
     "Input": "Estaré afuera 4 pm-5 pm",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "4 pm-5 pm",
@@ -509,7 +509,7 @@
   {
     "Input": "Estaré afuera 4 pm - 5 pm",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "4 pm - 5 pm",
@@ -522,7 +522,7 @@
   {
     "Input": "Estaré afuera de las tres menos 20 a las ocho de la noche",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las tres menos 20 a las ocho de la noche",
@@ -535,7 +535,7 @@
   {
     "Input": "Estaré afuera entre las 4 pm y las 5 pm",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre las 4 pm y las 5 pm",
@@ -548,7 +548,7 @@
   {
     "Input": "Estaré afuera de 4 p. m. a siete y media",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 4 p. m. a siete y media",
@@ -561,7 +561,7 @@
   {
     "Input": "Estaré afuera de las 3 de la mañana a las 5 pm",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 3 de la mañana a las 5 pm",
@@ -574,7 +574,7 @@
   {
     "Input": "Estaré afuera desde las 3 de la mañana hasta las cinco de la tarde",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 3 de la mañana hasta las cinco de la tarde",
@@ -587,7 +587,7 @@
   {
     "Input": "Estaré afuera entre las 4 pm y las cinco y media",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre las 4 pm y las cinco y media",
@@ -600,7 +600,7 @@
   {
     "Input": "Estaré afuera entre las 3 de la mañana y las 5 pm",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre las 3 de la mañana y las 5 pm",
@@ -613,7 +613,7 @@
   {
     "Input": "Nos vemos por la mañana.",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "por la mañana",
@@ -626,7 +626,7 @@
   {
     "Input": "Nos vemos en la mañana.",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "por la mañana",
@@ -639,7 +639,7 @@
   {
     "Input": "Nos vemos por la tarde",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "por la tarde",
@@ -652,7 +652,7 @@
   {
     "Input": "Nos vemos por la noche",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "por la noche",
@@ -665,7 +665,7 @@
   {
     "Input": "Nos vemos a primeras horas de la mañana",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "primeras horas de la mañana",
@@ -678,7 +678,7 @@
   {
     "Input": "Nos vemos a últimas horas de la mañana",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "últimas horas de la mañana",
@@ -691,7 +691,7 @@
   {
     "Input": "Nos vemos a primeras horas de la tarde",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "primeras horas de la tarde",
@@ -704,7 +704,7 @@
   {
     "Input": "Nos vemos a últimas horas de la tarde",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "últimas horas de la tarde",
@@ -717,7 +717,7 @@
   {
     "Input": "Nos vemos a primeras horas de la noche",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "primeras horas de la noche",
@@ -730,7 +730,7 @@
   {
     "Input": "Nos vemos a últimas horas de la noche",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "últimas horas de la noche",
@@ -743,7 +743,7 @@
   {
     "Input": "Nos vemos a altas horas de la noche",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "altas horas de la noche",
@@ -756,7 +756,7 @@
   {
     "Input": "programa una reunión desde dos hasta cinco pm",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde dos hasta cinco pm",
@@ -769,7 +769,7 @@
   {
     "Input": "fiesta en la casa de Jean de las 6 a las 11 pm",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 6 a las 11 pm",
@@ -782,7 +782,7 @@
   {
     "Input": "programa una reunión de 14:00 a 16:30",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 14:00 a 16:30",
@@ -795,7 +795,7 @@
   {
     "Input": "programa una reunión desde 2:00 hasta 5:00 p. m.",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde 2:00 hasta 5:00 p. m.",
@@ -808,7 +808,7 @@
   {
     "Input": "programa una reunión de 1 pm a 4",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 1 pm a 4",
@@ -821,7 +821,7 @@
   {
     "Input": "programa una reunión de 1 a 4 p. m.",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 1 a 4 p. m.",
@@ -834,7 +834,7 @@
   {
     "Input": "programa una reunión desde las 13 h hasta las 16 h",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 13 h hasta las 16 h",
@@ -847,7 +847,7 @@
   {
     "Input": "programa una reunión de las 1 p. m. a las 4",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 1 p. m. a las 4",
@@ -860,7 +860,7 @@
   {
     "Input": "programa una reunión desde 1:30 pm hasta 4:00!",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde 1:30 pm hasta 4:00",
@@ -873,13 +873,13 @@
   {
     "Input": "programa una reunión desde las 1:30 hasta las 4 personas",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": []
   },
   {
     "Input": "Hola Cortana- Programa una llamada de skype con Jennifer.  Necesito tener una reunión en la tarde, este viernes ya me marcharé.",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "en la tarde",
@@ -892,7 +892,7 @@
   {
     "Input": "Hola Cortana- Programa una llamada de skype con Jennifer.  Necesito tener una reunión este viernes, en la tarde ya me marcharé.",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "en la tarde",
@@ -905,7 +905,7 @@
   {
     "Input": "programa una reunión de las 1:30 a las 3:30",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 1:30 a las 3:30",
@@ -918,7 +918,7 @@
   {
     "Input": "programa una reunión de 1:30-3:30",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 1:30-3:30",
@@ -931,7 +931,7 @@
   {
     "Input": "programa una reunión de 1.30-3.30",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 1.30-3.30",
@@ -944,7 +944,7 @@
   {
     "Input": "programa una reunión desde las 1:30 pm hasta las 3:30",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 1:30 pm hasta las 3:30",
@@ -957,7 +957,7 @@
   {
     "Input": "programa una reunión de 1:30 pm a 3:30 pm",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 1:30 pm a 3:30 pm",
@@ -970,7 +970,7 @@
   {
     "Input": "programa una reunión de 1:30-3:30 p. m.",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 1:30-3:30 p. m.",
@@ -983,7 +983,7 @@
   {
     "Input": "programa una reunión de 1.30-3.30 pm",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 1.30-3.30 pm",
@@ -996,7 +996,7 @@
   {
     "Input": "programa una reunión de las 1 a las 3:30",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 1 a las 3:30",
@@ -1009,7 +1009,7 @@
   {
     "Input": "programa una reunión de 1:30 a 3",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 1:30 a 3",
@@ -1022,7 +1022,7 @@
   {
     "Input": "programa una reunión entre las 10 y las 11:30",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre las 10 y las 11:30",
@@ -1035,7 +1035,7 @@
   {
     "Input": "programa una reunión entre 10:10 a. m. y 12:50",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre 10:10 a. m. y 12:50",
@@ -1048,7 +1048,7 @@
   {
     "Input": "programa una reunión entre las 10:10 pm y las 3",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre las 10:10 pm y las 3",
@@ -1061,7 +1061,7 @@
   {
     "Input": "programa una reunión de las 10:10 pm a las 10",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 10:10 pm a las 10",
@@ -1074,7 +1074,7 @@
   {
     "Input": "programa una reunión desde las 10:30 a. m. hasta las 23",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 10:30 a. m. hasta las 23",
@@ -1087,7 +1087,7 @@
   {
     "Input": "programa una reunión de las 10:30 h a las 23 h",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 10:30 h a las 23 h",
@@ -1100,7 +1100,7 @@
   {
     "Input": "programa una reunión de las 10.30 h a las 23.00 h",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 10.30 h a las 23.00 h",
@@ -1113,7 +1113,7 @@
   {
     "Input": "No me llames en horas laborales",
     "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "horas laborales",

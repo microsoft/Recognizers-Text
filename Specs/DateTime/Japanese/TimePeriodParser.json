@@ -5,7 +5,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後5時から6時まで",
@@ -32,7 +32,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前5時から7時まで",
@@ -59,7 +59,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後5時から6時の間",
@@ -86,7 +86,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後5時から午後6時の間",
@@ -113,7 +113,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前1時から午後5時まで",
@@ -140,7 +140,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後4時から午後5時まで",
@@ -167,7 +167,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後4時から5時まで",
@@ -194,7 +194,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "4時から7時まで",
@@ -221,7 +221,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前3時から午後5時まで",
@@ -248,7 +248,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前3時から午後5時の間",
@@ -276,7 +276,7 @@
     },
     "Comment": "'今日の' shouldn't be annotated by TimePeriodParser",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後4時から午後5時の間",
@@ -303,7 +303,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前中",
@@ -330,7 +330,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後",
@@ -357,7 +357,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "夜に",
@@ -384,7 +384,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "早朝に",
@@ -411,7 +411,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "昼前に",
@@ -438,7 +438,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "早朝に",
@@ -465,7 +465,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "昼すぎに",
@@ -492,7 +492,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "夕方前に",
@@ -519,7 +519,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "夕方に",
@@ -547,7 +547,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "深夜に",
@@ -574,7 +574,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後1時から4時まで",
@@ -601,7 +601,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後1時30分から4時まで",
@@ -628,7 +628,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前中",
@@ -655,7 +655,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前1時30分から3時まで",
@@ -682,7 +682,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前11時から3時まで",
@@ -709,7 +709,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後11時から3時まで",
@@ -736,7 +736,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後11時1分から11時まで",
@@ -763,7 +763,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前11時1分から11時まで",
@@ -790,7 +790,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前11時から11時50分まで",
@@ -817,7 +817,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後1時30分から3時30分まで",
@@ -844,7 +844,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後1時30分から午後3時30分まで",
@@ -871,7 +871,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後3時から午後3時30分まで",
@@ -898,7 +898,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前0時1分から午後1時まで",
@@ -925,7 +925,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前0時1分から1時まで",
@@ -952,7 +952,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3時から3時30分まで",
@@ -979,7 +979,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1時30分から3時まで",
@@ -1006,7 +1006,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後1時30分から3時まで",
@@ -1033,7 +1033,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11時から午後3時まで",
@@ -1060,7 +1060,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11時から午前3時まで",
@@ -1087,7 +1087,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前10時から11時まで",
@@ -1114,7 +1114,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "23時から午前3時まで",
@@ -1141,7 +1141,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "23時から午後3時まで",
@@ -1168,7 +1168,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10時から11時30分の間",
@@ -1195,7 +1195,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前10時10分から12時50分の間",
@@ -1222,7 +1222,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後10時10分から3時の間",
@@ -1249,7 +1249,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後10時10分から10時まで",
@@ -1276,7 +1276,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前10時半から23時まで",
@@ -1303,7 +1303,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "営業時間内に",

@@ -5,7 +5,7 @@
       "ReferenceDateTime": "2018-02-08T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la settimana del 10 aprile",
@@ -37,7 +37,7 @@
       "ReferenceDateTime": "2018-02-08T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "la settimana del 23 luglio",
@@ -69,7 +69,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": []
   },
   {
@@ -78,7 +78,7 @@
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "domani alle 3",
@@ -101,7 +101,7 @@
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "alle tre di domani",
@@ -124,7 +124,7 @@
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "ieri alle 12",
@@ -147,7 +147,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "prima delle 4",
@@ -171,7 +171,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "dopo le tre",
@@ -195,7 +195,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,",
+    "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "non più tardi delle 4",

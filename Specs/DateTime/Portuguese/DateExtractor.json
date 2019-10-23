@@ -1,7 +1,7 @@
 [
   {
     "Input": "Voltarei no 15",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Voltarei em 22 de Abril",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "22 de Abril",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Voltarei em 1-Jan",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1-Jan",
@@ -37,17 +37,17 @@
   },
   {
     "Input": "nas ultimas 3 semanas",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
     "Input": "nas 3 semanas passadas",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
     "Input": "Voltarei em 1/Jan",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1/Jan",
@@ -59,7 +59,7 @@
   },
   {
     "Input": "Voltarei no 2 de Outubro",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2 de Outubro",
@@ -71,7 +71,7 @@
   },
   {
     "Input": "Voltarei em 12 de janeiro de 2016",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "12 de janeiro de 2016",
@@ -83,7 +83,7 @@
   },
   {
     "Input": "Voltarei no 12 de Janeiro de 2016",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "12 de Janeiro de 2016",
@@ -95,7 +95,7 @@
   },
   {
     "Input": "Voltarei na segunda-feira 12 de janeiro de 2016",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "segunda-feira 12 de janeiro de 2016",
@@ -107,7 +107,7 @@
   },
   {
     "Input": "Voltarei na segunda-feira, 12 de janeiro de 2016",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "segunda-feira, 12 de janeiro de 2016",
@@ -119,7 +119,7 @@
   },
   {
     "Input": "Voltarei em 02/22/2016",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "02/22/2016",
@@ -131,7 +131,7 @@
   },
   {
     "Input": "Voltarei em 21/04/2016",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "21/04/2016",
@@ -143,7 +143,7 @@
   },
   {
     "Input": "Voltarei em 21/04/16",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "21/04/16",
@@ -155,7 +155,7 @@
   },
   {
     "Input": "Voltarei em 9-18-15",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "9-18-15",
@@ -167,7 +167,7 @@
   },
   {
     "Input": "Voltarei em 4.22",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "4.22",
@@ -179,7 +179,7 @@
   },
   {
     "Input": "Voltarei em 4-22",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "4-22",
@@ -191,7 +191,7 @@
   },
   {
     "Input": "Voltarei em    4/22",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "4/22",
@@ -203,7 +203,7 @@
   },
   {
     "Input": "Voltarei em 22/04",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "22/04",
@@ -215,7 +215,7 @@
   },
   {
     "Input": "Voltarei       4/22",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "4/22",
@@ -227,7 +227,7 @@
   },
   {
     "Input": "Voltarei 22/04",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "22/04",
@@ -239,7 +239,7 @@
   },
   {
     "Input": "Voltarei em 2015/08/12",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2015/08/12",
@@ -251,7 +251,7 @@
   },
   {
     "Input": "Voltarei em 11/12, 2016",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "11/12, 2016",
@@ -263,7 +263,7 @@
   },
   {
     "Input": "Voltarei em 11/12/16",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "11/12/16",
@@ -275,7 +275,7 @@
   },
   {
     "Input": "Voltarei em 11/12 2016",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "11/12 2016",
@@ -287,7 +287,7 @@
   },
   {
     "Input": "Voltarei em 1o de Jan",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1o de Jan",
@@ -299,7 +299,7 @@
   },
   {
     "Input": "Voltarei em 28-Nov",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "28-Nov",
@@ -311,7 +311,7 @@
   },
   {
     "Input": "Voltarei na Qua, 22 de Jan",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Qua, 22 de Jan",
@@ -323,7 +323,7 @@
   },
   {
     "Input": "Voltarei no primeiro de Jan",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "primeiro de Jan",
@@ -335,7 +335,7 @@
   },
   {
     "Input": "Voltarei no vinte e um de Maio",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vinte e um de Maio",
@@ -347,7 +347,7 @@
   },
   {
     "Input": "Voltarei em Maio vinte e um",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Maio vinte e um",
@@ -359,7 +359,7 @@
   },
   {
     "Input": "Voltarei no segundo de Ago",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "segundo de Ago",
@@ -371,7 +371,7 @@
   },
   {
     "Input": "Voltarei no vigésimo segundo de Junho",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vigésimo segundo de Junho",
@@ -383,7 +383,7 @@
   },
   {
     "Input": "Voltarei sexta-feira",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "sexta-feira",
@@ -395,7 +395,7 @@
   },
   {
     "Input": "Voltarei na sexta-feira",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "sexta-feira",
@@ -407,7 +407,7 @@
   },
   {
     "Input": "Voltarei nas sextas-feiras",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "sextas-feiras",
@@ -419,7 +419,7 @@
   },
   {
     "Input": "Voltarei aos sábados",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "sábados",
@@ -431,7 +431,7 @@
   },
   {
     "Input": "Voltarei hoje",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "hoje",
@@ -443,7 +443,7 @@
   },
   {
     "Input": "Voltarei amanhã",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "amanhã",
@@ -455,7 +455,7 @@
   },
   {
     "Input": "Voltei ontem",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ontem",
@@ -467,7 +467,7 @@
   },
   {
     "Input": "Voltei no dia antes de ontem",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dia antes de ontem",
@@ -479,7 +479,7 @@
   },
   {
     "Input": "Voltei anteontem",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "anteontem",
@@ -491,7 +491,7 @@
   },
   {
     "Input": "Voltarei no dia depois de amanhã",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dia depois de amanhã",
@@ -503,7 +503,7 @@
   },
   {
     "Input": "Voltarei depois de amanhã",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "depois de amanhã",
@@ -515,7 +515,7 @@
   },
   {
     "Input": "Voltarei no dia seguinte",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dia seguinte",
@@ -527,7 +527,7 @@
   },
   {
     "Input": "Voltarei no proximo dia",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "proximo dia",
@@ -539,7 +539,7 @@
   },
   {
     "Input": "Voltarei esta sexta-feira",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "esta sexta-feira",
@@ -551,7 +551,7 @@
   },
   {
     "Input": "Voltarei proximo domingo",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "proximo domingo",
@@ -563,7 +563,7 @@
   },
   {
     "Input": "Voltarei no domingo seguinte",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "domingo seguinte",
@@ -575,7 +575,7 @@
   },
   {
     "Input": "Voltarei no ultimo domingo",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ultimo domingo",
@@ -587,7 +587,7 @@
   },
   {
     "Input": "Voltarei no ultimo dia",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ultimo dia",
@@ -599,7 +599,7 @@
   },
   {
     "Input": "Voltarei na sexta-feira desta semana",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "sexta-feira desta semana",
@@ -611,7 +611,7 @@
   },
   {
     "Input": "Voltarei no domingo da semana seguinte",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "domingo da semana seguinte",
@@ -623,7 +623,7 @@
   },
   {
     "Input": "Voltarei no domingo da ultima semana",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "domingo da ultima semana",
@@ -635,7 +635,7 @@
   },
   {
     "Input": "Voltarei em 15 de Junho 2016",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15 de Junho 2016",
@@ -647,7 +647,7 @@
   },
   {
     "Input": "Voltarei em onze de maio",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "onze de maio",
@@ -659,7 +659,7 @@
   },
   {
     "Input": "Voltarei em primeiro de maio",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "primeiro de maio",
@@ -671,7 +671,7 @@
   },
   {
     "Input": "Voltarei na primeira sexta-feira de julho",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "na primeira sexta-feira de julho",
@@ -683,7 +683,7 @@
   },
   {
     "Input": "Voltarei na primeira sexta-feira deste mes",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "na primeira sexta-feira deste mes",
@@ -695,7 +695,7 @@
   },
   {
     "Input": "Você está livre em 13.5.2015",
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "13.5.2015",
@@ -707,7 +707,7 @@
   },
   {
     "Input": "Você está livre em 2015.5.13",
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "2015.5.13",
