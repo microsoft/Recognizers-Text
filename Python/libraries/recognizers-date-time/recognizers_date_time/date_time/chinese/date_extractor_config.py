@@ -1,7 +1,7 @@
 from typing import List, Pattern, Dict
 
 from recognizers_text import RegExpUtility
-from recognizers_number import BaseNumberExtractor, BaseNumberParser, ChineseNumberParserConfiguration
+from recognizers_number import BaseNumberExtractor
 from ...resources import ChineseDateTime
 from ..constants import Constants
 from ..extractors import DateTimeExtractor
@@ -11,6 +11,10 @@ from ...resources.base_date_time import BaseDateTime
 
 
 class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
+    @property
+    def number_parser(self):
+        pass
+
     @property
     def month_regex(self) -> Pattern:
         return self._month_regex
@@ -86,10 +90,6 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
     @property
     def datetime_period_unit_regex(self) -> Pattern:
         return self._datetime_period_unit_regex
-
-    @property
-    def number_parser(self) -> BaseNumberParser:
-        return self._number_parser
 
     @property
     def week_day_and_day_regex(self) -> Pattern:
@@ -227,9 +227,6 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
         )
         self._month_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.MonthRegex
-        )
-        self._number_parser = BaseNumberParser(
-            ChineseNumberParserConfiguration()
         )
         self._date_regex_list = [
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList1),
