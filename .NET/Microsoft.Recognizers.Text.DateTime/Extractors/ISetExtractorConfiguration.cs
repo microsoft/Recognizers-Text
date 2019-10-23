@@ -21,6 +21,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SetEachRegex { get; }
 
+        bool CheckBothBeforeAfter { get; }
+
         IDateTimeExtractor DurationExtractor { get; }
 
         IDateTimeExtractor TimeExtractor { get; }

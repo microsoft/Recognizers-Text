@@ -89,7 +89,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public TurkishDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeDate = DateTimeDefinitions.TokenListBeforeDate;
 
             CardinalExtractor = Number.Turkish.CardinalExtractor.GetInstance();
             SingleDateExtractor = new BaseDateExtractor(new TurkishDateExtractorConfiguration(this));

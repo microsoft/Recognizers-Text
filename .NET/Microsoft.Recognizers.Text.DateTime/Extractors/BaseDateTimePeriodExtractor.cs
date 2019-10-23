@@ -118,7 +118,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var afterStart = ers[j].Start + ers[j].Length ?? 0;
                         var afterStr = text.Substring(afterStart);
                         length = GetValidConnectorForDateAndTimePeriod(afterStr, inPrefix);
-                        if (length != Constants.INVALID_CONNECTOR_CODE && middleStr.Length <= 4)
+                        if (length != Constants.INVALID_CONNECTOR_CODE && this.config.PrepositionRegex.IsExactMatch(middleStr, trim: true))
                         {
                             var begin = ers[i].Start ?? 0;
                             var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0) + length;

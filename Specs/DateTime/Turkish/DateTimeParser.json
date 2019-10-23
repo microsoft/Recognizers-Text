@@ -816,6 +816,30 @@
     ]
   },
   {
+    "Input": "Bu sabah 7'de döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bu sabah 7",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
     "Input": "Bu sabah yedide döneceğim",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
