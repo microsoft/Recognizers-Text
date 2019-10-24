@@ -1874,22 +1874,6 @@
     ]
   },
   {
-    "Input": "1 234 567",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "1 234 567",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "1234567"
-        },
-        "Start": 0,
-        "End": 8
-      }
-    ]
-  },
-  {
     "Input": "40 000 är samma som 40 000",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
