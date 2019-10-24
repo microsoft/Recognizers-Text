@@ -1,7 +1,7 @@
 [
   {
     "Input": "192.",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "192",
@@ -17,7 +17,7 @@
   },
   {
     "Input": "192.168.1.2",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "192",
@@ -63,32 +63,33 @@
   },
   {
     "Input": "vätskan på 180,25ml",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": []
   },
   {
     "Input": "vätskan på 180ml",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": []
   },
   {
     "Input": " 29km väg ",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": []
   },
   {
     "Input": " den 4 maj ",
-    "NotSupported": "dotnet, javascript, python, java",
+    "Comments": "Should be handled by the date extractor. Currently resolves as a number.",
+    "NotSupportedByDesign": "dotnet, javascript, python, java",
     "Results": []
   },
   {
     "Input": "vätskan på ,25ml",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": []
   },
   {
     "Input": ",08",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": ",08",
@@ -103,13 +104,14 @@
     ]
   },
   {
-    "Input": "an",
-    "NotSupported": "dotnet, javascript, python, java",
+    "Input": "en",
+    "Comments": "Resolves as 1",
+    "NotSupportedByDesign": "dotnet, javascript, python, java",
     "Results": []
   },
   {
     "Input": ",23456000",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": ",23456000",
@@ -125,7 +127,7 @@
   },
   {
     "Input": "4,800",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "4,800",
@@ -141,7 +143,7 @@
   },
   {
     "Input": "etthundratrettiotvå femtedelar",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "etthundratrettiotvå femtedelar",
@@ -157,7 +159,7 @@
   },
   {
     "Input": "sexton",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "sexton",
@@ -173,7 +175,7 @@
   },
   {
     "Input": "två tredjedelar",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "två tredjedelar",
@@ -189,7 +191,7 @@
   },
   {
     "Input": "etthundrasexton",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "etthundrasexton",
@@ -205,7 +207,7 @@
   },
   {
     "Input": "etthundrasex",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "etthundrasex",
@@ -236,7 +238,7 @@
   },
   {
     "Input": "en triljondel",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "en triljondel",
@@ -252,7 +254,7 @@
   },
   {
     "Input": "etthundra triljontedelar",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "etthundra triljontedelar",
@@ -283,7 +285,7 @@
   },
   {
     "Input": "Jag köpte ett halvt dussin ägg",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "ett halvt dussin",
@@ -299,7 +301,7 @@
   },
   {
     "Input": "Jag köpte ett dussin ägg",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "ett dussin",
@@ -315,7 +317,7 @@
   },
   {
     "Input": "Jag köpte två dussin ägg",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "två dussin",
@@ -331,7 +333,7 @@
   },
   {
     "Input": " 3 dussin",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "3 dussin",
@@ -347,7 +349,7 @@
   },
   {
     "Input": "ett dussin",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "ett dussin",
@@ -363,7 +365,7 @@
   },
   {
     "Input": " tre dussin ",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tre dussin",
@@ -379,7 +381,7 @@
   },
   {
     "Input": " trehundratvå dussin",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "trehundratvå dussin",
@@ -395,7 +397,7 @@
   },
   {
     "Input": "1 234 567",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1 234 567",
@@ -411,7 +413,7 @@
   },
   {
     "Input": "1, 234, 567",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1",
@@ -447,7 +449,7 @@
   },
   {
     "Input": "9,2321312",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "9,2321312",
@@ -463,7 +465,7 @@
   },
   {
     "Input": " -9,2321312",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "-9,2321312",
@@ -479,7 +481,7 @@
   },
   {
     "Input": " -1",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "-1",
@@ -495,7 +497,7 @@
   },
   {
     "Input": "-4/5",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "-4/5",
@@ -511,7 +513,7 @@
   },
   {
     "Input": "- 1 4/5",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "- 1 4/5",
@@ -527,7 +529,7 @@
   },
   {
     "Input": "tre",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tre",
@@ -543,7 +545,7 @@
   },
   {
     "Input": " 123456789101231",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "123456789101231",
@@ -559,7 +561,7 @@
   },
   {
     "Input": "-123456789101231",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "-123456789101231",
@@ -575,7 +577,7 @@
   },
   {
     "Input": " -123456789101231",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "-123456789101231",
@@ -591,7 +593,7 @@
   },
   {
     "Input": "1",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1",
@@ -607,7 +609,7 @@
   },
   {
     "Input": "10k",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "10k",
@@ -623,7 +625,7 @@
   },
   {
     "Input": "100k",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "100k",
@@ -639,7 +641,7 @@
   },
   {
     "Input": "10G",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "10g",
@@ -670,7 +672,7 @@
   },
   {
     "Input": "2 miljoner",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "2 miljoner",
@@ -686,7 +688,7 @@
   },
   {
     "Input": "1 triljon",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1 triljon",
@@ -702,7 +704,7 @@
   },
   {
     "Input": " tre ",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tre",
@@ -718,7 +720,7 @@
   },
   {
     "Input": "en triljon",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "en triljon",
@@ -734,7 +736,7 @@
   },
   {
     "Input": "tjugoen triljoner",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tjugoen triljoner",
@@ -750,7 +752,7 @@
   },
   {
     "Input": "tjugoen triljonertrehundra",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tjugoen triljonertrehundra",
@@ -766,7 +768,7 @@
   },
   {
     "Input": "femtio - två",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "femtio - två",
@@ -776,13 +778,13 @@
           "value": "52"
         },
         "Start": 0,
-        "End": 10
+        "End": 11
       }
     ]
   },
   {
     "Input": "femtio   två",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "femtio   två",
@@ -792,13 +794,14 @@
           "value": "52"
         },
         "Start": 0,
-        "End": 10
+        "End": 11
       }
     ]
   },
   {
     "Input": "Tre hundra  trettio en",
-    "NotSupported": "dotnet, javascript, python, java",
+    "Comments": "This expression currentlu resolves as 2 numbers",
+    "NotSupportedByDesign": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "Tre hundra  trettio en",
@@ -814,7 +817,7 @@
   },
   {
     "Input": "1e10",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1e10",
@@ -830,7 +833,7 @@
   },
   {
     "Input": "1,1^23",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1,1^23",
@@ -846,7 +849,7 @@
   },
   {
     "Input": " 322 hundra ",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "322 hundra",
@@ -862,7 +865,7 @@
   },
   {
     "Input": "sjuttio",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "sjuttio",
@@ -878,7 +881,7 @@
   },
   {
     "Input": "femtio-två",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "femtio-två",
@@ -888,13 +891,13 @@
           "value": "52"
         },
         "Start": 0,
-        "End": 8
+        "End": 9
       }
     ]
   },
   {
     "Input": "2  1/4",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "2  1/4",
@@ -910,7 +913,7 @@
   },
   {
     "Input": "3/4",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "3/4",
@@ -926,7 +929,7 @@
   },
   {
     "Input": "en åttondel",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "en åttondel",
@@ -942,7 +945,7 @@
   },
   {
     "Input": "fem åttondelar",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "fem åttondelar",
@@ -958,7 +961,7 @@
   },
   {
     "Input": "en halv",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "en halv",
@@ -974,7 +977,7 @@
   },
   {
     "Input": "tre kvarts",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tre kvarts",
@@ -990,7 +993,7 @@
   },
   {
     "Input": "tjugo och tre femtedelar",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tjugo och tre femtedelar",
@@ -1006,6 +1009,7 @@
   },
   {
     "Input": "en miljontvåtusentvåhundratre femtedelar",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "en miljontvåtusentvåhundratre femtedelar",
@@ -1021,6 +1025,7 @@
   },
   {
     "Input": "en och en halv",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "en och en halv",
@@ -1036,6 +1041,7 @@
   },
   {
     "Input": "en och en fjärdedel",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "en och en fjärdedel",
@@ -1051,6 +1057,7 @@
   },
   {
     "Input": "fem och en kvarts",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "fem och en kvarts",
@@ -1066,6 +1073,7 @@
   },
   {
     "Input": "etthundra och tre kvarts",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "etthundra och tre kvarts",
@@ -1081,6 +1089,7 @@
   },
   {
     "Input": "en hundradel",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "en hundradel",
@@ -1096,6 +1105,7 @@
   },
   {
     "Input": "1,1^+23",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1,1^+23",
@@ -1111,6 +1121,7 @@
   },
   {
     "Input": "2,5^-1",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "2,5^-1",
@@ -1126,6 +1137,7 @@
   },
   {
     "Input": "-2500^-1",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "-2500^-1",
@@ -1141,6 +1153,7 @@
   },
   {
     "Input": "-1,1^+23",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "-1,1^+23",
@@ -1156,6 +1169,7 @@
   },
   {
     "Input": "-2,5^-1",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "-2,5^-1",
@@ -1171,6 +1185,7 @@
   },
   {
     "Input": "-1,1^--23",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "-1,1^--23",
@@ -1186,6 +1201,7 @@
   },
   {
     "Input": "-127,32e13",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "-127,32e13",
@@ -1201,14 +1217,14 @@
   },
   {
     "Input": "12,32e+15",
-    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "12,32e+15",
         "TypeName": "number",
         "Resolution": {
           "subtype": "power",
-          "value": "12,32E+15"
+          "value": "1,232E+16"
         },
         "Start": 0,
         "End": 8
@@ -1217,6 +1233,7 @@
   },
   {
     "Input": "-12e-1",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "-12e-1",
@@ -1232,7 +1249,7 @@
   },
   {
     "Input": "1,2b",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1,2b",
@@ -1248,6 +1265,7 @@
   },
   {
     "Input": "en femtedel",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "en femtedel",
@@ -1262,23 +1280,24 @@
     ]
   },
   {
-    "Input": "hundra tusen triljoner",
-    "NotSupported": "dotnet, javascript, python, java",
+    "Input": "etthundra tusen triljondelar",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "hundra tusen triljoner",
+        "Text": "etthundra tusen triljondelar",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
-          "value": "1E-07"
+          "value": "1E-13"
         },
         "Start": 0,
-        "End": 29
+        "End": 27
       }
     ]
   },
   {
     "Input": "tre femtedelar",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tre femtedelar",
@@ -1294,6 +1313,7 @@
   },
   {
     "Input": "tjugo femtedelar",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tjugo femtedelar",
@@ -1309,6 +1329,7 @@
   },
   {
     "Input": "tre och en femtedel",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tre och en femtedel",
@@ -1324,6 +1345,7 @@
   },
   {
     "Input": "tjugoen femtedelar",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tjugoen femtedelar",
@@ -1339,6 +1361,9 @@
   },
   {
     "Input": "en tjugoförstedel",
+    "Comment": "Correspons to writing 'A twentyfirsts'. Compound fraction expressions are currently not handled.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "en tjugoförstedel",
@@ -1348,27 +1373,30 @@
           "value": "0,0476190476190476"
         },
         "Start": 0,
-        "End": 16
+        "End": 17
       }
     ]
   },
   {
-    "Input": "en tjugofemtedel",
+    "Input": "en tjugo femtedel",
     "Results": [
       {
-        "Text": "en tjugofemtedel",
+        "Text": "en tjugo femtedel",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
           "value": "0,04"
         },
         "Start": 0,
-        "End": 15
+        "End": 16
       }
     ]
   },
   {
     "Input": "tre tjugoförstedelar",
+    "Comment": "Correspons to writing 'Three twentyfirsts'. Compound fraction expressions are currently not handled.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tre tjugoförstedelar",
@@ -1384,6 +1412,7 @@
   },
   {
     "Input": "tjugo tjugo femtedelar",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tjugo tjugo femtedelar",
@@ -1398,22 +1427,24 @@
     ]
   },
   {
-    "Input": "etthundra trettio femtedelar",
+    "Input": "etthundratrettio femtedelar",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "etthundra trettio femtedelar",
+        "Text": "etthundratrettio femtedelar",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
           "value": "26"
         },
         "Start": 0,
-        "End": 27
+        "End": 26
       }
     ]
   },
   {
     "Input": "etthundra trettiotvå femtedelar",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "etthundra trettiotvå femtedelar",
@@ -1428,22 +1459,24 @@
     ]
   },
   {
-    "Input": "etthundraen tusen femtedelar",
+    "Input": "etthundraentusen femtedelar",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "etthundraen tusen femtedelar",
+        "Text": "etthundraentusen femtedelar",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
-          "value": "0,0995024875621891"
+          "value": "20200"
         },
         "Start": 0,
-        "End": 27
+        "End": 26
       }
     ]
   },
   {
     "Input": "ett genom tre",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "ett genom tre",
@@ -1459,6 +1492,7 @@
   },
   {
     "Input": "1 delat med tjugoett",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1 delat med tjugoett",
@@ -1474,6 +1508,7 @@
   },
   {
     "Input": "1 delat med etthundratjugoett",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1 delat med etthundratjugoett",
@@ -1489,6 +1524,7 @@
   },
   {
     "Input": "1 genom tre",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1 genom tre",
@@ -1504,6 +1540,7 @@
   },
   {
     "Input": "1 delat med 3",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1 delat med 3",
@@ -1519,6 +1556,7 @@
   },
   {
     "Input": "ett delat med 3",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "ett delat med 3",
@@ -1549,6 +1587,7 @@
   },
   {
     "Input": "ett delat på tjugo",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "ett delat på tjugo",
@@ -1564,6 +1603,7 @@
   },
   {
     "Input": "ett genom etthundra",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "ett genom etthundra",
@@ -1579,6 +1619,7 @@
   },
   {
     "Input": "hur mycket är nittiofem hundra femtedelar?",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "nittiofem hundra femtedelar",
@@ -1594,10 +1635,23 @@
   },
   {
     "Input": "Boka en förstaklassbiljett till Seattle",
-    "Results": []
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 5,
+        "End": 6
+      }
+    ]
   },
   {
     "Input": "Svaret är negativt nittiofem hundra femtedelar",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "negativt nittiofem hundra femtedelar",
@@ -1607,12 +1661,13 @@
           "value": "-1900"
         },
         "Start": 10,
-        "End": 50
+        "End": 45
       }
     ]
   },
   {
     "Input": "Svaret är minus nittiofem hundra femtedelar",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "minus nittiofem hundra femtedelar",
@@ -1628,6 +1683,7 @@
   },
   {
     "Input": "Svaret är minus ett",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "minus ett",
@@ -1643,13 +1699,14 @@
   },
   {
     "Input": "Svaret är minus etthundratrettio femtedelar",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "minus etthundratrettio femtedelar",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
-          "value": "-2,85714285714286"
+          "value": "-26"
         },
         "Start": 10,
         "End": 42
@@ -1658,6 +1715,7 @@
   },
   {
     "Input": "Svaret är negativt ett delat på 20",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "negativt ett delat på 20",
@@ -1673,6 +1731,7 @@
   },
   {
     "Input": "Svaret är minus fem komma fem",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "minus fem komma fem",
@@ -1688,6 +1747,7 @@
   },
   {
     "Input": "Svaret är minus 5",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "minus 5",
@@ -1703,6 +1763,7 @@
   },
   {
     "Input": "en - fjärdedel",
+    "NotSupportedByDesign": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "en - fjärdedel",
@@ -1718,6 +1779,7 @@
   },
   {
     "Input": "en-åttondel",
+    "NotSupportedByDesign": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "en-åttondel",
@@ -1733,6 +1795,7 @@
   },
   {
     "Input": "fem - åttondelar",
+    "NotSupportedByDesign": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "fem - åttondelar",
@@ -1748,6 +1811,7 @@
   },
   {
     "Input": "nittio - fem hundra-femtedelar",
+    "NotSupportedByDesign": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "nittio - fem hundra-femtedelar",
@@ -1763,6 +1827,7 @@
   },
   {
     "Input": "en av tre",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "en av tre",
@@ -1778,7 +1843,7 @@
   },
   {
     "Input": "1 av tjugo ett",
-    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1 av tjugo ett",
@@ -1794,6 +1859,7 @@
   },
   {
     "Input": "fem åttondelar av",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "fem åttondelar",
@@ -1809,6 +1875,7 @@
   },
   {
     "Input": "1 234 567",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1 234 567",
@@ -1824,6 +1891,7 @@
   },
   {
     "Input": "40 000 är samma som 40 000",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "40 000",
@@ -1849,6 +1917,7 @@
   },
   {
     "Input": "Just nu är Kinas befolkningsmängd 1 414 021 100.",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1 414 021 100",
@@ -1864,7 +1933,7 @@
   },
   {
     "Input": "423 0000 tolkas som två tal.",
-    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "423",
@@ -1900,9 +1969,10 @@
   },
   {
     "Input": "1 234 567,89 är ett giltigt talformat.",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "1 234 567.89",
+        "Text": "1 234 567,89",
         "TypeName": "number",
         "Resolution": {
           "subtype": "decimal",
@@ -1910,11 +1980,22 @@
         },
         "Start": 0,
         "End": 11
+      },
+      {
+        "Text": "ett",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 16,
+        "End": 18
       }
     ]
   },
   {
     "Input": "noll är 0",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "noll",
@@ -1940,17 +2021,28 @@
   },
   {
     "Input": "Har du tid att träffas 2018-05-17?",
-    "NotSupported": "javascript",
+    "Comment": "The original spec says 5/17/2018. Swedish dates are written as yyyy-MM-DD",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "5",
+        "Text": "2018",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2018"
+        },
+        "Start": 23,
+        "End": 26
+      },
+      {
+        "Text": "05",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
           "value": "5"
         },
-        "Start": 20,
-        "End": 20
+        "Start": 28,
+        "End": 29
       },
       {
         "Text": "17",
@@ -1959,69 +2051,50 @@
           "subtype": "integer",
           "value": "17"
         },
-        "Start": 22,
-        "End": 23
-      },
-      {
-        "Text": "2018",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2018"
-        },
-        "Start": 25,
-        "End": 28
+        "Start": 31,
+        "End": 32
       }
     ]
   },
   {
     "Input": "Mitt telefonnummer är +46(0)403123123123",
-    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "1",
+        "Text": "46",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
-          "value": "1"
+          "value": "46"
         },
-        "Start": 20,
-        "End": 20
-      },
-      {
-        "Text": "222",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "222"
-        },
-        "Start": 22,
+        "Start": 23,
         "End": 24
       },
       {
-        "Text": "2222",
+        "Text": "0",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
-          "value": "2222"
+          "value": "0"
         },
         "Start": 26,
-        "End": 29
+        "End": 26
       },
       {
-        "Text": "2222",
+        "Text": "403123123123",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
-          "value": "2222"
+          "value": "403123123123"
         },
-        "Start": 31,
-        "End": 34
+        "Start": 28,
+        "End": 39
       }
     ]
   },
   {
     "Input": "Jag kan ge dig 10M.",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "10m",
@@ -2037,11 +2110,12 @@
   },
   {
     "Input": "1m är inte ett tal.",
+    "NotSupportedByDesign": "dotnet, javascript, java, python",
     "Results": []
   },
   {
     "Input": "Jag kan ge dig 3 hundra 21 yuan.",
-    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "dotnet, javascript, java, python",
     "Results": [
       {
         "Text": "3 hundra 21",
@@ -2056,7 +2130,7 @@
   },
   {
     "Input": "4 tusen 3 hundra 21 är ett giltigt tal.",
-    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "dotnet, javascript, java, python",
     "Results": [
       {
         "Text": "4 tusen 3 hundra 21",
@@ -2071,7 +2145,7 @@
   },
   {
     "Input": "4 tusen 3 hundra 0 är två giltiga tal.",
-    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "dotnet, javascript, java, python",
     "Results": [
       {
         "Text": "4 tusen 3 hundra",
@@ -2105,7 +2179,7 @@
   },
   {
     "Input": "4000 3 hundra 21 är två giltiga tal.",
-    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "dotnet, javascript, java, python",
     "Results": [
       {
         "Text": "4000",
@@ -2140,7 +2214,7 @@
   },
   {
     "Input": "3 hundra och 2 hundra är två giltiga tal.",
-    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "3 hundra",
@@ -2169,14 +2243,14 @@
           "subtype": "integer",
           "value": "2"
         },
-        "Start": 28,
-        "End": 30
+        "Start": 25,
+        "End": 27
       }
     ]
   },
   {
     "Input": "3 hundra och 2,12 hundra är två giltiga tal.",
-    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "3 hundra",
@@ -2205,14 +2279,14 @@
           "subtype": "integer",
           "value": "2"
         },
-        "Start": 31,
-        "End": 33
+        "Start": 28,
+        "End": 30
       }
     ]
   },
   {
     "Input": "3 hundra och negativt ett är två giltiga tal.",
-    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "3 hundra",
@@ -2232,7 +2306,7 @@
           "value": "-1"
         },
         "Start": 13,
-        "End": 25
+        "End": 24
       },
       {
         "Text": "två",
@@ -2241,14 +2315,14 @@
           "subtype": "integer",
           "value": "2"
         },
-        "Start": 31,
-        "End": 33
+        "Start": 29,
+        "End": 31
       }
     ]
   },
   {
     "Input": "3 hundra en är giltiga tal.",
-    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "dotnet, javascript, java, python",
     "Results": [
       {
         "Text": "3 hundra en",
@@ -2264,27 +2338,27 @@
   },
   {
     "Input": "The one you mentioned is invalid",
-    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, python",
     "Results": []
   },
   {
     "Input": "This one you is not correct",
-    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, python",
     "Results": []
   },
   {
     "Input": "Which one do you prefer?",
-    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, python",
     "Results": []
   },
   {
     "Input": "That one is really good",
-    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, python",
     "Results": []
   },
   {
     "Input": "I vissa länder kan du skriva 5.00 eller 5,00.",
-    "NotSupported": "java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "5.00",
@@ -2310,7 +2384,7 @@
   },
   {
     "Input": "Tjugosex människor dör i olycka i Techiman",
-    "NotSupportedByDesign": "java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tjugosex",
@@ -2326,6 +2400,7 @@
   },
   {
     "Input": "mer än hälften av människorna kom hit.",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "hälften",
@@ -2341,6 +2416,7 @@
   },
   {
     "Input": "Jag vill tjäna $10000 inom 3 år",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "10000",
@@ -2366,6 +2442,7 @@
   },
   {
     "Input": "Jag vill tjäna $2000 under 3 år",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "2000",
@@ -2391,6 +2468,7 @@
   },
   {
     "Input": "2000 genom 3",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "2000 genom 3",
@@ -2406,6 +2484,7 @@
   },
   {
     "Input": "$20",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "20",
