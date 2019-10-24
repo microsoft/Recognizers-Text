@@ -107,7 +107,7 @@ class ChineseMergedExtractor(BaseMergedExtractor):
                         matches = reg_len
                         new_ers = list(filter(lambda x: list(
                             filter(lambda m: m.start() < x.start + x.length and m.start() +
-                                             len(m.group()) > x.start, matches)), extract_results))
+                                   len(m.group()) > x.start, matches)), extract_results))
                         if len(new_ers) > 0:
                             for item in extract_results:
                                 for i in new_ers:
