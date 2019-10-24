@@ -37,15 +37,15 @@ class ChineseDatePeriodExtractor(BaseDatePeriodExtractor):
 
     def merge_two_time_points(self, source: str, reference: datetime) -> List[Token]:
         tokens = []
-        extracted_result = self.config.date_point_extractor.extract(source, reference)
-        if len(extracted_result) <= 1:
+        extract_result = self.config.date_point_extractor.extract(source, reference)
+        if len(extract_result) <= 1:
             return tokens
 
         index = 0
 
-        while index < len(extracted_result) - 1:
-            middle_begin = extracted_result[index].start + extracted_result[index].length
-            middle_end = extracted_result[index + 1].start
+        while index < len(extract_result) - 1:
+            middle_begin = extract_result[index].start + extract_result[index].length
+            middle_end = extract_result[index + 1].start
             if middle_begin >= middle_end:
                 index += 1
                 continue
@@ -53,8 +53,8 @@ class ChineseDatePeriodExtractor(BaseDatePeriodExtractor):
             middle_str = source[middle_begin:middle_end].strip().lower()
 
             if RegexExtension.is_exact_match(self.config.till_regex, middle_str, True):
-                period_begin = extracted_result[index].start
-                period_end = extracted_result[index + 1].start + extracted_result[index + 1].length
+                period_begin = extract_result[index].start
+                period_end = extract_result[index + 1].start + extract_result[index + 1].length
 
                 before_str = source[:period_begin]
                 if before_str.strip().endswith('从'):

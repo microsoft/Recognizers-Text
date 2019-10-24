@@ -47,50 +47,50 @@ class ChineseMergedExtractor(BaseMergedExtractor):
 
         return result
 
-    def add_mod(self, extracted_results: List[ExtractResult], source: str):
+    def add_mod(self, extract_results: List[ExtractResult], source: str):
         last_end = 0
-        for extracted_result in extracted_results:
-            before_str = source[last_end:extracted_result.start].strip()
-            after_str = source[extracted_result.start + extracted_result.length:].strip()
+        for extract_result in extract_results:
+            before_str = source[last_end:extract_result.start].strip()
+            after_str = source[extract_result.start + extract_result.length:].strip()
 
             match = RegexExtension.match_begin(self.config.before_regex, after_str, True)
             if match:
                 mod_len = match.index + match.length
-                extracted_result.length += mod_len
-                extracted_result.text = source[extracted_result.start:extracted_result.length + 1]
+                extract_result.length += mod_len
+                extract_result.text = source[extract_result.start:extract_result.length + 1]
 
             match = RegexExtension.match_begin(self.config.after_regex, after_str, True)
             if match:
                 mod_len = match.index + match.length
-                extracted_result.length += mod_len
-                extracted_result.text = source[extracted_result.start:extracted_result.length + 1]
+                extract_result.length += mod_len
+                extract_result.text = source[extract_result.start:extract_result.length + 1]
 
             match = RegexExtension.match_begin(self.config.until_regex, before_str, True)
             if match:
                 mod_len = len(before_str) - match.index
-                extracted_result.length += mod_len
-                extracted_result.start -= mod_len
-                extracted_result.text = source[extracted_result.start:extracted_result.length]
+                extract_result.length += mod_len
+                extract_result.start -= mod_len
+                extract_result.text = source[extract_result.start:extract_result.length]
 
             match = RegexExtension.match_begin(self.config.since_prefix_regex, before_str, True)
             if match:
                 mod_len = len(before_str) + match.index
-                extracted_result.length += mod_len
-                extracted_result.start -= mod_len
-                extracted_result.text = source[extracted_result.start:extracted_result.length]
+                extract_result.length += mod_len
+                extract_result.start -= mod_len
+                extract_result.text = source[extract_result.start:extract_result.length]
 
             match = RegexExtension.match_begin(self.config.since_suffix_regex, after_str, True)
             if match:
                 mod_len = match.index + match.length
-                extracted_result.length += mod_len
-                extracted_result.text = source[extracted_result.start:extracted_result.length]
+                extract_result.length += mod_len
+                extract_result.text = source[extract_result.start:extract_result.length]
 
             match = RegexExtension.match_begin(self.config.equal_regex, before_str, True)
             if match:
                 mod_len = len(before_str) + match.index
-                extracted_result.length += mod_len
-                extracted_result.start -= mod_len
-                extracted_result.text = source[extracted_result.start:extracted_result.length]
+                extract_result.length += mod_len
+                extract_result.start -= mod_len
+                extract_result.text = source[extract_result.start:extract_result.length]
 
     def _filter_ambiguity(self, extract_results: List[ExtractResult], text: str, ) -> List[ExtractResult]:
 
