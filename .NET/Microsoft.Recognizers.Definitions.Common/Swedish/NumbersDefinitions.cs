@@ -27,13 +27,13 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string RoundNumberIntegerRegex = @"(hundra|tusen|miljon(er)?|miljard(er)?|biljon(er)?|biljard(er)?|triljon(er)?)";
       public const string ZeroToNineIntegerRegex = @"(tre|sju|åtta|fyra|fem|noll|nio|ett|en|två|sex)";
       public const string TwoToNineIntegerRegex = @"(tre|sju|åtta|fyra|fem|nio|två|sex)";
-      public const string NegativeNumberTermsRegex = @"(?<negTerm>((minus|negativ)\s+))";
+      public const string NegativeNumberTermsRegex = @"(?<negTerm>((minus|negativ(t)?)\s+))";
       public static readonly string NegativeNumberSignRegex = $@"^({NegativeNumberTermsRegex}).*";
       public const string AnIntRegex = @"(e(n|tt))(?=\s)";
       public const string TenToNineteenIntegerRegex = @"(sjutton|tretton|fjorton|arton|nitton|femton|sexton|elva|tolv|tio)";
       public const string TensNumberIntegerRegex = @"(sjuttio|tjugo|trettio|åttio|nittio|fyrtio|femtio|sextio)";
-      public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))";
-      public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})";
+      public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-\s*)?{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))";
+      public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-\s*)?{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
       public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";
@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly string[] WrittenDecimalSeparatorTexts = { @"komma" };
       public static readonly string[] WrittenGroupSeparatorTexts = { @"punkt" };
       public static readonly string[] WrittenIntegerSeparatorTexts = { @"och" };
-      public static readonly string[] WrittenFractionSeparatorTexts = { @"av" };
+      public static readonly string[] WrittenFractionSeparatorTexts = { @"och" };
       public const string HalfADozenRegex = @"ett\s+halvt\s+dussin";
       public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundra|tusen|miljon|miljoner|miljard|miljarder|biljon|biljoner|triljon|triljoner|biljard|biljarder|dussin|tjog)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
       public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
@@ -221,6 +221,10 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"biljonte", 1000000000000 },
             { @"biljardte", 1000000000000000 },
             { @"triljonte", 1000000000000000000 },
+            { @"förstadelar", 1 },
+            { @"förstedelar", 1 },
+            { @"andradelar", 2 },
+            { @"andredelar", 2 },
             { @"tredjedelar", 3 },
             { @"tredjedel", 3 },
             { @"tredjedels", 3 },
@@ -418,11 +422,15 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"tjog", 20 },
             { @"dussintals", 12 },
             { @"k", 1000 },
-            { @"m", 1000000 }
+            { @"m", 1000000 },
+            { @"g", 1000000000 },
+            { @"b", 1000000000 },
+            { @"t", 1000000000000 }
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"\ben\b", @"\b(en)\s+(en)\b" }
+            { @"\ben\b", @"\b(en)\s+(en)\b" },
+            { @"m", @"\dm\b" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {

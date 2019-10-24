@@ -12,7 +12,7 @@ ZeroToNineIntegerRegex: !simpleRegex
 TwoToNineIntegerRegex: !simpleRegex
   def: (tre|sju|åtta|fyra|fem|nio|två|sex)
 NegativeNumberTermsRegex: !simpleRegex
-  def: (?<negTerm>((minus|negativ)\s+))
+  def: (?<negTerm>((minus|negativ(t)?)\s+))
 NegativeNumberSignRegex: !nestedRegex
   def: ^({NegativeNumberTermsRegex}).*
   references: [ NegativeNumberTermsRegex ]
@@ -23,10 +23,10 @@ TenToNineteenIntegerRegex: !simpleRegex
 TensNumberIntegerRegex: !simpleRegex
   def: (sjuttio|tjugo|trettio|åttio|nittio|fyrtio|femtio|sextio)
 SeparaIntRegex: !nestedRegex
-  def: ((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))
+  def: ((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-\s*)?{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex, AnIntRegex ]
 AllIntRegex: !nestedRegex
-  def: (((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})
+  def: (((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-\s*)?{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, SeparaIntRegex ]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
@@ -221,7 +221,7 @@ WordSeparatorToken: och
 WrittenDecimalSeparatorTexts: [komma]
 WrittenGroupSeparatorTexts: [punkt]
 WrittenIntegerSeparatorTexts: [och]
-WrittenFractionSeparatorTexts: [av]
+WrittenFractionSeparatorTexts: [och]
 HalfADozenRegex: !simpleRegex
   def: ett\s+halvt\s+dussin
 DigitalNumberRegex: !nestedRegex
@@ -336,6 +336,10 @@ OrdinalNumberMap: !dictionary
     biljonte: 1000000000000
     biljardte: 1000000000000000
     triljonte: 1000000000000000000
+    förstadelar: 1
+    förstedelar: 1
+    andradelar: 2
+    andredelar: 2
     tredjedelar: 3
     tredjedel: 3
     tredjedels: 3
@@ -536,10 +540,14 @@ RoundNumberMap: !dictionary
     dussintals: 12
     k: 1000
     m: 1000000
+    g: 1000000000
+    b: 1000000000
+    t: 1000000000000
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '\ben\b': '\b(en)\s+(en)\b'
+    'm': '\dm\b'
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
   entries:
