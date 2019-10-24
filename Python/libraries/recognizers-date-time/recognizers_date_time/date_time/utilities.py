@@ -844,11 +844,11 @@ class DateContext:
         return value
 
     def __set_date_range_with_context(self, original_date_range: Dict[str, str]) -> Dict[str, str]:
-        start_date = self.__set_date_with_context(original_date_range['future_value'])
-        end_date = self.__set_date_with_context(original_date_range['past_value'])
+        start_date = self.__set_date_with_context(original_date_range[TimeTypeConstants.START_DATE])
+        end_date = self.__set_date_with_context(original_date_range[TimeTypeConstants.END_DATE])
         result: Dict[str, str]
-        result['future_value'] = str(start_date)
-        result['past_value'] = str(end_date)
+        result[TimeTypeConstants.START_DATE] = str(start_date)
+        result[TimeTypeConstants.END_DATE] = str(end_date)
         return result
 
 
