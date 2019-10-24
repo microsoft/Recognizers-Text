@@ -387,6 +387,7 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
                     Swedish.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
 
+            /*
             RegisterModel<OrdinalModel>(
                 Culture.Swedish,
                 (options) => new OrdinalModel(
@@ -400,6 +401,7 @@ namespace Microsoft.Recognizers.Text.Number
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SwedishNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
                     new Swedish.PercentageExtractor(options)));
+            */
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)
