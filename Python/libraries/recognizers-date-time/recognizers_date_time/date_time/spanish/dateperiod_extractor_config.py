@@ -19,6 +19,10 @@ from .date_extractor_config import SpanishDateExtractorConfiguration
 class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
 
     @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
+    @property
     def time_unit_regex(self) -> Pattern:
         return self._time_unit_regex
 
@@ -146,7 +150,6 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.SimpleCasesRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.DayBetweenRegex),
-            RegExpUtility.get_safe_reg_exp(SpanishDateTime.SimpleCasesRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.DayBetweenRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.OneWordPeriodRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.MonthWithYearRegex),
@@ -241,6 +244,7 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._century_suffix_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.CenturySuffixRegex
         )
+        self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
         self._cardinal_extractor = SpanishCardinalExtractor()
         self._ordinal_extractor = SpanishOrdinalExtractor()
 

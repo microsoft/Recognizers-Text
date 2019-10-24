@@ -189,6 +189,11 @@ class DatePeriodExtractorConfiguration(ABC):
     def month_num_regex(self) -> Pattern:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def check_both_before_after(self) -> Pattern:
+        raise NotImplementedError
+
 
 class BaseDatePeriodExtractor(DateTimeExtractor):
     @property
@@ -635,19 +640,18 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
         for duration in durations:
             before_str = source[0:duration.start].lower()
+            after_str = source[duration.start + duration.length:].lower()
 
-            if not before_str:
+            if not before_str and not after_str:
                 break
 
             match = self.config.past_regex.search(before_str)
             if self.__match_regex_in_prefix(before_str, match):
                 tokens.append(Token(match.start(), duration.end))
-                break
 
             match = self.config.future_regex.search(before_str)
             if self.__match_regex_in_prefix(before_str, match):
                 tokens.append(Token(match.start(), duration.end))
-                break
 
             match = self.config.in_connector_regex.search(before_str)
             if self.__match_regex_in_prefix(before_str, match):
@@ -656,7 +660,6 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
                 if range_match:
                     tokens.append(Token(match.start(), duration.end))
-                break
         return tokens
 
     # 1. Extract the month of date, week of date to a date range
@@ -678,6 +681,8 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
             if extraction_result.start is not None and extraction_result.length is not None:
                 before_string = source[0: extraction_result.start]
+                after_string = source[extraction_result.start + extraction_result.length: len(source) - extraction_result.start - extraction_result.length]
+
                 result.extend(self.__get_token_for_regex_matching(before_string,
                                                                   self.config.week_of_regex, extraction_result))
                 result.extend(self.__get_token_for_regex_matching(before_string,
@@ -690,6 +695,15 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                     result.extend(self.__get_token_for_regex_matching(before_string,
                                                                       self.config.more_than_regex, extraction_result))
 
+                    # Check also afterString
+                    if self.config.check_both_before_after:
+                        result.extend(self.__get_token_for_regex_matching(after_string,
+                                                                          self.config.less_than_regex,
+                                                                          extraction_result))
+                        result.extend(self.__get_token_for_regex_matching(after_string,
+                                                                          self.config.more_than_regex,
+                                                                          extraction_result))
+
                     # For "within" case, only duration with relative to "today" or "now" makes sense
                     # Cases like "within 3 days from yesterday/tomorrow" does not make any sense
                     if self.is_date_relative_to_now_or_today(extraction_result):
@@ -697,11 +711,11 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                         match = self.config.within_next_prefix_regex.search(before_string)
                         if match:
 
-                            is_next = not RegExpUtility.get_group(match, Constants.NEXT_GROUP_NAME)
+                            is_next = RegExpUtility.get_group(match, Constants.NEXT_GROUP_NAME)
 
                             # For "within" case
                             # Cases like "within the next 5 days before today" is not acceptable
-                            if not is_next and self.is_ago_relative_duration_date(extraction_result) is not None:
+                            if not (is_next and self.is_ago_relative_duration_date(extraction_result)):
                                 result.extend(self.__get_token_for_regex_matching(
                                     before_string,
                                     self.config.within_next_prefix_regex,
