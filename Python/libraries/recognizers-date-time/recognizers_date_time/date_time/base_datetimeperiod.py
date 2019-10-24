@@ -290,7 +290,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             i = j
 
         idx = 0
-        for idx in range(idx, len(result), 1):
+        for idx in range(idx, len(result)-1, 1):
             after_str = text[result[idx].end]
             match = self.config.suffix_regex.search(after_str)
             if match:
