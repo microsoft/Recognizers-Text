@@ -3058,7 +3058,7 @@
   },
   {
     "Input": "हजार",
-    "Comments": "Developmemt test case",
+    "Comment": "Developmemt test case",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
