@@ -20,6 +20,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         ImmutableDictionary<string, string> RelativeReferenceRelativeToMap { get; }
 
+        ImmutableDictionary<string, double> HindiDecimalUnitsList { get; }
+
         INumberOptionsConfiguration Config { get; }
 
         CultureInfo CultureInfo { get; }
@@ -70,6 +72,8 @@ namespace Microsoft.Recognizers.Text.Number
         /// <param name="numberStr">composite number.</param>
         /// <returns>value of the string.</returns>
         long ResolveCompositeNumber(string numberStr);
+
+        double ResolveUnitCompositeNumber(string numberStr);
     }
 
     public class BaseNumberParserConfiguration : INumberParserConfiguration
@@ -85,6 +89,8 @@ namespace Microsoft.Recognizers.Text.Number
         public ImmutableDictionary<string, string> RelativeReferenceOffsetMap { get; set; }
 
         public ImmutableDictionary<string, string> RelativeReferenceRelativeToMap { get; set; }
+
+        public ImmutableDictionary<string, double> HindiDecimalUnitsList { get; set; }
 
         public INumberOptionsConfiguration Config { get; set; }
 
@@ -209,6 +215,17 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             return string.Empty;
+        }
+
+        // resolve decimal cases for Hindi
+        public virtual double ResolveUnitCompositeNumber(string numberStr)
+        {
+            if (this.HindiDecimalUnitsList.ContainsKey(numberStr))
+            {
+                return this.HindiDecimalUnitsList[numberStr];
+            }
+
+            return 0;
         }
     }
 }

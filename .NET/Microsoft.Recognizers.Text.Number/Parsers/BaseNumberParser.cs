@@ -551,6 +551,7 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
+        // modified the GetDigitaValue to work for parser HIndi and Devanagari cases
         protected double GetDigitalValue(string digitsStr, double power)
         {
             double temp = 0;
@@ -596,6 +597,24 @@ namespace Microsoft.Recognizers.Text.Number
                 else if (ch == '-')
                 {
                     isNegative = true;
+                }
+
+                // Used for Hindi to resolve Devanagari numerals, C# char.isDigit accouts for Devanagari Numbers
+                // but the code only parses '0' to '9' numerals so we are getting the Int value defined in the CardinalMap
+                else if (Config.CultureInfo.Name == "hi-IN")
+                {
+                    if (char.IsDigit(ch))
+                    {
+                        if (decimalSeparator)
+                        {
+                            temp = temp + (GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, ch.ToString())) * scale);
+                            scale *= 0.1;
+                        }
+                        else
+                        {
+                            temp = (temp * scale) + GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, ch.ToString()));
+                        }
+                    }
                 }
             }
 
@@ -798,6 +817,17 @@ namespace Microsoft.Recognizers.Text.Number
                     }
                     else
                     {
+                        // belwo if condition is used to parse regional hindi cases like डेढ/सवा/ढाई
+                        // they are hindi specific cases and holds various meaning when prefixed with hindi unit.
+                        if (this.Config.CultureInfo.Name == "hi-IN")
+                        {
+                            var complexVal = Config.ResolveUnitCompositeNumber(matchStr);
+                            if (complexVal != 0)
+                            {
+                                tempStack.Push(complexVal);
+                            }
+                        }
+
                         var complexValue = Config.ResolveCompositeNumber(matchStr);
                         if (complexValue != 0)
                         {
@@ -888,6 +918,18 @@ namespace Microsoft.Recognizers.Text.Number
                 singleIntFrac = $"{this.Config.WordSeparatorToken}| -|" +
                                     GetKeyRegex(this.Config.OrdinalNumberMap.Keys) + "|" +
                                     GetKeyRegex(this.Config.CardinalNumberMap.Keys);
+            }
+
+            // For Hindi, there is a need for another NumberMap of the type double to handle values like 1.5.
+            // As this cannot be included into either Cardinal or Ordinal NumberMap as they are of the type long,
+            // HindiDecimalUnitsList (type double) takes care of these entries and it needs to be added to the singleIntFrac
+            // for the extractor to extract them
+            if (this.Config.CultureInfo.Name == "hi-IN")
+            {
+                singleIntFrac = $"{this.Config.WordSeparatorToken}| -|" +
+                                    GetKeyRegex(this.Config.OrdinalNumberMap.Keys) + "|" +
+                                    GetKeyRegex(this.Config.CardinalNumberMap.Keys) + "|" +
+                                    GetKeyRegex(this.Config.HindiDecimalUnitsList.Keys);
             }
 
             string textNumberPattern;

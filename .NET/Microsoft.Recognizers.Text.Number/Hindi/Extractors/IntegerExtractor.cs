@@ -23,6 +23,10 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
+                    new Regex(NumbersDefinitions.IndianNumberingSystemRegex, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
+                },
+                {
                     new Regex(NumbersDefinitions.NumbersWithSuffix, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
@@ -36,11 +40,11 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
                 },
                 {
                     new Regex(NumbersDefinitions.AllIntRegexWithLocks, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.ENGLISH)
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.HINDI)
                 },
                 {
                     new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.ENGLISH)
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.HINDI)
                 },
                 {
                     GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder, RegexFlags),
@@ -53,6 +57,18 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
                 {
                     GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, placeholder, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
+                },
+                {
+                    new Regex(NumbersDefinitions.NegativeHinglishRegex, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.HINDI)
+                },
+                {
+                    new Regex(NumbersDefinitions.CompoundEnglishNumberRegex, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.HINDI)
+                },
+                {
+                    new Regex(NumbersDefinitions.DecimalUnitsWithRoundNumberRegex, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.HINDI)
                 },
             };
 
