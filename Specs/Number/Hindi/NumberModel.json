@@ -1435,7 +1435,8 @@
   },
   {
     "Input": "तीन और एक का पाँचवाँ भाग",
-    "NotSupportedByDesign": "javascript,python,java,dotnet",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "तीन और एक का पाँचवाँ",
@@ -1974,7 +1975,7 @@
   },
   {
     "Input": "इक्कीस में से 1",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2338,7 +2339,7 @@
   },
   {
     "Input": "3 सौ और 2 सौ दो अमान्य संख्याएं हैं।",
-    "NotSupported": "dotnet, javascript, java, python",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2620,7 +2621,8 @@
   },
   {
     "Input": "मैं आपको ३ सौ और २१ युआन दे सकता हूं।",
-    "NotSupportedByDesign": "javascript,python,java,dotnet",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Comment": "Devanagari script",
     "Results": [
       {
@@ -2634,7 +2636,6 @@
       }
     ]
   },
-
   {
     "Input": "१ खरब",
     "NotSupportedByDesign": "javascript,python,java",
