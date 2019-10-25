@@ -626,8 +626,9 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
     def match_duration(self, source: str, reference: datetime) -> List[ExtractResult]:
         tokens = []
         durations = []
+        duration_extractions = self.config.duration_extractor.extract(source, reference)
 
-        for duration_ex in self.config.duration_extractor.extract(source, reference):
+        for duration_ex in duration_extractions:
             match = self.config.date_unit_regex.search(duration_ex.text)
             if match:
                 durations.append(
