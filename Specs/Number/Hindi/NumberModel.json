@@ -1298,7 +1298,6 @@
   {
     "Input": "-127.32e13",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "-127.32e13",
@@ -1313,7 +1312,6 @@
   },
   {
     "Input": "12.32e+14",
-    "NotSupportedByDesign": "javascript,python,java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2007,7 +2005,6 @@
   {
     "Input": "पांच बटे आठ",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "पांच बटे आठ",
@@ -2461,7 +2458,6 @@
         "Start": 11,
         "End": 12
       }
-
     ]
   },
   {
@@ -2490,7 +2486,6 @@
   },
   {
     "Input": "कोलकाता में छब्बीस लोग दुर्घटना में मारे गए ",
-    "NotSupportedByDesign": "java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3058,22 +3053,6 @@
         },
         "Start": 9,
         "End": 23
-      }
-    ]
-  },
-  {
-    "Input": "सौ",
-    "Comments":  "Developmemt test case",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "सौ",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "100"
-        },
-        "Start": 0,
-        "End": 1
       }
     ]
   },
