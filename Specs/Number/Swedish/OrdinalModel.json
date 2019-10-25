@@ -1,7 +1,7 @@
 [
   {
     "Input": "radera sista meningen i anteckningen",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "sista",
@@ -18,7 +18,7 @@
   },
   {
     "Input": "Menar du \"nästa\" eller \"sista\"?",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "nästa",
@@ -46,7 +46,7 @@
   },
   {
     "Input": "Menar du \"näste\" eller \"siste\"?",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "näste",
@@ -74,7 +74,7 @@
   },
   {
     "Input": "Visa mig näst sista.",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "näst sista",
@@ -91,7 +91,7 @@
   },
   {
     "Input": "Gå till föregående sida.",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "föregående",
@@ -108,28 +108,11 @@
   },
   {
     "Input": "Visa mig den som kommer efter sista.",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "efter sista",
-        "Start": 12,
-        "End": 23,
-        "TypeName": "ordinal.relative",
-        "Resolution": {
-          "offset": "-1",
-          "relativeTo": "end",
-          "value": "end-1"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Visa mig den som kommer före den sista.",
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "före den sista",
-        "Start": 8,
+        "Start": 24,
         "End": 34,
         "TypeName": "ordinal.relative",
         "Resolution": {
@@ -141,8 +124,25 @@
     ]
   },
   {
+    "Input": "Visa mig den som kommer före den siste.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "före den siste",
+        "Start": 24,
+        "End": 37,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
     "Input": "Visa mig nästa.",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "nästa",
@@ -159,7 +159,7 @@
   },
   {
     "Input": "Visa mig nästa möte.",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "nästa",
@@ -176,7 +176,7 @@
   },
   {
     "Input": "Visa de 2 sista posterna.",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "sista",
@@ -193,12 +193,12 @@
   },
   {
     "Input": "Jag vill ha de nästa 3 böckerna.",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "nästa",
-        "Start": 7,
-        "End": 10,
+        "Start": 15,
+        "End": 19,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "1",
@@ -210,12 +210,12 @@
   },
   {
     "Input": "Jag vill ha sista kakan.",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "sista",
-        "Start": 7,
-        "End": 10,
+        "Start": 12,
+        "End": 16,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
@@ -227,7 +227,9 @@
   },
   {
     "Input": "etthundratjugofemte",
-    "NotSupported": "javascript, python, java",
+    "Comment": "Currently this case doesn't resolve",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "etthundratjugofemte",
@@ -244,12 +246,12 @@
   },
   {
     "Input": "Ge mig nästa.",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "nästa",
-        "Start": 12,
-        "End": 15,
+        "Start": 7,
+        "End": 11,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "1",
@@ -261,7 +263,7 @@
   },
   {
     "Input": "11:e",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "11:e",
@@ -279,7 +281,7 @@
   },
   {
     "Input": "Gå till den 11:e raden",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "11:e",
@@ -296,7 +298,7 @@
   },
   {
     "Input": "elfte",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "elfte",
@@ -314,7 +316,7 @@
   },
   {
     "Input": "Gå till den elfte raden",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "elfte",
@@ -331,7 +333,7 @@
   },
   {
     "Input": "tredje",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tredje",
@@ -349,7 +351,7 @@
   },
   {
     "Input": "Gå till den tredje raden",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tredje",
@@ -366,7 +368,7 @@
   },
   {
     "Input": "tjugoförsta",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tjugoförsta",
@@ -383,7 +385,7 @@
   },
   {
     "Input": "tjugoförste",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tjugoförste",
@@ -400,12 +402,12 @@
   },
   {
     "Input": "tvåhundrade",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tvåhundrade",
         "Start": 0,
-        "End": 12,
+        "End": 10,
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "200",
@@ -417,28 +419,16 @@
   },
   {
     "Input": "Boka en förstaklassbiljett till Sankt Olof.",
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "första",
-        "Start": 7,
-        "End": 11,
-        "TypeName": "ordinal",
-        "Resolution": {
-          "offset": "1",
-          "relativeTo": "start",
-          "value": "1"
-        }
-      }
-    ]
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
   },
   {
     "Input": "Jag tycker om de 2 första böckerna.",
     "Results": [
       {
         "Text": "första",
-        "Start": 11,
-        "End": 15,
+        "Start": 19,
+        "End": 24,
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "1",
@@ -450,12 +440,12 @@
   },
   {
     "Input": "Jag tycker om den förste.",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "förste",
-        "Start": 11,
-        "End": 15,
+        "Start": 18,
+        "End": 23,
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "1",
@@ -467,12 +457,12 @@
   },
   {
     "Input": "Säg första ordet.",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "första",
-        "Start": 10,
-        "End": 14,
+        "Start": 4,
+        "End": 9,
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "1",
@@ -484,12 +474,12 @@
   },
   {
     "Input": "Hon slutade på andra plats!",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "andra",
-        "Start": 13,
-        "End": 18,
+        "Start": 15,
+        "End": 19,
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "2",
@@ -501,12 +491,12 @@
   },
   {
     "Input": "Den före den sista är den rätta",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "före den sista",
-        "Start": 0,
-        "End": 26,
+        "Start": 4,
+        "End": 17,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -517,13 +507,32 @@
     ]
   },
   {
-    "Input": "JAg menade den före den sista.",
-    "NotSupported": "javascript, python, java",
+    "Input": "Jag vill köpa den tredje från slutet",
+    "Comment": "Currently resolves as ordinal only",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tredje från slutet",
+        "Start": 4,
+        "End": 17,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Jag menade den före den sista.",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "före den sista",
-        "Start": 8,
-        "End": 30,
+        "Start": 15,
+        "End": 28,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -535,11 +544,11 @@
   },
   {
     "Input": "Jag menar den nuvarande",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "nuvarande",
-        "Start": 12,
+        "Start": 14,
         "End": 22,
         "TypeName": "ordinal.relative",
         "Resolution": {
@@ -552,12 +561,12 @@
   },
   {
     "Input": "Se nuvarande sida",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "current",
-        "Start": 12,
-        "End": 18,
+        "Text": "nuvarande",
+        "Start": 3,
+        "End": 11,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
@@ -568,8 +577,25 @@
     ]
   },
   {
+    "Input": "Visa poster som finns före nuvarande period",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "före nuvarande",
+        "Start": 22,
+        "End": 35,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      }
+    ]
+  },
+  {
     "Input": "hundrade",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "hundrade",
@@ -586,10 +612,29 @@
   },
   {
     "Input": "126:e",
-    "NotSupported": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "126:e",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "126",
+          "relativeTo": "start",
+          "value": "126"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Det är den hundratjugosjätte gången hittills i år.",
+    "Comment": "Currently this case doesn't resolve",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "etthundratjugosjätte",
         "Start": 0,
         "End": 4,
         "TypeName": "ordinal",

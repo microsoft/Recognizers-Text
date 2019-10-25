@@ -78,8 +78,9 @@
   },
   {
     "Input": " den 4 maj ",
-    "Comments": "Should be handled by the date extractor. Currently resolves as a number.",
-    "NotSupportedByDesign": "dotnet, javascript, python, java",
+    "Comments": "Should be handled by the date extractor? Currently resolves as a number.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": []
   },
   {
@@ -105,8 +106,9 @@
   },
   {
     "Input": "en",
-    "Comments": "Resolves as 1",
-    "NotSupportedByDesign": "dotnet, javascript, python, java",
+    "Comments": "Resolves as 1. 'en' corresponds to 'a' or 'an' in english.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": []
   },
   {
@@ -800,8 +802,9 @@
   },
   {
     "Input": "Tre hundra  trettio en",
-    "Comments": "This expression currentlu resolves as 2 numbers",
-    "NotSupportedByDesign": "dotnet, javascript, python, java",
+    "Comments": "This expression currently resolves as 2 numbers",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "Tre hundra  trettio en",
@@ -1361,7 +1364,7 @@
   },
   {
     "Input": "en tjugoförstedel",
-    "Comment": "Correspons to writing 'A twentyfirsts'. Compound fraction expressions are currently not handled.",
+    "Comment": "Correspons to writing 'A twentyfirsts'. Compound fraction expressions are currently not resolved correctly.",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
@@ -1763,7 +1766,9 @@
   },
   {
     "Input": "en - fjärdedel",
-    "NotSupportedByDesign": "dotnet, javascript, python, java",
+    "Comment": "Currently resolves as 0,2. Need to decide whether this construct should be resolved as fraction, as number and fraction or simply ignore. This construct is not used in sweden.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "en - fjärdedel",
@@ -1779,7 +1784,9 @@
   },
   {
     "Input": "en-åttondel",
-    "NotSupportedByDesign": "dotnet, javascript, python, java",
+    "Comment": "Currently resolves as 0,11111... Need to decide whether this construct should be resolved as fraction, as number and fraction or simply ignore. This construct is not used in sweden.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "en-åttondel",
@@ -1795,7 +1802,9 @@
   },
   {
     "Input": "fem - åttondelar",
-    "NotSupportedByDesign": "dotnet, javascript, python, java",
+    "Comment": "Currently resolves as 0,07692... Need to decide whether this construct should be resolved as fraction, as number and fraction or simply ignore. This construct is not used in sweden.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "fem - åttondelar",
@@ -1811,7 +1820,9 @@
   },
   {
     "Input": "nittio - fem hundra-femtedelar",
-    "NotSupportedByDesign": "dotnet, javascript, python, java",
+    "Comment": "Currently resolves as 0,9047... Need to decide whether this construct should be resolved as fraction, as number and fraction or simply ignore. This construct is not used in sweden.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "nittio - fem hundra-femtedelar",
@@ -2094,12 +2105,26 @@
   },
   {
     "Input": "1m är inte ett tal.",
-    "NotSupportedByDesign": "dotnet, javascript, java, python",
-    "Results": []
+    "Comment": "1m is ignored, but 'ett' resolves as 1, which is expected.",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ett",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 11,
+        "End": 13
+      }
+    ]
   },
   {
     "Input": "Jag kan ge dig 3 hundra 21 yuan.",
-    "NotSupportedByDesign": "dotnet, javascript, java, python",
+    "Comment": "Currently resolves as 2 numbers.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "3 hundra 21",
@@ -2107,14 +2132,16 @@
         "Resolution": {
           "value": "321"
         },
-        "Start": 15,
+        "Start": 11,
         "End": 30
       }
     ]
   },
   {
     "Input": "4 tusen 3 hundra 21 är ett giltigt tal.",
-    "NotSupportedByDesign": "dotnet, javascript, java, python",
+    "Comment": "Currently resolves as 4 numbers.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "4 tusen 3 hundra 21",
@@ -2129,7 +2156,9 @@
   },
   {
     "Input": "4 tusen 3 hundra 0 är två giltiga tal.",
-    "NotSupportedByDesign": "dotnet, javascript, java, python",
+    "Comment": "Currently resolves as 4 numbers.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "4 tusen 3 hundra",
@@ -2163,7 +2192,9 @@
   },
   {
     "Input": "4000 3 hundra 21 är två giltiga tal.",
-    "NotSupportedByDesign": "dotnet, javascript, java, python",
+    "Comment": "Currently resolves as 4 numbers.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "4000",
@@ -2185,7 +2216,7 @@
         "End": 20
       },
       {
-        "Text": "two",
+        "Text": "två",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
@@ -2306,7 +2337,9 @@
   },
   {
     "Input": "3 hundra en är giltiga tal.",
-    "NotSupportedByDesign": "dotnet, javascript, java, python",
+    "Comment": "Currently resolves into two numbers",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "3 hundra en",
@@ -2317,6 +2350,22 @@
         },
         "Start": 0,
         "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "tvåhundra",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "tvåhundra",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "200"
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },

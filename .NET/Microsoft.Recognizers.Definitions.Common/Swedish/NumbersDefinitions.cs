@@ -38,22 +38,22 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string PlaceHolderDefault = @"\D|\b";
       public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";
       public static readonly string NumbersWithSuffix = $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
-      public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)";
+      public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s*{RoundNumberIntegerRegex}(?=\b)";
       public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dussin(?=\b)";
       public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
       public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((ett\s+)?halvt\s+dussin)|({AllIntRegex}\s+dussin))(?=\b)";
-      public const string RoundNumberOrdinalRegex = @"(?:hundrade\b|tusende\b|miljonte\b|miljardte\b|biljonte\b|biljardte\b|triljonte\b|triljardte\b)";
-      public const string NumberOrdinalRegex = @"(?:först(e|a)|andr(a|e)|tredje|fjärde|femte|sjätte|sjunde|åttonde|nionde|tioende|elfte|tolfte|trettonde|fjortonde|femtonde|sextonde|sjuttonde|artonde|nittonde|tjugonde|trettionde|fyrtionde|femtionde|sextionde|sjuttionde|åttionde|nittionde)";
-      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>((näst(a|e)|föregående)|näst sist(a|e)|sist(a|e)|nuvarande|tredje\s+från\s+slutet|senaste))";
+      public const string RoundNumberOrdinalRegex = @"(hundrade|tusende|miljonte|miljardte|biljonte|biljardte|triljonte|triljardte)";
+      public const string NumberOrdinalRegex = @"(först(e|a)|andr(a|e)|tredje|fjärde|femte|sjätte|sjunde|åttonde|nionde|tioende|elfte|tolfte|trettonde|fjortonde|femtonde|sextonde|sjuttonde|artonde|nittonde|tjugonde|trettionde|fyrtionde|femtionde|sextionde|sjuttionde|åttionde|nittionde)";
+      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(\bnäst(a|e)|\bföregående|\bnäst\s+sist(a|e)|\bsist(a|e)|\bnuvarande|\b(före|efter)\s+nuvarande|\bförr(a|e)|\btredje\s+från\s+slutet|\bsenaste|\btidigare|\bföre\s+den\s+sist(a|e)|\b(innan|efter|före)\s+sist(a|e)))";
       public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
-      public static readonly string SuffixBasicOrdinalRegex = $@"(?:(((({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-?\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(och\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-?\s*))?{BasicOrdinalRegex})";
-      public static readonly string SuffixRoundNumberOrdinalRegex = $@"(?:({AllIntRegex}\s+){RoundNumberOrdinalRegex})";
-      public static readonly string AllOrdinalRegex = $@"(?:{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
+      public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-?\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(och\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-?\s*))?{BasicOrdinalRegex})";
+      public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s*){RoundNumberOrdinalRegex})";
+      public static readonly string AllOrdinalRegex = $@"({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
       public const string OrdinalSuffixRegex = @"(?<=\b)(?:(\d*(1:(e|a)|2:(a|e)|3:e|4:e|5:e|6:e|7:e|8:e|9:e|0:e))|(11:e|12:e))(?=\b)";
       public const string OrdinalNumericRegex = @"(?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*\s*(:(e|a)))(?=\b)";
-      public static readonly string OrdinalRoundNumberRegex = $@"(?<!(en|ett)\s+){RoundNumberOrdinalRegex}";
+      public static readonly string OrdinalRoundNumberRegex = $@"(?<!(en|ett)\s+)?{RoundNumberOrdinalRegex}";
       public static readonly string OrdinalSwedishRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
-      public const string RoundNumberFractionSwedishRegex = @"(?:hundradel(s|ar)?|tusendel(s|ar)?|miljon(te)?del(s|ar)?|miljarddel(s|ar)?|biljon(te)?del(s|ar)?|biljarddel(s|ar)?|triljon(te)?del(s|ar)?|triljarddel(s|ar)?)";
+      public const string RoundNumberFractionSwedishRegex = @"(hundradel(s|ar)?|tusendel(s|ar)?|miljon(te)?del(s|ar)?|miljarddel(s|ar)?|biljon(te)?del(s|ar)?|biljarddel(s|ar)?|triljon(te)?del(s|ar)?|triljarddel(s|ar)?)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(och\s+)?)?({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex}))((de)?l(s|ar)?)?|halvor|kvart(ar|s))(?=\b)";
@@ -439,14 +439,22 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"senaste", @"0" },
             { @"nästa", @"1" },
             { @"näste", @"1" },
+            { @"efter nuvarande", @"1" },
             { @"nuvarande", @"0" },
             { @"föregående", @"-1" },
+            { @"före nuvarande", @"-1" },
             { @"förra", @"-1" },
             { @"tidigare", @"-1" },
             { @"näst sista", @"-1" },
             { @"näst siste", @"-1" },
+            { @"före den sista", @"-1" },
+            { @"före den siste", @"-1" },
+            { @"före sista", @"-1" },
+            { @"före siste", @"-1" },
             { @"innan siste", @"-1" },
             { @"innan sista", @"-1" },
+            { @"efter sista", @"-1" },
+            { @"efter siste", @"-1" },
             { @"tredje från slutet", @"-2" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
@@ -456,14 +464,22 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"senaste", @"end" },
             { @"nästa", @"current" },
             { @"näste", @"current" },
+            { @"efter nuvarande", @"current" },
             { @"nuvarande", @"current" },
             { @"föregående", @"current" },
+            { @"före nuvarande", @"current" },
             { @"förra", @"current" },
             { @"tidigare", @"current" },
             { @"näst sista", @"end" },
             { @"näst siste", @"end" },
+            { @"före den sista", @"end" },
+            { @"före den siste", @"end" },
+            { @"före siste", @"end" },
+            { @"före sista", @"end" },
             { @"innan siste", @"end" },
             { @"innan sista", @"end" },
+            { @"efter sista", @"end" },
+            { @"efter siste", @"end" },
             { @"tredje från slutet", @"end" }
         };
     }

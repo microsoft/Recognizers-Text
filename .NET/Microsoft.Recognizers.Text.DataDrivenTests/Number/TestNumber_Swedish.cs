@@ -6,14 +6,14 @@ namespace Microsoft.Recognizers.Text.Number.Tests
     [TestClass]
     public class TestNumber_Swedish : TestBase
     {
-        
+        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void OrdinalModelSuppressExtendedTypes(TestModel testSpec)
         {
             TestNumber(testSpec);
         }
-        
+        */
 
         [NetCoreTestDataSource]
         [TestMethod]
@@ -40,23 +40,19 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         }
         */
 
-        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void OrdinalModel(TestModel testSpec)
         {
             TestNumber(testSpec);
         }
-        */
 
-        
         [NetCoreTestDataSource]
         [TestMethod]
         public void PercentModel(TestModel testSpec)
         {
             TestNumber(testSpec);
         }
-        
 
         /*
         [NetCoreTestDataSource]
