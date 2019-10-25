@@ -104,7 +104,7 @@ class RegexExtension:
 
     @staticmethod
     def match_end(regexp: Pattern, text: str, trim: bool):
-        match = regex.match(regexp, text)
+        match = regex.search(regexp, text)
 
         if match is None:
             return ConditionalMatch(regexp, False)
@@ -114,7 +114,7 @@ class RegexExtension:
         if trim:
             srt_after = srt_after.strip()
 
-        success = match and (str.isspace(srt_after) or srt_after is None)
+        success = match and (not srt_after or srt_after is None)
 
         conditional = ConditionalMatch(match, success)
 

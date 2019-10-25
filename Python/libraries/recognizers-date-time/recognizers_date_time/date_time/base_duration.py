@@ -95,6 +95,11 @@ class DurationExtractorConfiguration(DateTimeOptionsConfiguration):
     def less_than_regex(self) -> Pattern:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def check_both_before_after(self) -> bool:
+        raise NotImplementedError
+
 
 class BaseDurationExtractor(DateTimeExtractor):
     @property
@@ -128,28 +133,43 @@ class BaseDurationExtractor(DateTimeExtractor):
     def tag_inequality_prefix(self, text: str, extract_results: [ExtractResult]):
         for extract_result in extract_results:
             before_string = text[0: extract_result.start]
+            after_string = text[extract_result.start + extract_result.length:]
             is_inequality_prefix_matched = False
+            is_match_after = False
 
             match = RegexExtension.match_end(self.config.more_than_regex, before_string, True)
 
+            # check also afterString
+            if self.config.check_both_before_after and not match.success:
+                match = RegexExtension.match_begin(self.config.more_than_regex, after_string, True)
+                is_match_after = True
+
             # The second condition is necessary so for "1 week" in "more than 4 days and less than
             # 1 week", it will not be tagged incorrectly as "more than"
-            if match.success:
-                extract_result.data = TimeTypeConstants.MORE_THAN_MOD
-                is_inequality_prefix_matched = True
+            if match:
+                if match.success:
+                    extract_result.data = TimeTypeConstants.MORE_THAN_MOD
+                    is_inequality_prefix_matched = True
 
             if not is_inequality_prefix_matched:
 
                 match = RegexExtension.match_end(self.config.less_than_regex, before_string, True)
 
-                if match.success:
-                    extract_result.data = TimeTypeConstants.LESS_THAN_MOD
-                    is_inequality_prefix_matched = True
+                # check also afterString
+                if self.config.check_both_before_after and not match.success:
+                    match = RegexExtension.match_begin(self.config.less_than_regex, after_string, True)
+                    is_match_after = True
+
+                if match:
+                    if match.success:
+                        extract_result.data = TimeTypeConstants.LESS_THAN_MOD
+                        is_inequality_prefix_matched = True
 
             if is_inequality_prefix_matched:
-                extract_result.length += extract_result.start - text.index(match.group())
-                extract_result.start = text.index(match.group())
-                extract_result.text = text[extract_result.start: extract_result.start + extract_result.length]
+                if not is_match_after:
+                    extract_result.length += extract_result.start - text.index(match.groups[0])
+                    extract_result.start = text.index(match.groups[0])
+                    extract_result.text = text[extract_result.start: extract_result.start + extract_result.length]
 
         return extract_results
 
