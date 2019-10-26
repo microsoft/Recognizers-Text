@@ -11,5 +11,5 @@
 
 export namespace PortuguesePhoneNumbers {
     export const NumberReplaceToken = '@builtin.phonenumber';
-    export const ForbiddenPrefixRegex = `conta(\\s+(número|bancária))?:?\\s*$`;
+    export const FalsePositivePrefixRegex = `conta(\\s+(número|bancária(\\s+número)?))?(\\s+é)?:?\\s*$`;
 }

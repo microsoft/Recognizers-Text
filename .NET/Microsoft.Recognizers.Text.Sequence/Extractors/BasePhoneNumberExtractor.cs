@@ -111,17 +111,16 @@ namespace Microsoft.Recognizers.Text.Sequence
                 if (er.Start != 0)
                 {
                     var ch = text[(int)(er.Start - 1)];
-                    var front = text.Substring(0, (int)er.Start);
+                    var front = text.Substring(0, (int)(er.Start - 1));
 
-                    if (this.config.ForbiddenPrefixRegex != null &&
-                            this.config.ForbiddenPrefixRegex.IsMatch(front))
+                    if (this.config.FalsePositivePrefixRegex != null &&
+                            this.config.FalsePositivePrefixRegex.IsMatch(front))
                     {
                         ers.Remove(er);
                         i--;
                         continue;
                     }
 
-                    front = text.Substring(0, (int)(er.Start - 1));
                     if (BasePhoneNumbers.BoundaryMarkers.Contains(ch))
                     {
                         if (SpecialBoundaryMarkers.Contains(ch) &&

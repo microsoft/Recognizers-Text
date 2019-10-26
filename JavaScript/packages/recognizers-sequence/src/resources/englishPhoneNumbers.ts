@@ -11,5 +11,5 @@
 
 export namespace EnglishPhoneNumbers {
     export const NumberReplaceToken = '@builtin.phonenumber';
-    export const ForbiddenPrefixRegex = `(account|card)(\\s+(#|number))?:?\\s*$`;
+    export const FalsePositivePrefixRegex = `(account|card)(\\s+(#|number))?(\\s+is)?:?\\s*$`;
 }

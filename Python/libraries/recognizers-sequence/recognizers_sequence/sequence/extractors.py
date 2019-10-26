@@ -154,11 +154,10 @@ class BasePhoneNumberExtractor(SequenceExtractor):
                     continue
 
             ch = source[er.start - 1]
-            front = source[0:er.start]
-            if self.config.forbidden_prefix_regex and re.compile(self.config.forbidden_prefix_regex).search(front):
+            front = source[0: er.start - 1]
+            if self.config.false_positive_prefix_regex and re.compile(self.config.false_positive_prefix_regex).search(front):
                 continue
 
-            front = source[0:er.start - 1]
             if er.start != 0:
                 if ch in BasePhoneNumbers.BoundaryMarkers:
                     # Handle cases like "-1234567" and "-1234+5678"

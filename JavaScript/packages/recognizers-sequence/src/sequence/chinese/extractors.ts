@@ -20,7 +20,7 @@ export class ChinesePhoneNumberExtractorConfiguration implements IPhoneNumberExt
     readonly EndWordBoundariesRegex: string;
     readonly ColonPrefixCheckRegex: string;
     readonly ForbiddenPrefixMarkers: string[];
-    readonly ForbiddenPrefixRegex: string;
+    readonly FalsePositivePrefixRegex: string;
 
     constructor() {
         this.WordBoundariesRegex = ChinesePhoneNumbers.WordBoundariesRegex;
@@ -28,7 +28,7 @@ export class ChinesePhoneNumberExtractorConfiguration implements IPhoneNumberExt
         this.EndWordBoundariesRegex = ChinesePhoneNumbers.EndWordBoundariesRegex;
         this.ColonPrefixCheckRegex = ChinesePhoneNumbers.ColonPrefixCheckRegex;
         this.ForbiddenPrefixMarkers = ChinesePhoneNumbers.ForbiddenPrefixMarkers;
-        this.ForbiddenPrefixRegex = null;
+        this.FalsePositivePrefixRegex = null;
     }
 }
 

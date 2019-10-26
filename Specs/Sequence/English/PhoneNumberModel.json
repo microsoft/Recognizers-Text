@@ -4757,5 +4757,24 @@
         }
       }
     ]
+  },
+  {
+    "Input": "card number 12345678 and phone number 12345678",
+    "Results": [
+      {
+        "Text": "12345678",
+        "Start": 38,
+        "End": 45,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.3",
+          "value": "12345678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My card number is 12345678",
+    "Results": []
   }
 ]

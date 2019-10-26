@@ -48,12 +48,12 @@ class PortuguesePhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
         self.__forbidden_prefix_markers = forbidden_prefix_markers
 
     @property
-    def forbidden_prefix_regex(self) -> str:
-        return self.__forbidden_prefix_regex
+    def false_positive_prefix_regex(self) -> str:
+        return self.__false_positive_prefix_regex
 
-    @forbidden_prefix_regex.setter
-    def forbidden_prefix_regex(self, forbidden_prefix_regex):
-        self.__forbidden_prefix_regex = forbidden_prefix_regex
+    @false_positive_prefix_regex.setter
+    def false_positive_prefix_regex(self, false_positive_prefix_regex):
+        self.__false_positive_prefix_regex = false_positive_prefix_regex
 
     def __init__(self, options=None):
         super().__init__(options)
@@ -62,4 +62,4 @@ class PortuguesePhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
         self.__end_word_boundaries_regex = BasePhoneNumbers.EndWordBoundariesRegex
         self.__colon_prefix_check_regex = BasePhoneNumbers.ColonPrefixCheckRegex
         self.__forbidden_prefix_markers = BasePhoneNumbers.ForbiddenPrefixMarkers
-        self.__forbidden_prefix_regex = PortuguesePhoneNumbers.ForbiddenPrefixRegex
+        self.__false_positive_prefix_regex = PortuguesePhoneNumbers.FalsePositivePrefixRegex

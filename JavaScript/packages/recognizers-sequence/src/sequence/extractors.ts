@@ -79,7 +79,7 @@ export interface IPhoneNumberExtractorConfiguration {
     NonWordBoundariesRegex: string;
     EndWordBoundariesRegex: string;
     ColonPrefixCheckRegex: string;
-    ForbiddenPrefixRegex: string;
+    FalsePositivePrefixRegex: string;
     ForbiddenPrefixMarkers: string[];
 }
 
@@ -130,12 +130,11 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
                 }
             }
             let ch = source[er.start - 1];
-            let front = source.substring(0, er.start);
-            if (this.config.ForbiddenPrefixRegex && front.match(this.config.ForbiddenPrefixRegex)) {
+            let front = source.substring(0, er.start - 1);
+            if (this.config.FalsePositivePrefixRegex && front.match(this.config.FalsePositivePrefixRegex)) {
                 continue;
             }
 
-            front = source.substring(0, er.start - 1);
             if (er.start !== 0) {
                 if (BasePhoneNumbers.BoundaryMarkers.indexOf(ch) !== -1) {
                     if (BasePhoneNumbers.SpecialBoundaryMarkers.indexOf(ch) !== -1 &&

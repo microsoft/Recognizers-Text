@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public Regex ColonPrefixCheckRegex { get; set; }
 
-        public Regex ForbiddenPrefixRegex { get; set; }
+        public Regex FalsePositivePrefixRegex { get; set; }
 
         public List<char> ColonMarkers { get; set; }
 

@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.Sequence.Portuguese
             ColonMarkers = (List<char>)BasePhoneNumbers.ColonMarkers;
             ForbiddenPrefixMarkers = (List<char>)BasePhoneNumbers.ForbiddenPrefixMarkers;
             ForbiddenSuffixMarkers = (List<char>)BasePhoneNumbers.ForbiddenSuffixMarkers;
-            ForbiddenPrefixRegex = new Regex(PhoneNumbersDefinitions.ForbiddenPrefixRegex);
+            FalsePositivePrefixRegex = new Regex(PhoneNumbersDefinitions.FalsePositivePrefixRegex);
         }
     }
 }

@@ -22,6 +22,6 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
     public static class PhoneNumbersDefinitions
     {
       public const string NumberReplaceToken = @"@builtin.phonenumber";
-      public const string ForbiddenPrefixRegex = @"conta(\s+(número|bancária))?:?\s*$";
+      public const string FalsePositivePrefixRegex = @"conta(\s+(número|bancária(\s+número)?))?(\s+é)?:?\s*$";
     }
 }

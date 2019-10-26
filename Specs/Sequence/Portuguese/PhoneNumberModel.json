@@ -960,5 +960,13 @@
   {
     "Input": "conta número: 12345678",
     "Results": []
+  },
+  {
+    "Input": "conta bancária número: 12345678",
+    "Results": []
+  },
+  {
+    "Input": "minha conta é 12345678",
+    "Results": []
   }
 ]

@@ -11,7 +11,7 @@ export class EnglishPhoneNumberExtractorConfiguration implements IPhoneNumberExt
     readonly EndWordBoundariesRegex: string;
     readonly ColonPrefixCheckRegex: string;
     readonly ForbiddenPrefixMarkers: string[];
-    readonly ForbiddenPrefixRegex: string;
+    readonly FalsePositivePrefixRegex: string;
 
 
     constructor() {
@@ -20,7 +20,7 @@ export class EnglishPhoneNumberExtractorConfiguration implements IPhoneNumberExt
         this.EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex;
         this.ForbiddenPrefixMarkers = BasePhoneNumbers.ForbiddenPrefixMarkers;
         this.ColonPrefixCheckRegex = BasePhoneNumbers.ColonPrefixCheckRegex;
-        this.ForbiddenPrefixRegex = EnglishPhoneNumbers.ForbiddenPrefixRegex;
+        this.FalsePositivePrefixRegex = EnglishPhoneNumbers.FalsePositivePrefixRegex;
     }
 }
 

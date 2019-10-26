@@ -1,5 +1,5 @@
 ---
 NumberReplaceToken: '@builtin.phonenumber'
-ForbiddenPrefixRegex: !simpleRegex
-  def: (account|card)(\s+(#|number))?:?\s*$
+FalsePositivePrefixRegex: !simpleRegex
+  def: (account|card)(\s+(#|number))?(\s+is)?:?\s*$
 ...
