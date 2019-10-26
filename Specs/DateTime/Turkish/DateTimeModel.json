@@ -2420,14 +2420,13 @@
         "Text": "9 ay içinde",
         "Start": 9,
         "End": 19,
-        "TypeName": "datetimeV2.daterange",
+        "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-03-23,2018-12-23,P9M)",
-              "type": "daterange",
-              "start": "2018-03-23",
-              "end": "2018-12-23"
+              "timex": "2018-12-23",
+              "type": "date",
+              "value": "2018-12-23"
             }
           ]
         }
@@ -2448,8 +2447,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "Tom ve ben 2 hafta içinde bir toplantı yapacağız, bu yüzden lütfen 2 hafta içinde bir toplantı planlamama yardım edin.",
@@ -2462,14 +2460,13 @@
         "Text": "2 hafta içinde",
         "Start": 11,
         "End": 24,
-        "TypeName": "datetimeV2.daterange",
+        "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-03-23,2018-04-06,P2W)",
-              "type": "daterange",
-              "start": "2018-03-23",
-              "end": "2018-04-06"
+              "timex": "2018-04-06",
+              "type": "date",
+              "value": "2018-04-06"
             }
           ]
         }
@@ -2478,20 +2475,18 @@
         "Text": "2 hafta içinde",
         "Start": 67,
         "End": 80,
-        "TypeName": "datetimeV2.daterange",
+        "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-03-23,2018-04-06,P2W)",
-              "type": "daterange",
-              "start": "2018-03-23",
-              "end": "2018-04-06"
+              "timex": "2018-04-06",
+              "type": "date",
+              "value": "2018-04-06"
             }
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "Önümüzdeki beş gün ya da önümüzdeki kırk gün Çin'e gideceğim",
@@ -3780,7 +3775,8 @@
               "timex": "2018-05-26",
               "Mod": "before",
               "type": "daterange",
-              "end": "2018-05-26"
+              "end": "2018-05-26",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -4187,13 +4183,13 @@
               "timex": "2018-06-19T14",
               "Mod": "before",
               "type": "datetimerange",
-              "end": "2018-06-19 14:00:00"
+              "end": "2018-06-19 14:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "1 Şubat'ta en geç saat 6:00'da başlayalım.",
@@ -4520,14 +4516,13 @@
             {
               "timex": "(2018-06-26T00:00:00,2018-06-26T00:02:00,PT2M)",
               "type": "datetimerange",
-              "start": "2018-06-26 00:02:00",
+              "start": "2018-06-26 00:00:00",
               "end": "2018-06-26 00:02:00"
             }
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "iki ay içinde ayrılacağım",
@@ -4831,14 +4826,14 @@
     "NotSupported": "dotnet"
   },
   {
-    "Input": "Cortana, lütfen 7.6 Cuma günü Jim ile bir Skype araması yap.",
+    "Input": "Cortana, lütfen 6 Temmuz Cuma günü Jim ile bir Skype araması yap.",
     "Context": {
       "ReferenceDateTime": "2018-07-06T12:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "7.6 cuma",
+        "Text": "6 temmuz cuma",
         "Start": 16,
         "End": 23,
         "TypeName": "datetimeV2.date",
@@ -5389,8 +5384,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "Cortana, 18'inci haftaya bir şeyler ayarlayabilir misin?",
@@ -5400,9 +5394,9 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "18'inci haftaya",
+        "Text": "18'inci hafta",
         "Start": 9,
-        "End": 23,
+        "End": 21,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6028,16 +6022,16 @@
     ]
   },
   {
-    "Input": "2016 yılı ve daha büyüğü nasıl",
+    "Input": "2016 yılı ve daha sonrası nasıl",
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2016 yılı ve daha büyüğü",
+        "Text": "2016 yılı ve daha sonrası",
         "Start": 0,
-        "End": 23,
+        "End": 24,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6645,16 +6639,16 @@
     ]
   },
   {
-    "Input": "1/10'den 7/11'ye",
+    "Input": "1/10'dan 7/11'e",
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1/10'den 7/11'ye",
+        "Text": "1/10'dan 7/11'e",
         "Start": 0,
-        "End": 15,
+        "End": 14,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6670,16 +6664,16 @@
     ]
   },
   {
-    "Input": "10/25'den 01/25'ye",
+    "Input": "25/10'dan 25/01'e",
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10/25'den 01/25'ye",
+        "Text": "25/10'dan 25/01'e",
         "Start": 0,
-        "End": 17,
+        "End": 16,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6698,8 +6692,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "Tatilim 1-10-2018'den 7-10-2018'ye kadar",
@@ -6727,14 +6720,14 @@
     ]
   },
   {
-    "Input": "Tatilim 10/1/2018'den 10/7/2018'ye kadar",
+    "Input": "Tatilim 1/10/2018'den 7/10/2018'ye kadar",
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10/1/2018'den 10/7/2018'ye kadar",
+        "Text": "1/10/2018'den 7/10/2018'ye kadar",
         "Start": 8,
         "End": 39,
         "TypeName": "datetimeV2.daterange",
@@ -6749,8 +6742,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "10/1 ile 11/7 arasında uzun bir tatile çıkacağım",

@@ -226,7 +226,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string SuffixAfterRegex = @"\b((veya|ve|ya da)\s+(sonrasında|sonrası|sonra))\b";
       public const string PrepositionRegex = @"(?<prep>^(günü|'d[ae]|'t[ae]|,)$)";
       public const string LaterEarlyRegex = @"((?<early>(erkenden|erken(\s+saatte)?))|(?<late>geç(\s+saatte)?))";
-      public static readonly string TimeOfDayRegex = $@"\b(?<timeOfDay>((sabah|öğleden\s+sonra|öğle(?!\s+yemeği)|akşam|gece|gün|mesai)(ın?|in|nin|ün|leyin|ları|leri|de|si)?\b(\s+{LaterEarlyRegex})?(\s+(saat(inde|te|lerinde|leri)|vaktinde|vakti|vakitlerinde))?|iş\s+(saat(inde|te|lerinde|leri)|vaktinde|vakti|vakitlerinde))(\s+(içinde|içi|dışında|dışı))?)";
+      public static readonly string TimeOfDayRegex = $@"\b(?<timeOfDay>((sabah|öğleden\s+sonra|öğle(?!\s+yemeği)|akşam|gece|gün|mesai)(ın?|in|nin|ün|leyin|ları|leri|de|si)?\b(\s+{LaterEarlyRegex})?(\s+(saat(inde|te|lerinde|leri)|vaktinde|vakti|vakitlerinde))?|iş\s+(saat(inde|te|lerinde|leri)|vaktinde|vakti|vakitlerinde))(\s+(içinde|içi|dışında|dışı)\b)?)";
       public static readonly string SpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{TimeOfDayRegex})\b|\bbu\s(sabah|akşam|gece))\b";
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
       public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
