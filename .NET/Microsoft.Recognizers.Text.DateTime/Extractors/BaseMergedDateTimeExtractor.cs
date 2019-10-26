@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     er.Length += modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
-
+                    er.Data = Constants.HAS_MOD;
                     er.Metadata = AssignModMetadata(er.Metadata);
 
                     return true;
