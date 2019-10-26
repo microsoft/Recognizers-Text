@@ -8011,30 +8011,6 @@
     ]
   },
   {
-    "Input": "Sanırım görevi tamamlamak için bir buçuk saat yeterli.",
-    "Context": {
-      "ReferenceDateTime": "2018-12-05T12:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "bir buçuk saat",
-        "Start": 31,
-        "End": 44,
-        "TypeName": "datetimeV2.duration",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "PT1.5H",
-              "type": "duration",
-              "value": "5400"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "Bir İnternet şirketinde stajyer olarak çalışmak için bir ve çeyrek yıl ara verecek.",
     "Context": {
       "ReferenceDateTime": "2018-12-05T12:00:00"
