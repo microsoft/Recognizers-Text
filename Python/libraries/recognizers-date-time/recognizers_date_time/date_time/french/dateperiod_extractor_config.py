@@ -18,6 +18,14 @@ from recognizers_number import FrenchOrdinalExtractor, BaseNumberExtractor
 
 class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
+    def previous_prefix_regex(self) -> Pattern:
+        return self._previous_prefix_regex
+
+    @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
+    @property
     def simple_cases_regexes(self) -> List[Pattern]:
         return self._simple_cases_regexes
 
@@ -142,6 +150,9 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._within_next_prefix_regex
 
     def __init__(self):
+        self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.PreviousPrefixRegex)
+        self._check_both_before_after = False
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.SimpleCasesRegex),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.BetweenRegex),
