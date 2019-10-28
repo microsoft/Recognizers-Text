@@ -685,7 +685,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                 # Cases like "2 upcoming days", should be supported here
                 # Cases like "2 upcoming 3 days" is invalid, only extract "upcoming 3 days" by default
                 if any(numbers_in_prefix) and not any(numbers_in_duration):
-                    last_number = sorted(numbers_in_prefix, key= lambda t: t.end)[-1]
+                    last_number = sorted(numbers_in_prefix, key=lambda t: t.end)[-1]
 
                     # Prefix should ends with the last number
                     if last_number.start + last_number.length == len(prefix):
@@ -730,7 +730,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
             if match_date and not match_time:
                 if in_prefix:
                     start_token = match.index
-                    end_token= duration.end
+                    end_token = duration.end
                 else:
                     start_token = duration.start
                     end_token = duration.end + match.index + match.length
@@ -741,7 +741,6 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                         start_token = match.index
 
         return Token(start_token, end_token)
-
 
     # 1. Extract the month of date, week of date to a date range
     # 2. Extract cases like within two weeks from/before today/tomorrow/yesterday
