@@ -39,7 +39,7 @@ NumbersWithSuffix: !nestedRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
   references: [ BaseNumbers.NumberMultiplierRegex ]
 RoundNumberIntegerRegexWithLocks: !nestedRegex
-  def: (?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)
+  def: (?<=\b)\d+\s*{RoundNumberIntegerRegex}(?=\b)
   references: [ RoundNumberIntegerRegex ]
 NumbersWithDozenSuffix: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dussin(?=\b)
@@ -51,29 +51,29 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
   references: [ AllIntRegex ]
 #Ordinal Regex
 RoundNumberOrdinalRegex: !simpleRegex
-  def: (?:hundrade\b|tusende\b|miljonte\b|miljardte\b|biljonte\b|biljardte\b|triljonte\b|triljardte\b)
+  def: (hundrade|tusende|miljonte|miljardte|biljonte|biljardte|triljonte|triljardte)
 NumberOrdinalRegex: !simpleRegex
-  def: (?:först(e|a)|andr(a|e)|tredje|fjärde|femte|sjätte|sjunde|åttonde|nionde|tioende|elfte|tolfte|trettonde|fjortonde|femtonde|sextonde|sjuttonde|artonde|nittonde|tjugonde|trettionde|fyrtionde|femtionde|sextionde|sjuttionde|åttionde|nittionde)
+  def: (först(e|a)|andr(a|e)|tredje|fjärde|femte|sjätte|sjunde|åttonde|nionde|tioende|elfte|tolfte|trettonde|fjortonde|femtonde|sextonde|sjuttonde|artonde|nittonde|tjugonde|trettionde|fyrtionde|femtionde|sextionde|sjuttionde|åttionde|nittionde)
 RelativeOrdinalRegex: !simpleRegex
-  def: (?<relativeOrdinal>((näst(a|e)|föregående)|näst sist(a|e)|sist(a|e)|nuvarande|tredje\s+från\s+slutet|senaste))
+  def: (?<relativeOrdinal>(\bnäst(a|e)|\bföregående|\bnäst\s+sist(a|e)|\bsist(a|e)|\bnuvarande|\b(före|efter)\s+nuvarande|\bförr(a|e)|\btredje\s+från\s+slutet|\bsenaste|\btidigare|\bföre\s+den\s+sist(a|e)|\b(innan|efter|före)\s+sist(a|e)))
 BasicOrdinalRegex: !nestedRegex
   def: ({NumberOrdinalRegex}|{RelativeOrdinalRegex})
   references: [ NumberOrdinalRegex, RelativeOrdinalRegex ]
 SuffixBasicOrdinalRegex: !nestedRegex
-  def: (?:(((({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-?\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(och\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-?\s*))?{BasicOrdinalRegex})
+  def: ((((({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-?\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(och\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-?\s*))?{BasicOrdinalRegex})
   references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex ]
 SuffixRoundNumberOrdinalRegex: !nestedRegex
-  def: (?:({AllIntRegex}\s+){RoundNumberOrdinalRegex})
+  def: (({AllIntRegex}\s*){RoundNumberOrdinalRegex})
   references: [ AllIntRegex, RoundNumberOrdinalRegex ]
 AllOrdinalRegex: !nestedRegex
-  def: (?:{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})
+  def: ({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})
   references: [ SuffixBasicOrdinalRegex, SuffixRoundNumberOrdinalRegex ]
 OrdinalSuffixRegex: !simpleRegex
   def: (?<=\b)(?:(\d*(1:(e|a)|2:(a|e)|3:e|4:e|5:e|6:e|7:e|8:e|9:e|0:e))|(11:e|12:e))(?=\b)
 OrdinalNumericRegex: !simpleRegex
   def: (?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*\s*(:(e|a)))(?=\b)
 OrdinalRoundNumberRegex: !nestedRegex
-  def: (?<!(en|ett)\s+){RoundNumberOrdinalRegex}
+  def: (?<!(en|ett)\s+)?{RoundNumberOrdinalRegex}
   references: [ RoundNumberOrdinalRegex ]
 OrdinalSwedishRegex: !nestedRegex
   def: (?<=\b){AllOrdinalRegex}(?=\b)
@@ -82,12 +82,12 @@ OrdinalSwedishRegex: !nestedRegex
 #Swedish Ordinals are not possible to re-use as part of a fractional notation.
 #The below regex (RoundNumberFractionSwedishRegex) thus replaces RoundNumberOrdinalRegex in FractionNounRegex and FractionNounWithArticleRegex.
 RoundNumberFractionSwedishRegex: !simpleRegex
-  def: (?:hundradel(s|ar)?|tusendel(s|ar)?|miljon(te)?del(s|ar)?|miljarddel(s|ar)?|biljon(te)?del(s|ar)?|biljarddel(s|ar)?|triljon(te)?del(s|ar)?|triljarddel(s|ar)?)
+  def: (hundradel(s|ar)?|tusendel(s|ar)?|miljon(te)?del(s|ar)?|miljarddel(s|ar)?|biljon(te)?del(s|ar)?|biljarddel(s|ar)?|triljon(te)?del(s|ar)?|triljarddel(s|ar)?)
 FractionNotationWithSpacesRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
 FractionNotationRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
-FractionNounRegex: !nestedRegex # Jag behöver skapa en egen "RoundNumberOrdinalRegex" som innehåller fractionvarianterna av ordinalerna t.ex. miljonte => miljondels, miljontedels, miljondelar osv.
+FractionNounRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(och\s+)?)?({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex}))((de)?l(s|ar)?)?|halvor|kvart(ar|s))(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberFractionSwedishRegex ]
 FractionNounWithArticleRegex: !nestedRegex
@@ -556,14 +556,22 @@ RelativeReferenceOffsetMap: !dictionary
     senaste: 0
     nästa: 1
     näste: 1
+    efter nuvarande: 1
     nuvarande: 0
     föregående: -1
+    före nuvarande: -1
     förra: -1
     tidigare: -1
     näst sista: -1
     näst siste: -1
+    före den sista: -1
+    före den siste: -1
+    före sista: -1
+    före siste: -1
     innan siste: -1
     innan sista: -1
+    efter sista: -1
+    efter siste: -1
     tredje från slutet: -2
 RelativeReferenceRelativeToMap: !dictionary
   types: [ string, string ]
@@ -573,13 +581,21 @@ RelativeReferenceRelativeToMap: !dictionary
     senaste: end
     nästa: current
     näste: current
+    efter nuvarande: current
     nuvarande: current
     föregående: current
+    före nuvarande: current
     förra: current
     tidigare: current
     näst sista: end
     näst siste: end
+    före den sista: end
+    före den siste: end
+    före siste: end
+    före sista: end
     innan siste: end
     innan sista: end
+    efter sista: end
+    efter siste: end
     tredje från slutet: end
 ...
