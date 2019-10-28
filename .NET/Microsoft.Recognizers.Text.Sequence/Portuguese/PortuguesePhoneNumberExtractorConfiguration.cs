@@ -1,22 +1,13 @@
-﻿using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Definitions;
+﻿using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Portuguese;
 
 namespace Microsoft.Recognizers.Text.Sequence.Portuguese
 {
-    public class PortuguesePhoneNumberExtractorConfiguration : PhoneNumberConfiguration
+    public class PortuguesePhoneNumberExtractorConfiguration : BasePhoneNumberExtractorConfiguration
     {
         public PortuguesePhoneNumberExtractorConfiguration(SequenceOptions options)
             : base(options)
         {
-            WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex;
-            NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex;
-            EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex;
-            ColonPrefixCheckRegex = new Regex(BasePhoneNumbers.ColonPrefixCheckRegex);
-            ColonMarkers = (List<char>)BasePhoneNumbers.ColonMarkers;
-            ForbiddenPrefixMarkers = (List<char>)BasePhoneNumbers.ForbiddenPrefixMarkers;
-            ForbiddenSuffixMarkers = (List<char>)BasePhoneNumbers.ForbiddenSuffixMarkers;
             FalsePositivePrefixRegex = new Regex(PhoneNumbersDefinitions.FalsePositivePrefixRegex);
         }
     }

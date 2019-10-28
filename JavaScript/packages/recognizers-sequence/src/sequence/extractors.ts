@@ -83,6 +83,24 @@ export interface IPhoneNumberExtractorConfiguration {
     ForbiddenPrefixMarkers: string[];
 }
 
+export class BasePhoneNumberExtractorConfiguration implements IPhoneNumberExtractorConfiguration {
+    readonly WordBoundariesRegex: string;
+    readonly NonWordBoundariesRegex: string;
+    readonly EndWordBoundariesRegex: string;
+    readonly ColonPrefixCheckRegex: string;
+    readonly ForbiddenPrefixMarkers: string[];
+    readonly FalsePositivePrefixRegex: string;
+
+    constructor() {
+        this.WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex;
+        this.NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex;
+        this.EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex;
+        this.ForbiddenPrefixMarkers = BasePhoneNumbers.ForbiddenPrefixMarkers;
+        this.ColonPrefixCheckRegex = BasePhoneNumbers.ColonPrefixCheckRegex;
+        this.FalsePositivePrefixRegex = null;
+    }
+}
+
 export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
     regexes: Map<RegExp, string>;
     config: IPhoneNumberExtractorConfiguration;
