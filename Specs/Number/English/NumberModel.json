@@ -253,6 +253,22 @@
     ]
   },
   {
+    "Input": "hundred thousand dollars",
+    "NotSupported": "dotnet, javascript, java, python",
+    "Results": [
+      {
+        "Text": "hundred thousand",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "100000"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
     "Input": " half a  dozen",
     "Results": [
       {
