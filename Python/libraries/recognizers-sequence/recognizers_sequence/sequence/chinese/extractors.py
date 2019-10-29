@@ -42,12 +42,20 @@ class ChinesePhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
         self.__colon_prefix_check_regex = colon_prefix_check_regex
 
     @property
+    def colon_markers(self) -> str:
+        return None
+
+    @property
     def forbidden_prefix_markers(self) -> str:
         return self.__forbidden_prefix_markers
 
     @forbidden_prefix_markers.setter
     def forbidden_prefix_markers(self, forbidden_prefix_markers):
         self.__forbidden_prefix_markers = forbidden_prefix_markers
+
+    @property
+    def forbidden_suffix_markers(self) -> str:
+        return self.__forbidden_suffix_markers
 
     @property
     def false_positive_prefix_regex(self) -> str:
@@ -64,6 +72,7 @@ class ChinesePhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
         self.__end_word_boundaries_regex = ChinesePhoneNumbers.EndWordBoundariesRegex
         self.__colon_prefix_check_regex = ChinesePhoneNumbers.ColonPrefixCheckRegex
         self.__forbidden_prefix_markers = ChinesePhoneNumbers.ForbiddenPrefixMarkers
+        self.__forbidden_suffix_markers = None
         self.__false_positive_prefix_regex = None
 
 

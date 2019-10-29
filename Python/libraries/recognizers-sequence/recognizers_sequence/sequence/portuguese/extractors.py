@@ -40,12 +40,20 @@ class PortuguesePhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
         self.__colon_prefix_check_regex = colon_prefix_check_regex
 
     @property
+    def colon_markers(self) -> str:
+        return self.__colon_markers
+
+    @property
     def forbidden_prefix_markers(self) -> str:
         return self.__forbidden_prefix_markers
 
     @forbidden_prefix_markers.setter
     def forbidden_prefix_markers(self, forbidden_prefix_markers):
         self.__forbidden_prefix_markers = forbidden_prefix_markers
+
+    @property
+    def forbidden_suffix_markers(self) -> str:
+        return self.__forbidden_suffix_markers
 
     @property
     def false_positive_prefix_regex(self) -> str:
@@ -61,5 +69,7 @@ class PortuguesePhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
         self.__non_word_boundaries_regex = BasePhoneNumbers.NonWordBoundariesRegex
         self.__end_word_boundaries_regex = BasePhoneNumbers.EndWordBoundariesRegex
         self.__colon_prefix_check_regex = BasePhoneNumbers.ColonPrefixCheckRegex
+        self.__colon_markers = BasePhoneNumbers.ColonMarkers
         self.__forbidden_prefix_markers = BasePhoneNumbers.ForbiddenPrefixMarkers
+        self.__forbidden_suffix_markers = BasePhoneNumbers.ForbiddenSuffixMarkers
         self.__false_positive_prefix_regex = PortuguesePhoneNumbers.FalsePositivePrefixRegex
