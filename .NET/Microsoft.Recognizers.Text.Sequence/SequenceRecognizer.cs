@@ -230,7 +230,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                 options => new URLModel(
                     new URLParser(),
                     new BaseURLExtractor(new ChineseURLExtractorConfiguration(options))));
-            
+
             RegisterModel<GUIDModel>(
                 Culture.English,
                 (options) => new GUIDModel(new GUIDParser(), new GUIDExtractor()));
