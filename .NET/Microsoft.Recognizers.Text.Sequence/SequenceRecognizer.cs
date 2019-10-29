@@ -134,52 +134,12 @@ namespace Microsoft.Recognizers.Text.Sequence
                 (options) => new PhoneNumberModel(
                     new PhoneNumberParser(),
                     new BasePhoneNumberExtractor(new EnglishPhoneNumberExtractorConfiguration(options))));
-
-            RegisterModel<IpAddressModel>(
-                Culture.English,
-                (options) => new IpAddressModel(
-                    new IpParser(),
-                    new BaseIpExtractor(new EnglishIpExtractorConfiguration(options))));
-
-            RegisterModel<MentionModel>(
-                Culture.English,
-                (options) => new MentionModel(new MentionParser(), new MentionExtractor()));
-
-            RegisterModel<HashtagModel>(
-                Culture.English,
-                (options) => new HashtagModel(new HashtagParser(), new HashtagExtractor()));
-
-            RegisterModel<EmailModel>(
-                Culture.English,
-                (options) => new EmailModel(new EmailParser(), new EmailExtractor()));
-
-            RegisterModel<URLModel>(
-                Culture.English,
-                (options) => new URLModel(
-                    new URLParser(),
-                    new BaseURLExtractor(new EnglishURLExtractorConfiguration(options))));
-
-            RegisterModel<GUIDModel>(
-                Culture.English,
-                (options) => new GUIDModel(new GUIDParser(), new GUIDExtractor()));
-
+            
             RegisterModel<PhoneNumberModel>(
                 Culture.Chinese,
                 (options) => new PhoneNumberModel(
                     new PhoneNumberParser(),
                     new BasePhoneNumberExtractor(new ChinesePhoneNumberExtractorConfiguration(options))));
-
-            RegisterModel<IpAddressModel>(
-                Culture.Chinese,
-                (options) => new IpAddressModel(
-                    new IpParser(),
-                    new BaseIpExtractor(new ChineseIpExtractorConfiguration(options))));
-
-            RegisterModel<URLModel>(
-                Culture.Chinese,
-                options => new URLModel(
-                    new URLParser(),
-                    new BaseURLExtractor(new ChineseURLExtractorConfiguration(options))));
 
             RegisterModel<PhoneNumberModel>(
                 Culture.Portuguese,
@@ -234,6 +194,46 @@ namespace Microsoft.Recognizers.Text.Sequence
                 (options) => new PhoneNumberModel(
                     new PhoneNumberParser(),
                     new BasePhoneNumberExtractor(new TurkishPhoneNumberExtractorConfiguration(options))));
+
+            RegisterModel<IpAddressModel>(
+                Culture.English,
+                (options) => new IpAddressModel(
+                    new IpParser(),
+                    new BaseIpExtractor(new EnglishIpExtractorConfiguration(options))));
+
+            RegisterModel<IpAddressModel>(
+                Culture.Chinese,
+                (options) => new IpAddressModel(
+                    new IpParser(),
+                    new BaseIpExtractor(new ChineseIpExtractorConfiguration(options))));
+
+            RegisterModel<MentionModel>(
+                Culture.English,
+                (options) => new MentionModel(new MentionParser(), new MentionExtractor()));
+
+            RegisterModel<HashtagModel>(
+                Culture.English,
+                (options) => new HashtagModel(new HashtagParser(), new HashtagExtractor()));
+
+            RegisterModel<EmailModel>(
+                Culture.English,
+                (options) => new EmailModel(new EmailParser(), new EmailExtractor()));
+
+            RegisterModel<URLModel>(
+                Culture.English,
+                (options) => new URLModel(
+                    new URLParser(),
+                    new BaseURLExtractor(new EnglishURLExtractorConfiguration(options))));
+
+            RegisterModel<URLModel>(
+                Culture.Chinese,
+                options => new URLModel(
+                    new URLParser(),
+                    new BaseURLExtractor(new ChineseURLExtractorConfiguration(options))));
+            
+            RegisterModel<GUIDModel>(
+                Culture.English,
+                (options) => new GUIDModel(new GUIDParser(), new GUIDExtractor()));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<SequenceRecognizer, IModel> getModelFunc, string query, SequenceOptions options)
