@@ -134,7 +134,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                 (options) => new PhoneNumberModel(
                     new PhoneNumberParser(),
                     new BasePhoneNumberExtractor(new EnglishPhoneNumberExtractorConfiguration(options))));
-            
+
             RegisterModel<PhoneNumberModel>(
                 Culture.Chinese,
                 (options) => new PhoneNumberModel(
