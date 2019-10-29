@@ -944,5 +944,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "conta número 1234567",
+    "Results": []
+  },
+  {
+    "Input": "conta bancária: 12345678",
+    "Results": []
+  },
+  {
+    "Input": "conta número 12345678",
+    "Results": []
+  },
+  {
+    "Input": "conta número: 12345678",
+    "Results": []
+  },
+  {
+    "Input": "conta bancária número: 12345678",
+    "Results": []
+  },
+  {
+    "Input": "minha conta é 12345678",
+    "Results": []
   }
 ]
