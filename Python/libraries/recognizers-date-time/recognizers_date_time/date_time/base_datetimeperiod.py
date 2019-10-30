@@ -200,6 +200,10 @@ class DateTimePeriodExtractorConfiguration(DateTimeOptionsConfiguration):
     def suffix_regex(self) -> Pattern:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def check_both_before_after(self) -> Pattern:
+        raise NotImplementedError
 
 class BaseDateTimePeriodExtractor(DateTimeExtractor):
     @property
@@ -429,74 +433,116 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
     def merge_two_time_points(self, source: str, reference: datetime, date_ers: [ExtractResult],
                               time_ers: [ExtractResult]) -> List[Token]:
-        tokens: List[Token] = list()
-        source = source.strip().lower()
-        ers_datetime: List[ExtractResult] = self.config.single_date_time_extractor.extract(
-            source, reference)
-        ers_time: List[ExtractResult] = self.config.single_time_extractor.extract(
-            source, reference)
-        inner_marks: List[ExtractResult] = list()
+        tokens = []
+        ers_datetime = self.config.single_date_time_extractor.extract(source, reference)
+        time_points: List[ExtractResult] = list()
 
         j = 0
-
         for er_datetime in ers_datetime:
-            inner_marks.append(er_datetime)
+            time_points.append(er_datetime)
 
-            while j < len(ers_time) and ers_time[j].start + ers_time[j].length < er_datetime.start:
-                inner_marks.append(ers_time[j])
+            while j < len(time_ers) and time_ers[j].start + time_ers[j].length < er_datetime.start:
+                time_points.append(time_ers[j])
                 j += 1
 
-            while j < len(ers_time) and ers_time[j].overlap(er_datetime):
+            while j < len(time_ers) and time_ers[j].overlap(er_datetime):
                 j += 1
 
-        while j < len(ers_time):
-            inner_marks.append(ers_time[j])
+        while j < len(time_ers):
+            time_points.append(time_ers[j])
             j += 1
-        inner_marks = sorted(inner_marks, key=lambda x: x.start)
 
-        idx = 0
-        ceil = len(inner_marks) - 1
+        time_points = sorted(time_points, key=lambda x: x.start)
 
-        while idx < ceil:
-            current_mark = inner_marks[idx]
-            next_mark = inner_marks[idx + 1]
+        # Merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"
+        index = 0
 
-            if current_mark.type == Constants.SYS_DATETIME_TIME and next_mark.type == Constants.SYS_DATETIME_TIME:
-                idx += 1
-                continue
+        while index < len(time_points) - 1:
+            if time_points[index].type == Constants.SYS_DATETIME_TIME and time_points[index + 1].type == \
+                    Constants.SYS_DATETIME_TIME:
+                index += 1
+                break
 
-            middle_begin = current_mark.start + current_mark.length
-            middle_end = next_mark.start
+            middle_begin = time_points[index].start + time_points[index].length
+            middle_end = time_points[index + 1].start
 
-            middle_str = source[middle_begin:middle_end].strip()
-            match = regex.search(self.config.till_regex, middle_str)
+            middle_str = source[middle_begin:middle_end - middle_begin].strip()
 
-            if match and match.group() == middle_str:
-                period_begin = current_mark.start
-                period_end = next_mark.start + next_mark.length
+            # Handle "{TimePoint} to {TimePoint}"
+            if RegexExtension.is_exact_match(self.config.till_regex, middle_str, True):
+                period_begin = time_points[index].start
+                period_end = time_points[index +1].start + time_points[index + 1].length
+
+                # Handle "from"
                 before_str = source[0:period_begin].strip()
+
                 match_from = self.config.get_from_token_index(before_str)
                 from_token_index = match_from if match_from.matched else self.config.get_between_token_index(
                     before_str)
                 if from_token_index.matched:
                     period_begin = from_token_index.index
+                elif self.config.check_both_before_after:
+                    after_str = source[period_end:len(source) - period_end]
+                    after_token_index = self.config.get_between_token_index(after_str)
+                    if after_token_index.matched:
+                        # Handle "between" in after_str
+                        period_end += after_token_index.index
+
                 tokens.append(Token(period_begin, period_end))
-                idx += 2
-                continue
+                index += 2
+                break
 
+            # Handle "between {TimePoint} and {TimePoint}"
             if self.config.has_connector_token(middle_str):
-                period_begin = current_mark.start
-                period_end = next_mark.start + next_mark.length
-                before_str = source[0:period_begin].strip()
-                between_token_index = self.config.get_between_token_index(
-                    before_str)
-                if between_token_index.matched:
-                    period_begin = between_token_index.index
-                    tokens.append(Token(period_begin, period_end))
-                    idx += 2
-                    continue
+                period_begin = time_points[index].start
+                period_end = time_points[index + 1].start + time_points[index + 1].length
 
-            idx += 1
+                before_str = source[0:period_begin].strip()
+                before_token_index = self.config.get_between_token_index(before_str)
+                if before_token_index.matched:
+                    period_begin = before_token_index.index
+                    tokens.append(Token(period_begin, period_end))
+                    index += 2
+                    break
+
+            index += 1
+
+        # Regarding the phrase as-- {Date} {TimePeriod}, like "2015-9-23 1pm to 4"
+        # Or {TimePeriod} ond {Date}, like "1:30 to 4 2015-9-23"
+        ers_time_period = self.config.time_period_extractor.extract(source, reference)
+
+        for er_time_period in ers_time_period:
+            if not er_time_period.meta_data:
+                date_ers.append(er_time_period)
+
+        points: List[ExtractResult] = sorted(date_ers, key=lambda x: x.start)
+
+        index = 0
+        while index < len(points) - 1:
+            if points[index].type == points[index + 1].type:
+                break
+
+            mid_begin = points[index].start + points[index].length
+            mid_end = points[index + 1].start
+
+            if mid_end - mid_begin > 0:
+                mid_str = source[mid_begin:mid_end - mid_begin]
+                if not mid_str or mid_str.strip().startswith(self.config.token_before_date()):
+                    # Extend date extraction for cases like "Monday evening next week"
+                    extended_str = points[index].text + source[int(points[index + 1].start + points[index + 1].length):]
+                    extended_date_str = self.config.single_date_extractor.extract(extended_str)
+                    offset = 0
+                    # TODO Review this if statement, with
+                    #  "Je voudrais reserver une salle le vendredi 30 novembre 2019 entre 12h00 et 14h00" it should
+                    #  enter but it does not
+                    if extended_date_str is not None and extended_date_str.index == 0:
+                        offset = int(len(extended_date_str) - points[index].length)
+
+                    tokens.append(Token(points[index].start,
+                                        offset + points[index + 1].start + points[index + 1].length))
+                    index += 2
+
+            index += 1
 
         return tokens
 
