@@ -1,0 +1,79 @@
+[
+  {
+    "Input": "esto es 2 dias",
+    "Results": [
+      {
+        "Text": "2 dias",
+        "Type": "duration",
+        "Start": 8,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "esto es antes de las 4pm",
+    "Results": [
+      {
+        "Text": "antes de las 4pm",
+        "Type": "time",
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "esto es antes de las 4pm mañana",
+    "Results": [
+      {
+        "Text": "antes de las 4pm mañana",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "esto es antes de mañana a las 4pm ",
+    "Results": [
+      {
+        "Text": "antes de mañana a las 4pm",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "despues del 7/2 ",
+    "Results": [
+      {
+        "Text": "despues del 7/2",
+        "Type": "date",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "desde el 7/2 ",
+    "Results": [
+      {
+        "Text": "desde el 7/2",
+        "Type": "date",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "antes del  7/2 ",
+    "Results": [
+      {
+        "Text": "antes del  7/2",
+        "Type": "date",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  }
+]
