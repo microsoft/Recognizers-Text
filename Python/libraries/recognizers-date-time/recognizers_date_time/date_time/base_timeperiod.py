@@ -69,6 +69,11 @@ class TimePeriodExtractorConfiguration(DateTimeOptionsConfiguration):
     def pure_number_regex(self) -> List[Pattern]:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def check_both_before_after(self) -> bool:
+        raise NotImplementedError
+
 
 class BaseTimePeriodExtractor(DateTimeExtractor):
     @property
@@ -234,6 +239,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
 
                 # handle "from"
                 before = source[0:period_begin].strip().lower()
+                after = source[period_end: len(source) - period_end].strip().lower()
                 from_index: MatchedIndex = self.config.get_from_token_index(
                     before)
                 if from_index.matched:
@@ -244,6 +250,12 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                     before)
                 if between_index.matched:
                     period_begin = between_index.index
+
+                # handle "between" in afterStr
+                after_index: MatchedIndex = self.config.get_between_token_index(
+                    after)
+                if after_index.matched:
+                    period_end = after_index.index
 
                 result.append(Token(period_begin, period_end))
                 i += 2
@@ -261,6 +273,17 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                 if between_index.matched:
                     period_begin = between_index.index
                     result.append(Token(period_begin, period_end))
+                    i += 2
+                    continue
+
+                # handle "between...and..." case when "between" follows the datepoints
+                after_str = source[period_end: len(source) - period_end]
+                after_index = self.config.get_between_token_index(after_str)
+                if self.config.check_both_before_after and after_index:
+                    period_end = period_end + after_index
+                    result.append(Token(period_begin, period_end))
+
+                    # merge two tokens here, increase the index by two
                     i += 2
                     continue
 

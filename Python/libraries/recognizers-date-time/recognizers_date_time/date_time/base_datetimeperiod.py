@@ -528,7 +528,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
             if mid_end - mid_begin > 0:
                 mid_str = source[mid_begin:mid_end - mid_begin]
-                if not mid_str or mid_str.strip().startswith(self.config.token_before_date()):
+                if mid_str is not None or mid_str.strip().startswith(self.config.token_before_date()):
                     # Extend date extraction for cases like "Monday evening next week"
                     extended_str = points[index].text + source[int(points[index + 1].start + points[index + 1].length):]
                     extended_date_str = self.config.single_date_extractor.extract(extended_str)

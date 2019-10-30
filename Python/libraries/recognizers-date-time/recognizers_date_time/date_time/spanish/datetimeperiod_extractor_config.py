@@ -20,6 +20,10 @@ from ..utilities import DateTimeOptions
 
 class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
     @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
+    @property
     def suffix_regex(self) -> Pattern:
         return self._suffix_regex
 
@@ -157,11 +161,11 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
 
     def __init__(self):
         super().__init__()
+        self._check_both_before_after = False
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.PureNumFromTo),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.PureNumBetweenAnd)
         ]
-
         self._preposition_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.PrepositionRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(
