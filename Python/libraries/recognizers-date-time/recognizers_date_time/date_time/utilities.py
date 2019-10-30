@@ -89,8 +89,8 @@ class TimeZoneUtility:
 class RegexExtension:
 
     @staticmethod
-    def match_begin(regex: Pattern, text: str, trim: bool):
-        match = regex.match(text)
+    def match_begin(regexp: Pattern, text: str, trim: bool):
+        match = regex.search(regexp, text)
 
         if match is None:
             return None
@@ -114,7 +114,7 @@ class RegexExtension:
         if trim:
             srt_after = srt_after.strip()
 
-        success = match and (not srt_after or srt_after is None)
+        success = match and not srt_after
 
         conditional = ConditionalMatch(match, success)
 
