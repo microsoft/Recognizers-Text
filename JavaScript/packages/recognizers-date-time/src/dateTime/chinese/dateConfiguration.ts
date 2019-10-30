@@ -527,7 +527,7 @@ export class ChineseDateParser extends BaseDateParser {
     }
 
     // convert Chinese Number to Integer
-    private convertChineseToNumber(source: string): number {
+    private parseChineseWrittenNumberToValue(source: string): number {
         let num = -1;
         let er = this.config.integerExtractor.extract(source);
         if (er && er[0].type === NumberConstants.SYS_NUM_INTEGER) {
@@ -609,7 +609,7 @@ export class ChineseDateParser extends BaseDateParser {
                 let srcUnit = match.groups('unit').value;
 
                 let numberStr = source.substring(durationRes[0].start, match.index - durationRes[0].start);
-                let number =  this.convertChineseToNumber(numberStr);
+                let number =  this.parseChineseWrittenNumberToValue(numberStr);
 
                 if (this.config.unitMap.has(srcUnit)) {
                     let unitStr = this.config.unitMap.get(srcUnit);
