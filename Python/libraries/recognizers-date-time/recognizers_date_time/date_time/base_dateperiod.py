@@ -16,7 +16,7 @@ from .parsers import DateTimeParser, DateTimeParseResult
 from .base_date import BaseDateParser
 from .base_duration import BaseDurationParser
 from .utilities import Token, merge_all_tokens, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, \
-    RegExpUtility, RegexExtension
+    RegExpUtility, RegexExtension, DateContext
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
@@ -984,6 +984,37 @@ class BaseDatePeriodParser(DateTimeParser):
         self.config = config
         self._inclusive_end_period = inclusive_end_period
 
+    def get_year_context(self, config: DatePeriodParserConfiguration, start_date_str: str, end_date_str: str, text: str) -> DateContext:
+        is_end_date_pure_year: bool = False
+        is_date_relative: bool = False
+        context_year: int = Constants.INVALID_YEAR
+
+        year_match_for_end_date = config.year_regex.match(end_date_str)
+
+        if year_match_for_end_date.success and len(year_match_for_end_date) == len(end_date_str):
+            is_end_date_pure_year = True
+
+        relative_match_for_start_date = config.RelativeRegex.Match(start_date_str)
+        relative_match_for_end_date = config.RelativeRegex.Match(end_date_str)
+        is_date_relative = relative_match_for_start_date.success or relative_match_for_end_date.success
+
+        if not is_end_date_pure_year and not is_date_relative:
+            for match in config.YearRegex.Matches(text):
+                year = config.date_extractor.get_year_from_text(match)
+
+                if year != Constants.INVALID_YEAR:
+                    if context_year == Constants.INVALID_YEAR:
+                        context_year = year
+                    else:
+                        # This indicates that the text has two different year value, no common context year
+                        if context_year != year:
+                            context_year = Constants.INVALID_YEAR
+
+        res: DateContext = DateContext()
+        res.year = context_year
+
+        return res
+
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
         if not reference:
             reference = datetime.now()
@@ -1403,6 +1434,9 @@ class BaseDatePeriodParser(DateTimeParser):
         ers = self.config.date_extractor.extract(trimmed_source, reference)
         prs = []
 
+        pr1: DateTimeParseResult = None
+        pr2: DateTimeParseResult = None
+
         if not ers or len(ers) < 2:
             ers = self.config.date_extractor.extract(
                 self.config.token_before_date + trimmed_source, reference)
@@ -1416,14 +1450,23 @@ class BaseDatePeriodParser(DateTimeParser):
                     return result
 
                 date_pr = self.config.date_parser.parse(ers[0], reference)
+                # TODO: review this implementation of the ternary operator iif
+                pr1 = date_pr if date_pr.start < now_pr.start else now_pr
+                pr2 = now_pr if date_pr.start < now_pr.start else date_pr
+
                 prs.append(now_pr)
                 prs.append(date_pr)
                 prs = sorted(prs, key=lambda x: x.start)
 
         if len(ers) >= 2:
-
             # Propagate the possible future relative context from the first entity to the second one in the range.
             # Handles cases like "next monday to friday"
+            future_match_for_start_date = self.config.future_regex.match(ers[0].text)
+            future_match_for_end_date = self.config.future_regex.match(ers[1].text)
+
+            if future_match_for_start_date.success and not future_match_for_end_date.success:
+                ers[1].text = future_match_for_start_date.value + ' ' + ers[1].text
+
             match = self.config.week_with_week_day_range_regex.search(source)
             if match:
                 week_prefix = RegExpUtility.get_group(match, Constants.WEEK_GROUP_NAME)
@@ -1432,16 +1475,39 @@ class BaseDatePeriodParser(DateTimeParser):
                     ers[0].text = f'{week_prefix} {ers[0].text}'
                     ers[1].text = f'{week_prefix} {ers[1].text}'
 
+            # Check if weekPrefix is already included in the extractions otherwise include it
+            if not week_prefix:
+                if week_prefix in ers[0].text:
+                    ers[0].text = week_prefix + " " + ers[0].text
+
+                if week_prefix in ers[1].text:
+                    ers[1].text = week_prefix + " " + ers[1].text
+
             for er in ers:
                 pr = self.config.date_parser.parse(er, reference)
                 if pr:
                     prs.append(pr)
 
+            date_context = get_year_context(self.config, ers[0].text, ers[1].text, source)
+
+            pr1 = self.config.date_parser.parse(ers[0], reference)
+            pr2 = self.config.date_parser.parse(ers[1], reference)
+
+            if pr1.value is None or pr2.value is None:
+                return result
+
+            pr1 = date_context.process_date_entity_parsing_result(pr1)
+            pr2 = date_context.process_date_entity_parsing_result(pr2)
+
         if len(prs) < 2:
             return result
 
+        result.sub_date_time_entities = [pr1, pr2]
+        result.sub_date_time_entities = prs
+
         pr_begin = prs[0]
         pr_end = prs[1]
+
         future_begin = pr_begin.value.future_value
         future_end = pr_end.value.future_value
         past_begin = pr_begin.value.past_value
@@ -1453,7 +1519,7 @@ class BaseDatePeriodParser(DateTimeParser):
         if past_end < past_begin:
             past_end = future_end
 
-        result.sub_date_time_entities = prs
+
         result.timex = f'({pr_begin.timex_str},{pr_end.timex_str},P{(future_end - future_begin).days}D)'
         result.future_value = [future_begin, future_end]
         result.past_value = [past_begin, past_end]
