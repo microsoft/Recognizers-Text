@@ -205,6 +205,7 @@ class DateTimePeriodExtractorConfiguration(DateTimeOptionsConfiguration):
     def check_both_before_after(self) -> Pattern:
         raise NotImplementedError
 
+
 class BaseDateTimePeriodExtractor(DateTimeExtractor):
     @property
     def extractor_type_name(self) -> str:
@@ -471,7 +472,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             # Handle "{TimePoint} to {TimePoint}"
             if RegexExtension.is_exact_match(self.config.till_regex, middle_str, True):
                 period_begin = time_points[index].start
-                period_end = time_points[index +1].start + time_points[index + 1].length
+                period_end = time_points[index + 1].start + time_points[index + 1].length
 
                 # Handle "from"
                 before_str = source[0:period_begin].strip()
