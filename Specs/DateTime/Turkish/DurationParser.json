@@ -659,7 +659,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Bir saatten fazla",
+        "Text": "Bir saatten fazla bir süre",
         "Type": "duration",
         "Value": {
           "Timex": "PT1H",
@@ -672,7 +672,7 @@
           }
         },
         "Start": 0,
-        "Length": 17
+        "Length": 26
       }
     ]
   },

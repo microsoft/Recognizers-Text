@@ -271,6 +271,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // "InclusiveModifier" means MOD should include the start/end time
             // For example, cases like "on or later than", "earlier than or in" have inclusive modifier
             var hasInclusiveModifier = false;
+            var matchIsAfter = false;
             var modStr = string.Empty;
             if (er.Metadata != null && er.Metadata.HasMod)
             {
@@ -280,12 +281,46 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var aroundMatch = Config.AroundRegex.MatchBegin(er.Text, trim: true);
                 var equalMatch = Config.EqualRegex.MatchBegin(er.Text, trim: true);
 
+                // check also after match
+                if (this.Config.CheckBothBeforeAfter)
+                {
+                    if (!beforeMatch.Success && !er.Type.EndsWith("datetimerange"))
+                    {
+                        beforeMatch = Config.BeforeRegex.MatchEnd(er.Text, trim: true);
+                        matchIsAfter = matchIsAfter || beforeMatch.Success;
+                    }
+
+                    if (!afterMatch.Success && !er.Type.EndsWith("datetimerange"))
+                    {
+                        afterMatch = Config.AfterRegex.MatchEnd(er.Text, trim: true);
+                        matchIsAfter = matchIsAfter || afterMatch.Success;
+                    }
+
+                    if (!sinceMatch.Success && !er.Type.EndsWith("datetimerange"))
+                    {
+                        sinceMatch = Config.SinceRegex.MatchEnd(er.Text, trim: true);
+                        matchIsAfter = matchIsAfter || sinceMatch.Success;
+                    }
+
+                    if (!aroundMatch.Success && !er.Type.EndsWith("time"))
+                    {
+                        aroundMatch = Config.AroundRegex.MatchEnd(er.Text, trim: true);
+                        matchIsAfter = matchIsAfter || aroundMatch.Success;
+                    }
+
+                    if (!equalMatch.Success && !er.Type.EndsWith("time"))
+                    {
+                        equalMatch = Config.EqualRegex.MatchEnd(er.Text, trim: true);
+                        matchIsAfter = matchIsAfter || equalMatch.Success;
+                    }
+                }
+
                 if (beforeMatch.Success)
                 {
                     hasBefore = true;
-                    er.Start += beforeMatch.Length;
+                    er.Start += matchIsAfter ? 0 : beforeMatch.Length;
                     er.Length -= beforeMatch.Length;
-                    er.Text = er.Text.Substring(beforeMatch.Length);
+                    er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(beforeMatch.Length);
                     modStr = beforeMatch.Value;
 
                     if (!string.IsNullOrEmpty(beforeMatch.Groups["include"].Value))
@@ -296,9 +331,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 else if (afterMatch.Success)
                 {
                     hasAfter = true;
-                    er.Start += afterMatch.Length;
+                    er.Start += matchIsAfter ? 0 : afterMatch.Length;
                     er.Length -= afterMatch.Length;
-                    er.Text = er.Text.Substring(afterMatch.Length);
+                    er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(afterMatch.Length);
                     modStr = afterMatch.Value;
 
                     if (!string.IsNullOrEmpty(afterMatch.Groups["include"].Value))
@@ -309,25 +344,25 @@ namespace Microsoft.Recognizers.Text.DateTime
                 else if (sinceMatch.Success)
                 {
                     hasSince = true;
-                    er.Start += sinceMatch.Length;
+                    er.Start += matchIsAfter ? 0 : sinceMatch.Length;
                     er.Length -= sinceMatch.Length;
-                    er.Text = er.Text.Substring(sinceMatch.Length);
+                    er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(sinceMatch.Length);
                     modStr = sinceMatch.Value;
                 }
                 else if (aroundMatch.Success)
                 {
                     hasAround = true;
-                    er.Start += aroundMatch.Length;
+                    er.Start += matchIsAfter ? 0 : aroundMatch.Length;
                     er.Length -= aroundMatch.Length;
-                    er.Text = er.Text.Substring(aroundMatch.Length);
+                    er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(aroundMatch.Length);
                     modStr = aroundMatch.Value;
                 }
                 else if (equalMatch.Success)
                 {
                     hasEqual = true;
-                    er.Start += equalMatch.Length;
+                    er.Start += matchIsAfter ? 0 : equalMatch.Length;
                     er.Length -= equalMatch.Length;
-                    er.Text = er.Text.Substring(equalMatch.Length);
+                    er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(equalMatch.Length);
                     modStr = equalMatch.Value;
                 }
                 else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal) && Config.YearRegex.Match(er.Text).Success) ||
@@ -358,8 +393,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (hasBefore && pr.Value != null)
             {
                 pr.Length += modStr.Length;
-                pr.Start -= modStr.Length;
-                pr.Text = modStr + pr.Text;
+                pr.Start -= matchIsAfter ? 0 : modStr.Length;
+                pr.Text = matchIsAfter ? pr.Text + modStr : modStr + pr.Text;
                 var val = (DateTimeResolutionResult)pr.Value;
 
                 val.Mod = CombineMod(val.Mod, !hasInclusiveModifier ? Constants.BEFORE_MOD : Constants.UNTIL_MOD);
@@ -370,8 +405,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (hasAfter && pr.Value != null)
             {
                 pr.Length += modStr.Length;
-                pr.Start -= modStr.Length;
-                pr.Text = modStr + pr.Text;
+                pr.Start -= matchIsAfter ? 0 : modStr.Length;
+                pr.Text = matchIsAfter ? pr.Text + modStr : modStr + pr.Text;
                 var val = (DateTimeResolutionResult)pr.Value;
 
                 if (!hasInclusiveModifier)
@@ -389,8 +424,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (hasSince && pr.Value != null)
             {
                 pr.Length += modStr.Length;
-                pr.Start -= modStr.Length;
-                pr.Text = modStr + pr.Text;
+                pr.Start -= matchIsAfter ? 0 : modStr.Length;
+                pr.Text = matchIsAfter ? pr.Text + modStr : modStr + pr.Text;
                 var val = (DateTimeResolutionResult)pr.Value;
                 val.Mod = CombineMod(val.Mod, Constants.SINCE_MOD);
                 pr.Value = val;
@@ -399,8 +434,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (hasAround && pr.Value != null)
             {
                 pr.Length += modStr.Length;
-                pr.Start -= modStr.Length;
-                pr.Text = modStr + pr.Text;
+                pr.Start -= matchIsAfter ? 0 : modStr.Length;
+                pr.Text = matchIsAfter ? pr.Text + modStr : modStr + pr.Text;
                 var val = (DateTimeResolutionResult)pr.Value;
                 val.Mod = CombineMod(val.Mod, Constants.APPROX_MOD);
                 pr.Value = val;
@@ -409,8 +444,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (hasEqual && pr.Value != null)
             {
                 pr.Length += modStr.Length;
-                pr.Start -= modStr.Length;
-                pr.Text = modStr + pr.Text;
+                pr.Start -= matchIsAfter ? 0 : modStr.Length;
+                pr.Text = matchIsAfter ? pr.Text + modStr : modStr + pr.Text;
             }
 
             if (hasDateAfter && pr.Value != null)
@@ -425,7 +460,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // For cases like "3 pm or later on monday"
             if (pr.Value != null && Config.SuffixAfter.Match(pr.Text)?.Index != 0 &&
-                pr.Type.Equals(Constants.SYS_DATETIME_DATETIME, StringComparison.Ordinal))
+                pr.Type.Equals(Constants.SYS_DATETIME_DATETIME, StringComparison.Ordinal) && !this.Config.CheckBothBeforeAfter)
             {
                 var val = (DateTimeResolutionResult)pr.Value;
                 val.Mod = CombineMod(val.Mod, Constants.SINCE_MOD);

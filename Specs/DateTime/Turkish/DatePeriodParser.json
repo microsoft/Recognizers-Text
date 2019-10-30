@@ -4143,7 +4143,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "bugünden itibaren 2 haftadan fazla",
+        "Text": "bugünden itibaren 2 haftadan fazla bir sürede",
         "Type": "daterange",
         "Value": {
           "Timex": "2018-06-12",
@@ -4156,7 +4156,7 @@
           }
         },
         "Start": 9,
-        "Length": 34
+        "Length": 45
       }
     ]
   },
@@ -4168,7 +4168,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "bugünden itibaren 2 haftadan az",
+        "Text": "bugünden itibaren 2 haftadan az bir sürede",
         "Type": "daterange",
         "Value": {
           "Timex": "(2018-05-29,2018-06-12,P2W)",
@@ -4182,7 +4182,7 @@
           }
         },
         "Start": 0,
-        "Length": 31
+        "Length": 42
       }
     ]
   },
@@ -4271,7 +4271,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yarından itibaren 3 günden az",
+        "Text": "yarından itibaren 3 günden az bir sürede",
         "Type": "daterange",
         "Value": {
           "Timex": "(2018-05-30,2018-06-02,P3D)",
@@ -4285,7 +4285,7 @@
           }
         },
         "Start": 9,
-        "Length": 29
+        "Length": 40
       }
     ]
   },
