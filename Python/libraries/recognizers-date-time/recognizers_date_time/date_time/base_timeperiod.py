@@ -277,10 +277,10 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                     continue
 
                 # handle "between...and..." case when "between" follows the datepoints
-                after_str = source[period_end: len(source) - period_end]
+                after_str = source[period_end: + len(source) - period_end]
                 after_index = self.config.get_between_token_index(after_str)
                 if self.config.check_both_before_after and after_index.matched:
-                    period_end = period_end + after_index
+                    period_end += after_index.index
                     result.append(Token(period_begin, period_end))
 
                     # merge two tokens here, increase the index by two
