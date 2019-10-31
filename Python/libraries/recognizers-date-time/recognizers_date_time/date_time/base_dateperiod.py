@@ -1091,6 +1091,62 @@ class BaseDatePeriodParser(DateTimeParser):
 
         return result
 
+    def _parse_base_date_period(self, text: str, reference_date: datetime, date_context: DateContext) -> DateTimeResolutionResult:
+        inner_result = self.__parse_month_with_year(text, reference_date)
+        if not inner_result.success:
+            inner_result = self._parse_simple_case(text, reference_date)
+
+        if not inner_result.success:
+            # TODO: fix the reference to _parse_one_word_period
+            inner_result = self.__parse_one_word_period(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self._merge_two_times_points(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self._parse_year(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self._parse_week_of_month(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self._parse_week_of_year(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self._parse_half_year(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self.__parse_quarter(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self.__parse_season(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self.__parse_which_week(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self.__parse_week_of_date(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self.__parse_month_of_date(text, reference_date)
+
+        if not inner_result.success:
+            # TODO: Add definition for __parse_decade
+            inner_result = self.__parse_decade(text, reference_date)
+
+        # Cases like "within/less than/more than x weeks from/before/after today"
+        if not inner_result.success:
+            # TODO: Add definition for __parse_date_point_with_ago_and_later
+            inner_result = self.__parse_date_point_with_ago_and_later(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self._parse_duration(text, reference_date)
+
+        if not inner_result.success and date_context is not None:
+            inner_result = date_context.process_date_period_entity_resolution(inner_result)
+
+        return inner_result
+
     def __parse_month_with_year(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         trimmed_source = source.strip().lower()
         result = DateTimeResolutionResult()
