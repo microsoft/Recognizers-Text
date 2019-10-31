@@ -457,7 +457,6 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
         # Merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"
         index = 0
-
         while index < len(time_points) - 1:
             if time_points[index].type == Constants.SYS_DATETIME_TIME and time_points[index + 1].type == \
                     Constants.SYS_DATETIME_TIME:
@@ -467,7 +466,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             middle_begin = time_points[index].start + time_points[index].length
             middle_end = time_points[index + 1].start
 
-            middle_str = source[middle_begin:middle_end - middle_begin].strip()
+            middle_str = source[middle_begin:middle_end].strip().lower()
 
             # Handle "{TimePoint} to {TimePoint}"
             if RegexExtension.is_exact_match(self.config.till_regex, middle_str, True):
@@ -527,15 +526,12 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             mid_end = points[index + 1].start
 
             if mid_end - mid_begin > 0:
-                mid_str = source[mid_begin:mid_end - mid_begin]
-                if mid_str is not None or mid_str.strip().startswith(self.config.token_before_date()):
+                mid_str = source[mid_begin:mid_end]
+                if not mid_str:
                     # Extend date extraction for cases like "Monday evening next week"
                     extended_str = points[index].text + source[int(points[index + 1].start + points[index + 1].length):]
                     extended_date_str = self.config.single_date_extractor.extract(extended_str)
                     offset = 0
-                    # TODO Review this if statement, with
-                    #  "Je voudrais reserver une salle le vendredi 30 novembre 2019 entre 12h00 et 14h00" it should
-                    #  enter but it does not
                     if extended_date_str is not None and extended_date_str.index == 0:
                         offset = int(len(extended_date_str) - points[index].length)
 
