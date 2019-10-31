@@ -104,7 +104,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
 
                     bool inPrefix = true;
-                    int length = GetValidConnectorForDateAndTimePeriod(middleStr, inPrefix);
+                    int length = GetValidConnectorIndexForDateAndTimePeriod(middleStr, inPrefix);
                     if (length != Constants.INVALID_CONNECTOR_CODE)
                     {
                         var begin = ers[i].Start ?? 0;
@@ -117,7 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         inPrefix = false;
                         var afterStart = ers[j].Start + ers[j].Length ?? 0;
                         var afterStr = text.Substring(afterStart);
-                        length = GetValidConnectorForDateAndTimePeriod(afterStr, inPrefix);
+                        length = GetValidConnectorIndexForDateAndTimePeriod(afterStr, inPrefix);
                         if (length != Constants.INVALID_CONNECTOR_CODE && this.config.PrepositionRegex.IsExactMatch(middleStr, trim: true))
                         {
                             var begin = ers[i].Start ?? 0;
@@ -150,7 +150,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
         // Valid connector in English for Before include: "before", "no later than", "in advance of", "prior to", "earlier than", "sooner than", "by", "till", "until"...
         // Valid connector in English for After include: "after", "later than"
-        private int GetValidConnectorForDateAndTimePeriod(string text, bool inPrefix)
+        private int GetValidConnectorIndexForDateAndTimePeriod(string text, bool inPrefix)
         {
             int length = Constants.INVALID_CONNECTOR_CODE;
             var beforeAfterRegexes = new List<Regex>

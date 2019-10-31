@@ -70,7 +70,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // within "Days/Weeks/Months/Years" should be handled as dateRange here
                 // if duration contains "Seconds/Minutes/Hours", it should be treated as datetimeRange
                 bool inPrefix = true;
-                Token matchToken = MatchWithinNextPrexixRegex(text, duration, inPrefix);
+                Token matchToken = MatchWithinNextAffixRegex(text, duration, inPrefix);
                 if (matchToken.Start >= 0)
                 {
                     ret.Add(matchToken);
@@ -81,7 +81,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (this.config.CheckBothBeforeAfter)
                 {
                     inPrefix = false;
-                    matchToken = MatchWithinNextPrexixRegex(text, duration, inPrefix);
+                    matchToken = MatchWithinNextAffixRegex(text, duration, inPrefix);
                     if (matchToken.Start >= 0)
                     {
                         ret.Add(matchToken);
@@ -528,7 +528,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         Start = match.Index,
                         Length = match.Length,
+                        Text = text.Substring(match.Index, match.Length),
                     };
+
                     er.Add(nowEr);
 
                 }
@@ -724,7 +726,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // Matches "within (the next)?" part (in beforeStr or afterStr) in "within Days/Weeks/Months/Years"
-        private Token MatchWithinNextPrexixRegex(string text, Token duration, bool inPrefix)
+        private Token MatchWithinNextAffixRegex(string text, Token duration, bool inPrefix)
         {
             var beforeStr = text.Substring(0, duration.Start);
             var afterStr = text.Substring(duration.Start + duration.Length);

@@ -92,6 +92,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 if (idx == 0 || groups[idx] != groups[idx - 1])
                 {
                     var tmpExtractResult = ers[idx];
+
                     tmpExtractResult.Data = new List<ExtractResult>
                     {
                         new ExtractResult
@@ -103,6 +104,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             Type = ers[idx].Type,
                         },
                     };
+
                     result.Add(tmpExtractResult);
                 }
 
