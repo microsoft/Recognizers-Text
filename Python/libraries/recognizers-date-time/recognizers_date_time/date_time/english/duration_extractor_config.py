@@ -10,6 +10,14 @@ from ..base_duration import DurationExtractorConfiguration
 class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
 
     @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
+    def special_number_unit_regex(self):
+        return self._special_number_unit_regex
+
+    @property
     def all_regex(self) -> Pattern:
         return self._all_regex
 
@@ -75,6 +83,7 @@ class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
 
     def __init__(self):
         super().__init__()
+        self._check_both_before_after = False
         self._all_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.AllRegex)
         self._half_regex: Pattern = RegExpUtility.get_safe_reg_exp(
@@ -110,3 +119,5 @@ class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
         self._less_than_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.LessThanRegex
         )
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._special_number_unit_regex = None

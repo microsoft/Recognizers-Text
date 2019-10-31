@@ -86,7 +86,7 @@ class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         self._token_before_date = SpanishDateTime.TokenBeforeDate
         self._pure_number_regex = [SpanishDateTime.PureNumFromTo, SpanishDateTime.PureNumFromTo]
         self._options = DateTimeOptions.NONE
-        self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
+        self._check_both_before_after = False
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)
