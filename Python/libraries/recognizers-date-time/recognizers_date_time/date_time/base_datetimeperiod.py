@@ -415,7 +415,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                         begin = er.start
                         end = er.start + er.length
                         middle_str = before_str[end:].strip()
-                        if middle_str == '' or regex.search(self.config.preposition_regex, middle_str):
+                        if not middle_str or RegexExtension.is_exact_match(self.config.preposition_regex, middle_str, True):
                             tokens.append(Token(begin, match.end()))
                             has_before_date = True
 
@@ -561,7 +561,14 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
         for duration in durations:
             before_str = source[0:duration.start].strip()
-            if before_str:
+            after_str = source[duration.start + duration.length:].strip()
+            if before_str and after_str:
+                # ToDo
+                # within (the) (next) "Seconds/Minutes/Hours" should be handled as datetimeRange here
+                # within (the) (next) XX days/months/years + "Seconds/Minutes/Hours" should also be handled as datetimeRange here
+
+                # ToDo
+                # check also afterStr
                 match = regex.search(
                     self.config.previous_prefix_regex, before_str)
                 if match and not before_str[match.end():]:
@@ -572,6 +579,14 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                 if match and not before_str[match.end():]:
                     tokens.append(Token(match.start(), duration.end))
 
+                #ToDo: if index >= 0
+
+                    # Cases like "2 upcoming days", should be supported here
+                    # Cases like "2 upcoming 3 days" is invalid, only extract "upcoming 3 days" by default
+
+                        # Prefix should ends with the last number
+
+                #ToDo: matchDateUnit
         return tokens
 
     def match_night(self, source: str, reference: datetime) -> List[Token]:
