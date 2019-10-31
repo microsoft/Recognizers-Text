@@ -467,7 +467,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             middle_begin = time_points[index].start + time_points[index].length
             middle_end = time_points[index + 1].start
 
-            middle_str = source[middle_begin:middle_end - middle_begin].strip()
+            middle_str = source[middle_begin: middle_begin + middle_end - middle_begin].strip()
 
             # Handle "{TimePoint} to {TimePoint}"
             if RegexExtension.is_exact_match(self.config.till_regex, middle_str, True):
