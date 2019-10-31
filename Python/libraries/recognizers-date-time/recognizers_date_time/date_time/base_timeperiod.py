@@ -211,7 +211,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                 # check connector string
                 middle = source[num_end:time_extract_results[j].start]
                 match = regex.search(self.config.till_regex, middle)
-                if match is not None and match.group() == middle.strip():
+                if match is not None or self.config.is_connector_token(middle.strip()):
                     time_numbers.append(num_extract_results[i])
                 i += 1
 

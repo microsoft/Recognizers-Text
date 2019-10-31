@@ -108,3 +108,6 @@ class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
             return MatchedIndex(True, match.start())
 
         return MatchedIndex(False, -1)
+
+    def is_connector_token(self, source: str) -> MatchedIndex:
+        return self.connector_and_regex.search(source)
