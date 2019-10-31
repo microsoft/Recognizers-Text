@@ -584,7 +584,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                     # Cases like "2 upcoming days", should be supported here
                     # Cases like "2 upcoming 3 days" is invalid, only extract "upcoming 3 days" by default
 
-                        # Prefix should ends with the last number
+                    # Prefix should ends with the last number
 
                 #ToDo: matchDateUnit
         return tokens
