@@ -66,6 +66,10 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._past_regex
 
     @property
+    def decade_with_century_regex(self) -> Pattern:
+        return self._decade_with_century_regex
+
+    @property
     def future_regex(self) -> Pattern:
         return self._future_regex
 
@@ -184,6 +188,8 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
             EnglishDateTime.MonthWithYear)
         self._month_num_with_year = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.MonthNumWithYear)
+        self._decade_with_century_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.DecadeWithCenturyRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.YearRegex)
         self._past_regex = RegExpUtility.get_safe_reg_exp(
