@@ -558,13 +558,14 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
         for duration in durations:
             before_str = source[0:duration.start].strip()
             after_str = source[duration.start + duration.length:].strip()
-            if before_str and after_str:
+            if not before_str and not after_str:
                 break
 
             # within (the) (next) "Seconds/Minutes/Hours" should be handled as datetimeRange here
-            # within (the) (next) XX days/months/years + "Seconds/Minutes/Hours" should also be handled as datetimeRange here
+            # within (the) (next) XX days/months/years + "Seconds/Minutes/Hours" should
+            # also be handled as datetimeRange here
             in_prefix = True
-            token = Token(self.match_within_next_prefix(before_str, source, duration, in_prefix))
+            token = self.match_within_next_prefix(before_str, source, duration, in_prefix)
             if token.start >= 0:
                 tokens.append(token)
                 continue
@@ -572,7 +573,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             # check also afterStr
             if self.config.check_both_before_after:
                 in_prefix = False
-                token = Token(self.match_within_next_prefix(after_str, source, duration, in_prefix))
+                token = self.match_within_next_prefix(after_str, source, duration, in_prefix)
                 if token.start >= 0:
                     tokens.append(token)
                     continue
@@ -604,7 +605,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                     last_number = next(reversed(sorted(numbers_in_prefix, key=lambda x: x.start + x.length)), None)
 
                     # Prefix should ends with the last number
-                    if last_number.start + last_number.length == prefix.length:
+                    if last_number.start + last_number.length == len(prefix):
                         tokens.append(Token(last_number.start, duration.end))
                 else:
                     tokens.append(Token(index, duration.end))
@@ -629,6 +630,35 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                         Token(duration.start, duration.start + duration.length + match.index + len(match)))
                     continue
         return tokens
+
+    def match_within_next_prefix(self, sub_str: str, source: str, duration: Token, in_prefix: bool) -> Token:
+        start_out = -1
+        end_out = -1
+        success = False
+        match = self.config.within_next_prefix_regex.match(sub_str)
+        if self.match_prefix_regex_in_segment(sub_str, match, in_prefix):
+            if in_prefix:
+                start_token = source.index(match.group())
+                end_token = duration.end + 0
+            else:
+                start_token = duration.start
+                end_token = duration.end + (source.index(match.group()) + duration.length)
+            match = self.config.time_unit_regex.match(source[duration.start: duration.length])
+            success = match
+
+            if in_prefix:
+                # Match prefix for "next"
+                before_str = source[0:duration.start]
+                match_next = self.config.next_prefix_regex.match(before_str)
+                success = match or match_next
+                if self.match_prefix_regex_in_segment(before_str, match_next, True):
+                    start_token = match_next.start
+
+            if success:
+                start_out = start_token
+                end_out = end_token
+
+        return Token(start_out, end_out)
 
     def match_night(self, source: str, reference: datetime) -> List[Token]:
         tokens: List[Token] = list()
@@ -716,8 +746,14 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
         return tokens
 
     @staticmethod
-    def match_prefix_regex_in_segment(before_str: str, match: Match):
-        return match and before_str[before_str.index(match.group()) + (match.end() - match.start())]
+    def match_prefix_regex_in_segment(source: str, match: Match, in_prefix: bool):
+
+        if in_prefix:
+            sub_str = match and source[source.index(match.group()) + (match.end() - match.start())]
+        else:
+            sub_str = source[0: source.index(match.group())]
+        result = match and not sub_str
+        return result
 
     def match_relative_unit(self, source: str) -> List[Token]:
         tokens: List[Token] = list()
