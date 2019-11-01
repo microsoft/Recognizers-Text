@@ -55,10 +55,6 @@ class TimePeriodExtractorConfiguration(DateTimeOptionsConfiguration):
     def get_between_token_index(self, source: str) -> MatchedIndex:
         raise NotImplementedError
 
-    @abstractmethod
-    def has_connector_token(self, source: str) -> bool:
-        raise NotImplementedError
-
     @property
     @abstractmethod
     def token_before_date(self) -> str:
@@ -72,6 +68,11 @@ class TimePeriodExtractorConfiguration(DateTimeOptionsConfiguration):
     @property
     @abstractmethod
     def check_both_before_after(self) -> bool:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def is_connector_token(self, middle):
         raise NotImplementedError
 
 
@@ -262,7 +263,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                 continue
 
             # handle "between {TimePoint} and {TimePoint}"
-            if self.config.has_connector_token(middle):
+            if self.config.is_connector_token(middle):
                 period_begin = time_extract_results[i].start
                 period_end = time_extract_results[i + 1].start + time_extract_results[i + 1].length
 
