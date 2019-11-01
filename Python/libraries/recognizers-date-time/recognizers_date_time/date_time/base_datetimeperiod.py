@@ -660,7 +660,6 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
         return Token(start_out, end_out)
 
-
     def match_night(self, source: str, reference: datetime) -> List[Token]:
         tokens: List[Token] = list()
         source = source.strip().lower()

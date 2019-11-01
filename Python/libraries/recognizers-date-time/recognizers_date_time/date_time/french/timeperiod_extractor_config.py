@@ -95,4 +95,3 @@ class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
     def is_connector_token(self, source: str):
         return self.connector_and_regex.match(source)
-
