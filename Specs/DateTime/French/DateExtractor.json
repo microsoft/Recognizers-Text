@@ -1,0 +1,980 @@
+[
+  {
+    "Input": "Je reviendrai le 2 décembre",
+    "Results": [
+      {
+        "Text": "2 décembre",
+        "Type": "date",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le 27e",
+    "Results": [
+      {
+        "Text": "pour le 27e",
+        "Type": "date",
+        "Start": 17,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le seconde!",
+    "Results": [
+      {
+        "Text": "pour le seconde",
+        "Type": "date",
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le vingt deux?",
+    "Results": [
+      {
+        "Text": "pour le vingt deux",
+        "Type": "date",
+        "Start": 17,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai Mardi",
+    "Results": [
+      {
+        "Text": "Mardi",
+        "Type": "date",
+        "Start": 14,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai mar. connes nouvelles.",
+    "Results": [
+      {
+        "Text": "mar",
+        "Type": "date",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai Mar",
+    "Results": [
+      {
+        "Text": "Mar",
+        "Type": "date",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai Mercredi",
+    "Results": [
+      {
+        "Text": "Mercredi",
+        "Type": "date",
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai Vendredi",
+    "Results": [
+      {
+        "Text": "Vendredi",
+        "Type": "date",
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le vendredi",
+    "Results": [
+      {
+        "Text": "vendredi",
+        "Type": "date",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai aujourd'hui",
+    "Results": [
+      {
+        "Text": "aujourd'hui",
+        "Type": "date",
+        "Start": 14,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai lendemain",
+    "Results": [
+      {
+        "Text": "lendemain",
+        "Type": "date",
+        "Start": 14,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai hier",
+    "Results": [
+      {
+        "Text": "hier",
+        "Type": "date",
+        "Start": 14,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai avant hier",
+    "Results": [
+      {
+        "Text": "avant hier",
+        "Type": "date",
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai apres demain",
+    "Results": [
+      {
+        "Text": "apres demain",
+        "Type": "date",
+        "Start": 14,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le jour suivant",
+    "Results": [
+      {
+        "Text": "le jour suivant",
+        "Type": "date",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cette vendredi",
+    "Results": [
+      {
+        "Text": "cette vendredi",
+        "Type": "date",
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dimanche prochain",
+    "Results": [
+      {
+        "Text": "dimanche prochain",
+        "Type": "date",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dimanche derniere",
+    "Results": [
+      {
+        "Text": "dimanche derniere",
+        "Type": "date",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dernier jour",
+    "Results": [
+      {
+        "Text": "dernier jour",
+        "Type": "date",
+        "Start": 14,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai vendredi cette semaine",
+    "Results": [
+      {
+        "Text": "vendredi cette semaine",
+        "Type": "date",
+        "Start": 14,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 15 Juin 2016",
+    "Results": [
+      {
+        "Text": "15 Juin 2016",
+        "Type": "date",
+        "Start": 14,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai sixieme Dimanche",
+    "Results": [
+      {
+        "Text": "Dimanche",
+        "Type": "date",
+        "Start": 22,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dixieme Lundi",
+    "Results": [
+      {
+        "Text": "Lundi",
+        "Type": "date",
+        "Start": 22,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le 20e mois prochain",
+    "Results": [
+      {
+        "Text": "20e mois prochain",
+        "Type": "date",
+        "Start": 17,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le 20e cette mois",
+    "Results": [
+      {
+        "Text": "20e cette mois",
+        "Type": "date",
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai seconde Dimanche",
+    "Results": [
+      {
+        "Text": "seconde Dimanche",
+        "Type": "date",
+        "Start": 14,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 1er Dimanche",
+    "Results": [
+      {
+        "Text": "1er Dimanche",
+        "Type": "date",
+        "Start": 14,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai troisieme Mardi",
+    "Results": [
+      {
+        "Text": "troisieme Mardi",
+        "Type": "date",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cinquieme Dimanche",
+    "Results": [
+      {
+        "Text": "cinquieme Dimanche",
+        "Type": "date",
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le 27",
+    "Results": [
+      {
+        "Text": "pour le 27",
+        "Type": "date",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le 27.",
+    "Results": [
+      {
+        "Text": "pour le 27",
+        "Type": "date",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le 27!",
+    "Results": [
+      {
+        "Text": "pour le 27",
+        "Type": "date",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le 27 .",
+    "Results": [
+      {
+        "Text": "pour le 27",
+        "Type": "date",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le seconde",
+    "Results": [
+      {
+        "Text": "pour le seconde",
+        "Type": "date",
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le vingt deux",
+    "Results": [
+      {
+        "Text": "pour le vingt deux",
+        "Type": "date",
+        "Start": 17,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens en 15",
+    "Results": [
+      {
+        "Text": "15",
+        "Type": "date",
+        "Start": 14,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 22 avril",
+    "Results": [
+      {
+        "Text": "22 avril",
+        "Type": "date",
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens Jan-1",
+    "Results": [
+      {
+        "Text": "Jan-1",
+        "Type": "date",
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens Jan/1",
+    "Results": [
+      {
+        "Text": "Jan/1",
+        "Type": "date",
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le 2 Février",
+    "Results": [
+      {
+        "Text": "2 Février",
+        "Type": "date",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le 2 Août",
+    "Results": [
+      {
+        "Text": "2 Août",
+        "Type": "date",
+        "Start": 17,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le 2 Octobre",
+    "Results": [
+      {
+        "Text": "2 Octobre",
+        "Type": "date",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le 12 janvier 2016",
+    "Results": [
+      {
+        "Text": "12 janvier 2016",
+        "Type": "date",
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "J'y reviendrai 12 janvier 2016",
+    "Results": [
+      {
+        "Text": "12 janvier 2016",
+        "Type": "date",
+        "Start": 15,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le lundi 12 janvier 2016",
+    "Results": [
+      {
+        "Text": "lundi 12 janvier 2016",
+        "Type": "date",
+        "Start": 17,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 22/02/2016",
+    "Results": [
+      {
+        "Text": "22/02/2016",
+        "Type": "date",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 21/04/2016",
+    "Results": [
+      {
+        "Text": "21/04/2016",
+        "Type": "date",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 21/04/16",
+    "Results": [
+      {
+        "Text": "21/04/16",
+        "Type": "date",
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 9-18-15",
+    "Results": [
+      {
+        "Text": "9-18-15",
+        "Type": "date",
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens sur 4.22",
+    "Results": [
+      {
+        "Text": "4.22",
+        "Type": "date",
+        "Start": 15,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens sur 4-22",
+    "Results": [
+      {
+        "Text": "4-22",
+        "Type": "date",
+        "Start": 15,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens sur    4/22",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date",
+        "Start": 18,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens sur 22/04",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Start": 15,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens sur       4/22",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date",
+        "Start": 21,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens sur 2015/08/12",
+    "Results": [
+      {
+        "Text": "2015/08/12",
+        "Type": "date",
+        "Start": 15,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens sur 11/12,2016",
+    "Results": [
+      {
+        "Text": "11/12,2016",
+        "Type": "date",
+        "Start": 15,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 11/12,16",
+    "Results": [
+      {
+        "Text": "11/12,16",
+        "Type": "date",
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 1er Jan",
+    "Results": [
+      {
+        "Text": "1er Jan",
+        "Type": "date",
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 1-Jan",
+    "Results": [
+      {
+        "Text": "1-Jan",
+        "Type": "date",
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 28-Nov",
+    "Results": [
+      {
+        "Text": "28-Nov",
+        "Type": "date",
+        "Start": 11,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens Mer 22 Janvier",
+    "Results": [
+      {
+        "Text": "Mer 22 Janvier",
+        "Type": "date",
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 1er Janv",
+    "Results": [
+      {
+        "Text": "1er Janv",
+        "Type": "date",
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai Vendredi",
+    "Results": [
+      {
+        "Text": "Vendredi",
+        "Type": "date",
+        "Start": 15,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je vais revenier vendredi",
+    "Results": [
+      {
+        "Text": "vendredi",
+        "Type": "date",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens le vendredi",
+    "Results": [
+      {
+        "Text": "vendredi",
+        "Type": "date",
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens les vendredis",
+    "Results": [
+      {
+        "Text": "vendredis",
+        "Type": "date",
+        "Start": 15,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je vais y retourner demain",
+    "Results": [
+      {
+        "Text": "demain",
+        "Type": "date",
+        "Start": 20,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "J'ai alle hier ",
+    "Results": [
+      {
+        "Text": "hier",
+        "Type": "date",
+        "Start": 10,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je vais revenir avant-hier",
+    "Results": [
+      {
+        "Text": "avant-hier",
+        "Type": "date",
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je vai retourner lendemain",
+    "Results": [
+      {
+        "Text": "lendemain",
+        "Type": "date",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je vai retourner apres-demain",
+    "Results": [
+      {
+        "Text": "apres-demain",
+        "Type": "date",
+        "Start": 17,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens le lendemain",
+    "Results": [
+      {
+        "Text": "lendemain",
+        "Type": "date",
+        "Start": 14,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "je vai retourner cette vendredi",
+    "Results": [
+      {
+        "Text": "cette vendredi",
+        "Type": "date",
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "J'y reviendrai cette dimanche",
+    "Results": [
+      {
+        "Text": "cette dimanche",
+        "Type": "date",
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retournee dimanche dernier",
+    "Results": [
+      {
+        "Text": "dimanche dernier",
+        "Type": "date",
+        "Start": 18,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai vendredi cette semaine",
+    "Results": [
+      {
+        "Text": "vendredi cette semaine",
+        "Type": "date",
+        "Start": 15,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai dimanche la semaine prochain",
+    "Results": [
+      {
+        "Text": "dimanche la semaine prochain",
+        "Type": "date",
+        "Start": 15,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai dimanche la semaine dernier",
+    "Results": [
+      {
+        "Text": "dimanche la semaine dernier",
+        "Type": "date",
+        "Start": 15,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai 15 Juin 2016",
+    "Results": [
+      {
+        "Text": "15 Juin 2016",
+        "Type": "date",
+        "Start": 15,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "un baseball le 10 mai",
+    "Results": [
+      {
+        "Text": "10 mai",
+        "Type": "date",
+        "Start": 15,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai le premier vendredi de juillet",
+    "Results": [
+      {
+        "Text": "le premier vendredi de juillet",
+        "Type": "date",
+        "Start": 15,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai le premier vendredi cette mois",
+    "Results": [
+      {
+        "Text": "le premier vendredi cette mois",
+        "Type": "date",
+        "Start": 15,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai le premier samedi de Dec",
+    "Results": [
+      {
+        "Text": "le premier samedi de Dec",
+        "Type": "date",
+        "Start": 15,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "deux semaines plus tard, chris est partie",
+    "Results": [
+      {
+        "Text": "deux semaines plus tard",
+        "Type": "date",
+        "Start": 0,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je retounerai vendredi prochain",
+    "Results": [
+      {
+        "Text": "vendredi prochain",
+        "Type": "date",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Qui ai-je envoye un mois il y a",
+    "NotSupported": "javascript, dotnet, python",
+    "Results": [
+      {
+        "Text": "un mois il y a",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Êtes-vous libre le 13.5.2015",
+    "Results": [
+      {
+        "Text": "13.5.2015",
+        "Type": "date",
+        "Start": 19,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Êtes-vous libre le 2015.5.13",
+    "Results": [
+      {
+        "Text": "2015.5.13",
+        "Type": "date",
+        "Start": 19,
+        "Length": 9
+      }
+    ]
+  }
+]

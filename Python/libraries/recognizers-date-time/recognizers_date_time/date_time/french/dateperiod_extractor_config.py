@@ -22,7 +22,7 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._previous_prefix_regex
 
     @property
-    def check_both_before_after(self) -> Pattern:
+    def check_both_before_after(self) -> bool:
         return self._check_both_before_after
 
     @property

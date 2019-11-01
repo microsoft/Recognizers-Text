@@ -1,0 +1,1294 @@
+[
+  {
+    "Input": "Tornerò il 15",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "15",
+        "Type": "date",
+        "Start": 11,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 22 Aprile",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 22 Aprile",
+        "Type": "date",
+        "Start": 8,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 1 Gen",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 1 Gen",
+        "Type": "date",
+        "Start": 8,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 2 Ottobre",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 2 Ottobre",
+        "Type": "date",
+        "Start": 8,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 12 Gennaio 2016",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 12 Gennaio 2016",
+        "Type": "date",
+        "Start": 8,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 12 Gennaio del 2016",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 12 Gennaio del 2016",
+        "Type": "date",
+        "Start": 8,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Lunedì 12 Gennaio 2016",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Lunedì 12 Gennaio 2016",
+        "Type": "date",
+        "Start": 8,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 02/22/2016",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 02/22/2016",
+        "Type": "date",
+        "Start": 8,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 21/04/2016",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 21/04/2016",
+        "Type": "date",
+        "Start": 8,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 21/04/16",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 21/04/16",
+        "Type": "date",
+        "Start": 8,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 9-18-15",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 9-18-15",
+        "Type": "date",
+        "Start": 8,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 4.22",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "4.22",
+        "Type": "date",
+        "Start": 11,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 4-22",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "4-22",
+        "Type": "date",
+        "Start": 11,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il    4/22",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date",
+        "Start": 14,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 22/04",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 22/04",
+        "Type": "date",
+        "Start": 8,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 2015/08/12",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "2015/08/12",
+        "Type": "date",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 11/12,2016",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 11/12,2016",
+        "Type": "date",
+        "Start": 8,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 11/12,16",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 11/12,16",
+        "Type": "date",
+        "Start": 8,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 1-Gen",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 1-Gen",
+        "Type": "date",
+        "Start": 8,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 28-Nov",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 28-Nov",
+        "Type": "date",
+        "Start": 8,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Mer, 22 Gen",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Mer, 22 Gen",
+        "Type": "date",
+        "Start": 8,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il primo venerdì di luglio",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il primo venerdì di luglio",
+        "Type": "date",
+        "Start": 8,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il primo venerdì di questo mese",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il primo venerdì di questo mese",
+        "Type": "date",
+        "Start": 8,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò tra due settimane da adesso",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "due settimane da adesso",
+        "Type": "date",
+        "Start": 12,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò la prossima settimana il venerdì",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "prossima settimana il venerdì",
+        "Type": "date",
+        "Start": 11,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il venerdì della prossima settimana",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "venerdì della prossima settimana",
+        "Type": "date",
+        "Start": 11,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "lo scorso Lunedì",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "scorso Lunedì",
+        "Type": "date",
+        "Start": 3,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Mar.",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Mar",
+        "Type": "date",
+        "Start": 8,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Mar. buone notizie.",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Mar",
+        "Type": "date",
+        "Start": 8,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Mar",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Mar",
+        "Type": "date",
+        "Start": 8,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Venerdì",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "venerdì",
+        "Type": "date",
+        "Start": 8,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò oggi",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "oggi",
+        "Type": "date",
+        "Start": 8,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò domani",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "domani",
+        "Type": "date",
+        "Start": 8,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato ieri",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ieri",
+        "Type": "date",
+        "Start": 13,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato l'altroieri",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "l'altroieri",
+        "Type": "date",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò dopodomani",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dopodomani",
+        "Type": "date",
+        "Start": 8,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il giorno dopo",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il giorno dopo",
+        "Type": "date",
+        "Start": 8,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò questo Venerdì",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "questo Venerdì",
+        "Type": "date",
+        "Start": 8,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Domenica prossima",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Domenica prossima",
+        "Type": "date",
+        "Start": 8,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato Domenica scorsa",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Domenica scorsa",
+        "Type": "date",
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò l'ultimo giorno",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "l'ultimo giorno",
+        "Type": "date",
+        "Start": 8,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò in giornata",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "in giornata",
+        "Type": "date",
+        "Start": 8,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò questa settimana, di Venerdì",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "questa settimana, di Venerdì",
+        "Type": "date",
+        "Start": 8,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò la prossima settimana, di Domenica",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "prossima settimana, di Domenica",
+        "Type": "date",
+        "Start": 11,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato la scorsa settimana, di Domenica",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "scorsa settimana, di Domenica",
+        "Type": "date",
+        "Start": 16,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 15 Giugno 2016",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 15 Giugno 2016",
+        "Type": "date",
+        "Start": 8,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "baseball l'undici maggio",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "undici maggio",
+        "Type": "date",
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il quattro maggio",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "quattro maggio",
+        "Type": "date",
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 4 marzo",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 4 marzo",
+        "Type": "date",
+        "Start": 8,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il primo Gen",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "primo Gen",
+        "Type": "date",
+        "Start": 11,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il ventuno Maggio",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ventuno Maggio",
+        "Type": "date",
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il due Ago",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "due Ago",
+        "Type": "date",
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il ventidue Giugno",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ventidue Giugno",
+        "Type": "date",
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato due mesi fa",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "due mesi fa",
+        "Type": "date",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò due giorni dopo",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "due giorni dopo",
+        "Type": "date",
+        "Start": 8,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "a chi ho mandato una email un mese fa",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "un mese fa",
+        "Type": "date",
+        "Start": 27,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il 27",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "27",
+        "Type": "date",
+        "Start": 20,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il 27.",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "27",
+        "Type": "date",
+        "Start": 20,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il 27!",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "27",
+        "Type": "date",
+        "Start": 20,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il 27 .",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "27",
+        "Type": "date",
+        "Start": 20,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il 21",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "21",
+        "Type": "date",
+        "Start": 20,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il 22",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "22",
+        "Type": "date",
+        "Start": 20,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il due",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "due",
+        "Type": "date",
+        "Start": 20,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il ventidue",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ventidue",
+        "Type": "date",
+        "Start": 20,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il trentuno",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "trentuno",
+        "Type": "date",
+        "Start": 20,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato il 27",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "27",
+        "Type": "date",
+        "Start": 16,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato il 21",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "21",
+        "Type": "date",
+        "Start": 16,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato il 22",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "22",
+        "Type": "date",
+        "Start": 16,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato il due!",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "due",
+        "Type": "date",
+        "Start": 16,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato il ventidue?",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ventidue",
+        "Type": "date",
+        "Start": 16,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "il primo premio",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": []
+  },
+  {
+    "Input": "il secondo premio",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": []
+  },
+  {
+    "Input": "Andrò al 27° piano",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": []
+  },
+  {
+    "Input": "L'evento commemorativo per il 25° anniversario delle relazioni diplomatiche tra Singapore e China",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": []
+  },
+  {
+    "Input": "Prendi i biglietti per il 17° Door Haunted Experience",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": []
+  },
+  {
+    "Input": "Cosa devo fare sabato due?",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "sabato due",
+        "Type": "date",
+        "Start": 15,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Un appuntamento per Mercoledì 27 con Joe Smith",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Mercoledì 27",
+        "Type": "date",
+        "Start": 20,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Giovedì 21",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Giovedì 21",
+        "Type": "date",
+        "Start": 8,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Venerdì 22",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Venerdì 22",
+        "Type": "date",
+        "Start": 8,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Sabato 23",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Sabato 23",
+        "Type": "date",
+        "Start": 8,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Venerdì 15",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Venerdì 15",
+        "Type": "date",
+        "Start": 8,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Giovedì ventuno",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Giovedì ventuno",
+        "Type": "date",
+        "Start": 8,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Venerdì ventidue",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Venerdì ventidue",
+        "Type": "date",
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Venerdì quindici",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Venerdì quindici",
+        "Type": "date",
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Giovedì sette",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Giovedì sette",
+        "Type": "date",
+        "Start": 8,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò la seconda Domenica",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "seconda Domenica",
+        "Type": "date",
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò la prima Domenica",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "prima Domenica",
+        "Type": "date",
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il terzo Martedì",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "terzo Martedì",
+        "Type": "date",
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò la quinta Domenica",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "quinta Domenica",
+        "Type": "date",
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò la sesta Domenica",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Domenica",
+        "Type": "date",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il decimo Lunedì",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Lunedì",
+        "Type": "date",
+        "Start": 18,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 20 del prossimo mese",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 20 del prossimo mese",
+        "Type": "date",
+        "Start": 8,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 31 di questo mese",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 31 di questo mese",
+        "Type": "date",
+        "Start": 8,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Cortana potresti provare ad organizzare una chiamata Skype o Venerdì di questa settimana o Martedì della prossima settimana",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Venerdì di questa settimana",
+        "Type": "date",
+        "Start": 61,
+        "Length": 27
+      },
+      {
+        "Text": "Martedì della prossima settimana",
+        "Type": "date",
+        "Start": 91,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Cortana potresti provare ad organizzare una chiamata Skype o Venerdì di questa settimana o questa settimana di Domenica",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Venerdì di questa settimana",
+        "Type": "date",
+        "Start": 61,
+        "Length": 27
+      },
+      {
+        "Text": "questa settimana di Domenica",
+        "Type": "date",
+        "Start": 91,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "16. Nov. 2016",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "16. Nov. 2016",
+        "Type": "date",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Abbiamo avuto un appuntamento 1 mese e 21 giorni fa",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "1 mese e 21 giorni fa",
+        "Type": "date",
+        "Start": 30,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Sono partito 2 anni 1 mese e 21 giorni fa",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "2 anni 1 mese e 21 giorni fa",
+        "Type": "date",
+        "Start": 13,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Partirò 2 anni e 21 giorni dopo",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "2 anni e 21 giorni dopo",
+        "Type": "date",
+        "Start": 8,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Sono partito 1 mese 2 anni e 21 giorni fa",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "1 mese 2 anni e 21 giorni fa",
+        "Type": "date",
+        "Start": 13,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Sono partito il 20 del prossimo mese",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 20 del prossimo mese",
+        "Type": "date",
+        "Start": 13,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Sono partito il 5 Dicembre 1391",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 5 Dicembre 1391",
+        "Type": "date",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Lunedì, Gen ventidue, 2018",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Lunedì, Gen ventidue, 2018",
+        "Type": "date",
+        "Start": 0,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Domenica ventuno Gen duemiladiciotto",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Domenica ventuno Gen duemiladiciotto",
+        "Type": "date",
+        "Start": 0,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "a Settembre, il ventuno, millenovecentosettantatre",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "Settembre, il ventuno, millenovecentosettantatre",
+        "Type": "date",
+        "Start": 2,
+        "Length": 48
+      }
+    ]
+  },
+  {
+    "Input": "il 10 Settembre, millenovecentouno",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 10 Settembre, millenovecentouno",
+        "Type": "date",
+        "Start": 0,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "il dieci di Settembre, duemila",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dieci di Settembre, duemila",
+        "Type": "date",
+        "Start": 3,
+        "Length": 27
+      }
+    ]
+  }
+]

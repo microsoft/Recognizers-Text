@@ -639,8 +639,13 @@
   },
   {
     "Input": "Volveré dentro de 2 semanas",
+<<<<<<< HEAD
     "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
+=======
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
+>>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "dentro de 2 semanas",

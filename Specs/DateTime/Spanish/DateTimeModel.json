@@ -4,7 +4,11 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "",
+=======
+    "NotSupported": "python",
+>>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "domingo",
@@ -64,7 +68,11 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "",
+=======
+    "NotSupported": "python",
+>>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "sa",
@@ -124,7 +132,11 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "",
+=======
+    "NotSupported": "python",
+>>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "hoy",
@@ -164,7 +176,11 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "",
+=======
+    "NotSupported": "python",
+>>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "ayer",
@@ -203,7 +219,11 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "",
+=======
+    "NotSupported": "python",
+>>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "ayer",
@@ -242,7 +262,11 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "",
+=======
+    "NotSupported": "python",
+>>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "ayer",
@@ -281,7 +305,11 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "",
+=======
+    "NotSupported": "python",
+>>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "ayer",
@@ -320,7 +348,11 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "",
+=======
+    "NotSupported": "python",
+>>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "ayer",
@@ -359,7 +391,11 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "",
+=======
+    "NotSupported": "python",
+>>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "ayer",
@@ -398,7 +434,11 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "",
+=======
+    "NotSupported": "python",
+>>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "ayer",
@@ -437,7 +477,11 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "",
+=======
+    "NotSupported": "python",
+>>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "ayer",
@@ -476,7 +520,11 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "",
+=======
+    "NotSupported": "python",
+>>>>>>> python/issue-fixing-french
     "Results": []
   },
   {
@@ -484,7 +532,11 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "",
+=======
+    "NotSupported": "python",
+>>>>>>> python/issue-fixing-french
     "Results": []
   },
   {
@@ -492,7 +544,11 @@
     "Context": {
       "ReferenceDateTime": "2019-08-23T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "javascript",
+=======
+    "NotSupported": "python, javascript",
+>>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "semana pasada",
@@ -517,7 +573,11 @@
     "Context": {
       "ReferenceDateTime": "2019-08-23T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "javascript",
+=======
+    "NotSupported": "python, javascript",
+>>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "la semana pasada",
@@ -542,7 +602,11 @@
     "Context": {
       "ReferenceDateTime": "2019-08-23T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "javascript",
+=======
+    "NotSupported": "python, javascript",
+>>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "el mes pasado",
@@ -567,7 +631,11 @@
     "Context": {
       "ReferenceDateTime": "2019-08-23T01:00:00"
     },
+<<<<<<< HEAD
     "NotSupported": "javascript",
+=======
+    "NotSupported": "python, javascript",
+>>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "mes pasado",

@@ -22,6 +22,10 @@ from ..utilities import DateTimeOptions
 class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
 
     @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
         return self._cardinal_extractor
 
@@ -147,6 +151,7 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
 
     def __init__(self):
         super().__init__()
+        self._check_both_before_after = False
         self._cardinal_extractor = EnglishCardinalExtractor()
         self._single_date_extractor = BaseDateExtractor(
             EnglishDateExtractorConfiguration())

@@ -1,0 +1,284 @@
+[
+  {
+    "Input": "organizzami un appuntamento la prossima settimana lun alle 9 am o alle 1 pm",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la prossima settimana lun alle 9 am",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "la prossima settimana lun alle 9 am o alle 1 pm",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-11T09",
+              "type": "datetime",
+              "value": "2017-12-11 09:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "1 pm",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "la prossima settimana lun alle 9 am o alle 1 pm",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-11T13",
+              "type": "datetime",
+              "value": "2017-12-11 13:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organizzami un appuntamento la prossima settimana lun o mar",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la prossima settimana lun",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "la prossima settimana lun o mar",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-11",
+              "type": "date",
+              "value": "2017-12-11"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "mar",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "la prossima settimana lun o mar",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-12",
+              "type": "date",
+              "value": "2017-12-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organizzami un appuntamento di mattina alle 9 o alle 10",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "di mattina alle 9",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "di mattina alle 9 o alle 10",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T09",
+              "type": "time",
+              "value": "09:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "alle 10",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "di mattina alle 9 o alle 10",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organizzami un appuntamento il prossimo lunedì 1-3 pm o 5-6 pm",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "il prossimo lunedì 1-3 pm",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "il prossimo lunedì 1-3 pm o 5-6 pm",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-12-11T13,2017-12-11T15,PT2H)",
+              "type": "datetimerange",
+              "start": "2017-12-11 13:00:00",
+              "end": "2017-12-11 15:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "5-6 pm",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "il prossimo lunedì 1-3 pm o 5-6 pm",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-12-11T17,2017-12-11T18,PT1H)",
+              "type": "datetimerange",
+              "start": "2017-12-11 17:00:00",
+              "end": "2017-12-11 18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Lunedì 8-9am o 9-10 am lavora.",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "lunedì 8-9am",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "lunedì 8-9am o 9-10",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-1T08,XXXX-WXX-1T09,PT1H)",
+              "type": "datetimerange",
+              "start": "2017-11-27 08:00:00",
+              "end": "2017-11-27 09:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-1T08,XXXX-WXX-1T09,PT1H)",
+              "type": "datetimerange",
+              "start": "2017-12-04 08:00:00",
+              "end": "2017-12-04 09:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "9-10 am",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "lunedì 8-9am o 9-10",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-1T09,XXXX-WXX-1T10,PT1H)",
+              "type": "datetimerange",
+              "start": "2017-11-27 09:00:00",
+              "end": "2017-11-27 10:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-1T09,XXXX-WXX-1T10,PT1H)",
+              "type": "datetimerange",
+              "start": "2017-12-04 09:00:00",
+              "end": "2017-12-04 10:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana potresti provare ad organizzare una chiamata Skype la prossima settimana martedì o giovedì?",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la prossima settimana martedì",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "la prossima settimana martedì o giovedì",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-12",
+              "type": "date",
+              "value": "2017-12-12"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "giovedì",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "la prossima settimana martedì o giovedì",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-14",
+              "type": "date",
+              "value": "2017-12-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana potresti organizzare una chiamata Skype la prossima settimana martedì alle 9 am o giovedì alle 1 pm?",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la prossima settimana martedì alle 9 am",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "la prossima settimana martedì alle 9 am o giovedì alle 1 pm",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-12T09",
+              "type": "datetime",
+              "value": "2017-12-12 09:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "giovedì alle 1 pm",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "la prossima settimana martedì alle 9 am o giovedì alle 1 pm",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-14T13",
+              "type": "datetime",
+              "value": "2017-12-14 13:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

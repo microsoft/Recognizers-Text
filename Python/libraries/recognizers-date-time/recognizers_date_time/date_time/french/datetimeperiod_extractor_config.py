@@ -20,6 +20,10 @@ from .datetime_extractor_config import FrenchDateTimeExtractorConfiguration
 class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
 
     @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
     def suffix_regex(self) -> Pattern:
         return self._suffix_regex
 
@@ -149,6 +153,7 @@ class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
 
     def __init__(self):
         super().__init__()
+        self._check_both_before_after = False
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.PureNumFromTo),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.PureNumBetweenAnd),

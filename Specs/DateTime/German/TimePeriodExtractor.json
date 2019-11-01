@@ -1,0 +1,134 @@
+[
+  {
+    "Input": "Ich werde von 5 bis 6 Uhr weg sein",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "von 5 bis 6 Uhr",
+        "Type": "timerange",
+        "Start": 10,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ich werde von 5 bis 6 Uhr Nachmittags weg sein",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "von 5 bis 6 Uhr Nachmittags",
+        "Type": "timerange",
+        "Start": 10,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Ich werde von 17 bis 18 Uhr weg sein",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "von 17 bis 18 Uhr",
+        "Type": "timerange",
+        "Start": 10,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ich werde von 17 Uhr bis 18 Uhr weg sein",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "von 17 Uhr bis 18 Uhr",
+        "Type": "timerange",
+        "Start": 10,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin von 5 bis 6 Uhr Abends weg",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "von 5 bis 6 Uhr Abends",
+        "Type": "timerange",
+        "Start": 8,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin von 5 bis 6 Uhr Nachmittags weg",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "von 5 bis 6 Uhr Nachmittags",
+        "Type": "timerange",
+        "Start": 8,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin Morgens von 5 bis 7 weg",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Morgens von 5 bis 7",
+        "Type": "timerange",
+        "Start": 8,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin von vier bis halb 5 weg",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "von vier bis halb 5",
+        "Type": "timerange",
+        "Start": 8,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Das geht von 3 bis 5 Uhr Morgens",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "von 3 bis 5 Uhr Morgens",
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Wir treffen uns dann Abends",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Abends",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Das läuft gegen Nachmittag ab",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Nachmittag",
+        "Type": "timerange",
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  }
+]

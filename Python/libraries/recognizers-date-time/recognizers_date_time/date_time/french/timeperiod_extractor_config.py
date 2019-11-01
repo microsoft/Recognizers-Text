@@ -14,6 +14,10 @@ from .base_configs import FrenchDateTimeUtilityConfiguration
 class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
     @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
     def simple_cases_regex(self) -> List[Pattern]:
         return self._simple_cases_regex
 
@@ -47,6 +51,7 @@ class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
     def __init__(self):
         super().__init__()
+        self._check_both_before_after = False
         self._single_time_extractor = BaseTimeExtractor(
             FrenchTimeExtractorConfiguration())
         self._integer_extractor = FrenchIntegerExtractor()

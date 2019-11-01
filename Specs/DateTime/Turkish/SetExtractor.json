@@ -1,0 +1,266 @@
+[
+  {
+    "Input": "Haftalık ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Haftalık",
+        "Type": "set",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Günlük ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Günlük",
+        "Type": "set",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Her gün ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her gün",
+        "Type": "set",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Her ay ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her ay",
+        "Type": "set",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Yıllık ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Yıllık",
+        "Type": "set",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Her iki gün ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her iki gün",
+        "Type": "set",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Her üç hafta ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her üç hafta",
+        "Type": "set",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Her gün saat 15'te ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her gün saat 15",
+        "Type": "set",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Her 15/4'te ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her 15/4",
+        "Type": "set",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Her Pazartesi ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her Pazartesi",
+        "Type": "set",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Her Pazartesi saat 16'da ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her Pazartesi saat 16",
+        "Type": "set",
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Her sabah ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her sabah",
+        "Type": "set",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Her sabah saat 9'da ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her sabah saat 9",
+        "Type": "set",
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Her öğleden sonra saat 16'da ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her öğleden sonra saat 16",
+        "Type": "set",
+        "Start": 0,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Her gece saat 21'de ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her gece saat 21",
+        "Type": "set",
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Her gece 21'de ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her gece 21",
+        "Type": "set",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Sabahları saat 9'da ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Sabahları saat 9",
+        "Type": "set",
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Her Pazar saat 9'da ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her Pazar saat 9",
+        "Type": "set",
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Pazartesileri saat 9'da ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Pazartesileri saat 9",
+        "Type": "set",
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Pazartesi günleri ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Pazartesi günleri",
+        "Type": "set",
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Pazar günleri ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Pazar günleri",
+        "Type": "set",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Pazarları ayrılacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Pazarları",
+        "Type": "set",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  }
+]
