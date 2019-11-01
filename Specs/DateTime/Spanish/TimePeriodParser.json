@@ -355,11 +355,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "en la noche",
@@ -386,11 +382,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 5 a 6 pm",
@@ -417,11 +409,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 5 a 6 p. m.",
@@ -448,11 +436,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de las 5 a las siete de la mañana",
@@ -479,11 +463,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 5 a 6 de la tarde",
@@ -510,11 +490,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "entre 5 y 6 p. m.",
@@ -541,11 +517,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "entre 5 pm y 6 pm",
@@ -572,11 +544,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "entre las 5 y las 6 de la tarde",
@@ -603,11 +571,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de las 1 am a las 5 pm",
@@ -634,11 +598,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "desde las 4 hasta las 5 p. m.",
@@ -665,11 +625,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de las 4 a las 5 pm",
@@ -696,11 +652,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 4:00 a las 7",
@@ -727,11 +679,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "4 pm-5 pm",
@@ -758,11 +706,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "4 pm - 5 pm",
@@ -789,11 +733,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "desde las 3 de la mañana hasta las 5 pm",
@@ -820,11 +760,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "entre las 3 de la mañana y las 5 pm",
@@ -851,11 +787,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "entre 4 pm y 5 pm",
@@ -882,11 +814,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "por la mañana",
@@ -913,11 +841,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "por la tarde",
@@ -944,11 +868,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "por la noche",
@@ -975,11 +895,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "primeras horas de la mañana",
@@ -1006,11 +922,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "últimas horas de la mañana",
@@ -1037,11 +949,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "primeras horas de la tarde",
@@ -1068,11 +976,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "últimas horas de la tarde",
@@ -1099,11 +1003,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "primeras horas de la noche",
@@ -1130,11 +1030,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "últimas horas de la noche",
@@ -1161,11 +1057,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "altas horas de la noche",
@@ -1192,11 +1084,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "desde las 1 hasta las 4 p. m.",
@@ -1223,11 +1111,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de las 1:30 a las 4 pm",
@@ -1254,11 +1138,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "en la mañana",
@@ -1285,11 +1165,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "desde 1:30 hasta 3:00 de la mañana",
@@ -1316,11 +1192,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 11 am a 3",
@@ -1347,11 +1219,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 11 p. m. a 3",
@@ -1378,11 +1246,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 11:01 pm a 11",
@@ -1409,11 +1273,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "desde las 11:01 a. m. hasta las 11",
@@ -1440,11 +1300,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 11:00-11:50 a. m.",
@@ -1471,11 +1327,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 1:30-3:30 pm",
@@ -1502,11 +1354,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 1:30-3:30 de la tarde",
@@ -1533,11 +1381,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 1.30-3.30 p. m.",
@@ -1564,11 +1408,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de las 3 pm a las 3:30 pm",
@@ -1595,11 +1435,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 0:01 am a 1 pm",
@@ -1626,11 +1462,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "desde 0:01-1:00 de la madrugada",
@@ -1657,11 +1489,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 3 a 3:30",
@@ -1688,11 +1516,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de las 1:30 a las 3",
@@ -1719,11 +1543,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "entre 1:30 y 3 p. m.",
@@ -1750,11 +1570,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 11 a 3",
@@ -1781,11 +1597,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "desde las 11 hasta las 11:50 del mediodía",
@@ -1812,11 +1624,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "desde las 11 hasta las 11:50 de la mañana",
@@ -1843,11 +1651,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 11 a 3 de la madrugada",
@@ -1874,11 +1678,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 10:00-11:00 a. m.",
@@ -1905,11 +1705,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 23:00-3:00",
@@ -1936,11 +1732,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 23.00-3.00",
@@ -1967,11 +1759,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de las 23 h a las 3 h",
@@ -1998,11 +1786,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de las 23 h a las 15 h",
@@ -2029,11 +1813,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de 23:00-15:00",
@@ -2060,11 +1840,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "entre 10 y 11:30",
@@ -2091,11 +1867,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "entre las 10:10 am y las 12:50",
@@ -2122,11 +1894,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "entre las 22.10 h y las 3 h",
@@ -2153,11 +1921,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de las 10.10 pm a las 10",
@@ -2184,11 +1948,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "de las 10:30 a. m. a las 23 h",
@@ -2215,11 +1975,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "dotnet, java",
-<<<<<<< HEAD
     "NotSupportedByDesign": "javascript",
-=======
-    "NotSupportedByDesign": "javascript, python",
->>>>>>> python/issue-fixing-french
     "Results": [
       {
         "Text": "horas laborales",
