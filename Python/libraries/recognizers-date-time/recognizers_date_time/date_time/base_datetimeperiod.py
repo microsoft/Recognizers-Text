@@ -559,30 +559,74 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             before_str = source[0:duration.start].strip()
             after_str = source[duration.start + duration.length:].strip()
             if before_str and after_str:
-                # ToDo
+
                 # within (the) (next) "Seconds/Minutes/Hours" should be handled as datetimeRange here
                 # within (the) (next) XX days/months/years + "Seconds/Minutes/Hours" should also be handled as datetimeRange here
-
-                # ToDo
-                # check also afterStr
-                match = regex.search(
-                    self.config.previous_prefix_regex, before_str)
-                if match and not before_str[match.end():]:
-                    tokens.append(Token(match.start(), duration.end))
+                in_prefix = True
+                token = Token(self.match_within_next_prefix(before_str, source, duration, in_prefix))
+                if token.start >= 0:
+                    tokens.append(token)
                     continue
 
-                match = regex.search(self.config.next_prefix_regex, before_str)
+                # check also afterStr
+                if self.config.check_both_before_after:
+                    in_prefix = False
+                    token = Token(self.match_within_next_prefix(after_str, source, duration, in_prefix))
+                    if token.start >= 0:
+                        tokens.append(token)
+                        continue
+
+                match = regex.search(
+                    self.config.previous_prefix_regex, before_str)
+                index = -1
                 if match and not before_str[match.end():]:
                     tokens.append(Token(match.start(), duration.end))
+                    index = match.index
+                    continue
 
-                #ToDo: if index >= 0
+                if index < 0:
+                    match = regex.search(self.config.next_prefix_regex, before_str)
+                    if match and not before_str[match.end():]:
+                        tokens.append(Token(match.start(), duration.end))
+                        index = match.index
+                        continue
+
+                if index >= 0:
+                    prefix = before_str[0: index].strip()
+                    duration_text = source[duration.start: duration.length]
+                    numbers_in_prefix = self.config.cardinal_extractor.extract(prefix)
+                    numbers_in_duration = self.config.cardinal_extractor.extract(duration_text)
 
                     # Cases like "2 upcoming days", should be supported here
                     # Cases like "2 upcoming 3 days" is invalid, only extract "upcoming 3 days" by default
+                    if numbers_in_prefix and not numbers_in_duration:
+                        last_number = next(reversed(sorted(numbers_in_prefix, key=lambda x: x.start + x.length)), None)
 
-                    # Prefix should ends with the last number
+                        # Prefix should ends with the last number
+                        if last_number.start + last_number.length == prefix.length:
+                            tokens.append(Token(last_number.start, duration.end))
+                    else:
+                        tokens.append(Token(index, duration.end))
+                    continue
 
-                #ToDo: matchDateUnit
+                match_date_unit = regex.search(self.config.date_unit_regex.match, after_str)
+                if match_date_unit:
+                    match = regex.search(self.config.previous_prefix_regex.match, after_str)
+                    if match and not after_str[0: match.index]:
+                        tokens.append(Token(duration.start, duration.start + duration.length + match.index + len(match)))
+                        continue
+
+                    match = regex.search(self.config.next_prefix_regex.match, after_str)
+                    if match and not after_str[0: match.index]:
+                        tokens.append(
+                            Token(duration.start, duration.start + duration.length + match.index + len(match)))
+                        continue
+
+                    match = regex.search(self.config.future_suffix_regex.match, after_str)
+                    if match and not after_str[0: match.index]:
+                        tokens.append(
+                            Token(duration.start, duration.start + duration.length + match.index + len(match)))
+                        continue
         return tokens
 
     def match_night(self, source: str, reference: datetime) -> List[Token]:
