@@ -611,20 +611,20 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                     tokens.append(Token(index, duration.end))
                 continue
 
-            match_date_unit = regex.search(self.config.date_unit_regex.match, after_str)
+            match_date_unit = regex.search(self.config.date_unit_regex, after_str)
             if match_date_unit:
-                match = regex.search(self.config.previous_prefix_regex.match, after_str)
+                match = regex.search(self.config.previous_prefix_regex, after_str)
                 if match and not after_str[0: match.index]:
                     tokens.append(Token(duration.start, duration.start + duration.length + match.index + len(match)))
                     continue
 
-                match = regex.search(self.config.next_prefix_regex.match, after_str)
+                match = regex.search(self.config.next_prefix_regex, after_str)
                 if match and not after_str[0: match.index]:
                     tokens.append(
                         Token(duration.start, duration.start + duration.length + match.index + len(match)))
                     continue
 
-                match = regex.search(self.config.future_suffix_regex.match, after_str)
+                match = regex.search(self.config.future_suffix_regex, after_str)
                 if match and not after_str[0: match.index]:
                     tokens.append(
                         Token(duration.start, duration.start + duration.length + match.index + len(match)))
@@ -646,7 +646,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             match = self.config.time_unit_regex.match(source[duration.start: duration.length])
             success = match
 
-            if in_prefix:
+            if not in_prefix:
                 # Match prefix for "next"
                 before_str = source[0:duration.start]
                 match_next = self.config.next_prefix_regex.match(before_str)
@@ -747,12 +747,13 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
     @staticmethod
     def match_prefix_regex_in_segment(source: str, match: Match, in_prefix: bool):
-
-        if in_prefix:
-            sub_str = match and source[source.index(match.group()) + (match.end() - match.start())]
-        else:
-            sub_str = source[0: source.index(match.group())]
-        result = match and not sub_str
+        result = False
+        if match:
+            if in_prefix:
+                sub_str = source[match.start() + len(match):]
+            else:
+                sub_str = source[0: match.start()]
+            result = match and not sub_str
         return result
 
     def match_relative_unit(self, source: str) -> List[Token]:
