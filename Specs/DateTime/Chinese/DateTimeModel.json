@@ -2074,7 +2074,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T14:13:33"
     },
-    "NotSupported": "python, java",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "2分钟前",
@@ -2137,7 +2137,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T14:16:03"
     },
-    "NotSupported": "python, java",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "2小时后",
@@ -3818,7 +3818,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T14:16:03"
     },
-    "NotSupported": "python, java",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "5天前",
