@@ -1,0 +1,602 @@
+[
+  {
+    "Input": "Haftalık ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2744475+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Haftalık",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "set": "Set: P1W"
+          },
+          "PastResolution": {
+            "set": "Set: P1W"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "iki haftada bir ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2754476+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iki haftada bir",
+        "Type": "set",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "set": "Set: P2W"
+          },
+          "PastResolution": {
+            "set": "Set: P2W"
+          }
+        },
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Günlük ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2779449+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Günlük",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Her gün ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2794445+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her gün",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Her ay ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2829445+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her ay",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "set": "Set: P1M"
+          },
+          "PastResolution": {
+            "set": "Set: P1M"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Yıllık ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2844439+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Yıllık",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Senelik ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2854444+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Senelik",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Her iki gün ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2909444+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her iki gün",
+        "Type": "set",
+        "Value": {
+          "Timex": "P2D",
+          "FutureResolution": {
+            "set": "Set: P2D"
+          },
+          "PastResolution": {
+            "set": "Set: P2D"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Her üç hafta ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2959472+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her üç hafta",
+        "Type": "set",
+        "Value": {
+          "Timex": "P3W",
+          "FutureResolution": {
+            "set": "Set: P3W"
+          },
+          "PastResolution": {
+            "set": "Set: P3W"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Her gün saat 15'te ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3039501+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her gün saat 15",
+        "Type": "set",
+        "Value": {
+          "Timex": "T15",
+          "FutureResolution": {
+            "set": "Set: T15"
+          },
+          "PastResolution": {
+            "set": "Set: T15"
+          }
+        },
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Her 15/4'te ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3109498+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her 15/4",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-04-15",
+          "FutureResolution": {
+            "set": "Set: XXXX-04-15"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-04-15"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Her Pazartesi ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3259514+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her Pazartesi",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Her Pazartesi saat 16'da ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3379507+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her Pazartesi saat 16",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1T16",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1T16"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1T16"
+          }
+        },
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Her sabah ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3429518+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her sabah",
+        "Type": "set",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "set": "Set: TMO"
+          },
+          "PastResolution": {
+            "set": "Set: TMO"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Her sabah saat 9'da ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3609535+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her sabah saat 9",
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Her öğleden sonra saat 16'da ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3730732+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her öğleden sonra saat 16",
+        "Type": "set",
+        "Value": {
+          "Timex": "T16",
+          "FutureResolution": {
+            "set": "Set: T16"
+          },
+          "PastResolution": {
+            "set": "Set: T16"
+          }
+        },
+        "Start": 0,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Her gece saat 21'de ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3840706+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her gece saat 21",
+        "Type": "set",
+        "Value": {
+          "Timex": "T21",
+          "FutureResolution": {
+            "set": "Set: T21"
+          },
+          "PastResolution": {
+            "set": "Set: T21"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Her gece 21'de ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3930718+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her gece 21",
+        "Type": "set",
+        "Value": {
+          "Timex": "T21",
+          "FutureResolution": {
+            "set": "Set: T21"
+          },
+          "PastResolution": {
+            "set": "Set: T21"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Sabahları saat 9'da ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4170727+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Sabahları saat 9",
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Her Pazar saat 9'da ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4295727+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Her Pazar saat 9",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7T09",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Pazar'ları saat 9'da ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.438575+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Pazar'ları saat 9",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7T09",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Pazar'ları saat 9'da ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4505726+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Pazar'ları saat 9",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7T09",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Pazartesi günleri ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4570731+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Pazartesi günleri",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Pazar günleri ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4635727+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Pazar günleri",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Pazar'ları ayrılacağım",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4710739+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Pazar'ları",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  }
+]

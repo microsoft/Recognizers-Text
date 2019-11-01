@@ -1,0 +1,4357 @@
+[
+  {
+    "Input": "이 달 4일부터 22일까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이 달 4일부터 22일까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-22,P18D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          }
+        },
+        "Start": 12,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "다음 달 4일부터 23일까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 달 4일부터 23일까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-12-04,2016-12-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          }
+        },
+        "Start": 12,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "9월 3일부터 12일까지 자리를 비울 예정입니다. 하하하",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9월 3일부터 12일까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+          "FutureResolution": {
+            "startDate": "2017-09-03",
+            "endDate": "2017-09-12"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-03",
+            "endDate": "2016-09-12"
+          }
+        },
+        "Start": 12,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "11일 금요일부터 15일 화요일까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11일 금요일부터 15일 화요일까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-11,2016-11-15,P4D)",
+          "FutureResolution": {
+            "startDate": "2016-11-11",
+            "endDate": "2016-11-15"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-11",
+            "endDate": "2016-11-15"
+          }
+        },
+        "Start": 12,
+        "Length": 43
+      }
+    ]
+  },
+  {
+    "Input": "이 달 4일부터 23일까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이 달 4일부터 23일까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-23"
+          }
+        },
+        "Start": 12,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "이 달 4일과 22일 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이 달 4일과 22일 사이에",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-22,P18D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          }
+        },
+        "Start": 12,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "9월 3일과 12일 사이에 자리를 비울 예정입니다. 하하하",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9월 3일과 12일 사이에",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+          "FutureResolution": {
+            "startDate": "2017-09-03",
+            "endDate": "2017-09-12"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-03",
+            "endDate": "2016-09-12"
+          }
+        },
+        "Start": 12,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "1995년 1월 4일부터 22일까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1995년 1월 4일부터 22일까지 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1995-01-04,1995-01-22,P18D)",
+          "FutureResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          },
+          "PastResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          }
+        },
+        "Start": 12,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "1995년 1월 4일과 22일 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1995년 1월 4일과 22일 사이에 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1995-01-04,1995-01-22,P18D)",
+          "FutureResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          },
+          "PastResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          }
+        },
+        "Start": 12,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "9월 4일부터 8일까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9월 4일부터 8일까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-04,XXXX-09-08,P4D)",
+          "FutureResolution": {
+            "startDate": "2017-09-04",
+            "endDate": "2017-09-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-04",
+            "endDate": "2016-09-08"
+          }
+        },
+        "Start": 12,
+        "Length": 43
+      }
+    ]
+  },
+  {
+    "Input": "이번 주에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 15,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "다가오는 주에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다가오는 주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W46",
+          "FutureResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          }
+        },
+        "Start": 19,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "2월에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2월",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02",
+          "FutureResolution": {
+            "startDate": "2017-02-01",
+            "endDate": "2017-03-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-02-01",
+            "endDate": "2016-03-01"
+          }
+        },
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "이번 9월에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 9월",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-09",
+          "FutureResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 12,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "지난 9월에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "지난 9월",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-09",
+          "FutureResolution": {
+            "startDate": "2015-09-01",
+            "endDate": "2015-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-09-01",
+            "endDate": "2015-10-01"
+          }
+        },
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "다음 6월에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 6월",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-06",
+          "FutureResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          }
+        },
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "이번 달 셋째 주에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 달 셋째 주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11-W03",
+          "FutureResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          }
+        },
+        "Start": 12,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "7월의 마지막 주에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7월의 마지막 주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-07-W05",
+          "FutureResolution": {
+            "startDate": "2017-07-24",
+            "endDate": "2017-07-31"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-25",
+            "endDate": "2016-08-01"
+          }
+        },
+        "Start": 12,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "9월 16일의 주",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9월 16일의 주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-09-16",
+          "FutureResolution": {
+            "startDate": "2017-09-11",
+            "endDate": "2017-09-18"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-12",
+            "endDate": "2016-09-19"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "9월 16일의 달",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9월 16일의 달",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-09-16",
+          "FutureResolution": {
+            "startDate": "2017-09-01",
+            "endDate": "2017-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 0,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "2015년 3월에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015년 3월",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
+        },
+        "Start": 12,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "2주 내에 미팅을 잡아 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "다가오는 이틀 ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다가오는 이틀 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-11-10,P2D)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "과거 며칠",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "과거 며칠",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-07,P3D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-07"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "이 주 ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이 주 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "주말",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "주말",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "이번 주말",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 주말",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "주말 ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "주말 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "10월 2일부터 10월 22일까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10월 2일부터 10월 22일까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
+        },
+        "Start": 12,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "2016년 1월 12일부터 2016년 1월 22일까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-01-12,2016-01-22,P10D)",
+          "FutureResolution": {
+            "startDate": "2016-01-12",
+            "endDate": "2016-01-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-12",
+            "endDate": "2016-01-22"
+          }
+        },
+        "Start": 12,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "1월 1일부터 1월 22일 수요일까지 자리를 비울 예정입니다.  ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1월 1일부터 1월 22일 수요일까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-01,XXXX-01-22,P21D)",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-01-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-01-22"
+          }
+        },
+        "Start": 12,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "오늘부터 내일까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘부터 내일까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-08,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-08"
+          }
+        },
+        "Start": 12,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "10월 2일에서 10월 22일 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10월 2일에서 10월 22일 사이에",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
+        },
+        "Start": 12,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "11월 19일, 20일에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11월 19일, 20일",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        },
+        "Start": 12,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "11월 19일부터 20일까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11월 19일부터 20일까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        },
+        "Start": 12,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "11월 19일과 20일 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11월 19일과 20일 사이에",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        },
+        "Start": 12,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "이번 주 후반에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 주 후반",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        },
+        "Start": 12,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "이 달 말에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이 달 말",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-30,P24D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-30"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-30"
+          }
+        },
+        "Start": 12,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "올 해 말에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "올 해 말",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-12-31,P55D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-12-31"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-12-31"
+          }
+        },
+        "Start": 12,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "이번 주 후반에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-13T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 주 후반",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-13,2016-11-13,P0D)",
+          "FutureResolution": {
+            "startDate": "2016-11-13",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-13",
+            "endDate": "2016-11-13"
+          }
+        },
+        "Start": 12,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "주말에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "주말",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 15,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "이번 주말에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 주말",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 15,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "2016년 6월에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 6월",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-06",
+          "FutureResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          }
+        },
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "다음 해 6월에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 해 6월",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-06",
+          "FutureResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          }
+        },
+        "Start": 12,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "다음 해에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 해",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "다가오는 3일 간 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다가오는 3일",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-11-11,P3D)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-11"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-11"
+          }
+        },
+        "Start": 12,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "다가오는 3개월 간 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다가오는 3개월",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2017-02-08,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2017-02-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2017-02-08"
+          }
+        },
+        "Start": 12,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "3년 동안 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "지난 3주 간 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "지난 3주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-10-17,2016-11-07,P3W)",
+          "FutureResolution": {
+            "startDate": "2016-10-17",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-17",
+            "endDate": "2016-11-07"
+          }
+        },
+        "Start": 12,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "지난 3년 간 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "지난 3년",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2013-11-07,2016-11-07,P3Y)",
+          "FutureResolution": {
+            "startDate": "2013-11-07",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2013-11-07",
+            "endDate": "2016-11-07"
+          }
+        },
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "10월의 첫째 주",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10월의 첫째 주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-10-W01",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-09"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-03",
+            "endDate": "2016-10-10"
+          }
+        },
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "2027년 셋째 주에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2027년 셋째 주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2027-W03",
+          "FutureResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          },
+          "PastResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          }
+        },
+        "Start": 12,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "다음 해 셋째 주에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 해 셋째 주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W03",
+          "FutureResolution": {
+            "startDate": "2017-01-16",
+            "endDate": "2017-01-23"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-16",
+            "endDate": "2017-01-23"
+          }
+        },
+        "Start": 12,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "2016년 3사분기에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 3사분기",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 12,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "올 해 3사분기에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "올 해 3사분기",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 12,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "2016년 3사분기 동안 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 3사분기",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 12,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "3사분기 동안 돌아올 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3사분기",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2017-07-01",
+            "endDate": "2017-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 20,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "2사분기 동안 돌아올 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2사분기",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-04-01,2016-07-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2017-04-01",
+            "endDate": "2017-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-04-01",
+            "endDate": "2016-07-01"
+          }
+        },
+        "Start": 20,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "2016년 1사분기에 돌아올 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 1사분기",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-01-01,2016-04-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-04-01"
+          }
+        },
+        "Start": 13,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "2016년 4사분기 동안 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 4사분기",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-10-01,2017-01-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-10-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-01",
+            "endDate": "2017-01-01"
+          }
+        },
+        "Start": 19,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "2016년 상반기 동안 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 상반기 동안",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-01-01,2016-07-01,P6M)",
+          "FutureResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-07-01"
+          }
+        },
+        "Start": 19,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "2016년 하반기 동안 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 하반기 동안",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2017-01-01,P6M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          }
+        },
+        "Start": 19,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "하반기 동안 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "이번 여름에 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 여름",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "다음 봄에 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 봄",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-SP",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "그 여름에 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "그 여름",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "여름에 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "여름",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 11,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "2016년 여름에 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 여름",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "다가오는 달 휴가",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다가오는 달 휴가",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-12",
+          "FutureResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "다음 달 휴가",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 달 휴가",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-12",
+          "FutureResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "이 달 말에 시간 내서 한번 만나요. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이 달 말",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-11",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-12-01"
+          }
+        },
+        "Start": 30,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "이번 주 후반에 시간 내서 한번 만나요. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 주 후반",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W45",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-09",
+            "endDate": "2017-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-09",
+            "endDate": "2017-11-13"
+          }
+        },
+        "Start": 30,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "올 해 말에 시간 내서 한번 만나요. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "올 해 말",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-07-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-07-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 30,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "내년 초에 시간 내서 한번 만나요. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내년 초",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2018-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2018-07-01"
+          }
+        },
+        "Start": 30,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "다음 주 초에 시간 내서 한번 만나요. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 주 초",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        },
+        "Start": 30,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "다음 달 초에 시간 내서 한번 만나요. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 달 초",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-12",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-12-01",
+            "endDate": "2017-12-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-12-01",
+            "endDate": "2017-12-16"
+          }
+        },
+        "Start": 30,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "지난 해 후반에 미팅이 있었습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "지난 해 후반",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          }
+        },
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "지난 주 후반에 미팅이 있었습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "지난 주 후반",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W44",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-02",
+            "endDate": "2017-11-06"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-02",
+            "endDate": "2017-11-06"
+          }
+        },
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "지난 달 후반에 미팅이 있었습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "지난 달 후반",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-10",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-10-16",
+            "endDate": "2017-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-10-16",
+            "endDate": "2017-11-01"
+          }
+        },
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "코르타나, 다음 주 수요일과 금요일 사이에 안토니오와 25분짜리 미팅 일정을 조정해 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 주 수요일과 금요일 사이에",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-22,2017-11-24,P2D)",
+          "FutureResolution": {
+            "startDate": "2017-11-22",
+            "endDate": "2017-11-24"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-22",
+            "endDate": "2017-11-24"
+          }
+        },
+        "Start": 61,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "이번 주에 미팅이 있었습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-20"
+          }
+        },
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "올 해 첫째 주에 미팅이 있었습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "올 해 첫째 주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W01",
+          "FutureResolution": {
+            "startDate": "2017-01-02",
+            "endDate": "2017-01-09"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-02",
+            "endDate": "2017-01-09"
+          }
+        },
+        "Start": 17,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "2015년 첫 번째 주",
+    "Context": {
+      "ReferenceDateTime": "2017-11-20T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015년 첫 번째 주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-W01",
+          "FutureResolution": {
+            "startDate": "2014-12-29",
+            "endDate": "2015-01-05"
+          },
+          "PastResolution": {
+            "startDate": "2014-12-29",
+            "endDate": "2015-01-05"
+          }
+        },
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "2015년 두 번째 주 ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-20T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015년 두 번째 주 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-W02",
+          "FutureResolution": {
+            "startDate": "2015-01-05",
+            "endDate": "2015-01-12"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-05",
+            "endDate": "2015-01-12"
+          }
+        },
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "이번 주말",
+    "Context": {
+      "ReferenceDateTime": "2017-11-20T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 주말",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W47-WE",
+          "FutureResolution": {
+            "startDate": "2017-11-25",
+            "endDate": "2017-11-27"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-25",
+            "endDate": "2017-11-27"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "2015년 마지막 주 ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-20T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015년 마지막 주 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-W53",
+          "FutureResolution": {
+            "startDate": "2015-12-28",
+            "endDate": "2016-01-04"
+          },
+          "PastResolution": {
+            "startDate": "2015-12-28",
+            "endDate": "2016-01-04"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "247년에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-18T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "247년",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "0247",
+          "FutureResolution": {
+            "startDate": "0247-01-01",
+            "endDate": "0248-01-01"
+          },
+          "PastResolution": {
+            "startDate": "0247-01-01",
+            "endDate": "0248-01-01"
+          }
+        },
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "1970년대에 ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1970년대",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1970-01-01,1980-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
+        "Start": 3,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "그는 2000년대에 태어났다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2000년대",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2010-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
+        "Start": 3,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "1970년대에",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1970년대",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1970-01-01,1980-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
+        "Start": 3,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "70년대에",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "70년대",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2070-01-01",
+            "endDate": "2080-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
+        "Start": 3,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "40년대에",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "40년대",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX40-01-01,XX50-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2040-01-01",
+            "endDate": "2050-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1940-01-01",
+            "endDate": "1950-01-01"
+          }
+        },
+        "Start": 3,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2010년대에 ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2010년대",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2010-01-01,2020-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          }
+        },
+        "Start": 3,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "2000년대에",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2000년대",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2010-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
+        "Start": 3,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "2018년 2월 2일부터 7일까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2018년 2월 2일부터 7일까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-02-02,2018-02-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          }
+        },
+        "Start": 12,
+        "Length": 42
+      }
+    ]
+  },
+  {
+    "Input": "2018년 2월 2일에서 7일 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2018년 2월 2일에서 7일 사이에",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-02-02,2018-02-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          }
+        },
+        "Start": 12,
+        "Length": 45
+      }
+    ]
+  },
+  {
+    "Input": "이 일은 1999년 6월에 일어났습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1999년 6월",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1999-06",
+          "FutureResolution": {
+            "startDate": "1999-06-01",
+            "endDate": "1999-07-01"
+          },
+          "PastResolution": {
+            "startDate": "1999-06-01",
+            "endDate": "1999-07-01"
+          }
+        },
+        "Start": 15,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "1928년에",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1928년",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1928",
+          "FutureResolution": {
+            "startDate": "1928-01-01",
+            "endDate": "1929-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1928-01-01",
+            "endDate": "1929-01-01"
+          }
+        },
+        "Start": 3,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "1789년에",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1789년",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1789",
+          "FutureResolution": {
+            "startDate": "1789-01-01",
+            "endDate": "1790-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1789-01-01",
+            "endDate": "1790-01-01"
+          }
+        },
+        "Start": 3,
+        "Length": 42
+      }
+    ]
+  },
+  {
+    "Input": "2027년 세 번째 주에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2027년 세 번째 주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2027-W03",
+          "FutureResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          },
+          "PastResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          }
+        },
+        "Start": 12,
+        "Length": 47
+      }
+    ]
+  },
+  {
+    "Input": "2020년 3사분기에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2020년 3사분기",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2020-07-01,2020-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2020-07-01",
+            "endDate": "2020-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2020-07-01",
+            "endDate": "2020-10-01"
+          }
+        },
+        "Start": 12,
+        "Length": 44
+      }
+    ]
+  },
+  {
+    "Input": "1978년 봄에",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1978년 봄",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1978-SP",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 3,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "267년에",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "267년",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "0267",
+          "FutureResolution": {
+            "startDate": "0267-01-01",
+            "endDate": "0268-01-01"
+          },
+          "PastResolution": {
+            "startDate": "0267-01-01",
+            "endDate": "0268-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "다다음 주에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다다음 주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W47",
+          "FutureResolution": {
+            "startDate": "2016-11-21",
+            "endDate": "2016-11-28"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-21",
+            "endDate": "2016-11-28"
+          }
+        },
+        "Start": 12,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "다다음 달에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다다음 달",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-01",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-02-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-02-01"
+          }
+        },
+        "Start": 12,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "다다음 해에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다다음 해",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018",
+          "FutureResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-01"
+          }
+        },
+        "Start": 12,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "다다음 주말에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다다음 주말",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W47-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-26",
+            "endDate": "2016-11-28"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-26",
+            "endDate": "2016-11-28"
+          }
+        },
+        "Start": 12,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "그 기간은 2014-2018입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2014-2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "그 기간은 2014년에서 2018년 사이입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2014년에서 2018년 사이",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "그 기간은 2014년부터 2018년까지입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2014년부터 2018년까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "그 기간은 2014년에서 2018년까지입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2014년에서 2018년까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "그 기간은 2000년부터 2014년까지입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2000년부터 2014년까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2014-01-01,P14Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2014-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2014-01-01"
+          }
+        },
+        "Start": 13,
+        "Length": 49
+      }
+    ]
+  },
+  {
+    "Input": "이것은 지난 20년 동안 일어났습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "지난 20년 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1990-01-01,2010-01-01,P20Y)",
+          "FutureResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "이것은 다음 10년 동안 일어났습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 10년",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2020-01-01,2030-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2030-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2030-01-01"
+          }
+        },
+        "Start": 15,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "이것은 다음 30년 동안 일어났습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 30년",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2020-01-01,2050-01-01,P30Y)",
+          "FutureResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2050-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2050-01-01"
+          }
+        },
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "이것은 앞으로 4주간 일어날 것입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "앞으로 4주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-12-06,P4W)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-12-06"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-12-06"
+          }
+        },
+        "Start": 15,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "이것은 앞으로 이틀간 일어날 것입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "앞으로 이틀",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-11-10,P2D)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          }
+        },
+        "Start": 15,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "코르타나는 다음 주 초에 일정을 잡을 것입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 주 초",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        },
+        "Start": 27,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "그래, 다음 주 후반에 스카이프 하자. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 주 후반",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-11-20"
+          }
+        },
+        "Start": 24,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "코르타나, 3월 말에 일정을 잡아 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3월 말",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-03",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2018-03-16",
+            "endDate": "2018-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-03-16",
+            "endDate": "2017-04-01"
+          }
+        },
+        "Start": 24,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "여름 중반까지 어떠세요?",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "여름 중반",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "SU",
+          "Mod": "mid",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "5일 이내에 돌아올 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5일 이내에 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-08,2017-11-13,P5D)",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2017-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2017-11-13"
+          }
+        },
+        "Start": 15,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "열 달 이내에 돌아올 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "열 달 이내에",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-08,2018-09-08,P10M)",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2018-09-08"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2018-09-08"
+          }
+        },
+        "Start": 15,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "3년 이내에 돌아올 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3년 이내에",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-08,2020-11-08,P3Y)",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2020-11-08"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2020-11-08"
+          }
+        },
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "5년 1개월 12일 이내에 돌아올 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5년 1개월 12일 이내에 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-08,2022-12-20,P5Y1M12D)",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2022-12-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2022-12-20"
+          }
+        },
+        "Start": 15,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "4월 2일부터 7일까지 방을 찾습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2018-04-02T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4월 2일부터 7일까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-04-02,XXXX-04-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-04-02",
+            "endDate": "2018-04-07"
+          },
+          "PastResolution": {
+            "startDate": "2017-04-02",
+            "endDate": "2017-04-07"
+          }
+        },
+        "Start": 14,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "몇 주 내로 미팅 일정을 잡아 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "2016년 11월에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 11월",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "1월 1일과 4월 5일 사이에 자리를 비울 예정입니다.  ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1월 1일과 4월 5일 사이에",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-01,XXXX-04-05,P94D)",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-04-05"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-04-05"
+          }
+        },
+        "Start": 12,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "2015년 1월 1일과 2018년 2월 5일 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015년 1월 1일과 2018년 2월 5일 사이에 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-01-01,2018-02-05,P1131D)",
+          "FutureResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-05"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-05"
+          }
+        },
+        "Start": 12,
+        "Length": 41
+      }
+    ]
+  },
+  {
+    "Input": "2015년 1월 1일과 2018년 2월 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015년 1월 1일과 2018년 2월 사이에",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-01-01,2018-02-01,P1127D)",
+          "FutureResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-01"
+          }
+        },
+        "Start": 12,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "2015년과 2018년 2월 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015년과 2018년 2월 사이에",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-01-01,2018-02-01,P37M)",
+          "FutureResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-01"
+          }
+        },
+        "Start": 12,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "2019년 2월 1일부터 3월까지 자리를 비울 예정입니다.  ",
+    "Context": {
+      "ReferenceDateTime": "2018-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2019년 2월 1일부터 3월까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-02-01,2019-03-01,P28D)",
+          "FutureResolution": {
+            "startDate": "2019-02-01",
+            "endDate": "2019-03-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-01",
+            "endDate": "2019-03-01"
+          }
+        },
+        "Start": 12,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "2019년 2월 1일과 3월 사이에 자리를 비울 예정입니다.  ",
+    "Context": {
+      "ReferenceDateTime": "2018-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2019년 2월 1일과 3월 사이에",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-02-01,2019-03-01,P28D)",
+          "FutureResolution": {
+            "startDate": "2019-02-01",
+            "endDate": "2019-03-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-01",
+            "endDate": "2019-03-01"
+          }
+        },
+        "Start": 12,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "2015년 6월과 2018년 5월 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015년 6월과 2018년 5월 사이에",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-06-01,2018-05-01,P35M)",
+          "FutureResolution": {
+            "startDate": "2015-06-01",
+            "endDate": "2018-05-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-06-01",
+            "endDate": "2018-05-01"
+          }
+        },
+        "Start": 12,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "2015년 5월과 2018년 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015년 5월과 2018년 사이에 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-05-01,2018-01-01,P32M)",
+          "FutureResolution": {
+            "startDate": "2015-05-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-05-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 12,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "2015년 5월과 2018년 6월 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015년 5월과 2018년 6월 사이에 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-05-01,2018-06-01,P37M)",
+          "FutureResolution": {
+            "startDate": "2015-05-01",
+            "endDate": "2018-06-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-05-01",
+            "endDate": "2018-06-01"
+          }
+        },
+        "Start": 12,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "2015년과 2018년 1월 5일 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015년과 2018년 1월 5일 사이에",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-01-01,2018-01-05,P1100D)",
+          "FutureResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-01-05"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-01-05"
+          }
+        },
+        "Start": 12,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "2015년부터 2017년 5월 5일까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015년부터 2017년 5월 5일까지 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-01-01,2017-05-05,P855D)",
+          "FutureResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2017-05-05"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2017-05-05"
+          }
+        },
+        "Start": 12,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "4월 마지막 월요일부터 2019년까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-04T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4월 마지막 월요일부터 2019년까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-04-30,2019-01-01,P246D)",
+          "FutureResolution": {
+            "startDate": "2018-04-30",
+            "endDate": "2019-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-04-30",
+            "endDate": "2019-01-01"
+          }
+        },
+        "Start": 12,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "31주부터 35주까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-04T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "31주부터 35주까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-07-30,2018-08-27,P4W)",
+          "FutureResolution": {
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
+          },
+          "PastResolution": {
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
+          }
+        },
+        "Start": 12,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "31주와 35주 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-04T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "31주와 35주 사이에",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-07-30,2018-08-27,P4W)",
+          "FutureResolution": {
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
+          },
+          "PastResolution": {
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
+          }
+        },
+        "Start": 12,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "오늘부터 이틀 반 후까지 여기에 머물 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-04T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘부터 이틀 반 후까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-05-04,2018-05-06,P2.5D)",
+          "FutureResolution": {
+            "startDate": "2018-05-04",
+            "endDate": "2018-05-06"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-04",
+            "endDate": "2018-05-06"
+          }
+        },
+        "Start": 15,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "이 일이 일어났던 같은 주에 거기에 없었습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "같은 주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-WXX",
+          "Mod": "ref_undef",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-20"
+          }
+        },
+        "Start": 20,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "이 일이 일어났던 같은 달에 거기에 없었습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "같은 달",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-XX",
+          "Mod": "ref_undef",
+          "FutureResolution": {
+            "startDate": "2017-11-01",
+            "endDate": "2017-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-01",
+            "endDate": "2017-12-01"
+          }
+        },
+        "Start": 20,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "그 주말에 거기에 없었습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-11T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "그 주말",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-WXX-WE",
+          "Mod": "ref_undef",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "이 일이 일어났던 같은 해에 거기에 없었습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "같은 해",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX",
+          "Mod": "ref_undef",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 20,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "이번 주에 좀 더 일찍 만나도록 일정을 잡을 수 있었을 텐데요. ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 주에 좀 더 일찍",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-W22",
+          "FutureResolution": {
+            "startDate": "2018-05-28",
+            "endDate": "2018-05-31"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-28",
+            "endDate": "2018-05-31"
+          }
+        },
+        "Start": 39,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "이번 달에 좀 더 일찍 만나도록 일정을 잡을 수 있었을 텐데요. ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-13T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 달에 좀 더 일찍",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-05",
+          "FutureResolution": {
+            "startDate": "2018-05-01",
+            "endDate": "2018-05-13"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-01",
+            "endDate": "2018-05-13"
+          }
+        },
+        "Start": 39,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "올 해에 좀 더 일찍 만나도록 일정을 잡을 수 있었을 텐데요. ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-28T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "올 해에 좀 더 일찍 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018",
+          "FutureResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2018-05-28"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2018-05-28"
+          }
+        },
+        "Start": 39,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "이번 주 후반에 시간 내서 한번 만나요.  ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-10T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 주 후반",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W45",
+          "FutureResolution": {
+            "startDate": "2017-11-10",
+            "endDate": "2017-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-10",
+            "endDate": "2017-11-13"
+          }
+        },
+        "Start": 30,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "이번 달 말에 시간 내서 한번 만나요. ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-28T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 달 말",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-05",
+          "FutureResolution": {
+            "startDate": "2018-05-28",
+            "endDate": "2018-06-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-28",
+            "endDate": "2018-06-01"
+          }
+        },
+        "Start": 30,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "이 과제는 오늘로부터 최소 2주 후에 시작될 것입니다.  ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘로부터 최소 2주 후",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-06-12",
+          "Mod": "after",
+          "FutureResolution": {
+            "startDate": "2018-06-12"
+          },
+          "PastResolution": {
+            "startDate": "2018-06-12"
+          }
+        },
+        "Start": 21,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "오늘로부터 2주 내에 돌아올 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘로부터 2주 내",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-05-29,2018-06-12,P2W)",
+          "FutureResolution": {
+            "startDate": "2018-05-29",
+            "endDate": "2018-06-12"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-29",
+            "endDate": "2018-06-12"
+          }
+        },
+        "Start": 17,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "오늘로부터 2주 안에 돌아올 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘로부터 2주 안",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-05-29,2018-06-12,P2W)",
+          "FutureResolution": {
+            "startDate": "2018-05-29",
+            "endDate": "2018-06-12"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-29",
+            "endDate": "2018-06-12"
+          }
+        },
+        "Start": 17,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "오늘로부터 2주 전에 모든 일들을 다 끝냈습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘로부터 2주 전",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-05-15",
+          "Mod": "before",
+          "FutureResolution": {
+            "endDate": "2018-05-15"
+          },
+          "PastResolution": {
+            "endDate": "2018-05-15"
+          }
+        },
+        "Start": 36,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "이 과제는 어제로부터 최소 이틀 전에 끝냈어야 했어요. ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "어제로부터 최소 이틀 전",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-05-26",
+          "Mod": "before",
+          "FutureResolution": {
+            "endDate": "2018-05-26"
+          },
+          "PastResolution": {
+            "endDate": "2018-05-26"
+          }
+        },
+        "Start": 32,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "이 과제는 내일로부터 3일 안에 끝날 것입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일로부터 3일 안",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-05-30,2018-06-02,P3D)",
+          "FutureResolution": {
+            "startDate": "2018-05-30",
+            "endDate": "2018-06-02"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-30",
+            "endDate": "2018-06-02"
+          }
+        },
+        "Start": 23,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "이것은 15세기에 일어났습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15세기",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1400-01-01,1500-01-01,P100Y)",
+          "FutureResolution": {
+            "startDate": "1400-01-01",
+            "endDate": "1500-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1400-01-01",
+            "endDate": "1500-01-01"
+          }
+        },
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "21세기 기록들을 보여 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21세기",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2100-01-01,P100Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2100-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2100-01-01"
+          }
+        },
+        "Start": 23,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "코르타나, 18번 째 주에 일정을 잡아 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2018-08-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "18번 째 주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-XX-18",
+          "FutureResolution": {
+            "startDate": "2018-08-13",
+            "endDate": "2018-08-20"
+          },
+          "PastResolution": {
+            "startDate": "2018-07-16",
+            "endDate": "2018-07-23"
+          }
+        },
+        "Start": 45,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "코르타나, 18번 째 주에 일정을 잡아 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2018-08-28T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "18번 째 주",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-XX-18",
+          "FutureResolution": {
+            "startDate": "2018-09-17",
+            "endDate": "2018-09-24"
+          },
+          "PastResolution": {
+            "startDate": "2018-08-13",
+            "endDate": "2018-08-20"
+          }
+        },
+        "Start": 45,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "이번 10년 ",
+    "Context": {
+      "ReferenceDateTime": "2018-08-31T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 10년 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2010-01-01,2020-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          }
+        },
+        "Start": 20,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "10월 1일부터 11월 7일까지",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10월 1일부터 11월 7일까지",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-01,XXXX-11-07,P37D)",
+          "FutureResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-07"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "10월 25일부터 1월 25일까지 ",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10월 25일부터 1월 25일까지 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-25,XXXX-01-25,P92D)",
+          "FutureResolution": {
+            "startDate": "2018-10-25",
+            "endDate": "2019-01-25"
+          },
+          "PastResolution": {
+            "startDate": "2017-10-25",
+            "endDate": "2018-01-25"
+          }
+        },
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  }
+]

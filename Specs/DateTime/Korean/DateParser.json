@@ -1,0 +1,4559 @@
+[
+  {
+    "Input": "15일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-15",
+          "FutureResolution": {
+            "date": "2016-11-15"
+          },
+          "PastResolution": {
+            "date": "2016-10-15"
+          }
+        },
+        "Start": 16,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "10월 2일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10월 2일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2016-10-02"
+          }
+        },
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "2016년 1월 12일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 1월 12일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-01-12",
+          "FutureResolution": {
+            "date": "2016-01-12"
+          },
+          "PastResolution": {
+            "date": "2016-01-12"
+          }
+        },
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "2016년 1월 12일 월요일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 1월 12일 월요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-01-12",
+          "FutureResolution": {
+            "date": "2016-01-12"
+          },
+          "PastResolution": {
+            "date": "2016-01-12"
+          }
+        },
+        "Start": 13,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "2016년 2월 22일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 2월 22일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-02-22",
+          "FutureResolution": {
+            "date": "2016-02-22"
+          },
+          "PastResolution": {
+            "date": "2016-02-22"
+          }
+        },
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "2016년 4월 21일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 4월 21일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-21",
+          "FutureResolution": {
+            "date": "2016-04-21"
+          },
+          "PastResolution": {
+            "date": "2016-04-21"
+          }
+        },
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "4월 22일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4월 22일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        },
+        "Start": 16,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "2015년 8월 12일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015년 8월 12일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-08-12",
+          "FutureResolution": {
+            "date": "2015-08-12"
+          },
+          "PastResolution": {
+            "date": "2015-08-12"
+          }
+        },
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "1월 1일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1월 1일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 13,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "1월 22일 수요일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1월 22일 수요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-22",
+          "FutureResolution": {
+            "date": "2017-01-22"
+          },
+          "PastResolution": {
+            "date": "2016-01-22"
+          }
+        },
+        "Start": 13,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "5월 21일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5월 21일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-21",
+          "FutureResolution": {
+            "date": "2017-05-21"
+          },
+          "PastResolution": {
+            "date": "2016-05-21"
+          }
+        },
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "8월 2일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8월 2일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-08-02",
+          "FutureResolution": {
+            "date": "2017-08-02"
+          },
+          "PastResolution": {
+            "date": "2016-08-02"
+          }
+        },
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "6월 22일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "6월 22일 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-06-22",
+          "FutureResolution": {
+            "date": "2017-06-22"
+          },
+          "PastResolution": {
+            "date": "2016-06-22"
+          }
+        },
+        "Start": 13,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "금요일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "금요일 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-WXX-5",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        },
+        "Start": 16,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "오늘 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-07",
+          "FutureResolution": {
+            "date": "2016-11-07"
+          },
+          "PastResolution": {
+            "date": "2016-11-07"
+          }
+        },
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "내일 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-08",
+          "FutureResolution": {
+            "date": "2016-11-08"
+          },
+          "PastResolution": {
+            "date": "2016-11-08"
+          }
+        },
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "어제 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "어제",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        },
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "그저께 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "그저께",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-05",
+          "FutureResolution": {
+            "date": "2016-11-05"
+          },
+          "PastResolution": {
+            "date": "2016-11-05"
+          }
+        },
+        "Start": 13,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "내일 모레 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일 모레 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-09",
+          "FutureResolution": {
+            "date": "2016-11-09"
+          },
+          "PastResolution": {
+            "date": "2016-11-09"
+          }
+        },
+        "Start": 13,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "내일 모레 ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일 모레 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-09",
+          "FutureResolution": {
+            "date": "2016-11-09"
+          },
+          "PastResolution": {
+            "date": "2016-11-09"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "다음 날에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 날",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-08",
+          "FutureResolution": {
+            "date": "2016-11-08"
+          },
+          "PastResolution": {
+            "date": "2016-11-08"
+          }
+        },
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "이번 금요일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-11",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-11"
+          }
+        },
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "다음 일요일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-20",
+          "FutureResolution": {
+            "date": "2016-11-20"
+          },
+          "PastResolution": {
+            "date": "2016-11-20"
+          }
+        },
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "지난 일요일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "지난 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        },
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "이번 주 금요일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 주 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-11",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-11"
+          }
+        },
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "다음 주 일요일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 주 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-20",
+          "FutureResolution": {
+            "date": "2016-11-20"
+          },
+          "PastResolution": {
+            "date": "2016-11-20"
+          }
+        },
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "지난 주 일요일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "지난 주 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        },
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "지난 날에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "지난 날",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        },
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "그 날에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "그 날",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-07",
+          "FutureResolution": {
+            "date": "2016-11-07"
+          },
+          "PastResolution": {
+            "date": "2016-11-07"
+          }
+        },
+        "Start": 13,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "2016년 6월 15일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 6월 15일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-06-15",
+          "FutureResolution": {
+            "date": "2016-06-15"
+          },
+          "PastResolution": {
+            "date": "2016-06-15"
+          }
+        },
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "7월의 첫 번째 금요일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7월의 첫 번째 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-07-WXX-5-#1",
+          "FutureResolution": {
+            "date": "2017-07-07"
+          },
+          "PastResolution": {
+            "date": "2016-07-01"
+          }
+        },
+        "Start": 13,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "이번 달 첫 번째 금요일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 달 첫 번째 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-5-#1",
+          "FutureResolution": {
+            "date": "2016-11-04"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        },
+        "Start": 13,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "다음 주 금요일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 주 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-18",
+          "FutureResolution": {
+            "date": "2016-11-18"
+          },
+          "PastResolution": {
+            "date": "2016-11-18"
+          }
+        },
+        "Start": 13,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "나의 하루는 어때? ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "나의 하루",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-07",
+          "FutureResolution": {
+            "date": "2016-11-07"
+          },
+          "PastResolution": {
+            "date": "2016-11-07"
+          }
+        },
+        "Start": 10,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "지금으로부터 2주 후에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "지금으로부터 2주",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-21",
+          "FutureResolution": {
+            "date": "2016-11-21"
+          },
+          "PastResolution": {
+            "date": "2016-11-21"
+          }
+        },
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "한 달 전에 내가 누구에게 이메일을 보냈니?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "한 달 전에 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-10-07",
+          "FutureResolution": {
+            "date": "2016-10-07"
+          },
+          "PastResolution": {
+            "date": "2016-10-07"
+          }
+        },
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "몇 달 전에 내가 누구에게 이메일을 보냈니?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "몇 달 전에 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-08-07",
+          "FutureResolution": {
+            "date": "2016-08-07"
+          },
+          "PastResolution": {
+            "date": "2016-08-07"
+          }
+        },
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "며칠 전에 내가 누구에게 이메일을 보냈니?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "며칠 전에 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-04",
+          "FutureResolution": {
+            "date": "2016-11-04"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        },
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "나는 27일에 돌아갔어. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27일 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-10-27"
+          }
+        },
+        "Start": 16,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "나는 27일에 돌아갔어!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27일 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-10-27"
+          }
+        },
+        "Start": 16,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "나는 21일에 돌아갔어. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21일 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-21",
+          "FutureResolution": {
+            "date": "2016-11-21"
+          },
+          "PastResolution": {
+            "date": "2016-10-21"
+          }
+        },
+        "Start": 16,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "나는 22일에 돌아갔어. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22일 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-22",
+          "FutureResolution": {
+            "date": "2016-11-22"
+          },
+          "PastResolution": {
+            "date": "2016-10-22"
+          }
+        },
+        "Start": 16,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "나는 2일에 돌아갔어. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2일 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-02",
+          "FutureResolution": {
+            "date": "2016-12-02"
+          },
+          "PastResolution": {
+            "date": "2016-11-02"
+          }
+        },
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "나는 27일에 돌아갔어. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27일 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-21",
+          "FutureResolution": {
+            "date": "2017-09-21"
+          },
+          "PastResolution": {
+            "date": "2017-09-21"
+          }
+        },
+        "Start": 12,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "두 번째 일요일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "두 번째 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-10",
+          "FutureResolution": {
+            "date": "2017-09-10"
+          },
+          "PastResolution": {
+            "date": "2017-09-10"
+          }
+        },
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "첫 번째 일요일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "첫 번째 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-03",
+          "FutureResolution": {
+            "date": "2017-09-03"
+          },
+          "PastResolution": {
+            "date": "2017-09-03"
+          }
+        },
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "세 번째 화요일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "세 번째 화요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-19",
+          "FutureResolution": {
+            "date": "2017-09-19"
+          },
+          "PastResolution": {
+            "date": "2017-09-19"
+          }
+        },
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "다섯 번째 일요일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다섯 번째 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-31",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "나는 다음 달 20일에 돌아갔어. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 달 20일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-12-20",
+          "FutureResolution": {
+            "date": "2016-12-20"
+          },
+          "PastResolution": {
+            "date": "2016-12-20"
+          }
+        },
+        "Start": 12,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "나는 이번 달 31일에 돌아갔어. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이번 달 31일 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-31",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 12,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "2018년 1월 12일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2018년 1월 12일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-12",
+          "FutureResolution": {
+            "date": "2018-01-12"
+          },
+          "PastResolution": {
+            "date": "2018-01-12"
+          }
+        },
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "2015년 9월 18일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015년 9월 18일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-09-18",
+          "FutureResolution": {
+            "date": "2015-09-18"
+          },
+          "PastResolution": {
+            "date": "2015-09-18"
+          }
+        },
+        "Start": 13,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "나는 이틀 전에 돌아갔어. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이틀 전 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-05",
+          "FutureResolution": {
+            "date": "2016-11-05"
+          },
+          "PastResolution": {
+            "date": "2016-11-05"
+          }
+        },
+        "Start": 12,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "나는 2년 전에 돌아갔어. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2년 전 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "2014-11-07",
+          "FutureResolution": {
+            "date": "2014-11-07"
+          },
+          "PastResolution": {
+            "date": "2014-11-07"
+          }
+        },
+        "Start": 12,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "2016년 11월 16일 ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-14T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016년 11월 16일 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-16",
+          "FutureResolution": {
+            "date": "2016-11-16"
+          },
+          "PastResolution": {
+            "date": "2016-11-16"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "우리는 1개월 21일 전에 미팅을 했습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1개월 21일 전에",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2017-10-02"
+          }
+        },
+        "Start": 17,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "나는 2년 1개월 21일 전에 여기를 떠났습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2년 1개월 21일 전에",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-10-02",
+          "FutureResolution": {
+            "date": "2015-10-02"
+          },
+          "PastResolution": {
+            "date": "2015-10-02"
+          }
+        },
+        "Start": 12,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "나는 2년 21일 지나서 여기를 떠날 것이다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": " 2년 21일 지나서",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-12-14",
+          "FutureResolution": {
+            "date": "2019-12-14"
+          },
+          "PastResolution": {
+            "date": "2019-12-14"
+          }
+        },
+        "Start": 17,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "우리는 다음 달 20일에 미팅을 했습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 달 20일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-20",
+          "FutureResolution": {
+            "date": "2018-01-20"
+          },
+          "PastResolution": {
+            "date": "2018-01-20"
+          }
+        },
+        "Start": 17,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "우리는 1931년 12월 5일에 미팅을 했습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-18T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1931년 12월 5일",
+        "Type": "date",
+        "Value": {
+          "Timex": "1391-12-05",
+          "FutureResolution": {
+            "date": "1391-12-05"
+          },
+          "PastResolution": {
+            "date": "1391-12-05"
+          }
+        },
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "2018년 1월 22일 월요일",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2018년 1월 22일 월요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-22",
+          "FutureResolution": {
+            "date": "2018-01-22"
+          },
+          "PastResolution": {
+            "date": "2018-01-22"
+          }
+        },
+        "Start": 0,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "2018년 1월 21일 일요일에",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2018년 1월 21일 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-21",
+          "FutureResolution": {
+            "date": "2018-01-21"
+          },
+          "PastResolution": {
+            "date": "2018-01-21"
+          }
+        },
+        "Start": 3,
+        "Length": 47
+      }
+    ]
+  },
+  {
+    "Input": "1978년 9월 21일에",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1978년 9월 21일",
+        "Type": "date",
+        "Value": {
+          "Timex": "1978-09-21",
+          "FutureResolution": {
+            "date": "1978-09-21"
+          },
+          "PastResolution": {
+            "date": "1978-09-21"
+          }
+        },
+        "Start": 3,
+        "Length": 49
+      }
+    ]
+  },
+  {
+    "Input": "1901년 9월 10일에 ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1901년 9월 10일",
+        "Type": "date",
+        "Value": {
+          "Timex": "1901-09-10",
+          "FutureResolution": {
+            "date": "1901-09-10"
+          },
+          "PastResolution": {
+            "date": "1901-09-10"
+          }
+        },
+        "Start": 3,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "2000년 9월 10일에 ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2000년 9월 10일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2000-09-10",
+          "FutureResolution": {
+            "date": "2000-09-10"
+          },
+          "PastResolution": {
+            "date": "2000-09-10"
+          }
+        },
+        "Start": 7,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "나는 다음 달 첫 번째 금요일에 너를 만날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2018-03-20T09:58:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 달 첫 번째 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-WXX-5-#1",
+          "FutureResolution": {
+            "date": "2018-04-06"
+          },
+          "PastResolution": {
+            "date": "2018-04-06"
+          }
+        },
+        "Start": 13,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "그럼, 다음 달 두 번째 월요일로 할까요? ",
+    "Context": {
+      "ReferenceDateTime": "2018-03-20T10:45:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 달 두 번째 월요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-WXX-1-#2",
+          "FutureResolution": {
+            "date": "2018-04-09"
+          },
+          "PastResolution": {
+            "date": "2018-04-09"
+          }
+        },
+        "Start": 12,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "지난 달 세 번째 수요일에 돌아왔어요. ",
+    "Context": {
+      "ReferenceDateTime": "2018-03-20T10:45:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "지난 달 세 번째 수요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-WXX-3-#3",
+          "FutureResolution": {
+            "date": "2018-02-21"
+          },
+          "PastResolution": {
+            "date": "2018-02-21"
+          }
+        },
+        "Start": 12,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "다음 주 화요일에 여행 갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2018-03-20T22:16:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 주 화요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-03-27",
+          "FutureResolution": {
+            "date": "2018-03-27"
+          },
+          "PastResolution": {
+            "date": "2018-03-27"
+          }
+        },
+        "Start": 19,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "다음 주 일요일에 숙제를 해. ",
+    "Context": {
+      "ReferenceDateTime": "2018-03-20T22:16:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "다음 주 일요일에",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-04-01",
+          "FutureResolution": {
+            "date": "2018-04-01"
+          },
+          "PastResolution": {
+            "date": "2018-04-01"
+          }
+        },
+        "Start": 16,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "글피에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2018-04-20T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "글피",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-04-23",
+          "FutureResolution": {
+            "date": "2018-04-23"
+          },
+          "PastResolution": {
+            "date": "2018-04-23"
+          }
+        },
+        "Start": 13,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "어제로부터 4일 후에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2018-04-20T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "어제로부터 4일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-04-23",
+          "FutureResolution": {
+            "date": "2018-04-23"
+          },
+          "PastResolution": {
+            "date": "2018-04-23"
+          }
+        },
+        "Start": 13,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "2015년 5월 13일에 시간 있니?",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015년 5월 13일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-05-13",
+          "FutureResolution": {
+            "date": "2015-05-13"
+          },
+          "PastResolution": {
+            "date": "2015-05-13"
+          }
+        },
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "2015년 5월 13일에 시간 괜찮니?",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015년 5월 13일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-05-13",
+          "FutureResolution": {
+            "date": "2015-05-13"
+          },
+          "PastResolution": {
+            "date": "2015-05-13"
+          }
+        },
+        "Start": 21,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "2017년 3월 7일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2017년 3월 7일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-03-07",
+          "FutureResolution": {
+            "date": "2017-03-07"
+          },
+          "PastResolution": {
+            "date": "2017-03-07"
+          }
+        },
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2027년 3월 7일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2027년 3월 7일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2027-03-07",
+          "FutureResolution": {
+            "date": "2027-03-07"
+          },
+          "PastResolution": {
+            "date": "2027-03-07"
+          }
+        },
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "2089년 5월 5일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2089년 5월 5일",
+        "Type": "date",
+        "Value": {
+          "Timex": "1989-05-05",
+          "FutureResolution": {
+            "date": "1989-05-05"
+          },
+          "PastResolution": {
+            "date": "1989-05-05"
+          }
+        },
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2071년 3월 7일에 돌아갈 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2017년 3월 7일",
+        "Type": "date",
+        "Value": {
+          "Timex": "1971-05-05",
+          "FutureResolution": {
+            "date": "1971-05-05"
+          },
+          "PastResolution": {
+            "date": "1971-05-05"
+          }
+        },
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "너는 지금부터 한 달에 두 번씩 일요일마다 시간 괜찮니? ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "지금부터 한 달에 두 번씩 일요일마다",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-05-20",
+          "FutureResolution": {
+            "date": "2018-05-20"
+          },
+          "PastResolution": {
+            "date": "2018-05-20"
+          }
+        },
+        "Start": 18,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "너는 후에 두 번의 월요일에 시간 괜찮니?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "후에 두 번의 월요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-05-21",
+          "FutureResolution": {
+            "date": "2018-05-21"
+          },
+          "PastResolution": {
+            "date": "2018-05-21"
+          }
+        },
+        "Start": 18,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "너는모레에 괜찮니?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "모레",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-06-02",
+          "FutureResolution": {
+            "date": "2018-06-02"
+          },
+          "PastResolution": {
+            "date": "2018-06-02"
+          }
+        },
+        "Start": 18,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "너는 내일부터 3주 괜찮니? ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일부터 3주",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-06-22",
+          "FutureResolution": {
+            "date": "2018-06-22"
+          },
+          "PastResolution": {
+            "date": "2018-06-22"
+          }
+        },
+        "Start": 18,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "너는 그끄저께 어디에 있었니? ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "그끄저께 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-05-28",
+          "FutureResolution": {
+            "date": "2018-05-28"
+          },
+          "PastResolution": {
+            "date": "2018-05-28"
+          }
+        },
+        "Start": 15,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "나는 3주 후에 떠날 거야. ",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3주 후에",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-07-26",
+          "FutureResolution": {
+            "date": "2018-07-26"
+          },
+          "PastResolution": {
+            "date": "2018-07-26"
+          }
+        },
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "코르타나, 영업일 기준으로 나흘 후 언제 스카이프 통화 설정해 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2018-08-21T08:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "영업일 기준으로 나흘 후",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-08-27",
+          "FutureResolution": {
+            "date": "2018-08-27"
+          },
+          "PastResolution": {
+            "date": "2018-08-27"
+          }
+        },
+        "Start": 45,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "15일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "15일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-15",
+          "FutureResolution": {
+            "date": "2016-11-15"
+          },
+          "PastResolution": {
+            "date": "2016-10-15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10.2에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "10.2",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2016-10-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10-2에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "10-2",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2016-10-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10/2에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "10/2",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2016-10-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10월 2일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "10월 2일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2016-10-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1월 12일, 2016년에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "1월 12일, 2016년",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-01-12",
+          "FutureResolution": {
+            "date": "2016-01-12"
+          },
+          "PastResolution": {
+            "date": "2016-01-12"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2016년 1월 12일 월요일에 돌아가겠습니다",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2016년 1월 12일 월요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-01-12",
+          "FutureResolution": {
+            "date": "2016-01-12"
+          },
+          "PastResolution": {
+            "date": "2016-01-12"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "02/22/2016에 돌아가겠습니다",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "02/22/2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-02-22",
+          "FutureResolution": {
+            "date": "2016-02-22"
+          },
+          "PastResolution": {
+            "date": "2016-02-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "21/04/2016에 돌아가겠습니다",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "21/04/2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-21",
+          "FutureResolution": {
+            "date": "2016-04-21"
+          },
+          "PastResolution": {
+            "date": "2016-04-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "21/04/16에 돌아가겠습니다",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "21/04/16",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-21",
+          "FutureResolution": {
+            "date": "2016-04-21"
+          },
+          "PastResolution": {
+            "date": "2016-04-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "21-04-2016에 돌아가겠습니다",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "21-04-2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-21",
+          "FutureResolution": {
+            "date": "2016-04-21"
+          },
+          "PastResolution": {
+            "date": "2016-04-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4.22에 돌아가겠습니다",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "4.22",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4-22에 돌아가겠습니다",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "4-22",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4/22에 돌아가겠습니다",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "22/04에 돌아가겠습니다",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2015/08/12에 돌아가겠습니다",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2015/08/12",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-08-12",
+          "FutureResolution": {
+            "date": "2015-08-12"
+          },
+          "PastResolution": {
+            "date": "2015-08-12"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "08/12,2015에 돌아가겠습니다",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "08/12,2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-08-12",
+          "FutureResolution": {
+            "date": "2015-08-12"
+          },
+          "PastResolution": {
+            "date": "2015-08-12"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1월 1일에 돌아가겠습니다",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "1월 1일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1월-1일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "1월-1일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1월 22일, 수요일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "1월 22일, 수요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-22",
+          "FutureResolution": {
+            "date": "2017-01-22"
+          },
+          "PastResolution": {
+            "date": "2016-01-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1월 1일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "1월 1일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "오월 이십일일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "오월 이십일일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-21",
+          "FutureResolution": {
+            "date": "2017-05-21"
+          },
+          "PastResolution": {
+            "date": "2016-05-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "5월 이십일일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "5월 이십일일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-21",
+          "FutureResolution": {
+            "date": "2017-05-21"
+          },
+          "PastResolution": {
+            "date": "2016-05-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "8월 2일에 돌아갈게요.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "8월 2일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-08-02",
+          "FutureResolution": {
+            "date": "2017-08-02"
+          },
+          "PastResolution": {
+            "date": "2016-08-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "6월 22일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "6월 22일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-06-22",
+          "FutureResolution": {
+            "date": "2017-06-22"
+          },
+          "PastResolution": {
+            "date": "2016-06-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "금요일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-WXX-5",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "금요일 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-WXX-5",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "오늘 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "오늘",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-07",
+          "FutureResolution": {
+            "date": "2016-11-07"
+          },
+          "PastResolution": {
+            "date": "2016-11-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "내일 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "내일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-08",
+          "FutureResolution": {
+            "date": "2016-11-08"
+          },
+          "PastResolution": {
+            "date": "2016-11-08"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "어제 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "어제",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "그제 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "그제",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-05",
+          "FutureResolution": {
+            "date": "2016-11-05"
+          },
+          "PastResolution": {
+            "date": "2016-11-05"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "모레 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "모레",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-09",
+          "FutureResolution": {
+            "date": "2016-11-09"
+          },
+          "PastResolution": {
+            "date": "2016-11-09"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "모레",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "모레",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-09",
+          "FutureResolution": {
+            "date": "2016-11-09"
+          },
+          "PastResolution": {
+            "date": "2016-11-09"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "그 다음날 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "그 다음날",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-08",
+          "FutureResolution": {
+            "date": "2016-11-08"
+          },
+          "PastResolution": {
+            "date": "2016-11-08"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "다음날 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음날",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-08",
+          "FutureResolution": {
+            "date": "2016-11-08"
+          },
+          "PastResolution": {
+            "date": "2016-11-08"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "이번 금요일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이번 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-11",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-11"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "다음주 일요일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음주 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-20",
+          "FutureResolution": {
+            "date": "2016-11-20"
+          },
+          "PastResolution": {
+            "date": "2016-11-20"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "저번주 일요일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "저번주 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "이번주 금요일에 돌아올게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이번주 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-11",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-11"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "다음주 일요일에 돌아올게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음주 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-20",
+          "FutureResolution": {
+            "date": "2016-11-20"
+          },
+          "PastResolution": {
+            "date": "2016-11-20"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "저번주 일요일에 돌아올게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "저번주 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "전날 돌아올게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "전날",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "그 전날 돌아올게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "그 전날",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "그 날 돌아올게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "그 날",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-07",
+          "FutureResolution": {
+            "date": "2016-11-07"
+          },
+          "PastResolution": {
+            "date": "2016-11-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "15 6월 2016에 돌아올게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "15 6월 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-06-15",
+          "FutureResolution": {
+            "date": "2016-06-15"
+          },
+          "PastResolution": {
+            "date": "2016-06-15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "7월 첫째주 금요일에 돌아올게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "7월 첫째주 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-07-WXX-5-#1",
+          "FutureResolution": {
+            "date": "2017-07-07"
+          },
+          "PastResolution": {
+            "date": "2016-07-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "이번달 첫째주 금요일에 돌아올게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이번달 첫째주 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-5-#1",
+          "FutureResolution": {
+            "date": "2016-11-04"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "다음주 금요일에 돌아올게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음주 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-18",
+          "FutureResolution": {
+            "date": "2016-11-18"
+          },
+          "PastResolution": {
+            "date": "2016-11-18"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "다음 금요일에 돌아올게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-18",
+          "FutureResolution": {
+            "date": "2016-11-18"
+          },
+          "PastResolution": {
+            "date": "2016-11-18"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "이 날에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이 날",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-07",
+          "FutureResolution": {
+            "date": "2016-11-07"
+          },
+          "PastResolution": {
+            "date": "2016-11-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "지난 날로 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "지난 날",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2주 후에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2주 후",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-21",
+          "FutureResolution": {
+            "date": "2016-11-21"
+          },
+          "PastResolution": {
+            "date": "2016-11-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "내가 한달 전에 누구한테 메일 보냈지?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "한달 전",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-10-07",
+          "FutureResolution": {
+            "date": "2016-10-07"
+          },
+          "PastResolution": {
+            "date": "2016-10-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "내가 몇달 전에 누구한테 메일 보냈지?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "몇달 전",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-08-07",
+          "FutureResolution": {
+            "date": "2016-08-07"
+          },
+          "PastResolution": {
+            "date": "2016-08-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "내가 몇일 전에 누구한테 메일 보냈지?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "몇일 전",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-04",
+          "FutureResolution": {
+            "date": "2016-11-04"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "27일에 돌아왔어요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "27일에",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-11-27"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "27일에 돌아왔어요.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "27일에",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-11-27"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "나 27일에 돌아왔어요!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "27일에",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-11-27"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "나 27일에 돌아왔어.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "27일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-11-27"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "나 21일에 돌아왔어",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "21일에",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-21",
+          "FutureResolution": {
+            "date": "2016-11-21"
+          },
+          "PastResolution": {
+            "date": "2016-11-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "나 22일에 돌아왔어",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "for the 22nd",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-22",
+          "FutureResolution": {
+            "date": "2016-11-22"
+          },
+          "PastResolution": {
+            "date": "2016-11-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2일에 돌아왔어",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2일에",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-02",
+          "FutureResolution": {
+            "date": "2016-11-02"
+          },
+          "PastResolution": {
+            "date": "2016-11-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "21일에 돌아왔어요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "21일에",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-22",
+          "FutureResolution": {
+            "date": "2016-11-22"
+          },
+          "PastResolution": {
+            "date": "2016-11-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "30일에 돌아왔어",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "30일에",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-30",
+          "FutureResolution": {
+            "date": "2016-11-30"
+          },
+          "PastResolution": {
+            "date": "2016-11-30"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "21일 목요일에 돌아왔어",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:49.8080661+03:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "21일 목요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-21",
+          "FutureResolution": {
+            "date": "2017-09-21"
+          },
+          "PastResolution": {
+            "date": "2017-09-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "22일 금요일에 돌아왔어",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:49.8110663+03:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "22일 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-22",
+          "FutureResolution": {
+            "date": "2017-09-22"
+          },
+          "PastResolution": {
+            "date": "2017-09-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "23일 토요일에 돌아왔어",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:49.8120465+03:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "23일 토요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-23",
+          "FutureResolution": {
+            "date": "2017-09-23"
+          },
+          "PastResolution": {
+            "date": "2017-09-23"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "15일 금요일에 돌아왔어",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:49.8130455+03:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "15일 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-15",
+          "FutureResolution": {
+            "date": "2017-09-15"
+          },
+          "PastResolution": {
+            "date": "2017-09-15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "이십일일 목요일에 돌아왔어",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:49.8140457+03:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이십일일 목요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-21",
+          "FutureResolution": {
+            "date": "2017-09-21"
+          },
+          "PastResolution": {
+            "date": "2017-09-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "이십이일 금요일에 돌아왔어",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:49.8150456+03:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이십이일 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-22",
+          "FutureResolution": {
+            "date": "2017-09-22"
+          },
+          "PastResolution": {
+            "date": "2017-09-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "십오일 금요일에 돌아왔어",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:49.8160454+03:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "십오일 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-15",
+          "FutureResolution": {
+            "date": "2017-09-15"
+          },
+          "PastResolution": {
+            "date": "2017-09-15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "둘째주 일요일로 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:49.8200463+03:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "둘째주 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-10",
+          "FutureResolution": {
+            "date": "2017-09-10"
+          },
+          "PastResolution": {
+            "date": "2017-09-10"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "첫째주 일요일로 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:49.8200463+03:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "첫째주 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-03",
+          "FutureResolution": {
+            "date": "2017-09-03"
+          },
+          "PastResolution": {
+            "date": "2017-09-03"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "셋째주 화요일로 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:49.8210454+03:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "셋째주 화요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-19",
+          "FutureResolution": {
+            "date": "2017-09-19"
+          },
+          "PastResolution": {
+            "date": "2017-09-19"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "다섯째 주 일요일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:49.8225493+03:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다섯째 주 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-31",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "다음 달 20일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음 달 20일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-12-20",
+          "FutureResolution": {
+            "date": "2016-12-20"
+          },
+          "PastResolution": {
+            "date": "2016-12-20"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "이번 달 31일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이번 달 31일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-31",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "9-18-15로 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "9-18-15",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-09-18",
+          "FutureResolution": {
+            "date": "2015-09-18"
+          },
+          "PastResolution": {
+            "date": "2015-09-18"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "이틀 전에 돌아왔어요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이틀 전",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-05",
+          "FutureResolution": {
+            "date": "2016-11-05"
+          },
+          "PastResolution": {
+            "date": "2016-11-05"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2년 전에 돌아왔어요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2년 전",
+        "Type": "date",
+        "Value": {
+          "Timex": "2014-11-07",
+          "FutureResolution": {
+            "date": "2014-11-07"
+          },
+          "PastResolution": {
+            "date": "2014-11-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "16. 11월. 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-14T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "16. 11월. 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-16",
+          "FutureResolution": {
+            "date": "2016-11-16"
+          },
+          "PastResolution": {
+            "date": "2016-11-16"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "우리는 1개월 21일 전에 미팅을 했어요",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "1개월 21일 전",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2017-10-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "나는 2년 1개월 21일 전에 여길 떠났어요",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2년 1개월 21일 전",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-10-02",
+          "FutureResolution": {
+            "date": "2015-10-02"
+          },
+          "PastResolution": {
+            "date": "2015-10-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2년 21일 후에 여기를 떠날거에요",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2년 21일 후",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-12-14",
+          "FutureResolution": {
+            "date": "2019-12-14"
+          },
+          "PastResolution": {
+            "date": "2019-12-14"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "한달 2년 21일 전에 여기를 떠났어요",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "한달 2년 21일 전",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-10-02",
+          "FutureResolution": {
+            "date": "2015-10-02"
+          },
+          "PastResolution": {
+            "date": "2015-10-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "우리는 1개월 하고 21일 전에 회의를 했어요",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "1개월 하고 21일 전",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2017-10-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "우리는 1개월, 21일 전에 회의를 했어요",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "1개월, 21일 전",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2017-10-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "우리는 다음 달 20일에 회의가 있었어요",
+    "Context": {
+      "ReferenceDateTime": "2017-12-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음 달 20일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-20",
+          "FutureResolution": {
+            "date": "2018-01-20"
+          },
+          "PastResolution": {
+            "date": "2018-01-20"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "우리는 5 12월 1391에 회의했어요",
+    "Context": {
+      "ReferenceDateTime": "2017-12-18T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "5 12월 1391",
+        "Type": "date",
+        "Value": {
+          "Timex": "1391-12-05",
+          "FutureResolution": {
+            "date": "1391-12-05"
+          },
+          "PastResolution": {
+            "date": "1391-12-05"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "월요일, 1월 22일, 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "월요일, 1월 22일, 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-22",
+          "FutureResolution": {
+            "date": "2018-01-22"
+          },
+          "PastResolution": {
+            "date": "2018-01-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "일요일 1월 이십일일 이천팔년에",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "일요일 1월 이십일일 이천팔년",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-21",
+          "FutureResolution": {
+            "date": "2018-01-21"
+          },
+          "PastResolution": {
+            "date": "2018-01-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "9월 21일 1978에",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "9월 21일 1978",
+        "Type": "date",
+        "Value": {
+          "Timex": "1978-09-21",
+          "FutureResolution": {
+            "date": "1978-09-21"
+          },
+          "PastResolution": {
+            "date": "1978-09-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "9월 10일, 1901에",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "9월 10일, 1901",
+        "Type": "date",
+        "Value": {
+          "Timex": "1901-09-10",
+          "FutureResolution": {
+            "date": "1901-09-10"
+          },
+          "PastResolution": {
+            "date": "1901-09-10"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "구월 십일, 2000에",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "구월 십일, 2000",
+        "Type": "date",
+        "Value": {
+          "Timex": "2000-09-10",
+          "FutureResolution": {
+            "date": "2000-09-10"
+          },
+          "PastResolution": {
+            "date": "2000-09-10"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "다음 달 첫째주 금요일에 만나자",
+    "Context": {
+      "ReferenceDateTime": "2018-03-20T09:58:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음 달 첫째주 금요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-WXX-5-#1",
+          "FutureResolution": {
+            "date": "2018-04-06"
+          },
+          "PastResolution": {
+            "date": "2018-04-06"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "그래서 다음 달 둘째주 월요일로 하자?",
+    "Context": {
+      "ReferenceDateTime": "2018-03-20T10:45:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음 달 둘째주 월요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-WXX-1-#2",
+          "FutureResolution": {
+            "date": "2018-04-09"
+          },
+          "PastResolution": {
+            "date": "2018-04-09"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "나는 저번 달 셋째주 수요일에 돌아왔어",
+    "Context": {
+      "ReferenceDateTime": "2018-03-20T10:45:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "저번 달 셋째주 수요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-WXX-3-#3",
+          "FutureResolution": {
+            "date": "2018-02-21"
+          },
+          "PastResolution": {
+            "date": "2018-02-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "다음 주 화요일에 여행갈거야",
+    "Context": {
+      "ReferenceDateTime": "2018-03-20T22:16:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음 주 화요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-03-27",
+          "FutureResolution": {
+            "date": "2018-03-27"
+          },
+          "PastResolution": {
+            "date": "2018-03-27"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "다음 주 일요일에 숙제하기",
+    "Context": {
+      "ReferenceDateTime": "2018-03-20T22:16:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음 주 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-04-01",
+          "FutureResolution": {
+            "date": "2018-04-01"
+          },
+          "PastResolution": {
+            "date": "2018-04-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "삼일 후에 돌아갈게요.",
+    "Context": {
+      "ReferenceDateTime": "2018-04-20T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "삼일 후",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-04-23",
+          "FutureResolution": {
+            "date": "2018-04-23"
+          },
+          "PastResolution": {
+            "date": "2018-04-23"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "어제부터 4일 후에 돌아갈게요.",
+    "Context": {
+      "ReferenceDateTime": "2018-04-20T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "어제부터 4일 후",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-04-23",
+          "FutureResolution": {
+            "date": "2018-04-23"
+          },
+          "PastResolution": {
+            "date": "2018-04-23"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "13.5.2015에 한가하니?",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "13.5.2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-05-13",
+          "FutureResolution": {
+            "date": "2015-05-13"
+          },
+          "PastResolution": {
+            "date": "2015-05-13"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2015.5.13에 시간 괜찮니?",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2015.5.13",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-05-13",
+          "FutureResolution": {
+            "date": "2015-05-13"
+          },
+          "PastResolution": {
+            "date": "2015-05-13"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "3-7-2017에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "3-7-2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-03-07",
+          "FutureResolution": {
+            "date": "2017-03-07"
+          },
+          "PastResolution": {
+            "date": "2017-03-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "3-7-07에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "3-7-07",
+        "Type": "date",
+        "Value": {
+          "Timex": "2007-03-07",
+          "FutureResolution": {
+            "date": "2007-03-07"
+          },
+          "PastResolution": {
+            "date": "2007-03-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "3-7-27에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "3-7-27",
+        "Type": "date",
+        "Value": {
+          "Timex": "2027-03-07",
+          "FutureResolution": {
+            "date": "2027-03-07"
+          },
+          "PastResolution": {
+            "date": "2027-03-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "89/05/05로 돌아갈거야",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "89/05/05",
+        "Type": "date",
+        "Value": {
+          "Timex": "1989-05-05",
+          "FutureResolution": {
+            "date": "1989-05-05"
+          },
+          "PastResolution": {
+            "date": "1989-05-05"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "71/05/05로 돌아갈거야",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "71/05/05",
+        "Type": "date",
+        "Value": {
+          "Timex": "1971-05-05",
+          "FutureResolution": {
+            "date": "1971-05-05"
+          },
+          "PastResolution": {
+            "date": "1971-05-05"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "오늘부터 2주간 일요일에 시간 괜찮으세요?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "오늘부터 2주간 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-05-20",
+          "FutureResolution": {
+            "date": "2018-05-20"
+          },
+          "PastResolution": {
+            "date": "2018-05-20"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2주 후 월요일에 시간 괜찮아?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-07T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2주 후 월요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-05-21",
+          "FutureResolution": {
+            "date": "2018-05-21"
+          },
+          "PastResolution": {
+            "date": "2018-05-21"
+          }
+        }
+      }
+    ]
+  }
+]

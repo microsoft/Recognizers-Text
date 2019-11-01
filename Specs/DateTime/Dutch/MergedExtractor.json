@@ -1,0 +1,1197 @@
+[
+  {
+    "Input": "dit is 2 dagen",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 dagen",
+        "Type": "duration",
+        "Start": 7,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "dit is voor 16:00",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor 16:00",
+        "Type": "time",
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "dit is voor 16:00 morgen",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor 16:00 morgen",
+        "Type": "datetime",
+        "Start": 7,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "dit is voor morgen 16:00",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor morgen 16:00",
+        "Type": "datetime",
+        "Start": 7,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "dit is na 16:00",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na 16:00",
+        "Type": "time",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "dit is na 16:00 morgen",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na 16:00 morgen",
+        "Type": "datetime",
+        "Start": 7,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "dit is na morgen 16.00",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na morgen 16.00",
+        "Type": "datetime",
+        "Start": 7,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben over 5 minuten terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over 5 minuten",
+        "Type": "datetime",
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "afgelopen week",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "afgelopen week",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "plan een meeting over 10 uur",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over 10 uur",
+        "Type": "datetime",
+        "Start": 17,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Hoe ziet deze deze dag eruit?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "deze dag",
+        "Type": "date",
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Hoe ziet deze week eruit?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "deze week",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Hoe ziet mijn week eruit?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "mijn week",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Hoe ziet de week eruit?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de week",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Hoe ziet mijn dag eruit?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "mijn dag",
+        "Type": "date",
+        "Start": 9,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Hoe ziet de dag eruit?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de dag",
+        "Type": "date",
+        "Start": 9,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Plan een meeting 's ochtends van 9:00 tot 11:00",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "'s ochtends van 9:00 tot 11:00",
+        "Type": "timerange",
+        "Start": 17,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Plan een meeting morgen van 9:00 tot 11:00",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "morgen van 9:00 tot 11:00",
+        "Type": "datetimerange",
+        "Start": 17,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Wijzig de meeting van de 22e juli in Bellevue naar de 22e augustus",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de 22e juli",
+        "Type": "date",
+        "Start": 22,
+        "Length": 9
+      },
+      {
+        "Text": "August 22nd",
+        "Type": "date",
+        "Start": 40,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "na 2-7",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na 2-7",
+        "Type": "date",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "sinds 2-7",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "sinds 2-7",
+        "Type": "date",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "voor 2-7",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor 2-7",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "06-06 12:15",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "06-06 12:15",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "06-06-12 15:15",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "06-06-12 15:15",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "06-06, 2015",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "06-06, 2015",
+        "Type": "date",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "29 mei",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "29 mei",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "29 maart",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "29 maart",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben geboren maart",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "maart",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Ik geboren in de maart",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "maart",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "mei",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "mei",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Wat zijn de openingstijden van Palomino?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "in de zon",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "welke email hebben een reactie gehad?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "Hij is vaak alleen",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "vaak een vogel",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "uren van michigan",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "Ik wijzig de afspraak van 15:00 naar 4",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15:00",
+        "Type": "time",
+        "Start": 26,
+        "Length": 3
+      },
+      {
+        "Text": "4",
+        "Type": "time",
+        "Start": 35,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van 15:00 naar 4,",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15:00",
+        "Type": "time",
+        "Start": 26,
+        "Length": 3
+      },
+      {
+        "Text": "4",
+        "Type": "time",
+        "Start": 35,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van drie uur 's middags naar vier",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "drie uur 's middags",
+        "Type": "time",
+        "Start": 26,
+        "Length": 8
+      },
+      {
+        "Text": "four",
+        "Type": "time",
+        "Start": 40,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar elf",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      },
+      {
+        "Text": "eleven",
+        "Type": "time",
+        "Start": 38,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar 4.,",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      },
+      {
+        "Text": "4",
+        "Type": "time",
+        "Start": 38,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar elf!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      },
+      {
+        "Text": "eleven",
+        "Type": "time",
+        "Start": 38,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar elf?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      },
+      {
+        "Text": "eleven",
+        "Type": "time",
+        "Start": 38,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar 20!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      },
+      {
+        "Text": "20",
+        "Type": "time",
+        "Start": 38,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar twintig!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      },
+      {
+        "Text": "twenty",
+        "Type": "time",
+        "Start": 38,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar dertien!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      },
+      {
+        "Text": "thirteen",
+        "Type": "time",
+        "Start": 38,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar 13!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      },
+      {
+        "Text": "13",
+        "Type": "time",
+        "Start": 38,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar 0!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      },
+      {
+        "Text": "0",
+        "Type": "time",
+        "Start": 38,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar 24!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      },
+      {
+        "Text": "24",
+        "Type": "time",
+        "Start": 38,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar nul.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      },
+      {
+        "Text": "zero",
+        "Type": "time",
+        "Start": 38,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar vierentwintig",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      },
+      {
+        "Text": "twenty four",
+        "Type": "time",
+        "Start": 38,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar 4, hoe denk je?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      },
+      {
+        "Text": "4",
+        "Type": "time",
+        "Start": 38,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar 4.3",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar zesentwintig",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar 4 of later",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar 25",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Ik wijzig de afspraak van tien uur 's ochtends naar vijfentwintig",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "time",
+        "Start": 26,
+        "Length": 6
+      },
+      {
+        "Text": "twenty five",
+        "Type": "time",
+        "Start": 38,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "volgende meeting zal plaatsvinden op 16 maart, 2017, zullen we anders een gesprek hebben om 2 uur deze middag? ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "16 maart, 2017",
+        "Type": "date",
+        "Start": 37,
+        "Length": 16
+      },
+      {
+        "Text": "2pm this afternoon",
+        "Type": "datetime",
+        "Start": 81,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "1 april, 2018, we kunnen het 2 uur vanmiddag plannen",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 april, 2018",
+        "Type": "date",
+        "Start": 0,
+        "Length": 15
+      },
+      {
+        "Text": "2pm this afternoon",
+        "Type": "datetime",
+        "Start": 32,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Het bereik is voor 2012",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor 2012",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Het bereik is tot 2012",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tot 2012",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Het bereik is 2012 of erna",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2012 of erna",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben 11-2016 weg",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11-2016",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben 2016-11 weg",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016-11",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben 2016 november weg",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 november",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben november, 2016 weg",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "november, 2016",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben 2016, nov weg",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016, nov",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Hij zal later dan of op 1-1-2016 aankomen",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": " later dan of op 1-1-2016",
+        "Type": "date",
+        "Start": 7,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Hij zal voor of op 1-1-2016 vertrekken",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor of op 1-1-2016",
+        "Type": "date",
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal af komen op of eerder dan 1-1-2016",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op of eerder dan 1-1-2016",
+        "Type": "date",
+        "Start": 23,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal af komen voor of in feb 2018",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor of in feb 2018",
+        "Type": "daterange",
+        "Start": 23,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je kunt niet eerder dan of in 2016 vertrekken",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eerder dan of in 2016",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je kunt kantoor niet verlaten om of na 18:30 vandaag",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "om of na 18:30 vandaag",
+        "Type": "datetime",
+        "Start": 30,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je moet op of voor overmorgen vertrekken",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op of voor overmorgen",
+        "Type": "date",
+        "Start": 8,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Je moet op of vroeger dan 15:00 15-5-2018 vertrekken",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op of vroeger dan 15:00 15-5-2018",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Ben je twee dagen na vandaag beschikbaar?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "twee dagen na vandaag",
+        "Type": "date",
+        "Start": 7,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ben je drie weken vanaf morgen beschikbaar?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "drie weken vanaf morgen",
+        "Type": "date",
+        "Start": 7,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Waar was je twee dagen voor gisteren?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "twee dagen voor gisteren",
+        "Type": "date",
+        "Start": 12,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Wat de verkoop per jaar?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "Ik heb al mijn werk al meer dan 2 weken voor vandaag afgerond",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "meer dan 2 weken voor vandaag",
+        "Type": "daterange",
+        "Start": 23,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal binnen 2 weken vanaf vandaag terugkomen",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen 2 weken vanaf vandaag",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal minder dan 2 weken vanaf vandaag terugkomen",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "minder dan 2 weken vanaf vandaag",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zou meer dan 2 dagen voor gisteren afgerond moeten zijn",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "meer dan 2 dagen voor gisteren",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal minder dan 3 dagen na morgen afgerond zijn",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "minder dan 3 dagen na morgen",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Laten we 3 minuten vanaf nu beginnen",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 minuten vanaf nu",
+        "Type": "datetime",
+        "Start": 9,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Laten we 3 minuten vanaf vandaag beginnen",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 minuten vanaf vandaag",
+        "Type": "duration",
+        "Start": 9,
+        "Length": 9
+      },
+      {
+        "Text": "today",
+        "Type": "date",
+        "Start": 27,
+        "Length": 5
+      }
+    ]
+  }
+]

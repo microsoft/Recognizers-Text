@@ -1,0 +1,518 @@
+[
+  {
+    "Input": "7'de döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7",
+        "Type": "time",
+        "Start": 0,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "Saat 19'da döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Saat 19",
+        "Type": "time",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Saat 19:56'da döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Saat 19:56",
+        "Type": "time",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Saat 19:56:35'te döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Saat 19:56:35",
+        "Type": "time",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "00:00:30'da döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "00:00:30",
+        "Type": "time",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Saat 7",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Saat 7",
+        "Type": "time",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Saat yedi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Saat yedi",
+        "Type": "time",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Sabah 8",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Sabah 8",
+        "Type": "time",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Akşam 8",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Akşam 8",
+        "Type": "time",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Saat sekiz buçuk",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "saat sekiz buçuk",
+        "Type": "time",
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Saat 8 buçuk",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "saat 8 buçuk",
+        "Type": "time",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Saat sekizi çeyrek geçiyor",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "saat sekizi çeyrek geçiyor",
+        "Type": "time",
+        "Start": 0,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Saat 9'u çeyrek geçiyor",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "saat 9'u çeyrek geçiyor",
+        "Type": "time",
+        "Start": 0,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Saat sekize üç dakika kala",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "saat sekize üç dakika kala",
+        "Type": "time",
+        "Start": 0,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Saat yedi buçuk",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Saat yedi buçuk",
+        "Type": "time",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Saat öğleden sonra yedi buçuk",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "öğleden sonra yedi buçuk",
+        "Type": "time",
+        "Start": 5,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Saat sabah yedi buçuk",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "sabah yedi buçuk",
+        "Type": "time",
+        "Start": 5,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Saat sabah 8'e çeyrek var",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "sabah 8'e çeyrek var",
+        "Type": "time",
+        "Start": 5,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Saat akşam sekizi yirmi geçiyor",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "akşam sekizi yirmi geçiyor",
+        "Type": "time",
+        "Start": 5,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Öğleden sonra 7'de döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Öğleden sonra 7",
+        "Type": "time",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Öğleden sonra 7:00'da döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Öğleden sonra 7:00",
+        "Type": "time",
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Öğleden sonra 7:00:14'te döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Öğleden sonra 7:00:14'te",
+        "Type": "time",
+        "Start": 0,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Öğleden sonra saat yedide döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Öğleden sonra saat yedide",
+        "Type": "time",
+        "Start": 0,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Akşam yedi otuzda döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Akşam yedi otuzda",
+        "Type": "time",
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Yedi otuz beşte döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Yedi otuz beş",
+        "Type": "time",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "On bir beşte döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "On bir beş",
+        "Type": "time",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Gece beş otuzda döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Gece beş otuzda",
+        "Type": "time",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Öğlen civarı döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Öğlen civarı",
+        "Type": "time",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Öğlen döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Öğlen",
+        "Type": "time",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Öğlen 12'de döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Öğlen 12",
+        "Type": "time",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "11 civarı döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11 civarı",
+        "Type": "time",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Gece yarısı",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Gece yarısı",
+        "Type": "time",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Sabah ortası",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Sabah ortası",
+        "Type": "time",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Öğlen ortası",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Öğlen ortası",
+        "Type": "time",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Gün ortası",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Gün ortası",
+        "Type": "time",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Öğlen",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Öğlen",
+        "Type": "time",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "19'da döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "19",
+        "Type": "time",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "On dokuz otuzda döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "On dokuz otuz",
+        "Type": "time",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Saat 12'de öğle yemeği vakti döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Saat 12'de öğle yemeği vakti",
+        "Type": "time",
+        "Start": 0,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Öğle yemeği vakti saat 12'de döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Öğle yemeği vakti saat 12",
+        "Type": "time",
+        "Start": 0,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Saat 21 benim için uygun",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Saat 21",
+        "Type": "time",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Saat 21'de döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Saat 21",
+        "Type": "time",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Saat 9'da döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Saat 9",
+        "Type": "time",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  }
+]

@@ -1,0 +1,617 @@
+[
+  {
+    "Input": "Ik ga terug met Pasen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Pasen",
+        "Type": "date",
+        "Value": {
+          "Timex": "",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 16,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op 1e kerstdag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1e kerstdag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        },
+        "Start": 15,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op eerste kerstdag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eerste kerstdag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        },
+        "Start": 15,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op nieuwjaarsdag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "nieuwjaarsdag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 15,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op oudejaarsavond",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "oudejaarsavond",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2016-12-31"
+          },
+          "PastResolution": {
+            "date": "2015-12-31"
+          }
+        },
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug met kerst",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "kerst",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        },
+        "Start": 16,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op Nieuwjaarsdag.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Nieuwjaarsdag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 15,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op vaderdag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vaderdag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2017-06-18"
+          },
+          "PastResolution": {
+            "date": "2016-06-19"
+          }
+        },
+        "Start": 15,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op Nieuwjaarsdag volgend jaar",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Nieuwjaarsdag volgend jaar",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2017-01-01"
+          }
+        },
+        "Start": 15,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "In Nederland vieren we tegenwoordig Koningsdag, in plaats van Koninginnedag.",
+    "Context": {
+      "ReferenceDateTime": "2019-01-02T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Koningsdag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-27",
+          "FutureResolution": {
+            "date": "2019-04-27"
+          },
+          "PastResolution": {
+            "date": "2018-04-27"
+          }
+        },
+        "Start": 36,
+        "Length": 10
+      },
+      {
+        "Text": "Koninginnedag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-30",
+          "FutureResolution": {
+            "date": "2019-04-30"
+          },
+          "PastResolution": {
+            "date": "2018-04-30"
+          }
+        },
+        "Start": 62,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op vaderdag 2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vaderdag 2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2015-06-21"
+          },
+          "PastResolution": {
+            "date": "2015-06-21"
+          }
+        },
+        "Start": 15,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Hier op Pershing Square tijdens Dag van de Arbeid.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Dag van de Arbeid",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-01",
+          "FutureResolution": {
+            "date": "2019-05-01"
+          },
+          "PastResolution": {
+            "date": "2018-05-01"
+          }
+        },
+        "Start": 32,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga op Pasen terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Pasen",
+        "Type": "date",
+        "Value": {
+          "Timex": "",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 9,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op Eerste Kerstdag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Eerste Kerstdag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        },
+        "Start": 15,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op Oudjaarsavond",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Oudjaarsavond",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2016-12-31"
+          },
+          "PastResolution": {
+            "date": "2015-12-31"
+          }
+        },
+        "Start": 15,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug met Kerst",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Kerst",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        },
+        "Start": 16,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op Yuandan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Yuandan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 15,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op Thanksgiving",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Thanksgiving",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          }
+        },
+        "Start": 15,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op Vaderdag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Vaderdag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2017-06-18"
+          },
+          "PastResolution": {
+            "date": "2016-06-19"
+          }
+        },
+        "Start": 15,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op Yuandan volgend jaar",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Yuandan volgend jaar",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2017-01-01"
+          }
+        },
+        "Start": 15,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op Thanksgiving 2010",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Thanksgiving 2010",
+        "Type": "date",
+        "Value": {
+          "Timex": "2010-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2010-11-25"
+          },
+          "PastResolution": {
+            "date": "2010-11-25"
+          }
+        },
+        "Start": 15,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op Vaderdag 2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Vaderdag 2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2015-06-21"
+          },
+          "PastResolution": {
+            "date": "2015-06-21"
+          }
+        },
+        "Start": 15,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Hier in Pershing Square voor de Dag van de Arbeid",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Dag van de Arbeid",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-01",
+          "FutureResolution": {
+            "date": "2019-05-01"
+          },
+          "PastResolution": {
+            "date": "2018-05-01"
+          }
+        },
+        "Start": 32,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Martin Luther Kingdag is een Amerikaanse, nationale feestdag",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Martin Luther Kingdag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-WXX-1-3",
+          "FutureResolution": {
+            "date": "2019-01-21"
+          },
+          "PastResolution": {
+            "date": "2018-01-15"
+          }
+        },
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "MLKdag is een Amerikaanse nationale feestdag",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "MLKdag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-WXX-1-3",
+          "FutureResolution": {
+            "date": "2019-01-21"
+          },
+          "PastResolution": {
+            "date": "2018-01-15"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  }
+]
