@@ -2514,7 +2514,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-18T18:00:00"
     },
-    "NotSupported": "javascript, java, python, python",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "8月至2月",
