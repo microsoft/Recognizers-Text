@@ -29,17 +29,7 @@ class PhoneNumberConfiguration(ABC):
 
     @property
     @abstractmethod
-    def colon_markers(self) -> str:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
     def forbidden_prefix_markers(self) -> str:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def forbidden_suffix_markers(self) -> str:
         raise NotImplementedError
 
     def __init__(self, options):

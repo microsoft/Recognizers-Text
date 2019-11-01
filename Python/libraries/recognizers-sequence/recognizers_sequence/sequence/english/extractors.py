@@ -7,52 +7,14 @@ from recognizers_sequence.sequence.config import *
 import regex as re
 
 
-class EnglishPhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
-
-    @property
-    def word_boundaries_regex(self) -> str:
-        return self._WordBoundariesRegex
-
-    @property
-    def non_word_boundaries_regex(self) -> str:
-        return self._NonWordBoundariesRegex
-
-    @property
-    def end_word_boundaries_regex(self) -> str:
-        return self._EndWordBoundariesRegex
-
-    @property
-    def colon_prefix_check_regex(self) -> str:
-        return self._ColonPrefixCheckRegex
-
-    @property
-    def colon_markers(self) -> str:
-        return self._ColonMarkers
-
+class EnglishPhoneNumberExtractorConfiguration(BasePhoneNumberExtractorConfiguration):
     @property
     def false_positive_prefix_regex(self) -> str:
         return self._FalsePositivePrefixRegex
 
-    @property
-    def forbidden_prefix_markers(self) -> str:
-        return self._ForbiddenPrefixMarkers
-
-    @property
-    def forbidden_suffix_markers(self) -> str:
-        return self._ForbiddenSuffixMarkers
-
     def __init__(self, culture_info: CultureInfo = None):
-        if culture_info is None:
-            culture_info = CultureInfo(Culture.English)
         super().__init__(culture_info)
-        self._WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex
-        self._NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex
-        self._EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex
-        self._ColonPrefixCheckRegex = BasePhoneNumbers.ColonPrefixCheckRegex
-        self._ColonMarkers = BasePhoneNumbers.ColonMarkers
         self._FalsePositivePrefixRegex = EnglishPhoneNumbers.FalsePositivePrefixRegex
-        self._ForbiddenPrefixMarkers = BasePhoneNumbers.ForbiddenPrefixMarkers
-        self._ForbiddenSuffixMarkers = BasePhoneNumbers.ForbiddenSuffixMarkers
 
 
 class EnglishIpExtractorConfiguration(IpConfiguration):
