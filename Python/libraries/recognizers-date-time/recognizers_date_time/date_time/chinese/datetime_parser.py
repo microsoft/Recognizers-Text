@@ -1,16 +1,21 @@
 from typing import Optional
 from datetime import datetime, timedelta
-
-from recognizers_text.extractor import ExtractResult
+from .date_extractor import ChineseDateExtractor
+from .date_parser import ChineseDateParser
+from .datetime_extractor import ChineseDateTimeExtractor
+from .duration_extractor import ChineseDurationExtractor
 from ..base_datetime import BaseDateTimeParser
 from ..parsers import DateTimeParseResult
-from ..constants import TimeTypeConstants
+from ..constants import TimeTypeConstants, Constants
+from recognizers_number import Constants as NumberConstants
+from recognizers_text import RegExpUtility, ExtractResult
 from ..utilities import DateTimeFormatUtil, DateTimeResolutionResult, DateUtils
 from .datetime_parser_config import ChineseDateTimeParserConfiguration
 
 
 class ChineseDateTimeParser(BaseDateTimeParser):
     def __init__(self):
+        self.duration_extractor = ChineseDurationExtractor()
         config = ChineseDateTimeParserConfiguration()
         BaseDateTimeParser.__init__(self, config)
 
@@ -25,8 +30,10 @@ class ChineseDateTimeParser(BaseDateTimeParser):
                 inner_result = self.parse_basic_regex(source.text, reference)
 
             if not inner_result.success:
-                inner_result = self._parse_time_of_today(
-                    source.text, reference)
+                inner_result = self._parse_time_of_today(source.text, reference)
+
+            if not inner_result.success:
+                inner_result = self._parser_duration_with_ago_and_later(source.text, reference)
 
             if inner_result.success:
                 inner_result.future_resolution = {
@@ -133,3 +140,64 @@ class ChineseDateTimeParser(BaseDateTimeParser):
             return ret
 
         return ret
+
+    # Handle cases like "5分钟前" "一小时后"
+    def _parser_duration_with_ago_and_later(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+        result = DateTimeResolutionResult()
+        duration_res = self.duration_extractor.extract(source, reference).pop()
+
+        if duration_res:
+            match = ChineseDateTimeExtractor.date_time_period_unit_regex.search(source)
+            if match:
+                suffix = source[duration_res.start + duration_res.length:]
+                src_unit = RegExpUtility.get_group(match, 'unit')
+
+                number_str = source[duration_res.start:match.lastindex - duration_res.start + 1]
+                number = ChineseDateParser.parse_chinese_written_number_to_value(ChineseDateParser(), number_str)
+
+                if src_unit in self.config.unit_map:
+                    unit_str = self.config.unit_map.get(src_unit)
+
+                    before_match = RegExpUtility.get_matches(ChineseDateExtractor.before_regex, suffix)
+                    if before_match and suffix.startswith(before_match[0]):
+                        if unit_str == Constants.TIMEX_HOUR:
+                            date = reference + timedelta(hours=-number)
+                        elif unit_str == Constants.TIMEX_MINUTE:
+                            date = reference + timedelta(minutes=-number)
+                        elif unit_str == Constants.TIMEX_SECOND:
+                            date = reference + timedelta(seconds=-number)
+                        else:
+                            return result
+
+                        result.timex = DateTimeFormatUtil.luis_date_from_datetime(date)
+                        result.future_value = result.past_value = date
+                        result.success = True
+                        return result
+
+                    after_match = RegExpUtility.get_matches(ChineseDateExtractor.after_regex, suffix)
+                    if after_match and suffix.startswith(after_match[0]):
+                        if unit_str == Constants.TIMEX_HOUR:
+                            date = reference + timedelta(hours=number)
+                        elif unit_str == Constants.TIMEX_MINUTE:
+                            date = reference + timedelta(minutes=number)
+                        elif unit_str == Constants.TIMEX_SECOND:
+                            date = reference + timedelta(seconds=number)
+                        else:
+                            return result
+
+                        result.timex = DateTimeFormatUtil.luis_date_from_datetime(date)
+                        result.future_value = result.past_value = date
+                        result.success = True
+                        return result
+
+        return result
+
+    # # convert Chinese Number to Integer
+    # def parse_chinese_written_number_to_value(self, source: str) -> int:
+    #     num = -1
+    #     er: ExtractResult = next(
+    #         iter(ChineseDateParser.integer_extractor.extract(source)), None)
+    #     if er and er.type == NumberConstants.SYS_NUM_INTEGER:
+    #         num = int(self.config.number_parser.parse(er).value)
+    #
+    #     return num

@@ -4,7 +4,7 @@ import recognizers_suite as Recognizers
 from recognizers_suite import Culture, ModelResult
 
 # Use English for the Recognizers culture
-DEFAULT_CULTURE = Culture.English
+DEFAULT_CULTURE = Culture.Chinese
 
 
 def main():
@@ -19,9 +19,8 @@ def run_recognition():
         user_input = str(input('Enter the text to recognize: ')).strip()
         if user_input not in ['', 'exit']:
             # Retrieve all the ModelResult recognized from the user input
-            results = parse_all(user_input, DEFAULT_CULTURE)
+            results = Recognizers.recognize_datetime(user_input, DEFAULT_CULTURE)
             # Flatten results
-            results = [item for sublist in results for item in sublist]
 
             # Write results on console
             print()
