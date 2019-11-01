@@ -262,7 +262,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                 continue
 
             # handle "between {TimePoint} and {TimePoint}"
-            if self.config.has_connector_token(middle):
+            if self.config.is_connector_token(middle):
                 period_begin = time_extract_results[i].start
                 period_end = time_extract_results[i + 1].start + time_extract_results[i + 1].length
 
