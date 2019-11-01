@@ -568,7 +568,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             token = self.match_within_next_prefix(before_str, source, duration, in_prefix)
             if token.start >= 0:
                 tokens.append(token)
-                continue
+                break
 
             # check also afterStr
             if self.config.check_both_before_after:
@@ -576,26 +576,21 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                 token = self.match_within_next_prefix(after_str, source, duration, in_prefix)
                 if token.start >= 0:
                     tokens.append(token)
-                    continue
+                    break
 
-            match = regex.search(
-                self.config.previous_prefix_regex, before_str)
+            match = regex.search(self.config.previous_prefix_regex, before_str)
             index = -1
             if match and not before_str[match.end():]:
-                tokens.append(Token(match.start(), duration.end))
-                index = match.index
-                continue
+                index = source.index(match.group())
 
             if index < 0:
                 match = regex.search(self.config.next_prefix_regex, before_str)
                 if match and not before_str[match.end():]:
-                    tokens.append(Token(match.start(), duration.end))
-                    index = match.index
-                    continue
+                    index = source.index(match.group())
 
             if index >= 0:
                 prefix = before_str[0: index].strip()
-                duration_text = source[duration.start: duration.length]
+                duration_text = source[duration.start: duration.end]
                 numbers_in_prefix = self.config.cardinal_extractor.extract(prefix)
                 numbers_in_duration = self.config.cardinal_extractor.extract(duration_text)
 
