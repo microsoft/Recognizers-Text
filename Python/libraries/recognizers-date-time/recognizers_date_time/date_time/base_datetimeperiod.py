@@ -607,22 +607,23 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                 continue
 
             match_date_unit = regex.search(self.config.date_unit_regex, after_str)
-            if match_date_unit:
+            if not match_date_unit:
                 match = regex.search(self.config.previous_prefix_regex, after_str)
                 if match and not after_str[0: match.start()]:
-                    tokens.append(Token(duration.start, duration.start + duration.length + match.start() + len(match)))
+                    tokens.append(Token(duration.start, duration.start + duration.length + (match.start() + 1)
+                                        + match.end()))
                     continue
 
                 match = regex.search(self.config.next_prefix_regex, after_str)
                 if match and not after_str[0: match.start()]:
                     tokens.append(
-                        Token(duration.start, duration.start + duration.length + match.start() + len(match)))
+                        Token(duration.start, duration.start + duration.length + match.start() + match.end()))
                     continue
 
                 match = regex.search(self.config.future_suffix_regex, after_str)
                 if match and not after_str[0: match.start()]:
                     tokens.append(
-                        Token(duration.start, duration.start + duration.length + match.start() + len(match)))
+                        Token(duration.start, duration.start + duration.length + match.start() + match.end()))
                     continue
         return tokens
 

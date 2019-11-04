@@ -88,7 +88,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
         if reference is None:
             reference = datetime.now()
 
-        tokens = self.match_simple_cases(self.config.simple_cases_regex, source)
+        tokens = self.match_simple_cases(source)
         tokens.extend(self.merge_two_time_points(source, reference))
         tokens.extend(self.match_night(source))
 
@@ -120,11 +120,11 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                                      text.index(match.group()) + (match.end() - match.start())))
         return ret
 
-    def match_simple_cases(self, regexp: Pattern, source: str) -> List[Token]:
+    def match_simple_cases(self, source: str) -> List[Token]:
         result: List[Token] = list()
 
         for regexp in self.config.simple_cases_regex:
-            matches: [Match] = regex.finditer(regexp, source)
+            matches = regex.finditer(regexp, source)
 
             if matches:
                 for match in matches:
@@ -132,12 +132,17 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                     if RegExpUtility.get_group(match, Constants.MINUTE_GROUP_NAME) or\
                             RegExpUtility.get_group(match, Constants.SECOND_GROUP_NAME):
 
+                        # Cases like "from 3:30 to 4" should be supported
+                        # Cases like "from 3:30 to 5 on 1/1/2015" should be supported
+                        # Cases like "from 3:30 to 4 people" is considered not valid
                         end_with_valid_token = True
+
+                        # "No extra tokens after the time period"
                         if (source.index(match.group()) + (match.end() - match.start())) == len(source):
                             end_with_valid_token = True
 
                         else:
-                            after_str = source[source.index(match.group()) + (match.end() - match.start())]
+                            after_str = source[source.index(match.group()) + (match.end() - match.start()):]
 
                             end_with_general_endings = self.config.general_ending_regex.match(after_str)
                             end_with_am_pm = RegExpUtility.get_group(match, Constants.RIGHT_AM_PM_GROUP_NAME)
@@ -153,10 +158,12 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                             result.append(Token(source.index(match.group()), source.index(match.group()) +
                                                 (match.end() - match.start())))
                     else:
+                        # Is there "pm" or "am"?
                         match_pm_str = RegExpUtility.get_group(match, Constants.PM_GROUP_NAME)
                         match_am_str = RegExpUtility.get_group(match, Constants.AM_GROUP_NAME)
                         desc_str = RegExpUtility.get_group(match, Constants.DESC_GROUP_NAME)
 
+                        # Check "pm", "am"
                         if match_pm_str or match_am_str or desc_str:
                             result.append(Token(source.index(match.group()), source.index(match.group()) +
                                                 (match.end() - match.start())))
