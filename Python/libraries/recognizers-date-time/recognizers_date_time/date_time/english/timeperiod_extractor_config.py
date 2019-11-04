@@ -87,5 +87,5 @@ class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
             return MatchedIndex(matched=True, index=index)
         return MatchedIndex(matched=False, index=index)
 
-    def has_connector_token(self, source: str) -> bool:
-        return source == 'and'
+    def is_connector_token(self, source: str):
+        return source == "and"

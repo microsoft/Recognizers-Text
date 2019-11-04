@@ -457,8 +457,11 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                 if match_year and len(match_year.group()) == len(match.group()):
                     year_str = match_year.group(Constants.YEAR_GROUP_NAME)
 
-                    if not Constants.MIN_YEAR_NUM <= int(year_str) <= Constants.MAX_YEAR_NUM:
-                        break
+                    if not year_str:
+                        year = self.__get_year_from_text(match_year)
+
+                        if not (Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM):
+                            add_token = False
 
                 if (match.end() - match.start() == Constants.FOUR_DIGITS_YEAR_LENGTH) and self.__infix_boundary_check(
                         match, source):
@@ -1078,6 +1081,8 @@ class BaseDatePeriodParser(DateTimeParser):
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
         if not reference:
             reference = datetime.now()
+
+        result_value = None
 
         if source.type == self.parser_type_name:
             source_text = source.text.strip().lower()

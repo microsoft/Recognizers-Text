@@ -2796,7 +2796,7 @@
     "Context": {
       "ReferenceDateTime": "2018-03-01T00:00:00"
     },
-    "NotSupported": "dotnet, java",
+    "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2992,7 +2992,7 @@
   {
     "Input": "Ya no estaré 3/15",
     "Comment": "Won't fix, 3/15 is date not date period",
-    "NotSupported": "dotnet, java, javascript",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "3/15",
@@ -3538,7 +3538,7 @@
   {
     "Input": "en los 70",
     "Comment": "Won't fix, because 'los 70' has ambiguity, will be extracted as number or datetime",
-    "NotSupported": "javascript, dotnet, java",
+    "NotSupported": "javascript, dotnet, java, python",
     "Results": [
       {
         "Text": "los 70",
@@ -3629,7 +3629,7 @@
   {
     "Input": "en los noventa",
     "Comment": "Won't fix, because 'los noventa' has ambiguity, will be extracted as number or datetime",
-    "NotSupported": "javascript, dotnet, java",
+    "NotSupported": "javascript, dotnet, java, python",
     "Results": [
       {
         "Text": "los noventa",
@@ -3693,7 +3693,7 @@
   },
   {
     "Input": "En mil novecientos veintiocho",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -4369,7 +4369,7 @@
   },
   {
     "Input": "Me quedo hasta dos y medio días después",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -4447,7 +4447,7 @@
   },
   {
     "Input": "Ya terminé todos los trabajos hace más de 2 semanas",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {

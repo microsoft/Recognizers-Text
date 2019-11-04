@@ -568,7 +568,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             token = self.match_within_next_prefix(before_str, source, duration, in_prefix)
             if token.start >= 0:
                 tokens.append(token)
-                continue
+                break
 
             # check also afterStr
             if self.config.check_both_before_after:
@@ -576,26 +576,21 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                 token = self.match_within_next_prefix(after_str, source, duration, in_prefix)
                 if token.start >= 0:
                     tokens.append(token)
-                    continue
+                    break
 
-            match = regex.search(
-                self.config.previous_prefix_regex, before_str)
+            match = regex.search(self.config.previous_prefix_regex, before_str)
             index = -1
             if match and not before_str[match.end():]:
-                tokens.append(Token(match.start(), duration.end))
-                index = match.index
-                continue
+                index = source.index(match.group())
 
             if index < 0:
                 match = regex.search(self.config.next_prefix_regex, before_str)
                 if match and not before_str[match.end():]:
-                    tokens.append(Token(match.start(), duration.end))
-                    index = match.index
-                    continue
+                    index = source.index(match.group())
 
             if index >= 0:
                 prefix = before_str[0: index].strip()
-                duration_text = source[duration.start: duration.length]
+                duration_text = source[duration.start: duration.end]
                 numbers_in_prefix = self.config.cardinal_extractor.extract(prefix)
                 numbers_in_duration = self.config.cardinal_extractor.extract(duration_text)
 
@@ -614,20 +609,20 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             match_date_unit = regex.search(self.config.date_unit_regex, after_str)
             if match_date_unit:
                 match = regex.search(self.config.previous_prefix_regex, after_str)
-                if match and not after_str[0: match.index]:
-                    tokens.append(Token(duration.start, duration.start + duration.length + match.index + len(match)))
+                if match and not after_str[0: match.start()]:
+                    tokens.append(Token(duration.start, duration.start + duration.length + match.start() + len(match)))
                     continue
 
                 match = regex.search(self.config.next_prefix_regex, after_str)
-                if match and not after_str[0: match.index]:
+                if match and not after_str[0: match.start()]:
                     tokens.append(
-                        Token(duration.start, duration.start + duration.length + match.index + len(match)))
+                        Token(duration.start, duration.start + duration.length + match.start() + len(match)))
                     continue
 
                 match = regex.search(self.config.future_suffix_regex, after_str)
-                if match and not after_str[0: match.index]:
+                if match and not after_str[0: match.start()]:
                     tokens.append(
-                        Token(duration.start, duration.start + duration.length + match.index + len(match)))
+                        Token(duration.start, duration.start + duration.length + match.start() + len(match)))
                     continue
         return tokens
 
@@ -750,10 +745,11 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
         result = False
         if match:
             if in_prefix:
-                sub_str = source[match.start() + len(match):]
+                sub_str = match and source[source.index(match.group()) + (match.end() - match.start())]
             else:
-                sub_str = source[0: match.start()]
+                sub_str = source[0: source.index(match.group())]
             result = match and not sub_str
+
         return result
 
     def match_relative_unit(self, source: str) -> List[Token]:
