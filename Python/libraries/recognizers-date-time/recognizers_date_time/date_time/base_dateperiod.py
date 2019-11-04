@@ -818,6 +818,11 @@ class DatePeriodParserConfiguration(ABC):
 
     @property
     @abstractmethod
+    def decade_with_century_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def past_regex(self) -> Pattern:
         raise NotImplementedError
 
@@ -1097,8 +1102,7 @@ class BaseDatePeriodParser(DateTimeParser):
             inner_result = self._parse_simple_case(text, reference_date)
 
         if not inner_result.success:
-            # TODO: fix the reference to _parse_one_word_period
-            inner_result = self.__parse_one_word_period(text, reference_date)
+            inner_result = self._parse_one_word_period(text, reference_date)
 
         if not inner_result.success:
             inner_result = self._merge_two_times_points(text, reference_date)
@@ -1131,7 +1135,7 @@ class BaseDatePeriodParser(DateTimeParser):
             inner_result = self.__parse_month_of_date(text, reference_date)
 
         if not inner_result.success:
-            # TODO: Add definition for __parse_decade
+            # TODO: Complete definition for __parse_decade: in progress
             inner_result = self.__parse_decade(text, reference_date)
 
         # Cases like "within/less than/more than x weeks from/before/after today"
@@ -1506,7 +1510,7 @@ class BaseDatePeriodParser(DateTimeParser):
                     return result
 
                 date_pr = self.config.date_parser.parse(ers[0], reference)
-                # TODO: review this implementation of the ternary operator iif
+
                 pr1 = date_pr if date_pr.start < now_pr.start else now_pr
                 pr2 = now_pr if date_pr.start < now_pr.start else date_pr
 
@@ -1544,7 +1548,7 @@ class BaseDatePeriodParser(DateTimeParser):
                 if pr:
                     prs.append(pr)
 
-            date_context = get_year_context(self.config, ers[0].text, ers[1].text, source)
+            date_context = self.get_year_context(self.config, ers[0].text, ers[1].text, source)
 
             pr1 = self.config.date_parser.parse(ers[0], reference)
             pr2 = self.config.date_parser.parse(ers[1], reference)
@@ -1574,7 +1578,6 @@ class BaseDatePeriodParser(DateTimeParser):
 
         if past_end < past_begin:
             past_end = future_end
-
 
         result.timex = f'({pr_begin.timex_str},{pr_end.timex_str},P{(future_end - future_begin).days}D)'
         result.future_value = [future_begin, future_end]
@@ -1893,6 +1896,28 @@ class BaseDatePeriodParser(DateTimeParser):
             result.success = True
 
         return result
+
+    def __parse_decade(self, source: str, reference_date: datetime) -> DateTimeResolutionResult:
+        ret = DateTimeResolutionResult()
+        first_two_number_of_year = reference_date.year / 100
+        decade: int
+        decade_last_year = 10
+        swift = 1
+        input_century = False
+
+        trimmed_source = source.strip().lower()
+        match = self.config.decade_with_century_regex.match(trimmed_source, True)
+        begin_luis_str: str
+        end_luis_str: str
+
+        if match.success:
+            # TODO: see about the value property and equivalents
+            decade_str = match.groups("decade").value
+
+            decade = int(decade_str)
+
+        # TODO: continue here the implementation.
+        return ret
 
     def __parse_quarter(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
