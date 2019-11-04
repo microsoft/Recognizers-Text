@@ -606,23 +606,23 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                     tokens.append(Token(index, duration.end))
                 continue
 
-            match_date_unit = regex.search(self.config.date_unit_regex.match, after_str)
+            match_date_unit = regex.search(self.config.date_unit_regex, after_str)
             if match_date_unit:
-                match = regex.search(self.config.previous_prefix_regex.match, after_str)
-                if match and not after_str[0: match.index]:
-                    tokens.append(Token(duration.start, duration.start + duration.length + match.index + len(match)))
+                match = regex.search(self.config.previous_prefix_regex, after_str)
+                if match and not after_str[0: match.start()]:
+                    tokens.append(Token(duration.start, duration.start + duration.length + match.start() + len(match)))
                     continue
 
-                match = regex.search(self.config.next_prefix_regex.match, after_str)
-                if match and not after_str[0: match.index]:
+                match = regex.search(self.config.next_prefix_regex, after_str)
+                if match and not after_str[0: match.start()]:
                     tokens.append(
-                        Token(duration.start, duration.start + duration.length + match.index + len(match)))
+                        Token(duration.start, duration.start + duration.length + match.start() + len(match)))
                     continue
 
-                match = regex.search(self.config.future_suffix_regex.match, after_str)
-                if match and not after_str[0: match.index]:
+                match = regex.search(self.config.future_suffix_regex, after_str)
+                if match and not after_str[0: match.start()]:
                     tokens.append(
-                        Token(duration.start, duration.start + duration.length + match.index + len(match)))
+                        Token(duration.start, duration.start + duration.length + match.start() + len(match)))
                     continue
         return tokens
 
@@ -742,12 +742,14 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
     @staticmethod
     def match_prefix_regex_in_segment(source: str, match: Match, in_prefix: bool):
+        result = False
+        if match:
+            if in_prefix:
+                sub_str = match and source[source.index(match.group()) + (match.end() - match.start())]
+            else:
+                sub_str = source[0: source.index(match.group())]
+            result = match and not sub_str
 
-        if in_prefix:
-            sub_str = match and source[source.index(match.group()) + (match.end() - match.start())]
-        else:
-            sub_str = source[0: source.index(match.group())]
-        result = match and not sub_str
         return result
 
     def match_relative_unit(self, source: str) -> List[Token]:
