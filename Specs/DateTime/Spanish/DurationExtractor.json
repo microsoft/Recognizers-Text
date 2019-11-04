@@ -234,7 +234,7 @@
   },
   {
     "Input": "Esta tarea debió ser terminada más de tres días antes",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -247,7 +247,7 @@
   },
   {
     "Input": "Esta tarea debe ser terminada en menos de 4 días",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
