@@ -335,7 +335,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                 if not after_str[0:match.start()]:
                     start = extracted_result.start
                     end = extracted_result.end + match.group(Constants.TIME_OF_DAY_GROUP_NAME).index + \
-                          len(match.group(Constants.TIME_OF_DAY_GROUP_NAME))
+                        len(match.group(Constants.TIME_OF_DAY_GROUP_NAME))
                     tokens.append(Token(start, end))
                     break
 
