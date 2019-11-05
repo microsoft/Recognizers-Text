@@ -27,6 +27,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     new Regex(@"^(?<year>\d\d\d\d)-W(?<weekOfYear>\d\d)-(?<weekend>WE)$"),
                     new Regex(@"^XXXX-(?<month>\d\d)$"),
                     new Regex(@"^XXXX-(?<month>\d\d)-W(?<weekOfMonth>\d\d)$"),
+                    new Regex(@"^XXXX-(?<month>\d\d)-WXX-(?<weekOfMonth>\d{1,2})$"),
                     new Regex(@"^XXXX-(?<month>\d\d)-WXX-(?<weekOfMonth>\d)-(?<dayOfWeek>\d)$"),
                 }
             },
