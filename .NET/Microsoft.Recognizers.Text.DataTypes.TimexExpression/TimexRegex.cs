@@ -16,6 +16,9 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     // date
                     new Regex(@"^(?<year>\d\d\d\d)-(?<month>\d\d)-(?<dayOfMonth>\d\d)$"),
                     new Regex(@"^XXXX-WXX-(?<dayOfWeek>\d)$"),
+                    new Regex(@"^XXXX-WXX-(?<dayOfWeek>\d)T(?<hour>\d\d)$"),
+                    new Regex(@"^XXXX-WXX-(?<dayOfWeek>\d)T(?<hour>\d\d):(?<minute>\d\d)$"),
+                    new Regex(@"^XXXX-WXX-(?<dayOfWeek>\d)T(?<hour>\d\d):(?<minute>\d\d):(?<second>\d\d)$"),
                     new Regex(@"^XXXX-(?<month>\d\d)-(?<dayOfMonth>\d\d)$"),
 
                     // daterange
