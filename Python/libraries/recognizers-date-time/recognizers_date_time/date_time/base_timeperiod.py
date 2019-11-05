@@ -10,8 +10,9 @@ from recognizers_date_time.date_time.base_time import BaseTimeExtractor, BaseTim
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, get_tokens_from_regex, DateTimeResolutionResult,\
-    DateTimeUtilityConfiguration, DateTimeFormatUtil, ResolutionStartEnd, DateTimeOptionsConfiguration, DateTimeOptions
+from .utilities import Token, merge_all_tokens, get_tokens_from_regex, DateTimeResolutionResult, \
+    DateTimeUtilityConfiguration, DateTimeFormatUtil, ResolutionStartEnd, DateTimeOptionsConfiguration, DateTimeOptions, \
+    RegexExtension
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
@@ -129,6 +130,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
             if matches:
                 for match in matches:
 
+                    # Cases like "from 10:30 to 11", don't necessarily need "am/pm"
                     if RegExpUtility.get_group(match, Constants.MINUTE_GROUP_NAME) or\
                             RegExpUtility.get_group(match, Constants.SECOND_GROUP_NAME):
 
@@ -218,8 +220,8 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                     break
                 # check connector string
                 middle = source[num_end:time_extract_results[j].start]
-                match = regex.search(self.config.till_regex, middle)
-                if match is not None or self.config.is_connector_token(middle.strip()):
+                if RegexExtension.is_exact_match(self.config.till_regex, middle, True) or\
+                        self.config.is_connector_token(middle.strip()):
                     time_numbers.append(num_extract_results[i])
                 i += 1
 
