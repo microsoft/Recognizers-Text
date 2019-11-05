@@ -647,6 +647,7 @@ DayOfWeek: !dictionary
     jueves: 4
     viernes: 5
     sabado: 6
+    sábado: 6
     domingo: 0
     lu: 1
     ma: 2

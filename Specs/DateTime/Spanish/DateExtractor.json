@@ -363,6 +363,17 @@
     ]
   },
   {
+    "Input": "Volveré el sábado",
+    "Results": [
+      {
+        "Text": "sábado",
+        "Type": "date",
+        "Start": 11,
+        "Length": 6
+      }
+    ]
+  },
+  {
     "Input": "Volvere hoy",
     "Results": [
       {
