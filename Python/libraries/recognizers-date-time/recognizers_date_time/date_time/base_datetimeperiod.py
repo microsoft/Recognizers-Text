@@ -338,7 +338,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                     group = RegExpUtility.get_group_list(match, Constants.TIME_OF_DAY_GROUP_NAME)
                     # TODO: + 1 has to be the index of the matching regex in the group
                     end = extracted_result.start + extracted_result.length + len(
-                          RegExpUtility.get_group(match, Constants.TIME_OF_DAY_GROUP_NAME)) + 1
+                        RegExpUtility.get_group(match, Constants.TIME_OF_DAY_GROUP_NAME)) + 1
 
                     tokens.append(Token(start, end))
                     break
