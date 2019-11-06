@@ -1,11 +1,12 @@
-using System;
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 using System.Collections.Generic;
-using System.Text;
 using System.Text.RegularExpressions;
 
-namespace ChitChattr.BotFramework.Recognizers
+namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
-    public static class TimexRegex2
+    public static class TimexRegex
     {
         const string DateTimeCollectionName = "datetime";
         const string DateCollectionName = "date";
