@@ -456,6 +456,20 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         public void DataTypes_Resolver_DateTime_Nov_6_at_11_45_25()
         {
             var today = new System.DateTime(2017, 9, 28, 15, 30, 0);
+            var resolution = TimexResolver.Resolve(new[] { "2019-11-06T11:45:25" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("2019-11-06T11:45:25", resolution.Values[0].Timex);
+            Assert.AreEqual("datetime", resolution.Values[0].Type);
+            Assert.AreEqual("2019-11-06 11:45:25", resolution.Values[0].Value);
+            Assert.IsNull(resolution.Values[0].Start);
+            Assert.IsNull(resolution.Values[0].End);
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_DateTime_Nov_6_at_11_45_25_UTC()
+        {
+            var today = new System.DateTime(2017, 9, 28, 15, 30, 0);
             var resolution = TimexResolver.Resolve(new[] { "2019-11-06T11:45:25Z" }, today);
             Assert.AreEqual(1, resolution.Values.Count);
 
