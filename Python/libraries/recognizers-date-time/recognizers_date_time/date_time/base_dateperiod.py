@@ -707,7 +707,6 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                                     self.config.within_next_prefix_regex,
                                     extraction_result)
                                 )
-
         return result
 
     def is_ago_relative_duration_date(self, er: ExtractResult):
@@ -715,18 +714,14 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
     # Cases like "2 days from today", "2 weeks before yesterday", "3 months after tomorrow"
     def is_relative_duration_date(self, er: ExtractResult):
-
         is_ago = regex.search(self.config.ago_regex, er.text)
         is_later = regex.search(self.config.later_regex, er.text)
-
         return is_ago or is_later
 
     def is_date_relative_to_now_or_today(self, er: ExtractResult):
         for flag_word in self.config.duration_date_restrictions:
-
             if flag_word in er.text:
                 return True
-
         return False
 
     @staticmethod
@@ -977,7 +972,6 @@ class DatePeriodParserConfiguration(ABC):
         raise NotImplementedError
 
 
-
 class BaseDatePeriodParser(DateTimeParser):
     @property
     def parser_type_name(self) -> str:
@@ -1136,12 +1130,12 @@ class BaseDatePeriodParser(DateTimeParser):
             inner_result = self.__parse_month_of_date(text, reference_date)
 
         if not inner_result.success:
-            # TODO: Complete definition for __parse_decade: in progress
+            # TODO: Complete definition for __parse_decade
             inner_result = self.__parse_decade(text, reference_date)
 
         # Cases like "within/less than/more than x weeks from/before/after today"
         if not inner_result.success:
-            # TODO: Complete definition  for __parse_date_point_with_ago_and_later
+            # TODO: Complete definition for __parse_date_point_with_ago_and_later
             inner_result = self.__parse_date_point_with_ago_and_later(text, reference_date)
 
         if not inner_result.success:
@@ -1935,7 +1929,6 @@ class BaseDatePeriodParser(DateTimeParser):
         ret = self.config.date_extractor.extract(source, reference)
 
         return None
-
 
     def __parse_quarter(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
