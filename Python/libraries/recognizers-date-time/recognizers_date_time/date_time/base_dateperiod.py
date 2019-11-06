@@ -977,6 +977,7 @@ class DatePeriodParserConfiguration(ABC):
         raise NotImplementedError
 
 
+
 class BaseDatePeriodParser(DateTimeParser):
     @property
     def parser_type_name(self) -> str:
@@ -999,12 +1000,12 @@ class BaseDatePeriodParser(DateTimeParser):
         if year_match_for_end_date.success and len(year_match_for_end_date) == len(end_date_str):
             is_end_date_pure_year = True
 
-        relative_match_for_start_date = config.RelativeRegex.Match(start_date_str)
-        relative_match_for_end_date = config.RelativeRegex.Match(end_date_str)
+        relative_match_for_start_date = config.relative_regex.match(start_date_str)
+        relative_match_for_end_date = config.relative_regex.match(end_date_str)
         is_date_relative = relative_match_for_start_date.success or relative_match_for_end_date.success
 
         if not is_end_date_pure_year and not is_date_relative:
-            for match in config.YearRegex.Matches(text):
+            for match in config.year_regex.match(text):
                 year = config.date_extractor.get_year_from_text(match)
 
                 if year != Constants.INVALID_YEAR:
@@ -1140,7 +1141,7 @@ class BaseDatePeriodParser(DateTimeParser):
 
         # Cases like "within/less than/more than x weeks from/before/after today"
         if not inner_result.success:
-            # TODO: Add definition for __parse_date_point_with_ago_and_later
+            # TODO: Complete definition  for __parse_date_point_with_ago_and_later
             inner_result = self.__parse_date_point_with_ago_and_later(text, reference_date)
 
         if not inner_result.success:
@@ -1912,12 +1913,29 @@ class BaseDatePeriodParser(DateTimeParser):
 
         if match.success:
             # TODO: see about the value property and equivalents
-            decade_str = match.groups("decade").value
-
+            decade_str = match.group("decade").value
             decade = int(decade_str)
+
+            if not DateUtils.int_try_parse(decade_str)[1]:
+
+                if decade_str in self.config.written_decades:
+                    decade = self.config.written_decades[decade_str]
+                else:
+                    if decade_str in self.config.special_decade_cases:
+                        first_two_number_of_year = self.config.special_decade_cases[decade_str] / 100
+                        decade = self.config.special_decade_cases[decade_str] % 100
+                        inputCentury = True
 
         # TODO: continue here the implementation.
         return ret
+
+    # Only handle cases like "within/less than/more than x weeks from/before/after today"
+    def __parse_date_point_with_ago_and_later(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+        ret = DateTimeResolutionResult()
+        ret = self.config.date_extractor.extract(source, reference)
+
+        return None
+
 
     def __parse_quarter(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()

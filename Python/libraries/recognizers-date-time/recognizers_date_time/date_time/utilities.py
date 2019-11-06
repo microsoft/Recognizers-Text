@@ -17,7 +17,6 @@ from recognizers_date_time.date_time.parsers import DateTimeParser, DateTimePars
 from recognizers_text.matcher.string_matcher import StringMatcher, MatchResult
 
 
-
 class TimeZoneUtility:
 
     @staticmethod
@@ -414,6 +413,13 @@ class DayOfWeek(IntEnum):
 
 class DateUtils:
     min_value = datetime(1, 1, 1, 0, 0, 0, 0)
+
+    @staticmethod
+    def int_try_parse(value):
+        try:
+            return int(value), True
+        except ValueError:
+            return value, False
 
     @staticmethod
     def safe_create_from_value(seed: datetime, year: int, month: int, day: int,
