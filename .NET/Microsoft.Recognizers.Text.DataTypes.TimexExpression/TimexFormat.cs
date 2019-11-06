@@ -173,7 +173,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (timex.Month != null && timex.WeekOfMonth != null)
             {
-                return $"XXXX-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-WXX-{timex.WeekOfMonth}";
+                // return $"XXXX-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-WXX-{timex.WeekOfMonth}";
+                return $"XXXX-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-W{timex.WeekOfMonth?.ToString("D2")}";
             }
 
             if (timex.Month != null)

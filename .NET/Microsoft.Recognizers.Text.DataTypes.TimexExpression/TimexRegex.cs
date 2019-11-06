@@ -8,42 +8,48 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     public static class TimexRegex
     {
+        private const string DateTimeCollectionName = "datetime";
+        private const string DateCollectionName = "date";
+        private const string TimeCollectionName = "time";
+        private const string PeriodCollectionName = "period";
+
         private static IDictionary<string, Regex[]> timexRegex = new Dictionary<string, Regex[]>
         {
             {
-                "date", new Regex[]
+                DateCollectionName, new Regex[]
                 {
                     // date
-                    new Regex(@"^(?<year>\d\d\d\d)-(?<month>\d\d)-(?<dayOfMonth>\d\d)$"),
-                    new Regex(@"^XXXX-WXX-(?<dayOfWeek>\d)$"),
-                    new Regex(@"^XXXX-(?<month>\d\d)-(?<dayOfMonth>\d\d)$"),
+                    new Regex(@"^(?<year>\d\d\d\d)-(?<month>\d\d)-(?<dayOfMonth>\d\d)"),
+                    new Regex(@"^XXXX-WXX-(?<dayOfWeek>\d)"),
+                    new Regex(@"^XXXX-(?<month>\d\d)-(?<dayOfMonth>\d\d)"),
 
                     // daterange
-                    new Regex(@"^(?<year>\d\d\d\d)$"),
-                    new Regex(@"^(?<year>\d\d\d\d)-(?<month>\d\d)$"),
-                    new Regex(@"^(?<season>SP|SU|FA|WI)$"),
-                    new Regex(@"^(?<year>\d\d\d\d)-(?<season>SP|SU|FA|WI)$"),
-                    new Regex(@"^(?<year>\d\d\d\d)-W(?<weekOfYear>\d\d)$"),
-                    new Regex(@"^(?<year>\d\d\d\d)-W(?<weekOfYear>\d\d)-(?<weekend>WE)$"),
-                    new Regex(@"^XXXX-(?<month>\d\d)$"),
-                    new Regex(@"^XXXX-(?<month>\d\d)-W(?<weekOfMonth>\d\d)$"),
-                    new Regex(@"^XXXX-(?<month>\d\d)-WXX-(?<weekOfMonth>\d)-(?<dayOfWeek>\d)$"),
+                    new Regex(@"^(?<year>\d\d\d\d)"),
+                    new Regex(@"^(?<year>\d\d\d\d)-(?<month>\d\d)"),
+                    new Regex(@"^(?<season>SP|SU|FA|WI)"),
+                    new Regex(@"^(?<year>\d\d\d\d)-(?<season>SP|SU|FA|WI)"),
+                    new Regex(@"^(?<year>\d\d\d\d)-W(?<weekOfYear>\d\d)"),
+                    new Regex(@"^(?<year>\d\d\d\d)-W(?<weekOfYear>\d\d)-(?<weekend>WE)"),
+                    new Regex(@"^XXXX-(?<month>\d\d)"),
+                    new Regex(@"^XXXX-(?<month>\d\d)-W(?<weekOfMonth>\d\d)"),
+                    new Regex(@"^XXXX-(?<month>\d\d)-WXX-(?<weekOfMonth>\d{1,2})"),
+                    new Regex(@"^XXXX-(?<month>\d\d)-WXX-(?<weekOfMonth>\d)-(?<dayOfWeek>\d)"),
                 }
             },
             {
-                "time", new Regex[]
+                TimeCollectionName, new Regex[]
                 {
                     // time
-                    new Regex(@"^T(?<hour>\d\d)$"),
-                    new Regex(@"^T(?<hour>\d\d):(?<minute>\d\d)$"),
-                    new Regex(@"^T(?<hour>\d\d):(?<minute>\d\d):(?<second>\d\d)$"),
+                    new Regex(@"T(?<hour>\d\d)$"),
+                    new Regex(@"T(?<hour>\d\d):(?<minute>\d\d)$"),
+                    new Regex(@"T(?<hour>\d\d):(?<minute>\d\d):(?<second>\d\d)$"),
 
                     // timerange
                     new Regex(@"^T(?<partOfDay>DT|NI|MO|AF|EV)$"),
                 }
             },
             {
-                "period", new Regex[]
+                PeriodCollectionName, new Regex[]
                 {
                     new Regex(@"^P(?<amount>\d*\.?\d+)(?<dateUnit>Y|M|W|D)$"),
                     new Regex(@"^PT(?<amount>\d*\.?\d+)(?<timeUnit>H|M|S)$"),
@@ -53,15 +59,32 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         public static bool Extract(string name, string timex, IDictionary<string, string> result)
         {
-            foreach (var entry in timexRegex[name])
+            var lowerName = name.ToLower();
+            var nameGroup = new string[lowerName == DateTimeCollectionName ? 2 : 1];
+
+            if (lowerName == DateTimeCollectionName)
             {
-                if (TryExtract(entry, timex, result))
+                nameGroup[0] = DateCollectionName;
+                nameGroup[1] = TimeCollectionName;
+            }
+            else
+            {
+                nameGroup[0] = lowerName;
+            }
+
+            var anyTrue = false;
+            foreach (var nameItem in nameGroup)
+            {
+                foreach (var entry in timexRegex[nameItem])
                 {
-                    return true;
+                    if (TryExtract(entry, timex, result))
+                    {
+                        anyTrue = true;
+                    }
                 }
             }
 
-            return false;
+            return anyTrue;
         }
 
         private static bool TryExtract(Regex regex, string timex, IDictionary<string, string> result)
