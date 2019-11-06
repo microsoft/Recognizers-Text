@@ -314,6 +314,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
     def match_time_of_day(self, source: str, reference: datetime, date_extract_results: [ExtractResult] = None):
         tokens = []
+        result = []
 
         matches = list(regex.finditer(self.config.specific_time_of_day_regex, source))
         for match in matches:
@@ -324,36 +325,40 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             return tokens
 
         for extracted_result in date_extract_results:
-            end = extracted_result.end
             after_str = source[extracted_result.start + extracted_result.length:]
 
-            match = self.config.period_time_of_day_with_date_regex.match(after_str)
+            match = regex.search(self.config.period_time_of_day_with_date_regex, after_str)
 
             if match:
                 # For cases like "Friday afternoon between 1PM and 4PM" which "Friday afternoon" need to be
                 # extracted first
-                if not after_str[0:match.start()]:
+                match_start = match.start()
+                if not after_str[0:match.start()] or after_str[0:match.start()].isspace():
                     start = extracted_result.start
-                    end = extracted_result.end + match.group(Constants.TIME_OF_DAY_GROUP_NAME).index + \
-                        len(match.group(Constants.TIME_OF_DAY_GROUP_NAME))
+                    group = RegExpUtility.get_group_list(match, Constants.TIME_OF_DAY_GROUP_NAME)
+                    # TODO: + 1 has to be the index of the matching regex in the group
+                    end = extracted_result.start + extracted_result.length + len(
+                          RegExpUtility.get_group(match, Constants.TIME_OF_DAY_GROUP_NAME)) + 1
+
                     tokens.append(Token(start, end))
                     break
 
                 connector_str = after_str[0:match.start()]
 
                 # Trim here is set to false as the Regex might catch white spaces before or after the text
-                if RegexExtension.is_exact_match(self.config.middle_pause_regex, connector_str, True):
+                if RegexExtension.is_exact_match(self.config.middle_pause_regex, connector_str, False):
                     suffix = after_str[match.end():].strip()
 
-                    ending_match = self.config.general_ending_regex.match(suffix)
+                    ending_match = regex.search(self.config.general_ending_regex, suffix)
                     if ending_match:
-                        tokens.append(Token(extracted_result.start, extracted_result.end + match.end()))
+                        tokens.append(Token(extracted_result.start, extracted_result.start +
+                                            extracted_result.length + match.end()))
 
             if not match:
-                match = self.config.am_desc_regex.match(after_str)
+                match = regex.search(self.config.am_desc_regex, after_str)
 
             if not match or after_str[0:match.start()]:
-                match = self.config.pm_desc_regex.match(after_str)
+                match = regex.search(self.config.pm_desc_regex, after_str)
 
             if match:
                 if not after_str[0:match.start()]:
@@ -361,24 +366,27 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
             prefix_str = source[0: extracted_result.start]
 
-            match = self.config.period_time_of_day_with_date_regex.match(prefix_str)
+            match = regex.search(self.config.period_time_of_day_with_date_regex, prefix_str)
             if match:
-                if not prefix_str[match.end()]:
-                    mid_str = source[match.end(): extracted_result.start - match.end()]
-                    if mid_str:
-                        tokens.append(Token(match.start(), extracted_result.end))
+                if not prefix_str[match.end():] or prefix_str[match.end():].isspace():
+                    mid_str = source[match.end(): extracted_result.start]
+                    if mid_str and mid_str.isspace():
+                        tokens.append(Token(match.start(), extracted_result.start + extracted_result.length))
+                        m_start = match.start()
                 else:
                     connector_str = prefix_str[match.end():]
 
                     # Trim here is set to false as the Regex might catch white spaces before or after the text
-                    if RegexExtension.is_exact_match(self.config.middle_pause_regex, connector_str, True):
-                        suffix = source[extracted_result.end:]
+                    if RegexExtension.is_exact_match(self.config.middle_pause_regex, connector_str, False):
+                        suffix = source[extracted_result.start + extracted_result.length:].strip(' ')
                         ending_match = self.config.general_ending_regex.match(suffix)
                         if ending_match:
-                            tokens.append(Token(match.start(), extracted_result.end))
+                            tokens.append(Token(match.start(), extracted_result.start + extracted_result.length))
+
+        result = list(tokens)
 
         # Check whether there are adjacent time period strings, before or after
-        for token in tokens:
+        for token in result:
             # Try to extract a time period in before-string
             if token.start > 0:
                 before_str = source[0:token.start]
@@ -393,7 +401,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
             # Try to extract a time period in after-string
             if token.end <= len(source):
-                after_str = source[token.end:]
+                after_str = source[token.start + token.length:]
                 if after_str:
                     time_extract_results = self.config.time_period_extractor.extract(after_str)
                     if len(time_extract_results) > 0:
