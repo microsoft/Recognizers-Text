@@ -40,9 +40,9 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 TimeCollectionName, new Regex[]
                 {
                     // time
-                    new Regex(@"T(?<hour>\d\d)$"),
-                    new Regex(@"T(?<hour>\d\d):(?<minute>\d\d)$"),
-                    new Regex(@"T(?<hour>\d\d):(?<minute>\d\d):(?<second>\d\d)$"),
+                    new Regex(@"T(?<hour>\d\d)Z?$"),
+                    new Regex(@"T(?<hour>\d\d):(?<minute>\d\d)Z?$"),
+                    new Regex(@"T(?<hour>\d\d):(?<minute>\d\d):(?<second>\d\d)Z?$"),
 
                     // timerange
                     new Regex(@"^T(?<partOfDay>DT|NI|MO|AF|EV)$"),
