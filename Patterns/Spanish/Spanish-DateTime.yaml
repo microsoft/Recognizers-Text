@@ -681,6 +681,7 @@ MonthOfYear: !dictionary
     'jul': 7
     'ago': 8
     'sept': 9
+    'sep': 9
     'set': 9
     'oct': 10
     'nov': 11
