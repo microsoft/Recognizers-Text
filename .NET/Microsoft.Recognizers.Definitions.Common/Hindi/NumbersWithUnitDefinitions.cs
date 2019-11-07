@@ -734,18 +734,18 @@ namespace Microsoft.Recognizers.Definitions.Hindi
         };
       public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
         {
-            { @"F", @"degrees fahrenheit|degree fahrenheit|deg fahrenheit|degs fahrenheit|fahrenheit|°f|degrees farenheit|degree farenheit|deg farenheit|degs farenheit|degrees f|degree f|deg f|degs f|farenheit|f" },
-            { @"K", @"k|K|kelvin" },
-            { @"R", @"rankine|°r" },
-            { @"D", @"delisle|°de" },
-            { @"C", @"degrees celsius|degree celsius|deg celsius|degs celsius|celsius|degrees celcius|degree celcius|celcius|deg celcius|degs celcius|degrees centigrade|degree centigrade|centigrade|degrees centigrate|degree centigrate|degs centigrate|deg centigrate|centigrate|degrees c|degree c|deg c|degs c|°c|c" },
-            { @"Degree", @"degree|degrees|deg.|deg|°" }
+            { @"F", @"degree fahrenheit|degrees fahrenheit|fahrenheit|डिग्रीज़ फ़ॉरेनहाइट|डिग्री फ़ॉरेनहाइट|डि. फ़ॉरेनहाइट|फ़ॉरेनहाइट|°फ़ॉ|डिग्रीज़ फ़ॉ.|डिग्री फ़ॉ.|डि. फ़ॉ.|फ़ॉ." },
+            { @"K", @"kelvin|के.|केल्विन" },
+            { @"R", @"renkine|रैंकिन" },
+            { @"D", @"delisle|डेलील" },
+            { @"C", @"degree celsius|degrees celsius|celsius|डिग्रीज़ सेल्सियस|डिग्री सेल्सियस|डि. सेल्सियस|सेल्सियस|डिग्रीज़ सेल्सयस|डिग्री सेल्सयस|सेल्सयस|डि. सेल्सयस|डिग्रीज़ सेंटिग्रेड|डिग्री सेंटिग्रेड|सेंटिग्रेड|डिग्रीज़ सेंटिग्रेट|डिग्री सेंटिग्रेट|डि. सेंटिग्रेट|सेंटिग्रेट|डिग्रीज़ से.|डिग्री से.|डि. से.|°से|से." },
+            { @"Degree", @"degrees|degree|डिग्री|डिग्रीज़|डि.|डि|°" }
         };
       public static readonly IList<string> AmbiguousTemperatureUnitList = new List<string>
         {
-            @"c",
-            @"f",
-            @"k"
+            @"से.",
+            @"फ़ॉ.",
+            @"के."
         };
       public static readonly Dictionary<string, string> VolumeSuffixList = new Dictionary<string, string>
         {
