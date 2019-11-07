@@ -122,7 +122,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
         return ret
 
     def match_simple_cases(self, source: str) -> List[Token]:
-        result: List[Token] = list()
+        result = []
 
         for regexp in self.config.simple_cases_regex:
             matches = regex.finditer(regexp, source)

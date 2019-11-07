@@ -335,10 +335,9 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                 match_start = match.start()
                 if not after_str[0:match.start()] or after_str[0:match.start()].isspace():
                     start = extracted_result.start
-                    group = RegExpUtility.get_group_list(match, Constants.TIME_OF_DAY_GROUP_NAME)
-                    # TODO: + 1 has to be the index of the matching regex in the group
                     end = extracted_result.start + extracted_result.length + len(
-                        RegExpUtility.get_group(match, Constants.TIME_OF_DAY_GROUP_NAME)) + 1
+                        RegExpUtility.get_group(match, Constants.TIME_OF_DAY_GROUP_NAME)) + \
+                        match.start(Constants.TIME_OF_DAY_GROUP_NAME)
 
                     tokens.append(Token(start, end))
                     break
@@ -452,7 +451,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                               time_ers: [ExtractResult]) -> List[Token]:
         tokens = []
         ers_datetime = self.config.single_date_time_extractor.extract(source, reference)
-        time_points: List[ExtractResult] = list()
+        time_points = []
 
         # Handle the overlap problem
         j = 0
