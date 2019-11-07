@@ -759,7 +759,7 @@
     "Input": "-५ डिग्री फ़ॉरेनहाइट",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
-    "Comment":  "Devanagari Script",
+    "Comment": "Devanagari Script",
     "Results": [
       {
         "Text": "-५ डिग्री फ़ॉरेनहाइट",
