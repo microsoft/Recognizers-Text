@@ -16,7 +16,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             this.CardinalNumberMap = ImmutableDictionary<string, long>.Empty;
             this.OrdinalNumberMap = ImmutableDictionary<string, long>.Empty;
             this.RoundNumberMap = ImmutableDictionary<string, long>.Empty;
-            this.HindiDecimalUnitsList = ImmutableDictionary<string, double>.Empty;
             this.DigitalNumberRegex = new Regex(
                 @"((?<=\b)(hundred|thousand|million|billion|trillion|dozen(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))", RegexOptions.Singleline);
         }
@@ -34,8 +33,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         public ImmutableDictionary<string, long> OrdinalNumberMap { get; }
 
         public ImmutableDictionary<string, long> RoundNumberMap { get; }
-
-        public ImmutableDictionary<string, double> HindiDecimalUnitsList { get; }
 
         public CultureInfo CultureInfo { get; }
 
@@ -78,11 +75,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         }
 
         public long ResolveCompositeNumber(string numberStr)
-        {
-            throw new NotImplementedException();
-        }
-
-        public double ResolveUnitCompositeNumber(string numberStr)
         {
             throw new NotImplementedException();
         }
