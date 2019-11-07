@@ -1,6 +1,7 @@
 [
   {
     "Input": "जब वह पांच वर्ष की थी, उसने बाइक चलाना सीख लिया था।",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -17,6 +18,7 @@
   },
   {
     "Input": "यह कहानी दस साल पुरानी है।",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -33,6 +35,7 @@
   },
   {
     "Input": "मैं केवल 29 साल का हूं!",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -49,6 +52,7 @@
   },
   {
     "Input": "अब, पंचानबे साल की आयु के बाद, नजरिया बदल जाता है।",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -65,6 +69,7 @@
   },
   {
     "Input": "चीन की दीवार 500 साल से ज़्यादा पुरानी है और 5,000 मील से ज़्यादा लंबी है।",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -81,6 +86,7 @@
   },
   {
     "Input": "उनकी उमर 60 साल है; वह 4 मई, 1945 में पैदा हुई थीं।",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -97,6 +103,7 @@
   },
   {
     "Input": "करीबन 3 साल की उमर तक 25% मामलों का पता नहीं चलता है।",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -113,6 +120,7 @@
   },
   {
     "Input": "उस एक साल पुराने वादे को पूरा करने का दबाव कब आएगा?",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -129,6 +137,7 @@
   },
   {
     "Input": "यह तब हुआ था जब बच्चा केवल दस महीने का था.",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -145,6 +154,7 @@
   },
   {
     "Input": "समिति प्रस्ताव 8 महीने पहले की है।",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -161,6 +171,7 @@
   },
   {
     "Input": "लगभग 50% मामलों का पता अठारह महीने की उम्र में लग जाता है।",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -177,6 +188,7 @@
   },
   {
     "Input": "यह संभव है, लेकिन 2006 में उनमें से 95% तीन महीने से कम उम्र के थे।",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -193,6 +205,7 @@
   },
   {
     "Input": "यदि हम दिसंबर में आगे बढ़ते हैं, तो यह तीन हफ़्ते पुरानी होगी।",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -209,6 +222,7 @@
   },
   {
     "Input": "6 हफ़्ते की उम्र में, कोई क्रिसमस मना सकता है।",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -225,6 +239,7 @@
   },
   {
     "Input": "उपभोग की कोई 90 दिन पुरानी बिल के लिए बहुत देर हो चुकी होती है।",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -241,6 +256,7 @@
   },
   {
     "Input": "वह लगभग 40 - 50 साल का है।",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -258,6 +274,7 @@
   {
     "Input": "वह करीब फोर्टी-फ़िफ़्टी यर्स के हैं",
     "Comment": "Code-mixed for when the value as well as the unit retains pronounciation from English, but is transliterated to Devanagari.",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -275,6 +292,7 @@
   {
     "Input": "यह बच्चा केवल सिक्स वीक्स का था",
     "Comment": "Code-mixed for when the value as well as the unit retains pronounciation from English, but is transliterated to Devanagari.",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -293,6 +311,7 @@
   {
     "Input": "वह करीब forty-fifty years के हैं",
     "Comment": "Code-mixed for when all words except the numeric value and it's unit are in Devanagari, and the rest in Roman.",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -310,6 +329,7 @@
   {
     "Input": "यह बच्चा केवल six weeks का था",
     "Comment": "Code-mixed for when both the age as well as unit is in Roman script, and the other words are in Devanagari",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -327,6 +347,7 @@
   {
     "Input": "मैं केवल twenty nine year का हूं",
     "Comment": "Code-mixed for when both Devanagari and Roman scripts are used (numeric value and unit in Roman, and the rest in Devanagari).",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
