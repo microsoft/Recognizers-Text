@@ -2279,10 +2279,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10/1'den 11/07",
+        "Text": "10/1'den 11/07'ye",
         "Type": "daterange",
         "Start": 0,
-        "Length": 14
+        "Length": 17
       }
     ]
   }

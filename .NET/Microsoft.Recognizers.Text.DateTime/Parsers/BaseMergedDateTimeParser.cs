@@ -282,33 +282,33 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var equalMatch = Config.EqualRegex.MatchBegin(er.Text, trim: true);
 
                 // check also after match
-                if (this.Config.CheckBothBeforeAfter)
+                if (this.Config.CheckBothBeforeAfter && er.Data != null && er.Data.Equals(Constants.HAS_MOD))
                 {
-                    if (!beforeMatch.Success && !er.Type.EndsWith("datetimerange"))
+                    if (!beforeMatch.Success)
                     {
                         beforeMatch = Config.BeforeRegex.MatchEnd(er.Text, trim: true);
                         matchIsAfter = matchIsAfter || beforeMatch.Success;
                     }
 
-                    if (!afterMatch.Success && !er.Type.EndsWith("datetimerange"))
+                    if (!afterMatch.Success)
                     {
                         afterMatch = Config.AfterRegex.MatchEnd(er.Text, trim: true);
                         matchIsAfter = matchIsAfter || afterMatch.Success;
                     }
 
-                    if (!sinceMatch.Success && !er.Type.EndsWith("datetimerange"))
+                    if (!sinceMatch.Success)
                     {
                         sinceMatch = Config.SinceRegex.MatchEnd(er.Text, trim: true);
                         matchIsAfter = matchIsAfter || sinceMatch.Success;
                     }
 
-                    if (!aroundMatch.Success && !er.Type.EndsWith("time"))
+                    if (!aroundMatch.Success)
                     {
                         aroundMatch = Config.AroundRegex.MatchEnd(er.Text, trim: true);
                         matchIsAfter = matchIsAfter || aroundMatch.Success;
                     }
 
-                    if (!equalMatch.Success && !er.Type.EndsWith("time"))
+                    if (!equalMatch.Success)
                     {
                         equalMatch = Config.EqualRegex.MatchEnd(er.Text, trim: true);
                         matchIsAfter = matchIsAfter || equalMatch.Success;

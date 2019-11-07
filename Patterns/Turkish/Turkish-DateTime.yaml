@@ -1,11 +1,14 @@
 ---
 CheckBothBeforeAfter: !bool true
-TillRegex: !simpleRegex
-  def: (?<till>\b(kadar|dek\b|değin)|-|—|——|–)
-TillConnectorRegex: !simpleRegex
-  def: (?<till>('?tan|'?ten|'?den|'?dan)\b|-|—|——|–)
-RangeConnectorRegex : !simpleRegex
-  def: (?<and>(ile|ila|yle|'le|'la|'?tan|'?ten|(günün|'|n)?den|'?dan|ve)\b|(-|—|——|–))
+TillRegex: !nestedRegex
+  def: (?<till>\b(kadar|dek\b|değin)|{BaseDateTime.RangeConnectorSymbolRegex})
+  references: [ BaseDateTime.RangeConnectorSymbolRegex ]
+TillConnectorRegex: !nestedRegex
+  def: (?<till>('?tan|'?ten|'?den|'?dan)\b|{BaseDateTime.RangeConnectorSymbolRegex})
+  references: [ BaseDateTime.RangeConnectorSymbolRegex ]
+RangeConnectorRegex : !nestedRegex
+  def: (?<and>(ile|ila|yle|'le|'la|'?tan|'?ten|(günün|'|n)?den|'?dan|ve)\b|{BaseDateTime.RangeConnectorSymbolRegex})
+  references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 RelativeRegex: !simpleRegex
   def: (?<order>ertesi|(bir\s+)?sonraki|gelecek|bu|geçen|son|geçtiğimiz|(bir\s+)?önceki|evvelki|önümüzdeki|o(?=\s+gün))
 StrictRelativeRegex: !simpleRegex
@@ -101,13 +104,13 @@ WeekDayRegex: !simpleRegex
 SingleWeekDayRegex: !simpleRegex
   def: \b(?<weekday>pazartesi|salı|çarşamba|perşembe|cuma|cumartesi|pazar|pzt|sal|çrş|per|cum|cmt|paz)\b
 MonthRegex: !nestedRegex
-  def: \b(?<month>ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|(?<!(arasındaki|kadarki)\s+)aralık(?!\s+{YearRegex}(den|dan))|oca|şub|mar|nis|may|haz|eyl|eki|kas|ara(?=\b))
+  def: \b(?<month>ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|(?<!(arasındaki|kadarki)\s+)aralık(?!\s+{YearRegex}(den|dan))|oca|şub|mar|nis|may|haz|eyl|eki|kas|(?<=\d\s+)ara(?=\s+\d))
   references: [ YearRegex ]
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>{RelativeRegex}\s+(ayın|ay))\b
   references: [RelativeRegex]
 WrittenMonthRegex: !nestedRegex
-  def: (?<month>ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|(?<!(arasındaki|kadarki)\s+)aralık(?!\s+{YearRegex}(den|dan))|oca|şub|mar|nis|may|haz|eyl|eki|kas|ara(?=\b))(\s+ayı)?
+  def: (?<month>ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|(?<!(arasındaki|kadarki)\s+)aralık(?!\s+{YearRegex}(den|dan))|oca|şub|mar|nis|may|haz|eyl|eki|kas|(?<=\d\s+)ara(?=\s+\d))(\s+ayı)?
   references: [ YearRegex ]
 MonthSuffixRegex: !nestedRegex
   def: (?<msuf>((?<!\d+)((ocak|şubat|mart|mayıs|ağustos|aralık)(ta)|(nisan|haziran|temmuz|kasım)(da)|(eylül|ekim)(de))|{WrittenMonthRegex}(\sayında)|{RelativeRegex}\sayda))
@@ -128,7 +131,7 @@ DateUnitRegex: !simpleRegex
 DateTokenPrefix: ''
 TimeTokenPrefix: ''
 TokenBeforeDate: ''
-TokenListBeforeDate: '''de|''da|''te|''ta'
+TokenListBeforeDate: '''de|''da|''te|''ta|nda|nde'
 TokenBeforeTime: ''
 HalfTokenRegex: !simpleRegex
   def: \b(buçuk|buçuğa)$
@@ -149,7 +152,7 @@ BetweenRegex: !nestedRegex
   def: \b(({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+({WrittenMonthRegex}|{RelativeMonthRegex})((\s+|\s*,\s*){YearRegex})?(\s*{RangePrefixRegex})?|({MonthPossessiveSuffixRegex},?\s+)({YearRegex}\s+)?)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})(\s*{RangePrefixRegex})?\b
   references: [ DayRegex, RangeConnectorRegex, WrittenMonthRegex, YearRegex, RangePrefixRegex, MonthPossessiveSuffixRegex, RelativeMonthRegex ]
 MonthWithYear: !nestedRegex
-  def: \b(({WrittenMonthRegex}(\s+|,?\s*){YearRegex}(?!den|dan))|({RelativeRegex}\s+(yıl|sene)|({RelativeRegex}\s+)?{YearRegex}(in|nin|ün|nın|un)?|seneye)(\s*,)?\s+{WrittenMonthRegex}(\s+ayı(?=nda)|(?='(ta|da|de)\b)|\b))
+  def: \b(({WrittenMonthRegex}(\s+|,?\s*){YearRegex}('y?[ae])?(?!den|dan))|({RelativeRegex}\s+(yıl|sene)|({RelativeRegex}\s+)?{YearRegex}(in|nin|ün|nın|un)?|seneye)(\s*,)?\s+{WrittenMonthRegex}(\s+ayı(?=nda)|(?='(ta|da|de)\b)|\b))
   references: [ WrittenMonthRegex, YearRegex, RelativeRegex ]
 OneWordPeriodRegex: !nestedRegex
   def: \b({AfterNextSuffixRegex}|({RelativeRegex}\s+)?{WrittenMonthRegex}(\s+ayı(?=nda)|\b)|({NextPrefixRegex}\s+)?{WrittenMonthRegex}|(ayın|sene) başından\s+beri|((({RelativeRegex}\s+)(benim\s+)?|benim\s+|(?<!\d+\s+))(ay(ı[mn])?|yıl(ı[mn])?|hafta\s+sonum?|haftam?|haftasında|haftanın)|hafta\s+sonum?|haftasında|haftaya)\b|(hafta|yıl|ay)(?=daki)|bugüne\s+kadarki\s+yıl)(?!\s+içinde)
@@ -158,7 +161,7 @@ MonthNumWithYear: !nestedRegex
   def: \b(({MonthNumRegex}(\s*)[/\-\.](\s*){BaseDateTime.FourDigitYearRegex})\b|({BaseDateTime.FourDigitYearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})\b|({BaseDateTime.FourDigitYearRegex}('(nın|in|ün|nın|ın|un))\s+(?<month>([1258]|10|11|12)('inci|\.)|[34]('üncü|\.)|6('ıncı|\.)|(7|12)('nci|\.)|(9|10)('uncu|\.))(\s+ayı|\b)))
   references: [ BaseDateTime.FourDigitYearRegex, MonthNumRegex ]
 WeekOfMonthRegex: !nestedRegex
-  def: \b(?<wom>({MonthPossessiveSuffixRegex}|({BaseDateTime.FourDigitYearRegex}\s+yılı\s+|{RelativeRegex}\s+yılın\s+)?{WrittenMonthRegex}\s+ayının)\s+(?<cardinal>ilk|birinci|1(.|'inci)|ikinci|2(.|'inci)|üçüncü|3(.|'inci)|dördüncü|4(.|'inci)|beşinci|5(.|'inci)|son)\s+haftası)\b
+  def: \b(?<wom>({MonthPossessiveSuffixRegex}|{WrittenMonthRegex}(\s+{BaseDateTime.FourDigitYearRegex}('(in|nin|ün|nın|un)))|({BaseDateTime.FourDigitYearRegex}\s+yılı\s+|{RelativeRegex}\s+yılın\s+)?{WrittenMonthRegex}\s+ayının)\s+(?<cardinal>ilk|birinci|1(.|'inci)|ikinci|2(.|'inci)|üçüncü|3(.|'üncü)|dördüncü|4(.|'üncü)|beşinci|5(.|'inci)|son)\s+haftası(na)?)\b
   references: [ MonthPossessiveSuffixRegex, WrittenMonthRegex, BaseDateTime.FourDigitYearRegex, RelativeRegex ]
 WeekOfYearRegex: !nestedRegex
   def: \b(?<woy>({YearRegex}(\s+yılının|'?(nin|in|ün|nın|ın|un))|{RelativeRegex}\s+yıl(ın)?)\s+(?<cardinal>((on|yirmi|otuz|kırk|elli)\s+)?(birinci|ilk|ikinci|üçüncü|dördüncü|beşinci|altıncı|yedinci|sekizinci|dokuzuncu|onuncu|yirminci|otuzuncu|kırkıncı|ellinci)|elli birinci|elli ikinci|(1|2|3|4|5)?1(.|'inci)|(1|2|3|4|5)?2(.|'inci)|(1|2|3|4)?3(.|'üncü)|(1|2|3|4)?4(.|'üncü)|(1|2|3|4)?5(.|'inci)|(1|2|3|4)?6(.|'ıncı)|(1|2|3|4)?7(.|'nci)|(1|2|3|4)?8(.|'inci)|(1|2|3|4)?9(.|'uncu)|son)\s+hafta(sı)?)
@@ -198,11 +201,11 @@ AllHalfYearRegex: !nestedRegex
   def: ({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})
   references: [ HalfYearFrontRegex, HalfYearBackRegex, HalfYearRelativeRegex ]
 EarlyPrefixRegex: !simpleRegex
-  def: (?<EarlyPrefix>başına|(?<RelEarly>başlarında|başında)|başı|başları|başlarına)
+  def: (?<EarlyPrefix>başından|başına|(?<RelEarly>başlarında|başında|erken(den|\s+saatlerde)?|(içinde\s+)?daha\s+önce)|başı|başları|başlarına)
 MidPrefixRegex: !simpleRegex
-  def: (?<MidPrefix>ortasına|ortasında|ortası|ortaları|ortalarına|ortalarında)
+  def: (?<MidPrefix>(gün\s+)?(ortasına|ortasından?|ortası|ortaları|ortalarına|ortalarında))
 LaterPrefixRegex: !simpleRegex
-  def: (?<LatePrefix>sonuna(\s+doğru)?|(?<RelLate>sonunda)|sonu|sonları|sonlarına|sonlarında)
+  def: (?<LatePrefix>sonundan|sonuna(\s+doğru)?|(?<RelLate>sonunda|geç(\s+saatlerde)?|(içinde\s+)?daha\s+sonra)|sonu|sonları|sonlarına|sonlarında)
 PrefixPeriodRegex: !nestedRegex
   def: ({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})
   references: [EarlyPrefixRegex, MidPrefixRegex, LaterPrefixRegex]
@@ -512,7 +515,7 @@ PrepositionRegex: !simpleRegex
 LaterEarlyRegex: !simpleRegex
   def: ((?<early>(erkenden|erken(\s+saatte)?))|(?<late>geç(\s+saatte)?))
 TimeOfDayRegex: !nestedRegex
-  def: \b(?<timeOfDay>((sabah|öğleden\s+sonra|öğle(?!\s+yemeği)|akşam|gece|gün|mesai)(ın?|in|nin|ün|leyin|ları|leri|de|si)?\b(\s+{LaterEarlyRegex})?(\s+(saat(inde|te|lerinde|leri)|vaktinde|vakti|vakitlerinde))?|iş\s+(saat(inde|te|lerinde|leri)|vaktinde|vakti|vakitlerinde))(\s+(içinde|içi|dışında|dışı))?)
+  def: \b(?<timeOfDay>((sabah|öğleden\s+sonra|öğle(?!\s+yemeği)|akşam|gece|gün|mesai)(ın?|in|nin|ün|leyin|ları|leri|de|si)?\b(\s+{LaterEarlyRegex})?(\s+(saat(inde|te|lerinde|leri)|vaktinde|vakti|vakitlerinde))?|iş\s+(saat(inde|te|lerinde|leri)|vaktinde|vakti|vakitlerinde))(\s+(içinde|içi|dışında|dışı)\b)?)
   references: [ LaterEarlyRegex ]
 SpecificTimeOfDayRegex: !nestedRegex
   def: \b(({RelativeRegex}\s+{TimeOfDayRegex})\b|\bbu\s(sabah|akşam|gece))\b
@@ -529,6 +532,8 @@ NowRegex: !simpleRegex
 SuffixRegex: !simpleRegex
   def: \b(sabahı?|sabahleyin|sabahtan|öğleden\s+sonra|akşamı?|akşamleyin|gece(si)?|geceleyin)\b
 ExcludeSuffixRegex: !simpleRegex
+  def: ^'\p{L}*\s+(?<match>.+)$
+ExcludeSuffixDateTime: !simpleRegex
   def: ^'\p{L}*(?<match>.*)$
 DateTimeTimeOfDayRegex: !simpleRegex
   def: \b(?<timeOfDay>sabah|öğle|öğlen|öğleden\s+sonra|akşam|gece)\b
@@ -570,7 +575,7 @@ DurationUnitRegex: !nestedRegex
   def: (?<unit>{DateUnitRegex}|saat|saniye|dakika|sa\.?\b|dk\.?\b|sn\.?\b|s\.?\b)
   references: [ DateUnitRegex ]
 SuffixAndRegex: !simpleRegex
-  def: (?<suffix>\s*(?<suffix_num>buçuk|çeyrek))
+  def: (?<suffix>\s*(ve\s+)?(?<suffix_num>buçuk|çeyrek))
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>(?<daily>günlük)|(?<weekly>haftalık)|(?<biweekly>(iki\s+)?haftada\s+bir)|(?<monthly>aylık|ayda\s+bir)|(?<yearly>yıllık|senelik|yılda\s+bir|her\s+sene|senede\s+bir))\b
 EachUnitRegex: !nestedRegex
@@ -585,7 +590,7 @@ SetLastRegex: !simpleRegex
 EachDayRegex: !simpleRegex
   def: ^\s*her\s*gün\b
 DurationFollowedUnit: !nestedRegex
-  def: (^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})
+  def: (^\s*{DurationUnitRegex}\s+{SuffixAndRegex}(\s+{DurationUnitRegex})?)|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})
   references: [ SuffixAndRegex, DurationUnitRegex ]
 NumberCombinedWithDurationUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
@@ -596,7 +601,7 @@ AnUnitRegex: !nestedRegex
 DuringRegex: !simpleRegex
   def: \b(?<unit>gün|hafta|ay|yıl)\s+boyunca\b
 AllRegex: !simpleRegex
-  def: \b(?<all>(tüm|bütün)\s+(?<unit>gün|hafta|ay|yıl)|gün boyu)\b
+  def: \b(?<all>(tüm|bütün)\s+(?<unit>gün(lüğüne)?|hafta(lığına)?|ay(lığına)?|yıl(lığına)?)|gün boyu)\b
 HalfRegex: !simpleRegex
   def: (?<half>yarım\s+(?<unit>saat|gün|iş\s+günü|hafta|ay|yıl))
 ConjunctionRegex: !simpleRegex
@@ -626,16 +631,16 @@ PMTimeRegex: !simpleRegex
 InclusiveModPrepositions: !simpleRegex
   def: (?<include>(('(ü|u|te|ta|da|de|inde|sinde|ünde|ında|unda|sında)\s+)?(ya\s+da|veya)\b))
 BeforeRegex: !nestedRegex
-  def: ((({InclusiveModPrepositions}|'?(dan?|den?|tan?|ten?|y?[ea]))\s+(öncesinde|öncesine|daha\s+önce(sinde)?|önce|evvel|(daha|en)\s+(erken)|kadar|en\s+geç)|(öncesinde|öncesine|daha\s+önce|(daha|en)\s+(geç|erken)|kadar)\s+{InclusiveModPrepositions})|en\s+geç\s*?|önce|kadar|ile\s+biten|(?<!\w|>)((?<include><=)|<))
+  def: ((({InclusiveModPrepositions}|'?(den?|tan?|ten?|y?[ea])|('|(?<!başın))dan?)\s+(öncesinde|öncesine|daha\s+önce(sinde)?|önce(\b|(?=dır|dir))|evvel|(daha|en)\s+(erken)|kadar|en\s+geç)|(öncesinde|öncesine|daha\s+önce|(daha|en)\s+(geç|erken)|kadar)\s+{InclusiveModPrepositions})|en\s+geç\s*?|önce\b|kadar|ile\s+biten|(?<!\w|>)((?<include><=)|<))
   references: [ InclusiveModPrepositions ]
 # "starting from" is SinceRegex
 AfterRegex: !nestedRegex
   def: ((({InclusiveModPrepositions}|'(dan?|den?|tan?|ten?|y?[ea]))\s+(sonrasında|daha\s+(sonra|geç)|sonra)(?!\s+veya\s+aynı)|(sonrasında|daha\s+sonra|sonra)\s+{InclusiveModPrepositions})|(?<!\w|<)((?<include>>=)|>))
   references: [ InclusiveModPrepositions ]
 SinceRegex: !simpleRegex
-  def: ((('|\b)(((den|dan)\s+)?beri|sonra\s+veya\s+aynı|((den|dan|ile)\s+)?(başlayarak|başlayan)|(y[ae]\s+)?eşit\s+veya\s+sonraki|erkenden|herhangi\s+bir\s+zamanda|(nın\s+)?başından\s+itibaren)\b)|(?<!\w|<)(>=))
+  def: ((('|\b)(([dt][ae]n\s+)?beri|sonra\s+veya\s+aynı|((den|dan|ile)\s+)?(başlayarak|başlayan)|(y[ae]\s+)?eşit\s+veya\s+sonraki|bu\s+yana|erkenden|herhangi\s+bir\s+zamanda|((nın\s+)?başından\s+)itibaren)\b)|(?<!\w|<)(>=))
 AroundRegex: !simpleRegex
-  def: (?:\b((?:takriben|yaklaşık)\s*|\s*(?:civarı(nda)?|dolaylarında|sularında))\b)
+  def: (?:\b((?:takriben|yaklaşık)\s*|\s*(?:civarı(nd?a)?|dolaylarında|sularında))\b)
 AgoRegex: !simpleRegex
   def: \b((?<day>bugünden|gün|dünden|dün)\s+)?(önce(ki)?|evvel)\b
 LaterRegex: !simpleRegex
@@ -670,7 +675,7 @@ RelativeDurationUnitRegex: !nestedRegex
   def: ((?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))
   references: [NextPrefixRegex, PreviousPrefixRegex, ThisPrefixRegex, DurationUnitRegex]
 ReferenceDatePeriodRegex: !nestedRegex
-  def: \b{ReferencePrefixRegex}\s+(?<duration>hafta\s+sonu|hafta\s+sonları|(hafta|ay|yıl)(lar)?|sene(ler)?)\b
+  def: \b{ReferencePrefixRegex}\s+(?<duration>hafta\s*sonu|hafta\s*sonları|(hafta|ay|yıl)(lar)?|sene(ler)?)\b
   references: [ReferencePrefixRegex]
 ConnectorRegex: !simpleRegex
   def: ^(-|,|civarı|@)$
@@ -689,7 +694,7 @@ SingleAmbiguousMonthRegex: !simpleRegex
 SingleAmbiguousTermsRegex: !simpleRegex
   def: ^(gün|hafta|ay|yıl)$
 UnspecificDatePeriodRegex: !simpleRegex
-  def: ^(hafta(\s+sonu)|ay)$
+  def: ^(hafta(\s*sonu)|ay)$
 PrepositionSuffixRegex: !simpleRegex
   def: ^[\*]
 WrittenDayRegex: !simpleRegex
@@ -775,7 +780,7 @@ FromNumSuffixRegex: !simpleRegex
 ToNumSuffixRegex: !simpleRegex
   def: ((1|2|7|20|50)'ye|(3|4|5|8|70|80|00|000)'e|6'ya|(9|10|30|40|60|90)'a)\b
 ComplexDatePeriodRegex: !nestedRegex
-  def: ((?<start>.*[^'])\s*({RangeConnectorRegex})\s*(?<end>.+)\s*{RangePrefixRegex}|(?<start>.+({FromNumSuffixRegex}|{DayFromSuffixRegex}))\s*(?<end>.+({ToNumSuffixRegex}|{DayToSuffixRegex}))\s*({TillRegex}))
+  def: ((?<start>.*[^'])\s*({RangeConnectorRegex})\s*(?<end>.*[^'\s]{2})\s*{RangePrefixRegex}|(?<start>.+({FromNumSuffixRegex}|{DayFromSuffixRegex}))\s*(?<end>.+({ToNumSuffixRegex}|{DayToSuffixRegex}))\s*({TillRegex}))
   references: [ FromNumSuffixRegex, DayFromSuffixRegex, ToNumSuffixRegex, DayToSuffixRegex, TillRegex, RangeConnectorRegex, RangePrefixRegex ]
 # Do not localize FailFastRegex to other cultures at this momment. Experimental feature. To be improved.
 FailFastRegex: !nestedRegex
@@ -791,20 +796,24 @@ UnitMap: !dictionary
     yılı: Y
     yıllar: Y
     yılın: Y
+    yıllığına: Y
     ay: MON
     aylar: MON
     ayın: MON
+    aylığına: MON
     hafta: W
     haftalar: W
     haftam: W
     haftanın: W
     haftamın: W
     haftası: W
+    haftalığına: W
     gün: D
     günler: D
     günün: D
     bugünün: D
     günümün: D
+    günlüğüne: D
     saat: H
     saatler: H
     dakika: M
@@ -823,18 +832,22 @@ UnitValueMap: !dictionary
     yılı: 31536000
     yıllar: 31536000
     yılın: 31536000
+    yıllığına: 31536000
     ay: 2592000
     aylar: 2592000
     ayın: 2592000
+    aylığına: 2592000
     hafta: 604800
     haftalar: 604800
     haftam: 604800
     haftanın: 604800
     haftamın: 604800
     haftası: 604800
+    haftalığına: 604800
     gün: 86400
     günler: 86400
     günü: 86400
+    günlüğüne: 86400
     saat: 3600
     saatler: 3600
     sa.: 3600
@@ -876,23 +889,23 @@ SeasonValueMap: !dictionary
 CardinalMap: !dictionary
   types: [ string, int]
   entries:
-    ilk: 1
-    birinci: 1
-    1''inci: 1
-    1.: 1
-    ikinci: 2
-    2''inci: 2
-    2.: 2
-    üçüncü: 3
-    3''üncü: 3
-    3.: 3
-    dördüncü: 4
-    4''üncü: 4
-    4.: 4
-    beşinci: 5
-    5''inci: 5
-    5.: 5
-    son: 5
+    'ilk': 1
+    'birinci': 1
+    '1''inci': 1
+    '1.': 1
+    'ikinci': 2
+    '2''inci': 2
+    '2.': 2
+    'üçüncü': 3
+    '3''üncü': 3
+    '3.': 3
+    'dördüncü': 4
+    '4''üncü': 4
+    '4.': 4
+    'beşinci': 5
+    '5''inci': 5
+    '5.': 5
+    'son': 5
 DayOfWeek: !dictionary
   types: [ string, int ]
   entries: 
@@ -1531,6 +1544,9 @@ WeekendTerms: !list
     - hafta sonu
     - hafta sonum
     - hafta sonundan
+    - haftasonu
+    - haftasonum
+    - haftasonundan
 WeekTerms: !list
   types: [ string ]
   entries:

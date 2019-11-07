@@ -339,14 +339,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            var match = RangePrefixRegex.MatchEnd(text, false);
-
-            if (match.Success)
-            {
-                index = match.Index;
-                return true;
-            }
-
             string textTrm = text;
 
             // do not include the suffix in textTrm
@@ -358,7 +350,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
             textTrm = textTrm.TrimStart();
             int diff = text.Length - textTrm.Length;
-            match = RangePrefixRegex.MatchBegin(textTrm, false);
+            var match = RangePrefixRegex.MatchBegin(textTrm, false);
 
             if (match.Success)
             {
