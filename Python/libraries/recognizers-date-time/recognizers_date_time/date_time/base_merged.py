@@ -405,30 +405,28 @@ class BaseMergedExtractor(DateTimeExtractor):
                 extract_result.type == Constants.SYS_DATETIME_DATE or \
                     extract_result.type == Constants.SYS_DATETIME_TIME:
 
-                start = extract_result.start if extract_result.start else 0
-                length = extract_result.length if extract_result.length else 0
-                after_str = source[start + length:]
-
-                match = RegexExtension.match_begin(self.config.suffix_after_regex, after_str, True)
+                after_str = source[extract_result.start + extract_result.length:]
+                match = RegexExtension.match_begin(self.config.suffix_after_regex, after_str.strip(), True)
 
                 if match:
-                    is_followed_by_other_entity = True
+                    if match.success:
+                        is_followed_by_other_entity = True
 
-                    if match.length == len(after_str.strip()):
-                        is_followed_by_other_entity = False
-                    else:
-                        next_str = after_str.strip()[match.length].strip()
-                        next_er = next((e for e in extract_results if e.start > extract_result.start), None)
-
-                        if next_er is None or not next_str.startswith(next_er.text):
+                        if match.length == len(after_str.strip()):
                             is_followed_by_other_entity = False
+                        else:
+                            next_str = after_str.strip()[match.length].strip()
+                            next_er = next((e for e in extract_results if e.start > extract_result.start), None)
 
-                    if not is_followed_by_other_entity:
-                        mod_length = match.length + after_str.index(match.value)
-                        extract_result.length += mod_length
-                        start = extract_result.start if extract_result.start else 0
-                        length = extract_result.length if extract_result.length else 0
-                        extract_result.text = source[start: start + length]
+                            if next_er is None or not next_str.startswith(next_er.text):
+                                is_followed_by_other_entity = False
+
+                        if not is_followed_by_other_entity:
+                            mod_length = match.length + after_str.index(match.value)
+                            extract_result.length += mod_length
+                            start = extract_result.start if extract_result.start else 0
+                            length = extract_result.length if extract_result.length else 0
+                            extract_result.text = source[start: start + length]
 
         return extract_results
 
