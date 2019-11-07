@@ -1201,7 +1201,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T19:15:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1 month 2 days 2 hours 30 mins ago",
