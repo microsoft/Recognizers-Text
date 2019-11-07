@@ -30,6 +30,10 @@ class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
         return self._week_day_end
 
     @property
+    def week_day_start(self) -> Pattern:
+        return self._week_day_start
+
+    @property
     def of_month(self) -> Pattern:
         return self._of_month
 
@@ -121,6 +125,26 @@ class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
     def week_day_and_day_regex(self) -> Pattern:
         return self._week_day_and_day_regex
 
+    @property
+    def month_regex(self) -> Pattern:
+        return self._month_regex
+
+    @property
+    def month_num_regex(self) -> Pattern:
+        return self._month_num_regex
+
+    @property
+    def year_regex(self) -> Pattern:
+        return self._year_regex
+
+    @property
+    def written_month_regex(self) -> Pattern:
+        return self._written_month_regex
+
+    @property
+    def month_suffix_regex(self) -> Pattern:
+        return self._month_suffix_regex
+
     def __init__(self):
         self._date_regex_list = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor1),
@@ -146,6 +170,8 @@ class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(
                 EnglishDateTime.WeekDayOfMonthRegex),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.SpecialDate),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.SpecialDayWithNumRegex),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.RelativeWeekDayRegex)
         ]
         self._month_end = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.MonthEnd)
@@ -185,6 +211,9 @@ class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
         self._week_day_end = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.WeekDayEnd
         )
+        self._week_day_start = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.WeekDayStart
+        )
         self._more_than_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.MoreThanRegex
         )
@@ -202,4 +231,22 @@ class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
         )
         self._week_day_and_day_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.WeekDayAndDayRegex
+        )
+        self._month_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.MonthRegex
+        )
+        self._month_num_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.MonthNumRegex
+        )
+        self._year_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.YearRegex
+        )
+        self._day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.DayRegex
+        )
+        self._written_month_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.WrittenMonthRegex
+        )
+        self._month_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.MonthSuffixRegex
         )
