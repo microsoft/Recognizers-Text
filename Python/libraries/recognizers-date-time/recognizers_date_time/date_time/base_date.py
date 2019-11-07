@@ -580,10 +580,9 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
             match = self.config.date_unit_regex.search(extracted_result.text)
 
             if match:
-                if match.success:
-                    tokens.extend(
-                        AgoLaterUtil.extractor_duration_with_before_and_after(source, extracted_result, tokens,
-                                                                              self.config.utility_configuration))
+                tokens.extend(
+                    AgoLaterUtil.extractor_duration_with_before_and_after(source, extracted_result, tokens,
+                                                                          self.config.utility_configuration))
 
         # Extract cases like "in 3 weeks", which equals to "3 weeks from today"
         relative_duration_date_with_in_prefix =\
@@ -618,7 +617,8 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
     def strip_inequality_prefix(extract_result: ExtractResult, regexp: Pattern, in_prefix: bool):
         if regex.finditer(regexp, extract_result.text):
             original_length = len(extract_result.text)
-            extract_result.text = str(regexp).replace(extract_result.text, '').strip()
+            extract_result.text = extract_result.text.replace('more than', '').strip()
+            extract_result.text = extract_result.text.replace('less than', '').strip()
             if in_prefix:
                 extract_result.start += original_length - len(extract_result.text)
 
