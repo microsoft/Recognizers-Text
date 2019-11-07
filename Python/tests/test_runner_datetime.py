@@ -59,7 +59,7 @@ def test_datetime_parser(
     result = [parser.parse(x, reference_datetime) for x in extract_results]
     assert len(result) == len(expected_results)
     for actual, expected in zip(result, expected_results):
-        simple_parser_assert(actual, expected, 'text', 'Text')
+        simple_parser_assert(actual, expected, 'text', 'Text', True)
         simple_parser_assert(actual, expected, 'type', 'Type')
         if 'Value' in expected:
             assert actual.value
@@ -195,9 +195,11 @@ def simple_extractor_assert(actual, expected, prop, resolution, ignore_result_ca
         assert actual_normalize == expected_normalize
 
 
-def simple_parser_assert(actual, expected, prop, resolution):
+def simple_parser_assert(actual, expected, prop, resolution, ignore_result_case=False):
     if resolution in expected:
-        assert getattr(actual, prop) == expected[resolution]
+        expected_normalize = expected[resolution] if not ignore_result_case else expected[resolution].lower()
+        actual_normalize = getattr(actual, prop) if not ignore_result_case else getattr(actual, prop).lower()
+        assert actual_normalize == expected_normalize
 
 
 def create_extractor(language, model, options):
