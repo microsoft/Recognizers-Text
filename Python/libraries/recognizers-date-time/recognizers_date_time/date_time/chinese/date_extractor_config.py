@@ -12,6 +12,10 @@ from ...resources.base_date_time import BaseDateTime
 
 class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
     @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
+    @property
     def week_day_end(self) -> Pattern:
         pass
 
@@ -156,3 +160,5 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
         self._range_connector_symbol_regex = RegExpUtility.get_safe_reg_exp(
             BaseDateTime.RangeConnectorSymbolRegex
         )
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._check_both_before_after = None
