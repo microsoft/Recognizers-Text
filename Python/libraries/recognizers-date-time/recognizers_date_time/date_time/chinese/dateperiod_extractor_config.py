@@ -12,6 +12,14 @@ from .date_extractor import ChineseDateExtractor
 
 class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
+    def previous_prefix_regex(self) -> Pattern:
+        return self._previous_prefix_regex
+
+    @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
+    @property
     def time_unit_regex(self) -> Pattern:
         return self._time_unit_regex
 
@@ -224,6 +232,7 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._day_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.DayRegex
         )
+        self._check_both_before_after = False
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.SimpleCasesRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.OneWordPeriodRegex),
@@ -278,6 +287,7 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._future_suffix_regex = None
         self._within_next_prefix_regex = None
         self._time_unit_regex = None
+        self._previous_prefix_regex = None
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         if source.endswith('从'):

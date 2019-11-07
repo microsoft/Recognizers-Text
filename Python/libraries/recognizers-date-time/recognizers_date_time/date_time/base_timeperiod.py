@@ -55,10 +55,6 @@ class TimePeriodExtractorConfiguration(DateTimeOptionsConfiguration):
     def get_between_token_index(self, source: str) -> MatchedIndex:
         raise NotImplementedError
 
-    @abstractmethod
-    def has_connector_token(self, source: str) -> bool:
-        raise NotImplementedError
-
     @property
     @abstractmethod
     def token_before_date(self) -> str:
@@ -67,6 +63,16 @@ class TimePeriodExtractorConfiguration(DateTimeOptionsConfiguration):
     @property
     @abstractmethod
     def pure_number_regex(self) -> List[Pattern]:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def check_both_before_after(self) -> bool:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def is_connector_token(self, middle):
         raise NotImplementedError
 
 
@@ -206,7 +212,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                 # check connector string
                 middle = source[num_end:time_extract_results[j].start]
                 match = regex.search(self.config.till_regex, middle)
-                if match is not None and match.group() == middle.strip():
+                if match is not None or self.config.is_connector_token(middle.strip()):
                     time_numbers.append(num_extract_results[i])
                 i += 1
 
@@ -234,6 +240,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
 
                 # handle "from"
                 before = source[0:period_begin].strip().lower()
+                after = source[period_end: len(source) - period_end].strip().lower()
                 from_index: MatchedIndex = self.config.get_from_token_index(
                     before)
                 if from_index.matched:
@@ -245,12 +252,18 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                 if between_index.matched:
                     period_begin = between_index.index
 
+                # handle "between" in afterStr
+                after_index: MatchedIndex = self.config.get_between_token_index(
+                    after)
+                if after_index.matched:
+                    period_end = after_index.index
+
                 result.append(Token(period_begin, period_end))
                 i += 2
                 continue
 
             # handle "between {TimePoint} and {TimePoint}"
-            if self.config.has_connector_token(middle):
+            if self.config.is_connector_token(middle):
                 period_begin = time_extract_results[i].start
                 period_end = time_extract_results[i + 1].start + time_extract_results[i + 1].length
 
@@ -261,6 +274,17 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                 if between_index.matched:
                     period_begin = between_index.index
                     result.append(Token(period_begin, period_end))
+                    i += 2
+                    continue
+
+                # handle "between...and..." case when "between" follows the datepoints
+                after_str = source[period_end: + len(source) - period_end]
+                after_index = self.config.get_between_token_index(after_str)
+                if self.config.check_both_before_after and after_index.matched:
+                    period_end += after_index.index
+                    result.append(Token(period_begin, period_end))
+
+                    # merge two tokens here, increase the index by two
                     i += 2
                     continue
 

@@ -15,6 +15,10 @@ from ..utilities import DateTimeOptions
 class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
     @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
     def dmy_date_format(self) -> bool:
         return self._dmy_date_format
 
@@ -82,6 +86,7 @@ class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         self._token_before_date = SpanishDateTime.TokenBeforeDate
         self._pure_number_regex = [SpanishDateTime.PureNumFromTo, SpanishDateTime.PureNumFromTo]
         self._options = DateTimeOptions.NONE
+        self._check_both_before_after = False
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)
@@ -103,3 +108,6 @@ class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
             return MatchedIndex(True, match.start())
 
         return MatchedIndex(False, -1)
+
+    def is_connector_token(self, source: str) -> MatchedIndex:
+        return self.connector_and_regex.search(source)

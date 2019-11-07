@@ -31,7 +31,7 @@ def test_datetime_extractor(
 
     assert len(result) == len(expected_results)
     for actual, expected in zip(result, expected_results):
-        simple_extractor_assert(actual, expected, 'text', 'Text')
+        simple_extractor_assert(actual, expected, 'text', 'Text', True)
         simple_extractor_assert(actual, expected, 'type', 'Type')
         simple_extractor_assert(actual, expected, 'start', 'Start')
         simple_extractor_assert(actual, expected, 'length', 'Length')
@@ -188,9 +188,11 @@ def assert_model_resolution(actual, expected):
     assert_prop(actual, expected, 'Mod')
 
 
-def simple_extractor_assert(actual, expected, prop, resolution):
+def simple_extractor_assert(actual, expected, prop, resolution, ignore_result_case=False):
     if resolution in expected:
-        assert getattr(actual, prop) == expected[resolution]
+        expected_normalize = expected[resolution] if not ignore_result_case else expected[resolution].lower()
+        actual_normalize = getattr(actual, prop) if not ignore_result_case else getattr(actual, prop).lower()
+        assert actual_normalize == expected_normalize
 
 
 def simple_parser_assert(actual, expected, prop, resolution):

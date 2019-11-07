@@ -14,6 +14,10 @@ from ..utilities import DateTimeOptions
 class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
     @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
     def dmy_date_format(self) -> bool:
         return self._dmy_date_format
 
@@ -91,6 +95,7 @@ class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
     def __init__(self):
         super().__init__()
+        self._check_both_before_after = False
         self._simple_cases_regex: List[Pattern] = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumFromTo),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumBetweenAnd)
@@ -122,5 +127,5 @@ class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
             return MatchedIndex(matched=True, index=index)
         return MatchedIndex(matched=False, index=index)
 
-    def has_connector_token(self, source: str) -> bool:
-        return source == 'and'
+    def is_connector_token(self, source: str):
+        return source == "and"

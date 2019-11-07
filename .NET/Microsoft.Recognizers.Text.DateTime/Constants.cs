@@ -176,6 +176,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int InvalidMinute = int.MinValue;
         public const int InvalidSecond = int.MinValue;
 
+        // Failed connector extraction
+        public const int INVALID_CONNECTOR_CODE = -1;
+
         // Invalid year non-constant
         public static readonly int MinYearNum = int.Parse(BaseDateTime.MinYearNum);
         public static readonly int MaxYearNum = int.Parse(BaseDateTime.MaxYearNum);

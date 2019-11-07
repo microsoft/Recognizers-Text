@@ -119,7 +119,10 @@ MonthToSuffixRegex: !simpleRegex
   def: (?<msuf>((ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|kasım|aralık)'a|(eylül|ekim)'e))
 DateUnitRegex: !simpleRegex
   def: \b(?<unit>(?<year>yıl|sene)|(?<month>ay)|(?<week>hafta)|(?<business>iş\s+)günü|(?<day>gün))(?!(den|dan)(?!\s+(az|fazla)))
-# DateTokenPrefix, TimeTokenPrefix, TokenBeforeDate, TokenBeforeTime are not localized since there is no counterpart
+# DateTokenPrefix, TimeTokenPrefix, TokenBeforeDate, TokenBeforeTime are not localized since there is no counterpart: 
+# Turkish uses suffixes instead of prepositions, but in the base code these tokens are expected to be found only 
+# in front of a datetime entity. An exception is DateTimePeriodParser where TokenListBeforeDate is used to remove 
+# the listed suffixes from a match (independently of their position in the match).
 DateTokenPrefix: ''
 TimeTokenPrefix: ''
 TokenBeforeDate: ''

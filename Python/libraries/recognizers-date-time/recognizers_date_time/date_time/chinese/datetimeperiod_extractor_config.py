@@ -13,6 +13,10 @@ from .datetime_extractor import ChineseDateTimeExtractor
 
 class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
     @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
     def token_before_date(self) -> str:
         return self._token_before_date
 
@@ -201,6 +205,7 @@ class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         self._hour_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.HourRegex
         )
+        self._check_both_before_after = False
         self._cardinal_extractor = ChineseCardinalExtractor()
         self._single_date_extractor = ChineseDateExtractor()
         self._single_time_extractor = ChineseTimeExtractor()

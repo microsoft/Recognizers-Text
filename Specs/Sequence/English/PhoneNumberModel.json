@@ -4722,5 +4722,13 @@
   {
     "Input": "9a1-677-0060 and a91-677-0060 are not phone numbers",
     "Results": []
+  },
+  {
+    "Input": "911-67-0060 is a SSN and should not be extracted",
+    "Results": []
+  },
+  {
+    "Input": "011-12-3456 is a SSN and should not be extracted",
+    "Results": []
   }
 ]

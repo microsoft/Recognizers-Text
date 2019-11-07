@@ -110,6 +110,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Regex FollowedUnit => TimeFollowedUnit;
 
+        bool IDateTimePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex IDateTimePeriodExtractorConfiguration.PrefixDayRegex => PrefixDayRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.DateUnitRegex => DateUnitRegex;

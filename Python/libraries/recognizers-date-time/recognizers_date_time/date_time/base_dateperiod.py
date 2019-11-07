@@ -189,6 +189,16 @@ class DatePeriodExtractorConfiguration(ABC):
     def month_num_regex(self) -> Pattern:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def check_both_before_after(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def previous_prefix_regex(self) -> Pattern:
+        raise NotImplementedError
+
 
 class BaseDatePeriodExtractor(DateTimeExtractor):
     @property
@@ -626,38 +636,111 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
     def match_duration(self, source: str, reference: datetime) -> List[ExtractResult]:
         tokens = []
         durations = []
+        duration_extractions = self.config.duration_extractor.extract(source, reference)
 
-        for duration_ex in self.config.duration_extractor.extract(source, reference):
+        for duration_ex in duration_extractions:
             match = self.config.date_unit_regex.search(duration_ex.text)
             if match:
                 durations.append(
                     Token(duration_ex.start, duration_ex.start + duration_ex.length))
 
         for duration in durations:
-            before_str = source[0:duration.start].lower()
+            before_str = source[0:duration.start]
+            after_str = source[duration.start + duration.length:]
 
-            if not before_str:
+            if not before_str and not after_str:
                 break
 
-            match = self.config.past_regex.search(before_str)
-            if self.__match_regex_in_prefix(before_str, match):
-                tokens.append(Token(match.start(), duration.end))
+            in_prefix = True
+            match_token = self.match_within_next_prefix_regex(source, duration, in_prefix)
+            if match_token.start >= 0:
+                tokens.append(match_token)
                 break
 
-            match = self.config.future_regex.search(before_str)
-            if self.__match_regex_in_prefix(before_str, match):
-                tokens.append(Token(match.start(), duration.end))
+            if self.config.check_both_before_after:
+                in_prefix = False
+                match_token = self.match_within_next_prefix_regex(source, duration, in_prefix)
+                if match_token.start >= 0:
+                    tokens.append(match_token)
+                    continue
+
+            match = RegexExtension.match_end(self.config.previous_prefix_regex, before_str, True)
+
+            index = -1
+
+            if match.success:
+                index = match.index
+
+            if index < 0:
+                match = RegexExtension.match_end(self.config.future_regex, before_str, True)
+                if match.success:
+                    index = match.index
+
+            if index >= 0:
+                prefix = before_str[0: index].strip()
+                duration_text = source[duration.start:duration.length]
+                numbers_in_prefix = self.config.cardinal_extractor.extract(prefix)
+                numbers_in_duration = self.config.cardinal_extractor.extract(duration_text)
+
+                # Cases like "2 upcoming days", should be supported here
+                # Cases like "2 upcoming 3 days" is invalid, only extract "upcoming 3 days" by default
+                if any(numbers_in_prefix) and not any(numbers_in_duration):
+                    last_number = sorted(numbers_in_prefix, key=lambda t: t.end)[-1]
+
+                    # Prefix should ends with the last number
+                    if last_number.start + last_number.length == len(prefix):
+                        tokens.append(Token(last_number.start, duration.end))
+                else:
+                    tokens.append(Token(index, duration.end))
+
                 break
 
-            match = self.config.in_connector_regex.search(before_str)
-            if self.__match_regex_in_prefix(before_str, match):
-                range_str = source[duration.start:duration.start + duration.length]
-                range_match = self.config.range_unit_regex.search(range_str)
-
-                if range_match:
-                    tokens.append(Token(match.start(), duration.end))
+            match = RegexExtension.match_begin(self.config.previous_prefix_regex, after_str, True)
+            if match:
+                tokens.append(Token(duration.start, duration.end + match.index + match.length))
                 break
+
+            match = RegexExtension.match_begin(self.config.future_regex, after_str, True)
+            if match:
+                tokens.append(Token(duration.start, duration.end + match.index + match.length))
+                break
+
+            match = RegexExtension.match_begin(self.config.future_suffix_regex, after_str, True)
+            if match:
+                tokens.append(Token(duration.start, duration.end + match.index + match.length))
+                break
+
         return tokens
+
+    def match_within_next_prefix_regex(self, source: str, duration: Token, in_prefix: bool) -> Token:
+        before_str = source[0:duration.start]
+        after_str = source[duration.start + duration.length:]
+        start_token = -1
+        end_token = -1
+        if in_prefix:
+            match = RegexExtension.match_end(self.config.within_next_prefix_regex, before_str, True)
+        else:
+            match = RegexExtension.match_begin(self.config.within_next_prefix_regex, after_str, True)
+
+        if match and match.success:
+            duration_str = source[duration.start, duration.length:]
+            match_date = regex.search(self.config.date_unit_regex, duration_str)
+            match_time = regex.search(self.config.time_unit_regex, duration_str)
+
+            if match_date and not match_time:
+                if in_prefix:
+                    start_token = match.index
+                    end_token = duration.end
+                else:
+                    start_token = duration.start
+                    end_token = duration.end + match.index + match.length
+
+                if not in_prefix:
+                    match = RegexExtension.match_end(self.config.future_regex, before_str, True)
+                    if match.success:
+                        start_token = match.index
+
+        return Token(start_token, end_token)
 
     # 1. Extract the month of date, week of date to a date range
     # 2. Extract cases like within two weeks from/before today/tomorrow/yesterday
@@ -678,6 +761,8 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
             if extraction_result.start is not None and extraction_result.length is not None:
                 before_string = source[0: extraction_result.start]
+                after_string = source[extraction_result.start + extraction_result.length: len(source) - extraction_result.start - extraction_result.length]
+
                 result.extend(self.__get_token_for_regex_matching(before_string,
                                                                   self.config.week_of_regex, extraction_result))
                 result.extend(self.__get_token_for_regex_matching(before_string,
@@ -690,6 +775,15 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                     result.extend(self.__get_token_for_regex_matching(before_string,
                                                                       self.config.more_than_regex, extraction_result))
 
+                    # Check also afterString
+                    if self.config.check_both_before_after:
+                        result.extend(self.__get_token_for_regex_matching(after_string,
+                                                                          self.config.less_than_regex,
+                                                                          extraction_result))
+                        result.extend(self.__get_token_for_regex_matching(after_string,
+                                                                          self.config.more_than_regex,
+                                                                          extraction_result))
+
                     # For "within" case, only duration with relative to "today" or "now" makes sense
                     # Cases like "within 3 days from yesterday/tomorrow" does not make any sense
                     if self.is_date_relative_to_now_or_today(extraction_result):
@@ -697,11 +791,11 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                         match = self.config.within_next_prefix_regex.search(before_string)
                         if match:
 
-                            is_next = not RegExpUtility.get_group(match, Constants.NEXT_GROUP_NAME)
+                            is_next = RegExpUtility.get_group(match, Constants.NEXT_GROUP_NAME)
 
                             # For "within" case
                             # Cases like "within the next 5 days before today" is not acceptable
-                            if not is_next and self.is_ago_relative_duration_date(extraction_result) is not None:
+                            if not (is_next and self.is_ago_relative_duration_date(extraction_result)):
                                 result.extend(self.__get_token_for_regex_matching(
                                     before_string,
                                     self.config.within_next_prefix_regex,
@@ -987,6 +1081,8 @@ class BaseDatePeriodParser(DateTimeParser):
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
         if not reference:
             reference = datetime.now()
+
+        result_value = None
 
         if source.type == self.parser_type_name:
             source_text = source.text.strip().lower()

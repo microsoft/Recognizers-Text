@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         private static readonly Regex PreCheckPhoneNumberRegex = new Regex(BasePhoneNumbers.PreCheckPhoneNumberRegex, RegexOptions.Compiled);
 
+        private static readonly Regex SSNFilterRegex = new Regex(BasePhoneNumbers.SSNFilterRegex, RegexOptions.Compiled);
+
         private PhoneNumberConfiguration config;
 
         public BasePhoneNumberExtractor(PhoneNumberConfiguration config)
@@ -88,7 +90,7 @@ namespace Microsoft.Recognizers.Text.Sequence
             for (var i = 0; i < ers.Count; i++)
             {
                 var er = ers[i];
-                if (CountDigits(er.Text) < 7 && er.Data.ToString() != "ITPhoneNumber")
+                if ((CountDigits(er.Text) < 7 && er.Data.ToString() != "ITPhoneNumber") || SSNFilterRegex.IsMatch(er.Text))
                 {
                     ers.Remove(er);
                     i--;
