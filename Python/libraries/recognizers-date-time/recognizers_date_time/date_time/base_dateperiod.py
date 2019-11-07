@@ -723,7 +723,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
             match = RegexExtension.match_begin(self.config.within_next_prefix_regex, after_str, True)
 
         if match and match.success:
-            duration_str = source[duration.start, duration.length:]
+            duration_str = source[duration.start: duration.length]
             match_date = regex.search(self.config.date_unit_regex, duration_str)
             match_time = regex.search(self.config.time_unit_regex, duration_str)
 
