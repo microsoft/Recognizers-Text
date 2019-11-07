@@ -1938,8 +1938,6 @@
   },
   {
     "Input": "तीन में से एक",
-    "Comment": "out of not valid in Hindi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1955,8 +1953,6 @@
   },
   {
     "Input": "इक्कीस में से 1",
-    "Comment": "out of to be revisited for Hindi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
