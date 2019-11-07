@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
@@ -12,6 +14,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         private readonly StringMatcher suffixMatcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
         private readonly StringMatcher prefixMatcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
+        private readonly ImmutableList<string> nonRepeatableUnitList = BaseUnits.NonRepeatableUnitList.ToImmutableList();
         private readonly Regex separateRegex;
 
         private readonly int maxPrefixMatchLen;
@@ -123,12 +126,28 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         {
                             var offSet = lastIndex - bestMatch.Start;
                             var unitStr = source.Substring(bestMatch.Start, offSet);
+                            foreach (var res in result)
+                            {
+                                if (res.Start + res.Length > bestMatch.Start)
+                                {
+                                    // if the unit is already been used, remove them.
+                                    result.Remove(res);
+                                    if (!result.Any())
+                                    {
+                                        break;
+                                    }
+                                }
+                            }
+
                             mappingPrefix.Add(number.Start.Value, new PrefixUnitResult { Offset = offSet, UnitStr = unitStr });
                         }
                     }
 
                     mappingPrefix.TryGetValue(start, out PrefixUnitResult prefixUnit);
-                    if (maxFindSuff > 0)
+
+                    // Allow cases like "摄氏温度10度" pass
+                    // But if text have bestMatch such as "30$" in "10$ 30$", it should not continue check the 10 in the front.
+                    if (maxFindSuff > 0 && (prefixUnit == null || !nonRepeatableUnitList.Contains(prefixUnit.UnitStr.Trim())))
                     {
                         // find the best suffix unit
                         var maxlen = 0;
