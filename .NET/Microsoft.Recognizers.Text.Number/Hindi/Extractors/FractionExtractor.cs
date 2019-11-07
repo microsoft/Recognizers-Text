@@ -50,11 +50,11 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
             else
             {
                 regexes.Add(
-                    new Regex(NumbersDefinitions.FractionPrepositionInverseRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.HINDI));
-                regexes.Add(
                     new Regex(NumbersDefinitions.FractionRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.HINDI));
+                regexes.Add(
+                   new Regex(NumbersDefinitions.FractionPrepositionInverseRegex, RegexFlags),
+                   RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.HINDI));
             }
 
             Regexes = regexes.ToImmutableDictionary();

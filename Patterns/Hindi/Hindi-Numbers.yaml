@@ -59,7 +59,7 @@ PlaceHolderPureNumber: !simpleRegex
 PlaceHolderDefault: !simpleRegex
   def: \D|\b
 NumbersWithPlaceHolder: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[ऀ-ॿ]))(?={placeholder})
   params: [ placeholder ]
 #Below Regex is used to catch comma separated digits in Hindi numbering system
 IndianNumberingSystemRegex: !simpleRegex
@@ -72,6 +72,8 @@ RoundNumberIntegerRegexWithLocks: !nestedRegex
   references: [ RoundNumberIntegerRegex ]
 NumbersWithDozenSuffix: !simpleRegex
   def: \d+\s+दर्जन(नों)?
+AdditionTermsRegex: !simpleRegex
+  def: (?<=\s)(और|व|तथा|एवं|प्लस|plus|जमा)(?=\s)
 AllIntRegexWithLocks: !nestedRegex
   def: (?<=\b){AllIntRegex}
   references: [ AllIntRegex ]
@@ -144,9 +146,11 @@ NinetyToNinetyNineOrdinalRegex: !simpleRegex
 NumberOrdinalRegex: !nestedRegex
   def: ({OneToNineOrdinalRegex}|{TenToNineteenOrdinalRegex}|{TwentyToTwentyNineOrdinalRegex}|{ThirtyToThirtyNineOrdinalRegex}|{FourtyToFourtyNineOrdinalRegex}|{FiftyToFiftyNineOrdinalRegex}|{SixtyToSixtyNineOrdinalRegex}|{SeventyToSeventyNineOrdinalRegex}|{EightyToEightyNineOrdinalRegex}|{NinetyToNinetyNineOrdinalRegex})
   references: [ OneToNineOrdinalRegex, TenToNineteenOrdinalRegex, TwentyToTwentyNineOrdinalRegex, ThirtyToThirtyNineOrdinalRegex, FourtyToFourtyNineOrdinalRegex, FiftyToFiftyNineOrdinalRegex, SixtyToSixtyNineOrdinalRegex, SeventyToSeventyNineOrdinalRegex, EightyToEightyNineOrdinalRegex, NinetyToNinetyNineOrdinalRegex ]
+# Regex for catching compund Hindi ordinals
 CompoundNumberOrdinals: !nestedRegex
   def: ((({AllNumericalIntRegex}\s+)?({RoundNumberIntegerRegex}\s+)?(और\s+)?)+({NumberOrdinalRegex}|{RoundNumberOrdinalRegex})|{NumberOrdinalRegex}|{RoundNumberOrdinalRegex})
   references: [ AllNumericalIntRegex, RoundNumberIntegerRegex, NumberOrdinalRegex, RoundNumberOrdinalRegex ]
+# Regexes for catching Hindi relative ordinals
 CompoundFiveWordRelativeOrdinalRegex: !simpleRegex
   def: (?<relativeOrdinal>((अंतिम वाले|आखिरी वाले)\s+(से पहले वाला|का पिछला(\s+वाला)?))|((आखिरी|अंतिम)\s+(से पहले का|के बगल वाला))|((पिछला|पिछले|पिछली)\s+पर केवल एक))
 CompoundThreeWordRelativeOrdinalRegex: !simpleRegex
@@ -158,6 +162,7 @@ SimpleRelativeOrdinalRegex: !simpleRegex
 RelativeOrdinalRegex: !nestedRegex
   def: ({CompoundFiveWordRelativeOrdinalRegex}|{CompoundThreeWordRelativeOrdinalRegex}|{CompoundTwoWordRelativeOrdinalRegex}|{SimpleRelativeOrdinalRegex})
   references: [ CompoundFiveWordRelativeOrdinalRegex, CompoundThreeWordRelativeOrdinalRegex, CompoundTwoWordRelativeOrdinalRegex, SimpleRelativeOrdinalRegex ]
+# Regexes for catching Hindi transliteration of English number ordinals
 RoundNumberHinglishOrdinalRegex: !simpleRegex
   def: (?:हंड्रेडथ|थाउजेंडथ|मिलियनथ|बिलियनथ|ट्रिलियनथ)
 OnetoNineHinglishOrdinalRegex: !simpleRegex
@@ -174,6 +179,7 @@ HinglishOrdinalRegex: !nestedRegex
 CompoundHindiOrdinalRegex: !nestedRegex
   def: ((({HinglishOrdinalRegex}\s+)?({RoundNumberHinglishOrdinalRegex}\s+)?(अंड\s+)?)+({HinglishOrdinalRegex}|{RoundNumberHinglishOrdinalRegex})|{HinglishOrdinalRegex}|{RoundNumberHinglishOrdinalRegex})
   references: [ HinglishOrdinalRegex, RoundNumberHinglishOrdinalRegex ]
+# Regexes for catching English number ordinals
 RoundNumberEnglishOrdinalRegex: !simpleRegex
   def: (?:hundredth|thousandth|millionth|billionth|trillionth)
 OnetoNineEnglishOrdinalRegex: !simpleRegex
@@ -188,8 +194,6 @@ EnglishOrdinalRegex: !nestedRegex
 CompoundEnglishOrdinalRegex: !nestedRegex
   def: ((({EnglishIntegerRegex}\s+)?({RoundNumberEnglishIntegerRegex}\s+)?(and\s+)?)+({EnglishOrdinalRegex}|{RoundNumberEnglishOrdinalRegex})|({EnglishIntegerRegex}\s+{RoundNumberEnglishOrdinalRegex})|{EnglishOrdinalRegex})
   references: [ EnglishIntegerRegex, RoundNumberEnglishIntegerRegex, EnglishOrdinalRegex, RoundNumberEnglishOrdinalRegex ]
-NumberAndDevanagiriNumeralRegex: !simpleRegex
-  def: (?:([0-9]+(रा|वां|ला|ठा|वीं|वें|वाँ))|([०-९]+(रा|वां|ला|ठा|वीं|वें|वाँ)))
 BasicOrdinalRegex: !nestedRegex
   def: ({NumberOrdinalRegex}|{RelativeOrdinalRegex})
   references: [ NumberOrdinalRegex, RelativeOrdinalRegex ]
@@ -204,14 +208,6 @@ AllOrdinalRegex: !nestedRegex
   references: [ CompoundNumberOrdinals, SuffixRoundNumberOrdinalRegex ]
 OrdinalSuffixRegex: !simpleRegex
   def: (?<=\b)(?:(\d*(1ला|[2-3]रा|4था|[0-9]वां))|([०-९]*(१ला|[२-३]रा|४था|[०-९]वां)))
-OrdinalNumericRegex: !simpleRegex
-  def: (?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*\s*वां)
-OrdinalRoundNumberRegex: !nestedRegex
-  def: (?<!एक?\s+){RoundNumberOrdinalRegex}
-  references: [ RoundNumberOrdinalRegex ]
-OrdinalEnglishRegex: !nestedRegex
-  def: (?<=\b){AllOrdinalRegex}
-  references: [ AllOrdinalRegex ]
 #Fraction Regex
 #Fraction cases are used to catch half/quarter with any prefix number in hindi
 #FractionPrepositionRegex s used to catch all fraction cases which includes cardina/cardinal or cardinal/ordinal 
@@ -351,7 +347,7 @@ TwoNumberRangeRegex4: !nestedRegex
   def: (from\s+)?(?<number1>({NumberSplitMark}(?!\bfrom\b).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)
   references: [ TillRegex, NumberSplitMark ]
 AmbiguousFractionConnectorsRegex: !simpleRegex
-  def: (\bin\b)
+  def: (\bमें\b)
 # "in" is ambiguous for cases like "more than 30000 in 2009", other connector "out of", "over" is not ambiguous in English
 #Parser
 DecimalSeparatorChar: !char '.'
@@ -417,6 +413,7 @@ CardinalNumberMap: !dictionary
     तैंतीस: 33
     चौंतीस: 34
     पैंतीस: 35
+    पैंतीसवां: 35
     छ्त्तीस: 36
     सैंतीस: 37
     अड़तीस: 38
@@ -487,10 +484,7 @@ CardinalNumberMap: !dictionary
     हजार: 1000
     लाख: 100000
     करोड़: 10000000
-    दस करोड़: 100000000
     अरब: 1000000000
-    एक अरब: 1000000000
-    दस अरब: 10000000000
     खरब: 100000000000
     हंड्रेड: 100
     थाउजेंड: 1000
@@ -556,16 +550,6 @@ CardinalNumberMap: !dictionary
     सेवेंटी: 70
     एइट्टी: 80
     नैनटी: 90
-    ०: 0
-    १: 1
-    २: 2
-    ३: 3
-    ४: 4
-    ५: 5
-    ६: 6
-    ७: 7
-    ८: 8
-    ९: 9
 OrdinalNumberMap: !dictionary
   types: [ string, long ]
   entries:
@@ -813,6 +797,8 @@ OrdinalNumberMap: !dictionary
     थर्ड: 3
     फोर्थ: 4
     फिफ्थ: 5
+    पाँचवाँ: 5
+    पांचवां: 5
     सिक्स्थ: 6
     सेवंथ: 7
     एइथ: 8
@@ -867,19 +853,6 @@ OrdinalNumberMap: !dictionary
     seventieth: 70
     eightieth: 80
     ninetieth: 90
-ZeroToNineMap: !dictionary
-  types: [char, double]
-  entries:
-    ०: 0
-    १: 1
-    २: 2
-    ३: 3
-    ४: 4
-    ५: 5
-    ६: 6
-    ७: 7
-    ८: 8
-    ९: 9
 RoundNumberMap: !dictionary
   types: [ string, long ]
   entries:
@@ -919,7 +892,7 @@ RoundNumberMap: !dictionary
     खरबवीं: 100000000000
     दस खरबवीं: 1000000000000
     k: 1000
-HindiDecimalUnitsList: !dictionary
+DecimalUnitsMap: !dictionary
   types: [ string, double ]
   entries:
     डेढ: 1.5
@@ -928,6 +901,19 @@ HindiDecimalUnitsList: !dictionary
     सवा: 1.25
     सावा: 1.25
     ढाई: 2.5
+ZeroToNineMap: !dictionary
+  types: [ char, long ]
+  entries:
+    ०: 0
+    १: 1
+    २: 2
+    ३: 3
+    ४: 4
+    ५: 5
+    ६: 6
+    ७: 7
+    ८: 8
+    ९: 9
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:

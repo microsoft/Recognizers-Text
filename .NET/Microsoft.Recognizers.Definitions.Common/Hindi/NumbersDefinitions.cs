@@ -46,11 +46,12 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string AllIntRegex = $@"(?:((({AllNumericalIntRegex}|({TensNumberIntegerRegex}(\s+(और\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(और\s+)?)*({SeparaIntRegex}))";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
-      public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";
+      public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[ऀ-ॿ]))(?={placeholder})";
       public const string IndianNumberingSystemRegex = @"(?<=\b)((?:\d+|\d{1,2},(?:\d{2},)*\d{3})(?:\.\d{2})?(?=\s|$))";
       public static readonly string NumbersWithSuffix = $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s+{RoundNumberIntegerRegex}";
       public const string NumbersWithDozenSuffix = @"\d+\s+दर्जन(नों)?";
+      public const string AdditionTermsRegex = @"(?<=\s)(और|व|तथा|एवं|प्लस|plus|जमा)(?=\s)";
       public static readonly string AllIntRegexWithLocks = $@"(?<=\b){AllIntRegex}";
       public const string RoundNumberHinglishIntegerRegex = @"(?:हंड्रेड|थाउजेंड|मिलियन|बिलियन|ट्रिलियन)";
       public const string OnetoNineHinglishIntegerRegex = @"(?:वन|टू|थ्री|फोर|फ़ाइव|सिक्स|सेवन|एइट|नाइन)";
@@ -99,15 +100,11 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string TensEnglishOrdinalRegex = @"(?:tenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
       public static readonly string EnglishOrdinalRegex = $@"(({TensNumberEnglishIntegerRegex}\s+{OnetoNineEnglishOrdinalRegex})|{OnetoNineEnglishOrdinalRegex}|{ElevenToNineteenEnglishOrdinalRegex}|{TensEnglishOrdinalRegex})";
       public static readonly string CompoundEnglishOrdinalRegex = $@"((({EnglishIntegerRegex}\s+)?({RoundNumberEnglishIntegerRegex}\s+)?(and\s+)?)+({EnglishOrdinalRegex}|{RoundNumberEnglishOrdinalRegex})|({EnglishIntegerRegex}\s+{RoundNumberEnglishOrdinalRegex})|{EnglishOrdinalRegex})";
-      public const string NumberAndDevanagiriNumeralRegex = @"(?:([0-9]+(रा|वां|ला|ठा|वीं|वें|वाँ))|([०-९]+(रा|वां|ला|ठा|वीं|वें|वाँ)))";
       public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
       public static readonly string SuffixBasicOrdinalRegex = $@"(?:((({AllNumericalIntRegex}|{TensNumberIntegerRegex})(\s+({RoundNumberIntegerRegex})(\s+))+)(({NumberOrdinalRegex}))))";
       public static readonly string SuffixRoundNumberOrdinalRegex = $@"(?:({AllIntRegex}\s+){RoundNumberOrdinalRegex})";
       public static readonly string AllOrdinalRegex = $@"(?:{CompoundNumberOrdinals}|{SuffixRoundNumberOrdinalRegex})";
       public const string OrdinalSuffixRegex = @"(?<=\b)(?:(\d*(1ला|[2-3]रा|4था|[0-9]वां))|([०-९]*(१ला|[२-३]रा|४था|[०-९]वां)))";
-      public const string OrdinalNumericRegex = @"(?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*\s*वां)";
-      public static readonly string OrdinalRoundNumberRegex = $@"(?<!एक?\s+){RoundNumberOrdinalRegex}";
-      public static readonly string OrdinalEnglishRegex = $@"(?<=\b){AllOrdinalRegex}";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNounRegex = $@"(?<=\b)(((({AllNumericalIntRegex})(\s?)((({RoundNumberIntegerRegex})|({RoundNumberOrdinalRegex}))\s?)?)((और\s)?))+((आधा|आधे|चौथाई|तिहाई)))(?=\b)";
@@ -157,7 +154,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(and|but|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})";
       public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|but|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})";
       public static readonly string TwoNumberRangeRegex4 = $@"(from\s+)?(?<number1>({NumberSplitMark}(?!\bfrom\b).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)";
-      public const string AmbiguousFractionConnectorsRegex = @"(\bin\b)";
+      public const string AmbiguousFractionConnectorsRegex = @"(\bमें\b)";
       public const char DecimalSeparatorChar = '.';
       public const string FractionMarkerToken = @"भाग";
       public const char NonDecimalSeparatorChar = ',';
@@ -216,6 +213,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"तैंतीस", 33 },
             { @"चौंतीस", 34 },
             { @"पैंतीस", 35 },
+            { @"पैंतीसवां", 35 },
             { @"छ्त्तीस", 36 },
             { @"सैंतीस", 37 },
             { @"अड़तीस", 38 },
@@ -286,10 +284,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"हजार", 1000 },
             { @"लाख", 100000 },
             { @"करोड़", 10000000 },
-            { @"दस करोड़", 100000000 },
             { @"अरब", 1000000000 },
-            { @"एक अरब", 1000000000 },
-            { @"दस अरब", 10000000000 },
             { @"खरब", 100000000000 },
             { @"हंड्रेड", 100 },
             { @"थाउजेंड", 1000 },
@@ -354,17 +349,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"सिक्सटी", 60 },
             { @"सेवेंटी", 70 },
             { @"एइट्टी", 80 },
-            { @"नैनटी", 90 },
-            { @"०", 0 },
-            { @"१", 1 },
-            { @"२", 2 },
-            { @"३", 3 },
-            { @"४", 4 },
-            { @"५", 5 },
-            { @"६", 6 },
-            { @"७", 7 },
-            { @"८", 8 },
-            { @"९", 9 }
+            { @"नैनटी", 90 }
         };
       public static readonly Dictionary<string, long> OrdinalNumberMap = new Dictionary<string, long>
         {
@@ -666,19 +651,6 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"eightieth", 80 },
             { @"ninetieth", 90 }
         };
-      public static readonly Dictionary<char, double> ZeroToNineMap = new Dictionary<char, double>
-        {
-            { '०', 0 },
-            { '१', 1 },
-            { '२', 2 },
-            { '३', 3 },
-            { '४', 4 },
-            { '५', 5 },
-            { '६', 6 },
-            { '७', 7 },
-            { '८', 8 },
-            { '९', 9 }
-        };
       public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
         {
             { @"सौवां", 100 },
@@ -718,7 +690,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"दस खरबवीं", 1000000000000 },
             { @"k", 1000 }
         };
-      public static readonly Dictionary<string, double> HindiDecimalUnitsList = new Dictionary<string, double>
+      public static readonly Dictionary<string, double> DecimalUnitsMap = new Dictionary<string, double>
         {
             { @"डेढ", 1.5 },
             { @"डेढ़", 1.5 },
@@ -726,6 +698,19 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"सवा", 1.25 },
             { @"सावा", 1.25 },
             { @"ढाई", 2.5 }
+        };
+      public static readonly Dictionary<char, long> ZeroToNineMap = new Dictionary<char, long>
+        {
+            { '०', 0 },
+            { '१', 1 },
+            { '२', 2 },
+            { '३', 3 },
+            { '४', 4 },
+            { '५', 5 },
+            { '६', 6 },
+            { '७', 7 },
+            { '८', 8 },
+            { '९', 9 }
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
