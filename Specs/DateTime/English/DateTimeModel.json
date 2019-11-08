@@ -6576,7 +6576,7 @@
       "ReferenceDateTime": "2018-08-29T12:00:00"
     },
     "Comment": "Not currently supported. The first number will be tagged as time.",
-    "NotSupported": "dotnet, javascript, java",
+    "NotSupported": "dotnet, javascript, java, python",
     "Results": [
       {
         "Text": "18",
@@ -6997,7 +6997,7 @@
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
     "Comment": "Known false positive needs to be supported in the future",
-    "NotSupported": "javascript, java, dotnet",
+    "NotSupported": "javascript, java, dotnet, python",
     "Results": [
       {
         "Text": "1/1/2016",
@@ -9171,7 +9171,7 @@
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
     "Comment": "Not supported as the TimeZone is not enabled for now",
-    "NotSupported": "javascript, dotnet, java",
+    "NotSupported": "javascript, dotnet, java, python",
     "Results": [
       {
         "Text": "between 6:30 to 9 pst",
@@ -12143,7 +12143,7 @@
       "ReferenceDateTime": "2019-06-03T12:00:00"
     },
     "Comment": "Not supported as currently a cutoff on year by itself is needed for legacy reasons.",
-    "NotSupported": "dotnet, javascript, java",
+    "NotSupported": "dotnet, javascript, java, python",
     "Results": [
       {
         "Text": "2150",
@@ -13501,7 +13501,7 @@
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
     "Comment": "Not supported as the TimeZone is not enabled for now",
-    "NotSupported": "javascript, dotnet, java",
+    "NotSupported": "javascript, dotnet, java, python",
     "Results": [
       {
         "Text": "pacific timezone",
@@ -13526,7 +13526,7 @@
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
     "Comment": "Not supported as the TimeZone is not enabled for now",
-    "NotSupported": "javascript, dotnet, java",
+    "NotSupported": "javascript, dotnet, java, python",
     "Results": [
       {
         "Text": "1pm mountain timezone",
@@ -14057,7 +14057,7 @@
   {
     "Input": "6,107.31 August 2019 should not include the decimal",
     "Comment": "Only August 2019 should be extracted as a DateRange, so no output in Date only. Java disabled due to issue in lookbehind.",
-    "NotSupported": "dotnet, java, javascript",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "august 2019",
@@ -14080,13 +14080,13 @@
   {
     "Input": "0.8/15 looks like a formula",
     "Comment": "Java disabled due to issue in lookbehind.",
-    "NotSupported": "dotnet, java, javascript",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": []
   },
   {
     "Input": "8/1.5 looks like a formula",
     "Comment": "Java disabled due to issue in lookbehind.",
-    "NotSupported": "dotnet, java, javascript",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": []
   },
   {
