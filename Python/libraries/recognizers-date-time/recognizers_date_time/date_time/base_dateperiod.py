@@ -723,9 +723,9 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
             match = RegexExtension.match_begin(self.config.within_next_prefix_regex, after_str, True)
 
         if match and match.success:
-            duration_str = source[duration.start: duration.length]
-            match_date = regex.search(self.config.date_unit_regex, duration_str)
-            match_time = regex.search(self.config.time_unit_regex, duration_str)
+            duration_str = source[duration.start: duration.start + duration.length]
+            match_date = self.config.date_unit_regex.search(duration_str)
+            match_time = self.config.time_unit_regex.search(duration_str)
 
             if match_date and not match_time:
                 if in_prefix:
@@ -1857,6 +1857,7 @@ class BaseDatePeriodParser(DateTimeParser):
                 diff_days = DateUtils.day_of_year(
                     end_date) - DateUtils.day_of_year(begin_date) + 1
             duration_timex = f'P{diff_days}D'
+
         if not begin_date == end_date or rest_now_sunday:
             if self._inclusive_end_period:
                 end_date = end_date + timedelta(days=-1)
