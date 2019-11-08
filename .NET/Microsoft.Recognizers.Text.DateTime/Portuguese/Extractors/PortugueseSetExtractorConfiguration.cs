@@ -59,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeExtractor DateTimePeriodExtractor { get; }
 
+        bool ISetExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex ISetExtractorConfiguration.LastRegex => PortugueseDateExtractorConfiguration.LastDateRegex;
 
         Regex ISetExtractorConfiguration.EachPrefixRegex => EachPrefixRegex;

@@ -90,7 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
-                if (string.IsNullOrEmpty(afterStr) && this.config.BeforeEachDayRegex != null)
+                if ((string.IsNullOrEmpty(afterStr) || this.config.CheckBothBeforeAfter) && this.config.BeforeEachDayRegex != null)
                 {
                     var beforeStr = text.Substring(0, er.Start ?? 0);
                     var beforeMatch = this.config.BeforeEachDayRegex.Match(beforeStr);

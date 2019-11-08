@@ -372,7 +372,7 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
     private readonly TMIRegex: RegExp;
     private readonly TAFRegex: RegExp;
     private readonly TEVRegex: RegExp;
-    private readonly TNIRegex; RegExp;
+    private readonly TNIRegex: RegExp;
     private readonly unitRegex: RegExp;
     private readonly timeOfDayRegex: RegExp;
     private readonly cardinalExtractor: IExtractor;

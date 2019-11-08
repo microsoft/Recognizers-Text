@@ -35,6 +35,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public ParseResult Parse(ExtractResult extResult)
         {
             var ret = new ParseResult(extResult);
+
             ExtractResult numberResult;
 
             if (extResult.Data is ExtractResult unitResult)
@@ -49,7 +50,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             else
             {
                 // If there is no unitResult, means there is just unit
-                numberResult = new ExtractResult { Start = -1, Length = 0 };
+                numberResult = new ExtractResult { Start = -1, Length = 0, Text = string.Empty };
             }
 
             // Key contains units

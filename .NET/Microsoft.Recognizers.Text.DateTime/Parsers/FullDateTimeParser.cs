@@ -135,14 +135,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             var sinceMatchSuffix = config.SinceSuffixRegex.MatchEnd(er.Text, trim: true);
             var equalMatch = config.EqualRegex.MatchBegin(er.Text, trim: true);
 
-            if (beforeMatch.Success && !IsDurationWithBeforeAndAfter(er))
+            if (beforeMatch.Success && !IsDurationWithAgoAndLater(er))
             {
                 hasBefore = true;
                 er.Length -= beforeMatch.Length;
                 er.Text = er.Text.Substring(0, er.Length ?? 0);
                 modStr = beforeMatch.Value;
             }
-            else if (afterMatch.Success && !IsDurationWithBeforeAndAfter(er))
+            else if (afterMatch.Success && !IsDurationWithAgoAndLater(er))
             {
                 hasAfter = true;
                 er.Length -= afterMatch.Length;
@@ -562,9 +562,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return res;
         }
 
-        private bool IsDurationWithBeforeAndAfter(ExtractResult er)
+        private bool IsDurationWithAgoAndLater(ExtractResult er)
         {
-            return er.Metadata != null && er.Metadata.IsDurationWithBeforeAndAfter;
+            return er.Metadata != null && er.Metadata.IsDurationWithAgoAndLater;
         }
     }
 }

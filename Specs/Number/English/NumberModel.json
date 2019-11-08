@@ -254,6 +254,7 @@
   },
   {
     "Input": "hundred thousand dollars",
+    "NotSupported": "dotnet, javascript, java, python",
     "Results": [
       {
         "Text": "hundred thousand",

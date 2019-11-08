@@ -80,6 +80,17 @@
             "footer": [ "# pylint: enable=line-too-long" ]
         },
         {
+            "input": [ "English", "English-PhoneNumbers" ],
+            "output": "english_phone_numbers",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "",
+                "",
+                "class EnglishPhoneNumbers:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
             "input": [ "Chinese", "Chinese-PhoneNumbers" ],
             "output": "chinese_phone_numbers",
             "header": [
@@ -113,6 +124,17 @@
                 "",
                 "",
                 "class ChineseIp:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Portuguese", "Portuguese-PhoneNumbers" ],
+            "output": "portuguese_phone_numbers",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "",
+                "",
+                "class PortuguesePhoneNumbers:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
         }

@@ -4143,7 +4143,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "bugünden itibaren 2 haftadan fazla",
+        "Text": "bugünden itibaren 2 haftadan fazla bir sürede",
         "Type": "daterange",
         "Value": {
           "Timex": "2018-06-12",
@@ -4156,7 +4156,7 @@
           }
         },
         "Start": 9,
-        "Length": 34
+        "Length": 45
       }
     ]
   },
@@ -4168,7 +4168,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "bugünden itibaren 2 haftadan az",
+        "Text": "bugünden itibaren 2 haftadan az bir sürede",
         "Type": "daterange",
         "Value": {
           "Timex": "(2018-05-29,2018-06-12,P2W)",
@@ -4182,7 +4182,7 @@
           }
         },
         "Start": 0,
-        "Length": 31
+        "Length": 42
       }
     ]
   },
@@ -4271,7 +4271,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yarından itibaren 3 günden az",
+        "Text": "yarından itibaren 3 günden az bir sürede",
         "Type": "daterange",
         "Value": {
           "Timex": "(2018-05-30,2018-06-02,P3D)",
@@ -4285,7 +4285,7 @@
           }
         },
         "Start": 9,
-        "Length": 29
+        "Length": 40
       }
     ]
   },
@@ -4427,7 +4427,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1/10'den 07/11",
+        "Text": "1/10'den 07/11'ye",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-10-01,XXXX-11-07,P37D)",
@@ -4441,7 +4441,7 @@
           }
         },
         "Start": 0,
-        "Length": 14
+        "Length": 17
       }
     ]
   },
@@ -4453,7 +4453,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "25/10'dan 25/01",
+        "Text": "25/10'dan 25/01'e",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-10-25,XXXX-01-25,P92D)",
@@ -4467,7 +4467,7 @@
           }
         },
         "Start": 0,
-        "Length": 15
+        "Length": 17
       }
     ]
   }
