@@ -216,7 +216,7 @@ class BaseDurationExtractor(DateTimeExtractor):
 
                 match = self.config.duration_connector_regex.search(mid_str)
                 if match:
-                    unit_match = unit_regex.match(extractor_results[second_extraction_index].text)
+                    unit_match = unit_regex.search(extractor_results[second_extraction_index].text)
                     if unit_match and str(RegExpUtility.get_group(unit_match, 'unit')) in unit_map:
                         next_unit_str = str(RegExpUtility.get_group(unit_match, 'unit'))
                         if unit_value_map[next_unit_str] != unit_value_map[cur_unit]:
@@ -241,7 +241,7 @@ class BaseDurationExtractor(DateTimeExtractor):
                 node.length = extractor_results[second_extraction_index - 1].start +\
                     extractor_results[second_extraction_index - 1].length -\
                     node.start
-                node.text = text[node.start or 0: node.length or 0]
+                node.text = text[node.start or 0: node.length + node.start or 0]
                 node.type = extractor_results[first_extraction_index].type
 
                 if time_unit == total_unit:

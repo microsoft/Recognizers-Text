@@ -41,6 +41,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
             ChineseDateTime.SeasonWithYear)
 
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
+        result_value = None
         if not reference:
             reference = datetime.now()
 

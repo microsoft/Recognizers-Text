@@ -95,6 +95,10 @@ class EnglishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
     def dmy_date_format(self) -> bool:
         return self._dmy_date_format
 
+    @property
+    def specific_time_of_day_regex(self) -> Pattern:
+        return self._specific_time_of_day_regex
+
     def __init__(self):
         super().__init__()
         self._date_point_extractor = BaseDateExtractor(
@@ -103,10 +107,13 @@ class EnglishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
             EnglishTimeExtractorConfiguration())
         self._duration_extractor = BaseDurationExtractor(
             EnglishDurationExtractorConfiguration())
-        self._suffix_regex = RegExpUtility.get_safe_reg_exp(
-            EnglishDateTime.SuffixRegex)
+        self._utility_configuration = EnglishDateTimeUtilityConfiguration()
+        self.preposition_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PrepositionRegex)
         self._now_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.NowRegex)
+        self._suffix_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SuffixRegex)
         self._time_of_today_after_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.TimeOfTodayAfterRegex)
         self._simple_time_of_today_after_regex = RegExpUtility.get_safe_reg_exp(
@@ -123,11 +130,8 @@ class EnglishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
             EnglishDateTime.UnspecificEndOfRegex)
         self._unit_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.TimeUnitRegex)
-        self._utility_configuration = EnglishDateTimeUtilityConfiguration()
         self.connector_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.ConnectorRegex)
-        self.preposition_regex = RegExpUtility.get_safe_reg_exp(
-            EnglishDateTime.PrepositionRegex)
         self._number_as_time_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.NumberAsTimeRegex)
         self._date_number_connector_regex = RegExpUtility.get_safe_reg_exp(
@@ -141,6 +145,9 @@ class EnglishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         )
         self._year_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.YearRegex
+        )
+        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SpecificTimeOfDayRegex
         )
 
     def is_connector_token(self, source: str) -> bool:

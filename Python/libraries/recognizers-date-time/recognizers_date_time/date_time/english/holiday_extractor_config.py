@@ -12,6 +12,10 @@ class EnglishHolidayExtractorConfiguration(HolidayExtractorConfiguration):
         return self._year_regex
 
     @property
+    def year_regex(self) -> Pattern:
+        return self._year_regex
+
+    @property
     def holiday_regexes(self) -> List[Pattern]:
         return self._holiday_regexes
 
