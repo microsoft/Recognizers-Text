@@ -9,6 +9,8 @@ from recognizers_number.number import Constants as NumberConstants
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
+from .utilities import Token
+from .utilities import RegexExtension
 import regex
 import calendar
 
@@ -214,8 +216,6 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         return result
 
     def basic_regex_match(self, source: str) -> []:
-        from .utilities import Token
-        from .utilities import RegexExtension
         ret: List[Token] = list()
 
         for regexp in self.config.date_regex_list:
@@ -234,7 +234,8 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
                         if relative_regex:
                             if relative_regex.success:
-                                ret.append(Token(relative_regex.index, source.index(match.group()) + match.end() - match.start()))
+                                ret.append(Token(relative_regex.index, source.index(match.group())
+                                                 + match.end() - match.start()))
                             else:
                                 ret.append(Token(source.index(match.group()),
                                                  source.index(match.group()) + match.end() - match.start()))
@@ -257,7 +258,8 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
             year_group = RegExpUtility.get_group(
                 match, Constants.YEAR_GROUP_NAME)
             # If the "year" part is not at the end of the match, it's a valid match
-            if not text.index(year_group) + len(year_group) == text.index(match.group()) + (match.end() - match.start()):
+            if not text.index(year_group) + len(year_group) == text.index(match.group())\
+                   + (match.end() - match.start()):
                 is_valid_match = True
             else:
                 sub_text = text[text.index(year_group):]
@@ -309,7 +311,6 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         return False
 
     def implicit_date(self, source: str) -> []:
-        from .utilities import Token
         from .utilities import get_tokens_from_regex
         ret: List[Token] = list()
 
@@ -319,7 +320,6 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         return ret
 
     def number_with_month(self, source: str, reference: datetime) -> []:
-        from .utilities import Token
         from .utilities import DateUtils
         ret: List[Token] = list()
         extract_results = self.config.ordinal_extractor.extract(source)
@@ -511,13 +511,10 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
         return start_index, end_index
 
-    def extract_relative_duration_date_with_in_prefix(self, text: str, duration_er: [ExtractResult],
+    def extract_relative_duration_date_with_in_prefix(self, source: str, duration_er: [ExtractResult],
                                                       reference: datetime):
-        from .utilities import Token
-        from .utilities import RegexExtension
-        ret: [Token] = []
-
-        durations: [Token] = []
+        tokens = []
+        durations = []
 
         for duration_extraction in duration_er:
 
@@ -527,33 +524,54 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                                        + duration_extraction.length or 0))
 
         for duration in durations:
-            before_str = text[0:duration.start]
-            after_str = text[duration.start + duration.length:]
+            before_str = source[0:duration.start]
+            after_str = source[duration.start + duration.length:]
 
             if (str.isspace(before_str) or before_str is None) and (str.isspace(after_str) or after_str is None):
                 continue
 
+            in_prefix = True
+            tokens.extend(self.extract_in_connector(source, before_str, after_str, duration, in_prefix))
+
+            # Check also after_str
+            if not match and self.config.check_both_before_after:
+                in_prefix = False
+                tokens.extend(self.extract_in_connector(source, after_str, before_str, duration, in_prefix))
+
+        return tokens
+
+    def extract_in_connector(self, source: str, before_str: str, after_str: str, duration: Token, in_prefix: bool)\
+            -> List[Token]:
+        from .utilities import RegexExtension
+
+        tokens = []
+
+        if in_prefix:
             match = RegexExtension.match_end(self.config.in_connector_regex, before_str, True)
-            if match:
-                if match.success:
+        else:
+            match = RegexExtension.match_begin(self.config.in_connector_regex, before_str, True)
 
-                    start_token = match.index
-                    range_unit_math = self.config.range_unit_regex.match(text[duration.start: duration.start
-                                                                              + duration.length])
+        if match.success:
+            range_unit_match = self.config.range_unit_regex.search(source[duration.start:
+                                                                   duration.start + duration.length])
 
-                    if range_unit_math:
-                        since_year_match = self.config.since_year_suffix_regex.match(after_str)
+            if range_unit_match:
+                since_year_match = self.config.since_year_suffix_regex.search(before_str)
 
-                        if since_year_match:
-                            ret.append(Token(start_token, duration.end + len(since_year_match)))
+                if since_year_match:
+                    start = match.index if in_prefix else since_year_match.index
+                    end = duration.end + len(since_year_match) if in_prefix else \
+                        duration.end + match.index + match.length
+                    tokens.append(Token(start, end))
+                else:
+                    start = match.index if in_prefix else duration.start
+                    end = duration.end if in_prefix else \
+                        duration.end + match.index + match.length
+                    tokens.append(Token(start, end))
 
-                        else:
-                            ret.append(Token(start_token, duration.end))
-
-        return ret
+        return tokens
 
     def relative_duration_date(self, source: str, reference: datetime) -> []:
-        from .utilities import Token
         from .utilities import AgoLaterUtil
         tokens = []
         duration_extracted_results = self.config.duration_extractor.extract(source, reference)
@@ -617,8 +635,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
     def strip_inequality_prefix(extract_result: ExtractResult, regexp: Pattern, in_prefix: bool):
         if regex.finditer(regexp, extract_result.text):
             original_length = len(extract_result.text)
-            extract_result.text = extract_result.text.replace('more than', '').strip()
-            extract_result.text = extract_result.text.replace('less than', '').strip()
+            extract_result.text = regex.sub(regexp, '', extract_result.text)
             if in_prefix:
                 extract_result.start += original_length - len(extract_result.text)
 
