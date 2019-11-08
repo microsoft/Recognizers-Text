@@ -259,7 +259,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                 match, Constants.YEAR_GROUP_NAME)
             # If the "year" part is not at the end of the match, it's a valid match
             if not text.index(year_group) + len(year_group) == text.index(match.group())\
-                   + (match.end() - match.start()):
+                    + (match.end() - match.start()):
                 is_valid_match = True
             else:
                 sub_text = text[text.index(year_group):]
@@ -553,7 +553,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
         if match.success:
             range_unit_match = self.config.range_unit_regex.search(source[duration.start:
-                                                                   duration.start + duration.length])
+                                                                          duration.start + duration.length])
 
             if range_unit_match:
                 since_year_match = self.config.since_year_suffix_regex.search(before_str)
