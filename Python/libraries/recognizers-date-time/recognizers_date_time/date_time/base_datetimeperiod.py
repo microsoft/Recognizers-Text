@@ -657,7 +657,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             match = self.config.time_unit_regex.match(source[duration.start: duration.length])
             success = match
 
-            if in_prefix:
+            if not in_prefix:
                 # Match prefix for "next"
                 before_str = source[0:duration.start]
                 match_next = self.config.next_prefix_regex.match(before_str)
