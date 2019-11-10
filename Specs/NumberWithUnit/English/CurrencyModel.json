@@ -2062,13 +2062,13 @@
     ]
   },
   {
-    "Input": "1 $ 10 dollars bill",
+    "Input": "1 $10 dollars bill",
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "$ 10",
+        "Text": "$10",
         "Start": 2,
-        "End": 5,
+        "End": 4,
         "TypeName": "currency",
         "Resolution": {
           "unit": "Dollar",
@@ -2077,12 +2077,81 @@
       },
       {
         "Text": "dollars",
-        "Start": 7,
-        "End": 13,
+        "Start": 6,
+        "End": 12,
         "TypeName": "currency",
         "Resolution": {
           "unit": "Dollar",
           "value": null
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 $ 30 $",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 $",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "30 $",
+        "Start": 5,
+        "End": 8,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "30"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 $ 30 cent",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 $ 30 cent",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10.3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 $ 10 dollars bill",
+    "Comment": "This is to show the result of current extractor.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 $",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "10 dollars",
+        "Start": 4,
+        "End": 13,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10"
         }
       }
     ]

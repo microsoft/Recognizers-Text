@@ -91,6 +91,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     }
                 }
 
+                bool[] textUsed = new bool[source.Length];
                 foreach (var number in numbers)
                 {
                     if (number.Start == null || number.Length == null)
@@ -102,6 +103,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     var maxFindPref = Math.Min(maxPrefixMatchLen, number.Start.Value);
                     var maxFindSuff = sourceLen - start - length;
 
+                    var closeMatch = false;
                     if (maxFindPref != 0)
                     {
                         // Scan from left to right, find the longest match
@@ -115,26 +117,34 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 break;
                             }
 
-                            if (m.Length > 0 && source.Substring(m.Start, lastIndex - m.Start).Trim() == m.Text)
+                            var unitStr = source.Substring(m.Start, lastIndex - m.Start);
+                            if (m.Length > 0 && unitStr.Trim() == m.Text)
                             {
+                                if (unitStr == m.Text)
+                                {
+                                    closeMatch = true;
+                                }
+
+                                suffixMatch.Remove(m);
                                 bestMatch = m;
                                 break;
                             }
                         }
 
-                        if (bestMatch != null)
+                        if ((bestMatch != null && !textUsed[bestMatch.Start]) || closeMatch)
                         {
                             var offSet = lastIndex - bestMatch.Start;
                             var unitStr = source.Substring(bestMatch.Start, offSet);
-                            foreach (var res in result)
+                            if (closeMatch)
                             {
-                                if (res.Start + res.Length > bestMatch.Start)
+                                for (var index = 0; index < result.Count; index++)
                                 {
-                                    // if the unit is already been used, remove them.
-                                    result.Remove(res);
-                                    if (!result.Any())
+                                    var res = result[index];
+                                    if (res.Start + res.Length > bestMatch.Start)
                                     {
-                                        break;
+                                        // if the unit has been used, remove them for the better match.
+                                        result.Remove(res);
+                                        index--;
                                     }
                                 }
                             }
@@ -145,9 +155,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                     mappingPrefix.TryGetValue(start, out PrefixUnitResult prefixUnit);
 
-                    // Allow cases like "摄氏温度10度" pass
-                    // But if text have bestMatch such as "30$" in "10$ 30$", it should not continue check the 10 in the front.
-                    if (maxFindSuff > 0 && (prefixUnit == null || !nonRepeatableUnitList.Contains(prefixUnit.UnitStr.Trim())))
+                    // Some cases have bestMatch should not continue to check the suffix unit.
+                    // Such as "$10 $30", "10" have the "$" in the front as a bestMatch prefix unit.
+                    // it should not continue to add the "$" in the front of "30".
+                    // But should allow cases have units both in the front and back, for example "摄氏温度10度", pass.
+                    if (maxFindSuff > 0 && (prefixUnit == null || !this.config.ExtractType.Contains("currency")))
                     {
                         // find the best suffix unit
                         var maxlen = 0;
@@ -163,6 +175,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                     var midStr = source.Substring(firstIndex, m.Start - firstIndex);
                                     if (string.IsNullOrWhiteSpace(midStr) || midStr.Trim().Equals(this.config.ConnectorToken))
                                     {
+                                        textUsed[m.Start] = true;
                                         maxlen = endpos;
                                     }
                                 }
