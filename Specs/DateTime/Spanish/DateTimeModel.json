@@ -479,7 +479,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-23T01:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "semana pasada",
@@ -504,7 +504,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-23T01:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "la semana pasada",
@@ -529,7 +529,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-23T01:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "el mes pasado",
@@ -554,7 +554,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-23T01:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "mes pasado",
