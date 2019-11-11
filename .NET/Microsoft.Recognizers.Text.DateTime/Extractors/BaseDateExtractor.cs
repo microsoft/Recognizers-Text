@@ -459,12 +459,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             var date = DateObject.MinValue.SafeCreateFromValue(year, month, day);
 
             // Check whether there's a weekday
+            bool isMatchInSuffix = false;
             var matchWeekDay = this.Config.WeekDayEnd.Match(prefix);
 
             // Check for weekday in the suffix
             if (!matchWeekDay.Success)
             {
                 matchWeekDay = this.Config.WeekDayStart.Match(suffix);
+                isMatchInSuffix = matchWeekDay.Success;
             }
 
             if (matchWeekDay.Success)
@@ -479,7 +481,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     if (!date.Equals(DateObject.MinValue) && weekDay1 == weekDay2)
                     {
-                        if (matchWeekDay.Index < startIndex)
+                        if (!isMatchInSuffix)
                         {
                             startIndex = matchWeekDay.Index;
                         }

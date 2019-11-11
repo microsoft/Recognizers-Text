@@ -4,6 +4,7 @@ using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 
 using DateObject = System.DateTime;
 
@@ -37,7 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var beforeString = text.Substring(0, (int)er.Start);
                 var isTimeDuration = utilityConfiguration.TimeUnitRegex.Match(er.Text).Success;
 
-                if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.AgoRegex, out var index))
+                if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.AgoRegex, out var index, inSuffix: true))
                 {
                     // We don't support cases like "5 minutes from today" for now
                     // Cases like "5 minutes ago" or "5 minutes from now" are supported
@@ -53,7 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         // check if regex match is split between beforeString and afterString
                         string beforeAfterStr = beforeString + afterString.Substring(0, index);
-                        if (MatchingUtil.GetAgoLaterIndexInBeforeString(beforeAfterStr, utilityConfiguration.AgoRegex, out var indexStart))
+                        if (MatchingUtil.GetAgoLaterIndex(beforeAfterStr, utilityConfiguration.AgoRegex, out var indexStart, inSuffix: false))
                         {
                             isDayMatchInAfterString = utilityConfiguration.AgoRegex.Match(beforeAfterStr).Groups["day"].Success;
 
@@ -64,7 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
                 }
-                else if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.GetAgoLaterIndexInBeforeString(beforeString, utilityConfiguration.AgoRegex, out index))
+                else if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.GetAgoLaterIndex(beforeString, utilityConfiguration.AgoRegex, out index, inSuffix: false))
                 {
                     // Check also beforeString
                     var isDayMatchInBeforeString = utilityConfiguration.AgoRegex.Match(beforeString).Groups["day"].Success;
@@ -73,11 +74,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.Add(new Token(index, er.Start + er.Length ?? 0));
                     }
                 }
-                else if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.LaterRegex, out index) || (utilityConfiguration.CheckBothBeforeAfter &&
-                         MatchingUtil.GetAgoLaterIndexInBeforeString(beforeString, utilityConfiguration.LaterRegex, out index)))
+                else if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.LaterRegex, out index, inSuffix: true) || (utilityConfiguration.CheckBothBeforeAfter &&
+                         MatchingUtil.GetAgoLaterIndex(beforeString, utilityConfiguration.LaterRegex, out index, inSuffix: false)))
                 {
                     Token tokAfter = null, tokBefore = null;
-                    if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.LaterRegex, out index))
+                    if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.LaterRegex, out index, inSuffix: true))
                     {
                         var isDayMatchInAfterString = utilityConfiguration.LaterRegex.Match(afterString).Groups["day"].Success;
 
@@ -85,10 +86,26 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             tokAfter = new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index);
                         }
+
+                        var isRangeMatch = utilityConfiguration.RangePrefixRegex.MatchBegin(afterString.Substring(index), trim: true).Success;
+                        if (utilityConfiguration.CheckBothBeforeAfter && !isDayMatchInAfterString && !isRangeMatch)
+                        {
+                            // check if regex match is split between beforeString and afterString
+                            string beforeAfterStr = beforeString + afterString.Substring(0, index);
+                            if (MatchingUtil.GetAgoLaterIndex(beforeAfterStr, utilityConfiguration.LaterRegex, out var indexStart, inSuffix: false))
+                            {
+                                isDayMatchInAfterString = utilityConfiguration.LaterRegex.Match(beforeAfterStr).Groups["day"].Success;
+
+                                if (isDayMatchInAfterString && !(isTimeDuration && isDayMatchInAfterString))
+                                {
+                                    ret.Add(new Token(indexStart, (er.Start + er.Length ?? 0) + index));
+                                }
+                            }
+                        }
                     }
 
                     // Check also beforeString
-                    if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.GetAgoLaterIndexInBeforeString(beforeString, utilityConfiguration.LaterRegex, out index))
+                    if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.GetAgoLaterIndex(beforeString, utilityConfiguration.LaterRegex, out index, inSuffix: false))
                     {
                         var isDayMatchInBeforeString = utilityConfiguration.LaterRegex.Match(beforeString).Groups["day"].Success;
                         if (!(isTimeDuration && isDayMatchInBeforeString))
@@ -122,7 +139,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
                 }
-                else if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.InConnectorRegex, out index))
+                else if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.InConnectorRegex, out index, inSuffix: true))
                 {
                     // Check also afterString
                     // For range unit like "week, month, year", it should output dateRange or datetimeRange
@@ -145,7 +162,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
                 }
-                else if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.WithinNextPrefixRegex, out index))
+                else if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.WithinNextPrefixRegex, out index, inSuffix: true))
                 {
                     // Check also afterString
                     // For range unit like "week, month, year, day, second, minute, hour", it should output dateRange or datetimeRange
@@ -225,7 +242,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Mod = Constants.LESS_THAN_MOD;
             }
 
-            if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.AgoRegex))
+            if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.AgoRegex, inSuffix: true))
             {
                 var match = utilityConfiguration.AgoRegex.Match(afterStr);
                 var swift = 0;
@@ -235,7 +252,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     swift = swiftDay(match.Groups["day"].Value);
                 }
-                else if (utilityConfiguration.CheckBothBeforeAfter && match.Success && !MatchingUtil.ContainsAgoLaterIndexInBeforeString(beforeStr, utilityConfiguration.AgoRegex))
+                else if (utilityConfiguration.CheckBothBeforeAfter && match.Success && !MatchingUtil.ContainsAgoLaterIndex(beforeStr, utilityConfiguration.AgoRegex, inSuffix: false))
                 {
                     match = utilityConfiguration.AgoRegex.Match(beforeStr + " " + afterStr);
                     if (match.Success && !string.IsNullOrEmpty(match.Groups["day"].Value))
@@ -248,7 +265,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 ((DateTimeResolutionResult)durationParseResult.Value).Mod = Constants.BEFORE_MOD;
             }
-            else if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.ContainsAgoLaterIndexInBeforeString(beforeStr, utilityConfiguration.AgoRegex))
+            else if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.ContainsAgoLaterIndex(beforeStr, utilityConfiguration.AgoRegex, inSuffix: false))
             {
                 var match = utilityConfiguration.AgoRegex.Match(beforeStr);
                 var swift = 0;
@@ -263,14 +280,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 ((DateTimeResolutionResult)durationParseResult.Value).Mod = Constants.BEFORE_MOD;
             }
-            else if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex) ||
+            else if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex, inSuffix: true) ||
                      MatchingUtil.ContainsTermIndex(beforeStr, utilityConfiguration.InConnectorRegex) ||
-                     (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.ContainsAgoLaterIndexInBeforeString(beforeStr, utilityConfiguration.LaterRegex)))
+                     (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.ContainsAgoLaterIndex(beforeStr, utilityConfiguration.LaterRegex, inSuffix: false)))
             {
                 var match = utilityConfiguration.LaterRegex.Match(afterStr);
                 var swift = 0;
 
-                if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.ContainsAgoLaterIndexInBeforeString(beforeStr, utilityConfiguration.LaterRegex) && string.IsNullOrEmpty(match.Groups["day"].Value))
+                if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.ContainsAgoLaterIndex(beforeStr, utilityConfiguration.LaterRegex, inSuffix: false) && string.IsNullOrEmpty(match.Groups["day"].Value))
                 {
                     match = utilityConfiguration.LaterRegex.Match(beforeStr);
                 }
@@ -294,15 +311,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 ((DateTimeResolutionResult)durationParseResult.Value).Mod = Constants.AFTER_MOD;
             }
-            else if (utilityConfiguration.CheckBothBeforeAfter && (MatchingUtil.ContainsAgoLaterIndexInBeforeString(beforeStr, utilityConfiguration.LaterRegex) ||
-                     MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.InConnectorRegex) ||
-                     MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex)))
+            else if (utilityConfiguration.CheckBothBeforeAfter && (MatchingUtil.ContainsAgoLaterIndex(beforeStr, utilityConfiguration.LaterRegex, inSuffix: false) ||
+                     MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.InConnectorRegex, inSuffix: true) ||
+                     MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex, inSuffix: true)))
             {
                 // Check also beforeStr
                 var match = utilityConfiguration.LaterRegex.Match(beforeStr);
                 var swift = 0;
 
-                if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex) && string.IsNullOrEmpty(match.Groups["day"].Value))
+                if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex, inSuffix: true) && string.IsNullOrEmpty(match.Groups["day"].Value))
                 {
                     match = utilityConfiguration.LaterRegex.Match(beforeStr);
                 }

@@ -90,8 +90,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                     break;
                 }
 
-                if (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
-                    ers[j].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
+                if ((ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
+                    ers[j].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal)) ||
+                    (this.config.CheckBothBeforeAfter && ers[j].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
+                    ers[i].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal)))
                 {
                     var middleBegin = ers[i].Start + ers[i].Length ?? 0;
                     var middleEnd = ers[j].Start ?? 0;
@@ -182,9 +184,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var dateStrEnd = (int)(dateEr.Start + dateEr.Length);
                 var beforeStr = text.Substring(0, (int)dateEr.Start).TrimEnd();
                 var match = this.config.PrefixDayRegex.Match(beforeStr);
+
                 if (match.Success)
                 {
                     ret.Add(new Token(match.Index, dateStrEnd));
+                }
+                else if (this.config.CheckBothBeforeAfter)
+                {
+                    // Check also afterStr
+                    var afterStr = text.Substring(dateStrEnd, text.Length - dateStrEnd);
+                    var matchAfter = this.config.PrefixDayRegex.MatchBegin(afterStr, trim: true);
+                    if (matchAfter.Success)
+                    {
+                        ret.Add(new Token((int)dateEr.Start, dateStrEnd + matchAfter.Index + matchAfter.Length));
+                    }
                 }
             }
 
@@ -367,13 +380,27 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (midEnd - midBegin > 0)
                 {
                     var midStr = text.Substring(midBegin, midEnd - midBegin);
-                    if (string.IsNullOrWhiteSpace(midStr) || midStr.TrimStart().StartsWith(config.TokenBeforeDate))
+                    bool isMatchTokenBeforeDate = string.IsNullOrWhiteSpace(midStr) || midStr.TrimStart().StartsWith(config.TokenBeforeDate);
+                    if (this.config.CheckBothBeforeAfter && !string.IsNullOrWhiteSpace(midStr))
+                    {
+                        List<string> tokenListBeforeDate = config.TokenBeforeDate.Split('|').ToList();
+                        foreach (string token in tokenListBeforeDate.Where(n => !string.IsNullOrEmpty(n)))
+                        {
+                            if (midStr.Trim().Equals(token))
+                            {
+                                isMatchTokenBeforeDate = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (isMatchTokenBeforeDate)
                     {
                         // Extend date extraction for cases like "Monday evening next week"
                         var extendedStr = points[idx].Text + text.Substring((int)(points[idx + 1].Start + points[idx + 1].Length));
                         var extendedDateEr = config.SingleDateExtractor.Extract(extendedStr).FirstOrDefault();
                         var offset = 0;
-                        if (extendedDateEr != null && extendedDateEr.Start == 0)
+                        if (extendedDateEr != null && extendedDateEr.Start == 0 && !this.config.CheckBothBeforeAfter)
                         {
                             offset = (int)(extendedDateEr.Length - points[idx].Length);
                         }

@@ -10,13 +10,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
     public class TurkishMergedExtractorConfiguration : BaseDateTimeOptionsConfiguration, IMergedExtractorConfiguration
     {
         public static readonly Regex BeforeRegex =
-            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.BeforeRegexWithAnchor, RegexFlags);
 
         public static readonly Regex AfterRegex =
-            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AfterRegexWithAnchor, RegexFlags);
 
         public static readonly Regex SinceRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SinceRegexWithAnchor, RegexFlags);
 
         public static readonly Regex AroundRegex =
             new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
