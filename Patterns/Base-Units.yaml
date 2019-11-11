@@ -11,8 +11,4 @@ PmNonUnitRegex: !nestedRegex
 AmbiguousTimeTerm: "pm"
 AmbiguousUnitNumberMultiplierRegex: !simpleRegex
   def: (\s[Kk])
-NonRepeatableUnitList: !list
-  types: [ string ]
-  entries:
-    - $
 ...

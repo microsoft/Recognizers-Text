@@ -14,7 +14,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         private readonly StringMatcher suffixMatcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
         private readonly StringMatcher prefixMatcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
-        private readonly ImmutableList<string> nonRepeatableUnitList = BaseUnits.NonRepeatableUnitList.ToImmutableList();
         private readonly Regex separateRegex;
 
         private readonly int maxPrefixMatchLen;
@@ -155,10 +154,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                     mappingPrefix.TryGetValue(start, out PrefixUnitResult prefixUnit);
 
-                    // Some cases have bestMatch should not continue to check the suffix unit.
-                    // Such as "$10 $30", "10" have the "$" in the front as a bestMatch prefix unit.
-                    // it should not continue to add the "$" in the front of "30".
-                    // But should allow cases have units both in the front and back, for example "摄氏温度10度", pass.
+                    // Some currency unit both in prefixMatch and suffixMatch, such as "$", prevent reuse here.
                     if (maxFindSuff > 0 && (prefixUnit == null || !this.config.ExtractType.Contains("currency")))
                     {
                         // find the best suffix unit

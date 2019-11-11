@@ -2155,5 +2155,61 @@
         }
       }
     ]
+  },
+  {
+    "Input": "10 rmb 20 usd",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 rmb",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "20 usd",
+        "Start": 7,
+        "End": 12,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "rmb 10 usd 20",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "rmb 10",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "usd 20",
+        "Start": 7,
+        "End": 12,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "20"
+        }
+      }
+    ]
   }
 ]
