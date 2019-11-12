@@ -411,7 +411,7 @@ class BaseDurationParser(DateTimeParser):
         if reference is None:
             reference = datetime.now()
 
-        result = DateTimeParseResult(source)
+        value = None
 
         if source.type is self.parser_type_name:
             source_text = source.text.lower()
@@ -426,9 +426,25 @@ class BaseDurationParser(DateTimeParser):
                     inner_result.future_value)
                 inner_result.past_resolution[TimeTypeConstants.DURATION] = str(
                     inner_result.past_value)
-                result.value = inner_result
-                result.timex_str = inner_result.timex if inner_result is not None else ''
-                result.resolution_str = ''
+
+            value = inner_result
+
+        res = value
+        if res and source.data:
+            if source.data == TimeTypeConstants.MORE_THAN_MOD:
+                res.mod = TimeTypeConstants.MORE_THAN_MOD
+            elif source.data == TimeTypeConstants.LESS_THAN_MOD:
+                res.mod = TimeTypeConstants.LESS_THAN_MOD
+
+        result = DateTimeParseResult()
+        result.text = source.text
+        result.start = source.start
+        result.length = source.length
+        result.type = source.type
+        result.data = source.data
+        result.value = value
+        result.timex_str = '' if not value else value.timex
+        result.resolution_str = ''
 
         return result
 
