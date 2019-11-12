@@ -415,6 +415,13 @@ class DateUtils:
     min_value = datetime(1, 1, 1, 0, 0, 0, 0)
 
     @staticmethod
+    def int_try_parse(value):
+        try:
+            return int(value), True
+        except ValueError:
+            return value, False
+
+    @staticmethod
     def safe_create_from_value(seed: datetime, year: int, month: int, day: int,
                                hour: int = 0, minute: int = 0, second: int = 0) -> datetime:
         if DateUtils.is_valid_date(year, month, day) and DateUtils.is_valid_time(hour, minute, second):
@@ -802,6 +809,55 @@ class AgoLaterUtil:
         return result
 
 
+class DateContext:
+    year: int
+
+    # This method is to ensure the begin date is less than the end date. As DateContext only supports common Year as
+    # context, so it subtracts one year from beginDate.
+    # @TODO problematic in other usages.
+    @staticmethod
+    def swift_date_object(begin_date: datetime, end_date: datetime) -> datetime:
+        if begin_date > end_date:
+            begin_date = begin_date - datedelta(years=1)
+        return begin_date
+
+    def process_date_entity_parsing_result(self, original_result: DateTimeParseResult) -> DateTimeParseResult:
+        if not self.is_empty():
+            original_result.TimexStr = TimexUtil.set_timex_with_context(original_result.TimexStr, self)
+            original_result.Value = self.process_date_entity_resolution(original_result.value)
+
+        return original_result
+
+    def process_date_entity_resolution(self, resolution_result: DateTimeResolutionResult) -> DateTimeResolutionResult:
+        if not self.is_empty():
+            resolution_result.timex = TimexUtil.set_timex_with_context(resolution_result.timex, self)
+            resolution_result.future_value = self.__set_date_with_context(resolution_result.future_value)
+            resolution_result.past_value = self.__set_date_with_context(resolution_result.past_value)
+        return resolution_result
+
+    def process_date_period_entity_resolution(self, resolution_result: DateTimeResolutionResult) -> DateTimeResolutionResult:
+        if not self.is_empty():
+            resolution_result.timex = TimexUtil.set_timex_with_context(resolution_result.timex, self)
+            resolution_result.future_value = self.__set_date_range_with_context(resolution_result.future_resolution)
+            resolution_result.past_value = self.__set_date_range_with_context(resolution_result.past_resolution)
+        return resolution_result
+
+    def is_empty(self) -> bool:
+        return self.year == Constants.INVALID_YEAR
+
+    def __set_date_with_context(self, original_date) -> datetime:
+        value = datetime(year=self.year, month=original_date.month, day=original_date.day)
+        return value
+
+    def __set_date_range_with_context(self, original_date_range: Dict[str, str]) -> Dict[str, str]:
+        start_date = self.__set_date_with_context(original_date_range[TimeTypeConstants.START_DATE])
+        end_date = self.__set_date_with_context(original_date_range[TimeTypeConstants.END_DATE])
+        result: Dict[str, str]
+        result[TimeTypeConstants.START_DATE] = str(start_date)
+        result[TimeTypeConstants.END_DATE] = str(end_date)
+        return result
+
+
 class TimexUtil:
     @staticmethod
     def parse_time_of_day(tod: str) -> TimeOfDayResolution:
@@ -841,4 +897,9 @@ class TimexUtil:
             result.end_hour = 23
             result.end_min = 59
 
+        return result
+
+    @staticmethod
+    def set_timex_with_context(timex: str, context: DateContext) -> str:
+        result = timex.replace(Constants.TIMEX_FUZZY_YEAR, str(context.year))
         return result

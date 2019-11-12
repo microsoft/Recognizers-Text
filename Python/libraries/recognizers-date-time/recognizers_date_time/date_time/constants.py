@@ -51,6 +51,9 @@ class Constants:
     MAX_TWO_DIGIT_YEAR_FUTURE_NUM: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
     MIN_TWO_DIGIT_YEAR_PAST_NUM: int = int(BaseDateTime.MinTwoDigitYearPastNum)
 
+    # timex
+    TIMEX_FUZZY_YEAR = "XXXX"
+
     EARLY_MORNING: str = "TDA"
     MORNING: str = "TMO"
     MID_DAY: str = "TMI"

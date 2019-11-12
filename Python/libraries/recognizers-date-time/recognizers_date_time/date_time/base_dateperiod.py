@@ -16,7 +16,7 @@ from .parsers import DateTimeParser, DateTimeParseResult
 from .base_date import BaseDateParser
 from .base_duration import BaseDurationParser
 from .utilities import Token, merge_all_tokens, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, \
-    RegExpUtility, RegexExtension
+    RegExpUtility, RegexExtension, DateContext
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
@@ -707,7 +707,6 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                                     self.config.within_next_prefix_regex,
                                     extraction_result)
                                 )
-
         return result
 
     def is_ago_relative_duration_date(self, er: ExtractResult):
@@ -715,18 +714,14 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
     # Cases like "2 days from today", "2 weeks before yesterday", "3 months after tomorrow"
     def is_relative_duration_date(self, er: ExtractResult):
-
         is_ago = regex.search(self.config.ago_regex, er.text)
         is_later = regex.search(self.config.later_regex, er.text)
-
         return is_ago or is_later
 
     def is_date_relative_to_now_or_today(self, er: ExtractResult):
         for flag_word in self.config.duration_date_restrictions:
-
             if flag_word in er.text:
                 return True
-
         return False
 
     @staticmethod
@@ -814,6 +809,11 @@ class DatePeriodParserConfiguration(ABC):
     @property
     @abstractmethod
     def year_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def decade_with_century_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
@@ -984,6 +984,37 @@ class BaseDatePeriodParser(DateTimeParser):
         self.config = config
         self._inclusive_end_period = inclusive_end_period
 
+    def get_year_context(self, config: DatePeriodParserConfiguration, start_date_str: str, end_date_str: str, text: str) -> DateContext:
+        is_end_date_pure_year: bool = False
+        is_date_relative: bool = False
+        context_year: int = Constants.INVALID_YEAR
+
+        year_match_for_end_date = config.year_regex.match(end_date_str)
+
+        if year_match_for_end_date.success and len(year_match_for_end_date) == len(end_date_str):
+            is_end_date_pure_year = True
+
+        relative_match_for_start_date = config.relative_regex.match(start_date_str)
+        relative_match_for_end_date = config.relative_regex.match(end_date_str)
+        is_date_relative = relative_match_for_start_date.success or relative_match_for_end_date.success
+
+        if not is_end_date_pure_year and not is_date_relative:
+            for match in config.year_regex.match(text):
+                year = config.date_extractor.get_year_from_text(match)
+
+                if year != Constants.INVALID_YEAR:
+                    if context_year == Constants.INVALID_YEAR:
+                        context_year = year
+                    else:
+                        # This indicates that the text has two different year value, no common context year
+                        if context_year != year:
+                            context_year = Constants.INVALID_YEAR
+
+        res: DateContext = DateContext()
+        res.year = context_year
+
+        return res
+
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
         if not reference:
             reference = datetime.now()
@@ -1059,6 +1090,61 @@ class BaseDatePeriodParser(DateTimeParser):
         result.resolution_str = ''
 
         return result
+
+    def _parse_base_date_period(self, text: str, reference_date: datetime, date_context: DateContext) -> DateTimeResolutionResult:
+        inner_result = self.__parse_month_with_year(text, reference_date)
+        if not inner_result.success:
+            inner_result = self._parse_simple_case(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self._parse_one_word_period(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self._merge_two_times_points(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self._parse_year(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self._parse_week_of_month(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self._parse_week_of_year(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self._parse_half_year(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self.__parse_quarter(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self.__parse_season(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self.__parse_which_week(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self.__parse_week_of_date(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self.__parse_month_of_date(text, reference_date)
+
+        if not inner_result.success:
+            # TODO: Complete definition for __parse_decade
+            inner_result = self.__parse_decade(text, reference_date)
+
+        # Cases like "within/less than/more than x weeks from/before/after today"
+        if not inner_result.success:
+            # TODO: Complete definition for __parse_date_point_with_ago_and_later
+            inner_result = self.__parse_date_point_with_ago_and_later(text, reference_date)
+
+        if not inner_result.success:
+            inner_result = self._parse_duration(text, reference_date)
+
+        if not inner_result.success and date_context is not None:
+            inner_result = date_context.process_date_period_entity_resolution(inner_result)
+
+        return inner_result
 
     def __parse_month_with_year(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         trimmed_source = source.strip().lower()
@@ -1403,6 +1489,9 @@ class BaseDatePeriodParser(DateTimeParser):
         ers = self.config.date_extractor.extract(trimmed_source, reference)
         prs = []
 
+        pr1: DateTimeParseResult = None
+        pr2: DateTimeParseResult = None
+
         if not ers or len(ers) < 2:
             ers = self.config.date_extractor.extract(
                 self.config.token_before_date + trimmed_source, reference)
@@ -1416,14 +1505,23 @@ class BaseDatePeriodParser(DateTimeParser):
                     return result
 
                 date_pr = self.config.date_parser.parse(ers[0], reference)
+
+                pr1 = date_pr if date_pr.start < now_pr.start else now_pr
+                pr2 = now_pr if date_pr.start < now_pr.start else date_pr
+
                 prs.append(now_pr)
                 prs.append(date_pr)
                 prs = sorted(prs, key=lambda x: x.start)
 
         if len(ers) >= 2:
-
             # Propagate the possible future relative context from the first entity to the second one in the range.
             # Handles cases like "next monday to friday"
+            future_match_for_start_date = self.config.future_regex.match(ers[0].text)
+            future_match_for_end_date = self.config.future_regex.match(ers[1].text)
+
+            if future_match_for_start_date.success and not future_match_for_end_date.success:
+                ers[1].text = future_match_for_start_date.value + ' ' + ers[1].text
+
             match = self.config.week_with_week_day_range_regex.search(source)
             if match:
                 week_prefix = RegExpUtility.get_group(match, Constants.WEEK_GROUP_NAME)
@@ -1432,16 +1530,39 @@ class BaseDatePeriodParser(DateTimeParser):
                     ers[0].text = f'{week_prefix} {ers[0].text}'
                     ers[1].text = f'{week_prefix} {ers[1].text}'
 
+            # Check if weekPrefix is already included in the extractions otherwise include it
+            if not week_prefix:
+                if week_prefix in ers[0].text:
+                    ers[0].text = week_prefix + " " + ers[0].text
+
+                if week_prefix in ers[1].text:
+                    ers[1].text = week_prefix + " " + ers[1].text
+
             for er in ers:
                 pr = self.config.date_parser.parse(er, reference)
                 if pr:
                     prs.append(pr)
 
+            date_context = self.get_year_context(self.config, ers[0].text, ers[1].text, source)
+
+            pr1 = self.config.date_parser.parse(ers[0], reference)
+            pr2 = self.config.date_parser.parse(ers[1], reference)
+
+            if pr1.value is None or pr2.value is None:
+                return result
+
+            pr1 = date_context.process_date_entity_parsing_result(pr1)
+            pr2 = date_context.process_date_entity_parsing_result(pr2)
+
         if len(prs) < 2:
             return result
 
+        result.sub_date_time_entities = [pr1, pr2]
+        result.sub_date_time_entities = prs
+
         pr_begin = prs[0]
         pr_end = prs[1]
+
         future_begin = pr_begin.value.future_value
         future_end = pr_end.value.future_value
         past_begin = pr_begin.value.past_value
@@ -1453,7 +1574,6 @@ class BaseDatePeriodParser(DateTimeParser):
         if past_end < past_begin:
             past_end = future_end
 
-        result.sub_date_time_entities = prs
         result.timex = f'({pr_begin.timex_str},{pr_end.timex_str},P{(future_end - future_begin).days}D)'
         result.future_value = [future_begin, future_end]
         result.past_value = [past_begin, past_end]
@@ -1771,6 +1891,44 @@ class BaseDatePeriodParser(DateTimeParser):
             result.success = True
 
         return result
+
+    def __parse_decade(self, source: str, reference_date: datetime) -> DateTimeResolutionResult:
+        ret = DateTimeResolutionResult()
+        first_two_number_of_year = reference_date.year / 100
+        decade: int
+        decade_last_year = 10
+        swift = 1
+        input_century = False
+
+        trimmed_source = source.strip().lower()
+        match = self.config.decade_with_century_regex.match(trimmed_source, True)
+        begin_luis_str: str
+        end_luis_str: str
+
+        if match.success:
+            # TODO: see about the value property and equivalents
+            decade_str = match.group("decade").value
+            decade = int(decade_str)
+
+            if not DateUtils.int_try_parse(decade_str)[1]:
+
+                if decade_str in self.config.written_decades:
+                    decade = self.config.written_decades[decade_str]
+                else:
+                    if decade_str in self.config.special_decade_cases:
+                        first_two_number_of_year = self.config.special_decade_cases[decade_str] / 100
+                        decade = self.config.special_decade_cases[decade_str] % 100
+                        inputCentury = True
+
+        # TODO: continue here the implementation.
+        return ret
+
+    # Only handle cases like "within/less than/more than x weeks from/before/after today"
+    def __parse_date_point_with_ago_and_later(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+        ret = DateTimeResolutionResult()
+        ret = self.config.date_extractor.extract(source, reference)
+
+        return None
 
     def __parse_quarter(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
