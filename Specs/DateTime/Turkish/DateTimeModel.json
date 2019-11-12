@@ -7684,13 +7684,13 @@
               "timex": "(T09,T18,PT9H)",
               "type": "timerange",
               "start": "09:00:00",
-              "end": "18:00:00",
+              "end": "18:00:00"
             },
             {
               "timex": "(T21,T06,PT9H)",
               "type": "timerange",
               "start": "21:00:00",
-              "end": "06:00:00",
+              "end": "06:00:00"
             }
           ]
         }
