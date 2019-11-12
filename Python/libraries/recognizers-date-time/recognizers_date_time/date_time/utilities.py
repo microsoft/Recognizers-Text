@@ -109,16 +109,12 @@ class RegexExtension:
         if match is None:
             return ConditionalMatch(regexp, False)
 
-        srt_after = text[text.index(match.group()) + (match.end() - match.start()):]
+        str_after = text[match.end():]
 
         if trim:
-            srt_after = srt_after.strip()
+            str_after = str_after.strip()
 
-        success = match and not srt_after
-
-        conditional = ConditionalMatch(match, success)
-
-        return conditional
+        return ConditionalMatch(match, match and (str.isspace(str_after) or str_after == ''))
 
     @staticmethod
     def is_exact_match(regex: Pattern, text: str, trim: bool):
@@ -153,7 +149,7 @@ class ConditionalMatch:
 
     @property
     def index(self) -> int:
-        return self.match[0].string.index(self.match[0].group())
+        return self.match[0].start()
 
     @property
     def length(self) -> int:
@@ -161,7 +157,7 @@ class ConditionalMatch:
 
     @property
     def value(self) -> str:
-        return self.match[0].string
+        return self.match[0].string[self.match[0].start(): self.match[0].end()]
 
     @property
     def groups(self):
