@@ -435,8 +435,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                     list(
                         filter(
                             lambda date_point: date_point.start <= simple_date_range.start and date_point.start +
-                            date_point.length >= simple_date_range.start + simple_date_range.length,
-                            er))),
+                            date_point.length >= simple_date_range.start + simple_date_range.length, er))),
                 simple_date_range_results))
         )
 
