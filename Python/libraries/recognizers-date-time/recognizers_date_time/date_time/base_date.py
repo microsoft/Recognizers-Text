@@ -1172,8 +1172,7 @@ class BaseDateParser(DateTimeParser):
             self.config.duration_parser,
             self.config.unit_map,
             self.config.unit_regex,
-            self.config.utility_configuration,
-            AgoLaterMode.DATE)
+            self.config.utility_configuration)
 
     def parse_number_with_month(self, source: str, reference: datetime) -> DateTimeParseResult:
         from .utilities import DateUtils
