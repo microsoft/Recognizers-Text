@@ -391,10 +391,10 @@ class BaseMergedExtractor(DateTimeExtractor):
                 success = self.try_merge_modifier_token(extract_result, self.config.since_regex, source, True)
 
             if not success:
-                self.try_merge_modifier_token(extract_result, self.config.around_regex, source)
+                success = self.try_merge_modifier_token(extract_result, self.config.around_regex, source)
 
             if not success:
-                self.try_merge_modifier_token(extract_result, self.config.equal_regex, source)
+                success = self.try_merge_modifier_token(extract_result, self.config.equal_regex, source)
 
             if extract_result.type == Constants.SYS_DATETIME_DATEPERIOD or \
                 extract_result.type == Constants.SYS_DATETIME_DATE or \
@@ -403,25 +403,24 @@ class BaseMergedExtractor(DateTimeExtractor):
                 after_str = source[extract_result.start + extract_result.length:]
                 match = RegexExtension.match_begin(self.config.suffix_after_regex, after_str.strip(), True)
 
-                if match:
-                    if match.success:
-                        is_followed_by_other_entity = True
+                if match and match.success:
+                    is_followed_by_other_entity = True
 
-                        if match.length == len(after_str.strip()):
+                    if match.length == len(after_str.strip()):
+                        is_followed_by_other_entity = False
+                    else:
+                        next_str = after_str.strip()[match.length].strip()
+                        next_er = next((e for e in extract_results if e.start > extract_result.start), None)
+
+                        if next_er is None or not next_str.startswith(next_er.text):
                             is_followed_by_other_entity = False
-                        else:
-                            next_str = after_str.strip()[match.length].strip()
-                            next_er = next((e for e in extract_results if e.start > extract_result.start), None)
 
-                            if next_er is None or not next_str.startswith(next_er.text):
-                                is_followed_by_other_entity = False
-
-                        if not is_followed_by_other_entity:
-                            mod_length = match.length + after_str.index(match.value)
-                            extract_result.length += mod_length
-                            start = extract_result.start if extract_result.start else 0
-                            length = extract_result.length if extract_result.length else 0
-                            extract_result.text = source[start: start + length]
+                    if not is_followed_by_other_entity:
+                        mod_length = match.length + after_str.index(match.value)
+                        extract_result.length += mod_length
+                        start = extract_result.start if extract_result.start else 0
+                        length = extract_result.length if extract_result.length else 0
+                        extract_result.text = source[start: start + length]
 
         return extract_results
 
@@ -575,6 +574,7 @@ class BaseMergedParser(DateTimeParser):
         has_before = False
         has_after = False
         has_since = False
+        has_inclusive_mod = False
         mod_str = ''
         if source.meta_data and source.meta_data.has_mod:
             before_match = self.config.before_regex.match(source.text)
@@ -587,12 +587,16 @@ class BaseMergedParser(DateTimeParser):
                 source.length -= before_match.end()
                 source.text = source.text[before_match.end():]
                 mod_str = before_match.group()
+                if RegExpUtility.get_group(before_match, "include"):
+                    has_inclusive_mod = True
             elif after_match:
                 has_after = True
                 source.start += after_match.end()
                 source.length -= after_match.end()
                 source.text = source.text[after_match.end():]
                 mod_str = after_match.group()
+                if RegExpUtility.get_group(after_match, "include"):
+                    has_inclusive_mod = True
             elif since_match:
                 has_since = True
                 source.start += since_match.end()
@@ -627,7 +631,10 @@ class BaseMergedParser(DateTimeParser):
             result.start -= len(mod_str)
             result.text = mod_str + result.text
             val = result.value
-            val.mod = TimeTypeConstants.BEFORE_MOD
+
+            val.mod = self.combine_mod(val.mod, TimeTypeConstants.BEFORE_MOD if not has_inclusive_mod else
+                                       TimeTypeConstants.UNTIL_MOD)
+
             result.value = val
 
         if has_after and result.value:
@@ -635,7 +642,10 @@ class BaseMergedParser(DateTimeParser):
             result.start -= len(mod_str)
             result.text = mod_str + result.text
             val = result.value
-            val.mod = TimeTypeConstants.AFTER_MOD
+
+            val.mod = self.combine_mod(val.mod, TimeTypeConstants.AFTER_MOD if not has_inclusive_mod else
+                                       TimeTypeConstants.SINCE_MOD)
+
             result.value = val
 
         if has_since and result.value:
@@ -653,6 +663,15 @@ class BaseMergedParser(DateTimeParser):
                 result, has_before, has_after, has_since)
 
         return result
+
+    @staticmethod
+    def combine_mod(original_mod: str, new_mod: str):
+        combined_mod = new_mod
+
+        if original_mod:
+            combined_mod = f"{new_mod}-{original_mod}"
+
+        return combined_mod
 
     def set_parse_result(self, slot: DateTimeParseResult, has_before: bool, has_after: bool, has_since: bool)\
             -> DateTimeParseResult:
@@ -869,6 +888,8 @@ class BaseMergedParser(DateTimeParser):
                 key = TimeTypeConstants.START
             elif mod == TimeTypeConstants.SINCE_MOD:
                 key = TimeTypeConstants.START
+            elif mod == TimeTypeConstants.UNTIL_MOD:
+                key = TimeTypeConstants.END
 
         result[key] = value
 
