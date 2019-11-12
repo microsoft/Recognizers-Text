@@ -759,8 +759,6 @@ class BaseMergedParser(DateTimeParser):
 
         return result
 
-
-
     @staticmethod
     def combine_mod(original_mod: str, new_mod: str):
         combined_mod = new_mod
