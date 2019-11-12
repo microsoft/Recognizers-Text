@@ -342,6 +342,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Turkish\ChoiceDefinitions.cs">
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Turkish\DateTimeDefinitions.cs">
       <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -484,6 +489,8 @@
     </None>
     <None Update="Swedish\NumbersDefinitions.tt">
     </None>
+    <None Update="Turkish\ChoiceDefinitions.tt">
+    </None>
     <None Update="Turkish\DateTimeDefinitions.tt">
     </None>
     <None Update="Turkish\NumbersDefinitions.tt">
@@ -494,6 +501,10 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="T5.TextTransform.Tool" Version="1.1.0-*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT' ">
