@@ -46,6 +46,10 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._one_word_period_regex
 
     @property
+    def decade_with_century_regex(self) -> Pattern:
+        return self._decade_with_century_regex
+
+    @property
     def month_with_year(self) -> Pattern:
         return self._month_with_year
 
@@ -237,6 +241,8 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._season_map = config.season_map
         self._now_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.NowRegex)
+        self._decade_with_century_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.DecadeWithCenturyRegex)
 
     def get_swift_day_or_month(self, source: str) -> int:
         trimmed_source = source.strip().lower()

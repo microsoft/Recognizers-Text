@@ -188,8 +188,6 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
             EnglishDateTime.MonthWithYear)
         self._month_num_with_year = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.MonthNumWithYear)
-        self._decade_with_century_regex = RegExpUtility.get_safe_reg_exp(
-            EnglishDateTime.DecadeWithCenturyRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.YearRegex)
         self._past_regex = RegExpUtility.get_safe_reg_exp(
@@ -239,6 +237,8 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
             EnglishDateTime.NowRegex)
         self._relative_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.RelativeRegex)
+        self._decade_with_century_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.DecadeWithCenturyRegex)
 
     def get_swift_day_or_month(self, source: str) -> int:
         trimmed_source = source.strip().lower()

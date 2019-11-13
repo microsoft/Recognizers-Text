@@ -62,6 +62,10 @@ class SpanishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._past_regex
 
     @property
+    def decade_with_century_regex(self) -> Pattern:
+        return self._decade_with_century_regex
+
+    @property
     def future_regex(self) -> Pattern:
         return self._future_regex
 
@@ -235,6 +239,8 @@ class SpanishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._season_map = config.season_map
         self._now_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.NowRegex)
+        self._decade_with_century_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.DecadeWithCenturyRegex)
 
     def get_swift_day_or_month(self, source: str) -> int:
         trimmed_source = source.strip().lower()
