@@ -63,6 +63,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             var mappingPrefix = new Dictionary<int, PrefixUnitResult>();
             var sourceLen = source.Length;
             var prefixMatched = false;
+            var unitIsPrefix = new List<bool>();
 
             MatchCollection nonUnitMatches = null;
             var prefixMatch = prefixMatcher.Find(source).OrderBy(o => o.Start).ToList();
@@ -128,6 +129,34 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     }
 
                     mappingPrefix.TryGetValue(start, out PrefixUnitResult prefixUnit);
+
+                    // For currency unit, add the prefixUnit with number here.
+                    if (prefixUnit != null && !prefixMatched && this.config.ExtractType.Contains("currency"))
+                    {
+                        var er = new ExtractResult
+                        {
+                            Start = number.Start - prefixUnit.Offset,
+                            Length = number.Length + prefixUnit.Offset,
+                            Text = prefixUnit.UnitStr + number.Text,
+                            Type = this.config.ExtractType,
+                        };
+
+                        // Relative position will be used in Parser
+                        number.Start = start - er.Start;
+                        er.Data = new ExtractResult
+                        {
+                            Data = number.Data,
+                            Length = number.Length,
+                            Metadata = number.Metadata,
+                            Start = number.Start,
+                            Text = number.Text,
+                            Type = number.Type,
+                        };
+
+                        result.Add(er);
+                        unitIsPrefix.Add(true);
+                    }
+
                     if (maxFindSuff > 0)
                     {
                         // find the best suffix unit
@@ -161,7 +190,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 Type = this.config.ExtractType,
                             };
 
-                            if (prefixUnit != null)
+                            if (prefixUnit != null && !this.config.ExtractType.Contains("currency"))
                             {
                                 prefixMatched = true;
                                 er.Start -= prefixUnit.Offset;
@@ -198,10 +227,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             }
 
                             result.Add(er);
+                            unitIsPrefix.Add(false);
                         }
                     }
 
-                    if (prefixUnit != null && !prefixMatched)
+                    if (prefixUnit != null && !prefixMatched && !this.config.ExtractType.Contains("currency"))
                     {
                         var er = new ExtractResult
                         {
@@ -231,6 +261,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                 // Remove common ambiguous cases
                 result = FilterAmbiguity(result, source);
+            }
+
+            if (this.config.ExtractType.Contains("currency"))
+            {
+                result = SelectCandidate(source, result, unitIsPrefix);
             }
 
             return result;
@@ -426,6 +461,69 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             }
 
             return extractResults;
+        }
+
+        private List<ExtractResult> SelectCandidate(string source, List<ExtractResult> extractResults, List<bool> unitIsPrefix)
+        {
+            int totalCandidate = unitIsPrefix.Count;
+            if (totalCandidate == 0)
+            {
+                return extractResults;
+            }
+
+            var prefixResult = new List<ExtractResult>();
+            var suffixResult = new List<ExtractResult>();
+            int currentEnd = -1;
+            for (var index = 0; index < totalCandidate; index++)
+            {
+                if (currentEnd < extractResults[index].Start)
+                {
+                    currentEnd = (int)(extractResults[index].Start + extractResults[index].Length);
+                    prefixResult.Add(extractResults[index]);
+                }
+                else
+                {
+                    if (unitIsPrefix[index])
+                    {
+                        prefixResult.RemoveAt(prefixResult.Count - 1);
+                        currentEnd = (int)(extractResults[index].Start + extractResults[index].Length);
+                        prefixResult.Add(extractResults[index]);
+                    }
+                }
+            }
+
+            currentEnd = source.Length;
+            for (var index = totalCandidate - 1; index >= 0; index--)
+            {
+                if (currentEnd >= extractResults[index].Start + extractResults[index].Length)
+                {
+                    currentEnd = (int)extractResults[index].Start;
+                    suffixResult.Add(extractResults[index]);
+                }
+                else
+                {
+                    if (!unitIsPrefix[index])
+                    {
+                        suffixResult.RemoveAt(suffixResult.Count - 1);
+                        currentEnd = (int)extractResults[index].Start;
+                        suffixResult.Add(extractResults[index]);
+                    }
+                }
+            }
+
+            // Add Separate unit
+            for (var index = totalCandidate; index < extractResults.Count; index++)
+            {
+                prefixResult.Add(extractResults[index]);
+                suffixResult.Add(extractResults[index]);
+            }
+
+            if (suffixResult.Count > prefixResult.Count)
+            {
+                return suffixResult;
+            }
+
+            return prefixResult;
         }
     }
 }

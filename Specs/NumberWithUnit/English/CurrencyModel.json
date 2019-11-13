@@ -1924,5 +1924,300 @@
         }
       }
     ]
+  },
+  {
+    "Input": "$ 20,000.00 $ 37,305.97 february expenses",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "$ 20,000.00",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "20000"
+        }
+      },
+      {
+        "Text": "$ 37,305.97",
+        "Start": 12,
+        "End": 22,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "37305.97"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 $ is not much, nor is 10 €",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 $",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "10 €",
+        "Start": 25,
+        "End": 28,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Banknotes: 5 €, 10 €, 20 €, 50 €, 100 €, 200 €, 500 €.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 €",
+        "Start": 11,
+        "End": 13,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "5"
+        }
+      },
+      {
+        "Text": "10 €",
+        "Start": 16,
+        "End": 19,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "20 €",
+        "Start": 22,
+        "End": 25,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "20"
+        }
+      },
+      {
+        "Text": "50 €",
+        "Start": 28,
+        "End": 31,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "50"
+        }
+      },
+      {
+        "Text": "100 €",
+        "Start": 34,
+        "End": 38,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "100"
+        }
+      },
+      {
+        "Text": "200 €",
+        "Start": 41,
+        "End": 45,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "200"
+        }
+      },
+      {
+        "Text": "500 €",
+        "Start": 48,
+        "End": 52,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "500"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 $10 dollars bill",
+    "Comment": "This is to show the current behaviour.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 $",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "10 dollars",
+        "Start": 3,
+        "End": 12,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 $10 dollars bill",
+    "Comment": "This is to show the ideally behaviour.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "$10 dollars",
+        "Start": 2,
+        "End": 12,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 $ 10 dollars bill",
+    "Comment": "This is to show the ideally behaviour.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "$ 10 dollars",
+        "Start": 2,
+        "End": 13,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 $ 30 $",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 $",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "30 $",
+        "Start": 5,
+        "End": 8,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "30"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 $ 30 cent",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 $ 30 cent",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10.3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 rmb 20 usd",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 rmb",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "20 usd",
+        "Start": 7,
+        "End": 12,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "rmb 10 usd 20",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "rmb 10",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "usd 20",
+        "Start": 7,
+        "End": 12,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "20"
+        }
+      }
+    ]
   }
 ]
