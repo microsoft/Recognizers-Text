@@ -11,6 +11,7 @@ using Microsoft.Recognizers.Text.Choice.Japanese;
 using Microsoft.Recognizers.Text.Choice.Portuguese;
 using Microsoft.Recognizers.Text.Choice.Spanish;
 using Microsoft.Recognizers.Text.Choice.Swedish;
+using Microsoft.Recognizers.Text.Choice.Turkish;
 
 namespace Microsoft.Recognizers.Text.Choice
 {
@@ -98,6 +99,9 @@ namespace Microsoft.Recognizers.Text.Choice
                 Culture.Arabic,
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new ArabicBooleanExtractorConfiguration())));
 
+            RegisterModel<BooleanModel>(
+                Culture.Turkish,
+                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new TurkishBooleanExtractorConfiguration())));
         }
     }
 }
