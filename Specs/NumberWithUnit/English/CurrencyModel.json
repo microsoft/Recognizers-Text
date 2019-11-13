@@ -2063,51 +2063,33 @@
   },
   {
     "Input": "1 $10 dollars bill",
-    "Comment": "This is to show the current behaviour.",
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "1 $",
-        "Start": 0,
-        "End": 2,
+        "Text": "$10",
+        "Start": 2,
+        "End": 4,
         "TypeName": "currency",
         "Resolution": {
           "unit": "Dollar",
-          "value": "1"
+          "value": "10"
         }
       },
       {
-        "Text": "10 dollars",
-        "Start": 3,
+        "Text": "dollars",
+        "Start": 6,
         "End": 12,
         "TypeName": "currency",
         "Resolution": {
           "unit": "Dollar",
-          "value": "10"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "1 $10 dollars bill",
-    "Comment": "This is to show the ideally behaviour.",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "$10 dollars",
-        "Start": 2,
-        "End": 12,
-        "TypeName": "currency",
-        "Resolution": {
-          "unit": "Dollar",
-          "value": "10"
+          "value": null
         }
       }
     ]
   },
   {
     "Input": "1 $ 10 dollars bill",
-    "Comment": "This is to show the ideally behaviour.",
+    "Comment": "Gets '1 $' and '10 dollars' now, because '$ 10 dollars' is not supported.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {

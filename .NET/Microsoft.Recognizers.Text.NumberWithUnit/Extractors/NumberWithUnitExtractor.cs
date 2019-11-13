@@ -100,6 +100,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     var maxFindPref = Math.Min(maxPrefixMatchLen, number.Start.Value);
                     var maxFindSuff = sourceLen - start - length;
 
+                    var closeMatch = false;
                     if (maxFindPref != 0)
                     {
                         // Scan from left to right, find the longest match
@@ -113,25 +114,53 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 break;
                             }
 
-                            if (m.Length > 0 && source.Substring(m.Start, lastIndex - m.Start).Trim() == m.Text)
+                            var unitStr = source.Substring(m.Start, lastIndex - m.Start);
+                            if (m.Length > 0 && unitStr.Trim() == m.Text)
                             {
+                                if (unitStr == m.Text)
+                                {
+                                    closeMatch = true;
+                                }
+
+                                suffixMatch.Remove(m);
                                 bestMatch = m;
                                 break;
                             }
                         }
 
-                        if (bestMatch != null)
+                        if (bestMatch != null || closeMatch)
                         {
                             var offSet = lastIndex - bestMatch.Start;
                             var unitStr = source.Substring(bestMatch.Start, offSet);
+                            if (closeMatch)
+                            {
+                                for (var index = 0; index < result.Count; index++)
+                                {
+                                    var res = result[index];
+                                    if (res.Start + res.Length > bestMatch.Start)
+                                    {
+                                        // if the unit has been used, remove them for the better match.
+                                        result.Remove(res);
+                                        if (IsCurrencyExtract())
+                                        {
+                                            unitIsPrefix.Remove(unitIsPrefix[index]);
+                                        }
+
+                                        index--;
+                                    }
+                                }
+                            }
+
                             mappingPrefix.Add(number.Start.Value, new PrefixUnitResult { Offset = offSet, UnitStr = unitStr });
                         }
                     }
 
                     mappingPrefix.TryGetValue(start, out PrefixUnitResult prefixUnit);
 
-                    // For currency unit, add the prefixUnit with number here.
-                    if (prefixUnit != null && !prefixMatched && this.config.ExtractType.Contains("currency"))
+                    // For currency unit, such as "$ 10 $ 20", get candidate "$ 10" "10 $" "$20" then select to get result.
+                    // So add "$ 10" to result here, then get "10 $" in the suffixMatch.
+                    // But for case like "摄氏温度10度", "摄氏温度10" will skip this and continue to extend the suffix.
+                    if (prefixUnit != null && !prefixMatched && IsCurrencyExtract())
                     {
                         var er = new ExtractResult
                         {
@@ -159,6 +188,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                     if (maxFindSuff > 0)
                     {
+                        // for cases like "1 $10 dollars", we get closeMatch "$10" so needn't to check suffix
+                        if (IsCurrencyExtract() && closeMatch)
+                        {
+                            continue;
+                        }
+
                         // find the best suffix unit
                         var maxlen = 0;
                         var firstIndex = start + length;
@@ -190,7 +225,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 Type = this.config.ExtractType,
                             };
 
-                            if (prefixUnit != null && !this.config.ExtractType.Contains("currency"))
+                            if (prefixUnit != null && !IsCurrencyExtract())
                             {
                                 prefixMatched = true;
                                 er.Start -= prefixUnit.Offset;
@@ -231,7 +266,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         }
                     }
 
-                    if (prefixUnit != null && !prefixMatched && !this.config.ExtractType.Contains("currency"))
+                    if (prefixUnit != null && !prefixMatched && !IsCurrencyExtract())
                     {
                         var er = new ExtractResult
                         {
@@ -263,7 +298,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 result = FilterAmbiguity(result, source);
             }
 
-            if (this.config.ExtractType.Contains("currency"))
+            if (IsCurrencyExtract())
             {
                 result = SelectCandidate(source, result, unitIsPrefix);
             }
@@ -461,6 +496,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             }
 
             return extractResults;
+        }
+
+        private bool IsCurrencyExtract()
+        {
+            return this.config.ExtractType.Equals(Constants.SYS_UNIT_CURRENCY, StringComparison.Ordinal);
         }
 
         private List<ExtractResult> SelectCandidate(string source, List<ExtractResult> extractResults, List<bool> unitIsPrefix)
