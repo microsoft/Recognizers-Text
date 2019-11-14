@@ -6,6 +6,7 @@ using Microsoft.Recognizers.Text.Choice.Dutch;
 using Microsoft.Recognizers.Text.Choice.English;
 using Microsoft.Recognizers.Text.Choice.French;
 using Microsoft.Recognizers.Text.Choice.German;
+using Microsoft.Recognizers.Text.Choice.Hindi;
 using Microsoft.Recognizers.Text.Choice.Italian;
 using Microsoft.Recognizers.Text.Choice.Japanese;
 using Microsoft.Recognizers.Text.Choice.Portuguese;
@@ -70,6 +71,10 @@ namespace Microsoft.Recognizers.Text.Choice
             RegisterModel<BooleanModel>(
                 Culture.German,
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new GermanBooleanExtractorConfiguration())));
+
+            RegisterModel<BooleanModel>(
+                Culture.Hindi,
+                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new HindiBooleanExtractorConfiguration())));
 
             RegisterModel<BooleanModel>(
                 Culture.Italian,
