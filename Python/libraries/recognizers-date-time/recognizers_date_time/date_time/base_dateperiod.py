@@ -982,6 +982,18 @@ class DatePeriodParserConfiguration(ABC):
         raise NotImplementedError
 
 
+def match_with_next_prefix(self, sub_str, is_ago, is_less_than_or_with_in, is_more_than):
+    match = self.config.within_next_prefix_regex.match(sub_str)
+    if match and match.success:
+        is_next = match.Groups["next"].value
+
+        # cases like "within the next 5 days before today" is not acceptable
+        if not (is_next and is_ago):
+            is_less_than_or_with_in = True
+    is_less_than_or_with_in = is_less_than_or_with_in or self.config.less_than_regex.match(sub_str).success
+    is_more_than = self.config.more_than_regex.match(sub_str).success
+
+
 class BaseDatePeriodParser(DateTimeParser):
     @property
     def parser_type_name(self) -> str:
@@ -1911,6 +1923,57 @@ class BaseDatePeriodParser(DateTimeParser):
             is_ago = self.config.ago_regex.match(extract_result.text).success
             is_later = self.config.later_regex.match(extract_result.text).success
 
+        if (before_str or (self.config.check_both_before_after and after_str)) and (is_ago or is_later):
+            is_less_than_or_with_in = False
+            is_more_than = False
+
+            # TODO: move hardcoded English strings to definition
+            # cases like "within 3 days from yesterday/tomorrow" does not make any sense
+            if "today" in extract_result or "now" in extract_result:
+                match_with_next_prefix(before_str, is_ago, is_less_than_or_with_in, is_more_than)
+            else:
+                is_less_than_or_with_in = is_less_than_or_with_in or self.config.less_than_regex.match(before_str).success
+                is_more_than = self.config.more_than_regex.match(before_str).success
+
+            # Check also after_str
+            if self.config.check_both_before_after and is_less_than_or_with_in and is_more_than:
+                match_with_next_prefix(after_str, is_ago, is_less_than_or_with_in, is_more_than)
+
+            parsing_result = datetime(self.config.date_parser.parse(extract_result, reference))
+            duration_extraction_result = next(self.config.duration_extractor.extract(extract_result.text), None)
+
+            if duration_extraction_result:
+                duration = self.config.duration_parser.parse(duration_extraction_result)
+                duration_in_seconds = DateTimeResolutionResult(duration.value).past_value
+
+            if is_less_than_or_with_in:
+                start_date: datetime
+                end_date: datetime
+
+                if is_ago:
+                    start_date = DateTimeResolutionResult(parsing_result.value).past_value
+                    end_date = start_date.AddSeconds(duration_in_seconds)
+                else:
+                    end_date = DateTimeResolutionResult(parsing_result.value).future_value
+                    start_date = end_date.AddSeconds(-duration_in_seconds)
+
+                if start_date != datetime.min:
+                    start_luis_str = DateTimeFormatUtil.luis_date(start_date, 1, 1)
+                    end_luis_str = DateTimeFormatUtil.luis_date(end_date, 1, 1)
+                    duration_timex = DateTimeResolutionResult(duration.value).timex
+
+                    result.timex = "({startLuisStr},{endLuisStr},{durationTimex})"
+                    result.future_value = Dict[start_date, end_date]
+                    result.past_value = Dict[start_date, end_date]
+
+                    result.success = True
+                else:
+                    if is_more_than:
+                        result.mod = Constants.BEFORE_MOD if is_ago else Constants.AFTER_MOD
+                        result.timex = parsing_result.TimexStr
+                        result.future_value = parsing_result.future_value
+                        result.past_value = parsing_result.past_value
+                        result.success = True
         return result
 
     def __parse_decade(self, source: str, reference_date: datetime) -> DateTimeResolutionResult:
@@ -1971,7 +2034,7 @@ class BaseDatePeriodParser(DateTimeParser):
 
                 begin_decade = (reference_date.year % 100) / 10
                 if swift < 0:
-                    begin_decade =+ swift
+                    begin_decade += swift
                 else:
                     if swift > 0:
                         begin_decade += 1
