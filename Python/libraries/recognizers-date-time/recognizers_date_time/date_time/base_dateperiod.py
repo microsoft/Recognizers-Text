@@ -818,6 +818,16 @@ class DatePeriodParserConfiguration(ABC):
 
     @property
     @abstractmethod
+    def ago_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def later_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def past_regex(self) -> Pattern:
         raise NotImplementedError
 
@@ -1130,13 +1140,11 @@ class BaseDatePeriodParser(DateTimeParser):
             inner_result = self.__parse_month_of_date(text, reference_date)
 
         if not inner_result.success:
-            # TODO: Complete definition for __parse_decade
             inner_result = self.__parse_decade(text, reference_date)
 
         # Cases like "within/less than/more than x weeks from/before/after today"
-        #if not inner_result.success:
-            # TODO: Complete definition for __parse_date_point_with_ago_and_later
-            #inner_result = self.__parse_date_point_with_ago_and_later(text, reference_date)
+        if not inner_result.success:
+            inner_result = self.__parse_date_point_with_ago_and_later(text, reference_date)
 
         if not inner_result.success:
             inner_result = self._parse_duration(text, reference_date)
@@ -1893,16 +1901,22 @@ class BaseDatePeriodParser(DateTimeParser):
         return result
 
     # Only handle cases like "within/less than/more than x weeks from/before/after today"
-    #def __parse_date_point_with_ago_and_later(self, source: str, reference: datetime) -> DateTimeResolutionResult:
-    #    ret = DateTimeResolutionResult()
-    #    ret = self.config.date_extractor.extract(source, reference)
-    #    return None
+    def __parse_date_point_with_ago_and_later(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+        result = DateTimeResolutionResult()
+        extract_result = next(self.config.date_extractor.extract(source, reference), None)
+
+        if extract_result:
+            before_str = source[0:extract_result.start].strip()
+            after_str = source[extract_result.start + extract_result.length:]
+            is_ago = self.config.ago_regex.match(extract_result.text).success
+            is_later = self.config.later_regex.match(extract_result.text).success
+
+        return result
 
     def __parse_decade(self, source: str, reference_date: datetime) -> DateTimeResolutionResult:
-        ret = DateTimeResolutionResult()
+        result = DateTimeResolutionResult()
         first_two_number_of_year = reference_date.year / 100
 
-        decade: int
         decade_last_year = 10
         swift = 1
         input_century = False
@@ -1912,7 +1926,7 @@ class BaseDatePeriodParser(DateTimeParser):
         begin_luis_str: str
         end_luis_str: str
 
-        if match.success:
+        if match and match.success:
             decade_str = match.group("decade").value
             decade = int(decade_str)
 
@@ -1925,7 +1939,85 @@ class BaseDatePeriodParser(DateTimeParser):
                         first_two_number_of_year = self.config.special_decade_cases[decade_str] / 100
                         decade = self.config.special_decade_cases[decade_str] % 100
                         inputCentury = True
-        return ret
+
+            century_str = match.group("century").value
+            if century_str:
+                if not DateUtils.int_try_parse(century_str)[1]:
+                    if century_str in self.config.numbers:
+                        first_two_number_of_year = self.config.numbers[century_str]
+                    else:
+                        # handle the case like "one/two thousand", "one/two hundred", etc.
+                        extract_result = self.config.integer_extractor.extract(century_str)
+                        if len(extract_result) == 0:
+                            return result
+
+                        first_two_number_of_year = int(self.config.number_parser.parse(extract_result[0]))
+                        if first_two_number_of_year >= 100:
+                            first_two_number_of_year = first_two_number_of_year / 100
+                input_century = True
+        else:
+            # handle cases like "the last 2 decades", "the next decade"
+            match = self.config.relative_decade_regex.match_exact(trimmed_source, True)
+
+            if match and match.success:
+                input_century = True
+                swift = self.config.get_swift_day_or_month(trimmed_source)
+
+                num_str = match.groups["number"].value
+                extract_result = self.config.integer_extractor.extract(num_str)
+                if len(extract_result) == 1:
+                    swift_num = int(self.config.number_parser.parse(extract_result[0]))
+                    swift = swift * swift_num
+
+                begin_decade = (reference_date.year % 100) / 10
+                if swift < 0:
+                    begin_decade =+ swift
+                else:
+                    if swift > 0:
+                        begin_decade += 1
+                decade = begin_decade * 10
+            else:
+                return result
+
+        begin_year = (first_two_number_of_year * 100) + decade
+
+        # swift + 0 corresponding to the/this decade
+        total_last_year = decade_last_year * abs(1 if swift == 0 else swift)
+
+        if input_century:
+            begin_luis_str = DateTimeFormatUtil.luis_date(begin_year, 1, 1)
+            end_luis_str = DateTimeFormatUtil.luis_date(begin_year + total_last_year, 1, 1)
+        else:
+            begin_year_str = "XX" + decade
+            begin_luis_str = DateTimeFormatUtil.luis_date(-1, 1, 1)
+            begin_luis_str = begin_luis_str.replace("XXXX", begin_year_str)
+
+            end_year_str = "XX" + (decade + total_last_year)
+            end_luis_str = DateTimeFormatUtil.luis_date(-1, 1, 1)
+            end_luis_str = end_luis_str.replace("XXXX", end_year_str)
+
+        result.timex = "({beginLuisStr},{endLuisStr},P{totalLastYear}Y)"
+
+        future_year = begin_year
+        past_year = begin_year
+        start_date = DateUtils.safe_create_from_value(begin_year, 1, 1, 1)
+        if not input_century and start_date < reference_date:
+            future_year += 100
+
+        if not input_century and start_date >= reference_date:
+            past_year -= 100
+
+        result.future_value = Dict[datetime, datetime]
+        result.future_value = [DateUtils.safe_create_from_value(future_year, 1, 1, 1),
+                               DateUtils.safe_create_from_value(future_year + total_last_year, 1, 1, 1)]
+
+        result.past_value = Dict[datetime, datetime]
+        result.past_value = [DateUtils.safe_create_from_value(past_year, 1, 1, 1),
+                             DateUtils.safe_create_from_value(past_year + total_last_year, 1, 1, 1)]
+
+        result.success = True
+
+        return result
 
     def __parse_quarter(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()

@@ -10,6 +10,10 @@ from ..base_dateperiod import DatePeriodParserConfiguration
 
 class SpanishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
+    def later_regex(self) -> Pattern:
+        return self._later_regex
+
+    @property
     def date_extractor(self) -> DateTimeExtractor:
         return self._date_extractor
 
@@ -60,6 +64,10 @@ class SpanishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
     def past_regex(self) -> Pattern:
         return self._past_regex
+
+    @property
+    def ago_regex(self) -> Pattern:
+        return self._ago_regex
 
     @property
     def decade_with_century_regex(self) -> Pattern:
@@ -166,6 +174,10 @@ class SpanishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._now_regex
 
     def __init__(self, config: BaseDateParserConfiguration):
+        self._later_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.LaterRegex)
+        self._ago_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.AgoRegex)
         self._token_before_date = SpanishDateTime.TokenBeforeDate
         self.cardianal_extractor = config.cardinal_extractor
         self.number_parser = config.number_parser

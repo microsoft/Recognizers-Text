@@ -169,7 +169,19 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     def now_regex(self) -> Pattern:
         return self._now_regex
 
+    @property
+    def ago_regex(self) -> Pattern:
+        return self._ago_regex
+
+    @property
+    def later_regex(self) -> Pattern:
+        return self._later_regex
+
     def __init__(self, config: BaseDateParserConfiguration):
+        self._later_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.LaterRegex)
+        self._ago_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.AgoRegex)
         self._date_extractor = config.date_extractor
         self._date_parser = config.date_parser
         self._duration_extractor = config.duration_extractor
