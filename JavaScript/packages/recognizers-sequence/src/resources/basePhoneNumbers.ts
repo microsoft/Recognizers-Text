@@ -27,7 +27,7 @@ export namespace BasePhoneNumbers {
     export const SpecialPhoneNumberRegex = (WordBoundariesRegex: string, EndWordBoundariesRegex: string) => { return `(${WordBoundariesRegex}(\\d{3,4}[/-]\\d{1,4}[/-]\\d{3,4})${EndWordBoundariesRegex})`; }
     export const NoAreaCodeUSPhoneNumberRegex = `(?<!(-|-\\s|\\d|\\)|\\)\\s|\\.))[2-9]\\d{2}\\s?[-\\.]\\s?\\d{4}(?!(-\\s?\\d))\\b`;
     export const InternationDialingPrefixRegex = `0(0|11)$`;
-    export const TypicalDeductionRegexList = [ "^\\d{3}-\\d{2}-\\d{4}$","^\\d{5}-\\d{4}$","\\)\\.","^0(0|11)(-)" ];
+    export const TypicalDeductionRegexList = [ "^\\d{5}-\\d{4}$","\\)\\.","^0(0|11)(-)" ];
     export const PhoneNumberMaskRegex = `([0-9a-e]{2}(\\s[0-9a-e]{2}){7})`;
     export const CountryCodeRegex = `^(\\(\\s?(\\+\\s?|00)\\d{1,3}\\s?\\)|(\\+\\s?|00)\\d{1,3})`;
     export const AreaCodeIndicatorRegex = `\\(`;
@@ -38,4 +38,5 @@ export namespace BasePhoneNumbers {
     export const BoundaryMarkers = [ "-",".","/","+","#","*" ];
     export const ForbiddenPrefixMarkers = [ ",",":","%" ];
     export const ForbiddenSuffixMarkers = [ "/","+","#","*",":","%" ];
+    export const SSNFilterRegex = `^\\d{3}-\\d{2}-\\d{4}$`;
 }

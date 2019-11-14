@@ -78,7 +78,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             if (!innerResult.Success)
             {
-                innerResult = ParserDurationWithBeforeAndAfter(text, reference);
+                innerResult = ParserDurationWithAgoAndLater(text, reference);
             }
 
             if (innerResult.Success)
@@ -558,7 +558,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         }
 
         // handle cases like "三天前"
-        private DateTimeResolutionResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
             var durationRes = durationExtractor.Extract(text, referenceDate);

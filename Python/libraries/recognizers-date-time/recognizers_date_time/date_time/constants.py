@@ -51,6 +51,27 @@ class Constants:
     MAX_TWO_DIGIT_YEAR_FUTURE_NUM: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
     MIN_TWO_DIGIT_YEAR_PAST_NUM: int = int(BaseDateTime.MinTwoDigitYearPastNum)
 
+    # Timex
+    TIMEX_YEAR: str = "Y"
+    TIMEX_MONTH: str = "M"
+    TIMEX_MONTH_FULL: str = "MON"
+    TIMEX_WEEK: str = "W"
+    TIMEX_DAY: str = "D"
+    TIMEX_BUSINESS_DAY: str = "BD"
+    TIMEX_WEEKEND: str = "WE"
+    TIMEX_HOUR: str = "H"
+    TIMEX_MINUTE: str = "M"
+    TIMEX_SECOND: str = "S"
+    TIMEX_FUZZY: str = 'X'
+    TIMEX_FUZZY_YEAR: str = "XXXX"
+    TIMEX_FUZZY_MONTH: str = "XX"
+    TIMEX_FUZZY_WEEK: str = "WXX"
+    TIMEX_FUZZY_DAY: str = "XX"
+    DATE_TIMEX_CONNECTOR: str = "-"
+    TIME_TIMEX_CONNECTOR: str = ":"
+    GENERAL_PERIOD_PREFIX: str = "P"
+    TIME_TIMEX_PREFIX: str = "T"
+
     EARLY_MORNING: str = "TDA"
     MORNING: str = "TMO"
     MID_DAY: str = "TMI"

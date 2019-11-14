@@ -1,0 +1,147 @@
+[
+  {
+    "Input": "100%",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": " 100% ",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 1,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": " 100 procent",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "100 procent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 1,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "240 procent",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "240 procent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "tjugo procent",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "tjugo procent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "trettio procent",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "trettio procent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "30%"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "etthundra procent",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "etthundra procent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "10 procent",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "10 procent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "behöver bara minus fem procent",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "minus fem procent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-5%"
+        },
+        "Start": 13,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "You can go to http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859 for more details.",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "You can go to https://www.test.com/search?q=30%25%2020%",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  }
+]

@@ -253,6 +253,17 @@
     ]
   },
   {
+    "Input": "El 29-sep",
+    "Results": [
+      {
+        "Text": "29-sep",
+        "Type": "date",
+        "Start": 3,
+        "Length": 6
+      }
+    ]
+  },
+  {
     "Input": "Volvere el Mi, 22 de Ene",
     "Results": [
       {
@@ -359,6 +370,17 @@
         "Type": "date",
         "Start": 12,
         "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Volveré el sábado",
+    "Results": [
+      {
+        "Text": "sábado",
+        "Type": "date",
+        "Start": 11,
+        "Length": 6
       }
     ]
   },

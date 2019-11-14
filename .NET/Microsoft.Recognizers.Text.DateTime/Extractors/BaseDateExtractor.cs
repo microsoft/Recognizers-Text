@@ -363,8 +363,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                             if (matchLength == matchCase.Length)
                             {
-                                ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
-                                isFound = true;
+                                // check if day number is compatible with reference month
+                                if (DateObjectExtension.IsValidDate(reference.Year, reference.Month, num) || !this.Config.CheckBothBeforeAfter)
+                                {
+                                    ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
+                                    isFound = true;
+                                }
                             }
                         }
                     }

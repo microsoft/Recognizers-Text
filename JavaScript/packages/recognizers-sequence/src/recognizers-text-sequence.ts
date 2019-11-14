@@ -4,6 +4,7 @@ export { AbstractSequenceModel, PhoneNumberModel, IpAddressModel, MentionModel, 
 export { BaseSequenceExtractor, BasePhoneNumberExtractor, BaseIpExtractor, BaseMentionExtractor, BaseHashtagExtractor, BaseEmailExtractor, BaseURLExtractor, BaseGUIDExtractor } from "./sequence/extractors";
 export { EnglishPhoneNumberExtractorConfiguration, EnglishIpExtractorConfiguration, MentionExtractor, HashtagExtractor, EmailExtractor, EnglishURLExtractorConfiguration, GUIDExtractor } from "./sequence/english/extractors";
 export { ChineseURLExtractorConfiguration, ChinesePhoneNumberExtractorConfiguration, ChineseIpExtractorConfiguration } from "./sequence/chinese/extractors";
+export { PortuguesePhoneNumberExtractorConfiguration } from "./sequence/portuguese/extractors";
 export { BaseSequenceParser, BaseIpParser } from "./sequence/parsers";
 export { PhoneNumberParser, IpParser, MentionParser, HashtagParser, EmailParser, URLParser, GUIDParser } from "./sequence/english/parsers";
 export { BasePhoneNumbers } from "./resources/basePhoneNumbers";

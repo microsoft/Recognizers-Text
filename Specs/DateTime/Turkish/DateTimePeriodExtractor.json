@@ -767,41 +767,38 @@
     ]
   },
   {
-    "Input": "Bugün 16'dan önce olacak",
-    "NotSupported": "dotnet",
+    "Input": "Bugün, 16'dan önce olacak",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Bugün 16'dan önce",
+        "Text": "Bugün, 16'dan önce",
         "Type": "datetimerange",
         "Start": 0,
-        "Length": 17
+        "Length": 18
       }
     ]
   },
   {
-    "Input": "Önümüzdeki Çarşamba sabah 10'dan sonra olacak",
-    "NotSupported": "dotnet",
+    "Input": "Önümüzdeki Çarşamba, sabah 10'dan sonra olacak",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Önümüzdeki Çarşamba sabah 10'dan sonra",
+        "Text": "Önümüzdeki Çarşamba, sabah 10'dan sonra",
         "Type": "datetimerange",
         "Start": 0,
-        "Length": 38
+        "Length": 39
       }
     ]
   },
   {
-    "Input": "Geçen Salı öğleden sonra 2'ye kadar oldu",
-    "NotSupported": "dotnet",
+    "Input": "Geçen Salı, öğleden sonra 2'ye kadar oldu",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Geçen Salı öğleden sonra 2'ye kadar",
+        "Text": "Geçen Salı, öğleden sonra 2'ye kadar",
         "Type": "datetimerange",
         "Start": 0,
-        "Length": 35
+        "Length": 36
       }
     ]
   },

@@ -1,6 +1,4 @@
 import { BaseDateTime } from "../resources/baseDateTime";
-import { EnglishDateTime } from "../resources/englishDateTime";
-import { ChineseDateTime } from "../resources/chineseDateTime";
 
 export class Constants {
     static readonly SYS_DATETIME_DATE: string = "date";
@@ -65,6 +63,27 @@ export class Constants {
     static readonly LESS_THAN_MOD: string = 'less';
 
     static readonly REF_UNDEF_MOD: string = 'ref_undef';
+
+    // Timex
+    static readonly TimexYear: string = "Y";
+    static readonly TimexMonth: string = "M";
+    static readonly TimexMonthFull: string = "MON";
+    static readonly TimexWeek: string = "W";
+    static readonly TimexDay: string = "D";
+    static readonly TimexBusinessDay: string = "BD";
+    static readonly TimexWeekend: string = "WE";
+    static readonly TimexHour: string = "H";
+    static readonly TimexMinute: string = "M";
+    static readonly TimexSecond: string = "S";
+    static readonly TimexFuzzy: string = 'X';
+    static readonly TimexFuzzyYear: string = "XXXX";
+    static readonly TimexFuzzyMonth: string = "XX";
+    static readonly TimexFuzzyWeek: string = "WXX";
+    static readonly TimexFuzzyDay: string = "XX";
+    static readonly DateTimexConnector: string = "-";
+    static readonly TimeTimexConnector: string = ":";
+    static readonly GeneralPeriodPrefix: string = "P";
+    static readonly TimeTimexPrefix: string = "T";
 
     // Timex of TimeOfDay
     static readonly EarlyMorning: string = "TDA";

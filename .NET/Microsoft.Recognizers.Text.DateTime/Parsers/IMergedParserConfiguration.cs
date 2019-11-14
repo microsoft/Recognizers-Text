@@ -25,5 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeParser HolidayParser { get; }
 
         StringMatcher SuperfluousWordMatcher { get; }
+
+        bool CheckBothBeforeAfter { get; }
     }
 }

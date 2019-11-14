@@ -61,6 +61,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IDateTimeExtractor DateTimePeriodExtractor { get; }
 
+        bool ISetExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex ISetExtractorConfiguration.LastRegex => SetLastRegex;
 
         Regex ISetExtractorConfiguration.EachPrefixRegex => EachPrefixRegex;
