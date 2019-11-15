@@ -10,6 +10,10 @@ from ..base_dateperiod import DatePeriodParserConfiguration
 
 class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
+    def relative_regex(self) -> Pattern:
+        return self._relative_regex
+
+    @property
     def ago_regex(self) -> Pattern:
         return self._ago_regex
 
@@ -174,6 +178,8 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._now_regex
 
     def __init__(self, config: BaseDateParserConfiguration):
+        self._relative_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.RelativeRegex)
         self._later_regex = FrenchDateTime.LaterRegex
         self._ago_regex = FrenchDateTime.AgoRegex
         self._token_before_date = FrenchDateTime.TokenBeforeDate

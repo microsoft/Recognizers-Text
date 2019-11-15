@@ -828,6 +828,11 @@ class DatePeriodParserConfiguration(ABC):
 
     @property
     @abstractmethod
+    def relative_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def past_regex(self) -> Pattern:
         raise NotImplementedError
 
@@ -1007,22 +1012,26 @@ class BaseDatePeriodParser(DateTimeParser):
         self._inclusive_end_period = inclusive_end_period
 
     def get_year_context(self, config: DatePeriodParserConfiguration, start_date_str: str, end_date_str: str, text: str) -> DateContext:
-        is_end_date_pure_year: bool = False
-        is_date_relative: bool = False
-        context_year: int = Constants.INVALID_YEAR
+        is_end_date_pure_year = False
+        is_date_relative = False
+        context_year = Constants.INVALID_YEAR
 
-        year_match_for_end_date = config.year_regex.match(end_date_str)
+        year_match_for_end_date = self.config.year_regex.search(end_date_str)
 
-        if year_match_for_end_date.success and len(year_match_for_end_date) == len(end_date_str):
+        if year_match_for_end_date and year_match_for_end_date.su and \
+                len(year_match_for_end_date) == len(end_date_str):
             is_end_date_pure_year = True
 
-        relative_match_for_start_date = config.relative_regex.match(start_date_str)
-        relative_match_for_end_date = config.relative_regex.match(end_date_str)
-        is_date_relative = relative_match_for_start_date.success or relative_match_for_end_date.success
+        relative_match_for_start_date = self.config.relative_regex.search(start_date_str)
+        relative_match_for_end_date = self.config.relative_regex.search(end_date_str)
+        if relative_match_for_start_date and relative_match_for_end_date:
+            is_date_relative = relative_match_for_start_date.success or relative_match_for_end_date.success
+        else:
+            is_date_relative = None
 
         if not is_end_date_pure_year and not is_date_relative:
-            for match in config.year_regex.match(text):
-                year = config.date_extractor.get_year_from_text(match)
+            for match in list(self.config.year_regex.finditer(text)):
+                year = self.config.get_year_from_text(match)
 
                 if year != Constants.INVALID_YEAR:
                     if context_year == Constants.INVALID_YEAR:
@@ -1032,10 +1041,10 @@ class BaseDatePeriodParser(DateTimeParser):
                         if context_year != year:
                             context_year = Constants.INVALID_YEAR
 
-        res: DateContext = DateContext()
-        res.year = context_year
+        result: DateContext = DateContext()
+        result.year = context_year
 
-        return res
+        return result
 
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
         if not reference:
@@ -1539,10 +1548,12 @@ class BaseDatePeriodParser(DateTimeParser):
             future_match_for_start_date = self.config.future_regex.match(extract_results[0].text)
             future_match_for_end_date = self.config.future_regex.match(extract_results[1].text)
 
-            if future_match_for_start_date.success and not future_match_for_end_date.success:
+            if future_match_for_start_date and future_match_for_start_date.success and \
+               future_match_for_end_date and not future_match_for_end_date.success:
                 extract_results[1].text = future_match_for_start_date.value + ' ' + extract_results[1].text
 
             match = self.config.week_with_week_day_range_regex.search(source)
+            week_prefix = None
             if match:
                 week_prefix = RegExpUtility.get_group(match, Constants.WEEK_GROUP_NAME)
 
@@ -1551,7 +1562,7 @@ class BaseDatePeriodParser(DateTimeParser):
                     extract_results[1].text = f'{week_prefix} {extract_results[1].text}'
 
             # Check if weekPrefix is already included in the extractions otherwise include it
-            if not week_prefix:
+            if week_prefix:
                 if week_prefix in extract_results[0].text:
                     extract_results[0].text = week_prefix + " " + extract_results[0].text
 

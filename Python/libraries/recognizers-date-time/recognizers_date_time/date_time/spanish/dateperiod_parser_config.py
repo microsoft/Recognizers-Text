@@ -10,6 +10,10 @@ from ..base_dateperiod import DatePeriodParserConfiguration
 
 class SpanishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
+    def relative_regex(self) -> Pattern:
+        return self._relative_regex
+
+    @property
     def later_regex(self) -> Pattern:
         return self._later_regex
 
@@ -174,6 +178,8 @@ class SpanishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._now_regex
 
     def __init__(self, config: BaseDateParserConfiguration):
+        self._relative_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.RelativeRegex)
         self._later_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.LaterRegex)
         self._ago_regex = RegExpUtility.get_safe_reg_exp(
