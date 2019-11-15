@@ -823,8 +823,8 @@ class DateContext:
 
     def process_date_entity_parsing_result(self, original_result: DateTimeParseResult) -> DateTimeParseResult:
         if not self.is_empty():
-            original_result.TimexStr = TimexUtil.set_timex_with_context(original_result.TimexStr, self)
-            original_result.Value = self.process_date_entity_resolution(original_result.value)
+            original_result.timex_str = TimexUtil.set_timex_with_context(original_result.timex_str, self)
+            original_result.value = self.process_date_entity_resolution(original_result.value)
 
         return original_result
 
