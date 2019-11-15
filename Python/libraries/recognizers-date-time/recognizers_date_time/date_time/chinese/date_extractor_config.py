@@ -12,6 +12,9 @@ from ...resources.base_date_time import BaseDateTime
 
 class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
     @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+    
     def number_parser(self):
         pass
 
@@ -262,6 +265,7 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
             BaseDateTime.RangeConnectorSymbolRegex
         )
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._check_both_before_after = None
         self._since_year_suffix_regex = None
         self._range_unit_regex = None
         self._in_connector_regex = None

@@ -15,6 +15,10 @@ from ...resources.base_date_time import BaseDateTime
 
 class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
     @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
+    @property
     def date_regex_list(self) -> List[Pattern]:
         return self._date_regex_list
 
@@ -123,6 +127,7 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
         return self._week_day_and_day_regex
 
     def __init__(self):
+        self._check_both_before_after = False
         if SpanishDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
             date_extractor_4 = SpanishDateTime.DateExtractor5
             date_extractor_5 = SpanishDateTime.DateExtractor4

@@ -161,7 +161,7 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
 
     def __init__(self):
         super().__init__()
-        self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
+        self._check_both_before_after = False
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.PureNumFromTo),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.PureNumBetweenAnd)
@@ -181,7 +181,7 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         self._past_prefix_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.PastRegex)
         self._next_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            SpanishDateTime.FutureRegex)
+            SpanishDateTime.NextPrefixRegex)
         self._number_combined_with_unit = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.DateTimePeriodNumberCombinedWithUnit)
         self._week_day_regex = RegExpUtility.get_safe_reg_exp(

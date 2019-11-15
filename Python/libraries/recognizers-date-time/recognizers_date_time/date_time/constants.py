@@ -215,3 +215,5 @@ class TimeTypeConstants:
     MORE_THAN_MOD: str = 'more'
     LESS_THAN_MOD: str = 'less'
     REF_UNDEF_MOD: str = 'ref_undef'
+
+    APPROX_MOD: str = 'approx'

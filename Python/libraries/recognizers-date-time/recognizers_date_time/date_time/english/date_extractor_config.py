@@ -14,6 +14,10 @@ from ...resources.base_date_time import BaseDateTime
 
 class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
     @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
+    @property
     def date_regex_list(self) -> List[Pattern]:
         return self._date_regex_list
 
@@ -146,6 +150,7 @@ class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
         return self._month_suffix_regex
 
     def __init__(self):
+        self._check_both_before_after = False
         self._date_regex_list = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor1),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor3),

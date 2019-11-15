@@ -100,7 +100,7 @@ class RegexExtension:
         if trim:
             str_before = str_before.strip()
 
-        return ConditionalMatch(match, match and (str.isspace(str_before) or str_before is None))
+        return ConditionalMatch(match, match and (str.isspace(str_before) or str_before == ''))
 
     @staticmethod
     def match_end(regexp: Pattern, text: str, trim: bool):
@@ -109,16 +109,12 @@ class RegexExtension:
         if match is None:
             return ConditionalMatch(regexp, False)
 
-        srt_after = text[text.index(match.group()) + (match.end() - match.start()):]
+        str_after = text[match.end():]
 
         if trim:
-            srt_after = srt_after.strip()
+            str_after = str_after.strip()
 
-        success = match and not srt_after
-
-        conditional = ConditionalMatch(match, success)
-
-        return conditional
+        return ConditionalMatch(match, match and (str.isspace(str_after) or str_after == ''))
 
     @staticmethod
     def is_exact_match(regex: Pattern, text: str, trim: bool):
@@ -153,7 +149,7 @@ class ConditionalMatch:
 
     @property
     def index(self) -> int:
-        return self.match[0].string.index(self.match[0].group())
+        return self.match[0].start()
 
     @property
     def length(self) -> int:
@@ -161,7 +157,7 @@ class ConditionalMatch:
 
     @property
     def value(self) -> str:
-        return self.match[0].string
+        return self.match[0].string[self.match[0].start(): self.match[0].end()]
 
     @property
     def groups(self):
@@ -301,12 +297,14 @@ class DateTimeResolutionResult:
         self.timex: str = ''
         self.is_lunar: bool = False
         self.mod: str = ''
+        self.has_range_changing_mod: bool = False
         self.comment: str = ''
         self.future_resolution: Dict[str, str] = dict()
         self.past_resolution: Dict[str, str] = dict()
         self.future_value: object = None
         self.past_value: object = None
         self.sub_date_time_entities: List[object] = list()
+        self.list: List[object] = list()
 
 
 class TimeOfDayResolution:
@@ -698,8 +696,8 @@ class AgoLaterUtil:
                                           duration_parser: DateTimeParser,
                                           unit_map: Dict[str, str],
                                           unit_regex: Pattern,
-                                          utility_configuration: DateTimeUtilityConfiguration,
-                                          mode: AgoLaterMode) -> DateTimeResolutionResult:
+                                          utility_configuration: DateTimeUtilityConfiguration)\
+            -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
 
         if duration_extractor:
@@ -728,12 +726,16 @@ class AgoLaterUtil:
             duration_result.timex) - 1].replace(Constants.UNIT_P, '').replace(Constants.UNIT_T, '')
         num = int(num_str)
 
-        if not num:
-            return result
+        mode = AgoLaterMode.DATE
+        if pr.timex_str.__contains__("T"):
+            mode = AgoLaterMode.DATETIME
 
-        return AgoLaterUtil.get_ago_later_result(
-            pr, num, unit_map, src_unit, after_str, before_str, reference,
-            utility_configuration, mode)
+        if pr.value:
+            return AgoLaterUtil.get_ago_later_result(
+                pr, num, unit_map, src_unit, after_str, before_str, reference,
+                utility_configuration, mode)
+
+        return result
 
     @staticmethod
     def get_ago_later_result(

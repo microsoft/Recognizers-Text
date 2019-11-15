@@ -67,7 +67,9 @@ class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
         self._simple_cases_regex: List[Pattern] = [
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.PureNumFromTo),
-            RegExpUtility.get_safe_reg_exp(SpanishDateTime.PureNumBetweenAnd)
+            RegExpUtility.get_safe_reg_exp(SpanishDateTime.PureNumBetweenAnd),
+            RegExpUtility.get_safe_reg_exp(SpanishDateTime.SpecificTimeFromTo),
+            RegExpUtility.get_safe_reg_exp(SpanishDateTime.SpecificTimeBetweenAnd)
         ]
 
         self._till_regex: Pattern = RegExpUtility.get_safe_reg_exp(

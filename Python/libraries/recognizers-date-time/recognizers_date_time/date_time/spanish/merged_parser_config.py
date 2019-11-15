@@ -1,4 +1,5 @@
 from typing import Pattern
+
 from recognizers_text.utilities import RegExpUtility
 
 from .holiday_parser_config import SpanishHolidayParserConfiguration
@@ -18,10 +19,26 @@ from ..base_datetimeperiod import BaseDateTimePeriodParser
 from ..base_duration import BaseDurationParser
 from ..base_set import BaseSetParser
 from ..base_merged import MergedParserConfiguration
-from ...resources.spanish_date_time import SpanishDateTime
+from ...resources.spanish_date_time import SpanishDateTime, BaseDateTime
 
 
 class SpanishMergedParserConfiguration(SpanishCommonDateTimeParserConfiguration, MergedParserConfiguration):
+    @property
+    def around_regex(self) -> Pattern:
+        return self._around_regex
+
+    @property
+    def equal_regex(self) -> Pattern:
+        return self._equal_regex
+
+    @property
+    def year_regex(self) -> Pattern:
+        return self._year_regex
+
+    @property
+    def suffix_after(self) -> Pattern:
+        return self._suffix_after
+
     @property
     def before_regex(self) -> Pattern:
         return self._before_regex
@@ -72,7 +89,13 @@ class SpanishMergedParserConfiguration(SpanishCommonDateTimeParserConfiguration,
 
     def __init__(self, config):
         SpanishCommonDateTimeParserConfiguration.__init__(self)
-
+        self._equal_regex = RegExpUtility.get_safe_reg_exp(BaseDateTime.EqualRegex)
+        self._suffix_after = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.SuffixAfterRegex)
+        self._year_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.YearRegex)
+        self._around_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.AroundRegex)
         self._before_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.BeforeRegex)
         self._after_regex = RegExpUtility.get_safe_reg_exp(
