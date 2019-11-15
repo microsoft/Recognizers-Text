@@ -546,12 +546,10 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
         tokens = []
 
-        if in_prefix:
-            match = RegexExtension.match_end(self.config.in_connector_regex, before_str, True)
-        else:
-            match = RegexExtension.match_begin(self.config.in_connector_regex, before_str, True)
+        match = RegexExtension.match_end(self.config.in_connector_regex, before_str, True) if in_prefix \
+            else RegexExtension.match_begin(self.config.in_connector_regex, before_str, True)
 
-        if match.success:
+        if match and match.success:
             range_unit_match = self.config.range_unit_regex.search(source[duration.start:
                                                                           duration.start + duration.length])
 
