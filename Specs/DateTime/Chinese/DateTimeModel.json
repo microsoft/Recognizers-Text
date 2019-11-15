@@ -3320,7 +3320,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-30T08:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "从四月的最后一个星期一到十月一日",
