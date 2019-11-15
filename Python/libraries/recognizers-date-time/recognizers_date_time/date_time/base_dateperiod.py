@@ -1018,15 +1018,21 @@ class BaseDatePeriodParser(DateTimeParser):
 
         year_match_for_end_date = regex.match(self.config.year_regex, end_date_str)
 
-        if year_match_for_end_date and year_match_for_end_date.success and \
+        if year_match_for_end_date and hasattr(year_match_for_end_date, 'success') and \
+                year_match_for_end_date.success and \
                 len(year_match_for_end_date) == len(end_date_str):
             is_end_date_pure_year = True
+        else:
+            is_end_date_pure_year = False
 
         relative_match_for_start_date = config.relative_regex.search(start_date_str)
         relative_match_for_end_date = config.relative_regex.search(end_date_str)
 
         if relative_match_for_start_date and relative_match_for_end_date:
-            is_date_relative = relative_match_for_start_date.success or relative_match_for_end_date.success
+            if hasattr(relative_match_for_start_date, 'success') and \
+                    hasattr(relative_match_for_end_date, 'success'):
+                is_date_relative = relative_match_for_start_date.success or \
+                               relative_match_for_end_date.success
         else:
             is_date_relative = None
 
@@ -1050,6 +1056,8 @@ class BaseDatePeriodParser(DateTimeParser):
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
         if not reference:
             reference = datetime.now()
+        result_value = None
+        inner_result = None
 
         if source.type == self.parser_type_name:
             source_text = source.text.strip().lower()
