@@ -1024,6 +1024,7 @@ class BaseDatePeriodParser(DateTimeParser):
 
         relative_match_for_start_date = self.config.relative_regex.search(start_date_str)
         relative_match_for_end_date = self.config.relative_regex.search(end_date_str)
+
         if relative_match_for_start_date and relative_match_for_end_date:
             is_date_relative = relative_match_for_start_date.success or relative_match_for_end_date.success
         else:
