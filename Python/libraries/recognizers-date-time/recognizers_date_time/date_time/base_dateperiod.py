@@ -1032,7 +1032,7 @@ class BaseDatePeriodParser(DateTimeParser):
             if hasattr(relative_match_for_start_date, 'success') and \
                     hasattr(relative_match_for_end_date, 'success'):
                 is_date_relative = relative_match_for_start_date.success or \
-                               relative_match_for_end_date.success
+                    relative_match_for_end_date.success
         else:
             is_date_relative = None
 
