@@ -753,7 +753,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 class DatePeriodParserConfiguration(ABC):
     @property
     @abstractmethod
-    def date_extractor(self) -> DateTimeExtractor:
+    def date_extractor(self) -> DateExtractor:
         raise NotImplementedError
 
     @property
@@ -1016,14 +1016,14 @@ class BaseDatePeriodParser(DateTimeParser):
         is_date_relative = False
         context_year = Constants.INVALID_YEAR
 
-        year_match_for_end_date = self.config.year_regex.search(end_date_str)
+        year_match_for_end_date = regex.match(self.config.year_regex, end_date_str)
 
-        if year_match_for_end_date and year_match_for_end_date.su and \
+        if year_match_for_end_date and year_match_for_end_date.success and \
                 len(year_match_for_end_date) == len(end_date_str):
             is_end_date_pure_year = True
 
-        relative_match_for_start_date = self.config.relative_regex.search(start_date_str)
-        relative_match_for_end_date = self.config.relative_regex.search(end_date_str)
+        relative_match_for_start_date = config.relative_regex.search(start_date_str)
+        relative_match_for_end_date = config.relative_regex.search(end_date_str)
 
         if relative_match_for_start_date and relative_match_for_end_date:
             is_date_relative = relative_match_for_start_date.success or relative_match_for_end_date.success
@@ -1031,8 +1031,8 @@ class BaseDatePeriodParser(DateTimeParser):
             is_date_relative = None
 
         if not is_end_date_pure_year and not is_date_relative:
-            for match in list(self.config.year_regex.finditer(text)):
-                year = self.config.get_year_from_text(match)
+            for match in list(config.year_regex.finditer(text)):
+                year = config.date_extractor.get_year_from_text(match)
 
                 if year != Constants.INVALID_YEAR:
                     if context_year == Constants.INVALID_YEAR:
