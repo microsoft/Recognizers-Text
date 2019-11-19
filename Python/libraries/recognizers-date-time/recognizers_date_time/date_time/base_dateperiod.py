@@ -22,9 +22,15 @@ MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
 
 class DatePeriodExtractorConfiguration(ABC):
+
     @property
     @abstractmethod
     def simple_cases_regexes(self) -> List[Pattern]:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def check_both_before_after(self) -> Pattern:
         raise NotImplementedError
 
     @property
@@ -497,85 +503,36 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
         else:
             return -1
 
-    def merge_two_time_points(self, source: str, reference: datetime) -> List[ExtractResult]:
-        tokens = []
-        er = self.config.date_point_extractor.extract(source, reference)
+    def merge_two_time_points(self, source: str, reference: datetime) -> List[Token]:
+        extract_result = self.config.date_point_extractor.extract(source)
 
         # Handle "now"
-        if len(er) <= 1:
-            match = self.config.now_regex.search(source)
-            if match is None:
-                return tokens
-            now_er = ExtractResult()
-            now_er.start = match.start()
-            now_er.length = match.end() - match.start()
-            er.append(now_er)
-            er = sorted(er, key=lambda x: x.start)
+        matches = list(self.config.now_regex.finditer(source))
+        if len(matches) != 0:
+            for match in matches:
+                now_extract_result = ExtractResult()
+                now_extract_result.start = match.start()
+                now_extract_result.length = match.end() - match.start()
+                extract_result.append(now_extract_result)
 
-        idx = 0
+            extract_result = sorted(extract_result, key=lambda x: x.start)
 
-        while idx < len(er) - 1:
-            middle_begin = er[idx].start + (er[idx].length or 0)
-            middle_end = er[idx + 1].start or 0
+        return self.merge_multiple_extractions(source, extract_result)
 
-            if middle_begin >= middle_end:
-                idx += 1
-                continue
-
-            middle_str = source[middle_begin:middle_end].strip().lower()
-            match = self.config.till_regex.search(middle_str)
-
-            if match and match.group() and match.start() == 0 and match.end() - match.start() == len(middle_str):
-                period_begin = er[idx].start
-                period_end = (er[idx + 1].start or 0) + \
-                             (er[idx + 1].length or 0)
-                before_str = source[0:period_begin].strip().lower()
-                from_token_index = self.config.get_from_token_index(before_str)
-                between_token_index = self.config.get_between_token_index(
-                    before_str)
-
-                if from_token_index.matched or between_token_index.matched:
-                    period_begin = from_token_index.index if from_token_index.matched else between_token_index.index
-                tokens.append(Token(period_begin, period_end))
-                idx += 2
-                continue
-
-            if self.config.has_connector_token(middle_str):
-                period_begin = er[idx].start or 0
-                period_end = (er[idx + 1].start or 0) + \
-                             (er[idx + 1].length or 0)
-                before_str = source[0:period_begin].strip().lower()
-                between_token_index = self.config.get_between_token_index(
-                    before_str)
-
-                if between_token_index.matched:
-                    period_begin = between_token_index.index
-                    tokens.append(Token(period_begin, period_end))
-                    idx += 2
-                    continue
-
-            idx += 1
-        return tokens
-
-    def merge_multiple_extractions(self, source: str, erd: [ExtractResult]):
+    def merge_multiple_extractions(self, source: str, extract_result: [ExtractResult]):
         tokens = []
 
         metadata = Metadata()
         metadata.possibly_included_period_end = True
 
-        if len(erd) < 1:
-            return tokens
-        er = []
-        for x in erd:
-            if x.data is not None:
-                er.append(x)
-        idx = 0
-        if len(er) < 1:
+        if len(extract_result) <= 1:
             return tokens
 
-        while idx < len(er) - 1:
-            middle_begin = er[idx].start + (er[idx].length or 0)
-            middle_end = er[idx + 1].start or 0
+        idx = 0
+
+        while idx < len(extract_result) - 1:
+            middle_begin = extract_result[idx].start + (extract_result[idx].length or 0)
+            middle_end = extract_result[idx + 1].start or 0
 
             if middle_begin >= middle_end:
                 idx += 1
@@ -585,9 +542,9 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
             match = self.config.till_regex.search(middle_str)
 
             if match and match.group() and match.start() == 0 and match.end() - match.start() == len(middle_str):
-                period_begin = er[idx].start
-                period_end = (er[idx + 1].start or 0) + \
-                             (er[idx + 1].length or 0)
+                period_begin = extract_result[idx].start
+                period_end = (extract_result[idx + 1].start or 0) + \
+                             (extract_result[idx + 1].length or 0)
 
                 # Handle "from/between" together with till words (till/until/through...)
                 before_str = source[0:period_begin].strip().lower()
@@ -604,9 +561,9 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                 continue
 
             if self.config.has_connector_token(middle_str):
-                period_begin = er[idx].start or 0
-                period_end = (er[idx + 1].start or 0) + \
-                             (er[idx + 1].length or 0)
+                period_begin = extract_result[idx].start or 0
+                period_end = (extract_result[idx + 1].start or 0) + \
+                             (extract_result[idx + 1].length or 0)
 
                 # handle "between...and..." case
                 before_str = source[0:period_begin].strip().lower()
@@ -621,7 +578,20 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                     idx += 2
                     continue
 
+                if self.config.check_both_before_after:
+                    after_str = source[period_end: len(source) - period_end]
+                    between_token_index = self.config.get_between_token_index(after_str)
+                    if between_token_index.matched:
+                        period_end += after_str
+                        tokens.append(Token(period_begin, period_end, metadata))
+
+                        # merge two tokens here, increase the index by two
+                        idx += 2
+                        continue
+
             idx += 1
+
+        return tokens
 
     def match_duration(self, source: str, reference: datetime) -> List[ExtractResult]:
         tokens = []

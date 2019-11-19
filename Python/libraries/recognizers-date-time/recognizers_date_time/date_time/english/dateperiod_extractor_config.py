@@ -18,6 +18,10 @@ from .common_configs import EnglishOrdinalExtractor, EnglishCardinalExtractor
 
 class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
+    @property
     def simple_cases_regexes(self) -> List[Pattern]:
         return self._simple_cases_regexes
 
@@ -180,6 +184,7 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(
                 EnglishDateTime.WeekWithWeekDayRangeRegex)
         ]
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(
             BaseDateTime.IllegalYearRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(

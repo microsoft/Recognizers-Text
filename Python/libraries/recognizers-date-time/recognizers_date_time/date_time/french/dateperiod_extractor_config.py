@@ -18,6 +18,10 @@ from recognizers_number import FrenchOrdinalExtractor, BaseNumberExtractor
 
 class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
+    @property
     def simple_cases_regexes(self) -> List[Pattern]:
         return self._simple_cases_regexes
 
@@ -169,6 +173,7 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(
                 FrenchDateTime.WeekWithWeekDayRangeRegex)
         ]
+        self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
         self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(
             BaseDateTime.IllegalYearRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(
