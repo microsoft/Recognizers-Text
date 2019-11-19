@@ -1057,7 +1057,6 @@ class BaseDatePeriodParser(DateTimeParser):
         if not reference:
             reference = datetime.now()
         result_value = None
-        inner_result = None
 
         if source.type == self.parser_type_name:
             source_text = source.text.strip().lower()
@@ -1125,6 +1124,11 @@ class BaseDatePeriodParser(DateTimeParser):
                 result_value = inner_result
 
         result = DateTimeParseResult(source)
+        result.text = source.text
+        result.start = source.start
+        result.length = source.length
+        result.type = source.type
+        result.meta_data = source.meta_data
         result.value = result_value
         result.timex_str = result_value.timex if result_value else ''
         result.resolution_str = ''
@@ -1563,20 +1567,14 @@ class BaseDatePeriodParser(DateTimeParser):
 
             match = self.config.week_with_week_day_range_regex.search(source)
             week_prefix = None
+
+            # Check if weekPrefix is already included in the extractions otherwise include it
             if match:
                 week_prefix = RegExpUtility.get_group(match, Constants.WEEK_GROUP_NAME)
 
                 if week_prefix:
                     extract_results[0].text = f'{week_prefix} {extract_results[0].text}'
                     extract_results[1].text = f'{week_prefix} {extract_results[1].text}'
-
-            # Check if weekPrefix is already included in the extractions otherwise include it
-            if week_prefix:
-                if week_prefix in extract_results[0].text:
-                    extract_results[0].text = week_prefix + " " + extract_results[0].text
-
-                if week_prefix in extract_results[1].text:
-                    extract_results[1].text = week_prefix + " " + extract_results[1].text
 
             for extract_result in extract_results:
                 pr = self.config.date_parser.parse(extract_result, reference)
@@ -1598,7 +1596,7 @@ class BaseDatePeriodParser(DateTimeParser):
             return result
 
         result.sub_date_time_entities = [parse_result1, parse_result2]
-        result.sub_date_time_entities = parse_results
+        # result.sub_date_time_entities = parse_results
 
         parse_result_begin = parse_results[0]
         parse_result_end = parse_results[1]
