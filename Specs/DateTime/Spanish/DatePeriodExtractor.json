@@ -3486,7 +3486,7 @@
   {
     "Input": "en los años 1970",
     "NotSupported": "java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "años 1970",
@@ -3499,7 +3499,7 @@
   {
     "Input": "Nació en los años 2000",
     "NotSupported": "java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "años 2000",
@@ -3512,7 +3512,7 @@
   {
     "Input": "en la década de 1970",
     "NotSupported": "java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "década de 1970",
@@ -3525,7 +3525,7 @@
   {
     "Input": "en los años 70",
     "NotSupported": "java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "años 70",
@@ -3551,7 +3551,7 @@
   {
     "Input": "en la década 40",
     "NotSupported": "java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "década 40",
@@ -3564,7 +3564,7 @@
   {
     "Input": "en los años setenta",
     "NotSupported": "java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "los años setenta",
@@ -3577,7 +3577,7 @@
   {
     "Input": "en los años mil novecientos sesenta",
     "NotSupported": "java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "los años mil novecientos sesenta",
@@ -3590,7 +3590,7 @@
   {
     "Input": "en los años dos mil diez",
     "NotSupported": "java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "los años dos mil diez",
@@ -3603,7 +3603,7 @@
   {
     "Input": "en los años diez",
     "NotSupported": "java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "los años diez",
@@ -3616,7 +3616,7 @@
   {
     "Input": "en los años dos mil",
     "NotSupported": "java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "los años dos mil",
@@ -3772,7 +3772,7 @@
   {
     "Input": "Ocurrió en las últimas 2 décadas",
     "NotSupported": "java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "las últimas 2 décadas",
@@ -3785,7 +3785,7 @@
   {
     "Input": "Ocurrió en las últimas dos décadas",
     "NotSupported": "java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "las últimas dos décadas",
@@ -3798,7 +3798,7 @@
   {
     "Input": "Ocurrirá en la próxima década",
     "NotSupported": "java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "la próxima década",
@@ -4531,7 +4531,7 @@
   {
     "Input": "ventas hechas en esta década",
     "NotSupported": "java",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "esta década",
