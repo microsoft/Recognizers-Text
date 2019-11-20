@@ -454,7 +454,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                 match_year = self.config.year_regex.search(match.group())
 
                 if match_year and len(match_year.group()) == len(match.group()):
-                    year_str = match_year.group(Constants.YEAR_GROUP_NAME)
+                    year_str = self.config.date_point_extractor.get_year_from_text(match_year)
 
                     if not year_str:
                         year = self.__get_year_from_text(match_year)
