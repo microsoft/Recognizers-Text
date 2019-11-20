@@ -103,8 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
 
-                    bool inPrefix = true;
-                    int length = GetValidConnectorIndexForDateAndTimePeriod(middleStr, inPrefix);
+                    int length = GetValidConnectorIndexForDateAndTimePeriod(middleStr, inPrefix: true);
                     if (length != Constants.INVALID_CONNECTOR_CODE)
                     {
                         var begin = ers[i].Start ?? 0;
@@ -114,10 +113,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     else if (this.config.CheckBothBeforeAfter)
                     {
                         // Check also afterStr
-                        inPrefix = false;
                         var afterStart = ers[j].Start + ers[j].Length ?? 0;
                         var afterStr = text.Substring(afterStart);
-                        length = GetValidConnectorIndexForDateAndTimePeriod(afterStr, inPrefix);
+                        length = GetValidConnectorIndexForDateAndTimePeriod(afterStr, inPrefix: false);
                         if (length != Constants.INVALID_CONNECTOR_CODE && this.config.PrepositionRegex.IsExactMatch(middleStr, trim: true))
                         {
                             var begin = ers[i].Start ?? 0;
@@ -182,7 +180,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var dateStrEnd = (int)(dateEr.Start + dateEr.Length);
                 var beforeStr = text.Substring(0, (int)dateEr.Start).TrimEnd();
                 var match = this.config.PrefixDayRegex.Match(beforeStr);
-
                 if (match.Success)
                 {
                     ret.Add(new Token(match.Index, dateStrEnd));
@@ -592,8 +589,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 // within (the) (next) "Seconds/Minutes/Hours" should be handled as datetimeRange here
                 // within (the) (next) XX days/months/years + "Seconds/Minutes/Hours" should also be handled as datetimeRange here
-                bool inPrefix = true;
-                Token token = MatchWithinNextPrefix(beforeStr, text, duration, inPrefix);
+                Token token = MatchWithinNextPrefix(beforeStr, text, duration, inPrefix: true);
                 if (token.Start >= 0)
                 {
                     ret.Add(token);
@@ -603,8 +599,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // check also afterStr
                 if (this.config.CheckBothBeforeAfter)
                 {
-                    inPrefix = false;
-                    token = MatchWithinNextPrefix(afterStr, text, duration, inPrefix);
+                    token = MatchWithinNextPrefix(afterStr, text, duration, inPrefix: false);
                     if (token.Start >= 0)
                     {
                         ret.Add(token);

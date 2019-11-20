@@ -430,8 +430,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (dateStrEnd < timeEr.Start)
                 {
-                    var midStr = dateStrEnd < timeEr.Start ? text.Substring(dateStrEnd, timeEr.Start.Value - dateStrEnd).Trim() :
-                        text.Substring(timeStrEnd, dateEr.Start.Value - timeStrEnd).Trim();
+                    var midStr = text.Substring(dateStrEnd, timeEr.Start.Value - dateStrEnd).Trim();
                     var afterStr = text.Substring(timeStrEnd);
 
                     string modStr = GetValidConnectorModForDateAndTimePeriod(midStr, inPrefix: true);

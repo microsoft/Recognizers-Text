@@ -73,14 +73,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                bool inPrefix = true;
-                ret.AddRange(ExtractInConnector(text, beforeStr, afterStr, duration, inPrefix, out bool success));
+                ret.AddRange(ExtractInConnector(text, beforeStr, afterStr, duration, out bool success, inPrefix: true));
 
                 // Check also afterStr
                 if (!success && Config.CheckBothBeforeAfter)
                 {
-                    inPrefix = false;
-                    ret.AddRange(ExtractInConnector(text, afterStr, beforeStr, duration, inPrefix, out success));
+                    ret.AddRange(ExtractInConnector(text, afterStr, beforeStr, duration, out success, inPrefix: false));
                 }
             }
 
@@ -446,14 +444,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Check whether there's a year
             var suffix = text.Substring(endIndex);
             var prefix = text.Substring(0, startIndex);
-            bool inSuffix = true;
-            endIndex += GetYearIndex(suffix, inSuffix, ref year, out bool success);
+            endIndex += GetYearIndex(suffix, ref year, out bool success, inPrefix: false);
 
             // Check also in prefix
             if (!success && Config.CheckBothBeforeAfter)
             {
-                inSuffix = false;
-                startIndex -= GetYearIndex(prefix, inSuffix, ref year, out success);
+                startIndex -= GetYearIndex(prefix, ref year, out success, inPrefix: true);
             }
 
             var date = DateObject.MinValue.SafeCreateFromValue(year, month, day);
@@ -546,20 +542,18 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             if (this.Config.CheckBothBeforeAfter)
             {
-                bool inPrefix = false;
-                StripInequality(er, Config.MoreThanRegex, inPrefix);
-                StripInequality(er, Config.LessThanRegex, inPrefix);
+                StripInequality(er, Config.MoreThanRegex, inPrefix: false);
+                StripInequality(er, Config.LessThanRegex, inPrefix: false);
             }
             else
             {
-                bool inPrefix = true;
-                StripInequality(er, Config.MoreThanRegex, inPrefix);
-                StripInequality(er, Config.LessThanRegex, inPrefix);
+                StripInequality(er, Config.MoreThanRegex, inPrefix: true);
+                StripInequality(er, Config.LessThanRegex, inPrefix: true);
             }
         }
 
         // Used in ExtractRelativeDurationDateWithInPrefix to extract the connector "in" in cases like "In 3 days/weeks/months/years"
-        private List<Token> ExtractInConnector(string text, string firstStr, string secondStr, Token duration, bool inPrefix, out bool success)
+        private List<Token> ExtractInConnector(string text, string firstStr, string secondStr, Token duration, out bool success, bool inPrefix)
         {
             List<Token> ret = new List<Token>();
             var match = inPrefix ? Config.InConnectorRegex.MatchEnd(firstStr, trim: true) : Config.InConnectorRegex.MatchBegin(firstStr, trim: true);
@@ -591,18 +585,18 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private int GetYearIndex(string affix, bool inSuffix, ref int year, out bool success)
+        private int GetYearIndex(string affix, ref int year, out bool success, bool inPrefix)
         {
             int index = 0;
             var matchYear = this.Config.YearSuffix.Match(affix);
-            success = inSuffix ? matchYear.Success && matchYear.Index == 0 : matchYear.Success && matchYear.Index + matchYear.Length == affix.TrimEnd().Length;
+            success = !inPrefix ? matchYear.Success && matchYear.Index == 0 : matchYear.Success && matchYear.Index + matchYear.Length == affix.TrimEnd().Length;
             if (success)
             {
                 year = GetYearFromText(matchYear);
 
                 if (year >= Constants.MinYearNum && year <= Constants.MaxYearNum)
                 {
-                    index = inSuffix ? matchYear.Length : matchYear.Length + (affix.Length - affix.TrimEnd().Length);
+                    index = !inPrefix ? matchYear.Length : matchYear.Length + (affix.Length - affix.TrimEnd().Length);
                 }
             }
 
