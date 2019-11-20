@@ -356,7 +356,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
+    "NotSupportedByDesign": "java, python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -383,7 +383,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
+    "NotSupportedByDesign": "java, python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -1060,7 +1060,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
+    "NotSupportedByDesign": "java, python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -1087,7 +1087,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
+    "NotSupportedByDesign": "java, python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -6955,7 +6955,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-21T17:00:00"
     },
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "la semana pasada",
@@ -6981,7 +6981,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-21T17:00:00"
     },
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "semana pasada",
@@ -7007,7 +7007,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-21T17:00:00"
     },
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "el mes pasado",
