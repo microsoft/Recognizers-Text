@@ -4726,5 +4726,37 @@
         }
       }
     ]
+  },
+  {
+    "Input": "三的另一种写法是叁",
+    "Results": [
+      {
+        "Text": "三",
+        "Start": 0,
+        "End": 0,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        }
+      },
+      {
+        "Text": "一",
+        "Start": 3,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "叁",
+        "Start": 8,
+        "End": 8,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ]
   }
 ]
