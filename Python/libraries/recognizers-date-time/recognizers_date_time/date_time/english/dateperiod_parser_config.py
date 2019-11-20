@@ -177,7 +177,20 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     def later_regex(self) -> Pattern:
         return self._later_regex
 
+    @property
+    def complex_dateperiod_regex(self) -> Pattern:
+        return self._complex_dateperiod_regex
+
+    @property
+    def relative_decade_regex(self) -> Pattern:
+        return self._relative_decade_regex
+
+    @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
     def __init__(self, config: BaseDateParserConfiguration):
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._later_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.LaterRegex)
         self._ago_regex = RegExpUtility.get_safe_reg_exp(
@@ -251,6 +264,12 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
             EnglishDateTime.RelativeRegex)
         self._decade_with_century_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.DecadeWithCenturyRegex)
+        self._complex_dateperiod_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.ComplexDatePeriodRegex
+        )
+        self._relative_decade_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.RelativeDecadeRegex
+        )
 
     def get_swift_day_or_month(self, source: str) -> int:
         trimmed_source = source.strip().lower()

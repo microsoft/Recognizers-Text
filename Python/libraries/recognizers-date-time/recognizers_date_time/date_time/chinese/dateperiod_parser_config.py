@@ -181,7 +181,17 @@ class ChineseDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     def now_regex(self) -> Pattern:
         return self._now_regex
 
+    @property
+    def complex_dateperiod_regex(self) -> Pattern:
+        return self._complex_dateperiod_regex
+
+    @property
+    def relative_decade_regex(self) -> Pattern:
+        return self._relative_decade_regex
+
     def __init__(self):
+        self._complex_dateperiod_regex = None
+        self._relative_decade_regex = None
         self._relative_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.RelativeRegex)
         self._date_extractor = ChineseDateExtractor()

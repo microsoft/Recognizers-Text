@@ -71,7 +71,6 @@ class Constants:
     TIME_TIMEX_CONNECTOR: str = ":"
     GENERAL_PERIOD_PREFIX: str = "P"
     TIME_TIMEX_PREFIX: str = "T"
-    TIMEX_FUZZY_YEAR = "XXXX"
 
     EARLY_MORNING: str = "TDA"
     MORNING: str = "TMO"

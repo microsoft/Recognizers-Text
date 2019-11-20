@@ -116,9 +116,8 @@ class RegexExtension:
 
         success = match and (str.isspace(srt_after) or srt_after is None)
 
-        conditional = ConditionalMatch(match, success)
+        return ConditionalMatch(match, success)
 
-        return conditional
 
     @staticmethod
     def is_exact_match(regex: Pattern, text: str, trim: bool):
@@ -127,6 +126,14 @@ class RegexExtension:
         length = len(text.strip()) if trim else len(text)
 
         return match and len(match.group()) == length
+
+    @staticmethod
+    def exact_match(regexp: Pattern, text: str, trim: bool):
+        match = regexp.search(text)
+
+        length = len(text.strip()) if trim else len(text)
+
+        return ConditionalMatch(match, match and len(match.group()) == length)
 
 
 class ConditionalMatch:
@@ -857,8 +864,15 @@ class DateContext:
         result[TimeTypeConstants.END_DATE] = str(end_date)
         return result
 
-
+date_period_timex_type_to_suffix = {
+        0 : Constants.TIMEX_DAY,
+        1 : Constants.TIMEX_WEEK,
+        2 : Constants.TIMEX_MONTH,
+        3 : Constants.TIMEX_YEAR,
+    }
 class TimexUtil:
+
+
     @staticmethod
     def parse_time_of_day(tod: str) -> TimeOfDayResolution:
         result = TimeOfDayResolution()
@@ -903,3 +917,23 @@ class TimexUtil:
     def set_timex_with_context(timex: str, context: DateContext) -> str:
         result = timex.replace(Constants.TIMEX_FUZZY_YEAR, str(context.year))
         return result
+
+    @staticmethod
+    def generate_date_period_timex(begin, end, timex_type, alternative_begin=datetime.now(), alternative_end=datetime.now()):
+        equal_duration_length = (end - begin).days == (alternative_end - alternative_begin).days or datetime.now() == alternative_end == alternative_begin
+        unit_count = 'XX'
+
+        if equal_duration_length:
+            if timex_type == 0:
+                unit_count = (end - begin).days
+
+            if timex_type == 1:
+                unit_count = (end - begin).days/7
+            if timex_type == 2:
+                unit_count = ((end.year - begin.year) * 12) + (end.month - begin.month)
+            if timex_type == 3:
+                unit_count = (end.year - begin.year) + ((end.mont - begin.month) / 12.0)
+
+        date_period_timex = f'P{unit_count}{date_period_timex_type_to_suffix[timex_type]}'
+
+        return f'({DateTimeFormatUtil.luis_date(begin.day, begin.month, begin.year)},{DateTimeFormatUtil.luis_date(end.day, end.month, end.year)},{date_period_timex})'
