@@ -1525,7 +1525,7 @@ class BaseDatePeriodParser(DateTimeParser):
             future_match_for_start_date = self.config.future_regex.match(ers[0].text)
             future_match_for_end_date = self.config.future_regex.match(ers[1].text)
 
-            if future_match_for_start_date.success and not future_match_for_end_date.success:
+            if future_match_for_start_date and future_match_for_start_date.success and not future_match_for_end_date.success:
                 ers[1].text = future_match_for_start_date.value + ' ' + ers[1].text
 
             match = self.config.week_with_week_day_range_regex.search(source)
@@ -1536,29 +1536,29 @@ class BaseDatePeriodParser(DateTimeParser):
                     ers[0].text = f'{week_prefix} {ers[0].text}'
                     ers[1].text = f'{week_prefix} {ers[1].text}'
 
-            # Check if weekPrefix is already included in the extractions otherwise include it
-            if not week_prefix:
-                if week_prefix in ers[0].text:
-                    ers[0].text = week_prefix + " " + ers[0].text
+                # Check if weekPrefix is already included in the extractions otherwise include it
+                if not week_prefix:
+                    if week_prefix in ers[0].text:
+                        ers[0].text = week_prefix + " " + ers[0].text
 
-                if week_prefix in ers[1].text:
-                    ers[1].text = week_prefix + " " + ers[1].text
+                    if week_prefix in ers[1].text:
+                        ers[1].text = week_prefix + " " + ers[1].text
 
-            for er in ers:
-                pr = self.config.date_parser.parse(er, reference)
-                if pr:
-                    prs.append(pr)
+                for er in ers:
+                    pr = self.config.date_parser.parse(er, reference)
+                    if pr:
+                        prs.append(pr)
 
-            date_context = self.get_year_context(self.config, ers[0].text, ers[1].text, source)
+                date_context = self.get_year_context(self.config, ers[0].text, ers[1].text, source)
 
-            pr1 = self.config.date_parser.parse(ers[0], reference)
-            pr2 = self.config.date_parser.parse(ers[1], reference)
+                pr1 = self.config.date_parser.parse(ers[0], reference)
+                pr2 = self.config.date_parser.parse(ers[1], reference)
 
-            if pr1.value is None or pr2.value is None:
-                return result
+                if pr1.value is None or pr2.value is None:
+                    return result
 
-            pr1 = date_context.process_date_entity_parsing_result(pr1)
-            pr2 = date_context.process_date_entity_parsing_result(pr2)
+                pr1 = date_context.process_date_entity_parsing_result(pr1)
+                pr2 = date_context.process_date_entity_parsing_result(pr2)
 
         if len(prs) < 2:
             return result
