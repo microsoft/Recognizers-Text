@@ -19,6 +19,14 @@ from .date_extractor_config import SpanishDateExtractorConfiguration
 class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
 
     @property
+    def year_period_regex(self) -> Pattern:
+        return self._year_period_regex
+
+    @property
+    def all_half_year_regex(self):
+        return self._all_half_year_regex
+
+    @property
     def previous_prefix_regex(self) -> Pattern:
         return self._previous_prefix_regex
 
@@ -139,10 +147,6 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._duration_date_restrictions
 
     @property
-    def year_period_regex(self) -> Pattern:
-        return self._year_period_regex
-
-    @property
     def month_num_regex(self) -> Pattern:
         return self._month_num_regex
 
@@ -151,33 +155,30 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._century_suffix_regex
 
     def __init__(self):
+        self._year_period_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.YearPeriodRegex)
         self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.PreviousPrefixRegex)
         self._simple_cases_regexes = [
+            self._year_period_regex,
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.SimpleCasesRegex),
-            RegExpUtility.get_safe_reg_exp(SpanishDateTime.DayBetweenRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.DayBetweenRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.OneWordPeriodRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.MonthWithYearRegex),
-            RegExpUtility.get_safe_reg_exp(
-                SpanishDateTime.MonthNumWithYearRegex),
+            RegExpUtility.get_safe_reg_exp(SpanishDateTime.MonthNumWithYearRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.YearRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.WeekOfMonthRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.WeekOfYearRegex),
-            RegExpUtility.get_safe_reg_exp(
-                SpanishDateTime.MonthFrontBetweenRegex),
-            RegExpUtility.get_safe_reg_exp(
-                SpanishDateTime.MonthFrontSimpleCasesRegex),
+            RegExpUtility.get_safe_reg_exp(SpanishDateTime.MonthFrontBetweenRegex),
+            RegExpUtility.get_safe_reg_exp(SpanishDateTime.MonthFrontSimpleCasesRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.QuarterRegex),
-            RegExpUtility.get_safe_reg_exp(
-                SpanishDateTime.QuarterRegexYearFront),
-            RegExpUtility.get_safe_reg_exp(SpanishDateTime.AllHalfYearRegex),
+            RegExpUtility.get_safe_reg_exp(SpanishDateTime.QuarterRegexYearFront),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.SeasonRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.RestOfDateRegex),
-            RegExpUtility.get_safe_reg_exp(
-                SpanishDateTime.LaterEarlyPeriodRegex),
-            RegExpUtility.get_safe_reg_exp(
-                SpanishDateTime.WeekWithWeekDayRangeRegex)
+            RegExpUtility.get_safe_reg_exp(SpanishDateTime.LaterEarlyPeriodRegex),
+            RegExpUtility.get_safe_reg_exp(SpanishDateTime.WeekWithWeekDayRangeRegex),
+            RegExpUtility.get_safe_reg_exp(SpanishDateTime.YearPlusNumberRegex),
+            RegExpUtility.get_safe_reg_exp(SpanishDateTime.WhichWeekRegex),
+            RegExpUtility.get_safe_reg_exp(SpanishDateTime.ReferenceDatePeriodRegex),
         ]
         self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.TimeUnitRegex)
@@ -208,7 +209,8 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             SpanishDateTime.InConnectorRegex)
         self._range_unit_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.RangeUnitRegex)
-
+        self._all_half_year_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.AllHalfYearRegex)
         self.from_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.FromRegex)
         self.connector_and_regex = RegExpUtility.get_safe_reg_exp(
@@ -241,9 +243,6 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             SpanishDateTime.MoreThanRegex
         )
         self._duration_date_restrictions = SpanishDateTime.DurationDateRestrictions
-        self._year_period_regex = RegExpUtility.get_safe_reg_exp(
-            SpanishDateTime.YearPeriodRegex
-        )
         self._month_num_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.MonthNumRegex
         )
