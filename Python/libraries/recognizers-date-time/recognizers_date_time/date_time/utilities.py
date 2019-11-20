@@ -864,14 +864,16 @@ class DateContext:
         result[TimeTypeConstants.END_DATE] = str(end_date)
         return result
 
-date_period_timex_type_to_suffix = {
-        0 : Constants.TIMEX_DAY,
-        1 : Constants.TIMEX_WEEK,
-        2 : Constants.TIMEX_MONTH,
-        3 : Constants.TIMEX_YEAR,
-    }
-class TimexUtil:
 
+date_period_timex_type_to_suffix = {
+        0: Constants.TIMEX_DAY,
+        1: Constants.TIMEX_WEEK,
+        2: Constants.TIMEX_MONTH,
+        3: Constants.TIMEX_YEAR,
+    }
+
+
+class TimexUtil:
 
     @staticmethod
     def parse_time_of_day(tod: str) -> TimeOfDayResolution:
