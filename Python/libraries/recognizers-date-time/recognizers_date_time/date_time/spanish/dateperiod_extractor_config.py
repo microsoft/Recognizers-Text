@@ -156,8 +156,7 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
 
     def __init__(self):
         self._year_period_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.YearPeriodRegex)
-        self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            SpanishDateTime.PreviousPrefixRegex)
+        self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PastRegex)
         self._simple_cases_regexes = [
             self._year_period_regex,
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.SimpleCasesRegex),
@@ -249,7 +248,7 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._century_suffix_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.CenturySuffixRegex
         )
-        self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
+        self._check_both_before_after = False
         self._cardinal_extractor = SpanishCardinalExtractor()
         self._ordinal_extractor = SpanishOrdinalExtractor()
 
