@@ -4712,5 +4712,19 @@
         }
       }
     ]
+  },
+  {
+    "Input": "单销量排名前三的品牌",
+    "Results": [
+      {
+        "Text": "三",
+        "Start": 6,
+        "End": 6,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ]
   }
 ]
