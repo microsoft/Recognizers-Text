@@ -14,7 +14,7 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
     @property
     def check_both_before_after(self) -> Pattern:
         return self._check_both_before_after
-    
+
     def number_parser(self):
         pass
 
