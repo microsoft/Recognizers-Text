@@ -30,6 +30,10 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._month_front_between_regex
 
     @property
+    def relative_regex(self) -> Pattern:
+        return self._relative_regex
+
+    @property
     def between_regex(self) -> Pattern:
         return self._between_regex
 
@@ -60,6 +64,10 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
     def past_regex(self) -> Pattern:
         return self._past_regex
+
+    @property
+    def decade_with_century_regex(self) -> Pattern:
+        return self._decade_with_century_regex
 
     @property
     def future_regex(self) -> Pattern:
@@ -161,7 +169,19 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     def now_regex(self) -> Pattern:
         return self._now_regex
 
+    @property
+    def ago_regex(self) -> Pattern:
+        return self._ago_regex
+
+    @property
+    def later_regex(self) -> Pattern:
+        return self._later_regex
+
     def __init__(self, config: BaseDateParserConfiguration):
+        self._later_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.LaterRegex)
+        self._ago_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.AgoRegex)
         self._date_extractor = config.date_extractor
         self._date_parser = config.date_parser
         self._duration_extractor = config.duration_extractor
@@ -227,6 +247,10 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._unit_map = config.unit_map
         self._now_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.NowRegex)
+        self._relative_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.RelativeRegex)
+        self._decade_with_century_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.DecadeWithCenturyRegex)
 
     def get_swift_day_or_month(self, source: str) -> int:
         trimmed_source = source.strip().lower()

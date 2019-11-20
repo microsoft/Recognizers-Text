@@ -14,6 +14,18 @@ from .date_parser import ChineseDateParser
 
 class ChineseDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
+    def relative_regex(self) -> Pattern:
+        return self._relative_regex
+
+    @property
+    def ago_regex(self) -> Pattern:
+        return self._ago_regex
+
+    @property
+    def later_regex(self) -> Pattern:
+        return self._later_regex
+
+    @property
     def date_extractor(self) -> DateTimeExtractor:
         return self._date_extractor
 
@@ -64,6 +76,10 @@ class ChineseDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
     def past_regex(self) -> Pattern:
         return self._past_regex
+
+    @property
+    def decade_with_century_regex(self) -> Pattern:
+        return self._decade_with_century_regex
 
     @property
     def future_regex(self) -> Pattern:
@@ -166,6 +182,8 @@ class ChineseDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._now_regex
 
     def __init__(self):
+        self._relative_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.RelativeRegex)
         self._date_extractor = ChineseDateExtractor()
         self._date_parser = ChineseDateParser()
         self._duration_extractor = ChineseDurationExtractor()
@@ -202,6 +220,9 @@ class ChineseDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._unit_map = ChineseDateTime.ParserConfigurationUnitMap
         self._now_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.NowRegex)
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._later_regex = None
+        self._ago_regex = None
 
     def get_swift_day_or_month(self, source: str) -> int:
         source = source.strip().lower()
