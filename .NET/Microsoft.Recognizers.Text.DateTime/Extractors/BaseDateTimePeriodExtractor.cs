@@ -90,10 +90,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     break;
                 }
 
-                if ((ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
-                    ers[j].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal)) ||
-                    (this.config.CheckBothBeforeAfter && ers[j].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
-                    ers[i].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal)))
+                if (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
+                    ers[j].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
                 {
                     var middleBegin = ers[i].Start + ers[i].Length ?? 0;
                     var middleEnd = ers[j].Start ?? 0;

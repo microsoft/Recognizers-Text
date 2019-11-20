@@ -428,21 +428,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var dateStrEnd = (int)(dateEr.Start + dateEr.Length);
                 var timeStrEnd = (int)(timeEr.Start + timeEr.Length);
 
-                // if CheckBothBeforeAfter, it checks also for patterns where time precedes date
-                if (dateStrEnd < timeEr.Start || (this.Config.CheckBothBeforeAfter && timeStrEnd < dateEr.Start))
+                if (dateStrEnd < timeEr.Start)
                 {
                     var midStr = dateStrEnd < timeEr.Start ? text.Substring(dateStrEnd, timeEr.Start.Value - dateStrEnd).Trim() :
                         text.Substring(timeStrEnd, dateEr.Start.Value - timeStrEnd).Trim();
                     var afterStr = text.Substring(timeStrEnd);
 
-                    bool inPrefix = true;
-                    string modStr = GetValidConnectorModForDateAndTimePeriod(midStr, inPrefix);
+                    string modStr = GetValidConnectorModForDateAndTimePeriod(midStr, inPrefix: true);
 
                     // check also afterStr
                     if (string.IsNullOrEmpty(modStr) && this.Config.CheckBothBeforeAfter)
                     {
-                        inPrefix = false;
-                        modStr = midStr.Length <= 4 ? GetValidConnectorModForDateAndTimePeriod(afterStr, inPrefix) : null;
+                        modStr = midStr.Length <= 4 ? GetValidConnectorModForDateAndTimePeriod(afterStr, inPrefix: false) : null;
                     }
 
                     if (!string.IsNullOrEmpty(modStr))
