@@ -22,7 +22,7 @@ export namespace EnglishNumeric {
     export const AnIntRegex = `(an?)(?=\\s)`;
     export const TenToNineteenIntegerRegex = `(?:seventeen|thirteen|fourteen|eighteen|nineteen|fifteen|sixteen|eleven|twelve|ten)`;
     export const TensNumberIntegerRegex = `(?:seventy|twenty|thirty|eighty|ninety|forty|fifty|sixty)`;
-    export const SeparaIntRegex = `(?:((${TenToNineteenIntegerRegex}|(${TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*)${ZeroToNineIntegerRegex})|${TensNumberIntegerRegex}|${ZeroToNineIntegerRegex}|${RoundNumberIntegerRegex})(\\s+${RoundNumberIntegerRegex})*))|((${AnIntRegex}(\\s+${RoundNumberIntegerRegex})+))`;
+    export const SeparaIntRegex = `(?:((${TenToNineteenIntegerRegex}|(${TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*)${ZeroToNineIntegerRegex})|${TensNumberIntegerRegex}|${ZeroToNineIntegerRegex})(\\s+${RoundNumberIntegerRegex})*))|((${AnIntRegex}(\\s+${RoundNumberIntegerRegex})+))`;
     export const AllIntRegex = `(?:(((${TenToNineteenIntegerRegex}|(${TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*)${ZeroToNineIntegerRegex})|${TensNumberIntegerRegex}|${ZeroToNineIntegerRegex}|${AnIntRegex})(\\s+${RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*${SeparaIntRegex})`;
     export const PlaceHolderPureNumber = `\\b`;
     export const PlaceHolderDefault = `\\D|\\b`;

@@ -3,6 +3,7 @@ import { PhoneNumberModel, IpAddressModel, MentionModel, HashtagModel, EmailMode
 import { PhoneNumberParser, IpParser, MentionParser, HashtagParser, EmailParser, URLParser, GUIDParser } from "./english/parsers";
 import { EnglishIpExtractorConfiguration, MentionExtractor, HashtagExtractor, EmailExtractor, EnglishURLExtractorConfiguration, GUIDExtractor, EnglishPhoneNumberExtractorConfiguration } from "./english/extractors";
 import { ChineseURLExtractorConfiguration, ChinesePhoneNumberExtractorConfiguration, ChineseIpExtractorConfiguration } from "./chinese/extractors";
+import { PortuguesePhoneNumberExtractorConfiguration } from "./portuguese/extractors";
 import { BaseURLExtractor, BasePhoneNumberExtractor, BaseIpExtractor } from "./extractors";
 
 
@@ -70,6 +71,9 @@ export default class SequenceRecognizer extends Recognizer<SequenceOptions> {
         this.registerModel("PhoneNumberModel", Culture.Chinese, (options) => new PhoneNumberModel(
             new PhoneNumberParser(),
             new BasePhoneNumberExtractor(new ChinesePhoneNumberExtractorConfiguration())));
+        this.registerModel("PhoneNumberModel", Culture.Portuguese, (options) => new PhoneNumberModel(
+            new PhoneNumberParser(),
+            new BasePhoneNumberExtractor(new PortuguesePhoneNumberExtractorConfiguration())));
 
         this.registerModel("IpAddressModel", Culture.English, (options) => new IpAddressModel(
             new IpParser(),

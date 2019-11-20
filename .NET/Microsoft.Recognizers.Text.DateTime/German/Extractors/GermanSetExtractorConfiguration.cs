@@ -63,6 +63,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeExtractor DateTimePeriodExtractor { get; }
 
+        bool ISetExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex ISetExtractorConfiguration.LastRegex => SetLastRegex;
 
         Regex ISetExtractorConfiguration.EachPrefixRegex => EachPrefixRegex;

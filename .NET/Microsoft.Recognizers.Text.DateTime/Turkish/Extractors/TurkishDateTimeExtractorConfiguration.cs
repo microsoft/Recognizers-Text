@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex ExcludeSuffixRegex =
-            new Regex(DateTimeDefinitions.ExcludeSuffixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.ExcludeSuffixDateTime, RegexFlags);
 
         public TurkishDateTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)

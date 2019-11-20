@@ -1,5 +1,6 @@
 from enum import IntFlag
 from .chinese.extractors import *
+from .portuguese.extractors import *
 from recognizers_text import *
 from .english.extractors import *
 from .english.parsers import *
@@ -26,6 +27,10 @@ class SequenceRecognizer(Recognizer[SequenceOptions]):
         self.register_model('PhoneNumberModel', Culture.Chinese,
                             lambda options: PhoneNumberModel(PhoneNumberParser(),
                                                              BasePhoneNumberExtractor(ChinesePhoneNumberExtractorConfiguration())))
+
+        self.register_model('PhoneNumberModel', Culture.Portuguese,
+                            lambda options: PhoneNumberModel(PhoneNumberParser(),
+                                                             BasePhoneNumberExtractor(PortuguesePhoneNumberExtractorConfiguration())))
 
         self.register_model('EmailModel', Culture.English,
                             lambda options: EmailModel(EmailParser(), EnglishEmailExtractor()))

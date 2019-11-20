@@ -2182,10 +2182,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Bugünden itibaren iki haftadan az",
+        "Text": "Bugünden itibaren iki haftadan az bir sürede",
         "Type": "daterange",
         "Start": 0,
-        "Length": 33
+        "Length": 44
       }
     ]
   },
@@ -2207,10 +2207,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yarından itibaren 3 günden az",
+        "Text": "yarından itibaren 3 günden az bir sürede",
         "Type": "daterange",
         "Start": 9,
-        "Length": 29
+        "Length": 40
       }
     ]
   },
@@ -2279,10 +2279,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10/1'den 11/07",
+        "Text": "10/1'den 11/07'ye",
         "Type": "daterange",
         "Start": 0,
-        "Length": 14
+        "Length": 17
       }
     ]
   }

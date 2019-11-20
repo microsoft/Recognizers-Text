@@ -67,5 +67,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         StringMatcher SuperfluousWordMatcher { get; }
 
         Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
+
+        bool CheckBothBeforeAfter { get; }
     }
 }

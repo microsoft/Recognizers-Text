@@ -1,5 +1,5 @@
 ﻿using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
@@ -45,5 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IDateTimeParser HolidayParser { get; }
 
         public StringMatcher SuperfluousWordMatcher { get; }
+
+        bool IMergedParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
     }
 }

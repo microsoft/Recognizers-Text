@@ -18,19 +18,24 @@ namespace Microsoft.Recognizers.Text.DateTime
             this.config = config;
         }
 
-        public static bool HasTokenIndex(string text, Regex regex, out int index)
+        public static bool HasTokenIndex(string text, Regex regex, out int index, bool inPrefix)
         {
             index = -1;
 
             // Support cases has two or more specific tokens
             // For example, "show me sales after 2010 and before 2018 or before 2000"
             // When extract "before 2000", we need the second "before" which will be matched in the second Regex match
-            var match = Regex.Match(text, regex.ToString(), RegexOptions.RightToLeft | RegexOptions.Singleline);
+            RegexOptions regexFlags = inPrefix ? RegexOptions.RightToLeft | RegexOptions.Singleline : RegexOptions.Singleline;
+            var match = Regex.Match(text, regex.ToString(), regexFlags);
 
-            if (match.Success && string.IsNullOrEmpty(text.Substring(match.Index + match.Length)))
+            if (match.Success)
             {
-                index = match.Index;
-                return true;
+                var subStr = inPrefix ? text.Substring(match.Index + match.Length) : text.Substring(0, match.Index);
+                if (string.IsNullOrEmpty(subStr))
+                {
+                    index = inPrefix ? match.Index : match.Length;
+                    return true;
+                }
             }
 
             return false;
@@ -39,6 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text, bool potentialAmbiguity = false)
         {
             var beforeStr = text.Substring(0, er.Start ?? 0);
+            var afterStr = text.Substring(er.Start + er.Length ?? 0);
 
             // Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
             if (potentialAmbiguity && this.config.AmbiguousRangeModifierPrefix != null && this.config.AmbiguousRangeModifierPrefix.IsMatch(beforeStr))
@@ -50,7 +56,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex))
+            bool inPrefix = true;
+            if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex, inPrefix))
             {
                 var modLength = beforeStr.Length - tokenIndex;
 
@@ -61,6 +68,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Metadata = AssignModMetadata(er.Metadata);
 
                 return true;
+            }
+            else if (this.config.CheckBothBeforeAfter)
+            {
+                // check also afterStr
+                inPrefix = false;
+                afterStr = text.Substring(er.Start + er.Length ?? 0);
+                if (HasTokenIndex(afterStr.TrimStart(), tokenRegex, out tokenIndex, inPrefix))
+                {
+                    var modLength = tokenIndex + afterStr.Length - afterStr.TrimStart().Length;
+
+                    er.Length += modLength;
+                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                    er.Data = Constants.HAS_MOD;
+                    er.Metadata = AssignModMetadata(er.Metadata);
+
+                    return true;
+                }
             }
 
             return false;

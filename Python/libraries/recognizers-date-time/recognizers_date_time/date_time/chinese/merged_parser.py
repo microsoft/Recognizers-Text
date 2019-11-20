@@ -27,13 +27,13 @@ class ChineseMergedParser(BaseMergedParser):
         has_before = False
         has_after = False
 
-        if before_match:
+        if before_match and not self._is_duration_with_ago_and_later:
             has_before = True
             result.start += before_match.start()
             result.length -= len(before_match.group())
             result.text = result.text[before_match.start():]
             mod_str = before_match.group()
-        elif after_match:
+        elif after_match and not self._is_duration_with_ago_and_later:
             has_after = True
             result.start += after_match.start()
             result.length -= len(after_match.group())
@@ -177,3 +177,7 @@ class ChineseMergedParser(BaseMergedParser):
                 return Constants.SYS_DATETIME_DATETIMEPERIOD
 
         return d_type
+
+    @staticmethod
+    def _is_duration_with_ago_and_later(er: ExtractResult) -> bool:
+        return er.meta_data and er.meta_data.is_duration_with_ago_and_later

@@ -60,6 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         public IDateTimeExtractor DateTimePeriodExtractor { get; }
 
+        bool ISetExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex ISetExtractorConfiguration.LastRegex => SetLastRegex;
 
         Regex ISetExtractorConfiguration.EachPrefixRegex => EachPrefixRegex;
@@ -70,7 +72,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         Regex ISetExtractorConfiguration.EachDayRegex => EachDayRegex;
 
-        Regex ISetExtractorConfiguration.BeforeEachDayRegex => null;
+        Regex ISetExtractorConfiguration.BeforeEachDayRegex => EachDayRegex;
 
         Regex ISetExtractorConfiguration.SetWeekDayRegex => SetWeekDayRegex;
 

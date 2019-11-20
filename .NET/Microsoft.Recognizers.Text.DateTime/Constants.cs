@@ -81,6 +81,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public const string APPROX_MOD = "approx";
 
+        public const string HAS_MOD = "mod";
+
         // These are some particular values for timezone recognition
         public const int InvalidOffsetValue = -10000;
         public const string UtcOffsetMinsKey = "utcOffsetMins";

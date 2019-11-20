@@ -1,5 +1,5 @@
 ﻿using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
@@ -46,5 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IDateTimeParser HolidayParser { get; }
 
         public StringMatcher SuperfluousWordMatcher { get; }
+
+        bool IMergedParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
     }
 }

@@ -647,6 +647,7 @@ DayOfWeek: !dictionary
     jueves: 4
     viernes: 5
     sabado: 6
+    sábado: 6
     domingo: 0
     lu: 1
     ma: 2
@@ -680,6 +681,7 @@ MonthOfYear: !dictionary
     'jul': 7
     'ago': 8
     'sept': 9
+    'sep': 9
     'set': 9
     'oct': 10
     'nov': 11

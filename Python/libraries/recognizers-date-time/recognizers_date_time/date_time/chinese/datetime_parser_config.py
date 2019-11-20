@@ -94,7 +94,7 @@ class ChineseDateTimeParserConfiguration():
 
     @property
     def unit_map(self) -> Dict[str, str]:
-        raise NotImplementedError()
+        return ChineseDateTime.ParserConfigurationUnitMap
 
     @property
     def numbers(self) -> Dict[str, int]:

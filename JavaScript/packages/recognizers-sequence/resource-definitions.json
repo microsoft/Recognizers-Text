@@ -59,6 +59,14 @@
             "footer": [ "}" ]
         },
         {
+            "input": [ "English", "English-PhoneNumbers" ],
+            "output": "englishPhoneNumbers",
+            "header": [
+                "export namespace EnglishPhoneNumbers {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
             "input": [ "Chinese", "Chinese-URL" ],
             "output": "chineseURL",
             "header": [
@@ -83,6 +91,14 @@
                 "import { BaseIp } from \"./baseIp\";",
                 "import { ChinesePhoneNumbers as PhoneNumbersDefinitions } from \"./chinesePhoneNumbers\";",
                 "export namespace ChineseIp {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": [ "Portuguese", "Portuguese-PhoneNumbers" ],
+            "output": "PortuguesePhoneNumbers",
+            "header": [
+                "export namespace PortuguesePhoneNumbers {"
             ],
             "footer": [ "}" ]
         }

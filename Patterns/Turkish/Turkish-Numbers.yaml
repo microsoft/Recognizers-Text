@@ -124,7 +124,7 @@ AboveTrillionOrdinalRegex: !nestedRegex
   def: ({TrillionsNumberIntegerRegex}\s({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex}|{BillionToTrillionOrdinalRegex})|{TrillionsOrdinalRegex})
   references: [TrillionsNumberIntegerRegex, OneToHundredOrdinalRegex, HundredToThousandOrdinalRegex, ThousandToMillionOrdinalRegex, MillionToBillionOrdinalRegex, BillionToTrillionOrdinalRegex, TrillionsOrdinalRegex]
 RelativeOrdinalRegex: !simpleRegex
-  def: (?<relativeOrdinal>(bir\s+)?(sonraki|önceki)|sondan\s+birinci|sondan\s+bir\s+önceki|sondan\s+ikinci|(en\s+)?son|[iİ]lki?|son(uncu(su)?)?|şimdiki)
+  def: (?<relativeOrdinal>(bir\s+)?((?<!(yarından|veya)\s+)sonraki|önceki)|sondan\s+birinci|sondan\s+bir\s+önceki|sondan\s+ikinci|(en\s+)?son|[iİ]lki?|son(uncu(su)?)?|şimdiki)
 AllOrdinalRegex: !nestedRegex
   def: ({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex}|{BillionToTrillionOrdinalRegex}|{AboveTrillionOrdinalRegex}|{RelativeOrdinalRegex})
   references: [OneToHundredOrdinalRegex, HundredToThousandOrdinalRegex, ThousandToMillionOrdinalRegex, MillionToBillionOrdinalRegex, BillionToTrillionOrdinalRegex, AboveTrillionOrdinalRegex, RelativeOrdinalRegex]

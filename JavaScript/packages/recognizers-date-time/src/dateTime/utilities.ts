@@ -1,17 +1,19 @@
-import { IExtractor, ExtractResult, QueryProcessor } from "@microsoft/recognizers-text";
+import { IExtractor, ExtractResult, QueryProcessor, MetaData } from "@microsoft/recognizers-text";
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { IDateTimeParser, DateTimeParseResult } from "../dateTime/parsers";
 import { Constants, TimeTypeConstants } from "../dateTime/constants";
 import { IDateTimeExtractor } from "./baseDateTime";
 
 export class Token {
-    constructor(start: number, end: number) {
+    constructor(start: number, end: number, metaData: MetaData = null) {
         this.start = start;
         this.end = end;
+        this.metaData = metaData;
     }
 
     start: number;
     end: number;
+    metaData: MetaData;
 
     get length(): number {
         return this.end - this.start;
@@ -49,7 +51,8 @@ export class Token {
                 start: token.start,
                 length: token.length,
                 text: source.substr(token.start, token.length),
-                type: extractorName
+                type: extractorName,
+                metaData: token.metaData
             });
         });
         return ret;

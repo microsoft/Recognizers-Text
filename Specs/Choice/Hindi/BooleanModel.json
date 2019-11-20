@@ -1,7 +1,6 @@
 [
   {
     "Input": "बिलकुल!",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -16,11 +15,38 @@
   },
   {
     "Input": "मुझे ऐसा नहीं लगता. नहीं.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "नहीं",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.52
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे लगता है यह काम कर जाएगा। तो हाँ मैं करुंगा।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हाँ",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.454545454545455
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ना. मैंने चार जुलाई कहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ना",
         "TypeName": "boolean",
         "Resolution": {
           "value": false,
@@ -30,23 +56,21 @@
     ]
   },
   {
-    "Input": "मुझे लगता है यह काम कर जाएगा। तो हाँ मैं करुंगा।",
-    "NotSupported": "dotnet",
+    "Input": "हां... मैंने कहा था कोई प्याज़ नहीं",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "हाँ",
+        "Text": "हां",
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
-          "score": 0.46666666666666667
+          "score": 0.485714285714286
         }
       }
     ]
   },
   {
-    "Input": "ना. मैंने चार जुलाई कहा था",
-    "NotSupported": "dotnet",
+    "Input": "मैंने ना कहा था, हां नहीं!",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -54,14 +78,13 @@
         "TypeName": "boolean",
         "Resolution": {
           "value": false,
-          "score": 0.48571428571428571
+          "score": 0.5
         }
       }
     ]
   },
   {
-    "Input": "हां... मैंने कहा था कोई प्याज़ नहीं",
-    "NotSupported": "dotnet",
+    "Input": "हां. मैंने ना कहा था",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -75,38 +98,7 @@
     ]
   },
   {
-    "Input": "मैंने ना कहा था, हां नहीं!",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "ना",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": false,
-          "score": 0.52
-        }
-      }
-    ]
-  },
-  {
-    "Input": "हां. मैंने ना कहा था",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "ना",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": true,
-          "score": 0.55
-        }
-      }
-    ]
-  },
-  {
     "Input": "असहमत, यह ठीक नहीं है",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -121,7 +113,6 @@
   },
   {
     "Input": "सहमत, यह ठीक है",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -136,8 +127,6 @@
   },
   {
     "Input": "सहमत, यह ठीक नहीं है",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -152,7 +141,6 @@
   },
   {
     "Input": "असहमत",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -167,7 +155,6 @@
   },
   {
     "Input": "यह ठीक नहीं है",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -182,7 +169,6 @@
   },
   {
     "Input": "👌 यह ठीक है",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -197,7 +183,6 @@
   },
   {
     "Input": "👌👌👌",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

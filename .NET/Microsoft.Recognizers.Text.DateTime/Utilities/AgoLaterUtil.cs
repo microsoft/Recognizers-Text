@@ -70,7 +70,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var isDayMatchInBeforeString = utilityConfiguration.AgoRegex.Match(beforeString).Groups["day"].Success;
                     if (!(isTimeDuration && isDayMatchInBeforeString))
                     {
-                        ret.Add(new Token(index, (er.Start + er.Length ?? 0) + index));
+                        ret.Add(new Token(index, er.Start + er.Length ?? 0));
                     }
                 }
                 else if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.LaterRegex, out index) || (utilityConfiguration.CheckBothBeforeAfter &&

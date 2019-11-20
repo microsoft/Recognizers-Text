@@ -172,6 +172,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="English\PhoneNumbersDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PhoneNumbersDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="English\TimeZoneDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -297,6 +302,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Portuguese\PhoneNumbersDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PhoneNumbersDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="Spanish\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -322,7 +332,17 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Swedish\NumbersDefinitions.cs">
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Bulgarian\ChoiceDefinitions.cs">
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Turkish\ChoiceDefinitions.cs">
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -403,6 +423,8 @@
     </None>
     <None Update="English\NumbersWithUnitDefinitions.tt">
     </None>
+    <None Update="English\PhoneNumbersDefinitions.tt">
+    </None>
     <None Update="English\TimeZoneDefinitions.tt">
     </None>
     <None Update="French\ChoiceDefinitions.tt">
@@ -453,6 +475,8 @@
     </None>
     <None Update="Portuguese\NumbersWithUnitDefinitions.tt">
     </None>
+    <None Update="Portuguese\PhoneNumbersDefinitions.tt">
+    </None>
     <None Update="Spanish\ChoiceDefinitions.tt">
     </None>
     <None Update="Spanish\DateTimeDefinitions.tt">
@@ -462,6 +486,10 @@
     <None Update="Spanish\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Swedish\ChoiceDefinitions.tt">
+    </None>
+    <None Update="Swedish\NumbersDefinitions.tt">
+    </None>
+    <None Update="Turkish\ChoiceDefinitions.tt">
     </None>
     <None Update="Turkish\DateTimeDefinitions.tt">
     </None>
