@@ -27,6 +27,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected new Regex TextNumberRegex { get; }
 
+        // Overrides Parse from BaseNumberParser to account for the new functions used for peculaiar handeling of Indo-Aryan Lanauges
+        // Uses the same flow as the BaseNumberParser Parse
         public override ParseResult Parse(ExtractResult extResult)
         {
             // Check if the parser is configured to support specific types
@@ -92,15 +94,17 @@ namespace Microsoft.Recognizers.Text.Number
             }
             else if (extra.Contains(Constants.NUMBER_SUFFIX))
             {
+                // Overriden behavior with special handeling for Indo - Arayn lanuages renamed from DigitNumberParse
                 ret = ParseDigitNumber(extResult);
             }
             else if (extra.Contains($"{Constants.FRACTION_PREFIX}{Config.LangMarker}"))
             {
-                // Such fractions are special cases, parse via another method
+                // Overriden behavior with special handeling for Indo - Arayn lanuages renamed from FracLikeNumberParse
                 ret = ParseFracLikeNumber(extResult);
             }
             else if (extra.Contains(Config.LangMarker))
             {
+                // Overriden behavior with special handeling for Indo - Arayn lanuages renamed from TextNumberParse
                 ret = ParseTextNumber(extResult);
             }
             else if (extra.Contains(Constants.POWER_SUFFIX))
@@ -161,6 +165,7 @@ namespace Microsoft.Recognizers.Text.Number
             return ret;
         }
 
+        // Renamed from TextNumberParse, same behavior but accounts for GetTheIntValue
         protected ParseResult ParseTextNumber(ExtractResult extResult)
         {
             var result = new ParseResult
@@ -225,6 +230,7 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
+        // Renamed from FracLikeNumberParse, same behavior but accounts peculiarities in Indian languages Fractions
         protected ParseResult ParseFracLikeNumber(ExtractResult extResult)
         {
             var result = new ParseResult
@@ -238,33 +244,39 @@ namespace Microsoft.Recognizers.Text.Number
             var resultText = extResult.Text;
             if (Config.FractionPrepositionRegex.IsMatch(resultText) && !Config.AdditionTermsRegex.IsMatch(resultText))
             {
+                // condition inncludes AdditionTermsRegex in combination with FractionPrepositionRegex
+                // to account for Behaviour changes of और - In fraction cases where और is used to connect two words and may not be used as addition of two words from its left and right.
+                // solve cases like: "तीन और एक का पाँचवाँ भाग"
                 var match = Config.FractionPrepositionRegex.Match(resultText);
                 var numerator = match.Groups["numerator"].Value;
                 var denominator = match.Groups["denominator"].Value;
 
                 var smallValue = char.IsDigit(numerator[0]) ?
                     GetTheDigitalValue(numerator, 1) :
-                    GetTheIntValue(GetMatches(numerator));
+                    GetTheIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
 
                 var bigValue = char.IsDigit(denominator[0]) ?
                     GetTheDigitalValue(denominator, 1) :
-                    GetTheIntValue(GetMatches(denominator));
+                    GetTheIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
 
                 result.Value = smallValue / bigValue;
             }
             else if (Config.FractionPrepositionInverseRegex.IsMatch(resultText))
             {
+                // condition  to use FractionPrepositionInverseRegex where denominator and nominator are switched to account for
+                // में से (out of) - These type of cases are very common in Hindi. It belongs to fraction unit type. Here any word/char
+                // at left of में से acts as denominator and right of it acts as numerator
                 var match = Config.FractionPrepositionInverseRegex.Match(resultText);
                 var numerator = match.Groups["numerator"].Value;
                 var denominator = match.Groups["denominator"].Value;
 
                 var smallValue = char.IsDigit(numerator[0]) ?
                     GetTheDigitalValue(numerator, 1) :
-                    GetTheIntValue(GetMatches(numerator));
+                    GetTheIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
 
                 var bigValue = char.IsDigit(denominator[0]) ?
                     GetTheDigitalValue(denominator, 1) :
-                    GetTheIntValue(GetMatches(denominator));
+                    GetTheIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
 
                 result.Value = smallValue / bigValue;
             }
@@ -376,14 +388,14 @@ namespace Microsoft.Recognizers.Text.Number
                     if (i < fracWords.Count - 1 && Config.WrittenFractionSeparatorTexts.Contains(fracWords[i]))
                     {
                         var numerStr = string.Join(" ", fracWords.GetRange(i + 1, fracWords.Count - 1 - i));
-                        numerValue = GetTheIntValue(GetMatches(numerStr));
+                        numerValue = GetTheIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerStr));
                         mixedIndex = i + 1;
                         break;
                     }
                 }
 
                 var intStr = string.Join(" ", fracWords.GetRange(0, mixedIndex));
-                intValue = GetTheIntValue(GetMatches(intStr));
+                intValue = GetTheIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, intStr));
 
                 // Find mixed number
                 if (mixedIndex != fracWords.Count && numerValue < denominator)
@@ -399,6 +411,7 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
+        // Renamed from DigitNumberNumberParse, same behavior but accounts for GetTheDigitalValue
         protected ParseResult ParseDigitNumber(ExtractResult extResult)
         {
             var result = new ParseResult
@@ -447,6 +460,7 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
+        // Renamed from GetDigitalValue, same behavior but accounts for Devenagari Numerals in parsing
         protected double GetTheDigitalValue(string digitsStr, double power)
         {
             double temp = 0;
@@ -495,6 +509,7 @@ namespace Microsoft.Recognizers.Text.Number
                 }
                 else if (Config.ZeroToNineMap.Any(x => x.Key == ch))
                 {
+                    // handle Devanagari numerals defined in ZeroToNineMap
                     if (char.IsDigit(ch))
                     {
                         if (decimalSeparator)
@@ -536,55 +551,7 @@ namespace Microsoft.Recognizers.Text.Number
             return calResult;
         }
 
-        private static string DetermineType(ExtractResult er)
-        {
-            if (!string.IsNullOrEmpty(er.Type) && er.Type.Contains(Constants.MODEL_ORDINAL))
-            {
-                return er.Metadata.IsOrdinalRelative ? Constants.MODEL_ORDINAL_RELATIVE : Constants.MODEL_ORDINAL;
-            }
-
-            var data = er.Data as string;
-            var subType = string.Empty;
-
-            if (!string.IsNullOrEmpty(data))
-            {
-                if (data.StartsWith(Constants.FRACTION_PREFIX, StringComparison.Ordinal))
-                {
-                    subType = Constants.FRACTION;
-                }
-                else if (data.Contains(Constants.POWER_SUFFIX))
-                {
-                    subType = Constants.POWER;
-                }
-                else if (data.StartsWith(Constants.INTEGER_PREFIX, StringComparison.Ordinal))
-                {
-                    subType = Constants.INTEGER;
-                }
-                else if (data.StartsWith(Constants.DOUBLE_PREFIX, StringComparison.Ordinal))
-                {
-                    subType = Constants.DECIMAL;
-                }
-            }
-
-            return subType;
-        }
-
-        private static bool IsMergeable(double former, double later)
-        {
-            // The former number is an order of magnitude larger than the later number, and they must be integers
-            return Math.Abs(former % 1) < double.Epsilon && Math.Abs(later % 1) < double.Epsilon &&
-                   former > later && former.ToString(CultureInfo.InvariantCulture).Length > later.ToString(CultureInfo.InvariantCulture).Length && later > 0;
-        }
-
-        // Test if big and combine with small.
-        // e.g. "hundred" can combine with "thirty" but "twenty" can't combine with "thirty".
-        private static bool IsComposable(long big, long small)
-        {
-            var baseNumber = small > 10 ? 100 : 10;
-
-            return big % baseNumber == 0 && big / baseNumber >= 1;
-        }
-
+        // Renamed from GetIntValue, same behavior but accounts for regional Hindi cases like डेढ/सवा/ढाई
         private double GetTheIntValue(List<string> matchStrs)
         {
             var isEnd = new bool[matchStrs.Count];
@@ -687,15 +654,12 @@ namespace Microsoft.Recognizers.Text.Number
                     }
                     else
                     {
-                        // below if condition is used to parse regional hindi cases like डेढ/सवा/ढाई
-                        // they are hindi specific cases and holds various meaning when prefixed with hindi unit.
-                        if (this.Config.CultureInfo.Name == "hi-IN")
+                        // Used to parse regional Hindi cases like डेढ/सवा/ढाई
+                        // They are Indian Language specific cases and holds various meaning when prefixed with Number unit.
+                        var complexVal = Config.ResolveUnitCompositeNumber(matchStr);
+                        if (complexVal != 0)
                         {
-                            var complexVal = Config.ResolveUnitCompositeNumber(matchStr);
-                            if (complexVal != 0)
-                            {
-                                tempStack.Push(complexVal);
-                            }
+                            tempStack.Push(complexVal);
                         }
 
                         var complexValue = Config.ResolveCompositeNumber(matchStr);
@@ -748,72 +712,12 @@ namespace Microsoft.Recognizers.Text.Number
             return tempValue;
         }
 
-        private string GetResolutionStr(object value)
-        {
-            var resolutionStr = value.ToString();
-
-            if (Config.CultureInfo != null && value is double)
-            {
-                resolutionStr = ((double)value).ToString(Config.CultureInfo);
-            }
-
-            return resolutionStr;
-        }
-
-        private bool SkipNonDecimalSeparator(char ch, int distance)
-        {
-            const int decimalLength = 3;
-
-            return ch == Config.NonDecimalSeparatorChar && !(distance <= decimalLength && isMultiDecimalSeparatorCulture);
-        }
-
-        private List<string> GetMatches(string input)
-        {
-            var successMatch = TextNumberRegex.Match(input);
-            var matchStrs = new List<string>();
-
-            // Store all match str.
-            while (successMatch.Success)
-            {
-                var matchStr = successMatch.Groups[0].Value;
-                matchStrs.Add(matchStr);
-                successMatch = successMatch.NextMatch();
-            }
-
-            return matchStrs;
-        }
-
-        private double GetPointValue(List<string> matchStrs)
-        {
-            double ret = 0;
-            var firstMatch = matchStrs.First();
-
-            if (Config.CardinalNumberMap.ContainsKey(firstMatch) && Config.CardinalNumberMap[firstMatch] >= 10)
-            {
-                var prefix = "0.";
-                var tempInt = GetTheIntValue(matchStrs);
-                var all = prefix + tempInt;
-                ret = double.Parse(all);
-            }
-            else
-            {
-                var scale = 0.1;
-                foreach (string matchStr in matchStrs)
-                {
-                    ret += Config.CardinalNumberMap[matchStr] * scale;
-                    scale *= 0.1;
-                }
-            }
-
-            return ret;
-        }
-
         private Regex BuildTextNumberRegex()
         {
             // For Hindi, there is a need for another NumberMap of the type double to handle values like 1.5.
-            // As this cannot be included into either Cardinal or Ordinal NumberMap as they are of the type long,
-            // HindiDecimalUnitsList (type double) takes care of these entries and it needs to be added to the singleIntFrac
-            // for the extractor to extract them
+            // As this cannot be included in either Cardinal or Ordinal NumberMap as they are of the type long,
+            // DecimalUnitsList (type double) takes care of these entries and it needs to be added to the singleIntFrac
+            // for extraction
             var singleIntFrac = $"{this.Config.WordSeparatorToken}| -|" +
                                 GetKeyRegex(this.Config.CardinalNumberMap.Keys) + "|" +
                                 GetKeyRegex(this.Config.OrdinalNumberMap.Keys) + "|" +
