@@ -102,7 +102,7 @@ class EnglishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
     @property
     def prefix_day_regex(self) -> Pattern:
         return self._prefix_day_regex
-    
+
     def __init__(self):
         super().__init__()
         self._date_point_extractor = BaseDateExtractor(
