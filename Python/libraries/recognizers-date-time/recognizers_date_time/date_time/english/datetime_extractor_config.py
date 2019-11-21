@@ -99,6 +99,10 @@ class EnglishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
     def specific_time_of_day_regex(self) -> Pattern:
         return self._specific_time_of_day_regex
 
+    @property
+    def prefix_day_regex(self) -> Pattern:
+        return self._prefix_day_regex
+    
     def __init__(self):
         super().__init__()
         self._date_point_extractor = BaseDateExtractor(
@@ -149,6 +153,8 @@ class EnglishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.SpecificTimeOfDayRegex
         )
+        self._prefix_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PrefixDayRegex)
 
     def is_connector_token(self, source: str) -> bool:
         return source.strip() == '' or regex.search(self.connector_regex, source) is not None or regex.search(self.preposition_regex, source) is not None
