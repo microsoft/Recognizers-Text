@@ -14,6 +14,18 @@ from .date_parser import ChineseDateParser
 
 class ChineseDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
+    def less_than_regex(self) -> Pattern:
+        return self._check_both_before_after
+
+    @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
+    @property
+    def reference_date_period_regex(self) -> Pattern:
+        return self._reference_date_period_regex
+
+    @property
     def decade_with_century_regex(self) -> Pattern:
         return self._decade_with_century_regex
     
@@ -235,6 +247,7 @@ class ChineseDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._now_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.NowRegex)
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._reference_date_period_regex = RegExpUtility.get_safe_reg_exp(r'\0')
         self._decade_with_century_regex = None
         self._later_regex = None
         self._ago_regex = None

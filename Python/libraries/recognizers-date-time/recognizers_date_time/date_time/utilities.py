@@ -166,6 +166,9 @@ class ConditionalMatch:
     def length(self) -> int:
         return len(self.match[0].group())
 
+    def group(self, grp):
+        return self.match[0].group(grp)
+
     @property
     def value(self) -> str:
         return self.match[0].string
@@ -173,6 +176,11 @@ class ConditionalMatch:
     @property
     def groups(self):
         return self.match[0].groups()
+
+    def get_group(self, group: str, default_val: str = '') -> str:
+        if self is None:
+            return None
+        return self.match[0].groupdict().get(group, default_val) or default_val
 
 
 class DateTimeOptions(IntFlag):
@@ -817,7 +825,7 @@ class AgoLaterUtil:
 
 
 class DateContext:
-    year: int
+    year: int = Constants.INVALID_YEAR
 
     # This method is to ensure the begin date is less than the end date. As DateContext only supports common Year as
     # context, so it subtracts one year from beginDate.
@@ -845,8 +853,8 @@ class DateContext:
     def process_date_period_entity_resolution(self, resolution_result: DateTimeResolutionResult) -> DateTimeResolutionResult:
         if not self.is_empty():
             resolution_result.timex = TimexUtil.set_timex_with_context(resolution_result.timex, self)
-            resolution_result.future_value = self.__set_date_range_with_context(resolution_result.future_resolution)
-            resolution_result.past_value = self.__set_date_range_with_context(resolution_result.past_resolution)
+            resolution_result.future_value = self.__set_date_range_with_context(resolution_result.future_value)
+            resolution_result.past_value = self.__set_date_range_with_context(resolution_result.past_value)
         return resolution_result
 
     def is_empty(self) -> bool:
@@ -856,12 +864,14 @@ class DateContext:
         value = datetime(year=self.year, month=original_date.month, day=original_date.day)
         return value
 
-    def __set_date_range_with_context(self, original_date_range: Dict[str, str]) -> Dict[str, str]:
-        start_date = self.__set_date_with_context(original_date_range[TimeTypeConstants.START_DATE])
-        end_date = self.__set_date_with_context(original_date_range[TimeTypeConstants.END_DATE])
-        result: Dict[str, str]
-        result[TimeTypeConstants.START_DATE] = str(start_date)
-        result[TimeTypeConstants.END_DATE] = str(end_date)
+    def __set_date_range_with_context(self, original_date_range):
+        start_date = self.__set_date_with_context(original_date_range[0])
+        end_date = self.__set_date_with_context(original_date_range[1])
+        result = {
+            TimeTypeConstants.START_DATE: start_date,
+            TimeTypeConstants.END_DATE: end_date
+        }
+
         return result
 
 
@@ -938,4 +948,4 @@ class TimexUtil:
 
         date_period_timex = f'P{unit_count}{date_period_timex_type_to_suffix[timex_type]}'
 
-        return f'({DateTimeFormatUtil.luis_date(begin.day, begin.month, begin.year)},{DateTimeFormatUtil.luis_date(end.day, end.month, end.year)},{date_period_timex})'
+        return f'({DateTimeFormatUtil.luis_date(begin.year, begin.month, begin.day)},{DateTimeFormatUtil.luis_date(end.year, end.month, end.day)},{date_period_timex})'

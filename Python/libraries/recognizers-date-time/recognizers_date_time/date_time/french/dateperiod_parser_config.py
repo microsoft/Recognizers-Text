@@ -10,6 +10,18 @@ from ..base_dateperiod import DatePeriodParserConfiguration
 
 class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
+    def less_than_regex(self) -> Pattern:
+        return self._less_than_regex
+
+    @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
+    def reference_date_period_regex(self) -> Pattern:
+        return self._reference_date_period_regex
+
+    @property
     def decade_with_century_regex(self) -> Pattern:
         return self._decade_with_century_regex
     
@@ -60,10 +72,6 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
     def one_word_period_regex(self) -> Pattern:
         return self._one_word_period_regex
-
-    @property
-    def decade_with_century_regex(self) -> Pattern:
-        return self._decade_with_century_regex
 
     @property
     def month_with_year(self) -> Pattern:
@@ -277,6 +285,14 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._relative_decade_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.RelativeDecadeRegex
         )
+        self._reference_date_period_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.ReferenceDatePeriodRegex
+        )
+        self._less_than_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.LessThanRegex
+        )
+        self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
+
 
     def get_swift_day_or_month(self, source: str) -> int:
         trimmed_source = source.strip().lower()

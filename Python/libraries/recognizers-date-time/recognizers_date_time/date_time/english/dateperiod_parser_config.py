@@ -10,6 +10,14 @@ from ..base_dateperiod import DatePeriodParserConfiguration
 
 class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
+    def less_than_regex(self) -> Pattern:
+        return self._less_than_regex
+
+    @property
+    def reference_date_period_regex(self) -> Pattern:
+        return self._reference_date_period_regex
+
+    @property
     def date_extractor(self) -> DateTimeExtractor:
         return self._date_extractor
 
@@ -269,6 +277,12 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         )
         self._relative_decade_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.RelativeDecadeRegex
+        )
+        self._reference_date_period_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.ReferenceDatePeriodRegex
+        )
+        self._less_than_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.LessThanRegex
         )
 
     def get_swift_day_or_month(self, source: str) -> int:
