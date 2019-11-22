@@ -1022,7 +1022,7 @@ class BaseDatePeriodParser(DateTimeParser):
             if hasattr(relative_match_for_start_date, 'success') and \
                     hasattr(relative_match_for_end_date, 'success'):
                 is_date_relative = relative_match_for_start_date.success or \
-                                   relative_match_for_end_date.success
+                    relative_match_for_end_date.success
         else:
             is_date_relative = None
 
@@ -1152,7 +1152,7 @@ class BaseDatePeriodParser(DateTimeParser):
             start_resolution = self.__parse_single_time_point(match.group('start').strip(), reference, date_context)
 
             if start_resolution and start_resolution.success:
-                future_begin, past_begin = start_resolution.future_value,  start_resolution.past_value
+                future_begin, past_begin = start_resolution.future_value, start_resolution.past_value
                 is_specific_date = True
 
             else:
@@ -1371,7 +1371,7 @@ class BaseDatePeriodParser(DateTimeParser):
 
         future_year = past_year = year
         trimmed_source = source.strip().lower()
-        match = RegexExtension.exact_match(self.config.one_word_period_regex,trimmed_source, True)
+        match = RegexExtension.exact_match(self.config.one_word_period_regex, trimmed_source, True)
 
         if not (match and match.success):
             match = RegexExtension.exact_match(self.config.later_early_period_regex, trimmed_source, True)
@@ -1788,8 +1788,8 @@ class BaseDatePeriodParser(DateTimeParser):
             result.timex = f'{year:04d}-W{week_num:02d}'
 
         days_to_add = 6 if self._inclusive_end_period else 7
-        result.future_value = [target_week_monday,target_week_monday + datedelta(days=days_to_add)]
-        result.past_value = [target_week_monday,target_week_monday + datedelta(days=days_to_add)]
+        result.future_value = [target_week_monday, target_week_monday + datedelta(days=days_to_add)]
+        result.past_value = [target_week_monday, target_week_monday + datedelta(days=days_to_add)]
         result.success = True
 
         return result
@@ -2229,7 +2229,7 @@ class BaseDatePeriodParser(DateTimeParser):
         date_resolution = self.config.date_parser.parse(ers[0], reference).value
         result.timex = date_resolution.timex
         result.comment = BaseDatePeriodParser.week_of_comment
-        result.future_value = self.__get_week_range_from_date( date_resolution.future_value)
+        result.future_value = self.__get_week_range_from_date(date_resolution.future_value)
         result.past_value = self.__get_week_range_from_date(date_resolution.past_value)
         result.success = True
         return result
@@ -2246,7 +2246,7 @@ class BaseDatePeriodParser(DateTimeParser):
         result.timex = date_resolution.timex
         result.comment = BaseDatePeriodParser.week_of_comment
         result.future_value = self.__get_month_range_from_date(date_resolution.future_value)
-        result.past_value = self.__get_month_range_from_date( date_resolution.past_value)
+        result.past_value = self.__get_month_range_from_date(date_resolution.past_value)
         result.success = True
         return result
 
@@ -2257,7 +2257,7 @@ class BaseDatePeriodParser(DateTimeParser):
 
     @staticmethod
     def __get_month_range_from_date(seed_date: datetime) -> List[datetime]:
-        begin_date = DateUtils.safe_create_from_value( DateUtils.min_value, seed_date.year, seed_date.month, 1)
+        begin_date = DateUtils.safe_create_from_value(DateUtils.min_value, seed_date.year, seed_date.month, 1)
         end_date = DateUtils.safe_create_from_value(DateUtils.min_value, seed_date.year, seed_date.month + 1, 1)
         return [begin_date, end_date]
 

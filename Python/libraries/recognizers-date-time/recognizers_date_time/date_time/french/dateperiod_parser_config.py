@@ -24,7 +24,7 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
     def decade_with_century_regex(self) -> Pattern:
         return self._decade_with_century_regex
-    
+
     @property
     def relative_regex(self) -> Pattern:
         return self._relative_regex
@@ -292,7 +292,6 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
             FrenchDateTime.LessThanRegex
         )
         self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
-
 
     def get_swift_day_or_month(self, source: str) -> int:
         trimmed_source = source.strip().lower()

@@ -118,7 +118,6 @@ class RegexExtension:
 
         return ConditionalMatch(match, success)
 
-
     @staticmethod
     def is_exact_match(regex: Pattern, text: str, trim: bool):
         match = regex.match(text)
@@ -876,11 +875,11 @@ class DateContext:
 
 
 date_period_timex_type_to_suffix = {
-        0: Constants.TIMEX_DAY,
-        1: Constants.TIMEX_WEEK,
-        2: Constants.TIMEX_MONTH,
-        3: Constants.TIMEX_YEAR,
-    }
+    0: Constants.TIMEX_DAY,
+    1: Constants.TIMEX_WEEK,
+    2: Constants.TIMEX_MONTH,
+    3: Constants.TIMEX_YEAR,
+}
 
 
 class TimexUtil:
