@@ -1249,7 +1249,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "in less than an hour",
@@ -1274,6 +1274,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "end of the day",
