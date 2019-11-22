@@ -470,19 +470,6 @@
     ]
   },
   {
-    "Input": "Onun skoru 200 ya da daha yüksek",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "200 ya da daha yüksek",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "[200,)"
-        }
-      }
-    ]
-  },
-  {
     "Input": "Onun skoru 30'dan az ya da eşit",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -609,19 +596,6 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,5000]"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Onun skoru 5000'den fazla ya da eşit",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "5000'den fazla ya da eşit",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "[5000,)"
         }
       }
     ]
