@@ -175,87 +175,7 @@ namespace Microsoft.Recognizers.Text.Number
             return ret;
         }
 
-        protected static string GetKeyRegex(IEnumerable<string> keyCollection)
-        {
-            var sortKeys = keyCollection.OrderByDescending(key => key.Length);
-            return string.Join("|", sortKeys);
-        }
-
-        protected static string DetermineType(ExtractResult er)
-        {
-            if (!string.IsNullOrEmpty(er.Type) && er.Type.Contains(Constants.MODEL_ORDINAL))
-            {
-                return er.Metadata.IsOrdinalRelative ? Constants.MODEL_ORDINAL_RELATIVE : Constants.MODEL_ORDINAL;
-            }
-
-            var data = er.Data as string;
-            var subType = string.Empty;
-
-            if (!string.IsNullOrEmpty(data))
-            {
-                if (data.StartsWith(Constants.FRACTION_PREFIX, StringComparison.Ordinal))
-                {
-                    subType = Constants.FRACTION;
-                }
-                else if (data.Contains(Constants.POWER_SUFFIX))
-                {
-                    subType = Constants.POWER;
-                }
-                else if (data.StartsWith(Constants.INTEGER_PREFIX, StringComparison.Ordinal))
-                {
-                    subType = Constants.INTEGER;
-                }
-                else if (data.StartsWith(Constants.DOUBLE_PREFIX, StringComparison.Ordinal))
-                {
-                    subType = Constants.DECIMAL;
-                }
-            }
-
-            return subType;
-        }
-
-        protected static bool IsMergeable(double former, double later)
-        {
-            // The former number is an order of magnitude larger than the later number, and they must be integers
-            return Math.Abs(former % 1) < double.Epsilon && Math.Abs(later % 1) < double.Epsilon &&
-                   former > later && former.ToString(CultureInfo.InvariantCulture).Length > later.ToString(CultureInfo.InvariantCulture).Length && later > 0;
-        }
-
-        // Test if big and combine with small.
-        // e.g. "hundred" can combine with "thirty" but "twenty" can't combine with "thirty".
-        protected static bool IsComposable(long big, long small)
-        {
-            var baseNumber = small > 10 ? 100 : 10;
-
-            return big % baseNumber == 0 && big / baseNumber >= 1;
-        }
-
-        protected double GetPointValue(List<string> matchStrs)
-        {
-            double ret = 0;
-            var firstMatch = matchStrs.First();
-
-            if (Config.CardinalNumberMap.ContainsKey(firstMatch) && Config.CardinalNumberMap[firstMatch] >= 10)
-            {
-                var prefix = "0.";
-                var tempInt = GetIntValue(matchStrs);
-                var all = prefix + tempInt;
-                ret = double.Parse(all, CultureInfo.InvariantCulture);
-            }
-            else
-            {
-                var scale = 0.1;
-                foreach (string matchStr in matchStrs)
-                {
-                    ret += Config.CardinalNumberMap[matchStr] * scale;
-                    scale *= 0.1;
-                }
-            }
-
-            return ret;
-        }
-
-        protected ParseResult PowerNumberParse(ExtractResult extResult)
+        public virtual ParseResult PowerNumberParse(ExtractResult extResult)
         {
             var result = new ParseResult
             {
@@ -350,7 +270,7 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        protected ParseResult TextNumberParse(ExtractResult extResult)
+        public virtual ParseResult TextNumberParse(ExtractResult extResult)
         {
             var result = new ParseResult
             {
@@ -414,7 +334,7 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        protected ParseResult FracLikeNumberParse(ExtractResult extResult)
+        public virtual ParseResult FracLikeNumberParse(ExtractResult extResult)
         {
             var result = new ParseResult
             {
@@ -577,7 +497,7 @@ namespace Microsoft.Recognizers.Text.Number
         /// </summary>
         /// <param name="extResult">input arabic number.</param>
         /// <returns>parsed result.</returns>
-        protected ParseResult DigitNumberParse(ExtractResult extResult)
+        public virtual ParseResult DigitNumberParse(ExtractResult extResult)
         {
             var result = new ParseResult
             {
@@ -625,7 +545,7 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        protected double GetDigitalValue(string digitsStr, double power)
+        public virtual double GetDigitalValue(string digitsStr, double power)
         {
             double temp = 0;
             double scale = 10;
@@ -699,29 +619,7 @@ namespace Microsoft.Recognizers.Text.Number
             return calResult;
         }
 
-        protected string GetResolutionStr(object value)
-        {
-            var resolutionStr = value.ToString();
-
-            if (Config.CultureInfo != null && value is double)
-            {
-                resolutionStr = ((double)value).ToString(Config.CultureInfo);
-            }
-
-            return resolutionStr;
-        }
-
-        // Special cases for multi-language countries where decimal separators can be used interchangeably. Mostly informally.
-        // Ex: South Africa, Namibia; Puerto Rico in ES; or in Canada for EN and FR.
-        // "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
-        protected bool SkipNonDecimalSeparator(char ch, int distance)
-        {
-            const int decimalLength = 3;
-
-            return ch == Config.NonDecimalSeparatorChar && !(distance <= decimalLength && isMultiDecimalSeparatorCulture);
-        }
-
-        private double GetIntValue(List<string> matchStrs)
+        public virtual double GetIntValue(List<string> matchStrs)
         {
             var isEnd = new bool[matchStrs.Count];
             for (var i = 0; i < isEnd.Length; i++)
@@ -871,6 +769,108 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             return tempValue;
+        }
+
+        protected static string GetKeyRegex(IEnumerable<string> keyCollection)
+        {
+            var sortKeys = keyCollection.OrderByDescending(key => key.Length);
+            return string.Join("|", sortKeys);
+        }
+
+        protected static string DetermineType(ExtractResult er)
+        {
+            if (!string.IsNullOrEmpty(er.Type) && er.Type.Contains(Constants.MODEL_ORDINAL))
+            {
+                return er.Metadata.IsOrdinalRelative ? Constants.MODEL_ORDINAL_RELATIVE : Constants.MODEL_ORDINAL;
+            }
+
+            var data = er.Data as string;
+            var subType = string.Empty;
+
+            if (!string.IsNullOrEmpty(data))
+            {
+                if (data.StartsWith(Constants.FRACTION_PREFIX, StringComparison.Ordinal))
+                {
+                    subType = Constants.FRACTION;
+                }
+                else if (data.Contains(Constants.POWER_SUFFIX))
+                {
+                    subType = Constants.POWER;
+                }
+                else if (data.StartsWith(Constants.INTEGER_PREFIX, StringComparison.Ordinal))
+                {
+                    subType = Constants.INTEGER;
+                }
+                else if (data.StartsWith(Constants.DOUBLE_PREFIX, StringComparison.Ordinal))
+                {
+                    subType = Constants.DECIMAL;
+                }
+            }
+
+            return subType;
+        }
+
+        protected static bool IsMergeable(double former, double later)
+        {
+            // The former number is an order of magnitude larger than the later number, and they must be integers
+            return Math.Abs(former % 1) < double.Epsilon && Math.Abs(later % 1) < double.Epsilon &&
+                   former > later && former.ToString(CultureInfo.InvariantCulture).Length > later.ToString(CultureInfo.InvariantCulture).Length && later > 0;
+        }
+
+        // Test if big and combine with small.
+        // e.g. "hundred" can combine with "thirty" but "twenty" can't combine with "thirty".
+        protected static bool IsComposable(long big, long small)
+        {
+            var baseNumber = small > 10 ? 100 : 10;
+
+            return big % baseNumber == 0 && big / baseNumber >= 1;
+        }
+
+        protected string GetResolutionStr(object value)
+        {
+            var resolutionStr = value.ToString();
+
+            if (Config.CultureInfo != null && value is double)
+            {
+                resolutionStr = ((double)value).ToString(Config.CultureInfo);
+            }
+
+            return resolutionStr;
+        }
+
+        // Special cases for multi-language countries where decimal separators can be used interchangeably. Mostly informally.
+        // Ex: South Africa, Namibia; Puerto Rico in ES; or in Canada for EN and FR.
+        // "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
+        protected bool SkipNonDecimalSeparator(char ch, int distance)
+        {
+            const int decimalLength = 3;
+
+            return ch == Config.NonDecimalSeparatorChar && !(distance <= decimalLength && isMultiDecimalSeparatorCulture);
+        }
+
+        protected double GetPointValue(List<string> matchStrs)
+        {
+            double ret = 0;
+            var firstMatch = matchStrs.First();
+
+            if (Config.CardinalNumberMap.ContainsKey(firstMatch) && Config.CardinalNumberMap[firstMatch] >= 10)
+            {
+                var prefix = "0.";
+                var tempInt = GetIntValue(matchStrs);
+                var all = prefix + tempInt;
+                ret = double.Parse(all, CultureInfo.InvariantCulture);
+            }
+            else
+            {
+                var scale = 0.1;
+                foreach (string matchStr in matchStrs)
+                {
+                    ret += Config.CardinalNumberMap[matchStr] * scale;
+                    scale *= 0.1;
+                }
+            }
+
+            return ret;
         }
 
         private Regex BuildTextNumberRegex()

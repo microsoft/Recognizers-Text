@@ -8,8 +8,6 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class BaseIndianNumberParser : BaseNumberParser
     {
-        private readonly bool isMultiDecimalSeparatorCulture = false;
-
         private readonly bool isCompoundNumberLanguage = false;
 
         public BaseIndianNumberParser(INumberParserConfiguration config)
@@ -17,7 +15,6 @@ namespace Microsoft.Recognizers.Text.Number
         {
             this.Config = config as IIndianNumberParserConfiguration;
 
-            this.isMultiDecimalSeparatorCulture = config.IsMultiDecimalSeparatorCulture;
             this.isCompoundNumberLanguage = config.IsCompoundNumberLanguage;
 
             TextNumberRegex = BuildTextNumberRegex();
@@ -27,211 +24,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected new Regex TextNumberRegex { get; }
 
-        // Overrides Parse from BaseNumberParser to account for the new functions used for peculaiar handeling of Indo-Aryan Lanauges
-        // Uses the same flow as the BaseNumberParser Parse
-        public override ParseResult Parse(ExtractResult extResult)
-        {
-            // Check if the parser is configured to support specific types
-            if (SupportedTypes != null && !SupportedTypes.Any(t => extResult.Type.Equals(t, StringComparison.Ordinal)))
-            {
-                return null;
-            }
-
-            ParseResult ret = null;
-
-            if (!(extResult.Data is string extra))
-            {
-                extra = LongFormatRegex.Match(extResult.Text).Success ? Constants.NUMBER_SUFFIX : Config.LangMarker;
-            }
-
-            // Resolve symbol prefix
-            var isNegative = false;
-            var matchNegative = Config.NegativeNumberSignRegex.Match(extResult.Text);
-
-            if (matchNegative.Success)
-            {
-                isNegative = true;
-                extResult.Text = extResult.Text.Substring(matchNegative.Groups["negTerm"].Length);
-            }
-
-            // Assign resolution value
-            if (extResult.Data is List<ExtractResult> ers)
-            {
-                var innerPrs = ers.Select(Parse).ToList();
-                var mergedPrs = new List<ParseResult>();
-
-                double val = 0;
-                var count = 0;
-
-                for (var idx = 0; idx < innerPrs.Count; idx++)
-                {
-                    val += (double)innerPrs[idx].Value;
-
-                    if (idx + 1 >= innerPrs.Count || !IsMergeable((double)innerPrs[idx].Value, (double)innerPrs[idx + 1].Value))
-                    {
-                        var start = (int)ers[idx - count].Start;
-                        var length = (int)(ers[idx].Start + ers[idx].Length - start);
-                        mergedPrs.Add(new ParseResult
-                        {
-                            Start = start,
-                            Length = length,
-                            Text = extResult.Text.Substring((int)(start - extResult.Start), length),
-                            Type = extResult.Type,
-                            Value = val,
-                            Data = null,
-                        });
-
-                        val = 0;
-                        count = 0;
-                    }
-                    else
-                    {
-                        count++;
-                    }
-                }
-
-                ret = new ParseResult(extResult) { Value = val, Data = mergedPrs };
-            }
-            else if (extra.Contains(Constants.NUMBER_SUFFIX))
-            {
-                // Overriden behavior with special handeling for Indo - Arayn lanuages renamed from DigitNumberParse
-                ret = ParseDigitNumber(extResult);
-            }
-            else if (extra.Contains($"{Constants.FRACTION_PREFIX}{Config.LangMarker}"))
-            {
-                // Overriden behavior with special handeling for Indo - Arayn lanuages renamed from FracLikeNumberParse
-                ret = ParseFracLikeNumber(extResult);
-            }
-            else if (extra.Contains(Config.LangMarker))
-            {
-                // Overriden behavior with special handeling for Indo - Arayn lanuages renamed from TextNumberParse
-                ret = ParseTextNumber(extResult);
-            }
-            else if (extra.Contains(Constants.POWER_SUFFIX))
-            {
-                ret = PowerNumberParse(extResult);
-            }
-
-            if (ret?.Data is List<ParseResult> prs)
-            {
-                foreach (var parseResult in prs)
-                {
-                    parseResult.ResolutionStr = GetResolutionStr(parseResult.Value);
-                }
-            }
-            else if (ret?.Value != null)
-            {
-                if (isNegative)
-                {
-                    // Recover the original extracted Text
-                    ret.Text = matchNegative.Groups["negTerm"].Value + extResult.Text;
-                    ret.Value = -(double)ret.Value;
-                }
-
-                ret.ResolutionStr = GetResolutionStr(ret.Value);
-            }
-
-            // Add "offset" and "relativeTo" for ordinal
-            if (!string.IsNullOrEmpty(ret.Type) && ret.Type.Contains(Constants.MODEL_ORDINAL))
-            {
-                if ((this.Config.Config.Options & NumberOptions.SuppressExtendedTypes) == 0 && ret.Metadata.IsOrdinalRelative)
-                {
-                    var offset = Config.RelativeReferenceOffsetMap[extResult.Text];
-                    var relativeTo = Config.RelativeReferenceRelativeToMap[extResult.Text];
-
-                    ret.Metadata.Offset = offset;
-                    ret.Metadata.RelativeTo = relativeTo;
-
-                    // Add value for ordinal.relative
-                    string sign = offset[0].Equals('-') ? string.Empty : "+";
-                    ret.Value = string.Concat(relativeTo, sign, offset);
-                    ret.ResolutionStr = GetResolutionStr(ret.Value);
-                }
-                else
-                {
-                    ret.Metadata.Offset = ret.ResolutionStr;
-
-                    // Every ordinal number is relative to the start
-                    ret.Metadata.RelativeTo = Constants.RELATIVE_START;
-                }
-            }
-
-            if (ret != null)
-            {
-                ret.Type = DetermineType(extResult);
-                ret.Text = ret.Text.ToLowerInvariant();
-            }
-
-            return ret;
-        }
-
-        // Renamed from TextNumberParse, same behavior but accounts for GetTheIntValue
-        protected ParseResult ParseTextNumber(ExtractResult extResult)
-        {
-            var result = new ParseResult
-            {
-                Start = extResult.Start,
-                Length = extResult.Length,
-                Text = extResult.Text,
-                Type = extResult.Type,
-                Metadata = extResult.Metadata,
-            };
-
-            var handle = extResult.Text;
-
-            handle = Config.HalfADozenRegex.Replace(handle, Config.HalfADozenText);
-
-            // Handling cases like "last", "next one", "previous one"
-            if ((this.Config.Config.Options & NumberOptions.SuppressExtendedTypes) == 0)
-            {
-                if (extResult.Metadata != null && extResult.Metadata.IsOrdinalRelative)
-                {
-                    return result;
-                }
-            }
-
-            var numGroup = handle.Split(Config.WrittenDecimalSeparatorTexts.ToArray(), StringSplitOptions.RemoveEmptyEntries);
-
-            var intPart = numGroup[0];
-            var stringMatch = TextNumberRegex.Match(intPart);
-
-            // Store all match str.
-            var matchStrs = new List<string>();
-
-            while (stringMatch.Success)
-            {
-                var matchStr = stringMatch.Groups[0].Value;
-                matchStrs.Add(matchStr);
-                stringMatch = stringMatch.NextMatch();
-            }
-
-            // Get the value recursively
-            var intPartRet = GetTheIntValue(matchStrs);
-
-            double pointPartRet = 0;
-            if (numGroup.Length == 2)
-            {
-                var pointPart = numGroup[1];
-                stringMatch = TextNumberRegex.Match(pointPart);
-                matchStrs.Clear();
-
-                while (stringMatch.Success)
-                {
-                    var matchStr = stringMatch.Groups[0].Value;
-                    matchStrs.Add(matchStr);
-                    stringMatch = stringMatch.NextMatch();
-                }
-
-                pointPartRet += GetPointValue(matchStrs);
-            }
-
-            result.Value = intPartRet + pointPartRet;
-
-            return result;
-        }
-
-        // Renamed from FracLikeNumberParse, same behavior but accounts peculiarities in Indian languages Fractions
-        protected ParseResult ParseFracLikeNumber(ExtractResult extResult)
+        // Same behavior as base but accounts peculiarities in Indian languages Fractions
+        public override ParseResult FracLikeNumberParse(ExtractResult extResult)
         {
             var result = new ParseResult
             {
@@ -252,12 +46,12 @@ namespace Microsoft.Recognizers.Text.Number
                 var denominator = match.Groups["denominator"].Value;
 
                 var smallValue = char.IsDigit(numerator[0]) ?
-                    GetTheDigitalValue(numerator, 1) :
-                    GetTheIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
+                    GetDigitalValue(numerator, 1) :
+                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
 
                 var bigValue = char.IsDigit(denominator[0]) ?
-                    GetTheDigitalValue(denominator, 1) :
-                    GetTheIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
+                    GetDigitalValue(denominator, 1) :
+                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
 
                 result.Value = smallValue / bigValue;
             }
@@ -271,12 +65,12 @@ namespace Microsoft.Recognizers.Text.Number
                 var denominator = match.Groups["denominator"].Value;
 
                 var smallValue = char.IsDigit(numerator[0]) ?
-                    GetTheDigitalValue(numerator, 1) :
-                    GetTheIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
+                    GetDigitalValue(numerator, 1) :
+                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
 
                 var bigValue = char.IsDigit(denominator[0]) ?
-                    GetTheDigitalValue(denominator, 1) :
-                    GetTheIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
+                    GetDigitalValue(denominator, 1) :
+                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
 
                 result.Value = smallValue / bigValue;
             }
@@ -292,7 +86,7 @@ namespace Microsoft.Recognizers.Text.Number
                 // For case like "half"
                 if (fracWords.Count == 1)
                 {
-                    result.Value = 1 / GetTheIntValue(fracWords);
+                    result.Value = 1 / GetIntValue(fracWords);
                     return result;
                 }
 
@@ -378,7 +172,7 @@ namespace Microsoft.Recognizers.Text.Number
                 fracWords.RemoveRange(splitIndex, fracWords.Count - splitIndex);
 
                 // Split mixed number with fraction
-                var denominator = GetTheIntValue(fracPart);
+                var denominator = GetIntValue(fracPart);
                 double numerValue = 0;
                 double intValue = 0;
 
@@ -388,14 +182,14 @@ namespace Microsoft.Recognizers.Text.Number
                     if (i < fracWords.Count - 1 && Config.WrittenFractionSeparatorTexts.Contains(fracWords[i]))
                     {
                         var numerStr = string.Join(" ", fracWords.GetRange(i + 1, fracWords.Count - 1 - i));
-                        numerValue = GetTheIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerStr));
+                        numerValue = GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerStr));
                         mixedIndex = i + 1;
                         break;
                     }
                 }
 
                 var intStr = string.Join(" ", fracWords.GetRange(0, mixedIndex));
-                intValue = GetTheIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, intStr));
+                intValue = GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, intStr));
 
                 // Find mixed number
                 if (mixedIndex != fracWords.Count && numerValue < denominator)
@@ -411,8 +205,8 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        // Renamed from DigitNumberNumberParse, same behavior but accounts for GetTheDigitalValue
-        protected ParseResult ParseDigitNumber(ExtractResult extResult)
+        // Same behavior as base but accounts uses modified BuildTextNumberRegex
+        public override ParseResult TextNumberParse(ExtractResult extResult)
         {
             var result = new ParseResult
             {
@@ -423,45 +217,61 @@ namespace Microsoft.Recognizers.Text.Number
                 Metadata = extResult.Metadata,
             };
 
-            // [1] 24
-            // [2] 12 32/33
-            // [3] 1,000,000
-            // [4] 234.567
-            // [5] 44/55
-            // [6] 2 hundred
-            // dot occured.
-            double power = 1;
-            var extText = extResult.Text.ToLowerInvariant();
-            int startIndex = 0;
+            var handle = extResult.Text;
 
-            var match = Config.DigitalNumberRegex.Match(extText);
+            handle = Config.HalfADozenRegex.Replace(handle, Config.HalfADozenText);
 
-            while (match.Success)
+            // Handling cases like "last", "next one", "previous one"
+            if ((this.Config.Config.Options & NumberOptions.SuppressExtendedTypes) == 0)
             {
-                var tmpIndex = -1;
-                double rep = Config.RoundNumberMap[match.Value];
-
-                // \\s+ to filter whitespaces.
-                power *= rep;
-
-                while ((tmpIndex = extText.IndexOf(match.Value, startIndex, StringComparison.Ordinal)) >= 0)
+                if (extResult.Metadata != null && extResult.Metadata.IsOrdinalRelative)
                 {
-                    var front = extText.Substring(0, tmpIndex).TrimEnd();
-                    startIndex = front.Length;
-                    extText = front + extText.Substring(tmpIndex + match.Value.Length);
+                    return result;
                 }
-
-                match = match.NextMatch();
             }
 
-            // Scale used in calculating double
-            result.Value = GetTheDigitalValue(extText, power);
+            var numGroup = handle.Split(Config.WrittenDecimalSeparatorTexts.ToArray(), StringSplitOptions.RemoveEmptyEntries);
+
+            var intPart = numGroup[0];
+            var stringMatch = TextNumberRegex.Match(intPart);
+
+            // Store all match str.
+            var matchStrs = new List<string>();
+
+            while (stringMatch.Success)
+            {
+                var matchStr = stringMatch.Groups[0].Value;
+                matchStrs.Add(matchStr);
+                stringMatch = stringMatch.NextMatch();
+            }
+
+            // Get the value recursively
+            var intPartRet = GetIntValue(matchStrs);
+
+            double pointPartRet = 0;
+            if (numGroup.Length == 2)
+            {
+                var pointPart = numGroup[1];
+                stringMatch = TextNumberRegex.Match(pointPart);
+                matchStrs.Clear();
+
+                while (stringMatch.Success)
+                {
+                    var matchStr = stringMatch.Groups[0].Value;
+                    matchStrs.Add(matchStr);
+                    stringMatch = stringMatch.NextMatch();
+                }
+
+                pointPartRet += GetPointValue(matchStrs);
+            }
+
+            result.Value = intPartRet + pointPartRet;
 
             return result;
         }
 
-        // Renamed from GetDigitalValue, same behavior but accounts for Devenagari Numerals in parsing
-        protected double GetTheDigitalValue(string digitsStr, double power)
+        // Same behavior as base but accounts for Devenagari Numerals in parsing
+        public override double GetDigitalValue(string digitsStr, double power)
         {
             double temp = 0;
             double scale = 10;
@@ -551,8 +361,8 @@ namespace Microsoft.Recognizers.Text.Number
             return calResult;
         }
 
-        // Renamed from GetIntValue, same behavior but accounts for regional Hindi cases like डेढ/सवा/ढाई
-        private double GetTheIntValue(List<string> matchStrs)
+        // Same behavior as base but accounts for regional Hindi cases like डेढ/सवा/ढाई
+        public override double GetIntValue(List<string> matchStrs)
         {
             var isEnd = new bool[matchStrs.Count];
             for (var i = 0; i < isEnd.Length; i++)
@@ -691,7 +501,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                         if (i != 0)
                         {
-                            partValue = GetTheIntValue(matchStrs.GetRange(lastIndex, i - lastIndex));
+                            partValue = GetIntValue(matchStrs.GetRange(lastIndex, i - lastIndex));
                         }
 
                         tempValue += mulValue * partValue;
@@ -704,7 +514,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                 if (lastIndex != isEnd.Length)
                 {
-                    partValue = GetTheIntValue(matchStrs.GetRange(lastIndex, isEnd.Length - lastIndex));
+                    partValue = GetIntValue(matchStrs.GetRange(lastIndex, isEnd.Length - lastIndex));
                     tempValue += mulValue * partValue;
                 }
             }
