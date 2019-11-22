@@ -93,6 +93,8 @@ def convert_date_time_range(timex: Timex, date: datetime):
 def english_convert_timex_to_string_relative(timex: Timex, date: datetime):
     types = timex.types if len(timex.types) is not 0 else TimexInference.infer(timex)
 
+    if Constants.TIMEX_TYPES_PRESENT in types:
+        return 'now'
     if Constants.TIMEX_TYPES_DATETIMERANGE in types:
         return convert_date_time_range(timex, date)
     if Constants.TIMEX_TYPES_DATERANGE in types:

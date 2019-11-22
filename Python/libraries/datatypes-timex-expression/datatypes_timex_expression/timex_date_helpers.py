@@ -13,7 +13,7 @@ class TimexDateHelpers:
 
     @staticmethod
     def date_part_equal(date_x, date_y):
-        return date_x == date_y
+        return date_x.date() == date_y.date()
 
     @staticmethod
     def is_date_in_week(date, start_of_week):
