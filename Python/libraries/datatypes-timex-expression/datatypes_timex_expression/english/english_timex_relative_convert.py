@@ -10,7 +10,7 @@ def get_date_day(date) -> str:
 def convert_date(timex: Timex, date: datetime):
     if timex.year is not None and timex.month is not None and timex.day_of_month is not None:
         timex_date = datetime(timex.year, timex.month, timex.day_of_month)
-        if TimexDateHelpers.date_part_equal(timex_date, date):
+        if TimexDateHelpers.date_part_equal(timex_date.date(), date.date()):
             return 'today'
         tomorrow = TimexDateHelpers.tomorrow(date)
         if TimexDateHelpers.date_part_equal(timex_date, tomorrow):
@@ -93,6 +93,8 @@ def convert_date_time_range(timex: Timex, date: datetime):
 def english_convert_timex_to_string_relative(timex: Timex, date: datetime):
     types = timex.types if len(timex.types) is not 0 else TimexInference.infer(timex)
 
+    if Constants.TIMEX_TYPES_PRESENT in types:
+        return 'now'
     if Constants.TIMEX_TYPES_DATETIMERANGE in types:
         return convert_date_time_range(timex, date)
     if Constants.TIMEX_TYPES_DATERANGE in types:

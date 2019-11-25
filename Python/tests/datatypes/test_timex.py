@@ -84,5 +84,11 @@ def test_datatypes_timex_fromtime():
     assert Timex.from_time(Time(23, 59, 30)).timex_value() == 'T23:59:30'
 
 
+def test_datatypes_helpers_equal():
+    reference_date = datetime.now()
+    timex_date = Timex.from_date(datetime.now())
+    assert timex_date.to_natural_language(reference_date) == 'today'
+
+
 def roundtrip(timex):
     assert timex == Timex(timex).timex_value()
