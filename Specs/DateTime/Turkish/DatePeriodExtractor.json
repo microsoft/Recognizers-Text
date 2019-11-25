@@ -2495,22 +2495,6 @@
     ]
   },
   {
-    "Input": "Geçmiş ay yoktum",
-    "Comment": "DateTime V2 enhancements",
-    "Context": {
-      "ReferenceDateTime": "2019-09-23T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "Geçmiş ay",
-        "Type": "daterange",
-        "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
     "Input": "Gelecek ay yokum",
     "Comment": "DateTime V2 enhancements",
     "NotSupportedByDesign": "javascript,python,java",
