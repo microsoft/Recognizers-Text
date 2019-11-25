@@ -15,7 +15,7 @@ from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
 from .utilities import Token, merge_all_tokens, RegExpUtility, DateTimeFormatUtil, DateTimeResolutionResult,\
-    DateUtils, RegexExtension, DateTimeOptionsConfiguration, DateTimeOptions
+    DateUtils, RegExpUtility, DateTimeOptionsConfiguration, DateTimeOptions
 
 
 class MatchedTimeRange:
@@ -302,7 +302,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
         before_after_regexes = [self.config.before_regex, self.config.after_regex]
         for regexp in before_after_regexes:
 
-            if RegexExtension.is_exact_match(regexp, text, True):
+            if RegExpUtility.is_exact_match(regexp, text, True):
                 return True
 
         return False
