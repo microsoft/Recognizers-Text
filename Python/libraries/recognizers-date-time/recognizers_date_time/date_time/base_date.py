@@ -186,6 +186,11 @@ class DateExtractorConfiguration(ABC):
     def since_year_suffix_regex(self) -> Pattern:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def check_both_before_after(self) -> Pattern:
+        raise NotImplementedError
+
 
 class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
     @property
