@@ -914,7 +914,6 @@
   },
   {
     "Input": "bir buçuk",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

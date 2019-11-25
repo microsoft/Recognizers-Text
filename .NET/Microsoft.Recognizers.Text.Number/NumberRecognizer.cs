@@ -343,13 +343,12 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Turkish, options))),
                     new Turkish.PercentageExtractor(options)));
 
-            // @TODO Uncomment once the NumberRangeModel test passes
-            /* RegisterModel<NumberRangeModel>(
+            RegisterModel<NumberRangeModel>(
                Culture.Turkish,
                options => new NumberRangeModel(
                    new BaseNumberRangeParser(new TurkishNumberRangeParserConfiguration(
                                                  new BaseNumberOptionsConfiguration(Culture.Turkish, options))),
-                   new Turkish.NumberRangeExtractor(options)));*/
+                   new Turkish.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Turkish, options))));
 
             RegisterModel<NumberModel>(
                 Culture.Hindi,
