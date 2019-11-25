@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // check also afterString
                 if (this.config.CheckBothBeforeAfter && !match.Success)
                 {
-                    match = config.MoreThanRegex.MatchBegin(afterString, trim: true);
+                    match = config.MoreThanRegex.MatchesBegin(afterString, trim: true);
                     isMatchAfter = true;
                 }
 
@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // check also afterString
                     if (this.config.CheckBothBeforeAfter && !match.Success)
                     {
-                        match = config.LessThanRegex.MatchBegin(afterString, trim: true);
+                        match = config.LessThanRegex.MatchesBegin(afterString, trim: true);
                         isMatchAfter = true;
                     }
 

@@ -56,8 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            bool inPrefix = true;
-            if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex, inPrefix))
+            if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex, inPrefix: true))
             {
                 var modLength = beforeStr.Length - tokenIndex;
 
@@ -72,9 +71,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             else if (this.config.CheckBothBeforeAfter)
             {
                 // check also afterStr
-                inPrefix = false;
                 afterStr = text.Substring(er.Start + er.Length ?? 0);
-                if (HasTokenIndex(afterStr.TrimStart(), tokenRegex, out tokenIndex, inPrefix))
+                if (HasTokenIndex(afterStr.TrimStart(), tokenRegex, out tokenIndex, inPrefix: false))
                 {
                     var modLength = tokenIndex + afterStr.Length - afterStr.TrimStart().Length;
 

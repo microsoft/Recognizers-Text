@@ -54,6 +54,10 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._past_regex
 
     @property
+    def decade_with_century_regex(self) -> Pattern:
+        return self._decade_with_century_regex
+
+    @property
     def future_regex(self) -> Pattern:
         return self._future_regex
 
@@ -250,6 +254,7 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.DecadeWithCenturyRegex),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.RelativeDecadeRegex)
         ]
+        self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
         self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(
             BaseDateTime.IllegalYearRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(

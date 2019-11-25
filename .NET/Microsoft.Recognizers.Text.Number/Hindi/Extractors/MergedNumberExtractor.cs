@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
 
         public MergedNumberExtractor(NumberMode mode, NumberOptions options)
         {
-            NumberExtractor = English.NumberExtractor.GetInstance(mode, options);
+            NumberExtractor = Hindi.NumberExtractor.GetInstance(mode, options);
             RoundNumberIntegerRegexWithLocks = new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexFlags);
             ConnectorRegex = new Regex(NumbersDefinitions.ConnectorRegex, RegexFlags);
         }

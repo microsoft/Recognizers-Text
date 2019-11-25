@@ -21,7 +21,7 @@ A clear and concise description of what you expected to happen.
 As applicable, add examples of text input and json output to help explain the problem.
 
 **Platform (please complete the following information):**
- - Platform: [e.g. .NER, JavaScript, Python, Java]
+ - Platform: [e.g. .NET, JavaScript, Python, Java]
  - Environment: [e.g. nuget package, npm package, LUIS, console app, in browser]
  - Version of package [e.g. v1.0.8.1]
 

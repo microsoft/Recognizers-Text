@@ -62,22 +62,22 @@ The table below summarizes the currently supported entities. Support for English
 
 | Entity Type       | SV      | BG      | TR    | HI     | AR    |         |        |        |        |         |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
-| Number (cardinal)    | :x:  | :x:     | ✓     | **SO** | :x:   |         |        |        |        |         |
-| Ordinal              | :x:  | :x:     | ✓     | **SO** | :x:   |         |        |        |        |         |
-| Percentage           | :x:  | :x:     | ✓     | **SO** | :x:   |         |        |        |        |         |
+| Number (cardinal)    | ✓    | :x:     | ✓     | **SO** | :x:   |         |        |        |        |         |
+| Ordinal              | ✓    | :x:     | ✓     | **SO** | :x:   |         |        |        |        |         |
+| Percentage           | ✓    | :x:     | ✓     | **SO** | :x:   |         |        |        |        |         |
 | Number Range         | :x:  | :x:     | **SO**| :x:    | :x:   |         |        |        |        |         |
 | Unit - Age           | :x:  | :x:     | ✓     | **SO** | :x:   |         |        |        |        |         |
 | Unit - Currency      | :x:  | :x:     | ✓     | **SO** | :x:   |         |        |        |        |         |
 | Unit - Dimensions    | :x:  | :x:     | ✓     | **SO** | :x:   |         |        |        |        |         | 
 | Unit - Temperature   | :x:  | :x:     | ✓     | **SO** | :x:   |         |        |        |        |         | 
-| Choice - Boolean     | ✓    | ✓      | **SO**| **SO** | ✓     |         |        |        |        |         |
+| Choice - Boolean     | ✓    | ✓      | ✓     | ✓      | ✓     |         |        |        |        |         |
 | Seq. - E-mail        | G    | G       | G     | G      | G     |         |        |        |        |         |
 | Seq. - GUID          | G    | G       | G     | G      | G     |         |        |        |        |         |
 | Seq. - Social        | G    | G       | G     | G      | G     |         |        |        |        |         |
 | Seq. - IP Address    | G    | G       | G     | G      | G     |         |        |        |        |         |
 | Seq. - Phone Number  | :x:  | :x:     | :x:   | :x:    | :x:   |         |        |        |        |         |
 | Seq. - URL           | G    | G       | G     | G*     | G*    |         |        |        |        |         |
-| DateTime (+subtypes) | :x:  | :x:     | **PA**| :x:    | :x:   |         |        |        |        |         |
+| DateTime (+subtypes) | :x:  | :x:     | ✓    | :x:    | :x:   |         |        |        |        |         |
 
 * G: Generic entity, not language-specific (* unicode TLDs not-supported);
 * PA: Partial support;
