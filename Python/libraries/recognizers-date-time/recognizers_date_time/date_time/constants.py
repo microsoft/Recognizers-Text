@@ -42,6 +42,9 @@ class Constants:
     MAX_MONTH: int = 12
     INVALID_YEAR = -2147483648
 
+    # Failed connector extraction
+    INVALID_CONNECTOR_CODE = -1
+
     MIN_YEAR_NUM: int = int(BaseDateTime.MinYearNum)
     MAX_YEAR_NUM: int = int(BaseDateTime.MaxYearNum)
 
