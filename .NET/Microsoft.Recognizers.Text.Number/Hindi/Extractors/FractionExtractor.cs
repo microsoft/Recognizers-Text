@@ -29,11 +29,15 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
                 },
                 {
                     new Regex(NumbersDefinitions.FractionNounRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.HINDI)
                 },
                 {
                     new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.HINDI)
+                },
+                {
+                    new Regex(NumbersDefinitions.NegativeCompoundNumberOrdinals, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.HINDI)
                 },
             };
 
@@ -41,13 +45,16 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
             {
                 regexes.Add(
                     new Regex(NumbersDefinitions.FractionPrepositionWithinPercentModeRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH));
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.HINDI));
             }
             else
             {
                 regexes.Add(
-                    new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH));
+                    new Regex(NumbersDefinitions.FractionRegex, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.HINDI));
+                regexes.Add(
+                   new Regex(NumbersDefinitions.FractionPrepositionInverseRegex, RegexFlags),
+                   RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.HINDI));
             }
 
             Regexes = regexes.ToImmutableDictionary();

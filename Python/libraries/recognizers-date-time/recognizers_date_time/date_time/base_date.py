@@ -200,7 +200,8 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         if reference is None:
             reference = datetime.now()
 
-        tokens = self.basic_regex_match(source)
+        tokens = []
+        tokens.extend(self.basic_regex_match(source))
         tokens.extend(self.implicit_date(source))
         tokens.extend(self.number_with_month(source, reference))
         tokens.extend(self.duration_with_before_and_after(source, reference))
@@ -510,7 +511,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                                                       reference: datetime):
         from .utilities import Token
         from .utilities import RegexExtension
-        ret: [Token] = []
+        result: [Token] = []
 
         durations: [Token] = []
 
@@ -529,23 +530,22 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                 continue
 
             match = RegexExtension.match_end(self.config.in_connector_regex, before_str, True)
-            if match:
-                if match.success:
+            if match and match.success:
 
-                    start_token = match.index
-                    range_unit_math = self.config.range_unit_regex.match(text[duration.start: duration.start
-                                                                              + duration.length])
+                start_token = match.index
+                range_unit_math = self.config.range_unit_regex.match(text[duration.start: duration.start
+                                                                          + duration.length])
 
-                    if range_unit_math:
-                        since_year_match = self.config.since_year_suffix_regex.match(after_str)
+                if range_unit_math:
+                    since_year_match = self.config.since_year_suffix_regex.match(after_str)
 
-                        if since_year_match:
-                            ret.append(Token(start_token, duration.end + len(since_year_match)))
+                    if since_year_match:
+                        result.append(Token(start_token, duration.end + len(since_year_match)))
 
-                        else:
-                            ret.append(Token(start_token, duration.end))
+                    else:
+                        result.append(Token(start_token, duration.end))
 
-        return ret
+        return result
 
     def duration_with_before_and_after(self, source: str, reference: datetime) -> []:
         from .utilities import Token

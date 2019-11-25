@@ -404,7 +404,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private bool IsBeforeOrAfterMod(string mod)
         {
-            return !string.IsNullOrEmpty(mod) && (mod == Constants.BEFORE_MOD || mod == Constants.AFTER_MOD);
+            if (!this.Config.CheckBothBeforeAfter)
+            {
+                return !string.IsNullOrEmpty(mod) && (mod == Constants.BEFORE_MOD || mod == Constants.AFTER_MOD);
+            }
+            else
+            {
+                // matches with InclusiveModPrepositions are also parsed here
+                return !string.IsNullOrEmpty(mod) && (mod == Constants.BEFORE_MOD || mod == Constants.AFTER_MOD || mod == Constants.UNTIL_MOD || mod == Constants.SINCE_MOD);
+            }
         }
 
         // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
@@ -418,12 +426,22 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (dateEr != null && timeEr != null)
             {
                 var dateStrEnd = (int)(dateEr.Start + dateEr.Length);
+                var timeStrEnd = (int)(timeEr.Start + timeEr.Length);
 
                 if (dateStrEnd < timeEr.Start)
                 {
                     var midStr = text.Substring(dateStrEnd, timeEr.Start.Value - dateStrEnd).Trim();
+                    var afterStr = text.Substring(timeStrEnd);
 
-                    if (IsValidConnectorForDateAndTimePeriod(midStr))
+                    string modStr = GetValidConnectorModForDateAndTimePeriod(midStr, inPrefix: true);
+
+                    // check also afterStr
+                    if (string.IsNullOrEmpty(modStr) && this.Config.CheckBothBeforeAfter)
+                    {
+                        modStr = midStr.Length <= 4 ? GetValidConnectorModForDateAndTimePeriod(afterStr, inPrefix: false) : null;
+                    }
+
+                    if (!string.IsNullOrEmpty(modStr))
                     {
                         var datePr = this.Config.DateParser.Parse(dateEr, referenceTime);
                         var timePr = this.Config.TimeParser.Parse(timeEr, referenceTime);
@@ -444,7 +462,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                             ret.PastValue = DateObject.MinValue.SafeCreateFromValue(pastDateValue.Year, pastDateValue.Month, pastDateValue.Day, pastTimeValue.Hour, pastTimeValue.Minute, pastTimeValue.Second);
 
-                            ret.Mod = this.Config.BeforeRegex.Match(midStr).Success ? Constants.BEFORE_MOD : Constants.AFTER_MOD;
+                            ret.Mod = modStr;
                             ret.SubDateTimeEntities = new List<object>()
                             {
                                 datePr,
@@ -463,25 +481,26 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
         // Valid connector in English for Before include: "before", "no later than", "in advance of", "prior to", "earlier than", "sooner than", "by", "till", "until"...
         // Valid connector in English for After include: "after", "later than"
-        private bool IsValidConnectorForDateAndTimePeriod(string text)
+        private string GetValidConnectorModForDateAndTimePeriod(string text, bool inPrefix)
         {
-            var beforeAfterRegexes = new List<Regex>()
+            string mod = null;
+            var beforeAfterRegexes = new List<(Regex, string, string)>
             {
-                this.Config.BeforeRegex,
-                this.Config.AfterRegex,
+                (this.Config.BeforeRegex, Constants.UNTIL_MOD, Constants.BEFORE_MOD),
+                (this.Config.AfterRegex, Constants.SINCE_MOD, Constants.AFTER_MOD),
             };
 
             foreach (var regex in beforeAfterRegexes)
             {
-                var match = regex.MatchExact(text, trim: true);
-
+                var match = inPrefix ? regex.Item1.MatchExact(text, trim: true) : regex.Item1.MatchBegin(text, trim: true);
                 if (match.Success)
                 {
-                    return true;
+                    mod = inPrefix ? regex.Item3 : (match.Groups["include"].Success ? regex.Item2 : regex.Item3);
+                    return mod;
                 }
             }
 
-            return false;
+            return mod;
         }
 
         private DateTimeResolutionResult ParseDateWithPeriodPrefix(string text, DateObject referenceTime)
@@ -493,6 +512,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var beforeString = text.Substring(0, (int)dateResult.Last().Start).TrimEnd();
                 var match = Config.PrefixDayRegex.Match(beforeString);
+
+                // Check also afterString
+                if (!match.Success && this.Config.CheckBothBeforeAfter)
+                {
+                    var afterString = text.Substring((int)(dateResult.Last().Start + dateResult.Last().Length),
+                        text.Length - ((int)(dateResult.Last().Start + dateResult.Last().Length))).TrimStart();
+                    match = Config.PrefixDayRegex.Match(afterString);
+                }
+
                 if (match.Success)
                 {
                     var pr = this.Config.DateParser.Parse(dateResult.Last(), referenceTime);
