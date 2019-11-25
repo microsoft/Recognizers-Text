@@ -357,9 +357,6 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
                     Hindi.MergedNumberExtractor.GetInstance(NumberMode.PureNumber, options)));
 
-            // @TODO Uncomment once all the tests pass
-            /*
-
             RegisterModel<OrdinalModel>(
                 Culture.Hindi,
                 options => new OrdinalModel(
@@ -367,6 +364,8 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
                     Hindi.OrdinalExtractor.GetInstance(options)));
 
+            // @TODO Uncomment once all the tests pass
+            /*
             RegisterModel<PercentModel>(
                 Culture.Hindi,
                 options => new PercentModel(
