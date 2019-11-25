@@ -14681,7 +14681,7 @@
     },
     "Results": [
       {
-        "Text": "Every other Friday",
+        "Text": "every other friday",
         "Start": 0,
         "End": 17,
         "TypeName": "datetimeV2.set",
