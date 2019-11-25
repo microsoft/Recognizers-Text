@@ -103,7 +103,7 @@ class RegExpUtility:
         if trim:
             str_before = str_before.strip()
 
-        return ConditionalMatch(match, match and (str.isspace(str_before) or str_before is None))
+        return ConditionalMatch(match, match and (str.isspace(str_before) or str_before == ''))
 
     @staticmethod
     def match_end(regexp: Pattern, text: str, trim: bool):
@@ -117,7 +117,7 @@ class RegExpUtility:
         if trim:
             srt_after = srt_after.strip()
 
-        success = match and (str.isspace(srt_after) or srt_after is None)
+        success = match and (str.isspace(srt_after) or srt_after == '')
 
         return ConditionalMatch(match, success)
 
