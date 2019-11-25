@@ -20,6 +20,10 @@ from ..utilities import DateTimeOptions
 
 class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
     @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
+    @property
     def suffix_regex(self) -> Pattern:
         return self._suffix_regex
 
@@ -247,6 +251,7 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         self._suffix_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.SuffixRegex
         )
+        self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)

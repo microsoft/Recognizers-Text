@@ -22,6 +22,10 @@ from ..utilities import DateTimeOptions
 class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
 
     @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
+    @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
         return self._cardinal_extractor
 
@@ -221,6 +225,7 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
             EnglishDateTime.SuffixRegex
         )
         self._options = DateTimeOptions.NONE
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         if source.endswith('from'):
