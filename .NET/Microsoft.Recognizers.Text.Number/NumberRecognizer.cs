@@ -367,6 +367,13 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
                     Hindi.OrdinalExtractor.GetInstance(options)));
 
+            RegisterModel<OrdinalModel>(
+                Culture.Hindi,
+                options => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new HindiNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
+                    Hindi.OrdinalExtractor.GetInstance(options)));
+
             RegisterModel<PercentModel>(
                 Culture.Hindi,
                 options => new PercentModel(
