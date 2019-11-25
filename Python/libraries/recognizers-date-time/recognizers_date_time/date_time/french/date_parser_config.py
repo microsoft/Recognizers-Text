@@ -14,6 +14,10 @@ from .date_extractor_config import FrenchDateExtractorConfiguration
 
 class FrenchDateParserConfiguration(DateParserConfiguration):
     @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
     def ordinal_extractor(self) -> BaseNumberExtractor:
         return self._ordinal_extractor
 
@@ -165,6 +169,7 @@ class FrenchDateParserConfiguration(DateParserConfiguration):
             FrenchDateTime.RelativeWeekDayRegex)
         self._utility_configuration = config.utility_configuration
         self._date_token_prefix = FrenchDateTime.DateTokenPrefix
+        self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
 
     def get_swift_day(self, source: str) -> int:
         trimmed_text = source.strip().lower()

@@ -241,7 +241,6 @@ class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
         )
         self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
 
-
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)
         if match:

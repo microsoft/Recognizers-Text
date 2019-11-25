@@ -779,6 +779,11 @@ class DateParserConfiguration(ABC):
     def is_cardinal_last(self, source: str) -> bool:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def check_both_before_after(self) -> bool:
+        raise NotImplementedError
+
 
 class BaseDateParser(DateTimeParser):
     @property

@@ -14,6 +14,10 @@ from .date_extractor_config import SpanishDateExtractorConfiguration
 
 class SpanishDateParserConfiguration(DateParserConfiguration):
     @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
     def ordinal_extractor(self) -> BaseNumberExtractor:
         return self._ordinal_extractor
 
@@ -173,6 +177,7 @@ class SpanishDateParserConfiguration(DateParserConfiguration):
             SpanishDateTime.RelativeWeekDayRegex)
         self._utility_configuration = config.utility_configuration
         self._date_token_prefix = SpanishDateTime.DateTokenPrefix
+        self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
 
     def get_swift_day(self, source: str) -> int:
         trimmed_text = self.__normalize(source.strip().lower())
