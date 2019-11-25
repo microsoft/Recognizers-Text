@@ -4032,14 +4032,14 @@
     ]
   },
   {
-    "Input": "Lütfen bize bu haftanın sonunda buluşmak için bir zaman bul.",
+    "Input": "Lütfen bize bu hafta içinde sonra buluşmak için bir zaman bul.",
     "Context": {
       "ReferenceDateTime": "2017-11-10T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "bu haftanın sonunda",
+        "Text": "bu hafta içinde sonra",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W45",
@@ -4053,19 +4053,19 @@
           }
         },
         "Start": 12,
-        "Length": 19
+        "Length": 21
       }
     ]
   },
   {
-    "Input": "Lütfen bize bu ayın sonunda buluşmak için bir zaman bul.",
+    "Input": "Lütfen bize bu ay içinde sonra buluşmak için bir zaman bul.",
     "Context": {
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "bu ayın sonunda",
+        "Text": "bu ay içinde sonra",
         "Type": "daterange",
         "Value": {
           "Timex": "2018-05",
@@ -4079,19 +4079,45 @@
           }
         },
         "Start": 12,
-        "Length": 15
+        "Length": 18
       }
     ]
   },
   {
-    "Input": "Lütfen bize bu yılın sonunda buluşmak için bir zaman bul.",
+    "Input": "Lütfen bize bu yıl içinde sonra buluşmak için bir zaman bul.",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "bu yılın sonunda",
+        "Text": "bu yıl içinde sonra",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 12,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Lütfen bize yıl içinde sonra buluşmak için bir zaman bul.",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yıl içinde sonra",
         "Type": "daterange",
         "Value": {
           "Timex": "2017",
@@ -4106,32 +4132,6 @@
         },
         "Start": 12,
         "Length": 16
-      }
-    ]
-  },
-  {
-    "Input": "Lütfen bize yılın sonunda buluşmak için bir zaman bul.",
-    "Context": {
-      "ReferenceDateTime": "2017-11-08T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "yılın sonunda",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "2017",
-          "FutureResolution": {
-            "startDate": "2017-11-08",
-            "endDate": "2018-01-01"
-          },
-          "PastResolution": {
-            "startDate": "2017-11-08",
-            "endDate": "2018-01-01"
-          }
-        },
-        "Start": 12,
-        "Length": 13
       }
     ]
   },
