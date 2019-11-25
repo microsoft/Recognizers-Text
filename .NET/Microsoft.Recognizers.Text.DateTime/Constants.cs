@@ -83,6 +83,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public const string HAS_MOD = "mod";
 
+        // labels associated to AgoRegex and LaterRegex
+        public const string AGO_LABEL = "ago";
+        public const string LATER_LABEL = "later";
+
         // These are some particular values for timezone recognition
         public const int InvalidOffsetValue = -10000;
         public const string UtcOffsetMinsKey = "utcOffsetMins";

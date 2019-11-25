@@ -484,13 +484,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         private string GetValidConnectorModForDateAndTimePeriod(string text, bool inPrefix)
         {
             string mod = null;
-            var beforeAfterRegexes = new List<(Regex, string, string)>
+
+            // Item1 is the regex to be tested
+            // Item2 is the mod corresponding to an inclusive match (i.e. containing an InclusiveModPrepositions, e.g. "at or before 3")
+            // Item3 is the mod corresponding to a non-inclusive match (e.g. "before 3")
+            var beforeAfterRegexTuples = new List<(Regex, string, string)>
             {
                 (this.Config.BeforeRegex, Constants.UNTIL_MOD, Constants.BEFORE_MOD),
                 (this.Config.AfterRegex, Constants.SINCE_MOD, Constants.AFTER_MOD),
             };
 
-            foreach (var regex in beforeAfterRegexes)
+            foreach (var regex in beforeAfterRegexTuples)
             {
                 var match = inPrefix ? regex.Item1.MatchExact(text, trim: true) : regex.Item1.MatchBegin(text, trim: true);
                 if (match.Success)
