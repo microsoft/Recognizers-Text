@@ -244,9 +244,9 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
         for date_er in date_ers:
             date_str_end = date_er.start + date_er.length
             before_str = source[0:date_er.start].strip()
-            match = regex.match(self.config.prefix_day_regex, before_str)
+            match = regex.search(self.config.prefix_day_regex, before_str)
             if match:
-                result.append(Token(match.pos, date_str_end))
+                result.append(Token(match.start(), date_str_end))
         return result
 
     def merge_date_with_time_period_suffix(self, text: str, date_ers: [ExtractResult], time_ers: [ExtractResult]):

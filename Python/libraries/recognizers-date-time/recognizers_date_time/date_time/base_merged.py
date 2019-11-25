@@ -247,8 +247,8 @@ class BaseMergedExtractor(DateTimeExtractor):
             result, self.config.duration_extractor.extract(source, reference), source)
         result = self.add_to(
             result, self.config.time_period_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.date_time_period_extractor.extract(
-            source, reference), source)
+        result = self.add_to(
+            result, self.config.date_time_period_extractor.extract(source, reference), source)
         result = self.add_to(
             result, self.config.date_time_extractor.extract(source, reference), source)
         result = self.add_to(
