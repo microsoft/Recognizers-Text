@@ -137,7 +137,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                         # Cases like "from 3:30 to 4" should be supported
                         # Cases like "from 3:30 to 5 on 1/1/2015" should be supported
                         # Cases like "from 3:30 to 4 people" is considered not valid
-                        end_with_valid_token = True
+                        end_with_valid_token = False
 
                         # "No extra tokens after the time period"
                         if (source.index(match.group()) + (match.end() - match.start())) == len(source):
