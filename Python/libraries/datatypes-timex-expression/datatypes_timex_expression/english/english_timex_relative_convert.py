@@ -10,7 +10,7 @@ def get_date_day(date) -> str:
 def convert_date(timex: Timex, date: datetime):
     if timex.year is not None and timex.month is not None and timex.day_of_month is not None:
         timex_date = datetime(timex.year, timex.month, timex.day_of_month)
-        if TimexDateHelpers.date_part_equal(timex_date, date):
+        if TimexDateHelpers.date_part_equal(timex_date.date(), date.date()):
             return 'today'
         tomorrow = TimexDateHelpers.tomorrow(date)
         if TimexDateHelpers.date_part_equal(timex_date, tomorrow):
