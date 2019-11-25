@@ -2725,9 +2725,9 @@
         }
       },
       {
-        "Text": "bu hafta",
+        "Text": "bu haftaki",
         "Start": 126,
-        "End": 133,
+        "End": 135,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
