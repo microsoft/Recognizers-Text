@@ -19,7 +19,7 @@ from .base_datetimeperiod import BaseDateTimePeriodParser
 from .base_duration import BaseDurationParser
 from .base_set import BaseSetParser
 from .utilities import Token, merge_all_tokens, RegExpUtility, DateTimeOptions, DateTimeFormatUtil, DateUtils,\
-    MatchingUtil, RegexExtension
+    MatchingUtil, RegExpUtility
 from .datetime_zone_extractor import DateTimeZoneExtractor
 from .datetime_list_extractor import DateTimeListExtractor
 
@@ -409,7 +409,7 @@ class BaseMergedExtractor(DateTimeExtractor):
                 length = extract_result.length if extract_result.length else 0
                 after_str = source[start + length:]
 
-                match = RegexExtension.match_begin(self.config.suffix_after_regex, after_str, True)
+                match = RegExpUtility.match_begin(self.config.suffix_after_regex, after_str, True)
 
                 if match:
                     is_followed_by_other_entity = True

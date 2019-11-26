@@ -11,7 +11,7 @@ from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
 from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, RegExpUtility,\
-    DateTimeOptionsConfiguration, DateTimeOptions, DurationParsingUtil, RegexExtension
+    DateTimeOptionsConfiguration, DateTimeOptions, DurationParsingUtil, RegExpUtility
 
 
 class DurationExtractorConfiguration(DateTimeOptionsConfiguration):
@@ -130,7 +130,7 @@ class BaseDurationExtractor(DateTimeExtractor):
             before_string = text[0: extract_result.start]
             is_inequality_prefix_matched = False
 
-            match = RegexExtension.match_end(self.config.more_than_regex, before_string, True)
+            match = RegExpUtility.match_end(self.config.more_than_regex, before_string, True)
 
             # The second condition is necessary so for "1 week" in "more than 4 days and less than
             # 1 week", it will not be tagged incorrectly as "more than"
@@ -140,7 +140,7 @@ class BaseDurationExtractor(DateTimeExtractor):
 
             if not is_inequality_prefix_matched:
 
-                match = RegexExtension.match_end(self.config.less_than_regex, before_string, True)
+                match = RegExpUtility.match_end(self.config.less_than_regex, before_string, True)
 
                 if match and match.success:
                     extract_result.data = TimeTypeConstants.LESS_THAN_MOD

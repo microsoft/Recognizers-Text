@@ -211,7 +211,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
     def basic_regex_match(self, source: str) -> []:
         from .utilities import Token
-        from .utilities import RegexExtension
+        from .utilities import RegExpUtility
         ret: List[Token] = list()
 
         for regexp in self.config.date_regex_list:
@@ -226,7 +226,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                         # Cases that the relative term is before
                         # the detected date entity, like "this 5/12", "next friday 5/12"
                         pre_text = source[0:source.index(match.group())]
-                        relative_regex = RegexExtension.match_end(self.config.strict_relative_regex, pre_text, True)
+                        relative_regex = RegExpUtility.match_end(self.config.strict_relative_regex, pre_text, True)
 
                         if relative_regex:
                             if relative_regex.success:
@@ -295,9 +295,9 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
     # TODO: Simplify this method to improve the performance
     def starts_with_basic_date(self, text: str):
-        from .utilities import RegexExtension
+        from .utilities import RegExpUtility
         for regexp in self.config.date_regex_list:
-            match = RegexExtension.match_begin(regexp, text, True)
+            match = RegExpUtility.match_begin(regexp, text, True)
 
             if match:
                 return True
@@ -510,7 +510,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
     def extract_relative_duration_date_with_in_prefix(self, text: str, duration_er: [ExtractResult],
                                                       reference: datetime):
         from .utilities import Token
-        from .utilities import RegexExtension
+        from .utilities import RegExpUtility
         result: [Token] = []
 
         durations: [Token] = []
@@ -529,7 +529,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
             if (str.isspace(before_str) or before_str is None) and (str.isspace(after_str) or after_str is None):
                 continue
 
-            match = RegexExtension.match_end(self.config.in_connector_regex, before_str, True)
+            match = RegExpUtility.match_end(self.config.in_connector_regex, before_str, True)
             if match and match.success:
 
                 start_token = match.index
