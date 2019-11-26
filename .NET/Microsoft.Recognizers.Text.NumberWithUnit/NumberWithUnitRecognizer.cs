@@ -480,6 +480,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Hindi.AgeParserConfiguration())
                     },
                 }));
+
+            RegisterModel<TemperatureModel>(
+               Culture.Hindi,
+               (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+               {
+                    {
+                        new NumberWithUnitExtractor(new Hindi.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Hindi.TemperatureParserConfiguration())
+                    },
+               }));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)
