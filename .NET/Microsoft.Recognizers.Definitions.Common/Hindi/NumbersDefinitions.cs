@@ -22,53 +22,109 @@ namespace Microsoft.Recognizers.Definitions.Hindi
     public static class NumbersDefinitions
     {
       public const string LangMarker = @"Hin";
-      public const bool CompoundNumberLanguage = false;
-      public const bool MultiDecimalSeparatorCulture = true;
-      public const string RoundNumberIntegerRegex = @"(?:hundred|thousand|million|billion|trillion)";
-      public const string ZeroToNineIntegerRegex = @"(?:three|seven|eight|four|five|zero|nine|one|two|six)";
-      public const string TwoToNineIntegerRegex = @"(?:three|seven|eight|four|five|nine|two|six)";
-      public const string NegativeNumberTermsRegex = @"(?<negTerm>(minus|negative)\s+)";
+      public const bool CompoundNumberLanguage = true;
+      public const bool MultiDecimalSeparatorCulture = false;
+      public const string RoundNumberIntegerRegex = @"(सौ|हजार|लाख|करोड़|अरब|खरब)";
+      public const string ZeroToNineIntegerRegex = @"(सात|आठ|चार|पांच|पाँच|शून्य|नौ|दो|छह|एक(सठ)?|तीन|०|१|२|३|४|५|६|६|७|८|९)";
+      public const string TwoToNineIntegerRegex = @"(तीन|सात|आठ|चार|पाँच|पांच|नौ|दो|छह)";
+      public const string NegativeNumberTermsRegex = @"(?<negTerm>(माइनस|निगेटिव)\s+)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
-      public const string AnIntRegex = @"(an?)(?=\s)";
-      public const string TenToNineteenIntegerRegex = @"(?:seventeen|thirteen|fourteen|eighteen|nineteen|fifteen|sixteen|eleven|twelve|ten)";
-      public const string TensNumberIntegerRegex = @"(?:seventy|twenty|thirty|eighty|ninety|forty|fifty|sixty)";
-      public static readonly string SeparaIntRegex = $@"(?:(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))";
-      public static readonly string AllIntRegex = $@"(?:((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*{SeparaIntRegex})";
+      public const string AnIntRegex = @"(एक|1|१)(?=\s)";
+      public const string TenToNineteenIntegerRegex = @"(सत्रह|तेरह|चौदह|अठारह|उन्नीस|पंद्रह|सोलह|ग्यारह|बारह|दस)";
+      public const string TwentyToTwentyNineIntegerRegex = @"(सत्ताईस|तेईस|चौबीस|अट्ठाईस|अट्ठाइस|उनतीस|पच्चीस|छब्बीस|इक्कीस|बाईस|बीस)";
+      public const string ThirtyToThirtyNineIntegerRegex = @"(सैंतीस|तैंतीस|चौंतीस|अड़तीस|उनतालीस|पैंतीस|छ्त्तीस|इकतीस|इकत्तीस|बत्तीस|तीस)";
+      public const string FourtyToFourtyNineIntegerRegex = @"(सैंतालीस|तैंतालीस|चौंतालीस|अड़तालीस|उनचास|पैंतालीस|छियालीस|इकतालीस|बयालीस|चालीस)";
+      public const string FiftyToFiftyNineIntegerRegex = @"(सत्तावन|तिरेपन|चौबन|अट्ठावन|उनसठ|पचपन|छप्पन|इक्याबन|बावन|पचास)";
+      public const string SixtyToSixtyNineIntegerRegex = @"((सड़|तिर|चौं|अड़|उनहत्तर|पैं|छिया|इक|बा|साठ|एक)(सठ))";
+      public const string SeventyToSeventyNineIntegerRegex = @"(?:सतहत्तर|तिहत्तर|चौदह|अठहत्तर|उनासी|पचहत्तर|छिहत्तर|इकहत्तर|बहत्तर|सत्तर)";
+      public const string EightyToEightyNineIntegerRegex = @"(सतासी|तिरासी|चौरासी|अठासी|नवासी|पचासी|छियासी|इक्यासी|बयासी|अस्सी)";
+      public const string NinetyToNinetyNineIntegerRegex = @"(सत्तानवे|तिरानवे|चौरानवे|अट्ठानवे|निन्यानवे|पचानवे|पंचानबे|छियानवे|इक्यानबे|बानवे|नब्बे)";
+      public const string TensNumberIntegerRegex = @"(सत्तर|बीस|तीस|अस्सी|नब्बे|चालीस|पचास|साठ)";
+      public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
+      public static readonly string AllNumericalIntRegex = $@"({ZeroToNineIntegerRegex}|{TenToNineteenIntegerRegex}|{TwentyToTwentyNineIntegerRegex}|{ThirtyToThirtyNineIntegerRegex}|{FourtyToFourtyNineIntegerRegex}|{FiftyToFiftyNineIntegerRegex}|{SeventyToSeventyNineIntegerRegex}|{EightyToEightyNineIntegerRegex}|{NinetyToNinetyNineIntegerRegex})";
+      public static readonly string SeparaIntRegex = $@"(?:((({AllNumericalIntRegex}|({TensNumberIntegerRegex}(\s+(और\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*)|(({AnIntRegex}?(\s+({RoundNumberIntegerRegex}))+))|({RoundNumberIntegerRegex})|({AllNumericalIntRegex})))";
+      public static readonly string AllIntRegex = $@"(?:((({AllNumericalIntRegex}|({TensNumberIntegerRegex}(\s+(और\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(और\s+)?)*({SeparaIntRegex}))";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
-      public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";
+      public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[ऀ-ॿ]))(?={placeholder})";
+      public const string IndianNumberingSystemRegex = @"(?<=\b)((?:\d+|\d{1,2},(?:\d{2},)*\d{3})(?:\.\d{2})?(?=\s|$))";
       public static readonly string NumbersWithSuffix = $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
-      public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)";
-      public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dozen(s)?(?=\b)";
-      public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
-      public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((half\s+)?a\s+dozen)|({AllIntRegex}\s+dozen(s)?))(?=\b)";
-      public const string RoundNumberOrdinalRegex = @"(?:hundredth|thousandth|millionth|billionth|trillionth)";
-      public const string NumberOrdinalRegex = @"(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
-      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(next|previous|current)\s+one|(the\s+second|next)\s+to\s+last|the\s+one\s+before\s+the\s+last(\s+one)?|the\s+last\s+but\s+one|(ante)?penultimate|last|next|previous|current)";
+      public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s+{RoundNumberIntegerRegex}";
+      public const string NumbersWithDozenSuffix = @"\d+\s+दर्जन(नों)?";
+      public const string AdditionTermsRegex = @"(?<=\s)(और|व|तथा|एवं|प्लस|plus|जमा)(?=\s)";
+      public static readonly string AllIntRegexWithLocks = $@"(?<=\b){AllIntRegex}";
+      public const string RoundNumberHinglishIntegerRegex = @"(?:हंड्रेड|थाउजेंड|मिलियन|बिलियन|ट्रिलियन)";
+      public const string OnetoNineHinglishIntegerRegex = @"(?:वन|टू|थ्री|फोर|फ़ाइव|सिक्स|सेवन|एइट|नाइन)";
+      public const string ElevenToNineteenHinglishIntegerRegex = @"(?:इलेवन|ट्वेल्व|थर्टीन|फ़ोर्टीन|फ़िफ़्टीन|सिक्सटीन|सेवेनटीन|एइटीन|नाइनटीन)";
+      public const string TensHinglishIntegerRegex = @"(?:टेन|ट्वेन्टी|थर्टी|फ़ोर्टी|फ़िफ़्टी|सिक्सटी|सेवेंटी|एइट्टी|नाइनटी)";
+      public static readonly string HinglishIntegerRegex = $@"(({TensHinglishIntegerRegex}\s+{OnetoNineHinglishIntegerRegex})|{OnetoNineHinglishIntegerRegex}|{ElevenToNineteenHinglishIntegerRegex}|{TensHinglishIntegerRegex})";
+      public static readonly string CompoundHindiNumberRegex = $@"((({HinglishIntegerRegex}\s+)?({RoundNumberHinglishIntegerRegex}\s+)?(अंड\s+)?)+({HinglishIntegerRegex}|{RoundNumberHinglishIntegerRegex})|{HinglishIntegerRegex}|{RoundNumberHinglishIntegerRegex})";
+      public static readonly string NegativeHinglishRegex = $@"(({NegativeNumberTermsRegex})?{CompoundHindiNumberRegex})";
+      public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((आधा\s+|एक\s+)दर्जन)|({AllIntRegex}\s+दर्जन(नों)?)|({CompoundHindiNumberRegex}\s+डज़न))";
+      public const string RoundNumberEnglishIntegerRegex = @"(?:hundred|thousand|million|billion|trillion)";
+      public const string ZeroToNineEnglishIntegerRegex = @"(?:three|seven|eight|four|five|zero|nine|one|two|six)";
+      public const string TenToNineteenEnglishIntegerRegex = @"(?:seventeen|thirteen|fourteen|eighteen|nineteen|fifteen|sixteen|eleven|twelve|ten)";
+      public const string TensNumberEnglishIntegerRegex = @"(?:seventy|twenty|thirty|eighty|ninety|forty|fifty|sixty)";
+      public static readonly string EnglishIntegerRegex = $@"(({TensNumberEnglishIntegerRegex}\s+{ZeroToNineEnglishIntegerRegex})|{ZeroToNineEnglishIntegerRegex}|{TenToNineteenEnglishIntegerRegex}|{TensNumberEnglishIntegerRegex})";
+      public static readonly string CompoundEnglishNumberRegex = $@"((({EnglishIntegerRegex}\s+)?({RoundNumberEnglishIntegerRegex}\s+)?(and\s+)?)+({EnglishIntegerRegex}|{RoundNumberEnglishIntegerRegex})|({EnglishIntegerRegex}\s+{RoundNumberEnglishIntegerRegex})|{EnglishIntegerRegex}|{RoundNumberEnglishIntegerRegex})";
+      public const string DecimalUnitsRegex = @"(?:डेढ़|डेढ़|डेढ|ढाई|सवा|सावा)";
+      public static readonly string DecimalUnitsWithRoundNumberRegex = $@"({DecimalUnitsRegex}\s+{RoundNumberIntegerRegex}|{DecimalUnitsRegex})";
+      public const string RoundNumberOrdinalRegex = @"(?:(सौ|हजार|लाख|करोड़|अरब|खरब)(वां|वीं|वें|वाँ))";
+      public const string OneToNineOrdinalRegex = @"(?:पहला|पहली|प्रथम|दूसरा|दूसरे|तिहाई|चौथाई|((पांच|पाँच|छठ|सात|आठ|नौ)(वां|वीं|वें|वाँ|वा)))";
+      public const string TenToNineteenOrdinalRegex = @"(?:(दस|ग्यारह|बारह|तेरह|चौदह|पंद्रह|सोलह|सत्रह|अठारह|उन्नीस)(वां|वीं|वें|वाँ))";
+      public const string TwentyToTwentyNineOrdinalRegex = @"(?:(बीस|इक्कीस|बाईस|बाइस|तेईस|तेइस|चौबीस|पच्चीस|छब्बीस|सत्ताईस|सत्ताइस|अट्ठाईस|अट्ठाइस|उनतीस)(वां|वीं|वें|वाँ))";
+      public const string ThirtyToThirtyNineOrdinalRegex = @"(?:(तीस|इकतीस|इकत्तीस|बत्तीस|तैंतीस|चौंतीस|पैंतीस|छ्त्तीस|सैंतीस|अड़तीस|उनतालीस)(वां|वीं|वें|वाँ))";
+      public const string FourtyToFourtyNineOrdinalRegex = @"(?:(चालीस|इकतालीस|बयालीस|तैंतालीस|चौंतालीस|पैंतालीस|छियालीस|सैंतालीस|अड़तालीस|उनचास)(वां|वीं|वें|वाँ))";
+      public const string FiftyToFiftyNineOrdinalRegex = @"(?:(पचास|इक्याबन|बावन|तिरेपन|चौबन|पचपन|छप्पन|सत्तावन|अट्ठावन|उनसठ)(वां|वीं|वें|वाँ))";
+      public const string SixtyToSixtyNineOrdinalRegex = @"(?:(साठ|इकसठ|बासठ|तिरसठ|चौंसठ|पैंसठ|छियासठ|सड़सठ|अड़सठ|उनहत्तर)(वां|वीं|वें|वाँ))";
+      public const string SeventyToSeventyNineOrdinalRegex = @"(?:(सत्तर|इकहत्तर|बहत्तर|तिहत्तर|चौहत्तर|पचहत्तर|छिहत्तर|सतहत्तर|अठहत्तर|उनासी)(वां|वीं|वें|वाँ))";
+      public const string EightyToEightyNineOrdinalRegex = @"(?:(अस्सी|इक्यासी|बयासी|तिरासी|चौरासी|पचासी|छियासी|सतासी|अठासी|नवासी)(वां|वीं|वें|वाँ))";
+      public const string NinetyToNinetyNineOrdinalRegex = @"(?:(नब्बे|इक्यानबे|बानवे|तिरानवे|चौरानवे|पचानवे|छियानवे|सत्तानवे|अट्ठानवे|निन्यानवे)(वां|वीं|वें|वाँ))";
+      public static readonly string NumberOrdinalRegex = $@"({OneToNineOrdinalRegex}|{TenToNineteenOrdinalRegex}|{TwentyToTwentyNineOrdinalRegex}|{ThirtyToThirtyNineOrdinalRegex}|{FourtyToFourtyNineOrdinalRegex}|{FiftyToFiftyNineOrdinalRegex}|{SixtyToSixtyNineOrdinalRegex}|{SeventyToSeventyNineOrdinalRegex}|{EightyToEightyNineOrdinalRegex}|{NinetyToNinetyNineOrdinalRegex})";
+      public static readonly string CompoundNumberOrdinals = $@"((({AllNumericalIntRegex}\s+)?({RoundNumberIntegerRegex}\s+)?(और\s+)?)+({NumberOrdinalRegex}|{RoundNumberOrdinalRegex})|{NumberOrdinalRegex}|{RoundNumberOrdinalRegex})";
+      public const string CompoundFiveWordRelativeOrdinalRegex = @"(?<relativeOrdinal>((अंतिम वाले|आखिरी वाले)\s+(से पहले वाला|का पिछला(\s+वाला)?))|((आखिरी|अंतिम)\s+(से पहले का|के बगल वाला))|((पिछला|पिछले|पिछली)\s+पर केवल एक))";
+      public const string CompoundThreeWordRelativeOrdinalRegex = @"(?<relativeOrdinal>((आखिरी से|आखिरी का|आखिरी के|आखिरी की|अंतिम से|अंतिम का|अंतिम के|अंतिम की)\s+(पहला|पहले|पहली|दूसरा|दूसरे|दूसरी)))";
+      public const string CompoundTwoWordRelativeOrdinalRegex = @"(?<relativeOrdinal>((पिछला|पिछले|पिछली|अगला|अगले|अगली|अंतिम|आखिरी|अभी)\s+(वाला|वाले|वाली))|((अगला|अगले|अगली)\s+चीज)|((आखिरी|अंतिम)\s+(का|के|की)))";
+      public const string SimpleRelativeOrdinalRegex = @"(?<relativeOrdinal>अंतिम|आखिरी|अगला|अगले|अगली|पिछला|पिछले|पिछली|वर्तमान|लास्ट|प्रीवियस|नेक्स्ट|करेंट|last|previous|next|current)";
+      public static readonly string RelativeOrdinalRegex = $@"({CompoundFiveWordRelativeOrdinalRegex}|{CompoundThreeWordRelativeOrdinalRegex}|{CompoundTwoWordRelativeOrdinalRegex}|{SimpleRelativeOrdinalRegex})";
+      public const string RoundNumberHinglishOrdinalRegex = @"(?:हंड्रेडथ|थाउजेंडथ|मिलियनथ|बिलियनथ|ट्रिलियनथ)";
+      public const string OnetoNineHinglishOrdinalRegex = @"(?:फ़र्स्ट|सेकेंड|थर्ड|फोर्थ|फिफ्थ|सिक्स्थ|सेवंथ|एइथ|नाइन्थ)";
+      public const string ElevenToNineteenHinglishOrdinalRegex = @"(?:इलेवेन्थ|ट्वेल्फ्थ|थरटीन्थ|फोर्टीन्थ|फिफ्टीन्थ|सिक्सटीन्थ|सेवेंटीन्थ|एइटीन्थ|नाइटीन्थ)";
+      public const string TensHinglishOrdinalRegex = @"(?:टेन्थ|ट्वेन्टीएथ|थरटिएथ|फ़ोर्टीएथ|फ़िफ़्टीएथ|सिक्सटिएथ|सेवेंटिएथ|एइटिएथ|नाइन्टीएथ)";
+      public const string TensHinglishNumberRegex = @"(?:ट्वेन्टी|थर्टी|फोर्टी|फिफ्टी|फ़िफ़्टी|सिक्सटी|सेवेंटी|एइट्टी|नाइनटी)";
+      public static readonly string HinglishOrdinalRegex = $@"(({TensHinglishNumberRegex}\s+{OnetoNineHinglishOrdinalRegex})|{OnetoNineHinglishOrdinalRegex}|{ElevenToNineteenHinglishOrdinalRegex}|{TensHinglishOrdinalRegex})";
+      public static readonly string CompoundHindiOrdinalRegex = $@"((({HinglishOrdinalRegex}\s+)?({RoundNumberHinglishOrdinalRegex}\s+)?(अंड\s+)?)+({HinglishOrdinalRegex}|{RoundNumberHinglishOrdinalRegex})|{HinglishOrdinalRegex}|{RoundNumberHinglishOrdinalRegex})";
+      public const string RoundNumberEnglishOrdinalRegex = @"(?:hundredth|thousandth|millionth|billionth|trillionth)";
+      public const string OnetoNineEnglishOrdinalRegex = @"(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth)";
+      public const string ElevenToNineteenEnglishOrdinalRegex = @"(?:eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth)";
+      public const string TensEnglishOrdinalRegex = @"(?:tenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
+      public static readonly string EnglishOrdinalRegex = $@"(({TensNumberEnglishIntegerRegex}\s+{OnetoNineEnglishOrdinalRegex})|{OnetoNineEnglishOrdinalRegex}|{ElevenToNineteenEnglishOrdinalRegex}|{TensEnglishOrdinalRegex})";
+      public static readonly string CompoundEnglishOrdinalRegex = $@"((({EnglishIntegerRegex}\s+)?({RoundNumberEnglishIntegerRegex}\s+)?(and\s+)?)+({EnglishOrdinalRegex}|{RoundNumberEnglishOrdinalRegex})|({EnglishIntegerRegex}\s+{RoundNumberEnglishOrdinalRegex})|{EnglishOrdinalRegex})";
       public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
-      public static readonly string SuffixBasicOrdinalRegex = $@"(?:(((({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})";
+      public static readonly string SuffixBasicOrdinalRegex = $@"(?:((({AllNumericalIntRegex}|{TensNumberIntegerRegex})(\s+({RoundNumberIntegerRegex})(\s+))+)(({NumberOrdinalRegex}))))";
       public static readonly string SuffixRoundNumberOrdinalRegex = $@"(?:({AllIntRegex}\s+){RoundNumberOrdinalRegex})";
-      public static readonly string AllOrdinalRegex = $@"(?:{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
-      public const string OrdinalSuffixRegex = @"(?<=\b)(?:(\d*(1st|2nd|3rd|[4-90]th))|(1[1-2]th))(?=\b)";
-      public const string OrdinalNumericRegex = @"(?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*\s*th)(?=\b)";
-      public static readonly string OrdinalRoundNumberRegex = $@"(?<!an?\s+){RoundNumberOrdinalRegex}";
-      public static readonly string OrdinalEnglishRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
+      public static readonly string AllOrdinalRegex = $@"(?:{CompoundNumberOrdinals}|{SuffixRoundNumberOrdinalRegex})";
+      public const string OrdinalSuffixRegex = @"(?<=\b)(?:(\d*(1ला|[2-3]रा|4था|[0-9]वां))|([०-९]*(१ला|[२-३]रा|४था|[०-९]वां)))";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
-      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(and\s+)?)?({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}\s+(and\s+)?)?(an?|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter))|(half))(?=\b)";
-      public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(over|in|out\s+of)\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
-      public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
-      public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
-      public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+point){AllPointRegex}";
+      public static readonly string FractionNounRegex = $@"(?<=\b)(((({AllNumericalIntRegex})(\s?)((({RoundNumberIntegerRegex})|({RoundNumberOrdinalRegex}))\s?)?)((और\s)?))+((आधा|आधे|चौथाई|तिहाई)))(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}\s+(और\s+)?)?(एक)(\s+|\s*-\s*)(?!\bफ़र्स्ट)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|(आधा|आधे|चौथाई|तिहाई)))|(आधा|आधे))";
+      public static readonly string FractionPrepositionRegex = $@"(?<numerator>(({AllIntRegex}\s+)|((?<![\.,])\d+)(\s|\s+)|({RoundNumberOrdinalRegex})))(((बटा|बटे)\s*)|((का|की|के|कें|में)\s*))(?<denominator>(({AllOrdinalRegex})|({CompoundNumberOrdinals})|(\d+)|({AllIntRegex})|({AllNumericalIntRegex})))";
+      public static readonly string FractionPrepositionInverseRegex = $@"(?<denominator>(({AllIntRegex}\s+)|((?<![\.,])\d+)(\s|\s+)|({RoundNumberOrdinalRegex})))((में(\s+से)?)\s*)(?<numerator>(({AllOrdinalRegex})|({CompoundNumberOrdinals})|(\d+)|({AllIntRegex})|({AllNumericalIntRegex})))";
+      public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+का\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
+      public static readonly string NegativeCompoundNumberOrdinals = $@"({NegativeNumberTermsRegex}(?<numerator>({AllNumericalIntRegex}\s+)?({RoundNumberIntegerRegex}\s+)?(और\s+)?)+((का|के|की)(\s+))?(?<denominator>({NumberOrdinalRegex}|{RoundNumberOrdinalRegex})))";
+      public static readonly string NegativeFractionRegex = $@"({NegativeNumberTermsRegex}{FractionNounWithArticleRegex}|{NegativeNumberTermsRegex}{FractionPrepositionRegex})";
+      public static readonly string FractionRegex = $@"((?<=\b)?(({AllIntRegex}\s+)(और\s+)?({FractionPrepositionRegex}))|(?<=\b)?({FractionPrepositionRegex}))";
+      public static readonly string AllPointRegex = $@"((\s+{AllNumericalIntRegex})+|(\s+{SeparaIntRegex}))";
+      public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+(पॉइंट|दशमलव)){AllPointRegex}";
       public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e([+-]*[1-9]\d*)(?=\b)";
       public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
       public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
       public static readonly Func<string, string> DoubleWithoutIntegralRegex = (placeholder) => $@"(?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
-      public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}(?=\b)";
-      public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
-      public const string ConnectorRegex = @"(?<spacer>and)";
+      public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}";
+      public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex})";
+      public const string ConnectorRegex = @"(?<spacer>और)";
       public static readonly string NumberWithSuffixPercentage = $@"(?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(per\s*cents?|percentage|cents?)\b)";
       public static readonly string FractionNumberWithSuffixPercentage = $@"(({BaseNumbers.FractionNumberReplaceToken})\s+of)";
       public static readonly string NumberWithPrefixPercentage = $@"(per\s*cents?\s+of)(\s*)({BaseNumbers.NumberReplaceToken})";
@@ -98,23 +154,148 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(and|but|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})";
       public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|but|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})";
       public static readonly string TwoNumberRangeRegex4 = $@"(from\s+)?(?<number1>({NumberSplitMark}(?!\bfrom\b).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)";
-      public const string AmbiguousFractionConnectorsRegex = @"(\bin\b)";
+      public const string AmbiguousFractionConnectorsRegex = @"(\bमें\b)";
       public const char DecimalSeparatorChar = '.';
-      public const string FractionMarkerToken = @"over";
+      public const string FractionMarkerToken = @"भाग";
       public const char NonDecimalSeparatorChar = ',';
-      public const string HalfADozenText = @"six";
-      public const string WordSeparatorToken = @"and";
-      public static readonly string[] WrittenDecimalSeparatorTexts = { @"point" };
-      public static readonly string[] WrittenGroupSeparatorTexts = { @"punto" };
-      public static readonly string[] WrittenIntegerSeparatorTexts = { @"and" };
-      public static readonly string[] WrittenFractionSeparatorTexts = { @"and" };
-      public const string HalfADozenRegex = @"half\s+a\s+dozen";
-      public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundred|thousand|[mb]illion|trillion|dozen(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
+      public const string HalfADozenText = @"छह";
+      public const string WordSeparatorToken = @"और";
+      public static readonly string[] WrittenDecimalSeparatorTexts = { @"पॉइंट", @"दशमलव" };
+      public static readonly string[] WrittenGroupSeparatorTexts = { @"कोमा" };
+      public static readonly string[] WrittenIntegerSeparatorTexts = { @"और" };
+      public static readonly string[] WrittenFractionSeparatorTexts = { @"और" };
+      public const string HalfADozenRegex = @"(आधा\s+)दर्जन";
+      public static readonly string DigitalNumberRegex = $@"((?<=\b)(सौ|हजार|लाख|करोड़|अरब|खरब|दर्जन|हंड्रेड|थाउजेंड|मिलियन|बिलियन|ट्रिलियन|hundred|thousand|million|billion|trillion))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
       public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
         {
-            { @"a", 1 },
-            { @"zero", 0 },
-            { @"an", 1 },
+            { @"शून्य", 0 },
+            { @"एक", 1 },
+            { @"दो", 2 },
+            { @"तीन", 3 },
+            { @"चार", 4 },
+            { @"पाँच", 5 },
+            { @"पांच", 5 },
+            { @"छह", 6 },
+            { @"सात", 7 },
+            { @"आठ", 8 },
+            { @"नौ", 9 },
+            { @"दस", 10 },
+            { @"ग्यारह", 11 },
+            { @"बारह", 12 },
+            { @"दर्जन", 12 },
+            { @"दर्जनों", 12 },
+            { @"डज़न", 12 },
+            { @"तेरह", 13 },
+            { @"चौदह", 14 },
+            { @"पंद्रह", 15 },
+            { @"सोलह", 16 },
+            { @"सत्रह", 17 },
+            { @"अठारह", 18 },
+            { @"उन्नीस", 19 },
+            { @"बीस", 20 },
+            { @"इक्कीस", 21 },
+            { @"बाईस", 22 },
+            { @"बाइस", 22 },
+            { @"तेईस", 23 },
+            { @"तेइस", 23 },
+            { @"चौबीस", 24 },
+            { @"पच्चीस", 25 },
+            { @"छब्बीस", 26 },
+            { @"सत्ताईस", 27 },
+            { @"सत्ताइस", 27 },
+            { @"अट्ठाईस", 28 },
+            { @"अट्ठाइस", 28 },
+            { @"उनतीस", 29 },
+            { @"तीस", 30 },
+            { @"इकतीस", 31 },
+            { @"इकत्तीस", 31 },
+            { @"बत्तीस", 32 },
+            { @"तैंतीस", 33 },
+            { @"चौंतीस", 34 },
+            { @"पैंतीस", 35 },
+            { @"पैंतीसवां", 35 },
+            { @"छ्त्तीस", 36 },
+            { @"सैंतीस", 37 },
+            { @"अड़तीस", 38 },
+            { @"उनतालीस", 39 },
+            { @"चालीस", 40 },
+            { @"इकतालीस", 41 },
+            { @"बयालीस", 42 },
+            { @"तैंतालीस", 43 },
+            { @"चौंतालीस", 44 },
+            { @"पैंतालीस", 45 },
+            { @"छियालीस", 46 },
+            { @"सैंतालीस", 47 },
+            { @"अड़तालीस", 48 },
+            { @"उनचास", 49 },
+            { @"पचास", 50 },
+            { @"इक्याबन", 51 },
+            { @"बावन", 52 },
+            { @"तिरेपन", 53 },
+            { @"चौबन", 54 },
+            { @"पचपन", 55 },
+            { @"छप्पन", 56 },
+            { @"सत्तावन", 57 },
+            { @"अट्ठावन", 58 },
+            { @"उनसठ", 59 },
+            { @"साठ", 60 },
+            { @"एकसठ", 61 },
+            { @"इकसठ", 61 },
+            { @"बासठ", 62 },
+            { @"तिरसठ", 63 },
+            { @"चौंसठ", 64 },
+            { @"पैंसठ", 65 },
+            { @"छियासठ", 66 },
+            { @"सड़सठ", 67 },
+            { @"अड़सठ", 68 },
+            { @"उनहत्तर", 69 },
+            { @"सत्तर", 70 },
+            { @"इकहत्तर", 71 },
+            { @"बहत्तर", 72 },
+            { @"तिहत्तर", 73 },
+            { @"चौहत्तर", 74 },
+            { @"पचहत्तर", 75 },
+            { @"छिहत्तर", 76 },
+            { @"सतहत्तर", 77 },
+            { @"अठहत्तर", 78 },
+            { @"उनासी", 79 },
+            { @"अस्सी", 80 },
+            { @"इक्यासी", 81 },
+            { @"बयासी", 82 },
+            { @"तिरासी", 83 },
+            { @"चौरासी", 84 },
+            { @"पचासी", 85 },
+            { @"छियासी", 86 },
+            { @"सतासी", 87 },
+            { @"अठासी", 88 },
+            { @"नवासी", 89 },
+            { @"नब्बे", 90 },
+            { @"इक्यानबे", 91 },
+            { @"बानवे", 92 },
+            { @"तिरानवे", 93 },
+            { @"चौरानवे", 94 },
+            { @"पचानवे", 95 },
+            { @"पंचानबे", 95 },
+            { @"छियानवे", 96 },
+            { @"सत्तानवे", 97 },
+            { @"अट्ठानवे", 98 },
+            { @"निन्यानवे", 99 },
+            { @"सौ", 100 },
+            { @"हजार", 1000 },
+            { @"लाख", 100000 },
+            { @"करोड़", 10000000 },
+            { @"अरब", 1000000000 },
+            { @"खरब", 100000000000 },
+            { @"हंड्रेड", 100 },
+            { @"थाउजेंड", 1000 },
+            { @"मिलियन", 1000000 },
+            { @"बिलियन", 1000000000 },
+            { @"ट्रिलियन", 1000000000000 },
+            { @"hundred", 100 },
+            { @"thousand", 1000 },
+            { @"million", 1000000 },
+            { @"billion", 1000000000 },
+            { @"trillion", 1000000000000 },
             { @"one", 1 },
             { @"two", 2 },
             { @"three", 3 },
@@ -127,8 +308,6 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"ten", 10 },
             { @"eleven", 11 },
             { @"twelve", 12 },
-            { @"dozen", 12 },
-            { @"dozens", 12 },
             { @"thirteen", 13 },
             { @"fourteen", 14 },
             { @"fifteen", 15 },
@@ -144,27 +323,315 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"seventy", 70 },
             { @"eighty", 80 },
             { @"ninety", 90 },
-            { @"hundred", 100 },
-            { @"thousand", 1000 },
-            { @"million", 1000000 },
-            { @"billion", 1000000000 },
-            { @"trillion", 1000000000000 }
+            { @"वन", 1 },
+            { @"टू", 2 },
+            { @"थ्री", 3 },
+            { @"फोर", 4 },
+            { @"फ़ाइव", 5 },
+            { @"सिक्स", 6 },
+            { @"सेवन", 7 },
+            { @"एइट", 8 },
+            { @"नैन", 9 },
+            { @"टेन", 10 },
+            { @"इलेवन", 11 },
+            { @"ट्वेल्व", 12 },
+            { @"थर्टीन", 13 },
+            { @"फ़ोर्टीन", 14 },
+            { @"फ़िफ़्टीन", 15 },
+            { @"सिक्सटीन", 16 },
+            { @"सेवेनटीन", 17 },
+            { @"एइटीन", 18 },
+            { @"नईनटीन", 19 },
+            { @"ट्वेन्टी", 20 },
+            { @"थर्टी", 30 },
+            { @"फ़ोर्टी", 40 },
+            { @"फ़िफ़्टी", 50 },
+            { @"सिक्सटी", 60 },
+            { @"सेवेंटी", 70 },
+            { @"एइट्टी", 80 },
+            { @"नैनटी", 90 }
         };
       public static readonly Dictionary<string, long> OrdinalNumberMap = new Dictionary<string, long>
         {
+            { @"प्रथम", 1 },
+            { @"पहला", 1 },
+            { @"पहली", 1 },
+            { @"दूसरा", 2 },
+            { @"दूसरे", 2 },
+            { @"दूसरी", 2 },
+            { @"आधा", 2 },
+            { @"आधे", 2 },
+            { @"तीसरा", 3 },
+            { @"तीसरी", 3 },
+            { @"तिहाई", 3 },
+            { @"चौथा", 4 },
+            { @"चौथी", 4 },
+            { @"चौथाई", 4 },
+            { @"पांचवां", 5 },
+            { @"पांचवाँ", 5 },
+            { @"पांचवा", 5 },
+            { @"पांचवीं", 5 },
+            { @"पांचवें", 5 },
+            { @"पाँचवां", 5 },
+            { @"पाँचवाँ", 5 },
+            { @"पाँचवा", 5 },
+            { @"पाँचवीं", 5 },
+            { @"पाँचवें", 5 },
+            { @"छठवा", 6 },
+            { @"साँतवा", 7 },
+            { @"आँठवा", 8 },
+            { @"आठवां", 8 },
+            { @"नौवां", 9 },
+            { @"दसवां", 10 },
+            { @"ग्यारहवां", 11 },
+            { @"बारहवां", 12 },
+            { @"तेरहवां", 13 },
+            { @"चौदहवां", 14 },
+            { @"पंद्रहवां", 15 },
+            { @"सोलहवां", 16 },
+            { @"सत्रहवां", 17 },
+            { @"अठारहवां", 18 },
+            { @"उन्नीसवां", 19 },
+            { @"बीसवां", 20 },
+            { @"इक्कीसवां", 21 },
+            { @"बाईसवां", 22 },
+            { @"तेईसवां", 23 },
+            { @"चौबीसवां", 24 },
+            { @"पच्चीसवां", 25 },
+            { @"छब्बीसवां", 26 },
+            { @"सत्ताईसवां", 27 },
+            { @"अट्ठाईसवां", 28 },
+            { @"उनतीसवां", 29 },
+            { @"तीसवां", 30 },
+            { @"इकतीसवां", 31 },
+            { @"इकत्तीसवां", 31 },
+            { @"बत्तीसवां", 32 },
+            { @"तैंतीसवां", 33 },
+            { @"चौंतीसवां", 34 },
+            { @"पैंतीसवां", 35 },
+            { @"छ्त्तीसवां", 36 },
+            { @"सैंतीसवां", 37 },
+            { @"अड़तीसवां", 38 },
+            { @"उनतालीसवां", 39 },
+            { @"चालीसवां", 40 },
+            { @"इकतालीसवां", 41 },
+            { @"बयालीसवां", 42 },
+            { @"तैंतालीसवां", 43 },
+            { @"चौंतालीसवां", 44 },
+            { @"पैंतालीसवां", 45 },
+            { @"छियालीसवां", 46 },
+            { @"सैंतालीसवां", 47 },
+            { @"अड़तालीसवां", 48 },
+            { @"उनचासवां", 49 },
+            { @"पचासवां", 50 },
+            { @"इक्याबनवां", 51 },
+            { @"बावनवां", 52 },
+            { @"तिरेपनवां", 53 },
+            { @"चौबनवां", 54 },
+            { @"पचपनवां", 55 },
+            { @"छप्पनवां", 56 },
+            { @"सत्तावनवां", 57 },
+            { @"अट्ठावनवां", 58 },
+            { @"उनसठवां", 59 },
+            { @"साठवां", 60 },
+            { @"इकसठवां", 61 },
+            { @"बासठवां", 62 },
+            { @"तिरसठवां", 63 },
+            { @"चौंसठवां", 64 },
+            { @"पैंसठवां", 65 },
+            { @"छियासठवां", 66 },
+            { @"सड़सठवां", 67 },
+            { @"अड़सठवां", 68 },
+            { @"उनहत्तरवां", 69 },
+            { @"सत्तरवां", 70 },
+            { @"इकहत्तरवां", 71 },
+            { @"बहत्तरवां", 72 },
+            { @"तिहत्तरवां", 73 },
+            { @"चौहत्तरवां", 74 },
+            { @"पचहत्तरवां", 75 },
+            { @"छिहत्तरवां", 76 },
+            { @"सतहत्तरवां", 77 },
+            { @"अठहत्तरवां", 78 },
+            { @"उनासीवां", 79 },
+            { @"अस्सीवां", 80 },
+            { @"इक्यासीवां", 81 },
+            { @"बयासीवां", 82 },
+            { @"तिरासीवां", 83 },
+            { @"चौरासीवां", 84 },
+            { @"पचासीवां", 85 },
+            { @"छियासीवां", 86 },
+            { @"सतासीवां", 87 },
+            { @"अठासीवां", 88 },
+            { @"नवासीवां", 89 },
+            { @"नब्बेवां", 90 },
+            { @"इक्यानबेवां", 91 },
+            { @"बानवेवां", 92 },
+            { @"तिरानवेवां", 93 },
+            { @"चौरानवेवां", 94 },
+            { @"पचानवेवां", 95 },
+            { @"पंचानबेवां", 95 },
+            { @"छियानवेवां", 96 },
+            { @"सत्तानवेवां", 97 },
+            { @"अट्ठानवेवां", 98 },
+            { @"निन्यानवेवां", 99 },
+            { @"सौवां", 100 },
+            { @"हजारवां", 1000 },
+            { @"लाखवां", 100000 },
+            { @"एक लाखवां", 100000 },
+            { @"दस लाखवां", 1000000 },
+            { @"करोड़वां", 10000000 },
+            { @"एक करोड़वां", 10000000 },
+            { @"दस करोड़वां", 100000000 },
+            { @"अरबवां", 1000000000 },
+            { @"एक अरबवां", 1000000000 },
+            { @"दस अरबवां", 10000000000 },
+            { @"खरबवां", 100000000000 },
+            { @"दस खरबवां", 1000000000000 },
+            { @"नौवीं", 9 },
+            { @"दसवीं", 10 },
+            { @"ग्यारहवीं", 11 },
+            { @"बारहवीं", 12 },
+            { @"तेरहवीं", 13 },
+            { @"चौदहवीं", 14 },
+            { @"पंद्रहवीं", 15 },
+            { @"सोलहवीं", 16 },
+            { @"सत्रहवीं", 17 },
+            { @"अठारहवीं", 18 },
+            { @"उन्नीसवीं", 19 },
+            { @"बीसवीं", 20 },
+            { @"इक्कीसवीं", 21 },
+            { @"बाईसवीं", 22 },
+            { @"तेईसवीं", 23 },
+            { @"चौबीसवीं", 24 },
+            { @"पच्चीसवीं", 25 },
+            { @"छब्बीसवीं", 26 },
+            { @"सत्ताईसवीं", 27 },
+            { @"अट्ठाईसवीं", 28 },
+            { @"उनतीसवीं", 29 },
+            { @"तीसवीं", 30 },
+            { @"इकतीसवीं", 31 },
+            { @"बत्तीसवीं", 32 },
+            { @"तैंतीसवीं", 33 },
+            { @"चौंतीसवीं", 34 },
+            { @"पैंतीसवीं", 35 },
+            { @"छ्त्तीसवीं", 36 },
+            { @"सैंतीसवीं", 37 },
+            { @"अड़तीसवीं", 38 },
+            { @"उनतालीसवीं", 39 },
+            { @"चालीसवीं", 40 },
+            { @"इकतालीसवीं", 41 },
+            { @"बयालीसवीं", 42 },
+            { @"तैंतालीसवीं", 43 },
+            { @"चौंतालीसवीं", 44 },
+            { @"पैंतालीसवीं", 45 },
+            { @"छियालीसवीं", 46 },
+            { @"सैंतालीसवीं", 47 },
+            { @"अड़तालीसवीं", 48 },
+            { @"उनचासवीं", 49 },
+            { @"पचासवीं", 50 },
+            { @"इक्याबनवीं", 51 },
+            { @"बावनवीं", 52 },
+            { @"तिरेपनवीं", 53 },
+            { @"चौबनवीं", 54 },
+            { @"पचपनवीं", 55 },
+            { @"छप्पनवीं", 56 },
+            { @"सत्तावनवीं", 57 },
+            { @"अट्ठावनवीं", 58 },
+            { @"उनसठवीं", 59 },
+            { @"साठवीं", 60 },
+            { @"इकसठवीं", 61 },
+            { @"बासठवीं", 62 },
+            { @"तिरसठवीं", 63 },
+            { @"चौंसठवीं", 64 },
+            { @"पैंसठवीं", 65 },
+            { @"छियासठवीं", 66 },
+            { @"सड़सठवीं", 67 },
+            { @"अड़सठवीं", 68 },
+            { @"उनहत्तरवीं", 69 },
+            { @"सत्तरवीं", 70 },
+            { @"इकहत्तरवीं", 71 },
+            { @"बहत्तरवीं", 72 },
+            { @"तिहत्तरवीं", 73 },
+            { @"चौहत्तरवीं", 74 },
+            { @"पचहत्तरवीं", 75 },
+            { @"छिहत्तरवीं", 76 },
+            { @"सतहत्तरवीं", 77 },
+            { @"अठहत्तरवीं", 78 },
+            { @"उनासीवीं", 79 },
+            { @"अस्सीवीं", 80 },
+            { @"इक्यासीवीं", 81 },
+            { @"बयासीवीं", 82 },
+            { @"तिरासीवीं", 83 },
+            { @"चौरासीवीं", 84 },
+            { @"पचासीवीं", 85 },
+            { @"छियासीवीं", 86 },
+            { @"सतासीवीं", 87 },
+            { @"अठासीवीं", 88 },
+            { @"नवासीवीं", 89 },
+            { @"नब्बेवीं", 90 },
+            { @"इक्यानबेवीं", 91 },
+            { @"बानवेवीं", 92 },
+            { @"तिरानवेवीं", 93 },
+            { @"चौरानवेवीं", 94 },
+            { @"पचानवेवीं", 95 },
+            { @"छियानवेवीं", 96 },
+            { @"सत्तानवेवीं", 97 },
+            { @"अट्ठानवेवीं", 98 },
+            { @"निन्यानवेवीं", 99 },
+            { @"सौवीं", 100 },
+            { @"हजारवीं", 1000 },
+            { @"लाखवीं", 100000 },
+            { @"एक लाखवीं", 100000 },
+            { @"दस लाखवीं", 1000000 },
+            { @"करोड़वीं", 10000000 },
+            { @"एक करोड़वीं", 10000000 },
+            { @"दस करोड़वीं", 100000000 },
+            { @"अरबवीं", 1000000000 },
+            { @"एक अरबवीं", 1000000000 },
+            { @"दस अरबवीं", 10000000000 },
+            { @"खरबवीं", 100000000000 },
+            { @"एक खरबवीं", 100000000000 },
+            { @"फ़र्स्ट", 1 },
+            { @"सेकेंड", 2 },
+            { @"थर्ड", 3 },
+            { @"फोर्थ", 4 },
+            { @"फिफ्थ", 5 },
+            { @"सिक्स्थ", 6 },
+            { @"सेवंथ", 7 },
+            { @"एइथ", 8 },
+            { @"नाइन्थ", 9 },
+            { @"इलेवेन्थ", 11 },
+            { @"ट्वेल्फ्थ", 12 },
+            { @"थरटीन्थ", 13 },
+            { @"फोर्टीन्थ", 14 },
+            { @"फिफ्टीन्थ", 15 },
+            { @"सिक्सटीन्थ", 16 },
+            { @"सेवेंटीन्थ", 17 },
+            { @"एइटीन्थ", 18 },
+            { @"नाइटीन्थ", 19 },
+            { @"टेन्थ", 10 },
+            { @"ट्वेन्टीएथ", 20 },
+            { @"थरटिएथ", 30 },
+            { @"फ़ोर्टीएथ", 40 },
+            { @"फ़िफ़्टीएथ", 50 },
+            { @"सिक्सटिएथ", 60 },
+            { @"सेवेंटिएथ", 70 },
+            { @"एइटिएथ", 80 },
+            { @"नैनटिएथ", 90 },
+            { @"हंड्रेडथ", 100 },
+            { @"थाउजेंडथ", 1000 },
+            { @"मिलियनथ", 1000000 },
+            { @"बिलियनथ", 1000000000 },
+            { @"ट्रिलियनथ", 1000000000000 },
             { @"first", 1 },
             { @"second", 2 },
-            { @"secondary", 2 },
-            { @"half", 2 },
             { @"third", 3 },
             { @"fourth", 4 },
-            { @"quarter", 4 },
             { @"fifth", 5 },
             { @"sixth", 6 },
             { @"seventh", 7 },
             { @"eighth", 8 },
             { @"ninth", 9 },
-            { @"tenth", 10 },
             { @"eleventh", 11 },
             { @"twelfth", 12 },
             { @"thirteenth", 13 },
@@ -174,6 +641,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"seventeenth", 17 },
             { @"eighteenth", 18 },
             { @"nineteenth", 19 },
+            { @"tenth", 10 },
             { @"twentieth", 20 },
             { @"thirtieth", 30 },
             { @"fortieth", 40 },
@@ -181,70 +649,68 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"sixtieth", 60 },
             { @"seventieth", 70 },
             { @"eightieth", 80 },
-            { @"ninetieth", 90 },
-            { @"hundredth", 100 },
-            { @"thousandth", 1000 },
-            { @"millionth", 1000000 },
-            { @"billionth", 1000000000 },
-            { @"trillionth", 1000000000000 },
-            { @"firsts", 1 },
-            { @"halves", 2 },
-            { @"thirds", 3 },
-            { @"fourths", 4 },
-            { @"quarters", 4 },
-            { @"fifths", 5 },
-            { @"sixths", 6 },
-            { @"sevenths", 7 },
-            { @"eighths", 8 },
-            { @"ninths", 9 },
-            { @"tenths", 10 },
-            { @"elevenths", 11 },
-            { @"twelfths", 12 },
-            { @"thirteenths", 13 },
-            { @"fourteenths", 14 },
-            { @"fifteenths", 15 },
-            { @"sixteenths", 16 },
-            { @"seventeenths", 17 },
-            { @"eighteenths", 18 },
-            { @"nineteenths", 19 },
-            { @"twentieths", 20 },
-            { @"thirtieths", 30 },
-            { @"fortieths", 40 },
-            { @"fiftieths", 50 },
-            { @"sixtieths", 60 },
-            { @"seventieths", 70 },
-            { @"eightieths", 80 },
-            { @"ninetieths", 90 },
-            { @"hundredths", 100 },
-            { @"thousandths", 1000 },
-            { @"millionths", 1000000 },
-            { @"billionths", 1000000000 },
-            { @"trillionths", 1000000000000 }
+            { @"ninetieth", 90 }
         };
       public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
         {
+            { @"सौवां", 100 },
+            { @"सौ", 100 },
+            { @"सैकड़ा", 100 },
+            { @"हजार", 1000 },
+            { @"लाख", 100000 },
+            { @"दस लाख", 1000000 },
+            { @"करोड़", 10000000 },
+            { @"अरब", 1000000000 },
+            { @"खरब", 100000000000 },
+            { @"दस खरब", 1000000000000 },
+            { @"हजारवां", 1000 },
+            { @"दस लाखवां", 1000000 },
+            { @"अरबवां", 1000000000 },
+            { @"खरबवां", 100000000000 },
+            { @"दस खरबवां", 1000000000000 },
+            { @"हंड्रेड", 100 },
+            { @"थाउजेंड", 1000 },
+            { @"मिलियन", 1000000 },
+            { @"बिलियन", 1000000000 },
+            { @"ट्रिलियन", 1000000000000 },
             { @"hundred", 100 },
             { @"thousand", 1000 },
             { @"million", 1000000 },
             { @"billion", 1000000000 },
             { @"trillion", 1000000000000 },
-            { @"hundredth", 100 },
-            { @"thousandth", 1000 },
-            { @"millionth", 1000000 },
-            { @"billionth", 1000000000 },
-            { @"trillionth", 1000000000000 },
-            { @"hundredths", 100 },
-            { @"thousandths", 1000 },
-            { @"millionths", 1000000 },
-            { @"billionths", 1000000000 },
-            { @"trillionths", 1000000000000 },
-            { @"dozen", 12 },
-            { @"dozens", 12 },
-            { @"k", 1000 },
-            { @"m", 1000000 },
-            { @"g", 1000000000 },
-            { @"b", 1000000000 },
-            { @"t", 1000000000000 }
+            { @"दर्जन", 12 },
+            { @"दर्जनों", 12 },
+            { @"डज़न", 12 },
+            { @"एक अरब", 1000000000 },
+            { @"सौवीं", 100 },
+            { @"हज़ारवीं", 1000 },
+            { @"दस लाखवीं", 1000000 },
+            { @"अरबवीं", 1000000000 },
+            { @"खरबवीं", 100000000000 },
+            { @"दस खरबवीं", 1000000000000 },
+            { @"k", 1000 }
+        };
+      public static readonly Dictionary<string, double> DecimalUnitsMap = new Dictionary<string, double>
+        {
+            { @"डेढ", 1.5 },
+            { @"डेढ़", 1.5 },
+            { @"डेढ़", 1.5 },
+            { @"सवा", 1.25 },
+            { @"सावा", 1.25 },
+            { @"ढाई", 2.5 }
+        };
+      public static readonly Dictionary<char, long> ZeroToNineMap = new Dictionary<char, long>
+        {
+            { '०', 0 },
+            { '१', 1 },
+            { '२', 2 },
+            { '३', 3 },
+            { '४', 4 },
+            { '५', 5 },
+            { '६', 6 },
+            { '७', 7 },
+            { '८', 8 },
+            { '९', 9 }
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
@@ -252,37 +718,149 @@ namespace Microsoft.Recognizers.Definitions.Hindi
         };
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {
+            { @"अंतिम", @"0" },
+            { @"आखिरी", @"0" },
+            { @"अगला", @"1" },
+            { @"अगले", @"1" },
+            { @"अगली", @"1" },
+            { @"पिछला", @"-1" },
+            { @"पिछले", @"-1" },
+            { @"पिछली", @"-1" },
+            { @"वर्तमान", @"0" },
+            { @"पिछला वाला", @"-1" },
+            { @"पिछले वाले", @"-1" },
+            { @"पिछली वाली", @"-1" },
+            { @"अगला वाला", @"1" },
+            { @"अगले वाले", @"1" },
+            { @"अगली वाली", @"1" },
+            { @"अंतिम वाला", @"0" },
+            { @"अंतिम वाले", @"0" },
+            { @"अंतिम वाली", @"0" },
+            { @"आखिरी वाला", @"0" },
+            { @"आखिरी वाले", @"0" },
+            { @"आखिरी वाली", @"0" },
+            { @"अभी वाला", @"0" },
+            { @"आखिरी से पहला", @"-1" },
+            { @"आखिरी से पहले", @"-1" },
+            { @"आखिरी से पहली", @"-1" },
+            { @"आखिरी से दूसरा", @"-2" },
+            { @"आखिरी से दूसरे", @"-2" },
+            { @"आखिरी से दूसरी", @"-2" },
+            { @"आखिरी का पहला", @"0" },
+            { @"आखिरी के पहले", @"0" },
+            { @"आखिरी की पहली", @"0" },
+            { @"आखिरी का दूसरा", @"-1" },
+            { @"आखिरी के दूसरे", @"-1" },
+            { @"आखिरी की दूसरी", @"-1" },
+            { @"अंतिम से दूसरा", @"-1" },
+            { @"अंतिम से दूसरे", @"-1" },
+            { @"अंतिम से दूसरी", @"-1" },
+            { @"अंतिम का पहला", @"0" },
+            { @"अंतिम के पहले", @"0" },
+            { @"अंतिम की पहली", @"0" },
+            { @"अंतिम का दूसरा", @"-1" },
+            { @"अंतिम के दूसरे", @"-1" },
+            { @"अंतिम की दूसरी", @"-1" },
+            { @"आखिरी का", @"0" },
+            { @"आखिरी के", @"0" },
+            { @"आखिरी की", @"0" },
+            { @"अंतिम का", @"0" },
+            { @"अंतिम के", @"0" },
+            { @"अंतिम की", @"0" },
+            { @"आखिरी से पहले का", @"-1" },
+            { @"अंतिम से पहले का", @"-1" },
+            { @"आखिरी के बगल वाला", @"-1" },
+            { @"अंतिम के बगल वाला", @"-1" },
+            { @"आखिरी वाले का पिछला वाला", @"-1" },
+            { @"अंतिम वाले का पिछला वाला", @"-1" },
+            { @"आखिरी वाले का पिछला", @"-1" },
+            { @"अंतिम वाले का पिछला", @"-1" },
+            { @"आखिरी वाले से पहले वाला", @"-1" },
+            { @"अंतिम वाले से पहले वाला", @"-1" },
+            { @"अगली चीज", @"1" },
+            { @"पिछला पर केवल एक", @"-1" },
+            { @"लास्ट", @"0" },
+            { @"प्रीवियस", @"-1" },
+            { @"नेक्स्ट", @"1" },
+            { @"करेंट", @"0" },
             { @"last", @"0" },
-            { @"next one", @"1" },
-            { @"current", @"0" },
-            { @"current one", @"0" },
-            { @"previous one", @"-1" },
-            { @"the second to last", @"-1" },
-            { @"the one before the last one", @"-1" },
-            { @"the one before the last", @"-1" },
-            { @"next to last", @"-1" },
-            { @"penultimate", @"-1" },
-            { @"the last but one", @"-1" },
-            { @"antepenultimate", @"-2" },
+            { @"previous", @"-1" },
             { @"next", @"1" },
-            { @"previous", @"-1" }
+            { @"current", @"0" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
         {
+            { @"अंतिम", @"end" },
+            { @"आखिरी", @"end" },
+            { @"अगला", @"current" },
+            { @"अगली", @"current" },
+            { @"पिछला", @"current" },
+            { @"पिछले", @"current" },
+            { @"पिछली", @"current" },
+            { @"वर्तमान", @"current" },
+            { @"पिछला वाला", @"current" },
+            { @"पिछले वाले", @"current" },
+            { @"पिछली वाली", @"current" },
+            { @"अगला वाला", @"current" },
+            { @"अगले वाले", @"current" },
+            { @"अगली वाली", @"current" },
+            { @"अभी वाला", @"current" },
+            { @"अंतिम वाला", @"end" },
+            { @"अंतिम वाले", @"end" },
+            { @"अंतिम वाली", @"end" },
+            { @"आखिरी वाला", @"end" },
+            { @"आखिरी वाले", @"end" },
+            { @"आखिरी वाली", @"end" },
+            { @"आखिरी से पहला", @"end" },
+            { @"आखिरी से पहले", @"end" },
+            { @"आखिरी से पहली", @"end" },
+            { @"आखिरी से दूसरा", @"end" },
+            { @"आखिरी से दूसरे", @"end" },
+            { @"आखिरी से दूसरी", @"end" },
+            { @"आखिरी का पहला", @"end" },
+            { @"आखिरी के पहले", @"end" },
+            { @"आखिरी की पहली", @"end" },
+            { @"आखिरी का दूसरा", @"end" },
+            { @"आखिरी के दूसरे", @"end" },
+            { @"आखिरी की दूसरी", @"end" },
+            { @"अंतिम से पहला", @"end" },
+            { @"अंतिम से पहले", @"end" },
+            { @"अंतिम से पहली", @"end" },
+            { @"अंतिम से दूसरा", @"end" },
+            { @"अंतिम से दूसरे", @"end" },
+            { @"अंतिम से दूसरी", @"end" },
+            { @"अंतिम का पहला", @"end" },
+            { @"अंतिम के पहले", @"end" },
+            { @"अंतिम की पहली", @"end" },
+            { @"अंतिम का दूसरा", @"end" },
+            { @"अंतिम के दूसरे", @"end" },
+            { @"अंतिम की दूसरी", @"end" },
+            { @"आखिरी का", @"end" },
+            { @"आखिरी के", @"end" },
+            { @"आखिरी की", @"end" },
+            { @"अंतिम का", @"end" },
+            { @"अंतिम के", @"end" },
+            { @"अंतिम की", @"end" },
+            { @"आखिरी से पहले का", @"end" },
+            { @"अंतिम से पहले का", @"end" },
+            { @"आखिरी के बगल वाला", @"end" },
+            { @"अंतिम के बगल वाला", @"end" },
+            { @"आखिरी वाले का पिछला वाला", @"end" },
+            { @"अंतिम वाले का पिछला वाला", @"end" },
+            { @"आखिरी वाले का पिछला", @"end" },
+            { @"अंतिम वाले का पिछला", @"end" },
+            { @"आखिरी वाले से पहले वाला", @"end" },
+            { @"अंतिम वाले से पहले वाला", @"end" },
+            { @"अगली चीज", @"current" },
+            { @"पिछला पर केवल एक", @"end" },
+            { @"लास्ट", @"end" },
+            { @"प्रीवियस", @"current" },
+            { @"नेक्स्ट", @"current" },
+            { @"करेंट", @"current" },
             { @"last", @"end" },
-            { @"next one", @"current" },
-            { @"previous one", @"current" },
-            { @"current", @"current" },
-            { @"current one", @"current" },
-            { @"the second to last", @"end" },
-            { @"the one before the last one", @"end" },
-            { @"the one before the last", @"end" },
-            { @"next to last", @"end" },
-            { @"penultimate", @"end" },
-            { @"the last but one", @"end" },
-            { @"antepenultimate", @"end" },
+            { @"previous", @"current" },
             { @"next", @"current" },
-            { @"previous", @"current" }
+            { @"current", @"current" }
         };
     }
 }

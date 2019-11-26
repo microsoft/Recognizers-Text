@@ -10,6 +10,30 @@ from ..base_dateperiod import DatePeriodParserConfiguration
 
 class SpanishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
+    def less_than_regex(self) -> Pattern:
+        return self._less_than_regex
+
+    @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
+    def reference_date_period_regex(self) -> Pattern:
+        return self._reference_date_period_regex
+
+    @property
+    def decade_with_century_regex(self) -> Pattern:
+        return self._decade_with_century_regex
+
+    @property
+    def relative_regex(self) -> Pattern:
+        return self._relative_regex
+
+    @property
+    def later_regex(self) -> Pattern:
+        return self._later_regex
+
+    @property
     def date_extractor(self) -> DateTimeExtractor:
         return self._date_extractor
 
@@ -60,6 +84,10 @@ class SpanishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
     def past_regex(self) -> Pattern:
         return self._past_regex
+
+    @property
+    def ago_regex(self) -> Pattern:
+        return self._ago_regex
 
     @property
     def future_regex(self) -> Pattern:
@@ -161,7 +189,21 @@ class SpanishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     def now_regex(self) -> Pattern:
         return self._now_regex
 
+    @property
+    def complex_dateperiod_regex(self) -> Pattern:
+        return self._complex_dateperiod_regex
+
+    @property
+    def relative_decade_regex(self) -> Pattern:
+        return self._relative_decade_regex
+
     def __init__(self, config: BaseDateParserConfiguration):
+        self._relative_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.RelativeRegex)
+        self._later_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.LaterRegex)
+        self._ago_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.AgoRegex)
         self._token_before_date = SpanishDateTime.TokenBeforeDate
         self.cardianal_extractor = config.cardinal_extractor
         self.number_parser = config.number_parser
@@ -235,6 +277,22 @@ class SpanishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._season_map = config.season_map
         self._now_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.NowRegex)
+        self._decade_with_century_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.DecadeWithCenturyRegex)
+        self._complex_dateperiod_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.ComplexDatePeriodRegex
+        )
+        self._relative_decade_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.RelativeDecadeRegex
+        )
+        self._reference_date_period_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.ReferenceDatePeriodRegex
+        )
+        self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
+
+        self._less_than_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.LessThanRegex
+        )
 
     def get_swift_day_or_month(self, source: str) -> int:
         trimmed_source = source.strip().lower()

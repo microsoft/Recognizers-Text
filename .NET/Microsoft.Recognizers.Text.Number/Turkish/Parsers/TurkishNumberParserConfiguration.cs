@@ -1,5 +1,7 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Turkish;
@@ -43,5 +45,40 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
         }
 
         public string NonDecimalSeparatorText { get; private set; }
+
+        public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
+        {
+            var fracWords = new List<string>();
+            var tokenList = tokens.ToList();
+            var tokenLen = tokenList.Count;
+
+            for (var i = 0; i < tokenLen; i++)
+            {
+                if ((i < tokenLen - 2) && tokenList[i + 1] == "-")
+                {
+                    fracWords.Add(tokenList[i] + tokenList[i + 1] + tokenList[i + 2]);
+                    i += 2;
+                }
+                else
+                {
+                    fracWords.Add(tokenList[i]);
+                }
+            }
+
+            // The following piece of code is needed to compute the fraction pattern number+'buçuk'
+            // e.g. 'bir buçuk' ('one and a half')
+            var fracLen = fracWords.Count;
+            if (fracLen == 2)
+            {
+                if (fracWords.Last() == "buçuk")
+                {
+                    fracWords.Insert(fracLen - 1, NumbersDefinitions.WrittenFractionSeparatorTexts[0]);
+                    fracWords.Insert(fracLen, "bir");
+                    fracWords.Insert(fracLen + 1, NumbersDefinitions.FractionMarkerToken);
+                }
+            }
+
+            return fracWords;
+        }
     }
 }

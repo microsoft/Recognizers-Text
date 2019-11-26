@@ -92,6 +92,7 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Swedish\ChoiceDefinitions.cs" Link="Swedish\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Swedish\NumbersDefinitions.cs" Link="Swedish\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Bulgarian\ChoiceDefinitions.cs" Link="Bulgarian\ChoiceDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\ChoiceDefinitions.cs" Link="Turkish\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\DateTimeDefinitions.cs" Link="Turkish\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\NumbersDefinitions.cs" Link="Turkish\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\NumbersWithUnitDefinitions.cs" Link="Turkish\NumbersWithUnitDefinitions.cs" />
@@ -112,6 +113,7 @@
     <Folder Include="Swedish\" />
     <Folder Include="Bulgarian\" />
     <Folder Include="Hindi\" />
+    <Folder Include="Turkish\" />
   </ItemGroup>
   
   <ItemGroup>

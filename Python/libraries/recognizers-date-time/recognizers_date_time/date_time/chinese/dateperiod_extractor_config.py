@@ -12,10 +12,6 @@ from .date_extractor import ChineseDateExtractor
 
 class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
-    def previous_prefix_regex(self) -> Pattern:
-        return self._previous_prefix_regex
-
-    @property
     def check_both_before_after(self) -> Pattern:
         return self._check_both_before_after
 
@@ -277,6 +273,7 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._cardinal_extractor = ChineseCardinalExtractor()
         self._ordinal_extractor = ChineseOrdinalExtractor()
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._check_both_before_after = None
         self._century_suffix_regex = None
         self._year_period_regex = None
         self._duration_date_restrictions = None

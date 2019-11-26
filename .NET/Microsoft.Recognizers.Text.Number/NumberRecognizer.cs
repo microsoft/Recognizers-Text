@@ -343,16 +343,14 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Turkish, options))),
                     new Turkish.PercentageExtractor(options)));
 
-            // @TODO Uncomment once the NumberRangeModel test passes
-            /* RegisterModel<NumberRangeModel>(
+            RegisterModel<NumberRangeModel>(
                Culture.Turkish,
                options => new NumberRangeModel(
                    new BaseNumberRangeParser(new TurkishNumberRangeParserConfiguration(
                                                  new BaseNumberOptionsConfiguration(Culture.Turkish, options))),
-                   new Turkish.NumberRangeExtractor(options)));*/
+                   new Turkish.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Turkish, options))));
 
-            // @TODO Uncomment once all the tests pass
-            /*RegisterModel<NumberModel>(
+            RegisterModel<NumberModel>(
                 Culture.Hindi,
                 options => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new HindiNumberParserConfiguration(
@@ -366,6 +364,8 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
                     Hindi.OrdinalExtractor.GetInstance(options)));
 
+            // @TODO Uncomment once all the tests pass
+            /*
             RegisterModel<PercentModel>(
                 Culture.Hindi,
                 options => new PercentModel(

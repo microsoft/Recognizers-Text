@@ -103,8 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
 
-                    bool inPrefix = true;
-                    int length = GetValidConnectorIndexForDateAndTimePeriod(middleStr, inPrefix);
+                    int length = GetValidConnectorIndexForDateAndTimePeriod(middleStr, inPrefix: true);
                     if (length != Constants.INVALID_CONNECTOR_CODE)
                     {
                         var begin = ers[i].Start ?? 0;
@@ -114,10 +113,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     else if (this.config.CheckBothBeforeAfter)
                     {
                         // Check also afterStr
-                        inPrefix = false;
                         var afterStart = ers[j].Start + ers[j].Length ?? 0;
                         var afterStr = text.Substring(afterStart);
-                        length = GetValidConnectorIndexForDateAndTimePeriod(afterStr, inPrefix);
+                        length = GetValidConnectorIndexForDateAndTimePeriod(afterStr, inPrefix: false);
                         if (length != Constants.INVALID_CONNECTOR_CODE && this.config.PrepositionRegex.IsExactMatch(middleStr, trim: true))
                         {
                             var begin = ers[i].Start ?? 0;
@@ -185,6 +183,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Success)
                 {
                     ret.Add(new Token(match.Index, dateStrEnd));
+                }
+                else if (this.config.CheckBothBeforeAfter)
+                {
+                    // Check also afterStr
+                    var afterStr = text.Substring(dateStrEnd, text.Length - dateStrEnd);
+                    var matchAfter = this.config.PrefixDayRegex.MatchBegin(afterStr, trim: true);
+                    if (matchAfter.Success)
+                    {
+                        ret.Add(new Token((int)dateEr.Start, dateStrEnd + matchAfter.Index + matchAfter.Length));
+                    }
                 }
             }
 
@@ -367,13 +375,27 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (midEnd - midBegin > 0)
                 {
                     var midStr = text.Substring(midBegin, midEnd - midBegin);
-                    if (string.IsNullOrWhiteSpace(midStr) || midStr.TrimStart().StartsWith(config.TokenBeforeDate))
+                    bool isMatchTokenBeforeDate = string.IsNullOrWhiteSpace(midStr) || midStr.TrimStart().StartsWith(config.TokenBeforeDate);
+                    if (this.config.CheckBothBeforeAfter && !string.IsNullOrWhiteSpace(midStr))
+                    {
+                        List<string> tokenListBeforeDate = config.TokenBeforeDate.Split('|').ToList();
+                        foreach (string token in tokenListBeforeDate.Where(n => !string.IsNullOrEmpty(n)))
+                        {
+                            if (midStr.Trim().Equals(token))
+                            {
+                                isMatchTokenBeforeDate = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (isMatchTokenBeforeDate)
                     {
                         // Extend date extraction for cases like "Monday evening next week"
                         var extendedStr = points[idx].Text + text.Substring((int)(points[idx + 1].Start + points[idx + 1].Length));
                         var extendedDateEr = config.SingleDateExtractor.Extract(extendedStr).FirstOrDefault();
                         var offset = 0;
-                        if (extendedDateEr != null && extendedDateEr.Start == 0)
+                        if (extendedDateEr != null && extendedDateEr.Start == 0 && !this.config.CheckBothBeforeAfter)
                         {
                             offset = (int)(extendedDateEr.Length - points[idx].Length);
                         }
@@ -567,8 +589,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 // within (the) (next) "Seconds/Minutes/Hours" should be handled as datetimeRange here
                 // within (the) (next) XX days/months/years + "Seconds/Minutes/Hours" should also be handled as datetimeRange here
-                bool inPrefix = true;
-                Token token = MatchWithinNextPrefix(beforeStr, text, duration, inPrefix);
+                Token token = MatchWithinNextPrefix(beforeStr, text, duration, inPrefix: true);
                 if (token.Start >= 0)
                 {
                     ret.Add(token);
@@ -578,8 +599,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // check also afterStr
                 if (this.config.CheckBothBeforeAfter)
                 {
-                    inPrefix = false;
-                    token = MatchWithinNextPrefix(afterStr, text, duration, inPrefix);
+                    token = MatchWithinNextPrefix(afterStr, text, duration, inPrefix: false);
                     if (token.Start >= 0)
                     {
                         ret.Add(token);

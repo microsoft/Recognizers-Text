@@ -234,12 +234,32 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 TimexValue.DateValue(new TimexProperty { Year = year, Month = month + 1, DayOfMonth = 1 }));
         }
 
-        private static Tuple<string, string> WeekDateRange(int year, int weekOfYear)
+        private static Tuple<string, string> YearWeekDateRange(int year, int weekOfYear)
         {
             var dateInWeek = new DateObject(year, 1, 1) + TimeSpan.FromDays((weekOfYear - 1) * 7);
 
             var start = TimexDateHelpers.DateOfLastDay(DayOfWeek.Monday, dateInWeek);
             var end = TimexDateHelpers.DateOfLastDay(DayOfWeek.Monday, dateInWeek + TimeSpan.FromDays(7));
+
+            return new Tuple<string, string>(
+                TimexValue.DateValue(new TimexProperty { Year = start.Year, Month = start.Month, DayOfMonth = start.Day }),
+                TimexValue.DateValue(new TimexProperty { Year = end.Year, Month = end.Month, DayOfMonth = end.Day }));
+        }
+
+        private static Tuple<string, string> MonthWeekDateRange(int year, int month, int weekOfYear)
+        {
+            var dateInWeek = new DateObject(year, month, 1 + ((weekOfYear - 1) * 7));
+            if (dateInWeek.DayOfWeek == DayOfWeek.Sunday)
+            {
+                dateInWeek = dateInWeek.AddDays(1);
+            }
+            else if (dateInWeek.DayOfWeek > DayOfWeek.Monday)
+            {
+                dateInWeek = dateInWeek.AddDays(1 - (int)dateInWeek.DayOfWeek);
+            }
+
+            var start = dateInWeek;
+            var end = dateInWeek.AddDays(7);
 
             return new Tuple<string, string>(
                 TimexValue.DateValue(new TimexProperty { Year = start.Year, Month = start.Month, DayOfMonth = start.Day }),
@@ -279,7 +299,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
                 if (timex.Year != null && timex.WeekOfYear != null)
                 {
-                    var dateRange = WeekDateRange(timex.Year.Value, timex.WeekOfYear.Value);
+                    var dateRange = YearWeekDateRange(timex.Year.Value, timex.WeekOfYear.Value);
 
                     return new List<Resolution.Entry>
                     {
@@ -289,6 +309,30 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                             Type = "daterange",
                             Start = dateRange.Item1,
                             End = dateRange.Item2,
+                        },
+                    };
+                }
+
+                if (timex.Month != null && timex.WeekOfMonth != null)
+                {
+                    var lastYearDateRange = MonthWeekDateRange(date.Year - 1, timex.Month.Value, timex.WeekOfMonth.Value);
+                    var thisYearDateRange = MonthWeekDateRange(date.Year, timex.Month.Value, timex.WeekOfMonth.Value);
+
+                    return new List<Resolution.Entry>
+                    {
+                        new Resolution.Entry
+                        {
+                            Timex = timex.TimexValue,
+                            Type = "daterange",
+                            Start = lastYearDateRange.Item1,
+                            End = lastYearDateRange.Item2,
+                        },
+                        new Resolution.Entry
+                        {
+                            Timex = timex.TimexValue,
+                            Type = "daterange",
+                            Start = thisYearDateRange.Item1,
+                            End = thisYearDateRange.Item2,
                         },
                     };
                 }

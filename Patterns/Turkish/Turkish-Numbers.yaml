@@ -57,7 +57,7 @@ AllIntRegex: !nestedRegex
   def: ({AboveTrillionRegex}|{BillionToTrillionRegex}|{MillionToBillionRegex}|{ThousandToMillionRegex}|{MillionsNumberIntegerRegex}|{BillionsNumberIntegerRegex}|{TrillionsNumberIntegerRegex}|{ThousandsNumberIntegerRegex}|{HundredToThousandRegex}|{HundredsNumberIntegerRegex}|{TenToHundredRegex}|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})
   references: [ZeroToNineIntegerRegex, TenToHundredRegex, HundredToThousandRegex, ThousandToMillionRegex, MillionToBillionRegex, BillionToTrillionRegex,  AboveTrillionRegex, TensNumberIntegerRegex, HundredsNumberIntegerRegex, ThousandsNumberIntegerRegex, MillionsNumberIntegerRegex, BillionsNumberIntegerRegex, TrillionsNumberIntegerRegex]
 NegativeAllIntRegex: !nestedRegex
-  def: (eksi\s)({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}|{ThousandToMillionRegex}|{MillionToBillionRegex}|{BillionToTrillionRegex}|{AboveTrillionRegex})
+  def: (eksi\s+)({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}|{ThousandToMillionRegex}|{MillionToBillionRegex}|{BillionToTrillionRegex}|{AboveTrillionRegex})
   references: [OneToNineIntegerRegex, TenToHundredRegex, HundredToThousandRegex, ThousandToMillionRegex, MillionToBillionRegex, BillionToTrillionRegex, AboveTrillionRegex]
 PlaceHolderPureNumber: !simpleRegex
   def: (?!'(i|ı|u|ü|n))\b
@@ -75,7 +75,7 @@ RoundNumberIntegerRegexWithLocks: !nestedRegex
 NumbersWithDozenSuffix: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+düzine(?=\b)
 AllIntRegexWithLocks: !nestedRegex
-  def: ((?<=\b){AllIntRegex}(?=\b))
+  def: ((?<=\b){AllIntRegex}(?=(t[ae]n|d[[ae]n|y?[ae])?\b))
   references: [ AllIntRegex ]
 NegativeAllIntRegexWithLocks: !nestedRegex
   def: ((?<=\b){NegativeAllIntRegex}(?=\b))
@@ -87,9 +87,9 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
 RoundNumberOrdinalRegex: !simpleRegex
   def: (yüzüncü|bininci|milyonuncu|milyarıncı|trilyonuncu)
 NumberOrdinalRegex: !simpleRegex
-  def: (birinci|[iİ]lk|[iİ]kinci|üçüncü|dördüncü|beşinci|altıncı|yedinci|sekizinci|dokuzuncu)
+  def: (birinci|[iİ]lk|[iİ]kinci|üçüncü|dördüncü|beşinci|altıncı|yedinci|sekizinci|dokuzuncu)(d[ea]n)?
 TensOrdinalRegex: !simpleRegex
-  def: (onuncu|yirminci|otuzuncu|kırkıncı|ellinci|altmışıncı|yetmişinci|sekseninci|doksanıncı)
+  def: (onuncu|yirminci|otuzuncu|kırkıncı|ellinci|altmışıncı|yetmişinci|sekseninci|doksanıncı)(d[ea]n)?
 OneToHundredOrdinalRegex: !nestedRegex
   def: (({TensNumberIntegerRegex}\s)?{NumberOrdinalRegex}|{TensOrdinalRegex})
   references: [TensNumberIntegerRegex, NumberOrdinalRegex, TensOrdinalRegex]
@@ -143,10 +143,10 @@ FractionNotationWithSpacesRegex: !simpleRegex
 FractionNotationRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)(({AllIntRegex}\s)?(buçuk|çeyrek|yarım))(?=\b)
+  def: (?<=\b)(({AllIntRegex}\s+)?(buçuk|çeyrek|yarım))(?=(t[ae]n|d[[ae]n|y?[ae])?\b)
   references: [ AllIntRegex ]
 FractionPrepositionRegex: !nestedRegex
-  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(eksi\s)?(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(bölü)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)
+  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(eksi\s+)?(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(bölü)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)
   references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]
 # Double Regex
 AllPointRegex: !nestedRegex
@@ -195,58 +195,63 @@ NumberWithPrepositionPercentage: !nestedRegex
   references: [ BaseNumbers.NumberReplaceToken ]
 # NumberRange Regex
 TillRegex: !simpleRegex
-  def: (-|—|——|–|~)
+  def: (('?y?[ae])|-|—|——|~|–)
+NumberNoSuffixRegex: !nestedRegex
+  def: (-?(\d+[\.,])?\d*(\.?000|000\.?000|000(\.?000){2}|000(\.?000){2}\.?000|10|20|30|40|50|60|70|80|90|00|1|2|3|4|5|6|7|8|9)|({NegativeAllIntRegex}|{AllIntRegex})(i?nci|ı?ncı|üncü|uncu)?|çeyrek|yarım)
+  references: [ AllIntRegex, NegativeAllIntRegex ]
 MoreRegex: !simpleRegex
-  def: (büyük(tür)?|(?<!<|=)>)
+  def: ((daha\s+)?(büyük(tür)?|yüksek(tir)?|(yukarıda|fazla)(dır)?)|(üzerinde|üstünde)(dir)?|(?<!<|=)>)
 LessRegex: !simpleRegex
-  def: (küçük(tür)?|(?<!>|=)<)
+  def: ((daha\s+)?((küçük|düşük)(tür)?|azı|(aşağıda|az)(dır)?)|(altında)(dır)?|(?<!>|=)<)
 EqualRegex: !simpleRegex
   def: (eşit(tir)?|(?<!<|>)=)
 MoreOrEqualPrefix: !simpleRegex
-  def: ((en\s+az))
-MoreOrEqual: !simpleRegex
-  def: ((büyük(tür)?\s+veya\s+eşit(tir)?)|>\s*=)
-MoreOrEqualSuffix: !simpleRegex
-  def: (az\s+değil)
+  def: (en\s+az)
+MoreOrEqual: !nestedRegex
+  def: (({MoreRegex}\s+(ya\s+da|veya)\s+{EqualRegex})|({EqualRegex}\s+(ya\s+da|veya)\s+{MoreRegex})|{MoreOrEqualPrefix}|>\s*=)
+  references: [ MoreRegex, EqualRegex, MoreOrEqualPrefix ]
+MoreOrEqualSuffix: !nestedRegex
+  def: ((((ya\s+da|veya|ve)\s+)(daha\s+)?(fazla(sı)?(dır)?|yüksek(tir)?|büyük(tür)?|yukarıda(dır)?))|({LessRegex}\s+değil(dir)?))
+  references: [ LessRegex ]
 LessOrEqualPrefix: !simpleRegex
   def: (en\s+(fazla|çok))
-LessOrEqual: !simpleRegex
-  def: ((küçük(tür)?\s+veya\s+eşit(tir)?)|<\s*=)
-LessOrEqualSuffix: !simpleRegex
-  def: (fazla\s+değil)
+LessOrEqual: !nestedRegex
+  def: (({LessRegex}\s+(ya\s+da|veya)\s+{EqualRegex})|({EqualRegex}\s+(ya\s+da|veya)\s+{LessRegex})|{LessOrEqualPrefix}|<\s*=)
+  references: [ LessRegex, LessOrEqualPrefix, EqualRegex ]
+LessOrEqualSuffix: !nestedRegex
+  def: ((((ya\s+da|veya|ve)\s+)(daha\s+)?(fazla\s+değil|azı?))|({MoreRegex}\s+değil(dir)?))
+  references: [ MoreRegex ]
 NumberSplitMark: !simpleRegex
   def: (?![,.](?!\d+))
 MoreRegexNoNumberSucceed: !simpleRegex
-  def: ((daha\s+fazla)(?!(\s*\d+)))
+  def: ((?<!(\s*\d+'?[dt][ae]n\s+))((daha\s+)?(fazla(sı)?|büyük|üzeri))(?!(\s*\d+)))
 LessRegexNoNumberSucceed: !simpleRegex
-  def: ((daha\s+az)(?!(\s*\d+)))
-NumberFromSuffixRegex: !simpleRegex
-  def: (\d*(1'den|2'den|3'ten|4'ten|5'ten|6'dan|7'den|8'den|9'dan|10'dan|20'den|30'dan|40'tan|50'den|60'tan|70'ten|80'den|90'dan|00'den|\.?000'den|000\.?000'dan|000(\.?000){2}'dan|000(\.?000){2}\.?000'dan)|((on|yirmi|otuz|kırk|elli|altmış|yetmiş|seksen|doksan|yüz)\s)?(birden|[iİ]kiden|üçten|dörtten|beşten|altıdan|yediden|sekizden|dokuzdan)|ondan|yirmiden|otuzdan|kırktan|elliden|altmıştan|yetmişten|seksenden|doksandan|yüzden|binden|çeyrekten|yarımdan)
-NumberToSuffixRegex: !simpleRegex
-  def: (\d*(1'e|2'ye|3'e|4'e|5'e|6'ya|7'ye|8'e|9'a|10'a|20'ye|30'a|40'a|50'ye|60'a|70'e|80'e|90'a|00'e|\.?000'e|000\.?000'a|000(\.?000){2}'a|000(\.?000){2}\.?000'a))
+  def: ((?<!(\s*\d+'?[dt][ae]n\s+))((daha\s+)?(azı|(az(dır)?)|(küçük(tür)?)))(?!(\s*\d+)))
+EqualRegexNoNumberSucceed: !simpleRegex
+  def: ((?<!(\s*\d+'?y?[ae]\s+))(eşit(tir)?)(?!(\s*\d+)))
 OneNumberRangeMoreRegex1: !nestedRegex
-  def: ((?<number1>{NumberFromSuffixRegex})\s+({MoreRegex}|{MoreOrEqual}))|((?<number1>({NumberSplitMark}.)+)\s(ve|veya|ya da)\s+daha\s+(fazla|fazlası|yüksek))|{MoreRegex}\s*(?<number1>({NumberSplitMark}.)+)
-  references: [ NumberFromSuffixRegex, MoreRegex, MoreOrEqual, NumberSplitMark ]
+  def: (((?<number1>{NumberNoSuffixRegex}|{FractionPrepositionRegex}|{FractionNotationRegex})('?(([dt][ae]n)|(n?[iuüı]n)|(y?[ae]))\s+)({MoreOrEqual}|{MoreRegex}))|(({MoreOrEqual}|{MoreRegex})\s*(?<number1>{NumberNoSuffixRegex}|{FractionPrepositionRegex}|{FractionNotationRegex})((''?y?[ae]\s+){EqualRegex})?))
+  references: [ MoreRegex, MoreOrEqual, NumberNoSuffixRegex, FractionPrepositionRegex, FractionNotationRegex, EqualRegex ]
 OneNumberRangeMoreRegex2: !nestedRegex
-  def: (({MoreOrEqual}|{MoreOrEqualPrefix})\s*(?<number1>({NumberSplitMark}.)+))
-  references: [ MoreOrEqual, MoreOrEqualPrefix, NumberSplitMark ]
+  def: ((?<number1>{NumberNoSuffixRegex}|{FractionPrepositionRegex}|{FractionNotationRegex})(('?[dt][ae]n)|('?n?[iuüı]n))?\s+{MoreOrEqualSuffix})
+  references: [ NumberNoSuffixRegex, FractionPrepositionRegex, FractionNotationRegex, MoreOrEqualSuffix ]
 OneNumberRangeMoreSeparateRegex: !nestedRegex
-  def: ((?<number1>{NumberToSuffixRegex})\s{EqualRegex}(\s+(ve|veya|ya\sda)\s+){MoreRegexNoNumberSucceed})
-  references: [ NumberToSuffixRegex, EqualRegex, MoreRegexNoNumberSucceed ]
+  def: ({EqualRegex}\s+(?<number1>{NumberNoSuffixRegex}|{FractionPrepositionRegex}|{FractionNotationRegex})(\s+(ya\s+da|veya)\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>{NumberNoSuffixRegex}|{FractionPrepositionRegex}|{FractionNotationRegex})(\s+(ya\s+da|veya)\s+){EqualRegexNoNumberSucceed})
+  references: [ EqualRegex, MoreRegex, EqualRegexNoNumberSucceed, MoreRegexNoNumberSucceed, NumberNoSuffixRegex, FractionPrepositionRegex, FractionNotationRegex ]
 OneNumberRangeLessRegex1: !nestedRegex
-  def: ((?<number1>{NumberFromSuffixRegex})\s+({LessRegex}|{LessOrEqual})|{LessRegex}\s*(?<number1>({NumberSplitMark}.)+))
-  references: [ NumberFromSuffixRegex, LessRegex, LessOrEqual, NumberSplitMark ]
+  def: (((?<number2>{NumberNoSuffixRegex}|{FractionPrepositionRegex}|{FractionNotationRegex})('?(([dt][ae]n)|(n?[iuüı]n)|(y?[ae]))\s+)({LessOrEqual}|{LessRegex}))|(({LessOrEqual}|{LessRegex})\s*(?<number2>{NumberNoSuffixRegex}|{FractionPrepositionRegex}|{FractionNotationRegex})((''?y?[ae]\s+){EqualRegex})?))
+  references: [ NumberNoSuffixRegex, LessRegex, LessOrEqual, FractionPrepositionRegex, FractionNotationRegex, EqualRegex ]
 OneNumberRangeLessRegex2: !nestedRegex
-  def: (({LessOrEqual}|{LessOrEqualPrefix})\s*(?<number1>({NumberSplitMark}.)+))
-  references: [ LessOrEqual, LessOrEqualPrefix, NumberSplitMark ]
+  def: ((?<number2>{NumberNoSuffixRegex}|{FractionPrepositionRegex}|{FractionNotationRegex})(('?[dt][ae]n)|('?n?[iuüı]n))?\s+{LessOrEqualSuffix})
+  references: [ NumberNoSuffixRegex, FractionPrepositionRegex, FractionNotationRegex, LessOrEqualSuffix ]
 OneNumberRangeLessSeparateRegex: !nestedRegex
-  def: ((?<number1>{NumberFromSuffixRegex})\s{EqualRegex}(\s+(ve|veya|ya da)\s+){LessRegexNoNumberSucceed})
-  references: [ EqualRegex, NumberFromSuffixRegex, LessRegexNoNumberSucceed ]
+  def: ({EqualRegex}\s+(?<number1>{NumberNoSuffixRegex}|{FractionPrepositionRegex}|{FractionNotationRegex})(\s+(ya\s+da|veya)\s+){LessRegexNoNumberSucceed})|({LessRegex}\s+(?<number1>{NumberNoSuffixRegex}|{FractionPrepositionRegex}|{FractionNotationRegex})(\s+(ya\s+da|veya)\s+){EqualRegexNoNumberSucceed})
+  references: [ EqualRegex, LessRegex, EqualRegexNoNumberSucceed, LessRegexNoNumberSucceed, NumberNoSuffixRegex, FractionPrepositionRegex, FractionNotationRegex ]
 OneNumberRangeEqualRegex: !nestedRegex
-  def: '{EqualRegex}\s*(?<number1>({NumberSplitMark}.)+)|{NumberToSuffixRegex}\s+{EqualRegex}'
-  references: [ EqualRegex, NumberSplitMark, NumberToSuffixRegex ]
+  def: '(({EqualRegex}\s+(?<number1>{NumberNoSuffixRegex}|{FractionPrepositionRegex}|{FractionNotationRegex}))|((?<number1>{NumberNoSuffixRegex}|{FractionPrepositionRegex}|{FractionNotationRegex})(''?y?[ae]\s+){EqualRegex}))'
+  references: [ EqualRegex, NumberNoSuffixRegex, FractionPrepositionRegex, FractionNotationRegex ]
 TwoNumberRangeRegex1: !nestedRegex
-  def: (?<number1>({NumberSplitMark}.)+)\s(ile|ila|ve)\s(?<number2>({NumberSplitMark}.)+)(\sarasında)
+  def: ((?<number1>({NumberSplitMark}.)+)\s+(ile|ila|ve)\s+(?<number2>({NumberSplitMark}.)+)(\s+arasında))
   references: [ NumberSplitMark ]
 TwoNumberRangeRegex2: !nestedRegex
   def: ({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(ve|ama|fakat|ancak|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})
@@ -255,8 +260,10 @@ TwoNumberRangeRegex3: !nestedRegex
   def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(ve|ama|fakat|ancak|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
   references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
 TwoNumberRangeRegex4: !nestedRegex
-  def: (?<number1>({NumberSplitMark}.)+)\s*{TillRegex}\s*(?<number2>({NumberSplitMark}.)+)|({NumberFromSuffixRegex}\s{NumberToSuffixRegex})(\skadar)
-  references: [ TillRegex, NumberSplitMark, NumberFromSuffixRegex, NumberToSuffixRegex ]
+  def: (?<number1>{NumberNoSuffixRegex}|{FractionPrepositionRegex}|{FractionNotationRegex})\s*{TillRegex}\s*(?<number2>{NumberNoSuffixRegex}|{FractionPrepositionRegex}|{FractionNotationRegex})|(?<number1>{NumberNoSuffixRegex}|{FractionPrepositionRegex}|{FractionNotationRegex})('?[dt][ae]n)\s+(?<number2>{NumberNoSuffixRegex}|{FractionPrepositionRegex}|{FractionNotationRegex}){TillRegex}\s+(kadar)
+  references: [ TillRegex, NumberNoSuffixRegex, FractionPrepositionRegex, FractionNotationRegex ]
+AmbiguousFractionConnectorsRegex: !simpleRegex
+  def: ^[\*]
 # Parser
 DecimalSeparatorChar: !char ','
 FractionMarkerToken: bölü

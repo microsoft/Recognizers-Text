@@ -23,10 +23,10 @@ namespace Microsoft.Recognizers.Definitions.Hindi
     {
       public static readonly Dictionary<string, string> AgeSuffixList = new Dictionary<string, string>
         {
-            { @"Year", @"years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age" },
-            { @"Month", @"months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age" },
-            { @"Week", @"weeks old|week old|week-old|weeks-old|-week-old|-weeks-old|week of age|weeks of age" },
-            { @"Day", @"days old|day old|day-old|days-old|-day-old|-days-old|day of age|days of age" }
+            { @"Year", @"years|year|year का|years का|यर्स के|यर्स का|यर्स की|यर्स के|यर का|यर की|यर के|यर|साल|साल पुराना|साल पुरानी|साल पुराने|साल की|साल का|साल के|वर्ष पुराणी|वर्ष पुराने|वर्ष पुराना|वर्ष का|वर्ष के|वर्ष की थी|साल पुराना था|साल पुरानी थी|साल पुराने थे|साल की थी|साल का था|साल के थे|वर्ष पुराना था|वर्ष का था|वर्ष के थे|साल की आयु|साल का आयु|साल के आयु|की उम्र|के उम्र|साल से ज़्यादा पुरानी|साल की उमर|" },
+            { @"Month", @"months|month|महीने पुराना|महीने की|महीने का|महीने के|महीने की उम्र|महीने|महीने पहले की" },
+            { @"Week", @"week|weeks|weeks का|weeks की|week के|वीक्स का|वीक्स|सप्ताह पुराना|सप्ताह की|सप्ताह का|सप्ताह के|हफ़्ता पुराना|हफ्ते की|हफ्ते का|हफ्ते के|हफ़्ते की उम्र|हफ़्ता पुरानी|हफ़्ते पुरानी" },
+            { @"Day", @"day|days|दिन पुराना|दिन की|दिन का|दिन के|दिन पुरानी" }
         };
       public static readonly Dictionary<string, string> AreaSuffixList = new Dictionary<string, string>
         {
@@ -734,18 +734,18 @@ namespace Microsoft.Recognizers.Definitions.Hindi
         };
       public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
         {
-            { @"F", @"degrees fahrenheit|degree fahrenheit|deg fahrenheit|degs fahrenheit|fahrenheit|°f|degrees farenheit|degree farenheit|deg farenheit|degs farenheit|degrees f|degree f|deg f|degs f|farenheit|f" },
-            { @"K", @"k|K|kelvin" },
-            { @"R", @"rankine|°r" },
-            { @"D", @"delisle|°de" },
-            { @"C", @"degrees celsius|degree celsius|deg celsius|degs celsius|celsius|degrees celcius|degree celcius|celcius|deg celcius|degs celcius|degrees centigrade|degree centigrade|centigrade|degrees centigrate|degree centigrate|degs centigrate|deg centigrate|centigrate|degrees c|degree c|deg c|degs c|°c|c" },
-            { @"Degree", @"degree|degrees|deg.|deg|°" }
+            { @"F", @"degree fahrenheit|degrees fahrenheit|fahrenheit|डिग्रीज़ फ़ॉरेनहाइट|डिग्री फ़ॉरेनहाइट|डि. फ़ॉरेनहाइट|फ़ॉरेनहाइट|°फ़ॉ|डिग्रीज़ फ़ॉ.|डिग्री फ़ॉ.|डि. फ़ॉ.|फ़ॉ." },
+            { @"K", @"kelvin|के.|केल्विन" },
+            { @"R", @"renkine|रैंकिन" },
+            { @"D", @"delisle|डेलील" },
+            { @"C", @"degree celsius|degrees celsius|celsius|डिग्रीज़ सेल्सियस|डिग्री सेल्सियस|डि. सेल्सियस|सेल्सियस|डिग्रीज़ सेल्सयस|डिग्री सेल्सयस|सेल्सयस|डि. सेल्सयस|डिग्रीज़ सेंटिग्रेड|डिग्री सेंटिग्रेड|सेंटिग्रेड|डिग्रीज़ सेंटिग्रेट|डिग्री सेंटिग्रेट|डि. सेंटिग्रेट|सेंटिग्रेट|डिग्रीज़ से.|डिग्री से.|डि. से.|°से|से." },
+            { @"Degree", @"degrees|degree|डिग्री|डिग्रीज़|डि.|डि|°" }
         };
       public static readonly IList<string> AmbiguousTemperatureUnitList = new List<string>
         {
-            @"c",
-            @"f",
-            @"k"
+            @"से.",
+            @"फ़ॉ.",
+            @"के."
         };
       public static readonly Dictionary<string, string> VolumeSuffixList = new Dictionary<string, string>
         {
