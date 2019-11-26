@@ -186,6 +186,11 @@ class DateExtractorConfiguration(ABC):
     def since_year_suffix_regex(self) -> Pattern:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def check_both_before_after(self) -> Pattern:
+        raise NotImplementedError
+
 
 class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
     @property
@@ -772,6 +777,11 @@ class DateParserConfiguration(ABC):
 
     @abstractmethod
     def is_cardinal_last(self, source: str) -> bool:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def check_both_before_after(self) -> bool:
         raise NotImplementedError
 
 

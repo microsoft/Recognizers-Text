@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Pattern
 
 from recognizers_number import BaseNumberExtractor, FrenchCardinalExtractor, FrenchIntegerExtractor, FrenchOrdinalExtractor, BaseNumberParser, FrenchNumberParserConfiguration
 
@@ -32,6 +32,10 @@ from .parsers import FrenchTimeParser
 
 
 class FrenchCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
+    @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
     @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
         return self._cardinal_extractor
@@ -152,9 +156,12 @@ class FrenchCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
         self._month_of_year = FrenchDateTime.MonthOfYear
         self._numbers = FrenchDateTime.Numbers
         self._double_numbers = FrenchDateTime.DoubleNumbers
+        self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
+
         self._cardinal_extractor = FrenchCardinalExtractor()
         self._integer_extractor = FrenchIntegerExtractor()
         self._ordinal_extractor = FrenchOrdinalExtractor()
+
         self._day_of_month = {
             **BaseDateTime.DayOfMonthDictionary, **FrenchDateTime.DayOfMonth}
         self._number_parser = BaseNumberParser(

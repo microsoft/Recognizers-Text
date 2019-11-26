@@ -62,7 +62,7 @@ class DurationExtractorConfiguration(DateTimeOptionsConfiguration):
 
     @property
     @abstractmethod
-    def during_regex(self) -> BaseNumberExtractor:
+    def during_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
@@ -93,6 +93,11 @@ class DurationExtractorConfiguration(DateTimeOptionsConfiguration):
     @property
     @abstractmethod
     def less_than_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def check_both_before_after(self):
         raise NotImplementedError
 
 

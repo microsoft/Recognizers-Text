@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Pattern
 
 from recognizers_number import BaseNumberExtractor, BaseNumberParser
 from recognizers_number.number.spanish.parsers import SpanishNumberParserConfiguration
@@ -34,6 +34,10 @@ from .datetimeperiod_parser_config import SpanishDateTimePeriodParserConfigurati
 
 
 class SpanishCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
+    @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
     @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
         return self._cardinal_extractor
@@ -159,6 +163,7 @@ class SpanishCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
         self._month_of_year = SpanishDateTime.MonthOfYear
         self._numbers = SpanishDateTime.Numbers
         self._double_numbers = SpanishDateTime.DoubleNumbers
+        self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
 
         self._cardinal_extractor = SpanishCardinalExtractor()
         self._integer_extractor = SpanishIntegerExtractor()

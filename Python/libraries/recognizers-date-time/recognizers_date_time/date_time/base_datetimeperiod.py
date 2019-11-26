@@ -200,6 +200,11 @@ class DateTimePeriodExtractorConfiguration(DateTimeOptionsConfiguration):
     def suffix_regex(self) -> Pattern:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def check_both_before_after(self) -> Pattern:
+        raise NotImplementedError
+
 
 class BaseDateTimePeriodExtractor(DateTimeExtractor):
     @property
