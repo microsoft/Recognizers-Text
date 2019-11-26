@@ -118,13 +118,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!isMatch)
                 {
-                    var inWithinRegexes = new List<(Regex, List<Regex>)>
+                    // Item1 is the main regex to be tested
+                    // Item2 is a list of unit regexes used to validate the extraction (in case of match, the extraction is discarded)
+                    var inWithinRegexTuples = new List<(Regex, List<Regex>)>
                     {
                         (utilityConfiguration.InConnectorRegex, new List<Regex> { utilityConfiguration.RangeUnitRegex }),
                         (utilityConfiguration.WithinNextPrefixRegex, new List<Regex> { utilityConfiguration.DateUnitRegex, utilityConfiguration.TimeUnitRegex }),
                     };
 
-                    foreach (var regex in inWithinRegexes)
+                    foreach (var regex in inWithinRegexTuples)
                     {
                         bool isMatchAfter = false;
                         if (MatchingUtil.GetTermIndex(beforeString, regex.Item1, out index))
@@ -232,20 +234,22 @@ namespace Microsoft.Recognizers.Text.DateTime
             int swift = 0;
             bool isMatch = false, isLater = false;
             string dayStr = null;
-            var agoLaterRegexes = new List<(Regex, string)>
+
+            // Item2 is a label identifying the regex defined in Item1
+            var agoLaterRegexTuples = new List<(Regex, string)>
             {
-                (utilityConfiguration.AgoRegex, "ago"),
-                (utilityConfiguration.LaterRegex, "later"),
+                (utilityConfiguration.AgoRegex, Constants.AGO_LABEL),
+                (utilityConfiguration.LaterRegex, Constants.LATER_LABEL),
             };
 
             // AgoRegex and LaterRegex cases
-            foreach (var regex in agoLaterRegexes)
+            foreach (var regex in agoLaterRegexTuples)
             {
                 // Match in afterStr
                 if (MatchingUtil.ContainsAgoLaterIndex(afterStr, regex.Item1, inSuffix: true))
                 {
                     isMatch = true;
-                    isLater = regex.Item2 == "later" ? true : false;
+                    isLater = regex.Item2 == Constants.LATER_LABEL ? true : false;
                     var match = regex.Item1.Match(afterStr);
                     dayStr = match.Groups["day"].Value;
                 }
@@ -263,7 +267,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (string.IsNullOrEmpty(dayStr) && MatchingUtil.ContainsAgoLaterIndex(beforeStr, regex.Item1, inSuffix: false))
                     {
                         isMatch = true;
-                        isLater = regex.Item2 == "later" ? true : false;
+                        isLater = regex.Item2 == Constants.LATER_LABEL ? true : false;
                         var match = regex.Item1.Match(beforeStr);
                         dayStr = match.Groups["day"].Value;
                     }
@@ -314,7 +318,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
-                resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime.AddDays(swift), isLater ? true : false);
+                var isFuture = isLater ? true : false;
+                resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime.AddDays(swift), future: isFuture);
 
                 ((DateTimeResolutionResult)durationParseResult.Value).Mod = isLater ? Constants.AFTER_MOD : Constants.BEFORE_MOD;
             }

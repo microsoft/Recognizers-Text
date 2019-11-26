@@ -406,6 +406,23 @@
       }
     ]
   },
+    {
+    "Input": "ilk kitap",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ilk",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
   {
     "Input": "Sonuncusu",
     "NotSupportedByDesign": "javascript,python,java",
@@ -414,6 +431,57 @@
         "Text": "sonuncusu",
         "Start": 0,
         "End": 8,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "son",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "son",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "sonuncu",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "sonuncu",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "en son",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "en son",
+        "Start": 0,
+        "End": 5,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
