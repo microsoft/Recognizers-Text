@@ -1,6 +1,6 @@
 from enum import Enum, IntEnum, IntFlag
 from abc import ABC, abstractmethod
-from typing import List, Dict, Pattern, Union
+from typing import List, Dict, Pattern, Union, Match
 from datetime import datetime, timedelta
 import calendar
 
@@ -89,6 +89,17 @@ class TimeZoneUtility:
 class RegexExtension:
 
     @staticmethod
+    def exact_match(regexp: Pattern, text: str, trim: bool):
+        match = regexp.search(text)
+
+        if match is None:
+            return None
+
+        length = len(text.strip()) if trim else len(text)
+
+        return ConditionalMatch(match, match and len(match.group()) == length)
+
+    @staticmethod
     def match_begin(regexp: Pattern, text: str, trim: bool):
         match = regex.search(regexp, text)
 
@@ -155,13 +166,22 @@ class ConditionalMatch:
     def length(self) -> int:
         return len(self.match[0].group())
 
+    def group(self, grp):
+        return self.match[0].group(grp)
+
     @property
     def value(self) -> str:
-        return self.match[0].string[self.match[0].start(): self.match[0].end()]
+        return self.match[0].string
 
     @property
     def groups(self):
         return self.match[0].groups()
+
+    def get_group(self, match: Match, group: str, default_val: str = '') -> str:
+        if match is None:
+            return None
+
+        return self.match.groupdict().get(group, default_val) or default_val
 
 
 class DateTimeOptions(IntFlag):
