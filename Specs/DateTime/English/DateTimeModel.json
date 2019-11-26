@@ -14673,5 +14673,28 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Every other Friday",
+    "Context": {
+      "ReferenceDateTime": "2019-11-25T17:00:00"
+    },
+    "Results": [
+      {
+        "Text": "every other friday",
+        "Start": 0,
+        "End": 17,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

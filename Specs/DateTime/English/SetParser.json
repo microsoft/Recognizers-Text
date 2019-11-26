@@ -665,5 +665,28 @@
         "Length": 11
       }
     ]
+  },
+  {
+    "Input": "Every other Friday",
+    "Context": {
+      "ReferenceDateTime": "2019-11-25T17:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Every other Friday",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-5",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-5"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-5"
+          }
+        },
+        "Start": 0,
+        "Length": 18
+      }
+    ]
   }
 ]
