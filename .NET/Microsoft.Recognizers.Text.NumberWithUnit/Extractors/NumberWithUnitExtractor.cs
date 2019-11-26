@@ -63,6 +63,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             var mappingPrefix = new Dictionary<int, PrefixUnitResult>();
             var sourceLen = source.Length;
             var prefixMatched = false;
+            var unitIsPrefix = new List<bool>();
 
             MatchCollection nonUnitMatches = null;
             var prefixMatch = prefixMatcher.Find(source).OrderBy(o => o.Start).ToList();
@@ -99,6 +100,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     var maxFindPref = Math.Min(maxPrefixMatchLen, number.Start.Value);
                     var maxFindSuff = sourceLen - start - length;
 
+                    var closeMatch = false;
                     if (maxFindPref != 0)
                     {
                         // Scan from left to right, find the longest match
@@ -112,8 +114,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 break;
                             }
 
-                            if (m.Length > 0 && source.Substring(m.Start, lastIndex - m.Start).Trim() == m.Text)
+                            var unitStr = source.Substring(m.Start, lastIndex - m.Start);
+                            if (m.Length > 0 && unitStr.Trim() == m.Text)
                             {
+                                if (unitStr == m.Text)
+                                {
+                                    closeMatch = true;
+                                }
+
                                 bestMatch = m;
                                 break;
                             }
@@ -128,8 +136,44 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     }
 
                     mappingPrefix.TryGetValue(start, out PrefixUnitResult prefixUnit);
+
+                    // For currency unit, such as "$ 10 $ 20", get candidate "$ 10" "10 $" "$20" then select to get result.
+                    // So add "$ 10" to result here, then get "10 $" in the suffixMatch.
+                    // But for case like "摄氏温度10度", "摄氏温度10" will skip this and continue to extend the suffix.
+                    if (prefixUnit != null && !prefixMatched && CheckExtractorType(Constants.SYS_UNIT_CURRENCY))
+                    {
+                        var er = new ExtractResult
+                        {
+                            Start = number.Start - prefixUnit.Offset,
+                            Length = number.Length + prefixUnit.Offset,
+                            Text = prefixUnit.UnitStr + number.Text,
+                            Type = this.config.ExtractType,
+                        };
+
+                        // Relative position will be used in Parser
+                        number.Start = start - er.Start;
+                        er.Data = new ExtractResult
+                        {
+                            Data = number.Data,
+                            Length = number.Length,
+                            Metadata = number.Metadata,
+                            Start = number.Start,
+                            Text = number.Text,
+                            Type = number.Type,
+                        };
+
+                        result.Add(er);
+                        unitIsPrefix.Add(true);
+                    }
+
                     if (maxFindSuff > 0)
                     {
+                        // If the number already get close prefix currency unit, skip the suffix match.
+                        if (CheckExtractorType(Constants.SYS_UNIT_CURRENCY) && closeMatch)
+                        {
+                            continue;
+                        }
+
                         // find the best suffix unit
                         var maxlen = 0;
                         var firstIndex = start + length;
@@ -161,7 +205,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 Type = this.config.ExtractType,
                             };
 
-                            if (prefixUnit != null)
+                            if (prefixUnit != null && !CheckExtractorType(Constants.SYS_UNIT_CURRENCY))
                             {
                                 prefixMatched = true;
                                 er.Start -= prefixUnit.Offset;
@@ -198,10 +242,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             }
 
                             result.Add(er);
+                            unitIsPrefix.Add(false);
                         }
                     }
 
-                    if (prefixUnit != null && !prefixMatched)
+                    if (prefixUnit != null && !prefixMatched && !CheckExtractorType(Constants.SYS_UNIT_CURRENCY))
                     {
                         var er = new ExtractResult
                         {
@@ -231,6 +276,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                 // Remove common ambiguous cases
                 result = FilterAmbiguity(result, source);
+            }
+
+            if (CheckExtractorType(Constants.SYS_UNIT_CURRENCY))
+            {
+                result = SelectCandidate(source, result, unitIsPrefix);
             }
 
             return result;
@@ -426,6 +476,83 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             }
 
             return extractResults;
+        }
+
+        private bool CheckExtractorType(string extractorType)
+        {
+            return this.config.ExtractType.Equals(extractorType, StringComparison.Ordinal);
+        }
+
+        private List<ExtractResult> SelectCandidate(string source, List<ExtractResult> extractResults, List<bool> unitIsPrefix)
+        {
+            int totalCandidate = unitIsPrefix.Count;
+            bool haveConflict = false;
+            for (var index = 1; index < totalCandidate; index++)
+            {
+                if (extractResults[index - 1].Start + extractResults[index - 1].Length > extractResults[index].Start)
+                {
+                    haveConflict = true;
+                }
+            }
+
+            if (!haveConflict)
+            {
+                return extractResults;
+            }
+
+            var prefixResult = new List<ExtractResult>();
+            var suffixResult = new List<ExtractResult>();
+            int currentEnd = -1;
+            for (var index = 0; index < totalCandidate; index++)
+            {
+                if (currentEnd < extractResults[index].Start)
+                {
+                    currentEnd = (int)(extractResults[index].Start + extractResults[index].Length);
+                    prefixResult.Add(extractResults[index]);
+                }
+                else
+                {
+                    if (unitIsPrefix[index])
+                    {
+                        prefixResult.RemoveAt(prefixResult.Count - 1);
+                        currentEnd = (int)(extractResults[index].Start + extractResults[index].Length);
+                        prefixResult.Add(extractResults[index]);
+                    }
+                }
+            }
+
+            currentEnd = source.Length;
+            for (var index = totalCandidate - 1; index >= 0; index--)
+            {
+                if (currentEnd >= extractResults[index].Start + extractResults[index].Length)
+                {
+                    currentEnd = (int)extractResults[index].Start;
+                    suffixResult.Add(extractResults[index]);
+                }
+                else
+                {
+                    if (!unitIsPrefix[index])
+                    {
+                        suffixResult.RemoveAt(suffixResult.Count - 1);
+                        currentEnd = (int)extractResults[index].Start;
+                        suffixResult.Add(extractResults[index]);
+                    }
+                }
+            }
+
+            // Add Separate unit
+            for (var index = totalCandidate; index < extractResults.Count; index++)
+            {
+                prefixResult.Add(extractResults[index]);
+                suffixResult.Add(extractResults[index]);
+            }
+
+            if (suffixResult.Count > prefixResult.Count)
+            {
+                return suffixResult;
+            }
+
+            return prefixResult;
         }
     }
 }

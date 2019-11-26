@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
                 },
                 {
                     new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.ENGLISH)
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.HINDI)
                 },
                 {
                     new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexFlags),

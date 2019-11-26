@@ -72,15 +72,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             endMin = 0;
 
             var timeOfDay = string.Empty;
-            if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o)))
+            if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o) || trimmedText.StartsWith(o)))
             {
                 timeOfDay = Constants.Morning;
             }
-            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o) || trimmedText.StartsWith(o)))
             {
                 timeOfDay = Constants.Afternoon;
             }
-            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o) || trimmedText.StartsWith(o)))
             {
                 timeOfDay = Constants.Evening;
             }
@@ -88,7 +88,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             {
                 timeOfDay = Constants.Daytime;
             }
-            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o) || trimmedText.StartsWith(o)))
             {
                 timeOfDay = Constants.Night;
             }

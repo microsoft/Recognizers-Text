@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Definitions.Hindi;
 
 namespace Microsoft.Recognizers.Text.Number.Hindi
 {
-    public class HindiNumberParserConfiguration : BaseNumberParserConfiguration
+    public class HindiNumberParserConfiguration : BaseIndianNumberParserConfiguration
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -34,14 +34,18 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
 
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
             this.OrdinalNumberMap = NumbersDefinitions.OrdinalNumberMap.ToImmutableDictionary();
+            this.DecimalUnitsMap = NumbersDefinitions.DecimalUnitsMap.ToImmutableDictionary();
             this.RelativeReferenceOffsetMap = NumbersDefinitions.RelativeReferenceOffsetMap.ToImmutableDictionary();
             this.RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
+            this.ZeroToNineMap = NumbersDefinitions.ZeroToNineMap.ToImmutableDictionary();
 
+            this.AdditionTermsRegex = new Regex(NumbersDefinitions.AdditionTermsRegex, RegexFlags);
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexFlags);
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
             this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
+            this.FractionPrepositionInverseRegex = new Regex(NumbersDefinitions.FractionPrepositionInverseRegex, RegexFlags);
         }
 
         public string NonDecimalSeparatorText { get; private set; }

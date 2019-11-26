@@ -833,5 +833,55 @@
   {
     "Input": "It cost 1.8M dollars.",
     "Results": []
+  },
+  {
+    "Input": "1 m 1 m",
+    "Results": [
+      {
+        "Text": "1 m",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "1 m",
+        "Start": 4,
+        "End": 6,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 m x 1 m",
+    "Results": [
+      {
+        "Text": "1 m",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "1 m",
+        "Start": 6,
+        "End": 8,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "value": "1"
+        }
+      }
+    ]
   }
 ]

@@ -22,7 +22,7 @@ class SpanishDateTimePeriodParser(BaseDateTimePeriodParser):
         end_min = match.end_min
         time_str = match.time_str
 
-        if not match.success:
+        if match and not match.success:
             return result
 
         match = self.config.specific_time_of_day_regex.match(trimmed_text)

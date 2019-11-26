@@ -6,12 +6,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
     public sealed class TurkishMergedParserConfiguration : TurkishCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
+        public static readonly Regex BeforeRegex =
+            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
+
+        public static readonly Regex AfterRegex =
+            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
+
+        public static readonly Regex SinceRegex =
+            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public TurkishMergedParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            BeforeRegex = TurkishMergedExtractorConfiguration.BeforeRegex;
-            AfterRegex = TurkishMergedExtractorConfiguration.AfterRegex;
-            SinceRegex = TurkishMergedExtractorConfiguration.SinceRegex;
             AroundRegex = TurkishMergedExtractorConfiguration.AroundRegex;
             EqualRegex = TurkishMergedExtractorConfiguration.EqualRegex;
             SuffixAfter = TurkishMergedExtractorConfiguration.SuffixAfterRegex;
@@ -27,11 +35,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             TimeZoneParser = new BaseTimeZoneParser();
         }
 
-        public Regex BeforeRegex { get; }
+        Regex IMergedParserConfiguration.BeforeRegex => BeforeRegex;
 
-        public Regex AfterRegex { get; }
+        Regex IMergedParserConfiguration.AfterRegex => AfterRegex;
 
-        public Regex SinceRegex { get; }
+        Regex IMergedParserConfiguration.SinceRegex => SinceRegex;
 
         public Regex AroundRegex { get; }
 

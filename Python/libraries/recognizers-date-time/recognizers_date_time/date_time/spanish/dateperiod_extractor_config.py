@@ -63,6 +63,10 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._year_regex
 
     @property
+    def decade_with_century_regex(self) -> Pattern:
+        return self._decade_with_century_regex
+
+    @property
     def till_regex(self) -> Pattern:
         return self._till_regex
 
@@ -180,6 +184,7 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.WhichWeekRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.ReferenceDatePeriodRegex),
         ]
+        self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
         self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.TimeUnitRegex)
         self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(
@@ -252,6 +257,8 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
         self._cardinal_extractor = SpanishCardinalExtractor()
         self._ordinal_extractor = SpanishOrdinalExtractor()
+        self._decade_with_century_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.DecadeWithCenturyRegex)
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)

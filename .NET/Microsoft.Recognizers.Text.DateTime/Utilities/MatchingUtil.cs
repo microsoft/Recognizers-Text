@@ -10,28 +10,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public static class MatchingUtil
     {
-        public static bool GetAgoLaterIndex(string text, Regex regex, out int index)
+        public static bool GetAgoLaterIndex(string text, Regex regex, out int index, bool inSuffix)
         {
             index = -1;
-            var match = regex.MatchBegin(text, trim: true);
+            var match = inSuffix ? regex.MatchBegin(text, trim: true) : regex.MatchEnd(text, trim: true);
 
             if (match.Success)
             {
-                index = match.Index + match.Length;
-                return true;
-            }
-
-            return false;
-        }
-
-        public static bool GetAgoLaterIndexInBeforeString(string text, Regex regex, out int index)
-        {
-            index = -1;
-            var match = regex.MatchEnd(text, trim: true);
-
-            if (match.Success)
-            {
-                index = match.Index;
+                index = match.Index + (inSuffix ? match.Length : 0);
                 return true;
             }
 
@@ -51,14 +37,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return false;
         }
 
-        public static bool ContainsAgoLaterIndex(string text, Regex regex)
+        public static bool ContainsAgoLaterIndex(string text, Regex regex, bool inSuffix)
         {
-            return GetAgoLaterIndex(text, regex, out var index);
-        }
-
-        public static bool ContainsAgoLaterIndexInBeforeString(string text, Regex regex)
-        {
-            return GetAgoLaterIndexInBeforeString(text, regex, out var index);
+            return GetAgoLaterIndex(text, regex, out var index, inSuffix);
         }
 
         public static bool ContainsTermIndex(string text, Regex regex)

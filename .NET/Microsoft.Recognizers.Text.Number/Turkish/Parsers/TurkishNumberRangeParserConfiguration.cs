@@ -17,6 +17,10 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
             NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(config));
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);
             LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags);
+            MoreOrEqualSuffix = new Regex(NumbersDefinitions.MoreOrEqualSuffix, RegexFlags);
+            LessOrEqualSuffix = new Regex(NumbersDefinitions.LessOrEqualSuffix, RegexFlags);
+            MoreOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexFlags);
+            LessOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexFlags);
         }
 
         public CultureInfo CultureInfo { get; private set; }

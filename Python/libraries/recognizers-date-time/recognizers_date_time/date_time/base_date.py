@@ -207,7 +207,8 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         if reference is None:
             reference = datetime.now()
 
-        tokens = self.basic_regex_match(source)
+        tokens = []
+        tokens.extend(self.basic_regex_match(source))
         tokens.extend(self.implicit_date(source))
         tokens.extend(self.number_with_month(source, reference))
         tokens.extend(self.relative_duration_date(source, reference))

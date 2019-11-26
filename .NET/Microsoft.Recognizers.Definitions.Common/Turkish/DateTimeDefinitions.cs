@@ -23,21 +23,21 @@ namespace Microsoft.Recognizers.Definitions.Turkish
     {
       public const bool CheckBothBeforeAfter = true;
       public static readonly string TillRegex = $@"(?<till>\b(kadar|dek\b|değin)|{BaseDateTime.RangeConnectorSymbolRegex})";
-      public static readonly string TillConnectorRegex = $@"(?<till>('?tan|'?ten|'?den|'?dan)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
+      public static readonly string TillConnectorRegex = $@"(?<till>('?tan|'?ten|'?den|'?dan|ile)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
       public static readonly string RangeConnectorRegex = $@"(?<and>(ile|ila|yle|'le|'la|'?tan|'?ten|(günün|'|n)?den|'?dan|ve)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
-      public const string RelativeRegex = @"(?<order>ertesi|(bir\s+)?sonraki|gelecek|bu|geçen|son|geçtiğimiz|(bir\s+)?önceki|evvelki|önümüzdeki|o(?=\s+gün))";
+      public const string RelativeRegex = @"(?<order>ertesi|(bir\s+)?sonraki|gelecek|bu|geçen|son|geçtiğimiz|(?<!(tan|ten)\s+)(bir\s+)?önceki|evvelki|önümüzdeki|o(?=\s+gün))";
       public const string StrictRelativeRegex = @"(?<order>ertesi|(bir\s+)?sonraki|gelecek|bu|geçen|son|geçtiğimiz|(bir\s+)?önceki|evvelki|önümüzdeki)";
       public const string UpcomingPrefixRegex = @"((bu\s+)?(yaklaşan))";
-      public const string NextPrefixRegex = @"\b((bir\s+)sonraki|(?<!öğleden\s+)sonra|gelecek|önümüzdeki|ertesi)(\s+gelecek)?\b";
-      public const string AfterNextSuffixRegex = @"\b((gelecek|önümüzdeki)\s+(<unit>günden|haftadan|hafta\s+sonundan|aydan|yıldan|seneden)\s+sonra((ki\s+(?<unit>hafta(\s+sonu)?|gün|ay|yıl|sene))((?=daki\b)|\b)|\b))";
+      public static readonly string NextPrefixRegex = $@"\b(((bir\s+)sonraki|(?<!öğleden\s+)sonra|gelecek|önümüzdeki|ertesi)(\s+gelecek)?|{UpcomingPrefixRegex})\b";
+      public const string AfterNextSuffixRegex = @"\b((gelecek|önümüzdeki)\s+(<unit>günden|haftadan|hafta\s+sonundan|aydan|yıldan|seneden)\s+sonra((ki\s+(?<unit>hafta(\s+sonu|ya\s+ait|nın)?|gün|ay|yıl|sene))((?=daki\b)|\b)|\b))";
       public const string PastPrefixRegex = @"(son|geçtiğimiz)\b";
-      public static readonly string PreviousPrefixRegex = $@"(geçen|bir\s+önceki|önceki|evvelki|{PastPrefixRegex})\b";
+      public static readonly string PreviousPrefixRegex = $@"(geçen|bir\s+önceki|(?<!(tan|ten)\s+)önceki|evvelki|{PastPrefixRegex})\b";
       public const string ThisPrefixRegex = @"(bu|şimdiki)\b";
       public const string RangePrefixRegex = @"(arası(nda|na)?|'s[iı]n[ae](\s+(kadar|dek|değin))?|((gününe|'[ae]|y[ae]|n[ae])\s+)?(kadar|dek|değin)|'y[ae](\s+(kadar|dek|değin))?|'[ea]|(?<!'\p{L}+)[ea](\s+(kadar|dek|değin)\b))";
       public const string CenturySuffixRegex = @"(^yüzyıl)";
       public const string ReferencePrefixRegex = @"(o|şu|aynı)\b";
       public const string FutureSuffixRegex = @"\b(ileride|gelecekte)\b";
-      public const string DayRegex = @"(?<day>(10|20|30|31|(1|2)[1-9]|0?[1-9])('i|'si|'sı|'ü|'u)?)";
+      public const string DayRegex = @"((?<day>10|20|30|31|(1|2)[1-9]|0?[1-9])('i|'si|'sı|'ü|'u)?)";
       public const string ImplicitDayRegex = @"(?<day>(10|20|30|31|(1|2)[1-9])('i|'si|'sı|'ü|'u))(?=\b)";
       public const string DayFromSuffixRegex = @"(?<day>(1|5|8|11|15|18|21|25|28|31)'inden|(2|7|12|17|20|22|27)'sinden|(3|4|13|14|23|24)'ünden|(6|16|26)'sından|(9|10|19|29|30)'undan)";
       public const string DayToSuffixRegex = @"(?<day>(1|5|8|11|15|18|21|25|28|31)'ine|(2|7|12|17|20|22|27)'sine|(3|4|13|14|23|24)'üne|(6|16|26)'sına|(9|10|19|29|30)'una)";
@@ -63,14 +63,14 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}('a\b)?|{FullTextYearRegex})";
       public const string WeekDayRegex = @"\b(?<weekday>pazartesi(leri|si)?|salı(ları|sı)?|çarşamba(ları|sı)?|perşembe(leri|si)?|cuma(ları|sı)?|cumartesi(leri|si)?|pazar(ları|ı)?|pzt|sal|çrş|per|cum|cmt|paz)(\s+günü)?\b";
       public const string SingleWeekDayRegex = @"\b(?<weekday>pazartesi|salı|çarşamba|perşembe|cuma|cumartesi|pazar|pzt|sal|çrş|per|cum|cmt|paz)\b";
-      public static readonly string MonthRegex = $@"\b(?<month>ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|(?<!(arasındaki|kadarki)\s+)aralık(?!\s+{YearRegex}(den|dan))|oca|şub|mar|nis|may|haz|eyl|eki|kas|(?<=\d\s+)ara(?=\s+\d))";
+      public static readonly string MonthRegex = $@"\b(?<month>ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|(?<!(arasındaki|kadarki)\s+)aralık(?!\s+{YearRegex}(den|dan))|(oca|şub|mar|nis|may|haz|eyl|eki|kas|(?<=\d\s+)ara(?=\s+\d))\b)";
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>{RelativeRegex}\s+(ayın|ay))\b";
-      public static readonly string WrittenMonthRegex = $@"(?<month>ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|(?<!(arasındaki|kadarki)\s+)aralık(?!\s+{YearRegex}(den|dan))|oca|şub|mar|nis|may|haz|eyl|eki|kas|(?<=\d\s+)ara(?=\s+\d))(\s+ayı)?";
+      public static readonly string WrittenMonthRegex = $@"(?<month>ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|(?<!(arasındaki|kadarki)\s+)aralık(?!\s+{YearRegex}(den|dan))|(oca|şub|mar|nis|may|haz|eyl|eki|kas|(?<=\d\s+)ara(?=\s+\d))\b)(\s+ayı)?";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>((?<!\d+)((ocak|şubat|mart|mayıs|ağustos|aralık)(ta)|(nisan|haziran|temmuz|kasım)(da)|(eylül|ekim)(de))|{WrittenMonthRegex}(\sayında)|{RelativeRegex}\sayda))";
       public const string ProperMonthSuffixRegex = @"(?<msuf>(ocak|şubat|mart|mayıs|ağustos|aralık)('ta)|(nisan|haziran|temmuz|kasım)('da)|(eylül|ekim)('de))";
-      public static readonly string MonthPossessiveSuffixRegex = $@"((?<month>(ocak|şubat|mart|nisan|mayıs|haziran|kasım|aralık)('ın)|(temmuz|ağustos)('un)|eylül'ün|ekim'in)|{MonthRegex}(\s+ayının)|{RelativeMonthRegex})";
+      public static readonly string MonthPossessiveSuffixRegex = $@"((?<month>(ocak|şubat|mart|nisan|mayıs|haziran|kasım|aralık)('ın)|(temmuz|ağustos)('un)|eylül'ün|ekim'in)|{MonthRegex}(\s+ayının)|(?<relmonth>{RelativeRegex}\s+(ayın))\b)";
       public const string MonthToSuffixRegex = @"(?<msuf>((ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|kasım|aralık)'a|(eylül|ekim)'e))";
-      public const string DateUnitRegex = @"\b(?<unit>(?<year>yıl|sene)|(?<month>ayın\b|ay(?=lığına|ı|\b))|(?<week>hafta)|(?<business>iş\s+)günü|(?<day>gün))(?!(den|dan)(?!\s+(az|fazla)))";
+      public const string DateUnitRegex = @"\b(?<unit>(?<year>yıl|sene)|(?<month>ayın\b|ay(?=lığına|ı|da|\b))|(?<week>hafta)|(?<business>iş\s+)günü|(?<day>gün))(?!(den|dan)(?!\s+(az|fazla)))";
       public const string DateTokenPrefix = @"";
       public const string TimeTokenPrefix = @"";
       public const string TokenBeforeDate = @"";
@@ -84,7 +84,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string MonthFrontBetweenRegex = $@"\b({WrittenMonthRegex}\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?(\s*{RangePrefixRegex})?\b";
       public static readonly string BetweenRegex = $@"\b(({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+({WrittenMonthRegex}|{RelativeMonthRegex})((\s+|\s*,\s*){YearRegex})?(\s*{RangePrefixRegex})?|({MonthPossessiveSuffixRegex},?\s+)({YearRegex}\s+)?)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})(\s*{RangePrefixRegex})?\b";
       public static readonly string MonthWithYear = $@"\b(({WrittenMonthRegex}(\s+|,?\s*){YearRegex}('y?[ae])?(?!den|dan))|({RelativeRegex}\s+(yıl|sene)|({RelativeRegex}\s+)?{YearRegex}(in|nin|ün|nın|un)?|seneye)(\s*,)?\s+{WrittenMonthRegex}(\s+ayı(?=nda)|(?='(ta|da|de)\b)|\b))";
-      public static readonly string OneWordPeriodRegex = $@"\b({AfterNextSuffixRegex}|({RelativeRegex}\s+)?{WrittenMonthRegex}(\s+ayı(?=nda)|\b)|({NextPrefixRegex}\s+)?{WrittenMonthRegex}|(ayın|sene) başından\s+beri|((({RelativeRegex}\s+)(benim\s+)?|benim\s+|(?<!\d+\s+))(ay(ı[mn])?|yıl(ı[mn])?|hafta\s+sonum?|haftam?|haftasında|haftanın)|hafta\s+sonum?|haftasında|haftaya)\b|(hafta|yıl|ay)(?=daki)|bugüne\s+kadarki\s+yıl)(?!\s+içinde)";
+      public static readonly string OneWordPeriodRegex = $@"\b({AfterNextSuffixRegex}|({RelativeRegex}\s+)?{WrittenMonthRegex}(\s+ayı(?=nda)|\b)|({NextPrefixRegex}\s+)?{WrittenMonthRegex}|(ayın|sene) başından\s+beri|((({RelativeRegex}\s+)(benim\s+)?|benim\s+|(?<!(\d+|büyük)\s+))(ay(ı[mn])?|yıl(ı[mn])?|hafta\s+sonum?|haftam?|haftasında|haftanın)|hafta\s+sonum?|haftasında|haftaya)(\b|(?=ki))|(hafta|yıl|ay)(?=daki)|(bugüne|bu\s+zamana)\s+kadarki\s+(yıl|ay))(?!\s+içinde(?!\s+(daha\s+)?sonra))";
       public static readonly string MonthNumWithYear = $@"\b(({MonthNumRegex}(\s*)[/\-\.](\s*){BaseDateTime.FourDigitYearRegex})\b|({BaseDateTime.FourDigitYearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})\b|({BaseDateTime.FourDigitYearRegex}('(nın|in|ün|nın|ın|un))\s+(?<month>([1258]|10|11|12)('inci|\.)|[34]('üncü|\.)|6('ıncı|\.)|(7|12)('nci|\.)|(9|10)('uncu|\.))(\s+ayı|\b)))";
       public static readonly string WeekOfMonthRegex = $@"\b(?<wom>({MonthPossessiveSuffixRegex}|{WrittenMonthRegex}(\s+{BaseDateTime.FourDigitYearRegex}('(in|nin|ün|nın|un)))|({BaseDateTime.FourDigitYearRegex}\s+yılı\s+|{RelativeRegex}\s+yılın\s+)?{WrittenMonthRegex}\s+ayının)\s+(?<cardinal>ilk|birinci|1(.|'inci)|ikinci|2(.|'inci)|üçüncü|3(.|'üncü)|dördüncü|4(.|'üncü)|beşinci|5(.|'inci)|son)\s+haftası(na)?)\b";
       public static readonly string WeekOfYearRegex = $@"\b(?<woy>({YearRegex}(\s+yılının|'?(nin|in|ün|nın|ın|un))|{RelativeRegex}\s+yıl(ın)?)\s+(?<cardinal>((on|yirmi|otuz|kırk|elli)\s+)?(birinci|ilk|ikinci|üçüncü|dördüncü|beşinci|altıncı|yedinci|sekizinci|dokuzuncu|onuncu|yirminci|otuzuncu|kırkıncı|ellinci)|elli birinci|elli ikinci|(1|2|3|4|5)?1(.|'inci)|(1|2|3|4|5)?2(.|'inci)|(1|2|3|4)?3(.|'üncü)|(1|2|3|4)?4(.|'üncü)|(1|2|3|4)?5(.|'inci)|(1|2|3|4)?6(.|'ıncı)|(1|2|3|4)?7(.|'nci)|(1|2|3|4)?8(.|'inci)|(1|2|3|4)?9(.|'uncu)|son)\s+hafta(sı)?)";
@@ -101,12 +101,12 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string HalfYearBackRegex = $@"({HalfYearTermRegex})(\s*,\s*)({YearRegex})";
       public static readonly string HalfYearRelativeRegex = $@"((({RelativeRegex}\s+)?yılın|{YearRegex}\s+yılının)\s+{HalfYearTermRegex})(ı)";
       public static readonly string AllHalfYearRegex = $@"({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})";
-      public const string EarlyPrefixRegex = @"(?<EarlyPrefix>başından|başına|(?<RelEarly>başlarında|başında|erken(den|\s+saatlerde)?|(içinde\s+)?daha\s+önce)|başı|başları|başlarına)";
-      public const string MidPrefixRegex = @"(?<MidPrefix>(gün\s+)?(ortasına|ortasından?|ortası|ortaları|ortalarına|ortalarında))";
-      public const string LaterPrefixRegex = @"(?<LatePrefix>sonundan|sonuna(\s+doğru)?|(?<RelLate>sonunda|geç(\s+saatlerde)?|(içinde\s+)?daha\s+sonra)|sonu|sonları|sonlarına|sonlarında)";
+      public const string EarlyPrefixRegex = @"(?<EarlyPrefix>erken|başından|başına|(?<RelEarly>başlarında|başında|daha\s+erken|erkenden)|başı|başları|başlarına)";
+      public const string MidPrefixRegex = @"(?<MidPrefix>(ortasına|ortasından?|ortası|ortaları|ortalarına|ortalarında))";
+      public const string LaterPrefixRegex = @"(?<LatePrefix>sonundan|sonunda|sonuna(\s+doğru)?|(?<RelLate>daha\s+geç|(içinde\s+)?daha\s+sonra|içinde\s+sonra)|sonu|sonları|sonlarına|sonlarında)";
       public static readonly string PrefixPeriodRegex = $@"({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})";
-      public const string PrefixDayRegex = @"\b(günün\s+({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex}))$";
-      public const string SeasonDescRegex = @"(?<seas>(ilk)?baharı?|yaz(ın(?=(?!')\b)|ı(?=nda)?)?|sonbaharı?|kış(ın(?=(?!')\b)|ı(?=nda)?)?)";
+      public static readonly string PrefixDayRegex = $@"\b((gün\s+)?{MidPrefixRegex}|(günün?\s+)?((?<EarlyPrefix>erken\s+saatler(in)?de)|(?<LatePrefix>(geç|ilerleyen)\s+saatler(in)?de)))";
+      public const string SeasonDescRegex = @"(?<seas>(ilk)?baharı?|yaz(?!(dı|mış))(ın(?=(?!')\b)|ı(?=nda)?)?|(?<=((mevsim(lerden)?|bir)\s+))yaz(?=(dı|mış))|sonbaharı?|kış(ın(?=(?!')\b)|ı(?=nda)?)?)";
       public static readonly string SeasonRegex = $@"\b(?<season>({YearRegex}('nın)?\s+{SeasonDescRegex}(nın)?|({RelativeRegex}\s+)?{SeasonDescRegex}(ın)?)(\s+{PrefixPeriodRegex})?)";
       public const string WhichWeekRegex = @"\b((?<number>(?<cardinal>((on|yirmi|otuz|kırk|elli)\s+)?(birinci|ikinci|üçüncü|dördüncü|beşinci|altıncı|yedinci|sekizinci|dokuzuncu|onuncu|yirminci|otuzuncu|kırkıncı|ellinci)|elli birinci|elli ikinci))|((?<number>(?<cardinal>(1|2|3|4|5)?(1|2|5|8)))(.|'inci)|(?<number>(?<cardinal>(1|2|3|4|5)?(3|4)))(.|'üncü)|(?<number>(?<cardinal>(1|2|3|4|5)?6))(.|'ıncı)|(?<number>(?<cardinal>(1|2|3|4|5)?7))(.|'nci)|(?<number>(?<cardinal>(1|2|3|4|5)?9))(.|'uncu)))\s+hafta(ya)?";
       public const string WeekOfRegex = @"(haftası)";
@@ -118,7 +118,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string PrefixWeekDayRegex = @"(\s*[-—–])";
       public static readonly string ThisRegex = $@"\b(bu(\s+hafta)?\s+{WeekDayRegex})\b";
       public static readonly string LastDateRegex = $@"\b({PreviousPrefixRegex}(\s+hafta)?\s+{WeekDayRegex})\b";
-      public static readonly string NextDateRegex = $@"\b(({NextPrefixRegex}(\s+hafta)?|haftaya)\s+{WeekDayRegex})\b";
+      public static readonly string NextDateRegex = $@"\b(({NextPrefixRegex}(\s+hafta(nın)?)?|haftaya)\s+{WeekDayRegex})\b";
       public static readonly string SpecialDayRegex = $@"\b((dünden\s+önceki|yarından\s+sonraki)\s+güne?|yarından\s+sonra(ki)?|(önceki|sonraki)\s+gün|{RelativeRegex}\s+gün|(benim\s+)?günüm|dün(den)?|yarın(dan|a)?|bugün|^gün\b)";
       public static readonly string SpecialDayWithNumRegex = $@"\b((?<day>dünden|yarından|bugünden|şu\s+andan)\s+(itibaren\s+)?(?<number>{WrittenNumRegex}|\d+)\s+gün\s+(sonra|içinde))\b";
       public static readonly string RelativeDayRegex = $@"\b({RelativeRegex}\s+gün)\b";
@@ -126,9 +126,9 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string WeekDayOfMonthRegex = $@"(?<wom>({MonthPossessiveSuffixRegex}|{WrittenMonthRegex}\s+ayının|{RelativeRegex}\s+ayın)\s+(?<cardinal>birinci|1'inci|1.|ilk|ikinci|2'nci|2.|üçüncü|3'üncü|3.|dördüncü|4'üncü|4.|beşinci|5'inci|5.|son)\s+{WeekDayRegex})";
       public static readonly string RelativeWeekDayRegex = $@"\b((şu\s+andan\s+itibaren\s+)?{WrittenNumRegex}\s+{WeekDayRegex}\s+(sonra))\b";
       public static readonly string SpecialDate = $@"\b{DayRegex}\s+günü\b";
-      public const string DatePreposition = @"^[\*]";
+      public const string DatePreposition = @"\b(tarihinde)";
       public static readonly string DateExtractorYearTermRegex = $@"(\s+|\s*,\s*){DateYearRegex}";
-      public static readonly string DateExtractor1 = $@"\b(({DayRegex}\s+{MonthRegex}(\s+{DateYearRegex})?)((\s*\(\s*{SingleWeekDayRegex}\s*\))|\s*,?\s+{SingleWeekDayRegex}(\s+günü)?)?)";
+      public static readonly string DateExtractor1 = $@"\b(({DayRegex}\s*[/\\.,-]?\s*{MonthRegex}(\s+{DateYearRegex})?)((\s*\(\s*{SingleWeekDayRegex}\s*\))|\s*,?\s+{SingleWeekDayRegex}(\s+günü)?)?)";
       public static readonly string DateExtractor3 = $@"\b(({RelativeRegex}\s+ayın\s+)?({OnRegex})(\s*\(\s*{SingleWeekDayRegex}\s*\))?)\b";
       public static readonly string DateExtractor4 = $@"\b(({RelativeRegex}\s+)?({SingleWeekDayRegex}\s+(günü\s+)?)?(\({DayRegex}\s+{MonthRegex}(\s+{DateYearRegex})?\)|(\s*,\s*)?{DayRegex}\s+{MonthRegex}'(e|a)(?!\s+kadar)))\b";
       public static readonly string DateExtractor5 = $@"\b({DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex})((\s*\(\s*{SingleWeekDayRegex}\s*\))|\s*,?\s+{SingleWeekDayRegex}(\s+günü)?)?";
@@ -136,7 +136,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string DateExtractor7 = $@"\b(({DayRegex})\s+{ProperMonthSuffixRegex})\b";
       public const string DateExtractor8 = @"^[\*]";
       public static readonly string DateExtractor9 = $@"\b({SingleWeekDayRegex}\s+{OnRegex})\b";
-      public static readonly string DateExtractor7L = $@"\b({DayRegex}\s*[/]\s*{MonthNumRegex})(,?\s+{BaseDateTime.FourDigitYearRegex})?";
+      public static readonly string DateExtractor7L = $@"\b({WeekDayRegex}\s+)?({DayRegex}\s*[/]\s*{MonthNumRegex})(,?\s+{BaseDateTime.FourDigitYearRegex})?";
       public const string DateExtractor7S = @"^[\*]";
       public const string DateExtractor9L = @"^[\*]";
       public const string DateExtractor9S = @"^[\*]";
@@ -148,7 +148,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string RangeUnitRegex = @"\b(?<unit>hafta|ay|yıl)\b";
       public const string HourNumRegex = @"\b(saat\s*)?(?<hournum>on\s+(bir|iki|üç|dört|dörd|beş|altı|yedi|sekiz|dokuz)|yirmi\s+(bir|iki|üç)|sıfır|bir|iki|üç|dört|beş|altı|yedi|sekiz|dokuz|on|yirmi)\b";
       public const string HourNumRegexNoSuffix = @"\b(saat\s*)?(?<hournum>on\s+(bir|iki|üç|dört|dörd|beş|altı|yedi|sekiz|dokuz)|yirmi\s+(bir|iki|üç)|sıfır|bir|iki|üç|dört|beş|altı|yedi|sekiz|dokuz|on|yirmi)(?=('?[dt]?[ae](ki)?|a|e|ya|ye|i|u|ü|yi|yı|ı)?\b)";
-      public const string AtHourNumRegexNoSuffix = @"\b(saat\s*)?(?<hournum>on\s+(bir|iki|üç|dört|dörd|beş|altı|yedi|sekiz|dokuz)|yirmi\s+(bir|iki|üç)|sıfır|bir|iki|üç|dört|dörd|beş|altı|yedi|sekiz|dokuz|on|yirmi)(?='?[dt]?[ae](ki)?\b)";
+      public const string AtHourNumRegexNoSuffix = @"\b(saat\s*)?(?<!(on|yirmi)\s+)(?<hournum>on\s+(bir|iki|üç|dört|dörd|beş|altı|yedi|sekiz|dokuz)|yirmi\s+(bir|iki|üç)|sıfır|bir|iki|üç|dört|dörd|beş|altı|yedi|sekiz|dokuz|on|yirmi)(?='?[dty]?[ae](ki)?\b)";
       public const string AtHourNumRegex = @"\b(saat\s*)?(?<hournum>on\s+(bir|iki|üç|dört|dörd|beş|altı|yedi|sekiz|dokuz)|yirmi\s+(bir|iki|üç)|sıfır|bir|iki|üç|dört|dörd|beş|altı|yedi|sekiz|dokuz|on|yirmi)('?[dt][ae](ki)?\b)";
       public const string MinuteNumRegex = @"(?<minnum>((on|yirmi|otuz|kırk|elli)\s)?(bir|iki|üç|dört|dörd|dörd|beş|altı|yedi|sekiz|dokuz)|(on|yirmi|otuz|kırk|elli))(\s*dakika\b)?";
       public const string DeltaMinuteNumRegex = @"\b(?<deltaminnum>((on|yirmi|otuz|kırk|elli)\s)?(bir|iki|üç|dört|dörd|dörd|beş|altı|yedi|sekiz|dokuz)|(on|yirmi|otuz|kırk|elli))";
@@ -206,7 +206,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string PeriodHourNumToRegex = @"\b((?<hour>iki|yedi|on\s+iki|on\s+yedi|yirmi|yirmi\s+iki)ye|(?<hour>bir|üç|dörd|beş|sekiz|on\s+bir|on\s+üç|on\s+dörd|on\s+beş|on\s+sekiz|yirmi\s+bir|yirmi\s+üç|yirmi\s+dörd)e|(?<hour>altı|on\s+altı)ya|(?<hour>sıfır|dokuz|on|on\s+dokuz)a)\b";
       public static readonly string ConnectNumRegex = $@"\b({DescRegex}\s+){HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)(?!\d)";
       public static readonly string TimeRegexWithDotConnector = $@"({HourRegex}(\s*\.\s*){BaseDateTime.MinuteRegex})";
-      public static readonly string TimeRegex1 = $@"\b(({TimePrefix}\s+)(saat\s)?({WrittenTimeRegex}|{HourNumRegex}|{AtHourNumRegex}|{HourRegex}))(?!\s+saat)|((saat\s)?({WrittenTimeRegex}|{HourNumRegex}|{AtHourNumRegex}|{HourRegex})\s+{TimePrefix})";
+      public static readonly string TimeRegex1 = $@"\b(({TimePrefix}\s+)(saat\s)?({WrittenTimeRegex}|{HourNumRegex}|{AtHourNumRegex}|{HourRegex}))(?!(\s+saat|\d+))";
       public static readonly string TimeRegex2 = $@"\b({TimePrefix}\s+)?(saat\s)?({HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?)";
       public static readonly string TimeRegex3 = $@"\b({TimePrefix}\s+)?(saat\s)?({HourRegex}:{BaseDateTime.MinuteRegex})";
       public static readonly string TimeRegex4 = $@"\b({TimePrefix}\s+)?(saat\s)?{TimeSuffix}(?=(\b|dan))";
@@ -221,12 +221,12 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string TimeRegex13 = $@"\b({AtHourWithZeroMinRegex}|{AtHourNumRegex}|({HourNumRegex}\s+{AtMinuteNumRegex})|{HourRegex}:{BaseDateTime.MinuteRegex}:{AtMinuteRegex})\s+{TimePrefix}";
       public static readonly string PureNumFromTo = $@"(((?<leftDesc>{TimePrefix})\s*)?(?<desc>saat\s+)?({PeriodHourNumFromRegex}|{HourNumFromRegex})\s*((?<rightDesc>{TimePrefix})\s*)?({PeriodHourNumToRegex}|{HourNumToRegex})(\s+{TillRegex})?)";
       public static readonly string PureNumBetweenAnd = $@"((?<leftDesc>{TimePrefix})\s*)?({HourRegex}|{PeriodHourNumRegex}|({HourRegex}(\s*)?:(\s*)?{BaseDateTime.TwoDigitMinuteRegex}))\s*{RangeConnectorRegex}\s*((?<leftDesc>{TimePrefix})\s*)?({HourRegex}|{PeriodHourNumRegex}|({HourRegex}(\s*)?:(\s*)?{BaseDateTime.TwoDigitMinuteRegex}))(\s*{RangePrefixRegex}\b)?";
-      public static readonly string SpecificTimeFromTo = $@"(?<time1>((?<leftDesc>\b{TimePrefix}\s+)?({HourRegex}(\s*)?:(\s*)?{MinuteFromRegex})|{HourNumFromRegex}|{PeriodHourNumFromRegex}))\s*(?<time2>((?<rightDesc>\b{TimePrefix}\s+)?({HourRegex}(\s*)?:(\s*)?{MinuteToRegex})|{HourNumToRegex}|{PeriodHourNumToRegex}))\s*{TillRegex}\b";
+      public static readonly string SpecificTimeFromTo = $@"(((?<time1>((?<leftDesc>\b({AmRegex}|{PmRegex})\s+)({HourRegex}(\s*)?:(\s*)?{MinuteFromRegex}|{HourNumFromRegex}|{PeriodHourNumFromRegex})))\s*(?<time2>((?<rightDesc>\b({AmRegex}|{PmRegex})\s+)({HourRegex}(\s*)?:(\s*)?{MinuteToRegex}|{HourNumToRegex}|{PeriodHourNumToRegex})))\s*{TillRegex})|((?<time1>((?<leftDesc>\b{TimePrefix}\s+)?({HourRegex}(\s*)?:(\s*)?{MinuteFromRegex}|{HourNumFromRegex}|{PeriodHourNumFromRegex})))\s*(?<time2>((?<rightDesc>\b{TimePrefix}\s+)?({HourRegex}(\s*)?:(\s*)?{MinuteToRegex}|{HourNumToRegex}|{PeriodHourNumToRegex})))\s*{TillRegex}))\b";
       public static readonly string SpecificTimeBetweenAnd = $@"(?<time1>({TimeRegex2}|{HourRegex}|{PeriodHourNumRegex}))\s*{RangeConnectorRegex}\s*(?<time2>({TimeRegex2}|{HourRegex}|{PeriodHourNumRegex}))(\s*{RangePrefixRegex}\b)?";
-      public const string SuffixAfterRegex = @"\b((veya|ve|ya da)\s+(sonrasında|sonrası|sonra))\b";
+      public const string SuffixAfterRegex = @"\b((veya|ve|ya da)(\s+daha)?\s+(sonrasında|sonrası|sonra))\b";
       public const string PrepositionRegex = @"(?<prep>^(günü|'d[ae]|'t[ae]|,)$)";
       public const string LaterEarlyRegex = @"((?<early>(erkenden|erken(\s+saatte)?))|(?<late>geç(\s+saatte)?))";
-      public static readonly string TimeOfDayRegex = $@"\b(?<timeOfDay>((sabah|öğleden\s+sonra|öğle(?!\s+yemeği)|akşam|gece|gün|mesai)(ın?|in|nin|ün|leyin|ları|leri|de|si)?\b(\s+{LaterEarlyRegex})?(\s+(saat(inde|te|lerinde|leri)|vaktinde|vakti|vakitlerinde))?|iş\s+(saat(inde|te|lerinde|leri)|vaktinde|vakti|vakitlerinde))(\s+(içinde|içi|dışında|dışı)\b)?)";
+      public static readonly string TimeOfDayRegex = $@"\b(?<timeOfDay>((sabah|öğleden\s+sonra|öğle(?!\s+yemeği)|akşam|gece|gün|mesai)(ın?|in|nin|ün|leyin|ları|leri|lik|de|si)?\b(\s+{LaterEarlyRegex})?(\s+(saat(inde|te|lerinde|leri)|vaktinde|vakti|vakitlerinde))?|iş\s+(saat(inde|te|lerinde|leri)|vaktinde|vakti|vakitlerinde))(\s+(içinde|içi|dışında|dışı)\b)?)";
       public static readonly string SpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{TimeOfDayRegex})\b|\bbu\s(sabah|akşam|gece))\b";
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
       public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
@@ -235,18 +235,18 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string SuffixRegex = @"\b(sabahı?|sabahleyin|sabahtan|öğleden\s+sonra|akşamı?|akşamleyin|gece(si)?|geceleyin)\b";
       public const string ExcludeSuffixRegex = @"^'\p{L}*\s+(?<match>.+)$";
       public const string ExcludeSuffixDateTime = @"^'\p{L}*(?<match>.*)$";
-      public const string DateTimeTimeOfDayRegex = @"\b(?<timeOfDay>sabah|öğle|öğlen|öğleden\s+sonra|akşam|gece)\b";
+      public const string DateTimeTimeOfDayRegex = @"\b(?<timeOfDay>sabah|öğleden\s+sonra|akşam|gece)\b";
       public static readonly string DateTimeSpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\b(bu\s+akşam|bu\s+gece))\b";
       public static readonly string TimeOfTodayAfterRegex = $@"^\s*(,\s*)?{DateTimeSpecificTimeOfDayRegex}";
       public static readonly string TimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?\s*$";
       public static readonly string SimpleTimeOfTodayAfterRegex = $@"({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?{DateTimeSpecificTimeOfDayRegex}";
       public static readonly string SimpleTimeOfTodayBeforeRegex = $@"\b{DateTimeSpecificTimeOfDayRegex}(\s*,)?\s*({HourNumRegex}|{BaseDateTime.HourRegex})(\s+(civarı(nda)?|dolaylarında|sularında))?\b";
       public const string SpecificEndOfRegex = @"(('?ın|gün)\s+)?sonu(nda)?\b";
-      public const string UnspecificEndOfRegex = @"\b(günün\s+sonu(nda))\b";
+      public const string UnspecificEndOfRegex = @"\b(günün\s+sonu(nd?a))\b";
       public const string UnspecificEndOfRangeRegex = @"^[\*]";
-      public static readonly string PeriodTimeOfDayRegex = $@"\b(((?<timeOfDay>sabahın|öğlenin|akşamın|gecenin)\s+(erken|geç)\s+saatlerinde)|((?<timeOfDay>sabahı?|öğlen|öğleden\s+sonra|akşamı?|gece(si)?)(\s+{LaterEarlyRegex})?)|(bu\s+)?{DateTimeTimeOfDayRegex})\b";
+      public static readonly string PeriodTimeOfDayRegex = $@"\b(((?<timeOfDay>sabahın|öğlenin|akşamın|gecenin)\s+(erken|geç)\s+saatlerinde)\b|((?<timeOfDay>sabahı?(?=a?\b)|öğleden\s+sonra(?=(dan)?\b)|akşamı?\b|gece(si)?\b)(\s+{LaterEarlyRegex}\b)?)|(bu\s+)?{DateTimeTimeOfDayRegex}\b)";
       public static readonly string PeriodSpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\b(bu akşam|bu gece))\b";
-      public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b((\s+){PeriodTimeOfDayRegex})\b";
+      public static readonly string PeriodTimeOfDayWithDateRegex = $@"(^|\b)((\s+){PeriodTimeOfDayRegex})";
       public const string LessThanRegex = @"((den|dan|ten|tan|daha)\s+az|\baz)(\s+bir\s+süre(de)?\b)?";
       public const string MoreThanRegex = @"((den|dan|ten|tan|\bdaha)\s+fazla|\bfazla|daha\s+fazla\s+zaman)(\s+bir\s+süre(de)?\b)?";
       public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|saat|saniye|dakika|sa\.?\b|dk\.?\b|sn\.?\b|s\.?\b)";
@@ -264,18 +264,21 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string AllRegex = @"\b(?<all>(tüm|bütün)\s+(?<unit>gün(lüğüne)?|hafta(lığına)?|ay(lığına)?|yıl(lığına)?)|gün boyu)\b";
       public const string HalfRegex = @"(?<half>yarım\s+(?<unit>saat|gün|iş\s+günü|hafta|ay|yıl))";
       public const string ConjunctionRegex = @"\b(ve|ile)\b";
-      public static readonly string HolidayRegex1 = $@"\b(({YearRegex}(\s+yılının)?|{RelativeRegex}\s+yıl)\s+)?(?<holiday>mardi gras|((washington'ın|mao'nun) doğum günü)|çin yeni yılı|yılbaşı gecesi|yılbaşı|yuan dan|noel arifesi|noel günü|noel|kara cuma|yuandan|paskalya|temiz pazartesi|kül çarşambası|palm sunday|(kutsal (perşembe|cuma))|(beyaz (pazartesi|pazar))|trinity sunday|hamsin yortusu|corpus christi|siber pazartesi|(ramazan|şeker|kurban|(29 ekim )?cumhuriyet|(30 ağustos )?zafer|(23 nisan )?ulusal egemenlik ve çocuk|(19 mayıs )?atatürk'ü anma(\s*,\s*)? gençlik ve spor)\sbayramı|(15 temmuz )?demokrasi ve mill(î|i) birlik günü)\b";
-      public static readonly string HolidayRegex2 = $@"\b(({YearRegex}(\s+yılının)?|{RelativeRegex}\s+yıl)\s+)?(?<holiday>(şükran|tüm azizler|aziz patrick|amerikan bağımsızlık|azizler|bütün ruhlar|guy fawkes|cinco de mayo|1 nisan şaka|tomb\s*sweeping)\sgünü|white lover day|aya yorgi yortusu|cadılar bayramı|((qingming|dragon)\sfestivali))\b";
-      public static readonly string HolidayRegex3 = $@"(({YearRegex}(\s+yılının)?|{RelativeRegex}\s+yıl)\s+)?(?<holiday>(bağımsızlık|başkanlar|mlk|martin luther king( jr)?|canberra|(isa'nın (göğe yükselişi|miracı))|columbus|ağaç( dikme)?|ağaçlandırma|(1 mayıs )?emek ve dayanışma|anneler|babalar|(dünya)?\s(kadınlar|bekarlar)|öğretmenler|gençlik|kızlar|sevgililer|dünya|dağ sıçanı|bastille|gaziler|anma|ay|bahar|fener)\s+günü|((işçi|quebec ulusal) bayramı)|abd başkanı yemin töreni|ay festivali)";
+      public static readonly string HolidayRegex1 = $@"\b(({YearRegex}(\s+yılının)?|{RelativeRegex}\s+yıl(ın)?)\s+)?(?<holiday>mardi gras|((washington'ın|mao'nun) doğum günü)|çin yeni yılı|yılbaşı gecesi|yılbaşı|yuan dan|noel arifesi|noel günü|noel|kara cuma|yuandan|paskalya|temiz pazartesi|kül çarşambası|palm sunday|(kutsal (perşembe|cuma))|(beyaz (pazartesi|pazar))|trinity sunday|hamsin yortusu|corpus christi|siber pazartesi|(ramazan|şeker|kurban|(29 ekim )?cumhuriyet|(30 ağustos )?zafer|(23 nisan )?ulusal egemenlik ve çocuk|(19 mayıs )?atatürk'ü anma(\s*,\s*)? gençlik ve spor)\sbayramı|(15 temmuz )?demokrasi ve mill(î|i) birlik günü)\b";
+      public static readonly string HolidayRegex2 = $@"\b(({YearRegex}(\s+yılının)?|{RelativeRegex}\s+yıl(ın)?)\s+)?(?<holiday>(şükran|tüm azizler|aziz patrick|amerikan bağımsızlık|azizler|bütün ruhlar|guy fawkes|cinco de mayo|1 nisan şaka|tomb\s*sweeping)\sgünü|white lover day|aya yorgi yortusu|cadılar bayramı|((qingming|dragon)\sfestivali))\b";
+      public static readonly string HolidayRegex3 = $@"(({YearRegex}(\s+yılının)?|{RelativeRegex}\s+yıl(ın)?)\s+)?(?<holiday>(bağımsızlık|başkanlar|mlk|martin luther king( jr)?|canberra|(isa'nın (göğe yükselişi|miracı))|columbus|ağaç( dikme)?|ağaçlandırma|(1 mayıs )?emek ve dayanışma|anneler|babalar|(dünya)?\s(kadınlar|bekarlar)|öğretmenler|gençlik|kızlar|sevgililer|dünya|dağ sıçanı|bastille|gaziler|anma|ay|bahar|fener)\s+günü|((işçi|quebec ulusal) bayramı)|abd başkanı yemin töreni|ay festivali)";
       public const string AMTimeRegex = @"(?<am>sabah)";
       public const string NowTimeRegex = @"(şimdi)";
       public const string RecentlyTimeRegex = @"(son\s+(zamanlarda|günlerde|dönemlerde)|yakın\s+zamanda|önceden)";
       public const string AsapTimeRegex = @"((mümkün\s+olan\s+)?en\s+kısa\s+sürede)";
       public const string PMTimeRegex = @"\b(?<pm>öğleden sonra|öğle vakti|öğlenleyin|öğlen|öğle|akşam|gece)\b";
       public const string InclusiveModPrepositions = @"(?<include>(('(ü|u|te|ta|da|de|inde|sinde|ünde|ında|unda|sında)\s+)?(ya\s+da|veya)\b))";
-      public static readonly string BeforeRegex = $@"((({InclusiveModPrepositions}|'?(den?|tan?|ten?|y?[ea])|('|(?<!başın))dan?)\s+(öncesinde|öncesine|daha\s+önce(sinde)?|önce(\b|(?=dır|dir))|evvel|(daha|en)\s+(erken)|kadar|en\s+geç)|(öncesinde|öncesine|daha\s+önce|(daha|en)\s+(geç|erken)|kadar)\s+{InclusiveModPrepositions})|en\s+geç\s*?|önce\b|kadar|ile\s+biten|(?<!\w|>)((?<include><=)|<))";
-      public static readonly string AfterRegex = $@"((({InclusiveModPrepositions}|'(dan?|den?|tan?|ten?|y?[ea]))\s+(sonrasında|daha\s+(sonra|geç)|sonra)(?!\s+veya\s+aynı)|(sonrasında|daha\s+sonra|sonra)\s+{InclusiveModPrepositions})|(?<!\w|<)((?<include>>=)|>))";
-      public const string SinceRegex = @"((('|\b)(([dt][ae]n\s+)?beri|sonra\s+veya\s+aynı|((den|dan|ile)\s+)?(başlayarak|başlayan)|(y[ae]\s+)?eşit\s+veya\s+sonraki|bu\s+yana|erkenden|herhangi\s+bir\s+zamanda|((nın\s+)?başından\s+)itibaren)\b)|(?<!\w|<)(>=))";
+      public static readonly string BeforeRegex = $@"((({InclusiveModPrepositions}|(?<=günü)nden|'?(den?|tan?|ten?|y?[ea])|('|(?<!başın))dan?)\s+(öncesinde|öncesine|daha\s+önce(sinde)?|önce(\b|(?=dır|dir))|evvel|(daha|en)\s+(erken)|kadar(?!\s+erken)|en\s+geç)|(öncesinde|öncesine|daha\s+önce|(daha|en)\s+(geç|erken)|kadar)\s+{InclusiveModPrepositions})|en\s+geç\s*?|önce\b|(?<include>kadar\s+geç)|kadar(?!\s+erken)|ile\s+biten|(?<!\w|>)((?<include><=)|<))";
+      public static readonly string BeforeRegexWithAnchor = $@"((^({InclusiveModPrepositions}|nden|'?(den?|tan?|ten?|y?[ea])|('|(?<!başın))dan?)\s+(öncesinde|öncesine|daha\s+önce(sinde)?|önce(\b|(?=dır|dir))|evvel|(daha|en)\s+(erken)|kadar(?!\s+erken)|en\s+geç)|(öncesinde|öncesine|daha\s+önce|(daha|en)\s+(geç|erken)|kadar)\s+{InclusiveModPrepositions})|en\s+geç\s*?|^önce\b|^(?<include>kadar\s+geç)|^kadar(?!\s+erken)|ile\s+biten|(?<!\w|>)((?<include><=)|<))";
+      public static readonly string AfterRegex = $@"((({InclusiveModPrepositions}|(?<=günü)nden|'(dan?|den?|tan?|ten?|y?[ea]))\s+(sonrasında|daha\s+(sonra|geç|büyük\s+(bir\s+)?yıl(ın)?)|sonra)(?!\s+veya\s+aynı)|(sonrasında|daha\s+sonra|sonra)\s+{InclusiveModPrepositions}|sonra\b)|(?<!\w|<)((?<include>>=)|>))";
+      public static readonly string AfterRegexWithAnchor = $@"((^({InclusiveModPrepositions}|nden|'(dan?|den?|tan?|ten?|y?[ea]))\s+(sonrasında|daha\s+(sonra|geç|büyük\s+(bir\s+)?yıl(ın)?)|sonra)(?!\s+veya\s+aynı)|(sonrasında|daha\s+sonra|sonra)\s+{InclusiveModPrepositions}|^sonra\b)|(?<!\w|<)((?<include>>=)|>))";
+      public const string SinceRegex = @"((('|\b)(([dt][ae]n\s+)?beri|sonra\s+veya\s+aynı|((den|dan|ile)\s+)?(başlayarak|başlayan|(itibaren\s+)?herhangi\s+bir\s+zamanda)|(y[ae]\s+)?eşit\s+veya\s+sonraki|bu\s+yana|erkenden|kadar\s+erken|herhangi\s+bir\s+zamanda|((nın\s+)?başından\s+)itibaren)\b)|(?<!\w|<)(>=))";
+      public const string SinceRegexWithAnchor = @"(((^'|\b)(([dt][ae]n\s+)?beri|sonra\s+veya\s+aynı|((den|dan|ile)\s+)?(başlayarak|başlayan|(itibaren\s+)?herhangi\s+bir\s+zamanda)|(y[ae]\s+)?eşit\s+veya\s+sonraki|bu\s+yana|erkenden|kadar\s+erken|herhangi\s+bir\s+zamanda|((nın\s+)?başından\s+)itibaren)\b)|(?<!\w|<)(>=))";
       public const string AroundRegex = @"(?:\b((?:takriben|yaklaşık)\s*|\s*(?:civarı(nd?a)?|dolaylarında|sularında))\b)";
       public const string AgoRegex = @"\b((?<day>bugünden|gün|dünden|dün)\s+)?(önce(ki)?|evvel)\b";
       public const string LaterRegex = @"\b((?<day>yarından|yarın|bugünden|gün)\s+(itibaren|sonra(ki)?)|sonra|şu\s+andan\s+itibaren)(\s+gelecek)?";
@@ -287,13 +290,13 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string AfternoonStartEndRegex = @"(^öğle(den\s+sonra)?$)";
       public const string EveningStartEndRegex = @"(^akşamı?$)";
       public const string NightStartEndRegex = @"(^(geceleyin|bu gece|gece))|((geceleyin|bu gece|gece)$)";
-      public const string InexactNumberRegex = @"\b(birkaç)\b";
+      public const string InexactNumberRegex = @"\b(birkaç|(?<NumTwoTerm>iki))\b";
       public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})";
       public static readonly string RelativeTimeUnitRegex = $@"(({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+({TimeUnitRegex}))";
-      public static readonly string RelativeDurationUnitRegex = $@"((?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))";
+      public static readonly string RelativeDurationUnitRegex = $@"((?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))(?!\s+\d+\s+{DurationUnitRegex})";
       public static readonly string ReferenceDatePeriodRegex = $@"\b{ReferencePrefixRegex}\s+(?<duration>hafta\s*sonu|hafta\s*sonları|(hafta|ay|yıl)(lar)?|sene(ler)?)\b";
       public const string ConnectorRegex = @"^(-|,|civarı|@)$";
-      public const string FromRegex = @"(\bitibaren|'den|'dan|'ten|'tan)$";
+      public const string FromRegex = @"(\bitibaren|'d[ae]n|'t[ae]n)$";
       public const string PluralTokenRegex = @"(ları|leri)$";
       public const string FromToRegex = @"\b.+('?(den|dan|ten|tan)).+('?(e|a))\b.+";
       public static readonly string RelativeAtDateTimeUnitRegex = $@"(({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+({AtDateTimeUnitRegex}))";
@@ -333,7 +336,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string StrictRangeConnectorRegex = $@"(?<and>\b(ile|ila)\b|{BaseDateTime.RangeConnectorSymbolRegex}(?!\s*(h[1-2]|q[1-4])(?!(\s*,\s*))))";
       public const string FromNumSuffixRegex = @"((1|2|7|8)'den|(3|4|5)'ten|(6|9)'dan|10'dan|20'den|30'dan|40'tan|50'den|60'tan|70'ten|80'den|90'dan|00'den|000'den)\b";
       public const string ToNumSuffixRegex = @"((1|2|7|20|50)'ye|(3|4|5|8|70|80|00|000)'e|6'ya|(9|10|30|40|60|90)'a)\b";
-      public static readonly string ComplexDatePeriodRegex = $@"((?<start>.*[^'])\s*({RangeConnectorRegex})\s*(?<end>.*[^'\s]{{2}})\s*{RangePrefixRegex}|(?<start>.+({FromNumSuffixRegex}|{DayFromSuffixRegex}))\s*(?<end>.+({ToNumSuffixRegex}|{DayToSuffixRegex}))\s*({TillRegex}))";
+      public static readonly string ComplexDatePeriodRegex = $@"((?<start>.*[^'])\s*({RangeConnectorRegex})\s*(?<end>.*[^'\s]{{2}})\s*{RangePrefixRegex}|(?<start>.+({FromNumSuffixRegex}|{DayFromSuffixRegex}))\s*(?<end>.+({ToNumSuffixRegex}|{DayToSuffixRegex}))\s*({TillRegex})|((?<start>.*[^'])\s*{TillConnectorRegex}\s*(?<end>.*[^'\s]{{2}})(\s*{TillRegex})?))";
       public static readonly string FailFastRegex = $@"{BaseDateTime.DeltaMinuteRegex}|\b({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex})|{BaseDateTime.BaseAmPmDescRegex}|\b(zero|{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}|{WrittenMonthRegex}|{SeasonDescRegex}|{DecadeRegex}|centur(y|ies)|weekends?|quarters?|hal(f|ves)|yesterday|to(morrow|day|night)|tmr|noonish|\d(-|——)?ish|((the\s+\w*)|\d)(th|rd|nd|st)|(mid\s*(-\s*)?)?(night|morning|afternoon|day)s?|evenings?||noon|lunch(time)?|dinner(time)?|(day|night)time|overnight|dawn|dusk|sunset|hours?|hrs?|h|minutes?|mins?|seconds?|secs?|eo[dmy]|mardi[ -]?gras|birthday|eve|christmas|xmas|thanksgiving|halloween|yuandan|easter|yuan dan|april fools|cinco de mayo|all (hallow|souls)|guy fawkes|(st )?patrick|hundreds?|noughties|aughts|thousands?)\b|{WeekDayRegex}|{SetWeekDayRegex}|{NowRegex}|{PeriodicRegex}|\b({DateUnitRegex}|{ImplicitDayRegex})";
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
         {
@@ -355,6 +358,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"haftamın", @"W" },
             { @"haftası", @"W" },
             { @"haftalığına", @"W" },
+            { @"haftaya ait", @"W" },
             { @"gün", @"D" },
             { @"günler", @"D" },
             { @"günün", @"D" },
@@ -391,6 +395,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"haftamın", 604800 },
             { @"haftası", 604800 },
             { @"haftalığına", 604800 },
+            { @"haftaya ait", 604800 },
             { @"gün", 86400 },
             { @"günler", 86400 },
             { @"günü", 86400 },
@@ -1078,7 +1083,8 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly IList<string> MonthToDateTerms = new List<string>
         {
             @"ay başından beri",
-            @"ayın başından beri"
+            @"ayın başından beri",
+            @"bu zamana kadarki ay"
         };
       public static readonly IList<string> WeekendTerms = new List<string>
         {
@@ -1095,7 +1101,8 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             @"haftam",
             @"haftanın",
             @"haftamın",
-            @"haftası"
+            @"haftası",
+            @"haftaya ait"
         };
       public static readonly IList<string> YearTerms = new List<string>
         {
@@ -1109,7 +1116,8 @@ namespace Microsoft.Recognizers.Definitions.Turkish
         };
       public static readonly IList<string> YearToDateTerms = new List<string>
         {
-            @"sene başından beri"
+            @"sene başından beri",
+            @"bu zamana kadarki yıl"
         };
     }
 }

@@ -48,12 +48,17 @@ namespace Microsoft.Recognizers.Text.Number
             var isChinese = culture == Culture.Chinese;
             var isJapanese = culture == Culture.Japanese;
             var isKorean = culture == Culture.Korean;
+            var isHindi = culture == Culture.Hindi;
 
             BaseNumberParser parser;
 
             if (isChinese || isJapanese || isKorean)
             {
                 parser = new BaseCJKNumberParser(languageConfiguration);
+            }
+            else if (isHindi)
+            {
+                parser = new BaseIndianNumberParser(languageConfiguration);
             }
             else
             {

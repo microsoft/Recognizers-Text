@@ -70,6 +70,29 @@ namespace Microsoft.Recognizers.Text.Utilities
             return new ConditionalMatch(match, match.Success && string.IsNullOrEmpty(strBefore));
         }
 
+        // MatchBegin can fail if multiple matches are present in text (e.g. regex = "\b(A|B)\b", text = "B ... A ...")
+        public static ConditionalMatch MatchesBegin(this Regex regex, string text, bool trim)
+        {
+            var matches = regex.Matches(text);
+            foreach (Match match in matches)
+            {
+                var strBefore = text.Substring(0, match.Index);
+
+                if (trim)
+                {
+                    strBefore = strBefore.Trim();
+                }
+
+                bool isMatchBegin = match.Success && string.IsNullOrEmpty(strBefore);
+                if (isMatchBegin)
+                {
+                    return new ConditionalMatch(match, match.Success && string.IsNullOrEmpty(strBefore));
+                }
+            }
+
+            return new ConditionalMatch(null, false);
+        }
+
         public static string[] Split(Regex regex, string source)
         {
             return regex.Split(source);
