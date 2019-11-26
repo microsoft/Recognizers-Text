@@ -364,14 +364,15 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
                     Hindi.OrdinalExtractor.GetInstance(options)));
 
-            // @TODO Uncomment once all the tests pass
-            /*
             RegisterModel<PercentModel>(
                 Culture.Hindi,
                 options => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new HindiNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
                     new Hindi.PercentageExtractor(options)));
+
+            // @TODO Uncomment once all the tests pass
+            /*
 
             RegisterModel<NumberRangeModel>(
                 Culture.Hindi,
