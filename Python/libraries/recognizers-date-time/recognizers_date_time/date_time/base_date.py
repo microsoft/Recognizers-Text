@@ -16,6 +16,11 @@ import calendar
 class DateTimeUtilityConfiguration(ABC):
     @property
     @abstractmethod
+    def date_unit_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def ago_regex(self) -> Pattern:
         raise NotImplementedError
 
@@ -47,6 +52,16 @@ class DateTimeUtilityConfiguration(ABC):
     @property
     @abstractmethod
     def am_pm_desc_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def check_both_befor_after(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def range_prefix_regex(self) -> Pattern:
         raise NotImplementedError
 
 

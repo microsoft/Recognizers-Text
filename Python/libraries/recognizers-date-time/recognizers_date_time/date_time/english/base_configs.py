@@ -6,6 +6,18 @@ from recognizers_date_time.resources.english_date_time import EnglishDateTime
 
 class EnglishDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
     @property
+    def date_unit_regex(self) -> Pattern:
+        return self._date_unit_regex
+
+    @property
+    def range_prefix_regex(self) -> Pattern:
+        return self._range_prefix_regex
+
+    @property
+    def check_both_befor_after(self) -> Pattern:
+        return self._check_both_befor_after
+
+    @property
     def ago_regex(self) -> Pattern:
         return self._ago_regex
 
@@ -66,3 +78,10 @@ class EnglishDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
             EnglishDateTime.WithinNextPrefixRegex)
         self._common_date_prefix_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.CommonDatePrefixRegex)
+        self._check_both_befor_after = EnglishDateTime.CheckBothBeforeAfter
+        self._range_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.RangePrefixRegex
+        )
+        self._date_unit_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.DateUnitRegex
+        )

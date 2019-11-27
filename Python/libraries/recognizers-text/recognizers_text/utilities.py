@@ -25,7 +25,7 @@ class StringUtility:
 
 class ConditionalMatch:
 
-    def __init__(self, match: Pattern, success: bool):
+    def __init__(self, match: Match, success: bool):
         self._match = match,
         self._success = success
 
@@ -51,7 +51,7 @@ class ConditionalMatch:
 
     @property
     def length(self) -> int:
-        return len(self.match[0].group())
+        return len(self.match[0].group()) or 0
 
     def group(self, grp):
         return self.match[0].group(grp)
@@ -110,7 +110,7 @@ class RegExpUtility:
         match = regex.match(regexp, text)
 
         if match is None:
-            return ConditionalMatch(regexp, False)
+            return None
 
         srt_after = text[text.index(match.group()) + (match.end() - match.start()):]
 
