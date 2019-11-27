@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from recognizers_date_time.date_time.abstract_year_extractor import AbstractYearExtractor
 from datedelta import datedelta
 from recognizers_text.extractor import ExtractResult
-from recognizers_text.utilities import RegExpUtility
+from recognizers_text.utilities import RegExpUtility, flatten
 from recognizers_number.number import Constants as NumberConstants
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
@@ -474,17 +474,18 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                                      result.length + len(match.group())))
 
         return ret
+
     def get_year_index(self, affix, year, in_prefix):
         index = 0
         match_year = self.config.year_suffix.match(affix)
         success = match_year and match_year.start() if not in_prefix else match_year and match_year.start() \
-                                                                          + match_year.length == len(affix.strip())
+            + match_year.end() == len(affix.strip())
 
         if success:
             year = self.get_year_from_text(match_year)
 
             if Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM:
-                index = match_year.length if not in_prefix else match_year.length + (len(affix) - len(affix.strip()))
+                index = match_year.length if not in_prefix else match_year.end() + (len(affix) - len(affix.strip()))
 
         return index, success
 
@@ -498,10 +499,18 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         # Check whether there's a year
         suffix = text[end_index:]
         prefix = text[0: start_index]
-        end_index, match_year = self.get_year_index(suffix, year, False)
+        match_year = self.config.year_suffix.match(suffix)
+
+        if match_year and match_year.start() == 0:
+
+            year = AbstractYearExtractor.get_year_from_text(self, match_year)
+
+            if Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM:
+                end_index += len(match_year.group())
 
         if not match_year and self.config.check_both_before_after:
-            start_index -= self.get_year_index(prefix, year, True)
+            idx, success = self.get_year_index(prefix, year, True)
+            start_index -= idx
 
         date = DateUtils.safe_create_from_value(DateUtils.min_value, year, month, day)
         is_match_in_suffix = False
@@ -527,14 +536,14 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                     if not is_match_in_suffix:
                         start_index = match_week_day.start()
                     else:
-                        end_index += match_week_day.length
+                        end_index += match_week_day.end()
 
         return start_index, end_index
 
+    # "In 3 days/weeks/months/years" = "3 days/weeks/months/years from now"
     def extract_relative_duration_date_with_in_prefix(self, text: str, duration_er: [ExtractResult],
                                                       reference: datetime):
         from .utilities import Token
-        from .utilities import RegExpUtility
         result: [Token] = []
 
         durations: [Token] = []
@@ -553,23 +562,13 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
             if (str.isspace(before_str) or before_str is None) and (str.isspace(after_str) or after_str is None):
                 continue
 
-            match = RegExpUtility.match_end(self.config.in_connector_regex, before_str, True)
-            if match and match.success:
+            ers, success = self.extract_in_connector(text, after_str, before_str, duration, True)
+            result.append(ers)
+            if not success and self.config.check_both_before_after:
+                ers, success = self.extract_in_connector(text, after_str, before_str, duration, True)
+                result.append(ers)
 
-                start_token = match.index
-                range_unit_math = self.config.range_unit_regex.match(text[duration.start: duration.start
-                                                                          + duration.length])
-
-                if range_unit_math:
-                    since_year_match = self.config.since_year_suffix_regex.match(after_str)
-
-                    if since_year_match:
-                        result.append(Token(start_token, duration.end + len(since_year_match)))
-
-                    else:
-                        result.append(Token(start_token, duration.end))
-
-        return result
+        return flatten(result)
 
     def duration_with_before_and_after(self, source: str, reference: datetime) -> []:
         from .utilities import Token
@@ -654,8 +653,26 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         return er.data is not None and er.data == TimeTypeConstants.MORE_THAN_MOD \
             or er.data == TimeTypeConstants.LESS_THAN_MOD
 
-    def extract_in_connector(self):
-        pass
+    def extract_in_connector(self, text, first_str, second_str, duration, in_prefix):
+        from recognizers_date_time import Token
+        result = []
+        match = RegExpUtility.match_end(self.config.in_connector_regex, first_str, True) if in_prefix else RegExpUtility.match_begin(self.config.in_connector_regex, first_str, True)
+
+        if match and match.success:
+
+            start_token = match.index
+            range_unit_math = self.config.range_unit_regex.match(text[duration.start: duration.start
+                                                                      + duration.length])
+
+            if range_unit_math:
+                since_year_match = self.config.since_year_suffix_regex.match(second_str)
+
+                if since_year_match:
+                    result.append(Token(start_token, duration.end + len(since_year_match)))
+
+                else:
+                    result.append(Token(start_token, duration.end))
+        return result, match.success
 
 
 class DateParserConfiguration(ABC):

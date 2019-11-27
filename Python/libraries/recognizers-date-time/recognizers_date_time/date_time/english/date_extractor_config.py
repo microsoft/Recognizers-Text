@@ -16,8 +16,8 @@ class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
     @property
     def week_day_start(self) -> Pattern:
         return self._week_day_start
-    
-    @property    
+
+    @property
     def check_both_before_after(self) -> Pattern:
         return self._check_both_before_after
 
