@@ -73,6 +73,11 @@ class DateExtractorConfiguration(ABC):
 
     @property
     @abstractmethod
+    def week_day_start(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def of_month(self) -> Pattern:
         raise NotImplementedError
 
@@ -192,7 +197,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
     def extractor_type_name(self) -> str:
         return Constants.SYS_DATETIME_DATE
 
-    def __init__(self, config):
+    def __init__(self, config: DateExtractorConfiguration):
         super().__init__(config)
 
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
@@ -464,30 +469,42 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                                      result.length + len(match.group())))
 
         return ret
+    def get_year_index(self, affix, year, in_prefix):
+        index = 0
+        match_year = self.config.year_suffix.match(affix)
+        success = match_year and match_year.start() if not in_prefix else match_year and match_year.start() \
+                                                                          + match_year.length == len(affix.strip())
+
+        if success:
+            year = self.get_year_from_text(match_year)
+
+            if Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM:
+                index = match_year.length if not in_prefix else match_year.length + (len(affix) - len(affix.strip()))
+
+        return index, success
 
     def extend_with_week_day_and_year(self, start_index: int, end_index: int, month: int,
                                       day: int, text: str, reference: datetime):
-        from .abstract_year_extractor import AbstractYearExtractor
         from .utilities import DateUtils
         import calendar
+
         year = reference.year
 
         # Check whether there's a year
         suffix = text[end_index:]
-        match_year = self.config.year_suffix.match(suffix)
+        prefix = text[0: start_index]
+        end_index, match_year = self.get_year_index(suffix, year, False)
 
-        if match_year and match_year.start() == 0:
-
-            year = AbstractYearExtractor.get_year_from_text(self, match_year)
-
-            if Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM:
-                end_index += len(match_year.group())
+        if not match_year and self.config.check_both_before_after:
+            start_index -= self.get_year_index(prefix, year, True)
 
         date = DateUtils.safe_create_from_value(DateUtils.min_value, year, month, day)
-
-        # Check whether there's a weekday
-        prefix = text[:start_index]
+        is_match_in_suffix = False
         match_week_day = self.config.week_day_end.match(prefix)
+
+        if not match_week_day:
+            match_week_day = self.config.week_day_start.match(suffix)
+            is_match_in_suffix = True if match_week_day else False
 
         if match_week_day:
             # Get weekday from context directly, compare it with the weekday extraction above
@@ -495,15 +512,17 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
             extracted_week_day_str = RegExpUtility.get_group(
                 match_week_day, Constants.WEEKDAY_GROUP_NAME)
             num_week_day_str = calendar.day_name[date.weekday()].lower()
+            week_day_1 = self.config.day_of_week.get(num_week_day_str)
+            week_day_2 = self.config.day_of_week.get(extracted_week_day_str)
 
-            if self.config.day_of_week.get(num_week_day_str) and \
-                    self.config.day_of_week.get(extracted_week_day_str):
-
-                week_day_1 = self.config.day_of_week.get(num_week_day_str)
-                week_day_2 = self.config.day_of_week.get(extracted_week_day_str)
+            if self.config.day_of_week.get(num_week_day_str, week_day_1) and \
+                    self.config.day_of_week.get(extracted_week_day_str, week_day_2):
 
                 if not date == DateUtils.min_value and week_day_1 == week_day_2:
-                    start_index = match_week_day.end()
+                    if not is_match_in_suffix:
+                        start_index = match_week_day.start()
+                    else:
+                        end_index += match_week_day.length
 
         return start_index, end_index
 
@@ -629,6 +648,9 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
     def is_inequality_duration(er: ExtractResult):
         return er.data is not None and er.data == TimeTypeConstants.MORE_THAN_MOD \
             or er.data == TimeTypeConstants.LESS_THAN_MOD
+
+    def extract_in_connector(self):
+        pass
 
 
 class DateParserConfiguration(ABC):
