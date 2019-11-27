@@ -323,5 +323,16 @@
         "Length": 11
       }
     ]
+  },
+  {
+    "Input": "Every other Friday",
+    "Results": [
+      {
+        "Text": "Every other Friday",
+        "Type": "set",
+        "Start": 0,
+        "Length": 18
+      }
+    ]
   }
 ]

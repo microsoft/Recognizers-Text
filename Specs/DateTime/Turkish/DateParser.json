@@ -2206,5 +2206,55 @@
         "Length": 19
       }
     ]
+  },
+  {
+    "Input": "Bugünkü derse gelmedi",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bugünkü",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-09-23",
+          "FutureResolution": {
+            "date": "2019-09-23"
+          },
+          "PastResolution": {
+            "date": "2019-09-23"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Dünkü derse gelmedi",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dünkü",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-09-22",
+          "FutureResolution": {
+            "date": "2019-09-22"
+          },
+          "PastResolution": {
+            "date": "2019-09-22"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
   }
 ]

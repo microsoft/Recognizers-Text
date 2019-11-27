@@ -10,6 +10,10 @@ from ..base_date import DateParserConfiguration
 
 class ChineseDateParserConfiguration(DateParserConfiguration):
     @property
+    def check_both_before_after(self) -> bool:
+        pass
+
+    @property
     def ordinal_extractor(self) -> any:
         return None
 

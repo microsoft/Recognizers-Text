@@ -1103,5 +1103,80 @@
         "Length": 13
       }
     ]
+  },
+  {
+    "Input": "Şu anda döneceğim",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Şu anda",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "PRESENT_REF",
+          "FutureResolution": {
+            "dateTime": "2019-09-23 12:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2019-09-23 12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Şu andaki durum nedir?",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Şu andaki",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "PRESENT_REF",
+          "FutureResolution": {
+            "dateTime": "2019-09-23 12:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2019-09-23 12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Neredesin şu an?",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "şu an",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "PRESENT_REF",
+          "FutureResolution": {
+            "dateTime": "2019-09-23 12:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2019-09-23 12:00:00"
+          }
+        },
+        "Start": 10,
+        "Length": 5
+      }
+    ]
   }
 ]

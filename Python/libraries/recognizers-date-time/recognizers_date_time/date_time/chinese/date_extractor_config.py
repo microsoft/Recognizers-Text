@@ -16,6 +16,10 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
         pass
 
     @property
+    def check_both_before_after(self) -> Pattern:
+        pass
+
+    @property
     def week_day_end(self) -> Pattern:
         pass
 

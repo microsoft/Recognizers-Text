@@ -23,6 +23,53 @@ class StringUtility:
         return ret
 
 
+class ConditionalMatch:
+
+    def __init__(self, match: Pattern, success: bool):
+        self._match = match,
+        self._success = success
+
+    @property
+    def match(self) -> Pattern:
+        return self._match
+
+    @match.setter
+    def match(self, value):
+        self._match = value
+
+    @property
+    def success(self) -> bool:
+        return self._success
+
+    @success.setter
+    def success(self, value):
+        self._success = value
+
+    @property
+    def index(self) -> int:
+        return self.match[0].string.index(self.match[0].group())
+
+    @property
+    def length(self) -> int:
+        return len(self.match[0].group())
+
+    def group(self, grp):
+        return self.match[0].group(grp)
+
+    @property
+    def value(self) -> str:
+        return self.match[0].string
+
+    @property
+    def groups(self):
+        return self.match[0].groups()
+
+    def get_group(self, group: str, default_val: str = '') -> str:
+        if self is None:
+            return None
+        return self.match[0].groupdict().get(group, default_val) or default_val
+
+
 class RegExpUtility:
     @staticmethod
     def get_safe_reg_exp(source: str, flags: int = regex.I | regex.S) -> Pattern:
@@ -43,6 +90,52 @@ class RegExpUtility:
         py_regex = StringUtility.remove_unicode_matches(regexp)
         matches = list(regex.finditer(py_regex, source))
         return list(filter(None, map(lambda m: m.group().lower(), matches)))
+
+    @staticmethod
+    def match_begin(regex: Pattern, text: str, trim: bool):
+        match = regex.match(text)
+
+        if match is None:
+            return None
+
+        str_before = text[0: text.index(match.group())]
+
+        if trim:
+            str_before = str_before.strip()
+
+        return ConditionalMatch(match, match and (str.isspace(str_before) or str_before == ''))
+
+    @staticmethod
+    def match_end(regexp: Pattern, text: str, trim: bool):
+        match = regex.match(regexp, text)
+
+        if match is None:
+            return ConditionalMatch(regexp, False)
+
+        srt_after = text[text.index(match.group()) + (match.end() - match.start()):]
+
+        if trim:
+            srt_after = srt_after.strip()
+
+        success = match and (str.isspace(srt_after) or srt_after == '')
+
+        return ConditionalMatch(match, success)
+
+    @staticmethod
+    def is_exact_match(regex: Pattern, text: str, trim: bool):
+        match = regex.match(text)
+
+        length = len(text.strip()) if trim else len(text)
+
+        return match and len(match.group()) == length
+
+    @staticmethod
+    def exact_match(regexp: Pattern, text: str, trim: bool):
+        match = regexp.search(text)
+
+        length = len(text.strip()) if trim else len(text)
+
+        return ConditionalMatch(match, match and len(match.group()) == length)
 
 
 class QueryProcessor:
