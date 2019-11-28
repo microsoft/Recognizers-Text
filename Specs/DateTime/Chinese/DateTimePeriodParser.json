@@ -479,7 +479,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-19T16:12:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "八月七号早",
@@ -505,7 +505,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-19T16:12:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "明天早上",
@@ -531,7 +531,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-19T16:12:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "八月七号晚",

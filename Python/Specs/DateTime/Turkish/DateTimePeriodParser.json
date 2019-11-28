@@ -1,0 +1,1754 @@
+[
+  {
+    "Input": "Bugün saat beşten yediye kadar yokum",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bugün saat beşten yediye kadar",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 05:00:00",
+            "endDateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 05:00:00",
+            "endDateTime": "2016-11-07 07:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "22/4/2016'da 5'ten 6'ya kadar yokum",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22/4/2016'da 5'ten 6'ya kadar",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-04-22T05,2016-04-22T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "22 Nisan'da 5'ten 6'ya kadar yokum",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22 Nisan'da 5'ten 6'ya kadar",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-04-22T05,XXXX-04-22T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2017-04-22 05:00:00",
+            "endDateTime": "2017-04-22 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "1 Ocak'ta 5'ten 6'ya kadar yokum",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 Ocak'ta 5'ten 6'ya kadar",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-01-01T05,XXXX-01-01T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2017-01-01 05:00:00",
+            "endDateTime": "2017-01-01 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-01-01 05:00:00",
+            "endDateTime": "2016-01-01 06:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Yarın 15'ten 16'ya kadar yokum",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Yarın 15'ten 16'ya kadar",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Yarın 3:00'ten 4:00'e kadar yokum",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Yarın 3:00'ten 4:00'e kadar",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 03:00:00",
+            "endDateTime": "2016-11-08 04:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 03:00:00",
+            "endDateTime": "2016-11-08 04:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Yarın saat yedi buçuktan 16'ya kadar yokum",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Yarın saat yedi buçuktan 16'ya kadar",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H30M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 07:30:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 07:30:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "Bugün saat 16'dan yarın 17'ye kadar yokum",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bugün saat 16'dan yarın 17'ye kadar",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-08 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-08 17:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "21-2-2016, 14:00'ten 23/04/2016 saat 3:32'ye kadar yokum",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21-2-2016, 14:00'ten 23/04/2016 saat 3:32'ye kadar",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+          "FutureResolution": {
+            "startDateTime": "2016-02-21 14:00:00",
+            "endDateTime": "2016-04-23 03:32:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-02-21 14:00:00",
+            "endDateTime": "2016-04-23 03:32:00"
+          }
+        },
+        "Start": 0,
+        "Length": 50
+      }
+    ]
+  },
+  {
+    "Input": "Bugün saat 16 ile 17 arasında yokum",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bugün saat 16 ile 17 arasında",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16,2016-11-07T17,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "1 Ocak 2016 saat 16 ve bugün saat 17 arasında yokum",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 Ocak 2016 saat 16 ve bugün saat 17 arasında",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-01-01T16,2016-11-07T17,PT7465H)",
+          "FutureResolution": {
+            "startDateTime": "2016-01-01 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-01-01 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 45
+      }
+    ]
+  },
+  {
+    "Input": "Bu gece döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bu gece",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Bu akşam döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bu akşam",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Bu sabah döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bu sabah",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 08:00:00",
+            "endDateTime": "2016-11-07 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 08:00:00",
+            "endDateTime": "2016-11-07 12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Bu öğleden sonra döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bu öğleden sonra",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 12:00:00",
+            "endDateTime": "2016-11-07 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 12:00:00",
+            "endDateTime": "2016-11-07 16:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Önümüzdeki gece döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Önümüzdeki gece",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          }
+        },
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Geçen gece döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Geçen gece",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-06TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-06 20:00:00",
+            "endDateTime": "2016-11-06 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-06 20:00:00",
+            "endDateTime": "2016-11-06 23:59:59"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Yarın gece döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Yarın gece",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Gelecek Pazartesi öğleden sonra döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Gelecek Pazartesi öğleden sonra",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-14TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-14 12:00:00",
+            "endDateTime": "2016-11-14 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-14 12:00:00",
+            "endDateTime": "2016-11-14 16:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Son 3 dakikada döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Son 3 dakika",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Geçen 3 dakikada döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Geçen 3 dakika",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Önceki 3 dakikada döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Önceki 3 dakika",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Önümüzdeki 5 saatte döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Önümüzdeki 5 saat",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Son dakikada döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Son dakika",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:11:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:11:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Önümüzdeki saat döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Önümüzdeki saat",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 17:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 17:12:00"
+          }
+        },
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Önümüzdeki birkaç saatte döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Önümüzdeki birkaç saat",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 19:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 19:12:00"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Salı sabahı döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Salı sabahı",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Bize bu Salı sabahı bir zaman bulmak için yardım eder misin",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bu Salı sabahı",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          }
+        },
+        "Start": 5,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Lütfen Salı sabahı 30 dakikalık bir toplantı organize et",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Salı sabahı",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Salı öğleden sonra döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Salı öğleden sonra",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Salı akşamı döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Salı akşamı",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Salı sabah erkenden buluşalım",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Salı sabah erkenden",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 10:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 10:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Salı sabah geç saatte buluşalım",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Salı sabah geç saatte",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 10:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 10:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Salı öğleden sonra erken saatte buluşalım",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Salı öğleden sonra erken saatte",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 14:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Salı öğleden sonra geç saatte buluşalım",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Salı öğleden sonra geç saatte",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 14:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 14:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Salı akşamı erken saatte buluşalım",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Salı akşamı erken saatte",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 18:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 18:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Salı akşamı geç saatte buluşalım",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Salı akşamı geç saatte",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 18:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Salı gecesi erken saatte buluşalım",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Salı gecesi erken saatte",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 20:00:00",
+            "endDateTime": "2016-11-01 22:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Salı gecesi geç saatte buluşalım",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Salı gecesi geç saatte",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Salı sabahı erkenden buluşalım",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Salı sabahı erkenden",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 10:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 10:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Salı sabahı geç saatte buluşalım",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Salı sabahı geç saatte",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 10:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 10:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Günün geri kalanında buluşalım",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Günün geri kalanı",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Bugünün geri kalanında buluşalım",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bugünün geri kalanı",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        },
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Günümün geri kalanında buluşalım",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Günümün geri kalanı",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        },
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "21/2/2016 saat 14:00'ten 23/04/2016 saat 3:32'ye kadar yokum",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21/2/2016 saat 14:00'ten 23/04/2016 saat 3:32'ye kadar",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+          "FutureResolution": {
+            "startDateTime": "2016-02-21 14:00:00",
+            "endDateTime": "2016-04-23 03:32:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-02-21 14:00:00",
+            "endDateTime": "2016-04-23 03:32:00"
+          }
+        },
+        "Start": 0,
+        "Length": 54
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, Wayne ile iş görüşmesi için lütfen Cuma günü 13 ile 16 arasında Skype görüşmesi ayarla",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Cuma günü 13 ile 16 arasında",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-10 13:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-03 13:00:00",
+            "endDateTime": "2017-11-03 16:00:00"
+          }
+        },
+        "Start": 44,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Bizi yarın sabah 8 ile 14 arasına planlayabilir misin?",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yarın sabah 8 ile 14 arasına",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2017-11-10T08,2017-11-10T14,PT6H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-10 08:00:00",
+            "endDateTime": "2017-11-10 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 08:00:00",
+            "endDateTime": "2017-11-10 14:00:00"
+          }
+        },
+        "Start": 5,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Bizi 9 Aralık sabah 8 ile 14 arasına planlayabilir misin?",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9 Aralık sabah 8 ile 14 arasına",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-12-09T08,XXXX-12-09T14,PT6H)",
+          "FutureResolution": {
+            "startDateTime": "2017-12-09 08:00:00",
+            "endDateTime": "2017-12-09 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-12-09 08:00:00",
+            "endDateTime": "2016-12-09 14:00:00"
+          }
+        },
+        "Start": 5,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Merhaba Cortana, Lütfen Jennifer ile bir Skype toplantısı ayarla. Bu cuma öğleden sonra 30 dakikalık bir toplantıya ihtiyacım var.",
+    "Context": {
+      "ReferenceDateTime": "2017-11-13T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bu cuma öğleden sonra",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2017-11-17TAF",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 12:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-17 12:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          }
+        },
+        "Start": 66,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, Wayne ile iş görüşmesi için lütfen Cuma öğleden sonra 13 ile 16 arasında Skype görüşmesi ayarla",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T19:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Cuma öğleden sonra 13 ile 16 arasında",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 13:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 13:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          }
+        },
+        "Start": 44,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, lütfen 23/09/2018 saat 13'ten 16'ya kadar bir Skype toplantısı ayarla",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T19:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "23/09/2018 saat 13'ten 16'ya kadar",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2018-09-23T13,2018-09-23T16,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2018-09-23 13:00:00",
+            "endDateTime": "2018-09-23 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-09-23 13:00:00",
+            "endDateTime": "2018-09-23 16:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "Önümüzdeki 2 saatte olacak",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Önümüzdeki 2 saat",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T18:12:00,PT2H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 18:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 18:12:00"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "15 saniye içinde döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15 saniye içinde",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T16:12:15,PT15S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 16:12:15"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 16:12:15"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "5 dakika içinde döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 dakika içinde",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T16:17:00,PT5M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 16:17:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 16:17:00"
+          }
+        },
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "5 saat içinde döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 saat içinde",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "1 gün 5 saat içinde döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 gün 5 saat içinde",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-08T21:12:00,P1DT5H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-08 21:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-08 21:12:00"
+          }
+        },
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Bu görev 2 gün 1 saat 5 dakika 30 saniye içinde tamamlanacak.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 gün 1 saat 5 dakika 30 saniye içinde",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-09 17:17:30"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-09 17:17:30"
+          }
+        },
+        "Start": 9,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "Bu görev önümüzdeki 2 gün 1 saat 5 dakika 30 saniye içinde tamamlanacak.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "önümüzdeki 2 gün 1 saat 5 dakika 30 saniye içinde",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-09 17:17:30"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-09 17:17:30"
+          }
+        },
+        "Start": 9,
+        "Length": 49
+      }
+    ]
+  },
+  {
+    "Input": "Önümüzdeki 5 saat içinde döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Önümüzdeki 5 saat içinde",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          }
+        },
+        "Start": 0,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Pazartesi 8'den 9'a kadar döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2018-04-19T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Pazartesi 8'den 9'a kadar",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-1T08,XXXX-WXX-1T09,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2018-04-23 08:00:00",
+            "endDateTime": "2018-04-23 09:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-04-16 08:00:00",
+            "endDateTime": "2018-04-16 09:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Cortana bize Pazartesi 12-4 arası uygun bir zaman bulmak için yardım edebilir",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Pazartesi 12-4 arası",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-1T00,XXXX-WXX-1T04,PT4H)",
+          "FutureResolution": {
+            "startDateTime": "2018-05-21 00:00:00",
+            "endDateTime": "2018-05-21 04:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-05-14 00:00:00",
+            "endDateTime": "2018-05-14 04:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Cortana bize Pazartesi 11-4 arası uygun bir zaman bulmak için yardım edebilir",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Pazartesi 11-4 arası",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-1T11,XXXX-WXX-1T16,PT5H)",
+          "FutureResolution": {
+            "startDateTime": "2018-05-21 11:00:00",
+            "endDateTime": "2018-05-21 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-05-14 11:00:00",
+            "endDateTime": "2018-05-14 16:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "1/1/2015'de 10 ve 11:30 arasında olacak",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015'de 10 ve 11:30 arasında",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T10,2015-01-01T11:30,PT1H30M)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 10:00:00",
+            "endDateTime": "2015-01-01 11:30:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 10:00:00",
+            "endDateTime": "2015-01-01 11:30:00"
+          }
+        },
+        "Start": 0,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "10 ve 11:30 arasında 1/1/2015'de olacak",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 ve 11:30 arasında 1/1/2015",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T10,2015-01-01T11:30,PT1H30M)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 10:00:00",
+            "endDateTime": "2015-01-01 11:30:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 10:00:00",
+            "endDateTime": "2015-01-01 11:30:00"
+          }
+        },
+        "Start": 0,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "1/1/2015'de 10:30'dan 3'e kadar olacak",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015'de 10:30'dan 3'e kadar",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T10:30,2015-01-01T15,PT4H30M)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 10:30:00",
+            "endDateTime": "2015-01-01 15:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 10:30:00",
+            "endDateTime": "2015-01-01 15:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "1/1/2015'de 3 ile 5 arasında olacak",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015'de 3 ile 5 arasında",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T03,2015-01-01T05,PT2H)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 03:00:00",
+            "endDateTime": "2015-01-01 05:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 03:00:00",
+            "endDateTime": "2015-01-01 05:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "1/1/2015'de 3:30'dan 5:55'e kadar olacak",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015'de 3:30'dan 5:55'e kadar",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T03:30,2015-01-01T05:55,PT2H25M)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 03:30:00",
+            "endDateTime": "2015-01-01 05:55:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 03:30:00",
+            "endDateTime": "2015-01-01 05:55:00"
+          }
+        },
+        "Start": 0,
+        "Length": 33
+      }
+    ]
+  }
+]

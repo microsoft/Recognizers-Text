@@ -1,0 +1,554 @@
+[
+  {
+    "Input": "la temperatura esterna è di 40 gradi celsius",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "40 gradi celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "40",
+          "unit": "C"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "In texas ci sono 90 fahrenheit",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "90 fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "90",
+          "unit": "F"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-5 gradi fahrenheit",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "-5 gradi fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "-5",
+          "unit": "F"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "6 gradi celsius",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "6 gradi celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "6",
+          "unit": "C"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "98,6 gradi f è una temperatura normale",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "98,6 gradi f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98,6",
+          "unit": "F"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "imposta la temperatura a 30 gradi celsius",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "30 gradi celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "30",
+          "unit": "C"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "normalmente la temperatura è di 98,6 gradi fahrenheit",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "98,6 gradi fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98,6",
+          "unit": "F"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "100 gradi f",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "100 gradi f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100",
+          "unit": "F"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "20 gradi c",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "20 gradi c",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "C"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "100,2 gradi farenheit sono pochi",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "100,2 gradi farenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100,2",
+          "unit": "F"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10,5 celsius",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "10,5 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "10,5",
+          "unit": "C"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "20 gradi celsius",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "20 gradi celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "C"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "20,3 celsius",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "20,3 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20,3",
+          "unit": "C"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "34,5 celsius",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "34,5 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "34,5",
+          "unit": "C"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "la temperatura esterna è di 98 gradi",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "98 gradi",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98",
+          "unit": "Degree"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "imposta il termostato a 85°",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "85°",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "85",
+          "unit": "Degree"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "alza la temperatura di 5 gradi",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "5 gradi",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "5",
+          "unit": "Degree"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "imposta la temperatura a 70 gradi f",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "70 gradi f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "70",
+          "unit": "F"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "alza la temperatura di 20 gradi",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "20 gradi",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "Degree"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "imposta la temperatura a 100 gradi",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "100 gradi",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100",
+          "unit": "Degree"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "mantieni la temperatura a 75 gradi f",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "75 gradi f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "75",
+          "unit": "F"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "let the temperatura be at 40 celsius",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "40 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "40",
+          "unit": "C"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "lascia la temperatura a 50 gradi",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "50 gradi",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "50",
+          "unit": "Degree"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "converti 10 celsius in fahrenheit",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "10 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "10",
+          "unit": "C"
+        }
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "34,9 centigradi in farenheit",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "34,9 centigradi",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "34,9",
+          "unit": "C"
+        }
+      },
+      {
+        "Text": "farenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "converti 200 celsius celsius in fahrenheit",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "200 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "200",
+          "unit": "C"
+        }
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        }
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "fahrenheit in celsius 101 fahrenheit è troppo celsius",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "101 fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "101",
+          "unit": "F"
+        }
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        }
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        }
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "50 gradi celsius celsius in fahrenheit",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "50 gradi celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "50",
+          "unit": "C"
+        }
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        }
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "puoi convertire 51 fahrenheit in gradi celsius",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "51 fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "51",
+          "unit": "F"
+        }
+      },
+      {
+        "Text": "gradi celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "converti 106 gradi fahrenheit in gradi celsius",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "106 gradi fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "106",
+          "unit": "F"
+        }
+      },
+      {
+        "Text": "gradi celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "converti 45 gradi fahrenheit in celsius",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "45 gradi fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "45",
+          "unit": "F"
+        }
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "come convertire - 20 gradi fahrenheit in celsius",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "- 20 gradi fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "-20",
+          "unit": "F"
+        }
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,826 @@
+[
+  {
+    "Input": "나는 3시간 동안 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3시간",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
+        },
+        "Start": 15,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "나는 사흘 동안 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "사흘",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3D",
+          "FutureResolution": {
+            "duration": "259200"
+          },
+          "PastResolution": {
+            "duration": "259200"
+          }
+        },
+        "Start": 15,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "나는 3년 반 동안 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3년 반",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3.5Y",
+          "FutureResolution": {
+            "duration": "110376000"
+          },
+          "PastResolution": {
+            "duration": "110376000"
+          }
+        },
+        "Start": 15,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "나는 세 달 동안 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "세 달",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3M",
+          "FutureResolution": {
+            "duration": "7776000"
+          },
+          "PastResolution": {
+            "duration": "7776000"
+          }
+        },
+        "Start": 15,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "나는 3분 동안 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3분",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3M",
+          "FutureResolution": {
+            "duration": "180"
+          },
+          "PastResolution": {
+            "duration": "180"
+          }
+        },
+        "Start": 15,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "나는 3.5초 동안 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3.5초",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3.5S",
+          "FutureResolution": {
+            "duration": "3.5"
+          },
+          "PastResolution": {
+            "duration": "3.5"
+          }
+        },
+        "Start": 15,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "나는 123.45초 동안 떠날 겁니다.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "123.45초",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT123.45S",
+          "FutureResolution": {
+            "duration": "123.45"
+          },
+          "PastResolution": {
+            "duration": "123.45"
+          }
+        },
+        "Start": 15,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "나는 2주 동안 떠날 겁니다.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2주",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "duration": "1209600"
+          },
+          "PastResolution": {
+            "duration": "1209600"
+          }
+        },
+        "Start": 15,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "나는 20분 동안 떠날 겁니다.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20분",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT20M",
+          "FutureResolution": {
+            "duration": "1200"
+          },
+          "PastResolution": {
+            "duration": "1200"
+          }
+        },
+        "Start": 15,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "나는 24시간 동안 떠날 겁니다.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "24시간",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT24H",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 15,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "나는 하루 종일 떠날 겁니다.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "하루 종일",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 15,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "나는 일주일 내내 떠날 겁니다.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "일주일 내내",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "duration": "604800"
+          },
+          "PastResolution": {
+            "duration": "604800"
+          }
+        },
+        "Start": 15,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "나는 한 달 내내 떠날 겁니다.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "한 달 내내",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "duration": "2592000"
+          },
+          "PastResolution": {
+            "duration": "2592000"
+          }
+        },
+        "Start": 15,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "나는 일 년 내내 떠날 겁니다.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "일 년 내내",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "duration": "31536000"
+          },
+          "PastResolution": {
+            "duration": "31536000"
+          }
+        },
+        "Start": 15,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "나는 한 시간 동안 떠날 겁니다.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "한 시간",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1H",
+          "FutureResolution": {
+            "duration": "3600"
+          },
+          "PastResolution": {
+            "duration": "3600"
+          }
+        },
+        "Start": 15,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "반년",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "반년",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P0.5Y",
+          "FutureResolution": {
+            "duration": "15768000"
+          },
+          "PastResolution": {
+            "duration": "15768000"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "나는 3분 동안 떠날 겁니다.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3분",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3M",
+          "FutureResolution": {
+            "duration": "180"
+          },
+          "PastResolution": {
+            "duration": "180"
+          }
+        },
+        "Start": 15,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "나는 30분 동안 떠날 겁니다.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30분",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT30M",
+          "FutureResolution": {
+            "duration": "1800"
+          },
+          "PastResolution": {
+            "duration": "1800"
+          }
+        },
+        "Start": 15,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "나는 1시간 30분 동안 떠날 겁니다.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1시간 30분",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1.5H",
+          "FutureResolution": {
+            "duration": "5400"
+          },
+          "PastResolution": {
+            "duration": "5400"
+          }
+        },
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "나는 2시간 동안 떠날 겁니다.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2시간",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT2H",
+          "FutureResolution": {
+            "duration": "7200"
+          },
+          "PastResolution": {
+            "duration": "7200"
+          }
+        },
+        "Start": 15,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "나는 2시간 30분 동안 떠날 겁니다.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2시간 30분",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT2.5H",
+          "FutureResolution": {
+            "duration": "9000"
+          },
+          "PastResolution": {
+            "duration": "9000"
+          }
+        },
+        "Start": 15,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "나는 1년 한 달 21일 동안 떠날 겁니다.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1년 한 달 21일",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1Y1M21D",
+          "FutureResolution": {
+            "duration": "35942400"
+          },
+          "PastResolution": {
+            "duration": "35942400"
+          }
+        },
+        "Start": 15,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "나는 한 달 그리고 이틀 동안 떠날 겁니다.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "한 달 그리고 이틀",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M2D",
+          "FutureResolution": {
+            "duration": "2764800"
+          },
+          "PastResolution": {
+            "duration": "2764800"
+          }
+        },
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "나는 일주일 그리고 사흘 더  떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "일주일 그리고 사흘",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W3D",
+          "FutureResolution": {
+            "duration": "864000"
+          },
+          "PastResolution": {
+            "duration": "864000"
+          }
+        },
+        "Start": 15,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "나는 몇 주 동안 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "몇 주",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "duration": "1209600"
+          },
+          "PastResolution": {
+            "duration": "1209600"
+          }
+        },
+        "Start": 15,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "나는 며칠 동안 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "며칠 ",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2D",
+          "FutureResolution": {
+            "duration": "172800"
+          },
+          "PastResolution": {
+            "duration": "172800"
+          }
+        },
+        "Start": 17,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "나는 며칠 미만만 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "며칠 미만",
+        "Type": "duration",
+        "Value": {
+          "Mod": "less",
+          "Timex": "P2D",
+          "FutureResolution": {
+            "duration": "172800"
+          },
+          "PastResolution": {
+            "duration": "172800"
+          }
+        },
+        "Start": 17,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "나는 한 시간 이상 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "한 시간 이상",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1H",
+          "Mod": "more",
+          "FutureResolution": {
+            "duration": "3600"
+          },
+          "PastResolution": {
+            "duration": "3600"
+          }
+        },
+        "Start": 15,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "나는 한 시간 더 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "한 시간 더 ",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1H",
+          "FutureResolution": {
+            "duration": "3600"
+          },
+          "PastResolution": {
+            "duration": "3600"
+          }
+        },
+        "Start": 15,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "나는 네가 일주일 더 결근한 것을 알았다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "일주일 더",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "duration": "604800"
+          },
+          "PastResolution": {
+            "duration": "604800"
+          }
+        },
+        "Start": 32,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "한 달 더 기다려 주시겠습니까?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "한 달 더 ",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "duration": "2592000"
+          },
+          "PastResolution": {
+            "duration": "2592000"
+          }
+        },
+        "Start": 12,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "나는 영업일 기준으로 한나절 동안 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "영업일 기준으로 한나절",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1BD",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 12,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "나는 20년 동안 떠날 겁니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": " 20년",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P20Y",
+          "FutureResolution": {
+            "duration": "630720000"
+          },
+          "PastResolution": {
+            "duration": "630720000"
+          }
+        },
+        "Start": 15,
+        "Length": 11
+      }
+    ]
+  }
+]

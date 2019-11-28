@@ -1,0 +1,619 @@
+[
+  {
+    "Input": "Sarò fuori dalle 5 alle 6pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 5 alle 6pm",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 5 alle 6 p.m.",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 5 alle 6 p.m.",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 5 alle 6 del pomeriggio",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 5 alle 6 del pomeriggio",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 5 alle 7 del mattino",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 5 alle 7 del mattino",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori tra le 5 e le 6pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tra le 5 e le 6pm",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori tra le 5pm e le 6pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tra le 5pm e le 6pm",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori tra le 5 e le 6 del pomeriggio",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tra le 5 e le 6 del pomeriggio",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 4pm fino alle 5pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 4pm fino alle 5pm",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 4 fino alle 5pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 4 fino alle 5pm",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 4:00 fino alle 5pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 4:00 fino alle 5pm",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 4:00 alle 7",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 4:00 alle 7",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 3pm alle sette e mezza",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 3pm alle sette e mezza",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori 4pm-5pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "4pm-5pm",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori 4pm - 5pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "4pm - 5pm",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle tre meno 20 fino alle otto di sera",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle tre meno 20 fino alle otto di sera",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 40
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 4pm alle 5pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 4pm alle 5pm",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 4pm alle cinque e mezza",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 4pm alle cinque e mezza",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 3 del mattino fino alle 5pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 3 del mattino fino alle 5pm",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 3 del mattino fino alle cinque del pomeriggio",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 3 del mattino fino alle cinque del pomeriggio",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 51
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori tra le 4pm e le cinque e mezza",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tra le 4pm e le cinque e mezza",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori tra le 3 di mattina e le 5pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tra le 3 di mattina e le 5pm",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "incontraimoci di mattina",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "di mattina",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci di pomeriggio",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "di pomeriggio",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci di notte",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "di notte",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci di sera",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "di sera",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci in serata",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "in serata",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci al mattino presto",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "al mattino presto",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci in tarda mattinata",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "in tarda mattinata",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci di prima mattina",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "di prima mattina",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci al mattino tardi",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "al mattino tardi",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci nel primo pomeriggio",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "nel primo pomeriggio",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci nel tardo pomeriggio",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "nel tardo pomeriggio",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci di sera presto",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "di sera presto",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci in tarda serata",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "in tarda serata",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci di notte presto",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "di notte presto",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci a notte fonda",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "a notte fonda",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci a tarda notte",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "a tarda notte",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "organizza una riunione dalle due alle cinque pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle due alle cinque pm",
+        "Type": "timerange",
+        "Start": 23,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Festa da Jean dalle 6 alle 11 pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 6 alle 11 pm",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "organizza una riunione dalle 14:00 alle 16:30",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 14:00 alle 16:30",
+        "Type": "timerange",
+        "Start": 23,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "organizza una riunione dalle due alle cinque p m",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle due alle cinque p m",
+        "Type": "timerange",
+        "Start": 23,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "organizza una riunione dalle 1p.m. alle 4",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 1p.m. alle 4",
+        "Type": "timerange",
+        "Start": 23,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "organizza una riunione dalle 1p.m. alle 4.",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 1p.m. alle 4",
+        "Type": "timerange",
+        "Start": 23,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "organizza una riunione dalle 1:30p.m. alle 4!",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 1:30p.m. alle 4",
+        "Type": "timerange",
+        "Start": 23,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "organizza una riunione dalle 2 alle 4 persone",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": []
+  },
+  {
+    "Input": "Ciao Cortana- per favore programma un colloquio skype con Jennifer. Ho bisogno di un colloquio di 30 min nel pomeriggio, questo venerdì partirò.",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "nel pomeriggio",
+        "Type": "timerange",
+        "Start": 105,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ciao Cortana- per favore programma un colloquio skype con Jennifer. Ho bisogno di un colloquio di 30 min questo venerdì, nel pomeriggio partirò.",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "nel pomeriggio",
+        "Type": "timerange",
+        "Start": 121,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "organizza una riunione dalle 1:30 alle 3:30",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 1:30 alle 3:30",
+        "Type": "timerange",
+        "Start": 23,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "organizza una riunione dalle 1:30 pm alle 3:30",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 1:30 pm alle 3:30",
+        "Type": "timerange",
+        "Start": 23,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "organizza una riunione dall'1:30 pm alle 3:30 pm",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dall'1:30 pm alle 3:30 pm",
+        "Type": "timerange",
+        "Start": 23,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "organizza una riunione dall'1 alle 3:30",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dall'1 alle 3:30",
+        "Type": "timerange",
+        "Start": 23,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "organizza una riunione dalle 1:30 alle 3",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 1:30 alle 3",
+        "Type": "timerange",
+        "Start": 23,
+        "Length": 17
+      }
+    ]
+  }
+]

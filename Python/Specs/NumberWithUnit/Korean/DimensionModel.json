@@ -1,0 +1,883 @@
+[
+  {
+    "Input": "당신의 몸무게는 200 파운드입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "200 파운드",
+        "Start": 9,
+        "End": 16,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Pound",
+          "value": "200"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "75 밀리리터 ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "75 밀리리터",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "75",
+          "unit": "Milliliter"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "그것의 가장 큰 단점은 3 인치 두께 일 수 있습니다. 컨설턴트가 그것을 투박하다고 묘사하기에 충분하다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 인치",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Inch"
+        },
+        "Start": 33,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "트위스터가 거기에서 10 마일 정도 떨어진 지역을 강타하여 적어도 14 명이 사망하고 수십 채의 집이 잔해로 변했습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 마일",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Mile"
+        },
+        "Start": 39,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "케이블과 전선을 10.5 마일 이상 연결하고 23 대의 컴퓨터를 연결합니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10.5 마일",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10.5",
+          "unit": "Mile"
+        },
+        "Start": 19,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "그날 아침에 20 분 걸린 공항 호텔로 가는 6 마일 길이  3 시간 이상 걸렸다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "6 마일",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "6",
+          "unit": "Mile"
+        },
+        "Start": 4,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "산업 전반에 걸쳐,이 국가의 석유 생산량은 올해 첫 8 개월 동안 하루 50 만 배럴 감소했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "50 만 배럴",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "500000",
+          "unit": "Barrel"
+        },
+        "Start": 54,
+        "End": 68
+      }
+    ]
+  },
+  {
+    "Input": "그것은 1) 왜 우리가 잭슨보다 오히려 우리 자신과 같은지를 설명한다. 2) 평균 2 피트 깊이의 호수에서 익사하는 것이 가능하다는 주의이다 ; 그리고 3) 만 마리가 넘는 원숭이가 만 대가 넘는 피아노 앞에서 만 천 백 십팔 곡의 발행 가능한 락 앤 롤 (rock 'n'roll) 곡을 만들 것이라고 예측합니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 피트",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Foot"
+        },
+        "Start": 152,
+        "End": 159
+      }
+    ]
+  },
+  {
+    "Input": "5월 19일, fda는 미시시피, 뉴욕 및 펜실베니아에 사는 백 명 이상의 사람들이 오염된 버섯 복용으로 병에 걸린 후에 68 온스 캔의 중국 버섯을 억류하기 시작했습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "68 온스",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "68",
+          "unit": "Ounce"
+        },
+        "Start": 57,
+        "End": 64
+      }
+    ]
+  },
+  {
+    "Input": "헐링 씨는 10월 19일 시장이 190 포인트 떨어지기 일주일 전에 그의 주식을 모두 판 것에 매우 흡족해하고 있으며,  그 돈을 45 에이커의 말 농장을 사기 위해 유용하게 사용할 것이다. .",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "45 에이커",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "45",
+          "unit": "Acre"
+        },
+        "Start": 148,
+        "End": 154
+      }
+    ]
+  },
+  {
+    "Input": "이 정원들을 말 그대로 방으로 만들기 위해 바틀렛 씨는 8 ~ 10 피트 높이의 창문 없는 벽 (벽돌, 격자, 울타리)을 만들어 내부에 하루 종일 깜깜한그늘을 만들었다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 피트",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Foot"
+        },
+        "Start": 136,
+        "End": 142
+      }
+    ]
+  },
+  {
+    "Input": "아메리칸 항공의 연료 서비스 담당 이사인 잭 제너브 (jack zaves)는 연내 제트 연료 24억 갤런을 구매하는  '경영진은 놀라움을 원하고 있지 않다.' 고 언급했다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "24억 갤런",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2400000000",
+          "unit": "Gallon"
+        },
+        "Start": 133,
+        "End": 151
+      }
+    ]
+  },
+  {
+    "Input": "10 갤런의 물 냉각기가 바닥에 엎어져서 붉은 카펫을 흠뻑 적셨다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 갤런",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Gallon"
+        },
+        "Start": 2,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "인근에 있는 여섯 마리의 돌고래는 150만 갤런의 바닷물 수족관에서 즐겁게 놀 것입니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "150만 갤런",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1500000",
+          "unit": "Gallon"
+        },
+        "Start": 39,
+        "End": 56
+      }
+    ]
+  },
+  {
+    "Input": "그리고 이 아기의 무게는 2 파운드가 넘는다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 파운드",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Pound"
+        },
+        "Start": 22,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "Volokh 씨는 몇 년 전 25 파운드를 빼기 위해 점심을 먹지 않았음에도 불구하고, '나는 먹지 않는 사람들을 신뢰하지 않는다.'고 말했다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "25 파운드",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "25",
+          "unit": "Pound"
+        },
+        "Start": 121,
+        "End": 129
+      }
+    ]
+  },
+  {
+    "Input": "로얄 더치 쉘 그룹의 자회사인 쉘은 9천억 입방 피트를 수출할 수 있으며, 올림피아 & 요크 사의 걸프도 수출할 수 있습니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9천억 입방 피트",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "900000000000",
+          "unit": "Cubic foot"
+        },
+        "Start": 78,
+        "End": 100
+      }
+    ]
+  },
+  {
+    "Input": "현재 법안의 주요 내용은 다음과 같습니다:  한 가족이 소유 할 수있는 부동산의 양은 전국 6 대 도시들에서는 660 평방 미터이지만, 작은 도시와 농촌 지역의 경우는 더 소유할 수 있습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "660 평방 미터",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "660",
+          "unit": "Square meter"
+        },
+        "Start": 125,
+        "End": 141
+      }
+    ]
+  },
+  {
+    "Input": "티그리안 군대는 현재 아디스 아바바에서 북쪽 200 마일에 있으며, 모든 연료 및 다른 물품들이 도달하는 아사브 항구로부터 맹기스투를 차단할 수 있게 데제 마을을 위협하고 있다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "200 마일",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "200",
+          "unit": "Mile"
+        },
+        "Start": 23,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "그는 컴퓨터 중 한 대가 바닥을 가로질러 3 피트나 미끄러졌다고 말했다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 피트",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Foot"
+        },
+        "Start": 41,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "이 자산의 핵심은 도쿄의 비즈니스 및 금융 중심지인 마루 노우치 지구의 19만 평방 미터에 이르는 엄청나게 비싼 건물입니다. 흔히 농담으로 '미츠비시 빌리지 (mitsubishi village)'라고 불립니다. ''",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "19만 평방 미터",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "190000",
+          "unit": "Square meter"
+        },
+        "Start": 28,
+        "End": 48
+      }
+    ]
+  },
+  {
+    "Input": "휴즈가 국제 통신 위성 조직을 위해 만든 위성은 1982년 3 톤 인공위성 중 다섯 대를 개발하기 위해 휴즈에게 수여한 7 억 달러 계약의 일부분이다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 톤",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Ton"
+        },
+        "Start": 183,
+        "End": 191
+      }
+    ]
+  },
+  {
+    "Input": "1996년 생물 무기에 관한 보고서에서 워싱턴 소재 공공 정책 연구 기관인 전략 국제 연구 센터는 테러리스트가 130 갤런 용량의 상용 장비를 사용하여 생물 무기를 조립하는 것은 쉽다고 경고했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "130 갤런",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "130",
+          "unit": "Gallon"
+        },
+        "Start": 276,
+        "End": 286
+      }
+    ]
+  },
+  {
+    "Input": "무역 그룹의 상무부 자료를 종합해 보면, 그 해 두 번째로 큰 월 수입인  8월 수입은 7월의 145만 8천 톤에서 5% 증가했지만 1988년 6월의 작년 최고치보다 낮은 수치를 보였다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "145만 8천 톤",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1458000",
+          "unit": "Ton"
+        },
+        "Start": 162,
+        "End": 175
+      }
+    ]
+  },
+  {
+    "Input": "1번 싱은 컵에서 6 피트 이내에 있는 9번 아이언 어프로치 샷을 쳤다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "6 피트",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "6",
+          "unit": "Foot"
+        },
+        "Start": 57,
+        "End": 64
+      }
+    ]
+  },
+  {
+    "Input": "그래서 내년  3월에 실리엄 작물이 수확되면, 이는 실리엄 수확의 절정기였던 바로 지난 몇 년간의 만 6천 미터톤보다 적을 수 있습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "만 6천 미터톤",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "16000",
+          "unit": "Metric ton"
+        },
+        "Start": 87,
+        "End": 104
+      }
+    ]
+  },
+  {
+    "Input": "486은 ibm이 최초의 개인용 컴퓨터 용으로 16 비트 8088 칩을 채택한 이래로 시장을 장악하기 시작한 인텔 칩의 긴 시리즈의 후속품입니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "16 비트",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "16",
+          "unit": "Bit"
+        },
+        "Start": 117,
+        "End": 122
+      }
+    ]
+  },
+  {
+    "Input": "회사 대변인은 'jiotto caspita'는 시속 188 마일 이상 달릴 수 있다고 말했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "시속 188 마일",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "188",
+          "unit": "Mile per hour"
+        },
+        "Start": 43,
+        "End": 59
+      }
+    ]
+  },
+  {
+    "Input": "해군은 바그다드 외곽의 이동 수술실에서 불과 100 미터 거리에 헬기 착륙장을 설치했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 미터",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "100",
+          "unit": "Meter"
+        },
+        "Start": 53,
+        "End": 62
+      }
+    ]
+  },
+  {
+    "Input": "caltrans는 메모리얼 콜로세움 근처, 로스 앤젤레스 바로 남쪽에있는 2.5 마일 상당의 항구 고속도로 구간 중앙에 버스 및 카풀을 위한 두 번째 데크를 추가할 계획입니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2.5 마일",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2.5",
+          "unit": "Mile"
+        },
+        "Start": 82,
+        "End": 89
+      }
+    ]
+  },
+  {
+    "Input": "매일 아침 농장 본부로  4 마일을 운전하면서 또 다른 네 개의 빈 집 근처를 지나갑니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4 마일",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "4",
+          "unit": "Mile"
+        },
+        "Start": 6,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "부카레스트에서 북서쪽으로 325 킬로미터 떨어진 그리스 카톨릭 본부의 랑가는 모욕당했다고 말했다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "325 킬로미터",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "325",
+          "unit": "Kilometer"
+        },
+        "Start": 72,
+        "End": 84
+      }
+    ]
+  },
+  {
+    "Input": "rotich는  5 피트로 작습니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 피트",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "5",
+          "unit": "Foot"
+        },
+        "Start": 19,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "4 인치, 28 세. 3 년 전까지는 진지하게 달리기를 시작하지 않았고 이번 달까지 실내에서 경쟁하지 못했습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4 인치",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "4",
+          "unit": "Inch"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "shakopee에 있는 경마장 공원 (미네소타)은  0.25 마일 포장된 타원형입니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "0.25 마일",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "0.25",
+          "unit": "Mile"
+        },
+        "Start": 44,
+        "End": 51
+      }
+    ]
+  },
+  {
+    "Input": "castlecrag 산은 같은 능선에 있는 마운트 frink에서 1.6 킬로미터 서쪽 해자의 남쪽에 위치해 있습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.6 킬로미터",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1.6",
+          "unit": "Kilometer"
+        },
+        "Start": 52,
+        "End": 57
+      }
+    ]
+  },
+  {
+    "Input": "javadi 언덕은 ambur에서 약 17 킬로미터 떨어져 있습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "17 킬로미터",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "17",
+          "unit": "Kilometer"
+        },
+        "Start": 35,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "박람회 근처 미시간 호수를 2 시간 동안 돌고 난 후, 휴고 엑커 지휘관은 776 피트 비행선을 가까운 글렌 뷰에 있는 커티스 - 라이트 공항 근처에 착륙시켰습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "776 피트",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "776",
+          "unit": "Foot"
+        },
+        "Start": 99,
+        "End": 106
+      }
+    ]
+  },
+  {
+    "Input": "린지와 페테르보로우(출구 436) 고속도로 35번과 고속도로 115번 교차로는 벤넷 도로에서 동쪽으로 500 미터 떨어져 있습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "500 미터",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "500",
+          "unit": "Meter"
+        },
+        "Start": 94,
+        "End": 103
+      }
+    ]
+  },
+  {
+    "Input": "1995년 캐논은 영상 흔들림 방지 기능을 갖춘 최초의 상용 SLR 렌즈인 ef 75 -300mm f / 4-5를 출시했습니다. 6은 usm입니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "300mm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "300",
+          "unit": "Millimeter"
+        },
+        "Start": 110,
+        "End": 114
+      }
+    ]
+  },
+  {
+    "Input": "에섹스 다겐햄 소재 스털링 군비 회사가 상업 판매용 7.62 밀리미터 배럴, 탄창, 추출기 그리고 배출기로 구성된 변환 키트를 생산했습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7.62 밀리미터",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "7.62",
+          "unit": "Millimeter"
+        },
+        "Start": 82,
+        "End": 87
+      }
+    ]
+  },
+  {
+    "Input": "프로젝트 비용은 4천 680만 달러입니다. 연간 구리 캐소드 생산량을 3만 4천 500 미터톤으로 25 % 증대시킬 계획이다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3만 4천 500 미터톤",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "34500",
+          "unit": "Metric ton"
+        },
+        "Start": 109,
+        "End": 126
+      }
+    ]
+  },
+  {
+    "Input": "연방 정부 기관인 캐나다 통계청은 캐나다 강철 주괴 생산이 10월 7일 주말 29만 천 890 미터톤을 기록했으며, 이는 전주의 총 생산량보다 8 퍼센트가 많은 수치라고 밝혔다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "29만 천 890 미터톤",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "291890",
+          "unit": "Metric ton"
+        },
+        "Start": 42,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "플로리다 팬더는 190 제곱 킬로미터 상당의 집에서 살고 있습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "190 제곱 킬로미터",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "190",
+          "unit": "Square kilometer"
+        },
+        "Start": 45,
+        "End": 51
+      }
+    ]
+  },
+  {
+    "Input": "미터톤은 2204.62 파운드와 같습니다.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2204.62 파운드",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2204.62",
+          "unit": "Pound"
+        },
+        "Start": 25,
+        "End": 39
+      },
+      {
+        "Text": "미터톤",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": null,
+          "unit": "Metric ton"
+        },
+        "Start": 2,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "나는 남자입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "메세지를 빨리 보내고 이메일 주소를 요청하십시오.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "1 미터는 10 데시미터와 같습니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 미터",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "10 데시미터",
+        "Start": 6,
+        "End": 13,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Decimeter",
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "이 파일의 크기는 100 메가바이트입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 메가바이트",
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Megabit",
+          "value": "100"
+        },
+        "Start": 25,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "오후 2시에 놀래켜 줄게. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "그는 2 pm은 2 피코미터라고 말했다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 pm",
+        "Start": 9,
+        "End": 12,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Picometer",
+          "value": "2"
+        }
+      },
+      {
+        "Text": "2 피코미터",
+        "Start": 9,
+        "End": 15,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Picometer",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 마일을 제공할 수 있습니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 마일",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Mile",
+          "value": "1"
+        }
+      }
+    ]
+  }
+]

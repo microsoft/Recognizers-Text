@@ -10,6 +10,10 @@ from ..base_duration import DurationExtractorConfiguration
 class FrenchDurationExtractorConfiguration(DurationExtractorConfiguration):
 
     @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
     def dmy_date_format(self) -> bool:
         return self._dmy_date_format
 
@@ -77,8 +81,23 @@ class FrenchDurationExtractorConfiguration(DurationExtractorConfiguration):
     def duration_connector_regex(self) -> Pattern:
         return self._duration_connector_regex
 
+    @property
+    def conjunction_regex(self) -> Pattern:
+        return self._conjunction_regex
+
+    @property
+    def inexact_number_regex(self):
+        return self._inexact_number_regex
+
+    @property
+    def special_number_unit_regex(self):
+        return self._special_number_unit_regex
+
     def __init__(self):
         super().__init__()
+        self._check_both_before_after = False
+        self._inexact_number_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.InexactNumberRegex)
+        self._conjunction_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.ConjunctionRegex)
         self._all_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.AllRegex)
         self._half_regex: Pattern = RegExpUtility.get_safe_reg_exp(
@@ -117,3 +136,4 @@ class FrenchDurationExtractorConfiguration(DurationExtractorConfiguration):
         self._less_than_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.LessThanRegex
         )
+        self._special_number_unit_regex = None

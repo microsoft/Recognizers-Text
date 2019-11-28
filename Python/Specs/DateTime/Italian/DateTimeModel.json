@@ -1,0 +1,2258 @@
+[
+  {
+    "Input": "Tornerò il Ott/2",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ott/2",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-10-02",
+              "type": "date",
+              "value": "2016-10-02"
+            },
+            {
+              "timex": "XXXX-10-02",
+              "type": "date",
+              "value": "2017-10-02"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 22/04",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 22/04",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-04-22",
+              "type": "date",
+              "value": "2016-04-22"
+            },
+            {
+              "timex": "XXXX-04-22",
+              "type": "date",
+              "value": "2017-04-22"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il ventinove maggio",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ventinove maggio",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-29",
+              "type": "date",
+              "value": "2016-05-29"
+            },
+            {
+              "timex": "XXXX-05-29",
+              "type": "date",
+              "value": "2017-05-29"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il due Ago.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "due ago",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-08-02",
+              "type": "date",
+              "value": "2016-08-02"
+            },
+            {
+              "timex": "XXXX-08-02",
+              "type": "date",
+              "value": "2017-08-02"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò oggi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "oggi",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07",
+              "type": "date",
+              "value": "2016-11-07"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò domani",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "domani",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "type": "date",
+              "value": "2016-11-08"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò ieri",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ieri",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-06",
+              "type": "date",
+              "value": "2016-11-06"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò venerdì",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "venerdì",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2016-11-04"
+            },
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2016-11-11"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dal 4-23 nel prossimo mese",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dal 4-23 nel prossimo mese",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-12-04,2016-12-23,P19D)",
+              "type": "daterange",
+              "start": "2016-12-04",
+              "end": "2016-12-23"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori tra il 3 e il 12 di set hahaha",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tra il 3 e il 12 di set",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+              "type": "daterange",
+              "start": "2016-09-03",
+              "end": "2016-09-12"
+            },
+            {
+              "timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+              "type": "daterange",
+              "start": "2017-09-03",
+              "end": "2017-09-12"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori questo Settembre",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "questo settembre",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-09",
+              "type": "daterange",
+              "start": "2016-09-01",
+              "end": "2016-10-01"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori il 12 Gennaio 2016 - 01/22/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 12 gennaio 2016 - 01/22/2016",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-01-12,2016-01-22,P10D)",
+              "type": "daterange",
+              "start": "2016-01-12",
+              "end": "2016-01-22"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 41
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori i prossimi 3 giorni",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "i prossimi 3 giorni",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-08,2016-11-11,P3D)",
+              "type": "daterange",
+              "start": "2016-11-08",
+              "end": "2016-11-11"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori l'ultima settimana di luglio",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "l'ultima settimana di luglio",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-W05",
+              "type": "daterange",
+              "start": "2016-07-25",
+              "end": "2016-08-01"
+            },
+            {
+              "timex": "XXXX-07-W05",
+              "type": "daterange",
+              "start": "2017-07-24",
+              "end": "2017-07-31"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori 2015-3",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "2015-3",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-03",
+              "type": "daterange",
+              "start": "2015-03-01",
+              "end": "2015-04-01"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "Partirò questa ESTATE",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "questa estate",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-SU",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori da domani",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "da domani",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-11-08",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori da Agosto",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "da agosto",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-08",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-08-01",
+              "sourceEntity": "datetimerange"
+            },
+            {
+              "timex": "XXXX-08",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2017-08-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori da questo Agosto",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "da questo agosto",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-08",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-08-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò adesso",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "adesso",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "datetime",
+              "value": "2016-11-07 00:00:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 14 Ottobre per le 8:00:31am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il 14 ottobre per le 8:00:31am",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-10-14T08:00:31",
+              "type": "datetime",
+              "value": "2016-10-14 08:00:31"
+            },
+            {
+              "timex": "XXXX-10-14T08:00:31",
+              "type": "datetime",
+              "value": "2017-10-14 08:00:31"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò domani alle 8:00am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "domani alle 8:00am",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T08:00",
+              "type": "datetime",
+              "value": "2016-11-08 08:00:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 10, stanotte",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "10, stanotte",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07T22",
+              "type": "datetime",
+              "value": "2016-11-07 22:00:00"
+            }
+          ]
+        },
+        "Start": 13,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 8am stamattina",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "8am stamattina",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07T08",
+              "type": "datetime",
+              "value": "2016-11-07 08:00:00"
+            }
+          ]
+        },
+        "Start": 13,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alla fine di domani",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "alla fine di domani",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T23:59:59",
+              "type": "datetime",
+              "value": "2016-11-08 23:59:59"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alla fine di domenica",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "alla fine di domenica",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-7T23:59:59",
+              "type": "datetime",
+              "value": "2016-11-06 23:59:59"
+            },
+            {
+              "timex": "XXXX-WXX-7T23:59:59",
+              "type": "datetime",
+              "value": "2016-11-13 23:59:59"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alla fine di questa domenica",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "alla fine di questa domenica",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-13T23:59:59",
+              "type": "datetime",
+              "value": "2016-11-13 23:59:59"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle cinque alle sette oggi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle cinque alle sette oggi",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 05:00:00",
+              "end": "2016-11-07 07:00:00"
+            },
+            {
+              "timex": "(2016-11-07T17,2016-11-07T19,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 17:00:00",
+              "end": "2016-11-07 19:00:00"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 5 alle 6pm del 22 Aprile",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 5 alle 6pm del 22 aprile",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
+              "type": "datetimerange",
+              "start": "2016-04-22 17:00:00",
+              "end": "2016-04-22 18:00:00"
+            },
+            {
+              "timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
+              "type": "datetimerange",
+              "start": "2017-04-22 17:00:00",
+              "end": "2017-04-22 18:00:00"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 3:00 alle 4:00 domani",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 3:00 alle 4:00 domani",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
+              "type": "datetimerange",
+              "start": "2016-11-08 03:00:00",
+              "end": "2016-11-08 04:00:00"
+            },
+            {
+              "timex": "(2016-11-08T15:00,2016-11-08T16:00,PT1H)",
+              "type": "datetimerange",
+              "start": "2016-11-08 15:00:00",
+              "end": "2016-11-08 16:00:00"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò stasera",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "stasera",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07TEV",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:00:00",
+              "end": "2016-11-07 20:00:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò domani notte",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "domani notte",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08TNI",
+              "type": "datetimerange",
+              "start": "2016-11-08 20:00:00",
+              "end": "2016-11-08 23:59:59"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il prossimo lunedì pomeriggio",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "prossimo lunedì pomeriggio",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-14TAF",
+              "type": "datetimerange",
+              "start": "2016-11-14 12:00:00",
+              "end": "2016-11-14 16:00:00"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò tra un'ora",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tra un'ora",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07T17:12:00",
+              "type": "datetime",
+              "value": "2016-11-07 17:12:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò la prossima ora",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "la prossima ora",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 17:12:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò martedì in mattinata",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "martedì in mattinata",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2TMO",
+              "type": "datetimerange",
+              "start": "2016-11-01 08:00:00",
+              "end": "2016-11-01 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2TMO",
+              "type": "datetimerange",
+              "start": "2016-11-08 08:00:00",
+              "end": "2016-11-08 12:00:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via per 3 ore",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "3 ore",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT3H",
+              "type": "duration",
+              "value": "10800"
+            }
+          ]
+        },
+        "Start": 14,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via per 3,5 anni",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "3,5 anni",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3.5Y",
+              "type": "duration",
+              "value": "110376000"
+            }
+          ]
+        },
+        "Start": 14,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via per 3 minuti",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "3 minuti",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT3M",
+              "type": "duration",
+              "value": "180"
+            }
+          ]
+        },
+        "Start": 14,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via per 123.45 sec",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "123.45 sec",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT123.45S",
+              "type": "duration",
+              "value": "123.45"
+            }
+          ]
+        },
+        "Start": 14,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via per tutto il giorno",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tutto il giorno",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "duration",
+              "value": "86400"
+            }
+          ]
+        },
+        "Start": 14,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via per ventiquattro ore",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ventiquattro ore",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT24H",
+              "type": "duration",
+              "value": "86400"
+            }
+          ]
+        },
+        "Start": 14,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via per tutto il mese",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tutto il mese",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1M",
+              "type": "duration",
+              "value": "2592000"
+            }
+          ]
+        },
+        "Start": 14,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via per un'ora",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "un'ora",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1H",
+              "type": "duration",
+              "value": "3600"
+            }
+          ]
+        },
+        "Start": 14,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via per qualche ora",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "qualche ora",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT3H",
+              "type": "duration",
+              "value": "10800"
+            }
+          ]
+        },
+        "Start": 14,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via per qualche minuto",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "qualche minuto",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT3M",
+              "type": "duration",
+              "value": "180"
+            }
+          ]
+        },
+        "Start": 14,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via per alcuni giorni",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "alcuni giorni",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3D",
+              "type": "duration",
+              "value": "259200"
+            }
+          ]
+        },
+        "Start": 14,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via per diverse settimane",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "diverse settimane",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3W",
+              "type": "duration",
+              "value": "1814400"
+            }
+          ]
+        },
+        "Start": 14,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via settimanalmente",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "settimanalmente",
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 10,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni giorno",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni giorno",
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 10,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via annualmente",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "annualmente",
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 10,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni due giorni",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni due giorni",
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P2D",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 10,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "Ma ne vado ogni tre settimane",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni tre settimane",
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3W",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via alle 3pm ogni giorno",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "3pm ogni giorno",
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T15",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 15,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni lunedì",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni lunedì",
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 10,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni lunedì alle 4pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni lunedì alle 4pm",
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1T16",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 10,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 7:56:30 pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "7:56:30 pm",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19:56:30",
+              "type": "time",
+              "value": "19:56:30"
+            }
+          ]
+        },
+        "Start": 13,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "Sono le sette e mezza",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "sette e mezza",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:30",
+              "type": "time",
+              "value": "07:30:00"
+            },
+            {
+              "timex": "T19:30",
+              "type": "time",
+              "value": "19:30:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "Sone le otto e 20 di sera",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "otto e 20 di sera",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T20:20",
+              "type": "time",
+              "value": "20:20:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò la mattina alle 7",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "la mattina alle 7",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07",
+              "type": "time",
+              "value": "07:00:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il pomeriggio alle 7",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "il pomeriggio alle 7",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò verso mezzogiorno",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "verso mezzogiorno",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12",
+              "type": "time",
+              "value": "12:00:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò verso le 11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "verso le 11",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T11",
+              "Mod": "approx",
+              "type": "timerange",
+              "value": "11:00:00"
+            },
+            {
+              "timex": "T23",
+              "Mod": "approx",
+              "type": "timerange"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 11 circa",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "11 circa",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T11",
+              "type": "time",
+              "value": "11:00:00"
+            }
+          ]
+        },
+        "Start": 13,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "Tonerò alle 1140 a.m.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "1140 a.m.",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T11:40",
+              "type": "time",
+              "value": "11:40:00"
+            }
+          ]
+        },
+        "Start": 12,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "12 mezzogiorno",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "12 mezzogiorno",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12",
+              "type": "time",
+              "value": "12:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 5 alle 6pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 5 alle 6pm",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T17,T18,PT1H)",
+              "type": "timerange",
+              "start": "17:00:00",
+              "end": "18:00:00"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 5 alle sette di mattina",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 5 alle sette di mattina",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T05,T07,PT2H)",
+              "type": "timerange",
+              "start": "05:00:00",
+              "end": "07:00:00"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori tra le 5 e le 6 del pomeriggio",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tra le 5 e le 6 del pomeriggio",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T17,T18,PT1H)",
+              "type": "timerange",
+              "start": "17:00:00",
+              "end": "18:00:00"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 4:00 alle 7",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 4:00 alle 7",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T04:00,T07,PT3H)",
+              "type": "timerange",
+              "start": "04:00:00",
+              "end": "07:00:00"
+            },
+            {
+              "timex": "(T16:00,T19,PT3H)",
+              "type": "timerange",
+              "start": "16:00:00",
+              "end": "19:00:00"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 3 di mattina fino alle 5pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dalle 3 di mattina fino alle 5pm",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T03,T17,PT14H)",
+              "type": "timerange",
+              "start": "03:00:00",
+              "end": "17:00:00"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 42
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori tra le 4pm e le 5pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tra le 4pm e le 5pm",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T16,T17,PT1H)",
+              "type": "timerange",
+              "start": "16:00:00",
+              "end": "17:00:00"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "Incontriamoci in mattinata",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "in mattinata",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        },
+        "Start": 14,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "Incontriamoci in serata",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "in serata",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TEV",
+              "type": "timerange",
+              "start": "16:00:00",
+              "end": "20:00:00"
+            }
+          ]
+        },
+        "Start": 14,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò adesso",
+    "Context": {
+      "ReferenceDateTime": "2017-09-28T14:11:10.9626841"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "adesso",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "datetime",
+              "value": "2017-09-28 14:11:10"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò tra 5 minuti",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tra 5 minuti",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:05:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:05:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "in 5 minuti",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "in 5 minuti",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:05:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:05:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "organizzami un appuntamento lunedì della settimana prossima alle 9 am o all'1 pm",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "lunedì della settimana prossima alle 9 am",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-11T09",
+              "type": "datetime",
+              "value": "2017-12-11 09:00:00"
+            }
+          ]
+        },
+        "Start": 28,
+        "End": 68
+      },
+      {
+        "Text": "1 pm",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T13",
+              "type": "time",
+              "value": "13:00:00"
+            }
+          ]
+        },
+        "Start": 76,
+        "End": 79
+      }
+    ]
+  },
+  {
+    "Input": "organizzami un appuntamento la prossima settimana di lun o mar",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "prossima settimana di lun",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-11",
+              "type": "date",
+              "value": "2017-12-11"
+            }
+          ]
+        },
+        "Start": 31,
+        "End": 55
+      },
+      {
+        "Text": "mar",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2017-11-28"
+            },
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2017-12-05"
+            }
+          ]
+        },
+        "Start": 59,
+        "End": 61
+      }
+    ]
+  },
+  {
+    "Input": "organizzami un appuntamento la mattina dalle 9 alle 10",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "la mattina dalle 9 alle 10",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T09,T10,PT1H)",
+              "type": "timerange",
+              "start": "09:00:00",
+              "end": "10:00:00"
+            }
+          ]
+        },
+        "Start": 28,
+        "End": 53
+      }
+    ]
+  },
+  {
+    "Input": "organizzami un appuntamento il prossimo lunedì 1-3 pm o 5-6 pm",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "prossimo lunedì 1-3 pm",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-12-11T13,2017-12-11T15,PT2H)",
+              "type": "datetimerange",
+              "start": "2017-12-11 13:00:00",
+              "end": "2017-12-11 15:00:00"
+            }
+          ]
+        },
+        "Start": 31,
+        "End": 52
+      },
+      {
+        "Text": "5-6 pm",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T17,T18,PT1H)",
+              "type": "timerange",
+              "start": "17:00:00",
+              "end": "18:00:00"
+            }
+          ]
+        },
+        "Start": 56,
+        "End": 61
+      }
+    ]
+  },
+  {
+    "Input": "Lunedì 8-9am o 9-10 am lavora.",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "lunedì 8-9am",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-1T08,XXXX-WXX-1T09,PT1H)",
+              "type": "datetimerange",
+              "start": "2017-11-27 08:00:00",
+              "end": "2017-11-27 09:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-1T08,XXXX-WXX-1T09,PT1H)",
+              "type": "datetimerange",
+              "start": "2017-12-04 08:00:00",
+              "end": "2017-12-04 09:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 11
+      },
+      {
+        "Text": "9-10 am",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T09,T10,PT1H)",
+              "type": "timerange",
+              "start": "09:00:00",
+              "end": "10:00:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "Cortana potresti provare ad organizzare una chiamata Skype per la prossima settimana di martedì o di giovedì, per favore?",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "prossima settimana di martedì",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-12",
+              "type": "date",
+              "value": "2017-12-12"
+            }
+          ]
+        },
+        "Start": 66,
+        "End": 94
+      },
+      {
+        "Text": "giovedì",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-4",
+              "type": "date",
+              "value": "2017-11-30"
+            },
+            {
+              "timex": "XXXX-WXX-4",
+              "type": "date",
+              "value": "2017-12-07"
+            }
+          ]
+        },
+        "Start": 101,
+        "End": 107
+      }
+    ]
+  },
+  {
+    "Input": "Cortana potresti provare ad organizzare una chiamata Skype per la prossima settimana martedì alle 9 am o giovedì alle 1 pm, per favore?",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "prossima settimana martedì alle 9 am",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-12T09",
+              "type": "datetime",
+              "value": "2017-12-12 09:00:00"
+            }
+          ]
+        },
+        "Start": 66,
+        "End": 101
+      },
+      {
+        "Text": "giovedì alle 1 pm",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-4T13",
+              "type": "datetime",
+              "value": "2017-11-30 13:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-4T13",
+              "type": "datetime",
+              "value": "2017-12-07 13:00:00"
+            }
+          ]
+        },
+        "Start": 105,
+        "End": 121
+      }
+    ]
+  }
+]

@@ -81,6 +81,10 @@ class EnglishSetExtractorConfiguration(SetExtractorConfiguration):
     def date_time_period_extractor(self) -> DateTimeExtractor:
         return self._date_time_period_extractor
 
+    @property
+    def duration_unit_regex(self) -> Pattern:
+        return self._duration_unit_regex
+
     def __init__(self):
         self._duration_extractor = BaseDurationExtractor(
             EnglishDurationExtractorConfiguration())
@@ -110,4 +114,7 @@ class EnglishSetExtractorConfiguration(SetExtractorConfiguration):
             EnglishDateTime.SetWeekDayRegex)
         self._set_each_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.SetEachRegex)
+        self._duration_unit_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.DurationUnitRegex
+        )
         self._before_each_day_regex = None

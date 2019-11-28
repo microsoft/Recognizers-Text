@@ -1,0 +1,475 @@
+[
+  {
+    "Input": "Je reviendrai maintenant",
+    "Results": [
+      {
+        "Text": "maintenant",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dès que possible",
+    "Results": [
+      {
+        "Text": "dès que possible",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dqp",
+    "Results": [
+      {
+        "Text": "dqp",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai en ce moment",
+    "Results": [
+      {
+        "Text": "ce moment",
+        "Type": "datetime",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 21/04/2016, 8:00pm",
+    "Results": [
+      {
+        "Text": "21/04/2016, 8:00pm",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 21/04/2016, 8:00:13pm",
+    "Results": [
+      {
+        "Text": "21/04/2016, 8:00:13pm",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 14 Octobre 8:00am",
+    "Results": [
+      {
+        "Text": "14 Octobre 8:00am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 14 décembre 8:00am",
+    "Results": [
+      {
+        "Text": "14 décembre 8:00am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 14 février 8:00am",
+    "Results": [
+      {
+        "Text": "14 février 8:00am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 14 août 8:00am",
+    "Results": [
+      {
+        "Text": "14 août 8:00am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 14 Octobre 8:00:00am",
+    "Results": [
+      {
+        "Text": "14 Octobre 8:00:00am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 14 Octobre, 8:00am",
+    "Results": [
+      {
+        "Text": "14 Octobre, 8:00am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 14 Octobre, 8:00:01am",
+    "Results": [
+      {
+        "Text": "14 Octobre, 8:00:01am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 14 Octobre, 15:00",
+    "Results": [
+      {
+        "Text": "14 Octobre, 15:00",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 15:00, 14 Octobre",
+    "Results": [
+      {
+        "Text": "15:00, 14 Octobre",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 15:00, 14 Oct",
+    "Results": [
+      {
+        "Text": "15:00, 14 Oct",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 15:00, 14 Oct.",
+    "Results": [
+      {
+        "Text": "15:00, 14 Oct",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je vais demain 8:00",
+    "Results": [
+      {
+        "Text": "demain 8:00",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je vais demain vers 8:00am",
+    "Results": [
+      {
+        "Text": "demain vers 8:00am",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je vais demain pour 8:00am",
+    "Results": [
+      {
+        "Text": "demain pour 8:00am",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je vais demain 8:00:05am",
+    "Results": [
+      {
+        "Text": "demain 8:00:05am",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 8pm dimanche prochain",
+    "Results": [
+      {
+        "Text": "8pm dimanche prochain",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 8pm aujourd'hui",
+    "Results": [
+      {
+        "Text": "8pm aujourd'hui",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 19:00, 2016-12-22",
+    "Results": [
+      {
+        "Text": "19:00, 2016-12-22",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai sept heures lendemain",
+    "Results": [
+      {
+        "Text": "sept heures lendemain",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "je reviendrai 14 Octobre 8:00, 14 Octobre",
+    "Results": [
+      {
+        "Text": "14 Octobre 8:00",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "je reviendrai 7, cette matin",
+    "Results": [
+      {
+        "Text": "7, cette matin",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 8pm dans la nuit, Lundi",
+    "Results": [
+      {
+        "Text": "8pm dans la nuit, Lundi",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "je reviendrai 8pm dans la soiree, 1er Jan",
+    "Results": [
+      {
+        "Text": "8pm dans la soiree, 1er Jan",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 8pm dans la soirée, 1 Jan",
+    "Results": [
+      {
+        "Text": "8pm dans la soirée, 1 Jan",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 10 ce soir",
+    "Results": [
+      {
+        "Text": "10 ce soir",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 8 ce soir",
+    "Results": [
+      {
+        "Text": "8 ce soir",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai ce soir vers 7",
+    "Results": [
+      {
+        "Text": "ce soir vers 7",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cette matin a 7",
+    "Results": [
+      {
+        "Text": "cette matin a 7",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cette matinee a 7",
+    "Results": [
+      {
+        "Text": "cette matinee a 7",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cette matinée a sept",
+    "Results": [
+      {
+        "Text": "cette matinée a sept",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cette matin à 7",
+    "Results": [
+      {
+        "Text": "cette matin à 7",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai ce matin 7:00",
+    "Results": [
+      {
+        "Text": "ce matin 7",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cette nuit a 7",
+    "Results": [
+      {
+        "Text": "cette nuit a 7",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai ce soir à 7",
+    "Results": [
+      {
+        "Text": "ce soir à 7",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai fin de dimanche",
+    "Results": [
+      {
+        "Text": "fin de dimanche",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 2016-12-16T12:23:59",
+    "Results": [
+      {
+        "Text": "2016-12-16T12:23:59",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dans 5 heures",
+    "Results": [
+      {
+        "Text": "dans 5 heures",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  }
+]

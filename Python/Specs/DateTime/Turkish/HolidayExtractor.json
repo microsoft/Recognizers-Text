@@ -1,0 +1,194 @@
+[
+  {
+    "Input": "Noel'de döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Noel",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Noel günü döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Noel günü",
+        "Type": "date",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Yuandan'da döneceğiem",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Yuandan",
+        "Type": "date",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Şükran Günü'nde döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Şükran Günü",
+        "Type": "date",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Babalar Günü'nde döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Babalar Günü",
+        "Type": "date",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Bu yıl Yuandan'da döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bu yıl Yuandan",
+        "Type": "date",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "2016 Yuandan'da döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 Yuandan",
+        "Type": "date",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Temiz Pazartesi'nde döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Temiz Pazartesi",
+        "Type": "date",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Martin Luther King Günü Amerika'nın resmi tatil günüdür",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Martin Luther King Günü",
+        "Type": "date",
+        "Start": 0,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Ramazan Bayramı'nda döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Ramazan Bayramı",
+        "Type": "date",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Kurban Bayramı'nda döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Kurban Bayramı",
+        "Type": "date",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Cumhuriyet Bayramı'nda döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Cumhuriyet Bayramı",
+        "Type": "date",
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Zafer Bayramı'nda döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Zafer Bayramı",
+        "Type": "date",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ulusal Egemenlik ve Çocuk Bayramı'nda döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Ulusal Egemenlik ve Çocuk Bayramı",
+        "Type": "date",
+        "Start": 0,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "Atatürk'ü Anma, Gençlik ve Spor Bayramı'nda döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Atatürk'ü Anma, Gençlik ve Spor Bayramı",
+        "Type": "date",
+        "Start": 0,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "Demokrasi ve Milli Birlik Günü'nde döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Demokrasi ve Milli Birlik Günü",
+        "Type": "date",
+        "Start": 0,
+        "Length": 30
+      }
+    ]
+  }
+]

@@ -1,0 +1,145 @@
+[
+  {
+    "Input": "100%",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 100% ",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 100 percento",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "100 percento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 100 percentuale",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "100 percentuale",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "240 percento",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "240 percento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "venti percento",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "venti percento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "il sistema è il ventisette percento più efficiente",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ventisette percento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "27%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trenta percento",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "trenta percento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "30%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trenta %",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "trenta %",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "30%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cento percento",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "cento percento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 percento",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "10 percento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        }
+      }
+    ]
+  }
+]

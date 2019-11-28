@@ -1,0 +1,989 @@
+[
+  {
+    "Input": "tresmillonesimo",
+    "Results": [
+      {
+        "Text": "tresmillonesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000000",
+          "offset":"3000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "dos mil millonesimo",
+    "Results": [
+      {
+        "Text": "dos mil millonesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2000000000",
+          "offset":"2000000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "septimo",
+    "Results": [
+      {
+        "Text": "septimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "7",
+          "offset":"7",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "cuadragesimo septimo",
+    "Results": [
+      {
+        "Text": "cuadragesimo septimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "47",
+          "offset":"47",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "tricentesimo cuadragesimo septimo",
+    "Results": [
+      {
+        "Text": "tricentesimo cuadragesimo septimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "347",
+          "offset":"347",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "dosmilesimo tricentesimo cuadragesimo septimo",
+    "Results": [
+      {
+        "Text": "dosmilesimo tricentesimo cuadragesimo septimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2347",
+          "offset":"2347",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 44
+      }
+    ]
+  },
+  {
+    "Input": "cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
+    "Results": [
+      {
+        "Text": "cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "52347",
+          "offset":"52347",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 57
+      }
+    ]
+  },
+  {
+    "Input": "cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
+    "Results": [
+      {
+        "Text": "cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "452347",
+          "offset":"452347",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 71
+      }
+    ]
+  },
+  {
+    "Input": "tresmillonesimo septimo",
+    "Results": [
+      {
+        "Text": "tresmillonesimo septimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000007",
+          "offset":"3000007",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "tresmillonesimo cuadragesimo septimo",
+    "Results": [
+      {
+        "Text": "tresmillonesimo cuadragesimo septimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000047",
+          "offset":"3000047",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "tresmillonesimo tricentesimo cuadragesimo septimo",
+    "Results": [
+      {
+        "Text": "tresmillonesimo tricentesimo cuadragesimo septimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000347",
+          "offset":"3000347",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 48
+      }
+    ]
+  },
+  {
+    "Input": "tres millones dos milesimo tricentesimo cuadragesimo septimo",
+    "Results": [
+      {
+        "Text": "tres millones dos milesimo tricentesimo cuadragesimo septimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3002347",
+          "offset":"3002347",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 59
+      }
+    ]
+  },
+  {
+    "Input": "tres millones cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
+    "Results": [
+      {
+        "Text": "tres millones cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3052347",
+          "offset":"3052347",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 71
+      }
+    ]
+  },
+  {
+    "Input": "tres millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
+    "Results": [
+      {
+        "Text": "tres millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3452347",
+          "offset":"3452347",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 85
+      }
+    ]
+  },
+  {
+    "Input": "trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
+    "Results": [
+      {
+        "Text": "trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "13452347",
+          "offset":"13452347",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 86
+      }
+    ]
+  },
+  {
+    "Input": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
+    "Results": [
+      {
+        "Text": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "513452347",
+          "offset":"513452347",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 97
+      }
+    ]
+  },
+  {
+    "Input": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo",
+    "Results": [
+      {
+        "Text": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "513452340",
+          "offset":"513452340",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 89
+      }
+    ]
+  },
+  {
+    "Input": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo",
+    "Results": [
+      {
+        "Text": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "513452300",
+          "offset":"513452300",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 76
+      }
+    ]
+  },
+  {
+    "Input": "quinientos trece millones cuatrocientos cincuenta y dos milesimo",
+    "Results": [
+      {
+        "Text": "quinientos trece millones cuatrocientos cincuenta y dos milesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "513452000",
+          "offset":"513452000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 63
+      }
+    ]
+  },
+  {
+    "Input": "quinientos trece millones cuatrocientos cincuenta milesimo",
+    "Results": [
+      {
+        "Text": "quinientos trece millones cuatrocientos cincuenta milesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "513450000",
+          "offset":"513450000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 57
+      }
+    ]
+  },
+  {
+    "Input": "quinientos trece millones cuatrocientos milesimo",
+    "Results": [
+      {
+        "Text": "quinientos trece millones cuatrocientos milesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "513400000",
+          "offset":"513400000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "quinientos trece millonesimo",
+    "Results": [
+      {
+        "Text": "quinientos trece millonesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "513000000",
+          "offset":"513000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "quinientos diez millonesimo",
+    "Results": [
+      {
+        "Text": "quinientos diez millonesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "510000000",
+          "offset":"510000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "quinientosmillonesimo",
+    "Results": [
+      {
+        "Text": "quinientosmillonesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "500000000",
+          "offset":"500000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "milesimo quingentesimo vigesimo tercero",
+    "Results": [
+      {
+        "Text": "milesimo quingentesimo vigesimo tercero",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1523",
+          "offset":"1523",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis milesimo octingentesimo trigesimo segundo",
+    "Results": [
+      {
+        "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis milesimo octingentesimo trigesimo segundo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3455228556832",
+          "offset":"3455228556832",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 149
+      }
+    ]
+  },
+  {
+    "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis milesimo",
+    "Results": [
+      {
+        "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis milesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3455228556000",
+          "offset":"3455228556000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 116
+      }
+    ]
+  },
+  {
+    "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millonesimo",
+    "Results": [
+      {
+        "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millonesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3455228000000",
+          "offset":"3455228000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 82
+      }
+    ]
+  },
+  {
+    "Input": "tres billones cuatrocientos cincuenta y cinco mil millonesimo",
+    "Results": [
+      {
+        "Text": "tres billones cuatrocientos cincuenta y cinco mil millonesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3455000000000",
+          "offset":"3455000000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "tresbillonesimo",
+    "Results": [
+      {
+        "Text": "tresbillonesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000000000000",
+          "offset":"3000000000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "vigesimo quinto",
+    "Results": [
+      {
+        "Text": "vigesimo quinto",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "25",
+          "offset":"25",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "vigesimo primero",
+    "Results": [
+      {
+        "Text": "vigesimo primero",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "21",
+          "offset":"21",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "centesimo vigesimo quinto",
+    "Results": [
+      {
+        "Text": "centesimo vigesimo quinto",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "125",
+          "offset":"125",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "ducentesimo",
+    "Results": [
+      {
+        "Text": "ducentesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "200",
+          "offset":"200",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo tercero",
+    "Results": [
+      {
+        "Text": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo tercero",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3524694673",
+          "offset":"3524694673",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 112
+      }
+    ]
+  },
+  {
+    "Input": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo",
+    "Results": [
+      {
+        "Text": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3524694670",
+          "offset":"3524694670",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 104
+      }
+    ]
+  },
+  {
+    "Input": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo",
+    "Results": [
+      {
+        "Text": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3524694600",
+          "offset":"3524694600",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 91
+      }
+    ]
+  },
+  {
+    "Input": "tres mil quinientos veinticuatro millones seiscientos milesimo",
+    "Results": [
+      {
+        "Text": "tres mil quinientos veinticuatro millones seiscientos milesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3524600000",
+          "offset":"3524600000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 61
+      }
+    ]
+  },
+  {
+    "Input": "tres mil millonesimo",
+    "Results": [
+      {
+        "Text": "tres mil millonesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000000000",
+          "offset":"3000000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "tres mil millonesimo tercero",
+    "Results": [
+      {
+        "Text": "tres mil millonesimo tercero",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000000003",
+          "offset":"3000000003",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "tres mil millonesimo septuagesimo tercero",
+    "Results": [
+      {
+        "Text": "tres mil millonesimo septuagesimo tercero",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000000073",
+          "offset":"3000000073",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "tres mil millonesimo sexcentesimo septuagesimo tercero",
+    "Results": [
+      {
+        "Text": "tres mil millonesimo sexcentesimo septuagesimo tercero",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000000673",
+          "offset":"3000000673",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 53
+      }
+    ]
+  },
+  {
+    "Input": "tres mil millones cuatro milesimo sexcentesimo septuagesimo tercero",
+    "Results": [
+      {
+        "Text": "tres mil millones cuatro milesimo sexcentesimo septuagesimo tercero",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000004673",
+          "offset":"3000004673",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 66
+      }
+    ]
+  },
+  {
+    "Input": "tres mil veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo tercero",
+    "Results": [
+      {
+        "Text": "tres mil veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo tercero",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3024694673",
+          "offset":"3024694673",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 101
+      }
+    ]
+  },
+  {
+    "Input": "11mo",
+    "Results": [
+      {
+        "Text": "11mo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "11",
+          "offset":"11",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "11vo",
+    "Results": [
+      {
+        "Text": "11vo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "11",
+          "offset":"11",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "12vo",
+    "Results": [
+      {
+        "Text": "12vo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "12",
+          "offset":"12",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "111ro",
+    "Results": [
+      {
+        "Text": "111ro",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "111",
+          "offset":"111",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "21ro",
+    "Results": [
+      {
+        "Text": "21ro",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "21",
+          "offset":"21",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "30ma",
+    "Results": [
+      {
+        "Text": "30ma",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "30",
+          "offset":"30",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "2da",
+    "Results": [
+      {
+        "Text": "2da",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2",
+          "offset":"2",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "undecimo",
+    "Results": [
+      {
+        "Text": "undecimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "11",
+          "offset":"11",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "veintidosmilesimo",
+    "Results": [
+      {
+        "Text": "veintidosmilesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "22000",
+          "offset":"22000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "cincuenta y cinco billones quinientos cincuenta y cinco mil quinientos cincuenta y cinco millones quinientos cincuenta y cinco milesimo quingentesimo quincuagesimo quinto",
+    "Results": [
+      {
+        "Text": "cincuenta y cinco billones quinientos cincuenta y cinco mil quinientos cincuenta y cinco millones quinientos cincuenta y cinco milesimo quingentesimo quincuagesimo quinto",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "55555555555555",
+          "offset":"55555555555555",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 169
+      }
+    ]
+  },
+  {
+    "Input": "vigesimo",
+    "Results": [
+      {
+        "Text": "vigesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "20",
+          "offset":"20",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "centesimo",
+    "Results": [
+      {
+        "Text": "centesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "100",
+          "offset":"100",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "tres billonesimo",
+    "Results": [
+      {
+        "Text": "tres billonesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000000000000",
+          "offset":"3000000000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "tres billonesima",
+    "Results": [
+      {
+        "Text": "tres billonesima",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000000000000",
+          "offset":"3000000000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "cien billonesimo",
+    "Results": [
+      {
+        "Text": "cien billonesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "100000000000000",
+          "offset":"100000000000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "el primer lugar",
+    "Results": [
+      {
+        "Text": "primer",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1",
+          "offset":"1",
+          "relativeTo":"start"
+        },
+        "Start": 3,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "decimoctavo o décimo octavo",
+    "Results": [
+      {
+        "Text": "decimoctavo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "18",
+          "offset":"18",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 10
+      },
+	  {
+        "Text": "décimo octavo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "18",
+          "offset":"18",
+          "relativeTo":"start"
+        },
+        "Start": 14,
+        "End": 26
+      }
+    ]
+  }
+]

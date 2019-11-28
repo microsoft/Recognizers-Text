@@ -1,0 +1,214 @@
+[
+  {
+    "Input": "Quando aveva cinque anni, imparò ad andare in bicicletta.",
+    "NotSupportedByDesign": "python, javascript, python",
+    "Results": [
+      {
+        "Text": "cinque anni",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "5",
+          "unit": "Anno"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Questa saga è vecchia dieci anni.",
+    "NotSupportedByDesign": "python, javascript, python",
+    "Results": [
+      {
+        "Text": "dieci anni",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Anno"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ho solo 29 anni!",
+    "NotSupportedByDesign": "python, javascript, python",
+    "Results": [
+      {
+        "Text": "29 anni",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "29",
+          "unit": "Anno"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Adesso, dopo novantacinque anni di età, le prospettive cambiano.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python, javascript, python",
+    "Results": [
+      {
+        "Text": "novantacinque anni di età",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "95",
+          "unit": "Anno"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "La Grande Muraglia cinese ha più di 500 anni e si estende per più di 5,000 miglia.",
+    "NotSupportedByDesign": "python, javascript, python",
+    "Results": [
+      {
+        "Text": "500 anni",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "500",
+          "unit": "Anno"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Lei ha 60 anni; è nata l'8 maggio 1945.",
+    "NotSupportedByDesign": "python, javascript, python",
+    "Results": [
+      {
+        "Text": "60 anni",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "60",
+          "unit": "Anno"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Il 25% dei casi non viene diagnosticato fino a circa 3 anni di età.",
+    "NotSupportedByDesign": "python, javascript, python",
+    "Results": [
+      {
+        "Text": "3 anni di età",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Anno"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Quando ci sarà la pressione di adempiere ad una promessa che ha un anno?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python, javascript, python",
+    "Results": [
+      {
+        "Text": "un anno",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "1",
+          "unit": "Anno"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "è successo quando il bambino aveva solo dieci mesi.",
+    "NotSupportedByDesign": "python, javascript, python",
+    "Results": [
+      {
+        "Text": "dieci mesi",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Mese"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "La proposta del comitato ha 8 mesi.",
+    "NotSupportedByDesign": "python, javascript, python",
+    "Results": [
+      {
+        "Text": "8 mesi",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "8",
+          "unit": "Mese"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Approssimativamente il 50% dei casi viene diagnosticato intorno ai diciotto mesi di età.",
+    "NotSupportedByDesign": "python, javascript, python",
+    "Results": [
+      {
+        "Text": "diciotto mesi di età",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "18",
+          "unit": "Mese"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "è possiblie, ma nel 2006 95% di loro erano più giovani di tre mesi.",
+    "NotSupportedByDesign": "python, javascript, python",
+    "Results": [
+      {
+        "Text": "tre mesi",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Mese"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Se andiamo avanti a Dicembre, avrà tre settimane.",
+    "NotSupportedByDesign": "python, javascript, python",
+    "Results": [
+      {
+        "Text": "tre settimane",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Settimana"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "A 6 settimane di età, si può già festeggiare il Natale.",
+    "NotSupportedByDesign": "python, javascript, python",
+    "Results": [
+      {
+        "Text": "6 settimane di età",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "6",
+          "unit": "Settimana"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Una bolletta delle utenze di 90 giorni è piuttosto tardi.",
+    "NotSupportedByDesign": "python, javascript, python",
+    "Results": [
+      {
+        "Text": "90 giorni",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "90",
+          "unit": "Giorno"
+        }
+      }
+    ]
+  }
+]

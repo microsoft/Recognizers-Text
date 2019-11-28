@@ -1,0 +1,202 @@
+[
+  {
+    "Input": "Draußen sind es 40 °Celsius.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "40 °celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "40",
+          "unit": "C"
+        },
+        "Start": 16,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "in Texas sind es 90 Grad Fahrenheit",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "90 grad fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "90",
+          "unit": "F"
+        },
+        "Start": 17,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "-5 Grad Fahrenheit",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "-5 grad fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "-5",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "6 Grad Celsius",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "6 grad celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "6",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "Heute waren es 8 Grad Celsius, das sind 5 Kelvin mehr als gestern!",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "8 grad celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "8",
+          "unit": "C"
+        },
+        "Start": 15,
+        "End": 28
+      },
+      {
+        "Text": "5 kelvin",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "5",
+          "unit": "K"
+        },
+        "Start": 40,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "Heute sollen es bis zu 35 °C im Schatten werden.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "35 °c",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "35",
+          "unit": "C"
+        },
+        "Start": 23,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Heute sollen es bis zu fünfunddreißig °C im Schatten werden.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "fünfunddreißig °c",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "35",
+          "unit": "C"
+        },
+        "Start": 23,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "Im Dezember Betrug die Durchschnittstemperatur in Deutschland 2,6 Grad. Die bisher höchste Temperatur von 40,3 Grad wurde im August 2015 gemessen.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2,6 grad",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "2,6",
+          "unit": "Degree"
+        },
+        "Start": 62,
+        "End": 69
+      },
+      {
+        "Text": "40,3 grad",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "40,3",
+          "unit": "Degree"
+        },
+        "Start": 106,
+        "End": 114
+      }
+    ]
+  },
+  {
+    "Input": "Morgen werden es in Hamburg 18 °C.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "18 °c",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "18",
+          "unit": "C"
+        },
+        "Start": 28,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "14 Celsius entsprechen 57,2 Fahrenheit.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "14 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "14",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 9
+      },
+      {
+        "Text": "57,2 fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "57,2",
+          "unit": "F"
+        },
+        "Start": 23,
+        "End": 37
+      }      
+    ]
+  }    
+]

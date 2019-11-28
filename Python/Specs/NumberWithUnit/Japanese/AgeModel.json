@@ -1,0 +1,119 @@
+[
+  {
+    "Input": "私は29歳です。",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "29歳",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "29",
+          "unit": "Year"
+        },
+        "Start": 2,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "これは、赤ちゃんがわずか10ヶ月だったときに起こった",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "10ヶ月",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Month"
+        },
+        "Start": 12,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "12月初旬に生まれたのはすでに3週間です",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3週間",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Week"
+        },
+        "Start": 15,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "彼女は1945年5月8日に生まれ、現在60歳です。",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "60歳",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "60",
+          "unit": "Year"
+        },
+        "Start": 19,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "彼女はもう7歳になったので,小学校に行くことができた",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "7歳",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "7",
+          "unit": "Year"
+        },
+        "Start": 5,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "90日齢の子供は病院に行って検査をするべきです",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "90日齢",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "90",
+          "unit": "Day"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "70-90日齢の子は、テストのために病院に行く必要があります",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "90日齢",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "90",
+          "unit": "Day"
+        },
+        "Start": 3,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "完成に一〇年の歳月を要する",
+    "NotSupported": "python",
+    "Results": []
+  }
+]

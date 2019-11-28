@@ -1,0 +1,4831 @@
+[
+  {
+    "Input": "电话：000 111 82-2100.",
+    "Results": [
+      {
+        "Text": "000 111 82-2100",
+        "Start": 3,
+        "End": 17,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "000 111 82-2100"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是1 (877) 609-2233.",
+    "Results": [
+      {
+        "Text": "1 (877) 609-2233",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "1 (877) 609-2233",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+1 541-754-3010.",
+    "Results": [
+      {
+        "Text": "+1 541-754-3010",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+1 541-754-3010",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(541) 754-3010.",
+    "Results": [
+      {
+        "Text": "(541) 754-3010",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(541) 754-3010",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是541-754-3010.",
+    "Results": [
+      {
+        "Text": "541-754-3010",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "541-754-3010",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+1-541-754-3010.",
+    "Results": [
+      {
+        "Text": "+1-541-754-3010",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+1-541-754-3010",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是1-541-754-3010.",
+    "Results": [
+      {
+        "Text": "1-541-754-3010",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "1-541-754-3010",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(55) 3333-33333.",
+    "Results": [
+      {
+        "Text": "(55) 3333-33333",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(55) 3333-33333",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(081) 3333-33333.",
+    "Results": [
+      {
+        "Text": "(081) 3333-33333",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(081) 3333-33333",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是( 19 ) 38294427.",
+    "Results": [
+      {
+        "Text": "( 19 ) 38294427",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "( 19 ) 38294427",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(19) 35831647.",
+    "Results": [
+      {
+        "Text": "(19) 35831647",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(19) 35831647",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(21) 996205563.",
+    "Results": [
+      {
+        "Text": "(21) 996205563",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(21) 996205563",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(21)99713-3601.",
+    "Results": [
+      {
+        "Text": "(21)99713-3601",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(21)99713-3601",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(71)3019-9811.",
+    "Results": [
+      {
+        "Text": "(71)3019-9811",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(71)3019-9811",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是018 997821551.",
+    "Results": [
+      {
+        "Text": "018 997821551",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "018 997821551",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是21 995556144.",
+    "Results": [
+      {
+        "Text": "21 995556144",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "21 995556144",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是280930640.",
+    "Results": [
+      {
+        "Text": "280930640",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "280930640",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是92995299770.",
+    "Results": [
+      {
+        "Text": "92995299770",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "92995299770",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是972101245.",
+    "Results": [
+      {
+        "Text": "972101245",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "972101245",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+44 (0)7123 129683.",
+    "Results": [
+      {
+        "Text": "+44 (0)7123 129683",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44 (0)7123 129683",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+44 7123 123456.",
+    "Results": [
+      {
+        "Text": "+44 7123 123456",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44 7123 123456",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+44 7700900397.",
+    "Results": [
+      {
+        "Text": "+44 7700900397",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44 7700900397",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+447700 900 397.",
+    "Results": [
+      {
+        "Text": "+447700 900 397",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+447700 900 397",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0044 07456934723.",
+    "Results": [
+      {
+        "Text": "0044 07456934723",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0044 07456934723",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0044 07700 900873.",
+    "Results": [
+      {
+        "Text": "0044 07700 900873",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0044 07700 900873",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是004407624938475.",
+    "Results": [
+      {
+        "Text": "004407624938475",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "004407624938475",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是07098 785467.",
+    "Results": [
+      {
+        "Text": "07098 785467",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "07098 785467",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是07453 372 351.",
+    "Results": [
+      {
+        "Text": "07453 372 351",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "07453 372 351",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是07700 900873.",
+    "Results": [
+      {
+        "Text": "07700 900873",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "07700 900873",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是07700900095.",
+    "Results": [
+      {
+        "Text": "07700900095",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "07700900095",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是07877 954 457.",
+    "Results": [
+      {
+        "Text": "07877 954 457",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "07877 954 457",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是07893 564893.",
+    "Results": [
+      {
+        "Text": "07893 564893",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "07893 564893",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+49 171 1234567.",
+    "Results": [
+      {
+        "Text": "+49 171 1234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 171 1234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+49 1741234567.",
+    "Results": [
+      {
+        "Text": "+49 1741234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 1741234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+49 176 12345678.",
+    "Results": [
+      {
+        "Text": "+49 176 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 176 12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+49 176- 12345678.",
+    "Results": [
+      {
+        "Text": "+49 176- 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 176- 12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+49 176-12345678.",
+    "Results": [
+      {
+        "Text": "+49 176-12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 176-12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+49 176/ 12345678.",
+    "Results": [
+      {
+        "Text": "+49 176/ 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 176/ 12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+49 176/12345678.",
+    "Results": [
+      {
+        "Text": "+49 176/12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 176/12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+49 17612345678.",
+    "Results": [
+      {
+        "Text": "+49 17612345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 17612345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+491731234567.",
+    "Results": [
+      {
+        "Text": "+491731234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+491731234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+49176 12345678.",
+    "Results": [
+      {
+        "Text": "+49176 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49176 12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+49176- 12345678.",
+    "Results": [
+      {
+        "Text": "+49176- 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49176- 12345678",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+49176/ 12345678.",
+    "Results": [
+      {
+        "Text": "+49176/ 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49176/ 12345678",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是00 49 176 12345678.",
+    "Results": [
+      {
+        "Text": "00 49 176 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00 49 176 12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是00 49 17612345678.",
+    "Results": [
+      {
+        "Text": "00 49 17612345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00 49 17612345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0049 171 1234567.",
+    "Results": [
+      {
+        "Text": "0049 171 1234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0049 171 1234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0049 176 12345678.",
+    "Results": [
+      {
+        "Text": "0049 176 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0049 176 12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是00491731234567.",
+    "Results": [
+      {
+        "Text": "00491731234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00491731234567",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0049176 12345678.",
+    "Results": [
+      {
+        "Text": "0049176 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0049176 12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是004917612345678.",
+    "Results": [
+      {
+        "Text": "004917612345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "004917612345678",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0171 1234567.",
+    "Results": [
+      {
+        "Text": "0171 1234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0171 1234567",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是01731234567.",
+    "Results": [
+      {
+        "Text": "01731234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "01731234567",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0176 -12345678.",
+    "Results": [
+      {
+        "Text": "0176 -12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176 -12345678",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0176 12 34 56 78.",
+    "Results": [
+      {
+        "Text": "0176 12 34 56 78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176 12 34 56 78",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0176 123 456 78.",
+    "Results": [
+      {
+        "Text": "0176 123 456 78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176 123 456 78",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0176 1234 5678.",
+    "Results": [
+      {
+        "Text": "0176 1234 5678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176 1234 5678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0176 12345678.",
+    "Results": [
+      {
+        "Text": "0176 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176 12345678",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0176- 12345678.",
+    "Results": [
+      {
+        "Text": "0176- 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176- 12345678",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0176-12345678.",
+    "Results": [
+      {
+        "Text": "0176-12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176-12345678",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0176/ 12345678.",
+    "Results": [
+      {
+        "Text": "0176/ 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176/ 12345678",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0176/12345678.",
+    "Results": [
+      {
+        "Text": "0176/12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0176/12345678",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是017612345678.",
+    "Results": [
+      {
+        "Text": "017612345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "017612345678",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是622 15 31 23.",
+    "Results": [
+      {
+        "Text": "622 15 31 23",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "622 15 31 23",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是632 139823.",
+    "Results": [
+      {
+        "Text": "632 139823",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "632 139823",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是679 124 898.",
+    "Results": [
+      {
+        "Text": "679 124 898",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "679 124 898",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是652123123.",
+    "Results": [
+      {
+        "Text": "652123123",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "652123123",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是3333/2/6666.",
+    "Results": [
+      {
+        "Text": "3333/2/6666",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "3333/2/6666",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是1000-1-999.",
+    "Results": [
+      {
+        "Text": "1000-1-999",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "1000-1-999",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是010-6228-8559.",
+    "Results": [
+      {
+        "Text": "010-6228-8559",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "010-6228-8559",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是010-62288559.",
+    "Results": [
+      {
+        "Text": "010-62288559",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "010-62288559",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是1444-555-1234.",
+    "Results": [
+      {
+        "Text": "1444-555-1234",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "1444-555-1234",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是246.555.8888.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "246.555.8888",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "246.555.8888"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是1235554567.",
+    "Results": [
+      {
+        "Text": "1235554567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "1235554567",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(123)456-7890.",
+    "Results": [
+      {
+        "Text": "(123)456-7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(123)456-7890",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是1-444-555-1234.",
+    "Results": [
+      {
+        "Text": "1-444-555-1234",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "1-444-555-1234",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是14325678901.",
+    "Results": [
+      {
+        "Text": "14325678901",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "14325678901",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是1(123)456-7890.",
+    "Results": [
+      {
+        "Text": "1(123)456-7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "1(123)456-7890",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+1 (123)456-7890.",
+    "Results": [
+      {
+        "Text": "+1 (123)456-7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+1 (123)456-7890",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+1(123)456-7890.",
+    "Results": [
+      {
+        "Text": "+1(123)456-7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+1(123)456-7890",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是00971501234567.",
+    "Results": [
+      {
+        "Text": "00971501234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00971501234567",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+971521234567.",
+    "Results": [
+      {
+        "Text": "+971521234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+971521234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是971551234567.",
+    "Results": [
+      {
+        "Text": "971551234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "971551234567",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是971 56 123 4567.",
+    "Results": [
+      {
+        "Text": "971 56 123 4567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "971 56 123 4567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是971-50-123-4567.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "971-50-123-4567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "971-50-123-4567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是971.4.123.4567.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "971.4.123.4567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "971.4.123.4567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+971 (0) 4 1234567.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "+971 (0) 4 1234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+971 (0) 4 1234567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是971 (56) 1234567.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "971 (56) 1234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "971 (56) 1234567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0551234567.",
+    "Results": [
+      {
+        "Text": "0551234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0551234567",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是021234567.",
+    "Results": [
+      {
+        "Text": "021234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "021234567",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是600-540-000.",
+    "Results": [
+      {
+        "Text": "600-540-000",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "600-540-000",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是359895123456.",
+    "Results": [
+      {
+        "Text": "359895123456",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "359895123456",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0898111222.",
+    "Results": [
+      {
+        "Text": "0898111222",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0898111222",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0886111222.",
+    "Results": [
+      {
+        "Text": "0886111222",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0886111222",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0875111222.",
+    "Results": [
+      {
+        "Text": "0875111222",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0875111222",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0899555555.",
+    "Results": [
+      {
+        "Text": "0899555555",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0899555555",
+          "score": "0.1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是359898111222.",
+    "Results": [
+      {
+        "Text": "359898111222",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "359898111222",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是00898111222.",
+    "Results": [
+      {
+        "Text": "00898111222",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00898111222",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+35998111222.",
+    "Results": [
+      {
+        "Text": "+35998111222",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+35998111222",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是098111222.",
+    "Results": [
+      {
+        "Text": "098111222",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "098111222",
+          "score": "0.3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是090012900.",
+    "Results": [
+      {
+        "Text": "090012900",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "090012900",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是070010007.",
+    "Results": [
+      {
+        "Text": "070010007",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "070010007",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是070043256.",
+    "Results": [
+      {
+        "Text": "070043256",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "070043256",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是35970045045.",
+    "Results": [
+      {
+        "Text": "35970045045",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "35970045045",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是35970045666.",
+    "Results": [
+      {
+        "Text": "35970045666",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "35970045666",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是08000700.",
+    "Results": [
+      {
+        "Text": "08000700",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "08000700",
+          "score": "0.3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是080088001.",
+    "Results": [
+      {
+        "Text": "080088001",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "080088001",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是080015333.",
+    "Results": [
+      {
+        "Text": "080015333",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "080015333",
+          "score": "0.3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是028700000.",
+    "Results": [
+      {
+        "Text": "028700000",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "028700000",
+          "score": "0.1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是030100000.",
+    "Results": [
+      {
+        "Text": "030100000",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "030100000",
+          "score": "0.1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是03010070.",
+    "Results": [
+      {
+        "Text": "03010070",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "03010070",
+          "score": "0.3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是03656745.",
+    "Results": [
+      {
+        "Text": "03656745",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "03656745",
+          "score": "0.3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0800-000-00-00.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "0800-000-00-00",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0800-000-00-00"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0800 000 00 00.",
+    "Results": [
+      {
+        "Text": "0800 000 00 00",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0800 000 00 00",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0800-00-00-00.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "0800-00-00-00",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0800-00-00-00"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0800 00 00 00.",
+    "Results": [
+      {
+        "Text": "0800 00 00 00",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0800 00 00 00",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0800-000-0000.",
+    "Results": [
+      {
+        "Text": "0800-000-0000",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0800-000-0000",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0800 000 0000.",
+    "Results": [
+      {
+        "Text": "0800 000 0000",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0800 000 0000",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是08000000000.",
+    "Results": [
+      {
+        "Text": "08000000000",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "08000000000",
+          "score": "0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是1692089-4635.",
+    "Results": [
+      {
+        "Text": "1692089-4635",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "1692089-4635",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是16920894635.",
+    "Results": [
+      {
+        "Text": "16920894635",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "16920894635",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是16992089-4635.",
+    "Results": [
+      {
+        "Text": "16992089-4635",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "16992089-4635",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是16 99202-4635.",
+    "Results": [
+      {
+        "Text": "16 99202-4635",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "16 99202-4635",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(16)99202-4635.",
+    "Results": [
+      {
+        "Text": "(16)99202-4635",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(16)99202-4635",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(16)92089-4635.",
+    "Results": [
+      {
+        "Text": "(16)92089-4635",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(16)92089-4635",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(16) 92089-4635.",
+    "Results": [
+      {
+        "Text": "(16) 92089-4635",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(16) 92089-4635",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(15) 4343-4343.",
+    "Results": [
+      {
+        "Text": "(15) 4343-4343",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(15) 4343-4343",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+55 15 3702-7523.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "+55 15 3702-7523",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+55 15 3702-7523"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+55) 15 3702-7523.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "(+55) 15 3702-7523",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+55) 15 3702-7523"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+55)1537027523.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "(+55)1537027523",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+55)1537027523"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+55)(15)3702-7523.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "(+55)(15)3702-7523",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+55)(15)3702-7523"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+55) 15 99202-7523.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "(+55) 15 99202-7523",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+55) 15 99202-7523"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是99202-4635.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "99202-4635",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "99202-4635"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(16) 9208-4635.",
+    "Results": [
+      {
+        "Text": "(16) 9208-4635",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(16) 9208-4635",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是18911111111.",
+    "Results": [
+      {
+        "Text": "18911111111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "18911111111",
+          "score": "0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是189 1111 1111.",
+    "Results": [
+      {
+        "Text": "189 1111 1111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "189 1111 1111",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是189-1111-1111.",
+    "Results": [
+      {
+        "Text": "189-1111-1111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "189-1111-1111",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0086-18911111111.",
+    "Results": [
+      {
+        "Text": "0086-18911111111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0086-18911111111",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+86-18911111111.",
+    "Results": [
+      {
+        "Text": "+86-18911111111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+86-18911111111",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是86-18911111111.",
+    "Results": [
+      {
+        "Text": "86-18911111111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "86-18911111111",
+          "score": "0.2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0086 18911111111.",
+    "Results": [
+      {
+        "Text": "0086 18911111111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0086 18911111111",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+86 18911111111.",
+    "Results": [
+      {
+        "Text": "+86 18911111111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+86 18911111111",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是86 18911111111.",
+    "Results": [
+      {
+        "Text": "86 18911111111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "86 18911111111",
+          "score": "0.2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0086 189-1111-1111.",
+    "Results": [
+      {
+        "Text": "0086 189-1111-1111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0086 189-1111-1111",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+86 189-1111-1111.",
+    "Results": [
+      {
+        "Text": "+86 189-1111-1111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+86 189-1111-1111",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是86 189-1111-1111.",
+    "Results": [
+      {
+        "Text": "86 189-1111-1111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "86 189-1111-1111",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是02011111111.",
+    "Results": [
+      {
+        "Text": "02011111111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "02011111111",
+          "score": "0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是020-11111111.",
+    "Results": [
+      {
+        "Text": "020-11111111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "020-11111111",
+          "score": "0.2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是020 11111111.",
+    "Results": [
+      {
+        "Text": "020 11111111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "020 11111111",
+          "score": "0.2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是020 1111 1111.",
+    "Results": [
+      {
+        "Text": "020 1111 1111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "020 1111 1111",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是020-1111-1111.",
+    "Results": [
+      {
+        "Text": "020-1111-1111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "020-1111-1111",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0086 020 82803159.",
+    "Results": [
+      {
+        "Text": "0086 020 82803159",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0086 020 82803159",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0086-020-82803159.",
+    "Results": [
+      {
+        "Text": "0086-020-82803159",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0086-020-82803159",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+86 20 61302222-8866.",
+    "Results": [
+      {
+        "Text": "+86 20 61302222-8866",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+86 20 61302222-8866",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+86 20 6130-2222-8866.",
+    "Results": [
+      {
+        "Text": "+86 20 6130-2222-8866",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+86 20 6130-2222-8866",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+86 10 59081185.",
+    "Results": [
+      {
+        "Text": "+86 10 59081185",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+86 10 59081185",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是00420123456789.",
+    "Results": [
+      {
+        "Text": "00420123456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00420123456789",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是00420 123456789.",
+    "Results": [
+      {
+        "Text": "00420 123456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00420 123456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是00420 123 456 789.",
+    "Results": [
+      {
+        "Text": "00420 123 456 789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00420 123 456 789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是00 420 123 456 789.",
+    "Results": [
+      {
+        "Text": "00 420 123 456 789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00 420 123 456 789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+420123456789.",
+    "Results": [
+      {
+        "Text": "+420123456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+420123456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+420 123456789.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "+420 123456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+420 123456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+420 123 456 789.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "+420 123 456 789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+420 123 456 789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是123456789.",
+    "Results": [
+      {
+        "Text": "123456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "123456789",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是123 456 789.",
+    "Results": [
+      {
+        "Text": "123 456 789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "123 456 789",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0644444444.",
+    "Results": [
+      {
+        "Text": "0644444444",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0644444444",
+          "score": "0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是06 44 44 44 44.",
+    "Results": [
+      {
+        "Text": "06 44 44 44 44",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "06 44 44 44 44",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是06-44-44-44-44.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "06-44-44-44-44",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "06-44-44-44-44"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+33644444444.",
+    "Results": [
+      {
+        "Text": "+33644444444",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+33644444444",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0033644444444.",
+    "Results": [
+      {
+        "Text": "0033644444444",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0033644444444",
+          "score": "0.2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+33(0)644444444.",
+    "Results": [
+      {
+        "Text": "+33(0)644444444",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+33(0)644444444",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+33 (0) 644444444.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "+33 (0) 644444444",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+33 (0) 644444444"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+49(89)123456.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "+49(89)123456",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49(89)123456"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是089-1234567.",
+    "Results": [
+      {
+        "Text": "089-1234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "089-1234567",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0891234567.",
+    "Results": [
+      {
+        "Text": "0891234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0891234567",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0049-89-123456.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "0049-89-123456",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0049-89-123456"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是089 123456-78.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "089 123456-78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "089 123456-78"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是9999114011.",
+    "Results": [
+      {
+        "Text": "9999114011",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "9999114011",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+919911112341.",
+    "Results": [
+      {
+        "Text": "+919911112341",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+919911112341",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+91 9415007327.",
+    "Results": [
+      {
+        "Text": "+91 9415007327",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+91 9415007327",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是03598245785.",
+    "Results": [
+      {
+        "Text": "03598245785",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "03598245785",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+911204312280.",
+    "Results": [
+      {
+        "Text": "+911204312280",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+911204312280",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是1302231221.",
+    "Results": [
+      {
+        "Text": "1302231221",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "1302231221",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0610245896.",
+    "Results": [
+      {
+        "Text": "0610245896",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0610245896",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0630548564.",
+    "Results": [
+      {
+        "Text": "0630548564",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0630548564",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0528254856.",
+    "Results": [
+      {
+        "Text": "0528254856",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0528254856",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0535484541.",
+    "Results": [
+      {
+        "Text": "0535484541",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0535484541",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是05 28 44 44 44.",
+    "Results": [
+      {
+        "Text": "05 28 44 44 44",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "05 28 44 44 44",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+212644444444.",
+    "Results": [
+      {
+        "Text": "+212644444444",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+212644444444",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是00212644444444.",
+    "Results": [
+      {
+        "Text": "00212644444444",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00212644444444",
+          "score": "0.1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+212(0)644444444.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "+212(0)644444444",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+212(0)644444444"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+212 (0) 644444444.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "+212 (0) 644444444",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+212 (0) 644444444"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0101234567.",
+    "Results": [
+      {
+        "Text": "0101234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0101234567",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是010-1234567.",
+    "Results": [
+      {
+        "Text": "010-1234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "010-1234567",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是010 - 123 45 67.",
+    "Results": [
+      {
+        "Text": "010 - 123 45 67",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "010 - 123 45 67",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是010 1234 567.",
+    "Results": [
+      {
+        "Text": "010 1234 567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "010 1234 567",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是06-12345678.",
+    "Results": [
+      {
+        "Text": "06-12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "06-12345678",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是06 123 456 78.",
+    "Results": [
+      {
+        "Text": "06 123 456 78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "06 123 456 78",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0111-123456.",
+    "Results": [
+      {
+        "Text": "0111-123456",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0111-123456",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0111 123456.",
+    "Results": [
+      {
+        "Text": "0111 123456",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0111 123456",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+31101234567.",
+    "Results": [
+      {
+        "Text": "+31101234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31101234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0031101234567.",
+    "Results": [
+      {
+        "Text": "0031101234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0031101234567",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+31(0) 10123 4567.",
+    "Results": [
+      {
+        "Text": "+31(0) 10123 4567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31(0) 10123 4567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+3110-1234567.",
+    "Results": [
+      {
+        "Text": "+3110-1234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+3110-1234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是003110 1234567.",
+    "Results": [
+      {
+        "Text": "003110 1234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "003110 1234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+316 123 456 78.",
+    "Results": [
+      {
+        "Text": "+316 123 456 78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+316 123 456 78",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+31(0)6 123 45678.",
+    "Results": [
+      {
+        "Text": "+31(0)6 123 45678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31(0)6 123 45678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+31 (0) 6 123 45678.",
+    "Results": [
+      {
+        "Text": "+31 (0) 6 123 45678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31 (0) 6 123 45678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+31 (20) 5001234.",
+    "Results": [
+      {
+        "Text": "+31 (20) 5001234",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31 (20) 5001234",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+31 (0)6 12345678.",
+    "Results": [
+      {
+        "Text": "+31 (0)6 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31 (0)6 12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+31111-123456.",
+    "Results": [
+      {
+        "Text": "+31111-123456",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31111-123456",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0031111-123456.",
+    "Results": [
+      {
+        "Text": "0031111-123456",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0031111-123456",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+40213-564-864.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "+40213-564-864",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+40213-564-864"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+40213 564 864.",
+    "Results": [
+      {
+        "Text": "+40213 564 864",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+40213 564 864",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0213-564-864.",
+    "Results": [
+      {
+        "Text": "0213-564-864",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0213-564-864",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0213564864.",
+    "Results": [
+      {
+        "Text": "0213564864",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0213564864",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0313564864.",
+    "Results": [
+      {
+        "Text": "0313564864",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0313564864",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0720512346.",
+    "Results": [
+      {
+        "Text": "0720512346",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0720512346",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0730512346.",
+    "Results": [
+      {
+        "Text": "0730512346",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0730512346",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0740512346.",
+    "Results": [
+      {
+        "Text": "0740512346",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0740512346",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0750512346.",
+    "Results": [
+      {
+        "Text": "0750512346",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0750512346",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+40750512346.",
+    "Results": [
+      {
+        "Text": "+40750512346",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+40750512346",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0760512346.",
+    "Results": [
+      {
+        "Text": "0760512346",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0760512346",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0770512346.",
+    "Results": [
+      {
+        "Text": "0770512346",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0770512346",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0780512346.",
+    "Results": [
+      {
+        "Text": "0780512346",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0780512346",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是00421123456789.",
+    "Results": [
+      {
+        "Text": "00421123456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00421123456789",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是00421 123456789.",
+    "Results": [
+      {
+        "Text": "00421 123456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00421 123456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是00421 123 456 789.",
+    "Results": [
+      {
+        "Text": "00421 123 456 789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00421 123 456 789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是00 421 123 456 789.",
+    "Results": [
+      {
+        "Text": "00 421 123 456 789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00 421 123 456 789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+421123456789.",
+    "Results": [
+      {
+        "Text": "+421123456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+421123456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+421 123456789.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "+421 123456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+421 123456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+421 123 456 789.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "+421 123 456 789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+421 123 456 789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是01611234567.",
+    "Results": [
+      {
+        "Text": "01611234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "01611234567",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0161 123 4567.",
+    "Results": [
+      {
+        "Text": "0161 123 4567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0161 123 4567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(0161) 123 4567.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "(0161) 123 4567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(0161) 123 4567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0161-123-4567.",
+    "Results": [
+      {
+        "Text": "0161-123-4567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0161-123-4567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+44 161 123 4567.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "+44 161 123 4567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44 161 123 4567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+441611234567.",
+    "Results": [
+      {
+        "Text": "+441611234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+441611234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+44(0)161234567.",
+    "Results": [
+      {
+        "Text": "+44(0)161234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44(0)161234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是00 44 161 1234567.",
+    "Results": [
+      {
+        "Text": "00 44 161 1234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "00 44 161 1234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(011) 44 161 234567.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "(011) 44 161 234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(011) 44 161 234567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0161-158-5587.",
+    "Results": [
+      {
+        "Text": "0161-158-5587",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0161-158-5587",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0161 123 4567 ext. 123.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "0161 123 4567 ext. 123",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0161 123 4567 ext. 123"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是01611234567x123.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "01611234567x123",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "01611234567x123"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+44161234567x123.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "+44161234567x123",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44161234567x123"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+44 (0) 161 1234567 ext 123.",
+    "NotSupported": "dotnet,javascript,python",
+    "Results": [
+      {
+        "Text": "+44 (0) 161 1234567 ext 123",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44 (0) 161 1234567 ext 123"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是223-4567.",
+    "Results": [
+      {
+        "Text": "223-4567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "223-4567",
+          "score": "0.55"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是012-3333.",
+    "Results": [
+      {
+        "Text": "012-3333",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.2",
+          "value": "012-3333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是112-3333.",
+    "Results": []
+  },
+  {
+    "Input": "你知道 bazinga?",
+    "Results": []
+  },
+  {
+    "Input": "你知道bazinga?",
+    "Results": []
+  },
+  {
+    "Input": "s666666666是一个序列号",
+    "Results": []
+  },
+  {
+    "Input": "666666666s是一个序列号",
+    "Results": []
+  },
+  {
+    "Input": "s666666666s是一个序列号",
+    "Results": []
+  },
+  {
+    "Input": "666666666S 是一个序列号，不是一个电话号。",
+    "Results": []
+  },
+  {
+    "Input": "3333*2=6666看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "3333/2=6666 看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "1000-1=999看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "(456 (4)) 345 看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "(081)  342-86221d看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "19) 35831647看起来区号缺少了起始括号",
+    "Results": [
+      {
+        "Text": "35831647",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "35831647",
+          "score": "0.3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "(19 35831647看起来区号缺少了结束括号",
+    "Results": [
+      {
+        "Text": "19 35831647",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "19 35831647",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-2208960000看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "-77.034040723966看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "0.000000012看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "P0-001-000016155-9看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "16/04/2010看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "16-04-2010看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "2009/2010看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "http://twitter.com/#!/mstrohm/stus/87057367204202896看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "T005-2333-100731-SW-2看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "我的电话号是86 (40) 08423331.",
+    "Results": [
+      {
+        "Text": "86 (40) 08423331",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "86 (40) 08423331",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+45) 12-34-56-78.",
+    "Results": [
+      {
+        "Text": "(+45) 12-34-56-78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45) 12-34-56-78",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+45) 12 345 678.",
+    "Results": [
+      {
+        "Text": "(+45) 12 345 678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45) 12 345 678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+45) 12 34 56 78.",
+    "Results": [
+      {
+        "Text": "(+45) 12 34 56 78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45) 12 34 56 78",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+45) 1234 5678.",
+    "Results": [
+      {
+        "Text": "(+45) 1234 5678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45) 1234 5678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+45) 12345678.",
+    "Results": [
+      {
+        "Text": "(+45) 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45) 12345678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+45 12-34-56-78.",
+    "Results": [
+      {
+        "Text": "+45 12-34-56-78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+45 12-34-56-78",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+45 12 345 678.",
+    "Results": [
+      {
+        "Text": "+45 12 345 678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+45 12 345 678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+45 12 34 56 78.",
+    "Results": [
+      {
+        "Text": "+45 12 34 56 78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+45 12 34 56 78",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+45 1234 5678.",
+    "Results": [
+      {
+        "Text": "+45 1234 5678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+45 1234 5678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是12-34-56-78.",
+    "Results": [
+      {
+        "Text": "12-34-56-78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "12-34-56-78",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是12 345 678.",
+    "Results": [
+      {
+        "Text": "12 345 678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "12 345 678",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是12 34 56 78.",
+    "Results": [
+      {
+        "Text": "12 34 56 78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "12 34 56 78",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是1234 5678.",
+    "Results": [
+      {
+        "Text": "1234 5678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "1234 5678",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是12345678.",
+    "Results": [
+      {
+        "Text": "12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "12345678",
+          "score": "0.3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(0045) 12-34-56-78.",
+    "Results": [
+      {
+        "Text": "(0045) 12-34-56-78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(0045) 12-34-56-78",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(0045) 12 34 56 78.",
+    "Results": [
+      {
+        "Text": "(0045) 12 34 56 78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(0045) 12 34 56 78",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0045 12 34 56 78.",
+    "Results": [
+      {
+        "Text": "0045 12 34 56 78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0045 12 34 56 78",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+45)12-34-56-78.",
+    "Results": [
+      {
+        "Text": "(+45)12-34-56-78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45)12-34-56-78",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是 (+45)12-34-56-78.",
+    "Results": [
+      {
+        "Text": "(+45)12-34-56-78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45)12-34-56-78",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+45) 12-345-678.",
+    "Results": [
+      {
+        "Text": "(+45) 12-345-678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45) 12-345-678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+45) 1234-5678.",
+    "Results": [
+      {
+        "Text": "(+45) 1234-5678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45) 1234-5678",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是012-3456789.",
+    "Results": [
+      {
+        "Text": "012-3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "012-3456789",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是012 3456789.",
+    "Results": [
+      {
+        "Text": "012 3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "012 3456789",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(012) 3456789.",
+    "Results": [
+      {
+        "Text": "(012) 3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(012) 3456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+31 12-3456789.",
+    "Results": [
+      {
+        "Text": "+31 12-3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31 12-3456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+31 12 3456789.",
+    "Results": [
+      {
+        "Text": "+31 12 3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31 12 3456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+31) 12-3456789.",
+    "Results": [
+      {
+        "Text": "(+31) 12-3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+31) 12-3456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+31) (12) 3456789.",
+    "Results": [
+      {
+        "Text": "(+31) (12) 3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+31) (12) 3456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+31) 12 3456789.",
+    "Results": [
+      {
+        "Text": "(+31) 12 3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+31) 12 3456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+31)12-3456789.",
+    "Results": [
+      {
+        "Text": "(+31)12-3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+31)12-3456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是 (+31) 12 3456789.",
+    "Results": [
+      {
+        "Text": "(+31) 12 3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+31) 12 3456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0123-456789.",
+    "Results": [
+      {
+        "Text": "0123-456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0123-456789",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0123 456789.",
+    "Results": [
+      {
+        "Text": "0123 456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0123 456789",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+31 123-456789.",
+    "Results": [
+      {
+        "Text": "+31 123-456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31 123-456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+31 123 456789.",
+    "Results": [
+      {
+        "Text": "+31 123 456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31 123 456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是06-23456789.",
+    "Results": [
+      {
+        "Text": "06-23456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "06-23456789",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是06 23456789.",
+    "Results": [
+      {
+        "Text": "06 23456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "06 23456789",
+          "score": "0.7"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+31 6-23456789.",
+    "Results": [
+      {
+        "Text": "+31 6-23456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31 6-23456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+31 6 23456789.",
+    "Results": [
+      {
+        "Text": "+31 6 23456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31 6 23456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0623456789.",
+    "Results": [
+      {
+        "Text": "0623456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0623456789",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是31612234567。这是个低可信度的电话号",
+    "Results": [
+      {
+        "Text": "31612234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "31612234567",
+          "score": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是316122345678.",
+    "Results": [
+      {
+        "Text": "316122345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "316122345678",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+31 (6) 12234567.",
+    "Results": [
+      {
+        "Text": "+31 (6) 12234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31 (6) 12234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(06) 12234567.",
+    "Results": [
+      {
+        "Text": "(06) 12234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(06) 12234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+31)(6) 12234567.",
+    "Results": [
+      {
+        "Text": "(+31)(6) 12234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+31)(6) 12234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+39) 012234.",
+    "Results": [
+      {
+        "Text": "(+39) 012234",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+39) 012234",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+39) 012 23411111.",
+    "Results": [
+      {
+        "Text": "(+39) 012 23411111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+39) 012 23411111",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "这是个意大利的短电话号：012234.",
+    "Results": [
+      {
+        "Text": "012234",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "012234",
+          "score": "0.1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+39 012-23411111.",
+    "Results": [
+      {
+        "Text": "+39 012-23411111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+39 012-23411111",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+39 3122 411111.",
+    "Results": [
+      {
+        "Text": "+39 3122 411111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+39 3122 411111",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+39 31 22411111.",
+    "Results": [
+      {
+        "Text": "+39 31 22411111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+39 31 22411111",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是312 2411111.",
+    "Results": [
+      {
+        "Text": "312 2411111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "312 2411111",
+          "score": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是0039 3122411111.",
+    "Results": [
+      {
+        "Text": "0039 3122411111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0039 3122411111",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是3122411111.",
+    "Results": [
+      {
+        "Text": "3122411111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "3122411111",
+          "score": "0.2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "(45)+(31)-278394不是电话号.",
+    "Results": []
+  },
+  {
+    "Input": "算式45+31-339243873不是电话号",
+    "Results": []
+  },
+  {
+    "Input": "算式 45*31-339243873不是电话号",
+    "Results": []
+  },
+  {
+    "Input": "0039 31122627111-26737看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "(39 (6)) 345276看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "+45-12-34-56-78看起来不像电话号",
+    "Results": []
+  },
+  {
+    "Input": "323456太短了，不像个电话号.",
+    "Results": []
+  },
+  {
+    "Input": "我的电话号是(06)-12234567.",
+    "Results": [
+      {
+        "Text": "(06)-12234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(06)-12234567",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(+31) (12)-3456789.",
+    "Results": [
+      {
+        "Text": "(+31) (12)-3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+31) (12)-3456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(012)-3456789.",
+    "Results": [
+      {
+        "Text": "(012)-3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(012)-3456789",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是 +45 12 34 56 78.",
+    "Results": [
+      {
+        "Text": "+45 12 34 56 78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+45 12 34 56 78",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(03336) 24056.",
+    "Results": [
+      {
+        "Text": "(03336) 24056",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(03336) 24056",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+49(0)1560 77474.",
+    "Results": [
+      {
+        "Text": "+49(0)1560 77474",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49(0)1560 77474",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+49 (0) 1357 528320.",
+    "Results": [
+      {
+        "Text": "+49 (0) 1357 528320",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+49 (0) 1357 528320",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(0131) 496 0537.",
+    "Results": [
+      {
+        "Text": "(0131) 496 0537",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(0131) 496 0537",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+44(0)113 496 0009.",
+    "Results": [
+      {
+        "Text": "+44(0)113 496 0009",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44(0)113 496 0009",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是269-541-4584x068.",
+    "Results": [
+      {
+        "Text": "269-541-4584x068",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "269-541-4584x068",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是837.824.1482x6388.",
+    "Results": [
+      {
+        "Text": "837.824.1482x6388",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "837.824.1482x6388",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(797)203-4036x470.",
+    "Results": [
+      {
+        "Text": "(797)203-4036x470",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(797)203-4036x470",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+73(3)3045560862.",
+    "Results": [
+      {
+        "Text": "+73(3)3045560862",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+73(3)3045560862",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+34319 02 81 26.",
+    "Results": [
+      {
+        "Text": "+34319 02 81 26",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+34319 02 81 26",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+34 554 94 87 12.",
+    "Results": [
+      {
+        "Text": "+34 554 94 87 12",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+34 554 94 87 12",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+33 (0)4 64 04 62 70.",
+    "Results": [
+      {
+        "Text": "+33 (0)4 64 04 62 70",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+33 (0)4 64 04 62 70",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+33 4 44 09 59 45.",
+    "Results": [
+      {
+        "Text": "+33 4 44 09 59 45",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+33 4 44 09 59 45",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+31(0)14-5008352.",
+    "Results": [
+      {
+        "Text": "+31(0)14-5008352",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31(0)14-5008352",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是(084)-9682756.",
+    "Results": [
+      {
+        "Text": "(084)-9682756",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(084)-9682756",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "00 10 00 31 46 D9 E9 11不像是电话号，他是十六进制的.",
+    "Results": []
+  },
+  {
+    "Input": "#20020211895不是电话号, since it starts with #.",
+    "Results": []
+  },
+  {
+    "Input": "我的电话号是837.824.1482x63888.",
+    "Results": [
+      {
+        "Text": "837.824.1482x63888",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "837.824.1482x63888",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是837.824.1482X63888.",
+    "Results": [
+      {
+        "Text": "837.824.1482x63888",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "837.824.1482x63888",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是837.824.1482ext63888.",
+    "Results": [
+      {
+        "Text": "837.824.1482ext63888",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "837.824.1482ext63888",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是837.824.1482 ext 63888.",
+    "Results": [
+      {
+        "Text": "837.824.1482 ext 63888",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "837.824.1482 ext 63888",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是837.824.1482 x 63888.",
+    "Results": [
+      {
+        "Text": "837.824.1482 x 63888",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "837.824.1482 x 63888",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是837.824.1482 X 63888.",
+    "Results": [
+      {
+        "Text": "837.824.1482 x 63888",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "837.824.1482 x 63888",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+44(0)113-496-0009.",
+    "Results": [
+      {
+        "Text": "+44(0)113-496-0009",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44(0)113-496-0009",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+44(0) 113-496-0009.",
+    "Results": [
+      {
+        "Text": "+44(0) 113-496-0009",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44(0) 113-496-0009",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+44 (0) 113-496-0009.",
+    "Results": [
+      {
+        "Text": "+44 (0) 113-496-0009",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44 (0) 113-496-0009",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+44 (0) 113 496 0009.",
+    "Results": [
+      {
+        "Text": "+44 (0) 113 496 0009",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44 (0) 113 496 0009",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+44(0)1134960009.",
+    "Results": [
+      {
+        "Text": "+44(0)1134960009",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44(0)1134960009",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+44(0) 1134960009.",
+    "Results": [
+      {
+        "Text": "+44(0) 1134960009",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44(0) 1134960009",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的电话号是+44 (0)1134960009.",
+    "Results": [
+      {
+        "Text": "+44 (0)1134960009",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44 (0)1134960009",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "#Organization#-#Name#-(123) 456-7890.",
+    "Results": [
+      {
+        "Text": "(123) 456-7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(123) 456-7890",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "谢谢您告知我时间。如前所述，我将于8月/3-周五下午12:00(太平洋时间)给您打电话，电话:(123) 456-7890 #。",
+    "Results": [
+      {
+        "Text": "(123) 456-7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(123) 456-7890",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "#组织#咖啡聊天-跟进-#名称#-123 456 7890。",
+    "Results": [
+      {
+        "Text": "123 456 7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "123 456 7890",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "嗨#Name#，感谢您告诉我时间。如前所述，我将于太平洋时间8月3日(星期五)下午1点给你打电话，号码是123 456 7890。",
+    "Results": [
+      {
+        "Text": "123 456 7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "123 456 7890",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "介绍性聊天-名称@ 123)456-7890 - SE roles先生在微软。",
+    "Results": [
+      {
+        "Text": "123)456-7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "123)456-7890",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "介绍性聊天- #Name#@(123) 456-7890-微软的Principal DS",
+    "Results": [
+      {
+        "Text": "(123) 456-7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(123) 456-7890",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Intro chat- #Name @123.456.7890- DS roles at微软",
+    "Results": [
+      {
+        "Text": "123.456.7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "123.456.7890",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "介绍性聊天- #Name# @ 1234567890-数据科学家/应用科学家在微软，华盛顿州",
+    "Results": [
+      {
+        "Text": "1234567890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "1234567890",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我将于太平洋时间2月22日(星期五)下午1:30打电话给你，电话:(123).456.7890。",
+    "Results": [
+      {
+        "Text": "(123).456.7890",
+        "Start": 33,
+        "End": 46,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.8",
+          "value": "(123).456.7890"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "要拨打#Person#，请输入011-82-10-1234-5678。",
+    "Results": [
+      {
+        "Text": "011-82-10-1234-5678",
+        "Start": 15,
+        "End": 33,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.8",
+          "value": "011-82-10-1234-5678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "我的首选号码是+55 11 12345-6789\n谢谢。",
+    "Results": [
+      {
+        "Text": "+55 11 12345-6789",
+        "Start": 7,
+        "End": 23,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+55 11 12345-6789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "宝爵台球会所：13604779660 13604770960",
+    "Results": [
+      {
+        "Text": "13604779660",
+        "Start": 7,
+        "End": 17,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.6",
+          "value": "13604779660"
+        }
+      },
+      {
+        "Text": "13604770960",
+        "Start": 19,
+        "End": 29,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.6",
+          "value": "13604770960"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "宝爵台球会所：13604779660或13604770960",
+    "Results": [
+      {
+        "Text": "13604779660",
+        "Start": 7,
+        "End": 17,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.6",
+          "value": "13604779660"
+        }
+      },
+      {
+        "Text": "13604770960",
+        "Start": 19,
+        "End": 29,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.6",
+          "value": "13604770960"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "• 服务电话：7629236抢维修电话：7633569",
+    "Results": [
+      {
+        "Text": "7629236",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.2",
+          "value": "7629236"
+        }
+      },
+      {
+        "Text": "7633569",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.2",
+          "value": "7633569"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "电子技术教研室83792841金陵院316",
+    "Results": [
+      {
+        "Text": "83792841",
+        "Start": 7,
+        "End": 14,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.3",
+          "value": "83792841"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "学生工作办公室（九龙湖）52090833桃园5#2楼",
+    "Results": [
+      {
+        "Text": "52090833",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.3",
+          "value": "52090833"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "联系电话:010-65980408-8001 传真电话:010-65980408-8000 地址:北京市朝阳区光华路4号东方梅地亚中心C座901室 邮编:10002",
+    "Results": [
+      {
+        "Text": "010-65980408-8001",
+        "Start": 5,
+        "End": 21,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "010-65980408-8001"
+        }
+      },
+      {
+        "Text": "010-65980408-8000",
+        "Start": 28,
+        "End": 44,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.9",
+          "value": "010-65980408-8000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "邮政编码是200120传真是021-68804868联系电话021-68812753,021-68808888",
+    "Results": [
+      {
+        "Text": "021-68804868",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.8",
+          "value": "021-68804868"
+        }
+      },
+      {
+        "Text": "021-68812753",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.8",
+          "value": "021-68812753"
+        }
+      },
+      {
+        "Text": "021-68808888",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.6",
+          "value": "021-68808888"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "三月 1 14377:00 不是个电话号",
+    "Results": []
+  },
+  {
+    "Input": "200.38294427 不是个电话号.",
+    "Results": []
+  },
+  {
+    "Input": "这些看起来都不像电话号：1 506 64，37 41 4，38 5145，20 15 11，58 2105，19 32 2，25 32 2，15 3  20，10 41 20，8196 12，8198 27，8244 45，46 358 1",
+    "Results": []
+  },
+  {
+    "Input": "91a-677-0060 不是电话号。",
+    "Results": []
+  },
+  {
+    "Input": "9a1-677-0060和a91-677-0060都不是电话号",
+    "Results": []
+  },
+  {
+    "Input": "宝爵台球会所-13604770960",
+    "Results": []
+  }
+]

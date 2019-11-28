@@ -1,0 +1,174 @@
+[
+  {
+    "Input": "123e4567-e89b-12d3-a456-426655440000",
+    "Results": [
+      {
+        "Text": "123e4567-e89b-12d3-a456-426655440000",
+        "TypeName": "guid",
+        "Resolution": {
+          "value": "123e4567-e89b-12d3-a456-426655440000",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "{123e4567-e89b-12d3-a456-426655440000}",
+    "Results": [
+      {
+        "Text": "{123e4567-e89b-12d3-a456-426655440000}",
+        "TypeName": "guid",
+        "Resolution": {
+          "value": "{123e4567-e89b-12d3-a456-426655440000}",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "urn:uuid:123e4567-e89b-12d3-a456-426655440000",
+    "Results": [
+      {
+        "Text": "urn:uuid:123e4567-e89b-12d3-a456-426655440000",
+        "TypeName": "guid",
+        "Resolution": {
+          "value": "urn:uuid:123e4567-e89b-12d3-a456-426655440000",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "urn:uuid:123E4567-E89B-12D3-A456-426655440000",
+    "Results": [
+      {
+        "Text": "urn:uuid:123e4567-e89b-12d3-a456-426655440000",
+        "TypeName": "guid",
+        "Resolution": {
+          "value": "urn:uuid:123e4567-e89b-12d3-a456-426655440000",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "{123e4567e-89b-12d3-a456-426655440000} is not a guid number, it is irregular",
+    "Results": []
+  },
+  {
+    "Input": "{123k4567-e89b-12d3-a456-426655440000} is not a guid number, it contains 'k'",
+    "Results": []
+  },
+  {
+    "Input": "06e828879afc4064abadf6fb60b8a1f3",
+    "Results": [
+      {
+        "Text": "06e828879afc4064abadf6fb60b8a1f3",
+        "TypeName": "guid",
+        "Resolution": {
+          "value": "06e828879afc4064abadf6fb60b8a1f3",
+          "score": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "{06e828879afc4064abadf6fb60b8a1f3}",
+    "Results": [
+      {
+        "Text": "{06e828879afc4064abadf6fb60b8a1f3}",
+        "TypeName": "guid",
+        "Resolution": {
+          "value": "{06e828879afc4064abadf6fb60b8a1f3}",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "%7B06e828879afc4064abadf6fb60b8a1f3%7D",
+    "Results": [
+      {
+        "Text": "%7b06e828879afc4064abadf6fb60b8a1f3%7d",
+        "TypeName": "guid",
+        "Resolution": {
+          "value": "%7b06e828879afc4064abadf6fb60b8a1f3%7d",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "X'06e828879afc4064abadf6fb60b8a1f3'",
+    "Results": [
+      {
+        "Text": "x'06e828879afc4064abadf6fb60b8a1f3'",
+        "TypeName": "guid",
+        "Resolution": {
+          "value": "x'06e828879afc4064abadf6fb60b8a1f3'",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "%7B06e82887-9afc-4064-abad-f6fb60b8a1f3%7D",
+    "Results": [
+      {
+        "Text": "%7b06e82887-9afc-4064-abad-f6fb60b8a1f3%7d",
+        "TypeName": "guid",
+        "Resolution": {
+          "value": "%7b06e82887-9afc-4064-abad-f6fb60b8a1f3%7d",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "X'06e82887-9afc-4064-abad-f6fb60b8a1f3'",
+    "Results": [
+      {
+        "Text": "x'06e82887-9afc-4064-abad-f6fb60b8a1f3'",
+        "TypeName": "guid",
+        "Resolution": {
+          "value": "x'06e82887-9afc-4064-abad-f6fb60b8a1f3'",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "06582887-9123-4064-1234-161260181113",
+    "Results": [
+      {
+        "Text": "06582887-9123-4064-1234-161260181113",
+        "TypeName": "guid",
+        "Resolution": {
+          "value": "06582887-9123-4064-1234-161260181113",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "06582887912340641234161260181113",
+    "Results": [
+      {
+        "Text": "06582887912340641234161260181113",
+        "TypeName": "guid",
+        "Resolution": {
+          "value": "06582887912340641234161260181113",
+          "score": "0.65"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "a06e828879afc4064abadf6fb60b8a1f3 is not a GUID, it is too long.",
+    "Results": []
+  },
+  {
+    "Input": "06e82887-9afc-4064-abad-f6fb60b8a1f3d is not a GUID, it is too long.",
+    "Results": []
+  }
+]

@@ -8940,13 +8940,13 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(XXXX-01-15T13:00,XXXX-01-15T13:15,PT15M)",
+              "timex": "(XXXX-01-15T13:00,XXXX-01-15T13:15,PT15M",
               "type": "datetimerange",
               "start": "2019-01-15 13:00:00",
               "end": "2019-01-15 13:15:00"
             },
             {
-              "timex": "(XXXX-01-15T13:00,XXXX-01-15T13:15,PT15M)",
+              "timex": "(XXXX-01-15T13:00,XXXX-01-15T13:15,PT15M",
               "type": "datetimerange",
               "start": "2020-01-15 13:00:00",
               "end": "2020-01-15 13:15:00"

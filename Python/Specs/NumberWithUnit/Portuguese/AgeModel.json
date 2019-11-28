@@ -1,0 +1,262 @@
+[
+  {
+    "Input": "Quando tinha cinco anos, aprendeu a andar de bicicleta.",
+    "Results": [
+      {
+        "Text": "cinco anos",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "5",
+          "unit": "Ano"
+        },
+        "Start": 13,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "Esta saga remonta a quase dez anos atrás.",
+    "Results": [
+      {
+        "Text": "dez anos",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Ano"
+        },
+        "Start": 26,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "Só tenho 29 anos!",
+    "Results": [
+      {
+        "Text": "29 anos",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "29",
+          "unit": "Ano"
+        },
+        "Start": 9,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "Agora com noventa e cinco anos tens perspectiva das coisas.",
+    "Results": [
+      {
+        "Text": "noventa e cinco anos",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "95",
+          "unit": "Ano"
+        },
+        "Start": 10,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "A Grande Muralha da China tem mais de 500 anos e se extende por mais de 5,000 milhas.",
+    "Results": [
+      {
+        "Text": "500 anos",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "500",
+          "unit": "Ano"
+        },
+        "Start": 38,
+        "End": 45
+      }
+    ]
+  },
+  {
+    "Input": "Já tem 60 anos, pois nasceu em 8 de maio de 1945.",
+    "Results": [
+      {
+        "Text": "60 anos",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "60",
+          "unit": "Ano"
+        },
+        "Start": 7,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "25% dos casos não são diagnosticados até por volta dos tres anos.",
+    "Results": [
+      {
+        "Text": "tres anos",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Ano"
+        },
+        "Start": 55,
+        "End": 63
+      }
+    ]
+  },
+  {
+    "Input": "Quando haverá pressão para comprir essa promessa feita há um ano?",
+    "Results": [
+      {
+        "Text": "um ano",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "1",
+          "unit": "Ano"
+        },
+        "Start": 58,
+        "End": 63
+      }
+    ]
+  },
+  {
+    "Input": "Aconteceu quando era um bebê e tinha apenas dez meses.",
+    "Results": [
+      {
+        "Text": "dez meses",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Mês"
+        },
+        "Start": 44,
+        "End": 52
+      }
+    ]
+  },
+  {
+    "Input": "A proposta da comissão já tem 8 meses de idade.",
+    "Results": [
+      {
+        "Text": "8 meses",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "8",
+          "unit": "Mês"
+        },
+        "Start": 30,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "Aproximadamente 50% dos casos são diagnosticados aos dezoito meses de idade.",
+    "Results": [
+      {
+        "Text": "dezoito meses",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "18",
+          "unit": "Mês"
+        },
+        "Start": 53,
+        "End": 65
+      }
+    ]
+  },
+  {
+    "Input": "É possível, mas em 2006 95% delas tinham menos de tres meses de vida.",
+    "Results": [
+      {
+        "Text": "tres meses",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Mês"
+        },
+        "Start": 50,
+        "End": 59
+      }
+    ]
+  },
+  {
+    "Input": "Se seguirmos adiante no período de dezembro, terão tres semanas de existência.",
+    "Results": [
+      {
+        "Text": "tres semanas",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Semana"
+        },
+        "Start": 51,
+        "End": 62
+      }
+    ]
+  },
+  {
+    "Input": "Às 6 semanas de idade já comemora o Natal.",
+    "Results": [
+      {
+        "Text": "6 semanas",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "6",
+          "unit": "Semana"
+        },
+        "Start": 3,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "Outras matérias primas devem ser usadas num prazo de cinco dias.",
+    "Results": [
+      {
+        "Text": "cinco dias",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "5",
+          "unit": "Dia"
+        },
+        "Start": 53,
+        "End": 62
+      }
+    ]
+  },
+  {
+    "Input": "Uma conta vencida a 90 dias está bem atrasada.",
+    "Results": [
+      {
+        "Text": "90 dias",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "90",
+          "unit": "Dia"
+        },
+        "Start": 20,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Ele tem cerca de 40 - 50 anos",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "50 anos",
+        "Start": 22,
+        "End": 28,
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Ano",
+          "value": "50"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Semana ou semanas",
+    "Results": []
+  }
+]
