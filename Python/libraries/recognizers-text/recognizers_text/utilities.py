@@ -2,6 +2,7 @@ import re
 from typing import Pattern, Union, List, Match
 import regex
 from emoji import UNICODE_EMOJI
+from multipledispatch import dispatch
 
 
 class StringUtility:
@@ -53,6 +54,11 @@ class ConditionalMatch:
     def length(self) -> int:
         return len(self.match[0].group()) or 0
 
+    @dispatch()
+    def group(self):
+        return self.match[0].group()
+
+    @dispatch(str)
     def group(self, grp):
         return self.match[0].group(grp)
 

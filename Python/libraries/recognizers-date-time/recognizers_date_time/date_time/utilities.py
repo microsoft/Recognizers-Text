@@ -533,10 +533,11 @@ class MatchingUtil:
     @staticmethod
     def get_ago_later_index(source: str, regexp: Pattern, in_suffix) -> MatchedIndex:
         result = MatchedIndex(matched=False, index=-1)
-        match = RegExpUtility.match_begin(regexp, source, True) if in_suffix else RegExpUtility.match_end(regexp, source, True)
+        trimmed_source = source.strip().lower()
+        match = RegExpUtility.match_begin(regexp, trimmed_source, True) if in_suffix else RegExpUtility.match_end(regexp, trimmed_source, True)
 
         if match and match.success:
-            result.index = match.index() + (match.length if in_suffix else 0)
+            result.index = source.lower().find(match.group()) + (match.length if in_suffix else 0)
             result.matched = True
 
         return result
@@ -590,10 +591,10 @@ class AgoLaterUtil:
                     # Cases like "2 days before today" or "2 weeks from today" are also supported
 
                     is_day_match = RegExpUtility.get_group(
-                        config.ago_regex.match(after_string), Constants.DAY_GROUP_NAME)
+                        regexp.match(after_string), Constants.DAY_GROUP_NAME)
 
                     index = MatchingUtil.get_ago_later_index(
-                        after_string, config.ago_regex, True).index
+                        after_string, regexp, True).index
 
                     if not(is_time_duration and is_day_match):
                         token_after = Token(extract_result.start, extract_result.start +
@@ -601,10 +602,10 @@ class AgoLaterUtil:
                         is_match = True
 
                 if config.check_both_befor_after:
-                    before_after_str = before_string + after_string[0:index]
+                    before_after_str = before_string + after_string
                     is_range_match = RegExpUtility.match_begin(config.range_prefix_regex, after_string[:index], True)
                     index_start = MatchingUtil.get_ago_later_index(before_after_str, regexp, False)
-                    if not is_range_match and index_start:
+                    if not is_range_match and index_start.matched:
                         is_day_match = regexp.match(before_after_str)
 
                         if is_day_match and not (is_time_duration and is_day_match):
@@ -649,13 +650,10 @@ class AgoLaterUtil:
                         if not is_unit_match:
                             if extract_result.start is not None and extract_result.length is not None and extract_result.start >= index or is_match_after:
                                 start = extract_result.start - (index if not is_match_after else 0)
-                                end = extract_result.start + extract_result.length + (index if not is_match_after else 0)
+                                end = extract_result.start + extract_result.length + (index if is_match_after else 0)
                                 ret.append(Token(start, end))
                         break
         return ret
-
-
-
 
     @staticmethod
     def parse_duration_with_ago_and_later(source: str, reference: datetime,
@@ -706,7 +704,25 @@ class AgoLaterUtil:
             unit_map: Dict[str, str], src_unit: str, after_str: str,
             before_str: str, reference: datetime,
             utility_configuration: DateTimeUtilityConfiguration, mode: AgoLaterMode):
+
         result = DateTimeResolutionResult()
+        timex = duration_parse_result.timex_str
+
+        if duration_parse_result.value.mod == TimeTypeConstants.MORE_THAN_MOD:
+            result.mod = TimeTypeConstants.MORE_THAN_MOD
+        elif duration_parse_result.value.mod == TimeTypeConstants.LESS_THAN_MOD:
+            result.mod = TimeTypeConstants.LESS_THAN_MOD
+
+        swift = 0
+        is_match, is_later = False
+        day_str = None
+
+        ago_later_regex_tuples
+
+
+
+
+
         unit_str = unit_map.get(src_unit)
 
         if not unit_str:
