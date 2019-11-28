@@ -15,6 +15,14 @@ from ...resources.base_date_time import BaseDateTime
 
 class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
     @property
+    def week_day_start(self) -> Pattern:
+        return self._week_day_start
+
+    @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
+    @property
     def date_regex_list(self) -> List[Pattern]:
         return self._date_regex_list
 
@@ -219,3 +227,7 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
         self._week_day_and_day_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.WeekDayAndDayRegex
         )
+        self._week_day_start = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.WeekDayStart
+        )
+        self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter

@@ -742,5 +742,31 @@
         "Length": 13
       }
     ]
+  },
+  {
+    "Input": "Şu andaki durum nedir?",
+    "Comment": "DateTime V2 enhancements",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Şu andaki",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Neredesin şu an?",
+    "Comment": "DateTime V2 enhancements",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "şu an",
+        "Type": "datetime",
+        "Start": 10,
+        "Length": 5
+      }
+    ]
   }
 ]

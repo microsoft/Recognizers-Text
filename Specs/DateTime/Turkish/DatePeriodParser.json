@@ -4470,5 +4470,1113 @@
         "Length": 17
       }
     ]
+  },
+  {
+    "Input": "Geçen hafta ders yoktu",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Geçen hafta",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W38",
+          "FutureResolution": {
+            "startDate": "2019-09-16",
+            "endDate": "2019-09-23"
+          },
+          "PastResolution": {
+            "startDate": "2019-09-16",
+            "endDate": "2019-09-23"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Geçen haftaki gibi ders notları yoktu",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Geçen haftaki",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W38",
+          "FutureResolution": {
+            "startDate": "2019-09-16",
+            "endDate": "2019-09-23"
+          },
+          "PastResolution": {
+            "startDate": "2019-09-16",
+            "endDate": "2019-09-23"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Geçen haftaya ait ders notları yoktu",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Geçen haftaya ait",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W38",
+          "FutureResolution": {
+            "startDate": "2019-09-16",
+            "endDate": "2019-09-23"
+          },
+          "PastResolution": {
+            "startDate": "2019-09-16",
+            "endDate": "2019-09-23"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Geçtiğimiz hafta ders yoktu",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Geçtiğimiz hafta",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W38",
+          "FutureResolution": {
+            "startDate": "2019-09-16",
+            "endDate": "2019-09-23"
+          },
+          "PastResolution": {
+            "startDate": "2019-09-16",
+            "endDate": "2019-09-23"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Geçmiş hafta notları açıklandı",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Geçmiş hafta",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W38",
+          "FutureResolution": {
+            "startDate": "2019-09-16",
+            "endDate": "2019-09-23"
+          },
+          "PastResolution": {
+            "startDate": "2019-09-16",
+            "endDate": "2019-09-23"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Bu ay yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bu ay",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-09",
+          "FutureResolution": {
+            "startDate": "2019-09-01",
+            "endDate": "2019-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-09-01",
+            "endDate": "2019-10-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Bu ayki notlar açıklandı",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bu ayki",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-09",
+          "FutureResolution": {
+            "startDate": "2019-09-01",
+            "endDate": "2019-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-09-01",
+            "endDate": "2019-10-01"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Bu aya ait notlar açıklandı",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bu aya ait",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-09",
+          "FutureResolution": {
+            "startDate": "2019-09-01",
+            "endDate": "2019-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-09-01",
+            "endDate": "2019-10-01"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Önceki ay yoktum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Önceki ay",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-08",
+          "FutureResolution": {
+           "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Bir önceki ay yoktum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bir önceki ay",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-08",
+          "FutureResolution": {
+           "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Geçtiğimiz ay yoktum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Geçtiğimiz ay",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-08",
+          "FutureResolution": {
+           "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Geçen ay yoktum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Geçen ay",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-08",
+          "FutureResolution": {
+           "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Geçmiş ay yoktum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Geçmiş ay",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-08",
+          "FutureResolution": {
+           "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Gelecek ay yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Gelecek ay",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-10",
+          "FutureResolution": {
+           "startDate": "2019-10-01",
+            "endDate": "2019-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-10-01",
+            "endDate": "2019-11-01"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Önümüzdeki ay yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Önümüzdeki ay",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-10",
+          "FutureResolution": {
+            "startDate": "2019-10-01",
+            "endDate": "2019-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-10-01",
+            "endDate": "2019-11-01"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Sonraki ay yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Sonraki ay",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-10",
+          "FutureResolution": {
+            "startDate": "2019-10-01",
+            "endDate": "2019-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-10-01",
+            "endDate": "2019-11-01"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Bir dahaki ay yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bir dahaki ay",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-10",
+          "FutureResolution": {
+            "startDate": "2019-10-01",
+            "endDate": "2019-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-10-01",
+            "endDate": "2019-11-01"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Bir sonraki ay yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bir sonraki ay",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-10",
+          "FutureResolution": {
+            "startDate": "2019-10-01",
+            "endDate": "2019-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-10-01",
+            "endDate": "2019-11-01"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Bir ay sonra yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bir ay sonra",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-09-24,2019-10-24,P1M)",
+          "FutureResolution": {
+            "startDate": "2019-09-24",
+            "endDate": "2019-10-24"
+          },
+          "PastResolution": {
+            "startDate": "2019-09-24",
+            "endDate": "2019-10-24"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Bir ay sonraki toplantıda yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bir ay sonraki",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-09-24,2019-10-24,P1M)",
+          "FutureResolution": {
+            "startDate": "2019-09-24",
+            "endDate": "2019-10-24"
+          },
+          "PastResolution": {
+            "startDate": "2019-09-24",
+            "endDate": "2019-10-24"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Sınavlar 16 Ağustos - 15 Eylül tarihlerinde olacakmış",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "16 Ağustos - 15 Eylül",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-08-16,XXXX-09-15,P30D)",
+          "FutureResolution": {
+           "startDate": "2020-08-16",
+            "endDate": "2020-09-15"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-16",
+            "endDate": "2019-09-15"
+          }
+        },
+        "Start": 9,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Ocak ile Ağustos arası burada olmayacağım",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Ocak ile Ağustos arası",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-01,XXXX-08-01,PXXM)",
+          "FutureResolution": {
+           "startDate": "2020-01-01",
+            "endDate": "2020-08-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-01-01",
+            "endDate": "2019-08-01"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Ocaktan ağustosa havalar ısınır",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Ocaktan ağustosa",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-01,XXXX-08-01,PXXM)",
+          "FutureResolution": {
+           "startDate": "2020-01-01",
+            "endDate": "2020-08-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-01-01",
+            "endDate": "2019-08-01"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ocakla Ağustos arasında burada olmayacağım",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Ocakla Ağustos arasında",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-01,XXXX-08-01,PXXM)",
+          "FutureResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2020-08-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-01-01",
+            "endDate": "2019-08-01"
+          }
+        },
+        "Start": 0,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "2 ay sonraki toplantıya geleceğim",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 ay sonraki",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-09-24,2019-11-24,P2M)",
+          "FutureResolution": {
+           "startDate": "2019-09-24",
+            "endDate": "2019-11-24"
+          },
+          "PastResolution": {
+            "startDate": "2019-09-24",
+            "endDate": "2019-11-24"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "10 ay sonra burada yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 ay sonra",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-09-24,2020-07-24,P10M)",
+          "FutureResolution": {
+           "startDate": "2019-09-24",
+            "endDate": "2020-07-24"
+          },
+          "PastResolution": {
+            "startDate": "2019-09-24",
+            "endDate": "2020-07-24"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Bebeğiniz 12 ay sonunda yürümeye başlar",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12 ay sonunda",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-09-24,2020-09-24,P12M)",
+          "FutureResolution": {
+           "startDate": "2019-09-24",
+            "endDate": "2020-09-24"
+          },
+          "PastResolution": {
+            "startDate": "2019-09-24",
+            "endDate": "2020-09-24"
+          }
+        },
+        "Start": 10,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Yine 3 ay önceki ders notlarını kullandık",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 ay önceki",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-06-23,2019-09-23,P3M)",
+          "FutureResolution": {
+           "startDate": "2019-06-23",
+            "endDate": "2019-09-23"
+          },
+          "PastResolution": {
+            "startDate": "2019-06-23",
+            "endDate": "2019-09-23"
+          }
+        },
+        "Start": 5,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ocak'ta yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Ocak",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-01",
+          "FutureResolution": {
+           "startDate": "2020-01-01",
+            "endDate": "2020-02-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-01-01",
+            "endDate": "2019-02-01"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Şubat'ta yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Şubat",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02",
+          "FutureResolution": {
+            "startDate": "2020-02-01",
+            "endDate": "2020-03-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-01",
+            "endDate": "2019-03-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Mart'ta yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Mart",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-03",
+          "FutureResolution": {
+            "startDate": "2020-03-01",
+            "endDate": "2020-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-03-01",
+            "endDate": "2019-04-01"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Nisan'da yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Nisan",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-04",
+          "FutureResolution": {
+            "startDate": "2020-04-01",
+            "endDate": "2020-05-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-04-01",
+            "endDate": "2019-05-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Mayıs'ta yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Mayıs",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-05",
+          "FutureResolution": {
+            "startDate": "2020-05-01",
+            "endDate": "2020-06-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-05-01",
+            "endDate": "2019-06-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Haziran'da yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Haziran",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-06",
+          "FutureResolution": {
+            "startDate": "2020-06-01",
+            "endDate": "2020-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-06-01",
+            "endDate": "2019-07-01"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Temmuz'da yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Temmuz",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-07",
+          "FutureResolution": {
+            "startDate": "2020-07-01",
+            "endDate": "2020-08-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-07-01",
+            "endDate": "2019-08-01"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Ağustos'ta yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Ağustos",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-08",
+          "FutureResolution": {
+            "startDate": "2020-08-01",
+            "endDate": "2020-09-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Eylül'de yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Eylül",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-09",
+          "FutureResolution": {
+            "startDate": "2019-09-01",
+            "endDate": "2019-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-09-01",
+            "endDate": "2018-10-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Ekim'de yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Ekim",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-10",
+          "FutureResolution": {
+            "startDate": "2019-10-01",
+            "endDate": "2019-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-01"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Kasım'da yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Kasım",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-11",
+          "FutureResolution": {
+            "startDate": "2019-11-01",
+            "endDate": "2019-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-11-01",
+            "endDate": "2018-12-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Aralık'ta yokum",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Aralık",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-12",
+          "FutureResolution": {
+            "startDate": "2019-12-01",
+            "endDate": "2020-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-12-01",
+            "endDate": "2019-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Son ay döneceğim",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Son ay",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-08",
+          "FutureResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
   }
 ]

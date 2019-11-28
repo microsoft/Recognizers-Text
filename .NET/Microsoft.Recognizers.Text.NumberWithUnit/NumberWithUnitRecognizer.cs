@@ -470,6 +470,26 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new BaseMergedUnitParser(new Turkish.CurrencyParserConfiguration())
                     },
                 }));
+
+            RegisterModel<AgeModel>(
+                Culture.Hindi,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Hindi.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Hindi.AgeParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<TemperatureModel>(
+               Culture.Hindi,
+               (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+               {
+                    {
+                        new NumberWithUnitExtractor(new Hindi.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Hindi.TemperatureParserConfiguration())
+                    },
+               }));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)

@@ -13,6 +13,10 @@ from ..base_configs import BaseDateParserConfiguration
 
 class EnglishDateParserConfiguration(DateParserConfiguration):
     @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
     def ordinal_extractor(self) -> BaseNumberExtractor:
         return self._ordinal_extractor
 
@@ -177,6 +181,7 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
             EnglishDateTime.RelativeMonthRegex)
         self._utility_configuration = config.utility_configuration
         self._date_token_prefix = EnglishDateTime.DateTokenPrefix
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
 
     def get_swift_day(self, source: str) -> int:
         trimmed_text = source.strip().lower()

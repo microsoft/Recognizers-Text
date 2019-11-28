@@ -16,7 +16,7 @@ from .parsers import DateTimeParser, DateTimeParseResult
 from .base_date import BaseDateParser
 from .base_duration import BaseDurationParser
 from .utilities import Token, merge_all_tokens, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, \
-    RegExpUtility, RegexExtension, DateContext, TimexUtil
+    RegExpUtility, DateContext, TimexUtil
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
@@ -311,7 +311,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                 digit_number_str = text[number_start_index: number_start_index + (text.index(match.group()) -
                                                                                   1 - number_start_index)]
 
-                if RegexExtension.is_exact_match(self.config.month_num_regex, digit_number_str, True):
+                if RegExpUtility.is_exact_match(self.config.month_num_regex, digit_number_str, True):
                     has_invalid_dash_context = True
 
         has_dash_suffix, dash_suffix_index = self.has_dash_suffix(match, text)
@@ -325,7 +325,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
             number_start_index = text.index(match.group()) + (match.end() - match.start()) + 1
             digit_number_str = text[number_start_index: number_start_index + (number_end_index - number_start_index)]
 
-            if RegexExtension.is_exact_match(self.config.month_num_regex, digit_number_str, True):
+            if RegExpUtility.is_exact_match(self.config.month_num_regex, digit_number_str, True):
                 has_invalid_dash_context = True
 
         return has_invalid_dash_context
@@ -1371,14 +1371,14 @@ class BaseDatePeriodParser(DateTimeParser):
 
         future_year = past_year = year
         trimmed_source = source.strip().lower()
-        match = RegexExtension.exact_match(self.config.one_word_period_regex, trimmed_source, True)
+        match = RegExpUtility.exact_match(self.config.one_word_period_regex, trimmed_source, True)
 
         if not (match and match.success):
-            match = RegexExtension.exact_match(self.config.later_early_period_regex, trimmed_source, True)
+            match = RegExpUtility.exact_match(self.config.later_early_period_regex, trimmed_source, True)
 
         # For cases "that week|month|year"
         if not (match and match.success):
-            match = RegexExtension.exact_match(self.config.reference_date_period_regex, trimmed_source, True)
+            match = RegExpUtility.exact_match(self.config.reference_date_period_regex, trimmed_source, True)
 
         if not (match and match.success):
             return result
@@ -2036,7 +2036,7 @@ class BaseDatePeriodParser(DateTimeParser):
                 input_century = True
         else:
             # handle cases like "the last 2 decades", "the next decade"
-            match = RegexExtension.is_exact_match(self.config.relative_decade_regex, trimmed_source, True)
+            match = RegExpUtility.is_exact_match(self.config.relative_decade_regex, trimmed_source, True)
 
             if match and match.success:
                 input_century = True
