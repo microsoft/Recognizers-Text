@@ -345,7 +345,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                 connector_str = after_str[0:match.start()]
 
                 # Trim here is set to false as the Regex might catch white spaces before or after the text
-                if RegexExtension.is_exact_match(self.config.middle_pause_regex, connector_str, False):
+                if RegExpUtility.is_exact_match(self.config.middle_pause_regex, connector_str, False):
                     suffix = after_str[match.end():].strip()
 
                     ending_match = regex.search(self.config.general_ending_regex, suffix)
@@ -376,7 +376,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                     connector_str = prefix_str[match.end():]
 
                     # Trim here is set to false as the Regex might catch white spaces before or after the text
-                    if RegexExtension.is_exact_match(self.config.middle_pause_regex, connector_str, False):
+                    if RegExpUtility.is_exact_match(self.config.middle_pause_regex, connector_str, False):
                         suffix = source[extracted_result.start + extracted_result.length:].strip(' ')
                         ending_match = self.config.general_ending_regex.match(suffix)
                         if ending_match:
@@ -430,7 +430,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                         begin = er.start
                         end = er.start + er.length
                         middle_str = before_str[end:].strip()
-                        if not middle_str or RegexExtension.is_exact_match(self.config.preposition_regex, middle_str, True):
+                        if not middle_str or RegExpUtility.is_exact_match(self.config.preposition_regex, middle_str, True):
                             tokens.append(Token(begin, match.end()))
                             has_before_date = True
 
@@ -484,7 +484,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
             middle_str = source[middle_begin:middle_end].strip().lower()
 
             # Handle "{TimePoint} to {TimePoint}"
-            if RegexExtension.is_exact_match(self.config.till_regex, middle_str, True):
+            if RegExpUtility.is_exact_match(self.config.till_regex, middle_str, True):
                 period_begin = time_points[index].start
                 period_end = time_points[index + 1].start + time_points[index + 1].length
 

@@ -141,7 +141,7 @@ class BaseDurationExtractor(DateTimeExtractor):
 
             # check also afterString
             if self.config.check_both_before_after and not match.success:
-                match = RegexExtension.match_begin(self.config.more_than_regex, after_string, True)
+                match = RegExpUtility.match_begin(self.config.more_than_regex, after_string, True)
                 is_match_after = True
 
             # The second condition is necessary so for "1 week" in "more than 4 days and less than
@@ -156,7 +156,7 @@ class BaseDurationExtractor(DateTimeExtractor):
 
                 # check also afterString
                 if self.config.check_both_before_after and not match.success:
-                    match = RegexExtension.match_begin(self.config.less_than_regex, after_string, True)
+                    match = RegExpUtility.match_begin(self.config.less_than_regex, after_string, True)
                     is_match_after = True
 
                 if match and match.success:

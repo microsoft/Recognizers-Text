@@ -10,7 +10,6 @@ from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
 from .utilities import Token
-from .utilities import RegexExtension
 import regex
 import calendar
 

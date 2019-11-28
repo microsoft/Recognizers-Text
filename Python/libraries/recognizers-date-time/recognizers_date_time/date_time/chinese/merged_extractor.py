@@ -5,7 +5,7 @@ import regex
 from recognizers_text import RegExpUtility
 
 from ..base_merged import BaseMergedExtractor
-from ..utilities import DateTimeOptions, ExtractResult, RegexExtension
+from ..utilities import DateTimeOptions, ExtractResult, RegExpUtility
 from .merged_extractor_config import ChineseMergedExtractorConfiguration
 
 
@@ -53,39 +53,39 @@ class ChineseMergedExtractor(BaseMergedExtractor):
             before_str = source[last_end:extract_result.start].strip()
             after_str = source[extract_result.start + extract_result.length:].strip()
 
-            match = RegexExtension.match_begin(self.config.before_regex, after_str, True)
+            match = RegExpUtility.match_begin(self.config.before_regex, after_str, True)
             if match:
                 mod_len = match.index + match.length
                 extract_result.length += mod_len
                 extract_result.text = source[extract_result.start:extract_result.length + 1]
 
-            match = RegexExtension.match_begin(self.config.after_regex, after_str, True)
+            match = RegExpUtility.match_begin(self.config.after_regex, after_str, True)
             if match:
                 mod_len = match.index + match.length
                 extract_result.length += mod_len
                 extract_result.text = source[extract_result.start:extract_result.length + 1]
 
-            match = RegexExtension.match_begin(self.config.until_regex, before_str, True)
+            match = RegExpUtility.match_begin(self.config.until_regex, before_str, True)
             if match:
                 mod_len = len(before_str) - match.index
                 extract_result.length += mod_len
                 extract_result.start -= mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-            match = RegexExtension.match_begin(self.config.since_prefix_regex, before_str, True)
+            match = RegExpUtility.match_begin(self.config.since_prefix_regex, before_str, True)
             if match:
                 mod_len = len(before_str) + match.index
                 extract_result.length += mod_len
                 extract_result.start -= mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-            match = RegexExtension.match_begin(self.config.since_suffix_regex, after_str, True)
+            match = RegExpUtility.match_begin(self.config.since_suffix_regex, after_str, True)
             if match:
                 mod_len = match.index + match.length
                 extract_result.length += mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-            match = RegexExtension.match_begin(self.config.equal_regex, before_str, True)
+            match = RegExpUtility.match_begin(self.config.equal_regex, before_str, True)
             if match:
                 mod_len = len(before_str) + match.index
                 extract_result.length += mod_len

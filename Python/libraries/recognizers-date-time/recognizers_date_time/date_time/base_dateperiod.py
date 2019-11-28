@@ -663,7 +663,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                     tokens.append(match_token)
                     continue
 
-            match = RegexExtension.match_end(self.config.previous_prefix_regex, before_str, True)
+            match = RegExpUtility.match_end(self.config.previous_prefix_regex, before_str, True)
 
             index = -1
 
@@ -671,7 +671,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                 index = match.index
 
             if index < 0:
-                match = RegexExtension.match_end(self.config.future_regex, before_str, True)
+                match = RegExpUtility.match_end(self.config.future_regex, before_str, True)
                 if match.success:
                     index = match.index
 
@@ -694,17 +694,17 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
                 break
 
-            match = RegexExtension.match_begin(self.config.previous_prefix_regex, after_str, True)
+            match = RegExpUtility.match_begin(self.config.previous_prefix_regex, after_str, True)
             if match:
                 tokens.append(Token(duration.start, duration.end + match.index + match.length))
                 break
 
-            match = RegexExtension.match_begin(self.config.future_regex, after_str, True)
+            match = RegExpUtility.match_begin(self.config.future_regex, after_str, True)
             if match:
                 tokens.append(Token(duration.start, duration.end + match.index + match.length))
                 break
 
-            match = RegexExtension.match_begin(self.config.future_suffix_regex, after_str, True)
+            match = RegExpUtility.match_begin(self.config.future_suffix_regex, after_str, True)
             if match:
                 tokens.append(Token(duration.start, duration.end + match.index + match.length))
                 break
@@ -717,9 +717,9 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
         start_token = -1
         end_token = -1
         if in_prefix:
-            match = RegexExtension.match_end(self.config.within_next_prefix_regex, before_str, True)
+            match = RegExpUtility.match_end(self.config.within_next_prefix_regex, before_str, True)
         else:
-            match = RegexExtension.match_begin(self.config.within_next_prefix_regex, after_str, True)
+            match = RegExpUtility.match_begin(self.config.within_next_prefix_regex, after_str, True)
 
         if match and match.success:
             duration_str = source[duration.start: duration.start + duration.length]
@@ -735,7 +735,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                     end_token = duration.end + match.index + match.length
 
                 if not in_prefix:
-                    match = RegexExtension.match_end(self.config.future_regex, before_str, True)
+                    match = RegExpUtility.match_end(self.config.future_regex, before_str, True)
                     if match.success:
                         start_token = match.index
 
@@ -1277,8 +1277,7 @@ class BaseDatePeriodParser(DateTimeParser):
 
     def _parse_one_word_period(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
-        year = reference.year
-        month = reference.month
+        year, month = reference.year, reference.month
 
         if self.config.is_year_to_date(source):
             result.timex = f'{year:04d}'
@@ -1287,6 +1286,7 @@ class BaseDatePeriodParser(DateTimeParser):
             result.past_value = [DateUtils.safe_create_from_value(
                 DateUtils.min_value, year, 1, 1), reference]
             result.success = True
+
             return result
 
         if self.config.is_month_to_date(source):
@@ -1296,10 +1296,10 @@ class BaseDatePeriodParser(DateTimeParser):
             result.past_value = [DateUtils.safe_create_from_value(
                 DateUtils.min_value, year, month, month, 1), reference]
             result.success = True
+
             return result
 
-        future_year = year
-        past_year = year
+        future_year = past_year = year
         trimmed_source = source.strip().lower()
         match = RegExpUtility.exact_match(self.config.one_word_period_regex, trimmed_source, True)
 
@@ -1310,191 +1310,175 @@ class BaseDatePeriodParser(DateTimeParser):
         if not (match and match.success):
             match = RegExpUtility.exact_match(self.config.reference_date_period_regex, trimmed_source, True)
 
-        if not (match and match.start() == 0 and match.end() == len(trimmed_source)):
+        if not (match and match.success):
             return result
 
-        early_prefix = False
-        late_prefix = False
-        mid_prefix = False
+        early_prefix = late_prefix = mid_prefix = False
 
-        if RegExpUtility.get_group(match, Constants.EARLY_PREFIX):
-            early_prefix = True
-            trimmed_source = match.group(Constants.SUFFIX_GROUP_NAME)
-            result.mod = TimeTypeConstants.EARLY_MOD
-        elif RegExpUtility.get_group(match, Constants.LATE_PREFIX):
-            late_prefix = True
-            trimmed_source = match.group(Constants.SUFFIX_GROUP_NAME)
-            result.mod = TimeTypeConstants.LATE_MOD
-        elif RegExpUtility.get_group(match, Constants.MID_PREFIX):
-            mid_prefix = True
-            trimmed_source = match.group(Constants.SUFFIX_GROUP_NAME)
-            result.mod = TimeTypeConstants.MID_MOD
+        if match.success:
+            if match.get_group(Constants.EARLY_PREFIX):
+                early_prefix = True
+                trimmed_source = match.group(Constants.SUFFIX_GROUP_NAME)
+                result.mod = TimeTypeConstants.EARLY_MOD
 
-        swift = 0
-        month_str = RegExpUtility.get_group(match, Constants.MONTH_GROUP_NAME)
-        if month_str:
-            swift = self.config.get_swift_year(trimmed_source)
-        else:
-            swift = self.config.get_swift_day_or_month(trimmed_source)
+            elif match.get_group(Constants.LATE_PREFIX):
+                late_prefix = True
+                trimmed_source = match.group(Constants.SUFFIX_GROUP_NAME)
+                result.mod = TimeTypeConstants.LATE_MOD
 
-        if self.config.unspecific_end_of_range_regex is not None and self.config.unspecific_end_of_range_regex.match(
-                match.string):
-            late_prefix = True
-            trimmed_source = match.string
-            result.mod = TimeTypeConstants.LATE_MOD
+            elif match.get_group(Constants.MID_PREFIX):
+                mid_prefix = True
+                trimmed_source = match.group(Constants.SUFFIX_GROUP_NAME)
+                result.mod = TimeTypeConstants.MID_MOD
 
-        if RegExpUtility.get_group(match, Constants.REL_EARLY):
-            early_prefix = True
-            if self.is_present(swift):
-                result.mod = None
-        elif RegExpUtility.get_group(match, Constants.REL_LATE):
-            late_prefix = True
-            if self.is_present(swift):
-                result.mod = None
-
-        month_str = RegExpUtility.get_group(match, Constants.MONTH_GROUP_NAME)
-
-        if month_str:
-            swift = self.config.get_swift_year(trimmed_source)
-            month = self.config.month_of_year.get(month_str)
-
-            if swift >= -1:
-                result.timex = f'{year + swift:04d}-{month:02d}'
-                year += swift
-                future_year = year
-                past_year = year
+            swift = 0
+            month_str = match.get_group(Constants.MONTH_GROUP_NAME)
+            if month_str:
+                swift = self.config.get_swift_year(trimmed_source)
             else:
-                result.timex = f'XXXX-{month:02d}'
+                swift = self.config.get_swift_day_or_month(trimmed_source)
 
-                if month < reference.month:
-                    future_year += 1
+            if self.config.unspecific_end_of_range_regex is not None and self.config.unspecific_end_of_range_regex.match(
+                    match.value):
+                late_prefix = True
+                trimmed_source = match.value
+                result.mod = TimeTypeConstants.LATE_MOD
 
-                if month >= reference.month:
-                    past_year -= 1
+            if match.get_group(Constants.REL_EARLY):
+                early_prefix = True
+                if self.is_present(swift):
+                    result.mod = None
+
+            elif match.get_group(Constants.REL_LATE):
+                late_prefix = True
+                if self.is_present(swift):
+                    result.mod = None
+
+            month_str = match.get_group(Constants.MONTH_GROUP_NAME)
+
+            if month_str:
+                swift = self.config.get_swift_year(trimmed_source)
+                month = self.config.month_of_year.get(month_str)
+
+                if swift >= -1:
+                    result.timex = f'{year + swift:04d}-{month:02d}'
+                    year += swift
+                    future_year = year
+                    past_year = year
+                else:
+                    result.timex = f'XXXX-{month:02d}'
+
+                    if month < reference.month:
+                        future_year += 1
+
+                    if month >= reference.month:
+                        past_year -= 1
+
+            else:
+                swift = self.config.get_swift_day_or_month(trimmed_source)
+
+                if self.config.is_week_only(trimmed_source):
+                    thursday = DateUtils.this(reference, DayOfWeek.THURSDAY) + datedelta(days=7 * swift)
+                    result.timex = f'{thursday.year:04d}-W{DateUtils.week_of_year(thursday):02d}'
+                    begin_date = DateUtils.this(reference, DayOfWeek.MONDAY) + datedelta(days=7 * swift)
+                    end_date = DateUtils.this(reference, DayOfWeek.SUNDAY) + datedelta(days=7 * swift)
+
+                    if early_prefix:
+                        end_date = DateUtils.this(
+                            reference, DayOfWeek.WEDNESDAY) + datedelta(days=7 * swift)
+
+                    elif mid_prefix:
+                        begin_date = DateUtils.this(reference, DayOfWeek.TUESDAY) + datedelta(days=7 * swift)
+                        end_date = DateUtils.this(reference, DayOfWeek.FRIDAY) + datedelta(days=7 * swift)
+
+                    elif late_prefix:
+                        begin_date = DateUtils.this(reference, DayOfWeek.THURSDAY) + datedelta(days=7 * swift)
+
+                    if not self._inclusive_end_period:
+                        end_date = end_date + datedelta(days=1)
+
+                    if early_prefix and swift == 0:
+                        if end_date > reference:
+                            end_date = reference
+
+                    elif late_prefix and swift == 0:
+                        if begin_date < reference:
+                            begin_date = reference
+
+                    result.future_value = result.past_value = [begin_date, end_date]
+                    result.success = True
+
+                    return result
+
+                if self.config.is_weekend(trimmed_source):
+                    begin_date = DateUtils.this(reference, DayOfWeek.SATURDAY) + datedelta(days=7 * swift)
+                    end_date = DateUtils.this(reference, DayOfWeek.SUNDAY) + datedelta(days=7 * swift)
+
+                    if not self._inclusive_end_period:
+                        end_date = end_date + datedelta(days=1)
+
+                    result.timex = f'{year:04d}-W{begin_date.isocalendar()[1]:02d}-WE'
+                    result.future_value = result.past_value = [begin_date, end_date]
+                    result.success = True
+
+                    return result
+
+                if self.config.is_month_only(trimmed_source):
+                    temp_date = reference + datedelta(months=swift)
+                    month, year = temp_date.month, temp_date.year
+                    result.timex = f'{year:04d}-{month:02d}'
+                    future_year = past_year = year
+
+                elif self.config.is_year_only(trimmed_source):
+                    temp_date = reference + datedelta(years=swift)
+                    year = temp_date.year
+
+                    if late_prefix:
+                        begin_date = DateUtils.safe_create_from_min_value(year, 7, 1)
+                    else:
+                        begin_date = DateUtils.safe_create_from_min_value(year, 1, 1)
+
+                    if early_prefix:
+                        end_date = DateUtils.safe_create_from_min_value(year, 6, 30)
+                    else:
+                        end_date = DateUtils.safe_create_from_min_value(year, 12, 31)
+
+                    if not self._inclusive_end_period:
+                        end_date = end_date + datedelta(days=1)
+
+                    result.timex = f'{year:04d}'
+                    result.future_value = result.past_value = [begin_date, end_date]
+                    result.success = True
+
+                    return result
         else:
-            swift = self.config.get_swift_day_or_month(trimmed_source)
+            return result
 
-            if self.config.is_week_only(trimmed_source):
-                thursday = DateUtils.this(
-                    reference, DayOfWeek.THURSDAY) + datedelta(days=7 * swift)
-                result.timex = f'{thursday.year:04d}-W{DateUtils.week_of_year(thursday):02d}'
-                begin_date = DateUtils.this(
-                    reference, DayOfWeek.MONDAY) + datedelta(days=7 * swift)
-                end_date = DateUtils.this(
-                    reference, DayOfWeek.SUNDAY) + datedelta(days=7 * swift)
-
-                if early_prefix:
-                    end_date = DateUtils.this(
-                        reference, DayOfWeek.WEDNESDAY) + datedelta(days=7 * swift)
-                elif mid_prefix:
-                    begin_date = DateUtils.this(
-                        reference, DayOfWeek.TUESDAY) + datedelta(days=7 * swift)
-                    end_date = DateUtils.this(
-                        reference, DayOfWeek.FRIDAY) + datedelta(days=7 * swift)
-                elif late_prefix:
-                    begin_date = DateUtils.this(
-                        reference, DayOfWeek.THURSDAY) + datedelta(days=7 * swift)
-
-                if not self._inclusive_end_period:
-                    end_date = end_date + datedelta(days=1)
-
-                if early_prefix and swift == 0:
-                    if end_date > reference:
-                        end_date = reference
-                elif late_prefix and swift == 0:
-                    if begin_date < reference:
-                        begin_date = reference
-
-                result.future_value = [begin_date, end_date]
-                result.past_value = [begin_date, end_date]
-                result.success = True
-
-                return result
-
-            if self.config.is_weekend(trimmed_source):
-                begin_date = DateUtils.this(
-                    reference, DayOfWeek.SATURDAY) + datedelta(days=7 * swift)
-                end_date = DateUtils.this(
-                    reference, DayOfWeek.SUNDAY) + datedelta(days=7 * swift)
-
-                if not self._inclusive_end_period:
-                    end_date = end_date + datedelta(days=1)
-
-                result.timex = f'{year:04d}-W{begin_date.isocalendar()[1]:02d}-WE'
-                result.future_value = [begin_date, end_date]
-                result.past_value = [begin_date, end_date]
-                result.success = True
-
-                return result
-
-            if self.config.is_month_only(trimmed_source):
-                temp_date = reference + datedelta(months=swift)
-                month = temp_date.month
-                year = temp_date.year
-                result.timex = f'{year:04d}-{month:02d}'
-                future_year = year
-                past_year = year
-            elif self.config.is_year_only(trimmed_source):
-                temp_date = reference + datedelta(years=swift)
-                year = temp_date.year
-
-                if late_prefix:
-                    begin_date = DateUtils.safe_create_from_min_value(
-                        year, 7, 1)
-                else:
-                    begin_date = DateUtils.safe_create_from_min_value(
-                        year, 1, 1)
-
-                if early_prefix:
-                    end_date = DateUtils.safe_create_from_min_value(
-                        year, 6, 30)
-                else:
-                    end_date = DateUtils.safe_create_from_min_value(
-                        year, 12, 31)
-
-                if not self._inclusive_end_period:
-                    end_date = end_date + datedelta(days=1)
-
-                result.timex = f'{year:04d}'
-                result.future_value = [begin_date, end_date]
-                result.past_value = [begin_date, end_date]
-                result.success = True
-
-                return result
-
-        future_start = DateUtils.safe_create_from_min_value(
-            future_year, month, 1)
-        future_end = DateUtils.safe_create_from_min_value(
-            future_year, month, 1) + datedelta(months=1)
+        future_start = DateUtils.safe_create_from_min_value(future_year, month, 1)
+        future_end = DateUtils.safe_create_from_min_value(future_year, month, 1) + datedelta(months=1)
         past_start = DateUtils.safe_create_from_min_value(past_year, month, 1)
-        past_end = DateUtils.safe_create_from_min_value(
-            past_year, month, 1) + datedelta(months=1)
+        past_end = DateUtils.safe_create_from_min_value(past_year, month, 1) + datedelta(months=1)
 
         if self._inclusive_end_period:
             future_end = future_end + datedelta(days=-1)
             past_end = past_end + datedelta(days=-1)
 
         if early_prefix:
-            future_end = DateUtils.safe_create_from_min_value(
-                future_year, month, 15)
-            past_end = DateUtils.safe_create_from_min_value(
-                past_year, month, 15)
+            future_end = DateUtils.safe_create_from_min_value(future_year, month, 15)
+            past_end = DateUtils.safe_create_from_min_value(past_year, month, 15)
 
             if not self._inclusive_end_period:
                 future_end = future_end + datedelta(days=1)
                 past_end = past_end + datedelta(days=1)
         elif late_prefix:
-            future_start = DateUtils.safe_create_from_min_value(
-                future_year, month, 16)
-            past_start = DateUtils.safe_create_from_min_value(
-                past_year, month, 16)
+            future_start = DateUtils.safe_create_from_min_value(future_year, month, 16)
+            past_start = DateUtils.safe_create_from_min_value(past_year, month, 16)
 
         result.future_value = [future_start, future_end]
         result.past_value = [past_start, past_end]
         result.success = True
 
         return result
-
     # Parse entities that are made up by two time points
     def _merge_two_times_points(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         trimmed_source = source.strip()

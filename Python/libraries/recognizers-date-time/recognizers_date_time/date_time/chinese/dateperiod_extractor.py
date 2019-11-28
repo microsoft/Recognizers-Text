@@ -5,7 +5,7 @@ import regex
 from recognizers_text import ExtractResult
 
 from ..base_dateperiod import BaseDatePeriodExtractor
-from ..utilities import merge_all_tokens, Token, RegexExtension
+from ..utilities import merge_all_tokens, Token, RegExpUtility
 from .dateperiod_extractor_config import ChineseDatePeriodExtractorConfiguration
 
 
@@ -52,7 +52,7 @@ class ChineseDatePeriodExtractor(BaseDatePeriodExtractor):
 
             middle_str = source[middle_begin:middle_end].strip().lower()
 
-            if RegexExtension.is_exact_match(self.config.till_regex, middle_str, True):
+            if RegExpUtility.is_exact_match(self.config.till_regex, middle_str, True):
                 period_begin = extract_result[index].start
                 period_end = extract_result[index + 1].start + extract_result[index + 1].length
 

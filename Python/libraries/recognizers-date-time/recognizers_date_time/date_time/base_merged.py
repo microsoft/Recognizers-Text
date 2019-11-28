@@ -608,11 +608,11 @@ class BaseMergedParser(DateTimeParser):
         has_inclusive_mod = False
         mod_str = ''
         if source.meta_data and source.meta_data.has_mod:
-            before_match = RegexExtension.match_begin(self.config.before_regex, source.text, True)
-            after_match = RegexExtension.match_begin(self.config.after_regex, source.text, True)
-            since_match = RegexExtension.match_begin(self.config.since_regex, source.text, True)
-            around_match = RegexExtension.match_begin(self.config.around_regex, source.text, True)
-            equal_match = RegexExtension.match_begin(self.config.equal_regex, source.text, True)
+            before_match = RegExpUtility.match_begin(self.config.before_regex, source.text, True)
+            after_match = RegExpUtility.match_begin(self.config.after_regex, source.text, True)
+            since_match = RegExpUtility.match_begin(self.config.since_regex, source.text, True)
+            around_match = RegExpUtility.match_begin(self.config.around_regex, source.text, True)
+            equal_match = RegExpUtility.match_begin(self.config.equal_regex, source.text, True)
 
             if before_match and before_match.success:
                 has_before = True
@@ -655,7 +655,7 @@ class BaseMergedParser(DateTimeParser):
                 # would fall into this
                 # 2012 or after/above
                 # 3 pm or later
-                match = RegexExtension.match_end(self.config.suffix_after, source.text, True)
+                match = RegExpUtility.match_end(self.config.suffix_after, source.text, True)
                 if match and match.success:
                     has_date_after = True
                     source.length -= match.length

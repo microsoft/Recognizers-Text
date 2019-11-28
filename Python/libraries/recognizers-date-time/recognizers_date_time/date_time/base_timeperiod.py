@@ -11,8 +11,7 @@ from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
 from .utilities import Token, merge_all_tokens, get_tokens_from_regex, DateTimeResolutionResult, \
-    DateTimeUtilityConfiguration, DateTimeFormatUtil, ResolutionStartEnd, DateTimeOptionsConfiguration, DateTimeOptions, \
-    RegexExtension
+    DateTimeUtilityConfiguration, DateTimeFormatUtil, ResolutionStartEnd, DateTimeOptionsConfiguration, DateTimeOptions
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
@@ -220,7 +219,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                     break
                 # check connector string
                 middle = source[num_end:time_extract_results[j].start]
-                if RegexExtension.is_exact_match(self.config.till_regex, middle, True) or\
+                if RegExpUtility.is_exact_match(self.config.till_regex, middle, True) or\
                         self.config.is_connector_token(middle.strip()):
                     time_numbers.append(num_extract_results[i])
                 i += 1
