@@ -109,7 +109,7 @@ class RegexExtension:
         if match is None:
             return ConditionalMatch(regexp, False)
 
-        str_after = text[match.end():]
+        srt_after = text[match.end():]
 
         if trim:
             srt_after = srt_after.strip()

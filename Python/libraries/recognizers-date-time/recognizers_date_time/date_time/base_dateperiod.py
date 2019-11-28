@@ -197,7 +197,7 @@ class DatePeriodExtractorConfiguration(ABC):
 
     @property
     @abstractmethod
-    def check_both_before_after(self) -> Pattern:
+    def check_both_before_after(self) -> bool:
         raise NotImplementedError
 
     @property

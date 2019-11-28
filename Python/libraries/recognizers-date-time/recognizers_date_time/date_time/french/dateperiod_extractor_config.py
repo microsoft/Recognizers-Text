@@ -18,6 +18,10 @@ from recognizers_number import FrenchOrdinalExtractor, BaseNumberExtractor
 
 class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
+    def previous_prefix_regex(self) -> Pattern:
+        return self._previous_prefix_regex
+
+    @property
     def check_both_before_after(self) -> Pattern:
         return self._check_both_before_after
 

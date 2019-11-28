@@ -15,7 +15,7 @@ from ...resources.base_date_time import BaseDateTime
 
 class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
     @property
-    def check_both_before_after(self) -> Pattern:
+    def check_both_before_after(self) -> bool:
         return self._check_both_before_after
 
     @property
