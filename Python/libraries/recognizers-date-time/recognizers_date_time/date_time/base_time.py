@@ -8,7 +8,7 @@ from recognizers_text.extractor import ExtractResult
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import DateTimeOptionsConfiguration, DateTimeOptions, merge_all_tokens, TimeZoneUtility, RegexExtension
+from .utilities import DateTimeOptionsConfiguration, DateTimeOptions, merge_all_tokens, TimeZoneUtility, RegExpUtility
 
 
 class TimeExtractorConfiguration(DateTimeOptionsConfiguration):
@@ -226,7 +226,7 @@ class BaseTimeParser(DateTimeParser):
 
         for pattern in self.config.time_regexes:
             offset = 0
-            match = RegexExtension.exact_match(pattern, source, True)
+            match = RegExpUtility.exact_match(pattern, source, True)
             if match and match.success:
                 return self.match_to_time(match, reference)
 
