@@ -12,6 +12,10 @@ from ...resources.base_date_time import BaseDateTime
 
 class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
     @property
+    def week_day_start(self) -> Pattern:
+        pass
+
+    @property
     def check_both_before_after(self) -> Pattern:
         pass
 

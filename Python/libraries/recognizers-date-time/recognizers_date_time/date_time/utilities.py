@@ -413,6 +413,11 @@ class DateUtils:
 class DateTimeUtilityConfiguration(ABC):
     @property
     @abstractmethod
+    def since_year_suffix_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def date_unit_regex(self) -> Pattern:
         raise NotImplementedError
 
@@ -598,7 +603,7 @@ class AgoLaterUtil:
 
                     if not(is_time_duration and is_day_match):
                         token_after = Token(extract_result.start, extract_result.start +
-                                         extract_result.length + index)
+                                            extract_result.length + index)
                         is_match = True
 
                 if config.check_both_befor_after:
@@ -631,7 +636,7 @@ class AgoLaterUtil:
             if not is_match:
                 in_within_regex_tuples = [
                     (config.in_connector_regex, [config.range_unit_regex]),
-                    (config.within_next_prefix_regex,[config.date_unit_regex, config.time_unit_regex])
+                    (config.within_next_prefix_regex, [config.date_unit_regex, config.time_unit_regex])
                 ]
 
                 for regexp in in_within_regex_tuples:
@@ -699,6 +704,14 @@ class AgoLaterUtil:
             utility_configuration, mode)
 
     @staticmethod
+    def __matched_string(regexp, string):
+        is_match = True
+        match = regexp.match(string)
+        day_str = match.group('day')
+
+        return is_match, match, day_str
+
+    @staticmethod
     def get_ago_later_result(
             duration_parse_result: DateTimeParseResult, num: int,
             unit_map: Dict[str, str], src_unit: str, after_str: str,
@@ -706,23 +719,6 @@ class AgoLaterUtil:
             utility_configuration: DateTimeUtilityConfiguration, mode: AgoLaterMode):
 
         result = DateTimeResolutionResult()
-        timex = duration_parse_result.timex_str
-
-        if duration_parse_result.value.mod == TimeTypeConstants.MORE_THAN_MOD:
-            result.mod = TimeTypeConstants.MORE_THAN_MOD
-        elif duration_parse_result.value.mod == TimeTypeConstants.LESS_THAN_MOD:
-            result.mod = TimeTypeConstants.LESS_THAN_MOD
-
-        swift = 0
-        is_match, is_later = False
-        day_str = None
-
-        ago_later_regex_tuples
-
-
-
-
-
         unit_str = unit_map.get(src_unit)
 
         if not unit_str:
