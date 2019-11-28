@@ -740,7 +740,7 @@
   },
   {
     "Input": "I will leave 1 day 2 hours later",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1 day 2 hours later",

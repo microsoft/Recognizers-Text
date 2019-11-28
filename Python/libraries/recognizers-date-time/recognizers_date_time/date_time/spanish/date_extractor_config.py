@@ -19,7 +19,7 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
         return self._week_day_start
 
     @property
-    def check_both_before_after(self) -> Pattern:
+    def check_both_before_after(self) -> bool:
         return self._check_both_before_after
 
     @property

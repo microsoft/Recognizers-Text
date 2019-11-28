@@ -17,7 +17,6 @@ from .date_extractor_config import SpanishDateExtractorConfiguration
 
 
 class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
-
     @property
     def year_period_regex(self) -> Pattern:
         return self._year_period_regex

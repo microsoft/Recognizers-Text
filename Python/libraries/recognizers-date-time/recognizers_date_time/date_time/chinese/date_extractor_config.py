@@ -22,7 +22,7 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
     @property
     def week_day_end(self) -> Pattern:
         pass
-    
+
     @property
     def number_parser(self):
         pass

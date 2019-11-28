@@ -155,7 +155,7 @@ class BaseHolidayParser(DateTimeParser):
         ) if holiday_str in values]), None)
 
         if holiday_key:
-            func = next(iter(self.config.holiday_func_dictionary.values()))
+            func = self.config.holiday_func_dictionary.get(holiday_key)
 
             if func:
                 value = func(year)

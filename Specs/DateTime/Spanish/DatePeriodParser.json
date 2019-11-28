@@ -357,7 +357,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "la tercera semana de este mes",
@@ -384,7 +384,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "la ultima semana de julio",
@@ -935,6 +935,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "pasadas 3 semanas",
@@ -960,6 +961,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "ultimos 3años",
@@ -985,6 +987,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "anteriores 3 semanas",
@@ -1061,7 +1064,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "la tercera semana del 2027",
@@ -1088,7 +1091,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "la tercer semana del próximo año",
@@ -6956,6 +6959,7 @@
       "ReferenceDateTime": "2019-08-21T17:00:00"
     },
     "NotSupportedByDesign": "javascript",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "la semana pasada",
@@ -6982,6 +6986,7 @@
       "ReferenceDateTime": "2019-08-21T17:00:00"
     },
     "NotSupportedByDesign": "javascript",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "semana pasada",
@@ -7008,6 +7013,7 @@
       "ReferenceDateTime": "2019-08-21T17:00:00"
     },
     "NotSupportedByDesign": "javascript",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "el mes pasado",

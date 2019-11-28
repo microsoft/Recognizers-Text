@@ -245,7 +245,7 @@ class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
             EnglishDateTime.WeekDayStart
         )
         self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
-        
+
         self._month_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.MonthRegex
         )

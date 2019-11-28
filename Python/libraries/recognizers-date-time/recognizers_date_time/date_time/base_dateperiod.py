@@ -191,7 +191,7 @@ class DatePeriodExtractorConfiguration(ABC):
 
     @property
     @abstractmethod
-    def check_both_before_after(self) -> Pattern:
+    def check_both_before_after(self) -> bool:
         raise NotImplementedError
 
     @property
@@ -1479,7 +1479,9 @@ class BaseDatePeriodParser(DateTimeParser):
         result.success = True
 
         return result
+
     # Parse entities that are made up by two time points
+
     def _merge_two_times_points(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         trimmed_source = source.strip()
         result = DateTimeResolutionResult()
