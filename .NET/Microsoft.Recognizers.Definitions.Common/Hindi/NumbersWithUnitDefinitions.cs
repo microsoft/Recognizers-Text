@@ -30,18 +30,18 @@ namespace Microsoft.Recognizers.Definitions.Hindi
         };
       public static readonly Dictionary<string, string> AreaSuffixList = new Dictionary<string, string>
         {
-            { @"Square kilometer", @"sq km|sq kilometer|sq kilometre|sq kilometers|sq kilometres|square kilometer|square kilometre|square kilometers|square kilometres|km2|km^2|km²" },
-            { @"Square hectometer", @"sq hm|sq hectometer|sq hectometre|sq hectometers|sq hectometres|square hectometer|square hectometre|square hectometers|square hectometres|hm2|hm^2|hm²|hectare|hectares" },
-            { @"Square decameter", @"sq dam|sq decameter|sq decametre|sq decameters|sq decametres|square decameter|square decametre|square decameters|square decametres|sq dekameter|sq dekametre|sq dekameters|sq dekametres|square dekameter|square dekametre|square dekameters|square dekametres|dam2|dam^2|dam²" },
-            { @"Square meter", @"sq m|sq meter|sq metre|sq meters|sq metres|sq metre|square meter|square meters|square metre|square metres|m2|m^2|m²" },
-            { @"Square decimeter", @"sq dm|sq decimeter|sq decimetre|sq decimeters|sq decimetres|square decimeter|square decimetre|square decimeters|square decimetres|dm2|dm^2|dm²" },
-            { @"Square centimeter", @"sq cm|sq centimeter|sq centimetre|sq centimeters|sq centimetres|square centimeter|square centimetre|square centimeters|square centimetres|cm2|cm^2|cm²" },
-            { @"Square millimeter", @"sq mm|sq millimeter|sq millimetre|sq millimeters|sq millimetres|square millimeter|square millimetre|square millimeters|square millimetres|mm2|mm^2|mm²" },
-            { @"Square inch", @"sq in|sq inch|square inch|square inches|in2|in^2|in²" },
-            { @"Square foot", @"sqft|sq ft|sq foot|sq feet|square foot|square feet|feet2|feet^2|feet²|ft2|ft^2|ft²" },
-            { @"Square mile", @"sq mi|sq mile|sqmiles|square mile|square miles|mi2|mi^2|mi²" },
-            { @"Square yard", @"sq yd|sq yard|sq yards|square yard|square yards|yd2|yd^2|yd²" },
-            { @"Acre", @"-acre|acre|acres" }
+            { @"Square kilometer", @"sq km|sq kilometer|sq kilometre|sq kilometers|sq kilometres|square kilometer|square kilometre|square kilometers|square kilometres|km2|km^2|km²|वर्ग किमी|वर्ग किलोमीटर|वर्ग कि.मी.|वर्ग कि. मी.|वर्ग किलो मीटर|वर्ग कीलोमीटर|वर्ग कीलो मीटर|कीमी2|कीमी²" },
+            { @"Square hectometer", @"sq hm|sq hectometer|sq hectometre|sq hectometers|sq hectometres|square hectometer|square hectometre|square hectometers|square hectometres|hm2|hm^2|hm²|hectare|hectares|वर्ग एचएम|वर्ग हेक्टोमीटर|वर्ग हेक्टोमिटर|वर्ग हेक्टो मीटर|वर्ग हेक्टो मिटर|एचएम2|हेक्टेयर" },
+            { @"Square decameter", @"sq dam|sq decameter|sq decametre|sq decameters|sq decametres|square decameter|square decametre|square decameters|square decametres|sq dekameter|sq dekametre|sq dekameters|sq dekametres|square dekameter|square dekametre|square dekameters|square dekametres|dam2|dam^2|dam²|वर्ग डेकामीटर|वर्ग डेका मीटर|वर्ग डेका मिटर" },
+            { @"Square meter", @"sq m|sq meter|sq metre|sq meters|sq metres|sq metre|square meter|square meters|square metre|square metres|m2|m^2|m²|वर्ग मीटर|मीटर वर्ग|स्क्वेयर मीटर|मी²|मी.²|मी2" },
+            { @"Square decimeter", @"sq dm|sq decimeter|sq decimetre|sq decimeters|sq decimetres|square decimeter|square decimetre|square decimeters|square decimetres|dm2|dm^2|dm²|वर्ग डेसीमीटर|वर्ग डेसी मीटर" },
+            { @"Square centimeter", @"sq cm|sq centimeter|sq centimetre|sq centimeters|sq centimetres|square centimeter|square centimetre|square centimeters|square centimetres|cm2|cm^2|cm²|वर्ग सेंटीमीटर|वर्ग सेमी|वर्ग से.मी.|वर्ग सेंटीमीटर|वर्ग सेन्टीमीटर|वर्ग सेण्टीमीटर|वर्ग सेंटी मीटर|वर्ग सेन्टी मीटर|वर्ग से. मी.|सेमी²|से.मी.²" },
+            { @"Square millimeter", @"sq mm|sq millimeter|sq millimetre|sq millimeters|sq millimetres|square millimeter|square millimetre|square millimeters|square millimetres|mm2|mm^2|mm²|वर्ग मिमी|वर्ग मि.मी.|वर्ग मिलीमीटर|वर्ग मिलिमीटर|वर्ग मीलीमीटर|वर्ग मिली मीटर|वर्ग मीली मीटर|वर्ग मि. मी.|मिमी²" },
+            { @"Square inch", @"sq in|sq inch|square inch|square inches|in2|in^2|in²|वर्ग इंच|इंच²" },
+            { @"Square foot", @"sqft|sq ft|sq foot|sq feet|square foot|square feet|feet2|feet^2|feet²|ft2|ft^2|ft²|वर्ग फुट|वर्ग फ़ीट|वर्ग फीट|वर्ग फ़ुट|फ़ुट²|फुट²|स्क्वेयर फ़ुट|स्क्वेयर फुट" },
+            { @"Square mile", @"sq mi|sq mile|sqmiles|square mile|square miles|mi2|mi^2|mi²|वर्ग मील|वर्ग माइल|वर्ग माइल्स|वर्ग मील²|स्क्वेयर मील|स्क्वेयर माइल|स्क्वेयर माइल्स" },
+            { @"Square yard", @"sq yd|sq yard|sq yards|square yard|square yards|yd2|yd^2|yd²|वर्ग गज|स्क्वेयर यार्ड|स्क्वेयर गज|गज²|यार्ड²" },
+            { @"Acre", @"-acre|acre|acres|-एकड़" }
         };
       public static readonly Dictionary<string, string> CurrencySuffixList = new Dictionary<string, string>
         {
@@ -558,7 +558,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"Hào", @"HAO" },
             { @"Ngwee", @"NGWEE" }
         };
-      public const string CompoundUnitConnectorRegex = @"(?<spacer>and)";
+      public const string CompoundUnitConnectorRegex = @"(?<spacer>और)";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
             { @"Dollar", @"$" },
@@ -653,32 +653,40 @@ namespace Microsoft.Recognizers.Definitions.Hindi
         };
       public static readonly Dictionary<string, string> InformationSuffixList = new Dictionary<string, string>
         {
-            { @"Bit", @"-bit|bit|bits" },
-            { @"Kilobit", @"kilobit|kilobits|kb|Kb|kbit" },
-            { @"Megabit", @"megabit|megabits|mb|Mb|mbit" },
-            { @"Gigabit", @"gigabit|gigabits|gb|Gb|gbit" },
-            { @"Terabit", @"terabit|terabits|tb|Tb|tbit" },
-            { @"Petabit", @"petabit|petabits|pb|Pb|pbit" },
-            { @"Byte", @"-byte|byte|bytes" },
-            { @"Kilobyte", @"-kilobyte|-kilobytes|kilobyte|kB|KB|kilobytes|kilo byte|kilo bytes|kbyte" },
-            { @"Megabyte", @"-megabyte|-megabytes|megabyte|mB|MB|megabytes|mega byte|mega bytes|mbyte" },
-            { @"Gigabyte", @"-gigabyte|-gigabytes|gigabyte|gB|GB|gigabytes|giga byte|giga bytes|gbyte" },
-            { @"Terabyte", @"-terabyte|-terabytes|terabyte|tB|TB|terabytes|tera byte|tera bytes|tbyte" },
-            { @"Petabyte", @"-petabyte|-petabytes|petabyte|pB|PB|petabytes|peta byte|peta bytes|pbyte" }
+            { @"Bit", @"-bit|bit|bits|-बिट|बिट|बिट्स" },
+            { @"Kilobit", @"kilobit|kilobits|kb|Kb|kbit|किलोबिट|किलोबिट्स|केबिट्स|कीलोबिट|कीलोबिट्स" },
+            { @"Megabit", @"megabit|megabits|mb|Mb|mbit|मेगाबिट|मेगाबिट्स|एमबिट|एमबिट्स" },
+            { @"Gigabit", @"gigabit|gigabits|gb|Gb|gbit|गिगाबिट|गीगाबिट|गिगाबिट्स|गीगाबिट्स" },
+            { @"Terabit", @"terabit|terabits|tb|Tb|tbit|टेराबिट|टेराबिट|टेराबिट्स|टेराबिट्स" },
+            { @"Petabit", @"petabit|petabits|pb|Pb|pbit|पेटाबिट|पेटाबिट|पेटाबिट्स|पेटाबिट्स" },
+            { @"Byte", @"-byte|byte|bytes|बाइट|बाईट" },
+            { @"Kilobyte", @"-kilobyte|-kilobytes|kilobyte|kB|KB|kilobytes|kilo byte|kilo bytes|kbyte|किलोबाइट|किलोबाईट|कीलोबाइट|कीलोबाईट|केबी|किलो बाइट|किलो बाईट|कीलो बाइट|कीलो बाईट" },
+            { @"Megabyte", @"-megabyte|-megabytes|megabyte|mB|MB|megabytes|mega byte|mega bytes|mbyte|मेगाबाइट|मेगाबाईट|एमबी|मेगा बाइट|मेगा बाईट" },
+            { @"Gigabyte", @"-gigabyte|-gigabytes|gigabyte|gB|GB|gigabytes|giga byte|giga bytes|gbyte|गिगाबाइट|गीगाबाइट|गिगाबाईट|गीगाबाईट|जीबी|गिगा बाइट|गीगा बाईट" },
+            { @"Terabyte", @"-terabyte|-terabytes|terabyte|tB|TB|terabytes|tera byte|tera bytes|tbyte|टेराबाइट|टेराबाईट|टीबी|टेरा बाइट|टेरा बाईट" },
+            { @"Petabyte", @"-petabyte|-petabytes|petabyte|pB|PB|petabytes|peta byte|peta bytes|pbyte|पेटाबाइट|पेटाबाईट|पीबी|पेटा बाइट|पेटा बाईट" }
         };
       public static readonly IList<string> AmbiguousDimensionUnitList = new List<string>
         {
+            @"ग्राम",
+            @"ग्रा",
+            @"इं",
             @"barrel",
             @"barrels",
+            @"बैरल",
             @"grain",
             @"pound",
+            @"पाउंड",
             @"stone",
             @"yards",
             @"yard",
             @"cord",
             @"dram",
             @"feet",
+            @"फ़ीट",
+            @"फीट",
             @"foot",
+            @"फुट",
             @"gill",
             @"knot",
             @"peck",
@@ -687,27 +695,32 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             @"pts",
             @"in",
             @"dm",
-            @""""
+            @"""",
+            @"नॉट",
+            @"कप",
+            @"सेर",
+            @"पसेरी",
+            @"ड्राम"
         };
       public const string BuildPrefix = @"(?<=(\s|^))";
-      public const string BuildSuffix = @"(?=(\s|\W|$))";
+      public const string BuildSuffix = @"(?=(\s|\W|\b|$))";
       public static readonly Dictionary<string, string> LengthSuffixList = new Dictionary<string, string>
         {
-            { @"Kilometer", @"km|kilometer|kilometre|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre" },
-            { @"Hectometer", @"hm|hectometer|hectometre|hectometers|hectometres|hecto meter|hecto meters|hecto metres|hecto metre" },
-            { @"Decameter", @"dam|decameter|decametre|decameters|decametres|deca meter|deca meters|deca metres|deca metre" },
-            { @"Meter", @"m|meter|metre|meters|metres" },
-            { @"Decimeter", @"dm|decimeter|decimeters|decimetre|decimetres|deci meter|deci meters|deci metres|deci metre" },
-            { @"Centimeter", @"cm|centimeter|centimeters|centimetre|centimetres|centi meter|centi meters|centi metres|centi metre" },
-            { @"Millimeter", @"mm|millimeter|millimeters|millimetre|millimetres|milli meter|milli meters|milli metres|milli metre" },
-            { @"Micrometer", @"μm|micrometer|micrometre|micrometers|micrometres|micro meter|micro meters|micro metres|micro metre" },
-            { @"Nanometer", @"nm|nanometer|nanometre|nanometers|nanometres|nano meter|nano meters|nano metres|nano metre" },
-            { @"Picometer", @"pm|picometer|picometre|picometers|picometres|pico meter|pico meters|pico metres|pico metre" },
-            { @"Mile", @"-mile|mile|miles" },
-            { @"Yard", @"yard|yards" },
-            { @"Inch", @"-inch|inch|inches|in|""" },
-            { @"Foot", @"-foot|foot|feet|ft" },
-            { @"Light year", @"light year|light-year|light years|light-years" },
+            { @"Kilometer", @"km|kilometer|kilometre|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre|किमी|किलोमीटर|कीलोमीटर|किलोमिटर|किलो मीटर|कीलो मीटर|किलो मिटर|कि.मी.|कि. मी." },
+            { @"Hectometer", @"hm|hectometer|hectometre|hectometers|hectometres|hecto meter|hecto meters|hecto metres|hecto metre|एचएम|हेक्टोमीटर|हेक्टोमिटर|हेक्टो मीटर|हेक्टो मिटर" },
+            { @"Decameter", @"dam|decameter|decametre|decameters|decametres|deca meter|deca meters|deca metres|deca metre|डेकामीटर|डेकामिटर|डेका मीटर|डेका मिटर" },
+            { @"Meter", @"m|meter|metre|meters|metres|मीटर|मी|मी." },
+            { @"Decimeter", @"dm|decimeter|decimeters|decimetre|decimetres|deci meter|deci meters|deci metres|deci metre|डेसीमीटर|डेसिमीटर|डेसीमिटर|डेमी" },
+            { @"Centimeter", @"cm|centimeter|centimeters|centimetre|centimetres|centi meter|centi meters|centi metres|centi metre।सेमी|से.मी.|सेंटीमीटर|सेन्टीमीटर|सेण्टीमीटर|सेंटी मीटर|सेन्टी मीटर|से. मी." },
+            { @"Millimeter", @"mm|millimeter|millimeters|millimetre|millimetres|milli meter|milli meters|milli metres|milli metre|मिमी|मि.मी.|मिलीमीटर|मिलिमीटर|मीलीमीटर|मिली मीटर|मीली मीटर|मि. मी." },
+            { @"Micrometer", @"μm|micrometer|micrometre|micrometers|micrometres|micro meter|micro meters|micro metres|micro metre।माइक्रोमीटर|माइक्रो मीटर" },
+            { @"Nanometer", @"nm|nanometer|nanometre|nanometers|nanometres|nano meter|nano meters|nano metres|nano metre|नैनोमीटर|नैनो मीटर" },
+            { @"Picometer", @"pm|picometer|picometre|picometers|picometres|pico meter|pico meters|pico metres|pico metre|पिकोमीटर|पीकोमीटर|पीको मिटर|पिको मीटर|पीएम" },
+            { @"Mile", @"-mile|mile|miles|मील|-मील|माइल|माइल्स" },
+            { @"Yard", @"yard|yards|गज" },
+            { @"Inch", @"-inch|inch|inches|in|""|इंच|-इंच|इं\b|इं." },
+            { @"Foot", @"-foot|foot|feet|ft|फुट|फ़ीट|फीट|फ़ुट|-फुट" },
+            { @"Light year", @"light year|light-year|light years|light-years|लाइट यर|लाइट यर|प्रकाश वर्ष|लाइट इयर" },
             { @"Pt", @"pt|pts" }
         };
       public static readonly IList<string> AmbiguousLengthUnitList = new List<string>
@@ -717,20 +730,22 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             @"yards",
             @"pm",
             @"pt",
-            @"pts"
+            @"pts",
+            @"पीएम",
+            @"इं"
         };
       public static readonly Dictionary<string, string> SpeedSuffixList = new Dictionary<string, string>
         {
-            { @"Meter per second", @"meters / second|m/s|meters per second|metres per second|meter per second|metre per second" },
-            { @"Kilometer per hour", @"km/h|kilometres per hour|kilometers per hour|kilometer per hour|kilometre per hour" },
-            { @"Kilometer per minute", @"km/min|kilometers per minute|kilometres per minute|kilometer per minute|kilometre per minute" },
-            { @"Kilometer per second", @"km/s|kilometers per second|kilometres per second|kilometer per second|kilometre per second" },
-            { @"Mile per hour", @"mph|mile per hour|miles per hour|mi/h|mile / hour|miles / hour|miles an hour" },
-            { @"Knot", @"kt|knot|kn" },
-            { @"Foot per second", @"ft/s|foot/s|foot per second|feet per second|fps" },
-            { @"Foot per minute", @"ft/min|foot/min|foot per minute|feet per minute" },
-            { @"Yard per minute", @"yards per minute|yard per minute|yards / minute|yards/min|yard/min" },
-            { @"Yard per second", @"yards per second|yard per second|yards / second|yards/s|yard/s" }
+            { @"Meter per second", @"meters / second|m/s|meters per second|metres per second|meter per second|metre per second |मीटर/सेकेंड|मीटर / सेकेंड|मी/से|मी./से.|मीटर प्रति सेकेंड|मीटर पर सेकेंड" },
+            { @"Kilometer per hour", @"km/h|kilometres per hour|kilometers per hour|kilometer per hour|kilometre per hour|किमी/घं|किलोमीटर प्रति घंटा|किमी./घं.|किमीटर/घंटा|किमीटर / घंटा|किलोमीटर प्रति घं.|किलोमीटर पर घंटा|किलोमीटर / घंटे|किलोमीटर प्रति घंटे|किलोमीटर पर घंटे" },
+            { @"Kilometer per minute", @"km/min|kilometers per minute|kilometres per minute|kilometer per minute|kilometre per minute|किमि/मि|किमी/मि|कि.मी./मि.|किलोमीटर प्रति मिनट|किलोमीटर पर मिनट|किलोमीटर हर मिनट|किलोमीटर प्रत्येक मिनट" },
+            { @"Kilometer per second", @"km/s|kilometers per second|kilometres per second|kilometer per second|kilometre per second|किमि/से|किमी/से|कि.मी./से.|किलोमीटर प्रति सेकेंड|किलोमीटर पर सेकेंड|किलोमीटर हर सेकेंड|किलोमीटर प्रत्येक सेकेंड" },
+            { @"Mile per hour", @"mph|mile per hour|miles per hour|mi/h|mile / hour|miles / hour|miles an hour|एमपीएच|मील प्रति घंटा|मील प्रति घंटे|मी/घं|मी./घं.मील / घंटा|मील / घंटे|मील हर घंटे|मील हर घंटा|मील प्रत्येक घंटे|मील प्रत्येक घंटा" },
+            { @"Knot", @"kt|knot|kn|नॉट" },
+            { @"Foot per second", @"ft/s|foot/s|foot per second|feet per second|fps|फ़ी/से|फी/से|फी./से.|फूट/से|फूट/से|फूट/से.|फूट प्रति सेकेंड|फ़ूट प्रति सेकेंड|फूट प्रत्येक सेकेंड|फ़ूट प्रत्येक सेकेंड|फूट हर सेकेंड|फ़ूट हर सेकेंड|फूट हरेक सेकेंड|फ़ूट हरेक सेकेंड|फीट प्रति सेकेंड|फ़ीट प्रति सेकेंड|फीट प्रत्येक सेकेंड|फ़ीट प्रत्येक सेकेंड|फीट हर सेकेंड|फ़ीट हर सेकेंड|फीट हरेक सेकेंड|फ़ीट हरेक सेकेंड|एफ़पीएस" },
+            { @"Foot per minute", @"ft/min|foot/min|foot per minute|feet per minute|फ़ी/मि|फी/मि|फी./मि.|फूट/मि|फूट/मि|फूट/मि.|फूट प्रति मिनट|फ़ूट प्रति मिनट|फूट प्रत्येक मिनट|फ़ूट प्रत्येक मिनट|फूट हर मिनट|फ़ूट हर मिनट|फूट हरेक मिनट|फ़ूट हरेक मिनट|फीट प्रति मिनट|फ़ीट प्रति मिनट|फीट प्रत्येक मिनट|फ़ीट प्रत्येक मिनट|फीट हर मिनट|फ़ीट हर मिनट|फीट हरेक मिनट|फ़ीट हरेक मिनट" },
+            { @"Yard per minute", @"yards per minute|yard per minute|yards / minute|yards/min|yard/min|ग/मि|ग/मि|ग./मि.|गज/मि|गज/मि|गज/मि.|गज प्रति मिनट|गज प्रत्येक मिनट|गज हर मिनट|गज हरेक मिनट|गज पर मिनट|गज / मिनट" },
+            { @"Yard per second", @"yards per second|yard per second|yards / second|yards/s|yard/s|ग/से|ग/से|ग./से.|गज/से|गज/से|गज/से.|गज प्रति सेकेंड|गज प्रत्येक सेकेंड|गज हर सेकेंड|गज हरेक सेकेंड|गज पर सेकेंड|गज / सेकेंड" }
         };
       public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
         {
@@ -749,29 +764,30 @@ namespace Microsoft.Recognizers.Definitions.Hindi
         };
       public static readonly Dictionary<string, string> VolumeSuffixList = new Dictionary<string, string>
         {
-            { @"Cubic meter", @"m3|cubic meter|cubic meters|cubic metre|cubic metres" },
-            { @"Cubic centimeter", @"cubic centimeter|cubic centimetre|cubic centimeters|cubic centimetres" },
-            { @"Cubic millimiter", @"cubic millimiter|cubic millimitre|cubic millimiters|cubic millimitres" },
-            { @"Hectoliter", @"hectoliter|hectolitre|hectoliters|hectolitres" },
-            { @"Decaliter", @"decaliter|decalitre|dekaliter|dekalitre|decaliters|decalitres|dekaliters|dekalitres" },
-            { @"Liter", @"l|litre|liter|liters|litres" },
-            { @"Deciliter", @"dl|deciliter|decilitre|deciliters|decilitres" },
-            { @"Centiliter", @"cl|centiliter|centilitre|centiliters|centilitres" },
-            { @"Milliliter", @"ml|mls|millilitre|milliliter|millilitres|milliliters" },
-            { @"Cubic yard", @"cubic yard|cubic yards" },
-            { @"Cubic inch", @"cubic inch|cubic inches" },
-            { @"Cubic foot", @"cubic foot|cubic feet" },
-            { @"Cubic mile", @"cubic mile|cubic miles" },
-            { @"Fluid ounce", @"fl oz|fluid ounce|fluid ounces" },
-            { @"Teaspoon", @"teaspoon|teaspoons" },
-            { @"Tablespoon", @"tablespoon|tablespoons" },
-            { @"Pint", @"pint|pints" },
-            { @"Volume unit", @"fluid dram|gill|quart|minim|cord|peck|bushel|hogshead|barrels|barrel|bbl" }
+            { @"Cubic meter", @"m3|cubic meter|cubic meters|cubic metre|cubic metres|क्यूब मीटर|मीटर क्यूब|क्यूबिक मीटर|मी3|घन मीटर" },
+            { @"Cubic centimeter", @"cubic centimeter|cubic centimetre|cubic centimeters|cubic centimetres|क्यूबिक सेंटीमीटर|क्यूबिक सेमी|सेमी3|क्यूबिक सेन्टीमीटर|क्यूबिक से.मी." },
+            { @"Cubic millimiter", @"cubic millimiter|cubic millimitre|cubic millimiters|cubic millimitres|क्यूबिक मिलिमीटर|क्यूबिक मिमी|क्यूबिक मि.मी." },
+            { @"Hectoliter", @"hectoliter|hectolitre|hectoliters|hectolitres|क्यूबिक हेक्टोलीटर" },
+            { @"Decaliter", @"decaliter|decalitre|dekaliter|dekalitre|decaliters|decalitres|dekaliters|dekalitres|डेकालीटर" },
+            { @"Liter", @"l|litre|liter|liters|litres|लीटर|ली." },
+            { @"Deciliter", @"dl|deciliter|decilitre|deciliters|decilitres|डेसीलीटर" },
+            { @"Centiliter", @"cl|centiliter|centilitre|centiliters|centilitres|सेंटीलीटर|सें.ली." },
+            { @"Milliliter", @"ml|mls|millilitre|milliliter|millilitres|milliliters|मिलीलीटर|मिली लीटर|मि.ली." },
+            { @"Cubic yard", @"cubic yard|cubic yards|क्यूबिक यार्ड|घन गज" },
+            { @"Cubic inch", @"cubic inch|cubic inches|क्यूबिक इंच|घन इंच" },
+            { @"Cubic foot", @"cubic foot|cubic feet|क्यूबिक फीट|घन फीट|क्यूबिक फ़ीट|घन फ़ीट" },
+            { @"Cubic mile", @"cubic mile|cubic miles|क्यूबिक माइल|क्यूबिक मील|घन माइल|घन मील" },
+            { @"Fluid ounce", @"fl oz|fluid ounce|fluid ounces|द्रव्य आउंस|द्रव्य औंस|फ़्लूइड आउंस" },
+            { @"Teaspoon", @"teaspoon|teaspoons|टीस्पून|चाय की चम्मच" },
+            { @"Tablespoon", @"tablespoon|tablespoons|टेबल स्पून" },
+            { @"Pint", @"pint|pints|पिंट" },
+            { @"Volume unit", @"fluid dram|gill|quart|minim|cord|peck|bushel|hogshead|barrels|barrel|bbl|बैरल|फ़्लुइड ड्रम|फ़्लुईड ड्राम|सेर|पसेरी|गिल|क्वार्ट|बुशेल|हॉग्सहेड|बीबीएल" }
         };
       public static readonly IList<string> AmbiguousVolumeUnitList = new List<string>
         {
             @"l",
             @"ounce",
+            @"आउंस",
             @"oz",
             @"cup",
             @"peck",
@@ -781,14 +797,14 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly Dictionary<string, string> WeightSuffixList = new Dictionary<string, string>
         {
             { @"Kilogram", @"kg|kilogram|kilograms|kilo|kilos" },
-            { @"Gram", @"g|gram|grams" },
-            { @"Milligram", @"mg|milligram|milligrams" },
-            { @"Gallon", @"-gallon|gallons|gallon" },
-            { @"Metric ton", @"metric tons|metric ton" },
-            { @"Ton", @"-ton|ton|tons|tonne|tonnes" },
-            { @"Pound", @"pound|pounds|lb|lbs" },
-            { @"Ounce", @"-ounce|ounce|oz|ounces" },
-            { @"Weight unit", @"pennyweight|grain|british long ton|us short hundredweight|stone|dram" }
+            { @"Gram", @"g|gram|grams|ग्रा.|ग्रा|ग्राम" },
+            { @"Milligram", @"mg|milligram|milligrams|मिलीग्राम|मिग्रा|मि.ग्रा|मि. ग्रा.|मीलीग्राम|एमजी|एम.जी." },
+            { @"Gallon", @"-gallon|gallons|gallon|गैलन|-गैलन" },
+            { @"Metric ton", @"metric tons|metric ton|मीट्रिक टन" },
+            { @"Ton", @"-ton|ton|tons|tonne|tonnes|टन" },
+            { @"Pound", @"pound|pounds|lb|lbs|पाउंड" },
+            { @"Ounce", @"-ounce|ounce|oz|ounces|आउंस|-आउंस" },
+            { @"Weight unit", @"pennyweight|grain|british long ton|us short hundredweight|stone|dram|ग्रेन|ब्रिटिश लॉंग|स्टोन|ड्राम|ड्रम" }
         };
       public static readonly IList<string> AmbiguousWeightUnitList = new List<string>
         {
@@ -796,7 +812,8 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             @"oz",
             @"stone",
             @"dram",
-            @"lbs"
+            @"lbs",
+            @"ग्राम"
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
