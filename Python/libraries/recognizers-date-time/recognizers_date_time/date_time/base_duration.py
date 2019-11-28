@@ -160,8 +160,8 @@ class BaseDurationExtractor(DateTimeExtractor):
                     is_match_after = True
 
                 if match and match.success:
-                        extract_result.data = TimeTypeConstants.LESS_THAN_MOD
-                        is_inequality_prefix_matched = True
+                    extract_result.data = TimeTypeConstants.LESS_THAN_MOD
+                    is_inequality_prefix_matched = True
 
             if is_inequality_prefix_matched:
                 if not is_match_after:
