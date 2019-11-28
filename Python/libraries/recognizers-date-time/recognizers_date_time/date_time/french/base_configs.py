@@ -10,8 +10,8 @@ class FrenchDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
         return self._date_unit_regex
 
     @property
-    def check_both_befor_after(self) -> Pattern:
-        return self._check_both_befor_after
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
 
     @property
     def range_prefix_regex(self) -> Pattern:
@@ -78,7 +78,7 @@ class FrenchDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
             FrenchDateTime.WithinNextPrefixRegex)
         self._common_date_prefix_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.CommonDatePrefixRegex)
-        self._check_both_befor_after = FrenchDateTime.CheckBothBeforeAfter
+        self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
         self._range_prefix_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.RangePrefixRegex
         )

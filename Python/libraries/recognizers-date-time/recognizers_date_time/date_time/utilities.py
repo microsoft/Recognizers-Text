@@ -478,7 +478,7 @@ class DateTimeUtilityConfiguration(ABC):
 
     @property
     @abstractmethod
-    def check_both_befor_after(self) -> Pattern:
+    def check_both_before_after(self) -> Pattern:
         raise NotImplementedError
 
 
@@ -606,7 +606,7 @@ class AgoLaterUtil:
                                             extract_result.length + index)
                         is_match = True
 
-                if config.check_both_befor_after:
+                if config.check_both_before_after:
                     before_after_str = before_string + after_string
                     is_range_match = RegExpUtility.match_begin(config.range_prefix_regex, after_string[:index], True)
                     index_start = MatchingUtil.get_ago_later_index(before_after_str, regexp, False)
@@ -644,7 +644,7 @@ class AgoLaterUtil:
                     index = MatchingUtil.get_term_index(before_string, regexp[0]).index
                     if index > 0:
                         is_match = True
-                    elif config.check_both_befor_after and MatchingUtil.get_ago_later_index(after_string, regexp[0], True).matched:
+                    elif config.check_both_before_after and MatchingUtil.get_ago_later_index(after_string, regexp[0], True).matched:
                         is_match = is_match_after = True
 
                     if is_match:

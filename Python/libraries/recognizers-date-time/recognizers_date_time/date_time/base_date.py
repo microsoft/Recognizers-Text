@@ -56,7 +56,7 @@ class DateTimeUtilityConfiguration(ABC):
 
     @property
     @abstractmethod
-    def check_both_befor_after(self) -> Pattern:
+    def check_both_before_after(self) -> Pattern:
         raise NotImplementedError
 
     @property

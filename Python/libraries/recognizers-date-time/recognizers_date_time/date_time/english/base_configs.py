@@ -14,8 +14,8 @@ class EnglishDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
         return self._range_prefix_regex
 
     @property
-    def check_both_befor_after(self) -> Pattern:
-        return self._check_both_befor_after
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
 
     @property
     def ago_regex(self) -> Pattern:
@@ -78,7 +78,7 @@ class EnglishDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
             EnglishDateTime.WithinNextPrefixRegex)
         self._common_date_prefix_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.CommonDatePrefixRegex)
-        self._check_both_befor_after = EnglishDateTime.CheckBothBeforeAfter
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._range_prefix_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.RangePrefixRegex
         )
