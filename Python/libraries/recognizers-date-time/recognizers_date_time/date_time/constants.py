@@ -2,6 +2,7 @@ from ..resources import BaseDateTime
 
 
 class Constants:
+    WRITTEN_TIME = 'writtentime'
     SYS_DATETIME_DATE: str = 'date'
     SYS_DATETIME_TIME: str = 'time'
     SYS_DATETIME_DATEPERIOD: str = 'daterange'

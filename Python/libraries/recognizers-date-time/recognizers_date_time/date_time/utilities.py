@@ -1,6 +1,6 @@
 from enum import Enum, IntEnum, IntFlag
 from abc import ABC, abstractmethod
-from typing import List, Dict, Pattern, Union
+from typing import List, Dict, Pattern, Union, Match
 from datetime import datetime, timedelta
 import calendar
 

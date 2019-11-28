@@ -1065,6 +1065,18 @@ class DatePeriodParserConfiguration(ABC):
         raise NotImplementedError
 
 
+def match_with_next_prefix(self, sub_str, is_ago, is_less_than_or_with_in, is_more_than):
+    match = self.config.within_next_prefix_regex.match(sub_str)
+    if match and match.success:
+        is_next = match.Groups["next"].value
+
+        # cases like "within the next 5 days before today" is not acceptable
+        if not (is_next and is_ago):
+            is_less_than_or_with_in = True
+    is_less_than_or_with_in = is_less_than_or_with_in or self.config.less_than_regex.match(sub_str).success
+    is_more_than = self.config.more_than_regex.match(sub_str).success
+
+
 class BaseDatePeriodParser(DateTimeParser):
     @property
     def parser_type_name(self) -> str:
