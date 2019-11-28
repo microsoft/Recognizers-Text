@@ -201,3 +201,7 @@ class QueryProcessor:
     @staticmethod
     def float_or_int(source: Union[float, int]) -> Union[float, int]:
         return float(source) if source % 1 else int(source)
+
+
+def flatten(result):
+    return [item for sublist in result for item in sublist]

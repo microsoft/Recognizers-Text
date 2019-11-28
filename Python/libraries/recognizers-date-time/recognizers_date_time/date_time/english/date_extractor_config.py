@@ -14,6 +14,10 @@ from ...resources.base_date_time import BaseDateTime
 
 class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
     @property
+    def week_day_start(self) -> Pattern:
+        return self._week_day_start
+
+    @property
     def check_both_before_after(self) -> Pattern:
         return self._check_both_before_after
 
@@ -206,5 +210,8 @@ class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
         )
         self._week_day_and_day_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.WeekDayAndDayRegex
+        )
+        self._week_day_start = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.WeekDayStart
         )
         self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
