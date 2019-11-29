@@ -683,12 +683,12 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
             index = -1
 
-            if match.success:
+            if match and match.success:
                 index = match.index
 
             if index < 0:
                 match = RegExpUtility.match_end(self.config.future_regex, before_str, True)
-                if match.success:
+                if match and match.success:
                     index = match.index
 
             if index >= 0:
@@ -711,12 +711,12 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                 break
 
             match = RegExpUtility.match_begin(self.config.previous_prefix_regex, after_str, True)
-            if match:
+            if match and match.success:
                 tokens.append(Token(duration.start, duration.end + match.index + match.length))
                 break
 
             match = RegExpUtility.match_begin(self.config.future_regex, after_str, True)
-            if match:
+            if match and match.success:
                 tokens.append(Token(duration.start, duration.end + match.index + match.length))
                 break
 
