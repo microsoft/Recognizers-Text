@@ -490,6 +490,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Hindi.TemperatureParserConfiguration())
                     },
                }));
+
+            RegisterModel<DimensionModel>(
+                Culture.Hindi,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Hindi.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Hindi.DimensionParserConfiguration())
+                    },
+                }));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)

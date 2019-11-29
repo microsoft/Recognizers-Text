@@ -68,8 +68,8 @@ NumbersWithSuffix: !nestedRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
   references: [ BaseNumbers.NumberMultiplierRegex ]
 RoundNumberIntegerRegexWithLocks: !nestedRegex
-  def: (?<=\b)\d+\s+{RoundNumberIntegerRegex}
-  references: [ RoundNumberIntegerRegex ]
+  def: (?<=\b)\d+\s+({RoundNumberIntegerRegex}|{RoundNumberHinglishIntegerRegex})
+  references: [ RoundNumberIntegerRegex,RoundNumberHinglishIntegerRegex ]
 NumbersWithDozenSuffix: !simpleRegex
   def: \d+\s+दर्जन(नों)?
 AdditionTermsRegex: !simpleRegex
@@ -260,8 +260,8 @@ DoubleWithoutIntegralRegex: !paramsRegex
   def: (?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})
   params: [ placeholder ]
 DoubleWithRoundNumber: !nestedRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}
-  references: [ RoundNumberIntegerRegex ]
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+({RoundNumberIntegerRegex}|{RoundNumberHinglishIntegerRegex})
+  references: [ RoundNumberIntegerRegex,RoundNumberHinglishIntegerRegex ]
 DoubleAllFloatRegex: !nestedRegex
   def: ((?<=\b){AllFloatRegex})
   references: [ AllFloatRegex ]

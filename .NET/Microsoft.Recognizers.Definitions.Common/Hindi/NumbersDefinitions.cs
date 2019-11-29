@@ -49,7 +49,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[ऀ-ॿ]))(?={placeholder})";
       public const string IndianNumberingSystemRegex = @"(?<=\b)((?:\d+|\d{1,2},(?:\d{2},)*\d{3})(?:\.\d{2})?(?=\s|$))";
       public static readonly string NumbersWithSuffix = $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
-      public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s+{RoundNumberIntegerRegex}";
+      public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s+({RoundNumberIntegerRegex}|{RoundNumberHinglishIntegerRegex})";
       public const string NumbersWithDozenSuffix = @"\d+\s+दर्जन(नों)?";
       public const string AdditionTermsRegex = @"(?<=\s)(और|व|तथा|एवं|प्लस|plus|जमा)(?=\s)";
       public static readonly string AllIntRegexWithLocks = $@"(?<=\b){AllIntRegex}";
@@ -122,7 +122,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
       public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
       public static readonly Func<string, string> DoubleWithoutIntegralRegex = (placeholder) => $@"(?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
-      public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}";
+      public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+({RoundNumberIntegerRegex}|{RoundNumberHinglishIntegerRegex})";
       public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex})";
       public const string ConnectorRegex = @"(?<spacer>और)";
       public static readonly string NumberWithSuffixPercentage = $@"(?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(परसेंट|प्रतिशत)\b)";
