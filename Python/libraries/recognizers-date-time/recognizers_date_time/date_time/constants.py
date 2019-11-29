@@ -183,6 +183,9 @@ class Constants:
     COLUMBUS = 'columbus'
     MEMORIAL = 'memorial'
 
+    AGO_LABEL = "ago"
+    LATER_LABEL = "later"
+
 
 class TimeTypeConstants:
     DATE: str = 'date'

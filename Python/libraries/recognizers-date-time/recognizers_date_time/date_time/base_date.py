@@ -16,6 +16,11 @@ import calendar
 class DateTimeUtilityConfiguration(ABC):
     @property
     @abstractmethod
+    def date_unit_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def ago_regex(self) -> Pattern:
         raise NotImplementedError
 
@@ -47,6 +52,16 @@ class DateTimeUtilityConfiguration(ABC):
     @property
     @abstractmethod
     def am_pm_desc_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def check_both_before_after(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def range_prefix_regex(self) -> Pattern:
         raise NotImplementedError
 
 
@@ -657,7 +672,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         from recognizers_date_time import Token
         result = []
         match = RegExpUtility.match_end(self.config.in_connector_regex, first_str, True) if in_prefix else RegExpUtility.match_begin(self.config.in_connector_regex, first_str, True)
-
+        success = False if not match else match.success
         if match and match.success:
 
             start_token = match.index
@@ -672,7 +687,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
                 else:
                     result.append(Token(start_token, duration.end))
-        return result, match.success
+        return result, success
 
 
 class DateParserConfiguration(ABC):
