@@ -53,7 +53,7 @@ SeparaIntRegex: !nestedRegex
 #AllIntRegex is used to catch  all types of integer numbers including And Keyword in Hindi 
 AllIntRegex: !nestedRegex
   def: (?:((({AllNumericalIntRegex}|({TensNumberIntegerRegex}(\s+(और\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{AnIntRegex})(\s+({RoundNumberIntegerRegex}|{RoundNumberHinglishIntegerRegex}))+)\s+(और\s+)?)*({SeparaIntRegex}))
-  references: [ AllNumericalIntRegex,TensNumberIntegerRegex,AnIntRegex,RoundNumberIntegerRegex,SeparaIntRegex, ZeroToNineIntegerRegex,DevnagariCompoundNumber,RoundNumberHinglishIntegerRegex]
+  references: [ AllNumericalIntRegex,TensNumberIntegerRegex,AnIntRegex,RoundNumberIntegerRegex,SeparaIntRegex, ZeroToNineIntegerRegex,RoundNumberHinglishIntegerRegex]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
 PlaceHolderDefault: !simpleRegex
