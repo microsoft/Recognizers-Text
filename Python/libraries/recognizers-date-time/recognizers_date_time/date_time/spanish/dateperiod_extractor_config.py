@@ -160,7 +160,7 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     def __init__(self):
         self._year_period_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.YearPeriodRegex)
         self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            SpanishDateTime.PreviousPrefixRegex)
+            SpanishDateTime.PastRegex)
         self._simple_cases_regexes = [
             self._year_period_regex,
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.SimpleCasesRegex),
