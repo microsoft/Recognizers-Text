@@ -200,24 +200,6 @@ class BaseMergedExtractor(DateTimeExtractor):
 
         return MatchedIndex(False, -1)
 
-    def try_merge_modifier_token(self, extract_result: ExtractResult, token_regex: Pattern, text: str):
-        start = extract_result.start if extract_result.start else 0
-        before_str = text[0:start]
-
-        if self.has_token_index(before_str.rstrip(), token_regex).matched:
-            boolean, token_index = self.has_token_index(before_str.rstrip(), token_regex)
-
-            mod_length = len(before_str) - token_index
-
-            extract_result.length += mod_length
-            extract_result.start -= mod_length
-            start = extract_result.start if extract_result.start else 0
-            length = extract_result.length if extract_result.length else 0
-            extract_result.text = text[start: start + length]
-            return True
-
-        return False
-
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
         if reference is None:
             reference = datetime.now()
@@ -411,13 +393,13 @@ class BaseMergedExtractor(DateTimeExtractor):
 
                 match = RegExpUtility.match_begin(self.config.suffix_after_regex, after_str, True)
 
-                if match:
+                if match and match.success:
                     is_followed_by_other_entity = True
 
                     if match.length == len(after_str.strip()):
                         is_followed_by_other_entity = False
                     else:
-                        next_str = after_str.strip()[match.length].strip()
+                        next_str = after_str.strip()[match.length:].strip()
                         next_er = next((e for e in extract_results if e.start > extract_result.start), None)
 
                         if next_er is None or not next_str.startswith(next_er.text):

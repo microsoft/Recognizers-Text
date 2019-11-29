@@ -347,20 +347,20 @@ class BaseDateTimeExtractor(DateTimeExtractor):
 
         # handle "the end of the day"
         for extract_result in extract_results:
-            before = source[:extract_result.start]
-            before_match = regex.search(
-                self.config.specific_end_of_regex, before)
+            before = source[:extract_result.start].strip()
+            before_match = RegExpUtility.match_end(
+                self.config.specific_end_of_regex, before, True)
 
-            if before_match:
+            if before_match and before_match.success:
                 tokens.append(
-                    Token(before_match.start(), extract_result.start + extract_result.length))
+                    Token(before_match.index, extract_result.start + extract_result.length))
             else:
                 after = source[extract_result.start + extract_result.length:]
-                after_match = regex.search(
-                    self.config.specific_end_of_regex, after)
-                if after_match:
+                after_match = RegExpUtility.match_begin(
+                    self.config.specific_end_of_regex, after, True)
+                if after_match and after_match.success:
                     tokens.append(Token(extract_result.start, extract_result.start +
-                                        extract_result.length + after_match.end()))
+                                        extract_result.length + after_match.index + after_match.length))
 
         # handle "eod, end of day"
         eod = regex.finditer(self.config.unspecific_end_of_regex, source)
@@ -745,9 +745,8 @@ class BaseDateTimeParser(DateTimeParser):
         return result
 
     def parse_special_time_of_date(self, source: str, reference: datetime) -> DateTimeResolutionResult:
-        result = DateTimeResolutionResult()
         result = self.parse_unspecific_time_of_date(source, reference)
-        if result.success is True:
+        if result.success:
             return result
 
         extract_results = self.config.date_extractor.extract(source, reference)
@@ -757,15 +756,14 @@ class BaseDateTimeParser(DateTimeParser):
 
         extract_result = next(iter(extract_results), None)
         before_str = source[0:extract_result.start]
-
-        if regex.search(self.config.specific_end_of_regex, before_str) is None:
-            return result
-
-        parse_result = self.config.date_parser.parse(extract_result, reference)
-        result.timex = parse_result.timex_str + 'T23:59:59'
-        future_date = parse_result.value.future_value
-        past_date = parse_result.value.past_value
-        result = self.resolve_end_of_day(parse_result.timex_str, future_date, past_date)
+        after_str = source[:extract_result.start + extract_result.end]
+        if regex.search(self.config.specific_end_of_regex, before_str)or regex.search(
+                self.config.specific_end_of_regex, after_str):
+            parse_result = self.config.date_parser.parse(extract_result, reference)
+            result.timex = parse_result.timex_str + 'T23:59:59'
+            future_date = parse_result.value.future_value
+            past_date = parse_result.value.past_value
+            result = self.resolve_end_of_day(parse_result.timex_str, future_date, past_date)
 
         return result
 

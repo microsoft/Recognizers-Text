@@ -99,7 +99,7 @@ class RegExpUtility:
 
     @staticmethod
     def match_begin(regex: Pattern, text: str, trim: bool):
-        match = regex.match(text)
+        match = regex.search(text)
 
         if match is None:
             return None
@@ -113,7 +113,7 @@ class RegExpUtility:
 
     @staticmethod
     def match_end(regexp: Pattern, text: str, trim: bool):
-        match = regex.match(regexp, text)
+        match = regex.search(regexp, text)
 
         if match is None:
             return None
