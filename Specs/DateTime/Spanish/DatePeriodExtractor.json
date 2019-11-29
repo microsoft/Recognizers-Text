@@ -2531,7 +2531,7 @@
   },
   {
     "Input": "Ya no estaré los 3 días siguientes",
-    "NotSupported": "java",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2544,7 +2544,7 @@
   },
   {
     "Input": "Ya no estaré en los 3 meses siguientes",
-    "NotSupported": "java",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2624,7 +2624,7 @@
   },
   {
     "Input": "Ya no estuve en las 3 semanas anteriores",
-    "NotSupported": "java",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -3823,7 +3823,7 @@
   },
   {
     "Input": "Ocurrirá 2 días después",
-    "NotSupported": "java",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -4434,7 +4434,7 @@
   },
   {
     "Input": "Ya terminé todos los trabajos hace durante más de 2 semanas antes de hoy",
-    "NotSupported": "java",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -4473,7 +4473,7 @@
   },
   {
     "Input": "Volveré dentro de menos de 2 semanas a partir de hoy",
-    "NotSupported": "java",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -4486,7 +4486,7 @@
   },
   {
     "Input": "Esta tarea debió ser terminada durante más de 2 días antes de ayer",
-    "NotSupported": "java",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -4499,7 +4499,7 @@
   },
   {
     "Input": "Esta tarea debe ser terminada dentro de menos de 3 días a partir de mañana",
-    "NotSupported": "java",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {

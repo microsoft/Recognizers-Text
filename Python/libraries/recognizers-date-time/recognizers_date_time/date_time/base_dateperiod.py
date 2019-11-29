@@ -566,25 +566,20 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
             idx += 1
         return tokens
 
-    def merge_multiple_extractions(self, source: str, erd: [ExtractResult]):
+    def merge_multiple_extractions(self, source: str, extract_result: [ExtractResult]) -> List[Token]:
         tokens = []
 
         metadata = Metadata()
         metadata.possibly_included_period_end = True
 
-        if len(erd) < 1:
-            return tokens
-        er = []
-        for x in erd:
-            if x.data is not None:
-                er.append(x)
-        idx = 0
-        if len(er) < 1:
+        if len(extract_result) < 1:
             return tokens
 
-        while idx < len(er) - 1:
-            middle_begin = er[idx].start + (er[idx].length or 0)
-            middle_end = er[idx + 1].start or 0
+        idx = 0
+
+        while idx < len(extract_result) - 1:
+            middle_begin = extract_result[idx].start + (extract_result[idx].length or 0)
+            middle_end = extract_result[idx + 1].start or 0
 
             if middle_begin >= middle_end:
                 idx += 1
@@ -594,9 +589,9 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
             match = self.config.till_regex.search(middle_str)
 
             if match and match.group() and match.start() == 0 and match.end() - match.start() == len(middle_str):
-                period_begin = er[idx].start
-                period_end = (er[idx + 1].start or 0) + \
-                             (er[idx + 1].length or 0)
+                period_begin = extract_result[idx].start
+                period_end = (extract_result[idx + 1].start or 0) + \
+                             (extract_result[idx + 1].length or 0)
 
                 # Handle "from/between" together with till words (till/until/through...)
                 before_str = source[0:period_begin].strip().lower()
@@ -613,9 +608,9 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                 continue
 
             if self.config.has_connector_token(middle_str):
-                period_begin = er[idx].start or 0
-                period_end = (er[idx + 1].start or 0) + \
-                             (er[idx + 1].length or 0)
+                period_begin = extract_result[idx].start or 0
+                period_end = (extract_result[idx + 1].start or 0) + \
+                             (extract_result[idx + 1].length or 0)
 
                 # handle "between...and..." case
                 before_str = source[0:period_begin].strip().lower()
@@ -630,7 +625,28 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                     idx += 2
                     continue
 
+                if self.config.check_both_before_after:
+
+                    after_str = source[period_end: len(source) - period_end]
+
+                    between_token_index = self.config.get_between_token_index(
+
+                        after_str)
+
+                    if between_token_index.matched:
+                        period_end = between_token_index.index
+
+                        tokens.append(Token(period_begin, period_end, metadata))
+
+                        # Merge two tokens here, increase the index by two
+
+                        idx += 2
+
+                        continue
+
             idx += 1
+
+        return tokens
 
     def match_duration(self, source: str, reference: datetime) -> List[ExtractResult]:
         tokens = []
@@ -651,14 +667,14 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                 break
 
             in_prefix = True
-            match_token = self.match_within_next_prefix_regex(source, duration, in_prefix)
+            match_token = self.match_within_next_affix_regex(source, duration, in_prefix)
             if match_token.start >= 0:
                 tokens.append(match_token)
                 break
 
             if self.config.check_both_before_after:
                 in_prefix = False
-                match_token = self.match_within_next_prefix_regex(source, duration, in_prefix)
+                match_token = self.match_within_next_affix_regex(source, duration, in_prefix)
                 if match_token.start >= 0:
                     tokens.append(match_token)
                     continue
@@ -677,7 +693,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
             if index >= 0:
                 prefix = before_str[0: index].strip()
-                duration_text = source[duration.start:duration.length]
+                duration_text = source[duration.start:duration.start + duration.length]
                 numbers_in_prefix = self.config.cardinal_extractor.extract(prefix)
                 numbers_in_duration = self.config.cardinal_extractor.extract(duration_text)
 
@@ -711,15 +727,13 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
         return tokens
 
-    def match_within_next_prefix_regex(self, source: str, duration: Token, in_prefix: bool) -> Token:
+    def match_within_next_affix_regex(self, source: str, duration: Token, in_prefix: bool) -> Token:
         before_str = source[0:duration.start]
         after_str = source[duration.start + duration.length:]
         start_token = -1
         end_token = -1
-        if in_prefix:
-            match = RegExpUtility.match_end(self.config.within_next_prefix_regex, before_str, True)
-        else:
-            match = RegExpUtility.match_begin(self.config.within_next_prefix_regex, after_str, True)
+        match = RegExpUtility.match_end(self.config.within_next_prefix_regex, before_str, True) if in_prefix else \
+            RegExpUtility.match_begin(self.config.within_next_prefix_regex, after_str, True)
 
         if match and match.success:
             duration_str = source[duration.start: duration.start + duration.length]
