@@ -195,7 +195,7 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.RelativeDecadeRegex),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.ReferenceDatePeriodRegex)
         ]
-        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
+        self._check_both_before_after = False
         self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(
             BaseDateTime.IllegalYearRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(
