@@ -415,6 +415,21 @@ class DateUtils:
 class DateTimeUtilityConfiguration(ABC):
     @property
     @abstractmethod
+    def since_year_suffix_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def date_unit_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def range_prefix_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def ago_regex(self) -> Pattern:
         raise NotImplementedError
 
@@ -463,6 +478,11 @@ class DateTimeUtilityConfiguration(ABC):
     def common_date_prefix_regex(self) -> Pattern:
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def check_both_before_after(self) -> Pattern:
+        raise NotImplementedError
+
 
 class MatchedIndex:
     def __init__(self, matched: bool, index: int):
@@ -473,7 +493,7 @@ class MatchedIndex:
 class MatchingUtil:
 
     @staticmethod
-    def pre_process_text_remove_superfluous_words(text: str, matcher: Pattern) -> str:
+    def pre_process_text_remove_superfluous_words(text: str, matcher: Pattern):
         superfluous_word_matches = MatchingUtil.remove_sub_matches(matcher.find(text))
 
         bias = 0[0]
@@ -518,23 +538,23 @@ class MatchingUtil:
         return match_results
 
     @staticmethod
-    def get_ago_later_index(source: str, regexp: Pattern) -> MatchedIndex:
+    def get_ago_later_index(source: str, regexp: Pattern, in_suffix) -> MatchedIndex:
         result = MatchedIndex(matched=False, index=-1)
-        referenced_matches = regex.match(regexp, source.strip().lower())
+        trimmed_source = source.strip().lower()
+        match = RegExpUtility.match_begin(regexp, trimmed_source, True) if in_suffix else RegExpUtility.match_end(regexp, trimmed_source, True)
 
-        if referenced_matches and referenced_matches.start() == 0:
-            result.index = source.lower().find(referenced_matches.group()) + \
-                len(referenced_matches.group())
+        if match and match.success:
+            result.index = source.lower().find(match.group()) + (match.length if in_suffix else 0)
             result.matched = True
 
         return result
 
     @staticmethod
-    def contains_ago_later_index(source: str, regexp: Pattern) -> bool:
-        return MatchingUtil.get_ago_later_index(source, regexp).matched
+    def contains_ago_later_index(source: str, regexp: Pattern, in_suffix) -> bool:
+        return MatchingUtil.get_ago_later_index(source, regexp, in_suffix).matched
 
     @staticmethod
-    def get_in_index(source: str, regexp: Pattern) -> MatchedIndex:
+    def get_term_index(source: str, regexp: Pattern) -> MatchedIndex:
         result = MatchedIndex(matched=False, index=-1)
         referenced_match = regex.search(
             regexp, source.strip().lower().split(' ').pop())
@@ -546,8 +566,8 @@ class MatchingUtil:
         return result
 
     @staticmethod
-    def contains_in_index(source: str, regexp: Pattern) -> bool:
-        return MatchingUtil.get_in_index(source, regexp).matched
+    def contains_term_index(source: str, regexp: Pattern) -> bool:
+        return MatchingUtil.get_term_index(source, regexp).matched
 
 
 class AgoLaterMode(Enum):
@@ -560,63 +580,86 @@ class AgoLaterUtil:
     def extractor_duration_with_before_and_after(source: str, extract_result: ExtractResult,
                                                  ret: List[Token], config: DateTimeUtilityConfiguration) -> List[Token]:
         pos = extract_result.start + extract_result.length
-
+        index = 0
         if pos <= len(source):
             after_string = source[pos:]
             before_string = source[0: extract_result.start]
             is_time_duration = config.time_unit_regex.search(extract_result.text)
+            ago_later_regexes = [config.ago_regex, config.later_regex]
+            is_match = False
 
-            if MatchingUtil.get_ago_later_index(after_string, config.ago_regex).matched:
-                # We don't support cases like "5 minutes from today" for now
-                # Cases like "5 minutes ago" or "5 minutes from now" are supported
-                # Cases like "2 days before today" or "2 weeks from today" are also supported
-                is_day_match_in_after_string = RegExpUtility.get_group(
-                    config.ago_regex.match(after_string), Constants.DAY_GROUP_NAME)
+            for regexp in ago_later_regexes:
+                token_after = token_before = None
+                is_day_match = False
+                # Check after_string
+                if MatchingUtil.get_ago_later_index(after_string, regexp, True).matched:
+                    # We don't support cases like "5 minutes from today" for now
+                    # Cases like "5 minutes ago" or "5 minutes from now" are supported
+                    # Cases like "2 days before today" or "2 weeks from today" are also supported
 
-                value = MatchingUtil.get_ago_later_index(
-                    after_string, config.ago_regex)
+                    is_day_match = RegExpUtility.get_group(
+                        regexp.match(after_string), Constants.DAY_GROUP_NAME)
 
-                if not(is_time_duration and is_day_match_in_after_string):
-                    ret.append(Token(extract_result.start, extract_result.start +
-                                     extract_result.length + value.index))
+                    index = MatchingUtil.get_ago_later_index(
+                        after_string, regexp, True).index
 
-            elif MatchingUtil.get_ago_later_index(after_string, config.later_regex).matched:
+                    if not(is_time_duration and is_day_match):
+                        token_after = Token(extract_result.start, extract_result.start +
+                                            extract_result.length + index)
+                        is_match = True
 
-                is_day_match_in_after_string = RegExpUtility.get_group(
-                    config.later_regex.search(after_string), Constants.DAY_GROUP_NAME)
+                if config.check_both_before_after:
+                    before_after_str = before_string + after_string
+                    is_range_match = RegExpUtility.match_begin(config.range_prefix_regex, after_string[:index], True)
+                    index_start = MatchingUtil.get_ago_later_index(before_after_str, regexp, False)
+                    if not is_range_match and index_start.matched:
+                        is_day_match = regexp.match(before_after_str)
 
-                value = MatchingUtil.get_ago_later_index(
-                    after_string, config.later_regex)
+                        if is_day_match and not (is_time_duration and is_day_match):
+                            ret.append(Token(index_start.index, (extract_result.start + extract_result.length or 0) + index))
+                            is_match = True
+                    index = MatchingUtil.get_ago_later_index(before_string, regexp, False).index
+                    if MatchingUtil.get_ago_later_index(before_string, regexp, False).matched:
+                        is_day_match = RegExpUtility.get_group(regexp.match(before_string), 'day')
 
-                if not(is_time_duration and is_day_match_in_after_string):
-                    ret.append(Token(extract_result.start, extract_result.start +
-                                     extract_result.length + value.index))
+                        if not (is_day_match and is_time_duration):
+                            token_before = Token(index, extract_result.start + extract_result.length or 0)
+                            is_match = True
 
-            elif MatchingUtil.get_in_index(before_string, config.in_connector_regex).matched:
-                # For range unit like "week, month, year", it should output dateRange or datetimeRange
-                if not (config.range_unit_regex.search(extract_result.text)):
-                    value = MatchingUtil.get_in_index(
-                        before_string, config.in_connector_regex)
+                if token_after is not None and token_before is not None and token_before.start + token_before.length > token_after.start:
+                    ret.append(Token(token_before.start, token_after.start + token_after.length - token_before.start))
+                elif token_after is not None:
+                    ret.append(token_after)
+                elif token_before is not None:
+                    ret.append(token_before)
+                if is_match:
+                    break
 
-                    if extract_result.start is not None\
-                            and extract_result.length is not None\
-                            and extract_result.start >= value.index:
-                        ret.append(Token(extract_result.start - value.index,
-                                         extract_result.start + extract_result.length))
+            if not is_match:
+                in_within_regex_tuples = [
+                    (config.in_connector_regex, [config.range_unit_regex]),
+                    (config.within_next_prefix_regex, [config.date_unit_regex, config.time_unit_regex])
+                ]
 
-            elif MatchingUtil.get_in_index(before_string, config.within_next_prefix_regex).matched:
+                for regexp in in_within_regex_tuples:
+                    is_match_after = False
+                    index = MatchingUtil.get_term_index(before_string, regexp[0]).index
+                    if index > 0:
+                        is_match = True
+                    elif config.check_both_before_after and MatchingUtil.get_ago_later_index(after_string, regexp[0], True).matched:
+                        is_match = is_match_after = True
 
-                # For range unit like "week, month, year, day, second, minute, hour",
-                # it should output dateRange or datetimeRange
-                if not (config.range_unit_regex.search(extract_result.text)) and not config.time_unit_regex.search(
-                        extract_result.text):
-                    value = MatchingUtil.get_in_index(
-                        before_string, config.within_next_prefix_regex)
-                    if extract_result.start is not None and extract_result.length is not None and\
-                            extract_result.start >= value.index:
-                        ret.append(
-                            Token(extract_result.start - value.index, extract_result.start + extract_result.length))
+                    if is_match:
+                        is_unit_match = False
+                        for unit_regex in regexp[1]:
+                            is_unit_match = is_unit_match or unit_regex.match(extract_result.text)
 
+                        if not is_unit_match:
+                            if extract_result.start is not None and extract_result.length is not None and extract_result.start >= index or is_match_after:
+                                start = extract_result.start - (index if not is_match_after else 0)
+                                end = extract_result.start + extract_result.length + (index if is_match_after else 0)
+                                ret.append(Token(start, end))
+                        break
         return ret
 
     @staticmethod
@@ -667,11 +710,20 @@ class AgoLaterUtil:
         return result
 
     @staticmethod
+    def __matched_string(regexp, string):
+        is_match = True
+        match = regexp.match(string)
+        day_str = match.group('day')
+
+        return is_match, match, day_str
+
+    @staticmethod
     def get_ago_later_result(
             duration_parse_result: DateTimeParseResult, num: int,
             unit_map: Dict[str, str], src_unit: str, after_str: str,
             before_str: str, reference: datetime,
             utility_configuration: DateTimeUtilityConfiguration, mode: AgoLaterMode):
+
         result = DateTimeResolutionResult()
         unit_str = unit_map.get(src_unit)
 
@@ -679,10 +731,10 @@ class AgoLaterUtil:
             return result
 
         contains_ago = MatchingUtil.contains_ago_later_index(
-            after_str, utility_configuration.ago_regex)
+            after_str, utility_configuration.ago_regex, True)
         contains_later_or_in = MatchingUtil.contains_ago_later_index(
-            after_str, utility_configuration.later_regex) or\
-            MatchingUtil.contains_in_index(before_str, utility_configuration.in_connector_regex)
+            after_str, utility_configuration.later_regex, False) or\
+            MatchingUtil.contains_term_index(before_str, utility_configuration.in_connector_regex)
 
         if contains_ago:
             result = AgoLaterUtil.get_date_result(

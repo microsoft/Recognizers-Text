@@ -107,7 +107,7 @@ class Bool:
 
     @classmethod
     def from_yaml(cls, constructor, node):
-        return bool(node.value)
+        return True if node.value == 'true' else False
 
 
 def parse(content: str) -> dict:
