@@ -154,7 +154,7 @@ class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
         return self._month_suffix_regex
 
     def __init__(self):
-        self._check_both_before_after = False
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._date_regex_list = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor1),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor3),
@@ -244,7 +244,7 @@ class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
         self._week_day_start = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.WeekDayStart
         )
-        self._check_both_before_after = False
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
 
         self._month_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.MonthRegex

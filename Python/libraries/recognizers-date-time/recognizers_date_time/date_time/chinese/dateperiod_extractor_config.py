@@ -232,7 +232,6 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._day_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.DayRegex
         )
-        self._check_both_before_after = False
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.SimpleCasesRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.OneWordPeriodRegex),

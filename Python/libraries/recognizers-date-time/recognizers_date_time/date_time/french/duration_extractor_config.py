@@ -95,7 +95,7 @@ class FrenchDurationExtractorConfiguration(DurationExtractorConfiguration):
 
     def __init__(self):
         super().__init__()
-        self._check_both_before_after = False
+        self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
         self._inexact_number_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.InexactNumberRegex)
         self._conjunction_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.ConjunctionRegex)
         self._all_regex: Pattern = RegExpUtility.get_safe_reg_exp(

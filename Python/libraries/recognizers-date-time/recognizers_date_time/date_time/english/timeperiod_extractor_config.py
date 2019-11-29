@@ -95,7 +95,7 @@ class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
     def __init__(self):
         super().__init__()
-        self._check_both_before_after = False
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._simple_cases_regex: List[Pattern] = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumFromTo),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumBetweenAnd),

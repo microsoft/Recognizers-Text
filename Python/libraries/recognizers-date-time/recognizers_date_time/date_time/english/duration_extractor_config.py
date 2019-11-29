@@ -91,7 +91,7 @@ class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
 
     def __init__(self):
         super().__init__()
-        self._check_both_before_after = False
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._all_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.AllRegex)
         self._half_regex: Pattern = RegExpUtility.get_safe_reg_exp(

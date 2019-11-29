@@ -50,7 +50,7 @@ class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
     def __init__(self):
         super().__init__()
-        self._check_both_before_after = False
+        self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
         self._single_time_extractor = BaseTimeExtractor(
             FrenchTimeExtractorConfiguration())
         self._integer_extractor = FrenchIntegerExtractor()

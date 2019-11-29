@@ -158,7 +158,7 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         self._week_day_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.WeekDayRegex
         )
-        self._check_both_before_after = False
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._cardinal_extractor = EnglishCardinalExtractor()
         self._single_date_extractor = BaseDateExtractor(
             EnglishDateExtractorConfiguration())

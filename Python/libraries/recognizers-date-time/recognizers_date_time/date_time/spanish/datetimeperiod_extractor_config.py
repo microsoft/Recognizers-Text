@@ -161,7 +161,7 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
 
     def __init__(self):
         super().__init__()
-        self._check_both_before_after = False
+        self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.PureNumFromTo),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.PureNumBetweenAnd)

@@ -164,7 +164,7 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     def __init__(self):
         self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.PreviousPrefixRegex)
-        self._check_both_before_after = False
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.SimpleCasesRegex),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.BetweenRegex),
@@ -195,7 +195,7 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.RelativeDecadeRegex),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.ReferenceDatePeriodRegex)
         ]
-        self._check_both_before_after = False
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(
             BaseDateTime.IllegalYearRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(

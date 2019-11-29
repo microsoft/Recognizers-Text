@@ -205,7 +205,6 @@ class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         self._hour_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.HourRegex
         )
-        self._check_both_before_after = False
         self._cardinal_extractor = ChineseCardinalExtractor()
         self._single_date_extractor = ChineseDateExtractor()
         self._single_time_extractor = ChineseTimeExtractor()
@@ -223,6 +222,7 @@ class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.DateTimePeriodUnitRegex)
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._check_both_before_after = None
         self._suffix_regex = None
         self._after_regex = None
         self._before_regex = None

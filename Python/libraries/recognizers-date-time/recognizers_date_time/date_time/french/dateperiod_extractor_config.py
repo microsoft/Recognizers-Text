@@ -227,7 +227,7 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._time_unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TimeUnitRegex)
         self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.PastSuffixRegex)
-        self._check_both_before_after = False
+        self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.SimpleCasesRegex),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.BetweenRegex),
