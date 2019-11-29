@@ -10,6 +10,10 @@ from ..base_duration import DurationExtractorConfiguration
 class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
 
     @property
+    def check_both_before_after(self):
+        return self._check_both_before_after
+
+    @property
     def all_regex(self) -> Pattern:
         return self._all_regex
 
@@ -110,3 +114,4 @@ class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
         self._less_than_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.LessThanRegex
         )
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
