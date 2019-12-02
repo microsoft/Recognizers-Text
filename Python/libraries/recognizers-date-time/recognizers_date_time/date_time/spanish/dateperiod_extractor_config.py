@@ -34,6 +34,10 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._check_both_before_after
 
     @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
+    @property
     def time_unit_regex(self) -> Pattern:
         return self._time_unit_regex
 

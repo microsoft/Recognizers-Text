@@ -139,16 +139,17 @@ class BaseDurationExtractor(DateTimeExtractor):
 
             match = RegExpUtility.match_end(self.config.more_than_regex, before_string, True)
 
-            if self.config.check_both_before_after and (match and not match.success):
+            # The second condition is necessary so for "1 week" in "more than 4 days and less than
+            # 1 week", it will not be tagged incorrectly as "more than"
+            if match and match.success:
                 extract_result.data = TimeTypeConstants.MORE_THAN_MOD
                 is_inequality_prefix_matched = True
 
             if not is_inequality_prefix_matched:
 
                 match = RegExpUtility.match_end(self.config.less_than_regex, before_string, True)
-                # The second condition is necessary so for "1 week" in "more than 4 days and less than 1 week",
-                # it will not be tagged incorrectly as "more than"
-                if self.config.check_both_before_after and match and match.success:
+
+                if match and match.success:
                     extract_result.data = TimeTypeConstants.LESS_THAN_MOD
                     is_inequality_prefix_matched = True
 
