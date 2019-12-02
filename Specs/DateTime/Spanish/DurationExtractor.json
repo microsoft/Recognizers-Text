@@ -221,7 +221,7 @@
   },
   {
     "Input": "Volveré dentro de menos de 2 semanas",
-    "NotSupported": "java",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
