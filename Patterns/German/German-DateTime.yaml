@@ -487,8 +487,8 @@ PrepositionSuffixRegex: !simpleRegex
 FlexibleDayRegex: !simpleRegex
   def: (?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)
 ForTheRegex: !nestedRegex
-  def: \b(für den {FlexibleDayRegex})
-  references: [FlexibleDayRegex]
+  def: \b(für\s+den\s+{FlexibleDayRegex}(?<end>\s*(,|\.(?!(\d|\s?{WrittenMonthRegex}))|!|\?|$)))
+  references: [FlexibleDayRegex, WrittenMonthRegex]
 WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+((de(r|n))\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]

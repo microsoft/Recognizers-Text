@@ -278,5 +278,41 @@
         "Length": 6
       }
     ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für den 28.10.",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "morgen",
+        "Type": "date",
+        "Start": 34,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für den 28.Oktober",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "morgen",
+        "Type": "date",
+        "Start": 34,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für den 28. Oktober",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "morgen",
+        "Type": "date",
+        "Start": 34,
+        "Length": 6
+      }
+    ]
   }
 ]
