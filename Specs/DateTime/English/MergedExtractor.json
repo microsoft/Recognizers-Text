@@ -1111,7 +1111,7 @@
   },
   {
     "Input": "I have already finished all my work more than 2 weeks before today",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "more than 2 weeks before today",
@@ -1135,7 +1135,7 @@
   },
   {
     "Input": "I will come back less than 2 weeks from today",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "less than 2 weeks from today",
@@ -1147,7 +1147,7 @@
   },
   {
     "Input": "This task should have been done more than 2 days before yesterday",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "more than 2 days before yesterday",
@@ -1159,7 +1159,7 @@
   },
   {
     "Input": "This task will be done less than 3 days after tomorrow",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "less than 3 days after tomorrow",

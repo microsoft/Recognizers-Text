@@ -12008,7 +12008,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "NotSupported": "javascript, pytho",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "from 2017-q1 to 2018-q1",
@@ -12033,7 +12033,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "from 2017 q1 to 2018 q1",

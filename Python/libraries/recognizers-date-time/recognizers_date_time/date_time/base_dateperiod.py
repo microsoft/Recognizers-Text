@@ -1110,7 +1110,7 @@ class BaseDatePeriodParser(DateTimeParser):
             if hasattr(relative_match_for_start_date, 'success') and \
                     hasattr(relative_match_for_end_date, 'success'):
                 is_date_relative = relative_match_for_start_date.success or \
-                                   relative_match_for_end_date.success
+                    relative_match_for_end_date.success
         else:
             is_date_relative = None
         if not is_end_date_pure_year and not is_date_relative:
@@ -1126,7 +1126,6 @@ class BaseDatePeriodParser(DateTimeParser):
         result: DateContext = DateContext()
         result.year = context_year
         return result
-
 
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
         if not reference:
