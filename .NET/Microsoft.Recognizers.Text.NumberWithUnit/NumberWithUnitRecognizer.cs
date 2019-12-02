@@ -500,6 +500,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Hindi.DimensionParserConfiguration())
                     },
                 }));
+
+            RegisterModel<CurrencyModel>(
+                Culture.Hindi,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Hindi.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Hindi.CurrencyParserConfiguration())
+                    },
+                }));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)

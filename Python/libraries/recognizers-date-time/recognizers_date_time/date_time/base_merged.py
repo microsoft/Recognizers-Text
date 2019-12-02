@@ -195,24 +195,6 @@ class BaseMergedExtractor(DateTimeExtractor):
 
         return MatchedIndex(False, -1)
 
-    def try_merge_modifier_token(self, extract_result: ExtractResult, token_regex: Pattern, text: str):
-        start = extract_result.start if extract_result.start else 0
-        before_str = text[0:start]
-
-        if self.has_token_index(before_str.rstrip(), token_regex).matched:
-            boolean, token_index = self.has_token_index(before_str.rstrip(), token_regex)
-
-            mod_length = len(before_str) - token_index
-
-            extract_result.length += mod_length
-            extract_result.start -= mod_length
-            start = extract_result.start if extract_result.start else 0
-            length = extract_result.length if extract_result.length else 0
-            extract_result.text = text[start: start + length]
-            return True
-
-        return False
-
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
         if reference is None:
             reference = datetime.now()

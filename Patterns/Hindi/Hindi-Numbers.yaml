@@ -9,7 +9,7 @@ RoundNumberIntegerRegex: !simpleRegex
   def: (सौ|हजार|लाख|करोड़|अरब|खरब)
 #ZeroToNineIntegerRegex is used to catch all numbers  between 0-9 in hindi/devanagari
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (सात|आठ|चार|पांच|पाँच|शून्य|नौ|दो|छह|एक(सठ)?|तीन|०|१|२|३|४|५|६|६|७|८|९)
+  def: (सात|आठ|चार|पांच|पाँच|शून्य|नौ|दो|छह|एक(सठ)?|तीन|०|१|२|३|४|५|६|७|८|९)
 TwoToNineIntegerRegex: !simpleRegex
   def: (तीन|सात|आठ|चार|पाँच|पांच|नौ|दो|छह)
 NegativeNumberTermsRegex: !simpleRegex
@@ -48,12 +48,12 @@ AllNumericalIntRegex: !nestedRegex
   references: [ZeroToNineIntegerRegex,TenToNineteenIntegerRegex,TwentyToTwentyNineIntegerRegex,ThirtyToThirtyNineIntegerRegex,FourtyToFourtyNineIntegerRegex,FiftyToFiftyNineIntegerRegex,SeventyToSeventyNineIntegerRegex,EightyToEightyNineIntegerRegex,NinetyToNinetyNineIntegerRegex ]
 #SeparaIntRegex is used to catch nummbers between 0-99 with RoundNumbers
 SeparaIntRegex: !nestedRegex
-  def: (?:((({AllNumericalIntRegex}|({TensNumberIntegerRegex}(\s+(और\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*)|(({AnIntRegex}?(\s+({RoundNumberIntegerRegex}))+))|({RoundNumberIntegerRegex})|({AllNumericalIntRegex})))
-  references: [ AnIntRegex, AllNumericalIntRegex,TensNumberIntegerRegex, RoundNumberIntegerRegex, ZeroToNineIntegerRegex ]
+  def: (?:((({AllNumericalIntRegex}|({TensNumberIntegerRegex}(\s+(और\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex})(\s+({RoundNumberIntegerRegex}|{RoundNumberHinglishIntegerRegex}))*)|(({AnIntRegex}?(\s+({RoundNumberIntegerRegex}))+))|({RoundNumberIntegerRegex})|({AllNumericalIntRegex})))
+  references: [ AnIntRegex, AllNumericalIntRegex,TensNumberIntegerRegex, RoundNumberIntegerRegex, ZeroToNineIntegerRegex,RoundNumberHinglishIntegerRegex ]
 #AllIntRegex is used to catch  all types of integer numbers including And Keyword in Hindi 
 AllIntRegex: !nestedRegex
-  def: (?:((({AllNumericalIntRegex}|({TensNumberIntegerRegex}(\s+(और\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(और\s+)?)*({SeparaIntRegex}))
-  references: [ AllNumericalIntRegex,TensNumberIntegerRegex,AnIntRegex,RoundNumberIntegerRegex,SeparaIntRegex, ZeroToNineIntegerRegex]
+  def: (?:((({AllNumericalIntRegex}|({TensNumberIntegerRegex}(\s+(और\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{AnIntRegex})(\s+({RoundNumberIntegerRegex}|{RoundNumberHinglishIntegerRegex}))+)\s+(और\s+)?)*({SeparaIntRegex}))
+  references: [ AllNumericalIntRegex,TensNumberIntegerRegex,AnIntRegex,RoundNumberIntegerRegex,SeparaIntRegex, ZeroToNineIntegerRegex,RoundNumberHinglishIntegerRegex]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
 PlaceHolderDefault: !simpleRegex
@@ -124,7 +124,7 @@ DecimalUnitsWithRoundNumberRegex: !nestedRegex
 RoundNumberOrdinalRegex: !simpleRegex
   def: (?:(सौ|हजार|लाख|करोड़|अरब|खरब)(वां|वीं|वें|वाँ))
 OneToNineOrdinalRegex: !simpleRegex
-  def: (?:पहला|पहली|प्रथम|दूसरा|दूसरे|तिहाई|चौथाई|((पांच|पाँच|छठ|सात|आठ|नौ)(वां|वीं|वें|वाँ|वा)))
+  def: (?:पहला|पहली|प्रथम|दूसरा|दूसरी|दूसरे|तिहाई|चौथाई|((पांच|पाँच|छठ|सात|आठ|नौ)(वां|वीं|वें|वाँ|वा)))
 TenToNineteenOrdinalRegex: !simpleRegex
   def: (?:(दस|ग्यारह|बारह|तेरह|चौदह|पंद्रह|सोलह|सत्रह|अठारह|उन्नीस)(वां|वीं|वें|वाँ))
 TwentyToTwentyNineOrdinalRegex: !simpleRegex
