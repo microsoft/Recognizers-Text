@@ -10,7 +10,7 @@ from ..base_duration import DurationExtractorConfiguration
 class FrenchDurationExtractorConfiguration(DurationExtractorConfiguration):
 
     @property
-    def check_both_before_after(self) -> bool:
+    def check_both_before_after(self):
         return self._check_both_before_after
 
     @property
@@ -136,4 +136,5 @@ class FrenchDurationExtractorConfiguration(DurationExtractorConfiguration):
         self._less_than_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.LessThanRegex
         )
+        self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
         self._special_number_unit_regex = None

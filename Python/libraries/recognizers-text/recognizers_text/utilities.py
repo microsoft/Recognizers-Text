@@ -102,7 +102,7 @@ class RegExpUtility:
 
     @staticmethod
     def match_begin(regex: Pattern, text: str, trim: bool):
-        match = regex.match(text)
+        match = regex.search(text)
 
         if match is None:
             return None
