@@ -266,5 +266,17 @@
         "Length": 9
       }
     ]
+  },
+  {
+    "Input": "sende eine geburtstagsabfrage für morgen",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "morgen",
+        "Type": "date",
+        "Start": 34,
+        "Length": 6
+      }
+    ]
   }
 ]

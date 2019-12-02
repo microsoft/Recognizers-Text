@@ -526,5 +526,29 @@
         "Length": 8
       }
     ]
+  },
+  {
+    "Input": "sende eine geburtstagsabfrage für morgen",
+    "Context": {
+      "ReferenceDateTime": "2019-12-02T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "morgen",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-12-03",
+          "FutureResolution": {
+            "date": "2019-12-03"
+          },
+          "PastResolution": {
+            "date": "2019-12-03"
+          }
+        },
+        "Start": 34,
+        "Length": 6
+      }
+    ]
   }
 ]
