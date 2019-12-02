@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const bool CompoundNumberLanguage = true;
       public const bool MultiDecimalSeparatorCulture = false;
       public const string RoundNumberIntegerRegex = @"(सौ|हजार|लाख|करोड़|अरब|खरब)";
-      public const string ZeroToNineIntegerRegex = @"(सात|आठ|चार|पांच|पाँच|शून्य|नौ|दो|छह|एक(सठ)?|तीन|०|१|२|३|४|५|६|६|७|८|९)";
+      public const string ZeroToNineIntegerRegex = @"(सात|आठ|चार|पांच|पाँच|शून्य|नौ|दो|छह|एक(सठ)?|तीन|०|१|२|३|४|५|६|७|८|९)";
       public const string TwoToNineIntegerRegex = @"(तीन|सात|आठ|चार|पाँच|पांच|नौ|दो|छह)";
       public const string NegativeNumberTermsRegex = @"(?<negTerm>(माइनस|निगेटिव)\s+)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
@@ -42,8 +42,8 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string TensNumberIntegerRegex = @"(सत्तर|बीस|तीस|अस्सी|नब्बे|चालीस|पचास|साठ)";
       public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
       public static readonly string AllNumericalIntRegex = $@"({ZeroToNineIntegerRegex}|{TenToNineteenIntegerRegex}|{TwentyToTwentyNineIntegerRegex}|{ThirtyToThirtyNineIntegerRegex}|{FourtyToFourtyNineIntegerRegex}|{FiftyToFiftyNineIntegerRegex}|{SeventyToSeventyNineIntegerRegex}|{EightyToEightyNineIntegerRegex}|{NinetyToNinetyNineIntegerRegex})";
-      public static readonly string SeparaIntRegex = $@"(?:((({AllNumericalIntRegex}|({TensNumberIntegerRegex}(\s+(और\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*)|(({AnIntRegex}?(\s+({RoundNumberIntegerRegex}))+))|({RoundNumberIntegerRegex})|({AllNumericalIntRegex})))";
-      public static readonly string AllIntRegex = $@"(?:((({AllNumericalIntRegex}|({TensNumberIntegerRegex}(\s+(और\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(और\s+)?)*({SeparaIntRegex}))";
+      public static readonly string SeparaIntRegex = $@"(?:((({AllNumericalIntRegex}|({TensNumberIntegerRegex}(\s+(और\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex})(\s+({RoundNumberIntegerRegex}|{RoundNumberHinglishIntegerRegex}))*)|(({AnIntRegex}?(\s+({RoundNumberIntegerRegex}))+))|({RoundNumberIntegerRegex})|({AllNumericalIntRegex})))";
+      public static readonly string AllIntRegex = $@"(?:((({AllNumericalIntRegex}|({TensNumberIntegerRegex}(\s+(और\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{AnIntRegex})(\s+({RoundNumberIntegerRegex}|{RoundNumberHinglishIntegerRegex}))+)\s+(और\s+)?)*({SeparaIntRegex}))";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
       public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[ऀ-ॿ]))(?={placeholder})";
@@ -70,7 +70,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string DecimalUnitsRegex = @"(?:डेढ़|डेढ़|डेढ|ढाई|सवा|सावा)";
       public static readonly string DecimalUnitsWithRoundNumberRegex = $@"({DecimalUnitsRegex}\s+{RoundNumberIntegerRegex}|{DecimalUnitsRegex})";
       public const string RoundNumberOrdinalRegex = @"(?:(सौ|हजार|लाख|करोड़|अरब|खरब)(वां|वीं|वें|वाँ))";
-      public const string OneToNineOrdinalRegex = @"(?:पहला|पहली|प्रथम|दूसरा|दूसरे|तिहाई|चौथाई|((पांच|पाँच|छठ|सात|आठ|नौ)(वां|वीं|वें|वाँ|वा)))";
+      public const string OneToNineOrdinalRegex = @"(?:पहला|पहली|प्रथम|दूसरा|दूसरी|दूसरे|तिहाई|चौथाई|((पांच|पाँच|छठ|सात|आठ|नौ)(वां|वीं|वें|वाँ|वा)))";
       public const string TenToNineteenOrdinalRegex = @"(?:(दस|ग्यारह|बारह|तेरह|चौदह|पंद्रह|सोलह|सत्रह|अठारह|उन्नीस)(वां|वीं|वें|वाँ))";
       public const string TwentyToTwentyNineOrdinalRegex = @"(?:(बीस|इक्कीस|बाईस|बाइस|तेईस|तेइस|चौबीस|पच्चीस|छब्बीस|सत्ताईस|सत्ताइस|अट्ठाईस|अट्ठाइस|उनतीस)(वां|वीं|वें|वाँ))";
       public const string ThirtyToThirtyNineOrdinalRegex = @"(?:(तीस|इकतीस|इकत्तीस|बत्तीस|तैंतीस|चौंतीस|पैंतीस|छ्त्तीस|सैंतीस|अड़तीस|उनतालीस)(वां|वीं|वें|वाँ))";
