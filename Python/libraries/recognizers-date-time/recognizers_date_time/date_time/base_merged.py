@@ -384,9 +384,9 @@ class BaseMergedExtractor(DateTimeExtractor):
 
                 start = extract_result.start if extract_result.start else 0
                 length = extract_result.length if extract_result.length else 0
-                after_str = source[start + length:]
+                after_str = source[start + length:].strip()
 
-                match = RegExpUtility.match_begin(self.config.suffix_after_regex, after_str.strip(), True)
+                match = RegExpUtility.match_begin(self.config.suffix_after_regex, after_str, True)
 
                 if match and match.success:
                     is_followed_by_other_entity = True
@@ -403,7 +403,6 @@ class BaseMergedExtractor(DateTimeExtractor):
                     if not is_followed_by_other_entity:
                         mod_length = match.length + after_str.index(match.value)
                         extract_result.length += mod_length
-
                         extract_result.text = source[start: extract_result.start + extract_result.length]
                         extract_result.meta_data = self.assign_mod_metadata(extract_result.meta_data)
 
@@ -626,7 +625,7 @@ class BaseMergedParser(DateTimeParser):
                     has_inclusive_mod = True
             elif after_match and after_match.success:
                 has_after = True
-                source.start = 0 if match_is_after else after_match.length
+                source.start += 0 if match_is_after else after_match.length
                 source.length -= after_match.length
                 source.text = source.text[0:source.length] if match_is_after else source.text[after_match.length:]
                 mod_str = after_match.group()
