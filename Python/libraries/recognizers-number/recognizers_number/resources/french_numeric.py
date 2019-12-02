@@ -15,7 +15,7 @@ from .base_numbers import BaseNumbers
 
 class FrenchNumeric:
     LangMarker = 'Fr'
-    CompoundNumberLanguage = True
+    CompoundNumberLanguage = False
     MultiDecimalSeparatorCulture = True
     RoundNumberIntegerRegex = f'(cent|mille|millions|million|milliard|milliards|billion|billions)'
     ZeroToNineIntegerRegex = f'(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)'

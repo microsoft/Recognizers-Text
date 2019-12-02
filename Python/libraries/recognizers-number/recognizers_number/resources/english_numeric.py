@@ -15,7 +15,7 @@ from .base_numbers import BaseNumbers
 
 class EnglishNumeric:
     LangMarker = 'Eng'
-    CompoundNumberLanguage = True
+    CompoundNumberLanguage = False
     MultiDecimalSeparatorCulture = True
     RoundNumberIntegerRegex = f'(?:hundred|thousand|million|billion|trillion)'
     ZeroToNineIntegerRegex = f'(?:three|seven|eight|four|five|zero|nine|one|two|six)'
