@@ -725,8 +725,8 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
         after_str = source[duration.start + duration.length:]
         start_token = -1
         end_token = -1
-        match = RegexExtension.match_end(self.config.within_next_prefix_regex, before_str, True) if in_prefix else \
-            RegexExtension.match_begin(self.config.within_next_prefix_regex, after_str, True)
+        match = RegExpUtility.match_end(self.config.within_next_prefix_regex, before_str, True) if in_prefix else \
+            RegExpUtility.match_begin(self.config.within_next_prefix_regex, after_str, True)
 
         if match and match.success:
             duration_str = source[duration.start: duration.start + duration.length]
