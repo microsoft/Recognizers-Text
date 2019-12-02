@@ -1692,5 +1692,28 @@
         }
       }
     ]
+  },
+  {
+    "Input": "sende eine geburtstagsabfrage für morgen",
+    "Context": {
+      "ReferenceDateTime": "2019-09-19T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "morgen",
+        "Start": 34,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-03",
+              "type": "date",
+              "value": "2019-12-03"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

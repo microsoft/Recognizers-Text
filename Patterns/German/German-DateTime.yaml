@@ -358,7 +358,7 @@ SimpleTimeOfTodayBeforeRegex: !nestedRegex
   def: '{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+um)?\s*({HourNumRegex}|{BaseDateTime.HourRegex})'
   references: [ DateTimeSpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
 SpecificEndOfRegex: !simpleRegex
-  def: ((das|am|an( dem)?)\s+)?ende(\s+(de[mnsr])?)\s*
+  def: ((das|am|an( dem)?)\s+)?\bende(\s+(de[mnsr])?)\s*
 UnspecificEndOfRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
