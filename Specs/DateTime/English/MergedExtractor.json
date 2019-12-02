@@ -754,7 +754,7 @@
   },
   {
     "Input": "The range is 2012 or after",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2012 or after",
@@ -1183,7 +1183,7 @@
   },
   {
     "Input": "Let's start 3 minutes from today",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 minutes",
