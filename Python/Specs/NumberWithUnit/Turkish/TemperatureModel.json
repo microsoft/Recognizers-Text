@@ -1,0 +1,656 @@
+[
+  {
+    "Input": "dışarıda hava 40 santigrat",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "40 santigrat",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "40",
+          "unit": "C"
+        },
+        "Start": 14,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "Texas'ta hava 90 fahrenhayt",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "90 fahrenhayt",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "90",
+          "unit": "F"
+        },
+        "Start": 14,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "-5 derece fahrenheit",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-5 derece fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "-5",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "6 derece",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "6 derece",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "6",
+          "unit": "Degree"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "98,6 derece f normal bir ısıdır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "98,6 derece f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98,6",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "ısıyı 30 santigrat derece ayarla",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30 santigrat derece",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "30",
+          "unit": "C"
+        },
+        "Start": 6,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "normal ısı 98,6 derece fahrenhayttır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "98,6 derece fahrenhayttır",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98,6",
+          "unit": "F"
+        },
+        "Start": 11,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "100 derece f",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 derece f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "200 derece c",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "200 derece c",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "200",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "100,2 fahrenhayt derece düşüktür",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100,2 fahrenhayt derece",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100,2",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "10,5 santigrat",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10,5 santigrat",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "10,5",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "20 santigrat derece",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20 santigrat derece",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "20,3 santigrat",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20,3 santigrat",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20,3",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "34,5 santigrat",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "34,5 santigrat",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "34,5",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "dışarıda hava 98 derece",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "98 derece",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98",
+          "unit": "Degree"
+        },
+        "Start": 14,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "termostatı 85°ye ayarla",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "85°",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "85",
+          "unit": "Degree"
+        },
+        "Start": 11,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "ısıyı 5 derece arttır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 derece",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "5",
+          "unit": "Degree"
+        },
+        "Start": 6,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "ısıyı 70 derece f'ye ayarla",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "70 derece f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "70",
+          "unit": "F"
+        },
+        "Start": 6,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "ısıyı 20 dereceye kur",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20 dereceye",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "Degree"
+        },
+        "Start": 6,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "ısıyı 100 dereceye kur",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 dereceye",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100",
+          "unit": "Degree"
+        },
+        "Start": 6,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "ısıyı 75 derece f'de sabitle",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "75 derece f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "75",
+          "unit": "F"
+        },
+        "Start": 6,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "ısı 40 santigratta kalsın",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "40 santigratta",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "40",
+          "unit": "C"
+        },
+        "Start": 4,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "ısı 50 derecede kalsın",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "50 derecede",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "50",
+          "unit": "Degree"
+        },
+        "Start": 4,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "10 santigratı fahrenhayta çevir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 santigratı",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "10",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 12
+      },
+      {
+        "Text": "fahrenhayta",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 14,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "34,9 santigratı fahrenhayta",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "34,9 santigratı",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "34,9",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 14
+      },
+      {
+        "Text": "fahrenhayta",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 16,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "200 santigratı fahrenhayta çevir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "200 santigratı",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "200",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 13
+      },
+      {
+        "Text": "fahrenhayta",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 15,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "fahrenhayttan santigrata, 101 fahrenhayt kaç santigrat eder",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "101 fahrenhayt",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "101",
+          "unit": "F"
+        },
+        "Start": 26,
+        "End": 39
+      },
+      {
+        "Text": "fahrenhayttan",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 12
+      },
+      {
+        "Text": "santigrata",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 14,
+        "End": 23
+      },
+      {
+        "Text": "santigrat",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 45,
+        "End": 53
+      }
+    ]
+  },
+  {
+    "Input": "50 santigrat dereceyi fahrenhayta",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "50 santigrat dereceyi",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "50",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 20
+      },
+      {
+        "Text": "fahrenhayta",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 22,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "51 fahrenhaytı santigrata çevirebilir misin",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "51 fahrenhaytı",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "51",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 13
+      },
+      {
+        "Text": "santigrata",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 15,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "106 derece fahrenhaytı santigrata çevir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "106 derece fahrenhaytı",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "106",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 21
+      },
+      {
+        "Text": "santigrata",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 23,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "45 derece fahrenhaytı santigrata çevir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "45 derece fahrenhaytı",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "45",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 20
+      },
+      {
+        "Text": "santigrata",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 22,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "-20 derece fahrenhayt santigrata nasıl çevrilir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-20 derece fahrenhayt",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "-20",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 20
+      },
+      {
+        "Text": "santigrata",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 22,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "Sıcaklık 20 fahrenhayttı",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20 fahrenhayttı",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "F"
+        },
+        "Start": 9,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "Sıcaklık 25 derecenin üzerindeydi.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "25 derecenin",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "25",
+          "unit": "Degree"
+        },
+        "Start": 9,
+        "End": 20
+      }
+    ]
+  }
+]

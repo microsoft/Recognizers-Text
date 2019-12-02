@@ -1,0 +1,1980 @@
+[
+  {
+    "Input": "schedule me a meeting next week Mon 9 am or 1 pm",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next week mon 9 am",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "next week mon 9 am or 1 pm",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-11T09",
+              "type": "datetime",
+              "value": "2017-12-11 09:00:00"
+            }
+          ]
+        },
+        "Start": 22,
+        "End": 39
+      },
+      {
+        "Text": "1 pm",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "next week mon 9 am or 1 pm",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-11T13",
+              "type": "datetime",
+              "value": "2017-12-11 13:00:00"
+            }
+          ]
+        },
+        "Start": 44,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "schedule me a meeting next week Mon or Tue",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next week mon",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "next week mon or tue",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-11",
+              "type": "date",
+              "value": "2017-12-11"
+            }
+          ]
+        },
+        "Start": 22,
+        "End": 34
+      },
+      {
+        "Text": "tue",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "next week mon or tue",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-12",
+              "type": "date",
+              "value": "2017-12-12"
+            }
+          ]
+        },
+        "Start": 39,
+        "End": 41
+      }
+    ]
+  },
+  {
+    "Input": "schedule me a meeting in the morning 9 oclock or 10 oclock",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "in the morning 9 oclock",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "in the morning 9 oclock or 10 oclock",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T09",
+              "type": "time",
+              "value": "09:00:00"
+            }
+          ]
+        },
+        "Start": 22,
+        "End": 44
+      },
+      {
+        "Text": "10 oclock",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "in the morning 9 oclock or 10 oclock",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 49,
+        "End": 57
+      }
+    ]
+  },
+  {
+    "Input": "schedule me a meeting next Monday 1-3 pm or 5-6 pm",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next monday 1-3 pm",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "next monday 1-3 pm or 5-6 pm",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-12-11T13,2017-12-11T15,PT2H)",
+              "type": "datetimerange",
+              "start": "2017-12-11 13:00:00",
+              "end": "2017-12-11 15:00:00"
+            }
+          ]
+        },
+        "Start": 22,
+        "End": 39
+      },
+      {
+        "Text": "5-6 pm",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "next monday 1-3 pm or 5-6 pm",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-12-11T17,2017-12-11T18,PT1H)",
+              "type": "datetimerange",
+              "start": "2017-12-11 17:00:00",
+              "end": "2017-12-11 18:00:00"
+            }
+          ]
+        },
+        "Start": 44,
+        "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "Monday 8-9am or 9-10 am works.",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "monday 8-9am",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "monday 8-9am or 9-10 am",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-1T08,XXXX-WXX-1T09,PT1H)",
+              "type": "datetimerange",
+              "start": "2017-11-27 08:00:00",
+              "end": "2017-11-27 09:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-1T08,XXXX-WXX-1T09,PT1H)",
+              "type": "datetimerange",
+              "start": "2017-12-04 08:00:00",
+              "end": "2017-12-04 09:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 11
+      },
+      {
+        "Text": "9-10 am",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "monday 8-9am or 9-10 am",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-1T09,XXXX-WXX-1T10,PT1H)",
+              "type": "datetimerange",
+              "start": "2017-11-27 09:00:00",
+              "end": "2017-11-27 10:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-1T09,XXXX-WXX-1T10,PT1H)",
+              "type": "datetimerange",
+              "start": "2017-12-04 09:00:00",
+              "end": "2017-12-04 10:00:00"
+            }
+          ]
+        },
+        "Start": 16,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "Cortana could try to arrange a Skype call next week on Tuesday or Thursday please?",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next week on tuesday",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "next week on tuesday or thursday",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-12",
+              "type": "date",
+              "value": "2017-12-12"
+            }
+          ]
+        },
+        "Start": 42,
+        "End": 61
+      },
+      {
+        "Text": "thursday",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "next week on tuesday or thursday",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-14",
+              "type": "date",
+              "value": "2017-12-14"
+            }
+          ]
+        },
+        "Start": 66,
+        "End": 73
+      }
+    ]
+  },
+  {
+    "Input": "Cortana could try to arrange a Skype call next week on Tuesday 9 am or Thursday 1 pm please?",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next week on tuesday 9 am",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "next week on tuesday 9 am or thursday 1 pm",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-12T09",
+              "type": "datetime",
+              "value": "2017-12-12 09:00:00"
+            }
+          ]
+        },
+        "Start": 42,
+        "End": 66
+      },
+      {
+        "Text": "thursday 1 pm",
+        "TypeName": "datetimeV2.datetimealt",
+        "ParentText": "next week on tuesday 9 am or thursday 1 pm",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-14T13",
+              "type": "datetime",
+              "value": "2017-12-14 13:00:00"
+            }
+          ]
+        },
+        "Start": 71,
+        "End": 83
+      }
+    ]
+  },
+  {
+    "Input": "Cortana could try to arrange a Skype call this week or next please?",
+    "Context": {
+      "ReferenceDateTime": "2018-03-21T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "this week or next",
+        "Text": "this week",
+        "Start": 42,
+        "End": 50,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W12",
+              "type": "daterange",
+              "start": "2018-03-19",
+              "end": "2018-03-26"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "this week or next",
+        "Text": "next",
+        "Start": 55,
+        "End": 58,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W13",
+              "type": "daterange",
+              "start": "2018-03-26",
+              "end": "2018-04-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana could you please help me find out which is better last year or next?",
+    "Context": {
+      "ReferenceDateTime": "2018-03-21T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "last year or next",
+        "Text": "last year",
+        "Start": 58,
+        "End": 66,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "last year or next",
+        "Text": "next",
+        "Start": 71,
+        "End": 74,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana could try to arrange a Skype call next week on tuesday or thursday or friday please?",
+    "Context": {
+      "ReferenceDateTime": "2018-04-16T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "next week on tuesday or thursday or friday",
+        "Text": "next week on tuesday",
+        "Start": 42,
+        "End": 61,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04-24",
+              "type": "date",
+              "value": "2018-04-24"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "next week on tuesday or thursday or friday",
+        "Text": "thursday",
+        "Start": 66,
+        "End": 73,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04-26",
+              "type": "date",
+              "value": "2018-04-26"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "next week on tuesday or thursday or friday",
+        "Text": "friday",
+        "Start": 78,
+        "End": 83,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04-27",
+              "type": "date",
+              "value": "2018-04-27"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, next week Mon, Wed, Fri are best for me.",
+    "Context": {
+      "ReferenceDateTime": "2018-04-16T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "next week mon, wed, fri",
+        "Text": "next week mon",
+        "Start": 9,
+        "End": 21,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04-23",
+              "type": "date",
+              "value": "2018-04-23"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "next week mon, wed, fri",
+        "Text": "wed",
+        "Start": 24,
+        "End": 26,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04-25",
+              "type": "date",
+              "value": "2018-04-25"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "next week mon, wed, fri",
+        "Text": "fri",
+        "Start": 29,
+        "End": 31,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04-27",
+              "type": "date",
+              "value": "2018-04-27"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please find us a time monday, Thursday, Friday next week.",
+    "Context": {
+      "ReferenceDateTime": "2018-04-16T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "monday, thursday, friday next week",
+        "Text": "monday",
+        "Start": 31,
+        "End": 36,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04-23",
+              "type": "date",
+              "value": "2018-04-23"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "monday, thursday, friday next week",
+        "Text": "thursday",
+        "Start": 39,
+        "End": 46,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04-26",
+              "type": "date",
+              "value": "2018-04-26"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "monday, thursday, friday next week",
+        "Text": "friday next week",
+        "Start": 49,
+        "End": 64,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04-27",
+              "type": "date",
+              "value": "2018-04-27"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, Unfortunately the only dates he can do are the 22nd, 23rd, 30th or 31st of March.",
+    "Context": {
+      "ReferenceDateTime": "2018-04-16T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "the 22nd, 23rd, 30th or 31st of march",
+        "Text": "the 22nd",
+        "Start": 52,
+        "End": 59,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-03-22",
+              "type": "date",
+              "value": "2019-03-22"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "the 22nd, 23rd, 30th or 31st of march",
+        "Text": "23rd",
+        "Start": 62,
+        "End": 65,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-03-23",
+              "type": "date",
+              "value": "2019-03-23"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "the 22nd, 23rd, 30th or 31st of march",
+        "Text": "30th",
+        "Start": 68,
+        "End": 71,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-03-30",
+              "type": "date",
+              "value": "2019-03-30"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "the 22nd, 23rd, 30th or 31st of march",
+        "Text": "31st of march",
+        "Start": 76,
+        "End": 88,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-03-31",
+              "type": "date",
+              "value": "2019-03-31"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana please schedule a meeting July 17th, 18th, or 19th for an hour.",
+    "Context": {
+      "ReferenceDateTime": "2018-04-16T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "july 17th, 18th, or 19th",
+        "Text": "july 17th",
+        "Start": 34,
+        "End": 42,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-17",
+              "type": "date",
+              "value": "2018-07-17"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "july 17th, 18th, or 19th",
+        "Text": "18th",
+        "Start": 45,
+        "End": 48,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-18",
+              "type": "date",
+              "value": "2018-07-18"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "july 17th, 18th, or 19th",
+        "Text": "19th",
+        "Start": 54,
+        "End": 57,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-19",
+              "type": "date",
+              "value": "2018-07-19"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "an hour",
+        "Start": 63,
+        "End": 69,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1H",
+              "type": "duration",
+              "value": "3600"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please book 2 hours next week",
+    "Context": {
+      "ReferenceDateTime": "2018-03-25T01:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2 hours",
+        "Start": 21,
+        "End": 27,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT2H",
+              "type": "duration",
+              "value": "7200"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "next week",
+        "Start": 29,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W13",
+              "type": "daterange",
+              "start": "2018-03-26",
+              "end": "2018-04-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please book 2 hours next month",
+    "Context": {
+      "ReferenceDateTime": "2018-03-25T01:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2 hours",
+        "Start": 21,
+        "End": 27,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT2H",
+              "type": "duration",
+              "value": "7200"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "next month",
+        "Start": 29,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04",
+              "type": "daterange",
+              "start": "2018-04-01",
+              "end": "2018-05-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please check my work 2 hours last week",
+    "Context": {
+      "ReferenceDateTime": "2018-03-25T01:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2 hours",
+        "Start": 30,
+        "End": 36,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT2H",
+              "type": "duration",
+              "value": "7200"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "last week",
+        "Start": 38,
+        "End": 46,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W11",
+              "type": "daterange",
+              "start": "2018-03-12",
+              "end": "2018-03-19"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, I'd like to take a break 10 minutes coming week",
+    "Context": {
+      "ReferenceDateTime": "2018-03-25T01:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "10 minutes",
+        "Start": 34,
+        "End": 43,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT10M",
+              "type": "duration",
+              "value": "600"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "coming week",
+        "Start": 45,
+        "End": 55,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W13",
+              "type": "daterange",
+              "start": "2018-03-26",
+              "end": "2018-04-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, I'd like to take a break three hours in the next week",
+    "Context": {
+      "ReferenceDateTime": "2018-04-27T15:47:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "three hours",
+        "Start": 34,
+        "End": 44,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT3H",
+              "type": "duration",
+              "value": "10800"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "next week",
+        "Start": 53,
+        "End": 61,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W18",
+              "type": "daterange",
+              "start": "2018-04-30",
+              "end": "2018-05-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please find us a time to meet 5/17/2018?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "5/17/2018",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-05-17",
+              "type": "date",
+              "value": "2018-05-17"
+            }
+          ]
+        },
+        "Start": 47,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please find us a time to meet 5/17?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "5/17",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-17",
+              "type": "date",
+              "value": "2017-05-17"
+            },
+            {
+              "timex": "XXXX-05-17",
+              "type": "date",
+              "value": "2018-05-17"
+            }
+          ]
+        },
+        "Start": 47,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "Cortana can help us arrange a meeting on May 17.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "may 17",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-17",
+              "type": "date",
+              "value": "2017-05-17"
+            },
+            {
+              "timex": "XXXX-05-17",
+              "type": "date",
+              "value": "2018-05-17"
+            }
+          ]
+        },
+        "Start": 41,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "Each week and another thing this week",
+    "Context": {
+      "ReferenceDateTime": "2018-05-20T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "each week",
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 8
+      },
+      {
+        "Text": "this week",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W20",
+              "type": "daterange",
+              "start": "2018-05-14",
+              "end": "2018-05-21"
+            }
+          ]
+        },
+        "Start": 28,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "The notes are shared out in the LT working session notes attached each week and highlights are shared in the Data insights section. For this week’s special topic the data team has written an overview of some of the new features the dashboard supports and how it is built. If you have not seen the dashboard, this may be a great opportunity to learn something new.I would like to ask Cortana to schedule 45 minutes in November. I would also like to share news that Skype integration with our OWA Rea",
+    "Context": {
+      "ReferenceDateTime": "2018-05-20T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "each week",
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 66,
+        "End": 74
+      },
+      {
+        "Text": "this week",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W20",
+              "type": "daterange",
+              "start": "2018-05-14",
+              "end": "2018-05-21"
+            }
+          ]
+        },
+        "Start": 136,
+        "End": 144
+      },
+      {
+        "Text": "45 minutes",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT45M",
+              "type": "duration",
+              "value": "2700"
+            }
+          ]
+        },
+        "Start": 403,
+        "End": 412
+      },
+      {
+        "Text": "november",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11",
+              "type": "daterange",
+              "start": "2017-11-01",
+              "end": "2017-12-01"
+            },
+            {
+              "timex": "XXXX-11",
+              "type": "daterange",
+              "start": "2018-11-01",
+              "end": "2018-12-01"
+            }
+          ]
+        },
+        "Start": 417,
+        "End": 424
+      }
+    ]
+  },
+  {
+    "Input": "Hi, please arrange a meeting for T6 in the coming weeks or next week.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-12T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "ParentText": "coming weeks or next week",
+        "Text": "coming weeks",
+        "Start": 43,
+        "End": 54,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-06-13,2018-06-20,P1W)",
+              "type": "daterange",
+              "start": "2018-06-13",
+              "end": "2018-06-20"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "coming weeks or next week",
+        "Text": "next week",
+        "Start": 59,
+        "End": 67,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W25",
+              "type": "daterange",
+              "start": "2018-06-18",
+              "end": "2018-06-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana - can you schedule a meeting next week on Tuesday Wednesday or Thursday for Jim and I to speak on the phone.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "ParentText": "next week on tuesday wednesday or thursday",
+        "Text": "next week on tuesday",
+        "Start": 37,
+        "End": 56,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-07-03",
+              "type": "date",
+              "value": "2018-07-03"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "next week on tuesday wednesday or thursday",
+        "Text": "wednesday",
+        "Start": 58,
+        "End": 66,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-07-04",
+              "type": "date",
+              "value": "2018-07-04"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "next week on tuesday wednesday or thursday",
+        "Text": "thursday",
+        "Start": 71,
+        "End": 78,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-07-05",
+              "type": "date",
+              "value": "2018-07-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please schedule 30 minutes on Tuesday or Wednesday morning with a Skype bridge.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-19T20:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "30 minutes",
+        "Start": 25,
+        "End": 34,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "tuesday or wednesday morning",
+        "Text": "tuesday",
+        "Start": 39,
+        "End": 45,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2TMO",
+              "type": "datetimerange",
+              "start": "2018-07-17 08:00:00",
+              "end": "2018-07-17 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2TMO",
+              "type": "datetimerange",
+              "start": "2018-07-24 08:00:00",
+              "end": "2018-07-24 12:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "tuesday or wednesday morning",
+        "Text": "wednesday morning",
+        "Start": 50,
+        "End": 66,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3TMO",
+              "type": "datetimerange",
+              "start": "2018-07-18 08:00:00",
+              "end": "2018-07-18 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-3TMO",
+              "type": "datetimerange",
+              "start": "2018-07-25 08:00:00",
+              "end": "2018-07-25 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can find us a time Tuesday or Wednesday from 10-4",
+    "Context": {
+      "ReferenceDateTime": "2018-07-30T20:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "tuesday or wednesday from 10-4",
+        "Text": "tuesday",
+        "Start": 28,
+        "End": 34,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-2T10,XXXX-WXX-2T16,PT6H)",
+              "type": "datetimerange",
+              "start": "2018-07-24 10:00:00",
+              "end": "2018-07-24 16:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-2T10,XXXX-WXX-2T16,PT6H)",
+              "type": "datetimerange",
+              "start": "2018-07-31 10:00:00",
+              "end": "2018-07-31 16:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "tuesday or wednesday from 10-4",
+        "Text": "wednesday from 10-4",
+        "Start": 39,
+        "End": 57,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-3T10,XXXX-WXX-3T16,PT6H)",
+              "type": "datetimerange",
+              "start": "2018-07-25 10:00:00",
+              "end": "2018-07-25 16:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-3T10,XXXX-WXX-3T16,PT6H)",
+              "type": "datetimerange",
+              "start": "2018-08-01 10:00:00",
+              "end": "2018-08-01 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Could you find a 30 minute timeslot Friday this week or next week.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-31T14:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "30 minute",
+        "Start": 17,
+        "End": 25,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "friday this week or next week",
+        "Text": "friday this week",
+        "Start": 36,
+        "End": 51,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-03",
+              "type": "date",
+              "value": "2018-08-03"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "friday this week or next week",
+        "Text": "next week",
+        "Start": 56,
+        "End": 64,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-10",
+              "type": "date",
+              "value": "2018-08-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event will be held on the first Monday of September or December.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-31T14:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "the first monday of september or december",
+        "Text": "the first monday of september",
+        "Start": 26,
+        "End": 54,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-09-WXX-1-#1",
+              "type": "date",
+              "value": "2018-09-03"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "the first monday of september or december",
+        "Text": "december",
+        "Start": 59,
+        "End": 66,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-WXX-1-#1",
+              "type": "date",
+              "value": "2018-12-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event will be held on this week or next week.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-31T14:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "this week or next week",
+        "Text": "this week",
+        "Start": 26,
+        "End": 34,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W31",
+              "type": "daterange",
+              "start": "2018-07-30",
+              "end": "2018-08-06"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "this week or next week",
+        "Text": "next week",
+        "Start": 39,
+        "End": 47,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W32",
+              "type": "daterange",
+              "start": "2018-08-06",
+              "end": "2018-08-13"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event will be held on Thursday or Friday this week.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-31T14:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "thursday or friday this week",
+        "Text": "thursday",
+        "Start": 26,
+        "End": 33,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-02",
+              "type": "date",
+              "value": "2018-08-02"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "thursday or friday this week",
+        "Text": "friday this week",
+        "Start": 38,
+        "End": 53,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-03",
+              "type": "date",
+              "value": "2018-08-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up on the 18th.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-07T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the 18th",
+        "Start": 44,
+        "End": 51,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-18",
+              "type": "date",
+              "value": "2018-07-18"
+            },
+            {
+              "timex": "XXXX-XX-18",
+              "type": "date",
+              "value": "2018-08-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up on the 4th.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-07T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the 4th",
+        "Start": 44,
+        "End": 50,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-04",
+              "type": "date",
+              "value": "2018-08-04"
+            },
+            {
+              "timex": "XXXX-XX-04",
+              "type": "date",
+              "value": "2018-09-04"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up between the 21st and 23rd.",
+    "Comment": "Only supported in CalendarMode",
+    "Context": {
+      "ReferenceDateTime": "2018-08-08T10:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Cortana, can you please set something up the 21st.",
+    "Comment": "Only supported in CalendarMode",
+    "Context": {
+      "ReferenceDateTime": "2018-08-08T10:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "set up a 15 minute skype call next Monday or Tuesday after 1pm GMT.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-29T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "15 minute",
+        "Start": 9,
+        "End": 17,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT15M",
+              "type": "duration",
+              "value": "900"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "next monday or tuesday after 1pm",
+        "Text": "next monday",
+        "Start": 30,
+        "End": 40,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-09-03",
+              "type": "date",
+              "value": "2018-09-03"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "next monday or tuesday after 1pm",
+        "Text": "tuesday after 1pm",
+        "Start": 45,
+        "End": 61,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2T13",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2018-08-28 13:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T13",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2018-09-04 13:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, I am looking at 18 and 19 June.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-29T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "18 and 19 june",
+        "Text": "18",
+        "Start": 25,
+        "End": 26,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-06-18",
+              "type": "date",
+              "value": "2019-06-18"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "18 and 19 june",
+        "Text": "19 june",
+        "Start": 32,
+        "End": 38,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-06-19",
+              "type": "date",
+              "value": "2019-06-19"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana could try to arrange a Skype call this or next week please?",
+    "Context": {
+      "ReferenceDateTime": "2019-08-01T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "this or next week",
+        "Text": "this",
+        "Start": 42,
+        "End": 45,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W31",
+              "type": "daterange",
+              "start": "2019-07-29",
+              "end": "2019-08-05"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "this or next week",
+        "Text": "next week",
+        "Start": 50,
+        "End": 58,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W32",
+              "type": "daterange",
+              "start": "2019-08-05",
+              "end": "2019-08-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ABC-12345-A1B2C3 this is yet to be submitted",
+    "Context": {
+      "ReferenceDateTime": "2019-08-08T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "mar3 this week or next",
+    "Context": {
+      "ReferenceDateTime": "2019-08-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "mar3",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-03-03",
+              "type": "date",
+              "value": "2019-03-03"
+            },
+            {
+              "timex": "XXXX-03-03",
+              "type": "date",
+              "value": "2020-03-03"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "this week or next",
+        "Text": "this week",
+        "Start": 5,
+        "End": 13,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W32",
+              "type": "daterange",
+              "start": "2019-08-05",
+              "end": "2019-08-12"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "this week or next",
+        "Text": "next",
+        "Start": 18,
+        "End": 21,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W33",
+              "type": "daterange",
+              "start": "2019-08-12",
+              "end": "2019-08-19"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet once a week",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "once a week",
+        "Start": 11,
+        "End": 21,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I go on vacation once a year",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "once a year",
+        "Start": 17,
+        "End": 27,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The request is ABC-12345-A1B2C3 this round. Let's arrange a 30 minutes call this week. Look forward to speaking again this week.",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "30 minutes",
+        "Start": 60,
+        "End": 69,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "this week",
+        "Start": 76,
+        "End": 84,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W37",
+              "type": "daterange",
+              "start": "2019-09-09",
+              "end": "2019-09-16"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "this week",
+        "Start": 118,
+        "End": 126,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W37",
+              "type": "daterange",
+              "start": "2019-09-09",
+              "end": "2019-09-16"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We've met last week this time, right?",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "last week",
+        "Start": 10,
+        "End": 18,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W36",
+              "type": "daterange",
+              "start": "2019-09-02",
+              "end": "2019-09-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Open ABC-12345-A1B2C3 next",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Was it last week or this?",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "last week or this",
+        "Text": "last week",
+        "Start": 7,
+        "End": 15,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W36",
+              "type": "daterange",
+              "start": "2019-09-02",
+              "end": "2019-09-09"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "last week or this",
+        "Text": "this",
+        "Start": 20,
+        "End": 23,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W37",
+              "type": "daterange",
+              "start": "2019-09-09",
+              "end": "2019-09-16"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

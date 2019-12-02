@@ -1,0 +1,338 @@
+[
+  {
+    "Input": "das sind 2 Tage",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2 Tage",
+        "Type": "duration",
+        "Start": 9,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "es ist 4 Uhr",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4 Uhr",
+        "Type": "time",
+        "Start": 7,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Das ganze findet dann am Montag um 4 Uhr statt",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Montag um 4 Uhr",
+        "Type": "datetime",
+        "Start": 25,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Wie sieht denn dieser Tag so aus?",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "dieser Tag",
+        "Type": "date",
+        "Start": 15,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "letzte Woche",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "letzte Woche",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Das meeting geht Morgen von 12 bis 14 Uhr.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Morgen von 12 bis 14 Uhr",
+        "Type": "datetimerange",
+        "Start": 17,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Wie wird das Wetter morgen Mittag?",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "morgen mittag",
+        "Type": "datetime",
+        "Start": 20,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Wir sehen uns morgen früh!",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "morgen früh",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Verschieb mal das meeting vom 22. August auf den 23. August",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "22. August",
+        "Type": "date",
+        "Start": 30,
+        "Length": 10
+      },
+      {
+        "Text": "den 23. August",
+        "Type": "date",
+        "Start": 45,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "6.6. 12:15",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "6.6. 12:15",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "6.6.12 15:15",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "6.6.12 15:15",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "29. Mai",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "29. Mai",
+        "Type": "date",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ich wurde im August geboren",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "August",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Das nächste Meeting wird am 16. März 2017 sein. Wie wäre es denn mit einer Diskussionsrunde heute um 2 Uhr Nachmittags?",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "16. März 2017",
+        "Type": "date",
+        "Start": 28,
+        "Length": 13
+      },
+      {
+        "Text": "heute um 2 Uhr Nachmittags",
+        "Type": "datetime",
+        "Start": 92,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Das nächste Meeting wird am 16. März 2017 sein. Wie wäre es denn mit einer Diskussionsrunde heute um 14 Uhr?",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "16. märz 2017",
+        "Type": "date",
+        "Start": 28,
+        "Length": 13
+      },
+      {
+        "Text": "heute um 14 uhr",
+        "Type": "datetime",
+        "Start": 92,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Wir treffen uns am Freitag Nachmittag für 3 Stunden.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "freitag nachmittag",
+        "Type": "datetimerange",
+        "Start": 19,
+        "Length": 18
+      },
+      {
+        "Text": "3 stunden",
+        "Type": "duration",
+        "Start": 42,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "das ist morgen um 4 Uhr",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "morgen um 4 uhr",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "das war gestern 4 Uhr ",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "gestern 4 Uhr",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin 2016-05 nicht hier",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2016-05",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin 2016/05 nicht hier",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2016/05",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin 05-2016 nicht hier",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "05-2016",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin 05/2016 nicht hier",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "05/2016",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin 2016 - 05 nicht hier",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2016 - 05",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin 2016  /05 nicht hier",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2016  /05",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin 05-  2016 nicht hier",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "05-  2016",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin 05 /  2016 nicht hier",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "05 /  2016",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 10
+      }
+    ]
+  }
+]

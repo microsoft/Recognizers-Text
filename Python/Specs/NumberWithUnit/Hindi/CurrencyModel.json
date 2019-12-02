@@ -1,0 +1,1829 @@
+[
+  {
+    "Input": "मोंटगोमरी काउंटी, एमडी। - - निर्माताओं के हनोवर ट्रस्ट ट्रस्ट के जरिए, $ 75 मिलियन का सामान्य दायित्व, सीरीज़ बी, 1989 का समेकित सार्वजनिक सुधार बांड।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 75 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "75000000",
+          "unit": "Dollar"
+        },
+        "Start": 71,
+        "End": 81
+      }
+    ]
+  },
+  {
+    "Input": "फिन्निश व्यापार समूह नोकिया oy ab ने कहा कि यह डच केबल कंपनी nkf kabel b को 420 मिलियन फ़िन्निश मार्का के मूल्य पर खरीदने का समझौता हुआ है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "420 मिलियन फ़िन्निश मार्का",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "420000000",
+          "unit": "Finnish markka"
+        },
+        "Start": 76,
+        "End": 100
+      }
+    ]
+  },
+  {
+    "Input": "सभी दावों को छोड़ने के लिए नेशनल ने $ 94,000 का सीगल और शुस्टर भुगतान किया ।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 94,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "94000",
+          "unit": "Dollar"
+        },
+        "Start": 36,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "जेनरल डायनैमिक्स कॉर्प की एक इकाई , जेनरल डायनैमिक्स सर्विसेज़ कं. ने ट्रैक वाले वाहनों की सुविधा के प्रबंधन के लिए पाकिस्तान में $ 48.2 मिलियन का सेना अनुबंध जीता।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 48.2 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "48200000",
+          "unit": "Dollar"
+        },
+        "Start": 129,
+        "End": 141
+      }
+    ]
+  },
+  {
+    "Input": "दूसरे सिम्युलेटर की कीमत c $ 16.4 मिलियन के बीच है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "c $ 16.4 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "16400000",
+          "unit": "Canadian dollar",
+          "isoCurrency": "CAD"
+        },
+        "Start": 25,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "गोटास - लार्सन शिपिंग कं की एक इकाई , गैसोलर गैस होल्डिंग कं. पहली पसंद की $ 280 मिलियन की शिप मोर्गेज नोट मेरिल लिंच कैपिटल मार्केट के जरिए ऑफ़र कर रही है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 280 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "280000000",
+          "unit": "Dollar"
+        },
+        "Start": 75,
+        "End": 86
+      }
+    ]
+  },
+  {
+    "Input": "बार्ड / ईम्स की 1988 की बिक्री लगभग 14 मिलियन डॉलर थी, बर्टचर ने कहा।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "14 मिलियन डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "14000000",
+          "unit": "Dollar"
+        },
+        "Start": 36,
+        "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "समझौते की कीमतें $ 12,345 से शुरू होती हैं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 12,345",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "12345",
+          "unit": "Dollar"
+        },
+        "Start": 17,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "`` बैटमैन '' ने बॉक्स ऑफिस पर अब तक 247 मिलियन डॉलर से अधिक की कमाई की है, जो इसे वार्नर ब्रदर्स की अब तक की सबसे बड़ी कमाई वाली फिल्म बनाती है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "247 मिलियन डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "247000000",
+          "unit": "Dollar"
+        },
+        "Start": 36,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "अक्टूबर 2014 में कॉयल की कुल संपत्ति £ 8.10 मिलियन आंकी गई थी।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "£ 8.10 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "8100000",
+          "unit": "Pound"
+        },
+        "Start": 37,
+        "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "शुद्ध ब्याज आय इस तिमाही में 27% बढ़कर 254 मिलियन डॉलर हो गई।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "254 मिलियन डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "254000000",
+          "unit": "Dollar"
+        },
+        "Start": 39,
+        "End": 53
+      }
+    ]
+  },
+  {
+    "Input": "एक संघीय अपील अदालत ने एक प्राकृतिक - गैस विनियमन पर प्रहार करते हुए पाइपलाइन कंपनियों को विवादास्पद `` टेक ऑर पे' अनुबंध की $ 1 बिलियन लागत का का कुछ हिस्सा ग्राहकों पर लागू करने से रोक दिया था।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 1 बिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1000000000",
+          "unit": "Dollar"
+        },
+        "Start": 125,
+        "End": 134
+      }
+    ]
+  },
+  {
+    "Input": "1988 की तिमाही में $ 35 मिलियन की कुल कमाई वाली एक बार की लाभ भी शामिल थी।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 35 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "35000000",
+          "unit": "Dollar"
+        },
+        "Start": 19,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "वाय. जे. पार्क और उसके परिवार ने यहां एक छोटे से अपार्टमेंट को खरीदने के लिए चार साल तक छान-बीन की, लेकिन पाया कि उन्हें मूल रूप से $ 40,000 बचाने के जितने पास गए , उतनी ही कीमत बढ़ गई।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 40,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "40000",
+          "unit": "Dollar"
+        },
+        "Start": 132,
+        "End": 139
+      }
+    ]
+  },
+  {
+    "Input": "ई. रॉबर्ट वॉलक को न्यू यॉर्क के एक जज ने वेडटेक स्कैंडल में उसके रैकेटियरिंग अपराध के लिए छह साल की जेल की सजा सुनाई और $ 250,000 का जुर्माना लगाया।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 250,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "250000",
+          "unit": "Dollar"
+        },
+        "Start": 120,
+        "End": 128
+      }
+    ]
+  },
+  {
+    "Input": "मिडल ईस्ट इकॉनोमिक सर्वे (mees) में आज के लेख में प्रकाशित एक लेख से पता चलता है कि इराक ने अपने ग्राहकों से कहा है कि वे आधिकारिक तेल की कीमत से 50 सेंट प्रति बैरल अधिक तेल का भुगतान करें क्योंकि यह संयुक्त राष्ट्रों की निगरानी में नहीं है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "50 सेंट",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "50",
+          "unit": "Cent"
+        },
+        "Start": 146,
+        "End": 152
+      }
+    ]
+  },
+  {
+    "Input": "जेनरल मोटर्स कॉर्प. की धीमी बिक्री पर प्रतिक्रिया देते हुए, शेवरलेट डिवीजन ने कहा कि वह अपनी 1990 की बेरेटा, अपनी कोर कॉम्पैक्ट - कार लाइन के दो-द्वार संस्करण पर $ 800 छूट की पेशकश करेगा।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 800",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "800",
+          "unit": "Dollar"
+        },
+        "Start": 162,
+        "End": 166
+      }
+    ]
+  },
+  {
+    "Input": "(स्टोरर ने जूनियर साई टीवी बॉन्ड का $ 125 मिलियन भी टीवी संपत्तियों के आंशिक भुगतान के रूप में लिया।)",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 125 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125000000",
+          "unit": "Dollar"
+        },
+        "Start": 36,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "राष्ट्रीय ओवर-द-काउंटर ट्रेडिंग में शुक्रवार को , स्केमेड शेयरों ने $ 2.75 की गिरावट दर्ज की।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 2.75",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2.75",
+          "unit": "Dollar"
+        },
+        "Start": 68,
+        "End": 73
+      }
+    ]
+  },
+  {
+    "Input": "इसी समय, निवेशकों का अनुमान है कि पुनर्गठन से कंपनी के वार्षिक नकद ब्याज बिल में लगभग 90 मिलियन डॉलर की कटौती होगी।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "90 मिलियन डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "90000000",
+          "unit": "Dollar"
+        },
+        "Start": 86,
+        "End": 99
+      }
+    ]
+  },
+  {
+    "Input": "श्री. पवन ने कहा, इस साल कैपिटल खर्चा 1990 के अनुमानित $ 470 मिलियन से थोड़ा बढ़ जाएगा।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 470 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "470000000",
+          "unit": "Dollar"
+        },
+        "Start": 55,
+        "End": 66
+      }
+    ]
+  },
+  {
+    "Input": "शियर्सन के पास `` वास्तव में केवल $ 300 मिलियन पूंजी है, '' एस एंड पी के श्री रंगराज़न कहते हैं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 300 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "300000000",
+          "unit": "Dollar"
+        },
+        "Start": 34,
+        "End": 45
+      }
+    ]
+  },
+  {
+    "Input": "यह सीधा हो सकता है - - वह भोजन के लिए पैसा चाहता है - या - अविश्वसनीय रूप से दृढ़; उसकी बहन अभी होबोकेन में मौत से जूझ रही हैं, उसने अपना बटुआ खो दिया है और एक बस टिकट की के लिए उसके पास केवल $ 1.22 है, और क्या आप उसे बाकी के पैसे नहीं देंगे?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 1.22",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1.22",
+          "unit": "Dollar"
+        },
+        "Start": 192,
+        "End": 197
+      }
+    ]
+  },
+  {
+    "Input": "दिसंबर का कॉन्ट्रैक्ट 1.20 सेंट बढ़ा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.20 सेंट",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1.2",
+          "unit": "Cent"
+        },
+        "Start": 22,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "पेनवेबर इंक का विश्लेषक, वाल्टर किर्बर्गर ने कहा कि धारकों को एक उच्च, $ 70 - एक - शेयर की कीमत की पेशकश `` स्टेना - टिफूक की बोली को रोकने का एक काफी प्रभावी तरीका है ''।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 70",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "70",
+          "unit": "Dollar"
+        },
+        "Start": 71,
+        "End": 74
+      }
+    ]
+  },
+  {
+    "Input": "इस साल की तीसरी तिमाही की शुद्ध बिक्री पिछले साल 14 मिलियन डॉलर थी।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "14 मिलियन डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "14000000",
+          "unit": "Dollar"
+        },
+        "Start": 49,
+        "End": 62
+      }
+    ]
+  },
+  {
+    "Input": "पहले नेशनल बैंक ऑफ शिकागो की मूल कंपनी, जिसमें 48 बिलियन डॉलर की संपत्ति थी, ने कहा कि यह आर्थिक रूप से परेशान देशों में ऋण और निवेश पर नुकसान को अवशोषित करने के लिए अलग है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "48 बिलियन डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "48000000000",
+          "unit": "Dollar"
+        },
+        "Start": 47,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "फ्लूओर कॉर्प ने कहा कि यह फ्रीपोर्ट की एक इकाई के लिए इरिअन जाया, इंडोनेशिया में एक तांबे की खदान में इंजीनियरिंग और निर्माण - प्रबंधन सेवाएं प्रदान करने के लिए $ 300 मिलियन का ठेका दिया गया था।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 300 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "300000000",
+          "unit": "Dollar"
+        },
+        "Start": 161,
+        "End": 172
+      }
+    ]
+  },
+  {
+    "Input": "अमेरिकी स्टॉक एक्सचेंज ने कहा कि पिछली बिक्री से $ 5,000 के लिए एक सीट बेची गई थी।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 5,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "5000",
+          "unit": "Dollar"
+        },
+        "Start": 49,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "वार्नर कम्यूनिकेशन्स इंक , जो टाइम वार्नर द्वारा अधिग्रहित किया जा रहा है, ने सोनी और दो उत्पादकों के खिलाफ $ 1 बिलियन का अनुबंध दायर किया है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 1 बिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1000000000",
+          "unit": "Dollar"
+        },
+        "Start": 108,
+        "End": 117
+      }
+    ]
+  },
+  {
+    "Input": "अगस्त में, एसार्को, अपने लाख डी 'एमिएंटे ड्यू क्यूबेक सहायक के माध्यम से, कनाडा में एस्बेस्टस खनन सीमित भागीदारी में अपनी शेष एक तिहाई ब्याज 11.7 मिलियन डॉलर में बेची।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11.7 मिलियन डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "11700000",
+          "unit": "Dollar"
+        },
+        "Start": 141,
+        "End": 156
+      }
+    ]
+  },
+  {
+    "Input": "1988 में, घरेलू रूप से उत्पादित खिलौनों और खेलों का निर्यात 1987 के 19% से गिरकर hk $ 10.05 बिलियन हो गया।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "hk $ 10.05 बिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "10050000000",
+          "unit": "Hong Kong dollar",
+          "isoCurrency": "HKD"
+        },
+        "Start": 81,
+        "End": 97
+      }
+    ]
+  },
+  {
+    "Input": "एक साल पहले राजकोषीय चौथी तिमाही की बिक्री लगभग 18% बढ़कर 1.17 अरब डॉलर हो गई।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.17 अरब डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1170000000",
+          "unit": "Dollar"
+        },
+        "Start": 58,
+        "End": 70
+      }
+    ]
+  },
+  {
+    "Input": "कल के कारोबार के पहले घंटे के दौरान, कीमतें 1/4 अंक तक गिर गईं, या प्रत्येक शेयर की राशि के लिए लगभग 2.50 डॉलर कम हो गईं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2.50 डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2.5",
+          "unit": "Dollar"
+        },
+        "Start": 101,
+        "End": 109
+      }
+    ]
+  },
+  {
+    "Input": "उदाहरण के लिए, नई जर्सी को $ 300,000 स्वीकार करने के लिए कहा गया था, लेकिन उसने इनकार कर दिया।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 300,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "300000",
+          "unit": "Dollar"
+        },
+        "Start": 27,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "बिक्री 6 . 2% से बढ़कर $ 1.45 बिलियन हो गई",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 1.45 बिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1450000000",
+          "unit": "Dollar"
+        },
+        "Start": 22,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "कल दोपहर तक, रिडेंप्शन कुल $ 2 बिलियन के फिडेलिटी के स्टॉक फंडों की कुल नकद स्थिति के 15% से कम का प्रतिनिधित्व करता था।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 2 बिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2000000000",
+          "unit": "Dollar"
+        },
+        "Start": 27,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "ओविया कॉम इंक ,  34 सेंट नीचे",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "34 सेंट",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "34",
+          "unit": "Cent"
+        },
+        "Start": 17,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "टीडबल्यू प्रॉस्पेक्टस का कहना है कि यदि अधिग्रहण पहले पूरा हो गया था, तो 1989 के पहले छह महीनों में ऋण प्रतिभूतियों पर ब्याज सहित 'फिक्स्ड' आय, `` अपने निश्चित शुल्कों को कवर करने के लिए अपर्याप्त थी, '' लगभग 62.7 मिलियन डॉलर।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "62.7 मिलियन डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "62700000",
+          "unit": "Dollar"
+        },
+        "Start": 209,
+        "End": 224
+      }
+    ]
+  },
+  {
+    "Input": "फाइलनेट ने उल्लेख किया है कि इसके पास सितंबर 30 को  $ 22.5 मिलियन की कुल नकदी और विपणन योग्य प्रतिभूतियां थीं, और स्टॉकहोल्डर।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 22.5 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "22500000",
+          "unit": "Dollar"
+        },
+        "Start": 52,
+        "End": 64
+      }
+    ]
+  },
+  {
+    "Input": "शहर के 20 सबसे महंगे रेस्तरां के लिए, एक डिनर की कीमत $ 63.45 से बढ़ी, इसमें 8 प्रतिशत की वृद्धि भी हुई।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 63.45",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "63.45",
+          "unit": "Dollar"
+        },
+        "Start": 54,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "ट्रांस वर्ल्ड एयरलाइंस इंक . , ड्रेक्सेल बर्नहैम के माध्यम से $ 150 मिलियन के वरिष्ठ नोटों की पेशकश।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 150 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "150000000",
+          "unit": "Dollar"
+        },
+        "Start": 62,
+        "End": 73
+      }
+    ]
+  },
+  {
+    "Input": "पोर्टोबेलो मशरूम के साथ फ़ेट्यूसिने की कीमत $ 8.50 है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 8.50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "8.5",
+          "unit": "Dollar"
+        },
+        "Start": 43,
+        "End": 48
+      }
+    ]
+  },
+  {
+    "Input": "मार्च डिलीवरी 14.27 सेंट के एडवांस के साथ समाप्त हुई।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "14.27 सेंट",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "14.27",
+          "unit": "Cent"
+        },
+        "Start": 14,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "1988 की तीसरी तिमाही में ब्याज व्यय 75.3 मिलियन डॉलर थी।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "75.3 मिलियन डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "75300000",
+          "unit": "Dollar"
+        },
+        "Start": 36,
+        "End": 51
+      }
+    ]
+  },
+  {
+    "Input": "$ 2.38 बिलियन के डलकन शील्ड दावेदारों के ट्रस्ट को ए. एच. रॉबिंस दिवालिया - पुनर्गठन योजना के भाग के तौर पर स्थापित किया गया था ताकि शील्ड के प्रयोग से होने वाले नुकसान को हल किया जा सके।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 2.38 बिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2380000000",
+          "unit": "Dollar"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "प्रस्ताव की शर्तों ने 32 . 99% की शेयरधारिता पर 528 मिलियन फ़्रैंक का मूल्य रखा था।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "528 मिलियन फ़्रैंक",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "528000000",
+          "unit": "Franc"
+        },
+        "Start": 48,
+        "End": 65
+      }
+    ]
+  },
+  {
+    "Input": "विश्व बैंक के अधिकारियों ने शुक्रवार को कहा कि एड्स और तपेदिक के प्रसार से निपटने के लिए रूस ने 150 मिलियन अमेरिकी डॉलर का विश्व बैंक ऋण स्वीकार किया है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "150 मिलियन अमेरिकी डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "150000000",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 96,
+        "End": 118
+      }
+    ]
+  },
+  {
+    "Input": "पिछले बेलसूट संधि का मूल्य लगभग $ 98 प्रति शेयर था।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 98",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "98",
+          "unit": "Dollar"
+        },
+        "Start": 32,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "एक डीलर ने कहा कि बात यह थी कि फर्म ने $ 500 मिलियन के 30 साल के बांड को बेच दिया।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 500 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "500000000",
+          "unit": "Dollar"
+        },
+        "Start": 39,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "तीसरी तिमाही के लिए, सियर्स ने कहा कि इसका कुल राजस्व पिछले साल के मुकाबले 4 . 8% से बढ़कर $ 13.18 बिलियन हो गया।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 13.18 बिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13180000000",
+          "unit": "Dollar"
+        },
+        "Start": 90,
+        "End": 103
+      }
+    ]
+  },
+  {
+    "Input": "नौ महीने के लिए, एथिल ने कहा कि शुद्ध 2% या 1.40 डॉलर प्रति शेयर गिर गया",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.40 डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1.4",
+          "unit": "Dollar"
+        },
+        "Start": 44,
+        "End": 52
+      }
+    ]
+  },
+  {
+    "Input": "विश्लेषकों के अनुमान के अनुसार सितम्बर का चालू खाता घाटा 1 . 6 अरब ($ 2.54 बिलियन), अगस्त की 2. 0 बिलियन की कमी की तुलना में।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 2.54 बिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2540000000",
+          "unit": "Dollar"
+        },
+        "Start": 68,
+        "End": 80
+      }
+    ]
+  },
+  {
+    "Input": "दिस. 12, 1994 को अपेक्षित 125 मिलियन ऑस्ट्रेलियाई डॉलर मूल्य के शून्य कूपन के यूरोबॉण्ड वाल, जिसकी कीमत 50 . 9375 है वह हैम्ब्रोस बैंक लि. पर 15 . 06 % कम का लाभ देगी।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "125 मिलियन ऑस्ट्रेलियाई डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125000000",
+          "unit": "Australian dollar",
+          "isoCurrency": "AUD"
+        },
+        "Start": 26,
+        "End": 53
+      }
+    ]
+  },
+  {
+    "Input": "शुक्रवार को, मुख्य कैबिनेट सचिव ने घोषणा की कि आठ कैबिनेट मंत्रियों को उद्योग से पांच मिलियन येन मिले थे",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पांच मिलियन येन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "5000000",
+          "unit": "Japanese yen",
+          "isoCurrency": "JPY"
+        },
+        "Start": 81,
+        "End": 95
+      }
+    ]
+  },
+  {
+    "Input": "  प्रधान मंत्री तोशिकी काफू द्वारा 450,000 येन सहित।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "450,000 येन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "450000",
+          "unit": "Japanese yen",
+          "isoCurrency": "JPY"
+        },
+        "Start": 35,
+        "End": 45
+      }
+    ]
+  },
+  {
+    "Input": "ओर्केम एस. ए. , एक फ्रांस का राज्य नियंत्रित रासायनिक उत्पादक, ने यू. के. की विशेष रासायनिक समूह कोट्स ब्रदर्स पीएलसी के 59 . 2 % शेयर के लिए प्रति शेयर 470 पेंस की बोली लगाई है, दोनो पक्षों ने ऐसा कहा है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "470 पेंस",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "470",
+          "unit": "Pence"
+        },
+        "Start": 153,
+        "End": 160
+      }
+    ]
+  },
+  {
+    "Input": "पिछले साल पहले के मुकाबले मजदूरी से कमाने वाले वाले परिवारों का अगस्त का समायोजित खर्चा 0 . 6 % से कम होकर 309,381 येन हो गया था।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "309,381 येन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "309381",
+          "unit": "Japanese yen",
+          "isoCurrency": "JPY"
+        },
+        "Start": 107,
+        "End": 117
+      }
+    ]
+  },
+  {
+    "Input": "राष्ट्रीय आय रियल्टी ट्रस्ट ने कहा कि यह 12-सेंट-प्रति-शेयर लाभांश के साथ भुगतान करने के लिए लाभांश भुगतान फिर से शुरू करेगा जो ऑक्टो 25 के सभी शेयरधारकों को नवंबर 6 को दिया जाएगा।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12-सेंट",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "12",
+          "unit": "Cent"
+        },
+        "Start": 41,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "श्री महाजन ने कहा कि c $ 300 मिलियन की कमाई का चार्ज",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "c $ 300 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "300000000",
+          "unit": "Canadian dollar",
+          "isoCurrency": "CAD"
+        },
+        "Start": 21,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "लगभग c $ 1.34 प्रति शेयर की राशि होगी।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "c $ 1.34",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1.34",
+          "unit": "Canadian dollar",
+          "isoCurrency": "CAD"
+        },
+        "Start": 5,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "अंडे की कीमतें औसतन 64.2 सेंट प्रति दर्जन रही।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "64.2 सेंट",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "64.2",
+          "unit": "Cent"
+        },
+        "Start": 20,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "फिर भी, इसने कहा कि यह उम्मीद है कि वर्ष 1989 के सभी बिक्री 20 बिलियन फ़्रैंक के ऑर्डर पर होगी, जो वर्ष के दूसरे भाग में दो बड़े अनुबंधों के लिए अनुमानित बिलों को दर्शाएगी।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20 बिलियन फ़्रैंक",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "20000000000",
+          "unit": "Franc"
+        },
+        "Start": 60,
+        "End": 76
+      }
+    ]
+  },
+  {
+    "Input": "इस लेनदेन में श्री मर्डॉक के ऑस्ट्रेलिया आधारित न्यूज़ कॉर्प की एक इकाई न्यूज़ इंटरनेशनल पीएलसी से आग्रह किया गया कि वह ज़ेटा की राइट्स इश्यूज़ को खरीदे जिसका मूल्य 6.65 बिलियन पसेटा है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "6.65 बिलियन पसेटा",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "6650000000",
+          "unit": "Peseta"
+        },
+        "Start": 161,
+        "End": 177
+      }
+    ]
+  },
+  {
+    "Input": "फुजित्सू लि. ने कहा कि वह हिरोशिमा शहर के लिए वाटरवर्क्स कंप्यूटर सिस्टम डिजाइन करने के लिए अपनी विवादास्पद एक-येन वाली बोली को वापस लेना चाहता है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक-येन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1",
+          "unit": "Japanese yen",
+          "isoCurrency": "JPY"
+        },
+        "Start": 108,
+        "End": 113
+      }
+    ]
+  },
+  {
+    "Input": "250 मिलियन डच गिल्डर 7 3 / 4 % बॉन्ड जो कि नवंबर 15, 1999 के लिए ड्यू है और जिसकी कीमत 101 1/4 है वह इश्यू प्राइस पर 7 . 57 % का लाभ देगी और 7 . 86% शुल्क से कम होगी ,  यह आम्रो बैंक पर उपलब्ध है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "250 मिलियन डच गिल्डर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "250000000",
+          "unit": "Netherlands guilder"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "इसके अलावा, बैंक के पास जन. 1 , 1990 के बाद 1,015 फ़्रैंक प्रति शेयर के हिसाब से सोआयटी जेनराले से बीआईपी में 30 . 84 % तक खरीदने का विकल्प भी है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1,015 फ़्रैंक",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1015",
+          "unit": "Franc"
+        },
+        "Start": 44,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "इसके शेयर देर से हुई डीलिंग में फिसल कर एक पेनी पर बंद हुए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक पेनी",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1",
+          "unit": "Penny"
+        },
+        "Start": 40,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "प्रति शेयर 197 पेंस कम।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "197 पेंस",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "197",
+          "unit": "Pence"
+        },
+        "Start": 11,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "इसके तिमाही परिचालन लाभ बेहतर होकर 361 मिलियन पाउंड हो गया",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "361 मिलियन पाउंड",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "361000000",
+          "unit": "Pound"
+        },
+        "Start": 35,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "पिछले साल, पूरे शहर के टाउनशिप उद्यमों का सकल उत्पादन मूल्य पहली बार पूरे प्रांत में प्रथम रैंकिंग लाते हुए, 100 बिलियन युआन से टूट गया।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 बिलियन युआन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000000000",
+          "unit": "Chinese yuan",
+          "isoCurrency": "CNY"
+        },
+        "Start": 109,
+        "End": 123
+      }
+    ]
+  },
+  {
+    "Input": "रेंजर्स को अनुमानित 50 मिलियन पाउंड बेक्सडेल - वॉकर की सलाह से रखने के लिए मिले।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "50 मिलियन पाउंड",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "50000000",
+          "unit": "Pound"
+        },
+        "Start": 20,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "बदले में, फ़्रांसिस लीउंग पाक - भी पीसीसीडबल्यू में 8 % के शेयर को 323 मिलियन यूरो में टेलीफ़ोनिका को बेचने पर राजी हो गया।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "323 मिलियन यूरो",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "323000000",
+          "unit": "Euro",
+          "isoCurrency": "EUR"
+        },
+        "Start": 66,
+        "End": 80
+      }
+    ]
+  },
+  {
+    "Input": "uefa ने अपनी टिप्पणियों के साथ खेल को विवाद में लाने के लिए फर्ग्यूसन पर आरोप लगाया, और उस वर्ष 1 मई को उस पर 10,000 स्विस फ्रैंक का जुर्माना लगाया गया।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10,000 स्विस फ्रैंक",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "10000",
+          "unit": "Swiss franc",
+          "isoCurrency": "CHF"
+        },
+        "Start": 110,
+        "End": 128
+      }
+    ]
+  },
+  {
+    "Input": "आईपीएल ने किंगफिशर एयरलाइंस को आधिकारिक अंपायर भागीदार के रूप में एक (लगभग £ 15 मिलियन) सौदे के लिए श्रृंखला में साइन किया।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "£ 15 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15000000",
+          "unit": "Pound"
+        },
+        "Start": 75,
+        "End": 85
+      }
+    ]
+  },
+  {
+    "Input": "1990 से एडिलेड के इलेक्ट्रॉनिक्स उद्योग का राजस्व लगभग 15% प्रति वर्ष हो गया है और 2011 में यह 4 बिलियन डॉलर से अधिक हो गया है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4 बिलियन डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "4000000000",
+          "unit": "Dollar"
+        },
+        "Start": 95,
+        "End": 107
+      }
+    ]
+  },
+  {
+    "Input": "आबिल एंड अशोसिएट्स ने फिल्म के इफ़ेक्ट्स पर काम करने के लिए $ 4 मिलियन की बोली लगाई और पारामाउंट ने उसे स्वीकार कर लिया।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 4 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "4000000",
+          "unit": "Dollar"
+        },
+        "Start": 59,
+        "End": 68
+      }
+    ]
+  },
+  {
+    "Input": "मालोन ने ट्वेंटिएथ सेंचुरी - फॉक्स को समझौते के उल्लंघन के लिए $ 1.6 मिलियन का मुकदमा किया;",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 1.6 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1600000",
+          "unit": "Dollar"
+        },
+        "Start": 63,
+        "End": 74
+      }
+    ]
+  },
+  {
+    "Input": "2003 में, बायर्न म्यूनिख ने अपने पेरोल का भुगतान करने के लिए कुछ महीनों के लिए डॉर्टमुंड को 2 मिलियन यूरो का ऋण दिया।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 मिलियन यूरो",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2000000",
+          "unit": "Euro",
+          "isoCurrency": "EUR"
+        },
+        "Start": 92,
+        "End": 104
+      }
+    ]
+  },
+  {
+    "Input": "लॉकहीड मार्टिन और संयुक्त राज्य अमेरिका की सरकार ने भारत से 126 फाइटर जेट के लिए us$ 10 बिलियन का अनुबंध किया।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "us$ 10 बिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "10000000000",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 81,
+        "End": 93
+      }
+    ]
+  },
+  {
+    "Input": "अनुसंधान फर्म एनपीडी के अनुसार, सभी विंडोज़ पोर्टेबल पीसी की औसत बिक्री मूल्य अक्टूबर 2008 में $ 659 से गिर गई है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 659",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "659",
+          "unit": "Dollar"
+        },
+        "Start": 95,
+        "End": 99
+      }
+    ]
+  },
+  {
+    "Input": "वन टेल 1997 के नवंबर में $ 2 प्रति शेयर पर ऑस्ट्रेलियाई स्टॉक एक्सचेंज पर लॉन्च की गई।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 2",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2",
+          "unit": "Dollar"
+        },
+        "Start": 25,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "ईस्ट स्टैंड (वर्सेस्टर एवेन्यू) स्टैंड 1934 में समाप्त हो गया था और इसकी क्षमता लगभग 80, 000 दर्शकों तक बढ़ गई थी, लेकिन इसकी लागत £ 60,000 थी।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "£ 60,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "60000",
+          "unit": "Pound"
+        },
+        "Start": 131,
+        "End": 138
+      }
+    ]
+  },
+  {
+    "Input": "उनके फुलहम टीममेट जॉनी हाइन्स पहले £ 100 के खिलाड़ी बने।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "£ 100",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Pound"
+        },
+        "Start": 35,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "नौ महीनों के लिए, ए-एमआर का शुद्ध 15% बढ़कर $ 415.9 मिलियन हो गया",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 415.9 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "415900000",
+          "unit": "Dollar"
+        },
+        "Start": 44,
+        "End": 57
+      }
+    ]
+  },
+  {
+    "Input": "कंपनी द्वारा दिवंगत सिपाही के अधिकारों की घोषणा के बाद एयरलाइन की शेयर की कीमत पहले ही 210 पेंस के स्तर से काफी नीचे है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "210 पेंस",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "210",
+          "unit": "Pence"
+        },
+        "Start": 87,
+        "End": 94
+      }
+    ]
+  },
+  {
+    "Input": "रोलिंग स्टोन ने कहा, `` हार्परकोलिन्स ने 2008 में $ 3 मिलियन की पुस्तक परियोजना का अधिग्रहण किया।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 3 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "3000000",
+          "unit": "Dollar"
+        },
+        "Start": 50,
+        "End": 59
+      }
+    ]
+  },
+  {
+    "Input": "2013, फोर्ब्स पत्रिका के संस्करण में कीथ की तस्वीर के साथ यह कैप्शन था `` कंट्री म्यूज़िक का $ 500 मिलियन आदमी'।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 500 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "500000000",
+          "unit": "Dollar"
+        },
+        "Start": 92,
+        "End": 103
+      }
+    ]
+  },
+  {
+    "Input": "हैरी फर्ग्यूसन ने 1952 में अदालत से बाहर £ 90 मिलियन के मुआवज़े के लिए अपने पेटेंट के अवैध उपयोग के लिए यूएस फ़ोर्ड पर मुकदमा दायर किया।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "£ 90 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "90000000",
+          "unit": "Pound"
+        },
+        "Start": 41,
+        "End": 51
+      }
+    ]
+  },
+  {
+    "Input": "एयरोस्मिथ ने कोलम्बिया के साथ 1972 के मध्य में रिपोर्ट किए गए $ 125,000 के लिए हस्ताक्षर किए और अपना पहला एल्बम, एयरोस्मिथ जारी किया।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 125,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125000",
+          "unit": "Dollar"
+        },
+        "Start": 62,
+        "End": 70
+      }
+    ]
+  },
+  {
+    "Input": "2001 में, 186 मिलियन डॉलर के ओडवाला इंक खरीदे जाने के बाद यह कोक के सबसे बड़े अधिग्रहणों में से एक था।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "186 मिलियन डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "186000000",
+          "unit": "Dollar"
+        },
+        "Start": 10,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "बाद में, ऐप्पल और क्रिएटिव एक समझौते पर पहुंच गए, जिसमें ऐप्पल ने क्रिएटिव को $ 100 मिलियन का भुगतान किया, और क्रिएटिव ’ ’ मेड फ़ॉर आइपॉड ” के एक्सेसरी प्रोग्राम में शामिल हुआ।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 100 मिलियन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000000",
+          "unit": "Dollar"
+        },
+        "Start": 78,
+        "End": 89
+      }
+    ]
+  },
+  {
+    "Input": "हार्ट - स्काट फ़िलिंग की फिर समीक्षा की जाती है और आमतौर पर किसी भी विरोधी चिंता का सामना किया जाता है। आमतौर पर, हार्ट स्कॉट का उपयोग अब टारगेट फर्मों के प्रबंधकों को बोली की शुरुआती खबर देने और नियामक समीक्षा में देरी की रणनीति के रूप में उपयोग करने का मौका देने के लिए किया जाता है। $ 20,000 का टैक्स एक मल्टीबिलियन - डॉलर के सौदे में एक छोटी सी रकम होती है , लेकिन इसका प्रभाव हजारों छोटे, दोस्ताना सौदों पर गंभीर होता है ।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$ 20,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "20000",
+          "unit": "Dollar"
+        },
+        "Start": 285,
+        "End": 292
+      },
+      {
+        "Text": "डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": null,
+          "unit": "Dollar"
+        },
+        "Start": 320,
+        "End": 323
+      }
+    ]
+  },
+  {
+    "Input": "डॉलर : 143.80 येन , 0 . 95 ऊपर ; 1 . 8500 मार्क , 0 . 0085 ऊपर.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": null,
+          "unit": "Dollar"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "143.80 येन",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "143.8",
+          "unit": "Japanese yen",
+          "isoCurrency": "JPY"
+        },
+        "Start": 7,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "इसकी कीमत केवल 3 डॉलर 50 सेंट है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 डॉलर 50 सेंट",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "3.5",
+          "unit": "Dollar"
+        },
+        "Start": 15,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "इसकी कीमत केवल तेरह डॉलर और पैंतालीस सेंट है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तेरह डॉलर और पैंतालीस सेंट",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13.45",
+          "unit": "Dollar"
+        },
+        "Start": 15,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "इसमें केवल तेरह डॉलर पैंतालीस सेंट की लागत थी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तेरह डॉलर पैंतालीस सेंट",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13.45",
+          "unit": "Dollar"
+        },
+        "Start": 11,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "इसमें केवल तेरह डॉलर पैंतालीस की लागत थी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तेरह डॉलर पैंतालीस",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13.45",
+          "unit": "Dollar"
+        },
+        "Start": 11,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "इसकी कीमत आपको 10 अमेरिकी डॉलर और मेरे लिए 100 चीनी युआन है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 अमेरिकी डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "10"
+        },
+        "Start": 15,
+        "End": 29
+      },
+      {
+        "Text": "100 चीनी युआन",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "100"
+        },
+        "Start": 43,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "इसकी कीमत आपको 10 अमेरिकी डॉलर और मेरे लिए c$ 100 और पचास है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 अमेरिकी डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "10"
+        },
+        "Start": 15,
+        "End": 29
+      },
+      {
+        "Text": "c$ 100 और पचास",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CAD",
+          "unit": "Canadian dollar",
+          "value": "100.5"
+        },
+        "Start": 43,
+        "End": 56
+      }
+    ]
+  },
+  {
+    "Input": "इसमें एक कुआई और पांच माओ और पांच फ़ेन की जरूरत पड़ सकती है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक कुआई और पांच माओ और पांच फ़ेन",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "1.55"
+        },
+        "Start": 6,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "अरे, लागत $4.25 है और 32 मात्रा है!",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "$4.25",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "4.25"
+        },
+        "Start": 10,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "अरे, लागत 100元 है!",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100元",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Chinese yuan",
+          "value": "100",
+          "isoCurrency": "CNY"
+        },
+        "Start": 10,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "इस पुस्तक का मूल्य 100 ₡ है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 ₡",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Costa Rican colón",
+          "isoCurrency": "CRC"
+        },
+        "Start": 19,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "मैं नई साइकिल खरीदने में 100 ₾ खर्च करता हूं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 ₾",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Georgian lari",
+          "isoCurrency": "GEL"
+        },
+        "Start": 25,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "बधाई हो! आप एक कार और 100,000 ₭ जीतेंगे क्योंकि आप प्रतियोगिता के चैंपियन हैं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100,000 ₭",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000",
+          "unit": "Lao kip",
+          "isoCurrency": "LAK"
+        },
+        "Start": 22,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "बॉब, क्या आप मुझे आपातकाल के लिए 100,000 ரூ उधार दे सकते हैं और मैं अगले सोमवार को ब्याज के साथ वापस भुगतान करूंगा।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100,000 ரூ",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000",
+          "unit": "Sri Lankan rupee",
+          "isoCurrency": "LKR"
+        },
+        "Start": 33,
+        "End": 42
+      }
+    ]
+  },
+  {
+    "Input": "क्या आपको लगता है कि सेन 100,000 में यह नया लैपटॉप महंगा है?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सेन 100,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000",
+          "unit": "Sen"
+        },
+        "Start": 21,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "लोटरी की पहली कीमत यू. एस. $ 100,000,000 है, क्या आप इसे चाहते हैं?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "यू. एस. $ 100,000,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000000",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 19,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "मुझे 5 डॉलर दीजिए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 डॉलर",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "5",
+          "unit": "Dollar"
+        },
+        "Start": 5,
+        "End": 10
+      }
+    ]
+  }
+]

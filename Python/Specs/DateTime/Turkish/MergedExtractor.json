@@ -1,0 +1,950 @@
+[
+  {
+    "Input": "Bu 2 gün",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 gün",
+        "Type": "duration",
+        "Start": 3,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Bu saat 16'dan öncedır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "saat 16'dan önce",
+        "Type": "time",
+        "Start": 3,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Bu yarın öğlen saat 16'dan önce",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yarın öğlen saat 16'dan önce",
+        "Type": "datetime",
+        "Start": 3,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Bu yarın öğleden sonra 16'dan önce",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yarın öğleden sonra 16'dan önce",
+        "Type": "datetime",
+        "Start": 3,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Bu saat 16'dan sonradır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "saat 16'dan sonra",
+        "Type": "time",
+        "Start": 3,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Bu yarın 16'dan sonra",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yarın 16'dan sonra",
+        "Type": "datetime",
+        "Start": 3,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Bu yarından sonra saat 16'da",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yarından sonra saat 16",
+        "Type": "datetime",
+        "Start": 3,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "5 dakika içinde döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 dakika içinde",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Geçen hafta",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Geçen hafta",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "10 saat sonrası için bir toplantı ayarla",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 saat sonra",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Bugün nasıl görünüyor?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bugün",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Bu hafta nasıl görünüyor?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bu hafta",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Benim haftam nasıl görünüyor?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Benim haftam",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Hafta nasıl görünüyor?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Hafta",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Benim günüm nasıl görünüyor?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Benim günüm",
+        "Type": "date",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Gün nasıl görünüyor?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Gün",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Saat 9'dan 11'e kadar bir toplantı ayarla",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Saat 9'dan 11'e kadar",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Yarın 9'dan 11'e kadar bir toplantı ayarla",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Yarın 9'dan 11'e kadar",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Bellevue'deki 22 Temmuz toplantısını 22 Ağustos'a değiştir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22 Temmuz",
+        "Type": "date",
+        "Start": 14,
+        "Length": 9
+      },
+      {
+        "Text": "22 Ağustos'a",
+        "Type": "date",
+        "Start": 37,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "7/2'den sonra",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7/2'den sonra",
+        "Type": "date",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "7/2'den beri",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7/2'den beri",
+        "Type": "date",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "7/2'den önce",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7/2'den önce",
+        "Type": "date",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "06/06 12:15",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "06/06 12:15",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "06/06/12 15:15",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "06/06/12 15:15",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "06/06, 2015",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "06/06, 2015",
+        "Type": "date",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "29 Mayıs",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "29 Mayıs",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Mart'ta doğdum",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Mart",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Mayıs'ta ne oldu",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Mayıs",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "saat 15'teki toplantıyı 16'ya alacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "saat 15",
+        "Type": "time",
+        "Start": 0,
+        "Length": 7
+      },
+      {
+        "Text": "16",
+        "Type": "time",
+        "Start": 24,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Sabah ondaki toplantıyı on bire alacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Sabah ondaki",
+        "Type": "time",
+        "Start": 0,
+        "Length": 12
+      },
+      {
+        "Text": "on bir",
+        "Type": "time",
+        "Start": 24,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Sabah ondaki toplantıyı on bire alacağım?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Sabah ondaki",
+        "Type": "time",
+        "Start": 0,
+        "Length": 12
+      },
+      {
+        "Text": "on bir",
+        "Type": "time",
+        "Start": 24,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Sabah ondaki toplantıyı akşam 20'ye alacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Sabah ondaki",
+        "Type": "time",
+        "Start": 0,
+        "Length": 12
+      },
+      {
+        "Text": "akşam 20",
+        "Type": "time",
+        "Start": 24,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Sabah ondaki toplantıyı akşam yirmiye alacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Sabah ondaki",
+        "Type": "time",
+        "Start": 0,
+        "Length": 12
+      },
+      {
+        "Text": "akşam yirmi",
+        "Type": "time",
+        "Start": 24,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Sabah ondaki toplantıyı saat on üçe alacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Sabah ondaki",
+        "Type": "time",
+        "Start": 0,
+        "Length": 12
+      },
+      {
+        "Text": "saat on üç",
+        "Type": "time",
+        "Start": 24,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Sabah ondaki toplantıyı saat 13'e alacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Sabah ondaki",
+        "Type": "time",
+        "Start": 0,
+        "Length": 12
+      },
+      {
+        "Text": "saat 13",
+        "Type": "time",
+        "Start": 24,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Sabah ondaki toplantıyı 0'a alacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Sabah ondaki",
+        "Type": "time",
+        "Start": 0,
+        "Length": 12
+      },
+      {
+        "Text": "0",
+        "Type": "time",
+        "Start": 24,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "Sabah ondaki toplantıyı 24'e alacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Sabah ondaki",
+        "Type": "time",
+        "Start": 0,
+        "Length": 12
+      },
+      {
+        "Text": "24",
+        "Type": "time",
+        "Start": 24,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Sabah ondaki toplantıyı sıfıra alacağım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Sabah ondaki",
+        "Type": "time",
+        "Start": 0,
+        "Length": 12
+      },
+      {
+        "Text": "sıfır",
+        "Type": "time",
+        "Start": 24,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Gelecek toplantı 16 Mart 2017'de yapılacak. Bu öğleden sonra saat 2'de konuşmaya ne dersin?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "16 Mart 2017",
+        "Type": "date",
+        "Start": 17,
+        "Length": 12
+      },
+      {
+        "Text": "Bu öğleden sonra saat 2",
+        "Type": "datetime",
+        "Start": 44,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "1 Nisan 2018, bunu bu öğleden sonra saat 2'ye planlayabiliriz",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 Nisan 2018",
+        "Type": "date",
+        "Start": 0,
+        "Length": 12
+      },
+      {
+        "Text": "bu öğleden sonra saat 2",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Aralık 2012'den öncedir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Aralık 2012'den önce",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Aralık 2012'ye kadardır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Aralık 2012'ye kadar",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Aralık 2012 ya da sonrasıdır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Aralık 2012 ya da sonra",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "11 -2016'da yokum",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11 -2016",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "11 / 2016'da yokum",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11 / 2016",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "11/2016'da yokum",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11/2016",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "11 - 2016'da yokum",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11 - 2016",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "11-2016'da yokum",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11-2016",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "2016 /11'de yokum",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 /11",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2016/11'de yokum",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016/11",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "2016 -11'de yokum",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 -11",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2016- 11'de yokum",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016- 11",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2016 Kasım'da yokum",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 Kasım",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Kasım, 2016'da yokum",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Kasım, 2016",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Daha sonra ya da 1/1/2016'da ulaşacak",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Daha sonra ya da 1/1/2016",
+        "Type": "date",
+        "Start": 0,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Daha önce ya da 1/1/2016'da ulaşacak",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Daha önce ya da 1/1/2016",
+        "Type": "date",
+        "Start": 0,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Bu görev 1/1/2016'da ya da daha erken bitecek",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2016'da ya da daha erken",
+        "Type": "date",
+        "Start": 9,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Bu görev Şubat 2018'de ya da öncesinde bitecek",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Şubat 2018'de ya da öncesinde",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "2016'da ya da daha erken ayrılamazsın",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016'da ya da daha erken",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Bugün 18:30'da ya da sonrasında ofisten çıkabilirsin",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bugün 18:30'da ya da sonrasında",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Yarından sonraki gün ya da öncesinde ayrılmanız gerekir.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Yarından sonraki gün ya da öncesinde",
+        "Type": "date",
+        "Start": 0,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "15/5/2018 saat 15'te ya da daha erken ayrılmanız gerekir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15/5/2018 saat 15'te ya da daha erken",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "Bugünden sonraki iki gün uygun musun?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bugünden sonraki iki gün",
+        "Type": "date",
+        "Start": 0,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Yarından itibaren üç hafta uygun musun?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Yarından itibaren üç hafta",
+        "Type": "date",
+        "Start": 0,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Dünden önceki iki gün neredeydin?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Dünden önceki iki gün",
+        "Type": "date",
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Tüm işimi zaten bugünden önce 2 haftadan fazladır bitirmiştim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bugünden önce 2 haftadan fazla",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Bugünden itibaren 2 hafta içinde döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bugünden itibaren 2 hafta içinde",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Bugünden itibaren 2 haftadan az bir sürede döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bugünden itibaren 2 haftadan az bir sürede",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 42
+      }
+    ]
+  },
+  {
+    "Input": "Bu görev dünden önceki 2 günden fazla bir sürede yapılmalıydı",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dünden önceki 2 günden fazla bir sürede",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "Bu görev yarından sonra 3 günden az bir sürede bitecek",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yarından sonra 3 günden az bir sürede",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "Şu andan itibaren 3 dakikada başlayalım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Şu andan itibaren 3 dakika",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Bugünden itibaren 3 dakikada başlayalım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bugün",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      },
+      {
+        "Text": "3 dakika",
+        "Type": "duration",
+        "Start": 18,
+        "Length": 8
+      }
+    ]
+  }
+]

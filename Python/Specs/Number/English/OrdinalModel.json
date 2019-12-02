@@ -1,0 +1,750 @@
+[
+  {
+    "Input": "delete last sentence in the note",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last",
+        "Start": 7,
+        "End": 10,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Do you mean \"next\" or \"last\"?",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next",
+        "Start": 13,
+        "End": 16,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      },
+      {
+        "Text": "last",
+        "Start": 23,
+        "End": 26,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the antepenultimate.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "antepenultimate",
+        "Start": 12,
+        "End": 26,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-2",
+          "relativeTo": "end",
+          "value": "end-2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the last but one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the last but one",
+        "Start": 8,
+        "End": 23,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the penultimate.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "penultimate",
+        "Start": 12,
+        "End": 22,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the next to last.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next to last",
+        "Start": 12,
+        "End": 23,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the one before the last one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the one before the last one",
+        "Start": 8,
+        "End": 34,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the second to last.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the second to last",
+        "Start": 8,
+        "End": 25,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Delete last sentence.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last",
+        "Start": 7,
+        "End": 10,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the previous one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "previous one",
+        "Start": 12,
+        "End": 23,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the next one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next one",
+        "Start": 12,
+        "End": 19,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want the last two books.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last",
+        "Start": 11,
+        "End": 14,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want the last one books.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last",
+        "Start": 11,
+        "End": 14,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want next 3 books.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next",
+        "Start": 7,
+        "End": 10,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Give me the next item.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next",
+        "Start": 12,
+        "End": 15,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want last cookie.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last",
+        "Start": 7,
+        "End": 10,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want next to last.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next to last",
+        "Start": 7,
+        "End": 18,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Turn to previous page.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "previous",
+        "Start": 8,
+        "End": 15,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "three trillionth",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "three trillionth",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "3000000000000",
+          "relativeTo": "start",
+          "value": "3000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "a trillionth",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "a hundred trillionth",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "a hundred trillionth",
+        "Start": 0,
+        "End": 19,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "100000000000000",
+          "relativeTo": "start",
+          "value": "100000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "11th",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "11th",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        }
+      }
+      
+    ]
+  },
+  {
+    "Input": "21st",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "21st",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21",
+          "relativeTo": "start",
+          "value": "21"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "30th",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "30th",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "30",
+          "relativeTo": "start",
+          "value": "30"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2nd",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2nd",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "2",
+          "relativeTo": "start",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "eleventh",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "eleventh",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "twentieth",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "twentieth",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "20",
+          "relativeTo": "start",
+          "value": "20"
+        }
+      }
+      
+    ]
+  },
+  {
+    "Input": "twenty-fifth",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "twenty-fifth",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "25",
+          "relativeTo": "start",
+          "value": "25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "twenty-first",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "twenty-first",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21",
+          "relativeTo": "start",
+          "value": "21"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one hundred twenty fifth",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "one hundred twenty fifth",
+        "Start": 0,
+        "End": 23,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "125",
+          "relativeTo": "start",
+          "value": "125"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one hundred twenty-fifth",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "one hundred twenty-fifth",
+        "Start": 0,
+        "End": 23,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "125",
+          "relativeTo": "start",
+          "value": "125"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trillionth",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "trillionth",
+        "Start": 0,
+        "End": 9,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1000000000000",
+          "relativeTo": "start",
+          "value": "1000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "twenty-one trillion and three hundred twenty second",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "twenty-one trillion and three hundred twenty second",
+        "Start": 0,
+        "End": 50,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21000000000322",
+          "relativeTo": "start",
+          "value": "21000000000322"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "two hundredth",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "two hundredth",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "200",
+          "relativeTo": "start",
+          "value": "200"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book a first class seat to seattle",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "first",
+        "Start": 7,
+        "End": 11,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I like the first two books.",
+    "Results": [
+      {
+        "Text": "first",
+        "Start": 11,
+        "End": 15,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I like the first one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "first",
+        "Start": 11,
+        "End": 15,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Speak the first word.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "first",
+        "Start": 10,
+        "End": 14,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want the next 3 books.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next",
+        "Start": 11,
+        "End": 14,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "She finished second!",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "second",
+        "Start": 13,
+        "End": 18,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "2",
+          "relativeTo": "start",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The one before the last one is the right one",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the one before the last one",
+        "Start": 0,
+        "End": 26,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I meant the one before the last",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the one before the last",
+        "Start": 8,
+        "End": 30,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I meant the current one",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "current one",
+        "Start": 12,
+        "End": 22,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "current",
+          "value": "current+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Look at the current page",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "current",
+        "Start": 12,
+        "End": 18,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "current",
+          "value": "current+0"
+        }
+      }
+    ]
+  }
+]

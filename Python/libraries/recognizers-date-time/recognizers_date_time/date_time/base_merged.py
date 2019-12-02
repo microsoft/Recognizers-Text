@@ -386,7 +386,7 @@ class BaseMergedExtractor(DateTimeExtractor):
                 length = extract_result.length if extract_result.length else 0
                 after_str = source[start + length:]
 
-                match = RegExpUtility.match_begin(self.config.suffix_after_regex, after_str, True)
+                match = RegExpUtility.match_begin(self.config.suffix_after_regex, after_str.strip(), True)
 
                 if match and match.success:
                     is_followed_by_other_entity = True
@@ -403,9 +403,8 @@ class BaseMergedExtractor(DateTimeExtractor):
                     if not is_followed_by_other_entity:
                         mod_length = match.length + after_str.index(match.value)
                         extract_result.length += mod_length
-                        start = extract_result.start if extract_result.start else 0
-                        length = extract_result.length if extract_result.length else 0
-                        extract_result.text = source[start: start + length]
+
+                        extract_result.text = source[start: extract_result.start + extract_result.length]
                         extract_result.meta_data = self.assign_mod_metadata(extract_result.meta_data)
 
         return extract_results
@@ -584,6 +583,7 @@ class BaseMergedParser(DateTimeParser):
         has_around = False
         has_equal = False
         has_date_after = False
+        match_is_after = False
 
         # "inclusive_mod" means MOD should include the start/end time
         # For example, cases like "on or later than", "earlier than or in" have inclusive modifier
@@ -596,40 +596,60 @@ class BaseMergedParser(DateTimeParser):
             around_match = RegExpUtility.match_begin(self.config.around_regex, source.text, True)
             equal_match = RegExpUtility.match_begin(self.config.equal_regex, source.text, True)
 
+            if before_match and not before_match.success:
+                before_match = RegExpUtility.match_end(self.config.before_regex, source.text, True)
+                match_is_after = match_is_after or before_match.success
+
+            if after_match and not after_match.success:
+                after_match = RegExpUtility.match_end(self.config.after_regex, source.text, True)
+                match_is_after = match_is_after or after_match.success
+
+            if since_match and not since_match.success:
+                since_match = RegExpUtility.match_end(self.config.since_regex, source.text, True)
+                match_is_after = match_is_after or since_match.success
+
+            if around_match and not around_match.success:
+                around_match = RegExpUtility.match_end(self.config.around_regex, source.text, True)
+                match_is_after = match_is_after or around_match.success
+
+            if equal_match and not equal_match.success:
+                equal_match = RegExpUtility.match_end(self.config.equal_regex, source.text, True)
+                match_is_after = match_is_after or equal_match.success
+
             if before_match and before_match.success:
                 has_before = True
-                source.start += before_match.length
+                source.start += 0 if match_is_after else before_match.length
                 source.length -= before_match.length
-                source.text = source.text[before_match.length:]
-                mod_str = before_match.value
+                source.text = source.text[0:source.length] if match_is_after else source.text[before_match.length:]
+                mod_str = before_match.group()
                 if RegExpUtility.get_group(before_match.match[0], "include"):
                     has_inclusive_mod = True
             elif after_match and after_match.success:
                 has_after = True
-                source.start += after_match.length
+                source.start = 0 if match_is_after else after_match.length
                 source.length -= after_match.length
-                source.text = source.text[after_match.length:]
-                mod_str = after_match.value
+                source.text = source.text[0:source.length] if match_is_after else source.text[after_match.length:]
+                mod_str = after_match.group()
                 if RegExpUtility.get_group(after_match.match[0], "include"):
                     has_inclusive_mod = True
             elif since_match and since_match.success:
                 has_since = True
-                source.start += since_match.length
+                source.start += 0 if match_is_after else since_match.length
                 source.length -= since_match.length
-                source.text = source.text[since_match.length:]
-                mod_str = since_match.value
+                source.text = source.text[0:source.length] if match_is_after else source.text[since_match.length:]
+                mod_str = since_match.group()
             elif around_match and around_match.success:
                 has_around = True
-                source.start += around_match.length
+                source.start += 0 if match_is_after else around_match.length
                 source.length -= around_match.length
-                source.text = source.text[around_match.length:]
-                mod_str = around_match.value
+                source.text = source.text[0:source.length] if match_is_after else source.text[around_match.length:]
+                mod_str = around_match.group()
             elif equal_match and equal_match.success:
                 has_equal = True
-                source.start += equal_match.length
+                source.start += 0 if match_is_after else equal_match.length
                 source.length -= equal_match.length
-                source.text = source.text[equal_match.length:]
-                mod_str = equal_match.value
+                source.text = source.text[0:source.length] if match_is_after else source.text[equal_match.length:]
+                mod_str = equal_match.group()
             elif source.type == Constants.SYS_DATETIME_DATEPERIOD and \
                     regex.search(self.config.year_regex, source.text) or source.type == Constants.SYS_DATETIME_DATE or \
                     source.type == Constants.SYS_DATETIME_TIME:
@@ -642,7 +662,7 @@ class BaseMergedParser(DateTimeParser):
                     has_date_after = True
                     source.length -= match.length
                     source.text = source.text[0:source.length]
-                    mod_str = match.value
+                    mod_str = match.group()
 
         result = self.parse_result(source, reference)
         if not result:
@@ -651,8 +671,8 @@ class BaseMergedParser(DateTimeParser):
         # Pop, restore the MOD string
         if has_before and result.value:
             result.length += len(mod_str)
-            result.start -= len(mod_str)
-            result.text = mod_str + result.text
+            result.start -= 0 if match_is_after else len(mod_str)
+            result.text = result.text + mod_str if match_is_after else mod_str + result.text
             val = result.value
 
             val.mod = self.combine_mod(val.mod, TimeTypeConstants.BEFORE_MOD if not has_inclusive_mod else

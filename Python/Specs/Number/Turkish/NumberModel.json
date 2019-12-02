@@ -1,0 +1,2154 @@
+[
+  {
+    "Input": "192",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "192"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "192.168.1.2",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "192"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "168",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "168"
+        },
+        "Start": 4,
+        "End": 6
+      },
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 8,
+        "End": 8
+      },
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 10,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": ",08",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": ",08",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,08"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": ",23456000",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": ",23456000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,23456"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "4,800",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4,800",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4,8"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "yüz üç nokta altı",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz üç nokta altı",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "103,6"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "on altı",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "on altı",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "16"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "iki bölü üç",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iki bölü üç",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,666666666666667"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "yüz on altı",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz on altı",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "116"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "yüz altı",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz altı",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "106"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "yüz altmış bir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz altmış bir",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "161"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "bir trilyon",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir trilyon",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "yüz trilyon",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz trilyon",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100000000000000"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "yarım düzine",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yarım düzine",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "3 düzine",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 düzine",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "36"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "bir düzine",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir düzine",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "üç düzine",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç düzine",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "36"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "üç yüz iki düzine",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç yüz iki düzine",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3624"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "1.234.567",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.234.567",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1234567"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "9,2321312",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9,2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9,2321312"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "-9,2321312",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-9,2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-9,2321312"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "-4/5",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0,8"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "- 1 4/5",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "- 1 4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1,8"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "üç",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "123456789101231",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "123456789101231"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "-123456789101231",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-123456789101231"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": " -123456789101231",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-123456789101231"
+        },
+        "Start": 1,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "10k",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10k",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "100k",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100k",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "10G",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10g",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000000000"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "- 10  k",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "- 10  k",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-10000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "2 milyon",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 milyon",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2000000"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "1 trilyon",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 trilyon",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "üç ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "yirmi bir trilyon",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi bir trilyon",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21000000000000"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "yirmi bir trilyon üç yüz",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi bir trilyon üç yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21000000000300"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "elli iki",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elli iki",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "üç yüz otuz bir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç yüz otuz bir",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "331"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "iki yüz iki bin",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iki yüz iki bin",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "202000"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "iki bin iki yüz",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iki bin iki yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2200"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "2,33 k",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2,33 k",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2330"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "iki yüz nokta sıfır üç",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iki yüz nokta sıfır üç",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200,03"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "iki yüz nokta yetmiş bir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iki yüz nokta yetmiş bir",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200,71"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "1e10",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1e10",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "1,1^23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1,1^23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8,95430243255239"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "otuz iki bin iki yüz",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "otuz iki bin iki yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "32200"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "yetmiş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yetmiş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "70"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "2  1/4",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2  1/4",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,25"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "3/4",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3/4",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,75"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "bir bölü sekiz",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir bölü sekiz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,125"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "beş bölü sekiz",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "beş bölü sekiz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,625"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "yarım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yarım",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,5"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "üç çeyrek",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç çeyrek",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,75"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "yirmi nokta altı",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi nokta altı",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "20,6"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "üç bölü yirmi beş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç bölü yirmi beş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,12"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "yirmi üç nokta altı",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi üç nokta altı",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "23,6"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "iki yüz bin dört yüz kırk nokta altı",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iki yüz bin dört yüz kırk nokta altı",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200440,6"
+        },
+        "Start": 0,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "bir buçuk",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir buçuk",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1,5"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "bir nokta yirmi beş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir nokta yirmi beş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1,25"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "beş nokta yirmi beş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "beş nokta yirmi beş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5,25"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "yüz nokta yetmiş beş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz nokta yetmiş beş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100,75"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "1,1^+23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1,1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8,95430243255239"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "2,5^-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2,5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,4"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "-2500^-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-2500^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0,0004"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "-1,1^+23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-1,1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-8,95430243255239"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "-2,5^-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-2,5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0,4"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "-1,1^-23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-1,1^-23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0,111678157794247"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "-127,32e13",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-127,32e13",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1,2732E+15"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "12,32e+14",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12,32e+14",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1,232E+15"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "-12e-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-12e-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1,2"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "1,2b",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1,2b",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1200000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "yüz bin trilyon",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz bin trilyon",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1E+17"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "bir bölü beş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir bölü beş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,2"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "üç bölü beş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç bölü beş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,6"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "yirmi beş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi beş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "25"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "üç nokta iki",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç nokta iki",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3,2"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "yirmi bir bölü beş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi bir bölü beş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4,2"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "bir bölü yirmi bir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir bölü yirmi bir",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,0476190476190476"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "üç bölü yirmi bir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç bölü yirmi bir",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,142857142857143"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "yirmi bölü yirmi beş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi bölü yirmi beş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,8"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "yüz otuz beş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz otuz beş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "135"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "yüz otuz iki",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz otuz iki",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "132"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "yirmi altı nokta dört",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi altı nokta dört",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "26,4"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "yüz otuz nokta dört",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz otuz nokta dört",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "130,4"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "beş bölü yüz",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "beş bölü yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,05"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "yüz beş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz beş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "105"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "yüz bin beş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz bin beş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100005"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "1 bölü yirmi bir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 bölü yirmi bir",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,0476190476190476"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "1 bölü yüz yirmi bir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 bölü yüz yirmi bir",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,00826446280991736"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "1 bölü üç",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 bölü üç",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,333333333333333"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1 bölü 3",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 bölü 3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,333333333333333"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "bir bölü 3",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir bölü 3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,333333333333333"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "bir bölü 20",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir bölü 20",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,05"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "bir bölü yirmi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir bölü yirmi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,05"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "bir bölü yüz",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir bölü yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,01"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "bir bölü yüz yirmi beş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir bölü yüz yirmi beş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,008"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "bin dokuz yüz",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bin dokuz yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1900"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "Yanıt eksi bin dokuz yüz",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eksi bin dokuz yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1900"
+        },
+        "Start": 6,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "yanıt eksi bir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eksi bir",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1"
+        },
+        "Start": 6,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "Yanıt eksi yüz otuz beş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eksi yüz otuz beş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-135"
+        },
+        "Start": 6,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "Yanıt eksi bir bölü 20",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eksi bir bölü 20",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0,05"
+        },
+        "Start": 6,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "Yanıt eksi beş nokta beş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eksi beş nokta beş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-5,5"
+        },
+        "Start": 6,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "yanıt eksi 5",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eksi 5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-5"
+        },
+        "Start": 6,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "bir bölü dört",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir bölü dört",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,25"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "bir bölü üç",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir bölü üç",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,333333333333333"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "1234567",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1234567",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1234567"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "40.000 ile 40000  aynıdır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "40.000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40000"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "40000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40000"
+        },
+        "Start": 11,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "Şu an için Çin'in nüfusu 1.414.021.100'dür",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.414.021.100",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1414021100"
+        },
+        "Start": 25,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "423 0000 iki sayı olarak kabul edilecektir.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "423",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "423"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "0000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 4,
+        "End": 7
+      },
+      {
+        "Text": "iki",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 9,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "1.234.567,89 geçerli bir sayı formatıdır",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.234.567,89",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1234567,89"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "sıfır 0'dır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "sıfır",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 0,
+        "End": 4
+      },
+      {
+        "Text": "0",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 6,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "17/05/2018'de buluşma?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "17",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "17"
+        },
+        "Start": 0,
+        "End": 1
+      },
+      {
+        "Text": "05",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        },
+        "Start": 3,
+        "End": 4
+      },
+      {
+        "Text": "2018",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2018"
+        },
+        "Start": 6,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "Telefon numaram +1-222-2222/2222",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 17,
+        "End": 17
+      },
+      {
+        "Text": "222",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "222"
+        },
+        "Start": 19,
+        "End": 21
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2222"
+        },
+        "Start": 23,
+        "End": 26
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2222"
+        },
+        "Start": 28,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "Sana 10M verebilirim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10m",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000000"
+        },
+        "Start": 5,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "Sana üç yüz yirmi bir yuan verebilirim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç yüz yirmi bir",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "321"
+        },
+        "Start": 5,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "dört bin üç yüz yirmi bir geçerli bir sayıdır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dört bin üç yüz yirmi bir",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4321"
+        },
+        "Start": 0,
+        "End": 24
+      },
+      {
+        "Text": "bir",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 34,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "dört bin üç yüz ve sıfır iki geçerli sayıdır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dört bin üç yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4300"
+        },
+        "Start": 0,
+        "End": 14
+      },
+      {
+        "Text": "sıfır",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 19,
+        "End": 23
+      },
+      {
+        "Text": "iki",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 25,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "dört bin üç yüz ve 21 iki geçerli sayıdır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dört bin üç yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4300"
+        },
+        "Start": 0,
+        "End": 14
+      },
+      {
+        "Text": "21",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21"
+        },
+        "Start": 19,
+        "End": 20
+      },
+      {
+        "Text": "iki",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 22,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "üç yüz ve iki yüz 2 geçerli sayıdır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "iki yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200"
+        },
+        "Start": 10,
+        "End": 16
+      },
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 18,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "üç yüz ve 212 iki geçerli sayıdır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "212",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "212"
+        },
+        "Start": 10,
+        "End": 12
+      },
+      {
+        "Text": "iki",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 14,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "üç yüz ve eksi bir iki geçerli sayıdır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "eksi bir",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1"
+        },
+        "Start": 10,
+        "End": 17
+      },
+      {
+        "Text": "iki",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 19,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "üç yüz bir geçerli sayıdır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç yüz bir",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "301"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "Bazı ülkelerde 5.00 ya da 5,00 yazabilirsin",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5",
+        "Start": 15,
+        "End": 15,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      },
+      {
+        "Text": "00",
+        "Start": 17,
+        "End": 18,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        }
+      },
+      {
+        "Text": "5,00",
+        "Start": 26,
+        "End": 29,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "yirmi altı kişi Techiman kazasında öldü",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi altı",
+        "Start": 0,
+        "End": 9,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "26"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "onbinaltıyüz",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "onbinaltıyüz",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10600"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10.000tl",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "1. sırada",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1",
+        "Start": 0,
+        "End": 0,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  }
+]

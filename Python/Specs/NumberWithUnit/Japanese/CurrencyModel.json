@@ -1,0 +1,503 @@
+[
+  {
+    "Input": "今日の日経平均は2222円13銭です。",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2222円13銭",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "JPY",
+          "value": "2222.13",
+          "unit": "Japanese yen"
+        },
+        "Start": 8,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "次の停車駅は銭函",
+    "NotSupported": "python",
+    "Results": []
+  },
+  {
+    "Input": "35億円",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "35億円",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "JPY",
+          "value": "3500000000",
+          "unit": "Japanese yen"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "そのシュークリームは1個\\100です",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "\\100",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "JPY",
+          "value": "100",
+          "unit": "Japanese yen"
+        },
+        "Start": 12,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "printf(\"1\\n2\\n\");",
+    "NotSupported": "python",
+    "Results": []
+  },
+  {
+    "Input": "1,280円",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1,280円",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "JPY",
+          "value": "1280",
+          "unit": "Japanese yen"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "その中で、四川の彩友の中で1注1000万人民元の基本的なトップ賞を得ました。",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1000万人民元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "value": "10000000",
+          "unit": "Chinese yuan"
+        },
+        "Start": 15,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "今回の受賞終了後、賞池の金額が36.57億人民元に上った。",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "36.57億人民元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "value": "3657000000",
+          "unit": "Chinese yuan"
+        },
+        "Start": 15,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "1ユーロでいいです。",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1ユーロ",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "value": "1",
+          "unit": "Euro"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "両替1.0753ドル",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1.0753ドル",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "1.0753",
+          "unit": "United States dollar"
+        },
+        "Start": 2,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "両替1.0092スイス・フラン",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1.0092スイス・フラン",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CHF",
+          "value": "1.0092",
+          "unit": "Swiss franc"
+        },
+        "Start": 2,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "2016年は合併などで直接投資し、中国の資金は1200億ドルが流出した",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1200億ドル",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "120000000000",
+          "unit": "United States dollar"
+        },
+        "Start": 23,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "宝安科学技術会社は、国際精密な15人の株主と買収協議を締結し、1株当たり1.95香港ドルで",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1.95香港ドル",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "HKD",
+          "value": "1.95",
+          "unit": "Hong Kong dollar"
+        },
+        "Start": 36,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "中央銀行は期限切れの5306億ニュー台湾ドルを確定する",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "5306億ニュー台湾ドル",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "TWD",
+          "value": "530600000000",
+          "unit": "New Taiwan dollar"
+        },
+        "Start": 10,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "東芝はもう1万億円で取引銀行に融資を申請した",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1万億円",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "JPY",
+          "value": "1000000000000",
+          "unit": "Japanese yen"
+        },
+        "Start": 5,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "445ナイラで両替する",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "445ナイラ",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "NGN",
+          "value": "445",
+          "unit": "Nigerian naira"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "15ドル",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "15ドル",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "15",
+          "unit": "United States dollar"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "10ドル",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "10ドル",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "10",
+          "unit": "United States dollar"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "りんごが1ドル割引する",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1ドル",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "1",
+          "unit": "United States dollar"
+        },
+        "Start": 4,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "このパソコンは2ドルです",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2ドル",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "2",
+          "unit": "United States dollar"
+        },
+        "Start": 7,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "このパソコンは2ドル3セントです。",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2ドル3セント",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "2.03",
+          "unit": "United States dollar"
+        },
+        "Start": 7,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "中国移動の年間収入は$ 48.2 万で、とてもすごいです",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "$ 48.2 万",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "482000",
+          "unit": "Dollar"
+        },
+        "Start": 10,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "中国移動の年間収入はus$ 48.2 万で、とてもすごいです",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "us$ 48.2 万",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "482000",
+          "unit": "United States dollar"
+        },
+        "Start": 10,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "高田は毎日€ 1.5 かかります",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "€ 1.5",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "value": "1.5",
+          "unit": "Euro"
+        },
+        "Start": 5,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "彼女がいた後、小山は毎月£ 512.5を多く支出しています。",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "£ 512.5",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "512.5",
+          "unit": "Pound"
+        },
+        "Start": 12,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "彼女がいた後、小山は毎月545パナマ・バルボアを多く支出しています。",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "545パナマ・バルボア",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "PAB",
+          "value": "545",
+          "unit": "Panamanian balboa"
+        },
+        "Start": 12,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "小山は毎月545ドルと5セントを多く支出しています。",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "545ドルと5セント",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "545.05",
+          "unit": "United States dollar"
+        },
+        "Start": 5,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "この本は5人民元と3角です",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "5人民元と3角",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "value": "5.3",
+          "unit": "Chinese yuan"
+        },
+        "Start": 4,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "ドルはアメリカの通貨です。",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "ドル",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": null,
+          "unit": "United States dollar"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "ユーロはEU圏の通貨です。",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "ユーロ",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "value": null,
+          "unit": "Euro"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "この自転車は100ユーロと30です。",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "100ユーロと30",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "value": "100.3",
+          "unit": "Euro"
+        },
+        "Start": 6,
+        "End": 14
+      }
+    ]
+  }
+]

@@ -1,0 +1,494 @@
+[
+  {
+    "Input": "üç trilyonuncu",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç trilyonuncu",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "3000000000000",
+          "relativeTo": "start",
+          "value": "3000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "yüz trilyonuncu",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz trilyonuncu",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "100000000000000",
+          "relativeTo": "start",
+          "value": "100000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "11'inci",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11'inci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "21'inci",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21'inci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21",
+          "relativeTo": "start",
+          "value": "21"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "30'uncu",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30'uncu",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "30",
+          "relativeTo": "start",
+          "value": "30"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2'nci",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2'nci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "2",
+          "relativeTo": "start",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "on birinci",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "on birinci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "yirminci",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirminci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "20",
+          "relativeTo": "start",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "yirmi beşinci",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi beşinci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "25",
+          "relativeTo": "start",
+          "value": "25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "yirmi birinci",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi birinci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21",
+          "relativeTo": "start",
+          "value": "21"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "yüz yirmi birinci",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz yirmi birinci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "121",
+          "relativeTo": "start",
+          "value": "121"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trilyonuncu",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "trilyonuncu",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1000000000000",
+          "relativeTo": "start",
+          "value": "1000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "yirmi bir trilyon üç yüz yirmi ikinci",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi bir trilyon üç yüz yirmi ikinci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21000000000322",
+          "relativeTo": "start",
+          "value": "21000000000322"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "iki yüzüncü",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iki yüzüncü",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "200",
+          "relativeTo": "start",
+          "value": "200"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Seattle'a birinci sınıf yer ayırt",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "birinci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "100'üncü araba",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100'üncü",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "100",
+          "relativeTo": "start",
+          "value": "100"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1000'inci araba",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1000'inci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1000",
+          "relativeTo": "start",
+          "value": "1000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "100000'inci araba",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100000'inci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "100000",
+          "relativeTo": "start",
+          "value": "100000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "20'nci gün",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20'nci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "20",
+          "relativeTo": "start",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "30'uncu başkan",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30'uncu",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "30",
+          "relativeTo": "start",
+          "value": "30"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10.000tl",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "1. sırada",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "önceki",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "önceki",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sonraki",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "sonraki",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Bir önceki",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir önceki",
+        "Start": 0,
+        "End": 9,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ilki",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ilki",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "current",
+          "value": "current+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "İlki",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "İlki",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "current",
+          "value": "current+0"
+        }
+      }
+    ]
+  },
+    {
+    "Input": "ilk kitap",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ilk",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sonuncusu",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "sonuncusu",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "son",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "son",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "sonuncu",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "sonuncu",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "en son",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "en son",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  }
+]

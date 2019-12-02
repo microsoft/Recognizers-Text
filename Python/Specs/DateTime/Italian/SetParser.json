@@ -1,0 +1,650 @@
+[
+  {
+    "Input": "Andrò via settimanalmente",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2744475+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "settimanalmente",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "set": "Set: P1W"
+          },
+          "PastResolution": {
+            "set": "Set: P1W"
+          }
+        },
+        "Start": 10,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni due settimane",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2754476+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni due settimane",
+        "Type": "set",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "set": "Set: P2W"
+          },
+          "PastResolution": {
+            "set": "Set: P2W"
+          }
+        },
+        "Start": 10,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via quotidianamente",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2779449+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "quotidianamente",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
+        },
+        "Start": 10,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni giorno",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2794445+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni giorno",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
+        },
+        "Start": 10,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni mese",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2829445+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni mese",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "set": "Set: P1M"
+          },
+          "PastResolution": {
+            "set": "Set: P1M"
+          }
+        },
+        "Start": 10,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via annualmente",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2844439+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "annualmente",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
+        },
+        "Start": 10,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via una volta all'anno",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2854444+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "una volta all'anno",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
+        },
+        "Start": 10,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni anno",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2854444+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni anno",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
+        },
+        "Start": 10,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni due giorni",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2909444+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni due giorni",
+        "Type": "set",
+        "Value": {
+          "Timex": "P2D",
+          "FutureResolution": {
+            "set": "Set: P2D"
+          },
+          "PastResolution": {
+            "set": "Set: P2D"
+          }
+        },
+        "Start": 10,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni tre settimane",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2959472+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni tre settimane",
+        "Type": "set",
+        "Value": {
+          "Timex": "P3W",
+          "FutureResolution": {
+            "set": "Set: P3W"
+          },
+          "PastResolution": {
+            "set": "Set: P3W"
+          }
+        },
+        "Start": 10,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via alle 3pm ogni giorno",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2989494+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "3pm ogni giorno",
+        "Type": "set",
+        "Value": {
+          "Timex": "T15",
+          "FutureResolution": {
+            "set": "Set: T15"
+          },
+          "PastResolution": {
+            "set": "Set: T15"
+          }
+        },
+        "Start": 15,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni 4/15",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3109498+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni 4/15",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-04-15",
+          "FutureResolution": {
+            "set": "Set: XXXX-04-15"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-04-15"
+          }
+        },
+        "Start": 10,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni lunedì",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3259514+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni lunedì",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1"
+          }
+        },
+        "Start": 10,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni lunedì alle 4pm",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3379507+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni lunedì alle 4pm",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1T16",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1T16"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1T16"
+          }
+        },
+        "Start": 10,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni mattina",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3429518+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni mattina",
+        "Type": "set",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "set": "Set: TMO"
+          },
+          "PastResolution": {
+            "set": "Set: TMO"
+          }
+        },
+        "Start": 10,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni mattina alle 9am",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3609535+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni mattina alle 9am",
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
+        },
+        "Start": 10,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni pomeriggio alle 4pm",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3730732+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni pomeriggio alle 4pm",
+        "Type": "set",
+        "Value": {
+          "Timex": "T16",
+          "FutureResolution": {
+            "set": "Set: T16"
+          },
+          "PastResolution": {
+            "set": "Set: T16"
+          }
+        },
+        "Start": 10,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni notte alle 9pm",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3840706+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni notte alle 9pm",
+        "Type": "set",
+        "Value": {
+          "Timex": "T21",
+          "FutureResolution": {
+            "set": "Set: T21"
+          },
+          "PastResolution": {
+            "set": "Set: T21"
+          }
+        },
+        "Start": 10,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni notte alle 9",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3930718+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni notte alle 9",
+        "Type": "set",
+        "Value": {
+          "Timex": "T21",
+          "FutureResolution": {
+            "set": "Set: T21"
+          },
+          "PastResolution": {
+            "set": "Set: T21"
+          }
+        },
+        "Start": 10,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via tutte le mattine alle 9am",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4065719+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tutte le mattine alle 9am",
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
+        },
+        "Start": 10,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via ogni mattina alle 9",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4170727+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "ogni mattina alle 9",
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
+        },
+        "Start": 10,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via tutte le mattine",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4170727+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tutte le mattine",
+        "Type": "set",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "set": "Set: TMO"
+          },
+          "PastResolution": {
+            "set": "Set: TMO"
+          }
+        },
+        "Start": 10,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via tutti i giorni",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4170727+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "tutti i giorni",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
+        },
+        "Start": 10,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via alle 9am ogni domenica",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4295727+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "9am ogni domenica",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7T09",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          }
+        },
+        "Start": 15,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via alle 9am tutte le domeniche",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4505726+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "9am tutte le domeniche",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7T09",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          }
+        },
+        "Start": 15,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via i lunedì",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4570731+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "i lunedì",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1"
+          }
+        },
+        "Start": 10,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Andrò via le domeniche",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4635727+08:00"
+    },
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "le domeniche",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7"
+          }
+        },
+        "Start": 10,
+        "Length": 12
+      }
+    ]
+  }
+]

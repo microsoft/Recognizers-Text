@@ -1,0 +1,1825 @@
+[
+  {
+    "Input": "cinque",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "cinque",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trenta",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "trenta",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "30"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trentasei",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "trentasei",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "36"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trentotto",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "trentotto",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "38"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "quarantatre",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "quarantatre",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "43"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "quarantotto",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "quarantotto",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "48"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "duecento",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "duecento",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trecento",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "trecento",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ottocento",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ottocento",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "800"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "duecentoquaranta",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "duecentoquaranta",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "240"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "duecentoquarantatre",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "duecentoquarantatre",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "243"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "eravamo tremila alla festa",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tremila",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tremiladuecentoquarantatre",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tremiladuecentoquarantatre",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3243"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "192.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "192"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "192.168.1.2",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Extraction fails to recognize the different numbers separately due to differences in DecimalSeparatorChar and NonDecimalSeparatorChar same, case modified to match French and Spanish cases",
+    "Results": [
+      {
+        "Text": "192.168",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "192168"
+        },
+        "Start": 0,
+        "End": 6
+      },
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 8,
+        "End": 8
+      },
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 10,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "Prenota un posto di prima classe per seattle",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "il liquido da 180,25ml",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "il liquido da 180ml",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": " strada di 29km",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": " il 4 maggio ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "il liquido da 0,25ml",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "0,08",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "0,08",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,08"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un'",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "uno",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "uno",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "una",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "una",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "0,23456000",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "0,23456000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,23456"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4,800",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4,800",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4,8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "centotre e due terzi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "centotre e due terzi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "103,666666666667"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "sedici",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "sedici",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "16"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "due terzi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "due terzi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,666666666666667"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "centosedici",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "centosedici",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "116"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "centosei",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "centosei",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "106"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "centosessantuno",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "centosessantuno",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "161"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un bilionesimo",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un bilionesimo",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1E-12"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cento bilionesimi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "cento bilionesimi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1E-10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un miliardesimo",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un miliardesimo",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1E-09"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cento miliardesimi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "cento miliardesimi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1E-07"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " mezza dozzina",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "mezza dozzina",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 3 dozzine",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 dozzine",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "36"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "una dozzina",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "una dozzina",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " tre dozzine ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tre dozzine",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "36"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " trecento e due dozzine",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "trecento e due dozzine",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "324"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1.234.567",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.234.567",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1234567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1, 234, 567",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "234",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "234"
+        }
+      },
+      {
+        "Text": "567",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "9,2321312",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9,2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9,2321312"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " -9,2321312",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-9,2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-9,2321312"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " -1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-4/5",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0,8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-1 e 4/5",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-1 e 4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1,8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tre",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tre",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 123456789101231",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "123456789101231"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-123456789101231",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-123456789101231"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " -123456789101231",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-123456789101231"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10k",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10k",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10G",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10g",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "- 10  k",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "- 10  k",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-10000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2 milioni",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 milioni",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 bilione",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 bilione",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2 bilioni",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 bilioni",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2 miliardi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 miliardi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " tre ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tre",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un bilione",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un bilione",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ventuno bilioni",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ventuno bilioni",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ventunbilionitrecento",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ventunbilionitrecento",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21000000000300"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cinquantadue",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "cinquantadue",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "52"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trecentotrentuno",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "trecentotrentuno",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "331"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "duecentoduemila",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "duecentoduemila",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "202000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "duemiladuecento",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "duemiladuecento",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2200"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 2,33 k",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2,33 k",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2330"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " duecento punto zero tre",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "duecento punto zero tre",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200,03"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " duecento punto ventinove",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "duecento punto ventinove",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200,29"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " duecento virgola settantuno",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "duecento virgola settantuno",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200,71"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1e10",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1e10",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1,1^23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1,1^23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8,95430243255239"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "settanta",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "settanta",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "70"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2 e 1/4",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 e 1/4",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2 1/4",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 1/4",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "3/4",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3/4",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,75"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un ottavo",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un ottavo",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,125"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un decimo",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un decimo",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cinque ottavi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "cinque ottavi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,625"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un mezzo",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un mezzo",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tre quarti",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tre quarti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,75"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "venti e tre quinti",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "venti e tre quinti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "20,6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ventitre quinti",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ventitre quinti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4,6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ventitre e tre quinti",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ventitre e tre quinti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "23,6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "due milioni duemiladuecento quinti",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "due milioni duemiladuecento quinti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "400440"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un milione duemiladuecento",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un milione duemiladuecento",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1002200"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "duemiladuecentoventicinque quinti",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "duemiladuecentoventicinque quinti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "445"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un milione duemiladuecentocinquesimi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un milione duemiladuecentocinquesimi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "453,514739229025"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "uno e mezzo",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "uno e mezzo",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tre mezzi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tre mezzi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "due e un mezzo",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "due e un mezzo",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "due e tre quarti",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "due e tre quarti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,75"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "uno e un quarto",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "uno e un quarto",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1,25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cinque e un quarto",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "cinque e un quarto",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5,25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cento e tre quarti",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "cento e tre quarti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100,75"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un centesimo",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un centesimo",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,01"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "due centesimo",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "due centesimo",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,02"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1,1^+23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1,1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8,95430243255239"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2,5^-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2,5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-2500^-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-2500^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0,0004"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-1,1^+23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-1,1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-8,95430243255239"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-2,5^-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-2,5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0,4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-1,1^--23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-1,1^--23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-8,95430243255239"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-127,32e13",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-127,32e13",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1,2732E+15"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "12,32e+14",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12,32e+14",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1,232E+15"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-12e-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-12e-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1,2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1,2b",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1,2b",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1200000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un quinto",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un quinto",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "centomila bilionesimi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "centomila bilionesimi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1E-07"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tre quinti",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tre quinti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "venti quinti",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "venti quinti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tre e un quinto",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tre e un quinto",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3,2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ventuno quinti",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ventuno quinti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4,2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un ventunesimo",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un ventunesimo",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,0476190476190476"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un venticinquesimo",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un venticinquesimo",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,04"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tre ventunesimi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tre ventunesimi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,142857142857143"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "venti venticinquesimi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "venti venticinquesimi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "centotrenta quinti",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "centotrenta quinti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "26"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cento trentacinquesimi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "cento trentacinquesimi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,85714285714286"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "centotrentadue quinti",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "centotrentadue quinti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "26,4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "centotrenta e due quinti",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "centotrenta e due quinti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "130,4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un centocinquesimo",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un centocinquesimo",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,00952380952380952"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cento millecinquesimi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "cento millecinquesimi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,0995024875621891"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cinquanta duemilacinquesimi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "cinquanta duemilacinquesimi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,0249376558603491"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cinquanta su duemilacinque",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "cinquanta su duemilacinque",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,0249376558603491"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cinquanta tremilacinquesimi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "cinquanta tremilacinquesimi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,0166389351081531"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "uno su tre",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "uno su tre",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,333333333333333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 su ventuno",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 su ventuno",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,0476190476190476"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 su centoventuno",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 su centoventuno",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,00826446280991736"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 su tre",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 su tre",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,333333333333333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 su 3",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 su 3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,333333333333333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "uno su 3",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "uno su 3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,333333333333333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "uno su 20",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "uno su 20",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,05"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "uno su venti",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "uno su venti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,05"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "uno su cento",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "uno su cento",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,01"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "uno su centoventicinque",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "uno su centoventicinque",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,008"
+        }
+      }
+    ]
+  }
+]

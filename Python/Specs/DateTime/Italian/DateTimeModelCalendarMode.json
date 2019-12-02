@@ -1,0 +1,216 @@
+[
+  {
+    "Input": "Potresti aiutare me e Joan a trovare un momento per incontrarci nel mio ufficio (112/2018) la settimana del 10 Aprile?",
+    "Context": {
+      "ReferenceDateTime": "2018-02-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la settimana del 10 aprile",
+        "Start": 71,
+        "End": 90,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-W15",
+              "type": "daterange",
+              "start": "2017-04-10",
+              "end": "2017-04-17"
+            },
+            {
+              "timex": "2018-W15",
+              "type": "daterange",
+              "start": "2018-04-09",
+              "end": "2018-04-16"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Potresti aiutare me e Joan a trovare un momento per incontrarci nel mio ufficio (112/2018) la settimana del 23 Luglio?",
+    "Context": {
+      "ReferenceDateTime": "2018-02-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la settimana del 23 luglio",
+        "Start": 71,
+        "End": 89,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-W29",
+              "type": "daterange",
+              "start": "2017-07-17",
+              "end": "2017-07-24"
+            },
+            {
+              "timex": "2018-W30",
+              "type": "daterange",
+              "start": "2018-07-23",
+              "end": "2018-07-30"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organizzami un incontro privato",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Partirò domani alle 3",
+    "Context": {
+      "ReferenceDateTime": "2017-12-18T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "domani alle 3",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-19T03",
+              "type": "datetime",
+              "value": "2017-12-19 03:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Partirò alle tre di domani",
+    "Context": {
+      "ReferenceDateTime": "2017-12-18T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "alle tre di domani",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-19T03",
+              "type": "datetime",
+              "value": "2017-12-19 03:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono partito ieri alle 12",
+    "Context": {
+      "ReferenceDateTime": "2017-12-18T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "ieri alle 12",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-17T12",
+              "type": "datetime",
+              "value": "2017-12-17 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organizza un appuntamento prima delle 4",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "prima delle 4",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T04",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "04:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organizza un appuntamento dopo le tre",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dopo le tre",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T03",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "03:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organizza un appuntamento non più tardi delle 4",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "non più tardi delle 4",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T04",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "04:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

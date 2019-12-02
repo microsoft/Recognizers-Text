@@ -1,0 +1,290 @@
+[
+  {
+    "Input": "Beş yaşındayken bisiklete binmeyi öğrendi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "beş yaşındayken",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "5",
+          "unit": "Year"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "Bu efsane on yaşında",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "on yaşında",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Year"
+        },
+        "Start": 10,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ben sadece 29 yaşındayım",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "29 yaşındayım",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "29",
+          "unit": "Year"
+        },
+        "Start": 11,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "Şimdi, doksan beş yaş sonra, bakış açısı değişir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "doksan beş yaş",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "95",
+          "unit": "Year"
+        },
+        "Start": 7,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "Çin Seddi 500 yaşından fazladır ve uzunluğu 5.000 milden fazladır",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "500 yaşından",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "500",
+          "unit": "Year"
+        },
+        "Start": 10,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "O 60 yaşında; 8 Mayıs 1945'te doğdu",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "60 yaşında",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "60",
+          "unit": "Year"
+        },
+        "Start": 2,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "Vakaların %25'i 3 yaş civarına kadar tanılanmıyor",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 yaş",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Year"
+        },
+        "Start": 16,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "Bir yıllık bir vaadi yerine getirmek için baskı ne zaman olacak?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir yıllık",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "1",
+          "unit": "Year"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "bebek yalnızca on aylıkken bu oldu",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "on aylıkken",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Month"
+        },
+        "Start": 15,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "komite önerisi 8 aylık",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8 aylık",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "8",
+          "unit": "Month"
+        },
+        "Start": 15,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "vakaların yaklaşık %50'si 18 yaş civarında tanılandı",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "18 yaş",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "18",
+          "unit": "Year"
+        },
+        "Start": 26,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "bu mümkün, ancak 2006'da onların %95'i üç aydan daha küçüktü",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç aydan",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Month"
+        },
+        "Start": 39,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "eğer Aralık'ta devam edersek üç haftalık olacak",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç haftalık",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Week"
+        },
+        "Start": 29,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "6 haftalıkken Noel'i bile kutlayabilir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "6 haftalıkken",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "6",
+          "unit": "Week"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "90 günlük bir elektrik faturası epey geçtir",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "90 günlük",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "90",
+          "unit": "Day"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "o 40 - 50 yaşında",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "50 yaşında",
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Year",
+          "value": "50"
+        },
+        "Start": 7,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "Henüz 17 yaşındasın",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "17 yaşındasın",
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Year",
+          "value": "17"
+        },
+        "Start": 6,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "Bebek 20 günlükmüş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20 günlükmüş",
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Day",
+          "value": "20"
+        },
+        "Start": 6,
+        "End": 17
+      }
+    ]
+  }
+]

@@ -1,0 +1,273 @@
+[
+  {
+    "Input": "Quand elle avait cinq ans, elle a appris à aller à une bicyclette",
+    "Results": [
+      {
+        "Text": "cinq ans",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "5",
+          "unit": "Ans"
+        },
+        "Start": 17,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "Cette saga a dix ans.",
+    "Results": [
+      {
+        "Text": "dix ans",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Ans"
+        },
+        "Start": 13,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "J'ai seulement 29 ans!",
+    "Results": [
+      {
+        "Text": "29 ans",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "29",
+          "unit": "Ans"
+        },
+        "Start": 15,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "Maintenant, après trente cinq ans, mes perspectives changent",
+    "Results": [
+      {
+        "Text": "trente cinq ans",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "35",
+          "unit": "Ans"
+        },
+        "Start": 18,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "La Grande Muraille de Chine a plus de 500 ans et prolonge au-dessus de 5000 miles",
+    "Results": [
+      {
+        "Text": "500 ans",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "500",
+          "unit": "Ans"
+        },
+        "Start": 38,
+        "End": 44
+      }
+    ]
+  },
+  {
+    "Input": "Elle est 60 ans; elle est née dans le 8 mai 1945",
+    "Results": [
+      {
+        "Text": "60 ans",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "60",
+          "unit": "Ans"
+        },
+        "Start": 9,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "25 % de cas ne sont pas diagnostiqués jusqu'à autour de 3 ans.",
+    "Results": [
+      {
+        "Text": "3 ans",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Ans"
+        },
+        "Start": 56,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "Quand sera là la pression pour accomplir une promesse qui est un ans?",
+    "Results": [
+      {
+        "Text": "un ans",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "1",
+          "unit": "Ans"
+        },
+        "Start": 62,
+        "End": 67
+      }
+    ]
+  },
+  {
+    "Input": "C'est arrivé quand le bébé était seulement dix mois.",
+    "Results": [
+      {
+        "Text": "dix mois",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Mois"
+        },
+        "Start": 43,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "La proposition de comité est 8 mois.",
+    "Results": [
+      {
+        "Text": "8 mois",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "8",
+          "unit": "Mois"
+        },
+        "Start": 29,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "50 % de cas sont diagnostiqués a peus peu près dix-huit mois d'âge",
+    "Results": [
+      {
+        "Text": "dix-huit mois d'âge",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "18",
+          "unit": "Mois"
+        },
+        "Start": 47,
+        "End": 65
+      }
+    ]
+  },
+  {
+    "Input": "C'est possible, mais en 2006 95 % d'entre eux étaient plus jeunes que trois mois.",
+    "Results": [
+      {
+        "Text": "trois mois",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Mois"
+        },
+        "Start": 70,
+        "End": 79
+      }
+    ]
+  },
+  {
+    "Input": "Si nous avançons en décembre ce sera trois semaines vieilles",
+    "Results": [
+      {
+        "Text": "trois semaines",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Semaines"
+        },
+        "Start": 37,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "à l'âge de 6 semaines, on peut déjà fêter Noël",
+    "Results": [
+      {
+        "Text": "6 semaines",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "6",
+          "unit": "Semaines"
+        },
+        "Start": 11,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "Un 90 jour la vieille facture est tres tard",
+    "Results": [
+      {
+        "Text": "90 jour",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "90",
+          "unit": "Jour"
+        },
+        "Start": 3,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "Il a environ 40 - 50 ans",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "50 ans",
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Ans",
+          "value": "50"
+        },
+        "Start": 18,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "Maintenant, après quatre-vingt-quinze ans, mes perspectives changent",
+    "Results": [
+      {
+        "Text": "quatre-vingt-quinze ans",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "95",
+          "unit": "Ans"
+        },
+        "Start": 18,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "Maintenant, après quatre vingt quinze ans, mes perspectives changent",
+    "Results": [
+      {
+        "Text": "quatre vingt quinze ans",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "95",
+          "unit": "Ans"
+        },
+        "Start": 18,
+        "End": 40
+      }
+    ]
+  }
+]

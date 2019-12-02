@@ -1,0 +1,229 @@
+[
+  {
+    "Input": "Als sie 5 Jahre alt war, lernte sie Fahrrad fahren.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "5 jahre alt",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "5",
+          "unit": "Year"
+        },
+        "Start": 8,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "Diese Sage ist zehn Jahre alt.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "zehn jahre alt",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Year"
+        },
+        "Start": 15,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin nur 29 Jahre alt!",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "29 jahre alt",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "29",
+          "unit": "Year"
+        },
+        "Start": 12,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "Jetzt, mit einem Alter von 95 Jahren, hat man eine andere Perspektive.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "95 jahren",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "95",
+          "unit": "Year"
+        },
+        "Start": 27,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "Die große Mauer von China ist mehr als 500 Jahre alt und erstreckt sich über 5000 Meilen.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "500 jahre alt",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "500",
+          "unit": "Year"
+        },
+        "Start": 39,
+        "End": 51
+      }
+    ]
+  },
+  {
+    "Input": "Sie ist 60 Jahre alt. Sie wurde am 8. May 1945 geboren.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "60 jahre alt",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "60",
+          "unit": "Year"
+        },
+        "Start": 8,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "25% aller Fälle werden bis zu einem Alter von 3 Jahren nicht diagnostiziert.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "3 jahren",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Year"
+        },
+        "Start": 46,
+        "End": 53
+      }
+    ]
+  },
+  {
+    "Input": "Es ist passiert als das Baby nur zehn Monate alt war.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "zehn monate alt",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Month"
+        },
+        "Start": 33,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "Das Angebot des Komitees ist 8 Monate her.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "8 monate",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "8",
+          "unit": "Month"
+        },
+        "Start": 29,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "Es ist möglich, allerdings waren 2006 95% von ihnen jünger als drei Monate alt.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "drei monate alt",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Month"
+        },
+        "Start": 63,
+        "End": 77
+      }
+    ]
+  },
+  {
+    "Input": "Wenn wir im Dezember weiter machen, wird es drei Wochen alt sein.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "drei wochen alt",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Week"
+        },
+        "Start": 44,
+        "End": 58
+      }
+    ]
+  },
+  {
+    "Input": "Im Alter von 6 Wochen kann man schon Weihnachten feiern.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "6 wochen",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "6",
+          "unit": "Week"
+        },
+        "Start": 13,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "Er ist ungefähr 40 - 50 Jahre alt.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "50 jahre alt",
+        "Start": 21,
+        "End": 32,
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Year",
+          "value": "50"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Woche oder Wochen",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": []
+  }
+]
