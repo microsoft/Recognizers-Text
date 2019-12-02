@@ -10,6 +10,10 @@ from ..base_duration import DurationExtractorConfiguration
 class SpanishDurationExtractorConfiguration(DurationExtractorConfiguration):
 
     @property
+    def check_both_before_after(self):
+        return self._check_both_before_after
+
+    @property
     def dmy_date_format(self) -> bool:
         return self._dmy_date_format
 
@@ -113,3 +117,4 @@ class SpanishDurationExtractorConfiguration(DurationExtractorConfiguration):
         self._less_than_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.LessThanRegex
         )
+        self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
