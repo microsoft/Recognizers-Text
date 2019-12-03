@@ -622,5 +622,53 @@
         "Length": 15
       }
     ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für 28. Oktober",
+    "Context": {
+      "ReferenceDateTime": "2019-12-02T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "28. oktober",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-28",
+          "FutureResolution": {
+            "date": "2020-10-28"
+          },
+          "PastResolution": {
+            "date": "2019-10-28"
+          }
+        },
+        "Start": 33,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für 28.10.",
+    "Context": {
+      "ReferenceDateTime": "2019-12-02T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "28.10.",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-28",
+          "FutureResolution": {
+            "date": "2020-10-28"
+          },
+          "PastResolution": {
+            "date": "2019-10-28"
+          }
+        },
+        "Start": 33,
+        "Length": 6
+      }
+    ]
   }
 ]
