@@ -284,10 +284,10 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "morgen",
+        "Text": "den 28.10.",
         "Type": "date",
-        "Start": 34,
-        "Length": 6
+        "Start": 33,
+        "Length": 10
       }
     ]
   },
@@ -296,10 +296,10 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "morgen",
+        "Text": "den 28.oktober",
         "Type": "date",
-        "Start": 34,
-        "Length": 6
+        "Start": 33,
+        "Length": 14
       }
     ]
   },
@@ -308,10 +308,10 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "morgen",
+        "Text": "den 28. oktober",
         "Type": "date",
-        "Start": 34,
-        "Length": 6
+        "Start": 33,
+        "Length": 15
       }
     ]
   }
