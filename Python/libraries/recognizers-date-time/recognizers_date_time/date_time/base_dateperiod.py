@@ -261,10 +261,10 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
         metadata = Metadata()
         metadata.possibly_included_period_end = True
 
-        matches = regex.finditer(self.config.year_period_regex, text)
+        matches = list(regex.finditer(self.config.year_period_regex, text))
 
         for match in matches:
-            match_year = regex.match(self.config.year_regex, match.string)
+            match_year = regex.search(self.config.year_regex, match.group())
 
             # Single year cases like "1998"
             if match_year is not None and (match_year.end() - match_year.start()) == len(match.group()):
@@ -283,20 +283,20 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                     year = self.config.date_point_extractor.get_year_from_text(year_match)
                     if not (Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM):
                         is_valid_year = False
-                        break
+                        continue
                     elif len(year_match) != Constants.FOUR_DIGITS_YEAR_LENGTH:
                         all_digit_year = False
 
-                    if not is_valid_year:
+                if not is_valid_year:
+                    continue
+
+                # Cases like "2010-2015"
+                if all_digit_year:
+
+                    # Filter out cases like "82-2010-2015" or "2010-2015-82"
+                    # where "2010-2015" should not be extracted as a DateRange
+                    if self.has_invalid_dash_context(match, text):
                         continue
-
-                    # Cases like "2010-2015"
-                    if all_digit_year:
-
-                        # Filter out cases like "82-2010-2015" or "2010-2015-82"
-                        # where "2010-2015" should not be extracted as a DateRange
-                        if self.has_invalid_dash_context(match, text):
-                            continue
 
             result.append(Token(match.start(), match.start() - (match.end() - match.start()), metadata))
 
@@ -456,17 +456,13 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
             matches = list(regex.finditer(regexp, source))
 
             for match in matches:
-                add_token = True
                 match_year = self.config.year_regex.search(match.group())
 
                 if match_year and len(match_year.group()) == len(match.group()):
                     year_str = self.config.date_point_extractor.get_year_from_text(match_year)
 
-                    if not year_str:
-                        year = self.__get_year_from_text(match_year)
-
-                        if not (Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM):
-                            add_token = False
+                    if not (Constants.MIN_YEAR_NUM <= year_str <= Constants.MAX_YEAR_NUM):
+                        continue
 
                 if (match.end() - match.start() == Constants.FOUR_DIGITS_YEAR_LENGTH) and self.__infix_boundary_check(
                         match, source):
@@ -474,10 +470,9 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
                     # Handle single year which is surrounded by '-' at both sides, e.g., a single year falls in a GUID
                     if self.config.illegal_year_regex.match(sub_str):
-                        add_token = False
+                        continue
 
-                if add_token:
-                    tokens.append(Token(match.start(), match.end()))
+                tokens.append(Token(match.start(), match.end()))
 
         return tokens
 
