@@ -95,6 +95,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Regex WeekDayOfMonthRegex { get; }
 
+        public Regex WeekDayOnMonthRegex { get; }
+
         public Regex ForTheRegex { get; }
 
         public Regex WeekDayAndDayOfMothRegex { get; }

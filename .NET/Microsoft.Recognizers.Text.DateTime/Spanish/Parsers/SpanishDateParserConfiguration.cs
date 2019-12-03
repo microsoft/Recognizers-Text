@@ -102,6 +102,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex WeekDayOfMonthRegex { get; }
 
+        public Regex WeekDayOnMonthRegex { get; }
+
         public Regex ForTheRegex { get; }
 
         public Regex WeekDayAndDayOfMothRegex { get; }

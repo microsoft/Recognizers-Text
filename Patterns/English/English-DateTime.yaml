@@ -229,6 +229,9 @@ SetWeekDayRegex: !simpleRegex
 WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+{WeekDayRegex}\s+{MonthSuffixRegex})
   references: [ WeekDayRegex, MonthSuffixRegex ]
+WeekDayOnMonthRegex: !nestedRegex
+  def: (?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week\s+{MonthSuffixRegex}[\.]?\s+(on\s+)?{WeekDayRegex})
+  references: [ WeekDayRegex, MonthSuffixRegex ]
 RelativeWeekDayRegex: !nestedRegex
   def: \b({WrittenNumRegex}\s+{WeekDayRegex}\s+(from\s+now|later))\b
   references: [ WrittenNumRegex, WeekDayRegex ]

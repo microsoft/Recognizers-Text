@@ -801,9 +801,18 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var trimmedText = text.Trim();
             var match = this.config.WeekDayOfMonthRegex.Match(trimmedText);
+
             if (!match.Success)
             {
-                return ret;
+                if (this.config.WeekDayOnMonthRegex != null)
+                {
+                    match = this.config.WeekDayOnMonthRegex.Match(trimmedText);
+                }
+
+                if (!match.Success)
+                {
+                    return ret;
+                }
             }
 
             var cardinalStr = match.Groups["cardinal"].Value;

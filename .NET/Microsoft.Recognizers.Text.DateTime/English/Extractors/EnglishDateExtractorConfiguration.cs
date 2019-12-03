@@ -52,6 +52,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex WeekDayOfMonthRegex =
             new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexFlags);
 
+        public static readonly Regex WeekDayOnMonthRegex =
+            new Regex(DateTimeDefinitions.WeekDayOnMonthRegex, RegexFlags);
+
         public static readonly Regex RelativeWeekDayRegex =
             new Regex(DateTimeDefinitions.RelativeWeekDayRegex, RegexFlags);
 
@@ -158,6 +161,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
                 // "2nd Monday of April"
                 WeekDayOfMonthRegex,
+
+                // "1st week of Oct on Fri"
+                WeekDayOnMonthRegex,
 
                 // "on the 12th"
                 SpecialDate,
