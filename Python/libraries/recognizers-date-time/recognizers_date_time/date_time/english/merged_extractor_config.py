@@ -29,6 +29,10 @@ from ...resources.base_date_time import BaseDateTime
 
 class EnglishMergedExtractorConfiguration(MergedExtractorConfiguration):
     @property
+    def check_both_before_after(self):
+        return self._check_both_before_after
+
+    @property
     def time_zone_extractor(self):
         return self._time_zone_extractor
 
@@ -197,6 +201,7 @@ class EnglishMergedExtractorConfiguration(MergedExtractorConfiguration):
         self._fail_fast_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.FailFastRegex
         )
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._time_zone_extractor = None
         self._datetime_alt_extractor = None

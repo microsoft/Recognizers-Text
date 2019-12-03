@@ -242,7 +242,7 @@ class EnglishDateTime:
     UnspecificDatePeriodRegex = f'^(week(end)?|month|year)$'
     PrepositionSuffixRegex = f'\\b(on|in|at|around|from|to)$'
     FlexibleDayRegex = f'(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)'
-    ForTheRegex = f'\\b((((?<=for\\s+)the\\s+{FlexibleDayRegex})|((?<=on\\s+)(the\\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))'
+    ForTheRegex = f'\\b((((?<=for\\s+)the\\s+{FlexibleDayRegex})|((?<=on\\s+)(the\\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.(?!\\d)|!|\\?|$)))'
     WeekDayAndDayOfMonthRegex = f'\\b{WeekDayRegex}\\s+(the\\s+{FlexibleDayRegex})\\b'
     WeekDayAndDayRegex = f'\\b{WeekDayRegex}\\s+(?!(the)){DayRegex}(?!([-:]|(\\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\\b'
     RestOfDateRegex = f'\\brest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<duration>week|month|year|decade)\\b'

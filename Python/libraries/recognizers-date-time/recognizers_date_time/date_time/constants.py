@@ -170,6 +170,8 @@ class Constants:
 
     HALF = 'half'
 
+    HAS_MOD = 'mod'
+
     # Holidays
     # These should not be constants, they should go on the resources files for English
     FATHERS = 'fathers'

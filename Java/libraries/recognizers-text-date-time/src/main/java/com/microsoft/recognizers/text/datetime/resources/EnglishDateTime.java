@@ -800,7 +800,7 @@ public class EnglishDateTime {
 
     public static final String FlexibleDayRegex = "(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)";
 
-    public static final String ForTheRegex = "\\b((((?<=for\\s+)the\\s+{FlexibleDayRegex})|((?<=on\\s+)(the\\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))"
+    public static final String ForTheRegex = "\\b((((?<=for\\s+)the\\s+{FlexibleDayRegex})|((?<=on\\s+)(the\\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.(?!\\d)|!|\\?|$)))"
             .replace("{FlexibleDayRegex}", FlexibleDayRegex);
 
     public static final String WeekDayAndDayOfMonthRegex = "\\b{WeekDayRegex}\\s+(the\\s+{FlexibleDayRegex})\\b"
