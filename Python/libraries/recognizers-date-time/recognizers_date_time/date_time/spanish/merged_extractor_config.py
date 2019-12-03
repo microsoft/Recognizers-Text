@@ -29,6 +29,10 @@ from ...resources.base_date_time import BaseDateTime
 
 class SpanishMergedExtractorConfiguration(MergedExtractorConfiguration):
     @property
+    def check_both_before_after(self):
+        return self._check_both_before_after
+
+    @property
     def time_zone_extractor(self):
         return self._time_zone_extractor
 
@@ -200,3 +204,4 @@ class SpanishMergedExtractorConfiguration(MergedExtractorConfiguration):
         self._suffix_after_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.SuffixAfterRegex
         )
+        self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
