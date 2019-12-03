@@ -29,6 +29,10 @@ from ...resources.base_date_time import BaseDateTime
 
 class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
     @property
+    def check_both_before_after(self):
+        return self._check_both_before_after
+
+    @property
     def time_zone_extractor(self):
         return self._time_zone_extractor
 
@@ -194,6 +198,7 @@ class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
         self._suffix_after_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.SuffixAfterRegex
         )
+        self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._superfluous_word_matcher = None
         self._fail_fast_regex = None

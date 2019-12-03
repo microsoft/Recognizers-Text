@@ -681,7 +681,7 @@ public class EnglishDateTime {
     public static final String PeriodicRegex = "\\b(?<periodic>daily|monthly|weekly|biweekly|yearly|annual(ly)?)\\b";
 
     public static final String EachUnitRegex = "(?<each>(each|every|once an?)(?<other>\\s+other)?\\s*({DurationUnitRegex}|{WeekDayRegex}))"
-            .replace("{DurationUnitRegex}", DurationUnitRegex);
+            .replace("{DurationUnitRegex}", DurationUnitRegex)
             .replace("{WeekDayRegex}", WeekDayRegex);
 
     public static final String EachPrefixRegex = "\\b(?<each>(each|(every)|once an?)\\s*$)";
@@ -800,7 +800,7 @@ public class EnglishDateTime {
 
     public static final String FlexibleDayRegex = "(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)";
 
-    public static final String ForTheRegex = "\\b((((?<=for\\s+)the\\s+{FlexibleDayRegex})|((?<=on\\s+)(the\\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))"
+    public static final String ForTheRegex = "\\b((((?<=for\\s+)the\\s+{FlexibleDayRegex})|((?<=on\\s+)(the\\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.(?!\\d)|!|\\?|$)))"
             .replace("{FlexibleDayRegex}", FlexibleDayRegex);
 
     public static final String WeekDayAndDayOfMonthRegex = "\\b{WeekDayRegex}\\s+(the\\s+{FlexibleDayRegex})\\b"

@@ -1692,5 +1692,168 @@
         }
       }
     ]
+  },
+  {
+    "Input": "sende eine geburtstagsabfrage für morgen",
+    "Context": {
+      "ReferenceDateTime": "2019-12-02T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "morgen",
+        "Start": 34,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-03",
+              "type": "date",
+              "value": "2019-12-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für den 28.10.",
+    "Context": {
+      "ReferenceDateTime": "2019-12-02T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "den 28.10.",
+        "Start": 33,
+        "End": 42,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-10-28",
+              "type": "date",
+              "value": "2019-10-28"
+            },
+            {
+              "timex": "XXXX-10-28",
+              "type": "date",
+              "value": "2020-10-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für den 28.Oktober",
+    "Context": {
+      "ReferenceDateTime": "2019-12-02T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "den 28.oktober",
+        "Start": 33,
+        "End": 46,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-10-28",
+              "type": "date",
+              "value": "2019-10-28"
+            },
+            {
+              "timex": "XXXX-10-28",
+              "type": "date",
+              "value": "2020-10-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für den 28. Oktober",
+    "Context": {
+      "ReferenceDateTime": "2019-12-02T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "den 28. oktober",
+        "Start": 33,
+        "End": 47,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-10-28",
+              "type": "date",
+              "value": "2019-10-28"
+            },
+            {
+              "timex": "XXXX-10-28",
+              "type": "date",
+              "value": "2020-10-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für 28.10.",
+    "Context": {
+      "ReferenceDateTime": "2019-12-02T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "28.10.",
+        "Start": 33,
+        "End": 38,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-10-28",
+              "type": "date",
+              "value": "2019-10-28"
+            },
+            {
+              "timex": "XXXX-10-28",
+              "type": "date",
+              "value": "2020-10-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für 28.Oktober",
+    "Context": {
+      "ReferenceDateTime": "2019-12-02T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "28.oktober",
+        "Start": 33,
+        "End": 42,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-10-28",
+              "type": "date",
+              "value": "2019-10-28"
+            },
+            {
+              "timex": "XXXX-10-28",
+              "type": "date",
+              "value": "2020-10-28"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

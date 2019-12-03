@@ -27,6 +27,12 @@ MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
 
 class MergedExtractorConfiguration:
+
+    @property
+    @abstractmethod
+    def check_both_before_after(self):
+        raise NotImplementedError
+
     @property
     @abstractmethod
     def date_extractor(self) -> DateTimeExtractor:
@@ -186,37 +192,6 @@ class BaseMergedExtractor(DateTimeExtractor):
     def __init__(self, config: MergedExtractorConfiguration, options: DateTimeOptions):
         self.config = config
         self.options = options
-
-    @staticmethod
-    def has_token_index(source: str, pattern: Pattern) -> MatchedIndex:
-
-        # Support cases has two or more specific tokens
-        # For example, "show me sales after 2010 and before 2018 or before 2000"
-        # When extract "before 2000", we need the second "before" which will be
-        # matched in the second Regex match
-        match = regex.search(pattern, source)
-        if match:
-            return MatchedIndex(True, match.start())
-
-        return MatchedIndex(False, -1)
-
-    def try_merge_modifier_token(self, extract_result: ExtractResult, token_regex: Pattern, text: str):
-        start = extract_result.start if extract_result.start else 0
-        before_str = text[0:start]
-
-        if self.has_token_index(before_str.rstrip(), token_regex).matched:
-            boolean, token_index = self.has_token_index(before_str.rstrip(), token_regex)
-
-            mod_length = len(before_str) - token_index
-
-            extract_result.length += mod_length
-            extract_result.start -= mod_length
-            start = extract_result.start if extract_result.start else 0
-            length = extract_result.length if extract_result.length else 0
-            extract_result.text = text[start: start + length]
-            return True
-
-        return False
 
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
         if reference is None:
@@ -411,13 +386,13 @@ class BaseMergedExtractor(DateTimeExtractor):
 
                 match = RegExpUtility.match_begin(self.config.suffix_after_regex, after_str, True)
 
-                if match:
+                if match and match.success:
                     is_followed_by_other_entity = True
 
                     if match.length == len(after_str.strip()):
                         is_followed_by_other_entity = False
                     else:
-                        next_str = after_str.strip()[match.length].strip()
+                        next_str = after_str.strip()[match.length:].strip()
                         next_er = next((e for e in extract_results if e.start > extract_result.start), None)
 
                         if next_er is None or not next_str.startswith(next_er.text):
@@ -445,13 +420,15 @@ class BaseMergedExtractor(DateTimeExtractor):
     def try_merge_modifier_token(self, extract_result: ExtractResult, pattern: Pattern, source: str,
                                  potential_ambiguity: bool = False) -> bool:
         before_str = source[0:extract_result.start]
+        after_str = source[extract_result.start: extract_result.length]
 
         # Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
         if potential_ambiguity and self.config.ambiguous_range_modifier_prefix and \
                 regex.search(self.config.ambiguous_range_modifier_prefix, before_str):
             matches = list(regex.finditer(self.config.potential_ambiguous_range_regex, source))
             if matches and len(matches):
-                return self._filter_item(extract_result, matches)
+                return any(match.start() < extract_result.start + extract_result.length and match.end() > extract_result.start for match in matches)
+                # return self._filter_item(extract_result, matches)
 
         token = self.has_token_index(before_str.strip(), pattern)
         if token.matched:
@@ -462,16 +439,30 @@ class BaseMergedExtractor(DateTimeExtractor):
 
             extract_result.meta_data = self.assign_mod_metadata(extract_result.meta_data)
             return True
+        elif self.config.check_both_before_after:
+            # check also after_str
+            after_str = source[extract_result.start: extract_result.length]
+            token = self.has_token_index(after_str.strip(), pattern)
+            if token.matched:
+                mod_len = token.index + len(after_str) - len(after_str.strip())
+                extract_result.length += mod_len
+                extract_result.text = source[extract_result.start: extract_result.start + extract_result.length]
+                extract_result.data = Constants.HAS_MOD
+                extract_result.meta_data = self.assign_mod_metadata(extract_result.meta_data)
+
+                return True
 
         return False
 
-    def _filter_item(self, er: ExtractResult, matches: List[Match]) -> bool:
+    @staticmethod
+    def _filter_item(er: ExtractResult, matches: List[Match]) -> bool:
         for match in matches:
             if match.start() < er.start + er.length and match.end() > er.start:
                 return False
         return True
 
-    def assign_mod_metadata(self, meta_data: MetaData) -> MetaData:
+    @staticmethod
+    def assign_mod_metadata(meta_data: MetaData) -> MetaData:
         if not meta_data:
             meta_data = MetaData()
             meta_data.has_mod = True
@@ -480,7 +471,8 @@ class BaseMergedExtractor(DateTimeExtractor):
 
         return meta_data
 
-    def has_token_index(self, source: str, pattern: Pattern) -> MatchedIndex:
+    @staticmethod
+    def has_token_index(source: str, pattern: Pattern) -> MatchedIndex:
         # This part is different from C# because no Regex RightToLeft option in Python
         match_result = list(regex.finditer(pattern, source))
         if match_result:

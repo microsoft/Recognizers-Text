@@ -169,6 +169,8 @@ class Constants:
 
     HALF = 'half'
 
+    HAS_MOD = 'mod'
+
     # Holidays
     # These should not be constants, they should go on the resources files for English
     FATHERS = 'fathers'
@@ -182,6 +184,9 @@ class Constants:
     CANBERRA = 'canberra'
     COLUMBUS = 'columbus'
     MEMORIAL = 'memorial'
+
+    AGO_LABEL = "ago"
+    LATER_LABEL = "later"
 
 
 class TimeTypeConstants:

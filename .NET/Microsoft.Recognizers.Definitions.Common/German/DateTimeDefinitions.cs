@@ -156,7 +156,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string TimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(um|gegen|in|on))?\s*$";
       public static readonly string SimpleTimeOfTodayAfterRegex = $@"({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(am\s+)?{DateTimeSpecificTimeOfDayRegex}";
       public static readonly string SimpleTimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+um)?\s*({HourNumRegex}|{BaseDateTime.HourRegex})";
-      public const string SpecificEndOfRegex = @"((das|am|an( dem)?)\s+)?ende(\s+(de[mnsr])?)\s*";
+      public const string SpecificEndOfRegex = @"((das|am|an( dem)?)\s+)?\bende(\s+(de[mnsr])?)\s*";
       public const string UnspecificEndOfRegex = @"^[.]";
       public const string UnspecificEndOfRangeRegex = @"^[.]";
       public const string PeriodTimeOfDayRegex = @"\b(((?<early>(früh( am|er)|am frühen)(\s+|-))|(?<late>(spät( am|er)|am späten)(\s+|-)))?(?<timeOfDay>morgens?|früh|(vor|nach)mittags?|(nachts?|primetime)|abends?))\b";
@@ -214,7 +214,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string UnspecificDatePeriodRegex = @"^(woche(nende)?|monat|jahr)$";
       public const string PrepositionSuffixRegex = @"\b(am|in|um|gegen|vo[mn]|zu(m|r))$";
       public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)";
-      public static readonly string ForTheRegex = $@"\b(für den {FlexibleDayRegex})";
+      public static readonly string ForTheRegex = $@"\b(für\s+den\s+{FlexibleDayRegex}(?<end>\s*(,|\.(?!(\d|\s?{WrittenMonthRegex}))|!|\?|$)))";
       public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}\s+((de(r|n))\s+{FlexibleDayRegex})\b";
       public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{{PmDescRegex|{OclockRegex}}}))))\b";
       public const string RestOfDateRegex = @"\brest\s+((de[rs]|dieser)\s+)((aktuellen|jetzigen)\s+)?(?<duration>woche|monats|jahres)\b";
