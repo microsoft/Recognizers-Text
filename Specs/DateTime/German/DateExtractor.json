@@ -278,5 +278,65 @@
         "Length": 6
       }
     ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für den 28.10.",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "den 28.10.",
+        "Type": "date",
+        "Start": 33,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für den 28.Oktober",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "den 28.oktober",
+        "Type": "date",
+        "Start": 33,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für den 28. Oktober",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "den 28. oktober",
+        "Type": "date",
+        "Start": 33,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für 28.10.",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "28.10.",
+        "Type": "date",
+        "Start": 33,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für 28.Oktober",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "28.oktober",
+        "Type": "date",
+        "Start": 33,
+        "Length": 10
+      }
+    ]
   }
 ]
