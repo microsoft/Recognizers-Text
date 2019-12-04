@@ -348,18 +348,6 @@
     ]
   },
   {
-    "Input": "मैं कल वापस जाऊंगा",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "कल",
-        "Type": "date",
-        "Start": 4,
-        "Length": 2
-      }
-    ]
-  },
-  {
     "Input": "मैं परसों वापस जाऊंगा",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -368,18 +356,6 @@
         "Type": "date",
         "Start": 4,
         "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "मैं अगले दिन वापस जाऊंगा",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "अगले दिन",
-        "Type": "date",
-        "Start": 4,
-        "Length": 8
       }
     ]
   },

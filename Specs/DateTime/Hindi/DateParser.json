@@ -289,30 +289,6 @@
     ]
   },
   {
-    "Input": "मैं 22/04 को वापस जाऊंगा",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "22/04",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 4,
-        "Length": 5
-      }
-    ]
-  },
-  {
     "Input": "मैं 2015/08/12 को वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1347,30 +1323,6 @@
     ]
   },
   {
-    "Input": "मैं उस 27 को वापस चला गया था।",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "उस 27",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-10-27"
-          }
-        },
-        "Start": 4,
-        "Length": 5
-      }
-    ]
-  },
-  {
     "Input": "मैं उस 21 तारीख को वापस चला गया",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1970,31 +1922,6 @@
         },
         "Start": 9,
         "Length": 17
-      }
-    ]
-  },
-  {
-    "Input": "1 महीने और 21 दिन पहले हमारी एक मीटिंग हुई थी",
-    "Context": {
-      "ReferenceDateTime": "2017-11-23T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "1 महीने और 21 दिन पहले",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2017-10-02"
-          }
-        },
-        "Start": 0,
-        "Length": 22
       }
     ]
   },
