@@ -117,6 +117,9 @@ export class EnglishSetParserConfiguration implements ISetParserConfiguration {
         else if (trimmedText === "monthly") {
             timex = "P1M";
         }
+        else if (trimmedText === "quarterly") {
+            timex = "P3M";
+        }
         else if (trimmedText === "yearly" || trimmedText === "annually" || trimmedText === "annual") {
             timex = "P1Y";
         }
