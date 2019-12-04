@@ -14,5 +14,311 @@
         }
       }
     ]
+  },
+  {
+    "Input": "मेरा फोन नंबर 26741570 है.",
+    "Comment": "Local call numbers",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "26741570",
+        "Start": 14,
+        "End": 21,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "26741570"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर 9834257234 है.",
+    "Comment": "Local call numbers",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "9834257234",
+        "Start": 14,
+        "End": 23,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "9834257234"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर 011-26701508 है.",
+    "Comment": "STD calls (interstate or sometimes inter-city)",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "011-26701508",
+        "Start": 14,
+        "End": 25,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "011-26701508"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर 09810234587 है.",
+    "Comment": "STD calls (interstate or sometimes inter-city)",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "09810234587",
+        "Start": 14,
+        "End": 25,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "09810234587"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर 0124-2543645 है.",
+    "Comment": "STD calls (interstate or sometimes inter-city)",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "0124-2543645",
+        "Start": 14,
+        "End": 25,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "0124-2543645"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर 1-800-555-6666 है.",
+    "Comment": "Toll free numbers",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "1-800-555-6666",
+        "Start": 14,
+        "End": 27,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "1-800-555-6666"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर 1800 425 3800 है.",
+    "Comment": "Toll free numbers",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "1800 425 3800",
+        "Start": 14,
+        "End": 26,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "1800 425 3800"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर 1800-103-8181 है.",
+    "Comment": "Toll free numbers",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "1800-103-8181",
+        "Start": 14,
+        "End": 26,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "1800-103-8181"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर 91-22-39830000 है.",
+    "Comment": "International Calls (without + sign)",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "91-22-39830000",
+        "Start": 14,
+        "End": 27,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "91-22-39830000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर 912239830000 है.",
+    "Comment": "International Calls (without + sign)",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "912239830000",
+        "Start": 14,
+        "End": 25,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "912239830000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर 91-124-2543100 है.",
+    "Comment": "International Calls (without + sign)",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "91-124-2543100",
+        "Start": 14,
+        "End": 27,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "91-124-2543100"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर +91-22-39830000 है.",
+    "Comment": "International Calls (with + sign)",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "+91-22-39830000",
+        "Start": 14,
+        "End": 28,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+91-22-39830000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर +912239830000 है.",
+    "Comment": "International Calls (with + sign)",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "+912239830000",
+        "Start": 14,
+        "End": 26,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+912239830000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर +91 24 39830000 है.",
+    "Comment": "International Calls (with + sign)",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "+91 24 39830000",
+        "Start": 14,
+        "End": 28,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+91 24 39830000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर +91 124 2543100 है.",
+    "Comment": "International Calls (with + sign)",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "+91 124 2543100",
+        "Start": 14,
+        "End": 28,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+91 124 2543100"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर ९९२५७४३५०८ है.",
+    "Comment": "Devenagari numerals",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "९९२५७४३५०८",
+        "Start": 14,
+        "End": 23,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "९९२५७४३५०८"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर १८००४२५३८०० है.",
+    "Comment": "Devenagari numerals",
+    "NotSupported":"dotnet",
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "१८००४२५३८००",
+        "Start": 14,
+        "End": 24,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "१८००४२५३८००"
+        }
+      }
+    ]
   }
 ]

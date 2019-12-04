@@ -515,19 +515,15 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         # Check whether there's a year
         suffix = text[end_index:]
         prefix = text[0: start_index]
-        match_year = self.config.year_suffix.match(suffix)
+        year_index, success = self.get_year_index(suffix, year, False)
+        end_index += year_index
 
-        if match_year and match_year.start() == 0:
+        # Check also in prefix
+        if not success and self.config.check_both_before_after:
+            year_index, success = self.get_year_index(suffix, year, False)
+            start_index -= year_index
 
-            year = AbstractYearExtractor.get_year_from_text(self, match_year)
-
-            if Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM:
-                end_index += len(match_year.group())
-
-        if not match_year and self.config.check_both_before_after:
-            idx, success = self.get_year_index(prefix, year, True)
-            start_index -= idx
-
+        # Check also in prefix
         date = DateUtils.safe_create_from_value(DateUtils.min_value, year, month, day)
         is_match_in_suffix = False
         match_week_day = self.config.week_day_end.match(prefix)
@@ -651,6 +647,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         if regex.finditer(regexp, extract_result.text):
             original_length = len(extract_result.text)
             extract_result.text = regex.sub(regexp, '', extract_result.text)
+
             if in_prefix:
                 extract_result.start += original_length - len(extract_result.text)
 
