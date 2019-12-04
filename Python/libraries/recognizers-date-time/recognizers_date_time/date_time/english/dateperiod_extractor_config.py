@@ -18,6 +18,10 @@ from .common_configs import EnglishOrdinalExtractor, EnglishCardinalExtractor
 
 class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
+    def previous_prefix_regex(self) -> Pattern:
+        return self._previous_prefix_regex
+
+    @property
     def check_both_before_after(self) -> Pattern:
         return self._check_both_before_after
 
@@ -256,6 +260,9 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             EnglishDateTime.CenturySuffixRegex
         )
         self._ordinal_extractor = EnglishOrdinalExtractor()
+        self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PreviousPrefixRegex
+        )
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._cardinal_extractor = EnglishCardinalExtractor()
 
