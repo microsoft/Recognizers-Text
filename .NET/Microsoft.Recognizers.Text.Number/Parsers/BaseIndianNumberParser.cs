@@ -529,8 +529,8 @@ namespace Microsoft.Recognizers.Text.Number
             // DecimalUnitsList (type double) takes care of these entries and it needs to be added to the singleIntFrac
             // for extraction
             var singleIntFrac = $"{this.Config.WordSeparatorToken}| -|" +
-                                GetKeyRegex(this.Config.CardinalNumberMap.Keys) + "|" +
                                 GetKeyRegex(this.Config.OrdinalNumberMap.Keys) + "|" +
+                                GetKeyRegex(this.Config.CardinalNumberMap.Keys) + "|" +
                                 GetKeyRegex(this.Config.DecimalUnitsMap.Keys);
 
             string textNumberPattern;

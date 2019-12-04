@@ -227,6 +227,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Hindi\DateTimeDefinitions.cs">
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Hindi\NumbersDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -444,6 +449,8 @@
     <None Update="German\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Hindi\ChoiceDefinitions.tt">
+    </None>
+    <None Update="Hindi\DateTimeDefinitions.tt">
     </None>
     <None Update="Hindi\NumbersDefinitions.tt">
     </None>
