@@ -9,6 +9,7 @@ using Microsoft.Recognizers.Text.DateTime.Dutch;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.DateTime.German;
+using Microsoft.Recognizers.Text.DateTime.Hindi;
 using Microsoft.Recognizers.Text.DateTime.Italian;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
@@ -160,6 +161,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetJapaneseExtractor(extractorName);
                 case Culture.Turkish:
                     return GetTurkishExtractor(extractorName);
+                case Culture.Hindi:
+                    return GetHindiExtractor(extractorName);
             }
 
             throw new Exception($"Extractor '{extractorName}' for '{culture}' not supported");
@@ -194,6 +197,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetDutchParser(parserName);
                 case Culture.Turkish:
                     return GetTurkishParser(parserName);
+                case Culture.Hindi:
+                    return GetHindiParser(parserName);
             }
 
             throw new Exception($"Parser '{parserName}' for '{culture}' not supported");
@@ -926,6 +931,69 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
 
             throw new Exception($"Parser '{parserName}' for Turkish not supported");
+        }
+
+        public static IDateTimeExtractor GetHindiExtractor(DateTimeExtractors extractorName)
+        {
+            var config = new BaseDateTimeOptionsConfiguration(Culture.Hindi);
+            var skipConfig = new BaseDateTimeOptionsConfiguration(Culture.Hindi, DateTimeOptions.SkipFromToMerge);
+
+            switch (extractorName)
+            {
+                case DateTimeExtractors.Date:
+                    return new BaseDateExtractor(new HindiDateExtractorConfiguration(config));
+                case DateTimeExtractors.Time:
+                    return new BaseTimeExtractor(new HindiTimeExtractorConfiguration(config));
+                case DateTimeExtractors.DatePeriod:
+                    return new BaseDatePeriodExtractor(new HindiDatePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.TimePeriod:
+                    return new BaseTimePeriodExtractor(new HindiTimePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.DateTime:
+                    return new BaseDateTimeExtractor(new HindiDateTimeExtractorConfiguration(config));
+                case DateTimeExtractors.DateTimePeriod:
+                    return new BaseDateTimePeriodExtractor(new HindiDateTimePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.Duration:
+                    return new BaseDurationExtractor(new HindiDurationExtractorConfiguration(config));
+                case DateTimeExtractors.Holiday:
+                    return new BaseHolidayExtractor(new HindiHolidayExtractorConfiguration(config));
+                case DateTimeExtractors.Set:
+                    return new BaseSetExtractor(new HindiSetExtractorConfiguration(config));
+                case DateTimeExtractors.Merged:
+                    return new BaseMergedDateTimeExtractor(new HindiMergedExtractorConfiguration(config));
+            }
+
+            throw new Exception($"Extractor '{extractorName}' for Hindi not supported");
+        }
+
+        public static IDateTimeParser GetHindiParser(DateTimeParsers parserName)
+        {
+            var commonConfiguration = new HindiCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Hindi));
+
+            switch (parserName)
+            {
+                case DateTimeParsers.Date:
+                    return new BaseDateParser(new HindiDateParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Time:
+                    return new DateTime.Hindi.TimeParser(new HindiTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DatePeriod:
+                    return new BaseDatePeriodParser(new HindiDatePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.TimePeriod:
+                    return new BaseTimePeriodParser(new HindiTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTime:
+                    return new BaseDateTimeParser(new HindiDateTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTimePeriod:
+                    return new BaseDateTimePeriodParser(new HindiDateTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Duration:
+                    return new BaseDurationParser(new HindiDurationParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Holiday:
+                    return new BaseHolidayParser(new HindiHolidayParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Set:
+                    return new BaseSetParser(new HindiSetParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Merged:
+                    return new BaseMergedDateTimeParser(new HindiMergedParserConfiguration(commonConfiguration));
+            }
+
+            throw new Exception($"Parser '{parserName}' for Hindi not supported");
         }
     }
 

@@ -275,7 +275,9 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             ChineseDateTime.MonthNumRegex)
         self._cardinal_extractor = ChineseCardinalExtractor()
         self._ordinal_extractor = ChineseOrdinalExtractor()
+
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._previous_prefix_regex = None
         self._check_both_before_after = None
         self._century_suffix_regex = None
         self._year_period_regex = None

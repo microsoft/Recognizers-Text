@@ -96,6 +96,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 timex = "P1M";
             }
+            else if (trimmedText.Equals("quarterly"))
+            {
+                timex = "P3M";
+            }
             else if (trimmedText.Equals("yearly") || trimmedText.Equals("annually") || trimmedText.Equals("annual"))
             {
                 timex = "P1Y";

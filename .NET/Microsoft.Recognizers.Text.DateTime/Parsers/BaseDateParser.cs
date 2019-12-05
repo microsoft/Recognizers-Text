@@ -563,7 +563,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             bool ambiguous = true;
 
             var er = this.config.OrdinalExtractor.Extract(trimmedText);
-            if (er.Count == 0)
+
+            // check if the extraction is empty or a relative ordinal (e.g. "next", "previous")
+            if (er.Count == 0 || er[0].Metadata.IsOrdinalRelative)
             {
                 er = this.config.IntegerExtractor.Extract(trimmedText);
             }

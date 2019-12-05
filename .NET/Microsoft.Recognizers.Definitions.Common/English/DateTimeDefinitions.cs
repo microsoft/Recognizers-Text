@@ -205,7 +205,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string MoreThanRegex = @"\b(more\s+than)\b";
       public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\b";
       public const string SuffixAndRegex = @"(?<suffix>\s*(and)\s+(an?\s+)?(?<suffix_num>half|quarter))";
-      public const string PeriodicRegex = @"\b(?<periodic>daily|monthly|weekly|biweekly|yearly|annual(ly)?)\b";
+      public const string PeriodicRegex = @"\b(?<periodic>daily|monthly|weekly|biweekly|quarterly|yearly|annual(ly)?)\b";
       public static readonly string EachUnitRegex = $@"(?<each>(each|every|once an?)(?<other>\s+other)?\s*({DurationUnitRegex}|{WeekDayRegex}))";
       public const string EachPrefixRegex = @"\b(?<each>(each|(every)|once an?)\s*$)";
       public const string SetEachRegex = @"\b(?<each>(each|(every))(?<other>\s+other)?\s*)";

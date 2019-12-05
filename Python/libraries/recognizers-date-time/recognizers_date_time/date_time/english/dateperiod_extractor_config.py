@@ -267,6 +267,9 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             EnglishDateTime.CenturySuffixRegex
         )
         self._ordinal_extractor = EnglishOrdinalExtractor()
+        self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PreviousPrefixRegex
+        )
         self._cardinal_extractor = EnglishCardinalExtractor()
 
     def get_from_token_index(self, source: str) -> MatchedIndex:

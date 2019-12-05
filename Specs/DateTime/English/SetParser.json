@@ -688,5 +688,28 @@
         "Length": 18
       }
     ]
+  },
+  {
+    "Input": "Let's have a quarterly meeting.",
+    "Context": {
+      "ReferenceDateTime": "2019-11-25T17:00:00"
+    },
+    "Results": [
+      {
+        "Text": "quarterly",
+        "Type": "set",
+        "Value": {
+          "Timex": "P3M",
+          "FutureResolution": {
+            "set": "Set: P3M"
+          },
+          "PastResolution": {
+            "set": "Set: P3M"
+          }
+        },
+        "Start": 13,
+        "Length": 9
+      }
+    ]
   }
 ]
