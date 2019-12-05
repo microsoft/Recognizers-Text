@@ -28,12 +28,12 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (types.Contains(Constants.TimexTypes.DateTimeRange))
             {
-                return ResolveDateTimeRange(timex);
+                return ResolveDateTimeRange(timex, date);
             }
 
             if (types.Contains(Constants.TimexTypes.Definite) && types.Contains(Constants.TimexTypes.Time))
             {
-                return ResolveDefiniteTime(timex);
+                return ResolveDefiniteTime(timex, date);
             }
 
             if (types.Contains(Constants.TimexTypes.Definite) && types.Contains(Constants.TimexTypes.DateRange))
@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (types.Contains(Constants.TimexTypes.TimeRange))
             {
-                return ResolveTimeRange(timex);
+                return ResolveTimeRange(timex, date);
             }
 
             if (types.Contains(Constants.TimexTypes.DateTime))
@@ -73,13 +73,13 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (types.Contains(Constants.TimexTypes.Time))
             {
-                return ResolveTime(timex);
+                return ResolveTime(timex, date);
             }
 
             return new List<Resolution.Entry>();
         }
 
-        private static List<Resolution.Entry> ResolveDefiniteTime(TimexProperty timex)
+        private static List<Resolution.Entry> ResolveDefiniteTime(TimexProperty timex, DateObject date)
         {
             return new List<Resolution.Entry>
             {
@@ -87,7 +87,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 {
                     Timex = timex.TimexValue,
                     Type = "datetime",
-                    Value = $"{TimexValue.DateValue(timex)} {TimexValue.TimeValue(timex)}",
+                    Value = $"{TimexValue.DateValue(timex)} {TimexValue.TimeValue(timex, date)}",
                 },
             };
         }
@@ -194,7 +194,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return string.Empty;
         }
 
-        private static List<Resolution.Entry> ResolveTime(TimexProperty timex)
+        private static List<Resolution.Entry> ResolveTime(TimexProperty timex, DateObject date)
         {
             return new List<Resolution.Entry>
             {
@@ -202,7 +202,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 {
                     Timex = timex.TimexValue,
                     Type = "time",
-                    Value = TimexValue.TimeValue(timex),
+                    Value = TimexValue.TimeValue(timex, date),
                 },
             };
         }
@@ -395,7 +395,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return new Tuple<string, string>("not resolved", "not resolved");
         }
 
-        private static List<Resolution.Entry> ResolveTimeRange(TimexProperty timex)
+        private static List<Resolution.Entry> ResolveTimeRange(TimexProperty timex, DateObject date)
         {
             if (timex.PartOfDay != null)
             {
@@ -420,8 +420,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     {
                         Timex = timex.TimexValue,
                         Type = "timerange",
-                        Start = TimexValue.TimeValue(range.Start),
-                        End = TimexValue.TimeValue(range.End),
+                        Start = TimexValue.TimeValue(range.Start, date),
+                        End = TimexValue.TimeValue(range.End, date),
                     },
                 };
             }
@@ -433,17 +433,17 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             foreach (var resolved in resolvedDates)
             {
                 resolved.Type = "datetime";
-                resolved.Value = $"{resolved.Value} {TimexValue.TimeValue(timex)}";
+                resolved.Value = $"{resolved.Value} {TimexValue.TimeValue(timex, date)}";
             }
 
             return resolvedDates;
         }
 
-        private static List<Resolution.Entry> ResolveDateTimeRange(TimexProperty timex)
+        private static List<Resolution.Entry> ResolveDateTimeRange(TimexProperty timex, DateObject date)
         {
             if (timex.PartOfDay != null)
             {
-                var date = TimexValue.DateValue(timex);
+                var dateValue = TimexValue.DateValue(timex);
                 var timeRange = PartOfDayTimeRange(timex);
                 return new List<Resolution.Entry>
                 {
@@ -451,8 +451,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     {
                         Timex = timex.TimexValue,
                         Type = "datetimerange",
-                        Start = $"{date} {timeRange.Item1}",
-                        End = $"{date} {timeRange.Item2}",
+                        Start = $"{dateValue} {timeRange.Item1}",
+                        End = $"{dateValue} {timeRange.Item2}",
                     },
                 };
             }
@@ -465,8 +465,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     {
                         Timex = timex.TimexValue,
                         Type = "datetimerange",
-                        Start = $"{TimexValue.DateValue(range.Start)} {TimexValue.TimeValue(range.Start)}",
-                        End = $"{TimexValue.DateValue(range.End)} {TimexValue.TimeValue(range.End)}",
+                        Start = $"{TimexValue.DateValue(range.Start)} {TimexValue.TimeValue(range.Start, date)}",
+                        End = $"{TimexValue.DateValue(range.End)} {TimexValue.TimeValue(range.End, date)}",
                     },
                 };
             }
