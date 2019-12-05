@@ -479,5 +479,45 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(resolution.Values[0].Start);
             Assert.IsNull(resolution.Values[0].End);
         }
+
+        [TestMethod]
+        public void DataTypes_Resolver_DateTime_TuesAt3PM()
+        {
+            var today = new System.DateTime(2019, 12, 05);
+            var resolution = TimexResolver.Resolve(new[] { "XXXX-WXX-2T15" }, today);
+            Assert.AreEqual(2, resolution.Values.Count);
+
+            Assert.AreEqual("XXXX-WXX-2T15", resolution.Values[0].Timex);
+            Assert.AreEqual("datetime", resolution.Values[0].Type);
+            Assert.AreEqual("2019-12-03 15:00:00", resolution.Values[0].Value);
+            Assert.IsNull(resolution.Values[0].Start);
+            Assert.IsNull(resolution.Values[0].End);
+
+            Assert.AreEqual("XXXX-WXX-2T15", resolution.Values[1].Timex);
+            Assert.AreEqual("datetime", resolution.Values[1].Type);
+            Assert.AreEqual("2019-12-10 15:00:00", resolution.Values[1].Value);
+            Assert.IsNull(resolution.Values[1].Start);
+            Assert.IsNull(resolution.Values[1].End);
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_DateTime_TuesAt3PM_UtcInput()
+        {
+            var today = new System.DateTime(2019, 12, 05);
+            var resolution = TimexResolver.Resolve(new[] { "XXXX-WXX-2T15" }, today.ToUniversalTime());
+            Assert.AreEqual(2, resolution.Values.Count);
+
+            Assert.AreEqual("XXXX-WXX-2T15", resolution.Values[0].Timex);
+            Assert.AreEqual("datetime", resolution.Values[0].Type);
+            Assert.AreEqual("2019-12-03 13:00:00", resolution.Values[0].Value);
+            Assert.IsNull(resolution.Values[0].Start);
+            Assert.IsNull(resolution.Values[0].End);
+
+            Assert.AreEqual("XXXX-WXX-2T15", resolution.Values[1].Timex);
+            Assert.AreEqual("datetime", resolution.Values[1].Type);
+            Assert.AreEqual("2019-12-10 13:00:00", resolution.Values[1].Value);
+            Assert.IsNull(resolution.Values[1].Start);
+            Assert.IsNull(resolution.Values[1].End);
+        }
     }
 }
