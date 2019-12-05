@@ -19,6 +19,10 @@ from .date_extractor_config import SpanishDateExtractorConfiguration
 class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
 
     @property
+    def previous_prefix_regex(self) -> Pattern:
+        return self._previous_prefix_regex
+
+    @property
     def check_both_before_after(self) -> Pattern:
         return self._check_both_before_after
 
@@ -254,6 +258,9 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._ordinal_extractor = SpanishOrdinalExtractor()
         self._decade_with_century_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.DecadeWithCenturyRegex)
+        self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.PreviousPrefixRegex
+        )
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)

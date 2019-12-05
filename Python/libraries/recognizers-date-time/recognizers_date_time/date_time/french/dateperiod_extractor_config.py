@@ -13,10 +13,14 @@ from ..base_dateperiod import DatePeriodExtractorConfiguration, MatchedIndex
 from .duration_extractor_config import FrenchDurationExtractorConfiguration
 from .date_extractor_config import FrenchDateExtractorConfiguration
 from recognizers_text.extractor import Extractor
-from recognizers_number import FrenchOrdinalExtractor, BaseNumberExtractor
+from recognizers_number import FrenchOrdinalExtractor, BaseNumberExtractor, FrenchCardinalExtractor
 
 
 class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
+    @property
+    def previous_prefix_regex(self) -> Pattern:
+        return self._previous_prefix_regex
+
     @property
     def check_both_before_after(self) -> Pattern:
         return self._check_both_before_after
@@ -243,9 +247,12 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             FrenchDateTime.CenturySuffixRegex
         )
         self._ordinal_extractor = FrenchOrdinalExtractor()
+        self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.PreviousPrefixRegex
+        )
+        self._cardinal_extractor = FrenchCardinalExtractor()
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._time_unit_regex = None
-        self._cardinal_extractor = None
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)
