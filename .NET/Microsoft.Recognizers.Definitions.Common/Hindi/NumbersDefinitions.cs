@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string FourtyToFourtyNineIntegerRegex = @"(सैंतालीस|तैंतालीस|चौंतालीस|अड़तालीस|उनचास|पैंतालीस|छियालीस|इकतालीस|बयालीस|चालीस)";
       public const string FiftyToFiftyNineIntegerRegex = @"(सत्तावन|तिरेपन|चौबन|अट्ठावन|उनसठ|पचपन|छप्पन|इक्याबन|बावन|पचास)";
       public const string SixtyToSixtyNineIntegerRegex = @"((सड़|तिर|चौं|अड़|उनहत्तर|पैं|छिया|इक|बा|साठ|एक)(सठ))";
-      public const string SeventyToSeventyNineIntegerRegex = @"(?:सतहत्तर|तिहत्तर|चौदह|अठहत्तर|उनासी|पचहत्तर|छिहत्तर|इकहत्तर|बहत्तर|सत्तर)";
+      public const string SeventyToSeventyNineIntegerRegex = @"(?:सतहत्तर|तिहत्तर|चौहत्तर|अठहत्तर|उनासी|पचहत्तर|छिहत्तर|इकहत्तर|अठत्तर|बहत्तर|सत्तर)";
       public const string EightyToEightyNineIntegerRegex = @"(सतासी|तिरासी|चौरासी|अठासी|नवासी|पचासी|छियासी|इक्यासी|बयासी|अस्सी)";
       public const string NinetyToNinetyNineIntegerRegex = @"(सत्तानवे|तिरानवे|चौरानवे|अट्ठानवे|निन्यानवे|पचानवे|पंचानबे|छियानवे|इक्यानबे|बानवे|नब्बे)";
       public const string TensNumberIntegerRegex = @"(सत्तर|बीस|तीस|अस्सी|नब्बे|चालीस|पचास|साठ)";
@@ -70,14 +70,14 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string DecimalUnitsRegex = @"(?:डेढ़|डेढ़|डेढ|ढाई|सवा|सावा)";
       public static readonly string DecimalUnitsWithRoundNumberRegex = $@"({DecimalUnitsRegex}\s+{RoundNumberIntegerRegex}|{DecimalUnitsRegex})";
       public const string RoundNumberOrdinalRegex = @"(?:(सौ|हजार|लाख|करोड़|अरब|खरब)(वां|वीं|वें|वाँ))";
-      public const string OneToNineOrdinalRegex = @"(?:पहला|पहली|प्रथम|दूसरा|दूसरी|दूसरे|तिहाई|चौथाई|((पांच|पाँच|छठ|सात|आठ|नौ)(वां|वीं|वें|वाँ|वा)))";
+      public const string OneToNineOrdinalRegex = @"(?:पहला|पहले|पहली|तीसरे|प्रथम|दूसरा|दूसरी|दूसरे|तिहाई|चौथाई|((पांच|पाँच|छठ|सात|आठ|नौ)(वां|वीं|वें|वाँ|वा)))";
       public const string TenToNineteenOrdinalRegex = @"(?:(दस|ग्यारह|बारह|तेरह|चौदह|पंद्रह|सोलह|सत्रह|अठारह|उन्नीस)(वां|वीं|वें|वाँ))";
       public const string TwentyToTwentyNineOrdinalRegex = @"(?:(बीस|इक्कीस|बाईस|बाइस|तेईस|तेइस|चौबीस|पच्चीस|छब्बीस|सत्ताईस|सत्ताइस|अट्ठाईस|अट्ठाइस|उनतीस)(वां|वीं|वें|वाँ))";
       public const string ThirtyToThirtyNineOrdinalRegex = @"(?:(तीस|इकतीस|इकत्तीस|बत्तीस|तैंतीस|चौंतीस|पैंतीस|छ्त्तीस|सैंतीस|अड़तीस|उनतालीस)(वां|वीं|वें|वाँ))";
       public const string FourtyToFourtyNineOrdinalRegex = @"(?:(चालीस|इकतालीस|बयालीस|तैंतालीस|चौंतालीस|पैंतालीस|छियालीस|सैंतालीस|अड़तालीस|उनचास)(वां|वीं|वें|वाँ))";
       public const string FiftyToFiftyNineOrdinalRegex = @"(?:(पचास|इक्याबन|बावन|तिरेपन|चौबन|पचपन|छप्पन|सत्तावन|अट्ठावन|उनसठ)(वां|वीं|वें|वाँ))";
       public const string SixtyToSixtyNineOrdinalRegex = @"(?:(साठ|इकसठ|बासठ|तिरसठ|चौंसठ|पैंसठ|छियासठ|सड़सठ|अड़सठ|उनहत्तर)(वां|वीं|वें|वाँ))";
-      public const string SeventyToSeventyNineOrdinalRegex = @"(?:(सत्तर|इकहत्तर|बहत्तर|तिहत्तर|चौहत्तर|पचहत्तर|छिहत्तर|सतहत्तर|अठहत्तर|उनासी)(वां|वीं|वें|वाँ))";
+      public const string SeventyToSeventyNineOrdinalRegex = @"(?:(सत्तर|इकहत्तर|बहत्तर|तिहत्तर|चौहत्तर|पचहत्तर|छिहत्तर|सतहत्तर|अठहत्तर|अठत्तर|उनासी)(वां|वीं|वें|वाँ))";
       public const string EightyToEightyNineOrdinalRegex = @"(?:(अस्सी|इक्यासी|बयासी|तिरासी|चौरासी|पचासी|छियासी|सतासी|अठासी|नवासी)(वां|वीं|वें|वाँ))";
       public const string NinetyToNinetyNineOrdinalRegex = @"(?:(नब्बे|इक्यानबे|बानवे|तिरानवे|चौरानवे|पचानवे|छियानवे|सत्तानवे|अट्ठानवे|निन्यानवे)(वां|वीं|वें|वाँ))";
       public static readonly string NumberOrdinalRegex = $@"({OneToNineOrdinalRegex}|{TenToNineteenOrdinalRegex}|{TwentyToTwentyNineOrdinalRegex}|{ThirtyToThirtyNineOrdinalRegex}|{FourtyToFourtyNineOrdinalRegex}|{FiftyToFiftyNineOrdinalRegex}|{SixtyToSixtyNineOrdinalRegex}|{SeventyToSeventyNineOrdinalRegex}|{EightyToEightyNineOrdinalRegex}|{NinetyToNinetyNineOrdinalRegex})";
@@ -258,6 +258,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"छिहत्तर", 76 },
             { @"सतहत्तर", 77 },
             { @"अठहत्तर", 78 },
+            { @"अठत्तर", 78 },
             { @"उनासी", 79 },
             { @"अस्सी", 80 },
             { @"इक्यासी", 81 },
@@ -355,6 +356,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
         {
             { @"प्रथम", 1 },
             { @"पहला", 1 },
+            { @"पहले", 1 },
             { @"पहली", 1 },
             { @"दूसरा", 2 },
             { @"दूसरे", 2 },
@@ -364,6 +366,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"तीसरा", 3 },
             { @"तीसरी", 3 },
             { @"तिहाई", 3 },
+            { @"तीसरे", 3 },
             { @"चौथा", 4 },
             { @"चौथी", 4 },
             { @"चौथाई", 4 },
@@ -794,6 +797,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"आखिरी", @"end" },
             { @"अगला", @"current" },
             { @"अगली", @"current" },
+            { @"अगले", @"current" },
             { @"पिछला", @"current" },
             { @"पिछले", @"current" },
             { @"पिछली", @"current" },

@@ -33,7 +33,7 @@ FiftyToFiftyNineIntegerRegex: !simpleRegex
 SixtyToSixtyNineIntegerRegex: !simpleRegex
   def: ((सड़|तिर|चौं|अड़|उनहत्तर|पैं|छिया|इक|बा|साठ|एक)(सठ))
 SeventyToSeventyNineIntegerRegex: !simpleRegex
-  def: (?:सतहत्तर|तिहत्तर|चौदह|अठहत्तर|उनासी|पचहत्तर|छिहत्तर|इकहत्तर|बहत्तर|सत्तर)
+  def: (?:सतहत्तर|तिहत्तर|चौहत्तर|अठहत्तर|उनासी|पचहत्तर|छिहत्तर|इकहत्तर|अठत्तर|बहत्तर|सत्तर)
 EightyToEightyNineIntegerRegex: !simpleRegex
   def: (सतासी|तिरासी|चौरासी|अठासी|नवासी|पचासी|छियासी|इक्यासी|बयासी|अस्सी)
 NinetyToNinetyNineIntegerRegex: !simpleRegex
@@ -124,7 +124,7 @@ DecimalUnitsWithRoundNumberRegex: !nestedRegex
 RoundNumberOrdinalRegex: !simpleRegex
   def: (?:(सौ|हजार|लाख|करोड़|अरब|खरब)(वां|वीं|वें|वाँ))
 OneToNineOrdinalRegex: !simpleRegex
-  def: (?:पहला|पहली|प्रथम|दूसरा|दूसरी|दूसरे|तिहाई|चौथाई|((पांच|पाँच|छठ|सात|आठ|नौ)(वां|वीं|वें|वाँ|वा)))
+  def: (?:पहला|पहले|पहली|तीसरे|प्रथम|दूसरा|दूसरी|दूसरे|तिहाई|चौथाई|((पांच|पाँच|छठ|सात|आठ|नौ)(वां|वीं|वें|वाँ|वा)))
 TenToNineteenOrdinalRegex: !simpleRegex
   def: (?:(दस|ग्यारह|बारह|तेरह|चौदह|पंद्रह|सोलह|सत्रह|अठारह|उन्नीस)(वां|वीं|वें|वाँ))
 TwentyToTwentyNineOrdinalRegex: !simpleRegex
@@ -138,7 +138,7 @@ FiftyToFiftyNineOrdinalRegex: !simpleRegex
 SixtyToSixtyNineOrdinalRegex: !simpleRegex
   def: (?:(साठ|इकसठ|बासठ|तिरसठ|चौंसठ|पैंसठ|छियासठ|सड़सठ|अड़सठ|उनहत्तर)(वां|वीं|वें|वाँ))
 SeventyToSeventyNineOrdinalRegex: !simpleRegex
-  def: (?:(सत्तर|इकहत्तर|बहत्तर|तिहत्तर|चौहत्तर|पचहत्तर|छिहत्तर|सतहत्तर|अठहत्तर|उनासी)(वां|वीं|वें|वाँ))
+  def: (?:(सत्तर|इकहत्तर|बहत्तर|तिहत्तर|चौहत्तर|पचहत्तर|छिहत्तर|सतहत्तर|अठहत्तर|अठत्तर|उनासी)(वां|वीं|वें|वाँ))
 EightyToEightyNineOrdinalRegex: !simpleRegex
   def: (?:(अस्सी|इक्यासी|बयासी|तिरासी|चौरासी|पचासी|छियासी|सतासी|अठासी|नवासी)(वां|वीं|वें|वाँ))
 NinetyToNinetyNineOrdinalRegex: !simpleRegex
@@ -458,6 +458,7 @@ CardinalNumberMap: !dictionary
     छिहत्तर: 76
     सतहत्तर: 77
     अठहत्तर: 78
+    अठत्तर: 78
     उनासी: 79
     अस्सी: 80
     इक्यासी: 81
@@ -555,6 +556,7 @@ OrdinalNumberMap: !dictionary
   entries:
     प्रथम: 1
     पहला: 1
+    पहले: 1
     पहली: 1
     दूसरा: 2
     दूसरे: 2
@@ -564,6 +566,7 @@ OrdinalNumberMap: !dictionary
     तीसरा: 3
     तीसरी: 3
     तिहाई: 3
+    तीसरे: 3
     चौथा: 4
     चौथी: 4
     चौथाई: 4
@@ -997,6 +1000,7 @@ RelativeReferenceRelativeToMap: !dictionary
     आखिरी: end
     अगला: current
     अगली: current
+    अगले: current
     पिछला: current
     पिछले: current
     पिछली: current
