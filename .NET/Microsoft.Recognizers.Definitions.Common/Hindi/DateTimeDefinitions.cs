@@ -69,11 +69,15 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>{RelativeRegex}\s+(माह|महि(ने|ना)|महीने)(\s+(का|की|के))?)";
       public const string WrittenMonthRegex = @"((?<month>अप्रील?|अप्रैल?|अगस्त?|दिसम्बर?|(दिस.|दिसं)बर?|(फ़ेब.|फेब्रू.|फर.|फ़र.)वरी?|जन.?|जनवरी?|जुलाई?|जून?|मार्च?|मई?|नवं.?|नव.?|नवंबर?|नवम्बर?|(अक्टू|आक्ट.)बर?|(सित.|सितं)बर?)(\s+(का|के|की)\s+(माह|महि(ने|ना))?)?)";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>({RelativeMonthRegex}|{WrittenMonthRegex})(\s*(का|के|की))?)";
-      public const string DateUnitRegex = @"(?<unit>decades?|दशक|दशकों|साल|वर्षों|वर्ष?|माह|महीना|महीने?|सप्ताह?|(?<business>(व्यापारिक|व्यापार\s+के)\s+)?दिन?|fortnights?|पखवाड़ा)";
+      public const string DateUnitRegex = @"(?<unit>decades?|दशक|दशकों|साल|वर्षों|वर्ष?|माह|महीना|महीने?|सप्ताह?|दिनों|(?<business>(व्यापारिक|व्यापार\s+के)\s+)?दिन?|fortnights?|पखवाड़ा)";
       public const string DateTokenPrefix = @"का ";
       public const string TimeTokenPrefix = @"at ";
       public const string TokenBeforeDate = @"से ";
       public const string TokenBeforeTime = @"at ";
+      public const string HalfTokenRegex = @"^(साढ़े|साढ़े)";
+      public const string QuarterTokenRegex = @"^(सव|पौने)";
+      public const string ThreeQuarterTokenRegex = @"^(पैंतालीस)";
+      public const string ToTokenRegex = @"\b(बाकी)$";
       public static readonly string SimpleCasesRegex = $@"\b({RangePrefixRegex}\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex}\s+{MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex})((\s+|\s*,\s*){YearRegex})?";
       public static readonly string MonthFrontSimpleCasesRegex = $@"\b({RangePrefixRegex}\s+)?{MonthSuffixRegex}\s+((from)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?";
       public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+((से|के बीच|बीच में|के बीच में)\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?";
@@ -106,6 +110,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string WeekOfRegex = @"(the\s+)?(सप्ताह|हफ़्ते)(\s+के)(\s+the)?";
       public const string MonthOfRegex = @"(महि(ने|ना)|माह)(\s+(का|की|के))";
       public const string MonthRegex = @"(?<month>(अप्री|अप्रै)ल|अगस्त|मई|दिसम्बर|(दिस.|दिसं)बर?|(फ़ेब.|फेब्रू.|फर.|फ़र.)वरी?|जनवरी?|जन\.?|जुलाई?|जुल?\.|जून?|मार्च?|नवं\.?|नव\.?|नवंबर?|नवम्बर|(अक्टू|आक्ट.)बर?|(सित.|सितं)बर?|अक्टू\.?)";
+      public const string AmbiguousMonthP0Regex = @"\b((((!|\.|\?|,|;|)\s+|^)मे आई)|(आई|you|he|she|we|they)\s+मे|(मे\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or मे नहीं))))";
       public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})";
       public static readonly string YearSuffix = $@"((\s*तारीख)?,?\s*(सन\s+)?({DateYearRegex}|{FullTextYearRegex}))";
       public static readonly string OnRegex = $@"({DayRegex})(?=\b\s+को)";
@@ -142,41 +147,44 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string HourNumRegex = @"(?<hournum>शून्य|एक|दो|तीन|चार|पांच|पाँच|छह|सात|आठ|नौ|दस|ग्यारह|बारह|तेरह|चौदह|पंद्रह|सोलह|सत्रह|अठारह|उन्नीस|बीस|इक्कीस|बाईस|तेईस|चौबीस|zero|one|two|three|five|eight|ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)?|twenty|वन|टू|थ्री|फोर|फ़ाइव|सिक्स|सेवन|एइट|नाइन|टेन|इलेवन|ट्वेल्व|थर्टीन|फ़ोर्टीन|फ़िफ़्टीन|सिक्सटीन|सेवेनटीन|एइटीन|नाइनटीन|ट्वेन्टी)";
       public const string MinuteNumRegex = @"(?<minnum>शून्य|एक|दो|तीन|चार|पांच|पाँच|छह|सात|आठ|नौ|दस|ग्यारह|बारह|तेरह|चौदह|पंद्रह|सोलह|सत्रह|अठारह|उन्नीस|बीस|इक्कीस|बाईस|तेईस|चौबीस|पच्चीस|छब्बीस|सत्ताईस|अट्ठाईस|अट्ठाइस|उनतीस|तीस|इकतीस|इकत्तीस|बत्तीस|तैंतीस|चौंतीस|पैंतीस|छ्त्तीस|सैंतीस|अड़तीस|उनतालीस|चालीस|इकतालीस|बयालीस|तैंतालीस|चौंतालीस|पैंतालीस|पैंतालिस|पेंतालिस|छियालीस|सैंतालीस|अड़तालीस|उनचास|पचास|इक्याबन|बावन|तिरेपन|चौबन|पचपन|छप्पन|सत्तावन|अट्ठावन|उनसठ|ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)?|twenty|thirty|forty|fifty|one|two|three|five|eight|टेन|इलेवन|ट्वेल्व|थर्टीन|फ़ोर्टीन|फ़िफ़्टीन|सिक्सटीन|सेवेनटीन|एइटीन|नाइनटीन|ट्वेन्टी|वन|टू|थ्री|फोर|फ़ाइव|सिक्स|सेवन|एइट|नाइन|थर्टी|फ़ोर्टी|फ़िफ़्टी)";
       public const string DeltaMinuteNumRegex = @"(?<deltaminnum>शून्य|एक|दो|तीन|चार|पांच|पाँच|छह|सात|आठ|नौ|दस|ग्यारह|बारह|तेरह|चौदह|पंद्रह|सोलह|सत्रह|अठारह|उन्नीस|बीस|इक्कीस|बाईस|तेईस|चौबीस|पच्चीस|छब्बीस|सत्ताईस|अट्ठाईस|अट्ठाइस|उनतीस|तीस|इकतीस|इकत्तीस|बत्तीस|तैंतीस|चौंतीस|पैंतीस|छ्त्तीस|सैंतीस|अड़तीस|उनतालीस|चालीस|इकतालीस|बयालीस|तैंतालीस|चौंतालीस|पैंतालीस|पैंतालिस|पेंतालिस|छियालीस|सैंतालीस|अड़तालीस|उनचास|पचास|इक्याबन|बावन|तिरेपन|चौबन|पचपन|छप्पन|सत्तावन|अट्ठावन|उनसठ|ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)?|twenty|thirty|forty|fifty|one|two|three|five|eight|टेन|इलेवन|ट्वेल्व|थर्टीन|फ़ोर्टीन|फ़िफ़्टीन|सिक्सटीन|सेवेनटीन|एइटीन|नाइनटीन|ट्वेन्टी|वन|टू|थ्री|फोर|फ़ाइव|सिक्स|सेवन|एइट|नाइन|थर्टी|फ़ोर्टी|फ़िफ़्टी)";
-      public const string PmRegex = @"(?<pm>(दोपहर\s+)?खाने\s+के\s+वक़्त\s+तक|(दोपहर|दिन|सायं|शाम|सायंकाल|अपराहन|((आधी|अर्ध)\s+)?रात)(\s+(के|में|को))?|आधी\s*(-\s*)?रात|अर्ध\s*(-\s*)?रात्रि|लंचटाइम|लंच\s+के\s+समय)";
+      public const string PmRegex = @"(?<pm>(दोपहर\s+)?खाने\s+के\s+वक़्त\s+तक|(दोपहर|दिन|सायं|शाम|सायंकाल|अपराहन|((आधी|अर्ध)\s+)?रात)(\s+(के|में|को))?|आधी\s*(-\s*)?रात|अर्ध\s*(-\s*)?रात्रि|लंचटाइम|लंच\s+के\s+समय|दोपहर\s+खाने\s+के\s+समय)";
       public const string PmRegexFull = @"(?<pm>(दोपहर\s+)?खाने\s+के\s+वक़्त\s+तक|(दोपहर|दिन|सायं|शाम|सायंकाल|अपराहन|((आधी|अर्ध)\s+)?रात)(\s+(के|में|को))?|आधी\s*(-\s*)?रात|अर्ध\s*(-\s*)?रात्रि|लंचटाइम|लंच\s+के\s+समय)";
       public const string AmRegex = @"(?<am>सवेरे|सुबह(\s*(के|में|को))?)";
       public const string LunchRegex = @"(खाने\s+के\s+वक़्त\s+तक|लंचटाइम|लंच\s+के\s+समय)";
-      public const string NightRegex = @"(आधी\s*(-\s*)?रात|अर्ध\s*(-\s*)?रात्रि)";
+      public const string NightRegex = @"((आधी\s*(-\s*)?)?रात|अर्ध\s*(-\s*)?रात्रि)";
       public const string CommonDatePrefixRegex = @"^[\.]";
       public static readonly string LessThanOneHour = $@"(?<lth>सवा|पौने|साढ़े|साढ़े|{BaseDateTime.DeltaMinuteRegex}(\s+मिनट)|{DeltaMinuteNumRegex}(\s+मिनट))";
-      public static readonly string WrittenTimeRegex = $@"(?<writtentime>{HourNumRegex}\s+({MinuteNumRegex}|(?<tens>बीस|तीस|चालीस|पचास|twenty|thirty|fou?rty|fifty)\s+{MinuteNumRegex})|{BaseDateTime.HourRegex}\s+({MinuteNumRegex}))";
-      public static readonly string TimePrefix = $@"(?<prefix>(({HourNumRegex}|{BaseDateTime.HourRegex})\s+(बजकर|बजने\s+(में|से))\s+)?{LessThanOneHour}(\s+(बाकी|पहले))?)";
+      public static readonly string WrittenTimeRegex = $@"(?<writtentime>{HourNumRegex}\s+({MinuteNumRegex}|(?<tens>बीस|तीस|चालीस|पचास|twenty|thirty|fou?rty|fifty)\s+{MinuteNumRegex}))";
+      public static readonly string TimePrefix = $@"(?<prefix>((बजकर|बजने\s+(में|से))\s+)?{LessThanOneHour}(\s+(बाकी|पहले))?)";
       public static readonly string TimeSuffix = $@"(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})";
       public static readonly string TimeSuffixFull = $@"(?<suffix>{AmRegex}|{PmRegexFull}|{OclockRegex})";
       public static readonly string BasicTime = $@"\b(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex}(?![%\d]))";
       public const string MidnightRegex = @"(?<midnight>आधी\s*(-\s*)?रात|अर्ध\s*(-\s*)?रात्रि|मध्य\s*रात्रि)";
       public const string MidmorningRegex = @"(?<midmorning>सवेरे|प्रातः|सुबह)";
-      public static readonly string MidafternoonRegex = $@"(?<midafternoon>देर\s*दोपहर|दोपहर(\s*(देर|के\s*आसपास))?|भरी\s*दुपहरी|दोपहर\s+{BasicTime}\s+{OclockRegex})";
-      public const string MiddayRegex = @"(?<midday>दिन\s*के\s*मध्य|दिन\s*के\s*बीच|दोपहर\s*(12|बारह)\s*बजे|मध्याह्न)";
-      public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))";
-      public static readonly string AtRegex = $@"\b(?:(?:(?:{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(?!\.\d)|{MidTimeRegex}))|{MidTimeRegex})";
+      public const string MidafternoonRegex = @"(?<midafternoon>देर\s*दोपहर|दोपहर(\s*(देर|के\s*आसपास))|भरी\s*दुपहरी)";
+      public const string MiddayRegex = @"(?<midday>दिन\s*के\s*मध्य|दिन\s*के\s*बीच|दोपहर(\s+के\s+खाने\s+के\s+वक़्त)?(\s*(12|बारह)\s*बजे)?|मध्याह्न)";
+      public static readonly string MidTimeRegex = $@"(?<mid>({MidafternoonRegex}|{MiddayRegex}|{MidnightRegex}|{MidmorningRegex}))";
+      public static readonly string AtRegex = $@"\b(?:{MidTimeRegex}|{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(?!\.\d))";
       public static readonly string IshRegex = $@"\b({BaseDateTime.HourRegex}(-|——)?ish|दोपहर(\s*((के\s*आसपास)|देर))?)";
       public const string TimeUnitRegex = @"([^A-Za-zऀ-ॿ]{1,}|\b)(?<unit>h(ou)?rs?|h|मिनट|sec(ond)?s?)";
       public const string RestrictedTimeUnitRegex = @"(?<unit>hour|मिनट)";
       public const string FivesRegex = @"(?<tens>पाँच|पांच|दस|पंद्रह|बीस|पच्चीस|तीस|पैंतीस|चालीस|पैंतालीस|पचास|पचपन)";
       public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";
+      public const string HindiHourRegex = @"(?<hour>२[०-४]|[०-१]?[०-९])(h)?";
+      public const string HindiMinRegex = @"(?<minnum>[०-५]?[०-९])(?!\d)";
+      public const string HindiSecRegex = @"(?<secnum>[०-५]?[०-९])";
       public const string PeriodHourNumRegex = @"\b(?<hour>एक|दो|तीन|चार|पांच|पाँच|छह|सात|आठ|नौ|दस|ग्यारह|बारह|तेरह|चौदह|पंद्रह|सोलह|सत्रह|अठारह|उन्नीस|बीस|इक्कीस|बाईस|तेईस|चौबीस|twenty(\s+(one|two|three|four))?|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)?|zero|one|two|three|five|eight|ten||वन|टू|थ्री|फोर|फ़ाइव|सिक्स|सेवन|एइट|नाइन|टेन|इलेवन|ट्वेल्व)";
-      public static readonly string ConnectNumRegex = $@"\b({DescRegex}\s+)?{BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex}";
+      public static readonly string ConnectNumRegex = $@"\b(({DescRegex}\s+)?{BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex}|{DescRegex}\s+{BaseDateTime.HourRegex}(?<min>[0-5][0-9]))";
       public static readonly string TimeRegexWithDotConnector = $@"(({DescRegex}\s+)?{BaseDateTime.HourRegex}(\s*\.\s*){BaseDateTime.MinuteRegex})";
-      public static readonly string TimeRegex1 = $@"\b({DescRegex}\s+)?({TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s*|[.]){DescRegex}";
-      public static readonly string TimeRegex2 = $@"\b({DescRegex}\s+)?({TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
+      public static readonly string TimeRegex1 = $@"\b({DescRegex}\s+)?(({TimePrefix}|{TimeSuffix})\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s*|[.])({DescRegex}|{MinuteNumRegex})";
+      public static readonly string TimeRegex2 = $@"\b({DescRegex}\s+)?(({TimePrefix}|{TimeSuffix})\s+)?(t)?({BaseDateTime.HourRegex}|{HindiHourRegex})(\s*)?:(\s*)?({BaseDateTime.MinuteRegex}|{HindiMinRegex})((\s*)?:(\s*)?({BaseDateTime.SecondRegex}|{HindiSecRegex}))?((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex3 = $@"\b({DescRegex}\s+)?({TimePrefix}\s+)?{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})";
       public static readonly string TimeRegex4 = $@"\b({DescRegex}\s+)?({TimeSuffix}\s+)?{TimePrefix}\s+{BasicTime}(\s*{DescRegex})?(\s+{TimeSuffix})?";
-      public static readonly string TimeRegex5 = $@"\b({DescRegex}\s+)?{TimePrefix}\s+{BasicTime}((\s*{DescRegex})|\b)|({TimeSuffix}\s+)?({LessThanOneHour}\s+)?{TimePrefix}";
+      public static readonly string TimeRegex5 = $@"\b({DescRegex}\s+)?{TimePrefix}\s+{BasicTime}((\s*{DescRegex})|\s+{TimePrefix}|\b)|({TimeSuffix}\s+)?({LessThanOneHour}\s+)?{BasicTime}\s+{TimePrefix}";
       public static readonly string TimeRegex6 = $@"({DescRegex}\s+)?({TimeSuffix}\s+)?{BasicTime}(\s*{DescRegex})?(\s+{TimeSuffix})?";
       public static readonly string TimeRegex7 = $@"\b({DescRegex}\s+)?{TimeSuffixFull}(\s+{TimePrefix}\s+)?\s+{BasicTime}((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex8 = $@".^";
-      public static readonly string TimeRegex9 = $@"\b({DescRegex}\s+)?{PeriodHourNumRegex}(\s+|-){FivesRegex}((\s*{DescRegex})|\b)";
+      public static readonly string TimeRegex9 = $@"\b(({DescRegex}\s+)?{PeriodHourNumRegex}(\s+|-){FivesRegex}|{FivesRegex}\s+(बजकर|बजने\s+(में|से))\s+{PeriodHourNumRegex})((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex10 = $@"\b({DescRegex}\s+)?({TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?";
       public static readonly string TimeRegex11 = $@"\b(?:({DescRegex}\s+)?(?:{TimeTokenPrefix}{TimeRegexWithDotConnector})(?!\s*per\s*cent|%)|(?:{TimeRegexWithDotConnector}(\s*{DescRegex})))";
       public static readonly string FirstTimeRegexInTimeRange = $@"\b{TimeRegexWithDotConnector}(\s*{DescRegex})?";
@@ -211,7 +219,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({PeriodTimeOfDayRegex}(\s+(on|of))?))\b";
       public const string LessThanRegex = @"\b(से\s+कम)";
       public const string MoreThanRegex = @"\b(से\s+ज्यादा)";
-      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|घंटे|घंटों|h|मिनट|मिन.|min(ute)?s?|min.|सेकंड|sec(ond)?s?)\b";
+      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|घंटों|घंटे|h|मिनटों|मिनट|मिन.|min.|min(ute)?s?|सेकंड|sec(ond)?s?)";
       public const string SuffixAndRegex = @"(?<suffix>\s*(and)\s+(an?\s+)?(?<suffix_num>half|quarter))";
       public const string PeriodicRegex = @"\b(?<periodic>daily|monthly|weekly|biweekly|yearly|annual(ly)?)\b";
       public static readonly string EachUnitRegex = $@"(?<each>(प्रत्येक\s+से|हर\s+एक)(?<other>\s+other)?\s*{DurationUnitRegex})";
@@ -670,6 +678,117 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"सेवेंटी", 70 },
             { @"एइट्टी", 80 },
             { @"नैनटी", 90 },
+            { @"०", 0 },
+            { @"१", 1 },
+            { @"२", 2 },
+            { @"३", 3 },
+            { @"४", 4 },
+            { @"५", 5 },
+            { @"६", 6 },
+            { @"७", 7 },
+            { @"८", 8 },
+            { @"९", 9 },
+            { @"००", 0 },
+            { @"०१", 1 },
+            { @"०२", 2 },
+            { @"०३", 3 },
+            { @"०४", 4 },
+            { @"०५", 5 },
+            { @"०६", 6 },
+            { @"०७", 7 },
+            { @"०८", 8 },
+            { @"०९", 9 },
+            { @"१०", 10 },
+            { @"११", 11 },
+            { @"१२", 12 },
+            { @"१३", 13 },
+            { @"१४", 14 },
+            { @"१५", 15 },
+            { @"१६", 16 },
+            { @"१७", 17 },
+            { @"१८", 18 },
+            { @"१९", 19 },
+            { @"२०", 20 },
+            { @"२१", 21 },
+            { @"२२", 22 },
+            { @"२३", 23 },
+            { @"२४", 24 },
+            { @"२५", 25 },
+            { @"२६", 26 },
+            { @"२७", 27 },
+            { @"२८", 28 },
+            { @"२९", 29 },
+            { @"३०", 30 },
+            { @"३१", 31 },
+            { @"३२", 32 },
+            { @"३३", 33 },
+            { @"३४", 34 },
+            { @"३५", 35 },
+            { @"३६", 36 },
+            { @"३७", 37 },
+            { @"३८", 38 },
+            { @"३९", 39 },
+            { @"४०", 40 },
+            { @"४१", 41 },
+            { @"४२", 42 },
+            { @"४३", 43 },
+            { @"४४", 44 },
+            { @"४५", 45 },
+            { @"४६", 46 },
+            { @"४७", 47 },
+            { @"४८", 48 },
+            { @"४९", 49 },
+            { @"५०", 50 },
+            { @"५१", 51 },
+            { @"५२", 52 },
+            { @"५३", 53 },
+            { @"५४", 54 },
+            { @"५५", 55 },
+            { @"५६", 56 },
+            { @"५७", 57 },
+            { @"५८", 58 },
+            { @"५९", 59 },
+            { @"६०", 60 },
+            { @"६१", 61 },
+            { @"६२", 62 },
+            { @"६३", 63 },
+            { @"६४", 64 },
+            { @"६५", 65 },
+            { @"६६", 66 },
+            { @"६७", 67 },
+            { @"६८", 68 },
+            { @"६९", 69 },
+            { @"७०", 70 },
+            { @"७१", 71 },
+            { @"७२", 72 },
+            { @"७३", 73 },
+            { @"७४", 74 },
+            { @"७५", 75 },
+            { @"७६", 76 },
+            { @"७७", 77 },
+            { @"७८", 78 },
+            { @"७९", 79 },
+            { @"८०", 80 },
+            { @"८१", 81 },
+            { @"८२", 82 },
+            { @"८३", 83 },
+            { @"८४", 84 },
+            { @"८५", 85 },
+            { @"८६", 86 },
+            { @"८७", 87 },
+            { @"८८", 88 },
+            { @"८९", 89 },
+            { @"९०", 90 },
+            { @"९१", 91 },
+            { @"९२", 92 },
+            { @"९३", 93 },
+            { @"९४", 94 },
+            { @"९५", 95 },
+            { @"९६", 96 },
+            { @"९७", 97 },
+            { @"९८", 98 },
+            { @"९९", 99 },
+            { @"१००", 100 },
             { @"zero", 0 },
             { @"one", 1 },
             { @"a", 1 },
