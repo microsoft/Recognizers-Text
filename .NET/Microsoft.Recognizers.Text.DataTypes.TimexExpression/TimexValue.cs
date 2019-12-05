@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
     {
         public static string DateValue(TimexProperty timexProperty)
         {
-            if (timexProperty.Year != null && timexProperty.Month != null && timexProperty.DayOfMonth != null) 
+            if (timexProperty.Year != null && timexProperty.Month != null && timexProperty.DayOfMonth != null)
             {
                 return $"{TimexDateHelpers.FixedFormatNumber(timexProperty.Year, 4)}-{TimexDateHelpers.FixedFormatNumber(timexProperty.Month, 2)}-{TimexDateHelpers.FixedFormatNumber(timexProperty.DayOfMonth, 2)}";
             }
