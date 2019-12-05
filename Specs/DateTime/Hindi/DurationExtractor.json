@@ -559,19 +559,6 @@
     ]
   },
   {
-    "Input": "मैं आधे घंटे के लिए बाहर रहुंगी",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "आधे घंटे",
-        "Type": "duration",
-        "Start": 4,
-        "Length": 8
-      }
-    ]
-  },
-  {
     "Input": "मैं दो घंटे के लिए बाहर रहुंगा",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",

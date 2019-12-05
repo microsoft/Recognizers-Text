@@ -2468,32 +2468,6 @@
     ]
   },
   {
-    "Input": "मैं आज से कल तक बाहर रहूँगा",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "आज से कल तक",
-        "Type": "daterange",
-        "Start": 4,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "मैं इस शुक्रवार से अगले रविवार तक बाहर रहूँगा",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "इस शुक्रवार से अगले रविवार तक",
-        "Type": "daterange",
-        "Start": 4,
-        "Length": 29
-      }
-    ]
-  },
-  {
     "Input": "मैं अक्टू. 2 से अक्टूबर 22 के बीच बाहर रहूंगा",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -2572,19 +2546,6 @@
     ]
   },
   {
-    "Input": "मैं 2016 की तीसरी तिमाही से बाहर रहुंगा",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2016 की तीसरी तिमाही",
-        "Type": "daterange",
-        "Start": 4,
-        "Length": 20
-      }
-    ]
-  },
-  {
     "Input": "मैं 2027 के तीसरे सप्ताह से बाहर रहुंगा",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -2637,19 +2598,6 @@
     ]
   },
   {
-    "Input": "मैं इस गर्मी में चला जाउंगा",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "इस गर्मी",
-        "Type": "daterange",
-        "Start": 4,
-        "Length": 8
-      }
-    ]
-  },
-  {
     "Input": "मैं गर्मी में चला जाउंगा",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -2659,19 +2607,6 @@
         "Type": "daterange",
         "Start": 4,
         "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "मैं 2016 की गर्मियों में चला जाउंगा",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2016 की गर्मियों",
-        "Type": "daterange",
-        "Start": 4,
-        "Length": 16
       }
     ]
   },
@@ -3029,34 +2964,6 @@
     ]
   },
   {
-    "Input": "1970 के दशक में",
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "1970 के दशक",
-        "Type": "daterange",
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "70 के दशक में",
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "70 के दशक",
-        "Type": "daterange",
-        "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
     "Input": "70 के दशक में",
     "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
@@ -3109,20 +3016,6 @@
         "Type": "daterange",
         "Start": 0,
         "Length": 22
-      }
-    ]
-  },
-  {
-    "Input": "दो हजार दस के दशक में",
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "दो हजार दस के दशक",
-        "Type": "daterange",
-        "Start": 0,
-        "Length": 17
       }
     ]
   },

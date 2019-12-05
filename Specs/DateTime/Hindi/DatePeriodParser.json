@@ -1590,33 +1590,6 @@
     ]
   },
   {
-    "Input": "मैं 2016 की तीसरी तिमाही से बाहर रहुंगा",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2016 की तीसरी तिमाही",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(2016-07-01,2016-10-01,P3M)",
-          "FutureResolution": {
-            "startDate": "2016-07-01",
-            "endDate": "2016-10-01"
-          },
-          "PastResolution": {
-            "startDate": "2016-07-01",
-            "endDate": "2016-10-01"
-          }
-        },
-        "Start": 4,
-        "Length": 20
-      }
-    ]
-  },
-  {
     "Input": "मैं इस साल तीसरी तिमाही के दौरान बाहर हो जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1821,27 +1794,6 @@
     ]
   },
   {
-    "Input": "मैं इस गर्मी में चला जाउंगा",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "इस गर्मी",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "SU",
-          "FutureResolution": {},
-          "PastResolution": {}
-        },
-        "Start": 4,
-        "Length": 8
-      }
-    ]
-  },
-  {
     "Input": "मैं गर्मी में चला जाउंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1859,27 +1811,6 @@
         },
         "Start": 4,
         "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "मैं 2016 की गर्मियों में चला जाउंगा",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2016 की गर्मियों",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "2016-SU",
-          "FutureResolution": {},
-          "PastResolution": {}
-        },
-        "Start": 4,
-        "Length": 16
       }
     ]
   },
@@ -2542,90 +2473,6 @@
     ]
   },
   {
-    "Input": "1970 के दशक में",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "1970 के दशक",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(1970-01-01,1980-01-01,P10Y)",
-          "FutureResolution": {
-            "startDate": "1970-01-01",
-            "endDate": "1980-01-01"
-          },
-          "PastResolution": {
-            "startDate": "1970-01-01",
-            "endDate": "1980-01-01"
-          }
-        },
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "70 के दशक में",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "70 के दशक",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
-          "FutureResolution": {
-            "startDate": "2070-01-01",
-            "endDate": "2080-01-01"
-          },
-          "PastResolution": {
-            "startDate": "1970-01-01",
-            "endDate": "1980-01-01"
-          }
-        },
-        "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "70 के दशक में",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "70 के दशक",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
-          "FutureResolution": {
-            "startDate": "2070-01-01",
-            "endDate": "2080-01-01"
-          },
-          "PastResolution": {
-            "startDate": "1970-01-01",
-            "endDate": "1980-01-01"
-          }
-        },
-        "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
     "Input": "70 के दशक में",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2734,34 +2581,6 @@
         },
         "Start": 0,
         "Length": 22
-      }
-    ]
-  },
-  {
-    "Input": "दो हजार दस के दशक में",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "दो हजार दस के दशक",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(2010-01-01,2020-01-01,P10Y)",
-          "FutureResolution": {
-            "startDate": "2010-01-01",
-            "endDate": "2020-01-01"
-          },
-          "PastResolution": {
-            "startDate": "2010-01-01",
-            "endDate": "2020-01-01"
-          }
-        },
-        "Start": 0,
-        "Length": 17
       }
     ]
   },

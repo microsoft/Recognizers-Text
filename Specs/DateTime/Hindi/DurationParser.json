@@ -975,31 +975,6 @@
     ]
   },
   {
-    "Input": "मैं डेढ़ घंटे लिए जाउंगा",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "डेढ़ घंटे",
-        "Type": "duration",
-        "Value": {
-          "Timex": "PT1.5H",
-          "FutureResolution": {
-            "duration": "5400"
-          },
-          "PastResolution": {
-            "duration": "5400"
-          }
-        },
-        "Start": 4,
-        "Length": 8
-      }
-    ]
-  },
-  {
     "Input": "मैं आधे घंटे लिए जाऊँगी",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
