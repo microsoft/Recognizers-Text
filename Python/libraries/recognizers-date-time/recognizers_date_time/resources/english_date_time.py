@@ -198,7 +198,7 @@ class EnglishDateTime:
     MoreThanRegex = f'\\b(more\\s+than)\\b'
     DurationUnitRegex = f'(?<unit>{DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\\b'
     SuffixAndRegex = f'(?<suffix>\\s*(and)\\s+(an?\\s+)?(?<suffix_num>half|quarter))'
-    PeriodicRegex = f'\\b(?<periodic>daily|monthly|weekly|biweekly|yearly|annual(ly)?)\\b'
+    PeriodicRegex = f'\\b(?<periodic>daily|monthly|weekly|biweekly|quarterly|yearly|annual(ly)?)\\b'
     EachUnitRegex = f'(?<each>(each|every|once an?)(?<other>\\s+other)?\\s*({DurationUnitRegex}|{WeekDayRegex}))'
     EachPrefixRegex = f'\\b(?<each>(each|(every)|once an?)\\s*$)'
     SetEachRegex = f'\\b(?<each>(each|(every))(?<other>\\s+other)?\\s*)'

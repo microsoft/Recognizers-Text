@@ -480,7 +480,7 @@ DurationUnitRegex: !nestedRegex
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*(and)\s+(an?\s+)?(?<suffix_num>half|quarter))
 PeriodicRegex: !simpleRegex
-  def: \b(?<periodic>daily|monthly|weekly|biweekly|yearly|annual(ly)?)\b
+  def: \b(?<periodic>daily|monthly|weekly|biweekly|quarterly|yearly|annual(ly)?)\b
 EachUnitRegex: !nestedRegex
   def: (?<each>(each|every|once an?)(?<other>\s+other)?\s*({DurationUnitRegex}|{WeekDayRegex}))
   references: [ DurationUnitRegex, WeekDayRegex ]
