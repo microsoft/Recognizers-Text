@@ -172,7 +172,7 @@ class EnglishDateTime:
     SuffixAfterRegex = f'\\b(((at)\\s)?(or|and)\\s+(above|after|later|greater)(?!\\s+than))\\b'
     PrepositionRegex = f'(?<prep>^(at|on|of)(\\s+the)?$)'
     LaterEarlyRegex = f'((?<early>early(\\s+|-))|(?<late>late(r?\\s+|-)))'
-    MealTimeRegex = f'\\b(?<mealTime>breakfast|brunch|lunch(time)?|dinner(time)?|supper)\\b'
+    MealTimeRegex = f'\\b(at\\s+)?(?<mealTime>breakfast|brunch|lunch(\\s*time)?|dinner(\\s*time)?|supper)\\b'
     UnspecificTimePeriodRegex = f'({MealTimeRegex})'
     TimeOfDayRegex = f'\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?{LaterEarlyRegex}?(in\\s+(the)?\\s+)?(morning|afternoon|night|evening)))|{MealTimeRegex}|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b'
     SpecificTimeOfDayRegex = f'\\b(({StrictRelativeRegex}\\s+{TimeOfDayRegex})\\b|\\btonight)s?\\b'
