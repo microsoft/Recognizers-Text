@@ -613,9 +613,9 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
             if not before_str or not after_str:
                 continue
+
             # within "Days/Weeks/Months/Years" should be handled as dateRange here
             # if duration contains "Seconds/Minutes/Hours", it should be treated as datetimeRange
-
             match_token = self._match_within_next_affix_regex(source, duration, True)
             if match_token.start >= 0:
                 tokens.append(match_token)

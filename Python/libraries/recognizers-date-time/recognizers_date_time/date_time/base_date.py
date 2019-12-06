@@ -242,7 +242,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         for regexp in self.config.date_regex_list:
 
             matches = list(regexp.finditer(source))
-            if matches is not None:
+            if matches:
                 for match in matches:
 
                     # some match might be part of the date range entity, and might be split in a wrong way
