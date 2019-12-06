@@ -5,11 +5,10 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "python, javascript, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "मैं 2018 के ईस्टर संडे",
+        "Text": "2018 के ईस्टर संडे",
         "Type": "date",
         "Value": {
           "Timex": "2018-04-01",
@@ -20,8 +19,8 @@
             "date": "2018-04-01"
           }
         },
-        "Start": 0,
-        "Length": 22
+        "Start": 4,
+        "Length": 18
       }
     ]
   },
@@ -30,7 +29,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -55,7 +53,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -80,7 +77,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -105,7 +101,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -130,19 +125,18 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "होली",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-01-01",
+          "Timex": "XXXX-03-23",
           "FutureResolution": {
-            "date": "2017-01-01"
+            "date": "2017-03-12"
           },
           "PastResolution": {
-            "date": "2016-01-01"
+            "date": "2016-03-23"
           }
         },
         "Start": 4,
@@ -155,7 +149,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -180,7 +173,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -205,11 +197,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "फादर्स डे ",
+        "Text": "फादर्स डे",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-06-WXX-7-3",
@@ -221,7 +212,7 @@
           }
         },
         "Start": 4,
-        "Length": 10
+        "Length": 9
       }
     ]
   },
@@ -230,23 +221,22 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दिवाली",
+        "Text": "अगले साल दिवाली",
         "Type": "date",
         "Value": {
-          "Timex": "2017-01-01",
+          "Timex": "2017-10-19",
           "FutureResolution": {
-            "date": "2017-01-01"
+            "date": "2017-10-19"
           },
           "PastResolution": {
-            "date": "2017-01-01"
+            "date": "2017-10-19"
           }
         },
-        "Start": 13,
-        "Length": 6
+        "Start": 4,
+        "Length": 15
       }
     ]
   },
@@ -255,7 +245,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -280,7 +269,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -306,7 +294,6 @@
       "ReferenceDateTime": "2015-12-07T00:00:00"
     },
     "NotSupported": "python, javascript, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -332,7 +319,6 @@
       "ReferenceDateTime": "2015-12-07T00:00:00"
     },
     "NotSupported": "python, javascript, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -358,7 +344,6 @@
       "ReferenceDateTime": "2015-12-07T00:00:00"
     },
     "NotSupported": "python, javascript, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -384,7 +369,6 @@
       "ReferenceDateTime": "2015-12-07T00:00:00"
     },
     "NotSupported": "python, javascript, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -409,7 +393,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -434,7 +417,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -460,7 +442,6 @@
       "ReferenceDateTime": "2019-10-01T00:00:00"
     },
     "NotSupported": "python, javascript, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -485,7 +466,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -502,21 +482,6 @@
         },
         "Start": 9,
         "Length": 10
-      },
-      {
-        "Text": "May Day",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-05-01",
-          "FutureResolution": {
-            "date": "2019-05-01"
-          },
-          "PastResolution": {
-            "date": "2018-05-01"
-          }
-        },
-        "Start": 9,
-        "Length": 7
       }
     ]
   },
@@ -525,7 +490,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -550,7 +514,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
