@@ -697,8 +697,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // Just because we think we found a time period doesn't mean it is one, it could be the start of a hyphenated date
                 var hyphenDateMatch = this.Config.HyphenDateRegex.Match(trimmedText);
 
-                    // Regex.Match(trimmedText, "((?<year1>[0-9]{4})-?(?<month1>1[0-2]|0[1-9])-?(?<day1>3[01]|0[1-9]|[12][0-9]))|((?<month2>1[0-2]|0[1-9])-?(?<day2>3[01]|0[1-9]|[12][0-9])-?(?<year2>[0-9]{4}))|((?<day3>3[01]|0[1-9]|[12][0-9])-?(?<month3>1[0-2]|0[1-9])-?(?<year3>[0-9]{4}))");
-
                 if (hyphenDateMatch.Success && hyphenDateMatch.Index >= match.Index && (match.Index + match.Length) <= (hyphenDateMatch.Index + hyphenDateMatch.Length))
                 {
                     return ret;
