@@ -41,6 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = DutchTimePeriodExtractorConfiguration.PureNumFromTo;
+            HyphenDateRegex = DutchDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = DutchTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = DutchDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = DutchDateTimeExtractorConfiguration.TimeOfDayRegex;
@@ -91,6 +92,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public IDateTimeParser TimeZoneParser { get; }
 
         public Regex PureNumberFromToRegex { get; }
+
+        public Regex HyphenDateRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
 

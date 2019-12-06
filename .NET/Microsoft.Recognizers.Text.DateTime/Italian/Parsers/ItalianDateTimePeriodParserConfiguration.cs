@@ -46,6 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = ItalianTimePeriodExtractorConfiguration.PureNumFromTo;
+            HyphenDateRegex = ItalianDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = ItalianTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = ItalianDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = ItalianDateTimeExtractorConfiguration.TimeOfDayRegex;
@@ -97,6 +98,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public IDateTimeParser TimeZoneParser { get; }
 
         public Regex PureNumberFromToRegex { get; }
+
+        public Regex HyphenDateRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
 

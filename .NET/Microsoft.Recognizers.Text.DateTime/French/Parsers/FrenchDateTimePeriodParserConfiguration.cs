@@ -40,6 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = FrenchTimePeriodExtractorConfiguration.PureNumFromTo;
+            HyphenDateRegex = FrenchDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = FrenchDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = FrenchDateTimeExtractorConfiguration.TimeOfDayRegex;
@@ -91,6 +92,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IDateTimeParser TimeZoneParser { get; }
 
         public Regex PureNumberFromToRegex { get; }
+
+        public Regex HyphenDateRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
 

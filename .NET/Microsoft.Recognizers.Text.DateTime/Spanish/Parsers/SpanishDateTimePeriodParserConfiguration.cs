@@ -27,6 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
+            HyphenDateRegex = SpanishDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = SpanishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = SpanishDateTimeExtractorConfiguration.TimeOfDayRegex;
@@ -77,6 +78,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IDateTimeParser TimeZoneParser { get; }
 
         public Regex PureNumberFromToRegex { get; }
+
+        public Regex HyphenDateRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
 
