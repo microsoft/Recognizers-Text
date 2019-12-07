@@ -175,9 +175,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     // Match pure number as fraction unit.
                     if (extractResult.Type.Equals(Constants.SYS_NUM, StringComparison.Ordinal))
                     {
-                        numberValue += (double)parseResult.Value * (1.0 / 100);
-                        result.ResolutionStr += ' ' + parseResult.ResolutionStr;
-                        result.Length = parseResult.Start + parseResult.Length - result.Start;
+                        Config.SpecialCurrencyFractionMaxMap.TryGetValue(mainUnitIsoCode, out var fractionMaxValue);
+
+                        fractionMaxValue = fractionMaxValue == 0 ? 100 : fractionMaxValue;
+                        if ((double)parseResult.Value < fractionMaxValue)
+                        {
+                            numberValue += (double)parseResult.Value * (1.0 / fractionMaxValue);
+                            result.ResolutionStr += ' ' + parseResult.ResolutionStr;
+                            result.Length = parseResult.Start + parseResult.Length - result.Start;
+                        }
+
                         count++;
                         continue;
                     }
