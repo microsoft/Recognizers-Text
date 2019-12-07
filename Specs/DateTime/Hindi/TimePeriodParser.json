@@ -1,6 +1,6 @@
 [
   {
-    "Input": "午後5時から6時まで不在にします。",
+    "Input": "मैं शाम 5 से 6 बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -8,7 +8,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午後5時から6時まで",
+        "Text": "शाम 5 से 6 ",
         "Type": "timerange",
         "Value": {
           "Timex": "(T17,T18,PT1H)",
@@ -21,13 +21,13 @@
             "endTime": "18:00:00"
           }
         },
-        "Start": 0,
-        "Length": 10
+        "Start": 4,
+        "Length": 11
       }
     ]
   },
   {
-    "Input": "午前5時から7時まで不在にします。",
+    "Input": "मैं प्रातः 5 से सात तक बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -35,7 +35,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午前5時から7時まで",
+        "Text": "प्रातः 5 से सात तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T05,T07,PT2H)",
@@ -48,13 +48,13 @@
             "endTime": "07:00:00"
           }
         },
-        "Start": 0,
-        "Length": 10
+        "Start": 4,
+        "Length": 18
       }
     ]
   },
   {
-    "Input": "午後5時から6時の間、不在にします。",
+    "Input": "मैं संध्या 5 से 6 तक बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -62,7 +62,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午後5時から6時の間",
+        "Text": "संध्या 5 से 6 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T17,T18,PT1H)",
@@ -75,13 +75,13 @@
             "endTime": "18:00:00"
           }
         },
-        "Start": 0,
-        "Length": 10
+        "Start": 4,
+        "Length": 16
       }
     ]
   },
   {
-    "Input": "午後5時から午後6時の間、不在にします。",
+    "Input": "मैं 5 to 6pm के बीच बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -89,7 +89,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午後5時から午後6時の間",
+        "Text": "5 to 6pm",
         "Type": "timerange",
         "Value": {
           "Timex": "(T17,T18,PT1H)",
@@ -102,13 +102,13 @@
             "endTime": "18:00:00"
           }
         },
-        "Start": 0,
-        "Length": 12
+        "Start": 4,
+        "Length": 8
       }
     ]
   },
   {
-    "Input": "午前1時から午後5時まで不在にします。",
+    "Input": "मैं शाम 5 और 6 के बीच बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -116,7 +116,61 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午前1時から午後5時まで",
+        "Text": "शाम 5 और 6 के बीच",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं दिन में 5 से 6 के बीच बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिन में 5 से 6 के बीच",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं 1am से 5pm तक बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1am से 5pm तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T01,T17,PT16H)",
@@ -129,13 +183,13 @@
             "endTime": "17:00:00"
           }
         },
-        "Start": 0,
-        "Length": 12
+        "Start": 4,
+        "Length": 13
       }
     ]
   },
   {
-    "Input": "午後4時から午後5時まで不在にします。",
+    "Input": "मैं शाम 4 से 5 तक बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -143,7 +197,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午後4時から午後5時まで",
+        "Text": "शाम 4 से 5 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T16,T17,PT1H)",
@@ -156,13 +210,13 @@
             "endTime": "17:00:00"
           }
         },
-        "Start": 0,
-        "Length": 12
+        "Start": 4,
+        "Length": 13
       }
     ]
   },
   {
-    "Input": "午後4時から5時まで不在にします。",
+    "Input": "मैं 4 से शाम 5 तक  बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -170,7 +224,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午後4時から5時まで",
+        "Text": "4 से शाम 5 तक ",
         "Type": "timerange",
         "Value": {
           "Timex": "(T16,T17,PT1H)",
@@ -183,13 +237,13 @@
             "endTime": "17:00:00"
           }
         },
-        "Start": 0,
-        "Length": 10
+        "Start": 4,
+        "Length": 14
       }
     ]
   },
   {
-    "Input": "4時から7時まで不在にします。",
+    "Input": "मैं 4:00 बजे से 7 बजे तक बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -197,7 +251,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4時から7時まで",
+        "Text": "4:00 बजे से 7 बजे तक ",
         "Type": "timerange",
         "Value": {
           "Timex": "(T04:00,T07,PT3H)",
@@ -210,13 +264,13 @@
             "endTime": "07:00:00"
           }
         },
-        "Start": 0,
-        "Length": 8
+        "Start": 4,
+        "Length": 21
       }
     ]
   },
   {
-    "Input": "午前3時から午後5時まで不在にします。",
+    "Input": "मैं 4pm-5pm तक बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -224,62 +278,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午前3時から午後5時まで",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T03,T17,PT14H)",
-          "FutureResolution": {
-            "startTime": "03:00:00",
-            "endTime": "17:00:00"
-          },
-          "PastResolution": {
-            "startTime": "03:00:00",
-            "endTime": "17:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "午前3時から午後5時の間、不在にします。",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "午前3時から午後5時の間",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T03,T17,PT14H)",
-          "FutureResolution": {
-            "startTime": "03:00:00",
-            "endTime": "17:00:00"
-          },
-          "PastResolution": {
-            "startTime": "03:00:00",
-            "endTime": "17:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "今日の午後4時から午後5時の間、不在にします。",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Comment": "'今日の' shouldn't be annotated by TimePeriodParser",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "午後4時から午後5時の間",
+        "Text": "4pm-5pm",
         "Type": "timerange",
         "Value": {
           "Timex": "(T16,T17,PT1H)",
@@ -292,13 +291,13 @@
             "endTime": "17:00:00"
           }
         },
-        "Start": 3,
-        "Length": 12
+        "Start": 4,
+        "Length": 7
       }
     ]
   },
   {
-    "Input": "午前中に会いましょう。",
+    "Input": "मैं 4pm - 5pm बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -306,7 +305,115 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午前中",
+        "Text": "4pm - 5pm",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T16,T17,PT1H)",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं morning में 3 बजे से evening के 5 तक बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "morning में 3 बजे से evening के 5 तक",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T03,T17,PT14H)",
+          "FutureResolution": {
+            "startTime": "03:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "03:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "मैं सुबह के 3 और शाम के 5 के बीच बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह के 3 और शाम के 5 के बीच ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T03,T17,PT14H)",
+          "FutureResolution": {
+            "startTime": "03:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "03:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम 4 और 5 के बीच बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम 4 और 5 के बीच ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T16,T17,PT1H)",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "सुबह मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह ",
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
@@ -320,12 +427,12 @@
           }
         },
         "Start": 0,
-        "Length": 3
+        "Length": 5
       }
     ]
   },
   {
-    "Input": "午後に会いましょう。",
+    "Input": "दोपहर को मिलते हैं",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -333,7 +440,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午後",
+        "Text": "दोपहर को",
         "Type": "timerange",
         "Value": {
           "Timex": "TAF",
@@ -347,12 +454,12 @@
           }
         },
         "Start": 0,
-        "Length": 2
+        "Length": 8
       }
     ]
   },
   {
-    "Input": "夜に会いましょう。",
+    "Input": "रात को मिलते हैं",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -360,7 +467,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "夜に",
+        "Text": "रात को ",
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
@@ -374,12 +481,12 @@
           }
         },
         "Start": 0,
-        "Length": 2
+        "Length": 7
       }
     ]
   },
   {
-    "Input": "早朝にに会いましょう。",
+    "Input": "शाम को मिलते हैं",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -387,147 +494,235 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "早朝に",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TMO",
-          "FutureResolution": {
-            "startTime": "08:00:00",
-            "endTime": "10:00:00"
-          },
-          "PastResolution": {
-            "startTime": "08:00:00",
-            "endTime": "10:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "昼前に会いましょう。",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "昼前に",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TMO",
-          "FutureResolution": {
-            "startTime": "10:00:00",
-            "endTime": "12:00:00"
-          },
-          "PastResolution": {
-            "startTime": "10:00:00",
-            "endTime": "12:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "早朝に会いましょう。",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "早朝に",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TMO",
-          "FutureResolution": {
-            "startTime": "08:00:00",
-            "endTime": "10:00:00"
-          },
-          "PastResolution": {
-            "startTime": "08:00:00",
-            "endTime": "10:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "昼すぎに会いましょう。",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "昼すぎに",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TAF",
-          "FutureResolution": {
-            "startTime": "12:00:00",
-            "endTime": "14:00:00"
-          },
-          "PastResolution": {
-            "startTime": "12:00:00",
-            "endTime": "14:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "夕方前に会いましょう。",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "夕方前に",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TAF",
-          "FutureResolution": {
-            "startTime": "14:00:00",
-            "endTime": "16:00:00"
-          },
-          "PastResolution": {
-            "startTime": "14:00:00",
-            "endTime": "16:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "夕方に会いましょう。",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "夕方に",
+        "Text": "शाम को ",
         "Type": "timerange",
         "Value": {
           "Timex": "TEV",
           "FutureResolution": {
             "startTime": "16:00:00",
+            "endTime": "20:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "20:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "शामों को मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शामों को ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TEV",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "20:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "20:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "तड़के सुबह मिलते हैं ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तड़के सुबह",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "Mod": "start",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "10:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "10:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "रोज देर सुबह को मिलते हैं ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रोज देर सुबह को",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "Mod": "end",
+          "FutureResolution": {
+            "startTime": "10:00:00",
+            "endTime": "12:00:00"
+          },
+          "PastResolution": {
+            "startTime": "10:00:00",
+            "endTime": "12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "सुबह-सुबह मिलते हैं ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह-सुबह",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "Mod": "start",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "10:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "10:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "देर सुबह को मिलते हैं ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "देर सुबह को",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "Mod": "end",
+          "FutureResolution": {
+            "startTime": "10:00:00",
+            "endTime": "12:00:00"
+          },
+          "PastResolution": {
+            "startTime": "10:00:00",
+            "endTime": "12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "दोपहर को जल्दी मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दोपहर को जल्दी",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TAF",
+          "Mod": "start",
+          "FutureResolution": {
+            "startTime": "12:00:00",
+            "endTime": "14:00:00"
+          },
+          "PastResolution": {
+            "startTime": "12:00:00",
+            "endTime": "14:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "देर दोपहर को मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "देर दोपहर को",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TAF",
+          "Mod": "end",
+          "FutureResolution": {
+            "startTime": "14:00:00",
+            "endTime": "16:00:00"
+          },
+          "PastResolution": {
+            "startTime": "14:00:00",
+            "endTime": "16:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "शाम को जल्दी मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम को जल्दी",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TEV",
+          "Mod": "start",
+          "FutureResolution": {
+            "startTime": "16:00:00",
             "endTime": "18:00:00"
           },
           "PastResolution": {
@@ -536,13 +731,12 @@
           }
         },
         "Start": 0,
-        "Length": 3
+        "Length": 12
       }
     ]
   },
   {
-    "Input": "深夜に会いましょう。",
-    "Comment": "TBD: Need to find 'early evening' in Japanese. 深夜 is night.",
+    "Input": "संध्या प्रहर देर से मिलते हैं",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -550,26 +744,27 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "深夜に",
+        "Text": "संध्या प्रहर देर से",
         "Type": "timerange",
         "Value": {
-          "Timex": "TNI",
+          "Timex": "TEV",
+          "Mod": "end",
           "FutureResolution": {
-            "startTime": "20:00:00",
-            "endTime": "23:59:00"
+            "startTime": "18:00:00",
+            "endTime": "20:00:00"
           },
           "PastResolution": {
-            "startTime": "20:00:00",
-            "endTime": "23:59:00"
+            "startTime": "18:00:00",
+            "endTime": "20:00:00"
           }
         },
         "Start": 0,
-        "Length": 3
+        "Length": 19
       }
     ]
   },
   {
-    "Input": "午後1時から4時まで会いましょう。",
+    "Input": "रात को जल्दी मिलते हैं",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -577,7 +772,119 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午後1時から4時まで",
+        "Text": "रात को जल्दी",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TNI",
+          "Mod": "start",
+          "FutureResolution": {
+            "startTime": "20:00:00",
+            "endTime": "22:00:00"
+          },
+          "PastResolution": {
+            "startTime": "20:00:00",
+            "endTime": "22:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "देर रात में मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "देर रात में",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TNI",
+          "Mod": "end",
+          "FutureResolution": {
+            "startTime": "22:00:00",
+            "endTime": "23:59:59"
+          },
+          "PastResolution": {
+            "startTime": "22:00:00",
+            "endTime": "23:59:59"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "जल्दी रात को मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जल्दी रात को ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TNI",
+          "Mod": "start",
+          "FutureResolution": {
+            "startTime": "20:00:00",
+            "endTime": "22:00:00"
+          },
+          "PastResolution": {
+            "startTime": "20:00:00",
+            "endTime": "22:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "देर रात को मिलते हैं ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "देर रात को",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TNI",
+          "Mod": "end",
+          "FutureResolution": {
+            "startTime": "22:00:00",
+            "endTime": "23:59:59"
+          },
+          "PastResolution": {
+            "startTime": "22:00:00",
+            "endTime": "23:59:59"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "शाम 1 से 4 तक मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम 1 से 4 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T13,T16,PT3H)",
@@ -591,12 +898,12 @@
           }
         },
         "Start": 0,
-        "Length": 10
+        "Length": 13
       }
     ]
   },
   {
-    "Input": "午後1時30分から4時まで会いましょう。",
+    "Input": "शाम 1:30 से 4 तक मिलते हैं",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -604,7 +911,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午後1時30分から4時まで",
+        "Text": "शाम 1:30 से 4 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T13:30,T16,PT2H30M)",
@@ -618,12 +925,12 @@
           }
         },
         "Start": 0,
-        "Length": 13
+        "Length": 16
       }
     ]
   },
   {
-    "Input": "午前中に予定を入れて。",
+    "Input": "सुबह के दौरान रखो ",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -631,7 +938,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午前中",
+        "Text": "सुबह",
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
@@ -645,12 +952,12 @@
           }
         },
         "Start": 0,
-        "Length": 3
+        "Length": 4
       }
     ]
   },
   {
-    "Input": "午前1時30分から3時まで会議を設定するのを手助けしてください。",
+    "Input": "रात 1:30 से 3 तक एक मीटिंग बनाने में मेरी मदद करो ",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -658,7 +965,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午前1時30分から3時まで",
+        "Text": "रात 1:30 से 3 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T01:30,T03,PT1H30M)",
@@ -672,12 +979,12 @@
           }
         },
         "Start": 0,
-        "Length": 13
+        "Length": 16
       }
     ]
   },
   {
-    "Input": "クラスは午前11時から3時までです。",
+    "Input": "सुबह 11 से 3 तक क्लास है ",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -685,7 +992,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午前11時から3時まで",
+        "Text": "सुबह 11 से 3 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T11,T15,PT4H)",
@@ -698,13 +1005,13 @@
             "endTime": "15:00:00"
           }
         },
-        "Start": 4,
-        "Length": 11
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
   {
-    "Input": "クラスは午後11時から3時までです。",
+    "Input": "रात 11 से 3 तक क्लास है ",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -712,7 +1019,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午後11時から3時まで",
+        "Text": "रात 11 से 3 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T23,T03,PT4H)",
@@ -725,13 +1032,13 @@
             "endTime": "03:00:00"
           }
         },
-        "Start": 4,
-        "Length": 11
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
   {
-    "Input": "クラスは午後11時1分から11時までです。",
+    "Input": "अपराहन 11:01  से 11 तक क्लास है ",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -739,7 +1046,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午後11時1分から11時まで",
+        "Text": "अपराहन 11:01  से 11 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T23:01,T11,PT11H59M)",
@@ -752,13 +1059,13 @@
             "endTime": "11:00:00"
           }
         },
-        "Start": 4,
-        "Length": 14
+        "Start": 0,
+        "Length": 22
       }
     ]
   },
   {
-    "Input": "クラスは午前11時1分から11時までです。",
+    "Input": "पूर्वाहन 11:01 से 11 तक क्लास है ",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -766,7 +1073,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午前11時1分から11時まで",
+        "Text": "पूर्वाहन 11:01 से 11 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T11:01,T23,PT11H59M)",
@@ -779,13 +1086,13 @@
             "endTime": "23:00:00"
           }
         },
-        "Start": 4,
-        "Length": 14
+        "Start": 0,
+        "Length": 23
       }
     ]
   },
   {
-    "Input": "午前11時から11時50分まで会議を設定するのを手助けしてください。",
+    "Input": "मेरी सुबह 11 से 11:50 तक मुलाकात रखने में मदद करो ",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -793,7 +1100,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午前11時から11時50分まで",
+        "Text": "सुबह 11 से 11:50 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T11,T11:50,PT50M)",
@@ -806,13 +1113,13 @@
             "endTime": "11:50:00"
           }
         },
-        "Start": 0,
-        "Length": 15
+        "Start": 5,
+        "Length": 19
       }
     ]
   },
   {
-    "Input": "午後1時30分から3時30分まで会議を設定して。",
+    "Input": "अपराह्न 1:30 से 3:30 तक मुलाकात रखो ",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -820,7 +1127,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午後1時30分から3時30分まで",
+        "Text": "अपराह्न 1:30 से 3:30 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T13:30,T15:30,PT2H)",
@@ -834,12 +1141,12 @@
           }
         },
         "Start": 0,
-        "Length": 16
+        "Length": 23
       }
     ]
   },
   {
-    "Input": "午後1時30分から午後3時30分まで会議を設定して。",
+    "Input": "अपराह्न 1:30 से अपराहन 3:30 तक मुलाकात रखो ",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -847,7 +1154,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午後1時30分から午後3時30分まで",
+        "Text": "अपराह्न 1:30 से अपराहन 3:30 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T13:30,T15:30,PT2H)",
@@ -861,12 +1168,12 @@
           }
         },
         "Start": 0,
-        "Length": 18
+        "Length": 30
       }
     ]
   },
   {
-    "Input": "午後3時から午後3時30分まで会議を設定して。",
+    "Input": "दोपहर 3 से दोपहर 3:30 तक मुलाकात रखो ",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -874,7 +1181,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午後3時から午後3時30分まで",
+        "Text": "दोपहर 3 से दोपहर 3:30 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T15,T15:30,PT30M)",
@@ -888,20 +1195,21 @@
           }
         },
         "Start": 0,
-        "Length": 15
+        "Length": 24
       }
     ]
   },
   {
-    "Input": "午前0時1分から午後1時までずっと待っていました。",
+    "Input": "मैं रात 0:01 से दोपहर 1 तक इंतज़ार कर रहा था",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
+    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午前0時1分から午後1時まで",
+        "Text": "रात 0:01 से दोपहर 1 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T00:01,T13,PT12H59M)",
@@ -914,21 +1222,22 @@
             "endTime": "13:00:00"
           }
         },
-        "Start": 0,
-        "Length": 14
+        "Start": 4,
+        "Length": 22
       }
     ]
   },
   {
-    "Input": "午前0時1分から1時までずっと待っていました。",
+    "Input": "मैं रात 0:01 से 1 तक इंतज़ार कर रहा था ",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
+    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午前0時1分から1時まで",
+        "Text": "रात 0:01 से 1 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T00:01,T01,PT59M)",
@@ -941,13 +1250,13 @@
             "endTime": "01:00:00"
           }
         },
-        "Start": 0,
-        "Length": 12
+        "Start": 4,
+        "Length": 16
       }
     ]
   },
   {
-    "Input": "3時から3時30分まで会議を設定して。",
+    "Input": "3 से 3:30 तक मुलाकात रखो ",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -955,7 +1264,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "3時から3時30分まで",
+        "Text": "3 से 3:30 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T03,T03:30,PT30M)",
@@ -969,12 +1278,12 @@
           }
         },
         "Start": 0,
-        "Length": 11
+        "Length": 12
       }
     ]
   },
   {
-    "Input": "1時30分から3時まで会議を設定して。",
+    "Input": "1:30 से 3 तक मुलाकात रखो ",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -982,7 +1291,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1時30分から3時まで",
+        "Text": "1:30 से 3 तक",
         "Type": "timerange",
         "Value": {
           "Timex": "(T01:30,T03,PT1H30M)",
@@ -996,331 +1305,7 @@
           }
         },
         "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "午後1時30分から3時まで会議を設定するのを手助けしてください。",
-    "Context": {
-      "ReferenceDateTime": "2017-12-01T13:37:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "午後1時30分から3時まで",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T13:30,T15,PT1H30M)",
-          "FutureResolution": {
-            "startTime": "13:30:00",
-            "endTime": "15:00:00"
-          },
-          "PastResolution": {
-            "startTime": "13:30:00",
-            "endTime": "15:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "11時から午後3時まで会議を設定するのを手助けしてください。",
-    "Context": {
-      "ReferenceDateTime": "2017-12-01T13:37:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "11時から午後3時まで",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T11,T15,PT4H)",
-          "FutureResolution": {
-            "startTime": "11:00:00",
-            "endTime": "15:00:00"
-          },
-          "PastResolution": {
-            "startTime": "11:00:00",
-            "endTime": "15:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "11時から午前3時まで会議を設定するのを手助けしてください。",
-    "Context": {
-      "ReferenceDateTime": "2017-12-01T13:37:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "11時から午前3時まで",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T23,T03,PT4H)",
-          "FutureResolution": {
-            "startTime": "23:00:00",
-            "endTime": "03:00:00"
-          },
-          "PastResolution": {
-            "startTime": "23:00:00",
-            "endTime": "03:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "午前10時から11時まで会議を設定するのを手助けしてください。",
-    "Context": {
-      "ReferenceDateTime": "2017-12-01T13:37:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "午前10時から11時まで",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T10,T11,PT1H)",
-          "FutureResolution": {
-            "startTime": "10:00:00",
-            "endTime": "11:00:00"
-          },
-          "PastResolution": {
-            "startTime": "10:00:00",
-            "endTime": "11:00:00"
-          }
-        },
-        "Start": 0,
         "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "23時から午前3時まで会議を設定するのを手助けしてください。",
-    "Context": {
-      "ReferenceDateTime": "2017-12-01T13:37:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "23時から午前3時まで",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T23,T03,PT4H)",
-          "FutureResolution": {
-            "startTime": "23:00:00",
-            "endTime": "03:00:00"
-          },
-          "PastResolution": {
-            "startTime": "23:00:00",
-            "endTime": "03:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "23時から午後3時まで会議を設定するのを手助けしてください。",
-    "Context": {
-      "ReferenceDateTime": "2017-12-01T13:37:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "23時から午後3時まで",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T23,T15,PT16H)",
-          "FutureResolution": {
-            "startTime": "23:00:00",
-            "endTime": "15:00:00"
-          },
-          "PastResolution": {
-            "startTime": "23:00:00",
-            "endTime": "15:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "10時から11時30分の間で会議を設定して。",
-    "Context": {
-      "ReferenceDateTime": "2017-12-01T13:37:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "10時から11時30分の間",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T10,T11:30,PT1H30M)",
-          "FutureResolution": {
-            "startTime": "10:00:00",
-            "endTime": "11:30:00"
-          },
-          "PastResolution": {
-            "startTime": "10:00:00",
-            "endTime": "11:30:00"
-          }
-        },
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "午前10時10分から12時50分の間で会議を設定して。",
-    "Context": {
-      "ReferenceDateTime": "2017-12-01T13:37:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "午前10時10分から12時50分の間",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T10:10,T12:50,PT2H40M)",
-          "FutureResolution": {
-            "startTime": "10:10:00",
-            "endTime": "12:50:00"
-          },
-          "PastResolution": {
-            "startTime": "10:10:00",
-            "endTime": "12:50:00"
-          }
-        },
-        "Start": 0,
-        "Length": 18
-      }
-    ]
-  },
-  {
-    "Input": "午後10時10分から3時の間で会議を設定して。",
-    "Context": {
-      "ReferenceDateTime": "2017-12-01T13:37:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "午後10時10分から3時の間",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T22:10,T03,PT4H50M)",
-          "FutureResolution": {
-            "startTime": "22:10:00",
-            "endTime": "03:00:00"
-          },
-          "PastResolution": {
-            "startTime": "22:10:00",
-            "endTime": "03:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 14
-      }
-    ]
-  },
-  {
-    "Input": "午後10時10分から10時まで会議を設定して。",
-    "Context": {
-      "ReferenceDateTime": "2017-12-01T13:37:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "午後10時10分から10時まで",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T22:10,T10,PT11H50M)",
-          "FutureResolution": {
-            "startTime": "22:10:00",
-            "endTime": "10:00:00"
-          },
-          "PastResolution": {
-            "startTime": "22:10:00",
-            "endTime": "10:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 15
-      }
-    ]
-  },
-  {
-    "Input": "午前10時半から23時まで会議を設定して。",
-    "Context": {
-      "ReferenceDateTime": "2017-12-01T13:37:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "午前10時半から23時まで",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T10:30,T23,PT12H30M)",
-          "FutureResolution": {
-            "startTime": "10:30:00",
-            "endTime": "23:00:00"
-          },
-          "PastResolution": {
-            "startTime": "10:30:00",
-            "endTime": "23:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "営業時間内に電話をかけてこないで。",
-    "Context": {
-      "ReferenceDateTime": "2017-12-01T13:37:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "営業時間内に",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TBH",
-          "FutureResolution": {
-            "startTime": "08:00:00",
-            "endTime": "18:00:00"
-          },
-          "PastResolution": {
-            "startTime": "08:00:00",
-            "endTime": "18:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 6
       }
     ]
   }

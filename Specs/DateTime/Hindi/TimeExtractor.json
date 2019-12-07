@@ -1,7 +1,7 @@
 [
   {
     "Input": "मैं 7 बजे तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7 बजे",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "मैं सात बजे तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "सात बजे",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "मैं सायं 7 बजे तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "सायं 7 बजे",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "मैं शाम 7 बजे तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "शाम 7 बजे",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "मैं शाम ७:५६ तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "शाम ७:५६",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "मैं सायंकाल 7:56:35 तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "सायंकाल 7:56:35",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "मैं शाम 7:56:35 तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "शाम 7:56:35",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "मैं 12:34 तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "12:34",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "मैं 12:34:20 तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "12:34:20",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "00:00 मैं वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "00:00",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "मैं 00:30 तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "00:30",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "7 बजे हैं ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7 बजे",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "अभी सेवन ओक्लॉक हुआ है",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "सेवन ओक्लॉक",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "सुबह के आठ बजे हैं ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "सुबह के आठ बजे",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "रात के आठ बजे हैं ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "रात के आठ बजे",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "साढ़े आठ बजे हैं ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "साढ़े आठ बजे",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "रात के साढ़े आठ बजे हैं ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "रात के साढ़े आठ बजे",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "आठ बजकर तीस मिनट हुए हैं ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "आठ बजकर तीस मिनट",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "आठ बजकर पंद्रह मिनट हुए हैं ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "आठ बजकर पंद्रह मिनट",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "सवा आठ बजे हैं ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "सवा आठ बजे",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "शाम के 9 पैंतालिस हुए हैं ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "शाम के 9 पैंतालिस",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "आठ बजने में तीन मिनट बाकी हैं ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "आठ बजने में तीन मिनट बाकी",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "साढ़े सात बजे हैं ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "साढ़े सात बजे",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "दिन के साढ़े सात बजे हैं ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "दिन के साढ़े सात बजे",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "सुबह के साढ़े सात बजे हैं ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "सुबह के साढ़े सात बजे",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "सुबह के पौने आठ बजे हैं ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "सुबह के पौने आठ बजे",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "शाम के आठ बजकर 20 मिनट हुए हैं ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "शाम के आठ बजकर 20 मिनट",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "मैं दिन में 7 बजे वापस जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "दिन में 7 बजे",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "मैं दिन के 7 बजे वापस जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "दिन के 7 बजे",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "मैं दिन के 7:00 बजे वापस जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "दिन के 7:00 बजे",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "मैं दिन के 7:00:14 पर वापस जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "दिन के 7:00:14",
@@ -373,7 +373,7 @@
   },
   {
     "Input": "मैं अपराहन 7 pm को वापस आउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "अपराहन 7 pm",
@@ -385,7 +385,7 @@
   },
   {
     "Input": "मैं शाम सात तीस को वापस जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "शाम सात तीस",
@@ -397,7 +397,7 @@
   },
   {
     "Input": "मैं शाम सात बजकर पैंतीस मिनट पर वापस जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "शाम सात बजकर पैंतीस मिनट",
@@ -409,7 +409,7 @@
   },
   {
     "Input": "मैं रात ग्यारह पाँच  पर वापस जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "रात ग्यारह पाँच",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "साढ़े पाँच बजने से तीन मिनट पहले मैं वापस जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "साढ़े पाँच बजने से तीन मिनट पहले",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "मैं रात को साढ़े पाँच बजे वापस जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "रात को साढ़े पाँच बजे",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "मैं रात में साढ़े पाँच बजे वापस जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "रात में साढ़े पाँच बजे",
@@ -457,7 +457,7 @@
   },
   {
     "Input": "मैं दोपहर के आसपास तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "दोपहर के आसपास",
@@ -469,7 +469,7 @@
   },
   {
     "Input": "मैं दोपहर तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "दोपहर",
@@ -481,7 +481,7 @@
   },
   {
     "Input": "मैं दोपहर 12 बजे तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "दोपहर 12 बजे",
@@ -493,7 +493,7 @@
   },
   {
     "Input": "मैं लगभग ग्यारह बजे तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "लगभग ग्यारह बजे",
@@ -505,7 +505,7 @@
   },
   {
     "Input": "मैं अराउंड इलेवन ओक्लॉक तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "अराउंड इलेवन ओक्लॉक",
@@ -517,7 +517,7 @@
   },
   {
     "Input": "मैं दोपहर 3:40pm तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "दोपहर 3:40pm",
@@ -529,7 +529,7 @@
   },
   {
     "Input": "मैं 11:40 a.m. तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11:40 a.m.",
@@ -541,7 +541,7 @@
   },
   {
     "Input": "आधी रात ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "आधी रात",
@@ -553,7 +553,7 @@
   },
   {
     "Input": "आधी-रात ",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "आधी-रात",
@@ -565,7 +565,7 @@
   },
   {
     "Input": "अर्ध रात्रि",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "अर्ध रात्रि",
@@ -577,7 +577,7 @@
   },
   {
     "Input": "सवेरे",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "सवेरे",
@@ -589,7 +589,7 @@
   },
   {
     "Input": "प्रातः",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "प्रातः",
@@ -601,7 +601,7 @@
   },
   {
     "Input": "सुबह-सुबह",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "सुबह",
@@ -619,7 +619,7 @@
   },
   {
     "Input": "भरी दुपहरी",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "भरी दुपहरी",
@@ -631,7 +631,7 @@
   },
   {
     "Input": "देर दोपहर",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "देर दोपहर",
@@ -643,7 +643,7 @@
   },
   {
     "Input": "दोपहर देर से",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "दोपहर देर",
@@ -655,7 +655,7 @@
   },
   {
     "Input": "दोपहर में",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "दोपहर",
@@ -667,7 +667,7 @@
   },
   {
     "Input": "दिन के मध्य में",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "दिन के मध्य",
@@ -679,7 +679,7 @@
   },
   {
     "Input": "दिन के बीच में",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "दिन के बीच",
@@ -691,7 +691,7 @@
   },
   {
     "Input": "मध्याह्न",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "मध्याह्न",
@@ -703,7 +703,7 @@
   },
   {
     "Input": "मैं 7 p m तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7 p m",
@@ -715,7 +715,7 @@
   },
   {
     "Input": "मैं 7 p. m तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7 p. m",
@@ -727,7 +727,7 @@
   },
   {
     "Input": "मैं 7 p. m. तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7 p. m.",
@@ -739,7 +739,7 @@
   },
   {
     "Input": "मैं 7 p.m. तकवापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7 p.m.",
@@ -751,7 +751,7 @@
   },
   {
     "Input": "मैं 7:56 am तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7:56 am",
@@ -763,7 +763,7 @@
   },
   {
     "Input": "मैं 7:56:35 a. m तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7:56:35 a. m",
@@ -775,7 +775,7 @@
   },
   {
     "Input": "मैं 7:56:35 am तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7:56:35 am",
@@ -787,7 +787,7 @@
   },
   {
     "Input": "मैं 7:56:35 a. m. तक वापस आ जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7:56:35 a. m.",
@@ -799,7 +799,7 @@
   },
   {
     "Input": "मैं सेवन थर्टी p.m. तक वापस जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "सेवन थर्टी p.m.",
@@ -811,7 +811,7 @@
   },
   {
     "Input": "मैं seven thirty p m तक वापस जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "seven thirty p m",
@@ -823,7 +823,7 @@
   },
   {
     "Input": "मैं seven thirty p. m तक वापस जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "seven thirty p. m",
@@ -835,7 +835,7 @@
   },
   {
     "Input": "मैं अप. साढ़े सात बजे तक वापस जाउंगा",
-        "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "अप. साढ़े सात बजे",
