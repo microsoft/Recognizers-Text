@@ -245,7 +245,7 @@ CurrencyFractionalRatios: !dictionary
     Tiyin: 100
     Hào: 10
     Ngwee: 100
-SpecialCurrencyFractionMax: !dictionary
+NonStandardFractionalSubunits: !dictionary
   types: [ string, long ]
   entries:
     JOD: 1000

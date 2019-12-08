@@ -2204,12 +2204,12 @@
   },
   {
     "Input": "10 turkish lira 11a",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "10 turkish lira",
-        "Start": 10,
-        "End": 24,
+        "Start": 0,
+        "End": 14,
         "TypeName": "currency",
         "Resolution": {
           "unit": "Turkish lira",

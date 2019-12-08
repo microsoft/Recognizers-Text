@@ -266,7 +266,7 @@ public class BaseCurrency {
         .put("Ngwee", 100L)
         .build();
 
-    public static final ImmutableMap<String, Long> SpecialCurrencyFractionMax = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> NonStandardFractionalSubunits = ImmutableMap.<String, Long>builder()
         .put("JOD", 1000L)
         .put("KWD", 1000L)
         .put("BHD", 1000L)

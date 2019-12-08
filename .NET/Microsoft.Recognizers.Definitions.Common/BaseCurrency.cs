@@ -268,7 +268,7 @@ namespace Microsoft.Recognizers.Definitions
             { @"Hào", 10 },
             { @"Ngwee", 100 }
         };
-      public static readonly Dictionary<string, long> SpecialCurrencyFractionMax = new Dictionary<string, long>
+      public static readonly Dictionary<string, long> NonStandardFractionalSubunits = new Dictionary<string, long>
         {
             { @"JOD", 1000 },
             { @"KWD", 1000 },
@@ -276,7 +276,6 @@ namespace Microsoft.Recognizers.Definitions
             { @"OMR", 1000 },
             { @"YDD", 1000 },
             { @"TND", 1000 },
-            { @"CYP", 1000 },
             { @"MRO", 5 }
         };
     }

@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             this.UnitMap = new Dictionary<string, string>();
             this.CurrencyFractionNumMap = BaseCurrency.CurrencyFractionalRatios.ToImmutableDictionary();
             this.CurrencyFractionMapping = BaseCurrency.CurrencyFractionMapping.ToImmutableDictionary();
-            this.SpecialCurrencyFractionMaxMap = BaseCurrency.SpecialCurrencyFractionMax.ToImmutableDictionary();
+            this.NonStandardFractionalSubunits = BaseCurrency.NonStandardFractionalSubunits.ToImmutableDictionary();
             this.CurrencyNameToIsoCodeMap = new Dictionary<string, string>();
             this.CurrencyFractionCodeList = new Dictionary<string, string>();
         }
@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         public IDictionary<string, string> CurrencyFractionMapping { get; }
 
-        public IDictionary<string, long> SpecialCurrencyFractionMaxMap { get; }
+        public IDictionary<string, long> NonStandardFractionalSubunits { get; }
 
         public CultureInfo CultureInfo { get; }
 
