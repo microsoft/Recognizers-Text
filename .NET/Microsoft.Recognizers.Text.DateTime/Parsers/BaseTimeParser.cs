@@ -266,6 +266,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                     second = int.Parse(secStr);
                     hasSec = true;
                 }
+                else
+                {
+                    // as for minStr, check if secStr is defined in Numbers
+                    secStr = match.Groups["secnum"].Value;
+                    if (!string.IsNullOrEmpty(secStr))
+                    {
+                        second = this.config.Numbers[secStr];
+                        hasSec = true;
+                    }
+                }
             }
 
             // Adjust by desc string
