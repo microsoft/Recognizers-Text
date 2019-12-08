@@ -2212,6 +2212,7 @@
         "End": 14,
         "TypeName": "currency",
         "Resolution": {
+          "isoCurrency": "TRY",
           "unit": "Turkish lira",
           "value": "10"
         }
