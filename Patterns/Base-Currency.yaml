@@ -248,7 +248,6 @@ CurrencyFractionalRatios: !dictionary
 SpecialCurrencyFractionMax: !dictionary
   types: [ string, long ]
   entries:
-    CNY: 10
     JOD: 1000
     KWD: 1000
     BHD: 1000

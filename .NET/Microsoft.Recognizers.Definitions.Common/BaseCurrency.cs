@@ -270,7 +270,6 @@ namespace Microsoft.Recognizers.Definitions
         };
       public static readonly Dictionary<string, long> SpecialCurrencyFractionMax = new Dictionary<string, long>
         {
-            { @"CNY", 10 },
             { @"JOD", 1000 },
             { @"KWD", 1000 },
             { @"BHD", 1000 },
