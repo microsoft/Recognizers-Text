@@ -14719,5 +14719,57 @@
         }
       }
     ]
+  },
+  {
+    "Input": "q1 and q2 could be any year",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "q1",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-01-01,XXXX-04-01,P3M)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2019-04-01"
+            },
+            {
+              "timex": "(XXXX-01-01,XXXX-04-01,P3M)",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2020-04-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "q2",
+        "Start": 7,
+        "End": 8,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-04-01,XXXX-07-01,P3M)",
+              "type": "daterange",
+              "start": "2019-04-01",
+              "end": "2019-07-01"
+            },
+            {
+              "timex": "(XXXX-04-01,XXXX-07-01,P3M)",
+              "type": "daterange",
+              "start": "2020-04-01",
+              "end": "2020-07-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
