@@ -265,4 +265,15 @@ public class BaseCurrency {
         .put("Hào", 10L)
         .put("Ngwee", 100L)
         .build();
+
+    public static final ImmutableMap<String, Long> NonStandardFractionalSubunits = ImmutableMap.<String, Long>builder()
+        .put("JOD", 1000L)
+        .put("KWD", 1000L)
+        .put("BHD", 1000L)
+        .put("OMR", 1000L)
+        .put("YDD", 1000L)
+        .put("TND", 1000L)
+        .put("CYP", 1000L)
+        .put("MRO", 5L)
+        .build();
 }
