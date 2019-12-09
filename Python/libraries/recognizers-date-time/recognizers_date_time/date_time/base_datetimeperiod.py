@@ -884,7 +884,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
                         end_time = time_period_future_value[1]
 
                         result.future_value = [
-                            DateUtils.safe_create_from_min_value(future_time.year, future_time.month,  future_time.day,
+                            DateUtils.safe_create_from_min_value(future_time.year, future_time.month, future_time.day,
                                                                  begin_time.hour, begin_time.minute,
                                                                  begin_time.second),
                             DateUtils.safe_create_from_min_value(future_time.year, future_time.month, future_time.day,
@@ -1155,13 +1155,13 @@ class BaseDateTimePeriodParser(DateTimeParser):
             iter(self.config.time_period_extractor.extract(before_str)), None)
         if time_period_er:
             before_str = before_str[time_period_er.start:time_period_er.start +
-                                                         time_period_er.length].strip()
+                                    time_period_er.length].strip()
         else:
             time_period_er = next(
                 iter(self.config.time_period_extractor.extract(after_str)), None)
             if time_period_er:
                 after_str = after_str[time_period_er.start:time_period_er.start +
-                                                           time_period_er.length].strip()
+                                      time_period_er.length].strip()
 
         if not extracted_result or extracted_result.length != len(before_str):
             valid = False
@@ -1344,17 +1344,17 @@ class BaseDateTimePeriodParser(DateTimeParser):
             pt_timex = f'PT{difference}S'
         elif unit_str == 'H':
             begin_time = begin_time + \
-                         timedelta(hours=0 if swift > 0 else swift)
+                timedelta(hours=0 if swift > 0 else swift)
             end_time = end_time + timedelta(hours=swift if swift > 0 else 0)
             pt_timex = 'PT1H'
         elif unit_str == 'M':
             begin_time = begin_time + \
-                         timedelta(minutes=0 if swift > 0 else swift)
+                timedelta(minutes=0 if swift > 0 else swift)
             end_time = end_time + timedelta(minutes=swift if swift > 0 else 0)
             pt_timex = 'PT1M'
         elif unit_str == 'S':
             begin_time = begin_time + \
-                         timedelta(seconds=0 if swift > 0 else swift)
+                timedelta(seconds=0 if swift > 0 else swift)
             end_time = end_time + timedelta(seconds=swift if swift > 0 else 0)
             pt_timex = 'PT1S'
         else:
