@@ -18,6 +18,26 @@ from .datetime_parser import ChineseDateTimeParser
 
 class ChineseDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration):
     @property
+    def before_regex(self):
+        return self._before_regex
+
+    @property
+    def after_regex(self):
+        return self._after_regex
+
+    @property
+    def prefix_day_regex(self):
+        return self._prefix_day_regex
+
+    @property
+    def token_before_date(self):
+        return self._token_before_date
+
+    @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
     def pure_number_from_to_regex(self) -> any:
         return None
 
@@ -98,6 +118,8 @@ class ChineseDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         return None
 
     def __init__(self):
+        self._after_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.AfterRegex)
+        self._before_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.BeforeRegex)
         self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.SpecificTimeOfDayRegex)
         self._past_regex = RegExpUtility.get_safe_reg_exp(
@@ -115,6 +137,9 @@ class ChineseDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         self._time_parser = ChineseTimeParser()
         self._date_time_parser = ChineseDateTimeParser()
         self._time_period_parser = ChineseTimePeriodParser()
+        self._check_both_before_after = None
+        self._token_before_date = None
+        self._prefix_day_regex = None
 
     def get_matched_time_range(self, source: str) -> MatchedTimeRange:
         source = source.strip().lower()

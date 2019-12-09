@@ -9,7 +9,6 @@ from ..base_configs import BaseDateParserConfiguration
 
 
 class SpanishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration):
-
     def __init__(self, config: BaseDateParserConfiguration):
         self._date_extractor = config.date_extractor
         self._time_extractor = config.time_extractor
@@ -26,6 +25,11 @@ class SpanishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         self._unit_map = config.unit_map
         self._numbers = config.numbers
 
+        self._prefix_day_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PrefixDayRegex)
+        self._after_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.AfterRegex)
+        self._before_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.BeforeRegex)
+        self._token_before_date = SpanishDateTime.TokenBeforeDate
+        self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
         self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.NextPrefixRegex)
         self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
@@ -55,6 +59,26 @@ class SpanishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
             SpanishDateTime.RelativeTimeUnitRegex)
         self._rest_of_date_time_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.RestOfDateTimeRegex)
+
+    @property
+    def before_regex(self):
+        return self._before_regex
+
+    @property
+    def after_regex(self):
+        return self._after_regex
+
+    @property
+    def prefix_day_regex(self):
+        return self._prefix_day_regex
+
+    @property
+    def token_before_date(self):
+        return self._token_before_date
+
+    @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
 
     @property
     def pure_number_from_to_regex(self) -> Pattern:

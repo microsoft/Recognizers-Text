@@ -10,8 +10,9 @@ from ..base_configs import BaseDateParserConfiguration
 
 
 class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration):
-
     def __init__(self, config: BaseDateParserConfiguration):
+        self._token_before_date = EnglishDateTime.TokenBeforeDate
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._pure_number_from_to_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.PureNumFromTo)
         self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(
@@ -48,6 +49,32 @@ class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
             EnglishDateTime.EveningStartEndRegex)
         self.night_start_end_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.NightStartEndRegex)
+        self._prefix_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PrefixDayRegex)
+        self._after_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.AfterRegex)
+        self._before_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.BeforeRegex)
+
+    @property
+    def before_regex(self):
+        return self._before_regex
+
+    @property
+    def after_regex(self):
+        return self._after_regex
+
+    @property
+    def prefix_day_regex(self):
+        return self._prefix_day_regex
+
+    @property
+    def token_before_date(self) -> str:
+        return self._token_before_date
+
+    @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
 
     @property
     def pure_number_from_to_regex(self) -> Pattern:
