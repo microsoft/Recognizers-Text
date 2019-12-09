@@ -84,7 +84,8 @@ class EnglishMergedParserConfiguration(MergedParserConfiguration):
         return self.__set_parser
 
     def __init__(self, config):
-        self._equal_regex = RegExpUtility.get_safe_reg_exp(BaseDateTime.EqualRegex)
+        self._equal_regex = RegExpUtility.get_safe_reg_exp(
+            BaseDateTime.EqualRegex)
         self._suffix_after = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.SuffixAfterRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(

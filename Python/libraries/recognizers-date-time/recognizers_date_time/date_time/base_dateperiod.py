@@ -1137,6 +1137,7 @@ class BaseDatePeriodParser(DateTimeParser):
         if not is_end_date_pure_year and not is_date_relative:
             for match in list(config.year_regex.finditer(text)):
                 year = config.date_extractor.get_year_from_text(match)
+
                 if year != Constants.INVALID_YEAR:
                     if context_year == Constants.INVALID_YEAR:
                         context_year = year
@@ -1144,8 +1145,10 @@ class BaseDatePeriodParser(DateTimeParser):
                         # This indicates that the text has two different year value, no common context year
                         if context_year != year:
                             context_year = Constants.INVALID_YEAR
+
         result: DateContext = DateContext()
         result.year = context_year
+
         return result
 
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:

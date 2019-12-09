@@ -330,7 +330,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "from 4-23 in next month",
@@ -997,7 +996,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tuesday in the morning",
@@ -1539,7 +1537,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "20 min past eight in the evening",
@@ -1563,7 +1560,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "in the morning at 7",
@@ -1587,7 +1583,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "in the afternoon at 7",
@@ -1727,7 +1722,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "5 to seven in the morning",
@@ -1752,7 +1746,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "between 5 and 6 in the afternoon",
@@ -1879,7 +1872,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "in the evening",
@@ -1950,7 +1942,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "in 5 minutes",
@@ -3602,7 +3593,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "later in the year",
@@ -4910,7 +4900,6 @@
     "Context": {
       "ReferenceDateTime": "2019-03-02T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "week 1",
@@ -4935,7 +4924,6 @@
     "Context": {
       "ReferenceDateTime": "2011-07-02T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "week 1",
@@ -11770,7 +11758,6 @@
     "Context": {
       "ReferenceDateTime": "2019-05-30T12:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "28 june in 2020",
@@ -11794,7 +11781,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "black friday 2010",
@@ -13291,7 +13277,6 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "later in the afternoon",
@@ -13317,7 +13302,6 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "early morning",
@@ -13343,7 +13327,6 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "early in the morning",
@@ -13369,7 +13352,6 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "next week",
@@ -13411,7 +13393,6 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "next week",
