@@ -14771,5 +14771,77 @@
         }
       }
     ]
+  },
+  {
+    "Input": "How about 2019 q1",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2019 q1",
+        "Start": 10,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2019-04-01,P3M)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2019-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How about 2019-Q1",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2019-q1",
+        "Start": 10,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2019-04-01,P3M)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2019-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How about q3 2019",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "q3 2019",
+        "Start": 10,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-07-01,2019-10-01,P3M)",
+              "type": "daterange",
+              "start": "2019-07-01",
+              "end": "2019-10-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
