@@ -156,6 +156,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     continue;
                 }
 
+                // Filter cases like "1 dollars 11a", "11" is not the fraction here.
                 if (source.Length > numErs[i].Start + numErs[i].Length)
                 {
                     var endChar = source.Substring(numErs[i].Length + numErs[i].Start ?? 0, 1);
