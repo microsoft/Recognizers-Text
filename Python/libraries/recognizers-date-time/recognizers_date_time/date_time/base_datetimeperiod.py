@@ -807,7 +807,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
                 inner_result = self.parse_date_with_period_prefix(source_text, reference)
 
             if not inner_result.success:
-                inner_result = self.parse_date_with_time_suffix(source_text, reference)
+                inner_result = self.parse_date_with_time_period_suffix(source_text, reference)
 
             if inner_result.success:
                 inner_result.future_resolution[TimeTypeConstants.START_DATETIME] = DateTimeFormatUtil.format_date_time(
@@ -1245,50 +1245,77 @@ class BaseDateTimePeriodParser(DateTimeParser):
             return result
 
         extracted_result = self.config.duration_extractor.extract(source, reference)
-        if len(extracted_result) != 1:
-            return result
+        if len(extracted_result) == 1:
+            parse_result = self.config.duration_parser.parse(extracted_result[0])
 
-        pr = self.config.duration_parser.parse(extracted_result[0], source)
-        if not pr:
-            return result
+            before_str = source[0:parse_result.start].strip()
+            after_str = source[parse_result.start + parse_result.length:].strip()
 
-        before_str = source[0:pr.start].strip()
-        duration_result: DateTimeResolutionResult = pr.value
-        swift_second = 0
-        mod = ''
+            numbers_in_suffix = self.config.cardinal_extractor.extract(before_str)
+            numbers_in_duration = self.config.cardinal_extractor.extract(extracted_result[0].text)
 
-        if isinstance(duration_result.past_value, int) and isinstance(duration_result.future_value, int):
-            swift_second = int(duration_result.future_value)
+            # Handle cases like "2 upcoming days", "5 previous years"
+            if any(numbers_in_suffix) and not any(numbers_in_duration):
+                number_extracted_result = next(numbers_in_suffix)
+                number_text = number_extracted_result.text
+                duration_text = extracted_result[0].text
+                combined_text = f'{number_text} {duration_text}'
+                combined_duration_extracted_result = self.config.duration_extractor.extract(combined_text, reference)
 
-        begin_time: datetime = reference
-        end_time: datetime = reference
+                if any(combined_duration_extracted_result):
+                    parse_result = self.config.duration_parser.parse(next(combined_duration_extracted_result))
+                    start_index = number_extracted_result.start + number_extracted_result.length
+                    before_str = before_str[start_index:].strip()
 
-        prefix_match = regex.search(self.config.past_regex, before_str)
-        if prefix_match and prefix_match.group() == before_str:
-            mod = TimeTypeConstants.BEFORE_MOD
-            begin_time = begin_time - timedelta(seconds=swift_second)
+            if parse_result.value:
+                swift_seconds = 0
+                mod = ''
+                duration_result = parse_result.value
 
-        prefix_match = regex.search(self.config.future_regex, before_str)
-        if prefix_match and prefix_match.group() == before_str:
-            mod = TimeTypeConstants.AFTER_MOD
-            end_time = begin_time + timedelta(seconds=swift_second)
+                if duration_result.past_value is float and duration_result.future_value is float:
+                    swift_seconds = int(float(duration_result.future_value))
 
-        luis_date_begin = DateTimeFormatUtil.luis_date_from_datetime(
-            begin_time)
-        luis_time_begin = DateTimeFormatUtil.luis_time_from_datetime(
-            begin_time)
-        luis_date_end = DateTimeFormatUtil.luis_date_from_datetime(end_time)
-        luis_time_end = DateTimeFormatUtil.luis_time_from_datetime(end_time)
+                end_time = begin_time = reference
 
-        result.timex = f'({luis_date_begin}T{luis_time_begin},{luis_date_end}T{luis_time_end},{duration_result.timex})'
-        result.future_value = [begin_time, end_time]
-        result.past_value = [begin_time, end_time]
-        result.success = True
+                if RegExpUtility.is_exact_match(self.config.previous_prefix_regex, before_str, True):
+                    mod = TimeTypeConstants.BEFORE_MOD
+                    begin_time = reference + timedelta(seconds=-swift_seconds)
 
-        if mod:
-            pr.value.mod = mod
+                # Handle the "within (the) (next) xx seconds/minutes/hours" case
+                # Should also habdle the multiple duration case like P1DT8H
+                # Set the begin_time equal to reference time for now
+                if RegExpUtility.is_exact_match(self.config.within_next_prefix_regex, before_str, True):
+                    end_time = begin_time + timedelta(seconds=swift_seconds)
+                if self.config.check_both_before_after and RegExpUtility.is_exact_match(self.config.within_next_prefix_regex, after_str, True):
+                    end_time = begin_time + timedelta(seconds=swift_seconds)
+                if RegExpUtility.is_exact_match(self.config.future_regex, before_str, True):
+                    mod = TimeTypeConstants.AFTER_MOD
+                    end_time = begin_time + timedelta(seconds=swift_seconds)
+                if RegExpUtility.is_exact_match(self.config.previous_prefix_regex, after_str, True):
+                    mod = TimeTypeConstants.BEFORE_MOD
+                    begin_time = reference + timedelta(seconds=-swift_seconds)
+                if RegExpUtility.is_exact_match(self.config.future_regex, after_str, True):
+                    mod = TimeTypeConstants.AFTER_MOD
+                    end_time = begin_time + timedelta(seconds=swift_seconds)
+                if RegExpUtility.is_exact_match(self.config.future_suffix_regex, after_str, True):
+                    mod = TimeTypeConstants.AFTER_MOD
+                    end_time = begin_time + timedelta(seconds=swift_seconds)
 
-        result.sub_date_time_entities = [pr]
+                result.timex = f'({DateTimeFormatUtil.luis_date_from_datetime(begin_time)}T' \
+                               f'{DateTimeFormatUtil.luis_date_from_datetime(begin_time)},' + \
+                               f'{DateTimeFormatUtil.luis_date_from_datetime(end_time)}T' \
+                               f'{DateTimeFormatUtil.luis_date_from_datetime(end_time)},' + \
+                               f'{duration_result.timex})'
+
+                result.future_value = result.past_value = (begin_time, end_time)
+                result.success = True
+
+                if not mod:
+                    parse_result.value.mod = mod
+
+                result.sub_date_time_entities = [parse_result]
+
+                return result
 
         return result
 
@@ -1414,7 +1441,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
 
         return result
 
-    def parse_date_with_time_suffix(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+    def parse_date_with_time_period_suffix(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
 
         date_extract_result = next(self.config.date_extractor.extract(source), None)
