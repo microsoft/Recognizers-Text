@@ -25,7 +25,6 @@ class Constants:
 
     # keys
     TIMEX_KEY: str = 'timex'
-    COMMENT_KEY: str = 'Comment'
     MOD_KEY: str = 'Mod'
     SOURCE_TYPE: str = 'sourceEntity'
     TYPE_KEY: str = 'type'
@@ -42,11 +41,17 @@ class Constants:
     MAX_MONTH: int = 12
     INVALID_YEAR = -2147483648
 
+    COMMENT_KEY: str = 'Comment'
+    COMMENT_AMPM = 'ampm'
+
     # Failed connector extraction
     INVALID_CONNECTOR_CODE = -1
 
     MIN_YEAR_NUM: int = int(BaseDateTime.MinYearNum)
     MAX_YEAR_NUM: int = int(BaseDateTime.MaxYearNum)
+
+    HALF_DAY_HOUR_COUNT = 12
+    HALF_MID_DAY_DURATION_HOUR_COUNT = 2
 
     DEFAULT_LANGUAGE_FALLBACK_MDY: str = 'MDY'
     DEFAULT_LANGUAGE_FALLBACK_DMY: str = 'DMY'
