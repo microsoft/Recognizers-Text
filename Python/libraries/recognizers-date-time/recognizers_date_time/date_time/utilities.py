@@ -208,9 +208,17 @@ def get_tokens_from_regex(pattern: Pattern, source: str) -> List[Token]:
 
 
 class ResolutionStartEnd:
-    def __init__(self, start=None, end=None):
-        self.start = start
-        self.end = end
+    def __init__(self, _start=None, _end=None):
+        self.start = _start
+        self.end = _end
+
+    @property
+    def _start(self):
+        return self.start
+
+    @property
+    def _end(self):
+        return self.end
 
 
 class DateTimeResolutionResult:
@@ -838,6 +846,14 @@ date_period_timex_type_to_suffix = {
 }
 
 
+class RangeTimexComponents:
+    def __init__(self):
+        self.begin_timex = ''
+        self.end_timex = ''
+        self.duration_timex = ''
+        self.is_valid = False
+
+
 class TimexUtil:
 
     @staticmethod
@@ -904,3 +920,28 @@ class TimexUtil:
         date_period_timex = f'P{unit_count}{date_period_timex_type_to_suffix[timex_type]}'
 
         return f'({DateTimeFormatUtil.luis_date(begin.year, begin.month, begin.day)},{DateTimeFormatUtil.luis_date(end.year, end.month, end.day)},{date_period_timex})'
+
+    @staticmethod
+    def is_range_timex(timex: str) -> bool:
+        return timex and timex.startswith("(")
+
+    @staticmethod
+    def get_range_timex_components(range_timex: str) -> RangeTimexComponents:
+        range_timex = range_timex.replace('(', '').replace(')', '')
+        components = range_timex.split(',')
+        result = RangeTimexComponents()
+        if len(components) == 3:
+            result.begin_timex = components[0]
+            result.end_timex = components[1]
+            result.duration_timex = components[2]
+            result.is_valid = True
+
+        return result
+
+    @staticmethod
+    def combine_date_and_time_timex(date_timex: str, time_timex: str):
+        return f'{date_timex}{time_timex}'
+
+    @staticmethod
+    def generate_date_time_period_timex(begin_timex: str, end_timex: str, duration_timex: str):
+        return f'({begin_timex},{end_timex},{duration_timex})'
