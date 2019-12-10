@@ -276,6 +276,7 @@ namespace Microsoft.Recognizers.Definitions
             { @"OMR", 1000 },
             { @"YDD", 1000 },
             { @"TND", 1000 },
+            { @"CYP", 1000 },
             { @"MRO", 5 }
         };
     }
