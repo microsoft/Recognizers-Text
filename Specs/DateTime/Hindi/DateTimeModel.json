@@ -4,6 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -21,14 +22,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 03 जनवरी 2019 को वापस जाऊंगा।",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -46,14 +47,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 02 जनवरी 2019 को वापस जाऊंगा।",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -71,14 +72,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 01 जनवरी 2019 को वापस जाऊंगा।",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -96,14 +97,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "1990 के दशक में हमारे राष्ट्रपति कौन हैं।",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -122,14 +123,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 22/04 को वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -152,14 +153,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं उनतीस मई को वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -182,14 +183,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं दो अगस्त को जाऊंगा।",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -212,14 +213,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं आज वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -237,14 +238,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं कल वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -262,14 +263,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं शुक्रवार को वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -292,14 +293,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं अगले महीने 4-23 बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -318,14 +319,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 3 और 12 सितं. के बीच बाहर रहुंगा हाहा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -350,14 +351,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं इस सितंबर में बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -376,14 +377,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं अगले 3 दिन बाहर रहूँगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -402,14 +403,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं जुलाई के आखिरी हफ्ते में बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -434,14 +435,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 2015-3 से बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -460,14 +461,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं इस गर्मी में चला जाउंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -485,14 +486,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं कल से बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -512,14 +513,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं अगस्त से बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -546,14 +547,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं इस अगस्त से बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -573,14 +574,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं अब वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -598,14 +599,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 14 अक्टूबर को सुबह 8:00:31 बजे वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -628,14 +629,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं कल सुबह 8:00 बजे वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -653,14 +654,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं आज रात 10 बजे  वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -678,14 +679,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं आज सुबह 8 बजे वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -703,14 +704,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं कल शाम को वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -728,14 +729,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं रविवार शाम को वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -758,14 +759,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं इस रविवार शाम को वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -783,14 +784,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं आज पाँच से सात बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -815,14 +816,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 22 अप्रैल की शाम 5 से 6 बजे तक बाहर रहूंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -847,14 +848,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं कल 3:00 से 4:00 बजे तक बाहर रहूँगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -879,14 +880,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं आज शाम को वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -905,14 +906,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "कल रात को वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -931,14 +932,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं अगले सोमवार दोपहर वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -957,14 +958,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं अगले घंटे वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -983,14 +984,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं मंगलवार सुबह वापस लौट जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1015,14 +1016,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 3 घंटे के लिए बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1040,14 +1041,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 3.5 साल के लिए बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1065,14 +1066,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 3 मिनट के लिए बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1090,14 +1091,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 123.45 सेकंड के लिए जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1115,14 +1116,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं पूरे दिन बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1140,14 +1141,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं चौबीस घंटे के लिए बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1165,14 +1166,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं पूरे महीने के लिए बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1190,14 +1191,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं एक घंटे के लिए बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1215,14 +1216,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं कुछ घंटों के लिए बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1240,14 +1241,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं कुछ मिनटों के लिए बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1265,14 +1266,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "कुछ दिनों के लिए बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1290,14 +1291,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं कई हफ्तों के लिए बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1315,14 +1316,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं हर हफ़्ते बाहर जाउंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1340,14 +1341,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं रोज जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1365,14 +1366,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं हर साल बाहर जाउंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1390,14 +1391,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं हर दूसरे दिन बाहर जाउंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1415,14 +1416,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं हर तीन हफ्ते में बाहर जाउंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1440,14 +1441,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं हर दिन दोपहर 3 बजे निकलूंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1465,14 +1466,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं हर सोमवार बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1490,14 +1491,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं हर सोमवार शाम 4 बजे निकलूंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1515,14 +1516,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं शाम 7:56:30 बजे आऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1540,14 +1541,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "साढ़े सात बजे हैं",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1570,14 +1571,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "शाम के आठ बजकर 20 मिनट हुए हैं",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1595,14 +1596,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं सुबह में 7 बजे वापस आ जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1620,14 +1621,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं दोपहर में 7 बजे वापस आ जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1645,14 +1646,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं दोपहर को वापस आऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1670,14 +1671,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 11 के आसपास वापस जाऊँगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1695,14 +1696,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं सुबह 1140 बजे तक वापस आ जाऊंगा।",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1720,14 +1721,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "दोपहर बारह बजे",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1745,14 +1746,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं शाम 5 से 6 बजे तक बाहर रहूंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1771,14 +1772,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं सुबह 5 से 7 बजे तक बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1797,14 +1798,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं दोपहर में 5 से 6 के बीच बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1823,14 +1824,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 4:00 से 7 बजे तक बाहर रहूँगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1855,14 +1856,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं सुबह 3 बजे से शाम 5 बजे तक बाहर रहूंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1881,14 +1882,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं शाम 4 और 5 के बीच बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1907,14 +1908,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो सुबह को  मिलते हैं",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1933,14 +1934,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलिए शाम को मिलते है",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1959,14 +1960,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं अब वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2017-09-28T14:11:10.9626841"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1984,14 +1985,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 5 मिनट में वापस आ जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2009,14 +2010,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "5 मिनटों में",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2034,14 +2035,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "अगले हफ्ते सोमवार को सुबह 9 बजे या दोपहर 1 बजे मेरे लिए एक मीटिंग निर्धारित करें",
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2074,14 +2075,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "अगले हफ्ते सोम या मंगल को मेरे लिए एक बैठक का समय निर्धारित करें",
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2119,14 +2120,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "सुबह 9 बजे या 10 बजे मेरे लिए एक बैठक शेड्यूल करें",
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2164,14 +2165,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "अगले सोमवार को अपराहन 1-3 बजे या शाम 5-6 बजे मेरी एक बैठक शेड्यूल करें",
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2206,14 +2207,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "सोमवार सुबह 8-9 बजे या सुबह 9-10 बजे सही रहेगा।",
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2254,14 +2255,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "कोर्टाना, क्या तुम अगले सप्ताह मंगलवार या गुरुवार को एक स्कायप कॉल की व्यवस्था कर कर सकती हो?",
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2299,14 +2300,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "कोर्टाना, क्या तुम अगले सप्ताह मंगलवार सुबह 9 बजे या गुरुवार दोपहर 1 बजे एक स्कायप कॉल की व्यवस्था कर सकती हो?",
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2344,7 +2345,6 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   }
 ]
