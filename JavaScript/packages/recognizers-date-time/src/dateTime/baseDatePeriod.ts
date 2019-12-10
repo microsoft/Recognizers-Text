@@ -1207,13 +1207,15 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                 result.futureValue = [beginDate, endDate];
                 result.pastValue = [beginDate, endDate];
             }
+
+            result.timex = `(${DateTimeFormatUtil.luisDate(-1, beginDate.getMonth(), 1)},${DateTimeFormatUtil.luisDate(-1, endDate.getMonth(), 1)},P3M)`;
         }
         else {
             result.futureValue = [beginDate, endDate];
             result.pastValue = [beginDate, endDate];
+            result.timex = `(${DateTimeFormatUtil.luisDateFromDate(beginDate)},${DateTimeFormatUtil.luisDateFromDate(endDate)},P3M)`;
         }
 
-        result.timex = `(${DateTimeFormatUtil.luisDateFromDate(beginDate)},${DateTimeFormatUtil.luisDateFromDate(endDate)},P3M)`;
         result.success = true;
         return result;
     }

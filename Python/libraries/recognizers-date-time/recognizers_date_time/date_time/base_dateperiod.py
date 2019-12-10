@@ -2273,12 +2273,15 @@ class BaseDatePeriodParser(DateTimeParser):
             else:
                 result.future_value = [begin_date, end_date]
                 result.past_value = [begin_date, end_date]
+
+            result.timex = f'({DateTimeFormatUtil.luis_date(-1, begin_date.month, 1)},' \
+                f'{DateTimeFormatUtil.luis_date(-1, end_date.month, 1)},P3M)'
         else:
             result.future_value = [begin_date, end_date]
             result.past_value = [begin_date, end_date]
+            result.timex = f'({DateTimeFormatUtil.luis_date_from_datetime(begin_date)},' \
+                f'{DateTimeFormatUtil.luis_date_from_datetime(end_date)},P3M)'
 
-        result.timex = f'({DateTimeFormatUtil.luis_date_from_datetime(begin_date)},' \
-            f'{DateTimeFormatUtil.luis_date_from_datetime(end_date)},P3M)'
         result.success = True
         return result
 
