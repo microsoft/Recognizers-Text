@@ -19,7 +19,7 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
         return self._week_day_start
 
     @property
-    def check_both_before_after(self) -> Pattern:
+    def check_both_before_after(self) -> bool:
         return self._check_both_before_after
 
     @property
@@ -131,6 +131,7 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
         return self._week_day_and_day_regex
 
     def __init__(self):
+        self._check_both_before_after = False
         if SpanishDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
             date_extractor_4 = SpanishDateTime.DateExtractor5
             date_extractor_5 = SpanishDateTime.DateExtractor4

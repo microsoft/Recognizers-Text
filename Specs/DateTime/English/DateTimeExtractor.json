@@ -651,7 +651,7 @@
   {
     "Input": "ADD LUNCH AT 12:30 PM ON FRI",
     "Comment":"Disable this for now because of new features in .NET",
-    "NotSupported": "javascript, python, Java",
+    "NotSupported": "javascript, Java",
     "Results": [
       {
         "Text": "12:30 PM ON FRI",
@@ -763,7 +763,7 @@
   },
   {
     "Input": "I met him 2 months 1 day 2 hours ago",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2 months 1 day 2 hours ago",
@@ -775,7 +775,7 @@
   },
   {
     "Input": "I will leave 1 day 30 minutes later",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "1 day 30 minutes later",
@@ -831,7 +831,7 @@
   },
   {
     "Input": "I will go back on wed Oct 26 15:50:06 2016.",
-    "NotSupported": "java,python,javascript",
+    "NotSupported": "java,javascript",
     "Results": [
       {
         "Text": "wed Oct 26 15:50:06 2016",
@@ -843,7 +843,7 @@
   },
   {
     "Input": "Wed Oct 26 15:50:06 2016 is not a day in 2019.",
-    "NotSupported": "java,python,javascript",
+    "NotSupported": "java,javascript",
     "Results": [
       {
         "Text": "wed Oct 26 15:50:06 2016",

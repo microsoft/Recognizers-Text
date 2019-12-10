@@ -153,6 +153,7 @@ class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
 
     def __init__(self):
         super().__init__()
+        self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.PureNumFromTo),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.PureNumBetweenAnd),

@@ -82,10 +82,13 @@ class RegExpUtility:
         return regex.compile(source, flags=flags)
 
     @staticmethod
-    def get_group(match: Match, group: str, default_val: str = '') -> str:
+    def get_group(match, group: str, default_val: str = '') -> str:
         if match is None:
             return None
-        return match.groupdict().get(group, default_val) or default_val
+        try:
+            return match.groupdict().get(group, default_val) or default_val
+        except:
+            return match.match[0].groupdict().get(group, default_val) or default_val
 
     @staticmethod
     def get_group_list(match: Match, group: str) -> List[str]:

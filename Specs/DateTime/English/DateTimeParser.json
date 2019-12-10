@@ -1343,7 +1343,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
-    "NotSupported": "java,python,javascript",
+    "NotSupported": "java,javascript, python",
     "Results": [
       {
         "Text": "wed Oct 26 15:50:06 2016",
@@ -1367,7 +1367,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
-    "NotSupported": "java,python,javascript",
+    "NotSupported": "java,javascript, python",
     "Results": [
       {
         "Text": "wed Oct 26 15:50:06 2016",

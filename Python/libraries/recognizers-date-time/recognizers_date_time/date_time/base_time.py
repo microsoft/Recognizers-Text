@@ -8,7 +8,7 @@ from recognizers_text.extractor import ExtractResult
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import DateTimeOptionsConfiguration, DateTimeOptions, merge_all_tokens, TimeZoneUtility
+from .utilities import DateTimeOptionsConfiguration, DateTimeOptions, merge_all_tokens, TimeZoneUtility, RegExpUtility
 
 
 class TimeExtractorConfiguration(DateTimeOptionsConfiguration):
@@ -226,8 +226,8 @@ class BaseTimeParser(DateTimeParser):
 
         for pattern in self.config.time_regexes:
             offset = 0
-            match = regex.search(pattern, source)
-            if match is not None and match.start() == offset and match.group() == source:
+            match = RegExpUtility.exact_match(pattern, source, True)
+            if match and match.success:
                 return self.match_to_time(match, reference)
 
         return DateTimeResolutionResult()
@@ -235,7 +235,7 @@ class BaseTimeParser(DateTimeParser):
     def match_to_time(self, match: Match, reference: datetime):
         from .utilities import DateTimeResolutionResult
 
-        result: DateTimeResolutionResult = DateTimeResolutionResult()
+        result = DateTimeResolutionResult()
         hour = 0
         minute = 0
         second = 0
@@ -248,8 +248,8 @@ class BaseTimeParser(DateTimeParser):
         has_pm = False
         has_mid = False
 
-        eng_time_str = RegExpUtility.get_group(match, Constants.ENGLISH_TIME)
-        if eng_time_str.strip():
+        written_time_str = RegExpUtility.get_group(match, Constants.WRITTEN_TIME)
+        if written_time_str.strip():
             # get hour
             hour_str = RegExpUtility.get_group(match, Constants.HOUR_NUM_GROUP_NAME)
             hour_str = hour_str.lower()

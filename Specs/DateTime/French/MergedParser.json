@@ -195,7 +195,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "dans 3 semaines",
@@ -213,7 +213,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "dans 3 mois",
@@ -231,7 +231,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "dans 3 annees",

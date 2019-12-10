@@ -42,6 +42,8 @@ class EnglishTimeParserConfiguration(TimeParserConfiguration):
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex7),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex8),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex9),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex10),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex11),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.ConnectNumRegex)
         ]
         self._numbers: Dict[str, int] = EnglishDateTime.Numbers

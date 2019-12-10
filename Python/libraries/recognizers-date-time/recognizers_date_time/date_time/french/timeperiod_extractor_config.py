@@ -12,6 +12,9 @@ from .base_configs import FrenchDateTimeUtilityConfiguration
 
 
 class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
+    @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
 
     @property
     def simple_cases_regex(self) -> List[Pattern]:
@@ -47,6 +50,7 @@ class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
     def __init__(self):
         super().__init__()
+        self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
         self._single_time_extractor = BaseTimeExtractor(
             FrenchTimeExtractorConfiguration())
         self._integer_extractor = FrenchIntegerExtractor()
@@ -89,9 +93,5 @@ class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
         return MatchedIndex(False, -1)
 
-    def has_connector_token(self, source: str) -> MatchedIndex:
-        match = self.connector_and_regex.search(source)
-        if match:
-            return MatchedIndex(True, match.start())
-
-        return MatchedIndex(False, -1)
+    def is_connector_token(self, source: str):
+        return self.connector_and_regex.match(source)
