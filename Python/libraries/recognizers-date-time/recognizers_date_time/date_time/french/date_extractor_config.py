@@ -133,6 +133,7 @@ class FrenchDateExtractorConfiguration(DateExtractorConfiguration):
         return self._week_day_and_day_regex
 
     def __init__(self):
+        self._check_both_before_after = False
         if FrenchDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
             date_extractor_4 = FrenchDateTime.DateExtractor5
             date_extractor_5 = FrenchDateTime.DateExtractor4

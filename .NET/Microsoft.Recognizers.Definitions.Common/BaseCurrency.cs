@@ -268,5 +268,15 @@ namespace Microsoft.Recognizers.Definitions
             { @"Hào", 10 },
             { @"Ngwee", 100 }
         };
+      public static readonly Dictionary<string, long> NonStandardFractionalSubunits = new Dictionary<string, long>
+        {
+            { @"JOD", 1000 },
+            { @"KWD", 1000 },
+            { @"BHD", 1000 },
+            { @"OMR", 1000 },
+            { @"YDD", 1000 },
+            { @"TND", 1000 },
+            { @"MRO", 5 }
+        };
     }
 }

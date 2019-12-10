@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
@@ -153,6 +154,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 if (!hasBehindExtraction)
                 {
                     continue;
+                }
+
+                // Filter cases like "1 dollars 11a", "11" is not the fraction here.
+                if (source.Length > numErs[i].Start + numErs[i].Length)
+                {
+                    var endChar = source.Substring(numErs[i].Length + numErs[i].Start ?? 0, 1);
+                    if (char.IsLetter(endChar[0]) && !SimpleTokenizer.IsCjk(endChar[0]))
+                    {
+                        continue;
+                    }
                 }
 
                 var middleBegin = ers[j - 1].Start + ers[j - 1].Length ?? 0;

@@ -97,8 +97,7 @@ class BaseHolidayParser(DateTimeParser):
         value = None
 
         if source.type == self.parser_type_name:
-            inner_result = self._parse_holiday_regex_match(
-                source.text, reference)
+            inner_result = self._parse_holiday_regex_match(source.text, reference)
             if inner_result.success:
                 inner_result.future_resolution = {
                     TimeTypeConstants.DATE: DateTimeFormatUtil.format_date(

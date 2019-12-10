@@ -2,6 +2,7 @@ from ..resources import BaseDateTime
 
 
 class Constants:
+    WRITTEN_TIME = 'writtentime'
     SYS_DATETIME_DATE: str = 'date'
     SYS_DATETIME_TIME: str = 'time'
     SYS_DATETIME_DATEPERIOD: str = 'daterange'
@@ -223,3 +224,5 @@ class TimeTypeConstants:
     MORE_THAN_MOD: str = 'more'
     LESS_THAN_MOD: str = 'less'
     REF_UNDEF_MOD: str = 'ref_undef'
+
+    APPROX_MOD: str = 'approx'

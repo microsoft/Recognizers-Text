@@ -139,16 +139,17 @@ class BaseDurationExtractor(DateTimeExtractor):
 
             match = RegExpUtility.match_end(self.config.more_than_regex, before_string, True)
 
-            if self.config.check_both_before_after and (match and not match.success):
+            # The second condition is necessary so for "1 week" in "more than 4 days and less than
+            # 1 week", it will not be tagged incorrectly as "more than"
+            if match and match.success:
                 extract_result.data = TimeTypeConstants.MORE_THAN_MOD
                 is_inequality_prefix_matched = True
 
             if not is_inequality_prefix_matched:
 
                 match = RegExpUtility.match_end(self.config.less_than_regex, before_string, True)
-                # The second condition is necessary so for "1 week" in "more than 4 days and less than 1 week",
-                # it will not be tagged incorrectly as "more than"
-                if self.config.check_both_before_after and match and match.success:
+
+                if match and match.success:
                     extract_result.data = TimeTypeConstants.LESS_THAN_MOD
                     is_inequality_prefix_matched = True
 
@@ -205,7 +206,7 @@ class BaseDurationExtractor(DateTimeExtractor):
 
                 match = self.config.duration_connector_regex.search(mid_str)
                 if match:
-                    unit_match = unit_regex.match(extractor_results[second_extraction_index].text)
+                    unit_match = unit_regex.search(extractor_results[second_extraction_index].text)
                     if unit_match and str(RegExpUtility.get_group(unit_match, 'unit')) in unit_map:
                         next_unit_str = str(RegExpUtility.get_group(unit_match, 'unit'))
                         if unit_value_map[next_unit_str] != unit_value_map[cur_unit]:
@@ -230,7 +231,7 @@ class BaseDurationExtractor(DateTimeExtractor):
                 node.length = extractor_results[second_extraction_index - 1].start +\
                     extractor_results[second_extraction_index - 1].length -\
                     node.start
-                node.text = text[node.start or 0: node.length or 0]
+                node.text = text[node.start or 0: node.length + node.start or 0]
                 node.type = extractor_results[first_extraction_index].type
 
                 if time_unit == total_unit:
@@ -400,7 +401,7 @@ class BaseDurationParser(DateTimeParser):
         if reference is None:
             reference = datetime.now()
 
-        result = DateTimeParseResult(source)
+        value = None
 
         if source.type is self.parser_type_name:
             source_text = source.text.lower()
@@ -415,9 +416,25 @@ class BaseDurationParser(DateTimeParser):
                     inner_result.future_value)
                 inner_result.past_resolution[TimeTypeConstants.DURATION] = str(
                     inner_result.past_value)
-                result.value = inner_result
-                result.timex_str = inner_result.timex if inner_result is not None else ''
-                result.resolution_str = ''
+
+            value = inner_result
+
+        res = value
+        if res and source.data:
+            if source.data == TimeTypeConstants.MORE_THAN_MOD:
+                res.mod = TimeTypeConstants.MORE_THAN_MOD
+            elif source.data == TimeTypeConstants.LESS_THAN_MOD:
+                res.mod = TimeTypeConstants.LESS_THAN_MOD
+
+        result = DateTimeParseResult()
+        result.text = source.text
+        result.start = source.start
+        result.length = source.length
+        result.type = source.type
+        result.data = source.data
+        result.value = value
+        result.timex_str = '' if not value else value.timex
+        result.resolution_str = ''
 
         return result
 

@@ -1,35 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-
-using Microsoft.Recognizers.Definitions.English;
+using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Hindi;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Hindi
 {
    public class HindiHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        // Holi an Diwali dates { year, (holy_month, holy_day, diwali_month, diwali_day) }
+        private static readonly IDictionary<int, IEnumerable<int>> HoliDiwaliDates =
+            DateTimeDefinitions.HoliDiwaliDates.ToImmutableDictionary();
+
         public HindiHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
+            ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
             this.HolidayRegexList = HindiHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
         }
+
+        public Regex ThisPrefixRegex { get; }
+
+        public Regex NextPrefixRegex { get; }
+
+        public Regex PreviousPrefixRegex { get; }
 
         public override int GetSwiftYear(string text)
         {
             var trimmedText = text.Trim();
             var swift = -10;
 
-            if (trimmedText.StartsWith("next"))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("last"))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (trimmedText.StartsWith("this"))
+            else if (ThisPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 0;
             }
@@ -101,8 +116,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
                 { "whitemonday", WhiteMonday },
                 { "trinitysunday", TrinitySunday },
                 { "corpuschristi", CorpusChristi },
+                { "indianindependence", IndianIndependence },
+                { "republicday", RepublicDay },
+                { "yogaday", YogaDay },
+                { "holi", HoliDay },
+                { "diwali", DiwaliDay },
+                { "gandhijayanti", GandhiJayanti },
             };
         }
+
+        private static DateObject IndianIndependence(int year) => new DateObject(year, 8, 15);
+
+        private static DateObject RepublicDay(int year) => new DateObject(year, 1, 26);
+
+        private static DateObject YogaDay(int year) => new DateObject(year, 6, 21);
+
+        private static DateObject HoliDay(int year) => GetHoliDiwaliDate(year, isHoli: true);
+
+        private static DateObject DiwaliDay(int year) => GetHoliDiwaliDate(year, isHoli: false);
+
+        private static DateObject GandhiJayanti(int year) => new DateObject(year, 10, 2);
 
         private static DateObject NewYear(int year) => new DateObject(year, 1, 1);
 
@@ -208,6 +241,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             }
 
             return DateObject.MinValue.SafeCreateFromValue(year, month, day).AddDays(days);
+        }
+
+        // Holi and Diwali follow the lunar calendar
+        // their dates have been included in the dictionary HoliDiwaliDates
+        private static DateObject GetHoliDiwaliDate(int year, bool isHoli)
+        {
+            int day = 1;
+            int month = 1;
+            if (year >= 1900 && year < 2100)
+            {
+                var dates = HoliDiwaliDates[year].ToImmutableList();
+                if (isHoli)
+                {
+                    month = dates[0];
+                    day = dates[1];
+                }
+                else
+                {
+                    month = dates[2];
+                    day = dates[3];
+                }
+            }
+
+            return DateObject.MinValue.SafeCreateFromValue(year, month, day);
         }
     }
 }

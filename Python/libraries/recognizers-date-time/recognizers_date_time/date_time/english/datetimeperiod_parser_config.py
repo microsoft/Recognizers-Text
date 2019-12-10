@@ -48,6 +48,12 @@ class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
             EnglishDateTime.EveningStartEndRegex)
         self.night_start_end_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.NightStartEndRegex)
+        self._prefix_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PrefixDayRegex)
+
+    @property
+    def prefix_day_regex(self) -> Pattern:
+        return self._prefix_day_regex
 
     @property
     def pure_number_from_to_regex(self) -> Pattern:

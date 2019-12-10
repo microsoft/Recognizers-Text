@@ -149,8 +149,16 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
     def suffix_regex(self) -> Pattern:
         return self._suffix_regex
 
+    @property
+    def week_day_regex(self) -> Pattern:
+        return self._week_day_regex
+
     def __init__(self):
         super().__init__()
+        self._week_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.WeekDayRegex
+        )
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._cardinal_extractor = EnglishCardinalExtractor()
         self._single_date_extractor = BaseDateExtractor(
             EnglishDateExtractorConfiguration())

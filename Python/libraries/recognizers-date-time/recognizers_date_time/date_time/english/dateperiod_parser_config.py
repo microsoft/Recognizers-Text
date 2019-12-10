@@ -194,7 +194,7 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._relative_decade_regex
 
     @property
-    def check_both_before_after(self) -> Pattern:
+    def check_both_before_after(self) -> bool:
         return self._check_both_before_after
 
     def __init__(self, config: BaseDateParserConfiguration):

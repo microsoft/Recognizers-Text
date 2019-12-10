@@ -353,7 +353,7 @@
   },
   {
     "Input": "1789-01-29",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "1789-01-29",
@@ -365,7 +365,7 @@
   },
   {
     "Input": "1357年6月10日",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "1357年6月10日",
@@ -377,7 +377,7 @@
   },
   {
     "Input": "三六七年一月一日",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "三六七年一月一日",

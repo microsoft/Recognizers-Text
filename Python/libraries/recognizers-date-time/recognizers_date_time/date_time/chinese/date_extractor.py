@@ -28,12 +28,12 @@ class ChineseDateExtractor(BaseDateExtractor):
 
         tokens = self.basic_regex_match(source)
         tokens.extend(self.implicit_date(source))
-        tokens.extend(self.duration_with_ago_and_later(source, reference))
+        tokens.extend(self.relative_duration_date(source, reference))
 
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
         return result
 
-    def duration_with_ago_and_later(self, source: str, reference: datetime) -> List[Token]:
+    def relative_duration_date(self, source: str, reference: datetime) -> List[Token]:
         ret: List[Token] = list()
         duration_er = self.duration_extractor.extract(source, reference)
 

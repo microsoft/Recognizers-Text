@@ -20,6 +20,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         private static readonly Regex NightRegex =
             new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
 
+        private static readonly Regex HalfTokenRegex =
+            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags);
+
+        private static readonly Regex QuarterTokenRegex =
+            new Regex(DateTimeDefinitions.QuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex ThreeQuarterTokenRegex =
+            new Regex(DateTimeDefinitions.ThreeQuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex ToTokenRegex =
+            new Regex(DateTimeDefinitions.ToTokenRegex, RegexFlags);
+
         public HindiTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
          : base(config)
         {
@@ -51,15 +63,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
             var trimedPrefix = prefix.Trim();
 
-            if (trimedPrefix.StartsWith("साढ़े"))
+            if (HalfTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 30;
             }
-            else if (trimedPrefix.StartsWith("सवा") || trimedPrefix.StartsWith("पौने"))
+            else if (QuarterTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 15;
             }
-            else if (trimedPrefix.StartsWith("पैंतालीस"))
+            else if (ThreeQuarterTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 45;
             }
@@ -78,7 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
                 }
             }
 
-            if (trimedPrefix.EndsWith("to"))
+            if (ToTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = -deltaMin;
             }

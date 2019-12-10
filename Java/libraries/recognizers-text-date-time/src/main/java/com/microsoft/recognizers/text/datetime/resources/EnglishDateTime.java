@@ -600,7 +600,7 @@ public class EnglishDateTime {
 
     public static final String LaterEarlyRegex = "((?<early>early(\\s+|-))|(?<late>late(r?\\s+|-)))";
 
-    public static final String MealTimeRegex = "\\b(?<mealTime>breakfast|brunch|lunch(time)?|dinner(time)?|supper)\\b";
+    public static final String MealTimeRegex = "\\b(at\\s+)?(?<mealTime>breakfast|brunch|lunch(\\s*time)?|dinner(\\s*time)?|supper)\\b";
 
     public static final String UnspecificTimePeriodRegex = "({MealTimeRegex})"
             .replace("{MealTimeRegex}", MealTimeRegex);

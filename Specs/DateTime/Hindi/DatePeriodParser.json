@@ -1,0 +1,3539 @@
+[
+  {
+    "Input": "मैं इस महीने 4 से 22 तक बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस महीने 4 से 22 तक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-22,P18D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          }
+        },
+        "Start": 4,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले महीने 4 से 23 बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले महीने 4 से 23",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-12-04,2016-12-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          }
+        },
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3 से 12 सितंबर तक बाहर रहूँगा हाहाहा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 से 12 सितंबर तक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+          "FutureResolution": {
+            "startDate": "2017-09-03",
+            "endDate": "2017-09-12"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-03",
+            "endDate": "2016-09-12"
+          }
+        },
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "शुक्रवार से 11 तारीख से मंगलवार 15 तारीख तक मैं बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार से 11 तारीख से मंगलवार 15 तारीख तक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-11,2016-11-15,P4D)",
+          "FutureResolution": {
+            "startDate": "2016-11-11",
+            "endDate": "2016-11-15"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-11",
+            "endDate": "2016-11-15"
+          }
+        },
+        "Start": 0,
+        "Length": 43
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले महीने 4 से 23 तक बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले महीने 4 से 23 तक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-12-04,2016-12-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          }
+        },
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस महीने 4 से लेकर 23 तक बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस महीने 4 से लेकर 23 तक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-23"
+          }
+        },
+        "Start": 4,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस महीने 4 से 22 के बीच बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस महीने 4 से 22 के बीच",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-22,P18D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          }
+        },
+        "Start": 4,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3 और 12 सितं. के बीच बाहर रहुंगा हाहाहा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 और 12 सितं. के बीच",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+          "FutureResolution": {
+            "startDate": "2017-09-03",
+            "endDate": "2017-09-12"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-03",
+            "endDate": "2016-09-12"
+          }
+        },
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "4 से 22 जनवरी, 1995 तक मैं बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4 से 22 जनवरी, 1995 तक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1995-01-04,1995-01-22,P18D)",
+          "FutureResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          },
+          "PastResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "4-22 जनवरी, 1995 के बीच मैं बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4-22 जनवरी, 1995 के बीच",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1995-01-04,1995-01-22,P18D)",
+          "FutureResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          },
+          "PastResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          }
+        },
+        "Start": 0,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "मैं सितम्बर 8 से लेकर सितंबर 4 के बीच बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सितम्बर 8 से लेकर सितंबर 4 के बीच",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-04,XXXX-09-08,P4D)",
+          "FutureResolution": {
+            "startDate": "2017-09-04",
+            "endDate": "2017-09-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-04",
+            "endDate": "2016-09-08"
+          }
+        },
+        "Start": 4,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस सप्ताह बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सप्ताह",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं आने वाले हफ्ते में बाहर हो जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आने वाले हफ्ते",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W46",
+          "FutureResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          }
+        },
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं चालू सप्ताह में बाहर हो जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "चालू सप्ताह में",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं फरवरी में निकल जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "फरवरी",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02",
+          "FutureResolution": {
+            "startDate": "2017-02-01",
+            "endDate": "2017-03-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-02-01",
+            "endDate": "2016-03-01"
+          }
+        },
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस सितंबर में बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सितंबर ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-09",
+          "FutureResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "पिछले सितं. मैं बाहर था",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले सितं.",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-09",
+          "FutureResolution": {
+            "startDate": "2015-09-01",
+            "endDate": "2015-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-09-01",
+            "endDate": "2015-10-01"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले जून में बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले जून",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-06",
+          "FutureResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          }
+        },
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "इस महीने के तीसरे हफ्ते मैं निकल जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस महीने के तीसरे हफ्ते",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11-W03",
+          "FutureResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          }
+        },
+        "Start": 0,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "जुलाई के आखिरी हफ्ते में मैं बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जुलाई के आखिरी हफ्ते",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-07-W05",
+          "FutureResolution": {
+            "startDate": "2017-07-24",
+            "endDate": "2017-07-31"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-25",
+            "endDate": "2016-08-01"
+          }
+        },
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "दो सप्ताह में एक बैठक निर्धारित करें",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "अगले 2 दिन",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले 2 दिन",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-11-10,P2D)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "पिछले कुछ दिन",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले कुछ दिन",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-07,P3D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-07"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "उस हफ्ते",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "उस हफ्ते",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "इस सप्ताह यूनियन ने हड़ताल की कार्रवाई को स्थगित कर दिया।",
+    "Context": {
+      "ReferenceDateTime": "2026-01-01T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सप्ताह",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2026-W01",
+          "FutureResolution": {
+            "startDate": "2025-12-29",
+            "endDate": "2026-01-05"
+          },
+          "PastResolution": {
+            "startDate": "2025-12-29",
+            "endDate": "2026-01-05"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मेरा सप्ताह",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मेरा सप्ताह",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "उस सप्ताहांत",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "उस सप्ताहांत",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "इस सप्ताहांत",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सप्ताहांत",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मेरा सप्ताहांत",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मेरा सप्ताहांत",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं अक्टू. 2 से अक्टू. 22 तक बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टू. 2 से अक्टू. 22 तक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
+        },
+        "Start": 4,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "मैं जनवरी 12, 2016 - 01/22/2016 तक बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जनवरी 12, 2016 - 01/22/2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-01-12,2016-01-22,P10D)",
+          "FutureResolution": {
+            "startDate": "2016-01-12",
+            "endDate": "2016-01-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-12",
+            "endDate": "2016-01-22"
+          }
+        },
+        "Start": 4,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "मैं 1ली जनवरी से लेकर बुधवार, 22 जन. तक बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1ली जनवरी से लेकर बुधवार, 22 जन. तक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-01,XXXX-01-22,P21D)",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-01-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-01-22"
+          }
+        },
+        "Start": 4,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज से कल तक बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज से कल तक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-08,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-08"
+          }
+        },
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं अक्टू. 2 से अक्टूबर 22 तक बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टू. 2 से अक्टूबर 22",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
+        },
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "मैं अक्टू. 2 से अक्टूबर 22 के बीच बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टू. 2 से अक्टूबर 22 ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
+        },
+        "Start": 4,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "मैं 19-20 नवंबर तक बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "19-20 नवंबर",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        },
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं 19 से 20 नवंबर तक बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "19 से 20 नवंबर",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        },
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं 19 और 20 नवंबर के बीच बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "19 और 20 नवंबर के बीच",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        },
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं उस हफ्ते के बाकी समय बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "उस हफ्ते के बाकी समय",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        },
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं सप्ताह के बाकी समय बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सप्ताह के बाकी समय",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        },
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "हफ्ते में बाकी के दिन मैं बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हफ्ते में बाकी के दिन",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        },
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं बाकी के महीने बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बाकी के महीने",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-30,P24D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-30"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-30"
+          }
+        },
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं बाकी के साल बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बाकी के साल",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-12-31,P55D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-12-31"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-12-31"
+          }
+        },
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "हफ्ते में बाकी के दिन मैं बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-13T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हफ्ते में बाकी के दिन",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-13,2016-11-13,P0D)",
+          "FutureResolution": {
+            "startDate": "2016-11-13",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-13",
+            "endDate": "2016-11-13"
+          }
+        },
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं सप्ताहांत में बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सप्ताहांत",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस सप्ताहांत पर बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सप्ताहांत",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं जून 2016 में बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जून 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-06",
+          "FutureResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          }
+        },
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले साल जून में बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले साल जून",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-06",
+          "FutureResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          }
+        },
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले साल बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले साल",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले 3 दिन बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले 3 दिन",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-11-11,P3D)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-11"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-11"
+          }
+        },
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले 3 महीने बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले 3 महीने",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2017-02-08,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2017-02-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2017-02-08"
+          }
+        },
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3 साल में बाहर हो जाउंगा",
+    "NotSupported": "javascript, python",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मैं पिछले 3 सप्ताह से बाहर था",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले 3 सप्ताह",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-10-17,2016-11-07,P3W)",
+          "FutureResolution": {
+            "startDate": "2016-10-17",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-17",
+            "endDate": "2016-11-07"
+          }
+        },
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं पिछले 3 वर्ष से बाहर था",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले 3 वर्ष",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2013-11-07,2016-11-07,P3Y)",
+          "FutureResolution": {
+            "startDate": "2013-11-07",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2013-11-07",
+            "endDate": "2016-11-07"
+          }
+        },
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं पिछले 3 हफ़्ते से बाहर था",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले 3 हफ़्ते",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-10-17,2016-11-07,P3W)",
+          "FutureResolution": {
+            "startDate": "2016-10-17",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-17",
+            "endDate": "2016-11-07"
+          }
+        },
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "अक्टूबर का पहला सप्ताह",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टूबर का पहला सप्ताह",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-10-W01",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-09"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-03",
+            "endDate": "2016-10-10"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2027 के तीसरे सप्ताह से बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2027 के तीसरे सप्ताह",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2027-W03",
+          "FutureResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          },
+          "PastResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          }
+        },
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले साल तीसरे सप्ताह से बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले साल तीसरे सप्ताह",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W03",
+          "FutureResolution": {
+            "startDate": "2017-01-16",
+            "endDate": "2017-01-23"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-16",
+            "endDate": "2017-01-23"
+          }
+        },
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2016 की तीसरी तिमाही से बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 की तीसरी तिमाही",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस साल तीसरी तिमाही से बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस साल तीसरी तिमाही",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 4,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस साल तीसरी तिमाही के दौरान बाहर हो जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस साल तीसरी तिमाही",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 4,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2016 की तीसरी तिमाही में बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 की तीसरी तिमाही",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं तीसरी तिमाही के दौरान वापस आऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीसरी तिमाही",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2017-07-01",
+            "endDate": "2017-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं दूसरी तिमाही के दौरान वापस आऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दूसरी तिमाही",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-04-01,2016-07-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2017-04-01",
+            "endDate": "2017-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-04-01",
+            "endDate": "2016-07-01"
+          }
+        },
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं पहली तिमाही 2016 में वापस आऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पहली तिमाही 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-01-01,2016-04-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-04-01"
+          }
+        },
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं चौथी तिमाही 2016 के दौरान बाहर हो जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "चौथी तिमाही 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-10-01,2017-01-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-10-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-01",
+            "endDate": "2017-01-01"
+          }
+        },
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस गर्मी में चला जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस गर्मी",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले वसंत में चला जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले वसंत",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-SP",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं गर्मी में चला जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "गर्मी",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2016 की गर्मियों में चला जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 की गर्मियों",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "आगामी माह की छुट्टियां",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आगामी माह",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-12",
+          "FutureResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "अगले महीने की छुट्टियां",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले महीने",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-12",
+          "FutureResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "कृपया हमें इस महीने के अंत में मिलने का समय दें",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस महीने के अंत में",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-11",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-12-01"
+          }
+        },
+        "Start": 11,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "कृपया हमें इस सप्ताह के अंत में मिलने का समय दें",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सप्ताह के अंत में",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W45",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-09",
+            "endDate": "2017-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-09",
+            "endDate": "2017-11-13"
+          }
+        },
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "कृपया हमें इस वर्ष के अंत में मिलने का समय दें",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस वर्ष के अंत में",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-07-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-07-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 11,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "कृपया हमें अगले साल की शुरुआत में मिलने का समय दीजिए",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले साल की शुरुआत",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2018-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2018-07-01"
+          }
+        },
+        "Start": 11,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "कृपया हमें अगले सप्ताह की शुरुआत में मिलने का समय दें",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सप्ताह की शुरुआत",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        },
+        "Start": 11,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "कृपया हमें अगले महीने की शुरुआत में मिलने का समय दें",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले महीने की शुरुआत में",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-12",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-12-01",
+            "endDate": "2017-12-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-12-01",
+            "endDate": "2017-12-16"
+          }
+        },
+        "Start": 11,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "हमने पिछले साल के अंत में बैठक की थी",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले साल के अंत",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "हमने पिछले हफ्ते के अंत में बैठक की थी",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले हफ्ते के अंत",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W44",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-02",
+            "endDate": "2017-11-06"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-02",
+            "endDate": "2017-11-06"
+          }
+        },
+        "Start": 5,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "हमने पिछले महीने के अंत में बैठक की थी",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले महीने के अंत",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-10",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-10-16",
+            "endDate": "2017-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-10-16",
+            "endDate": "2017-11-01"
+          }
+        },
+        "Start": 5,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया अगले सप्ताह बुधवार और शुक्रवार के बीच एंटोनियो के साथ 25 मिनट की बैठक सेट करें।",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सप्ताह बुधवार और शुक्रवार के बीच",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-22,2017-11-24,P2D)",
+          "FutureResolution": {
+            "startDate": "2017-11-22",
+            "endDate": "2017-11-24"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-22",
+            "endDate": "2017-11-24"
+          }
+        },
+        "Start": 16,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया पिछले हफ्ते शुक्रवार और रविवार के बीच एंटोनियो के साथ हुए 25 मिनट की बैठक का ब्योरा दें।",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले हफ्ते शुक्रवार और रविवार के बीच",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-10,2017-11-12,P2D)",
+          "FutureResolution": {
+            "startDate": "2017-11-10",
+            "endDate": "2017-11-12"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-10",
+            "endDate": "2017-11-12"
+          }
+        },
+        "Start": 16,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया इस सप्ताह म्गल से गुरु तक एंटोनियो के साथ 25 मिनट की एक बैठक को सेट करें।",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सप्ताह म्गल से गुरु तक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-14,2017-11-16,P2D)",
+          "FutureResolution": {
+            "startDate": "2017-11-14",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-14",
+            "endDate": "2017-11-16"
+          }
+        },
+        "Start": 16,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "इसी हफ्ते हमारी मुलाकात हुई थी",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इसी हफ्ते",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-20"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "इस वर्ष के पहले सप्ताह में हमारी बैठक हुई",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस वर्ष के पहले सप्ताह",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W01",
+          "FutureResolution": {
+            "startDate": "2017-01-02",
+            "endDate": "2017-01-09"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-02",
+            "endDate": "2017-01-09"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "2015 का पहला सप्ताह",
+    "Context": {
+      "ReferenceDateTime": "2017-11-20T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015 का पहला सप्ताह",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-W01",
+          "FutureResolution": {
+            "startDate": "2014-12-29",
+            "endDate": "2015-01-05"
+          },
+          "PastResolution": {
+            "startDate": "2014-12-29",
+            "endDate": "2015-01-05"
+          }
+        },
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "2015 का दूसरा सप्ताह",
+    "Context": {
+      "ReferenceDateTime": "2017-11-20T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015 का दूसरा सप्ताह",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-W02",
+          "FutureResolution": {
+            "startDate": "2015-01-05",
+            "endDate": "2015-01-12"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-05",
+            "endDate": "2015-01-12"
+          }
+        },
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "इस सप्ताहांत",
+    "Context": {
+      "ReferenceDateTime": "2017-11-20T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सप्ताहांत",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W47-WE",
+          "FutureResolution": {
+            "startDate": "2017-11-25",
+            "endDate": "2017-11-27"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-25",
+            "endDate": "2017-11-27"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "2015 का अंतिम सप्ताह",
+    "Context": {
+      "ReferenceDateTime": "2017-11-20T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015 का अंतिम सप्ताह",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-W53",
+          "FutureResolution": {
+            "startDate": "2015-12-28",
+            "endDate": "2016-01-04"
+          },
+          "PastResolution": {
+            "startDate": "2015-12-28",
+            "endDate": "2016-01-04"
+          }
+        },
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "साल 247",
+    "Context": {
+      "ReferenceDateTime": "2017-12-18T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "साल 247",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "0247",
+          "FutureResolution": {
+            "startDate": "0247-01-01",
+            "endDate": "0248-01-01"
+          },
+          "PastResolution": {
+            "startDate": "0247-01-01",
+            "endDate": "0248-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "1970 के दशक में",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1970 के दशक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1970-01-01,1980-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "2000 के दशक में उनका जन्म हुआ था।",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2000 के दशक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2010-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "70 के दशक में",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "70 के दशक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2070-01-01",
+            "endDate": "2080-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "40 के दशक में",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "40 के दशक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX40-01-01,XX50-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2040-01-01",
+            "endDate": "2050-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1940-01-01",
+            "endDate": "1950-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "सत्तर के दशक में",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सत्तर के दशक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2070-01-01",
+            "endDate": "2080-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "उन्नीस सौ सत्तर के दशक में",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "उन्नीस सौ सत्तर के दशक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1970-01-01,1980-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "दो हजार दस के दशक में",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हजार दस के दशक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2010-01-01,2020-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "दो हजार के दशक में",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हजार के दशक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2010-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "नब्बे के दशक में",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नब्बे के दशक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2010-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो हजार अठारह में 2 से 7 फरवरी तक बाहर हूँ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हजार अठारह में 2 से 7 फरवरी तक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-02-02,2018-02-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          }
+        },
+        "Start": 4,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो हजार अठारह में 2 से लेकर 7 फरवरी के बीच तक बाहर हूँ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हजार अठारह में 2 से लेकर 7 फरवरी के बीच",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-02-02,2018-02-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          }
+        },
+        "Start": 4,
+        "Length": 42
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो हजार अठारह के फरवरी में 2 से 7 तक बाहर हूँ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हजार अठारह के फरवरी में 2 से 7 तक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-02-02,2018-02-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          }
+        },
+        "Start": 4,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "यह उन्नीस निन्यानवे के जून में हुआ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "उन्नीस निन्यानवे के जून",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1999-06",
+          "FutureResolution": {
+            "startDate": "1999-06-01",
+            "endDate": "1999-07-01"
+          },
+          "PastResolution": {
+            "startDate": "1999-06-01",
+            "endDate": "1999-07-01"
+          }
+        },
+        "Start": 3,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "उन्नीस सौ अट्ठाईस में",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "उन्नीस सौ अट्ठाईस",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1928",
+          "FutureResolution": {
+            "startDate": "1928-01-01",
+            "endDate": "1929-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1928-01-01",
+            "endDate": "1929-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "एक हजार सात नवासी में",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक हजार सात नवासी",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1789",
+          "FutureResolution": {
+            "startDate": "1789-01-01",
+            "endDate": "1790-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1789-01-01",
+            "endDate": "1790-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "दो हज़ार सत्ताईस के तीसरे सप्ताह में मैं बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हज़ार सत्ताईस के तीसरे सप्ताह",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2027-W03",
+          "FutureResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          },
+          "PastResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          }
+        },
+        "Start": 0,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "दो हज़ार बीस की तीसरी तिमाही में मैं बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हज़ार बीस की तीसरी तिमाही",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2020-07-01,2020-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2020-07-01",
+            "endDate": "2020-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2020-07-01",
+            "endDate": "2020-10-01"
+          }
+        },
+        "Start": 0,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "उन्नीस सौ अठत्तर के वसंत में",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "उन्नीस सौ अठत्तर के वसंत",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1978-SP",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 0,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "साल दो सौ सढ़सठ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "साल दो सौ सढ़सठ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "0267",
+          "FutureResolution": {
+            "startDate": "0267-01-01",
+            "endDate": "0268-01-01"
+          },
+          "PastResolution": {
+            "startDate": "0267-01-01",
+            "endDate": "0268-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले सप्ताह के बाद बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सप्ताह के बाद",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W47",
+          "FutureResolution": {
+            "startDate": "2016-11-21",
+            "endDate": "2016-11-28"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-21",
+            "endDate": "2016-11-28"
+          }
+        },
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "अगले महीने के बाद मैं बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले महीने के बाद",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-01",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-02-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-02-01"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "अगले साल के बाद मैं बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले साल के बाद",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018",
+          "FutureResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "अगले सप्ताहांत के बाद मैं बाहर रहुंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सप्ताहांत के बाद",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W47-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-26",
+            "endDate": "2016-11-28"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-26",
+            "endDate": "2016-11-28"
+          }
+        },
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "रेंज 2014-2018 है।",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2014-2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "सीमा 2014-2018 के बीच है।",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2014-2018 के बीच",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "रेंज 2014 से 2018 तक है।",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2014 से 2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "रेंज 2014 से 2018 में है।",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2014 से 2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "सीमा दो हजार से लेकर दो हजार चौदह तक है।",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हजार से लेकर दो हजार चौदह तक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2014-01-01,P14Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2014-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2014-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "यह पिछले 2 दशकों में हुआ।",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले 2 दशकों",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1990-01-01,2010-01-01,P20Y)",
+          "FutureResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
+        "Start": 3,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "यह पिछले दो दशकों में हुआ।",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले दो दशकों",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1990-01-01,2010-01-01,P20Y)",
+          "FutureResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
+        "Start": 3,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "यह अगले दशक में हुआ।",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले दशक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2020-01-01,2030-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2030-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2030-01-01"
+          }
+        },
+        "Start": 3,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "यह अगले 3 दशकों में हुआ।",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले 3 दशकों",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2020-01-01,2050-01-01,P30Y)",
+          "FutureResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2050-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2050-01-01"
+          }
+        },
+        "Start": 3,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "यह भविष्य में 4 हफ्तों में का होगा।",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "भविष्य में 4 हफ्तों",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-12-06,P4W)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-12-06"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-12-06"
+          }
+        },
+        "Start": 3,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "ऐसा आज से 2 दिन बाद होगा।",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज से 2 दिन बाद",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-11-10,P2D)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          }
+        },
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना हमारे लिए अगले सप्ताह की शुरुआत का समय ढूंढ़ सकती है",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सप्ताह की शुरुआत",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        },
+        "Start": 19,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "ज़रूर, चलिए अगले हफ्ते के अंत में एक स्काइप रखते हैं",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले हफ्ते के अंत में ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-11-20"
+          }
+        },
+        "Start": 12,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "ज़रूर, चलो अगले सप्ताह के शुरुआत में एक स्काइप रखते हैं",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सप्ताह के शुरुआत में",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        },
+        "Start": 11,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, हमारे लिए मार्च के अंत का एक समय ढूढ़ो",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मार्च के अंत",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-03",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2018-03-16",
+            "endDate": "2018-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-03-16",
+            "endDate": "2017-04-01"
+          }
+        },
+        "Start": 20,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, हमारे लिए मार्च के बीच का एक समय ढूढ़ो",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मार्च के बीच",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "mid",
+          "FutureResolution": {
+            "startDate": "2017-11-14",
+            "endDate": "2017-11-18"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-14",
+            "endDate": "2017-11-18"
+          }
+        },
+        "Start": 20,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "हमें अगले सप्ताह की शुरुआत का समय मिल सकता है",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सप्ताह की शुरुआत",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        },
+        "Start": 5,
+        "Length": 21
+      }
+    ]
+  }
+]
