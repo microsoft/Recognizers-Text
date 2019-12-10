@@ -717,7 +717,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             pr1 = this.config.TimeParser.Parse(ers[0], referenceTime);
             pr2 = this.config.TimeParser.Parse(ers[1], referenceTime);
 
-            if (pr1.Value == null || pr2.Value == null)
+            if (pr1.Value == null || pr2.Value == null || pr1.Text == pr2.Text)
             {
                 return ret;
             }

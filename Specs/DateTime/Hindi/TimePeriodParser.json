@@ -4,11 +4,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 5 से 6 ",
+        "Text": "शाम 5 से 6",
         "Type": "timerange",
         "Value": {
           "Timex": "(T17,T18,PT1H)",
@@ -22,7 +21,7 @@
           }
         },
         "Start": 4,
-        "Length": 11
+        "Length": 10
       }
     ]
   },
@@ -31,11 +30,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "प्रातः 5 से सात तक",
+        "Text": "प्रातः 5 से सात",
         "Type": "timerange",
         "Value": {
           "Timex": "(T05,T07,PT2H)",
@@ -49,7 +47,7 @@
           }
         },
         "Start": 4,
-        "Length": 18
+        "Length": 15
       }
     ]
   },
@@ -58,11 +56,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "संध्या 5 से 6 तक",
+        "Text": "संध्या 5 से 6",
         "Type": "timerange",
         "Value": {
           "Timex": "(T17,T18,PT1H)",
@@ -76,7 +73,7 @@
           }
         },
         "Start": 4,
-        "Length": 16
+        "Length": 13
       }
     ]
   },
@@ -85,7 +82,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -112,11 +108,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 5 और 6 के बीच",
+        "Text": "शाम 5 और 6",
         "Type": "timerange",
         "Value": {
           "Timex": "(T17,T18,PT1H)",
@@ -130,7 +125,7 @@
           }
         },
         "Start": 4,
-        "Length": 17
+        "Length": 10
       }
     ]
   },
@@ -139,11 +134,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दिन में 5 से 6 के बीच",
+        "Text": "दिन में 5 से 6",
         "Type": "timerange",
         "Value": {
           "Timex": "(T17,T18,PT1H)",
@@ -157,7 +151,7 @@
           }
         },
         "Start": 4,
-        "Length": 21
+        "Length": 14
       }
     ]
   },
@@ -166,11 +160,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1am से 5pm तक",
+        "Text": "1am से 5pm",
         "Type": "timerange",
         "Value": {
           "Timex": "(T01,T17,PT16H)",
@@ -184,7 +177,7 @@
           }
         },
         "Start": 4,
-        "Length": 13
+        "Length": 10
       }
     ]
   },
@@ -193,11 +186,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 4 से 5 तक",
+        "Text": "शाम 4 से 5",
         "Type": "timerange",
         "Value": {
           "Timex": "(T16,T17,PT1H)",
@@ -211,7 +203,7 @@
           }
         },
         "Start": 4,
-        "Length": 13
+        "Length": 10
       }
     ]
   },
@@ -220,11 +212,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4 से शाम 5 तक ",
+        "Text": "4 से शाम 5",
         "Type": "timerange",
         "Value": {
           "Timex": "(T16,T17,PT1H)",
@@ -238,7 +229,7 @@
           }
         },
         "Start": 4,
-        "Length": 14
+        "Length": 10
       }
     ]
   },
@@ -247,11 +238,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4:00 बजे से 7 बजे तक ",
+        "Text": "4:00 बजे से 7 बजे",
         "Type": "timerange",
         "Value": {
           "Timex": "(T04:00,T07,PT3H)",
@@ -265,7 +255,7 @@
           }
         },
         "Start": 4,
-        "Length": 21
+        "Length": 17
       }
     ]
   },
@@ -274,7 +264,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -301,7 +290,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -328,11 +316,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "morning में 3 बजे से evening के 5 तक",
+        "Text": "morning में 3 बजे से evening के 5",
         "Type": "timerange",
         "Value": {
           "Timex": "(T03,T17,PT14H)",
@@ -346,7 +333,7 @@
           }
         },
         "Start": 4,
-        "Length": 36
+        "Length": 33
       }
     ]
   },
@@ -355,11 +342,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह के 3 और शाम के 5 के बीच ",
+        "Text": "सुबह के 3 और शाम के 5",
         "Type": "timerange",
         "Value": {
           "Timex": "(T03,T17,PT14H)",
@@ -373,7 +359,7 @@
           }
         },
         "Start": 4,
-        "Length": 29
+        "Length": 21
       }
     ]
   },
@@ -382,11 +368,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 4 और 5 के बीच ",
+        "Text": "शाम 4 और 5",
         "Type": "timerange",
         "Value": {
           "Timex": "(T16,T17,PT1H)",
@@ -400,7 +385,7 @@
           }
         },
         "Start": 4,
-        "Length": 18
+        "Length": 10
       }
     ]
   },
@@ -409,11 +394,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह ",
+        "Text": "सुबह",
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
@@ -427,7 +411,7 @@
           }
         },
         "Start": 0,
-        "Length": 5
+        "Length": 4
       }
     ]
   },
@@ -436,7 +420,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -463,11 +446,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "रात को ",
+        "Text": "रात को",
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
@@ -481,7 +463,7 @@
           }
         },
         "Start": 0,
-        "Length": 7
+        "Length": 6
       }
     ]
   },
@@ -490,11 +472,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम को ",
+        "Text": "शाम को",
         "Type": "timerange",
         "Value": {
           "Timex": "TEV",
@@ -508,7 +489,7 @@
           }
         },
         "Start": 0,
-        "Length": 7
+        "Length": 6
       }
     ]
   },
@@ -517,11 +498,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शामों को ",
+        "Text": "शामों को",
         "Type": "timerange",
         "Value": {
           "Timex": "TEV",
@@ -535,7 +515,7 @@
           }
         },
         "Start": 0,
-        "Length": 9
+        "Length": 8
       }
     ]
   },
@@ -544,7 +524,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -572,7 +551,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -600,7 +578,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -628,7 +605,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -656,7 +632,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -684,7 +659,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -712,7 +686,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -740,7 +713,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -768,7 +740,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -796,7 +767,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -824,11 +794,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "जल्दी रात को ",
+        "Text": "जल्दी रात को",
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
@@ -843,7 +812,7 @@
           }
         },
         "Start": 0,
-        "Length": 13
+        "Length": 12
       }
     ]
   },
@@ -852,7 +821,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -880,11 +848,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 1 से 4 तक",
+        "Text": "शाम 1 से 4",
         "Type": "timerange",
         "Value": {
           "Timex": "(T13,T16,PT3H)",
@@ -898,7 +865,7 @@
           }
         },
         "Start": 0,
-        "Length": 13
+        "Length": 10
       }
     ]
   },
@@ -907,11 +874,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 1:30 से 4 तक",
+        "Text": "शाम 1:30 से 4",
         "Type": "timerange",
         "Value": {
           "Timex": "(T13:30,T16,PT2H30M)",
@@ -925,7 +891,7 @@
           }
         },
         "Start": 0,
-        "Length": 16
+        "Length": 13
       }
     ]
   },
@@ -934,11 +900,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह",
+        "Text": "सुबह के",
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
@@ -952,7 +917,7 @@
           }
         },
         "Start": 0,
-        "Length": 4
+        "Length": 7
       }
     ]
   },
@@ -961,11 +926,10 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "रात 1:30 से 3 तक",
+        "Text": "रात 1:30 से 3",
         "Type": "timerange",
         "Value": {
           "Timex": "(T01:30,T03,PT1H30M)",
@@ -979,7 +943,7 @@
           }
         },
         "Start": 0,
-        "Length": 16
+        "Length": 13
       }
     ]
   },
@@ -988,11 +952,10 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह 11 से 3 तक",
+        "Text": "सुबह 11 से 3",
         "Type": "timerange",
         "Value": {
           "Timex": "(T11,T15,PT4H)",
@@ -1006,7 +969,7 @@
           }
         },
         "Start": 0,
-        "Length": 15
+        "Length": 12
       }
     ]
   },
@@ -1015,11 +978,10 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "रात 11 से 3 तक",
+        "Text": "रात 11 से 3",
         "Type": "timerange",
         "Value": {
           "Timex": "(T23,T03,PT4H)",
@@ -1033,7 +995,7 @@
           }
         },
         "Start": 0,
-        "Length": 14
+        "Length": 11
       }
     ]
   },
@@ -1042,11 +1004,10 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अपराहन 11:01  से 11 तक",
+        "Text": "अपराहन 11:01  से 11",
         "Type": "timerange",
         "Value": {
           "Timex": "(T23:01,T11,PT11H59M)",
@@ -1060,7 +1021,7 @@
           }
         },
         "Start": 0,
-        "Length": 22
+        "Length": 19
       }
     ]
   },
@@ -1069,11 +1030,10 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "पूर्वाहन 11:01 से 11 तक",
+        "Text": "पूर्वाहन 11:01 से 11",
         "Type": "timerange",
         "Value": {
           "Timex": "(T11:01,T23,PT11H59M)",
@@ -1087,7 +1047,7 @@
           }
         },
         "Start": 0,
-        "Length": 23
+        "Length": 20
       }
     ]
   },
@@ -1096,11 +1056,10 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह 11 से 11:50 तक",
+        "Text": "सुबह 11 से 11:50",
         "Type": "timerange",
         "Value": {
           "Timex": "(T11,T11:50,PT50M)",
@@ -1114,7 +1073,7 @@
           }
         },
         "Start": 5,
-        "Length": 19
+        "Length": 16
       }
     ]
   },
@@ -1123,11 +1082,10 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अपराह्न 1:30 से 3:30 तक",
+        "Text": "अपराह्न 1:30 से 3:30",
         "Type": "timerange",
         "Value": {
           "Timex": "(T13:30,T15:30,PT2H)",
@@ -1141,7 +1099,7 @@
           }
         },
         "Start": 0,
-        "Length": 23
+        "Length": 20
       }
     ]
   },
@@ -1150,11 +1108,10 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अपराह्न 1:30 से अपराहन 3:30 तक",
+        "Text": "अपराह्न 1:30 से अपराहन 3:30",
         "Type": "timerange",
         "Value": {
           "Timex": "(T13:30,T15:30,PT2H)",
@@ -1168,7 +1125,7 @@
           }
         },
         "Start": 0,
-        "Length": 30
+        "Length": 27
       }
     ]
   },
@@ -1177,11 +1134,10 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दोपहर 3 से दोपहर 3:30 तक",
+        "Text": "दोपहर 3 से दोपहर 3:30",
         "Type": "timerange",
         "Value": {
           "Timex": "(T15,T15:30,PT30M)",
@@ -1195,7 +1151,7 @@
           }
         },
         "Start": 0,
-        "Length": 24
+        "Length": 21
       }
     ]
   },
@@ -1205,11 +1161,10 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "रात 0:01 से दोपहर 1 तक",
+        "Text": "रात 0:01 से दोपहर 1",
         "Type": "timerange",
         "Value": {
           "Timex": "(T00:01,T13,PT12H59M)",
@@ -1223,7 +1178,7 @@
           }
         },
         "Start": 4,
-        "Length": 22
+        "Length": 19
       }
     ]
   },
@@ -1233,11 +1188,10 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "रात 0:01 से 1 तक",
+        "Text": "रात 0:01 से 1",
         "Type": "timerange",
         "Value": {
           "Timex": "(T00:01,T01,PT59M)",
@@ -1251,7 +1205,7 @@
           }
         },
         "Start": 4,
-        "Length": 16
+        "Length": 13
       }
     ]
   },
@@ -1260,11 +1214,10 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "3 से 3:30 तक",
+        "Text": "3 से 3:30",
         "Type": "timerange",
         "Value": {
           "Timex": "(T03,T03:30,PT30M)",
@@ -1278,7 +1231,7 @@
           }
         },
         "Start": 0,
-        "Length": 12
+        "Length": 9
       }
     ]
   },
@@ -1287,11 +1240,10 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1:30 से 3 तक",
+        "Text": "1:30 से 3",
         "Type": "timerange",
         "Value": {
           "Timex": "(T01:30,T03,PT1H30M)",
@@ -1305,7 +1257,7 @@
           }
         },
         "Start": 0,
-        "Length": 12
+        "Length": 9
       }
     ]
   }
