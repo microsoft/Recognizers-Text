@@ -4875,7 +4875,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "week 31",
@@ -9679,7 +9678,7 @@
     "Context": {
       "ReferenceDateTime": "2018-12-13T12:00:00"
     },
-    "NotSupportedByDesign": "java, python",
+    "NotSupportedByDesign": "java",
     "Results": []
   },
   {
@@ -11733,7 +11732,6 @@
     "Context": {
       "ReferenceDateTime": "2019-05-30T12:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "26 june in 2019 to 28 june in 2020",
@@ -12860,7 +12858,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "NotSupported": "java, python",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "11:30 am to 12:30 december 27th",
@@ -12891,7 +12889,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "NotSupported": "java, python",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "12:30 december 27th",
@@ -13435,7 +13433,6 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "next week",
@@ -14350,7 +14347,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
-    "NotSupported": "java, python",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "one second",
@@ -14888,4 +14885,4 @@
       }
     ]
   }
-]
+  ]
