@@ -227,7 +227,7 @@ class ChineseDateTimePeriodParser(BaseDateTimePeriodParser):
         match = regex.search(self.config.specific_time_of_day_regex, source)
         if match and match.start() == 0 and len(match.group()) == len(source):
             values = self.config.get_matched_time_range(source)
-            if not values.success:
+            if not values:
                 return result
 
             swift = values.swift

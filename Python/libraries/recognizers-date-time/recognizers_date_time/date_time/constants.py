@@ -169,8 +169,8 @@ class Constants:
 
     REL_EARLY = 'RelEarly'
     REL_LATE = 'RelLate'
-    EARLY = 'early'
-    LATE = 'late'
+    COMMENT_EARLY = 'early'
+    COMMENT_LATE = 'late'
 
     HALF = 'half'
 
