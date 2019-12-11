@@ -637,6 +637,36 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 class DateTimePeriodParserConfiguration:
     @property
     @abstractmethod
+    def future_suffix_regex(self):
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def within_next_prefix_regex(self):
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def previous_prefix_regex(self):
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def cardinal_extractor(self):
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def am_desc_regex(self):
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def pm_desc_regex(self):
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def before_regex(self):
         raise NotImplementedError
 
@@ -761,7 +791,7 @@ class DateTimePeriodParserConfiguration:
         raise NotImplementedError
 
     @abstractmethod
-    def get_matched_time_range(self, source: str) -> MatchedTimeRange:
+    def get_matched_time_range(self, source: str):
         raise NotImplementedError
 
     @abstractmethod
@@ -1007,79 +1037,94 @@ class BaseDateTimePeriodParser(DateTimeParser):
     def merge_two_time_points(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
 
-        prs: BeginEnd = None
-        time_ers = self.config.time_extractor.extract(source, reference)
-        datetime_ers = self.config.date_time_extractor.extract(
-            source, reference)
-
-        both_has_date = False
+        parse_result_1 = parse_result_2 = None
+        both_have_dates = False
         begin_has_date = False
         end_has_date = False
 
+        time_ers = self.config.time_extractor.extract(source, reference)
+        datetime_ers = self.config.date_time_extractor.extract(source, reference)
+
         if len(datetime_ers) == 2:
-            prs = self.get_two_points(datetime_ers[0], datetime_ers[1], self.config.date_time_parser,
-                                      self.config.date_time_parser, reference)
-            both_has_date = True
+            parse_result_1 = self.config.date_time_parser.parse(datetime_ers[0], reference)
+            parse_result_2 = self.config.date_time_parser.parse(datetime_ers[1], reference)
+            both_have_dates = True
         elif len(datetime_ers) == 1 and len(time_ers) == 2:
-            if datetime_ers[0].overlap(time_ers[0]):
-                prs = self.get_two_points(datetime_ers[0], time_ers[1], self.config.date_time_parser,
-                                          self.config.time_parser, reference)
-                begin_has_date = True
-            else:
-                prs = self.get_two_points(time_ers[0], datetime_ers[0], self.config.time_parser,
-                                          self.config.date_time_parser, reference)
+            if not datetime_ers[0].overlap(time_ers[0]):
+                parse_result_1 = self.config.time_parser.parse(time_ers[0], reference)
+                parse_result_2 = self.config.date_time_parser.parse(datetime_ers[0], reference)
                 end_has_date = True
+            else:
+                parse_result_1 = self.config.date_time_parser.parse(datetime_ers[0], reference)
+                parse_result_2 = self.config.time_parser.parse(time_ers[1], reference)
+                begin_has_date = True
         elif len(datetime_ers) == 1 and len(time_ers) == 1:
             if time_ers[0].start < datetime_ers[0].start:
-                prs = self.get_two_points(time_ers[0], datetime_ers[0], self.config.time_parser,
-                                          self.config.date_time_parser, reference)
+                parse_result_1 = self.config.time_parser.parse(time_ers[0], reference)
+                parse_result_2 = self.config.date_time_parser.parse(datetime_ers[0], reference)
                 end_has_date = True
-            else:
-                prs = self.get_two_points(datetime_ers[0], time_ers[0], self.config.date_time_parser,
-                                          self.config.time_parser, reference)
+            elif time_ers[0].start >= datetime_ers[0].start + datetime_ers[0].length:
+                parse_result_1 = self.config.date_time_parser.parse(datetime_ers[0], reference)
+                parse_result_2 = self.config.time_parser.parse(time_ers[0], reference)
                 begin_has_date = True
-
-        if prs is None or not prs.begin.value or not prs.end.value:
+            else:
+                # If the only TimeExtractResult is part of DateTimeExtractResult, then it should not be handled
+                # in this method
+                return result
+        elif len(time_ers) == 2:
+            # If both ends are Time. Then this is a TimePeriod, not a DateTimePeriod
+            return result
+        else:
             return result
 
-        begin: DateTimeResolutionResult = prs.begin.value
-        end: DateTimeResolutionResult = prs.end.value
+        if not parse_result_1.value and not parse_result_2:
+            return result
 
-        future_begin: datetime = begin.future_value
-        future_end: datetime = end.future_value
-        past_begin: datetime = begin.past_value
-        past_end: datetime = end.past_value
+        future_begin = parse_result_1.value.future_value
+        future_end = parse_result_2.value.future_value
 
-        if both_has_date:
+        past_begin = parse_result_1.value.past_value
+        past_end = parse_result_2.value.past_value
+
+        if both_have_dates:
             if future_begin > future_end:
                 future_begin = past_begin
-
             if past_end < past_begin:
                 past_end = future_end
 
-            total_hours = DateUtils.total_hours(future_begin, future_end)
-            result.timex = f'({prs.begin.timex_str},{prs.end.timex_str},PT{total_hours}H)'
+        if both_have_dates:
+            result.timex = f'({parse_result_1.timex_str},{parse_result_2.timex_str},PT{DateUtils.total_hours(future_begin, future_end)}H)'
+
+            # Do nothing
         elif begin_has_date:
-            future_end = self.get_datetime(future_begin, future_end)
-            past_end = self.get_datetime(past_begin, past_end)
-            total_hours = DateUtils.total_hours(future_begin, future_end)
-            date_str = prs.begin.timex_str.split('T').pop()
-            result.timex = f'({prs.begin.timex_str},{date_str}{prs.end.timex_str},PT{total_hours}H)'
+            future_end = DateUtils.safe_create_from_min_value(future_begin.year, future_begin.month, future_begin.day,
+                                                              future_end.hour, future_end.minute, future_end.second)
+            past_end = DateUtils.safe_create_from_min_value(past_begin.year, past_begin.month, past_begin.day,
+                                                            past_end.hour, past_end.minute, past_end.second)
+
+            date_str = parse_result_1.timex_str.split('T')[0]
+            duration_str = DateTimeFormatUtil.luis_time_span(future_end - future_begin)
+            result.timex = f'({parse_result_1.timex_str},{date_str + parse_result_2.timex_str},{duration_str})'
         elif end_has_date:
-            future_begin = self.get_datetime(future_end, future_begin)
-            past_begin = self.get_datetime(past_end, past_begin)
-            total_hours = DateUtils.total_hours(future_begin, future_end)
-            date_str = prs.end.timex_str.split('T')[0]
-            result.timex = f'({date_str}{prs.begin.timex_str},{prs.end.timex_str},PT{total_hours}H)'
+            future_end = DateUtils.safe_create_from_min_value(future_end.year, future_end.month, future_end.day,
+                                                              future_begin.hour, future_begin.minute, future_begin.second)
+            past_end = DateUtils.safe_create_from_min_value(past_end.year, past_end.month, past_end.day,
+                                                            past_begin.hour, past_begin.minute, past_begin.second)
 
-        if begin.comment and begin.comment.endswith(Constants.AM_PM_GROUP_NAME) and end.comment and \
-                end.comment.endswith(Constants.AM_PM_GROUP_NAME):
-            result.comment = Constants.AM_PM_GROUP_NAME
+            date_str = parse_result_2.timex_str.split('T')[0]
+            duration_str = DateTimeFormatUtil.luis_time_span(past_end - past_begin)
+            result.timex = f'({date_str + parse_result_1.timex_str},{parse_result_2.timex_str},{duration_str})'
 
-        result.future_value = [future_begin, future_end]
-        result.past_value = [past_begin, past_end]
+        am_pm_str_1 = parse_result_1.value.comment
+        am_pm_str_2 = parse_result_2.value.comment
+        if am_pm_str_1 and am_pm_str_1.endswith(Constants.COMMENT_AMPM) and \
+           am_pm_str_2 and am_pm_str_2.endswith(Constants.COMMENT_AMPM):
+            result.comment = Constants.COMMENT_AMPM
+
+        result.future_value = (future_begin, future_end)
+        result.past_value = (past_begin, past_end)
         result.success = True
-        result.sub_date_time_entities = [prs.begin, prs.end]
+        result.sub_date_time_entities = [parse_result_1, parse_result_2]
 
         return result
 
@@ -1088,152 +1133,153 @@ class BaseDateTimePeriodParser(DateTimeParser):
         return DateUtils.safe_create_from_min_value(date.year, date.month, date.day, time.hour, time.minute,
                                                     time.second)
 
+    # Parse specific time of day like 'this nigth', 'early morning', 'last evening'
     def parse_specific_time_of_day(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
-        time_str = source
+        trimmed_source = source.strip()
+        time_text = trimmed_source
+
+        match = regex.search(self.config.period_time_of_day_with_date_regex, trimmed_source)
+        # Extract early/late prefix from text if any
         has_early = False
         has_late = False
-
-        match = regex.search(
-            self.config.period_time_of_day_with_date_regex, source)
         if match:
-            time_str = RegExpUtility.get_group(match, Constants.TIME_OF_DAY_GROUP_NAME)
-            if RegExpUtility.get_group(match, Constants.EARLY):
+            time_text = RegExpUtility.get_group(match, Constants.TIME_OF_DAY_GROUP_NAME)
+            if RegExpUtility.get_group(match, Constants.COMMENT_EARLY):
                 has_early = True
-                result.comment = Constants.EARLY
+                result.comment = Constants.COMMENT_EARLY
                 result.mod = TimeTypeConstants.EARLY_MOD
-            elif RegExpUtility.get_group(match, Constants.LATE):
+            if RegExpUtility.get_group(match, Constants.COMMENT_LATE):
                 has_late = True
-                result.comment = Constants.LATE
+                result.comment = Constants.COMMENT_LATE
                 result.mod = TimeTypeConstants.LATE_MOD
-
-        matched = self.config.get_matched_time_range(time_str)
-        if not matched.success:
-            return result
-
-        if has_early:
-            matched = MatchedTimeRange(matched.time_str, matched.begin_hour, matched.begin_hour + 2,
-                                       0 if matched.end_min == 59 else matched.end_min, matched.success)
-        elif has_late:
-            matched = MatchedTimeRange(matched.time_str, matched.begin_hour + 2, matched.end_hour, matched.end_min,
-                                       matched.success)
-
-        match = list(self.config.specific_time_of_day_regex.finditer(source))
-        if match and match[-1].start() == 0 and match[-1].group() == source:
-            swift = self.config.get_swift_prefix(source)
-            date = reference + timedelta(days=swift)
-            result.timex = DateTimeFormatUtil.format_date(
-                date) + matched.time_str
-            result.future_value = [
-                DateUtils.safe_create_from_min_value(
-                    date.year, date.month, date.day, matched.begin_hour, 0, 0),
-                DateUtils.safe_create_from_min_value(date.year, date.month, date.day, matched.end_hour, matched.end_min,
-                                                     matched.end_min)
-            ]
-            result.past_value = [
-                DateUtils.safe_create_from_min_value(
-                    date.year, date.month, date.day, matched.begin_hour, 0, 0),
-                DateUtils.safe_create_from_min_value(date.year, date.month, date.day, matched.end_hour, matched.end_min,
-                                                     matched.end_min)
-            ]
-            result.success = True
-
-            return result
-
-        match = list(
-            self.config.period_time_of_day_with_date_regex.finditer(source))
-        if not match:
-            return result
-
-        before_str = source[0:match[-1].start()].strip()
-        after_str = source[match[-1].end():].strip()
-        extracted_result = next(iter(self.config.date_extractor.extract(
-            before_str, reference)), None)
-
-        # eliminate time period, if any
-        time_period_er = next(
-            iter(self.config.time_period_extractor.extract(before_str)), None)
-        if time_period_er:
-            before_str = before_str[time_period_er.start:time_period_er.start +
-                                    time_period_er.length].strip()
         else:
-            time_period_er = next(
-                iter(self.config.time_period_extractor.extract(after_str)), None)
-            if time_period_er:
-                after_str = after_str[time_period_er.start:time_period_er.start +
-                                      time_period_er.length].strip()
+            match = self.config.am_desc_regex.match(trimmed_source)
+            if not match:
+                match = self.config.pm_desc_regex.match(trimmed_source)
+            else:
+                time_text = match.group()
 
-        if not extracted_result or extracted_result.length != len(before_str):
-            valid = False
-            if extracted_result and extracted_result.start == 0:
-                middle_str = before_str[extracted_result.start + extracted_result.length:]
-                if not middle_str.replace(',', ''):
-                    valid = True
+        # handle time of day
 
-            if not valid:
-                extracted_result = next(
-                    iter(self.config.date_extractor.extract(after_str)), None)
-                if not extracted_result or extracted_result.length != len(after_str):
-                    if extracted_result and extracted_result.start + extracted_result.length == len(after_str):
+        # Late/early only works with time of day
+        # Only standard time of day (morning, afternoon, evening and night) will not directly return
+        matched, time_str, begin_hour, end_hour, end_min = self.config.get_matched_time_range(time_text)
+        if not matched:
+            return result
+
+        # Modify time period if 'early' or 'late' exists
+        # Since 'time of day' is defined as four hour periods
+        # the first 2 hours represent early, the later 2 hours represent late
+        if has_early:
+            end_hour = begin_hour + 2
+            if end_min == 59:
+                end_min = 0
+        elif has_late:
+            begin_hour = begin_hour + 2
+
+        if RegExpUtility.is_exact_match(self.config.specific_time_of_day_regex, trimmed_source, True):
+            swift = self.config.get_swift_prefix(trimmed_source)
+            date = (reference + timedelta(days=swift)).date()
+            day = date.day
+            month = date.month
+            year = date.year
+
+            result.timex = DateTimeFormatUtil.format_date(date) + time_str
+
+            result.future_value = result.past_value = (DateUtils.safe_create_from_min_value(year, month, day,
+                                                                                            begin_hour, 0, 0),
+                                                       DateUtils.safe_create_from_min_value(year, month, day,
+                                                                                            end_hour, end_min, end_min))
+
+            result.success = True
+            return result
+
+        # Handle Date followed by morning, afternoon and morning, afternoon followed by Date
+        match = self.config.period_time_of_day_with_date_regex.search(trimmed_source)
+
+        if not match:
+            match = self.config.am_desc_regex.sarch(trimmed_source)
+            if not match:
+                match = self.config.pm_desc_regex.search(trimmed_source)
+        else:
+            before_str = trimmed_source[0:match.start()].strip()
+            after_str = trimmed_source[match.end():].strip()
+
+            # Eliminate time period, if any
+            time_period_extract_results = self.config.time_period_extractor.extract(before_str)
+            if len(time_period_extract_results) > 0:
+                for i in range(time_period_extract_results[0].start, time_period_extract_results[0].length):
+                    before_str.replace(before_str[i], '').strip()
+            else:
+                time_period_extract_results = self.config.time_period_extractor.extract(after_str)
+                if len(time_period_extract_results) > 0:
+                    for i in range(time_period_extract_results[0].start, time_period_extract_results[0].length):
+                        after_str.replace(after_str[i], '').strip()
+
+            extracted_results = self.config.date_extractor.extract(before_str + ' ' + after_str, reference)
+            if len(extracted_results) == 0 or extracted_results[0].length < len(before_str):
+                valid = False
+                if len(extracted_results) > 0 and extracted_results[0].start == 0:
+                    mid_str = before_str[extracted_results[0].start + extracted_results[0].length:]
+                    if mid_str.replace(',', ' '):
                         valid = True
-                else:
-                    valid = True
 
+                if not valid:
+                    extracted_results = self.config.date_extractor.extract(after_str, reference)
+                    if len(extracted_results) == 0 or extracted_results[0].length != len(after_str):
+                        if len(extracted_results) > 0 and extracted_results[0].start + extracted_results[0].length ==\
+                                len(after_str):
+                            mid_str = after_str[0:extracted_results[0].start]
+                            if not mid_str.replace(',', ' '):
+                                valid = True
+                    else:
+                        valid = True
                 if not valid:
                     return result
 
-        has_specific_time_period = False
-        if time_period_er:
-            time_pr = self.config.time_period_parser.parse(time_period_er)
-            if time_pr:
-                period_future = time_pr.value.future_value
-                period_past = time_pr.value.past_value
+            has_specific_time_period = False
+            if len(time_period_extract_results) > 0:
+                time_parse_result = self.config.time_period_parser.parse(time_period_extract_results[0], reference)
+                if time_parse_result:
+                    period_future = (time_parse_result.value.future_value.start, time_parse_result.value.future_value.end)
+                    period_past = (time_parse_result.value.past_value.start, time_parse_result.value.past_value.end)
 
-                if period_future.start == period_past.start and period_future.end == period_past.end:
-                    begin_hour: datetime = period_future.start
-                    end_hour: datetime = period_future.end
-                    matched = MatchedTimeRange(matched.time_str, begin_hour.hour, end_hour.hour, matched.end_min,
-                                               matched.success)
-                else:
-                    if period_future.start.hour >= matched.begin_hour or period_future.end.hour <= matched.end_hour:
-                        begin_hour: datetime = period_future.start
-                        end_hour: datetime = period_future.end
-                        matched = MatchedTimeRange(matched.time_str, begin_hour.hour, end_hour.hour, matched.end_min,
-                                                   matched.success)
+                    if period_future == period_past:
+                        begin_hour = period_future[0].hour
+                        end_hour = period_future[1].hour
                     else:
-                        begin_hour: datetime = period_past.start
-                        end_hour: datetime = period_past.end
-                        matched = MatchedTimeRange(matched.time_str, begin_hour.hour, end_hour.hour, matched.end_min,
-                                                   matched.success)
+                        if period_future[0].hour >= begin_hour or period_future[1].hour <= end_hour:
+                            begin_hour = period_future[0].hour
+                            end_hour = period_future[1].hour
+                        else:
+                            begin_hour = period_past[0].hour
+                            end_hour = period_past[1].hour
 
-                has_specific_time_period = True
+                    has_specific_time_period = True
 
-        parse_result = self.config.date_parser.parse(extracted_result, reference)
-        if not parse_result:
+            parse_result = self.config.date_parser.parse(extracted_results[0], reference)
+            future_date = parse_result.value.future_value
+            past_date = parse_result.value.past_value
+
+            if not has_specific_time_period:
+                result.timex = parse_result.timex_str + time_str
+            else:
+                format_str = '({}T{},{}T{},PT{}H)'
+                result.timex = format_str.format(parse_result.timex_str, begin_hour, parse_result.timex_str, end_hour,
+                                                 end_hour - begin_hour)
+
+            result.future_value = (DateUtils.safe_create_from_min_value(future_date.year, future_date.month,
+                                                                        future_date.day, begin_hour, 0, 0),
+                                   DateUtils.safe_create_from_min_value(future_date.year, future_date.month,
+                                                                        future_date.day, end_hour, end_min, end_min))
+            result.past_value = (DateUtils.safe_create_from_min_value(past_date.year, past_date.month,
+                                                                        past_date.day, begin_hour, 0, 0),
+                                   DateUtils.safe_create_from_min_value(past_date.year, past_date.month,
+                                                                        past_date.day, end_hour, end_min, end_min))
+
+            result.success = True
             return result
-
-        future_date: datetime = parse_result.value.future_value
-        past_date: datetime = parse_result.value.past_value
-
-        if not has_specific_time_period:
-            result.timex = parse_result.timex_str + matched.time_str
-        else:
-            result.timex = f'({parse_result.timex_str}T{matched.begin_hour},{parse_result.timex_str}T{matched.end_hour},' \
-                           f'PT{matched.end_hour - matched.begin_hour}H)'
-
-        result.future_value = [
-            DateUtils.safe_create_from_min_value(future_date.year, future_date.month, future_date.day,
-                                                 matched.begin_hour, 0, 0),
-            DateUtils.safe_create_from_min_value(future_date.year, future_date.month, future_date.day, matched.end_hour,
-                                                 matched.end_min, matched.end_min)
-        ]
-        result.past_value = [
-            DateUtils.safe_create_from_min_value(past_date.year, past_date.month, past_date.day, matched.begin_hour, 0,
-                                                 0),
-            DateUtils.safe_create_from_min_value(past_date.year, past_date.month, past_date.day, matched.end_hour,
-                                                 matched.end_min, matched.end_min)
-        ]
-        result.success = True
 
         return result
 
@@ -1272,7 +1318,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
                 mod = ''
                 duration_result = parse_result.value
 
-                if duration_result.past_value is float and duration_result.future_value is float:
+                if duration_result.past_value and duration_result.future_value:
                     swift_seconds = int(float(duration_result.future_value))
 
                 end_time = begin_time = reference
@@ -1302,9 +1348,9 @@ class BaseDateTimePeriodParser(DateTimeParser):
                     end_time = begin_time + timedelta(seconds=swift_seconds)
 
                 result.timex = f'({DateTimeFormatUtil.luis_date_from_datetime(begin_time)}T' \
-                               f'{DateTimeFormatUtil.luis_date_from_datetime(begin_time)},' + \
+                               f'{DateTimeFormatUtil.luis_time_from_datetime(begin_time)},' + \
                                f'{DateTimeFormatUtil.luis_date_from_datetime(end_time)}T' \
-                               f'{DateTimeFormatUtil.luis_date_from_datetime(end_time)},' + \
+                               f'{DateTimeFormatUtil.luis_time_from_datetime(end_time)},' + \
                                f'{duration_result.timex})'
 
                 result.future_value = result.past_value = (begin_time, end_time)
@@ -1444,8 +1490,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
     def parse_date_with_time_period_suffix(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
 
-        date_extract_result = next(self.config.date_extractor.extract(source), None)
-        time_extract_result = next(self.config.time_extractor.extract(source), None)
+        date_extract_result = next(iter(self.config.date_extractor.extract(source)), None)
+        time_extract_result = next(iter(self.config.time_extractor.extract(source)), None)
 
         if date_extract_result and time_extract_result:
             date_str_end = int(date_extract_result.start + date_extract_result.length)
