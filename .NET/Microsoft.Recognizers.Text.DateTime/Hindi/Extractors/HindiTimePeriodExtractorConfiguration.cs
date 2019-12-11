@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Hindi;
 using Microsoft.Recognizers.Text.DateTime.Hindi.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Hindi
 {
@@ -62,13 +63,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
+        private static readonly Regex FromRegex =
+            new Regex(DateTimeDefinitions.FromTokenRegex, RegexFlags);
+
+        private static readonly Regex BetweenRegex =
+            new Regex(DateTimeDefinitions.BetweenTokenRegex, RegexFlags);
+
+        private static readonly Regex RangeConnectorRegex =
+            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
+
         public HindiTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             SingleTimeExtractor = new BaseTimeExtractor(new HindiTimeExtractorConfiguration(this));
             UtilityConfiguration = new HindiDatetimeUtilityConfiguration();
-            IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
+            IntegerExtractor = Number.Hindi.IntegerExtractor.GetInstance();
         }
 
         public string TokenBeforeDate { get; }
@@ -102,30 +112,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("from"))
+            var fromMatch = FromRegex.Match(text);
+            if (fromMatch.Success)
             {
-                index = text.LastIndexOf("from", StringComparison.Ordinal);
-                return true;
+                index = fromMatch.Index;
             }
 
-            return false;
+            return fromMatch.Success;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("between"))
+            var betweenMatch = BetweenRegex.Match(text);
+            if (betweenMatch.Success)
             {
-                index = text.LastIndexOf("between", StringComparison.Ordinal);
-                return true;
+                index = betweenMatch.Index;
             }
 
-            return false;
+            return betweenMatch.Success;
         }
 
         public bool IsConnectorToken(string text)
         {
-            return text.Equals("and");
+            return RangeConnectorRegex.IsExactMatch(text, trim: true);
         }
     }
 }

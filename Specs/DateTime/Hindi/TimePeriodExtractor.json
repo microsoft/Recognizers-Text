@@ -1,7 +1,6 @@
 [
   {
     "Input": "मैं शाम 5 से 6 बाहर रहुंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -14,128 +13,34 @@
   },
   {
     "Input": "मैं दोपहर में 5 से 6 तक बाहर रहुंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दोपहर में 5 से 6 तक",
+        "Text": "दोपहर में 5 से 6",
         "Type": "timerange",
         "Start": 4,
-        "Length": 19
+        "Length": 16
       }
     ]
   },
   {
     "Input": "मैं सुबह 5 से सात तक बाहर रहुंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह 5 से सात तक",
+        "Text": "सुबह 5 से सात",
         "Type": "timerange",
         "Start": 4,
-        "Length": 16
+        "Length": 13
       }
     ]
   },
   {
     "Input": "मैं शाम 5 और 6 के बीच बाहर रहुंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 5 और 6 के बीच",
-        "Type": "timerange",
-        "Start": 4,
-        "Length": 17
-      }
-    ]
-  },
-  {
-    "Input": "मैं दिन में 5 से 6 के बीच बाहर रहुंगा",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "दिन में 5 से 6 के बीच",
-        "Type": "timerange",
-        "Start": 4,
-        "Length": 21
-      }
-    ]
-  },
-  {
-    "Input": "मैं शाम 4 से 5 तक बाहर रहुंगा",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "शाम 4 से 5 तक",
-        "Type": "timerange",
-        "Start": 4,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "मैं 4 से शाम 5 तक बाहर रहुंगा",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "4 से शाम 5 तक",
-        "Type": "timerange",
-        "Start": 4,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "मैं 4:00 से शाम 5 तक बाहर रहुंगा",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "4:00 से शाम 5 तक",
-        "Type": "timerange",
-        "Start": 4,
-        "Length": 16
-      }
-    ]
-  },
-  {
-    "Input": "मैं 4:00 से 7 बजे तक बाहर रहुंगा",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "4:00 से 7 बजे तक",
-        "Type": "timerange",
-        "Start": 4,
-        "Length": 16
-      }
-    ]
-  },
-  {
-    "Input": "मैं शाम 3 से साढ़े सात तक बाहर रहुंगा",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "शाम 3 से साढ़े सात तक",
-        "Type": "timerange",
-        "Start": 4,
-        "Length": 20
-      }
-    ]
-  },
-  {
-    "Input": "मैं शाम 4-5 तक बाहर रहुंगा",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "शाम 4-5 तक",
+        "Text": "शाम 5 और 6",
         "Type": "timerange",
         "Start": 4,
         "Length": 10
@@ -143,51 +48,155 @@
     ]
   },
   {
-    "Input": "मैं तीन बजने में 20 मिनट से शाम के आठ बजे तक बाहर रहुंगा",
-    "NotSupported": "dotnet",
+    "Input": "मैं दिन में 5 से 6 के बीच बाहर रहुंगा",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "तीन बजने में 20 मिनट से शाम के आठ बजे तक",
+        "Text": "दिन में 5 से 6",
         "Type": "timerange",
         "Start": 4,
-        "Length": 40
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम 4 से 5 तक बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम 4 से 5",
+        "Type": "timerange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं 4 से शाम 5 तक बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4 से शाम 5",
+        "Type": "timerange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं 4:00 से शाम 5 तक बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4:00 से शाम 5",
+        "Type": "timerange",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं 4:00 से 7 बजे तक बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4:00 से 7 बजे",
+        "Type": "timerange",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम 3 से साढ़े सात तक बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम 3 से साढ़े सात",
+        "Type": "timerange",
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम 4-5 तक बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम 4-5",
+        "Type": "timerange",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं तीन बजने में 20 मिनट से शाम के आठ बजे तक बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीन बजने में 20 मिनट से शाम के आठ बजे",
+        "Type": "timerange",
+        "Start": 4,
+        "Length": 37
       }
     ]
   },
   {
     "Input": "मैं शाम के 4 से 5 तक बाहर रहुंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम के 4 से 5 तक",
+        "Text": "शाम के 4 से 5",
         "Type": "timerange",
         "Start": 4,
-        "Length": 16
+        "Length": 13
       }
     ]
   },
   {
     "Input": "मैं शाम के 4 से साढ़े पाँच तक बाहर रहुंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम के 4 से साढ़े पाँच तक",
+        "Text": "शाम के 4 से साढ़े पाँच",
         "Type": "timerange",
         "Start": 4,
-        "Length": 24
+        "Length": 21
       }
     ]
   },
   {
     "Input": "मैं सुबह 3 से शाम 5 तक बाहर रहुंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह 3 से शाम 5 तक",
+        "Text": "सुबह 3 से शाम 5",
+        "Type": "timerange",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं सुबह 3 से दोपहर पाँच तक बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह 3 से दोपहर पाँच",
+        "Type": "timerange",
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम 4 से साढ़े पाँच के बीच बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम 4 से साढ़े पाँच",
         "Type": "timerange",
         "Start": 4,
         "Length": 18
@@ -195,60 +204,31 @@
     ]
   },
   {
-    "Input": "मैं सुबह 3 से दोपहर पाँच तक बाहर रहुंगा",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "सुबह 3 से दोपहर पाँच तक",
-        "Type": "timerange",
-        "Start": 4,
-        "Length": 23
-      }
-    ]
-  },
-  {
-    "Input": "मैं शाम 4 से साढ़े पाँच के बीच बाहर रहुंगा",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "शाम 4 से साढ़े पाँच के बीच",
-        "Type": "timerange",
-        "Start": 4,
-        "Length": 25
-      }
-    ]
-  },
-  {
     "Input": "मैं सुबह 3 से शाम 5 के बीच बाहर रहुंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह 3 से शाम 5 के बीच",
+        "Text": "सुबह 3 से शाम 5",
         "Type": "timerange",
         "Start": 4,
-        "Length": 22
+        "Length": 15
       }
     ]
   },
   {
     "Input": "सुबह मिलते हैं ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह ",
+        "Text": "सुबह",
         "Type": "timerange",
         "Start": 0,
-        "Length": 5
+        "Length": 4
       }
     ]
   },
   {
     "Input": "दोपहर में मिलते हैं ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -261,33 +241,30 @@
   },
   {
     "Input": "रात को मिलते हैं ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "रात को ",
+        "Text": "रात को",
         "Type": "timerange",
         "Start": 0,
-        "Length": 7
+        "Length": 6
       }
     ]
   },
   {
     "Input": "शाम को मिलते हैं ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम को ",
+        "Text": "शाम को",
         "Type": "timerange",
         "Start": 0,
-        "Length": 7
+        "Length": 6
       }
     ]
   },
   {
     "Input": "रोज शाम को मिलते हैं ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -300,7 +277,6 @@
   },
   {
     "Input": "तड़के सुबह मिलते हैं ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -313,7 +289,6 @@
   },
   {
     "Input": "रोज देर सुबह को मिलते हैं ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -326,7 +301,6 @@
   },
   {
     "Input": "सुबह-सुबह मिलते हैं ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -339,7 +313,6 @@
   },
   {
     "Input": "देर सुबह को मिलते हैं ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -352,7 +325,6 @@
   },
   {
     "Input": "दोपहर को जल्दी मिलते हैं",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -365,7 +337,6 @@
   },
   {
     "Input": "देर दोपहर को मिलते हैं",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -378,7 +349,6 @@
   },
   {
     "Input": "शाम को जल्दी मिलते हैं",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -391,7 +361,6 @@
   },
   {
     "Input": "संध्या प्रहर देर से मिलते हैं",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -404,7 +373,6 @@
   },
   {
     "Input": "रात को जल्दी मिलते हैं",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -417,7 +385,6 @@
   },
   {
     "Input": "देर रात में मिलते हैं",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -430,20 +397,18 @@
   },
   {
     "Input": "जल्दी रात को मिलते हैं",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "जल्दी रात को ",
+        "Text": "जल्दी रात को",
         "Type": "timerange",
         "Start": 0,
-        "Length": 13
+        "Length": 12
       }
     ]
   },
   {
     "Input": "देर रात को मिलते हैं ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -456,86 +421,79 @@
   },
   {
     "Input": "शाम दो से पाँच की मुलाकात रखो ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम दो से पाँच की",
+        "Text": "शाम दो से पाँच",
         "Type": "timerange",
         "Start": 0,
-        "Length": 17
+        "Length": 14
       }
     ]
   },
   {
     "Input": "सुमन के यहाँ पार्टी शाम 6 से 11 ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 6 से 11 ",
+        "Text": "शाम 6 से 11",
         "Type": "timerange",
         "Start": 20,
-        "Length": 12
+        "Length": 11
       }
     ]
   },
   {
     "Input": "14:00 से 16:30 तक मुलाकात रखो",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "14:00 से 16:30 तक",
+        "Text": "14:00 से 16:30",
         "Type": "timerange",
         "Start": 0,
-        "Length": 17
+        "Length": 14
       }
     ]
   },
   {
     "Input": "शाम दो से पाँच तक मुलाकात रखो",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम दो से पाँच तक",
+        "Text": "शाम दो से पाँच",
         "Type": "timerange",
         "Start": 0,
-        "Length": 17
+        "Length": 14
       }
     ]
   },
   {
     "Input": "दोपहर 1:30 से 4 तक मुलाकात रखो ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दोपहर 1:30 से 4 तक",
+        "Text": "दोपहर 1:30 से 4",
         "Type": "timerange",
         "Start": 0,
-        "Length": 18
+        "Length": 15
       }
     ]
   },
   {
     "Input": "शाम 1 से 4 तक मुलाकात रखो",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 1 से 4 तक",
+        "Text": "शाम 1 से 4",
         "Type": "timerange",
         "Start": 0,
-        "Length": 13
+        "Length": 10
       }
     ]
   },
   {
     "Input": "नमस्कार कोर्टाना - जेनिफ़र के साथ एक स्काइप मीटिंग रखो। मुझे दोपहर में 30 मिनट की एक मीटिंग चाहिए , मैं इस शुक्रवार को जाउंगा",
     "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -549,7 +507,6 @@
   {
     "Input": "नमस्ते कोर्टाना - जेनिफ़र के साथ एक स्काइप मीटिंग रखो। मुझे इस शुक्रवार को 30 मिनट की एक मीटिंग चाहिए , मैं दोपहर को जाउंगा",
     "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -562,27 +519,25 @@
   },
   {
     "Input": "1:30 से 3:30 तक मुलाकात रखो ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1:30 से 3:30 तक",
+        "Text": "1:30 से 3:30",
         "Type": "timerange",
         "Start": 0,
-        "Length": 15
+        "Length": 12
       }
     ]
   },
   {
     "Input": "शाम 1:30 से 3:30 तक मुलाकात रखो ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 1:30 से 3:30 तक",
+        "Text": "शाम 1:30 से 3:30",
         "Type": "timerange",
         "Start": 0,
-        "Length": 19
+        "Length": 16
       }
     ]
   }
