@@ -85,6 +85,53 @@ namespace Microsoft.Recognizers.Text.DateTime
             return $"({DateTimeFormatUtil.LuisDate(begin, alternativeBegin)},{DateTimeFormatUtil.LuisDate(end, alternativeEnd)},{datePeriodTimex})";
         }
 
+        public static string GenerateDatePeriodTimex(DateObject begin, DateObject end, DatePeriodTimexType timexType, bool nonspecificYear, bool nonspecificMonth = false, bool nonspecificDay = false)
+        {
+            var beginYear = begin.Year;
+            var endYear = end.Year;
+            var beginMonth = begin.Month;
+            var endMonth = end.Month;
+            var beginDay = begin.Day;
+            var endDay = end.Day;
+
+            if (nonspecificYear)
+            {
+                beginYear = endYear = -1;
+            }
+
+            if (nonspecificMonth)
+            {
+                beginMonth = endMonth = -1;
+            }
+
+            if (nonspecificDay)
+            {
+                beginDay = endDay = -1;
+            }
+
+            string unitCount;
+
+            switch (timexType)
+            {
+                case DatePeriodTimexType.ByDay:
+                    unitCount = (end - begin).TotalDays.ToString(CultureInfo.InvariantCulture);
+                    break;
+                case DatePeriodTimexType.ByWeek:
+                    unitCount = ((end - begin).TotalDays / 7).ToString(CultureInfo.InvariantCulture);
+                    break;
+                case DatePeriodTimexType.ByMonth:
+                    unitCount = (((end.Year - begin.Year) * 12) + (end.Month - begin.Month)).ToString(CultureInfo.InvariantCulture);
+                    break;
+                default:
+                    unitCount = ((end.Year - begin.Year) + ((end.Month - begin.Month) / 12.0)).ToString(CultureInfo.InvariantCulture);
+                    break;
+            }
+
+            var datePeriodTimex = $"P{unitCount}{DatePeriodTimexTypeToTimexSuffix[timexType]}";
+
+            return $"({DateTimeFormatUtil.LuisDate(beginYear, beginMonth, beginDay)},{DateTimeFormatUtil.LuisDate(endYear, endMonth, endDay)},{datePeriodTimex})";
+        }
+
         public static string GenerateWeekTimex(DateObject monday = default(DateObject))
         {
             if (monday.IsDefaultValue())
