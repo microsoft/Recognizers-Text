@@ -1274,9 +1274,9 @@ class BaseDateTimePeriodParser(DateTimeParser):
                                    DateUtils.safe_create_from_min_value(future_date.year, future_date.month,
                                                                         future_date.day, end_hour, end_min, end_min))
             result.past_value = (DateUtils.safe_create_from_min_value(past_date.year, past_date.month,
-                                                                        past_date.day, begin_hour, 0, 0),
-                                   DateUtils.safe_create_from_min_value(past_date.year, past_date.month,
-                                                                        past_date.day, end_hour, end_min, end_min))
+                                                                      past_date.day, begin_hour, 0, 0),
+                                 DateUtils.safe_create_from_min_value(past_date.year, past_date.month,
+                                                                      past_date.day, end_hour, end_min, end_min))
 
             result.success = True
             return result
