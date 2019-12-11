@@ -16,13 +16,8 @@ class SpanishDateTimePeriodParser(BaseDateTimePeriodParser):
         trimmed_text = source.strip().lower()
 
         # Handle morning, afternoon..
-        match = self.config.get_matched_time_range(trimmed_text)
-        begin_hour = match.begin_hour
-        end_hour = match.end_hour
-        end_min = match.end_min
-        time_str = match.time_str
-
-        if match and not match.success:
+        matched, time_str, begin_hour, end_hour, end_min = self.config.get_matched_time_range(trimmed_text)
+        if matched:
             return result
 
         match = self.config.specific_time_of_day_regex.match(trimmed_text)
