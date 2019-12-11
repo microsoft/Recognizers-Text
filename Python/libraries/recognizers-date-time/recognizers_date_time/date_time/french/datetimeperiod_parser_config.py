@@ -9,12 +9,25 @@ from ..base_configs import BaseDateParserConfiguration
 
 
 class FrenchDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration):
+
+    @property
+    def future_suffix_regex(self):
+        return self._future_suffix_regex
+
+    @property
+    def within_next_prefix_regex(self):
+        return self._within_next_prefix_regex
+
     def __init__(self, config: BaseDateParserConfiguration):
+        self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.WithinNextPrefixRegex)
+        self._future_suffix_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.FutureSuffixRegex)
+        self._am_desc_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.AmDescRegex)
+        self._pm_desc_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.PmDescRegex)
         self._date_extractor = config.date_extractor
         self._time_extractor = config.time_extractor
         self._date_time_extractor = config.date_time_extractor
         self._time_period_extractor = config.time_period_extractor
-        self.cardinal_extractor = config.cardinal_extractor
+        self._cardinal_extractor = config.cardinal_extractor
         self._duration_extractor = config.duration_extractor
         self.number_parser = config.number_parser
         self._date_parser = config.date_parser
@@ -35,7 +48,7 @@ class FrenchDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
             FrenchDateTime.AfterRegex)
         self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.NextSuffixRegex)
-        self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
+        self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.PastSuffixRegex)
         self.this_prefix_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.ThisPrefixRegex)
@@ -69,6 +82,22 @@ class FrenchDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
             FrenchDateTime.RelativeTimeUnitRegex)
         self._rest_of_date_time_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.RestOfDateTimeRegex)
+
+    @property
+    def previous_prefix_regex(self):
+        return self._previous_prefix_regex
+
+    @property
+    def cardinal_extractor(self):
+        return self._cardinal_extractor
+
+    @property
+    def am_desc_regex(self):
+        return self._am_desc_regex
+
+    @property
+    def pm_desc_regex(self):
+        return self._pm_desc_regex
 
     @property
     def before_regex(self):
@@ -170,9 +199,8 @@ class FrenchDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
     def duration_parser(self) -> DateTimeParser:
         return self._duration_parser
 
-    def get_matched_time_range(self, source: str) -> MatchedTimeRange:
+    def get_matched_time_range(self, source: str):
         trimmed_source = source.strip().lower()
-        time_str = ''
         begin_hour = 0
         end_hour = 0
         end_min = 0
@@ -195,9 +223,10 @@ class FrenchDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
             end_hour = 23
             end_min = 59
         else:
-            return MatchedTimeRange(time_str, begin_hour, end_hour, end_min, False)
+            time_str = ''
+            return False, time_str, begin_hour, end_hour, end_min
 
-        return MatchedTimeRange(time_str, begin_hour, end_hour, end_min, True)
+        return True, time_str, begin_hour, end_hour, end_min
 
     def get_swift_prefix(self, source: str) -> int:
         trimmed_source = source.strip().lower()
