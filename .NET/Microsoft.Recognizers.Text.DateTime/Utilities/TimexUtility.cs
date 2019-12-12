@@ -7,6 +7,30 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
+    [Flags]
+    public enum UnspecificDateTimeTerms
+    {
+        /// <summary>
+        /// None
+        /// </summary>
+        None = 0,
+
+        /// <summary>
+        /// NonspecificYear
+        /// </summary>
+        NonspecificYear = 1,
+
+        /// <summary>
+        /// NonspecificMonth
+        /// </summary>
+        NonspecificMonth = 2,
+
+        /// <summary>
+        /// NonspecificDay
+        /// </summary>
+        NonspecificDay = 4,
+    }
+
     public static class TimexUtility
     {
         private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
@@ -50,6 +74,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return timexBuilder.ToString();
         }
 
+        // TODO: Unify this two methods. This one here detect if "begin/end" have same year, month and day with "alter begin/end" and make them nonspecific.
         public static string GenerateDatePeriodTimex(DateObject begin, DateObject end, DatePeriodTimexType timexType, DateObject alternativeBegin = default(DateObject), DateObject alternativeEnd = default(DateObject))
         {
             var equalDurationLength = (end - begin) == (alternativeEnd - alternativeBegin);
@@ -59,30 +84,42 @@ namespace Microsoft.Recognizers.Text.DateTime
                 equalDurationLength = true;
             }
 
-            var unitCount = "XX";
-
-            if (equalDurationLength)
-            {
-                switch (timexType)
-                {
-                    case DatePeriodTimexType.ByDay:
-                        unitCount = (end - begin).TotalDays.ToString(CultureInfo.InvariantCulture);
-                        break;
-                    case DatePeriodTimexType.ByWeek:
-                        unitCount = ((end - begin).TotalDays / 7).ToString(CultureInfo.InvariantCulture);
-                        break;
-                    case DatePeriodTimexType.ByMonth:
-                        unitCount = (((end.Year - begin.Year) * 12) + (end.Month - begin.Month)).ToString(CultureInfo.InvariantCulture);
-                        break;
-                    default:
-                        unitCount = ((end.Year - begin.Year) + ((end.Month - begin.Month) / 12.0)).ToString(CultureInfo.InvariantCulture);
-                        break;
-                }
-            }
+            var unitCount = equalDurationLength ? GetDatePeriodTimexUnitCount(begin, end, timexType) : "XX";
 
             var datePeriodTimex = $"P{unitCount}{DatePeriodTimexTypeToTimexSuffix[timexType]}";
 
             return $"({DateTimeFormatUtil.LuisDate(begin, alternativeBegin)},{DateTimeFormatUtil.LuisDate(end, alternativeEnd)},{datePeriodTimex})";
+        }
+
+        public static string GenerateDatePeriodTimex(DateObject begin, DateObject end, DatePeriodTimexType timexType, UnspecificDateTimeTerms terms)
+        {
+            var beginYear = begin.Year;
+            var endYear = end.Year;
+            var beginMonth = begin.Month;
+            var endMonth = end.Month;
+            var beginDay = begin.Day;
+            var endDay = end.Day;
+
+            if ((terms & UnspecificDateTimeTerms.NonspecificYear) != 0)
+            {
+                beginYear = endYear = -1;
+            }
+
+            if ((terms & UnspecificDateTimeTerms.NonspecificMonth) != 0)
+            {
+                beginMonth = endMonth = -1;
+            }
+
+            if ((terms & UnspecificDateTimeTerms.NonspecificDay) != 0)
+            {
+                beginDay = endDay = -1;
+            }
+
+            var unitCount = GetDatePeriodTimexUnitCount(begin, end, timexType);
+
+            var datePeriodTimex = $"P{unitCount}{DatePeriodTimexTypeToTimexSuffix[timexType]}";
+
+            return $"({DateTimeFormatUtil.LuisDate(beginYear, beginMonth, beginDay)},{DateTimeFormatUtil.LuisDate(endYear, endMonth, endDay)},{datePeriodTimex})";
         }
 
         public static string GenerateWeekTimex(DateObject monday = default(DateObject))
@@ -349,6 +386,29 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             // Remove "PT" prefix for TimeDuration, Remove "P" prefix for DateDuration
             return timex.Substring(IsTimeDurationTimex(timex) ? 2 : 1);
+        }
+
+        private static string GetDatePeriodTimexUnitCount(DateObject begin, DateObject end, DatePeriodTimexType timexType)
+        {
+            string unitCount;
+
+            switch (timexType)
+            {
+                case DatePeriodTimexType.ByDay:
+                    unitCount = (end - begin).TotalDays.ToString(CultureInfo.InvariantCulture);
+                    break;
+                case DatePeriodTimexType.ByWeek:
+                    unitCount = ((end - begin).TotalDays / 7).ToString(CultureInfo.InvariantCulture);
+                    break;
+                case DatePeriodTimexType.ByMonth:
+                    unitCount = (((end.Year - begin.Year) * 12) + (end.Month - begin.Month)).ToString(CultureInfo.InvariantCulture);
+                    break;
+                default:
+                    unitCount = ((end.Year - begin.Year) + ((end.Month - begin.Month) / 12.0)).ToString(CultureInfo.InvariantCulture);
+                    break;
+            }
+
+            return unitCount;
         }
     }
 }
