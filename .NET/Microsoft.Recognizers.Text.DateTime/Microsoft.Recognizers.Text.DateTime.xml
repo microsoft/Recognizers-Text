@@ -129,5 +129,25 @@
             Represents the time of the date
             </summary>
         </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.UnspecificDateTimeTerms.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.UnspecificDateTimeTerms.NonspecificYear">
+            <summary>
+            NonspecificYear
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.UnspecificDateTimeTerms.NonspecificMonth">
+            <summary>
+            NonspecificMonth
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.UnspecificDateTimeTerms.NonspecificDay">
+            <summary>
+            NonspecificDay
+            </summary>
+        </member>
     </members>
 </doc>

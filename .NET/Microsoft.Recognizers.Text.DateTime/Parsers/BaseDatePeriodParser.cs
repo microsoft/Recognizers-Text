@@ -1627,6 +1627,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 endDate = inclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
 
+                // TODO: analyse upper code and use GenerateDatePeriodTimex to create this Timex.
                 ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},{durationTimex})";
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                 ret.Success = true;
@@ -1873,13 +1874,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                 }
+
+                ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDate, endDate, DatePeriodTimexType.ByMonth, UnspecificDateTimeTerms.NonspecificYear);
             }
             else
             {
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+                ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDate, endDate, DatePeriodTimexType.ByMonth);
             }
 
-            ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDate, endDate, DatePeriodTimexType.ByMonth, noSpecificYear);
             ret.Success = true;
 
             return ret;
