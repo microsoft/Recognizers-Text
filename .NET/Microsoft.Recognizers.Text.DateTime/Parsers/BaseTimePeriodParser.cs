@@ -717,6 +717,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             pr1 = this.config.TimeParser.Parse(ers[0], referenceTime);
             pr2 = this.config.TimeParser.Parse(ers[1], referenceTime);
 
+            // cases with time1 = time2 are excluded to avoid parsing here expressions like
+            // "morning-morning" (which in Hindi means "early-morning")
             if (pr1.Value == null || pr2.Value == null || pr1.Text == pr2.Text)
             {
                 return ret;
