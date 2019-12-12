@@ -590,17 +590,17 @@ class BaseTimePeriodParser(DateTimeParser):
         has_late = False
         match = regex.search(self.config.time_of_day_regex, source)
         if match is not None:
-            early = RegExpUtility.get_group(match, Constants.EARLY)
+            early = RegExpUtility.get_group(match, Constants.COMMENT_EARLY)
             if early:
                 has_early = True
                 source = source.replace(early, '')
-                result.comment = Constants.EARLY
+                result.comment = Constants.COMMENT_EARLY
                 result.mod = TimeTypeConstants.EARLY_MOD
-            late = RegExpUtility.get_group(match, Constants.LATE)
+            late = RegExpUtility.get_group(match, Constants.COMMENT_LATE)
             if late:
                 has_late = True
                 source = source.replace(late, '')
-                result.comment = Constants.LATE
+                result.comment = Constants.COMMENT_LATE
                 result.mod = TimeTypeConstants.LATE_MOD
 
         timex_range = self.config.get_matched_timex_range(source)
