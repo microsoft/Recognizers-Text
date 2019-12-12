@@ -2,7 +2,7 @@ from typing import Pattern, Dict
 
 from recognizers_text.utilities import RegExpUtility
 from ...resources.spanish_date_time import SpanishDateTime
-from ..base_datetimeperiod import DateTimePeriodParserConfiguration
+from ..base_datetimeperiod import DateTimePeriodParserConfiguration, MatchedTimeRange
 from ..constants import Constants
 from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
@@ -220,9 +220,9 @@ class SpanishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
             end_min = 59
         else:
             time_str = None
-            return False, time_str, begin_hour, end_hour, end_min
+            return MatchedTimeRange(time_str, begin_hour, end_hour, end_min, False)
 
-        return True, time_str, begin_hour, end_hour, end_min
+        return MatchedTimeRange(time_str, begin_hour, end_hour, end_min, True)
 
     def get_swift_prefix(self, source: str) -> int:
         trimmed_source = source.strip().lower()

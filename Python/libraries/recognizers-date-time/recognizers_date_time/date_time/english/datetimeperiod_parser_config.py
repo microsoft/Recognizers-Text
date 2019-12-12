@@ -213,9 +213,9 @@ class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
             end_min = 59
         else:
             time_str = ''
-            return False, time_str, begin_hour, end_hour, end_min
+            return MatchedTimeRange(time_str, begin_hour, end_hour, end_min, False)
 
-        return True, time_str, begin_hour, end_hour, end_min
+        return MatchedTimeRange(time_str, begin_hour, end_hour, end_min, True)
 
     def get_swift_prefix(self, source: str) -> int:
         if source.startswith('next'):

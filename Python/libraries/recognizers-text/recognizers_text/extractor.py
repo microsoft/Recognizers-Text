@@ -16,10 +16,10 @@ class ExtractResult:
     def end(self):
         return self.start + self.length - 1
 
-    def overlap(self, other: 'ExtractResult') -> bool:
+    def overlap(self, other) -> bool:
         return (not self.start > other.end) and (not other.start > self.end)
 
-    def cover(self, other: 'ExtractResult') -> bool:
+    def cover(self, other) -> bool:
         return (((other.start < self.start) and (other.end >= self.end))
                 or ((other.start <= self.start) and (other.end > self.end)))
 
