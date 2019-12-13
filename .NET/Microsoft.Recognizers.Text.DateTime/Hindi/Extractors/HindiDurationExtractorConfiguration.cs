@@ -70,7 +70,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
 
-        bool IDurationExtractorConfiguration.CheckBothBeforeAfter => true;
+        bool IDurationExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         Regex IDurationExtractorConfiguration.FollowedUnit => DurationFollowedUnit;
 

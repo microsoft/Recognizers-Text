@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
 
     public static class DateTimeDefinitions
     {
-      public const bool CheckBothBeforeAfter = false;
+      public const bool CheckBothBeforeAfter = true;
       public static readonly string TillRegex = $@"(?<till>\b(और|तक|द्वारा|से|to)|{BaseDateTime.RangeConnectorSymbolRegex})";
       public static readonly string RangeConnectorRegex = $@"(?<and>\b(और|तक|द्वारा|से|to)|{BaseDateTime.RangeConnectorSymbolRegex})";
       public const string RelativeRegex = @"\b(?<order>अगला|अगले|दूसरे|अगली|आने\s+वा(ले|ला)|आगामी|पिछला|पिछले|पिछली|आखिरी|अंतिम|यह|इसी|इस|वर्तमान|अभी\s+(के|वाला))";

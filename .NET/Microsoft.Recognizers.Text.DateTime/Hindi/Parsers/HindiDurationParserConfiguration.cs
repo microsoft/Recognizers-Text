@@ -1,8 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Hindi;
-using Microsoft.Recognizers.Text.Number;
-using Microsoft.Recognizers.Text.Number.Hindi;
 
 namespace Microsoft.Recognizers.Text.DateTime.Hindi
 {
@@ -11,8 +9,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public HindiDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
            : base(config)
         {
-            CardinalExtractor = Number.Hindi.CardinalExtractor.GetInstance();
-            NumberParser = new BaseIndianNumberParser(new HindiNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+            CardinalExtractor = config.CardinalExtractor;
+            NumberParser = config.NumberParser;
 
             DurationExtractor = new BaseDurationExtractor(new HindiDurationExtractorConfiguration(this), false);
 
@@ -64,7 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         public Regex SpecialNumberUnitRegex { get; }
 
-        bool IDurationParserConfiguration.CheckBothBeforeAfter => true;
+        bool IDurationParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

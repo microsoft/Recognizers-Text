@@ -1,5 +1,5 @@
 ---
-CheckBothBeforeAfter: !bool false
+CheckBothBeforeAfter: !bool true
 TillRegex: !nestedRegex
   def: (?<till>\b(और|तक|द्वारा|से|to)|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
