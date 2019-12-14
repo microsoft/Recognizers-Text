@@ -163,6 +163,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     srcUnit = match.Groups["unit"].Value;
                     suffixStr = match.Groups[Constants.SuffixGroupName].Value;
+
+                    // check also beforeStr for "and an half"
+                    if (this.config.CheckBothBeforeAfter && string.IsNullOrEmpty(suffixStr))
+                    {
+                        noNum = text.Substring(0, (int)ers[0].Start).Trim();
+                        var prefixMatch = this.config.SuffixAndRegex.Match(noNum);
+                        if (prefixMatch.Success)
+                        {
+                            suffixStr = prefixMatch.Groups[Constants.SuffixGroupName].Value;
+                        }
+                    }
                 }
 
                 if (match.Success && match.Groups[Constants.BusinessDayGroupName].Success)

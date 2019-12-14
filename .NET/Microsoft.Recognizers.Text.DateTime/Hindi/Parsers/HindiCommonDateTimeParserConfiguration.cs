@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             OrdinalExtractor = Number.Hindi.OrdinalExtractor.GetInstance();
 
             TimeZoneParser = new BaseTimeZoneParser();
-            NumberParser = new BaseNumberParser(new HindiNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+            NumberParser = new BaseIndianNumberParser(new HindiNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
             DateExtractor = new BaseDateExtractor(new HindiDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new HindiTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new HindiDateTimeExtractorConfiguration(this));

@@ -67,6 +67,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex SpecialNumberUnitRegex { get; }
 
+        bool IDurationParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
