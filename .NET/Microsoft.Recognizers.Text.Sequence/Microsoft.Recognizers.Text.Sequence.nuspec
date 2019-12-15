@@ -6,7 +6,7 @@
     <title>$title$</title>
     <authors>Microsoft</authors>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>Microsoft.Recognizers.Text.Sequence provides robust recognition and resolution of series entities like phone numbers and IP addresses.</description>
+    <description>Microsoft.Recognizers.Text.Sequence provides robust recognition and resolution of series entities like phone numbers, URLs, and e-mail and IP addresses.</description>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/Microsoft/Recognizers-Text</projectUrl>
     <icon>images\icon.png</icon>

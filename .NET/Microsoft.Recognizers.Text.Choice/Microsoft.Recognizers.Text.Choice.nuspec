@@ -6,7 +6,8 @@
     <title>$title$</title>
     <authors>Microsoft</authors>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>Microsoft.Recognizers.Text.Choice provides recognition of Boolean (yes/no) answers expressed in English, Portuguese, Spanish, and Japanese. As well as base classes to support lists of alternative choices.</description>
+    <description>Microsoft.Recognizers.Text.Choice provides recognition of Boolean (yes/no) answers expressed in English, Portuguese, Spanish, Japanese, Chinese,
+    Dutch, French, German, Italian, Swedish, Bulgarian, Turkish, Hindi, and Arabic. As well as base classes to support lists of alternative choices.</description>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/Microsoft/Recognizers-Text</projectUrl>
     <icon>images\icon.png</icon>
