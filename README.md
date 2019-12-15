@@ -67,8 +67,8 @@ The table below summarizes the currently supported entities. Support for English
 | Percentage           | ✓    | :x:     | ✓    | ✓      | :x:   |         |        |        |        |         |
 | Number Range         | :x:  | :x:     | ✓     | :x:    | :x:   |         |        |        |        |         |
 | Unit - Age           | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         |
-| Unit - Currency      | :x:  | :x:     | ✓     | **SO** | :x:   |         |        |        |        |         |
-| Unit - Dimensions    | :x:  | :x:     | ✓     | **SO** | :x:   |         |        |        |        |         | 
+| Unit - Currency      | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         |
+| Unit - Dimensions    | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         | 
 | Unit - Temperature   | :x:  | :x:     | ✓    | ✓      | :x:   |         |        |        |        |         | 
 | Choice - Boolean     | ✓    | ✓      | ✓     | ✓      | ✓    |         |        |        |        |         |
 | Seq. - E-mail        | G    | G       | G     | G      | G     |         |        |        |        |         |
@@ -77,7 +77,7 @@ The table below summarizes the currently supported entities. Support for English
 | Seq. - IP Address    | G    | G       | G     | G      | G     |         |        |        |        |         |
 | Seq. - Phone Number  | :x:  | :x:     | :x:   | :x:    | :x:   |         |        |        |        |         |
 | Seq. - URL           | G    | G       | G     | G*     | G*    |         |        |        |        |         |
-| DateTime (+subtypes) | :x:  | :x:     | ✓    | :x:     | :x:   |         |        |        |        |         |
+| DateTime (+subtypes) | :x:  | :x:     | ✓    | **PA**  | :x:   |         |        |        |        |         |
 
 * G: Generic entity, not language-specific (* unicode TLDs not-supported);
 * PA: Partial support;
