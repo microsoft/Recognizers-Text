@@ -273,7 +273,6 @@ public class BaseCurrency {
         .put("OMR", 1000L)
         .put("YDD", 1000L)
         .put("TND", 1000L)
-        .put("CYP", 1000L)
         .put("MRO", 5L)
         .build();
 }

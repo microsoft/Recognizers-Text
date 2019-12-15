@@ -14884,5 +14884,125 @@
         }
       }
     ]
+  },
+  {
+    "Input": "please schedule a meeting for w/c Feb 4.",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "w/c feb 4",
+        "Start": 30,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-04",
+              "type": "daterange",
+              "start": "2019-02-04",
+              "end": "2019-02-11"
+            },
+            {
+              "timex": "XXXX-02-04",
+              "type": "daterange",
+              "start": "2020-02-03",
+              "end": "2020-02-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week beginning February 4",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the week beginning february 4",
+        "Start": 30,
+        "End": 58,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-04",
+              "type": "daterange",
+              "start": "2019-02-04",
+              "end": "2019-02-11"
+            },
+            {
+              "timex": "XXXX-02-04",
+              "type": "daterange",
+              "start": "2020-02-03",
+              "end": "2020-02-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week starting on February 4",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the week starting on february 4",
+        "Start": 30,
+        "End": 60,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-04",
+              "type": "daterange",
+              "start": "2019-02-04",
+              "end": "2019-02-11"
+            },
+            {
+              "timex": "XXXX-02-04",
+              "type": "daterange",
+              "start": "2020-02-03",
+              "end": "2020-02-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week commencing February 4",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the week commencing february 4",
+        "Start": 30,
+        "End": 59,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-04",
+              "type": "daterange",
+              "start": "2019-02-04",
+              "end": "2019-02-11"
+            },
+            {
+              "timex": "XXXX-02-04",
+              "type": "daterange",
+              "start": "2020-02-03",
+              "end": "2020-02-10"
+            }
+          ]
+        }
+      }
+    ]
   }
-  ]
+]
