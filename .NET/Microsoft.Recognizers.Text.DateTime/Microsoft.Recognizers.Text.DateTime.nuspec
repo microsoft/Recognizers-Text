@@ -6,7 +6,8 @@
     <title>$title$</title>
     <authors>Microsoft</authors>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>Microsoft.Recognizers.Text.DateTime provides robust recognition and resolution of Date and Time expressed in English, Spanish, French, Portuguese, and Chinese.</description>
+    <description>Microsoft.Recognizers.Text.DateTime provides robust recognition and resolution of Date and Time expressed in English, Spanish, French, Portuguese, Chinese,
+    German, Italian, and Turkish.</description>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/Microsoft/Recognizers-Text</projectUrl>
     <icon>images\icon.png</icon>

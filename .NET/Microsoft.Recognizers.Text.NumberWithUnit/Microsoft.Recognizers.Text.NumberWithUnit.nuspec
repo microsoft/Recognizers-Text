@@ -6,7 +6,8 @@
     <title>$title$</title>
     <authors>Microsoft</authors>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>Microsoft.Recognizers.Text.NumberWithUnit provides robust recognition and resolution of numbers with units expressed in English, Spanish, French, Portuguese, Chinese, German, and Dutch.</description>
+    <description>Microsoft.Recognizers.Text.NumberWithUnit provides robust recognition and resolution of numbers with units expressed in English, Spanish, French, Portuguese, Chinese,
+    German, Dutch, Italian, Turkish, and Hindi.</description>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/Microsoft/Recognizers-Text</projectUrl>
     <icon>images\icon.png</icon>
