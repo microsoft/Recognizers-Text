@@ -7030,5 +7030,31 @@
         "Length": 13
       }
     ]
+  },
+  {
+    "Input": "entre el 1 de diciembre y el 4 de febrero",
+    "Context": {
+      "ReferenceDateTime": "2019-12-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "entre el 1 de diciembre y el 4 de febrero",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-12-01,XXXX-02-04,P65D)",
+          "FutureResolution": {
+            "startDate": "2019-12-01",
+            "endDate": "2020-02-04"
+          },
+          "PastResolution": {
+            "startDate": "2019-12-01",
+            "endDate": "2020-02-04"
+          }
+        },
+        "Start": 0,
+        "Length": 41
+      }
+    ]
   }
 ]

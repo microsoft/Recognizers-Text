@@ -4647,5 +4647,17 @@
         "Length": 13
       }
     ]
+  },
+  {
+    "Input": "entre el 1 de diciembre y el 4 de febrero",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "entre el 1 de diciembre y el 4 de febrero",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 41
+      }
+    ]
   }
 ]
