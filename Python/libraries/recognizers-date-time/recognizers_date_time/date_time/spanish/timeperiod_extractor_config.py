@@ -81,8 +81,8 @@ class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
         self.from_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.FromRegex)
-        self.connector_and_regex = RegExpUtility.get_safe_reg_exp(
-            SpanishDateTime.ConnectorAndRegex)
+        self.range_connector_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.RangeConnectorRegex)
         self.between_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.BetweenRegex)
         self._token_before_date = SpanishDateTime.TokenBeforeDate
@@ -105,11 +105,11 @@ class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         return MatchedIndex(False, -1)
 
     def has_connector_token(self, source: str) -> MatchedIndex:
-        match = self.connector_and_regex.search(source)
+        match = self.range_connector_regex.search(source)
         if match:
             return MatchedIndex(True, match.start())
 
         return MatchedIndex(False, -1)
 
     def is_connector_token(self, source: str) -> MatchedIndex:
-        return self.connector_and_regex.search(source)
+        return self.range_connector_regex.search(source)
