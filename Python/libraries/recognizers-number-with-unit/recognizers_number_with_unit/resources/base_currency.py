@@ -260,6 +260,5 @@ class BaseCurrency:
                                           ("OMR", 1000),
                                           ("YDD", 1000),
                                           ("TND", 1000),
-                                          ("CYP", 1000),
                                           ("MRO", 5)])
 # pylint: enable=line-too-long

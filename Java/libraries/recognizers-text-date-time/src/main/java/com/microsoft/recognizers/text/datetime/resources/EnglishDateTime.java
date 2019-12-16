@@ -257,7 +257,7 @@ public class EnglishDateTime {
 
     public static final String WhichWeekRegex = "\\b(week)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b";
 
-    public static final String WeekOfRegex = "(the\\s+)?(week)(\\s+of)(\\s+the)?";
+    public static final String WeekOfRegex = "(the\\s+)?((week)(\\s+(of|(commencing|starting|beginning)(\\s+on)?))|w/c)(\\s+the)?";
 
     public static final String MonthOfRegex = "(month)(\\s*)(of)";
 
