@@ -4,8 +4,8 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class BaseNumberOptionsConfiguration : INumberOptionsConfiguration
     {
-        // = NumberOptions.None
-        public BaseNumberOptionsConfiguration(string culture, NumberOptions options,
+
+        public BaseNumberOptionsConfiguration(string culture, NumberOptions options = NumberOptions.None,
                                               NumberMode mode = NumberMode.Default, string placeholder = BaseNumbers.PlaceHolderDefault)
         {
             Culture = culture;
