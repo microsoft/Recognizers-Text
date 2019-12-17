@@ -11,6 +11,10 @@ from ..base_configs import BaseDateParserConfiguration
 
 class SpanishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration):
     @property
+    def time_of_day_regex(self) -> Pattern:
+        return self._time_of_day_regex
+
+    @property
     def future_suffix_regex(self):
         return self._future_suffix_regex
 
@@ -35,6 +39,7 @@ class SpanishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         return self._pm_desc_regex
 
     def __init__(self, config: BaseDateParserConfiguration):
+        self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeOfDayRegex)
         self._future_suffix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.FutureSuffixRegex)
         self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.WithinNextPrefixRegex)
         self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PreviousPrefixRegex)
@@ -63,7 +68,7 @@ class SpanishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.NextPrefixRegex)
         self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            SpanishDateTime.PreviousPrefixRegex)
+            SpanishDateTime.PastRegex)
         self.this_prefix_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.ThisPrefixRegex)
 
@@ -73,7 +78,7 @@ class SpanishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
             SpanishDateTime.PureNumBetweenAnd)
         self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.SpecificTimeOfDayRegex)
-        self.time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+        self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.TimeOfDayRegex)
         self._past_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.PastRegex)
@@ -197,11 +202,11 @@ class SpanishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         end_hour = 0
         end_min = 0
 
-        if 'madrugada' in trimmed_source:
+        if trimmed_source.endswith('madrugada'):
             time_str = 'TDA'
             begin_hour = 4
             end_hour = 8
-        elif 'mañana' in trimmed_source:
+        elif trimmed_source.endswith('mañana'):
             time_str = 'TMO'
             begin_hour = 8
             end_hour = Constants.HALF_DAY_HOUR_COUNT
@@ -209,11 +214,11 @@ class SpanishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
             time_str = 'TAF'
             begin_hour = Constants.HALF_DAY_HOUR_COUNT
             end_hour = 16
-        elif 'tarde' in trimmed_source:
+        elif trimmed_source.endswith('tarde'):
             time_str = 'TEV'
             begin_hour = 16
             end_hour = 20
-        elif 'noche' in trimmed_source:
+        elif trimmed_source.endswith('noche'):
             time_str = 'TNI'
             begin_hour = 20
             end_hour = 23
