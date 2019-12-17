@@ -14,7 +14,7 @@ from .base_numbers import BaseNumbers
 
 
 class ChineseNumeric:
-    LangMarker = 'Chs'
+    LangMarker = 'Chi'
     CompoundNumberLanguage = True
     MultiDecimalSeparatorCulture = False
     DecimalSeparatorChar = '.'

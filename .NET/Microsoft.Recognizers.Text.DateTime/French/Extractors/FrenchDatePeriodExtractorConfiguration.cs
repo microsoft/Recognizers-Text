@@ -220,10 +220,20 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             CardinalExtractor = Number.French.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance();
-            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+
+            NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration(numConfig));
         }
 
         public IDateExtractor DatePointExtractor { get; }

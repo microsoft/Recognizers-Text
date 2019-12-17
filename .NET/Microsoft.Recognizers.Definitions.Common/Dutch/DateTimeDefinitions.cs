@@ -21,6 +21,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 
     public static class DateTimeDefinitions
     {
+      public const string LangMarker = @"Dut";
       public const bool CheckBothBeforeAfter = false;
       public static readonly string TillRegex = $@"(?<till>\b(tot|totdat|gedurende|tijdens|ten tijde van)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
       public static readonly string RangeConnectorRegex = $@"(?<and>\b(en|tot en met|t/m|tot|tot aan)\b|{BaseDateTime.RangeConnectorSymbolRegex})";

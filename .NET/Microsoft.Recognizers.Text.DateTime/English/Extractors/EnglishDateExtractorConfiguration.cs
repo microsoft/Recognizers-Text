@@ -126,10 +126,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public EnglishDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.English.IntegerExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance(numConfig);
+
+            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration(numConfig));
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
             UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
 

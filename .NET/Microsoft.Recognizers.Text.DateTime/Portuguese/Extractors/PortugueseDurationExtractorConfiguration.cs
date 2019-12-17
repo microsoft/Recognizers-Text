@@ -1,6 +1,7 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Portuguese;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
@@ -63,7 +64,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public PortugueseDurationExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance();
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance(numConfig);
+
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
         }

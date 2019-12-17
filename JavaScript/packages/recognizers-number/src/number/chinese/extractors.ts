@@ -74,15 +74,15 @@ export class ChineseIntegerExtractor extends BaseNumberExtractor {
             },
             { // 半百  半打
                 regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersWithHalfDozen, "gis"),
-                value: "IntegerChs"
+                value: "Integer" + ChineseNumeric.LangMarker
             },
             { // 半
                 regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.HalfUnitRegex, "gis"),
-                value: "IntegerChs"
+                value: "Integer" + ChineseNumeric.LangMarker
             },
             { // 一打  五十打
                 regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersWithDozen, "gis"),
-                value: "IntegerChs"
+                value: "Integer" + ChineseNumeric.LangMarker
             }
         );
 
@@ -90,14 +90,14 @@ export class ChineseIntegerExtractor extends BaseNumberExtractor {
             case ChineseNumberExtractorMode.Default:
                 regexes.push({ // 一百五十五, 负一亿三百二十二. Uses an allow list to avoid extracting "四" from "四川"
                     regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersWithAllowListRegex, "gi"),
-                    value: "IntegerChs"
+                    value: "Integer" + ChineseNumeric.LangMarker
                 });
                 break;
 
             case ChineseNumberExtractorMode.ExtractAll:
                 regexes.push({ // 一百五十五, 负一亿三百二十二, "四" from "四川". Uses no allow lists and extracts all potential integers (useful in Units, for example).
                     regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersAggressiveRegex, "gi"),
-                    value: "IntegerChs"
+                    value: "Integer" + ChineseNumeric.LangMarker
                 });
                 break;
         }
@@ -131,11 +131,11 @@ export class ChineseDoubleExtractor extends BaseNumberExtractor {
             },
             { // １５.２万
                 regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.DoubleWithThousandsRegex, "gi"),
-                value: "DoubleChs"
+                value: "Double" + ChineseNumeric.LangMarker
             },
             { // 四十五点三三
                 regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.DoubleAllFloatRegex, "gi"),
-                value: "DoubleChs"
+                value: "Double" + ChineseNumeric.LangMarker
             },
             { // 2e6, 21.2e0
                 regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.DoubleExponentialNotationRegex, "gis"),
@@ -169,7 +169,7 @@ export class ChineseFractionExtractor extends BaseNumberExtractor {
             },
             { // 四分之六十五
                 regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.AllFractionNumber, "gi"),
-                value: "FracChs"
+                value: "Frac" + ChineseNumeric.LangMarker
             }
         );
 
@@ -185,11 +185,11 @@ export class ChineseOrdinalExtractor extends BaseNumberExtractor {
         let regexes = new Array<RegExpValue>(
             { // 第一百五十四
                 regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.OrdinalRegex, "gi"),
-                value: "OrdinalChs"
+                value: "Ordinal" + ChineseNumeric.LangMarker
             },
             { // 第２５６５,  第1234
                 regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.OrdinalNumbersRegex, "gi"),
-                value: "OrdinalChs"
+                value: "Ordinal" + ChineseNumeric.LangMarker
             }
         );
 
@@ -205,11 +205,11 @@ export class ChinesePercentageExtractor extends BaseNumberExtractor {
         let regexes = new Array<RegExpValue>(
             { // 二十个百分点,  四点五个百分点
                 regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.PercentagePointRegex, "gi"),
-                value: "PerChs"
+                value: "Per" + ChineseNumeric.LangMarker
             },
             { // 百分之五十  百分之一点五
                 regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.SimplePercentageRegex, "gi"),
-                value: "PerChs"
+                value: "Per" + ChineseNumeric.LangMarker
             },
             { // 百分之５６.２　百分之１２
                 regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersPercentagePointRegex, "gis"),

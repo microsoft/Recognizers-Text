@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.DateTime.French.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -79,7 +80,17 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             SingleTimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(this));
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
-            IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.English.IntegerExtractor.GetInstance(numConfig);
+
             TimeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration(this));
         }
 

@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Number.Config;
 
@@ -24,7 +25,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         protected ChineseNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
-            this.UnitNumExtractor = new NumberExtractor(CJKNumberExtractorMode.ExtractAll);
+
+            var numConfig = new BaseNumberOptionsConfiguration(ci.Name, NumberOptions.None);
+
+            this.UnitNumExtractor = new NumberExtractor(numConfig, CJKNumberExtractorMode.ExtractAll);
+
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;

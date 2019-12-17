@@ -1448,7 +1448,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2016-12-16T12:23:59",
+        "Text": "2016-12-16 12:23:59",
         "Type": "datetime",
         "Start": 13,
         "Length": 19

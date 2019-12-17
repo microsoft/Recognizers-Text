@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.Matcher;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -65,7 +66,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new SpanishDateTimeAltExtractorConfiguration(this));
             HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(this));
-            IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance(numConfig);
         }
 
         public IDateExtractor DateExtractor { get; }

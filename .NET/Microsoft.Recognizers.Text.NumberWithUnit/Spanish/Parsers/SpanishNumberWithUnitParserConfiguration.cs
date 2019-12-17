@@ -11,9 +11,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         public SpanishNumberWithUnitParserConfiguration(CultureInfo ci)
                : base(ci)
         {
-            this.InternalNumberExtractor = NumberExtractor.GetInstance();
-            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration(
-                                                                                  new BaseNumberOptionsConfiguration(ci.Name)));
+
+            var numConfig = new BaseNumberOptionsConfiguration(Culture.Spanish, NumberOptions.None);
+
+            this.InternalNumberExtractor = NumberExtractor.GetInstance(numConfig);
+            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                                                                              new SpanishNumberParserConfiguration(numConfig));
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
         }
 

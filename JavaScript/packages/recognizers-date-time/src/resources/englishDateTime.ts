@@ -11,6 +11,7 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace EnglishDateTime {
+    export const LangMarker = 'Eng';
     export const CheckBothBeforeAfter = false;
     export const TillRegex = `(?<till>\\b(to|(un)?till?|thru|through)\\b|${BaseDateTime.RangeConnectorSymbolRegex})`;
     export const RangeConnectorRegex = `(?<and>\\b(and|through|to)\\b|${BaseDateTime.RangeConnectorSymbolRegex})`;
@@ -85,7 +86,7 @@ export namespace EnglishDateTime {
     export const SeasonDescRegex = `(?<seas>spring|summer|fall|autumn|winter)`;
     export const SeasonRegex = `\\b(?<season>(${PrefixPeriodRegex}\\s+)?(${RelativeRegex}\\s+)?${SeasonDescRegex}((\\s+of|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))?)\\b`;
     export const WhichWeekRegex = `\\b(week)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b`;
-    export const WeekOfRegex = `(the\\s+)?(week)(\\s+of)(\\s+the)?`;
+    export const WeekOfRegex = `(the\\s+)?((week)(\\s+(of|(commencing|starting|beginning)(\\s+on)?))|w/c)(\\s+the)?`;
     export const MonthOfRegex = `(month)(\\s*)(of)`;
     export const MonthRegex = `(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?)`;
     export const DateYearRegex = `(?<year>${BaseDateTime.FourDigitYearRegex}|${TwoDigitYearRegex})`;
@@ -284,7 +285,7 @@ export namespace EnglishDateTime {
     export const DefaultLanguageFallback = 'MDY';
     export const SuperfluousWordList = [ "preferably","how about","maybe","say","like" ];
     export const DurationDateRestrictions = [ "today","now" ];
-    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^(morning|afternoon|evening|night|day)\\b", "\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b"],["\\bnow\\b", "\\b(^now,)|\\b((is|are)\\s+now\\s+for|for\\s+now)\\b"],["\\bmay\\b", "\\b((((!|\\.|\\?|,|;|)\\s+|^)may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\\b"],["\\b(a|one) second\\b", "\\b(?<!an?\\s+)(a|one) second (round|time)\\b"],["\\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$", "(?<!\\b(before|after|around|circa)\\b\\s)(breakfast|brunch|lunch(time)?|dinner(time)?|supper)"]]);
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^(morning|afternoon|evening|night|day)\\b", "\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b"],["\\bnow\\b", "\\b(^now,)|\\b((is|are)\\s+now\\s+for|for\\s+now)\\b"],["\\bmay\\b", "\\b((((!|\\.|\\?|,|;|)\\s+|^)may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\\b"],["\\b(a|one) second\\b", "\\b(?<!an?\\s+)(a|one) second (round|time)\\b"],["\\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$", "(?<!\\b(at|before|after|around|circa)\\b\\s)(breakfast|brunch|lunch|dinner|supper)(?!\\s*time)"]]);
     export const MorningTermList = [ "morning" ];
     export const AfternoonTermList = [ "afternoon" ];
     export const EveningTermList = [ "evening" ];

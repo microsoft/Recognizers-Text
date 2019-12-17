@@ -6,7 +6,8 @@
     <title>$title$</title>
     <authors>Microsoft</authors>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>Microsoft.Recognizers.Text.Choice provides recognition of Boolean (yes/no) answers expressed in English, Portuguese, Spanish, and Japanese. As well as base classes to support lists of alternative choices.</description>
+    <description>Microsoft.Recognizers.Text.Choice provides recognition of Boolean (yes/no) answers expressed in English, Portuguese, Spanish, Japanese, Chinese,
+    Dutch, French, German, Italian, Swedish, Bulgarian, Turkish, Hindi, and Arabic. As well as base classes to support lists of alternative choices.</description>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/Microsoft/Recognizers-Text</projectUrl>
     <icon>images\icon.png</icon>
@@ -18,8 +19,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\build\package\net45\Microsoft.Recognizers.Text.Choice.dll" target="lib\net45"/>
-    <file src="..\build\package\net452\Microsoft.Recognizers.Text.Choice.dll" target="lib\net452"/>
     <file src="..\build\package\net462\Microsoft.Recognizers.Text.Choice.dll" target="lib\net462"/>
     <file src="..\build\package\netstandard2.0\Microsoft.Recognizers.Text.Choice.dll" target="lib\netstandard2.0"/>
     <file src="**\*.cs" exclude="**\obj\**\*.cs" target="src" />

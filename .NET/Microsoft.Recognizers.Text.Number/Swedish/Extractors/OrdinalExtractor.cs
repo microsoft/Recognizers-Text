@@ -15,7 +15,8 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
         private static readonly ConcurrentDictionary<string, OrdinalExtractor> Instances =
             new ConcurrentDictionary<string, OrdinalExtractor>();
 
-        private OrdinalExtractor()
+        private OrdinalExtractor(NumberOptions options)
+            : base(options)
         {
 
             AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
@@ -53,15 +54,16 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
         protected sealed override Regex RelativeReferenceRegex { get; }
 
-        public static OrdinalExtractor GetInstance(string placeholder = "")
+        public static OrdinalExtractor GetInstance(NumberOptions options = NumberOptions.None)
         {
-            if (!Instances.ContainsKey(placeholder))
+            var cacheKey = options.ToString();
+            if (!Instances.ContainsKey(cacheKey))
             {
-                var instance = new OrdinalExtractor();
-                Instances.TryAdd(placeholder, instance);
+                var instance = new OrdinalExtractor(options);
+                Instances.TryAdd(cacheKey, instance);
             }
 
-            return Instances[placeholder];
+            return Instances[cacheKey];
         }
     }
 }

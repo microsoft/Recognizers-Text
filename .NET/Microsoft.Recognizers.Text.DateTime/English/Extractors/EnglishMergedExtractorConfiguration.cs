@@ -4,6 +4,7 @@ using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Matcher;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -78,7 +79,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(this));
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration(this));
-            IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.English.IntegerExtractor.GetInstance(numConfig);
 
             AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
 

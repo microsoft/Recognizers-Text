@@ -21,6 +21,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 
     public static class DateTimeDefinitions
     {
+      public const string LangMarker = @"Ita";
       public const bool CheckBothBeforeAfter = false;
       public const string TillRegex = @"(?<till>\b(fino\s+a(l(l[aoe'])?|gli|i)?|a(l(l[aoe'])?|gli|i)?|e\s+(il?|l[aoe']|gli))\b|--|-|—|——|~)";
       public const string RestrictedTillRegex = @"(?<till>\b(fino\s+a(l(l[aoe'])?|gli|i)?)\b|--|-|—|——|~)";
@@ -157,7 +158,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string AmbiguousRangeModifierPrefix = @"^[.]";
       public static readonly string NumberEndingPattern = $@"^(\s+(?<meeting>riunione|appuntamento|conferenza|chiamata|chiamata skype)\s+all['e]\s*(?<newTime>{PeriodHourNumRegex}|{HourRegex})((\.)?$|(\.,|,|!|\?)))";
       public static readonly string TimeRegex1 = $@"(((((?<=\b(da|al)?(le|l'|ore)\s*)({EngTimeRegex}))|((?<=\b(da|al)?(le|l'|ore)\s*)({HourNumRegex}|{BaseDateTime.HourRegex})(?![\.,]\d+)(?=\s*({PrepRegex}))))|(({TimePrefix}\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}))|(({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s+{TimePrefix}))((\s*{DescRegex})|\b))";
-      public static readonly string TimeRegex2 = $@"({BaseDateTime.HourRegex})(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
+      public static readonly string TimeRegex2 = $@"(t)?({BaseDateTime.HourRegex})(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex3 = $@"\b{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})(\s+{TimePrefix})?";
       public static readonly string TimeRegex4 = $@"\b({BasicTime}(\s*{DescRegex})?(\s+{TimePrefix})?(\s*{DescRegex})?\s+{TimeSuffix}|{OclockPrefix}\s+{BasicTime}(\s*{DescRegex})?(\s+{TimePrefix})?(\s*{DescRegex})?)\b";
       public static readonly string TimeRegex5 = $@"\b(({BasicTime}\s*{DescRegex}(\s+{TimePrefix})?)|({BasicTime}(\s+{TimePrefix})((\s*{DescRegex})|\b))|((?<=\b(da|al)?(le|l'|ore)\s*)(\b(?<basictime>{EngTimeRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?)|\b(?<basictime>{HourNumRegex}|{BaseDateTime.HourRegex})(?![\.,]\d+)(?=\s*({PrepRegex})\b))))";

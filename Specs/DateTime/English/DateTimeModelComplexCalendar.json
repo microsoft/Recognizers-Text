@@ -12587,5 +12587,28 @@
         }
       }
     ]
+  },
+  {
+    "Input": "what about 30 min later?",
+    "Context": {
+      "ReferenceDateTime": "2019-11-01T15:16:00"
+    },
+    "Results": [
+      {
+        "Text": "30 min later",
+        "Start": 11,
+        "End": 22,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-11-01T15:46:00",
+              "type": "datetime",
+              "value": "2019-11-01 15:46:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

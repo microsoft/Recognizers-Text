@@ -14,6 +14,7 @@ from .base_date_time import BaseDateTime
 
 
 class SpanishDateTime:
+    LangMarker = 'Spa'
     CheckBothBeforeAfter = False
     TillRegex = f'(?<till>hasta|al|a|--|-|—|——)(\\s+(el|la(s)?))?'
     AndRegex = f'(?<and>y|y\\s*el|--|-|—|——)'
@@ -43,7 +44,7 @@ class SpanishDateTime:
     SimpleCasesRegex = f'\\b((desde\\s+el|desde|del|de)\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b'
     MonthFrontSimpleCasesRegex = f'\\b{MonthSuffixRegex}\\s+((desde\\s+el|desde|del)\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b'
     MonthFrontBetweenRegex = f'\\b{MonthSuffixRegex}\\s+((entre|entre\\s+el)\\s+)({DayRegex})\\s*{AndRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b'
-    DayBetweenRegex = f'\\b((entre|entre\\s+el)\\s+)({DayRegex})(\\s+{MonthSuffixRegex})?\\s*{AndRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b'
+    DayBetweenRegex = f'\\b((entre|entre\\s+el)\\s+)({DayRegex})\\s*{AndRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b'
     OneWordPeriodRegex = f'\\b(((((la|el)\\s+)?mes\\s+(({OfPrepositionRegex})\\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\\s+))?({MonthRegex})|((la|el)\\s+)?((({RelativeRegex}\\s+){DateUnitRegex}(\\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\\s+{AfterNextSuffixRegex}))|va\\s+de\\s+{DateUnitRegex})'
     MonthWithYearRegex = f'\\b(((pr[oó]xim[oa](s)?|este|esta|[uú]ltim[oa]?)\\s+)?({MonthRegex})(\\s+|(\\s*[,-]\\s*))((de|del|de la)\\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año))\\b'
     MonthNumWithYearRegex = f'({YearRegex}(\\s*?)[/\\-\\.~](\\s*?){MonthNumRegex})|({MonthNumRegex}(\\s*?)[/\\-\\.~](\\s*?){YearRegex})'
@@ -70,7 +71,7 @@ class SpanishDateTime:
     SinceYearSuffixRegex = f'^[.]'
     WithinNextPrefixRegex = f'\\b(dentro\\s+de)\\b'
     FromRegex = f'((desde|de)(\\s*la(s)?)?)$'
-    ConnectorAndRegex = f'(y\\s*(la(s)?)?)$'
+    ConnectorAndRegex = f'((y\\s*(la(s)?)?)$)|{AndRegex}'
     BetweenRegex = f'(entre\\s*(la(s)?)?)'
     WeekDayRegex = f'\\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|s[aá]|do)\\b'
     OnRegex = f'(?<=\\ben\\s+)({DayRegex}s?)\\b'

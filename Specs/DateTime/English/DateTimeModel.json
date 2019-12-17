@@ -4875,7 +4875,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "week 31",
@@ -9679,7 +9678,7 @@
     "Context": {
       "ReferenceDateTime": "2018-12-13T12:00:00"
     },
-    "NotSupportedByDesign": "java, python",
+    "NotSupportedByDesign": "java",
     "Results": []
   },
   {
@@ -11733,7 +11732,6 @@
     "Context": {
       "ReferenceDateTime": "2019-05-30T12:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "26 june in 2019 to 28 june in 2020",
@@ -12860,7 +12858,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "NotSupported": "java, python",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "11:30 am to 12:30 december 27th",
@@ -12891,7 +12889,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "NotSupported": "java, python",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "12:30 december 27th",
@@ -13435,7 +13433,6 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "next week",
@@ -14350,7 +14347,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
-    "NotSupported": "java, python",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "one second",
@@ -14652,6 +14649,29 @@
     ]
   },
   {
+    "Input": "what about 30 min later?",
+    "Context": {
+      "ReferenceDateTime": "2019-11-01T15:16:00"
+    },
+    "Results": [
+      {
+        "Text": "30 min later",
+        "Start": 11,
+        "End": 22,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-11-01T15:46:00",
+              "type": "datetime",
+              "value": "2019-11-01 15:46:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Every other Friday",
     "Context": {
       "ReferenceDateTime": "2019-11-25T17:00:00"
@@ -14702,7 +14722,6 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "q1",
@@ -14779,7 +14798,6 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupported": "python, javascript",
     "Results": [
       {
         "Text": "2019-q1",
@@ -14882,6 +14900,191 @@
               "type": "daterange",
               "start": "2020-01-01",
               "end": "2020-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for w/c Feb 4.",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "w/c feb 4",
+        "Start": 30,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-04",
+              "type": "daterange",
+              "start": "2019-02-04",
+              "end": "2019-02-11"
+            },
+            {
+              "timex": "XXXX-02-04",
+              "type": "daterange",
+              "start": "2020-02-03",
+              "end": "2020-02-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week beginning February 4",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the week beginning february 4",
+        "Start": 30,
+        "End": 58,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-04",
+              "type": "daterange",
+              "start": "2019-02-04",
+              "end": "2019-02-11"
+            },
+            {
+              "timex": "XXXX-02-04",
+              "type": "daterange",
+              "start": "2020-02-03",
+              "end": "2020-02-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week starting on February 4",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the week starting on february 4",
+        "Start": 30,
+        "End": 60,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-04",
+              "type": "daterange",
+              "start": "2019-02-04",
+              "end": "2019-02-11"
+            },
+            {
+              "timex": "XXXX-02-04",
+              "type": "daterange",
+              "start": "2020-02-03",
+              "end": "2020-02-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week commencing February 4",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the week commencing february 4",
+        "Start": 30,
+        "End": 59,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-04",
+              "type": "daterange",
+              "start": "2019-02-04",
+              "end": "2019-02-11"
+            },
+            {
+              "timex": "XXXX-02-04",
+              "type": "daterange",
+              "start": "2020-02-03",
+              "end": "2020-02-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This popular family friendly concert returns to the Hall for another lunchtime filled with traditional carols and festive favourites",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "NotSupported":"java, javascript, python",
+    "Results": [
+      {
+        "Text": "lunchtime",
+        "Start": 69,
+        "End": 77,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMEL",
+              "type": "timerange",
+              "start": "11:00:00",
+              "end": "13:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "any available time to run errands at lunchtime today",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "NotSupported":"java, javascript, python",
+    "Results": [
+      {
+        "Text": "at lunchtime",
+        "Start": 34,
+        "End": 45,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMEL",
+              "type": "timerange",
+              "start": "11:00:00",
+              "end": "13:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "today",
+        "Start": 47,
+        "End": 51,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-11-07",
+              "type": "date",
+              "value": "2019-11-07"
             }
           ]
         }

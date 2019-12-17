@@ -2,6 +2,7 @@
 using Microsoft.Recognizers.Definitions.Dutch;
 using Microsoft.Recognizers.Text.DateTime.Dutch.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
@@ -66,7 +67,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public DutchDateTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance(numConfig);
+
             DatePointExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
             TimePointExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));

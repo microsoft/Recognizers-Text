@@ -14,6 +14,7 @@ from .base_date_time import BaseDateTime
 
 
 class PortugueseDateTime:
+    LangMarker = 'Por'
     CheckBothBeforeAfter = False
     TillRegex = f'(?<till>ate|as|às|até|ateh|a|ao|--|-|—|——)(\\s+(o|[aà](s)?))?'
     AndRegex = f'(?<and>e|e\\s*o|--|-|—|——)'

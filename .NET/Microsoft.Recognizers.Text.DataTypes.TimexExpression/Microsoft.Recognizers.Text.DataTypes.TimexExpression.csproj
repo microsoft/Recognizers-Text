@@ -1,12 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net462;net452;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <CodeAnalysisRuleSet>../Recognizers-Text.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-<PropertyGroup>
+
+  <PropertyGroup>
 	  <!--
 		Make sure any documentation comments which are included in code get checked for syntax during the build, but do
 		not report warnings for missing comments.
@@ -16,7 +17,8 @@
 	  -->
 	  <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
 	  <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
-	</PropertyGroup>
+  </PropertyGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT' ">
     <Exec Command="(robocopy /E /XO /R:3 /W:3 &quot;$(TargetDir)..&quot; &quot;$(ProjectDir)..\build\package&quot; *.*) ^&amp; IF %ERRORLEVEL% LSS 8 SET ERRORLEVEL = 0" />
   </Target>

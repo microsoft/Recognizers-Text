@@ -19,6 +19,8 @@ import com.google.common.collect.ImmutableMap;
 
 public class SpanishDateTime {
 
+    public static final String LangMarker = "Spa";
+
     public static final Boolean CheckBothBeforeAfter = false;
 
     public static final String TillRegex = "(?<till>hasta|al|a|--|-|—|——)(\\s+(el|la(s)?))?";
@@ -103,7 +105,7 @@ public class SpanishDateTime {
             .replace("{MonthSuffixRegex}", MonthSuffixRegex)
             .replace("{YearRegex}", YearRegex);
 
-    public static final String DayBetweenRegex = "\\b((entre|entre\\s+el)\\s+)({DayRegex})(\\s+{MonthSuffixRegex})?\\s*{AndRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b"
+    public static final String DayBetweenRegex = "\\b((entre|entre\\s+el)\\s+)({DayRegex})\\s*{AndRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b"
             .replace("{DayRegex}", DayRegex)
             .replace("{AndRegex}", AndRegex)
             .replace("{MonthSuffixRegex}", MonthSuffixRegex)
@@ -190,7 +192,8 @@ public class SpanishDateTime {
 
     public static final String FromRegex = "((desde|de)(\\s*la(s)?)?)$";
 
-    public static final String ConnectorAndRegex = "(y\\s*(la(s)?)?)$";
+    public static final String ConnectorAndRegex = "((y\\s*(la(s)?)?)$)|{AndRegex}"
+            .replace("{AndRegex}", AndRegex);
 
     public static final String BetweenRegex = "(entre\\s*(la(s)?)?)";
 

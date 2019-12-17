@@ -1,4 +1,6 @@
 ---
+#ISO 639-2 Code
+LangMarker: Eng
 CheckBothBeforeAfter: !bool false
 TillRegex: !nestedRegex
   def: (?<till>\b(to|(un)?till?|thru|through)\b|{BaseDateTime.RangeConnectorSymbolRegex})
@@ -186,7 +188,7 @@ SeasonRegex: !nestedRegex
 WhichWeekRegex: !simpleRegex
   def: \b(week)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b
 WeekOfRegex: !simpleRegex
-  def: (the\s+)?(week)(\s+of)(\s+the)?
+  def: (the\s+)?((week)(\s+(of|(commencing|starting|beginning)(\s+on)?))|w/c)(\s+the)?
 MonthOfRegex: !simpleRegex
   def: (month)(\s*)(of)
 MonthRegex: !simpleRegex
@@ -1088,7 +1090,7 @@ AmbiguityFiltersDict: !dictionary
     '\bnow\b': '\b(^now,)|\b((is|are)\s+now\s+for|for\s+now)\b'
     '\bmay\b': '\b((((!|\.|\?|,|;|)\s+|^)may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\b'
     '\b(a|one) second\b': '\b(?<!an?\s+)(a|one) second (round|time)\b'
-    '\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$': '(?<!\b(before|after|around|circa)\b\s)(breakfast|brunch|lunch(time)?|dinner(time)?|supper)'
+    '\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$': '(?<!\b(at|before|after|around|circa)\b\s)(breakfast|brunch|lunch|dinner|supper)(?!\s*time)'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]

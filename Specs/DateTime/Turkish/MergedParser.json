@@ -329,7 +329,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Çarşamba",
+        "Text": "çarşamba",
         "Type": "datetimeV2.date",
         "Value": {
           "values": [
@@ -358,7 +358,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Çarşamba günü 31'i",
+        "Text": "çarşamba günü 31'i",
         "Type": "datetimeV2.date",
         "Value": {
           "values": [

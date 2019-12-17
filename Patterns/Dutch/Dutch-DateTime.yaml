@@ -1,4 +1,6 @@
 ---
+#ISO 639-2 Code
+LangMarker: Dut
 CheckBothBeforeAfter: !bool false
 TillRegex: !nestedRegex
   def: (?<till>\b(tot|totdat|gedurende|tijdens|ten tijde van)\b|{BaseDateTime.RangeConnectorSymbolRegex})

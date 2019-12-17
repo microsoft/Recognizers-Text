@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
@@ -123,6 +122,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Success)
                 {
                     ret.Add(new Token(er.Start, (er.Start + er.Length) + match.Length));
+                }
+                else if (this.config.CheckBothBeforeAfter)
+                {
+                    // check also beforeStr
+                    var beforeStr = text.Substring(0, er.Start);
+                    match = this.config.SuffixAndRegex.MatchEnd(beforeStr, trim: true);
+                    if (match.Success)
+                    {
+                        ret.Add(new Token(match.Index, er.Start + er.Length));
+                    }
                 }
             }
 

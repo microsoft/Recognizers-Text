@@ -1,14 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net462</TargetFrameworks>
+    <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
     <!-- Disable GenerateAssemblyInfo to use the existing AssemblyInfo.cs -->
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <CodeAnalysisRuleSet>../Recognizers-Text.ruleset</CodeAnalysisRuleSet>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
   </PropertyGroup>
-<PropertyGroup>
+
+  <PropertyGroup>
 	  <!--
 		Make sure any documentation comments which are included in code get checked for syntax during the build, but do
 		not report warnings for missing comments.
@@ -18,7 +19,8 @@
 	  -->
 	  <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
 	  <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
-	</PropertyGroup>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.6.3">
       <PrivateAssets>all</PrivateAssets>

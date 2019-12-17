@@ -16,14 +16,15 @@ namespace Microsoft.Recognizers.Text.Number
 
         private readonly BaseNumberExtractor numberExtractor;
 
-        public BasePercentageExtractor(BaseNumberExtractor numberExtractor)
+        protected BasePercentageExtractor(BaseNumberExtractor numberExtractor)
         {
+            this.Options = numberExtractor.Options;
             this.numberExtractor = numberExtractor;
         }
 
         protected string ExtractType { get; set; } = Constants.SYS_NUM_PERCENTAGE;
 
-        protected virtual NumberOptions Options { get; } = NumberOptions.None;
+        protected virtual NumberOptions Options { get; }
 
         protected ImmutableHashSet<Regex> Regexes { get; set; }
 
@@ -77,6 +78,7 @@ namespace Microsoft.Recognizers.Text.Number
                         int start = last + 1;
                         int length = i - last;
                         string substr = source.Substring(start, length);
+
                         ExtractResult er = new ExtractResult
                         {
                             Start = start,
@@ -84,6 +86,7 @@ namespace Microsoft.Recognizers.Text.Number
                             Text = substr,
                             Type = ExtractType,
                         };
+
                         result.Add(er);
                     }
                 }
@@ -102,23 +105,24 @@ namespace Microsoft.Recognizers.Text.Number
         /// <summary>
         /// read the rules.
         /// </summary>
-        /// <param name="regexStrs">rule list.</param>
+        /// <param name="regexStrings">rule list.</param>
         /// <param name="ignoreCase">.</param>
         /// <returns>Immutable HashSet of regex.</returns>
-        protected static ImmutableHashSet<Regex> BuildRegexes(HashSet<string> regexStrs, bool ignoreCase = false)
+        protected static ImmutableHashSet<Regex> BuildRegexes(HashSet<string> regexStrings, bool ignoreCase = false)
         {
             var regexes = new HashSet<Regex>();
 
-            foreach (var regexStr in regexStrs)
+            foreach (var regexString in regexStrings)
             {
                 // var sl = "(?=\\b)(" + regexStr + ")(?=(s?\\b))";
-                var options = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+                var regexOptions = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
                 if (ignoreCase)
                 {
-                    options = options | RegexOptions.IgnoreCase;
+                    regexOptions |= RegexOptions.IgnoreCase;
                 }
 
-                Regex regex = new Regex(regexStr, options);
+                Regex regex = new Regex(regexString, regexOptions);
 
                 regexes.Add(regex);
             }

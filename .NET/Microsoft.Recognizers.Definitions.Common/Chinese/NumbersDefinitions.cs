@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 
     public static class NumbersDefinitions
     {
-      public const string LangMarker = @"Chs";
+      public const string LangMarker = @"Chi";
       public const bool CompoundNumberLanguage = true;
       public const bool MultiDecimalSeparatorCulture = false;
       public const char DecimalSeparatorChar = '.';

@@ -7,5 +7,7 @@ namespace Microsoft.Recognizers.Text.Number
         NumberOptions Options { get; }
 
         NumberMode Mode { get; }
+
+        string Placeholder { get; }
     }
 }

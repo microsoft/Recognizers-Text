@@ -11,6 +11,7 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace SpanishDateTime {
+    export const LangMarker = 'Spa';
     export const CheckBothBeforeAfter = false;
     export const TillRegex = `(?<till>hasta|al|a|--|-|—|——)(\\s+(el|la(s)?))?`;
     export const AndRegex = `(?<and>y|y\\s*el|--|-|—|——)`;
@@ -40,7 +41,7 @@ export namespace SpanishDateTime {
     export const SimpleCasesRegex = `\\b((desde\\s+el|desde|del|de)\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
     export const MonthFrontSimpleCasesRegex = `\\b${MonthSuffixRegex}\\s+((desde\\s+el|desde|del)\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
     export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+((entre|entre\\s+el)\\s+)(${DayRegex})\\s*${AndRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
-    export const DayBetweenRegex = `\\b((entre|entre\\s+el)\\s+)(${DayRegex})(\\s+${MonthSuffixRegex})?\\s*${AndRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
+    export const DayBetweenRegex = `\\b((entre|entre\\s+el)\\s+)(${DayRegex})\\s*${AndRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
     export const OneWordPeriodRegex = `\\b(((((la|el)\\s+)?mes\\s+((${OfPrepositionRegex})\\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\\s+))?(${MonthRegex})|((la|el)\\s+)?(((${RelativeRegex}\\s+)${DateUnitRegex}(\\s+${AfterNextSuffixRegex})?)|${DateUnitRegex}(\\s+${AfterNextSuffixRegex}))|va\\s+de\\s+${DateUnitRegex})`;
     export const MonthWithYearRegex = `\\b(((pr[oó]xim[oa](s)?|este|esta|[uú]ltim[oa]?)\\s+)?(${MonthRegex})(\\s+|(\\s*[,-]\\s*))((de|del|de la)\\s+)?(${YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año))\\b`;
     export const MonthNumWithYearRegex = `(${YearRegex}(\\s*?)[/\\-\\.~](\\s*?)${MonthNumRegex})|(${MonthNumRegex}(\\s*?)[/\\-\\.~](\\s*?)${YearRegex})`;
@@ -67,7 +68,7 @@ export namespace SpanishDateTime {
     export const SinceYearSuffixRegex = `^[.]`;
     export const WithinNextPrefixRegex = `\\b(dentro\\s+de)\\b`;
     export const FromRegex = `((desde|de)(\\s*la(s)?)?)$`;
-    export const ConnectorAndRegex = `(y\\s*(la(s)?)?)$`;
+    export const ConnectorAndRegex = `((y\\s*(la(s)?)?)$)|${AndRegex}`;
     export const BetweenRegex = `(entre\\s*(la(s)?)?)`;
     export const WeekDayRegex = `\\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|s[aá]|do)\\b`;
     export const OnRegex = `(?<=\\ben\\s+)(${DayRegex}s?)\\b`;

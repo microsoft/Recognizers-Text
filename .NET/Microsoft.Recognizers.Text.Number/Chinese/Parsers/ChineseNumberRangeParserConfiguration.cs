@@ -13,8 +13,10 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         {
             CultureInfo = new CultureInfo(config.Culture);
 
-            NumberExtractor = new NumberExtractor();
-            OrdinalExtractor = new OrdinalExtractor();
+            var numConfig = new BaseNumberOptionsConfiguration(config);
+
+            NumberExtractor = new NumberExtractor(numConfig);
+            OrdinalExtractor = new OrdinalExtractor(numConfig);
             NumberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(config));
 
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);

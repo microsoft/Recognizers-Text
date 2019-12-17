@@ -1,4 +1,6 @@
 ---
+#ISO 639-2 Code
+LangMarker: Spa
 CheckBothBeforeAfter: !bool false
 TillRegex: !simpleRegex
   def: (?<till>hasta|al|a|--|-|—|——)(\s+(el|la(s)?))?
@@ -70,7 +72,7 @@ MonthFrontBetweenRegex: !nestedRegex
   def: \b{MonthSuffixRegex}\s+((entre|entre\s+el)\s+)({DayRegex})\s*{AndRegex}\s*({DayRegex})((\s+|\s*,\s*)(en\s+|del\s+|de\s+)?{YearRegex})?\b
   references: [ DayRegex, AndRegex, MonthSuffixRegex, YearRegex ]
 DayBetweenRegex: !nestedRegex
-  def: \b((entre|entre\s+el)\s+)({DayRegex})(\s+{MonthSuffixRegex})?\s*{AndRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*)(en\s+|del\s+|de\s+)?{YearRegex})?\b
+  def: \b((entre|entre\s+el)\s+)({DayRegex})\s*{AndRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*)(en\s+|del\s+|de\s+)?{YearRegex})?\b
   references: [ DayRegex, AndRegex, MonthSuffixRegex, YearRegex ]
 OneWordPeriodRegex: !nestedRegex
   def: \b(((((la|el)\s+)?mes\s+(({OfPrepositionRegex})\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+))?({MonthRegex})|((la|el)\s+)?((({RelativeRegex}\s+){DateUnitRegex}(\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\s+{AfterNextSuffixRegex}))|va\s+de\s+{DateUnitRegex})
@@ -144,8 +146,9 @@ WithinNextPrefixRegex: !simpleRegex
   def: \b(dentro\s+de)\b
 FromRegex: !simpleRegex
   def: ((desde|de)(\s*la(s)?)?)$
-ConnectorAndRegex: !simpleRegex
-  def: (y\s*(la(s)?)?)$
+ConnectorAndRegex: !nestedRegex
+  def: ((y\s*(la(s)?)?)$)|{AndRegex}
+  references: [ AndRegex ]
 BetweenRegex: !simpleRegex
   def: (entre\s*(la(s)?)?)
 WeekDayRegex: !simpleRegex

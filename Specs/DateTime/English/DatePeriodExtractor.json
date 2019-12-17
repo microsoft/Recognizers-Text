@@ -3838,5 +3838,71 @@
         "Length": 24
       }
     ]
+  },
+  {
+    "Input": "please schedule a meeting for the week commencing february 4",
+    "Results": [
+      {
+        "Text": "the week commencing february 4",
+        "Type": "daterange",
+        "Start": 30,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week starting february 4",
+    "Results": [
+      {
+        "Text": "the week starting february 4",
+        "Type": "daterange",
+        "Start": 30,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week starting on february 4",
+    "Results": [
+      {
+        "Text": "the week starting on february 4",
+        "Type": "daterange",
+        "Start": 30,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week beginning on february 4",
+    "Results": [
+      {
+        "Text": "the week beginning on february 4",
+        "Type": "daterange",
+        "Start": 30,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week beginning february 4",
+    "Results": [
+      {
+        "Text": "the week beginning february 4",
+        "Type": "daterange",
+        "Start": 30,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for w/c feb 4.",
+    "Results": [
+      {
+        "Text": "w/c feb 4",
+        "Type": "daterange",
+        "Start": 30,
+        "Length": 9
+      }
+    ]
   }
 ]

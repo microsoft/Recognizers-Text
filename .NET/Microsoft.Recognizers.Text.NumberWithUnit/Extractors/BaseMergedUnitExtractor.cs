@@ -58,7 +58,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     continue;
                 }
 
-                if (ers[idx].Data is ExtractResult er && !er.Data.ToString().StartsWith("Integer", StringComparison.Ordinal))
+                if (ers[idx].Data is ExtractResult er &&
+                    !er.Data.ToString().StartsWith(Number.Constants.INTEGER_PREFIX, StringComparison.Ordinal))
                 {
                     groups[idx + 1] = groups[idx] + 1;
                     continue;
@@ -66,8 +67,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                 var middleBegin = ers[idx].Start + ers[idx].Length ?? 0;
                 var middleEnd = ers[idx + 1].Start ?? 0;
+                var length = middleEnd - middleBegin;
 
-                var middleStr = source.Substring(middleBegin, middleEnd - middleBegin).Trim();
+                if (length < 0)
+                {
+                    continue; // @HERE
+                }
+
+                var middleStr = source.Substring(middleBegin, length).Trim();
 
                 // Separated by whitespace
                 if (string.IsNullOrEmpty(middleStr))
@@ -92,7 +99,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             {
                 if (idx == 0 || groups[idx] != groups[idx - 1])
                 {
-                    var tmpExtractResult = ers[idx];
+                    var tmpExtractResult = ers[idx].Clone();
 
                     tmpExtractResult.Data = new List<ExtractResult>
                     {
@@ -141,6 +148,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         private void MergePureNumber(string source, List<ExtractResult> ers)
         {
             var numErs = config.UnitNumExtractor.Extract(source);
+
             var unitNumbers = new List<ExtractResult>();
             for (int i = 0, j = 0; i < numErs.Count; i++)
             {

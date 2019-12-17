@@ -163,6 +163,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     srcUnit = match.Groups["unit"].Value;
                     suffixStr = match.Groups[Constants.SuffixGroupName].Value;
+
+                    // check also beforeStr for "and an half"
+                    if (this.config.CheckBothBeforeAfter && string.IsNullOrEmpty(suffixStr))
+                    {
+                        noNum = text.Substring(0, (int)ers[0].Start).Trim();
+                        var prefixMatch = this.config.SuffixAndRegex.Match(noNum);
+                        if (prefixMatch.Success)
+                        {
+                            suffixStr = prefixMatch.Groups[Constants.SuffixGroupName].Value;
+                        }
+                    }
                 }
 
                 if (match.Success && match.Groups[Constants.BusinessDayGroupName].Success)
@@ -382,7 +393,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var durationExtractor = this.config.DurationExtractor;
 
             // DurationExtractor without parameter will not extract merged duration
-            var ers = durationExtractor.Extract(text);
+            var ers = durationExtractor.Extract(text, referenceTime);
 
             // only handle merged duration cases like "1 month 21 days"
             if (ers.Count <= 1)

@@ -9,9 +9,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Turkish
         public TurkishNumberWithUnitParserConfiguration(CultureInfo ci)
                : base(ci)
         {
+
+            var numConfig = new BaseNumberOptionsConfiguration(Culture.Turkish, NumberOptions.None);
+
             this.InternalNumberExtractor = NumberExtractor.GetInstance();
-            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new TurkishNumberParserConfiguration(
-                                                                                  new BaseNumberOptionsConfiguration(ci.Name)));
+            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                                                                              new TurkishNumberParserConfiguration(numConfig));
             this.ConnectorToken = string.Empty;
         }
 

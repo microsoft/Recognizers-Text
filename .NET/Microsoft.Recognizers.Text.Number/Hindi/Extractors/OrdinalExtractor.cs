@@ -16,6 +16,7 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
         private OrdinalExtractor(NumberOptions options)
             : base(options)
         {
+
             AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
 
             RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);

@@ -30,10 +30,10 @@ public class FractionExtractor extends BaseNumberExtractor {
 
         builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.FractionNotationWithSpacesRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
         builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.FractionNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
-        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.FractionNounRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracFr");
-        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.FractionNounWithArticleRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracFr");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.FractionNounRegex, Pattern.UNICODE_CHARACTER_CLASS), "Frac" + FrenchNumeric.LangMarker);
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.FractionNounWithArticleRegex, Pattern.UNICODE_CHARACTER_CLASS), "Frac" + FrenchNumeric.LangMarker);
         if (mode != NumberMode.Unit) {
-            builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.FractionPrepositionRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracFr");
+            builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.FractionPrepositionRegex, Pattern.UNICODE_CHARACTER_CLASS), "Frac" + FrenchNumeric.LangMarker);
         }
 
         this.regexes = Collections.unmodifiableMap(builder);

@@ -1,4 +1,6 @@
 ---
+#ISO 639-2 Code
+LangMarker: Tur
 CheckBothBeforeAfter: !bool true
 TillRegex: !nestedRegex
   def: (?<till>\b(kadar|dek\b|değin)|{BaseDateTime.RangeConnectorSymbolRegex})
@@ -463,7 +465,7 @@ TimeRegex1: !nestedRegex
   def: \b(({TimePrefix}\s+)(saat\s)?({WrittenTimeRegex}|{HourNumRegex}|{AtHourNumRegex}|{HourRegex}))(?!(\s+saat|\d+))
   references: [ TimePrefix, WrittenTimeRegex, HourNumRegex, HourRegex, AtHourNumRegex ]
 TimeRegex2: !nestedRegex
-  def: \b({TimePrefix}\s+)?(saat\s)?({HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?)
+  def: \b({TimePrefix}\s+)?(saat\s)?(t)?({HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?)
   references: [ TimePrefix, HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex ]
 TimeRegex3: !nestedRegex
   def: \b({TimePrefix}\s+)?(saat\s)?({HourRegex}:{BaseDateTime.MinuteRegex})
