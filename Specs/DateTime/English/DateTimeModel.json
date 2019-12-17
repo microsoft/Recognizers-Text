@@ -15027,5 +15027,45 @@
         }
       }
     ]
+  },
+  {
+    "Input": "any available time to run errands at lunchtime today",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "NotSupported":"java, javascript, python",
+    "Results": [
+      {
+        "Text": "at lunchtime",
+        "Start": 34,
+        "End": 45,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMEL",
+              "type": "timerange",
+              "start": "11:00:00",
+              "end": "13:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "today",
+        "Start": 47,
+        "End": 51,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-17",
+              "type": "date",
+              "value": "2019-12-17"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
