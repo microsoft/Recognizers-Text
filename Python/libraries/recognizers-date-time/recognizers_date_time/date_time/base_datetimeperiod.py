@@ -1258,9 +1258,9 @@ class BaseDateTimePeriodParser(DateTimeParser):
             result.timex = f'({parse_result1.timex_str},{date_str + parse_result2.timex_str},{duration_str})'
         elif end_has_date:
             future_begin = DateUtils.safe_create_from_min_value(future_end.year, future_end.month, future_end.day,
-                                                              future_begin.hour, future_begin.minute, future_begin.second)
+                                                                future_begin.hour, future_begin.minute, future_begin.second)
             past_begin = DateUtils.safe_create_from_min_value(past_end.year, past_end.month, past_end.day,
-                                                            past_begin.hour, past_begin.minute, past_begin.second)
+                                                              past_begin.hour, past_begin.minute, past_begin.second)
 
             date_str = parse_result2.timex_str.split('T')[0]
             duration_str = DateTimeFormatUtil.luis_time_span(past_begin, past_end)

@@ -101,7 +101,7 @@ class ChineseDateTimePeriodParser(BaseDateTimePeriodParser):
             DateUtils.safe_create_from_min_value(
                 future_date.year, future_date.month, future_date.day,
                 end_time.hour, end_time.minute, end_time.second)
-            )
+        )
 
         result.past_value = (
             DateUtils.safe_create_from_min_value(
