@@ -15002,5 +15002,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "This popular family friendly concert returns to the Hall for another lunchtime filled with traditional carols and festive favourites",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "lunchtime",
+        "Start": 69,
+        "End": 77,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMEL",
+              "type": "timerange",
+              "start": "11:00:00",
+              "end": "13:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
