@@ -278,19 +278,19 @@ class DateTimeFormatUtil:
         return DateTimeFormatUtil.luis_date_from_datetime(time) + 'T' + DateTimeFormatUtil.luis_time_from_datetime(time)
 
     @staticmethod
-    def luis_time_span(time_span: timedelta) -> str:
+    def luis_time_span(begin_time: datetime, end_time: datetime) -> str:
         timex_builder = f'{Constants.GENERAL_PERIOD_PREFIX}{Constants.TIME_TIMEX_PREFIX}'
 
-        total_time = time_span.total_seconds()
-        total_hours = total_time//3600
-        total_minutes = (total_time % 3600)//60
+        total_hours = end_time.hour - begin_time.hour
+        total_minutes = end_time.minute - begin_time.minute
+        total_seconds = end_time.second - begin_time.second
 
         if total_hours > 0:
             timex_builder += f'{total_hours}H'
         if total_minutes > 0:
             timex_builder += f'{total_minutes}M'
-        if time_span.seconds > 0:
-            timex_builder += f'{time_span.seconds}S'
+        if total_seconds > 0:
+            timex_builder += f'{total_seconds}S'
 
         return str(timex_builder)
 

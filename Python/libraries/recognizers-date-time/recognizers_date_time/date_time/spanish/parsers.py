@@ -17,7 +17,7 @@ class SpanishDateTimePeriodParser(BaseDateTimePeriodParser):
 
         # Handle morning, afternoon..
         values = self.config.get_matched_time_range(trimmed_text)
-        if values.success:
+        if not values.success:
             return result
 
         match = self.config.specific_time_of_day_regex.match(trimmed_text)

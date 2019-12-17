@@ -11,6 +11,10 @@ from ..base_configs import BaseDateParserConfiguration
 class FrenchDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration):
 
     @property
+    def time_of_day_regex(self) -> Pattern:
+        return self._time_of_day_regex
+
+    @property
     def future_suffix_regex(self):
         return self._future_suffix_regex
 
@@ -66,7 +70,7 @@ class FrenchDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
             FrenchDateTime.PureNumBetweenAnd)
         self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.SpecificTimeOfDayRegex)
-        self.time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+        self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.TimeOfDayRegex)
         self._past_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.PastSuffixRegex)

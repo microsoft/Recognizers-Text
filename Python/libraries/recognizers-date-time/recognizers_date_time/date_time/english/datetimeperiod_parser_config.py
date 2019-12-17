@@ -13,6 +13,10 @@ from ..base_configs import BaseDateParserConfiguration
 class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration):
 
     @property
+    def time_of_day_regex(self) -> Pattern:
+        return self._time_of_day_regex
+
+    @property
     def future_suffix_regex(self):
         return self._future_suffix_regex
 
@@ -21,6 +25,7 @@ class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         return self._within_next_prefix_regex
 
     def __init__(self, config: BaseDateParserConfiguration):
+        self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeOfDayRegex)
         self._future_suffix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.FutureSuffixRegex)
         self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.WithinNextPrefixRegex)
         self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PreviousPrefixRegex)

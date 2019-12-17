@@ -148,6 +148,9 @@ class ChineseDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         self._before_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.BeforeRegex)
         self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.SpecificTimeOfDayRegex)
+        self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.TimeOfDayRegex
+        )
         self._past_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.PastRegex)
         self._future_regex = RegExpUtility.get_safe_reg_exp(
@@ -173,37 +176,47 @@ class ChineseDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         self._within_next_prefix_regex = None
         self._future_suffix_regex = None
 
+    @property
+    def time_of_day_regex(self) -> Pattern:
+        return self._time_of_day_regex
+
     def get_matched_time_range(self, trimmed_source: str):
         trimmed_source = trimmed_source.strip().lower()
         time_str = ''
         begin_hour = 0
         end_hour = 0
         end_min = 0
+        swift = 0
         if trimmed_source in ['今晚']:
+            swift = 0
             time_str = 'TEV'
             begin_hour = 16
             end_hour = 20
         elif trimmed_source in ['今早', '今晨']:
+            swift = 0
             time_str = 'TMO'
             begin_hour = 8
             end_hour = Constants.HALF_DAY_HOUR_COUNT
         elif trimmed_source in ['明晚']:
+            swift = 1
             time_str = 'TEV'
             begin_hour = 16
             end_hour = 20
         elif trimmed_source in ['明早', '明晨']:
+            swift = 1
             time_str = 'TMO'
             begin_hour = 8
             end_hour = Constants.HALF_DAY_HOUR_COUNT
         elif trimmed_source in ['昨晚']:
+            swift = -1
             time_str = 'TEV'
             begin_hour = 16
             end_hour = 20
         else:
             time_str = None
-            return MatchedTimeRange(time_str, begin_hour, end_hour, end_min, False)
+            return MatchedTimeRange(time_str, begin_hour, end_hour, end_min, False, swift)
 
-        return MatchedTimeRange(time_str, begin_hour, end_hour, end_min, True)
+        return MatchedTimeRange(time_str, begin_hour, end_hour, end_min, True, swift)
 
     def get_swift_prefix(self, source: str) -> int:
         return None

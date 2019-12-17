@@ -870,6 +870,11 @@ class DateTimePeriodParserConfiguration:
 
     @property
     @abstractmethod
+    def time_of_day_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def past_regex(self) -> Pattern:
         raise NotImplementedError
 
@@ -1235,7 +1240,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
         else:
             return result
 
-        if not parse_result1.value and not parse_result2:
+        if not parse_result1.value or not parse_result2:
             return result
 
         future_begin = parse_result1.value.future_value
@@ -1260,16 +1265,16 @@ class BaseDateTimePeriodParser(DateTimeParser):
                                                             past_end.hour, past_end.minute, past_end.second)
 
             date_str = parse_result1.timex_str.split('T')[0]
-            duration_str = DateTimeFormatUtil.luis_time_span(future_end - future_begin)
+            duration_str = DateTimeFormatUtil.luis_time_span(future_begin, future_end)
             result.timex = f'({parse_result1.timex_str},{date_str + parse_result2.timex_str},{duration_str})'
         elif end_has_date:
-            future_end = DateUtils.safe_create_from_min_value(future_end.year, future_end.month, future_end.day,
-                                                              future_begin.hour, future_begin.minute, future_begin.second)
-            past_end = DateUtils.safe_create_from_min_value(past_end.year, past_end.month, past_end.day,
-                                                            past_begin.hour, past_begin.minute, past_begin.second)
+            future_begin = DateUtils.safe_create_from_min_value(future_end.year, future_end.month, future_end.day,
+                                                                future_begin.hour, future_begin.minute, future_begin.second)
+            past_begin = DateUtils.safe_create_from_min_value(past_end.year, past_end.month, past_end.day,
+                                                              past_begin.hour, past_begin.minute, past_begin.second)
 
             date_str = parse_result2.timex_str.split('T')[0]
-            duration_str = DateTimeFormatUtil.luis_time_span(past_end - past_begin)
+            duration_str = DateTimeFormatUtil.luis_time_span(past_begin, past_end)
             result.timex = f'({date_str + parse_result1.timex_str},{parse_result2.timex_str},{duration_str})'
 
         am_pm_str_1 = parse_result1.value.comment
@@ -1361,21 +1366,34 @@ class BaseDateTimePeriodParser(DateTimeParser):
                 match = self.config.pm_desc_regex.search(trimmed_source)
         else:
             before_str = trimmed_source[0:match.start()].strip()
+            _before_str = before_str
+            trimmed_before_str = ''
+
             after_str = trimmed_source[match.end():].strip()
+            _after_str = after_str
+            trimmed_after_str = ''
 
             # Eliminate time period, if any
             time_period_extract_results = self.config.time_period_extractor.extract(before_str)
             if len(time_period_extract_results) > 0:
-                for i in range(time_period_extract_results[0].start, time_period_extract_results[0].length):
-                    before_str.replace(before_str[i], '').strip()
+                start = time_period_extract_results[0].start
+                length = time_period_extract_results[0].length
+                for i in range(start, length):
+                    trimmed_before_str = _before_str.replace(_before_str[start], '', 1)
+                    _before_str = trimmed_before_str
+                trimmed_before_str = trimmed_before_str.strip()
             else:
                 time_period_extract_results = self.config.time_period_extractor.extract(after_str)
                 if len(time_period_extract_results) > 0:
-                    for i in range(time_period_extract_results[0].start, time_period_extract_results[0].length):
-                        after_str.replace(after_str[i], '').strip()
+                    start = time_period_extract_results[0].start
+                    length = time_period_extract_results[0].length
+                    for i in range(start, length):
+                        trimmed_after_str = _after_str.replace(_after_str[start], '', 1)
+                        _before_str = trimmed_after_str
+                    trimmed_after_str = trimmed_after_str.strip()
 
-            extracted_results = self.config.date_extractor.extract(before_str + ' ' + after_str, reference)
-            if len(extracted_results) == 0 or extracted_results[0].length < len(before_str):
+            extracted_results = self.config.date_extractor.extract((trimmed_before_str if trimmed_before_str is not '' else before_str) + ' ' + (trimmed_after_str if trimmed_after_str is not '' else after_str), reference)
+            if len(extracted_results) == 0 or extracted_results[0].length < len(trimmed_before_str):
                 valid = False
                 if len(extracted_results) > 0 and extracted_results[0].start == 0:
                     mid_str = before_str[extracted_results[0].start + extracted_results[0].length:]
@@ -1513,7 +1531,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
                 result.future_value = result.past_value = (begin_time, end_time)
                 result.success = True
 
-                if not mod:
+                if mod:
                     parse_result.value.mod = mod
 
                 result.sub_date_time_entities = [parse_result]
