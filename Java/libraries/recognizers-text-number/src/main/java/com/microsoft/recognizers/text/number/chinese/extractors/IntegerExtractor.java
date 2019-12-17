@@ -40,21 +40,21 @@ public class IntegerExtractor extends BaseNumberExtractor {
         //1,234,  ２，３３２，１１１
         builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.DottedNumbersSpecialsChar, Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
         //半百  半打
-        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.NumbersWithHalfDozen, Pattern.UNICODE_CHARACTER_CLASS), "IntegerChs");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.NumbersWithHalfDozen, Pattern.UNICODE_CHARACTER_CLASS), "Integer" + ChineseNumeric.LangMarker);
         //一打  五十打
-        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.NumbersWithDozen, Pattern.UNICODE_CHARACTER_CLASS), "IntegerChs");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.NumbersWithDozen, Pattern.UNICODE_CHARACTER_CLASS), "Integer" + ChineseNumeric.LangMarker);
 
         switch (mode) {
             case Default:
                 // 一百五十五, 负一亿三百二十二.
                 // Uses an allow list to avoid extracting "四" from "四川"
-                builder.put(RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersWithAllowListRegex, Pattern.UNICODE_CHARACTER_CLASS), "IntegerChs");
+                builder.put(RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersWithAllowListRegex, Pattern.UNICODE_CHARACTER_CLASS), "Integer" + ChineseNumeric.LangMarker);
                 break;
 
             case ExtractAll:
                 // 一百五十五, 负一亿三百二十二, "四" from "四川".
                 // Uses no allow lists and extracts all potential integers (useful in Units, for example).
-                builder.put(RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersAggressiveRegex, Pattern.UNICODE_CHARACTER_CLASS), "IntegerChs");
+                builder.put(RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersAggressiveRegex, Pattern.UNICODE_CHARACTER_CLASS), "Integer" + ChineseNumeric.LangMarker);
                 break;
             
             default:
