@@ -1,4 +1,6 @@
 ---
+#ISO 639-2 Code
+LangMarker: Fre
 CheckBothBeforeAfter: !bool false
 TillRegex: !simpleRegex
   def: (?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)

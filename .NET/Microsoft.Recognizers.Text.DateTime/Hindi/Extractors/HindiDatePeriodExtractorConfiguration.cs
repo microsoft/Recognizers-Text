@@ -241,10 +241,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new HindiDateExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new HindiDurationExtractorConfiguration(this));
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             CardinalExtractor = Number.Hindi.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.Hindi.OrdinalExtractor.GetInstance();
-            DurationExtractor = new BaseDurationExtractor(new HindiDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new HindiNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+
+            NumberParser = new BaseNumberParser(new HindiNumberParserConfiguration(numConfig));
         }
 
         public IDateExtractor DatePointExtractor { get; }

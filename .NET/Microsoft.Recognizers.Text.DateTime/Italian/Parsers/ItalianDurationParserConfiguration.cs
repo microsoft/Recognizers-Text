@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IExtractor CardinalExtractor { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public IParser NumberParser { get; }
 

@@ -21,6 +21,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
 
     public static class DateTimeDefinitions
     {
+      public const string LangMarker = @"Hin";
       public const bool CheckBothBeforeAfter = true;
       public static readonly string TillRegex = $@"(?<till>\b(और|तक|द्वारा|से|to)|{BaseDateTime.RangeConnectorSymbolRegex})";
       public static readonly string RangeConnectorRegex = $@"(?<and>\b(और|तक|द्वारा|से|to)|{BaseDateTime.RangeConnectorSymbolRegex})";

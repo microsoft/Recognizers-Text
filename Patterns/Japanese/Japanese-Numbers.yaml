@@ -1,6 +1,7 @@
 ---
-#JapaneseNumberParserConfiguration
+#ISO 639-2 Code
 LangMarker: Jpn
+#JapaneseNumberParserConfiguration
 #Does this language use non-whitespace-separated numbers?
 CompoundNumberLanguage: !bool true
 #Does this culture uses period and comma intercheangeably as decimal separator?

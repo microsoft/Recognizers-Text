@@ -1,4 +1,6 @@
 ---
+#ISO 639-2 Code
+LangMarker: Ger
 CheckBothBeforeAfter: !bool false
 TillRegex: !simpleRegex
   def: (?<till>zu|bis\s*zum|zum|bis|bis\s*hin(\s*zum)?|--|-|—|——)

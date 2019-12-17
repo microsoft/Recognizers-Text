@@ -13,8 +13,10 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
         {
             CultureInfo = new CultureInfo(config.Culture);
 
-            NumberExtractor = Dutch.NumberExtractor.GetInstance();
-            OrdinalExtractor = Dutch.OrdinalExtractor.GetInstance();
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, config.Options);
+
+            NumberExtractor = Dutch.NumberExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Dutch.OrdinalExtractor.GetInstance(numConfig);
 
             // @TODO Change init to follow design in other languages
             NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration(config));

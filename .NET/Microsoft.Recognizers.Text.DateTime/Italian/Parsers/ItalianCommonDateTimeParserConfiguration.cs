@@ -25,11 +25,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             WrittenDecades = DateTimeDefinitions.WrittenDecades.ToImmutableDictionary();
             SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases.ToImmutableDictionary();
 
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             CardinalExtractor = Number.Italian.CardinalExtractor.GetInstance();
             IntegerExtractor = Number.Italian.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(numConfig));
+
             DateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new ItalianDateTimeExtractorConfiguration(this));

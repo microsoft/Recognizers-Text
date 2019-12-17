@@ -19,7 +19,7 @@ import com.google.common.collect.ImmutableMap;
 
 public class FrenchNumeric {
 
-    public static final String LangMarker = "Fr";
+    public static final String LangMarker = "Fre";
 
     public static final Boolean CompoundNumberLanguage = false;
 

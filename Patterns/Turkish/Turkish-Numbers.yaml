@@ -1,5 +1,6 @@
 ---
-LangMarker: Tr
+#ISO 639-2 Code
+LangMarker: Tur
 CompoundNumberLanguage: !bool true
 MultiDecimalSeparatorCulture: !bool true
 # Integer Regex

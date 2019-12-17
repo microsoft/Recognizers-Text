@@ -27,13 +27,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private readonly IExtractor integerExtractor = new IntegerExtractor();
 
-        private readonly IParser numberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(new BaseNumberOptionsConfiguration(Culture.Japanese)));
+        private readonly IParser numberParser;
 
         private readonly IFullDateTimeParserConfiguration config;
 
         public JapaneseDateTimeParser(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            numberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(numConfig));
         }
 
         public ParseResult Parse(ExtractResult extResult)

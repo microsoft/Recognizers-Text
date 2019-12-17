@@ -11,7 +11,7 @@
 
 import { BaseNumbers } from "./baseNumbers";
 export namespace ChineseNumeric {
-    export const LangMarker = 'Chs';
+    export const LangMarker = 'Chi';
     export const CompoundNumberLanguage = true;
     export const MultiDecimalSeparatorCulture = false;
     export const DecimalSeparatorChar = '.';

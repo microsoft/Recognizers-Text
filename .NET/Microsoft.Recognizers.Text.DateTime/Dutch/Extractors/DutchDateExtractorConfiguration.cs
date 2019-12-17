@@ -125,10 +125,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public DutchDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.Dutch.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.Dutch.OrdinalExtractor.GetInstance(numConfig);
+
+            NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration(numConfig));
+
             DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));
             UtilityConfiguration = new DutchDatetimeUtilityConfiguration();
 

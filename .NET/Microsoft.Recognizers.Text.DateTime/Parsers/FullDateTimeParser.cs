@@ -17,7 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             config = configuration;
         }
 
-        public static void AddSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod, Dictionary<string, string> res)
+        public static void AddSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type,
+                                                         string mod, Dictionary<string, string> res)
         {
             if (resolutionDic.ContainsKey(type))
             {
@@ -40,7 +41,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
-        public static void AddPeriodToResolution(Dictionary<string, string> resolutionDic, string startType, string endType, string mod, Dictionary<string, string> res)
+        public static void AddPeriodToResolution(Dictionary<string, string> resolutionDic, string startType, string endType,
+                                                 string mod, Dictionary<string, string> res)
         {
             var start = string.Empty;
             var end = string.Empty;
@@ -114,6 +116,26 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return type;
+        }
+
+        public static string DetermineSourceEntityType(string sourceType, string newType, bool hasMod)
+        {
+            if (!hasMod)
+            {
+                return null;
+            }
+
+            if (!newType.Equals(sourceType, StringComparison.Ordinal))
+            {
+                return Constants.SYS_DATETIME_DATETIMEPOINT;
+            }
+
+            if (newType.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal))
+            {
+                return Constants.SYS_DATETIME_DATETIMEPERIOD;
+            }
+
+            return null;
         }
 
         public ParseResult Parse(ExtractResult extResult)
@@ -401,14 +423,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     foreach (var q in dictionary)
                     {
-                        if (value.ContainsKey(q.Key))
-                        {
-                            value[q.Key] = q.Value;
-                        }
-                        else
-                        {
-                            value.Add(q.Key, q.Value);
-                        }
+                        value[q.Key] = q.Value;
                     }
 
                     resolutions.Add(value);
@@ -439,26 +454,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
-        }
-
-        public string DetermineSourceEntityType(string sourceType, string newType, bool hasMod)
-        {
-            if (!hasMod)
-            {
-                return null;
-            }
-
-            if (!newType.Equals(sourceType, StringComparison.Ordinal))
-            {
-                return Constants.SYS_DATETIME_DATETIMEPOINT;
-            }
-
-            if (newType.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal))
-            {
-                return Constants.SYS_DATETIME_DATETIMEPERIOD;
-            }
-
-            return null;
         }
 
         internal static void ResolveAmpm(Dictionary<string, object> resolutionDic, string keyName)

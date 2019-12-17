@@ -241,10 +241,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
-            CardinalExtractor = Number.Dutch.CardinalExtractor.GetInstance();
-            OrdinalExtractor = Number.Dutch.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.Dutch.CardinalExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.Dutch.OrdinalExtractor.GetInstance(numConfig);
+
+            NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration(numConfig));
         }
 
         public IDateExtractor DatePointExtractor { get; }

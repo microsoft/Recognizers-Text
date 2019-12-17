@@ -21,6 +21,7 @@ namespace Microsoft.Recognizers.Definitions.English
 
     public static class DateTimeDefinitions
     {
+      public const string LangMarker = @"Eng";
       public const bool CheckBothBeforeAfter = false;
       public static readonly string TillRegex = $@"(?<till>\b(to|(un)?till?|thru|through)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
       public static readonly string RangeConnectorRegex = $@"(?<and>\b(and|through|to)\b|{BaseDateTime.RangeConnectorSymbolRegex})";

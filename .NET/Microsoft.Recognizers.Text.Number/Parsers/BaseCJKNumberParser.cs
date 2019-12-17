@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -135,7 +136,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
             else
             {
-                intPart = Config.ZeroChar.ToString();
+                intPart = Config.ZeroChar.ToString(CultureInfo.InvariantCulture);
                 demoPart = splitResult[0];
                 numPart = splitResult[1];
             }
@@ -298,7 +299,7 @@ namespace Microsoft.Recognizers.Text.Number
                 var splitResult = Config.PointRegex.Split(doubleText);
                 if (splitResult[0] == string.Empty)
                 {
-                    splitResult[0] = Config.ZeroChar.ToString();
+                    splitResult[0] = Config.ZeroChar.ToString(CultureInfo.InvariantCulture);
                 }
 
                 var doubleValue = GetIntValue(splitResult[0]);
@@ -371,7 +372,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                 if (splitResult[0] == string.Empty)
                 {
-                    splitResult[0] = Config.ZeroChar.ToString();
+                    splitResult[0] = Config.ZeroChar.ToString(CultureInfo.InvariantCulture);
                 }
 
                 if (Config.NegativeNumberSignRegex.IsMatch(splitResult[0]))
@@ -441,7 +442,7 @@ namespace Microsoft.Recognizers.Text.Number
             return intValue;
         }
 
-        // Replace full digtal numbers with half digtal numbers. "４" and "4" are both legal in Japanese, replace "４" with "4", then deal with "4"
+        // Replace full digit numbers with half digit numbers. "４" and "4" are both legal in Japanese, replace "４" with "4", then deal with "4"
         private string NormalizeCharWidth(string text)
         {
             if (string.IsNullOrWhiteSpace(text))

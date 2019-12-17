@@ -11,6 +11,7 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace PortugueseDateTime {
+    export const LangMarker = 'Por';
     export const CheckBothBeforeAfter = false;
     export const TillRegex = `(?<till>ate|as|às|até|ateh|a|ao|--|-|—|——)(\\s+(o|[aà](s)?))?`;
     export const AndRegex = `(?<and>e|e\\s*o|--|-|—|——)`;

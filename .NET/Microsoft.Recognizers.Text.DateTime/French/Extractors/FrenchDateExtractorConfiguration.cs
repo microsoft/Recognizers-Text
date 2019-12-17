@@ -139,9 +139,19 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public FrenchDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             IntegerExtractor = Number.French.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance();
-            NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+            NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration(numConfig));
+
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
 

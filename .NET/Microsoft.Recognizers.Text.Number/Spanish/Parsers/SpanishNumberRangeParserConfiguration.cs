@@ -14,8 +14,10 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
             CultureInfo = new CultureInfo(config.Culture);
 
-            NumberExtractor = Spanish.NumberExtractor.GetInstance();
-            OrdinalExtractor = Spanish.OrdinalExtractor.GetInstance();
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, config.Options);
+
+            NumberExtractor = Spanish.NumberExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Spanish.OrdinalExtractor.GetInstance(numConfig);
 
             NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration(config));
 

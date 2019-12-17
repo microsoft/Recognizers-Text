@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Dutch;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
@@ -79,7 +80,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
 
-            CardinalExtractor = Number.Dutch.CardinalExtractor.GetInstance();
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.Dutch.CardinalExtractor.GetInstance(numConfig);
+
             SingleDateExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
             SingleTimeExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new DutchDateTimeExtractorConfiguration(this));

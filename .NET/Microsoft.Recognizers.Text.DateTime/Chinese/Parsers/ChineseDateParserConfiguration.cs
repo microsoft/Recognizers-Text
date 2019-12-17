@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
@@ -23,10 +24,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public ChineseDateParserConfiguration(ChineseDateTimeParserConfiguration configuration)
         {
             config = configuration;
-            integerExtractor = new IntegerExtractor();
-            ordinalExtractor = new OrdinalExtractor();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            integerExtractor = new IntegerExtractor(numConfig);
+            ordinalExtractor = new OrdinalExtractor(numConfig);
+
+            numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(numConfig));
+
             durationExtractor = new ChineseDurationExtractorConfiguration();
-            numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(new BaseNumberOptionsConfiguration(configuration.Culture)));
         }
 
         public ParseResult Parse(ExtractResult extResult)
@@ -514,7 +526,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 day = this.config.DayOfMonth[dayStr] > 31 ? this.config.DayOfMonth[dayStr] % 31 : this.config.DayOfMonth[dayStr];
                 if (!string.IsNullOrEmpty(yearStr))
                 {
-                    year = int.Parse(yearStr);
+                    year = int.Parse(yearStr, CultureInfo.InvariantCulture);
                     if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                     {
                         year += 1900;

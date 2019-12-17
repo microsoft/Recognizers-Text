@@ -19,7 +19,7 @@ import com.google.common.collect.ImmutableMap;
 
 public class ChineseNumeric {
 
-    public static final String LangMarker = "Chs";
+    public static final String LangMarker = "Chi";
 
     public static final Boolean CompoundNumberLanguage = true;
 

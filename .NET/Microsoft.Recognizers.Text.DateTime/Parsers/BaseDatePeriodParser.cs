@@ -186,7 +186,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             DateObject beginDateResult = beginDate;
             DateObject endDateResult = endDate;
-            var isBusinessDay = timex.EndsWith(Constants.TimexBusinessDay);
+            var isBusinessDay = timex.EndsWith(Constants.TimexBusinessDay, StringComparison.Ordinal);
             var businessDayCount = 0;
             List<DateObject> dateList = null;
 
@@ -607,7 +607,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     var pr = this.config.DateParser.Parse(er, referenceDate);
-                    var durationExtractionResult = this.config.DurationExtractor.Extract(er.Text).FirstOrDefault();
+                    var durationExtractionResult = this.config.DurationExtractor.Extract(er.Text, referenceDate).FirstOrDefault();
 
                     if (durationExtractionResult != null)
                     {

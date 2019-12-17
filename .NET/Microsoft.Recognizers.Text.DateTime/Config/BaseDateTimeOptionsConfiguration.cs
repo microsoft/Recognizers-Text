@@ -20,6 +20,8 @@
 
         public bool DmyDateFormat { get; }
 
+        public string LanguageMarker { get; set; }
+
         public string Culture { get; }
 
     }

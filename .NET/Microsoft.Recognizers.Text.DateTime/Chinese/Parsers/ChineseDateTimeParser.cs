@@ -25,15 +25,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private readonly IDateTimeExtractor durationExtractor = new ChineseDurationExtractorConfiguration();
 
-        private readonly IExtractor integerExtractor = new IntegerExtractor();
+        private readonly IExtractor integerExtractor;
 
-        private readonly IParser numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(new BaseNumberOptionsConfiguration(Culture.Chinese)));
+        private readonly IParser numberParser;
 
         private readonly IFullDateTimeParserConfiguration config;
 
         public ChineseDateTimeParser(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            integerExtractor = new IntegerExtractor(numConfig);
+            numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(numConfig));
         }
 
         public ParseResult Parse(ExtractResult extResult)

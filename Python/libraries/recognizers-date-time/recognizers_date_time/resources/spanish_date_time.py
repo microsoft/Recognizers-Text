@@ -14,6 +14,7 @@ from .base_date_time import BaseDateTime
 
 
 class SpanishDateTime:
+    LangMarker = 'Spa'
     CheckBothBeforeAfter = False
     TillRegex = f'(?<till>hasta|al|a|--|-|—|——)(\\s+(el|la(s)?))?'
     AndRegex = f'(?<and>y|y\\s*el|--|-|—|——)'

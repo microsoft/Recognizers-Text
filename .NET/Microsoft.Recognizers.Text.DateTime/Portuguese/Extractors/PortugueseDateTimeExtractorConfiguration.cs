@@ -3,6 +3,7 @@
 using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Portuguese.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
@@ -69,7 +70,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public PortugueseDateTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance();
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance(numConfig);
+
             DatePointExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
             TimePointExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));

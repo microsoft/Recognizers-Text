@@ -23,5 +23,10 @@
         public string RelativeTo { get; set; } = string.Empty;
 
         public bool IsMealtime { get; set; } = false;
+
+        public Metadata Clone()
+        {
+            return (Metadata)MemberwiseClone();
+        }
     }
 }

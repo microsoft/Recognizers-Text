@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number;
@@ -16,19 +15,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly IDateTimeExtractor SingleDateExtractor = new ChineseDateExtractorConfiguration();
 
-        private static readonly IExtractor IntegerExtractor = new IntegerExtractor();
-
-        private static readonly IParser IntegerParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(new BaseNumberOptionsConfiguration(Culture.Chinese)));
-
         private static readonly IDateTimeExtractor DurationExtractor = new ChineseDurationExtractorConfiguration();
 
-        private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
+        private readonly IExtractor integerExtractor;
+
+        private readonly IParser integerParser;
 
         private readonly IFullDateTimeParserConfiguration config;
 
         public ChineseDatePeriodParserConfiguration(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
+
+            var numOptions = NumberOptions.None;
+
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            integerExtractor = new IntegerExtractor(numConfig);
+            integerParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(numConfig));
+
         }
 
         public ParseResult Parse(ExtractResult extResult)
@@ -157,63 +167,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return candidateResults;
         }
 
-        // convert Chinese Number to Integer
-        private static int ConvertChineseToNum(string numStr)
-        {
-            var num = -1;
-            var er = IntegerExtractor.Extract(numStr);
-            if (er.Count != 0)
-            {
-                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
-                {
-                    num = Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
-                }
-            }
-
-            return num;
-        }
-
-        // convert Chinese Year to Integer
-        private static int ConvertChineseToInteger(string yearChsStr)
-        {
-            var year = 0;
-            var num = 0;
-
-            var er = IntegerExtractor.Extract(yearChsStr);
-            if (er.Count != 0)
-            {
-                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
-                {
-                    num = Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
-                }
-            }
-
-            if (num < 10)
-            {
-                num = 0;
-                foreach (var ch in yearChsStr)
-                {
-                    num *= 10;
-                    er = IntegerExtractor.Extract(ch.ToString());
-                    if (er.Count != 0)
-                    {
-                        if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
-                        {
-                            num += Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
-                        }
-                    }
-                }
-
-                year = num;
-            }
-            else
-            {
-                year = num;
-            }
-
-            return year == 0 ? -1 : year;
-        }
-
         private static DateObject ComputeDate(int cardinal, int weekday, int month, int year)
         {
             var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
@@ -229,6 +182,63 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             return firstWeekday.AddDays(7 * (cardinal - 1));
+        }
+
+        // convert Chinese Number to Integer
+        private int ConvertChineseToNum(string numStr)
+        {
+            var num = -1;
+            var er = integerExtractor.Extract(numStr);
+            if (er.Count != 0)
+            {
+                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
+                {
+                    num = Convert.ToInt32((double)(integerParser.Parse(er[0]).Value ?? 0));
+                }
+            }
+
+            return num;
+        }
+
+        // convert Chinese Year to Integer
+        private int ConvertChineseToInteger(string yearChsStr)
+        {
+            var year = 0;
+            var num = 0;
+
+            var er = integerExtractor.Extract(yearChsStr);
+            if (er.Count != 0)
+            {
+                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
+                {
+                    num = Convert.ToInt32((double)(integerParser.Parse(er[0]).Value ?? 0));
+                }
+            }
+
+            if (num < 10)
+            {
+                num = 0;
+                foreach (var ch in yearChsStr)
+                {
+                    num *= 10;
+                    er = integerExtractor.Extract(ch.ToString());
+                    if (er.Count != 0)
+                    {
+                        if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
+                        {
+                            num += Convert.ToInt32((double)(integerParser.Parse(er[0]).Value ?? 0));
+                        }
+                    }
+                }
+
+                year = num;
+            }
+            else
+            {
+                year = num;
+            }
+
+            return year == 0 ? -1 : year;
         }
 
         private DateTimeResolutionResult ParseSimpleCases(string text, DateObject referenceDate)

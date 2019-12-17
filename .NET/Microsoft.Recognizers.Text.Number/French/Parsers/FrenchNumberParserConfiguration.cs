@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.Number.French
         {
 
             this.Config = config;
-            this.LangMarker = NumbersDefinitions.LangMarker;
+            this.LanguageMarker = NumbersDefinitions.LangMarker;
             this.CultureInfo = new CultureInfo(config.Culture);
 
             this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;

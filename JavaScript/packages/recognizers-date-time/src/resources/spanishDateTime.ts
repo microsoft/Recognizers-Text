@@ -11,6 +11,7 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace SpanishDateTime {
+    export const LangMarker = 'Spa';
     export const CheckBothBeforeAfter = false;
     export const TillRegex = `(?<till>hasta|al|a|--|-|—|——)(\\s+(el|la(s)?))?`;
     export const AndRegex = `(?<and>y|y\\s*el|--|-|—|——)`;

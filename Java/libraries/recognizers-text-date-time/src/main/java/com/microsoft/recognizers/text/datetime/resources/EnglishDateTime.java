@@ -19,6 +19,8 @@ import com.google.common.collect.ImmutableMap;
 
 public class EnglishDateTime {
 
+    public static final String LangMarker = "Eng";
+
     public static final Boolean CheckBothBeforeAfter = false;
 
     public static final String TillRegex = "(?<till>\\b(to|(un)?till?|thru|through)\\b|{BaseDateTime.RangeConnectorSymbolRegex})"

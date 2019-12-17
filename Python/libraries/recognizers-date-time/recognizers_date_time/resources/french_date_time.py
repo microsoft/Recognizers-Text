@@ -14,6 +14,7 @@ from .base_date_time import BaseDateTime
 
 
 class FrenchDateTime:
+    LangMarker = 'Fre'
     CheckBothBeforeAfter = False
     TillRegex = f'(?<till>au|et|(jusqu\')?[aà]|avant|--|-|—|——)'
     RangeConnectorRegex = f'(?<and>de la|au|[aà]|et(\\s*la)?|--|-|—|——)'

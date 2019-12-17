@@ -283,14 +283,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var afterStr = trimmedText.Substring(match.Index + match.Length).Trim();
 
                 // Eliminate time period, if any
-                var timePeriodErs = this.Config.TimePeriodExtractor.Extract(beforeStr);
+                var timePeriodErs = this.Config.TimePeriodExtractor.Extract(beforeStr, referenceTime);
                 if (timePeriodErs.Count > 0)
                 {
                     beforeStr = beforeStr.Remove(timePeriodErs[0].Start ?? 0, timePeriodErs[0].Length ?? 0).Trim();
                 }
                 else
                 {
-                    timePeriodErs = this.Config.TimePeriodExtractor.Extract(afterStr);
+                    timePeriodErs = this.Config.TimePeriodExtractor.Extract(afterStr, referenceTime);
                     if (timePeriodErs.Count > 0)
                     {
                         afterStr = afterStr.Remove(timePeriodErs[0].Start ?? 0, timePeriodErs[0].Length ?? 0).Trim();
@@ -420,8 +420,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
 
-            var dateEr = this.Config.DateExtractor.Extract(text).FirstOrDefault();
-            var timeEr = this.Config.TimeExtractor.Extract(text).FirstOrDefault();
+            var dateEr = this.Config.DateExtractor.Extract(text, referenceTime).FirstOrDefault();
+            var timeEr = this.Config.TimeExtractor.Extract(text, referenceTime).FirstOrDefault();
 
             if (dateEr != null && timeEr != null)
             {
@@ -511,7 +511,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
 
-            var dateResult = this.Config.DateExtractor.Extract(text);
+            var dateResult = this.Config.DateExtractor.Extract(text, referenceTime);
             if (dateResult.Count > 0)
             {
                 var beforeString = text.Substring(0, (int)dateResult.Last().Start).TrimEnd();

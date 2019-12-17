@@ -23,11 +23,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static readonly ChineseDateExtractorConfiguration DateExtractor = new ChineseDateExtractorConfiguration();
         private static readonly ChineseTimeExtractorConfiguration TimeExtractor = new ChineseTimeExtractorConfiguration();
         private static readonly ChineseDateTimeExtractorConfiguration DateTimeExtractor = new ChineseDateTimeExtractorConfiguration();
-        private static readonly ChineseDatePeriodExtractorConfiguration DatePeriodExtractor = new ChineseDatePeriodExtractorConfiguration();
         private static readonly ChineseTimePeriodExtractorChsConfiguration TimePeriodExtractor = new ChineseTimePeriodExtractorChsConfiguration();
-        private static readonly ChineseDateTimePeriodExtractorConfiguration DateTimePeriodExtractor = new ChineseDateTimePeriodExtractorConfiguration();
         private static readonly ChineseDurationExtractorConfiguration DurationExtractor = new ChineseDurationExtractorConfiguration();
         private static readonly ChineseSetExtractorConfiguration SetExtractor = new ChineseSetExtractorConfiguration();
+
+        private readonly ChineseDateTimePeriodExtractorConfiguration dateTimePeriodExtractor;
+        private readonly ChineseDatePeriodExtractorConfiguration datePeriodExtractor;
 
         private readonly IDateTimeOptionsConfiguration config;
 
@@ -37,6 +38,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
             HolidayExtractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration(config));
+
+            dateTimePeriodExtractor = new ChineseDateTimePeriodExtractorConfiguration(config);
+            datePeriodExtractor = new ChineseDatePeriodExtractorConfiguration(config);
         }
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
@@ -55,10 +59,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             // the order is important, since there is a problem in merging
             AddTo(ret, TimeExtractor.Extract(text, referenceTime));
             AddTo(ret, DurationExtractor.Extract(text, referenceTime));
-            AddTo(ret, DatePeriodExtractor.Extract(text, referenceTime));
+            AddTo(ret, datePeriodExtractor.Extract(text, referenceTime));
             AddTo(ret, DateTimeExtractor.Extract(text, referenceTime));
             AddTo(ret, TimePeriodExtractor.Extract(text, referenceTime));
-            AddTo(ret, DateTimePeriodExtractor.Extract(text, referenceTime));
+            AddTo(ret, dateTimePeriodExtractor.Extract(text, referenceTime));
             AddTo(ret, SetExtractor.Extract(text, referenceTime));
             AddTo(ret, HolidayExtractor.Extract(text, referenceTime));
 

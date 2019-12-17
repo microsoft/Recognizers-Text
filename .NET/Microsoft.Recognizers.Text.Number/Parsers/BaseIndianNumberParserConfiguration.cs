@@ -40,7 +40,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         public string HalfADozenText { get; set; }
 
-        public string LangMarker { get; set; }
+        public string LanguageMarker { get; set; }
 
         public char NonDecimalSeparatorChar { get; set; }
 

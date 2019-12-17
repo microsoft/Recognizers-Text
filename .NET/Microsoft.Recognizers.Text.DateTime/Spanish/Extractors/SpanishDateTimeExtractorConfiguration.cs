@@ -3,6 +3,7 @@
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Spanish.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -69,7 +70,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public SpanishDateTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance();
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance(numConfig);
+
             DatePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
             TimePointExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
@@ -119,9 +129,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool IsConnector(string text)
         {
             text = text.Trim();
-            return string.IsNullOrEmpty(text)
-                    || PrepositionRegex.IsMatch(text)
-                    || ConnectorRegex.IsMatch(text);
+            return string.IsNullOrEmpty(text) ||
+                   PrepositionRegex.IsMatch(text) ||
+                   ConnectorRegex.IsMatch(text);
         }
     }
 }

@@ -393,7 +393,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var durationExtractor = this.config.DurationExtractor;
 
             // DurationExtractor without parameter will not extract merged duration
-            var ers = durationExtractor.Extract(text);
+            var ers = durationExtractor.Extract(text, referenceTime);
 
             // only handle merged duration cases like "1 month 21 days"
             if (ers.Count <= 1)

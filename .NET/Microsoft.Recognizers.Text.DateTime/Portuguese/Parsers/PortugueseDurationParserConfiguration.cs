@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IParser NumberParser { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public Regex NumberCombinedWithUnit { get; }
 

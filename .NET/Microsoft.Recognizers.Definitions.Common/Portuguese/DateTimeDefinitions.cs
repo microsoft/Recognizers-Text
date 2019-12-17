@@ -21,6 +21,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 
     public static class DateTimeDefinitions
     {
+      public const string LangMarker = @"Por";
       public const bool CheckBothBeforeAfter = false;
       public const string TillRegex = @"(?<till>ate|as|às|até|ateh|a|ao|--|-|—|——)(\s+(o|[aà](s)?))?";
       public const string AndRegex = @"(?<and>e|e\s*o|--|-|—|——)";

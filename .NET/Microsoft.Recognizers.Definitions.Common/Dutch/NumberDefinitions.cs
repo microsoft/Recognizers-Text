@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 
     public static class NumbersDefinitions
     {
-      public const string LangMarker = @"Nl";
+      public const string LangMarker = @"Dut";
       public const bool CompoundNumberLanguage = true;
       public const bool MultiDecimalSeparatorCulture = false;
       public const string RoundNumberIntegerRegex = @"(honderd|duizend|miljoen|miljard|biljoen)";
