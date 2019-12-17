@@ -6,15 +6,17 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
 {
     public class TurkishNumberRangeParserConfiguration : INumberRangeParserConfiguration
     {
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public TurkishNumberRangeParserConfiguration(INumberOptionsConfiguration config)
         {
             CultureInfo = new CultureInfo(config.Culture);
 
-            NumberExtractor = Turkish.NumberExtractor.GetInstance();
-            OrdinalExtractor = Turkish.OrdinalExtractor.GetInstance();
+            NumberExtractor = Turkish.NumberExtractor.GetInstance(NumberMode.Default, config.Options);
+            OrdinalExtractor = Turkish.OrdinalExtractor.GetInstance(config.Options);
             NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(config));
+
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);
             LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags);
             MoreOrEqualSuffix = new Regex(NumbersDefinitions.MoreOrEqualSuffix, RegexFlags);

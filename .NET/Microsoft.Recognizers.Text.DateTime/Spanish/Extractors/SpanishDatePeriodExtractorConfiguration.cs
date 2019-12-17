@@ -205,10 +205,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
-            CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
-            OrdinalExtractor = Number.Spanish.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.Spanish.OrdinalExtractor.GetInstance(numConfig);
+
+            NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration(numConfig));
         }
 
         public IDateExtractor DatePointExtractor { get; }

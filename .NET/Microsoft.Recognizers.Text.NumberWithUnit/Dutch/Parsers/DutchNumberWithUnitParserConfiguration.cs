@@ -9,9 +9,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Dutch
         public DutchNumberWithUnitParserConfiguration(CultureInfo ci)
             : base(ci)
         {
-            this.InternalNumberExtractor = NumberExtractor.GetInstance();
-            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new DutchNumberParserConfiguration(
-                                                                                  new BaseNumberOptionsConfiguration(Culture.Dutch)));
+
+            var config = new BaseNumberOptionsConfiguration(Culture.Dutch, NumberOptions.None);
+
+            this.InternalNumberExtractor = NumberExtractor.GetInstance(config);
+            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                                                                              new DutchNumberParserConfiguration(config));
             this.ConnectorToken = string.Empty;
         }
 

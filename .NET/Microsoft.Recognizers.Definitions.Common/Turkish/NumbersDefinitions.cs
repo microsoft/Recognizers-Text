@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
 
     public static class NumbersDefinitions
     {
-      public const string LangMarker = @"Tr";
+      public const string LangMarker = @"Tur";
       public const bool CompoundNumberLanguage = true;
       public const bool MultiDecimalSeparatorCulture = true;
       public const string DigitsNumberRegex = @"\d+|\d{1,3}(\.\d{3})";

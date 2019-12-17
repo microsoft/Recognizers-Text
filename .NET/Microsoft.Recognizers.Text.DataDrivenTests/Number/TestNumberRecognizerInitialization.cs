@@ -18,10 +18,12 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         public TestNumberRecognizerInitialization()
         {
+            var numConfig = new BaseNumberOptionsConfiguration(EnglishCulture, NumberOptions.None);
+            var pureNumConfig = new BaseNumberOptionsConfiguration(EnglishCulture, NumberOptions.None, NumberMode.PureNumber);
+
             controlModel = new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
-                                                          new EnglishNumberParserConfiguration(new BaseNumberOptionsConfiguration(EnglishCulture))),
-                    NumberExtractor.GetInstance(NumberMode.PureNumber));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration(numConfig)),
+                    NumberExtractor.GetInstance(pureNumConfig));
         }
 
         [TestMethod]

@@ -99,8 +99,9 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 foreach (var result in results)
                 {
-                    if (result.Data.ToString() == NumberRangeConstants.TWONUMBETWEEN ||
-                        result.Data.ToString() == NumberRangeConstants.TWONUMTILL)
+                    var data = result.Data.ToString();
+                    if (data == NumberRangeConstants.TWONUMBETWEEN ||
+                        data == NumberRangeConstants.TWONUMTILL)
                     {
                         result.Data = NumberRangeConstants.TWONUMCLOSED;
                     }

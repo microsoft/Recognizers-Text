@@ -19,6 +19,8 @@ import com.google.common.collect.ImmutableMap;
 
 public class SpanishDateTime {
 
+    public static final String LangMarker = "Spa";
+
     public static final Boolean CheckBothBeforeAfter = false;
 
     public static final String TillRegex = "(?<till>hasta|al|a|--|-|—|——)(\\s+(el|la(s)?))?";

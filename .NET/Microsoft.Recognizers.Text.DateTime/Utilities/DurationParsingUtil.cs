@@ -116,6 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var unitStr = pair.Key;
                 var number = pair.Value;
+
                 switch (unitStr)
                 {
                     case "H":

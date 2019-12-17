@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -87,17 +88,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             var build = new StringBuilder("T");
             if (timeResult.Hour >= 0)
             {
-                build.Append(timeResult.Hour.ToString("D2"));
+                build.Append(timeResult.Hour.ToString("D2", CultureInfo.InvariantCulture));
             }
 
             if (timeResult.Minute >= 0)
             {
-                build.Append(":" + timeResult.Minute.ToString("D2"));
+                build.Append(":" + timeResult.Minute.ToString("D2", CultureInfo.InvariantCulture));
             }
 
             if (timeResult.Second >= 0)
             {
-                build.Append(":" + timeResult.Second.ToString("D2"));
+                build.Append(":" + timeResult.Second.ToString("D2", CultureInfo.InvariantCulture));
             }
 
             if (noDesc)
@@ -112,8 +113,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                 hour = 0;
             }
 
-            dateTimeResult.FutureValue = dateTimeResult.PastValue = DateObject.MinValue.SafeCreateFromValue(year, month, day, hour, min, second);
+            dateTimeResult.FutureValue = dateTimeResult.PastValue =
+                DateObject.MinValue.SafeCreateFromValue(year, month, day, hour, min, second);
             dateTimeResult.Success = true;
+
             return dateTimeResult;
         }
 
@@ -126,7 +129,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 
             if (Regex.IsMatch(text, @"\d+"))
             {
-                return int.Parse(text);
+                return int.Parse(text, CultureInfo.InvariantCulture);
             }
 
             if (text.Length == 1)

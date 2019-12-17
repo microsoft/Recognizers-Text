@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         IExtractor CardinalExtractor { get; }
 
-        IExtractor DurationExtractor { get; }
+        IDateTimeExtractor DurationExtractor { get; }
 
         IParser NumberParser { get; }
 

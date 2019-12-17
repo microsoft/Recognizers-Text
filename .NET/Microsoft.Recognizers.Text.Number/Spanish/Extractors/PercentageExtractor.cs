@@ -8,10 +8,10 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 {
     public sealed class PercentageExtractor : BasePercentageExtractor
     {
-        public PercentageExtractor(NumberOptions options = NumberOptions.None)
-               : base(NumberExtractor.GetInstance(options: options))
+        public PercentageExtractor(BaseNumberOptionsConfiguration config)
+            : base(NumberExtractor.GetInstance(config))
         {
-            Options = options;
+            Options = config.Options;
             Regexes = InitRegexes();
         }
 
@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         protected override ImmutableHashSet<Regex> InitRegexes()
         {
-            HashSet<string> regexStrs = new HashSet<string>
+            var regexStrs = new HashSet<string>
             {
                 NumbersDefinitions.NumberWithPrefixPercentage,
             };

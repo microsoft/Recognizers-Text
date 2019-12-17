@@ -60,9 +60,9 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
             Regexes = regexes.ToImmutableDictionary();
         }
 
-        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+        public sealed override NumberOptions Options { get; }
 
-        protected sealed override NumberOptions Options { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION; // "Fraction";
 

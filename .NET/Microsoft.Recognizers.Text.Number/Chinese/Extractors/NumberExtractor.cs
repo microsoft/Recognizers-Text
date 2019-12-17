@@ -8,16 +8,16 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
     public class NumberExtractor : BaseNumberExtractor
     {
-        public NumberExtractor(CJKNumberExtractorMode mode = CJKNumberExtractorMode.Default)
+        public NumberExtractor(BaseNumberOptionsConfiguration config, CJKNumberExtractorMode mode = CJKNumberExtractorMode.Default)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
             // Add Cardinal
-            var cardExtractChs = new CardinalExtractor(mode);
+            var cardExtractChs = new CardinalExtractor(config, mode);
             builder.AddRange(cardExtractChs.Regexes);
 
             // Add Fraction
-            var fracExtractChs = new FractionExtractor();
+            var fracExtractChs = new FractionExtractor(config);
             builder.AddRange(fracExtractChs.Regexes);
 
             Regexes = builder.ToImmutable();

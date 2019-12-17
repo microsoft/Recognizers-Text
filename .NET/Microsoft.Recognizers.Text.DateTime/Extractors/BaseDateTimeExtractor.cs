@@ -87,6 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         Text = match.Value,
                         Type = Number.Constants.SYS_NUM_INTEGER,
                     };
+
                     numErs.Add(node);
                 }
 
@@ -116,6 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
                      ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal)))
                 {
+
                     var middleBegin = ers[i].Start + ers[i].Length ?? 0;
                     var middleEnd = ers[j].Start ?? 0;
                     if (middleBegin > middleEnd)

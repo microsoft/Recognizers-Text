@@ -125,10 +125,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public HindiDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
            : base(config)
         {
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             IntegerExtractor = Number.Hindi.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.Hindi.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseIndianNumberParser(new HindiNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+            NumberParser = new BaseIndianNumberParser(new HindiNumberParserConfiguration(numConfig));
+
             DurationExtractor = new BaseDurationExtractor(new HindiDurationExtractorConfiguration(this));
             UtilityConfiguration = new HindiDatetimeUtilityConfiguration();
 

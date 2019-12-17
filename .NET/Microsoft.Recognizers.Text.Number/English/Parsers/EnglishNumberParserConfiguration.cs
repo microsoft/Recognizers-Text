@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.Number.English
         {
 
             this.Config = config;
-            this.LangMarker = NumbersDefinitions.LangMarker;
+            this.LanguageMarker = NumbersDefinitions.LangMarker;
 
             // @TODO Temporary workaround
             var culture = config.Culture;

@@ -87,6 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
             var ers = this.config.TimeExtractor.Extract(text, reference);
+
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
@@ -116,6 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
             var matches = config.SetEachRegex.Matches(text);
+
             foreach (Match match in matches)
             {
                 if (match.Success)
@@ -141,6 +143,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     Tuple<string, int> weekdayTuple = config.WeekDayGroupMatchTuple(match);
                     string weekday = weekdayTuple.Item1;
                     int del = weekdayTuple.Item2;
+
                     var trimmedText = text.Remove(match.Index, match.Length);
                     trimmedText = trimmedText.Insert(match.Index, weekday);
 
@@ -150,7 +153,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (er.Start <= match.Index && er.Text.Contains(match.Groups["weekday"].Value))
                         {
                             var len = (er.Length ?? 0) + del;
-                            if (match.Groups[Constants.PrefixGroupName].ToString() != string.Empty)
+                            if (match.Groups[Constants.PrefixGroupName].ToString().Length > 0)
                             {
                                 len += match.Groups[Constants.PrefixGroupName].ToString().Length;
                             }

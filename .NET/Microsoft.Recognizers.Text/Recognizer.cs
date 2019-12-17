@@ -14,6 +14,7 @@ namespace Microsoft.Recognizers.Text
             this.TargetCulture = targetCulture;
 
             this.factory = new ModelFactory<TRecognizerOptions>();
+
             InitializeConfiguration();
 
             if (!lazyInitialization)

@@ -12,8 +12,8 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public NumberRangeExtractor(INumberOptionsConfiguration config)
-            : base(NumberExtractor.GetInstance(),
-                   OrdinalExtractor.GetInstance(),
+            : base(NumberExtractor.GetInstance(new BaseNumberOptionsConfiguration(config.Culture, config.Options)),
+                   OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(config.Culture, config.Options)),
                    new BaseNumberParser(new DutchNumberParserConfiguration(config)),
                    config)
         {

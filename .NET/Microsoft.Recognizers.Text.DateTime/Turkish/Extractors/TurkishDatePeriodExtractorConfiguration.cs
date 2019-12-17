@@ -250,10 +250,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new TurkishDateExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             CardinalExtractor = Number.Turkish.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.Turkish.OrdinalExtractor.GetInstance();
-            DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+
+            NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(numConfig));
         }
 
         public IDateExtractor DatePointExtractor { get; }

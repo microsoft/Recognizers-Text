@@ -21,6 +21,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 
     public static class DateTimeDefinitions
     {
+      public const string LangMarker = @"Spa";
       public const bool CheckBothBeforeAfter = false;
       public const string TillRegex = @"(?<till>hasta|al|a|--|-|—|——)(\s+(el|la(s)?))?";
       public const string AndRegex = @"(?<and>y|y\s*el|--|-|—|——)";

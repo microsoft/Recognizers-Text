@@ -26,12 +26,22 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             WrittenDecades = DateTimeDefinitions.WrittenDecades.ToImmutableDictionary();
             SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases.ToImmutableDictionary();
 
-            CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
-            IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.English.CardinalExtractor.GetInstance(numConfig);
+            IntegerExtractor = Number.English.IntegerExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance(numConfig);
+
+            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration(numConfig));
 
             TimeZoneParser = new BaseTimeZoneParser();
-            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+
             DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(this));

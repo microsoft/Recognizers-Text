@@ -21,6 +21,7 @@ namespace Microsoft.Recognizers.Definitions.French
 
     public static class DateTimeDefinitions
     {
+      public const string LangMarker = @"Fre";
       public const bool CheckBothBeforeAfter = false;
       public const string TillRegex = @"(?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)";
       public const string RangeConnectorRegex = @"(?<and>de la|au|[aà]|et(\s*la)?|--|-|—|——)";

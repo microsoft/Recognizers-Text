@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         public ChineseNumberParserConfiguration(INumberOptionsConfiguration config)
         {
-            this.LangMarker = NumbersDefinitions.LangMarker;
+            this.LanguageMarker = NumbersDefinitions.LangMarker;
             this.CultureInfo = new CultureInfo(config.Culture);
             this.Config = config;
 

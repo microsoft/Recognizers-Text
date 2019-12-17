@@ -79,6 +79,11 @@
             ExtendedTypes
             </summary>
         </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.NoProtoCache">
+            <summary>
+            NoProtoCache
+            </summary>
+        </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.FailFast">
             <summary>
             FailFast, mode that aborts extraction/tagging quickly for non-entity cases. May be removed later.

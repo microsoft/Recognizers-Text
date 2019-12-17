@@ -1,4 +1,6 @@
 ---
+#ISO 639-2 Code
+LangMarker: Por
 CheckBothBeforeAfter: !bool false
 TillRegex: !simpleRegex
   def: (?<till>ate|as|às|até|ateh|a|ao|--|-|—|——)(\s+(o|[aà](s)?))?

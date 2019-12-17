@@ -21,6 +21,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
 
     public static class DateTimeDefinitions
     {
+      public const string LangMarker = @"Tur";
       public const bool CheckBothBeforeAfter = true;
       public static readonly string TillRegex = $@"(?<till>\b(kadar|dek\b|değin)|{BaseDateTime.RangeConnectorSymbolRegex})";
       public static readonly string TillConnectorRegex = $@"(?<till>('?tan|'?ten|'?den|'?dan|ile)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
@@ -207,7 +208,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string ConnectNumRegex = $@"\b({DescRegex}\s+){HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)(?!\d)";
       public static readonly string TimeRegexWithDotConnector = $@"({HourRegex}(\s*\.\s*){BaseDateTime.MinuteRegex})";
       public static readonly string TimeRegex1 = $@"\b(({TimePrefix}\s+)(saat\s)?({WrittenTimeRegex}|{HourNumRegex}|{AtHourNumRegex}|{HourRegex}))(?!(\s+saat|\d+))";
-      public static readonly string TimeRegex2 = $@"\b({TimePrefix}\s+)?(saat\s)?({HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?)";
+      public static readonly string TimeRegex2 = $@"\b({TimePrefix}\s+)?(saat\s)?(t)?({HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?)";
       public static readonly string TimeRegex3 = $@"\b({TimePrefix}\s+)?(saat\s)?({HourRegex}:{BaseDateTime.MinuteRegex})";
       public static readonly string TimeRegex4 = $@"\b({TimePrefix}\s+)?(saat\s)?{TimeSuffix}(?=(\b|dan))";
       public static readonly string TimeRegex5 = $@"\b({TimePrefix}\s+)?(saat\s)?(?<!:)({HourRegex}(:{BaseDateTime.MinuteRegex})?|{HourNumRegex})({AroundRegex})\b";
