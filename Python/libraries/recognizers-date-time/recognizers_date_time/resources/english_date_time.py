@@ -639,7 +639,7 @@ class EnglishDateTime:
                                  ("\\bnow\\b", "\\b(^now,)|\\b((is|are)\\s+now\\s+for|for\\s+now)\\b"),
                                  ("\\bmay\\b", "\\b((((!|\\.|\\?|,|;|)\\s+|^)may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\\b"),
                                  ("\\b(a|one) second\\b", "\\b(?<!an?\\s+)(a|one) second (round|time)\\b"),
-                                 ("\\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$", "(?<!\\b(before|after|around|circa)\\b\\s)(breakfast|brunch|lunch(time)?|dinner(time)?|supper)")])
+                                 ("\\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$", "(?<!\\b(at|before|after|around|circa)\\b\\s)(breakfast|brunch|lunch|dinner|supper)(?!\\s*time)")])
     MorningTermList = [r'morning']
     AfternoonTermList = [r'afternoon']
     EveningTermList = [r'evening']
