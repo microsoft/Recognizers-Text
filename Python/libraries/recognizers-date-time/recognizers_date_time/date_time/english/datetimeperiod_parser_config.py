@@ -4,6 +4,7 @@ import regex
 from recognizers_text.utilities import RegExpUtility
 from ...resources.english_date_time import EnglishDateTime
 from ..base_datetimeperiod import DateTimePeriodParserConfiguration, MatchedTimeRange
+from ..constants import Constants, TimeTypeConstants
 from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
 from ..base_configs import BaseDateParserConfiguration
@@ -11,7 +12,28 @@ from ..base_configs import BaseDateParserConfiguration
 
 class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration):
 
+    @property
+    def time_of_day_regex(self) -> Pattern:
+        return self._time_of_day_regex
+
+    @property
+    def future_suffix_regex(self):
+        return self._future_suffix_regex
+
+    @property
+    def within_next_prefix_regex(self):
+        return self._within_next_prefix_regex
+
     def __init__(self, config: BaseDateParserConfiguration):
+        self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeOfDayRegex)
+        self._future_suffix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.FutureSuffixRegex)
+        self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.WithinNextPrefixRegex)
+        self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PreviousPrefixRegex)
+        self._cardinal_extractor = config.cardinal_extractor
+        self._am_desc_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.AmDescRegex)
+        self._pm_desc_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PmDescRegex)
+        self._token_before_date = EnglishDateTime.TokenBeforeDate
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._pure_number_from_to_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.PureNumFromTo)
         self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(
@@ -50,10 +72,46 @@ class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
             EnglishDateTime.NightStartEndRegex)
         self._prefix_day_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.PrefixDayRegex)
+        self._after_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.AfterRegex)
+        self._before_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.BeforeRegex)
 
     @property
-    def prefix_day_regex(self) -> Pattern:
+    def previous_prefix_regex(self):
+        return self._previous_prefix_regex
+
+    @property
+    def cardinal_extractor(self):
+        return self._cardinal_extractor
+
+    @property
+    def am_desc_regex(self):
+        return self._am_desc_regex
+
+    @property
+    def pm_desc_regex(self):
+        return self._pm_desc_regex
+
+    @property
+    def before_regex(self):
+        return self._before_regex
+
+    @property
+    def after_regex(self):
+        return self._after_regex
+
+    @property
+    def prefix_day_regex(self):
         return self._prefix_day_regex
+
+    @property
+    def token_before_date(self) -> str:
+        return self._token_before_date
+
+    @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
 
     @property
     def pure_number_from_to_regex(self) -> Pattern:
@@ -135,20 +193,34 @@ class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
     def duration_parser(self) -> DateTimeParser:
         return self._duration_parser
 
-    def get_matched_time_range(self, source: str) -> MatchedTimeRange:
+    def get_matched_time_range(self, source: str):
+        trimmed_source = source.strip()
+
+        begin_hour = 0
+        end_hour = 0
+        end_min = 0
         if regex.search(self.morning_start_end_regex, source):
-            return MatchedTimeRange('TMO', 8, 12, 0, True)
+            time_str = 'TMO'
+            begin_hour = 8
+            end_hour = Constants.HALF_DAY_HOUR_COUNT
+        elif regex.search(self.afternoon_start_end_regex, source):
+            time_str = 'TAF'
+            begin_hour = Constants.HALF_DAY_HOUR_COUNT
+            end_hour = 16
+        elif regex.search(self.evening_start_end_regex, source):
+            time_str = 'TEV'
+            begin_hour = 16
+            end_hour = 20
+        elif regex.search(self.night_start_end_regex, source):
+            time_str = 'TNI'
+            begin_hour = 20
+            end_hour = 23
+            end_min = 59
+        else:
+            time_str = ''
+            return MatchedTimeRange(time_str, begin_hour, end_hour, end_min, False)
 
-        if regex.search(self.afternoon_start_end_regex, source):
-            return MatchedTimeRange('TAF', 12, 16, 0, True)
-
-        if regex.search(self.evening_start_end_regex, source):
-            return MatchedTimeRange('TEV', 16, 20, 0, True)
-
-        if regex.search(self.night_start_end_regex, source):
-            return MatchedTimeRange('TNI', 20, 23, 59, True)
-
-        return MatchedTimeRange(None, 0, 0, 0, False)
+        return MatchedTimeRange(time_str, begin_hour, end_hour, end_min, True)
 
     def get_swift_prefix(self, source: str) -> int:
         if source.startswith('next'):

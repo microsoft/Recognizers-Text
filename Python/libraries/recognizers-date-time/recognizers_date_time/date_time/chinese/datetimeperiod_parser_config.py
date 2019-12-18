@@ -4,6 +4,7 @@ from recognizers_text import RegExpUtility
 
 from ...resources.chinese_date_time import ChineseDateTime
 from ..extractors import DateTimeExtractor
+from ..constants import Constants
 from ..parsers import DateTimeParser
 from ..base_datetimeperiod import DateTimePeriodParserConfiguration, MatchedTimeRange
 from .date_extractor import ChineseDateExtractor
@@ -17,6 +18,51 @@ from .datetime_parser import ChineseDateTimeParser
 
 
 class ChineseDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration):
+
+    @property
+    def future_suffix_regex(self):
+        return self._future_suffix_regex
+
+    @property
+    def within_next_prefix_regex(self):
+        return self._within_next_prefix_regex
+
+    @property
+    def previous_prefix_regex(self):
+        return self._previous_prefix_regex
+
+    @property
+    def cardinal_extractor(self):
+        return self._cardinal_extractor
+
+    @property
+    def am_desc_regex(self):
+        return self._am_desc_regex
+
+    @property
+    def pm_desc_regex(self):
+        return self._pm_desc_regex
+
+    @property
+    def before_regex(self):
+        return self._before_regex
+
+    @property
+    def after_regex(self):
+        return self._after_regex
+
+    @property
+    def prefix_day_regex(self):
+        return self._prefix_day_regex
+
+    @property
+    def token_before_date(self):
+        return self._token_before_date
+
+    @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
     @property
     def pure_number_from_to_regex(self) -> any:
         return None
@@ -98,8 +144,13 @@ class ChineseDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         return None
 
     def __init__(self):
+        self._after_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.AfterRegex)
+        self._before_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.BeforeRegex)
         self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.SpecificTimeOfDayRegex)
+        self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.TimeOfDayRegex
+        )
         self._past_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.PastRegex)
         self._future_regex = RegExpUtility.get_safe_reg_exp(
@@ -115,20 +166,57 @@ class ChineseDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         self._time_parser = ChineseTimeParser()
         self._date_time_parser = ChineseDateTimeParser()
         self._time_period_parser = ChineseTimePeriodParser()
+        self._check_both_before_after = None
+        self._token_before_date = None
+        self._prefix_day_regex = None
+        self._am_desc_regex = None
+        self._pm_desc_regex = None
+        self._cardinal_extractor = None
+        self._previous_prefix_regex = None
+        self._within_next_prefix_regex = None
+        self._future_suffix_regex = None
 
-    def get_matched_time_range(self, source: str) -> MatchedTimeRange:
-        source = source.strip().lower()
-        if source in ['今晚']:
-            return MatchedTimeRange('TEV', 16, 20, 0, True, 0)
-        elif source in ['今早', '今晨']:
-            return MatchedTimeRange('TMO', 8, 12, 0, True, 0)
-        elif source in ['明晚']:
-            return MatchedTimeRange('TEV', 16, 20, 0, True, 1)
-        elif source in ['明早', '明晨']:
-            return MatchedTimeRange('TMO', 8, 12, 0, True, 1)
-        elif source in ['昨晚']:
-            return MatchedTimeRange('TEV', 16, 20, 0, True, -1)
-        return MatchedTimeRange('', 0, 0, 0, False, 0)
+    @property
+    def time_of_day_regex(self) -> Pattern:
+        return self._time_of_day_regex
+
+    def get_matched_time_range(self, trimmed_source: str):
+        trimmed_source = trimmed_source.strip().lower()
+        time_str = ''
+        begin_hour = 0
+        end_hour = 0
+        end_min = 0
+        swift = 0
+        if trimmed_source in ['今晚']:
+            swift = 0
+            time_str = 'TEV'
+            begin_hour = 16
+            end_hour = 20
+        elif trimmed_source in ['今早', '今晨']:
+            swift = 0
+            time_str = 'TMO'
+            begin_hour = 8
+            end_hour = Constants.HALF_DAY_HOUR_COUNT
+        elif trimmed_source in ['明晚']:
+            swift = 1
+            time_str = 'TEV'
+            begin_hour = 16
+            end_hour = 20
+        elif trimmed_source in ['明早', '明晨']:
+            swift = 1
+            time_str = 'TMO'
+            begin_hour = 8
+            end_hour = Constants.HALF_DAY_HOUR_COUNT
+        elif trimmed_source in ['昨晚']:
+            swift = -1
+            time_str = 'TEV'
+            begin_hour = 16
+            end_hour = 20
+        else:
+            time_str = None
+            return MatchedTimeRange(time_str, begin_hour, end_hour, end_min, False, swift)
+
+        return MatchedTimeRange(time_str, begin_hour, end_hour, end_min, True, swift)
 
     def get_swift_prefix(self, source: str) -> int:
         return None

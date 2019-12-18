@@ -1080,8 +1080,8 @@ class BaseDateParser(DateTimeParser):
             if past_date >= reference:
                 past_date -= timedelta(weeks=1)
 
-            result.future_value = future_date
-            result.past_value = past_date
+            result.future_value = DateUtils.safe_create_from_min_value(future_date.year, future_date.month, future_date.day)
+            result.past_value = DateUtils.safe_create_from_min_value(past_date.year, past_date.month, past_date.day)
             result.success = True
             return result
 
