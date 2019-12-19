@@ -4,11 +4,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2744475+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " हर हफ्ते ",
+        "Text": "हर हफ्ते",
         "Type": "set",
         "Value": {
           "Timex": "P1W",
@@ -19,8 +18,8 @@
             "set": "Set: P1W"
           }
         },
-        "Start": 3,
-        "Length": 10
+        "Start": 4,
+        "Length": 8
       }
     ]
   },
@@ -29,7 +28,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2754476+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -54,7 +52,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2779449+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -79,7 +76,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2794445+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -104,7 +100,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2829445+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -129,7 +124,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2844439+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -154,7 +148,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2854444+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -183,7 +176,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "हर दो दिन",
+        "Text": "हर दो दिन में",
         "Type": "set",
         "Value": {
           "Timex": "P2D",
@@ -195,7 +188,7 @@
           }
         },
         "Start": 4,
-        "Length": 9
+        "Length": 13
       }
     ]
   },
@@ -229,7 +222,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2989494+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -254,7 +246,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3039501+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -279,11 +270,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3259514+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "हर सोमवार को",
+        "Text": "हर सोमवार",
         "Type": "set",
         "Value": {
           "Timex": "XXXX-WXX-1",
@@ -295,7 +285,7 @@
           }
         },
         "Start": 4,
-        "Length": 12
+        "Length": 9
       }
     ]
   },
@@ -304,7 +294,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3379507+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -329,7 +318,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3429518+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -354,11 +342,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3609535+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "हर रोज सुबह 9 बजे ",
+        "Text": "हर रोज सुबह 9 बजे",
         "Type": "set",
         "Value": {
           "Timex": "T09",
@@ -370,7 +357,7 @@
           }
         },
         "Start": 4,
-        "Length": 18
+        "Length": 17
       }
     ]
   },
@@ -379,11 +366,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3730732+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "हर दिन दोपहर 4 बजे ",
+        "Text": "हर दिन दोपहर 4 बजे",
         "Type": "set",
         "Value": {
           "Timex": "T16",
@@ -395,7 +381,7 @@
           }
         },
         "Start": 4,
-        "Length": 19
+        "Length": 18
       }
     ]
   },
@@ -404,11 +390,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3840706+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "डेली रात 9 बजे ",
+        "Text": "डेली रात 9 बजे",
         "Type": "set",
         "Value": {
           "Timex": "T21",
@@ -420,7 +405,7 @@
           }
         },
         "Start": 4,
-        "Length": 15
+        "Length": 14
       }
     ]
   },
@@ -429,7 +414,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3930718+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -454,11 +438,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4065719+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "रोजाना सुबह 9 बजे ",
+        "Text": "रोजाना सुबह 9 बजे",
         "Type": "set",
         "Value": {
           "Timex": "T09",
@@ -470,7 +453,7 @@
           }
         },
         "Start": 4,
-        "Length": 18
+        "Length": 17
       }
     ]
   },
@@ -479,11 +462,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4170727+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "प्रतिदिन सुबह को 9 बजे ",
+        "Text": "प्रतिदिन सुबह को 9 बजे",
         "Type": "set",
         "Value": {
           "Timex": "T09",
@@ -495,7 +477,7 @@
           }
         },
         "Start": 4,
-        "Length": 23
+        "Length": 22
       }
     ]
   },
@@ -504,7 +486,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4295727+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -529,7 +510,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.438575+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -554,7 +534,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4505726+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -579,11 +558,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4570731+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "हर सोमवार को ",
+        "Text": "हर सोमवार",
         "Type": "set",
         "Value": {
           "Timex": "XXXX-WXX-1",
@@ -595,7 +573,7 @@
           }
         },
         "Start": 4,
-        "Length": 13
+        "Length": 9
       }
     ]
   },
@@ -604,11 +582,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4635727+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "हर इतवार को",
+        "Text": "हर इतवार",
         "Type": "set",
         "Value": {
           "Timex": "XXXX-WXX-7",
@@ -620,7 +597,7 @@
           }
         },
         "Start": 4,
-        "Length": 11
+        "Length": 8
       }
     ]
   },
@@ -629,7 +606,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4710739+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

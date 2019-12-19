@@ -1,7 +1,6 @@
 [
   {
     "Input": "मैं हर हफ्ते जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -14,7 +13,6 @@
   },
   {
     "Input": "मैं रोज़ जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -27,7 +25,6 @@
   },
   {
     "Input": "मैं हर दिन",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -40,7 +37,6 @@
   },
   {
     "Input": "मैं हर महीने जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -53,7 +49,6 @@
   },
   {
     "Input": "मैं सालाना जाता हूं",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -66,7 +61,6 @@
   },
   {
     "Input": "मैं साल में एक बार जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -79,7 +73,6 @@
   },
   {
     "Input": "मैं हर दो दिन में जाती हूं",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -92,7 +85,6 @@
   },
   {
     "Input": "मैं हरेक तीन हफ़्तों में जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -105,7 +97,6 @@
   },
   {
     "Input": "मैं रोज़ शाम 3 बजे जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -118,7 +109,6 @@
   },
   {
     "Input": "मैं हर दिन शाम 3 बजे जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -131,7 +121,6 @@
   },
   {
     "Input": "हरेक 15/4 को मैं निकल जाउंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -144,7 +133,6 @@
   },
   {
     "Input": "मैं हरेक सोमवार को जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -157,7 +145,6 @@
   },
   {
     "Input": "मैं हर सोमवार को शाम 4 बजे जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -170,7 +157,6 @@
   },
   {
     "Input": "मैं रोज सुबह जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -183,7 +169,6 @@
   },
   {
     "Input": "मैं प्रतिदिन पूर्वाह्न 9 बजे जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -196,7 +181,6 @@
   },
   {
     "Input": "मैं रोजाना दोपहर 4 बजे जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -209,7 +193,6 @@
   },
   {
     "Input": "मैं हर रोज रात 9 बजे जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -222,7 +205,6 @@
   },
   {
     "Input": "मैं रोज़ रात के 9 बजे जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -235,7 +217,6 @@
   },
   {
     "Input": "मैं रोज़ सुबह ९ बजे जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -248,7 +229,6 @@
   },
   {
     "Input": "मैं रोज़ सुबह को 9 बजे जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -261,7 +241,6 @@
   },
   {
     "Input": "मैं हर इतवार को सुबह 9 बजे जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -274,7 +253,6 @@
   },
   {
     "Input": "मैं हर रविवार को सुबह 9 बजे जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -286,47 +264,43 @@
     ]
   },
   {
-    "Input": "मैं हर मंडे को 9 o'clock जाऊँगा",
-    "NotSupported": "dotnet",
+    "Input": "मैं हर मंडे को 9 ओक्लॉक जाऊँगा",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "मंडे को 9 o'clock",
+        "Text": "हर मंडे को 9 ओक्लॉक",
         "Type": "set",
-        "Start": 7,
-        "Length": 17
+        "Start": 4,
+        "Length": 19
       }
     ]
   },
   {
     "Input": "मैं हर सोमवार को जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "हर सोमवार को",
+        "Text": "हर सोमवार",
         "Type": "set",
         "Start": 4,
-        "Length": 12
+        "Length": 9
       }
     ]
   },
   {
     "Input": "मैं हर संडे को जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "हर संडे को",
+        "Text": "हर संडे",
         "Type": "set",
         "Start": 4,
-        "Length": 10
+        "Length": 7
       }
     ]
   },
   {
     "Input": "मैं हर इतवार जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
