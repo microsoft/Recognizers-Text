@@ -58,8 +58,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         private static readonly Regex FromRegex =
             new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
 
-        private static readonly Regex ConnectorAndRegex =
-            new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexFlags);
+        private static readonly Regex RangeConnectorRegex =
+            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
 
         private static readonly Regex BetweenRegex =
             new Regex(DateTimeDefinitions.BetweenRegex, RegexFlags);
@@ -185,7 +185,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool HasConnectorToken(string text)
         {
-            return ConnectorAndRegex.IsMatch(text);
+            return RangeConnectorRegex.IsMatch(text);
         }
     }
 }
