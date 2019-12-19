@@ -5,6 +5,7 @@ using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Spanish.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -125,7 +126,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool IsConnectorToken(string text)
         {
-            return RangeConnectorRegex.IsMatch(text);
+            return RangeConnectorRegex.IsExactMatch(text, true);
         }
     }
 }

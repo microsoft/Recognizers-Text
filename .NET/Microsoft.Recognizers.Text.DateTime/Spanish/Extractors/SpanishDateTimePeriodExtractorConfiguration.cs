@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -185,7 +186,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool HasConnectorToken(string text)
         {
-            return RangeConnectorRegex.IsMatch(text);
+            return RangeConnectorRegex.IsExactMatch(text, true);
         }
     }
 }
