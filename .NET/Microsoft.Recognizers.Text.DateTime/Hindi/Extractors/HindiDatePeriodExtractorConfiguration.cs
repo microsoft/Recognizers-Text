@@ -168,6 +168,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
+        private static readonly Regex FromTokenRegex =
+            new Regex(DateTimeDefinitions.FromTokenRegex, RegexFlags);
+
+        private static readonly Regex RangePrefixRegex =
+            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexFlags);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             // "3-5 Jan, 2018",
@@ -328,25 +334,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("from"))
+            var fromMatch = FromTokenRegex.Match(text);
+            if (fromMatch.Success)
             {
-                index = text.LastIndexOf("from", StringComparison.Ordinal);
-                return true;
+                index = fromMatch.Index;
             }
 
-            return false;
+            return fromMatch.Success;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("between"))
+            var betweenMatch = RangePrefixRegex.MatchBegin(text, trim: true);
+            if (betweenMatch.Success)
             {
-                index = text.LastIndexOf("between", StringComparison.Ordinal);
-                return true;
+                index = betweenMatch.Index + betweenMatch.Length;
             }
 
-            return false;
+            return betweenMatch.Success;
         }
 
         public bool HasConnectorToken(string text)

@@ -4,11 +4,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "इस महीने 4 से 22 तक",
+        "Text": "इस महीने 4 से 22",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-04,2016-11-22,P18D)",
@@ -22,7 +21,7 @@
           }
         },
         "Start": 4,
-        "Length": 19
+        "Length": 16
       }
     ]
   },
@@ -31,7 +30,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -58,11 +56,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "3 से 12 सितंबर तक",
+        "Text": "3 से 12 सितंबर",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
@@ -76,7 +73,7 @@
           }
         },
         "Start": 4,
-        "Length": 17
+        "Length": 14
       }
     ]
   },
@@ -85,11 +82,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शुक्रवार से 11 तारीख से मंगलवार 15 तारीख तक",
+        "Text": "शुक्रवार से 11 तारीख से मंगलवार 15",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-11,2016-11-15,P4D)",
@@ -103,7 +99,7 @@
           }
         },
         "Start": 0,
-        "Length": 43
+        "Length": 34
       }
     ]
   },
@@ -112,11 +108,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अगले महीने 4 से 23 तक",
+        "Text": "अगले महीने 4 से 23",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-12-04,2016-12-23,P19D)",
@@ -130,7 +125,7 @@
           }
         },
         "Start": 4,
-        "Length": 21
+        "Length": 18
       }
     ]
   },
@@ -139,11 +134,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "इस महीने 4 से लेकर 23 तक",
+        "Text": "इस महीने 4 से लेकर 23",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-04,2016-11-23,P19D)",
@@ -157,7 +151,7 @@
           }
         },
         "Start": 4,
-        "Length": 24
+        "Length": 21
       }
     ]
   },
@@ -166,7 +160,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -193,7 +186,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -220,11 +212,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4 से 22 जनवरी, 1995 तक",
+        "Text": "4 से 22 जनवरी, 1995",
         "Type": "daterange",
         "Value": {
           "Timex": "(1995-01-04,1995-01-22,P18D)",
@@ -238,7 +229,7 @@
           }
         },
         "Start": 0,
-        "Length": 22
+        "Length": 19
       }
     ]
   },
@@ -247,7 +238,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -270,15 +260,14 @@
     ]
   },
   {
-    "Input": "मैं सितम्बर 8 से लेकर सितंबर 4 के बीच बाहर रहुंगा",
+    "Input": "मैं सितम्बर 4 से लेकर सितंबर 8 के बीच बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सितम्बर 8 से लेकर सितंबर 4 के बीच",
+        "Text": "सितम्बर 4 से लेकर सितंबर 8 के बीच",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-09-04,XXXX-09-08,P4D)",
@@ -301,7 +290,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -328,7 +316,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -355,11 +342,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "चालू सप्ताह में",
+        "Text": "चालू सप्ताह",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-W45",
@@ -373,7 +359,7 @@
           }
         },
         "Start": 4,
-        "Length": 15
+        "Length": 11
       }
     ]
   },
@@ -382,7 +368,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -409,11 +394,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "इस सितंबर ",
+        "Text": "इस सितंबर",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-09",
@@ -427,7 +411,7 @@
           }
         },
         "Start": 4,
-        "Length": 10
+        "Length": 9
       }
     ]
   },
@@ -436,7 +420,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -463,7 +446,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -491,7 +473,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -519,7 +500,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -547,7 +527,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
@@ -556,7 +535,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -583,7 +561,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -610,7 +587,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -637,7 +613,6 @@
     "Context": {
       "ReferenceDateTime": "2026-01-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -664,11 +639,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "मेरा सप्ताह",
+        "Text": "सप्ताह",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-W45",
@@ -681,8 +655,8 @@
             "endDate": "2016-11-14"
           }
         },
-        "Start": 0,
-        "Length": 11
+        "Start": 5,
+        "Length": 6
       }
     ]
   },
@@ -691,7 +665,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -718,7 +691,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -745,11 +717,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "मेरा सप्ताहांत",
+        "Text": "सप्ताहांत",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-W45-WE",
@@ -762,8 +733,8 @@
             "endDate": "2016-11-14"
           }
         },
-        "Start": 0,
-        "Length": 14
+        "Start": 5,
+        "Length": 9
       }
     ]
   },
@@ -772,11 +743,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अक्टू. 2 से अक्टू. 22 तक",
+        "Text": "अक्टू. 2 से अक्टू. 22",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
@@ -790,7 +760,7 @@
           }
         },
         "Start": 4,
-        "Length": 24
+        "Length": 21
       }
     ]
   },
@@ -799,7 +769,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -826,11 +795,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1ली जनवरी से लेकर बुधवार, 22 जन. तक",
+        "Text": "1ली जनवरी से लेकर बुधवार, 22 जन.",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-01-01,XXXX-01-22,P21D)",
@@ -844,7 +812,7 @@
           }
         },
         "Start": 4,
-        "Length": 35
+        "Length": 32
       }
     ]
   },
@@ -853,11 +821,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "आज से कल तक",
+        "Text": "आज से कल",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-07,2016-11-08,P1D)",
@@ -871,7 +838,7 @@
           }
         },
         "Start": 4,
-        "Length": 11
+        "Length": 8
       }
     ]
   },
@@ -880,7 +847,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -907,11 +873,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अक्टू. 2 से अक्टूबर 22 ",
+        "Text": "अक्टू. 2 से अक्टूबर 22 के बीच",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
@@ -925,7 +890,7 @@
           }
         },
         "Start": 4,
-        "Length": 23
+        "Length": 29
       }
     ]
   },
@@ -934,7 +899,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -961,7 +925,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -988,7 +951,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1015,7 +977,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1042,7 +1003,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1069,7 +1029,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1096,7 +1055,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1123,7 +1081,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1150,7 +1107,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-13T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1177,7 +1133,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1204,7 +1159,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1231,7 +1185,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1258,7 +1211,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1285,7 +1237,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1312,7 +1263,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1339,7 +1289,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1367,7 +1316,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
@@ -1376,7 +1324,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1403,7 +1350,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1430,7 +1376,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1457,7 +1402,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1485,7 +1429,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1513,7 +1456,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1540,7 +1482,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1567,7 +1508,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1594,7 +1534,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1621,7 +1560,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1644,21 +1582,20 @@
     ]
   },
   {
-    "Input": "मैं तीसरी तिमाही के दौरान वापस आऊंगा",
+    "Input": "मैं इस साल की तीसरी तिमाही के दौरान वापस आऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "तीसरी तिमाही",
+        "Text": "इस साल की तीसरी तिमाही",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-07-01,2016-10-01,P3M)",
           "FutureResolution": {
-            "startDate": "2017-07-01",
-            "endDate": "2017-10-01"
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
           },
           "PastResolution": {
             "startDate": "2016-07-01",
@@ -1666,26 +1603,25 @@
           }
         },
         "Start": 4,
-        "Length": 12
+        "Length": 22
       }
     ]
   },
   {
-    "Input": "मैं दूसरी तिमाही के दौरान वापस आऊंगा",
+    "Input": "मैं इस साल की दूसरी तिमाही के दौरान वापस आऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दूसरी तिमाही",
+        "Text": "इस साल की दूसरी तिमाही",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-04-01,2016-07-01,P3M)",
           "FutureResolution": {
-            "startDate": "2017-04-01",
-            "endDate": "2017-07-01"
+            "startDate": "2016-04-01",
+            "endDate": "2016-07-01"
           },
           "PastResolution": {
             "startDate": "2016-04-01",
@@ -1693,7 +1629,7 @@
           }
         },
         "Start": 4,
-        "Length": 12
+        "Length": 22
       }
     ]
   },
@@ -1702,7 +1638,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1729,7 +1664,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1756,7 +1690,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1777,7 +1710,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1798,7 +1730,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1819,7 +1750,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1840,7 +1770,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1867,7 +1796,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1894,11 +1822,10 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "इस महीने के अंत में",
+        "Text": "इस महीने के अंत",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-11",
@@ -1913,7 +1840,7 @@
           }
         },
         "Start": 11,
-        "Length": 19
+        "Length": 15
       }
     ]
   },
@@ -1922,11 +1849,10 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "इस सप्ताह के अंत में",
+        "Text": "इस सप्ताह के अंत",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W45",
@@ -1941,7 +1867,7 @@
           }
         },
         "Start": 11,
-        "Length": 20
+        "Length": 16
       }
     ]
   },
@@ -1950,11 +1876,10 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "इस वर्ष के अंत में",
+        "Text": "इस वर्ष के अंत",
         "Type": "daterange",
         "Value": {
           "Timex": "2017",
@@ -1969,7 +1894,7 @@
           }
         },
         "Start": 11,
-        "Length": 18
+        "Length": 14
       }
     ]
   },
@@ -1978,7 +1903,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2006,7 +1930,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2034,11 +1957,10 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अगले महीने की शुरुआत में",
+        "Text": "अगले महीने की शुरुआत",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-12",
@@ -2053,7 +1975,7 @@
           }
         },
         "Start": 11,
-        "Length": 24
+        "Length": 20
       }
     ]
   },
@@ -2062,7 +1984,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2090,7 +2011,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2118,7 +2038,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2146,7 +2065,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-14T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2173,7 +2091,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-14T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2200,11 +2117,10 @@
     "Context": {
       "ReferenceDateTime": "2017-11-14T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "इस सप्ताह म्गल से गुरु तक",
+        "Text": "इस सप्ताह म्गल से गुरु",
         "Type": "daterange",
         "Value": {
           "Timex": "(2017-11-14,2017-11-16,P2D)",
@@ -2218,7 +2134,7 @@
           }
         },
         "Start": 16,
-        "Length": 25
+        "Length": 22
       }
     ]
   },
@@ -2227,7 +2143,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2255,7 +2170,6 @@
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2283,7 +2197,6 @@
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2311,7 +2224,6 @@
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2338,7 +2250,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2366,7 +2277,6 @@
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2394,7 +2304,6 @@
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2422,7 +2331,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2450,7 +2358,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2478,7 +2385,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2506,7 +2412,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2534,7 +2439,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2562,7 +2466,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2590,7 +2493,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2618,7 +2520,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2641,16 +2542,15 @@
     ]
   },
   {
-    "Input": "नब्बे के दशक में",
+    "Input": "इस सदी के पहले दशक में",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "नब्बे के दशक",
+        "Text": "इस सदी के पहले दशक",
         "Type": "daterange",
         "Value": {
           "Timex": "(2000-01-01,2010-01-01,P10Y)",
@@ -2664,7 +2564,7 @@
           }
         },
         "Start": 0,
-        "Length": 12
+        "Length": 18
       }
     ]
   },
@@ -2674,11 +2574,10 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दो हजार अठारह में 2 से 7 फरवरी तक",
+        "Text": "दो हजार अठारह में 2 से 7 फरवरी",
         "Type": "daterange",
         "Value": {
           "Timex": "(2018-02-02,2018-02-07,P5D)",
@@ -2692,7 +2591,7 @@
           }
         },
         "Start": 4,
-        "Length": 33
+        "Length": 30
       }
     ]
   },
@@ -2702,7 +2601,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2730,11 +2628,10 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दो हजार अठारह के फरवरी में 2 से 7 तक",
+        "Text": "दो हजार अठारह के फरवरी में 2 से 7",
         "Type": "daterange",
         "Value": {
           "Timex": "(2018-02-02,2018-02-07,P5D)",
@@ -2748,7 +2645,7 @@
           }
         },
         "Start": 4,
-        "Length": 36
+        "Length": 33
       }
     ]
   },
@@ -2758,7 +2655,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2786,7 +2682,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2809,16 +2704,15 @@
     ]
   },
   {
-    "Input": "एक हजार सात नवासी में",
+    "Input": "एक हजार सात सौ नवासी में",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "एक हजार सात नवासी",
+        "Text": "एक हजार सात सौ नवासी",
         "Type": "daterange",
         "Value": {
           "Timex": "1789",
@@ -2832,7 +2726,7 @@
           }
         },
         "Start": 0,
-        "Length": 17
+        "Length": 20
       }
     ]
   },
@@ -2842,7 +2736,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2870,7 +2763,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2898,7 +2790,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2915,16 +2806,15 @@
     ]
   },
   {
-    "Input": "साल दो सौ सढ़सठ",
+    "Input": "साल दो सौ सड़सठ",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "साल दो सौ सढ़सठ",
+        "Text": "साल दो सौ सड़सठ",
         "Type": "daterange",
         "Value": {
           "Timex": "0267",
@@ -2948,7 +2838,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2976,7 +2865,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3004,7 +2892,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3032,7 +2919,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3060,7 +2946,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3088,11 +2973,10 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2014-2018 के बीच",
+        "Text": "2014-2018",
         "Type": "daterange",
         "Value": {
           "Timex": "(2014-01-01,2018-01-01,P4Y)",
@@ -3106,7 +2990,7 @@
           }
         },
         "Start": 5,
-        "Length": 16
+        "Length": 9
       }
     ]
   },
@@ -3116,7 +3000,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3144,7 +3027,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3172,11 +3054,10 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दो हजार से लेकर दो हजार चौदह तक",
+        "Text": "दो हजार से लेकर दो हजार चौदह",
         "Type": "daterange",
         "Value": {
           "Timex": "(2000-01-01,2014-01-01,P14Y)",
@@ -3190,7 +3071,7 @@
           }
         },
         "Start": 5,
-        "Length": 31
+        "Length": 28
       }
     ]
   },
@@ -3200,7 +3081,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3228,7 +3108,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3256,11 +3135,10 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अगले दशक",
+        "Text": "यह अगले दशक",
         "Type": "daterange",
         "Value": {
           "Timex": "(2020-01-01,2030-01-01,P10Y)",
@@ -3273,8 +3151,8 @@
             "endDate": "2030-01-01"
           }
         },
-        "Start": 3,
-        "Length": 8
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -3284,7 +3162,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3312,7 +3189,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3340,11 +3216,10 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "आज से 2 दिन बाद",
+        "Text": "आज से 2 दिन",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-08,2016-11-10,P2D)",
@@ -3358,7 +3233,7 @@
           }
         },
         "Start": 4,
-        "Length": 15
+        "Length": 11
       }
     ]
   },
@@ -3368,7 +3243,6 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3397,11 +3271,10 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अगले हफ्ते के अंत में ",
+        "Text": "अगले हफ्ते के अंत",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W46",
@@ -3416,7 +3289,7 @@
           }
         },
         "Start": 12,
-        "Length": 22
+        "Length": 17
       }
     ]
   },
@@ -3426,11 +3299,10 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अगले सप्ताह के शुरुआत में",
+        "Text": "अगले सप्ताह के शुरुआत",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W46",
@@ -3445,7 +3317,7 @@
           }
         },
         "Start": 11,
-        "Length": 25
+        "Length": 21
       }
     ]
   },
@@ -3455,7 +3327,6 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3479,16 +3350,15 @@
     ]
   },
   {
-    "Input": "कोर्टाना, हमारे लिए मार्च के बीच का एक समय ढूढ़ो",
+    "Input": "कोर्टाना, हमारे अगले हफ़्ते के बीच का एक समय ढूढ़ो",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "मार्च के बीच",
+        "Text": "अगले हफ़्ते के बीच",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W46",
@@ -3502,8 +3372,8 @@
             "endDate": "2017-11-18"
           }
         },
-        "Start": 20,
-        "Length": 12
+        "Start": 16,
+        "Length": 17
       }
     ]
   },
@@ -3513,7 +3383,6 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

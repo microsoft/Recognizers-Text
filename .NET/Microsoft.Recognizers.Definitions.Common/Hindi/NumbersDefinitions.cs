@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string LangMarker = @"Hin";
       public const bool CompoundNumberLanguage = true;
       public const bool MultiDecimalSeparatorCulture = false;
-      public const string RoundNumberIntegerRegex = @"(सौ|हजार|लाख|करोड़|अरब|खरब)";
+      public const string RoundNumberIntegerRegex = @"(सौ|हजार|हज़ार|लाख|करोड़|अरब|खरब)";
       public const string ZeroToNineIntegerRegex = @"(सात|आठ|चार|पांच|पाँच|शून्य|नौ|दो|छह|एक(सठ)?|तीन|०|१|२|३|४|५|६|७|८|९)";
       public const string TwoToNineIntegerRegex = @"(तीन|सात|आठ|चार|पाँच|पांच|नौ|दो|छह)";
       public const string NegativeNumberTermsRegex = @"(?<negTerm>(माइनस|निगेटिव)\s+)";
@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string ThirtyToThirtyNineIntegerRegex = @"(सैंतीस|तैंतीस|चौंतीस|अड़तीस|उनतालीस|पैंतीस|छ्त्तीस|इकतीस|इकत्तीस|बत्तीस|तीस)";
       public const string FourtyToFourtyNineIntegerRegex = @"(सैंतालीस|तैंतालीस|चौंतालीस|अड़तालीस|उनचास|पैंतालीस|छियालीस|इकतालीस|बयालीस|चालीस)";
       public const string FiftyToFiftyNineIntegerRegex = @"(सत्तावन|तिरेपन|चौबन|अट्ठावन|उनसठ|पचपन|छप्पन|इक्याबन|बावन|पचास)";
-      public const string SixtyToSixtyNineIntegerRegex = @"((सड़|तिर|चौं|अड़|उनहत्तर|पैं|छिया|इक|बा|साठ|एक)(सठ))";
+      public const string SixtyToSixtyNineIntegerRegex = @"((सड़|सड़|तिर|चौं|अड़|उनहत्तर|पैं|छिया|इक|बा|साठ|एक)(सठ))";
       public const string SeventyToSeventyNineIntegerRegex = @"(?:सतहत्तर|तिहत्तर|चौहत्तर|अठहत्तर|उनासी|पचहत्तर|छिहत्तर|इकहत्तर|अठत्तर|बहत्तर|सत्तर)";
       public const string EightyToEightyNineIntegerRegex = @"(सतासी|तिरासी|चौरासी|अठासी|नवासी|पचासी|छियासी|इक्यासी|बयासी|अस्सी)";
       public const string NinetyToNinetyNineIntegerRegex = @"(सत्तानवे|तिरानवे|चौरानवे|अट्ठानवे|निन्यानवे|पचानवे|पंचानबे|छियानवे|इक्यानबे|बानवे|नब्बे)";
@@ -68,15 +68,15 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string EnglishIntegerRegex = $@"(({TensNumberEnglishIntegerRegex}\s+{ZeroToNineEnglishIntegerRegex})|{ZeroToNineEnglishIntegerRegex}|{TenToNineteenEnglishIntegerRegex}|{TensNumberEnglishIntegerRegex})";
       public static readonly string CompoundEnglishNumberRegex = $@"((({EnglishIntegerRegex}\s+)?({RoundNumberEnglishIntegerRegex}\s+)?(and\s+)?)+({EnglishIntegerRegex}|{RoundNumberEnglishIntegerRegex})|({EnglishIntegerRegex}\s+{RoundNumberEnglishIntegerRegex})|{EnglishIntegerRegex}|{RoundNumberEnglishIntegerRegex})";
       public const string DecimalUnitsRegex = @"(?:डेढ़|डेढ़|डेढ|ढाई|सवा|सावा)";
-      public static readonly string DecimalUnitsWithRoundNumberRegex = $@"({DecimalUnitsRegex}\s+{RoundNumberIntegerRegex}|{DecimalUnitsRegex})";
-      public const string RoundNumberOrdinalRegex = @"(?:(सौ|हजार|लाख|करोड़|अरब|खरब)(वां|वीं|वें|वाँ))";
+      public static readonly string DecimalUnitsWithRoundNumberRegex = $@"({DecimalUnitsRegex}\s+({{AllNumericalIntRegex}}\s+)?{RoundNumberIntegerRegex}|{DecimalUnitsRegex})";
+      public const string RoundNumberOrdinalRegex = @"(?:(सौ|हजार|हज़ार|लाख|करोड़|अरब|खरब)(वां|वीं|वें|वाँ))";
       public const string OneToNineOrdinalRegex = @"(?:पहला|पहले|पहली|तीसरे|प्रथम|दूसरा|दूसरी|दूसरे|तिहाई|चौथाई|((पांच|पाँच|छठ|सात|आठ|नौ)(वां|वीं|वें|वाँ|वा)))";
       public const string TenToNineteenOrdinalRegex = @"(?:(दस|ग्यारह|बारह|तेरह|चौदह|पंद्रह|सोलह|सत्रह|अठारह|उन्नीस)(वां|वीं|वें|वाँ))";
       public const string TwentyToTwentyNineOrdinalRegex = @"(?:(बीस|इक्कीस|बाईस|बाइस|तेईस|तेइस|चौबीस|पच्चीस|छब्बीस|सत्ताईस|सत्ताइस|अट्ठाईस|अट्ठाइस|उनतीस)(वां|वीं|वें|वाँ))";
       public const string ThirtyToThirtyNineOrdinalRegex = @"(?:(तीस|इकतीस|इकत्तीस|बत्तीस|तैंतीस|चौंतीस|पैंतीस|छ्त्तीस|सैंतीस|अड़तीस|उनतालीस)(वां|वीं|वें|वाँ))";
       public const string FourtyToFourtyNineOrdinalRegex = @"(?:(चालीस|इकतालीस|बयालीस|तैंतालीस|चौंतालीस|पैंतालीस|छियालीस|सैंतालीस|अड़तालीस|उनचास)(वां|वीं|वें|वाँ))";
       public const string FiftyToFiftyNineOrdinalRegex = @"(?:(पचास|इक्याबन|बावन|तिरेपन|चौबन|पचपन|छप्पन|सत्तावन|अट्ठावन|उनसठ)(वां|वीं|वें|वाँ))";
-      public const string SixtyToSixtyNineOrdinalRegex = @"(?:(साठ|इकसठ|बासठ|तिरसठ|चौंसठ|पैंसठ|छियासठ|सड़सठ|अड़सठ|उनहत्तर)(वां|वीं|वें|वाँ))";
+      public const string SixtyToSixtyNineOrdinalRegex = @"(?:(साठ|इकसठ|बासठ|तिरसठ|चौंसठ|पैंसठ|छियासठ|सड़सठ|सड़सठ|अड़सठ|उनहत्तर)(वां|वीं|वें|वाँ))";
       public const string SeventyToSeventyNineOrdinalRegex = @"(?:(सत्तर|इकहत्तर|बहत्तर|तिहत्तर|चौहत्तर|पचहत्तर|छिहत्तर|सतहत्तर|अठहत्तर|अठत्तर|उनासी)(वां|वीं|वें|वाँ))";
       public const string EightyToEightyNineOrdinalRegex = @"(?:(अस्सी|इक्यासी|बयासी|तिरासी|चौरासी|पचासी|छियासी|सतासी|अठासी|नवासी)(वां|वीं|वें|वाँ))";
       public const string NinetyToNinetyNineOrdinalRegex = @"(?:(नब्बे|इक्यानबे|बानवे|तिरानवे|चौरानवे|पचानवे|छियानवे|सत्तानवे|अट्ठानवे|निन्यानवे)(वां|वीं|वें|वाँ))";
@@ -129,31 +129,31 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string FractionNumberWithSuffixPercentage = $@"(({BaseNumbers.FractionNumberReplaceToken})\s+का)";
       public static readonly string NumberWithPrefixPercentage = $@"({BaseNumbers.NumberReplaceToken})(\s*)(का\s+(परसेंट|प्रतिशत))";
       public static readonly string NumberWithPrepositionPercentage = $@"({BaseNumbers.NumberReplaceToken})\s*(in|out\s+of)\s*({BaseNumbers.NumberReplaceToken})";
-      public const string TillRegex = @"(to|through|--|-|—|——|~|–)";
-      public const string MoreRegex = @"(?:(bigger|greater|more|higher|larger)(\s+than)?|above|over|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)";
-      public const string LessRegex = @"(?:(less|lower|smaller|fewer)(\s+than)?|below|under|(?<!>|=)<)";
-      public const string EqualRegex = @"(equal(s|ing)?(\s+(to|than))?|(?<!<|>)=)";
-      public static readonly string MoreOrEqualPrefix = $@"((no\s+{LessRegex})|(at\s+least))";
-      public static readonly string MoreOrEqual = $@"(?:({MoreRegex}\s+(or)?\s+{EqualRegex})|({EqualRegex}\s+(or)?\s+{MoreRegex})|{MoreOrEqualPrefix}(\s+(or)?\s+{EqualRegex})?|({EqualRegex}\s+(or)?\s+)?{MoreOrEqualPrefix}|>\s*=)";
-      public const string MoreOrEqualSuffix = @"((and|or)\s+(((more|greater|higher|larger|bigger)((?!\s+than)|(\s+than(?!(\s*\d+)))))|((over|above)(?!\s+than))))";
-      public static readonly string LessOrEqualPrefix = $@"((no\s+{MoreRegex})|(at\s+most)|(up\s+to))";
-      public static readonly string LessOrEqual = $@"(({LessRegex}\s+(or)?\s+{EqualRegex})|({EqualRegex}\s+(or)?\s+{LessRegex})|{LessOrEqualPrefix}(\s+(or)?\s+{EqualRegex})?|({EqualRegex}\s+(or)?\s+)?{LessOrEqualPrefix}|<\s*=)";
-      public const string LessOrEqualSuffix = @"((and|or)\s+(less|lower|smaller|fewer)((?!\s+than)|(\s+than(?!(\s*\d+)))))";
+      public const string TillRegex = @"(के|से|--|-|—|——|~|–)";
+      public const string MoreRegex = @"(?:(((उससे|से)\s*)?(ज़्यादा(\s*बड़ी)?|बड़ी|अधिक|ऊपर|पार)|(?<!<|=)>))";
+      public const string LessRegex = @"(?:((उससे|उसके|से)\s*)?(कम|छोटी|नीचे)|(?<!>|=)<)";
+      public const string EqualRegex = @"(((उसके|के)\s*)?(समान|बराबर)|(?<!<|>)=)";
+      public static readonly string MoreOrEqualPrefix = $@"(({LessRegex}\s*नहीं)|(कम\s+से\s+कम))";
+      public static readonly string MoreOrEqual = $@"(?:({MoreRegex}\s+(या)?\s+{EqualRegex})|({EqualRegex}\s+(या)?\s+{MoreRegex})|{MoreOrEqualPrefix}(\s+(या)?\s+{EqualRegex})?|({EqualRegex}\s+(या)?\s+)?{MoreOrEqualPrefix}|>\s*=)";
+      public const string MoreOrEqualSuffix = @"((और|या)\s+((((?!(उससे|से)\s+)|((?!(\d+\s*))(उससे|से)))(ज़्यादा(\s*बड़ी)?|बड़ी|अधिक))|((?!(उससे|से)\s+)(ऊपर|पार))))";
+      public static readonly string LessOrEqualPrefix = $@"(({MoreRegex}\s*नहीं)|(ज़्यादा\s+से\s+ज़्यादा)|तक)";
+      public static readonly string LessOrEqual = $@"(({LessRegex}\s+(या)?\s+{EqualRegex})|({EqualRegex}\s+(या)?\s+{LessRegex})|{LessOrEqualPrefix}(\s+(या)?\s+{EqualRegex})?|({EqualRegex}\s+(या)?\s+)?{LessOrEqualPrefix}|<\s*=)";
+      public const string LessOrEqualSuffix = @"((और|या)\s+((?!(उससे|उसके|से)\s+)|((?!(\d+\s*))(उससे|उसके|से)\s+))(कम|छोटी|नीचे))";
       public const string NumberSplitMark = @"(?![,.](?!\d+))";
-      public const string MoreRegexNoNumberSucceed = @"((bigger|greater|more|higher|larger)((?!\s+than)|\s+(than(?!(\s*\d+))))|(above|over)(?!(\s*\d+)))";
-      public const string LessRegexNoNumberSucceed = @"((less|lower|smaller|fewer)((?!\s+than)|\s+(than(?!(\s*\d+))))|(below|under)(?!(\s*\d+)))";
-      public const string EqualRegexNoNumberSucceed = @"(equal(s|ing)?((?!\s+(to|than))|(\s+(to|than)(?!(\s*\d+)))))";
-      public static readonly string OneNumberRangeMoreRegex1 = $@"({MoreOrEqual}|{MoreRegex})\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)";
+      public const string MoreRegexNoNumberSucceed = @"(((?!(उससे|से)\s+)|((?!(\d+\s*))(उससे|से))\s+)(ज़्यादा(\s*बड़ी)?|बड़ी|अधिक)|(?!(\d+\s*))(ऊपर|पार))";
+      public const string LessRegexNoNumberSucceed = @"(((?!(उससे|उसके|से)\s+)|((?!(\d+\s*))(उससे|उसके|से))\s+)(कम|छोटी|नीचे)|(?!(\d+\s*))(कम|नीचे))";
+      public const string EqualRegexNoNumberSucceed = @"(((?!(उसके|के)\s+)|((?!(\d+\s*))(उसके|के)\s+))(समान|बराबर))";
+      public static readonly string OneNumberRangeMoreRegex1 = $@"(?<number1>({NumberSplitMark}.)+)\s*({MoreOrEqual}|{MoreRegex})";
       public static readonly string OneNumberRangeMoreRegex2 = $@"(?<number1>({NumberSplitMark}.)+)\s*{MoreOrEqualSuffix}";
-      public static readonly string OneNumberRangeMoreSeparateRegex = $@"({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){EqualRegexNoNumberSucceed})";
-      public static readonly string OneNumberRangeLessRegex1 = $@"({LessOrEqual}|{LessRegex})\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)";
+      public static readonly string OneNumberRangeMoreSeparateRegex = $@"((?<number1>({NumberSplitMark}.)+)\s+{EqualRegex}(\s+या\s+){MoreRegexNoNumberSucceed})|((?<number1>({NumberSplitMark}.)+)\s+{MoreRegex}(\s+या\s+){EqualRegexNoNumberSucceed})";
+      public static readonly string OneNumberRangeLessRegex1 = $@"(?<number2>({NumberSplitMark}.)+)\s*({LessOrEqual}|{LessRegex})";
       public static readonly string OneNumberRangeLessRegex2 = $@"(?<number2>({NumberSplitMark}.)+)\s*{LessOrEqualSuffix}";
-      public static readonly string OneNumberRangeLessSeparateRegex = $@"({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){LessRegexNoNumberSucceed})|({LessRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){EqualRegexNoNumberSucceed})";
-      public static readonly string OneNumberRangeEqualRegex = $@"{EqualRegex}\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)";
-      public static readonly string TwoNumberRangeRegex1 = $@"between\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)\s*and\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)";
-      public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(and|but|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})";
-      public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|but|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})";
-      public static readonly string TwoNumberRangeRegex4 = $@"(from\s+)?(?<number1>({NumberSplitMark}(?!\bfrom\b).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)";
+      public static readonly string OneNumberRangeLessSeparateRegex = $@"((?<number1>({NumberSplitMark}.)+)\s+{EqualRegex}(\s+या\s+){LessRegexNoNumberSucceed})|((?<number1>({NumberSplitMark}.)+)\s+{LessRegex}(\s+या\s+){EqualRegexNoNumberSucceed})";
+      public static readonly string OneNumberRangeEqualRegex = $@"(?<number1>({NumberSplitMark}.)+)\s*{EqualRegex}";
+      public static readonly string TwoNumberRangeRegex1 = $@"(?<number1>({NumberSplitMark}.)+)\s*और\s*(?<number2>({NumberSplitMark}.)+)\s*के\s*बीच";
+      public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(और|पर|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})";
+      public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(और|पर|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})";
+      public static readonly string TwoNumberRangeRegex4 = $@"(?<number1>({NumberSplitMark}.)+)\s*{TillRegex}\s*(?<number2>({NumberSplitMark}.)+)";
       public const string AmbiguousFractionConnectorsRegex = @"(\bमें\b)";
       public const char DecimalSeparatorChar = '.';
       public const string FractionMarkerToken = @"भाग";
@@ -165,7 +165,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string[] WrittenIntegerSeparatorTexts = { @"और" };
       public static readonly string[] WrittenFractionSeparatorTexts = { @"और" };
       public const string HalfADozenRegex = @"(आधा\s+)दर्जन";
-      public static readonly string DigitalNumberRegex = $@"((?<=\b)(सौ|हजार|लाख|करोड़|अरब|खरब|दर्जन|हंड्रेड|थाउजेंड|मिलियन|बिलियन|ट्रिलियन|hundred|thousand|million|billion|trillion))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
+      public static readonly string DigitalNumberRegex = $@"((?<=\b)(सौ|हजार|हज़ार|लाख|करोड़|अरब|खरब|दर्जन|हंड्रेड|थाउजेंड|मिलियन|बिलियन|ट्रिलियन|hundred|thousand|million|billion|trillion))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
       public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
         {
             { @"शून्य", 0 },
@@ -247,6 +247,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"पैंसठ", 65 },
             { @"छियासठ", 66 },
             { @"सड़सठ", 67 },
+            { @"सड़सठ", 67 },
             { @"अड़सठ", 68 },
             { @"उनहत्तर", 69 },
             { @"सत्तर", 70 },
@@ -283,6 +284,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"निन्यानवे", 99 },
             { @"सौ", 100 },
             { @"हजार", 1000 },
+            { @"हज़ार", 1000 },
             { @"लाख", 100000 },
             { @"करोड़", 10000000 },
             { @"अरब", 1000000000 },
@@ -370,235 +372,17 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"चौथा", 4 },
             { @"चौथी", 4 },
             { @"चौथाई", 4 },
-            { @"पांचवां", 5 },
-            { @"पांचवाँ", 5 },
-            { @"पांचवा", 5 },
-            { @"पांचवीं", 5 },
-            { @"पांचवें", 5 },
-            { @"पाँचवां", 5 },
-            { @"पाँचवाँ", 5 },
-            { @"पाँचवा", 5 },
-            { @"पाँचवीं", 5 },
-            { @"पाँचवें", 5 },
             { @"छठवा", 6 },
             { @"साँतवा", 7 },
             { @"आँठवा", 8 },
-            { @"आठवां", 8 },
-            { @"नौवां", 9 },
-            { @"दसवां", 10 },
-            { @"ग्यारहवां", 11 },
-            { @"बारहवां", 12 },
-            { @"तेरहवां", 13 },
-            { @"चौदहवां", 14 },
-            { @"पंद्रहवां", 15 },
-            { @"सोलहवां", 16 },
-            { @"सत्रहवां", 17 },
-            { @"अठारहवां", 18 },
-            { @"उन्नीसवां", 19 },
-            { @"बीसवां", 20 },
-            { @"इक्कीसवां", 21 },
-            { @"बाईसवां", 22 },
-            { @"तेईसवां", 23 },
-            { @"चौबीसवां", 24 },
-            { @"पच्चीसवां", 25 },
-            { @"छब्बीसवां", 26 },
-            { @"सत्ताईसवां", 27 },
-            { @"अट्ठाईसवां", 28 },
-            { @"उनतीसवां", 29 },
-            { @"तीसवां", 30 },
-            { @"इकतीसवां", 31 },
             { @"इकत्तीसवां", 31 },
-            { @"बत्तीसवां", 32 },
-            { @"तैंतीसवां", 33 },
-            { @"चौंतीसवां", 34 },
-            { @"पैंतीसवां", 35 },
-            { @"छ्त्तीसवां", 36 },
-            { @"सैंतीसवां", 37 },
-            { @"अड़तीसवां", 38 },
-            { @"उनतालीसवां", 39 },
-            { @"चालीसवां", 40 },
-            { @"इकतालीसवां", 41 },
-            { @"बयालीसवां", 42 },
-            { @"तैंतालीसवां", 43 },
-            { @"चौंतालीसवां", 44 },
-            { @"पैंतालीसवां", 45 },
-            { @"छियालीसवां", 46 },
-            { @"सैंतालीसवां", 47 },
-            { @"अड़तालीसवां", 48 },
-            { @"उनचासवां", 49 },
-            { @"पचासवां", 50 },
-            { @"इक्याबनवां", 51 },
-            { @"बावनवां", 52 },
-            { @"तिरेपनवां", 53 },
-            { @"चौबनवां", 54 },
-            { @"पचपनवां", 55 },
-            { @"छप्पनवां", 56 },
-            { @"सत्तावनवां", 57 },
-            { @"अट्ठावनवां", 58 },
-            { @"उनसठवां", 59 },
-            { @"साठवां", 60 },
-            { @"इकसठवां", 61 },
-            { @"बासठवां", 62 },
-            { @"तिरसठवां", 63 },
-            { @"चौंसठवां", 64 },
-            { @"पैंसठवां", 65 },
-            { @"छियासठवां", 66 },
-            { @"सड़सठवां", 67 },
-            { @"अड़सठवां", 68 },
-            { @"उनहत्तरवां", 69 },
-            { @"सत्तरवां", 70 },
-            { @"इकहत्तरवां", 71 },
-            { @"बहत्तरवां", 72 },
-            { @"तिहत्तरवां", 73 },
-            { @"चौहत्तरवां", 74 },
-            { @"पचहत्तरवां", 75 },
-            { @"छिहत्तरवां", 76 },
-            { @"सतहत्तरवां", 77 },
-            { @"अठहत्तरवां", 78 },
-            { @"उनासीवां", 79 },
-            { @"अस्सीवां", 80 },
-            { @"इक्यासीवां", 81 },
-            { @"बयासीवां", 82 },
-            { @"तिरासीवां", 83 },
-            { @"चौरासीवां", 84 },
-            { @"पचासीवां", 85 },
-            { @"छियासीवां", 86 },
-            { @"सतासीवां", 87 },
-            { @"अठासीवां", 88 },
-            { @"नवासीवां", 89 },
-            { @"नब्बेवां", 90 },
-            { @"इक्यानबेवां", 91 },
-            { @"बानवेवां", 92 },
-            { @"तिरानवेवां", 93 },
-            { @"चौरानवेवां", 94 },
-            { @"पचानवेवां", 95 },
-            { @"पंचानबेवां", 95 },
-            { @"छियानवेवां", 96 },
-            { @"सत्तानवेवां", 97 },
-            { @"अट्ठानवेवां", 98 },
-            { @"निन्यानवेवां", 99 },
-            { @"सौवां", 100 },
-            { @"हजारवां", 1000 },
-            { @"लाखवां", 100000 },
-            { @"एक लाखवां", 100000 },
-            { @"दस लाखवां", 1000000 },
-            { @"करोड़वां", 10000000 },
-            { @"एक करोड़वां", 10000000 },
-            { @"दस करोड़वां", 100000000 },
-            { @"अरबवां", 1000000000 },
-            { @"एक अरबवां", 1000000000 },
-            { @"दस अरबवां", 10000000000 },
-            { @"खरबवां", 100000000000 },
-            { @"दस खरबवां", 1000000000000 },
-            { @"नौवीं", 9 },
-            { @"दसवीं", 10 },
-            { @"ग्यारहवीं", 11 },
-            { @"बारहवीं", 12 },
-            { @"तेरहवीं", 13 },
-            { @"चौदहवीं", 14 },
-            { @"पंद्रहवीं", 15 },
-            { @"सोलहवीं", 16 },
-            { @"सत्रहवीं", 17 },
-            { @"अठारहवीं", 18 },
-            { @"उन्नीसवीं", 19 },
-            { @"बीसवीं", 20 },
-            { @"इक्कीसवीं", 21 },
-            { @"बाईसवीं", 22 },
-            { @"तेईसवीं", 23 },
-            { @"चौबीसवीं", 24 },
-            { @"पच्चीसवीं", 25 },
-            { @"छब्बीसवीं", 26 },
-            { @"सत्ताईसवीं", 27 },
-            { @"अट्ठाईसवीं", 28 },
-            { @"उनतीसवीं", 29 },
-            { @"तीसवीं", 30 },
-            { @"इकतीसवीं", 31 },
-            { @"बत्तीसवीं", 32 },
-            { @"तैंतीसवीं", 33 },
-            { @"चौंतीसवीं", 34 },
-            { @"पैंतीसवीं", 35 },
-            { @"छ्त्तीसवीं", 36 },
-            { @"सैंतीसवीं", 37 },
-            { @"अड़तीसवीं", 38 },
-            { @"उनतालीसवीं", 39 },
-            { @"चालीसवीं", 40 },
-            { @"इकतालीसवीं", 41 },
-            { @"बयालीसवीं", 42 },
-            { @"तैंतालीसवीं", 43 },
-            { @"चौंतालीसवीं", 44 },
-            { @"पैंतालीसवीं", 45 },
-            { @"छियालीसवीं", 46 },
-            { @"सैंतालीसवीं", 47 },
-            { @"अड़तालीसवीं", 48 },
-            { @"उनचासवीं", 49 },
-            { @"पचासवीं", 50 },
-            { @"इक्याबनवीं", 51 },
-            { @"बावनवीं", 52 },
-            { @"तिरेपनवीं", 53 },
-            { @"चौबनवीं", 54 },
-            { @"पचपनवीं", 55 },
-            { @"छप्पनवीं", 56 },
-            { @"सत्तावनवीं", 57 },
-            { @"अट्ठावनवीं", 58 },
-            { @"उनसठवीं", 59 },
-            { @"साठवीं", 60 },
-            { @"इकसठवीं", 61 },
-            { @"बासठवीं", 62 },
-            { @"तिरसठवीं", 63 },
-            { @"चौंसठवीं", 64 },
-            { @"पैंसठवीं", 65 },
-            { @"छियासठवीं", 66 },
-            { @"सड़सठवीं", 67 },
-            { @"अड़सठवीं", 68 },
-            { @"उनहत्तरवीं", 69 },
-            { @"सत्तरवीं", 70 },
-            { @"इकहत्तरवीं", 71 },
-            { @"बहत्तरवीं", 72 },
-            { @"तिहत्तरवीं", 73 },
-            { @"चौहत्तरवीं", 74 },
-            { @"पचहत्तरवीं", 75 },
-            { @"छिहत्तरवीं", 76 },
-            { @"सतहत्तरवीं", 77 },
-            { @"अठहत्तरवीं", 78 },
-            { @"उनासीवीं", 79 },
-            { @"अस्सीवीं", 80 },
-            { @"इक्यासीवीं", 81 },
-            { @"बयासीवीं", 82 },
-            { @"तिरासीवीं", 83 },
-            { @"चौरासीवीं", 84 },
-            { @"पचासीवीं", 85 },
-            { @"छियासीवीं", 86 },
-            { @"सतासीवीं", 87 },
-            { @"अठासीवीं", 88 },
-            { @"नवासीवीं", 89 },
-            { @"नब्बेवीं", 90 },
-            { @"इक्यानबेवीं", 91 },
-            { @"बानवेवीं", 92 },
-            { @"तिरानवेवीं", 93 },
-            { @"चौरानवेवीं", 94 },
-            { @"पचानवेवीं", 95 },
-            { @"छियानवेवीं", 96 },
-            { @"सत्तानवेवीं", 97 },
-            { @"अट्ठानवेवीं", 98 },
-            { @"निन्यानवेवीं", 99 },
-            { @"सौवीं", 100 },
-            { @"हजारवीं", 1000 },
-            { @"लाखवीं", 100000 },
-            { @"एक लाखवीं", 100000 },
-            { @"दस लाखवीं", 1000000 },
-            { @"करोड़वीं", 10000000 },
-            { @"एक करोड़वीं", 10000000 },
-            { @"दस करोड़वीं", 100000000 },
-            { @"अरबवीं", 1000000000 },
-            { @"एक अरबवीं", 1000000000 },
-            { @"दस अरबवीं", 10000000000 },
-            { @"खरबवीं", 100000000000 },
-            { @"एक खरबवीं", 100000000000 },
             { @"फ़र्स्ट", 1 },
             { @"सेकेंड", 2 },
             { @"थर्ड", 3 },
             { @"फोर्थ", 4 },
             { @"फिफ्थ", 5 },
+            { @"पाँचवाँ", 5 },
+            { @"पांचवां", 5 },
             { @"सिक्स्थ", 6 },
             { @"सेवंथ", 7 },
             { @"एइथ", 8 },
@@ -629,22 +413,9 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"first", 1 },
             { @"second", 2 },
             { @"third", 3 },
-            { @"fourth", 4 },
             { @"fifth", 5 },
-            { @"sixth", 6 },
-            { @"seventh", 7 },
-            { @"eighth", 8 },
             { @"ninth", 9 },
-            { @"eleventh", 11 },
             { @"twelfth", 12 },
-            { @"thirteenth", 13 },
-            { @"fourteenth", 14 },
-            { @"fifteenth", 15 },
-            { @"sixteenth", 16 },
-            { @"seventeenth", 17 },
-            { @"eighteenth", 18 },
-            { @"nineteenth", 19 },
-            { @"tenth", 10 },
             { @"twentieth", 20 },
             { @"thirtieth", 30 },
             { @"fortieth", 40 },
@@ -656,21 +427,14 @@ namespace Microsoft.Recognizers.Definitions.Hindi
         };
       public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
         {
-            { @"सौवां", 100 },
             { @"सौ", 100 },
             { @"सैकड़ा", 100 },
             { @"हजार", 1000 },
+            { @"हज़ार", 1000 },
             { @"लाख", 100000 },
-            { @"दस लाख", 1000000 },
             { @"करोड़", 10000000 },
             { @"अरब", 1000000000 },
             { @"खरब", 100000000000 },
-            { @"दस खरब", 1000000000000 },
-            { @"हजारवां", 1000 },
-            { @"दस लाखवां", 1000000 },
-            { @"अरबवां", 1000000000 },
-            { @"खरबवां", 100000000000 },
-            { @"दस खरबवां", 1000000000000 },
             { @"हंड्रेड", 100 },
             { @"थाउजेंड", 1000 },
             { @"मिलियन", 1000000 },
@@ -684,13 +448,6 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"दर्जन", 12 },
             { @"दर्जनों", 12 },
             { @"डज़न", 12 },
-            { @"एक अरब", 1000000000 },
-            { @"सौवीं", 100 },
-            { @"हज़ारवीं", 1000 },
-            { @"दस लाखवीं", 1000000 },
-            { @"अरबवीं", 1000000000 },
-            { @"खरबवीं", 100000000000 },
-            { @"दस खरबवीं", 1000000000000 },
             { @"k", 1000 }
         };
       public static readonly Dictionary<string, double> DecimalUnitsMap = new Dictionary<string, double>
