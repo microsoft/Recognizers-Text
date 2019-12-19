@@ -438,5 +438,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "entre 1 de dezembro e 4 de fevereiro",
+    "Context": {
+      "ReferenceDateTime": "2019-12-19T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "entre 1 de dezembro e 4 de fevereiro",
+        "Start": 0,
+        "End": 35,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-12-01,XXXX-02-04,P65D)",
+              "type": "daterange",
+              "start": "2019-12-01",
+              "end": "2020-02-04"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
