@@ -1029,11 +1029,11 @@
     ]
   },
   {
-    "Input": "सुबह ",
+    "Input": "बीचसुबह ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह",
+        "Text": "बीचसुबह",
         "Type": "time",
         "Value": {
           "Timex": "T10",
@@ -1045,16 +1045,16 @@
           }
         },
         "Start": 0,
-        "Length": 4
+        "Length": 7
       }
     ]
   },
   {
-    "Input": "प्रातः",
+    "Input": "मध्य-सुबह",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "प्रातः",
+        "Text": "मध्य-सुबह",
         "Type": "time",
         "Value": {
           "Timex": "T10",
@@ -1066,16 +1066,16 @@
           }
         },
         "Start": 0,
-        "Length": 6
+        "Length": 9
       }
     ]
   },
   {
-    "Input": "सवेरे",
+    "Input": "मध्य सुबह",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सवेरे",
+        "Text": "मध्य सुबह",
         "Type": "time",
         "Value": {
           "Timex": "T10",
@@ -1087,7 +1087,7 @@
           }
         },
         "Start": 0,
-        "Length": 5
+        "Length": 9
       }
     ]
   },

@@ -7,7 +7,7 @@ CompoundNumberLanguage: !bool true
 MultiDecimalSeparatorCulture: !bool false
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
-  def: (सौ|हजार|लाख|करोड़|अरब|खरब)
+  def: (सौ|हजार|हज़ार|लाख|करोड़|अरब|खरब)
 #ZeroToNineIntegerRegex is used to catch all numbers  between 0-9 in hindi/devanagari
 ZeroToNineIntegerRegex: !simpleRegex
   def: (सात|आठ|चार|पांच|पाँच|शून्य|नौ|दो|छह|एक(सठ)?|तीन|०|१|२|३|४|५|६|७|८|९)
@@ -20,7 +20,7 @@ NegativeNumberSignRegex: !nestedRegex
   references: [ NegativeNumberTermsRegex ]
 AnIntRegex: !simpleRegex
   def: (एक|1|१)(?=\s)
-# From TenToNineteenIntegerRegex- NinetyToNinetyNineIntegerRegex is used to catch hindi numbers from 10-99 
+# From TenToNineteenIntegerRegex- NinetyToNinetyNineIntegerRegex is used to catch hindi numbers from 10-99
 TenToNineteenIntegerRegex: !simpleRegex
   def: (सत्रह|तेरह|चौदह|अठारह|उन्नीस|पंद्रह|सोलह|ग्यारह|बारह|दस)
 TwentyToTwentyNineIntegerRegex: !simpleRegex
@@ -32,7 +32,7 @@ FourtyToFourtyNineIntegerRegex: !simpleRegex
 FiftyToFiftyNineIntegerRegex: !simpleRegex
   def: (सत्तावन|तिरेपन|चौबन|अट्ठावन|उनसठ|पचपन|छप्पन|इक्याबन|बावन|पचास)
 SixtyToSixtyNineIntegerRegex: !simpleRegex
-  def: ((सड़|तिर|चौं|अड़|उनहत्तर|पैं|छिया|इक|बा|साठ|एक)(सठ))
+  def: ((सड़|सड़|तिर|चौं|अड़|उनहत्तर|पैं|छिया|इक|बा|साठ|एक)(सठ))
 SeventyToSeventyNineIntegerRegex: !simpleRegex
   def: (?:सतहत्तर|तिहत्तर|चौहत्तर|अठहत्तर|उनासी|पचहत्तर|छिहत्तर|इकहत्तर|अठत्तर|बहत्तर|सत्तर)
 EightyToEightyNineIntegerRegex: !simpleRegex
@@ -51,10 +51,10 @@ AllNumericalIntRegex: !nestedRegex
 SeparaIntRegex: !nestedRegex
   def: (?:((({AllNumericalIntRegex}|({TensNumberIntegerRegex}(\s+(और\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex})(\s+({RoundNumberIntegerRegex}|{RoundNumberHinglishIntegerRegex}))*)|(({AnIntRegex}?(\s+({RoundNumberIntegerRegex}))+))|({RoundNumberIntegerRegex})|({AllNumericalIntRegex})))
   references: [ AnIntRegex, AllNumericalIntRegex,TensNumberIntegerRegex, RoundNumberIntegerRegex, ZeroToNineIntegerRegex,RoundNumberHinglishIntegerRegex ]
-#AllIntRegex is used to catch  all types of integer numbers including And Keyword in Hindi 
+#AllIntRegex is used to catch  all types of integer numbers including And Keyword in Hindi
 AllIntRegex: !nestedRegex
   def: (?:((({AllNumericalIntRegex}|({TensNumberIntegerRegex}(\s+(और\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{AnIntRegex})(\s+({RoundNumberIntegerRegex}|{RoundNumberHinglishIntegerRegex}))+)\s+(और\s+)?)*({SeparaIntRegex}))
-  references: [ AllNumericalIntRegex,TensNumberIntegerRegex,AnIntRegex,RoundNumberIntegerRegex,SeparaIntRegex, ZeroToNineIntegerRegex,RoundNumberHinglishIntegerRegex]
+  references: [ AllNumericalIntRegex,TensNumberIntegerRegex,AnIntRegex,RoundNumberIntegerRegex,SeparaIntRegex, ZeroToNineIntegerRegex,DevnagariCompoundNumber,RoundNumberHinglishIntegerRegex]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
 PlaceHolderDefault: !simpleRegex
@@ -90,7 +90,7 @@ TensHinglishIntegerRegex: !simpleRegex
 HinglishIntegerRegex: !nestedRegex
   def: (({TensHinglishIntegerRegex}\s+{OnetoNineHinglishIntegerRegex})|{OnetoNineHinglishIntegerRegex}|{ElevenToNineteenHinglishIntegerRegex}|{TensHinglishIntegerRegex})
   references: [ TensHinglishIntegerRegex, OnetoNineHinglishIntegerRegex, ElevenToNineteenHinglishIntegerRegex ]
-#CompoundHindiNumberRegex is used to catch 0-9 hinglish number with hinglish round number 
+#CompoundHindiNumberRegex is used to catch 0-9 hinglish number with hinglish round number
 CompoundHindiNumberRegex: !nestedRegex
   def: ((({HinglishIntegerRegex}\s+)?({RoundNumberHinglishIntegerRegex}\s+)?(अंड\s+)?)+({HinglishIntegerRegex}|{RoundNumberHinglishIntegerRegex})|{HinglishIntegerRegex}|{RoundNumberHinglishIntegerRegex})
   references: [ HinglishIntegerRegex, RoundNumberHinglishIntegerRegex ]
@@ -119,11 +119,11 @@ CompoundEnglishNumberRegex: !nestedRegex
 DecimalUnitsRegex: !simpleRegex
   def: (?:डेढ़|डेढ़|डेढ|ढाई|सवा|सावा)
 DecimalUnitsWithRoundNumberRegex: !nestedRegex
-  def: ({DecimalUnitsRegex}\s+{RoundNumberIntegerRegex}|{DecimalUnitsRegex})
+  def: ({DecimalUnitsRegex}\s+({AllNumericalIntRegex}\s+)?{RoundNumberIntegerRegex}|{DecimalUnitsRegex})
   references: [ DecimalUnitsRegex, RoundNumberIntegerRegex ]
 #Ordinal Regex
 RoundNumberOrdinalRegex: !simpleRegex
-  def: (?:(सौ|हजार|लाख|करोड़|अरब|खरब)(वां|वीं|वें|वाँ))
+  def: (?:(सौ|हजार|हज़ार|लाख|करोड़|अरब|खरब)(वां|वीं|वें|वाँ))
 OneToNineOrdinalRegex: !simpleRegex
   def: (?:पहला|पहले|पहली|तीसरे|प्रथम|दूसरा|दूसरी|दूसरे|तिहाई|चौथाई|((पांच|पाँच|छठ|सात|आठ|नौ)(वां|वीं|वें|वाँ|वा)))
 TenToNineteenOrdinalRegex: !simpleRegex
@@ -137,7 +137,7 @@ FourtyToFourtyNineOrdinalRegex: !simpleRegex
 FiftyToFiftyNineOrdinalRegex: !simpleRegex
   def: (?:(पचास|इक्याबन|बावन|तिरेपन|चौबन|पचपन|छप्पन|सत्तावन|अट्ठावन|उनसठ)(वां|वीं|वें|वाँ))
 SixtyToSixtyNineOrdinalRegex: !simpleRegex
-  def: (?:(साठ|इकसठ|बासठ|तिरसठ|चौंसठ|पैंसठ|छियासठ|सड़सठ|अड़सठ|उनहत्तर)(वां|वीं|वें|वाँ))
+  def: (?:(साठ|इकसठ|बासठ|तिरसठ|चौंसठ|पैंसठ|छियासठ|सड़सठ|सड़सठ|अड़सठ|उनहत्तर)(वां|वीं|वें|वाँ))
 SeventyToSeventyNineOrdinalRegex: !simpleRegex
   def: (?:(सत्तर|इकहत्तर|बहत्तर|तिहत्तर|चौहत्तर|पचहत्तर|छिहत्तर|सतहत्तर|अठहत्तर|अठत्तर|उनासी)(वां|वीं|वें|वाँ))
 EightyToEightyNineOrdinalRegex: !simpleRegex
@@ -211,7 +211,7 @@ OrdinalSuffixRegex: !simpleRegex
   def: (?<=\b)(?:(\d*(1ला|[2-3]रा|4था|[0-9]वां))|([०-९]*(१ला|[२-३]रा|४था|[०-९]वां)))
 #Fraction Regex
 #Fraction cases are used to catch half/quarter with any prefix number in hindi
-#FractionPrepositionRegex s used to catch all fraction cases which includes cardina/cardinal or cardinal/ordinal 
+#FractionPrepositionRegex s used to catch all fraction cases which includes cardina/cardinal or cardinal/ordinal
 FractionNotationWithSpacesRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
 FractionNotationRegex: !simpleRegex
@@ -283,69 +283,69 @@ NumberWithPrepositionPercentage: !nestedRegex
   references: [ BaseNumbers.NumberReplaceToken ]
 #NumberRange Regex
 TillRegex: !simpleRegex
-  def: (to|through|--|-|—|——|~|–)
+  def: (के|से|--|-|—|——|~|–)
 MoreRegex: !simpleRegex
-  def: (?:(bigger|greater|more|higher|larger)(\s+than)?|above|over|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)
+  def: (?:(((उससे|से)\s*)?(ज़्यादा(\s*बड़ी)?|बड़ी|अधिक|ऊपर|पार)|(?<!<|=)>))
 LessRegex: !simpleRegex
-  def: (?:(less|lower|smaller|fewer)(\s+than)?|below|under|(?<!>|=)<)
+  def: (?:((उससे|उसके|से)\s*)?(कम|छोटी|नीचे)|(?<!>|=)<)
 EqualRegex: !simpleRegex
-  def: (equal(s|ing)?(\s+(to|than))?|(?<!<|>)=)
+  def: (((उसके|के)\s*)?(समान|बराबर)|(?<!<|>)=)
 MoreOrEqualPrefix: !nestedRegex
-  def: ((no\s+{LessRegex})|(at\s+least))
+  def: (({LessRegex}\s*नहीं)|(कम\s+से\s+कम))
   references: [ LessRegex ]
 MoreOrEqual: !nestedRegex
-  def: (?:({MoreRegex}\s+(or)?\s+{EqualRegex})|({EqualRegex}\s+(or)?\s+{MoreRegex})|{MoreOrEqualPrefix}(\s+(or)?\s+{EqualRegex})?|({EqualRegex}\s+(or)?\s+)?{MoreOrEqualPrefix}|>\s*=)
+  def: (?:({MoreRegex}\s+(या)?\s+{EqualRegex})|({EqualRegex}\s+(या)?\s+{MoreRegex})|{MoreOrEqualPrefix}(\s+(या)?\s+{EqualRegex})?|({EqualRegex}\s+(या)?\s+)?{MoreOrEqualPrefix}|>\s*=)
   references: [ MoreRegex, EqualRegex, LessRegex, MoreOrEqualPrefix ]
 MoreOrEqualSuffix: !simpleRegex
-  def: ((and|or)\s+(((more|greater|higher|larger|bigger)((?!\s+than)|(\s+than(?!(\s*\d+)))))|((over|above)(?!\s+than))))
+  def: ((और|या)\s+((((?!(उससे|से)\s+)|((?!(\d+\s*))(उससे|से)))(ज़्यादा(\s*बड़ी)?|बड़ी|अधिक))|((?!(उससे|से)\s+)(ऊपर|पार))))
 LessOrEqualPrefix: !nestedRegex
-  def: ((no\s+{MoreRegex})|(at\s+most)|(up\s+to))
+  def: (({MoreRegex}\s*नहीं)|(ज़्यादा\s+से\s+ज़्यादा)|तक)
   references: [ MoreRegex ]
 LessOrEqual: !nestedRegex
-  def: (({LessRegex}\s+(or)?\s+{EqualRegex})|({EqualRegex}\s+(or)?\s+{LessRegex})|{LessOrEqualPrefix}(\s+(or)?\s+{EqualRegex})?|({EqualRegex}\s+(or)?\s+)?{LessOrEqualPrefix}|<\s*=)
+  def: (({LessRegex}\s+(या)?\s+{EqualRegex})|({EqualRegex}\s+(या)?\s+{LessRegex})|{LessOrEqualPrefix}(\s+(या)?\s+{EqualRegex})?|({EqualRegex}\s+(या)?\s+)?{LessOrEqualPrefix}|<\s*=)
   references: [ LessRegex, EqualRegex, MoreRegex, LessOrEqualPrefix ]
 LessOrEqualSuffix: !simpleRegex
-  def: ((and|or)\s+(less|lower|smaller|fewer)((?!\s+than)|(\s+than(?!(\s*\d+)))))
+  def: ((और|या)\s+((?!(उससे|उसके|से)\s+)|((?!(\d+\s*))(उससे|उसके|से)\s+))(कम|छोटी|नीचे))
 NumberSplitMark: !simpleRegex
   def: (?![,.](?!\d+))
 MoreRegexNoNumberSucceed: !simpleRegex
-  def: ((bigger|greater|more|higher|larger)((?!\s+than)|\s+(than(?!(\s*\d+))))|(above|over)(?!(\s*\d+)))
+  def: (((?!(उससे|से)\s+)|((?!(\d+\s*))(उससे|से))\s+)(ज़्यादा(\s*बड़ी)?|बड़ी|अधिक)|(?!(\d+\s*))(ऊपर|पार))
 LessRegexNoNumberSucceed: !simpleRegex
-  def: ((less|lower|smaller|fewer)((?!\s+than)|\s+(than(?!(\s*\d+))))|(below|under)(?!(\s*\d+)))
+  def: (((?!(उससे|उसके|से)\s+)|((?!(\d+\s*))(उससे|उसके|से))\s+)(कम|छोटी|नीचे)|(?!(\d+\s*))(कम|नीचे))
 EqualRegexNoNumberSucceed: !simpleRegex
-  def: (equal(s|ing)?((?!\s+(to|than))|(\s+(to|than)(?!(\s*\d+)))))
+  def: (((?!(उसके|के)\s+)|((?!(\d+\s*))(उसके|के)\s+))(समान|बराबर))
 OneNumberRangeMoreRegex1: !nestedRegex
-  def: ({MoreOrEqual}|{MoreRegex})\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)
+  def: (?<number1>({NumberSplitMark}.)+)\s*({MoreOrEqual}|{MoreRegex})
   references: [ MoreOrEqual, MoreRegex, NumberSplitMark ]
 OneNumberRangeMoreRegex2: !nestedRegex
   def: (?<number1>({NumberSplitMark}.)+)\s*{MoreOrEqualSuffix}
   references: [ MoreOrEqualSuffix, NumberSplitMark ]
 OneNumberRangeMoreSeparateRegex: !nestedRegex
-  def: ({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){EqualRegexNoNumberSucceed})
+  def: ((?<number1>({NumberSplitMark}.)+)\s+{EqualRegex}(\s+या\s+){MoreRegexNoNumberSucceed})|((?<number1>({NumberSplitMark}.)+)\s+{MoreRegex}(\s+या\s+){EqualRegexNoNumberSucceed})
   references: [ EqualRegex, MoreRegex, EqualRegexNoNumberSucceed, MoreRegexNoNumberSucceed, NumberSplitMark ]
 OneNumberRangeLessRegex1: !nestedRegex
-  def: ({LessOrEqual}|{LessRegex})\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)
+  def: (?<number2>({NumberSplitMark}.)+)\s*({LessOrEqual}|{LessRegex})
   references: [ LessOrEqual, LessRegex, NumberSplitMark ]
 OneNumberRangeLessRegex2: !nestedRegex
   def: (?<number2>({NumberSplitMark}.)+)\s*{LessOrEqualSuffix}
   references: [ LessOrEqualSuffix, NumberSplitMark ]
 OneNumberRangeLessSeparateRegex: !nestedRegex
-  def: ({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){LessRegexNoNumberSucceed})|({LessRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){EqualRegexNoNumberSucceed})
+  def: ((?<number1>({NumberSplitMark}.)+)\s+{EqualRegex}(\s+या\s+){LessRegexNoNumberSucceed})|((?<number1>({NumberSplitMark}.)+)\s+{LessRegex}(\s+या\s+){EqualRegexNoNumberSucceed})
   references: [ EqualRegex, LessRegex, EqualRegexNoNumberSucceed, LessRegexNoNumberSucceed, NumberSplitMark ]
 OneNumberRangeEqualRegex: !nestedRegex
-  def: '{EqualRegex}\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)'
+  def: '(?<number1>({NumberSplitMark}.)+)\s*{EqualRegex}'
   references: [ EqualRegex, NumberSplitMark ]
 TwoNumberRangeRegex1: !nestedRegex
-  def: between\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)\s*and\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)
+  def: (?<number1>({NumberSplitMark}.)+)\s*और\s*(?<number2>({NumberSplitMark}.)+)\s*के\s*बीच
   references: [ NumberSplitMark ]
 TwoNumberRangeRegex2: !nestedRegex
-  def: ({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(and|but|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})
+  def: ({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(और|पर|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})
   references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
 TwoNumberRangeRegex3: !nestedRegex
-  def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|but|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
+  def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(और|पर|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
   references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
 TwoNumberRangeRegex4: !nestedRegex
-  def: (from\s+)?(?<number1>({NumberSplitMark}(?!\bfrom\b).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)
+  def: (?<number1>({NumberSplitMark}.)+)\s*{TillRegex}\s*(?<number2>({NumberSplitMark}.)+)
   references: [ TillRegex, NumberSplitMark ]
 AmbiguousFractionConnectorsRegex: !simpleRegex
   def: (\bमें\b)
@@ -363,7 +363,7 @@ WrittenFractionSeparatorTexts: [और]
 HalfADozenRegex: !simpleRegex
   def: (आधा\s+)दर्जन
 DigitalNumberRegex: !nestedRegex
-  def: ((?<=\b)(सौ|हजार|लाख|करोड़|अरब|खरब|दर्जन|हंड्रेड|थाउजेंड|मिलियन|बिलियन|ट्रिलियन|hundred|thousand|million|billion|trillion))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
+  def: ((?<=\b)(सौ|हजार|हज़ार|लाख|करोड़|अरब|खरब|दर्जन|हंड्रेड|थाउजेंड|मिलियन|बिलियन|ट्रिलियन|hundred|thousand|million|billion|trillion))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [ BaseNumbers.MultiplierLookupRegex ]
 CardinalNumberMap: !dictionary
   types: [ string, long ]
@@ -375,7 +375,7 @@ CardinalNumberMap: !dictionary
     चार: 4
     पाँच: 5
     पांच: 5
-    पाँच: 5    
+    पाँच: 5
     छह: 6
     सात: 7
     आठ: 8
@@ -422,11 +422,11 @@ CardinalNumberMap: !dictionary
     चालीस: 40
     इकतालीस: 41
     बयालीस: 42
-    तैंतालीस:	43
+    तैंतालीस: 43
     चौंतालीस: 44
     पैंतालीस: 45
     छियालीस: 46
-    सैंतालीस:	47
+    सैंतालीस: 47
     अड़तालीस: 48
     उनचास: 49
     पचास: 50
@@ -448,6 +448,7 @@ CardinalNumberMap: !dictionary
     पैंसठ: 65
     छियासठ: 66
     सड़सठ: 67
+    सड़सठ: 67
     अड़सठ: 68
     उनहत्तर: 69
     सत्तर: 70
@@ -472,9 +473,9 @@ CardinalNumberMap: !dictionary
     अठासी: 88
     नवासी: 89
     नब्बे: 90
-    इक्यानबे: 91 
+    इक्यानबे: 91
     बानवे: 92
-    तिरानवे: 93 
+    तिरानवे: 93
     चौरानवे: 94
     पचानवे: 95
     पंचानबे: 95
@@ -484,6 +485,7 @@ CardinalNumberMap: !dictionary
     निन्यानवे: 99
     सौ: 100
     हजार: 1000
+    हज़ार: 1000
     लाख: 100000
     करोड़: 10000000
     अरब: 1000000000
@@ -571,231 +573,10 @@ OrdinalNumberMap: !dictionary
     चौथा: 4
     चौथी: 4
     चौथाई: 4
-    पांचवां: 5
-    पांचवाँ: 5	
-    पांचवा: 5
-    पांचवीं: 5
-    पांचवें: 5
-    पाँचवां: 5
-    पाँचवाँ: 5
-    पाँचवा: 5
-    पाँचवीं: 5
-    पाँचवें: 5
     छठवा: 6
     साँतवा: 7
     आँठवा: 8
-    आठवां: 8
-    नौवां: 9
-    दसवां: 10
-    ग्यारहवां: 11
-    बारहवां: 12
-    तेरहवां: 13
-    चौदहवां: 14
-    पंद्रहवां: 15
-    सोलहवां: 16
-    सत्रहवां: 17
-    अठारहवां: 18
-    उन्नीसवां: 19
-    बीसवां: 20
-    इक्कीसवां: 21 
-    बाईसवां: 22
-    तेईसवां: 23
-    चौबीसवां: 24
-    पच्चीसवां: 25
-    छब्बीसवां: 26
-    सत्ताईसवां: 27
-    अट्ठाईसवां: 28
-    उनतीसवां: 29
-    तीसवां: 30
-    इकतीसवां: 31
     इकत्तीसवां: 31
-    बत्तीसवां: 32
-    तैंतीसवां: 33
-    चौंतीसवां: 34
-    पैंतीसवां: 35
-    छ्त्तीसवां: 36
-    सैंतीसवां: 37
-    अड़तीसवां: 38
-    उनतालीसवां: 39
-    चालीसवां: 40
-    इकतालीसवां: 41
-    बयालीसवां: 42
-    तैंतालीसवां: 43
-    चौंतालीसवां: 44
-    पैंतालीसवां: 45
-    छियालीसवां: 46
-    सैंतालीसवां: 47
-    अड़तालीसवां: 48
-    उनचासवां: 49
-    पचासवां: 50
-    इक्याबनवां: 51
-    बावनवां: 52
-    तिरेपनवां: 53
-    चौबनवां: 54
-    पचपनवां: 55
-    छप्पनवां: 56
-    सत्तावनवां: 57
-    अट्ठावनवां: 58
-    उनसठवां: 59
-    साठवां: 60
-    इकसठवां: 61
-    बासठवां: 62
-    तिरसठवां: 63
-    चौंसठवां: 64
-    पैंसठवां: 65
-    छियासठवां: 66 
-    सड़सठवां: 67
-    अड़सठवां: 68
-    उनहत्तरवां: 69
-    सत्तरवां: 70
-    इकहत्तरवां: 71
-    बहत्तरवां: 72
-    तिहत्तरवां: 73
-    चौहत्तरवां: 74
-    पचहत्तरवां: 75
-    छिहत्तरवां: 76
-    सतहत्तरवां: 77
-    अठहत्तरवां: 78
-    उनासीवां: 79
-    अस्सीवां: 80
-    इक्यासीवां: 81
-    बयासीवां: 82
-    तिरासीवां: 83
-    चौरासीवां: 84
-    पचासीवां: 85
-    छियासीवां: 86
-    सतासीवां: 87
-    अठासीवां: 88
-    नवासीवां: 89
-    नब्बेवां: 90
-    इक्यानबेवां: 91 
-    बानवेवां: 92
-    तिरानवेवां: 93 
-    चौरानवेवां: 94
-    पचानवेवां: 95
-    पंचानबेवां: 95
-    छियानवेवां: 96
-    सत्तानवेवां: 97
-    अट्ठानवेवां: 98
-    निन्यानवेवां: 99
-    सौवां: 100
-    हजारवां: 1000
-    लाखवां: 100000
-    एक लाखवां: 100000
-    दस लाखवां: 1000000
-    करोड़वां: 10000000
-    एक करोड़वां: 10000000
-    दस करोड़वां: 100000000
-    अरबवां: 1000000000
-    एक अरबवां: 1000000000
-    दस अरबवां: 10000000000
-    खरबवां: 100000000000
-    दस खरबवां: 1000000000000
-    नौवीं: 9
-    दसवीं: 10
-    ग्यारहवीं: 11
-    बारहवीं: 12
-    तेरहवीं: 13
-    चौदहवीं: 14
-    पंद्रहवीं: 15
-    सोलहवीं: 16
-    सत्रहवीं: 17
-    अठारहवीं: 18
-    उन्नीसवीं: 19
-    बीसवीं: 20
-    इक्कीसवीं: 21
-    बाईसवीं: 22
-    तेईसवीं: 23
-    चौबीसवीं: 24
-    पच्चीसवीं: 25
-    छब्बीसवीं: 26
-    सत्ताईसवीं: 27
-    अट्ठाईसवीं: 28
-    उनतीसवीं: 29
-    तीसवीं: 30
-    इकतीसवीं: 31
-    बत्तीसवीं: 32
-    तैंतीसवीं: 33
-    चौंतीसवीं: 34
-    पैंतीसवीं: 35
-    छ्त्तीसवीं: 36
-    सैंतीसवीं: 37
-    अड़तीसवीं: 38
-    उनतालीसवीं: 39
-    चालीसवीं: 40
-    इकतालीसवीं: 41
-    बयालीसवीं: 42
-    तैंतालीसवीं: 43
-    चौंतालीसवीं: 44
-    पैंतालीसवीं: 45
-    छियालीसवीं: 46
-    सैंतालीसवीं: 47
-    अड़तालीसवीं: 48
-    उनचासवीं: 49
-    पचासवीं: 50
-    इक्याबनवीं: 51
-    बावनवीं: 52
-    तिरेपनवीं: 53
-    चौबनवीं: 54
-    पचपनवीं: 55
-    छप्पनवीं: 56
-    सत्तावनवीं: 57
-    अट्ठावनवीं: 58
-    उनसठवीं: 59
-    साठवीं: 60
-    इकसठवीं: 61
-    बासठवीं: 62
-    तिरसठवीं: 63
-    चौंसठवीं: 64
-    पैंसठवीं: 65
-    छियासठवीं: 66 
-    सड़सठवीं: 67
-    अड़सठवीं: 68
-    उनहत्तरवीं: 69
-    सत्तरवीं: 70
-    इकहत्तरवीं: 71
-    बहत्तरवीं: 72
-    तिहत्तरवीं: 73
-    चौहत्तरवीं: 74
-    पचहत्तरवीं: 75
-    छिहत्तरवीं: 76
-    सतहत्तरवीं: 77
-    अठहत्तरवीं: 78
-    उनासीवीं: 79
-    अस्सीवीं: 80
-    इक्यासीवीं: 81
-    बयासीवीं: 82
-    तिरासीवीं: 83
-    चौरासीवीं: 84
-    पचासीवीं: 85
-    छियासीवीं: 86
-    सतासीवीं: 87
-    अठासीवीं: 88
-    नवासीवीं: 89
-    नब्बेवीं: 90
-    इक्यानबेवीं: 91 
-    बानवेवीं: 92
-    तिरानवेवीं: 93 
-    चौरानवेवीं: 94
-    पचानवेवीं: 95
-    छियानवेवीं: 96
-    सत्तानवेवीं: 97
-    अट्ठानवेवीं: 98
-    निन्यानवेवीं: 99
-    सौवीं: 100
-    हजारवीं: 1000
-    लाखवीं: 100000
-    एक लाखवीं: 100000
-    दस लाखवीं: 1000000
-    करोड़वीं: 10000000
-    एक करोड़वीं: 10000000
-    दस करोड़वीं: 100000000
-    अरबवीं: 1000000000
-    एक अरबवीं: 1000000000
-    दस अरबवीं: 10000000000
-    खरबवीं: 100000000000
-    एक खरबवीं: 100000000000
-    दस खरबवां: 1000000000000
     फ़र्स्ट: 1
     सेकेंड: 2
     थर्ड: 3
@@ -833,22 +614,9 @@ OrdinalNumberMap: !dictionary
     first: 1
     second: 2
     third: 3
-    fourth: 4
     fifth: 5
-    sixth: 6
-    seventh: 7
-    eighth: 8
     ninth: 9
-    eleventh: 11
     twelfth: 12
-    thirteenth: 13
-    fourteenth: 14
-    fifteenth: 15
-    sixteenth: 16
-    seventeenth: 17
-    eighteenth: 18
-    nineteenth: 19
-    tenth: 10
     twentieth: 20
     thirtieth: 30
     fortieth: 40
@@ -860,21 +628,14 @@ OrdinalNumberMap: !dictionary
 RoundNumberMap: !dictionary
   types: [ string, long ]
   entries:
-    सौवां: 100
     सौ: 100
     सैकड़ा: 100
     हजार: 1000
+    हज़ार: 1000
     लाख: 100000
-    दस लाख: 1000000
     करोड़: 10000000
     अरब: 1000000000
     खरब: 100000000000
-    दस खरब: 1000000000000
-    हजारवां: 1000
-    दस लाखवां: 1000000
-    अरबवां: 1000000000
-    खरबवां: 100000000000
-    दस खरबवां: 1000000000000
     हंड्रेड: 100
     थाउजेंड: 1000
     मिलियन: 1000000
@@ -888,13 +649,6 @@ RoundNumberMap: !dictionary
     दर्जन: 12
     दर्जनों: 12
     डज़न: 12
-    एक अरब: 1000000000
-    सौवीं: 100
-    हज़ारवीं: 1000
-    दस लाखवीं: 1000000
-    अरबवीं: 1000000000
-    खरबवीं: 100000000000
-    दस खरबवीं: 1000000000000
     k: 1000
 DecimalUnitsMap: !dictionary
   types: [ string, double ]
