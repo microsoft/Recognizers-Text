@@ -4,6 +4,7 @@ using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Portuguese;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
@@ -12,9 +13,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         // base regexes
         public static readonly Regex TillRegex =
             new Regex(DateTimeDefinitions.TillRegex, RegexFlags);
-
-        public static readonly Regex AndRegex =
-            new Regex(DateTimeDefinitions.AndRegex, RegexFlags);
 
         public static readonly Regex DayRegex =
             new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
@@ -169,8 +167,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         private static readonly Regex FromRegex =
             new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
 
-        private static readonly Regex ConnectorAndRegex =
-            new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexFlags);
+        private static readonly Regex RangeConnectorRegex =
+            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
 
         private static readonly Regex BetweenRegex =
             new Regex(DateTimeDefinitions.BetweenRegex, RegexFlags);
@@ -315,7 +313,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool HasConnectorToken(string text)
         {
-            return ConnectorAndRegex.IsMatch(text);
+            return RangeConnectorRegex.IsExactMatch(text, true);
         }
     }
 }

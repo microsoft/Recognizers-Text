@@ -4650,7 +4650,6 @@
   },
   {
     "Input": "entre el 1 de diciembre y el 4 de febrero",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "entre el 1 de diciembre y el 4 de febrero",

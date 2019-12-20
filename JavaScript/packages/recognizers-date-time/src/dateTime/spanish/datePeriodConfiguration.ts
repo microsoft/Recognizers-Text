@@ -30,7 +30,7 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     readonly durationExtractor: IDateTimeExtractor;
 
     readonly fromRegex: RegExp;
-    readonly connectorAndRegex: RegExp;
+    readonly RangeConnectorRegex: RegExp;
     readonly betweenRegex: RegExp;
     readonly nowRegex: RegExp
 
@@ -70,7 +70,7 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
         this.rangeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RangeUnitRegex);
 
         this.fromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex);
-        this.connectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex);
+        this.RangeConnectorRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RangeConnectorRegex);
         this.betweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex);
         this.nowRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NowRegex);
 
@@ -89,7 +89,7 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     }
 
     hasConnectorToken(source: string): boolean {
-        return RegExpUtility.getFirstMatchIndex(this.connectorAndRegex, source).matched;
+        return RegExpUtility.getFirstMatchIndex(this.RangeConnectorRegex, source).matched;
     }
 }
 
