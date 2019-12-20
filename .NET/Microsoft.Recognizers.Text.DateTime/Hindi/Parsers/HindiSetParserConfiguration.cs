@@ -1,11 +1,18 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Hindi;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Hindi
 {
    public class HindiSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex DateUnitRegex =
+            new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
+
         public HindiSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -79,24 +86,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
             var trimmedText = text.Trim();
+            var match = PeriodicRegex.MatchExact(trimmedText, trim: true);
 
-            if (trimmedText.Equals("daily"))
+            if (match.Groups["daily"].Success)
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("weekly"))
+            else if (match.Groups["weekly"].Success)
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("biweekly"))
+            else if (match.Groups["biweekly"].Success)
             {
                 timex = "P2W";
             }
-            else if (trimmedText.Equals("monthly"))
+            else if (match.Groups["monthly"].Success)
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("yearly") || trimmedText.Equals("annually") || trimmedText.Equals("annual"))
+            else if (match.Groups["yearly"].Success)
             {
                 timex = "P1Y";
             }
@@ -112,20 +120,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
             var trimmedText = text.Trim();
+            var match = DateUnitRegex.MatchExact(trimmedText, trim: true);
 
-            if (trimmedText.Equals("day"))
+            if (match.Groups["day"].Success)
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("week"))
+            else if (match.Groups["week"].Success)
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("month"))
+            else if (match.Groups["month"].Success)
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("year"))
+            else if (match.Groups["year"].Success)
             {
                 timex = "P1Y";
             }
