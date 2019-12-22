@@ -11,7 +11,7 @@ RangeConnectorRegex : !nestedRegex
 RelativeRegex: !simpleRegex
   def: \b(?<order>अगला|अगले|दूसरे|अगली|आने\s+वा(ले|ला)|ये|आगामी|पिछला|पिछले|पिछली|आखिरी|अंतिम|यह|इसी|इस|वर्तमान|अभी\s+(के|वाला)|इस|उस|चालू)
 StrictRelativeRegex: !simpleRegex
-  def: \b(?<order>अगला|अगले|दूसरे|अगली|आने\s+वा(ले|ला)|ये|आगामी|पिछला|पिछली|पिछले|आखिरी|अंतिम|वर्तमान|अभी\s+(के|वाला)|इस|उस)
+  def: \b(?<order>अगला|अगले|दूसरे|अगली|आने\s+वा(ले|ला)|ये|आगामी|पिछला|पिछली|पिछले|आखिरी|अंतिम|वर्तमान|अभी\s+(के|वाला)|इसी|इस|उस)
 UpcomingPrefixRegex: !simpleRegex
   def: (((इस|इसी)\s+)?(आने\s+(वाले|वाला)|आगामी))
 NextPrefixRegex: !nestedRegex
@@ -472,7 +472,7 @@ TimeOfDayRegex: !nestedRegex
   def: \b(?<timeOfDay>(रोज\s+)?{LaterEarlyRegex}\s*({AmRegex}|{PmRegex})|(रोज\s+)?({AmRegex}|{PmRegex}|संध्या\s+प्रहर)(\s+{LaterEarlyRegex})?)
   references: [ LaterEarlyRegex, AmRegex, PmRegex ]
 SpecificTimeOfDayRegex: !nestedRegex
-  def: \b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\b(tonight|आज\s+रात))s?\b
+  def: \b(({StrictRelativeRegex}\s+{TimeOfDayRegex})|\b(tonight|आज\s+रात))s?\b
   references: [ TimeOfDayRegex, StrictRelativeRegex ]
 TimeFollowedUnit: !nestedRegex
   def: ^\s*{TimeUnitRegex}
@@ -484,7 +484,7 @@ BusinessHourSplitStrings: ['business', 'hour', 'घण्टे']
 NowRegex: !simpleRegex
   def: \b(?<now>अभी|अब|जल्द\s+से\s+जल्द|जितनी\s+जल्दी\s+हो\s+सके|यथाशीघ्र|हाल\s+ही\s+में|पहले से)
 SuffixRegex: !simpleRegex
-  def: ^\s*(in the\s+)?(morning|सुबह|afternoon|दोपहर|evening|संध्या|night|रात)\b
+  def: ^\s*(in the\s+)?(morning|सुबह|afternoon|दोपहर|evening|संध्या|शाम|night|रात)\b
 NonTimeContextTokens: !simpleRegex
   def: (building)
 DateTimeTimeOfDayRegex: !simpleRegex
@@ -518,7 +518,7 @@ PeriodSpecificTimeOfDayRegex: !nestedRegex
   def: \b({LaterEarlyRegex}?this\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\b(tonight|आज\s+रात))\b
   references: [ PeriodTimeOfDayRegex, StrictRelativeRegex, DateTimeTimeOfDayRegex, LaterEarlyRegex ]
 PeriodTimeOfDayWithDateRegex: !nestedRegex
- def: \b(({PeriodTimeOfDayRegex}(\s+(on|of))?))\b
+ def: \b(({PeriodTimeOfDayRegex}(\s+(को|की))?))\b
  references: [ PeriodTimeOfDayRegex ]
 LessThanRegex: !simpleRegex
   def: \b(से\s+कम)
@@ -611,15 +611,15 @@ WithinNextPrefixRegex: !nestedRegex
   references: [ NextPrefixRegex ]
 # "next" group here is used to judge uncommon unsupported cases like "within the next 5 days before today"
 MorningStartEndRegex: !nestedRegex
-  def: (^(morning|{AmDescRegex}))|((morning|{AmDescRegex})$)
+  def: (^(सुबह|{AmDescRegex}))|((सुबह|{AmDescRegex})$)
   references: [ AmDescRegex ]
 AfternoonStartEndRegex: !nestedRegex
-  def: (^(afternoon|{PmDescRegex}))|((afternoon|{PmDescRegex})$)
+  def: (^(दोपहर|{PmDescRegex}))|((दोपहर|{PmDescRegex})$)
   references: [ PmDescRegex ]
 EveningStartEndRegex: !simpleRegex
-  def: (^(evening))|((evening)$)
+  def: (^(शाम))|((शाम)$)
 NightStartEndRegex: !simpleRegex
-  def: (^(over|to)?night)|((over|to)?night$)
+  def: (^(रातों|आज)?रात)|((over|to)?रात$)
 InexactNumberRegex: !simpleRegex
   def: \b(कुछ|कई|(?<NumTwoTerm>(का\s+)?(एक\s+)?जोड़ा))
 InexactNumberUnitRegex: !nestedRegex
