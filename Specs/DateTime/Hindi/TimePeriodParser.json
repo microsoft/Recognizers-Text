@@ -130,14 +130,14 @@
     ]
   },
   {
-    "Input": "मैं दिन में 5 से 6 के बीच बाहर रहुंगा",
+    "Input": "मैं अपराहन 5 से 6 के बीच बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दिन में 5 से 6",
+        "Text": "अपराहन 5 से 6",
         "Type": "timerange",
         "Value": {
           "Timex": "(T17,T18,PT1H)",
@@ -151,7 +151,7 @@
           }
         },
         "Start": 4,
-        "Length": 14
+        "Length": 13
       }
     ]
   },

@@ -10,9 +10,9 @@ RoundNumberIntegerRegex: !simpleRegex
   def: (सौ|हजार|हज़ार|लाख|करोड़|अरब|खरब)
 #ZeroToNineIntegerRegex is used to catch all numbers  between 0-9 in hindi/devanagari
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (सात|आठ|चार|पांच|पाँच|शून्य|नौ|दो|छह|एक(सठ)?|तीन|०|१|२|३|४|५|६|७|८|९)
+  def: (सात|आठ|फ़ोर|चार|पांच|पाँच|शून्य|नौ|दो|छह|एक(सठ)?|तीन|०|१|२|३|४|५|६|७|८|९)
 TwoToNineIntegerRegex: !simpleRegex
-  def: (तीन|सात|आठ|चार|पाँच|पांच|नौ|दो|छह)
+  def: (तीन|सात|आठ|फ़ोर|चार|पाँच|पांच|नौ|दो|छह)
 NegativeNumberTermsRegex: !simpleRegex
   def: (?<negTerm>(माइनस|निगेटिव)\s+)
 NegativeNumberSignRegex: !nestedRegex
@@ -372,6 +372,7 @@ CardinalNumberMap: !dictionary
     एक: 1
     दो: 2
     तीन: 3
+    फ़ोर: 4
     चार: 4
     पाँच: 5
     पांच: 5

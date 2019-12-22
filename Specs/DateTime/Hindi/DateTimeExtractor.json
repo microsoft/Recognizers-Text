@@ -1,7 +1,6 @@
 [
   {
     "Input": "मैं अब वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -14,7 +13,6 @@
   },
   {
     "Input": "मैं जल्द से जल्द वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -27,7 +25,6 @@
   },
   {
     "Input": "मैं अभी वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -40,33 +37,30 @@
   },
   {
     "Input": "मैं 15 को 8:00 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "15 को 8:00 ",
+        "Text": "15 को 8:00 बजे",
         "Type": "datetime",
         "Start": 4,
-        "Length": 11
+        "Length": 14
       }
     ]
   },
   {
     "Input": "मैं 15 को 8:00:30 पर वापस जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "15 को 8:00:30 पर",
+        "Text": "15 को 8:00:30",
         "Type": "datetime",
         "Start": 4,
-        "Length": 16
+        "Length": 13
       }
     ]
   },
   {
     "Input": "मैं 15 को, 8 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -79,20 +73,18 @@
   },
   {
     "Input": "मैं 23 अक्टूबर को सात बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "23 अक्टूबर को सात",
+        "Text": "23 अक्टूबर को सात बजे",
         "Type": "datetime",
         "Start": 4,
-        "Length": 17
+        "Length": 21
       }
     ]
   },
   {
     "Input": "मैं 14 अक्टूबर को सुबह 8:00 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -105,7 +97,6 @@
   },
   {
     "Input": "मैं 14 अक्तूबर, सुबह 8:00 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -118,20 +109,18 @@
   },
   {
     "Input": "मैं 14 अक्तूबर, सुबह 8:00:01 पर वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "14 अक्तूबर, सुबह 8:00:01 पर",
+        "Text": "14 अक्तूबर, सुबह 8:00:01",
         "Type": "datetime",
         "Start": 4,
-        "Length": 27
+        "Length": 24
       }
     ]
   },
   {
     "Input": "मैं कल सुबह 8:00 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -143,12 +132,11 @@
     ]
   },
   {
-    "Input": "मैं कल सुबह लगभग 8:00 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
+    "Input": "मैं कल लगभग सुबह 8:00 बजे वापस जाऊंगा",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "कल सुबह लगभग 8:00 बजे",
+        "Text": "कल लगभग सुबह 8:00 बजे",
         "Type": "datetime",
         "Start": 4,
         "Length": 21
@@ -157,7 +145,6 @@
   },
   {
     "Input": "मैं कल सुबह 8:00:05 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -170,7 +157,6 @@
   },
   {
     "Input": "मैं अगले शुक्रवार को साढ़े 3 बजे वापस जाउंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -183,20 +169,18 @@
   },
   {
     "Input": "मैं 5 मई, 2016 को शाम के आठ बजकर 20 मिनट पर वापस जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5 मई, 2016 को शाम के आठ बजकर 20 मिनट पर",
+        "Text": "5 मई, 2016 को शाम के आठ बजकर 20 मिनट",
         "Type": "datetime",
         "Start": 4,
-        "Length": 39
+        "Length": 36
       }
     ]
   },
   {
     "Input": "मैं 15 को रात 8 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -209,7 +193,6 @@
   },
   {
     "Input": "मैं 15 को सात बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -222,7 +205,6 @@
   },
   {
     "Input": "मैं अगले रविवार को रात 8 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -235,7 +217,6 @@
   },
   {
     "Input": "मैं आज रात 8 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -248,7 +229,6 @@
   },
   {
     "Input": "मैं कल साढ़े सात बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -261,7 +241,6 @@
   },
   {
     "Input": "मैं 19:00, 2016-12-22 को वापस जाउंग",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -274,7 +253,6 @@
   },
   {
     "Input": "मैं कल सात बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -287,7 +265,6 @@
   },
   {
     "Input": "मैं कल सुबह 7 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -300,7 +277,6 @@
   },
   {
     "Input": "मैं रविवार दोपहर 7:00 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -313,7 +289,6 @@
   },
   {
     "Input": "मैं कल सुबह पाँच बजकर बीस मिनट पर वापस जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -326,7 +301,6 @@
   },
   {
     "Input": "मैं 14 अक्टूबर 8:00 बजे को वापस जाऊंगा, 14 अक्टूबर ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -339,7 +313,6 @@
   },
   {
     "Input": "मैं 7 बजे, आज सुबह वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -352,7 +325,6 @@
   },
   {
     "Input": "मैं सोमवार, शाम को 8 बजे वापस जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -365,20 +337,18 @@
   },
   {
     "Input": "मैं शाम को 8 बजे 1ली जन को वापस जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "8 बजे 1ली जन",
+        "Text": "शाम को 8 बजे 1ली जन",
         "Type": "datetime",
-        "Start": 11,
-        "Length": 12
+        "Start": 4,
+        "Length": 19
       }
     ]
   },
   {
     "Input": "मैं शाम को 8 बजे 1 जन को वापस जाऊँगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -391,7 +361,6 @@
   },
   {
     "Input": "मैं आज रात 10 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -404,7 +373,6 @@
   },
   {
     "Input": "मैं आज सुबह 8 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -417,7 +385,6 @@
   },
   {
     "Input": "मैं आज शाम 8 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -430,20 +397,18 @@
   },
   {
     "Input": "मैं आज रात करीब 7 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "आज रात करीब 7 बजे",
+        "Text": "आज रात करीब 7",
         "Type": "datetime",
         "Start": 4,
-        "Length": 17
+        "Length": 13
       }
     ]
   },
   {
     "Input": "मैं आज सुबह 7 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -456,7 +421,6 @@
   },
   {
     "Input": "मैं आज सुबह सात बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -469,7 +433,6 @@
   },
   {
     "Input": "मैं आज सुबह 7:00 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -482,7 +445,6 @@
   },
   {
     "Input": "मैं इस रात 7 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -495,7 +457,6 @@
   },
   {
     "Input": "मैं आज रात 7 बजे वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -508,7 +469,6 @@
   },
   {
     "Input": "आज रात 9:30 बजे 2 लोगों के लिए",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -521,7 +481,6 @@
   },
   {
     "Input": "आज रात 9:30:31 पर 2 लोगों के लिए",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -534,7 +493,6 @@
   },
   {
     "Input": "मैं दिन के अंत में वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -547,7 +505,6 @@
   },
   {
     "Input": "मैं कल देर शाम को वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -559,34 +516,31 @@
     ]
   },
   {
-    "Input": "मैं रविवार के दिन वापस जाऊंगा",
-    "NotSupported": "dotnet",
+    "Input": "मैं रविवार के अंत में वापस जाऊंगा",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "रविवार के दिन",
+        "Text": "रविवार के अंत में",
         "Type": "datetime",
         "Start": 4,
-        "Length": 13
+        "Length": 17
       }
     ]
   },
   {
-    "Input": "मैं 5 बजे सुबह 4 बजे वापस जाऊंगा।",
-    "NotSupported": "dotnet",
+    "Input": "मैं 5 को सुबह 4 बजे वापस जाऊंगा।",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5 बजे सुबह 4 बजे",
+        "Text": "5 को सुबह 4 बजे",
         "Type": "datetime",
         "Start": 4,
-        "Length": 16
+        "Length": 15
       }
     ]
   },
   {
     "Input": "मैं 5 घंटे में वापस जाऊंगा",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -599,7 +553,6 @@
   },
   {
     "Input": "देखें कि क्या मैं रविवार को दोपहर 3 बजे के लिए उपलब्ध हूं",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

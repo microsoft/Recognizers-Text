@@ -324,23 +324,35 @@
     ]
   },
   {
-    "Input": "मैं दिन में 7 बजे वापस जाउंगा",
+    "Input": "मैं अपराहन में 7 बजे वापस जाउंगा",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दिन में 7 बजे",
+        "Text": "अपराहन में 7 बजे",
         "Type": "time",
         "Start": 4,
-        "Length": 13
+        "Length": 16
       }
     ]
   },
   {
-    "Input": "मैं दिन के 7 बजे वापस जाउंगा",
+    "Input": "मैं सायंकाल के 7 बजे वापस जाउंगा",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दिन के 7 बजे",
+        "Text": "सायंकाल के 7 बजे",
+        "Type": "time",
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम 7:00 बजे वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम 7:00 बजे",
         "Type": "time",
         "Start": 4,
         "Length": 12
@@ -348,23 +360,11 @@
     ]
   },
   {
-    "Input": "मैं दिन के 7:00 बजे वापस जाउंगा",
+    "Input": "मैं अपराहन 7:00:14 पर वापस जाउंगा",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दिन के 7:00 बजे",
-        "Type": "time",
-        "Start": 4,
-        "Length": 15
-      }
-    ]
-  },
-  {
-    "Input": "मैं दिन के 7:00:14 पर वापस जाउंगा",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "दिन के 7:00:14",
+        "Text": "अपराहन 7:00:14",
         "Type": "time",
         "Start": 4,
         "Length": 14
