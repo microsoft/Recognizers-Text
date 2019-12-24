@@ -735,11 +735,11 @@
     ]
   },
   {
-    "Input": "मैं दिन में 7:00:05 पर वापस आउंगी",
+    "Input": "मैं अपराहन 7:00:05 पर वापस आउंगी",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दिन में 7:00:05",
+        "Text": "अपराहन 7:00:05",
         "Type": "time",
         "Value": {
           "Timex": "T19:00:05",
@@ -751,7 +751,7 @@
           }
         },
         "Start": 4,
-        "Length": 15
+        "Length": 14
       }
     ]
   },

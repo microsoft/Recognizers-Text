@@ -25,8 +25,8 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const bool CompoundNumberLanguage = true;
       public const bool MultiDecimalSeparatorCulture = false;
       public const string RoundNumberIntegerRegex = @"(सौ|हजार|हज़ार|लाख|करोड़|अरब|खरब)";
-      public const string ZeroToNineIntegerRegex = @"(सात|आठ|चार|पांच|पाँच|शून्य|नौ|दो|छह|एक(सठ)?|तीन|०|१|२|३|४|५|६|७|८|९)";
-      public const string TwoToNineIntegerRegex = @"(तीन|सात|आठ|चार|पाँच|पांच|नौ|दो|छह)";
+      public const string ZeroToNineIntegerRegex = @"(सात|आठ|फ़ोर|चार|पांच|पाँच|शून्य|नौ|दो|छह|एक(सठ)?|तीन|०|१|२|३|४|५|६|७|८|९)";
+      public const string TwoToNineIntegerRegex = @"(तीन|सात|आठ|फ़ोर|चार|पाँच|पांच|नौ|दो|छह)";
       public const string NegativeNumberTermsRegex = @"(?<negTerm>(माइनस|निगेटिव)\s+)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
       public const string AnIntRegex = @"(एक|1|१)(?=\s)";
@@ -172,6 +172,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"एक", 1 },
             { @"दो", 2 },
             { @"तीन", 3 },
+            { @"फ़ोर", 4 },
             { @"चार", 4 },
             { @"पाँच", 5 },
             { @"पांच", 5 },

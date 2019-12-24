@@ -642,7 +642,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सप्ताह",
+        "Text": "मेरा सप्ताह",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-W45",
@@ -655,8 +655,8 @@
             "endDate": "2016-11-14"
           }
         },
-        "Start": 5,
-        "Length": 6
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -720,7 +720,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सप्ताहांत",
+        "Text": "मेरा सप्ताहांत",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-W45-WE",
@@ -733,8 +733,8 @@
             "endDate": "2016-11-14"
           }
         },
-        "Start": 5,
-        "Length": 9
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
