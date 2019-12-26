@@ -192,18 +192,6 @@
     ]
   },
   {
-    "Input": "यह दिन कैसा लग रहा हैं ",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "यह दिन",
-        "Type": "date",
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
     "Input": "सुबह 9 से सुबह 11 बजे के बीच मीटिंग रखो ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
