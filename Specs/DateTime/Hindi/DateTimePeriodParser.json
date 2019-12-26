@@ -85,7 +85,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "22 अप्रैल की शाम 5 से 6 बजे तक ",
+        "Text": "22 अप्रैल की शाम 5 से 6 बजे",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
@@ -99,10 +99,9 @@
           }
         },
         "Start": 4,
-        "Length": 31
+        "Length": 27
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 1 जनवरी को 5 से 6 बजे तक बाहर रहूंगा",
@@ -187,6 +186,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -287,14 +287,14 @@
     ]
   },
   {
-    "Input": "मैं 1 जन, 2016 को शाम 4 बजे से आज 5 बजे के बीच बाहर रहूँगा",
+    "Input": "मैं 1 जन, 2016 को शाम 4 बजे से आज शाम 5 बजे के बीच बाहर रहूँगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1 जन, 2016 को शाम 4 बजे से आज 5 बजे",
+        "Text": "1 जन, 2016 को शाम 4 बजे से आज शाम 5 बजे",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-01-01T16,2016-11-07T17,PT7465H)",
@@ -308,10 +308,9 @@
           }
         },
         "Start": 4,
-        "Length": 35
+        "Length": 39
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं आज रात वापस जाऊंगा",
@@ -347,7 +346,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "आज रात 8 बजे",
+        "Text": "आज रात",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-07TNI",
@@ -361,10 +360,9 @@
           }
         },
         "Start": 4,
-        "Length": 12
+        "Length": 6
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं इसी रात को वापस जाऊँगा",
@@ -416,8 +414,7 @@
         "Start": 4,
         "Length": 6
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं आज सुबह वापस जाऊंगा",
@@ -498,14 +495,14 @@
     ]
   },
   {
-    "Input": "मैं कल रात वापस जाऊंगा",
+    "Input": "मैं आखिरी रात वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "कल रात",
+        "Text": "आखिरी रात",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-06TNI",
@@ -519,10 +516,9 @@
           }
         },
         "Start": 4,
-        "Length": 6
+        "Length": 9
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं कल रात को वापस जाऊंगा",
@@ -603,41 +599,14 @@
     ]
   },
   {
-    "Input": "मैं 3 मिनट पीछे जाऊंगा",
+    "Input": "मैं अंतिम 3 मिनट में वापस जाउंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "3 मिनट पीछे",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 16:09:00",
-            "endDateTime": "2016-11-07 16:12:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 16:09:00",
-            "endDateTime": "2016-11-07 16:12:00"
-          }
-        },
-        "Start": 4,
-        "Length": 11
-      }
-    ],
-    "NotSupported": "dotnet"
-  },
-  {
-    "Input": "मैं पिछले 3 मिनट वापस जाऊंगा",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "पिछले 3 मिनट",
+        "Text": "अंतिम 3 मिनट",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
@@ -652,6 +621,32 @@
         },
         "Start": 4,
         "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3 मिनट के बाद जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 मिनट के बाद",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 4,
+        "Length": 13
       }
     ]
   },
@@ -767,7 +762,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अगले कुछ घंटों ",
+        "Text": "अगले कुछ घंटों",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
@@ -781,10 +776,9 @@
           }
         },
         "Start": 4,
-        "Length": 15
+        "Length": 14
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं मंगलवार सुबह वापस लौट जाऊंगा",
@@ -836,8 +830,7 @@
         "Start": 0,
         "Length": 18
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "कृपया मंगलवार को सुबह 30 मिनट के लिए एक बैठक का आयोजन करें।",
@@ -863,8 +856,7 @@
         "Start": 6,
         "Length": 15
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं मंगलवार दोपहर में वापस जाऊँगा",
@@ -916,8 +908,7 @@
         "Start": 4,
         "Length": 14
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार सुबह जल्दी मिलते हैं",
@@ -944,8 +935,7 @@
         "Start": 4,
         "Length": 18
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार को सुबह जल्दी मिलते हैं",
@@ -972,8 +962,7 @@
         "Start": 4,
         "Length": 21
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार की सुबह देर से मिलते हैं",
@@ -1000,8 +989,7 @@
         "Start": 4,
         "Length": 22
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार की दोपहर जल्दी मिलते हैं",
@@ -1028,8 +1016,7 @@
         "Start": 4,
         "Length": 22
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार की दोपहर देर से मिलते हैं",
@@ -1039,7 +1026,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "मंगलवार की दोपहर देर",
+        "Text": "मंगलवार की दोपहर देर से",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TAF",
@@ -1054,10 +1041,9 @@
           }
         },
         "Start": 4,
-        "Length": 20
+        "Length": 23
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार को शाम को जल्दी मिलते हैं",
@@ -1084,8 +1070,7 @@
         "Start": 4,
         "Length": 23
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मंगलवार की शाम देर से मिलते हैं",
@@ -1112,8 +1097,7 @@
         "Start": 0,
         "Length": 21
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार की रात जल्दी मिलते हैं",
@@ -1140,8 +1124,7 @@
         "Start": 4,
         "Length": 20
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार की देर रात में मिलते हैं",
@@ -1168,8 +1151,7 @@
         "Start": 4,
         "Length": 22
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलिए मंगलवार देर-दोपहर को मिलते हैं",
@@ -1223,8 +1205,7 @@
         "Start": 4,
         "Length": 20
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार को देर रात में मिलते हैं",
@@ -1251,8 +1232,7 @@
         "Start": 4,
         "Length": 22
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "बाकी के दिन मिलते हैं",
@@ -1304,8 +1284,7 @@
         "Start": 4,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मेरे बाकी के बचे दिन में मीटिंग करते हैं",
@@ -1331,8 +1310,7 @@
         "Start": 4,
         "Length": 20
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो इस दिन के बाकी बचे भाग में मिलते हैं",
@@ -1358,8 +1336,7 @@
         "Start": 4,
         "Length": 22
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो बाकी के बचे दिन में मिलते हैं",
@@ -1385,8 +1362,7 @@
         "Start": 4,
         "Length": 15
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 2:00 PM, 2016-2-21 से 3:32, 04/23/2016 तक बाहर रहूँगा",
@@ -1493,14 +1469,14 @@
     ]
   },
   {
-    "Input": "नमस्ते कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे इस शुक्रवार, दोपहर को 30 मिनट की बैठक की जरूरत है।",
+    "Input": "नमस्ते कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे 30 मिनट की बैठक की जरूरत है इस शुक्रवार, दोपहर को",
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "इस शुक्रवार, दोपहर को 30 मिनट",
+        "Text": "इस शुक्रवार, दोपहर को",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2017-11-17TAF",
@@ -1513,21 +1489,20 @@
             "endDateTime": "2017-11-17 16:00:00"
           }
         },
-        "Start": 77,
-        "Length": 29
+        "Start": 105,
+        "Length": 21
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
-    "Input": "नमस्ते कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे इस शुक्रवार दोपहर को 30 मिनट की बैठक की जरूरत है!",
+    "Input": "नमस्ते कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे 30 मिनट की बैठक की जरूरत है इस शुक्रवार दोपहर को!",
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "इस शुक्रवार दोपहर को 30 मिनट",
+        "Text": "इस शुक्रवार दोपहर को",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2017-11-17TAF",
@@ -1540,21 +1515,20 @@
             "endDateTime": "2017-11-17 16:00:00"
           }
         },
-        "Start": 77,
-        "Length": 28
+        "Start": 105,
+        "Length": 20
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
-    "Input": "नमस्ते कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे अगले शुक्रवार को दोपहर में 30 मिनट की बैठक की जरूरत है!",
+    "Input": "नमस्ते कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे 30 मिनट की बैठक की जरूरत है अगले शुक्रवार को दोपहर में!",
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अगले शुक्रवार को दोपहर में 30 मिनट",
+        "Text": "अगले शुक्रवार को दोपहर में",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2017-11-24TAF",
@@ -1567,21 +1541,20 @@
             "endDateTime": "2017-11-24 16:00:00"
           }
         },
-        "Start": 77,
-        "Length": 34
+        "Start": 105,
+        "Length": 26
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
-    "Input": "नमस्ते कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे आखिरी शुक्रवार को दोपहर में 30 मिनट की बैठक की जरूरत है!",
+    "Input": "नमस्ते कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे 30 मिनट की बैठक की जरूरत है आखिरी शुक्रवार को दोपहर में!",
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "आखिरी शुक्रवार को दोपहर में 30 मिनट",
+        "Text": "आखिरी शुक्रवार को दोपहर में",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2017-11-10TAF",
@@ -1594,11 +1567,10 @@
             "endDateTime": "2017-11-10 16:00:00"
           }
         },
-        "Start": 77,
-        "Length": 35
+        "Start": 105,
+        "Length": 27
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "कोर्टाना, विशाल के साथ बिज़नेस बैठक के लिए शुक्रवार को दोपहर 1 बजे और 4 बजे के बीच कृपया एक स्काइप कॉल शेड्यूल करें।",
@@ -1631,6 +1603,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-14T19:12:00"
     },
+    "NotSupported": "python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1657,6 +1630,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-17T19:12:00"
     },
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1676,14 +1650,14 @@
         "Start": 33,
         "Length": 20
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "कोर्टाना, कृपया एक स्काइप मीटिंग 2018-09-23 1:30p.m से 4 तक शेड्यूल करें। ",
     "Context": {
       "ReferenceDateTime": "2017-11-17T19:12:00"
     },
+    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1703,14 +1677,14 @@
         "Start": 33,
         "Length": 23
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मिलते हैं 5 फरवरी की सुबह",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1730,14 +1704,14 @@
         "Start": 10,
         "Length": 15
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं मंगलवार सुबह वापस जाऊँगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1760,14 +1734,15 @@
     ]
   },
   {
-    "Input": "मैं मंगलवार शाम को वापस भेजूंगा",
+    "Input": "मैं मंगलवार दोपहर को वापस भेजूंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "मंगलवार शाम को",
+        "Text": "मंगलवार दोपहर को",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TAF",
@@ -1781,16 +1756,16 @@
           }
         },
         "Start": 4,
-        "Length": 14
+        "Length": 16
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "यह भविष्य में 2 घंटे होगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

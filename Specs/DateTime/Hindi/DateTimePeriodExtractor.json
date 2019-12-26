@@ -93,8 +93,7 @@
         "Start": 4,
         "Length": 30
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 5 मई, 2018 को 4PM से 5PM तक बाहर रहूंगा",
@@ -298,8 +297,7 @@
         "Start": 4,
         "Length": 11
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं आखिरी 3 मिनट में वापस जाऊंगा",
@@ -314,17 +312,16 @@
     ]
   },
   {
-    "Input": "मैं 3 मिनट पीछे जाऊंगा",
+    "Input": "मैं अंतिम 3 मिनट में वापस जाउंगा",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "3 मिनट पीछे",
+        "Text": "अंतिम 3 मिनट",
         "Type": "datetimerange",
         "Start": 4,
-        "Length": 11
+        "Length": 12
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं पिछले 3 मिनट वापस जाऊंगा",
@@ -358,10 +355,9 @@
         "Text": "अगले 5 घंटों",
         "Type": "datetimerange",
         "Start": 4,
-        "Length": 13
+        "Length": 12
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं आखिरी मिनट में वापस जाऊंगा",
@@ -457,8 +453,7 @@
         "Start": 4,
         "Length": 21
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार की सुबह देर से मिलते हैं",
@@ -468,10 +463,9 @@
         "Text": "मंगलवार की सुबह देर से",
         "Type": "datetimerange",
         "Start": 4,
-        "Length": 23
+        "Length": 22
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार की दोपहर जल्दी मिलते हैं",
@@ -483,8 +477,7 @@
         "Start": 4,
         "Length": 22
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार की दोपहर देर से मिलते हैं",
@@ -496,8 +489,7 @@
         "Start": 4,
         "Length": 23
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार की शाम जल्दी मिलते हैं",
@@ -509,8 +501,7 @@
         "Start": 4,
         "Length": 20
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार की शाम देर से मिलते हैं",
@@ -522,8 +513,7 @@
         "Start": 4,
         "Length": 21
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार की रात जल्दी से मिलते हैं",
@@ -535,8 +525,7 @@
         "Start": 4,
         "Length": 23
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार की देर रात में मिलते हैं",
@@ -548,8 +537,7 @@
         "Start": 4,
         "Length": 22
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो मंगलवार को सुबह जल्दी से मिलते हैं",
@@ -729,8 +717,7 @@
         "Start": 0,
         "Length": 14
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "बाकी के दिन आज मैं बाहर रहुंगा",
@@ -742,8 +729,7 @@
         "Start": 0,
         "Length": 14
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "कोर्टाना,  वेन के साथ बिज़नेस बैठक के लिए शुक्रवार दोपहर 1 PM और 4 PM के बीच,  कृपया एक स्काइप कॉल शेड्यूल करें।",
@@ -782,30 +768,28 @@
     ]
   },
   {
-    "Input": "हाय कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे इस शुक्रवार, दोपहर को 30 मिनट की बैठक की आवश्यकता है।",
+    "Input": "नमस्ते कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे 30 मिनट की बैठक की जरूरत है इस शुक्रवार, दोपहर को!",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "इस शुक्रवार, दोपहर को 30 मिनट",
+        "Text": "इस शुक्रवार, दोपहर को",
         "Type": "datetimerange",
-        "Start": 74,
-        "Length": 29
+        "Start": 105,
+        "Length": 21
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "हाय कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे इस शुक्रवार दोपहर को 30 मिनट की बैठक की आवश्यकता है!",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "इस शुक्रवार दोपहर को 30 मिनट",
+        "Text": "इस शुक्रवार दोपहर को",
         "Type": "datetimerange",
         "Start": 74,
-        "Length": 28
+        "Length": 20
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "कोर्टाना, विशाल के साथ बिज़नेस बैठक के लिए शुक्रवार को दोपहर 1 PM और 4 PM के बीच कृपया एक स्काइप कॉल शेड्यूल करें।",

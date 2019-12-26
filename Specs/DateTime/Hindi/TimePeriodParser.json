@@ -903,7 +903,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह के",
+        "Text": "सुबह",
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
@@ -917,7 +917,7 @@
           }
         },
         "Start": 0,
-        "Length": 7
+        "Length": 4
       }
     ]
   },
