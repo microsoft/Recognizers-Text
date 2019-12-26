@@ -15090,5 +15090,28 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll go back at 8.30pm today",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "at 8.30pm today",
+        "Start": 13,
+        "End": 27,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T20:30",
+              "type": "datetime",
+              "value": "2019-12-26 20:30:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

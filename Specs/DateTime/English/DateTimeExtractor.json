@@ -852,5 +852,16 @@
         "Length": 24
       }
     ]
+  },
+  {
+    "Input": "I'll go back at 8.30pm today",
+    "Results": [
+      {
+        "Text": "at 8.30pm today",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 15
+      }
+    ]
   }
 ]
