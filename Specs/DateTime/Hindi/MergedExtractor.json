@@ -132,11 +132,11 @@
     ]
   },
   {
-    "Input": "ये दिन कैसा लग रहा हैं ",
+    "Input": "यह दिन कैसा लग रहा हैं ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "ये दिन",
+        "Text": "यह दिन",
         "Type": "date",
         "Start": 0,
         "Length": 6
@@ -220,10 +220,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "कल 9 से सुबह 11 बजे",
+        "Text": "कल 9 से सुबह 11 बजे तक",
         "Type": "datetimerange",
         "Start": 0,
-        "Length": 19
+        "Length": 22
       }
     ]
   },
