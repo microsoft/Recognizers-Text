@@ -179,11 +179,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             var trimmedText = text.Trim();
 
             var swift = 0;
-            if (trimmedText.StartsWith("next"))
+            if (FutureRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("last"))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }

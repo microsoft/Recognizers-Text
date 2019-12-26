@@ -90,8 +90,8 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string RoundNumberHinglishOrdinalRegex = @"(?:हंड्रेडथ|थाउजेंडथ|मिलियनथ|बिलियनथ|ट्रिलियनथ)";
       public const string OnetoNineHinglishOrdinalRegex = @"(?:फ़र्स्ट|सेकेंड|थर्ड|फोर्थ|फिफ्थ|सिक्स्थ|सेवंथ|एइथ|नाइन्थ)";
       public const string ElevenToNineteenHinglishOrdinalRegex = @"(?:इलेवेन्थ|ट्वेल्फ्थ|थरटीन्थ|फोर्टीन्थ|फिफ्टीन्थ|सिक्सटीन्थ|सेवेंटीन्थ|एइटीन्थ|नाइटीन्थ)";
-      public const string TensHinglishOrdinalRegex = @"(?:टेन्थ|ट्वेन्टीएथ|थरटिएथ|फ़ोर्टीएथ|फ़िफ़्टीएथ|सिक्सटिएथ|सेवेंटिएथ|एइटिएथ|नाइन्टीएथ)";
-      public const string TensHinglishNumberRegex = @"(?:ट्वेन्टी|थर्टी|फोर्टी|फिफ्टी|फ़िफ़्टी|सिक्सटी|सेवेंटी|एइट्टी|नाइनटी)";
+      public const string TensHinglishOrdinalRegex = @"(?:टेन्थ|ट्वेन्टीएथ|ट्वेंटीएथ|थरटिएथ|फ़ोर्टीएथ|फ़िफ़्टीएथ|सिक्सटिएथ|सेवेंटिएथ|एइटिएथ|नाइन्टीएथ)";
+      public const string TensHinglishNumberRegex = @"(?:ट्वेन्टी|ट्वेंटी|थर्टी|फोर्टी|फिफ्टी|फ़िफ़्टी|सिक्सटी|सेवेंटी|एइट्टी|नाइनटी)";
       public static readonly string HinglishOrdinalRegex = $@"(({TensHinglishNumberRegex}\s+{OnetoNineHinglishOrdinalRegex})|{OnetoNineHinglishOrdinalRegex}|{ElevenToNineteenHinglishOrdinalRegex}|{TensHinglishOrdinalRegex})";
       public static readonly string CompoundHindiOrdinalRegex = $@"((({HinglishOrdinalRegex}\s+)?({RoundNumberHinglishOrdinalRegex}\s+)?(अंड\s+)?)+({HinglishOrdinalRegex}|{RoundNumberHinglishOrdinalRegex})|{HinglishOrdinalRegex}|{RoundNumberHinglishOrdinalRegex})";
       public const string RoundNumberEnglishOrdinalRegex = @"(?:hundredth|thousandth|millionth|billionth|trillionth)";
@@ -347,6 +347,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"एइटीन", 18 },
             { @"नईनटीन", 19 },
             { @"ट्वेन्टी", 20 },
+            { @"ट्वेंटी", 20 },
             { @"थर्टी", 30 },
             { @"फ़ोर्टी", 40 },
             { @"फ़िफ़्टी", 50 },
@@ -399,6 +400,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"नाइटीन्थ", 19 },
             { @"टेन्थ", 10 },
             { @"ट्वेन्टीएथ", 20 },
+            { @"ट्वेंटीएथ", 20 },
             { @"थरटिएथ", 30 },
             { @"फ़ोर्टीएथ", 40 },
             { @"फ़िफ़्टीएथ", 50 },

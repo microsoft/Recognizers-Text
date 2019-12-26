@@ -171,9 +171,9 @@ OnetoNineHinglishOrdinalRegex: !simpleRegex
 ElevenToNineteenHinglishOrdinalRegex: !simpleRegex
   def: (?:इलेवेन्थ|ट्वेल्फ्थ|थरटीन्थ|फोर्टीन्थ|फिफ्टीन्थ|सिक्सटीन्थ|सेवेंटीन्थ|एइटीन्थ|नाइटीन्थ)
 TensHinglishOrdinalRegex: !simpleRegex
-  def: (?:टेन्थ|ट्वेन्टीएथ|थरटिएथ|फ़ोर्टीएथ|फ़िफ़्टीएथ|सिक्सटिएथ|सेवेंटिएथ|एइटिएथ|नाइन्टीएथ)
+  def: (?:टेन्थ|ट्वेन्टीएथ|ट्वेंटीएथ|थरटिएथ|फ़ोर्टीएथ|फ़िफ़्टीएथ|सिक्सटिएथ|सेवेंटिएथ|एइटिएथ|नाइन्टीएथ)
 TensHinglishNumberRegex: !simpleRegex
-  def: (?:ट्वेन्टी|थर्टी|फोर्टी|फिफ्टी|फ़िफ़्टी|सिक्सटी|सेवेंटी|एइट्टी|नाइनटी)
+  def: (?:ट्वेन्टी|ट्वेंटी|थर्टी|फोर्टी|फिफ्टी|फ़िफ़्टी|सिक्सटी|सेवेंटी|एइट्टी|नाइनटी)
 HinglishOrdinalRegex: !nestedRegex
   def: (({TensHinglishNumberRegex}\s+{OnetoNineHinglishOrdinalRegex})|{OnetoNineHinglishOrdinalRegex}|{ElevenToNineteenHinglishOrdinalRegex}|{TensHinglishOrdinalRegex})
   references: [ TensHinglishNumberRegex, OnetoNineHinglishOrdinalRegex, ElevenToNineteenHinglishOrdinalRegex, TensHinglishOrdinalRegex ]
@@ -548,6 +548,7 @@ CardinalNumberMap: !dictionary
     एइटीन: 18
     नईनटीन: 19
     ट्वेन्टी: 20
+    ट्वेंटी: 20
     थर्टी: 30
     फ़ोर्टी: 40
     फ़िफ़्टी: 50
@@ -600,6 +601,7 @@ OrdinalNumberMap: !dictionary
     नाइटीन्थ: 19
     टेन्थ: 10
     ट्वेन्टीएथ: 20
+    ट्वेंटीएथ: 20
     थरटिएथ: 30
     फ़ोर्टीएथ: 40
     फ़िफ़्टीएथ: 50
