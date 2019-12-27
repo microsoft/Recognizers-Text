@@ -976,5 +976,16 @@
         "Length": 5
       }
     ]
+  },
+  {
+    "Input": "The target time is 8.10 pm",
+    "Results": [
+      {
+        "Text": "8.10 pm",
+        "Type": "time",
+        "Start": 19,
+        "Length": 7
+      }
+    ]
   }
 ]

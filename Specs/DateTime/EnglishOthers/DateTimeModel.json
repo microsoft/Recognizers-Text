@@ -891,5 +891,28 @@
         }
       }
     ]
+  },
+  {
+    "Input": "The target time is 8.10 pm",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "8.10 pm",
+        "Start": 19,
+        "End": 25,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T20:10",
+              "type": "time",
+              "value": "20:10:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
