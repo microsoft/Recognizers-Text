@@ -393,7 +393,7 @@ TimeRegex10: !nestedRegex
   def: \b({TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, DescRegex ]
 TimeRegex11: !nestedRegex
-  def: \b(?:(?:{TimeTokenPrefix}{TimeRegexWithDotConnector})(?!\s*per\s*cent|%)|(?:{TimeRegexWithDotConnector}(\s*{DescRegex})))
+  def: \b((?:({TimeTokenPrefix})?{TimeRegexWithDotConnector}(\s*{DescRegex}))|(?:(?:{TimeTokenPrefix}{TimeRegexWithDotConnector})(?!\s*per\s*cent|%)))
   references: [ TimeTokenPrefix, TimeRegexWithDotConnector, DescRegex ]
 FirstTimeRegexInTimeRange: !nestedRegex
   def: \b{TimeRegexWithDotConnector}(\s*{DescRegex})?

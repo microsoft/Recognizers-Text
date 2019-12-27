@@ -161,7 +161,7 @@ export namespace EnglishDateTime {
     export const TimeRegex8 = `.^`;
     export const TimeRegex9 = `\\b${PeriodHourNumRegex}(\\s+|-)${FivesRegex}((\\s*${DescRegex})|\\b)`;
     export const TimeRegex10 = `\\b(${TimePrefix}\\s+)?${BaseDateTime.HourRegex}(\\s*h\\s*)${BaseDateTime.MinuteRegex}(\\s*${DescRegex})?`;
-    export const TimeRegex11 = `\\b(?:(?:${TimeTokenPrefix}${TimeRegexWithDotConnector})(?!\\s*per\\s*cent|%)|(?:${TimeRegexWithDotConnector}(\\s*${DescRegex})))`;
+    export const TimeRegex11 = `\\b((?:(${TimeTokenPrefix})?${TimeRegexWithDotConnector}(\\s*${DescRegex}))|(?:(?:${TimeTokenPrefix}${TimeRegexWithDotConnector})(?!\\s*per\\s*cent|%)))`;
     export const FirstTimeRegexInTimeRange = `\\b${TimeRegexWithDotConnector}(\\s*${DescRegex})?`;
     export const PureNumFromTo = `(${RangePrefixRegex}\\s+)?(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?\\s*${TillRegex}\\s*(${HourRegex}|${PeriodHourNumRegex})(?<rightDesc>\\s*(${PmRegex}|${AmRegex}|${DescRegex}))?`;
     export const PureNumBetweenAnd = `(between\\s+)((${BaseDateTime.TwoDigitHourRegex}${BaseDateTime.TwoDigitMinuteRegex})|${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?\\s*${RangeConnectorRegex}\\s*((${BaseDateTime.TwoDigitHourRegex}${BaseDateTime.TwoDigitMinuteRegex})|${HourRegex}|${PeriodHourNumRegex})(?<rightDesc>\\s*(${PmRegex}|${AmRegex}|${DescRegex}))?`;

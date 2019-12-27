@@ -1385,5 +1385,97 @@
         "Length": 24
       }
     ]
+  },
+  {
+    "Input": "I'll go back at 8.30pm today",
+    "Context": {
+      "ReferenceDateTime": "2018-12-26T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "at 8.30pm today",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-12-26T20:30",
+          "FutureResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          },
+          "PastResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          }
+        },
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back today at 8.30pm",
+    "Context": {
+      "ReferenceDateTime": "2018-12-26T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "today at 8.30pm",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-12-26T20:30",
+          "FutureResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          },
+          "PastResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          }
+        },
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 8.30pm today",
+    "Context": {
+      "ReferenceDateTime": "2018-12-26T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "8.30pm today",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-12-26T20:30",
+          "FutureResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          },
+          "PastResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          }
+        },
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 8.30 pm today",
+    "Context": {
+      "ReferenceDateTime": "2018-12-26T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "8.30 pm today",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-12-26T20:30",
+          "FutureResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          },
+          "PastResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          }
+        },
+        "Start": 13,
+        "Length": 13
+      }
+    ]
   }
 ]

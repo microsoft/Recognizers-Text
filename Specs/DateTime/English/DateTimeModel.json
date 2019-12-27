@@ -15090,5 +15090,120 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll go back at 8.30pm today",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "at 8.30pm today",
+        "Start": 13,
+        "End": 27,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T20:30",
+              "type": "datetime",
+              "value": "2019-12-26 20:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back today at 8.30pm",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "today at 8.30pm",
+        "Start": 13,
+        "End": 27,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T20:30",
+              "type": "datetime",
+              "value": "2019-12-26 20:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 8.30pm today",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "8.30pm today",
+        "Start": 13,
+        "End": 24,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T20:30",
+              "type": "datetime",
+              "value": "2019-12-26 20:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back at 8.30 pm today",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "at 8.30 pm today",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T20:30",
+              "type": "datetime",
+              "value": "2019-12-26 20:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The target time is 8.10 pm",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "8.10 pm",
+        "Start": 19,
+        "End": 25,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T20:10",
+              "type": "time",
+              "value": "20:10:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

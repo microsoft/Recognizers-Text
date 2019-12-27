@@ -852,5 +852,49 @@
         "Length": 24
       }
     ]
+  },
+  {
+    "Input": "I'll go back at 8.30pm today",
+    "Results": [
+      {
+        "Text": "at 8.30pm today",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back today at 8.30pm",
+    "Results": [
+      {
+        "Text": "today at 8.30pm",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 8.30pm today",
+    "Results": [
+      {
+        "Text": "8.30pm today",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 8.30 pm today",
+    "Results": [
+      {
+        "Text": "8.30 pm today",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
   }
 ]
