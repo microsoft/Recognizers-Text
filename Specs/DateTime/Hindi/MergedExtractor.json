@@ -1,7 +1,18 @@
 [
   {
+    "Input": "10 घण्टों में मुलाक़ात रखो ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 घण्टों में",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
     "Input": "ये 2 दिन हैं ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -14,20 +25,18 @@
   },
   {
     "Input": "ये शाम 4 बजे से पहले है ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 4 बजे से पहले ",
+        "Text": "शाम 4 बजे से पहले",
         "Type": "time",
         "Start": 3,
-        "Length": 18
+        "Length": 17
       }
     ]
   },
   {
     "Input": "ये कल शाम 4 बजे से पहले है ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -39,12 +48,11 @@
     ]
   },
   {
-    "Input": "ये 4 बजे कल शाम से पहले है",
-    "NotSupported": "dotnet",
+    "Input": "ये शाम 4 बजे कल से पहले है ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4 बजे कल शाम से पहले",
+        "Text": "शाम 4 बजे कल से पहले",
         "Type": "datetime",
         "Start": 3,
         "Length": 20
@@ -52,21 +60,31 @@
     ]
   },
   {
-    "Input": "ये 4pm के बाद है ",
-    "NotSupported": "dotnet",
+    "Input": "ये कल से पहले शाम 4 बजे है ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4pm",
+        "Text": "कल से पहले शाम 4 बजे",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "ये 4pm के बाद है ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4pm के बाद",
         "Type": "time",
         "Start": 3,
-        "Length": 3
+        "Length": 10
       }
     ]
   },
   {
     "Input": "ये 4 बजे शाम कल के बाद है ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -79,20 +97,18 @@
   },
   {
     "Input": "ये कल 4pm के बाद है ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "कल 4pm",
+        "Text": "कल 4pm के बाद",
         "Type": "datetime",
         "Start": 3,
-        "Length": 6
+        "Length": 13
       }
     ]
   },
   {
-    "Input": "मैं 5 मिनटों में आऊँगा",
-    "NotSupported": "dotnet",
+    "Input": "मैं 5 मिनटों में आऊँगा ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -105,46 +121,30 @@
   },
   {
     "Input": "पिछले हफ्ते ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "पिछले हफ्ते ",
+        "Text": "पिछले हफ्ते",
         "Type": "daterange",
         "Start": 0,
-        "Length": 12
+        "Length": 11
       }
     ]
   },
   {
-    "Input": "10 घण्टों में एक मुलाक़ात रखो ",
-    "NotSupported": "dotnet",
+    "Input": "यह दिन कैसा लग रहा हैं ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10 घण्टों में",
-        "Type": "datetime",
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "ये दिन कैसा लग रहा हैं ",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "ये दिन ",
+        "Text": "यह दिन",
         "Type": "date",
         "Start": 0,
-        "Length": 7
+        "Length": 6
       }
     ]
   },
   {
-    "Input": "यह हफ्ता कैसा लग रहा है",
-    "NotSupported": "dotnet",
+    "Input": "यह हफ्ता कैसा लग रहा है ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -156,8 +156,7 @@
     ]
   },
   {
-    "Input": "मेरा हफ़्ता कैसा लग रहा है",
-    "NotSupported": "dotnet",
+    "Input": "मेरा हफ़्ता कैसा लग रहा है ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -170,7 +169,6 @@
   },
   {
     "Input": "इस हफ्ते क्या है",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -183,7 +181,6 @@
   },
   {
     "Input": "मेरा दिन कैसा है",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -195,34 +192,19 @@
     ]
   },
   {
-    "Input": "यह दिन कैसा लग रहा हैं ",
-    "NotSupported": "dotnet",
+    "Input": "सुबह 9 से सुबह 11 बजे के बीच मीटिंग रखो ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दिन",
-        "Type": "date",
-        "Start": 3,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "सुबह 9 से सुबह 11 बजे तक एक मुलाकात रखो ",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "सुबह 9 से सुबह 11 बजे तक",
+        "Text": "सुबह 9 से सुबह 11 बजे",
         "Type": "timerange",
         "Start": 0,
-        "Length": 24
+        "Length": 21
       }
     ]
   },
   {
-    "Input": "कल 9 से सुबह 11 बजे तक एक मुलाकात रखो ",
-    "NotSupported": "dotnet",
+    "Input": "कल 9 से सुबह 11 बजे तक की मीटिंग रखो ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -234,8 +216,7 @@
     ]
   },
   {
-    "Input": "जुलाई 22 की दिल्ली वाली मुलाक़ात को बदलकर अगस्त 22 कर दो ",
-    "NotSupported": "dotnet",
+    "Input": "जुलाई 22 की दिल्ली वाली मुलाक़ात को बदलकर अगस्त 22 कर दें ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -245,20 +226,43 @@
         "Length": 8
       },
       {
-        "Text": "22 अगस्त",
+        "Text": "अगस्त 22",
         "Type": "date",
-        "Start": 39,
+        "Start": 41,
         "Length": 8
       }
     ]
   },
   {
     "Input": "7/2 के बाद ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "7/2 के बाद ",
+        "Text": "7/2 के बाद",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "7/2 से",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7/2 से",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "7/2 से पहले ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7/2 से पहले",
         "Type": "date",
         "Start": 0,
         "Length": 11
@@ -266,34 +270,7 @@
     ]
   },
   {
-    "Input": "7/2 से ",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "7/2 से ",
-        "Type": "date",
-        "Start": 0,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "7/2 से पहले ",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "7/2 से पहले ",
-        "Type": "date",
-        "Start": 0,
-        "Length": 12
-      }
-    ]
-  },
-  {
     "Input": "06/06 12:15",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -306,7 +283,6 @@
   },
   {
     "Input": "06/06/12 15:15",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -319,7 +295,6 @@
   },
   {
     "Input": "06/06, 2015",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -332,20 +307,18 @@
   },
   {
     "Input": "मई 29th ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "मई 29th ",
+        "Text": "मई 29th",
         "Type": "date",
         "Start": 0,
-        "Length": 8
+        "Length": 7
       }
     ]
   },
   {
     "Input": "मार्च 29",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -358,7 +331,6 @@
   },
   {
     "Input": "मेरी पैदाइश मार्च की है",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -371,20 +343,18 @@
   },
   {
     "Input": "मैं मार्च के महीने में पैदा हुआ था",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "मार्च ",
+        "Text": "मार्च के महीने",
         "Type": "daterange",
         "Start": 4,
-        "Length": 6
+        "Length": 14
       }
     ]
   },
   {
     "Input": "मई में क्या हुआ था",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -397,43 +367,36 @@
   },
   {
     "Input": "रेस्तरां के खुलने का समय क्या है",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
-    "Input": "धूप में ",
-    "NotSupported": "dotnet",
+    "Input": "धूप में",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "कौन सी ईमेल का जवाब आया है ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "वो अक्सर अकेला रहता है",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "अक्सर एक चिड़िया ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "मिशिगन के घंटे ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "मैं शाम 3 बजे का अपॉइंटमेंट बदलकर 4 कर देता हूँ ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -451,27 +414,25 @@
     ]
   },
   {
-    "Input": "मैं शाम थ्री पीएम का अपॉइंटमेंट बदलकर फ़ोर कर देता हूँ ",
-    "NotSupported": "dotnet",
+    "Input": "मैं शाम थ्री pm का अपॉइंटमेंट बदलकर फ़ोर कर देता हूँ ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "थ्री पीएम",
+        "Text": "शाम थ्री pm",
         "Type": "time",
-        "Start": 8,
-        "Length": 9
+        "Start": 4,
+        "Length": 11
       },
       {
         "Text": "फ़ोर",
         "Type": "time",
-        "Start": 38,
+        "Start": 36,
         "Length": 3
       }
     ]
   },
   {
     "Input": "मैं morning ten o'clock का अपॉइंटमेंट बदलकर eleven कर देता हूँ ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -490,7 +451,6 @@
   },
   {
     "Input": "मैं सुबह दस बजे का अपॉइंटमेंट बदलकर ग्यारह कर देता हूँ !",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -508,27 +468,25 @@
     ]
   },
   {
-    "Input": "मैं टेन एएम का अपॉइंटमेंट बदलकर इलेवन कर देता हूँ?",
-    "NotSupported": "dotnet",
+    "Input": "मैं टेन am का अपॉइंटमेंट बदलकर इलेवन कर देता हूँ?",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "टेन एएम",
+        "Text": "टेन am",
         "Type": "time",
         "Start": 4,
-        "Length": 7
+        "Length": 6
       },
       {
         "Text": "इलेवन",
         "Type": "time",
-        "Start": 32,
+        "Start": 31,
         "Length": 5
       }
     ]
   },
   {
     "Input": "मैं सुबह दस बजे का अपॉइंटमेंट बदलकर 20 कर देता हूँ!",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -547,7 +505,6 @@
   },
   {
     "Input": "मैं सुबह दस बजे का अपॉइंटमेंट बदलकर बीस कर देता हूँ!",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -566,7 +523,6 @@
   },
   {
     "Input": "मैं सुबह दस बजे का अपॉइंटमेंट बदलकर तेरह कर देता हूँ!",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -585,7 +541,6 @@
   },
   {
     "Input": "मैं सुबह दस बजे का अपॉइंटमेंट बदलकर 13 कर देता हूँ!",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
