@@ -44,8 +44,8 @@ class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         return self._single_time_extractor
 
     @property
-    def timezone_extractor(self) -> DateTimeExtractor:
-        return self._timezone_extractor
+    def time_zone_extractor(self) -> DateTimeExtractor:
+        return self._time_zone_extractor
 
     @property
     def integer_extractor(self) -> Extractor:
@@ -117,7 +117,7 @@ class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         self._single_time_extractor = BaseTimeExtractor(
             EnglishTimeExtractorConfiguration())
         self._integer_extractor = EnglishIntegerExtractor()
-        self._timezone_extractor = BaseTimeZoneExtractor(
+        self._time_zone_extractor = BaseTimeZoneExtractor(
             EnglishTimeZoneExtractorConfiguration())
         self._token_before_date = EnglishDateTime.TokenBeforeDate
         self._pure_number_regex = [EnglishDateTime.PureNumFromTo, EnglishDateTime.PureNumFromTo]

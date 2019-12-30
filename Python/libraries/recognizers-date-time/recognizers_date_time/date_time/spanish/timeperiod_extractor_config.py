@@ -61,8 +61,8 @@ class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         return self._pure_number_regex
 
     @property
-    def timezone_extractor(self) -> DateTimeExtractor:
-        return self._timezone_extractor
+    def time_zone_extractor(self) -> DateTimeExtractor:
+        return self._time_zone_extractor
 
     def __init__(self):
         super().__init__()
@@ -94,7 +94,7 @@ class SpanishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         self._token_before_date = SpanishDateTime.TokenBeforeDate
         self._pure_number_regex = [SpanishDateTime.PureNumFromTo, SpanishDateTime.PureNumFromTo]
         self._options = DateTimeOptions.NONE
-        self._timezone_extractor = BaseTimeZoneExtractor(
+        self._time_zone_extractor = BaseTimeZoneExtractor(
             SpanishTimeZoneExtractorConfiguration())
         self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
 
