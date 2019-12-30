@@ -15,6 +15,7 @@ from .base_datetimeperiod import *
 from .base_set import *
 from .base_holiday import *
 from .base_merged import *
+from .base_timezone import *
 from .english import *
 from .spanish import *
 from .chinese import *

@@ -153,6 +153,11 @@ class TimeParserConfiguration:
     def utility_configuration(self):
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def time_zone_parser(self) -> DateTimeParser:
+        raise NotImplementedError
+
     @abstractmethod
     def adjust_by_prefix(self, prefix: str, adjust: AdjustParams):
         raise NotImplementedError

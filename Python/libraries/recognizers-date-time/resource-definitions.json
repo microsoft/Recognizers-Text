@@ -71,6 +71,17 @@
                 "class FrenchDateTime:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "English", "English-TimeZone" ],
+            "output": "english_time_zone",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "",
+                "",
+                "class TimeZoneDefinitions:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
         }
     ]
 }

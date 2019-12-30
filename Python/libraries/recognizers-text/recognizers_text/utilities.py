@@ -1,4 +1,5 @@
 import re
+import unicodedata
 from typing import Pattern, Union, List, Match
 import regex
 from emoji import UNICODE_EMOJI
@@ -210,6 +211,18 @@ class QueryProcessor:
     @staticmethod
     def float_or_int(source: Union[float, int]) -> Union[float, int]:
         return float(source) if source % 1 else int(source)
+
+    @staticmethod
+    def remove_diacritics(query: str) -> str:
+        if not query:
+            return None
+
+        # NFD indicates that a Unicode string is normalized using full canonical decomposition.
+        chars = ''.join((c for c in unicodedata.normalize('NFD', query) if unicodedata.category(c) != 'Mn'))
+
+        # NFC indicates that a Unicode string is normalized using full canonical decomposition,
+        # followed by the replacement of sequences with their primary composites, if possible.
+        return str(unicodedata.normalize('NFC', chars)).lower()
 
 
 def flatten(result):

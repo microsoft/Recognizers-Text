@@ -45,6 +45,7 @@ class Metadata:
         self._possibly_included_period_end = False
         self._is_duration_with_before_and_after = False
         self._is_holiday = False
+        self._has_mod = False
         self._is_ordinal_relative = False
         self._offset = ''
         self._relative_to = ''
@@ -72,6 +73,14 @@ class Metadata:
     @is_holiday.setter
     def is_holiday(self, value):
         self._is_holiday = value
+
+    @property
+    def has_mod(self):
+        return self._has_mod
+
+    @has_mod.setter
+    def has_mod(self, value):
+        self._has_mod = value
 
     @property
     def is_ordinal_relative(self):

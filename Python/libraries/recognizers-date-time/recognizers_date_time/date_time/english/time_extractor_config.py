@@ -3,7 +3,9 @@ from typing import List, Pattern
 from recognizers_text.utilities import RegExpUtility
 from ...resources.english_date_time import EnglishDateTime
 from ..base_time import TimeExtractorConfiguration
+from ..base_timezone import BaseTimeZoneExtractor
 from ..extractors import DateTimeExtractor
+from .timezone_extractor_config import EnglishTimeZoneExtractorConfiguration
 
 
 class EnglishTimeExtractorConfiguration(TimeExtractorConfiguration):
@@ -168,5 +170,5 @@ class EnglishTimeExtractorConfiguration(TimeExtractorConfiguration):
             EnglishDateTime.IshRegex)
         self._time_before_after_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.TimeBeforeAfterRegex)
-        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
-        self._time_zone_extractor = None
+        self._time_zone_extractor = BaseTimeZoneExtractor(
+            EnglishTimeZoneExtractorConfiguration())

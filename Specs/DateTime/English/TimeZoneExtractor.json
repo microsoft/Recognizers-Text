@@ -1,7 +1,7 @@
 [
   {
     "Input": "Book me a room at beijing time",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "beijing time",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Book me a room at utc4:30",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "utc4:30",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Book me a room at gmt-3",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "gmt-3",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Book me a room at afghanistan standard time",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "afghanistan standard time",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Book me a room at aft",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "aft",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Book me a room at beijing-time",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "beijing-time",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "Book me a room at St. Louis-time",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "St. Louis-time",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Book me a room at San José Time",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "San José Time",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "For me, Christchurch Time, Colchester-time or Edinburgh time is OK.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Christchurch Time",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Cortana will email you to find a time which works in the Sydney timezone.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Sydney timezone",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Cortana will email you to find a time which works in the Montréal time.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Montréal time",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Cortana will email you to find a time which works in the Montreal time.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Montreal time",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Book me a room at pt",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "pt",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Book me a room at et",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "et",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "let's meet Saint Barthélemy time",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Saint Barthélemy time",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "let's meet saint barthelemy timezone",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "saint barthelemy timezone",
@@ -206,19 +206,19 @@
   {
     "Input": "It is the outcome of the vote that counts.",
     "Comment": "This case is to verify that the utc substring won't be extracted from the word outcome.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
     "Input": "Show me times at Lincoln Square",
     "Comment": "This case is to verify that the 'me time' substring won't be extracted from the 'me times'.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
     "Input": "I said New York time, not York time",
     "Comment": "Extract longest item when there are some overlap items",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "New York time",
@@ -236,7 +236,7 @@
   },
   {
     "Input": "I'm in the pacific timezone",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "pacific timezone",
@@ -248,7 +248,7 @@
   },
   {
     "Input": "Let's meet at 1pm mountain timezone",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "mountain timezone",
@@ -260,7 +260,7 @@
   },
   {
     "Input": "It's 1pm Eastern Daylight Time",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "eastern daylight time",
@@ -272,7 +272,7 @@
   },
   {
     "Input": "It's about 1pm ACDT",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "acdt",

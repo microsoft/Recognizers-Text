@@ -75,6 +75,11 @@ class TimePeriodExtractorConfiguration(DateTimeOptionsConfiguration):
     def is_connector_token(self, middle):
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def time_zone_extractor(self) -> DateTimeExtractor:
+        raise NotImplementedError
+
 
 class BaseTimePeriodExtractor(DateTimeExtractor):
     @property
@@ -322,6 +327,11 @@ class TimePeriodParserConfiguration:
     @property
     @abstractmethod
     def integer_extractor(self) -> Extractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def time_zone_parser(self) -> DateTimeParser:
         raise NotImplementedError
 
     @property

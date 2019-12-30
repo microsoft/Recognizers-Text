@@ -10,12 +10,14 @@ from ..base_time import BaseTimeExtractor
 from ..base_duration import BaseDurationExtractor
 from ..base_timeperiod import BaseTimePeriodExtractor
 from ..base_datetime import BaseDateTimeExtractor
+from ..base_timezone import BaseTimeZoneExtractor
 from .date_extractor_config import SpanishDateExtractorConfiguration
 from .time_extractor_config import SpanishTimeExtractorConfiguration
 from .duration_extractor_config import SpanishDurationExtractorConfiguration
 from .timeperiod_extractor_config import SpanishTimePeriodExtractorConfiguration
 from .datetime_extractor_config import SpanishDateTimeExtractorConfiguration
 from ..utilities import DateTimeOptions
+from .timezone_extractor_config import SpanishTimeZoneExtractorConfiguration
 
 
 class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
@@ -66,6 +68,10 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
     @property
     def time_period_extractor(self) -> DateTimeExtractor:
         return self._time_period_extractor
+
+    @property
+    def timezone_extractor(self) -> DateTimeExtractor:
+        return self._timezone_extractor
 
     @property
     def simple_cases_regexes(self) -> List[Pattern]:
@@ -224,6 +230,8 @@ class SpanishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
             SpanishDurationExtractorConfiguration())
         self._time_period_extractor = BaseTimePeriodExtractor(
             SpanishTimePeriodExtractorConfiguration())
+        self._timezone_extractor = BaseTimeZoneExtractor(
+            SpanishTimeZoneExtractorConfiguration())
         self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.WithinNextPrefixRegex
         )

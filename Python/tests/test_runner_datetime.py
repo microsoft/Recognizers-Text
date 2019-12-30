@@ -243,10 +243,15 @@ def create_parser(language, model, options):
         parser = get_class(
             f'recognizers_date_time.date_time.base_{model.lower()}',
             f'Base{model}Parser')
+        if model == 'TimeZone':
+            return parser()
 
-    configuration_class = get_class(
-        f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}_parser_config',
-        f'{language}{model}ParserConfiguration')
+    if model != 'TimeZone':
+        configuration_class = get_class(
+            f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}_parser_config',
+            f'{language}{model}ParserConfiguration')
+    else:
+        configuration_class = get_class('recognizers_date_time.date_time.base_timezone', 'BaseTimeZoneParser')
 
     language_configuration = get_class(
         f'recognizers_date_time.date_time.{language.lower()}.common_configs',
