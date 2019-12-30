@@ -57,10 +57,6 @@ class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
         return self._time_zone_extractor
 
     @property
-    def timezone_extractor(self) -> DateTimeExtractor:
-        return self._timezone_extractor
-
-    @property
     def simple_cases_regexes(self) -> List[Pattern]:
         return self._simple_cases_regexes
 

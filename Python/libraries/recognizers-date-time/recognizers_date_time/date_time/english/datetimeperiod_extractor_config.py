@@ -52,8 +52,8 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         return self._time_period_extractor
 
     @property
-    def timezone_extractor(self) -> DateTimeExtractor:
-        return self._timezone_extractor
+    def time_zone_extractor(self) -> DateTimeExtractor:
+        return self._time_zone_extractor
 
     @property
     def simple_cases_regexes(self) -> List[Pattern]:
@@ -176,7 +176,7 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
             EnglishDurationExtractorConfiguration())
         self._time_period_extractor = BaseTimePeriodExtractor(
             EnglishTimePeriodExtractorConfiguration())
-        self._timezone_extractor = BaseTimeZoneExtractor(
+        self._time_zone_extractor = BaseTimeZoneExtractor(
             EnglishTimeZoneExtractorConfiguration())
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumFromTo),
