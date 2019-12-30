@@ -941,7 +941,7 @@ class TimexUtil:
     @staticmethod
     def generate_date_period_timex(begin, end, timex_type, alternative_begin=datetime.now(), alternative_end=datetime.now()):
         equal_duration_length = (end - begin).days == (alternative_end - alternative_begin).days or\
-                                datetime.now() == alternative_end == alternative_begin
+            datetime.now() == alternative_end == alternative_begin
         unit_count = 'XX'
 
         if equal_duration_length:
