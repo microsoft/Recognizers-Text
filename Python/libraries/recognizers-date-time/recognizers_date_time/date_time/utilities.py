@@ -577,7 +577,8 @@ class MatchingUtil:
     def get_ago_later_index(source: str, regexp: Pattern, in_suffix) -> MatchedIndex:
         result = MatchedIndex(matched=False, index=-1)
         trimmed_source = source.strip().lower()
-        match = RegExpUtility.match_begin(regexp, trimmed_source, True) if in_suffix else RegExpUtility.match_end(regexp, trimmed_source, True)
+        match = RegExpUtility.match_begin(regexp, trimmed_source, True) if in_suffix else\
+            RegExpUtility.match_end(regexp, trimmed_source, True)
 
         if match and match.success:
             result.index = source.lower().find(match.group()) + (match.length if in_suffix else 0)
@@ -682,7 +683,8 @@ class AgoLaterUtil:
                     index = MatchingUtil.get_term_index(before_string, regexp[0]).index
                     if index > 0:
                         is_match = True
-                    elif config.check_both_before_after and MatchingUtil.get_ago_later_index(after_string, regexp[0], True).matched:
+                    elif config.check_both_before_after and\
+                            MatchingUtil.get_ago_later_index(after_string, regexp[0], True).matched:
                         is_match = is_match_after = True
 
                     if is_match:
@@ -691,7 +693,8 @@ class AgoLaterUtil:
                             is_unit_match = is_unit_match or unit_regex.match(extract_result.text)
 
                         if not is_unit_match:
-                            if extract_result.start is not None and extract_result.length is not None and extract_result.start >= index or is_match_after:
+                            if extract_result.start is not None and extract_result.length is not None and\
+                                    extract_result.start >= index or is_match_after:
                                 start = extract_result.start - (index if not is_match_after else 0)
                                 end = extract_result.start + extract_result.length + (index if is_match_after else 0)
                                 ret.append(Token(start, end))
@@ -937,7 +940,8 @@ class TimexUtil:
 
     @staticmethod
     def generate_date_period_timex(begin, end, timex_type, alternative_begin=datetime.now(), alternative_end=datetime.now()):
-        equal_duration_length = (end - begin).days == (alternative_end - alternative_begin).days or datetime.now() == alternative_end == alternative_begin
+        equal_duration_length = (end - begin).days == (alternative_end - alternative_begin).days or\
+                                datetime.now() == alternative_end == alternative_begin
         unit_count = 'XX'
 
         if equal_duration_length:
@@ -953,7 +957,8 @@ class TimexUtil:
 
         date_period_timex = f'P{unit_count}{date_period_timex_type_to_suffix[timex_type]}'
 
-        return f'({DateTimeFormatUtil.luis_date(begin.year, begin.month, begin.day)},{DateTimeFormatUtil.luis_date(end.year, end.month, end.day)},{date_period_timex})'
+        return f'({DateTimeFormatUtil.luis_date(begin.year, begin.month, begin.day)},' \
+               f'{DateTimeFormatUtil.luis_date(end.year, end.month, end.day)},{date_period_timex})'
 
     @staticmethod
     def is_range_timex(timex: str) -> bool:
