@@ -1,7 +1,6 @@
-import time
 import regex
-from typing import List, Pattern, Match
-from abc import ABC, abstractmethod
+from typing import List, Pattern
+from abc import abstractmethod
 from datetime import datetime
 from .utilities import DateTimeOptionsConfiguration, DateTimeResolutionResult, TimeZoneResolutionResult, Token,\
     MatchingUtil, DateUtils
@@ -9,7 +8,7 @@ from .parsers import DateTimeParser, DateTimeParseResult
 from .datetime_zone_extractor import DateTimeZoneExtractor
 from .constants import Constants
 from ..resources import TimeZoneDefinitions
-from recognizers_text import ExtractResult, ParseResult, RegExpUtility, QueryProcessor
+from recognizers_text import ExtractResult, RegExpUtility, QueryProcessor
 from recognizers_text.matcher.string_matcher import StringMatcher
 
 
