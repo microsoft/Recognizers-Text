@@ -7,7 +7,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "इस महीने 4 से 22",
+        "Text": "इस महीने 4 से 22 तक",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-04,2016-11-22,P18D)",
@@ -21,7 +21,7 @@
           }
         },
         "Start": 4,
-        "Length": 16
+        "Length": 19
       }
     ]
   },
@@ -59,7 +59,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "3 से 12 सितंबर",
+        "Text": "3 से 12 सितंबर तक",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
@@ -73,7 +73,7 @@
           }
         },
         "Start": 4,
-        "Length": 14
+        "Length": 17
       }
     ]
   },
@@ -111,7 +111,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अगले महीने 4 से 23",
+        "Text": "अगले महीने 4 से 23 तक",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-12-04,2016-12-23,P19D)",
@@ -125,7 +125,7 @@
           }
         },
         "Start": 4,
-        "Length": 18
+        "Length": 21
       }
     ]
   },
@@ -137,7 +137,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "इस महीने 4 से लेकर 23",
+        "Text": "इस महीने 4 से लेकर 23 तक",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-04,2016-11-23,P19D)",
@@ -151,7 +151,7 @@
           }
         },
         "Start": 4,
-        "Length": 21
+        "Length": 24
       }
     ]
   },
@@ -503,7 +503,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "जुलाई के आखिरी हफ्ते",
+        "Text": "जुलाई के आखिरी हफ्ते में",
         "Type": "daterange",
         "Value": {
           "Timex": "XXXX-07-W05",
@@ -517,7 +517,7 @@
           }
         },
         "Start": 0,
-        "Length": 20
+        "Length": 24
       }
     ]
   },
@@ -746,7 +746,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अक्टू. 2 से अक्टू. 22",
+        "Text": "अक्टू. 2 से अक्टू. 22 तक",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
@@ -760,7 +760,7 @@
           }
         },
         "Start": 4,
-        "Length": 21
+        "Length": 24
       }
     ]
   },
@@ -850,7 +850,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अक्टू. 2 से अक्टूबर 22",
+        "Text": "अक्टू. 2 से अक्टूबर 22 तक",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
@@ -864,7 +864,7 @@
           }
         },
         "Start": 4,
-        "Length": 22
+        "Length": 25
       }
     ]
   },
@@ -902,33 +902,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "19-20 नवंबर",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
-          "FutureResolution": {
-            "startDate": "2016-11-19",
-            "endDate": "2016-11-20"
-          },
-          "PastResolution": {
-            "startDate": "2015-11-19",
-            "endDate": "2015-11-20"
-          }
-        },
-        "Start": 4,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "मैं 19 से 20 नवंबर तक बाहर रहूंगा",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "19 से 20 नवंबर",
+        "Text": "19-20 नवंबर तक",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
@@ -943,6 +917,32 @@
         },
         "Start": 4,
         "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं 19 से 20 नवंबर तक बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "19 से 20 नवंबर तक",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        },
+        "Start": 4,
+        "Length": 17
       }
     ]
   },
@@ -2577,7 +2577,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दो हजार अठारह में 2 से 7 फरवरी",
+        "Text": "दो हजार अठारह में 2 से 7 फरवरी तक",
         "Type": "daterange",
         "Value": {
           "Timex": "(2018-02-02,2018-02-07,P5D)",
@@ -2591,7 +2591,7 @@
           }
         },
         "Start": 4,
-        "Length": 30
+        "Length": 33
       }
     ]
   },
@@ -2631,7 +2631,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दो हजार अठारह के फरवरी में 2 से 7",
+        "Text": "दो हजार अठारह के फरवरी में 2 से 7 तक",
         "Type": "daterange",
         "Value": {
           "Timex": "(2018-02-02,2018-02-07,P5D)",
@@ -2645,7 +2645,7 @@
           }
         },
         "Start": 4,
-        "Length": 33
+        "Length": 36
       }
     ]
   },

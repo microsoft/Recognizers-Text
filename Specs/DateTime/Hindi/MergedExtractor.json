@@ -196,10 +196,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह 9 से सुबह 11 बजे",
+        "Text": "सुबह 9 से सुबह 11 बजे के बीच",
         "Type": "timerange",
         "Start": 0,
-        "Length": 21
+        "Length": 28
       }
     ]
   },

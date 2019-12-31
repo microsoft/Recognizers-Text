@@ -67,7 +67,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             new Regex(DateTimeDefinitions.FromTokenRegex, RegexFlags);
 
         private static readonly Regex BetweenRegex =
-            new Regex(DateTimeDefinitions.BetweenTokenRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexFlags);
 
         private static readonly Regex RangeConnectorRegex =
             new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
@@ -127,7 +127,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             var betweenMatch = BetweenRegex.Match(text);
             if (betweenMatch.Success)
             {
-                index = betweenMatch.Index;
+                index = betweenMatch.Index + betweenMatch.Length;
             }
 
             return betweenMatch.Success;

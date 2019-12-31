@@ -7,7 +7,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "आज पाँच से सात बजे",
+        "Text": "आज पाँच से सात बजे तक",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
@@ -21,7 +21,7 @@
           }
         },
         "Start": 4,
-        "Length": 18
+        "Length": 21
       }
     ]
   },
@@ -33,7 +33,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4/22/2016 को 5 से 6 बजे",
+        "Text": "4/22/2016 को 5 से 6 बजे तक",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-04-22T05,2016-04-22T06,PT1H)",
@@ -47,7 +47,7 @@
           }
         },
         "Start": 4,
-        "Length": 23
+        "Length": 26
       }
     ]
   },
@@ -59,7 +59,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अप्रैल 22 को 5 से 6  बजे",
+        "Text": "अप्रैल 22 को 5 से 6  बजे तक",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-04-22T05,XXXX-04-22T06,PT1H)",
@@ -73,7 +73,7 @@
           }
         },
         "Start": 4,
-        "Length": 24
+        "Length": 27
       }
     ]
   },
@@ -85,7 +85,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "22 अप्रैल की शाम 5 से 6 बजे",
+        "Text": "22 अप्रैल की शाम 5 से 6 बजे तक",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
@@ -99,7 +99,7 @@
           }
         },
         "Start": 4,
-        "Length": 27
+        "Length": 30
       }
     ]
   },
@@ -111,7 +111,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1 जनवरी को 5 से 6 बजे",
+        "Text": "1 जनवरी को 5 से 6 बजे तक",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-01-01T05,XXXX-01-01T06,PT1H)",
@@ -125,7 +125,7 @@
           }
         },
         "Start": 4,
-        "Length": 21
+        "Length": 24
       }
     ]
   },
@@ -137,7 +137,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "कल दोपहर 3 बजे से 4 बजे",
+        "Text": "कल दोपहर 3 बजे से 4 बजे तक",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
@@ -151,7 +151,7 @@
           }
         },
         "Start": 4,
-        "Length": 23
+        "Length": 26
       }
     ]
   },
@@ -163,7 +163,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "कल 3:00 से 4:00 बजे",
+        "Text": "कल 3:00 से 4:00 बजे तक",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
@@ -177,7 +177,7 @@
           }
         },
         "Start": 4,
-        "Length": 19
+        "Length": 22
       }
     ]
   },
@@ -190,7 +190,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "कल साढ़े सात बजे से शाम चार बजे",
+        "Text": "कल साढ़े सात बजे से शाम चार बजे तक",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H30M)",
@@ -204,7 +204,7 @@
           }
         },
         "Start": 4,
-        "Length": 31
+        "Length": 34
       }
     ]
   },
@@ -268,7 +268,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "आज शाम 4 बजे से 5 बजे",
+        "Text": "आज शाम 4 बजे से 5 बजे के बीच",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16,2016-11-07T17,PT1H)",
@@ -282,7 +282,7 @@
           }
         },
         "Start": 4,
-        "Length": 21
+        "Length": 28
       }
     ]
   },
@@ -1398,7 +1398,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शुक्रवार दोपहर 1 बजे और 4 बजे",
+        "Text": "शुक्रवार दोपहर 1 बजे और 4 बजे के बीच",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
@@ -1412,7 +1412,7 @@
           }
         },
         "Start": 43,
-        "Length": 29
+        "Length": 36
       }
     ]
   },
@@ -1424,7 +1424,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "कल सुबह 8 बजे से दोपहर 2 बजे",
+        "Text": "कल सुबह 8 बजे से दोपहर 2 बजे के बीच",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2017-11-10T08,2017-11-10T14,PT6H)",
@@ -1438,7 +1438,7 @@
           }
         },
         "Start": 13,
-        "Length": 28
+        "Length": 35
       }
     ]
   },
@@ -1450,7 +1450,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "9 दिसंबर को 8 AM और 2 PM",
+        "Text": "9 दिसंबर को 8 AM और 2 PM के बीच",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-12-09T08,XXXX-12-09T14,PT6H)",
@@ -1464,7 +1464,7 @@
           }
         },
         "Start": 13,
-        "Length": 24
+        "Length": 31
       }
     ]
   },
@@ -1580,7 +1580,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शुक्रवार को दोपहर 1 बजे और 4 बजे",
+        "Text": "शुक्रवार को दोपहर 1 बजे और 4 बजे के बीच",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
@@ -1594,7 +1594,7 @@
           }
         },
         "Start": 42,
-        "Length": 32
+        "Length": 39
       }
     ]
   },
@@ -1607,7 +1607,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शुक्रवार को दोपहर में 1 PM और 4 PM",
+        "Text": "शुक्रवार को दोपहर में 1 PM और 4 PM के बीच",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
@@ -1621,7 +1621,7 @@
           }
         },
         "Start": 48,
-        "Length": 34
+        "Length": 41
       }
     ]
   },
@@ -1634,7 +1634,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2018-09-23 1p.m से 4",
+        "Text": "2018-09-23 1p.m से 4 तक",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2018-09-23T13,2018-09-23T16,PT3H)",
@@ -1648,7 +1648,7 @@
           }
         },
         "Start": 33,
-        "Length": 20
+        "Length": 23
       }
     ]
   },
@@ -1661,7 +1661,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2018-09-23 1:30p.m से 4",
+        "Text": "2018-09-23 1:30p.m से 4 तक",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2018-09-23T13:30,2018-09-23T16,PT2H30M)",
@@ -1675,7 +1675,7 @@
           }
         },
         "Start": 33,
-        "Length": 23
+        "Length": 26
       }
     ]
   },

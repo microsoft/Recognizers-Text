@@ -56,7 +56,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string RoundNumberHinglishIntegerRegex = @"(?:हंड्रेड|थाउजेंड|मिलियन|बिलियन|ट्रिलियन)";
       public const string OnetoNineHinglishIntegerRegex = @"(?:वन|टू|थ्री|फोर|फ़ाइव|सिक्स|सेवन|एइट|नाइन)";
       public const string ElevenToNineteenHinglishIntegerRegex = @"(?:इलेवन|ट्वेल्व|थर्टीन|फ़ोर्टीन|फ़िफ़्टीन|सिक्सटीन|सेवेनटीन|एइटीन|नाइनटीन)";
-      public const string TensHinglishIntegerRegex = @"(?:टेन|ट्वेन्टी|थर्टी|फ़ोर्टी|फ़िफ़्टी|सिक्सटी|सेवेंटी|एइट्टी|नाइनटी)";
+      public const string TensHinglishIntegerRegex = @"(?:टेन|ट्वेन्टी|ट्वेंटी|थर्टी|फ़ोर्टी|फ़िफ़्टी|सिक्सटी|सेवेंटी|एइट्टी|नाइनटी)";
       public static readonly string HinglishIntegerRegex = $@"(({TensHinglishIntegerRegex}\s+{OnetoNineHinglishIntegerRegex})|{OnetoNineHinglishIntegerRegex}|{ElevenToNineteenHinglishIntegerRegex}|{TensHinglishIntegerRegex})";
       public static readonly string CompoundHindiNumberRegex = $@"((({HinglishIntegerRegex}\s+)?({RoundNumberHinglishIntegerRegex}\s+)?(अंड\s+)?)+({HinglishIntegerRegex}|{RoundNumberHinglishIntegerRegex})|{HinglishIntegerRegex}|{RoundNumberHinglishIntegerRegex})";
       public static readonly string NegativeHinglishRegex = $@"(({NegativeNumberTermsRegex})?{CompoundHindiNumberRegex})";
