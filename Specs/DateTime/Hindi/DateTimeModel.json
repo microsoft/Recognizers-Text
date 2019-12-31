@@ -21,8 +21,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 03 जनवरी 2019 को वापस जाऊंगा।",
@@ -46,8 +45,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 02 जनवरी 2019 को वापस जाऊंगा।",
@@ -71,8 +69,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 01 जनवरी 2019 को वापस जाऊंगा।",
@@ -96,8 +93,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "1990 के दशक में हमारे राष्ट्रपति कौन हैं।",
@@ -122,8 +118,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 22/04 को वापस जाऊंगा",
@@ -152,8 +147,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं उनतीस मई को वापस जाऊंगा",
@@ -182,8 +176,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं दो अगस्त को जाऊंगा।",
@@ -212,8 +205,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं आज वापस जाऊंगा",
@@ -237,8 +229,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं कल वापस जाऊंगा",
@@ -262,8 +253,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं शुक्रवार को वापस जाऊंगा",
@@ -292,8 +282,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं अगले महीने 4-23 बाहर रहुंगा",
@@ -318,8 +307,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 3 और 12 सितं. के बीच बाहर रहुंगा हाहा",
@@ -350,8 +338,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं इस सितंबर में बाहर रहुंगा",
@@ -376,8 +363,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं अगले 3 दिन बाहर रहूँगा",
@@ -402,8 +388,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं जुलाई के आखिरी हफ्ते में बाहर रहुंगा",
@@ -413,9 +398,9 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "जुलाई के आखिरी हफ्ते",
+        "Text": "जुलाई के आखिरी हफ्ते में",
         "Start": 4,
-        "End": 23,
+        "End": 27,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -434,20 +419,19 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
-    "Input": "मैं 2015-3 से बाहर रहुंगा",
+    "Input": "मैं 2015-3 को बाहर रहुंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2015-3 ",
+        "Text": "2015-3",
         "Start": 4,
-        "End": 10,
+        "End": 9,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -460,14 +444,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं इस गर्मी में चला जाउंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -485,8 +469,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं कल से बाहर रहुंगा",
@@ -512,8 +495,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं अगस्त से बाहर रहुंगा",
@@ -546,8 +528,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं इस अगस्त से बाहर रहुंगा",
@@ -557,9 +538,9 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "इस अगस्त से ",
+        "Text": "इस अगस्त से",
         "Start": 4,
-        "End": 15,
+        "End": 14,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -573,8 +554,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं अब वापस जाऊंगा",
@@ -598,8 +578,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 14 अक्टूबर को सुबह 8:00:31 बजे वापस जाऊंगा",
@@ -628,8 +607,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं कल सुबह 8:00 बजे वापस जाऊंगा",
@@ -653,8 +631,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं आज रात 10 बजे  वापस जाऊंगा",
@@ -678,8 +655,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं आज सुबह 8 बजे वापस जाऊंगा",
@@ -703,20 +679,19 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
-    "Input": "मैं कल शाम को वापस जाऊंगा",
+    "Input": " मै कल के अंत में जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "कल शाम को",
+        "Text": "कल के अंत में",
         "Start": 4,
-        "End": 12,
+        "End": 16,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -728,20 +703,19 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
-    "Input": "मैं रविवार शाम को वापस जाऊंगा",
+    "Input": "मैं रविवार के अंत में वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "रविवार शाम को",
+        "Text": "रविवार के अंत में",
         "Start": 4,
-        "End": 16,
+        "End": 20,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -758,20 +732,19 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
-    "Input": "मैं इस रविवार शाम को वापस जाऊंगा",
+    "Input": "मैं इस रविवार के अंत में वापस जाऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "इस रविवार शाम को",
+        "Text": "इस रविवार के अंत में",
         "Start": 4,
-        "End": 19,
+        "End": 23,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -783,8 +756,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं आज पाँच से सात बाहर रहुंगा",
@@ -815,8 +787,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 22 अप्रैल की शाम 5 से 6 बजे तक बाहर रहूंगा",
@@ -826,9 +797,9 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "22 अप्रैल की शाम 5 से 6 बजे",
+        "Text": "22 अप्रैल की शाम 5 से 6 बजे तक",
         "Start": 4,
-        "End": 30,
+        "End": 33,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -847,8 +818,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं कल 3:00 से 4:00 बजे तक बाहर रहूँगा",
@@ -858,9 +828,9 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "कल 3:00 से 4:00 बजे",
+        "Text": "कल 3:00 से 4:00 बजे तक",
         "Start": 4,
-        "End": 22,
+        "End": 25,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -879,8 +849,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं आज शाम को वापस जाऊंगा",
@@ -905,8 +874,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "कल रात को वापस जाऊंगा",
@@ -931,8 +899,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं अगले सोमवार दोपहर वापस जाऊंगा",
@@ -957,8 +924,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं अगले घंटे वापस जाऊंगा",
@@ -983,8 +949,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं मंगलवार सुबह वापस लौट जाऊंगा",
@@ -1015,8 +980,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 3 घंटे के लिए बाहर रहुंगा",
@@ -1040,8 +1004,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 3.5 साल के लिए बाहर रहुंगा",
@@ -1065,8 +1028,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 3 मिनट के लिए बाहर रहुंगा",
@@ -1090,8 +1052,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 123.45 सेकंड के लिए जाऊंगा",
@@ -1115,8 +1076,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं पूरे दिन बाहर रहुंगा",
@@ -1140,8 +1100,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं चौबीस घंटे के लिए बाहर रहुंगा",
@@ -1165,8 +1124,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं पूरे महीने के लिए बाहर रहुंगा",
@@ -1190,8 +1148,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं एक घंटे के लिए बाहर रहुंगा",
@@ -1215,8 +1172,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं कुछ घंटों के लिए बाहर रहुंगा",
@@ -1240,8 +1196,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं कुछ मिनटों के लिए बाहर रहुंगा",
@@ -1265,8 +1220,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "कुछ दिनों के लिए बाहर रहुंगा",
@@ -1290,8 +1244,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं कई हफ्तों के लिए बाहर रहुंगा",
@@ -1315,8 +1268,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं हर हफ़्ते बाहर जाउंगा",
@@ -1340,8 +1292,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं रोज जाऊंगा",
@@ -1365,8 +1316,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं हर साल बाहर जाउंगा",
@@ -1390,20 +1340,19 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
-    "Input": "मैं हर दूसरे दिन बाहर जाउंगा",
+    "Input": "मैं हर दो दिन बाहर जाउंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "हर दूसरे दिन",
+        "Text": "हर दो दिन",
         "Start": 4,
-        "End": 15,
+        "End": 12,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
@@ -1415,14 +1364,14 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं हर तीन हफ्ते में बाहर जाउंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1440,8 +1389,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं हर दिन दोपहर 3 बजे निकलूंगा",
@@ -1465,8 +1413,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं हर सोमवार बाहर रहुंगा",
@@ -1490,8 +1437,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं हर सोमवार शाम 4 बजे निकलूंगा",
@@ -1515,8 +1461,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं शाम 7:56:30 बजे आऊंगा",
@@ -1540,8 +1485,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "साढ़े सात बजे हैं",
@@ -1570,8 +1514,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "शाम के आठ बजकर 20 मिनट हुए हैं",
@@ -1595,8 +1538,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं सुबह में 7 बजे वापस आ जाऊंगा",
@@ -1620,8 +1562,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं दोपहर में 7 बजे वापस आ जाऊंगा",
@@ -1645,20 +1586,19 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
-    "Input": "मैं दोपहर को वापस आऊंगा",
+    "Input": "मैं लगभग लंच के समय वापस आऊंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दोपहर को",
+        "Text": "लगभग लंच के समय",
         "Start": 4,
-        "End": 11,
+        "End": 18,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1670,8 +1610,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 11 के आसपास वापस जाऊँगा",
@@ -1695,11 +1634,10 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
-    "Input": "मैं सुबह 1140 बजे तक वापस आ जाऊंगा।",
+    "Input": "मैं सुबह 1140 बजे वापस आ जाऊंगा।",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1720,8 +1658,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "दोपहर बारह बजे",
@@ -1745,8 +1682,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं शाम 5 से 6 बजे तक बाहर रहूंगा",
@@ -1756,9 +1692,9 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 5 से 6 बजे",
+        "Text": "शाम 5 से 6 बजे तक",
         "Start": 4,
-        "End": 17,
+        "End": 20,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -1771,8 +1707,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं सुबह 5 से 7 बजे तक बाहर रहुंगा",
@@ -1782,9 +1717,9 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह 5 से 7 बजे",
+        "Text": "सुबह 5 से 7 बजे तक",
         "Start": 4,
-        "End": 18,
+        "End": 21,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -1797,8 +1732,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं दोपहर में 5 से 6 के बीच बाहर रहुंगा",
@@ -1808,9 +1742,9 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दोपहर में 5 से 6",
+        "Text": "दोपहर में 5 से 6 के बीच",
         "Start": 4,
-        "End": 19,
+        "End": 26,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -1823,8 +1757,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 4:00 से 7 बजे तक बाहर रहूँगा",
@@ -1834,9 +1767,9 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4:00 से 7 बजे",
+        "Text": "4:00 से 7 बजे तक",
         "Start": 4,
-        "End": 16,
+        "End": 19,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -1855,8 +1788,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं सुबह 3 बजे से शाम 5 बजे तक बाहर रहूंगा",
@@ -1866,9 +1798,9 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह 3 बजे से शाम 5 बजे",
+        "Text": "सुबह 3 बजे से शाम 5 बजे तक",
         "Start": 4,
-        "End": 26,
+        "End": 29,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -1881,8 +1813,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं शाम 4 और 5 के बीच बाहर रहुंगा",
@@ -1892,9 +1823,9 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 4 और 5",
+        "Text": "शाम 4 और 5 के बीच",
         "Start": 4,
-        "End": 13,
+        "End": 20,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -1907,8 +1838,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलो सुबह को मिलते हैं",
@@ -1920,7 +1850,7 @@
       {
         "Text": "सुबह को",
         "Start": 4,
-        "End": 13,
+        "End": 10,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -1933,8 +1863,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "चलिए शाम को मिलते है",
@@ -1959,8 +1888,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं अब वापस जाऊंगा",
@@ -1984,8 +1912,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "मैं 5 मिनट में वापस आ जाऊंगा",
@@ -2009,8 +1936,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "5 मिनटों में",
@@ -2034,8 +1960,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "अगले हफ्ते सोमवार को सुबह 9 बजे या दोपहर 1 बजे मेरे लिए एक मीटिंग निर्धारित करें",
@@ -2074,8 +1999,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "अगले हफ्ते सोम या मंगल को मेरे लिए एक बैठक का समय निर्धारित करें",
@@ -2119,8 +2043,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "सुबह 9 बजे या 10 बजे मेरे लिए एक बैठक शेड्यूल करें",
@@ -2164,8 +2087,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "अगले सोमवार को अपराहन 1-3 बजे या शाम 5-6 बजे मेरी बैठक शेड्यूल करें",
@@ -2206,8 +2128,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "सोमवार सुबह 8-9 बजे या सुबह 9-10 बजे सही रहेगा।",
@@ -2254,8 +2175,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "कोर्टाना, क्या तुम अगले सप्ताह मंगलवार या गुरुवार को स्कायप कॉल की व्यवस्था कर कर सकती हो?",
@@ -2299,8 +2219,7 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   },
   {
     "Input": "कोर्टाना, क्या तुम अगले सप्ताह मंगलवार सुबह 9 बजे या गुरुवार दोपहर 1 बजे एक स्कायप कॉल की व्यवस्था कर सकती हो?",
@@ -2344,7 +2263,6 @@
           ]
         }
       }
-    ],
-    "NotSupported": "dotnet"
+    ]
   }
 ]
