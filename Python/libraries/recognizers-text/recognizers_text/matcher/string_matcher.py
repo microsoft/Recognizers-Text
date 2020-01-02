@@ -45,17 +45,19 @@ class StringMatcher:
         tokenized_values = self.get_tokenized_text(values)
         self.matcher.init(tokenized_values, _ids)
 
-    def find(self, tokenized_query) -> []:
-        query_tokens = self.__tokenizer.tokenize(tokenized_query)
+    def find_matcher(self, tokenized_query: []) -> []:
+        return self.matcher.find(tokenized_query)
+
+    def find(self, query_text: str = "") -> []:
+        query_tokens = self.__tokenizer.tokenize(query_text)
         tokenized_query_text = list(map(lambda t: t.text, query_tokens))
-        matcher_result = self.matcher.find(tokenized_query)
         result = []
-        for r in matcher_result:
+        for r in self.find_matcher(tokenized_query_text):
             start_token = query_tokens[r.start]
             end_token = query_tokens[r.start + r.length - 1]
             start = start_token.start
             length = end_token.end - start_token.start
-            r_text = tokenized_query[start: start + length]
+            r_text = query_text[start: start + length]
 
             match_result = MatchResult()
             match_result.start = start
@@ -64,10 +66,6 @@ class StringMatcher:
             match_result.canonical_values = r.canonical_values
             result.append(match_result)
         return result
-
-    def matcher_find(self, tokenized_query):
-        if type(tokenized_query) is list:
-            return self.matcher.find(tokenized_query)
 
     def get_tokenized_text(self, values: []) -> []:
         return list(map(lambda t: list(map(lambda i: i.text, self.tokenizer.tokenize(t))), values))
