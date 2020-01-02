@@ -41,19 +41,9 @@ class StringMatcher:
         self.__matcher = matcher
 
     def init(self, values, ids: [] = None):
-        if values and type(values) is list:
-            _ids = list(map(lambda v: str(v), values)) if not ids else ids
-            tokenized_values = self.get_tokenized_text(values)
-            self.matcher.init(tokenized_values, _ids)
-        elif values and type(values) is dict:
-            values_dictionary = []
-            for item in values_dictionary:
-                id = item
-                for value in values[item]:
-                    values_dictionary.append(value)
-                    ids.append(id)
-
-            self.init(values, ids)
+        _ids = list(map(lambda v: str(v), values)) if not ids else ids
+        tokenized_values = self.get_tokenized_text(values)
+        self.matcher.init(tokenized_values, _ids)
 
     def find(self, tokenized_query) -> []:
         if type(tokenized_query) is list:
