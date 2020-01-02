@@ -5,8 +5,6 @@ import pytest
 from runner import get_specs, CULTURES
 from recognizers_date_time import recognize_datetime
 
-from tests.test_profiler import profile
-
 MODELFUNCTION = {
     'DateTime': recognize_datetime
 }
@@ -204,7 +202,6 @@ def simple_parser_assert(actual, expected, prop, resolution, ignore_result_case=
         assert actual_normalize == expected_normalize
 
 
-@profile
 def create_extractor(language, model, options):
     extractor = get_class(
         'recognizers_date_time',
@@ -232,7 +229,6 @@ def create_extractor(language, model, options):
     return extractor(configuration())
 
 
-@profile
 def create_parser(language, model, options):
     parser = get_class(
         f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}_parser',
