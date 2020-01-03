@@ -4,6 +4,7 @@ from .simple_tokenizer import SimpleTokenizer
 from .matcher import Matcher
 from .trie_tree import TrieTree
 from .ac_automaton import AcAutomaton
+from multipledispatch import dispatch
 from .match_result import MatchResult
 
 
@@ -40,19 +41,34 @@ class StringMatcher:
     def matcher(self, matcher) -> None:
         self.__matcher = matcher
 
-    def init(self, values, ids: [] = None):
-        _ids = list(map(lambda v: str(v), values)) if not ids else ids
-        tokenized_values = self.get_tokenized_text(values)
-        self.matcher.init(tokenized_values, _ids)
+    def init(self, values, ids=None) -> None:
+        if isinstance(values, dict):
+            values_t = []
+            ids_t = []
+            for item in values:
+                id = item
+                for value in values[item]:
+                    values_t.append(value)
+                    ids_t.append(id)
+            self.init(values_t, ids_t)
+        elif isinstance(values, list) and ids is None:
+            self.init(values, list(map(lambda v: str(v), values)))
+        elif isinstance(values, list) and isinstance(ids, list):
+            tokenized_values = self.get_tokenized_text(values)
+            self.matcher.init(tokenized_values, ids)
+        else:
+            raise NotImplementedError
 
-    def find_matcher(self, tokenized_query: []) -> []:
+    @dispatch(list)
+    def find(self, tokenized_query: []) -> []:
         return self.matcher.find(tokenized_query)
 
+    @dispatch(str)
     def find(self, query_text: str = "") -> []:
         query_tokens = self.__tokenizer.tokenize(query_text)
         tokenized_query_text = list(map(lambda t: t.text, query_tokens))
         result = []
-        for r in self.find_matcher(tokenized_query_text):
+        for r in self.find(tokenized_query_text):
             start_token = query_tokens[r.start]
             end_token = query_tokens[r.start + r.length - 1]
             start = start_token.start
