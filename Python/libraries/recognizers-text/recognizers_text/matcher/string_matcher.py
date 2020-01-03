@@ -60,7 +60,7 @@ class StringMatcher:
             raise NotImplementedError
 
     def find(self, tokenized_query) -> []:
-        if type(tokenized_query) is list:
+        if isinstance(tokenized_query, list):
             return self.matcher.find(tokenized_query)
         query_tokens = self.__tokenizer.tokenize(tokenized_query)
         tokenized_query_text = list(map(lambda t: t.text, query_tokens))
