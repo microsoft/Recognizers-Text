@@ -16,10 +16,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दोपहर में 5 से 6",
+        "Text": "दोपहर में 5 से 6 तक",
         "Type": "timerange",
         "Start": 4,
-        "Length": 16
+        "Length": 19
       }
     ]
   },
@@ -28,10 +28,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह 5 से सात",
+        "Text": "सुबह 5 से सात तक",
         "Type": "timerange",
         "Start": 4,
-        "Length": 13
+        "Length": 16
       }
     ]
   },
@@ -40,10 +40,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 5 और 6",
+        "Text": "शाम 5 और 6 के बीच",
         "Type": "timerange",
         "Start": 4,
-        "Length": 10
+        "Length": 17
       }
     ]
   },
@@ -52,10 +52,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "अपराहन 5 से 6",
+        "Text": "अपराहन 5 से 6 के बीच",
         "Type": "timerange",
         "Start": 4,
-        "Length": 13
+        "Length": 20
       }
     ]
   },
@@ -64,10 +64,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 4 से 5",
+        "Text": "शाम 4 से 5 तक",
         "Type": "timerange",
         "Start": 4,
-        "Length": 10
+        "Length": 13
       }
     ]
   },
@@ -76,10 +76,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4 से शाम 5",
+        "Text": "4 से शाम 5 तक",
         "Type": "timerange",
         "Start": 4,
-        "Length": 10
+        "Length": 13
       }
     ]
   },
@@ -88,10 +88,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4:00 से शाम 5",
+        "Text": "4:00 से शाम 5 तक",
         "Type": "timerange",
         "Start": 4,
-        "Length": 13
+        "Length": 16
       }
     ]
   },
@@ -100,10 +100,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4:00 से 7 बजे",
+        "Text": "4:00 से 7 बजे तक",
         "Type": "timerange",
         "Start": 4,
-        "Length": 13
+        "Length": 16
       }
     ]
   },
@@ -112,10 +112,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 3 से साढ़े सात",
+        "Text": "शाम 3 से साढ़े सात तक",
         "Type": "timerange",
         "Start": 4,
-        "Length": 17
+        "Length": 20
       }
     ]
   },
@@ -124,10 +124,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 4-5",
+        "Text": "शाम 4-5 तक",
         "Type": "timerange",
         "Start": 4,
-        "Length": 7
+        "Length": 10
       }
     ]
   },
@@ -136,10 +136,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "तीन बजने में 20 मिनट से शाम के आठ बजे",
+        "Text": "तीन बजने में 20 मिनट से शाम के आठ बजे तक",
         "Type": "timerange",
         "Start": 4,
-        "Length": 37
+        "Length": 40
       }
     ]
   },
@@ -148,10 +148,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम के 4 से 5",
+        "Text": "शाम के 4 से 5 तक",
         "Type": "timerange",
         "Start": 4,
-        "Length": 13
+        "Length": 16
       }
     ]
   },
@@ -160,10 +160,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम के 4 से साढ़े पाँच",
+        "Text": "शाम के 4 से साढ़े पाँच तक",
         "Type": "timerange",
         "Start": 4,
-        "Length": 21
+        "Length": 24
       }
     ]
   },
@@ -172,10 +172,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह 3 से शाम 5",
+        "Text": "सुबह 3 से शाम 5 तक",
         "Type": "timerange",
         "Start": 4,
-        "Length": 15
+        "Length": 18
       }
     ]
   },
@@ -184,10 +184,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह 3 से दोपहर पाँच",
+        "Text": "सुबह 3 से दोपहर पाँच तक",
         "Type": "timerange",
         "Start": 4,
-        "Length": 20
+        "Length": 23
       }
     ]
   },
@@ -196,10 +196,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 4 से साढ़े पाँच",
+        "Text": "शाम 4 से साढ़े पाँच के बीच",
         "Type": "timerange",
         "Start": 4,
-        "Length": 18
+        "Length": 25
       }
     ]
   },
@@ -208,10 +208,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सुबह 3 से शाम 5",
+        "Text": "सुबह 3 से शाम 5 के बीच",
         "Type": "timerange",
         "Start": 4,
-        "Length": 15
+        "Length": 22
       }
     ]
   },
@@ -448,10 +448,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "14:00 से 16:30",
+        "Text": "14:00 से 16:30 तक",
         "Type": "timerange",
         "Start": 0,
-        "Length": 14
+        "Length": 17
       }
     ]
   },
@@ -460,10 +460,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम दो से पाँच",
+        "Text": "शाम दो से पाँच तक",
         "Type": "timerange",
         "Start": 0,
-        "Length": 14
+        "Length": 17
       }
     ]
   },
@@ -472,10 +472,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दोपहर 1:30 से 4",
+        "Text": "दोपहर 1:30 से 4 तक",
         "Type": "timerange",
         "Start": 0,
-        "Length": 15
+        "Length": 18
       }
     ]
   },
@@ -484,10 +484,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 1 से 4",
+        "Text": "शाम 1 से 4 तक",
         "Type": "timerange",
         "Start": 0,
-        "Length": 10
+        "Length": 13
       }
     ]
   },
@@ -522,10 +522,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1:30 से 3:30",
+        "Text": "1:30 से 3:30 तक",
         "Type": "timerange",
         "Start": 0,
-        "Length": 12
+        "Length": 15
       }
     ]
   },
@@ -534,10 +534,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शाम 1:30 से 3:30",
+        "Text": "शाम 1:30 से 3:30 तक",
         "Type": "timerange",
         "Start": 0,
-        "Length": 16
+        "Length": 19
       }
     ]
   }

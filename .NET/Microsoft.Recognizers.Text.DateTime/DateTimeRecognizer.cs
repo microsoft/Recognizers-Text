@@ -120,13 +120,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     new BaseMergedDateTimeExtractor(
                         new TurkishMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Turkish, options)))));
 
-            // RegisterModel<DateTimeModel>(
-            //     Culture.Hindi,
-            //     options => new DateTimeModel(
-            //         new BaseMergedDateTimeParser(
-            //             new HindiMergedParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Hindi, options))),
-            //         new BaseMergedDateTimeExtractor(
-            //             new HindiMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Hindi, options)))));
+            RegisterModel<DateTimeModel>(
+                Culture.Hindi,
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new HindiMergedParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Hindi, options))),
+                    new BaseMergedDateTimeExtractor(
+                        new HindiMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Hindi, options)))));
 
             // TODO to be uncommented when all tests for Dutch are green.
             // RegisterModel<DateTimeModel>(

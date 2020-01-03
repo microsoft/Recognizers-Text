@@ -86,7 +86,7 @@ OnetoNineHinglishIntegerRegex: !simpleRegex
 ElevenToNineteenHinglishIntegerRegex: !simpleRegex
   def: (?:इलेवन|ट्वेल्व|थर्टीन|फ़ोर्टीन|फ़िफ़्टीन|सिक्सटीन|सेवेनटीन|एइटीन|नाइनटीन)
 TensHinglishIntegerRegex: !simpleRegex
-  def: (?:टेन|ट्वेन्टी|थर्टी|फ़ोर्टी|फ़िफ़्टी|सिक्सटी|सेवेंटी|एइट्टी|नाइनटी)
+  def: (?:टेन|ट्वेन्टी|ट्वेंटी|थर्टी|फ़ोर्टी|फ़िफ़्टी|सिक्सटी|सेवेंटी|एइट्टी|नाइनटी)
 HinglishIntegerRegex: !nestedRegex
   def: (({TensHinglishIntegerRegex}\s+{OnetoNineHinglishIntegerRegex})|{OnetoNineHinglishIntegerRegex}|{ElevenToNineteenHinglishIntegerRegex}|{TensHinglishIntegerRegex})
   references: [ TensHinglishIntegerRegex, OnetoNineHinglishIntegerRegex, ElevenToNineteenHinglishIntegerRegex ]

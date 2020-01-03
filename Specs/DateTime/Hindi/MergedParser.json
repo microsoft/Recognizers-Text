@@ -60,15 +60,14 @@
     ]
   },
   {
-    "Input": "सोमवार की दोपहर को चार के लिए ",
+    "Input": "चार लोगों के लिए सोमवार को बारह बजे",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "सोमवार की दोपहर",
+        "Text": "सोमवार को बारह बजे",
         "Type": "datetimeV2.datetime",
         "Value": {
           "values": [
@@ -84,8 +83,8 @@
             }
           ]
         },
-        "Start": 0,
-        "Length": 15
+        "Start": 17,
+        "Length": 18
       }
     ]
   },
@@ -94,7 +93,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -273,15 +271,14 @@
     ]
   },
   {
-    "Input": "शुक्रवार को दिन में 3 बजे",
+    "Input": "शुक्रवार को दोपहर में 3 बजे",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "शुक्रवार को दिन में 3 बजे",
+        "Text": "शुक्रवार को दोपहर में 3 बजे",
         "Type": "datetimeV2.datetime",
         "Value": {
           "values": [
@@ -298,7 +295,7 @@
           ]
         },
         "Start": 0,
-        "Length": 25
+        "Length": 27
       }
     ]
   },
@@ -554,7 +551,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -580,7 +576,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "NotSupported": "javascript, java, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
@@ -589,11 +585,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " सोमवार",
+        "Text": "सोमवार",
         "Type": "datetimeV2.date",
         "Value": {
           "values": [
@@ -768,28 +763,12 @@
     ]
   },
   {
-    "Input": "कल सुबह 1 घंटा मेरे कैलेंडर पे सुरक्षित रखो ",
+    "Input": "कल सुबह मेरे कैलेंडर पे 1 घंटा सुरक्षित रखो ",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
-      {
-        "Text": "1 घंटा",
-        "Type": "datetimeV2.duration",
-        "Value": {
-          "values": [
-            {
-              "timex": "PT1H",
-              "type": "duration",
-              "value": "3600"
-            }
-          ]
-        },
-        "Start": 8,
-        "Length": 6
-      },
       {
         "Text": "कल सुबह",
         "Type": "datetimeV2.datetimerange",
@@ -805,6 +784,21 @@
         },
         "Start": 0,
         "Length": 7
+      },
+      {
+        "Text": "1 घंटा",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "PT1H",
+              "type": "duration",
+              "value": "3600"
+            }
+          ]
+        },
+        "Start": 24,
+        "Length": 6
       }
     ]
   },
@@ -858,11 +852,10 @@
     ]
   },
   {
-    "Input": "शुक्रवार को 3 के लिए दिल्ली में दोपहर",
+    "Input": "शुक्रवार को बरिश्ता में 3 लोगों के लिए दोपहर को",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -886,7 +879,7 @@
         "Length": 8
       },
       {
-        "Text": "in the afternoon",
+        "Text": "दोपहर को",
         "Type": "datetimeV2.timerange",
         "Value": {
           "values": [
@@ -898,8 +891,8 @@
             }
           ]
         },
-        "Start": 28,
-        "Length": 16
+        "Start": 39,
+        "Length": 8
       }
     ]
   },
@@ -1032,7 +1025,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
