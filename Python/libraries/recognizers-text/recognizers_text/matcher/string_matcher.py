@@ -59,13 +59,10 @@ class StringMatcher:
         else:
             raise NotImplementedError
 
-    @dispatch(list)
-    def find(self, tokenized_query: []) -> []:
-        return self.matcher.find(tokenized_query)
-
-    @dispatch(str)
-    def find(self, query_text: str = "") -> []:
-        query_tokens = self.__tokenizer.tokenize(query_text)
+    def find(self, tokenized_query) -> []:
+        if type(tokenized_query) is list:
+            return self.matcher.find(tokenized_query)
+        query_tokens = self.__tokenizer.tokenize(tokenized_query)
         tokenized_query_text = list(map(lambda t: t.text, query_tokens))
         result = []
         for r in self.find(tokenized_query_text):
@@ -73,7 +70,7 @@ class StringMatcher:
             end_token = query_tokens[r.start + r.length - 1]
             start = start_token.start
             length = end_token.end - start_token.start
-            r_text = query_text[start: start + length]
+            r_text = tokenized_query[start: start + length]
 
             match_result = MatchResult()
             match_result.start = start
