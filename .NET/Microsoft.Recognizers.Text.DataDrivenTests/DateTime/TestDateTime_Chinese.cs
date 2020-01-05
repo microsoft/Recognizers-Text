@@ -92,6 +92,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
 
         [NetCoreTestDataSource]
         [TestMethod]
+        public void MergedExtractor(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            TestDateTimeExtractor(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
         public void DateParser(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
@@ -169,6 +177,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             ExtractorInitialize(Extractors);
             ParserInitialize(Parsers);
             TestDateTimeParser(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void MergedParser(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            ParserInitialize(Parsers);
+            TestDateTimeMergedParser(testSpec);
         }
 
         [NetCoreTestDataSource]

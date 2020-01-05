@@ -163,7 +163,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string TimeDigitTimeRegex = $@"(?<hour>{TimeHourNumRegex}):(?<min>{TimeMinuteNumRegex})(:(?<sec>{TimeSecondNumRegex}))?";
       public const string TimeDayDescRegex = @"(?<daydesc>凌晨|清晨|早上|早间|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|午夜|夜间|深夜|傍晚|晚)";
       public const string TimeApproximateDescPreffixRegex = @"(大[约概]|差不多|可能|也许|约|不超过|不多[于过]|最[多长少]|少于|[超短长多]过|几乎要|将近|差点|快要|接近|至少|起码|超出|不到)";
-      public const string TimeApproximateDescSuffixRegex = @"(之前|以前|以后|以後|之后|之後|前|后|後|左右)";
+      public const string TimeApproximateDescSuffixRegex = @"(左右)";
       public static readonly string TimeRegexes1 = $@"{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeChineseTimeRegex}{TimeApproximateDescSuffixRegex}?";
       public static readonly string TimeRegexes2 = $@"{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeDigitTimeRegex}{TimeApproximateDescSuffixRegex}?(\s*{AmPmDescRegex}?)";
       public static readonly string TimeRegexes3 = $@"差{TimeMinuteRegex}{TimeChineseTimeRegex}";
@@ -176,10 +176,12 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string TimePeriodShortLeftDigitTimeRegex = $@"(从)?(?<left>{TimeDayDescRegex}?({TimeHourNumRegex}))";
       public static readonly string TimePeriodRegexes1 = $@"({TimePeriodLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodLeftChsTimeRegex}{TimePeriodRightChsTimeRegex})";
       public static readonly string TimePeriodRegexes2 = $@"({TimePeriodShortLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodShortLeftChsTimeRegex}{TimePeriodRightChsTimeRegex})";
-      public const string ParserConfigurationBefore = @"(之前|以前|前)";
-      public const string ParserConfigurationAfter = @"(之后|之後|以后|以後|后|後)";
+      public const string FromToRegex = @"(从|自).+([至到]).+";
+      public const string AmbiguousRangeModifierPrefix = @"(从|自)";
+      public const string ParserConfigurationBefore = @"(((?<include>和|或|及)?之前|以前)|前)";
+      public const string ParserConfigurationAfter = @"(((?<include>和|或|及)?之后|之後|以后|以後)|后|後)";
       public const string ParserConfigurationUntil = @"(直到|直至|截至|截止(到)?)";
-      public const string ParserConfigurationSincePrefix = @"(自从|自|自打|打)";
+      public const string ParserConfigurationSincePrefix = @"(自从|自|自打|打|从)";
       public const string ParserConfigurationSinceSuffix = @"(以来|开始)";
       public const string ParserConfigurationLastWeekDayToken = @"最后一个";
       public const string ParserConfigurationNextMonthToken = @"下一个";

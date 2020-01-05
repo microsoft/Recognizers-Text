@@ -330,7 +330,7 @@ TimeDayDescRegex: !simpleRegex
 TimeApproximateDescPreffixRegex: !simpleRegex
   def: (大[约概]|差不多|可能|也许|约|不超过|不多[于过]|最[多长少]|少于|[超短长多]过|几乎要|将近|差点|快要|接近|至少|起码|超出|不到)
 TimeApproximateDescSuffixRegex: !simpleRegex
-  def: (之前|以前|以后|以後|之后|之後|前|后|後|左右)
+  def: (左右)
 TimeRegexes1: !nestedRegex
   def: '{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeChineseTimeRegex}{TimeApproximateDescSuffixRegex}?'
   references: [TimeApproximateDescPreffixRegex, TimeDayDescRegex, TimeChineseTimeRegex, TimeApproximateDescSuffixRegex]
@@ -368,14 +368,18 @@ TimePeriodRegexes2: !nestedRegex
   def: ({TimePeriodShortLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodShortLeftChsTimeRegex}{TimePeriodRightChsTimeRegex})
   references: [TimePeriodShortLeftDigitTimeRegex, TimePeriodRightDigitTimeRegex, TimePeriodShortLeftChsTimeRegex, TimePeriodRightChsTimeRegex]
 #ChineseDateTimeParserConfiguration
+FromToRegex: !simpleRegex
+  def: (从|自).+([至到]).+
+AmbiguousRangeModifierPrefix: !simpleRegex
+  def: (从|自)
 ParserConfigurationBefore: !simpleRegex
-  def: (之前|以前|前)
+  def: (((?<include>和|或|及)?之前|以前)|前)
 ParserConfigurationAfter: !simpleRegex
-  def: (之后|之後|以后|以後|后|後)
+  def: (((?<include>和|或|及)?之后|之後|以后|以後)|后|後)
 ParserConfigurationUntil: !simpleRegex
   def: (直到|直至|截至|截止(到)?)
 ParserConfigurationSincePrefix: !simpleRegex
-  def: (自从|自|自打|打)
+  def: (自从|自|自打|打|从)
 ParserConfigurationSinceSuffix: !simpleRegex
   def: (以来|开始)
 ParserConfigurationLastWeekDayToken: 最后一个
