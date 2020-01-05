@@ -4,7 +4,8 @@
     "Context": {
       "ReferenceDateTime": "2020-01-05T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "Java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "大约10点以后",
@@ -37,6 +38,8 @@
     "Context": {
       "ReferenceDateTime": "2020-01-05T00:00:00"
     },
+    "NotSupportedByDesign": "Java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "大约晚上十点以后",
@@ -62,7 +65,8 @@
     "Context": {
       "ReferenceDateTime": "2020-01-05T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "Java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "今天大约晚上十点以后",

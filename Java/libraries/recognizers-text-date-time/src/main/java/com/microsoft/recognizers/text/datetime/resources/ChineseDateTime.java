@@ -410,7 +410,7 @@ public class ChineseDateTime {
 
     public static final String TimeApproximateDescPreffixRegex = "(大[约概]|差不多|可能|也许|约|不超过|不多[于过]|最[多长少]|少于|[超短长多]过|几乎要|将近|差点|快要|接近|至少|起码|超出|不到)";
 
-    public static final String TimeApproximateDescSuffixRegex = "(之前|以前|以后|以後|之后|之後|前|后|後|左右)";
+    public static final String TimeApproximateDescSuffixRegex = "(左右)";
 
     public static final String TimeRegexes1 = "{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeChineseTimeRegex}{TimeApproximateDescSuffixRegex}?"
             .replace("{TimeApproximateDescPreffixRegex}", TimeApproximateDescPreffixRegex)
@@ -469,13 +469,17 @@ public class ChineseDateTime {
             .replace("{TimePeriodShortLeftChsTimeRegex}", TimePeriodShortLeftChsTimeRegex)
             .replace("{TimePeriodRightChsTimeRegex}", TimePeriodRightChsTimeRegex);
 
-    public static final String ParserConfigurationBefore = "(之前|以前|前)";
+    public static final String FromToRegex = "(从|自).+([至到]).+";
 
-    public static final String ParserConfigurationAfter = "(之后|之後|以后|以後|后|後)";
+    public static final String AmbiguousRangeModifierPrefix = "(从|自)";
+
+    public static final String ParserConfigurationBefore = "(((?<include>和|或|及)?之前|以前)|前)";
+
+    public static final String ParserConfigurationAfter = "(((?<include>和|或|及)?之后|之後|以后|以後)|后|後)";
 
     public static final String ParserConfigurationUntil = "(直到|直至|截至|截止(到)?)";
 
-    public static final String ParserConfigurationSincePrefix = "(自从|自|自打|打)";
+    public static final String ParserConfigurationSincePrefix = "(自从|自|自打|打|从)";
 
     public static final String ParserConfigurationSinceSuffix = "(以来|开始)";
 

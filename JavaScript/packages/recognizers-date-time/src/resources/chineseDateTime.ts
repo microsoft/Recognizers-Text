@@ -131,7 +131,7 @@ export namespace ChineseDateTime {
     export const TimeDigitTimeRegex = `(?<hour>${TimeHourNumRegex}):(?<min>${TimeMinuteNumRegex})(:(?<sec>${TimeSecondNumRegex}))?`;
     export const TimeDayDescRegex = `(?<daydesc>凌晨|清晨|早上|早间|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|午夜|夜间|深夜|傍晚|晚)`;
     export const TimeApproximateDescPreffixRegex = `(大[约概]|差不多|可能|也许|约|不超过|不多[于过]|最[多长少]|少于|[超短长多]过|几乎要|将近|差点|快要|接近|至少|起码|超出|不到)`;
-    export const TimeApproximateDescSuffixRegex = `(之前|以前|以后|以後|之后|之後|前|后|後|左右)`;
+    export const TimeApproximateDescSuffixRegex = `(左右)`;
     export const TimeRegexes1 = `${TimeApproximateDescPreffixRegex}?${TimeDayDescRegex}?${TimeChineseTimeRegex}${TimeApproximateDescSuffixRegex}?`;
     export const TimeRegexes2 = `${TimeApproximateDescPreffixRegex}?${TimeDayDescRegex}?${TimeDigitTimeRegex}${TimeApproximateDescSuffixRegex}?(\\s*${AmPmDescRegex}?)`;
     export const TimeRegexes3 = `差${TimeMinuteRegex}${TimeChineseTimeRegex}`;
@@ -144,10 +144,12 @@ export namespace ChineseDateTime {
     export const TimePeriodShortLeftDigitTimeRegex = `(从)?(?<left>${TimeDayDescRegex}?(${TimeHourNumRegex}))`;
     export const TimePeriodRegexes1 = `(${TimePeriodLeftDigitTimeRegex}${TimePeriodRightDigitTimeRegex}|${TimePeriodLeftChsTimeRegex}${TimePeriodRightChsTimeRegex})`;
     export const TimePeriodRegexes2 = `(${TimePeriodShortLeftDigitTimeRegex}${TimePeriodRightDigitTimeRegex}|${TimePeriodShortLeftChsTimeRegex}${TimePeriodRightChsTimeRegex})`;
-    export const ParserConfigurationBefore = `(之前|以前|前)`;
-    export const ParserConfigurationAfter = `(之后|之後|以后|以後|后|後)`;
+    export const FromToRegex = `(从|自).+([至到]).+`;
+    export const AmbiguousRangeModifierPrefix = `(从|自)`;
+    export const ParserConfigurationBefore = `(((?<include>和|或|及)?之前|以前)|前)`;
+    export const ParserConfigurationAfter = `(((?<include>和|或|及)?之后|之後|以后|以後)|后|後)`;
     export const ParserConfigurationUntil = `(直到|直至|截至|截止(到)?)`;
-    export const ParserConfigurationSincePrefix = `(自从|自|自打|打)`;
+    export const ParserConfigurationSincePrefix = `(自从|自|自打|打|从)`;
     export const ParserConfigurationSinceSuffix = `(以来|开始)`;
     export const ParserConfigurationLastWeekDayToken = '最后一个';
     export const ParserConfigurationNextMonthToken = '下一个';

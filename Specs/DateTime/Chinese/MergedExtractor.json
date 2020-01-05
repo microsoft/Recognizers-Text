@@ -1,6 +1,8 @@
 [
   {
     "Input": "今天大约十点以后,微软大厦门口见",
+    "NotSupportedByDesign": "Java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "今天大约十点以后",
@@ -12,6 +14,8 @@
   },  
   {
     "Input": "今天大约晚上十点以后,微软大厦门口见",
+    "NotSupportedByDesign": "Java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "今天大约晚上十点以后",
