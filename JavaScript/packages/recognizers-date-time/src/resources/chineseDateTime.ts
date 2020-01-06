@@ -150,7 +150,7 @@ export namespace ChineseDateTime {
     export const ParserConfigurationAfter = `((?<include>和|或|及)?(之后|之後|以后|以後)|后|後)`;
     export const ParserConfigurationUntil = `(直到|直至|截至|截止(到)?)`;
     export const ParserConfigurationSincePrefix = `(自从|自|自打|打|从)`;
-    export const ParserConfigurationSinceSuffix = `(以来|开始)`;
+    export const ParserConfigurationSinceSuffix = `(以来|开始|起)`;
     export const ParserConfigurationLastWeekDayToken = '最后一个';
     export const ParserConfigurationNextMonthToken = '下一个';
     export const ParserConfigurationLastMonthToken = '上一个';
