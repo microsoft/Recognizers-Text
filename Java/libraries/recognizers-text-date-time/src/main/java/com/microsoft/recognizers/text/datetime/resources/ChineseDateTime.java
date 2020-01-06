@@ -475,7 +475,7 @@ public class ChineseDateTime {
 
     public static final String ParserConfigurationSincePrefix = "(自从|自|自打|打|从)";
 
-    public static final String ParserConfigurationSinceSuffix = "(以来|开始)";
+    public static final String ParserConfigurationSinceSuffix = "(以来|开始|起)";
 
     public static final String ParserConfigurationLastWeekDayToken = "最后一个";
 

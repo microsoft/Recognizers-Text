@@ -182,7 +182,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string ParserConfigurationAfter = @"((?<include>和|或|及)?(之后|之後|以后|以後)|后|後)";
       public const string ParserConfigurationUntil = @"(直到|直至|截至|截止(到)?)";
       public const string ParserConfigurationSincePrefix = @"(自从|自|自打|打|从)";
-      public const string ParserConfigurationSinceSuffix = @"(以来|开始)";
+      public const string ParserConfigurationSinceSuffix = @"(以来|开始|起)";
       public const string ParserConfigurationLastWeekDayToken = @"最后一个";
       public const string ParserConfigurationNextMonthToken = @"下一个";
       public const string ParserConfigurationLastMonthToken = @"上一个";

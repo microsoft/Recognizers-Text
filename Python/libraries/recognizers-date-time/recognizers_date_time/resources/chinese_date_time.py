@@ -159,7 +159,7 @@ class ChineseDateTime:
     ParserConfigurationAfter = f'((?<include>和|或|及)?(之后|之後|以后|以後)|后|後)'
     ParserConfigurationUntil = f'(直到|直至|截至|截止(到)?)'
     ParserConfigurationSincePrefix = f'(自从|自|自打|打|从)'
-    ParserConfigurationSinceSuffix = f'(以来|开始)'
+    ParserConfigurationSinceSuffix = f'(以来|开始|起)'
     ParserConfigurationLastWeekDayToken = '最后一个'
     ParserConfigurationNextMonthToken = '下一个'
     ParserConfigurationLastMonthToken = '上一个'

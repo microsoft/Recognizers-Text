@@ -381,7 +381,7 @@ ParserConfigurationUntil: !simpleRegex
 ParserConfigurationSincePrefix: !simpleRegex
   def: (自从|自|自打|打|从)
 ParserConfigurationSinceSuffix: !simpleRegex
-  def: (以来|开始)
+  def: (以来|开始|起)
 ParserConfigurationLastWeekDayToken: 最后一个
 ParserConfigurationNextMonthToken: 下一个
 ParserConfigurationLastMonthToken: 上一个

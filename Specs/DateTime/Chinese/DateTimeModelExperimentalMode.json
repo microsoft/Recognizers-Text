@@ -56,13 +56,12 @@
     "Context": {
       "ReferenceDateTime": "2019-01-06T12:00:00"
     },
-    "Comment": "This is notsupported for now because of the FromToRegex",
-    "NotSupported": "dotnet, java, javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "从2015年",
-        "Start": 0,
-        "End": 5,
+        "Text": "2015年起",
+        "Start": 1,
+        "End": 6,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -83,13 +82,12 @@
     "Context": {
       "ReferenceDateTime": "2019-01-06T12:00:00"
     },
-    "Comment": "This is notsupported for now because of the FromToRegex",
-    "NotSupported": "dotnet, java, javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "自2014年6月14日",
-        "Start": 5,
-        "End": 15,
+        "Text": "2014年6月14日起",
+        "Start": 6,
+        "End": 16,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
