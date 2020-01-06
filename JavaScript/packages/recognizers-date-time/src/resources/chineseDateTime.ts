@@ -38,9 +38,9 @@ export namespace ChineseDateTime {
     export const DateUnitRegex = `(?<unit>年|个月|周|日|天)`;
     export const BeforeRegex = `以前|之前|前`;
     export const AfterRegex = `以后|以後|之后|之後|后|後`;
-    export const DateRegexList1 = `(${LunarRegex}(\\s*))?(((${SimpleYearRegex}|${DateYearInChineseRegex})年)(\\s*))?${MonthRegex}(\\s*)${DateDayRegexInChinese}((\\s*|,|，)${WeekDayRegex})?(${BeforeRegex}|${AfterRegex})?`;
-    export const DateRegexList2 = `(((${SimpleYearRegex}|${DateYearInChineseRegex})年)(\\s*))?(${LunarRegex}(\\s*))?${MonthRegex}(\\s*)${DateDayRegexInChinese}((\\s*|,|，)${WeekDayRegex})?(${BeforeRegex}|${AfterRegex})?`;
-    export const DateRegexList3 = `(((${SimpleYearRegex}|${DateYearInChineseRegex})年)(\\s*))?(${LunarRegex}(\\s*))?${MonthRegex}(\\s*)(${DayRegexNumInChinese}|${DayRegex})((\\s*|,|，)${WeekDayRegex})?(${BeforeRegex}|${AfterRegex})?`;
+    export const DateRegexList1 = `(${LunarRegex}(\\s*))?(((${SimpleYearRegex}|${DateYearInChineseRegex})年)(\\s*))?${MonthRegex}(\\s*)${DateDayRegexInChinese}((\\s*|,|，)${WeekDayRegex})?`;
+    export const DateRegexList2 = `(((${SimpleYearRegex}|${DateYearInChineseRegex})年)(\\s*))?(${LunarRegex}(\\s*))?${MonthRegex}(\\s*)${DateDayRegexInChinese}((\\s*|,|，)${WeekDayRegex})?`;
+    export const DateRegexList3 = `(((${SimpleYearRegex}|${DateYearInChineseRegex})年)(\\s*))?(${LunarRegex}(\\s*))?${MonthRegex}(\\s*)(${DayRegexNumInChinese}|${DayRegex})((\\s*|,|，)${WeekDayRegex})?`;
     export const DateRegexList4 = `${MonthNumRegex}\\s*/\\s*${DayRegex}((\\s+|\\s*,\\s*)${SimpleYearRegex})?`;
     export const DateRegexList5 = `${DayRegex}\\s*/\\s*${MonthNumRegex}((\\s+|\\s*,\\s*)${SimpleYearRegex})?`;
     export const DateRegexList6 = `${MonthNumRegex}\\s*[/\\\\\\-]\\s*${DayRegex}\\s*[/\\\\\\-]\\s*${SimpleYearRegex}`;
@@ -146,8 +146,8 @@ export namespace ChineseDateTime {
     export const TimePeriodRegexes2 = `(${TimePeriodShortLeftDigitTimeRegex}${TimePeriodRightDigitTimeRegex}|${TimePeriodShortLeftChsTimeRegex}${TimePeriodRightChsTimeRegex})`;
     export const FromToRegex = `(从|自).+([至到]).+`;
     export const AmbiguousRangeModifierPrefix = `(从|自)`;
-    export const ParserConfigurationBefore = `(((?<include>和|或|及)?之前|以前)|前)`;
-    export const ParserConfigurationAfter = `(((?<include>和|或|及)?之后|之後|以后|以後)|后|後)`;
+    export const ParserConfigurationBefore = `((?<include>和|或|及)?(之前|以前)|前)`;
+    export const ParserConfigurationAfter = `((?<include>和|或|及)?(之后|之後|以后|以後)|后|後)`;
     export const ParserConfigurationUntil = `(直到|直至|截至|截止(到)?)`;
     export const ParserConfigurationSincePrefix = `(自从|自|自打|打|从)`;
     export const ParserConfigurationSinceSuffix = `(以来|开始)`;

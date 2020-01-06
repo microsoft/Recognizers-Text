@@ -235,6 +235,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // Avoid adding mod for ambiguity cases, such as "从" in "从 ... 到 ..." should not add mod
+        // TODO: Revise PotentialAmbiguousRangeRegex to support cases like "从2015年起，哪所大学需要的分数在80到90之间"
         private bool AmbiguousRangeChecker(string beforeStr, string text, ExtractResult er)
         {
             if (AmbiguousRangeModifierPrefix.MatchEnd(beforeStr, true).Success)

@@ -48,9 +48,9 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string DateUnitRegex = @"(?<unit>年|个月|周|日|天)";
       public const string BeforeRegex = @"以前|之前|前";
       public const string AfterRegex = @"以后|以後|之后|之後|后|後";
-      public static readonly string DateRegexList1 = $@"({LunarRegex}(\s*))?((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?";
-      public static readonly string DateRegexList2 = $@"((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?";
-      public static readonly string DateRegexList3 = $@"((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*)({DayRegexNumInChinese}|{DayRegex})((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?";
+      public static readonly string DateRegexList1 = $@"({LunarRegex}(\s*))?((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?";
+      public static readonly string DateRegexList2 = $@"((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?";
+      public static readonly string DateRegexList3 = $@"((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*)({DayRegexNumInChinese}|{DayRegex})((\s*|,|，){WeekDayRegex})?";
       public static readonly string DateRegexList4 = $@"{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*){SimpleYearRegex})?";
       public static readonly string DateRegexList5 = $@"{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){SimpleYearRegex})?";
       public static readonly string DateRegexList6 = $@"{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{SimpleYearRegex}";
@@ -178,8 +178,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string TimePeriodRegexes2 = $@"({TimePeriodShortLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodShortLeftChsTimeRegex}{TimePeriodRightChsTimeRegex})";
       public const string FromToRegex = @"(从|自).+([至到]).+";
       public const string AmbiguousRangeModifierPrefix = @"(从|自)";
-      public const string ParserConfigurationBefore = @"(((?<include>和|或|及)?之前|以前)|前)";
-      public const string ParserConfigurationAfter = @"(((?<include>和|或|及)?之后|之後|以后|以後)|后|後)";
+      public const string ParserConfigurationBefore = @"((?<include>和|或|及)?(之前|以前)|前)";
+      public const string ParserConfigurationAfter = @"((?<include>和|或|及)?(之后|之後|以后|以後)|后|後)";
       public const string ParserConfigurationUntil = @"(直到|直至|截至|截止(到)?)";
       public const string ParserConfigurationSincePrefix = @"(自从|自|自打|打|从)";
       public const string ParserConfigurationSinceSuffix = @"(以来|开始)";

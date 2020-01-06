@@ -194,5 +194,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         {
             TestDateTime(testSpec);
         }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void DateTimeModelExperimentalMode(TestModel testSpec)
+        {
+            TestDateTimeAlt(testSpec);
+        }
     }
 }

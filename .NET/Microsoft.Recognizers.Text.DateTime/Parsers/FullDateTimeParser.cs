@@ -167,7 +167,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Text = er.Text.Substring(0, er.Length ?? 0);
                     modStr = beforeMatch.Value;
 
-                    if (!string.IsNullOrEmpty(beforeMatch.Groups["include"].Value))
+                    if (!string.IsNullOrEmpty(beforeMatch.Groups[Constants.INCLUDE_MOD].Value))
                     {
                         hasInclusiveModifier = true;
                     }
@@ -179,7 +179,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Text = er.Text.Substring(0, er.Length ?? 0);
                     modStr = afterMatch.Value;
 
-                    if (!string.IsNullOrEmpty(afterMatch.Groups["include"].Value))
+                    if (!string.IsNullOrEmpty(afterMatch.Groups[Constants.INCLUDE_MOD].Value))
                     {
                         hasInclusiveModifier = true;
                     }

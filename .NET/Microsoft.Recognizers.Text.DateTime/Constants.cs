@@ -70,6 +70,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         // "until" -> Same as "before", but including the extracted datetime entity. Equivalent to "<="
         public const string UNTIL_MOD = "until";
 
+        // Include the date metioned, to make "before" -> "until" or "after" -> "since". Such as "on or earlier than 1/1/2016".
+        public const string INCLUDE_MOD = "include";
+
         public const string EARLY_MOD = "start";
         public const string MID_MOD = "mid";
         public const string LATE_MOD = "end";
