@@ -1038,6 +1038,18 @@
     ]
   },
   {
+    "Input": "Make me unavailable from 12-04-2019 6:00am until 12-05-2019 8:00pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "from 12-04-2019 6:00am until 12-05-2019 8:00pm",
+        "Type": "datetimerange",
+        "Start": 20,
+        "Length": 46 
+      }
+    ]
+  },
+  {
     "Input": "It happened on next week after 2:00",
     "NotSupported": "javascript, python",
     "Results": []

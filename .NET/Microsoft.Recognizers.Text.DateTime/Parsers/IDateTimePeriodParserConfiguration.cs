@@ -35,6 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex PureNumberFromToRegex { get; }
 
+        Regex HyphenDateRegex { get; }
+
         Regex PureNumberBetweenAndRegex { get; }
 
         Regex SpecificTimeOfDayRegex { get; }

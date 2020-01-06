@@ -693,6 +693,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success && (match.Index == 0 || match.Index + match.Length == trimmedText.Length))
             {
+
+                // Just because we think we found a time period doesn't mean it is one, it could be the start of a hyphenated date
+                var hyphenDateMatch = this.Config.HyphenDateRegex.Match(trimmedText);
+
+                if (hyphenDateMatch.Success && hyphenDateMatch.Index >= match.Index && (match.Index + match.Length) <= (hyphenDateMatch.Index + hyphenDateMatch.Length))
+                {
+                    return ret;
+                }
+
                 int beginHour, endHour;
                 ret.Comment = ParseTimePeriod(match, out beginHour, out endHour);
 

@@ -41,6 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = HindiTimePeriodExtractorConfiguration.PureNumFromTo;
+            HyphenDateRegex = HindiDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = HindiTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = HindiDateTimePeriodExtractorConfiguration.PeriodSpecificTimeOfDayRegex;
             TimeOfDayRegex = HindiDateTimeExtractorConfiguration.TimeOfDayRegex;
@@ -92,6 +93,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public IDateTimeParser TimeZoneParser { get; }
 
         public Regex PureNumberFromToRegex { get; }
+
+        public Regex HyphenDateRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
 

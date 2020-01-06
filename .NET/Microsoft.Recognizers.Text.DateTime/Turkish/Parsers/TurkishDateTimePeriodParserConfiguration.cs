@@ -41,6 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = TurkishTimePeriodExtractorConfiguration.PureNumFromTo;
+            HyphenDateRegex = TurkishDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = TurkishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = TurkishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = TurkishDateTimeExtractorConfiguration.TimeOfDayRegex;
@@ -92,6 +93,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public IDateTimeParser TimeZoneParser { get; }
 
         public Regex PureNumberFromToRegex { get; }
+
+        public Regex HyphenDateRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
 

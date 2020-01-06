@@ -2422,6 +2422,32 @@
     ]
   },
   {
+    "Input": "Make me unavailable from 12-04-2019 6:00am until 12-05-2019 8:00pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from 12-04-2019 6:00am until 12-05-2019 8:00pm",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2019-12-04T06:00,2019-12-05T20:00,PT38H)",
+          "FutureResolution": {
+            "startDateTime": "2019-12-04 06:00:00",
+            "endDateTime": "2019-12-05 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2019-12-04 06:00:00",
+            "endDateTime": "2019-12-05 20:00:00"
+          }
+        },
+        "Start": 20,
+        "Length": 46
+      }
+    ]
+  },
+  {
     "Input": "I'll be out between half past seven and 4pm of tomorrow",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
