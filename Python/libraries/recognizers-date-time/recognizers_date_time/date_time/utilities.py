@@ -59,16 +59,15 @@ class TimeZoneUtility:
 
         return has_time_zone_data
 
-    def build_matcher_from_lists(self, collections: []):
-
-        matcher: StringMatcher = StringMatcher(MatchStrategy.TrieTree, NumberWithUnitTokenizer())
+    @staticmethod
+    def build_matcher_from_lists(*collections: List[str]) -> StringMatcher:
+        matcher = StringMatcher(MatchStrategy.TrieTree, NumberWithUnitTokenizer())
 
         matcher_list = []
-
         for collection in collections:
             list(map(lambda x: matcher_list.append(x.strip().lower()), collection))
 
-        matcher_list = self.distinct(matcher_list)
+        matcher_list = TimeZoneUtility.distinct(matcher_list)
 
         matcher.init(matcher_list)
 
@@ -166,6 +165,8 @@ class Token:
 
 
 def merge_all_tokens(tokens: List[Token], source: str, extractor_name: str) -> List[ExtractResult]:
+    result = []
+
     merged_tokens: List[Token] = list()
     tokens_ = sorted(filter(None, tokens), key=lambda x: x.start)
 
@@ -189,8 +190,21 @@ def merge_all_tokens(tokens: List[Token], source: str, extractor_name: str) -> L
         if add:
             merged_tokens.append(token)
 
-    result: List[ExtractResult] = list(
-        map(lambda x: __token_to_result(x, source, extractor_name), merged_tokens))
+    for token in merged_tokens:
+        start = token.start
+        length = token.length
+        sub_str = source[start: start + length]
+
+        extracted_result = ExtractResult()
+        extracted_result.start = start
+        extracted_result.length = length
+        extracted_result.text = sub_str
+        extracted_result.type = extractor_name
+        extracted_result.data = None
+        extracted_result.meta_data = token.metadata
+
+        result.append(extracted_result)
+
     return result
 
 
@@ -234,6 +248,7 @@ class DateTimeResolutionResult:
         self.future_value: object = None
         self.past_value: object = None
         self.sub_date_time_entities: List[object] = list()
+        self.timezone_resolution: TimeZoneResolutionResult()
         self.list: List[object] = list()
 
 
@@ -550,23 +565,20 @@ class MatchingUtil:
 
     @staticmethod
     def remove_sub_matches(match_results: List[MatchResult]):
-        match_list = list(filter(lambda x: list(
-            filter(lambda m: m.start() < x.start + x.length and m.start() +
-                   len(m.group()) > x.start, match_results)), match_results))
+        match_list = list(match_results)
 
-        if len(match_list) > 0:
-            for item in match_results:
-                for i in match_list:
-                    if item is i:
-                        match_results.remove(item)
+        match_list = (list(filter(lambda item: not any(list(filter(
+            lambda ritem: (ritem.start < item.start and ritem.end >= item.end) or (
+                ritem.start <= item.start and ritem.end > item.end), match_list))), match_list)))
 
-        return match_results
+        return match_list
 
     @staticmethod
     def get_ago_later_index(source: str, regexp: Pattern, in_suffix) -> MatchedIndex:
         result = MatchedIndex(matched=False, index=-1)
         trimmed_source = source.strip().lower()
-        match = RegExpUtility.match_begin(regexp, trimmed_source, True) if in_suffix else RegExpUtility.match_end(regexp, trimmed_source, True)
+        match = RegExpUtility.match_begin(regexp, trimmed_source, True) if in_suffix else\
+            RegExpUtility.match_end(regexp, trimmed_source, True)
 
         if match and match.success:
             result.index = source.lower().find(match.group()) + (match.length if in_suffix else 0)
@@ -671,7 +683,8 @@ class AgoLaterUtil:
                     index = MatchingUtil.get_term_index(before_string, regexp[0]).index
                     if index > 0:
                         is_match = True
-                    elif config.check_both_before_after and MatchingUtil.get_ago_later_index(after_string, regexp[0], True).matched:
+                    elif config.check_both_before_after and\
+                            MatchingUtil.get_ago_later_index(after_string, regexp[0], True).matched:
                         is_match = is_match_after = True
 
                     if is_match:
@@ -680,7 +693,8 @@ class AgoLaterUtil:
                             is_unit_match = is_unit_match or unit_regex.match(extract_result.text)
 
                         if not is_unit_match:
-                            if extract_result.start is not None and extract_result.length is not None and extract_result.start >= index or is_match_after:
+                            if extract_result.start is not None and extract_result.length is not None and\
+                                    extract_result.start >= index or is_match_after:
                                 start = extract_result.start - (index if not is_match_after else 0)
                                 end = extract_result.start + extract_result.length + (index if is_match_after else 0)
                                 ret.append(Token(start, end))
@@ -926,7 +940,8 @@ class TimexUtil:
 
     @staticmethod
     def generate_date_period_timex(begin, end, timex_type, alternative_begin=datetime.now(), alternative_end=datetime.now()):
-        equal_duration_length = (end - begin).days == (alternative_end - alternative_begin).days or datetime.now() == alternative_end == alternative_begin
+        equal_duration_length = (end - begin).days == (alternative_end - alternative_begin).days or\
+            datetime.now() == alternative_end == alternative_begin
         unit_count = 'XX'
 
         if equal_duration_length:
@@ -942,7 +957,8 @@ class TimexUtil:
 
         date_period_timex = f'P{unit_count}{date_period_timex_type_to_suffix[timex_type]}'
 
-        return f'({DateTimeFormatUtil.luis_date(begin.year, begin.month, begin.day)},{DateTimeFormatUtil.luis_date(end.year, end.month, end.day)},{date_period_timex})'
+        return f'({DateTimeFormatUtil.luis_date(begin.year, begin.month, begin.day)},' \
+               f'{DateTimeFormatUtil.luis_date(end.year, end.month, end.day)},{date_period_timex})'
 
     @staticmethod
     def is_range_timex(timex: str) -> bool:
@@ -968,3 +984,10 @@ class TimexUtil:
     @staticmethod
     def generate_date_time_period_timex(begin_timex: str, end_timex: str, duration_timex: str):
         return f'({begin_timex},{end_timex},{duration_timex})'
+
+
+class TimeZoneResolutionResult:
+    def __init__(self):
+        self.value: str = ''
+        self.utc_offset_mins: int = 0
+        self.time_zone_text: str = ''

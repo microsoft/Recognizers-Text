@@ -62,6 +62,7 @@ class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         self._date_time_parser = config.date_time_parser
         self._time_period_parser = config.time_period_parser
         self._duration_parser = config.duration_parser
+        self._time_zone_parser = config.time_zone_parser
         self.morning_start_end_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.MorningStartEndRegex)
         self.afternoon_start_end_regex = RegExpUtility.get_safe_reg_exp(
@@ -192,6 +193,10 @@ class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
     @property
     def duration_parser(self) -> DateTimeParser:
         return self._duration_parser
+
+    @property
+    def time_zone_parser(self) -> DateTimeParser:
+        return self._time_zone_parser
 
     def get_matched_time_range(self, source: str):
         trimmed_source = source.strip()

@@ -1,8 +1,9 @@
 from typing import List, Pattern
-
 from recognizers_text.utilities import RegExpUtility
 from ...resources.spanish_date_time import SpanishDateTime
 from ..base_time import TimeExtractorConfiguration
+from ..base_timezone import BaseTimeZoneExtractor
+from .timezone_extractor_config import SpanishTimeZoneExtractorConfiguration
 
 
 class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
@@ -42,9 +43,10 @@ class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
             SpanishDateTime.AtRegex)
         self._time_before_after_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.TimeBeforeAfterRegex)
+        self._time_zone_extractor = self._timezone_extractor = BaseTimeZoneExtractor(
+            SpanishTimeZoneExtractorConfiguration())
         # TODO When the implementation for these properties is added, change the None values to the respective Regexps
         self._ish_regex: Pattern = None
-        self._time_zone_extractor = None
 
     @staticmethod
     def get_time_regex_list() -> List[Pattern]:
