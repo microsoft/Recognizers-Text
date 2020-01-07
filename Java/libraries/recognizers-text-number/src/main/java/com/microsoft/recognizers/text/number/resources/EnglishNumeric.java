@@ -193,7 +193,7 @@ public class EnglishNumeric {
     public static final String MoreOrEqualPrefix = "((no\\s+{LessRegex})|(at\\s+least))"
             .replace("{LessRegex}", LessRegex);
 
-    public static final String MoreOrEqual = "(?:({MoreRegex}\\s+(or)?\\s+{EqualRegex})|({EqualRegex}\\s+(or)?\\s+{MoreRegex})|{MoreOrEqualPrefix}(\\s+(or)?\\s+{EqualRegex})?|({EqualRegex}\\s+(or)?\\s+)?{MoreOrEqualPrefix}|>\\s*=)"
+    public static final String MoreOrEqual = "(?:({MoreRegex}\\s+(or)?\\s+{EqualRegex})|({EqualRegex}\\s+(or)?\\s+{MoreRegex})|{MoreOrEqualPrefix}(\\s+(or)?\\s+{EqualRegex})?|({EqualRegex}\\s+(or)?\\s+)?{MoreOrEqualPrefix}|>\\s*=|≥)"
             .replace("{MoreRegex}", MoreRegex)
             .replace("{EqualRegex}", EqualRegex)
             .replace("{LessRegex}", LessRegex)
@@ -204,7 +204,7 @@ public class EnglishNumeric {
     public static final String LessOrEqualPrefix = "((no\\s+{MoreRegex})|(at\\s+most)|(up\\s+to))"
             .replace("{MoreRegex}", MoreRegex);
 
-    public static final String LessOrEqual = "(({LessRegex}\\s+(or)?\\s+{EqualRegex})|({EqualRegex}\\s+(or)?\\s+{LessRegex})|{LessOrEqualPrefix}(\\s+(or)?\\s+{EqualRegex})?|({EqualRegex}\\s+(or)?\\s+)?{LessOrEqualPrefix}|<\\s*=)"
+    public static final String LessOrEqual = "(({LessRegex}\\s+(or)?\\s+{EqualRegex})|({EqualRegex}\\s+(or)?\\s+{LessRegex})|{LessOrEqualPrefix}(\\s+(or)?\\s+{EqualRegex})?|({EqualRegex}\\s+(or)?\\s+)?{LessOrEqualPrefix}|<\\s*=|≤)"
             .replace("{LessRegex}", LessRegex)
             .replace("{EqualRegex}", EqualRegex)
             .replace("{MoreRegex}", MoreRegex)
