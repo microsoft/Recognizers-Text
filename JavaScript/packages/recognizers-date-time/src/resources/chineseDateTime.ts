@@ -56,7 +56,7 @@ export namespace ChineseDateTime {
     export const HalfYearRegex = `((?<firstHalf>(上|前)半年)|(?<secondHalf>(下|后)半年))`;
     export const YearRegex = `((${YearNumRegex})(\\s*年)?|(${SimpleYearRegex})\\s*年)${HalfYearRegex}?`;
     export const StrictYearRegex = `(${YearRegex}(?=[\\u4E00-\\u9FFF]|\\s|$|\\W))`;
-    export const YearRegexInNumber = `(?<year>(\\d{3,4}))`;
+    export const YearRegexInNumber = `(?<year>(\\d{4}))`;
     export const DatePeriodYearInChineseRegex = `(?<yearchs>(${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}|${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}|${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}))年${HalfYearRegex}?`;
     export const MonthSuffixRegex = `(?<msuf>(${RelativeMonthRegex}|${MonthRegex}))`;
     export const SimpleCasesRegex = `((从)\\s*)?((${YearRegex}|${DatePeriodYearInChineseRegex})\\s*)?${MonthSuffixRegex}(${DatePeriodDayRegexInChinese}|${DayRegex})\\s*${DatePeriodTillRegex}\\s*(${DatePeriodDayRegexInChinese}|${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?`;

@@ -66,7 +66,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string HalfYearRegex = @"((?<firstHalf>(上|前)半年)|(?<secondHalf>(下|后)半年))";
       public static readonly string YearRegex = $@"(({YearNumRegex})(\s*年)?|({SimpleYearRegex})\s*年){HalfYearRegex}?";
       public static readonly string StrictYearRegex = $@"({YearRegex}(?=[\u4E00-\u9FFF]|\s|$|\W))";
-      public const string YearRegexInNumber = @"(?<year>(\d{3,4}))";
+      public const string YearRegexInNumber = @"(?<year>(\d{4}))";
       public static readonly string DatePeriodYearInChineseRegex = $@"(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年{HalfYearRegex}?";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>({RelativeMonthRegex}|{MonthRegex}))";
       public static readonly string SimpleCasesRegex = $@"((从)\s*)?(({YearRegex}|{DatePeriodYearInChineseRegex})\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInChinese}|{DayRegex})\s*{DatePeriodTillRegex}\s*({DatePeriodDayRegexInChinese}|{DayRegex})((\s+|\s*,\s*){YearRegex})?";

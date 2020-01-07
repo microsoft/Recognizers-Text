@@ -164,7 +164,7 @@ public class ChineseDateTime {
     public static final String StrictYearRegex = "({YearRegex}(?=[\\u4E00-\\u9FFF]|\\s|$|\\W))"
             .replace("{YearRegex}", YearRegex);
 
-    public static final String YearRegexInNumber = "(?<year>(\\d{3,4}))";
+    public static final String YearRegexInNumber = "(?<year>(\\d{4}))";
 
     public static final String DatePeriodYearInChineseRegex = "(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年{HalfYearRegex}?"
             .replace("{ZeroToNineIntegerRegexChs}", ZeroToNineIntegerRegexChs)

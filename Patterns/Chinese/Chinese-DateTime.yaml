@@ -121,7 +121,7 @@ StrictYearRegex: !nestedRegex
   def: '({YearRegex}(?=[\u4E00-\u9FFF]|\s|$|\W))'
   references: [YearRegex]
 YearRegexInNumber: !simpleRegex
-  def: (?<year>(\d{3,4}))
+  def: (?<year>(\d{4}))
 DatePeriodYearInChineseRegex: !nestedRegex
   def: (?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年{HalfYearRegex}?
   references: [ZeroToNineIntegerRegexChs, HalfYearRegex]
