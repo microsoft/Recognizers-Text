@@ -479,5 +479,19 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(resolution.Values[0].Start);
             Assert.IsNull(resolution.Values[0].End);
         }
+
+        [TestMethod]
+        public void DataTypes_Resolver_DateTime_Weekend()
+        {
+            var today = new System.DateTime(2020, 1, 7);
+            var resolution = TimexResolver.Resolve(new[] { "2020-W02-WE" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("2020-W02-WE", resolution.Values[0].Timex);
+            Assert.AreEqual("daterange", resolution.Values[0].Type);
+            Assert.AreEqual("2020-01-11", resolution.Values[0].Start);
+            Assert.AreEqual("2020-01-13", resolution.Values[0].End);
+            Assert.IsNull(resolution.Values[0].Value);
+        }
     }
 }
