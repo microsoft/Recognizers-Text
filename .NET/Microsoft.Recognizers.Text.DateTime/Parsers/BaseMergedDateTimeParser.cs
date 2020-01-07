@@ -349,7 +349,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(beforeMatch.Length);
                     modStr = beforeMatch.Value;
 
-                    if (!string.IsNullOrEmpty(beforeMatch.Groups["include"].Value))
+                    if (!string.IsNullOrEmpty(beforeMatch.Groups[Constants.IncludeGroupName].Value))
                     {
                         hasInclusiveModifier = true;
                     }
@@ -362,7 +362,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(afterMatch.Length);
                     modStr = afterMatch.Value;
 
-                    if (!string.IsNullOrEmpty(afterMatch.Groups["include"].Value))
+                    if (!string.IsNullOrEmpty(afterMatch.Groups[Constants.IncludeGroupName].Value))
                     {
                         hasInclusiveModifier = true;
                     }

@@ -17,6 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexFlags);
         public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexFlags);
         public static readonly Regex EqualRegex = new Regex(BaseDateTime.EqualRegex, RegexFlags);
+        public static readonly Regex PotentialAmbiguousRangeRegex = new Regex(DateTimeDefinitions.FromToRegex, RegexFlags);
+        public static readonly Regex AmbiguousRangeModifierPrefix = new Regex(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -129,6 +131,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     var modLength = match.Index + match.Length;
                     er.Length += modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                    er.Metadata = AssignModMetadata(er.Metadata);
                 }
 
                 match = AfterRegex.MatchBegin(afterStr, trim: true);
@@ -138,6 +142,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     var modLength = match.Index + match.Length;
                     er.Length += modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                    er.Metadata = AssignModMetadata(er.Metadata);
                 }
 
                 match = UntilRegex.MatchEnd(beforeStr, trim: true);
@@ -148,16 +154,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     er.Length += modLength;
                     er.Start -= modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                    er.Metadata = AssignModMetadata(er.Metadata);
                 }
 
                 match = SincePrefixRegex.MatchEnd(beforeStr, trim: true);
 
-                if (match.Success)
+                if (match.Success && AmbiguousRangeChecker(beforeStr, text, er))
                 {
                     var modLength = beforeStr.Length - match.Index;
                     er.Length += modLength;
                     er.Start -= modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                    er.Metadata = AssignModMetadata(er.Metadata);
                 }
 
                 match = SinceSuffixRegex.MatchBegin(afterStr, trim: true);
@@ -166,6 +176,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     var modLength = match.Index + match.Length;
                     er.Length += modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                    er.Metadata = AssignModMetadata(er.Metadata);
                 }
 
                 match = EqualRegex.MatchBegin(beforeStr, trim: true);
@@ -175,6 +187,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     er.Length += modLength;
                     er.Start -= modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                    er.Metadata = AssignModMetadata(er.Metadata);
                 }
             }
         }
@@ -218,6 +232,36 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     dst.Insert(indexRm, result);
                 }
             }
+        }
+
+        // Avoid adding mod for ambiguity cases, such as "从" in "从 ... 到 ..." should not add mod
+        // TODO: Revise PotentialAmbiguousRangeRegex to support cases like "从2015年起，哪所大学需要的分数在80到90之间"
+        private bool AmbiguousRangeChecker(string beforeStr, string text, ExtractResult er)
+        {
+            if (AmbiguousRangeModifierPrefix.MatchEnd(beforeStr, true).Success)
+            {
+                var matches = PotentialAmbiguousRangeRegex.Matches(text).Cast<Match>();
+                if (matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private Metadata AssignModMetadata(Metadata metadata)
+        {
+            if (metadata == null)
+            {
+                metadata = new Metadata { HasMod = true };
+            }
+            else
+            {
+                metadata.HasMod = true;
+            }
+
+            return metadata;
         }
     }
 }

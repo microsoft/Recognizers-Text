@@ -63,16 +63,16 @@ AfterRegex: !simpleRegex
   def: 以后|以後|之后|之後|后|後
 # (农历)?(2016年)?一月三日(星期三)?
 DateRegexList1: !nestedRegex
-  def: ({LunarRegex}(\s*))?((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?
-  references: [LunarRegex, SimpleYearRegex, DateYearInChineseRegex, MonthRegex, DateDayRegexInChinese, WeekDayRegex, BeforeRegex, AfterRegex]
+  def: ({LunarRegex}(\s*))?((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?
+  references: [LunarRegex, SimpleYearRegex, DateYearInChineseRegex, MonthRegex, DateDayRegexInChinese, WeekDayRegex]
 # (2015年)?(农历)?十月初一(星期三)?
 DateRegexList2: !nestedRegex
-  def: ((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?
-  references: [MonthRegex, DateDayRegexInChinese, SimpleYearRegex, LunarRegex, WeekDayRegex, DateYearInChineseRegex, BeforeRegex, AfterRegex]
+  def: ((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?
+  references: [MonthRegex, DateDayRegexInChinese, SimpleYearRegex, LunarRegex, WeekDayRegex, DateYearInChineseRegex]
 # (2015年)?(农历)?十月二十(星期三)?
 DateRegexList3: !nestedRegex
-  def: ((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*)({DayRegexNumInChinese}|{DayRegex})((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?
-  references: [MonthRegex, DayRegexNumInChinese, SimpleYearRegex, LunarRegex, WeekDayRegex, DateYearInChineseRegex, BeforeRegex, AfterRegex, DayRegex]
+  def: ((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*)({DayRegexNumInChinese}|{DayRegex})((\s*|,|，){WeekDayRegex})?
+  references: [MonthRegex, DayRegexNumInChinese, SimpleYearRegex, LunarRegex, WeekDayRegex, DateYearInChineseRegex, DayRegex]
 # 7/23
 DateRegexList4: !nestedRegex
   def: '{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*){SimpleYearRegex})?'
@@ -330,7 +330,7 @@ TimeDayDescRegex: !simpleRegex
 TimeApproximateDescPreffixRegex: !simpleRegex
   def: (大[约概]|差不多|可能|也许|约|不超过|不多[于过]|最[多长少]|少于|[超短长多]过|几乎要|将近|差点|快要|接近|至少|起码|超出|不到)
 TimeApproximateDescSuffixRegex: !simpleRegex
-  def: (之前|以前|以后|以後|之后|之後|前|后|後|左右)
+  def: (左右)
 TimeRegexes1: !nestedRegex
   def: '{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeChineseTimeRegex}{TimeApproximateDescSuffixRegex}?'
   references: [TimeApproximateDescPreffixRegex, TimeDayDescRegex, TimeChineseTimeRegex, TimeApproximateDescSuffixRegex]
@@ -368,16 +368,20 @@ TimePeriodRegexes2: !nestedRegex
   def: ({TimePeriodShortLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodShortLeftChsTimeRegex}{TimePeriodRightChsTimeRegex})
   references: [TimePeriodShortLeftDigitTimeRegex, TimePeriodRightDigitTimeRegex, TimePeriodShortLeftChsTimeRegex, TimePeriodRightChsTimeRegex]
 #ChineseDateTimeParserConfiguration
+FromToRegex: !simpleRegex
+  def: (从|自).+([至到]).+
+AmbiguousRangeModifierPrefix: !simpleRegex
+  def: (从|自)
 ParserConfigurationBefore: !simpleRegex
-  def: (之前|以前|前)
+  def: ((?<include>和|或|及)?(之前|以前)|前)
 ParserConfigurationAfter: !simpleRegex
-  def: (之后|之後|以后|以後|后|後)
+  def: ((?<include>和|或|及)?(之后|之後|以后|以後)|后|後)
 ParserConfigurationUntil: !simpleRegex
   def: (直到|直至|截至|截止(到)?)
 ParserConfigurationSincePrefix: !simpleRegex
-  def: (自从|自|自打|打)
+  def: (自从|自|自打|打|从)
 ParserConfigurationSinceSuffix: !simpleRegex
-  def: (以来|开始)
+  def: (以来|开始|起)
 ParserConfigurationLastWeekDayToken: 最后一个
 ParserConfigurationNextMonthToken: 下一个
 ParserConfigurationLastMonthToken: 上一个

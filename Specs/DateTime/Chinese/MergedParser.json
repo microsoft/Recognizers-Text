@@ -1,0 +1,90 @@
+[
+  {
+    "Input": "大约10点以后",
+    "Context": {
+      "ReferenceDateTime": "2020-01-05T00:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "大约10点以后",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "10:00:00",
+              "sourceEntity": "datetimepoint"
+            },
+            {
+              "timex": "T22",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "22:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "大约晚上十点以后",
+    "Context": {
+      "ReferenceDateTime": "2020-01-05T00:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "大约晚上十点以后",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T22",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "22:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "今天大约晚上十点以后",
+    "Context": {
+      "ReferenceDateTime": "2020-01-05T00:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "今天大约晚上十点以后",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2020-01-05T22",
+              "Mod": "after",
+              "type": "datetimerange",
+              "sourceEntity": "datetimepoint",
+              "start": "2020-01-05 22:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  }
+]
