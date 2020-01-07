@@ -499,7 +499,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var match = inPrefix ? regex.Item1.MatchExact(text, trim: true) : regex.Item1.MatchBegin(text, trim: true);
                 if (match.Success)
                 {
-                    mod = inPrefix ? regex.Item3 : (match.Groups["include"].Success ? regex.Item2 : regex.Item3);
+                    mod = inPrefix ? regex.Item3 : (match.Groups[Constants.IncludeGroupName].Success ? regex.Item2 : regex.Item3);
                     return mod;
                 }
             }

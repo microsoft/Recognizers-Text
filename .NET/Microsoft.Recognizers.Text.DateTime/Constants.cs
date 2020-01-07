@@ -70,9 +70,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         // "until" -> Same as "before", but including the extracted datetime entity. Equivalent to "<="
         public const string UNTIL_MOD = "until";
 
-        // Include the date metioned, to make "before" -> "until" or "after" -> "since". Such as "on or earlier than 1/1/2016".
-        public const string INCLUDE_MOD = "include";
-
         public const string EARLY_MOD = "start";
         public const string MID_MOD = "mid";
         public const string LATE_MOD = "end";
@@ -138,6 +135,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string LeftAmPmGroupName = "leftDesc";
         public const string RightAmPmGroupName = "rightDesc";
         public const string MealTimeGroupName = "mealTime";
+
+        // Include the date metioned, to make "before" -> "until" or "after" -> "since". Such as "on or earlier than 1/1/2016".
+        public const string IncludeGroupName = "include";
 
         public const string DECADE_UNIT = "10Y";
         public const string FORTNIGHT_UNIT = "2W";
