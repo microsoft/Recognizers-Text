@@ -393,25 +393,29 @@ public class ChineseNumeric {
 
     public static final String SpecialsFoldsPercentageRegex = "半\\s*成|(?<=打)[对對]\\s*折|半\\s*折";
 
+    public static final String SpeicalCharBeforeNumber = "(有|是|为)";
+
     public static final String TillRegex = "(到|至|--|-|—|——|~|–)";
 
-    public static final String MoreRegex = "(大于|多于|高于|超过|大於|多於|高於|超過|>)";
+    public static final String MoreRegex = "((大于|多于|高于|超过|大於|多於|高於|超過)了?|>)";
 
     public static final String LessRegex = "(小于|少于|低于|小於|少於|低於|不到|不足|<)";
 
     public static final String EqualRegex = "(等于|等於|=)";
 
-    public static final String MoreOrEqual = "(({MoreRegex}\\s*(或|或者)?\\s*{EqualRegex})|至少|最少|不{LessRegex})"
+    public static final String MoreOrEqual = "(({MoreRegex}\\s*(或|或者)?\\s*{EqualRegex})|(至少|最少){SpeicalCharBeforeNumber}?|不{LessRegex}|≥)"
             .replace("{MoreRegex}", MoreRegex)
             .replace("{EqualRegex}", EqualRegex)
-            .replace("{LessRegex}", LessRegex);
+            .replace("{LessRegex}", LessRegex)
+            .replace("{SpeicalCharBeforeNumber}", SpeicalCharBeforeNumber);
 
     public static final String MoreOrEqualSuffix = "(或|或者)\\s*(以上|之上|更[大多高])";
 
-    public static final String LessOrEqual = "(({LessRegex}\\s*(或|或者)?\\s*{EqualRegex})|至多|最多|不{MoreRegex})"
+    public static final String LessOrEqual = "(({LessRegex}\\s*(或|或者)?\\s*{EqualRegex})|(至多|最多){SpeicalCharBeforeNumber}?|不{MoreRegex}|≤)"
             .replace("{LessRegex}", LessRegex)
             .replace("{EqualRegex}", EqualRegex)
-            .replace("{MoreRegex}", MoreRegex);
+            .replace("{MoreRegex}", MoreRegex)
+            .replace("{SpeicalCharBeforeNumber}", SpeicalCharBeforeNumber);
 
     public static final String LessOrEqualSuffix = "(或|或者)\\s*(以下|之下|更[小少低])";
 
@@ -441,7 +445,7 @@ public class ChineseNumeric {
     public static final String TwoNumberRangeRegex1 = "((位于|在|位於)|(?=(\\d|\\+|\\-)))\\s*(?<number1>((?!(([,，](?!\\d+))|。)).)+)\\s*(和|与|與|{TillRegex})\\s*(?<number2>((?!(([,，](?!\\d+))|。))[^之])+)\\s*(之)?(间|間)"
             .replace("{TillRegex}", TillRegex);
 
-    public static final String TwoNumberRangeRegex2 = "({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})\\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|[,，])?\\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})"
+    public static final String TwoNumberRangeRegex2 = "({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})\\s*(且|(并|並)且?|而且|((的)?同時)|((的)?同时)|[,，])?\\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})"
             .replace("{OneNumberRangeMoreRegex1}", OneNumberRangeMoreRegex1)
             .replace("{OneNumberRangeMoreRegex2}", OneNumberRangeMoreRegex2)
             .replace("{OneNumberRangeMoreRegex3}", OneNumberRangeMoreRegex3)
@@ -449,7 +453,7 @@ public class ChineseNumeric {
             .replace("{OneNumberRangeLessRegex2}", OneNumberRangeLessRegex2)
             .replace("{OneNumberRangeLessRegex3}", OneNumberRangeLessRegex3);
 
-    public static final String TwoNumberRangeRegex3 = "({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})\\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|[,，])?\\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})"
+    public static final String TwoNumberRangeRegex3 = "({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})\\s*(且|(并|並)且?|而且|((的)?同時)|((的)?同时)|[,，])?\\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})"
             .replace("{OneNumberRangeMoreRegex1}", OneNumberRangeMoreRegex1)
             .replace("{OneNumberRangeMoreRegex2}", OneNumberRangeMoreRegex2)
             .replace("{OneNumberRangeMoreRegex3}", OneNumberRangeMoreRegex3)
