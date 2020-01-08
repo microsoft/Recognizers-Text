@@ -59,7 +59,7 @@ class ChineseDateTime:
     HalfYearRegex = f'((?<firstHalf>(上|前)半年)|(?<secondHalf>(下|后)半年))'
     YearRegex = f'(({YearNumRegex})(\\s*年)?|({SimpleYearRegex})\\s*年){HalfYearRegex}?'
     StrictYearRegex = f'({YearRegex}(?=[\\u4E00-\\u9FFF]|\\s|$|\\W))'
-    YearRegexInNumber = f'(?<year>(\\d{{3,4}}))'
+    YearRegexInNumber = f'(?<year>(\\d{{4}}))'
     DatePeriodYearInChineseRegex = f'(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年{HalfYearRegex}?'
     MonthSuffixRegex = f'(?<msuf>({RelativeMonthRegex}|{MonthRegex}))'
     SimpleCasesRegex = f'((从)\\s*)?(({YearRegex}|{DatePeriodYearInChineseRegex})\\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInChinese}|{DayRegex})\\s*{DatePeriodTillRegex}\\s*({DatePeriodDayRegexInChinese}|{DayRegex})((\\s+|\\s*,\\s*){YearRegex})?'

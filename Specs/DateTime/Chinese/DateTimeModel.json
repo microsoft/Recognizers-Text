@@ -4435,5 +4435,19 @@
         }
       }
     ]
+  },
+  {
+    "Input": "我的电话号码是888-000-9999。",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "请检查：192.168.255.255。",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "Results": []
   }
 ]
