@@ -721,12 +721,21 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "大于50小于12",
+        "Text": "大于50",
         "Start": 0,
+        "End": 3,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(50,)"
+        }
+      },
+      {
+        "Text": "小于12",
+        "Start": 4,
         "End": 7,
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(12,50)"
+          "value": "(,12)"
         }
       }
     ]

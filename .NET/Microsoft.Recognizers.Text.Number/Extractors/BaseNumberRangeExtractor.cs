@@ -50,15 +50,53 @@ namespace Microsoft.Recognizers.Text.Number
 
                     if (start >= 0 && length > 0)
                     {
-                        for (var j = 0; j < length; j++)
-                        {
-                            matched[start + j] = true;
-                        }
-
                         // Keep Source Data for extra information
                         matchSource.Add(new Tuple<int, int>(start, length), collection.Value);
                     }
                 }
+            }
+
+            foreach (var match in matchSource)
+            {
+                var start = match.Key.Item1;
+                var length = match.Key.Item2;
+
+                if (match.Value.Equals(NumberRangeConstants.TWONUM))
+                {
+                    int moreIndex = 0, lessIndex = 0;
+
+                    var text = source.Substring(match.Key.Item1, match.Key.Item2);
+
+                    var er = numberExtractor.Extract(text);
+
+                    if (er.Count != 2)
+                    {
+                        er = ordinalExtractor.Extract(text);
+
+                        if (er.Count != 2)
+                        {
+                            continue;
+                        }
+                    }
+
+                    var nums = er.Select(r => (double)(numberParser.Parse(r).Value ?? 0)).ToList();
+
+                    moreIndex = matchSource.First(r => r.Value.Equals(NumberRangeConstants.MORE) && r.Key.Item1 >= start &&
+                                                       r.Key.Item1 + r.Key.Item2 <= start + length).Key.Item1;
+                    lessIndex = matchSource.First(r => r.Value.Equals(NumberRangeConstants.LESS) && r.Key.Item1 >= start &&
+                                                       r.Key.Item1 + r.Key.Item2 <= start + length).Key.Item1;
+
+                    if (!((nums[0] < nums[1] && moreIndex <= lessIndex) || (nums[0] > nums[1] && moreIndex >= lessIndex)))
+                    {
+                        continue;
+                    }
+                }
+
+                for (var j = 0; j < length - 1; j++)
+                {
+                    matched[start + j] = true;
+                }
+
             }
 
             var last = -1;
@@ -69,7 +107,7 @@ namespace Microsoft.Recognizers.Text.Number
                     if (i + 1 == source.Length || !matched[i + 1])
                     {
                         var start = last + 1;
-                        var length = i - last;
+                        var length = i - last + 1;
                         var substr = source.Substring(start, length);
 
                         if (matchSource.Keys.Any(o => o.Item1 == start && o.Item2 == length))
