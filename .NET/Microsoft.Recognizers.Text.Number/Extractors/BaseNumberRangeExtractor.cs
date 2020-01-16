@@ -61,6 +61,7 @@ namespace Microsoft.Recognizers.Text.Number
                 var start = match.Key.Item1;
                 var length = match.Key.Item2;
 
+                // Filter wrong two number ranges such as "more than 20 and less than 10" and "大于20小于10".
                 if (match.Value.Equals(NumberRangeConstants.TWONUM))
                 {
                     int moreIndex = 0, lessIndex = 0;
@@ -92,6 +93,8 @@ namespace Microsoft.Recognizers.Text.Number
                     }
                 }
 
+                // The entity is longer than 1, so don't mark the last char to represent the end.
+                // To avoid no connector cases like "大于20小于10" being marked as a whole entity.
                 for (var j = 0; j < length - 1; j++)
                 {
                     matched[start + j] = true;
