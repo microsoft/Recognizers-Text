@@ -47,7 +47,9 @@ namespace Microsoft.Recognizers.Text.Number
                     }
                 }
 
-                return parsedNumbers.Select(BuildModelResult).Where(r => r != null).ToList();
+                var modelResults = parsedNumbers.Select(BuildModelResult).Where(r => r != null).ToList();
+
+                return modelResults;
             }
             catch (Exception)
             {
