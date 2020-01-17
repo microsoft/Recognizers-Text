@@ -82,10 +82,10 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string EqualRegex = @"((igual(es)?|equivalente(s)?|equivale|equivalen|son)(\s+(a|que|de|al|del))?|(?<!<|>)=)";
       public static readonly string MoreOrEqualPrefix = $@"((no\s+{LessRegex})|(por\s+lo\s+menos|como\s+m[íi]nimo|al\s+menos))";
       public static readonly string MoreOrEqual = $@"(({MoreRegex}\s+(o)?\s+{EqualRegex})|({EqualRegex}\s+(o|y)\s+{MoreRegex})|{MoreOrEqualPrefix}(\s+(o)\s+{EqualRegex})?|({EqualRegex}\s+(o)\s+)?{MoreOrEqualPrefix}|>\s*=)";
-      public const string MoreOrEqualSuffix = @"((\b(y|o)\b\s+(m[áa]s|mayor|mayores)((?!\s+(alt[oa]|baj[oa]|que|de|del))|(\s+(que|de|del)(?!(\s*\d+)))))|como\s+m[áa]ximo|por\s+lo\s+menos|al\s+menos)";
+      public const string MoreOrEqualSuffix = @"((\b(y|o)\b\s+(m[áa]s|mayor|mayores)((?!\s+(alt[oa]|baj[oa]|que|de|del))|(\s+(que|de|del)(?!(\s*\d+)))))|como\s+m[íi]nimo|por\s+lo\s+menos|al\s+menos)";
       public static readonly string LessOrEqualPrefix = $@"((no\s+{MoreRegex})|(como\s+máximo|como\s+maximo|como\s+mucho))";
       public static readonly string LessOrEqual = $@"(({LessRegex}\s+(o)?\s+{EqualRegex})|({EqualRegex}\s+(o)?\s+{LessRegex})|{LessOrEqualPrefix}(\s+(o)?\s+{EqualRegex})?|({EqualRegex}\s+(o)?\s+)?{LessOrEqualPrefix}|<\s*=)";
-      public const string LessOrEqualSuffix = @"((\b(y|o)\b\s+(menos|menor|menores)((?!\s+(alt[oa]|baj[oa]|que|de|del))|(\s+(que|de|del)(?!(\s*\d+)))))|como\s+m[íi]nimo)";
+      public const string LessOrEqualSuffix = @"((\b(y|o)\b\s+(menos|menor|menores)((?!\s+(alt[oa]|baj[oa]|que|de|del))|(\s+(que|de|del)(?!(\s*\d+)))))|como\s+m[áa]ximo)";
       public const string NumberSplitMark = @"(?![,.](?!\d+))";
       public const string MoreRegexNoNumberSucceed = @"((m[áa]s|mayor|mayores)((?!\s+(que|de|del))|\s+((que|de|del)(?!(\s*\d+))))|(por encima)(?!(\s*\d+)))";
       public const string LessRegexNoNumberSucceed = @"((menos|menor|menores)((?!\s+(que|de|del))|\s+((que|de|del)(?!(\s*\d+))))|(por debajo)(?!(\s*\d+)))";

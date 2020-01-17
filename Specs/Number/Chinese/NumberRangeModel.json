@@ -721,9 +721,117 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "大于50小于12",
+        "Text": "大于50",
         "Start": 0,
+        "End": 3,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(50,)"
+        }
+      },
+      {
+        "Text": "小于12",
+        "Start": 4,
         "End": 7,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "大于50并小于12的目标。",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "大于50",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(50,)"
+        }
+      },
+      {
+        "Text": "小于12",
+        "Start": 5,
+        "End": 8,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "大于50小于12的目标和小于12并大于50的目标是一样的",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "大于50",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(50,)"
+        }
+      },
+      {
+        "Text": "小于12",
+        "Start": 4,
+        "End": 7,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12)"
+        }
+      },
+      {
+        "Text": "小于12",
+        "Start": 12,
+        "End": 15,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12)"
+        }
+      },
+      {
+        "Text": "大于50",
+        "Start": 17,
+        "End": 20,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(50,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "大于50小于12的目标和大于12小于50的目标",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "大于50",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(50,)"
+        }
+      },
+      {
+        "Text": "小于12",
+        "Start": 4,
+        "End": 7,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12)"
+        }
+      },
+      {
+        "Text": "大于12小于50",
+        "Start": 12,
+        "End": 19,
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(12,50)"

@@ -1161,5 +1161,104 @@
         }
       }
     ]
+  },
+  {
+    "Input": "More than 40 and less than 10 are two ranges",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "more than 40",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(40,)"
+        }
+      },
+      {
+        "Text": "less than 10",
+        "Start": 17,
+        "End": 28,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,10)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "More than 40 and less than 10, less than 10 and more than 40 are the same",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "more than 40",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(40,)"
+        }
+      },
+      {
+        "Text": "less than 10",
+        "Start": 17,
+        "End": 28,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,10)"
+        }
+      },
+      {
+        "Text": "less than 10",
+        "Start": 31,
+        "End": 42,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,10)"
+        }
+      },
+      {
+        "Text": "more than 40",
+        "Start": 48,
+        "End": 59,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(40,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "More than 40 and less than 10, more than 10 and less than 40 are not the same",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "more than 40",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(40,)"
+        }
+      },
+      {
+        "Text": "less than 10",
+        "Start": 17,
+        "End": 28,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,10)"
+        }
+      },
+      {
+        "Text": "more than 10 and less than 40",
+        "Start": 31,
+        "End": 59,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,40)"
+        }
+      }
+    ]
   }
 ]
