@@ -1787,7 +1787,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
@@ -1795,7 +1795,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
@@ -1803,7 +1803,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "vingt heures",
@@ -1827,7 +1827,7 @@
     "Context": {
       "ReferenceDateTime": "2020-01-12T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "23",
@@ -1856,7 +1856,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "23 heures",
@@ -1906,7 +1906,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "16-17 heures",
@@ -1931,7 +1931,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "16h",
@@ -2044,7 +2044,7 @@
       "ReferenceDateTime": "2020-01-19T00:00:00"
     },
     "Comment": "Sanme with EN '10am monday morning'",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "mercredi matin",
@@ -2071,11 +2071,11 @@
     ]
   },
   {
-    "Input": "Je vais partir á 15 heures tous les jours",
+    "Input": "Je vais partir à 15 heures tous les jours",
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 heures tous les jours",
@@ -2095,11 +2095,11 @@
     ]
   },
   {
-    "Input": "Je vais partir á 15 tous les jours",
+    "Input": "Je vais partir a 15 tous les jours",
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, java, python",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "15 tous les jours",
@@ -2109,7 +2109,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "T15",
+              "timex": "P1D",
               "type": "set",
               "value": "not resolved"
             }

@@ -74,7 +74,7 @@ class FrenchDateTime:
     RelativeWeekDayRegex = f'^[.]'
     AmbiguousRangeModifierPrefix = f'^[.]'
     NumberEndingPattern = f'^[.]'
-    SpecialDate = f'(?<=\\b([àa]|au|le)\\s+){DayRegex}(?!:)\\b'
+    SpecialDate = f'(?<=\\b(au|le)\\s+){DayRegex}(?!:)\\b'
     DateYearRegex = f'(?<year>{YearRegex}|{TwoDigitYearRegex})'
     DateExtractor1 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthRegex}\\s*[/\\\\\\.\\-]?\\s*{DayRegex}\\b'
     DateExtractor2 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}(\\s+|\\s*,\\s*|\\s+){MonthRegex}\\s*[\\.\\-]?\\s*{DateYearRegex}\\b'

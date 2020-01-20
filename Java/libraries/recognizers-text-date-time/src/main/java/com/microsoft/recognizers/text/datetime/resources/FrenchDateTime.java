@@ -202,7 +202,7 @@ public class FrenchDateTime {
 
     public static final String NumberEndingPattern = "^[.]";
 
-    public static final String SpecialDate = "(?<=\\b([àa]|au|le)\\s+){DayRegex}(?!:)\\b"
+    public static final String SpecialDate = "(?<=\\b(au|le)\\s+){DayRegex}(?!:)\\b"
             .replace("{DayRegex}", DayRegex);
 
     public static final String DateYearRegex = "(?<year>{YearRegex}|{TwoDigitYearRegex})"

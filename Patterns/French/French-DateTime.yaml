@@ -155,7 +155,7 @@ NumberEndingPattern: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 SpecialDate: !nestedRegex
-  def: (?<=\b([àa]|au|le)\s+){DayRegex}(?!:)\b
+  def: (?<=\b(au|le)\s+){DayRegex}(?!:)\b
   references: [ DayRegex ]
 DateYearRegex: !nestedRegex
   def: (?<year>{YearRegex}|{TwoDigitYearRegex})

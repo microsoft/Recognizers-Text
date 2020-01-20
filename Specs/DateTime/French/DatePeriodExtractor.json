@@ -1433,10 +1433,10 @@
     "Input": "Je vais partir Novembre 19 a 20",
     "Results": [
       {
-        "Text": " Novembre 19 a 20",
+        "Text": "Novembre 19 a 20",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 17
+        "Start": 15,
+        "Length": 16
       }
     ]
   },

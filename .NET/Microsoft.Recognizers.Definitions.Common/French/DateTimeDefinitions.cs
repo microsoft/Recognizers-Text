@@ -81,7 +81,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string RelativeWeekDayRegex = @"^[.]";
       public const string AmbiguousRangeModifierPrefix = @"^[.]";
       public const string NumberEndingPattern = @"^[.]";
-      public static readonly string SpecialDate = $@"(?<=\b([àa]|au|le)\s+){DayRegex}(?!:)\b";
+      public static readonly string SpecialDate = $@"(?<=\b(au|le)\s+){DayRegex}(?!:)\b";
       public static readonly string DateYearRegex = $@"(?<year>{YearRegex}|{TwoDigitYearRegex})";
       public static readonly string DateExtractor1 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}\s*[/\\\.\-]?\s*{DayRegex}\b";
       public static readonly string DateExtractor2 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s+){MonthRegex}\s*[\.\-]?\s*{DateYearRegex}\b";

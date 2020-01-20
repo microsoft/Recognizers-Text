@@ -1316,7 +1316,10 @@ class BaseDateParser(DateTimeParser):
             future_date = future_date.replace(month=future_date.month + 1)
 
         if past_date != DateUtils.min_value and past_date >= reference:
-            past_date = past_date.replace(month=past_date.month - 1)
+            if past_date.month - 1 == 0:
+                past_date = past_date.replace(month=12, year=past_date.year - 1)
+            else:
+                past_date = past_date.replace(month=past_date.month - 1)
 
         result.future_value = future_date
         result.past_value = past_date

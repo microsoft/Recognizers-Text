@@ -71,7 +71,7 @@ export namespace FrenchDateTime {
     export const RelativeWeekDayRegex = `^[.]`;
     export const AmbiguousRangeModifierPrefix = `^[.]`;
     export const NumberEndingPattern = `^[.]`;
-    export const SpecialDate = `(?<=\\b([àa]|au|le)\\s+)${DayRegex}(?!:)\\b`;
+    export const SpecialDate = `(?<=\\b(au|le)\\s+)${DayRegex}(?!:)\\b`;
     export const DateYearRegex = `(?<year>${YearRegex}|${TwoDigitYearRegex})`;
     export const DateExtractor1 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${MonthRegex}\\s*[/\\\\\\.\\-]?\\s*${DayRegex}\\b`;
     export const DateExtractor2 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}(\\s+|\\s*,\\s*|\\s+)${MonthRegex}\\s*[\\.\\-]?\\s*${DateYearRegex}\\b`;
