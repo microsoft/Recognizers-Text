@@ -372,6 +372,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment": "about is not supported as connection in En, Disabled here to support general case.",
+    "NotSupported": "dotnet, java, python, javascript",
     "Results": [
       {
         "Text": "14 de Octubre, cerca de las 8:00am",
