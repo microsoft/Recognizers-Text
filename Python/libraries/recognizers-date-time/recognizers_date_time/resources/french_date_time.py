@@ -141,7 +141,7 @@ class FrenchDateTime:
     TimeFollowedUnit = f'^\\s*{TimeUnitRegex}'
     TimeNumberCombinedWithUnit = f'\\b(?<num>\\d+(\\.\\d*)?){TimeUnitRegex}'
     NowRegex = f'\\b(?<now>(ce\\s+)?moment|maintenant|d[eè]s que possible|dqp|r[eé]cemment|auparavant)\\b'
-    SuffixRegex = f'^\\s*(dans\\s+l[ea]\\s+)|(en\\s+)|(du)?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit)\\b'
+    SuffixRegex = f'^\\s*((dans\\s+l[ea]\\s+)|(en\\s+)|(d(u|\\\'))?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit))\\b'
     DateTimeTimeOfDayRegex = f'\\b(?<timeOfDay>matin([eé]e)?|apr[eè]s-midi|nuit|soir)\\b'
     DateTimeSpecificTimeOfDayRegex = f'\\b(({RelativeRegex}\\s+{DateTimeTimeOfDayRegex})\\b|\\b(ce(tte)?\\s+)(soir|nuit))\\b'
     TimeOfTodayAfterRegex = f'^\\s*(,\\s*)?(en|dans|du\\s+)?{DateTimeSpecificTimeOfDayRegex}'

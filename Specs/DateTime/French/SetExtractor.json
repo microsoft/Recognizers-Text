@@ -295,5 +295,64 @@
         "Length": 15
       }
     ]
+  },
+  {
+    "Input": "Je vais partir à 16 chaque lundi",
+    "Results": [
+      {
+        "Text": "16 chaque lundi",
+        "Type": "set",
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "de 14 heures à 16 heures, chaque lundi",
+    "Results": [
+      {
+        "Text": "de 14 heures à 16 heures, chaque lundi",
+        "Type": "set",
+        "Start": 0,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "avant 12h00 chaque lundi",
+    "NotSupported": "javascript, java, dotnet, python",
+    "Comment": "same bug in EN",
+    "Results": [
+      {
+        "Text": "avant 16 chaque lundi",
+        "Type": "set",
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "avant 12:00 chaque lundi",
+    "NotSupported": "javascript, java, dotnet, python",
+    "Comment": "same bug in EN",
+    "Results": [
+      {
+        "Text": "avant 12:00 chaque lundi",
+        "Type": "set",
+        "Start": 0,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "de 14 heures à 16 heures chaque lundi",
+    "Results": [
+      {
+        "Text": "de 14 heures à 16 heures chaque lundi",
+        "Type": "set",
+        "Start": 0,
+        "Length": 37
+      }
+    ]
   }
 ]

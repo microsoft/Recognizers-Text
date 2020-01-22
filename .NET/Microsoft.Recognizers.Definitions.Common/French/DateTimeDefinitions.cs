@@ -148,7 +148,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
       public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
       public const string NowRegex = @"\b(?<now>(ce\s+)?moment|maintenant|d[eè]s que possible|dqp|r[eé]cemment|auparavant)\b";
-      public const string SuffixRegex = @"^\s*(dans\s+l[ea]\s+)|(en\s+)|(du)?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit)\b";
+      public const string SuffixRegex = @"^\s*((dans\s+l[ea]\s+)|(en\s+)|(d(u|\'))?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit))\b";
       public const string DateTimeTimeOfDayRegex = @"\b(?<timeOfDay>matin([eé]e)?|apr[eè]s-midi|nuit|soir)\b";
       public static readonly string DateTimeSpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\b(ce(tte)?\s+)(soir|nuit))\b";
       public static readonly string TimeOfTodayAfterRegex = $@"^\s*(,\s*)?(en|dans|du\s+)?{DateTimeSpecificTimeOfDayRegex}";

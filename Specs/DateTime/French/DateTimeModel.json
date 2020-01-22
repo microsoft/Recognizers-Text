@@ -1852,6 +1852,30 @@
     ]
   },
   {
+    "Input": "je reviendrai à 23",
+    "Context": {
+      "ReferenceDateTime": "2019-08-12T00:00:00"
+    },
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "23",
+        "Start": 16,
+        "End": 17,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T23",
+              "type": "time",
+              "value": "23:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "je reviendrai à 23 heures",
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
@@ -2001,37 +2025,26 @@
   {
     "Input": "Dix heures mercredi matin",
     "Context": {
-      "ReferenceDateTime": "2019-08-12T00:00:00"
+      "ReferenceDateTime": "2020-01-01T00:00:00"
     },
-    "Comment": "Not supported because of an extra result.",
-    "NotSupported": "dotnet, javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
-        "Text": "dix heures mercredi mati",
+        "Text": "dix heures mercredi matin",
         "Start": 0,
-        "End": 23,
+        "End": 24,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
             {
               "timex": "XXXX-WXX-3T10",
               "type": "datetime",
-              "value": "2020-01-15 10:00:00"
+              "value": "2019-12-25 10:00:00"
             },
             {
               "timex": "XXXX-WXX-3T10",
               "type": "datetime",
-              "value": "2020-01-22 10:00:00"
-            },
-            {
-              "timex": "XXXX-WXX-3T22",
-              "type": "datetime",
-              "value": "2020-01-15 22:00:00"
-            },
-            {
-              "timex": "XXXX-WXX-3T22",
-              "type": "datetime",
-              "value": "2020-01-22 22:00:00"
+              "value": "2020-01-01 10:00:00"
             }
           ]
         }
@@ -2043,7 +2056,7 @@
     "Context": {
       "ReferenceDateTime": "2020-01-19T00:00:00"
     },
-    "Comment": "Sanme with EN '10am monday morning'",
+    "Comment": "Same with EN '10am monday morning'",
     "NotSupported": "javascript, java",
     "Results": [
       {

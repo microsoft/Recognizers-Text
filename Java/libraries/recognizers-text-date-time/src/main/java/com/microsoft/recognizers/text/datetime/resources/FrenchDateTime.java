@@ -455,7 +455,7 @@ public class FrenchDateTime {
 
     public static final String NowRegex = "\\b(?<now>(ce\\s+)?moment|maintenant|d[eè]s que possible|dqp|r[eé]cemment|auparavant)\\b";
 
-    public static final String SuffixRegex = "^\\s*(dans\\s+l[ea]\\s+)|(en\\s+)|(du)?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit)\\b";
+    public static final String SuffixRegex = "^\\s*((dans\\s+l[ea]\\s+)|(en\\s+)|(d(u|\\'))?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit))\\b";
 
     public static final String DateTimeTimeOfDayRegex = "\\b(?<timeOfDay>matin([eé]e)?|apr[eè]s-midi|nuit|soir)\\b";
 

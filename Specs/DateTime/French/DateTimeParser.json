@@ -995,7 +995,7 @@
     },
     "Results": [
       {
-        "Text": "19:00 sur dimanche prochain d'apres-m",
+        "Text": "19:00 sur dimanche prochain d'apres-midi",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-20T19:00",
@@ -1007,7 +1007,7 @@
           }
         },
         "Start": 14,
-        "Length": 37
+        "Length": 40
       }
     ]
   },

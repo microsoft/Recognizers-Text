@@ -138,7 +138,7 @@ export namespace FrenchDateTime {
     export const TimeFollowedUnit = `^\\s*${TimeUnitRegex}`;
     export const TimeNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)${TimeUnitRegex}`;
     export const NowRegex = `\\b(?<now>(ce\\s+)?moment|maintenant|d[eè]s que possible|dqp|r[eé]cemment|auparavant)\\b`;
-    export const SuffixRegex = `^\\s*(dans\\s+l[ea]\\s+)|(en\\s+)|(du)?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit)\\b`;
+    export const SuffixRegex = `^\\s*((dans\\s+l[ea]\\s+)|(en\\s+)|(d(u|\\'))?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit))\\b`;
     export const DateTimeTimeOfDayRegex = `\\b(?<timeOfDay>matin([eé]e)?|apr[eè]s-midi|nuit|soir)\\b`;
     export const DateTimeSpecificTimeOfDayRegex = `\\b((${RelativeRegex}\\s+${DateTimeTimeOfDayRegex})\\b|\\b(ce(tte)?\\s+)(soir|nuit))\\b`;
     export const TimeOfTodayAfterRegex = `^\\s*(,\\s*)?(en|dans|du\\s+)?${DateTimeSpecificTimeOfDayRegex}`;
