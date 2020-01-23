@@ -606,23 +606,41 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "una reunion con francesco sparacio mañana a las 12",
+        "Text": "una ",
         "Start": 11,
-        "End": 60,
-        "TypeName": "datetimeV2.datetimerange",
+        "End": 14,
+        "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
             {
-              "timex": "(2020-01-23T01,2020-01-23T12,PT11H)",
-              "type": "datetimerange",
-              "start": "2020-01-23 01:00:00",
-              "end": "2020-01-23 12:00:00"
+              "timex": "T01",
+              "type": "time",
+              "value": "01:00:00"
             },
             {
-              "timex": "(2020-01-23T13,2020-01-23T00,PT11H)",
-              "type": "datetimerange",
-              "start": "2020-01-23 13:00:00",
-              "end": "2020-01-23 00:00:00"
+              "timex": "T13",
+              "type": "time",
+              "value": "13:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "mañana a las 12",
+        "Start": 46,
+        "End": 60,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-01-24T12",
+              "type": "datetime",
+              "value": "2020-01-24 12:00:00"
+            },
+            {
+              "timex": "2020-01-24T00",
+              "type": "datetime",
+              "value": "2020-01-24 00:00:00"
             }
           ]
         }
@@ -637,16 +655,51 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "una reunion el 27/11 a las 24",
+        "Text": "una ",
         "Start": 11,
-        "End": 39,
-        "TypeName": "datetimeV2.datetimerange",
+        "End": 14,
+        "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
             {
-              "timex": "(XXXX-XX-27T11,XXXX-XX-27T24,PT13H)",
-              "type": "datetimerange",
-              "value": "not resolved"
+              "timex": "T01",
+              "type": "time",
+              "value": "01:00:00"
+            },
+            {
+              "timex": "T13",
+              "type": "time",
+              "value": "13:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "27/11 a las 24",
+        "Start": 26,
+        "End": 39,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-27T00",
+              "type": "datetime",
+              "value": "2019-11-27 00:00:00"
+            },
+            {
+              "timex": "XXXX-11-27T00",
+              "type": "datetime",
+              "value": "2020-11-27 00:00:00"
+            },
+            {
+              "timex": "XXXX-11-27T12",
+              "type": "datetime",
+              "value": "2019-11-27 12:00:00"
+            },
+            {
+              "timex": "XXXX-11-27T12",
+              "type": "datetime",
+              "value": "2020-11-27 12:00:00"
             }
           ]
         }
