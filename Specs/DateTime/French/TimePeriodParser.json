@@ -225,13 +225,13 @@
     ]
   },
   {
-    "Input": "Je vais retourner 16-17",
+    "Input": "Je vais retourner 16-17 heures",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Results": [
       {
-        "Text": "16-17",
+        "Text": "16-17 heures",
         "Type": "timerange",
         "Value": {
           "Timex": "(T16,T17,PT1H)",
@@ -245,18 +245,18 @@
           }
         },
         "Start": 18,
-        "Length": 5
+        "Length": 12
       }
     ]
   },
   {
-    "Input": "Je vais retourner 16 - 17",
+    "Input": "Je vais retourner 16 - 17 heures",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Results": [
       {
-        "Text": "16 - 17",
+        "Text": "16 - 17 heures",
         "Type": "timerange",
         "Value": {
           "Timex": "(T16,T17,PT1H)",
@@ -270,7 +270,7 @@
           }
         },
         "Start": 18,
-        "Length": 7
+        "Length": 14
       }
     ]
   },

@@ -45,13 +45,13 @@ public class FrenchDateTime {
 
     public static final String SpecialDescRegex = "(p\\b)";
 
-    public static final String AmDescRegex = "(h|{BaseDateTime.BaseAmDescRegex})"
+    public static final String AmDescRegex = "(h\\b|{BaseDateTime.BaseAmDescRegex})"
             .replace("{BaseDateTime.BaseAmDescRegex}", BaseDateTime.BaseAmDescRegex);
 
-    public static final String PmDescRegex = "(h|{BaseDateTime.BasePmDescRegex})"
+    public static final String PmDescRegex = "(h\\b|{BaseDateTime.BasePmDescRegex})"
             .replace("{BaseDateTime.BasePmDescRegex}", BaseDateTime.BasePmDescRegex);
 
-    public static final String AmPmDescRegex = "(h|{BaseDateTime.BaseAmPmDescRegex})"
+    public static final String AmPmDescRegex = "(h\\b|{BaseDateTime.BaseAmPmDescRegex})"
             .replace("{BaseDateTime.BaseAmPmDescRegex}", BaseDateTime.BaseAmPmDescRegex);
 
     public static final String DescRegex = "(?<desc>{AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})"
@@ -202,7 +202,7 @@ public class FrenchDateTime {
 
     public static final String NumberEndingPattern = "^[.]";
 
-    public static final String SpecialDate = "(?<=\\b([àa]|au|le)\\s+){DayRegex}(?!:)\\b"
+    public static final String SpecialDate = "(?<=\\b(au|le)\\s+){DayRegex}(?!:)\\b"
             .replace("{DayRegex}", DayRegex);
 
     public static final String DateYearRegex = "(?<year>{YearRegex}|{TwoDigitYearRegex})"
@@ -352,7 +352,7 @@ public class FrenchDateTime {
 
     public static final String PeriodHourNumRegex = "(?<hour>vingt-et-un|vingt-deux|vingt-trois|vingt-quatre|zero|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt)";
 
-    public static final String TimeRegex1 = "\\b({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\\s*{DescRegex}(\\s+{TimePrefix})?"
+    public static final String TimeRegex1 = "\\b({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\\s*{DescRegex}(\\s+{TimePrefix})?\\b"
             .replace("{TimePrefix}", TimePrefix)
             .replace("{WrittenTimeRegex}", WrittenTimeRegex)
             .replace("{HourNumRegex}", HourNumRegex)
@@ -378,7 +378,7 @@ public class FrenchDateTime {
             .replace("{DescRegex}", DescRegex)
             .replace("{TimeSuffix}", TimeSuffix);
 
-    public static final String TimeRegex5 = "\\b{BasicTime}((\\s*{DescRegex})|\\b)(\\s+{TimePrefix})?"
+    public static final String TimeRegex5 = "\\b{BasicTime}((\\s*{DescRegex})(\\s+{TimePrefix})?|\\s+{TimePrefix})"
             .replace("{TimePrefix}", TimePrefix)
             .replace("{BasicTime}", BasicTime)
             .replace("{DescRegex}", DescRegex);
@@ -455,7 +455,7 @@ public class FrenchDateTime {
 
     public static final String NowRegex = "\\b(?<now>(ce\\s+)?moment|maintenant|d[eè]s que possible|dqp|r[eé]cemment|auparavant)\\b";
 
-    public static final String SuffixRegex = "^\\s*(dans\\s+l[ea]\\s+)|(en\\s+)|(du)?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit)\\b";
+    public static final String SuffixRegex = "^\\s*((dans\\s+l[ea]\\s+)|(en\\s+)|(d(u|\\'))?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit))\\b";
 
     public static final String DateTimeTimeOfDayRegex = "\\b(?<timeOfDay>matin([eé]e)?|apr[eè]s-midi|nuit|soir)\\b";
 

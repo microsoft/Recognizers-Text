@@ -224,7 +224,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                     break
                 # check connector string
                 middle = source[num_end:time_extract_results[j].start]
-                if RegExpUtility.is_exact_match(self.config.till_regex, middle, True) or\
+                if RegExpUtility.exact_match(self.config.till_regex, middle, True).success or\
                         self.config.is_connector_token(middle.strip()):
                     time_numbers.append(num_extract_results[i])
                 i += 1
