@@ -869,6 +869,10 @@ SpecialDecadeCases: !dictionary
     '': 0
 DefaultLanguageFallback: DMY
 DurationDateRestrictions: [ hoy ]
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '\buna\b': '(?<!la\s+)una'
 # For TimeOfDay resolution
 EarlyMorningTermList: !list
   types: [ string ]

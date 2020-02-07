@@ -496,6 +496,10 @@ namespace Microsoft.Recognizers.Definitions.Spanish
         };
       public const string DefaultLanguageFallback = @"DMY";
       public static readonly string[] DurationDateRestrictions = { @"hoy" };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\buna\b", @"(?<!la\s+)una" },
+        };
       public static readonly IList<string> EarlyMorningTermList = new List<string>
         {
             @"madrugada"
