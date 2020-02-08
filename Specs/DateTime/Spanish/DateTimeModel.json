@@ -691,6 +691,7 @@
     "Context": {
       "ReferenceDateTime": "2020-01-22T01:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "viernes",
@@ -719,6 +720,7 @@
     "Context": {
       "ReferenceDateTime": "2019-12-15T01:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "desde las doce hasta la una",
@@ -749,6 +751,7 @@
     "Context": {
       "ReferenceDateTime": "2019-12-15T00:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "desde la una hasta las tres",
@@ -779,6 +782,7 @@
     "Context": {
       "ReferenceDateTime": "2019-12-15T00:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "una",
@@ -807,6 +811,7 @@
     "Context": {
       "ReferenceDateTime": "2020-02-07T00:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "próximo lunes a las doce",
@@ -835,6 +840,7 @@
     "Context": {
       "ReferenceDateTime": "2020-02-07T00:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "sábado",
