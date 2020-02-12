@@ -1821,5 +1821,31 @@
         }
       }
     ]
+  },
+  {
+    "Input": "apri un ticket",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "apri due ticket",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "due",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        }
+      }
+    ]
   }
 ]
