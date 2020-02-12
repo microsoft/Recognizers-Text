@@ -15205,5 +15205,77 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Book a trip from 26th june of 2020 to 28th june of 2020",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "from 26th june of 2020 to 28th june of 2020",
+        "Start": 12,
+        "End": 54,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-06-26,2020-06-28,P2D)",
+              "type": "daterange",
+              "start": "2020-06-26",
+              "end": "2020-06-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book something from 26th of june of 2020 to the 28th of june of 2020",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "from 26th of june of 2020 to the 28th of june of 2020",
+        "Start": 15,
+        "End": 67,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-06-26,2020-06-28,P2D)",
+              "type": "daterange",
+              "start": "2020-06-26",
+              "end": "2020-06-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What about from june 26th of 2020 to june the 28th 2020?",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "from june 26th of 2020 to june the 28th 2020",
+        "Start": 11,
+        "End": 54,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-06-26,2020-06-28,P2D)",
+              "type": "daterange",
+              "start": "2020-06-26",
+              "end": "2020-06-28"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

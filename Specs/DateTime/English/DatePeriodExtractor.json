@@ -3904,5 +3904,16 @@
         "Length": 9
       }
     ]
+  },
+  {
+    "Input": "Book a trip from 26th june of 2020 to 28th june of 2020",
+    "Results": [
+      {
+        "Text": "from 26th june of 2020 to 28th june of 2020",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 43
+      }
+    ]
   }
 ]
