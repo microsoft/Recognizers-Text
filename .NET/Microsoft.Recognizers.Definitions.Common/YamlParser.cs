@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Definitions.Common
 {
     public class YamlParser
     {
-        private readonly Deserializer yamlDeserializer;
+        private readonly IDeserializer yamlDeserializer;
 
         public YamlParser()
         {
