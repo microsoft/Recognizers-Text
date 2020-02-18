@@ -420,7 +420,7 @@ public class SpanishDateTime {
             .replace("{BaseDateTime.MinuteRegex}", BaseDateTime.MinuteRegex)
             .replace("{DescRegex}", DescRegex);
 
-    public static final String PrepositionRegex = "\\b(?<prep>(a(l)?|en|de(l)?)?(\\s*(la(s)?|el|los))?$)\\b";
+    public static final String PrepositionRegex = "\\b(?<prep>^(hasta\\s*|siguiente\\s*)?(a(l)?|en|de(l)?)?(\\s*(la(s)?|el|los))?$)\\b";
 
     public static final String NowRegex = "\\b(?<now>(justo\\s+)?ahora(\\s+mismo)?|en\\s+este\\s+momento|tan\\s+pronto\\s+como\\s+sea\\s+posible|tan\\s+pronto\\s+como\\s+(pueda|puedas|podamos|puedan)|lo\\s+m[aá]s\\s+pronto\\s+posible|recientemente|previamente)\\b";
 

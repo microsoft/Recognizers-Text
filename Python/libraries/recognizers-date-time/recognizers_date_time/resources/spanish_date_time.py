@@ -131,7 +131,7 @@ class SpanishDateTime:
     TimeRegex10 = f'(a\\s+la|al)\\s+(madrugada|mañana|medio\\s*d[ií]a|tarde|noche)'
     TimeRegex11 = f'\\b({WrittenTimeRegex})({DescRegex}?)\\b'
     TimeRegex12 = f'(\\b{TimePrefix}\\s+)?{BaseDateTime.HourRegex}(\\s*h\\s*){BaseDateTime.MinuteRegex}(\\s*{DescRegex})?'
-    PrepositionRegex = f'\\b(?<prep>(a(l)?|en|de(l)?)?(\\s*(la(s)?|el|los))?$)\\b'
+    PrepositionRegex = f'\\b(?<prep>^(hasta\\s*|siguiente\\s*)?(a(l)?|en|de(l)?)?(\\s*(la(s)?|el|los))?$)\\b'
     NowRegex = f'\\b(?<now>(justo\\s+)?ahora(\\s+mismo)?|en\\s+este\\s+momento|tan\\s+pronto\\s+como\\s+sea\\s+posible|tan\\s+pronto\\s+como\\s+(pueda|puedas|podamos|puedan)|lo\\s+m[aá]s\\s+pronto\\s+posible|recientemente|previamente)\\b'
     SuffixRegex = f'^\\s*(((y|a|en|por)\\s+la|al)\\s+)?(mañana|madrugada|medio\\s*d[ií]a|tarde|noche)\\b'
     TimeOfDayRegex = f'\\b(?<timeOfDay>mañana|madrugada|(pasado\\s+(el\\s+)?)?medio\\s?d[ií]a|tarde|noche|anoche)\\b'

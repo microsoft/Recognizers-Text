@@ -138,7 +138,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string TimeRegex10 = @"(a\s+la|al)\s+(madrugada|mañana|medio\s*d[ií]a|tarde|noche)";
       public static readonly string TimeRegex11 = $@"\b({WrittenTimeRegex})({DescRegex}?)\b";
       public static readonly string TimeRegex12 = $@"(\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?";
-      public const string PrepositionRegex = @"\b(?<prep>(a(l)?|en|de(l)?)?(\s*(la(s)?|el|los))?$)\b";
+      public const string PrepositionRegex = @"\b(?<prep>^(hasta\s*|siguiente\s*)?(a(l)?|en|de(l)?)?(\s*(la(s)?|el|los))?$)\b";
       public const string NowRegex = @"\b(?<now>(justo\s+)?ahora(\s+mismo)?|en\s+este\s+momento|tan\s+pronto\s+como\s+sea\s+posible|tan\s+pronto\s+como\s+(pueda|puedas|podamos|puedan)|lo\s+m[aá]s\s+pronto\s+posible|recientemente|previamente)\b";
       public const string SuffixRegex = @"^\s*(((y|a|en|por)\s+la|al)\s+)?(mañana|madrugada|medio\s*d[ií]a|tarde|noche)\b";
       public const string TimeOfDayRegex = @"\b(?<timeOfDay>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b";
@@ -496,6 +496,10 @@ namespace Microsoft.Recognizers.Definitions.Spanish
         };
       public const string DefaultLanguageFallback = @"DMY";
       public static readonly string[] DurationDateRestrictions = { @"hoy" };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\buna\b", @"(?<!la\s+)una" },
+        };
       public static readonly IList<string> EarlyMorningTermList = new List<string>
         {
             @"madrugada"
