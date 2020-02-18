@@ -597,5 +597,61 @@
         }
       }
     ]
+  },
+  {
+    "Input": "entre el 2 de febrero y el 5 de marzo",
+    "Context": {
+      "ReferenceDateTime": "2020-02-01T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre el 2 de febrero y el 5 de marzo",
+        "Start": 0,
+        "End": 36,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-02-02,XXXX-03-05,P32D)",
+              "type": "daterange",
+              "start": "2019-02-02",
+              "end": "2019-03-05"
+            },
+            {
+              "timex": "(XXXX-02-02,XXXX-03-05,P32D)",
+              "type": "daterange",
+              "start": "2020-02-02",
+              "end": "2020-03-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "entre el 2 de febrero y 5 de marzo",
+    "Context": {
+      "ReferenceDateTime": "2020-02-05T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre el 2 de febrero y 5 de marzo",
+        "Start": 0,
+        "End": 33,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-02-02,XXXX-03-05,P32D)",
+              "type": "daterange",
+              "start": "2020-02-02",
+              "end": "2020-03-05"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
