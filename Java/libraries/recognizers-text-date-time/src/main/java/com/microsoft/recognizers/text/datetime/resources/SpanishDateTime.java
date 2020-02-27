@@ -123,7 +123,7 @@ public class SpanishDateTime {
             .replace("{MonthRegex}", MonthRegex)
             .replace("{YearRegex}", YearRegex);
 
-    public static final String MonthNumWithYearRegex = "({YearRegex}(\\s*?)[/\\-\\.~](\\s*?){MonthNumRegex})|({MonthNumRegex}(\\s*?)[/\\-\\.~](\\s*?){YearRegex})"
+    public static final String MonthNumWithYearRegex = "\\b(({YearRegex}(\\s*?)[/\\-\\.~](\\s*?){MonthNumRegex})|({MonthNumRegex}(\\s*?)[/\\-\\.~](\\s*?){YearRegex}))\\b"
             .replace("{YearRegex}", YearRegex)
             .replace("{MonthNumRegex}", MonthNumRegex);
 
