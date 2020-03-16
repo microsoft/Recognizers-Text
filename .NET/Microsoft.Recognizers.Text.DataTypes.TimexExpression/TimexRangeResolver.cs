@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 using System;
@@ -212,6 +212,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static IEnumerable<string> ResolveDateAgainstConstraint(TimexProperty timex, DateRange constraint)
         {
+
             if (timex.Month != null && timex.DayOfMonth != null)
             {
                 var result = new List<string>();
@@ -240,6 +241,23 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     t.Month = d.Month;
                     t.DayOfMonth = d.Day;
                     result.Add(t.TimexValue);
+                }
+
+                return result;
+            }
+
+            if (timex.Hour != null)
+            {
+                var result = new List<string>();
+                DateTime day = constraint.Start;
+                while (day <= constraint.End)
+                {
+                    var t = timex.Clone();
+                    t.Year = day.Year;
+                    t.Month = day.Month;
+                    t.DayOfMonth = day.Day;
+                    result.AddRange(ResolveDefiniteAgainstConstraint(t, constraint));
+                    day = day.AddDays(1);
                 }
 
                 return result;
