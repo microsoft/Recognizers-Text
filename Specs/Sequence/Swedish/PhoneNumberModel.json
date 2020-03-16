@@ -41,7 +41,7 @@
         "End": 15,
         "TypeName": "phonenumber",
         "Resolution": {
-          "score": "0,8",
+          "score": "0.8",
           "value": "0414-123 45"
         }
       }
