@@ -35,6 +35,9 @@ ITPhoneNumberRegex: !paramsRegex
 NLPhoneNumberRegex: !paramsRegex
   def: ((((\(\s?(\+\s?|00)31\s?\)\s?)|(((?<!\d)\+\s?|{WordBoundariesRegex}00)31\s?))?((({WordBoundariesRegex}|(?<=31))0?\d{1,3}|\(\s?0?\d{1,3}\s?\)|\(0\)[-\s]?\d{1,3})\s?-?[\d\s]{5,11}\d))|\b\d{10,12})(?!-){EndWordBoundariesRegex}
   params: [ WordBoundariesRegex, EndWordBoundariesRegex  ]
+SEPhoneNumberRegex: !paramsRegex
+  def: ((((\(\s?(\+\s?|00)46\s?\)\s?)|(((?<!\d)\+\s?|{WordBoundariesRegex}00)46\s?))?((({WordBoundariesRegex}|(?<=46))0?\d{1,3}|\(\s?0?\d{1,3}\s?\)|\(0\)[-\s]?\d{1,3})\s?-?[\d\s]{5,11}\d))|\b\d{10,12})(?!-){EndWordBoundariesRegex}
+  params: [ WordBoundariesRegex, EndWordBoundariesRegex  ]
 SpecialPhoneNumberRegex: !paramsRegex
   def: ({WordBoundariesRegex}(\d{3,4}[/-]\d{1,4}[/-]\d{3,4}){EndWordBoundariesRegex})
   params: [ WordBoundariesRegex, EndWordBoundariesRegex  ]

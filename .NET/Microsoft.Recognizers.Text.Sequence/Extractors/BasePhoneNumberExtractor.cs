@@ -64,6 +64,10 @@ namespace Microsoft.Recognizers.Text.Sequence
                     Constants.PHONE_NUMBER_REGEX_NL
                 },
                 {
+                    new Regex(BasePhoneNumbers.SEPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
+                    Constants.PHONE_NUMBER_REGEX_SE
+                },
+                {
                     new Regex(BasePhoneNumbers.SpecialPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_SPECIAL
                 },

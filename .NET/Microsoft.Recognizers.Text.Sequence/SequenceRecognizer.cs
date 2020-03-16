@@ -11,6 +11,7 @@ using Microsoft.Recognizers.Text.Sequence.Italian;
 using Microsoft.Recognizers.Text.Sequence.Korean;
 using Microsoft.Recognizers.Text.Sequence.Portuguese;
 using Microsoft.Recognizers.Text.Sequence.Spanish;
+using Microsoft.Recognizers.Text.Sequence.Swedish;
 using Microsoft.Recognizers.Text.Sequence.Turkish;
 
 namespace Microsoft.Recognizers.Text.Sequence
@@ -194,6 +195,12 @@ namespace Microsoft.Recognizers.Text.Sequence
                 (options) => new PhoneNumberModel(
                     new PhoneNumberParser(),
                     new BasePhoneNumberExtractor(new TurkishPhoneNumberExtractorConfiguration(options))));
+
+            RegisterModel<PhoneNumberModel>(
+                Culture.Swedish,
+                (options) => new PhoneNumberModel(
+                    new PhoneNumberParser(),
+                    new BasePhoneNumberExtractor(new SwedishPhoneNumberExtractorConfiguration(options))));
 
             RegisterModel<IpAddressModel>(
                 Culture.English,
