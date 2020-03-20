@@ -1,6 +1,8 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System;
+
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     public static class TimexValue
@@ -15,19 +17,28 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return string.Empty;
         }
 
-        public static string TimeValue(TimexProperty timexProperty)
+        public static string TimeValue(TimexProperty timexProperty, DateTime date)
         {
             if (timexProperty.Hour != null && timexProperty.Minute != null && timexProperty.Second != null)
             {
-                return $"{TimexDateHelpers.FixedFormatNumber(timexProperty.Hour, 2)}:{TimexDateHelpers.FixedFormatNumber(timexProperty.Minute, 2)}:{TimexDateHelpers.FixedFormatNumber(timexProperty.Second, 2)}";
+                if (date.Kind == DateTimeKind.Utc)
+                {
+                    var timeString = $"{TimexDateHelpers.FixedFormatNumber(timexProperty.Hour, 2)}:{TimexDateHelpers.FixedFormatNumber(timexProperty.Minute, 2)}:{TimexDateHelpers.FixedFormatNumber(timexProperty.Second, 2)}";
+                    var tempDateTime = DateTime.Parse(timeString);
+                    return tempDateTime.ToUniversalTime().ToString("HH:mm:ss");
+                }
+                else
+                {
+                    return $"{TimexDateHelpers.FixedFormatNumber(timexProperty.Hour, 2)}:{TimexDateHelpers.FixedFormatNumber(timexProperty.Minute, 2)}:{TimexDateHelpers.FixedFormatNumber(timexProperty.Second, 2)}";
+                }
             }
 
             return string.Empty;
         }
 
-        public static string DatetimeValue(TimexProperty timexProperty)
+        public static string DatetimeValue(TimexProperty timexProperty, DateTime date)
         {
-            return $"{DateValue(timexProperty)} {TimeValue(timexProperty)}";
+            return $"{DateValue(timexProperty)} {TimeValue(timexProperty, date)}";
         }
 
         public static string DurationValue(TimexProperty timexProperty)
