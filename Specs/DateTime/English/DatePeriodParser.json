@@ -1779,7 +1779,7 @@
         "Text": "Q3",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "Timex": "(XXXX-07-01,XXXX-10-01,P3M)",
           "FutureResolution": {
             "startDate": "2017-07-01",
             "endDate": "2017-10-01"
@@ -1804,7 +1804,7 @@
         "Text": "Q2",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2016-04-01,2016-07-01,P3M)",
+          "Timex": "(XXXX-04-01,XXXX-07-01,P3M)",
           "FutureResolution": {
             "startDate": "2017-04-01",
             "endDate": "2017-07-01"
@@ -5892,6 +5892,158 @@
         },
         "Start": 16,
         "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week commencing february 4",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "the week commencing february 4",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 30,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week starting february 4",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the week starting february 4",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 30,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week starting on february 4",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the week starting on february 4",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 30,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week beginning on february 4",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the week beginning on february 4",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 30,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week beginning february 4",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "the week beginning february 4",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 30,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for w/c feb 4.",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "w/c feb 4",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 30,
+        "Length": 9
       }
     ]
   }

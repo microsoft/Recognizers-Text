@@ -178,11 +178,6 @@ class MergedExtractorConfiguration:
     def ambiguity_filters_dict(self) -> {}:
         raise NotImplementedError
 
-    @property
-    @abstractmethod
-    def filter_word_regex_list(self) -> List[Pattern]:
-        raise NotImplementedError
-
 
 class BaseMergedExtractor(DateTimeExtractor):
     @property
@@ -227,8 +222,8 @@ class BaseMergedExtractor(DateTimeExtractor):
             result, self.config.duration_extractor.extract(source, reference), source)
         result = self.add_to(
             result, self.config.time_period_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.date_time_period_extractor.extract(
-            source, reference), source)
+        result = self.add_to(
+            result, self.config.date_time_period_extractor.extract(source, reference), source)
         result = self.add_to(
             result, self.config.date_time_extractor.extract(source, reference), source)
         result = self.add_to(
@@ -371,10 +366,10 @@ class BaseMergedExtractor(DateTimeExtractor):
                 success = self.try_merge_modifier_token(extract_result, self.config.since_regex, source, True)
 
             if not success:
-                self.try_merge_modifier_token(extract_result, self.config.around_regex, source)
+                success = self.try_merge_modifier_token(extract_result, self.config.around_regex, source)
 
             if not success:
-                self.try_merge_modifier_token(extract_result, self.config.equal_regex, source)
+                success = self.try_merge_modifier_token(extract_result, self.config.equal_regex, source)
 
             if extract_result.type == Constants.SYS_DATETIME_DATEPERIOD or \
                 extract_result.type == Constants.SYS_DATETIME_DATE or \
@@ -382,7 +377,7 @@ class BaseMergedExtractor(DateTimeExtractor):
 
                 start = extract_result.start if extract_result.start else 0
                 length = extract_result.length if extract_result.length else 0
-                after_str = source[start + length:]
+                after_str = source[start + length:].strip()
 
                 match = RegExpUtility.match_begin(self.config.suffix_after_regex, after_str, True)
 
@@ -401,9 +396,8 @@ class BaseMergedExtractor(DateTimeExtractor):
                     if not is_followed_by_other_entity:
                         mod_length = match.length + after_str.index(match.value)
                         extract_result.length += mod_length
-                        start = extract_result.start if extract_result.start else 0
-                        length = extract_result.length if extract_result.length else 0
-                        extract_result.text = source[start: start + length]
+                        extract_result.text = source[start: extract_result.start + extract_result.length]
+                        extract_result.meta_data = self.assign_mod_metadata(extract_result.meta_data)
 
         return extract_results
 
@@ -484,7 +478,7 @@ class BaseMergedExtractor(DateTimeExtractor):
 
     def check_calendar_filter_list(self, ers: List[ExtractResult], source: str) -> List[ExtractResult]:
         for er in reversed(ers):
-            for pattern in self.config.filter_word_regex_list:
+            for pattern in self.config.term_filter_regexes:
                 if regex.search(pattern, er.text):
                     ers.remove(er)
                     break
@@ -506,6 +500,26 @@ class MergedParserConfiguration(ABC):
     @property
     @abstractmethod
     def since_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def around_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def equal_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def year_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def suffix_after(self) -> Pattern:
         raise NotImplementedError
 
     @property
@@ -571,33 +585,169 @@ class BaseMergedParser(DateTimeParser):
         if not reference:
             reference = datetime.now()
 
+        # Push, save the MOD string
         has_before = False
         has_after = False
         has_since = False
+        has_around = False
+        has_equal = False
+        has_date_after = False
+        match_is_after = False
+
+        # "inclusive_mod" means MOD should include the start/end time
+        # For example, cases like "on or later than", "earlier than or in" have inclusive modifier
+        has_inclusive_mod = False
         mod_str = ''
         if source.meta_data and source.meta_data.has_mod:
-            before_match = self.config.before_regex.match(source.text)
-            after_match = self.config.after_regex.match(source.text)
-            since_match = self.config.since_regex.match(source.text)
+            before_match = RegExpUtility.match_begin(self.config.before_regex, source.text, True)
+            after_match = RegExpUtility.match_begin(self.config.after_regex, source.text, True)
+            since_match = RegExpUtility.match_begin(self.config.since_regex, source.text, True)
+            around_match = RegExpUtility.match_begin(self.config.around_regex, source.text, True)
+            equal_match = RegExpUtility.match_begin(self.config.equal_regex, source.text, True)
 
-            if before_match:
+            if before_match and not before_match.success:
+                before_match = RegExpUtility.match_end(self.config.before_regex, source.text, True)
+                match_is_after = match_is_after or before_match.success
+
+            if after_match and not after_match.success:
+                after_match = RegExpUtility.match_end(self.config.after_regex, source.text, True)
+                match_is_after = match_is_after or after_match.success
+
+            if since_match and not since_match.success:
+                since_match = RegExpUtility.match_end(self.config.since_regex, source.text, True)
+                match_is_after = match_is_after or since_match.success
+
+            if around_match and not around_match.success:
+                around_match = RegExpUtility.match_end(self.config.around_regex, source.text, True)
+                match_is_after = match_is_after or around_match.success
+
+            if equal_match and not equal_match.success:
+                equal_match = RegExpUtility.match_end(self.config.equal_regex, source.text, True)
+                match_is_after = match_is_after or equal_match.success
+
+            if before_match and before_match.success:
                 has_before = True
-                source.start += before_match.end()
-                source.length -= before_match.end()
-                source.text = source.text[before_match.end():]
+                source.start += 0 if match_is_after else before_match.length
+                source.length -= before_match.length
+                source.text = source.text[0:source.length] if match_is_after else source.text[before_match.length:]
                 mod_str = before_match.group()
-            elif after_match:
+                if RegExpUtility.get_group(before_match.match[0], "include"):
+                    has_inclusive_mod = True
+            elif after_match and after_match.success:
                 has_after = True
-                source.start += after_match.end()
-                source.length -= after_match.end()
-                source.text = source.text[after_match.end():]
+                source.start += 0 if match_is_after else after_match.length
+                source.length -= after_match.length
+                source.text = source.text[0:source.length] if match_is_after else source.text[after_match.length:]
                 mod_str = after_match.group()
-            elif since_match:
+                if RegExpUtility.get_group(after_match.match[0], "include"):
+                    has_inclusive_mod = True
+            elif since_match and since_match.success:
                 has_since = True
-                source.start += since_match.end()
-                source.length -= since_match.end()
-                source.text = source.text[since_match.end():]
+                source.start += 0 if match_is_after else since_match.length
+                source.length -= since_match.length
+                source.text = source.text[0:source.length] if match_is_after else source.text[since_match.length:]
                 mod_str = since_match.group()
+            elif around_match and around_match.success:
+                has_around = True
+                source.start += 0 if match_is_after else around_match.length
+                source.length -= around_match.length
+                source.text = source.text[0:source.length] if match_is_after else source.text[around_match.length:]
+                mod_str = around_match.group()
+            elif equal_match and equal_match.success:
+                has_equal = True
+                source.start += 0 if match_is_after else equal_match.length
+                source.length -= equal_match.length
+                source.text = source.text[0:source.length] if match_is_after else source.text[equal_match.length:]
+                mod_str = equal_match.group()
+            elif source.type == Constants.SYS_DATETIME_DATEPERIOD and \
+                    regex.search(self.config.year_regex, source.text) or source.type == Constants.SYS_DATETIME_DATE or \
+                    source.type == Constants.SYS_DATETIME_TIME:
+                # This has to be put at the end of the if, or cases like "before 2012" and "after 2012"
+                # would fall into this
+                # 2012 or after/above
+                # 3 pm or later
+                match = RegExpUtility.match_end(self.config.suffix_after, source.text, True)
+                if match and match.success:
+                    has_date_after = True
+                    source.length -= match.length
+                    source.text = source.text[0:source.length]
+                    mod_str = match.group()
+
+        result = self.parse_result(source, reference)
+        if not result:
+            return None
+
+        # Pop, restore the MOD string
+        if has_before and result.value:
+            result.length += len(mod_str)
+            result.start -= 0 if match_is_after else len(mod_str)
+            result.text = result.text + mod_str if match_is_after else mod_str + result.text
+            val = result.value
+
+            val.mod = self.combine_mod(val.mod, TimeTypeConstants.BEFORE_MOD if not has_inclusive_mod else
+                                       TimeTypeConstants.UNTIL_MOD)
+
+            result.value = val
+
+        if has_after and result.value:
+            result.length += len(mod_str)
+            result.start -= len(mod_str)
+            result.text = mod_str + result.text
+            val = result.value
+
+            val.mod = self.combine_mod(val.mod, TimeTypeConstants.AFTER_MOD if not has_inclusive_mod else
+                                       TimeTypeConstants.SINCE_MOD)
+
+            result.value = val
+
+        if has_since and result.value:
+            result.length += len(mod_str)
+            result.start -= len(mod_str)
+            result.text = mod_str + result.text
+            val = result.value
+            val.mod = TimeTypeConstants.SINCE_MOD
+            result.value = val
+
+        if has_around and result.value:
+            result.length += len(mod_str)
+            result.start -= len(mod_str)
+            result.text = mod_str + result.text
+            val = result.value
+            val.mod = TimeTypeConstants.APPROX_MOD
+            result.value = val
+
+        if has_equal and result.value:
+            result.length += len(mod_str)
+            result.start -= len(mod_str)
+            result.text = mod_str + result.text
+
+        if has_date_after and result.value:
+            result.length += len(mod_str)
+            result.text = result.text + mod_str
+            val = result.value
+            val.mod = self.combine_mod(val.mod, TimeTypeConstants.SINCE_MOD)
+            result.value = val
+            has_since = True
+
+        # For cases like "3 pm or later on monday"
+        match = self.config.suffix_after.match(result.text)
+        if result.value and (match.start() != 0 if match else match) and \
+                result.type == Constants.SYS_DATETIME_DATETIME:
+            val = result.value
+            val.mod = self.combine_mod(val.mod, TimeTypeConstants.SINCE_MOD)
+            result.value = val
+            has_since = True
+
+        if self.options & DateTimeOptions.SPLIT_DATE_AND_TIME and result.value and result.value.sub_date_time_entities:
+            result.value = self._date_time_resolution_for_split(result)
+        else:
+            result = self.set_parse_result(
+                result, has_before, has_after, has_since)
+
+        return result
+
+    def parse_result(self, source: ExtractResult, reference: datetime):
+        result = None
 
         if source.type == Constants.SYS_DATETIME_DATE:
             result = self.config.date_parser.parse(source, reference)
@@ -621,37 +771,16 @@ class BaseMergedParser(DateTimeParser):
         else:
             return None
 
-        if has_before and result.value:
-            result.length += len(mod_str)
-            result.start -= len(mod_str)
-            result.text = mod_str + result.text
-            val = result.value
-            val.mod = TimeTypeConstants.BEFORE_MOD
-            result.value = val
-
-        if has_after and result.value:
-            result.length += len(mod_str)
-            result.start -= len(mod_str)
-            result.text = mod_str + result.text
-            val = result.value
-            val.mod = TimeTypeConstants.AFTER_MOD
-            result.value = val
-
-        if has_since and result.value:
-            result.length += len(mod_str)
-            result.start -= len(mod_str)
-            result.text = mod_str + result.text
-            val = result.value
-            val.mod = TimeTypeConstants.SINCE_MOD
-            result.value = val
-
-        if self.options & DateTimeOptions.SPLIT_DATE_AND_TIME and result.value and result.value.sub_date_time_entities:
-            result.value = self._date_time_resolution_for_split(result)
-        else:
-            result = self.set_parse_result(
-                result, has_before, has_after, has_since)
-
         return result
+
+    @staticmethod
+    def combine_mod(original_mod: str, new_mod: str):
+        combined_mod = new_mod
+
+        if original_mod:
+            combined_mod = f"{new_mod}-{original_mod}"
+
+        return combined_mod
 
     def set_parse_result(self, slot: DateTimeParseResult, has_before: bool, has_after: bool, has_since: bool)\
             -> DateTimeParseResult:
@@ -868,6 +997,8 @@ class BaseMergedParser(DateTimeParser):
                 key = TimeTypeConstants.START
             elif mod == TimeTypeConstants.SINCE_MOD:
                 key = TimeTypeConstants.START
+            elif mod == TimeTypeConstants.UNTIL_MOD:
+                key = TimeTypeConstants.END
 
         result[key] = value
 

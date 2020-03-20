@@ -4,6 +4,8 @@ from recognizers_text.utilities import RegExpUtility
 from ...resources.french_date_time import FrenchDateTime
 from ..base_time import TimeExtractorConfiguration
 from ..utilities import DateTimeOptions
+from ..base_timezone import BaseTimeZoneExtractor
+from .timezone_extractor_config import FrenchTimeZoneExtractorConfiguration
 
 
 class FrenchTimeExtractorConfiguration(TimeExtractorConfiguration):
@@ -38,8 +40,8 @@ class FrenchTimeExtractorConfiguration(TimeExtractorConfiguration):
         self._time_before_after_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.TimeBeforeAfterRegex)
         self._options = DateTimeOptions.NONE
-        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
-        self._time_zone_extractor = None
+        self._time_zone_extractor = BaseTimeZoneExtractor(
+            FrenchTimeZoneExtractorConfiguration())
 
     @staticmethod
     def get_time_regex_list() -> List[Pattern]:

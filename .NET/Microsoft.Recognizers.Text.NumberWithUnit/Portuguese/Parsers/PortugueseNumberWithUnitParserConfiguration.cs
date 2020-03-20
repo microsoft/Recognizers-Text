@@ -11,9 +11,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
         public PortugueseNumberWithUnitParserConfiguration(CultureInfo ci)
                : base(ci)
         {
-            this.InternalNumberExtractor = NumberExtractor.GetInstance();
-            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new PortugueseNumberParserConfiguration(
-                                                                                  new BaseNumberOptionsConfiguration(ci.Name)));
+
+            var numConfig = new BaseNumberOptionsConfiguration(Culture.Portuguese, NumberOptions.None);
+
+            this.InternalNumberExtractor = NumberExtractor.GetInstance(numConfig);
+            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                                                                              new PortugueseNumberParserConfiguration(numConfig));
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
         }
 

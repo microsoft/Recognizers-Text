@@ -2,6 +2,7 @@
 using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -66,7 +67,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public EnglishDateTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.English.IntegerExtractor.GetInstance(numConfig);
+
             DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
             TimePointExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));

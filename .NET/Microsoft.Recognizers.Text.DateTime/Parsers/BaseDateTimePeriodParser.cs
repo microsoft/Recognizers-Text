@@ -283,14 +283,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var afterStr = trimmedText.Substring(match.Index + match.Length).Trim();
 
                 // Eliminate time period, if any
-                var timePeriodErs = this.Config.TimePeriodExtractor.Extract(beforeStr);
+                var timePeriodErs = this.Config.TimePeriodExtractor.Extract(beforeStr, referenceTime);
                 if (timePeriodErs.Count > 0)
                 {
                     beforeStr = beforeStr.Remove(timePeriodErs[0].Start ?? 0, timePeriodErs[0].Length ?? 0).Trim();
                 }
                 else
                 {
-                    timePeriodErs = this.Config.TimePeriodExtractor.Extract(afterStr);
+                    timePeriodErs = this.Config.TimePeriodExtractor.Extract(afterStr, referenceTime);
                     if (timePeriodErs.Count > 0)
                     {
                         afterStr = afterStr.Remove(timePeriodErs[0].Start ?? 0, timePeriodErs[0].Length ?? 0).Trim();
@@ -420,8 +420,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
 
-            var dateEr = this.Config.DateExtractor.Extract(text).FirstOrDefault();
-            var timeEr = this.Config.TimeExtractor.Extract(text).FirstOrDefault();
+            var dateEr = this.Config.DateExtractor.Extract(text, referenceTime).FirstOrDefault();
+            var timeEr = this.Config.TimeExtractor.Extract(text, referenceTime).FirstOrDefault();
 
             if (dateEr != null && timeEr != null)
             {
@@ -499,7 +499,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var match = inPrefix ? regex.Item1.MatchExact(text, trim: true) : regex.Item1.MatchBegin(text, trim: true);
                 if (match.Success)
                 {
-                    mod = inPrefix ? regex.Item3 : (match.Groups["include"].Success ? regex.Item2 : regex.Item3);
+                    mod = inPrefix ? regex.Item3 : (match.Groups[Constants.IncludeGroupName].Success ? regex.Item2 : regex.Item3);
                     return mod;
                 }
             }
@@ -511,7 +511,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
 
-            var dateResult = this.Config.DateExtractor.Extract(text);
+            var dateResult = this.Config.DateExtractor.Extract(text, referenceTime);
             if (dateResult.Count > 0)
             {
                 var beforeString = text.Substring(0, (int)dateResult.Last().Start).TrimEnd();
@@ -693,6 +693,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success && (match.Index == 0 || match.Index + match.Length == trimmedText.Length))
             {
+
+                // Just because we think we found a time period doesn't mean it is one, it could be the start of a hyphenated date
+                var hyphenDateMatch = this.Config.HyphenDateRegex.Match(trimmedText);
+
+                if (hyphenDateMatch.Success && hyphenDateMatch.Index >= match.Index && (match.Index + match.Length) <= (hyphenDateMatch.Index + hyphenDateMatch.Length))
+                {
+                    return ret;
+                }
+
                 int beginHour, endHour;
                 ret.Comment = ParseTimePeriod(match, out beginHour, out endHour);
 

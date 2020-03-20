@@ -14,6 +14,7 @@ from .base_date_time import BaseDateTime
 
 
 class EnglishDateTime:
+    LangMarker = 'Eng'
     CheckBothBeforeAfter = False
     TillRegex = f'(?<till>\\b(to|(un)?till?|thru|through)\\b|{BaseDateTime.RangeConnectorSymbolRegex})'
     RangeConnectorRegex = f'(?<and>\\b(and|through|to)\\b|{BaseDateTime.RangeConnectorSymbolRegex})'
@@ -88,7 +89,7 @@ class EnglishDateTime:
     SeasonDescRegex = f'(?<seas>spring|summer|fall|autumn|winter)'
     SeasonRegex = f'\\b(?<season>({PrefixPeriodRegex}\\s+)?({RelativeRegex}\\s+)?{SeasonDescRegex}((\\s+of|\\s*,\\s*)?\\s+({YearRegex}|{RelativeRegex}\\s+year))?)\\b'
     WhichWeekRegex = f'\\b(week)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b'
-    WeekOfRegex = f'(the\\s+)?(week)(\\s+of)(\\s+the)?'
+    WeekOfRegex = f'(the\\s+)?((week)(\\s+(of|(commencing|starting|beginning)(\\s+on)?))|w/c)(\\s+the)?'
     MonthOfRegex = f'(month)(\\s*)(of)'
     MonthRegex = f'(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?)'
     DateYearRegex = f'(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})'
@@ -109,7 +110,7 @@ class EnglishDateTime:
     DatePreposition = f'\\b(on|in)'
     DateExtractorYearTermRegex = f'(\\s+|\\s*,\\s*|\\s+of\\s+){DateYearRegex}'
     DateExtractor1 = f'\\b({WeekDayRegex}\\s*[,-]?\\s*)?(({MonthRegex}[\\.]?\\s*[/\\\\.,-]?\\s*{DayRegex})|(\\({MonthRegex}\\s*[-.]\\s*{DayRegex}\\)))(\\s*\\(\\s*{WeekDayRegex}\\s*\\))?({DateExtractorYearTermRegex}\\b)?'
-    DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}[\\.]?(\\s+|\\s*,\\s*|\\s+of\\s+|\\s*-\\s*){MonthRegex}[\\.]?((\\s+|\\s*,\\s*|\\s+in\\s+){DateYearRegex})?\\b'
+    DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}[\\.]?(\\s+|\\s*,\\s*|\\s+of\\s+|\\s*-\\s*){MonthRegex}[\\.]?((\\s+in)?{DateExtractorYearTermRegex})?\\b'
     DateExtractor4 = f'\\b{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}[\\.]?\\s*[/\\\\\\-]\\s*{DateYearRegex}'
     DateExtractor5 = f'\\b{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}'
     DateExtractor6 = f'(?<={DatePreposition}\\s+)({StrictRelativeRegex}\\s+)?({WeekDayRegex}\\s+)?{MonthNumRegex}[\\-\\.]{DayRegex}(?![%])\\b'
@@ -163,7 +164,7 @@ class EnglishDateTime:
     TimeRegex8 = f'.^'
     TimeRegex9 = f'\\b{PeriodHourNumRegex}(\\s+|-){FivesRegex}((\\s*{DescRegex})|\\b)'
     TimeRegex10 = f'\\b({TimePrefix}\\s+)?{BaseDateTime.HourRegex}(\\s*h\\s*){BaseDateTime.MinuteRegex}(\\s*{DescRegex})?'
-    TimeRegex11 = f'\\b(?:(?:{TimeTokenPrefix}{TimeRegexWithDotConnector})(?!\\s*per\\s*cent|%)|(?:{TimeRegexWithDotConnector}(\\s*{DescRegex})))'
+    TimeRegex11 = f'\\b((?:({TimeTokenPrefix})?{TimeRegexWithDotConnector}(\\s*{DescRegex}))|(?:(?:{TimeTokenPrefix}{TimeRegexWithDotConnector})(?!\\s*per\\s*cent|%)))'
     FirstTimeRegexInTimeRange = f'\\b{TimeRegexWithDotConnector}(\\s*{DescRegex})?'
     PureNumFromTo = f'({RangePrefixRegex}\\s+)?({HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?\\s*{TillRegex}\\s*({HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\\s*({PmRegex}|{AmRegex}|{DescRegex}))?'
     PureNumBetweenAnd = f'(between\\s+)(({BaseDateTime.TwoDigitHourRegex}{BaseDateTime.TwoDigitMinuteRegex})|{HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?\\s*{RangeConnectorRegex}\\s*(({BaseDateTime.TwoDigitHourRegex}{BaseDateTime.TwoDigitMinuteRegex})|{HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\\s*({PmRegex}|{AmRegex}|{DescRegex}))?'
@@ -172,7 +173,7 @@ class EnglishDateTime:
     SuffixAfterRegex = f'\\b(((at)\\s)?(or|and)\\s+(above|after|later|greater)(?!\\s+than))\\b'
     PrepositionRegex = f'(?<prep>^(at|on|of)(\\s+the)?$)'
     LaterEarlyRegex = f'((?<early>early(\\s+|-))|(?<late>late(r?\\s+|-)))'
-    MealTimeRegex = f'\\b(?<mealTime>breakfast|brunch|lunch(time)?|dinner(time)?|supper)\\b'
+    MealTimeRegex = f'\\b(at\\s+)?(?<mealTime>breakfast|brunch|lunch(\\s*time)?|dinner(\\s*time)?|supper)\\b'
     UnspecificTimePeriodRegex = f'({MealTimeRegex})'
     TimeOfDayRegex = f'\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?{LaterEarlyRegex}?(in\\s+(the)?\\s+)?(morning|afternoon|night|evening)))|{MealTimeRegex}|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b'
     SpecificTimeOfDayRegex = f'\\b(({StrictRelativeRegex}\\s+{TimeOfDayRegex})\\b|\\btonight)s?\\b'
@@ -639,7 +640,7 @@ class EnglishDateTime:
                                  ("\\bnow\\b", "\\b(^now,)|\\b((is|are)\\s+now\\s+for|for\\s+now)\\b"),
                                  ("\\bmay\\b", "\\b((((!|\\.|\\?|,|;|)\\s+|^)may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\\b"),
                                  ("\\b(a|one) second\\b", "\\b(?<!an?\\s+)(a|one) second (round|time)\\b"),
-                                 ("\\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$", "(?<!\\b(before|after|around|circa)\\b\\s)(breakfast|brunch|lunch(time)?|dinner(time)?|supper)")])
+                                 ("\\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$", "(?<!\\b(at|before|after|around|circa)\\b\\s)(breakfast|brunch|lunch|dinner|supper)(?!\\s*time)")])
     MorningTermList = [r'morning']
     AfternoonTermList = [r'afternoon']
     EveningTermList = [r'evening']

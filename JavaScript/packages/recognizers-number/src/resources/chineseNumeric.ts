@@ -11,7 +11,7 @@
 
 import { BaseNumbers } from "./baseNumbers";
 export namespace ChineseNumeric {
-    export const LangMarker = 'Chs';
+    export const LangMarker = 'Chi';
     export const CompoundNumberLanguage = true;
     export const MultiDecimalSeparatorCulture = false;
     export const DecimalSeparatorChar = '.';
@@ -95,13 +95,14 @@ export namespace ChineseNumeric {
     export const NumbersSpecialsPercentageRegex = `(${ZeroToNineFullHalfRegex}[\\.．]${ZeroToNineFullHalfRegex}|[1１][0０])\\s*成`;
     export const SimpleSpecialsPercentageRegex = `${ZeroToNineIntegerRegex}\\s*[点點]\\s*${ZeroToNineIntegerRegex}\\s*成`;
     export const SpecialsFoldsPercentageRegex = `半\\s*成|(?<=打)[对對]\\s*折|半\\s*折`;
+    export const SpeicalCharBeforeNumber = `(有|是|为)`;
     export const TillRegex = `(到|至|--|-|—|——|~|–)`;
-    export const MoreRegex = `(大于|多于|高于|超过|大於|多於|高於|超過|>)`;
+    export const MoreRegex = `((大于|多于|高于|超过|大於|多於|高於|超過)了?|>)`;
     export const LessRegex = `(小于|少于|低于|小於|少於|低於|不到|不足|<)`;
     export const EqualRegex = `(等于|等於|=)`;
-    export const MoreOrEqual = `((${MoreRegex}\\s*(或|或者)?\\s*${EqualRegex})|至少|最少|不${LessRegex})`;
+    export const MoreOrEqual = `((${MoreRegex}\\s*(或|或者)?\\s*${EqualRegex})|(至少|最少)${SpeicalCharBeforeNumber}?|不${LessRegex}|≥)`;
     export const MoreOrEqualSuffix = `(或|或者)\\s*(以上|之上|更[大多高])`;
-    export const LessOrEqual = `((${LessRegex}\\s*(或|或者)?\\s*${EqualRegex})|至多|最多|不${MoreRegex})`;
+    export const LessOrEqual = `((${LessRegex}\\s*(或|或者)?\\s*${EqualRegex})|(至多|最多)${SpeicalCharBeforeNumber}?|不${MoreRegex}|≤)`;
     export const LessOrEqualSuffix = `(或|或者)\\s*(以下|之下|更[小少低])`;
     export const OneNumberRangeMoreRegex1 = `(${MoreOrEqual}|${MoreRegex})\\s*(?<number1>((?!([并且而並的同時时]|([,，](?!\\d+))|。)).)+)`;
     export const OneNumberRangeMoreRegex2 = `比\\s*(?<number1>((?!(([,，](?!\\d+))|。)).)+)\\s*更?[大多高]`;
@@ -113,8 +114,8 @@ export namespace ChineseNumeric {
     export const OneNumberRangeLessSeparateRegex = `^[.]`;
     export const OneNumberRangeEqualRegex = `${EqualRegex}\\s*(?<number1>((?!(([,，](?!\\d+))|。)).)+)`;
     export const TwoNumberRangeRegex1 = `((位于|在|位於)|(?=(\\d|\\+|\\-)))\\s*(?<number1>((?!(([,，](?!\\d+))|。)).)+)\\s*(和|与|與|${TillRegex})\\s*(?<number2>((?!(([,，](?!\\d+))|。))[^之])+)\\s*(之)?(间|間)`;
-    export const TwoNumberRangeRegex2 = `(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2}|${OneNumberRangeMoreRegex3})\\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|[,，])?\\s*(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2}|${OneNumberRangeLessRegex3})`;
-    export const TwoNumberRangeRegex3 = `(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2}|${OneNumberRangeLessRegex3})\\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|[,，])?\\s*(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2}|${OneNumberRangeMoreRegex3})`;
+    export const TwoNumberRangeRegex2 = `(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2}|${OneNumberRangeMoreRegex3})\\s*(且|(并|並)且?|而且|((的)?同時)|((的)?同时)|[,，])?\\s*(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2}|${OneNumberRangeLessRegex3})`;
+    export const TwoNumberRangeRegex3 = `(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2}|${OneNumberRangeLessRegex3})\\s*(且|(并|並)且?|而且|((的)?同時)|((的)?同时)|[,，])?\\s*(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2}|${OneNumberRangeMoreRegex3})`;
     export const TwoNumberRangeRegex4 = `(?<number1>((?!(([,，](?!\\d+))|。)).)+)\\s*${TillRegex}\\s*(?<number2>((?!(([,，](?!\\d+))|。)).)+)`;
     export const AmbiguousFractionConnectorsRegex = `^[.]`;
     export const RelativeReferenceOffsetMap: ReadonlyMap<string, string> = new Map<string, string>([["", ""]]);

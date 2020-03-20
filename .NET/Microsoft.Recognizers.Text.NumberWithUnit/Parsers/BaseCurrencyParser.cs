@@ -7,6 +7,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class BaseCurrencyParser : IParser
     {
+        private const int DefaultFractionalSubunit = 100;
+
         private readonly NumberWithUnitParser numberWithUnitParser;
 
         public BaseCurrencyParser(BaseNumberWithUnitParserConfiguration config)
@@ -175,9 +177,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     // Match pure number as fraction unit.
                     if (extractResult.Type.Equals(Constants.SYS_NUM, StringComparison.Ordinal))
                     {
-                        numberValue += (double)parseResult.Value * (1.0 / 100);
-                        result.ResolutionStr += ' ' + parseResult.ResolutionStr;
-                        result.Length = parseResult.Start + parseResult.Length - result.Start;
+                        Config.NonStandardFractionalSubunits.TryGetValue(mainUnitIsoCode, out var fractionMaxValue);
+
+                        fractionMaxValue = fractionMaxValue == 0 ? DefaultFractionalSubunit : fractionMaxValue;
+                        if ((double)parseResult.Value < fractionMaxValue)
+                        {
+                            numberValue += (double)parseResult.Value * (1.0 / fractionMaxValue);
+                            result.ResolutionStr += ' ' + parseResult.ResolutionStr;
+                            result.Length = parseResult.Start + parseResult.Length - result.Start;
+                        }
+
                         count++;
                         continue;
                     }

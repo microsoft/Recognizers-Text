@@ -241,10 +241,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
-            CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
-            OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.English.CardinalExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance(numConfig);
+
+            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration(numConfig));
+
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
         }
 
         public IDateExtractor DatePointExtractor { get; }

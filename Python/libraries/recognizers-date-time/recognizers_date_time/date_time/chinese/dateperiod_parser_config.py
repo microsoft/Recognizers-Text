@@ -251,6 +251,9 @@ class ChineseDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._decade_with_century_regex = None
         self._later_regex = None
         self._ago_regex = None
+        self._check_both_before_after = None
+        self._complex_dateperiod_regex = None
+        self._relative_decade_regex = None
 
     def get_swift_day_or_month(self, source: str) -> int:
         source = source.strip().lower()

@@ -7,5 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         DateTimeOptions Options { get; }
 
         bool DmyDateFormat { get; }
+
+        string LanguageMarker { get; }
     }
 }

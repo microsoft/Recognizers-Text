@@ -56,6 +56,18 @@ class ChineseDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         return self._now_regex
 
     @property
+    def before_regex(self):
+        return self._before_regex
+
+    @property
+    def after_regex(self):
+        return self._after_regex
+
+    @property
+    def datetime_period_unit_regex(self):
+        return self._datetime_period_unit_regex
+
+    @property
     def duration_extractor(self) -> DateTimeExtractor:
         return None
 
@@ -93,6 +105,15 @@ class ChineseDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
 
     def __init__(self):
         super().__init__()
+        self._datetime_period_unit_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DateTimePeriodUnitRegex
+        )
+        self._after_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.AfterRegex
+        )
+        self._before_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.BeforeRegex
+        )
         self._date_point_extractor = ChineseDateExtractor()
         self._time_point_extractor = ChineseTimeExtractor()
         self._now_regex = RegExpUtility.get_safe_reg_exp(

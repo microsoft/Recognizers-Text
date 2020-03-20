@@ -17,17 +17,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexFlags);
         public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexFlags);
         public static readonly Regex EqualRegex = new Regex(BaseDateTime.EqualRegex, RegexFlags);
+        public static readonly Regex PotentialAmbiguousRangeRegex = new Regex(DateTimeDefinitions.FromToRegex, RegexFlags);
+        public static readonly Regex AmbiguousRangeModifierPrefix = new Regex(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly ChineseDateExtractorConfiguration DateExtractor = new ChineseDateExtractorConfiguration();
         private static readonly ChineseTimeExtractorConfiguration TimeExtractor = new ChineseTimeExtractorConfiguration();
         private static readonly ChineseDateTimeExtractorConfiguration DateTimeExtractor = new ChineseDateTimeExtractorConfiguration();
-        private static readonly ChineseDatePeriodExtractorConfiguration DatePeriodExtractor = new ChineseDatePeriodExtractorConfiguration();
         private static readonly ChineseTimePeriodExtractorChsConfiguration TimePeriodExtractor = new ChineseTimePeriodExtractorChsConfiguration();
-        private static readonly ChineseDateTimePeriodExtractorConfiguration DateTimePeriodExtractor = new ChineseDateTimePeriodExtractorConfiguration();
         private static readonly ChineseDurationExtractorConfiguration DurationExtractor = new ChineseDurationExtractorConfiguration();
         private static readonly ChineseSetExtractorConfiguration SetExtractor = new ChineseSetExtractorConfiguration();
+
+        private readonly ChineseDateTimePeriodExtractorConfiguration dateTimePeriodExtractor;
+        private readonly ChineseDatePeriodExtractorConfiguration datePeriodExtractor;
 
         private readonly IDateTimeOptionsConfiguration config;
 
@@ -37,6 +40,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
             HolidayExtractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration(config));
+
+            dateTimePeriodExtractor = new ChineseDateTimePeriodExtractorConfiguration(config);
+            datePeriodExtractor = new ChineseDatePeriodExtractorConfiguration(config);
         }
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
@@ -55,10 +61,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             // the order is important, since there is a problem in merging
             AddTo(ret, TimeExtractor.Extract(text, referenceTime));
             AddTo(ret, DurationExtractor.Extract(text, referenceTime));
-            AddTo(ret, DatePeriodExtractor.Extract(text, referenceTime));
+            AddTo(ret, datePeriodExtractor.Extract(text, referenceTime));
             AddTo(ret, DateTimeExtractor.Extract(text, referenceTime));
             AddTo(ret, TimePeriodExtractor.Extract(text, referenceTime));
-            AddTo(ret, DateTimePeriodExtractor.Extract(text, referenceTime));
+            AddTo(ret, dateTimePeriodExtractor.Extract(text, referenceTime));
             AddTo(ret, SetExtractor.Extract(text, referenceTime));
             AddTo(ret, HolidayExtractor.Extract(text, referenceTime));
 
@@ -125,6 +131,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     var modLength = match.Index + match.Length;
                     er.Length += modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                    er.Metadata = AssignModMetadata(er.Metadata);
                 }
 
                 match = AfterRegex.MatchBegin(afterStr, trim: true);
@@ -134,6 +142,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     var modLength = match.Index + match.Length;
                     er.Length += modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                    er.Metadata = AssignModMetadata(er.Metadata);
                 }
 
                 match = UntilRegex.MatchEnd(beforeStr, trim: true);
@@ -144,16 +154,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     er.Length += modLength;
                     er.Start -= modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                    er.Metadata = AssignModMetadata(er.Metadata);
                 }
 
                 match = SincePrefixRegex.MatchEnd(beforeStr, trim: true);
 
-                if (match.Success)
+                if (match.Success && AmbiguousRangeChecker(beforeStr, text, er))
                 {
                     var modLength = beforeStr.Length - match.Index;
                     er.Length += modLength;
                     er.Start -= modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                    er.Metadata = AssignModMetadata(er.Metadata);
                 }
 
                 match = SinceSuffixRegex.MatchBegin(afterStr, trim: true);
@@ -162,6 +176,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     var modLength = match.Index + match.Length;
                     er.Length += modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                    er.Metadata = AssignModMetadata(er.Metadata);
                 }
 
                 match = EqualRegex.MatchBegin(beforeStr, trim: true);
@@ -171,6 +187,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     er.Length += modLength;
                     er.Start -= modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                    er.Metadata = AssignModMetadata(er.Metadata);
                 }
             }
         }
@@ -214,6 +232,36 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     dst.Insert(indexRm, result);
                 }
             }
+        }
+
+        // Avoid adding mod for ambiguity cases, such as "从" in "从 ... 到 ..." should not add mod
+        // TODO: Revise PotentialAmbiguousRangeRegex to support cases like "从2015年起，哪所大学需要的分数在80到90之间"
+        private bool AmbiguousRangeChecker(string beforeStr, string text, ExtractResult er)
+        {
+            if (AmbiguousRangeModifierPrefix.MatchEnd(beforeStr, true).Success)
+            {
+                var matches = PotentialAmbiguousRangeRegex.Matches(text).Cast<Match>();
+                if (matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private Metadata AssignModMetadata(Metadata metadata)
+        {
+            if (metadata == null)
+            {
+                metadata = new Metadata { HasMod = true };
+            }
+            else
+            {
+                metadata.HasMod = true;
+            }
+
+            return metadata;
         }
     }
 }

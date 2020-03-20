@@ -16,13 +16,8 @@ class SpanishDateTimePeriodParser(BaseDateTimePeriodParser):
         trimmed_text = source.strip().lower()
 
         # Handle morning, afternoon..
-        match = self.config.get_matched_time_range(trimmed_text)
-        begin_hour = match.begin_hour
-        end_hour = match.end_hour
-        end_min = match.end_min
-        time_str = match.time_str
-
-        if match and not match.success:
+        values = self.config.get_matched_time_range(trimmed_text)
+        if not values.success:
             return result
 
         match = self.config.specific_time_of_day_regex.match(trimmed_text)
@@ -36,13 +31,13 @@ class SpanishDateTimePeriodParser(BaseDateTimePeriodParser):
             month = date.month
             year = date.year
 
-            result.timex = DateTimeFormatUtil.format_date(date) + time_str
+            result.timex = DateTimeFormatUtil.format_date(date) + values.time_str
 
             result.past_value = [
                 DateUtils.safe_create_from_value(
-                    DateUtils.min_value, year, month, day, begin_hour, 0, 0),
+                    DateUtils.min_value, year, month, day, values.begin_hour, 0, 0),
                 DateUtils.safe_create_from_value(
-                    DateUtils.min_value, year, month, day, end_hour, end_min, end_min)
+                    DateUtils.min_value, year, month, day, values.end_hour, values.end_min, values.end_min)
             ]
             result.future_value = result.past_value
 
@@ -71,19 +66,19 @@ class SpanishDateTimePeriodParser(BaseDateTimePeriodParser):
             future_date = pr.value.future_value
             past_date = pr.value.past_value
 
-            result.timex = pr.timex_str + time_str
+            result.timex = pr.timex_str + values.time_str
 
             result.future_value = [
                 DateUtils.safe_create_from_value(
-                    DateUtils.min_value, future_date.year, future_date.month, future_date.day, begin_hour, 0, 0),
+                    DateUtils.min_value, future_date.year, future_date.month, future_date.day, values.begin_hour, 0, 0),
                 DateUtils.safe_create_from_value(
-                    DateUtils.min_value, future_date.year, future_date.month, future_date.day, end_hour, end_min, end_min)
+                    DateUtils.min_value, future_date.year, future_date.month, future_date.day, values.end_hour, values.end_min, values.end_min)
             ]
             result.past_value = [
                 DateUtils.safe_create_from_value(
-                    DateUtils.min_value, past_date.year, past_date.month, past_date.day, begin_hour, 0, 0),
+                    DateUtils.min_value, past_date.year, past_date.month, past_date.day, values.begin_hour, 0, 0),
                 DateUtils.safe_create_from_value(
-                    DateUtils.min_value, past_date.year, past_date.month, past_date.day, end_hour, end_min, end_min)
+                    DateUtils.min_value, past_date.year, past_date.month, past_date.day, values.end_hour, values.end_min, values.end_min)
             ]
 
             result.success = True

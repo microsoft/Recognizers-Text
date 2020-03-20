@@ -7,11 +7,16 @@ from ...resources.french_date_time import FrenchDateTime
 from ..extractors import DateTimeExtractor
 from ..base_timeperiod import TimePeriodExtractorConfiguration, MatchedIndex
 from ..base_time import BaseTimeExtractor
+from ..base_timezone import BaseTimeZoneExtractor
 from .time_extractor_config import FrenchTimeExtractorConfiguration
 from .base_configs import FrenchDateTimeUtilityConfiguration
+from .timezone_extractor_config import FrenchTimeZoneExtractorConfiguration
 
 
 class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
+    @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
 
     @property
     def simple_cases_regex(self) -> List[Pattern]:
@@ -45,8 +50,13 @@ class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
     def pure_number_regex(self) -> List[Pattern]:
         return self._pure_number_regex
 
+    @property
+    def time_zone_extractor(self) -> DateTimeExtractor:
+        return self._time_zone_extractor
+
     def __init__(self):
         super().__init__()
+        self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
         self._single_time_extractor = BaseTimeExtractor(
             FrenchTimeExtractorConfiguration())
         self._integer_extractor = FrenchIntegerExtractor()
@@ -74,6 +84,8 @@ class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
             FrenchDateTime.BeforeRegex2)
         self._token_before_date = FrenchDateTime.TokenBeforeDate
         self._pure_number_regex = [FrenchDateTime.PureNumFromTo, FrenchDateTime.PureNumFromTo]
+        self._time_zone_extractor = BaseTimeZoneExtractor(
+            FrenchTimeZoneExtractorConfiguration())
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)
@@ -89,9 +101,5 @@ class FrenchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
         return MatchedIndex(False, -1)
 
-    def has_connector_token(self, source: str) -> MatchedIndex:
-        match = self.connector_and_regex.search(source)
-        if match:
-            return MatchedIndex(True, match.start())
-
-        return MatchedIndex(False, -1)
+    def is_connector_token(self, source: str):
+        return self.connector_and_regex.match(source)

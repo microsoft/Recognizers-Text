@@ -1449,12 +1449,14 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 ret.setFutureValue(new Pair<>(beginDate, endDate));
                 ret.setPastValue(new Pair<>(beginDate, endDate));
             }
+
+            ret.setTimex(String.format("(%s,%s,P3M)", DateTimeFormatUtil.luisDate(-1, beginDate.getMonthValue(), 1), DateTimeFormatUtil.luisDate(-1, endDate.getMonthValue(), 1)));
         } else {
             ret.setFutureValue(new Pair<>(beginDate, endDate));
             ret.setPastValue(new Pair<>(beginDate, endDate));
+            ret.setTimex(String.format("(%s,%s,P3M)", DateTimeFormatUtil.luisDate(beginDate), DateTimeFormatUtil.luisDate(endDate)));
         }
 
-        ret.setTimex(String.format("(%s,%s,P3M)", DateTimeFormatUtil.luisDate(beginDate), DateTimeFormatUtil.luisDate(endDate)));
         ret.setSuccess(true);
 
         return ret;

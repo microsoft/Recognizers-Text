@@ -11,6 +11,7 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace EnglishDateTime {
+    export const LangMarker = 'Eng';
     export const CheckBothBeforeAfter = false;
     export const TillRegex = `(?<till>\\b(to|(un)?till?|thru|through)\\b|${BaseDateTime.RangeConnectorSymbolRegex})`;
     export const RangeConnectorRegex = `(?<and>\\b(and|through|to)\\b|${BaseDateTime.RangeConnectorSymbolRegex})`;
@@ -85,7 +86,7 @@ export namespace EnglishDateTime {
     export const SeasonDescRegex = `(?<seas>spring|summer|fall|autumn|winter)`;
     export const SeasonRegex = `\\b(?<season>(${PrefixPeriodRegex}\\s+)?(${RelativeRegex}\\s+)?${SeasonDescRegex}((\\s+of|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))?)\\b`;
     export const WhichWeekRegex = `\\b(week)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b`;
-    export const WeekOfRegex = `(the\\s+)?(week)(\\s+of)(\\s+the)?`;
+    export const WeekOfRegex = `(the\\s+)?((week)(\\s+(of|(commencing|starting|beginning)(\\s+on)?))|w/c)(\\s+the)?`;
     export const MonthOfRegex = `(month)(\\s*)(of)`;
     export const MonthRegex = `(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?)`;
     export const DateYearRegex = `(?<year>${BaseDateTime.FourDigitYearRegex}|${TwoDigitYearRegex})`;
@@ -106,7 +107,7 @@ export namespace EnglishDateTime {
     export const DatePreposition = `\\b(on|in)`;
     export const DateExtractorYearTermRegex = `(\\s+|\\s*,\\s*|\\s+of\\s+)${DateYearRegex}`;
     export const DateExtractor1 = `\\b(${WeekDayRegex}\\s*[,-]?\\s*)?((${MonthRegex}[\\.]?\\s*[/\\\\.,-]?\\s*${DayRegex})|(\\(${MonthRegex}\\s*[-.]\\s*${DayRegex}\\)))(\\s*\\(\\s*${WeekDayRegex}\\s*\\))?(${DateExtractorYearTermRegex}\\b)?`;
-    export const DateExtractor3 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}[\\.]?(\\s+|\\s*,\\s*|\\s+of\\s+|\\s*-\\s*)${MonthRegex}[\\.]?((\\s+|\\s*,\\s*|\\s+in\\s+)${DateYearRegex})?\\b`;
+    export const DateExtractor3 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}[\\.]?(\\s+|\\s*,\\s*|\\s+of\\s+|\\s*-\\s*)${MonthRegex}[\\.]?((\\s+in)?${DateExtractorYearTermRegex})?\\b`;
     export const DateExtractor4 = `\\b${MonthNumRegex}\\s*[/\\\\\\-]\\s*${DayRegex}[\\.]?\\s*[/\\\\\\-]\\s*${DateYearRegex}`;
     export const DateExtractor5 = `\\b${DayRegex}\\s*[/\\\\\\-\\.]\\s*(${MonthNumRegex}|${MonthRegex})\\s*[/\\\\\\-\\.]\\s*${DateYearRegex}`;
     export const DateExtractor6 = `(?<=${DatePreposition}\\s+)(${StrictRelativeRegex}\\s+)?(${WeekDayRegex}\\s+)?${MonthNumRegex}[\\-\\.]${DayRegex}(?![%])\\b`;
@@ -160,7 +161,7 @@ export namespace EnglishDateTime {
     export const TimeRegex8 = `.^`;
     export const TimeRegex9 = `\\b${PeriodHourNumRegex}(\\s+|-)${FivesRegex}((\\s*${DescRegex})|\\b)`;
     export const TimeRegex10 = `\\b(${TimePrefix}\\s+)?${BaseDateTime.HourRegex}(\\s*h\\s*)${BaseDateTime.MinuteRegex}(\\s*${DescRegex})?`;
-    export const TimeRegex11 = `\\b(?:(?:${TimeTokenPrefix}${TimeRegexWithDotConnector})(?!\\s*per\\s*cent|%)|(?:${TimeRegexWithDotConnector}(\\s*${DescRegex})))`;
+    export const TimeRegex11 = `\\b((?:(${TimeTokenPrefix})?${TimeRegexWithDotConnector}(\\s*${DescRegex}))|(?:(?:${TimeTokenPrefix}${TimeRegexWithDotConnector})(?!\\s*per\\s*cent|%)))`;
     export const FirstTimeRegexInTimeRange = `\\b${TimeRegexWithDotConnector}(\\s*${DescRegex})?`;
     export const PureNumFromTo = `(${RangePrefixRegex}\\s+)?(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?\\s*${TillRegex}\\s*(${HourRegex}|${PeriodHourNumRegex})(?<rightDesc>\\s*(${PmRegex}|${AmRegex}|${DescRegex}))?`;
     export const PureNumBetweenAnd = `(between\\s+)((${BaseDateTime.TwoDigitHourRegex}${BaseDateTime.TwoDigitMinuteRegex})|${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?\\s*${RangeConnectorRegex}\\s*((${BaseDateTime.TwoDigitHourRegex}${BaseDateTime.TwoDigitMinuteRegex})|${HourRegex}|${PeriodHourNumRegex})(?<rightDesc>\\s*(${PmRegex}|${AmRegex}|${DescRegex}))?`;
@@ -169,7 +170,7 @@ export namespace EnglishDateTime {
     export const SuffixAfterRegex = `\\b(((at)\\s)?(or|and)\\s+(above|after|later|greater)(?!\\s+than))\\b`;
     export const PrepositionRegex = `(?<prep>^(at|on|of)(\\s+the)?$)`;
     export const LaterEarlyRegex = `((?<early>early(\\s+|-))|(?<late>late(r?\\s+|-)))`;
-    export const MealTimeRegex = `\\b(?<mealTime>breakfast|brunch|lunch(time)?|dinner(time)?|supper)\\b`;
+    export const MealTimeRegex = `\\b(at\\s+)?(?<mealTime>breakfast|brunch|lunch(\\s*time)?|dinner(\\s*time)?|supper)\\b`;
     export const UnspecificTimePeriodRegex = `(${MealTimeRegex})`;
     export const TimeOfDayRegex = `\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?${LaterEarlyRegex}?(in\\s+(the)?\\s+)?(morning|afternoon|night|evening)))|${MealTimeRegex}|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b`;
     export const SpecificTimeOfDayRegex = `\\b((${StrictRelativeRegex}\\s+${TimeOfDayRegex})\\b|\\btonight)s?\\b`;
@@ -284,7 +285,7 @@ export namespace EnglishDateTime {
     export const DefaultLanguageFallback = 'MDY';
     export const SuperfluousWordList = [ "preferably","how about","maybe","say","like" ];
     export const DurationDateRestrictions = [ "today","now" ];
-    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^(morning|afternoon|evening|night|day)\\b", "\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b"],["\\bnow\\b", "\\b(^now,)|\\b((is|are)\\s+now\\s+for|for\\s+now)\\b"],["\\bmay\\b", "\\b((((!|\\.|\\?|,|;|)\\s+|^)may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\\b"],["\\b(a|one) second\\b", "\\b(?<!an?\\s+)(a|one) second (round|time)\\b"],["\\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$", "(?<!\\b(before|after|around|circa)\\b\\s)(breakfast|brunch|lunch(time)?|dinner(time)?|supper)"]]);
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^(morning|afternoon|evening|night|day)\\b", "\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b"],["\\bnow\\b", "\\b(^now,)|\\b((is|are)\\s+now\\s+for|for\\s+now)\\b"],["\\bmay\\b", "\\b((((!|\\.|\\?|,|;|)\\s+|^)may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\\b"],["\\b(a|one) second\\b", "\\b(?<!an?\\s+)(a|one) second (round|time)\\b"],["\\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$", "(?<!\\b(at|before|after|around|circa)\\b\\s)(breakfast|brunch|lunch|dinner|supper)(?!\\s*time)"]]);
     export const MorningTermList = [ "morning" ];
     export const AfternoonTermList = [ "afternoon" ];
     export const EveningTermList = [ "evening" ];

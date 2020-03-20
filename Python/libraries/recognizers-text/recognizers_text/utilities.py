@@ -1,4 +1,5 @@
 import re
+import unicodedata
 from typing import Pattern, Union, List, Match
 import regex
 from emoji import UNICODE_EMOJI
@@ -82,10 +83,13 @@ class RegExpUtility:
         return regex.compile(source, flags=flags)
 
     @staticmethod
-    def get_group(match: Match, group: str, default_val: str = '') -> str:
+    def get_group(match, group: str, default_val: str = '') -> str:
         if match is None:
             return None
-        return match.groupdict().get(group, default_val) or default_val
+        try:
+            return match.groupdict().get(group, default_val) or default_val
+        except:
+            return match.match[0].groupdict().get(group, default_val) or default_val
 
     @staticmethod
     def get_group_list(match: Match, group: str) -> List[str]:
@@ -207,6 +211,18 @@ class QueryProcessor:
     @staticmethod
     def float_or_int(source: Union[float, int]) -> Union[float, int]:
         return float(source) if source % 1 else int(source)
+
+    @staticmethod
+    def remove_diacritics(query: str) -> str:
+        if not query:
+            return None
+
+        # NFD indicates that a Unicode string is normalized using full canonical decomposition.
+        chars = ''.join((c for c in unicodedata.normalize('NFD', query) if unicodedata.category(c) != 'Mn'))
+
+        # NFC indicates that a Unicode string is normalized using full canonical decomposition,
+        # followed by the replacement of sequences with their primary composites, if possible.
+        return str(unicodedata.normalize('NFC', chars)).lower()
 
 
 def flatten(result):

@@ -428,13 +428,13 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Time:
                     return new DateTime.Chinese.ChineseTimeExtractorConfiguration();
                 case DateTimeExtractors.DatePeriod:
-                    return new DateTime.Chinese.ChineseDatePeriodExtractorConfiguration();
+                    return new DateTime.Chinese.ChineseDatePeriodExtractorConfiguration(defaultConfig);
                 case DateTimeExtractors.TimePeriod:
                     return new DateTime.Chinese.ChineseTimePeriodExtractorChsConfiguration();
                 case DateTimeExtractors.DateTime:
                     return new DateTime.Chinese.ChineseDateTimeExtractorConfiguration();
                 case DateTimeExtractors.DateTimePeriod:
-                    return new DateTime.Chinese.ChineseDateTimePeriodExtractorConfiguration();
+                    return new DateTime.Chinese.ChineseDateTimePeriodExtractorConfiguration(defaultConfig);
                 case DateTimeExtractors.Duration:
                     return new DateTime.Chinese.ChineseDurationExtractorConfiguration();
                 case DateTimeExtractors.Holiday:

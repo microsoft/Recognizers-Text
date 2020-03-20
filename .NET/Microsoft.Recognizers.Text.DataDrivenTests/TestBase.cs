@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
@@ -343,10 +342,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(testSpec));
 
-            foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
+            foreach (var (expected, actual) in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
-                var expected = tuple.Item1;
-                var actual = tuple.Item2;
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(testSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(testSpec));

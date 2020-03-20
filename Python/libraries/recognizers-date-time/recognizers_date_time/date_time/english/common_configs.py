@@ -32,6 +32,7 @@ from .datetime_extractor_config import EnglishDateTimeExtractorConfiguration
 from .datetime_parser_config import EnglishDateTimeParserConfiguration
 from .datetimeperiod_extractor_config import EnglishDateTimePeriodExtractorConfiguration
 from .datetimeperiod_parser_config import EnglishDateTimePeriodParserConfiguration
+from ..base_timezone import BaseTimeZoneParser
 
 
 class EnglishCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
@@ -50,6 +51,10 @@ class EnglishCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
     @property
     def ordinal_extractor(self) -> BaseNumberExtractor:
         return self._ordinal_extractor
+
+    @property
+    def time_zone_parser(self) -> BaseTimeZoneParser:
+        return self._time_zone_parser
 
     @property
     def number_parser(self) -> BaseNumberParser:
@@ -165,6 +170,7 @@ class EnglishCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
         self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._day_of_month = {
             **BaseDateTime.DayOfMonthDictionary, **EnglishDateTime.DayOfMonth}
+        self._time_zone_parser = BaseTimeZoneParser()
         self._number_parser = BaseNumberParser(
             EnglishNumberParserConfiguration())
         self._date_extractor = BaseDateExtractor(

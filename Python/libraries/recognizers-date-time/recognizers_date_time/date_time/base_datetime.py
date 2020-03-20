@@ -798,6 +798,5 @@ class BaseDateTimeParser(DateTimeParser):
             self.config.duration_parser,
             self.config.unit_map,
             self.config.unit_regex,
-            self.config.utility_configuration,
-            AgoLaterMode.DATETIME
+            self.config.utility_configuration
         )

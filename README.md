@@ -3,7 +3,7 @@
 ![Build Status](https://msrasia.visualstudio.com/_apis/public/build/definitions/310c848f-b260-4305-9255-b97bfb69974b/116/badge)
 ![Build Status](https://ci.appveyor.com/api/projects/status/github/Microsoft/Recognizers-Text?branch=master&svg=true&passingText=all%20plats%20-%20OK)
 
-Microsoft.Recognizers.Text provides robust recognition and resolution of entities like numbers, units, and date/time; expressed in multiple languages. Full support for Chinese, English, French, Spanish, Portuguese, German, Italian, and Turkish. Partial support for Dutch, Japanese, Korean, Swedish, and Hindi. More on the way.
+Microsoft.Recognizers.Text provides robust recognition and resolution of entities like numbers, units, and date/time; expressed in multiple languages. Full support for Chinese, English, French, Spanish, Portuguese, German, Italian, Turkish, and Hindi. Partial support for Dutch, Japanese, Korean, and Swedish. More on the way.
 
 # Utilizing the Project
 
@@ -67,9 +67,9 @@ The table below summarizes the currently supported entities. Support for English
 | Percentage           | ✓    | :x:     | ✓    | ✓      | :x:   |         |        |        |        |         |
 | Number Range         | :x:  | :x:     | ✓     | :x:    | :x:   |         |        |        |        |         |
 | Unit - Age           | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         |
-| Unit - Currency      | :x:  | :x:     | ✓     | **SO** | :x:   |         |        |        |        |         |
-| Unit - Dimensions    | :x:  | :x:     | ✓     | **SO** | :x:   |         |        |        |        |         | 
-| Unit - Temperature   | :x:  | :x:     | ✓    | ✓      | :x:   |         |        |        |        |         | 
+| Unit - Currency      | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         |
+| Unit - Dimensions    | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         | 
+| Unit - Temperature   | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         | 
 | Choice - Boolean     | ✓    | ✓      | ✓     | ✓      | ✓    |         |        |        |        |         |
 | Seq. - E-mail        | G    | G       | G     | G      | G     |         |        |        |        |         |
 | Seq. - GUID          | G    | G       | G     | G      | G     |         |        |        |        |         |
@@ -77,7 +77,7 @@ The table below summarizes the currently supported entities. Support for English
 | Seq. - IP Address    | G    | G       | G     | G      | G     |         |        |        |        |         |
 | Seq. - Phone Number  | :x:  | :x:     | :x:   | :x:    | :x:   |         |        |        |        |         |
 | Seq. - URL           | G    | G       | G     | G*     | G*    |         |        |        |        |         |
-| DateTime (+subtypes) | :x:  | :x:     | ✓    | :x:     | :x:   |         |        |        |        |         |
+| DateTime (+subtypes) | :x:  | :x:     | ✓     | ✓      | :x:   |         |        |        |        |         |
 
 * G: Generic entity, not language-specific (* unicode TLDs not-supported);
 * PA: Partial support;

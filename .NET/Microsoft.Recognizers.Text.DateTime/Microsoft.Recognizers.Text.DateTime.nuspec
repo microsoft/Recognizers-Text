@@ -6,7 +6,8 @@
     <title>$title$</title>
     <authors>Microsoft</authors>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>Microsoft.Recognizers.Text.DateTime provides robust recognition and resolution of Date and Time expressed in English, Spanish, French, Portuguese, and Chinese.</description>
+    <description>Microsoft.Recognizers.Text.DateTime provides robust recognition and resolution of Date and Time expressed in English, Spanish, French, Portuguese, Chinese,
+    German, Italian, and Turkish.</description>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/Microsoft/Recognizers-Text</projectUrl>
     <icon>images\icon.png</icon>
@@ -20,8 +21,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\build\package\net45\Microsoft.Recognizers.Text.DateTime.dll" target="lib\net45"/>
-    <file src="..\build\package\net452\Microsoft.Recognizers.Text.DateTime.dll" target="lib\net452"/>
     <file src="..\build\package\net462\Microsoft.Recognizers.Text.DateTime.dll" target="lib\net462"/>
     <file src="..\build\package\netstandard2.0\Microsoft.Recognizers.Text.DateTime.dll" target="lib\netstandard2.0"/>
     <file src="**\*.cs" exclude="**\obj\**\*.cs" target="src" />

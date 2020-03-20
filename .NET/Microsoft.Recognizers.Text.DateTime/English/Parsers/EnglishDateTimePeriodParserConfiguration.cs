@@ -41,6 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
+            HyphenDateRegex = EnglishDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = EnglishDateTimePeriodExtractorConfiguration.PeriodSpecificTimeOfDayRegex;
             TimeOfDayRegex = EnglishDateTimeExtractorConfiguration.TimeOfDayRegex;
@@ -92,6 +93,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IDateTimeParser TimeZoneParser { get; }
 
         public Regex PureNumberFromToRegex { get; }
+
+        public Regex HyphenDateRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
 

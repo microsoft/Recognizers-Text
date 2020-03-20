@@ -163,13 +163,27 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     srcUnit = match.Groups["unit"].Value;
                     suffixStr = match.Groups[Constants.SuffixGroupName].Value;
+
+                    // check also beforeStr for "and an half"
+                    if (this.config.CheckBothBeforeAfter && string.IsNullOrEmpty(suffixStr))
+                    {
+                        noNum = text.Substring(0, (int)ers[0].Start).Trim();
+                        var prefixMatch = this.config.SuffixAndRegex.Match(noNum);
+                        if (prefixMatch.Success)
+                        {
+                            suffixStr = prefixMatch.Groups[Constants.SuffixGroupName].Value;
+                        }
+                    }
                 }
 
                 if (match.Success && match.Groups[Constants.BusinessDayGroupName].Success)
                 {
                     var numVal = int.Parse(pr.Value.ToString(), CultureInfo.InvariantCulture);
                     ret.Timex = TimexUtility.GenerateDurationTimex(numVal, Constants.TimexBusinessDay, false);
-                    ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit.Split()[1]];
+
+                    // The line below was containing this.config.UnitValueMap[srcUnit.Split()[1]]
+                    // it was updated to accommodate single word "business day" expressions.
+                    ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit.Split()[srcUnit.Split().Length - 1]];
                     ret.Success = true;
 
                     return ret;
@@ -277,7 +291,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 else if (match.Groups[Constants.BusinessDayGroupName].Success)
                 {
                     ret.Timex = TimexUtility.GenerateDurationTimex(numVal, Constants.TimexBusinessDay, false);
-                    ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit.Split()[1]];
+
+                    // The line below was containing this.config.UnitValueMap[srcUnit.Split()[1]]
+                    // it was updated to accommodate single word "business day" expressions.
+                    ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit.Split()[srcUnit.Split().Length - 1]];
                     ret.Success = true;
                 }
             }
@@ -314,7 +331,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 else if (match.Groups[Constants.BusinessDayGroupName].Success)
                 {
                     ret.Timex = TimexUtility.GenerateDurationTimex(numVal, Constants.TimexBusinessDay, false);
-                    ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit.Split()[1]];
+
+                    // The line below was containing this.config.UnitValueMap[srcUnit.Split()[1]]
+                    // it was updated to accommodate single word "business day" expressions.
+                    ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit.Split()[srcUnit.Split().Length - 1]];
                     ret.Success = true;
                 }
             }
@@ -382,7 +402,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var durationExtractor = this.config.DurationExtractor;
 
             // DurationExtractor without parameter will not extract merged duration
-            var ers = durationExtractor.Extract(text);
+            var ers = durationExtractor.Extract(text, referenceTime);
 
             // only handle merged duration cases like "1 month 21 days"
             if (ers.Count <= 1)

@@ -1692,5 +1692,22 @@
         "End": 12
       }
     ]
+  },
+  {
+    "Input": "mustafa ustaya 10 bin lira 1111-22223333-4444 nolu hesaba havale yap",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 bin lira",
+        "Start": 15,
+        "End": 25,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "TRY",
+          "unit": "Turkish lira",
+          "value": "10000"
+        }
+      }
+    ]
   }
 ]

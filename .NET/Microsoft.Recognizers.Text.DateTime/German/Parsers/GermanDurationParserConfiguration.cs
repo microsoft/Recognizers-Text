@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
@@ -33,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IExtractor CardinalExtractor { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public IParser NumberParser { get; }
 
@@ -60,6 +61,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex DurationUnitRegex { get; }
 
         public Regex SpecialNumberUnitRegex { get; }
+
+        bool IDurationParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

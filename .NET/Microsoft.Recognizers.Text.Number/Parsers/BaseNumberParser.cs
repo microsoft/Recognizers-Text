@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             if (!(extResult.Data is string extra))
             {
-                extra = LongFormatRegex.Match(extResult.Text).Success ? Constants.NUMBER_SUFFIX : Config.LangMarker;
+                extra = LongFormatRegex.Match(extResult.Text).Success ? Constants.NUMBER_SUFFIX : Config.LanguageMarker;
             }
 
             // Resolve symbol prefix
@@ -108,12 +108,12 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 ret = DigitNumberParse(extResult);
             }
-            else if (extra.Contains($"{Constants.FRACTION_PREFIX}{Config.LangMarker}"))
+            else if (extra.Contains($"{Constants.FRACTION_PREFIX}{Config.LanguageMarker}"))
             {
                 // Such fractions are special cases, parse via another method
                 ret = FracLikeNumberParse(extResult);
             }
-            else if (extra.Contains(Config.LangMarker))
+            else if (extra.Contains(Config.LanguageMarker))
             {
                 ret = TextNumberParse(extResult);
             }

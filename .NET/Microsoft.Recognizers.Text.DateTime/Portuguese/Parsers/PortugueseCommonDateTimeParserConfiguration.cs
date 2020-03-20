@@ -26,11 +26,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             WrittenDecades = DateTimeDefinitions.WrittenDecades.ToImmutableDictionary();
             SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases.ToImmutableDictionary();
 
-            CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance();
-            IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.Portuguese.OrdinalExtractor.GetInstance();
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
 
-            NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance(numConfig);
+            IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.Portuguese.OrdinalExtractor.GetInstance(numConfig);
+
+            NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration(numConfig));
+
             DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration(this));

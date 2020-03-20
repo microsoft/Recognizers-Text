@@ -2,9 +2,11 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.InternalCache;
+
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class Token
+    public class Token : ICloneableType<Token>
     {
 
         public Token(int s, int e, Metadata metadata = null)
@@ -111,6 +113,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
+        }
+
+        public Token Clone()
+        {
+            return (Token)MemberwiseClone();
         }
     }
 }

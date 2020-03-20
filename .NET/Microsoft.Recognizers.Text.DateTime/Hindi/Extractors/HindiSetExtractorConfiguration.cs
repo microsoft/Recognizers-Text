@@ -34,6 +34,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
+        private static readonly Regex EachDayRegexPrefix =
+            new Regex(DateTimeDefinitions.EachDayRegexPrefix, RegexFlags);
+
         public HindiSetExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
@@ -72,7 +75,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         Regex ISetExtractorConfiguration.EachDayRegex => EachDayRegex;
 
-        Regex ISetExtractorConfiguration.BeforeEachDayRegex => null;
+        Regex ISetExtractorConfiguration.BeforeEachDayRegex => EachDayRegexPrefix;
 
         Regex ISetExtractorConfiguration.SetWeekDayRegex => SetWeekDayRegex;
 

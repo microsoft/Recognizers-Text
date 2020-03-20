@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
-using Microsoft.Recognizers.Text;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
@@ -85,8 +85,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly ChineseDateExtractorConfiguration DatePointExtractor = new ChineseDateExtractorConfiguration();
 
-        private static readonly IntegerExtractor IntegerExtractor = new IntegerExtractor();
-
         private static readonly Regex[] SimpleCasesRegexes =
         {
             SimpleCasesRegex,
@@ -104,6 +102,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             QuarterRegex,
             DecadeRegex,
         };
+
+        private readonly IntegerExtractor integerExtractor;
+
+        public ChineseDatePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
+        {
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            integerExtractor = new IntegerExtractor(numConfig);
+        }
 
         public List<ExtractResult> Extract(string text)
         {
@@ -184,12 +197,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // extract case like "前两年" "前三个月"
-        private static List<Token> MatchNumberWithUnit(string text)
+        private List<Token> MatchNumberWithUnit(string text)
         {
             var ret = new List<Token>();
 
             var durations = new List<Token>();
-            var ers = IntegerExtractor.Extract(text);
+            var ers = integerExtractor.Extract(text);
 
             foreach (var er in ers)
             {

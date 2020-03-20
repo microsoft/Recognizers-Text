@@ -2,7 +2,6 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Swedish;
 
 namespace Microsoft.Recognizers.Text.Number.Swedish
@@ -14,8 +13,14 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
+        private readonly NumberMode mode;
+
         private NumberExtractor(NumberMode mode, NumberOptions options)
+            : base(options)
         {
+
+            this.mode = mode;
+
             NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + "$", RegexFlags);
 
             AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
@@ -71,11 +76,11 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             AmbiguityFiltersDict = ambiguityBuilder.ToImmutable();
         }
 
+        public sealed override NumberOptions Options { get; }
+
         internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override ImmutableDictionary<Regex, Regex> AmbiguityFiltersDict { get; }
-
-        protected sealed override NumberOptions Options { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
 
@@ -85,9 +90,7 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
         protected sealed override Regex RelativeReferenceRegex { get; }
 
-        public static NumberExtractor GetInstance(
-            NumberMode mode = NumberMode.Default,
-            NumberOptions options = NumberOptions.None)
+        public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
         {
             var cacheKey = (mode, options);
             if (!Instances.ContainsKey(cacheKey))

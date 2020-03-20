@@ -6,7 +6,8 @@
     <title>$title$</title>
     <authors>Microsoft</authors>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>Microsoft.Recognizers.Text.NumberWithUnit provides robust recognition and resolution of numbers with units expressed in English, Spanish, French, Portuguese, Chinese, German, and Dutch.</description>
+    <description>Microsoft.Recognizers.Text.NumberWithUnit provides robust recognition and resolution of numbers with units expressed in English, Spanish, French, Portuguese, Chinese,
+    German, Dutch, Italian, Turkish, and Hindi.</description>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/Microsoft/Recognizers-Text</projectUrl>
     <icon>images\icon.png</icon>
@@ -19,8 +20,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\build\package\net45\Microsoft.Recognizers.Text.NumberWithUnit.dll" target="lib\net45"/>
-    <file src="..\build\package\net452\Microsoft.Recognizers.Text.NumberWithUnit.dll" target="lib\net452"/>
     <file src="..\build\package\net462\Microsoft.Recognizers.Text.NumberWithUnit.dll" target="lib\net462"/>
     <file src="..\build\package\netstandard2.0\Microsoft.Recognizers.Text.NumberWithUnit.dll" target="lib\netstandard2.0"/>
     <file src="**\*.cs" exclude="**\obj\**\*.cs" target="src" />

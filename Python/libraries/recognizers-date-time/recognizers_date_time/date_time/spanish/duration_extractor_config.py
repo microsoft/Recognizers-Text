@@ -10,6 +10,14 @@ from ..base_duration import DurationExtractorConfiguration
 class SpanishDurationExtractorConfiguration(DurationExtractorConfiguration):
 
     @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
+    def special_number_unit_regex(self):
+        return self._special_number_unit_regex
+
+    @property
     def check_both_before_after(self):
         return self._check_both_before_after
 
@@ -118,3 +126,5 @@ class SpanishDurationExtractorConfiguration(DurationExtractorConfiguration):
             SpanishDateTime.LessThanRegex
         )
         self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._special_number_unit_regex = None

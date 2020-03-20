@@ -10,15 +10,16 @@ from ..base_time import BaseTimeExtractor
 from ..base_duration import BaseDurationExtractor
 from ..base_timeperiod import BaseTimePeriodExtractor
 from ..base_datetime import BaseDateTimeExtractor
+from ..base_timezone import BaseTimeZoneExtractor
 from .date_extractor_config import FrenchDateExtractorConfiguration
 from .time_extractor_config import FrenchTimeExtractorConfiguration
 from .duration_extractor_config import FrenchDurationExtractorConfiguration
 from .timeperiod_extractor_config import FrenchTimePeriodExtractorConfiguration
+from .timezone_extractor_config import FrenchTimeZoneExtractorConfiguration
 from .datetime_extractor_config import FrenchDateTimeExtractorConfiguration
 
 
 class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
-
     @property
     def check_both_before_after(self) -> Pattern:
         return self._check_both_before_after
@@ -50,6 +51,10 @@ class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
     @property
     def time_period_extractor(self) -> DateTimeExtractor:
         return self._time_period_extractor
+
+    @property
+    def time_zone_extractor(self) -> DateTimeExtractor:
+        return self._time_zone_extractor
 
     @property
     def simple_cases_regexes(self) -> List[Pattern]:
@@ -153,6 +158,7 @@ class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
 
     def __init__(self):
         super().__init__()
+        self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.PureNumFromTo),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.PureNumBetweenAnd),
@@ -208,6 +214,8 @@ class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
             FrenchDurationExtractorConfiguration())
         self._time_period_extractor = BaseTimePeriodExtractor(
             FrenchTimePeriodExtractorConfiguration())
+        self._time_zone_extractor = BaseTimeZoneExtractor(
+            FrenchTimeZoneExtractorConfiguration())
         self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.WithinNextPrefixRegex
         )

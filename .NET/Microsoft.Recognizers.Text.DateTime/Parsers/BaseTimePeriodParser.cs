@@ -339,7 +339,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
 
                             // Try to get the timezone resolution
-                            var timeErs = config.TimeExtractor.Extract(trimmedText);
+                            var timeErs = config.TimeExtractor.Extract(trimmedText, referenceTime);
                             foreach (var er in timeErs)
                             {
                                 var pr = config.TimeParser.Parse(er, referenceTime);
@@ -717,7 +717,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             pr1 = this.config.TimeParser.Parse(ers[0], referenceTime);
             pr2 = this.config.TimeParser.Parse(ers[1], referenceTime);
 
-            if (pr1.Value == null || pr2.Value == null)
+            // cases with time1 = time2 are excluded to avoid parsing here expressions like
+            // "morning-morning" (which in Hindi means "early-morning")
+            if (pr1.Value == null || pr2.Value == null || pr1.Text == pr2.Text)
             {
                 return ret;
             }

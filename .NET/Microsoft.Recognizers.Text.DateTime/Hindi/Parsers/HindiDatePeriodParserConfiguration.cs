@@ -40,6 +40,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         private static readonly Regex NextPrefixRegex =
             new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
 
+        private static readonly Regex NextPrefixRegexNoWeek =
+            new Regex(DateTimeDefinitions.NextPrefixRegexNoWeek, RegexFlags);
+
         public HindiDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -62,7 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             MonthNumWithYear = HindiDatePeriodExtractorConfiguration.MonthNumWithYear;
             YearRegex = HindiDatePeriodExtractorConfiguration.YearRegex;
             PastRegex = HindiDatePeriodExtractorConfiguration.PreviousPrefixRegex;
-            FutureRegex = HindiDatePeriodExtractorConfiguration.NextPrefixRegex;
+            FutureRegex = NextPrefixRegexNoWeek;
             FutureSuffixRegex = HindiDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnit = HindiDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             WeekOfMonthRegex = HindiDatePeriodExtractorConfiguration.WeekOfMonthRegex;

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.English;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
@@ -11,6 +13,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     {
         public static readonly Regex TimeNumberCombinedWithUnit =
             new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexFlags);
+
+        public static readonly Regex HyphenDateRegex =
+            new Regex(BaseDateTime.HyphenDateRegex, RegexFlags);
 
         public static readonly Regex PeriodTimeOfDayWithDateRegex =
             new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexFlags);
@@ -79,7 +84,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
 
-            CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.English.CardinalExtractor.GetInstance(numConfig);
+
             SingleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
             SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(this));
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(this));

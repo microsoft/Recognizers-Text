@@ -21,6 +21,7 @@ namespace Microsoft.Recognizers.Definitions.German
 
     public static class DateTimeDefinitions
     {
+      public const string LangMarker = @"Ger";
       public const bool CheckBothBeforeAfter = false;
       public const string TillRegex = @"(?<till>zu|bis\s*zum|zum|bis|bis\s*hin(\s*zum)?|--|-|—|——)";
       public const string RangeConnectorRegex = @"(?<and>und|--|-|—|——)";

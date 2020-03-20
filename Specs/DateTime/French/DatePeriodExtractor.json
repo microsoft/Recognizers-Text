@@ -210,17 +210,17 @@
   },
   {
     "Input": "Je serai dehors dans 3 annees",
-    "NotSupported": "python, javascript, java",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
     "Input": "Je serai dehors dans 3 semaines",
-    "NotSupported": "python, javascript, java",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
     "Input": "Je serai dehors dans 3 mois",
-    "NotSupported": "python, javascript, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "mois",
@@ -1433,10 +1433,10 @@
     "Input": "Je vais partir Novembre 19 a 20",
     "Results": [
       {
-        "Text": " Novembre 19 a 20",
+        "Text": "Novembre 19 a 20",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 17
+        "Start": 15,
+        "Length": 16
       }
     ]
   },

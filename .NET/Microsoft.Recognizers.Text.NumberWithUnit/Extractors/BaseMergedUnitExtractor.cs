@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
@@ -57,7 +58,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     continue;
                 }
 
-                if (ers[idx].Data is ExtractResult er && !er.Data.ToString().StartsWith("Integer", StringComparison.Ordinal))
+                if (ers[idx].Data is ExtractResult er &&
+                    !er.Data.ToString().StartsWith(Number.Constants.INTEGER_PREFIX, StringComparison.Ordinal))
                 {
                     groups[idx + 1] = groups[idx] + 1;
                     continue;
@@ -65,8 +67,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                 var middleBegin = ers[idx].Start + ers[idx].Length ?? 0;
                 var middleEnd = ers[idx + 1].Start ?? 0;
+                var length = middleEnd - middleBegin;
 
-                var middleStr = source.Substring(middleBegin, middleEnd - middleBegin).Trim();
+                if (length < 0)
+                {
+                    continue; // @HERE
+                }
+
+                var middleStr = source.Substring(middleBegin, length).Trim();
 
                 // Separated by whitespace
                 if (string.IsNullOrEmpty(middleStr))
@@ -91,7 +99,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             {
                 if (idx == 0 || groups[idx] != groups[idx - 1])
                 {
-                    var tmpExtractResult = ers[idx];
+                    var tmpExtractResult = ers[idx].Clone();
 
                     tmpExtractResult.Data = new List<ExtractResult>
                     {
@@ -140,6 +148,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         private void MergePureNumber(string source, List<ExtractResult> ers)
         {
             var numErs = config.UnitNumExtractor.Extract(source);
+
             var unitNumbers = new List<ExtractResult>();
             for (int i = 0, j = 0; i < numErs.Count; i++)
             {
@@ -153,6 +162,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 if (!hasBehindExtraction)
                 {
                     continue;
+                }
+
+                // Filter cases like "1 dollars 11a", "11" is not the fraction here.
+                if (source.Length > numErs[i].Start + numErs[i].Length)
+                {
+                    var endChar = source.Substring(numErs[i].Length + numErs[i].Start ?? 0, 1);
+                    if (char.IsLetter(endChar[0]) && !SimpleTokenizer.IsCjk(endChar[0]))
+                    {
+                        continue;
+                    }
                 }
 
                 var middleBegin = ers[j - 1].Start + ers[j - 1].Length ?? 0;

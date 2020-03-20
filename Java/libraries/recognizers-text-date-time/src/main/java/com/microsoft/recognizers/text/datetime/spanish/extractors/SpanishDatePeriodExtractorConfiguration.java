@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
 
 public class SpanishDatePeriodExtractorConfiguration extends BaseOptionsConfiguration implements IDatePeriodExtractorConfiguration {
     public static final Pattern TillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex);
-    public static final Pattern AndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AndRegex);
+    public static final Pattern RangeConnectorRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RangeConnectorRegex);
     public static final Pattern DayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DayRegex);
     public static final Pattern MonthNumRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.MonthNumRegex);
     public static final Pattern IllegalYearRegex = RegExpUtility.getSafeRegExp(BaseDateTime.IllegalYearRegex);
@@ -104,7 +104,6 @@ public class SpanishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
         }
     };
 
-    private static final Pattern connectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex);
     private static final Pattern fromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex);
     private static final Pattern betweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex);
 
@@ -285,7 +284,7 @@ public class SpanishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
 
     @Override
     public boolean hasConnectorToken(String text) {
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(connectorAndRegex, text)).findFirst();
+        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(RangeConnectorRegex, text)).findFirst();
         return match.isPresent() && match.get().length == text.trim().length();
     }
 

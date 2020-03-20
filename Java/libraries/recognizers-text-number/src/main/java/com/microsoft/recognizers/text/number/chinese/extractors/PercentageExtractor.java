@@ -29,10 +29,10 @@ public class PercentageExtractor extends BaseNumberExtractor {
         HashMap<Pattern, String> builder = new HashMap<>();
 
         //二十个百分点, 四点五个百分点
-        builder.put(RegExpUtility.getSafeRegExp(ChineseNumeric.PercentagePointRegex, Pattern.UNICODE_CHARACTER_CLASS), "PerChs");
+        builder.put(RegExpUtility.getSafeRegExp(ChineseNumeric.PercentagePointRegex, Pattern.UNICODE_CHARACTER_CLASS), "Per" + ChineseNumeric.LangMarker);
 
         //百分之五十  百分之一点五
-        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.SimplePercentageRegex, Pattern.UNICODE_CHARACTER_CLASS), "PerChs");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.SimplePercentageRegex, Pattern.UNICODE_CHARACTER_CLASS), "Per" + ChineseNumeric.LangMarker);
 
         //百分之５６.２　百分之１２
         builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.NumbersPercentagePointRegex, Pattern.UNICODE_CHARACTER_CLASS), "PerNum");

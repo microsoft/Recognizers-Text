@@ -1,4 +1,6 @@
 ---
+#ISO 639-2 Code
+LangMarker: Ita
 CheckBothBeforeAfter: !bool false
 TillRegex: !simpleRegex
   def: (?<till>\b(fino\s+a(l(l[aoe'])?|gli|i)?|a(l(l[aoe'])?|gli|i)?|e\s+(il?|l[aoe']|gli))\b|--|-|—|——|~)
@@ -349,7 +351,7 @@ TimeRegex1: !nestedRegex
   def: (((((?<=\b(da|al)?(le|l'|ore)\s*)({EngTimeRegex}))|((?<=\b(da|al)?(le|l'|ore)\s*)({HourNumRegex}|{BaseDateTime.HourRegex})(?![\.,]\d+)(?=\s*({PrepRegex}))))|(({TimePrefix}\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}))|(({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s+{TimePrefix}))((\s*{DescRegex})|\b))
   references: [ TimePrefix, EngTimeRegex, HourNumRegex, BaseDateTime.HourRegex, DescRegex, PrepRegex ]
 TimeRegex2: !nestedRegex
-  def: ({BaseDateTime.HourRegex})(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)
+  def: (t)?({BaseDateTime.HourRegex})(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)
   references: [ BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex, DescRegex ]
 TimeRegex3: !nestedRegex
   def: \b{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})(\s+{TimePrefix})?

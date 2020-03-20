@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Dutch;
 using Microsoft.Recognizers.Text.DateTime.Dutch.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
@@ -68,7 +69,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             SingleTimeExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));
             UtilityConfiguration = new DutchDatetimeUtilityConfiguration();
-            IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance(numConfig);
+
             TimeZoneExtractor = new BaseTimeZoneExtractor(new DutchTimeZoneExtractorConfiguration(this));
         }
 

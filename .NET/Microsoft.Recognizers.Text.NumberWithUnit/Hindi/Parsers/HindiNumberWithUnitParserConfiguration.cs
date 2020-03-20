@@ -9,9 +9,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Hindi
         public HindiNumberWithUnitParserConfiguration(CultureInfo ci)
                : base(ci)
         {
+            var numConfig = new BaseNumberOptionsConfiguration(Culture.Hindi, NumberOptions.None);
+
             this.InternalNumberExtractor = NumberExtractor.GetInstance();
-            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new HindiNumberParserConfiguration(
-                                                                                  new BaseNumberOptionsConfiguration(ci.Name)));
+            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                                                                              new HindiNumberParserConfiguration(numConfig));
             this.ConnectorToken = string.Empty;
         }
 

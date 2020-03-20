@@ -1048,7 +1048,7 @@
   },
   {
     "Input": "1 Ocak'tan 22 Ocak Çarşamba'ya kadar yokum",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "1 Ocak'tan 22 Ocak Çarşamba'ya kadar",

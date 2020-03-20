@@ -19,11 +19,14 @@ import com.google.common.collect.ImmutableMap;
 
 public class PortugueseDateTime {
 
+    public static final String LangMarker = "Por";
+
     public static final Boolean CheckBothBeforeAfter = false;
 
     public static final String TillRegex = "(?<till>ate|as|às|até|ateh|a|ao|--|-|—|——)(\\s+(o|[aà](s)?))?";
 
-    public static final String AndRegex = "(?<and>e|e\\s*o|--|-|—|——)";
+    public static final String RangeConnectorRegex = "(?<and>(e\\s*(([àa]s?)|o)?)|{BaseDateTime.RangeConnectorSymbolRegex})"
+            .replace("{BaseDateTime.RangeConnectorSymbolRegex}", BaseDateTime.RangeConnectorSymbolRegex);
 
     public static final String DayRegex = "(?<day>01|02|03|04|05|06|07|08|09|1|10|11|12|13|14|15|16|17|18|19|2|20|21|22|23|24|25|26|27|28|29|3|30|31|4|5|6|7|8|9)(?=\\b|t)";
 
@@ -80,15 +83,15 @@ public class PortugueseDateTime {
             .replace("{TillRegex}", TillRegex)
             .replace("{YearRegex}", YearRegex);
 
-    public static final String MonthFrontBetweenRegex = "\\b{MonthSuffixRegex}\\s+((entre|entre\\s+[oa]s?)\\s+)(dias?\\s+)?({DayRegex})\\s*{AndRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b"
+    public static final String MonthFrontBetweenRegex = "\\b{MonthSuffixRegex}\\s+((entre|entre\\s+[oa]s?)\\s+)(dias?\\s+)?({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b"
             .replace("{DayRegex}", DayRegex)
-            .replace("{AndRegex}", AndRegex)
+            .replace("{RangeConnectorRegex}", RangeConnectorRegex)
             .replace("{MonthSuffixRegex}", MonthSuffixRegex)
             .replace("{YearRegex}", YearRegex);
 
-    public static final String DayBetweenRegex = "\\b((entre|entre\\s+[oa]s?)\\s+)(dia\\s+)?({DayRegex})\\s*{AndRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*){YearRegex})?\\b"
+    public static final String DayBetweenRegex = "\\b((entre|entre\\s+[oa]s?)\\s+)(dia\\s+)?({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*){YearRegex})?\\b"
             .replace("{DayRegex}", DayRegex)
-            .replace("{AndRegex}", AndRegex)
+            .replace("{RangeConnectorRegex}", RangeConnectorRegex)
             .replace("{MonthSuffixRegex}", MonthSuffixRegex)
             .replace("{YearRegex}", YearRegex);
 
@@ -147,8 +150,6 @@ public class PortugueseDateTime {
     public static final String StrictRelativeRegex = "^[.]";
 
     public static final String FromRegex = "((desde|de)(\\s*a(s)?)?)$";
-
-    public static final String ConnectorAndRegex = "(e\\s*([àa](s)?)?)$";
 
     public static final String BetweenRegex = "(entre\\s*([oa](s)?)?)";
 

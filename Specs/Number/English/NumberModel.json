@@ -2594,5 +2594,20 @@
         }
       }
     ]
+  },
+  {
+    "Input": "The answer is negative one",
+    "Results": [
+      {
+        "Text": "negative one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1"
+        },
+        "Start": 14,
+        "End": 25
+      }
+    ]
   }
 ]

@@ -2,7 +2,7 @@ from typing import Pattern
 
 from recognizers_text import RegExpUtility
 
-from ...resources.chinese_date_time import ChineseDateTime
+from ...resources.chinese_date_time import ChineseDateTime, BaseDateTime
 from ..parsers import DateTimeParser
 from ..base_merged import MergedParserConfiguration
 from .duration_parser import ChineseDurationParser
@@ -17,6 +17,22 @@ from .set_parser import ChineseSetParser
 
 
 class ChineseMergedParserConfiguration(MergedParserConfiguration):
+    @property
+    def around_regex(self) -> Pattern:
+        return self._around_regex
+
+    @property
+    def equal_regex(self) -> Pattern:
+        return self._equal_regex
+
+    @property
+    def year_regex(self) -> Pattern:
+        return self._year_regex
+
+    @property
+    def suffix_after(self) -> Pattern:
+        return self._suffix_after
+
     @property
     def before_regex(self) -> Pattern:
         return self._before_regex
@@ -66,6 +82,10 @@ class ChineseMergedParserConfiguration(MergedParserConfiguration):
         return self._set_parser
 
     def __init__(self):
+        self._equal_regex = RegExpUtility.get_safe_reg_exp(BaseDateTime.EqualRegex)
+        self._year_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.YearRegex
+        )
         self._before_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.MergedBeforeRegex)
         self._after_regex = RegExpUtility.get_safe_reg_exp(
@@ -81,3 +101,6 @@ class ChineseMergedParserConfiguration(MergedParserConfiguration):
         self._date_time_period_parser = ChineseDateTimePeriodParser()
         self._duration_parser = ChineseDurationParser()
         self._set_parser = ChineseSetParser()
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._around_regex = None
+        self._suffix_after = None

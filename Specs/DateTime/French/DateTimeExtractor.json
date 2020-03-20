@@ -471,5 +471,16 @@
         "Length": 13
       }
     ]
+  },
+  {
+    "Input": "Je vais partir a 9 lundis",
+    "Results": [
+      {
+        "Text": "9 lundis",
+        "Type": "datetime",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
   }
 ]

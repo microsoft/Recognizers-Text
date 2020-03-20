@@ -2,6 +2,7 @@ from ..resources import BaseDateTime
 
 
 class Constants:
+    WRITTEN_TIME = 'writtentime'
     SYS_DATETIME_DATE: str = 'date'
     SYS_DATETIME_TIME: str = 'time'
     SYS_DATETIME_DATEPERIOD: str = 'daterange'
@@ -25,7 +26,6 @@ class Constants:
 
     # keys
     TIMEX_KEY: str = 'timex'
-    COMMENT_KEY: str = 'Comment'
     MOD_KEY: str = 'Mod'
     SOURCE_TYPE: str = 'sourceEntity'
     TYPE_KEY: str = 'type'
@@ -42,11 +42,17 @@ class Constants:
     MAX_MONTH: int = 12
     INVALID_YEAR = -2147483648
 
+    COMMENT_KEY: str = 'Comment'
+    COMMENT_AMPM = 'ampm'
+
     # Failed connector extraction
     INVALID_CONNECTOR_CODE = -1
 
     MIN_YEAR_NUM: int = int(BaseDateTime.MinYearNum)
     MAX_YEAR_NUM: int = int(BaseDateTime.MaxYearNum)
+
+    HALF_DAY_HOUR_COUNT = 12
+    HALF_MID_DAY_DURATION_HOUR_COUNT = 2
 
     DEFAULT_LANGUAGE_FALLBACK_MDY: str = 'MDY'
     DEFAULT_LANGUAGE_FALLBACK_DMY: str = 'DMY'
@@ -164,8 +170,8 @@ class Constants:
 
     REL_EARLY = 'RelEarly'
     REL_LATE = 'RelLate'
-    EARLY = 'early'
-    LATE = 'late'
+    COMMENT_EARLY = 'early'
+    COMMENT_LATE = 'late'
 
     HALF = 'half'
 
@@ -187,6 +193,15 @@ class Constants:
 
     AGO_LABEL = "ago"
     LATER_LABEL = "later"
+
+    # These are some particular values for timezone recognition
+    INVALID_OFFSET_VALUE = -10000
+    UTC_OFFSET_MINS_KEY = "utcOffsetMins"
+    POSITIVE_SIGN = 1
+    NEGATIVE_SIGN = -1
+
+    # hours of one half day
+    HALF_DAY_HOUR_COUNT = 12
 
 
 class TimeTypeConstants:
@@ -223,3 +238,5 @@ class TimeTypeConstants:
     MORE_THAN_MOD: str = 'more'
     LESS_THAN_MOD: str = 'less'
     REF_UNDEF_MOD: str = 'ref_undef'
+
+    APPROX_MOD: str = 'approx'

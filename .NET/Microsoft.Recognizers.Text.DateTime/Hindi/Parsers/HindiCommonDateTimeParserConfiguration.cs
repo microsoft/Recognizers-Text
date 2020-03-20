@@ -26,12 +26,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             WrittenDecades = DateTimeDefinitions.WrittenDecades.ToImmutableDictionary();
             SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases.ToImmutableDictionary();
 
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             CardinalExtractor = Number.Hindi.CardinalExtractor.GetInstance();
             IntegerExtractor = Number.Hindi.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.Hindi.OrdinalExtractor.GetInstance();
 
+            NumberParser = new BaseIndianNumberParser(new HindiNumberParserConfiguration(numConfig));
+
             TimeZoneParser = new BaseTimeZoneParser();
-            NumberParser = new BaseNumberParser(new HindiNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+
             DateExtractor = new BaseDateExtractor(new HindiDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new HindiTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new HindiDateTimeExtractorConfiguration(this));

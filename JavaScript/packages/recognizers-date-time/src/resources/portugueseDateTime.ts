@@ -11,9 +11,10 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace PortugueseDateTime {
+    export const LangMarker = 'Por';
     export const CheckBothBeforeAfter = false;
     export const TillRegex = `(?<till>ate|as|às|até|ateh|a|ao|--|-|—|——)(\\s+(o|[aà](s)?))?`;
-    export const AndRegex = `(?<and>e|e\\s*o|--|-|—|——)`;
+    export const RangeConnectorRegex = `(?<and>(e\\s*(([àa]s?)|o)?)|${BaseDateTime.RangeConnectorSymbolRegex})`;
     export const DayRegex = `(?<day>01|02|03|04|05|06|07|08|09|1|10|11|12|13|14|15|16|17|18|19|2|20|21|22|23|24|25|26|27|28|29|3|30|31|4|5|6|7|8|9)(?=\\b|t)`;
     export const MonthNumRegex = `(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b`;
     export const AmDescRegex = `(${BaseDateTime.BaseAmDescRegex})`;
@@ -32,8 +33,8 @@ export namespace PortugueseDateTime {
     export const FutureRegex = `(?<past>\\b(seguinte(s)?|pr[oó]xim[oa](s)?|dentro\\s+de|em|daqui\\s+a)\\b)`;
     export const SimpleCasesRegex = `\\b((desde\\s+[oa]|desde|d[oa])\\s+)?(dia\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(o dia\\s+)?(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
     export const MonthFrontSimpleCasesRegex = `\\b${MonthSuffixRegex}\\s+((desde\\s+[oa]|desde|d[oa])\\s+)?(dia\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
-    export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+((entre|entre\\s+[oa]s?)\\s+)(dias?\\s+)?(${DayRegex})\\s*${AndRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
-    export const DayBetweenRegex = `\\b((entre|entre\\s+[oa]s?)\\s+)(dia\\s+)?(${DayRegex})\\s*${AndRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
+    export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+((entre|entre\\s+[oa]s?)\\s+)(dias?\\s+)?(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
+    export const DayBetweenRegex = `\\b((entre|entre\\s+[oa]s?)\\s+)(dia\\s+)?(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
     export const OneWordPeriodRegex = `\\b(((pr[oó]xim[oa]?|[nd]?es[st]e|aquel[ea]|[uú]ltim[oa]?|em)\\s+)?(?<month>abr(il)?|ago(sto)?|dez(embro)?|fev(ereiro)?|jan(eiro)?|ju[ln](ho)?|mar([çc]o)?|maio?|nov(embro)?|out(ubro)?|sep?t(embro)?)|(?<=\\b(de|do|da|o|a)\\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]s?|est(e|a))\\s+(fim de semana|fins de semana|semana|m[êe]s|ano)|fim de semana|fins de semana|(m[êe]s|anos)? [àa] data)\\b`;
     export const MonthWithYearRegex = `\\b(((pr[oó]xim[oa](s)?|[nd]?es[st]e|aquele|[uú]ltim[oa]?|em)\\s+)?(?<month>abr(il)?|ago(sto)?|dez(embro)?|fev(ereiro)?|jan(eiro)?|ju[ln](ho)?|mar([çc]o)?|maio?|nov(embro)?|out(ubro)?|sep?t(embro)?)\\s+((de|do|da|o|a)\\s+)?(${YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\\s+ano))\\b`;
     export const MonthNumWithYearRegex = `(${YearRegex}(\\s*?)[/\\-\\.](\\s*?)${MonthNumRegex})|(${MonthNumRegex}(\\s*?)[/\\-](\\s*?)${YearRegex})`;
@@ -57,7 +58,6 @@ export namespace PortugueseDateTime {
     export const RelativeRegex = `^[.]`;
     export const StrictRelativeRegex = `^[.]`;
     export const FromRegex = `((desde|de)(\\s*a(s)?)?)$`;
-    export const ConnectorAndRegex = `(e\\s*([àa](s)?)?)$`;
     export const BetweenRegex = `(entre\\s*([oa](s)?)?)`;
     export const WeekDayRegex = `\\b(?<weekday>(domingos?|(segunda|ter[çc]a|quarta|quinta|sexta)s?([-\\s+]feiras?)?|s[aá]bados?|(2|3|4|5|6)[aª])\\b|(dom|seg|ter[cç]|qua|qui|sex|sab)\\b(\\.?(?=\\s|,|;|$)))`;
     export const OnRegex = `(?<=\\b(em|no)\\s+)(${DayRegex}s?)\\b`;
