@@ -4658,5 +4658,10 @@
         "Length": 41
       }
     ]
+  },
+  {
+    "Input": "Llámame al (206)555-1212",
+    "NotSupportedByDesign": "javascript",
+    "Results": []
   }
 ]

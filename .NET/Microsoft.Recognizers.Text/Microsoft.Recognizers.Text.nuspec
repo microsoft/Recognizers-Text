@@ -15,7 +15,7 @@
     <dependencies>
       <dependency id="System.Collections.Immutable" version="1.4.0" />
       <dependency id="System.ValueTuple" version="4.4.0" />
-      <dependency id="Microsoft.Extensions.Caching.Memory" version="3.0.0" />
+      <dependency id="Microsoft.Extensions.Caching.Memory" version="2.0.0" />
     </dependencies>
   </metadata>
   <files>
