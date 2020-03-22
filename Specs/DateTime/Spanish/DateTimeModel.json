@@ -606,26 +606,6 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "una ",
-        "Start": 11,
-        "End": 14,
-        "TypeName": "datetimeV2.time",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "T01",
-              "type": "time",
-              "value": "01:00:00"
-            },
-            {
-              "timex": "T13",
-              "type": "time",
-              "value": "13:00:00"
-            }
-          ]
-        }
-      },
-      {
         "Text": "mañana a las 12",
         "Start": 46,
         "End": 60,

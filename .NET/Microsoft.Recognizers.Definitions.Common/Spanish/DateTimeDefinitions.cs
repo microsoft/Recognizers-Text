@@ -498,7 +498,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string[] DurationDateRestrictions = { @"hoy" };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"\buna\b", @"(?<!la\s+)una" },
+            { @"\buna\b", @"(?<!la\s+)una" }
         };
       public static readonly IList<string> EarlyMorningTermList = new List<string>
         {
