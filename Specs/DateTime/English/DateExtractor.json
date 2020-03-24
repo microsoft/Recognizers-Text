@@ -1593,5 +1593,38 @@
     "Comment": "Only August 2019 should be extracted as a DateRange, so no output in Date only. Java disabled due to issue in lookbehind.",
     "NotSupported": "dotnet, java, javascript, python",
     "Results": []
+  },
+  {
+    "Input": "i'll go back 2019-sep-1",
+    "Results": [
+      {
+        "Text": "2019-sep-1",
+        "Type": "date",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "i'll go back 2019/sep/01",
+    "Results": [
+      {
+        "Text": "2019/sep/01",
+        "Type": "date",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Book me a trip on 26th june of 2020",
+    "Results": [
+      {
+        "Text": "26th june of 2020",
+        "Type": "date",
+        "Start": 18,
+        "Length": 17
+      }
+    ]
   }
 ]

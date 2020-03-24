@@ -682,5 +682,17 @@
         "Length": 19
       }
     ]
+  },
+  {
+    "Input": "entre 1 de dezembro e 4 de fevereiro",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "entre 1 de dezembro e 4 de fevereiro",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 36
+      }
+    ]
   }
 ]

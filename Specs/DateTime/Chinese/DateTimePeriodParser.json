@@ -479,7 +479,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-19T16:12:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "八月七号早",
@@ -505,7 +505,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-19T16:12:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "明天早上",
@@ -531,7 +531,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-19T16:12:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "八月七号晚",
@@ -549,6 +549,96 @@
         },
         "Start": 5,
         "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2019年7月25日早间粮油行情简析",
+    "Results": [
+      {
+        "Text": "2019年7月25日早间",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2019-07-25TMO",
+          "FutureResolution": {
+            "startDateTime": "2019-07-25 08:00:00",
+            "endDateTime": "2019-07-25 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2019-07-25 08:00:00",
+            "endDateTime": "2019-07-25 12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "7月25日早间中小板公告汇总",
+    "Context": {
+      "ReferenceDateTime": "2019-08-19T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "7月25日早间",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-07-25TMO",
+          "FutureResolution": {
+            "startDateTime": "2020-07-25 08:00:00",
+            "endDateTime": "2020-07-25 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2019-07-25 08:00:00",
+            "endDateTime": "2019-07-25 12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "7月25日早间，7月25日，7月25日早都是被支持的测例",
+    "NotSupported": "javascript",
+    "Context": {
+      "ReferenceDateTime": "2019-08-19T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "7月25日早间",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-07-25TMO",
+          "FutureResolution": {
+            "startDateTime": "2020-07-25 08:00:00",
+            "endDateTime": "2020-07-25 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2019-07-25 08:00:00",
+            "endDateTime": "2019-07-25 12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      },
+      {
+        "Text": "7月25日早",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-07-25TMO",
+          "FutureResolution": {
+            "startDateTime": "2020-07-25 08:00:00",
+            "endDateTime": "2020-07-25 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2019-07-25 08:00:00",
+            "endDateTime": "2019-07-25 12:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 6
       }
     ]
   }

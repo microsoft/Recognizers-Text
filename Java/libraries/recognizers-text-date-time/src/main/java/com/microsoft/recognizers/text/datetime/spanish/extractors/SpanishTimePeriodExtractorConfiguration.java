@@ -39,7 +39,7 @@ public class SpanishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
     public static final Pattern NumberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeNumberCombinedWithUnit);
 
     private static final Pattern FromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex);
-    private static final Pattern ConnectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex);
+    private static final Pattern RangeConnectorRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RangeConnectorRegex);
     private static final Pattern BetweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex);
 
     public static final Pattern TimeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeOfDayRegex);
@@ -148,7 +148,7 @@ public class SpanishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
 
     @Override
     public boolean hasConnectorToken(String text) {
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(ConnectorAndRegex, text)).findFirst();
+        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(RangeConnectorRegex, text)).findFirst();
         return match.isPresent() && match.get().length == text.trim().length();
     }
 }

@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Turkish;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
@@ -14,6 +15,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex NowTimeRegex =
+            new Regex(DateTimeDefinitions.NowTimeRegex, RegexFlags);
+
+        private static readonly Regex RecentlyTimeRegex =
+            new Regex(DateTimeDefinitions.RecentlyTimeRegex, RegexFlags);
+
+        private static readonly Regex AsapTimeRegex =
+            new Regex(DateTimeDefinitions.AsapTimeRegex, RegexFlags);
+
+        private static readonly Regex NextPrefixRegex =
+            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+
+        private static readonly Regex PreviousPrefixRegex =
+            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
         public TurkishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
          : base(config)
@@ -107,11 +123,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
             var trimmedText = text.Trim();
 
-            if (trimmedText.EndsWith("morning") && hour >= Constants.HalfDayHourCount)
+            if (AMTimeRegex.MatchEnd(trimmedText, trim: true).Success && hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
             }
-            else if (!trimmedText.EndsWith("morning") && hour < Constants.HalfDayHourCount)
+            else if (!AMTimeRegex.MatchEnd(trimmedText, trim: true).Success && hour < Constants.HalfDayHourCount)
             {
                 result += Constants.HalfDayHourCount;
             }
@@ -123,15 +139,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         {
             var trimmedText = text.Trim();
 
-            if (trimmedText.EndsWith("now"))
+            if (NowTimeRegex.MatchEnd(trimmedText, trim: true).Success)
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("recently") || trimmedText.Equals("previously"))
+            else if (RecentlyTimeRegex.IsExactMatch(trimmedText, trim: true))
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("as soon as possible") || trimmedText.Equals("asap"))
+            else if (AsapTimeRegex.IsExactMatch(trimmedText, trim: true))
             {
                 timex = "FUTURE_REF";
             }
@@ -149,11 +165,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             var trimmedText = text.Trim();
 
             var swift = 0;
-            if (trimmedText.StartsWith("next"))
+            if (NextPrefixRegex.MatchBegin(trimmedText, trim: true).Success)
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("last"))
+            else if (PreviousPrefixRegex.MatchBegin(trimmedText, trim: true).Success)
             {
                 swift = -1;
             }

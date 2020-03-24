@@ -1,28 +1,27 @@
-import { BasePhoneNumberExtractor, BaseIpExtractor, BaseMentionExtractor, BaseHashtagExtractor, BaseEmailExtractor, BaseURLExtractor, BaseGUIDExtractor, IPhoneNumberExtractorConfiguration } from "../extractors";
+import { BasePhoneNumberExtractorConfiguration, IIpExtractorConfiguration, BaseMentionExtractor, BaseHashtagExtractor, BaseEmailExtractor, IURLExtractorConfiguration, BaseGUIDExtractor, IPhoneNumberExtractorConfiguration } from "../extractors";
 import { ExtractResult, RegExpUtility } from "@microsoft/recognizers-text";
 import { BasePhoneNumbers } from "../../resources/basePhoneNumbers";
 import { BaseURL } from "../../resources/baseURL";
-import { IURLExtractorConfiguration } from "../extractors";
+import { BaseIp } from "../../resources/baseIp";
+import { EnglishPhoneNumbers } from "../../resources/EnglishPhoneNumbers";
 
-export class EnglishPhoneNumberExtractorConfiguration implements IPhoneNumberExtractorConfiguration {
-    readonly WordBoundariesRegex: string;
-    readonly NonWordBoundariesRegex: string;
-    readonly EndWordBoundariesRegex: string;
-    readonly ColonPrefixCheckRegex: string;
-    readonly ForbiddenPrefixMarkers: string[];
-
+export class EnglishPhoneNumberExtractorConfiguration extends BasePhoneNumberExtractorConfiguration {
+    readonly FalsePositivePrefixRegex: string;
 
     constructor() {
-        this.WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex;
-        this.NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex;
-        this.EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex;
-        this.ForbiddenPrefixMarkers = BasePhoneNumbers.ForbiddenPrefixMarkers;
-        this.ColonPrefixCheckRegex = BasePhoneNumbers.ColonPrefixCheckRegex;
+        super();
+        this.FalsePositivePrefixRegex = EnglishPhoneNumbers.FalsePositivePrefixRegex;
     }
 }
 
-export class IpExtractor extends BaseIpExtractor {
+export class EnglishIpExtractorConfiguration implements IIpExtractorConfiguration {
+    readonly Ipv4Regex: RegExp;
+    readonly Ipv6Regex: RegExp;
 
+    constructor() {
+        this.Ipv4Regex = RegExpUtility.getSafeRegExp(BaseIp.Ipv4Regex);
+        this.Ipv6Regex = RegExpUtility.getSafeRegExp(BaseIp.Ipv6Regex);
+    }
 }
 
 export class MentionExtractor extends BaseMentionExtractor {

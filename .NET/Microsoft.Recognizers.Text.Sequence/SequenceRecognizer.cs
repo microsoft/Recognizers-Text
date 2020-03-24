@@ -2,7 +2,16 @@
 using System.Collections.Generic;
 using Microsoft.Recognizers.Text.Sequence;
 using Microsoft.Recognizers.Text.Sequence.Chinese;
+using Microsoft.Recognizers.Text.Sequence.Dutch;
 using Microsoft.Recognizers.Text.Sequence.English;
+using Microsoft.Recognizers.Text.Sequence.French;
+using Microsoft.Recognizers.Text.Sequence.German;
+using Microsoft.Recognizers.Text.Sequence.Hindi;
+using Microsoft.Recognizers.Text.Sequence.Italian;
+using Microsoft.Recognizers.Text.Sequence.Korean;
+using Microsoft.Recognizers.Text.Sequence.Portuguese;
+using Microsoft.Recognizers.Text.Sequence.Spanish;
+using Microsoft.Recognizers.Text.Sequence.Turkish;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
@@ -72,11 +81,18 @@ namespace Microsoft.Recognizers.Text.Sequence
                 return GetModel<PhoneNumberModel>(Culture.Chinese, fallbackToDefaultCulture);
             }
 
-            return GetModel<PhoneNumberModel>(Culture.English, fallbackToDefaultCulture);
+            return GetModel<PhoneNumberModel>(culture, fallbackToDefaultCulture);
         }
 
         public IModel GetIpAddressModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
+            if (culture != null && (
+                    culture.ToLowerInvariant().StartsWith("zh-", StringComparison.Ordinal) ||
+                    culture.ToLowerInvariant().StartsWith("ja-", StringComparison.Ordinal)))
+            {
+                return GetModel<IpAddressModel>(Culture.Chinese, fallbackToDefaultCulture);
+            }
+
             return GetModel<IpAddressModel>(Culture.English, fallbackToDefaultCulture);
         }
 
@@ -125,9 +141,71 @@ namespace Microsoft.Recognizers.Text.Sequence
                     new PhoneNumberParser(),
                     new BasePhoneNumberExtractor(new ChinesePhoneNumberExtractorConfiguration(options))));
 
+            RegisterModel<PhoneNumberModel>(
+                Culture.Portuguese,
+                (options) => new PhoneNumberModel(
+                    new PhoneNumberParser(),
+                    new BasePhoneNumberExtractor(new PortuguesePhoneNumberExtractorConfiguration(options))));
+
+            RegisterModel<PhoneNumberModel>(
+                Culture.Spanish,
+                (options) => new PhoneNumberModel(
+                    new PhoneNumberParser(),
+                    new BasePhoneNumberExtractor(new SpanishPhoneNumberExtractorConfiguration(options))));
+
+            RegisterModel<PhoneNumberModel>(
+                Culture.Dutch,
+                (options) => new PhoneNumberModel(
+                    new PhoneNumberParser(),
+                    new BasePhoneNumberExtractor(new DutchPhoneNumberExtractorConfiguration(options))));
+
+            RegisterModel<PhoneNumberModel>(
+                Culture.French,
+                (options) => new PhoneNumberModel(
+                    new PhoneNumberParser(),
+                    new BasePhoneNumberExtractor(new FrenchPhoneNumberExtractorConfiguration(options))));
+
+            RegisterModel<PhoneNumberModel>(
+                Culture.German,
+                (options) => new PhoneNumberModel(
+                    new PhoneNumberParser(),
+                    new BasePhoneNumberExtractor(new GermanPhoneNumberExtractorConfiguration(options))));
+
+            RegisterModel<PhoneNumberModel>(
+                Culture.Hindi,
+                (options) => new PhoneNumberModel(
+                    new PhoneNumberParser(),
+                    new BasePhoneNumberExtractor(new HindiPhoneNumberExtractorConfiguration(options))));
+
+            RegisterModel<PhoneNumberModel>(
+                Culture.Italian,
+                (options) => new PhoneNumberModel(
+                    new PhoneNumberParser(),
+                    new BasePhoneNumberExtractor(new ItalianPhoneNumberExtractorConfiguration(options))));
+
+            RegisterModel<PhoneNumberModel>(
+                Culture.Korean,
+                (options) => new PhoneNumberModel(
+                    new PhoneNumberParser(),
+                    new BasePhoneNumberExtractor(new KoreanPhoneNumberExtractorConfiguration(options))));
+
+            RegisterModel<PhoneNumberModel>(
+                Culture.Turkish,
+                (options) => new PhoneNumberModel(
+                    new PhoneNumberParser(),
+                    new BasePhoneNumberExtractor(new TurkishPhoneNumberExtractorConfiguration(options))));
+
             RegisterModel<IpAddressModel>(
                 Culture.English,
-                (options) => new IpAddressModel(new IpParser(), new IpExtractor()));
+                (options) => new IpAddressModel(
+                    new IpParser(),
+                    new BaseIpExtractor(new EnglishIpExtractorConfiguration(options))));
+
+            RegisterModel<IpAddressModel>(
+                Culture.Chinese,
+                (options) => new IpAddressModel(
+                    new IpParser(),
+                    new BaseIpExtractor(new ChineseIpExtractorConfiguration(options))));
 
             RegisterModel<MentionModel>(
                 Culture.English,

@@ -8,7 +8,8 @@
     <CodeAnalysisRuleSet>../Recognizers-Text.ruleset</CodeAnalysisRuleSet>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
   </PropertyGroup>
-<PropertyGroup>
+
+  <PropertyGroup>
 	  <!--
 		Make sure any documentation comments which are included in code get checked for syntax during the build, but do
 		not report warnings for missing comments.
@@ -18,7 +19,8 @@
 	  -->
 	  <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
 	  <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
-	</PropertyGroup>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.6.3">
       <PrivateAssets>all</PrivateAssets>
@@ -28,7 +30,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="YamlDotNet" Version="5.0.0" />
+    <PackageReference Include="YamlDotNet" Version="8.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -128,6 +130,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Chinese\IpDefinitions.cs">
+      <DependentUpon>IpDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Dutch\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -172,6 +179,11 @@
       <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="English\PhoneNumbersDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PhoneNumbersDefinitions.tt</DependentUpon>
     </Compile>
     <Compile Update="English\TimeZoneDefinitions.cs">
       <DesignTime>True</DesignTime>
@@ -220,6 +232,11 @@
     </Compile>
     <Compile Update="Hindi\ChoiceDefinitions.cs">
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Hindi\DateTimeDefinitions.cs">
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
@@ -298,6 +315,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Portuguese\PhoneNumbersDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PhoneNumbersDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="Spanish\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -323,7 +345,17 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Swedish\NumbersDefinitions.cs">
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Bulgarian\ChoiceDefinitions.cs">
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Turkish\ChoiceDefinitions.cs">
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -388,6 +420,8 @@
     </None>
     <None Update="Chinese\URLDefinitions.tt">
     </None>
+    <None Update="Chinese\IpDefinitions.tt">
+    </None>
     <None Update="Dutch\ChoiceDefinitions.tt">
     </None>
     <None Update="Dutch\DateTimeDefinitions.tt">
@@ -405,6 +439,8 @@
     <None Update="English\NumbersDefinitions.tt">
     </None>
     <None Update="English\NumbersWithUnitDefinitions.tt">
+    </None>
+    <None Update="English\PhoneNumbersDefinitions.tt">
     </None>
     <None Update="English\TimeZoneDefinitions.tt">
     </None>
@@ -427,6 +463,8 @@
     <None Update="Hindi\ChoiceDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="Hindi\DateTimeDefinitions.tt">
     </None>
     <None Update="Hindi\NumbersDefinitions.tt">
     </None>
@@ -458,6 +496,8 @@
     </None>
     <None Update="Portuguese\NumbersWithUnitDefinitions.tt">
     </None>
+    <None Update="Portuguese\PhoneNumbersDefinitions.tt">
+    </None>
     <None Update="Spanish\ChoiceDefinitions.tt">
     </None>
     <None Update="Spanish\DateTimeDefinitions.tt">
@@ -467,6 +507,10 @@
     <None Update="Spanish\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Swedish\ChoiceDefinitions.tt">
+    </None>
+    <None Update="Swedish\NumbersDefinitions.tt">
+    </None>
+    <None Update="Turkish\ChoiceDefinitions.tt">
     </None>
     <None Update="Turkish\DateTimeDefinitions.tt">
     </None>

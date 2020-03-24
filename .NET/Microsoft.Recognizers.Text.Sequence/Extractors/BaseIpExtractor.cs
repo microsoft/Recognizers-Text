@@ -2,23 +2,25 @@
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Definitions;
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
     public class BaseIpExtractor : BaseSequenceExtractor
     {
+        private IpConfiguration config;
+
         // The Ipv6 address regexes is written following the Recommendation: https://tools.ietf.org/html/rfc5952
-        public BaseIpExtractor()
+        public BaseIpExtractor(IpConfiguration config)
         {
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BaseIp.Ipv4Regex),
+                    config.Ipv4Regex,
                     Constants.IP_REGEX_IPV4
                 },
                 {
-                    new Regex(BaseIp.Ipv6Regex),
+                    config.Ipv6Regex,
                     Constants.IP_REGEX_IPV6
                 },
             };
@@ -68,12 +70,13 @@ namespace Microsoft.Recognizers.Text.Sequence
                         var length = i - lastNotMatched;
                         var substr = text.Substring(start, length);
                         if (substr.StartsWith(Constants.IPV6_ELLIPSIS) &&
-                            (start > 0 && char.IsLetterOrDigit(text[start - 1])))
+                            (start > 0 && char.IsLetterOrDigit(text[start - 1]) && !SimpleTokenizer.IsCjk(text[start - 1])))
                         {
                             continue;
                         }
-                        else if (substr.EndsWith(Constants.IPV6_ELLIPSIS) &&
-                            (i + 1 < text.Length && char.IsLetterOrDigit(text[i + 1])))
+
+                        if (substr.EndsWith(Constants.IPV6_ELLIPSIS) &&
+                            (i + 1 < text.Length && char.IsLetterOrDigit(text[i + 1]) && !SimpleTokenizer.IsCjk(text[start + 1])))
                         {
                             continue;
                         }

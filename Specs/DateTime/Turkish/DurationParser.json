@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -19,8 +18,8 @@
             "duration": "10800"
           }
         },
-        "Start": 15,
-        "Length": 2
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -29,7 +28,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -44,21 +42,20 @@
             "duration": "259200"
           }
         },
-        "Start": 15,
-        "Length": 4
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
   {
-    "Input": "3.5 yıllığına ayrılacağım",
+    "Input": "3,5 yıllığına ayrılacağım",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "3.5 yıl",
+        "Text": "3,5 yıl",
         "Type": "duration",
         "Value": {
           "Timex": "P3.5Y",
@@ -69,8 +66,8 @@
             "duration": "110376000"
           }
         },
-        "Start": 15,
-        "Length": 8
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -79,7 +76,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -94,8 +90,8 @@
             "duration": "7776000"
           }
         },
-        "Start": 15,
-        "Length": 8
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -104,7 +100,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -119,21 +114,20 @@
             "duration": "180"
           }
         },
-        "Start": 15,
-        "Length": 9
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
   {
-    "Input": "3.5 saniyeliğine döneceğim",
+    "Input": "3,5 saniyeliğine döneceğim",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "3.5 saniye",
+        "Text": "3,5 saniye",
         "Type": "duration",
         "Value": {
           "Timex": "PT3.5S",
@@ -144,21 +138,20 @@
             "duration": "3.5"
           }
         },
-        "Start": 15,
+        "Start": 0,
         "Length": 10
       }
     ]
   },
   {
-    "Input": "123.45 saniyeliğine ayrılacağım",
+    "Input": "123,45 saniyeliğine ayrılacağım",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "123.45 saniye",
+        "Text": "123,45 saniye",
         "Type": "duration",
         "Value": {
           "Timex": "PT123.45S",
@@ -169,8 +162,8 @@
             "duration": "123.45"
           }
         },
-        "Start": 15,
-        "Length": 10
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -179,7 +172,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -194,7 +186,7 @@
             "duration": "1209600"
           }
         },
-        "Start": 15,
+        "Start": 0,
         "Length": 9
       }
     ]
@@ -204,7 +196,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -219,8 +210,8 @@
             "duration": "1200"
           }
         },
-        "Start": 15,
-        "Length": 10
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -229,7 +220,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -244,8 +234,8 @@
             "duration": "86400"
           }
         },
-        "Start": 15,
-        "Length": 21
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
@@ -254,7 +244,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -269,7 +258,7 @@
             "duration": "86400"
           }
         },
-        "Start": 15,
+        "Start": 0,
         "Length": 7
       }
     ]
@@ -279,7 +268,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -294,8 +282,8 @@
             "duration": "604800"
           }
         },
-        "Start": 15,
-        "Length": 8
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -304,7 +292,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -319,8 +306,8 @@
             "duration": "2592000"
           }
         },
-        "Start": 15,
-        "Length": 9
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -329,7 +316,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -344,8 +330,8 @@
             "duration": "31536000"
           }
         },
-        "Start": 15,
-        "Length": 8
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -354,7 +340,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -369,8 +354,8 @@
             "duration": "3600"
           }
         },
-        "Start": 15,
-        "Length": 7
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -379,7 +364,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -394,7 +378,7 @@
             "duration": "86400"
           }
         },
-        "Start": 15,
+        "Start": 0,
         "Length": 9
       }
     ]
@@ -404,7 +388,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -429,7 +412,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -444,8 +426,8 @@
             "duration": "1800"
           }
         },
-        "Start": 15,
-        "Length": 10
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -454,7 +436,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -469,8 +450,8 @@
             "duration": "1800"
           }
         },
-        "Start": 15,
-        "Length": 9
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -479,7 +460,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -494,7 +474,7 @@
             "duration": "7200"
           }
         },
-        "Start": 15,
+        "Start": 0,
         "Length": 8
       }
     ]
@@ -504,7 +484,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -519,8 +498,8 @@
             "duration": "9000"
           }
         },
-        "Start": 15,
-        "Length": 20
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
@@ -529,7 +508,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -544,8 +522,8 @@
             "duration": "35942400"
           }
         },
-        "Start": 15,
-        "Length": 22
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
@@ -554,7 +532,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -569,8 +546,8 @@
             "duration": "2764800"
           }
         },
-        "Start": 15,
-        "Length": 14
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -579,7 +556,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -594,67 +570,67 @@
             "duration": "864000"
           }
         },
-        "Start": 15,
-        "Length": 19
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Birkaç haftalığına ayrılacağım",
+	"Comment": "All 'a few', 'some', 'several' and 'a couple of' translated to 'birkaç'. So it is not defined in the group NumTwoTerm. In English, 'a few', 'some', 'several' are resolved as P3. Hence, here it is updated as P3 as well.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Birkaç hafta",
         "Type": "duration",
         "Value": {
-          "Timex": "P2W",
+          "Timex": "P3W",
           "FutureResolution": {
-            "duration": "1209600"
+            "duration": "1814400"
           },
           "PastResolution": {
-            "duration": "1209600"
+            "duration": "1814400"
           }
         },
-        "Start": 15,
-        "Length": 15
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Birkaç günlüğüne olmayacağım",
+	"Comment": "All 'a few', 'some', 'several' and 'a couple of' translated to 'birkaç'. So it is not defined in the group NumTwoTerm. In English, 'a few', 'some', 'several' are resolved as P3. Hence, here it is updated as P3 as well.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Birkaç gün",
         "Type": "duration",
         "Value": {
-          "Timex": "P2D",
+          "Timex": "P3D",
           "FutureResolution": {
-            "duration": "172800"
+            "duration": "259200"
           },
           "PastResolution": {
-            "duration": "172800"
+            "duration": "259200"
           }
         },
-        "Start": 17,
-        "Length": 16
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Birkaç günden az bir süre olmayacağım",
+	"Comment": "All 'a few', 'some', 'several' and 'a couple of' translated to 'birkaç'. So it is not defined in the group NumTwoTerm. In English, 'a few', 'some', 'several' are resolved as P3. Hence, here it is updated as P3 as well.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -662,16 +638,16 @@
         "Type": "duration",
         "Value": {
           "Mod": "less",
-          "Timex": "P2D",
+          "Timex": "P3D",
           "FutureResolution": {
-            "duration": "172800"
+            "duration": "259200"
           },
           "PastResolution": {
-            "duration": "172800"
+            "duration": "259200"
           }
         },
-        "Start": 17,
-        "Length": 26
+        "Start": 0,
+        "Length": 25
       }
     ]
   },
@@ -680,7 +656,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -696,21 +671,20 @@
             "duration": "3600"
           }
         },
-        "Start": 15,
-        "Length": 17
+        "Start": 0,
+        "Length": 26
       }
     ]
   },
   {
-    "Input": "Bir başka saat için ayrılacağım",
+    "Input": "Bir diğer saat ayrılacağım",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Bir başka saat",
+        "Text": "Bir diğer saat",
         "Type": "duration",
         "Value": {
           "Timex": "PT1H",
@@ -721,21 +695,20 @@
             "duration": "3600"
           }
         },
-        "Start": 15,
-        "Length": 12
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
   {
-    "Input": "Bir başka hafta için ayrılacağım",
+    "Input": "Bir diğer hafta ayrılacağım",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Bir başka hafta",
+        "Text": "Bir diğer hafta",
         "Type": "duration",
         "Value": {
           "Timex": "P1W",
@@ -746,21 +719,20 @@
             "duration": "604800"
           }
         },
-        "Start": 32,
-        "Length": 12
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
   {
-    "Input": "Bir başka ayı bekleyelim mi?",
+    "Input": "Bir diğer ayı bekleyelim mi?",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Bir başka ay ",
+        "Text": "Bir diğer ay",
         "Type": "duration",
         "Value": {
           "Timex": "P1M",
@@ -771,21 +743,20 @@
             "duration": "2592000"
           }
         },
-        "Start": 12,
-        "Length": 13
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
   {
-    "Input": "Bir başka iş gününü bekleyelim mi?",
+    "Input": "Bir diğer iş gününü bekleyelim mi?",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Bir başka iş günü",
+        "Text": "Bir diğer iş günü",
         "Type": "duration",
         "Value": {
           "Timex": "P1BD",
@@ -796,18 +767,17 @@
             "duration": "86400"
           }
         },
-        "Start": 12,
-        "Length": 20
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
   {
-    "Input": "İki on yıl için ayrılacağım",
-    "NotSupported": "dotnet",
+    "Input": "Yirmi yıllığına ayrılacağım",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "İki on yıl",
+        "Text": "Yirmi yıl",
         "Type": "duration",
         "Value": {
           "Timex": "P20Y",
@@ -818,8 +788,8 @@
             "duration": "630720000"
           }
         },
-        "Start": 15,
-        "Length": 11
+        "Start": 0,
+        "Length": 9
       }
     ]
   }

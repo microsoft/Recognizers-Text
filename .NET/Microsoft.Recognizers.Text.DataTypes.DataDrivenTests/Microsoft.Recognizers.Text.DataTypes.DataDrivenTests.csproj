@@ -16,7 +16,7 @@
 	  -->
 	  <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
 	  <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
-	</PropertyGroup>
+  </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,6 +28,7 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>../Recognizers-Text.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -51,4 +52,5 @@
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Recognizers.Text.DataTypes.TimexExpression\Microsoft.Recognizers.Text.DataTypes.TimexExpression.csproj" />
   </ItemGroup>
+
 </Project>

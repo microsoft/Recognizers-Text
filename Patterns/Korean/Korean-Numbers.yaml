@@ -1,5 +1,5 @@
 ---
-#Korean
+#ISO 639-2 Code
 LangMarker: Kor
 #Does this language use non-whitespace-separated numbers?
 CompoundNumberLanguage: !bool true

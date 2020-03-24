@@ -3,11 +3,15 @@ using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Turkish;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
     public class TurkishDateParserConfiguration : BaseDateTimeOptionsConfiguration, IDateParserConfiguration
     {
+        public static readonly Regex LastTokenRegex =
+            new Regex(DateTimeDefinitions.LastRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public TurkishDateParserConfiguration(ICommonDateTimeParserConfiguration config)
@@ -142,6 +146,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         public IImmutableList<string> MinusTwoDayTerms { get; }
 
+        bool IDateParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public int GetSwiftMonthOrYear(string text)
@@ -164,8 +170,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         public bool IsCardinalLast(string text)
         {
-            var trimmedText = text.Trim();
-            return trimmedText.Equals("last");
+            return LastTokenRegex.IsExactMatch(text, trim: true);
         }
 
         public string Normalize(string text)

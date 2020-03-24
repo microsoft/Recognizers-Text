@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Portuguese;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
@@ -14,6 +17,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public static readonly Regex RestOfDateTimeRegex =
             new Regex(DateTimeDefinitions.RestOfDateTimeRegex, RegexFlags);
+
+        public static readonly Regex HyphenDateRegex =
+            new Regex(BaseDateTime.HyphenDateRegex, RegexFlags);
 
         public static readonly Regex PeriodTimeOfDayWithDateRegex =
             new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexFlags);
@@ -56,8 +62,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         private static readonly Regex FromRegex =
             new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
 
-        private static readonly Regex ConnectorAndRegex =
-            new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexFlags);
+        private static readonly Regex RangeConnectorRegex =
+            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
 
         private static readonly Regex BetweenRegex =
             new Regex(DateTimeDefinitions.BetweenRegex, RegexFlags);
@@ -67,7 +73,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
 
-            CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance();
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance(numConfig);
 
             SingleDateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
             SingleTimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
@@ -116,6 +130,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex NextPrefixRegex => PortugueseDatePeriodExtractorConfiguration.FutureRegex;
 
         public Regex FutureSuffixRegex => PortugueseDatePeriodExtractorConfiguration.FutureSuffixRegex;
+
+        bool IDateTimePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         Regex IDateTimePeriodExtractorConfiguration.PrefixDayRegex => PrefixDayRegex;
 
@@ -174,7 +190,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool HasConnectorToken(string text)
         {
-            return ConnectorAndRegex.IsMatch(text);
+            return RangeConnectorRegex.IsExactMatch(text, true);
         }
     }
 }

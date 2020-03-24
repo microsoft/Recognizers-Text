@@ -480,10 +480,10 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
         {
             { @"F", @"grad fahrenheit|°fahrenheit|°f|fahrenheit" },
-            { @"K", @"k|K|kelvin" },
+            { @"K", @"k|K|kelvin|grad kelvin|°kelvin|°k|°K" },
             { @"R", @"rankine|°r" },
             { @"D", @"delisle|°de" },
-            { @"C", @"grad celsius|°celsius|°c" },
+            { @"C", @"grad celsius|°celsius|°c|celsius" },
             { @"Degree", @"grad|°" }
         };
       public static readonly IList<string> AmbiguousTemperatureUnitList = new List<string>

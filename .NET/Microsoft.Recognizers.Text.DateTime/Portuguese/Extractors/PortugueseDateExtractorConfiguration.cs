@@ -127,9 +127,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public PortugueseDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.Portuguese.OrdinalExtractor.GetInstance();
-            NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.Portuguese.OrdinalExtractor.GetInstance(numConfig);
+            NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration(numConfig));
+
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
             UtilityConfiguration = new PortugueseDatetimeUtilityConfiguration();
 
@@ -194,6 +204,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         IImmutableDictionary<string, int> IDateExtractorConfiguration.DayOfWeek => DayOfWeek;
 
         IImmutableDictionary<string, int> IDateExtractorConfiguration.MonthOfYear => MonthOfYear;
+
+        bool IDateExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         Regex IDateExtractorConfiguration.OfMonth => OfMonth;
 

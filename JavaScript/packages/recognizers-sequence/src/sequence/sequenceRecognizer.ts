@@ -1,9 +1,10 @@
 import { Recognizer, IModel, Culture, ModelResult } from "@microsoft/recognizers-text";
 import { PhoneNumberModel, IpAddressModel, MentionModel, HashtagModel, EmailModel, URLModel, GUIDModel } from "./models";
 import { PhoneNumberParser, IpParser, MentionParser, HashtagParser, EmailParser, URLParser, GUIDParser } from "./english/parsers";
-import { IpExtractor, MentionExtractor, HashtagExtractor, EmailExtractor, EnglishURLExtractorConfiguration, GUIDExtractor, EnglishPhoneNumberExtractorConfiguration } from "./english/extractors";
-import { ChineseURLExtractorConfiguration, ChinesePhoneNumberExtractorConfiguration } from "./chinese/extractors";
-import { BaseURLExtractor, BasePhoneNumberExtractor } from "./extractors";
+import { EnglishIpExtractorConfiguration, MentionExtractor, HashtagExtractor, EmailExtractor, EnglishURLExtractorConfiguration, GUIDExtractor, EnglishPhoneNumberExtractorConfiguration } from "./english/extractors";
+import { ChineseURLExtractorConfiguration, ChinesePhoneNumberExtractorConfiguration, ChineseIpExtractorConfiguration } from "./chinese/extractors";
+import { PortuguesePhoneNumberExtractorConfiguration } from "./portuguese/extractors";
+import { BaseURLExtractor, BasePhoneNumberExtractor, BaseIpExtractor } from "./extractors";
 
 
 export enum SequenceOptions {
@@ -18,6 +19,9 @@ export function recognizePhoneNumber(query: string, culture: string, options: Se
 }
 
 export function recognizeIpAddress(query: string, culture: string, options: SequenceOptions = SequenceOptions.None): ModelResult[] {
+    if (culture.toLowerCase().startsWith("zh-") || culture.toLowerCase().startsWith("ja-")) {
+        return recognizeByModel(recognizer => recognizer.getIpAddressModel(), query, Culture.Chinese, options);
+    }
     return recognizeByModel(recognizer => recognizer.getIpAddressModel(), query, culture, options);
 }
 
@@ -67,16 +71,28 @@ export default class SequenceRecognizer extends Recognizer<SequenceOptions> {
         this.registerModel("PhoneNumberModel", Culture.Chinese, (options) => new PhoneNumberModel(
             new PhoneNumberParser(),
             new BasePhoneNumberExtractor(new ChinesePhoneNumberExtractorConfiguration())));
-        this.registerModel("IpAddressModel", Culture.English, (options) => new IpAddressModel(new IpParser(), new IpExtractor()));
+        this.registerModel("PhoneNumberModel", Culture.Portuguese, (options) => new PhoneNumberModel(
+            new PhoneNumberParser(),
+            new BasePhoneNumberExtractor(new PortuguesePhoneNumberExtractorConfiguration())));
+
+        this.registerModel("IpAddressModel", Culture.English, (options) => new IpAddressModel(
+            new IpParser(),
+            new BaseIpExtractor(new EnglishIpExtractorConfiguration())));
+        this.registerModel("IpAddressModel", Culture.Chinese, (options) => new IpAddressModel(
+            new IpParser(),
+            new BaseIpExtractor(new ChineseIpExtractorConfiguration())));
+
         this.registerModel("MentionModel", Culture.English, (options) => new MentionModel(new MentionParser(), new MentionExtractor()));
         this.registerModel("HashtagModel", Culture.English, (options) => new HashtagModel(new HashtagParser(), new HashtagExtractor()));
         this.registerModel("EmailModel", Culture.English, (options) => new EmailModel(new EmailParser(), new EmailExtractor()));
+
         this.registerModel("URLModel", Culture.English, (options) => new URLModel(
             new URLParser(),
             new BaseURLExtractor(new EnglishURLExtractorConfiguration())));
         this.registerModel("URLModel", Culture.Chinese, (options) => new URLModel(
             new URLParser(),
             new BaseURLExtractor(new ChineseURLExtractorConfiguration())));
+
         this.registerModel("GUIDModel", Culture.English, (options) => new GUIDModel(new GUIDParser(), new GUIDExtractor()));
     }
 

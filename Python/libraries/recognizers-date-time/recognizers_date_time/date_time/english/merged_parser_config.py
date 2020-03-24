@@ -1,4 +1,6 @@
 from typing import Pattern
+
+from ...resources.base_date_time import BaseDateTime
 from recognizers_text.utilities import RegExpUtility
 
 from .holiday_parser_config import EnglishHolidayParserConfiguration
@@ -17,6 +19,22 @@ from ...resources.english_date_time import EnglishDateTime
 
 
 class EnglishMergedParserConfiguration(MergedParserConfiguration):
+    @property
+    def around_regex(self) -> Pattern:
+        return self._around_regex
+
+    @property
+    def equal_regex(self) -> Pattern:
+        return self._equal_regex
+
+    @property
+    def year_regex(self) -> Pattern:
+        return self._year_regex
+
+    @property
+    def suffix_after(self) -> Pattern:
+        return self._suffix_after
+
     @property
     def before_regex(self) -> Pattern:
         return self.__before_regex
@@ -66,6 +84,14 @@ class EnglishMergedParserConfiguration(MergedParserConfiguration):
         return self.__set_parser
 
     def __init__(self, config):
+        self._equal_regex = RegExpUtility.get_safe_reg_exp(
+            BaseDateTime.EqualRegex)
+        self._suffix_after = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SuffixAfterRegex)
+        self._year_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.YearRegex)
+        self._around_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.AroundRegex)
         self.__before_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.BeforeRegex)
         self.__after_regex = RegExpUtility.get_safe_reg_exp(

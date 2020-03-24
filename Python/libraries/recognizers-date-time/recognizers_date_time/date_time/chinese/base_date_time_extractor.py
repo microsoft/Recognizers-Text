@@ -1,5 +1,4 @@
-from typing import List, Dict, Pattern, Match, Optional
-from abc import ABC, abstractmethod
+from typing import List, Dict, Pattern, Match
 from datetime import datetime
 import regex
 
@@ -55,7 +54,12 @@ class TimeResolutionUtils:
 
 
 class ChineseBaseDateTimeExtractor(DateTimeExtractor):
+    @property
+    def extractor_type_name(self) -> str:
+        return self._extractor_type_name
+
     def __init__(self, regex_dict: Dict[Pattern, any]):
+        self._extractor_type_name = None
         self._regex_dict = regex_dict
 
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
@@ -83,7 +87,7 @@ class ChineseBaseDateTimeExtractor(DateTimeExtractor):
         last = -1
         for i in range(len(source)):
             if matched[i]:
-                if (i + 1 == len(source) or not matched[i + 1]):
+                if i + 1 == len(source) or not matched[i + 1]:
                     start = last + 1
                     length = i - last
                     text = source[start:start+length].strip()
@@ -102,7 +106,8 @@ class ChineseBaseDateTimeExtractor(DateTimeExtractor):
 
         return result
 
-    def __get_data(self, source: Dict[Match, any], key: Match) -> any:
+    @staticmethod
+    def __get_data(source: Dict[Match, any], key: Match) -> any:
         if key not in source:
             return None
 

@@ -126,10 +126,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public TurkishDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             IntegerExtractor = Number.Turkish.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.Turkish.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+            NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(new BaseNumberOptionsConfiguration(numConfig)));
             DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));
             UtilityConfiguration = new TurkishDatetimeUtilityConfiguration();
 
@@ -241,6 +250,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         IImmutableDictionary<string, int> IDateExtractorConfiguration.DayOfWeek => DayOfWeek;
 
         IImmutableDictionary<string, int> IDateExtractorConfiguration.MonthOfYear => MonthOfYear;
+
+        bool IDateExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         Regex IDateExtractorConfiguration.OfMonth => OfMonth;
 

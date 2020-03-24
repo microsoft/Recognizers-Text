@@ -28,11 +28,42 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
 
         [NetCoreTestDataSource]
         [TestMethod]
-        public void DateParser(TestModel testSpec)
+        public void TimeExtractor(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
-            ParserInitialize(Parsers);
-            TestDateTimeParser(testSpec);
+            TestDateTimeExtractor(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void DatePeriodExtractor(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            TestDateTimeExtractor(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void TimePeriodExtractor(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            TestDateTimeExtractor(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void DateTimeExtractor(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            TestDateTimeExtractor(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void DateTimePeriodExtractor(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            TestDateTimeExtractor(testSpec);
         }
 
         [NetCoreTestDataSource]
@@ -45,11 +76,123 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
 
         [NetCoreTestDataSource]
         [TestMethod]
+        public void DurationExtractor(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            TestDateTimeExtractor(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void SetExtractor(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            TestDateTimeExtractor(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void MergedExtractor(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            TestDateTimeExtractor(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void DateParser(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            ParserInitialize(Parsers);
+            TestDateTimeParser(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void TimeParser(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            ParserInitialize(Parsers);
+            TestDateTimeParser(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void DatePeriodParser(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            ParserInitialize(Parsers);
+            TestDateTimeParser(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void TimePeriodParser(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            ParserInitialize(Parsers);
+            TestDateTimeParser(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public new void DateTimeParser(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            ParserInitialize(Parsers);
+            TestDateTimeParser(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void DateTimePeriodParser(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            ParserInitialize(Parsers);
+            TestDateTimeParser(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
         public void HolidayParser(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
             ParserInitialize(Parsers);
             TestDateTimeParser(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void DurationParser(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            ParserInitialize(Parsers);
+            TestDateTimeParser(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void SetParser(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            ParserInitialize(Parsers);
+            TestDateTimeParser(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void MergedParser(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            ParserInitialize(Parsers);
+            TestDateTimeMergedParser(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void DateTimeModel(TestModel testSpec)
+        {
+            TestDateTime(testSpec);
         }
     }
 }

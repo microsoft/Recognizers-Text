@@ -11,7 +11,8 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace ChineseDateTime {
-    export const MonthRegex = `(?<month>正月|一月|二月|三月|四月|五月|六月|七月|八月|九月|十月|十一月|十二月|01月|02月|03月|04月|05月|06月|07月|08月|09月|10月|11月|12月|1月|2月|3月|4月|5月|6月|7月|8月|9月|大年)`;
+    export const LangMarker = 'Chi';
+    export const MonthRegex = `(?<month>正月|一月|二月|三月|四月|五月|六月|七月|八月|九月|十月|十一月|十二月|01月|02月|03月|04月|05月|06月|07月|08月|09月|10月|11月|12月|1月|2月|3月|4月|5月|6月|7月|8月|9月|大年(?!龄|纪|级))`;
     export const DayRegex = `(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|1|2|3|4|5|6|7|8|9)`;
     export const DateDayRegexInChinese = `(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号)`;
     export const DayRegexNumInChinese = `(?<day>一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|廿|卅)`;
@@ -22,7 +23,7 @@ export namespace ChineseDateTime {
     export const ZeroToNineIntegerRegexChs = `[一二三四五六七八九零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]`;
     export const DateYearInChineseRegex = `(?<yearchs>(${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}|${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}|${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}))`;
     export const WeekDayRegex = `(?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期日|星期天|礼拜一|礼拜二|礼拜三|礼拜四|礼拜五|礼拜六|礼拜日|礼拜天|禮拜一|禮拜二|禮拜三|禮拜四|禮拜五|禮拜六|禮拜日|禮拜天|週日|週天|週一|週二|週三|週四|週五|週六)`;
-    export const LunarRegex = `(农历|初一|正月|大年)`;
+    export const LunarRegex = `(农历|初一|正月|大年(?!龄|纪|级))`;
     export const DateThisRegex = `(这个|这一个|这|这一|本)${WeekDayRegex}`;
     export const DateLastRegex = `(上一个|上个|上一|上|最后一个|最后)(的)?${WeekDayRegex}`;
     export const DateNextRegex = `(下一个|下个|下一|下)(的)?${WeekDayRegex}`;
@@ -37,9 +38,9 @@ export namespace ChineseDateTime {
     export const DateUnitRegex = `(?<unit>年|个月|周|日|天)`;
     export const BeforeRegex = `以前|之前|前`;
     export const AfterRegex = `以后|以後|之后|之後|后|後`;
-    export const DateRegexList1 = `(${LunarRegex}(\\s*))?(((${SimpleYearRegex}|${DateYearInChineseRegex})年)(\\s*))?${MonthRegex}(\\s*)${DateDayRegexInChinese}((\\s*|,|，)${WeekDayRegex})?(${BeforeRegex}|${AfterRegex})?`;
-    export const DateRegexList2 = `(((${SimpleYearRegex}|${DateYearInChineseRegex})年)(\\s*))?(${LunarRegex}(\\s*))?${MonthRegex}(\\s*)${DateDayRegexInChinese}((\\s*|,|，)${WeekDayRegex})?(${BeforeRegex}|${AfterRegex})?`;
-    export const DateRegexList3 = `(((${SimpleYearRegex}|${DateYearInChineseRegex})年)(\\s*))?(${LunarRegex}(\\s*))?${MonthRegex}(\\s*)(${DayRegexNumInChinese}|${DayRegex})((\\s*|,|，)${WeekDayRegex})?(${BeforeRegex}|${AfterRegex})?`;
+    export const DateRegexList1 = `(${LunarRegex}(\\s*))?(((${SimpleYearRegex}|${DateYearInChineseRegex})年)(\\s*))?${MonthRegex}(\\s*)${DateDayRegexInChinese}((\\s*|,|，)${WeekDayRegex})?`;
+    export const DateRegexList2 = `(((${SimpleYearRegex}|${DateYearInChineseRegex})年)(\\s*))?(${LunarRegex}(\\s*))?${MonthRegex}(\\s*)${DateDayRegexInChinese}((\\s*|,|，)${WeekDayRegex})?`;
+    export const DateRegexList3 = `(((${SimpleYearRegex}|${DateYearInChineseRegex})年)(\\s*))?(${LunarRegex}(\\s*))?${MonthRegex}(\\s*)(${DayRegexNumInChinese}|${DayRegex})((\\s*|,|，)${WeekDayRegex})?`;
     export const DateRegexList4 = `${MonthNumRegex}\\s*/\\s*${DayRegex}((\\s+|\\s*,\\s*)${SimpleYearRegex})?`;
     export const DateRegexList5 = `${DayRegex}\\s*/\\s*${MonthNumRegex}((\\s+|\\s*,\\s*)${SimpleYearRegex})?`;
     export const DateRegexList6 = `${MonthNumRegex}\\s*[/\\\\\\-]\\s*${DayRegex}\\s*[/\\\\\\-]\\s*${SimpleYearRegex}`;
@@ -55,7 +56,7 @@ export namespace ChineseDateTime {
     export const HalfYearRegex = `((?<firstHalf>(上|前)半年)|(?<secondHalf>(下|后)半年))`;
     export const YearRegex = `((${YearNumRegex})(\\s*年)?|(${SimpleYearRegex})\\s*年)${HalfYearRegex}?`;
     export const StrictYearRegex = `(${YearRegex}(?=[\\u4E00-\\u9FFF]|\\s|$|\\W))`;
-    export const YearRegexInNumber = `(?<year>(\\d{3,4}))`;
+    export const YearRegexInNumber = `(?<year>(\\d{4}))`;
     export const DatePeriodYearInChineseRegex = `(?<yearchs>(${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}|${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}|${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}))年${HalfYearRegex}?`;
     export const MonthSuffixRegex = `(?<msuf>(${RelativeMonthRegex}|${MonthRegex}))`;
     export const SimpleCasesRegex = `((从)\\s*)?((${YearRegex}|${DatePeriodYearInChineseRegex})\\s*)?${MonthSuffixRegex}(${DatePeriodDayRegexInChinese}|${DayRegex})\\s*${DatePeriodTillRegex}\\s*(${DatePeriodDayRegexInChinese}|${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?`;
@@ -94,7 +95,7 @@ export namespace ChineseDateTime {
     export const DateTimePeriodLastRegex = `上个|上一个|上|上一`;
     export const DateTimePeriodNextRegex = `下个|下一个|下|下一`;
     export const AmPmDescRegex = `(?<daydesc>(am|a\\.m\\.|a m|a\\. m\\.|a\\.m|a\\. m|a m|pm|p\\.m\\.|p m|p\\. m\\.|p\\.m|p\\. m|p m))`;
-    export const TimeOfDayRegex = `(?<timeOfDay>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)`;
+    export const TimeOfDayRegex = `(?<timeOfDay>凌晨|清晨|早上|早间|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)`;
     export const SpecificTimeOfDayRegex = `(((${DateTimePeriodThisRegex}|${DateTimePeriodNextRegex}|${DateTimePeriodLastRegex})\\s+${TimeOfDayRegex})|(今晚|今早|今晨|明晚|明早|明晨|昨晚))`;
     export const DateTimePeriodUnitRegex = `(个)?(?<unit>(小时|钟头|分钟|秒钟|时|分|秒))`;
     export const DateTimePeriodFollowedUnit = `^\\s*${DateTimePeriodUnitRegex}`;
@@ -128,9 +129,9 @@ export namespace ChineseDateTime {
     export const TimeQuarterRegex = `(?<quarter>[一两二三四1-4])\\s*(刻钟|刻)`;
     export const TimeChineseTimeRegex = `${TimeHourRegex}(${TimeQuarterRegex}|${TimeHalfRegex}|((过|又)?${TimeMinuteRegex})(${TimeSecondRegex})?)?`;
     export const TimeDigitTimeRegex = `(?<hour>${TimeHourNumRegex}):(?<min>${TimeMinuteNumRegex})(:(?<sec>${TimeSecondNumRegex}))?`;
-    export const TimeDayDescRegex = `(?<daydesc>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|午夜|夜间|深夜|傍晚|晚)`;
+    export const TimeDayDescRegex = `(?<daydesc>凌晨|清晨|早上|早间|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|午夜|夜间|深夜|傍晚|晚)`;
     export const TimeApproximateDescPreffixRegex = `(大[约概]|差不多|可能|也许|约|不超过|不多[于过]|最[多长少]|少于|[超短长多]过|几乎要|将近|差点|快要|接近|至少|起码|超出|不到)`;
-    export const TimeApproximateDescSuffixRegex = `(之前|以前|以后|以後|之后|之後|前|后|後|左右)`;
+    export const TimeApproximateDescSuffixRegex = `(左右)`;
     export const TimeRegexes1 = `${TimeApproximateDescPreffixRegex}?${TimeDayDescRegex}?${TimeChineseTimeRegex}${TimeApproximateDescSuffixRegex}?`;
     export const TimeRegexes2 = `${TimeApproximateDescPreffixRegex}?${TimeDayDescRegex}?${TimeDigitTimeRegex}${TimeApproximateDescSuffixRegex}?(\\s*${AmPmDescRegex}?)`;
     export const TimeRegexes3 = `差${TimeMinuteRegex}${TimeChineseTimeRegex}`;
@@ -143,11 +144,13 @@ export namespace ChineseDateTime {
     export const TimePeriodShortLeftDigitTimeRegex = `(从)?(?<left>${TimeDayDescRegex}?(${TimeHourNumRegex}))`;
     export const TimePeriodRegexes1 = `(${TimePeriodLeftDigitTimeRegex}${TimePeriodRightDigitTimeRegex}|${TimePeriodLeftChsTimeRegex}${TimePeriodRightChsTimeRegex})`;
     export const TimePeriodRegexes2 = `(${TimePeriodShortLeftDigitTimeRegex}${TimePeriodRightDigitTimeRegex}|${TimePeriodShortLeftChsTimeRegex}${TimePeriodRightChsTimeRegex})`;
-    export const ParserConfigurationBefore = `(之前|以前|前)`;
-    export const ParserConfigurationAfter = `(之后|之後|以后|以後|后|後)`;
+    export const FromToRegex = `(从|自).+([至到]).+`;
+    export const AmbiguousRangeModifierPrefix = `(从|自)`;
+    export const ParserConfigurationBefore = `((?<include>和|或|及)?(之前|以前)|前)`;
+    export const ParserConfigurationAfter = `((?<include>和|或|及)?(之后|之後|以后|以後)|后|後)`;
     export const ParserConfigurationUntil = `(直到|直至|截至|截止(到)?)`;
-    export const ParserConfigurationSincePrefix = `(自从|自|自打|打)`;
-    export const ParserConfigurationSinceSuffix = `(以来|开始)`;
+    export const ParserConfigurationSincePrefix = `(自从|自|自打|打|从)`;
+    export const ParserConfigurationSinceSuffix = `(以来|开始|起)`;
     export const ParserConfigurationLastWeekDayToken = '最后一个';
     export const ParserConfigurationNextMonthToken = '下一个';
     export const ParserConfigurationLastMonthToken = '上一个';
@@ -171,7 +174,7 @@ export namespace ChineseDateTime {
     export const ParserConfigurationMonthOfYear: ReadonlyMap<string, number> = new Map<string, number>([["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06", 6],["07", 7],["08", 8],["09", 9],["一月", 1],["二月", 2],["三月", 3],["四月", 4],["五月", 5],["六月", 6],["七月", 7],["八月", 8],["九月", 9],["十月", 10],["十一月", 11],["十二月", 12],["1月", 1],["2月", 2],["3月", 3],["4月", 4],["5月", 5],["6月", 6],["7月", 7],["8月", 8],["9月", 9],["10月", 10],["11月", 11],["12月", 12],["01月", 1],["02月", 2],["03月", 3],["04月", 4],["05月", 5],["06月", 6],["07月", 7],["08月", 8],["09月", 9],["正月", 13],["大年", 13]]);
     export const DateTimeSimpleAmRegex = `(?<am>早|晨)`;
     export const DateTimeSimplePmRegex = `(?<pm>晚)`;
-    export const DateTimePeriodMORegex = `(凌晨|清晨|早上|早|上午)`;
+    export const DateTimePeriodMORegex = `(凌晨|清晨|早上|早间|早|上午)`;
     export const DateTimePeriodMIRegex = `(中午)`;
     export const DateTimePeriodAFRegex = `(下午|午后|傍晚)`;
     export const DateTimePeriodEVRegex = `(晚上|夜里|夜晚|晚)`;
@@ -184,7 +187,7 @@ export namespace ChineseDateTime {
     export const TimeNumberDictionary: ReadonlyMap<string, number> = new Map<string, number>([["零", 0],["一", 1],["二", 2],["三", 3],["四", 4],["五", 5],["六", 6],["七", 7],["八", 8],["九", 9],["〇", 0],["两", 2],["十", 10]]);
     export const TimeLowBoundDesc: ReadonlyMap<string, number> = new Map<string, number>([["中午", 11],["下午", 12],["午后", 12],["晚上", 18],["夜里", 18],["夜晚", 18],["夜间", 18],["深夜", 18],["傍晚", 18],["晚", 18],["pm", 12]]);
     export const DefaultLanguageFallback = 'DMY';
-    export const MorningTermList = [ "早","上午","早上","清晨" ];
+    export const MorningTermList = [ "早","上午","早间","早上","清晨" ];
     export const MidDayTermList = [ "中午","正午" ];
     export const AfternoonTermList = [ "下午","午后" ];
     export const EveningTermList = [ "晚","晚上","夜里","傍晚","夜晚" ];

@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Pattern
 from abc import abstractmethod, ABC
 
 from recognizers_number import BaseNumberExtractor, BaseNumberParser
@@ -81,6 +81,11 @@ class BaseDateParserConfiguration(ABC):
 
     @property
     @abstractmethod
+    def time_zone_parser(self) -> DateTimeParser:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def duration_parser(self) -> DateTimeParser:
         raise NotImplementedError
 
@@ -146,6 +151,11 @@ class BaseDateParserConfiguration(ABC):
     @property
     @abstractmethod
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def check_both_before_after(self) -> Pattern:
         raise NotImplementedError
 
     def __init__(self):

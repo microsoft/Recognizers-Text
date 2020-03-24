@@ -19,9 +19,14 @@ import com.google.common.collect.ImmutableMap;
 
 public class SpanishDateTime {
 
+    public static final String LangMarker = "Spa";
+
+    public static final Boolean CheckBothBeforeAfter = false;
+
     public static final String TillRegex = "(?<till>hasta|al|a|--|-|—|——)(\\s+(el|la(s)?))?";
 
-    public static final String AndRegex = "(?<and>y|y\\s*el|--|-|—|——)";
+    public static final String RangeConnectorRegex = "(?<and>y\\s*(el|(la(s)?)?)|{BaseDateTime.RangeConnectorSymbolRegex})"
+            .replace("{BaseDateTime.RangeConnectorSymbolRegex}", BaseDateTime.RangeConnectorSymbolRegex);
 
     public static final String DayRegex = "(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\\b|t)";
 
@@ -95,15 +100,15 @@ public class SpanishDateTime {
             .replace("{TillRegex}", TillRegex)
             .replace("{YearRegex}", YearRegex);
 
-    public static final String MonthFrontBetweenRegex = "\\b{MonthSuffixRegex}\\s+((entre|entre\\s+el)\\s+)({DayRegex})\\s*{AndRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b"
+    public static final String MonthFrontBetweenRegex = "\\b{MonthSuffixRegex}\\s+((entre|entre\\s+el)\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b"
             .replace("{DayRegex}", DayRegex)
-            .replace("{AndRegex}", AndRegex)
+            .replace("{RangeConnectorRegex}", RangeConnectorRegex)
             .replace("{MonthSuffixRegex}", MonthSuffixRegex)
             .replace("{YearRegex}", YearRegex);
 
-    public static final String DayBetweenRegex = "\\b((entre|entre\\s+el)\\s+)({DayRegex})(\\s+{MonthSuffixRegex})?\\s*{AndRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b"
+    public static final String DayBetweenRegex = "\\b((entre|entre\\s+el)\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b"
             .replace("{DayRegex}", DayRegex)
-            .replace("{AndRegex}", AndRegex)
+            .replace("{RangeConnectorRegex}", RangeConnectorRegex)
             .replace("{MonthSuffixRegex}", MonthSuffixRegex)
             .replace("{YearRegex}", YearRegex);
 
@@ -118,7 +123,7 @@ public class SpanishDateTime {
             .replace("{MonthRegex}", MonthRegex)
             .replace("{YearRegex}", YearRegex);
 
-    public static final String MonthNumWithYearRegex = "({YearRegex}(\\s*?)[/\\-\\.~](\\s*?){MonthNumRegex})|({MonthNumRegex}(\\s*?)[/\\-\\.~](\\s*?){YearRegex})"
+    public static final String MonthNumWithYearRegex = "\\b(({YearRegex}(\\s*?)[/\\-\\.~](\\s*?){MonthNumRegex})|({MonthNumRegex}(\\s*?)[/\\-\\.~](\\s*?){YearRegex}))\\b"
             .replace("{YearRegex}", YearRegex)
             .replace("{MonthNumRegex}", MonthNumRegex);
 
@@ -188,11 +193,9 @@ public class SpanishDateTime {
 
     public static final String FromRegex = "((desde|de)(\\s*la(s)?)?)$";
 
-    public static final String ConnectorAndRegex = "(y\\s*(la(s)?)?)$";
-
     public static final String BetweenRegex = "(entre\\s*(la(s)?)?)";
 
-    public static final String WeekDayRegex = "\\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|sa|do)\\b";
+    public static final String WeekDayRegex = "\\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|s[aá]|do)\\b";
 
     public static final String OnRegex = "(?<=\\ben\\s+)({DayRegex}s?)\\b"
             .replace("{DayRegex}", DayRegex);
@@ -484,12 +487,12 @@ public class SpanishDateTime {
             .replace("{DescRegex}", DescRegex)
             .replace("{RangePrefixRegex}", RangePrefixRegex);
 
-    public static final String SpecificTimeBetweenAnd = "({BetweenRegex})(?<time1>(({TimeRegex1}|{TimeRegex2}|{TimeRegexWithDotConnector}(\\s*{DescRegex})?)|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?))\\s*{ConnectorAndRegex}\\s*(?<time2>(({TimeRegex1}|{TimeRegex2}|{TimeRegexWithDotConnector}(\\s*{DescRegex})?)|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\\s*(?<rightDesc>{DescRegex}))?))"
+    public static final String SpecificTimeBetweenAnd = "({BetweenRegex})(?<time1>(({TimeRegex1}|{TimeRegex2}|{TimeRegexWithDotConnector}(\\s*{DescRegex})?)|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?))\\s*{RangeConnectorRegex}\\s*(?<time2>(({TimeRegex1}|{TimeRegex2}|{TimeRegexWithDotConnector}(\\s*{DescRegex})?)|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\\s*(?<rightDesc>{DescRegex}))?))"
             .replace("{BetweenRegex}", BetweenRegex)
             .replace("{TimeRegex1}", TimeRegex1)
             .replace("{TimeRegex2}", TimeRegex2)
             .replace("{TimeRegexWithDotConnector}", TimeRegexWithDotConnector)
-            .replace("{ConnectorAndRegex}", ConnectorAndRegex)
+            .replace("{RangeConnectorRegex}", RangeConnectorRegex)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
             .replace("{TimeHourNumRegex}", TimeHourNumRegex)
             .replace("{DescRegex}", DescRegex);
@@ -736,6 +739,7 @@ public class SpanishDateTime {
         .put("jueves", 4)
         .put("viernes", 5)
         .put("sabado", 6)
+        .put("sábado", 6)
         .put("domingo", 0)
         .put("lu", 1)
         .put("ma", 2)
@@ -769,6 +773,7 @@ public class SpanishDateTime {
         .put("jul", 7)
         .put("ago", 8)
         .put("sept", 9)
+        .put("sep", 9)
         .put("set", 9)
         .put("oct", 10)
         .put("nov", 11)

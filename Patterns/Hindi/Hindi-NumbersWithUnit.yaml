@@ -3,370 +3,370 @@
 AgeSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Year: years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age
-    Month: months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age
-    Week: weeks old|week old|week-old|weeks-old|-week-old|-weeks-old|week of age|weeks of age
-    Day: days old|day old|day-old|days-old|-day-old|-days-old|day of age|days of age
+    Year: years|year|year का|years का|यर्स के|यर्स का|यर्स की|यर्स के|यर का|यर की|यर के|यर|साल|साल पुराना|साल पुरानी|साल पुराने|साल की|साल का|साल के|वर्ष पुराणी|वर्ष पुराने|वर्ष पुराना|वर्ष का|वर्ष के|वर्ष की थी|साल पुराना था|साल पुरानी थी|साल पुराने थे|साल की थी|साल का था|साल के थे|वर्ष पुराना था|वर्ष का था|वर्ष के थे|साल की आयु|साल का आयु|साल के आयु|की उम्र|के उम्र|साल से ज़्यादा पुरानी|साल की उमर|
+    Month: months|month|महीने पुराना|महीने की|महीने का|महीने के|महीने की उम्र|महीने|महीने पहले की
+    Week: week|weeks|weeks का|weeks की|week के|वीक्स का|वीक्स|सप्ताह पुराना|सप्ताह की|सप्ताह का|सप्ताह के|हफ़्ता पुराना|हफ्ते की|हफ्ते का|हफ्ते के|हफ़्ते की उम्र|हफ़्ता पुरानी|हफ़्ते पुरानी
+    Day: day|days|दिन पुराना|दिन की|दिन का|दिन के|दिन पुरानी
 #AreaExtractorConfiguration
 AreaSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Square kilometer: sq km|sq kilometer|sq kilometre|sq kilometers|sq kilometres|square kilometer|square kilometre|square kilometers|square kilometres|km2|km^2|km²
-    Square hectometer: sq hm|sq hectometer|sq hectometre|sq hectometers|sq hectometres|square hectometer|square hectometre|square hectometers|square hectometres|hm2|hm^2|hm²|hectare|hectares
-    Square decameter: sq dam|sq decameter|sq decametre|sq decameters|sq decametres|square decameter|square decametre|square decameters|square decametres|sq dekameter|sq dekametre|sq dekameters|sq dekametres|square dekameter|square dekametre|square dekameters|square dekametres|dam2|dam^2|dam²
-    Square meter: sq m|sq meter|sq metre|sq meters|sq metres|sq metre|square meter|square meters|square metre|square metres|m2|m^2|m²
-    Square decimeter: sq dm|sq decimeter|sq decimetre|sq decimeters|sq decimetres|square decimeter|square decimetre|square decimeters|square decimetres|dm2|dm^2|dm²
-    Square centimeter: sq cm|sq centimeter|sq centimetre|sq centimeters|sq centimetres|square centimeter|square centimetre|square centimeters|square centimetres|cm2|cm^2|cm²
-    Square millimeter: sq mm|sq millimeter|sq millimetre|sq millimeters|sq millimetres|square millimeter|square millimetre|square millimeters|square millimetres|mm2|mm^2|mm²
-    Square inch: sq in|sq inch|square inch|square inches|in2|in^2|in²
-    Square foot: sqft|sq ft|sq foot|sq feet|square foot|square feet|feet2|feet^2|feet²|ft2|ft^2|ft²
-    Square mile: sq mi|sq mile|sqmiles|square mile|square miles|mi2|mi^2|mi²
-    Square yard: sq yd|sq yard|sq yards|square yard|square yards|yd2|yd^2|yd²
-    Acre: -acre|acre|acres
+    Square kilometer: sq km|sq kilometer|sq kilometre|sq kilometers|sq kilometres|square kilometer|square kilometre|square kilometers|square kilometres|km2|km^2|km²|वर्ग किमी|वर्ग किलोमीटर|वर्ग कि.मी.|वर्ग कि. मी.|वर्ग किलो मीटर|वर्ग कीलोमीटर|वर्ग कीलो मीटर|कीमी2|कीमी²
+    Square hectometer: sq hm|sq hectometer|sq hectometre|sq hectometers|sq hectometres|square hectometer|square hectometre|square hectometers|square hectometres|hm2|hm^2|hm²|hectare|hectares|वर्ग एचएम|वर्ग हेक्टोमीटर|वर्ग हेक्टोमिटर|वर्ग हेक्टो मीटर|वर्ग हेक्टो मिटर|एचएम2|हेक्टेयर
+    Square decameter: sq dam|sq decameter|sq decametre|sq decameters|sq decametres|square decameter|square decametre|square decameters|square decametres|sq dekameter|sq dekametre|sq dekameters|sq dekametres|square dekameter|square dekametre|square dekameters|square dekametres|dam2|dam^2|dam²|वर्ग डेकामीटर|वर्ग डेका मीटर|वर्ग डेका मिटर
+    Square meter: sq m|sq meter|sq metre|sq meters|sq metres|sq metre|square meter|square meters|square metre|square metres|m2|m^2|m²|वर्ग मीटर|मीटर वर्ग|स्क्वेयर मीटर|मी²|मी.²|मी2
+    Square decimeter: sq dm|sq decimeter|sq decimetre|sq decimeters|sq decimetres|square decimeter|square decimetre|square decimeters|square decimetres|dm2|dm^2|dm²|वर्ग डेसीमीटर|वर्ग डेसी मीटर
+    Square centimeter: sq cm|sq centimeter|sq centimetre|sq centimeters|sq centimetres|square centimeter|square centimetre|square centimeters|square centimetres|cm2|cm^2|cm²|वर्ग सेंटीमीटर|वर्ग सेमी|वर्ग से.मी.|वर्ग सेंटीमीटर|वर्ग सेन्टीमीटर|वर्ग सेण्टीमीटर|वर्ग सेंटी मीटर|वर्ग सेन्टी मीटर|वर्ग से. मी.|सेमी²|से.मी.²
+    Square millimeter: sq mm|sq millimeter|sq millimetre|sq millimeters|sq millimetres|square millimeter|square millimetre|square millimeters|square millimetres|mm2|mm^2|mm²|वर्ग मिमी|वर्ग मि.मी.|वर्ग मिलीमीटर|वर्ग मिलिमीटर|वर्ग मीलीमीटर|वर्ग मिली मीटर|वर्ग मीली मीटर|वर्ग मि. मी.|मिमी²
+    Square inch: sq in|sq inch|square inch|square inches|in2|in^2|in²|वर्ग इंच|इंच²
+    Square foot: sqft|sq ft|sq foot|sq feet|square foot|square feet|feet2|feet^2|feet²|ft2|ft^2|ft²|वर्ग फुट|वर्ग फ़ीट|वर्ग फीट|वर्ग फ़ुट|फ़ुट²|फुट²|स्क्वेयर फ़ुट|स्क्वेयर फुट
+    Square mile: sq mi|sq mile|sqmiles|square mile|square miles|mi2|mi^2|mi²|वर्ग मील|वर्ग माइल|वर्ग माइल्स|वर्ग मील²|स्क्वेयर मील|स्क्वेयर माइल|स्क्वेयर माइल्स
+    Square yard: sq yd|sq yard|sq yards|square yard|square yards|yd2|yd^2|yd²|वर्ग गज|स्क्वेयर यार्ड|स्क्वेयर गज|गज²|यार्ड²
+    Acre: -acre|acre|acres|-एकड़
 #CurrencyExtractorConfiguration
 CurrencySuffixList: !dictionary
 #Reference Source: https://en.wikipedia.org/wiki/List_of_circulating_currencies
   types: [ string, string ]
   entries:
 #Abkhazian apsar
-    Abkhazian apsar: abkhazian apsar|apsars
+    Abkhazian apsar: abkhazian apsar|apsars|अब्खाज़ियन् अप्सर|अप्सरस
 #Afghan afghani
-    Afghan afghani: afghan afghani|؋|afn|afghanis|afghani
-    Pul: pul
+    Afghan afghani: afghan afghani|afn|afghanis|afghani|अफगान अफघानी|؋|अफन|अफघानीस|अफघानी
+    Pul: pul|पुल
 #Euro
-    Euro: euros|euro|€|eur
-    Cent: cents|cent|-cents|-cent
+    Euro: euros|euro|€|eur|यूरोज़|यूरो|यूर
+    Cent: cents|cent|-cents|-cent|सेंट्स|सेंट|-सेंट्स|-सेंट
 #Albanian lek
 #No use of "ALL" "L"
-    Albanian lek: albanian lek|leks|lek
-    Qindarkë: qindarkë|qindarkës|qindarke|qindarkes
+    Albanian lek: albanian lek|leks|lek|अल्बानियन लेक|लेक्स|लेक
+    Qindarkë: qindarkë|qindarkës|qindarke|qindarkes|किन्दारकइ|किन्दारकेस
 #Angolan kwanza
-    Angolan kwanza: angolan kwanza|kz|aoa|kwanza|kwanzas|angolan kwanzas
+    Angolan kwanza: angolan kwanza|kz|kwanza|kwanzas|angolan kwanzas|अंगोलन क्वांज़ा|क्ज़|aoa|क्वांज़ा|क्वान्जास|अंगोलन क्वान्जास
 #Armenian
 #No use of "AMD"
-    Armenian dram: armenian drams|armenian dram
+    Armenian dram: armenian drams|armenian dram|आर्मेनियन ड्रामस|आर्मेनियन ड्राम
 #Aruban florin
-    Aruban florin: aruban florin|ƒ|awg|aruban florins
+    Aruban florin: aruban florin|awg|aruban florins|अरुबान फ़्लोरिन|ƒ|awg|अरुबान फ़्लोरिंस
 #Bangladeshi taka
-    Bangladeshi taka: bangladeshi taka|৳|bdt|taka|takas|bangladeshi takas
-    Paisa: poisha|paisa
+    Bangladeshi taka: bangladeshi taka|৳|bdt|taka|takas|bangladeshi takas|बंगलादेशी टाका|৳|bdt|टाका|टाकास|बंगलादेशी टाकास
+    Paisa: poisha|paisa|पोइशा|पैसा
 #Bhutanese ngultrum
-    Bhutanese ngultrum: bhutanese ngultrum|nu.|btn
-    Chetrum: chetrums|chetrum
+    Bhutanese ngultrum: bhutanese ngultrum|btn|भूटानी गलट्रुम|nu.|भटन
+    Chetrum: chetrums|chetrum|चैतरूम्स|चैतरूम
 #Bolivian boliviano
-    Bolivian boliviano: bolivian boliviano|bob|bs.|bolivia boliviano|bolivia bolivianos|bolivian bolivianos
+    Bolivian boliviano: bolivian boliviano|bolivia boliviano|bolivia bolivianos|bolivian bolivianos|बोलिवियन बोलिवियानो|bob|bs.|बोलिविया बोलिवियानो|बोलिविया बोलीवियानोस|बोलिवियन बोलीवियानोस
 #Bosnia and Herzegovina convertible mark
-    Bosnia and Herzegovina convertible mark: bosnia and herzegovina convertible mark|bam
-    Fening: fenings|fenings
+    Bosnia and Herzegovina convertible mark: bosnia and herzegovina convertible mark|बॉस्निया और हर्ज़ेगोविना कन्वर्टिबल मार्क|bam
+    Fening: fenings|fenings|फेनिंग|फेनिंग्स
 #Botswana pula
-    Botswana pula: botswana pula|bwp|pula|pulas|botswana pulas
-    Thebe: thebe
+    Botswana pula: botswana pula|pula|pulas|botswana pulas|बोट्सवाना पुला|bwp|पुला|पुलास|बोट्सवाना पुलास
+    Thebe: thebe|थेबे
 #Brazilian real
-    Brazilian real: brazilian real|r$|brl|brazil real|brazil reals|brazilian reals
+    Brazilian real: brazilian real|brazil real|brazil reals|brazilian reals|ब्राजिलियन रियाल|r$|brl|ब्राज़ील रियाल|ब्राज़ील रियाल्स|ब्राजिलियन रियाल्स
 #Bulgarian lev
-    Bulgarian lev: bulgarian lev|bgn|лв|bulgaria lev|bulgaria levs|bulgarian levs
-    Stotinka: stotinki|stotinka
+    Bulgarian lev: bulgarian lev|bulgaria lev|bulgaria levs|bulgarian levs|बुल्गारियन लेव|bgn|лв|बुल्गारिया लेव|बुल्गारिया लेव्स|बुल्गारियन लेव्स
+    Stotinka: stotinki|stotinka|स्टोटिन्की|स्टोटिन्का
 #Cambodian riel
-    Cambodian riel: cambodian riel|khr|៛|cambodia riel|cambodia riels|cambodian riels
+    Cambodian riel: cambodian riel|cambodia riel|cambodia riels|cambodian riels|कम्बोडियन रील|khr|៛|कंबोडिया रील|कंबोडिया रील्स|कम्बोडियन रील्स
 #Cape Verdean escudo
 #No use of "esc" and "$"
-    Cape Verdean escudo: cape verdean escudo|cve
+    Cape Verdean escudo: cape verdean escudo|केप वरदीन एस्कुडो|cve
 #Costa Rican colón
-    Costa Rican colón: costa rican colón|costa rican colóns|crc|₡|costa rica colón|costa rica colóns|costa rican colon|costa rican colons|costa rica colon|costa rica colons
+    Costa Rican colón: costa rican colón|costa rican colóns|costa rica colón|costa rica colóns|costa rican colon|costa rican colons|costa rica colon|costa rica colons|कोस्टा रिकान कोलोन|कोस्टा रिकान कोलोन्स|crc|₡|कोस्टा रिका कोलोन|कोस्टा रिका कोलोन्स
 #Salvadoran colón
-    Salvadoran colón: svc|salvadoran colón|salvadoran colóns|salvador colón|salvador colóns|salvadoran colon|salvadoran colons|salvador colon|salvador colons
-    Céntimo: céntimo
+    Salvadoran colón: svc|salvadoran colón|salvadoran colóns|salvador colón|salvador colóns|salvadoran colon|salvadoran colons|salvador colon|salvador colons|सल्वाडोरान कोलोन|सल्वाडोरान कोलोन्स|सल्वाडोर कोलोन|सल्वाडोर कोलोन्स
+    Céntimo: céntimo|सेंतिमो
 #Croatian kuna
-    Croatian kuna: croatian kuna|kn|hrk|croatia kuna|croatian kunas|croatian kuna kunas
-    Lipa: lipa
+    Croatian kuna: croatian kuna|croatia kuna|croatian kunas|croatian kuna kunas|क्रोएशियन कुना|kn|hrk|क्रोएशिया कुना|क्रोएशियन कुनास|क्रोएशियन कुना कुनास
+    Lipa: lipa|लीपा
 #Czech koruna
-    Czech koruna: czech koruna|czk|kč|czech korunas
-    Haléř: haléř
+    Czech koruna: czech koruna|czech korunas|चेक कोरुना|czk|kč|चेक कोरुनास
+    Haléř: haléř|हेल्लर
 #Eritrean nakfa
-    Eritrean nakfa: eritrean nakfa|nfk|ern|eritrean nakfas
+    Eritrean nakfa: eritrean nakfa|eritrean nakfas|एरिट्रान नाफ्का|nfk|ern|एरिट्रान नाफ्कास
 #Ethiopian birr
-    Ethiopian birr: ethiopian birr|etb
+    Ethiopian birr: ethiopian birr|इथोपियन बीर|etb
 #Gambian dalasi
     Gambian dalasi: gmd
-    Butut: bututs|butut
+    Butut: bututs|butut|बुटुट्स|बुटुट
 #Georgian lari
-    Georgian lari: georgian lari|lari|gel|₾
-    Tetri: tetri
+    Georgian lari: georgian lari|lari|जॉर्जियन लारी|लारी|gel|₾
+    Tetri: tetri|तेतरी
 #Ghanaian cedi
-    Ghanaian cedi: ghanaian cedi|ghs|₵|gh₵
-    Pesewa: pesewas|pesewa
+    Ghanaian cedi: ghanaian cedi|घानायन सीडी|ghs|₵|gh₵
+    Pesewa: pesewas|pesewa|पसेवास|पसेवा
 #Guatemalan quetzal
-    Guatemalan quetzal: guatemalan quetzal|gtq|guatemala quetzal
+    Guatemalan quetzal: guatemalan quetzal|gtq|guatemala quetzal|ग्वाटेमेलियन क्वेटज़ल|gtq|ग्वाटेमाला क्वेटज़ल
 #Haitian gourde
 #No use of G
-    Haitian gourde: haitian gourde|htg
+    Haitian gourde: haitian gourde|htg|हेतिअन गॉर्ड|htg
 #Honduran lempira
 #No use of L
-    Honduran lempira: honduran lempira|hnl
+    Honduran lempira: honduran lempira|होंडुरं लेम्पिरा|hnl
 #Hungarian forint
-    Hungarian forint: hungarian forint|huf|ft|hungary forint|hungary forints|hungarian forints
-    Fillér: fillér
+    Hungarian forint: hungarian forint|hungary forint|hungary forints|hungarian forints|हंगेरियन फ़ोरिंट|huf|ft|हंगरी फ़ोरिंट|हंगरी फोरिंट्स|हंगेरियन फोरिंट्स
+    Fillér: fillér|फिलर
 #Iranian rial
-    Iranian rial: iranian rial|irr|iran rial|iran rials|iranian rials
-    Yemeni rial: yemeni rial|yer|yemeni rials
-    Israeli new shekel: ₪|ils|agora
+    Iranian rial: iranian rial|iran rial|iran rials|iranian rials|ईरानियन रियाल|irr|ईरान रियाल|ईरान रियाल्स|ईरानियन रियाल्स
+    Yemeni rial: yemeni rial|yemeni rials|येमेनी रियाल|yer|येमेनी रियाल्स
+    Israeli new shekel: agora|₪|ils|अगोरा
 #Lithuanian litas
-    Lithuanian litas: ltl|lithuanian litas|lithuan litas|lithuanian lit|lithuan lit
+    Lithuanian litas: lithuanian litas|lithuan litas|lithuanian lit|lithuan lit|ltl|लिथुअनिअन लिटास|लिथुयन लिटास|लिथुअनिअन लिट्|लिथुयन लिट्
 #Japanese yen
-    Japanese yen: japanese yen|jpy|yen|-yen|¥|yens|japanese yens|japan yen|japan yens
+    Japanese yen: japanese yen|yen|-yen|¥|yens|japanese yens|japan yen|japan yens|येन|जापानी येन|jpy|-येन|¥|येन्स|जापानी येन्स|जापान येन|जापान येन्स|
 #Kazakhstani tenge
-    Kazakhstani tenge: kazakhstani tenge|kazakh tenge|kazak tenge|kzt
+    Kazakhstani tenge: kazakhstani tenge|kazakh tenge|kazak tenge|कज़ाखस्तानी तेंगे|कजाख तेंगे|कज़ाक तेंगे|kzt
 #Kenyan shilling
-    Kenyan shilling: kenyan shilling|kes
+    Kenyan shilling: kenyan shilling|केन्यन शिलिंग|kes
 #North Korean won
-    North Korean won: north korean won|kpw|north korean wons
-    South Korean won: south korean won|krw|south korean wons
-    Korean won: korean won|₩|korean wons
+    North Korean won: north korean won|north korean wons|उत्तर कोरिया वोन|kpw|उत्तर कोरिया वोनस
+    South Korean won: south korean won|south korean wons|दक्षिण कोरिया वोन|krw|दक्षिण कोरिया वोनस
+    Korean won: korean won|korean wons|कोरियाई वोन|₩|कोरियाई वोनस
 #Kyrgyzstani som
-    Kyrgyzstani som: kyrgyzstani som|kgs
+    Kyrgyzstani som: kyrgyzstani som|किर्ग़िज़स्तानी सोम|kgs
 #Uzbekitan som
-    Uzbekitan som: uzbekitan som|uzs
+    Uzbekitan som: uzbekitan som|उज़्बेकिस्तान सोम|uzs
 #Lao kip
-    Lao kip: lao kip|lak|₭n|₭
-    Att: att
+    Lao kip: lao kip|lak|लाओ किप|लाक|₭n|₭
+    Att: att|अट्ट
 #Lesotho loti
-    Lesotho loti: lesotho loti|lsl|loti
-    Sente: sente|lisente
+    Lesotho loti: lesotho loti|लेसोथो लोटी|lsl|loti|लोटी
+    Sente: sente|lisente|सेन्टे|लिसेन्टे
 #South African rand
-    South African rand: south african rand|zar|south africa rand|south africa rands|south african rands
+    South African rand: south african rand|zar|south africa rand|south africa rands|south african rands|सोउत् अफ़्रिcअन् रन्ड्|ज़र्|सोउत् अफ़्रिcअ रन्ड्|सोउत् अफ़्रिcअन् रन्ड्स्
 #Macanese pataca
-    Macanese pataca: macanese pataca|mop$|mop
-    Avo: avos|avo
+    Macanese pataca: macanese pataca|mop$|mop|मैकाणी पाटाका|मोप्
+    Avo: avos|avo|अवोस्|अवो
 #Macedonian denar
-    Macedonian denar: macedonian denar|mkd|ден
-    Deni: deni
+    Macedonian denar: macedonian denar|mkd|ден|मcएडोनिअन् डेनर्
+    Deni: deni|डेनि
 #Malagasy ariary
-    Malagasy ariary: malagasy ariary|mga
-    Iraimbilanja: iraimbilanja
+    Malagasy ariary: malagasy ariary|mga|मैलागासी अरीरी
+    Iraimbilanja: iraimbilanja|इरैम्बिलन्ज
 #Malawian kwacha
-    Malawian kwacha: malawian kwacha|mk|mwk
-    Tambala: tambala
+    Malawian kwacha: malawian kwacha|mk|mwk|मलावी क्वाचा|
+    Tambala: tambala|टम्बल|टम्बला
 #Malaysian ringgit
-    Malaysian ringgit: malaysian ringgit|rm|myr|malaysia ringgit|malaysia ringgits|malaysian ringgits
+    Malaysian ringgit: malaysian ringgit|rm|myr|malaysia ringgit|malaysia ringgits|malaysian ringgits|मलेशियाई रिंग्गित|मलेशिया रिंगित|मलेशिया रिंगित|मलेशिया रिंगितस|मलेशियाई रिंगिट|
 #Mauritanian ouguiya
-    Mauritanian ouguiya: mauritanian ouguiya|um|mro|mauritania ouguiya|mauritania ouguiyas|mauritanian ouguiyas
-    Khoums: khoums
+    Mauritanian ouguiya: mauritanian ouguiya|um|mro|mauritania ouguiya|mauritania ouguiyas|mauritanian ouguiyas|मॉरिटानियन औगुइया|मॉरिटानिया औगुइया|मॉरिटानिया औगुइयास|मॉरिटानियन औगुइया|मॉरिटानियन औगुइयास
+    Khoums: khoums|खोमस|खुम्स
 #Mongolian tögrög
     Mongolian tögrög: mongolian tögrög|mnt|₮|mongolia tögrög|mongolia tögrögs|mongolian tögrögs|mongolian togrog|mongolian togrogs|mongolia togrog|mongolia togrogs
 #Mozambican metical
-    Mozambican metical: mozambican metical|mt|mzn|mozambica metical|mozambica meticals|mozambican meticals
+    Mozambican metical: mozambican metical|mt|mzn|mozambica metical|mozambica meticals|mozambican meticals|मोज़ाम्बिक मेटिकल|मोज़ाम्बिका मेटिकल|मोज़ाम्बिका मेटिकलस|मोज़ाम्बिकान मेटिकल्स
 #Burmese kyat
-    Burmese kyat: burmese kyat|ks|mmk
-    Pya: pya
+    Burmese kyat: burmese kyat|ks|mmk|बर्मी कायत
+    Pya: pya|प्या|पया
 #Nicaraguan córdoba
-    Nicaraguan córdoba: nicaraguan córdoba|nio
+    Nicaraguan córdoba: nicaraguan córdoba|nio|निकारागुअन कोर्डोबा|निकारागुआ कोर्डोबा
 #Nigerian naira
-    Nigerian naira: nigerian naira|naira|ngn|₦|nigeria naira|nigeria nairas|nigerian nairas
-    Kobo: kobo
+    Nigerian naira: nigerian naira|naira|ngn|₦|nigeria naira|nigeria nairas|nigerian nairas|नाइजीरियाई नायरा|नाइजीरियाई नाइरा|नाइरा|नायरा|निगरिया नायरा|निगरिया नाइरा|नाइजीरियाई नाइरास|नाइजीरियाई नायरास
+    Kobo: kobo|कोबो
 #Turkish lira
-    Turkish lira: turkish lira|try|tl|turkey lira|turkey liras|turkish liras
-    Kuruş: kuruş
+    Turkish lira: turkish lira|try|tl|turkey lira|turkey liras|turkish liras|तुर्की लीरा|तुर्की लीरा|तुर्की लीरा|तुर्की लीरास
+    Kuruş: kuruş|कुरूस
 #Omani rial
-    Omani rial: omani rial|omr|ر.ع.
+    Omani rial: omani rial|omr|ر.ع.|ओमानी रियाल|ओमान रियाल
 #Panamanian balboa
-    Panamanian balboa: panamanian balboa|b/.|pab
-    Centesimo: centesimo
+    Panamanian balboa: panamanian balboa|b/.|pab|पनामानियन बाल्बोआ|पनामा बाल्बोआ
+    Centesimo: centesimo|सएन्टेसिमो
 #Papua New Guinean kina
-    Papua New Guinean kina: papua new guinean kina|kina|pgk
-    Toea: toea
+    Papua New Guinean kina: papua new guinean kina|kina|pgk|पापुआ न्यू गिनी किना|पापुआ न्यू गिनीयन|किना
+    Toea: toea|टू ईए|टोएया
 #Paraguayan guaraní
-    Paraguayan guaraní: paraguayan guaraní|₲|pyg
+    Paraguayan guaraní: paraguayan guaraní|₲|pyg|पराग्वे ग्वारानी|परागुआयन गुआरानी
 #Peruvian sol
-    Peruvian sol: peruvian sol|soles|sol|peruvian nuevo sol
+    Peruvian sol: peruvian sol|soles|sol|peruvian nuevo sol|पेरुवियन सोल|सोलस|सोल|पेरुवियन न्यूवो|सोल
 #Polish zloty
-    Polish złoty: złoty|polish złoty|zł|pln|zloty|polish zloty|poland zloty|poland złoty
-    Grosz: groszy|grosz|grosze
+    Polish złoty: złoty|polish złoty|zł|pln|zloty|polish zloty|poland zloty|poland złoty|पोलिश ज़्लॉटी|ज़्लॉटी|
+    Grosz: groszy|grosz|grosze|ग्रोज़ी|ग्रौस्ज़|ग्रौस्ज़े|
 #Qatari riyal
-    Qatari riyal: qatari riyal|qar|qatari riyals|qatar riyal|qatar riyals
-    Saudi riyal: saudi riyal|sar|saudi riyals
-    Riyal: riyal|riyals|rial|﷼
-    Dirham: dirham|dirhem|dirhm
-    Halala: halalas|halala
+    Qatari riyal: qatari riyal|qar|qatari riyals|qatar riyal|qatar riyals|क़तारी रियाल|क़तारी रियालस|क़तार रियाल|क़तार रियालस
+    Saudi riyal: saudi riyal|sar|saudi riyals|साउदी रियाल|साउदी रियालस
+    Riyal: riyal|riyals|rial|﷼|रियाल|रियालस
+    Dirham: dirham|dirhem|dirhm|दिरहम|डेर्हैम
+    Halala: halalas|halala|हलल|हललस्
 #Samoan tālā
-    Samoan tālā: samoan tālā|tālā|tala|ws$|samoa|wst|samoan tala
-    Sene: sene
+    Samoan tālā: samoan tālā|tālā|tala|ws$|samoa|wst|samoan tala|सामोन ताल|समोआ ताल|ताल
+    Sene: sene|सेने
 #São Tomé and Príncipe dobra
-    São Tomé and Príncipe dobra: são tomé and príncipe dobra|dobras|dobra|std
+    São Tomé and Príncipe dobra: são tomé and príncipe dobra|dobras|dobra|std|साओ टोमे और प्रिंसिपे डोबरा|डोबरा|डोबरास
 #Sierra Leonean leone
-    Sierra Leonean leone: sierra leonean leone|sll|leone|le
+    Sierra Leonean leone: sierra leonean leone|sll|leone|le|सिएरा लियोन लियोन|लियोन|सिएरा लियोनियाई लियोन
 #Spain
-    Peseta: pesetas|peseta
+    Peseta: pesetas|peseta|पेसेटा|पेसेटास|पसेटा
 #Netherlands guilder
-    Netherlands guilder: florin|netherlands antillean guilder|ang|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl
+    Netherlands guilder: florin|netherlands antillean guilder|ang|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl|फ्लोरिन|नीदरलैंड एंटीलियन गिल्डर|आंग|नेदरलॅंड्स गुल्डन|गिल्डर|गिल्डरस|डच गिल्डर
 #Swazi lilangeni
-    Swazi lilangeni: swazi lilangeni|lilangeni|szl|emalangeni
+    Swazi lilangeni: swazi lilangeni|lilangeni|szl|emalangeni|स्वाज़ी लिलंगेंनी|लिलंगेंनी|एमलैंगेनी
 #Tajikistani somoni
-    Tajikistani somoni: tajikistani somoni|tjs|somoni
-    Diram: dirams|diram
+    Tajikistani somoni: tajikistani somoni|tjs|somoni|ताजिकिस्तानी सोमोनी|सोमोनी
+    Diram: dirams|diram|दिराम|दिरामस
 #Thai baht
-    Thai baht: thai baht|฿|thb|baht
-    Satang: satang|satangs
+    Thai baht: thai baht|฿|thb|baht|ईलैण्ड की मुद्रा|थाई बात|बात
+    Satang: satang|satangs|सातंग|सातंगस
 #Tongan paʻanga
-    Tongan paʻanga: tongan paʻanga|paʻanga|tongan pa'anga|pa'anga
-    Seniti: seniti
+    Tongan paʻanga: tongan paʻanga|paʻanga|tongan pa'anga|pa'anga|टोंगन पांगा|पांगा|
+    Seniti: seniti|सेनिटी
 #Ukrainian hryvnia
-    Ukrainian hryvnia: ukrainian hryvnia|hyrvnia|uah|₴|ukrain hryvnia|ukrain hryvnias|ukrainian hryvnias
+    Ukrainian hryvnia: ukrainian hryvnia|hyrvnia|uah|₴|ukrain hryvnia|ukrain hryvnias|ukrainian hryvnias|साझेदार रिव्निया|रिव्निया|यूक्रेन के रिव्निया|यूक्रेन रिव्निया|यूक्रेन रिव्नियास|यूक्रेन के रिव्नियास
 #Vanuatu vatu
-    Vanuatu vatu: vanuatu vatu|vatu|vuv
+    Vanuatu vatu: vanuatu vatu|vatu|vuv|वानुअतु वातु|वातु||वूव
 #Venezuelan bolívar
-    Venezuelan bolívar: venezuelan bolívar|venezuelan bolívars|bs.f.|vef|bolívar fuerte|venezuelan bolivar|venezuelan bolivars|venezuela bolivar|venezuela bolivarsvenezuelan bolivar|venezuelan bolivars
+    Venezuelan bolívar: venezuelan bolívar|venezuelan bolívars|bs.f.|vef|bolívar fuerte|venezuelan bolivar|venezuelan bolivars|venezuela bolivar|venezuela bolivarsvenezuelan bolivar|venezuelan bolivars|वेनेज़ुएलन बोलिवर|वेनेज़ुएलन|बोलिवरस|वेफ|बोलिवर फुर्ते|वेनेजुएला बोलिवर्स
 #Vietnamese dong
-    Vietnamese dong: vietnamese dong|vnd|đồng|vietnam dong|vietnamese dongs|vietnam dongs
+    Vietnamese dong: vietnamese dong|vnd|đồng|vietnam dong|vietnamese dongs|vietnam dongs|वियतनामी डोंग|डोंग|वियतनामी डोंग|वियतनामी डोंगस|वियतनामी डोंग
 #Zambian kwacha
-    Zambian kwacha: zambian kwacha|zk|zmw|zambia kwacha|kwachas|zambian kwachas
+    Zambian kwacha: zambian kwacha|zk|zmw|zambia kwacha|kwachas|zambian kwachas|जाम्बिया केवाचा|क्वाचा|जाम्बिया क्वाचा|जाम्बिया केवाचास|जाम्बिया क्वाचास
 #Dirham
-    Moroccan dirham: moroccan dirham|mad|د.م.
-    United Arab Emirates dirham: united arab emirates dirham|د.إ|aed
+    Moroccan dirham: moroccan dirham|mad|د.م.|मोरोचन दिरहम|मोरक्कन दिरहम
+    United Arab Emirates dirham: united arab emirates dirham|د.إ|aed|संयुक्त अरब अमीरात दिरहम|
 #Manat
-    Azerbaijani manat: azerbaijani manat|azn
+    Azerbaijani manat: azerbaijani manat|azn|अज़रभैजानि मनात
     Turkmenistan manat: turkmenistan manat|turkmenistan new manat|tmt
-    Manat: manats|manat
+    Manat: manats|manat|तुर्कमेनिस्तान मैनाट|तुर्कमेनिस्तान नई मनत|टीएमटी मनत
     Qəpik: qəpik
 #Shilling
-    Somali shilling: somali shillings|somali shilling|shilin soomaali|-shilin soomaali|scellino|shilin|sh.so.|sos
-    Somaliland shilling: somaliland shillings|somaliland shilling|soomaaliland shilin
-    Tanzanian shilling: tanzanian shilling|tanzanian shillings|tsh|tzs|tanzania shilling|tanzania shillings
-    Ugandan shilling: ugandan shilling|ugandan shillings|ugx|uganda shilling|uganda shillings
+    Somali shilling: somali shillings|somali shilling|shilin soomaali|-shilin soomaali|scellino|shilin|sh.so.|sos|सोमालि शिलिंग|सोमालि शिलिंगस|शिलिन सुमाली|स्केलिनो|शिलिन
+    Somaliland shilling: somaliland shillings|somaliland shilling|soomaaliland shilin|सोमालीलैंड शिलिंग|सोमालीलैंड शिलिंग
+    Tanzanian shilling: tanzanian shilling|tanzanian shillings|tsh|tzs|tanzania shilling|tanzania shillings|तंजानिया शिलिंग|तंजानिया शिलिंगस|तंजानिया शिलिंग्स
+    Ugandan shilling: ugandan shilling|ugandan shillings|ugx|uganda shilling|uganda shillings|युगांडा शिलिंग|युगांडा शिलिंग
 #Leu
-    Romanian leu: romanian leu|lei|ron|romania leu
-    Moldovan leu: moldovan leu|mdl|moldova leu
-    Leu: leu
-    Ban: bani|-ban|ban
+    Romanian leu: romanian leu|lei|romania leu|रोमानियन लेउ|लेइ|ron|रोमानिया लेउ
+    Moldovan leu: moldovan leu|moldova leu|मोल्डोवन लेउ|mdl|मोल्डोवा लेउ
+    Leu: leu|लेउ
+    Ban: bani|-ban|ban|बानी|-बान|बान
 #Rupee
-    Nepalese rupee: nepalese rupees|nepalese rupee|npr
-    Pakistani rupee: pakistani rupees|pakistani rupee|pkr
-    Indian rupee: indian rupees|indian rupee|inr|₹|india rupees|india rupee
-    Seychellois rupee: seychellois rupees|seychellois rupee|scr|sr|sre
-    Mauritian rupee: mauritian rupees|mauritian rupee|mur
-    Maldivian rufiyaa: maldivian rufiyaas|maldivian rufiyaa|mvr|.ރ|maldive rufiyaas|maldive rufiyaa
-    Sri Lankan rupee: sri lankan rupees|sri lankan rupee|lkr|රු|ரூ
-    Indonesian rupiah: indonesian rupiah|rupiah|perak|rp|idr
-    Rupee: rupee|rupees|rs
+    Nepalese rupee: nepalese rupees|nepalese rupee|नेपाली रुपये|नेपाली रुपया|npr
+    Pakistani rupee: pakistani rupees|pakistani rupee|पाकिस्तानी रुपये|पाकिस्तानी रुपया|pkr
+    Indian rupee: indian rupees|indian rupee|भारतीय रुपये|भारतीय रुपया|inr|₹|india rupees|india rupee
+    Seychellois rupee: seychellois rupees|seychellois rupee|सेशेल्स रुपये|सेशेल्स रुपया|scr|sr|sre
+    Mauritian rupee: mauritian rupees|mauritian rupee|मॉरीशस रुपये|मॉरीशस रुपया|mur
+    Maldivian rufiyaa: maldivian rufiyaas|maldivian rufiyaa|mvr|माल्डिवियन रुफियास|माल्डिवियन रुफ़िया|mvr|.ރ|maldive rufiyaas|maldive rufiyaa
+    Sri Lankan rupee: sri lankan rupees|sri lankan rupee|श्री लंकन रुपये|श्री लंकन रुपया|lkr|රු|ரூ
+    Indonesian rupiah: indonesian rupiah|rupiah|perak|इन्डोनेशियाई रुपयाः|रुपयाः|पेराक|rp|idr
+    Rupee: rupee|rupees|rs|रुपया|रुपये|रु.
 #Krone
-    Danish krone: danish krone|dkk|denmark krone|denmark krones|danish krones
-    Norwegian krone: norwegian krone|nok|norway krone|norway krones|norwegian krones
-    Faroese króna: faroese króna|faroese krona
-    Icelandic króna: icelandic króna|isk|icelandic krona|iceland króna|iceland krona
-    Swedish krona: swedish krona|sek|swedan krona
-    Krone: kronor|krona|króna|krone|krones|kr|-kr
-    Øre: Øre|oyra|eyrir
+    Danish krone: danish krone|डेनिश क्रौन|dkk|डेनमार्क क्रौन|डेनमार्क क्रोन्स|डेनिश क्रोन्स|denmark krone|denmark krones|danish krones
+    Norwegian krone: नार्वेजियन क्रौन|norwegian krone|nok|norway krone|norway krones|norwegian krones|नॉर्वे क्रौन|नॉर्वे क्रोन्स|नार्वेजियन क्रोन्स
+    Faroese króna: फिरोज़ी क्रोना|faroese króna|faroese krona
+    Icelandic króna: आइसलैंडिक क्रोना|icelandic króna|isk|icelandic krona|iceland króna|iceland krona|आइसलैंड क्रोना
+    Swedish krona: swedish krona|sek|swedan krona|स्वीडिश क्रोना|स्वीडन क्रोना
+    Krone: क्रोनर|क्रोना|क्रौन|क्रोन्स|kronor|krona|króna|krone|krones|kr|-kr
+    Øre: Øre|oyra|eyrir|ओएरा|इरीर
 #Franc
-    West African CFA franc: west african cfa franc|xof|west africa cfa franc|west africa franc|west african franc
-    Central African CFA franc: central african cfa franc|xaf|central africa cfa franc|central african franc|central africa franc
-    Comorian franc: comorian franc|kmf
-    Congolese franc: congolese franc|cdf
-    Burundian franc: burundian franc|bif
-    Djiboutian franc: djiboutian franc|djf
-    CFP franc: cfp franc|xpf
-    Guinean franc: guinean franc|gnf
-    Swiss franc: swiss francs|swiss franc|chf|sfr.
-    Rwandan franc: Rwandan franc|rwf|rf|r₣|frw
-    Belgian franc: belgian franc|bi.|b.fr.|bef|belgium franc
-    Rappen: rappen|-rappen
-    Franc: francs|franc|fr.|fs
-    Centime: centimes|centime|santim
+    West African CFA franc: पश्चिम अफ़्रीकी cfa फ्रैंक|west african cfa franc|xof|west africa cfa franc|west africa franc|west african franc|पश्चिम अफ्रीका cfa फ्रैंक|पश्चिम अफ्रीका फ्रैंक|पश्चिम अफ़्रीकी फ्रैंक
+    Central African CFA franc: मध्य अफ़्रीकी cfa फ्रैंक|central african cfa franc|xaf|central africa cfa franc|central african franc|central africa franc|मध्य अफ्रीका cfa फ्रैंक|मध्य अफ़्रीकी फ्रैंक|मध्य अफ्रीका फ्रैंक
+    Comorian franc: कोमोरियाई फ्रैंक|comorian franc|kmf
+    Congolese franc: कॉंगोलीस फ्रैंक|congolese franc|cdf
+    Burundian franc: बुरूंडीएन फ्रैंक|burundian franc|bif
+    Djiboutian franc: जिबूती फ्रैंक|djiboutian franc|djf
+    CFP franc: cfp फ्रैंक|cfp franc|xpf
+    Guinean franc: गिनी फ्रैंक|guinean franc|gnf
+    Swiss franc: स्विस फ्रैंक्स|स्विस फ्रैंक|swiss francs|swiss franc|chf|sfr.
+    Rwandan franc: रवांडन फ्रैंक|Rwandan franc|rwf|rf|r₣|frw
+    Belgian franc: बेल्जियन फ्रैंक|belgian franc|bi.|b.fr.|bef|belgium franc|बेल्जियम फ्रैंक
+    Rappen: rappen|-rappen|राप्पेन|-राप्पेन
+    Franc: francs|franc|fr.|fs|फ्रैंक्स|फ्रैंक|फ़्रैंक|फ़्रैंक
+    Centime: centimes|centime|santim|सेंटीम्स|सेंटीम|सांटीम
 #Ruble
-    Russian ruble: russian ruble|₽|rub|russia ruble|russia ₽|russian ₽|russian rubles|russia rubles
-    New Belarusian ruble: new belarusian ruble|byn|new belarus ruble|new belarus rubles|new belarusian rubles
-    Old Belarusian ruble: old belarusian ruble|byr|old belarus ruble|old belarus rubles|old belarusian rubles
-    Transnistrian ruble: transnistrian ruble|prb|р.
-    Belarusian ruble: belarusian ruble|belarus ruble|belarus rubles|belarusian rubles
-    Kopek: kopek|kopeks
-    Kapyeyka: kapyeyka
-    Ruble: rubles|ruble|br
+    Russian ruble: रुस्सियन रूबल|russian ruble|₽|rub|russia ruble|russia ₽|russian ₽|russian rubles|russia rubles|रूस रूबल|रूस ₽|रुस्सियन ₽|रुस्सियन रूबल्स|रूस रूबल्स
+    New Belarusian ruble: नया बेलारूसियन रूबल|new belarusian ruble|byn|new belarus ruble|new belarus rubles|new belarusian rubles|नया बेलारूस रूबल|नया बेलारूस रूबल्स|नया बेलारूसियन रूबल्स
+    Old Belarusian ruble: ओल्ड बेलारूसियन रूबल|old belarusian ruble|byr|old belarus ruble|old belarus rubles|old belarusian rubles|ओल्ड बेलारूस रूबल|ओल्ड बेलारूस रूबल्स|ओल्ड बेलारूसियन रूबल्स
+    Transnistrian ruble: ट्रांसनिस्ट्रियन रूबल|transnistrian ruble|prb|р.
+    Belarusian ruble: belarusian ruble|belarus ruble|belarus rubles|belarusian rubles|बेलारूसियन रूबल|बेलारूस रूबल|बेलारूस रूबल्स|बेलारूसियन रूबल्स
+    Kopek: कोपेक|कोपेक्स|kopek|kopeks
+    Kapyeyka: काप्येका|kapyeyka
+    Ruble: रूबल्स|रूबल|rubles|ruble|br
 #Dinar
-    Algerian dinar: algerian dinar|د.ج|dzd|algerian dinars|algeria dinar|algeria dinars
-    Bahraini dinar: bahraini dinars|bahraini dinar|bhd|.د.ب
-    Santeem: santeem|santeems
-    Iraqi dinar: iraqi dinars|iraqi dinar|iraq dinars|iraq dinar|iqd|ع.د
-    Jordanian dinar: jordanian dinars|jordanian dinar|د.ا|jod|jordan dinar|jordan dinars
-    Kuwaiti dinar: kuwaiti dinars|kuwaiti dinar|kwd|د.ك
-    Libyan dinar: libyan dinars|libyan dinar|libya dinars|libya dinar|lyd
-    Serbian dinar: serbian dinars|serbian dinar|din.|rsd|дин.|serbia dinars|serbia dinar
-    Tunisian dinar: tunisian dinars|tunisian dinar|tnd|tunisia dinars|tunisia dinar
-    Yugoslav dinar: yugoslav dinars|yugoslav dinar|yun
-    Dinar: dinars|dinar|denar|-dinars|-dinar
-    Fils: fils|fulūs|-fils|-fil
-    Para: para|napa
-    Millime: millimes|millime
+    Algerian dinar: एलजीरियन दीनार|algerian dinar|د.ج|dzd|algerian dinars|algeria dinar|algeria dinars|एलजीरियन दिनार्स|अल्जीरिया दीनार|अल्जीरिया दिनार्स
+    Bahraini dinar: बहरैनी दिनार्स|बहरैनी दीनार|bahraini dinars|bahraini dinar|bhd|.د.ب
+    Santeem: santeem|santeems|संतीम|संतीम्स
+    Iraqi dinar: इराकी दीनार|इराकी दीनार|इराक दिनार्स|इराक दीनार|iraqi dinars|iraqi dinar|iraq dinars|iraq dinar|iqd|ع.د
+    Jordanian dinar: जोर्डनियन दिनार्स|जोर्डनियन दीनार|jordanian dinars|jordanian dinar|د.ا|jod|jordan dinar|jordan dinars|जॉर्डन दीनार|जॉर्डन दिनार्स
+    Kuwaiti dinar: कुवैती दिनार्स|कुवैती दीनार|kuwaiti dinars|kuwaiti dinar|kwd|د.ك
+    Libyan dinar: लिबयन दिनार्स|लिबयन दीनार|लीबिया दिनार्स|लीबिया दीनार|libyan dinars|libyan dinar|libya dinars|libya dinar|lyd
+    Serbian dinar: सर्बियन दिनार्स|सर्बियन दीनार|serbian dinars|serbian dinar|din.|rsd|дин.|serbia dinars|serbia dinar|सर्बिया दिनार्स|सर्बिया दीनार
+    Tunisian dinar: टुनिशियन दिनार्स|टुनिशियन दीनार|tunisian dinars|tunisian dinar|tnd|tunisia dinars|tunisia dinar|टुनिशिया दिनार्स|टुनिशिया दीनार
+    Yugoslav dinar: यूगोस्लाव दिनार्स|यूगोस्लाव दीनार|yugoslav dinars|yugoslav dinar|yun
+    Dinar: दिनार्स|दीनार|देनार|-दिनार्स|-दीनार|dinars|dinar|denar|-dinars|-dinar
+    Fils: फिल्स|फुलूस|-फिल्स|-फिल|fils|fulūs|-fils|-fil
+    Para: पारा|नापा|para|napa
+    Millime: मिलिम्स|मिल्लीम|millimes|millime
 #Peso
-    Argentine peso: argentine peso|ars|argetina peso|argetina pesos|argentine pesos
-    Chilean peso: chilean pesos|chilean peso|clp|chile peso|chile peso
-    Colombian peso: colombian pesos|colombian peso|cop|colombia peso|colombia pesos
-    Cuban convertible peso: cuban convertible pesos|cuban convertible peso|cuc|cuba convertible pesos|cuba convertible peso
-    Cuban peso: cuban pesos|cuban peso|cup|cuba pesos|cuba peso
-    Dominican peso: dominican pesos|dominican peso|dop|dominica pesos|dominica peso
-    Mexican peso: mexican pesos|mexican peso|mxn|mexico pesos|mexico peso
-    Philippine peso: piso|philippine pesos|philippine peso|₱|php
-    Uruguayan peso: uruguayan pesos|uruguayan peso|uyu
-    Peso: pesos|peso
-    Centavo: centavos|centavo
+    Argentine peso: अर्जेंटाइन पेसो|argentine peso|ars|argetina peso|argetina pesos|argentine pesos|अर्जेंटीना पेसो|अर्जेंटीना पेसोस|अर्जेंटाइन पेसोस
+    Chilean peso: चिलियन पेसोस|चिलियन पेसो|chilean pesos|chilean peso|clp|chile peso|chile peso|चिली पेसो|चिली पेसोस
+    Colombian peso: कोलम्बियाई पेसोस|कोलम्बियाई पेसो|colombian pesos|colombian peso|cop|colombia peso|colombia pesos|कोलंबिया पेसो|कोलंबिया पेसोस
+    Cuban convertible peso: क्युबन कन्वर्टिबल पेसोस|क्युबन कन्वर्टिबल पेसो|cuban convertible pesos|cuban convertible peso|cuc|cuba convertible pesos|cuba convertible peso|क्यूबा कन्वर्टिबल पेसोस|क्यूबा कन्वर्टिबल पेसो
+    Cuban peso: क्युबन पेसोस|क्युबन पेसो|cuban pesos|cuban peso|cup|cuba pesos|cuba peso|क्यूबा पेसोस|क्यूबा पेसो
+    Dominican peso: डोमिनिकन पेसोस|डोमिनिकन पेसो|dominican pesos|dominican peso|dop|dominica pesos|dominica peso|डॉमिनिका पेसोस|डॉमिनिका पेसो
+    Mexican peso: मेक्सिकन पेसोस|मेक्सिकन पेसो|mexican pesos|mexican peso|mxn|mexico pesos|mexico peso|मेक्सिको पेसोस|मेक्सिको पेसो
+    Philippine peso: पीसो|फिलिप्पीन पेसोस|फिलिप्पीन पेसो|piso|philippine pesos|philippine peso|₱|php
+    Uruguayan peso: उरुगायन पेसोस|उरुगायन पेसो|uruguayan pesos|uruguayan peso|uyu
+    Peso: पेसोस|पेसो|pesos|peso
+    Centavo: सेंतावोस|सेंतावो|centavos|centavo
 #Pound
-    Alderney pound: alderney pounds|alderney pound|alderney £
-    British pound: british pounds|british pound|british £|gbp|pound sterling|pound sterlings|sterling|pound scot|pound scots
-    Guernsey pound: guernsey pounds|guernsey £|ggp
-    Ascension pound: ascension pounds|ascension pound|ascension £
-    Saint Helena pound: saint helena pounds|saint helena pound|saint helena £|shp
-    Egyptian pound: egyptian pounds|egyptian pound|egyptian £|egp|ج.م|egypt pounds|egypt pound
-    Falkland Islands pound: falkland islands pounds|falkland islands pound|falkland islands £|fkp|falkland island pounds|falkland island pound|falkland island £
-    Gibraltar pound: gibraltar pounds|gibraltar pound|gibraltar £|gip
-    Manx pound: manx pounds|manx pound|manx £|imp
-    Jersey pound: jersey pounds|jersey pound|jersey £|jep
-    Lebanese pound: lebanese pounds|lebanese pound|lebanese £|lebanan pounds|lebanan pound|lebanan £|lbp|ل.ل
-    South Georgia and the South Sandwich Islands pound: south georgia and the south sandwich islands pounds|south georgia and the south sandwich islands pound|south georgia and the south sandwich islands £
-    South Sudanese pound: south sudanese pounds|south sudanese pound|south sudanese £|ssp|south sudan pounds|south sudan pound|south sudan £
-    Sudanese pound: sudanese pounds|sudanese pound|sudanese £|ج.س.|sdg|sudan pounds|sudan pound|sudan £
-    Syrian pound: syrian pounds|syrian pound|syrian £|ل.س|syp|syria pounds|syria pound|syria £
-    Tristan da Cunha pound: tristan da cunha pounds|tristan da cunha pound|tristan da cunha £
-    Pound: pounds|pound|-pounds|-pound|£
-    Pence: pence
-    Shilling: shillings|shilling|shilingi|sh
-    Penny: pennies|penny
+    Alderney pound: आल्डरने पाउंड्स|आल्डरने पाउंड|आल्डरने £|alderney pounds|alderney pound|alderney £ 
+    British pound: ब्रिटिश पाउंड्स|ब्रिटिश पाउंड|ब्रिटिश £|british pounds|british pound|british £|gbp|pound sterling|pound sterlings|sterling|pound scot|pound scots|पाउंड स्टरलिंग|पाउंड स्टरलिंग्स|स्टरलिंग|पाउंड स्कोट|पाउंड स्कोट्स
+    Guernsey pound: गर्नजी पाउंड्स|गर्नजी ggp|guernsey pounds|guernsey £|ggp
+    Ascension pound: एसेंशन पाउंड्स|एसेंशन पाउंड|एसेंशन £|ascension pounds|ascension pound|ascension £
+    Saint Helena pound: संत हेलेना पाउंड्स|संत हेलेना पाउंड|संत हेलेना shp|saint helena pounds|saint helena pound|saint helena £|shp
+    Egyptian pound: मिस्त्री पाउंड्स|मिस्त्री पाउंड|मिस्त्री egp|ج.م|मिस्र पाउंड्स|मिस्र पाउंड|egyptian pounds|egyptian pound|egyptian £|egp|ج.م|egypt pounds|egypt pound
+    Falkland Islands pound: फ़ॉकलैंड आइलैंड पाउंड्स|फ़ॉकलैंड आइलैंड पाउंड|फ़ॉकलैंड आइलैंड fkp|फ़ॉकलैंड आइलैंड पाउंड्स|फ़ॉकलैंड आइलैंड पाउंड|फ़ॉकलैंड आइलैंड £|falkland islands pounds|falkland islands pound|falkland islands £|fkp|falkland island pounds|falkland island pound|falkland island £
+    Gibraltar pound: गिब्राल्टर पाउंड्स|गिब्राल्टर पाउंड|गिब्राल्टर gip|gibraltar pounds|gibraltar pound|gibraltar £|gip
+    Manx pound: मैंक्स पाउंड्स|मैंक्स पाउंड|मैंक्स imp|manx pounds|manx pound|manx £|imp
+    Jersey pound: जर्सी पाउंड्स|जर्सी पाउंड|जर्सी jep|jersey pounds|jersey pound|jersey £|jep
+    Lebanese pound: लेबनीज पाउंड्स|लेबनीज पाउंड|लेबनीज लेबनान पाउंड्स|लेबनान पाउंड|लेबनान £| lebanese pounds|lebanese pound|lebanese £|lebanan pounds|lebanan pound|lebanan £|lbp|ل.ل
+    South Georgia and the South Sandwich Islands pound: दक्षिण जॉर्जिया और दक्षिण सैंडविच इसलैंड्स पाउंड्स|दक्षिण जॉर्जिया और दक्षिण सैंडविच इसलैंड्स पाउंड|दक्षिण जॉर्जिया और दक्षिण सैंडविच इसलैंड्स £|south georgia and the south sandwich islands pounds|south georgia and the south sandwich islands pound|south georgia and the south sandwich islands £
+    South Sudanese pound: दक्षिण सूडानी पाउंड्स|दक्षिण सूडानी पाउंड|दक्षिण सूडानी ssp|दक्षिण सूडान पाउंड्स|दक्षिण सूडान पाउंड|दक्षिण सूडान £|south sudanese pounds|south sudanese pound|south sudanese £|ssp|south sudan pounds|south sudan pound|south sudan £
+    Sudanese pound: सूडानी पाउंड्स|सूडानी पाउंड|सूडानी £|sudanese pounds|sudanese pound|sudanese £|ج.س.|sdg|sudan pounds|sudan pound|sudan £|सूडान पाउंड्स|सूडान पाउंड|सूडान £
+    Syrian pound: सीरियन पाउंड्स|सीरियन पाउंड|सीरियन £|syrian pounds|syrian pound|syrian £|ل.س|syp|syria pounds|syria pound|syria £|सीरिया पाउंड्स|सीरिया पाउंड|सीरिया £ 
+    Tristan da Cunha pound: त्रिस्तान डा कुन्हा पाउंड्स|त्रिस्तान डा कुन्हा पाउंड|त्रिस्तान डा कुन्हा £|tristan da cunha pounds|tristan da cunha pound|tristan da cunha £
+    Pound: पाउंड्स|पाउंड|-पाउंड्स|-पाउंड|£ |£|pounds|pound|-pounds|-pound|£
+    Pence: पेंस|pence
+    Shilling: शिलिंग्स|शिलिंग|शिलिंगी|sh|shillings|shilling|shilingi|sh
+    Penny: पेन्नीस|पेन्नी|पेनी|pennies|penny
 #Dollar
-    United States dollar: united states dollars|united states dollar|united states $|u.s. dollars|u.s. dollar|u s dollar|u s dollars|usd|american dollars|american dollar|us$|us dollar|us dollars|u.s dollar|u.s dollars
-    East Caribbean dollar: east caribbean dollars|east caribbean dollar|east Caribbean $|xcd
-    Australian dollar: australian dollars|australian dollar|australian $|australian$|aud|australia dollars|australia dollar|australia $|australia$
-    Bahamian dollar: bahamian dollars|bahamian dollar|bahamian $|bahamian$|bsd|bahamia dollars|bahamia dollar|bahamia $|bahamia$
-    Barbadian dollar: barbadian dollars|barbadian dollar|barbadian $|bbd
-    Belize dollar: belize dollars|belize dollar|belize $|bzd
-    Bermudian dollar: bermudian dollars|bermudian dollar|bermudian $|bmd|bermudia dollars|bermudia dollar|bermudia $
-    British Virgin Islands dollar: british virgin islands dollars|british virgin islands dollar|british virgin islands $|bvi$|virgin islands dollars|virgin islands dolalr|virgin islands $|virgin island dollars|virgin island dollar|virgin island $
-    Brunei dollar: brunei dollar|brunei $|bnd
-    Sen: sen
-    Singapore dollar: singapore dollars|singapore dollar|singapore $|s$|sgd
-    Canadian dollar: canadian dollars|canadian dollar|canadian $|cad|can$|c$|canada dollars|canada dolllar|canada $
-    Cayman Islands dollar: cayman islands dollars|cayman islands dollar|cayman islands $|kyd|ci$|cayman island dollar|cayman island doolars|cayman island $
-    New Zealand dollar: new zealand dollars|new zealand dollar|new zealand $|nz$|nzd|kiwi
-    Cook Islands dollar: cook islands dollars|cook islands dollar|cook islands $|cook island dollars|cook island dollar|cook island $
-    Fijian dollar: fijian dollars|fijian dollar|fijian $|fjd|fiji dollars|fiji dollar|fiji $
-    Guyanese dollar: guyanese dollars|guyanese dollar|gyd|gy$
-    Hong Kong dollar: hong kong dollars|hong kong dollar|hong kong $|hk$|hkd|hk dollars|hk dollar|hk $|hongkong$
-    Jamaican dollar: jamaican dollars|jamaican dollar|jamaican $|j$|jamaica dollars|jamaica dollar|jamaica $|jmd
-    Kiribati dollar: kiribati dollars|kiribati dollar|kiribati $
-    Liberian dollar: liberian dollars|liberian dollar|liberian $|liberia dollars|liberia dollar|liberia $|lrd
-    Micronesian dollar: micronesian dollars|micronesian dollar|micronesian $
-    Namibian dollar: namibian dollars|namibian dollar|namibian $|nad|n$|namibia dollars|namibia dollar|namibia $
-    Nauruan dollar: nauruan dollars|nauruan dollar|nauruan $
-    Niue dollar: niue dollars|niue dollar|niue $
-    Palauan dollar: palauan dollars|palauan dollar|palauan $
-    Pitcairn Islands dollar: pitcairn islands dollars|pitcairn islands dollar|pitcairn islands $|pitcairn island dollars|pitcairn island dollar|pitcairn island $
-    Solomon Islands dollar: solomon islands dollars|solomon islands dollar|solomon islands $|si$|sbd|solomon island dollars|solomon island dollar|solomon island $
-    Surinamese dollar: surinamese dollars|surinamese dollar|surinamese $|srd
-    New Taiwan dollar: new taiwan dollars|new taiwan dollar|nt$|twd|ntd
-    Trinidad and Tobago dollar: trinidad and tobago dollars|trinidad and tobago dollar|trinidad and tobago $|trinidad $|trinidad dollar|trinidad dollars|trinidadian dollar|trinidadian dollars|trinidadian $|ttd
-    Tuvaluan dollar: tuvaluan dollars|tuvaluan dollar|tuvaluan $
-    Dollar: dollars|dollar|$
+    United States dollar: united states dollars|united states dollar|united states $|u.s. dollars|u.s. dollar|u s dollar|u s dollars|usd|american dollars|american dollar|us$|us dollar|us dollars|u.s dollar|u.s dollars|अमेरिकी डॉलर|यू. एस. $|अमरीकी डॉलर|अमरीकी डॉलरस|संयुक्त राज्य अमेरिका डॉलर|संयुक्त राज्य अमेरिका डॉलरस|अमरीकी $|यू एस डॉलर|यू.एस. डॉलर|यू एस डॉलरस|यू.एस. डॉलरस|अमेरिकी$
+    East Caribbean dollar: east caribbean dollars|east caribbean dollar|east Caribbean $|xcd|पूर्वी कैरिबियन डॉलर|पूर्वी कैरिबियन डॉलरस|पूर्वी कैरिबियन $
+    Australian dollar: australian dollars|australian dollar|australian $|australian$|aud|australia dollars|australia dollar|australia $|australia$|ऑस्ट्रेलियाई डॉलर|ऑस्ट्रेलियाई डॉलरस|ऑस्ट्रेलियाई $|ऑस्ट्रेलियाई$|ऑस्ट्रेलिया डॉलर|ऑस्ट्रेलिया डॉलरस|ऑस्ट्रेलिया$|ऑस्ट्रेलिया $|
+    Bahamian dollar: bahamian dollars|bahamian dollar|bahamian $|bahamian$|bsd|bahamia dollars|bahamia dollar|bahamia $|bahamia$|बाहमियन डॉलरस|बाहमियन डॉलर|बाहमियन$|बाहमियन $|बाहमिअ $|बाहमिअ$| 
+    Barbadian dollar: barbadian dollars|barbadian dollar|barbadian $|bbd|बारबेडियन डॉलरस|बारबेडियन डॉलर|बारबेडियन $|बारबेडियन$
+    Belize dollar: belize dollars|belize dollar|belize $|bzd|बेलीज़ डॉलरस|बेलीज़ डॉलर|बेलीज़ $|बेलीज़ डॉलर|बेलीज़$|बेलीज़ $|बेलीज़$ 
+    Bermudian dollar: bermudian dollars|bermudian dollar|bermudian $|bmd|bermudia dollars|bermudia dollar|bermudia $|बेरमुडियन डॉलर|बेरमुडियन डॉलरस|बेरमुडियन$|बेरमुडियन $|बरमूडा डॉलर|बरमूडा डॉलरस|बरमूडा$|बरमूडा $
+    British Virgin Islands dollar: british virgin islands dollars|british virgin islands dollar|british virgin islands $|bvi$|virgin islands dollars|virgin islands dollar|virgin islands $|virgin island dollars|virgin island dollar|virgin island $|ब्रिटिश वर्जिन आइलैंड्स डॉलर|ब्रिटिश वर्जिन आइलैंड्स डॉलरस|ब्रिटिश वर्जिन आइलैंड्स $ |वर्जिन आइलैंड्स $|वर्जिन आइलैंड्स डॉलरस|वर्जिन आइलैंड्स डॉलर
+    Brunei dollar: brunei dollar|brunei $|bnd|ब्रुनेई डॉलर|ब्रुनेई डॉलरस|ब्रुनेई$|ब्रुनेई $
+    Sen: sen|सेन
+    Singapore dollar: singapore dollars|singapore dollar|singapore $|s$|sgd|सिंगापूर डॉलर|सिंगापूर डॉलरस|सिंगापूर$|सिंगापूर $
+    Canadian dollar: canadian dollars|canadian dollar|canadian $|cad|can$|c$|canada dollars|canada dollar|canada $|कैनेडियन डॉलर|कैनेडियन डॉलरस|कैनेडियन $|कैनेडियन$|कैन$|कनाडा डॉलर|कनाडा डॉलरस|कनाडा $|कनाडा$
+    Cayman Islands dollar: cayman islands dollars|cayman islands dollar|cayman islands $|kyd|ci$|cayman island dollar|cayman island doolars|cayman island $|केमैन द्वीप डॉलर|केमैन द्वीप डॉलरस|केमैन द्वीप $|केमैन द्वीप$|केमैन द्वीप डॉलरस|केमैन द्वीप डॉलर|
+    New Zealand dollar: new zealand dollars|new zealand dollar|new zealand $|nz$|nzd|kiwi|न्यू जीलैंड डॉलर|न्यू जीलैंड डॉलरस|न्यू जीलैंड $|न्यू जीलैंड$|कीवी
+    Cook Islands dollar: cook islands dollars|cook islands dollar|cook islands $|cook island dollars|cook island dollar|cook island $|कुक आइलैंड्स डॉलर|कुक आइलैंड्स डॉलरस|कुक आइलैंड्स $|कुक आइलैंड डॉलर|कुक आइलैंड डॉलरस|कुक आइलैंड $
+    Fijian dollar: fijian dollars|fijian dollar|fijian $|fjd|fiji dollars|fiji dollar|fiji $|फिजियन डॉलरस|फिजियन डॉलर|फिजियन $|फिजि डॉलरस|फिजि डॉलर|फिजि $
+    Guyanese dollar: guyanese dollars|guyanese dollar|gyd|gy$|गुयाना डॉलर|गुयाना डॉलरस|गुयाना $
+    Hong Kong dollar: hong kong dollars|hong kong dollar|hong kong $|hk$|hkd|hk dollars|hk dollar|hk $|hongkong$|होन्ग कोंग डॉलर|होन्ग कोंग डॉलरस|होन्ग कोंग $|होन्गकोंग डॉलरस
+    Jamaican dollar: jamaican dollars|jamaican dollar|jamaican $|j$|jamaica dollars|jamaica dollar|jamaica $|jmd|जमैका डॉलर|जमैका डॉलरस|जमैकन डॉलरस|जमैकन डॉलर|जमैका $|जमैकन $
+    Kiribati dollar: kiribati dollars|kiribati dollar|kiribati $|किरिबाती डॉलरस|किरिबाती डॉलरस|किरिबाती $
+    Liberian dollar: liberian dollars|liberian dollar|liberian $|liberia dollars|liberia dollar|liberia $|lrd|लाइबेरिया डॉलरस|लाइबेरिया डॉलर|लाइबेरिया $
+    Micronesian dollar: micronesian dollars|micronesian dollar|micronesian $|मैक्रोनेशियन डॉलर|मैक्रोनेशियन डॉलरस|मैक्रोनेशियन $
+    Namibian dollar: namibian dollars|namibian dollar|namibian $|nad|n$|namibia dollars|namibia dollar|namibia $|नामीबियाई डॉलर|नामीबियाई डॉलरस|नामीबियाई $|
+    Nauruan dollar: nauruan dollars|nauruan dollar|nauruan $|नाउरू डॉलरस|नाउरू डॉलर|नाउरू $
+    Niue dollar: niue dollars|niue dollar|niue $|नियू डॉलरस|नियू डॉलर|नियू $
+    Palauan dollar: palauan dollars|palauan dollar|palauan $|पलाउअन डॉलर|पलाउअन $|पलाउअन डॉलरस|पलाउअन $
+    Pitcairn Islands dollar: pitcairn islands dollars|pitcairn islands dollar|pitcairn islands $|pitcairn island dollars|pitcairn island dollar|pitcairn island $|पिटकेर्न डॉलरस|पिटकेर्न डॉलर|पिटकेर्न $
+    Solomon Islands dollar: solomon islands dollars|solomon islands dollar|solomon islands $|si$|sbd|solomon island dollars|solomon island dollar|solomon island $|सोलोमन द्वीप डॉलर|सोलोमन द्वीप डॉलरस|सोलोमन द्वीप $
+    Surinamese dollar: surinamese dollars|surinamese dollar|surinamese $|srd|सूरीनाम डॉलर|सूरीनाम डॉलरस|सूरीनाम $|सूरीनामी डॉलरस|सूरीनामी डॉलरस|सूरीनामी $ 
+    New Taiwan dollar: new taiwan dollars|new taiwan dollar|nt$|twd|ntd|नया ताईवान डॉलरस|नया ताईवान डॉलर|नया ताईवान $
+    Trinidad and Tobago dollar: trinidad and tobago dollars|trinidad and tobago dollar|trinidad and tobago $|trinidad $|trinidad dollar|trinidad dollars|trinidadian dollar|trinidadian dollars|trinidadian $|ttd|ट्रिनिडाड और टोबैगो डॉलर|ट्रिनिडाड और टोबैगो डॉलरस|ट्रिनिडाड और टोबैगो $|ट्रिनिडाड डॉलर|ट्रिनिडाड डॉलरस|ट्रिनिडाड $
+    Tuvaluan dollar: tuvaluan dollars|tuvaluan dollar|tuvaluan $|तुवालुअन डॉलर|तुवालुअन डॉलरस|तुवालुअन $
+    Dollar: dollars|dollar|$|डॉलर
 #Chinese yuan
-    Chinese yuan: yuan|kuai|chinese yuan|renminbi|cny|rmb|￥|元
-    Fen: fen
-    Jiao: jiao|mao
+    Chinese yuan: yuan|kuai|chinese yuan|renminbi|cny|rmb|￥|元|युआन|चीनी युआन|रॅन्मिन्बी|कुआई
+    Fen: fen|फ़ेन|फेन
+    Jiao: jiao|mao|जिआओ|माओ
 #Additional
-    Finnish markka: suomen markka|finnish markka|finsk mark|fim|markkaa|markka
+    Finnish markka: suomen markka|finnish markka|finsk mark|fim|markkaa|markka|सुओमें मार्का|फिनिश मार्का|मार्का|फ़िन्निश मार्का
     Penni: penniä|penni
 CurrencyNameToIsoCodeMap: !dictionary
   types: [ string, string ]
@@ -636,13 +636,13 @@ FractionalUnitNameToCodeMap: !dictionary
     Hào: HAO
     Ngwee: NGWEE
 CompoundUnitConnectorRegex: !simpleRegex
-    def: (?<spacer>and)
+    def: (?<spacer>और)
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
 # Currency Prefix Symbols/Terms
     Dollar: $
-    United States dollar: united states $|us$|us $|u.s. $|u.s $
+    United States dollar: united states $|us$|us $|u.s. $|u.s $|यू. एस. $
     East Caribbean dollar: east caribbean $
     Australian dollar: australian $|australia $
     Bahamian dollar: bahamian $|bahamia $
@@ -651,7 +651,7 @@ CurrencyPrefixList: !dictionary
     Bermudian dollar: bermudian $
     British Virgin Islands dollar: british virgin islands $|bvi$|virgin islands $|virgin island $|british virgin island $
     Brunei dollar: brunei $|b$
-    Sen: sen
+    Sen: sen|सेन
     Singapore dollar: singapore $|s$
     Canadian dollar: canadian $|can$|c$|c $|canada $
     Cayman Islands dollar: cayman islands $|ci$|cayman island $
@@ -730,38 +730,53 @@ AmbiguousCurrencyUnitList: !list
     - try
     - yer
     - yen
+    - सेन
+    - यूरो
+    - लेक
+    - पैसा
+    - बात
+    - पारा
+    - यूर
 # DimensionExtractorConfiguration
 # Values in those list are usually lowercase, unless they must be matched by the letter case exactly.
 InformationSuffixList: !dictionary
   types: [ string, string ]
   entries:
 # Information
-    Bit: -bit|bit|bits
-    Kilobit: kilobit|kilobits|kb|Kb|kbit
-    Megabit: megabit|megabits|mb|Mb|mbit
-    Gigabit: gigabit|gigabits|gb|Gb|gbit
-    Terabit: terabit|terabits|tb|Tb|tbit
-    Petabit: petabit|petabits|pb|Pb|pbit
-    Byte: -byte|byte|bytes
-    Kilobyte: -kilobyte|-kilobytes|kilobyte|kB|KB|kilobytes|kilo byte|kilo bytes|kbyte
-    Megabyte: -megabyte|-megabytes|megabyte|mB|MB|megabytes|mega byte|mega bytes|mbyte
-    Gigabyte: -gigabyte|-gigabytes|gigabyte|gB|GB|gigabytes|giga byte|giga bytes|gbyte
-    Terabyte: -terabyte|-terabytes|terabyte|tB|TB|terabytes|tera byte|tera bytes|tbyte
-    Petabyte: -petabyte|-petabytes|petabyte|pB|PB|petabytes|peta byte|peta bytes|pbyte
+    Bit: -bit|bit|bits|-बिट|बिट|बिट्स
+    Kilobit: kilobit|kilobits|kb|Kb|kbit|किलोबिट|किलोबिट्स|केबिट्स|कीलोबिट|कीलोबिट्स
+    Megabit: megabit|megabits|mb|Mb|mbit|मेगाबिट|मेगाबिट्स|एमबिट|एमबिट्स
+    Gigabit: gigabit|gigabits|gb|Gb|gbit|गिगाबिट|गीगाबिट|गिगाबिट्स|गीगाबिट्स
+    Terabit: terabit|terabits|tb|Tb|tbit|टेराबिट|टेराबिट|टेराबिट्स|टेराबिट्स
+    Petabit: petabit|petabits|pb|Pb|pbit|पेटाबिट|पेटाबिट|पेटाबिट्स|पेटाबिट्स
+    Byte: -byte|byte|bytes|बाइट|बाईट
+    Kilobyte: -kilobyte|-kilobytes|kilobyte|kB|KB|kilobytes|kilo byte|kilo bytes|kbyte|किलोबाइट|किलोबाईट|कीलोबाइट|कीलोबाईट|केबी|किलो बाइट|किलो बाईट|कीलो बाइट|कीलो बाईट
+    Megabyte: -megabyte|-megabytes|megabyte|mB|MB|megabytes|mega byte|mega bytes|mbyte|मेगाबाइट|मेगाबाईट|एमबी|मेगा बाइट|मेगा बाईट
+    Gigabyte: -gigabyte|-gigabytes|gigabyte|gB|GB|gigabytes|giga byte|giga bytes|gbyte|गिगाबाइट|गीगाबाइट|गिगाबाईट|गीगाबाईट|जीबी|गिगा बाइट|गीगा बाईट
+    Terabyte: -terabyte|-terabytes|terabyte|tB|TB|terabytes|tera byte|tera bytes|tbyte|टेराबाइट|टेराबाईट|टीबी|टेरा बाइट|टेरा बाईट
+    Petabyte: -petabyte|-petabytes|petabyte|pB|PB|petabytes|peta byte|peta bytes|pbyte|पेटाबाइट|पेटाबाईट|पीबी|पेटा बाइट|पेटा बाईट
 AmbiguousDimensionUnitList: !list
   types: [ string ]
   entries:
+    - ग्राम
+    - ग्रा
+    - इं
     - barrel
     - barrels
+    - बैरल
     - grain
     - pound
+    - पाउंड
     - stone
     - yards
     - yard
     - cord
     - dram
     - feet
+    - फ़ीट
+    - फीट
     - foot
+    - फुट
     - gill
     - knot
     - peck
@@ -771,30 +786,35 @@ AmbiguousDimensionUnitList: !list
     - in
     - dm
     - '"'
+    - नॉट
+    - कप
+    - सेर
+    - पसेरी
+    - ड्राम
 #EnglishNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
   def: (?<=(\s|^))
 BuildSuffix: !simpleRegex
-  def: (?=(\s|\W|$))
+  def: (?=(\s|\W|\b|$))
 #LengthExtractorConfiguration
 LengthSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Kilometer: km|kilometer|kilometre|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre
-    Hectometer: hm|hectometer|hectometre|hectometers|hectometres|hecto meter|hecto meters|hecto metres|hecto metre
-    Decameter: dam|decameter|decametre|decameters|decametres|deca meter|deca meters|deca metres|deca metre
-    Meter: m|meter|metre|meters|metres
-    Decimeter: dm|decimeter|decimeters|decimetre|decimetres|deci meter|deci meters|deci metres|deci metre
-    Centimeter: cm|centimeter|centimeters|centimetre|centimetres|centi meter|centi meters|centi metres|centi metre
-    Millimeter: mm|millimeter|millimeters|millimetre|millimetres|milli meter|milli meters|milli metres|milli metre
-    Micrometer: μm|micrometer|micrometre|micrometers|micrometres|micro meter|micro meters|micro metres|micro metre
-    Nanometer: nm|nanometer|nanometre|nanometers|nanometres|nano meter|nano meters|nano metres|nano metre
-    Picometer: pm|picometer|picometre|picometers|picometres|pico meter|pico meters|pico metres|pico metre
-    Mile: -mile|mile|miles
-    Yard: yard|yards
-    Inch: -inch|inch|inches|in|"
-    Foot: -foot|foot|feet|ft
-    Light year: light year|light-year|light years|light-years
+    Kilometer: km|kilometer|kilometre|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre|किमी|किलोमीटर|कीलोमीटर|किलोमिटर|किलो मीटर|कीलो मीटर|किलो मिटर|कि.मी.|कि. मी.
+    Hectometer: hm|hectometer|hectometre|hectometers|hectometres|hecto meter|hecto meters|hecto metres|hecto metre|एचएम|हेक्टोमीटर|हेक्टोमिटर|हेक्टो मीटर|हेक्टो मिटर
+    Decameter: dam|decameter|decametre|decameters|decametres|deca meter|deca meters|deca metres|deca metre|डेकामीटर|डेकामिटर|डेका मीटर|डेका मिटर
+    Meter: m|meter|metre|meters|metres|मीटर|मी|मी.
+    Decimeter: dm|decimeter|decimeters|decimetre|decimetres|deci meter|deci meters|deci metres|deci metre|डेसीमीटर|डेसिमीटर|डेसीमिटर|डेमी
+    Centimeter: cm|centimeter|centimeters|centimetre|centimetres|centi meter|centi meters|centi metres|centi metre।सेमी|से.मी.|सेंटीमीटर|सेन्टीमीटर|सेण्टीमीटर|सेंटी मीटर|सेन्टी मीटर|से. मी.
+    Millimeter: mm|millimeter|millimeters|millimetre|millimetres|milli meter|milli meters|milli metres|milli metre|मिमी|मि.मी.|मिलीमीटर|मिलिमीटर|मीलीमीटर|मिली मीटर|मीली मीटर|मि. मी.
+    Micrometer: μm|micrometer|micrometre|micrometers|micrometres|micro meter|micro meters|micro metres|micro metre।माइक्रोमीटर|माइक्रो मीटर
+    Nanometer: nm|nanometer|nanometre|nanometers|nanometres|nano meter|nano meters|nano metres|nano metre|नैनोमीटर|नैनो मीटर
+    Picometer: pm|picometer|picometre|picometers|picometres|pico meter|pico meters|pico metres|pico metre|पिकोमीटर|पीकोमीटर|पीको मिटर|पिको मीटर|पीएम
+    Mile: -mile|mile|miles|मील|-मील|माइल|माइल्स
+    Yard: yard|yards|गज
+    Inch: -inch|inch|inches|in|"|इंच|-इंच|इं\b|इं.
+    Foot: -foot|foot|feet|ft|फुट|फ़ीट|फीट|फ़ुट|-फुट
+    Light year: light year|light-year|light years|light-years|लाइट यर|लाइट यर|प्रकाश वर्ष|लाइट इयर
     Pt: pt|pts
 AmbiguousLengthUnitList: !list
   types: [ string ]
@@ -805,63 +825,66 @@ AmbiguousLengthUnitList: !list
     - pm
     - pt
     - pts
+    - पीएम
+    - इं
 #SpeedExtractorConfiguration
 SpeedSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Meter per second: meters / second|m/s|meters per second|metres per second|meter per second|metre per second
-    Kilometer per hour: km/h|kilometres per hour|kilometers per hour|kilometer per hour|kilometre per hour
-    Kilometer per minute: km/min|kilometers per minute|kilometres per minute|kilometer per minute|kilometre per minute
-    Kilometer per second: km/s|kilometers per second|kilometres per second|kilometer per second|kilometre per second
-    Mile per hour: mph|mile per hour|miles per hour|mi/h|mile / hour|miles / hour|miles an hour
-    Knot: kt|knot|kn
-    Foot per second: ft/s|foot/s|foot per second|feet per second|fps
-    Foot per minute: ft/min|foot/min|foot per minute|feet per minute
-    Yard per minute: yards per minute|yard per minute|yards / minute|yards/min|yard/min
-    Yard per second: yards per second|yard per second|yards / second|yards/s|yard/s
+    Meter per second: meters / second|m/s|meters per second|metres per second|meter per second|metre per second |मीटर/सेकेंड|मीटर / सेकेंड|मी/से|मी./से.|मीटर प्रति सेकेंड|मीटर पर सेकेंड
+    Kilometer per hour: km/h|kilometres per hour|kilometers per hour|kilometer per hour|kilometre per hour|किमी/घं|किलोमीटर प्रति घंटा|किमी./घं.|किमीटर/घंटा|किमीटर / घंटा|किलोमीटर प्रति घं.|किलोमीटर पर घंटा|किलोमीटर / घंटे|किलोमीटर प्रति घंटे|किलोमीटर पर घंटे
+    Kilometer per minute: km/min|kilometers per minute|kilometres per minute|kilometer per minute|kilometre per minute|किमि/मि|किमी/मि|कि.मी./मि.|किलोमीटर प्रति मिनट|किलोमीटर पर मिनट|किलोमीटर हर मिनट|किलोमीटर प्रत्येक मिनट
+    Kilometer per second: km/s|kilometers per second|kilometres per second|kilometer per second|kilometre per second|किमि/से|किमी/से|कि.मी./से.|किलोमीटर प्रति सेकेंड|किलोमीटर पर सेकेंड|किलोमीटर हर सेकेंड|किलोमीटर प्रत्येक सेकेंड
+    Mile per hour: mph|mile per hour|miles per hour|mi/h|mile / hour|miles / hour|miles an hour|एमपीएच|मील प्रति घंटा|मील प्रति घंटे|मी/घं|मी./घं.मील / घंटा|मील / घंटे|मील हर घंटे|मील हर घंटा|मील प्रत्येक घंटे|मील प्रत्येक घंटा
+    Knot: kt|knot|kn|नॉट
+    Foot per second: ft/s|foot/s|foot per second|feet per second|fps|फ़ी/से|फी/से|फी./से.|फूट/से|फूट/से|फूट/से.|फूट प्रति सेकेंड|फ़ूट प्रति सेकेंड|फूट प्रत्येक सेकेंड|फ़ूट प्रत्येक सेकेंड|फूट हर सेकेंड|फ़ूट हर सेकेंड|फूट हरेक सेकेंड|फ़ूट हरेक सेकेंड|फीट प्रति सेकेंड|फ़ीट प्रति सेकेंड|फीट प्रत्येक सेकेंड|फ़ीट प्रत्येक सेकेंड|फीट हर सेकेंड|फ़ीट हर सेकेंड|फीट हरेक सेकेंड|फ़ीट हरेक सेकेंड|एफ़पीएस
+    Foot per minute: ft/min|foot/min|foot per minute|feet per minute|फ़ी/मि|फी/मि|फी./मि.|फूट/मि|फूट/मि|फूट/मि.|फूट प्रति मिनट|फ़ूट प्रति मिनट|फूट प्रत्येक मिनट|फ़ूट प्रत्येक मिनट|फूट हर मिनट|फ़ूट हर मिनट|फूट हरेक मिनट|फ़ूट हरेक मिनट|फीट प्रति मिनट|फ़ीट प्रति मिनट|फीट प्रत्येक मिनट|फ़ीट प्रत्येक मिनट|फीट हर मिनट|फ़ीट हर मिनट|फीट हरेक मिनट|फ़ीट हरेक मिनट
+    Yard per minute: yards per minute|yard per minute|yards / minute|yards/min|yard/min|ग/मि|ग/मि|ग./मि.|गज/मि|गज/मि|गज/मि.|गज प्रति मिनट|गज प्रत्येक मिनट|गज हर मिनट|गज हरेक मिनट|गज पर मिनट|गज / मिनट
+    Yard per second: yards per second|yard per second|yards / second|yards/s|yard/s|ग/से|ग/से|ग./से.|गज/से|गज/से|गज/से.|गज प्रति सेकेंड|गज प्रत्येक सेकेंड|गज हर सेकेंड|गज हरेक सेकेंड|गज पर सेकेंड|गज / सेकेंड
 #TemperatureExtractorConfiguration
 TemperatureSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    F: degrees fahrenheit|degree fahrenheit|deg fahrenheit|degs fahrenheit|fahrenheit|°f|degrees farenheit|degree farenheit|deg farenheit|degs farenheit|degrees f|degree f|deg f|degs f|farenheit|f
-    K: k|K|kelvin
-    R: rankine|°r
-    D: delisle|°de
-    C: degrees celsius|degree celsius|deg celsius|degs celsius|celsius|degrees celcius|degree celcius|celcius|deg celcius|degs celcius|degrees centigrade|degree centigrade|centigrade|degrees centigrate|degree centigrate|degs centigrate|deg centigrate|centigrate|degrees c|degree c|deg c|degs c|°c|c
-    Degree: degree|degrees|deg.|deg|°
+    F: degree fahrenheit|degrees fahrenheit|fahrenheit|डिग्रीज़ फ़ॉरेनहाइट|डिग्री फ़ॉरेनहाइट|डि. फ़ॉरेनहाइट|फ़ॉरेनहाइट|°फ़ॉ|डिग्रीज़ फ़ॉ.|डिग्री फ़ॉ.|डि. फ़ॉ.|फ़ॉ.
+    K: kelvin|के.|केल्विन
+    R: renkine|रैंकिन
+    D: delisle|डेलील
+    C: degree celsius|degrees celsius|celsius|डिग्रीज़ सेल्सियस|डिग्री सेल्सियस|डि. सेल्सियस|सेल्सियस|डिग्रीज़ सेल्सयस|डिग्री सेल्सयस|सेल्सयस|डि. सेल्सयस|डिग्रीज़ सेंटिग्रेड|डिग्री सेंटिग्रेड|सेंटिग्रेड|डिग्रीज़ सेंटिग्रेट|डिग्री सेंटिग्रेट|डि. सेंटिग्रेट|सेंटिग्रेट|डिग्रीज़ से.|डिग्री से.|डि. से.|°से|से.
+    Degree: degrees|degree|डिग्री|डिग्रीज़|डि.|डि|°
 AmbiguousTemperatureUnitList: !list
   types: [ string ]
   entries:
-    - c
-    - f
-    - k
+    - से.
+    - फ़ॉ.
+    - के.
 #VolumeExtractorConfiguration
 VolumeSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Cubic meter: m3|cubic meter|cubic meters|cubic metre|cubic metres
-    Cubic centimeter: cubic centimeter|cubic centimetre|cubic centimeters|cubic centimetres
-    Cubic millimiter: cubic millimiter|cubic millimitre|cubic millimiters|cubic millimitres
-    Hectoliter: hectoliter|hectolitre|hectoliters|hectolitres
-    Decaliter: decaliter|decalitre|dekaliter|dekalitre|decaliters|decalitres|dekaliters|dekalitres
-    Liter: l|litre|liter|liters|litres
-    Deciliter: dl|deciliter|decilitre|deciliters|decilitres
-    Centiliter: cl|centiliter|centilitre|centiliters|centilitres
-    Milliliter: ml|mls|millilitre|milliliter|millilitres|milliliters
-    Cubic yard: cubic yard|cubic yards
-    Cubic inch: cubic inch|cubic inches
-    Cubic foot: cubic foot|cubic feet
-    Cubic mile: cubic mile|cubic miles
-    Fluid ounce: fl oz|fluid ounce|fluid ounces
-    Teaspoon: teaspoon|teaspoons
-    Tablespoon: tablespoon|tablespoons
-    Pint: pint|pints
-    Volume unit: fluid dram|gill|quart|minim|cord|peck|bushel|hogshead|barrels|barrel|bbl
+    Cubic meter: m3|cubic meter|cubic meters|cubic metre|cubic metres|क्यूब मीटर|मीटर क्यूब|क्यूबिक मीटर|मी3|घन मीटर
+    Cubic centimeter: cubic centimeter|cubic centimetre|cubic centimeters|cubic centimetres|क्यूबिक सेंटीमीटर|क्यूबिक सेमी|सेमी3|क्यूबिक सेन्टीमीटर|क्यूबिक से.मी.
+    Cubic millimiter: cubic millimiter|cubic millimitre|cubic millimiters|cubic millimitres|क्यूबिक मिलिमीटर|क्यूबिक मिमी|क्यूबिक मि.मी.
+    Hectoliter: hectoliter|hectolitre|hectoliters|hectolitres|क्यूबिक हेक्टोलीटर
+    Decaliter: decaliter|decalitre|dekaliter|dekalitre|decaliters|decalitres|dekaliters|dekalitres|डेकालीटर
+    Liter: l|litre|liter|liters|litres|लीटर|ली.
+    Deciliter: dl|deciliter|decilitre|deciliters|decilitres|डेसीलीटर
+    Centiliter: cl|centiliter|centilitre|centiliters|centilitres|सेंटीलीटर|सें.ली.
+    Milliliter: ml|mls|millilitre|milliliter|millilitres|milliliters|मिलीलीटर|मिली लीटर|मि.ली.
+    Cubic yard: cubic yard|cubic yards|क्यूबिक यार्ड|घन गज
+    Cubic inch: cubic inch|cubic inches|क्यूबिक इंच|घन इंच
+    Cubic foot: cubic foot|cubic feet|क्यूबिक फीट|घन फीट|क्यूबिक फ़ीट|घन फ़ीट
+    Cubic mile: cubic mile|cubic miles|क्यूबिक माइल|क्यूबिक मील|घन माइल|घन मील
+    Fluid ounce: fl oz|fluid ounce|fluid ounces|द्रव्य आउंस|द्रव्य औंस|फ़्लूइड आउंस
+    Teaspoon: teaspoon|teaspoons|टीस्पून|चाय की चम्मच
+    Tablespoon: tablespoon|tablespoons|टेबल स्पून
+    Pint: pint|pints|पिंट
+    Volume unit: fluid dram|gill|quart|minim|cord|peck|bushel|hogshead|barrels|barrel|bbl|बैरल|फ़्लुइड ड्रम|फ़्लुईड ड्राम|सेर|पसेरी|गिल|क्वार्ट|बुशेल|हॉग्सहेड|बीबीएल
 AmbiguousVolumeUnitList: !list
   types: [ string ]
   entries:
     - l
     - ounce
+    - आउंस
     - oz
     - cup
     - peck
@@ -872,14 +895,14 @@ WeightSuffixList: !dictionary
   types: [ string, string ]
   entries:
     Kilogram: kg|kilogram|kilograms|kilo|kilos
-    Gram: g|gram|grams
-    Milligram: mg|milligram|milligrams
-    Gallon: -gallon|gallons|gallon
-    Metric ton: metric tons|metric ton
-    Ton: -ton|ton|tons|tonne|tonnes
-    Pound: pound|pounds|lb|lbs
-    Ounce: -ounce|ounce|oz|ounces
-    Weight unit: pennyweight|grain|british long ton|us short hundredweight|stone|dram
+    Gram: g|gram|grams|ग्रा.|ग्रा|ग्राम
+    Milligram: mg|milligram|milligrams|मिलीग्राम|मिग्रा|मि.ग्रा|मि. ग्रा.|मीलीग्राम|एमजी|एम.जी.
+    Gallon: -gallon|gallons|gallon|गैलन|-गैलन
+    Metric ton: metric tons|metric ton|मीट्रिक टन
+    Ton: -ton|ton|tons|tonne|tonnes|टन
+    Pound: pound|pounds|lb|lbs|पाउंड
+    Ounce: -ounce|ounce|oz|ounces|आउंस|-आउंस
+    Weight unit: pennyweight|grain|british long ton|us short hundredweight|stone|dram|ग्रेन|ब्रिटिश लॉंग|स्टोन|ड्राम|ड्रम
 AmbiguousWeightUnitList: !list
   types: [ string ]
   entries:
@@ -888,6 +911,7 @@ AmbiguousWeightUnitList: !list
     - stone
     - dram
     - lbs
+    - ग्राम
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:

@@ -5,6 +5,7 @@ using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.German;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
@@ -197,10 +198,20 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();
-            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+
+            NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration(numConfig));
         }
 
         public IDateExtractor DatePointExtractor { get; }
@@ -266,6 +277,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IDatePeriodExtractorConfiguration.MonthNumRegex => MonthNumRegex;
 
         Regex IDatePeriodExtractorConfiguration.NowRegex => NowRegex;
+
+        bool IDatePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 

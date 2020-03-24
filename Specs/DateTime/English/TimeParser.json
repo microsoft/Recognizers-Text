@@ -1741,5 +1741,25 @@
         "Length": 5
       }
     ]
+  },
+  {
+    "Input": "The target time is 8.10 pm",
+    "Results": [
+      {
+        "Text": "8.10 pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:10",
+          "FutureResolution": {
+            "time": "20:10:00"
+          },
+          "PastResolution": {
+            "time": "20:10:00"
+          }
+        },
+        "Start": 19,
+        "Length": 7
+      }
+    ]
   }
 ]

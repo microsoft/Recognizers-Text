@@ -132,6 +132,8 @@ class EnglishSetParserConfiguration(SetParserConfiguration):
             timex = 'P2W'
         elif trimmed_text == 'monthly':
             timex = 'P1M'
+        elif trimmed_text == 'quarterly':
+            timex = 'P3M'
         elif trimmed_text in ('yearly', 'annually', 'annual'):
             timex = 'P1Y'
         else:

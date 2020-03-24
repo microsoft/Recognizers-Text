@@ -1,0 +1,17 @@
+[
+  {
+    "Input": "Tel: (+31)12-3456789.",
+    "Results": [
+      {
+        "Text": "(+31)12-3456789",
+        "Start": 5,
+        "End": 19,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "(+31)12-3456789"
+        }
+      }
+    ]
+  }
+]

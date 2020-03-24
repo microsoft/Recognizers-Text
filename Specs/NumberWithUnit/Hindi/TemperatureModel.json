@@ -1,7 +1,6 @@
 [
   {
     "Input": "बाहर का तापमान 40 डिग्री सेल्सियस है",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -18,7 +17,6 @@
   },
   {
     "Input": "टेक्सास में 90 फ़ॉरेनहाइट चल रहा है",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -35,24 +33,22 @@
   },
   {
     "Input": "-5 डिग्री फ़ॉरेनहाइट",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "डिग्री फ़ॉरेनहाइट",
+        "Text": "-5 डिग्री फ़ॉरेनहाइट",
         "TypeName": "temperature",
         "Resolution": {
           "value": "-5",
           "unit": "F"
         },
-        "Start": 3,
+        "Start": 0,
         "End": 18
       }
     ]
   },
   {
     "Input": "6 डिग्री से.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -69,7 +65,6 @@
   },
   {
     "Input": "98.6 डिग्री फ़ॉ. सामान्य तापमान होता है",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -86,24 +81,22 @@
   },
   {
     "Input": "टेंपरेचर को 30 डिग्री सेल्सियस सेट करें",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "30 डिग्री सेल्सियस ",
+        "Text": "30 डिग्री सेल्सियस",
         "TypeName": "temperature",
         "Resolution": {
           "value": "30",
           "unit": "C"
         },
         "Start": 12,
-        "End": 30
+        "End": 29
       }
     ]
   },
   {
     "Input": "सामान्य तापमान 98.6 डिग्री फ़ॉरेनहाइट होता है",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -120,7 +113,6 @@
   },
   {
     "Input": "100 डिग्री फ़ॉ.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -137,7 +129,6 @@
   },
   {
     "Input": "20 डिग्री से.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -154,7 +145,6 @@
   },
   {
     "Input": "100.2 डिग्री फ़ॉरेनहाइट कम होता है",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -171,7 +161,6 @@
   },
   {
     "Input": "10.5 सेल्सियस",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -188,7 +177,6 @@
   },
   {
     "Input": "20 डिग्री सेल्सियस",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -205,7 +193,6 @@
   },
   {
     "Input": "20.3 सेल्सियस",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -222,7 +209,6 @@
   },
   {
     "Input": "34.5 सेल्सियस",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -239,7 +225,6 @@
   },
   {
     "Input": "बाहर का तामपना 98 डिग्री है",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -256,7 +241,6 @@
   },
   {
     "Input": "थर्मोस्टैट को 85° पर सेट कीजिए",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -273,7 +257,6 @@
   },
   {
     "Input": "तापमान को 5 डिग्री से बढ़ाइए",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -290,7 +273,6 @@
   },
   {
     "Input": "तापमान को 70 डिग्री फ़ॉ. सेट करिए",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -307,7 +289,6 @@
   },
   {
     "Input": "तापमान 20 डिग्री बढ़ाएं",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -324,7 +305,6 @@
   },
   {
     "Input": "तापमान को 100 डिग्री पर सेट कीजिए",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -341,7 +321,6 @@
   },
   {
     "Input": "तापमान को 75 डिग्री फ़ॉ. रखिए",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -358,7 +337,6 @@
   },
   {
     "Input": "तापमान को 40 सेल्सियस पर रहने दीजिए",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -375,7 +353,6 @@
   },
   {
     "Input": "तापमान को 50 डि. पर रहने दीजिए",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -392,7 +369,6 @@
   },
   {
     "Input": "10 सेल्सियस को फ़ॉरेनहाइट में बदलिए",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -419,7 +395,6 @@
   },
   {
     "Input": "34.9 सेंटिग्रेड से फ़ॉरेनहाइट",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -446,7 +421,6 @@
   },
   {
     "Input": "200 सेल्सियस सेल्सियस को फ़ॉरेनहाइट में बदलिए",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -466,8 +440,8 @@
           "value": null,
           "unit": "C"
         },
-        "Start": 4,
-        "End": 11
+        "Start": 13,
+        "End": 20
       },
       {
         "Text": "फ़ॉरेनहाइट",
@@ -483,7 +457,6 @@
   },
   {
     "Input": "फ़ॉरेनहाइट से सेल्सियस 101 फ़ॉरेनहाइट कितना सेल्सियस होता है",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -523,14 +496,13 @@
           "value": null,
           "unit": "C"
         },
-        "Start": 49,
-        "End": 55
+        "Start": 42,
+        "End": 49
       }
     ]
   },
   {
     "Input": "50 डिग्री सेल्सियस सेल्सियस से फ़ॉरेनहाइट",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -550,8 +522,8 @@
           "value": null,
           "unit": "C"
         },
-        "Start": 10,
-        "End": 17
+        "Start": 19,
+        "End": 26
       },
       {
         "Text": "फ़ॉरेनहाइट",
@@ -567,7 +539,6 @@
   },
   {
     "Input": "क्या आप 51 फ़ॉरेनहाइट को डिग्री सेल्सियस में बदल सकते हैं",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -594,7 +565,6 @@
   },
   {
     "Input": "106 डिग्री फ़ॉरेनहाइट को डिग्री सेल्सियस में बदलिए",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -621,7 +591,6 @@
   },
   {
     "Input": "45 डिग्री फ़ॉरेनहाइट को सेल्सियस में बदलिए",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -648,7 +617,6 @@
   },
   {
     "Input": "कैसे कनवर्ट करें - 20 डिग्री फ़ॉरेनहाइट से सेल्सियस",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -670,6 +638,237 @@
         },
         "Start": 42,
         "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "कार में ठंडी ज़्यादा है, कूलिंग बढ़ाकर कर 24 डिग्री से. पर कर दो.",
+    "Comment": "Codemixing",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "24 डिग्री से.",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "24",
+          "unit": "C"
+        },
+        "Start": 40,
+        "End": 52
+      }
+    ]
+  },
+  {
+    "Input": "एसी के टेंपरेचर को मिनिमम 24 डिग्री से. पर ही रखना चाहिए.",
+    "Comment": "Codemixing",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "24 डिग्री से.",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "24",
+          "unit": "C"
+        },
+        "Start": 26,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "दिल्ली का temperature तो अब 49 डिग्री तक पहुंच चुका है.",
+    "Comment": "Codemixing",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "49 डिग्री",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "49",
+          "unit": "Degree"
+        },
+        "Start": 28,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "50 degree celsius का मतलब कितना फ़ॉरेनहाइट होता है?",
+    "Comment": "Codemixing",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "50 degree celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "50",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 16
+      },
+      {
+        "Text": "फ़ॉरेनहाइट",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 32,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "-५ डिग्री फ़ॉरेनहाइट",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari Script",
+    "Results": [
+      {
+        "Text": "-५ डिग्री फ़ॉरेनहाइट",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "-5",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "६ डिग्री से.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari Script",
+    "Results": [
+      {
+        "Text": "६ डिग्री से.",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "6",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "९८.६ डिग्री फ़ॉ. सामान्य तापमान होता है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari Script",
+    "Results": [
+      {
+        "Text": "९८.६ डिग्री फ़ॉ.",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98.6",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "टेंपरेचर को ३० डिग्री सेल्सियस सेट कर",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari Script",
+    "Results": [
+      {
+        "Text": "३० डिग्री सेल्सियस",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "30",
+          "unit": "C"
+        },
+        "Start": 12,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "सामान्य तापमान ९८.६ डिग्री फ़ॉरेनहाइट होता है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari Script",
+    "Results": [
+      {
+        "Text": "९८.६ डिग्री फ़ॉरेनहाइट",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98.6",
+          "unit": "F"
+        },
+        "Start": 15,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "१०० डिग्री फ़ॉ.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari Script",
+    "Results": [
+      {
+        "Text": "१०० डिग्री फ़ॉ.",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "२० डिग्री से.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari Script",
+    "Results": [
+      {
+        "Text": "२० डिग्री से.",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "१००.२ डिग्री फ़ॉरेनहाइट कम होता ह",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari Script",
+    "Results": [
+      {
+        "Text": "१००.२ डिग्री फ़ॉरेनहाइट",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100.2",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "१०.५ सेल्सियस",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari Script",
+    "Results": [
+      {
+        "Text": "१०.५ सेल्सियस",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "10.5",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 12
       }
     ]
   }

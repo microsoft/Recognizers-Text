@@ -7,53 +7,38 @@ from recognizers_sequence.sequence.config import *
 import regex as re
 
 
-class EnglishPhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
-
+class EnglishPhoneNumberExtractorConfiguration(BasePhoneNumberExtractorConfiguration):
     @property
-    def word_boundaries_regex(self) -> str:
-        return self._WordBoundariesRegex
-
-    @property
-    def non_word_boundaries_regex(self) -> str:
-        return self._NonWordBoundariesRegex
-
-    @property
-    def end_word_boundaries_regex(self) -> str:
-        return self._EndWordBoundariesRegex
-
-    @property
-    def colon_prefix_check_regex(self) -> str:
-        return self._ColonPrefixCheckRegex
-
-    @property
-    def colon_markers(self) -> str:
-        return self._ColonMarkers
-
-    @property
-    def boundary_markers(self) -> str:
-        return self._BoundaryMarkers
-
-    @property
-    def forbidden_prefix_markers(self) -> str:
-        return self._ForbiddenPrefixMarkers
-
-    @property
-    def boundary_end_markers(self) -> str:
-        return self._ForbiddenSuffixMarkers
+    def false_positive_prefix_regex(self) -> str:
+        return self._FalsePositivePrefixRegex
 
     def __init__(self, culture_info: CultureInfo = None):
-        if culture_info is None:
-            culture_info = CultureInfo(Culture.English)
         super().__init__(culture_info)
-        self._WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex
-        self._NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex
-        self._EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex
-        self._ColonPrefixCheckRegex = BasePhoneNumbers.ColonPrefixCheckRegex
-        self._ForbiddenPrefixMarkers = BasePhoneNumbers.ForbiddenPrefixMarkers
+        self._FalsePositivePrefixRegex = EnglishPhoneNumbers.FalsePositivePrefixRegex
 
 
-class EnglishIpExtractor(BaseIpExtractor):
-    pass
+class EnglishIpExtractorConfiguration(IpConfiguration):
+    @property
+    def ipv4_regex(self) -> Pattern:
+        return self.__ipv4_regex
+
+    @ipv4_regex.setter
+    def ipv4_regex(self, ipv4_regex):
+        self.__ipv4_regex = ipv4_regex
+
+    @property
+    def ipv6_regex(self) -> Pattern:
+        return self.__ipv6_regex
+
+    @ipv6_regex.setter
+    def ipv6_regex(self, ipv6_regex):
+        self.__ipv6_regex = ipv6_regex
+
+    def __init__(self, options):
+        self.__ipv4_regex = RegExpUtility.get_safe_reg_exp(BaseIp.Ipv4Regex)
+        self.__ipv6_regex = RegExpUtility.get_safe_reg_exp(BaseIp.Ipv6Regex)
+
+        super().__init__(options)
 
 
 class EnglishMentionExtractor(BaseMentionExtractor):

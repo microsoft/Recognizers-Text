@@ -1,7 +1,6 @@
 [
   {
     "Input": "7'de döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -14,7 +13,6 @@
   },
   {
     "Input": "Saat 19'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -27,7 +25,6 @@
   },
   {
     "Input": "Saat 19:56'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -39,8 +36,7 @@
     ]
   },
   {
-    "Input": "Saat 19:56:35'da döneceğim",
-    "NotSupported": "dotnet",
+    "Input": "Saat 19:56:35'te döneceğim",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -53,7 +49,6 @@
   },
   {
     "Input": "00:00:30'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -66,7 +61,6 @@
   },
   {
     "Input": "Saat 7",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -79,7 +73,6 @@
   },
   {
     "Input": "Saat yedi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -92,7 +85,6 @@
   },
   {
     "Input": "Sabah 8",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -105,7 +97,6 @@
   },
   {
     "Input": "Akşam 8",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -118,72 +109,66 @@
   },
   {
     "Input": "Saat sekiz buçuk",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "sekiz buçuk",
+        "Text": "saat sekiz buçuk",
         "Type": "time",
-        "Start": 5,
-        "Length": 11
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Saat 8 buçuk",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "8 buçuk",
+        "Text": "saat 8 buçuk",
         "Type": "time",
-        "Start": 5,
-        "Length": 7
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Saat sekizi çeyrek geçiyor",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "sekizi çeyrek geçiyor",
+        "Text": "saat sekizi çeyrek geçiyor",
         "Type": "time",
-        "Start": 5,
-        "Length": 21
+        "Start": 0,
+        "Length": 26
       }
     ]
   },
   {
-    "Input": "Saat 9'u üç çeyrek geçiyor",
-    "NotSupported": "dotnet",
+    "Input": "Saat 9'u çeyrek geçiyor",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "9'u üç çeyrek geçiyor",
+        "Text": "saat 9'u çeyrek geçiyor",
         "Type": "time",
-        "Start": 5,
-        "Length": 21
+        "Start": 0,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Saat sekize üç dakika kala",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "sekize üç dakika kala",
+        "Text": "saat sekize üç dakika kala",
         "Type": "time",
-        "Start": 5,
-        "Length": 21
+        "Start": 0,
+        "Length": 26
       }
     ]
   },
   {
     "Input": "Saat yedi buçuk",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -196,7 +181,6 @@
   },
   {
     "Input": "Saat öğleden sonra yedi buçuk",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -209,7 +193,6 @@
   },
   {
     "Input": "Saat sabah yedi buçuk",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -222,7 +205,6 @@
   },
   {
     "Input": "Saat sabah 8'e çeyrek var",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -235,7 +217,6 @@
   },
   {
     "Input": "Saat akşam sekizi yirmi geçiyor",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -248,11 +229,22 @@
   },
   {
     "Input": "Öğleden sonra 7'de döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Öğleden sonra 7'de",
+        "Text": "Öğleden sonra 7",
+        "Type": "time",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Öğleden sonra 7:00'da döneceğim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Öğleden sonra 7:00",
         "Type": "time",
         "Start": 0,
         "Length": 18
@@ -260,21 +252,7 @@
     ]
   },
   {
-    "Input": "Öğleden sonra 7:00'da döneceğim",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "Öğleden sonra 7:00'da",
-        "Type": "time",
-        "Start": 0,
-        "Length": 21
-      }
-    ]
-  },
-  {
     "Input": "Öğleden sonra 7:00:14'te döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -287,20 +265,18 @@
   },
   {
     "Input": "Öğleden sonra saat yedide döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Öğleden sonra saat yedide ",
+        "Text": "Öğleden sonra saat yedide",
         "Type": "time",
         "Start": 0,
-        "Length": 26
+        "Length": 25
       }
     ]
   },
   {
     "Input": "Akşam yedi otuzda döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -313,7 +289,6 @@
   },
   {
     "Input": "Yedi otuz beşte döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -326,7 +301,6 @@
   },
   {
     "Input": "On bir beşte döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -339,20 +313,18 @@
   },
   {
     "Input": "Gece beş otuzda döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Gece beş otuz",
+        "Text": "Gece beş otuzda",
         "Type": "time",
         "Start": 0,
-        "Length": 13
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Öğlen civarı döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -365,7 +337,6 @@
   },
   {
     "Input": "Öğlen döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -378,7 +349,6 @@
   },
   {
     "Input": "Öğlen 12'de döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -391,7 +361,6 @@
   },
   {
     "Input": "11 civarı döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -404,7 +373,6 @@
   },
   {
     "Input": "Gece yarısı",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -417,7 +385,6 @@
   },
   {
     "Input": "Sabah ortası",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -430,7 +397,6 @@
   },
   {
     "Input": "Öğlen ortası",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -443,7 +409,6 @@
   },
   {
     "Input": "Gün ortası",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -456,7 +421,6 @@
   },
   {
     "Input": "Öğlen",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -469,7 +433,6 @@
   },
   {
     "Input": "19'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -482,7 +445,6 @@
   },
   {
     "Input": "On dokuz otuzda döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -495,20 +457,18 @@
   },
   {
     "Input": "Saat 12'de öğle yemeği vakti döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Saat 12'de öğle yemeği vakti ",
+        "Text": "Saat 12'de öğle yemeği vakti",
         "Type": "time",
         "Start": 0,
-        "Length": 29
+        "Length": 28
       }
     ]
   },
   {
     "Input": "Öğle yemeği vakti saat 12'de döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -521,7 +481,6 @@
   },
   {
     "Input": "Saat 21 benim için uygun",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -534,7 +493,6 @@
   },
   {
     "Input": "Saat 21'de döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -547,7 +505,6 @@
   },
   {
     "Input": "Saat 9'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

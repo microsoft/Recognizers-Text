@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
@@ -24,15 +25,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private readonly IDateTimeExtractor durationExtractor = new ChineseDurationExtractorConfiguration();
 
-        private readonly IExtractor integerExtractor = new IntegerExtractor();
+        private readonly IExtractor integerExtractor;
 
-        private readonly IParser numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(new BaseNumberOptionsConfiguration(Culture.Chinese)));
+        private readonly IParser numberParser;
 
         private readonly IFullDateTimeParserConfiguration config;
 
         public ChineseDateTimeParser(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            integerExtractor = new IntegerExtractor(numConfig);
+            numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(numConfig));
         }
 
         public ParseResult Parse(ExtractResult extResult)
@@ -60,7 +72,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParserDurationWithBeforeAndAfter(er.Text, referenceTime);
+                    innerResult = ParserDurationWithAgoAndLater(er.Text, referenceTime);
                 }
 
                 if (innerResult.Success)
@@ -310,7 +322,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // handle cases like "5分钟前", "1小时以后"
-        private DateTimeResolutionResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
             var durationRes = durationExtractor.Extract(text, referenceDate);

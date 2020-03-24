@@ -1,12 +1,12 @@
 [
   {
-    "Input": "Je vais partir 9 chaque dimanche",
+    "Input": "Je vais partir 9 heures chaque dimanche",
     "Results": [
       {
-        "Text": "9 chaque dimanche",
+        "Text": "9 heures chaque dimanche",
         "Type": "set",
         "Start": 15,
-        "Length": 17
+        "Length": 24
       }
     ]
   },
@@ -33,13 +33,13 @@
     ]
   },
   {
-    "Input": "Je vais partir 9 lundis",
+    "Input": "Je vais partir 9 heures lundis",
     "Results": [
       {
-        "Text": "9 lundis",
+        "Text": "9 heures lundis",
         "Type": "set",
         "Start": 15,
-        "Length": 8
+        "Length": 15
       }
     ]
   },
@@ -198,12 +198,12 @@
     ]
   },
   {
-    "Input": "Je vais partir 15 tous les jours",
+    "Input": "Je vais partir à 15 tous les jours",
     "Results": [
       {
         "Text": "15 tous les jours",
         "Type": "set",
-        "Start": 15,
+        "Start": 17,
         "Length": 17
       }
     ]
@@ -293,6 +293,65 @@
         "Type": "set",
         "Start": 15,
         "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir à 16 chaque lundi",
+    "Results": [
+      {
+        "Text": "16 chaque lundi",
+        "Type": "set",
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "de 14 heures à 16 heures, chaque lundi",
+    "Results": [
+      {
+        "Text": "de 14 heures à 16 heures, chaque lundi",
+        "Type": "set",
+        "Start": 0,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "avant 12h00 chaque lundi",
+    "NotSupported": "javascript, java, dotnet, python",
+    "Comment": "same bug in EN",
+    "Results": [
+      {
+        "Text": "avant 16 chaque lundi",
+        "Type": "set",
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "avant 12:00 chaque lundi",
+    "NotSupported": "javascript, java, dotnet, python",
+    "Comment": "same bug in EN",
+    "Results": [
+      {
+        "Text": "avant 12:00 chaque lundi",
+        "Type": "set",
+        "Start": 0,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "de 14 heures à 16 heures chaque lundi",
+    "Results": [
+      {
+        "Text": "de 14 heures à 16 heures chaque lundi",
+        "Type": "set",
+        "Start": 0,
+        "Length": 37
       }
     ]
   }

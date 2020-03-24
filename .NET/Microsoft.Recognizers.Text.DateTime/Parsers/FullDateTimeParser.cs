@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -17,7 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             config = configuration;
         }
 
-        public static void AddSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod, Dictionary<string, string> res)
+        public static void AddSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type,
+                                                         string mod, Dictionary<string, string> res)
         {
             if (resolutionDic.ContainsKey(type))
             {
@@ -40,7 +41,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
-        public static void AddPeriodToResolution(Dictionary<string, string> resolutionDic, string startType, string endType, string mod, Dictionary<string, string> res)
+        public static void AddPeriodToResolution(Dictionary<string, string> resolutionDic, string startType, string endType,
+                                                 string mod, Dictionary<string, string> res)
         {
             var start = string.Empty;
             var end = string.Empty;
@@ -116,6 +118,26 @@ namespace Microsoft.Recognizers.Text.DateTime
             return type;
         }
 
+        public static string DetermineSourceEntityType(string sourceType, string newType, bool hasMod)
+        {
+            if (!hasMod)
+            {
+                return null;
+            }
+
+            if (!newType.Equals(sourceType, StringComparison.Ordinal))
+            {
+                return Constants.SYS_DATETIME_DATETIMEPOINT;
+            }
+
+            if (newType.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal))
+            {
+                return Constants.SYS_DATETIME_DATETIMEPERIOD;
+            }
+
+            return null;
+        }
+
         public ParseResult Parse(ExtractResult extResult)
         {
             return Parse(extResult, DateObject.Now);
@@ -126,62 +148,76 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateTimeParseResult pr = null;
 
             // push, save teh MOD string
+            var hasInclusiveModifier = false;
             bool hasBefore = false, hasAfter = false, hasUntil = false, hasSince = false, hasEqual = false;
             string modStr = string.Empty, modStrPrefix = string.Empty, modStrSuffix = string.Empty;
-            var beforeMatch = config.BeforeRegex.MatchEnd(er.Text, trim: true);
-            var afterMatch = config.AfterRegex.MatchEnd(er.Text, trim: true);
-            var untilMatch = config.UntilRegex.MatchBegin(er.Text, trim: true);
-            var sinceMatchPrefix = config.SincePrefixRegex.MatchBegin(er.Text, trim: true);
-            var sinceMatchSuffix = config.SinceSuffixRegex.MatchEnd(er.Text, trim: true);
-            var equalMatch = config.EqualRegex.MatchBegin(er.Text, trim: true);
+            if (er.Metadata != null)
+            {
+                var beforeMatch = config.BeforeRegex.MatchEnd(er.Text, trim: true);
+                var afterMatch = config.AfterRegex.MatchEnd(er.Text, trim: true);
+                var untilMatch = config.UntilRegex.MatchBegin(er.Text, trim: true);
+                var sinceMatchPrefix = config.SincePrefixRegex.MatchBegin(er.Text, trim: true);
+                var sinceMatchSuffix = config.SinceSuffixRegex.MatchEnd(er.Text, trim: true);
+                var equalMatch = config.EqualRegex.MatchBegin(er.Text, trim: true);
 
-            if (beforeMatch.Success && !IsDurationWithBeforeAndAfter(er))
-            {
-                hasBefore = true;
-                er.Length -= beforeMatch.Length;
-                er.Text = er.Text.Substring(0, er.Length ?? 0);
-                modStr = beforeMatch.Value;
-            }
-            else if (afterMatch.Success && !IsDurationWithBeforeAndAfter(er))
-            {
-                hasAfter = true;
-                er.Length -= afterMatch.Length;
-                er.Text = er.Text.Substring(0, er.Length ?? 0);
-                modStr = afterMatch.Value;
-            }
-            else if (untilMatch.Success)
-            {
-                hasUntil = true;
-                er.Start += untilMatch.Length;
-                er.Length -= untilMatch.Length;
-                er.Text = er.Text.Substring(untilMatch.Length);
-                modStr = untilMatch.Value;
-            }
-            else if (equalMatch.Success)
-            {
-                hasEqual = true;
-                er.Start += equalMatch.Length;
-                er.Length -= equalMatch.Length;
-                er.Text = er.Text.Substring(equalMatch.Length);
-                modStr = equalMatch.Value;
-            }
-            else
-            {
-                if (sinceMatchPrefix.Success)
+                if (beforeMatch.Success && !IsDurationWithAgoAndLater(er))
                 {
-                    hasSince = true;
-                    er.Start += sinceMatchPrefix.Length;
-                    er.Length -= sinceMatchPrefix.Length;
-                    er.Text = er.Text.Substring(sinceMatchPrefix.Length);
-                    modStrPrefix = sinceMatchPrefix.Value;
-                }
-
-                if (sinceMatchSuffix.Success)
-                {
-                    hasSince = true;
-                    er.Length -= sinceMatchSuffix.Length;
+                    hasBefore = true;
+                    er.Length -= beforeMatch.Length;
                     er.Text = er.Text.Substring(0, er.Length ?? 0);
-                    modStrSuffix = sinceMatchSuffix.Value;
+                    modStr = beforeMatch.Value;
+
+                    if (!string.IsNullOrEmpty(beforeMatch.Groups[Constants.IncludeGroupName].Value))
+                    {
+                        hasInclusiveModifier = true;
+                    }
+                }
+                else if (afterMatch.Success && !IsDurationWithAgoAndLater(er))
+                {
+                    hasAfter = true;
+                    er.Length -= afterMatch.Length;
+                    er.Text = er.Text.Substring(0, er.Length ?? 0);
+                    modStr = afterMatch.Value;
+
+                    if (!string.IsNullOrEmpty(afterMatch.Groups[Constants.IncludeGroupName].Value))
+                    {
+                        hasInclusiveModifier = true;
+                    }
+                }
+                else if (untilMatch.Success)
+                {
+                    hasUntil = true;
+                    er.Start += untilMatch.Length;
+                    er.Length -= untilMatch.Length;
+                    er.Text = er.Text.Substring(untilMatch.Length);
+                    modStr = untilMatch.Value;
+                }
+                else if (equalMatch.Success)
+                {
+                    hasEqual = true;
+                    er.Start += equalMatch.Length;
+                    er.Length -= equalMatch.Length;
+                    er.Text = er.Text.Substring(equalMatch.Length);
+                    modStr = equalMatch.Value;
+                }
+                else
+                {
+                    if (sinceMatchPrefix.Success)
+                    {
+                        hasSince = true;
+                        er.Start += sinceMatchPrefix.Length;
+                        er.Length -= sinceMatchPrefix.Length;
+                        er.Text = er.Text.Substring(sinceMatchPrefix.Length);
+                        modStrPrefix = sinceMatchPrefix.Value;
+                    }
+
+                    if (sinceMatchSuffix.Success)
+                    {
+                        hasSince = true;
+                        er.Length -= sinceMatchSuffix.Length;
+                        er.Text = er.Text.Substring(0, er.Length ?? 0);
+                        modStrSuffix = sinceMatchSuffix.Value;
+                    }
                 }
             }
 
@@ -232,7 +268,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Length += modStr.Length;
                 pr.Text = pr.Text + modStr;
                 var val = (DateTimeResolutionResult)pr.Value;
-                val.Mod = Constants.BEFORE_MOD;
+
+                val.Mod = CombineMod(val.Mod, !hasInclusiveModifier ? Constants.BEFORE_MOD : Constants.UNTIL_MOD);
+
                 pr.Value = val;
             }
 
@@ -241,7 +279,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Length += modStr.Length;
                 pr.Text = pr.Text + modStr;
                 var val = (DateTimeResolutionResult)pr.Value;
-                val.Mod = Constants.AFTER_MOD;
+
+                val.Mod = CombineMod(val.Mod, !hasInclusiveModifier ? Constants.AFTER_MOD : Constants.SINCE_MOD);
+
                 pr.Value = val;
             }
 
@@ -401,14 +441,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     foreach (var q in dictionary)
                     {
-                        if (value.ContainsKey(q.Key))
-                        {
-                            value[q.Key] = q.Value;
-                        }
-                        else
-                        {
-                            value.Add(q.Key, q.Value);
-                        }
+                        value[q.Key] = q.Value;
                     }
 
                     resolutions.Add(value);
@@ -439,26 +472,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
-        }
-
-        public string DetermineSourceEntityType(string sourceType, string newType, bool hasMod)
-        {
-            if (!hasMod)
-            {
-                return null;
-            }
-
-            if (!newType.Equals(sourceType, StringComparison.Ordinal))
-            {
-                return Constants.SYS_DATETIME_DATETIMEPOINT;
-            }
-
-            if (newType.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal))
-            {
-                return Constants.SYS_DATETIME_DATETIMEPERIOD;
-            }
-
-            return null;
         }
 
         internal static void ResolveAmpm(Dictionary<string, object> resolutionDic, string keyName)
@@ -502,16 +515,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                         resolutionPm[DateTimeResolutionKey.Timex] = DateTimeFormatUtil.AllStringToPm(timex);
                         break;
                     case Constants.SYS_DATETIME_DATETIMEPERIOD:
-                        splited = resolution[DateTimeResolutionKey.Start].Split(' ');
                         if (resolution.ContainsKey(DateTimeResolutionKey.Start))
                         {
+                            splited = resolution[DateTimeResolutionKey.Start].Split(' ');
                             resolutionPm[DateTimeResolutionKey.Start] = splited[0] + " " + DateTimeFormatUtil.ToPm(splited[1]);
                         }
 
-                        splited = resolution[DateTimeResolutionKey.End].Split(' ');
-
                         if (resolution.ContainsKey(DateTimeResolutionKey.End))
                         {
+                            splited = resolution[DateTimeResolutionKey.End].Split(' ');
                             resolutionPm[DateTimeResolutionKey.End] = splited[0] + " " + DateTimeFormatUtil.ToPm(splited[1]);
                         }
 
@@ -562,9 +574,21 @@ namespace Microsoft.Recognizers.Text.DateTime
             return res;
         }
 
-        private bool IsDurationWithBeforeAndAfter(ExtractResult er)
+        private static string CombineMod(string originalMod, string newMod)
         {
-            return er.Metadata != null && er.Metadata.IsDurationWithBeforeAndAfter;
+            var combinedMod = newMod;
+
+            if (!string.IsNullOrEmpty(originalMod))
+            {
+                combinedMod = $"{newMod}-{originalMod}";
+            }
+
+            return combinedMod;
+        }
+
+        private bool IsDurationWithAgoAndLater(ExtractResult er)
+        {
+            return er.Metadata != null && er.Metadata.IsDurationWithAgoAndLater;
         }
     }
 }

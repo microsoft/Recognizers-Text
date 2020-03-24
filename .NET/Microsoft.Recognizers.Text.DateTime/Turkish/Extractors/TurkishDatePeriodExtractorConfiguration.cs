@@ -5,6 +5,7 @@ using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Turkish;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Turkish;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
@@ -58,6 +59,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         public static readonly Regex NowRegex =
              new Regex(DateTimeDefinitions.NowRegex, RegexFlags);
+
+        public static readonly Regex RangePrefixRegex =
+            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexFlags);
 
         // composite regexes
         public static readonly Regex SimpleCasesRegex =
@@ -167,6 +171,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
+        private static readonly Regex ExcludeSuffixRegex =
+            new Regex(DateTimeDefinitions.ExcludeSuffixRegex, RegexFlags);
+
+        private static readonly Regex FromRegex =
+            new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             // "3-5 Jan, 2018",
@@ -240,10 +250,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new TurkishDateExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             CardinalExtractor = Number.Turkish.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.Turkish.OrdinalExtractor.GetInstance();
-            DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+
+            NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(numConfig));
         }
 
         public IDateExtractor DatePointExtractor { get; }
@@ -310,26 +330,41 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         Regex IDatePeriodExtractorConfiguration.NowRegex => NowRegex;
 
+        bool IDatePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("from"))
+            var fromMatch = FromRegex.Match(text);
+            if (fromMatch.Success)
             {
-                index = text.LastIndexOf("from", StringComparison.Ordinal);
-                return true;
+                index = fromMatch.Index;
             }
 
-            return false;
+            return fromMatch.Success;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("between"))
+            string textTrm = text;
+
+            // do not include the suffix in textTrm
+            var noSuffixMatch = ExcludeSuffixRegex.Match(text);
+            if (noSuffixMatch.Success)
             {
-                index = text.LastIndexOf("between", StringComparison.Ordinal);
+                textTrm = noSuffixMatch.Groups["match"].Value;
+            }
+
+            textTrm = textTrm.TrimStart();
+            int diff = text.Length - textTrm.Length;
+            var match = RangePrefixRegex.MatchBegin(textTrm, false);
+
+            if (match.Success)
+            {
+                index = diff + match.Index + match.Length;
                 return true;
             }
 

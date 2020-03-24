@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         IExtractor CardinalExtractor { get; }
 
-        IExtractor DurationExtractor { get; }
+        IDateTimeExtractor DurationExtractor { get; }
 
         IParser NumberParser { get; }
 
@@ -33,10 +33,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex DurationUnitRegex { get; }
 
+        Regex SpecialNumberUnitRegex { get; }
+
+        bool CheckBothBeforeAfter { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, long> UnitValueMap { get; }
 
         IImmutableDictionary<string, double> DoubleNumbers { get; }
+
     }
 }

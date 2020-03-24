@@ -323,5 +323,27 @@
         "Length": 11
       }
     ]
+  },
+  {
+    "Input": "Every other Friday",
+    "Results": [
+      {
+        "Text": "Every other Friday",
+        "Type": "set",
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Let's have a quarterly meeting.",
+    "Results": [
+      {
+        "Text": "quarterly",
+        "Type": "set",
+        "Start": 13,
+        "Length": 9
+      }
+    ]
   }
 ]

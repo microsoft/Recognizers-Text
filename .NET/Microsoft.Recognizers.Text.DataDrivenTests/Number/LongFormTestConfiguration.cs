@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         public string HalfADozenText { get; }
 
-        public string LangMarker { get; } = "SelfDefined";
+        public string LanguageMarker { get; } = "SelfDefined";
 
         public char NonDecimalSeparatorChar { get; }
 

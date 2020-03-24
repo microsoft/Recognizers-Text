@@ -179,7 +179,7 @@ export class BaseCurrencyParser implements IParser {
 
         let count = 0;
         let result: ParseResult = null;
-        let numberValue = 0.0;
+        let numberValue = null;
         let mainUnitValue = '';
         let mainUnitIsoCode = '';
         let fractionUnitsString = '';
@@ -200,7 +200,9 @@ export class BaseCurrencyParser implements IParser {
                 result = new ParseResult(extractResult);
 
                 mainUnitValue = unitValue;
-                numberValue = parseFloat(parseResultValue.number);
+                if (parseResultValue.number != null) {
+                    numberValue = parseFloat(parseResultValue.number);
+                }
                 result.resolutionStr = parseResult.resolutionStr;
 
                 if (this.config.currencyNameToIsoCodeMap.has(unitValue)) {
@@ -252,26 +254,14 @@ export class BaseCurrencyParser implements IParser {
                 else {
                     // If the fraction unit doesn't match the main unit, finish process this group.
                     if (result !== null) {
-                        if (StringUtility.isNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
-                            result.value = {
-                                number: numberValue.toString(),
-                                unit: mainUnitValue
-                            } as UnitValue;
-                        }
-                        else {
-                            result.value = {
-                                number: numberValue.toString(),
-                                unit: mainUnitValue,
-                                isoCurrency: mainUnitIsoCode
-                            } as UnitValueIso;
-                        }
-
+                        result = this.createCurrencyResult(result, mainUnitIsoCode, numberValue, mainUnitValue);
                         results.push(result);
                         result = null;
                     }
 
                     count = 0;
                     i -= 1;
+                    numberValue = null;
                     continue;
                 }
             }
@@ -280,20 +270,7 @@ export class BaseCurrencyParser implements IParser {
         }
 
         if (result !== null) {
-            if (StringUtility.isNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
-                result.value = {
-                    number: numberValue.toString(),
-                    unit: mainUnitValue
-                } as UnitValue;
-            }
-            else {
-                result.value = {
-                    number: numberValue.toString(),
-                    unit: mainUnitValue,
-                    isoCurrency: mainUnitIsoCode
-                } as UnitValueIso;
-            }
-
+            result = this.createCurrencyResult(result, mainUnitIsoCode, numberValue, mainUnitValue);
             results.push(result);
         }
 
@@ -309,12 +286,30 @@ export class BaseCurrencyParser implements IParser {
         return unitsMap.has(fractionUnitCode);
     }
 
-    private resolveText(prs: ParseResult[], source: string, bias: number) {
+    private resolveText(prs: ParseResult[], source: string, bias: number): void {
         prs.forEach(parseResult => {
             if (parseResult.start !== null && parseResult.length !== null) {
                 parseResult.text = source.substr(parseResult.start - bias, parseResult.length);
             }
         });
+    }
+
+    private createCurrencyResult(result: ParseResult, mainUnitIsoCode: string, numberValue: number, mainUnitValue: string): ParseResult{
+        if (StringUtility.isNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
+            result.value = {
+                number: numberValue ? numberValue.toString() : 'null',
+                unit: mainUnitValue
+            } as UnitValue;
+        }
+        else {
+            result.value = {
+                number: numberValue ? numberValue.toString() : 'null',
+                unit: mainUnitValue,
+                isoCurrency: mainUnitIsoCode
+            } as UnitValueIso;
+        }
+
+        return result;
     }
 }
 

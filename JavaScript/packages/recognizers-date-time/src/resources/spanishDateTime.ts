@@ -11,8 +11,10 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace SpanishDateTime {
+    export const LangMarker = 'Spa';
+    export const CheckBothBeforeAfter = false;
     export const TillRegex = `(?<till>hasta|al|a|--|-|—|——)(\\s+(el|la(s)?))?`;
-    export const AndRegex = `(?<and>y|y\\s*el|--|-|—|——)`;
+    export const RangeConnectorRegex = `(?<and>y\\s*(el|(la(s)?)?)|${BaseDateTime.RangeConnectorSymbolRegex})`;
     export const DayRegex = `(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\\b|t)`;
     export const MonthNumRegex = `(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b`;
     export const AmDescRegex = `(${BaseDateTime.BaseAmDescRegex})`;
@@ -38,11 +40,11 @@ export namespace SpanishDateTime {
     export const FutureRegex = `(?<past>\\b(siguiente(s)?|pr[oó]xim[oa](s)?|dentro\\s+de|en)\\b)`;
     export const SimpleCasesRegex = `\\b((desde\\s+el|desde|del|de)\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
     export const MonthFrontSimpleCasesRegex = `\\b${MonthSuffixRegex}\\s+((desde\\s+el|desde|del)\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
-    export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+((entre|entre\\s+el)\\s+)(${DayRegex})\\s*${AndRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
-    export const DayBetweenRegex = `\\b((entre|entre\\s+el)\\s+)(${DayRegex})(\\s+${MonthSuffixRegex})?\\s*${AndRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
+    export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+((entre|entre\\s+el)\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
+    export const DayBetweenRegex = `\\b((entre|entre\\s+el)\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
     export const OneWordPeriodRegex = `\\b(((((la|el)\\s+)?mes\\s+((${OfPrepositionRegex})\\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\\s+))?(${MonthRegex})|((la|el)\\s+)?(((${RelativeRegex}\\s+)${DateUnitRegex}(\\s+${AfterNextSuffixRegex})?)|${DateUnitRegex}(\\s+${AfterNextSuffixRegex}))|va\\s+de\\s+${DateUnitRegex})`;
     export const MonthWithYearRegex = `\\b(((pr[oó]xim[oa](s)?|este|esta|[uú]ltim[oa]?)\\s+)?(${MonthRegex})(\\s+|(\\s*[,-]\\s*))((de|del|de la)\\s+)?(${YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año))\\b`;
-    export const MonthNumWithYearRegex = `(${YearRegex}(\\s*?)[/\\-\\.~](\\s*?)${MonthNumRegex})|(${MonthNumRegex}(\\s*?)[/\\-\\.~](\\s*?)${YearRegex})`;
+    export const MonthNumWithYearRegex = `\\b((${YearRegex}(\\s*?)[/\\-\\.~](\\s*?)${MonthNumRegex})|(${MonthNumRegex}(\\s*?)[/\\-\\.~](\\s*?)${YearRegex}))\\b`;
     export const WeekOfMonthRegex = `(?<wom>(la\\s+)?(?<cardinal>primera?|1ra|segunda|2da|tercera?|3ra|cuarta|4ta|quinta|5ta|[uú]ltima)\\s+semana\\s+${MonthSuffixRegex})`;
     export const WeekOfYearRegex = `(?<woy>(la\\s+)?(?<cardinal>primera?|1ra|segunda|2da|tercera?|3ra|cuarta|4ta|quinta|5ta|[uú]ltima?|([12345]ª))\\s+semana(\\s+del?)?\\s+(${YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\\s+año))`;
     export const FollowedDateUnit = `^\\s*${DateUnitRegex}`;
@@ -66,9 +68,8 @@ export namespace SpanishDateTime {
     export const SinceYearSuffixRegex = `^[.]`;
     export const WithinNextPrefixRegex = `\\b(dentro\\s+de)\\b`;
     export const FromRegex = `((desde|de)(\\s*la(s)?)?)$`;
-    export const ConnectorAndRegex = `(y\\s*(la(s)?)?)$`;
     export const BetweenRegex = `(entre\\s*(la(s)?)?)`;
-    export const WeekDayRegex = `\\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|sa|do)\\b`;
+    export const WeekDayRegex = `\\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|s[aá]|do)\\b`;
     export const OnRegex = `(?<=\\ben\\s+)(${DayRegex}s?)\\b`;
     export const RelaxedOnRegex = `(?<=\\b(en|el|del)\\s+)((?<day>10|11|12|13|14|15|16|17|18|19|1st|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)s?)\\b`;
     export const ThisRegex = `\\b((este\\s*)${WeekDayRegex})|(${WeekDayRegex}\\s*((de\\s+)?esta\\s+semana))\\b`;
@@ -146,7 +147,7 @@ export namespace SpanishDateTime {
     export const PureNumBetweenAnd = `(entre\\s+(la(s)?\\s+)?)(${BaseDateTime.HourRegex}|${TimeHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?\\s*y\\s*(la(s)?\\s+)?(${BaseDateTime.HourRegex}|${TimeHourNumRegex})\\s*(?<rightDesc>${PmRegex}|${AmRegex}|${DescRegex})?`;
     export const TimeRegexWithDotConnector = `(${BaseDateTime.HourRegex}(\\s*\\.\\s*)${BaseDateTime.MinuteRegex})`;
     export const SpecificTimeFromTo = `(${RangePrefixRegex})?(?<time1>((${TimeRegex2}|${TimeRegexWithDotConnector}(\\s*${DescRegex})?)|(${BaseDateTime.HourRegex}|${TimeHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?))\\s*${TillRegex}\\s*(?<time2>((${TimeRegex2}|${TimeRegexWithDotConnector}(\\s*${DescRegex})?)|(${BaseDateTime.HourRegex}|${TimeHourNumRegex})(\\s*(?<rightDesc>${DescRegex}))?))`;
-    export const SpecificTimeBetweenAnd = `(${BetweenRegex})(?<time1>((${TimeRegex1}|${TimeRegex2}|${TimeRegexWithDotConnector}(\\s*${DescRegex})?)|(${BaseDateTime.HourRegex}|${TimeHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?))\\s*${ConnectorAndRegex}\\s*(?<time2>((${TimeRegex1}|${TimeRegex2}|${TimeRegexWithDotConnector}(\\s*${DescRegex})?)|(${BaseDateTime.HourRegex}|${TimeHourNumRegex})(\\s*(?<rightDesc>${DescRegex}))?))`;
+    export const SpecificTimeBetweenAnd = `(${BetweenRegex})(?<time1>((${TimeRegex1}|${TimeRegex2}|${TimeRegexWithDotConnector}(\\s*${DescRegex})?)|(${BaseDateTime.HourRegex}|${TimeHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?))\\s*${RangeConnectorRegex}\\s*(?<time2>((${TimeRegex1}|${TimeRegex2}|${TimeRegexWithDotConnector}(\\s*${DescRegex})?)|(${BaseDateTime.HourRegex}|${TimeHourNumRegex})(\\s*(?<rightDesc>${DescRegex}))?))`;
     export const TimeUnitRegex = `([^A-Za-z]{1,}|\\b)(?<unit>horas|hora|h|minutos|minuto|mins|min|segundos|segundo|secs|sec)\\b`;
     export const TimeFollowedUnit = `^\\s*${TimeUnitRegex}`;
     export const TimeNumberCombinedWithUnit = `\\b(?<num>\\d+(\\,\\d*)?)\\s*${TimeUnitRegex}`;
@@ -205,8 +206,8 @@ export namespace SpanishDateTime {
     export const SeasonMap: ReadonlyMap<string, string> = new Map<string, string>([["primavera", "SP"],["verano", "SU"],["otoño", "FA"],["invierno", "WI"]]);
     export const SeasonValueMap: ReadonlyMap<string, number> = new Map<string, number>([["SP", 3],["SU", 6],["FA", 9],["WI", 12]]);
     export const CardinalMap: ReadonlyMap<string, number> = new Map<string, number>([["primer", 1],["primero", 1],["primera", 1],["1er", 1],["1ro", 1],["1ra", 1],["segundo", 2],["segunda", 2],["2do", 2],["2da", 2],["tercer", 3],["tercero", 3],["tercera", 3],["3er", 3],["3ro", 3],["3ra", 3],["cuarto", 4],["cuarta", 4],["4to", 4],["4ta", 4],["quinto", 5],["quinta", 5],["5to", 5],["5ta", 5]]);
-    export const DayOfWeek: ReadonlyMap<string, number> = new Map<string, number>([["lunes", 1],["martes", 2],["miercoles", 3],["miércoles", 3],["jueves", 4],["viernes", 5],["sabado", 6],["domingo", 0],["lu", 1],["ma", 2],["mi", 3],["ju", 4],["vi", 5],["sa", 6],["do", 0]]);
-    export const MonthOfYear: ReadonlyMap<string, number> = new Map<string, number>([["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["enero", 1],["febrero", 2],["marzo", 3],["abril", 4],["mayo", 5],["junio", 6],["julio", 7],["agosto", 8],["septiembre", 9],["setiembre", 9],["octubre", 10],["noviembre", 11],["diciembre", 12],["ene", 1],["feb", 2],["mar", 3],["abr", 4],["may", 5],["jun", 6],["jul", 7],["ago", 8],["sept", 9],["set", 9],["oct", 10],["nov", 11],["dic", 12],["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06", 6],["07", 7],["08", 8],["09", 9]]);
+    export const DayOfWeek: ReadonlyMap<string, number> = new Map<string, number>([["lunes", 1],["martes", 2],["miercoles", 3],["miércoles", 3],["jueves", 4],["viernes", 5],["sabado", 6],["sábado", 6],["domingo", 0],["lu", 1],["ma", 2],["mi", 3],["ju", 4],["vi", 5],["sa", 6],["do", 0]]);
+    export const MonthOfYear: ReadonlyMap<string, number> = new Map<string, number>([["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["enero", 1],["febrero", 2],["marzo", 3],["abril", 4],["mayo", 5],["junio", 6],["julio", 7],["agosto", 8],["septiembre", 9],["setiembre", 9],["octubre", 10],["noviembre", 11],["diciembre", 12],["ene", 1],["feb", 2],["mar", 3],["abr", 4],["may", 5],["jun", 6],["jul", 7],["ago", 8],["sept", 9],["sep", 9],["set", 9],["oct", 10],["nov", 11],["dic", 12],["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06", 6],["07", 7],["08", 8],["09", 9]]);
     export const Numbers: ReadonlyMap<string, number> = new Map<string, number>([["cero", 0],["un", 1],["una", 1],["uno", 1],["dos", 2],["tres", 3],["cuatro", 4],["cinco", 5],["seis", 6],["siete", 7],["ocho", 8],["nueve", 9],["diez", 10],["once", 11],["doce", 12],["docena", 12],["docenas", 12],["trece", 13],["catorce", 14],["quince", 15],["dieciseis", 16],["dieciséis", 16],["diecisiete", 17],["dieciocho", 18],["diecinueve", 19],["veinte", 20],["ventiuna", 21],["ventiuno", 21],["veintiun", 21],["veintiún", 21],["veintiuno", 21],["veintiuna", 21],["veintidos", 22],["veintidós", 22],["veintitres", 23],["veintitrés", 23],["veinticuatro", 24],["veinticinco", 25],["veintiseis", 26],["veintiséis", 26],["veintisiete", 27],["veintiocho", 28],["veintinueve", 29],["treinta", 30]]);
     export const HolidayNames: ReadonlyMap<string, string[]> = new Map<string, string[]>([["padres", ["diadelpadre"]],["madres", ["diadelamadre"]],["acciondegracias", ["diadegracias","diadeacciondegracias","acciondegracias"]],["trabajador", ["diadeltrabajador"]],["delaraza", ["diadelaraza","diadeladiversidadcultural"]],["memoria", ["diadelamemoria"]],["pascuas", ["diadepascuas","pascuas"]],["navidad", ["navidad","diadenavidad"]],["nochebuena", ["diadenochebuena","nochebuena"]],["añonuevo", ["añonuevo","diadeañonuevo"]],["nochevieja", ["nochevieja","diadenochevieja"]],["yuandan", ["yuandan"]],["maestro", ["diadelmaestro"]],["todoslossantos", ["todoslossantos"]],["niño", ["diadelniño"]],["mujer", ["diadelamujer"]]]);
     export const VariableHolidaysTimexDictionary: ReadonlyMap<string, string> = new Map<string, string>([["padres", "-06-WXX-7-3"],["madres", "-05-WXX-7-2"],["acciondegracias", "-11-WXX-4-4"],["trabajador", "-05-WXX-1-1"],["delaraza", "-10-WXX-1-2"],["memoria", "-03-WXX-2-4"]]);

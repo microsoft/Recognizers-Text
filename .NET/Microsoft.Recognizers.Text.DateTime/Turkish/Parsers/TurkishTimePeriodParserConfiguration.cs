@@ -8,6 +8,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
     public class TurkishTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, ITimePeriodParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex PluralTokenRegex =
+            new Regex(DateTimeDefinitions.PluralTokenRegex, RegexFlags);
+
         public TurkishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -57,9 +62,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
-            if (trimmedText.EndsWith("s"))
+            if (PluralTokenRegex.IsMatch(trimmedText))
             {
-                trimmedText = trimmedText.Substring(0, trimmedText.Length - 1);
+                trimmedText = trimmedText.Substring(0, trimmedText.Length - 4);
             }
 
             beginHour = 0;
@@ -67,15 +72,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             endMin = 0;
 
             var timeOfDay = string.Empty;
-            if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o)))
+            if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o) || trimmedText.StartsWith(o)))
             {
                 timeOfDay = Constants.Morning;
             }
-            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o) || trimmedText.StartsWith(o)))
             {
                 timeOfDay = Constants.Afternoon;
             }
-            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o) || trimmedText.StartsWith(o)))
             {
                 timeOfDay = Constants.Evening;
             }
@@ -83,7 +88,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             {
                 timeOfDay = Constants.Daytime;
             }
-            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o) || trimmedText.StartsWith(o)))
             {
                 timeOfDay = Constants.Night;
             }

@@ -183,6 +183,8 @@ public class EnglishSetParserConfiguration extends BaseOptionsConfiguration impl
             result.setTimex("P2W");
         } else if (trimmedText.equals("monthly")) {
             result.setTimex("P1M");
+        } else if (trimmedText.equals("quarterly")) {
+            result.setTimex("P3M");
         } else if (trimmedText.equals("yearly") || trimmedText.equals("annually") || trimmedText.equals("annual")) {
             result.setTimex("P1Y");
         }

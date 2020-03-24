@@ -15,6 +15,6 @@
 class EnglishChoice:
     LangMarker = 'Eng'
     TokenizerRegex = f'[^\\w\\d]'
-    TrueRegex = f'\\b(true|yes|yep|y|sure|ok|agree)\\b|(\\uD83D\\uDC4D|\\uD83D\\uDC4C|\\u0001f44c)'
+    TrueRegex = f'\\b(true|yes|yep|yup|yeah|y|sure|ok|agree)\\b|(\\uD83D\\uDC4D|\\uD83D\\uDC4C|\\u0001f44c)'
     FalseRegex = f'\\b(false|nope|nop|no|not\\s+ok|disagree)\\b|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90|\\u0001F44E|\\u0001F590)'
 # pylint: enable=line-too-long

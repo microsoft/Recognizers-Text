@@ -1,4 +1,7 @@
 ---
+#ISO 639-2 Code
+LangMarker: Ger
+CheckBothBeforeAfter: !bool false
 TillRegex: !simpleRegex
   def: (?<till>zu|bis\s*zum|zum|bis|bis\s*hin(\s*zum)?|--|-|—|——)
 RangeConnectorRegex : !simpleRegex
@@ -357,7 +360,7 @@ SimpleTimeOfTodayBeforeRegex: !nestedRegex
   def: '{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+um)?\s*({HourNumRegex}|{BaseDateTime.HourRegex})'
   references: [ DateTimeSpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
 SpecificEndOfRegex: !simpleRegex
-  def: ((das|am|an( dem)?)\s+)?ende(\s+(de[mnsr])?)\s*
+  def: ((das|am|an( dem)?)\s+)?\bende(\s+(de[mnsr])?)\s*
 UnspecificEndOfRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -378,6 +381,8 @@ MoreThanRegex: !simpleRegex
   def: \b(mehr\s+als)\b
 DurationUnitRegex: !simpleRegex
   def: (?<unit>jahr(e(n|s)?)?|monat(en?|s)?|wochen?|tag(e(n|s)?)?|stunden?|std?|h|min(uten?)?|sek(unden?)?)\b
+SpecialNumberUnitRegex: !simpleRegex
+  def: \b(?<specialNum>beiden)\b
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*und\s+(eine\s+)?(?<suffix_num>halbe|viertel))
 PeriodicRegex: !simpleRegex
@@ -484,8 +489,8 @@ PrepositionSuffixRegex: !simpleRegex
 FlexibleDayRegex: !simpleRegex
   def: (?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)
 ForTheRegex: !nestedRegex
-  def: \b(für den {FlexibleDayRegex})
-  references: [FlexibleDayRegex]
+  def: \b(für\s+den\s+{FlexibleDayRegex}(?<end>\s*(,|\.(?!(\d|\s?{WrittenMonthRegex}))|!|\?|$)))
+  references: [FlexibleDayRegex, WrittenMonthRegex]
 WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+((de(r|n))\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]

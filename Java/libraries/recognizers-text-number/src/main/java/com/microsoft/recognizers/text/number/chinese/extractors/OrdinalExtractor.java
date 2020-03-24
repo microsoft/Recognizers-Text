@@ -28,10 +28,10 @@ public class OrdinalExtractor extends BaseNumberExtractor {
         HashMap<Pattern, String> builder = new HashMap<>();
 
         //第一百五十四
-        builder.put(Pattern.compile(ChineseNumeric.OrdinalRegex, Pattern.UNICODE_CHARACTER_CLASS), "OrdinalChs");
+        builder.put(Pattern.compile(ChineseNumeric.OrdinalRegex, Pattern.UNICODE_CHARACTER_CLASS), "Ordinal" + ChineseNumeric.LangMarker);
 
         //第２５６５,  第1234
-        builder.put(Pattern.compile(ChineseNumeric.OrdinalNumbersRegex, Pattern.UNICODE_CHARACTER_CLASS), "OrdinalChs");
+        builder.put(Pattern.compile(ChineseNumeric.OrdinalNumbersRegex, Pattern.UNICODE_CHARACTER_CLASS), "Ordinal" + ChineseNumeric.LangMarker);
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

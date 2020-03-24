@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
-
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
@@ -23,10 +24,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public ChineseDateParserConfiguration(ChineseDateTimeParserConfiguration configuration)
         {
             config = configuration;
-            integerExtractor = new IntegerExtractor();
-            ordinalExtractor = new OrdinalExtractor();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            integerExtractor = new IntegerExtractor(numConfig);
+            ordinalExtractor = new OrdinalExtractor(numConfig);
+
+            numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(numConfig));
+
             durationExtractor = new ChineseDurationExtractorConfiguration();
-            numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(new BaseNumberOptionsConfiguration(configuration.Culture)));
         }
 
         public ParseResult Parse(ExtractResult extResult)
@@ -79,7 +91,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (!innerResult.Success)
             {
-                innerResult = ParserDurationWithBeforeAndAfter(text, reference);
+                innerResult = ParserDurationWithAgoAndLater(text, reference);
             }
 
             if (innerResult.Success)
@@ -514,7 +526,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 day = this.config.DayOfMonth[dayStr] > 31 ? this.config.DayOfMonth[dayStr] % 31 : this.config.DayOfMonth[dayStr];
                 if (!string.IsNullOrEmpty(yearStr))
                 {
-                    year = int.Parse(yearStr);
+                    year = int.Parse(yearStr, CultureInfo.InvariantCulture);
                     if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                     {
                         year += 1900;
@@ -620,7 +632,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // Handle cases like "三天前"
-        private DateTimeResolutionResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
             var durationRes = durationExtractor.Extract(text, referenceDate);

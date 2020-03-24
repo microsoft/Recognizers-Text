@@ -16,4 +16,13 @@ export class MetaData {
     set HasMod(hasMod: boolean) {
         this.hasMod = hasMod;
     }
+
+    private isDurationWithAgoAndLater: boolean = false;
+
+    get IsDurationWithAgoAndLater(): boolean {
+        return this.isDurationWithAgoAndLater;
+    }
+    set IsDurationWithAgoAndLater(isDurationWithAgoAndLater: boolean) {
+        this.isDurationWithAgoAndLater = isDurationWithAgoAndLater;
+    }
 }

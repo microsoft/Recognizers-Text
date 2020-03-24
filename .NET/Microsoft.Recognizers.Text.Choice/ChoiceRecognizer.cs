@@ -6,11 +6,13 @@ using Microsoft.Recognizers.Text.Choice.Dutch;
 using Microsoft.Recognizers.Text.Choice.English;
 using Microsoft.Recognizers.Text.Choice.French;
 using Microsoft.Recognizers.Text.Choice.German;
+using Microsoft.Recognizers.Text.Choice.Hindi;
 using Microsoft.Recognizers.Text.Choice.Italian;
 using Microsoft.Recognizers.Text.Choice.Japanese;
 using Microsoft.Recognizers.Text.Choice.Portuguese;
 using Microsoft.Recognizers.Text.Choice.Spanish;
 using Microsoft.Recognizers.Text.Choice.Swedish;
+using Microsoft.Recognizers.Text.Choice.Turkish;
 
 namespace Microsoft.Recognizers.Text.Choice
 {
@@ -71,6 +73,10 @@ namespace Microsoft.Recognizers.Text.Choice
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new GermanBooleanExtractorConfiguration())));
 
             RegisterModel<BooleanModel>(
+                Culture.Hindi,
+                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new HindiBooleanExtractorConfiguration())));
+
+            RegisterModel<BooleanModel>(
                 Culture.Italian,
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new ItalianBooleanExtractorConfiguration())));
 
@@ -98,6 +104,9 @@ namespace Microsoft.Recognizers.Text.Choice
                 Culture.Arabic,
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new ArabicBooleanExtractorConfiguration())));
 
+            RegisterModel<BooleanModel>(
+                Culture.Turkish,
+                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new TurkishBooleanExtractorConfiguration())));
         }
     }
 }

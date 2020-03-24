@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Definitions.French
 
     public static class NumbersDefinitions
     {
-      public const string LangMarker = @"Fr";
+      public const string LangMarker = @"Fre";
       public const bool CompoundNumberLanguage = false;
       public const bool MultiDecimalSeparatorCulture = true;
       public const string RoundNumberIntegerRegex = @"(cent|mille|millions|million|milliard|milliards|billion|billions)";

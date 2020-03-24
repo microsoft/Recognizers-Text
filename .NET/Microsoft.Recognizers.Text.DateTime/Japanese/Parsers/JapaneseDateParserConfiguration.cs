@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Japanese;
-
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
@@ -23,9 +23,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public JapaneseDateParserConfiguration(JapaneseDateTimeParserConfiguration configuration)
         {
             config = configuration;
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             integerExtractor = new IntegerExtractor();
             durationExtractor = new JapaneseDurationExtractorConfiguration();
-            numberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+            numberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(numConfig));
         }
 
         public ParseResult Parse(ExtractResult extResult)
@@ -78,7 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             if (!innerResult.Success)
             {
-                innerResult = ParserDurationWithBeforeAndAfter(text, reference);
+                innerResult = ParserDurationWithAgoAndLater(text, reference);
             }
 
             if (innerResult.Success)
@@ -558,7 +567,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         }
 
         // handle cases like "三天前"
-        private DateTimeResolutionResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
             var durationRes = durationExtractor.Extract(text, referenceDate);

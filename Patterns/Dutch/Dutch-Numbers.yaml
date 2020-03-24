@@ -1,5 +1,6 @@
 ---
-LangMarker: Nl
+#ISO 639-2 Code
+LangMarker: Dut
 #Does this language use non-whitespace-separated numbers?
 CompoundNumberLanguage: !bool true
 #Does this culture uses period and comma intercheangeably as decimal separator?
@@ -24,7 +25,7 @@ SeparaIntRegex: !nestedRegex
   def: ((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|{RoundNumberIntegerRegex}|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex, AnIntRegex ]
 AllIntRegex: !nestedRegex
-  def: (((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex}))\s*(en\s*)?)*{SeparaIntRegex})
+  def: (((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex}))\s*((en|ën)\s*)?)*{SeparaIntRegex})
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, SeparaIntRegex ]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
@@ -53,7 +54,7 @@ RoundNumberOrdinalRegex: !simpleRegex
 BasicOrdinalRegex: !simpleRegex
   def: (nulde|eerste|tweede|derde|vierde|vijfd(e|en)|zesde|zevende|achtst(e|en)|negende|tiend(e|en)|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste)
 SuffixBasicOrdinalRegex: !nestedRegex
-  def: (((({ZeroToNineIntegerRegex}{RoundNumberIntegerRegex})|({RoundNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex}))?(\s*en)?\s*{BasicOrdinalRegex})
+  def: (((({ZeroToNineIntegerRegex}{RoundNumberIntegerRegex})|({RoundNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})\s*)?((en|ën)\s*)?{BasicOrdinalRegex})
   references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex ]
 SuffixRoundNumberOrdinalRegex: !nestedRegex
   def: (({AllIntRegex}\s*){RoundNumberOrdinalRegex})
@@ -159,7 +160,7 @@ MoreRegexNoNumberSucceed: !simpleRegex
 LessRegexNoNumberSucceed: !simpleRegex
   def: ((minder|lager|kleiner)((?!\s+dan)|\s+(dan(?!(\s*\d+))))|(beneden|onder)(?!(\s*\d+)))
 EqualRegexNoNumberSucceed: !simpleRegex
-  def: (gelijk?((?!\s+(aan|tot))|(\s+(aan|tot)(?!(\s*\d+))))) 
+  def: (gelijk?((?!\s+(aan|tot))|(\s+(aan|tot)(?!(\s*\d+)))))
 OneNumberRangeMoreRegex1: !nestedRegex
   def: ({MoreOrEqual}|{MoreRegex})\s*(de\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
   references: [ MoreOrEqual, MoreRegex ]
@@ -168,7 +169,7 @@ OneNumberRangeMoreRegex2: !nestedRegex
   references: [ MoreOrEqualSuffix ]
 OneNumberRangeMoreSeparateRegex: !nestedRegex
   def: ({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+of\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+of\s+){EqualRegexNoNumberSucceed})
-  references: [ EqualRegex, MoreRegex, EqualRegexNoNumberSucceed, MoreRegexNoNumberSucceed, NumberSplitMark ]  
+  references: [ EqualRegex, MoreRegex, EqualRegexNoNumberSucceed, MoreRegexNoNumberSucceed, NumberSplitMark ]
 OneNumberRangeLessRegex1: !nestedRegex
   def: ({LessOrEqual}|{LessRegex})\s*(de\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
   references: [ LessOrEqual, LessRegex ]
@@ -177,7 +178,7 @@ OneNumberRangeLessRegex2: !nestedRegex
   references: [ LessOrEqualSuffix ]
 OneNumberRangeLessSeparateRegex: !nestedRegex
   def: ({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+of\s+){LessRegexNoNumberSucceed})|({LessRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+of\s+){EqualRegexNoNumberSucceed})
-  references: [ EqualRegex, LessRegex, EqualRegexNoNumberSucceed, LessRegexNoNumberSucceed, NumberSplitMark ]  
+  references: [ EqualRegex, LessRegex, EqualRegexNoNumberSucceed, LessRegexNoNumberSucceed, NumberSplitMark ]
 OneNumberRangeEqualRegex: !nestedRegex
   def: '{EqualRegex}\s*(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)'
   references: [ EqualRegex ]
@@ -193,7 +194,7 @@ TwoNumberRangeRegex3: !nestedRegex
 TwoNumberRangeRegex4: !nestedRegex
   def: (van\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|\van\b)).)+)\s*{TillRegex}\s*(de\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
   references: [ TillRegex ]
-AmbiguousFractionConnectorsRegex: !simpleRegex 
+AmbiguousFractionConnectorsRegex: !simpleRegex
   def: ^[.]  # TODO: modify regex according to the counterpart in English
 # "in" is ambiguous for cases like "more than 30000 in 2009", other connector "out of", "over" is not ambiguous in English
 #Parser
@@ -204,7 +205,7 @@ HalfADozenText: zes
 WordSeparatorToken: en
 WrittenDecimalSeparatorTexts: [komma]
 WrittenGroupSeparatorTexts: [punt]
-WrittenIntegerSeparatorTexts: [en]
+WrittenIntegerSeparatorTexts: [en, ën]
 WrittenFractionSeparatorTexts: [uit, van de, op de, en]
 HalfADozenRegex: !simpleRegex
   def: (een\s+)?half\s+dozijn

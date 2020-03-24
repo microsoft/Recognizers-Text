@@ -11,6 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IEnumerable<Regex> ImplicitDateList { get; }
 
+        bool CheckBothBeforeAfter { get; }
+
         Regex OfMonth { get; }
 
         Regex MonthEnd { get; }

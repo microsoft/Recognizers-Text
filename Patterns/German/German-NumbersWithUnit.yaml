@@ -567,10 +567,10 @@ TemperatureSuffixList: !dictionary
   types: [ string, string ]
   entries:
     F: grad fahrenheit|°fahrenheit|°f|fahrenheit
-    K: k|K|kelvin
+    K: k|K|kelvin|grad kelvin|°kelvin|°k|°K
     R: rankine|°r
     D: delisle|°de
-    C: grad celsius|°celsius|°c
+    C: grad celsius|°celsius|°c|celsius
     Degree: grad|°
 AmbiguousTemperatureUnitList: !list
   types: [ string ]

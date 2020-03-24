@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 
     public static class NumbersDefinitions
     {
-      public const string LangMarker = @"Nl";
+      public const string LangMarker = @"Dut";
       public const bool CompoundNumberLanguage = true;
       public const bool MultiDecimalSeparatorCulture = false;
       public const string RoundNumberIntegerRegex = @"(honderd|duizend|miljoen|miljard|biljoen)";
@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string TenToNineteenIntegerRegex = @"(zeventien|dertien|veertien|achttien|negentien|vijftien|zestien|elf|twaalf|tien)";
       public const string TensNumberIntegerRegex = @"(zeventig|twintig|dertig|tachtig|negentig|veertig|vijftig|zestig)";
       public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|{RoundNumberIntegerRegex}|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))";
-      public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex}))\s*(en\s*)?)*{SeparaIntRegex})";
+      public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex}))\s*((en|ën)\s*)?)*{SeparaIntRegex})";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
       public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\,\d+[a-zA-Z]))(?={placeholder})";
@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((een\s+)?half\s+dozijn)|({AllIntRegex}\s+dozijn(en)?))(?=\b)";
       public const string RoundNumberOrdinalRegex = @"(honderdste|duizendste|miljoenste|miljardste|biljoenste)";
       public const string BasicOrdinalRegex = @"(nulde|eerste|tweede|derde|vierde|vijfd(e|en)|zesde|zevende|achtst(e|en)|negende|tiend(e|en)|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste)";
-      public static readonly string SuffixBasicOrdinalRegex = $@"(((({ZeroToNineIntegerRegex}{RoundNumberIntegerRegex})|({RoundNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex}))?(\s*en)?\s*{BasicOrdinalRegex})";
+      public static readonly string SuffixBasicOrdinalRegex = $@"(((({ZeroToNineIntegerRegex}{RoundNumberIntegerRegex})|({RoundNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})\s*)?((en|ën)\s*)?{BasicOrdinalRegex})";
       public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s*){RoundNumberOrdinalRegex})";
       public static readonly string AllOrdinalRegex = $@"({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
       public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(1e|2e|3e|4e|5e|6e|7e|8e|9e|0e))|(1ste|2de|3de|4de|5de|6de|7de|8ste|9de|0de)|([0-9]*1[0-9]de)|([0-9]*[2-9][0-9]ste)|([0-9]*[0](1ste|2de|3de|4de|5de|6de|7de|8ste|9de|0de)))(?=\b)";
@@ -102,7 +102,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string WordSeparatorToken = @"en";
       public static readonly string[] WrittenDecimalSeparatorTexts = { @"komma" };
       public static readonly string[] WrittenGroupSeparatorTexts = { @"punt" };
-      public static readonly string[] WrittenIntegerSeparatorTexts = { @"en" };
+      public static readonly string[] WrittenIntegerSeparatorTexts = { @"en", @"ën" };
       public static readonly string[] WrittenFractionSeparatorTexts = { @"uit", @"van de", @"op de", @"en" };
       public const string HalfADozenRegex = @"(een\s+)?half\s+dozijn";
       public const string GrossRegex = @"(een\s+)?gros";

@@ -210,7 +210,7 @@
   },
   {
     "Input": "上世纪90年代",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "上世纪90年代",
@@ -222,7 +222,7 @@
   },
   {
     "Input": "本世纪20年代",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "本世纪20年代",
@@ -234,7 +234,7 @@
   },
   {
     "Input": "20世纪80年代",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "20世纪80年代",
@@ -246,7 +246,7 @@
   },
   {
     "Input": "在50年代的时候",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "50年代",
@@ -258,7 +258,7 @@
   },
   {
     "Input": "19世纪70年代，他出生了",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "19世纪70年代",
@@ -270,7 +270,7 @@
   },
   {
     "Input": "十九世纪七十年代",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "十九世纪七十年代",
@@ -282,7 +282,7 @@
   },
   {
     "Input": "九十年代",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "九十年代",
@@ -294,7 +294,7 @@
   },
   {
     "Input": "在789年",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "789年",
@@ -306,7 +306,7 @@
   },
   {
     "Input": "时间从15年一月十日到十二日",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "从15年一月十日到十二日",

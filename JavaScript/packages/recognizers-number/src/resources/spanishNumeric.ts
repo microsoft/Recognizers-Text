@@ -72,10 +72,10 @@ export namespace SpanishNumeric {
     export const EqualRegex = `((igual(es)?|equivalente(s)?|equivale|equivalen|son)(\\s+(a|que|de|al|del))?|(?<!<|>)=)`;
     export const MoreOrEqualPrefix = `((no\\s+${LessRegex})|(por\\s+lo\\s+menos|como\\s+m[íi]nimo|al\\s+menos))`;
     export const MoreOrEqual = `((${MoreRegex}\\s+(o)?\\s+${EqualRegex})|(${EqualRegex}\\s+(o|y)\\s+${MoreRegex})|${MoreOrEqualPrefix}(\\s+(o)\\s+${EqualRegex})?|(${EqualRegex}\\s+(o)\\s+)?${MoreOrEqualPrefix}|>\\s*=)`;
-    export const MoreOrEqualSuffix = `((\\b(y|o)\\b\\s+(m[áa]s|mayor|mayores)((?!\\s+(alt[oa]|baj[oa]|que|de|del))|(\\s+(que|de|del)(?!(\\s*\\d+)))))|como\\s+m[áa]ximo|por\\s+lo\\s+menos|al\\s+menos)`;
+    export const MoreOrEqualSuffix = `((\\b(y|o)\\b\\s+(m[áa]s|mayor|mayores)((?!\\s+(alt[oa]|baj[oa]|que|de|del))|(\\s+(que|de|del)(?!(\\s*\\d+)))))|como\\s+m[íi]nimo|por\\s+lo\\s+menos|al\\s+menos)`;
     export const LessOrEqualPrefix = `((no\\s+${MoreRegex})|(como\\s+máximo|como\\s+maximo|como\\s+mucho))`;
     export const LessOrEqual = `((${LessRegex}\\s+(o)?\\s+${EqualRegex})|(${EqualRegex}\\s+(o)?\\s+${LessRegex})|${LessOrEqualPrefix}(\\s+(o)?\\s+${EqualRegex})?|(${EqualRegex}\\s+(o)?\\s+)?${LessOrEqualPrefix}|<\\s*=)`;
-    export const LessOrEqualSuffix = `((\\b(y|o)\\b\\s+(menos|menor|menores)((?!\\s+(alt[oa]|baj[oa]|que|de|del))|(\\s+(que|de|del)(?!(\\s*\\d+)))))|como\\s+m[íi]nimo)`;
+    export const LessOrEqualSuffix = `((\\b(y|o)\\b\\s+(menos|menor|menores)((?!\\s+(alt[oa]|baj[oa]|que|de|del))|(\\s+(que|de|del)(?!(\\s*\\d+)))))|como\\s+m[áa]ximo)`;
     export const NumberSplitMark = `(?![,.](?!\\d+))`;
     export const MoreRegexNoNumberSucceed = `((m[áa]s|mayor|mayores)((?!\\s+(que|de|del))|\\s+((que|de|del)(?!(\\s*\\d+))))|(por encima)(?!(\\s*\\d+)))`;
     export const LessRegexNoNumberSucceed = `((menos|menor|menores)((?!\\s+(que|de|del))|\\s+((que|de|del)(?!(\\s*\\d+))))|(por debajo)(?!(\\s*\\d+)))`;

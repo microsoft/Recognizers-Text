@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Portuguese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
@@ -29,13 +30,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             InexactNumberRegex = PortugueseDurationExtractorConfiguration.InexactNumberRegex;
             InexactNumberUnitRegex = PortugueseDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = PortugueseDurationExtractorConfiguration.DurationUnitRegex;
+            SpecialNumberUnitRegex = PortugueseDurationExtractorConfiguration.SpecialNumberUnitRegex;
         }
 
         public IExtractor CardinalExtractor { get; }
 
         public IParser NumberParser { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public Regex NumberCombinedWithUnit { get; }
 
@@ -58,6 +60,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
+
+        public Regex SpecialNumberUnitRegex { get; }
+
+        bool IDurationParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

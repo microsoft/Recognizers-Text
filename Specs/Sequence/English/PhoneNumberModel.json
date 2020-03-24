@@ -4722,5 +4722,59 @@
   {
     "Input": "9a1-677-0060 and a91-677-0060 are not phone numbers",
     "Results": []
+  },
+  {
+    "Input": "911-67-0060 is a SSN and should not be extracted",
+    "Results": []
+  },
+  {
+    "Input": "011-12-3456 is a SSN and should not be extracted",
+    "Results": []
+  },
+  {
+    "Input": "account number 12345678",
+    "Results": []
+  },
+  {
+    "Input": "account #12345678",
+    "Results": []
+  },
+  {
+    "Input": "account 12345678",
+    "Results": []
+  },
+  {
+    "Input": "card number 1234567 and phone number is +55 11 12345-6789",
+    "Results": [
+      {
+        "Text": "+55 11 12345-6789",
+        "Start": 40,
+        "End": 56,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+55 11 12345-6789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "card number 12345678 and phone number 12345678",
+    "Results": [
+      {
+        "Text": "12345678",
+        "Start": 38,
+        "End": 45,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.3",
+          "value": "12345678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My card number is 12345678",
+    "Results": []
   }
 ]

@@ -37,7 +37,7 @@ public class DoubleExtractor extends BaseNumberExtractor {
         builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.DoubleWithoutIntegralRegex(placeholder), Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
         builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.DoubleWithMultiplierRegex), "DoubleNum");
         builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.DoubleWithRoundNumber, Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
-        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.DoubleAllFloatRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoubleFr");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.DoubleAllFloatRegex, Pattern.UNICODE_CHARACTER_CLASS), "Double" + FrenchNumeric.LangMarker);
         builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.DoubleExponentialNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
         builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.DoubleCaretExponentialNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder), "DoubleNum");

@@ -35,6 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex PureNumberFromToRegex { get; }
 
+        Regex HyphenDateRegex { get; }
+
         Regex PureNumberBetweenAndRegex { get; }
 
         Regex SpecificTimeOfDayRegex { get; }
@@ -68,6 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex BeforeRegex { get; }
 
         Regex AfterRegex { get; }
+
+        bool CheckBothBeforeAfter { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

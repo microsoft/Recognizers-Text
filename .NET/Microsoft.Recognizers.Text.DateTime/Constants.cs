@@ -81,6 +81,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public const string APPROX_MOD = "approx";
 
+        public const string HAS_MOD = "mod";
+
+        // labels associated to AgoRegex and LaterRegex
+        public const string AGO_LABEL = "ago";
+        public const string LATER_LABEL = "later";
+
         // These are some particular values for timezone recognition
         public const int InvalidOffsetValue = -10000;
         public const string UtcOffsetMinsKey = "utcOffsetMins";
@@ -128,6 +134,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string BusinessDayGroupName = "business";
         public const string LeftAmPmGroupName = "leftDesc";
         public const string RightAmPmGroupName = "rightDesc";
+        public const string MealTimeGroupName = "mealTime";
+
+        // Include the date metioned, to make "before" -> "until" or "after" -> "since". Such as "on or earlier than 1/1/2016".
+        public const string IncludeGroupName = "include";
 
         public const string DECADE_UNIT = "10Y";
         public const string FORTNIGHT_UNIT = "2W";
@@ -162,6 +172,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string Daytime = "TDT";
         public const string Night = "TNI";
         public const string BusinessHour = "TBH";
+        public const string MealtimeBreakfast = "TMEB";
+        public const string MealtimeBrunch = "TMER";
+        public const string MealtimeLunch = "TMEL";
+        public const string MealtimeDinner = "TMED";
 
         // Invalid year
         public const int InvalidYear = int.MinValue;
@@ -170,6 +184,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int InvalidHour = int.MinValue;
         public const int InvalidMinute = int.MinValue;
         public const int InvalidSecond = int.MinValue;
+
+        // Failed connector extraction
+        public const int INVALID_CONNECTOR_CODE = -1;
 
         // Invalid year non-constant
         public static readonly int MinYearNum = int.Parse(BaseDateTime.MinYearNum);

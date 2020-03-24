@@ -871,7 +871,17 @@
   {
     "Input": "How about 2 in 5 or more",
     "NotSupported": "javascript, python, java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "5 or more",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5,)"
+        },
+        "Start": 15,
+        "End": 23
+      }
+    ]
   },
   {
     "Input": "How about more than 2 in 5",

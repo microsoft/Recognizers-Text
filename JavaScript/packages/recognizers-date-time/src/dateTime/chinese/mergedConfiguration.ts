@@ -46,6 +46,7 @@ class ChineseMergedExtractorConfiguration implements IMergedExtractorConfigurati
     readonly ambiguousRangeModifierPrefix: RegExp
     readonly potentialAmbiguousRangeRegex: RegExp
     readonly numberEndingPattern: RegExp
+    readonly unspecificDatePeriodRegex: RegExp
     readonly filterWordRegexList: RegExp[]
 
     constructor(dmyDateFormat: boolean) {
@@ -275,14 +276,14 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         let modStr = "";
         let beforeMatch = RegExpUtility.getMatches(this.config.beforeRegex, er.text).pop();
         let afterMatch = RegExpUtility.getMatches(this.config.afterRegex, er.text).pop();
-        if (beforeMatch) {
+        if (beforeMatch && !this.isDurationWithAgoAndLater(er)) {
             hasBefore = true;
             er.start += beforeMatch.length;
             er.length -= beforeMatch.length;
             er.text = er.text.substring(beforeMatch.length);
             modStr = beforeMatch.value;
         }
-        else if (afterMatch) {
+        else if (afterMatch && !this.isDurationWithAgoAndLater(er)) {
             hasAfter = true;
             er.start += afterMatch.length;
             er.length -= afterMatch.length;
@@ -451,5 +452,9 @@ export class ChineseFullMergedParser extends BaseMergedParser {
             }
         }
         return type;
+    }
+
+    protected isDurationWithAgoAndLater(er: ExtractResult): boolean {
+        return er.metaData && er.metaData.IsDurationWithAgoAndLater;
     }
 }

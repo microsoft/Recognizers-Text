@@ -3,7 +3,7 @@ from typing import List, Dict, Set, Pattern, Match
 from collections import namedtuple
 import regex as re
 from recognizers_sequence.sequence.config.url_configuration import URLConfiguration
-from recognizers_text.Matcher.string_matcher import StringMatcher
+from recognizers_text.matcher.string_matcher import StringMatcher
 
 from .constants import *
 from recognizers_text.utilities import RegExpUtility
@@ -12,6 +12,7 @@ from recognizers_number.culture import CultureInfo
 from recognizers_sequence.resources import *
 from urllib.parse import urlparse
 from os.path import splitext
+from recognizers_text.matcher.simple_tokenizer import SimpleTokenizer
 
 ReVal = namedtuple('ReVal', ['re', 'val'])
 MatchesVal = namedtuple('MatchesVal', ['matches', 'val'])
@@ -135,19 +136,28 @@ class BasePhoneNumberExtractor(SequenceExtractor):
     def extract(self, source: str):
         ret = []
         pre_check_phone_number_regex = re.compile(BasePhoneNumbers.PreCheckPhoneNumberRegex)
+        ssn_filter_regex = re.compile(BasePhoneNumbers.SSNFilterRegex)
+        colon_prefix_check_regex = re.compile(self.config.colon_prefix_check_regex)
+
         if (pre_check_phone_number_regex.search(source) is None):
             return ret
         extract_results = super().extract(source)
         format_indicator_regex = re.compile(
             BasePhoneNumbers.FormatIndicatorRegex, re.IGNORECASE | re.DOTALL)
         for er in extract_results:
-            if count_digits(er.text) < 7 and er.data != "ITPhoneNumber":
+            if (count_digits(er.text) < 7 and er.data != "ITPhoneNumber") or \
+                    ssn_filter_regex.search(er.text):
                 continue
             if er.start + er.length < len(source):
                 ch = source[er.start + er.length]
                 if ch in BasePhoneNumbers.ForbiddenSuffixMarkers:
                     continue
+
             ch = source[er.start - 1]
+            front = source[0: er.start - 1]
+            if self.config.false_positive_prefix_regex and re.compile(self.config.false_positive_prefix_regex).search(front):
+                continue
+
             if er.start != 0:
                 if ch in BasePhoneNumbers.BoundaryMarkers:
                     # Handle cases like "-1234567" and "-1234+5678"
@@ -156,7 +166,6 @@ class BasePhoneNumberExtractor(SequenceExtractor):
                             er.start >= 2:
                         ch_gap = source[er.start - 2]
                         if ch_gap.isdigit():
-                            front = source[0:er.start - 1]
                             international_dialing_prefix_regex = re.compile(
                                 BasePhoneNumbers.InternationDialingPrefixRegex)
                             match = international_dialing_prefix_regex.search(front)
@@ -174,8 +183,6 @@ class BasePhoneNumberExtractor(SequenceExtractor):
                 elif ch in self.config.forbidden_prefix_markers:
                     # Handle "tel:123456".
                     if ch in BasePhoneNumbers.ColonMarkers:
-                        front = source[0:er.start - 1]
-                        colon_prefix_check_regex = re.compile(self.config.colon_prefix_check_regex)
                         # If the char before ':' is not letter, ignore it.
                         if colon_prefix_check_regex.search(front) is None:
                             continue
@@ -272,15 +279,17 @@ class BaseIpExtractor(SequenceExtractor):
                     start = last + 1
                     length = i - last
                     substring = source[start:start + length].strip()
-
+                    simple_tokenizer = SimpleTokenizer()
                     if substring.startswith(Constants.IPV6_ELLIPSIS) and (
                             start > 0 and (str.isdigit(source[start - 1]) or
-                                           str.isalpha(source[start - 1]))):
+                                           (str.isalpha(source[start - 1]) and
+                                            not simple_tokenizer.is_cjk(c=list(source)[start - 1])))):
                         continue
 
                     elif substring.endswith(Constants.IPV6_ELLIPSIS) and (
                             i + 1 < len(source) and (str.isdigit(source[i + 1]) or
-                                                     str.isalpha(source[i + 1]))):
+                                                     (str.isalpha(source[i + 1]) and
+                                                      not simple_tokenizer.is_cjk(c=list(source)[start - 1])))):
                         continue
 
                     src_match = next(
@@ -298,10 +307,11 @@ class BaseIpExtractor(SequenceExtractor):
                         result.append(value)
         return result
 
-    def __init__(self):
+    def __init__(self, config):
+        self.config = config
         self._regexes = [
-            ReVal(RegExpUtility.get_safe_reg_exp(BaseIp.Ipv4Regex), Constants.IP_REGEX_IPV4),
-            ReVal(RegExpUtility.get_safe_reg_exp(BaseIp.Ipv6Regex), Constants.IP_REGEX_IPV6)
+            ReVal(self.config.ipv4_regex, Constants.IP_REGEX_IPV4),
+            ReVal(self.config.ipv6_regex, Constants.IP_REGEX_IPV6)
         ]
 
 

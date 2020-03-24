@@ -8,10 +8,10 @@ from .constants import *
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor, ExtractResult
 from recognizers_number.culture import CultureInfo
-from recognizers_text.Matcher.string_matcher import StringMatcher
-from recognizers_text.Matcher.match_strategy import MatchStrategy
-from recognizers_text.Matcher.number_with_unit_tokenizer import NumberWithUnitTokenizer
-from recognizers_text.Matcher.match_result import MatchResult
+from recognizers_text.matcher.string_matcher import StringMatcher
+from recognizers_text.matcher.match_strategy import MatchStrategy
+from recognizers_text.matcher.number_with_unit_tokenizer import NumberWithUnitTokenizer
+from recognizers_text.matcher.match_result import MatchResult
 
 
 PrefixUnitResult = namedtuple('PrefixUnitResult', ['offset', 'unit'])

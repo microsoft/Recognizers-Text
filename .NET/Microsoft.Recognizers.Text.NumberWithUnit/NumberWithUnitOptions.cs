@@ -9,5 +9,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         /// Represents None
         /// </summary>
         None = 0,
+
+        /// <summary>
+        /// NoProtoCache
+        /// </summary>
+        NoProtoCache = 16,
+
+        /// <summary>
+        /// EnablePreview
+        /// </summary>
+        EnablePreview = 8388608, // 2 ^23
     }
 }

@@ -1,4 +1,7 @@
 ---
+#ISO 639-2 Code
+LangMarker: Fre
+CheckBothBeforeAfter: !bool false
 TillRegex: !simpleRegex
   def: (?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)
 RangeConnectorRegex : !simpleRegex
@@ -22,13 +25,13 @@ MonthNumRegex: !simpleRegex
 SpecialDescRegex: !simpleRegex
   def: (p\b)
 AmDescRegex: !nestedRegex
-  def: (h|{BaseDateTime.BaseAmDescRegex})
+  def: (h\b|{BaseDateTime.BaseAmDescRegex})
   references: [BaseDateTime.BaseAmDescRegex]
 PmDescRegex: !nestedRegex
-  def: (h|{BaseDateTime.BasePmDescRegex})
+  def: (h\b|{BaseDateTime.BasePmDescRegex})
   references: [BaseDateTime.BasePmDescRegex]
 AmPmDescRegex: !nestedRegex
-  def: (h|{BaseDateTime.BaseAmPmDescRegex})
+  def: (h\b|{BaseDateTime.BaseAmPmDescRegex})
   references: [BaseDateTime.BaseAmPmDescRegex]
 DescRegex: !nestedRegex
   def: (?<desc>{AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})
@@ -152,7 +155,7 @@ NumberEndingPattern: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 SpecialDate: !nestedRegex
-  def: (?<=\b([àa]|au|le)\s+){DayRegex}(?!:)\b
+  def: (?<=\b(au|le)\s+){DayRegex}(?!:)\b
   references: [ DayRegex ]
 DateYearRegex: !nestedRegex
   def: (?<year>{YearRegex}|{TwoDigitYearRegex})
@@ -264,7 +267,7 @@ FivesRegex: !simpleRegex
 PeriodHourNumRegex: !simpleRegex
   def: (?<hour>vingt-et-un|vingt-deux|vingt-trois|vingt-quatre|zero|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt)
 TimeRegex1: !nestedRegex
-  def: \b({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*{DescRegex}(\s+{TimePrefix})?
+  def: \b({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*{DescRegex}(\s+{TimePrefix})?\b
   references: [ TimePrefix, WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, DescRegex ]
 TimeRegex2: !nestedRegex
   def: (\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)
@@ -276,7 +279,7 @@ TimeRegex4: !nestedRegex
   def: \b{BasicTime}(\s*{DescRegex})?(\s+{TimePrefix})?\s+{TimeSuffix}\b
   references: [ TimePrefix, BasicTime, DescRegex, TimeSuffix ]
 TimeRegex5: !nestedRegex
-  def: \b{BasicTime}((\s*{DescRegex})|\b)(\s+{TimePrefix})?
+  def: \b{BasicTime}((\s*{DescRegex})(\s+{TimePrefix})?|\s+{TimePrefix})
   references: [ TimePrefix, BasicTime, DescRegex ]
 TimeRegex6: !nestedRegex
   def: '{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b'
@@ -330,7 +333,7 @@ TimeNumberCombinedWithUnit: !nestedRegex
 NowRegex: !simpleRegex
   def: \b(?<now>(ce\s+)?moment|maintenant|d[eè]s que possible|dqp|r[eé]cemment|auparavant)\b
 SuffixRegex: !simpleRegex
-  def: ^\s*(dans\s+l[ea]\s+)|(en\s+)|(du)?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit)\b
+  def: ^\s*((dans\s+l[ea]\s+)|(en\s+)|(d(u|\'))?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit))\b
 DateTimeTimeOfDayRegex: !simpleRegex
   def: \b(?<timeOfDay>matin([eé]e)?|apr[eè]s-midi|nuit|soir)\b
 DateTimeSpecificTimeOfDayRegex: !nestedRegex

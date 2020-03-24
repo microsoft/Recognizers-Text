@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Japanese;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
@@ -26,13 +27,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private readonly IExtractor integerExtractor = new IntegerExtractor();
 
-        private readonly IParser numberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(new BaseNumberOptionsConfiguration(Culture.Japanese)));
+        private readonly IParser numberParser;
 
         private readonly IFullDateTimeParserConfiguration config;
 
         public JapaneseDateTimeParser(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            numberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(numConfig));
         }
 
         public ParseResult Parse(ExtractResult extResult)
@@ -60,7 +71,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParserDurationWithBeforeAndAfter(er.Text, referenceTime);
+                    innerResult = ParserDurationWithAgoAndLater(er.Text, referenceTime);
                 }
 
                 if (innerResult.Success)
@@ -308,7 +319,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         }
 
         // handle cases like "5分钟前", "1小时以后"
-        private DateTimeResolutionResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
             var durationRes = durationExtractor.Extract(text, referenceDate);

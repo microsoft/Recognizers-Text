@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -563,7 +564,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             bool ambiguous = true;
 
             var er = this.config.OrdinalExtractor.Extract(trimmedText);
-            if (er.Count == 0)
+
+            // check if the extraction is empty or a relative ordinal (e.g. "next", "previous")
+            if (er.Count == 0 || er[0].Metadata.IsOrdinalRelative)
             {
                 er = this.config.IntegerExtractor.Extract(trimmedText);
             }
@@ -582,14 +585,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 day = num;
 
                 var suffix = trimmedText.Substring(er[0].Start + er[0].Length ?? 0);
-                var matchYear = this.config.YearSuffix.Match(suffix);
-                if (matchYear.Success)
+                GetYearInAffix(suffix, ref year, ref ambiguous, out bool success);
+
+                // Check also in prefix
+                if (!success && this.config.CheckBothBeforeAfter)
                 {
-                    year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matchYear);
-                    if (year != Constants.InvalidYear)
-                    {
-                        ambiguous = false;
-                    }
+                    var prefix = trimmedText.Substring(0, er[0].Start ?? 0);
+                    GetYearInAffix(prefix, ref year, ref ambiguous, out success);
                 }
             }
 
@@ -736,7 +738,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 day = this.config.DayOfMonth[dayStr];
                 if (!string.IsNullOrEmpty(yearStr))
                 {
-                    year = int.Parse(yearStr);
+                    year = int.Parse(yearStr, CultureInfo.InvariantCulture);
                     if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                     {
                         year += 1900;
@@ -919,6 +921,20 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return swift;
+        }
+
+        private void GetYearInAffix(string affix, ref int year, ref bool ambiguous, out bool success)
+        {
+            var matchYear = this.config.YearSuffix.Match(affix);
+            success = matchYear.Success;
+            if (success)
+            {
+                year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matchYear);
+                if (year != Constants.InvalidYear)
+                {
+                    ambiguous = false;
+                }
+            }
         }
     }
 }

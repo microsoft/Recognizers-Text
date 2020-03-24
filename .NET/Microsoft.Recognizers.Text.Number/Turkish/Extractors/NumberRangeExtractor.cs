@@ -11,7 +11,8 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public NumberRangeExtractor(INumberOptionsConfiguration config)
-            : base(NumberExtractor.GetInstance(),
+            : base(
+                   NumberExtractor.GetInstance(),
                    OrdinalExtractor.GetInstance(),
                    new BaseNumberParser(new TurkishNumberParserConfiguration(config)),
                    config)

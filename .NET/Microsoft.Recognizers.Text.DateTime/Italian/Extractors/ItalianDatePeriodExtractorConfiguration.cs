@@ -4,6 +4,7 @@ using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Italian;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Italian;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
@@ -234,10 +235,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             CardinalExtractor = Number.Italian.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
-            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+
+            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(numConfig));
         }
 
         public IDateExtractor DatePointExtractor { get; }
@@ -303,6 +314,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         Regex IDatePeriodExtractorConfiguration.MonthNumRegex => MonthNumRegex;
 
         Regex IDatePeriodExtractorConfiguration.NowRegex => NowRegex;
+
+        bool IDatePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 

@@ -2,7 +2,6 @@ from typing import Pattern, Dict
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor
-from recognizers_number.number.spanish.extractors import SpanishIntegerExtractor
 from ...resources.spanish_date_time import SpanishDateTime
 from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
@@ -10,6 +9,7 @@ from ..base_configs import BaseDateParserConfiguration, DateTimeUtilityConfigura
 from ..base_timeperiod import TimePeriodParserConfiguration, MatchedTimeRegex
 from ..constants import Constants
 from ..utilities import TimexUtil
+from ..base_timezone import BaseTimeZoneParser
 
 
 class SpanishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
@@ -49,6 +49,10 @@ class SpanishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
         return self._utility_configuration
 
+    @property
+    def time_zone_parser(self) -> DateTimeParser:
+        return self._time_zone_parser
+
     def __init__(self, config: BaseDateParserConfiguration):
         self._time_extractor = config.time_extractor
         self._time_parser = config.time_parser
@@ -63,6 +67,7 @@ class SpanishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
             SpanishDateTime.TimeOfDayRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.TillRegex)
+        self._time_zone_parser = config.time_zone_parser
 
     def get_matched_timex_range(self, source: str) -> MatchedTimeRegex:
         trimmed_text = source.strip().lower()
@@ -76,15 +81,15 @@ class SpanishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
 
         time_of_day = ""
         if any(trimmed_text.endswith(o) for o in SpanishDateTime.EarlyMorningTermList):
-            time_of_day = Constants.EarlyMorning
+            time_of_day = Constants.EARLY_MORNING
         elif any(trimmed_text.endswith(o) for o in SpanishDateTime.MorningTermList):
-            time_of_day = Constants.Morning
+            time_of_day = Constants.MORNING
         elif any(trimmed_text.endswith(o) for o in SpanishDateTime.AfternoonTermList):
-            time_of_day = Constants.Afternoon
+            time_of_day = Constants.AFTERNOON
         elif any(trimmed_text.endswith(o) for o in SpanishDateTime.EveningTermList):
-            time_of_day = Constants.Evening
+            time_of_day = Constants.EVENING
         elif any(trimmed_text.endswith(o) for o in SpanishDateTime.NightTermList):
-            time_of_day = Constants.Night
+            time_of_day = Constants.NIGHT
         else:
             return MatchedTimeRegex(
                 matched=False,

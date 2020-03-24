@@ -1,7 +1,8 @@
-from recognizers_sequence.sequence.config import PhoneNumberConfiguration, URLConfiguration
+from recognizers_sequence.sequence.config import *
 from recognizers_sequence.sequence.sequence_recognizer import *
 from recognizers_sequence.resources.chinese_phone_numbers import ChinesePhoneNumbers
 from recognizers_sequence.resources.chinese_url import ChineseURL
+from recognizers_sequence.resources.chinese_ip import ChineseIp
 from recognizers_sequence.sequence.extractors import *
 from recognizers_text.culture import Culture
 
@@ -48,6 +49,14 @@ class ChinesePhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
     def forbidden_prefix_markers(self, forbidden_prefix_markers):
         self.__forbidden_prefix_markers = forbidden_prefix_markers
 
+    @property
+    def false_positive_prefix_regex(self) -> str:
+        return self.__false_positive_prefix_regex
+
+    @false_positive_prefix_regex.setter
+    def false_positive_prefix_regex(self, false_positive_prefix_regex):
+        self.__false_positive_prefix_regex = false_positive_prefix_regex
+
     def __init__(self, options=None):
         super().__init__(options)
         self.__word_boundaries_regex = ChinesePhoneNumbers.WordBoundariesRegex
@@ -55,6 +64,7 @@ class ChinesePhoneNumberExtractorConfiguration(PhoneNumberConfiguration):
         self.__end_word_boundaries_regex = ChinesePhoneNumbers.EndWordBoundariesRegex
         self.__colon_prefix_check_regex = ChinesePhoneNumbers.ColonPrefixCheckRegex
         self.__forbidden_prefix_markers = ChinesePhoneNumbers.ForbiddenPrefixMarkers
+        self.__false_positive_prefix_regex = None
 
 
 class ChineseURLExtractorConfiguration(URLConfiguration):
@@ -77,5 +87,29 @@ class ChineseURLExtractorConfiguration(URLConfiguration):
     def __init__(self, options):
         self.__url_regex = RegExpUtility.get_safe_reg_exp(ChineseURL.UrlRegex)
         self.__ip_url_regex = RegExpUtility.get_safe_reg_exp(ChineseURL.IpUrlRegex)
+
+        super().__init__(options)
+
+
+class ChineseIpExtractorConfiguration(IpConfiguration):
+    @property
+    def ipv4_regex(self) -> Pattern:
+        return self.__ipv4_regex
+
+    @ipv4_regex.setter
+    def ipv4_regex(self, ipv4_regex):
+        self.__ipv4_regex = ipv4_regex
+
+    @property
+    def ipv6_regex(self) -> Pattern:
+        return self.__ipv6_regex
+
+    @ipv6_regex.setter
+    def ipv6_regex(self, ipv6_regex):
+        self.__ipv6_regex = ipv6_regex
+
+    def __init__(self, options):
+        self.__ipv4_regex = RegExpUtility.get_safe_reg_exp(ChineseIp.Ipv4Regex)
+        self.__ipv6_regex = RegExpUtility.get_safe_reg_exp(ChineseIp.Ipv6Regex)
 
         super().__init__(options)

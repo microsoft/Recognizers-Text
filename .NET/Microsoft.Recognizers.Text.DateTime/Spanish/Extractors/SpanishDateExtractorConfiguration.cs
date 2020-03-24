@@ -127,9 +127,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public SpanishDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.Spanish.OrdinalExtractor.GetInstance();
-            NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.Spanish.OrdinalExtractor.GetInstance(numConfig);
+            NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration(numConfig));
+
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
 
@@ -191,6 +201,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         IImmutableDictionary<string, int> IDateExtractorConfiguration.DayOfWeek => DayOfWeek;
 
         IImmutableDictionary<string, int> IDateExtractorConfiguration.MonthOfYear => MonthOfYear;
+
+        bool IDateExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         Regex IDateExtractorConfiguration.OfMonth => OfMonth;
 

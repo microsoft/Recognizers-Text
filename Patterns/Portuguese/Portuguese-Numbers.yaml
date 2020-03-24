@@ -1,4 +1,5 @@
 ---
+#ISO 639-2 Code
 LangMarker: Por
 #Does this language use non-whitespace-separated numbers?
 CompoundNumberLanguage: !bool false

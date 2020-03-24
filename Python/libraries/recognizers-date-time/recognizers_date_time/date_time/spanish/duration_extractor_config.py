@@ -8,6 +8,23 @@ from ..base_duration import DurationExtractorConfiguration
 
 
 class SpanishDurationExtractorConfiguration(DurationExtractorConfiguration):
+
+    @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
+    def special_number_unit_regex(self):
+        return self._special_number_unit_regex
+
+    @property
+    def check_both_before_after(self):
+        return self._check_both_before_after
+
+    @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
+
     @property
     def all_regex(self) -> Pattern:
         return self._all_regex
@@ -41,18 +58,39 @@ class SpanishDurationExtractorConfiguration(DurationExtractorConfiguration):
         return self._relative_duration_unit_regex
 
     @property
-    def more_than_regex(self) -> BaseNumberExtractor:
+    def more_than_regex(self) -> Pattern:
         return self._more_than_regex
 
     @property
-    def less_than_regex(self) -> BaseNumberExtractor:
+    def less_than_regex(self) -> Pattern:
         return self._less_than_regex
 
     @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
         return self._cardinal_extractor
 
+    @property
+    def during_regex(self) -> Pattern:
+        return self._during_regex
+
+    @property
+    def unit_map(self) -> Pattern:
+        return self._unit_map
+
+    @property
+    def unit_value_map(self) -> {}:
+        return self._unit_value_map
+
+    @property
+    def duration_unit_regex(self) -> {}:
+        return self._duration_unit_regex
+
+    @property
+    def duration_connector_regex(self) -> Pattern:
+        return self._duration_connector_regex
+
     def __init__(self):
+        super().__init__()
         self._all_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.AllRegex)
         self._half_regex: Pattern = RegExpUtility.get_safe_reg_exp(
@@ -69,8 +107,24 @@ class SpanishDurationExtractorConfiguration(DurationExtractorConfiguration):
             SpanishDateTime.SuffixAndRegex)
         self._relative_duration_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.RelativeDurationUnitRegex)
-        self._more_than_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            SpanishDateTime.MoreThanRegex)
-        self._less_than_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            SpanishDateTime.LessThanOneHour)
         self._cardinal_extractor: BaseNumberExtractor = SpanishCardinalExtractor()
+        self._during_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.DuringRegex
+        )
+        self._unit_map = SpanishDateTime.UnitMap
+        self._unit_value_map = SpanishDateTime.UnitValueMap
+        self._duration_unit_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.DurationUnitRegex
+        )
+        self._duration_connector_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.DurationConnectorRegex
+        )
+        self._more_than_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.MoreThanRegex
+        )
+        self._less_than_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.LessThanRegex
+        )
+        self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
+        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._special_number_unit_regex = None

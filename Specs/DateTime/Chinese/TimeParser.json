@@ -98,7 +98,7 @@
     },
     "Results": [
       {
-        "Text": "大约十点以后",
+        "Text": "大约十点",
         "Type": "time",
         "Value": {
           "Timex": "T10",
@@ -110,7 +110,7 @@
           }
         },
         "Start": 0,
-        "Length": 6
+        "Length": 4
       }
     ]
   },
@@ -144,7 +144,7 @@
     },
     "Results": [
       {
-        "Text": "大约晚上十点以后",
+        "Text": "大约晚上十点",
         "Type": "time",
         "Value": {
           "Timex": "T22",
@@ -156,7 +156,7 @@
           }
         },
         "Start": 0,
-        "Length": 8
+        "Length": 6
       }
     ]
   },
@@ -280,7 +280,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-19T00:00:00"
     },
-    "NotSupported": "java, python",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "早八点",
@@ -304,7 +304,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-19T00:00:00"
     },
-    "NotSupported": "java, python",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "晚上八点",

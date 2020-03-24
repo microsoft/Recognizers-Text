@@ -1,11 +1,24 @@
 from typing import List, Pattern
-
 from recognizers_text.utilities import RegExpUtility
 from ...resources.spanish_date_time import SpanishDateTime
 from ..base_time import TimeExtractorConfiguration
+from ..base_timezone import BaseTimeZoneExtractor
+from .timezone_extractor_config import SpanishTimeZoneExtractorConfiguration
 
 
 class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
+    @property
+    def time_zone_extractor(self):
+        return self._time_zone_extractor
+
+    @property
+    def options(self):
+        return self._options
+
+    @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
+
     @property
     def time_regex_list(self) -> List[Pattern]:
         return self._time_regex_list
@@ -18,11 +31,21 @@ class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
     def ish_regex(self) -> Pattern:
         return self._ish_regex
 
+    @property
+    def time_before_after_regex(self) -> Pattern:
+        return self._time_before_after_regex
+
     def __init__(self):
+        super().__init__()
         self._time_regex_list: List[Pattern] = SpanishTimeExtractorConfiguration.get_time_regex_list(
         )
         self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.AtRegex)
+        self._time_before_after_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.TimeBeforeAfterRegex)
+        self._time_zone_extractor = self._timezone_extractor = BaseTimeZoneExtractor(
+            SpanishTimeZoneExtractorConfiguration())
+        # TODO When the implementation for these properties is added, change the None values to the respective Regexps
         self._ish_regex: Pattern = None
 
     @staticmethod

@@ -28,6 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = PortugueseTimePeriodExtractorConfiguration.PureNumFromTo;
+            HyphenDateRegex = PortugueseDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = PortugueseTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = PortugueseDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = PortugueseDateTimeExtractorConfiguration.TimeOfDayRegex;
@@ -79,6 +80,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex PureNumberFromToRegex { get; }
 
+        public Regex HyphenDateRegex { get; }
+
         public Regex PureNumberBetweenAndRegex { get; }
 
         public Regex SpecificTimeOfDayRegex { get; }
@@ -112,6 +115,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex BeforeRegex { get; }
 
         public Regex AfterRegex { get; }
+
+        bool IDateTimePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

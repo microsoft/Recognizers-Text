@@ -32,7 +32,7 @@
             <summary>
             read the rules.
             </summary>
-            <param name="regexStrs">rule list.</param>
+            <param name="regexStrings">rule list.</param>
             <param name="ignoreCase">.</param>
             <returns>Immutable HashSet of regex.</returns>
         </member>
@@ -98,6 +98,11 @@
         <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.PercentageMode">
             <summary>
             PercentageMode
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.NoProtoCache">
+            <summary>
+            NoProtoCache
             </summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.SuppressExtendedTypes">

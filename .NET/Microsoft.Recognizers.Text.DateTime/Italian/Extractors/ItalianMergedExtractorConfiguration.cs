@@ -122,10 +122,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
 
+        Regex IMergedExtractorConfiguration.UnspecificTimePeriodRegex => null;
+
         public Regex FailFastRegex { get; } = null;
 
         IEnumerable<Regex> IMergedExtractorConfiguration.TermFilterRegexes => TermFilterRegexes;
 
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
+
+        bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
     }
 }

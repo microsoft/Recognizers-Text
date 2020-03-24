@@ -11,6 +11,8 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace FrenchDateTime {
+    export const LangMarker = 'Fre';
+    export const CheckBothBeforeAfter = false;
     export const TillRegex = `(?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)`;
     export const RangeConnectorRegex = `(?<and>de la|au|[aà]|et(\\s*la)?|--|-|—|——)`;
     export const RelativeRegex = `(?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))`;
@@ -22,9 +24,9 @@ export namespace FrenchDateTime {
     export const DayRegex = `(?<day>01|02|03|04|05|06|07|08|09|10|11e?|12e?|13e?|14e?|15e?|16e?|17e?|18e?|19e?|1er|1|21e?|20e?|22e?|23e?|24e?|25e?|26e?|27e?|28e?|29e?|2e?|30e?|31e?|3e?|4e?|5e?|6e?|7e?|8e?|9e?)(?=\\b|t)`;
     export const MonthNumRegex = `(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b`;
     export const SpecialDescRegex = `(p\\b)`;
-    export const AmDescRegex = `(h|${BaseDateTime.BaseAmDescRegex})`;
-    export const PmDescRegex = `(h|${BaseDateTime.BasePmDescRegex})`;
-    export const AmPmDescRegex = `(h|${BaseDateTime.BaseAmPmDescRegex})`;
+    export const AmDescRegex = `(h\\b|${BaseDateTime.BaseAmDescRegex})`;
+    export const PmDescRegex = `(h\\b|${BaseDateTime.BasePmDescRegex})`;
+    export const AmPmDescRegex = `(h\\b|${BaseDateTime.BaseAmPmDescRegex})`;
     export const DescRegex = `(?<desc>${AmPmDescRegex}|${AmDescRegex}|${PmDescRegex}|${SpecialDescRegex})`;
     export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
     export const FullTextYearRegex = `^[\\*]`;
@@ -69,7 +71,7 @@ export namespace FrenchDateTime {
     export const RelativeWeekDayRegex = `^[.]`;
     export const AmbiguousRangeModifierPrefix = `^[.]`;
     export const NumberEndingPattern = `^[.]`;
-    export const SpecialDate = `(?<=\\b([àa]|au|le)\\s+)${DayRegex}(?!:)\\b`;
+    export const SpecialDate = `(?<=\\b(au|le)\\s+)${DayRegex}(?!:)\\b`;
     export const DateYearRegex = `(?<year>${YearRegex}|${TwoDigitYearRegex})`;
     export const DateExtractor1 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${MonthRegex}\\s*[/\\\\\\.\\-]?\\s*${DayRegex}\\b`;
     export const DateExtractor2 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}(\\s+|\\s*,\\s*|\\s+)${MonthRegex}\\s*[\\.\\-]?\\s*${DateYearRegex}\\b`;
@@ -112,11 +114,11 @@ export namespace FrenchDateTime {
     export const ConnectNumRegex = `${BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\\s*${DescRegex}`;
     export const FivesRegex = `(?<tens>(quinze|vingt(\\s*|-*(cinq))?|trente(\\s*|-*(cinq))?|quarante(\\s*|-*(cinq))??|cinquante(\\s*|-*(cinq))?|dix|cinq))\\b`;
     export const PeriodHourNumRegex = `(?<hour>vingt-et-un|vingt-deux|vingt-trois|vingt-quatre|zero|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt)`;
-    export const TimeRegex1 = `\\b(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})\\s*${DescRegex}(\\s+${TimePrefix})?`;
+    export const TimeRegex1 = `\\b(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})\\s*${DescRegex}(\\s+${TimePrefix})?\\b`;
     export const TimeRegex2 = `(\\b${TimePrefix}\\s+)?(t)?${BaseDateTime.HourRegex}(\\s*)?:(\\s*)?${BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?${BaseDateTime.SecondRegex})?((\\s*${DescRegex})|\\b)`;
     export const TimeRegex3 = `\\b${BaseDateTime.HourRegex}\\.${BaseDateTime.MinuteRegex}(\\s*${DescRegex})(\\s+${TimePrefix})?`;
     export const TimeRegex4 = `\\b${BasicTime}(\\s*${DescRegex})?(\\s+${TimePrefix})?\\s+${TimeSuffix}\\b`;
-    export const TimeRegex5 = `\\b${BasicTime}((\\s*${DescRegex})|\\b)(\\s+${TimePrefix})?`;
+    export const TimeRegex5 = `\\b${BasicTime}((\\s*${DescRegex})(\\s+${TimePrefix})?|\\s+${TimePrefix})`;
     export const TimeRegex6 = `${BasicTime}(\\s*${DescRegex})?\\s+${TimeSuffix}\\b`;
     export const TimeRegex7 = `\\b${TimeSuffix}\\s+[àa]\\s+${BasicTime}((\\s*${DescRegex})|\\b)`;
     export const TimeRegex8 = `\\b${TimeSuffix}\\s+${BasicTime}((\\s*${DescRegex})|\\b)`;
@@ -136,7 +138,7 @@ export namespace FrenchDateTime {
     export const TimeFollowedUnit = `^\\s*${TimeUnitRegex}`;
     export const TimeNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)${TimeUnitRegex}`;
     export const NowRegex = `\\b(?<now>(ce\\s+)?moment|maintenant|d[eè]s que possible|dqp|r[eé]cemment|auparavant)\\b`;
-    export const SuffixRegex = `^\\s*(dans\\s+l[ea]\\s+)|(en\\s+)|(du)?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit)\\b`;
+    export const SuffixRegex = `^\\s*((dans\\s+l[ea]\\s+)|(en\\s+)|(d(u|\\'))?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit))\\b`;
     export const DateTimeTimeOfDayRegex = `\\b(?<timeOfDay>matin([eé]e)?|apr[eè]s-midi|nuit|soir)\\b`;
     export const DateTimeSpecificTimeOfDayRegex = `\\b((${RelativeRegex}\\s+${DateTimeTimeOfDayRegex})\\b|\\b(ce(tte)?\\s+)(soir|nuit))\\b`;
     export const TimeOfTodayAfterRegex = `^\\s*(,\\s*)?(en|dans|du\\s+)?${DateTimeSpecificTimeOfDayRegex}`;

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
@@ -34,16 +36,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly IDateTimeExtractor TimePeriodExtractor = new ChineseTimePeriodExtractorChsConfiguration();
 
-        private static readonly IExtractor CardinalExtractor = new CardinalExtractor();
+        private readonly IExtractor cardinalExtractor;
 
-        private static readonly IParser CardinalParser = AgnosticNumberParserFactory.GetParser(
-            AgnosticNumberParserType.Cardinal, new ChineseNumberParserConfiguration(new BaseNumberOptionsConfiguration(Culture.Chinese)));
+        private readonly IParser cardinalParser;
 
         private readonly IFullDateTimeParserConfiguration config;
 
         public ChineseDateTimePeriodParserConfiguration(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            cardinalExtractor = new CardinalExtractor(numConfig);
+
+            cardinalParser = AgnosticNumberParserFactory.GetParser(
+                AgnosticNumberParserType.Cardinal, new ChineseNumberParserConfiguration(numConfig));
         }
 
         public static string BuildTimex(TimeResult timeResult)
@@ -51,17 +65,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var build = new StringBuilder("T");
             if (timeResult.Hour >= 0)
             {
-                build.Append(timeResult.Hour.ToString("D2"));
+                build.Append(timeResult.Hour.ToString("D2", CultureInfo.InvariantCulture));
             }
 
             if (timeResult.Minute >= 0)
             {
-                build.Append(":" + timeResult.Minute.ToString("D2"));
+                build.Append(":" + timeResult.Minute.ToString("D2", CultureInfo.InvariantCulture));
             }
 
             if (timeResult.Second >= 0)
             {
-                build.Append(":" + timeResult.Second.ToString("D2"));
+                build.Append(":" + timeResult.Second.ToString("D2", CultureInfo.InvariantCulture));
             }
 
             return build.ToString();
@@ -536,10 +550,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             string unitStr;
 
             // if there are spaces between number and unit
-            var ers = CardinalExtractor.Extract(text);
+            var ers = cardinalExtractor.Extract(text);
             if (ers.Count == 1)
             {
-                var pr = CardinalParser.Parse(ers[0]);
+                var pr = cardinalParser.Parse(ers[0]);
                 var srcUnit = text.Substring(ers[0].Start + ers[0].Length ?? 0).Trim();
 
                 if (srcUnit.StartsWith("个"))

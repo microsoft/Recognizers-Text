@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         private static readonly Regex PreCheckPhoneNumberRegex = new Regex(BasePhoneNumbers.PreCheckPhoneNumberRegex, RegexOptions.Compiled);
 
+        private static readonly Regex SSNFilterRegex = new Regex(BasePhoneNumbers.SSNFilterRegex, RegexOptions.Compiled);
+
         private PhoneNumberConfiguration config;
 
         public BasePhoneNumberExtractor(PhoneNumberConfiguration config)
@@ -88,7 +90,7 @@ namespace Microsoft.Recognizers.Text.Sequence
             for (var i = 0; i < ers.Count; i++)
             {
                 var er = ers[i];
-                if (CountDigits(er.Text) < 7 && er.Data.ToString() != "ITPhoneNumber")
+                if ((CountDigits(er.Text) < 7 && er.Data.ToString() != "ITPhoneNumber") || SSNFilterRegex.IsMatch(er.Text))
                 {
                     ers.Remove(er);
                     i--;
@@ -109,6 +111,16 @@ namespace Microsoft.Recognizers.Text.Sequence
                 if (er.Start != 0)
                 {
                     var ch = text[(int)(er.Start - 1)];
+                    var front = text.Substring(0, (int)(er.Start - 1));
+
+                    if (this.config.FalsePositivePrefixRegex != null &&
+                            this.config.FalsePositivePrefixRegex.IsMatch(front))
+                    {
+                        ers.Remove(er);
+                        i--;
+                        continue;
+                    }
+
                     if (BasePhoneNumbers.BoundaryMarkers.Contains(ch))
                     {
                         if (SpecialBoundaryMarkers.Contains(ch) &&
@@ -129,7 +141,6 @@ namespace Microsoft.Recognizers.Text.Sequence
                             }
 
                             // check the international dialing prefix
-                            var front = text.Substring(0, (int)(er.Start - 1));
                             if (InternationDialingPrefixRegex.IsMatch(front))
                             {
                                 var moveOffset = InternationDialingPrefixRegex.Match(front).Length + 1;
@@ -150,7 +161,6 @@ namespace Microsoft.Recognizers.Text.Sequence
                         // Handle "tel:123456".
                         if (BasePhoneNumbers.ColonMarkers.Contains(ch))
                         {
-                            var front = text.Substring(0, (int)(er.Start - 1));
                             if (this.config.ColonPrefixCheckRegex.IsMatch(front))
                             {
                                 continue;

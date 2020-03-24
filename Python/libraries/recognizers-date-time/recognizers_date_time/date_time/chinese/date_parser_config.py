@@ -10,6 +10,10 @@ from ..base_date import DateParserConfiguration
 
 class ChineseDateParserConfiguration(DateParserConfiguration):
     @property
+    def check_both_before_after(self) -> bool:
+        pass
+
+    @property
     def ordinal_extractor(self) -> any:
         return None
 
@@ -47,7 +51,7 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
 
     @property
     def unit_map(self) -> any:
-        return None
+        return ChineseDateTime.ParserConfigurationUnitMap
 
     @property
     def cardinal_map(self) -> any:
@@ -188,6 +192,9 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
             ChineseDateTime.DateNextRegex)
         self._last_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.DateLastRegex)
+        self._unit_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DateUnitRegex)
+        self._unit_map = ChineseDateTime.ParserConfigurationUnitMap
         self._week_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.WeekDayOfMonthRegex)
         self._week_day_regex = RegExpUtility.get_safe_reg_exp(

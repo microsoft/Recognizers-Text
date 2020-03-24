@@ -573,13 +573,12 @@
   {
     "Input": "iki bin yılı Eylül'ün onunda",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "iki bin yılı Eylül'ün onunda",
+        "Text": "iki bin yılı Eylül'ün onu",
         "Type": "date",
         "Start": 0,
-        "Length": 28
+        "Length": 25
       }
     ]
   },
@@ -622,7 +621,6 @@
   {
     "Input": "Yarından itibaren üç hafta sonra uygun musun?",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "Yarından itibaren üç hafta sonra",
@@ -674,6 +672,69 @@
         "Type": "date",
         "Start": 16,
         "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Bugün döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bugün",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Bugünkü derse gelmedi",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bugünkü",
+        "Type": "date",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Dün döneceğim",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dün",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Dünkü derse gelmedi",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dünkü",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
       }
     ]
   }

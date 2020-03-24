@@ -79,7 +79,26 @@ export interface IPhoneNumberExtractorConfiguration {
     NonWordBoundariesRegex: string;
     EndWordBoundariesRegex: string;
     ColonPrefixCheckRegex: string;
+    FalsePositivePrefixRegex: string;
     ForbiddenPrefixMarkers: string[];
+}
+
+export class BasePhoneNumberExtractorConfiguration implements IPhoneNumberExtractorConfiguration {
+    readonly WordBoundariesRegex: string;
+    readonly NonWordBoundariesRegex: string;
+    readonly EndWordBoundariesRegex: string;
+    readonly ColonPrefixCheckRegex: string;
+    readonly ForbiddenPrefixMarkers: string[];
+    readonly FalsePositivePrefixRegex: string;
+
+    constructor() {
+        this.WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex;
+        this.NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex;
+        this.EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex;
+        this.ForbiddenPrefixMarkers = BasePhoneNumbers.ForbiddenPrefixMarkers;
+        this.ColonPrefixCheckRegex = BasePhoneNumbers.ColonPrefixCheckRegex;
+        this.FalsePositivePrefixRegex = null;
+    }
 }
 
 export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
@@ -119,7 +138,7 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
                     Digits++ ; 
                 }
             }
-            if ((Digits < 7 && er.data !== "ITPhoneNumber")) {
+            if ((Digits < 7 && er.data !== "ITPhoneNumber") || er.text.match(BasePhoneNumbers.SSNFilterRegex)) {
                 continue;
             }
             if (er.start + er.length < source.length) {
@@ -129,14 +148,18 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
                 }
             }
             let ch = source[er.start - 1];
+            let front = source.substring(0, er.start - 1);
+            if (this.config.FalsePositivePrefixRegex && front.match(this.config.FalsePositivePrefixRegex)) {
+                continue;
+            }
+
             if (er.start !== 0) {
-                if(BasePhoneNumbers.BoundaryMarkers.indexOf(ch) !== -1) {
+                if (BasePhoneNumbers.BoundaryMarkers.indexOf(ch) !== -1) {
                     if (BasePhoneNumbers.SpecialBoundaryMarkers.indexOf(ch) !== -1 &&
                         formatIndicatorRegex.test(er.text) &&
                         er.start >= 2) {
                         let chGap = source[er.start - 2];
                         if (chGap.match(digitRegex)) {
-                            let front = source.substring(0, er.start - 1);
                             let match = front.match(BasePhoneNumbers.InternationDialingPrefixRegex);
                             if (match) {
                                 let moveOffset = match[0].length + 1;
@@ -159,9 +182,8 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
                 else if (this.config.ForbiddenPrefixMarkers.indexOf(ch) !== -1) {
                     // Handle "tel:123456".
                     if (BasePhoneNumbers.ColonMarkers.indexOf(ch) !== -1) {
-                        let front = source.substring(0, er.start - 1);
                         // If the char before ':' is not letter, ignore it.
-                        if(!front.match(this.config.ColonPrefixCheckRegex)) {
+                        if (!front.match(this.config.ColonPrefixCheckRegex)) {
                             continue;
                         }
                     }
@@ -191,14 +213,19 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
     }
 }
 
+export interface IIpExtractorConfiguration {
+    Ipv4Regex: RegExp;
+    Ipv6Regex: RegExp;
+}
+
 export class BaseIpExtractor extends BaseSequenceExtractor {
     regexes: Map<RegExp, string>;
 
-    constructor() {
+    constructor(config: IIpExtractorConfiguration) {
         super();
         this.regexes = new Map<RegExp, string>()
-            .set(RegExpUtility.getSafeRegExp(BaseIp.Ipv4Regex), Constants.IP_REGEX_IPV4)
-            .set(RegExpUtility.getSafeRegExp(BaseIp.Ipv6Regex), Constants.IP_REGEX_IPV6);
+            .set(config.Ipv4Regex, Constants.IP_REGEX_IPV4)
+            .set(config.Ipv6Regex, Constants.IP_REGEX_IPV6);
     }
 
     extract(source: string): ExtractResult[] {

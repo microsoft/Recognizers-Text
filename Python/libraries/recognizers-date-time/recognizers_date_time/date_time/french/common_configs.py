@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Pattern
 
 from recognizers_number import BaseNumberExtractor, FrenchCardinalExtractor, FrenchIntegerExtractor, FrenchOrdinalExtractor, BaseNumberParser, FrenchNumberParserConfiguration
 
@@ -13,6 +13,7 @@ from ..base_dateperiod import BaseDatePeriodExtractor, BaseDatePeriodParser
 from ..base_timeperiod import BaseTimePeriodExtractor, BaseTimePeriodParser
 from ..base_datetime import BaseDateTimeExtractor, BaseDateTimeParser
 from ..base_datetimeperiod import BaseDateTimePeriodExtractor, BaseDateTimePeriodParser
+from ..base_timezone import BaseTimeZoneParser
 from .base_configs import FrenchDateTimeUtilityConfiguration
 from .duration_extractor_config import FrenchDurationExtractorConfiguration
 from .date_extractor_config import FrenchDateExtractorConfiguration
@@ -32,6 +33,14 @@ from .parsers import FrenchTimeParser
 
 
 class FrenchCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
+    @property
+    def time_zone_parser(self) -> DateTimeParser:
+        self._time_zone_parser
+
+    @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
     @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
         return self._cardinal_extractor
@@ -142,7 +151,7 @@ class FrenchCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
 
     def __init__(self):
         super().__init__()
-
+        self._time_zone_parser = BaseTimeZoneParser()
         self._utility_configuration = FrenchDateTimeUtilityConfiguration()
         self._unit_map = FrenchDateTime.UnitMap
         self._unit_value_map = FrenchDateTime.UnitValueMap
@@ -152,9 +161,12 @@ class FrenchCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
         self._month_of_year = FrenchDateTime.MonthOfYear
         self._numbers = FrenchDateTime.Numbers
         self._double_numbers = FrenchDateTime.DoubleNumbers
+        self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
+
         self._cardinal_extractor = FrenchCardinalExtractor()
         self._integer_extractor = FrenchIntegerExtractor()
         self._ordinal_extractor = FrenchOrdinalExtractor()
+
         self._day_of_month = {
             **BaseDateTime.DayOfMonthDictionary, **FrenchDateTime.DayOfMonth}
         self._number_parser = BaseNumberParser(

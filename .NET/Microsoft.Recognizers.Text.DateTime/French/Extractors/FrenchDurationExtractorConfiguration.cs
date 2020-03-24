@@ -47,6 +47,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex DurationConnectorRegex =
             new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexFlags);
 
+        public static readonly Regex SpecialNumberUnitRegex = null;
+
         public static readonly Regex MoreThanRegex =
             new Regex(DateTimeDefinitions.MoreThanRegex, RegexFlags);
 
@@ -68,6 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
+
+        bool IDurationExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         Regex IDurationExtractorConfiguration.FollowedUnit => DurationFollowedUnit;
 
@@ -94,6 +98,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDurationExtractorConfiguration.DurationUnitRegex => DurationUnitRegex;
 
         Regex IDurationExtractorConfiguration.DurationConnectorRegex => DurationConnectorRegex;
+
+        Regex IDurationExtractorConfiguration.SpecialNumberUnitRegex => SpecialNumberUnitRegex;
 
         Regex IDurationExtractorConfiguration.MoreThanRegex => MoreThanRegex;
 

@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public TurkishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
-            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeDate = DateTimeDefinitions.TokenListBeforeDate;
 
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
@@ -41,6 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = TurkishTimePeriodExtractorConfiguration.PureNumFromTo;
+            HyphenDateRegex = TurkishDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = TurkishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = TurkishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = TurkishDateTimeExtractorConfiguration.TimeOfDayRegex;
@@ -93,6 +94,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         public Regex PureNumberFromToRegex { get; }
 
+        public Regex HyphenDateRegex { get; }
+
         public Regex PureNumberBetweenAndRegex { get; }
 
         public Regex SpecificTimeOfDayRegex { get; }
@@ -126,6 +129,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public Regex BeforeRegex { get; }
 
         public Regex AfterRegex { get; }
+
+        bool IDateTimePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
@@ -177,11 +182,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             var trimmedText = text.Trim();
 
             var swift = 0;
-            if (trimmedText.StartsWith("next"))
+            if (FutureRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("last"))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
