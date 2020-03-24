@@ -62,10 +62,10 @@ The table below summarizes the currently supported entities. Support for English
 
 | Entity Type       | SV      | BG      | TR    | HI     | AR    |         |        |        |        |         |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
-| Number (cardinal)    | ✓    | :x:     | ✓    | ✓      | :x:   |         |        |        |        |         |
-| Ordinal              | ✓    | :x:     | ✓    | ✓      | :x:   |         |        |        |        |         |
-| Percentage           | ✓    | :x:     | ✓    | ✓      | :x:   |         |        |        |        |         |
-| Number Range         | :x:  | :x:     | ✓     | :x:    | :x:   |         |        |        |        |         |
+| Number (cardinal)    | ✓    | :x:     | ✓    | ✓      | SP    |         |        |        |        |         |
+| Ordinal              | ✓    | :x:     | ✓    | ✓      | SP    |         |        |        |        |         |
+| Percentage           | ✓    | :x:     | ✓    | ✓      | SP    |         |        |        |        |         |
+| Number Range         | :x:  | :x:     | ✓     | :x:    | SP    |         |        |        |        |         |
 | Unit - Age           | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         |
 | Unit - Currency      | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         |
 | Unit - Dimensions    | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         | 
