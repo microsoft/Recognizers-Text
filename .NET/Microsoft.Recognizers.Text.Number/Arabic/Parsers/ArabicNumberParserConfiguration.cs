@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Arabic;
@@ -53,5 +55,22 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
         }
 
         public string NonDecimalSeparatorText { get; private set; }
+
+        public override (bool isRelevant, double value) GetLangSpecificIntValue(List<string> matchStrs)
+        {
+            var result = NotApplicable;
+
+            // @TODO "و" should be moved to Arabic YAML file.
+
+            // Workaround to solve "و" which means "and" before rounded number in Arabic.
+            // ألف و مائة = one thousand and one hundred
+            // But in Arabic there is no integer before hundred, because it's 100 by default.
+            if (matchStrs.Count == 1 && matchStrs.First() == "و")
+            {
+                result = (true, 1);
+            }
+
+            return result;
+        }
     }
 }

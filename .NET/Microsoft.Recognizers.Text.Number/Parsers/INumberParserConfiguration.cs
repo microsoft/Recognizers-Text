@@ -70,10 +70,21 @@ namespace Microsoft.Recognizers.Text.Number
         /// <param name="numberStr">composite number.</param>
         /// <returns>value of the string.</returns>
         long ResolveCompositeNumber(string numberStr);
+
+        /// <summary>
+        /// Used when requiring special processing for number value cases.
+        /// </summary>
+        /// <param name="matchStrs">matches.</param>
+        /// <returns>value of the match.</returns>
+        (bool isRelevant, double value) GetLangSpecificIntValue(List<string> matchStrs);
+
     }
 
     public class BaseNumberParserConfiguration : INumberParserConfiguration
     {
+
+        protected static readonly (bool, double) NotApplicable = (false, double.MinValue);
+
         public ImmutableDictionary<string, long> CardinalNumberMap { get; set; }
 
         public ImmutableDictionary<string, long> OrdinalNumberMap { get; set; }
@@ -154,6 +165,11 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             return 0;
+        }
+
+        public virtual (bool isRelevant, double value) GetLangSpecificIntValue(List<string> matchStrs)
+        {
+            return NotApplicable;
         }
 
         public virtual IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
