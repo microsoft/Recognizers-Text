@@ -13,29 +13,34 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
-        private NumberExtractor(NumberMode mode, NumberOptions options)
+        private readonly string keyPrefix;
+
+        private NumberExtractor(BaseNumberOptionsConfiguration config)
+            : base(config.Options)
         {
+
+            keyPrefix = string.Intern(ExtractType + "_" + config.Options + "_" + config.Mode + "_" + config.Culture);
+
             NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexFlags);
 
             AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
 
             RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
 
-            Options = options;
-
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
             // Add Cardinal
             CardinalExtractor cardExtract = null;
-            switch (mode)
+            switch (config.Mode)
             {
                 case NumberMode.PureNumber:
-                    cardExtract = CardinalExtractor.GetInstance(NumbersDefinitions.PlaceHolderPureNumber);
+                    var purNumConfig = new BaseNumberOptionsConfiguration(config.Culture, config.Options, config.Mode,
+                                                                          NumbersDefinitions.PlaceHolderPureNumber);
+                    cardExtract = CardinalExtractor.GetInstance(purNumConfig);
                     break;
                 case NumberMode.Currency:
-                    builder.Add(
-                        BaseNumberExtractor.CurrencyRegex,
-                        RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
+                    builder.Add(BaseNumberExtractor.CurrencyRegex,
+                                RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
                     break;
                 case NumberMode.Unit:
                     break;
@@ -45,13 +50,13 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
 
             if (cardExtract == null)
             {
-                cardExtract = CardinalExtractor.GetInstance();
+                cardExtract = CardinalExtractor.GetInstance(config);
             }
 
             builder.AddRange(cardExtract.Regexes);
 
             // Add Fraction
-            var fracExtract = FractionExtractor.GetInstance(mode, Options);
+            var fracExtract = FractionExtractor.GetInstance(config);
             builder.AddRange(fracExtract.Regexes);
 
             Regexes = builder.ToImmutable();
@@ -59,7 +64,7 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
             var ambiguityBuilder = ImmutableDictionary.CreateBuilder<Regex, Regex>();
 
             // Do not filter the ambiguous number cases like 'that one' in NumberWithUnit, otherwise they can't be resolved.
-            if (mode != NumberMode.Unit)
+            if (config.Mode != NumberMode.Unit)
             {
                 foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
                 {
@@ -74,8 +79,6 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
 
         protected sealed override ImmutableDictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
-        protected sealed override NumberOptions Options { get; }
-
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
 
         protected sealed override Regex NegativeNumberTermsRegex { get; }
@@ -84,16 +87,17 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
 
         protected sealed override Regex RelativeReferenceRegex { get; }
 
-        public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
+        public static NumberExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
-            var cacheKey = (mode, options);
-            if (!Instances.ContainsKey(cacheKey))
+            var extractorKey = (config.Mode, config.Options);
+
+            if (!Instances.ContainsKey(extractorKey))
             {
-                var instance = new NumberExtractor(mode, options);
-                Instances.TryAdd(cacheKey, instance);
+                var instance = new NumberExtractor(config);
+                Instances.TryAdd(extractorKey, instance);
             }
 
-            return Instances[cacheKey];
+            return Instances[extractorKey];
         }
     }
 }

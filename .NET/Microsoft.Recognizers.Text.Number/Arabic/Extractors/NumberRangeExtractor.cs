@@ -12,11 +12,12 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
 
         public NumberRangeExtractor(INumberOptionsConfiguration config)
             : base(
-                  NumberExtractor.GetInstance(),
-                  OrdinalExtractor.GetInstance(),
-                  new BaseNumberParser(new ArabicNumberParserConfiguration(config)),
-                  config)
+                   NumberExtractor.GetInstance(new BaseNumberOptionsConfiguration(config.Culture, config.Options)),
+                   OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(config.Culture, config.Options)),
+                   new BaseNumberParser(new ArabicNumberParserConfiguration(config)),
+                   config)
         {
+
             var regexes = new Dictionary<Regex, string>()
             {
                 {

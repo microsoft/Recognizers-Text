@@ -9,14 +9,15 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
 {
     public class FractionExtractor : BaseNumberExtractor
     {
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture | RegexOptions.RightToLeft;
 
-        private static readonly ConcurrentDictionary<(NumberMode, NumberOptions, string), FractionExtractor> Instances =
-            new ConcurrentDictionary<(NumberMode, NumberOptions, string), FractionExtractor>();
+        private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), FractionExtractor> Instances =
+            new ConcurrentDictionary<(NumberMode, NumberOptions), FractionExtractor>();
 
-        private FractionExtractor(NumberMode mode, NumberOptions options)
+        private FractionExtractor(BaseNumberOptionsConfiguration config)
+            : base(config.Options)
         {
-            Options = options;
 
             var regexes = new Dictionary<Regex, TypeTag>
             {
@@ -39,7 +40,7 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
             };
 
             // Not add FractionPrepositionRegex when the mode is Unit to avoid wrong recognize cases like "$1000 over 3"
-            if (mode != NumberMode.Unit)
+            if (config.Mode != NumberMode.Unit)
             {
                 if ((Options & NumberOptions.PercentageMode) != 0)
                 {
@@ -60,16 +61,15 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
 
         internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
-        protected sealed override NumberOptions Options { get; }
-
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION; // "Fraction";
 
-        public static FractionExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None, string placeholder = "")
+        public static FractionExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
-            var cacheKey = (mode, options, placeholder);
+            var cacheKey = (config.Mode, config.Options);
+
             if (!Instances.ContainsKey(cacheKey))
             {
-                var instance = new FractionExtractor(mode, options);
+                var instance = new FractionExtractor(config);
                 Instances.TryAdd(cacheKey, instance);
             }
 

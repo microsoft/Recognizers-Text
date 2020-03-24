@@ -19,8 +19,10 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
                 CultureInfo = new CultureInfo(config.Culture);
             }
 
-            NumberExtractor = Arabic.NumberExtractor.GetInstance();
-            OrdinalExtractor = Arabic.OrdinalExtractor.GetInstance();
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, config.Options);
+
+            NumberExtractor = Arabic.NumberExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Arabic.OrdinalExtractor.GetInstance(numConfig);
             NumberParser = new BaseNumberParser(new ArabicNumberParserConfiguration(config));
 
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);

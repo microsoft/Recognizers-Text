@@ -15,9 +15,14 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
         private static readonly ConcurrentDictionary<string, OrdinalExtractor> Instances =
             new ConcurrentDictionary<string, OrdinalExtractor>();
 
-        private OrdinalExtractor(NumberOptions options)
-            : base(options)
+        private readonly string keyPrefix;
+
+        private OrdinalExtractor(BaseNumberOptionsConfiguration config)
+            : base(config.Options)
         {
+
+            keyPrefix = string.Intern(ExtractType + "_" + config.Options.ToString() + "_" + config.Culture);
+
             AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
 
             RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
@@ -49,16 +54,17 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
 
         protected sealed override Regex RelativeReferenceRegex { get; }
 
-        public static OrdinalExtractor GetInstance(NumberOptions options = NumberOptions.None)
+        public static OrdinalExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
-            var cacheKey = options.ToString();
-            if (!Instances.ContainsKey(cacheKey))
+            var extractorKey = config.Options.ToString();
+
+            if (!Instances.ContainsKey(extractorKey))
             {
-                var instance = new OrdinalExtractor(options);
-                Instances.TryAdd(cacheKey, instance);
+                var instance = new OrdinalExtractor(config);
+                Instances.TryAdd(extractorKey, instance);
             }
 
-            return Instances[cacheKey];
+            return Instances[extractorKey];
         }
     }
 }

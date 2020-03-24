@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Globalization;
-using System.Linq;
+﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Number
@@ -9,7 +6,7 @@ namespace Microsoft.Recognizers.Text.Number
     public interface IIndianNumberParserConfiguration : INumberParserConfiguration
     {
         // Map used for decimal values that are Hindi specific such as डेढ़, सवा and ढाई etc which
-        // loosely transalte to "one and a half" "one and a quarter" "two and a half".
+        // loosely translates as "one and a half" "one and a quarter" "two and a half".
         ImmutableDictionary<string, double> DecimalUnitsMap { get; }
 
         ImmutableDictionary<char, long> ZeroToNineMap { get; }
