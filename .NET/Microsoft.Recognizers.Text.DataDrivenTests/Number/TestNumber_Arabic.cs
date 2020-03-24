@@ -8,6 +8,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
     {
         public static TestResources TestResources { get; protected set; }
 
+        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void NumberModel(TestModel testSpec)
@@ -35,5 +36,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             TestNumber(testSpec);
         }
+        */
     }
 }
