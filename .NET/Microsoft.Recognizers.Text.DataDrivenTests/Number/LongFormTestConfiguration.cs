@@ -78,5 +78,11 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             throw new NotImplementedException();
         }
+
+        public (bool isRelevant, double value) GetLangSpecificIntValue(List<string> matchStrs)
+        {
+            return (false, double.MinValue);
+        }
+
     }
 }

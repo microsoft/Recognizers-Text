@@ -177,5 +177,12 @@
             <param name="numberStr">composite number.</param>
             <returns>value of the string.</returns>
         </member>
+        <member name="M:Microsoft.Recognizers.Text.Number.INumberParserConfiguration.GetLangSpecificIntValue(System.Collections.Generic.List{System.String})">
+            <summary>
+            Used when requiring special processing for number value cases.
+            </summary>
+            <param name="matchStrs">matches.</param>
+            <returns>value of the match.</returns>
+        </member>
     </members>
 </doc>

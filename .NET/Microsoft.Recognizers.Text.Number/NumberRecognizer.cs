@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Recognizers.Text.Number.Arabic;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Number.Dutch;
 using Microsoft.Recognizers.Text.Number.English;
@@ -80,6 +81,35 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected override void InitializeConfiguration()
         {
+            /*
+            RegisterModel<NumberModel>(
+                Culture.Arabic,
+                (options) => new NumberModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ArabicNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Arabic, options))),
+                    Arabic.NumberExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Arabic, options, NumberMode.PureNumber))));
+
+            RegisterModel<OrdinalModel>(
+                Culture.Arabic,
+                options => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new ArabicNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Arabic, options))),
+                    Arabic.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Arabic, options))));
+
+            RegisterModel<PercentModel>(
+                Culture.Arabic,
+                options => new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ArabicNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Arabic, options))),
+                    new Arabic.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.Arabic, options))));
+
+            RegisterModel<NumberRangeModel>(
+                Culture.Arabic,
+                options => new NumberRangeModel(
+                    new BaseNumberRangeParser(new ArabicNumberRangeParserConfiguration(
+                                                  new BaseNumberOptionsConfiguration(Culture.Arabic, options))),
+                    new Arabic.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Arabic, options))));
+            */
 
             RegisterModel<NumberModel>(
                 Culture.English,

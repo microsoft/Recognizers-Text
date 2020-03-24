@@ -39,6 +39,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
     </Compile>
+    <Compile Update="Arabic\NumbersDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+    </Compile>
+
     <Compile Update="BaseCurrency.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -374,6 +380,10 @@
   <ItemGroup>
     <None Update="Arabic\ChoiceDefinitions.tt">
     </None>
+    <None Update="Arabic\NumbersDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
+    </None>
     <None Update="BaseCurrency.tt">
     </None>
     <None Update="BaseDateTime.tt">
@@ -451,6 +461,8 @@
     <None Update="German\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Hindi\ChoiceDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Hindi\DateTimeDefinitions.tt">
     </None>

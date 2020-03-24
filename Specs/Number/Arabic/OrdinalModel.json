@@ -1,0 +1,528 @@
+[
+  {
+    "Input": "أرني ما قبل الأخير",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "قبل الأخير",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        },
+        "Start": 8,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "أرني تلك التي سبقت الأخيرة",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "سبقت الأخيرة",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        },
+        "Start": 14,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "تحذف الجملة الأخيرة.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "الأخيرة",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        },
+        "Start": 12,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "أرني السابقة",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "السابقة",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        },
+        "Start": 5,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "أرني التالي",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "التالي",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        },
+        "Start": 5,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "أريد الكتابين الأخيرين",
+    "NotSupported": "javascript, python, java, dotnet",
+    "Results": [
+      {
+        "Text": "الأخيرين",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        },
+        "Start": 14,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "أريد آخر كتاب",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "آخر",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        },
+        "Start": 5,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "أريد 3 كتب القادمة.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "القادمة",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        },
+        "Start": 11,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "أعطني البند التالي.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "التالي",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        },
+        "Start": 12,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "أريد الكعك الأخير",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "الأخير",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        },
+        "Start": 11,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "ننتقل إلى الصفحة السابقة.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "السابقة",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        },
+        "Start": 17,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "ثلاثة تريليون",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ثلاثة تريليون",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "3000000000000",
+          "relativeTo": "start",
+          "value": "3000000000000"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "مائة تريليون",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "مائة تريليون",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "100000000000000",
+          "relativeTo": "start",
+          "value": "100000000000000"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "الحادية عشرة",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "الحادية عشرة",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "العشرون",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "العشرون",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "20",
+          "relativeTo": "start",
+          "value": "20"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "الخامسة و عشرون",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "الخامسة و عشرون",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "25",
+          "relativeTo": "start",
+          "value": "25"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "الاثنان و عشرون",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "الاثنان و عشرون",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "22",
+          "relativeTo": "start",
+          "value": "22"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "المائة و خمسة و عشرون",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "المائة و خمسة و عشرون",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "125",
+          "relativeTo": "start",
+          "value": "125"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "تريليون",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "تريليون",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1000000000000",
+          "relativeTo": "start",
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "واحد و عشرون تريليون و ثلاثمائة و اثنان و عشرون",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "واحد و عشرون تريليون و ثلاثمائة و اثنان و عشرون",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21000000000322",
+          "relativeTo": "start",
+          "value": "21000000000322"
+        },
+        "Start": 0,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "المائتان",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "المائتان",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "200",
+          "relativeTo": "start",
+          "value": "200"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "احجز مقعد ًا من الدرجة الأولى إلى سياتل",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "الأولى",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        },
+        "Start": 23,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "أحب أول كتابين",
+    "Results": [
+      {
+        "Text": "أول",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        },
+        "Start": 4,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "أنا أحب الأولى",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "الأولى",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        },
+        "Start": 8,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "تكلّم بالكلمة الأولى.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "الأولى",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        },
+        "Start": 14,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "أريد الكتب القادمة",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "القادمة",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        },
+        "Start": 11,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "لقد أنهت المركز الثاني",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "الثاني",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "2",
+          "relativeTo": "start",
+          "value": "2"
+        },
+        "Start": 16,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "قبل الأخير هو الصحيح",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "قبل الأخير",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "عنيت قبل الأخير",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "قبل الأخير",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        },
+        "Start": 5,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "عنيت الحالي",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "الحالي",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "current",
+          "value": "current+0"
+        },
+        "Start": 5,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "انظر إلى الصفحة الحالية",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "الحالية",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "current",
+          "value": "current+0"
+        },
+        "Start": 16,
+        "End": 22
+      }
+    ]
+  }
+]
