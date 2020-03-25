@@ -1690,5 +1690,20 @@
         }
       }
     ]
+  },
+  {
+    "Input": "neuf mille neuf cent quatre-vingt-dix neuf",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 41
+      }
+    ]
   }
 ]
