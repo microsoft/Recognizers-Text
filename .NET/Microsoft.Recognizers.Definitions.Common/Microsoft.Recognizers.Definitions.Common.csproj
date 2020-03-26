@@ -145,10 +145,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
     </Compile>
-    <Compile Update="Dutch\NumberDefinitions.cs">
+    <Compile Update="Dutch\NumbersDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>NumberDefinitions.tt</DependentUpon>
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
     </Compile>
     <Compile Update="Dutch\NumbersWithUnitDefinitions.cs">
       <DesignTime>True</DesignTime>
