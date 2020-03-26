@@ -1,6 +1,6 @@
 from typing import List, Dict, Pattern, Optional
 from collections import namedtuple
-from decimal import Decimal, getcontext
+from decimal import Decimal
 import copy
 import regex
 
@@ -12,8 +12,6 @@ from recognizers_number.resources.japanese_numeric import JapaneseNumeric
 from recognizers_number.number.cjk_parsers import CJKNumberParserConfiguration
 from recognizers_number.number.parsers import BaseNumberParser, NumberParserConfiguration
 from recognizers_number.culture import CultureInfo
-
-getcontext().prec = 15
 
 
 class JapaneseNumberParserConfiguration(CJKNumberParserConfiguration):

@@ -231,7 +231,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         {
             return new Tuple<string, string>(
                 TimexValue.DateValue(new TimexProperty { Year = year, Month = month, DayOfMonth = 1 }),
-                TimexValue.DateValue(new TimexProperty { Year = year, Month = month + 1, DayOfMonth = 1 }));
+                TimexValue.DateValue(new TimexProperty { Year = month == 12 ? year + 1 : year, Month = month == 12 ? 1 : month + 1, DayOfMonth = 1 }));
         }
 
         private static Tuple<string, string> YearWeekDateRange(int year, int weekOfYear, bool? isWeekend)
