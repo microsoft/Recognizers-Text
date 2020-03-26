@@ -1774,5 +1774,19 @@
         "End": 5
       }
     ]
+  },
+  {
+    "Input": "un vingt et unieme",
+    "Results": [
+      {
+        "Text": "un vingt et unieme",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,0476190476190476"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
   }
 ]
