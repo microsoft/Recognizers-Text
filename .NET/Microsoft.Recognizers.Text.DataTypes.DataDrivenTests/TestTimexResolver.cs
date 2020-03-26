@@ -540,5 +540,25 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.AreEqual("2020-01-13", resolution.Values[0].End);
             Assert.IsNull(resolution.Values[0].Value);
         }
+
+        [TestMethod]
+        public void DataTypes_Resolver_MonthRange_December()
+        {
+            var today = new System.DateTime(2020, 3, 25);
+            var resolution = TimexResolver.Resolve(new[] { "XXXX-12" }, today);
+            Assert.AreEqual(2, resolution.Values.Count);
+
+            Assert.AreEqual("XXXX-12", resolution.Values[0].Timex);
+            Assert.AreEqual("daterange", resolution.Values[0].Type);
+            Assert.AreEqual("2019-12-01", resolution.Values[0].Start);
+            Assert.AreEqual("2020-01-01", resolution.Values[0].End);
+            Assert.IsNull(resolution.Values[0].Value);
+
+            Assert.AreEqual("XXXX-12", resolution.Values[1].Timex);
+            Assert.AreEqual("daterange", resolution.Values[1].Type);
+            Assert.AreEqual("2020-12-01", resolution.Values[1].Start);
+            Assert.AreEqual("2021-01-01", resolution.Values[1].End);
+            Assert.IsNull(resolution.Values[1].Value);
+        }
     }
 }
