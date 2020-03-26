@@ -53,7 +53,7 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\PhoneNumbersDefinitions.cs" Link="Chinese\PhoneNumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\ChoiceDefinitions.cs" Link="Dutch\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\DateTimeDefinitions.cs" Link="Dutch\DateTimeDefinitions.cs" />
-    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\NumberDefinitions.cs" Link="Dutch\NumberDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\NumbersDefinitions.cs" Link="Dutch\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\NumbersWithUnitDefinitions.cs" Link="Dutch\NumbersWithUnitDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\TimeZoneDefinitions.cs" Link="Dutch\TimeZoneDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\ChoiceDefinitions.cs" Link="English\ChoiceDefinitions.cs" />
