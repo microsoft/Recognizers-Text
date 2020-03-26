@@ -7,8 +7,7 @@ from recognizers_text.extractor import ExtractResult
 from recognizers_text.parser import Parser, ParseResult
 from recognizers_number.culture import CultureInfo
 from recognizers_number.number.constants import Constants
-
-getcontext().prec = 15
+from recognizers_number.number.utilities import precision
 
 
 class NumberParserConfiguration(ABC):
@@ -350,6 +349,7 @@ class BaseNumberParser(Parser):
         result.value = int_part_real + Decimal(point_part_real)
         return result
 
+    @precision(prec=15)
     def _power_number_parse(self, ext_result: ExtractResult) -> ParseResult:
         result = ParseResult(ext_result)
 
@@ -534,6 +534,7 @@ class BaseNumberParser(Parser):
 
         return ch == self.config.non_decimal_separator_char and not(distance <= decimal_length and culture_regex.match(culture.code))
 
+    @precision(prec=15)
     def _get_digital_value(self, digits_str: str, power: int) -> Decimal:
         tmp: Decimal = Decimal(0)
         scale: Decimal = Decimal(10)

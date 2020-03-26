@@ -13,8 +13,6 @@ from recognizers_number.number.cjk_parsers import CJKNumberParser
 from recognizers_number.number.parsers import BaseNumberParser, NumberParserConfiguration
 from recognizers_number.culture import CultureInfo
 
-getcontext().prec = 15
-
 
 class ChineseNumberParserConfiguration(NumberParserConfiguration):
     @property
