@@ -4758,5 +4758,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "陽光九九是食物品牌",
+    "NotSupported": "python, javascript, java",
+    "Results": []
+  },
+  {
+    "Input": "美味十足",
+    "NotSupported": "python, javascript, java",
+    "Results": []
+  },
+  {
+    "Input": "一塊蛋糕",
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "一",
+        "Start": 0,
+        "End": 0,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
   }
 ]
