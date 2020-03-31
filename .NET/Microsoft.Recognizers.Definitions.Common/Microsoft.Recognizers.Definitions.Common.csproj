@@ -44,7 +44,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
     </Compile>
-
     <Compile Update="BaseCurrency.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -100,6 +99,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>BaseURL.tt</DependentUpon>
     </Compile>
+    <Compile Update="Bulgarian\ChoiceDefinitions.cs">
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Chinese\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -125,13 +129,13 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="Chinese\URLDefinitions.cs">
-      <DependentUpon>URLDefinitions.tt</DependentUpon>
+    <Compile Update="Chinese\IpDefinitions.cs">
+      <DependentUpon>IpDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="Chinese\IpDefinitions.cs">
-      <DependentUpon>IpDefinitions.tt</DependentUpon>
+    <Compile Update="Chinese\URLDefinitions.cs">
+      <DependentUpon>URLDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
@@ -250,15 +254,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
     </Compile>
-    <Compile Update="Italian\DateTimeDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
-    </Compile>
     <Compile Update="Italian\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Italian\DateTimeDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
     </Compile>
     <Compile Update="Italian\NumbersDefinitions.cs">
       <DesignTime>True</DesignTime>
@@ -350,11 +354,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="Bulgarian\ChoiceDefinitions.cs">
-      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Update="Turkish\ChoiceDefinitions.cs">
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -381,8 +380,6 @@
     <None Update="Arabic\ChoiceDefinitions.tt">
     </None>
     <None Update="Arabic\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="BaseCurrency.tt">
     </None>
@@ -426,7 +423,7 @@
     </None>
     <None Update="Dutch\DateTimeDefinitions.tt">
     </None>
-    <None Update="Dutch\NumberDefinitions.tt">
+    <None Update="Dutch\NumbersDefinitions.tt">
     </None>
     <None Update="Dutch\NumbersWithUnitDefinitions.tt">
     </None>
@@ -461,8 +458,6 @@
     <None Update="German\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Hindi\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Hindi\DateTimeDefinitions.tt">
     </None>
