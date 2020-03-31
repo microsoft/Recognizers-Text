@@ -15,17 +15,17 @@ function SpecInfo()
     {   
         $parentName = $file.FullName | Split-Path -parent | Split-Path -leaf
         $typeFolder = $file.FullName | Split-Path -parent | Split-Path -parent | Split-Path -leaf
-		
-		try 
-		{
+        
+        try 
+        {
             $contents = Get-Content $file.FullName -encoding utf8 | ConvertFrom-Json
             CheckSpec -spec $contents -type $typeFolder -parent $parentName -name $file.Name
-		}
-		catch
-		{
-		    exit 2
-		}
-		
+        }
+        catch
+        {
+            exit 2
+        }
+        
     }
 
     Write-Host("Total invalid input test cases:`t" + $global:totalEmpty)
