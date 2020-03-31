@@ -1976,5 +1976,62 @@
         }
       }
     ]
+  },
+  {
+    "Input": "All deadlines are 11.59 pm UTC -12h (\"anywhere on Earth / AoE\")",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "11.59 pm utc -12h",
+        "Start": 18,
+        "End": 34,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T23:59",
+              "type": "time",
+              "timezone": "UTC-12:00",
+              "timezoneText": "utc -12h",
+              "utcOffsetMins": "-720",
+              "value": "23:59:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "anywhere on earth",
+        "Start": 39,
+        "End": 55,
+        "TypeName": "datetimeV2.timezone",
+        "Resolution": {
+          "values": [
+            {
+              "type": "timezone",
+              "value": "UTC-12:00",
+              "utcOffsetMins": "-720"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "aoe",
+        "Start": 59,
+        "End": 61,
+        "TypeName": "datetimeV2.timezone",
+        "Resolution": {
+          "values": [
+            {
+              "type": "timezone",
+              "value": "UTC-12:00",
+              "utcOffsetMins": "-720"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

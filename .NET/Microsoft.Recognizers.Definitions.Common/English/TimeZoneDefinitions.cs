@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Definitions.English
 
     public static class TimeZoneDefinitions
     {
-      public const string DirectUtcRegex = @"\b(utc|gmt)(\s*[+\-\u00B1]?\s*[\d]{1,2}(\s*:\s*[\d]{1,2})?)?\b";
+      public const string DirectUtcRegex = @"\b(utc|gmt)(\s*[+\-\u00B1]?\s*[\d]{1,2}h?(\s*:\s*[\d]{1,2})?)?\b";
       public static readonly IList<string> AbbreviationsList = new List<string>
         {
             @"ABST",
@@ -37,6 +37,8 @@ namespace Microsoft.Recognizers.Definitions.English
             @"AKST",
             @"AMST",
             @"AMT",
+            @"AOE",
+            @"AoE",
             @"ARBST",
             @"ARST",
             @"ART",
@@ -180,6 +182,7 @@ namespace Microsoft.Recognizers.Definitions.English
             @"Acre Time",
             @"Afghanistan Standard Time",
             @"Alaskan Standard Time",
+            @"Anywhere on Earth",
             @"Arab Standard Time",
             @"Arabian Standard Time",
             @"Arabic Standard Time",
@@ -368,6 +371,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"akst", -540 },
             { @"amst", -10000 },
             { @"amt", -10000 },
+            { @"aoe", -720 },
             { @"arbst", 180 },
             { @"arst", 180 },
             { @"art", -180 },
@@ -527,6 +531,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"pacific", -480 },
             { @"afghanistan standard", 270 },
             { @"alaskan standard", -540 },
+            { @"anywhere on earth", -720 },
             { @"arab standard", 180 },
             { @"arabian standard", 180 },
             { @"arabic standard", 180 },
@@ -1399,11 +1404,14 @@ namespace Microsoft.Recognizers.Definitions.English
             @"U.S. Virgin Islands",
             @"US Virgin Islands",
             @"Uganda",
+            @"UK",
             @"Ukraine",
             @"United Arab Emirates",
             @"United Kingdom",
             @"United States",
             @"Uruguay",
+            @"US",
+            @"USA",
             @"UT",
             @"Utah",
             @"Uzbekistan",
