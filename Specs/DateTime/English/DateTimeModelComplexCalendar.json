@@ -12616,7 +12616,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "11.59 pm utc -12h",
@@ -12638,8 +12638,8 @@
       },
       {
         "Text": "anywhere on earth",
-        "Start": 39,
-        "End": 55,
+        "Start": 38,
+        "End": 54,
         "TypeName": "datetimeV2.timezone",
         "Resolution": {
           "values": [
@@ -12653,8 +12653,8 @@
       },
       {
         "Text": "aoe",
-        "Start": 59,
-        "End": 61,
+        "Start": 58,
+        "End": 60,
         "TypeName": "datetimeV2.timezone",
         "Resolution": {
           "values": [
