@@ -78,7 +78,7 @@ UnderThousandOrdinalRegex: !nestedRegex
   def: ((({HundredOrdinalRegex}(\s|-)?)?{UnderHundredOrdinalRegex})|(({AllIntRegex}(\W)?)?{SimpleRoundOrdinalRegex})|{HundredOrdinalRegex})
   references: [ HundredOrdinalRegex, UnderHundredOrdinalRegex, AllIntRegex, SimpleRoundOrdinalRegex ]
 OverThousandOrdinalRegex: !nestedRegex
-  def: (({AllIntRegex})(AQUi[eè]me))
+  def: (({AllIntRegex})(-i[eè]me))
   references: [ AllIntRegex ]
 ComplexOrdinalRegex: !nestedRegex
   def: (({OverThousandOrdinalRegex}(\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex}|{UnderHundredOrdinalRegex})

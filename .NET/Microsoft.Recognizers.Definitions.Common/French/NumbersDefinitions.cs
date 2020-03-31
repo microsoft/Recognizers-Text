@@ -50,7 +50,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string HundredOrdinalRegex = $@"({AllIntRegex}(\s+(centi[eè]me)))";
       public static readonly string UnderHundredOrdinalRegex = $@"(((({AllIntRegex}|{TensNumberIntegerRegex})(\W)?)?({OneToNineOrdinalRegex}|\s+et\s+uni[eè]me))|{SpecialUnderHundredOrdinalRegex}|{TensOrdinalRegex})";
       public static readonly string UnderThousandOrdinalRegex = $@"((({HundredOrdinalRegex}(\s|-)?)?{UnderHundredOrdinalRegex})|(({AllIntRegex}(\W)?)?{SimpleRoundOrdinalRegex})|{HundredOrdinalRegex})";
-      public static readonly string OverThousandOrdinalRegex = $@"(({AllIntRegex})(-[eè]me))";
+      public static readonly string OverThousandOrdinalRegex = $@"(({AllIntRegex})(-i[eè]me))";
       public static readonly string ComplexOrdinalRegex = $@"(({OverThousandOrdinalRegex}(\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex}|{UnderHundredOrdinalRegex})";
       public static readonly string SuffixOrdinalRegex = $@"(({AllIntRegex})({SimpleRoundOrdinalRegex}))";
       public static readonly string ComplexRoundOrdinalRegex = $@"((({SuffixOrdinalRegex}(\s)?)?{ComplexOrdinalRegex})|{SuffixOrdinalRegex})";
