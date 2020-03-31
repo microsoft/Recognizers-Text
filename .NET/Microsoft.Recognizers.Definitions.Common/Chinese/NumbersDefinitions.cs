@@ -255,5 +255,9 @@ namespace Microsoft.Recognizers.Definitions.Chinese
         {
             { @"", @"" }
         };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"十", @"十足" }
+        };
     }
 }
