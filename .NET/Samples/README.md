@@ -24,7 +24,7 @@ using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.Sequence;
 
 // Use English for the Recognizers culture
-var culture = Culture.English;
+   var culture = Culture.English;
 
 // Number recognizer will find any number from the input
 // E.g "I have two apples" will return "2".
