@@ -20,7 +20,7 @@ NegativeNumberSignRegex: !nestedRegex
 AnIntRegex: !simpleRegex
   def: (واحد|أحد)(?=\s)
 TenToNineteenIntegerRegex: !simpleRegex
-  def: (ال)?(?:سبعة عشر|ثلاثة عشر|أربعة عشر|ثمانية عشر|تسعة عشر|خمسة عشر|ستة عشر|حادية عشر|ثانية عشر|عشرة)
+  def: (ثلاث|ثلاثة|سبعة|ثمان|ثمانية|أربع|أربعة|خمسة|تسعة|اثنان|اثنان|اثنين|اثتنين|اثنتان|ست|ستة|أحد|أربعة|اثني)\s(عشر|عشرة)
 TensNumberIntegerRegex: !simpleRegex
   def: (ال)?(?:سبعون|سبعين|عشرون|عشرين|ثلاثون|ثلاثين|ثمانون|ثمانين|تسعون|تسعين|أربعون|أربعين|خمسون|خمسين|ستون|ستين)
 SeparaIntRegex: !nestedRegex
