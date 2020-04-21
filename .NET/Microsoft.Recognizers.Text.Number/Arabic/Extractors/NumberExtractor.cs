@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
 
             AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
 
-          // RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
+            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
 
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
@@ -56,8 +56,8 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
             builder.AddRange(cardExtract.Regexes);
 
             // Add Fraction
-            var fracExtract = FractionExtractor.GetInstance(config);
-            builder.AddRange(fracExtract.Regexes);
+            // var fracExtract = FractionExtractor.GetInstance(config);
+            // builder.AddRange(fracExtract.Regexes);
 
             Regexes = builder.ToImmutable();
 
@@ -99,6 +99,5 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
 
             return Instances[extractorKey];
         }
-
     }
 }
