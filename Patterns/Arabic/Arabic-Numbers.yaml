@@ -7,40 +7,34 @@ CompoundNumberLanguage: !bool false
 MultiDecimalSeparatorCulture: !bool true
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
-  def: (ال)?(?:مائة|آلاف|مائتين|مائتان|ثلاثمائة|أربعمائة|خمسمائة|ستمائة|سبعمائة|ثمانمائة|تسعمائة|ألف|ألفين|مليون|مليار|تريليون)
+  def: (ال)?(?:مائتان|مائة|مئة|مائتين|ثلاثمائه|أربعة مئة|خمسمائة|ستمائة|سبعمائة|ثمان مائة|تسعمائة|تريليون|ترليون|تريليونين|تريليونات|مليار|ملياري|مليارات|مليون|مليونان|ملايين|ملايين|ألف|ألفين|الآف|آلاف|الف|مئتين)
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (ال)?(?:ثلاثة|سبعة|ثلاث|ثامن|ثمانية|أربعة|أربع|خمسة|صفر|تسعة|واحد|واحدة|اثنين|اثنتين|اثنان|اثنتين|ست|ستة)
-TwoToNineIntegerRegex: !simpleRegex
-  def: (ال)?(?:ثلاث|ثلاثة|سبعة|ثمان|ثمانية|أربع|أربعة|خمسة|تسعة|اثنان|اثنتان|اثنين|اثتنين|اثنتان|ست|ستة)
+  def:  (وخمسة|وواحد|واحد|وأربعة|واثنان|اثنان|وثلاثة|ثلاثة|واربعة|أربعة|خمسة|وستة|ستة|وسبعة|سبعة|وثمانية|ثمانية|وتسعة|تسع|أحد|اثني|ثلاث|صفر|سبع|ست|اربع|السادس|الثامنة|تسعة|اثنين:?)
 NegativeNumberTermsRegex: !simpleRegex
   def: (?<negTerm>(سالب|ناقص)\s+)
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*
   references: [NegativeNumberTermsRegex]
-AnIntRegex: !simpleRegex
-  def: (واحد|أحد)(?=\s)
 TenToNineteenIntegerRegex: !simpleRegex
-  def: (ال)?(?:سبعة عشر|ثلاثة عشر|أربعة عشر|ثمانية عشر|تسعة عشر|خمسة عشر|ستة عشر|حادية عشر|ثانية عشر|عشرة)
+  def: ((ثلاث|ثلاثة|سبعة|ثمان|ثمانية|أربع|أربعة|خمسة|تسعة|اثنان|اثنان|اثنين|اثتنين|اثنتان|ست|ستة|أحد|أربعة|اثني)\s(عشر|عشرة):?)
 TensNumberIntegerRegex: !simpleRegex
-  def: (ال)?(?:سبعون|سبعين|عشرون|عشرين|ثلاثون|ثلاثين|ثمانون|ثمانين|تسعون|تسعين|أربعون|أربعين|خمسون|خمسين|ستون|ستين)
+  def: (عشرة|عشرون|ثلاثون|أربعون|خمسون|ستون|سبعون|ثمانون|تسعين|عشر|وعشرين|وثلاثين|وأربعين|وخمسين|وستين|وسبعين|وثمانين|وتسعين|وعشرون|وثلاثون|وأربعون|وخمسون|وستون|وسبعون|وثمانون|وتسعون|عشرين|ثلاثين|أربعين|خمسين|ستين|سبعين|ثمانين|تسعون:?)
 SeparaIntRegex: !nestedRegex
-  def: (?:(({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(\s+(و\s+)?|\s*-\s*){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))
+  def: (?:(({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(\s+(و\s+)?|\s*-\s*){TensNumberIntegerRegex})|{TensNumberIntegerRegex} |{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*))
   references:
     [
       TenToNineteenIntegerRegex,
       TensNumberIntegerRegex,
       ZeroToNineIntegerRegex,
-      RoundNumberIntegerRegex,
-      AnIntRegex,
+      RoundNumberIntegerRegex
     ]
 AllIntRegex: !nestedRegex
-  def: (?:({SeparaIntRegex})((\s+و\s+)({SeparaIntRegex})(\s+{RoundNumberIntegerRegex})?)*|((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(و\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})?(\s+{RoundNumberIntegerRegex})+)\s+(و\s+)?)*{SeparaIntRegex})
+  def: (?:({SeparaIntRegex})((\s+و\s+)({SeparaIntRegex})(\s+{RoundNumberIntegerRegex})?)*|((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(و\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})?(\s+{RoundNumberIntegerRegex})+)\s+(و\s+)?)*{SeparaIntRegex})
   references:
     [
       TenToNineteenIntegerRegex,
       TensNumberIntegerRegex,
       ZeroToNineIntegerRegex,
-      AnIntRegex,
       RoundNumberIntegerRegex,
       SeparaIntRegex,
     ]
