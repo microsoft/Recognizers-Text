@@ -29,14 +29,15 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
                     new Regex(NumbersDefinitions.FractionNotationRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
-                {
-                    new Regex(NumbersDefinitions.FractionNounRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC)
-                },
-                {
-                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC)
-                },
+
+                // {
+                  // new Regex(NumbersDefinitions.FractionNounRegex, RegexFlags),
+                   // RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC)
+               // },
+               // {
+                  // new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexFlags),
+                   // RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC)
+               // },
             };
 
             // Not add FractionPrepositionRegex when the mode is Unit to avoid wrong recognize cases like "$1000 over 3"

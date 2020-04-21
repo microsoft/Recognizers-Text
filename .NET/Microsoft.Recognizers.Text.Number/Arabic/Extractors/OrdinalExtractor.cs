@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
 
             AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
 
-            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
+          // RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
 
             var regexes = new Dictionary<Regex, TypeTag>
             {
@@ -33,10 +33,11 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
                     new Regex(NumbersDefinitions.OrdinalNumericRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
-                {
-                    new Regex(NumbersDefinitions.OrdinalEnglishRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.ARABIC)
-                },
+
+               // {
+                  // new Regex(NumbersDefinitions.OrdinalEnglishRegex, RegexFlags),
+                  // RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.ARABIC)
+               // },
                 {
                     new Regex(NumbersDefinitions.OrdinalRoundNumberRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.ARABIC)
