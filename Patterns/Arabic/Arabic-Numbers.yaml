@@ -7,7 +7,7 @@ CompoundNumberLanguage: !bool false
 MultiDecimalSeparatorCulture: !bool true
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
-  def: (ال)?(?:مائتان|مائة|مائة|مائتين|ثلاثمائه|أربعة مئة|خمسمائة|ستمائة|سبعمائة|ثمان مائة|تسعمائة|تريليون|ترليون|تريليونين|تريليونات|مليار|ملياري|مليارات|مليون|مليونان|ملايين|ملايين|ألف|ألفين|الآف)
+  def: (ال)?(?:مائتان|مائة|مائة|مائتين|ثلاثمائه|أربعة مئة|خمسمائة|ستمائة|سبعمائة|ثمان مائة|تسعمائة|تريليون|ترليون|تريليونين|تريليونات|مليار|ملياري|مليارات|مليون|مليونان|ملايين|ملايين|ألف|مليونين|ألفين|مئة|الآف)
 ZeroToNineIntegerRegex: !simpleRegex
   def:  (وخمسة|وواحد|واحد|وأربعة|واثنان|اثنان|وثلاثة|ثلاثة|واربعة|أربعة|خمسة|وستة|ستة|وسبعة|سبعة|وثمانية|ثمانية|وتسعة|تسع|أحد|اثني|ثلاث|صفر|سبع|ست|اربع|السادس|الثامنة|تسعة|اثنين|واحدُ|وواحدُ:?)
 TwoToNineIntegerRegex: !simpleRegex
@@ -47,21 +47,21 @@ PlaceHolderPureNumber: !simpleRegex
 PlaceHolderDefault: !simpleRegex
   def: \D|\b
 NumbersWithPlaceHolder: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[\u0621-\u064A]))(?={placeholder})
+  def: (((?<!{?[\u0660-\u0669]}+\s*)-\s*)|(?<=\b))?[\u0660-\u0669]+(?!([\,]?[\u0660-\u0669]))(?={placeholder})
   params: [placeholder]
 NumbersWithSuffix: !nestedRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
+  def: ((((?<!{?[\u0660-\u0669]}+\s*)-\s*)|(?<=\b))?[\u0660-\u0669]+(?!([\,]?[\u0660-\u0669])))+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
   references: [BaseNumbers.NumberMultiplierRegex]
 RoundNumberIntegerRegexWithLocks: !nestedRegex
-  def: (?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)
+  def: ((((?<!{?[\u0660-\u0669]}+\s*)-\s*)|(?<=\b))?[\u0660-\u0669]+(?!([\,]?[\u0660-\u0669])))+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [RoundNumberIntegerRegex]
 NumbersWithDozenSuffix: !simpleRegex
-  def: (?<=\b)(\d+\s+)(دستة|دستات|دست)(?=\b)
+  def: (((((?<!{?[\u0660-\u0669]}+\s*)-\s*)|(?<=\b))?[\u0660-\u0669]+(?!([\,]?[\u0660-\u0669])))+\s+(دستة|دستات|دست|دزينة|دزينات))|(دزينتين)(?=\b)
 AllIntRegexWithLocks: !nestedRegex
   def: ((?<=\b){AllIntRegex}(?=\b))
   references: [AllIntRegex]
 AllIntRegexWithDozenSuffixLocks: !nestedRegex
-  def: (?<=\b)(((نصف\s+)?(دستة))|(({AllIntRegex}\s+)(دستة|دستات|دست)))(?=\b)
+  def: (?<=\b)(((نصف\s+)?(دزينتين|دزينات|دستة|دزينة))|(({AllIntRegex}\s)(و?)(دزينة|دستة|دستات|دست|دزينات|دزينتين)))(?=\b)
   references: [AllIntRegex]
 #Ordinal Regex
 RoundNumberOrdinalRegex: !nestedRegex
@@ -123,20 +123,20 @@ AllFloatRegex: !nestedRegex
   def: ({AllIntRegex}\s+(فاصلة|نقطة)\s+({AllPointRegex}|{AllOrdinalRegex}))
   references: [AllIntRegex, AllPointRegex]
 DoubleWithMultiplierRegex: !nestedRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\,])))\d+[\,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
   references: [BaseNumbers.NumberMultiplierRegex]
 DoubleExponentialNotationRegex: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e([+-]*[1-9]\d*)(?=\b)
 DoubleCaretExponentialNotationRegex: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[1-9]\d*)(?=\b)
 DoubleDecimalPointRegex: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})
+  def: (((?<!{?[\u0660-\u0669]}+\s*)-\s*)|((?<=\b)(?<!{?[\u0660-\u0669]}+[\,])))?[\u0660-\u0669]+[\,]?[\u0660-\u0669]+(?!([\,]?[\u0660-\u0669]+))(?={placeholder})
   params: [placeholder]
 DoubleWithoutIntegralRegex: !paramsRegex
-  def: (?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})
+  def: (?<=\s|^)(?<!(\d+))[\,]\d+(?!([\,]\d+))(?={placeholder})
   params: [placeholder]
 DoubleWithRoundNumber: !nestedRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}(?=\b)
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\,])))\d+[\,]\d+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [RoundNumberIntegerRegex]
 DoubleAllFloatRegex: !nestedRegex
   def: ((?<=\b){AllFloatRegex}(?=\b))
@@ -252,9 +252,9 @@ AmbiguousFractionConnectorsRegex: !simpleRegex
   def: (\bمن|في|بين|من|بين\b)
 # "in" is ambiguous for cases like "more than 30000 in 2009", other connector "out of", "over" is not ambiguous in English
 #Parser
-DecimalSeparatorChar: !char "."
+DecimalSeparatorChar: !char ","
 FractionMarkerToken: أكثر
-NonDecimalSeparatorChar: !char ","
+NonDecimalSeparatorChar: !char "،"
 HalfADozenText: ستة
 WordSeparatorToken: و
 WrittenDecimalSeparatorTexts: [نقطة | فاصلة]
