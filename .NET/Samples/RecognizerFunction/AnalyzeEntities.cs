@@ -64,11 +64,11 @@ namespace RecognizerFunction
             return MergeResults(
                 // Number recognizer will find any number from the input
                 // E.g "I have two apples" will return "2".
-                NumberRecognizer.RecognizeNumber(query, culture)
+                NumberRecognizer.RecognizeNumber(query, culture),
 
                 // Ordinal number recognizer will find any ordinal number
                 // E.g "eleventh" will return "11".
-                // NumberRecognizer.RecognizeOrdinal(query, culture),
+                NumberRecognizer.RecognizeOrdinal(query, culture)
 
             // Percentage recognizer will find any number presented as percentage
             // E.g "one hundred percents" will return "100%"
