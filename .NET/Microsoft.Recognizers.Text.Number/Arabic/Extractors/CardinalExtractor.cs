@@ -24,8 +24,8 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
             builder.AddRange(intExtract.Regexes);
 
             // Add Double Regexes
-            // var douExtract = DoubleExtractor.GetInstance(config);
-            // builder.AddRange(douExtract.Regexes);
+            var douExtract = DoubleExtractor.GetInstance(config);
+            builder.AddRange(douExtract.Regexes);
 
             Regexes = builder.ToImmutable();
         }
