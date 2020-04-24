@@ -1108,7 +1108,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     else if (!string.IsNullOrEmpty(match.Groups["FourDigitYear"].Value))
                     {
                         var date = referenceDate.AddYears(swift);
-                        int.TryParse(match.Groups["FourDigitYear"].Value, out year);
+                        year = int.Parse(match.Groups["FourDigitYear"].Value);
 
                         var beginDate = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
                         var endDate = inclusiveEndPeriod ?
