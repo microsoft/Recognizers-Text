@@ -1,4 +1,4 @@
-ECHO ==============================.NET BUILD START==============================
+ ECHO ==============================.NET BUILD START==============================
 
 @ECHO off
 SETLOCAL EnableDelayedExpansion

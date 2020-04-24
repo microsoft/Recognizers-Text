@@ -11553,7 +11553,7 @@
             }
           ]
         }
-      }      
+      }
     ]
   },
   {
@@ -12363,7 +12363,7 @@
   },
   {
     "Input": "I'm at Eastern Daylight Time",
-    "NotSupported":"javascript,python",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "eastern daylight time",
@@ -12384,7 +12384,7 @@
   },
   {
     "Input": "I'm at Central Daylight Time",
-    "NotSupported":"javascript,python",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "central daylight time",
@@ -12405,7 +12405,7 @@
   },
   {
     "Input": "It's about 1pm ACDT",
-    "NotSupported":"javascript,python",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "1pm acdt",
@@ -12505,7 +12505,7 @@
   },
   {
     "Input": "We will have lunch together with Jim",
-    "Comment":"Disable this for now because of new features in .NET",
+    "Comment": "Disable this for now because of new features in .NET",
     "NotSupported": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"
@@ -12662,6 +12662,84 @@
               "type": "timezone",
               "value": "UTC-12:00",
               "utcOffsetMins": "-720"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This company was established at the end of 2000",
+    "Context": {
+      "ReferenceDateTime": "2020-04-24T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "end of 2000",
+        "Start": 36,
+        "End": 46,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2000",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2000-09-01",
+              "end": "2001-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This company was established at the middle of 2000",
+    "Context": {
+      "ReferenceDateTime": "2020-04-24T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "middle of 2000",
+        "Start": 36,
+        "End": 49,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2000",
+              "Mod": "mid",
+              "type": "daterange",
+              "start": "2000-05-01",
+              "end": "2000-08-31"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This company was established at the beginning of 2000",
+    "Context": {
+      "ReferenceDateTime": "2020-04-24T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "beginning of 2000",
+        "Start": 36,
+        "End": 52,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2000",
+              "Mod": "start",
+              "type": "daterange",
+              "start": "2000-01-01",
+              "end": "2000-05-01"
             }
           ]
         }

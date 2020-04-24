@@ -15031,7 +15031,7 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupported":"java, javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "lunchtime",
@@ -15056,7 +15056,7 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupported":"java, javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "at lunchtime",
@@ -15272,6 +15272,84 @@
               "type": "daterange",
               "start": "2020-06-26",
               "end": "2020-06-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This company was established at the end of 2000",
+    "Context": {
+      "ReferenceDateTime": "2020-04-24T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "end of 2000",
+        "Start": 36,
+        "End": 46,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2000",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2000-09-01",
+              "end": "2001-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This company was established at the middle of 2000",
+    "Context": {
+      "ReferenceDateTime": "2020-04-24T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "middle of 2000",
+        "Start": 36,
+        "End": 49,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2000",
+              "Mod": "mid",
+              "type": "daterange",
+              "start": "2000-05-01",
+              "end": "2000-08-31"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This company was established at the beginning of 2000",
+    "Context": {
+      "ReferenceDateTime": "2020-04-24T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "beginning of 2000",
+        "Start": 36,
+        "End": 52,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2000",
+              "Mod": "start",
+              "type": "daterange",
+              "start": "2000-01-01",
+              "end": "2000-05-01"
             }
           ]
         }
