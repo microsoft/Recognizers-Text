@@ -100,9 +100,9 @@ OrdinalEnglishRegex: !nestedRegex
   references: [AllOrdinalRegex]
 #Fraction Regex
 FractionNotationWithSpacesRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
+  def: (((((?<=\W|^)-\s*)|(?<=\b)(?<!{?[\u0660-\u0669]}+)))?[\u0660-\u0669]+(?!({?[\u0660-\u0669]})))+([\s]?)+((((?<=\b)(?<!{?[\u0660-\u0669]}+)))?[\u0660-\u0669]+(?!({?[\u0660-\u0669]})))+[/]((((?<=\b)(?<!{?[\u0660-\u0669]}+)))?[\u0660-\u0669]+(?!({?[\u0660-\u0669]})))+(?=(\b[^/]|$))
 FractionNotationRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
+  def: (((((?<=\W|^)-\s*)|(?<=\b)(?<!{?[\u0660-\u0669]}+)))?[\u0660-\u0669]+(?!({?[\u0660-\u0669]})))+[/]((((?<=\b)(?<!{?[\u0660-\u0669]}+)))?[\u0660-\u0669]+(?!({?[\u0660-\u0669]})))+(?=(\b[^/]|$))
 FractionNounRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(و\s+)?)?({AllIntRegex}(\s+|\s*-\s*))?((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|وربع|ارباع|نصف|ربع|أنصاف|ربعين|أرباع)(?=\b)
   references: [AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
