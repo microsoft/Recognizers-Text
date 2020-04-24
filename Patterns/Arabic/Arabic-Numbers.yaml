@@ -104,7 +104,7 @@ FractionNotationWithSpacesRegex: !simpleRegex
 FractionNotationRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(و\s+)?)?({AllIntRegex}(\s+|\s*-\s*))?((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|أنصاف|أرباع)(?=\b)
+  def: (?<=\b)({AllIntRegex}\s+(و\s+)?)?({AllIntRegex}(\s+|\s*-\s*))?((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|وربع|ارباع|نصف|ربع|أنصاف|ربعين|أرباع)(?=\b)
   references: [AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\b)((({AllIntRegex}\s+(و\s+)?)?(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|نصف|ربع))|(نصف))(?=\b)
