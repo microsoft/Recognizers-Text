@@ -56,8 +56,8 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
             builder.AddRange(cardExtract.Regexes);
 
             // Add Fraction
-            // var fracExtract = FractionExtractor.GetInstance(config);
-            // builder.AddRange(fracExtract.Regexes);
+            var fracExtract = FractionExtractor.GetInstance(config);
+            builder.AddRange(fracExtract.Regexes);
 
             Regexes = builder.ToImmutable();
 
