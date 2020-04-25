@@ -65,14 +65,15 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
   references: [AllIntRegex]
 #Ordinal Regex
 RoundNumberOrdinalRegex: !simpleRegex
-  def: (?:((من|على)\s+))
+  def: (?:((من|على)\s+)({RoundNumberIntegerRegex}))
+  references: [RoundNumberIntegerRegex]
   
 NumberOrdinalRegex: !simpleRegex
   def: (المئتيان|مائتي|الحاديه عشر|سابعًا|خامسا|ثانيا|أول|الأول|الثاني|الثالث|الرابع|الخامس|السادس|السابع|الثامن|التاسع|الأولى|الثانية|الثالثة|الرابعة|الخامسة|السادسة|السابعة|الثامنة|التاسعة|السادس عشر|السابعة عشرة|السادسة عشرة|الثالثة عشرة|الحادية عشرة|السابع عشر|سادس عشر|الخامس عشر|الحادية عَشْرةَ|الثانيَ عَشَر|الثانيةَ عَشْرةَ|الثالثَ عَشَرَ|الثالثةَ عَشْرةَ|الرابعَ عَشَرَ|الرابعةَ عَشْرةَ|الخامِسَ عَشَرَ|الخامسةَ عَشْرةَ|السادِسَ عَشَرَ|السادسةَ عَشْرةَ|السابعَ عَشَرَ|السابعةَ عَشْرةَ|الثامنَ عَشَرَ|الثامنةَ عَشْرةَ|التاسعَ عَشَرَ|التاسعةَ عَشْرةَ|الحادِيَ عَشَرَ|الحادي عشر|الثاني عشر|الثالث عشر|الرابع عشر|الثامن عشر|التاسع عشر|الثانية عشرة|الرابعة عشرة|الخامسة عشرة|الثامنة عشرة|التاسعة عشرة|العاشر|العاشرة|عشرون|العشرين|الثلاثين|الثلاثون|الرابعة والأربعون|الرابع والأربعون|خمسون|الخمسون|الستين|ستون|والستين|سبعون|السبعون|والسبعون|ثامن عشر|الثامن عشر|الرابع والأربعين|الثامنة والثمانون|الثامن|والثمانين|تسعون| التاسع والتسعون|التاسعة والتسعون:?)
 RelativeOrdinalRegex: !simpleRegex
   def: (?<relativeOrdinal>((قبل|بعد|سبق|سبقت)(\s+))?((ال)?(تالي|سابق|قادم|آخر|أخير|حالي)(ة)?))
 BasicOrdinalRegex: !nestedRegex
-  def: ({NumberOrdinalRegex}((\s+و\s+)({AllIntRegex}))?|{RelativeOrdinalRegex})
+  def: ({NumberOrdinalRegex}(\s|و\s+)?|{RelativeOrdinalRegex}(\s|و\s+)?)
   references: [NumberOrdinalRegex, RelativeOrdinalRegex]
 SuffixBasicOrdinalRegex: !nestedRegex
   def: (?:(((({ZeroToNineIntegerRegex}(\s+و\s+){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})*)\s+(و\s+)?)*({TensNumberIntegerRegex}\s+)?{BasicOrdinalRegex}|{BasicOrdinalRegex})
@@ -100,20 +101,20 @@ OrdinalEnglishRegex: !nestedRegex
   references: [AllOrdinalRegex]
 #Fraction Regex
 FractionNotationWithSpacesRegex: !simpleRegex
-  def: (((((?<=\W|^)-\s*)|(?<=\b)(?<!{?[\u0660-\u0669]}+)))?[\u0660-\u0669]+(?!({?[\u0660-\u0669]})))+([\s]?)+((((?<=\b)(?<!{?[\u0660-\u0669]}+)))?[\u0660-\u0669]+(?!({?[\u0660-\u0669]})))+[/]((((?<=\b)(?<!{?[\u0660-\u0669]}+)))?[\u0660-\u0669]+(?!({?[\u0660-\u0669]})))+(?=(\b[^/]|$))
+  def: (((?<!{?[\u0600-\u06ff]}|^)-\s*)|(?<!\b))((((?<!([\u0660-\u0669])+))[\u0660-\u0669]+)\s+(((?<!([\u0660-\u0669])+))[\u0660-\u0669]+)+[/](((?<!([\u0660-\u0669])+))[\u0660-\u0669]+))
 FractionNotationRegex: !simpleRegex
-  def: (((((?<=\W|^)-\s*)|(?<=\b)(?<!{?[\u0660-\u0669]}+)))?[\u0660-\u0669]+(?!({?[\u0660-\u0669]})))+[/]((((?<=\b)(?<!{?[\u0660-\u0669]}+)))?[\u0660-\u0669]+(?!({?[\u0660-\u0669]})))+(?=(\b[^/]|$))
+  def: (((?<!{?[\u0600-\u06ff]}|^)-\s*)|(?<![/-])(?<!\b))((((?<!([\u0660-\u0669])+))[\u0660-\u0669]+)+[/](((?<!([\u0660-\u0669])+))[\u0660-\u0669]+))
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(و\s+)?)?({AllIntRegex}(\s+|\s*-\s*))?((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|أنصاف|أرباع)(?=\b)
+  def: (?<=\b)({AllIntRegex}(\s|و\s+)?)?({AllIntRegex}(\s+|\s*-\s*))?((({AllOrdinalRegex}(\s|و\s+)?)|({RoundNumberOrdinalRegex}(\s|و\s+)?))|ارباع|أنصاف|أرباع)(?=\b)
   references: [AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)((({AllIntRegex}\s+(و\s+)?)?(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|نصف|ربع))|(نصف))(?=\b)
+  def: (?<=\b)((({AllIntRegex}(\s|و\s+)?)?(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|نصف|وربع|ربع|ونصف))|(نصف|))(?=\b)
   references: [AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionPrepositionRegex: !nestedRegex
-  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(فوق|على|في|جزء|من|جزء من)\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)
+  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\,])[\u0660-\u0669]+))\s+(فوق|على|في|جزء|من|جزء من)\s+(?<denominator>({AllIntRegex})|([\u0660-\u0669]+)(?![\,]))(?=\b)
   references: [AllIntRegex, BaseNumbers.CommonCurrencySymbol]
 FractionPrepositionWithinPercentModeRegex: !nestedRegex
-  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+على\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)
+  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\,])[\u0660-\u0669]+))\s+على\s+(?<denominator>({AllIntRegex})|([\u0660-\u0669]+)(?![\,]))(?=\b)
   references: [AllIntRegex, BaseNumbers.CommonCurrencySymbol]
 #Double Regex
 AllPointRegex: !nestedRegex
