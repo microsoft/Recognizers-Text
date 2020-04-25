@@ -104,7 +104,7 @@ FractionNotationWithSpacesRegex: !simpleRegex
 FractionNotationRegex: !simpleRegex
   def: (((?<={?[\u0600-\u06ff]}|^)-\s*)|(?<![/-])(?<=\b))((((?<!([\u0660-\u0669])+))[\u0660-\u0669]+)+[/](((?<!([\u0660-\u0669])+))[\u0660-\u0669]+))(?=(\b[^/]|$))
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}(\s|و\s+)?)?({AllIntRegex}(\s+|\s*-\s*))?((({AllOrdinalRegex}(\s|و\s+)?)|({RoundNumberOrdinalRegex}(\s|و\s+)?))|ارباع|أنصاف|أرباع)(?=\b)
+  def: (?<=\b)({AllIntRegex}(\s|و\s+)?)?({AllIntRegex}(\s+|\s*-\s*))?((({AllOrdinalRegex}(\s|و\s+)?)|({RoundNumberOrdinalRegex}(\s|و\s+)?))|أرباع|وربع|ارباع|واحد وربع|نصف|ربع|أنصاف|ربعين|أرباع|ارباع)(?=\b)
   references: [AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\b)((({AllIntRegex}(\s|و\s+)?)?(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|نصف|وربع|ربع|ونصف))|(نصف|))(?=\b)
