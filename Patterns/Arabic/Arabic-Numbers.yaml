@@ -13,7 +13,7 @@ ZeroToNineIntegerRegex: !simpleRegex
 TwoToNineIntegerRegex: !simpleRegex
   def: (ال)?(?:ثلاث|ثلاثة|سبعة|ثمان|ثمانية|أربع|أربعة|خمسة|تسعة|اثنان|اثنتان|اثنين|اثتنين|اثنتان|ست|ستة)
 NegativeNumberTermsRegex: !simpleRegex
-  def: (?<negTerm>(سالب|ناقص)\s+)
+  def: ((?<negTerm>(سالب|ناقص)\s+)|(?<negTerm>(سالب|ناقص)))
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*
   references: [NegativeNumberTermsRegex]
@@ -69,11 +69,11 @@ RoundNumberOrdinalRegex: !simpleRegex
   references: [RoundNumberIntegerRegex]
   
 NumberOrdinalRegex: !simpleRegex
-  def: (المئتيان|مائتي|الحاديه عشر|سابعًا|خامسا|ثانيا|أول|الأول|الثاني|الثالث|الرابع|الخامس|السادس|السابع|الثامن|التاسع|الأولى|الثانية|الثالثة|الرابعة|الخامسة|السادسة|السابعة|الثامنة|التاسعة|السادس عشر|السابعة عشرة|السادسة عشرة|الثالثة عشرة|الحادية عشرة|السابع عشر|سادس عشر|الخامس عشر|الحادية عَشْرةَ|الثانيَ عَشَر|الثانيةَ عَشْرةَ|الثالثَ عَشَرَ|الثالثةَ عَشْرةَ|الرابعَ عَشَرَ|الرابعةَ عَشْرةَ|الخامِسَ عَشَرَ|الخامسةَ عَشْرةَ|السادِسَ عَشَرَ|السادسةَ عَشْرةَ|السابعَ عَشَرَ|السابعةَ عَشْرةَ|الثامنَ عَشَرَ|الثامنةَ عَشْرةَ|التاسعَ عَشَرَ|التاسعةَ عَشْرةَ|الحادِيَ عَشَرَ|الحادي عشر|الثاني عشر|الثالث عشر|الرابع عشر|الثامن عشر|التاسع عشر|الثانية عشرة|الرابعة عشرة|الخامسة عشرة|الثامنة عشرة|التاسعة عشرة|العاشر|العاشرة|عشرون|العشرين|الثلاثين|الثلاثون|الرابعة والأربعون|الرابع والأربعون|خمسون|الخمسون|الستين|ستون|والستين|سبعون|السبعون|والسبعون|ثامن عشر|الثامن عشر|الرابع والأربعين|الثامنة والثمانون|الثامن|والثمانين|تسعون| التاسع والتسعون|التاسعة والتسعون:?)
+  def: (المئتيان|مائتي|الحاديه عشر|سابعًا|خامسا|ثانيا|أول|الأول|الثاني|الثالث|الرابع|الخامس|السابع|الثامن|التاسع|الأولى|الثانية|الثالثة|الرابعة|الخامسة|السادسة|السابعة|التاسعة|السادس عشر|السابعة عشرة|السادسة عشرة|الثالثة عشرة|الحادية عشرة|السابع عشر|سادس عشر|الخامس عشر|الحادية عَشْرةَ|الثانيَ عَشَر|الثانيةَ عَشْرةَ|الثالثَ عَشَرَ|الثالثةَ عَشْرةَ|الرابعَ عَشَرَ|الرابعةَ عَشْرةَ|الخامِسَ عَشَرَ|الخامسةَ عَشْرةَ|السادِسَ عَشَرَ|السادسةَ عَشْرةَ|السابعَ عَشَرَ|السابعةَ عَشْرةَ|الثامنَ عَشَرَ|الثامنةَ عَشْرةَ|التاسعَ عَشَرَ|التاسعةَ عَشْرةَ|الحادِيَ عَشَرَ|الحادي عشر|الثاني عشر|الثالث عشر|الرابع عشر|الثامن عشر|التاسع عشر|الثانية عشرة|الرابعة عشرة|الخامسة عشرة|الثامنة عشرة|التاسعة عشرة|العاشر|العاشرة|عشرون|العشرين|الثلاثين|الثلاثون|الرابعة والأربعون|الرابع والأربعون|خمسون|الخمسون|الستين|ستون|والستين|سبعون|السبعون|والسبعون|ثامن عشر|الثامن عشر|الرابع والأربعين|الثامنة والثمانون|الثامن|والثمانين|التاسع والتسعون|التاسعة والتسعون|خمس:?)
 RelativeOrdinalRegex: !simpleRegex
   def: (?<relativeOrdinal>((قبل|بعد|سبق|سبقت)(\s+))?((ال)?(تالي|سابق|قادم|آخر|أخير|حالي)(ة)?))
 BasicOrdinalRegex: !nestedRegex
-  def: ({NumberOrdinalRegex}(\s|و\s+)?|{RelativeOrdinalRegex}(\s|و\s+)?)
+  def: ({NumberOrdinalRegex}((\s+و\s+)({AllIntRegex}))?|{RelativeOrdinalRegex})
   references: [NumberOrdinalRegex, RelativeOrdinalRegex]
 SuffixBasicOrdinalRegex: !nestedRegex
   def: (?:(((({ZeroToNineIntegerRegex}(\s+و\s+){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})*)\s+(و\s+)?)*({TensNumberIntegerRegex}\s+)?{BasicOrdinalRegex}|{BasicOrdinalRegex})
@@ -89,8 +89,8 @@ SuffixRoundNumberOrdinalRegex: !nestedRegex
   def: (?:({AllIntRegex}\s+){RoundNumberOrdinalRegex})
   references: [AllIntRegex, RoundNumberOrdinalRegex]
 AllOrdinalRegex: !nestedRegex
-  def: (?:{SuffixBasicOrdinalRegex}|(({NumberOrdinalRegex})(\s+و\s+))?{AllIntRegex}|{SuffixRoundNumberOrdinalRegex})
-  references: [SuffixBasicOrdinalRegex, SuffixRoundNumberOrdinalRegex, NumberOrdinalRegex, AllIntRegex]
+  def: (?:{SuffixRoundNumberOrdinalRegex})
+  references: [SuffixRoundNumberOrdinalRegex]
 OrdinalNumericRegex: !simpleRegex
   def: (?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*\s*th)(?=\b)
 OrdinalRoundNumberRegex: !nestedRegex
