@@ -53,7 +53,7 @@ NumbersWithSuffix: !nestedRegex
   def: ((((?<![\u0660-\u0669]+\s*)-\s*)|(?<=\b))?[\u0660-\u0669])+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
   references: [BaseNumbers.NumberMultiplierRegex]
 RoundNumberIntegerRegexWithLocks: !nestedRegex
-  def: ((?<!{?[\u0660-\u0669]}))?[\u0660-\u0669]+\s+{RoundNumberIntegerRegex}(?=\b)
+  def: (?<=\b)[\u0660-\u0669]+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [RoundNumberIntegerRegex]
 NumbersWithDozenSuffix: !simpleRegex
   def: (((((?<!{?[\u0660-\u0669]}+\s*)-\s*)|(?<=\b))?[\u0660-\u0669]+(?!([\،]?[\u0660-\u0669])))+\s+(دستة|دستات|دست|دزينة|دزينات))|(دزينتين)(?=\b)
@@ -503,6 +503,7 @@ OrdinalNumberMap: !dictionary
 RoundNumberMap: !dictionary
   types: [string, long]
   entries:
+    ترليون: 1000000000000
     مائة: 100
     ألف: 1000
     مليون: 1000000
