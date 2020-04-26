@@ -13,7 +13,7 @@ ZeroToNineIntegerRegex: !simpleRegex
 TwoToNineIntegerRegex: !simpleRegex
   def: (ال)?(?:ثلاث|ثلاثة|سبعة|ثمان|ثمانية|أربع|أربعة|خمسة|تسعة|اثنان|اثنتان|اثنين|اثتنين|اثنتان|ست|ستة)
 NegativeNumberTermsRegex: !simpleRegex
-  def: ((?<negTerm>(سالب|ناقص)\s+)|(?<negTerm>(سالب|ناقص)))
+  def: (?<negTerm>(سالب|ناقص)(\s+)?)
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*
   references: [NegativeNumberTermsRegex]
