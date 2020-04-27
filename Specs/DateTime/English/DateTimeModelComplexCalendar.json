@@ -12745,5 +12745,83 @@
         }
       }
     ]
+  },
+  {
+    "Input": "We have lived here since the end of 1989",
+    "Context": {
+      "ReferenceDateTime": "2020-04-27T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "since the end of 1989",
+        "Start": 19,
+        "End": 39,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1989",
+              "Mod": "since-end",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "1989-09-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We have lived here from the end of 1989",
+    "Context": {
+      "ReferenceDateTime": "2020-04-27T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from the end of 1989",
+        "Start": 19,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1989",
+              "Mod": "since-end",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "1989-09-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We have lived here from mid 1989",
+    "Context": {
+      "ReferenceDateTime": "2020-04-27T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from mid 1989",
+        "Start": 19,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1989",
+              "Mod": "since-mid",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "1989-05-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
