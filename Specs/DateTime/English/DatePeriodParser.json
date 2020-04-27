@@ -6116,11 +6116,11 @@
           "Mod": "mid",
           "FutureResolution": {
             "startDate": "2000-05-01",
-            "endDate": "2000-08-31"
+            "endDate": "2000-09-01"
           },
           "PastResolution": {
             "startDate": "2000-05-01",
-            "endDate": "2000-08-31"
+            "endDate": "2000-09-01"
           }
         },
         "Start": 36,
