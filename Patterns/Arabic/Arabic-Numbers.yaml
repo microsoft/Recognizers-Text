@@ -366,7 +366,6 @@ CardinalNumberMap: !dictionary
     المليون: 1000000
     المليار: 1000000000
     التريليون: 1000000000000
-
 OrdinalNumberMap: !dictionary
   types: [string, long]
   entries:
