@@ -13,7 +13,7 @@ ZeroToNineIntegerRegex: !simpleRegex
 TwoToNineIntegerRegex: !simpleRegex
   def: (ال)?(?:ثلاث|ثلاثة|سبعة|ثمان|ثمانية|أربع|أربعة|خمسة|تسعة|اثنان|اثنتان|اثنين|اثتنين|اثنتان|ست|ستة)
 NegativeNumberTermsRegex: !simpleRegex
-  def: ((?<negTerm>(سالب|ناقص)\s+)|(?<negTerm>(سالب|ناقص)))
+  def: (?<negTerm>(سالب|ناقص)(\s+)?)
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*
   references: [NegativeNumberTermsRegex]
@@ -53,7 +53,7 @@ NumbersWithSuffix: !nestedRegex
   def: ((((?<![\u0660-\u0669]+\s*)-\s*)|(?<=\b))?[\u0660-\u0669])+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
   references: [BaseNumbers.NumberMultiplierRegex]
 RoundNumberIntegerRegexWithLocks: !nestedRegex
-  def: (?<=\b)((?<!{?[\u0660-\u0669]}))?[\u0660-\u0669]+\s+({RoundNumberIntegerRegex})(?=\b)
+  def: (?<=\b)[\u0660-\u0669]+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [RoundNumberIntegerRegex]
 NumbersWithDozenSuffix: !simpleRegex
   def: (((((?<!{?[\u0660-\u0669]}+\s*)-\s*)|(?<=\b))?[\u0660-\u0669]+(?!([\،]?[\u0660-\u0669])))+\s+(دستة|دستات|دست|دزينة|دزينات))|(دزينتين)(?=\b)
@@ -68,7 +68,7 @@ RoundNumberOrdinalRegex: !nestedRegex
   def: (?:((من|على)\s+)({RoundNumberIntegerRegex}))
   references: [RoundNumberIntegerRegex]  
 NumberOrdinalRegex: !simpleRegex
-  def: (اخماس|جزء من|واحد جزء من|أجزاء من|المئتيان|مائتي|الحاديه عشر|سابعًا|خامسا|ثانيا|أول|الأول|الثاني|الثالث|الرابع|الخامس|السابع|الثامن|التاسع|الأولى|الثانية|الثالثة|الرابعة|الخامسة|السادسة|السابعة|التاسعة|السادس عشر|السابعة عشرة|السادسة عشرة|الثالثة عشرة|الحادية عشرة|السابع عشر|سادس عشر|الخامس عشر|الحادية عَشْرةَ|الثانيَ عَشَر|الثانيةَ عَشْرةَ|الثالثَ عَشَرَ|الثالثةَ عَشْرةَ|الرابعَ عَشَرَ|الرابعةَ عَشْرةَ|الخامِسَ عَشَرَ|الخامسةَ عَشْرةَ|السادِسَ عَشَرَ|السادسةَ عَشْرةَ|السابعَ عَشَرَ|السابعةَ عَشْرةَ|الثامنَ عَشَرَ|الثامنةَ عَشْرةَ|التاسعَ عَشَرَ|التاسعةَ عَشْرةَ|الحادِيَ عَشَرَ|الحادي عشر|الثاني عشر|الثالث عشر|الرابع عشر|الثامن عشر|التاسع عشر|الثانية عشرة|الرابعة عشرة|الخامسة عشرة|الثامنة عشرة|التاسعة عشرة|العاشر|العاشرة|عشرون|العشرين|الثلاثين|الثلاثون|الرابعة والأربعون|الرابع والأربعون|خمسون|الخمسون|الستين|ستون|والستين|سبعون|السبعون|والسبعون|ثامن عشر|الثامن عشر|الرابع والأربعين|الثامنة والثمانون|الثامن|والثمانين|التاسع والتسعون|التاسعة والتسعون|خمس|أخماس|ثلثان|الأخماس:?)
+  def: (اخماس|ثلثان|جزء من|واحد جزء من|أجزاء من|المئتيان|مائتي|الحاديه عشر|سابعًا|خامسا|ثانيا|أول|الأول|الثاني|الثالث|الرابع|الخامس|السابع|الثامن|التاسع|الأولى|الثانية|الثالثة|الرابعة|الخامسة|السادسة|السابعة|التاسعة|السادس عشر|السابعة عشرة|السادسة عشرة|الثالثة عشرة|الحادية عشرة|السابع عشر|سادس عشر|الخامس عشر|الحادية عَشْرةَ|الثانيَ عَشَر|الثانيةَ عَشْرةَ|الثالثَ عَشَرَ|الثالثةَ عَشْرةَ|الرابعَ عَشَرَ|الرابعةَ عَشْرةَ|الخامِسَ عَشَرَ|الخامسةَ عَشْرةَ|السادِسَ عَشَرَ|السادسةَ عَشْرةَ|السابعَ عَشَرَ|السابعةَ عَشْرةَ|الثامنَ عَشَرَ|الثامنةَ عَشْرةَ|التاسعَ عَشَرَ|التاسعةَ عَشْرةَ|الحادِيَ عَشَرَ|الحادي عشر|الثاني عشر|الثالث عشر|الرابع عشر|الثامن عشر|التاسع عشر|الثانية عشرة|الرابعة عشرة|الخامسة عشرة|الثامنة عشرة|التاسعة عشرة|العاشر|العاشرة|عشرون|العشرين|الثلاثين|الثلاثون|الرابعة والأربعون|الرابع والأربعون|خمسون|الخمسون|الستين|ستون|والستين|سبعون|السبعون|والسبعون|ثامن عشر|الثامن عشر|الرابع والأربعين|الثامنة والثمانون|الثامن|والثمانين|وثلثان|ثمن|أثمان|التاسع والتسعون|التاسعة والتسعون|اثمان|خمس|أخماس|ثلثان|الأخماس:?)
 RelativeOrdinalRegex: !simpleRegex
   def: (?<relativeOrdinal>((قبل|بعد|سبق|سبقت)(\s+))?((ال)?(تالي|سابق|قادم|آخر|أخير|حالي)(ة)?))
 BasicOrdinalRegex: !nestedRegex
@@ -107,7 +107,7 @@ FractionNounRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}(\s|و\s+)?)?({AllIntRegex}(\s+|\s*-\s*))?((({AllOrdinalRegex}(\s|و\s+)?)|({RoundNumberOrdinalRegex}(\s|و\s+)?))|أرباع|وربع|ارباع|واحد وربع|نصف|ربع|أنصاف|ربعين|أرباع|ارباع)(?=\b)
   references: [AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)((({AllIntRegex}(\s|و\s+)?)?(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|نصف|وربع|ربع|ونصف))|(نصف|))(?=\b)
+  def: (?<=\b)((({AllIntRegex}(\s|(\s*-\s*)|و\s+)?)?(({AllOrdinalRegex})|({NumberOrdinalRegex})|نصف|وربع|ربع|ونصف))|(نصف|))(?=\b)
   references: [AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\,])[\u0660-\u0669]+))\s+(فوق|على|في|جزء|من|جزء من)\s+(?<denominator>({AllIntRegex})|([\u0660-\u0669]+)(?![\,]))(?=\b)
@@ -503,6 +503,7 @@ OrdinalNumberMap: !dictionary
 RoundNumberMap: !dictionary
   types: [string, long]
   entries:
+    ترليون: 1000000000000
     مائة: 100
     ألف: 1000
     مليون: 1000000
