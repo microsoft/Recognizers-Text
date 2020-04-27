@@ -1105,6 +1105,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.Success = true;
                         return ret;
                     }
+
+                    // Early/mid/late are resolved in this policy to 4 month ranges at the start/middle/end of the year.
                     else if (!string.IsNullOrEmpty(match.Groups["FourDigitYear"].Value))
                     {
                         var date = referenceDate.AddYears(swift);
@@ -1125,8 +1127,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             beginDate = DateObject.MinValue.SafeCreateFromValue(year, 5, 1);
                             endDate = inclusiveEndPeriod ?
-                                DateObject.MinValue.SafeCreateFromValue(year, 8, 30) :
-                                DateObject.MinValue.SafeCreateFromValue(year, 8, 30).AddDays(1);
+                                DateObject.MinValue.SafeCreateFromValue(year, 8, 31) :
+                                DateObject.MinValue.SafeCreateFromValue(year, 8, 31).AddDays(1);
                         }
                         else if (latePrefix)
                         {
