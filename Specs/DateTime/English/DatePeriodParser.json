@@ -6046,5 +6046,86 @@
         "Length": 9
       }
     ]
+  },
+  {
+    "Input": "This company was established at the end of 2000",
+    "Context": {
+      "ReferenceDateTime": "2020-04-23T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "end of 2000",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2000",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2000-09-01",
+            "endDate": "2001-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-09-01",
+            "endDate": "2001-01-01"
+          }
+        },
+        "Start": 36,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "This company was established at the beginning of 2000",
+    "Context": {
+      "ReferenceDateTime": "2020-04-23T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "beginning of 2000",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2000",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2000-05-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2000-05-01"
+          }
+        },
+        "Start": 36,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "This company was established at the middle of 2000",
+    "Context": {
+      "ReferenceDateTime": "2020-04-23T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "middle of 2000",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2000",
+          "Mod": "mid",
+          "FutureResolution": {
+            "startDate": "2000-05-01",
+            "endDate": "2000-09-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-05-01",
+            "endDate": "2000-09-01"
+          }
+        },
+        "Start": 36,
+        "Length": 14
+      }
+    ]
   }
 ]
