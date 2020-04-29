@@ -258,7 +258,7 @@ FractionMarkerToken: أكثر
 NonDecimalSeparatorChar: !char "،"
 HalfADozenText: ستة
 WordSeparatorToken: و
-WrittenDecimalSeparatorTexts: [نقطة |فاصلة]
+WrittenDecimalSeparatorTexts: [نقطة | فاصلة]
 WrittenGroupSeparatorTexts: [punto]
 WrittenIntegerSeparatorTexts: [و]
 WrittenFractionSeparatorTexts: [و]
