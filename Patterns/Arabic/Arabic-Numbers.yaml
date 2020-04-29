@@ -103,7 +103,7 @@ FractionNotationWithSpacesRegex: !simpleRegex
 FractionNotationRegex: !simpleRegex
   def: (((?<={?[\u0600-\u06ff]}|^)-\s*)|(?<![/-])(?<=\b))((((?<!([\u0660-\u0669])+))[\u0660-\u0669]+)+[/](((?<!([\u0660-\u0669])+))[\u0660-\u0669]+))(?=(\b[^/]|$))
 ArabicBuiltInFraction: !simpleRegex
-  def: (ثلثان|العدس|ثمن|الوزن|ربع|خمس|عشرونات|ثلاثون:?)  
+  def: (ثلثان|الوزن|ربع|خمس|عشرونات|ثلاثون:?)  
 FractionNounRegex: !nestedRegex
   def: (?<=\b){ArabicBuiltInFraction}|{AllIntRegex}\s(و\s|و){ArabicBuiltInFraction}|(({AllIntRegex}\s(و\s|و)?)?({AllIntRegex})(\s+|\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|أرباع|وربع|ارباع|واحد وربع|نصف|ربع|أنصاف|ربعين|أرباع|ارباع))(?=\b)
   references: [AllIntRegex, ArabicBuiltInFraction, AllOrdinalRegex, RoundNumberOrdinalRegex]
