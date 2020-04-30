@@ -146,7 +146,7 @@ ConnectorRegex: !simpleRegex
   def: (?<spacer>و)
 #Percentage Regex
 NumberWithSuffixPercentage: !nestedRegex
-  def: ((?<!٪)({BaseNumbers.NumberReplaceToken})(\s*)(٪(?!{BaseNumbers.NumberReplaceToken})|(بالمائة|في المئة|بالمئة)))
+  def: ((?<!(٪|%))({BaseNumbers.NumberReplaceToken})(\s*)((٪|%)(?!{BaseNumbers.NumberReplaceToken})|(بالمائة|في المئة|بالمئة)))
   references: [BaseNumbers.NumberReplaceToken]
 FractionNumberWithSuffixPercentage: !nestedRegex
   def: (({BaseNumbers.FractionNumberReplaceToken})\s+(من|في المئة))
