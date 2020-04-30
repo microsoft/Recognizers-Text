@@ -7,7 +7,7 @@ CompoundNumberLanguage: !bool false
 MultiDecimalSeparatorCulture: !bool true
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
-  def: (?:مائتان|مائة|مائة|مائتين|ثلاثمائه|أربعة مئة|خمسمائة|ستمائة|سبعمائة|ثمان مائة|تسعمائة|تريليون|ترليون|آلاف|تريليونين|تريليونات|مليار|ملياري|مليارات|مليون|مليونان|ملايين|ملايين|ألف|مليونين|ألفين|مئة|ومائتين|الفين|بألفين|مئتان|الآف|المئة)
+  def: (?:مائتان|مائة|مائة|مائتين|ثلاثمائه|أربعة مئة|خمسمائة|ستمائة|سبعمائة|ثمان مائة|تسعمائة|تريليون|ترليون|آلاف|تريليونين|تريليونات|مليار|ملياري|مليارات|مليون|مليونان|ملايين|ملايين|ألف|مليونين|ألفين|مئة|ومائتين|الفين|بألفين|مئتان|الآف)
 ZeroToNineIntegerRegex: !simpleRegex
   def: (وخمسة|بإثنان|وواحد|واحد|وأربعة|واثنان|اثنان|وثلاثة|ثلاثة|واربعة|أربعة|خمسة|وستة|ستة|وسبعة|سبعة|وثمانية|ثمانية|ثمانٍ|وتسعة|تسع|أحد|اثني|ثلاث|صفر|سبع|ست|اربع|السادس|الثامنة|تسعة|اثنين|واحدُ|وإثنين|وواحدُ|الواحد:?)
 TwoToNineIntegerRegex: !simpleRegex
@@ -178,7 +178,7 @@ LessOrEqualPrefix: !nestedRegex
   def: ((ليس\s+{MoreRegex})|(at\s+most)|(بحد أقصى))
   references: [MoreRegex]
 LessOrEqual: !nestedRegex
-  def: (({LessRegex}\s+(أو|او)?\s+{EqualRegex})|({EqualRegex}\s+(أو|او)?\s+{LessRegex})|({LessOrEqualPrefix}(\s+(أو|او)?\s+{EqualRegex}))?|(({EqualRegex}\s+(أو|او)?\s+)?{LessOrEqualPrefix})|<\s*=)
+  def: (({LessRegex}\s+(أو|او)?\s+{EqualRegex}))
   references: [LessRegex, EqualRegex, MoreRegex, LessOrEqualPrefix]
 LessOrEqualSuffix: !simpleRegex
   def: ((و|أو)\s+(أقل)((?!\s+من)|(\s+من(?!(\s*\d+)))))
