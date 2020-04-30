@@ -178,7 +178,7 @@ LessOrEqualPrefix: !nestedRegex
   def: ((ليس\s+{MoreRegex})|(at\s+most)|(بحد أقصى))
   references: [MoreRegex]
 LessOrEqual: !nestedRegex
-  def: (({LessRegex}\s+(أو)?\s+{EqualRegex})|({EqualRegex}\s+(أو)?\s+{LessRegex})|{LessOrEqualPrefix}(\s+(أو)?\s+{EqualRegex})?|({EqualRegex}\s+(أو)?\s+)?{LessOrEqualPrefix}|<\s*=)
+  def: (({LessRegex}\s+(أو|او)?\s+{EqualRegex})|({EqualRegex}\s+(أو|او)?\s+{LessRegex})|({LessOrEqualPrefix}(\s+(أو|او)?\s+{EqualRegex}))?|(({EqualRegex}\s+(أو|او)?\s+)?{LessOrEqualPrefix})|<\s*=)
   references: [LessRegex, EqualRegex, MoreRegex, LessOrEqualPrefix]
 LessOrEqualSuffix: !simpleRegex
   def: ((و|أو)\s+(أقل)((?!\s+من)|(\s+من(?!(\s*\d+)))))
