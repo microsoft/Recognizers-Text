@@ -47,16 +47,16 @@ PlaceHolderPureNumber: !simpleRegex
 PlaceHolderDefault: !simpleRegex
   def: \D|\b
 NumbersWithPlaceHolder: !paramsRegex
-  def: (((?<!{?[\u0660-\u0669]}+\s*)-\s*)|(?<=\b))?[\u0660-\u0669]+(?!([\،]?[\u0660-\u0669]+[\u0621-\u064A]))(?={placeholder})
+  def: (((?<!\d+\s*)([-]\s*)?)|(?<=\b))\d+(?!([\.،]\d+[\u0621-\u064A]))(?={placeholder})
   params: [placeholder]
 NumbersWithSuffix: !nestedRegex
-  def: ((((?<![\u0660-\u0669]+\s*)-\s*)|(?<=\b))?[\u0660-\u0669])+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
+  def: (((?<!\d+\s*)([-]\s*)?)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
   references: [BaseNumbers.NumberMultiplierRegex]
 RoundNumberIntegerRegexWithLocks: !nestedRegex
-  def: (?<=\b)[\u0660-\u0669]+(\s|و\s|\sو)+{RoundNumberIntegerRegex}(?=\b)
+  def: (?<=\b)\d+(\s|و\s|\sو)+{RoundNumberIntegerRegex}(?=\b)
   references: [RoundNumberIntegerRegex]
 NumbersWithDozenSuffix: !simpleRegex
-  def: (((((?<!{?[\u0660-\u0669]}+\s*)-\s*)|(?<=\b))?[\u0660-\u0669]+(?!([\،]?[\u0660-\u0669])))+\s+(دستة|دستات|دست|دزينة|دزينات))|(دزينتين)(?=\b)
+  def: (((?<!\d+\s*)([-]\s*)?)|(?<=\b))\d+\s+(دستة|دستات|دست|دزينة|دزينات|دزينتين)(?=\b)  
 AllIntRegexWithLocks: !nestedRegex
   def: ((?<=\b){AllIntRegex}(?=\b))
   references: [AllIntRegex]
@@ -99,9 +99,9 @@ OrdinalEnglishRegex: !nestedRegex
   references: [AllOrdinalRegex]
 #Fraction Regex
 FractionNotationWithSpacesRegex: !simpleRegex
-  def: (((?<={?[\u0600-\u06ff]}|^)-\s*)|(?<=\b))((((?<!([\u0660-\u0669])+))[\u0660-\u0669]+)\s+(((?<!([\u0660-\u0669])+))[\u0660-\u0669]+)+[/]((?<!([\u0660-\u0669])+))[\u0660-\u0669]+)(?=(\b[^/]|$))
+  def: (((?<={?[\u0600-\u06ff]}|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
 FractionNotationRegex: !simpleRegex
-  def: (((?<={?[\u0600-\u06ff]}|^)-\s*)|(?<![/-])(?<=\b))((((?<!([\u0660-\u0669])+))[\u0660-\u0669]+)+[/](((?<!([\u0660-\u0669])+))[\u0660-\u0669]+))(?=(\b[^/]|$))
+  def: (((?<={?[\u0600-\u06ff]}|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
 ArabicBuiltInFraction: !simpleRegex
   def: (ثلثان|ثمن|ربع|خمس|عشرونات|ثلاثون:?)  
 FractionNounRegex: !nestedRegex
@@ -111,10 +111,10 @@ FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\b)((({AllIntRegex}(\s|(\s*-\s*)|و\s+)?)(({AllOrdinalRegex})|({NumberOrdinalRegex})|نصف|وربع|ربع|ونصف))|(نصف|))(?=\b)
   references: [AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionPrepositionRegex: !nestedRegex
-  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])[\u0660-\u0669]+))\s+(فوق|على|في|جزء|من|جزء من)\s+(?<denominator>({AllIntRegex})|([\u0660-\u0669]+)(?![\.,]))(?=\b)
+  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(فوق|على|في|جزء|من|جزء من)\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)
   references: [AllIntRegex, BaseNumbers.CommonCurrencySymbol]
 FractionPrepositionWithinPercentModeRegex: !nestedRegex
-  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])[\u0660-\u0669]+))\s+على\s+(?<denominator>({AllIntRegex})|([\u0660-\u0669]+)(?![\.,]))(?=\b)
+  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+على\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)  
   references: [AllIntRegex, BaseNumbers.CommonCurrencySymbol]
 #Double Regex
 AllPointRegex: !nestedRegex
@@ -124,20 +124,20 @@ AllFloatRegex: !nestedRegex
   def: '{AllIntRegex}(\s+(نقطة|جزء|جزء من)){AllPointRegex}'
   references: [AllIntRegex, AllPointRegex]
 DoubleWithMultiplierRegex: !nestedRegex
-  def: (((?<![\u0660-\u0669]+\s*)-\s*)|((?<=\b)(?<![\u0660-\u0669]+[\.,])))?[\u0660-\u0669]+[\.,][\u0660-\u0669]+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)  
   references: [BaseNumbers.NumberMultiplierRegex]
 DoubleExponentialNotationRegex: !simpleRegex
-  def: (((?<![\u0660-\u0669]+\s*)-\s*)|((?<=\b)(?<![\u0660-\u0669]+[\.,])))[+-]*([\u0660-\u0669]+([\.,]?[\u0660-\u0669])?)+e([+-]*)([\u0661-\u0669]?[\u0660-\u0669]*)(?=\b)
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e([+-]*[\u0660-\u0669]\d*)(?=\b)
 DoubleCaretExponentialNotationRegex: !simpleRegex
-  def: (((?<![\u0660-\u0669]+\s*)-\s*)|((?<=\b)(?<![\u0660-\u0669]+[\.,])))[+-]*([\u0660-\u0669]+([\.,]?[\u0660-\u0669])?)+\^([+-]*)([\u0661-\u0669]?[\u0660-\u0669]*)(?=\b)
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[\u0660-\u0669]\d*)(?=\b)
 DoubleDecimalPointRegex: !paramsRegex
-  def: (((?<![\u0660-\u0669]+\s*)-\s*)|((?<=\b)(?<![\u0660-\u0669]+[\.,])))?[\u0660-\u0669]+[\.,][\u0660-\u0669]+(?!([\.,]?[\u0660-\u0669]+))(?={placeholder})
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})
   params: [placeholder]
 DoubleWithoutIntegralRegex: !paramsRegex
-  def: (?<=\s|^)(?<!([\u0660-\u0669]+))[\.,][\u0660-\u0669]+(?!([\.,][\u0660-\u0669]+))(?={placeholder})
+  def: (?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})
   params: [placeholder]
 DoubleWithRoundNumber: !nestedRegex
-  def: (((?<![\u0660-\u0669]+\s*)-\s*)|((?<=\b)(?<![\u0660-\u0669]+[\.,])))?[\u0660-\u0669]+[\.,][\u0660-\u0669]+\s+{RoundNumberIntegerRegex}(?=\b)
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [RoundNumberIntegerRegex]
 DoubleAllFloatRegex: !nestedRegex
   def: ((?<=\b){AllFloatRegex}(?=\b))
