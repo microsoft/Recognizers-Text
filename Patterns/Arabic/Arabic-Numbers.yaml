@@ -61,7 +61,7 @@ AllIntRegexWithLocks: !nestedRegex
   def: ((?<=\b){AllIntRegex}(?=\b))
   references: [AllIntRegex]
 AllIntRegexWithDozenSuffixLocks: !nestedRegex
-  def: (?<=\b)(((نصف\s+)(دزينة|دستة|دستات|دست|دزينات|دزينتين))|({AllIntRegex}(و)?\s+)(دزينة|دستة|دستات|دست|دزينات|دزينتين))(?=\b)
+  def: (?<=\b)(((نصف\s+)(دزينة|دستة|دستات|دست|دزينات|دزينتين))|({AllIntRegex}(و)?\s+)?(دزينة|دستة|دستات|دست|دزينات|دزينتين))(?=\b)
   references: [AllIntRegex]
 #Ordinal Regex
 RoundNumberOrdinalRegex: !nestedRegex
