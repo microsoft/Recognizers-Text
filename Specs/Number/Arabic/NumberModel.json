@@ -502,7 +502,7 @@
     ]
   },
   {
-    "Input": "-١٢٣٤٥٦٧٨٩١٠١٢٣١",
+    "Input": " -١٢٣٤٥٦٧٨٩١٠١٢٣١",
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
     "Results": [
