@@ -196,8 +196,8 @@ namespace Microsoft.Recognizers.Text.Number
             start = NumberRangeConstants.INVALID_NUM;
             length = NumberRangeConstants.INVALID_NUM;
 
-            var numberStr1 = match.Groups["number1"].Value.Trim();
-            var numberStr2 = match.Groups["number2"].Value.Trim();
+            var numberStr1 = match.Groups["number1"].Value;
+            var numberStr2 = match.Groups["number2"].Value;
 
             if (type.Contains(NumberRangeConstants.TWONUM))
             {

@@ -61,7 +61,7 @@ AllIntRegexWithLocks: !nestedRegex
   def: ((?<=\b){AllIntRegex}(?=\b))
   references: [AllIntRegex]
 AllIntRegexWithDozenSuffixLocks: !nestedRegex
-  def: (?<=\b)(((نصف\s+)(دزينة|دستة|دستات|دست|دزينات|دزينتين))|({AllIntRegex}(و)?\s+)(دزينة|دستة|دستات|دست|دزينات|دزينتين))(?=\b)
+  def: (?<=\b)(((نصف\s+)(دزينة|دستة|دستات|دست|دزينات|دزينتين))|({AllIntRegex}(و)?\s+((و)?))(دزينة|دستة|دستات|دست|دزينات|دزينتين))(?=\b)
   references: [AllIntRegex]
 #Ordinal Regex
 RoundNumberOrdinalRegex: !nestedRegex
@@ -112,7 +112,7 @@ FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\b)((({AllIntRegex}(\s|(\s*-\s*)|و\s+)?)(({AllOrdinalRegex})|({NumberOrdinalRegex})|نصف|وربع|ربع|ونصف))|(نصف|))(?=\b)
   references: [AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionPrepositionRegex: !nestedRegex
-  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(فوق|على|في|جزء|من|جزء من)\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)
+  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(فوق|على|في|جزء|من|جزء من)\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)  
   references: [AllIntRegex, BaseNumbers.CommonCurrencySymbol]
 FractionPrepositionWithinPercentModeRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+على\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)  
