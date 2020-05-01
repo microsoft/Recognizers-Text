@@ -162,24 +162,24 @@ NumberWithPrepositionPercentage: !nestedRegex
 TillRegex: !simpleRegex
   def: (إلى|خلال|--|-|—|——|~|–)
 MoreRegex: !simpleRegex
-  def: (?:(فوق|أكبر|أعظم|أطول|يتجاوز)(\s+من)?|(?<!<|=)>)
+  def: (?:(فوق|أكبر|أعظم|أطول|يتجاوز|تفوق)(\s+من)?|(?<!<|=)>)
 LessRegex: !simpleRegex
-  def: (?:(أقل|اقل|اصغر|أصغر)(\s+من)?|تحت|(?<!>|=)<)
+  def: (?:(أقل|اقل|اصغر|أصغر|ادنى)(\s+من)?|تحت|(?<!>|=)<)
 EqualRegex: !simpleRegex
   def: (يساوي|(?<!<|>)=)
 MoreOrEqualPrefix: !nestedRegex
   def: (((ليس|لا)\s+{LessRegex})|(على\s+الأقل))
   references: [LessRegex]
 MoreOrEqual: !nestedRegex
-  def: (?:({MoreRegex}\s+(أو|او)?\s+{EqualRegex})|({EqualRegex}\s+(أو|او)?\s+{MoreRegex})|{MoreOrEqualPrefix}(\s+(أو|او)?\s+{EqualRegex})?|({EqualRegex}\s+(أو|او)?\s+)?{MoreOrEqualPrefix}|>\s*=)
+  def: (?:({MoreRegex}\s+(أو|او)?\s+{EqualRegex})|({EqualRegex}\s+(أو|او)?\s+{MoreRegex})|({MoreOrEqualPrefix}(\s+(أو|او)?\s+{EqualRegex})?)|(({EqualRegex}\s+(أو|او)?\s+)?{MoreOrEqualPrefix})|({MoreRegex})|>\s*=)
   references: [MoreRegex, EqualRegex, LessRegex, MoreOrEqualPrefix]
 MoreOrEqualSuffix: !simpleRegex
-  def: ((و|أو)\s+(((أكبر|أعظم|أطول|فوق)((?!\s+من)|(\s+من(?!(\s*\d+)))))|((فوق|أكبر|أطول)(?!\s+من))))
+  def: ((و|أو)\s+(((أكبر|أعظم|أطول|فوق|اكثر)((?!\s+من)|(\s+من(?!(\s*\d+)))))|((فوق|أكبر|أطول|اكثر)(?!\s+من))))
 LessOrEqualPrefix: !nestedRegex
   def: ((ليس\s+{MoreRegex})|(at\s+most)|(بحد أقصى))
   references: [MoreRegex]
 LessOrEqual: !nestedRegex
-  def: (({LessRegex}\s+(أو|او)?\s+{EqualRegex}))
+  def: (({LessRegex}\s+(أو|او)?\s+{EqualRegex})|({EqualRegex}\s+(أو|او)?\s+{LessRegex})|({LessOrEqualPrefix}(\s+(أو|او)?\s+{EqualRegex})?)|(({EqualRegex}\s+(أو|او)?\s+)?{LessOrEqualPrefix})|({LessRegex})|<\s*=)
   references: [LessRegex, EqualRegex, MoreRegex, LessOrEqualPrefix]
 LessOrEqualSuffix: !simpleRegex
   def: ((و|أو)\s+(أقل)((?!\s+من)|(\s+من(?!(\s*\d+)))))
@@ -192,13 +192,13 @@ LessRegexNoNumberSucceed: !simpleRegex
 EqualRegexNoNumberSucceed: !simpleRegex
   def: (يساوي)
 OneNumberRangeMoreRegex1: !nestedRegex
-  def: ({MoreOrEqual}|{MoreRegex})\s*(ال)?(?<number1>({NumberSplitMark}.)+)
+  def: ({MoreOrEqual})\s*(ال)?(?<number1>({NumberSplitMark}.)+)
   references: [MoreOrEqual, MoreRegex, NumberSplitMark]
 OneNumberRangeMoreRegex2: !nestedRegex
   def: (?<number1>({NumberSplitMark}.)+)\s*{MoreOrEqualSuffix}
   references: [MoreOrEqualSuffix, NumberSplitMark]
 OneNumberRangeMoreSeparateRegex: !nestedRegex
-  def: ({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+أو\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+أو\s+){EqualRegexNoNumberSucceed})
+  def: ({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+(أو|او)\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+(أو|او)\s+){EqualRegexNoNumberSucceed})
   references:
     [
       EqualRegex,
@@ -208,7 +208,7 @@ OneNumberRangeMoreSeparateRegex: !nestedRegex
       NumberSplitMark,
     ]
 OneNumberRangeLessRegex1: !nestedRegex
-  def: ({LessOrEqual}|{LessRegex})\s*(ال)?(?<number2>({NumberSplitMark}.)+)
+  def: ({LessOrEqual})\s*(ال)?(?<number2>({NumberSplitMark}.)+)
   references: [LessOrEqual, LessRegex, NumberSplitMark]
 OneNumberRangeLessRegex2: !nestedRegex
   def: (?<number2>({NumberSplitMark}.)+)\s*{LessOrEqualSuffix}
