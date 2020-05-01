@@ -419,6 +419,7 @@ OrdinalNumberMap: !dictionary
     واحد من عشرة: 10
     واحد من إحدى عشر: 11
     الحادية عشرة: 11
+    الحادي عشر: 11
     واحد من إثنى عشر: 12
     الثانية عشرة: 12
     واحد من ثلاثة عشر: 13
@@ -607,10 +608,10 @@ RelativeReferenceRelativeToMap: !dictionary
     القادم: current
     القادمة: current
     السابقة: current
-    الحالي: end
+    الحالي: current
     الحالية: end
-    قبل الاخير: current
+    قبل الاخير: end
     واحد قبل الاخير: current
-    الثانية الى الاخير: current
+    الثانية الى الاخير: end
     السابق: current
 ...
