@@ -1,12 +1,1322 @@
 [
   {
     "Input": "1995-01",
-    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
     "Results": []
   },
   {
+    "Input": "أكبر من عشرين و أقل من أو يساوي خمسة وثلاثون",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أكبر من عشرين و أقل من أو يساوي خمسة وثلاثون",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(20,35]"
+        },
+        "Start": 0,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "الرقم بين ٢٠ و٣٠.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "بين ٢٠ و٣٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,30)"
+        },
+        "Start": 6,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "الرقم المحدود بين العاشر وخمسة عشر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "بين العاشر وخمسة عشر",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[10,15)"
+        },
+        "Start": 14,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "النتيجة بين سالب عشرة وخمسة عشر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "بين سالب عشرة وخمسة عشر",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[-10,15)"
+        },
+        "Start": 8,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "أعلى من العاشر وأدنى من الخامس عشر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أعلى من العاشر وأدنى من الخامس عشر",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,15)"
+        },
+        "Start": 0,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "هذا هو الرقم الذي أكبر من ١٠٠ وأصغر من ٣٠٠.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أكبر من ١٠٠ وأصغر من ٣٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "-100,300"
+        },
+        "Start": 18,
+        "End": 41
+      }
+    ]
+  },
+  {
+    "Input": "أعلى من او يساوي مائة،  او أخفض او يساوي ثلاث مائة.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أعلى من او يساوي مائة،  او أخفض او يساوي ثلاث مائة.",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[100,300]"
+        },
+        "Start": 0,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "التفاحات على الأكثر ١٠٠ وعلى الأقل ٢٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "على الأكثر ١٠٠ وعلى الأقل ٢٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100]"
+        },
+        "Start": 9,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "٢٠~١٠٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "٢٠~١٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100)"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "على الأكثر ١٠٠ وعلى الأقل ٢٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "على الأكثر ١٠٠ وعلى الأقل ٢٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100)"
+        },
+        "Start": 0,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "الرقم المطلوب هو من ألف الى ألف خمس مائة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "من ألف الى ألف خمس مائة",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[1000,1500)"
+        },
+        "Start": 17,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "هذا الرقم فوق ١٠٠٠ وتحت ١٥٠٠.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "فوق ١٠٠٠ وتحت ١٥٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "-10,001,500"
+        },
+        "Start": 10,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "الرقم فوق الربع وتحت النصف",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "فوق الربع وتحت النصف",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(0.25,0.5)"
+        },
+        "Start": 6,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "التتيجة  أكبر من او يساوي ثلاثة آلاف وتسع مائة و خمس وستون",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أكبر من او يساوي ثلاثة آلاف وتسع مائة و خمس وستون",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[3965,)"
+        },
+        "Start": 9,
+        "End": 57
+      }
+    ]
+  },
+  {
+    "Input": "عدد السيارات أكبر من ٤٥٦٥",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أكبر من ٤٥٦٥",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(4565,)"
+        },
+        "Start": 13,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "اكثر من ثلاثين",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "اكثر من ثلاثين",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,)"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "عمرها فوق الثلاثين",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "فوق الثلاثين",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,)"
+        },
+        "Start": 6,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "عمره لا أقل من ثلاثين",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "لا أقل من ثلاثين",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)"
+        },
+        "Start": 5,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "فيه خمس مائة وأكثر منتجات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "خمس مائة وأكثر",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[500,)"
+        },
+        "Start": 4,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "خمس مائة  أو أكثر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "خمس مائة  أو أكثر",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[500,)"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "أكثر من ٢/١ الطالبات غائبين.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أكثر من ٢/١",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(0.5,)"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "الرقم المكتوب أصغر من او يساوي ١٠٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أصغر من او يساوي ١٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,100]"
+        },
+        "Start": 14,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "النتيجة الصحيحة أقل من او يساوي ١٠٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أقل من او يساوي ١٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,100]"
+        },
+        "Start": 16,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "المبلغ المطلوب خمس مائة او أقل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "خمس مائة او أقل",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,500]"
+        },
+        "Start": 15,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "أوجد الأرقان الأولية الذي تكون <=١٠٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "<=١٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,100]"
+        },
+        "Start": 30,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "طوله تحت ١٧٠.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "تحت ١٧٠.",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,170)"
+        },
+        "Start": 5,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "ادنى ١٧٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "ادنى ١٧٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,170)"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "المبلغ المطلوب أقل من ألف",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أقل من ألف",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,1000)"
+        },
+        "Start": 15,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "الجواب يساوي مائة وسبعين",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "يساوي مائة وسبعين",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[170,170]"
+        },
+        "Start": 7,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "س>١٠ و ص<٢٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": ">١٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,)"
+        },
+        "Start": 1,
+        "End": 3
+      },
+      {
+        "Text": "<٢٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,20)"
+        },
+        "Start": 8,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "س أكبر من ١٠ وأصغر من ٢٠، وص لا أكثر من ٥٠ ولا أقل من ٢٠.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أكبر من ١٠ وأصغر من ٢٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,20)"
+        },
+        "Start": 2,
+        "End": 23
+      },
+      {
+        "Text": "لا أكثر من ٥٠ ولا أقل من ٢٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,50]"
+        },
+        "Start": 29,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "النتيجة النهائي ربع.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "ربع",
+        "TypeName": "",
+        "Resolution": {
+          "value": ""
+        },
+        "Start": 16,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "الرقم يساوي ٢٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "يساوي ٢٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,20]"
+        },
+        "Start": 6,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "يساوي ٢٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "يساوي ٢٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,20]"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "رقمي +١ ٢٢٢ ٢٢٢٢/٢٢٢٢",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": []
+  },
+  {
+    "Input": "رقمي +١ ٢٢٢ ٢٢٢٢ ٢٢٢٢",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": []
+  },
+  {
+    "Input": "نتيجته ٢٠٠ او اكبر من",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "٢٠٠ او اكبر من",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[200,)"
+        },
+        "Start": 7,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "نتيجته أكثر من ١٩٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أكثر من ١٩٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(190,)"
+        },
+        "Start": 7,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "٢٠٠ او اكثر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "٢٠٠ او اكثر",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[200,)"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "اقل من او يساوي ٣٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "اقل من او يساوي ٣٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,30]"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "يساوي او أقل من ٣٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "يساوي او أقل من ٣٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,30]"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "على الأقل او يساوي ٣٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "على الأقل او يساوي ٣٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "يساوي او اكثر من ٣٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "يساوي او اكثر من ٣٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "يساوي ٥٠٠٠ او اقل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "يساوي ٥٠٠٠ او اقل",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000]"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "عدد سكّان الحي يساوي ٥٠٠٠ أو أقل من ٦٠٠٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "يساوي ٥٠٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,5000]"
+        },
+        "Start": 15,
+        "End": 24
+      },
+      {
+        "Text": "أقل من ٦٠٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,6000)"
+        },
+        "Start": 29,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "يساوي ٥٠٠٠ او اكثر من",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "يساوي ٥٠٠٠ او اكثر من",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,)"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "نتيجته يساوي ٥٠٠٠ أو أكثر من ٤٥٠٠.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "يساوي ٥٠٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,5000]"
+        },
+        "Start": 7,
+        "End": 16
+      },
+      {
+        "Text": "أكثر من ٤٥٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(4500,)"
+        },
+        "Start": 21,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "نتيجتها أقل من ٥٠٠٠ او يساوي",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أقل من ٥٠٠٠ او يساوي",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000]"
+        },
+        "Start": 8,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "اكثر من ٥٠٠٠ او يساوي",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "اكثر من ٥٠٠٠ او يساوي",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,)"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "المبلغ المطلوب أكثر من ٥٠٠٠ أو يساوي",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أكثر من ٥٠٠٠ أو يساوي",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,)"
+        },
+        "Start": 15,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "العدد الكامل اكثر من ٥٠٠٠ او يساوي ٦٠٠٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "اكثر من ٥٠٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(5000,)"
+        },
+        "Start": 13,
+        "End": 24
+      },
+      {
+        "Text": "يساوي ٦٠٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[6000,6000]"
+        },
+        "Start": 29,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "نتيجته يساوي ٥٠٠٠ أو أقل من ٥٠٠٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "يساوي ٥٠٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,5000]"
+        },
+        "Start": 7,
+        "End": 16
+      },
+      {
+        "Text": "أقل من ٥٠٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000)"
+        },
+        "Start": 21,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "مجال الرقم ١٠٠٠ - ٥٠٠٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "١٠٠٠ - ٥٠٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[1000,5000)"
+        },
+        "Start": 11,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "٢ في ٥ او اكثر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "٢ في ٥ او اكثر",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[0.4,)"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "اكثر من ٢",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "اكثر من ٢",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(2,)"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "اكثر من ٣٠٠٠٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "اكثر من ٣٠٠٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30000,)"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "اقل من ٣٠٠٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "اقل من ٣٠٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,3000)"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "هل لا تزال الحالة نفسها عندما تكون >٣٠؟",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": ">٣٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,)"
+        },
+        "Start": 35,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "هل لا تزال الحالة نفسها عندما تكون >=٣٠؟",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": ">=٣٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)"
+        },
+        "Start": 35,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "هل لا تزال الحالة نفسها عندما تكون <-٣٠؟",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "<-٣٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,-30)"
+        },
+        "Start": 35,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "هل لا تزال الحالة نفسها عندما تكون <= -٣٠؟",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "<= -٣٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,-30]"
+        },
+        "Start": 35,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "النتيجة هو <>٣٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": []
+  },
+  {
+    "Input": "كان إجابة السؤال =>٣٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": []
+  },
+  {
+    "Input": "الرقم الصحيح هو =<٣٠.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": []
+  },
+  {
+    "Input": "يساوي ٢٠٠٠٠ في  ١٩٩٨",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "يساوي ٢٠٠٠٠ في  ١٩٩٨",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[10.01001001001,10.01001001001]"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "الرقم هو ٢٠٠ الى ٣٠٠ في ٢٠٠٨",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "",
+        "TypeName": "",
+        "Resolution": {
+          "value": ""
+        },
+        "Start": 0,
+        "End": -1
+      }
+    ]
+  },
+  {
+    "Input": "الرقم هو من ٢٠٠ الى ٣٠٠٠٠٠٠ في ٢٠١٨",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "من ٢٠٠ الى ٣٠٠٠٠٠٠ في ٢٠١٨",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[200,1494.02390438247)"
+        },
+        "Start": 9,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "أكثر من نصف الناس أصابهم المرض",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أكثر من نصف",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(0.5,)"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "عدد المرضى يتجاوز ٣٠٠٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "يتجاوز ٣٠٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(3000,)"
+        },
+        "Start": 11,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "تفوق ٣٠٠٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "تفوق ٣٠٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(3000,)"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "عدد العمّال يصل الى ٧٠٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "يصل الى ٧٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,700]"
+        },
+        "Start": 12,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "يصل الى ٧٠٠ لا يعني أنه يعرف مثا >٧٠٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "يصل الى ٧٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,700]"
+        },
+        "Start": 0,
+        "End": 10
+      },
+      {
+        "Text": ">٧٠٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(700,)"
+        },
+        "Start": 33,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "سرعة السيارة يتجاوز ١٥٠ كيلو متر/بالساعة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "يتجاوز ١٥٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(150,)"
+        },
+        "Start": 13,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "الأسهم كان أكثر من ٢٠، فوق ١٧٠ لكل قطعة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أكثر من ٢٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(20,)"
+        },
+        "Start": 11,
+        "End": 20
+      },
+      {
+        "Text": "فوق ١٧٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(170,)"
+        },
+        "Start": 23,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "عدد النساء أكثر من ٤٠ وأقل من ١٠",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أكثر من ٤٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(40,)"
+        },
+        "Start": 11,
+        "End": 20
+      },
+      {
+        "Text": "أقل من ١٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,10)"
+        },
+        "Start": 23,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "أكثر من ٤٠ وأقل من ١٠ ، وأقل من ١٠ وأكثر من ٤٠ هي نفسها",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أكثر من ٤٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(40,)"
+        },
+        "Start": 0,
+        "End": 9
+      },
+      {
+        "Text": "أقل من ١٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,10)"
+        },
+        "Start": 12,
+        "End": 20
+      },
+      {
+        "Text": "أقل من ١٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,10)"
+        },
+        "Start": 25,
+        "End": 33
+      },
+      {
+        "Text": "أكثر من ٤٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(40,)"
+        },
+        "Start": 36,
+        "End": 45
+      }
+    ]
+  },
+  {
+    "Input": "أكثر من ٤٠ وأقل من ١٠، أكثر من ١٠ وأقل من ٤٠  ليسوا متشابهين.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "أكثر من ٤٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(40,)"
+        },
+        "Start": 0,
+        "End": 9
+      },
+      {
+        "Text": "أقل من ١٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,10)"
+        },
+        "Start": 12,
+        "End": 20
+      },
+      {
+        "Text": "أكثر من ١٠ وأقل من ٤٠",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,40)"
+        },
+        "Start": 23,
+        "End": 43
+      }
+    ]
+  },
+  {
     "Input": "هذا العدد أكبر من عشرين و أقل من أو يساوي خمسة و ثلاثين.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكبر من عشرين و أقل من أو يساوي خمسة و ثلاثين",
@@ -22,7 +1332,8 @@
   },
   {
     "Input": "يتراوح العدد بين 20 و 30",
-    "NotSupported": "java, javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "java, javascript, python, dotnet",
     "Results": [
       {
         "Text": "بين 20 و 30",
@@ -38,7 +1349,8 @@
   },
   {
     "Input": "هو يرتب بين عشرة و خمسة عشر.",
-    "NotSupported": "java, javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "java, javascript, python, dotnet",
     "Results": [
       {
         "Text": "بين عشرة و خمسة عشر",
@@ -54,7 +1366,8 @@
   },
   {
     "Input": "انه يسجل بين سالب عشرة و خمسة عشر.",
-    "NotSupported": "java, javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "java, javascript, python, dotnet",
     "Results": [
       {
         "Text": "بين سالب عشرة و خمسة عشر",
@@ -70,7 +1383,8 @@
   },
   {
     "Input": "هو يرتّب أكبر من عشرة و أقل من خمسة عشر.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكبر من عشرة و أقل من خمسة عشر",
@@ -86,7 +1400,8 @@
   },
   {
     "Input": "هذا هو الرقم الذي هو أكبر من 100 وأصغر من 300",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكبر من 100 وأصغر من 300",
@@ -102,7 +1417,8 @@
   },
   {
     "Input": "هذا العدد أكبر من أو يساوي 100 و أقل من أو يساوي ثلاثمائة",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكبر من أو يساوي 100 و أقل من أو يساوي ثلاثمائة",
@@ -118,7 +1434,8 @@
   },
   {
     "Input": "هناك على الأكثر 100 و على الأقل 20 تفاحة.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "على الأكثر 100 و على الأقل 20",
@@ -134,7 +1451,8 @@
   },
   {
     "Input": "هذه التفاح حوالي 20 ~ 100",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "20 ~ 100",
@@ -150,7 +1468,8 @@
   },
   {
     "Input": "نطاق العدد هو 20 إلى 100",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "20 إلى 100",
@@ -166,7 +1485,8 @@
   },
   {
     "Input": "يتراوح العدد من ألف إلى ألف وخمسمائة.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "من ألف إلى ألف وخمسمائة",
@@ -182,7 +1502,8 @@
   },
   {
     "Input": "الرقم أكبر من 1000 وأقل من 1500",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكبر من 1000 وأقل من 1500",
@@ -198,7 +1519,8 @@
   },
   {
     "Input": "العدد أكبر من ربع و أقل من نصف.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكبر من ربع و أقل من نصف",
@@ -214,7 +1536,8 @@
   },
   {
     "Input": "هذا العدد أكبر من أو يساوي ثلاثة آلاف و تسعمائة وخمسة وستين.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكبر من أو يساوي ثلاثة آلاف و تسعمائة وخمسة وستين",
@@ -230,7 +1553,8 @@
   },
   {
     "Input": "هذا العدد أكبر من 4,565",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكبر من 4,565",
@@ -246,7 +1570,8 @@
   },
   {
     "Input": "هو أكبر من ثلاثين سنة.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكبر من ثلاثين",
@@ -262,7 +1587,8 @@
   },
   {
     "Input": "عمره لا يقل عن ثلاثين عاما.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "لا يقل عن ثلاثين",
@@ -278,7 +1604,8 @@
   },
   {
     "Input": "هناك أكثر من 500 في هذه المنتجات.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكثر من 500",
@@ -294,7 +1621,8 @@
   },
   {
     "Input": "أكثر من 1/2 من الناس جاءوا إلى هنا",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكثر من 1/2",
@@ -310,7 +1638,8 @@
   },
   {
     "Input": "العثور على الأرقام الرئيسية التي هي أصغر من أو تساوي 100",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أصغر من أو تساوي 100",
@@ -326,7 +1655,8 @@
   },
   {
     "Input": "العثور على الأرقام الأولية التي هي أقل من أو تساوي 100",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أقل من أو تساوي 100",
@@ -342,7 +1672,8 @@
   },
   {
     "Input": "هناك حوالي 500 أو أقل في هذه المنتجات.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "500 أو أقل",
@@ -358,7 +1689,8 @@
   },
   {
     "Input": "البحث عن الأرقام الرئيسية التي هي < = 100",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "< = 100",
@@ -374,7 +1706,8 @@
   },
   {
     "Input": "ارتفاعه أقل من 170",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أقل من 170",
@@ -390,7 +1723,8 @@
   },
   {
     "Input": "أقل من ألف باندا عملاقة لا تزال تعيش في البرية.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أقل من ألف",
@@ -406,7 +1740,8 @@
   },
   {
     "Input": " يساوي 170.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "يساوي 170",
@@ -422,7 +1757,8 @@
   },
   {
     "Input": "x>10 و y<20",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": ">10",
@@ -448,7 +1784,8 @@
   },
   {
     "Input": "x أكبر من 10 وأصغر من 20. y لا يزيد عن 50 ولا تقل عن 20.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكبر من 10 وأصغر من 20",
@@ -474,12 +1811,14 @@
   },
   {
     "Input": "الربع هو رقم كسر.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": []
   },
   {
     "Input": "الرقم يساوي 20.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "يساوي 20",
@@ -495,7 +1834,8 @@
   },
   {
     "Input": "يساوي 20، عدد الطلاب في صفنا ليست كبيرة.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "يساوي 20",
@@ -511,17 +1851,20 @@
   },
   {
     "Input": "+1-222-2222/2222 هو رقم هاتف.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": []
   },
   {
     "Input": "+1-222-2222-2222 هو رقم هاتف.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": []
   },
   {
     "Input": "درجاته هي 200 أو أكثر",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "200 أو أكثر",
@@ -537,7 +1880,8 @@
   },
   {
     "Input": "درجاته هي أكثر من 190",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكثر من 190",
@@ -553,7 +1897,8 @@
   },
   {
     "Input": "نقاطه هي 200 أو أكثر",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "200 أو أكثر",
@@ -569,7 +1914,8 @@
   },
   {
     "Input": "نقاطه أقل من أو تساوي 30",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أقل من أو تساوي 30",
@@ -585,7 +1931,8 @@
   },
   {
     "Input": "نقاطه أكبر من أو تساوي 30",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكبر من أو تساوي 30",
@@ -601,7 +1948,8 @@
   },
   {
     "Input": "نقاطه تساوي 5000 أو أقل",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "تساوي 5000 أو أقل",
@@ -617,7 +1965,8 @@
   },
   {
     "Input": "نقاطه تساوي 5000 أو أقل من 6000",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "تساوي 5000",
@@ -643,7 +1992,8 @@
   },
   {
     "Input": "نقاطه تساوي 5000 أو أكثر ",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "تساوي 5000 أو أكثر",
@@ -659,7 +2009,8 @@
   },
   {
     "Input": "نقاطه تساوي 5000 أو أكثر من 4500",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "تساوي 5000",
@@ -685,7 +2036,8 @@
   },
   {
     "Input": "نقاطه أقل من أو يساوي 5000 ",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أقل من أو يساوي 5000",
@@ -701,7 +2053,8 @@
   },
   {
     "Input": "نقاطه هي أكثر من أو يساوي 5000 ",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكثر من أو يساوي 5000",
@@ -717,7 +2070,8 @@
   },
   {
     "Input": "نقاطه هي أكثر من 5000 أو ما يساوي 6000",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكثر من 5000",
@@ -743,7 +2097,8 @@
   },
   {
     "Input": "نقاطه تساوي 5000 أو أقل من 5000",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "تساوي 5000",
@@ -769,7 +2124,8 @@
   },
   {
     "Input": "نطاق الرقم هو 1000-5000",
-    "NotSupported": "javascript, python, java",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": [
       {
         "Text": "1000-5000",
@@ -785,7 +2141,8 @@
   },
   {
     "Input": "نطاق العدد هو 1000 - 5000",
-    "NotSupported": "javascript, python, java",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": [
       {
         "Text": "1000 - 5000",
@@ -801,7 +2158,8 @@
   },
   {
     "Input": "نطاق العدد هو 1000-5000",
-    "NotSupported": "javascript, python, java",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": [
       {
         "Text": "1000-5000",
@@ -817,7 +2175,8 @@
   },
   {
     "Input": "نطاق العدد هو 1000 – 5000",
-    "NotSupported": "javascript, python, java",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": [
       {
         "Text": "1000 – 5000",
@@ -833,7 +2192,8 @@
   },
   {
     "Input": "ماذا عن 2 من 5 أو أكثر",
-    "NotSupported": "javascript, python, java",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": [
       {
         "Text": "2 من 5 أو أكثر",
@@ -849,7 +2209,8 @@
   },
   {
     "Input": "يمكنك أن تظهر لي سجلات أكثر من 30000 في عام 2009",
-    "NotSupported": "javascript, python, java",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": [
       {
         "Text": "أكثر من 30000",
@@ -865,7 +2226,8 @@
   },
   {
     "Input": "هل يمكنك أن تريني سجلات أقل من 3000 في عام 2009",
-    "NotSupported": "javascript, python, java",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": [
       {
         "Text": "أقل من 3000",
@@ -881,7 +2243,8 @@
   },
   {
     "Input": "هل لا يزال الحال عندما <30",
-    "NotSupported": "javascript, python, java",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": [
       {
         "Text": "<30",
@@ -897,7 +2260,8 @@
   },
   {
     "Input": "هل لا يزال الحال عندما >= 30",
-    "NotSupported": "javascript, python, java",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": [
       {
         "Text": ">= 30",
@@ -913,7 +2277,8 @@
   },
   {
     "Input": "هل لا يزال الحال عندما <-30",
-    "NotSupported": "javascript, python, java",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": [
       {
         "Text": "<-30",
@@ -929,7 +2294,8 @@
   },
   {
     "Input": "هل لا يزال الحال عندما <= -30",
-    "NotSupported": "javascript, python, java",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": [
       {
         "Text": "<= -30",
@@ -945,27 +2311,32 @@
   },
   {
     "Input": "<a0> 29 /01",
-    "NotSupported": "javascript, python, java",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": []
   },
   {
     "Input": "=>30",
-    "NotSupported": "javascript, python, java",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": []
   },
   {
     "Input": "=<30",
-    "NotSupported": "javascript, python, java",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": []
   },
   {
     "Input": "ومن 200 إلى 300 في عام 2008",
-    "NotSupported": "javascript, python, java",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": []
   },
   {
     "Input": "العدد هو من 200 إلى 3000000 على 2008",
-    "NotSupported": "javascript, python, java",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": [
       {
         "Text": "من 200 إلى 3000000 على 2008",
@@ -981,7 +2352,8 @@
   },
   {
     "Input": "جاء أكثر من نصف الناس هنا",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكثر من نصف",
@@ -997,7 +2369,8 @@
   },
   {
     "Input": "أكبر من 3000",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكبر من 3000",
@@ -1013,7 +2386,8 @@
   },
   {
     "Input": "تخطط شركة نيسان موتور لخفض ما يصل إلى 700 عامل متعاقد.",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "يصل إلى 700",
@@ -1029,7 +2403,8 @@
   },
   {
     "Input": "عدد السيارات التي لديها حصان أكبر من 150",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكبر من 150",
@@ -1045,7 +2420,8 @@
   },
   {
     "Input": "ارتفعت الأسهم أكثر من 20، فوق 170 للسهم الواحد",
-    "NotSupported": "javascript, python",
+    "Comment": "PendingValidation",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "أكثر من 20",
