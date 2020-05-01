@@ -13,6 +13,9 @@
         // 1,234,567
         public static LongFormatType IntegerNumComma { get; set; } = new LongFormatType(',', '\0');
 
+        // 1،234،567
+        public static LongFormatType IntegerNumInvertedComma { get; set; } = new LongFormatType('،', '\0');
+
         // 1.234.567
         public static LongFormatType IntegerNumDot { get; set; } = new LongFormatType('.', '\0');
 
