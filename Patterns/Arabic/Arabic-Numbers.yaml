@@ -607,10 +607,10 @@ RelativeReferenceRelativeToMap: !dictionary
     القادم: current
     القادمة: current
     السابقة: current
-    الحالي: end
+    الحالي: current
     الحالية: end
-    قبل الاخير: current
+    قبل الاخير: end
     واحد قبل الاخير: current
-    الثانية الى الاخير: current
+    الثانية الى الاخير: end
     السابق: current
 ...
