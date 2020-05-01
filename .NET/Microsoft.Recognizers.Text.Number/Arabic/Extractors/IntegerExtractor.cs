@@ -49,6 +49,10 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.ARABIC)
                 },
                 {
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, config.Placeholder, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
+                },
+                {
                     GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumInvertedComma, config.Placeholder, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },

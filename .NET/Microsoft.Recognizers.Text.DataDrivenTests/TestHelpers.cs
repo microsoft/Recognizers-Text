@@ -1039,11 +1039,11 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 return true;
             }
 
-            if (spec.IsNotSupported())
-            {
-                message = $"input '{spec.Input}' not supported";
-                return true;
-            }
+            // if (spec.IsNotSupported())
+            // {
+            //    message = $"input '{spec.Input}' not supported";
+            //    return true;
+            // }
 
             if (spec.IsNotSupportedByDesign())
             {
