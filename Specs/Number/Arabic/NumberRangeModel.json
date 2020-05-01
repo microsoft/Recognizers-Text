@@ -411,7 +411,7 @@
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "تحت ١٧٠.",
+        "Text": "تحت ١٧٠",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,170)"
