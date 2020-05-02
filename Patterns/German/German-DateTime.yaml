@@ -82,7 +82,7 @@ MonthWithYear: !nestedRegex
   def: \b((?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feber|feb\.|januar|j[äa]nner|j[äa]n\.|juli|julei|jul\.|jun[io]|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sept?\.)(\s*),?(\s+des)?(\s*)({YearRegex}|(?<order>nächsten|letzten|diese(s|n))\s+jahres))
   references: [ YearRegex ]
 OneWordPeriodRegex: !nestedRegex
-  def: \b((((im\s+)?monat\s+)?({RelativeRegex}\s*(jahr\s*(im\s*)?)?)?(?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feber|feb\.|januar|j[äa]nner|j[äa]n\.|juli|julei|jul\.|jun[io]|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sept?\.))|({RelativeRegex}\s+)?(wochenende|woche|monat|jahr)|(monat|jahr))\b
+  def: \b((((im\s+)?monat\s+)?({RelativeRegex}\s*(jahr\s*(im\s*)?)?)?(?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feber|feb\.|januar|j[äa]nner|j[äa]n\.|juli|julei|jul\.|jun[io]|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sept?\.))|({RelativeRegex}\s+)?(wochenende|woche|monat(s)?|jahr)|(monat|jahr))\b
   references: [ RelativeRegex ]
 MonthNumWithYear: !nestedRegex
   def: ({YearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-\.](\s*){YearRegex})
@@ -145,7 +145,7 @@ NextDateRegex: !nestedRegex
   def: ({NextPrefixRegex}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{NextPrefixRegex}\s*woche))
   references: [ NextPrefixRegex, WeekDayRegex ]
 SpecialDayRegex: !nestedRegex
-  def: (vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+(tag|morgen))|\bgestern\b|\bmorgen\b|heute|(heutig(e|en|es)?|aktuelle(n|s)?) (datum|tag(s|es)?))
+  def: (vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+(tag(s|es)?|morgen))|\bgestern\b|\bmorgen\b|heute|(heutig(e|en|es)?|aktuelle(n|s)?) (datum|tag(s|es)?))
   references: [ RelativeRegex]
 SpecialDayWithNumRegex: !nestedRegex
   def: \b((?<number>{WrittenNumRegex})\s+tage?\s+(von|nach|ab)\s+(?<day>\bgestern\b|\bmorgen\b|heute|(heutig(e|en|es)?|aktuelle(n|s)?) (datum|tag(s|es)?)))\b
@@ -360,7 +360,7 @@ SimpleTimeOfTodayBeforeRegex: !nestedRegex
   def: '{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+um)?\s*({HourNumRegex}|{BaseDateTime.HourRegex})'
   references: [ DateTimeSpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
 SpecificEndOfRegex: !simpleRegex
-  def: ((das|am|an( dem)?)\s+)?\bende(\s+(de[mnsr])?)\s*
+  def: ((das|am|an( dem)?)\s+)?\bende(\s+(de[mnsr])?)\s*$
 UnspecificEndOfRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -512,7 +512,7 @@ NumberEndingPattern: !nestedRegex
 OneOnOneRegex: !simpleRegex
   def: \b(1\s*:\s*1)|(one (on )?one|one\s*-\s*one|one\s*:\s*one)\b
 LaterEarlyPeriodRegex: !nestedRegex
-  def: \b((?<LatePrefix>spät(e(r|n)?)?)|(?<EarlyPrefix>früh(e(r|n)?)))\s+(?<suffix>{OneWordPeriodRegex})\b
+  def: \b((?<LatePrefix>spät(e(r|n)?)?)|(?<EarlyPrefix>früh(e(r|n)?)))\s+(?<suffix>{OneWordPeriodRegex}|(?<FourDigitYear>{BaseDateTime.FourDigitYearRegex}))\b
   references: [OneWordPeriodRegex]
 WeekWithWeekDayRangeRegex: !nestedRegex
   def: \b((?<week>({NextPrefixRegex}|{PreviousPrefixRegex}|diese(r|n|m))\s+woche)((\s+zwischen\s+{WeekDayRegex}\s+und\s+{WeekDayRegex})|(\s+vo(n|m)\s+{WeekDayRegex}\s+(bis\s+)?zum\s+{WeekDayRegex})))\b

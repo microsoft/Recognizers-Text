@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string MonthFrontBetweenRegex = $@"({MonthSuffixRegex}\s+(zwischen\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?)";
       public static readonly string BetweenRegex = $@"((zwischen\s+)({DayRegex})(\s+{MonthSuffixRegex})?\s*{RangeConnectorRegex}\s*({DayRegex})(\s+{MonthSuffixRegex})((\s+|\s*,\s*){YearRegex})?|(zwischen\s+)({DayRegex})(\s+{MonthSuffixRegex})?\s*{RangeConnectorRegex}\s*({DayRegex})(\s+{MonthSuffixRegex})?((\s+|\s*,\s*){YearRegex})?)";
       public static readonly string MonthWithYear = $@"\b((?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feber|feb\.|januar|j[äa]nner|j[äa]n\.|juli|julei|jul\.|jun[io]|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sept?\.)(\s*),?(\s+des)?(\s*)({YearRegex}|(?<order>nächsten|letzten|diese(s|n))\s+jahres))";
-      public static readonly string OneWordPeriodRegex = $@"\b((((im\s+)?monat\s+)?({RelativeRegex}\s*(jahr\s*(im\s*)?)?)?(?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feber|feb\.|januar|j[äa]nner|j[äa]n\.|juli|julei|jul\.|jun[io]|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sept?\.))|({RelativeRegex}\s+)?(wochenende|woche|monat|jahr)|(monat|jahr))\b";
+      public static readonly string OneWordPeriodRegex = $@"\b((((im\s+)?monat\s+)?({RelativeRegex}\s*(jahr\s*(im\s*)?)?)?(?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feber|feb\.|januar|j[äa]nner|j[äa]n\.|juli|julei|jul\.|jun[io]|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sept?\.))|({RelativeRegex}\s+)?(wochenende|woche|monat(s)?|jahr)|(monat|jahr))\b";
       public static readonly string MonthNumWithYear = $@"({YearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-\.](\s*){YearRegex})";
       public static readonly string WeekOfMonthRegex = $@"(?<wom>((die|der)\s+)(?<cardinal>erst(er|en|es|e)|1\.|zweit(er|en|es|e)|2\.|dritt(er|en|es|e)|3\.|viert(er|en|es|e)|4\.|fünft(er|en|es|e)|5\.|letzt(er|en|es|e))\s+woche\s+(des|diese(s|n)|im)\s+({MonthSuffixRegex}|monat(s)?))";
       public static readonly string WeekOfYearRegex = $@"(?<woy>((die|der)\s+)?(?<cardinal>(erst(er|en|es|e)|1\.|zweit(er|en|es|e)|2\.|dritt(er|en|es|e)|3\.|viert(er|en|es|e)|4\.|fünft(er|en|es|e)|5\.|letzt(er|en|es|e))\s+woche\s+(im|diese(s|n)|\s+des)?\s+({YearRegex}|{RelativeRegex}\s+jahr(en|es|e)?)))";
@@ -76,7 +76,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string ThisRegex = $@"(((diese((n|m)|(\s*woche))(\s*am)?\s+){WeekDayRegex})|diese(n|r)?\s*(sommer|winter|frühling|herbst))";
       public static readonly string LastDateRegex = $@"({PreviousPrefixRegex}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{PreviousPrefixRegex}\s*woche))";
       public static readonly string NextDateRegex = $@"({NextPrefixRegex}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{NextPrefixRegex}\s*woche))";
-      public static readonly string SpecialDayRegex = $@"(vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+(tag|morgen))|\bgestern\b|\bmorgen\b|heute|(heutig(e|en|es)?|aktuelle(n|s)?) (datum|tag(s|es)?))";
+      public static readonly string SpecialDayRegex = $@"(vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+(tag(s|es)?|morgen))|\bgestern\b|\bmorgen\b|heute|(heutig(e|en|es)?|aktuelle(n|s)?) (datum|tag(s|es)?))";
       public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+tage?\s+(von|nach|ab)\s+(?<day>\bgestern\b|\bmorgen\b|heute|(heutig(e|en|es)?|aktuelle(n|s)?) (datum|tag(s|es)?)))\b";
       public static readonly string RelativeDayRegex = $@"((((de[rmns])\s+)?{RelativeRegex}\s+tag(e(s)?)?))";
       public const string SetWeekDayRegex = @"\b(?<prefix>(an)\s+)?(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag)(s|en)\b";
@@ -157,7 +157,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string TimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(um|gegen|in|on))?\s*$";
       public static readonly string SimpleTimeOfTodayAfterRegex = $@"({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(am\s+)?{DateTimeSpecificTimeOfDayRegex}";
       public static readonly string SimpleTimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+um)?\s*({HourNumRegex}|{BaseDateTime.HourRegex})";
-      public const string SpecificEndOfRegex = @"((das|am|an( dem)?)\s+)?\bende(\s+(de[mnsr])?)\s*";
+      public const string SpecificEndOfRegex = @"((das|am|an( dem)?)\s+)?\bende(\s+(de[mnsr])?)\s*$";
       public const string UnspecificEndOfRegex = @"^[.]";
       public const string UnspecificEndOfRangeRegex = @"^[.]";
       public const string PeriodTimeOfDayRegex = @"\b(((?<early>(früh( am|er)|am frühen)(\s+|-))|(?<late>(spät( am|er)|am späten)(\s+|-)))?(?<timeOfDay>morgens?|früh|(vor|nach)mittags?|(nachts?|primetime)|abends?))\b";
@@ -224,7 +224,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string AmbiguousRangeModifierPrefix = @"^[.]";
       public static readonly string NumberEndingPattern = $@"^(\s+(?<meeting>meeting|termin|telefonkonferenz|conference|skype call|call)\s+to\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})((\.)?$|(\.,|,|!|\?)))";
       public const string OneOnOneRegex = @"\b(1\s*:\s*1)|(one (on )?one|one\s*-\s*one|one\s*:\s*one)\b";
-      public static readonly string LaterEarlyPeriodRegex = $@"\b((?<LatePrefix>spät(e(r|n)?)?)|(?<EarlyPrefix>früh(e(r|n)?)))\s+(?<suffix>{OneWordPeriodRegex})\b";
+      public static readonly string LaterEarlyPeriodRegex = $@"\b((?<LatePrefix>ende|spät(e(r|n)?)?)|(?<EarlyPrefix>früh(e(r|n)?)))\s+(?<suffix>{OneWordPeriodRegex}|(?<FourDigitYear>{BaseDateTime.FourDigitYearRegex}))\b";
       public static readonly string WeekWithWeekDayRangeRegex = $@"\b((?<week>({NextPrefixRegex}|{PreviousPrefixRegex}|diese(r|n|m))\s+woche)((\s+zwischen\s+{WeekDayRegex}\s+und\s+{WeekDayRegex})|(\s+vo(n|m)\s+{WeekDayRegex}\s+(bis\s+)?zum\s+{WeekDayRegex})))\b";
       public const string GeneralEndingRegex = @"\s*((\.,)|\.|,|!|\?)?\s*";
       public const string MiddlePauseRegex = @"\s*(,)\s*";
