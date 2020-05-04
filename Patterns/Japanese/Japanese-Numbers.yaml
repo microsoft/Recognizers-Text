@@ -136,7 +136,7 @@ SingleRegex: !nestedRegex
   def: (({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|十)(?={AllowListRegex}))
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, AllowListRegex]
 AllIntRegex: !nestedRegex
-  def: (((({ZeroToNineIntegerRegex}|[十百千])\s*{RoundNumberIntegerRegex}*)|({ZeroToNineFullHalfRegex}\s*{RoundNumberIntegerRegex})){1,2}(\s*[以上])?)
+  def: (((({ZeroToNineIntegerRegex}|[十百千])\s*{RoundNumberIntegerRegex}*)|({ZeroToNineFullHalfRegex}|{RoundNumberIntegerRegex})\s*){1,2}(\s*[以上])?)
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
@@ -155,7 +155,7 @@ NumbersWithHalfDozen: !nestedRegex
   def: 半({RoundNumberIntegerRegex}|(ダース))
   references: [RoundNumberIntegerRegex]
 NumbersWithDozen: !nestedRegex
-  def: '{AllIntRegex}(ダース)(?!{AllIntRegex})'
+  def: '{AllIntRegex}(ダース)([十百千万億兆])?(?!{AllIntRegex})'
   references: [AllIntRegex]
 PointRegexStr: !simpleRegex
   def: '[\.．]'
