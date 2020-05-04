@@ -34,6 +34,7 @@ ZeroToNineMap: !dictionary
   types: [char, double]
   entries:
     零: 0
+    〇: 0
     一: 1
     二: 2
     三: 3
@@ -112,7 +113,7 @@ DoubleAndRoundRegex: !nestedRegex
 FracSplitRegex: !simpleRegex
   def: '[はと]|分\s*の'
 ZeroToNineIntegerRegex: !simpleRegex
-  def: '[一二三四五六七八九]'
+  def: (?:〇|一|二|三|四|五|六|七|八|九)
 NegativeNumberTermsRegex: !simpleRegex
   def: (マ\s*イ\s*ナ\s*ス)
 NegativeNumberTermsRegexNum: !simpleRegex
