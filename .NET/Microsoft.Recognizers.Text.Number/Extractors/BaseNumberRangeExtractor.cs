@@ -152,7 +152,7 @@ namespace Microsoft.Recognizers.Text.Number
             return results;
         }
 
-        protected static bool ValidateMatchAndGetStartAndLength(List<ExtractResult> extractNumList, string numberStr, Match match,
+        private static bool ValidateMatchAndGetStartAndLength(List<ExtractResult> extractNumList, string numberStr, Match match,
                                                               string source, ref int start, ref int length)
         {
             bool validNum = false;
@@ -186,87 +186,9 @@ namespace Microsoft.Recognizers.Text.Number
 
         // Judge whether it's special cases like "more than 30000 in 2010"
         // For these specific cases, we will not treat "30000 in 2010" as a fraction number
-        protected static bool IsAmbiguousRangeOrFraction(Match match, string type, string numberStr)
+        private static bool IsAmbiguousRangeOrFraction(Match match, string type, string numberStr)
         {
             return (type == NumberRangeConstants.MORE || type == NumberRangeConstants.LESS) && match.Value.Trim().EndsWith(numberStr);
-        }
-
-        // TODO: this should not be in the NumberRangeExtractor as it doesn't handle duration concepts
-        protected List<ExtractResult> ExtractNumberAndOrdinalFromStr(string numberStr, bool isAmbiguousRangeOrFraction = false)
-        {
-            List<ExtractResult> ret = null;
-            var extractNumber = numberExtractor.Extract(numberStr);
-            var extractOrdinal = ordinalExtractor.Extract(numberStr);
-
-            if (extractNumber.Count == 0)
-            {
-                ret = extractOrdinal.Count == 0 ? null : extractOrdinal;
-            }
-            else if (extractOrdinal.Count == 0)
-            {
-                ret = extractNumber;
-            }
-            else
-            {
-                ret = new List<ExtractResult>();
-                ret.AddRange(extractNumber);
-                ret.AddRange(extractOrdinal);
-                ret = ret.OrderByDescending(num => num.Length).ThenByDescending(num => num.Start).ToList();
-            }
-
-            var removeFractionWithInConnector = ShouldRemoveFractionWithInConnector(numberStr);
-
-            if (ret != null && (removeFractionWithInConnector || isAmbiguousRangeOrFraction))
-            {
-                ret = RemoveAmbiguousFractions(ret);
-            }
-
-            return ret;
-        }
-
-        protected bool ShouldRemoveFractionWithInConnector(string numberStr)
-        {
-            var removeFractionWithInConnector = false;
-
-            if ((Config.Options & NumberOptions.ExperimentalMode) != 0)
-            {
-                removeFractionWithInConnector = IsFractionWithInConnector(numberStr);
-            }
-
-            return removeFractionWithInConnector;
-        }
-
-        // Fraction with InConnector may lead to some ambiguous cases like "more than 30000 in 2010"
-        // In ExperimentalMode, we will remove all FractionWithInConnector numbers to avoid such cases
-        protected bool IsFractionWithInConnector(string numberStr)
-        {
-            return AmbiguousFractionConnectorsRegex.Match(numberStr).Success;
-        }
-
-        // For cases like "more than 30000 in 2010", we will not treat "30000 in 2010" as a fraction number
-        // In this method, "30000 in 2010" will be changed to "30000"
-        protected List<ExtractResult> RemoveAmbiguousFractions(List<ExtractResult> ers)
-        {
-            foreach (var er in ers)
-            {
-                if (er.Data != null && er.Data.ToString() ==
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH).Name)
-                {
-                    var match = AmbiguousFractionConnectorsRegex.Match(er.Text);
-
-                    if (match.Success)
-                    {
-                        var beforeText = er.Text.Substring(0, match.Index).TrimEnd();
-
-                        er.Length = beforeText.Length;
-                        er.Text = beforeText;
-                        er.Type = Constants.SYS_NUM;
-                        er.Data = null;
-                    }
-                }
-            }
-
-            return ers;
         }
 
         private void GetMatchedStartAndLength(Match match, string type, string source, out int start, out int length)
@@ -274,8 +196,8 @@ namespace Microsoft.Recognizers.Text.Number
             start = NumberRangeConstants.INVALID_NUM;
             length = NumberRangeConstants.INVALID_NUM;
 
-            var numberStr1 = match.Groups["number1"].Value;
-            var numberStr2 = match.Groups["number2"].Value;
+            var numberStr1 = match.Groups["number1"].Value?.TrimStart();
+            var numberStr2 = match.Groups["number2"].Value?.TrimStart();
 
             if (type.Contains(NumberRangeConstants.TWONUM))
             {
@@ -338,6 +260,84 @@ namespace Microsoft.Recognizers.Text.Number
                     }
                 }
             }
+        }
+
+        // TODO: this should not be in the NumberRangeExtractor as it doesn't handle duration concepts
+        private List<ExtractResult> ExtractNumberAndOrdinalFromStr(string numberStr, bool isAmbiguousRangeOrFraction = false)
+        {
+            List<ExtractResult> ret = null;
+            var extractNumber = numberExtractor.Extract(numberStr);
+            var extractOrdinal = ordinalExtractor.Extract(numberStr);
+
+            if (extractNumber.Count == 0)
+            {
+                ret = extractOrdinal.Count == 0 ? null : extractOrdinal;
+            }
+            else if (extractOrdinal.Count == 0)
+            {
+                ret = extractNumber;
+            }
+            else
+            {
+                ret = new List<ExtractResult>();
+                ret.AddRange(extractNumber);
+                ret.AddRange(extractOrdinal);
+                ret = ret.OrderByDescending(num => num.Length).ThenByDescending(num => num.Start).ToList();
+            }
+
+            var removeFractionWithInConnector = ShouldRemoveFractionWithInConnector(numberStr);
+
+            if (ret != null && (removeFractionWithInConnector || isAmbiguousRangeOrFraction))
+            {
+                ret = RemoveAmbiguousFractions(ret);
+            }
+
+            return ret;
+        }
+
+        private bool ShouldRemoveFractionWithInConnector(string numberStr)
+        {
+            var removeFractionWithInConnector = false;
+
+            if ((Config.Options & NumberOptions.ExperimentalMode) != 0)
+            {
+                removeFractionWithInConnector = IsFractionWithInConnector(numberStr);
+            }
+
+            return removeFractionWithInConnector;
+        }
+
+        // Fraction with InConnector may lead to some ambiguous cases like "more than 30000 in 2010"
+        // In ExperimentalMode, we will remove all FractionWithInConnector numbers to avoid such cases
+        private bool IsFractionWithInConnector(string numberStr)
+        {
+            return AmbiguousFractionConnectorsRegex.Match(numberStr).Success;
+        }
+
+        // For cases like "more than 30000 in 2010", we will not treat "30000 in 2010" as a fraction number
+        // In this method, "30000 in 2010" will be changed to "30000"
+        private List<ExtractResult> RemoveAmbiguousFractions(List<ExtractResult> ers)
+        {
+            foreach (var er in ers)
+            {
+                if (er.Data != null && er.Data.ToString() ==
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH).Name)
+                {
+                    var match = AmbiguousFractionConnectorsRegex.Match(er.Text);
+
+                    if (match.Success)
+                    {
+                        var beforeText = er.Text.Substring(0, match.Index).TrimEnd();
+
+                        er.Length = beforeText.Length;
+                        er.Text = beforeText;
+                        er.Type = Constants.SYS_NUM;
+                        er.Data = null;
+                    }
+                }
+            }
+
+            return ers;
         }
     }
 }

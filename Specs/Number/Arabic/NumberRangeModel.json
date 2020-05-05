@@ -417,7 +417,7 @@
           "value": "(,170)"
         },
         "Start": 5,
-        "End": 12
+        "End": 11
       }
     ]
   },
@@ -523,17 +523,7 @@
     "Input": "النتيجة النهائي ربع.",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Results": [
-      {
-        "Text": "ربع",
-        "TypeName": "",
-        "Resolution": {
-          "value": ""
-        },
-        "Start": 16,
-        "End": 18
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "الرقم يساوي ٢٠",
