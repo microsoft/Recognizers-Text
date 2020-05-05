@@ -117,7 +117,7 @@ ZeroToNineIntegerRegex: !simpleRegex
 NegativeNumberTermsRegex: !simpleRegex
   def: (マ\s*イ\s*ナ\s*ス)
 NegativeNumberTermsRegexNum: !simpleRegex
-  def: (?<!(\d+\s*)|[-－])[-－]
+  def: (?:(?<!(\d+\s*)|[-−－])[-−－])
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*
   references: [NegativeNumberTermsRegex, NegativeNumberTermsRegexNum]
@@ -144,7 +144,7 @@ PlaceHolderPureNumber: !simpleRegex
 PlaceHolderDefault: !simpleRegex
   def: \D|\b
 NumbersSpecialsChars: !nestedRegex
-  def: (({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineFullHalfRegex}+
+  def: (({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*?)?{ZeroToNineFullHalfRegex}+?{RoundNumberIntegerRegex}+?{ZeroToNineIntegerRegex}+?
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex, NegativeNumberTermsRegex ]
 NumbersSpecialsCharsWithSuffix: !nestedRegex
   def: '{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}'
