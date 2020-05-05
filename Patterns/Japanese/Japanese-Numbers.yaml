@@ -137,7 +137,7 @@ SingleRegex: !nestedRegex
   def: (({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|十)(?={AllowListRegex}))
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, AllowListRegex]
 AllIntRegex: !nestedRegex
-  def: (((({ZeroToNineIntegerRegex}|[十百千])\s*(と)?{RoundNumberIntegerRegex}*)|({ZeroToNineFullHalfRegex}+(と)?|{RoundNumberIntegerRegex})\s*){1,2}(\s*[以上])?)
+  def: (((({ZeroToNineIntegerRegex}|[十百千])\s*(と)?{RoundNumberIntegerRegex}*)(と)?|({ZeroToNineFullHalfRegex}+(と)?|{RoundNumberIntegerRegex})\s*){1,2}(\s*[以上])?)
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
