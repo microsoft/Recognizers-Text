@@ -2,7 +2,6 @@
   {
     "Input": "احذف اخر جملة في الملاحظة.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "اخر",
@@ -20,7 +19,6 @@
   {
     "Input": "هل تعني \"التالي\" او \"الاخر\"؟",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "التالي",
@@ -49,7 +47,6 @@
   {
     "Input": "أريني الذي قبل الاخير.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "قبل الاخير",
@@ -67,7 +64,6 @@
   {
     "Input": "اريني الذي قبل الاخير.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "قبل الاخير",
@@ -103,7 +99,6 @@
   {
     "Input": "أريني الثانية الى الاخير.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الثانية الى الاخير",
@@ -121,7 +116,6 @@
   {
     "Input": "احذف اخر جملة.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "اخر",
@@ -139,7 +133,6 @@
   {
     "Input": "أريني السابق.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "السابق",
@@ -157,7 +150,6 @@
   {
     "Input": "أريني التالي.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "التالي",
@@ -175,7 +167,6 @@
   {
     "Input": "أريد الكتابين الأخير.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الأخير",
@@ -193,7 +184,6 @@
   {
     "Input": "أريد الكتاب الأخير.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الأخير",
@@ -211,7 +201,6 @@
   {
     "Input": "أريد ثلاث كتب التالي.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "التالي",
@@ -229,7 +218,6 @@
   {
     "Input": "أنظر الى الصفحة التالي.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "التالي",
@@ -247,7 +235,6 @@
   {
     "Input": "أريد البسكويت الاخير.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الاخير",
@@ -265,7 +252,6 @@
   {
     "Input": "أريد الذي قبل الاخير.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "قبل الاخير",
@@ -283,7 +269,6 @@
   {
     "Input": "انتقل الى الصفحة السابقة.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "السابقة",
@@ -301,7 +286,6 @@
   {
     "Input": "البيت الحادي عشر",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الحادي عشر",
@@ -319,7 +303,6 @@
   {
     "Input": "السيارة الواحد والعشرون",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الواحد والعشرون",
@@ -337,7 +320,6 @@
   {
     "Input": "الكتاب الثلاثون غير جيد.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الثلاثون",
@@ -355,7 +337,6 @@
   {
     "Input": "السؤال الثاني صعب.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الثاني",
@@ -373,7 +354,6 @@
   {
     "Input": "هي في الصف الحادي عشر.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الحادي عشر",
@@ -391,7 +371,6 @@
   {
     "Input": "دخلت البيت العشرون.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "العشرون",
@@ -409,7 +388,6 @@
   {
     "Input": "هذه المرة الخامسة والعشرون.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الخامسة والعشرون",
@@ -427,7 +405,6 @@
   {
     "Input": "السؤال الواحد والعشرون غير محلولة.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الواحد والعشرون",
@@ -445,7 +422,6 @@
   {
     "Input": "وجدت الكتاب المئة والخامسة والعشرون.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "المئة والخامسة والعشرون",
@@ -463,7 +439,6 @@
   {
     "Input": "حدث في العام المئة والخامسة والعشرون.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "المئة والخامسة والعشرون",
@@ -481,7 +456,6 @@
   {
     "Input": "لم أجد الكتاب التريليون.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "التريليون",
@@ -517,7 +491,6 @@
   {
     "Input": "في عام المئتيان من بعد الهجرة.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "المئتيان",
@@ -535,7 +508,6 @@
   {
     "Input": "احجز مقعد ففي الدرجة الأولى الى سياتل.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الأولى",
@@ -553,7 +525,6 @@
   {
     "Input": "اعجبني الأول كتابين.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الأول",
@@ -571,7 +542,6 @@
   {
     "Input": "اعجبني الأول.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الأول",
@@ -589,7 +559,6 @@
   {
     "Input": "اتحدث الكلمة الأولى",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الأولى",
@@ -607,7 +576,6 @@
   {
     "Input": "أريد الكتب الثلاثة التالي",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "التالي",
@@ -625,7 +593,6 @@
   {
     "Input": "هي انتهت قراءة الكتاب الثاني",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الثاني",
@@ -679,7 +646,6 @@
   {
     "Input": "الصفحة الحالي",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الحالي",
@@ -697,7 +663,6 @@
   {
     "Input": "انظر الى الصفحة الحالي.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الحالي",

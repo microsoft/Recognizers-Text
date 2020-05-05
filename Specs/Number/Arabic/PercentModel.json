@@ -2,7 +2,6 @@
   {
     "Input": "هي الوحيدة الذي حصلت على ١٠٠٪.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "١٠٠٪",
@@ -18,7 +17,6 @@
   {
     "Input": "اصبح شاحن الجوال ١٠٠٪؜.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "١٠٠٪",
@@ -34,7 +32,6 @@
   {
     "Input": "الاحتمال هو ١٠٠ في المئة.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "١٠٠ في المئة",
@@ -50,7 +47,6 @@
   {
     "Input": "تم تنزيل الملف ١٠٠ بالمئة.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "١٠٠ بالمئة",
@@ -66,7 +62,6 @@
   {
     "Input": "الإجابة هو ٢٤٠ في المئة",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "٢٤٠ في المئة",
@@ -82,7 +77,6 @@
   {
     "Input": "احتمال وقوع حادث عشرين في المئة.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "عشرين في المئة",
@@ -98,7 +92,6 @@
   {
     "Input": "ثلاثين بالمئة ليس الإجابة الصحيحة.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "ثلاثين بالمئة",
@@ -114,7 +107,6 @@
   {
     "Input": "كان نتيجته مئة بالمئة.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مئة بالمئة",
@@ -130,7 +122,6 @@
   {
     "Input": "ما هو نسبة ١٠ من العدد ؟",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "نسبة ١٠",
@@ -146,7 +137,6 @@
   {
     "Input": "نسبة اثنين وعشرين كفاية لكل شخص.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "نسبة اثنين وعشرين",
@@ -162,7 +152,6 @@
   {
     "Input": "كان يطلب نسبة ٢١٠.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "نسبة ٢١٠",
@@ -178,7 +167,6 @@
   {
     "Input": "احتمال نزول المطر ١٠ بالمائة.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "١٠ بالمائة",
@@ -194,7 +182,6 @@
   {
     "Input": "ارية فقط سالب خمسة بالمئة.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "سالب خمسة بالمئة",
@@ -401,12 +388,12 @@
   },
   {
     "Input": "يمكنك الذهاب إلى http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859 لمزيد من التفاصيل.",
-    "NotSupported": "javascript, dotnet",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
     "Input": "يمكنك الذهاب إلى https://www.test.com/search?q=30%25%2020%",
-    "NotSupported": "javascript, dotnet",
+    "NotSupported": "javascript",
     "Results": []
   }
 ]

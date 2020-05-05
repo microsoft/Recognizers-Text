@@ -2,7 +2,6 @@
   {
     "Input": "1995-01",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -24,7 +23,6 @@
   {
     "Input": "الرقم بين ٢٠ و٣٠.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "بين ٢٠ و٣٠",
@@ -40,7 +38,6 @@
   {
     "Input": "الرقم المحدود بين العاشر وخمسة عشر",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "بين العاشر وخمسة عشر",
@@ -56,7 +53,6 @@
   {
     "Input": "النتيجة بين سالب عشرة وخمسة عشر",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "بين سالب عشرة وخمسة عشر",
@@ -136,7 +132,6 @@
   {
     "Input": "٢٠~١٠٠",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "٢٠~١٠٠",
@@ -264,7 +259,6 @@
   {
     "Input": "عمرها فوق الثلاثين",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "فوق الثلاثين",
@@ -408,7 +402,6 @@
   {
     "Input": "طوله تحت ١٧٠.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "تحت ١٧٠",
@@ -424,7 +417,6 @@
   {
     "Input": "ادنى ١٧٠",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "ادنى ١٧٠",
@@ -440,7 +432,6 @@
   {
     "Input": "المبلغ المطلوب أقل من ألف",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "أقل من ألف",
@@ -456,7 +447,6 @@
   {
     "Input": "الجواب يساوي مائة وسبعين",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "يساوي مائة وسبعين",
@@ -472,7 +462,6 @@
   {
     "Input": "س>١٠ و ص<٢٠",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": ">١٠",
@@ -522,13 +511,11 @@
   {
     "Input": "النتيجة النهائي ربع.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
     "Input": "الرقم يساوي ٢٠",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "يساوي ٢٠",
@@ -544,7 +531,6 @@
   {
     "Input": "يساوي ٢٠",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "يساوي ٢٠",
@@ -560,13 +546,11 @@
   {
     "Input": "رقمي +١ ٢٢٢ ٢٢٢٢/٢٢٢٢",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
     "Input": "رقمي +١ ٢٢٢ ٢٢٢٢ ٢٢٢٢",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -864,7 +848,6 @@
   {
     "Input": "مجال الرقم ١٠٠٠ - ٥٠٠٠",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "١٠٠٠ - ٥٠٠٠",
@@ -944,7 +927,6 @@
   {
     "Input": "هل لا تزال الحالة نفسها عندما تكون >٣٠؟",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": ">٣٠",
@@ -976,7 +958,6 @@
   {
     "Input": "هل لا تزال الحالة نفسها عندما تكون <-٣٠؟",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "<-٣٠",
@@ -1008,25 +989,21 @@
   {
     "Input": "النتيجة هو <>٣٠",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
     "Input": "كان إجابة السؤال =>٣٠",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
     "Input": "الرقم الصحيح هو =<٣٠.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
     "Input": "يساوي ٢٠٠٠٠ في  ١٩٩٨",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "يساوي ٢٠٠٠٠ في  ١٩٩٨",
@@ -1090,7 +1067,6 @@
   {
     "Input": "عدد المرضى يتجاوز ٣٠٠٠",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "يتجاوز ٣٠٠٠",
@@ -1163,7 +1139,6 @@
   {
     "Input": "سرعة السيارة يتجاوز ١٥٠ كيلو متر/بالساعة",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "يتجاوز ١٥٠",
