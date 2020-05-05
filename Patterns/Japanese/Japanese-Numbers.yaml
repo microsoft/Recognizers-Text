@@ -144,7 +144,7 @@ PlaceHolderPureNumber: !simpleRegex
 PlaceHolderDefault: !simpleRegex
   def: \D|\b
 NumbersSpecialsChars: !nestedRegex
-  def: (({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*?)?{ZeroToNineFullHalfRegex}+?{RoundNumberIntegerRegex}+?{ZeroToNineIntegerRegex}+?
+  def: (({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineFullHalfRegex}+
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex, NegativeNumberTermsRegex ]
 NumbersSpecialsCharsWithSuffix: !nestedRegex
   def: '{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}'

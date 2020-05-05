@@ -17,18 +17,27 @@ namespace Microsoft.Recognizers.Text.Number
             this.Extractor = extractor;
         }
 
+        protected AbstractNumberModel(IParser parser, IExtractor extractor, bool recode)
+        {
+            this.Parser = parser;
+            this.Extractor = extractor;
+            this.Recode = recode;
+        }
+
         public abstract string ModelTypeName { get; }
 
         protected IExtractor Extractor { get; private set; }
 
         protected IParser Parser { get; private set; }
 
+        protected bool Recode { get; private set; } = true;
+
         public List<ModelResult> Parse(string query)
         {
             var parsedNumbers = new List<ParseResult>();
 
             // Preprocess the query
-            query = QueryProcessor.Preprocess(query, caseSensitive: true);
+            query = QueryProcessor.Preprocess(query, caseSensitive: true, this.Recode);
 
             try
             {
