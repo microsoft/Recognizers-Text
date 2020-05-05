@@ -4,6 +4,10 @@ ECHO ==============================.NET BUILD START=============================
 SETLOCAL EnableDelayedExpansion
 
 ECHO.
+ECHO # Setting encoding to UTF-8
+chcp 65001
+
+ECHO.
 ECHO # Building .NET platform
 REM vswhere is an optional component for Visual Studio and also installed with Build Tools. 
 REM vswhere will look for Community, Professional, and Enterprise editions of Visual Studio
