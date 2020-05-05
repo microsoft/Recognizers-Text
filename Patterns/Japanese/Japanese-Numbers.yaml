@@ -156,7 +156,7 @@ NumbersWithHalfDozen: !nestedRegex
   def: 半({RoundNumberIntegerRegex}|(ダース))
   references: [RoundNumberIntegerRegex]
 NumbersWithDozen: !nestedRegex
-  def: '{AllIntRegex}(ダース)([十百千万億兆])?(?!{AllIntRegex})'
+  def: '{AllIntRegex}\s*(ダース)\s*'
   references: [AllIntRegex]
 PointRegexStr: !simpleRegex
   def: '[\.．]'
