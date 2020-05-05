@@ -23,7 +23,7 @@ ECHO # Trying !MsBuildVersion! for VS2019
 if EXIST "%VSInstallDir%\MSBuild\!MsBuildVersion!\Bin\MSBuild.exe" (
 	SET MSBuild="%VSInstallDir%\MSBuild\!MsBuildVersion!\Bin\MSBuild.exe" %*
 ) else (
-	ECHO MSBuild !MSBuild! not found!
+	ECHO MSBuild !MsBuildVersion! not found!
 	ECHO.
 	
 	SET MsBuildVersion=15.0
