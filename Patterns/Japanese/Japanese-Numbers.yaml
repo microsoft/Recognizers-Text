@@ -129,7 +129,7 @@ PairRegex: .*[対膳足]$
 RoundNumberIntegerRegex: !simpleRegex
   def: '[十百千万億兆]'
 AllowListRegex: !simpleRegex
-  def: (。|，|、|（|）|”｜国|週間|時間|時|匹|キロ|トン|年|個|足|本|で|\s|$)
+  def: (。|，|、|（|）|”｜国|週間|時間|時|匹|キロ|トン|年|個|足|本|で|は|\s|$)
 NotSingleRegex: !nestedRegex
   def: (?<!(第|だい))(({RoundNumberIntegerRegex}+(({ZeroToNineIntegerRegex}|[十百千万億兆])+|{ZeroToNineFullHalfRegex}+|十)\s*))|(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*({RoundNumberIntegerRegex}\s*){1,2})\s*(([零]?({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*{RoundNumberIntegerRegex}{0,1})\s*)*\s*(\s*(以上)?)
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
@@ -137,7 +137,7 @@ SingleRegex: !nestedRegex
   def: (({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|十)(?={AllowListRegex}))
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, AllowListRegex]
 AllIntRegex: !nestedRegex
-  def: (((({ZeroToNineIntegerRegex}|[十百千])\s*{RoundNumberIntegerRegex}*)|({ZeroToNineFullHalfRegex}|{RoundNumberIntegerRegex})\s*){1,2}(\s*[以上])?)
+  def: (((({ZeroToNineIntegerRegex}|[十百千])\s*(と)?{RoundNumberIntegerRegex}*)|({ZeroToNineFullHalfRegex}|{RoundNumberIntegerRegex})\s*){1,2}(\s*[以上])?)
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
