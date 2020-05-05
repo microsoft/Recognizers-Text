@@ -527,6 +527,27 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var er = this.config.DatePointExtractor.Extract(text, reference);
 
+            if (er.Count == 0)
+            {
+                // Handle "now"
+                var matches = this.config.NowRegex.Matches(text);
+                if (matches.Count != 0)
+                {
+                    foreach (Match match in matches)
+                    {
+                        var nowEr = new ExtractResult
+                        {
+                            Start = match.Index,
+                            Length = match.Length,
+                            Text = text.Substring(match.Index, match.Length),
+                        };
+
+                        er.Add(nowEr);
+
+                    }
+                }
+            }
+
             // Filter out DateRange results that are part of DatePoint results
             // For example, "Feb 1st 2018" => "Feb" and "2018" should be filtered out here
             er.AddRange(simpleDateRangeResults

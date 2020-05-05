@@ -12823,5 +12823,55 @@
         }
       }
     ]
+  },
+  {
+    "Input": "This work is carried out between Jan 2019 and now",
+    "Context": {
+      "ReferenceDateTime": "2020-05-05T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between jan 2019 and now",
+        "Start": 25,
+        "End": 48,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2020-05-05,P490D)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-05-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This work is carried out between Jan 2019 and today",
+    "Context": {
+      "ReferenceDateTime": "2020-05-05T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between jan 2019 and today",
+        "Start": 25,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2020-05-05,P490D)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-05-05"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
