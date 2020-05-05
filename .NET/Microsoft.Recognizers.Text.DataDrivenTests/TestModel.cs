@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
     public enum Platform
     {
         /// <summary>
-        /// dotNet flag
+        /// .NET flag
         /// </summary>
         DotNet = 1,
 
@@ -36,15 +36,20 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             Context = new Dictionary<string, object>();
             Results = Enumerable.Empty<object>();
             Debug = false;
+            IgnoreResolution = false;
         }
 
         public string TestType { get; set; }
 
         public string Input { get; set; }
 
+        public string Comment { get; set; }
+
         public IDictionary<string, object> Context { get; set; }
 
         public bool Debug { get; set; }
+
+        public bool IgnoreResolution { get; set; }
 
         public Platform NotSupported { get; set; }
 

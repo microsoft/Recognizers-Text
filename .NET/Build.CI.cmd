@@ -15,16 +15,29 @@ for /f "usebackq tokens=*" %%i in (`!vswhere! -latest -products * -requires Micr
 )
 
 ECHO.
-SET MsBuildVersion=15.0
-ECHO # Finding MSBuild !MsBuildVersion!
+ECHO # Finding MSBuild
+
+SET MsBuildVersion=Current
+ECHO # Trying !MsBuildVersion! for VS2019
 
 if EXIST "%VSInstallDir%\MSBuild\!MsBuildVersion!\Bin\MSBuild.exe" (
-	SET MSBuild="%VSInstallDir%\MSBuild\15.0\Bin\MSBuild.exe" %*
-	ECHO Found MSBuild !MSBuild!
+	SET MSBuild="%VSInstallDir%\MSBuild\!MsBuildVersion!\Bin\MSBuild.exe" %*
 ) else (
-	ECHO "msbuild.exe" could not be found at "!VSInstallDir!"
-	EXIT /B
+	ECHO MSBuild !MSBuild! not found!
+	ECHO.
+	
+	SET MsBuildVersion=15.0
+	ECHO # Trying !MsBuildVersion! for VS2017
+
+	if EXIST "%VSInstallDir%\MSBuild\!MsBuildVersion!\Bin\MSBuild.exe" (
+		SET MSBuild="%VSInstallDir%\MSBuild\!MsBuildVersion!\Bin\MSBuild.exe" %*
+	) else (
+		ECHO "msbuild.exe" could not be found at "!VSInstallDir!"
+		EXIT /B
+	)
 )
+
+ECHO Found MSBuild !MSBuild!
 
 ECHO.
 ECHO # Check for empty and duplicate inputs in Specs
