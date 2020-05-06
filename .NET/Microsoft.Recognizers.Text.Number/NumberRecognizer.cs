@@ -81,7 +81,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected override void InitializeConfiguration()
         {
-            /*
+
             RegisterModel<NumberModel>(
                 Culture.Arabic,
                 (options) => new NumberModel(
@@ -109,7 +109,6 @@ namespace Microsoft.Recognizers.Text.Number
                     new BaseNumberRangeParser(new ArabicNumberRangeParserConfiguration(
                                                   new BaseNumberOptionsConfiguration(Culture.Arabic, options))),
                     new Arabic.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Arabic, options))));
-            */
 
             RegisterModel<NumberModel>(
                 Culture.English,

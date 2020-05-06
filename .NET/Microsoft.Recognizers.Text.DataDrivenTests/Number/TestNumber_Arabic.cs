@@ -8,7 +8,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
     {
         public static TestResources TestResources { get; protected set; }
 
-        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void NumberModel(TestModel testSpec)
@@ -16,12 +15,14 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             TestNumber(testSpec);
         }
 
+        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void OrdinalModel(TestModel testSpec)
         {
             TestNumber(testSpec);
         }
+        */
 
         [NetCoreTestDataSource]
         [TestMethod]
@@ -30,6 +31,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             TestNumber(testSpec);
         }
 
+        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void NumberRangeModel(TestModel testSpec)
@@ -37,5 +39,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             TestNumber(testSpec);
         }
         */
+
     }
 }
