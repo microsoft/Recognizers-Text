@@ -182,6 +182,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex NowRegex =
             new Regex(DateTimeDefinitions.NowRegex, RegexFlags);
 
+        public static readonly Regex SpecialDayRegex =
+            new Regex(DateTimeDefinitions.SpecialDayRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex FromRegex =
@@ -299,6 +302,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDatePeriodExtractorConfiguration.MonthNumRegex => MonthNumRegex;
 
         Regex IDatePeriodExtractorConfiguration.NowRegex => NowRegex;
+
+        Regex IDatePeriodExtractorConfiguration.SpecialDayRegex => SpecialDayRegex;
 
         bool IDatePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 

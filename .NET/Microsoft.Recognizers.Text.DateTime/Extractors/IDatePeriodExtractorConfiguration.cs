@@ -59,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex NowRegex { get; }
 
+        Regex SpecialDayRegex { get; }
+
         bool CheckBothBeforeAfter { get; }
 
         IDateExtractor DatePointExtractor { get; }

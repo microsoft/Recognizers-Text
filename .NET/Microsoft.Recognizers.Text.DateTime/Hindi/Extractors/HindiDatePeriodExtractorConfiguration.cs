@@ -60,6 +60,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public static readonly Regex NowRegex =
              new Regex(DateTimeDefinitions.NowRegex, RegexFlags);
 
+        public static readonly Regex SpecialDayRegex =
+             new Regex(DateTimeDefinitions.SpecialDayRegex, RegexFlags);
+
         // composite regexes
         public static readonly Regex SimpleCasesRegex =
             new Regex(DateTimeDefinitions.SimpleCasesRegex, RegexFlags);
@@ -326,6 +329,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         Regex IDatePeriodExtractorConfiguration.MonthNumRegex => MonthNumRegex;
 
         Regex IDatePeriodExtractorConfiguration.NowRegex => NowRegex;
+
+        Regex IDatePeriodExtractorConfiguration.SpecialDayRegex => SpecialDayRegex;
 
         bool IDatePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 

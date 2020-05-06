@@ -92,6 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             MoreThanRegex = EnglishDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = EnglishDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = EnglishDatePeriodExtractorConfiguration.NowRegex;
+            SpecialDayRegex = EnglishDatePeriodExtractorConfiguration.SpecialDayRegex;
 
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
@@ -201,6 +202,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex CenturySuffixRegex { get; }
 
         public Regex NowRegex { get; }
+
+        public Regex SpecialDayRegex { get; }
 
         Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 

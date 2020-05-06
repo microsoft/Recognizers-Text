@@ -60,6 +60,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public static readonly Regex NowRegex =
              new Regex(DateTimeDefinitions.NowRegex, RegexFlags);
 
+        public static readonly Regex SpecialDayRegex =
+             new Regex(DateTimeDefinitions.SpecialDayRegex, RegexFlags);
+
         public static readonly Regex RangePrefixRegex =
             new Regex(DateTimeDefinitions.RangePrefixRegex, RegexFlags);
 
@@ -329,6 +332,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         Regex IDatePeriodExtractorConfiguration.MonthNumRegex => MonthNumRegex;
 
         Regex IDatePeriodExtractorConfiguration.NowRegex => NowRegex;
+
+        Regex IDatePeriodExtractorConfiguration.SpecialDayRegex => SpecialDayRegex;
 
         bool IDatePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 

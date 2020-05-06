@@ -687,14 +687,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Success = true;
                 }
 
-                if (dateContext != null && text != "today")
+                // check if text includes special day
+                var specialDayMatch = this.config.SpecialDayRegex.Match(text);
+
+                if (dateContext != null && !specialDayMatch.Success)
                 {
                     ret = dateContext.ProcessDateEntityResolution(ret);
                 }
             }
             else
             {
-                // Handle "now"
+                // Handle "now" as date range/period boundary
                 var nowPr = ParseNowAsDate(text, referenceDate);
                 if (nowPr.Value != null)
                 {

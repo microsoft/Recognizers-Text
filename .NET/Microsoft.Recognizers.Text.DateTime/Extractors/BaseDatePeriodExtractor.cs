@@ -529,7 +529,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (er.Count == 0)
             {
-                // Handle "now"
+                // Handle "now" as a possible date point for ranges, as it's a datetime.
                 var matches = this.config.NowRegex.Matches(text);
                 if (matches.Count != 0)
                 {
