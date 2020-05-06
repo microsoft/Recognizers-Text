@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Definitions
       public const string MinYearNum = @"1500";
       public const string MaxYearNum = @"2100";
       public const string MaxTwoDigitYearFutureNum = @"30";
-      public const string MinTwoDigitYearPastNum = @"70";
+      public const string MinTwoDigitYearPastNum = @"40";
       public static readonly Dictionary<string, int> DayOfMonthDictionary = new Dictionary<string, int>
         {
             { @"01", 1 },

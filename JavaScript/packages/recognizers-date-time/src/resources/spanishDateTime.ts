@@ -24,7 +24,7 @@ export namespace SpanishDateTime {
     export const OfPrepositionRegex = `(do|da|del|de)`;
     export const AfterNextSuffixRegex = `\\b(que\\s+viene|pasad[oa])\\b`;
     export const RangePrefixRegex = `((desde|de|entre)\\s+(la(s)?\\s+)?)`;
-    export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
+    export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
     export const RelativeRegex = `(?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fin(ales)?\\s+de(\\s+la)?)?)|(fin(ales)?\\s+de(\\s+la)?))\\b`;
     export const StrictRelativeRegex = `(?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fin(ales)?\\s+de(\\s+la)?)?)|(fin(ales)?\\s+de(\\s+la)?))\\b`;
     export const WrittenOneToNineRegex = `(uno|un|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)`;
