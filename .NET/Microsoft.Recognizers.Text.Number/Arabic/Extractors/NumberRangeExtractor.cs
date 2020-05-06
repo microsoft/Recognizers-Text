@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Arabic;
@@ -10,6 +12,12 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture | RegexOptions.RightToLeft;
 
+        private readonly BaseNumberExtractor numberExtractor;
+
+        private readonly BaseNumberExtractor ordinalExtractor;
+
+        private readonly BaseNumberParser numberParser;
+
         public NumberRangeExtractor(INumberOptionsConfiguration config)
             : base(
                    NumberExtractor.GetInstance(new BaseNumberOptionsConfiguration(config.Culture, config.Options)),
@@ -17,6 +25,10 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
                    new BaseNumberParser(new ArabicNumberParserConfiguration(config)),
                    config)
         {
+
+            this.numberExtractor = NumberExtractor.GetInstance(new BaseNumberOptionsConfiguration(config.Culture, config.Options));
+            this.ordinalExtractor = OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(config.Culture, config.Options));
+            this.numberParser = new BaseNumberParser(new ArabicNumberParserConfiguration(config));
 
             var regexes = new Dictionary<Regex, string>()
             {

@@ -4348,7 +4348,7 @@
     "Input": "1 في واحد و عشرون",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, python, dotnet",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1 في واحد و عشرون",
@@ -4425,7 +4425,7 @@
     "Input": "سيتم التعرف على 423 0000 كرقمين.",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, python, dotnet",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "423",
@@ -4494,7 +4494,7 @@
     "Input": "هل من وقت للاجتماع في 5/17/2018؟",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, dotnet",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "5",
@@ -4529,7 +4529,7 @@
     "Input": "رقم هاتفي هو +1-222-2222/2222",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, java, dotnet",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1",
@@ -4597,7 +4597,7 @@
     "Input": "يمكنني أن أعطيك 310 يوان",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, java, python, dotnet",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "310",
@@ -4735,7 +4735,7 @@
     "Input": "ثلاثمائة و واحد رقم صالح",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, java, python, dotnet",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "ثلاثمائة و واحد",
@@ -4752,7 +4752,7 @@
     "Input": "الشخص الذي ذكرته غير صالح",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, java, python, dotnet",
+    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -4773,14 +4773,14 @@
     "Input": "هذا جيد حقاً",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, java, python, dotnet",
+    "NotSupported": "dotnet",
     "Results": []
   },
   {
     "Input": "في بعض البلدان يمكنك كتابة 5.00 أو 5,00.",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "java, dotnet",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "5.00",
