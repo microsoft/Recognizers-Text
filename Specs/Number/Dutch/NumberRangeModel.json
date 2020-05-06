@@ -1,8 +1,7 @@
 [
   {
-    "Input": "10-1995",
+    "Input": "1995-01",
     "Results": [],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -16,7 +15,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -26,11 +24,10 @@
         "Text": "tussen de 20 en 30",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(20,30)"
+          "value": "[20,30)"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -40,11 +37,10 @@
         "Text": "tussen de tiende en de vijftiende",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(10,15)"
+          "value": "[10,15)"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -54,11 +50,10 @@
         "Text": "tussen min tien en vijftien",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(-10,15)"
+          "value": "[-10,15)"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -85,7 +80,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -99,21 +93,19 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Er zijn maximum 100 appels en op zijn minst 20 appels.",
+    "Input": "Er zijn maximum 100 en op zijn minst 20 appels.",
     "Results": [
       {
-        "Text": "maximum 100 appels en op zijn minst 20",
+        "Text": "maximum 100 en op zijn minst 20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,100]"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -140,7 +132,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -154,7 +145,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -168,7 +158,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -195,7 +184,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -274,7 +262,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -419,7 +406,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -492,7 +478,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -532,7 +517,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -546,7 +530,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -560,7 +543,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -594,7 +576,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -628,7 +609,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -655,7 +635,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -689,7 +668,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -710,7 +688,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   }
 ]

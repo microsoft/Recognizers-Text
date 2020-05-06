@@ -41,6 +41,11 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
                     NumberRangeConstants.TWONUMTILL
                 },
                 {
+                    // from ... to/~/- ...
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex5, RegexFlags),
+                    NumberRangeConstants.TWONUMCLOSED
+                },
+                {
                     // more/greater/higher than ...
                     new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1, RegexFlags),
                     NumberRangeConstants.MORE
