@@ -199,7 +199,7 @@ namespace Microsoft.Recognizers.Text.Number
             for (var i = 0; i < handle.Length; i++)
             {
                 var ch = handle[i];
-                if (ch == '^' || ch == 'E')
+                if (ch == '^' || ch == 'E' || ch == '乗')
                 {
                     if (isNegative)
                     {
