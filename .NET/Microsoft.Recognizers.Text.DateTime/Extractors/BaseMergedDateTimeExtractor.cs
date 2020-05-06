@@ -336,12 +336,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!success)
                 {
-                    TryMergeModifierToken(er, config.AroundRegex, text);
+                    success = TryMergeModifierToken(er, config.AroundRegex, text);
                 }
 
                 if (!success)
                 {
-                    TryMergeModifierToken(er, config.EqualRegex, text);
+                    success = TryMergeModifierToken(er, config.EqualRegex, text);
                 }
 
                 if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal) ||
@@ -351,34 +351,38 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // 2012 or after/above, 3 pm or later
                     var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0));
 
-                    var match = config.SuffixAfterRegex.MatchBegin(afterStr.TrimStart(), trim: true);
-
-                    if (match.Success)
+                    if (afterStr.Length > 1)
                     {
-                        var isFollowedByOtherEntity = true;
 
-                        if (match.Length == afterStr.Trim().Length)
-                        {
-                            isFollowedByOtherEntity = false;
-                        }
-                        else
-                        {
-                            var nextStr = afterStr.Trim().Substring(match.Length).Trim();
-                            var nextEr = ers.FirstOrDefault(t => t.Start > er.Start);
+                        var match = config.SuffixAfterRegex.MatchBegin(afterStr.TrimStart(), trim: true);
 
-                            if (nextEr == null || !nextStr.StartsWith(nextEr.Text))
+                        if (match.Success)
+                        {
+                            var isFollowedByOtherEntity = true;
+
+                            if (match.Length == afterStr.Trim().Length)
                             {
                                 isFollowedByOtherEntity = false;
                             }
-                        }
+                            else
+                            {
+                                var nextStr = afterStr.Trim().Substring(match.Length).Trim();
+                                var nextEr = ers.FirstOrDefault(t => t.Start > er.Start);
 
-                        if (!isFollowedByOtherEntity)
-                        {
-                            var modLength = match.Length + afterStr.IndexOf(match.Value, StringComparison.Ordinal);
-                            er.Length += modLength;
-                            er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                                if (nextEr == null || !nextStr.StartsWith(nextEr.Text))
+                                {
+                                    isFollowedByOtherEntity = false;
+                                }
+                            }
 
-                            er.Metadata = AssignModMetadata(er.Metadata);
+                            if (!isFollowedByOtherEntity)
+                            {
+                                var modLength = match.Length + afterStr.IndexOf(match.Value, StringComparison.Ordinal);
+                                er.Length += modLength;
+                                er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                                er.Metadata = AssignModMetadata(er.Metadata);
+                            }
                         }
                     }
                 }

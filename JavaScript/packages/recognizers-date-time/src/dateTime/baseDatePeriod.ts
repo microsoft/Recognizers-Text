@@ -86,39 +86,55 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
     }
 
     private getYearFromText(match: Match): number {
-        let firstTwoYearNumStr = match.groups('firsttwoyearnum').value;
-        if (!StringUtility.isNullOrEmpty(firstTwoYearNumStr)) {
-            let er = new ExtractResult();
-            er.text = firstTwoYearNumStr;
-            er.start = match.groups('firsttwoyearnum').index;
-            er.length = match.groups('firsttwoyearnum').length;
 
-            let firstTwoYearNum = Number.parseInt(this.config.numberParser.parse(er).value);
+        let year = -1;
 
-            let lastTwoYearNum = 0;
-            let lastTwoYearNumStr = match.groups('lasttwoyearnum').value;
-            if (!StringUtility.isNullOrEmpty(lastTwoYearNumStr)) {
-                er.text = lastTwoYearNumStr;
-                er.start = match.groups('lasttwoyearnum').index;
-                er.length = match.groups('lasttwoyearnum').length;
-
-                lastTwoYearNum = Number.parseInt(this.config.numberParser.parse(er).value);
+        let yearStr = match.groups('year').value;
+        if (!StringUtility.isNullOrEmpty(yearStr)) {
+            year = Number.parseInt(yearStr);
+            if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
+            {
+                year += 1900;
             }
-
-            if (firstTwoYearNum < 100 && lastTwoYearNum === 0 || firstTwoYearNum < 100 && firstTwoYearNum % 10 === 0 && lastTwoYearNumStr.trim().split(' ').length === 1) {
-                return -1;
-            }
-
-            if (firstTwoYearNum >= 100) {
-                return (firstTwoYearNum + lastTwoYearNum);
-            }
-            else {
-                return (firstTwoYearNum * 100 + lastTwoYearNum);
+            else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
+            {
+                year += 2000;
             }
         }
-        else {
-            return -1;
+        else { 
+            let firstTwoYearNumStr = match.groups('firsttwoyearnum').value;
+            if (!StringUtility.isNullOrEmpty(firstTwoYearNumStr)) {
+                let er = new ExtractResult();
+                er.text = firstTwoYearNumStr;
+                er.start = match.groups('firsttwoyearnum').index;
+                er.length = match.groups('firsttwoyearnum').length;
+
+                let firstTwoYearNum = Number.parseInt(this.config.numberParser.parse(er).value);
+
+                let lastTwoYearNum = 0;
+                let lastTwoYearNumStr = match.groups('lasttwoyearnum').value;
+                if (!StringUtility.isNullOrEmpty(lastTwoYearNumStr)) {
+                    er.text = lastTwoYearNumStr;
+                    er.start = match.groups('lasttwoyearnum').index;
+                    er.length = match.groups('lasttwoyearnum').length;
+
+                    lastTwoYearNum = Number.parseInt(this.config.numberParser.parse(er).value);
+                }
+
+                if (firstTwoYearNum < 100 && lastTwoYearNum === 0 || firstTwoYearNum < 100 && firstTwoYearNum % 10 === 0 && lastTwoYearNumStr.trim().split(' ').length === 1) {
+                    year = -1;
+                }
+
+                if (firstTwoYearNum >= 100) {
+                    year = (firstTwoYearNum + lastTwoYearNum);
+                }
+                else {
+                    year = (firstTwoYearNum * 100 + lastTwoYearNum);
+                }
+            }
         }
+
+        return year;
     }
 
     protected mergeTwoTimePoints(source: string, refDate: Date): Token[] {

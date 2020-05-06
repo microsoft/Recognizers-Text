@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string RelativeDecadeRegex = $@"\b((((il?|l'|gli)\s*)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?decennio?)|(((il?|l'|gli)\s*)?((?<number>[\w,]+)\s+)?decennio?\s+{RelativeRegex}))\b";
       public static readonly string LastTwoYearNumRegex = $@"({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}({WrittenOneToNineRegex})?)";
       public static readonly string FullTextYearRegex = $@"\b((?<firsttwoyearnum>{WrittenCenturyFullYearRegex})(?<lasttwoyearnum>{LastTwoYearNumRegex})?)\b";
-      public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
+      public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
       public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})";
       public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
       public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";

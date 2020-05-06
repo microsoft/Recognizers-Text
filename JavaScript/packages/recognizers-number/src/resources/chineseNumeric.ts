@@ -117,6 +117,7 @@ export namespace ChineseNumeric {
     export const TwoNumberRangeRegex2 = `(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2}|${OneNumberRangeMoreRegex3})\\s*(且|(并|並)且?|而且|((的)?同時)|((的)?同时)|[,，])?\\s*(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2}|${OneNumberRangeLessRegex3})`;
     export const TwoNumberRangeRegex3 = `(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2}|${OneNumberRangeLessRegex3})\\s*(且|(并|並)且?|而且|((的)?同時)|((的)?同时)|[,，])?\\s*(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2}|${OneNumberRangeMoreRegex3})`;
     export const TwoNumberRangeRegex4 = `(?<number1>((?!(([,，](?!\\d+))|。)).)+)\\s*${TillRegex}\\s*(?<number2>((?!(([,，](?!\\d+))|。)).)+)`;
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["十", "十足"]]);
     export const AmbiguousFractionConnectorsRegex = `^[.]`;
     export const RelativeReferenceOffsetMap: ReadonlyMap<string, string> = new Map<string, string>([["", ""]]);
     export const RelativeReferenceRelativeToMap: ReadonlyMap<string, string> = new Map<string, string>([["", ""]]);

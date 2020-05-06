@@ -464,6 +464,10 @@ public class ChineseNumeric {
     public static final String TwoNumberRangeRegex4 = "(?<number1>((?!(([,，](?!\\d+))|。)).)+)\\s*{TillRegex}\\s*(?<number2>((?!(([,，](?!\\d+))|。)).)+)"
             .replace("{TillRegex}", TillRegex);
 
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("十", "十足")
+        .build();
+
     public static final String AmbiguousFractionConnectorsRegex = "^[.]";
 
     public static final ImmutableMap<String, String> RelativeReferenceOffsetMap = ImmutableMap.<String, String>builder()

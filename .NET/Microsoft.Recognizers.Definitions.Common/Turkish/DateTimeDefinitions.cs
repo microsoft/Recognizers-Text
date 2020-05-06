@@ -54,13 +54,13 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string LastTwoYearNumRegex = $@"({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)";
       public static readonly string FullTextYearRegex = $@"\b(((?<firsttwoyearnum>{CenturyRegex})\s*)(?<lasttwoyearnum>{LastTwoYearNumRegex})|(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|(iki\s*)?bin))";
       public static readonly string FullTextAtYearRegex = $@"\b((({WrittenCenturyFullYearRegex}|(iki\s+)?bin)\s+)?(((on|yirmi|otuz|kırk|elli|altmış|yetmiş|seksen|doksan)\s+)?(birde|ikide|üçte|dörtte|beşte|altıda|yedide|sekizde|dokuzda)|onda|yirmide|otuzda|kırkta|ellide|altmışta|yetmişte|seksende|doksanda)|{WrittenCenturyFullYearRegex}de|(iki\s)?binde)\b";
-      public const string OclockRegex = @"(?<oclock>saat|saat tam)";
+      public const string OclockRegex = @"(?<oclock>saat(\s+tam)?)";
       public const string SpecialDescRegex = @"((?<ipm>)p\b)";
       public static readonly string AmDescRegex = $@"({BaseDateTime.BaseAmDescRegex})";
       public static readonly string PmDescRegex = $@"({BaseDateTime.BasePmDescRegex})";
       public static readonly string AmPmDescRegex = $@"({BaseDateTime.BaseAmPmDescRegex})";
       public static readonly string DescRegex = $@"((({OclockRegex}\s+)?(?<desc>({AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})))|{OclockRegex})";
-      public const string TwoDigitYearRegex = @"\b(?<![$])(?<year>([0-27-9]\d))\b";
+      public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
       public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}('a\b)?|{FullTextYearRegex})";
       public const string WeekDayRegex = @"\b(?<weekday>pazartesi(leri|si)?|salı(ları|sı)?|çarşamba(ları|sı)?|perşembe(leri|si)?|cuma(ları|sı)?|cumartesi(leri|si)?|pazar(ları|ı)?|pzt|sal|çrş|per|cum|cmt|paz)(\s+günü)?\b";
       public const string SingleWeekDayRegex = @"\b(?<weekday>pazartesi|salı|çarşamba|perşembe|cuma|cumartesi|pazar|pzt|sal|çrş|per|cum|cmt|paz)\b";

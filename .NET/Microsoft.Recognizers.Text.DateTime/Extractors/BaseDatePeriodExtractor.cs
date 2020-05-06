@@ -534,6 +534,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             er = er.OrderBy(t => t.Start).ToList();
 
+            // Handle "now"
+            er = MatchNow(text, er);
+
             return MergeMultipleExtractions(text, er);
         }
 
@@ -542,24 +545,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var er = this.config.DatePointExtractor.Extract(text, reference);
 
             // Handle "now"
-            var matches = this.config.NowRegex.Matches(text);
-            if (matches.Count != 0)
-            {
-                foreach (Match match in matches)
-                {
-                    var nowEr = new ExtractResult
-                    {
-                        Start = match.Index,
-                        Length = match.Length,
-                        Text = text.Substring(match.Index, match.Length),
-                    };
-
-                    er.Add(nowEr);
-
-                }
-
-                er = er.OrderBy(o => o.Start).ToList();
-            }
+            er = MatchNow(text, er);
 
             return MergeMultipleExtractions(text, er);
         }
@@ -792,6 +778,31 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return tokens;
+        }
+
+        // Handle cases with "now"
+        private List<ExtractResult> MatchNow(string text, List<ExtractResult> er)
+        {
+            var matches = this.config.NowRegex.Matches(text);
+            if (matches.Count != 0)
+            {
+                foreach (Match match in matches)
+                {
+                    var nowEr = new ExtractResult
+                    {
+                        Start = match.Index,
+                        Length = match.Length,
+                        Text = text.Substring(match.Index, match.Length),
+                    };
+
+                    er.Add(nowEr);
+
+                }
+
+                er = er.OrderBy(o => o.Start).ToList();
+            }
+
+            return er;
         }
     }
 }

@@ -112,7 +112,7 @@ public class EnglishDateTime {
             .replace("{AmPmDescRegex}", AmPmDescRegex)
             .replace("{SpecialDescRegex}", SpecialDescRegex);
 
-    public static final String TwoDigitYearRegex = "\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b"
+    public static final String TwoDigitYearRegex = "\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b"
             .replace("{AmDescRegex}", AmDescRegex)
             .replace("{PmDescRegex}", PmDescRegex);
 
@@ -736,7 +736,7 @@ public class EnglishDateTime {
     public static final String AfterRegex = "((\\b{InclusiveModPrepositions}?((after|(starting|beginning)(\\s+on)?(?!\\sfrom)|(?<!no\\s+)later than)|(year greater than))(?!\\s+or equal to){InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|<)((?<include>>\\s*=)|>))(\\s+the)?"
             .replace("{InclusiveModPrepositions}", InclusiveModPrepositions);
 
-    public static final String SinceRegex = "(?:(?:\\b(?:since|after\\s+or\\s+equal\\s+to|starting\\s+(?:from|on|with)|as\\s+early\\s+as|(any\\s+time\\s+)?from)\\b\\s*)|(?<!\\w|<)(>=))";
+    public static final String SinceRegex = "(?:(?:\\b(?:since|after\\s+or\\s+equal\\s+to|starting\\s+(?:from|on|with)|as\\s+early\\s+as|(any\\s+time\\s+)?from)\\b\\s*)|(?<!\\w|<)(>=))(the)?";
 
     public static final String AroundRegex = "(?:\\b(?:around|circa)\\s*\\b)";
 
@@ -828,9 +828,10 @@ public class EnglishDateTime {
 
     public static final String OneOnOneRegex = "\\b(1\\s*:\\s*1(?!\\d))|(one (on )?one|one\\s*-\\s*one|one\\s*:\\s*one)\\b";
 
-    public static final String LaterEarlyPeriodRegex = "\\b(({PrefixPeriodRegex})\\s*\\b\\s*(?<suffix>{OneWordPeriodRegex})|({UnspecificEndOfRangeRegex}))\\b"
+    public static final String LaterEarlyPeriodRegex = "\\b(({PrefixPeriodRegex})\\s*\\b\\s*(?<suffix>{OneWordPeriodRegex}|(?<FourDigitYear>{BaseDateTime.FourDigitYearRegex}))|({UnspecificEndOfRangeRegex}))\\b"
             .replace("{PrefixPeriodRegex}", PrefixPeriodRegex)
             .replace("{OneWordPeriodRegex}", OneWordPeriodRegex)
+            .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex)
             .replace("{UnspecificEndOfRangeRegex}", UnspecificEndOfRangeRegex);
 
     public static final String WeekWithWeekDayRangeRegex = "\\b((?<week>({NextPrefixRegex}|{PreviousPrefixRegex}|this)\\s+week)((\\s+between\\s+{WeekDayRegex}\\s+and\\s+{WeekDayRegex})|(\\s+from\\s+{WeekDayRegex}\\s+to\\s+{WeekDayRegex})))\\b"

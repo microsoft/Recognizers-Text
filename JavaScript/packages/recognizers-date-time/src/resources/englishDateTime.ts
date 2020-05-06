@@ -45,7 +45,7 @@ export namespace EnglishDateTime {
     export const PmDescRegex = `(:?${BaseDateTime.BasePmDescRegex})`;
     export const AmPmDescRegex = `(:?${BaseDateTime.BaseAmPmDescRegex})`;
     export const DescRegex = `(:?(:?(${OclockRegex}\\s+)?(?<desc>(${AmPmDescRegex}|${AmDescRegex}|${PmDescRegex}|${SpecialDescRegex})))|${OclockRegex})`;
-    export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
+    export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
     export const YearRegex = `(?:${BaseDateTime.FourDigitYearRegex}|${FullTextYearRegex})`;
     export const WeekDayRegex = `\\b(?<weekday>(?:sun|mon|tues?|thurs?|fri)(day)?|thu|wedn(esday)?|weds?|sat(urday)?)s?\\b`;
     export const SingleWeekDayRegex = `\\b(?<weekday>sunday|saturday|(?:mon|tues?|thurs?|fri)(day)?|thu|wedn(esday)?|weds?|((?<=on\\s+)(sat|sun)))\\b`;
@@ -217,7 +217,7 @@ export namespace EnglishDateTime {
     export const InclusiveModPrepositions = `(?<include>((on|in|at)\\s+or\\s+)|(\\s+or\\s+(on|in|at)))`;
     export const BeforeRegex = `((\\b${InclusiveModPrepositions}?(?:before|in\\s+advance\\s+of|prior\\s+to|(no\\s+later|earlier|sooner)\\s+than|ending\\s+(with|on)|by|(un)?till?|(?<include>as\\s+late\\s+as))${InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|>)((?<include><\\s*=)|<))(\\s+the)?`;
     export const AfterRegex = `((\\b${InclusiveModPrepositions}?((after|(starting|beginning)(\\s+on)?(?!\\sfrom)|(?<!no\\s+)later than)|(year greater than))(?!\\s+or equal to)${InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|<)((?<include>>\\s*=)|>))(\\s+the)?`;
-    export const SinceRegex = `(?:(?:\\b(?:since|after\\s+or\\s+equal\\s+to|starting\\s+(?:from|on|with)|as\\s+early\\s+as|(any\\s+time\\s+)?from)\\b\\s*)|(?<!\\w|<)(>=))`;
+    export const SinceRegex = `(?:(?:\\b(?:since|after\\s+or\\s+equal\\s+to|starting\\s+(?:from|on|with)|as\\s+early\\s+as|(any\\s+time\\s+)?from)\\b\\s*)|(?<!\\w|<)(>=))(the)?`;
     export const AroundRegex = `(?:\\b(?:around|circa)\\s*\\b)`;
     export const AgoRegex = `\\b(ago|before\\s+(?<day>yesterday|today))\\b`;
     export const LaterRegex = `\\b(?:later(?!((\\s+in)?\\s*${OneWordPeriodRegex})|(\\s+${TimeOfDayRegex}))|from now|(from|after) (?<day>tomorrow|tmr|today))\\b`;
@@ -248,7 +248,7 @@ export namespace EnglishDateTime {
     export const AmbiguousRangeModifierPrefix = `(from)`;
     export const NumberEndingPattern = `^(?:\\s+(?<meeting>meeting|appointment|conference|((skype|teams)\\s+)?call)\\s+to\\s+(?<newTime>${PeriodHourNumRegex}|${HourRegex})([\\.]?$|(\\.,|,|!|\\?)))`;
     export const OneOnOneRegex = `\\b(1\\s*:\\s*1(?!\\d))|(one (on )?one|one\\s*-\\s*one|one\\s*:\\s*one)\\b`;
-    export const LaterEarlyPeriodRegex = `\\b((${PrefixPeriodRegex})\\s*\\b\\s*(?<suffix>${OneWordPeriodRegex})|(${UnspecificEndOfRangeRegex}))\\b`;
+    export const LaterEarlyPeriodRegex = `\\b((${PrefixPeriodRegex})\\s*\\b\\s*(?<suffix>${OneWordPeriodRegex}|(?<FourDigitYear>${BaseDateTime.FourDigitYearRegex}))|(${UnspecificEndOfRangeRegex}))\\b`;
     export const WeekWithWeekDayRangeRegex = `\\b((?<week>(${NextPrefixRegex}|${PreviousPrefixRegex}|this)\\s+week)((\\s+between\\s+${WeekDayRegex}\\s+and\\s+${WeekDayRegex})|(\\s+from\\s+${WeekDayRegex}\\s+to\\s+${WeekDayRegex})))\\b`;
     export const GeneralEndingRegex = `^\\s*((\\.,)|\\.|,|!|\\?)?\\s*$`;
     export const MiddlePauseRegex = `\\s*(,)\\s*`;

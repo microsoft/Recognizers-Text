@@ -91,7 +91,6 @@ LastTwoYearNumRegex: !nestedRegex
 FullTextYearRegex: !nestedRegex
   def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+सौ(\s+और)?))
   references: [ CenturyRegex, WrittenCenturyFullYearRegex, WrittenCenturyOrdinalYearRegex, LastTwoYearNumRegex ]
-# As month number can't be 0, so add (?!\.0\b) to filter out some wrong cases
 OclockRegex: !simpleRegex
   def: (?<oclock>अराउंड|लगभग|बजे|ओक्लॉक|o\s*((’|‘|')\s*)?clock)
 AmDescRegex: !nestedRegex
@@ -111,7 +110,7 @@ DescRegexA: !nestedRegex
   references: [ OclockRegex, BaseDateTime.BaseAmDescRegex, BaseDateTime.BasePmDescRegex, AmPmDescRegex ]
 # Exclude cases that include the "Am/Pm" suffix
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))
+  def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))
   references: [ AmDescRegex, PmDescRegex]
 YearRegex: !nestedRegex
   def: (?:{BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
