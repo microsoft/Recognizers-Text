@@ -15439,7 +15439,7 @@
     "Context": {
       "ReferenceDateTime": "2020-04-26T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "between jan 2019 and today",
@@ -15464,7 +15464,7 @@
     "Context": {
       "ReferenceDateTime": "2020-04-26T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "between jan 2019 and tomorrow",
@@ -15489,7 +15489,7 @@
     "Context": {
       "ReferenceDateTime": "2020-04-26T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "between jan 2019 and now",
