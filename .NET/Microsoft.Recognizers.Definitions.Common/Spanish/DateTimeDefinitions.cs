@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string OfPrepositionRegex = @"(do|da|del|de)";
       public const string AfterNextSuffixRegex = @"\b(que\s+viene|pasad[oa])\b";
       public const string RangePrefixRegex = @"((desde|de|entre)\s+(la(s)?\s+)?)";
-      public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
+      public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
       public const string RelativeRegex = @"(?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fin(ales)?\s+de(\s+la)?)?)|(fin(ales)?\s+de(\s+la)?))\b";
       public const string StrictRelativeRegex = @"(?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fin(ales)?\s+de(\s+la)?)?)|(fin(ales)?\s+de(\s+la)?))\b";
       public const string WrittenOneToNineRegex = @"(uno|un|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)";

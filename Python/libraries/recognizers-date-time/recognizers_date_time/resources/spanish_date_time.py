@@ -27,7 +27,7 @@ class SpanishDateTime:
     OfPrepositionRegex = f'(do|da|del|de)'
     AfterNextSuffixRegex = f'\\b(que\\s+viene|pasad[oa])\\b'
     RangePrefixRegex = f'((desde|de|entre)\\s+(la(s)?\\s+)?)'
-    TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b'
+    TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b'
     RelativeRegex = f'(?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fin(ales)?\\s+de(\\s+la)?)?)|(fin(ales)?\\s+de(\\s+la)?))\\b'
     StrictRelativeRegex = f'(?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fin(ales)?\\s+de(\\s+la)?)?)|(fin(ales)?\\s+de(\\s+la)?))\\b'
     WrittenOneToNineRegex = f'(uno|un|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)'

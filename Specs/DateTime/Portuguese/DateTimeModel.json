@@ -463,5 +463,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "O movimento de maio de 68, em França, foi marcante!",
+    "Context": {
+      "ReferenceDateTime": "2019-12-19T01:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "maio de 68",
+        "Start": 15,
+        "End": 24,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1968-05",
+              "type": "daterange",
+              "start": "1968-05-01",
+              "end": "1968-06-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

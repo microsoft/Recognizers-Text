@@ -30,7 +30,7 @@ class BaseDateTime:
     MinYearNum = '1500'
     MaxYearNum = '2100'
     MaxTwoDigitYearFutureNum = '30'
-    MinTwoDigitYearPastNum = '70'
+    MinTwoDigitYearPastNum = '40'
     DayOfMonthDictionary = dict([("01", 1),
                                  ("02", 2),
                                  ("03", 3),
