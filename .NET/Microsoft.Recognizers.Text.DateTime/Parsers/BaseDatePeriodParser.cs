@@ -1446,8 +1446,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
-                pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
-                pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
+                var specialMatchPr1 = this.config.SpecialDayRegex.Match(pr1.Text);
+                var specialMatchPr2 = this.config.SpecialDayRegex.Match(pr2.Text);
+
+                if (!specialMatchPr1.Success)
+                {
+                    pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
+                }
+
+                if (!specialMatchPr2.Success)
+                {
+                    pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
+                }
             }
 
             ret.SubDateTimeEntities = new List<object> { pr1, pr2 };
