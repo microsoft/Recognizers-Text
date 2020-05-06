@@ -2131,5 +2131,53 @@
         }
       }
     ]
+  },
+  {
+    "Input": "En juillet 98, la France a remporté le mondial de football.",
+    "Context": {
+      "ReferenceDateTime": "2019-08-12T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "juillet 98",
+        "Start": 3,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1998-07",
+              "type": "daterange",
+              "start": "1998-07-01",
+              "end": "1998-08-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Merci d'envoyer ce message à l'adresse suivante avant le 15.05.99 : Martin Dupont 1 Rue de France",
+    "Context": {
+      "ReferenceDateTime": "2019-08-12T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "15.05.99",
+        "Start": 57,
+        "End": 64,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1999-05-15",
+              "type": "date",
+              "value": "1999-05-15"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
