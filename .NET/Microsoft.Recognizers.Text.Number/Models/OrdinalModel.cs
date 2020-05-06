@@ -7,6 +7,11 @@
         {
         }
 
+        public OrdinalModel(IParser parser, IExtractor extractor, bool recode)
+            : base(parser, extractor, recode)
+        {
+        }
+
         public override string ModelTypeName => Constants.MODEL_ORDINAL;
     }
 }

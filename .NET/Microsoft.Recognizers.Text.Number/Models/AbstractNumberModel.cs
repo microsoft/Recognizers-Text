@@ -9,12 +9,19 @@ namespace Microsoft.Recognizers.Text.Number
     public abstract class AbstractNumberModel : IModel
     {
         // Languages supporting subtypes in the resolution to be added here
-        private static readonly List<string> ExtractorsSupportingSubtype = new List<string> { Constants.ENGLISH, Constants.SWEDISH, Constants.ARABIC };
+        private static readonly List<string> ExtractorsSupportingSubtype = new List<string> { Constants.ENGLISH, Constants.SWEDISH, Constants.ARABIC, Constants.JAPANESE_SUBS };
 
         protected AbstractNumberModel(IParser parser, IExtractor extractor)
         {
             this.Parser = parser;
             this.Extractor = extractor;
+        }
+
+        protected AbstractNumberModel(IParser parser, IExtractor extractor, bool recode)
+        {
+            this.Parser = parser;
+            this.Extractor = extractor;
+            this.Recode = recode;
         }
 
         public abstract string ModelTypeName { get; }
@@ -23,12 +30,14 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected IParser Parser { get; private set; }
 
+        protected bool Recode { get; private set; } = true;
+
         public List<ModelResult> Parse(string query)
         {
             var parsedNumbers = new List<ParseResult>();
 
             // Preprocess the query
-            query = QueryProcessor.Preprocess(query, caseSensitive: true);
+            query = QueryProcessor.Preprocess(query, caseSensitive: true, this.Recode);
 
             try
             {

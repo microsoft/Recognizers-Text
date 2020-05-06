@@ -111,6 +111,13 @@ namespace Microsoft.Recognizers.Text.Number
                 }
             }
 
+            //// Added to determine the subtype
+            if (ret != null)
+            {
+                ret.Type = DetermineType(extResult);
+                ret.Text = ret.Text.ToLowerInvariant();
+            }
+
             return ret;
         }
 

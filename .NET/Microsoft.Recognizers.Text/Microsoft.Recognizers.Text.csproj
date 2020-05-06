@@ -10,7 +10,7 @@
   <PropertyGroup>
 	  <!--
 		Make sure any documentation comments which are included in code get checked for syntax during the build, but do
-		not report warnings for missing comments.
+		not report warnings for missing comments .
 
 		CS1573: Parameter 'parameter' has no matching param tag in the XML comment for 'parameter' (but other parameters do)
 		CS1591: Missing XML comment for publicly visible type or member 'Type_or_Member'

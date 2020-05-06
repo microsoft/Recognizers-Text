@@ -290,21 +290,21 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new JapaneseNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Japanese, options))),
-                    new Japanese.NumberExtractor()));
+                    new Japanese.NumberExtractor(), false));
 
             RegisterModel<OrdinalModel>(
                 Culture.Japanese,
                 (options) => new OrdinalModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new JapaneseNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Japanese, options))),
-                    new Japanese.OrdinalExtractor()));
+                    new Japanese.OrdinalExtractor(), false));
 
             RegisterModel<PercentModel>(
                 Culture.Japanese,
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new JapaneseNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Japanese, options))),
-                    new Japanese.PercentageExtractor()));
+                    new Japanese.PercentageExtractor(), false));
 
             /*
             RegisterModel<NumberRangeModel>(
