@@ -2,7 +2,8 @@
   {
     "Input": "تجده في الصفحة ال١٩٢",
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
+    "Comment" : "IgnoreResolution should only be used momentarily and as support for new pre-approved languages is added.",
     "Results": [
       {
         "Text": "١٩٢",
