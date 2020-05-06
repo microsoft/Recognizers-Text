@@ -1445,8 +1445,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
-                pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
-                pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
+                // Expressions like "today", "tomorrow",... should keep their original year
+                if (!this.config.SpecialDayRegex.IsMatch(pr1.Text))
+                {
+                    pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
+                }
+
+                if (!this.config.SpecialDayRegex.IsMatch(pr2.Text))
+                {
+                    pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
+                }
             }
 
             ret.SubDateTimeEntities = new List<object> { pr1, pr2 };
