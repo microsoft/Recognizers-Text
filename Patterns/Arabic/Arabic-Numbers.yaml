@@ -209,7 +209,7 @@ OneNumberRangeMoreSeparateRegex: !nestedRegex
     ]
 OneNumberRangeLessRegex1: !nestedRegex
   def: ({LessOrEqual})\s*(ال)?(?<number2>({NumberSplitMark}.)+)
-  references: [LessOrEqual, LessRegex, NumberSplitMark]
+  references: [LessOrEqual, NumberSplitMark]
 OneNumberRangeLessRegex2: !nestedRegex
   def: (?<number2>({NumberSplitMark}.)+)\s*{LessOrEqualSuffix}
   references: [LessOrEqualSuffix, NumberSplitMark]
