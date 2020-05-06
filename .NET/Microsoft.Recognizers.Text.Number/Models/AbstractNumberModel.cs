@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.Number
             var parsedNumbers = new List<ParseResult>();
 
             // Preprocess the query
-            query = QueryProcessor.Preprocess(query, caseSensitive: true, this.Recode);
+            query = QueryProcessor.Preprocess(query, caseSensitive: true, recode: this.Recode);
 
             try
             {
