@@ -12825,7 +12825,7 @@
     ]
   },
   {
-    "Input": "This work is carried out between Jan 2019 and now",
+    "Input": "This work was carried out between Jan 2019 and now",
     "Context": {
       "ReferenceDateTime": "2020-05-05T18:00:00"
     },
@@ -12833,8 +12833,8 @@
     "Results": [
       {
         "Text": "between jan 2019 and now",
-        "Start": 25,
-        "End": 48,
+        "Start": 26,
+        "End": 49,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -12850,7 +12850,7 @@
     ]
   },
   {
-    "Input": "This work is carried out between Jan 2019 and today",
+    "Input": "This work was carried out between Jan 2019 and today",
     "Context": {
       "ReferenceDateTime": "2020-05-05T18:00:00"
     },
@@ -12858,8 +12858,8 @@
     "Results": [
       {
         "Text": "between jan 2019 and today",
-        "Start": 25,
-        "End": 50,
+        "Start": 26,
+        "End": 51,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
