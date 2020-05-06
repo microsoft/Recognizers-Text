@@ -85,6 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             MoreThanRegex = FrenchDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = FrenchDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = FrenchDatePeriodExtractorConfiguration.NowRegex;
+            SpecialDayRegex = FrenchDateExtractorConfiguration.SpecialDayRegex;
 
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
@@ -193,6 +194,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex CenturySuffixRegex { get; }
 
         public Regex NowRegex { get; }
+
+        public Regex SpecialDayRegex { get; }
 
         Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 

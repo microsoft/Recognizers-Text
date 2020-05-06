@@ -79,9 +79,8 @@ FullTextYearRegex: !nestedRegex
 FullTextAtYearRegex: !nestedRegex
   def: \b((({WrittenCenturyFullYearRegex}|(iki\s+)?bin)\s+)?(((on|yirmi|otuz|kırk|elli|altmış|yetmiş|seksen|doksan)\s+)?(birde|ikide|üçte|dörtte|beşte|altıda|yedide|sekizde|dokuzda)|onda|yirmide|otuzda|kırkta|ellide|altmışta|yetmişte|seksende|doksanda)|{WrittenCenturyFullYearRegex}de|(iki\s)?binde)\b
   references: [ WrittenCenturyFullYearRegex ]
-# As month number can't be 0, so add (?!\.0\b) to filter out some wrong cases
 OclockRegex: !simpleRegex
-  def: (?<oclock>saat|saat tam)
+  def: (?<oclock>saat(\s+tam)?)
 SpecialDescRegex: !simpleRegex
   def: ((?<ipm>)p\b)
 AmDescRegex: !nestedRegex
@@ -97,8 +96,9 @@ DescRegex: !nestedRegex
   def: ((({OclockRegex}\s+)?(?<desc>({AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})))|{OclockRegex})
   references: [ OclockRegex, AmDescRegex, PmDescRegex, AmPmDescRegex, SpecialDescRegex ]
 # Exclude cases that include the "Am/Pm" suffix
-TwoDigitYearRegex: !simpleRegex
-  def: \b(?<![$])(?<year>([0-27-9]\d))\b
+TwoDigitYearRegex: !nestedRegex
+  def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
+  references: [ AmDescRegex, PmDescRegex]
 YearRegex: !nestedRegex
   def: ({BaseDateTime.FourDigitYearRegex}('a\b)?|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]

@@ -470,7 +470,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
 
         let year = this.convertYear(yearStr, isChinese);
         if (yearStr.length === 2) {
-            if (year < 100 && year >= 30) {
+            if (year < 100 && year >= Constants.MinTwoDigitYearPastNum) {
                 year += 1900;
             }
             else if (year < 30) {
@@ -592,10 +592,10 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             year += this.config.getSwiftDayOrMonth(yearRelative);
         }
 
-        if (year < 100 && year >= 90) {
+        if (year < 100 && year >= Constants.MaxTwoDigitYearFutureNum) {
             year += 1900;
         }
-        else if (year < 100 && year < 20) {
+        else if (year < 100 && year < Constants.MinTwoDigitYearPastNum) {
             year += 2000;
         }
 
@@ -638,10 +638,10 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             year += this.config.getSwiftDayOrMonth(yearRelative);
         }
 
-        if (year < 100 && year >= 90) {
+        if (year < 100 && year >= Constants.MaxTwoDigitYearFutureNum) {
             year += 1900;
         }
-        else if (year < 100 && year < 20) {
+        else if (year < 100 && year < Constants.MinTwoDigitYearPastNum) {
             year += 2000;
         }
 
@@ -793,10 +793,10 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             year += this.config.getSwiftDayOrMonth(yearRelative);
         }
 
-        if (year < 100 && year >= 90) {
+        if (year < 100 && year >= Constants.MaxTwoDigitYearFutureNum) {
             year += 1900;
         }
-        else if (year < 100 && year < 20) {
+        else if (year < 100 && year < Constants.MinTwoDigitYearPastNum) {
             year += 2000;
         }
 
@@ -870,10 +870,10 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
 
     private sanitizeYear(year: number): number {
         let result = year;
-        if (year < 100 && year >= 90) {
+        if (year < 100 && year >= Constants.MaxTwoDigitYearFutureNum) {
             result += 1900;
         }
-        else if (year < 100 && year < 20) {
+        else if (year < 100 && year < Constants.MinTwoDigitYearPastNum) {
             result += 2000;
         }
         return result;
