@@ -192,7 +192,7 @@ DoubleAllFloatRegex: !nestedRegex
   def: (?<!(({AllIntRegex}[.]*)|{AllFloatRegex})*){AllFloatRegex}(?!{ZeroToNineIntegerRegex}*\s*パーセント)
   references: [AllIntRegex, AllFloatRegex, ZeroToNineIntegerRegex]
 DoubleExponentialNotationRegex: !nestedRegex
-  def: (?<!{ZeroToNineIntegerRegex}+[\.・．])((マイナス)\s*)?({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex}|{ZeroToNineIntegerRegex}{RoundNumberIntegerRegex})+([\.・．]({ZeroToNineIntegerRegex}|(×)?{{RoundNumberIntegerRegex}|{ZeroToNineIntegerRegex}{RoundNumberIntegerRegex})+)?(の)?((マイナス)\s*)?.*?(?=乗)(乗)?
+  def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)|[0０](?!{ZeroToNineFullHalfRegex}+))
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
 DoubleScientificNotationRegex: !nestedRegex
   def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)
