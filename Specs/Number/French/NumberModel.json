@@ -1690,5 +1690,103 @@
         }
       }
     ]
+  },
+  {
+    "Input": "sous la pluie et un vent glacial",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 17,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "vingt et un ou plus",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "vingt et un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "vingt et un ou vingt-deux",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "vingt et un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21"
+        },
+        "Start": 0,
+        "End": 10
+      },
+      {
+        "Text": "vingt-deux",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "22"
+        },
+        "Start": 15,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "quatre centièmes de seconde",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "quatre centièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,04"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "et une bonne jour née",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "une",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 3,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "un vingt et unieme",
+    "Results": [
+      {
+        "Text": "un vingt et unieme",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,0476190476190476"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
   }
 ]
