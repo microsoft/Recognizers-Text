@@ -74,23 +74,23 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string NumberWithPrefixPercentage = $@"(نسبة|بالمائة)(\s*)({BaseNumbers.NumberReplaceToken})";
       public static readonly string NumberWithPrepositionPercentage = $@"({BaseNumbers.NumberReplaceToken})\s*(في|خارج\s+من)\s*({BaseNumbers.NumberReplaceToken})";
       public const string TillRegex = @"(إلى|خلال|--|-|—|——|~|–)";
-      public const string MoreRegex = @"(?:(فوق|أكبر|أعظم|أطول|يتجاوز)(\s+من)?|(?<!<|=)>)";
-      public const string LessRegex = @"(?:(أقل|اقل|اصغر|أصغر)(\s+من)?|تحت|(?<!>|=)<)";
+      public const string MoreRegex = @"(?:(فوق|أكبر|أعظم|أطول|يتجاوز|تفوق)(\s+من)?|(?<!<|=)>)";
+      public const string LessRegex = @"(?:(أقل|اقل|اصغر|أصغر|ادنى)(\s+من)?|تحت|(?<!>|=)<)";
       public const string EqualRegex = @"(يساوي|(?<!<|>)=)";
       public static readonly string MoreOrEqualPrefix = $@"(((ليس|لا)\s+{LessRegex})|(على\s+الأقل))";
-      public static readonly string MoreOrEqual = $@"(?:({MoreRegex}\s+(أو|او)?\s+{EqualRegex})|({EqualRegex}\s+(أو|او)?\s+{MoreRegex})|{MoreOrEqualPrefix}(\s+(أو|او)?\s+{EqualRegex})?|({EqualRegex}\s+(أو|او)?\s+)?{MoreOrEqualPrefix}|>\s*=)";
-      public const string MoreOrEqualSuffix = @"((و|أو)\s+(((أكبر|أعظم|أطول|فوق)((?!\s+من)|(\s+من(?!(\s*\d+)))))|((فوق|أكبر|أطول)(?!\s+من))))";
+      public static readonly string MoreOrEqual = $@"(?:({MoreRegex}\s+(أو|او)?\s+{EqualRegex})|({EqualRegex}\s+(أو|او)?\s+{MoreRegex})|({MoreOrEqualPrefix}(\s+(أو|او)?\s+{EqualRegex})?)|(({EqualRegex}\s+(أو|او)?\s+)?{MoreOrEqualPrefix})|({MoreRegex})|>\s*=)";
+      public const string MoreOrEqualSuffix = @"((و|أو)\s+(((أكبر|أعظم|أطول|فوق|اكثر)((?!\s+من)|(\s+من(?!(\s*\d+)))))|((فوق|أكبر|أطول|اكثر)(?!\s+من))))";
       public static readonly string LessOrEqualPrefix = $@"((ليس\s+{MoreRegex})|(at\s+most)|(بحد أقصى))";
-      public static readonly string LessOrEqual = $@"(({LessRegex}\s+(أو|او)?\s+{EqualRegex}))";
+      public static readonly string LessOrEqual = $@"(({LessRegex}\s+(أو|او)?\s+{EqualRegex})|({EqualRegex}\s+(أو|او)?\s+{LessRegex})|({LessOrEqualPrefix}(\s+(أو|او)?\s+{EqualRegex})?)|(({EqualRegex}\s+(أو|او)?\s+)?{LessOrEqualPrefix})|({LessRegex})|<\s*=)";
       public const string LessOrEqualSuffix = @"((و|أو)\s+(أقل)((?!\s+من)|(\s+من(?!(\s*\d+)))))";
       public const string NumberSplitMark = @"(?![,.](?!\d+))";
       public const string MoreRegexNoNumberSucceed = @"((أكبر|أعظم|أطول|فوق)((?!\s+من)|\s+(من(?!(\s*\d+))))|(فوق|أكبر|أعظم)(?!(\s*\d+)))";
       public const string LessRegexNoNumberSucceed = @"((أقل|أصغر)((?!\s+من)|\s+(من(?!(\s*\d+))))|(تحت|أقل|أصغر)(?!(\s*\d+)))";
       public const string EqualRegexNoNumberSucceed = @"(يساوي)";
-      public static readonly string OneNumberRangeMoreRegex1 = $@"({MoreOrEqual}|{MoreRegex})\s*(ال)?(?<number1>({NumberSplitMark}.)+)";
+      public static readonly string OneNumberRangeMoreRegex1 = $@"({MoreOrEqual})\s*(ال)?(?<number1>({NumberSplitMark}.)+)";
       public static readonly string OneNumberRangeMoreRegex2 = $@"(?<number1>({NumberSplitMark}.)+)\s*{MoreOrEqualSuffix}";
-      public static readonly string OneNumberRangeMoreSeparateRegex = $@"({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+أو\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+أو\s+){EqualRegexNoNumberSucceed})";
-      public static readonly string OneNumberRangeLessRegex1 = $@"({LessOrEqual}|{LessRegex})\s*(ال)?(?<number2>({NumberSplitMark}.)+)";
+      public static readonly string OneNumberRangeMoreSeparateRegex = $@"({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+(أو|او)\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+(أو|او)\s+){EqualRegexNoNumberSucceed})";
+      public static readonly string OneNumberRangeLessRegex1 = $@"({LessOrEqual})\s*(ال)?(?<number2>({NumberSplitMark}.)+)";
       public static readonly string OneNumberRangeLessRegex2 = $@"(?<number2>({NumberSplitMark}.)+)\s*{LessOrEqualSuffix}";
       public static readonly string OneNumberRangeLessSeparateRegex = $@"({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+أو\s+){LessRegexNoNumberSucceed})|({LessRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+أو\s+){EqualRegexNoNumberSucceed})";
       public static readonly string OneNumberRangeEqualRegex = $@"{EqualRegex}\s*(ال)?(?<number1>({NumberSplitMark}.)+)";
@@ -257,6 +257,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
             { @"واحد من عشرة", 10 },
             { @"واحد من إحدى عشر", 11 },
             { @"الحادية عشرة", 11 },
+            { @"الحادي عشر", 11 },
             { @"واحد من إثنى عشر", 12 },
             { @"الثانية عشرة", 12 },
             { @"واحد من ثلاثة عشر", 13 },
@@ -434,11 +435,11 @@ namespace Microsoft.Recognizers.Definitions.Arabic
             { @"القادم", @"current" },
             { @"القادمة", @"current" },
             { @"السابقة", @"current" },
-            { @"الحالي", @"end" },
+            { @"الحالي", @"current" },
             { @"الحالية", @"end" },
-            { @"قبل الاخير", @"current" },
+            { @"قبل الاخير", @"end" },
             { @"واحد قبل الاخير", @"current" },
-            { @"الثانية الى الاخير", @"current" },
+            { @"الثانية الى الاخير", @"end" },
             { @"السابق", @"current" }
         };
     }
