@@ -687,9 +687,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Success = true;
                 }
 
-                if (dateContext != null)
+                // Expressions like "today", "tomorrow",... should keep their original year
+                if (dateContext != null && !this.config.SpecialDayRegex.IsMatch(er.Text))
                 {
                     ret = dateContext.ProcessDateEntityResolution(ret);
+                }
+            }
+
+            // Handle expressions with "now"
+            if (er == null)
+            {
+                var nowPr = ParseNowAsDate(text, referenceDate);
+                if (nowPr.Value != null)
+                {
+                    ret.Timex = $"({nowPr.TimexStr}";
+                    ret.FutureValue = (DateObject)((DateTimeResolutionResult)nowPr.Value).FutureValue;
+                    ret.PastValue = (DateObject)((DateTimeResolutionResult)nowPr.Value).PastValue;
+                    ret.Success = true;
                 }
             }
 
