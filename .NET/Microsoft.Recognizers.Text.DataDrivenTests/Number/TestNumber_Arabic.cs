@@ -15,14 +15,12 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             TestNumber(testSpec);
         }
 
-        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void OrdinalModel(TestModel testSpec)
         {
             TestNumber(testSpec);
         }
-        */
 
         [NetCoreTestDataSource]
         [TestMethod]
@@ -31,14 +29,12 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             TestNumber(testSpec);
         }
 
-        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void NumberRangeModel(TestModel testSpec)
         {
             TestNumber(testSpec);
         }
-        */
 
     }
 }
