@@ -12823,5 +12823,155 @@
         }
       }
     ]
+  },
+  {
+    "Input": "How many clusters docked between Jan 2019 and today",
+    "Context": {
+      "ReferenceDateTime": "2020-04-26T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between jan 2019 and today",
+        "Start": 25,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2020-04-26,P481D)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-04-26"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How many clusters docked between Jan 2019 and tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2020-04-26T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between jan 2019 and tomorrow",
+        "Start": 25,
+        "End": 53,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2020-04-27,P482D)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-04-27"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How many clusters docked between Jan 2019 and now",
+    "Context": {
+      "ReferenceDateTime": "2020-04-26T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between jan 2019 and now",
+        "Start": 25,
+        "End": 48,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2020-04-26,P481D)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-04-26"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This task should be carried out between today and tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2020-05-06T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between today and tomorrow",
+        "Start": 32,
+        "End": 57,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-05-06,2020-05-07,P1D)",
+              "type": "daterange",
+              "start": "2020-05-06",
+              "end": "2020-05-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The allotted time was between 22/Jan/2019 and yesterday",
+    "Context": {
+      "ReferenceDateTime": "2020-05-06T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 22/jan/2019 and yesterday",
+        "Start": 22,
+        "End": 54,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-22,2020-05-05,P469D)",
+              "type": "daterange",
+              "start": "2019-01-22",
+              "end": "2020-05-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It should have been completed between Aug 2019 and now",
+    "Context": {
+      "ReferenceDateTime": "2020-05-06T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between aug 2019 and now",
+        "Start": 30,
+        "End": 53,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-08-01,2020-05-06,P279D)",
+              "type": "daterange",
+              "start": "2019-08-01",
+              "end": "2020-05-06"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
