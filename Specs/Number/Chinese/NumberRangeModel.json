@@ -838,5 +838,20 @@
         }
       }
     ]
+  },
+  {
+    "Input": "5k-20k",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "5k-20k",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,20000)"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
   }
 ]

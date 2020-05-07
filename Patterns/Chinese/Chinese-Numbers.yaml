@@ -163,8 +163,9 @@ HalfUnitRegex: !simpleRegex
   def: 半
 NegativeNumberTermsRegex: !simpleRegex
   def: '[负負]'
-NegativeNumberTermsRegexNum: !simpleRegex
-  def: ((?<!(\d+\s*)|[-－])[-－])
+NegativeNumberTermsRegexNum: !nestedRegex
+  def: ((?<!(\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)|[-－])[-－])
+  references: [BaseNumbers.NumberMultiplierRegex]
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*
   references: [NegativeNumberTermsRegex, NegativeNumberTermsRegexNum]
