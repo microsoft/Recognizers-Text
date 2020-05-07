@@ -1,197 +1,15 @@
 [
   {
-    "Input": "答えは１９２です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "１９２",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "192"
-        },
-        "Start": 3,
-        "End": 5
-      }
-    ]
+    "Input": "西九条",
+    "Results": []
   },
   {
-    "Input": "倍率は１６です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "一匹",
     "Results": [
       {
-        "Text": "１６",
+        "Text": "一",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "16"
-        },
-        "Start": 3,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "答えは１１６です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "１１６",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "116"
-        },
-        "Start": 3,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "答えは１０６です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "１０６",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "106"
-        },
-        "Start": 3,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "今のWTOの加盟国は１６１です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "１６１",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "161"
-        },
-        "Start": 10,
-        "End": 12
-      }
-    ]
-  },
-  {
-    "Input": "ペンが１ダース千円で売られています。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "１ダース",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "12"
-        },
-        "Start": 3,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "テニスボールを３００と２ダース発注しました。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "３００と２ダース",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "324"
-        },
-        "Start": 7,
-        "End": 14
-      }
-    ]
-  },
-  {
-    "Input": "１と２３４と５６７は有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "１",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "1"
-        },
-        "Start": 0,
-        "End": 0
-      },
-      {
-        "Text": "２３４",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "234"
-        },
-        "Start": 2,
-        "End": 4
-      },
-      {
-        "Text": "５６７",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "567"
-        },
-        "Start": 6,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "−１は最大の負の整数です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "−１",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "-1"
-        },
-        "Start": 0,
-        "End": 1
-      }
-    ]
-  },
-  {
-    "Input": "１は最小の正の整数です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "１",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
           "value": "1"
         },
         "Start": 0,
@@ -200,107 +18,50 @@
     ]
   },
   {
-    "Input": "答えは１万です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "十キロ",
     "Results": [
       {
-        "Text": "１万",
+        "Text": "十",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "10000"
-        },
-        "Start": 3,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "答え−１万です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "−１万",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "-10000"
-        },
-        "Start": 2,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "答えは２００万です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "２００万",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2000000"
-        },
-        "Start": 3,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "３３１は奇数です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "３３１",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "331"
+          "value": "10"
         },
         "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "九年八トン",
+    "Results": [
+      {
+        "Text": "九",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "八",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8"
+        },
+        "Start": 2,
         "End": 2
       }
     ]
   },
   {
-    "Input": "２０万２０００は実数です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "十万以上",
     "Results": [
       {
-        "Text": "２０万２０００",
+        "Text": "十万以上",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "202000"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "２２００は奇数ではありません。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "２２００",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2200"
+          "value": "100000"
         },
         "Start": 0,
         "End": 3
@@ -308,609 +69,539 @@
     ]
   },
   {
-    "Input": "答えは３万２２００です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "３万２２００",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "32200"
-        },
-        "Start": 3,
-        "End": 8
-      }
-    ]
+    "Input": "万",
+    "Results": []
   },
   {
-    "Input": "７０は整数です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "７０",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "70"
-        },
-        "Start": 0,
-        "End": 1
-      }
-    ]
+    "Input": "万万",
+    "Results": []
   },
   {
-    "Input": "５２は偶数です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "二",
     "Results": [
       {
-        "Text": "５２",
+        "Text": "二",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "52"
-        },
-        "Start": 0,
-        "End": 1
-      }
-    ]
-  },
-  {
-    "Input": "答えは−５です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "−５",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "-5"
-        },
-        "Start": 3,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "４万と４万は同じです。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "４万",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "40000"
-        },
-        "Start": 0,
-        "End": 1
-      },
-      {
-        "Text": "４万",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "40000"
-        },
-        "Start": 3,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "０は０です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "０",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "0"
+          "value": "2"
         },
         "Start": 0,
         "End": 0
-      },
+      }
+    ]
+  },
+  {
+    "Input": "40k",
+    "Results": [
       {
-        "Text": "０",
+        "Text": "40k",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "0"
+          "value": "40000"
         },
-        "Start": 2,
+        "Start": 0,
         "End": 2
       }
     ]
   },
   {
-    "Input": "私の電話番号は、プラス１の２２２の２２２２の２２２２です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "二十億",
     "Results": [
       {
-        "Text": "１",
+        "Text": "二十億",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "1"
+          "value": "2000000000"
         },
-        "Start": 11,
-        "End": 11
-      },
-      {
-        "Text": "２２２",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "222"
-        },
-        "Start": 13,
-        "End": 15
-      },
-      {
-        "Text": "２２２２",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2222"
-        },
-        "Start": 17,
-        "End": 20
-      },
-      {
-        "Text": "２２２２",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2222"
-        },
-        "Start": 22,
-        "End": 25
+        "Start": 0,
+        "End": 2
       }
     ]
   },
   {
-    "Input": "私はあなたに１０００万あげることができます。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "６、５４４",
     "Results": [
       {
-        "Text": "１０００万",
+        "Text": "6,544",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "10000000"
+          "value": "6544"
         },
-        "Start": 6,
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "5万4千6百",
+    "Results": [
+      {
+        "Text": "5万4千6百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "54600"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "5億1万4千6百",
+    "Results": [
+      {
+        "Text": "5億1万4千6百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "500014600"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "5、450",
+    "Results": [
+      {
+        "Text": "5,450",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5450"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "マイナス10000",
+    "Results": [
+      {
+        "Text": "マイナス10000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-10000"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "マイナス8452",
+    "Results": [
+      {
+        "Text": "マイナス8452",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-8452"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "-10000",
+    "Results": [
+      {
+        "Text": "-10000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-10000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "一ダース",
+    "Results": [
+      {
+        "Text": "一ダース",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "五十ダース",
+    "Results": [
+      {
+        "Text": "五十ダース",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "600"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "半ダース",
+    "Results": [
+      {
+        "Text": "半ダース",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "十",
+    "Results": [
+      {
+        "Text": "十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "十五",
+    "Results": [
+      {
+        "Text": "十五",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "15"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "一百",
+    "Results": [
+      {
+        "Text": "一百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "九百九十九",
+    "Results": [
+      {
+        "Text": "九百九十九",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "999"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "九百九",
+    "Results": [
+      {
+        "Text": "九百九",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "909"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "二百五十",
+    "Results": [
+      {
+        "Text": "二百五十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "250"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "一万三",
+    "Results": [
+      {
+        "Text": "一万三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10003"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "一万二百五十",
+    "Results": [
+      {
+        "Text": "一万二百五十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10250"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "一万零二百五十",
+    "Results": [
+      {
+        "Text": "一万零二百五十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10250"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "九万四",
+    "Results": [
+      {
+        "Text": "九万四",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "90004"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "九十二万四",
+    "Results": [
+      {
+        "Text": "九十二万四",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "920004"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "九万零四百",
+    "Results": [
+      {
+        "Text": "九万零四百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "90400"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "九百万零四百",
+    "Results": [
+      {
+        "Text": "九百万零四百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9000400"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "四千零五万",
+    "Results": [
+      {
+        "Text": "四千零五万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40050000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "四千万",
+    "Results": [
+      {
+        "Text": "四千万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40000000"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "四千万零六千",
+    "Results": [
+      {
+        "Text": "四千万零六千",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40006000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "四億",
+    "Results": [
+      {
+        "Text": "四億",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "400000000"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "四億五千六百四十二万零一十五",
+    "Results": [
+      {
+        "Text": "四億五千六百四十二万零一十五",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "456420015"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "四万五千六百二十二",
+    "Results": [
+      {
+        "Text": "四万五千六百二十二",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "45622"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "五兆六十二億四万五千二",
+    "Results": [
+      {
+        "Text": "五兆六十二億四万五千二",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5006200045002"
+        },
+        "Start": 0,
         "End": 10
       }
     ]
   },
   {
-    "Input": "私はあなたに３２１元をあげることができます。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "五十五兆一十二億四万五千二",
     "Results": [
       {
-        "Text": "３２１",
+        "Text": "五十五兆一十二億四万五千二",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "321"
-        },
-        "Start": 6,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "４３２１は有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "４３２１",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "4321"
+          "value": "55001200045002"
         },
         "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "４３００と０は２つの有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "４３００",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "4300"
-        },
-        "Start": 0,
-        "End": 3
-      },
-      {
-        "Text": "０",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "0"
-        },
-        "Start": 5,
-        "End": 5
-      },
-      {
-        "Text": "２",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 7,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "４０００と３２１は２つの有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "４０００",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "4000"
-        },
-        "Start": 0,
-        "End": 3
-      },
-      {
-        "Text": "３２１",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "321"
-        },
-        "Start": 5,
-        "End": 7
-      },
-      {
-        "Text": "２",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 9,
-        "End": 9
-      }
-    ]
-  },
-  {
-    "Input": "３００と２００は２つの有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "３００",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "300"
-        },
-        "Start": 0,
-        "End": 2
-      },
-      {
-        "Text": "２００",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "200"
-        },
-        "Start": 4,
-        "End": 6
-      },
-      {
-        "Text": "２",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 8,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "３００と−１は２つの有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "３００",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "300"
-        },
-        "Start": 0,
-        "End": 2
-      },
-      {
-        "Text": "−１",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "-1"
-        },
-        "Start": 4,
-        "End": 5
-      },
-      {
-        "Text": "２",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 7,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "３０１は有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "３０１",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "301"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "テチマンで２６人が事故死した。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "２６",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "26"
-        },
-        "Start": 5,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "答えは192です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "192",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "192"
-        },
-        "Start": 3,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "私のパソコンのIPアドレスは192.168.1.2です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "192",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "192"
-        },
-        "Start": 14,
-        "End": 16
-      },
-      {
-        "Text": "168",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "168"
-        },
-        "Start": 18,
-        "End": 20
-      },
-      {
-        "Text": "1",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "1"
-        },
-        "Start": 22,
-        "End": 22
-      },
-      {
-        "Text": "2",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 24,
-        "End": 24
-      }
-    ]
-  },
-  {
-    "Input": "倍率は16です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "16",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "16"
-        },
-        "Start": 3,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "答えは116です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "116",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "116"
-        },
-        "Start": 3,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "答えは106です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "106",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "106"
-        },
-        "Start": 3,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "今のWTOの加盟国は161です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "161",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "161"
-        },
-        "Start": 10,
         "End": 12
       }
     ]
   },
   {
-    "Input": "ペンが1ダース単位で売られています。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "一百万零四",
     "Results": [
       {
-        "Text": "1ダース",
+        "Text": "一百万零四",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "12"
+          "value": "1000004"
         },
-        "Start": 3,
-        "End": 6
+        "Start": 0,
+        "End": 4
       }
     ]
   },
   {
-    "Input": "テニスボールを300と2ダース発注しました。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "四十万",
     "Results": [
       {
-        "Text": "300と2ダース",
+        "Text": "四十万",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "324"
+          "value": "400000"
         },
-        "Start": 7,
-        "End": 14
+        "Start": 0,
+        "End": 2
       }
     ]
   },
   {
-    "Input": "1,234,567は素数ではありません。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "四千零四万",
     "Results": [
       {
-        "Text": "1,234,567",
+        "Text": "四千零四万",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "1234567"
+          "value": "40040000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "四十五億四千零四万",
+    "Results": [
+      {
+        "Text": "四十五億四千零四万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4540040000"
         },
         "Start": 0,
         "End": 8
@@ -918,16 +609,12 @@
     ]
   },
   {
-    "Input": "1, 234, 567は素数ではありません。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "1, 234, 567",
     "Results": [
       {
         "Text": "1",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
           "value": "1"
         },
         "Start": 0,
@@ -937,7 +624,6 @@
         "Text": "234",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
           "value": "234"
         },
         "Start": 3,
@@ -947,7 +633,6 @@
         "Text": "567",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
           "value": "567"
         },
         "Start": 8,
@@ -956,107 +641,59 @@
     ]
   },
   {
-    "Input": "最大の負の整数は-1です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "1、234、567",
     "Results": [
       {
-        "Text": "-1",
+        "Text": "1,234,567",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "-1"
-        },
-        "Start": 8,
-        "End": 9
-      }
-    ]
-  },
-  {
-    "Input": "1は最小の正の整数です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "1",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "1"
+          "value": "1234567"
         },
         "Start": 0,
-        "End": 0
+        "End": 8
       }
     ]
   },
   {
-    "Input": "答えは1万です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "二百五, 二百五, ど二百五。",
     "Results": [
       {
-        "Text": "1万",
+        "Text": "二百五",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "10000"
+          "value": "205"
         },
-        "Start": 3,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "答え-1万です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
+        "Start": 0,
+        "End": 2
+      },
       {
-        "Text": "-1万",
+        "Text": "二百五",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "-10000"
+          "value": "205"
         },
-        "Start": 2,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "答えは200万です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
+        "Start": 5,
+        "End": 7
+      },
       {
-        "Text": "200万",
+        "Text": "二百五",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "2000000"
+          "value": "205"
         },
-        "Start": 3,
-        "End": 6
+        "Start": 11,
+        "End": 13
       }
     ]
   },
   {
-    "Input": "331は奇数です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "199个",
     "Results": [
       {
-        "Text": "331",
+        "Text": "199",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "331"
+          "value": "199"
         },
         "Start": 0,
         "End": 2
@@ -1064,35 +701,69 @@
     ]
   },
   {
-    "Input": "20万2000は実数です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "1,050,000,000",
     "Results": [
       {
-        "Text": "20万2000",
+        "Text": "1,050,000,000",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "202000"
+          "value": "1050000000"
         },
         "Start": 0,
-        "End": 6
+        "End": 12
       }
     ]
   },
   {
-    "Input": "2200は奇数ではありません。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "一百 五 十 二",
     "Results": [
       {
-        "Text": "2200",
+        "Text": "一百 五 十 二",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "2200"
+          "value": "152"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "7万 5千 4百",
+    "Results": [
+      {
+        "Text": "7万 5千 4百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "75400"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "三千 八百 九十六 万 四千 九百 六十五",
+    "Results": [
+      {
+        "Text": "三千 八百 九十六 万 四千 九百 六十五",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "38964965"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "十ダースりんご",
+    "Results": [
+      {
+        "Text": "十ダース",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "120"
         },
         "Start": 0,
         "End": 3
@@ -1100,963 +771,269 @@
     ]
   },
   {
-    "Input": "答えは3万2200です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "１９９１年１月１６日夜パリ時間２０時：フランスのミトラン大統領がテレビの談話を発表し、海湾の危機の解決を宣言した。",
     "Results": [
       {
-        "Text": "3万2200",
+        "Text": "1991",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "32200"
+          "value": "1991"
         },
-        "Start": 3,
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 5,
+        "End": 5
+      },
+      {
+        "Text": "16",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "16"
+        },
+        "Start": 7,
         "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "70は整数です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "70",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "70"
-        },
-        "Start": 0,
-        "End": 1
-      }
-    ]
-  },
-  {
-    "Input": "52は偶数です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "52",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "52"
-        },
-        "Start": 0,
-        "End": 1
-      }
-    ]
-  },
-  {
-    "Input": "答えは-5です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "-5",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "-5"
-        },
-        "Start": 3,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "答えは1234567です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "1234567",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "1234567"
-        },
-        "Start": 3,
-        "End": 9
-      }
-    ]
-  },
-  {
-    "Input": "4万と4万は同じです。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "4万",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "40000"
-        },
-        "Start": 0,
-        "End": 1
       },
       {
-        "Text": "4万",
+        "Text": "20",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "40000"
+          "value": "20"
         },
-        "Start": 3,
-        "End": 4
+        "Start": 15,
+        "End": 16
       }
     ]
   },
   {
-    "Input": "0は0です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "2^5",
     "Results": [
       {
-        "Text": "0",
+        "Text": "2^5",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "0"
+          "value": "32"
         },
         "Start": 0,
-        "End": 0
-      },
-      {
-        "Text": "0",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "0"
-        },
-        "Start": 2,
         "End": 2
       }
     ]
   },
   {
-    "Input": "私の電話番号は、プラス1の222の2222の2222です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "2e5",
+    "Results": [
+      {
+        "Text": "2e5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200000"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "10,000.233",
+    "Results": [
+      {
+        "Text": "10,000.233",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000.233"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": ".23456000",
+    "Results": [
+      {
+        "Text": ".23456000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.23456"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "4.800",
+    "Results": [
+      {
+        "Text": "4.800",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4.8"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "２.７８９０",
+    "Results": [
+      {
+        "Text": "2.7890",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2.789"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "2.3",
+    "Results": [
+      {
+        "Text": "2.3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2.3"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "2.3万",
+    "Results": [
+      {
+        "Text": "2.3万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "23000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "２.７８９０e－１",
+    "Results": [
+      {
+        "Text": "2.7890e-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.2789"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1, 234, 567.3",
     "Results": [
       {
         "Text": "1",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
           "value": "1"
         },
-        "Start": 11,
-        "End": 11
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "234",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "234"
+        },
+        "Start": 3,
+        "End": 5
+      },
+      {
+        "Text": "567.3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "567.3"
+        },
+        "Start": 8,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "2222.2222.22222.222",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2222"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2222"
+        },
+        "Start": 5,
+        "End": 8
+      },
+      {
+        "Text": "22222",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "22222"
+        },
+        "Start": 10,
+        "End": 14
       },
       {
         "Text": "222",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
           "value": "222"
         },
-        "Start": 13,
-        "End": 15
-      },
-      {
-        "Text": "2222",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2222"
-        },
-        "Start": 17,
-        "End": 20
-      },
-      {
-        "Text": "2222",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2222"
-        },
-        "Start": 22,
-        "End": 25
+        "Start": 16,
+        "End": 18
       }
     ]
   },
   {
-    "Input": "私はあなたに1000万あげることができます。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "...9",
+    "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "1000万",
+        "Text": "9",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "10000000"
+          "value": "9"
         },
-        "Start": 6,
-        "End": 10
-      }
-    ]
-  },
-  {
-    "Input": "私はあなたに321元をあげることができます。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "321",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "321"
-        },
-        "Start": 6,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "4321は有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "4321",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "4321"
-        },
-        "Start": 0,
+        "Start": 3,
         "End": 3
       }
     ]
   },
   {
-    "Input": "4300と0は2つの有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "－－9",
     "Results": [
       {
-        "Text": "4300",
+        "Text": "9",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "4300"
-        },
-        "Start": 0,
-        "End": 3
-      },
-      {
-        "Text": "0",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "0"
-        },
-        "Start": 5,
-        "End": 5
-      },
-      {
-        "Text": "2",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 7,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "4000と321は2つの有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "4000",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "4000"
-        },
-        "Start": 0,
-        "End": 3
-      },
-      {
-        "Text": "321",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "321"
-        },
-        "Start": 5,
-        "End": 7
-      },
-      {
-        "Text": "2",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 9,
-        "End": 9
-      }
-    ]
-  },
-  {
-    "Input": "300と200は2つの有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "300",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "300"
-        },
-        "Start": 0,
-        "End": 2
-      },
-      {
-        "Text": "200",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "200"
-        },
-        "Start": 4,
-        "End": 6
-      },
-      {
-        "Text": "2",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 8,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "300と-1は2つの有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "300",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "300"
-        },
-        "Start": 0,
-        "End": 2
-      },
-      {
-        "Text": "-1",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "-1"
-        },
-        "Start": 4,
-        "End": 5
-      },
-      {
-        "Text": "2",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 7,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "301は有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "301",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "301"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "テチマンで26人が事故死した。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "26",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "26"
-        },
-        "Start": 5,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "答えは百九十二です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "百九十二",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "192"
-        },
-        "Start": 3,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "倍率は十六です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "十六",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "16"
-        },
-        "Start": 3,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "答えは百十六です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "百十六",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "116"
-        },
-        "Start": 3,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "答えは百六です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "百六",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "106"
-        },
-        "Start": 3,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "今のWTOの加盟国は百六十一です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "百六十一",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "161"
-        },
-        "Start": 10,
-        "End": 13
-      }
-    ]
-  },
-  {
-    "Input": "桃を半ダース買いました。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "半ダース",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "6"
-        },
-        "Start": 2,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "ペンが一ダース千円で売られています。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "一ダース",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "12"
-        },
-        "Start": 3,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "テニスボールを三百と二ダース発注しました。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "三百と二ダース",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "324"
-        },
-        "Start": 7,
-        "End": 13
-      }
-    ]
-  },
-  {
-    "Input": "百二十三万四千五百六十七は素数ではありません。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "百二十三万四千五百六十七",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "1234567"
-        },
-        "Start": 0,
-        "End": 11
-      }
-    ]
-  },
-  {
-    "Input": "一と二百三十四と五百六十七は有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "一",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "1"
-        },
-        "Start": 0,
-        "End": 0
-      },
-      {
-        "Text": "二百三十四",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "234"
-        },
-        "Start": 2,
-        "End": 6
-      },
-      {
-        "Text": "五百六十七",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "567"
-        },
-        "Start": 8,
-        "End": 12
-      }
-    ]
-  },
-  {
-    "Input": "最大の負の整数はマイナス一です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "マイナス一",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "-1"
-        },
-        "Start": 8,
-        "End": 12
-      }
-    ]
-  },
-  {
-    "Input": "一は最小の正の整数です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "一",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "1"
-        },
-        "Start": 0,
-        "End": 0
-      }
-    ]
-  },
-  {
-    "Input": "答えは一万です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "一万",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "10000"
-        },
-        "Start": 3,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "答えはマイナス一万です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "マイナス一万",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "-10000"
-        },
-        "Start": 3,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "答えは二百万です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "二百万",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2000000"
-        },
-        "Start": 3,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "三百三十一は奇数です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "三百三十一",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "331"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "二十万二千は実数です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "二十万二千",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "202000"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "二千二百は奇数ではありません。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "二千二百",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2200"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "答えは三万二千二百です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "三万二千二百",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "32200"
-        },
-        "Start": 3,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "七十は整数です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "七十",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "70"
-        },
-        "Start": 0,
-        "End": 1
-      }
-    ]
-  },
-  {
-    "Input": "五十二は偶数です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "五十二",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "52"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "答えはマイナス五です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "マイナス五",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "-5"
-        },
-        "Start": 3,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "答えは百二十三万四千五百六十七です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "百二十三万四千五百六十七",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "1234567"
-        },
-        "Start": 3,
-        "End": 14
-      }
-    ]
-  },
-  {
-    "Input": "四万と四万は同じです。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "四万",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "40000"
-        },
-        "Start": 0,
-        "End": 1
-      },
-      {
-        "Text": "四万",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "40000"
-        },
-        "Start": 3,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "四百二十三　〇〇〇〇は二つの数値として認識されます。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "四百二十三",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "423"
-        },
-        "Start": 0,
-        "End": 4
-      },
-      {
-        "Text": "〇〇〇〇",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "0"
-        },
-        "Start": 6,
-        "End": 9
-      },
-      {
-        "Text": "二",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 11,
-        "End": 11
-      }
-    ]
-  },
-  {
-    "Input": "〇は〇です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "〇",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "0"
-        },
-        "Start": 0,
-        "End": 0
-      },
-      {
-        "Text": "〇",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "0"
+          "value": "9"
         },
         "Start": 2,
         "End": 2
@@ -2064,271 +1041,69 @@
     ]
   },
   {
-    "Input": "私の電話番号は、プラス一の二二二の二二二二の二二二二です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "-127.32e13",
     "Results": [
       {
-        "Text": "一",
+        "Text": "-127.32e13",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "1"
+          "value": "-1.2732E+15"
         },
-        "Start": 11,
-        "End": 11
-      },
-      {
-        "Text": "二二二",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "222"
-        },
-        "Start": 13,
-        "End": 15
-      },
-      {
-        "Text": "二二二二",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2222"
-        },
-        "Start": 17,
-        "End": 20
-      },
-      {
-        "Text": "二二二二",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2222"
-        },
-        "Start": 22,
-        "End": 25
+        "Start": 0,
+        "End": 9
       }
     ]
   },
   {
-    "Input": "私はあなたに一千万あげることができます。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "12.32e+14",
     "Results": [
       {
-        "Text": "一千万",
+        "Text": "12.32e+14",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "10000000"
+          "value": "1.232E+15"
         },
-        "Start": 6,
+        "Start": 0,
         "End": 8
       }
     ]
   },
   {
-    "Input": "私はあなたに三百二十一元をあげることができます。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "-12e-1",
     "Results": [
       {
-        "Text": "三百二十一",
+        "Text": "-12e-1",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "321"
-        },
-        "Start": 6,
-        "End": 10
-      }
-    ]
-  },
-  {
-    "Input": "四千三百二十一は有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "四千三百二十一",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "4321"
+          "value": "-1.2"
         },
         "Start": 0,
-        "End": 6
+        "End": 5
       }
     ]
   },
   {
-    "Input": "四千三百と〇は二つの有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "１２/３",
     "Results": [
       {
-        "Text": "四千三百",
+        "Text": "12/3",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "4300"
+          "value": "4"
         },
         "Start": 0,
         "End": 3
-      },
-      {
-        "Text": "〇",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "0"
-        },
-        "Start": 5,
-        "End": 5
-      },
-      {
-        "Text": "二",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 7,
-        "End": 7
       }
     ]
   },
   {
-    "Input": "四千と三百二十一は二つの有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "6/5",
     "Results": [
       {
-        "Text": "四千",
+        "Text": "6/5",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "4000"
-        },
-        "Start": 0,
-        "End": 1
-      },
-      {
-        "Text": "三百二十一",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "321"
-        },
-        "Start": 3,
-        "End": 7
-      },
-      {
-        "Text": "二",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 9,
-        "End": 9
-      }
-    ]
-  },
-  {
-    "Input": "三百と二百は二つの有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "三百",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "300"
-        },
-        "Start": 0,
-        "End": 1
-      },
-      {
-        "Text": "二百",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "200"
-        },
-        "Start": 3,
-        "End": 4
-      },
-      {
-        "Text": "二",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 6,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "三百とマイナス一は二つの有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "三百",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "300"
-        },
-        "Start": 0,
-        "End": 1
-      },
-      {
-        "Text": "マイナス一",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "-1"
-        },
-        "Start": 3,
-        "End": 7
-      },
-      {
-        "Text": "二",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 9,
-        "End": 9
-      }
-    ]
-  },
-  {
-    "Input": "三百一は有効な数字です。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
-    "Results": [
-      {
-        "Text": "三百一",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "301"
+          "value": "1.2"
         },
         "Start": 0,
         "End": 2
@@ -2336,21 +1111,342 @@
     ]
   },
   {
-    "Input": "テチマンで二十六人が事故死した。",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "IgnoreResolution": true,
+    "Input": "-3/2",
     "Results": [
       {
-        "Text": "二十六",
+        "Text": "-3/2",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "26"
+          "value": "-1.5"
         },
-        "Start": 5,
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "-1.1^--23",
+    "Results": [
+      {
+        "Text": "-1.1^--23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-8.95430243255239"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "2.5^-1",
+    "Results": [
+      {
+        "Text": "2.5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.4"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "-1.1^+23",
+    "Results": [
+      {
+        "Text": "-1.1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-8.95430243255239"
+        },
+        "Start": 0,
         "End": 7
       }
     ]
+  },
+  {
+    "Input": "-2.5^-1",
+    "Results": [
+      {
+        "Text": "-2.5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0.4"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "-1e1",
+    "Results": [
+      {
+        "Text": "-1e1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-10"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "-2.5 M",
+    "Results": [
+      {
+        "Text": "-2.5 m",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-2500000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "10.233",
+    "Results": [
+      {
+        "Text": "10.233",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10.233"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "2^-1",
+    "Results": [
+      {
+        "Text": "2^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.5"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "21.2E0",
+    "Results": [
+      {
+        "Text": "21.2e0",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21.2"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "五 分の 一",
+    "Results": [
+      {
+        "Text": "五 分の 一",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.2"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "五 は 四 分の 一",
+    "Results": [
+      {
+        "Text": "五 は 四 分の 一",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5.25"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "五 と 四 分の 一",
+    "Results": [
+      {
+        "Text": "五 と 四 分の 一",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5.25"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "３／５",
+    "Results": [
+      {
+        "Text": "3/5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.6"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "1 ３/5",
+    "Results": [
+      {
+        "Text": "1 3/5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1.6"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "１６/5",
+    "Results": [
+      {
+        "Text": "16/5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3.2"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "１６分の5",
+    "Results": [
+      {
+        "Text": "16分の5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.3125"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "１６分の2225",
+    "Results": [
+      {
+        "Text": "16分の2225",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "139.0625"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "マイナス一と二分の一",
+    "Results": [
+      {
+        "Text": "マイナス一と二分の一",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1.5"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "３分の27",
+    "Results": [
+      {
+        "Text": "3分の27",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "マイナス３分の27",
+    "Results": [
+      {
+        "Text": "マイナス3分の27",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-9"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "12/3の夢、1/2の努力",
+    "Results": [
+      {
+        "Text": "12/3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "1/2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.5"
+        },
+        "Start": 7,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "四川",
+    "Results": []
+  },
+  {
+    "Input": "小明十本の指",
+    "Results": [
+      {
+        "Text": "十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10"
+        },
+        "Start": 2,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "私の家は四川にあります",
+    "Results": []
   }
 ]
