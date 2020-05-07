@@ -343,14 +343,12 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Dutch, options))),
                     new Dutch.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.Dutch, options))));
 
-            // When registering NumberRangeModel, enable TestNumber_Dutch -> NumberRangeModel tests
-            /*
             RegisterModel<NumberRangeModel>(
                 Culture.Dutch,
                 (options) => new NumberRangeModel(
-                    new BaseNumberRangeParser(new DutchNumberRangeParserConfiguration()),
-                    new Dutch.NumberRangeExtractor(options)));
-            */
+                    new BaseNumberRangeParser(new DutchNumberRangeParserConfiguration(
+                                                    new BaseNumberOptionsConfiguration(Culture.Dutch, options))),
+                    new Dutch.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Dutch, options))));
 
             RegisterModel<NumberModel>(
                Culture.Turkish,
