@@ -1,9 +1,9 @@
 [
   {
     "Input": "تجده في الصفحة ال١٩٢",
-    "NotSupportedByDesign": "javascript, java, python",
     "IgnoreResolution": true,
     "Comment" : "IgnoreResolution should only be used momentarily and as support for new pre-approved languages is added.",
+    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "١٩٢",
@@ -92,6 +92,7 @@
   },
   {
     "Input": "وزنه ٠,٠٨",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -108,6 +109,7 @@
   },
   {
     "Input": "وزنه ٠,٢٣٤٥٦",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -124,6 +126,7 @@
   },
   {
     "Input": "مقاسه ٤,٨ .",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -140,6 +143,7 @@
   },
   {
     "Input": "يوجد ستة عشر تفاحاً.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -156,6 +160,7 @@
   },
   {
     "Input": "هي قرأت ثلثان من الكتاب",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -172,6 +177,7 @@
   },
   {
     "Input": "مائة وستة عشر صفحة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -188,6 +194,7 @@
   },
   {
     "Input": "مائة وستة صفحات.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -204,6 +211,7 @@
   },
   {
     "Input": "النتيجة الصحيحة هي  مائة وواحدُ وستون",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -220,6 +228,7 @@
   },
   {
     "Input": "واحد من تريليون صفحات تكون مقطوعة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -236,6 +245,7 @@
   },
   {
     "Input": "الشمس واحد من مئة تريليونات نجم",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -252,6 +262,7 @@
   },
   {
     "Input": "مائة آلاف دولار",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -268,6 +279,7 @@
   },
   {
     "Input": "نصف دزينة من التفاح",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -284,6 +296,7 @@
   },
   {
     "Input": "أريد ٣ دزينات من التفاحة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -317,6 +330,7 @@
   },
   {
     "Input": "أشتريت ثلاث دزينات من التفاحة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -333,6 +347,7 @@
   },
   {
     "Input": "ثلاث مائة ودزينتين",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -349,6 +364,7 @@
   },
   {
     "Input": "عدد السكان في الهند ١،٢٣٤،٥٦٧",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -365,6 +381,7 @@
   },
   {
     "Input": "النتيجة الصحيحة ٩,٢٣٢١٣١٢ ",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -381,6 +398,7 @@
   },
   {
     "Input": "-٩,٢٣٢١٣١٢",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -397,6 +415,7 @@
   },
   {
     "Input": "-١",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -413,6 +432,7 @@
   },
   {
     "Input": "-١ ٤/٥",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -429,6 +449,7 @@
   },
   {
     "Input": "لديها ثلاثة اقلام",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -445,6 +466,7 @@
   },
   {
     "Input": "رقم الهاتف ١٢٣٤٥٦٧٨٩١٠١٢٣١",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -461,6 +483,7 @@
   },
   {
     "Input": "-١٢٣٤٥٦٧٨٩١٠١٢٣١",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -494,6 +517,7 @@
   },
   {
     "Input": "١",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -510,6 +534,7 @@
   },
   {
     "Input": "عدد سكان ١ ترليون",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -526,6 +551,7 @@
   },
   {
     "Input": "في الحديقة ثلاثة اشجار",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -542,6 +568,7 @@
   },
   {
     "Input": "في السماء أكثر من واحد ترليون نجمة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -558,6 +585,7 @@
   },
   {
     "Input": "عدد سكان المنطقة واحد وعشرون تريليون",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -574,6 +602,7 @@
   },
   {
     "Input": "عدد سكان المنطقة واحد وعشرون تريليون وثلاث مائة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -607,6 +636,7 @@
   },
   {
     "Input": "تحتوي السلة على اثنين وخمسون فاكهة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -623,6 +653,7 @@
   },
   {
     "Input": "يوجد في الغابة  ثلاث مائة وواحد وثلاثون  أشجار",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -639,6 +670,7 @@
   },
   {
     "Input": "شريت فستان بألفين ومائتين درهم.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -655,6 +687,7 @@
   },
   {
     "Input": "١e١٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -671,6 +704,7 @@
   },
   {
     "Input": "١,١^٢٣",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -687,6 +721,7 @@
   },
   {
     "Input": "البيت قيمته ٣٢٢ ألف ريال",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -703,6 +738,7 @@
   },
   {
     "Input": "سبعين كيلو متر.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -719,6 +755,7 @@
   },
   {
     "Input": "٣/٤ الكأس",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -735,6 +772,7 @@
   },
   {
     "Input": "المتبقي من الفطيرة خمسة اثمان",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -751,6 +789,7 @@
   },
   {
     "Input": "شربت نصف العصير",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -767,6 +806,7 @@
   },
   {
     "Input": "كتبت ثلاث ارباع الصفحة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -783,6 +823,7 @@
   },
   {
     "Input": "اكتملت عشرون وثلاثة اخماس سجلات",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -799,6 +840,7 @@
   },
   {
     "Input": "قراءت ثلاث وعشرون خمس من الكتاب",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -815,6 +857,7 @@
   },
   {
     "Input": "تمضي ثلاث وعشرون وثلاثة اخماس يومها في النوم",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -831,6 +874,7 @@
   },
   {
     "Input": "مليون وألفين ومائتين وثلاثة أخماس الأكواب",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -847,6 +891,7 @@
   },
   {
     "Input": "كان لديها واحد ونصف ريال",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -863,6 +908,7 @@
   },
   {
     "Input": "نام احمد الى ساعة واحد وربع",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -879,6 +925,7 @@
   },
   {
     "Input": "اشرب في اليوم خمسة وربع كأس من الماء",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -895,6 +942,7 @@
   },
   {
     "Input": "الشجرتان بينها مسافة مئة وثلاثة ارباع متر",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -911,6 +959,7 @@
   },
   {
     "Input": "كان الناتج واحد جزء من مئة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -927,6 +976,7 @@
   },
   {
     "Input": "١,١^+٢٣",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -943,6 +993,7 @@
   },
   {
     "Input": "٢,٥^-١",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -959,6 +1010,7 @@
   },
   {
     "Input": "-١٢٧,٣٢e١٣",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -975,6 +1027,7 @@
   },
   {
     "Input": "١٢,٣٢e+١٤",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -991,6 +1044,7 @@
   },
   {
     "Input": "-١٢e-١",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1007,6 +1061,7 @@
   },
   {
     "Input": "كان ثمن حجرة الالماس اثني عشر مليار ريال.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1023,6 +1078,7 @@
   },
   {
     "Input": "اكلت خمس الفطيرة.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1056,6 +1112,7 @@
   },
   {
     "Input": "مضت خمس الساعة في التنظيف.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1072,6 +1129,7 @@
   },
   {
     "Input": "اريد ثلاثة اخماس العمل منفوذ في الوقت المحدد.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1088,6 +1146,7 @@
   },
   {
     "Input": "ذاكرت لمدة عشرون اخماس ساعة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1104,6 +1163,7 @@
   },
   {
     "Input": "انتهيت من ثلاث وخمس اعمال اليوم",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1120,6 +1180,7 @@
   },
   {
     "Input": "تملك واحد وعشرون اخماس الفندق",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1136,6 +1197,7 @@
   },
   {
     "Input": "ثلاثة واحد وعشرونات",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1220,6 +1282,7 @@
   },
   {
     "Input": "١ على واحد وعشرون شخص مصاب",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1236,6 +1299,7 @@
   },
   {
     "Input": "١ على مئة وواحد وعشرون الورقة تم توقيعه",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1252,6 +1316,7 @@
   },
   {
     "Input": "الجواب الصحيح ١ جزء من ثلاثة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1268,6 +1333,7 @@
   },
   {
     "Input": "١ على ٣ من اكياس الارز",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1284,6 +1350,7 @@
   },
   {
     "Input": "واحد على ٣ حقائب مكتملة.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1300,6 +1367,7 @@
   },
   {
     "Input": "واحد على ٢٠ جواز سفر مختومة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1316,6 +1384,7 @@
   },
   {
     "Input": "واحد على عشرين ملف مختومة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1332,6 +1401,7 @@
   },
   {
     "Input": "واحد على مائة تخطيطات تمت",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1370,6 +1440,7 @@
   },
   {
     "Input": "درجة الحرارة سالب واحد",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1386,6 +1457,7 @@
   },
   {
     "Input": "سالب واحد على ٢٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1402,6 +1474,7 @@
   },
   {
     "Input": "ربع كيلو غرام من العدس",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1435,6 +1508,7 @@
   },
   {
     "Input": "النتيجة هي خمسة أثمان",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1451,6 +1525,7 @@
   },
   {
     "Input": "واحد من ثلاثة طالبات",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1467,6 +1542,7 @@
   },
   {
     "Input": "واحد من واحد وعشرون شخص مريض",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1483,6 +1559,7 @@
   },
   {
     "Input": "خمسة أثمان الكأس",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1499,6 +1576,7 @@
   },
   {
     "Input": "صفر هو٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1525,6 +1603,7 @@
   },
   {
     "Input": "هل يوجد وقت في يوم ٥/١٧/٢٠١٨؟",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1566,6 +1645,7 @@
   },
   {
     "Input": "رقم لوحة السيارة ثلاث مئة وواحد.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1603,6 +1683,7 @@
   },
   {
     "Input": "في بعض البلدان تستطيع ان تكتب ٥.٠٠ او ٥,٠٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1629,6 +1710,7 @@
   },
   {
     "Input": "ستة وعشرون شخص توفي في حادث في تيكمان.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1645,6 +1727,7 @@
   },
   {
     "Input": "اكثر من نصف الناس قدموا الى هنا.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1661,6 +1744,7 @@
   },
   {
     "Input": "أريد أن اربح ١٠٠٠٠ دولار في ٣ سنوات.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1687,6 +1771,7 @@
   },
   {
     "Input": "أريد أن ٢٠٠٠ دولار خلال ٣ سنوات.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1713,6 +1798,7 @@
   },
   {
     "Input": "الكسر الصحيح ٢٠٠٠ على ٣",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1729,6 +1815,7 @@
   },
   {
     "Input": "$٢٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1745,6 +1832,7 @@
   },
   {
     "Input": "الإجابة سالب واحد.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1761,6 +1849,7 @@
   },
   {
     "Input": "-٤/٥",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1777,6 +1866,7 @@
   },
   {
     "Input": "السعر المجموع مائتين وإثنين ألف",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1793,6 +1883,7 @@
   },
   {
     "Input": "السعر مائتان وثلاثة جزء من مائة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1826,6 +1917,7 @@
   },
   {
     "Input": "مئة وثلاثون أخماس العقد تم كتابته.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1842,6 +1934,7 @@
   },
   {
     "Input": "-٢,٥^-١",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1858,6 +1951,7 @@
   },
   {
     "Input": "درجة الحرارة سالب ٥",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1874,6 +1968,7 @@
   },
   {
     "Input": "١ ٢٣٤ ٥٦٧",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1890,6 +1985,7 @@
   },
   {
     "Input": "المسافة بين البيتين مئتان وواحد وسبعون جزء من مئة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {

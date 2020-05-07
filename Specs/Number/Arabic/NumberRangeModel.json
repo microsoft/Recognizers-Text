@@ -22,6 +22,7 @@
   },
   {
     "Input": "الرقم بين ٢٠ و٣٠.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -37,6 +38,7 @@
   },
   {
     "Input": "الرقم المحدود بين العاشر وخمسة عشر",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -52,6 +54,7 @@
   },
   {
     "Input": "النتيجة بين سالب عشرة وخمسة عشر",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -131,6 +134,7 @@
   },
   {
     "Input": "٢٠~١٠٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -258,6 +262,7 @@
   },
   {
     "Input": "عمرها فوق الثلاثين",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -401,6 +406,7 @@
   },
   {
     "Input": "طوله تحت ١٧٠.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -416,6 +422,7 @@
   },
   {
     "Input": "ادنى ١٧٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -431,6 +438,7 @@
   },
   {
     "Input": "المبلغ المطلوب أقل من ألف",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -446,6 +454,7 @@
   },
   {
     "Input": "الجواب يساوي مائة وسبعين",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -461,6 +470,7 @@
   },
   {
     "Input": "س>١٠ و ص<٢٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -515,6 +525,7 @@
   },
   {
     "Input": "الرقم يساوي ٢٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -530,6 +541,7 @@
   },
   {
     "Input": "يساوي ٢٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -847,6 +859,7 @@
   },
   {
     "Input": "مجال الرقم ١٠٠٠ - ٥٠٠٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -926,6 +939,7 @@
   },
   {
     "Input": "هل لا تزال الحالة نفسها عندما تكون >٣٠؟",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -957,6 +971,7 @@
   },
   {
     "Input": "هل لا تزال الحالة نفسها عندما تكون <-٣٠؟",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1003,6 +1018,7 @@
   },
   {
     "Input": "يساوي ٢٠٠٠٠ في  ١٩٩٨",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1066,6 +1082,7 @@
   },
   {
     "Input": "عدد المرضى يتجاوز ٣٠٠٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1138,6 +1155,7 @@
   },
   {
     "Input": "سرعة السيارة يتجاوز ١٥٠ كيلو متر/بالساعة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {

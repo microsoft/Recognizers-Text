@@ -1,6 +1,7 @@
 [
   {
     "Input": "احذف اخر جملة في الملاحظة.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -18,6 +19,7 @@
   },
   {
     "Input": "هل تعني \"التالي\" او \"الاخر\"؟",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -46,6 +48,7 @@
   },
   {
     "Input": "أريني الذي قبل الاخير.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -63,6 +66,7 @@
   },
   {
     "Input": "اريني الذي قبل الاخير.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -98,6 +102,7 @@
   },
   {
     "Input": "أريني الثانية الى الاخير.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -115,6 +120,7 @@
   },
   {
     "Input": "احذف اخر جملة.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -132,6 +138,7 @@
   },
   {
     "Input": "أريني السابق.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -149,6 +156,7 @@
   },
   {
     "Input": "أريني التالي.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -166,6 +174,7 @@
   },
   {
     "Input": "أريد الكتابين الأخير.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -183,6 +192,7 @@
   },
   {
     "Input": "أريد الكتاب الأخير.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -200,6 +210,7 @@
   },
   {
     "Input": "أريد ثلاث كتب التالي.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -217,6 +228,7 @@
   },
   {
     "Input": "أنظر الى الصفحة التالي.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -234,6 +246,7 @@
   },
   {
     "Input": "أريد البسكويت الاخير.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -251,6 +264,7 @@
   },
   {
     "Input": "أريد الذي قبل الاخير.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -268,6 +282,7 @@
   },
   {
     "Input": "انتقل الى الصفحة السابقة.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -285,6 +300,7 @@
   },
   {
     "Input": "البيت الحادي عشر",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -302,6 +318,7 @@
   },
   {
     "Input": "السيارة الواحد والعشرون",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -319,6 +336,7 @@
   },
   {
     "Input": "الكتاب الثلاثون غير جيد.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -336,6 +354,7 @@
   },
   {
     "Input": "السؤال الثاني صعب.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -353,6 +372,7 @@
   },
   {
     "Input": "هي في الصف الحادي عشر.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -370,6 +390,7 @@
   },
   {
     "Input": "دخلت البيت العشرون.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -387,6 +408,7 @@
   },
   {
     "Input": "هذه المرة الخامسة والعشرون.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -404,6 +426,7 @@
   },
   {
     "Input": "السؤال الواحد والعشرون غير محلولة.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -421,6 +444,7 @@
   },
   {
     "Input": "وجدت الكتاب المئة والخامسة والعشرون.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -438,6 +462,7 @@
   },
   {
     "Input": "حدث في العام المئة والخامسة والعشرون.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -455,6 +480,7 @@
   },
   {
     "Input": "لم أجد الكتاب التريليون.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -490,6 +516,7 @@
   },
   {
     "Input": "في عام المئتيان من بعد الهجرة.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -507,6 +534,7 @@
   },
   {
     "Input": "احجز مقعد ففي الدرجة الأولى الى سياتل.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -524,6 +552,7 @@
   },
   {
     "Input": "اعجبني الأول كتابين.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -541,6 +570,7 @@
   },
   {
     "Input": "اعجبني الأول.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -558,6 +588,7 @@
   },
   {
     "Input": "اتحدث الكلمة الأولى",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -575,6 +606,7 @@
   },
   {
     "Input": "أريد الكتب الثلاثة التالي",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -592,6 +624,7 @@
   },
   {
     "Input": "هي انتهت قراءة الكتاب الثاني",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -645,6 +678,7 @@
   },
   {
     "Input": "الصفحة الحالي",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -662,6 +696,7 @@
   },
   {
     "Input": "انظر الى الصفحة الحالي.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
