@@ -298,7 +298,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "最後の",
+        "Text": "最後",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
@@ -306,17 +306,17 @@
           "value": "end+0"
         },
         "Start": 6,
-        "End": 8
+        "End": 7
       }
     ]
   },
   {
-    "Input": "あなたが言いたいのは”次の”か”最後の”ですか。",
+    "Input": "あなたが言いたいのは”次”か”最後”ですか。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "次の",
+        "Text": "次",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "1",
@@ -324,28 +324,28 @@
           "value": "current+1"
         },
         "Start": 11,
-        "End": 12
+        "End": 11
       },
       {
-        "Text": "最後の",
+        "Text": "最後",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
           "relativeTo": "end",
           "value": "end+0"
         },
-        "Start": 16,
-        "End": 18
+        "Start": 15,
+        "End": 16
       }
     ]
   },
   {
-    "Input": "最後から三番目のを私に見せてください。",
+    "Input": "最後から三番目を私に見せてください。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "最後から三番目の",
+        "Text": "最後から三番目",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-2",
@@ -353,7 +353,7 @@
           "value": "end-2"
         },
         "Start": 0,
-        "End": 7
+        "End": 6
       }
     ]
   },
@@ -363,7 +363,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "最後の",
+        "Text": "最後",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
@@ -371,7 +371,7 @@
           "value": "end+0"
         },
         "Start": 0,
-        "End": 2
+        "End": 1
       }
     ]
   },
@@ -417,7 +417,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "最後の",
+        "Text": "最後",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
@@ -425,7 +425,7 @@
           "value": "end+0"
         },
         "Start": 2,
-        "End": 4
+        "End": 3
       }
     ]
   },
@@ -435,7 +435,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "最後の",
+        "Text": "最後",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
@@ -443,7 +443,7 @@
           "value": "end+0"
         },
         "Start": 2,
-        "End": 4
+        "End": 3
       }
     ]
   },
@@ -453,7 +453,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "次の",
+        "Text": "次",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "1",
@@ -461,7 +461,7 @@
           "value": "current+1"
         },
         "Start": 2,
-        "End": 3
+        "End": 2
       }
     ]
   },
@@ -471,7 +471,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "次の",
+        "Text": "次",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "1",
@@ -479,7 +479,7 @@
           "value": "current+1"
         },
         "Start": 2,
-        "End": 3
+        "End": 2
       }
     ]
   },
@@ -489,7 +489,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "最後の",
+        "Text": "最後",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
@@ -497,17 +497,17 @@
           "value": "end+0"
         },
         "Start": 2,
-        "End": 4
+        "End": 3
       }
     ]
   },
   {
-    "Input": "私は最後から一つ前のがほしいです。",
+    "Input": "私は最後から一つ前がほしいです。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "最後から一つ前の",
+        "Text": "最後から一つ前",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -515,7 +515,7 @@
           "value": "end-1"
         },
         "Start": 2,
-        "End": 9
+        "End": 8
       }
     ]
   },
@@ -523,9 +523,10 @@
     "Input": "前のページに戻りなさい。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "前の",
+        "Text": "前",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -533,7 +534,7 @@
           "value": "current-1"
         },
         "Start": 0,
-        "End": 1
+        "End": 0
       }
     ]
   },
@@ -703,9 +704,10 @@
     "Input": "私は最初の2冊の本が好きです。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "最初の",
+        "Text": "最初",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "1",
@@ -713,7 +715,7 @@
           "value": "1"
         },
         "Start": 2,
-        "End": 4
+        "End": 3
       }
     ]
   },
@@ -721,9 +723,10 @@
     "Input": "私は最初のが好きです。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "最初の",
+        "Text": "最初",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "1",
@@ -731,7 +734,7 @@
           "value": "1"
         },
         "Start": 2,
-        "End": 4
+        "End": 3
       }
     ]
   },
@@ -739,9 +742,10 @@
     "Input": "最初の単語を話しなさい。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "最初の",
+        "Text": "最初",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "1",
@@ -749,7 +753,7 @@
           "value": "1"
         },
         "Start": 0,
-        "End": 2
+        "End": 1
       }
     ]
   },
@@ -759,7 +763,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "次の",
+        "Text": "次",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "1",
@@ -767,7 +771,7 @@
           "value": "current+1"
         },
         "Start": 4,
-        "End": 5
+        "End": 4
       }
     ]
   },
@@ -826,12 +830,145 @@
     ]
   },
   {
-    "Input": "私は言いたかったのは現在のページでした。",
+    "Input": "現在のページを見なさい。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "現在の",
+        "Text": "現在",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "current",
+          "value": "current+0"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "最後から二番目を私に見せてください。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "最後から二番目",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "最後から一つ前を私に見せてください。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "最後から一つ前",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "前から十一番目の席に座りなさい。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "十一番目",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        },
+        "Start": 3,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "前から二十一番目の席に座りなさい。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "二十一番目",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21",
+          "relativeTo": "start",
+          "value": "21"
+        },
+        "Start": 3,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "百二十五番目の数字はなんですか。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "百二十五番目",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "125",
+          "relativeTo": "start",
+          "value": "125"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "一兆番目の数字はなんですか。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "一兆番目",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1000000000000",
+          "relativeTo": "start",
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "私は言いたかったのは現在のことでした。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "現在のこと",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
@@ -839,17 +976,23 @@
           "value": "current+0"
         },
         "Start": 10,
-        "End": 12
+        "End": 14
       }
     ]
   },
   {
-    "Input": "最後から３番目のを私に見せてください。",
+    "Input": "一兆分の一の大きさは目に見えません。",
+    "IgnoreResolution": true,
+    "NotSupported": "dotnet",
+    "Results": []
+  },
+  {
+    "Input": "最後から３番目を私に見せてください。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "最後から３番目の",
+        "Text": "最後から3番目",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-2",
@@ -857,17 +1000,17 @@
           "value": "end-2"
         },
         "Start": 0,
-        "End": 7
+        "End": 6
       }
     ]
   },
   {
-    "Input": "私は最後から１つ前のがほしいです。",
+    "Input": "私は最後から１つ前がほしいです。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "最後から１つ前の",
+        "Text": "最後から1つ前",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -875,7 +1018,7 @@
           "value": "end-1"
         },
         "Start": 2,
-        "End": 9
+        "End": 8
       }
     ]
   },
@@ -885,7 +1028,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "３兆番目",
+        "Text": "3兆番目",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "3000000000000",
@@ -903,7 +1046,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "１００兆番目",
+        "Text": "100兆番目",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "100000000000000",
@@ -921,7 +1064,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "３０番目",
+        "Text": "30番目",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "30",
@@ -939,7 +1082,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "２番目",
+        "Text": "2番目",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "2",
@@ -957,7 +1100,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "２０番目",
+        "Text": "20番目",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "20",
@@ -975,7 +1118,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "２５番目",
+        "Text": "25番目",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "25",
@@ -991,9 +1134,10 @@
     "Input": "２１兆３２２番目の数字はなんですか。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "２１兆３２２番目",
+        "Text": "21兆322番目",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "21000000000322",
@@ -1011,7 +1155,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "２００番目",
+        "Text": "200番目",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "200",
@@ -1027,9 +1171,10 @@
     "Input": "シアトルへの１等級の席を予約しなさい。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "１等",
+        "Text": "ファースト",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "1",
@@ -1047,7 +1192,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "１番目の",
+        "Text": "1番目",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "1",
@@ -1055,7 +1200,7 @@
           "value": "1"
         },
         "Start": 2,
-        "End": 5
+        "End": 4
       }
     ]
   },
@@ -1065,7 +1210,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "１番目の",
+        "Text": "1番目",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "1",
@@ -1073,7 +1218,7 @@
           "value": "1"
         },
         "Start": 0,
-        "End": 3
+        "End": 2
       }
     ]
   },
@@ -1083,7 +1228,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "２位",
+        "Text": "2位",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "2",
@@ -1101,7 +1246,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "最後から１つ前のもの",
+        "Text": "最後から1つ前のもの",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -1119,7 +1264,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "最後から１つ前のこと",
+        "Text": "最後から1つ前のこと",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -1132,12 +1277,132 @@
     ]
   },
   {
-    "Input": "最後から3番目のを私に見せてください。",
+    "Input": "最後から２番目を私に見せてください。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "最後から2番目",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "最後から１つ前を私に見せてください。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "最後から1つ前",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "前から１１番目の席に座りなさい。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "11番目",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        },
+        "Start": 3,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "前から２１番目の席に座りなさい。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "21番目",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21",
+          "relativeTo": "start",
+          "value": "21"
+        },
+        "Start": 3,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "１２５番目の数字はなんですか。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "125番目",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "125",
+          "relativeTo": "start",
+          "value": "125"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "１兆番目の数字はなんですか。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "1兆番目",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1000000000000",
+          "relativeTo": "start",
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "１兆分の１の大きさは目に見えません。",
+    "IgnoreResolution": true,
+    "NotSupported": "dotnet",
+    "Results": []
+  },
+  {
+    "Input": "最後から3番目を私に見せてください。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "最後から3番目の",
+        "Text": "最後から3番目",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-2",
@@ -1145,17 +1410,17 @@
           "value": "end-2"
         },
         "Start": 0,
-        "End": 7
+        "End": 6
       }
     ]
   },
   {
-    "Input": "私は最後から1つ前のがほしいです。",
+    "Input": "私は最後から1つ前がほしいです。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "最後から1つ前の",
+        "Text": "最後から1つ前",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -1163,7 +1428,7 @@
           "value": "end-1"
         },
         "Start": 2,
-        "End": 9
+        "End": 8
       }
     ]
   },
@@ -1279,6 +1544,7 @@
     "Input": "21兆322番目の数字はなんですか。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "21兆322番目",
@@ -1335,7 +1601,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "1番目の",
+        "Text": "1番目",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "1",
@@ -1343,7 +1609,7 @@
           "value": "1"
         },
         "Start": 2,
-        "End": 5
+        "End": 4
       }
     ]
   },
@@ -1353,7 +1619,7 @@
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "1番目の",
+        "Text": "1番目",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "1",
@@ -1361,7 +1627,7 @@
           "value": "1"
         },
         "Start": 0,
-        "End": 3
+        "End": 2
       }
     ]
   },
@@ -1418,5 +1684,125 @@
         "End": 19
       }
     ]
+  },
+  {
+    "Input": "最後から2番目を私に見せてください。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "最後から2番目",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "最後から1つ前を私に見せてください。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "最後から1つ前",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "前から11番目の席に座りなさい。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "11番目",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        },
+        "Start": 3,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "前から21番目の席に座りなさい。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "21番目",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21",
+          "relativeTo": "start",
+          "value": "21"
+        },
+        "Start": 3,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "125番目の数字はなんですか。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "125番目",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "125",
+          "relativeTo": "start",
+          "value": "125"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "1兆番目の数字はなんですか。",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "1兆番目",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1000000000000",
+          "relativeTo": "start",
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "1兆分の1の大きさは目に見えません。",
+    "IgnoreResolution": true,
+    "NotSupported": "dotnet",
+    "Results": []
   }
 ]

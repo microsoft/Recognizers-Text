@@ -198,14 +198,17 @@ DoubleScientificNotationRegex: !nestedRegex
   def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
 #OrdinalExtractor
-OrdinalRegex: !nestedRegex
-  def: ((第|だい)({AllIntRegex})|({AllIntRegex})(番目|位|等|第|だい))|(最初の|ファースト)
-  references: [AllIntRegex]
 OrdinalNumbersRegex: !nestedRegex
-  def: ((第|だい){ZeroToNineFullHalfRegex}+|{ZeroToNineFullHalfRegex}+(番目|位|等|第|だい))
-  references: [ZeroToNineFullHalfRegex]
+  def: (((第|だい)({ZeroToNineFullHalfRegex}+)({RoundNumberIntegerRegex}+)?))|(({ZeroToNineFullHalfRegex}+|{ZeroToNineIntegerRegex}+)({RoundNumberIntegerRegex}+)?(番目|位|等))
+  references: [ZeroToNineFullHalfRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex]
+OrdinalRegex: !nestedRegex
+  def: (({OrdinalNumbersRegex})|((第|だい)({AllIntRegex})|({AllIntRegex}+(番目|位|等))))|(最初の|ファースト)
+  references: [AllIntRegex, OrdinalNumbersRegex, RoundNumberIntegerRegex]
 RelativeOrdinalRegex: !simpleRegex
-  def: (?<relativeOrdinal>(最後から１つ前のこと|(最後から１つ前の)(もの)?|最後から3番目の|最後から１つ前の|最後から３番目の|(次のもの)(前の)?|(前の)(もの)?|(最後から１つ)?(前のもの)|(最後から1つ前の)(こと|もの)?|現在の|前の\)もの|最後の|次の|最後から三番目の|最後から二番目の|(最後から一つ前の)(もの|こと)?|現在のこと|二位))
+  def: (?<relativeOrdinal>((最後)(から１つ前のこと|から１つ前(のも)?|から3番目|(から１つ前)(のもの)|から３番目|から三番目|から二番目|(から一つ前|から1つ前)(のもの|のこと)?|(から１つ)?(前))?|(次のもの)(前)?|前のもの|(現在)(のこと)?|次|二位))
+AllOrdinalRegex: !nestedRegex
+  def: ({OrdinalRegex}|{RelativeOrdinalRegex})
+  references: [OrdinalRegex, RelativeOrdinalRegex]
 #FractionExtractor
 AllFractionNumber: !nestedRegex
   def: '{NegativeNumberTermsRegex}{0,1}(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*[はと]{0,1}\s*)?{NegativeNumberTermsRegex}{0,1}({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*分\s*の\s*{NegativeNumberTermsRegex}{0,1}({ZeroToNineFullHalfRegex}+|{AllIntRegex})'
@@ -348,47 +351,45 @@ AmbiguousFractionConnectorsRegex: !simpleRegex
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
   entries:   
-    現在の: 0
-    次の: 1
-    前の)もの: -1
-    最後の: 0
-    最後から三番目の: -2
-    最後から二番目の: -1
-    最後から一つ前の: 0
+    現在: 0
+    次: 1
+    最後: 0
+    最後から三番目: -2
+    最後から二番目: -1
+    最後から一つ前: -1
     最後から一つ前のもの: -1
     最後から一つ前のこと: -1
     最後から1つ前のこと: -1
     最後から1つ前のもの: -1
-    最後から1つ前の: -1
+    最後から1つ前: -1
     現在のこと: 0
     前のもの: -1
     次のもの: 1
-    最後から３番目の: -2
-    最後から１つ前の: -1
+    最後から３番目: -2
+    最後から１つ前: -1
     最後から１つ前のもの: -1
     最後から１つ前のこと: -1
-    最後から3番目の: -2
+    最後から3番目: -2
 RelativeReferenceRelativeToMap: !dictionary
   types: [ string, string ]
   entries:   
-    現在の: end
-    次の: current
-    前の)もの: current
-    最後の: end
-    最後から三番目の: current
-    最後から二番目の: current
-    最後から一つ前の: end
+    現在: end
+    次: current
+    最後: end
+    最後から三番目: end
+    最後から二番目: end
+    最後から一つ前: end
     最後から一つ前のもの: end
     最後から一つ前のこと: end
     現在のこと: current
     最後から1つ前のこと: end
     最後から1つ前のもの: end
-    最後から1つ前の: end
+    最後から1つ前: end
     前のもの: current
     次のもの: current
-    最後から３番目の: end
-    最後から１つ前の: end
+    最後から３番目: end
+    最後から１つ前: end
     最後から１つ前のもの: end
     最後から１つ前のこと: end
-    最後から3番目の: end
+    最後から3番目: end
 ...
