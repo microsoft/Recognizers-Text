@@ -112,7 +112,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             // Japanese determine the subtype
-            if (Config.CultureInfo.Name == "ja-JP" && ret != null)
+            if (Config.CultureInfo.Name == "ja-*" && ret != null)
             {
                 ret.Type = DetermineType(extResult);
                 ret.Text = ret.Text.ToLowerInvariant();

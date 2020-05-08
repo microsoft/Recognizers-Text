@@ -30,6 +30,11 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     new Regex(NumbersDefinitions.NumbersFoldsPercentageRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.SPECIAL_SUFFIX)
                 },
+                {
+                    // 2折 ２.５折
+                    new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.JAPANESE)
+                },
             };
 
             Regexes = regexes.ToImmutableDictionary();
