@@ -34,6 +34,7 @@ ZeroToNineMap: !dictionary
   types: [char, double]
   entries:
     零: 0
+    〇: 0
     一: 1
     二: 2
     三: 3
@@ -112,11 +113,11 @@ DoubleAndRoundRegex: !nestedRegex
 FracSplitRegex: !simpleRegex
   def: '[はと]|分\s*の'
 ZeroToNineIntegerRegex: !simpleRegex
-  def: '[一二三四五六七八九]'
+  def: '[〇一二三四五六七八九]'
 NegativeNumberTermsRegex: !simpleRegex
   def: (マ\s*イ\s*ナ\s*ス)
 NegativeNumberTermsRegexNum: !simpleRegex
-  def: (?<!(\d+\s*)|[-－])[-－]
+  def: (?<!(\d+\s*)|[-−－])[-−－]
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*
   references: [NegativeNumberTermsRegex, NegativeNumberTermsRegexNum]
@@ -128,15 +129,15 @@ PairRegex: .*[対膳足]$
 RoundNumberIntegerRegex: !simpleRegex
   def: '[十百千万億兆]'
 AllowListRegex: !simpleRegex
-  def: (。|，|、|（|）|”｜国|週間|時間|時|匹|キロ|トン|年|個|足|本|\s|$)
+  def: (。|，|、|（|）|”｜国|週間|時間|時|匹|キロ|トン|年|個|足|本|で|は|\s|$|つ|月|の|と)
 NotSingleRegex: !nestedRegex
-  def: (?<!(第|だい))(({RoundNumberIntegerRegex}+({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*))|(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*({RoundNumberIntegerRegex}\s*){1,2})\s*(([零]?({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*{RoundNumberIntegerRegex}{0,1})\s*)*\s*(\s*(以上)?)
+  def: (?<!(第|だい))(({RoundNumberIntegerRegex}+(({ZeroToNineIntegerRegex}+|[十百千])+|{ZeroToNineFullHalfRegex}+|十)\s*))|(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*({RoundNumberIntegerRegex}\s*){1,2})\s*(([零]?({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*{RoundNumberIntegerRegex}{0,1})\s*)*\s*(\s*(以上)?)
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
 SingleRegex: !nestedRegex
-  def: (({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|十)(?={AllowListRegex}))
+  def: (({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)(?={AllowListRegex}))
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, AllowListRegex]
 AllIntRegex: !nestedRegex
-  def: (((({ZeroToNineIntegerRegex}|[十百千])\s*{RoundNumberIntegerRegex}*)|({ZeroToNineFullHalfRegex}\s*{RoundNumberIntegerRegex})){1,2}(\s*[以上])?)
+  def: (?<!(ダース))(((({ZeroToNineIntegerRegex}|[十百千])\s*{RoundNumberIntegerRegex}*)|(({ZeroToNineFullHalfRegex}\s*{RoundNumberIntegerRegex})|{RoundNumberIntegerRegex})){1,2}(\s*[以上])?)
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
@@ -144,7 +145,7 @@ PlaceHolderDefault: !simpleRegex
   def: \D|\b
 NumbersSpecialsChars: !nestedRegex
   def: (({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineFullHalfRegex}+
-  references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex, NegativeNumberTermsRegex ]
+  references: [NegativeNumberTermsRegexNum, NegativeNumberTermsRegex, ZeroToNineFullHalfRegex]
 NumbersSpecialsCharsWithSuffix: !nestedRegex
   def: '{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}'
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex, BaseNumbers.NumberMultiplierRegex]
@@ -155,8 +156,8 @@ NumbersWithHalfDozen: !nestedRegex
   def: 半({RoundNumberIntegerRegex}|(ダース))
   references: [RoundNumberIntegerRegex]
 NumbersWithDozen: !nestedRegex
-  def: '{AllIntRegex}(ダース)(?!{AllIntRegex})'
-  references: [AllIntRegex]
+  def: '({AllIntRegex}|{ZeroToNineFullHalfRegex}+)(ダース)'
+  references: [AllIntRegex, ZeroToNineFullHalfRegex]
 PointRegexStr: !simpleRegex
   def: '[\.．]'
 AllFloatRegex: !nestedRegex
@@ -198,7 +199,7 @@ DoubleScientificNotationRegex: !nestedRegex
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
 #OrdinalExtractor
 OrdinalRegex: !nestedRegex
-  def: (第|だい){AllIntRegex}
+  def: (第|だい)({AllIntRegex})
   references: [AllIntRegex]
 OrdinalNumbersRegex: !nestedRegex
   def: (第|だい){ZeroToNineFullHalfRegex}+

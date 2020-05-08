@@ -27,6 +27,7 @@ namespace Microsoft.Recognizers.Text.Utilities
                 query = query.Replace("９", "9");
                 query = query.Replace("：", ":");
                 query = query.Replace("－", "-");
+                query = query.Replace("−", "-");
                 query = query.Replace("，", ",");
                 query = query.Replace("／", "/");
                 query = query.Replace("Ｇ", "G");
