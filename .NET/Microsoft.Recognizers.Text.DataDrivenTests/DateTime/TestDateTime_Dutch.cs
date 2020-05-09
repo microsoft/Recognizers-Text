@@ -26,7 +26,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestDateTimeExtractor(testSpec);
         }
 
-        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void TimeExtractor(TestModel testSpec)
@@ -35,6 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestDateTimeExtractor(testSpec);
         }
 
+        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void DatePeriodExtractor(TestModel testSpec)

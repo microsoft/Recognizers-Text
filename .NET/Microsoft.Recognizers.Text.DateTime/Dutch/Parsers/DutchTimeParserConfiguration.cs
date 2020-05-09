@@ -22,6 +22,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static readonly Regex NightRegex =
             new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
 
+        private static readonly Regex HalfTokenRegex =
+            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags);
+
+        private static readonly Regex QuarterTokenRegex =
+            new Regex(DateTimeDefinitions.QuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex ThreeQuarterTokenRegex =
+            new Regex(DateTimeDefinitions.ThreeQuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex ToTokenRegex =
+            new Regex(DateTimeDefinitions.ToTokenRegex, RegexFlags);
+
+        private static readonly Regex ToHalfTokenRegex =
+            new Regex(DateTimeDefinitions.ToHalfTokenRegex, RegexFlags);
+
+        private static readonly Regex ForHalfTokenRegex =
+            new Regex(DateTimeDefinitions.ForHalfTokenRegex, RegexFlags);
+
         public DutchTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -53,15 +71,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
             var trimedPrefix = prefix.Trim().ToLowerInvariant();
 
-            if (trimedPrefix.StartsWith("half"))
+            if (HalfTokenRegex.IsMatch(trimedPrefix))
             {
-                deltaMin = 30;
+                deltaMin = -30;
             }
-            else if (trimedPrefix.StartsWith("a quarter") || trimedPrefix.StartsWith("quarter"))
+            else if (QuarterTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 15;
             }
-            else if (trimedPrefix.StartsWith("three quarter"))
+            else if (ThreeQuarterTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 45;
             }
@@ -80,7 +98,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 }
             }
 
-            if (trimedPrefix.EndsWith("to"))
+            if (ToHalfTokenRegex.IsMatch(trimedPrefix))
+            {
+                deltaMin = deltaMin - 30;
+            }
+            else if (ForHalfTokenRegex.IsMatch(trimedPrefix))
+            {
+                deltaMin = -deltaMin - 30;
+            }
+            else if (ToTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = -deltaMin;
             }
