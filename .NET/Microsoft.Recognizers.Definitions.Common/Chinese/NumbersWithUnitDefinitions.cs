@@ -674,5 +674,10 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             @"度",
             @"k"
         };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"五角", @"五角大楼" },
+            { @"普尔", @"标准普尔" },
+        };
     }
 }

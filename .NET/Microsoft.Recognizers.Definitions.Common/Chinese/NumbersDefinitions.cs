@@ -248,7 +248,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string TwoNumberRangeRegex4 = $@"(?<number1>((?!(([,，](?!\d+))|。)).)+)\s*{TillRegex}\s*(?<number2>((?!(([,，](?!\d+))|。)).)+)";
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"十", @"十足" }
+            { @"十", @"十足" },
+            { @"伍", @"队伍" },
         };
       public const string AmbiguousFractionConnectorsRegex = @"^[.]";
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>

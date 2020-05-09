@@ -3320,7 +3320,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-30T08:00:00"
     },
-    "NotSupported":  "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "从四月的最后一个星期一到十月一日",
@@ -3441,7 +3441,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-02T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "去年上半年",
@@ -3466,7 +3466,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-02T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "上半年",
@@ -3491,7 +3491,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-02T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "明年下半年",
@@ -3516,7 +3516,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-02T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2017年上半年",
@@ -3541,7 +3541,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-02T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "二零一七年下半年",
@@ -3566,7 +3566,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-03T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "上半月",
@@ -3591,7 +3591,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-03T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "下半周",
@@ -3616,7 +3616,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-03T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "上个半年",
@@ -3641,7 +3641,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-03T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2018年前半年",
@@ -3666,7 +3666,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-03T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "今年后半年",
@@ -5532,6 +5532,21 @@
     "Context": {
       "ReferenceDateTime": "2019-01-06T12:00:00"
     },
+    "Results": []
+  },
+  {
+    "Input": "这是我的队伍",
+    "NotSupported": "python, javascript, java",
+    "Results": []
+  },
+  {
+    "Input": "五角大楼宣布了作战计划",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "标准普尔指数下降",
+    "NotSupported": "javascript, java, python",
     "Results": []
   }
 ]
