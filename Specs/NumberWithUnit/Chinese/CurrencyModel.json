@@ -494,7 +494,7 @@
   },
   {
     "Input": "人民币 8千元",
-    "NotSupported":"javascript, java, dotnet, python",
+    "NotSupported": "javascript, java, dotnet, python",
     "Results": [
       {
         "Text": "人民币 8千元",
@@ -508,5 +508,15 @@
         }
       }
     ]
+  },
+  {
+    "Input": "五角大楼宣布了作战计划",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "标准普尔指数下降",
+    "NotSupported": "javascript, java, python",
+    "Results": []
   }
 ]
