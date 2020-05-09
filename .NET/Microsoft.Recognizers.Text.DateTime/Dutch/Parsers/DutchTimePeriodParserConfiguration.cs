@@ -91,6 +91,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             {
                 timeOfDay = Constants.BusinessHour;
             }
+            else if (DateTimeDefinitions.BusinessHourSplitStrings2.All(o => trimmedText.Contains(o)))
+            {
+                timeOfDay = Constants.BusinessHour;
+            }
             else
             {
                 timex = null;

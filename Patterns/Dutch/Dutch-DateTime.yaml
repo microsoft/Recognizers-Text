@@ -29,7 +29,7 @@ PreviousPrefixRegex: !nestedRegex
 ThisPrefixRegex: !simpleRegex
   def: (dit|deze|huidige?)\b
 RangePrefixRegex: !simpleRegex
-  def: (van|tot|tussen)
+  def: (van|tussen)
 CenturySuffixRegex: !simpleRegex
   def: (^eeuw|^centennium)\b
 ReferencePrefixRegex: !simpleRegex
@@ -317,11 +317,11 @@ MinuteNumRegex: !simpleRegex
 DeltaMinuteNumRegex: !simpleRegex
   def: (?<deltaminnum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig|vijfentwintig|zesentwintig|zevenentwintig|achtentwintig|negenentwintig|dertig|eenendertig|tweeëndertig|drieëndertig|vierendertig|vijfendertig|zesendertig|zevenendertig|achtendertig|negenendertig|veertig|eenenveertig|tweeënveertig|drieënveertig|vierenveertig|vijfenveertig|zesenveertig|zevenenveertig|achtenveertig|negenenveertig|eenenvijftig|vijftig|tweeënvijftig|drieënvijftig|vierenvijftig|vijfenvijftig|zesenvijftig|zevenenvijftig|achtenvijftig|negenenvijftig)(?=\b)
 PmRegex: !simpleRegex
-  def: (?<pm>(((’|‘|')\s*s|des)\s+(middags|avonds|nachts)|((in|tegen|op|om|met)\s+(de\s+)?)?(((na)?middag|avond|(midder)?nacht|lunchtijd))|van(avond|nacht)))
+  def: (?<pm>(((’|‘|'|ʼ)\s*s|des)\s+(middags|avonds|nachts)|((in|tegen|op|om|met)\s+(de\s+)?)?(((na)?middag|avond|(midder)?nacht|lunchtijd))|van(avond|nacht)))
 PmRegexFull: !simpleRegex
-  def: (?<pm>(((’|‘|')\s*s|des)\s+(middags|avonds|nachts)|((in|tegen|op|om|met)\s+(de\s+)?)?(((na)?middag|avond|(midder)?nacht|lunchtijd))|van(avond|nacht)))
+  def: (?<pm>(((’|‘|'|ʼ)\s*s|des)\s+(middags|avonds|nachts)|((in|tegen|op|om|met)\s+(de\s+)?)?(((na)?middag|avond|(midder)?nacht|lunchtijd))|van(avond|nacht)))
 AmRegex: !simpleRegex
-  def: (?<am>(((’|‘|')\s*s|des)\s+(ochtends|morgens)|((in|tegen|op)\s+de)(\s+(ochtend|morgen))))
+  def: (?<am>(((’|‘|'|ʼ)\s*s|des)\s+(ochtends|morgens)|((in|tegen|op)\s+de)(\s+(ochtend|morgen))))
 LunchRegex: !simpleRegex
   def: \b(lunchtijd)\b
 NightRegex: !simpleRegex
@@ -417,22 +417,24 @@ FirstTimeRegexInTimeRange: !nestedRegex
   def: \b{TimeRegexWithDotConnector}(\s*{DescRegex})?
   references: [ TimeRegexWithDotConnector, DescRegex ]
 PureNumFromTo: !nestedRegex
-  def: ((van|tussen)\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\s*({PmRegex}|{AmRegex}|{DescRegex}))?
-  references: [ HourRegex, PeriodHourNumRegex, DescRegex, TillRegex, PmRegex, AmRegex ]
+  def: ({RangePrefixRegex}\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>({PmRegex}|{AmRegex}|{DescRegex})))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\s*({PmRegex}|{AmRegex}|{DescRegex}))?
+  references: [ HourRegex, PeriodHourNumRegex, DescRegex, TillRegex, PmRegex, AmRegex, RangePrefixRegex ]
 PureNumBetweenAnd: !nestedRegex
   def: (tussen\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{RangeConnectorRegex}\s*({HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\s*({PmRegex}|{AmRegex}|{DescRegex}))?
   references: [ HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex, RangeConnectorRegex ]
 SpecificTimeFromTo: !nestedRegex
-  def: ((van|tussen)\s+)?(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{TillRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))
-  references: [ TimeRegex2, TillRegex, HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex ]
+  def: ({RangePrefixRegex}\s+)?(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{TillRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))
+  references: [ TimeRegex2, TillRegex, HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex, RangePrefixRegex ]
 SpecificTimeBetweenAnd: !nestedRegex
   def: (tussen\s+)(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{RangeConnectorRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))
   references: [ TimeRegex2, RangeConnectorRegex, HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex ]
 PrepositionRegex: !simpleRegex
   def: (?<prep>^(om|rond|tegen|op)(\s+de)?$)
+LaterEarlyRegex: !simpleRegex
+  def: ((?<early>vroege?(\s+|-))|(?<late>(laat|late)(\s+|-)))
 TimeOfDayRegex: !nestedRegex
-  def: (?<timeOfDay>((((in\s+(de)?\s+)?((?<early>vroege(\s+|-))|(?<late>late(\s+|-)))?(ochtend|middag|nacht|avond)))|{MealTimeRegex}|((((’|‘|')\s*s)?)(ochtend|middag|avond|nacht)))s?)\b
-  references: [ MealTimeRegex ]
+  def: (?<timeOfDay>(((in\s+(de)?\s+)?{LaterEarlyRegex}?(in\s+(de)?\s+)?(morgen|ochtend(en)?|middag|nacht|avond(en)?))|{MealTimeRegex})s?|((((’|‘|'|ʼ)\s*s\s+)?)(morgen|ochtend|middag|avond|nacht)s?(\s+((?<early>vroeg)|(?<late>laat)))?)|(tijdens\s+(de\s+)?)?(kantoor|werk)uren)\b
+  references: [ LaterEarlyRegex, MealTimeRegex ]
 SpecificTimeOfDayRegex: !nestedRegex
   def: \b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\bvan(nacht|avond))s?\b
   references: [ TimeOfDayRegex, StrictRelativeRegex ]
@@ -442,7 +444,8 @@ TimeFollowedUnit: !nestedRegex
 TimeNumberCombinedWithUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?){TimeUnitRegex}
   references: [ TimeUnitRegex ]
-BusinessHourSplitStrings: ['business', 'hour']
+BusinessHourSplitStrings: ['werk', 'uren']
+BusinessHourSplitStrings2: ['kantoor', 'uren']
 NowRegex: !simpleRegex
   def: \b(?<now>nu|zo snel mogelijk|zo spoedig mogelijk|asap|recent|onlangs|zojuist)\b
 SuffixRegex: !simpleRegex
@@ -582,6 +585,10 @@ ReferenceDatePeriodRegex: !nestedRegex
   references: [ReferencePrefixRegex]
 ConnectorRegex: !simpleRegex
   def: ^(-|,|voor|t|rond(om)?|@)$
+FromRegex: !simpleRegex
+  def: \b(van)$
+BetweenTokenRegex: !simpleRegex
+  def: \b(tussen)$
 FromToRegex: !simpleRegex
   def: \b(van).+(tot)\b.+
 SingleAmbiguousMonthRegex: !simpleRegex
@@ -1158,6 +1165,9 @@ MorningTermList: !list
   types: [ string ]
   entries:
     - morgen # ambiguous (morning vs tomorrow)
+    - morgens
+    - ochtend
+    - ochtends
 AfternoonTermList: !list
   types: [ string ]
   entries:
@@ -1166,6 +1176,7 @@ EveningTermList: !list
   types: [ string ]
   entries:
     - avond
+    - avonden
 DaytimeTermList: !list
   types: [ string ]
   entries:
