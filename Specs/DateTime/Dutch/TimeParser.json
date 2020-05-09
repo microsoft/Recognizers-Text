@@ -1008,27 +1008,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "middag",
-    "Results": [
-      {
-        "Text": "middag",
-        "Type": "time",
-        "Value": {
-          "Timex": "T12",
-          "FutureResolution": {
-            "time": "12:00:00"
-          },
-          "PastResolution": {
-            "time": "12:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 6
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "12 uur ‘s middags",
     "Results": [
       {

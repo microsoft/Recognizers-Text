@@ -528,18 +528,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "middag",
-    "Results": [
-      {
-        "Text": "middag",
-        "Type": "time",
-        "Start": 0,
-        "Length": 6
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "I'll be back 7 p m",
     "Results": [
       {
