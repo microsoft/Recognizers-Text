@@ -157,7 +157,7 @@
   {
     "Input": "第一位第二位第三位第四位",
     "Comment": "PendingValidation",
-    "NotSupported": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "第一",
