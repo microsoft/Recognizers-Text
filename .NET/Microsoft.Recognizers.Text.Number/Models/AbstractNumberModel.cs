@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Constants.SWEDISH,
                 Constants.ARABIC,
 
-                // Temporarily disabled as existing TestSpec not supporting
+                // TODO: Temporarily disabled as existing TestSpec not supporting
                 // Constants.JAPANESE_SUBS
         };
 
