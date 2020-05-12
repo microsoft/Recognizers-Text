@@ -1,5 +1,31 @@
 [
   {
+    "Input": "Ik ben 5 tot 18:00 weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 tot 18:00",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T05,T18:00,PT13H)",
+          "FutureResolution": {
+            "startTime": "05:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "05:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
     "Input": "Ik ben 5 tot 6 's avonds weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -48,6 +74,32 @@
         },
         "Start": 7,
         "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben van 5 tot 18:00 weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van 5 tot 18:00",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T05,T18:00,PT13H)",
+          "FutureResolution": {
+            "startTime": "05:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "05:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 7,
+        "Length": 15
       }
     ]
   },
@@ -531,7 +583,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
-		  "Mod": "start",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "08:00:00",
             "endTime": "10:00:00"
@@ -558,7 +610,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
-		  "Mod": "end",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "10:00:00",
             "endTime": "12:00:00"
@@ -585,7 +637,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
-		  "Mod": "start",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "08:00:00",
             "endTime": "10:00:00"
@@ -612,7 +664,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
-		  "Mod": "end",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "10:00:00",
             "endTime": "12:00:00"
@@ -639,7 +691,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TAF",
-		  "Mod": "start",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "12:00:00",
             "endTime": "14:00:00"
@@ -666,7 +718,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TAF",
-		  "Mod": "end",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "14:00:00",
             "endTime": "16:00:00"
@@ -693,7 +745,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TEV",
-		  "Mod": "start",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "16:00:00",
             "endTime": "18:00:00"
@@ -720,7 +772,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TEV",
-		  "Mod": "end",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "18:00:00",
             "endTime": "20:00:00"
@@ -747,7 +799,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
-		  "Mod": "start",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "20:00:00",
             "endTime": "22:00:00"
@@ -774,7 +826,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
-		  "Mod": "end",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "22:00:00",
             "endTime": "23:59:59"
@@ -816,6 +868,32 @@
     ]
   },
   {
+    "Input": "laten we elkaar ontmoeten van 13:00 tot 4",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van 13:00 tot 4",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:00,T04,PT15H)",
+          "FutureResolution": {
+            "startTime": "13:00:00",
+            "endTime": "04:00:00"
+          },
+          "PastResolution": {
+            "startTime": "13:00:00",
+            "endTime": "04:00:00"
+          }
+        },
+        "Start": 26,
+        "Length": 15
+      }
+    ]
+  },
+  {
     "Input": "laten we elkaar ontmoeten van 1:30 's middags tot 4",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -838,6 +916,32 @@
         },
         "Start": 26,
         "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "laten we elkaar ontmoeten van 13:30 tot 4",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van 13:30 tot 4",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:30,T04,PT14H30M)",
+          "FutureResolution": {
+            "startTime": "13:30:00",
+            "endTime": "04:00:00"
+          },
+          "PastResolution": {
+            "startTime": "13:30:00",
+            "endTime": "04:00:00"
+          }
+        },
+        "Start": 26,
+        "Length": 15
       }
     ]
   },
@@ -998,6 +1102,32 @@
     ]
   },
   {
+    "Input": "De les is van 11:01 tot 11",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van 11:01 tot 11",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T11:01,T11,PT23H59M)",
+          "FutureResolution": {
+            "startTime": "11:01:00",
+            "endTime": "11:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:01:00",
+            "endTime": "11:00:00"
+          }
+        },
+        "Start": 10,
+        "Length": 16
+      }
+    ]
+  },
+  {
     "Input": "Help me alsjeblieft een meeting te regelen van 11:00 tot 11:50",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
@@ -1046,6 +1176,32 @@
         },
         "Start": 17,
         "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Leg meeting vast van 13:30 tot 3:30",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van 13:30 tot 3:30",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:30,T03:30,PT14H)",
+          "FutureResolution": {
+            "startTime": "13:30:00",
+            "endTime": "03:30:00"
+          },
+          "PastResolution": {
+            "startTime": "13:30:00",
+            "endTime": "03:30:00"
+          }
+        },
+        "Start": 17,
+        "Length": 18
       }
     ]
   },
@@ -1154,6 +1310,32 @@
     ]
   },
   {
+    "Input": "Ik heb gewacht van 0:01 tot 1",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van 0:01 tot 1",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T00:01,T01,PT59M)",
+          "FutureResolution": {
+            "startTime": "00:01:00",
+            "endTime": "01:00:00"
+          },
+          "PastResolution": {
+            "startTime": "00:01:00",
+            "endTime": "01:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
     "Input": "Leg meeting vast van 3 tot 3:30",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
@@ -1228,6 +1410,32 @@
         },
         "Start": 43,
         "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Help me alsjeblieft een meeting te regelen van 1:30 tot 15:00",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van 1:30 tot 15:00",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T01:30,T15:00,PT13H30M)",
+          "FutureResolution": {
+            "startTime": "01:30:00",
+            "endTime": "15:00:00"
+          },
+          "PastResolution": {
+            "startTime": "01:30:00",
+            "endTime": "15:00:00"
+          }
+        },
+        "Start": 43,
+        "Length": 18
       }
     ]
   },
