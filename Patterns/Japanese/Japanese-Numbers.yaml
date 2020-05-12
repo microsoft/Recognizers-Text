@@ -221,50 +221,50 @@ FractionNotationRegex: !nestedRegex
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
 #PercentageExtractor
 PercentagePointRegex: !nestedRegex
-  def: (?<!{AllIntRegex})({AllFloatRegex}|{AllIntRegex})\s*パ\s*ー\s*セ\s*ン\s*ト
+  def: (?<!{AllIntRegex})({AllFloatRegex}|{AllIntRegex})\s*(パ\s*ー\s*セ\s*ン\s*ト|[%])
   references: [AllIntRegex, AllFloatRegex]
 SimplePercentageRegex: !nestedRegex
-  def: ({AllFloatRegex}|{AllIntRegex}|[百])\s*パ\s*ー\s*セ\s*ン\s*ト
-  references: [ZeroToNineIntegerRegex, AllFloatRegex, AllIntRegex]
+  def: ({AllFloatRegex}|(({NegativeNumberTermsRegex})?({AllIntRegex}|[百])))\s*(パ\s*ー\s*セ\s*ン\s*ト|[%])
+  references: [NegativeNumberTermsRegex,ZeroToNineIntegerRegex, AllFloatRegex, AllIntRegex]
 NumbersPercentagePointRegex: !nestedRegex
-  def: ({ZeroToNineFullHalfRegex})+([\.．]({ZeroToNineFullHalfRegex})+)?\s*パ\s*ー\s*セ\s*ン\s*ト
-  references: [ZeroToNineFullHalfRegex]
+  def: (?<!%)(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})?({ZeroToNineFullHalfRegex})+([\.．]({ZeroToNineFullHalfRegex})+)?\s*(パ\s*ー\s*セ\s*ン\s*ト|[%])(?!{ZeroToNineFullHalfRegex}))
+  references: [NegativeNumberTermsRegexNum,NegativeNumberTermsRegex,ZeroToNineFullHalfRegex]
 NumbersPercentageWithSeparatorRegex: !nestedRegex
-  def: ({ZeroToNineFullHalfRegex}{1,3}[,，、]{ZeroToNineFullHalfRegex}{3})+([\.．]{ZeroToNineFullHalfRegex}+)*\s*パ\s*ー\s*セ\s*ン\s*ト
+  def: ({ZeroToNineFullHalfRegex}{1,3}[,，、]{ZeroToNineFullHalfRegex}{3})+([\.．]{ZeroToNineFullHalfRegex}+)*\s*(パ\s*ー\s*セ\s*ン\s*ト|[%])
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex]
 NumbersPercentageWithMultiplierRegex: !nestedRegex
-  def: (?<!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*パ\s*ー\s*セ\s*ン\s*ト
+  def: (?<!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*(パ\s*ー\s*セ\s*ン\s*ト|[%])
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, BaseNumbers.NumberMultiplierRegex]
 FractionPercentagePointRegex: !nestedRegex
-  def: (?<!({ZeroToNineFullHalfRegex}+[\.．])){ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!([\.．]{ZeroToNineFullHalfRegex}+))\s*パ\s*ー\s*セ\s*ン\s*ト
+  def: (?<!({ZeroToNineFullHalfRegex}+[\.．])){ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!([\.．]{ZeroToNineFullHalfRegex}+))\s*(パ\s*ー\s*セ\s*ン\s*ト|[%])
   references: [ZeroToNineFullHalfRegex]
 FractionPercentageWithSeparatorRegex: !nestedRegex
-  def: '{ZeroToNineFullHalfRegex}{1,3}([,，、]{ZeroToNineFullHalfRegex}{3})+[\.．]{ZeroToNineFullHalfRegex}+\s*パ\s*ー\s*セ\s*ン\s*ト'
+  def: '{ZeroToNineFullHalfRegex}{1,3}([,，、]{ZeroToNineFullHalfRegex}{3})+[\.．]{ZeroToNineFullHalfRegex}+\s*(パ\s*ー\s*セ\s*ン\s*ト|[%])'
   references: [ZeroToNineFullHalfRegex]
 FractionPercentageWithMultiplierRegex: !nestedRegex
-  def: '{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*パ\s*ー\s*セ\s*ン\s*ト'
+  def: '{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*(パ\s*ー\s*セ\s*ン\s*ト|[%])'
   references: [ZeroToNineFullHalfRegex, BaseNumbers.NumberMultiplierRegex]
 SimpleNumbersPercentageRegex: !nestedRegex
-  def: (?<!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}+\s*パ\s*ー\s*セ\s*ン\s*ト(?!([\.．]{ZeroToNineFullHalfRegex}+))
+  def: (?<!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}+\s*(パ\s*ー\s*セ\s*ン\s*ト|[%])(?!([\.．]{ZeroToNineFullHalfRegex}+))
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex]
 SimpleNumbersPercentageWithMultiplierRegex: !nestedRegex
-  def: (?<!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*パ\s*ー\s*セ\s*ン\s*ト
+  def: (?<!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*(パ\s*ー\s*セ\s*ン\s*ト|[%])
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, BaseNumbers.NumberMultiplierRegex]
 SimpleNumbersPercentagePointRegex: !nestedRegex
-  def: (?!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}{1,3}([,，]{ZeroToNineFullHalfRegex}{3})+\s*パ\s*ー\s*セ\s*ン\s*ト
+  def: (?!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}{1,3}([,，]{ZeroToNineFullHalfRegex}{3})+\s*(パ\s*ー\s*セ\s*ン\s*ト|[%])
   references: [ZeroToNineIntegerRegex,ZeroToNineFullHalfRegex]
 IntegerPercentageRegex: !nestedRegex
-  def: '{ZeroToNineFullHalfRegex}+\s*パ\s*ー\s*セ\s*ン\s*ト'
+  def: '{ZeroToNineFullHalfRegex}+\s*(パ\s*ー\s*セ\s*ン\s*ト|[%])'
   references: [ZeroToNineFullHalfRegex]
 IntegerPercentageWithMultiplierRegex: !nestedRegex
-  def: '{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*パ\s*ー\s*セ\s*ン\s*ト'
+  def: '{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*(パ\s*ー\s*セ\s*ン\s*ト|[%])'
   references: [ZeroToNineFullHalfRegex, BaseNumbers.NumberMultiplierRegex]
 NumbersFractionPercentageRegex: !nestedRegex
-  def: '{ZeroToNineFullHalfRegex}{1,3}([,，]{ZeroToNineFullHalfRegex}{3})+\s*パ\s*ー\s*セ\s*ン\s*ト'
+  def: '{ZeroToNineFullHalfRegex}{1,3}([,，]{ZeroToNineFullHalfRegex}{3})+\s*(パ\s*ー\s*セ\s*ン\s*ト|[%])'
   references: [ZeroToNineFullHalfRegex]
 SimpleIntegerPercentageRegex: !nestedRegex
-  def: '{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)[％%]'
-  references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
+  def: '(?<!%)(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)[%](?!{ZeroToNineFullHalfRegex}))'
+  references: [NegativeNumberTermsRegexNum, NegativeNumberTermsRegex,ZeroToNineFullHalfRegex]
 NumbersFoldsPercentageRegex: !nestedRegex
   def: '{ZeroToNineFullHalfRegex}(([\.．]?|\s*){ZeroToNineFullHalfRegex})?\s*[の]*\s*割引'
   references: [ZeroToNineFullHalfRegex]
