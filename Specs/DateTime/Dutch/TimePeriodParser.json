@@ -894,6 +894,34 @@
     ]
   },
   {
+    "Input": "laten we elkaar van 13:00 tot 4 ontmoeten",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "Comment": "Not supported because the extraction is not at the end of the Input",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van 13:00 tot 4",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:00,T04,PT15H)",
+          "FutureResolution": {
+            "startTime": "13:00:00",
+            "endTime": "04:00:00"
+          },
+          "PastResolution": {
+            "startTime": "13:00:00",
+            "endTime": "04:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
     "Input": "laten we elkaar ontmoeten van 1:30 's middags tot 4",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -941,6 +969,34 @@
           }
         },
         "Start": 26,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "laten we elkaar van 13:30 tot 4 ontmoeten",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "Comment": "Not supported because the extraction is not at the end of the Input",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van 13:30 tot 4",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:30,T04,PT14H30M)",
+          "FutureResolution": {
+            "startTime": "13:30:00",
+            "endTime": "04:00:00"
+          },
+          "PastResolution": {
+            "startTime": "13:30:00",
+            "endTime": "04:00:00"
+          }
+        },
+        "Start": 16,
         "Length": 15
       }
     ]
