@@ -623,31 +623,6 @@
     ]
   },
   {
-    "Input": "32-1-2015",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "1-2015",
-        "Type": "datetimeV2.daterange",
-        "Value": {
-          "values": [
-            {
-              "timex": "2015-01",
-              "type": "daterange",
-              "start": "2015-01-01",
-              "end": "2015-02-01"
-            }
-          ]
-        },
-        "Start": 3,
-        "Length": 6
-      }
-    ]
-  },
-  {
     "Input": "Kişisel takvimime Pazartesi ve Çarşamba saat 15'e yoga koy",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"

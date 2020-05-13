@@ -147,6 +147,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Remove common ambiguous cases
             ret = FilterAmbiguity(ret, text);
 
+            // Remove ambiguous cases from number sequences like phonenumber, ssn and so on
+            ret = FilterDateFromNumberSequence(ret, text);
+
             ret = AddMod(ret, text);
 
             // Filtering
@@ -282,6 +285,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
                 }
+            }
+
+            return extractResults;
+        }
+
+        // Filter date extracted from a number sequence, like phonenumber, ssn and so on
+        private List<ExtractResult> FilterDateFromNumberSequence(List<ExtractResult> extractResults, string text)
+        {
+            foreach (var extractResult in extractResults)
+            {
+                extractResults = extractResults.Where(er => !(text.Substring(0, (int)er.Start).Trim().EndsWith("-") || text.Substring((int)(er.Start + er.Length)).Trim().StartsWith("-")))
+                    .ToList();
             }
 
             return extractResults;
