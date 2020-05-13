@@ -155,7 +155,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string OrdinalRegex = $@"(({OrdinalNumbersRegex})|((第|だい)({AllIntRegex})|({AllIntRegex}+(番目|位|等))))|(最初の|ファースト)";
       public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>((最後)(から１つ前のこと|から１つ前(のも)?|から3番目|(から１つ前)(のもの)|から３番目|から三番目|から二番目|(から一つ前|から1つ前)(のもの|のこと)?|(から１つ)?(前))?|(次のもの)(前)?|前のもの|(現在)(のこと)?|次|二位))";
       public static readonly string AllOrdinalRegex = $@"({OrdinalRegex}|{RelativeOrdinalRegex})";
-      public static readonly string AllFractionNumber = $@"{NegativeNumberTermsRegex}{{0,1}}(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*[はと]{{0,1}}\s*)?{NegativeNumberTermsRegex}{{0,1}}({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*分\s*の\s*{NegativeNumberTermsRegex}{{0,1}}({ZeroToNineFullHalfRegex}+|{AllIntRegex})";
+      public static readonly string AllFractionNumber = $@"((({NegativeNumberTermsRegex}{{0,1}})|{NegativeNumberTermsRegexNum})(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*[はと]{{0,1}}\s*)?{NegativeNumberTermsRegex}{{0,1}}({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*分\s*の\s*{NegativeNumberTermsRegex}{{0,1}}({ZeroToNineFullHalfRegex}+|{AllIntRegex})+)";
       public static readonly string FractionNotationSpecialsCharsRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+\s+{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+";
       public static readonly string FractionNotationRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+";
       public static readonly string PercentagePointRegex = $@"(?<!{AllIntRegex})({AllFloatRegex}|{AllIntRegex})\s*(パ\s*ー\s*セ\s*ン\s*ト|[%])";

@@ -211,8 +211,8 @@ AllOrdinalRegex: !nestedRegex
   references: [OrdinalRegex, RelativeOrdinalRegex]
 #FractionExtractor
 AllFractionNumber: !nestedRegex
-  def: '{NegativeNumberTermsRegex}{0,1}(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*[はと]{0,1}\s*)?{NegativeNumberTermsRegex}{0,1}({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*分\s*の\s*{NegativeNumberTermsRegex}{0,1}({ZeroToNineFullHalfRegex}+|{AllIntRegex})'
-  references: [NegativeNumberTermsRegex, ZeroToNineFullHalfRegex, AllIntRegex]
+  def: '((({NegativeNumberTermsRegex}{0,1})|{NegativeNumberTermsRegexNum})(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*[はと]{0,1}\s*)?{NegativeNumberTermsRegex}{0,1}({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*分\s*の\s*{NegativeNumberTermsRegex}{0,1}({ZeroToNineFullHalfRegex}+|{AllIntRegex})+)'
+  references: [NegativeNumberTermsRegex, ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum, AllIntRegex]
 FractionNotationSpecialsCharsRegex: !nestedRegex
   def: ({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+\s+{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]

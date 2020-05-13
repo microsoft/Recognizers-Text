@@ -1913,7 +1913,6 @@
     "Input": "出生率は−５分の４です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-5分の4",
@@ -1931,7 +1930,6 @@
     "Input": "答えは−１と５分の４です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-1と5分の4",
@@ -2496,7 +2494,6 @@
     "Input": "５分の１００万２２０５は整数になります。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "5分の100万2205",
@@ -2760,7 +2757,6 @@
     "Input": "答えは１兆分の１００万です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1兆分の100万",
@@ -3118,7 +3114,6 @@
     "Input": "答えは−５分の９５００です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-5分の9500",
@@ -3153,7 +3148,7 @@
     "Input": "答えは−３５分の１００です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
+    
     "Results": [
       {
         "Text": "-35分の100",
@@ -3171,7 +3166,6 @@
     "Input": "答えは−２５分の１です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-25分の1",
@@ -4284,7 +4278,6 @@
     "Input": "出生率は-5分の4です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-5分の4",
@@ -4302,7 +4295,6 @@
     "Input": "答えは-1と5分の4です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-1と5分の4",
@@ -4867,7 +4859,6 @@
     "Input": "5分の100万2205は整数になります。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "5分の100万2205",
@@ -5131,7 +5122,6 @@
     "Input": "答えは1兆分の100万です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1兆分の100万",
@@ -5472,7 +5462,6 @@
     "Input": "答えは-5分の9500です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-5分の9500",
@@ -5507,7 +5496,6 @@
     "Input": "答えは-35分の100です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-35分の100",
@@ -5525,7 +5513,6 @@
     "Input": "答えは-25分の1です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-25分の1",
@@ -7197,7 +7184,6 @@
     "Input": "五分の百万二千二百五は整数になります。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "五分の百万二千二百五",
@@ -7631,7 +7617,6 @@
     "Input": "答えは五分の百三十二です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "五分の百三十二",
