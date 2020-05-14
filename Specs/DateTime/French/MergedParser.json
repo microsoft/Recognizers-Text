@@ -272,24 +272,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Results": [
-      {
-        "Text": "2015-1",
-        "Type": "datetimeV2.daterange",
-        "Value": {
-          "values": [
-            {
-              "timex": "2015-01",
-              "type": "daterange",
-              "start": "2015-01-01",
-              "end": "2015-02-01"
-            }
-          ]
-        },
-        "Start": 0,
-        "Length": 6
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Je serais sorti 11 / 2016",
