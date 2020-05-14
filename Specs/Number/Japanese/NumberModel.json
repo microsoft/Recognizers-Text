@@ -8572,7 +8572,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation: Result set should not be empty. We may need to revisit this case.",
+    "Comment": "PendingValidation: This case requires more research.",
     "Results": []
   },
   {

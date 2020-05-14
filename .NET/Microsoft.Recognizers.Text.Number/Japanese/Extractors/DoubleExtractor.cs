@@ -50,10 +50,6 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex1, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
-                },
-                {
                     new Regex(NumbersDefinitions.DoubleExponentialNotationKanjiRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },

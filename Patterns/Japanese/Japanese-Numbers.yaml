@@ -197,9 +197,6 @@ DoubleAllFloatRegex: !nestedRegex
 DoubleExponentialNotationRegex: !nestedRegex
   def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)|[0０](?!{ZeroToNineFullHalfRegex}+))
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
-DoubleExponentialNotationRegex1: !nestedRegex
-  def: (?<!{ZeroToNineFullHalfRegex}+[\.．])(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?(×)?(10)?(e|の)(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)[乗]|[0０](?!{ZeroToNineFullHalfRegex}+))
-  references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum,NegativeNumberTermsRegex]
 DoubleExponentialNotationKanjiRegex: !nestedRegex
   def: (?<!({ZeroToNineIntegerRegex})+[\.．・])(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?({ZeroToNineIntegerRegex}|[十千五百])+([\.．・]({ZeroToNineIntegerRegex})+)?(×)?(十)?(の)((((マ\s*イ\s*ナ\s*ス))*({ZeroToNineIntegerRegex}|[十])({ZeroToNineIntegerRegex}|[十])*[乗])(?!({ZeroToNineIntegerRegex}|[十])+))
   references: [ZeroToNineIntegerRegex, NegativeNumberTermsRegexNum,NegativeNumberTermsRegex]
