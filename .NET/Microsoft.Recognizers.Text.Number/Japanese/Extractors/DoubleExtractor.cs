@@ -30,6 +30,11 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
+                    // えは九・二三二一三一二
+                    new Regex(NumbersDefinitions.DoubleRoundNumberSpecialsChars, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                },
+                {
                     // 1.0 K
                     new Regex(NumbersDefinitions.DoubleWithMultiplierRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
@@ -42,6 +47,14 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                 {
                     // 2e6, 21.2e0
                     new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
+                },
+                {
+                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex1, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
+                },
+                {
+                    new Regex(NumbersDefinitions.DoubleExponentialNotationKanjiRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {

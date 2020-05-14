@@ -3148,7 +3148,6 @@
     "Input": "答えは−３５分の１００です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    
     "Results": [
       {
         "Text": "-35分の100",
@@ -3695,7 +3694,6 @@
     "Input": "いくつかの国では、５．００もしくは５、００とかいてもいいです。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "5.00",
@@ -6075,7 +6073,6 @@
     "Input": "いくつかの国では、5.00もしくは5,00とかいてもいいです。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "5.00",
@@ -6267,7 +6264,6 @@
     "Input": "この袋の厚さは〇・〇八ミリメートルです。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "〇・〇八",
@@ -6285,7 +6281,6 @@
     "Input": "上昇率は〇・二三四五六〇〇〇です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "〇・二三四五六〇〇〇",
@@ -6303,7 +6298,6 @@
     "Input": "この答えは四・八〇〇です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "四・八〇〇",
@@ -6581,7 +6575,6 @@
     "Input": "答えは九・二三二一三一二です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "九・二三二一三一二",
@@ -6599,7 +6592,6 @@
     "Input": "答えはマイナス九・二三二一三一二です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "マイナス九・二三二一三一二",
@@ -6907,7 +6899,6 @@
     "Input": "二百・〇三は小数です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "二百・〇三",
@@ -6925,7 +6916,6 @@
     "Input": "答えは二百・七一です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "二百・七一",
@@ -7855,7 +7845,6 @@
     "Input": "答えはマイナス五・五です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "マイナス五・五",
@@ -8059,7 +8048,6 @@
     "Input": "百二十三万四千五百六十七・八十九は有効な数値形式です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "百二十三万四千五百六十七・八十九",
@@ -8583,6 +8571,7 @@
     "Input": "毎日この薬を〇・二五ミリリットル飲んでください。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": []
   },
   {

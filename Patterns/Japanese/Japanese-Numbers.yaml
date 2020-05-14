@@ -159,7 +159,7 @@ NumbersWithDozen: !nestedRegex
   def: '({AllIntRegex}|{ZeroToNineFullHalfRegex}+)(ダース)'
   references: [AllIntRegex, ZeroToNineFullHalfRegex]
 PointRegexStr: !simpleRegex
-  def: '[\.．]'
+  def: '[\.．・]'
 AllFloatRegex: !nestedRegex
   def: '{NegativeNumberTermsRegex}?{AllIntRegex}\s*{PointRegexStr}\s*[一二三四五六七八九](\s*{ZeroToNineIntegerRegex})*'
   references: [NegativeNumberTermsRegex, AllIntRegex, PointRegexStr, ZeroToNineIntegerRegex]
@@ -174,8 +174,11 @@ PointRegex: !nestedRegex
   def: '{PointRegexStr}'
   references: [PointRegexStr]
 DoubleSpecialsChars: !nestedRegex
-  def: (?<!({ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*[\.．]{ZeroToNineFullHalfRegex}+)
+  def: (?<!({ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．,]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*[\.．,]{ZeroToNineFullHalfRegex}+)
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
+DoubleRoundNumberSpecialsChars: !nestedRegex
+  def: (?<!(({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+[\.．・,]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})*))(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+[\.．・,]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+(?!({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})*[\.．・,]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+)
+  references: [NegativeNumberTermsRegexNum,NegativeNumberTermsRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex]
 DoubleSpecialsCharsWithNegatives: !nestedRegex
   def: (?<!({ZeroToNineFullHalfRegex}+|\.\.|．．))({NegativeNumberTermsRegexNum}\s*)?[\.．]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*([\.．]{ZeroToNineFullHalfRegex}+))
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
@@ -194,6 +197,12 @@ DoubleAllFloatRegex: !nestedRegex
 DoubleExponentialNotationRegex: !nestedRegex
   def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)|[0０](?!{ZeroToNineFullHalfRegex}+))
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
+DoubleExponentialNotationRegex1: !nestedRegex
+  def: (?<!{ZeroToNineFullHalfRegex}+[\.．])(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?(×)?(10)?(e|の)(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)[乗]|[0０](?!{ZeroToNineFullHalfRegex}+))
+  references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum,NegativeNumberTermsRegex]
+DoubleExponentialNotationKanjiRegex: !nestedRegex
+  def: (?<!({ZeroToNineIntegerRegex})+[\.．・])(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?({ZeroToNineIntegerRegex}|[十千五百])+([\.．・]({ZeroToNineIntegerRegex})+)?(×)?(十)?(の)((((マ\s*イ\s*ナ\s*ス))*({ZeroToNineIntegerRegex}|[十])({ZeroToNineIntegerRegex}|[十])*[乗])(?!({ZeroToNineIntegerRegex}|[十])+))
+  references: [ZeroToNineIntegerRegex, NegativeNumberTermsRegexNum,NegativeNumberTermsRegex]
 DoubleScientificNotationRegex: !nestedRegex
   def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
