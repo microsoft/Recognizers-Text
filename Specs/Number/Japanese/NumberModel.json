@@ -2707,7 +2707,7 @@
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "-12.32×10の14乗",
+        "Text": "12.32×10の14乗",
         "TypeName": "number",
         "Resolution": {
           "subtype": "power",
@@ -8572,6 +8572,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "This is invalid case for japanese. It will return result 〇・二五 becuase it's a decimal. So expected result should not be empty result set",
     "Results": []
   },
   {
