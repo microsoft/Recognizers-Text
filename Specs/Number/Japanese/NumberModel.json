@@ -8572,7 +8572,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
-    "Comment": "This is invalid case for japanese. It will return result 〇・二五 becuase it's a decimal. So expected result should not be empty result set",
+    "Comment": "PendingValidation: Result set should not be empty. We may need to revisit this case.",
     "Results": []
   },
   {
