@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -89,7 +91,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult
             {
-                Timex = timexPrefix + "T23:59:59",
+                Timex = timexPrefix + "T23:59:59", // Due to .NET framework design
                 FutureValue = futureDate.Date.AddDays(1).AddSeconds(-1),
                 PastValue = pastDate.Date.AddDays(1).AddSeconds(-1),
                 Success = true,
@@ -241,7 +243,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 timeStr = timeStr.Substring(0, timeStr.Length - 4);
             }
 
-            timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
+            timeStr = "T" + hour.ToString("D2", CultureInfo.InvariantCulture) + timeStr.Substring(3);
             ret.Timex = pr1.TimexStr + timeStr;
 
             var val = (DateTimeResolutionResult)pr2.Value;
@@ -315,10 +317,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    hour = int.Parse(hourStr);
+                    hour = int.Parse(hourStr, CultureInfo.InvariantCulture);
                 }
 
-                timeStr = "T" + hour.ToString("D2");
+                timeStr = "T" + hour.ToString("D2", CultureInfo.InvariantCulture);
             }
             else
             {
@@ -370,7 +372,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     timeStr = timeStr.Substring(0, timeStr.Length - 4);
                 }
 
-                timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
+                timeStr = "T" + hour.ToString("D2", CultureInfo.InvariantCulture) + timeStr.Substring(3);
 
                 ret.Timex = DateTimeFormatUtil.FormatDate(date) + timeStr;
                 ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month, date.Day, hour, min, sec);
@@ -383,9 +385,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private DateTimeResolutionResult ParseSpecialTimeOfDate(string text, DateObject refDateTime)
         {
-            var ret = new DateTimeResolutionResult();
+            var ret = ParseUnspecificTimeOfDate(text, refDateTime);
 
-            ret = ParseUnspecificTimeOfDate(text, refDateTime);
             if (ret.Success)
             {
                 return ret;

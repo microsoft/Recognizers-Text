@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 
 using Microsoft.Recognizers.Definitions.English;
+
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
@@ -21,6 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             var trimmedText = text.Trim();
             var swift = -10;
 
+            // @TODO move hardcoded terms to resources file
             if (trimmedText.StartsWith("next"))
             {
                 swift = 1;
@@ -164,7 +166,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
 
-        private static DateObject EasterDay(int year) => CalculateHolidayByEaster(year);
+        private static DateObject EasterDay(int year) => HolidayFunctions.CalculateHolidayByEaster(year);
 
         private static DateObject AshWednesday(int year) => EasterDay(year).AddDays(-46);
 
@@ -188,26 +190,5 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static DateObject CorpusChristi(int year) => EasterDay(year).AddDays(60);
 
-        // function adopted from German implementation
-        private static DateObject CalculateHolidayByEaster(int year, int days = 0)
-        {
-            int day = 0;
-            int month = 3;
-
-            int g = year % 19;
-            int c = year / 100;
-            int h = (c - (int)(c / 4) - (int)(((8 * c) + 13) / 25) + (19 * g) + 15) % 30;
-            int i = h - ((int)(h / 28) * (1 - ((int)(h / 28) * (int)(29 / (h + 1)) * (int)((21 - g) / 11))));
-
-            day = i - ((year + (int)(year / 4) + i + 2 - c + (int)(c / 4)) % 7) + 28;
-
-            if (day > 31)
-            {
-                month++;
-                day -= 31;
-            }
-
-            return DateObject.MinValue.SafeCreateFromValue(year, month, day).AddDays(days);
-        }
     }
 }

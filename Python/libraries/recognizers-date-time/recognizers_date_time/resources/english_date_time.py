@@ -214,7 +214,7 @@ class EnglishDateTime:
     ConjunctionRegex = f'\\b((and(\\s+for)?)|with)\\b'
     HolidayRegex1 = f'\\b(?<holiday>mardi gras|(washington|mao)\'s birthday|chinese new year|(new\\s+(years\'|year\\s*\'s|years?)\\s+eve)|(new\\s+(years\'|year\\s*\'s|years?)(\\s+day)?)|may\\s*day|yuan dan|christmas eve|(christmas|xmas)(\\s+day)?|black friday|yuandan|easter(\\s+(sunday|saturday|monday))?|clean monday|ash wednesday|palm sunday|maundy thursday|good friday|white\\s+(sunday|monday)|trinity sunday|pentecost|corpus christi|cyber monday)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?\\b'
     HolidayRegex2 = f'\\b(?<holiday>(thanks\\s*giving|all saint\'s|white lover|s(?:ain)?t?. (?:patrick|george)(?:\')?(?:s)?|us independence|all hallow|all souls|guy fawkes|cinco de mayo|halloween|qingming|dragon boat|april fools|tomb\\s*sweeping)(\\s+day)?)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?\\b'
-    HolidayRegex3 = f'(?<holiday>(?:independence|presidents(?:\')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|(international|int\'l)\\s+workers\'?|mother\'s|mothers?|father\'s|fathers?|female|women(\'s)?|single|teacher\'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine\'?s|baptiste|bastille|veterans(?:\')?|memorial|mid[ \\-]autumn|moon|spring|lantern)\\s+day)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?'
+    HolidayRegex3 = f'(?<holiday>(?:independence|presidents(?:\')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|(international|int\'?l)\\s+workers\'?|mother\'?s?|father\'?s?|female|women(\'s)?|single|teacher\'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine\'?s|baptiste|bastille|veterans(?:\')?|memorial|mid[ \\-]autumn|moon|spring|lantern)\\s+day)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?'
     AMTimeRegex = f'(?<am>morning)'
     PMTimeRegex = f'\\b(?<pm>afternoon|evening|night)\\b'
     InclusiveModPrepositions = f'(?<include>((on|in|at)\\s+or\\s+)|(\\s+or\\s+(on|in|at)))'
@@ -595,7 +595,7 @@ class EnglishDateTime:
                          ("arborday", ["arborday"]),
                          ("girlsday", ["girlsday"]),
                          ("whiteloverday", ["whiteloverday"]),
-                         ("loverday", ["loverday"]),
+                         ("loverday", ["loverday", "loversday"]),
                          ("christmas", ["christmasday", "christmas"]),
                          ("xmas", ["xmasday", "xmas"]),
                          ("newyear", ["newyear"]),
@@ -607,7 +607,7 @@ class EnglishDateTime:
                          ("stpatrickday", ["stpatrickday", "stpatricksday", "stpatrick"]),
                          ("aprilfools", ["aprilfools"]),
                          ("stgeorgeday", ["stgeorgeday"]),
-                         ("mayday", ["mayday", "intlworkersday", "internationalworkersday"]),
+                         ("mayday", ["mayday", "intlworkersday", "internationalworkersday", "workersday"]),
                          ("cincodemayoday", ["cincodemayoday"]),
                          ("baptisteday", ["baptisteday"]),
                          ("usindependenceday", ["usindependenceday"]),

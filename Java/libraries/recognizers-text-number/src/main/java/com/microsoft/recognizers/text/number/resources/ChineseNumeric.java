@@ -182,7 +182,8 @@ public class ChineseNumeric {
 
     public static final String NegativeNumberTermsRegex = "[负負]";
 
-    public static final String NegativeNumberTermsRegexNum = "((?<!(\\d+\\s*)|[-－])[-－])";
+    public static final String NegativeNumberTermsRegexNum = "((?<!(\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)|[-－])[-－])"
+            .replace("{BaseNumbers.NumberMultiplierRegex}", BaseNumbers.NumberMultiplierRegex);
 
     public static final String NegativeNumberSignRegex = "^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*"
             .replace("{NegativeNumberTermsRegex}", NegativeNumberTermsRegex)
@@ -466,6 +467,7 @@ public class ChineseNumeric {
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("十", "十足")
+        .put("伍", "队伍")
         .build();
 
     public static final String AmbiguousFractionConnectorsRegex = "^[.]";

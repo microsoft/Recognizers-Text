@@ -16,6 +16,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             var trimmedText = text.Trim();
             var swift = -10;
+
+            // @TODO move hardcoded terms to resource file
             if (trimmedText.StartsWith("nächster") || trimmedText.StartsWith("nächstes") || trimmedText.StartsWith("nächsten") || trimmedText.StartsWith("nächste"))
             {
                 swift = 1;

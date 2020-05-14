@@ -89,7 +89,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 { "newyeareve", NewYearEve },
                 { "fathersday", FathersDay },
                 { "mothersday", MothersDay },
-                { "labourday", LabourDay },
+                { "labourday", InternationalWorkersDay },
             };
         }
 
@@ -155,6 +155,5 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         private static new DateObject MothersDay(int year) => new DateObject(year, 5, 27);
 
-        private static new DateObject LabourDay(int year) => new DateObject(year, 5, 1);
     }
 }

@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const bool CheckBothBeforeAfter = false;
       public const string TillRegex = @"(?<till>at[eé]h?|[aà]s|ao?|--|-|—|——)(\s+(o|[aà](s)?))?";
       public static readonly string RangeConnectorRegex = $@"(?<and>(e\s*(([àa]s?)|o)?)|{BaseDateTime.RangeConnectorSymbolRegex})";
-      public const string DayRegex = @"(?<day>01|02|03|04|05|06|07|08|09|1|10|11|12|13|14|15|16|17|18|19|2|20|21|22|23|24|25|26|27|28|29|3|30|31|4|5|6|7|8|9)(?=\b|t)";
+      public const string DayRegex = @"(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\b|t)";
       public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b";
       public static readonly string AmDescRegex = $@"({BaseDateTime.BaseAmDescRegex})";
       public static readonly string PmDescRegex = $@"({BaseDateTime.BasePmDescRegex})";
@@ -167,8 +167,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string InexactNumberRegex = @"\b(poucos|pouco|algum|alguns|v[áa]rios)\b";
       public static readonly string InexactNumberUnitRegex = $@"\b(poucos|pouco|algum|alguns|v[áa]rios)\s+{UnitRegex}";
       public static readonly string HolidayRegex1 = $@"\b(?<holiday>sexta-feira santa|sexta-feira da paix[ãa]o|quarta-feira de cinzas|carnaval|dia (de|de los) presidentes?|ano novo chin[eê]s|ano novo|v[ée]spera de ano novo|natal|v[ée]spera de natal|dia de a[cç][ãa]o de gra[çc]as|a[cç][ãa]o de gra[çc]as|yuandan|halloween|dia das bruxas|p[áa]scoa)(\s+(d[eo]?\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b";
-      public static readonly string HolidayRegex2 = $@"\b(?<holiday>(dia( d[eoa]s?)? )?(martin luther king|todos os santos|trabalho|s[ãa]o (patr[íi]cio|francisco|jorge|jo[ãa]o)|independ[êe]ncia|trabalhador|trabalho))(\s+(d[eo]?\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b";
-      public static readonly string HolidayRegex3 = $@"\b(?<holiday>(dia( d[eoa]s?)? )(trabalhador|trabalhadores|trabalho|m[ãa]es?|pais?|mulher(es)?|crian[çc]as?|marmota|professor|professores))(\s+(d[eo]?\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b";
+      public static readonly string HolidayRegex2 = $@"\b(?<holiday>(dia\s+(d[eoa]s?\s+)?)?(martin luther king|todos os santos|s[ãa]o (patr[íi]cio|francisco|jorge|jo[ãa]o)|independ[êe]ncia))(\s+(d[eo]?\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b";
+      public static readonly string HolidayRegex3 = $@"\b(?<holiday>(dia\s+d[eoa]s?\s+)(trabalh(o|ador(es)?)|m[ãa]es?|pais?|mulher(es)?|crian[çc]as?|marmota|professor(es)?))(\s+(d[eo]?\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b";
       public const string BeforeRegex = @"(antes(\s+(de|dos?|das?)?)?)";
       public const string AfterRegex = @"((depois|ap[óo]s)(\s*(de|d?os?|d?as?)?)?)";
       public const string SinceRegex = @"(desde(\s+(as?|o))?)";
@@ -470,7 +470,6 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"pai", @"-06-WXX-7-3" },
             { @"mae", @"-05-WXX-7-2" },
             { @"acaodegracas", @"-11-WXX-4-4" },
-            { @"trabalho", @"-05-WXX-1-1" },
             { @"memoria", @"-03-WXX-2-4" }
         };
       public static readonly Dictionary<string, double> DoubleNumbers = new Dictionary<string, double>

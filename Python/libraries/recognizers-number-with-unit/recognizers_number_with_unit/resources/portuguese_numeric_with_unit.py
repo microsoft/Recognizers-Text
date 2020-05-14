@@ -182,7 +182,7 @@ class PortugueseNumericWithUnit:
                                ("Coroa feroesa", "coroa feroesa|coroas feroesas|fkr"),
                                ("Libra das Malvinas", "libra das malvinas|libras das malvinas|fk£|fkp"),
                                ("Dólar das Ilhas Salomão", "dólar das ilhas salomão|dolar das ilhas salomao|dólares das ilhas salomão|dolares das ilhas salomao|sbd"),
-                               ("Novo shekel israelense", "novo shekel|novos shekeles|novo shequel|novo siclo|novo xéquel|shekeles novos|novos sheqalim|sheqalim novos|ils"),
+                               ("Novo shekel israelense", "novo shekel|novos shekeles|novo shequel|novo siclo|novo xéquel|shekeles novos|novos sheqalim|sheqalim novos|ils|₪"),
                                ("Agora", "agora|agorot"),
                                ("Dólar jamaicano", "dólar jamaicano|dolar jamaicano|dólares jamaicanos|dolares jamaicanos|j$|ja$|jmd"),
                                ("Yen", "yen|iene|yenes|ienes|jpy"),
@@ -368,7 +368,7 @@ class PortugueseNumericWithUnit:
                                ("Libra", "£"),
                                ("Colón costarriquenho", "₡"),
                                ("Lira turca", "₺")])
-    AmbiguousCurrencyUnitList = [r'le']
+    AmbiguousCurrencyUnitList = [r'le', r'agora']
     InformationSuffixList = dict([("bit", "bit|bits"),
                                   ("kilobit", "kilobit|kilobits|kb|kbit"),
                                   ("megabit", "megabit|megabits|Mb|Mbit"),
@@ -391,7 +391,7 @@ class PortugueseNumericWithUnit:
                                   ("gibibyte", "gibibyte|gibibytes|GiB|GiByte"),
                                   ("tebibyte", "tebibyte|tebibytes|TiB|TiByte"),
                                   ("pebibyte", "pebibyte|pebibytes|PiB|PiByte")])
-    AmbiguousDimensionUnitList = [r'ton', r'tonelada', r'área', r'area', r'áreas', r'areas', r'milha', r'milhas']
+    AmbiguousDimensionUnitList = [r'ton', r'tonelada', r'área', r'area', r'áreas', r'areas', r'milha', r'milhas', r'"']
     BuildPrefix = f'(?<=(\\s|^|\\P{{L}}))'
     BuildSuffix = f'(?=(\\s|\\P{{L}}|$))'
     ConnectorToken = 'de'
@@ -410,7 +410,7 @@ class PortugueseNumericWithUnit:
                              ("Polegada", "polegada|polegadas|\""),
                              ("Pé", "pé|pe|pés|pes|ft"),
                              ("Ano luz", "ano luz|anos luz|al")])
-    AmbiguousLengthUnitList = [r'mi', r'milha', r'milhas']
+    AmbiguousLengthUnitList = [r'mi', r'milha', r'milhas', r'"']
     SpeedSuffixList = dict([("Metro por segundo", "metro/segundo|m/s|metro por segundo|metros por segundo|metros por segundos"),
                             ("Quilômetro por hora", "km/h|quilômetro por hora|quilómetro por hora|quilometro por hora|quilômetros por hora|quilómetros por hora|quilometros por hora|quilômetro/hora|quilómetro/hora|quilometro/hora|quilômetros/hora|quilómetros/hora|quilometros/hora"),
                             ("Quilômetro por minuto", "km/min|quilômetro por minuto|quilómetro por minuto|quilometro por minuto|quilômetros por minuto|quilómetros por minuto|quilometros por minuto|quilômetro/minuto|quilómetro/minuto|quilometro/minuto|quilômetros/minuto|quilómetros/minuto|quilometros/minuto"),

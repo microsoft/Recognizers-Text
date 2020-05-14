@@ -418,7 +418,7 @@ public class SpanishNumericWithUnit {
         .put("pebibyte", "pebibyte|pebibytes|PiB|PiByte")
         .build();
 
-    public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("al", "mi", "área", "áreas", "pie", "pies");
+    public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("al", "mi", "área", "áreas", "pie", "pies", "\"");
 
     public static final ImmutableMap<String, String> LengthSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilómetro", "km|kilometro|kilómetro|kilometros|kilómetros")
@@ -438,7 +438,7 @@ public class SpanishNumericWithUnit {
         .put("Año luz", "año luz|años luz|al")
         .build();
 
-    public static final List<String> AmbiguousLengthUnitList = Arrays.asList("mi", "área", "áreas");
+    public static final List<String> AmbiguousLengthUnitList = Arrays.asList("mi", "área", "áreas", "\"");
 
     public static final String BuildPrefix = "(?<=(\\s|^|\\P{L}))";
 

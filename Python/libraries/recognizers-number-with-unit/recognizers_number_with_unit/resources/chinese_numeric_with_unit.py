@@ -577,6 +577,8 @@ class ChineseNumericWithUnit:
                                 ("Terabyte", "万亿字节|兆兆字节|tb"),
                                 ("Petabyte", "千兆兆|千万亿字节|pb")])
     DimensionAmbiguousValues = [r'丈', r'位', r'克', r'分', r'升', r'寸', r'尺', r'斗', r'斤', r'桶', r'毫', r'石', r'码', r'磅', r'米', r'罐', r'里', r'm', r'km', r'dm', r'cm', r'mm', r'l', r'ml', r'kg', r'mg', r'g', r't', r'b', r'byte', r'kb', r'mb', r'gb', r'tb', r'pb']
+    AmbiguityFiltersDict = dict([("五角", "五角大楼"),
+                                 ("普尔", "标准普尔")])
     TemperatureSuffixList = dict([("F", "华氏温度|华氏度|°f"),
                                   ("K", "开尔文温度|开氏度|凯氏度|K|k"),
                                   ("R", "兰氏温度|°r"),

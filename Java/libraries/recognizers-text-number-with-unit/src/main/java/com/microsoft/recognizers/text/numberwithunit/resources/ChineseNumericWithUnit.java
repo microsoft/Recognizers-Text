@@ -607,6 +607,11 @@ public class ChineseNumericWithUnit {
 
     public static final List<String> DimensionAmbiguousValues = Arrays.asList("丈", "位", "克", "分", "升", "寸", "尺", "斗", "斤", "桶", "毫", "石", "码", "磅", "米", "罐", "里", "m", "km", "dm", "cm", "mm", "l", "ml", "kg", "mg", "g", "t", "b", "byte", "kb", "mb", "gb", "tb", "pb");
 
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("五角", "五角大楼")
+        .put("普尔", "标准普尔")
+        .build();
+
     public static final ImmutableMap<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
         .put("F", "华氏温度|华氏度|°f")
         .put("K", "开尔文温度|开氏度|凯氏度|K|k")

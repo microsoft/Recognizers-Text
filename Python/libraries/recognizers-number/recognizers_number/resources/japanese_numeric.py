@@ -36,6 +36,7 @@ class JapaneseNumeric:
                                ("億", 100000000),
                                ("兆", 1000000000000)])
     ZeroToNineMap = dict([("零", 0),
+                          ("〇", 0),
                           ("一", 1),
                           ("二", 2),
                           ("三", 3),
@@ -89,24 +90,24 @@ class JapaneseNumeric:
     PercentageRegex = f'.+(?=パ\\s*ー\\s*セ\\s*ン\\s*ト)|.*(?=[％%])'
     DoubleAndRoundRegex = f'{ZeroToNineFullHalfRegex}+(\\.{ZeroToNineFullHalfRegex}+)?\\s*[万億]{{1,2}}(\\s*(以上))?'
     FracSplitRegex = f'[はと]|分\\s*の'
-    ZeroToNineIntegerRegex = f'[一二三四五六七八九]'
+    ZeroToNineIntegerRegex = f'[〇一二三四五六七八九]'
     NegativeNumberTermsRegex = f'(マ\\s*イ\\s*ナ\\s*ス)'
-    NegativeNumberTermsRegexNum = f'(?<!(\\d+\\s*)|[-－])[-－]'
+    NegativeNumberTermsRegexNum = f'(?<!(\\d+\\s*)|[-−－])[-−－]'
     NegativeNumberSignRegex = f'^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*'
     SpeGetNumberRegex = f'{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[半対]|[分厘]'
     PairRegex = '.*[対膳足]$'
     RoundNumberIntegerRegex = f'[十百千万億兆]'
-    AllowListRegex = f'(。|，|、|（|）|”｜国|週間|時間|時|匹|キロ|トン|年|個|足|本|\\s|$)'
-    NotSingleRegex = f'(?<!(第|だい))(({RoundNumberIntegerRegex}+({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\\s*))|(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\\s*({RoundNumberIntegerRegex}\\s*){{1,2}})\\s*(([零]?({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\\s*{RoundNumberIntegerRegex}{{0,1}})\\s*)*\\s*(\\s*(以上)?)'
-    SingleRegex = f'(({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|十)(?={AllowListRegex}))'
-    AllIntRegex = f'(((({ZeroToNineIntegerRegex}|[十百千])\\s*{RoundNumberIntegerRegex}*)|({ZeroToNineFullHalfRegex}\\s*{RoundNumberIntegerRegex})){{1,2}}(\\s*[以上])?)'
+    AllowListRegex = f'(。|，|、|（|）|”｜国|週間|時間|時|匹|キロ|トン|年|個|足|本|で|は|\\s|$|つ|月|の|と)'
+    NotSingleRegex = f'(?<!(第|だい))(({RoundNumberIntegerRegex}+(({ZeroToNineIntegerRegex}+|[十百千])+|{ZeroToNineFullHalfRegex}+|十)\\s*))|(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\\s*({RoundNumberIntegerRegex}\\s*){{1,2}})\\s*(([零]?({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\\s*{RoundNumberIntegerRegex}{{0,1}})\\s*)*\\s*(\\s*(以上)?)'
+    SingleRegex = f'(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)(?={AllowListRegex}))'
+    AllIntRegex = f'(?<!(ダース))(((({ZeroToNineIntegerRegex}|[十百千])\\s*{RoundNumberIntegerRegex}*)|(({ZeroToNineFullHalfRegex}\\s*{RoundNumberIntegerRegex})|{RoundNumberIntegerRegex})){{1,2}}(\\s*[以上])?)'
     PlaceHolderPureNumber = f'\\b'
     PlaceHolderDefault = f'\\D|\\b'
     NumbersSpecialsChars = f'(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\\s*)?{ZeroToNineFullHalfRegex}+'
     NumbersSpecialsCharsWithSuffix = f'{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+\\s*{BaseNumbers.NumberMultiplierRegex}'
     DottedNumbersSpecialsChar = f'{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}{{1,3}}([,，、]{ZeroToNineFullHalfRegex}{{3}})+'
     NumbersWithHalfDozen = f'半({RoundNumberIntegerRegex}|(ダース))'
-    NumbersWithDozen = f'{AllIntRegex}(ダース)(?!{AllIntRegex})'
+    NumbersWithDozen = f'({AllIntRegex}|{ZeroToNineFullHalfRegex}+)(ダース)'
     PointRegexStr = f'[\\.．]'
     AllFloatRegex = f'{NegativeNumberTermsRegex}?{AllIntRegex}\\s*{PointRegexStr}\\s*[一二三四五六七八九](\\s*{ZeroToNineIntegerRegex})*'
     NumbersWithAllowListRegex = f'{NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\\s*{PercentageRegex}+)'
@@ -120,26 +121,28 @@ class JapaneseNumeric:
     DoubleAllFloatRegex = f'(?<!(({AllIntRegex}[.]*)|{AllFloatRegex})*){AllFloatRegex}(?!{ZeroToNineIntegerRegex}*\\s*パーセント)'
     DoubleExponentialNotationRegex = f'(?<!{ZeroToNineFullHalfRegex}+[\\.．])({NegativeNumberTermsRegexNum}\\s*)?{ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)|[0０](?!{ZeroToNineFullHalfRegex}+))'
     DoubleScientificNotationRegex = f'(?<!{ZeroToNineFullHalfRegex}+[\\.．])({NegativeNumberTermsRegexNum}\\s*)?({ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?)\\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)'
-    OrdinalRegex = f'(第|だい){AllIntRegex}'
-    OrdinalNumbersRegex = f'(第|だい){ZeroToNineFullHalfRegex}+'
-    AllFractionNumber = f'{NegativeNumberTermsRegex}{{0,1}}(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\\s*[はと]{{0,1}}\\s*)?{NegativeNumberTermsRegex}{{0,1}}({ZeroToNineFullHalfRegex}+|{AllIntRegex})\\s*分\\s*の\\s*{NegativeNumberTermsRegex}{{0,1}}({ZeroToNineFullHalfRegex}+|{AllIntRegex})'
+    OrdinalNumbersRegex = f'(((第|だい)({ZeroToNineFullHalfRegex}+)({RoundNumberIntegerRegex}+)?))|(({ZeroToNineFullHalfRegex}+|{ZeroToNineIntegerRegex}+)({RoundNumberIntegerRegex}+)?(番目|位|等))'
+    OrdinalRegex = f'(({OrdinalNumbersRegex})|((第|だい)({AllIntRegex})|({AllIntRegex}+(番目|位|等))))|(最初の|ファースト)'
+    RelativeOrdinalRegex = f'(?<relativeOrdinal>((最後)(から１つ前のこと|から１つ前(のも)?|から3番目|(から１つ前)(のもの)|から３番目|から三番目|から二番目|(から一つ前|から1つ前)(のもの|のこと)?|(から１つ)?(前))?|(次のもの)(前)?|前のもの|(現在)(のこと)?|次|二位))'
+    AllOrdinalRegex = f'({OrdinalRegex}|{RelativeOrdinalRegex})'
+    AllFractionNumber = f'((({NegativeNumberTermsRegex}{{0,1}})|{NegativeNumberTermsRegexNum})(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\\s*[はと]{{0,1}}\\s*)?{NegativeNumberTermsRegex}{{0,1}}({ZeroToNineFullHalfRegex}+|{AllIntRegex})\\s*分\\s*の\\s*{NegativeNumberTermsRegex}{{0,1}}({ZeroToNineFullHalfRegex}+|{AllIntRegex})+)'
     FractionNotationSpecialsCharsRegex = f'({NegativeNumberTermsRegexNum}\\s*)?{ZeroToNineFullHalfRegex}+\\s+{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+'
     FractionNotationRegex = f'({NegativeNumberTermsRegexNum}\\s*)?{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+'
-    PercentagePointRegex = f'(?<!{AllIntRegex})({AllFloatRegex}|{AllIntRegex})\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト'
-    SimplePercentageRegex = f'({AllFloatRegex}|{AllIntRegex}|[百])\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト'
-    NumbersPercentagePointRegex = f'({ZeroToNineFullHalfRegex})+([\\.．]({ZeroToNineFullHalfRegex})+)?\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト'
-    NumbersPercentageWithSeparatorRegex = f'({ZeroToNineFullHalfRegex}{{1,3}}[,，、]{ZeroToNineFullHalfRegex}{{3}})+([\\.．]{ZeroToNineFullHalfRegex}+)*\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト'
-    NumbersPercentageWithMultiplierRegex = f'(?<!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}+[\\.．]{ZeroToNineFullHalfRegex}+\\s*{BaseNumbers.NumberMultiplierRegex}\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト'
-    FractionPercentagePointRegex = f'(?<!({ZeroToNineFullHalfRegex}+[\\.．])){ZeroToNineFullHalfRegex}+[\\.．]{ZeroToNineFullHalfRegex}+(?!([\\.．]{ZeroToNineFullHalfRegex}+))\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト'
-    FractionPercentageWithSeparatorRegex = f'{ZeroToNineFullHalfRegex}{{1,3}}([,，、]{ZeroToNineFullHalfRegex}{{3}})+[\\.．]{ZeroToNineFullHalfRegex}+\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト'
-    FractionPercentageWithMultiplierRegex = f'{ZeroToNineFullHalfRegex}+[\\.．]{ZeroToNineFullHalfRegex}+\\s*{BaseNumbers.NumberMultiplierRegex}\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト'
-    SimpleNumbersPercentageRegex = f'(?<!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}+\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト(?!([\\.．]{ZeroToNineFullHalfRegex}+))'
-    SimpleNumbersPercentageWithMultiplierRegex = f'(?<!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}+\\s*{BaseNumbers.NumberMultiplierRegex}\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト'
-    SimpleNumbersPercentagePointRegex = f'(?!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト'
-    IntegerPercentageRegex = f'{ZeroToNineFullHalfRegex}+\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト'
-    IntegerPercentageWithMultiplierRegex = f'{ZeroToNineFullHalfRegex}+\\s*{BaseNumbers.NumberMultiplierRegex}\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト'
-    NumbersFractionPercentageRegex = f'{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト'
-    SimpleIntegerPercentageRegex = f'{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?(\\s*)[％%]'
+    PercentagePointRegex = f'(?<!{AllIntRegex})({AllFloatRegex}|{AllIntRegex})\\s*(パ\\s*ー\\s*セ\\s*ン\\s*ト|[%])'
+    SimplePercentageRegex = f'({AllFloatRegex}|(({NegativeNumberTermsRegex})?({AllIntRegex}|[百])))\\s*(パ\\s*ー\\s*セ\\s*ン\\s*ト|[%])'
+    NumbersPercentagePointRegex = f'(?<!%)(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})?({ZeroToNineFullHalfRegex})+([\\.．]({ZeroToNineFullHalfRegex})+)?\\s*(パ\\s*ー\\s*セ\\s*ン\\s*ト|[%])(?!{ZeroToNineFullHalfRegex}))'
+    NumbersPercentageWithSeparatorRegex = f'({ZeroToNineFullHalfRegex}{{1,3}}[,，、]{ZeroToNineFullHalfRegex}{{3}})+([\\.．]{ZeroToNineFullHalfRegex}+)*\\s*(パ\\s*ー\\s*セ\\s*ン\\s*ト|[%])'
+    NumbersPercentageWithMultiplierRegex = f'(?<!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}+[\\.．]{ZeroToNineFullHalfRegex}+\\s*{BaseNumbers.NumberMultiplierRegex}\\s*(パ\\s*ー\\s*セ\\s*ン\\s*ト|[%])'
+    FractionPercentagePointRegex = f'(?<!({ZeroToNineFullHalfRegex}+[\\.．])){ZeroToNineFullHalfRegex}+[\\.．]{ZeroToNineFullHalfRegex}+(?!([\\.．]{ZeroToNineFullHalfRegex}+))\\s*(パ\\s*ー\\s*セ\\s*ン\\s*ト|[%])'
+    FractionPercentageWithSeparatorRegex = f'{ZeroToNineFullHalfRegex}{{1,3}}([,，、]{ZeroToNineFullHalfRegex}{{3}})+[\\.．]{ZeroToNineFullHalfRegex}+\\s*(パ\\s*ー\\s*セ\\s*ン\\s*ト|[%])'
+    FractionPercentageWithMultiplierRegex = f'{ZeroToNineFullHalfRegex}+[\\.．]{ZeroToNineFullHalfRegex}+\\s*{BaseNumbers.NumberMultiplierRegex}\\s*(パ\\s*ー\\s*セ\\s*ン\\s*ト|[%])'
+    SimpleNumbersPercentageRegex = f'(?<!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}+\\s*(パ\\s*ー\\s*セ\\s*ン\\s*ト|[%])(?!([\\.．]{ZeroToNineFullHalfRegex}+))'
+    SimpleNumbersPercentageWithMultiplierRegex = f'(?<!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}+\\s*{BaseNumbers.NumberMultiplierRegex}\\s*(パ\\s*ー\\s*セ\\s*ン\\s*ト|[%])'
+    SimpleNumbersPercentagePointRegex = f'(?!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+\\s*(パ\\s*ー\\s*セ\\s*ン\\s*ト|[%])'
+    IntegerPercentageRegex = f'{ZeroToNineFullHalfRegex}+\\s*(パ\\s*ー\\s*セ\\s*ン\\s*ト|[%])'
+    IntegerPercentageWithMultiplierRegex = f'{ZeroToNineFullHalfRegex}+\\s*{BaseNumbers.NumberMultiplierRegex}\\s*(パ\\s*ー\\s*セ\\s*ン\\s*ト|[%])'
+    NumbersFractionPercentageRegex = f'{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+\\s*(パ\\s*ー\\s*セ\\s*ン\\s*ト|[%])'
+    SimpleIntegerPercentageRegex = f'(?<!%)(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})?{ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?(\\s*)[%](?!{ZeroToNineFullHalfRegex}))'
     NumbersFoldsPercentageRegex = f'{ZeroToNineFullHalfRegex}(([\\.．]?|\\s*){ZeroToNineFullHalfRegex})?\\s*[の]*\\s*割引'
     FoldsPercentageRegex = f'{ZeroToNineIntegerRegex}(\\s*[.]?\\s*{ZeroToNineIntegerRegex})?\\s*[の]\\s*割引'
     SimpleFoldsPercentageRegex = f'{ZeroToNineFullHalfRegex}\\s*割(\\s*(半|({ZeroToNineFullHalfRegex}\\s*分\\s*{ZeroToNineFullHalfRegex}\\s*厘)|{ZeroToNineFullHalfRegex}))?'
@@ -171,6 +174,42 @@ class JapaneseNumeric:
     TwoNumberRangeRegex3 = f'({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3}|{OneNumberRangeLessRegex4})\\s*(と|は|((と)?同時に)|((と)?そして)|が|，|、|,)?\\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3}|{OneNumberRangeMoreRegex4})'
     TwoNumberRangeRegex4 = f'(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*{TillRegex}\\s*(?<number2>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)'
     AmbiguousFractionConnectorsRegex = f'^[.]'
-    RelativeReferenceOffsetMap = dict([("", "")])
-    RelativeReferenceRelativeToMap = dict([("", "")])
+    RelativeReferenceOffsetMap = dict([("現在", "0"),
+                                       ("次", "1"),
+                                       ("最後", "0"),
+                                       ("最後から三番目", "-2"),
+                                       ("最後から二番目", "-1"),
+                                       ("最後から一つ前", "-1"),
+                                       ("最後から一つ前のもの", "-1"),
+                                       ("最後から一つ前のこと", "-1"),
+                                       ("最後から1つ前のこと", "-1"),
+                                       ("最後から1つ前のもの", "-1"),
+                                       ("最後から1つ前", "-1"),
+                                       ("現在のこと", "0"),
+                                       ("前のもの", "-1"),
+                                       ("次のもの", "1"),
+                                       ("最後から３番目", "-2"),
+                                       ("最後から１つ前", "-1"),
+                                       ("最後から１つ前のもの", "-1"),
+                                       ("最後から１つ前のこと", "-1"),
+                                       ("最後から3番目", "-2")])
+    RelativeReferenceRelativeToMap = dict([("現在", "end"),
+                                           ("次", "current"),
+                                           ("最後", "end"),
+                                           ("最後から三番目", "end"),
+                                           ("最後から二番目", "end"),
+                                           ("最後から一つ前", "end"),
+                                           ("最後から一つ前のもの", "end"),
+                                           ("最後から一つ前のこと", "end"),
+                                           ("現在のこと", "current"),
+                                           ("最後から1つ前のこと", "end"),
+                                           ("最後から1つ前のもの", "end"),
+                                           ("最後から1つ前", "end"),
+                                           ("前のもの", "current"),
+                                           ("次のもの", "current"),
+                                           ("最後から３番目", "end"),
+                                           ("最後から１つ前", "end"),
+                                           ("最後から１つ前のもの", "end"),
+                                           ("最後から１つ前のこと", "end"),
+                                           ("最後から3番目", "end")])
 # pylint: enable=line-too-long

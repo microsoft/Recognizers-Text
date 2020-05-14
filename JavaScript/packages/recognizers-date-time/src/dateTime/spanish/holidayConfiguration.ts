@@ -1,6 +1,6 @@
 import { IHolidayExtractorConfiguration, BaseHolidayParserConfiguration } from "../baseHoliday";
 import { RegExpUtility } from "@microsoft/recognizers-text";
-import { DateUtils } from "../utilities";
+import { DateUtils, HolidayFunctions } from "../utilities";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 
 export class SpanishHolidayExtractorConfiguration implements IHolidayExtractorConfiguration {
@@ -46,7 +46,7 @@ export class SpanishHolidayParserConfiguration extends BaseHolidayParserConfigur
                 ["padres", SpanishHolidayParserConfiguration.FathersDay],
                 ["madres", SpanishHolidayParserConfiguration.MothersDay],
                 ["acciondegracias", SpanishHolidayParserConfiguration.ThanksgivingDay],
-                ["trabajador", SpanishHolidayParserConfiguration.LabourDay],
+                ["trabajador", SpanishHolidayParserConfiguration.InternationalWorkersDay],
                 ["delaraza", SpanishHolidayParserConfiguration.ColumbusDay],
                 ["memoria", SpanishHolidayParserConfiguration.MemorialDay],
                 ["pascuas", SpanishHolidayParserConfiguration.EasterDay],
@@ -88,7 +88,7 @@ export class SpanishHolidayParserConfiguration extends BaseHolidayParserConfigur
         return new Date(year, 9 - 1, 11);
     }
     private static EasterDay(year: number): Date {
-        return DateUtils.minValue();
+        return HolidayFunctions.calculateHolidayByEaster(year);
     }
 
     getSwiftYear(text: string): number {

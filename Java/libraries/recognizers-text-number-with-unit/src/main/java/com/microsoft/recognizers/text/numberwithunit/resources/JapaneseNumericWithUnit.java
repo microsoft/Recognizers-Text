@@ -538,5 +538,5 @@ public class JapaneseNumericWithUnit {
         .put("Costa Rican colón", "₡")
         .build();
 
-    public static final List<String> CurrencyAmbiguousValues = Arrays.asList("円", "銭", "\\");
+    public static final List<String> CurrencyAmbiguousValues = Arrays.asList("円", "銭", "分", "レク", "プル", "ブル", "\\");
 }
