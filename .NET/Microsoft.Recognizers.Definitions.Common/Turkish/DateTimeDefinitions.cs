@@ -132,8 +132,8 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string DateExtractor1 = $@"\b(({DayRegex}\s*[/\\.,-]?\s*{MonthRegex}(\s+{DateYearRegex})?)((\s*\(\s*{SingleWeekDayRegex}\s*\))|\s*,?\s+{SingleWeekDayRegex}(\s+günü)?)?)";
       public static readonly string DateExtractor3 = $@"\b(({RelativeRegex}\s+ayın\s+)?({OnRegex})(\s*\(\s*{SingleWeekDayRegex}\s*\))?)\b";
       public static readonly string DateExtractor4 = $@"\b(({RelativeRegex}\s+)?({SingleWeekDayRegex}\s+(günü\s+)?)?(\({DayRegex}\s+{MonthRegex}(\s+{DateYearRegex})?\)|(\s*,\s*)?{DayRegex}\s+{MonthRegex}'(e|a)(?!\s+kadar)))\b";
-      public static readonly string DateExtractor5 = $@"\b({DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex})((\s*\(\s*{SingleWeekDayRegex}\s*\))|\s*,?\s+{SingleWeekDayRegex}(\s+günü)?)?";
-      public static readonly string DateExtractor6 = $@"({RelativeRegex}\s+)?({SingleWeekDayRegex}\s+)?(\({DayRegex}\s*[/\\.]\s*{MonthNumRegex}\s*[/\\.]\s*{DateYearRegex}\))\b";
+      public static readonly string DateExtractor5 = $@"\b({DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex})((\s*\(\s*{SingleWeekDayRegex}\s*\))|\s*,?\s+{SingleWeekDayRegex}(\s+günü)?)?(?!\s*[/\\\-\.]\s*\d+)";
+      public static readonly string DateExtractor6 = $@"({RelativeRegex}\s+)?({SingleWeekDayRegex}\s+)?(\({DayRegex}\s*[/\\.]\s*{MonthNumRegex}\s*[/\\.]\s*{DateYearRegex}\))\b(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor7 = $@"\b(({DayRegex})\s+{ProperMonthSuffixRegex})\b";
       public const string DateExtractor8 = @"^[\*]";
       public static readonly string DateExtractor9 = $@"\b({SingleWeekDayRegex}\s+{OnRegex})\b";

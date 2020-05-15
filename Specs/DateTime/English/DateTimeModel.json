@@ -15622,7 +15622,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10/1-11/2/2017",

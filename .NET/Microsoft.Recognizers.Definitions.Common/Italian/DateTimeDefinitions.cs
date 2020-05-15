@@ -112,13 +112,13 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string DateExtractor1 = $@"\b((quest[oa]\s+)?{WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\))|({DayRegex}\s*[/\\.,-]?\s*{MonthRegex}(\.)?))(\s*\(\s*{WeekDayRegex}\s*\))?";
       public static readonly string DateExtractor2 = $@"({DateExtractor1}(\s+|\s*[\-/,]\s*|\s+del\s+)({DateYearRegex}))\b";
       public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\.)?(\s+|\s*,\s*|\s+di\s+|\s*-\s*){MonthRegex}(\.)?((\s+|\s*,\s*){DateYearRegex})?\b";
-      public static readonly string DateExtractor4 = $@"\b((il|l')\s*)?{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}";
-      public static readonly string DateExtractor5 = $@"\b{DayRegex}\s*[/\\\-]\s*({MonthNumRegex}|{MonthRegex}(\.)?)\s*[/\\\-]\s*{DateYearRegex}";
+      public static readonly string DateExtractor4 = $@"\b((il|l')\s*)?{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
+      public static readonly string DateExtractor5 = $@"\b{DayRegex}\s*[/\\\-]\s*({MonthNumRegex}|{MonthRegex}(\.)?)\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor6 = $@"(?<!([\-\.\/]|all[e']\s*|l[e']\s*))\b{MonthNumRegex}[\-\.\/]{DayRegex}(?!(%|\s*{{DescRegex}}))\b";
-      public static readonly string DateExtractor7 = $@"(?<!\b{DateYearRegex}\s*[/\\\-]\s*)\b{DayRegex}\s*[\/\\-]s*{MonthNumRegex}((\s+|\s*[\/\-\\,]\s*){DateYearRegex})?\b";
+      public static readonly string DateExtractor7 = $@"(?<!\b{DateYearRegex}\s*[/\\\-]\s*)\b{DayRegex}\s*[\/\\-]s*{MonthNumRegex}((\s+|\s*[\/\-\\,]\s*){DateYearRegex})?\b(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor8 = $@"(?<!([\-\.\/]|all[e']\s*|l[e']\s*))\b{DayRegex}[\/\\\-]{MonthNumRegex}(?!(%|\s*{DescRegex}))\b";
       public static readonly string DateExtractor9 = $@"(?<!\b{DateYearRegex}\s*[/\\\-]\s*)\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*|\s+del\s+){DateYearRegex})?\b";
-      public static readonly string DateExtractorA = $@"\b{DateYearRegex}\s*[/\\\-]\s*{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}";
+      public static readonly string DateExtractorA = $@"\b{DateYearRegex}\s*[/\\\-]\s*{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string OfMonth = $@"(^\s*(di\s+)?){MonthRegex}";
       public static readonly string MonthEnd = $@"{MonthRegex}\s*,?\s*(il)?\s*$";
       public static readonly string WeekDayEnd = $@"(quest[oa]\s+)?{WeekDayRegex}\s*,?\s*$";

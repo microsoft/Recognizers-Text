@@ -283,11 +283,12 @@ DateExtractor3: !nestedRegex
 DateExtractor4: !nestedRegex
   def: \b(({RelativeRegex}\s+)?({SingleWeekDayRegex}\s+(günü\s+)?)?(\({DayRegex}\s+{MonthRegex}(\s+{DateYearRegex})?\)|(\s*,\s*)?{DayRegex}\s+{MonthRegex}'(e|a)(?!\s+kadar)))\b
   references: [ RelativeRegex, DayRegex, SingleWeekDayRegex, MonthRegex, DateYearRegex ]
+# The final lookahead in DateExtractor5|6 avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017" 
 DateExtractor5: !nestedRegex
-  def: \b({DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex})((\s*\(\s*{SingleWeekDayRegex}\s*\))|\s*,?\s+{SingleWeekDayRegex}(\s+günü)?)?
+  def: \b({DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex})((\s*\(\s*{SingleWeekDayRegex}\s*\))|\s*,?\s+{SingleWeekDayRegex}(\s+günü)?)?(?!\s*[/\\\-\.]\s*\d+)
   references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex, SingleWeekDayRegex ]
 DateExtractor6: !nestedRegex
-  def: ({RelativeRegex}\s+)?({SingleWeekDayRegex}\s+)?(\({DayRegex}\s*[/\\.]\s*{MonthNumRegex}\s*[/\\.]\s*{DateYearRegex}\))\b
+  def: ({RelativeRegex}\s+)?({SingleWeekDayRegex}\s+)?(\({DayRegex}\s*[/\\.]\s*{MonthNumRegex}\s*[/\\.]\s*{DateYearRegex}\))\b(?!\s*[/\\\-\.]\s*\d+)
   references: [ RelativeRegex, DayRegex, MonthNumRegex, SingleWeekDayRegex, DateYearRegex ]
 DateExtractor7: !nestedRegex
   def: \b(({DayRegex})\s+{ProperMonthSuffixRegex})\b

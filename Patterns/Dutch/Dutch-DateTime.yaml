@@ -266,11 +266,12 @@ DateExtractor3: !nestedRegex
   def: \b({WeekDayRegex}(\s+|\s*,\s*)?(de\s+)?)?({DayRegex}(\s*dag|\.)?)((\s+|\s*[,-]\s*|\s+van\s+)?{MonthRegex})((\.)?(\s+|\s*,\s*|\s+in\s+)?{DateYearRegex})?\b
   references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex ]
 # 05/02/2019
+# The final lookahead in DateExtractor4|5|A avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017" 
 DateExtractor4: !nestedRegex
-  def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}
+  def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
 DateExtractor5: !nestedRegex
-  def: \b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}
+  def: \b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex ]
 DateExtractor6: !nestedRegex
   def: (?<={DatePreposition}\s+)({StrictRelativeRegex}\s+)?({WeekDayRegex}\s+)?{MonthNumRegex}[\-\.]{DayRegex}(?![%])\b
@@ -295,7 +296,7 @@ DateExtractor9S: !nestedRegex
   def: \b({WeekDayRegex}\s+)?{DayRegex}\s*[-|\/|.]\s*{MonthNumRegex}(?![%])\b
   references: [ DayRegex, MonthNumRegex, DateYearRegex, WeekDayRegex ]
 DateExtractorA: !nestedRegex
-  def: \b({WeekDayRegex}\s+)?{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}
+  def: \b({WeekDayRegex}\s+)?{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ BaseDateTime.FourDigitYearRegex, MonthNumRegex, DayRegex, WeekDayRegex ]
 OfMonth: !nestedRegex
   def: (^\s*((van|in)\s+)?)({MonthRegex})
