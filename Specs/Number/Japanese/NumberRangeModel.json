@@ -416,7 +416,7 @@
         "Text": "100より大きく300より小さい",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "-100,300"
+          "value": "(100,300)"
         },
         "Start": 4,
         "End": 19
@@ -513,7 +513,7 @@
         "Text": "1000より大きく1500より小さい",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "-10,001,500"
+          "value": "(1000,1500)"
         },
         "Start": 5,
         "End": 22
@@ -1302,7 +1302,7 @@
         "Text": "100より大きく300より小さい",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "-100,300"
+          "value": "(100,300)"
         },
         "Start": 4,
         "End": 19
@@ -1399,7 +1399,7 @@
         "Text": "1000より大きく1500より小さい",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "-10,001,500"
+          "value": "(1000,1500)"
         },
         "Start": 5,
         "End": 22
