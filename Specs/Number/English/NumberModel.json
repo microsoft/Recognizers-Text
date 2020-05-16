@@ -2609,5 +2609,52 @@
         "End": 25
       }
     ]
+  },
+  {
+    "Input": "I can give you 13 lakh",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "13 lakh",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1300000"
+        },
+        "Start": 15,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "There are 1 crore boxes in this container",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 crore",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000000"
+        },
+        "Start": 10,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "I count 6 crore and two hundred",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "6 crore and two hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "60000200"
+        },
+        "Start": 8,
+        "End": 30
+      }
+    ]
   }
 ]

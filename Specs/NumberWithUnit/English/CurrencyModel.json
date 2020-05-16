@@ -2235,5 +2235,20 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Am I eligible for a lone of 35 lakh rupees",
+    "Results": [
+      {
+        "Text": "35 lakh rupees",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "3500000",
+          "unit": "Rupee",
+        },
+        "Start": 28,
+        "End": 41
+      }
+    ]
   }
 ]
