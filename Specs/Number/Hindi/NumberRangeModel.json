@@ -2,14 +2,12 @@
   {
     "Input": "1995-01",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "यह संख्या बीस से बड़ी और पैंतीस के समान या उससे कम है।",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -26,7 +24,6 @@
   {
     "Input": "यह संख्या 20 और 30 के बीच में है.",
     "NotSupported": "java, javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -43,7 +40,6 @@
   {
     "Input": "उसका रैंक दस और पंद्रह के बीच का है. ",
     "NotSupported": "java, javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -60,7 +56,6 @@
   {
     "Input": "उसक स्कोर माइनस दस और पंद्रह के बीच है.",
     "NotSupported": "java, javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -77,7 +72,6 @@
   {
     "Input": "उसका रैंक दस से ज़्यादा पर पंद्रह से कम है.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -94,7 +88,6 @@
   {
     "Input": "यह संख्या 100 से ज़्यादा बड़ी और 300 से कम है.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -111,7 +104,6 @@
   {
     "Input": "यह संख्या एक सौ से बड़ी या उसके समान है, तीन सौ से कम या उसके समान है।",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -128,7 +120,6 @@
   {
     "Input": "ज़्यादा से ज़्यादा 100 और कम से कम 20 सेव हैं.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -145,7 +136,6 @@
   {
     "Input": "ये सेव लगभग 20~100 हैं.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -162,7 +152,6 @@
   {
     "Input": "संख्या की शृंखला 20 से 100 है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -179,7 +168,6 @@
   {
     "Input": "संख्या की शृंखला एक हजार से एक हजार पांच सौ है.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -196,7 +184,6 @@
   {
     "Input": "संख्या 1000 से ज़्यादा और 1500 से कम है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -211,43 +198,41 @@
     ]
   },
   {
-    "Input": "संख्या एक चौथाई स अधिक और आधे से कम है.",
+    "Input": "संख्या एक चौथाई से अधिक और आधे से कम है.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "एक चौथाई स अधिक और आधे से कम",
+        "Text": "एक चौथाई से अधिक और आधे से कम",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(0.25,0.5)"
         },
         "Start": 7,
-        "End": 34
+        "End": 35
       }
     ]
   },
   {
-    "Input": "यह संख्या तीन हजार नौ सौ पैंसठ से बड़ी है।",
+    "Input": "यह संख्या तीन हजार नौ सौ पैंसठ से बड़ी या उसके समान है।",
+    "Comment": "Retranslated due to incorrect translation.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "तीन हजार नौ सौ पैंसठ से बड़ी",
+        "Text": "तीन हजार नौ सौ पैंसठ से बड़ी या उसके समान",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[3965,)"
         },
         "Start": 10,
-        "End": 36
+        "End": 49
       }
     ]
   },
   {
     "Input": "यह संख्या 4,565 से बड़ी है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -264,7 +249,6 @@
   {
     "Input": "वह तीस साल से ज़्यादा की उम्र के हैं.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -281,45 +265,43 @@
   {
     "Input": "वह तीस से ज़्यादा वर्ष के हैं",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "तीस से ज़्यादा ",
+        "Text": "तीस से ज़्यादा",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(30,)"
         },
         "Start": 3,
-        "End": 16
+        "End": 15
       }
     ]
   },
   {
     "Input": "उनकी उम्र तीस से कम नहीं है.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "तीस से कम",
+        "Text": "तीस से कम नहीं",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
         },
         "Start": 10,
-        "End": 18
+        "End": 23
       }
     ]
   },
   {
-    "Input": "इन उत्पादों में पांच सौ से ज़्यादा हैं.",
+    "Input": "इन उत्पादों में पांच सौ और ज़्यादा हैं.",
+    "Comment": "Retranslated due to incorrect translation.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "पांच सौ से ज़्यादा",
+        "Text": "पांच सौ और ज़्यादा",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[500,)"
@@ -332,7 +314,6 @@
   {
     "Input": "इन उत्पादों में पांच सौ या ज़्यादा हैं.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -349,7 +330,6 @@
   {
     "Input": "1/2 से ज़्यादा लोग यहां आए.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -366,7 +346,6 @@
   {
     "Input": "100 से कम या समान वाली अभाज्य संख्याएं ढूंढ़िए",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -383,7 +362,6 @@
   {
     "Input": "100 से कम या बराबर की अभाज्य संख्याएं ढूंढ़िए",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -400,7 +378,6 @@
   {
     "Input": "इन उत्पादों में लगभग पांच सौ या उससे कम हैं.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -417,7 +394,6 @@
   {
     "Input": "ऐसी अभाज्य संख्याएं ढूंढ़िए जो < = 100 हैं ",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -434,7 +410,6 @@
   {
     "Input": "उसकी लंबाई 170 से कम है.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -451,7 +426,6 @@
   {
     "Input": "उसकी लंबाई 170 के नीचे है.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -468,24 +442,22 @@
   {
     "Input": "जंगलों में हजार से कम विशाल पांडा रहते हैं.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "हजार से कम ",
+        "Text": "हजार से कम",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,1000)"
         },
         "Start": 11,
-        "End": 21
+        "End": 20
       }
     ]
   },
   {
     "Input": "x एक सौ सत्तर के समान है.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -502,7 +474,6 @@
   {
     "Input": "x>10 और y<20",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -527,8 +498,7 @@
   },
   {
     "Input": "x 10 से बड़ी और 20 से छोटी है. y 50 से अधिक नहीं है और 20 से कम नहीं है.",
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
+    "NotSupported": "javascript, python, dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -541,27 +511,25 @@
         "End": 24
       },
       {
-        "Text": "50 से अधिक नहीं और 20 से कम नहीं",
+        "Text": "50 से अधिक नहीं है और 20 से कम नहीं",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,50]"
         },
         "Start": 32,
-        "End": 63
+        "End": 66
       }
     ]
   },
   {
     "Input": "एक चौथाई एक भिन्नांक है.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "संख्या 20 के बराबर है.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -578,7 +546,6 @@
   {
     "Input": "20 के बराबर, हमारे क्लास में छात्रों की संख्या बहुत ज़्यादा नहीं है.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -595,21 +562,18 @@
   {
     "Input": "+1-222-2222/2222 एक फोन नंबर है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "+1-222-2222-2222 एक फोन नंबर है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "उसका स्कोर 200 है या 190 से ज़्यादा",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -626,7 +590,6 @@
   {
     "Input": "उसका स्कोर 200 या ज़्यादा है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -643,7 +606,6 @@
   {
     "Input": "उसका स्कोर 30 के बराबर या उससे कम है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -660,7 +622,6 @@
   {
     "Input": "उसका स्कोर 30 से कम या उसके बराबर है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -677,7 +638,6 @@
   {
     "Input": "उसका स्कोर कम से कम 30 या उसके बराबर है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -694,7 +654,6 @@
   {
     "Input": "उसका स्कोर 30 के बराबर या उससे अधिक है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -711,7 +670,6 @@
   {
     "Input": "उनका स्कोर 5000 या उससे कम है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -728,7 +686,6 @@
   {
     "Input": "उनका स्कोर 5000 के बराबर या 6000 से कम है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -741,46 +698,44 @@
         "End": 23
       },
       {
-        "Text": "less than 6000",
+        "Text": "6000 से कम",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,6000)"
         },
-        "Start": 30,
-        "End": 43
+        "Start": 28,
+        "End": 37
       }
     ]
   },
   {
     "Input": "उनका स्कोर 5000 के बराबर या 4500 से अधिक है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5000 के बराबर ",
+        "Text": "5000 के बराबर",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5000,5000]"
         },
         "Start": 11,
-        "End": 24
+        "End": 23
       },
       {
-        "Text": "more than 4500",
+        "Text": "4500 से अधिक",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(4500,)"
         },
-        "Start": 30,
-        "End": 43
+        "Start": 28,
+        "End": 39
       }
     ]
   },
   {
     "Input": "उनका स्कोर 5000 से कम या उसके बराबर है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -797,7 +752,6 @@
   {
     "Input": "उनका स्कोर 5000 से अधिक या उसके बराबर है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -814,7 +768,6 @@
   {
     "Input": "उसका स्कोर 5000 से अधिक या इसके बराबर है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -831,17 +784,16 @@
   {
     "Input": "उनका स्कोर 5000 से अधिक या 6000 के बराबर है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5000 से अधिक या 6000 के बराबर",
+        "Text": "5000 से अधिक",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(5000,)"
         },
         "Start": 11,
-        "End": 39
+        "End": 22
       },
       {
         "Text": "6000 के बराबर",
@@ -856,8 +808,7 @@
   },
   {
     "Input": "उनका स्कोर 5000 के बराबर या 5000 से कम है",
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
+    "NotSupported": "javascript, python, dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -870,20 +821,19 @@
         "End": 23
       },
       {
-        "Text": "less than 5000",
+        "Text": "5000 से कम",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,5000)"
         },
-        "Start": 30,
-        "End": 43
+        "Start": 28,
+        "End": 37
       }
     ]
   },
   {
     "Input": "नंबर रेंज 1000-5000 है",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -900,7 +850,6 @@
   {
     "Input": "नंबर रेंज है 1000 - 5000",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -917,7 +866,6 @@
   {
     "Input": "नंबर रेंज है 1000–5000",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -934,7 +882,6 @@
   {
     "Input": "संख्या शृंखला 1000 – 5000",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -949,19 +896,19 @@
     ]
   },
   {
-    "Input": "5 में 2 या ज़्यादा कैसा रहेगा",
+    "Input": "हरेक 5 में से 2 या ज़्यादा",
+    "Comment": "Retranslated due to incorrect translation.",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5 में 2 या ज़्यादा ",
+        "Text": "5 में से 2 या ज़्यादा",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[0.4,)"
         },
-        "Start": 0,
-        "End": 17
+        "Start": 5,
+        "End": 24
       }
     ]
   },
@@ -969,16 +916,15 @@
     "Input": "5 में 2 से ज़्यादा कैसा रहेगा",
     "Comment": "As this can be ambiguous, by design the interpretation is left-to-right and the range is extracted first.",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5 में 2 से ज़्यादा",
+        "Text": "2 से ज़्यादा",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(2,)"
         },
-        "Start": 0,
+        "Start": 6,
         "End": 16
       }
     ]
@@ -986,7 +932,6 @@
   {
     "Input": "क्या आप मुझे 2009 में 30000 से ज़्यादा के रिकॉर्ड दिखा सकते हैं.",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1003,24 +948,22 @@
   {
     "Input": "क्या आप मुझे 2009 में 30000 से कम के रिकॉर्ड दिखा सकते हैं.",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "30000 से कम ",
+        "Text": "30000 से कम",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(,3000)"
+          "value": "(,30000)"
         },
         "Start": 22,
-        "End": 33
+        "End": 32
       }
     ]
   },
   {
     "Input": "क्या ऐसा >30 की स्थिति में अभी भी होता है",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1037,7 +980,6 @@
   {
     "Input": "क्या ऐसा >= 30 की स्थिति में अभी भी होता है",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1054,7 +996,6 @@
   {
     "Input": "क्या ऐसा <-30 की स्थिति में अभी भी होता है",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1071,7 +1012,6 @@
   {
     "Input": "क्या ऐसा  <=  -30 की स्थिति में अभी भी होता है",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1088,34 +1028,31 @@
   {
     "Input": "<>30",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "=>30",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "=<30",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
-    "Input": "यह संख्या 1998 में 20000 के बराबर है",
+    "Input": "यह संख्या 1998 में से 20000 के बराबर है",
+    "Comment": "Retranslated due to incorrect translation.",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1998 में 20000 के बराबर",
+        "Text": "1998 में से 20000 के बराबर",
         "Start": 10,
-        "End": 32,
+        "End": 35,
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[10.01001001001,10.01001001001]"
@@ -1124,22 +1061,22 @@
     ]
   },
   {
-    "Input": "यह संख्या 2008 में 200 से 300 है.",
+    "Input": "यह संख्या 200 से हरेक 2008 में से 300 है.",
+    "Comment": "Retranslated due to incorrect translation.",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
-    "Input": "यह संख्या 2008 में 200 से 3000000 है",
+    "Input": "यह संख्या 200 से लेकर 2008 में से 3000000 है.",
+    "Comment": "Retranslated due to incorrect translation.",
     "NotSupported": "javascript, python, java",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2008 में 200 से 3000000",
+        "Text": "200 से लेकर 2008 में से 3000000",
         "Start": 10,
-        "End": 32,
+        "End": 40,
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[200,1494.02390438247)"
@@ -1150,7 +1087,6 @@
   {
     "Input": "आधे से ज़्यादा लोग यहां आए ",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1167,7 +1103,6 @@
   {
     "Input": "3000 से अधिक",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1184,7 +1119,6 @@
   {
     "Input": "3000 के पार",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1201,7 +1135,6 @@
   {
     "Input": "निसान मोटर कं. 700 तक कॉन्ट्रैक्ट कामकारों को हटाने की योजना बना रही है.",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1218,7 +1151,6 @@
   {
     "Input": "700 तक को >700 के तौर पर नहीं पहचाना जाना चाहिए",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1232,8 +1164,8 @@
       },
       {
         "Text": ">700",
-        "Start": 38,
-        "End": 41,
+        "Start": 10,
+        "End": 13,
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(700,)"
@@ -1244,7 +1176,6 @@
   {
     "Input": "ऐसे कार की संख्या जिनका हॉर्सपॉवर 150 से अधिक है",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1261,7 +1192,6 @@
   {
     "Input": "शेयर 20 से अधिक ऊपर गए, प्रति पीस 170 से ऊपर",
     "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

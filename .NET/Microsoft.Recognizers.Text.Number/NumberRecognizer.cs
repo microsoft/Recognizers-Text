@@ -397,15 +397,12 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
                     new Hindi.PercentageExtractor(options)));
 
-            // @TODO Uncomment once all the tests pass
-            /*
-
             RegisterModel<NumberRangeModel>(
                 Culture.Hindi,
                 options => new NumberRangeModel(
                     new BaseNumberRangeParser(new HindiNumberRangeParserConfiguration(
                                                   new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
-                    new Hindi.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Hindi, options))));*/
+                    new Hindi.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Hindi, options))));
 
             RegisterModel<NumberModel>(
                 Culture.Swedish,
