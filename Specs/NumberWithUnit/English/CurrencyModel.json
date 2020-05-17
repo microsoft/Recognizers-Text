@@ -2241,13 +2241,13 @@
     "Results": [
       {
         "Text": "35 lakh rupees",
+        "Start": 28,
+        "End": 41,
         "TypeName": "currency",
         "Resolution": {
           "value": "3500000",
-          "unit": "Rupee",
-        },
-        "Start": 28,
-        "End": 41
+          "unit": "Rupee"
+        }
       }
     ]
   }
