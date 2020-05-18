@@ -15618,6 +15618,31 @@
     ]
   },
   {
+    "Input": "The period is 10/1-11/2/2017",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10/1-11/2/2017",
+        "Start": 14,
+        "End": 27,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-10-01,2017-11-02,P32D)",
+              "type": "daterange",
+              "start": "2017-10-01",
+              "end": "2017-11-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "The code of this object is 133-03-03-2020",
     "Context": {
       "ReferenceDateTime": "2020-05-14T12:00:00"

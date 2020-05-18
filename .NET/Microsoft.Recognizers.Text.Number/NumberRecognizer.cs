@@ -306,14 +306,12 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Japanese, options))),
                     new Japanese.PercentageExtractor()));
 
-            /*
             RegisterModel<NumberRangeModel>(
                 Culture.Japanese,
                 (options) => new NumberRangeModel(
                     new BaseNumberRangeParser(new JapaneseNumberRangeParserConfiguration(
                                                   new BaseNumberOptionsConfiguration(Culture.Japanese, options))),
-                    new Japanese.NumberRangeExtractor(options)));
-            */
+                    new Japanese.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Japanese, options))));
 
             RegisterModel<NumberModel>(
                 Culture.Korean,

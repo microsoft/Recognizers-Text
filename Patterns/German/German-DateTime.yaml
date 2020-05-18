@@ -177,8 +177,9 @@ DateExtractor3: !nestedRegex
 DateExtractor4: !nestedRegex
   def: \b({DayRegex}\s*{MonthNumRegex}\s*{DateYearRegex})\b
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
+# The final lookahead in DateExtractor5|A avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017" 
 DateExtractor5: !nestedRegex
-  def: \b({DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex})\b
+  def: \b({DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex})\b(?!\s*[/\\\-\.]\s*\d+)
   references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex ]
 DateExtractor6: !nestedRegex
   def: \b(({WeekDayRegex}\s*)?(in)\s*(\d(\d)?)\s*(woche(n)?))\b
@@ -196,7 +197,7 @@ DateExtractor10: !nestedRegex
   def: \b({RelativeRegex}\s*jahr(\s*im)?({MonthNumRegex}|sommer|winter|frühling|herbst)?)\b
   references: [ DayRegex, MonthNumRegex, DateYearRegex, RelativeRegex ]
 DateExtractorA: !nestedRegex
-  def: ({DateYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex})
+  def: ({DateYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex})(?!\s*[/\\\-\.]\s*\d+)
   references: [ DateYearRegex, MonthNumRegex, DayRegex ]
 OfMonth: !nestedRegex
   def: ^(\s*des\s*|\s*)?{MonthRegex}
