@@ -1,13 +1,12 @@
 package com.microsoft.recognizers.text.datetime.french.utilities;
 
-import java.util.regex.Pattern;
-
 import com.microsoft.recognizers.text.datetime.resources.FrenchDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import java.util.regex.Pattern;
 
 public class FrenchDatetimeUtilityConfiguration
-        implements IDateTimeUtilityConfiguration {
+    implements IDateTimeUtilityConfiguration {
     public static final Pattern AgoRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AgoRegex);
 
     public static final Pattern LaterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.LaterRegex);
@@ -15,7 +14,7 @@ public class FrenchDatetimeUtilityConfiguration
     public static final Pattern InConnectorRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.InConnectorRegex);
 
     public static final Pattern WithinNextPrefixRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.WithinNextPrefixRegex);
+        .getSafeRegExp(FrenchDateTime.WithinNextPrefixRegex);
 
     public static final Pattern AmDescRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AmDescRegex);
 
@@ -30,7 +29,7 @@ public class FrenchDatetimeUtilityConfiguration
     public static final Pattern DateUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.DateUnitRegex);
 
     public static final Pattern CommonDatePrefixRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.CommonDatePrefixRegex);
+        .getSafeRegExp(FrenchDateTime.CommonDatePrefixRegex);
 
     @Override
     public final Pattern getLaterRegex() {

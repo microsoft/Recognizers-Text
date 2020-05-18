@@ -5,7 +5,7 @@ import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimePar
 import com.microsoft.recognizers.text.datetime.parsers.config.IDateTimeAltParserConfiguration;
 
 public class FrenchDateTimeAltParserConfiguration
-        implements IDateTimeAltParserConfiguration {
+    implements IDateTimeAltParserConfiguration {
 
     private final IDateTimeParser dateTimeParser;
     private final IDateTimeParser dateParser;

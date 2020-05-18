@@ -1,16 +1,15 @@
 package com.microsoft.recognizers.text.datetime.french.extractors;
 
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ITimeZoneExtractorConfiguration;
 import com.microsoft.recognizers.text.matcher.StringMatcher;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class FrenchTimeZoneExtractorConfiguration
-        extends BaseOptionsConfiguration implements ITimeZoneExtractorConfiguration {
-    public FrenchTimeZoneExtractorConfiguration(DateTimeOptions options) {
+    extends BaseOptionsConfiguration implements ITimeZoneExtractorConfiguration {
+    public FrenchTimeZoneExtractorConfiguration(final DateTimeOptions options) {
         super(options);
 
     }

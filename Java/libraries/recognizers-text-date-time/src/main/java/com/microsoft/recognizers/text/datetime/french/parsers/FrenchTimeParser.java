@@ -1,7 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.parsers;
 
-import java.time.LocalDateTime;
-
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.french.extractors.FrenchTimeExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.BaseTimeParser;
@@ -11,9 +9,10 @@ import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResul
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.utilities.StringUtility;
+import java.time.LocalDateTime;
 
 public class FrenchTimeParser
-        extends BaseTimeParser {
+    extends BaseTimeParser {
 
     public FrenchTimeParser(final ITimeParserConfiguration config) {
         super(config);
@@ -45,10 +44,10 @@ public class FrenchTimeParser
 
             result.setTimex(String.format("T%02d", hour));
             final LocalDateTime resultTime = DateUtil.safeCreateFromMinValue(
-                    referenceTime.getYear(),
-                    referenceTime.getMonthValue(),
-                    referenceTime.getDayOfMonth(),
-                    hour, 0, 0);
+                referenceTime.getYear(),
+                referenceTime.getMonthValue(),
+                referenceTime.getDayOfMonth(),
+                hour, 0, 0);
             result.setFutureValue(resultTime);
             result.setPastValue(resultTime);
             result.setSuccess(true);

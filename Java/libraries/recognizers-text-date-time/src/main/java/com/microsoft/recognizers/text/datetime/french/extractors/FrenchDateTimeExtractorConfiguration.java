@@ -1,8 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.extractors;
 
-import java.util.Arrays;
-import java.util.regex.Pattern;
-
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
@@ -18,10 +15,12 @@ import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfigu
 import com.microsoft.recognizers.text.number.english.extractors.IntegerExtractor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
+import java.util.Arrays;
+import java.util.regex.Pattern;
 
 public class FrenchDateTimeExtractorConfiguration
-        extends BaseOptionsConfiguration
-        implements IDateTimeExtractorConfiguration {
+    extends BaseOptionsConfiguration
+    implements IDateTimeExtractorConfiguration {
 
     public static final Pattern PrepositionRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PrepositionRegex);
     public static final Pattern NowRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NowRegex);
@@ -31,33 +30,33 @@ public class FrenchDateTimeExtractorConfiguration
 
     public static final Pattern TimeOfDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeOfDayRegex);
     public static final Pattern SpecificTimeOfDayRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.SpecificTimeOfDayRegex);
+        .getSafeRegExp(FrenchDateTime.SpecificTimeOfDayRegex);
     public static final Pattern TimeOfTodayAfterRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.TimeOfTodayAfterRegex);
+        .getSafeRegExp(FrenchDateTime.TimeOfTodayAfterRegex);
     public static final Pattern TimeOfTodayBeforeRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.TimeOfTodayBeforeRegex);
+        .getSafeRegExp(FrenchDateTime.TimeOfTodayBeforeRegex);
     public static final Pattern SimpleTimeOfTodayAfterRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.SimpleTimeOfTodayAfterRegex);
+        .getSafeRegExp(FrenchDateTime.SimpleTimeOfTodayAfterRegex);
     public static final Pattern SimpleTimeOfTodayBeforeRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.SimpleTimeOfTodayBeforeRegex);
+        .getSafeRegExp(FrenchDateTime.SimpleTimeOfTodayBeforeRegex);
     public static final Pattern SpecificEndOfRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificEndOfRegex);
     public static final Pattern UnspecificEndOfRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.UnspecificEndOfRegex);
+        .getSafeRegExp(FrenchDateTime.UnspecificEndOfRegex);
 
     //TODO: add this for french
     public static final Pattern UnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeUnitRegex);
     public static final Pattern ConnectorRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorRegex);
     public static final Pattern NumberAsTimeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NumberAsTimeRegex);
     public static final Pattern DateNumberConnectorRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.DateNumberConnectorRegex);
+        .getSafeRegExp(FrenchDateTime.DateNumberConnectorRegex);
     public static final Pattern SuffixAfterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SuffixAfterRegex);
-    private IExtractor integerExtractor;
-    private IDateExtractor datePointExtractor;
-    private IDateTimeExtractor timePointExtractor;
-    private IDateTimeExtractor durationExtractor;
-    private IDateTimeUtilityConfiguration utilityConfiguration;
+    private final IExtractor integerExtractor;
+    private final IDateExtractor datePointExtractor;
+    private final IDateTimeExtractor timePointExtractor;
+    private final IDateTimeExtractor durationExtractor;
+    private final IDateTimeUtilityConfiguration utilityConfiguration;
 
-    public FrenchDateTimeExtractorConfiguration(DateTimeOptions options) {
+    public FrenchDateTimeExtractorConfiguration(final DateTimeOptions options) {
 
         super(options);
 
@@ -167,8 +166,8 @@ public class FrenchDateTimeExtractorConfiguration
 
         text = text.trim();
 
-        boolean isPreposition = Arrays.stream(RegExpUtility.getMatches(PrepositionRegex, text)).findFirst().isPresent();
-        boolean isConnector = Arrays.stream(RegExpUtility.getMatches(ConnectorRegex, text)).findFirst().isPresent();
+        final boolean isPreposition = Arrays.stream(RegExpUtility.getMatches(PrepositionRegex, text)).findFirst().isPresent();
+        final boolean isConnector = Arrays.stream(RegExpUtility.getMatches(ConnectorRegex, text)).findFirst().isPresent();
         return (StringUtility.isNullOrEmpty(text) || isPreposition || isConnector);
     }
 }

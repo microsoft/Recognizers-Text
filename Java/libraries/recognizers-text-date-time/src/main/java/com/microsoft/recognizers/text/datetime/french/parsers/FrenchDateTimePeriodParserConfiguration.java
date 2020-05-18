@@ -1,7 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.parsers;
 
-import java.util.regex.Pattern;
-
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
@@ -18,10 +16,11 @@ import com.microsoft.recognizers.text.datetime.parsers.config.IDateTimePeriodPar
 import com.microsoft.recognizers.text.datetime.parsers.config.MatchedTimeRangeResult;
 import com.microsoft.recognizers.text.datetime.resources.FrenchDateTime;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import java.util.regex.Pattern;
 
 public class FrenchDateTimePeriodParserConfiguration
-        extends BaseOptionsConfiguration
-        implements IDateTimePeriodParserConfiguration {
+    extends BaseOptionsConfiguration
+    implements IDateTimePeriodParserConfiguration {
 
     private final String tokenBeforeDate;
 
@@ -288,26 +287,26 @@ public class FrenchDateTimePeriodParserConfiguration
         final String trimmedText = text.trim().toLowerCase();
 
         if (RegExpUtility
-                .getMatches(RegExpUtility.getSafeRegExp(FrenchDateTime.MorningStartEndRegex), trimmedText).length > 0) {
+            .getMatches(RegExpUtility.getSafeRegExp(FrenchDateTime.MorningStartEndRegex), trimmedText).length > 0) {
             timeStr = "TMO";
             beginHour = 8;
             endHour = Constants.HalfDayHourCount;
         }
         else if (RegExpUtility
-                .getMatches(RegExpUtility.getSafeRegExp(FrenchDateTime.AfternoonStartEndRegex), trimmedText).length
-                > 0) {
+            .getMatches(RegExpUtility.getSafeRegExp(FrenchDateTime.AfternoonStartEndRegex), trimmedText).length
+            > 0) {
             timeStr = "TAF";
             beginHour = Constants.HalfDayHourCount;
             endHour = 16;
         }
         else if (RegExpUtility
-                .getMatches(RegExpUtility.getSafeRegExp(FrenchDateTime.EveningStartEndRegex), trimmedText).length > 0) {
+            .getMatches(RegExpUtility.getSafeRegExp(FrenchDateTime.EveningStartEndRegex), trimmedText).length > 0) {
             timeStr = "TEV";
             beginHour = 16;
             endHour = 20;
         }
         else if (RegExpUtility
-                .getMatches(RegExpUtility.getSafeRegExp(FrenchDateTime.NightStartEndRegex), trimmedText).length > 0) {
+            .getMatches(RegExpUtility.getSafeRegExp(FrenchDateTime.NightStartEndRegex), trimmedText).length > 0) {
             timeStr = "TNI";
             beginHour = 20;
             endHour = 23;
@@ -326,11 +325,11 @@ public class FrenchDateTimePeriodParserConfiguration
         int swift = 0;
 
         if (trimmedText.startsWith("prochain") || trimmedText.endsWith("prochain") ||
-                trimmedText.startsWith("prochaine") || trimmedText.endsWith("prochaine")) {
+            trimmedText.startsWith("prochaine") || trimmedText.endsWith("prochaine")) {
             swift = 1;
         }
         else if (trimmedText.startsWith("derniere") || trimmedText.startsWith("dernier") ||
-                trimmedText.endsWith("derniere") || trimmedText.endsWith("dernier")) {
+            trimmedText.endsWith("derniere") || trimmedText.endsWith("dernier")) {
             swift = -1;
         }
 

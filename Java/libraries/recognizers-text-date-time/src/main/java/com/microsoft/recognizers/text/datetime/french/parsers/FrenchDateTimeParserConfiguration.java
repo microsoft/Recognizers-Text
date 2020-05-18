@@ -1,7 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.parsers;
 
-import java.util.regex.Pattern;
-
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
@@ -16,10 +14,11 @@ import com.microsoft.recognizers.text.datetime.parsers.config.IDateTimeParserCon
 import com.microsoft.recognizers.text.datetime.resources.FrenchDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import java.util.regex.Pattern;
 
 public class FrenchDateTimeParserConfiguration
-        extends BaseOptionsConfiguration
-        implements IDateTimeParserConfiguration {
+    extends BaseOptionsConfiguration
+    implements IDateTimeParserConfiguration {
 
     public final String tokenBeforeDate;
     public final String tokenBeforeTime;
@@ -108,7 +107,7 @@ public class FrenchDateTimeParserConfiguration
             timex = "PRESENT_REF";
         }
         else if (trimmedText.equals("récemment") || trimmedText.equals("précédemment") || trimmedText
-                .equals("auparavant")) {
+            .equals("auparavant")) {
             timex = "PAST_REF";
         }
         else if (trimmedText.equals("dès que possible") || trimmedText.equals("dqp")) {
@@ -129,11 +128,11 @@ public class FrenchDateTimeParserConfiguration
         final String trimmedText = text.trim().toLowerCase();
 
         if (trimmedText.startsWith("prochain") || trimmedText.startsWith("prochain") ||
-                trimmedText.startsWith("prochaine") || trimmedText.startsWith("prochaine")) {
+            trimmedText.startsWith("prochaine") || trimmedText.startsWith("prochaine")) {
             swift = 1;
         }
         else if (trimmedText.startsWith("dernier") || trimmedText.startsWith("dernière") ||
-                trimmedText.startsWith("dernier") || trimmedText.startsWith("dernière")) {
+            trimmedText.startsWith("dernier") || trimmedText.startsWith("dernière")) {
             swift = -1;
         }
 

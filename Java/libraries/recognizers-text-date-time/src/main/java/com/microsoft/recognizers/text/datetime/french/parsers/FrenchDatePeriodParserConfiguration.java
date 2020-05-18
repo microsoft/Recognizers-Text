@@ -1,9 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.parsers;
 
-import java.util.Arrays;
-import java.util.Optional;
-import java.util.regex.Pattern;
-
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
@@ -18,10 +14,13 @@ import com.microsoft.recognizers.text.datetime.parsers.config.IDatePeriodParserC
 import com.microsoft.recognizers.text.datetime.resources.FrenchDateTime;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.regex.Pattern;
 
 public class FrenchDatePeriodParserConfiguration
-        extends BaseOptionsConfiguration
-        implements IDatePeriodParserConfiguration {
+    extends BaseOptionsConfiguration
+    implements IDatePeriodParserConfiguration {
 
     public static final Pattern nextPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NextPrefixRegex);
     public static final Pattern previousPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PreviousPrefixRegex);
@@ -30,7 +29,7 @@ public class FrenchDatePeriodParserConfiguration
     public static final Pattern pastSuffixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex);
     public static final Pattern relativeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeRegex);
     public static final Pattern unspecificEndOfRangeRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.UnspecificEndOfRangeRegex);
+        .getSafeRegExp(FrenchDateTime.UnspecificEndOfRangeRegex);
     private final String tokenBeforeDate;
 
     // Regex
@@ -469,9 +468,9 @@ public class FrenchDatePeriodParserConfiguration
         }
 
         if (trimmedText.endsWith("dernière") ||
-                trimmedText.endsWith("dernières") ||
-                trimmedText.endsWith("derniere") ||
-                trimmedText.endsWith("dernieres")
+            trimmedText.endsWith("dernières") ||
+            trimmedText.endsWith("derniere") ||
+            trimmedText.endsWith("dernieres")
         ) {
             swift = -1;
         }
@@ -490,7 +489,7 @@ public class FrenchDatePeriodParserConfiguration
         }
 
         if (trimmedText.endsWith("dernière") || trimmedText.endsWith("dernières") || trimmedText
-                .endsWith("derniere") || trimmedText.endsWith("dernieres")) {
+            .endsWith("derniere") || trimmedText.endsWith("dernieres")) {
             swift = -1;
         }
         else if (trimmedText.startsWith("cette")) {
@@ -505,7 +504,7 @@ public class FrenchDatePeriodParserConfiguration
         final String trimmedText = text.trim().toLowerCase();
 
         return FrenchDateTime.FutureStartTerms.stream().anyMatch(o -> trimmedText.startsWith(o))
-                || FrenchDateTime.FutureEndTerms.stream().anyMatch(o -> trimmedText.endsWith(o));
+            || FrenchDateTime.FutureEndTerms.stream().anyMatch(o -> trimmedText.endsWith(o));
     }
 
     @Override
@@ -513,7 +512,7 @@ public class FrenchDatePeriodParserConfiguration
         final String trimmedText = text.trim().toLowerCase();
 
         final Optional<Match> matchLast = Arrays.stream(RegExpUtility.getMatches(previousPrefixRegex, trimmedText))
-                .findFirst();
+            .findFirst();
         return matchLast.isPresent();
     }
 
@@ -540,14 +539,14 @@ public class FrenchDatePeriodParserConfiguration
         final String trimmedText = text.trim().toLowerCase();
 
         final boolean nextPrefix = Arrays.stream(RegExpUtility.getMatches(nextPrefixRegex, trimmedText))
-                .findFirst().isPresent();
+            .findFirst().isPresent();
         final boolean pastSuffix = Arrays.stream(RegExpUtility.getMatches(pastSuffixRegex, trimmedText))
-                .findFirst().isPresent();
+            .findFirst().isPresent();
 
         return (FrenchDateTime.WeekTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) || (
-                FrenchDateTime.WeekTerms.stream().anyMatch(o -> trimmedText.contains(o)) && (nextPrefix || pastSuffix)))
-                &&
-                !FrenchDateTime.WeekendTerms.stream().anyMatch(o -> trimmedText.endsWith(o));
+            FrenchDateTime.WeekTerms.stream().anyMatch(o -> trimmedText.contains(o)) && (nextPrefix || pastSuffix)))
+            &&
+            !FrenchDateTime.WeekendTerms.stream().anyMatch(o -> trimmedText.endsWith(o));
     }
 
     @Override

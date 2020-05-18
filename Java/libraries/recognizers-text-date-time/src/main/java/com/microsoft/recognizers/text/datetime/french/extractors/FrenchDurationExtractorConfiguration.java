@@ -1,7 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.extractors;
 
-import java.util.regex.Pattern;
-
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
@@ -10,12 +8,13 @@ import com.microsoft.recognizers.text.datetime.extractors.config.IDurationExtrac
 import com.microsoft.recognizers.text.datetime.resources.FrenchDateTime;
 import com.microsoft.recognizers.text.number.french.extractors.CardinalExtractor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import java.util.regex.Pattern;
 
 public class FrenchDurationExtractorConfiguration
-        extends BaseOptionsConfiguration implements IDurationExtractorConfiguration {
+    extends BaseOptionsConfiguration implements IDurationExtractorConfiguration {
 
     // TODO: Investigate if required
-//    public static final Pattern UnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.UnitRegex);
+    //    public static final Pattern UnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.UnitRegex);
     public static final Pattern SuffixAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SuffixAndRegex);
     public static final Pattern FollowedUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.DurationFollowedUnit);
     public static final Pattern NumberCombinedWithUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.NumberCombinedWithDurationUnit);
@@ -40,7 +39,7 @@ public class FrenchDurationExtractorConfiguration
         this(DateTimeOptions.None);
     }
 
-    public FrenchDurationExtractorConfiguration(DateTimeOptions options) {
+    public FrenchDurationExtractorConfiguration(final DateTimeOptions options) {
 
         super(options);
 

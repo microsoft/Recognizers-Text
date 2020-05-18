@@ -1,17 +1,16 @@
 package com.microsoft.recognizers.text.datetime.french.extractors;
 
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.IHolidayExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.FrenchDateTime;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class FrenchHolidayExtractorConfiguration
-        extends BaseOptionsConfiguration
-        implements IHolidayExtractorConfiguration {
+    extends BaseOptionsConfiguration
+    implements IHolidayExtractorConfiguration {
 
     public static final Pattern H1 = RegExpUtility.getSafeRegExp(FrenchDateTime.HolidayRegex1);
 

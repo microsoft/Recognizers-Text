@@ -1,8 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.extractors;
 
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
@@ -11,10 +8,12 @@ import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.ITimeExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.FrenchDateTime;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class FrenchTimeExtractorConfiguration
-        extends BaseOptionsConfiguration
-        implements ITimeExtractorConfiguration {
+    extends BaseOptionsConfiguration
+    implements ITimeExtractorConfiguration {
 
     public static final Pattern DescRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.DescRegex);
     public static final Pattern HourNumRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.HourNumRegex);
@@ -25,7 +24,7 @@ public class FrenchTimeExtractorConfiguration
     public static final Pattern AmRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AmRegex);
 
     public static final Pattern LessThanOneHour = RegExpUtility.getSafeRegExp(FrenchDateTime.LessThanOneHour);
-//     public static final Pattern TensTimeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TensTimeRegex);
+    //     public static final Pattern TensTimeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TensTimeRegex);
 
     public static final Pattern WrittenTimeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WrittenTimeRegex);
     public static final Pattern TimePrefix = RegExpUtility.getSafeRegExp(FrenchDateTime.TimePrefix);
@@ -51,14 +50,14 @@ public class FrenchTimeExtractorConfiguration
             add(ConnectNumRegex);
         }
     };
-    private IDateTimeExtractor durationExtractor;
-    private IDateTimeExtractor timeZoneExtractor;
+    private final IDateTimeExtractor durationExtractor;
+    private final IDateTimeExtractor timeZoneExtractor;
 
     public FrenchTimeExtractorConfiguration() {
         this(DateTimeOptions.None);
     }
 
-    public FrenchTimeExtractorConfiguration(DateTimeOptions options) {
+    public FrenchTimeExtractorConfiguration(final DateTimeOptions options) {
         super(options);
         durationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
         timeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration(options));

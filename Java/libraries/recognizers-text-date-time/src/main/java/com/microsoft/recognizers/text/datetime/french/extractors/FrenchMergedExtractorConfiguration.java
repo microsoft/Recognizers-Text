@@ -1,9 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.extractors;
 
-import java.util.regex.Pattern;
-
-import org.javatuples.Pair;
-
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
@@ -27,10 +23,12 @@ import com.microsoft.recognizers.text.datetime.resources.FrenchDateTime;
 import com.microsoft.recognizers.text.matcher.StringMatcher;
 import com.microsoft.recognizers.text.number.french.extractors.IntegerExtractor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import java.util.regex.Pattern;
+import org.javatuples.Pair;
 
 public class FrenchMergedExtractorConfiguration
-        extends BaseOptionsConfiguration
-        implements IMergedExtractorConfiguration {
+    extends BaseOptionsConfiguration
+    implements IMergedExtractorConfiguration {
 
     public static final Pattern BeforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex);
     public static final Pattern AfterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AfterRegex);
@@ -38,31 +36,31 @@ public class FrenchMergedExtractorConfiguration
     public static final Pattern AroundRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AroundRegex);
     public static final Pattern FromToRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.FromToRegex);
     public static final Pattern SingleAmbiguousMonthRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.SingleAmbiguousMonthRegex);
+        .getSafeRegExp(FrenchDateTime.SingleAmbiguousMonthRegex);
     public static final Pattern PrepositionSuffixRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.PrepositionSuffixRegex);
+        .getSafeRegExp(FrenchDateTime.PrepositionSuffixRegex);
     public static final Pattern AmbiguousRangeModifierPrefix = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.AmbiguousRangeModifierPrefix);
+        .getSafeRegExp(FrenchDateTime.AmbiguousRangeModifierPrefix);
     public static final Pattern NumberEndingPattern = RegExpUtility.getSafeRegExp(FrenchDateTime.NumberEndingPattern);
     public static final Pattern SuffixAfterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SuffixAfterRegex);
     public static final Pattern UnspecificDatePeriodRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.UnspecificDatePeriodRegex);
+        .getSafeRegExp(FrenchDateTime.UnspecificDatePeriodRegex);
     public static final StringMatcher SuperfluousWordMatcher = new StringMatcher();
     public final Iterable<Pair<Pattern, Pattern>> ambiguityFiltersDict = null;
-    private IDateExtractor dateExtractor;
-    private IDateTimeExtractor timeExtractor;
-    private IDateTimeExtractor dateTimeExtractor;
-    private IDateTimeExtractor datePeriodExtractor;
-    private IDateTimeExtractor timePeriodExtractor;
-    private IDateTimeExtractor dateTimePeriodExtractor;
-    private IDateTimeExtractor durationExtractor;
-    private IDateTimeExtractor setExtractor;
-    private IDateTimeExtractor holidayExtractor;
-    private IDateTimeZoneExtractor timeZoneExtractor;
-    private IDateTimeListExtractor dateTimeAltExtractor;
-    private IExtractor integerExtractor;
+    private final IDateExtractor dateExtractor;
+    private final IDateTimeExtractor timeExtractor;
+    private final IDateTimeExtractor dateTimeExtractor;
+    private final IDateTimeExtractor datePeriodExtractor;
+    private final IDateTimeExtractor timePeriodExtractor;
+    private final IDateTimeExtractor dateTimePeriodExtractor;
+    private final IDateTimeExtractor durationExtractor;
+    private final IDateTimeExtractor setExtractor;
+    private final IDateTimeExtractor holidayExtractor;
+    private final IDateTimeZoneExtractor timeZoneExtractor;
+    private final IDateTimeListExtractor dateTimeAltExtractor;
+    private final IExtractor integerExtractor;
 
-    public FrenchMergedExtractorConfiguration(DateTimeOptions options) {
+    public FrenchMergedExtractorConfiguration(final DateTimeOptions options) {
         super(options);
 
         setExtractor = new BaseSetExtractor(new FrenchSetExtractorConfiguration(options));
@@ -76,7 +74,7 @@ public class FrenchMergedExtractorConfiguration
         dateTimeAltExtractor = new BaseDateTimeAltExtractor(new FrenchDateTimeAltExtractorConfiguration(this));
         timePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration(options));
         dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(
-                new FrenchDateTimePeriodExtractorConfiguration(options));
+            new FrenchDateTimePeriodExtractorConfiguration(options));
         integerExtractor = new IntegerExtractor();
     }
 

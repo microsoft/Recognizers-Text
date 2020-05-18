@@ -1,7 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.extractors;
 
-import java.util.regex.Pattern;
-
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
@@ -16,10 +14,11 @@ import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.ISetExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.FrenchDateTime;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import java.util.regex.Pattern;
 
 public class FrenchSetExtractorConfiguration
-        extends BaseOptionsConfiguration
-        implements ISetExtractorConfiguration {
+    extends BaseOptionsConfiguration
+    implements ISetExtractorConfiguration {
 
     public static final Pattern PeriodicRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PeriodicRegex);
     public static final Pattern EachUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.EachUnitRegex);
@@ -29,19 +28,19 @@ public class FrenchSetExtractorConfiguration
     public static final Pattern BeforeEachDayRegex = null;
     public static final Pattern SetWeekDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SetWeekDayRegex);
     public static final Pattern SetEachRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SetEachRegex);
-    private IDateTimeExtractor durationExtractor;
-    private IDateTimeExtractor timeExtractor;
-    private IDateExtractor dateExtractor;
-    private IDateTimeExtractor dateTimeExtractor;
-    private IDateTimeExtractor datePeriodExtractor;
-    private IDateTimeExtractor timePeriodExtractor;
-    private IDateTimeExtractor dateTimePeriodExtractor;
+    private final IDateTimeExtractor durationExtractor;
+    private final IDateTimeExtractor timeExtractor;
+    private final IDateExtractor dateExtractor;
+    private final IDateTimeExtractor dateTimeExtractor;
+    private final IDateTimeExtractor datePeriodExtractor;
+    private final IDateTimeExtractor timePeriodExtractor;
+    private final IDateTimeExtractor dateTimePeriodExtractor;
 
     public FrenchSetExtractorConfiguration() {
         this(DateTimeOptions.None);
     }
 
-    public FrenchSetExtractorConfiguration(DateTimeOptions options) {
+    public FrenchSetExtractorConfiguration(final DateTimeOptions options) {
         super(options);
 
         durationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
@@ -51,7 +50,7 @@ public class FrenchSetExtractorConfiguration
         datePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration(this));
         timePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration(options));
         dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(
-                new FrenchDateTimePeriodExtractorConfiguration(options));
+            new FrenchDateTimePeriodExtractorConfiguration(options));
     }
 
     public final IDateTimeExtractor getDurationExtractor() {

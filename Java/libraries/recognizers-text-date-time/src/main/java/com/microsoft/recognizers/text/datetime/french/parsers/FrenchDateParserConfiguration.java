@@ -1,11 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.parsers;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
@@ -20,10 +14,15 @@ import com.microsoft.recognizers.text.datetime.resources.FrenchDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.StringExtension;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import java.util.Collections;
+import java.util.List;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class FrenchDateParserConfiguration
-        extends BaseOptionsConfiguration
-        implements IDateParserConfiguration {
+    extends BaseOptionsConfiguration
+    implements IDateParserConfiguration {
 
     private final String dateTokenPrefix;
     private final IExtractor integerExtractor;
@@ -329,7 +328,7 @@ public class FrenchDateParserConfiguration
         final String trimmedText = text.trim().toLowerCase();
 
         return trimmedText.endsWith("dernière") || trimmedText.endsWith("dernières") || trimmedText.endsWith(
-                "derniere") || trimmedText.endsWith("dernieres");
+            "derniere") || trimmedText.endsWith("dernieres");
     }
 
     @Override

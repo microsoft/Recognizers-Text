@@ -1,7 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.parsers;
 
-import java.util.regex.Pattern;
-
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.IDateExtractor;
@@ -11,10 +9,11 @@ import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.ISetParserConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.MatchedTimexResult;
+import java.util.regex.Pattern;
 
 public class FrenchSetParserConfiguration
-        extends BaseOptionsConfiguration
-        implements ISetParserConfiguration {
+    extends BaseOptionsConfiguration
+    implements ISetParserConfiguration {
 
     private final IDateTimeExtractor durationExtractor;
     private final IDateTimeParser durationParser;
@@ -155,7 +154,7 @@ public class FrenchSetParserConfiguration
         final String trimmedText = text.trim();
         final String timex;
         if (trimmedText.equals("quotidien") || trimmedText.equals("quotidienne") ||
-                trimmedText.equals("jours") || trimmedText.equals("journellement")) {
+            trimmedText.equals("jours") || trimmedText.equals("journellement")) {
             // daily
             timex = "P1D";
         }

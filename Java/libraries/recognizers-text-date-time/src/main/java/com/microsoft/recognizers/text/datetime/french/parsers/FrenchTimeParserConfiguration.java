@@ -1,8 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.parsers;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
@@ -20,10 +17,11 @@ import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
+import java.util.regex.Pattern;
 
 public class FrenchTimeParserConfiguration
-        extends BaseOptionsConfiguration
-        implements ITimeParserConfiguration {
+    extends BaseOptionsConfiguration
+    implements ITimeParserConfiguration {
 
     public final Pattern atRegex;
     private final Iterable<Pattern> timeRegexes;
@@ -93,7 +91,7 @@ public class FrenchTimeParserConfiguration
         }
         else {
             final Match[] match = RegExpUtility
-                    .getMatches(FrenchTimeExtractorConfiguration.LessThanOneHour, trimmedPrefix);
+                .getMatches(FrenchTimeExtractorConfiguration.LessThanOneHour, trimmedPrefix);
             String minStr;
             if (match.length > 0) {
                 minStr = match[0].getGroup("deltamin").value;
@@ -132,7 +130,7 @@ public class FrenchTimeParserConfiguration
 
         int deltaHour = 0;
         final ConditionalMatch match = RegexExtension
-                .matchExact(FrenchTimeExtractorConfiguration.TimeSuffix, suffix, true);
+            .matchExact(FrenchTimeExtractorConfiguration.TimeSuffix, suffix, true);
 
         if (match.getSuccess()) {
             final String oclockStr = match.getMatch().get().getGroup("heures").value;

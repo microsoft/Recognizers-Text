@@ -41,7 +41,7 @@ import com.microsoft.recognizers.text.number.french.parsers.FrenchNumberParserCo
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParser;
 
 public class FrenchCommonDateTimeParserConfiguration
-        extends BaseDateParserConfiguration {
+    extends BaseDateParserConfiguration {
 
     private final IDateTimeUtilityConfiguration utilityConfiguration;
 
@@ -111,7 +111,7 @@ public class FrenchCommonDateTimeParserConfiguration
         datePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration(this));
         timePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration(options));
         dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(
-                new FrenchDateTimePeriodExtractorConfiguration(options));
+            new FrenchDateTimePeriodExtractorConfiguration(options));
 
         timeZoneParser = new BaseTimeZoneParser();
         dateParser = new BaseDateParser(new FrenchDateParserConfiguration(this));
@@ -257,8 +257,8 @@ public class FrenchCommonDateTimeParserConfiguration
     @Override
     public ImmutableMap<String, Integer> getDayOfMonth() {
         return ImmutableMap.<String, Integer>builder()
-                .putAll(BaseDateTime.DayOfMonthDictionary)
-                .putAll(FrenchDateTime.DayOfMonth).build();
+            .putAll(BaseDateTime.DayOfMonthDictionary)
+            .putAll(FrenchDateTime.DayOfMonth).build();
     }
 
     @Override

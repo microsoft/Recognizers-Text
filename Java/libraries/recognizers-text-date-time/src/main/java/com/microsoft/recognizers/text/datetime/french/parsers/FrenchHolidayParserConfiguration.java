@@ -1,19 +1,18 @@
 package com.microsoft.recognizers.text.datetime.french.parsers;
 
+import com.google.common.collect.ImmutableMap;
+import com.microsoft.recognizers.text.datetime.french.extractors.FrenchHolidayExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.parsers.BaseHolidayParserConfiguration;
+import com.microsoft.recognizers.text.datetime.resources.FrenchDateTime;
+import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.IntFunction;
 
-import com.google.common.collect.ImmutableMap;
-import com.microsoft.recognizers.text.datetime.french.extractors.FrenchHolidayExtractorConfiguration;
-import com.microsoft.recognizers.text.datetime.parsers.BaseHolidayParserConfiguration;
-import com.microsoft.recognizers.text.datetime.resources.FrenchDateTime;
-import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
-
 public class FrenchHolidayParserConfiguration
-        extends BaseHolidayParserConfiguration {
+    extends BaseHolidayParserConfiguration {
 
     public FrenchHolidayParserConfiguration() {
 
@@ -178,8 +177,8 @@ public class FrenchHolidayParserConfiguration
 
     public String sanitizeHolidayToken(final String holiday) {
         return holiday
-                .replaceAll(" ", "")
-                .replaceAll("'", "");
+            .replaceAll(" ", "")
+            .replaceAll("'", "");
     }
 
     protected HashMap<String, IntFunction<LocalDateTime>> initHolidayFuncs() {

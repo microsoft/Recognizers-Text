@@ -1,8 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.extractors;
 
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
@@ -12,10 +9,12 @@ import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDateTimeAltExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.FrenchDateTime;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class FrenchDateTimeAltExtractorConfiguration
-        extends BaseOptionsConfiguration
-        implements IDateTimeAltExtractorConfiguration {
+    extends BaseOptionsConfiguration
+    implements IDateTimeAltExtractorConfiguration {
 
     public static final Pattern ThisPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ThisPrefixRegex);
     public static final Pattern PreviousPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PreviousPrefixRegex);
@@ -41,7 +40,7 @@ public class FrenchDateTimeAltExtractorConfiguration
     private final IDateExtractor dateExtractor;
     private final IDateTimeExtractor datePeriodExtractor;
 
-    public FrenchDateTimeAltExtractorConfiguration(IOptionsConfiguration config) {
+    public FrenchDateTimeAltExtractorConfiguration(final IOptionsConfiguration config) {
         super(config.getOptions());
         dateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
         datePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration(this));

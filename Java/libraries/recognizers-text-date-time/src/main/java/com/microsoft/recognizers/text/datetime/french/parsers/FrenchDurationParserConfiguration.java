@@ -1,7 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.parsers;
 
-import java.util.regex.Pattern;
-
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
@@ -10,10 +8,11 @@ import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
 import com.microsoft.recognizers.text.datetime.french.extractors.FrenchDurationExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.IDurationParserConfiguration;
+import java.util.regex.Pattern;
 
 public class FrenchDurationParserConfiguration
-        extends BaseOptionsConfiguration
-        implements IDurationParserConfiguration {
+    extends BaseOptionsConfiguration
+    implements IDurationParserConfiguration {
 
     private final IExtractor cardinalExtractor;
     private final IExtractor durationExtractor;

@@ -1,7 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.parsers;
 
-import java.util.regex.Pattern;
-
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.french.extractors.FrenchDatePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.french.extractors.FrenchMergedExtractorConfiguration;
@@ -10,10 +8,11 @@ import com.microsoft.recognizers.text.datetime.parsers.BaseSetParser;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.parsers.config.IMergedParserConfiguration;
 import com.microsoft.recognizers.text.matcher.StringMatcher;
+import java.util.regex.Pattern;
 
 public class FrenchMergedParserConfiguration
-        extends FrenchCommonDateTimeParserConfiguration
-        implements IMergedParserConfiguration {
+    extends FrenchCommonDateTimeParserConfiguration
+    implements IMergedParserConfiguration {
 
     public FrenchMergedParserConfiguration(final DateTimeOptions options) {
         super(options);

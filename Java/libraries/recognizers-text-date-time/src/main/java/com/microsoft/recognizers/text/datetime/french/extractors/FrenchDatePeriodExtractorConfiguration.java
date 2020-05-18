@@ -1,11 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.extractors;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Optional;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
@@ -23,10 +17,15 @@ import com.microsoft.recognizers.text.number.french.parsers.FrenchNumberParserCo
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParser;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class FrenchDatePeriodExtractorConfiguration
-        extends BaseOptionsConfiguration
-        implements IDatePeriodExtractorConfiguration {
+    extends BaseOptionsConfiguration
+    implements IDatePeriodExtractorConfiguration {
     public static final Pattern TillRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TillRegex);
     public static final Pattern RangeConnectorRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RangeConnectorRegex);
     public static final Pattern DayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.DayRegex);
@@ -45,22 +44,22 @@ public class FrenchDatePeriodExtractorConfiguration
     // composite regexes
     public static final Pattern SimpleCasesRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SimpleCasesRegex);
     public static final Pattern MonthFrontSimpleCasesRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.MonthFrontSimpleCasesRegex);
+        .getSafeRegExp(FrenchDateTime.MonthFrontSimpleCasesRegex);
     public static final Pattern MonthFrontBetweenRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.MonthFrontBetweenRegex);
+        .getSafeRegExp(FrenchDateTime.MonthFrontBetweenRegex);
     public static final Pattern BetweenRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BetweenRegex);
     public static final Pattern OneWordPeriodRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.OneWordPeriodRegex);
     public static final Pattern MonthWithYearRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MonthWithYear);
     public static final Pattern MonthNumWithYearRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.MonthNumWithYear);
+        .getSafeRegExp(FrenchDateTime.MonthNumWithYear);
     public static final Pattern WeekOfMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekOfMonthRegex);
     public static final Pattern WeekOfYearRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekOfYearRegex);
     public static final Pattern FollowedDateUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.FollowedDateUnit);
     public static final Pattern NumberCombinedWithDateUnit = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.NumberCombinedWithDateUnit);
+        .getSafeRegExp(FrenchDateTime.NumberCombinedWithDateUnit);
     public static final Pattern QuarterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.QuarterRegex);
     public static final Pattern QuarterRegexYearFront = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.QuarterRegexYearFront);
+        .getSafeRegExp(FrenchDateTime.QuarterRegexYearFront);
     public static final Pattern AllHalfYearRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AllHalfYearRegex);
     public static final Pattern SeasonRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SeasonRegex);
     public static final Pattern WhichWeekRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WhichWeekRegex);
@@ -69,21 +68,21 @@ public class FrenchDatePeriodExtractorConfiguration
     public static final Pattern RangeUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RangeUnitRegex);
     public static final Pattern InConnectorRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.InConnectorRegex);
     public static final Pattern WithinNextPrefixRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.WithinNextPrefixRegex);
+        .getSafeRegExp(FrenchDateTime.WithinNextPrefixRegex);
     public static final Pattern LaterEarlyPeriodRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.LaterEarlyPeriodRegex);
+        .getSafeRegExp(FrenchDateTime.LaterEarlyPeriodRegex);
     public static final Pattern RestOfDateRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RestOfDateRegex);
     public static final Pattern WeekWithWeekDayRangeRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.WeekWithWeekDayRangeRegex);
+        .getSafeRegExp(FrenchDateTime.WeekWithWeekDayRangeRegex);
     public static final Pattern YearPlusNumberRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.YearPlusNumberRegex);
     public static final Pattern DecadeWithCenturyRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.DecadeWithCenturyRegex);
+        .getSafeRegExp(FrenchDateTime.DecadeWithCenturyRegex);
     public static final Pattern YearPeriodRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.YearPeriodRegex);
     public static final Pattern ComplexDatePeriodRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.ComplexDatePeriodRegex);
+        .getSafeRegExp(FrenchDateTime.ComplexDatePeriodRegex);
     public static final Pattern RelativeDecadeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeDecadeRegex);
     public static final Pattern ReferenceDatePeriodRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.ReferenceDatePeriodRegex);
+        .getSafeRegExp(FrenchDateTime.ReferenceDatePeriodRegex);
     public static final Pattern AgoRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AgoRegex);
     public static final Pattern LaterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.LaterRegex);
     public static final Pattern LessThanRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.LessThanRegex);
@@ -124,7 +123,7 @@ public class FrenchDatePeriodExtractorConfiguration
     private final IParser numberParser;
     private final String[] durationDateRestrictions;
 
-    public FrenchDatePeriodExtractorConfiguration(IOptionsConfiguration config) {
+    public FrenchDatePeriodExtractorConfiguration(final IOptionsConfiguration config) {
         super(config.getOptions());
 
         datePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
@@ -267,10 +266,10 @@ public class FrenchDatePeriodExtractorConfiguration
     }
 
     @Override
-    public ResultIndex getFromTokenIndex(String text) {
+    public ResultIndex getFromTokenIndex(final String text) {
         int index = -1;
         boolean result = false;
-        Matcher matcher = fromRegex.matcher(text);
+        final Matcher matcher = fromRegex.matcher(text);
         if (matcher.find()) {
             result = true;
             index = matcher.start();
@@ -280,10 +279,10 @@ public class FrenchDatePeriodExtractorConfiguration
     }
 
     @Override
-    public ResultIndex getBetweenTokenIndex(String text) {
+    public ResultIndex getBetweenTokenIndex(final String text) {
         int index = -1;
         boolean result = false;
-        Matcher matcher = betweenRegex.matcher(text);
+        final Matcher matcher = betweenRegex.matcher(text);
         if (matcher.find()) {
             result = true;
             index = matcher.start();
@@ -293,8 +292,8 @@ public class FrenchDatePeriodExtractorConfiguration
     }
 
     @Override
-    public boolean hasConnectorToken(String text) {
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorAndRegex), text)).findFirst();
+    public boolean hasConnectorToken(final String text) {
+        final Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorAndRegex), text)).findFirst();
         return match.isPresent() && match.get().length == text.trim().length();
     }
 

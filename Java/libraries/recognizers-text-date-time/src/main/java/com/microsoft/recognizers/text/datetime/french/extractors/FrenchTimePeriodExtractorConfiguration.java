@@ -1,11 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.extractors;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Optional;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
@@ -20,22 +14,27 @@ import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfigu
 import com.microsoft.recognizers.text.number.french.extractors.IntegerExtractor;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class FrenchTimePeriodExtractorConfiguration
-        extends BaseOptionsConfiguration
-        implements ITimePeriodExtractorConfiguration {
+    extends BaseOptionsConfiguration
+    implements ITimePeriodExtractorConfiguration {
 
     public static final Pattern HourNumRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.HourNumRegex);
     public static final Pattern PureNumFromTo = RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumFromTo);
     public static final Pattern PureNumBetweenAnd = RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumBetweenAnd);
     public static final Pattern SpecificTimeFromTo = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificTimeFromTo);
     public static final Pattern SpecificTimeBetweenAnd = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.SpecificTimeBetweenAnd);
-//    TODO: What are these?
-//    public static final Pattern UnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.UnitRegex);
-//    public static final Pattern FollowedUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.FollowedUnit);
+        .getSafeRegExp(FrenchDateTime.SpecificTimeBetweenAnd);
+    //    TODO: What are these?
+    //    public static final Pattern UnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.UnitRegex);
+    //    public static final Pattern FollowedUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.FollowedUnit);
     public static final Pattern NumberCombinedWithUnit = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.TimeNumberCombinedWithUnit);
+        .getSafeRegExp(FrenchDateTime.TimeNumberCombinedWithUnit);
     public static final Pattern TimeOfDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeOfDayRegex);
     public static final Pattern GeneralEndingRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.GeneralEndingRegex);
     public static final Pattern TillRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TillRegex);
@@ -57,16 +56,16 @@ public class FrenchTimePeriodExtractorConfiguration
             add(PureNumBetweenAnd);
         }
     };
-    private String tokenBeforeDate;
-    private IDateTimeUtilityConfiguration utilityConfiguration;
-    private IDateTimeExtractor singleTimeExtractor;
-    private IExtractor integerExtractor;
+    private final String tokenBeforeDate;
+    private final IDateTimeUtilityConfiguration utilityConfiguration;
+    private final IDateTimeExtractor singleTimeExtractor;
+    private final IExtractor integerExtractor;
 
     public FrenchTimePeriodExtractorConfiguration() {
         this(DateTimeOptions.None);
     }
 
-    public FrenchTimePeriodExtractorConfiguration(DateTimeOptions options) {
+    public FrenchTimePeriodExtractorConfiguration(final DateTimeOptions options) {
 
         super(options);
 
@@ -118,10 +117,10 @@ public class FrenchTimePeriodExtractorConfiguration
     }
 
     @Override
-    public ResultIndex getFromTokenIndex(String text) {
+    public ResultIndex getFromTokenIndex(final String text) {
         int index = -1;
         boolean result = false;
-        Matcher matcher = FromRegex.matcher(text);
+        final Matcher matcher = FromRegex.matcher(text);
         if (matcher.find()) {
             result = true;
             index = matcher.start();
@@ -131,10 +130,10 @@ public class FrenchTimePeriodExtractorConfiguration
     }
 
     @Override
-    public ResultIndex getBetweenTokenIndex(String text) {
+    public ResultIndex getBetweenTokenIndex(final String text) {
         int index = -1;
         boolean result = false;
-        Matcher matcher = BetweenRegex.matcher(text);
+        final Matcher matcher = BetweenRegex.matcher(text);
         if (matcher.find()) {
             result = true;
             index = matcher.start();
@@ -144,10 +143,10 @@ public class FrenchTimePeriodExtractorConfiguration
     }
 
     @Override
-    public boolean hasConnectorToken(String text) {
-        Optional<Match> match = Arrays
-                .stream(RegExpUtility.getMatches(RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorAndRegex), text))
-                .findFirst();
+    public boolean hasConnectorToken(final String text) {
+        final Optional<Match> match = Arrays
+            .stream(RegExpUtility.getMatches(RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorAndRegex), text))
+            .findFirst();
         return match.isPresent() && match.get().length == text.trim().length();
     }
 }

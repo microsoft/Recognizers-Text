@@ -1,7 +1,5 @@
 package com.microsoft.recognizers.text.datetime.french.parsers;
 
-import java.util.regex.Pattern;
-
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.datetime.Constants;
@@ -16,10 +14,11 @@ import com.microsoft.recognizers.text.datetime.resources.FrenchDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.TimeOfDayResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.TimexUtility;
+import java.util.regex.Pattern;
 
 public class FrenchTimePeriodParserConfiguration
-        extends BaseOptionsConfiguration
-        implements ITimePeriodParserConfiguration {
+    extends BaseOptionsConfiguration
+    implements ITimePeriodParserConfiguration {
 
     private final IDateTimeExtractor timeExtractor;
     private final IDateTimeParser timeParser;
@@ -161,6 +160,6 @@ public class FrenchTimePeriodParserConfiguration
         final TimeOfDayResolutionResult result = TimexUtility.parseTimeOfDay(timeOfDay);
 
         return new MatchedTimeRangeResult(true, result.getTimex(), result.getBeginHour(), result.getEndHour(),
-                result.getEndMin());
+            result.getEndMin());
     }
 }

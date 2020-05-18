@@ -1,14 +1,8 @@
 package com.microsoft.recognizers.text.datetime.french.extractors;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Pattern;
-
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
-import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
@@ -23,17 +17,20 @@ import com.microsoft.recognizers.text.number.french.extractors.OrdinalExtractor;
 import com.microsoft.recognizers.text.number.french.parsers.FrenchNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParser;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
 
 public class FrenchDateExtractorConfiguration
-        extends BaseOptionsConfiguration
-        implements IDateExtractorConfiguration {
+    extends BaseOptionsConfiguration
+    implements IDateExtractorConfiguration {
 
     public static final Pattern MonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MonthRegex);
     public static final Pattern MonthNumRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MonthNumRegex);
     public static final Pattern YearRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.YearRegex);
     public static final Pattern WeekDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayRegex);
     public static final Pattern SingleWeekDayRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.SingleAmbiguousMonthRegex);
+        .getSafeRegExp(FrenchDateTime.SingleAmbiguousMonthRegex);
     public static final Pattern OnRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.OnRegex);
     public static final Pattern RelaxedOnRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelaxedOnRegex);
     public static final Pattern ThisRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ThisRegex);
@@ -46,17 +43,17 @@ public class FrenchDateExtractorConfiguration
     public static final Pattern RelativeWeekDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeWeekDayRegex);
     public static final Pattern SpecialDate = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecialDate);
     public static final Pattern SpecialDayWithNumRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.SpecialDayWithNumRegex);
+        .getSafeRegExp(FrenchDateTime.SpecialDayWithNumRegex);
     public static final Pattern ForTheRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ForTheRegex);
     public static final Pattern WeekDayAndDayOfMonthRegex = RegExpUtility
-            .getSafeRegExp(FrenchDateTime.WeekDayAndDayOfMonthRegex);
+        .getSafeRegExp(FrenchDateTime.WeekDayAndDayOfMonthRegex);
     public static final Pattern RelativeMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeMonthRegex);
     public static final Pattern StrictRelativeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.StrictRelativeRegex);
     public static final Pattern PrefixArticleRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PrefixArticleRegex);
     public static final Pattern InConnectorRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.InConnectorRegex);
     public static final Pattern RangeUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RangeUnitRegex);
     public static final Pattern RangeConnectorSymbolRegex = RegExpUtility
-            .getSafeRegExp(BaseDateTime.RangeConnectorSymbolRegex);
+        .getSafeRegExp(BaseDateTime.RangeConnectorSymbolRegex);
 
     public static final List<Pattern> DateRegexList = new ArrayList<Pattern>() {
         {
@@ -104,7 +101,7 @@ public class FrenchDateExtractorConfiguration
     private final IDateTimeUtilityConfiguration utilityConfiguration;
     private final List<Pattern> implicitDateList;
 
-    public FrenchDateExtractorConfiguration(IOptionsConfiguration config) {
+    public FrenchDateExtractorConfiguration(final IOptionsConfiguration config) {
         super(config.getOptions());
         integerExtractor = new IntegerExtractor();
         ordinalExtractor = new OrdinalExtractor();
