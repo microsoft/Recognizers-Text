@@ -2642,6 +2642,7 @@
   },
   {
     "Input": "I count 6 crore and two hundred",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "6 crore and two hundred",
