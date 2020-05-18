@@ -1,13 +1,11 @@
 [
   {
     "Input": "1995-01",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "यह संख्या बीस से बड़ी और पैंतीस के समान या उससे कम है।",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -23,7 +21,6 @@
   },
   {
     "Input": "यह संख्या 20 और 30 के बीच में है.",
-    "NotSupported": "java, javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -39,7 +36,6 @@
   },
   {
     "Input": "उसका रैंक दस और पंद्रह के बीच का है. ",
-    "NotSupported": "java, javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -55,7 +51,6 @@
   },
   {
     "Input": "उसक स्कोर माइनस दस और पंद्रह के बीच है.",
-    "NotSupported": "java, javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -71,7 +66,6 @@
   },
   {
     "Input": "उसका रैंक दस से ज़्यादा पर पंद्रह से कम है.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -87,7 +81,6 @@
   },
   {
     "Input": "यह संख्या 100 से ज़्यादा बड़ी और 300 से कम है.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -103,7 +96,6 @@
   },
   {
     "Input": "यह संख्या एक सौ से बड़ी या उसके समान है, तीन सौ से कम या उसके समान है।",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -119,7 +111,6 @@
   },
   {
     "Input": "ज़्यादा से ज़्यादा 100 और कम से कम 20 सेव हैं.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -135,7 +126,6 @@
   },
   {
     "Input": "ये सेव लगभग 20~100 हैं.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -151,7 +141,6 @@
   },
   {
     "Input": "संख्या की शृंखला 20 से 100 है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -167,7 +156,6 @@
   },
   {
     "Input": "संख्या की शृंखला एक हजार से एक हजार पांच सौ है.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -183,7 +171,6 @@
   },
   {
     "Input": "संख्या 1000 से ज़्यादा और 1500 से कम है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -199,7 +186,6 @@
   },
   {
     "Input": "संख्या एक चौथाई से अधिक और आधे से कम है.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -215,8 +201,6 @@
   },
   {
     "Input": "यह संख्या तीन हजार नौ सौ पैंसठ से बड़ी या उसके समान है।",
-    "Comment": "Retranslated due to incorrect translation.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -232,7 +216,6 @@
   },
   {
     "Input": "यह संख्या 4,565 से बड़ी है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -248,7 +231,6 @@
   },
   {
     "Input": "वह तीस साल से ज़्यादा की उम्र के हैं.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -264,7 +246,6 @@
   },
   {
     "Input": "वह तीस से ज़्यादा वर्ष के हैं",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -280,7 +261,6 @@
   },
   {
     "Input": "उनकी उम्र तीस से कम नहीं है.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -296,8 +276,6 @@
   },
   {
     "Input": "इन उत्पादों में पांच सौ और ज़्यादा हैं.",
-    "Comment": "Retranslated due to incorrect translation.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -313,7 +291,6 @@
   },
   {
     "Input": "इन उत्पादों में पांच सौ या ज़्यादा हैं.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -329,7 +306,6 @@
   },
   {
     "Input": "1/2 से ज़्यादा लोग यहां आए.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -345,7 +321,6 @@
   },
   {
     "Input": "100 से कम या समान वाली अभाज्य संख्याएं ढूंढ़िए",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -361,7 +336,6 @@
   },
   {
     "Input": "100 से कम या बराबर की अभाज्य संख्याएं ढूंढ़िए",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -377,7 +351,6 @@
   },
   {
     "Input": "इन उत्पादों में लगभग पांच सौ या उससे कम हैं.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -393,7 +366,6 @@
   },
   {
     "Input": "ऐसी अभाज्य संख्याएं ढूंढ़िए जो < = 100 हैं ",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -409,7 +381,6 @@
   },
   {
     "Input": "उसकी लंबाई 170 से कम है.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -425,7 +396,6 @@
   },
   {
     "Input": "उसकी लंबाई 170 के नीचे है.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -441,7 +411,6 @@
   },
   {
     "Input": "जंगलों में हजार से कम विशाल पांडा रहते हैं.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -457,7 +426,6 @@
   },
   {
     "Input": "x एक सौ सत्तर के समान है.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -473,7 +441,6 @@
   },
   {
     "Input": "x>10 और y<20",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -498,7 +465,7 @@
   },
   {
     "Input": "x 10 से बड़ी और 20 से छोटी है. y 50 से अधिक नहीं है और 20 से कम नहीं है.",
-    "NotSupported": "javascript, python, dotnet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -523,13 +490,11 @@
   },
   {
     "Input": "एक चौथाई एक भिन्नांक है.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "संख्या 20 के बराबर है.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -545,7 +510,6 @@
   },
   {
     "Input": "20 के बराबर, हमारे क्लास में छात्रों की संख्या बहुत ज़्यादा नहीं है.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -561,19 +525,16 @@
   },
   {
     "Input": "+1-222-2222/2222 एक फोन नंबर है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "+1-222-2222-2222 एक फोन नंबर है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "उसका स्कोर 200 है या 190 से ज़्यादा",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -589,7 +550,6 @@
   },
   {
     "Input": "उसका स्कोर 200 या ज़्यादा है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -605,7 +565,6 @@
   },
   {
     "Input": "उसका स्कोर 30 के बराबर या उससे कम है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -621,7 +580,6 @@
   },
   {
     "Input": "उसका स्कोर 30 से कम या उसके बराबर है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -637,7 +595,6 @@
   },
   {
     "Input": "उसका स्कोर कम से कम 30 या उसके बराबर है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -653,7 +610,6 @@
   },
   {
     "Input": "उसका स्कोर 30 के बराबर या उससे अधिक है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -669,7 +625,6 @@
   },
   {
     "Input": "उनका स्कोर 5000 या उससे कम है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -685,7 +640,6 @@
   },
   {
     "Input": "उनका स्कोर 5000 के बराबर या 6000 से कम है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -710,7 +664,6 @@
   },
   {
     "Input": "उनका स्कोर 5000 के बराबर या 4500 से अधिक है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -735,7 +688,6 @@
   },
   {
     "Input": "उनका स्कोर 5000 से कम या उसके बराबर है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -751,7 +703,6 @@
   },
   {
     "Input": "उनका स्कोर 5000 से अधिक या उसके बराबर है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -767,7 +718,6 @@
   },
   {
     "Input": "उसका स्कोर 5000 से अधिक या इसके बराबर है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -783,7 +733,6 @@
   },
   {
     "Input": "उनका स्कोर 5000 से अधिक या 6000 के बराबर है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -808,7 +757,7 @@
   },
   {
     "Input": "उनका स्कोर 5000 के बराबर या 5000 से कम है",
-    "NotSupported": "javascript, python, dotnet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -833,7 +782,6 @@
   },
   {
     "Input": "नंबर रेंज 1000-5000 है",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -849,7 +797,6 @@
   },
   {
     "Input": "नंबर रेंज है 1000 - 5000",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -865,7 +812,6 @@
   },
   {
     "Input": "नंबर रेंज है 1000–5000",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -881,7 +827,6 @@
   },
   {
     "Input": "संख्या शृंखला 1000 – 5000",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -897,8 +842,6 @@
   },
   {
     "Input": "हरेक 5 में से 2 या ज़्यादा",
-    "Comment": "Retranslated due to incorrect translation.",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -915,7 +858,6 @@
   {
     "Input": "5 में 2 से ज़्यादा कैसा रहेगा",
     "Comment": "As this can be ambiguous, by design the interpretation is left-to-right and the range is extracted first.",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -931,7 +873,6 @@
   },
   {
     "Input": "क्या आप मुझे 2009 में 30000 से ज़्यादा के रिकॉर्ड दिखा सकते हैं.",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -947,7 +888,6 @@
   },
   {
     "Input": "क्या आप मुझे 2009 में 30000 से कम के रिकॉर्ड दिखा सकते हैं.",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -963,7 +903,6 @@
   },
   {
     "Input": "क्या ऐसा >30 की स्थिति में अभी भी होता है",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -979,7 +918,6 @@
   },
   {
     "Input": "क्या ऐसा >= 30 की स्थिति में अभी भी होता है",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -995,7 +933,6 @@
   },
   {
     "Input": "क्या ऐसा <-30 की स्थिति में अभी भी होता है",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1011,7 +948,6 @@
   },
   {
     "Input": "क्या ऐसा  <=  -30 की स्थिति में अभी भी होता है",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1027,26 +963,21 @@
   },
   {
     "Input": "<>30",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "=>30",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "=<30",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "यह संख्या 1998 में से 20000 के बराबर है",
-    "Comment": "Retranslated due to incorrect translation.",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1062,15 +993,11 @@
   },
   {
     "Input": "यह संख्या 200 से हरेक 2008 में से 300 है.",
-    "Comment": "Retranslated due to incorrect translation.",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "यह संख्या 200 से लेकर 2008 में से 3000000 है.",
-    "Comment": "Retranslated due to incorrect translation.",
-    "NotSupported": "javascript, python, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1086,7 +1013,6 @@
   },
   {
     "Input": "आधे से ज़्यादा लोग यहां आए ",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1102,7 +1028,6 @@
   },
   {
     "Input": "3000 से अधिक",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1118,7 +1043,6 @@
   },
   {
     "Input": "3000 के पार",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1134,7 +1058,6 @@
   },
   {
     "Input": "निसान मोटर कं. 700 तक कॉन्ट्रैक्ट कामकारों को हटाने की योजना बना रही है.",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1150,7 +1073,6 @@
   },
   {
     "Input": "700 तक को >700 के तौर पर नहीं पहचाना जाना चाहिए",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1175,7 +1097,6 @@
   },
   {
     "Input": "ऐसे कार की संख्या जिनका हॉर्सपॉवर 150 से अधिक है",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1191,7 +1112,6 @@
   },
   {
     "Input": "शेयर 20 से अधिक ऊपर गए, प्रति पीस 170 से ऊपर",
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
