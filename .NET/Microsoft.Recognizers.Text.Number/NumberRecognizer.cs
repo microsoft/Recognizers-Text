@@ -320,6 +320,13 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Korean, options))),
                     new Korean.NumberExtractor()));
 
+            RegisterModel<OrdinalModel>(
+                Culture.Korean,
+                (options) => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new KoreanNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Korean, options))),
+                    new Korean.OrdinalExtractor()));
+
             RegisterModel<NumberModel>(
                 Culture.Dutch,
                 (options) => new NumberModel(
