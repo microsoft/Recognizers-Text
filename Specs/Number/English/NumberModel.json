@@ -2612,7 +2612,6 @@
   },
   {
     "Input": "I can give you 13 lakh",
-    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "13 lakh",
@@ -2628,7 +2627,6 @@
   },
   {
     "Input": "There are 1 crore boxes in this container",
-    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1 crore",
@@ -2644,7 +2642,6 @@
   },
   {
     "Input": "I count 6 crore and two hundred",
-    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "6 crore and two hundred",
@@ -2654,6 +2651,21 @@
         },
         "Start": 8,
         "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "The total is three lakh crore",
+    "Results": [
+      {
+        "Text": "three lakh crore",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3000000000000"
+        },
+        "Start": 13,
+        "End": 28
       }
     ]
   }
