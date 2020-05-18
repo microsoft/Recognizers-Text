@@ -465,6 +465,7 @@
   },
   {
     "Input": "x 10 से बड़ी और 20 से छोटी है. y 50 से अधिक नहीं है और 20 से कम नहीं है.",
+    "Comment": "since the modifier 'less than' follows the number '20', the method ValidateMatchAndGetStartAndLength always returns as start index the index of the first occurrence of the number",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -757,6 +758,7 @@
   },
   {
     "Input": "उनका स्कोर 5000 के बराबर या 5000 से कम है",
+    "Comment": "since the modifier 'less than' follows the number '5000', the method ValidateMatchAndGetStartAndLength always returns as start index the index of the first occurrence of the number",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
