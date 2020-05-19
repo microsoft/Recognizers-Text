@@ -228,7 +228,7 @@ RelativeDayRegex: !nestedRegex
 SetWeekDayRegex: !simpleRegex
   def: \b(?<prefix>on\s+)?(?<weekday>morning|afternoon|evening|night|(sun|mon|tues|wednes|thurs|fri|satur)day)s\b
 WeekDayOfMonthRegex: !nestedRegex
-  def: (?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+{WeekDayRegex}\s+{MonthSuffixRegex})
+  def: (?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+(week\s+{MonthSuffixRegex}[\.]?\s+(on\s+)?{WeekDayRegex}|{WeekDayRegex}\s+{MonthSuffixRegex}))
   references: [ WeekDayRegex, MonthSuffixRegex ]
 RelativeWeekDayRegex: !nestedRegex
   def: \b({WrittenNumRegex}\s+{WeekDayRegex}\s+(from\s+now|later))\b
