@@ -2122,5 +2122,19 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": []
+  },
+  {
+    "Input": "5k-20k",
+    "Results": [
+      {
+        "Text": "5k-20k",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,20000)"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
   }
 ]

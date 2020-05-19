@@ -34,7 +34,7 @@ PlaceHolderPureNumber: !simpleRegex
 PlaceHolderDefault: !simpleRegex
   def: \D|\b
 NumbersWithPlaceHolder: !paramsRegex
-  def: (((?<!\d+(\s*(K|k|M|G|T|B|b))?\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})
+  def: (((?<!\d+(\s*(K|k|MM?|mil|G|T|B|b))?\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
 NumbersWithSuffix: !nestedRegex
   def: (((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
@@ -114,7 +114,7 @@ DoubleCaretExponentialNotationRegex: !nestedRegex
   def: (((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[1-9]\d*)(?=\b)
   references: [ BaseNumbers.NumberMultiplierRegex ]
 DoubleDecimalPointRegex: !paramsRegex
-  def: (((?<!\d+(\s*(K|k|M|G|T|B|b))?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})
+  def: (((?<!\d+(\s*(K|k|MM?|mil|G|T|B|b))?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})
   params: [ placeholder ]
 DoubleWithoutIntegralRegex: !paramsRegex
   def: (?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})
@@ -357,6 +357,8 @@ RoundNumberMap: !dictionary
     dozens: 12
     k: 1000
     m: 1000000
+    mm: 1000000
+    mil: 1000000
     g: 1000000000
     b: 1000000000
     t: 1000000000000

@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string AllIntRegex = $@"(?:((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*{SeparaIntRegex})";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
-      public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+(\s*(K|k|M|G|T|B|b))?\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";
+      public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+(\s*(K|k|MM?|mil|G|T|B|b))?\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";
       public static readonly string NumbersWithSuffix = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)";
       public static readonly string NumbersWithDozenSuffix = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|(?<=\b))\d+\s+dozen(s)?(?=\b)";
@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public static readonly string DoubleExponentialNotationRegex = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e([+-]*[1-9]\d*)(?=\b)";
       public static readonly string DoubleCaretExponentialNotationRegex = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
-      public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+(\s*(K|k|M|G|T|B|b))?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
+      public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+(\s*(K|k|MM?|mil|G|T|B|b))?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
       public static readonly Func<string, string> DoubleWithoutIntegralRegex = (placeholder) => $@"(?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
       public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}(?=\b)";
       public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
@@ -242,6 +242,8 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"dozens", 12 },
             { @"k", 1000 },
             { @"m", 1000000 },
+            { @"mm", 1000000 },
+            { @"mil", 1000000 },
             { @"g", 1000000000 },
             { @"b", 1000000000 },
             { @"t", 1000000000000 }
