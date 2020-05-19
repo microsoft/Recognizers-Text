@@ -45,8 +45,8 @@ DigitsNumberRegex: !simpleRegex
   def: \d|\d{1,3}(\.\d{3})
   #Below regex is used to catch all numbers from 0-99 in hindi and devnagari
 AllNumericalIntRegex: !nestedRegex
-  def: ({ZeroToNineIntegerRegex}|{TenToNineteenIntegerRegex}|{TwentyToTwentyNineIntegerRegex}|{ThirtyToThirtyNineIntegerRegex}|{FourtyToFourtyNineIntegerRegex}|{FiftyToFiftyNineIntegerRegex}|{SeventyToSeventyNineIntegerRegex}|{EightyToEightyNineIntegerRegex}|{NinetyToNinetyNineIntegerRegex})
-  references: [ZeroToNineIntegerRegex,TenToNineteenIntegerRegex,TwentyToTwentyNineIntegerRegex,ThirtyToThirtyNineIntegerRegex,FourtyToFourtyNineIntegerRegex,FiftyToFiftyNineIntegerRegex,SeventyToSeventyNineIntegerRegex,EightyToEightyNineIntegerRegex,NinetyToNinetyNineIntegerRegex ]
+  def: ({ZeroToNineIntegerRegex}|{TenToNineteenIntegerRegex}|{TwentyToTwentyNineIntegerRegex}|{ThirtyToThirtyNineIntegerRegex}|{FourtyToFourtyNineIntegerRegex}|{FiftyToFiftyNineIntegerRegex}|{SixtyToSixtyNineIntegerRegex}|{SeventyToSeventyNineIntegerRegex}|{EightyToEightyNineIntegerRegex}|{NinetyToNinetyNineIntegerRegex})
+  references: [ZeroToNineIntegerRegex,TenToNineteenIntegerRegex,TwentyToTwentyNineIntegerRegex,ThirtyToThirtyNineIntegerRegex,FourtyToFourtyNineIntegerRegex,FiftyToFiftyNineIntegerRegex,SixtyToSixtyNineIntegerRegex,SeventyToSeventyNineIntegerRegex,EightyToEightyNineIntegerRegex,NinetyToNinetyNineIntegerRegex ]
 #SeparaIntRegex is used to catch nummbers between 0-99 with RoundNumbers
 SeparaIntRegex: !nestedRegex
   def: (?:((({AllNumericalIntRegex}|({TensNumberIntegerRegex}(\s+(और\s+)?){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex})(\s+({RoundNumberIntegerRegex}|{RoundNumberHinglishIntegerRegex}))*)|(({AnIntRegex}?(\s+({RoundNumberIntegerRegex}))+))|({RoundNumberIntegerRegex})|({AllNumericalIntRegex})))
@@ -285,70 +285,88 @@ NumberWithPrepositionPercentage: !nestedRegex
 TillRegex: !simpleRegex
   def: (के|से|--|-|—|——|~|–)
 MoreRegex: !simpleRegex
-  def: (?:(((उससे|से)\s*)?(ज़्यादा(\s*बड़ी)?|बड़ी|अधिक|ऊपर|पार)|(?<!<|=)>))
+  def: (?:((उससे|(?<!ज़्यादा\s*)से|के)\s*)(ज़्यादा(\s*बड़ी)?|बड़ी|अधिक|ऊपर|पार)|(?<!<|=)>)
 LessRegex: !simpleRegex
-  def: (?:((उससे|उसके|से)\s*)?(कम|छोटी|नीचे)|(?<!>|=)<)
+  def: (?:((उससे|उसके|(?<!कम\s*)से|के)\s*)(कम|छोटी|नीचे)|(?<!>|=)<)
 EqualRegex: !simpleRegex
-  def: (((उसके|के)\s*)?(समान|बराबर)|(?<!<|>)=)
+  def: ((उसके|इसके|के)\s*(समान|बराबर)|(?<!<|>)=)
 MoreOrEqualPrefix: !nestedRegex
   def: (({LessRegex}\s*नहीं)|(कम\s+से\s+कम))
   references: [ LessRegex ]
 MoreOrEqual: !nestedRegex
-  def: (?:({MoreRegex}\s+(या)?\s+{EqualRegex})|({EqualRegex}\s+(या)?\s+{MoreRegex})|{MoreOrEqualPrefix}(\s+(या)?\s+{EqualRegex})?|({EqualRegex}\s+(या)?\s+)?{MoreOrEqualPrefix}|>\s*=)
-  references: [ MoreRegex, EqualRegex, LessRegex, MoreOrEqualPrefix ]
+  def: (?:{MoreOrEqualPrefix}|({MoreRegex}\s+(या)?\s+{EqualRegex})|({EqualRegex}\s+(या)?\s+{MoreRegex})|({MoreOrEqualPrefix}\s+(या)?\s+{EqualRegex})|({EqualRegex}\s+(या)?\s+{MoreOrEqualPrefix})|>\s*=)
+  references: [ MoreRegex, EqualRegex, MoreOrEqualPrefix ]
+MoreOrEqualNew: !nestedRegex
+  def: (?:({MoreOrEqualPrefix}(\s+(या)?\s+{EqualRegex})?)|(({EqualRegex}\s+(या)?\s+)?{MoreOrEqualPrefix})|>\s*=)
+  references: [ EqualRegex, MoreOrEqualPrefix ]
 MoreOrEqualSuffix: !simpleRegex
-  def: ((और|या)\s+((((?!(उससे|से)\s+)|((?!(\d+\s*))(उससे|से)))(ज़्यादा(\s*बड़ी)?|बड़ी|अधिक))|((?!(उससे|से)\s+)(ऊपर|पार))))
+  def: ((और|या)\s+((((?!(उससे|से)\s+)|((?!(\d+\s*))(उससे|से)))(ज़्यादा\s*बड़ी|ज़्यादा(?!\s+से\s+ज़्यादा)|बड़ी|अधिक))|((?!(उससे|से|के)\s+)(ऊपर|पार))))
 LessOrEqualPrefix: !nestedRegex
   def: (({MoreRegex}\s*नहीं)|(ज़्यादा\s+से\s+ज़्यादा)|तक)
   references: [ MoreRegex ]
 LessOrEqual: !nestedRegex
-  def: (({LessRegex}\s+(या)?\s+{EqualRegex})|({EqualRegex}\s+(या)?\s+{LessRegex})|{LessOrEqualPrefix}(\s+(या)?\s+{EqualRegex})?|({EqualRegex}\s+(या)?\s+)?{LessOrEqualPrefix}|<\s*=)
-  references: [ LessRegex, EqualRegex, MoreRegex, LessOrEqualPrefix ]
+  def: ({LessOrEqualPrefix}|({LessRegex}\s+(या)?\s+{EqualRegex})|({EqualRegex}\s+(या)?\s+{LessRegex})|({LessOrEqualPrefix}\s+(या)?\s+{EqualRegex})|({EqualRegex}\s+(या)?\s+{LessOrEqualPrefix})|<\s*=)
+  references: [ LessRegex, EqualRegex, LessOrEqualPrefix ]
+LessOrEqualNew: !nestedRegex
+  def: (({LessOrEqualPrefix}(\s+(या)?\s+{EqualRegex})?)|(({EqualRegex}\s+(या)?\s+)?{LessOrEqualPrefix})|<\s*=)
+  references: [EqualRegex, LessOrEqualPrefix ]
 LessOrEqualSuffix: !simpleRegex
-  def: ((और|या)\s+((?!(उससे|उसके|से)\s+)|((?!(\d+\s*))(उससे|उसके|से)\s+))(कम|छोटी|नीचे))
+  def: ((और|या)\s+((?!(उससे|उसके|से|के)\s+)|((?!(\d+\s*))(उससे|उसके|से|के)\s+))(कम(?!\s+से\s+कम)|छोटी|नीचे))
 NumberSplitMark: !simpleRegex
   def: (?![,.](?!\d+))
 MoreRegexNoNumberSucceed: !simpleRegex
   def: (((?!(उससे|से)\s+)|((?!(\d+\s*))(उससे|से))\s+)(ज़्यादा(\s*बड़ी)?|बड़ी|अधिक)|(?!(\d+\s*))(ऊपर|पार))
 LessRegexNoNumberSucceed: !simpleRegex
-  def: (((?!(उससे|उसके|से)\s+)|((?!(\d+\s*))(उससे|उसके|से))\s+)(कम|छोटी|नीचे)|(?!(\d+\s*))(कम|नीचे))
+  def: (((?!(उससे|उसके|से|के)\s+)|((?!(\d+\s*))(उससे|उसके|से|के))\s+)(कम|छोटी|नीचे)|(?!(\d+\s*))(कम|नीचे))
 EqualRegexNoNumberSucceed: !simpleRegex
-  def: (((?!(उसके|के)\s+)|((?!(\d+\s*))(उसके|के)\s+))(समान|बराबर))
+  def: (((?!(उसके|इसके|के)\s+)|((?!(\d+\s*))(उसके|इसके|के)\s+))(समान|बराबर))
+NumberGroupCondition1: !nestedRegex
+  def: (((-|माइनस|निगेटिव)\s*)?(\b(?<![/-])(\d+\,?)+(?![/-])\b|{FractionNotationRegex}|{FractionNounWithArticleRegex}|{AllIntRegex}))
+  references: [ FractionNotationRegex, FractionNounWithArticleRegex, AllIntRegex ]
+NumberGroupCondition2: !nestedRegex
+  def: ({NumberGroupCondition1}\s+में\s+से\s+{NumberGroupCondition1}|{NumberGroupCondition1})
+  references: [ NumberGroupCondition1 ]
+OneNumberRangeMoreRegex0: !nestedRegex
+  def: ({MoreOrEqualNew}|{MoreRegex})\s*(?<number1>({NumberSplitMark}.)+)(\s+(या)?\s+{EqualRegex})|({MoreOrEqualNew}|{MoreRegex})\s*(?<number1>({NumberSplitMark}.)+)
+  references: [ MoreOrEqualNew, MoreRegex, NumberSplitMark, EqualRegex ]
 OneNumberRangeMoreRegex1: !nestedRegex
-  def: (?<number1>({NumberSplitMark}.)+)\s*({MoreOrEqual}|{MoreRegex})
-  references: [ MoreOrEqual, MoreRegex, NumberSplitMark ]
+  def: (?<number1>({NumberSplitMark}.)+)\s*साल\s*({MoreRegex}|{MoreOrEqualNew})|(?<number1>{NumberGroupCondition2})\s*({MoreRegex}|{MoreOrEqualNew})
+  references: [ MoreOrEqualNew, MoreRegex, NumberSplitMark, NumberGroupCondition2 ]
 OneNumberRangeMoreRegex2: !nestedRegex
   def: (?<number1>({NumberSplitMark}.)+)\s*{MoreOrEqualSuffix}
   references: [ MoreOrEqualSuffix, NumberSplitMark ]
 OneNumberRangeMoreSeparateRegex: !nestedRegex
   def: ((?<number1>({NumberSplitMark}.)+)\s+{EqualRegex}(\s+या\s+){MoreRegexNoNumberSucceed})|((?<number1>({NumberSplitMark}.)+)\s+{MoreRegex}(\s+या\s+){EqualRegexNoNumberSucceed})
   references: [ EqualRegex, MoreRegex, EqualRegexNoNumberSucceed, MoreRegexNoNumberSucceed, NumberSplitMark ]
+OneNumberRangeLessRegex0: !nestedRegex
+  def: ({LessOrEqualNew}|{LessRegex})\s*(?<number2>({NumberSplitMark}.)+)(\s+(या)?\s+{EqualRegex})|({LessOrEqualNew}|{LessRegex})\s*(?<number2>({NumberSplitMark}.)+)
+  references: [ LessOrEqualNew, LessRegex, NumberSplitMark, EqualRegex ]
 OneNumberRangeLessRegex1: !nestedRegex
-  def: (?<number2>({NumberSplitMark}.)+)\s*({LessOrEqual}|{LessRegex})
-  references: [ LessOrEqual, LessRegex, NumberSplitMark ]
+  def: (?<number2>({NumberSplitMark}.)+)\s*साल\s*({LessRegex}|{LessOrEqualNew})|(?<number2>{NumberGroupCondition2})\s*({LessRegex}|{LessOrEqualNew})
+  references: [ LessOrEqualNew, LessRegex, NumberSplitMark, NumberGroupCondition2 ]
 OneNumberRangeLessRegex2: !nestedRegex
   def: (?<number2>({NumberSplitMark}.)+)\s*{LessOrEqualSuffix}
   references: [ LessOrEqualSuffix, NumberSplitMark ]
 OneNumberRangeLessSeparateRegex: !nestedRegex
-  def: ((?<number1>({NumberSplitMark}.)+)\s+{EqualRegex}(\s+या\s+){LessRegexNoNumberSucceed})|((?<number1>({NumberSplitMark}.)+)\s+{LessRegex}(\s+या\s+){EqualRegexNoNumberSucceed})
+  def: ((?<number2>({NumberSplitMark}.)+)\s*{EqualRegex}(\s+या\s+){LessRegexNoNumberSucceed})|((?<number2>({NumberSplitMark}.)+)\s*{LessRegex}(\s+या\s+){EqualRegexNoNumberSucceed})
   references: [ EqualRegex, LessRegex, EqualRegexNoNumberSucceed, LessRegexNoNumberSucceed, NumberSplitMark ]
 OneNumberRangeEqualRegex: !nestedRegex
-  def: '(?<number1>({NumberSplitMark}.)+)\s*{EqualRegex}'
-  references: [ EqualRegex, NumberSplitMark ]
+  def: (?<number1>({NumberSplitMark}.)+)\s*साल\s*{EqualRegex}|(?<number1>{NumberGroupCondition2})\s*{EqualRegex}
+  references: [ EqualRegex, NumberSplitMark, NumberGroupCondition2 ]
 TwoNumberRangeRegex1: !nestedRegex
   def: (?<number1>({NumberSplitMark}.)+)\s*और\s*(?<number2>({NumberSplitMark}.)+)\s*के\s*बीच
   references: [ NumberSplitMark ]
 TwoNumberRangeRegex2: !nestedRegex
-  def: ({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(और|पर|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})
-  references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
+  def: ({OneNumberRangeMoreSeparateRegex}|{OneNumberRangeMoreRegex0}|{OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(है\s*)?(और|पर|,)\s*({OneNumberRangeLessSeparateRegex}|{OneNumberRangeLessRegex0}|{OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})
+  references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2, OneNumberRangeLessRegex0, OneNumberRangeMoreRegex0, OneNumberRangeLessSeparateRegex, OneNumberRangeMoreSeparateRegex ]
 TwoNumberRangeRegex3: !nestedRegex
-  def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(और|पर|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
-  references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
+  def: ({OneNumberRangeLessSeparateRegex}|{OneNumberRangeLessRegex0}|{OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(है\s*)?(और|पर|,)\s*({OneNumberRangeMoreSeparateRegex}|{OneNumberRangeMoreRegex0}|{OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
+  references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2, OneNumberRangeLessRegex0, OneNumberRangeMoreRegex0, OneNumberRangeLessSeparateRegex, OneNumberRangeMoreSeparateRegex ]
 TwoNumberRangeRegex4: !nestedRegex
-  def: (?<number1>({NumberSplitMark}.)+)\s*{TillRegex}\s*(?<number2>({NumberSplitMark}.)+)
+  def: (?<number1>({NumberSplitMark}(?!\b\s+से\b).)+)\s*{TillRegex}\s*(हरेक|लेकर)?\s*(?<number2>({NumberSplitMark}.)+)
   references: [ TillRegex, NumberSplitMark ]
 AmbiguousFractionConnectorsRegex: !simpleRegex
-  def: (\bमें\b)
+  def: (\bमें(?![\u0900-\u097f]))
 # "in" is ambiguous for cases like "more than 30000 in 2009", other connector "out of", "over" is not ambiguous in English
 #Parser
 DecimalSeparatorChar: !char '.'
