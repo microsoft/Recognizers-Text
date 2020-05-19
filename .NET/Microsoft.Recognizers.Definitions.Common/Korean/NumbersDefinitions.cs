@@ -156,7 +156,9 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public static readonly string DoubleExponentialNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)|[0０](?!{ZeroToNineFullHalfRegex}+))";
       public static readonly string DoubleScientificNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)";
       public static readonly string OrdinalRegex = $@"{AllIntRegex}번째";
+      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(뒤에서 세번째|다음(\s*것)?|이전 것|현재|(((마지막)((에)?\s*((서)?\s*(두번째|((바로)?\s*(것|전)))|의 옆))?)|지금)(의 것)?))";
       public static readonly string OrdinalNumbersRegex = $@"{ZeroToNineFullHalfRegex}+번째";
+      public static readonly string OrdinalKoreanRegex = $@"({OrdinalRegex}|{RelativeOrdinalRegex}|{OrdinalNumbersRegex})";
       public static readonly string AllFractionNumber = $@"{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*[와|과]\s*)?{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*분\s*의\s*{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})";
       public static readonly string FractionNotationSpecialsCharsRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+\s+{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+";
       public static readonly string FractionNotationRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+";
@@ -185,11 +187,31 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string LessOrEqualSuffix = @"\s*(이상)";
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {
-            { @"", @"" }
+            { @"마지막", @"0" },
+            { @"다음", @"1" },
+            { @"뒤에서 세번째", @"-2" },
+            { @"마지막에서 두번째", @"-1" },
+            { @"마지막의 옆", @"-1" },
+            { @"마지막에서 바로 전의 것", @"-1" },
+            { @"이전 것", @"-1" },
+            { @"다음 것", @"1" },
+            { @"마지막에서 바로 전", @"-1" },
+            { @"지금의 것", @"0" },
+            { @"현재", @"0" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
         {
-            { @"", @"" }
+            { @"마지막", @"end" },
+            { @"다음", @"current" },
+            { @"뒤에서 세번째", @"end" },
+            { @"마지막에서 두번째", @"end" },
+            { @"마지막의 옆", @"end" },
+            { @"마지막에서 바로 전의 것", @"end" },
+            { @"이전 것", @"current" },
+            { @"다음 것", @"current" },
+            { @"마지막에서 바로 전", @"end" },
+            { @"지금의 것", @"current" },
+            { @"현재", @"current" }
         };
     }
 }

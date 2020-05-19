@@ -212,9 +212,14 @@ DoubleScientificNotationRegex: !nestedRegex
 OrdinalRegex: !nestedRegex
   def: '{AllIntRegex}번째'
   references: [AllIntRegex]
+RelativeOrdinalRegex: !simpleRegex
+  def: (?<relativeOrdinal>(뒤에서 세번째|다음(\s*것)?|이전 것|현재|(((마지막)((에)?\s*((서)?\s*(두번째|((바로)?\s*(것|전)))|의 옆))?)|지금)(의 것)?))
 OrdinalNumbersRegex: !nestedRegex
   def: '{ZeroToNineFullHalfRegex}+번째'
   references: [ZeroToNineFullHalfRegex]
+OrdinalKoreanRegex: !nestedRegex
+  def: '({OrdinalRegex}|{RelativeOrdinalRegex}|{OrdinalNumbersRegex})'
+  references: [OrdinalRegex, RelativeOrdinalRegex, OrdinalNumbersRegex]
 #FractionExtractor
 AllFractionNumber: !nestedRegex
   def: '{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*[와|과]\s*)?{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*분\s*의\s*{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})'
@@ -290,24 +295,32 @@ LessOrEqual: !nestedRegex
   references: [ LessRegex, EqualRegex ]
 LessOrEqualSuffix: !simpleRegex
   def: \s*(이상)
-
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
-# TODO: modify below regex according to the counterpart in English
   entries:
-    '': ''
+    마지막: 0
+    다음: 1
+    뒤에서 세번째: -2
+    마지막에서 두번째: -1
+    마지막의 옆: -1
+    마지막에서 바로 전의 것: -1
+    이전 것: -1
+    다음 것: 1
+    마지막에서 바로 전: -1
+    지금의 것: 0
+    현재: 0
 RelativeReferenceRelativeToMap: !dictionary
   types: [ string, string ]
-# TODO: modify below regex according to the counterpart in English
   entries:
-    '': ''
-
-# Original code from English
-# IntegerRegexDefinition: !paramsRegex
-#   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!(\d+\.|\d+,))))\d{1,3}({thousandsmark}\d{3})+(?={placeholder})
-#   params: [ placeholder, thousandsmark  ]
-# DoubleRegexDefinition: !paramsRegex
-#   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.|\d+,)))\d{1,3}({thousandsmark}\d{3})+{decimalmark}\d+(?={placeholder})
-#   params: [ placeholder, thousandsmark, decimalmark ]
-# PlaceHolderDefault: \D|\b
+    마지막: end
+    다음: current
+    뒤에서 세번째: end
+    마지막에서 두번째: end
+    마지막의 옆: end
+    마지막에서 바로 전의 것: end
+    이전 것: current
+    다음 것: current
+    마지막에서 바로 전: end
+    지금의 것: current
+    현재: current
 ...

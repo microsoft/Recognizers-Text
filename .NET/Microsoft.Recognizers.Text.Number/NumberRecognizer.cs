@@ -320,6 +320,13 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Korean, options))),
                     new Korean.NumberExtractor()));
 
+            RegisterModel<OrdinalModel>(
+                Culture.Korean,
+                (options) => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new KoreanNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Korean, options))),
+                    new Korean.OrdinalExtractor()));
+
             RegisterModel<NumberModel>(
                 Culture.Dutch,
                 (options) => new NumberModel(
@@ -397,15 +404,12 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
                     new Hindi.PercentageExtractor(options)));
 
-            // @TODO Uncomment once all the tests pass
-            /*
-
             RegisterModel<NumberRangeModel>(
                 Culture.Hindi,
                 options => new NumberRangeModel(
                     new BaseNumberRangeParser(new HindiNumberRangeParserConfiguration(
                                                   new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
-                    new Hindi.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Hindi, options))));*/
+                    new Hindi.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Hindi, options))));
 
             RegisterModel<NumberModel>(
                 Culture.Swedish,
