@@ -40,7 +40,7 @@ public class FrenchTimePeriodExtractorConfiguration
     public static final Pattern TillRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TillRegex);
     private static final Pattern FromRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.FromRegex2);
     private static final Pattern RangeConnectorRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RangeConnectorRegex);
-    private static final Pattern BetweenRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BetweenRegex);
+    private static final Pattern BetweenRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex2);
     public final IDateTimeExtractor timeZoneExtractor;
     public final Iterable<Pattern> getSimpleCasesRegex = new ArrayList<Pattern>() {
         {
