@@ -883,5 +883,20 @@
         }
       }
     ]
+  },
+  {
+    "Input": "The submarine mein weigh 25 lakh tonnes",
+    "Results": [
+      {
+        "Text": "25 lakh tonnes",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2500000",
+          "unit": "Ton"
+        },
+        "Start": 25,
+        "End": 38
+      }
+    ]
   }
 ]
