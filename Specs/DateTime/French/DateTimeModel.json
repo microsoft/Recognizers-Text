@@ -95,7 +95,7 @@
     ]
   },
   {
-    "Input": "Je vais partir pour 3.5ans",
+    "Input": "Je vais partir pour 3,5ans",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
