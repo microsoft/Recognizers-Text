@@ -157,24 +157,19 @@ public class FrenchSetParserConfiguration
             trimmedText.equals("jours") || trimmedText.equals("journellement")) {
             // daily
             timex = "P1D";
-        }
-        else if (trimmedText.equals("hebdomadaire")) {
+        } else if (trimmedText.equals("hebdomadaire")) {
             // weekly
             timex = "P1W";
-        }
-        else if (trimmedText.equals("bihebdomadaire")) {
+        } else if (trimmedText.equals("bihebdomadaire")) {
             // bi weekly
             timex = "P2W";
-        }
-        else if (trimmedText.equals("mensuel") || trimmedText.equals("mensuelle")) {
+        } else if (trimmedText.equals("mensuel") || trimmedText.equals("mensuelle")) {
             // monthly
             timex = "P1M";
-        }
-        else if (trimmedText.equals("annuel") || trimmedText.equals("annuellement")) {
+        } else if (trimmedText.equals("annuel") || trimmedText.equals("annuellement")) {
             // yearly/annually
             timex = "P1Y";
-        }
-        else {
+        } else {
             return new MatchedTimexResult(false, null);
         }
 
@@ -186,18 +181,14 @@ public class FrenchSetParserConfiguration
         final String timex;
         if (trimmedText.equals("jour") || trimmedText.equals("journee")) {
             timex = "P1D";
-        }
-        else if (trimmedText.equals("semaine")) {
+        } else if (trimmedText.equals("semaine")) {
             timex = "P1W";
-        }
-        else if (trimmedText.equals("mois")) {
+        } else if (trimmedText.equals("mois")) {
             timex = "P1M";
-        }
-        else if (trimmedText.equals("an") || trimmedText.equals("annee")) {
+        } else if (trimmedText.equals("an") || trimmedText.equals("annee")) {
             // year
             timex = "P1Y";
-        }
-        else {
+        } else {
             return new MatchedTimexResult(false, null);
         }
 

@@ -89,8 +89,7 @@ public class FrenchDateTimeParserConfiguration
 
         if (trimmedText.endsWith("matin") && hour >= Constants.HalfDayHourCount) {
             result -= Constants.HalfDayHourCount;
-        }
-        else if (!trimmedText.endsWith("matin") && hour < Constants.HalfDayHourCount) {
+        } else if (!trimmedText.endsWith("matin") && hour < Constants.HalfDayHourCount) {
             result += Constants.HalfDayHourCount;
         }
 
@@ -105,15 +104,12 @@ public class FrenchDateTimeParserConfiguration
         final String timex;
         if (trimmedText.endsWith("maintenant")) {
             timex = "PRESENT_REF";
-        }
-        else if (trimmedText.equals("récemment") || trimmedText.equals("précédemment") || trimmedText
+        } else if (trimmedText.equals("récemment") || trimmedText.equals("précédemment") || trimmedText
             .equals("auparavant")) {
             timex = "PAST_REF";
-        }
-        else if (trimmedText.equals("dès que possible") || trimmedText.equals("dqp")) {
+        } else if (trimmedText.equals("dès que possible") || trimmedText.equals("dqp")) {
             timex = "FUTURE_REF";
-        }
-        else {
+        } else {
             timex = null;
             return new ResultTimex(false, null);
         }
@@ -130,8 +126,7 @@ public class FrenchDateTimeParserConfiguration
         if (trimmedText.startsWith("prochain") || trimmedText.startsWith("prochain") ||
             trimmedText.startsWith("prochaine") || trimmedText.startsWith("prochaine")) {
             swift = 1;
-        }
-        else if (trimmedText.startsWith("dernier") || trimmedText.startsWith("dernière") ||
+        } else if (trimmedText.startsWith("dernier") || trimmedText.startsWith("dernière") ||
             trimmedText.startsWith("dernier") || trimmedText.startsWith("dernière")) {
             swift = -1;
         }

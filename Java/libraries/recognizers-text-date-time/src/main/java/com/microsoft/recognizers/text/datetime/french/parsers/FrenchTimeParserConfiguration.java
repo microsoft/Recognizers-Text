@@ -82,14 +82,11 @@ public class FrenchTimeParserConfiguration
         // c'este 8 heures et demie, - "it's half past 8"
         if (trimmedPrefix.endsWith("demie")) {
             deltaMin = 30;
-        }
-        else if (trimmedPrefix.endsWith("un quart") || trimmedPrefix.endsWith("quart")) {
+        } else if (trimmedPrefix.endsWith("un quart") || trimmedPrefix.endsWith("quart")) {
             deltaMin = 15;
-        }
-        else if (trimmedPrefix.endsWith("trois quarts")) {
+        } else if (trimmedPrefix.endsWith("trois quarts")) {
             deltaMin = 45;
-        }
-        else {
+        } else {
             final Match[] match = RegExpUtility
                 .getMatches(FrenchTimeExtractorConfiguration.LessThanOneHour, trimmedPrefix);
             String minStr;
@@ -97,8 +94,7 @@ public class FrenchTimeParserConfiguration
                 minStr = match[0].getGroup("deltamin").value;
                 if (!StringUtility.isNullOrEmpty(minStr)) {
                     deltaMin = Integer.parseInt(minStr);
-                }
-                else {
+                } else {
                     minStr = match[0].getGroup("deltaminnum").value;
                     deltaMin = numbers.get(minStr);
                 }

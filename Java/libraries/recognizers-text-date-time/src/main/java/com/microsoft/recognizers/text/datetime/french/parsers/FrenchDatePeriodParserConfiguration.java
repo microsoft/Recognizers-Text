@@ -491,8 +491,7 @@ public class FrenchDatePeriodParserConfiguration
         if (trimmedText.endsWith("dernière") || trimmedText.endsWith("dernières") || trimmedText
             .endsWith("derniere") || trimmedText.endsWith("dernieres")) {
             swift = -1;
-        }
-        else if (trimmedText.startsWith("cette")) {
+        } else if (trimmedText.startsWith("cette")) {
             swift = 0;
         }
 
@@ -503,8 +502,7 @@ public class FrenchDatePeriodParserConfiguration
     public boolean isFuture(final String text) {
         final String trimmedText = text.trim().toLowerCase();
 
-        return FrenchDateTime.FutureStartTerms.stream().anyMatch(o -> trimmedText.startsWith(o))
-            || FrenchDateTime.FutureEndTerms.stream().anyMatch(o -> trimmedText.endsWith(o));
+        return FrenchDateTime.FutureStartTerms.stream().anyMatch(o -> trimmedText.startsWith(o)) || FrenchDateTime.FutureEndTerms.stream().anyMatch(o -> trimmedText.endsWith(o));
     }
 
     @Override
@@ -543,9 +541,8 @@ public class FrenchDatePeriodParserConfiguration
         final boolean pastSuffix = Arrays.stream(RegExpUtility.getMatches(pastSuffixRegex, trimmedText))
             .findFirst().isPresent();
 
-        return (FrenchDateTime.WeekTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) || (
-            FrenchDateTime.WeekTerms.stream().anyMatch(o -> trimmedText.contains(o)) && (nextPrefix || pastSuffix)))
-            &&
+        return (FrenchDateTime.WeekTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) ||
+            (FrenchDateTime.WeekTerms.stream().anyMatch(o -> trimmedText.contains(o)) && (nextPrefix || pastSuffix))) &&
             !FrenchDateTime.WeekendTerms.stream().anyMatch(o -> trimmedText.endsWith(o));
     }
 

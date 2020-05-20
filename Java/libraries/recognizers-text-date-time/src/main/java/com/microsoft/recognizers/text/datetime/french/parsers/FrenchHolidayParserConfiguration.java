@@ -162,12 +162,10 @@ public class FrenchHolidayParserConfiguration
         if (trimmedText.endsWith("prochain")) {
             // next - 'l'annee prochain'
             swift = 1;
-        }
-        else if (trimmedText.endsWith("dernier")) {
+        } else if (trimmedText.endsWith("dernier")) {
             // last - 'l'annee dernier'
             swift = -1;
-        }
-        else if (trimmedText.endsWith("cette")) {
+        } else if (trimmedText.endsWith("cette")) {
             // this - 'cette annees'
             swift = 0;
         }
@@ -183,46 +181,47 @@ public class FrenchHolidayParserConfiguration
 
     protected HashMap<String, IntFunction<LocalDateTime>> initHolidayFuncs() {
         return new HashMap<String, IntFunction<LocalDateTime>>(super.initHolidayFuncs()) {{
-            put("maosbirthday", FrenchHolidayParserConfiguration::maoBirthday);
-            put("yuandan", FrenchHolidayParserConfiguration::newYear);
-            put("teachersday", FrenchHolidayParserConfiguration::teacherDay);
-            put("singleday", FrenchHolidayParserConfiguration::singlesDay);
-            put("allsaintsday", FrenchHolidayParserConfiguration::halloweenDay);
-            put("youthday", FrenchHolidayParserConfiguration::youthDay);
-            put("childrenday", FrenchHolidayParserConfiguration::childrenDay);
-            put("femaleday", FrenchHolidayParserConfiguration::femaleDay);
-            put("treeplantingday", FrenchHolidayParserConfiguration::treePlantDay);
-            put("arborday", FrenchHolidayParserConfiguration::treePlantDay);
-            put("girlsday", FrenchHolidayParserConfiguration::girlsDay);
-            put("whiteloverday", FrenchHolidayParserConfiguration::whiteLoverDay);
-            put("loverday", FrenchHolidayParserConfiguration::valentinesDay);
-            put("christmas", FrenchHolidayParserConfiguration::christmasDay);
-            put("xmas", FrenchHolidayParserConfiguration::christmasDay);
-            put("newyear", FrenchHolidayParserConfiguration::newYear);
-            put("newyearday", FrenchHolidayParserConfiguration::newYear);
-            put("newyearsday", FrenchHolidayParserConfiguration::newYear);
-            put("inaugurationday", FrenchHolidayParserConfiguration::inaugurationDay);
-            put("groundhougday", FrenchHolidayParserConfiguration::groundhogDay);
-            put("valentinesday", FrenchHolidayParserConfiguration::valentinesDay);
-            put("stpatrickday", FrenchHolidayParserConfiguration::stPatrickDay);
-            put("aprilfools", FrenchHolidayParserConfiguration::foolDay);
-            put("stgeorgeday", FrenchHolidayParserConfiguration::stGeorgeDay);
-            put("mayday", FrenchHolidayParserConfiguration::mayday);
-            put("cincodemayoday", FrenchHolidayParserConfiguration::cincoDeMayoday);
-            put("baptisteday", FrenchHolidayParserConfiguration::baptisteDay);
-            put("usindependenceday", FrenchHolidayParserConfiguration::usaIndependenceDay);
-            put("independenceday", FrenchHolidayParserConfiguration::usaIndependenceDay);
-            put("bastilleday", FrenchHolidayParserConfiguration::bastilleDay);
-            put("halloweenday", FrenchHolidayParserConfiguration::halloweenDay);
-            put("allhallowday", FrenchHolidayParserConfiguration::allHallowDay);
-            put("allsoulsday", FrenchHolidayParserConfiguration::allSoulsday);
-            put("guyfawkesday", FrenchHolidayParserConfiguration::guyFawkesDay);
-            put("veteransday", FrenchHolidayParserConfiguration::veteransday);
-            put("christmaseve", FrenchHolidayParserConfiguration::christmasEve);
-            put("newyeareve", FrenchHolidayParserConfiguration::newYearEve);
-            put("fathersday", FrenchHolidayParserConfiguration::fathersDay);
-            put("mothersday", FrenchHolidayParserConfiguration::mothersDay);
-            put("labourday", FrenchHolidayParserConfiguration::labourDay);
-        }};
+                put("maosbirthday", FrenchHolidayParserConfiguration::maoBirthday);
+                put("yuandan", FrenchHolidayParserConfiguration::newYear);
+                put("teachersday", FrenchHolidayParserConfiguration::teacherDay);
+                put("singleday", FrenchHolidayParserConfiguration::singlesDay);
+                put("allsaintsday", FrenchHolidayParserConfiguration::halloweenDay);
+                put("youthday", FrenchHolidayParserConfiguration::youthDay);
+                put("childrenday", FrenchHolidayParserConfiguration::childrenDay);
+                put("femaleday", FrenchHolidayParserConfiguration::femaleDay);
+                put("treeplantingday", FrenchHolidayParserConfiguration::treePlantDay);
+                put("arborday", FrenchHolidayParserConfiguration::treePlantDay);
+                put("girlsday", FrenchHolidayParserConfiguration::girlsDay);
+                put("whiteloverday", FrenchHolidayParserConfiguration::whiteLoverDay);
+                put("loverday", FrenchHolidayParserConfiguration::valentinesDay);
+                put("christmas", FrenchHolidayParserConfiguration::christmasDay);
+                put("xmas", FrenchHolidayParserConfiguration::christmasDay);
+                put("newyear", FrenchHolidayParserConfiguration::newYear);
+                put("newyearday", FrenchHolidayParserConfiguration::newYear);
+                put("newyearsday", FrenchHolidayParserConfiguration::newYear);
+                put("inaugurationday", FrenchHolidayParserConfiguration::inaugurationDay);
+                put("groundhougday", FrenchHolidayParserConfiguration::groundhogDay);
+                put("valentinesday", FrenchHolidayParserConfiguration::valentinesDay);
+                put("stpatrickday", FrenchHolidayParserConfiguration::stPatrickDay);
+                put("aprilfools", FrenchHolidayParserConfiguration::foolDay);
+                put("stgeorgeday", FrenchHolidayParserConfiguration::stGeorgeDay);
+                put("mayday", FrenchHolidayParserConfiguration::mayday);
+                put("cincodemayoday", FrenchHolidayParserConfiguration::cincoDeMayoday);
+                put("baptisteday", FrenchHolidayParserConfiguration::baptisteDay);
+                put("usindependenceday", FrenchHolidayParserConfiguration::usaIndependenceDay);
+                put("independenceday", FrenchHolidayParserConfiguration::usaIndependenceDay);
+                put("bastilleday", FrenchHolidayParserConfiguration::bastilleDay);
+                put("halloweenday", FrenchHolidayParserConfiguration::halloweenDay);
+                put("allhallowday", FrenchHolidayParserConfiguration::allHallowDay);
+                put("allsoulsday", FrenchHolidayParserConfiguration::allSoulsday);
+                put("guyfawkesday", FrenchHolidayParserConfiguration::guyFawkesDay);
+                put("veteransday", FrenchHolidayParserConfiguration::veteransday);
+                put("christmaseve", FrenchHolidayParserConfiguration::christmasEve);
+                put("newyeareve", FrenchHolidayParserConfiguration::newYearEve);
+                put("fathersday", FrenchHolidayParserConfiguration::fathersDay);
+                put("mothersday", FrenchHolidayParserConfiguration::mothersDay);
+                put("labourday", FrenchHolidayParserConfiguration::labourDay);
+            }
+        };
     }
 }

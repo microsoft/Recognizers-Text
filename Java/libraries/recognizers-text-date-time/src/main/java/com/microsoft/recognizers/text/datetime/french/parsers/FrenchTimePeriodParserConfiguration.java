@@ -140,20 +140,15 @@ public class FrenchTimePeriodParserConfiguration
         String timeOfDay = "";
         if (FrenchDateTime.MorningTermList.stream().anyMatch(o -> trimmedText.endsWith(o))) {
             timeOfDay = Constants.Morning;
-        }
-        else if (FrenchDateTime.AfternoonTermList.stream().anyMatch(o -> trimmedText.endsWith(o))) {
+        } else if (FrenchDateTime.AfternoonTermList.stream().anyMatch(o -> trimmedText.endsWith(o))) {
             timeOfDay = Constants.Afternoon;
-        }
-        else if (FrenchDateTime.EveningTermList.stream().anyMatch(o -> trimmedText.endsWith(o))) {
+        } else if (FrenchDateTime.EveningTermList.stream().anyMatch(o -> trimmedText.endsWith(o))) {
             timeOfDay = Constants.Evening;
-        }
-        else if (FrenchDateTime.DaytimeTermList.stream().anyMatch(o -> trimmedText.equals(o))) {
+        } else if (FrenchDateTime.DaytimeTermList.stream().anyMatch(o -> trimmedText.equals(o))) {
             timeOfDay = Constants.Daytime;
-        }
-        else if (FrenchDateTime.NightTermList.stream().anyMatch(o -> trimmedText.endsWith(o))) {
+        } else if (FrenchDateTime.NightTermList.stream().anyMatch(o -> trimmedText.endsWith(o))) {
             timeOfDay = Constants.Night;
-        }
-        else {
+        } else {
             return new MatchedTimeRangeResult(false, null, beginHour, endHour, endMin);
         }
 
