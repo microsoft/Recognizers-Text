@@ -2672,6 +2672,7 @@
   },
   {
     "Input": "That account revenue target is US$ 1MM",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "1mm",

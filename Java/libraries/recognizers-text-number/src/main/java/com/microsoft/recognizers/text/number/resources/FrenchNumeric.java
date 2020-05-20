@@ -136,7 +136,7 @@ public class FrenchNumeric {
 
     public static final String PlaceHolderDefault = "\\D|\\b";
 
-    public static final String OrdinalSuffixRegex = "(?<=\\b)((\\d*(1[eè]re|1er|2e|2eme|3e|3eme|4e|4eme|5e|5eme|6e|6eme|7e|7eme|8e|8eme|9e|9eme|0e|0eme))|(11e|11eme|12e|12eme))(?=\\b)";
+    public static final String OrdinalSuffixRegex = "(?<=\\b)((\\d*(11e(me)?|1[eè]re?|[02-9]e(me)?)))(?=\\b)";
 
     public static final String OrdinalFrenchRegex = "(?<=\\b){AllOrdinalRegex}(?=\\b)"
             .replace("{AllOrdinalRegex}", AllOrdinalRegex);
@@ -216,7 +216,7 @@ public class FrenchNumeric {
 
     public static final String HalfADozenRegex = "(?<=\\b)demie?\\s+douzaine";
 
-    public static final String DigitalNumberRegex = "((?<=\\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
+    public static final String DigitalNumberRegex = "((?<=\\b)(cent|mille|millions?|milliards?|billions?|douzaines?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
             .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
 
     public static final String AmbiguousFractionConnectorsRegex = "^[.]";

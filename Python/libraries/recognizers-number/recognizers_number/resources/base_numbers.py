@@ -22,8 +22,9 @@ class BaseNumbers:
     def DoubleRegexDefinition(placeholder, thousandsmark, decimalmark):
         return f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.|\\d+,)))\\d{{1,3}}({thousandsmark}\\d{{3}})+{decimalmark}\\d+(?={placeholder})'
     PlaceHolderDefault = '\\D|\\b'
-    NumberMultiplierRegex = f'(K|k|M|G|T|B|b)'
-    MultiplierLookupRegex = f'(k|m|t|g|b)'
+    CaseSensitiveTerms = f'(?<=(\\s|\\d))(kB|K[Bb]?|M[BbM]?|G[Bb]?|B)\\b'
+    NumberMultiplierRegex = f'(K|k|MM?|mil|G|T|B|b)'
+    MultiplierLookupRegex = f'(k|m(il|m)?|t|g|b)'
     CurrencyRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(b|m|t|g)(?=\\b)'
     CommonCurrencySymbol = f'(¥|\\$|€|£|₩)'
 # pylint: enable=line-too-long

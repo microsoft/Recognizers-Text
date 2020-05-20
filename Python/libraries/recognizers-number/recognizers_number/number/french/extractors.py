@@ -155,8 +155,7 @@ class FrenchDoubleExtractor(BaseNumberExtractor):
                     LongFormatMode.DOUBLE_NO_BREAK_SPACE_COMMA, placeholder)),
                 val='DoubleNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(
-                    FrenchNumeric.DoubleWithMultiplierRegex),
+                re=FrenchNumeric.DoubleWithMultiplierRegex,
                 val='DoubleNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(

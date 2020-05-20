@@ -128,6 +128,7 @@ class PortugueseIntegerExtractor(BaseNumberExtractor):
 
 
 class PortugueseDoubleExtractor(BaseNumberExtractor):
+
     @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
@@ -147,8 +148,7 @@ class PortugueseDoubleExtractor(BaseNumberExtractor):
                     PortugueseNumeric.DoubleWithoutIntegralRegex(placeholder)),
                 val='DoubleNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(
-                    PortugueseNumeric.DoubleWithMultiplierRegex),
+                re=PortugueseNumeric.DoubleWithMultiplierRegex,
                 val='DoubleNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(

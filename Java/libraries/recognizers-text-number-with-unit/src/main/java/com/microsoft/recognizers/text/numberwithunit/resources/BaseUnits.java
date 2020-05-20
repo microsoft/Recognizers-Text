@@ -26,5 +26,5 @@ public class BaseUnits {
 
     public static final String AmbiguousTimeTerm = "pm";
 
-    public static final String AmbiguousUnitNumberMultiplierRegex = "(\\s[Kk])";
+    public static final String AmbiguousUnitNumberMultiplierRegex = "(\\s([Kk]|mil))";
 }

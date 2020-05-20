@@ -163,7 +163,7 @@ export class RegExpUtility {
 
 export class QueryProcessor {
 
-    static readonly Expression: string = `(kB|K[Bb]|K|M[Bb]|M|G[Bb]|G|B)\\b`;
+    static readonly Expression: string = `(?<=(\\s|\\d))(kB|K[Bb]?|M[BbM]?|G[Bb]?|B)\\b`;
     static readonly SpecialTokensRegex: RegExp = RegExpUtility.getSafeRegExp(QueryProcessor.Expression, "gs");
 
     static preProcess(query: string, caseSensitive: boolean = false, recode: boolean = true): string {

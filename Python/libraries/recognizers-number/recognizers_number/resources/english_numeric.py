@@ -17,7 +17,7 @@ class EnglishNumeric:
     LangMarker = 'Eng'
     CompoundNumberLanguage = False
     MultiDecimalSeparatorCulture = True
-    RoundNumberIntegerRegex = f'(?:hundred|thousand|million|billion|trillion)'
+    RoundNumberIntegerRegex = f'(?:hundred|thousand|million|billion|trillion|lakh|crore)'
     ZeroToNineIntegerRegex = f'(?:three|seven|eight|four|five|zero|nine|one|two|six)'
     TwoToNineIntegerRegex = f'(?:three|seven|eight|four|five|nine|two|six)'
     NegativeNumberTermsRegex = f'(?<negTerm>(minus|negative)\\s+)'
@@ -31,7 +31,7 @@ class EnglishNumeric:
     PlaceHolderDefault = f'\\D|\\b'
 
     def NumbersWithPlaceHolder(placeholder):
-        return f'(((?<!\\d+(\\s*(K|k|M|G|T|B|b))?\\s*)-\\s*)|(?<=\\b))\\d+(?!([\\.,]\\d+[a-zA-Z]))(?={placeholder})'
+        return f'(((?<!\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*)-\\s*)|(?<=\\b))\\d+(?!([\\.,]\\d+[a-zA-Z]))(?={placeholder})'
     NumbersWithSuffix = f'(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|(?<=\\b))\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)'
     RoundNumberIntegerRegexWithLocks = f'(?<=\\b)\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)'
     NumbersWithDozenSuffix = f'(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|(?<=\\b))\\d+\\s+dozen(s)?(?=\\b)'
@@ -61,7 +61,7 @@ class EnglishNumeric:
     DoubleCaretExponentialNotationRegex = f'(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d+([\\.,]\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)'
 
     def DoubleDecimalPointRegex(placeholder):
-        return f'(((?<!\\d+(\\s*(K|k|M|G|T|B|b))?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})'
+        return f'(((?<!\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})'
 
     def DoubleWithoutIntegralRegex(placeholder):
         return f'(?<=\\s|^)(?<!(\\d+))[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})'
@@ -108,7 +108,7 @@ class EnglishNumeric:
     WrittenIntegerSeparatorTexts = [r'and']
     WrittenFractionSeparatorTexts = [r'and']
     HalfADozenRegex = f'half\\s+a\\s+dozen'
-    DigitalNumberRegex = f'((?<=\\b)(hundred|thousand|[mb]illion|trillion|dozen(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
+    DigitalNumberRegex = f'((?<=\\b)(hundred|thousand|[mb]illion|trillion|lakh|crore|dozen(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     CardinalNumberMap = dict([("a", 1),
                               ("zero", 0),
                               ("an", 1),
@@ -145,7 +145,9 @@ class EnglishNumeric:
                               ("thousand", 1000),
                               ("million", 1000000),
                               ("billion", 1000000000),
-                              ("trillion", 1000000000000)])
+                              ("trillion", 1000000000000),
+                              ("lakh", 100000),
+                              ("crore", 10000000)])
     OrdinalNumberMap = dict([("first", 1),
                              ("second", 2),
                              ("secondary", 2),
@@ -219,6 +221,8 @@ class EnglishNumeric:
                            ("million", 1000000),
                            ("billion", 1000000000),
                            ("trillion", 1000000000000),
+                           ("lakh", 100000),
+                           ("crore", 10000000),
                            ("hundredth", 100),
                            ("thousandth", 1000),
                            ("millionth", 1000000),
@@ -233,6 +237,8 @@ class EnglishNumeric:
                            ("dozens", 12),
                            ("k", 1000),
                            ("m", 1000000),
+                           ("mm", 1000000),
+                           ("mil", 1000000),
                            ("g", 1000000000),
                            ("b", 1000000000),
                            ("t", 1000000000000)])

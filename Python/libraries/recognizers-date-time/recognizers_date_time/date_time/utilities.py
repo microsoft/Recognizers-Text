@@ -455,7 +455,7 @@ class DateUtils:
 class HolidayFunctions:
 
     @staticmethod
-    def calculate_holiday_by_easter(year: int, days: int=0) -> datetime:
+    def calculate_holiday_by_easter(year: int, days: int = 0) -> datetime:
 
         day = 0
         month = 3
