@@ -119,14 +119,14 @@ public class DateTimeExtractorTest extends AbstractTest {
         try {
             String culture = getCultureCode(language);
             switch (culture) {
-            case Culture.English:
-                return getEnglishExtractor(modelName);
-            case Culture.Spanish:
-                return getSpanishExtractor(modelName);
-            case Culture.French:
-                return getFrenchExtractor(modelName);
-            default:
-                throw new AssumptionViolatedException("Extractor Type/Name not supported.");
+                case Culture.English:
+                    return getEnglishExtractor(modelName);
+                case Culture.Spanish:
+                    return getSpanishExtractor(modelName);
+                case Culture.French:
+                    return getFrenchExtractor(modelName);
+                default:
+                    throw new AssumptionViolatedException("Extractor Type/Name not supported.");
             }
         } catch (IllegalArgumentException ex) {
             throw new AssumptionViolatedException(ex.getMessage(), ex);
