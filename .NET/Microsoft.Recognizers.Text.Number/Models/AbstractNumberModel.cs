@@ -17,6 +17,9 @@ namespace Microsoft.Recognizers.Text.Number
 
                 // TODO: Temporarily disabled as existing TestSpec not supporting
                 // Constants.JAPANESE_SUBS
+
+                // TODO: Temporarily disabled as existing TestSpec not supporting
+                // Constants.KOREAN,
         };
 
         protected AbstractNumberModel(IParser parser, IExtractor extractor)
