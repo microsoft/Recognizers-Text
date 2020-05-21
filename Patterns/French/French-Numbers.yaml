@@ -97,7 +97,7 @@ PlaceHolderPureNumber: !simpleRegex
 PlaceHolderDefault: !simpleRegex
   def: \D|\b
 OrdinalSuffixRegex: !simpleRegex
-  def: (?<=\b)((\d*(1[eè]re|1er|2e|2eme|3e|3eme|4e|4eme|5e|5eme|6e|6eme|7e|7eme|8e|8eme|9e|9eme|0e|0eme))|(11e|11eme|12e|12eme))(?=\b)
+  def: (?<=\b)((\d*(11e(me)?|1[eè]re?|[02-9]e(me)?)))(?=\b)
 OrdinalFrenchRegex: !nestedRegex
   def: (?<=\b){AllOrdinalRegex}(?=\b)
   references: [ AllOrdinalRegex ]
@@ -161,7 +161,7 @@ WrittenFractionSeparatorTexts: [et, sur]
 HalfADozenRegex: !simpleRegex
   def: (?<=\b)demie?\s+douzaine
 DigitalNumberRegex: !nestedRegex
-  def: ((?<=\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
+  def: ((?<=\b)(cent|mille|millions?|milliards?|billions?|douzaines?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [ BaseNumbers.MultiplierLookupRegex ]
 AmbiguousFractionConnectorsRegex: !simpleRegex
 # TODO: modify below regex according to the counterpart in English

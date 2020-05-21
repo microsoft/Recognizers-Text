@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Utilities;
@@ -28,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var referenceTime = refTime;
 
             object value = null;
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = InternalParse(er.Text, referenceTime);
 
@@ -381,7 +382,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    ret.Timex = string.Format("({0}T{1},{0}T{2},PT{3}H)", pr.TimexStr, beginHour, endHour, endHour - beginHour);
+                    ret.Timex = string.Format(CultureInfo.InvariantCulture, "({0}T{1},{0}T{2},PT{3}H)", pr.TimexStr, beginHour, endHour, endHour - beginHour);
                 }
 
                 ret.FutureValue =
@@ -770,7 +771,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                beginHour = int.Parse(hourStr);
+                beginHour = int.Parse(hourStr, CultureInfo.InvariantCulture);
             }
 
             hourStr = hourGroup.Captures[1].Value;
@@ -781,7 +782,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                endHour = int.Parse(hourStr);
+                endHour = int.Parse(hourStr, CultureInfo.InvariantCulture);
             }
 
             // Parse "pm"
@@ -793,7 +794,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!string.IsNullOrEmpty(beginDescStr) && !string.IsNullOrEmpty(endDescStr))
             {
-                if (beginDescStr.StartsWith("a"))
+                if (beginDescStr.StartsWith("a", StringComparison.Ordinal))
                 {
                     if (beginHour >= Constants.HalfDayHourCount)
                     {
@@ -802,7 +803,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     hasAm = true;
                 }
-                else if (beginDescStr.StartsWith("p"))
+                else if (beginDescStr.StartsWith("p", StringComparison.Ordinal))
                 {
                     if (beginHour < Constants.HalfDayHourCount)
                     {
@@ -812,7 +813,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     hasPm = true;
                 }
 
-                if (!string.IsNullOrEmpty(endDescStr) && endDescStr.StartsWith("a"))
+                if (!string.IsNullOrEmpty(endDescStr) && endDescStr.StartsWith("a", StringComparison.Ordinal))
                 {
                     if (endHour >= Constants.HalfDayHourCount)
                     {
@@ -821,7 +822,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     hasAm = true;
                 }
-                else if (endDescStr.StartsWith("p"))
+                else if (endDescStr.StartsWith("p", StringComparison.Ordinal))
                 {
                     if (endHour < Constants.HalfDayHourCount)
                     {
@@ -833,7 +834,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                if (!string.IsNullOrEmpty(matchAmStr) || (!string.IsNullOrEmpty(descStr) && descStr.StartsWith("a")))
+                if (!string.IsNullOrEmpty(matchAmStr) || (!string.IsNullOrEmpty(descStr) && descStr.StartsWith("a", StringComparison.Ordinal)))
                 {
                     if (beginHour >= Constants.HalfDayHourCount)
                     {
@@ -847,7 +848,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     hasAm = true;
                 }
-                else if (!string.IsNullOrEmpty(matchPmStr) || (!string.IsNullOrEmpty(descStr) && descStr.StartsWith("p")))
+                else if (!string.IsNullOrEmpty(matchPmStr) || (!string.IsNullOrEmpty(descStr) && descStr.StartsWith("p", StringComparison.Ordinal)))
                 {
                     if (beginHour < Constants.HalfDayHourCount)
                     {
@@ -1005,8 +1006,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var ampmStr1 = ((DateTimeResolutionResult)pr1.Value).Comment;
             var ampmStr2 = ((DateTimeResolutionResult)pr2.Value).Comment;
-            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm) &&
-                !string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm))
+            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm, StringComparison.Ordinal) &&
+                !string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm, StringComparison.Ordinal))
             {
                 ret.Comment = Constants.Comment_AmPm;
             }

@@ -663,9 +663,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (match.Success)
             {
                 var monthStr = match.Groups["month"].Value;
+
+                // @TODO move hardcoded values to resource file
+
                 if (trimmedText.Equals("今年"))
                 {
-                    ret.Timex = referenceDate.Year.ToString("D4");
+                    ret.Timex = referenceDate.Year.ToString("D4", CultureInfo.InvariantCulture);
                     ret.FutureValue =
                         ret.PastValue =
                             new Tuple<DateObject, DateObject>(DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, 1, 1), referenceDate);
@@ -698,13 +701,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
                     if (swift >= -1)
                     {
-                        ret.Timex = (referenceDate.Year + swift).ToString("D4") + "-" + month.ToString("D2");
+                        ret.Timex = (referenceDate.Year + swift).ToString("D4", CultureInfo.InvariantCulture) + "-" + month.ToString("D2", CultureInfo.InvariantCulture);
                         year = year + swift;
                         futureYear = pastYear = year;
                     }
                     else
                     {
-                        ret.Timex = "XXXX-" + month.ToString("D2");
+                        ret.Timex = "XXXX-" + month.ToString("D2", CultureInfo.InvariantCulture);
                         if (month < referenceDate.Month)
                         {
                             futureYear++;
@@ -746,9 +749,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         var beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7 * swift);
                         var endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift);
 
-                        ret.Timex = beginDate.Year.ToString("D4") + "-W" +
+                        ret.Timex = beginDate.Year.ToString("D4", CultureInfo.InvariantCulture) + "-W" +
                                     Cal.GetWeekOfYear(beginDate, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
-                                        .ToString("D2") + "-WE";
+                                        .ToString("D2", CultureInfo.InvariantCulture) + "-WE";
 
                         ret.FutureValue =
                             ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate.AddDays(1));
@@ -762,7 +765,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     {
                         month = referenceDate.AddMonths(swift).Month;
                         year = referenceDate.AddMonths(swift).Year;
-                        ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
+                        ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture) + "-" + month.ToString("D2", CultureInfo.InvariantCulture);
                         futureYear = pastYear = year;
                     }
                     else if (trimmedText.EndsWith("年"))
@@ -785,7 +788,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                             year += 2;
                         }
 
-                        ret.Timex = year.ToString("D4");
+                        ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture);
                         ret.FutureValue =
                             ret.PastValue =
                                 new Tuple<DateObject, DateObject>(
@@ -835,7 +838,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 var year = 0;
                 if (tmp.Length == 2)
                 {
-                    num = int.Parse(tmp);
+                    num = int.Parse(tmp, CultureInfo.InvariantCulture);
                     if (num < 100 && num >= 30)
                     {
                         num += 1900;
@@ -849,13 +852,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 }
                 else
                 {
-                    year = int.Parse(tmp);
+                    year = int.Parse(tmp, CultureInfo.InvariantCulture);
                 }
 
                 var beginDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
                 var endDay = DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
 
-                ret.Timex = year.ToString("D4");
+                ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture);
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
                 ret.Success = true;
 
@@ -892,7 +895,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 var beginDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
                 var endDay = DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
 
-                ret.Timex = year.ToString("D4");
+                ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture);
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
                 ret.Success = true;
 
@@ -986,19 +989,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         switch (unitStr)
                         {
                             case Constants.TimexDay:
-                                beginDate = referenceDate.AddDays(-double.Parse(numStr));
+                                beginDate = referenceDate.AddDays(-double.Parse(numStr, CultureInfo.InvariantCulture));
                                 endDate = referenceDate;
                                 break;
                             case Constants.TimexWeek:
-                                beginDate = referenceDate.AddDays(-7 * double.Parse(numStr));
+                                beginDate = referenceDate.AddDays(-7 * double.Parse(numStr, CultureInfo.InvariantCulture));
                                 endDate = referenceDate;
                                 break;
                             case Constants.TimexMonthFull:
-                                beginDate = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
+                                beginDate = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr, CultureInfo.InvariantCulture)));
                                 endDate = referenceDate;
                                 break;
                             case Constants.TimexYear:
-                                beginDate = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
+                                beginDate = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr, CultureInfo.InvariantCulture)));
                                 endDate = referenceDate;
                                 break;
                             default:
@@ -1020,19 +1023,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         {
                             case Constants.TimexDay:
                                 beginDate = referenceDate;
-                                endDate = referenceDate.AddDays(double.Parse(numStr));
+                                endDate = referenceDate.AddDays(double.Parse(numStr, CultureInfo.InvariantCulture));
                                 break;
                             case Constants.TimexWeek:
                                 beginDate = referenceDate;
-                                endDate = referenceDate.AddDays(7 * double.Parse(numStr));
+                                endDate = referenceDate.AddDays(7 * double.Parse(numStr, CultureInfo.InvariantCulture));
                                 break;
                             case Constants.TimexMonthFull:
                                 beginDate = referenceDate;
-                                endDate = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)));
+                                endDate = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr, CultureInfo.InvariantCulture)));
                                 break;
                             case Constants.TimexYear:
                                 beginDate = referenceDate;
-                                endDate = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)));
+                                endDate = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr, CultureInfo.InvariantCulture)));
                                 break;
                             default:
                                 return ret;
@@ -1180,12 +1183,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
                 month = referenceDate.AddMonths(swift).Month;
                 year = referenceDate.AddMonths(swift).Year;
-                ret.Timex = referenceDate.Year.ToString("D4") + "-" + month.ToString("D2");
+                ret.Timex = referenceDate.Year.ToString("D4", CultureInfo.InvariantCulture) + "-" + month.ToString("D2", CultureInfo.InvariantCulture);
             }
             else
             {
                 month = ToMonthNumber(monthStr);
-                ret.Timex = "XXXX" + "-" + month.ToString("D2");
+                ret.Timex = "XXXX" + "-" + month.ToString("D2", CultureInfo.InvariantCulture);
                 year = referenceDate.Year;
                 noYear = true;
             }
@@ -1212,7 +1215,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 }
             }
 
-            ret.Timex += "-W" + cardinal.ToString("D2");
+            ret.Timex += "-W" + cardinal.ToString("D2", CultureInfo.InvariantCulture);
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureDate, futureDate.AddDays(7));
             ret.PastValue = new Tuple<DateObject, DateObject>(pastDate, pastDate.AddDays(7));
             ret.Success = true;
@@ -1282,7 +1285,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 ret.Timex = this.config.SeasonMap[seasonStr];
                 if (hasYear)
                 {
-                    ret.Timex = year.ToString("D4") + "-" + ret.Timex;
+                    ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture) + "-" + ret.Timex;
                 }
 
                 ret.Success = true;
@@ -1436,7 +1439,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 beginLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
 
-                var endYearStr = "XX" + (endYear % 100).ToString("D2");
+                var endYearStr = "XX" + (endYear % 100).ToString("D2", CultureInfo.InvariantCulture);
                 endLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
             }

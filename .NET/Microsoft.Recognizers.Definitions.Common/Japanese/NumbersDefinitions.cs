@@ -122,7 +122,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string FracSplitRegex = @"[はと]|分\s*の";
       public const string ZeroToNineIntegerRegex = @"[〇一二三四五六七八九]";
       public const string NegativeNumberTermsRegex = @"(マ\s*イ\s*ナ\s*ス)";
-      public const string NegativeNumberTermsRegexNum = @"(?<!(\d+\s*)|[-−－])[-−－]";
+      public static readonly string NegativeNumberTermsRegexNum = $@"((?<!(\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)|[-−－])[-−－])";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*";
       public static readonly string SpeGetNumberRegex = $@"{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[半対]|[分厘]";
       public const string PairRegex = @".*[対膳足]$";

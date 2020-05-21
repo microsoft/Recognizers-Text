@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number;
@@ -1227,7 +1228,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
             }
 
-            ret.Timex += "-W" + cardinal.ToString("D2");
+            ret.Timex += "-W" + cardinal.ToString("D2", CultureInfo.InvariantCulture);
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureDate, futureDate.AddDays(7));
             ret.PastValue = new Tuple<DateObject, DateObject>(pastDate, pastDate.AddDays(7));
             ret.Success = true;
@@ -1297,7 +1298,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.Timex = this.config.SeasonMap[seasonStr];
                 if (hasYear)
                 {
-                    ret.Timex = year.ToString("D4") + "-" + ret.Timex;
+                    ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture) + "-" + ret.Timex;
                 }
 
                 ret.Success = true;
@@ -1451,7 +1452,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 beginLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
 
-                var endYearStr = "XX" + (endYear % 100).ToString("D2");
+                var endYearStr = "XX" + (endYear % 100).ToString("D2", CultureInfo.InvariantCulture);
                 endLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
             }

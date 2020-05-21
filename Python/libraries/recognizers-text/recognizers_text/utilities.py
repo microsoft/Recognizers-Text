@@ -187,7 +187,7 @@ class QueryProcessor:
 
         return result
 
-    tokens = '(kB|K[Bb]|K|M[Bb]|M|G[Bb]|G|B)'
+    tokens = '(kB|K[Bb]?|M[BbM]?|G[Bb]?|B)'
     expression = f'(?<=(\\s|\\d))' + tokens + '\\b'
     special_tokens_regex = RegExpUtility.get_safe_reg_exp(expression, regex.S)
 

@@ -116,8 +116,9 @@ ZeroToNineIntegerRegex: !simpleRegex
   def: '[〇一二三四五六七八九]'
 NegativeNumberTermsRegex: !simpleRegex
   def: (マ\s*イ\s*ナ\s*ス)
-NegativeNumberTermsRegexNum: !simpleRegex
-  def: (?<!(\d+\s*)|[-−－])[-−－]
+NegativeNumberTermsRegexNum: !nestedRegex
+  def: ((?<!(\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)|[-−－])[-−－])
+  references: [BaseNumbers.NumberMultiplierRegex]
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*
   references: [NegativeNumberTermsRegex, NegativeNumberTermsRegexNum]

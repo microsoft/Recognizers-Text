@@ -172,7 +172,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static string GenerateDurationTimex(double number, string unitStr, bool isLessThanDay)
         {
-            if (!Constants.TimexBusinessDay.Equals(unitStr))
+            if (!Constants.TimexBusinessDay.Equals(unitStr, StringComparison.Ordinal))
             {
                 switch (unitStr)
                 {
@@ -342,7 +342,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static string GenerateWeekTimex(int weekNum)
         {
-            return $"W{weekNum.ToString("D2")}";
+            return $"W{weekNum.ToString("D2", CultureInfo.InvariantCulture)}";
         }
 
         public static string GenerateDateTimePeriodTimex(string beginTimex, string endTimex, string durationTimex)
@@ -374,7 +374,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static string SetTimexWithContext(string timex, DateContext context)
         {
-            return timex.Replace(Constants.TimexFuzzyYear, context.Year.ToString("D4"));
+            return timex.Replace(Constants.TimexFuzzyYear, context.Year.ToString("D4", CultureInfo.InvariantCulture));
         }
 
         private static bool IsTimeDurationTimex(string timex)

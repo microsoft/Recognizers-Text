@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string AllOrdinalRegex = $@"({ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex})";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
-      public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(1[eè]re|1er|2e|2eme|3e|3eme|4e|4eme|5e|5eme|6e|6eme|7e|7eme|8e|8eme|9e|9eme|0e|0eme))|(11e|11eme|12e|12eme))(?=\b)";
+      public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(11e(me)?|1[eè]re?|[02-9]e(me)?)))(?=\b)";
       public static readonly string OrdinalFrenchRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
@@ -85,7 +85,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string[] WrittenIntegerSeparatorTexts = { @"et", @"-" };
       public static readonly string[] WrittenFractionSeparatorTexts = { @"et", @"sur" };
       public const string HalfADozenRegex = @"(?<=\b)demie?\s+douzaine";
-      public static readonly string DigitalNumberRegex = $@"((?<=\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
+      public static readonly string DigitalNumberRegex = $@"((?<=\b)(cent|mille|millions?|milliards?|billions?|douzaines?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
       public const string AmbiguousFractionConnectorsRegex = @"^[.]";
       public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
         {

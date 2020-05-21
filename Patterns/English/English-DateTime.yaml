@@ -521,7 +521,7 @@ HolidayRegex2: !nestedRegex
   references: [ YearRegex, RelativeRegex ]
 # General holidays (must be followed by "day")
 HolidayRegex3: !nestedRegex
-  def: (?<holiday>(?:independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|(international|int'l)\s+workers'?|mother's|mothers?|father's|fathers?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+day)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?
+  def: (?<holiday>(?:independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|(international|int'?l)\s+workers'?|mother'?s?|father'?s?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+day)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?
   references: [ YearRegex, RelativeRegex ]
 AMTimeRegex: !simpleRegex
   def: (?<am>morning)
@@ -1027,7 +1027,7 @@ HolidayNames: !dictionary
     arborday: [ arborday ]
     girlsday: [ girlsday ]
     whiteloverday: [ whiteloverday ]
-    loverday: [ loverday ]
+    loverday: [ loverday, loversday ]
     christmas: [ christmasday, christmas ]
     xmas: [ xmasday, xmas ]
     newyear: [ newyear ]
@@ -1039,7 +1039,7 @@ HolidayNames: !dictionary
     stpatrickday: [ stpatrickday, stpatricksday, stpatrick ]
     aprilfools: [ aprilfools ]
     stgeorgeday: [ stgeorgeday ]
-    mayday: [ mayday, intlworkersday, internationalworkersday ]
+    mayday: [ mayday, intlworkersday, internationalworkersday, workersday ]
     cincodemayoday: [ cincodemayoday ]
     baptisteday: [ baptisteday ]
     usindependenceday: [ usindependenceday ]

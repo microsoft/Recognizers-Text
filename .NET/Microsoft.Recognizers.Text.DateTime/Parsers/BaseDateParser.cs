@@ -861,7 +861,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Here is a very special case, timeX follow future date
-            ret.Timex = $@"XXXX-{month.ToString("D2")}-WXX-{weekday}-#{cardinal}";
+            ret.Timex = $@"XXXX-{month.ToString("D2", CultureInfo.InvariantCulture)}-WXX-{weekday}-#{cardinal}";
             ret.FutureValue = futureDate;
             ret.PastValue = pastDate;
             ret.Success = true;

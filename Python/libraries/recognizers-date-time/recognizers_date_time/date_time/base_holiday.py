@@ -290,6 +290,10 @@ class BaseHolidayParserConfiguration(HolidayParserConfiguration):
         return datetime(year, 9, BaseHolidayParserConfiguration.get_day(year, 9, 0, DayOfWeek.MONDAY))
 
     @staticmethod
+    def international_workers_day(year: int) -> datetime:
+        return datetime(year, 5, 1)
+
+    @staticmethod
     def columbus_day(year: int) -> datetime:
         return datetime(year, 10, BaseHolidayParserConfiguration.get_day(year, 10, 1, DayOfWeek.MONDAY))
 

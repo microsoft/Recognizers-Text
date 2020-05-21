@@ -124,8 +124,10 @@ class NumberWithUnitExtractor(Extractor):
         self.__separate_regex = value
 
     def __init__(self, config: NumberWithUnitExtractorConfiguration):
+
         self.config = config
         self.max_prefix_match_len = 0
+
         if self.config.suffix_list:
             self.__suffix_matcher = self._build_matcher_from_set(
                 list(self.config.suffix_list.values()))
@@ -395,7 +397,8 @@ class NumberWithUnitExtractor(Extractor):
                         return 1
                     return 0
 
-    def _dimension_inside_time(self, dimension: Match, time: Match) -> bool:
+    @staticmethod
+    def _dimension_inside_time(dimension: Match, time: Match) -> bool:
         is_sub_match = False
         if dimension.start() >= time.start() and dimension.end() <= time.end():
             is_sub_match = True
@@ -405,7 +408,7 @@ class NumberWithUnitExtractor(Extractor):
     @staticmethod
     def distinct(list1):
 
-        # intialize a null list
+        # initialize a null list
         unique_list = []
 
         # traverse for all elements

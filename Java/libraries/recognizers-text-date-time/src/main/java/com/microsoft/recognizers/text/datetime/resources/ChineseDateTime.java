@@ -122,17 +122,17 @@ public class ChineseDateTime {
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{SimpleYearRegex}", SimpleYearRegex);
 
-    public static final String DateRegexList6 = "{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}\\s*[/\\\\\\-]\\s*{SimpleYearRegex}"
+    public static final String DateRegexList6 = "{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}\\s*[/\\\\\\-]\\s*{SimpleYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)"
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{SimpleYearRegex}", SimpleYearRegex);
 
-    public static final String DateRegexList7 = "{DayRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{YearNumRegex}"
+    public static final String DateRegexList7 = "{DayRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{YearNumRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)"
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{YearNumRegex}", YearNumRegex);
 
-    public static final String DateRegexList8 = "{YearNumRegex}\\s*[/\\\\\\-\\. ]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\. ]\\s*{DayRegex}"
+    public static final String DateRegexList8 = "{YearNumRegex}\\s*[/\\\\\\-\\. ]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\. ]\\s*{DayRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)"
             .replace("{YearNumRegex}", YearNumRegex)
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DayRegex}", DayRegex);

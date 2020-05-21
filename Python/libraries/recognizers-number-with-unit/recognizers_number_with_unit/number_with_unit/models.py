@@ -24,6 +24,7 @@ class AbstractNumberWithUnitModel(Model):
         self.extractor_parser: List[ExtractorParserModel] = extractor_parser
 
     def parse(self, query: str) -> List[ModelResult]:
+
         query = QueryProcessor.preprocess(query, True)
         extraction_results = []
         parse_results = []

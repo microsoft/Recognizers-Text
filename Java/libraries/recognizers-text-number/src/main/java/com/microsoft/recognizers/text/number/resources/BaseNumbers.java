@@ -34,9 +34,11 @@ public class BaseNumbers {
 
     public static final String PlaceHolderDefault = "\\D|\\b";
 
-    public static final String NumberMultiplierRegex = "(K|k|M|G|T|B|b)";
+    public static final String CaseSensitiveTerms = "(?<=(\\s|\\d))(kB|K[Bb]?|M[BbM]?|G[Bb]?|B)\\b";
 
-    public static final String MultiplierLookupRegex = "(k|m|t|g|b)";
+    public static final String NumberMultiplierRegex = "(K|k|MM?|mil|G|T|B|b)";
+
+    public static final String MultiplierLookupRegex = "(k|m(il|m)?|t|g|b)";
 
     public static final String CurrencyRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(b|m|t|g)(?=\\b)";
 

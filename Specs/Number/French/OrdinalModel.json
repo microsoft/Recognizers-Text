@@ -483,5 +483,21 @@
         "End": 17
       }
     ]
+  },
+  {
+    "Input": "la 111e année",
+    "Results": [
+      {
+        "Text": "111e",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "111",
+          "offset":"111",
+          "relativeTo":"start"
+        },
+        "Start": 3,
+        "End": 6
+      }
+    ]
   }
 ]

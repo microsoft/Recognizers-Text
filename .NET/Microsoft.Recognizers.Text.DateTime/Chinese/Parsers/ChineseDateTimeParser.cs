@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Utilities;
+
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
@@ -207,7 +210,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 timeStr = timeStr.Substring(0, timeStr.Length - 4);
             }
 
-            timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
+            timeStr = "T" + hour.ToString("D2", CultureInfo.InvariantCulture) + timeStr.Substring(3);
             ret.Timex = pr1.TimexStr + timeStr;
 
             var val = (DateTimeResolutionResult)pr2.Value;
@@ -310,7 +313,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     timeStr = timeStr.Substring(0, timeStr.Length - 4);
                 }
 
-                timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
+                timeStr = "T" + hour.ToString("D2", CultureInfo.InvariantCulture) + timeStr.Substring(3);
 
                 ret.Timex = DateTimeFormatUtil.FormatDate(date) + timeStr;
                 ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month, date.Day, hour, min, sec);

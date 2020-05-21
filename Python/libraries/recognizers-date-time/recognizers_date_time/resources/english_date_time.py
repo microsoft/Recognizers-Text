@@ -104,7 +104,7 @@ class EnglishDateTime:
     SpecialDayWithNumRegex = f'\\b((?<number>{WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmr|today))\\b'
     RelativeDayRegex = f'\\b(((the\\s+)?{RelativeRegex}\\s+day))\\b'
     SetWeekDayRegex = f'\\b(?<prefix>on\\s+)?(?<weekday>morning|afternoon|evening|night|(sun|mon|tues|wednes|thurs|fri|satur)day)s\\b'
-    WeekDayOfMonthRegex = f'(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})'
+    WeekDayOfMonthRegex = f'(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+(week\\s+{MonthSuffixRegex}[\\.]?\\s+(on\\s+)?{WeekDayRegex}|{WeekDayRegex}\\s+{MonthSuffixRegex}))'
     RelativeWeekDayRegex = f'\\b({WrittenNumRegex}\\s+{WeekDayRegex}\\s+(from\\s+now|later))\\b'
     SpecialDate = f'(?=\\b(on|at)\\s+the\\s+){DayRegex}\\b'
     DatePreposition = f'\\b(on|in)'
@@ -112,7 +112,7 @@ class EnglishDateTime:
     DateExtractor1 = f'\\b({WeekDayRegex}\\s*[,-]?\\s*)?(({MonthRegex}[\\.]?\\s*[/\\\\.,-]?\\s*{DayRegex})|(\\({MonthRegex}\\s*[-.]\\s*{DayRegex}\\)))(\\s*\\(\\s*{WeekDayRegex}\\s*\\))?({DateExtractorYearTermRegex}\\b)?'
     DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}[\\.]?(\\s+|\\s*,\\s*|\\s+of\\s+|\\s*-\\s*){MonthRegex}[\\.]?((\\s+in)?{DateExtractorYearTermRegex})?\\b'
     DateExtractor4 = f'\\b{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}[\\.]?\\s*[/\\\\\\-]\\s*{DateYearRegex}'
-    DateExtractor5 = f'\\b{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}'
+    DateExtractor5 = f'\\b{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
     DateExtractor6 = f'(?<={DatePreposition}\\s+)({StrictRelativeRegex}\\s+)?({WeekDayRegex}\\s+)?{MonthNumRegex}[\\-\\.]{DayRegex}(?![%])\\b'
     DateExtractor7L = f'\\b({WeekDayRegex}\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}{DateExtractorYearTermRegex}(?![%])\\b'
     DateExtractor7S = f'\\b({WeekDayRegex}\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}(?![%])\\b'
@@ -214,7 +214,7 @@ class EnglishDateTime:
     ConjunctionRegex = f'\\b((and(\\s+for)?)|with)\\b'
     HolidayRegex1 = f'\\b(?<holiday>mardi gras|(washington|mao)\'s birthday|chinese new year|(new\\s+(years\'|year\\s*\'s|years?)\\s+eve)|(new\\s+(years\'|year\\s*\'s|years?)(\\s+day)?)|may\\s*day|yuan dan|christmas eve|(christmas|xmas)(\\s+day)?|black friday|yuandan|easter(\\s+(sunday|saturday|monday))?|clean monday|ash wednesday|palm sunday|maundy thursday|good friday|white\\s+(sunday|monday)|trinity sunday|pentecost|corpus christi|cyber monday)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?\\b'
     HolidayRegex2 = f'\\b(?<holiday>(thanks\\s*giving|all saint\'s|white lover|s(?:ain)?t?. (?:patrick|george)(?:\')?(?:s)?|us independence|all hallow|all souls|guy fawkes|cinco de mayo|halloween|qingming|dragon boat|april fools|tomb\\s*sweeping)(\\s+day)?)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?\\b'
-    HolidayRegex3 = f'(?<holiday>(?:independence|presidents(?:\')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|(international|int\'l)\\s+workers\'?|mother\'s|mothers?|father\'s|fathers?|female|women(\'s)?|single|teacher\'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine\'?s|baptiste|bastille|veterans(?:\')?|memorial|mid[ \\-]autumn|moon|spring|lantern)\\s+day)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?'
+    HolidayRegex3 = f'(?<holiday>(?:independence|presidents(?:\')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|(international|int\'?l)\\s+workers\'?|mother\'?s?|father\'?s?|female|women(\'s)?|single|teacher\'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine\'?s|baptiste|bastille|veterans(?:\')?|memorial|mid[ \\-]autumn|moon|spring|lantern)\\s+day)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?'
     AMTimeRegex = f'(?<am>morning)'
     PMTimeRegex = f'\\b(?<pm>afternoon|evening|night)\\b'
     InclusiveModPrepositions = f'(?<include>((on|in|at)\\s+or\\s+)|(\\s+or\\s+(on|in|at)))'
@@ -595,7 +595,7 @@ class EnglishDateTime:
                          ("arborday", ["arborday"]),
                          ("girlsday", ["girlsday"]),
                          ("whiteloverday", ["whiteloverday"]),
-                         ("loverday", ["loverday"]),
+                         ("loverday", ["loverday", "loversday"]),
                          ("christmas", ["christmasday", "christmas"]),
                          ("xmas", ["xmasday", "xmas"]),
                          ("newyear", ["newyear"]),
@@ -607,7 +607,7 @@ class EnglishDateTime:
                          ("stpatrickday", ["stpatrickday", "stpatricksday", "stpatrick"]),
                          ("aprilfools", ["aprilfools"]),
                          ("stgeorgeday", ["stgeorgeday"]),
-                         ("mayday", ["mayday", "intlworkersday", "internationalworkersday"]),
+                         ("mayday", ["mayday", "intlworkersday", "internationalworkersday", "workersday"]),
                          ("cincodemayoday", ["cincodemayoday"]),
                          ("baptisteday", ["baptisteday"]),
                          ("usindependenceday", ["usindependenceday"]),

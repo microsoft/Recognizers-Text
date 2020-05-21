@@ -2669,5 +2669,36 @@
         "End": 28
       }
     ]
+  },
+  {
+    "Input": "That account revenue target is US$ 1MM",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1mm",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000"
+        },
+        "Start": 35,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "2mil SEK can't buy you a big apartment anyome",
+    "Results": [
+      {
+        "Text": "2mil",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
   }
 ]

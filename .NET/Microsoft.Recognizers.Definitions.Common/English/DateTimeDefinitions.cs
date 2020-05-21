@@ -221,7 +221,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string ConjunctionRegex = @"\b((and(\s+for)?)|with)\b";
       public static readonly string HolidayRegex1 = $@"\b(?<holiday>mardi gras|(washington|mao)'s birthday|chinese new year|(new\s+(years'|year\s*'s|years?)\s+eve)|(new\s+(years'|year\s*'s|years?)(\s+day)?)|may\s*day|yuan dan|christmas eve|(christmas|xmas)(\s+day)?|black friday|yuandan|easter(\s+(sunday|saturday|monday))?|clean monday|ash wednesday|palm sunday|maundy thursday|good friday|white\s+(sunday|monday)|trinity sunday|pentecost|corpus christi|cyber monday)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b";
       public static readonly string HolidayRegex2 = $@"\b(?<holiday>(thanks\s*giving|all saint's|white lover|s(?:ain)?t?. (?:patrick|george)(?:')?(?:s)?|us independence|all hallow|all souls|guy fawkes|cinco de mayo|halloween|qingming|dragon boat|april fools|tomb\s*sweeping)(\s+day)?)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b";
-      public static readonly string HolidayRegex3 = $@"(?<holiday>(?:independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|(international|int'l)\s+workers'?|mother's|mothers?|father's|fathers?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+day)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?";
+      public static readonly string HolidayRegex3 = $@"(?<holiday>(?:independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|(international|int'?l)\s+workers'?|mother'?s?|father'?s?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+day)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?";
       public const string AMTimeRegex = @"(?<am>morning)";
       public const string PMTimeRegex = @"\b(?<pm>afternoon|evening|night)\b";
       public const string InclusiveModPrepositions = @"(?<include>((on|in|at)\s+or\s+)|(\s+or\s+(on|in|at)))";
@@ -637,7 +637,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"arborday", new string[] { @"arborday" } },
             { @"girlsday", new string[] { @"girlsday" } },
             { @"whiteloverday", new string[] { @"whiteloverday" } },
-            { @"loverday", new string[] { @"loverday" } },
+            { @"loverday", new string[] { @"loverday", @"loversday" } },
             { @"christmas", new string[] { @"christmasday", @"christmas" } },
             { @"xmas", new string[] { @"xmasday", @"xmas" } },
             { @"newyear", new string[] { @"newyear" } },
@@ -649,7 +649,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"stpatrickday", new string[] { @"stpatrickday", @"stpatricksday", @"stpatrick" } },
             { @"aprilfools", new string[] { @"aprilfools" } },
             { @"stgeorgeday", new string[] { @"stgeorgeday" } },
-            { @"mayday", new string[] { @"mayday", @"intlworkersday", @"internationalworkersday" } },
+            { @"mayday", new string[] { @"mayday", @"intlworkersday", @"internationalworkersday", @"workersday" } },
             { @"cincodemayoday", new string[] { @"cincodemayoday" } },
             { @"baptisteday", new string[] { @"baptisteday" } },
             { @"usindependenceday", new string[] { @"usindependenceday" } },

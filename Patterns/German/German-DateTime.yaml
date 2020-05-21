@@ -161,7 +161,7 @@ RelativeWeekDayRegex: !nestedRegex
   def: \b({WrittenNumRegex}\s+{WeekDayRegex}e\s+(von\s+jetzt|später))\b
   references: [ WrittenNumRegex, WeekDayRegex ]
 WrittenNumRegex: !simpleRegex
-  def: (zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|eins?|zwei|zwo|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)
+  def: (zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)
 SpecialDate: !nestedRegex
   def: (?=\b(an( dem)?|am)\s+){DayRegex}\b
   references: [ DayRegex ]
@@ -215,11 +215,11 @@ RangeUnitRegex: !simpleRegex
 OclockRegex: !simpleRegex
   def: (?<oclock>uhr)
 HourNumRegex: !simpleRegex
-  def: \b(?<hournum>einundzwanzig|zweiundzwanzig|dreiundzwanzig|vierundzwanzig|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|'null'|eins?|zwei|zwo|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)\b
+  def: \b(?<hournum>einundzwanzig|zweiundzwanzig|dreiundzwanzig|vierundzwanzig|zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|'null'|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)\b
 MinuteNumRegex: !simpleRegex
-  def: (?<minnum>zwanzig|dreißig|vierzig|fünfzig|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|fuenfzehn|sechzehn|siebzehn|achtzehn|neunzehn|eins?|zwei|zwo|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)
+  def: (?<minnum>zwanzig|dreißig|vierzig|fünfzig|zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|fuenfzehn|sechzehn|siebzehn|achtzehn|neunzehn|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)
 DeltaMinuteNumRegex: !simpleRegex
-  def: (?<deltaminnum>zwanzig|dreißig|vierzig|fünfzig|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|fuenfzehn|sechzehn|siebzehn|achtzehn|neunzehn|eins?|zwei|zwo|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)
+  def: (?<deltaminnum>zwanzig|dreißig|vierzig|fünfzig|zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|fuenfzehn|sechzehn|siebzehn|achtzehn|neunzehn|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)
 PmRegex: !simpleRegex
   def: ((am|gegen|in der)\s+)?(?<pm>(nachmittags?|abends?|mitternachts?|\bmittags?|((in der )?nachts?)))
 PmRegexFull: !simpleRegex
@@ -253,7 +253,7 @@ BasicTime: !nestedRegex
   def: (?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(:|\s+uhr(\s+und)?\s+){BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|\b{BaseDateTime.HourRegex}(?![%\d]))
   references: [ WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex ]
 MidnightRegex: !simpleRegex
-  def: (?<midnight>mitternacht|mitten in der nacht)
+  def: (?<midnight>mitte(r|n in der )nacht)
 MidmorningRegex: !simpleRegex
   def: (?<midmorning>mitten am vormittag)
 MidafternoonRegex: !simpleRegex
@@ -270,7 +270,7 @@ IshRegex: !nestedRegex
   def: '\b(noonish)\b'
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
-  def: (?<unit>stunden?|std?|h|minuten?|min|sekunden?|sek|s)\b
+  def: (?<unit>stunden?|std?|h|min(uten?)?|sek(unden?)?|s)\b
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>stunde|minute)\b
 FivesRegex: !simpleRegex
@@ -279,7 +279,7 @@ HourRegex: !nestedRegex
   def: \b{BaseDateTime.HourRegex}
   references: [ BaseDateTime.HourRegex ]
 PeriodHourNumRegex: !simpleRegex
-  def: (?<hour>einundzwanzig|zweiundzwanzig|dreiundzwanzig|vierundzwanzig|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|'null'|eins?|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|elf)\b
+  def: (?<hour>einundzwanzig|zweiundzwanzig|dreiundzwanzig|vierundzwanzig|zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|'null'|eins?|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|elf)\b
 ConnectNumRegex: !nestedRegex
   def: '{BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex}'
   references: [ BaseDateTime.HourRegex, DescRegex ]
@@ -763,6 +763,7 @@ Numbers: !dictionary
     'eins': 1
     'ein': 1
     'eine': 1
+    'zween': 2
     'zwei': 2
     'zwo': 2
     'drei': 3
