@@ -19,7 +19,6 @@ import com.microsoft.recognizers.text.datetime.english.extractors.EnglishTimePer
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishTimeZoneExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDatePeriodExtractor;
-import com.microsoft.recognizers.text.datetime.extractors.BaseDateTimeAltExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateTimePeriodExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
@@ -32,7 +31,6 @@ import com.microsoft.recognizers.text.datetime.extractors.BaseTimeZoneExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.french.extractors.FrenchDateExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.french.extractors.FrenchDatePeriodExtractorConfiguration;
-import com.microsoft.recognizers.text.datetime.french.extractors.FrenchDateTimeAltExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.french.extractors.FrenchDateTimeExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.french.extractors.FrenchDateTimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.french.extractors.FrenchDurationExtractorConfiguration;
