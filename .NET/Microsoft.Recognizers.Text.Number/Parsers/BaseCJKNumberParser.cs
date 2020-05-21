@@ -111,7 +111,7 @@ namespace Microsoft.Recognizers.Text.Number
                 }
             }
 
-            // Japanese determine the subtype
+            // TODO: Refacoring this check to determine the subtype for JA and KO
             if ((Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR") && ret != null)
             {
                 ret.Type = DetermineType(extResult);
