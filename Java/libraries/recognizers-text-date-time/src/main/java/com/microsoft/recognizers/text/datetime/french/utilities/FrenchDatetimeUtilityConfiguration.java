@@ -5,8 +5,7 @@ import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfigu
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.regex.Pattern;
 
-public class FrenchDatetimeUtilityConfiguration
-    implements IDateTimeUtilityConfiguration {
+public class FrenchDatetimeUtilityConfiguration implements IDateTimeUtilityConfiguration {
     public static final Pattern AgoRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AgoRegex);
 
     public static final Pattern LaterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.LaterRegex);

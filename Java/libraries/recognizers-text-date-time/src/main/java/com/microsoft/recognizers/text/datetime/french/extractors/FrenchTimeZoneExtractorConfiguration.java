@@ -7,8 +7,7 @@ import com.microsoft.recognizers.text.matcher.StringMatcher;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-public class FrenchTimeZoneExtractorConfiguration
-    extends BaseOptionsConfiguration implements ITimeZoneExtractorConfiguration {
+public class FrenchTimeZoneExtractorConfiguration extends BaseOptionsConfiguration implements ITimeZoneExtractorConfiguration {
     public FrenchTimeZoneExtractorConfiguration(final DateTimeOptions options) {
         super(options);
 

@@ -16,9 +16,7 @@ import com.microsoft.recognizers.text.datetime.utilities.TimeOfDayResolutionResu
 import com.microsoft.recognizers.text.datetime.utilities.TimexUtility;
 import java.util.regex.Pattern;
 
-public class FrenchTimePeriodParserConfiguration
-    extends BaseOptionsConfiguration
-    implements ITimePeriodParserConfiguration {
+public class FrenchTimePeriodParserConfiguration extends BaseOptionsConfiguration implements ITimePeriodParserConfiguration {
 
     private final IDateTimeExtractor timeExtractor;
     private final IDateTimeParser timeParser;

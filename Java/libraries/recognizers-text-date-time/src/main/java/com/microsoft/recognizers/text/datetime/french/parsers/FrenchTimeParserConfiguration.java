@@ -19,9 +19,7 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 import java.util.regex.Pattern;
 
-public class FrenchTimeParserConfiguration
-    extends BaseOptionsConfiguration
-    implements ITimeParserConfiguration {
+public class FrenchTimeParserConfiguration extends BaseOptionsConfiguration implements ITimeParserConfiguration {
 
     public final Pattern atRegex;
     private final Iterable<Pattern> timeRegexes;

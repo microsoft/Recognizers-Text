@@ -11,9 +11,7 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-public class FrenchTimeExtractorConfiguration
-    extends BaseOptionsConfiguration
-    implements ITimeExtractorConfiguration {
+public class FrenchTimeExtractorConfiguration extends BaseOptionsConfiguration implements ITimeExtractorConfiguration {
 
     public static final Pattern DescRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.DescRegex);
     public static final Pattern HourNumRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.HourNumRegex);

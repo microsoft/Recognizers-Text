@@ -8,9 +8,7 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-public class FrenchHolidayExtractorConfiguration
-    extends BaseOptionsConfiguration
-    implements IHolidayExtractorConfiguration {
+public class FrenchHolidayExtractorConfiguration extends BaseOptionsConfiguration implements IHolidayExtractorConfiguration {
 
     public static final Pattern H1 = RegExpUtility.getSafeRegExp(FrenchDateTime.HolidayRegex1);
 

@@ -23,9 +23,7 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class FrenchDatePeriodExtractorConfiguration
-    extends BaseOptionsConfiguration
-    implements IDatePeriodExtractorConfiguration {
+public class FrenchDatePeriodExtractorConfiguration extends BaseOptionsConfiguration implements IDatePeriodExtractorConfiguration {
     public static final Pattern TillRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TillRegex);
     public static final Pattern RangeConnectorRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RangeConnectorRegex);
     public static final Pattern DayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.DayRegex);

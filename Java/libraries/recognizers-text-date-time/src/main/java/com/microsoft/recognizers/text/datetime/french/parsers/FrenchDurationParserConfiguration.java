@@ -10,9 +10,7 @@ import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimePar
 import com.microsoft.recognizers.text.datetime.parsers.config.IDurationParserConfiguration;
 import java.util.regex.Pattern;
 
-public class FrenchDurationParserConfiguration
-    extends BaseOptionsConfiguration
-    implements IDurationParserConfiguration {
+public class FrenchDurationParserConfiguration extends BaseOptionsConfiguration implements IDurationParserConfiguration {
 
     private final IExtractor cardinalExtractor;
     private final IExtractor durationExtractor;

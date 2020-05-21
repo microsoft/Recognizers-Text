@@ -40,8 +40,7 @@ import com.microsoft.recognizers.text.number.french.extractors.OrdinalExtractor;
 import com.microsoft.recognizers.text.number.french.parsers.FrenchNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParser;
 
-public class FrenchCommonDateTimeParserConfiguration
-    extends BaseDateParserConfiguration {
+public class FrenchCommonDateTimeParserConfiguration extends BaseDateParserConfiguration {
 
     private final IDateTimeUtilityConfiguration utilityConfiguration;
 

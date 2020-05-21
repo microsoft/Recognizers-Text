@@ -11,8 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.IntFunction;
 
-public class FrenchHolidayParserConfiguration
-    extends BaseHolidayParserConfiguration {
+public class FrenchHolidayParserConfiguration extends BaseHolidayParserConfiguration {
 
     public FrenchHolidayParserConfiguration() {
 

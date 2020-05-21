@@ -16,9 +16,7 @@ import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfigu
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.regex.Pattern;
 
-public class FrenchDateTimeParserConfiguration
-    extends BaseOptionsConfiguration
-    implements IDateTimeParserConfiguration {
+public class FrenchDateTimeParserConfiguration extends BaseOptionsConfiguration implements IDateTimeParserConfiguration {
 
     public final String tokenBeforeDate;
     public final String tokenBeforeTime;

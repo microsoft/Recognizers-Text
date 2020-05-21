@@ -20,9 +20,7 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class FrenchDateParserConfiguration
-    extends BaseOptionsConfiguration
-    implements IDateParserConfiguration {
+public class FrenchDateParserConfiguration extends BaseOptionsConfiguration implements IDateParserConfiguration {
 
     private final String dateTokenPrefix;
     private final IExtractor integerExtractor;

@@ -21,9 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class FrenchDateExtractorConfiguration
-    extends BaseOptionsConfiguration
-    implements IDateExtractorConfiguration {
+public class FrenchDateExtractorConfiguration extends BaseOptionsConfiguration implements IDateExtractorConfiguration {
 
     public static final Pattern MonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MonthRegex);
     public static final Pattern MonthNumRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MonthNumRegex);

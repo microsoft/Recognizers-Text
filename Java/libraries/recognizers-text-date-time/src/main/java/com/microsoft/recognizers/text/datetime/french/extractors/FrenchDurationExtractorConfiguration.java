@@ -10,8 +10,7 @@ import com.microsoft.recognizers.text.number.french.extractors.CardinalExtractor
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.regex.Pattern;
 
-public class FrenchDurationExtractorConfiguration
-    extends BaseOptionsConfiguration implements IDurationExtractorConfiguration {
+public class FrenchDurationExtractorConfiguration extends BaseOptionsConfiguration implements IDurationExtractorConfiguration {
 
     // TODO: Investigate if required
     //    public static final Pattern UnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.UnitRegex);

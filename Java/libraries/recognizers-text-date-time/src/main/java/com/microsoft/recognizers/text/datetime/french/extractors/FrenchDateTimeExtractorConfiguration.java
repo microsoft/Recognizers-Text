@@ -18,9 +18,7 @@ import com.microsoft.recognizers.text.utilities.StringUtility;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
-public class FrenchDateTimeExtractorConfiguration
-    extends BaseOptionsConfiguration
-    implements IDateTimeExtractorConfiguration {
+public class FrenchDateTimeExtractorConfiguration extends BaseOptionsConfiguration implements IDateTimeExtractorConfiguration {
 
     public static final Pattern PrepositionRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PrepositionRegex);
     public static final Pattern NowRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NowRegex);

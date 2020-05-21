@@ -16,9 +16,7 @@ import com.microsoft.recognizers.text.datetime.resources.FrenchDateTime;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.regex.Pattern;
 
-public class FrenchSetExtractorConfiguration
-    extends BaseOptionsConfiguration
-    implements ISetExtractorConfiguration {
+public class FrenchSetExtractorConfiguration extends BaseOptionsConfiguration implements ISetExtractorConfiguration {
 
     public static final Pattern PeriodicRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PeriodicRegex);
     public static final Pattern EachUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.EachUnitRegex);

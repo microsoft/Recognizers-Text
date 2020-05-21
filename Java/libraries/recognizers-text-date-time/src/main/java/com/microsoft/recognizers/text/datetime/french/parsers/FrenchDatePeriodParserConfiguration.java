@@ -18,9 +18,7 @@ import java.util.Arrays;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
-public class FrenchDatePeriodParserConfiguration
-    extends BaseOptionsConfiguration
-    implements IDatePeriodParserConfiguration {
+public class FrenchDatePeriodParserConfiguration extends BaseOptionsConfiguration implements IDatePeriodParserConfiguration {
 
     public static final Pattern nextPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NextPrefixRegex);
     public static final Pattern previousPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PreviousPrefixRegex);

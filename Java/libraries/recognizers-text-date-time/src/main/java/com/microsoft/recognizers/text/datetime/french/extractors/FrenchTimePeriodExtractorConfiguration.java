@@ -20,9 +20,7 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class FrenchTimePeriodExtractorConfiguration
-    extends BaseOptionsConfiguration
-    implements ITimePeriodExtractorConfiguration {
+public class FrenchTimePeriodExtractorConfiguration extends BaseOptionsConfiguration implements ITimePeriodExtractorConfiguration {
 
     public static final Pattern HourNumRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.HourNumRegex);
     public static final Pattern PureNumFromTo = RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumFromTo);

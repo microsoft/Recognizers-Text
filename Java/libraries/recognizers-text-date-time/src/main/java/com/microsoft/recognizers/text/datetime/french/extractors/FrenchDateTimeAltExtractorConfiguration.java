@@ -12,9 +12,7 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-public class FrenchDateTimeAltExtractorConfiguration
-    extends BaseOptionsConfiguration
-    implements IDateTimeAltExtractorConfiguration {
+public class FrenchDateTimeAltExtractorConfiguration extends BaseOptionsConfiguration implements IDateTimeAltExtractorConfiguration {
 
     public static final Pattern ThisPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ThisPrefixRegex);
     public static final Pattern PreviousPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PreviousPrefixRegex);

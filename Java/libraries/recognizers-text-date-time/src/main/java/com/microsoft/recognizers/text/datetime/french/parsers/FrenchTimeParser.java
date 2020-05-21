@@ -11,8 +11,7 @@ import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 import java.time.LocalDateTime;
 
-public class FrenchTimeParser
-    extends BaseTimeParser {
+public class FrenchTimeParser extends BaseTimeParser {
 
     public FrenchTimeParser(final ITimeParserConfiguration config) {
         super(config);

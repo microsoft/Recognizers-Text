@@ -11,9 +11,7 @@ import com.microsoft.recognizers.text.datetime.parsers.config.ISetParserConfigur
 import com.microsoft.recognizers.text.datetime.utilities.MatchedTimexResult;
 import java.util.regex.Pattern;
 
-public class FrenchSetParserConfiguration
-    extends BaseOptionsConfiguration
-    implements ISetParserConfiguration {
+public class FrenchSetParserConfiguration extends BaseOptionsConfiguration implements ISetParserConfiguration {
 
     private final IDateTimeExtractor durationExtractor;
     private final IDateTimeParser durationParser;

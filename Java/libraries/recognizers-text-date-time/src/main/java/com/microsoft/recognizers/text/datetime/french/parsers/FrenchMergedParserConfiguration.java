@@ -10,9 +10,7 @@ import com.microsoft.recognizers.text.datetime.parsers.config.IMergedParserConfi
 import com.microsoft.recognizers.text.matcher.StringMatcher;
 import java.util.regex.Pattern;
 
-public class FrenchMergedParserConfiguration
-    extends FrenchCommonDateTimeParserConfiguration
-    implements IMergedParserConfiguration {
+public class FrenchMergedParserConfiguration extends FrenchCommonDateTimeParserConfiguration implements IMergedParserConfiguration {
 
     public FrenchMergedParserConfiguration(final DateTimeOptions options) {
         super(options);

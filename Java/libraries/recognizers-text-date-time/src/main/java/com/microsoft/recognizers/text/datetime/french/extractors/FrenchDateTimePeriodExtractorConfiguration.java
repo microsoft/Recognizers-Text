@@ -22,9 +22,7 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class FrenchDateTimePeriodExtractorConfiguration
-    extends BaseOptionsConfiguration
-    implements IDateTimePeriodExtractorConfiguration {
+public class FrenchDateTimePeriodExtractorConfiguration extends BaseOptionsConfiguration implements IDateTimePeriodExtractorConfiguration {
 
     public static final Pattern weekDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayRegex);
     public static final Pattern NumberCombinedWithUnit = RegExpUtility

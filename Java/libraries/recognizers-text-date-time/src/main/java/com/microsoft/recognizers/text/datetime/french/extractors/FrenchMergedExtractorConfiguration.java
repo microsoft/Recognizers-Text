@@ -26,9 +26,7 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.regex.Pattern;
 import org.javatuples.Pair;
 
-public class FrenchMergedExtractorConfiguration
-    extends BaseOptionsConfiguration
-    implements IMergedExtractorConfiguration {
+public class FrenchMergedExtractorConfiguration extends BaseOptionsConfiguration implements IMergedExtractorConfiguration {
 
     public static final Pattern BeforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex);
     public static final Pattern AfterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AfterRegex);
