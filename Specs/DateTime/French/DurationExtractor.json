@@ -22,10 +22,10 @@
     ]
   },
   {
-    "Input": "je partirai pour 3.5ans",
+    "Input": "je partirai pour 3,5ans",
     "Results": [
       {
-        "Text": "3.5ans",
+        "Text": "3,5ans",
         "Type": "duration",
         "Start": 17,
         "Length": 6
