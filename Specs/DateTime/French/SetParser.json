@@ -2,7 +2,7 @@
   {
     "Input": "Je vais partir a 9am Dimanches",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:16.6159645+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:16.6159645-03:00"
     },
     "Results": [
       {
@@ -25,7 +25,7 @@
   {
     "Input": "Je vais partir chaque de matin a 9am",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:19.4550127+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:19.4550127-03:00"
     },
     "Results": [
       {
@@ -48,7 +48,7 @@
   {
     "Input": "Je vais partir chaque apres-midi a 4pm",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:19.4900115+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:19.4900115-03:00"
     },
     "Results": [
       {
@@ -71,7 +71,7 @@
   {
     "Input": "Je vais partir chaque nuit a 9pm",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:19.5265112+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:19.5265112-03:00"
     },
     "Results": [
       {
@@ -94,7 +94,7 @@
   {
     "Input": "Je vais partir chaque nuit 9",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:19.5560123+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:19.5560123-03:00"
     },
     "Results": [
       {
@@ -117,7 +117,7 @@
   {
     "Input": "Je vais partir chaque nuit a 21",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:19.5920118+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:19.5920118-03:00"
     },
     "Results": [
       {
@@ -140,7 +140,7 @@
   {
     "Input": "Je vais partir chaque nuit 21",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:19.621011+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:19.621011-03:00"
     },
     "Results": [
       {
@@ -163,7 +163,7 @@
   {
     "Input": "Je vais partir tous les de matin 9am",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:19.6610194+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:19.6610194-03:00"
     },
     "Results": [
       {
@@ -186,7 +186,7 @@
   {
     "Input": "Je vais partir a Lundis",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:21.7045166+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:21.7045166-03:00"
     },
     "Results": [
       {
@@ -209,7 +209,7 @@
   {
     "Input": "Je vais partir Dimanches",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:21.7260153+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:21.7260153-03:00"
     },
     "Results": [
       {
@@ -232,7 +232,7 @@
   {
     "Input": "Je vais partir tous les Dimanches",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:21.7855155+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:21.7855155-03:00"
     },
     "Results": [
       {
@@ -255,7 +255,7 @@
   {
     "Input": "Je vais partir chaque Dimanches",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:21.8420111+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:21.8420111-03:00"
     },
     "Results": [
       {
@@ -278,7 +278,7 @@
   {
     "Input": "Je vais partir chaque semaine",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:35.3570246+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:35.3570246-03:00"
     },
     "Results": [
       {
@@ -301,7 +301,7 @@
   {
     "Input": "Je vais partir bihebdomadaire",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:35.3580267+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:35.3580267-03:00"
     },
     "Results": [
       {
@@ -324,7 +324,7 @@
   {
     "Input": "Je vais partir hebdomadaire",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:35.3590265+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:35.3590265-03:00"
     },
     "Results": [
       {
@@ -347,7 +347,7 @@
   {
     "Input": "Je vais partir quotidien",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:35.3600258+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:35.3600258-03:00"
     },
     "Results": [
       {
@@ -370,7 +370,7 @@
   {
     "Input": "Je vais partir journellement",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:35.3610265+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:35.3610265-03:00"
     },
     "Results": [
       {
@@ -393,7 +393,7 @@
   {
     "Input": "Je vais partir chaque mois",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:35.3775441+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:35.3775441-03:00"
     },
     "Results": [
       {
@@ -416,7 +416,7 @@
   {
     "Input": "Je vais partir annuellement",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:35.3785448+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:35.3785448-03:00"
     },
     "Results": [
       {
@@ -439,7 +439,7 @@
   {
     "Input": "Je vais partir annuel",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:35.3795446+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:35.3795446-03:00"
     },
     "Results": [
       {
@@ -462,7 +462,7 @@
   {
     "Input": "Je vais partir chaque deux jours",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:35.4010443+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:35.4010443-03:00"
     },
     "Results": [
       {
@@ -485,7 +485,7 @@
   {
     "Input": "Je vais partir chaque trois semaine",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:35.4250441+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:35.4250441-03:00"
     },
     "Results": [
       {
@@ -508,7 +508,7 @@
   {
     "Input": "Je vais partir chaque  15/4",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:35.447021+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:35.447021-03:00"
     },
     "Results": [
       {
@@ -531,7 +531,7 @@
   {
     "Input": "Je vais partir chaque Lundi",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:35.469026+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:35.469026-03:00"
     },
     "Results": [
       {
@@ -554,7 +554,7 @@
   {
     "Input": "Je vais partir chaque Lundi 4pm",
     "Context": {
-      "ReferenceDateTime": "2017-10-09T12:21:35.4960223+03:00"
+      "ReferenceDateTime": "2017-10-09T12:21:35.4960223-03:00"
     },
     "Results": [
       {
