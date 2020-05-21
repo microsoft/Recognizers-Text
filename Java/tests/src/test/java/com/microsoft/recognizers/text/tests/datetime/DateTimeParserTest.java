@@ -29,6 +29,7 @@ import com.microsoft.recognizers.text.datetime.french.parsers.FrenchDateTimePars
 import com.microsoft.recognizers.text.datetime.french.parsers.FrenchDateTimePeriodParserConfiguration;
 import com.microsoft.recognizers.text.datetime.french.parsers.FrenchDurationParserConfiguration;
 import com.microsoft.recognizers.text.datetime.french.parsers.FrenchHolidayParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchMergedParserConfiguration;
 import com.microsoft.recognizers.text.datetime.french.parsers.FrenchSetParserConfiguration;
 import com.microsoft.recognizers.text.datetime.french.parsers.FrenchTimeParser;
 import com.microsoft.recognizers.text.datetime.french.parsers.FrenchTimeParserConfiguration;
@@ -279,8 +280,8 @@ public class DateTimeParserTest extends AbstractTest {
                 return new BaseHolidayParser(new FrenchHolidayParserConfiguration());
             case "SetParser":
                 return new BaseSetParser(new FrenchSetParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
-            //case "MergedParser":
-            //    return new BaseMergedDateTimeParser(new FrenchMergedParserConfiguration(DateTimeOptions.None));
+            case "MergedParser":
+                return new BaseMergedDateTimeParser(new FrenchMergedParserConfiguration(DateTimeOptions.None));
             case "TimeParser":
                 return new FrenchTimeParser(new FrenchTimeParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "TimePeriodParser":
