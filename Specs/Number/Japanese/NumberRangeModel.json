@@ -2125,7 +2125,7 @@
   },
   {
     "Input": "5k-20k",
-    "NotSupported": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "5k-20k",
