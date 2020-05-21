@@ -1753,7 +1753,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "PendingImplementation",
     "Results": [
       {
         "Text": "십만",
@@ -2030,7 +2030,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "PendingImplementation",
     "Results": [
       {
         "Text": "이백과 이천",
@@ -2066,7 +2066,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "PendingImplementation",
     "Results": [
       {
         "Text": "322백",
@@ -2136,7 +2136,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "Need more research by language expert",
     "Results": [
       {
         "Text": "1 234 567",
@@ -2155,7 +2155,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "Need more research by language expert",
     "Results": [
       {
         "Text": "40 000",
@@ -2184,7 +2184,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "Need more research by language expert",
     "Results": [
       {
         "Text": "1 414 021 100",
@@ -2203,7 +2203,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "Need more research by language expert",
     "Results": [
       {
         "Text": "423",
@@ -2306,7 +2306,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "PendingImplementation",
     "Results": [
       {
         "Text": "1",
@@ -2372,7 +2372,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "PendingImplementation",
     "Results": [
       {
         "Text": "4천3백21",
@@ -2607,7 +2607,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "Need more research by language expert",
     "Results": [
       {
         "Text": "다스",
@@ -2663,7 +2663,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "PendingImplementation",
     "Results": [
       {
         "Text": "3백",
@@ -2854,7 +2854,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "Need more research by language expert",
     "Results": [
       {
         "Text": "1 234 567.89",
@@ -4012,35 +4012,35 @@
     "Input": "180.25ml  액체",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "Need more research by language expert",
     "Results": []
   },
   {
     "Input": "180ml 액체",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "Need more research by language expert",
     "Results": []
   },
   {
     "Input": "29km 길",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "Need more research by language expert",
     "Results": []
   },
   {
     "Input": "내 생일은 오월 4일이다",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "Need more research by language expert",
     "Results": []
   },
   {
     "Input": ".25ml 짜리 액체",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "Need more research by language expert",
     "Results": []
   },
   {
@@ -4052,7 +4052,7 @@
     "Input": "1미터는 숫자가 아닙니다",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation",
+    "Comment": "Need more research by language expert",
     "Results": []
   },
   {
