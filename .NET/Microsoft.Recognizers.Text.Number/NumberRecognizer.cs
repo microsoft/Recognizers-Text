@@ -342,6 +342,13 @@ namespace Microsoft.Recognizers.Text.Number
                     Dutch.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Dutch, options))));
 
             RegisterModel<PercentModel>(
+                Culture.Korean,
+                (options) => new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new KoreanNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Korean, options))),
+                    new Korean.PercentageExtractor()));
+
+            RegisterModel<PercentModel>(
                 Culture.Dutch,
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new DutchNumberParserConfiguration(

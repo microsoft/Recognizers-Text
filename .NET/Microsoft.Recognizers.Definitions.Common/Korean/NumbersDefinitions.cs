@@ -186,7 +186,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public static readonly string IntegerPercentageRegex = $@"{ZeroToNineFullHalfRegex}+\s*개\s*백\s*분\s*점";
       public static readonly string IntegerPercentageWithMultiplierRegex = $@"{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*개\s*백\s*분\s*점";
       public static readonly string NumbersFractionPercentageRegex = $@"{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+\s*개\s*백\s*분\s*점";
-      public static readonly string SimpleIntegerPercentageRegex = $@"(?<!%|\d){NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)[％%](?!\d)";
+      public static readonly string SimpleIntegerPercentageRegex = $@"(?<!%|\d)({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})?({AllIntRegex}|{ZeroToNineFullHalfRegex}|{RoundNumberIntegerRegex})+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)([％%]|(퍼\s*센\s*트)|(프\s*로)|(퍼\s*센\s*티\s*지))(?!\d)";
       public const string TillRegex = @"(부터|까지|--|-|—|——|~)";
       public const string MoreRegex = @"(초과|많|높|크|더많|더높|더크|>)";
       public const string LessRegex = @"(미만|적|낮|작|더적|더낮|더적|<)";
