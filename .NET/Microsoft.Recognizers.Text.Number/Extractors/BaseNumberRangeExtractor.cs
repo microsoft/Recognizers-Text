@@ -82,9 +82,13 @@ namespace Microsoft.Recognizers.Text.Number
 
                     var nums = er.Select(r => (double)(numberParser.Parse(r).Value ?? 0)).ToList();
 
-                    moreIndex = matchSource.First(r => r.Value.Equals(NumberRangeConstants.MORE) && r.Key.Item1 >= start &&
+                    // Order matchSource by decreasing match length so that "no less than x" is before "less than x"
+                    var matchList = matchSource.ToList();
+                    matchList.Sort((pair1, pair2) => pair2.Key.Item2.CompareTo(pair1.Key.Item2));
+
+                    moreIndex = matchList.First(r => r.Value.Equals(NumberRangeConstants.MORE) && r.Key.Item1 >= start &&
                                                        r.Key.Item1 + r.Key.Item2 <= start + length).Key.Item1;
-                    lessIndex = matchSource.First(r => r.Value.Equals(NumberRangeConstants.LESS) && r.Key.Item1 >= start &&
+                    lessIndex = matchList.First(r => r.Value.Equals(NumberRangeConstants.LESS) && r.Key.Item1 >= start &&
                                                        r.Key.Item1 + r.Key.Item2 <= start + length).Key.Item1;
 
                     if (!((nums[0] < nums[1] && moreIndex <= lessIndex) || (nums[0] > nums[1] && moreIndex >= lessIndex)))
@@ -161,7 +165,7 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 if (numberStr.Trim().EndsWith(extractNum.Text) && match.Value.StartsWith(numberStr))
                 {
-                    start = source.IndexOf(numberStr) + extractNum.Start ?? 0;
+                    start = match.Index + extractNum.Start ?? 0;
                     length = length - extractNum.Start ?? 0;
                     validNum = true;
                 }
