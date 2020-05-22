@@ -416,6 +416,7 @@ public class BaseNumberParser implements IParser {
     private boolean skipNonDecimalSeparator(char ch, int distance, CultureInfo culture) {
         int decimalLength = 3;
 
+        // @TODO: Add this to project level configuration file to be kept in sync
         // Special cases for multi-language countries where decimal separators can be used interchangeably. Mostly informally.
         // Ex: South Africa, Namibia; Puerto Rico in ES; or in Canada for EN and FR.
         // "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
