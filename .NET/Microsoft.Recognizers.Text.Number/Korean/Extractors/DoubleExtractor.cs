@@ -25,6 +25,10 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
+                    new Regex(NumbersDefinitions.DoubleRoundNumberSpecialsChars, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                },
+                {
                     // (-).2
                     new Regex(NumbersDefinitions.SimpleDoubleSpecialsChars, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
