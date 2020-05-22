@@ -40,7 +40,7 @@ NumbersWithSuffix: !nestedRegex
   def: (((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
   references: [ BaseNumbers.NumberMultiplierRegex ]
 RoundNumberIntegerRegexWithLocks: !nestedRegex
-  def: (?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)
+  def: (?<=\b)\d+(\s+{RoundNumberIntegerRegex})+(?=\b)
   references: [ RoundNumberIntegerRegex ]
 NumbersWithDozenSuffix: !nestedRegex
   def: (((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|(?<=\b))\d+\s+dozen(s)?(?=\b)

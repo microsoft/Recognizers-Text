@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string PlaceHolderDefault = @"\D|\b";
       public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+(\s*(K|k|MM?|mil|G|T|B|b))?\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";
       public static readonly string NumbersWithSuffix = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
-      public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)";
+      public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+(\s+{RoundNumberIntegerRegex})+(?=\b)";
       public static readonly string NumbersWithDozenSuffix = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|(?<=\b))\d+\s+dozen(s)?(?=\b)";
       public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
       public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((half\s+)?a\s+dozen)|({AllIntRegex}\s+dozen(s)?))(?=\b)";
