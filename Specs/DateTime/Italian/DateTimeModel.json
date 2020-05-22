@@ -2279,5 +2279,43 @@
         }
       }
     ]
+  },
+  {
+    "Input": "martedì 11:00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "martedì 11:00",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2T11:00",
+              "type": "datetime",
+              "value": "2016-11-01 11:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T11:00",
+              "type": "datetime",
+              "value": "2016-11-08 11:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T23:00",
+              "type": "datetime",
+              "value": "2016-11-01 23:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T23:00",
+              "type": "datetime",
+              "value": "2016-11-08 23:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
