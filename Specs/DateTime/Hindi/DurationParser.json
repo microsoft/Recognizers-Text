@@ -1077,5 +1077,321 @@
         "Length": 12
       }
     ]
+  },
+  {
+    "Input": "मैं एक हफ्ता तीन दिनों के लिए जाउंगी",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक हफ्ता तीन दिनों",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W3D",
+          "FutureResolution": {
+            "duration": "864000"
+          },
+          "PastResolution": {
+            "duration": "864000"
+          }
+        },
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो हफ़्तों के लिए जाउंगी",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हफ़्तों",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "duration": "1209600"
+          },
+          "PastResolution": {
+            "duration": "1209600"
+          }
+        },
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो दिनों के लिए जाउंगी",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो दिनों",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2D",
+          "FutureResolution": {
+            "duration": "172800"
+          },
+          "PastResolution": {
+            "duration": "172800"
+          }
+        },
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो दिनों से कम के लिए जाउंगी",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो दिनों से कम",
+        "Type": "duration",
+        "Value": {
+          "Mod": "less",
+          "Timex": "P2D",
+          "FutureResolution": {
+            "duration": "172800"
+          },
+          "PastResolution": {
+            "duration": "172800"
+          }
+        },
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं एक घण्टे से ज़्यादा के लिए जाउंगी",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक घण्टे से ज़्यादा",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1H",
+          "Mod": "more",
+          "FutureResolution": {
+            "duration": "3600"
+          },
+          "PastResolution": {
+            "duration": "3600"
+          }
+        },
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "मैं एक और घंटे के लिए जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक और घंटे",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1H",
+          "FutureResolution": {
+            "duration": "3600"
+          },
+          "PastResolution": {
+            "duration": "3600"
+          }
+        },
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मुझे पता चला की आप एक और हफ्ते के लिए बाहर हैं ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक और हफ्ते",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "duration": "604800"
+          },
+          "PastResolution": {
+            "duration": "604800"
+          }
+        },
+        "Start": 19,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "क्या हम एक और महीने के लिए रुक सकते हैं?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक और महीने",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "duration": "2592000"
+          },
+          "PastResolution": {
+            "duration": "2592000"
+          }
+        },
+        "Start": 8,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "क्या हम एक और व्यापारिक दिन रुक सकतें हैं?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक और व्यापारिक दिन",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1BD",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 8,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो दशकों के लिए जाउंगा",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो दशकों",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P20Y",
+          "FutureResolution": {
+            "duration": "630720000"
+          },
+          "PastResolution": {
+            "duration": "630720000"
+          }
+        },
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं एक पखवाड़े के लिए जाउंगी",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक पखवाड़े",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "duration": "1209600"
+          },
+          "PastResolution": {
+            "duration": "1209600"
+          }
+        },
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "क्या हम एक महीना और रुक सकतें हैं?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक महीना",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "duration": "2592000"
+          },
+          "PastResolution": {
+            "duration": "2592000"
+          }
+        },
+        "Start": 8,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "क्या हम एक व्यावसायिक दिन और रुक सकतें हैं?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक व्यावसायिक दिन",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1BD",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 8,
+        "Length": 17
+      }
+    ]
   }
 ]
