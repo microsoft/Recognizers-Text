@@ -534,13 +534,13 @@ public class FrenchDatePeriodParserConfiguration extends BaseOptionsConfiguratio
     public boolean isWeekOnly(final String text) {
         final String trimmedText = text.trim().toLowerCase();
 
-        final boolean nextPrefix = Arrays.stream(RegExpUtility.getMatches(nextPrefixRegex, trimmedText))
+        final boolean nextSuffix = Arrays.stream(RegExpUtility.getMatches(nextSuffixRegex, trimmedText))
             .findFirst().isPresent();
         final boolean pastSuffix = Arrays.stream(RegExpUtility.getMatches(pastSuffixRegex, trimmedText))
             .findFirst().isPresent();
 
         return (FrenchDateTime.WeekTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) ||
-            (FrenchDateTime.WeekTerms.stream().anyMatch(o -> trimmedText.contains(o)) && (nextPrefix || pastSuffix))) &&
+            (FrenchDateTime.WeekTerms.stream().anyMatch(o -> trimmedText.contains(o)) && (nextSuffix || pastSuffix))) &&
             !FrenchDateTime.WeekendTerms.stream().anyMatch(o -> trimmedText.endsWith(o));
     }
 
