@@ -113,10 +113,10 @@ public class FrenchCommonDateTimeParserConfiguration extends BaseDateParserConfi
             new FrenchDateTimePeriodExtractorConfiguration(options));
 
         timeZoneParser = new BaseTimeZoneParser();
+        durationParser = new BaseDurationParser(new FrenchDurationParserConfiguration(this));
         dateParser = new BaseDateParser(new FrenchDateParserConfiguration(this));
         timeParser = new FrenchTimeParser(new FrenchTimeParserConfiguration(this));
         dateTimeParser = new BaseDateTimeParser(new FrenchDateTimeParserConfiguration(this));
-        durationParser = new BaseDurationParser(new FrenchDurationParserConfiguration(this));
         datePeriodParser = new BaseDatePeriodParser(new FrenchDatePeriodParserConfiguration(this));
         timePeriodParser = new BaseTimePeriodParser(new FrenchTimePeriodParserConfiguration(this));
         dateTimePeriodParser = new BaseDateTimePeriodParser(new FrenchDateTimePeriodParserConfiguration(this));
