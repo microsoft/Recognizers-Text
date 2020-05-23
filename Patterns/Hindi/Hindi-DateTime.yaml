@@ -94,10 +94,10 @@ FullTextYearRegex: !nestedRegex
 OclockRegex: !simpleRegex
   def: (?<oclock>अराउंड|लगभग|बजे|ओक्लॉक|o\s*((’|‘|')\s*)?clock)
 AmDescRegex: !nestedRegex
-  def: (?:{BaseDateTime.BaseAmDescRegex}|पू\.|पूर्वाहन|ए\.एम\.)
+  def: (?:{BaseDateTime.BaseAmDescRegex}|पू\.|सुबह|पूर्वाहन|ए\.एम\.|एएम)
   references: [BaseDateTime.BaseAmDescRegex]
 PmDescRegex: !nestedRegex
-  def: (:?{BaseDateTime.BasePmDescRegex}|अप\.|पीएम|अपराह्न|अपराहन)
+  def: (:?{BaseDateTime.BasePmDescRegex}|अप\.|पीएम|पी\.एम\.|अपराह्न|अपराहन)
   references: [BaseDateTime.BasePmDescRegex]
 AmPmDescRegex: !nestedRegex
   def: (?:{BaseDateTime.BaseAmPmDescRegex})
@@ -110,8 +110,8 @@ DescRegexA: !nestedRegex
   references: [ OclockRegex, BaseDateTime.BaseAmDescRegex, BaseDateTime.BasePmDescRegex, AmPmDescRegex ]
 # Exclude cases that include the "Am/Pm" suffix
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))
-  references: [ AmDescRegex, PmDescRegex]
+  def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|{OclockRegex}|\.\d)))
+  references: [ AmDescRegex, PmDescRegex, OclockRegex]
 YearRegex: !nestedRegex
   def: (?:{BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
@@ -341,7 +341,7 @@ PmRegex: !simpleRegex
 PmRegexFull: !simpleRegex
   def: (?<pm>(दोपहर\s+)?खाने\s+के\s+वक़्त\s+तक|(दोपहर|सायं|शामों|शाम|संध्या|सायंकाल|अपराह्न|अपराहन|evening|((आधी|अर्ध)\s+)?रात)(\s+((के(?!\s+लिए)|को|में|की)(?!\s+दौरान)|(?=(\s+(के|को|में|की)\s+दौरान))))?|आधी\s*(-\s*)?रात|अर्ध\s*(-\s*)?रात्रि|लंचटाइम|लंच\s+के\s+समय)
 AmRegex: !simpleRegex
-  def: (?<am>सवेरे|पूर्वाह्न|(सुबह|morning|दिन\s+के|पूर्वाहन)(\s*(-सुबह|(के|को|में|की)(?!\s+दौरान)|(?=(\s+(के|को|में|की)\s+दौरान))))?|प्रातः)
+  def: (?<am>सवेरे|पूर्वाह्न|(सुबह(?!\s+(के\s+दौरान))|morning|दिन(?!\s+हैं)|पूर्वाहन|प्रातः)(\s*(-सुबह|(?:के|को|में|की)))?)
 LunchRegex: !simpleRegex
   def: (खाने\s+के\s+वक़्त\s+तक|लंचटाइम|लंच\s+के\s+समय)
 NightRegex: !simpleRegex
@@ -355,8 +355,8 @@ WrittenTimeRegex: !nestedRegex
   def: (?<writtentime>{HourNumRegex}\s+({MinuteNumRegex}|(?<tens>बीस|तीस|चालीस|पचास|twenty|thirty|fou?rty|fifty)\s+{MinuteNumRegex}))
   references: [ HourNumRegex, MinuteNumRegex ]
 TimePrefix: !nestedRegex
-  def: (?<prefix>((बजकर|बजने\s+(में|से))\s+)?{LessThanOneHour}(\s+(बाकी|पहले))?)
-  references: [ HourNumRegex, LessThanOneHour, BaseDateTime.HourRegex ]
+  def: (?<prefix>((बजकर|बजने\s+(में|से))\s+)?{LessThanOneHour}(\s+(बाकी|पहले|होने के\s+{MinuteNumRegex}\s+मिनट\s+बाद))?)
+  references: [ HourNumRegex, LessThanOneHour, BaseDateTime.HourRegex, MinuteNumRegex ]
 TimeSuffix: !nestedRegex
   def: (?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})
   references: [ AmRegex, PmRegex, OclockRegex ]
@@ -373,7 +373,7 @@ MidmorningRegex: !simpleRegex
 MidafternoonRegex: !simpleRegex
   def: (?<midafternoon>देर\s*दोपहर|दोपहर(\s*(देर|के\s*आसपास))|भरी\s*दुपहरी)
 MiddayRegex: !simpleRegex
-  def: (?<midday>दिन\s*के\s*मध्य|दिन\s*के\s*बीच|दोपहर(\s+के\s+खाने\s+के\s+वक़्त)?(\s*(12|बारह)\s*बजे)?|मध्याह्न)
+  def: (?<midday>दिन\s*के\s*मध्य|दिन\s*के\s*बीच|दोपहर\s+में|दोपहर(\s+के\s+खाने\s+के\s+वक़्त)?(\s*(12|बारह)\s*बजे)?|मध्याह्न|दिन\s+(के\s+)?चढ़ते\s+ही|दिन\s+चढ़ने\s+पर)
 MidTimeRegex: !nestedRegex
   def: (?<mid>({MidafternoonRegex}|{MiddayRegex}|{MidnightRegex}|{MidmorningRegex}))
   references: [ MidnightRegex, MidmorningRegex, MidafternoonRegex, MiddayRegex ]
@@ -525,7 +525,7 @@ LessThanRegex: !simpleRegex
 MoreThanRegex: !simpleRegex
   def: \b(से\s+(ज़्यादा|ज्यादा))
 DurationUnitRegex: !nestedRegex
-  def: (?<unit>{DateUnitRegex}|((घं|मि)(\.|(?=[/\\.,-])))|घण्टों|घण्टे(\sऔर)?|कार्य\s?दिवस(\sऔर)?|घंटों|घंटे|घंटा|घं|आर्स|h|मिनटों|मिनट|मिन\.|min\.|min(ute)?s?|सेकंड|सेकेंड|sec(ond)?s?)
+  def: (?<unit>{DateUnitRegex}|((घं|मि)(\.|(?=[/\\.,-])))|घण्टों|घण्टे(\sऔर)?|कार्य\s?दिवस(\sऔर)?|घंटों|घंटे|घंटा|घं|आर्स|h|मिनटों|मिनट|मिन\.|min\.|min(ute)?s?|सेकंड्स|सेकंड|सेकेंड|sec(ond)?s?)
   references: [ DateUnitRegex ]
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*(और)\s+((एक)?\s+)?(?<suffix_num>आधे|साढ़े|तिमाही)|(?<suffix_num>साढ़े|आधे|तिमाही))
@@ -582,15 +582,15 @@ NowTimeRegex: !simpleRegex
 RecentlyTimeRegex: !simpleRegex
   def: (recently|previously|हाल\s+ही(\s+में)?|पहले(\s+से)?)
 AsapTimeRegex: !simpleRegex
-  def: (as\s+soon\s+as\s+possible|asap|जल्द\s+से\s+जल्द)
+  def: (as\s+soon\s+as\s+possible|asap|ज़ल्दी\s+से\s+ज़ल्दी|जितनी\s+जल्दी\s+हो\s+सके|जल्द\s+से\s+जल्द)
 InclusiveModPrepositions: !simpleRegex
   def: (?<include>((को|में|बीच में|in|से|पर|at)\s+(अथवा|या)\s+)|(\s+(अथवा|या)\s+(को|में|बीच में|in|से|पर)))
 BeforeRegex: !nestedRegex
-  def: ((\b({InclusiveModPrepositions}\s*)?(?:(((से|के)\s+)?पहले)|तक|पहले\s+से|(के|से)\s+पूर्व|(बाद में नही|पूर्व)\s+से|ending\s+(with|on)|by|(un)?till?|(?<include>as\s+late\s+as))(\s*{InclusiveModPrepositions})?\b)|(?<!\w|>)((?<include><\s*=)|<))(\s+the)?
+  def: ((({InclusiveModPrepositions}\s*)?\s*(?:(((से|के)\s+)?पहले(\s+नहीं)?)|तक|पहले\s+से|(के|से)\s+पूर्व|(बाद में नही|पूर्व)\s+से|ending\s+(with|on)|by|(un)?till?|(?<include>as\s+late\s+as))(\s*{InclusiveModPrepositions})?\b)|(?<!\w|>)((?<include><\s*=)|<))(\s+the)?
   references: [ InclusiveModPrepositions ]
 # "starting from" is SinceRegex
 AfterRegex: !nestedRegex
-  def: ((\b({InclusiveModPrepositions}\s*)?((के बाद|(starting|beginning)(\s+on)?(?!\sfrom)|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to)(\s*{InclusiveModPrepositions})?\b)|(?<!\w|<)((?<include>>\s*=)|>))(\s+the)?
+  def: ((({InclusiveModPrepositions}\s*)?(((\s+)?के बाद|(starting|beginning)(\s+on)?(?!\sfrom)|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to)(\s*{InclusiveModPrepositions})?\b)|(?<!\w|<)((?<include>>\s*=)|>))(\s+the)?
   references: [ InclusiveModPrepositions ]
 SinceRegex: !simpleRegex
   def: (?:(?:\b(?:(से|के) बाद\s+(अथवा|या)\s+के बराबर|से|starting\s+(?:from|on|with)|as\s+early\s+as|(any\s+time\s+)?from)\b)|(?<!\w|<)(>=))
@@ -621,7 +621,7 @@ EveningStartEndRegex: !simpleRegex
 NightStartEndRegex: !simpleRegex
   def: (^(रातों|आज)?\s*रात)|((over|to)?रात$)
 InexactNumberRegex: !simpleRegex
-  def: \b(कुछ|कई|(?<NumTwoTerm>(का\s+)?(एक\s+)?जोड़ा))
+  def: \b(कुछ|कई|कुछ ही|कुछेक|(?<NumTwoTerm>(का\s+)?(एक\s+)?जोड़ा))
 InexactNumberUnitRegex: !nestedRegex
   def: ({InexactNumberRegex})\s+({DurationUnitRegex})
   references: [InexactNumberRegex, DurationUnitRegex]
@@ -1792,7 +1792,7 @@ SuperfluousWordList: !list
     - say
     - like
 # For DurationDateRestrictions, only translate these terms if this particular circumstance applies in the target language. If not, keep it empty.
-DurationDateRestrictions: [ today, now ]
+DurationDateRestrictions: [ आज, today, now ]
 # Cases collected from mined data
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
