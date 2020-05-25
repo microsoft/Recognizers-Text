@@ -249,7 +249,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (MatchingUtil.ContainsAgoLaterIndex(afterStr, regex.Item1, inSuffix: true))
                 {
                     isMatch = true;
-                    isLater = regex.Item2 == Constants.LATER_LABEL ? true : false;
+                    isLater = regex.Item2 == Constants.LATER_LABEL;
                     var match = regex.Item1.Match(afterStr);
                     dayStr = match.Groups["day"].Value;
                 }
@@ -267,7 +267,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (string.IsNullOrEmpty(dayStr) && MatchingUtil.ContainsAgoLaterIndex(beforeStr, regex.Item1, inSuffix: false))
                     {
                         isMatch = true;
-                        isLater = regex.Item2 == Constants.LATER_LABEL ? true : false;
+                        isLater = regex.Item2 == Constants.LATER_LABEL;
                         var match = regex.Item1.Match(beforeStr);
                         dayStr = match.Groups["day"].Value;
                     }
@@ -318,7 +318,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
-                var isFuture = isLater ? true : false;
+                var isFuture = isLater;
                 resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime.AddDays(swift), future: isFuture);
 
                 ((DateTimeResolutionResult)durationParseResult.Value).Mod = isLater ? Constants.AFTER_MOD : Constants.BEFORE_MOD;
