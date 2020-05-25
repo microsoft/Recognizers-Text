@@ -1513,6 +1513,7 @@
   },
   {
     "Input": "मैं साढ़े पाँच बजने में तीन मिनट बाकी होने पर वापस जाउंगा",
+    "Comment": "the case corresponds to 'I'll go back three mins to five thirty' but in Hindi has a different structure (half past five three mins to) which is not supported",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
