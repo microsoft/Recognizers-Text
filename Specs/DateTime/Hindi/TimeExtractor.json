@@ -648,14 +648,26 @@
     ]
   },
   {
+    "Input": "दिन चढ़ने से पूर्व",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिन चढ़ने से पूर्व",
+        "Type": "time",
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
     "Input": "दोपहर में",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "दोपहर",
+        "Text": "दोपहर में",
         "Type": "time",
         "Start": 0,
-        "Length": 5
+        "Length": 9
       }
     ]
   },
@@ -680,6 +692,42 @@
         "Type": "time",
         "Start": 0,
         "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "दिन चढ़ने पर",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिन चढ़ने पर",
+        "Type": "time",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "दिन के चढ़ते ही",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिन के चढ़ते ही",
+        "Type": "time",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "दिन चढ़ते ही",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिन चढ़ते ही",
+        "Type": "time",
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -906,6 +954,42 @@
         "Type": "time",
         "Start": 4,
         "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं सवेरे 9 बजे वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सवेरे 9 बजे",
+        "Type": "time",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "इस हफ्ते प्रातः आठ बजे ठीक रहेगा ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "प्रातः आठ बजे",
+        "Type": "time",
+        "Start": 9,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "इस हफ्ते सायंकाल आठ बजे ठीक रहेगा ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सायंकाल आठ बजे",
+        "Type": "time",
+        "Start": 9,
+        "Length": 14
       }
     ]
   }
