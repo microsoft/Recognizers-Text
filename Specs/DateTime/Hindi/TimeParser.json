@@ -1619,7 +1619,6 @@
   },
   {
     "Input": "मैं 7 बजकर 1 मिनट पर वापस आ जाउंगा",
-    "NotSupported": "python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1641,7 +1640,6 @@
   },
   {
     "Input": "मैं शाम के दस बजकर दस मिनट पर वापस आ जाउंगा",
-    "NotSupported": "python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1663,7 +1661,6 @@
   },
   {
     "Input": "मैं शाम के दस बजकर दस मिनट होने के तीन मिनट बाद वापस आ जाउंगा",
-    "NotSupported": "python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
