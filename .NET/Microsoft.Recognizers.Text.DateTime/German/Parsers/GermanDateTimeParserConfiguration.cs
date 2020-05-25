@@ -99,6 +99,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             var trimmedText = text.Trim();
             int result = hour;
+
+            // @TODO Move all hardcoded strings to resource file
+
             if ((trimmedText.EndsWith("morgen") || trimmedText.EndsWith("morgens")) && hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
@@ -114,8 +117,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool GetMatchedNowTimex(string text, out string timex)
         {
             var trimmedText = text.Trim();
+
+            // @TODO Move all hardcoded strings to resource file
+
             if (trimmedText.EndsWith("jetzt") || trimmedText.Equals("momentan") || trimmedText.Equals("gerade") || trimmedText.Equals("aktuell") ||
-                trimmedText.Equals("im moment") || trimmedText.Equals("in diesem moment") || trimmedText.Equals("derzeit"))
+                trimmedText.Equals("aktuelle") || trimmedText.Equals("im moment") || trimmedText.Equals("in diesem moment") ||
+                trimmedText.Equals("derzeit"))
             {
                 timex = "PRESENT_REF";
             }

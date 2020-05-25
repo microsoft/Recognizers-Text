@@ -654,5 +654,63 @@
     },
     "NotSupported": "javascript, python, java",
     "Results": []
+  },
+  {
+    "Input": "Que horas? São 3 horas",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 horas",
+        "Start": 15,
+        "End": 21,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T03",
+              "type": "time",
+              "value": "03:00:00"
+            },
+            {
+              "timex": "T15",
+              "type": "time",
+              "value": "15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos encontraremos às 12 h",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "12 h",
+        "Start": 21,
+        "End": 24,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12",
+              "type": "time",
+              "value": "12:00:00"
+            },
+            {
+              "timex": "T00",
+              "type": "time",
+              "value": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
