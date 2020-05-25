@@ -130,20 +130,15 @@ DoubleAndRoundRegex: !nestedRegex
 FracSplitRegex: !simpleRegex
   def: '[와|과]|분\s*의'
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (영|령|공|일|이(?!다)|두|삼|사|(?<!시)오|육|칠|팔|구)
-ZeroToNineNativeIntegerRegex: !simpleRegex
-  def: (하나|둘|셋|넷|다섯|여섯|일곱|여덟|아홉)
+  def: (영|령|공|일|이(?!다)|두|삼|사|(?<!시)오|육|칠|팔|구|한|하나|둘|셋|넷|다섯|여섯|일곱|여덟|아홉)
 TenToNinetySinoIntegerRegex: !nestedRegex
   def: ({ZeroToNineIntegerRegex})?십
   references: [ZeroToNineIntegerRegex]
 TenToNinetyNativeIntegerRegex: !simpleRegex
-  def: (열|스물|서른|마흔|쉰|예순|일흔|여든|아흔)
+  def: (스무|열|스물|서른|마흔|쉰|예순|일흔|여든|아흔)
 ElevenToNineteenSinoIntegerRegex: !nestedRegex
   def: 십({ZeroToNineIntegerRegex})
   references: [ZeroToNineIntegerRegex]
-ElevenToNineteenNativeIntegerRegex: !nestedRegex
-  def: 열({ZeroToNineNativeIntegerRegex})
-  references: [ZeroToNineNativeIntegerRegex]
 NegativeNumberTermsRegex: !simpleRegex
   def: ((마\s*이\s*너\s*스|음\s*수)\s*)
 NegativeNumberTermsRegexNum: !simpleRegex
@@ -167,8 +162,8 @@ SingleRegex: !nestedRegex
   def: (?<!((연필)|(예산)|(사람들)|(년)|(명)))((?<!{ZeroToNineIntegerRegex})(영|령|공|일|두|삼|사|(?<![시])오|육|칠|팔|구)(?={AllowListRegex}))
   references: [ZeroToNineIntegerRegex, AllowListRegex]
 NativeSingleRegex: !nestedRegex
-  def: (?<!((연필)|(예산)|(사람들)|(년|명|원)))({TenToNinetyNativeIntegerRegex}\s*{ZeroToNineNativeIntegerRegex})
-  references: [TenToNinetyNativeIntegerRegex, ZeroToNineNativeIntegerRegex]
+  def: (?<!((연필)|(예산)|(사람들)|(년|명|원)))({TenToNinetyNativeIntegerRegex}\s*{ZeroToNineIntegerRegex})
+  references: [TenToNinetyNativeIntegerRegex, ZeroToNineIntegerRegex]
 NativeIntRegex: !nestedRegex
   def: ((({ZeroToNineIntegerRegex}\s*)?({RoundNumberIntegerRegex}+\s*)?({TenToNinetyNativeIntegerRegex}\s*)?({ZeroToNineIntegerRegex}))|({TenToNinetyNativeIntegerRegex}))
   references: [TenToNinetyNativeIntegerRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex]  
@@ -237,12 +232,12 @@ DoubleScientificNotationRegex: !nestedRegex
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
 #OrdinalExtractor
 OrdinalRegex: !nestedRegex
-  def: '{AllIntRegex}번째'
-  references: [AllIntRegex]
+  def: '(({AllIntRegex}|{RoundNumberIntegerRegex}+)\s*번째)|첫(음|번째)?|처음|일등'
+  references: [AllIntRegex,RoundNumberIntegerRegex]
 RelativeOrdinalRegex: !simpleRegex
   def: (?<relativeOrdinal>(뒤에서 세번째|다음(\s*것)?|이전 것|현재|(((마지막)((에)?\s*((서)?\s*(두번째|((바로)?\s*(것|전)))|의 옆))?)|지금)(의 것)?))
 OrdinalNumbersRegex: !nestedRegex
-  def: '{ZeroToNineFullHalfRegex}+번째'
+  def: '{ZeroToNineFullHalfRegex}+\s*(번째)'
   references: [ZeroToNineFullHalfRegex]
 OrdinalKoreanRegex: !nestedRegex
   def: '({OrdinalRegex}|{RelativeOrdinalRegex}|{OrdinalNumbersRegex})'
