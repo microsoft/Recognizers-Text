@@ -301,8 +301,8 @@ NumbersFractionPercentageRegex: !nestedRegex
   def: '{ZeroToNineFullHalfRegex}{1,3}([,，]{ZeroToNineFullHalfRegex}{3})+\s*개\s*백\s*분\s*점'
   references: [ZeroToNineFullHalfRegex]
 SimpleIntegerPercentageRegex: !nestedRegex
-  def: '(?<!%|\d){NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)[％%](?!\d)'
-  references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
+  def: '(?<!%|\d)({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})?({AllIntRegex}|{ZeroToNineFullHalfRegex}|{RoundNumberIntegerRegex})+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)([％%]|(퍼\s*센\s*트)|(프\s*로)|(퍼\s*센\s*티\s*지))(?!\d)'
+  references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex, AllIntRegex, RoundNumberIntegerRegex, NegativeNumberTermsRegex]
 #NumberRangeExtractor
 TillRegex: !simpleRegex
   def: (부터|까지|--|-|—|——|~)
