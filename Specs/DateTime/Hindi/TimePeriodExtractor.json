@@ -540,18 +540,6 @@
     ]
   },
   {
-    "Input": "शाम 1:30 से 3:30 तक मुलाकात रखो ",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "शाम 1:30 से 3:30 तक",
-        "Type": "timerange",
-        "Start": 0,
-        "Length": 19
-      }
-    ]
-  },
-  {
     "Input": "1 से 3:30 तक मुलाकात रखो ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
